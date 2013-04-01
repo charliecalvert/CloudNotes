@@ -50,6 +50,7 @@ There are several tools we will use frequently:
 * Amazon Web Services
 * Git
 * SSH (Putty)
+* VirtualBox, especially Ubuntu Linux running in VM.
 
 On AWS, we will focus on EC2 and S3, and on Google Drive we will focus on their
 document editor.
@@ -100,3 +101,16 @@ discuss something, try using the search box:
 
 If there is something I covered in class that you wish was covered on Elvenware,
 please let me know.
+
+Summary
+-------
+
+If you feel a bit overwhelmed, and that is natural, here are three things to 
+focus your attention on:
+
+* HTML and CSS
+* JavaScript and Node
+* Git
+
+You'll still have to come to terms with the Linux command prompt and SSH, but
+the above are things to focus on.
