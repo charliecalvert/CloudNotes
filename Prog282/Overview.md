@@ -88,3 +88,15 @@ The primary IDE's used in the class will be Eclipse and NotePad++ on Windows. On
 the Mac, you can use Eclipse and a text editor of your choice. At this time the
 Sublime editor is very popular, and many people like the open source Geany editor.
 There are good text editors that ship with the Mac.
+
+Reading Elvenware
+-----------------
+
+Almost everything we cover in class is covered somewhere on Elvenware. There
+is a search box on the home Elvenware home page. If you can't find where I 
+discuss something, try using the search box:
+
+<http://elvenware.com/charlie/>
+
+If there is something I covered in class that you wish was covered on Elvenware,
+please let me know.
