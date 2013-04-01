@@ -61,7 +61,12 @@ On several occasions I have found students who are reluctant to learn both Git
 and SSH (Putty). I may be wrong, but I get the feeling that they keep hoping 
 that these tools will miraculously disappear. This is not the case. They will be
 a presence in week 1 of the course, and will likely appear two out of every three
-weeks thereafter. 
+weeks thereafter. I am concerned whenever a student has missed an important 
+assignment, but even more important is the needs of other students in the class.
+If one student has done the work and wants to learn something new, it is very
+wrong for others to hold that student back and demand that class time be devoted
+to a subject that has already been covered in depth, and which is fully clear
+to most other students in the class.
 
 If you know Git and SSH (Putty) you will find many tasks I ask you to perform
 relatively simple. If you don't know these tools, you will frequently think I
