@@ -1,5 +1,5 @@
-Overview
-========
+Prog 282 Overview
+=================
 
 Welcome to Prog 282. You can read the syllabus here:
 
