@@ -13,6 +13,17 @@ JavaScript Modules
 * <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html>
 * <http://www.elvenware.com/charlie/development/android/AndroidLogging.html>
 
+Node
+----
+
+* <http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html>
+* <http://elvenware.com/charlie/books/CloudNotes/Prog272/Week08.html>
+
+The Git Page
+------------
+
+* <http://www.elvenware.com/charlie/development/cloud/Git.html>
+
 HTML Example
 ------------
 

@@ -6,11 +6,8 @@ Week  08 Day 01
 We will focus on
 
 -   Node
-
 -   Cloud 9
-
 -   Markdown and Pandoc
-
 -   AWS
 
 Node
