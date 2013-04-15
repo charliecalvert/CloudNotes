@@ -1,0 +1,80 @@
+<h1 id="canvas-grids">Canvas Grids</h1>
+<p>Create a 12 X 12 grid of 25 X 25 bitmap images displayed in an HTML 5 canvas element. The user should be able to use the up, left, right and down keys to move a main character, represented by a second bit map, around on the grid.</p>
+<figure>
+<img src="../Images/Grid01.png" alt="A 12 X 12 Grid made up of 4 25 X 25 images repeated approximately 144 times." /><figcaption>A 12 X 12 Grid made up of 4 25 X 25 images repeated approximately 144 times.</figcaption>
+</figure>
+<p>The canvas element should be 12 X 25 pixels high, and 12 X 25 pixels wide.</p>
+<p>Your program should include these files:</p>
+<ul>
+<li>index.html</li>
+<li>index.js</li>
+<li>images.gif</li>
+<li>jquery-1.9.1.js</li>
+</ul>
+<p>You should have a document ready handler at the bottom of the JavaScript file. All the rest of your code should be inside one object that follows the modular pattern and is called Game.</p>
+<p>Here is how to capture keydown events:</p>
+<pre><code>    window.addEventListener(&#39;keydown&#39;, doKeyDown, true);
+        
+    var doKeyDown = function(evt) {
+        switch (evt.keyCode) {
+            case 38:
+                /* Up arrow was pressed */
+                break;
+            case 40:
+                /* Down arrow was pressed */
+                break;
+            case 37:
+                /* Left arrow was pressed */
+                break;
+            case 39:
+                /* Right arrow was pressed */
+                break;
+        }
+    };</code></pre>
+<p>When you are done, check your project into your Prog282-LastName folder, and make sure the folder is shared with me. My username on Bitbucket is ccalvert. When you turn in the assignment, include a link to your BitBucket home page or directly to your Prog282-LastName repository.</p>
+<p>Please include your last name in the title of your project. To do this, go to the <em>.project</em> file included in the root of your project directory. (This is the directory for your project, not for your repository.) The top of the <em>.project</em> file should look something like this:</p>
+<pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;projectDescription&gt;
+        &lt;name&gt;DataUsers Example01&lt;/name&gt;</code></pre>
+<p>Whatever you put in the name tag will be the name of your project when I open it in Eclipse. For instance, the name of the following project is <em>DrawGrid-Calvert</em>:</p>
+<pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;projectDescription&gt;
+        &lt;name&gt;DrawGrid-Calvert&lt;/name&gt;</code></pre>
+<p>Eclipse seems to be a bit odd in the way it handles this name. If you import a fresh copy of the project into Eclipse, then Eclipse seems to get the name right. If you change the name of that string after loading the project in Eclipse, or if you try to change that string from inside Eclipse, then you don't always get the results you want. So you should make the change in a text editor outside of Eclipse, or at least confirm that the name in the <em>.project</em> file is what you expect it to be before checking in your final version with Git.</p>
+<p>I added this requirement to set the name of the project rather late in the assignment cycle, so it is optional. But if you have not turned in the assignment yet, please make the change. It makes my life simpler if I know whose project is whose when I am looking at them inside Eclipse.</p>
+<h2 id="strategies">Strategies</h2>
+<p>If you look in <strong>JsObjects</strong>, at example <strong>JavaScript/Graphics/Basics05</strong>, you will see that some of the drawing is done in the <strong>draw</strong> method:</p>
+<pre><code>    var draw = function() {
+        var count = 0;
+        for (imageName in pictures) {
+            context.drawImage(pictures[imageName], 0, rectSize, rectSize, 
+                rectSize, rectSize * (count++ + 1), 135, rectSize, rectSize);
+        }
+    };</code></pre>
+<p>As you recall, this method will be called at some predetermined interval, depending on how you set things up in the <strong>getCanvas</strong> method:</p>
+<pre><code>setInterval(draw, 50);</code></pre>
+<p>The <strong>draw</strong> method is where you want to do most of your work. In particular, I would put the nested for loop in that method, and then I would add code for drawing the active character that glides over the surface of the grid. This means that the entire 12 X 12 grid, plus the main character, are being completely redrawn every 50 milliseconds, or however often the <strong>draw</strong> method is called. Ten or fifteen years ago, only a few machines had graphics cards powerful enough to do that efficiently. Now, however, we can safely plan to blit 145 images to the screen every few milliseconds without fear that the screen will start blinking or encounter other performance problems. Note also that the highly optimized HTML5 Canvas object helps make this feasible.</p>
+<p>It is, of course, possible to optimize the code so that it does not recreate the entire grid each time <strong>draw</strong> is called. However, given the hardware available to us today, that should not be necessary. We can look into doing that, however, if it becomes necessary.</p>
+<h2 id="be-systematic">Be Systematic</h2>
+<p>Think about this problem systematically. You need to do three things:</p>
+<ul>
+<li>Load the bitmaps, and prove to yourself that you can use them. That is, prove to yourself that you can draw their images to the screen.</li>
+<li>Capture key strokes so can determine the X and Y (Column and Row) position of the character when you draw it.</li>
+<li>Draw the back ground screen (the 12X12 grid), and draw the character image on top of the grid in the current location specified by the user.</li>
+</ul>
+<p>A key point to grasp is that once you have loaded the bitmaps and proved to yourself that you can use them, then they will be available to you until the program closes. Load them, test them. Then use them at your leisure, as the need arises.</p>
+<h2 id="more-on-the-draw-method">More on the Draw Method</h2>
+<p>In most implementations, the key to this assignment is the <em>draw</em> method. Remember that we have set things up so that the <em>draw</em> method is called once every fifty milliseconds. For all intents and purposes, that means it is being called more or less continually, or certainly whenever we need it to be called. So we don't need to be concerned about calling that method.</p>
+<p>Here is the code that makes sure the draw method is being called:</p>
+<pre><code>setInterval(draw, 50);</code></pre>
+<p>Then inside the <em>draw</em> method, you need to do two things:</p>
+<ul>
+<li>Draw the 12 X 12 grid</li>
+<li>Draw the character in the appropriate location</li>
+</ul>
+<p>This is not the real code, of course, but conceptually, it will look like this:</p>
+<pre><code>var draw = function() {
+    drawGrid();
+    drawMainCharacter();
+};</code></pre>
+<p>In some cases I do the drawing inside the draw function, but calling two methods as shown above is also a very reasonable solution.</p>

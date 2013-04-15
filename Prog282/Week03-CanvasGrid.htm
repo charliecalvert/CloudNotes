@@ -1,0 +1,19 @@
+<h1 id="week03-drawgrid">Week03-DrawGrid</h1>
+<p>There will be two new features in our game this week:</p>
+<ul>
+<li>Begin scoring the accomplishments of your main character</li>
+<li>Support multiple users and logging in</li>
+</ul>
+<h2 id="main-character-score">Main Character Score</h2>
+<p>Create a JSON file called Character.json that contains a single object that tracks two traits of your main character:</p>
+<ul>
+<li>Moves</li>
+<li>Experience</li>
+</ul>
+<p>Each trait should be a property of the object stored in your JSON file.</p>
+<p>Load the JSON file into memory from your &quot;server&quot; when your program starts. Hold the object in a property called character:</p>
+<pre><code>var character = null;</code></pre>
+<p>Whenever the user moves the main character, increment the Moves property. Use the Modulus operator (%) to increment the Exprience trait when the user moves 25 spaces. When the user presses the Ctrl-S key combination, save the grid back to the server.</p>
+<p>You should read and write the JSON using the jQuery ajax method.</p>
+<h2 id="sign-in">Sign In</h2>
+<p>I'm still thinking this through. We will certainly have the user sign in before they can play. So we should start creating directories for each user? Be able to log in as one user, see your current score, then log in as another user, and track the score of that user?</p>
