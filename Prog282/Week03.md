@@ -22,6 +22,18 @@ most important JavaScript libraries.
 - [Express Home Page](http://expressjs.com/)
 
 
+Working with Express in Node:
+
+- [Express and Node](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-express)
+
+Using a directory:
+
+- [Include Subdirectories in a node Project](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-a-directory-with-app.use)
+
+Debugging Node in Eclipse:
+
+- [Debug Node in Eclipse](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html#debug-node-in-eclipse)
+
 Open ID Resources
 -----------------
 
@@ -43,3 +55,4 @@ Here are some OpenID Links:
 - [Node Open ID Interface](https://github.com/havard/node-openid)
 - [Open ID Home Page](http://openid.net/)
 - [Difference between Open ID and O Auth](http://stackoverflow.com/questions/1087031/whats-the-difference-between-openid-and-oauth)
+
