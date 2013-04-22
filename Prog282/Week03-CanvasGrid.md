@@ -86,6 +86,27 @@ in JsObjects, including these two:
 * JsObjects/JavaScript/NodeCode/DataInput01
 * JsObjects/JavaScript/NodeCode/JsonRead 
 
+Loading Two HTML Files
+----------------------
+
+I have, in a moment of weakness, provided you with an example to show you 
+how to load two HTML files from a single Node server. Look in 
+**JsObjects/JavaScript/NodeCode** for a new example called **TwoHtmlFiles**. The 
+part you care about is in **server.js**. You don't need to implement the link in 
+the **index.html** file that you will find in this example. You just need something
+like the method from **server.js** with this signature:
+
+	app.get('/launchSecondHtmlFile' ... etc
+
+Only in your OpenId example, it will be the URI route called **/go** that 
+you care about:
+
+	app.get('/go' ... etc
+
+The **go** route is called automatically by OpenId, so all you have to do is 
+respond properly when the method is called. The point of this demo is to 
+give you some clues (too many, in fact) as to how to respond.
+
 References
 ----------
 
