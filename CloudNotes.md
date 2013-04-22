@@ -3,10 +3,9 @@ BC Notes
 
 Work in progress
 
-[![Creative Commons
-License](http://i.creativecommons.org/l/by/3.0/88x31.png)](http://creativecommons.org/licenses/by/3.0/deed.en_US)\
-Cloud Notes by [Charlie
-Calvert](http://www.elvenware.com/charlie/books/CloudNotes.html) is
+![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
+
+Cloud Notes by [Charlie Calvert](http://www.elvenware.com/charlie/books/CloudNotes.html) is
 licensed under a [Creative Commons Attribution 3.0 Unported
 License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
@@ -47,3 +46,5 @@ Prog 282
 -	[Week02-CanvasGrid](Prog282/Week02-CanvasGrid.html)
 -	[Week03](Prog282/Week03.html)
 -   [Week03-CanvasGrid](Prog282/Week03-CanvasGrid.html)
+-	[Week04](Prog282/Week04.html)
+

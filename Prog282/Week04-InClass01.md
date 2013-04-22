@@ -33,7 +33,7 @@ Turn it In
 When you are done push your project to BitBucket and submit the link 
 to your repository.
 
-Useful Links
+References
 ------------
 
 - <http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#documentReady>
