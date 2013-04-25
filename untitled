@@ -1,0 +1,12 @@
+Week04-AWS and Node
+-------------------
+
+Create two screen shots. One is of your Putty Command Prompt showing
+the output from running the following command on your GridGame:
+
+	node server.js
+	
+In server.js you should show include at least one console.log statement
+that produces output at the command line shown in your first screen
+shot.
+
