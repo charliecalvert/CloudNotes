@@ -1,5 +1,3 @@
-
-
 Main Character Score
 --------------------
 
@@ -133,6 +131,7 @@ Here is JavaScript code that simulates the rolling of one 6 sided die:
 	
 If this returns a number between 1 and 6, it should not be hard to convert
 it to return a number between 1 and 100.
+
 
 After Loggin In
 ---------------

@@ -11,6 +11,25 @@ sudo apt-get install nodejs npm
 
 Then mkdir git, and clone your repository.
 
+Alternative Install of Node
+---------------------------
+
+Do this if you want to install the latest version of node and npm:
+
+~~~~
+	sudo apt-get install python-software-properties python g++ make
+	sudo add-apt-repository ppa:chris-lea/node.js
+	sudo apt-get update
+	sudo apt-get install nodejs
+~~~~
+
+Reference from the Node GitHub site:
+
+<https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>
+	
+The Assignment
+--------------
+
 Create two keep screen shots. One is of your Putty Command Prompt showing
 the output from running the following command on your GridGame:
 
