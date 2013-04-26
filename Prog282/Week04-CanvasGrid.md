@@ -124,6 +124,16 @@ back to the server. The saved file should not overwrite the original
 files Hero and Orc character files that you loaded. In particular, 
 the saved file should be saved into a directory called **SavedGames**.
 
+Random Numbers
+--------------
+
+Here is JavaScript code that simulates the rolling of one 6 sided die:
+
+	var randomNumber = Math.floor(Math.random() * 6) + 1;
+	
+If this returns a number between 1 and 6, it should not be hard to convert
+it to return a number between 1 and 100.
+
 After Loggin In
 ---------------
 
