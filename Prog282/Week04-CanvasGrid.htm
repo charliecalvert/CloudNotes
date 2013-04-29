@@ -1,3 +1,6 @@
+<h2 id="turning-in-the-assignment">Turning in the Assignment</h2>
+<p>Place your work in your repository so that I can view your source and see what you have you have accomplished.</p>
+<p>You can either place it in a folder can Week04-CanvasGrid, or simply update an existing folder, such as Week03-DrawGrid. The key is that the source for your project is in your repository so I can look it over.</p>
 <h2 id="main-character-score">Main Character Score</h2>
 <p>Create two JSON files called <strong>Hero.json</strong> and <strong>Orc.json</strong>. Each should contain a single object that tracks at least five character traits:</p>
 <ul>
@@ -19,6 +22,12 @@
 <li>See JsObjects/JavaScript/NodeCode/SimpleReadWriteJson</li>
 <li>See JsObjects/JavaScript/NodeCode/PresidentJson</li>
 <li>See JsObjects/JavaScript/NodeCode/jsonRead</li>
+</ul>
+<p>There are also some sections in the jQueryBasics.html file that might prove helpful:</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jquery-ajax-with-json">jQuery Ajax with JSON</a></li>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#the-ajax-success-function">Ajax success function</a></li>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#the-ajax-error-handler">Ajax error function</a></li>
 </ul>
 <h2 id="main-character-test-page">Main Character Test Page</h2>
 <p>As we start adding functionality to our program, we need to be sure our program remains modular, and is easy to test. In particular, if you have several big pieces inside one huge program, it can quickly become very hard to get an overview of the whole program.</p>
@@ -67,5 +76,21 @@
 <p>Here is JavaScript code that simulates the rolling of one 6 sided die:</p>
 <pre><code>var randomNumber = Math.floor(Math.random() * 6) + 1;</code></pre>
 <p>If this returns a number between 1 and 6, it should not be hard to convert it to return a number between 1 and 100.</p>
+<h2 id="html-side-by-side">HTML Side by Side</h2>
+<p>Certain HTML elements, such as DIVs and TABLEs, appear by default on a new line. If you want to see them side by side, as my two tables appear side by side in the screen short for this assignment, you can add CSS that looks like this:</p>
+<pre><code>#orcTable, #characterTable {
+    float: left; 
+}</code></pre>
+<p>You might also play with the <strong>border-width</strong> and <strong>background-color</strong> for these two elements.</p>
 <h2 id="after-loggin-in">After Loggin In</h2>
-<p>So we should start creating directories for each user? Be able to log in as one user, see your current score, then log in as another user, and track the score of that user?</p>
+<p>So we should start creating directories for each user? Be able to log in as one user, see your current score, then log in as another user, and track the score of that user? Perhaps not quite yet....</p>
+<p>This part about creating directories will be for next week. If you want to work ahead, try to get the user's name from their openid. That is, strip the http:// part from the open id. Suppose you have this open id:</p>
+<pre><code>http://marylu.myopenid.com</code></pre>
+<p>Then you will want to get the string marylu.myopenid.com, then use that string to create a directory. Here is the code for extracting the string:</p>
+<pre><code>var getUserName = function(identity) {
+    var data = identity.replace(&#39;http://&#39;, &#39;&#39;);
+    return data.replace(&#39;/&#39;, &#39;&#39;);
+}</code></pre>
+<p>And here is an example from JsObjects of to create a directory:</p>
+<p><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/MakeDirectory">https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/MakeDirectory</a></p>
+<p>To get the example, just make sure your copy of JsObjects is up to date.</p>

@@ -1,3 +1,13 @@
+Turning in the Assignment
+-------------------------
+
+Place your work in your repository so that I can view your source and see
+what you have you have accomplished. 
+
+You can either place it in a folder can Week04-CanvasGrid, or simply update
+an existing folder, such as Week03-DrawGrid. The key is that the source 
+for your project is in your repository so I can look it over.
+
 Main Character Score
 --------------------
 
@@ -39,6 +49,13 @@ References:
 * See JsObjects/JavaScript/NodeCode/SimpleReadWriteJson
 * See JsObjects/JavaScript/NodeCode/PresidentJson
 * See JsObjects/JavaScript/NodeCode/jsonRead
+
+There are also some sections in the jQueryBasics.html file that might prove
+helpful:
+
+- [jQuery Ajax with JSON](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jquery-ajax-with-json)
+- [Ajax success function](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#the-ajax-success-function)
+- [Ajax error function](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#the-ajax-error-handler)
 
 Main Character Test Page
 ------------------------
@@ -132,10 +149,49 @@ Here is JavaScript code that simulates the rolling of one 6 sided die:
 If this returns a number between 1 and 6, it should not be hard to convert
 it to return a number between 1 and 100.
 
+HTML Side by Side
+-----------------
+
+Certain HTML elements, such as DIVs and TABLEs, appear by default on a new 
+line. If you want to see them side by side, as my two tables appear side by 
+side in the screen short for this assignment, you can add CSS that looks 
+like this:
+
+~~~~
+#orcTable, #characterTable {
+    float: left; 
+}
+~~~~
+
+You might also play with the **border-width** and **background-color** for
+these two elements.
 
 After Loggin In
 ---------------
 
 So we should start creating directories for each user? Be able
 to log in as one user, see your current score, then log in as another user,
-and track the score of that user?
+and track the score of that user? Perhaps not quite yet....
+
+This part about creating directories will be for next week. If you want to 
+work ahead, try to get the user's name from their openid. That is, strip the 
+http:// part from the open id. Suppose you have this open id:
+
+	http://marylu.myopenid.com
+
+Then you will want to get the string marylu.myopenid.com, then use that string to create a directory. Here is the code for extracting the string:
+
+~~~~
+var getUserName = function(identity) {
+	var data = identity.replace('http://', '');
+	return data.replace('/', '');
+}
+~~~~
+
+And here is an example from JsObjects of to create a directory:
+
+<https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/MakeDirectory>
+
+To get the example, just make sure your copy of JsObjects is up to date.
+
+
