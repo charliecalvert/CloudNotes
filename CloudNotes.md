@@ -47,4 +47,5 @@ Prog 282
 -	[Week03](Prog282/Week03.html)
 -   [Week03-CanvasGrid](Prog282/Week03-CanvasGrid.html)
 -	[Week04](Prog282/Week04.html)
+-	[Week05](Prog282/Week05.html)
 
