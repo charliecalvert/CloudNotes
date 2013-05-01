@@ -14,6 +14,9 @@ Some of the key subjects
 - Modularize your code
 - Unit Tests
 - More on Express
+- Prototype and Inheritance
+- Upstart
+- SSH on Linux
 
 jQuery Load, getJSON and ajax
 -----------------------------

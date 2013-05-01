@@ -1,0 +1,64 @@
+Week05-CanvasGrid
+
+We continue to work on the CanvasGrid program. You may either use the
+code in Prog282-Hints as the basis for your work, or you can pillage
+that code to your heart's content. In general, if you have been 
+able to (more or less) successfully complete each assignment so far,
+then you probably want to keep the code you have created. If JavaScript
+is new to you, then perhaps you would appreciate having a  
+foundation on which to build the next stages of this project. In that
+case, you might want to rely on CanvasGrid03 from the Prog282-Hints
+repository.
+
+Major Goals for Week05
+----------------------
+
+* Modularize - Make sure you are discovering the major objects in your
+program. These might include Draw, KeyboardInput, Main (or Core), 
+Characters, etc.
+* Unit Test - You should have at least one unit test for each of your
+objects. Use the QUnit module("") syntax so I can easily discover
+which tests apply to which object. Include internal tests for testing
+private methods.
+* A new array where you store the NPCs (Non-Playing-Characters) for your
+game. We have a 12 X 12 array where we store the values the for our 
+Grid. We should now add a second 12 X 12 array where we store the
+NPCs. Each NPC should be marked with a value 1 through 3. Spaces where
+no NPCs are found should just have the value 0. You should
+draw different bitmaps to the screen for different characters. For 
+instance, an NPC marked by a 1 would have blue colored bitmap, those
+marked with 2 a red color, etc.
+* Run your game from AWS with UpStart. 
+
+The addition of a second 12 X 12 array means that you will have to have
+two nested for loops, or check for the state of your second array 
+inside the first nested for loop.
+
+We are building up our grid in layers. There is the base layer, which
+is the background. Then on top of that we blit the NPCs, then we blit
+the main character (Hero) on top of that. Some games built like this
+end up having three or four layers. 
+
+This might be a good time to look at some of the bitmaps I'm giving
+you and notice that there are "transparent" sections in them. When
+you see a mushroom blitted on the road, it is not that the mushroom
+has a background shaded like a road, it is that background color behind
+the mushroom is treated as transparent. To tell you the truth, I haven't
+looked up the algorithm being used here, but the standard procedure in
+these cases is to have the pixel in the upper left hand corner of GIF
+bitmaps designate the transparent color. The drawImage routine from
+the Canvas object looks for that pixel, and never blits any pixels
+of that shade to the screen.
+
+![Blit grass and path, then the tree, which is an NPC of sorts, on top](../Images/Grid02.png)
+
+(And yes, a tree is a not a very good NPC, but hopefully this shows
+what I want.)
+
+<http://gamedev.stackexchange.com/questions/19257/how-do-i-make-magenta-in-my-png-transparent-in-html5-canvas-js>
+
+What to Turn In
+---------------
+
+When you turn in the assignment, check your latest code into your 
+repository. Submit the URL for your UpStart powered game.
