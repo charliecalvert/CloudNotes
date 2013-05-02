@@ -17,6 +17,7 @@ Some of the key subjects
 - Prototype and Inheritance
 - Upstart
 - SSH on Linux
+- Properties
 
 jQuery Load, getJSON and ajax
 -----------------------------
@@ -27,6 +28,11 @@ jQuery Load, getJSON and ajax
 - JavaScript the Good Parts
 - Maintainable JavaScript
 - Eloquent JavaScript
+
+Upstart
+-------
+
+<http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart>
 
 Modules
 -------
@@ -39,4 +45,5 @@ Unit Tests
 <http://www.elvenware.com/charlie/development/web/UnitTests/>
 <http://qunitjs.com/>
 
-
+SSH CopyPrivate Files
+---------------------

@@ -6,6 +6,7 @@
 <li>Unit Test - You should have at least one unit test for each of your objects. Use the QUnit module(&quot;&quot;) syntax so I can easily discover which tests apply to which object. Include internal tests for testing private methods.</li>
 <li>A new array where you store the NPCs (Non-Playing-Characters) for your game. We have a 12 X 12 array where we store the values the for our Grid. We should now add a second 12 X 12 array where we store the NPCs. Each NPC should be marked with a value 1 through 3. Spaces where no NPCs are found should just have the value 0. You should draw different bitmaps to the screen for different characters. For instance, an NPC marked by a 1 would have blue colored bitmap, those marked with 2 a red color, etc.</li>
 <li>Run your game from AWS with UpStart.</li>
+<li>Refactor CanvasGrid03 from Prog282-Hints repository per our discussion on Monday, and check it in to your repository in a directory called Week05-CanvasRefactor.</li>
 </ul>
 <p>The addition of a second 12 X 12 array means that you will have to have two nested for loops, or check for the state of your second array inside the first nested for loop.</p>
 <p>We are building up our grid in layers. There is the base layer, which is the background. Then on top of that we blit the NPCs, then we blit the main character (Hero) on top of that. Some games built like this end up having three or four layers.</p>
@@ -13,7 +14,7 @@
 <figure>
 <img src="../Images/Grid02.png" alt="Blit grass and path, then the tree, which is an NPC of sorts, on top" /><figcaption>Blit grass and path, then the tree, which is an NPC of sorts, on top</figcaption>
 </figure>
-<p>(And yes, a tree is a not a very good NPC, but hopefully this shows what I want.)</p>
+<p>(And yes, a tree is a not a very good NPC, but hopefully this shows what I want. And frankly, I don't care what kind of images you use for your NPCs. If you have a nice Orc, great, but anything will do.)</p>
 <p><a href="http://gamedev.stackexchange.com/questions/19257/how-do-i-make-magenta-in-my-png-transparent-in-html5-canvas-js">http://gamedev.stackexchange.com/questions/19257/how-do-i-make-magenta-in-my-png-transparent-in-html5-canvas-js</a></p>
 <h2 id="what-to-turn-in">What to Turn In</h2>
 <p>When you turn in the assignment, check your latest code into your repository. Submit the URL for your UpStart powered game.</p>

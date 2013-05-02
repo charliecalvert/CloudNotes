@@ -28,7 +28,10 @@ no NPCs are found should just have the value 0. You should
 draw different bitmaps to the screen for different characters. For 
 instance, an NPC marked by a 1 would have blue colored bitmap, those
 marked with 2 a red color, etc.
-* Run your game from AWS with UpStart. 
+* Run your game from AWS with UpStart.
+* Refactor CanvasGrid03 from Prog282-Hints repository per our discussion
+on Monday, and check it in to your repository in a directory called
+Week05-CanvasRefactor. 
 
 The addition of a second 12 X 12 array means that you will have to have
 two nested for loops, or check for the state of your second array 
@@ -53,7 +56,8 @@ of that shade to the screen.
 ![Blit grass and path, then the tree, which is an NPC of sorts, on top](../Images/Grid02.png)
 
 (And yes, a tree is a not a very good NPC, but hopefully this shows
-what I want.)
+what I want. And frankly, I don't care what kind of images you use
+for your NPCs. If you have a nice Orc, great, but anything will do.)
 
 <http://gamedev.stackexchange.com/questions/19257/how-do-i-make-magenta-in-my-png-transparent-in-html5-canvas-js>
 
