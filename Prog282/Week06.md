@@ -6,6 +6,7 @@ Major Topics
 * Sharing Data between Objects
 * Working with Properties
 * Unit test and Agile Programming
+* Object Inheritance and Agile principle of Object Design.
 
 Angular JS
 ----------
