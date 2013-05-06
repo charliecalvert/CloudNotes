@@ -13,6 +13,12 @@ repository.
 Major Goals for Week05
 ----------------------
 
+* Refactor CanvasGrid03 from Prog282-Hints repository per our discussion
+on Monday, and check it in to your repository in a directory called
+Week05-CanvasRefactor. Pull apart Draw.js so that you end up with two
+files: Draw.js and Keyboard.js. The draw code is in Draw.js, and the
+keyboard code is in Keyboard.js. We did this in class, and serves as
+a model to demonstrate how we modularize our code.
 * Modularize - Make sure you are discovering the major objects in your
 program. These might include Draw, KeyboardInput, Main (or Core), 
 Characters, etc.
@@ -27,11 +33,10 @@ NPCs. Each NPC should be marked with a value 1 through 3. Spaces where
 no NPCs are found should just have the value 0. You should
 draw different bitmaps to the screen for different characters. For 
 instance, an NPC marked by a 1 would have blue colored bitmap, those
-marked with 2 a red color, etc.
-* Run your game from AWS with UpStart.
-* Refactor CanvasGrid03 from Prog282-Hints repository per our discussion
-on Monday, and check it in to your repository in a directory called
-Week05-CanvasRefactor. 
+marked with 2 a red color, etc. Optionally, you should be able to detect 
+the collision.
+* Run your game from AWS with UpStart. 
+
 
 The addition of a second 12 X 12 array means that you will have to have
 two nested for loops, or check for the state of your second array 
@@ -60,6 +65,16 @@ what I want. And frankly, I don't care what kind of images you use
 for your NPCs. If you have a nice Orc, great, but anything will do.)
 
 <http://gamedev.stackexchange.com/questions/19257/how-do-i-make-magenta-in-my-png-transparent-in-html5-canvas-js>
+
+Upstart References
+------------------
+
+- JsObjects/JavaScript/NodeCode/ExpressSend
+- Prog282-Hints/CanvasGrid03 - see the CanvasGrid03.conf file
+
+And this file:
+
+<http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart>
 
 What to Turn In
 ---------------
