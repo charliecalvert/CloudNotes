@@ -25,3 +25,81 @@
 <p><a href="http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart">http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart</a></p>
 <h2 id="what-to-turn-in">What to Turn In</h2>
 <p>When you turn in the assignment, check your latest code into your repository. Submit the URL for your UpStart powered game.</p>
+<h2 id="should-i-test-private-methods">Should I Test Private Methods?</h2>
+<p>One traditional answer is that we test only public functions (Name.prototype.whatever).</p>
+<p>However, qunit is very flexible, and it is possible to test private functions without too much fuss. One solution is shown in Prog282-Hints/CanvasGrid03. Look in Public/Scores.js, you see this:</p>
+<pre><code>Scores.prototype.unitTests = function() {
+   test(&quot;ScoresUnitTests&quot;, function() {
+     var actual = getRoll();
+     ok(actual &lt; 101 &amp;&amp; actual &gt; 0, &quot;Get Roll in range&quot;);
+   });
+}</code></pre>
+<p>Then in the unit test code (Tests/UnitTest01):</p>
+<pre><code>var privateTest = function() {
+   var testScore = new ELF.own.Scores();
+   testScore.unitTests();
+};</code></pre>
+<p>This would be a way to run one or more tests of private methods inside an object. Clearly we are inserting code into the object that would not be used in a shipping product. Using Templates we could have a version of our code that had such methods, and other versions which did not.</p>
+<p>In general, the subject of unit testing private methods is an area of controversy. For instance, the whole point of private methods is that they can change when you need to change them. If you start testing them, aren't you just locking something in place that should be fluid? The controversy can be found nearly everywhere unit testing is discussed. For instance, read BigKahuna's answer to this question and Dima's answer to his answer:</p>
+<p><a href="http://stackoverflow.com/questions/250692/how-do-you-unit-test-private-methods">http://stackoverflow.com/questions/250692/how-do-you-unit-test-private-methods</a></p>
+<p>It is this kind of controversy that makes unit testing, which seems at first so dry and mundane, actually a very interesting subject.</p>
+<p>For us, at this stage, there is no need to take a stance on this subject. We can just learn how to test private methods, and start experimenting. As we gain more experience, we can start to draw conclusions. My opinion? Sure, I think it is nice to test at least some key private methods. But many experts who look at my tests think that I write too many of them. If you are pressed for time, test the public one's first. For the assignment: show me that you know how to test at least a few private methods.</p>
+<h2 id="share-data-between-objects">Share Data Between Objects</h2>
+<p>Suppose you have two variables called playerX and playerY that you want two objects to share. One way to handle the situation is to declare a single object with two properties called <strong>playerX</strong> and <strong>playerY</strong>. You can then share the object between the two objects. Changes made to the shared object will be seen by both objects that share the data.</p>
+<p>Consider this object:</p>
+<pre><code>ELF.own.Player = (function() {
+    &#39;use strict&#39;;
+    var that = {};
+    that.playerX = 1;
+    that.playerY = 2;
+
+    // Constructor
+    function Player() {
+        new ELF.own.ShowPlayer(that);
+        $(&#39;#buttonChangePlayer&#39;).click(changePlayer);
+    }
+
+    var changePlayer = function() {
+        that.playerX += 1;
+        that.playerY += 2;
+    };
+
+    return Player;
+})();</code></pre>
+<p>And here is the object that wants to consume playerX and playerY:</p>
+<pre><code>var ELF = {};
+ELF.own = {};
+
+ELF.own.ShowPlayer = (function() { &#39;use strict&#39;;
+
+    var sharedData = null;
+
+    function ShowPlayer(initData) {
+        sharedData = initData;
+        $(&#39;#buttonShowPlayer&#39;).click(showPlayerXY);
+    }
+
+    var showPlayerXY = function() {
+        $(&#39;#test01&#39;).html(&#39;X = &#39; + sharedData.playerX + &#39; Y = &#39; + sharedData.playerY);
+    };
+
+    return ShowPlayer;
+})();</code></pre>
+<p>In the first object I declare the data to be shared:</p>
+<pre><code>    var that = {};
+    that.playerX = 1;
+    that.playerY = 2;</code></pre>
+<p>Then I share the data with the second object when the second object is created:</p>
+<pre><code>    new ELF.own.ShowPlayer(that);</code></pre>
+<p>You can make the variable passed to the second object global within that second object:</p>
+<pre><code>    var sharedData = null;
+
+    // Constructor
+    function ShowPlayer(initData) {
+        sharedData = initData;
+    }</code></pre>
+<p>Now any changes made to that.playerX by either object will be seen by both objects. In other words, it is passed by reference, not by value. The method that changes the data is called <strong>changePlayer</strong>, and the method that detects the change is called <strong>showPlayerXY</strong>.</p>
+<p>To see this in practice, look at:</p>
+<pre><code>/JsObjects/JavaScripts/Objects/ShareVariables01</code></pre>
+<p>Public reference to this topic on Elvenware:</p>
+<p><a href="http://elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#share-data-between-objects">http://elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#share-data-between-objects</a></p>
