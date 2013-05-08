@@ -15,7 +15,15 @@ Major Topics
 * Working with Properties
 * Unit test and Agile Programming
 * Object Inheritance and Agile principle of Object Design.
+* Working with XML
 
+Properties
+----------
+
+- enumerable: Can it be enumerated?
+- writable: Can its value be changed
+- configurable: Can it be deleted, can its type be changed?
+ 
 Important Sample Code
 ---------------------
 
@@ -24,10 +32,11 @@ Important Sample Code
 - JsObjects/JavaScript/Objects/Ineritance01
 - JsObjects/JavaScript/Objects/Ineritance03
 - JsObjects/JavaScript/Objects/Ineritance04
-- JsObjects/JavaScript/ObjectThis
-- JsObjects/JavaScript/ShareVariable01
-- JsObjects/JavaScript/ShareVariable02
-- JsObjects/JavaScript/PresidentsJson
+- JsObjects/JavaScript/Objects/ObjectThis
+- JsObjects/JavaScript/Objects/StaticPrivateData
+- JsObjects/JavaScript/Objects/ShareVariable01
+- JsObjects/JavaScript/Objects/ShareVariable02
+- JsObjects/JavaScript/NodeCode/PresidentsJson
 - Prog282-Hints/CanvasGrid0?
 
 SSH
@@ -39,5 +48,5 @@ SSH
 HTML5
 -----
 
-- http://www.unrealengine.com/html5/>
+- <http://www.unrealengine.com/html5/>
 
