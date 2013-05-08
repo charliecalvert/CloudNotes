@@ -24,6 +24,9 @@ Important Sample Code
 - JsObjects/JavaScript/ObjectThis
 - JsObjects/JavaScript/ShareVariable01
 - JsObjects/JavaScript/ShareVariable02
+- JsObjects/JavaScript/Objects/Ineritance01
+- JsObjects/JavaScript/Objects/Ineritance03
+- JsObjects/JavaScript/Objects/Ineritance04
 - JsObjects/JavaScript/PresidentsJson
 - Prog282-Hints/CanvasGrid0?
 
@@ -32,4 +35,9 @@ SSH
 
 - <http://www.elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#sshAgent>
 - <http://www.elvenware.com/charlie/development/cloud/Git.html#the-ssh-key>
+
+HTML5
+-----
+
+- http://www.unrealengine.com/html5/>
 
