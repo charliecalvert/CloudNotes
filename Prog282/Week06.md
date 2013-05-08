@@ -21,6 +21,9 @@ Important Sample Code
 
 - JsObjects/HtmlCssJavaScript/SwitchCanvas
 - JsObjects/HtmlCssJavaScript/SwitchHtml
+- JsObjects/JavaScript/Objects/Ineritance01
+- JsObjects/JavaScript/Objects/Ineritance03
+- JsObjects/JavaScript/Objects/Ineritance04
 - JsObjects/JavaScript/ObjectThis
 - JsObjects/JavaScript/ShareVariable01
 - JsObjects/JavaScript/ShareVariable02
