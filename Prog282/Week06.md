@@ -55,3 +55,77 @@ Unit Tests
 
 - <http://www.elvenware.com/charlie/development/web/UnitTests/index.html>
 
+This is entirely optional, but some of you may want to run tests from the
+command line, and in particular, may want to test your node code. 
+
+You can use a tool called [Mocha](http://visionmedia.github.io/mocha/) to 
+run tests with node. This enables us to run tests from the command line 
+without using qunit and a browser. It is not that Mocha is better or worse 
+than qUnit, it is simply an alternative to qUnit.
+
+	npm install -g mocha
+	
+The above command installs mocha in a globally available folder. Now you don't
+have to worry about running npm install mocha each time you use it. When using
+some libraries global npm installs are not a good idea, and in some cases it
+is optional. But with Mocha, you should use the -g (global) install option.
+
+Now create a directory called test:
+
+	mkdir test
+	
+Inside that directory, create a file called **test.js** with the following,
+hello world style, code:
+
+~~~~
+var assert = require("assert");
+ 
+describe("Test01", function() {
+	it ("Is 3 equal to 3",  function() {
+		assert.equal(3, 3);
+	});
+});
+~~~~
+
+To run the test, just type **mocha** from inside the test folder.
+	
+- <http://visionmedia.github.io/mocha/>
+
+Check File Endings in Linux
+---------------------------
+
+In JsObjects/Python/PythonUtils there is a file called:
+
+	crlf.py
+	
+Put it in your home/ubuntu/bin directory. If that directory does not exist,
+create it:
+
+	mkdir ~/bin
+
+Copy crlf.py into it. The command might look something like this:
+
+	cp ~/Git/JsObjects/Python/PythonUtils/crlf.py ~/bin/.
+	
+Give it executable permissions:
+
+	chmod +x ~/bin/crlf.py
+
+Then check your .project file and make sure it ends with this text:
+
+	# set PATH so it includes user's private bin if it exists
+	if [ -d "$HOME/bin" ] ; then
+		PATH="$HOME/bin:$PATH"
+	fi
+
+If it does not have that text in it, then use nano to put it there:
+
+	nano ~/.profile
+	
+Save your work. Reboot your system. Now the bin directory will be on your path.
+
+Find one of the files you suspect might not have the right line endings. Run
+crlf.py against it:
+
+	crlf.py MyFile.js
+
