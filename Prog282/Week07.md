@@ -69,6 +69,10 @@ There is a Windows install. For the Linux install:
 
 sudo apt-get install couchdb -y
 
+For windows:
+
+<http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe>
+
 <http://couchdb.apache.org/>
 <http://wiki.apache.org/couchdb/>
 <http://wiki.apache.org/couchdb/Installing_on_Ubuntu>
@@ -80,6 +84,11 @@ We will access the database via HTTP and use request:
 Getting started:
 
 <http://guide.couchdb.org/draft/tour.html>
+
+Once you have it installed on Windows, use the browser:
+
+<http://127.0.0.1:5984/>
+
 
 
 SqlLite
