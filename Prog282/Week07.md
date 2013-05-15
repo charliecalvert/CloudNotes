@@ -76,6 +76,7 @@ For windows:
 <http://couchdb.apache.org/>
 <http://wiki.apache.org/couchdb/>
 <http://wiki.apache.org/couchdb/Installing_on_Ubuntu>
+<http://guide.couchdb.org/editions/1/en/index.html>
 
 We will access the database via HTTP and use request:
 
@@ -87,9 +88,49 @@ Getting started:
 
 Once you have it installed on Windows, use the browser:
 
-<http://127.0.0.1:5984/>
+- <http://127.0.0.1:5984/>
+- [futon](http://localhost:5984/_utils/)
+
+We want to go to config.html, which is reachable from futon, and set 
+allow_jsonp to true. It is in the http section, about half way down the
+page:
+
+<http://localhost:5984/_utils/config.html>
+
+One way to get around the same origin policy (cross site restriction), 
+is to build a CouchDb hosted application with CouchApp.
+
+- Get CouchAppAuto from JsObjects/Data.
+- Change the first editable line (the AppName) in the go batch file.
+- Run the batch file
+- Go into the directory it created, which is the same as your AppName
+- Put your HTML and CSS in the _attachments directory
+- Go something like here: http://127.0.0.1:5984/couchapp04/_design/CouchApp06/index.html
 
 
+
+CouchApps
+---------
+
+- <http://couchapp.org/page/index>
+- <http://couchapp.org/page/getting-started>
+- <http://garden20.com/>
+
+To Install CouchApp for use With Node
+
+npm install -g couchapp
+
+To install couchapp without Node: 
+
+- <http://sourceforge.net/projects/pywin32/>
+
+When you are done, make sure couchapp.bat or couchapp.exe is on your path. If you installed
+via Python (rather than the totally stand alone option), this might mean
+you do add something like this to your path
+
+	c:\Python27\Scripts
+
+It will be the scripts directory that holds you couchapp.bat file.
 
 SqlLite
 -------
@@ -115,6 +156,8 @@ CREATE TABLE people(
    lastName text,
    age integer
 );
+
+
 
 Free Graphics
 -------------

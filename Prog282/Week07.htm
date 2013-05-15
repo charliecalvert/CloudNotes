@@ -1,3 +1,75 @@
+<h1 id="week07">Week07</h1>
+<h1 id="main-topics">Main Topics</h1>
+<ul>
+<li>Databases</li>
+<li>VirtualBox</li>
+<li>Two Grids (Background and NPCs - GridCanvas04</li>
+<li>Finding an NPC</li>
+</ul>
+<pre><code>    var detectCollision = function(playerX, playerY) {
+        var npcNumber = npcs[playerY][playerX];
+        if (npcNumber !== 0) {
+            $(&quot;#npc&quot;).html(&quot;Found an npc with number: &quot; + npcNumber);
+        }
+    }</code></pre>
+<h2 id="virtualbox">VirtualBox</h2>
+<p>The minimal cd, let's use the 32 bit 13.04 ringtail option.</p>
+<p><a href="https://help.ubuntu.com/community/Installation/MinimalCD">https://help.ubuntu.com/community/Installation/MinimalCD</a> <a href="http://archive.ubuntu.com/ubuntu/dists/raring/main/installer-i386/current/images/netboot/mini.iso">http://archive.ubuntu.com/ubuntu/dists/raring/main/installer-i386/current/images/netboot/mini.iso</a> <a href="http://elvenware.com/charlie/os/linux/VirtualBox.html">http://elvenware.com/charlie/os/linux/VirtualBox.html</a> <a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#minimal">http://elvenware.com/charlie/os/linux/VirtualBox.html#minimal</a></p>
+<p>When doing the install, you can follow the steps for minimal install, linked above. Some quick reminders if you just need a few hints:</p>
+<ul>
+<li>At 1048 MB of Memory (2048 preferred)</li>
+<li>Create virtual hard drive now</li>
+<li>VDI, Dynamically allocated, 8 GB if you are short on disk space, else 16 GB.</li>
+<li>Settings | Storage | Add CD</li>
+<li>Network Bridged Adapter PCNet Fast III (If you are at school, see notes)</li>
+</ul>
+<p>During the install:</p>
+<ul>
+<li>Guided, use entire disk.</li>
+<li>Just install Ubuntu Server and SSH Server.</li>
+<li>If you create other installs, then create an Ubuntu Desktop or Lubuntu desktop.</li>
+</ul>
+<p>As soon as you have the puppy properly installed, then immediately make a VirtualBox appliance as a back up. Make more applianaces as needed, and name them carefully.</p>
+<p>I have generally found that it is not worth the effort to try to get two copies of the same virtual appliance running at the same time. (Let me know if you find a clean way to do this.)</p>
+<p>My suggestion is that you do a VBox Ubuntu install, make an appliance as a back up, and get to work. Then some Saturday afternoon when nothing much is happening, create a few more VBox Ubuntu installs. It might be nice to have four or five of them around, assuming you have the hard drive space. Name them carefully. <a href="http://www.elvenware.com/charlie/development/cloud/virtualization.html">http://www.elvenware.com/charlie/development/cloud/virtualization.html</a></p>
+<h2 id="databases">Databases</h2>
+<h2 id="couchdb">CouchDb</h2>
+<p>There is a Windows install. For the Linux install:</p>
+<p>sudo apt-get install couchdb -y</p>
+<p>For windows:</p>
+<p><a href="http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe">http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe</a></p>
+<p><a href="http://couchdb.apache.org/">http://couchdb.apache.org/</a> <a href="http://wiki.apache.org/couchdb/">http://wiki.apache.org/couchdb/</a> <a href="http://wiki.apache.org/couchdb/Installing_on_Ubuntu">http://wiki.apache.org/couchdb/Installing_on_Ubuntu</a></p>
+<p>We will access the database via HTTP and use request:</p>
+<p><a href="https://github.com/mikeal/request">https://github.com/mikeal/request</a></p>
+<p>Getting started:</p>
+<p><a href="http://guide.couchdb.org/draft/tour.html">http://guide.couchdb.org/draft/tour.html</a></p>
+<p>Once you have it installed on Windows, use the browser:</p>
+<ul>
+<li><a href="http://127.0.0.1:5984/">http://127.0.0.1:5984/</a></li>
+<li><a href="http://localhost:5984/_utils/">futon</a></li>
+</ul>
+<p>We want to go to config.html, which is reachable from futon, and set allow_jsonp to true. It is in the http section, about half way down the page:</p>
+<p><a href="http://localhost:5984/_utils/config.html">http://localhost:5984/_utils/config.html</a></p>
+<h2 id="sqllite">SqlLite</h2>
+<p>We probably won't be using SqlLite.</p>
+<p>When downloading for Windows, look for the <strong>Precompiled Binaries</strong> and look for the command line shell.</p>
+<ul>
+<li><a href="http://www.sqlite.org/">http://www.sqlite.org/</a></li>
+<li><a href="http://www.sqlite.org/download.html">http://www.sqlite.org/download.html</a></li>
+<li><a href="http://www.sqlite.org/datatype3.html">http://www.sqlite.org/datatype3.html</a></li>
+</ul>
+<pre><code>apt-get install sqlite3
+apt-get install libsqlite3-dev
+npm install sqlite3</code></pre>
+<p>CREATE TABLE people( varchar(30) primary key, firstName text, lastName text, age integer );</p>
+<h2 id="free-graphics">Free Graphics</h2>
+<ul>
+<li><a href="http://opengameart.org/">http://opengameart.org/</a></li>
+<li><a href="http://www.lostgarden.com/2006/07/more-free-game-graphics.html">http://www.lostgarden.com/2006/07/more-free-game-graphics.html</a></li>
+<li><a href="http://gamedev.stackexchange.com/questions/20/where-can-i-find-free-sprites-and-images">http://gamedev.stackexchange.com/questions/20/where-can-i-find-free-sprites-and-images</a></li>
+<li><a href="http://www.cgtextures.com/">http://www.cgtextures.com/</a></li>
+</ul>
+<h2 id="angular-js">Angular JS</h2>
 <h2 id="folder-manipulation">Folder Manipulation</h2>
 <p>A library with a routine for ensuring a directory exists and for recursively removing directories.</p>
 <pre><code>var mkdirp = require(&#39;mkdirp&#39;);
@@ -54,5 +126,5 @@ var SimpleDir = (function() {
 })();
 
 exports.dirs = new SimpleDir();</code></pre>
-<h2 id="angular-js">Angular JS</h2>
+<h2 id="angular-js-1">Angular JS</h2>
 <p><a href="http://stephanebegaudeau.tumblr.com/post/48776908163/everything-you-need-to-understand-to-start-with">http://stephanebegaudeau.tumblr.com/post/48776908163/everything-you-need-to-understand-to-start-with</a> <a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/all-you-need-to-know-about-the-html5-data-attribute/">http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/all-you-need-to-know-about-the-html5-data-attribute/</a></p>
