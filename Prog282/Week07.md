@@ -4,10 +4,27 @@ Week07
 Main Topics 
 ===========
 
-- Databases
+- Databases - CouchDb
 - VirtualBox
 - Two Grids (Background and NPCs - GridCanvas04
 - Finding an NPC
+
+Key Demos:
+
+There are mostly in JsObjects\Data. Look especially at:
+
+- CouchDb08: This one is crucial.
+- CouchApp06: Look in the _attachments directory
+- CouchDb03: Using the **request** library
+- CouchDb04: Using the **nano** library
+- CouchDb05: This is a **hello world** of sorts for couchdb
+
+Collisions
+----------
+
+Here is one way to detect a collision with an NPC. It assumes that
+npcs is a two dimensional array containing 0 for no NPC and any other
+number is an NPC.
 
 ~~~~
 	var detectCollision = function(playerX, playerY) {
@@ -77,6 +94,7 @@ For windows:
 <http://wiki.apache.org/couchdb/>
 <http://wiki.apache.org/couchdb/Installing_on_Ubuntu>
 <http://guide.couchdb.org/editions/1/en/index.html>
+<http://guide.couchdb.org/>
 
 We will access the database via HTTP and use request:
 

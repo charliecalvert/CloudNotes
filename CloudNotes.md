@@ -51,3 +51,5 @@ Prog 282
 -	[Week05](Prog282/Week05.html)
 -   [Week05-CanvasGrid](Prog282/Week05-CanvasGrid.html)
 -	[Week06](Prog282/Week06.html)
+-	[Week07](Prog282/Week07.html)
+-	[Week07-Assignment](Prog282/Week07-Assignment.html)

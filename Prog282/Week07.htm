@@ -1,11 +1,22 @@
 <h1 id="week07">Week07</h1>
 <h1 id="main-topics">Main Topics</h1>
 <ul>
-<li>Databases</li>
+<li>Databases - CouchDb</li>
 <li>VirtualBox</li>
 <li>Two Grids (Background and NPCs - GridCanvas04</li>
 <li>Finding an NPC</li>
 </ul>
+<p>Key Demos:</p>
+<p>There are mostly in JsObjects. Look especially at:</p>
+<ul>
+<li>CouchDb08: This one is crucial.</li>
+<li>CouchApp06: Look in the _attachments directory</li>
+<li>CouchDb03: Using the <strong>request</strong> library</li>
+<li>CouchDb04: Using the <strong>nano</strong> library</li>
+<li>CouchDb05: This is a <strong>hello world</strong> of sorts for couchdb</li>
+</ul>
+<h2 id="collisions">Collisions</h2>
+<p>Here is one way to detect a collision with an NPC. It assumes that npcs is a two dimensional array containing 0 for no NPC and any other number is an NPC.</p>
 <pre><code>    var detectCollision = function(playerX, playerY) {
         var npcNumber = npcs[playerY][playerX];
         if (npcNumber !== 0) {
@@ -38,7 +49,7 @@
 <p>sudo apt-get install couchdb -y</p>
 <p>For windows:</p>
 <p><a href="http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe">http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe</a></p>
-<p><a href="http://couchdb.apache.org/">http://couchdb.apache.org/</a> <a href="http://wiki.apache.org/couchdb/">http://wiki.apache.org/couchdb/</a> <a href="http://wiki.apache.org/couchdb/Installing_on_Ubuntu">http://wiki.apache.org/couchdb/Installing_on_Ubuntu</a></p>
+<p><a href="http://couchdb.apache.org/">http://couchdb.apache.org/</a> <a href="http://wiki.apache.org/couchdb/">http://wiki.apache.org/couchdb/</a> <a href="http://wiki.apache.org/couchdb/Installing_on_Ubuntu">http://wiki.apache.org/couchdb/Installing_on_Ubuntu</a> <a href="http://guide.couchdb.org/editions/1/en/index.html">http://guide.couchdb.org/editions/1/en/index.html</a></p>
 <p>We will access the database via HTTP and use request:</p>
 <p><a href="https://github.com/mikeal/request">https://github.com/mikeal/request</a></p>
 <p>Getting started:</p>
@@ -50,6 +61,30 @@
 </ul>
 <p>We want to go to config.html, which is reachable from futon, and set allow_jsonp to true. It is in the http section, about half way down the page:</p>
 <p><a href="http://localhost:5984/_utils/config.html">http://localhost:5984/_utils/config.html</a></p>
+<p>One way to get around the same origin policy (cross site restriction), is to build a CouchDb hosted application with CouchApp.</p>
+<ul>
+<li>Get CouchAppAuto from JsObjects/Data.</li>
+<li>Change the first editable line (the AppName) in the go batch file.</li>
+<li>Run the batch file</li>
+<li>Go into the directory it created, which is the same as your AppName</li>
+<li>Put your HTML and CSS in the _attachments directory</li>
+<li>Go something like here: http://127.0.0.1:5984/couchapp04/_design/CouchApp06/index.html</li>
+</ul>
+<h2 id="couchapps">CouchApps</h2>
+<ul>
+<li><a href="http://couchapp.org/page/index">http://couchapp.org/page/index</a></li>
+<li><a href="http://couchapp.org/page/getting-started">http://couchapp.org/page/getting-started</a></li>
+<li><a href="http://garden20.com/">http://garden20.com/</a></li>
+</ul>
+<p>To Install CouchApp for use With Node</p>
+<p>npm install -g couchapp</p>
+<p>To install couchapp without Node:</p>
+<ul>
+<li><a href="http://sourceforge.net/projects/pywin32/">http://sourceforge.net/projects/pywin32/</a></li>
+</ul>
+<p>When you are done, make sure couchapp.bat or couchapp.exe is on your path. If you installed via Python (rather than the totally stand alone option), this might mean you do add something like this to your path</p>
+<pre><code>c:\Python27\Scripts</code></pre>
+<p>It will be the scripts directory that holds you couchapp.bat file.</p>
 <h2 id="sqllite">SqlLite</h2>
 <p>We probably won't be using SqlLite.</p>
 <p>When downloading for Windows, look for the <strong>Precompiled Binaries</strong> and look for the command line shell.</p>
