@@ -94,6 +94,32 @@ For windows:
 
 <http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe>
 
+CouchDb will probably be installed here:
+
+C:\Program Files (x86)\Apache\CouchDB
+C:\Program Files (x86)\Apache Software Foundation\CouchDB
+
+CouchDb runs as a service, so use the Services panel to stop and start
+it. You can control Windows services via the control panel:
+
+	Control Panel\System and Security\Administrative Tools
+	
+The configuration file is likely stored here:
+
+	C:\Program Files (x86)\Apache\CouchDB\etc\couchdb\local.ini
+	
+But see this, which describes a hierarch of configuration files:
+
+	<http://docs.couchdb.org/en/latest/configuring.html>
+	
+Ultimately, you will probably have to know how to edit these files, as
+your IP address will change as you log into various wireless networks.
+Be sure to see up an Admin Account!
+
+On Linux, try running couch-config.
+
+More information:
+
 <http://couchdb.apache.org/>
 <http://wiki.apache.org/couchdb/>
 <http://wiki.apache.org/couchdb/Installing_on_Ubuntu>
