@@ -53,3 +53,5 @@ Prog 282
 -	[Week06](Prog282/Week06.html)
 -	[Week07](Prog282/Week07.html)
 -	[Week07-Assignment](Prog282/Week07-Assignment.html)
+-	[Week08](Prog282/Week08.html)
+-	[Week08-Assignment](Prog282/Week08-Assignment.html)

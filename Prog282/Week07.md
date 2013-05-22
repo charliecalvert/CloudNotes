@@ -86,64 +86,9 @@ For now, our reason for using NoSQL look something like this:
 CouchDb
 -------
 
-There is a Windows install. For the Linux install:
+The CouchDb material has moved here:
 
-sudo apt-get install couchdb -y
-
-For windows:
-
-<http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe>
-
-CouchDb will probably be installed here:
-
-C:\Program Files (x86)\Apache\CouchDB
-C:\Program Files (x86)\Apache Software Foundation\CouchDB
-
-CouchDb runs as a service, so use the Services panel to stop and start
-it. You can control Windows services via the control panel:
-
-	Control Panel\System and Security\Administrative Tools
-	
-The configuration file is likely stored here:
-
-	C:\Program Files (x86)\Apache\CouchDB\etc\couchdb\local.ini
-	
-But see this, which describes a hierarch of configuration files:
-
-	<http://docs.couchdb.org/en/latest/configuring.html>
-	
-Ultimately, you will probably have to know how to edit these files, as
-your IP address will change as you log into various wireless networks.
-Be sure to see up an Admin Account!
-
-On Linux, try running couch-config.
-
-More information:
-
-<http://couchdb.apache.org/>
-<http://wiki.apache.org/couchdb/>
-<http://wiki.apache.org/couchdb/Installing_on_Ubuntu>
-<http://guide.couchdb.org/editions/1/en/index.html>
-<http://guide.couchdb.org/>
-
-We will access the database via HTTP and use request:
-
-<https://github.com/mikeal/request>
-
-Getting started:
-
-<http://guide.couchdb.org/draft/tour.html>
-
-Once you have it installed on Windows, use the browser:
-
-- <http://127.0.0.1:5984/>
-- [futon](http://localhost:5984/_utils/)
-
-We want to go to config.html, which is reachable from futon, and set 
-allow_jsonp to true. It is in the http section, about half way down the
-page:
-
-<http://localhost:5984/_utils/config.html>
+<http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html>
 
 The Same Origin Policy
 ----------------------
@@ -220,6 +165,7 @@ npm install -g couchapp
 To install couchapp without Node: 
 
 - <http://sourceforge.net/projects/pywin32/>
+- <https://github.com/couchapp/couchapp/downloads>
 
 When you are done, make sure couchapp.bat or couchapp.exe is on your path. If you installed
 via Python (rather than the totally stand alone option), this might mean

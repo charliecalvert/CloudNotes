@@ -58,22 +58,8 @@
 <li>In some use cases, NoSQL is a better choice than SQL</li>
 </ul>
 <h2 id="couchdb">CouchDb</h2>
-<p>There is a Windows install. For the Linux install:</p>
-<p>sudo apt-get install couchdb -y</p>
-<p>For windows:</p>
-<p><a href="http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe">http://apache.mirrors.pair.com/couchdb/binary/win/1.3.0/setup-couchdb-1.3.0_R15B03-1.exe</a></p>
-<p><a href="http://couchdb.apache.org/">http://couchdb.apache.org/</a> <a href="http://wiki.apache.org/couchdb/">http://wiki.apache.org/couchdb/</a> <a href="http://wiki.apache.org/couchdb/Installing_on_Ubuntu">http://wiki.apache.org/couchdb/Installing_on_Ubuntu</a> <a href="http://guide.couchdb.org/editions/1/en/index.html">http://guide.couchdb.org/editions/1/en/index.html</a> <a href="http://guide.couchdb.org/">http://guide.couchdb.org/</a></p>
-<p>We will access the database via HTTP and use request:</p>
-<p><a href="https://github.com/mikeal/request">https://github.com/mikeal/request</a></p>
-<p>Getting started:</p>
-<p><a href="http://guide.couchdb.org/draft/tour.html">http://guide.couchdb.org/draft/tour.html</a></p>
-<p>Once you have it installed on Windows, use the browser:</p>
-<ul>
-<li><a href="http://127.0.0.1:5984/">http://127.0.0.1:5984/</a></li>
-<li><a href="http://localhost:5984/_utils/">futon</a></li>
-</ul>
-<p>We want to go to config.html, which is reachable from futon, and set allow_jsonp to true. It is in the http section, about half way down the page:</p>
-<p><a href="http://localhost:5984/_utils/config.html">http://localhost:5984/_utils/config.html</a></p>
+<p>The CouchDb material has moved here:</p>
+<p><a href="http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html">http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html</a></p>
 <h2 id="the-same-origin-policy">The Same Origin Policy</h2>
 <p>Let's talk a bit more about jsonp, since this is not a subject we have discussed in depth so far.</p>
 <p>After you install CouchDb, you can open up their ﻿<strong>Futon</strong> ﻿web app:</p>
@@ -108,6 +94,7 @@
 <p>To install couchapp without Node:</p>
 <ul>
 <li><a href="http://sourceforge.net/projects/pywin32/">http://sourceforge.net/projects/pywin32/</a></li>
+<li><a href="https://github.com/couchapp/couchapp/downloads">https://github.com/couchapp/couchapp/downloads</a></li>
 </ul>
 <p>When you are done, make sure couchapp.bat or couchapp.exe is on your path. If you installed via Python (rather than the totally stand alone option), this might mean you do add something like this to your path</p>
 <pre><code>c:\Python27\Scripts</code></pre>
