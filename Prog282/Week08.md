@@ -5,7 +5,14 @@ The Week 08 Assignment:
 
 - <http://elvenware.com/charlie/books/CloudNotes/Prog282/Week08-Assignment.html>
 
+Major Topics
+------------
+	
+	Handlebars and Nano
+	Attachments and Nano
+
 Merging Git Files:
+------------------
 
 - <http://elvenware.com/charlie/development/cloud/Git.html#merging-code>
 
