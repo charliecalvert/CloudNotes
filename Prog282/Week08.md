@@ -10,6 +10,8 @@ Major Topics
 	
 	Handlebars and Nano
 	Attachments and Nano
+	
+	<http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html>
 
 Merging Git Files:
 ------------------

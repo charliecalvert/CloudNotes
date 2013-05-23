@@ -5,6 +5,7 @@ Useful links:
 
 - <http://elvenware.com/charlie/books/CloudNotes/Prog282/Week08.html>
 - <http://elvenware.com/charlie/books/CloudNotes/CloudNotes.html>
+- <https://github.com/dscape/nano>
 
 We are going to continue working with our CanvasGrid projects from the 
 Midterm. The overall goal this week is to start moving all your data, 
@@ -13,6 +14,10 @@ and at least some of your documents, into CouchDb.
 You can continue to store some, or even a majority, of your documents 
 and data in subdirectories of your node server. Your goal will be to 
 start moving at least some pieces of your project into a database.
+
+**NOTE**: Give you database a unique name that includes your last name.
+For instance prog282_calvert. Database names should be all small 
+letters, so use an underscore (or dash if it works).
 
 CouchDb stores JSON natively. So anything that you have been sending
 back and forth from the server using JSON is a likely candidate to
