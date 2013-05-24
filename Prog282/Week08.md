@@ -5,13 +5,37 @@ The Week 08 Assignment:
 
 - <http://elvenware.com/charlie/books/CloudNotes/Prog282/Week08-Assignment.html>
 
-Major Topics
+Major Topics 
 ------------
 	
-	Handlebars and Nano
-	Attachments and Nano
+- CouchDb, JSON and Attachments
+- Nano: The API for talking from Node to CouchDb
+- Design Document, Views and CouchDb
+- HandleBars
+- Ajax
+
+One of the most important samples is JsObjects/HtmlCssJavaScript/UnitTestCouchDb01.
+
+- <https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/UnitTestCouchDb01>
+
+It shows how to read and write complex data from CouchDb. Right now,
+despite what I said on Wednesday, I'm not using QueryString in most 
+cases.
 	
-	<http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html>
+Important Links
+---------------
+
+- [Elvenware CouchDb](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html)
+- [Elvenware Node](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
+- [Elvenware jQuery](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
+- [Elvenware JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html)
+- [The Nano API](https://github.com/dscape/nano)
+- [CouchDb](http://couchdb.apache.org/)
+- [HandleBars](http://handlebarsjs.com/)
+
+Here is a core topic you are likely to wrestle with:
+
+- [Insert JSON into CouchDb](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html#error-document-update-conflict)
 
 Merging Git Files:
 ------------------
