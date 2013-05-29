@@ -1,0 +1,55 @@
+<h1 id="week09">Week09</h1>
+<h2 id="phantomjs-and-qunit">PhantomJs and QUnit</h2>
+<p>You can use PhantomJs to run tests on your program from the command line. This means that we can run QUnit tests from the command line:</p>
+<pre><code>G:\Src&gt;phantomjs Tests\run-qunit.js http://localhost:30025/TestCanvasCode.html
+&#39;waitFor()&#39; finished in 233ms.
+Tests completed in 141 milliseconds.
+44 assertions of 58 passed, 14 failed.</code></pre>
+<p>Here is the home page for PhantomJs and a related tool called CasperJs:</p>
+<ul>
+<li><a href="http://phantomjs.org/">http://phantomjs.org/</a></li>
+<li><a href="http://casperjs.org/">http://casperjs.org/</a></li>
+</ul>
+<p>References:</p>
+<ul>
+<li><a href="https://gist.github.com/gmarik/1305062">https://gist.github.com/gmarik/1305062</a></li>
+</ul>
+<h2 id="create-database">Create Database</h2>
+<p>Check if a database exists, if it does not, create it:</p>
+<pre><code>    var makeDatabase = function(response, dbName) {
+        nano.db.create(dbName, function(err, body) {
+            if (!err) {
+                console.log(body);
+                // return { &quot;Result&quot; : &quot;Success&quot; };
+            } else {
+                console.log(&#39;Could not create database&#39;);
+                console.log(err);
+                response.send(500, err);
+            }
+        });
+    };
+
+    var dbExists = function(response, dbName) {
+        nano.db.list(function(err, body) {
+            var dbFound = false;
+            // body is an array
+            body.forEach(function(db) {
+                console.log(db);
+                if (db === dbName) {
+                    console.log(&#39;database exists&#39;);
+                    dbFound = true;
+                }
+            });
+            
+            // If dbName not found, create database         
+            if (!dbFound) {
+                makeDatabase(response, dbName);
+            }
+        });
+    };</code></pre>
+<p>Call it like this:</p>
+<pre><code>dbExists(response, dbName);</code></pre>
+<h2 id="express-complete-build">Express Complete Build</h2>
+<p>http://blog.jtmoon.com/real-time-application-multi-user-chat-application-using-node-js-socket-io-and-ember-js/ http://tech.pro/tutorial/1097/simple-chat-nodejs-plus-websockets</p>
+<p>Express application is here:</p>
+<p>C:_modules.bin</p>

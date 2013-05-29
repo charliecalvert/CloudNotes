@@ -179,32 +179,20 @@ couchapp init
 couchapp push . http://localhost:5984/pages
 
 Erica
------
+----
 
-	<https://github.com/benoitc/erica>
+Here:
 
-Install erica:
-	
-	git clone git://github.com/benoitc/erica.git
-	sudo apt-get install erlang
-
-Or, if you want to get into erlang, do this:
-
-	sudo apt-get install erlang erlang-doc
-
-Then create something
-
-	erica create-webapp
-	cd myapp
-	erica push http://192.168.2.18:5984/myapp
-
-Create an app called bar:
-
-	erica create-webapp appid=bar
-	cd bar
-	erica push http://192.168.2.18:5984/bar
+	<http://elvenware.com/charlie/development/database/NoSql/CouchDb.html#erica>
 
 Git Merge
 ---------
 
 - <http://elvenware.com/charlie/development/cloud/Git.html#merging-code>
+
+Web Performance
+---------------
+
+Here's a nice link:
+
+<http://calendar.perfplanet.com/2012/>
