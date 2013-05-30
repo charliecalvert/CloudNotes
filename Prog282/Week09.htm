@@ -1,4 +1,17 @@
-<h1 id="week09">Week09</h1>
+<h1 id="week09-overview">Week09 Overview</h1>
+<p>Our major topic:</p>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#express-generated-applications">Express Generated Apps on Elvenware</a></li>
+<li><a href="http://jade-lang.com/">Jade</a></li>
+<li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html">CouchDb on Elvenware</a></li>
+<li><a href="http://phantomjs.org/">PhantomJs site. Also see below.</a></li>
+</ul>
+<p>The assignments:</p>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/books/CloudNotes/Prog282/Week09-InClass.html">Week09-InClass</a></li>
+<li><a href="http://www.elvenware.com/charlie/books/CloudNotes/Prog282/Week09-Assignment.html">Week09-Assignment</a></li>
+</ul>
 <h2 id="phantomjs-and-qunit">PhantomJs and QUnit</h2>
 <p>You can use PhantomJs to run tests on your program from the command line. This means that we can run QUnit tests from the command line:</p>
 <pre><code>G:\Src&gt;phantomjs Tests\run-qunit.js http://localhost:30025/TestCanvasCode.html
@@ -44,12 +57,26 @@ Tests completed in 141 milliseconds.
             // If dbName not found, create database         
             if (!dbFound) {
                 makeDatabase(response, dbName);
+            } else {
+                response.send({&#39;Result&#39;:&#39;Database Exists&#39;})
             }
         });
     };</code></pre>
 <p>Call it like this:</p>
 <pre><code>dbExists(response, dbName);</code></pre>
 <h2 id="express-complete-build">Express Complete Build</h2>
-<p>http://blog.jtmoon.com/real-time-application-multi-user-chat-application-using-node-js-socket-io-and-ember-js/ http://tech.pro/tutorial/1097/simple-chat-nodejs-plus-websockets</p>
+<p>Some links for express and a note or two.</p>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#express-generated-applications">Express Generated Apps on Elvenware</a></li>
+<li><a href="http://blog.jtmoon.com/real-time-application-multi-user-chat-application-using-node-js-socket-io-and-ember-js/">Multi-user Chat</a></li>
+<li><a href="http://tech.pro/tutorial/1097/simple-chat-nodejs-plus-websockets">Simple Chat</a></li>
+</ul>
 <p>Express application is here:</p>
-<p>C:_modules.bin</p>
+<pre><code>C:\Users\Charlie\AppData\Roaming\npm\node_modules\.bin</code></pre>
+<p>Of sometimes just in your ../node_modules/express/.bin directory</p>
+<h2 id="nodemon-watches-for-changes">Nodemon Watches for Changes</h2>
+<p>Install nodemon:</p>
+<pre><code>npm install -g nodemon</code></pre>
+<p>Now use it to start your application:</p>
+<pre><code>nodemon server.js</code></pre>
+<p>Now you won't have to restart your application each time you change the source.</p>

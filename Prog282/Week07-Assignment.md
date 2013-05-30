@@ -11,7 +11,7 @@ You have several tasks:
 - Get the JsObjects demo CouchDb08 running on it.
 - Put a screen shot of CouchDb08 on your AWS apache server in /var/www/
 - Link to your screen shot from your index.html
-- Create a CouchApp program and run at least your Game Grid out of it
+- Create a CouchApp or Express based CouchDb program and run at least your Game Grid out of it
 - Create a screen shot, and serve it up from your aws apache server.
 - Update the latest version of your repository with your index.html and bitmap files.
 - Optionally do the minimal install for Ubuntu 13.04 on VirtualBox

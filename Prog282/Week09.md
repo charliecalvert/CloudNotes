@@ -1,5 +1,19 @@
-Week09
-======
+Week09 Overview
+===============
+
+Our major topic:
+
+- [Express Generated Apps on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#express-generated-applications)
+- [Jade](http://jade-lang.com/)
+- [Stylus](http://learnboost.github.io/stylus/)
+- [CouchDb on Elvenware](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html)
+- [PhantomJs site. Also see below.](http://phantomjs.org/)
+
+The assignments:
+
+- [Week09-InClass](http://www.elvenware.com/charlie/books/CloudNotes/Prog282/Week09-InClass.html)
+- [Week09-Assignment](http://www.elvenware.com/charlie/books/CloudNotes/Prog282/Week09-Assignment.html)
+
 
 PhantomJs and QUnit
 -------------------
@@ -72,10 +86,31 @@ Call it like this:
 Express Complete Build
 ----------------------
 
-http://blog.jtmoon.com/real-time-application-multi-user-chat-application-using-node-js-socket-io-and-ember-js/
-http://tech.pro/tutorial/1097/simple-chat-nodejs-plus-websockets
+Some links for express and a note or two.
+
+- [Express Generated Apps on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#express-generated-applications)
+- [Multi-user Chat](http://blog.jtmoon.com/real-time-application-multi-user-chat-application-using-node-js-socket-io-and-ember-js/)
+- [Simple Chat](http://tech.pro/tutorial/1097/simple-chat-nodejs-plus-websockets)
 
 
 Express application is here:
 
+~~~~
 C:\Users\Charlie\AppData\Roaming\npm\node_modules\.bin
+~~~~
+
+Of sometimes just in your ../node_modules/express/.bin directory
+
+Nodemon Watches for Changes
+---------------------------
+
+Install nodemon:
+
+	npm install -g nodemon
+	
+Now use it to start your application:
+
+	nodemon server.js
+	
+Now you won't have to restart your application each time you change
+the source.
