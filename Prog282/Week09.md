@@ -114,3 +114,25 @@ Now use it to start your application:
 	
 Now you won't have to restart your application each time you change
 the source.
+
+
+Initializing Buttons on Dynamically Inserted HTML
+-------------------------------------------------
+
+If you load a HTML page in your game, then you sometimes need
+to initialize the buttons that you will use on that page. One
+way to do that is to link in a JavaScript page from the loaded
+HTML page, and load the buttons there. However, sometimes that
+is not practical. In that case, do something like this:
+
+~~~~
+var htmlView = function() {
+		$('#main').empty();
+		$('#main').load("/Data/newSections.html #barFoo",
+			function() {
+				$("#buttonCreateArray").click(allGridFilesToArray);
+				that.elvenData.setUpCouchDbUtils();
+			}
+		);
+	}
+~~~~
