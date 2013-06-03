@@ -80,3 +80,16 @@ Tests completed in 141 milliseconds.
 <p>Now use it to start your application:</p>
 <pre><code>nodemon server.js</code></pre>
 <p>Now you won't have to restart your application each time you change the source.</p>
+<h2 id="initializing-buttons-on-dynamically-inserted-html">Initializing Buttons on Dynamically Inserted HTML</h2>
+<p>If you load a HTML page in your game, then you sometimes need to initialize the buttons that you will use on that page. One way to do that is to link in a JavaScript page from the loaded HTML page, and load the buttons there. However, sometimes that is not practical. In that case, do something like this:</p>
+<pre><code>    var htmlView = function() {
+        $(&#39;#main&#39;).empty();
+        $(&#39;#main&#39;).load(&quot;/Data/newSections.html #barFoo&quot;,
+            function() {
+                // Init the button here
+                $(&quot;#buttonCreateArray&quot;).click(allGridFilesToArray);
+                // Alternatively, call some method where you init the buttons
+                that.elvenData.setUpCouchDbUtils();
+            }
+        );
+    }</code></pre>

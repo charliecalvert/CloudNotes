@@ -126,11 +126,13 @@ HTML page, and load the buttons there. However, sometimes that
 is not practical. In that case, do something like this:
 
 ~~~~
-var htmlView = function() {
+	var htmlView = function() {
 		$('#main').empty();
 		$('#main').load("/Data/newSections.html #barFoo",
 			function() {
+				// Init the button here
 				$("#buttonCreateArray").click(allGridFilesToArray);
+				// Alternatively, call some method where you init the buttons
 				that.elvenData.setUpCouchDbUtils();
 			}
 		);

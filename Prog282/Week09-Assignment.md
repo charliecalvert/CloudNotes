@@ -64,6 +64,7 @@ these:
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'jade');
 	app.use(require('stylus').middleware(__dirname + '/public'));
+
 	
 Don't forget, of course, to link in the Stylus and Jade libraries with NPM.
 
