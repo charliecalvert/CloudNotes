@@ -1,0 +1,60 @@
+<h1 id="week-10">Week 10</h1>
+<p>We have three classes left, 6/3, 6/5, 6/10.</p>
+<p>Main Topics discussed this week include:</p>
+<ul>
+<li>More on CouchDb and maybe CouchApp/Erica</li>
+<li>Sessions</li>
+<li>Redis</li>
+</ul>
+<p>Key Demos:</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession01">JsObjects/Data/CouchSession01</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession02">JsObjects/Data/CouchSession02</a></li>
+</ul>
+<p>Note that NodeJs is now up to v0.10.9.</p>
+<h2 id="redis">Redis</h2>
+<p><a href="http://redis.io/">Redis</a> is a NoSql database that stores sets, lists and numbers. It includes a nice <a href="http://try.redis.io/">tutorial</a> and <a href="http://redis.io/documentation">documentation</a>.</p>
+<p>On Windows, we can <a href="https://github.com/MSOpenTech/redis">download</a> the unofficial Windows build of Redis like this:</p>
+<ul>
+<li>git clone git://github.com/MSOpenTech/redis.git</li>
+</ul>
+<p>After the download, look in the <strong>bin</strong> directory and unzip the 64 bit binaries.</p>
+<p>On Linux, first make sure you have gcc and make installed:</p>
+<pre><code>    gcc -v
+    make -v </code></pre>
+<p>The above should produce lengthy, but reasonable output. If you see errors, then you need to install <a href="https://help.ubuntu.com/community/InstallingCompilers">these tools</a>:</p>
+<pre><code>    sudo apt-get install build-essential</code></pre>
+<p>You can then use the following script to install redis:</p>
+<pre><code>wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make</code></pre>
+<p>I have placed this script in JsObjects/Utilities/InstallScripts.</p>
+<p>After installing redis, you probably have a copy of the redis tar file and a directory containing the stable version of redis right in the middle of your JsObjects repository. If that is the case, move the stable directory to some other location:</p>
+<p>mv redis-stable ~/.</p>
+<p>Then cd into redis-stable and run the test:</p>
+<pre><code>cd ~/redis-stable
+./runtest</code></pre>
+<p>If necessary, also install tcl:</p>
+<pre><code>sudo apt-get install tcl</code></pre>
+<p>To run the server, type:</p>
+<pre><code>src/redis-server</code></pre>
+<p>If you are working on AWS, you might want to open two Putty windows, one for running redis, and another for running your application.</p>
+<p>There is also a redis client:</p>
+<pre><code>src/redis-cli </code></pre>
+<h2 id="sessions">Sessions</h2>
+<p>The best way to learn about sessions is to run and study the following two demos:</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session01">JsObjects/JavaScript/NodeCode/Session01</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session02">JsObjects/JavaScript/NodeCode/Session02</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session03">JsObjects/JavaScript/NodeCode/Session03</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session04">JsObjects/JavaScript/NodeCode/Session04</a></li>
+</ul>
+<h2 id="turn-off-the-bell-in-linux">Turn off the Bell in Linux</h2>
+<p>Linux terminals can sometimes emit an annoying beep which can lead to familial discord. To fix it, edit or a create a file .inputrc in your home directory. Add the following line to the file:</p>
+<pre><code>set bell-style visible</code></pre>
+<p>Now your terminal will blink, rather than beep. One imagines that there must be a <strong>set bell-style none</strong> command as well, but I have not tried it.</p>
+<ul>
+<li><a href="http://superuser.com/questions/15770/what-is-the-best-way-to-turn-off-the-ubuntu-beep-permanently/15779#15779">http://superuser.com/questions/15770/what-is-the-best-way-to-turn-off-the-ubuntu-beep-permanently/15779#15779</a></li>
+<li><a href="http://www.tldp.org/HOWTO/Visual-Bell-8.html">http://www.tldp.org/HOWTO/Visual-Bell-8.html</a></li>
+</ul>
