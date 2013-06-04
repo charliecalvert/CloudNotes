@@ -103,6 +103,60 @@ two demos:
 - [JsObjects/JavaScript/NodeCode/Session03](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session03)
 - [JsObjects/JavaScript/NodeCode/Session04](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session04)
 
+Users
+-----
+
+When you sign in as a user, you can use the session object to track 
+each individual user. You can use a database like redis or dbcouch
+to store user's progress.
+
+See NodeCode/Session03 or NodeCode/Session04 to see working examples of
+the code discussed in this section.
+
+Be sure to include the session code from Express:
+
+~~~~
+  app.use(express.cookieParser('your secret here'));
+  app.use(express.session());
+~~~~
+
+The addUser method responds to a click on a button. It retrieves the 
+**userName** that the user typed in to our client side HTML.
+
+~~~~
+app.post('/addUser', function(req, res) {
+    console.log('/addUser called.')
+    console.log(req.body);
+    req.session.userName = req.body.userName;
+    res.send({'Result': JSON.stringify(req.session)});
+});
+~~~~
+
+When you call up a particular page, the program first tracks the page
+you selected in the session object, and then uses handlebars to display
+an HTML file designed to mirror back information about your session.
+The handlebars code is encapsulated in an object called SessionHelper:
+
+	sessionHelp = require('./Library/SessionHelper')
+
+We pass in the request object to the SessionHelper, and it uses that
+object to retrieve the data that we need to help us track an individual
+session, or an individual user:
+
+~~~~
+    var mainFile = readHtml('./Templates/SessionInfo.html');
+
+    var template = handlebars.compile(mainFile);
+
+    var result = template({
+        pageName: '2',
+        userName: request.session.userName,
+        previousPage: request.session.lastPage,
+        cookieId : request.id,
+        sessionId: request.sessionID      
+    });
+~~~~        
+
 
 Turn off the Bell in Linux
 --------------------------

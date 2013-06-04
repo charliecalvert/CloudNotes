@@ -50,6 +50,33 @@ make</code></pre>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session03">JsObjects/JavaScript/NodeCode/Session03</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session04">JsObjects/JavaScript/NodeCode/Session04</a></li>
 </ul>
+<h2 id="users">Users</h2>
+<p>When you sign in as a user, you can use the session object to track each individual user. You can use a database like redis or dbcouch to store user's progress.</p>
+<p>See NodeCode/Session03 or NodeCode/Session04 to see working examples of the code discussed in this section.</p>
+<p>Be sure to include the session code from Express:</p>
+<pre><code>  app.use(express.cookieParser(&#39;your secret here&#39;));
+  app.use(express.session());</code></pre>
+<p>The addUser method responds to a click on a button. It retrieves the <strong>userName</strong> that the user typed in to our client side HTML.</p>
+<pre><code>app.post(&#39;/addUser&#39;, function(req, res) {
+    console.log(&#39;/addUser called.&#39;)
+    console.log(req.body);
+    req.session.userName = req.body.userName;
+    res.send({&#39;Result&#39;: JSON.stringify(req.session)});
+});</code></pre>
+<p>When you call up a particular page, the program first tracks the page you selected in the session object, and then uses handlebars to display an HTML file designed to mirror back information about your session. The handlebars code is encapsulated in an object called SessionHelper:</p>
+<pre><code>sessionHelp = require(&#39;./Library/SessionHelper&#39;)</code></pre>
+<p>We pass in the request object to the SessionHelper, and it uses that object to retrieve the data that we need to help us track an individual session, or an individual user:</p>
+<pre><code>    var mainFile = readHtml(&#39;./Templates/SessionInfo.html&#39;);
+
+    var template = handlebars.compile(mainFile);
+
+    var result = template({
+        pageName: &#39;2&#39;,
+        userName: request.session.userName,
+        previousPage: request.session.lastPage,
+        cookieId : request.id,
+        sessionId: request.sessionID      
+    });</code></pre>
 <h2 id="turn-off-the-bell-in-linux">Turn off the Bell in Linux</h2>
 <p>Linux terminals can sometimes emit an annoying beep which can lead to familial discord. To fix it, edit or a create a file .inputrc in your home directory. Add the following line to the file:</p>
 <pre><code>set bell-style visible</code></pre>
