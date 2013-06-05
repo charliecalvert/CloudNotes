@@ -16,6 +16,18 @@ Key Demos:
 
 Note that NodeJs is now up to v0.10.9.
 
+CouchDb Attach Example
+----------------------
+
+You can find it here: 
+
+	JsObjects/Data/CouchUtils/CouchAttach01
+	
+Pass in the document name you want to use in couchDb and the name of the 
+document you want send to couchDb. For example:
+
+	node CouchAttach.js index index.html
+
 Redis
 -----
 
@@ -95,7 +107,15 @@ src/redis-cli
 Sessions
 --------
 
-The best way to learn about sessions is to run and study the following
+Sessions have the following traits:
+
+When we create session, a cookie is built in, it is part of the session. Each
+cookie is maintained by the browser and has an id. Each request from the browser
+contains the cookie and its ID. The server can use this ID to associate data
+that it (the server) maintains with the cookie, that is with the session
+associated with a particular browser.
+
+The best way to learn more about sessions is to run and study the following
 two demos:
 
 - [JsObjects/JavaScript/NodeCode/Session01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session01)
@@ -156,6 +176,49 @@ session, or an individual user:
         sessionId: request.sessionID      
     });
 ~~~~        
+
+Cookies
+-------
+
+A cookie is small file stored on the client side by the browser containing
+information sent from the server. The usual purpose of a cookie is to enable
+a site to store information about a user. This information can:
+
+- Help authenticate a user
+- Track information throughout a session that is associated with a user. 
+- Help personalize a web site
+- Track the sites visited by a user
+
+Cookies contain a maximum of:
+
+- 255 characters 
+- 4K of disk space
+
+All cookies must have:
+
+- A name
+- And a value
+
+They can also have:
+
+- A path 
+- An expiration date
+- A domain name
+- A connection type
+
+Get Command Line Arguments in Node
+----------------------------------
+
+Command line arguments are kept in an array called argv:
+
+	process.argv
+	
+Suppose you run the following:
+
+	node server.js bar
+	
+Bar will be process.argv[2]
+
 
 
 Turn off the Bell in Linux

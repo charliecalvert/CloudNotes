@@ -12,6 +12,11 @@
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession02">JsObjects/Data/CouchSession02</a></li>
 </ul>
 <p>Note that NodeJs is now up to v0.10.9.</p>
+<h2 id="couchdb-attach-example">CouchDb Attach Example</h2>
+<p>You can find it here:</p>
+<pre><code>JsObjects/Data/CouchUtils/CouchAttach01</code></pre>
+<p>Pass in the document name you want to use in couchDb and the name of the document you want send to couchDb. For example:</p>
+<pre><code>node CouchAttach.js index index.html</code></pre>
 <h2 id="redis">Redis</h2>
 <p><a href="http://redis.io/">Redis</a> is a NoSql database that stores sets, lists and numbers. It includes a nice <a href="http://try.redis.io/">tutorial</a> and <a href="http://redis.io/documentation">documentation</a>.</p>
 <p>On Windows, we can <a href="https://github.com/MSOpenTech/redis">download</a> the unofficial Windows build of Redis like this:</p>
@@ -43,7 +48,9 @@ make</code></pre>
 <p>There is also a redis client:</p>
 <pre><code>src/redis-cli </code></pre>
 <h2 id="sessions">Sessions</h2>
-<p>The best way to learn about sessions is to run and study the following two demos:</p>
+<p>Sessions have the following traits:</p>
+<p>When we create session, a cookie is built in, it is part of the session. Each cookie is maintained by the browser and has an id. Each request from the browser contains the cookie and its ID. The server can use this ID to associate data that it (the server) maintains with the cookie, that is with the session associated with a particular browser.</p>
+<p>The best way to learn more about sessions is to run and study the following two demos:</p>
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session01">JsObjects/JavaScript/NodeCode/Session01</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/Session02">JsObjects/JavaScript/NodeCode/Session02</a></li>
@@ -77,6 +84,37 @@ make</code></pre>
         cookieId : request.id,
         sessionId: request.sessionID      
     });</code></pre>
+<h2 id="cookies">Cookies</h2>
+<p>A cookie is small file stored on the client side by the browser containing information sent from the server. The usual purpose of a cookie is to enable a site to store information about a user. This information can:</p>
+<ul>
+<li>Help authenticate a user</li>
+<li>Track information throughout a session that is associated with a user.</li>
+<li>Help personalize a web site</li>
+<li>Track the sites visited by a user</li>
+</ul>
+<p>Cookies contain a maximum of:</p>
+<ul>
+<li>255 characters</li>
+<li>4K of disk space</li>
+</ul>
+<p>All cookies must have:</p>
+<ul>
+<li>A name</li>
+<li>And a value</li>
+</ul>
+<p>They can also have:</p>
+<ul>
+<li>A path</li>
+<li>An expiration date</li>
+<li>A domain name</li>
+<li>A connection type</li>
+</ul>
+<h2 id="get-command-line-arguments-in-node">Get Command Line Arguments in Node</h2>
+<p>Command line arguments are kept in an array called argv:</p>
+<pre><code>process.argv</code></pre>
+<p>Suppose you run the following:</p>
+<pre><code>node server.js bar</code></pre>
+<p>Bar will be process.argv[2]</p>
 <h2 id="turn-off-the-bell-in-linux">Turn off the Bell in Linux</h2>
 <p>Linux terminals can sometimes emit an annoying beep which can lead to familial discord. To fix it, edit or a create a file .inputrc in your home directory. Add the following line to the file:</p>
 <pre><code>set bell-style visible</code></pre>
