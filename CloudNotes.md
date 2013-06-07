@@ -59,3 +59,5 @@ Prog 282
 -	[Week09-InClass](Prog282/Week09-InClass.html)
 -	[Week09-Assignment](Prog282/Week09-Assignment.html)
 -	[Week10](Prog282/Week10.html)
+-	[Week10-InClass](Prog282/Week10-InClass.html)
+- 	[Week10-Final](Prog282/Week10-Final.html)

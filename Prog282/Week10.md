@@ -219,7 +219,12 @@ Suppose you run the following:
 	
 Bar will be process.argv[2]
 
+Express from Scratch
+--------------------
 
+Here is the command to create an express application from scratch:
+
+	express --sessions --css stylus myapp
 
 Turn off the Bell in Linux
 --------------------------

@@ -1,0 +1,49 @@
+<h1 id="week10-final">Week10-Final</h1>
+<ul>
+<li>Track Individual Users, and store a record of them to file or to couchDb.</li>
+<li>Have the grid</li>
+<li>CouchDb</li>
+<li>Handlebars, Jade, Stylus</li>
+<li>You must provide a means for me to get your data into my copy of CouchDb.</li>
+<li>Unit Tests</li>
+<li>Switching from your game to another page for your unit tests, and then figuring out how ot initialize the variables for you game so that you can test it.</li>
+<li>Storing images and HTML attachments in CouchDb.</li>
+<li>UpStart and AWS should have that.</li>
+</ul>
+<h2 id="creating-a-database">Creating a Database</h2>
+<p>You need to automate the process of creating a database and inserting data into it. Your database should have the following name:</p>
+<pre><code>Prog282LastName</code></pre>
+<p>I should be able to go to the command prompt and run a single batch file that will create the database and populate it with data. See the section of this document entitled <strong>Creating Data</strong> to learn how to do this.</p>
+<p>This is perhaps the most important part of the test. To get a good grade on the final, you must demonstrate an ability to work with CouchDb. One of the most important parts of that process involves inserting data into CouchDb, and reading it back out.</p>
+<h2 id="creating-data">Creating Data</h2>
+<p>I have created three samples:</p>
+<pre><code>JsObjects/Data/CouchUtils/CouchAttach01
+JsObjects/Data/CouchUtils/CouchDoc01
+JsObjects/Data/CouchUtils/CouchRead02</code></pre>
+<ul>
+<li>CouchAttach01 shows how to place 10 HTML into a CouchDb Database by running a single batch file. If the database used by the program does not exist it will be created automatically.</li>
+<li>CouchDoc01 shows how to put a number of JSON files of varying shapes and sizes into CouchDb by running a single batch file. If the database used by the program does not exist, it will be created automatically.</li>
+<li>CouchRead02 shows how to read back the JSON and HTML files inserted by the above the documents.</li>
+</ul>
+<p>At minimum, everyone should create their own version of the above and:</p>
+<ul>
+<li>Place five JSON documents into CouchDb Attach Example</li>
+<li>Place five HTML files in CouchDb</li>
+<li>Integrate CouchRead02 into their existing projects. The user should be able to select a single link that will allow them to view the content of all the files you insert into CouchDb</li>
+</ul>
+<h2 id="couchdb-guidelines">Couchdb Guidelines</h2>
+<p>The most important part of the final involves inserting data into CouchDb and reading it back out. The batch files described above will be enough to satisfy the minimum requirements in terms of inserting data. However, those of you who need to demonstrate some proficiency in JavaScript, should also be able to update CouchDb from the client side, as part of your program.</p>
+<ul>
+<li>Minimal: Insert with batch files, read from your main program. If you go this route, you need to create a fair amount of relatively interesting HTML in order to get a good grade.</li>
+<li>Expert: Insert and read from your main program. You can use the batch files to initialize your program, but you should also be able to update or insert some data from your main program.</li>
+</ul>
+<h2 id="creating-html">Creating HTML</h2>
+<p>Those of you with strong programming skills are expected to create an interesting game that reads and writes to CouchDb and displays HTML, producing at least one page that uses Jade.</p>
+<p>Those of you are focusing on other skills besides JavaScript should demonstrate two things:</p>
+<ul>
+<li><p>That you can read HTML files from CouchDb and display them to the user.</p></li>
+<li><p>That you can use either HandleBars or Jade to create relatively complex pages. For instance, you should use templating to create multiple pages that have the same look and feel. Your pages might share the same CSS page, and that might have the same header and footer. Use the templating engines to make this happen. You can focus on one templating engine, or demonstrate skills using both of them. Your pages should have some significant content on them. For instance, if your site is focused on Sailing, then you might show me pictures of sailboats and describe the boats you are showing. If you are focused on outer space then tell me something about out space. Planets, or stars, or galaxies. If you are focused on Zombies, tell me about Zombies.</p></li>
+</ul>
+<h2 id="cookies">Cookies</h2>
+<p>Your program should be able to create cookies, and save data to the cookies. For instance, you could save the user name to your cookie.</p>
+<p>Your program should provide some means of letting me see the content of your cookies.</p>
