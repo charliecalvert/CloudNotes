@@ -109,6 +109,8 @@ make</code></pre>
 <li>A domain name</li>
 <li>A connection type</li>
 </ul>
+<p>If you are at a site, and want to know what cookies it is tracking, paste the following into address bar:</p>
+<p>JavaScript:alert(document.cookie);</p>
 <h2 id="get-command-line-arguments-in-node">Get Command Line Arguments in Node</h2>
 <p>Command line arguments are kept in an array called argv:</p>
 <pre><code>process.argv</code></pre>
@@ -118,6 +120,38 @@ make</code></pre>
 <h2 id="express-from-scratch">Express from Scratch</h2>
 <p>Here is the command to create an express application from scratch:</p>
 <pre><code>express --sessions --css stylus myapp</code></pre>
+<h2 id="express-and-jade">Express and Jade</h2>
+<p>Take a look at new demo:</p>
+<p>JsObjects/JavaScript/NodeCode/ExpressLink</p>
+<p>One of the things you need to watch out for is that you don't name two HTML files with the same name. If you Jade template is called index.jade, then don't put a static file called index.html in public. Instead, call it something else like Main.html or Game.html.</p>
+<p>Remeber to put your route in app.js and routes/index.js. Here is app.js:</p>
+<pre><code>app.get(&#39;/page02&#39;, routes.page02);</code></pre>
+<p>And here is routes/index.js:</p>
+<pre><code>exports.index = function(req, res){
+  res.render(&#39;index&#39;, { title: &#39;Express&#39; });
+};
+
+exports.page02 = function(req, res){
+  res.render(&#39;page02&#39;, { title: &#39;Page02&#39; });
+};</code></pre>
+<p>And here is layout.jade:</p>
+<pre><code>doctype 5
+html
+    head
+    title= title
+    link(rel=&#39;stylesheet&#39;, href=&#39;/stylesheets/style.css&#39;)
+
+    nav
+        ul
+            li
+                a(href=&#39;/&#39;) Home
+            li
+                a(href=&#39;/page02&#39;) Page02
+            li
+                a(href=&#39;/main.html&#39;) Main
+
+body
+    block content</code></pre>
 <h2 id="turn-off-the-bell-in-linux">Turn off the Bell in Linux</h2>
 <p>Linux terminals can sometimes emit an annoying beep which can lead to familial discord. To fix it, edit or a create a file .inputrc in your home directory. Add the following line to the file:</p>
 <pre><code>set bell-style visible</code></pre>

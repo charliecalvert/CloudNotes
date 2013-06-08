@@ -206,6 +206,11 @@ They can also have:
 - A domain name
 - A connection type
 
+If you are at a site, and want to know what cookies it is tracking, paste the
+following into address bar:
+
+JavaScript:alert(document.cookie); 
+
 Get Command Line Arguments in Node
 ----------------------------------
 
@@ -225,6 +230,56 @@ Express from Scratch
 Here is the command to create an express application from scratch:
 
 	express --sessions --css stylus myapp
+	
+Express and Jade
+----------------
+
+Take a look at new demo:
+
+JsObjects/JavaScript/NodeCode/ExpressLink
+
+One of the things you need to watch out for is that you don't name two HTML files with the same name. If you Jade template is called index.jade, then don't put a static file called index.html in public. Instead, call it something else like Main.html or Game.html.
+
+Remeber to put your route in app.js and routes/index.js. Here is app.js:
+
+~~~~
+app.get('/page02', routes.page02);
+~~~~
+
+And here is routes/index.js:
+
+~~~~
+exports.index = function(req, res){
+  res.render('index', { title: 'Express' });
+};
+
+exports.page02 = function(req, res){
+  res.render('page02', { title: 'Page02' });
+};
+~~~~
+
+And here is layout.jade:
+
+~~~~
+doctype 5
+html
+	head
+	title= title
+	link(rel='stylesheet', href='/stylesheets/style.css')
+
+	nav
+		ul
+			li
+				a(href='/') Home
+			li
+				a(href='/page02') Page02
+			li
+				a(href='/main.html') Main
+
+body
+	block content
+~~~~
+
 
 Turn off the Bell in Linux
 --------------------------

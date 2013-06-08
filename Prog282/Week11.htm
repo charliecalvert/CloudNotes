@@ -1,0 +1,38 @@
+<h1 id="week-11---overview">Week 11 - Overview</h1>
+<h2 id="properly-reporting-errors-with-dbcouch">Properly Reporting Errors with DbCouch</h2>
+<p>One of the key moments when working with a CouchDb database is the moment you try to create the database. Let's use that as an example of how to properly report errors. Consider this method:</p>
+<pre><code>app.get(&#39;/create&#39;, function(request, response) {
+    &#39;use strict&#39;;
+    console.log(&#39;create called.&#39;);
+    nano.db.create(dbName, function(err, body) {
+        if (!err) {
+            console.log(body);
+        } else {
+            console.log(err.reason);
+            reportErrorPrivate(err);
+            response.send({ &#39;Result&#39; : err.reason });
+        }
+    });</code></pre>
+<p>Notice the error handler block:</p>
+<pre><code>    } else {
+        console.log(err.reason);
+        reportErrorPrivate(err);
+        response.send({ &#39;Result&#39; : err.reason });
+    }</code></pre>
+<p>It first prints out the error <strong>reason</strong> property:</p>
+<pre><code>reason: &#39;Name: \&#39;prog28208_Calvert\&#39;. Only lowercase characters (a-z),
+digits (0-9), and any of the characters _, $, (, ), +, -, and / are allowed. 
+Must begin with a letter.&#39;,</code></pre>
+<p>This explanation is fairly easy to understand. In other words, the err.reason property is one way to get at the heart of what is wrong without having visually parse a lot of complex text.</p>
+<p>I then call the reportErrorPrivate method, that looks like this:</p>
+<pre><code>    var reportErrorPrivate = function(error) {
+        console.log(&#39;==========================&#39;)
+        console.log(&#39;Error: &#39; + error.error);
+        console.log(&#39;Status Code: &#39; + error[&#39;status_code&#39;]);
+        console.log(&#39;Reason: &#39; + error.reason);
+        console.log(&#39;Description: &#39; + error.description); 
+    }</code></pre>
+<p>This method prints ouf the error, status_code, reason and description properties of the CouchDb error message. This is most of the important information in the error message, with the exception of the stack trace. The problem with printing out the stack trace, of course, is that it long and relatively had to read, at least in the sense that it takes up a lot screen space.</p>
+<p>If, after all this, you are still having trouble understanding the error message, you could edit the code and log the entire error structure:</p>
+<pre><code>console.log(error);</code></pre>
+<p>Finally the code in our original method sends the error.reason property back to the client so that the user can see what has happened. You might not want to do this if you releasing code to end users, but it is very helpful while you are developing your code.</p>
