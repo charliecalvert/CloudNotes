@@ -7,13 +7,54 @@ Major Topics
 - CouchDb
 - CouchDb and Errors
 - CouchDb and Bitmaps
+- Jade/Stylus plus Game: Using the **public** directory
+
+Using the Public Directory
+--------------------------
+
+It is easy to link in standard HTML files to an Express program that uses 
+Jade. Just create a standard HTML file with a name like **game.html**:
+
+~~~~
+<!DOCTYPE html>
+<html>
+<body>
+<h1>MyFile</h1>
+</body>
+</html>
+~~~~
+
+This file can be placed in the **public** directory.
+
+In an express application, if you want to link in *ordinary* HTML files like
+**Game.html**, you should place them in the **public** directory:
+
+	public/Game.html
+	
+Don't put them in the views directory. Don't link to them with use statements
+like this:
+
+	app.get('/Game.html', routes.Game);	
+	
+Instead, just link to them like any other ordinary HTML file:
+
+~~~~
+<a href='Game.html'>Game.html</a>
+~~~~
+
+Or if you are in a Jade template, write something like this, where I include the
+li just to provide context:
+
+~~~~
+  li
+    a(href='/Game.html') Game
+~~~~
 
 Global Namespace
 ----------------
 
-Good sleuthing, Rasmas!
-
-I am still not settled on this issue, but your solution looks reasonable and I like the look of the common.js answer in the link you found.
+I am still not settled on this issue, but your solution looks reasonable and 
+I like the look of the common.js answer in the link you found.
 
 Common={
   util: require('util'),
@@ -23,7 +64,8 @@ Common={
 module.exports =Common;
 
 
-This is a combination of points b and c that we were discussing above. We were talking about doing this:
+This is a combination of points b and c that we were discussing above. We 
+were talking about doing this:
 
 	exports.dbName = 'foo';
 
@@ -131,6 +173,98 @@ Finally the code in our original method sends the error.reason property back
 to the client so that the user can see what has happened. You might not want to
 do this if you releasing code to end users, but it is very helpful while you 
 are developing your code.
+
+More on Errors
+--------------
+
+I'm getting the following error:
+
+~~~~
+readJson called: [object Object]
+Exiting Get readJson
+{ [Error: missing]
+  name: 'Error',
+  scope: 'couch',
+  status_code: 404,
+  'status-code': 404,
+~~~~
+
+This doesn't tell me quite as much as I need to find your error. Here is your method:
+
+~~~~
+app.get('/readJson', function(request, response) {
+    console.log('readJson called: ' + request.query)
+    var prog = nano.db.use(dbName);
+    
+    prog.get(request.query.docName, function(error, existing) {
+        if(!error) { 
+            console.log(existing);
+            response.send(existing);
+        }  else {
+            console.log(error);
+            response.send(500, error);
+        }
+    });
+    console.log('Exiting Get readJson');
+});
+~~~~
+
+Let's focus on this line (which in your code is missing the semicolon):
+
+	console.log('readJson called: ' + request.query);
+
+It produces this output:
+
+	readJson called: [object Object]
+
+This doesn't really tell us much. To improve the output, use JSON.stringify:
+
+	console.log('readJson called: ' + JSON.stringify(request.query))
+
+Now we get this output:
+
+~~~~
+readJson called: {"docName":"Hero"}
+~~~~
+
+This is much more informative. It is also helpful to report which method 
+is printing an error when you are in a callback:
+
+	console.log('readJson error: '  + JSON.stringify(error, null, 4));
+
+Even better would be to incorporate the **reportError** method we 
+discussed on Saturday:
+
+~~~~
+var reportErrorPrivate = function(error) {
+	    console.log('==========================')
+        console.log('Error: ' + error.error);
+        console.log('Status Code: ' + error['status_code']);
+        console.log('Reason: ' + error.reason);
+        console.log('Description: ' + error.description); 
+	}
+~~~~
+
+So the refactored version of your code might look like this:
+
+~~~~
+app.get('/readJson', function(request, response) {
+    console.log('readJson called: ' + JSON.stringify(request.query))
+    var prog = nano.db.use(dbName);
+    
+    prog.get(request.query.docName, function(error, existing) {
+        if(!error) { 
+            console.log(existing);
+            response.send(existing);
+        }  else {
+            console.log('readJson error);
+            reportError(error);
+            response.send(500, error);
+        }
+    });
+    console.log('Exiting Get readJson');
+});
+~~~~
 
 Ajax Error Handling
 -------------------

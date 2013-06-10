@@ -23,12 +23,23 @@ When I'm grading your applications, there are some things I'm going to look
 for that your application must have:
 
 - You must provide a means for me to easiliy initialize a local copy of your 
-database. (15 Points)
+database. In particular, there should be a directory in your project called
+InsertData. I should be able to navigate to that directory and run a batch
+file called InsertData.bat. After it runs, the CouchDb database should 
+include all the data your program needs to run.(15 Points)
 - You must pull some data and/or attachments from CouchDb into your main
 project. (15 Points)
-- You must include at least one example of templating (15 Points)
+- You must include at least two examples of templating: one using handlebars,
+and one using Jade/Stylus.  (15 Points)
 - You must include at least five unit tests (15 Points)
-- You must have the Grid appear at some point in your project (15 Points)
+- You must have the Canvas based Game-Grid appear at some point in your 
+project. This means that you must have Jade/Stylus and your Game integrated 
+into the same project. Just linking from a Jade/Stylus project to another 
+project that contains your game is not enough.  (15 Points)
+- You should consider focusing on error handling. It is one thing to have an
+error in your code, another to have your teacher have to spend a lot of time
+tracking it down. Give nice clean error reports, and I will find it easy to
+forgive mistakes.
 
 If you are focusing most of your energy on writing HTML rather than JavaScript,
 then your web site must have a theme, and it should develop that theme to some
