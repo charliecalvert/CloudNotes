@@ -1,6 +1,13 @@
 Week 11 - Overview
 ==================
 
+Major Topics
+------------
+
+- CouchDb
+- CouchDb and Errors
+- CouchDb and Bitmaps
+
 Properly Reporting Errors with DbCouch
 --------------------------------------
 
@@ -87,4 +94,7 @@ Ajax Error Handling
 More information:
 
 - <http://api.jquery.com/jQuery.ajax/#jqXHR>
+
+CouchDb and Reading and Writing Bitmaps
+---------------------------------------
 

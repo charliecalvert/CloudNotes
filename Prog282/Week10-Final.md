@@ -1,16 +1,50 @@
 Week10-Final
 ============
 
+This is a rouch draft of the final to help you get started working.
+
+Features I'm looking for in the final:
+
 - Track Individual Users, and store a record of them to file or to couchDb.
-- Have the grid
-- CouchDb
-- Handlebars, Jade, Stylus
+- Have the grid available on at least one page of your final project.
+- Store data in CouchDb and pull that data into your application when it launches.
 - You must provide a means for me to get your data into my copy of CouchDb.
+- Storing images and HTML attachments in CouchDb.
+- Templating: Include code that uses **Handlebars**, **Jade**, **Stylus**
 - Unit Tests
 - Switching from your game to another page for your unit tests, and then figuring out
-how ot initialize the variables for you game so that you can test it.
-- Storing images and HTML attachments in CouchDb.
-- UpStart and AWS should have that.
+how to initialize the variables for you game so that you can test it.
+- Run your program on AWS using UpStart.
+
+Some CheckLists
+---------------
+
+When I'm grading your applications, there are some things I'm going to look 
+for that your application must have:
+
+- You must provide a means for me to easiliy initialize a local copy of your 
+database. (15 Points)
+- You must pull some data and/or attachments from CouchDb into your main
+project. (15 Points)
+- You must include at least one example of templating (15 Points)
+- You must include at least five unit tests (15 Points)
+- You must have the Grid appear at some point in your project (15 Points)
+
+If you are focusing most of your energy on writing HTML rather than JavaScript,
+then your web site must have a theme, and it should develop that theme to some
+reasonable degree. I don't just want to see some pretty pages, I want the 
+site to be about something, no matter how trivial. (15 Points)
+
+If you are focusing primarily on HTML and CSS, then the way to get a really
+good score (ie an A) is to show a deep knowledge of templating.
+
+If you are focusing primarily on writing JavaScript, then you must be able to
+retrieve and send JSON from the server. It is best if you can read and write
+to CouchDb, but a minimum, you should be able to read and write from a file. 
+(15 Points)
+
+If you are focusing on JavaScript, then the way to get a really good score is to
+focus on session management, cookies and tracking users.
 
 Creating a Database
 -------------------
@@ -105,6 +139,26 @@ your site is focused on Sailing, then you might show me pictures of
 sailboats and describe the boats you are showing. If you are focused on
 outer space then tell me something about out space. Planets, or stars,
 or galaxies. If you are focused on Zombies, tell me about Zombies.
+
+CouchDb and Reading and Writing PNG Files
+-----------------------------------------
+
+I've added examples for at least writing and reading PNG files from CouchDb. 
+It seems like there is no difference between the call to put an HTML 
+attachment and the call to put a bitmap, so I just used exactly the same 
+routines and techniques for each datatype. The demo of writing the PNG is 
+here:
+
+	JsObjects\Data\CouchUtils\CouchImage01
+
+I have also modified CouchUtils\CouchRead02 to read in the bitmap. The 
+algorithm is as follows:
+
+- Send ajax request from client to server asking to read the PNG.
+- The server gets the request, reads the PNG, writes it to disk, and sends back 
+an acknowledgement of the successful operation.
+- The client gets the response, reads the bitmap, and displays it in the same 
+area where we were displaying HTML files.
 
 Users and Sessions
 ------------------
