@@ -8,6 +8,58 @@ Major Topics
 - CouchDb and Errors
 - CouchDb and Bitmaps
 
+Global Namespace
+----------------
+
+Good sleuthing, Rasmas!
+
+I am still not settled on this issue, but your solution looks reasonable and I like the look of the common.js answer in the link you found.
+
+Common={
+  util: require('util'),
+  fs:   require('fs'),
+  path: require('path')};
+
+module.exports =Common;
+
+
+This is a combination of points b and c that we were discussing above. We were talking about doing this:
+
+	exports.dbName = 'foo';
+
+Or doing this:
+
+~~~~
+var myData = {};
+myData.dbName = 'barfoo';
+~~~~
+
+But their suggestion is to combine them:
+
+~~~~
+var myData = {};
+myData.dbName = 'barfoo';
+
+exports.data = myData;
+~~~~
+
+This makes sense to me. I'll try to work with these ideas some and come in 
+with some kind of reasonable solution for class this evening.
+
+It is always best to limit the scope of variables as much as possible. When 
+we can, we should completely encapuslate each object so that it shares no 
+data with other objects. Next best is to have one object share data only 
+with other objects that have to see it. Say, data is declared in object A, 
+and shared only with Object B or Objects B and C. Objects D, E, F, G, etc 
+cannot see the variable at all.
+
+But I concede that there are times when we want to share some few variables 
+or routines with the entire rest of our program. Then we can use a solution 
+like the one we are discussing. That should be rare though.
+
+Always we should put at most one, and only one, variable in the Global 
+namespace maintained by the JavaScript runtime. 
+
 Properly Reporting Errors with DbCouch
 --------------------------------------
 
