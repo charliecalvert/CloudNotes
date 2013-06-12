@@ -15,6 +15,10 @@ Features I'm looking for in the final:
 - Switching from your game to another page for your unit tests, and then figuring out
 how to initialize the variables for you game so that you can test it.
 - Run your program on AWS using UpStart.
+- Describe your program. Include a README.md file in the route of your
+project that describes the main features of your project. If you think
+I might not understand where you have implemented a particular feature,
+this would be a good place to tell me. 
 
 Some CheckLists
 ---------------
@@ -205,4 +209,15 @@ cookies. For instance, you could save the user name to your cookie.
 
 Your program should provide some means of letting me see the content
 of your cookies.
+
+Extra Credit
+------------
+
+Up to three points of extra credit is available if you create a 
+**config.json** file in the root of your project that contains the URLs 
+(IP addresses, etc) that you use in your program. For instance, when 
+you initialize nano, you will use a URL. The goal would be to allow 
+me to edit one file, and have those changes show up whereever you 
+use them in your program. You would use **fs.readFileSync** to pull the
+values from your config file and use them in your program.
 

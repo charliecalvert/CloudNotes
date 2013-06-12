@@ -5,6 +5,7 @@
 <li>CouchDb and Errors</li>
 <li>CouchDb and Bitmaps</li>
 <li>Jade/Stylus plus Game: Using the <strong>public</strong> directory</li>
+<li>Run <strong>git gc</strong> on your repository to clean it up</li>
 </ul>
 <h2 id="using-the-public-directory">Using the Public Directory</h2>
 <p>It is easy to link in standard HTML files to an Express program that uses Jade. Just create a standard HTML file with a name like <strong>game.html</strong>:</p>
@@ -132,7 +133,7 @@ Exiting Get readJson
             console.log(existing);
             response.send(existing);
         }  else {
-            console.log(&#39;readJson error);
+            console.log(&#39;readJson error&#39;);
             reportError(error);
             response.send(500, error);
         }

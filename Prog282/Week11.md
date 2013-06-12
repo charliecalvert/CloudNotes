@@ -8,6 +8,7 @@ Major Topics
 - CouchDb and Errors
 - CouchDb and Bitmaps
 - Jade/Stylus plus Game: Using the **public** directory
+- Run **git gc** on your repository to clean it up
 
 Using the Public Directory
 --------------------------
@@ -257,9 +258,9 @@ app.get('/readJson', function(request, response) {
             console.log(existing);
             response.send(existing);
         }  else {
-            console.log('readJson error);
+            console.log('readJson error');
             reportError(error);
-            response.send(500, error);
+            response.send(500, { "Result": error.reason });
         }
     });
     console.log('Exiting Get readJson');

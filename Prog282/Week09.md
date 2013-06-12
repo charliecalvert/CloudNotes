@@ -86,6 +86,10 @@ Call it like this:
 Express Complete Build
 ----------------------
 
+Build an Express application:
+
+	express --sessions --css stylus myapp
+
 Some links for express and a note or two.
 
 - [Express Generated Apps on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#express-generated-applications)
@@ -126,7 +130,21 @@ HTML page, and load the buttons there. However, sometimes that
 is not practical. In that case, do something like this:
 
 ~~~~
-	var htmlView = function() {
+	var htapp.get('/readJson', function(request, response) {
+    console.log('readJson called: ' + request.query)
+    var prog = nano.db.use(dbName);
+    
+    prog.get(request.query.docName, function(error, existing) {
+        if(!error) { 
+            console.log(existing);
+            response.send(existing);
+        }  else {
+            console.log(error);
+            response.send(500, error);
+        }
+    });
+    console.log('Exiting Get readJson');
+});mlView = function() {
 		$('#main').empty();
 		$('#main').load("/Data/newSections.html #barFoo",
 			function() {
