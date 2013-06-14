@@ -135,7 +135,7 @@ Exiting Get readJson
         }  else {
             console.log(&#39;readJson error&#39;);
             reportError(error);
-            response.send(500, error);
+            response.send(500, { &quot;Result&quot;: error.reason });
         }
     });
     console.log(&#39;Exiting Get readJson&#39;);
@@ -151,3 +151,27 @@ Exiting Get readJson
 <li><a href="http://api.jquery.com/jQuery.ajax/#jqXHR">http://api.jquery.com/jQuery.ajax/#jqXHR</a></li>
 </ul>
 <h2 id="couchdb-and-reading-and-writing-bitmaps">CouchDb and Reading and Writing Bitmaps</h2>
+<p>You can place a bitmap in the database exactly as you place any other attachment. You can read data out as you would other attachments, but you probably just want to save the results to discuss rather than send it on to clients via base64.</p>
+<p>Examples:</p>
+<pre><code>JsObjects\Data\CouchUtils\CouchImage01
+JsObjects\Data\CouchUtils\CouchRead02</code></pre>
+<p>You can also read an image directly from your CouchDb data store. For instance, you might use a URL that looks like this:</p>
+<pre><code>http://localhost:5984/couchdocs01/cscGarden.png/cscGarden.png</code></pre>
+<p>I've modified the original example so that so all the images now go into a CouchDb document called <strong>images</strong>. In other words, <strong>images</strong> now has multiple attachments.</p>
+<h2 id="reading-and-writing-from-couchdb-attach-example">Reading and Writing from CouchDb Attach Example</h2>
+<p>See:</p>
+<pre><code>JsObjects/Data/CouchUtils
+HtmlCssJavaScript/UnitTestCouchDb02</code></pre>
+<h2 id="express-tips">Express Tips</h2>
+<p>Create an Express Server:</p>
+<pre><code>express --sessions --css stylus myapp02</code></pre>
+<p>Copy in a .project file. Open the .project file in notepad++ and edit the name element. Then import the project into Eclipse.</p>
+<p>npm link express npm link jade npm link stylus</p>
+<p>Set up your Two Pages in Stylus: home page, page02. You will need to edit layout.jade file, index.jade file, and create a page02.jade file. Then add in the following code to app.js and index.js:</p>
+<pre><code>app.get(&#39;/page02&#39;, routes.page02);</code></pre>
+<p>And also in index.js:</p>
+<pre><code>exports.page02 = function(req, res){
+  res.render(&#39;page02&#39;, { title: &#39;Page02&#39; });
+};</code></pre>
+<p>Set up a link to your Game.html file, or whatever you call the main page of your game. Copy your game into the public directory. And then run it. You will probably have to mess with the Images directory and get that set up.</p>
+<p>Next try to tackle the handlebars importing.</p>
