@@ -23,3 +23,7 @@ Links
 2.  The Syllabus Prog 272: <http://bit.ly/X1QNVg>
 
 3.  <http://spectrum.ieee.org/at-work/tech-careers/the-top-10-programming-languages>
+
+4.  <http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel>
+
+5.  [YAML](http://pyyaml.org/wiki/PyYAMLDocumentation#YAMLsyntax)
