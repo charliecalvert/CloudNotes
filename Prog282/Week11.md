@@ -8,6 +8,7 @@ Major Topics
 - CouchDb and Errors
 - CouchDb and Bitmaps
 - Jade/Stylus plus Game: Using the **public** directory
+- Run **git gc** on your repository to clean it up
 
 Using the Public Directory
 --------------------------
@@ -257,9 +258,9 @@ app.get('/readJson', function(request, response) {
             console.log(existing);
             response.send(existing);
         }  else {
-            console.log('readJson error);
+            console.log('readJson error');
             reportError(error);
-            response.send(500, error);
+            response.send(500, { "Result": error.reason });
         }
     });
     console.log('Exiting Get readJson');
@@ -283,4 +284,70 @@ More information:
 
 CouchDb and Reading and Writing Bitmaps
 ---------------------------------------
+
+You can place a bitmap in the database exactly as you place any
+other attachment. You can read data out as you would other attachments,
+but you probably just want to save the results to discuss rather than
+send it on to clients via base64. 
+
+Examples:
+
+	JsObjects\Data\CouchUtils\CouchImage01
+	JsObjects\Data\CouchUtils\CouchRead02
+
+You can also read an image directly from your CouchDb data store. For
+instance, you might use a URL that looks like this:
+
+~~~~
+http://localhost:5984/couchdocs01/cscGarden.png/cscGarden.png
+~~~~
+
+I've modified the original example so that so all the images now go 
+into a CouchDb document called **images**. In other words, **images**
+now has multiple attachments.
+
+Reading and Writing from CouchDb Attach Example
+-----------------------------------------------
+
+See:
+
+	JsObjects/Data/CouchUtils
+	HtmlCssJavaScript/UnitTestCouchDb02
+	
+Express Tips
+------------
+
+Create an Express Server:
+
+	express --sessions --css stylus myapp02
+	
+Copy in a .project file. Open the .project file in notepad++ and edit
+the name element. Then import the project into Eclipse.
+
+npm link express
+npm link jade
+npm link stylus
+
+Set up your Two Pages in Stylus: home page, page02. You will need to
+edit layout.jade file, index.jade file, and create a page02.jade file.
+Then add in the following code to app.js and index.js:
+
+	app.get('/page02', routes.page02);
+	
+And also in index.js:
+
+~~~~
+exports.page02 = function(req, res){
+  res.render('page02', { title: 'Page02' });
+};
+~~~~
+
+
+
+Set up a link to your Game.html file, or whatever you call the 
+main page of your game. Copy your game into the public directory.
+And then run it. You will probably have to mess with the Images
+directory and get that set up.
+
+Next try to tackle the handlebars importing.
 
