@@ -9,6 +9,11 @@ Cloud Notes by [Charlie Calvert](http://www.elvenware.com/charlie/books/CloudNot
 licensed under a [Creative Commons Attribution 3.0 Unported
 License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
+Prog 270
+--------
+
+-	[Week01](Prog270/Week01.html)
+
 Prog 272
 --------
 
@@ -62,3 +67,8 @@ Prog 282
 -	[Week10-InClass](Prog282/Week10-InClass.html)
 - 	[Week10-Final](Prog282/Week10-Final.html)
 - 	[Week11](Prog282/Week11.html)
+
+ISIT 320
+--------
+
+- [Week01](Isit320/Week01.html)
