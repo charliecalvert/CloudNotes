@@ -12,6 +12,7 @@ License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 Prog 270
 --------
 
+-	[Resources](Prog270/Resources.html)
 -	[Week01](Prog270/Week01.html)
 
 Prog 272
@@ -71,4 +72,5 @@ Prog 282
 ISIT 320
 --------
 
+- [Resources](Isit320/Resources.html)
 - [Week01](Isit320/Week01.html)

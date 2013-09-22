@@ -15,14 +15,14 @@ def cloudRoot(markdown):
 
 # Prog270
 def prog270(markdown):
-	files = ["Week01"];
+	files = ["Resources", "Week01"];
 	markdown.copyFrom=cloudNotesFrom + "Prog270"
 	markdown.destination=cloudNotesTo + "Prog270"
 	markdown.runner(files);
 	
 # Isit320
 def isit320(markdown):
-	files = ["Week01"];
+	files = ["Resources", "Week01"];
 	markdown.copyFrom=cloudNotesFrom + "Isit320"
 	markdown.destination=cloudNotesTo + "Isit320"
 	markdown.runner(files);
