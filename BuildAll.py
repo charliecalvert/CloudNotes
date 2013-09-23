@@ -30,6 +30,6 @@ def isit320(markdown):
 
 # Run Program
 m = MarkdownToHtml()
-# cloudRoot(m)
-prog270(m)
-# isit320(m)
+cloudRoot(m)
+# prog270(m)
+isit320(m)
