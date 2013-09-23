@@ -15,9 +15,6 @@ for those announcements, and to respond to them as appropriate.
 As a result, I would strongly suggest that you make a daily habit
 of checking the announcements and discussions in Canvas.
 
-
-
-
 Tuesday Jan 23 {#inClass}
 --------------
 
@@ -30,7 +27,8 @@ Tuesday Jan 23 {#inClass}
 ###Details: 
 
 -   Course Overview Deck: <http://bit.ly/WYFwVJ>
--	Prog 270 - Day 1 Outline: <http://bit.ly/RgDgtz>
+-   [What is a mobile device](http://bit.ly/VaRdrx)
+-   Prog 270 - Day 1 Outline: <http://bit.ly/RgDgtz>
 -   Syllabus: <http://bit.ly/S3uz4s>
 -   Data Centers: <http://bit.ly/X1FWuj>
 -   Cloud Services: <http://bit.ly/ZTiaWN>
@@ -60,10 +58,15 @@ Elvenware Links
 Online {#online}
 ------
 
+None of these links are particularly important at this moment, but I find
+all of them interesting.
+
+- <http://developer.android.com/about/versions/jelly-bean.html#42-multiuser>
+
 Goal: Become familiar with the key Mobile platforms, hardware, and
 functionality
 
-- [What is a mobile device](http://bit.ly/VaRdrx)
+
 
 Connect S4 to your TV:
 
