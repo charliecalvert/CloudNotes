@@ -1,9 +1,10 @@
+import os
 import sys
 from elfutils.MarkdownToHtml import MarkdownToHtml
 
 # Site Root
-cloudNotesFrom="G:\\Src\\GitHub\\CloudNotes\\"
-cloudNotesTo="G:\\Web\\Elvenware\\charlie\\books\\CloudNotes\\"
+cloudNotesFrom= os.environ['GITHUB'] + "CloudNotes\\"
+cloudNotesTo=os.environ['ELVENWARE'] + "charlie\\books\\CloudNotes\\"
 
 # CloudNotes Root
 def cloudRoot(markdown):
@@ -17,7 +18,7 @@ def cloudRoot(markdown):
 def prog270(markdown):
 	files = ["Resources", "Week01"];
 	markdown.copyFrom=cloudNotesFrom + "Prog270"
-	markdown.destination=cloudNotesTo + "Prog270"
+	markdown.destination=cloudNotesTo + "Prog270"	
 	markdown.runner(files);
 	
 # Isit320
@@ -29,6 +30,6 @@ def isit320(markdown):
 
 # Run Program
 m = MarkdownToHtml()
-cloudRoot(m)
+# cloudRoot(m)
 prog270(m)
-isit320(m)
+# isit320(m)
