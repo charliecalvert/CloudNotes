@@ -40,5 +40,27 @@ Node
 - [Smashing Node](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=45126)
 - [Pro Node](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=46610)
 
+Assignment
+----------
 
+###Basic Types
+
+- Read in an arbitrary JSON file containing a JavaScript object
+- Use a loop to iterate over the property and report the types
+- Basic: Just use node and console.log to report results
+- Advanced: Use HTML, jQuery and Ajax to report results  on web page
+
+###Code Academy
+
+- [Go to Web Fundamentals](http://www.codecademy.com/tracks/web)
+- Complete *HTML Basics* and *Build Your own Web Page*
+- [Go to JavaScript](http://www.codecademy.com/tracks/javascript)
+- Complete *Getting Started with Programming*
+
+###Video
+
+- Let's watch some Google IO. 
+- [Instant Mobile WebSites](https://developers.google.com/events/io/sessions/325128936)
+- The video is about 37 minutes.
+- Ultimately there will be a quiz of some kind to confirm that you watched it.
 

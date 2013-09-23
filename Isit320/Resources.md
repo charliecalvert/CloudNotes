@@ -5,6 +5,7 @@ ISIT 320 Resources
 - [Ebooks and 24X7](http://www.bellevuecollege.edu/lmc/catalogs.html)
 - [Delicious](https://delicious.com/charliecalvert)
 - [Elvenware Links](http://elvenware.com/charlie/links.html)
+- [Bitly](http://bitly.com/u/charliecalvert)
 
 Key Books
 ---------
@@ -17,6 +18,7 @@ Key Books
 Key Links
 =========
 
+- <http://www.codecademy.com>
 - <https://developer.mozilla.org/en-US/docs/Web/JavaScript>
 - <http://net.tutsplus.com/tutorials/other/mvc-for-noobs/>
 - [O'Reilly Books](http://oreilly.com/)
