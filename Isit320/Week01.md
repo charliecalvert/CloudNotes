@@ -40,6 +40,16 @@ Node
 - [Smashing Node](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=45126)
 - [Pro Node](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=46610)
 
+CloudApps
+---------
+
+- [Android Applications](http://www.elvenware.com/charlie/os/Android/AndroidApplications.html)
+- [Git](http://www.elvenware.com/charlie/development/cloud/Git.html)
+- [DropBox Half Formed Notes](http://www.elvenware.com/charlie/development/cloud/DropBox.html)
+- [Git Video](http://youtu.be/p1obmWF6Nks)
+- [Google Docs Video](http://youtu.be/NMkTz3Rvgfo)
+- [Skydrive Video](http://youtu.be/gMACtVIEV0A)
+
 Assignment
 ----------
 
