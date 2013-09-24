@@ -1,6 +1,8 @@
 Week01
 ======
 
+- [Go Back to the CloudNotes index](../CloudNotes.html)
+
 Our main goal this week:
 
 - Welcome and Introductions
@@ -34,14 +36,24 @@ We should take a look at a few of the programs found here:
 
 Node
 ----
-- [Download](http://nodejs.org/)
-- [Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
+- [Download Node](http://nodejs.org/)
+- [Node on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
 - [JumpStart on 24X7](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=50176)
 - [Smashing Node](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=45126)
 - [Pro Node](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=46610)
 
 CloudApps
 ---------
+
+Everyone should have an account on:
+
+- GitHub and or BitBucket
+- [Google Drive](http://www.elvenware.com/charlie/os/Android/AndroidApplications.html#googleDocs)
+- [Evernote](http://www.elvenware.com/charlie/os/Android/AndroidApplications.html#evernote)
+- DropBox
+- [SkyDrive](http://www.elvenware.com/charlie/os/Android/AndroidApplications.html#microsoftSkyDrive)
+- Codecademy
+- AWS (But not yet)
 
 - [Android Applications](http://www.elvenware.com/charlie/os/Android/AndroidApplications.html)
 - [Git](http://www.elvenware.com/charlie/development/cloud/Git.html)
