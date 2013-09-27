@@ -91,9 +91,9 @@ Given a JSON object that looks like this:
 ~~~~
 
 The program should be able to use a **for in** loop to iterate over 
-the object that you read created when you read in your JSON file. 
-With a single line in your **for** loop you should be able to 
-dynamically create output that looks like this:
+the object that you created when you read in your JSON file. With a 
+single line in your **for in** loop you should be able to dynamically 
+create output that looks like this:
 
 ~~~~
 a : number
@@ -101,6 +101,17 @@ b : number
 bar : string
 Foo : boolean
 ~~~~
+
+I emphasize "single line" because it is possible to dynimacally 
+discover both the name of the property and its value. Remember that 
+there are two ways to access the properties of a JavaScript object:
+
+~~~~
+myObject.myProperty
+myObject["myProperty"]
+~~~~
+
+In this assignment, one of these two techniques will prove invaluable.
 
 A key point to grasp is that we use **for in** loops to iterate over
 objects, and we use a classic **for** loop to iterate over arrays. By
@@ -118,21 +129,18 @@ for (aProperty in someObject) {
 }
 ~~~~
 
-Remember that there are two ways to access the properties of a JavaScript
-object:
-
-~~~~
-myObject.myProperty
-myObject["myProperty"]
-~~~~
-
-In this assignment, one of these two methods will prove invaluable.
+Use the first technique with arrays, the second with objects.
 
 This secondary source of information might also be of interest:
 
 - <http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON>
 
 ###Code Academy
+
+For the second part of the assignment, I want you to complete some
+simple exercises in Code Academy. This should help you recall a few 
+basic facts about HTML and JavaScript, in case you need to brush up
+on your skills.
 
 - [Go to Web Fundamentals](http://www.codecademy.com/tracks/web)
 - Complete *HTML Basics* and *Build Your own Web Page*
@@ -141,8 +149,8 @@ This secondary source of information might also be of interest:
 
 ###Video
 
-- Let's watch some Google IO. 
+Finally, I suggest that we watch some Google IO. 
+
 - [Instant Mobile WebSites](https://developers.google.com/events/io/sessions/325128936)
 - The video is about 37 minutes.
-- Ultimately there will be a quiz of some kind to confirm that you watched it.
-
+- There may be a quiz of some kind to confirm that you watched it.

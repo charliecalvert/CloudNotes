@@ -73,26 +73,28 @@
     &quot;bar&quot;: &quot;Fine&quot;,
     &quot;Foo&quot;: false
 }</code></pre>
-<p>The program should be able to use a <strong>for in</strong> loop to iterate over the object that you read created when you read in your JSON file. With a single line in your <strong>for</strong> loop you should be able to dynamically create output that looks like this:</p>
+<p>The program should be able to use a <strong>for in</strong> loop to iterate over the object that you created when you read in your JSON file. With a single line in your <strong>for in</strong> loop you should be able to dynamically create output that looks like this:</p>
 <pre><code>a : number
 b : number
 bar : string
 Foo : boolean</code></pre>
+<p>I emphasize &quot;single line&quot; because it is possible to dynimacally discover both the name of the property and its value. Remember that there are two ways to access the properties of a JavaScript object:</p>
+<pre><code>myObject.myProperty
+myObject[&quot;myProperty&quot;]</code></pre>
+<p>In this assignment, one of these two techniques will prove invaluable.</p>
 <p>A key point to grasp is that we use <strong>for in</strong> loops to iterate over objects, and we use a classic <strong>for</strong> loop to iterate over arrays. By a &quot;classic for loop&quot; I mean something that looks like this:</p>
 <pre><code>for (var i = 0; i &lt; 2; i++) {
 }</code></pre>
 <p>A <strong>for in</strong> loop looks like this:</p>
 <pre><code>for (aProperty in someObject) {
 }</code></pre>
-<p>Remember that there are two ways to access the properties of a JavaScript object:</p>
-<pre><code>myObject.myProperty
-myObject[&quot;myProperty&quot;]</code></pre>
-<p>In this assignment, one of these two methods will prove invaluable.</p>
+<p>Use the first technique with arrays, the second with objects.</p>
 <p>This secondary source of information might also be of interest:</p>
 <ul>
 <li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON">http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON</a></li>
 </ul>
 <h3 id="code-academy">Code Academy</h3>
+<p>For the second part of the assignment, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills.</p>
 <ul>
 <li><a href="http://www.codecademy.com/tracks/web">Go to Web Fundamentals</a></li>
 <li>Complete <em>HTML Basics</em> and <em>Build Your own Web Page</em></li>
@@ -100,9 +102,9 @@ myObject[&quot;myProperty&quot;]</code></pre>
 <li>Complete <em>Getting Started with Programming</em></li>
 </ul>
 <h3 id="video">Video</h3>
+<p>Finally, I suggest that we watch some Google IO.</p>
 <ul>
-<li>Let's watch some Google IO.</li>
 <li><a href="https://developers.google.com/events/io/sessions/325128936">Instant Mobile WebSites</a></li>
 <li>The video is about 37 minutes.</li>
-<li>Ultimately there will be a quiz of some kind to confirm that you watched it.</li>
+<li>There may be a quiz of some kind to confirm that you watched it.</li>
 </ul>
