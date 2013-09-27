@@ -36,6 +36,11 @@ this list.
 - [Ubuntu Linux Toolbox (24X7)](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=56414)
 - [Linux Bible, 8th Edition (24X7)](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=46293)
 
+###Books not on 24X7
+
+- JavaScript the Good Parts (Crockford, Oreilly) - This is classic, but a bit hard to read.
+- JavaScript Ninja (Resig, Manning) - Not as good an introduction as the Good Parts, but easier to understand and more depth.
+- Maintainable JavaScript (Zakas, O'Reilly) - The most approachable of the three.
 
 Some Links
 =========
