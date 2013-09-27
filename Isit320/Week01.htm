@@ -61,6 +61,37 @@
 <li>Basic: Just use node and console.log to report results</li>
 <li>Advanced: Use HTML, jQuery and Ajax to report results on web page</li>
 </ul>
+<p>Code to read in a JSON file can be found here:</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JsonBasics.html">http://elvenware.com/charlie/development/web/JavaScript/JsonBasics.html</a></li>
+</ul>
+<p>Your next step will be able to iterate over the members of that object with a for loop.</p>
+<p>Given a JSON object that looks like this:</p>
+<pre><code>{
+    &quot;a&quot;: 25,
+    &quot;b&quot;: 12,
+    &quot;bar&quot;: &quot;Fine&quot;,
+    &quot;Foo&quot;: false
+}</code></pre>
+<p>The program should be able to use a <strong>for in</strong> loop to iterate over the object that you read created when you read in your JSON file. With a single line in your <strong>for</strong> loop you should be able to dynamically create output that looks like this:</p>
+<pre><code>a : number
+b : number
+bar : string
+Foo : boolean</code></pre>
+<p>A key point to grasp is that we use <strong>for in</strong> loops to iterate over objects, and we use a classic <strong>for</strong> loop to iterate over arrays. By a &quot;classic for loop&quot; I mean something that looks like this:</p>
+<pre><code>for (var i = 0; i &lt; 2; i++) {
+}</code></pre>
+<p>A <strong>for in</strong> loop looks like this:</p>
+<pre><code>for (aProperty in someObject) {
+}</code></pre>
+<p>Remember that there are two ways to access the properties of a JavaScript object:</p>
+<pre><code>myObject.myProperty
+myObject[&quot;myProperty&quot;]</code></pre>
+<p>In this assignment, one of these two methods will prove invaluable.</p>
+<p>This secondary source of information might also be of interest:</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON">http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON</a></li>
+</ul>
 <h3 id="code-academy">Code Academy</h3>
 <ul>
 <li><a href="http://www.codecademy.com/tracks/web">Go to Web Fundamentals</a></li>
