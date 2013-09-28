@@ -65,6 +65,9 @@ Everyone should have an account on:
 Assignment
 ----------
 
+Please note that there are three parts to this assignment. I list them
+all below, each in its own section.
+
 ###Basic Types
 
 - Read in an arbitrary JSON file containing a JavaScript object
@@ -110,6 +113,10 @@ there are two ways to access the properties of a JavaScript object:
 myObject.myProperty
 myObject["myProperty"]
 ~~~~
+
+For more information see this link:
+
+- [Elvenware on name/value paris](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#object-details)
 
 In this assignment, one of these two techniques will prove invaluable.
 
