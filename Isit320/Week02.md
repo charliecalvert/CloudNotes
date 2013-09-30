@@ -21,3 +21,21 @@ MyFunction03.prototype.nestedFunction = function() {
 };
 ~~~~
 
+Node and NPM
+------------
+
+- [Node on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
+
+Perhaps some of you noticed that I could not run **jshint** from the 
+command line in class on Wednesday, Sept 28. It turned out that the 
+problem was that my copy of JsHint from NPM was out of date. Here is 
+what I did to fix it:
+
+	npm update -g
+	
+That command updates all the globally installed copies of your NPM
+libraries. If you don't yet have JsHint installed for use on the 
+command line, then issue the following command:
+
+	npm install -g jshint
+
