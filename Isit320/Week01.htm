@@ -98,6 +98,9 @@ myObject[&quot;myProperty&quot;]</code></pre>
 <ul>
 <li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON">http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON</a></li>
 </ul>
+<p>When you read in the JSON file using the fs library, you will end up with a string. You need to convert the string into an JavaScript object using JSON.parse:</p>
+<pre><code>var myObjectAsAString = fs.readFileSync(&#39;MyFile.json&#39;);
+var myJavaScriptObject = JSON.parse(myObjectAsAString);</code></pre>
 <h3 id="code-academy">Code Academy</h3>
 <p>For the second part of the assignment, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills.</p>
 <ul>

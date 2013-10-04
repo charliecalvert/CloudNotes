@@ -142,6 +142,13 @@ This secondary source of information might also be of interest:
 
 - <http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON>
 
+When you read in the JSON file using the fs library, you will end
+up with a string. You need to convert the string into an JavaScript object
+using JSON.parse:
+
+	var myObjectAsAString = fs.readFileSync('MyFile.json');
+	var myJavaScriptObject = JSON.parse(myObjectAsAString);
+
 ###Code Academy
 
 For the second part of the assignment, I want you to complete some
