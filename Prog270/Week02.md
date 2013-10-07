@@ -25,10 +25,15 @@ tablets are certainly all good choices in most cases.
 Online {#online}
 ------
 
-This section will be updated later in the week, it is for work you do
-after our class on Tuesday. Remember, this is hybrid class, so part
-of your assignment is to come to class, but part of it is to follow
-the additional information I provide here.
+The primary job this week will be to complete the 
+[MarkDown Assignment](https://bc.instructure.com/courses/834458/assignments/2877658).
+The assignment itself can be found inside Canvas, and is linked 
+from the modules area. On Google Drive I have prepared 
+[a document](http://bit.ly/1cm36qb) which
+both describes the assignment, and also provides a mini-lecture on
+the subject of markdown itself. I have also included a very short, silent
+[video](http://youtu.be/YZUruYmEFG0) that will help you get an overview of the concepts you need to 
+master to complete the assignment.
 
 ####Some Links
 
