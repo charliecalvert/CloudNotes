@@ -76,4 +76,4 @@ ISIT 320
 - [Resources](Isit320/Resources.html)
 - [Week01](Isit320/Week01.html)
 - [Week02](Isit320/Week02.html)
-
+- [Week03](Isit320/Week03.html)
