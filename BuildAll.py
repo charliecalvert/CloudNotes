@@ -9,6 +9,7 @@ cloudNotesTo=os.environ['ELVENWARE'] + "charlie\\books\\CloudNotes\\"
 # CloudNotes Root
 def cloudRoot(markdown):
 	files = ["CloudNotes"];
+	print(cloudNotesFrom)
 	markdown.copyFrom=cloudNotesFrom
 	markdown.destination=cloudNotesTo
 	markdown.runner(files);
@@ -31,5 +32,5 @@ def isit320(markdown):
 # Run Program
 m = MarkdownToHtml()
 cloudRoot(m)
-prog270(m)
-#isit320(m)
+#prog270(m)
+isit320(m)
