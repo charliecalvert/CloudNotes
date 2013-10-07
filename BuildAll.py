@@ -9,6 +9,7 @@ cloudNotesTo=os.environ['ELVENWARE'] + "charlie\\books\\CloudNotes\\"
 # CloudNotes Root
 def cloudRoot(markdown):
 	files = ["CloudNotes"];
+	print(cloudNotesFrom)
 	markdown.copyFrom=cloudNotesFrom
 	markdown.destination=cloudNotesTo
 	markdown.runner(files);
