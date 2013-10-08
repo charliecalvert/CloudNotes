@@ -7,7 +7,7 @@ Cloud Notes by [Charlie Calvert](http://www.elvenware.com/charlie/books/CloudNot
 licensed under a [Creative Commons Attribution 3.0 Unported
 License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
-Prog 270a
+Prog 270
 --------
 
 -	[Resources](Prog270/Resources.html)
