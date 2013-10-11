@@ -17,7 +17,8 @@ def cloudRoot(markdown):
 
 # Prog270
 def prog270(markdown):
-	files = ["Resources", "Week01", "Week02", "MarkdownAssignment"];
+	files = ["Resources", "Week01", "Week02", "Week03", 
+	"MarkdownAssignment", 'GoogleSiteAssignment'];
 	markdown.copyFrom=cloudNotesFrom + "Prog270"
 	markdown.destination=cloudNotesTo + "Prog270"
 	markdown.runner(files);
@@ -32,6 +33,6 @@ def isit320(markdown):
 
 # Run Program
 m = MarkdownToHtml()
-#cloudRoot(m)
+cloudRoot(m)
 #prog270(m)
 isit320(m)

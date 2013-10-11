@@ -1,39 +1,23 @@
-Connect S4 to your TV
----------------------
+Week 03 Prog 270
+================
 
-- <http://www.pcmag.com/article2/0,2817,2420138,00.asp>
+Overview
+--------
 
-Other
-----
+This week we are going to focus on Markdown, mobile hardware, and 
+Google Sites.
 
-Netbeans node js: <http://plugins.netbeans.org/plugin/36653/nodejs>
+In Class
+--------
 
-HTML --> Jade: <https://github.com/donpark/html2jade/blame/master/README.md>
+- [Day 05 Deck](http://bit.ly/19xTi5l)
+- Take a screenshot
+	- Use PNG, JPG or GIF
+	- Snipping Tool on Windows 7 and 8
+- [Google Site Quiz](GoogleSiteAssignment.html)
 
-OpenID: <http://en.wikipedia.org/wiki/OpenID#OpenID_Providers>
+Online
+------
 
-OpenID API: <http://openid.net/specs/openid-authentication-1_1.html>
-
-File upload, Node: <https://gist.github.com/xjamundx/1631025>
-
-Node modules: <http://dailyjs.com/2012/01/26/effective-node-modules/>
-
-Breaking down app.js: <http://madhums.me/2012/07/19/breaking-down-app-js-file-nodejs-express-mongoose/>
-
-app.js structure: <http://stackoverflow.com/questions/5778245/expressjs-how-to-structure-an-application>
-
-Session cookies: <http://stackoverflow.com/questions/4371178/session-only-cookie-for-express-js>
-
-Real time chat, node: <http://net.tutsplus.com/tutorials/javascript-ajax/real-time-chat-with-nodejs-socket-io-and-expressjs/>
-
-Clock blog: <http://clock.co.uk/tech-blogs/a-simple-website-in-nodejs-with-express-jade-and-stylus>
-
-Running node in IIS: <http://www.hanselman.com/blog/InstallingAndRunningNodejsApplicationsWithinIISOnWindowsAreYouMad.aspx>
-
-Express API: <http://expressjs.com/api.html>
-
-HTML textarea editor: <http://www.tinymce.com/>
-
-Node, config files: <http://stackoverflow.com/questions/5869216/how-to-store-node-js-deployment-settings-configuration-files>
-
-Drag and drop: <http://www.html5rocks.com/en/tutorials/file/dndfiles/>
+Here is where I will describe what you do at home. Also check the
+modules area and the Day 5 Overview.
