@@ -20,6 +20,13 @@ with events and topics covered in our class.
 - [Web](http://www.elvenware.com/charlie/development/web/index.html)
 - [Google-Elvenware](https://sites.google.com/site/elvenware/)
 
+Videos
+------
+
+- [Charlie on YouTube](https://www.youtube.com/user/charliecalvert/videos)
+- [Google Developers](https://www.youtube.com/user/GoogleDevelopers)
+
+
 
 Interesting Books
 ---------

@@ -50,13 +50,11 @@ Text 3
 	[Text](ImageURL)
 ```
 
-Here is an example page:
-
-![Example page](https://sites.google.com/site/elvenware/home/prog270/testimagepage)
+Here is an [Example page](https://sites.google.com/site/elvenware/home/prog270/testimagepage).
 
 Here is how to add titles to images in markdown:
 
-![alt](url "title")
+	![alt](url "title")
 
 Reference: 
 
@@ -68,5 +66,242 @@ over the picture, the "title" will pop up.
 Online
 ------
 
-Here is where I will describe what you do at home. Also check the
-modules area and the Day 5 Overview.
+There will be two assignments this week. 
+
+###Assignment 01
+
+This is assignment is still not complete, but this
+should help you get started.
+
+We are going to begin serving up our own HTML pages so we can learn 
+how to craft them to work with mobile devices. To do this, we will use
+two technologies:
+
+* Cloud 9 IDE
+* NodeJs
+
+When we worked on Google Sites (and we are not done with Google Sites)
+we simply checked a button the config page to make our pages work with
+mobile sites. In particular, we choose:
+
+* More from the menu
+* Manage Site
+* Then checked: "Automatically Adjust site to Mobile Phones"
+
+But how is that done? Exactly what makes a page work on a mobile 
+phone?
+
+A page can "look wrong" on a mobile in various ways. For instance,
+consider this picture:
+
+![Bad Image](../Images/MobileLook01.png)
+
+It just doesn't look very nice. Now look at these pictures:
+
+![Good Image](../Images/MobileLook02.png)
+
+![Good Image](../Images/MobileLook03.png)
+
+Both of these latter images just look better. In particular, their 
+fonts are in the right proportion to the page.
+
+It turns out that it is simple to convert a normal HTML page to one 
+that will work in a mobile browser. At least in some cases it can
+be simple. Perhaps not always, but sometimes. For instance, with the
+page shown above, all I had to do was add the following code to it:
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+For now, let's not spend a lot of time thinking about what that code
+does on a technical level. It is enough to simply say that it 
+automatically scales the page to the appropriate size for the phone. 
+You can think of the initial-scale attribute like a "zoom" property.
+We are zoomed in level 1, which is normal size for the device.
+
+####Setting up the Page
+
+If we are going to start adding lines of code to our HTML, then we
+need to begin having more control over the way a page is rendered
+than we can get on Google Sites. This is not a problem with Google Sites,
+which obviously solves all of these problems for us automatically.
+Rather it is not the right teaching platform for me to show you more
+details about the syntax of context displayed on mobile devices.
+
+One way to solve this problem would be to take you to a place like
+Amazon Web Services (AWS). However, I don't want to take that step
+quite yet. Instead, I'll ask that you create an account on the online
+IDE called [Cloud 9](https://c9.io/).
+
+It turns, out however, that the simplest way to create an account on 
+Cloud 9 is to "sign in" with a [GitHub](https://github.com/) 
+account. We will be using GitHub quite a bit in this course, but I 
+don't want to introduce it quite yet. So I will ask you first to 
+simply create an account on GitHub and then do nothing special with 
+it other than use it to sign in to Cloud 9. So begin by going to
+GitHub and creating an account:
+
+- [https://github.com/](https://github.com/)
+
+Now go to Cloud 9, and sign in using your GitHub account. If you are 
+prompted for a user name and password, they are (most likely) 
+looking for the name and password on your GitHub account. Ok, once 
+you are logged into Cloud 9 you are now ready to get started with 
+this assignment.
+
+**Warning:** *I've been using [Cloud 9](https://c9.io/) for a couple 
+years now. I tried to introduce it into class last year, but it was 
+still a bit too funky for that scenario. I think, however, that most 
+of the kinks are now worked out of the core functionality of the 
+site. You may still find it down from to time, but 85% of the time 
+you should find it up and running. Remember: if a site occasionally 
+has some funkiness, then you probably don't want to wait until 11 
+PM on the night an assignment is due to begin working with the site. 
+Rather, start a few days ahead of time, and if occasionally the site 
+is on the fritz, you can just focus your attention elsewhere for a 
+few minutes, and then switch back when the site is up and running. 
+Life in the cloud is less problematic each year, or even each month. 
+But it is still a bit touch and go at times.*
+
+When you sign into Cloud 9, you should go to the DashBoard. On that
+page, you will see a large green button labelled "Create New Workspace."
+Push that button.
+
+![Create Workspace](../Images/CloudNine01.png)
+
+When you click the Create Workspace button:
+
+* Name your workspace Prog270-LastName, where LastName is your last name. 
+* Choose the Hosted solution
+* Select the NodeJs button
+* Click **Create**
+
+![Start Editing](../Images/CloudNine02.png)
+
+You will have to wait a bit. Perhaps quite a while, as CloudNine is
+actually spinning up a virtual machine for you, which is a fairly
+costly operation.
+
+When your Workspace at last appears:
+
+* Select your workspace
+* Click on the green **Start Editing** button
+
+![Start Editing](../Images/CloudNine03.png)
+
+Now create two files in your workspace:
+
+* An HTML file called **Test01.html** where you will place your 
+converted Markdown and a bit of extra code. Make sure you write the name,
+and its case, exactly as shown. It should be Test01.html, not test01.html
+or test01.HTML or TeSt01.hTMl or any other variation. Just Test01.html.
+* A file called server.js that will contain code that I will give you.
+This file will be created automatically for your by Cloud Nine.
+
+At the top of Test01.html paste in this code:
+
+```
+<html>
+     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+     </head>
+<body>
+
+<!-- Your converted markdown, now in HTML format, will go here -->
+
+</body>
+</html>
+```
+
+Now go to your favorite markdown editor and create some markdown with
+at least two images and one list. Convert the markdown to HTML and
+paste it into your HTML document just below the HTML comment and just
+above the closing BODY tag:
+
+```
+<html>
+     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+     </head>
+<body>
+
+<!-- Your converted markdown, now in HTML format, will go here -->
+
+<p>Here is an example document with some HTML in it. Your HTML will be
+more complex than this.</p>
+
+</body>
+</html>
+```
+
+![Edit HTML](../Images/CloudNine04.png)
+
+- [Full Size Picture](../Images/CloudNine04.png)
+
+Now edit the document called server.js. Replace its content with
+the following code:
+
+```
+var http = require('http');
+var url = require('url');
+var port = process.env.C9_PORT || 1337;
+var fs = require('fs');
+
+function getPath(request) {
+	return url.parse(request.url).pathname;
+}
+
+function onRequest(request, response) {
+    var pathname = getPath(request);
+    console.log("Request for " + pathname + " received.");
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello World");
+    response.end();
+}
+
+function first(request, response) {
+	var path = getPath(request);
+	console.log("Request for " + path + " received.");
+	if (path === '/Test01.css') {
+		var css = fs.readFileSync(__dirname + path);
+		response.writeHead(200, {'Content-Type': 'text/css'});
+		response.write(css);
+	} else {
+	    var html = fs.readFileSync(__dirname + '/Test01.html');
+		response.writeHead(200, {'Content-Type': 'text/html'});
+		response.write(html);
+	}
+    response.end();
+}
+
+http.createServer(first).listen(port);
+console.log("Server has started:" + port);
+```
+
+![Edit server.js](../Images/CloudNine05.png)
+
+- [Full Size Picture](../Images/CloudNine05.png)
+
+Now you can press the **Run** button. You should receive a notice
+that your page is running on the Web at a URL that looks like this:
+
+```
+Your code is running at 'https://prog270-calvert-c9-charliecalvert.c9.io'.
+```
+
+Your URL will look a bit different from this, but it should have at least
+some elements in common. For instance, it should end with c9.io.
+
+Congratulations! This is a big accomplishment. You have created a real
+web site with a page that works in a mobile browser. You handled all
+the code yourself, and created the content of your page.
+
+###Turn it in
+
+Use your browser to visit the page that you find in your copy of 
+Cloud 9. Take a screenshot of the page. Attach the screen shot to
+the assignment. (This assignment is still not complete, but this
+should help you get started. I'll give you a place to turn in the
+assignment when I am ready to have you turn it in.)
+
+
+

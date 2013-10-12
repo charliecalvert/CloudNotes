@@ -16,7 +16,7 @@ Online
 Anything you expected to do at home that is not covered in class will
 be put here.
 
-Assignment
+###Assignment Part I
 
 Using Angular, create an editable grid of objects called NPC.
 Each object should have four fields:
@@ -47,6 +47,20 @@ Write a Unit Test that confirms that each object has:
 	- 32
 	- 0
 
+###Assignment Part II
+
+Provide a link to your Code Academy account showing that you have taken:
+
+- Web Fundamentals to at least: 33%
+- JavaScript to at least: 25%
+
+[Example](http://www.codecademy.com/netslayer43536)
+
+Please put your picture in your Code Academy site, or link to your 
+Google Site, or provide some other means of clearly linking yourself 
+to the URL you provide.
+
+You can submit the [assignment on Canvas](https://bc.instructure.com/courses/870287/assignments/2908125).
 
 Links
 -----
