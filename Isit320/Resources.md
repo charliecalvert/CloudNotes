@@ -27,6 +27,18 @@ Videos
 - [Google Developers](https://www.youtube.com/user/GoogleDevelopers)
 
 
+From Google:
+
+- [A](https://www.youtube.com/user/GoogleDevelopers)
+- [B](https://www.youtube.com/watch?v=GFinc7TC1Ws)
+- [B](http://goo.gl/dX91br)
+- [B](http://goo.gl/swrjal)
+- [B](http://goo.gl/K4Qi9F)
+- [B](http://goo.gl/13qZLI)
+- [B](http://goo.gl/K4Qi9F)
+- [B](http://goo.gl/s9i1TL)
+- [B](http://goo.gl/zD1n0B)
+
 
 Interesting Books
 ---------
