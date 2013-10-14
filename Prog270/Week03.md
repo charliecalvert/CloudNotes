@@ -70,9 +70,6 @@ There will be two assignments this week.
 
 ###Assignment 01
 
-This is assignment is still not complete, but this
-should help you get started.
-
 We are going to begin serving up our own HTML pages so we can learn 
 how to craft them to work with mobile devices. To do this, we will use
 two technologies:
@@ -91,19 +88,20 @@ mobile sites. In particular, we choose:
 But how is that done? Exactly what makes a page work on a mobile 
 phone?
 
-A page can "look wrong" on a mobile in various ways. For instance,
-consider this picture:
+A page can "look wrong" on a mobile device in various ways. For 
+instance, consider this picture:
 
 ![Bad Image](../Images/MobileLook01.png)
 
-It just doesn't look very nice. Now look at these pictures:
+It doesn't look very nice because the fonts are outsized. Now look 
+at these pictures:
 
 ![Good Image](../Images/MobileLook02.png)
 
 ![Good Image](../Images/MobileLook03.png)
 
-Both of these latter images just look better. In particular, their 
-fonts are in the right proportion to the page.
+Both of these latter images look better than the first picture. In 
+particular, their fonts are in the right proportion to the page.
 
 It turns out that it is simple to convert a normal HTML page to one 
 that will work in a mobile browser. At least in some cases it can
@@ -111,42 +109,45 @@ be simple. Perhaps not always, but sometimes. For instance, with the
 page shown above, all I had to do was add the following code to it:
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 For now, let's not spend a lot of time thinking about what that code
 does on a technical level. It is enough to simply say that it 
 automatically scales the page to the appropriate size for the phone. 
-You can think of the initial-scale attribute like a "zoom" property.
-We are zoomed in level 1, which is normal size for the device.
+You can think of the **initial-scale** attribute like a "zoom" property.
+We are zoomed to level 1, which is normal size for the device.
 
 ####Setting up the Page
 
-If we are going to start adding lines of code to our HTML, then we
-need to begin having more control over the way a page is rendered
-than we can get on Google Sites. This is not a problem with Google Sites,
-which obviously solves all of these problems for us automatically.
-Rather it is not the right teaching platform for me to show you more
-details about the syntax of context displayed on mobile devices.
+If we are going to start adding lines of code to our HTML, then we 
+need to begin having more control over the way a page is rendered 
+than we can get on Google Sites. This is not a problem with Google 
+Sites, which obviously solves all of these problems for us 
+automatically. Rather it is not the right teaching platform for me 
+to show you more details about the syntax of content displayed on 
+mobile devices.
 
 One way to solve this problem would be to take you to a place like
 Amazon Web Services (AWS). However, I don't want to take that step
 quite yet. Instead, I'll ask that you create an account on the online
-IDE called [Cloud 9](https://c9.io/).
+IDE called [Cloud 9](https://c9.io/). This site is free to use. Or at
+least it is free for the kind of simple project we want to create.
 
 It turns, out however, that the simplest way to create an account on 
 Cloud 9 is to "sign in" with a [GitHub](https://github.com/) 
-account. We will be using GitHub quite a bit in this course, but I 
-don't want to introduce it quite yet. So I will ask you first to 
-simply create an account on GitHub and then do nothing special with 
-it other than use it to sign in to Cloud 9. So begin by going to
-GitHub and creating an account:
+account. We will be using GitHub quite a bit in this course, but for 
+now you can just create your GitHub account, and later we will learn 
+more about that service. So I will ask you first to simply create an 
+account on GitHub and then do nothing special with it other than use 
+it to sign in to Cloud 9. So begin by going to GitHub and creating 
+an account:
 
 - [https://github.com/](https://github.com/)
 
 Now go to Cloud 9, and sign in using your GitHub account. If you are 
 prompted for a user name and password, they are (most likely) 
-looking for the name and password on your GitHub account. Ok, once 
+looking for the name and password on your GitHub account. Once 
 you are logged into Cloud 9 you are now ready to get started with 
-this assignment.
+this core sections of this assignment.
 
 **Warning:** *I've been using [Cloud 9](https://c9.io/) for a couple 
 years now. I tried to introduce it into class last year, but it was 
@@ -162,9 +163,18 @@ few minutes, and then switch back when the site is up and running.
 Life in the cloud is less problematic each year, or even each month. 
 But it is still a bit touch and go at times.*
 
-When you sign into Cloud 9, you should go to the DashBoard. On that
-page, you will see a large green button labelled "Create New Workspace."
-Push that button.
+**Hint:** One trick to consider when using Cloud 9: sometimes the 
+interface is frozen even though the tools on the site are working 
+properly. To update the interface, try signing out and signing back 
+in again. Since you are using GitHub to sign in, you should find 
+this process very easy. 
+
+**HInt: You can check on the [status of Cloud 9](https://status.c9.io/) 
+to see if there are known problems.
+
+After you sign into Cloud 9, you should go to the DashBoard. On that 
+page, you should push the large green button labelled "Create New 
+Workspace."
 
 ![Create Workspace](../Images/CloudNine01.png)
 
@@ -179,9 +189,12 @@ When you click the Create Workspace button:
 
 You will have to wait a bit. Perhaps quite a while, as CloudNine is
 actually spinning up a virtual machine for you, which is a fairly
-costly operation.
+costly operation. So give it at least 5, or perhaps 10 minutes, before
+giving up. It should work much faster than that, but sometimes things
+can be slow if the site has a heavy load. Once your VM is up and 
+running, it will start much more quickly the next time.
 
-When your Workspace at last appears:
+When your Workspace appears to be ready:
 
 * Select your workspace
 * Click on the green **Start Editing** button
@@ -191,11 +204,13 @@ When your Workspace at last appears:
 Now create two files in your workspace:
 
 * An HTML file called **Test01.html** where you will place your 
-converted Markdown and a bit of extra code. Make sure you write the name,
-and its case, exactly as shown. It should be Test01.html, not test01.html
-or test01.HTML or TeSt01.hTMl or any other variation. Just Test01.html.
-* A file called server.js that will contain code that I will give you.
-This file will be created automatically for your by Cloud Nine.
+converted Markdown and a bit of extra code. Make sure you write the 
+file name, and its case, exactly as shown. It should be **Test01.html**, 
+not **test01.html** or **test01.HTML** or **TeSt01.hTMl** or any other 
+variation. Just **Test01.html**. 
+* You will also need a file called **server.js** that will contain 
+code that I will give you. This file will be created automatically 
+for your by Cloud Nine.
 
 At the top of Test01.html paste in this code:
 
@@ -295,13 +310,21 @@ Congratulations! This is a big accomplishment. You have created a real
 web site with a page that works in a mobile browser. You handled all
 the code yourself, and created the content of your page.
 
-###Turn it in
+####Turn it in
 
 Use your browser to visit the page that you find in your copy of 
 Cloud 9. Take a screenshot of the page. Attach the screen shot to
-the assignment. (This assignment is still not complete, but this
-should help you get started. I'll give you a place to turn in the
-assignment when I am ready to have you turn it in.)
+the assignment. If you want, include a picture of your work inside
+the Cloud 9 editor. It should be possible to set things up so we
+can see your app running on the right of the editor, and your code
+on the left side. That would make the best picture to include with
+your assignment.
 
+###Assignment Two
 
+[Watch this video on GitHub](http://youtu.be/k7Hr22oj7L0)
 
+Create a simple repo in GitHub called Prog270-LastName where 
+lastName is your last name. Your repo should contain a README.md 
+file. Pull your repo to a local machine and add some additional 
+markdown to your README file. Send me the URL of your repo.
