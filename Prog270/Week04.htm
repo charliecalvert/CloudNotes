@@ -342,14 +342,29 @@ function first(request, response) {
         var css = fs.readFileSync(__dirname + path);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/css&#39;});
         response.write(css);
-    } if (path === &#39;/About.html&#39;) {
+    } else if (path === &#39;/About.html&#39;) {
         var css = fs.readFileSync(__dirname + path);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;, &#39;Content-Length&#39;: &#39;1877&#39;});
         response.write(css);
-    } if (path === &#39;/Contacts.html&#39;) {
+    } else if (path === &#39;/Contacts.html&#39;) {
         var css = fs.readFileSync(__dirname + path);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;, &#39;Content-Length&#39;: &#39;1968&#39;});
         response.write(css);
+    } else if (path === &#39;/favicon.png&#39;) {
+        fs.readFile(__dirname + path, &quot;binary&quot;, function(err, file) {
+            console.log(&quot;Favicon detected&quot;);
+            if(err) {
+                console.log(&quot;Error reading binary file&quot;);
+                response.writeHeader(500, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
+                response.write(err + &quot;\n&quot;);
+            }
+            else{
+                console.log(&quot;Favicon loaded&quot;);
+                response.writeHeader(200, {&quot;Content-Type&quot;: &quot;image/png&quot;});
+                response.write(file, &quot;binary&quot;);
+                response.end();
+            }
+        });
     } else {
         var html = fs.readFileSync(__dirname + &#39;/index.html&#39;);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;});
