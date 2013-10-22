@@ -535,7 +535,7 @@ Your server.js is now going to look something like this:
 ```
 var http = require('http');
 var url = require('url');
-var port = process.env.C9_PORT || 1337;
+var port = process.env.PORT || 1337;
 var fs = require('fs');
 
 function getPath(request) {
