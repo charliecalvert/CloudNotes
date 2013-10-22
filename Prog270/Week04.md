@@ -297,11 +297,12 @@ work on three screens:
 - Phone
 
 The first bootstrap Assignment is like the first Cloud Nine 
-assignment: You will create some markdown, convert it to HTML
-paste it into a HTML, and run it via Node on Cloud 9. This time, 
-however, you will be linking the bootstrap CSS and JavaScript
-that will give your page a special look that works well on 
-multiple platforms.
+assignment: You will create some markdown, convert it to HTML paste 
+it into an existing HTML file, and run it via Node on Cloud 9. This 
+time, however, you will be linking in the bootstrap CSS and 
+JavaScript that will give your page a special look that works well 
+on multiple platforms. Consider just adding your code to a new
+directory in the GitHub repository you have been using.
 
 We are going to begin working with Starter Bootstrap Template which
 is found here:
@@ -356,8 +357,8 @@ Here is my version of the header:
 ```
 
 I have included all the library code you need to get your bootstrap
-page up and running. Note that I have referenced both jquery and 
-bootstrap.min.js. This means that you can omit the two lines found 
+page up and running. Note that I have referenced both **jquery** and 
+**bootstrap.min.js**. This means that you can omit the two lines found 
 at the bottom of the boilerplate Starter Page that bootstrap provides.
 These are the links that begin with a **script** tag and contains
 the words assets, dist, jquery and bootstrap. I link all that in above
@@ -460,7 +461,7 @@ body. Here is the first part of the body:
 ```
 
 For now, you can leave this alone, but you will need to edit
-it later. In particular, the links which we contains an href will
+it later. In particular, the links contain an href we will
 need to be edit.
 
 Here is the second part of the body:
@@ -476,16 +477,17 @@ Here is the second part of the body:
 ```
 
 As you can see, this code features a container, and inside that 
-container is a place to put your convered markdown. The two class
-attributes shown here are included so that bootstrap will know how to
-"style" your page. In particular, note that you know how the starter-template
-style will look, since we defined it in **index.css**.
+container is a place to put your converted markdown. The two class 
+attributes shown here are included so that bootstrap will know how 
+to "style" your page. In particular, note that you know how the 
+starter-template style will look, since we defined it in 
+**index.css**.
 
 Once you have your page up and running, the next step is to get the 
-get the menu working correctly. There are several ways to solve this
-problem, some of which are more sophisticated than the one I want you
-to implement. However, there are advantages to this "simple" solution
-I show here.
+menu working correctly. There are several ways to solve this 
+problem, some of which are more sophisticated than the one I want 
+you to implement. However, there are advantages to the "simple" 
+solution I show here.
 
 We are going to focus on these lines of codes from the first part of
 the header:
@@ -501,11 +503,11 @@ page:
 
 	<a href="#">Home</a>
 
-The **a** in the tag stands for anchor. That is the name of the tag. The
-**href** attribute is a link to a place in the current document or to
-another page. For instance, if your web site had a page in it called
-**MyPage.html**, then you would create a hyperlink to that page with
-this code:
+The **a** in the tag stands for anchor. That is the name of the tag. 
+The **href** attribute is a link to a place in the current document 
+or to another page. For instance, if your web site had a page in it 
+called **MyPage.html**, then you would create a hyperlink to that 
+page with this code:
 
 	<a href="MyPage.html">MyPage</a>
 
@@ -525,8 +527,8 @@ that clicking on the About link takes you to the about page, and etc.
 Don't forget to link back to your home page (index.html) from the
 appropriate link!
 
-You will also need to make similar changes to the Project name link, but 
-I will leave that as an exersize for you. 
+You will also need to make similar changes to the Project name link, 
+but I will leave that as an exersize for you. 
 
 Your server.js is now going to look something like this:
 
@@ -575,7 +577,7 @@ http.createServer(first).listen(port);
 console.log("Server has started:" + port);
 ```
 
-Notice the lines that Content-Length and are set to values like
+Notice the lines called **Content-Length** and are set to values like
 1877? You might need to change these to reflect the size your page.
 You can see the page size by going to the appropriate directory
 in the terminal and issuing the ls -la. It creates output like this:
@@ -598,6 +600,12 @@ You can see that Contacts.html has a size of 1968 bytes. (I was surprised
 to see that I needed to include this information in the header, but it
 fixed a bug when I included it. I'll try to get more information by
 class time.)
+
+When you are done, do one of two things:
+
+- Add your code to your GitHub repository, and submit a link to your
+repository.
+- Add your code to zip file, and submit the zip file.
 
 Working with Files and Directories in Git
 -----------------------------------------
