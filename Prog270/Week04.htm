@@ -320,7 +320,7 @@ pre {
 <p>Your server.js is now going to look something like this:</p>
 <pre><code>var http = require(&#39;http&#39;);
 var url = require(&#39;url&#39;);
-var port = process.env.C9_PORT || 1337;
+var port = process.env.PORT || 1337;
 var fs = require(&#39;fs&#39;);
 
 function getPath(request) {
@@ -342,14 +342,17 @@ function first(request, response) {
         var css = fs.readFileSync(__dirname + path);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/css&#39;});
         response.write(css);
+        response.end();
     } else if (path === &#39;/About.html&#39;) {
-        var css = fs.readFileSync(__dirname + path);
+        var aboutHtml = fs.readFileSync(__dirname + path);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;, &#39;Content-Length&#39;: &#39;1877&#39;});
-        response.write(css);
+        response.write(aboutHtml);
+        response.end();
     } else if (path === &#39;/Contacts.html&#39;) {
-        var css = fs.readFileSync(__dirname + path);
+        var contactsHtml = fs.readFileSync(__dirname + path);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;, &#39;Content-Length&#39;: &#39;1968&#39;});
-        response.write(css);
+        response.write(contactsHtml);
+        response.end();
     } else if (path === &#39;/favicon.png&#39;) {
         fs.readFile(__dirname + path, &quot;binary&quot;, function(err, file) {
             console.log(&quot;Favicon detected&quot;);
@@ -357,6 +360,7 @@ function first(request, response) {
                 console.log(&quot;Error reading binary file&quot;);
                 response.writeHeader(500, {&quot;Content-Type&quot;: &quot;text/plain&quot;});
                 response.write(err + &quot;\n&quot;);
+                response.end();
             }
             else{
                 console.log(&quot;Favicon loaded&quot;);
@@ -369,8 +373,8 @@ function first(request, response) {
         var html = fs.readFileSync(__dirname + &#39;/index.html&#39;);
         response.writeHead(200, {&#39;Content-Type&#39;: &#39;text/html&#39;});
         response.write(html);
+        response.end();
     }
-    response.end();
 }
 
 http.createServer(first).listen(port);
