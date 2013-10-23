@@ -1,10 +1,11 @@
 import os
 import sys
+import elfutils.elffiles as elffiles
 from elfutils.MarkdownToHtml import MarkdownToHtml
 
 # Site Root
 cloudNotesFrom= os.environ['GITHUB'] + "CloudNotes\\"
-cloudNotesTo=os.environ['ELVENWARE'] + "charlie\\books\\CloudNotes\\"
+cloudNotesTo=elffiles.ensureFinalSlash(os.environ['ELVENWARE']) + "charlie\\books\\CloudNotes\\"
 
 # CloudNotes Root
 def cloudRoot(markdown):
@@ -12,6 +13,7 @@ def cloudRoot(markdown):
 	print(cloudNotesFrom)
 	markdown.copyFrom=cloudNotesFrom
 	markdown.destination=cloudNotesTo
+	elffiles.ensureDir(markdown.destination)
 	markdown.runner(files);
 
 
@@ -22,6 +24,7 @@ def prog270(markdown):
 	"MarkdownAssignment", 'GoogleSiteAssignment'];
 	markdown.copyFrom=cloudNotesFrom + "Prog270"
 	markdown.destination=cloudNotesTo + "Prog270"
+	elffiles.ensureDir(markdown.destination)
 	markdown.runner(files);
 	
 # Isit320
@@ -30,10 +33,11 @@ def isit320(markdown):
 		"Week03", "Week04", "Week05", "GitTipsFromKurt"];
 	markdown.copyFrom=cloudNotesFrom + "Isit320"
 	markdown.destination=cloudNotesTo + "Isit320"
+	elffiles.ensureDir(markdown.destination)
 	markdown.runner(files);
 
 # Run Program
-m = MarkdownToHtml()
-cloudRoot(m)
-prog270(m)
-isit320(m)
+markdown = MarkdownToHtml()
+cloudRoot(markdown)
+prog270(markdown)
+isit320(markdown)
