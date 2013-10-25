@@ -266,7 +266,8 @@ To git@github.com:charliecalvert/Simple02.git
    2b8590e..6ee5809  master -> master
 ```
 
-To turn in this assignment, simply submit the URL of your repository.
+To turn in this assignment, simply submit the URL of your GIT 
+repository. Not your C9 IDE URL, but the GitHub URL.
 
 For the next part of this assignment, you should create a folder called 
 Week04-Bootstrap01. Use that folder for the work you do for 
