@@ -3,6 +3,14 @@ Week 05
 
 - [The Week 05 Deck](http://bit.ly/1fRfuzK)
 
+Videos
+------
+
+- <iframe width="420" height="315" src="//www.youtube.com/embed/BEE66nNi-3c" frameborder="0" allowfullscreen></iframe>
+- <iframe width="420" height="315" src="//www.youtube.com/embed/Zn6sN0Uf9z4" frameborder="0" allowfullscreen></iframe>
+- <iframe width="420" height="315" src="//www.youtube.com/embed/k7Hr22oj7L0" frameborder="0" allowfullscreen></iframe>
+- <iframe width="420" height="315" src="//www.youtube.com/embed/p1obmWF6Nks" frameborder="0" allowfullscreen></iframe>
+
 Online
 ------
 

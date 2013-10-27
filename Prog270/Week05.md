@@ -17,8 +17,21 @@ Inclass
 Online
 ------
 
-There will be at least three assignments this weekend. Here are two
-to get you started. 
+
+There will be at least four assignments this weekend.
+
+###Videos
+
+These short videos on GitHub and Cloud Nine might be helpful.
+
+- <iframe width="420" height="315" src="//www.youtube.com/embed/Zn6sN0Uf9z4" frameborder="0" allowfullscreen></iframe>
+- <iframe width="420" height="315" src="//www.youtube.com/embed/k7Hr22oj7L0" frameborder="0" allowfullscreen></iframe>
+- <iframe width="420" height="315" src="//www.youtube.com/embed/BEE66nNi-3c" frameborder="0" allowfullscreen></iframe>
+
+Here is an interesting search:
+
+- <https://www.google.com/#q=related:c9.io>
+
 
 ###Assignment 01: Media Query Video
 
@@ -57,8 +70,16 @@ of it: .gitignore.
 
 Create or open the file in your editor. This sounds like a simple 
 thing, but on Linux, files that begin with a period are hidden. 
-Right click on your folder in Cloud 9, and choose show hidden files. 
-Now you can see files with names like .gitignore. 
+Click on the gear icon from the workspace page in Cloud 9, and 
+choose to show hidden files. Now you can see files with names like 
+.gitignore. 
+
+![Showing hidden files](../Images/ShowHiddenFiles01.png)
+
+Figure 00: Hidden files. [See full size image](../Images/ShowHiddenFiles01.png)
+
+You can also see the hidden files by typing **ls -la** in the terminal
+window.
 
 Inside gitignore add the following two lines:
 
@@ -114,3 +135,152 @@ The file I want you to submit should look, vaguely, like this:
 
 It won't look exactly like that, but at least some of it will 
 be quite similar.
+
+###Assignment 04: Bootstrap Revisited
+
+This is essentially the same assignment as last week, only the template
+is a bit different. I have also tried to make the assignment a bit 
+easier. In week06 I will give you a final with a similar challenge,
+but it might be a bit trickier.
+
+This time you can [download](the [download](href="/courses/834458/files/30766727/download?verifier=fW1GlHItzSHWUQIralAyqmNm83uWm0A6FMZVCLga">Week05BootStrap.zip) 
+the files on which you base your project.
+
+Features I want you to include:
+
+- Four pictures on main page.
+- Your avatar on the about and contacts page
+- The buttons don't need to go anywhere
+- Two ways to navigate:
+	- Home, About, Contacts
+	- Dropdown Home, About Contacts
+- On the about and contacts page, there should be three columns with 
+a small default PNG displayed in them. You should replace all the PNG files 
+shown on the About page I give you with your own small bitmaps that you make 
+with an [online tool](http://pixlr.com/editor/) or with a tool like 
+paint .net or [picassa](http://picasa.google.com/).
+- Also replace the text in the columns, putting different text on your
+your about or contacts page. Your contacts page does not have to include
+real contact information.
+
+If you need some inspiration, check out various about and contacts pages
+found around the web. Here are googles:
+
+- <https://www.google.com/intl/en/about/>
+- <https://www.google.com/intl/en/about/company/facts/management/>
+
+The server.js file included in the project that you can download 
+here or from the main assignment page should now be able to handle 
+arbitrary CSS, PNG or HTML files. It just looks for the extension, 
+and then loads them based on that information. This means you don't 
+need to worry so much about the names of your files. Here is the
+script, which is also included in the [download](href="/courses/834458/files/30766727/download?verifier=fW1GlHItzSHWUQIralAyqmNm83uWm0A6FMZVCLga">Week05BootStrap.zip):
+
+```
+var http = require('http');
+var url = require('url');
+var port = process.env.PORT || 30025;
+var fs = require('fs');
+
+function getPath(request) {
+	return url.parse(request.url).pathname;
+}
+
+// Thanks to Wallace: http://stackoverflow.com/a/1203361/253576
+function getExtension(fileName) {
+	var fileNameArray = fileName.split(".");
+	if( fileNameArray.length === 1 || ( fileNameArray[0] === "" && fileNameArray.length === 2 ) ) {
+		return "";
+	}
+	return fileNameArray.pop().toLowerCase();    
+}
+
+function loadContent(request, response) {
+	var path = getPath(request);
+	console.log("Request for " + path + " received.");
+	if (getExtension(path) === 'css') {
+		var css = fs.readFileSync(__dirname + path);
+		response.writeHead(200, {'Content-Type': 'text/css'});
+		response.write(css);
+		response.end();
+	} else if (getExtension(path) === 'html') {
+		var html = fs.readFileSync(__dirname + path);
+		response.writeHead(200, {'Content-Type': 'text/html'});
+		response.write(html);
+		response.end();
+	} else if (getExtension(path) === 'png') {
+		fs.readFile(__dirname + path, "binary", function(err, file) {
+			console.log("PNG detected");
+			if(err) {
+				console.log("Error reading binary file");
+				response.writeHeader(500, {"Content-Type": "text/plain"});
+				response.write(err + "\n");
+				response.end();
+			}
+			else{
+				console.log("PNG loaded");
+				response.writeHeader(200, {"Content-Type": "image/png"});
+				response.write(file, "binary");
+				response.end();
+			}
+		});
+	} else {
+	    var html = fs.readFileSync(__dirname + '/index.html');
+		response.writeHead(200, {'Content-Type': 'text/html'});
+		response.write(html);
+		response.end();
+	}
+}
+
+http.createServer(loadContent).listen(port);
+console.log("Server has started:" + port);
+```
+
+
+Your page should end up looking something like this but with your 
+own pictures and text:
+
+![Charlie's Week05 Bootstrap](../Images/Week05Bootstrap01Small.png)
+
+**Figure 01: Charle's Week05 Bootstrap page.** [Click for full size](../Images/Week05Bootstrap01.png)
+
+I have removed the log in section from the original Bootstrap page:
+
+```
+   <form class="navbar-form navbar-right">
+      <div class="form-group">
+        <input type="text" placeholder="Email" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-success">Sign in</button>
+    </form>
+```
+
+This would have appeared rightbefore the closing navbar collapse:
+
+	// Optional fake login controls here. 
+	</div><!--/.navbar-collapse -->
+	
+Turn in a link to your repository where you have checked in your
+code. In your repository, include the markdown that you used as the
+basis for your page. Your markdown does not have to look like your
+finished page, it just needs the content that you pasted into your
+finished page.
+
+
+You might want to have page open in Markable, Dillinger, 
+DaringFireBall or [https://stackedit.io/](https://stackedit.io/). 
+You write text on that page that you will need to use in some 
+portion of your web page. That would be a three step process:
+
+- Compose the markdown
+- Download the HTML
+- Paste chunks of the HTML into various portions of your bootstrap assignment
+
+Then when you are done with the assignment, take the contents of the 
+markdown page, check it in to GIT, in the same folder with your 
+other code. What I'm looking for here is proof that you originally 
+wrote the HTML using markdown. Why? Because ultimately markdown is
+a great skill to have if you create a lot of HTML.
