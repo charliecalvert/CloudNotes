@@ -7,6 +7,7 @@ This is an overview of Week 05 activities. We are focused on:
 - Cloud 9
 - Bootstrap
 - Linux
+- [To CloudNotes Overview](../CloudNotes.html)
 
 Inclass
 -------
@@ -263,7 +264,14 @@ This would have appeared rightbefore the closing navbar collapse:
 	// Optional fake login controls here. 
 	</div><!--/.navbar-collapse -->
 	
-Turn in a link to your repository where you have checked in your
+Make sure you update your repository by committing and pushing your 
+changes. That might look something like this:
+
+	git add .
+	git commit -m "Updates for Week 05 assignment"
+	git push
+
+Turn in a link to your updated repository where you have checked in your
 code. In your repository, include the markdown that you used as the
 basis for your page. Your markdown does not have to look like your
 finished page, it just needs the content that you pasted into your

@@ -1,6 +1,7 @@
 <h2 id="week-05">Week 05</h2>
 <ul>
 <li><a href="http://bit.ly/1fRfuzK">The Week 05 Deck</a></li>
+<li><a href="../CloudNotes.html">To CloudNotes Overview</a></li>
 </ul>
 <h2 id="videos">Videos</h2>
 <ul>
@@ -116,3 +117,48 @@ npp C:\Src\Git\Isit320\A01\ISIT320-XXX\week3\.project</code></pre>
 </figure>
 <p><strong>Figure02: Open seven tabs at once in NotePad++. <a href="../Images/RegEx02.png">See big image</a></strong></p>
 <p>When you are done, check in your work and submit the URL of your repository. I know this is busy work, and I should have made all this clear earlier, but lets straighten it out now. Thank you.</p>
+<h3 id="assignment-04-roll-dice">Assignment 04: Roll Dice</h3>
+<p>Create a program that simulates rolling dice. We will need to roll a wide array of dice. Here is how it works.</p>
+<p>The kind of die you see most often has six possible values:</p>
+<pre><code>1, 2, 3, 4, 5, 6</code></pre>
+<p>This kind of die is called a d6</p>
+<p>In most games we play, there are 2 d6 dice. This is called 2d6:</p>
+<pre><code>1, 2, 3, 4, 5, 6
+1, 2, 3, 4, 5, 6</code></pre>
+<p>For instance the first die might roll a 2, and the second a 6, this would return a value of 8. It is not possible for a d6 die to return 0 or 7.</p>
+<p>We will also need 3 6 sided dice, which is called 3d6:</p>
+<pre><code>1, 2, 3, 4, 5, 6
+1, 2, 3, 4, 5, 6
+1, 2, 3, 4, 5, 6</code></pre>
+<p>But not all dice have 6 sides. Some, for instance, have four. This kind of die is called a d4:</p>
+<pre><code>1, 2, 3, 4</code></pre>
+<p>And of course tehre are d10s with possible return values between 1 and 10 inclusive, and d20s, with possible return values between 1 and 20 inclusive.</p>
+<p>I want you to create a program with 6 buttons on it. Each button will return the result of a different kind of dice roll:</p>
+<ul>
+<li>Button01: D6</li>
+<li>Button02: 2D6</li>
+<li>Button03: 3D6</li>
+<li>Button04: D4</li>
+<li>Button05: D10</li>
+<li>Button06: D20</li>
+</ul>
+<p>For the 2D6 and 3D6 rolls, I want you to display not only the result of the roll, but the actual value that each die returned:</p>
+<figure>
+<img src="../Images/Dice01.png" alt="A roll of the 3D6" /><figcaption>A roll of the 3D6</figcaption>
+</figure>
+<p><strong>Figure01: Three dice were rolled. They returned a 5, 1, and 3 for a total of 9.</strong> <a href="../Images/Dice01.png">See full size</a></p>
+<p>Your solution should be more complex than this. I'm only showing the results for one sixth of the answer in this screen shot.</p>
+<p>I want you to also run tests that confirm that over 250 rolls, each of your rolls return values that are within the appropriate range. For instance, You should roll your 2D6 dice 250 times and confirm that the result is always between 1 and 12, inclusive. You don't need to write 250 tests, you just call your roll 250 times and confirm that it never returns a value outside the range. If it does return a value outside the range, then the test should fail, otherwise, it passes.</p>
+<p>Here is how to roll a D3:</p>
+<pre><code>var rollD3 = function() {
+    return Math.floor(Math.random() * 3) + 1;
+};</code></pre>
+<p>I think you can figure it all out from there. To return a six sided die roll, multiply by 6, not by 3. To return the result of rolling two six sided dice, call rollD6() twice, and add up the results. And so on. Or do something altogether different, if you prefer. Its all good so long as it works, and it isn't too verbose.</p>
+<p>When rolling a 2D6 you would also want to tuck the values returned by each die away somewhere so you can display them to the user. Whether you just store the result of the two rolls in a single string, or in two separate number variables is up to you.</p>
+<p>I stumbled across a nice little bug when I first started writing this code. Suppose you tried to call the results of a roll directly in an angular place holder:</p>
+<pre><code>&lt;p&gt;{{getD3Roll()}}&lt;p&gt;</code></pre>
+<p>Angular will execute callD3Roll() which in turn calls your rollD3() function. Then every so often Angular checks to see if anything has changed by executing one of its watch() methods. Since the callD3Roll() function returns a random number, Angular will frequently find that the result has changed. I think in this case we have a 1 in 3 chance of the number not changing. So it updates the View. Then it checks to see if the value has changed. Whoops. It's changed, so it updates the view. And so on. If this happens often enough, it will assume it is stuck in some kind of loop, and start malfunctioning. You might not notice the errors unless you have your console view open in the debugger. But my experience shows that it will start malfunctioning if you do something like this.</p>
+<p>The solution, of course, is to never call the rollD3 function that way. Instead, just call it on a button click:</p>
+<pre><code>&lt;button ng-click=&#39;getD3Roll()&#39;&gt;Roll D3&lt;/button&gt;</code></pre>
+<p>This puts the onus on the user to check for a new value, rather than on Angular itself. And of course you have to figure out some way of getting the answer back into the view, but I'll let you figure out a good way to solve that problem. The key point is that the button click solution ensures that a new value appears only when the user requests it. Now Angular is happy, and the errors go away.</p>
+<p>Put your implementation in a your repo in a folder called <strong>Week05-RollDice</strong> and submit the URL for your repo.</p>
