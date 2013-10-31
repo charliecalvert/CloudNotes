@@ -20,7 +20,7 @@ def cloudRoot(markdown):
 # Prog270
 def prog270(markdown):
 	files = ["Resources", "Week01", "Week02", "Week03",
-	"Week04", "Week05", 
+	"Week04", "Week05", "Week06", 
 	"MarkdownAssignment", 'GoogleSiteAssignment'];
 	markdown.copyFrom=cloudNotesFrom + "Prog270"
 	markdown.destination=cloudNotesTo + "Prog270"
@@ -30,7 +30,8 @@ def prog270(markdown):
 # Isit320
 def isit320(markdown):
 	files = ["Resources", "Week01", "Week02", 
-		"Week03", "Week04", "Week05", "GitTipsFromKurt"];
+		"Week03", "Week04", "Week05", "Week06",
+		"GitTipsFromKurt"];
 	markdown.copyFrom=cloudNotesFrom + "Isit320"
 	markdown.destination=cloudNotesTo + "Isit320"
 	elffiles.ensureDir(markdown.destination)

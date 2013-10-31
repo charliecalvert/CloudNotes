@@ -16,6 +16,7 @@ Prog 270
 -	[Week03](Prog270/Week03.html)
 -	[Week04](Prog270/Week04.html)
 -	[Week05](Prog270/Week05.html)
+-	[Week06](Prog270/Week06.html)
 
 Prog 272
 --------
@@ -80,3 +81,4 @@ ISIT 320
 - [Week03](Isit320/Week03.html)
 - [Week04](Isit320/Week04.html)
 - [Week05](Isit320/Week05.html)
+- [Week06](Isit320/Week06.html)
