@@ -30,3 +30,33 @@
 <figure>
 <img src="../Images/PortForwarding01.png" alt="Port Forwarding" /><figcaption>Port Forwarding</figcaption>
 </figure>
+<h2 id="online">Online</h2>
+<h3 id="assignment01">Assignment01</h3>
+<p>This assignment is not complete, but it should give you enough information to get you started. This week we will focus on two things:</p>
+<ul>
+<li>VirtualBox and Lubuntu</li>
+<li>Adding JavaScript animations to our bootstrap code</li>
+</ul>
+<p>I will give you a program to get you started. Add in your HTML as you have done before. Also include two animated bitmaps driven by the included JavaScript code found in index.js. Do not use animated GIFs or any other technique to animate your page other than the one in the sample code.</p>
+<p>There are two key lines in <strong>index.html</strong>:</p>
+<pre><code>&lt;div id=&#39;drawHere01&#39; class=&#39;draw-target&#39;&gt;&lt;/div&gt;
+&lt;div id=&#39;drawHere02&#39; class=&#39;draw-target&#39;&gt;&lt;/div&gt;</code></pre>
+<p>These are where the animations are drawn.</p>
+<p>There are also four key lines in index.js:</p>
+<pre><code>var target01 = $(&#39;#drawHere01&#39;);
+var target02 = $(&#39;#drawHere02&#39;);
+animate(target01, &#39;Shapes01.png&#39;, true);
+animate(target02, &#39;Shapes02.png&#39;, false);   </code></pre>
+<p>And finally there is one line in index.html that links in index.js:</p>
+<pre><code>&lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>Right now you will find the animations only on the index page. You need to make the appear on both the contacts page and on the about page. This means you need to move the DIVs onto those pages, and you also need to link in the JavaScript on those pages.</p>
+<ul>
+<li>Make the animations appear on all three pages</li>
+<li>Add your own HTML from your markdown pages to index.html, about.html and contacts.html.</li>
+<li>Open up Shapes01.png and Shapes02.png and modify the first five images so your animations look different from the defaults. (Row 1, images 1 through 4, Row 2, Image 1.) A simple minimal modification would be to change the color of the gears.</li>
+<li>Check your code into your repository in a folder called Week06-Anim</li>
+<li>Include screenshots of your code running in both Cloud9 and in VirtualBox with Lubuntu</li>
+</ul>
+<p>When taking your screenshot of Lubuntu, it is probably easiest to do it from Windows. Also, if you take the screenshot that way, I can clearly see that you are using VirtualBox. You may not want to focus the Lubuntu window while you take the screenshot as it will absorb the hot keys you use for triggering the screenshot (Alt-PrintScrn).</p>
+<p>Submit the URL of your repository. The starting code is linked from the assignment in Cloud 9.</p>
+<p>Remember to come back and check for updates to this assignment and look for additional assignments.</p>

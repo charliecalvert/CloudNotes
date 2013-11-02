@@ -30,7 +30,7 @@ def prog270(markdown):
 # Isit320
 def isit320(markdown):
 	files = ["Resources", "Week01", "Week02", 
-		"Week03", "Week04", "Week05", "Week06",
+		"Week03", "Week04", "Week05", "Week06", "Week07",
 		"GitTipsFromKurt"];
 	markdown.copyFrom=cloudNotesFrom + "Isit320"
 	markdown.destination=cloudNotesTo + "Isit320"

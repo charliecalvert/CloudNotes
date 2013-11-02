@@ -14,3 +14,10 @@
 <li>BasicFantasy.org</li>
 </ul></li>
 </ul>
+<h3 id="assignment-02">Assignment 02</h3>
+<p>Use this function to extend the range of the string class:</p>
+<pre><code>if (typeof String.prototype.endsWith !== &#39;function&#39;) {
+    String.prototype.endsWith = function(suffix) {
+        return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+}</code></pre>

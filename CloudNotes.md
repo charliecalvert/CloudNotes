@@ -82,3 +82,5 @@ ISIT 320
 - [Week04](Isit320/Week04.html)
 - [Week05](Isit320/Week05.html)
 - [Week06](Isit320/Week06.html)
+- [Week07](Isit320/Week07.html)
+
