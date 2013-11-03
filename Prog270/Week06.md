@@ -165,3 +165,105 @@ is linked from the assignment in Cloud 9.
 
 Remember to come back and check for updates to this assignment and 
 look for additional assignments of hints.
+
+###Assignment02 VirtualBox and Android x86
+
+Androidx86 is a verion of Android that runs on the intel 
+architecture. We are interested in it because we can run it on
+VirtualBox.
+
+There are various versions of Androidx86 that mirror the history
+of Android itself. I have, however, been able to install Androidx86
+4.3 in VBox, as shown below.
+
+![Android 4.3 on VBox](/charlie/os/linux/images/VirtualBoxAndroidx8643.png)
+
+[Full Size](/charlie/os/linux/images/VirtualBoxAndroidx8643.png)
+
+Here is a link to the download:
+
+- [Android x86 4.3](http://android-x86.googlecode.com/files/android-x86-4.3-20130725.iso)
+
+The most interesting thing about this install is that it includes 
+the PlayStore. This means that you can install at least some of the 
+Android Apps that might interest you. Not all of them will work, and 
+the experience is more than a bit funky, and yet it is interesting.
+
+The install is a bit tricky. I describe it in some detail here, but 
+you should install [Android x86 4.3](http://android-x86.googlecode.com/files/android-x86-4.3-20130725.iso) if possible:
+
+- [Androidx86 Install](http://www.elvenware.com/charlie/development/android/Androidx86.shtml#installPart01)
+
+Here is a video: 
+
+- [Video of Android x86](http://youtu.be/LNgkRhsgzIc)
+
+Remember to use **Right-Ctrl-I** to capture or free the mouse. This
+is tricky! (And hard to do over remote desktop connection. Sorry.
+But you can do the install that way, if not all the configuration.)
+
+Not really related to this assignment, but still you might find 
+these older videos interesting: 
+
+- [Video of Ubuntu install](http://youtu.be/ACj-Y6cZRNg)
+- [Video of Guest Additions](http://youtu.be/QQ_FyMFzk1s)
+
+When you install Androidx86, the networking should just work. I have 
+notes on Elvenware about how to get the networking up and running on 
+various versions of Androidx86, but with 4.3 it should just work. The
+best way to tell it is working is to go to the browser and browse to
+Google.com. Alternatively:
+
+- Alt-F1
+- ping www.elvenware.com
+- Alt-F7
+
+If the install fails despite repeated efforts, you can consider falling
+back to this version:
+
+- [Android x86 2.3](http://android-x86.googlecode.com/files/android-x86-2.3-RC1-eeepc.iso)
+
+It nearly always works, but is harder to use and does not include the
+Play Store. In general, each succeeding version is harder to install
+than the previous, in that it takes more system resources. This is 
+something Google hopes to remember with Android 4.4, KitKat. My point
+is that you might try 3.2 or 4.0 if 4.3 fails. But 2.3 should work
+for nearly everyone.
+
+The big payoff, of course, is getting signed in to your Google Account.
+Until you do that, Android doesn't really work very well. I find that
+sometimes Android complains that it is not on the wireless network
+and so it can't sign you in. If you hit this problem, try opening
+the browser, going to the Google web site, signing in, and then
+signing in again. You can sign in on the settings screen, near the
+bottom:
+
+![Android 4.3 on VBox](/charlie/os/linux/images/VirtualBoxAndroidx8643Sign.png)
+
+[Full Size](/charlie/os/linux/images/VirtualBoxAndroidx8643Sign.png)
+
+The red highlight shows where to click to add an account. The blue
+Google icon shows that I am signed in to my Google Account. Look 
+up at the Green picture of Android shown above. See the six dots in
+the lower middle of the screen? Click that to get to the Program
+view. The settings app is near the bottom left.
+
+![Android 4.3 on VBox](/charlie/os/linux/images/VirtualBoxAndroidx8643Apps.png)
+
+[Full Size](/charlie/os/linux/images/VirtualBoxAndroidx8643Apps.png)
+
+
+I realize that some people may have some trouble with this install.
+If you run across a complete road block, then cease and desist, but 
+be sure to document with screenshots your point of failure and various
+way points you encountered.
+
+When you are done, check in to github one or more screenshots of it 
+either running or not running. Then submit your URL. I will try to 
+monitor the discussion area over the next few days, so feel free
+to ask questions.
+
+- [Android x86 Download Page](http://www.android-x86.org/download)
+
+
+
