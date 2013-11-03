@@ -2,42 +2,21 @@
 <h2 id="in-class">In Class</h2>
 <h3 id="unit-test-examples">Unit Test Examples</h3>
 <p>You might also be interested in the tests for Crafty03.</p>
-<p>These tests provide the first instance we have seen of creating a mock object:</p>
-<pre><code>beforeEach(inject(function($rootScope, $controller) {
-    gameBoard = $rootScope.$new();
-    gameEventService = { towerBroadcast: function() { return true; } };
-    elfgameService = $rootScope.$new();
-    $controller(&#39;GameBoard&#39;, { 
-        $scope: gameBoard, 
-        gameEventService: gameEventService, 
-        elfgameService: elfgameService 
-    });
-}));</code></pre>
-<p>Notice this line from the code shown above:</p>
-<pre><code>gameEventService = { towerBroadcast: function() { return true; } };</code></pre>
-<p>This code mocks our event service by simply returning true rather than actually send the message. This line looks as though it is retreiving a real gameEventService object, but it just using our mock:</p>
-<pre><code>$controller(&#39;GameBoard&#39;, { 
-    $scope: gameBoard, 
-    gameEventService: gameEventService, 
-    elfgameService: elfgameService 
-});</code></pre>
-<p>Now we can write tests that depend on making calls to the <strong>towerBroadcast</strong> method of our <strong>gameEventService</strong>:</p>
-<pre><code>it(&quot;Check ElfGame Width&quot;, function() {
-    var actual = elfgameService.reportEvent();
-    expect(actual).toEqual(true);
-});</code></pre>
-<p>This code calls <strong>reportEvent</strong> which in turn calls <strong>gameEventServer.towerBroadcast</strong>.</p>
-<h3 id="json-from-server">JSON from Server</h3>
-<pre><code>var getDataJson = $http.get(&#39;data.json&#39;);
-
-getDataJson.success(function(data, status, headers, config)  {
-    $scope.data = data;
-});
-    
-getDataJson.error(function(data, status, headers, config) {
-    throw new Error(&#39;Oh no! An Error!&#39;);
-});</code></pre>
 <ul>
-<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer">Example</a></li>
-<li><a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/JsonFromServer/index.js">Key File</a></li>
+<li><a href="/charlie/development/web/JavaScript/Angular.html#basicMock">Mock Example</a></li>
 </ul>
+<h3 id="json-from-server">JSON from Server</h3>
+<p>Retrieve JSON from a server:</p>
+<ul>
+<li><p><a href="/charlie/development/web/JavaScript/Angular.html#jsonFromServer">JSON Example</a></p></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer">Example</a></li>
+<li><p><a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/JsonFromServer/index.js">Key File</a></p></li>
+</ul>
+<h2 id="online">Online</h2>
+<h3 id="assignment-03">Assignment 03</h3>
+<p>Use this function to extend the range of the string class:</p>
+<pre><code>if (typeof String.prototype.endsWith !== &#39;function&#39;) {
+    String.prototype.endsWith = function(suffix) {
+        return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+}</code></pre>

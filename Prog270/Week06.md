@@ -166,6 +166,22 @@ is linked from the assignment in Cloud 9.
 Remember to come back and check for updates to this assignment and 
 look for additional assignments of hints.
 
+When you are starting your BootStrap project on Lubuntu, navigate to 
+the directory where you have stored your bootstrap project. Then you 
+need to type something like this at the command line:
+
+	nodejs Server.js
+
+The system should reply with something like this:
+
+	Server has started: 30025
+
+Then open your Lubuntu browser and enter this address:
+
+	localhost:30025
+	
+Now you should see your program running in the Lubuntu browser.
+
 ###Assignment02 VirtualBox and Android x86
 
 Androidx86 is a verion of Android that runs on the intel 

@@ -4,6 +4,8 @@ Week06
 InClass
 -------
 
+
+
 ###Ignore Proprietary Attributes
 
  Preferences > Aptana Studio > Validation 
@@ -22,15 +24,16 @@ Online
 - If you need more details than you can possible handle:
 	- BasicFantasy.org
 
+###Assignment 02: Code Academy
 
-###Assignment 02
+Provide a link to the Profile page on Code Academy account showing 
+that you have taken:
 
-Use this function to extend the range of the string class:
+- Web Fundamentals: 100%
+- JavaScript to at least: 100%
+- [Example](http://www.codecademy.com/netslayer43536)
 
-```
-if (typeof String.prototype.endsWith !== 'function') {
-    String.prototype.endsWith = function(suffix) {
-        return this.indexOf(suffix, this.length - suffix.length) !== -1;
-    };
-}
-```
+Please put your picture in your Code Academy site, or link to your 
+Google Site, or provide some other means of clearly linking yourself 
+to the URL you provide.
+
