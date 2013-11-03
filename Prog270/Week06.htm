@@ -28,16 +28,30 @@
 <li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html#forward">Port Forwarding</a></li>
 </ul>
 <figure>
-<img src="../Images/PortForwarding01.png" alt="Port Forwarding" /><figcaption>Port Forwarding</figcaption>
+<img src="/charlie/development/cloud/images/PortForward01.png" alt="Port Forwarding" /><figcaption>Port Forwarding</figcaption>
 </figure>
+<p>Click for <a href="/charlie/development/cloud/images/PortForward01.png">full size image</a></p>
 <h2 id="online">Online</h2>
 <h3 id="assignment01">Assignment01</h3>
-<p>This assignment is not complete, but it should give you enough information to get you started. This week we will focus on two things:</p>
+<p>This week we will focus on two things:</p>
 <ul>
 <li>VirtualBox and Lubuntu</li>
 <li>Adding JavaScript animations to our bootstrap code</li>
 </ul>
-<p>I will give you a program to get you started. Add in your HTML as you have done before. Also include two animated bitmaps driven by the included JavaScript code found in index.js. Do not use animated GIFs or any other technique to animate your page other than the one in the sample code.</p>
+<p>Here is code that you can use as a starting point:</p>
+<ul>
+<li><a href="https://bc.instructure.com/courses/834458/files/31015248/download?verifier=f80EZR8clAcE9KAa9rgE3eDKjZUWq0ZshHX94RhO">Week06Animation.zip</a></li>
+</ul>
+<p>Open up <strong>index.html</strong> and add in your HTML as you have done before. Also include two animated bitmaps driven by the included JavaScript code found in <strong>index.js</strong>. Do not use animated GIFs or any other technique to animate your page other than the one in the sample code.</p>
+<p>Here are the bitmaps:</p>
+<figure>
+<img src="../Images/Shapes01.png" alt="Shapes01.png" /><figcaption>Shapes01.png</figcaption>
+</figure>
+<p>The second is very much like the first, but the colors are different:</p>
+<figure>
+<img src="../Images/Shapes02.png" alt="Shapes02.png" /><figcaption>Shapes02.png</figcaption>
+</figure>
+<p>When you look at these bitmaps, think of them as three rows of images. The first and second rows each have four images. The program creates an animation by quickly flipping through the four images on the top row, and the first image on the second row.</p>
 <p>There are two key lines in <strong>index.html</strong>:</p>
 <pre><code>&lt;div id=&#39;drawHere01&#39; class=&#39;draw-target&#39;&gt;&lt;/div&gt;
 &lt;div id=&#39;drawHere02&#39; class=&#39;draw-target&#39;&gt;&lt;/div&gt;</code></pre>
@@ -47,16 +61,26 @@
 var target02 = $(&#39;#drawHere02&#39;);
 animate(target01, &#39;Shapes01.png&#39;, true);
 animate(target02, &#39;Shapes02.png&#39;, false);   </code></pre>
-<p>And finally there is one line in index.html that links in index.js:</p>
+<p>The first two lines define where the bitmap animations will be drawn. To understand how it works compare these two lines:</p>
+<pre><code>&lt;div id=&#39;drawHere01&#39; class=&#39;draw-target&#39;&gt;&lt;/div&gt;
+var target01 = $(&#39;#drawHere01&#39;);</code></pre>
+<p>Notice that both lines of code reference <strong>drawHere01</strong>. The code helps us specify that the animation should be drawn in the DIV in <strong>index.html</strong> that has an ID of <strong>drawHere01</strong>.</p>
+<p>Now look at the last two lines of code:</p>
+<pre><code>animate(target01, &#39;Shapes01.png&#39;, true);
+animate(target02, &#39;Shapes02.png&#39;, false);</code></pre>
+<p>This code calls a custom method called <strong>animate</strong> that takes three parameters. The first is the location in which to draw, as explained above. The second is the bitmap that contains the image to draw. The last states whether or not there are any more images that you want to have animated. You could have more than just these two lines if you wanted to see more than two animations. Just be sure that only the last of these lines passes in <strong>false</strong> in the third parameter.</p>
+<p>And finally there is one line in <strong>index.html</strong> that links in <strong>index.js</strong>:</p>
 <pre><code>&lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;</code></pre>
-<p>Right now you will find the animations only on the index page. You need to make the appear on both the contacts page and on the about page. This means you need to move the DIVs onto those pages, and you also need to link in the JavaScript on those pages.</p>
+<p>I have modified <strong>server.js</strong> to know how to server up JavaScript pages such as <strong>index.js</strong>.</p>
+<p>Right now you will find the animations only on the <strong>index</strong> page. You need to make the appear on both the <strong>contacts</strong> page and on the <strong>about</strong> page. This means you need to move the DIVs onto those pages, and you also need to link in the JavaScript file called <strong>index.js</strong> on those pages.</p>
+<p>Here is a list of things to do:</p>
 <ul>
 <li>Make the animations appear on all three pages</li>
-<li>Add your own HTML from your markdown pages to index.html, about.html and contacts.html.</li>
-<li>Open up Shapes01.png and Shapes02.png and modify the first five images so your animations look different from the defaults. (Row 1, images 1 through 4, Row 2, Image 1.) A simple minimal modification would be to change the color of the gears.</li>
-<li>Check your code into your repository in a folder called Week06-Anim</li>
+<li>Add your own HTML from your markdown pages to index.html, about.html and contacts.html. This should be some version of the HTML you have submitted for previous assignments. Typically, it will include at least three links to bitmaps on <strong>index.html</strong>, and a link to your avatar on the <strong>about</strong> and <strong>contacts</strong> page.</li>
+<li>Open up <strong>Shapes01.png</strong> and <strong>Shapes02.png</strong> and modify the first five images so your animations look different from the defaults. (Row 1, images 1 through 4, Row 2, Image 1.) A simple minimal modification would be to change the color of the gears. You can usually do that in a single click by using the fill tool, which typically looks like a bucket. For instance, notice that the two images shown above use different colors for the gears. You should, at minimum, change the colors to different shades than those included in the pre-packaged solution.</li>
+<li>Check your code into your repository in a folder called <strong>Week06-Animate</strong></li>
 <li>Include screenshots of your code running in both Cloud9 and in VirtualBox with Lubuntu</li>
 </ul>
-<p>When taking your screenshot of Lubuntu, it is probably easiest to do it from Windows. Also, if you take the screenshot that way, I can clearly see that you are using VirtualBox. You may not want to focus the Lubuntu window while you take the screenshot as it will absorb the hot keys you use for triggering the screenshot (Alt-PrintScrn).</p>
-<p>Submit the URL of your repository. The starting code is linked from the assignment in Cloud 9.</p>
-<p>Remember to come back and check for updates to this assignment and look for additional assignments.</p>
+<p>When taking your screenshot of Lubuntu, it is probably easiest to do it from Windows. Also, if you take the screenshot that way, I can clearly see that you are using VirtualBox. You may not want to focus the Lubuntu window while you take the screenshot as it will absorb the hot keys many of you use for triggering the screenshot (Alt-PrintScrn).</p>
+<p>Submit the URL of your repository. The <a href="https://bc.instructure.com/courses/834458/files/31015248/download?verifier=f80EZR8clAcE9KAa9rgE3eDKjZUWq0ZshHX94RhO">starting code</a> is linked from the assignment in Cloud 9.</p>
+<p>Remember to come back and check for updates to this assignment and look for additional assignments of hints.</p>
