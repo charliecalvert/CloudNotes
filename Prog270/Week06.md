@@ -200,6 +200,12 @@ Here is a link to the download:
 
 - [Android x86 4.3](http://android-x86.googlecode.com/files/android-x86-4.3-20130725.iso)
 
+In the install for 4.3, there does not appear to be a step to create 
+a virtual SD card. Note also that you will probably want to set the 
+kernel 3.x.
+
+![Kernal Setup](/charlie/books/CloudNotes/Images/AndroidVirtualBoxStartUp.png)
+
 The most interesting thing about this install is that it includes 
 the PlayStore. This means that you can install at least some of the 
 Android Apps that might interest you. Not all of them will work, and 
@@ -273,6 +279,13 @@ I realize that some people may have some trouble with this install.
 If you run across a complete road block, then cease and desist, but 
 be sure to document with screenshots your point of failure and various
 way points you encountered.
+
+Here is an image from the Settings | Storage screen that shows what
+my Android virtual hard drive looks like.
+
+![Kernal Setup](/charlie/books/CloudNotes/Images/AndroidVirtualBox03.png)
+
+[Full Size Image](/charlie/books/CloudNotes/Images/AndroidVirtualBox03.png)
 
 When you are done, check in to github one or more screenshots of it 
 either running or not running. Then submit your URL. I will try to 

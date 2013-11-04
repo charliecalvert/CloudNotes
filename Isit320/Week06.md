@@ -10,8 +10,6 @@ InClass
 
  Preferences > Aptana Studio > Validation 
  
- 
-
 Online
 ------
 
@@ -23,6 +21,105 @@ Online
 - Modify the encounter so that the player can lose health
 - If you need more details than you can possible handle:
 	- BasicFantasy.org
+
+Here are some hints that you can follow optionally.
+
+**How can I tell that an encounter occurred?**
+
+Look at about Line 86 in **Player.js** from CraftyDemo05:
+
+```
+Crafty.game.reportEvent("Found Tower: " + data[0].obj._entityName);
+if (Crafty.game.encounter(data[0].obj)) {
+	villlage = data[0].obj;
+	villlage.visit();
+} else {
+	this.encounterMode = true;
+}
+```
+
+This means that the elfgame.encounter() method is passed a village:
+
+```
+elfgame.encounter = function(village) {
+	var result = rollD3(village);
+```
+
+**How can I tell that a village was created during startup?**
+
+Look at about line 44 in **Scene.js** from CraftyDemo05:
+
+```
+if (Crafty('Village').length < max_villages && !this.gameBoard[x][y]) {
+	var village = Crafty.e('Village').at(x, y);
+	village.setName(village._entityName.replace('Entity', 'Village'));
+	Crafty.game.newVillage(village);
+}
+```
+
+You can see that I have added a line that calls a new method of 
+**elfgame** (from ElfGame.js) called **newVillage**:
+
+```
+var towers = [];
+
+elfgame.newVillage = function(village) {
+	village.tower = people.tower();
+	towers.push(village);
+	};
+```
+
+**How is people.tower() implemented?**
+
+**people** is a method of an object that I created in a new 
+module called **characters** that has a factory called **people**.
+The tower method is part of a larger object called people. It creates 
+a new, unique instance of a tower:
+
+```
+tower: function() {
+	return {
+		hitPoints: 4,
+		damage: 1,
+		bonusDamage: function() {
+			return Math.floor(Math.random() * 2) + 1;
+		},
+		bonusHitPoints: function() {
+			return Math.floor(Math.random() * 4) + 1;
+		}
+	};    
+}
+```
+
+As you can see, a tower has 4 hitpoints. That means he can sustain
+4 points of damage before "dying". He wields, by default, one point
+of damage each time he hits. So you could start performing encounters
+with lines like this in them:
+
+```
+people.hero.hitPoints -= village.tower.damage + village.tower.bonusDamage();
+```
+
+In this code, a hero is also part of people. It looks a lot like a 
+tower, but there should be only one of him. So we don't return him
+from a function that creates a unique object, we just define one
+hero:
+
+```
+hero: {
+	hitPoints: 12,
+	damage: 2,
+	bonusDamage: function() {
+		return Math.floor(Math.random() * 2) + 1;
+	},
+	bonusHitPoints: function() {
+		return Math.floor(Math.random() * 4) + 1;
+	}
+},
+```
+
+You don't have to follow this pattern, but it is one way to start 
+having encounters with some meaningful action in them.
 
 ###Assignment 02: Code Academy
 

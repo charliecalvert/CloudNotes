@@ -19,6 +19,11 @@ Retrieve JSON from a server:
 - [Example](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer)
 - [Key File](https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/JsonFromServer/index.js)
 
+###Characters
+
+- Hitpoints: How much damage can a character take before losing consciousness
+- Damage: How much damage does a character weild
+
 Online
 ------
 

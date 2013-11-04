@@ -14,6 +14,61 @@
 <li>BasicFantasy.org</li>
 </ul></li>
 </ul>
+<p>Here are some hints that you can follow optionally.</p>
+<p><strong>How can I tell that an encounter occurred?</strong></p>
+<p>Look at about Line 86 in <strong>Player.js</strong> from CraftyDemo05:</p>
+<pre><code>Crafty.game.reportEvent(&quot;Found Tower: &quot; + data[0].obj._entityName);
+if (Crafty.game.encounter(data[0].obj)) {
+    villlage = data[0].obj;
+    villlage.visit();
+} else {
+    this.encounterMode = true;
+}</code></pre>
+<p>This means that the elfgame.encounter() method is passed a village:</p>
+<pre><code>elfgame.encounter = function(village) {
+    var result = rollD3(village);</code></pre>
+<p><strong>How can I tell that a village was created during startup?</strong></p>
+<p>Look at about line 44 in <strong>Scene.js</strong> from CraftyDemo05:</p>
+<pre><code>if (Crafty(&#39;Village&#39;).length &lt; max_villages &amp;&amp; !this.gameBoard[x][y]) {
+    var village = Crafty.e(&#39;Village&#39;).at(x, y);
+    village.setName(village._entityName.replace(&#39;Entity&#39;, &#39;Village&#39;));
+    Crafty.game.newVillage(village);
+}</code></pre>
+<p>You can see that I have added a line that calls a new method of <strong>elfgame</strong> (from ElfGame.js) called <strong>newVillage</strong>:</p>
+<pre><code>var towers = [];
+
+elfgame.newVillage = function(village) {
+    village.tower = people.tower();
+    towers.push(village);
+    };</code></pre>
+<p><strong>How is people.tower() implemented?</strong></p>
+<p><strong>people</strong> is a method of an object that I created in a new module called <strong>characters</strong> that has a factory called <strong>people</strong>. The tower method is part of a larger object called people. It creates a new, unique instance of a tower:</p>
+<pre><code>tower: function() {
+    return {
+        hitPoints: 4,
+        damage: 1,
+        bonusDamage: function() {
+            return Math.floor(Math.random() * 2) + 1;
+        },
+        bonusHitPoints: function() {
+            return Math.floor(Math.random() * 4) + 1;
+        }
+    };    
+}</code></pre>
+<p>As you can see, a tower has 4 hitpoints. That means he can sustain 4 points of damage before &quot;dying&quot;. He wields, by default, one point of damage each time he hits. So you could start performing encounters with lines like this in them:</p>
+<pre><code>people.hero.hitPoints -= village.tower.damage + village.tower.bonusDamage();</code></pre>
+<p>In this code, a hero is also part of people. It looks a lot like a tower, but there should be only one of him. So we don't return him from a function that creates a unique object, we just define one hero:</p>
+<pre><code>hero: {
+    hitPoints: 12,
+    damage: 2,
+    bonusDamage: function() {
+        return Math.floor(Math.random() * 2) + 1;
+    },
+    bonusHitPoints: function() {
+        return Math.floor(Math.random() * 4) + 1;
+    }
+},</code></pre>
+<p>You don't have to follow this pattern, but it is one way to start having encounters with some meaningful action in them.</p>
 <h3 id="assignment-02-code-academy">Assignment 02: Code Academy</h3>
 <p>Provide a link to the Profile page on Code Academy account showing that you have taken:</p>
 <ul>
