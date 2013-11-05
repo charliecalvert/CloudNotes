@@ -17,7 +17,11 @@ Inclass
 Online
 ------
 
-It is time for the midterm. Most of this will be the same as before,
+It is time for the midterm. 
+
+###Midterm Part I
+
+Most of this will be the same as before,
 only this time it counts for one third of your grade.
 
 You have three tasks:
@@ -56,3 +60,11 @@ themes:
 
 Further details on this test will follow. This is just enough to let you 
 understand what will be expected of you.
+
+###Midterm Part II
+
+There will be a quiz in which you will be expected to answer some
+questions about Android. You will be able to answer the questions
+by using your Android X86 emulator.
+
+I will post a link to the quiz when it is ready.
