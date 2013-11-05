@@ -252,6 +252,9 @@ something Google hopes to remember with Android 4.4, KitKat. My point
 is that you might try 3.2 or 4.0 if 4.3 fails. But 2.3 should work
 for nearly everyone.
 
+![Your Machine](/charlie/os/linux/images/VirtualBoxAndroidX8640Network.png)
+![At BC](/charlie/os/linux/images/AndroidX86PCNetFast.png)
+
 The big payoff, of course, is getting signed in to your Google Account.
 Until you do that, Android doesn't really work very well. I find that
 sometimes Android complains that it is not on the wireless network
