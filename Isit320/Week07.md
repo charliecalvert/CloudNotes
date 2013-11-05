@@ -4,6 +4,8 @@ Week 07
 In Class
 --------
 
+- [The Deck](http://bit.ly/172VnGB)
+
 ###Unit Test Examples
 
 You might also be interested in the tests for Crafty03. 
