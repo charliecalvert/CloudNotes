@@ -34,7 +34,7 @@ that shows an animated image.
 	- Your phone or tablet if you have one
 	- In Android X86 running VirtualBox 
 
-If you don't have a phone, you won't loose points for not submitting 
+If you don't have a phone, you won't lose points for not submitting 
 that screen shot. If you can show me it running on your phone,
 but can't get VBox and AndroidX86 running, then the phone screen shot
 is much better than nothing. Everyone should, however, be able to get
