@@ -6,6 +6,10 @@ In Class
 
 - [The Deck](http://bit.ly/172VnGB)
 
+###Grunt
+
+- [Grunt on Elvenware](http://elvenware.com/charlie/development/web/UnitTests/Grunt.html)
+
 ###Unit Test Examples
 
 You might also be interested in the tests for Crafty03. 
@@ -40,3 +44,15 @@ if (typeof String.prototype.endsWith !== 'function') {
     };
 }
 ```
+
+###Assignment Midterm
+
+Your assignment must:
+
+- Get some data from MongoDb
+- Some data from JSON file
+- You should have at least some of your own graphics
+- And the encounter should allow:
+	- The character to rest (briefly, till he feels better!)
+	- The village to sleep (just for awhile)
+	- Grunt
