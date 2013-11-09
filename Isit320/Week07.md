@@ -56,3 +56,10 @@ Your assignment must:
 	- The character to rest (briefly, till he feels better!)
 	- The village to sleep (just for awhile)
 	- Grunt
+
+I've updated [JsObjects/JavaScript/Games/CharacterCreate01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/CharacterCreate01). It now contains
+a button, and when you click it, there is a mock encounter between 
+a Hero and a Tower. The point of the demo is to show how you can 
+create similar simulations outside the context of the game. 
+
+
