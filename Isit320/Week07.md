@@ -56,7 +56,6 @@ Your assignment must:
 	- The character to rest (briefly, till he feels better!)
 	- The village to sleep (just for awhile)
 	- Grunt
-<<<<<<< HEAD
 	
 For instance get the Tower information now found in Characters.js 
 from Mongo, and the Hero information from a JSON file.
@@ -66,12 +65,42 @@ As a reference, Go to:
 - [Mongo Example 01](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab01)
 - [Mongo Example 02](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab02)
 - [JSON Example](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer)
-=======
+
+I've ran some Mongo Database code against the most recent angular
+code and started getting an error like this:
+
+	Error: Referencing private fields in Angular expressions is disallowed! Expression: _id.$oid
+
+This is a reference to this line from index.js (MongoLab01) and 
+MongoData.js (MongoLab02):
+
+	id:'@_id.$oid'
+
+For now, to fix the problem, just comment out or delete the line:
+
+```
+var Presidents = $resource('https://api.mongolab.com/api/1/databases/elvenlab01/collections/Presidents/:id', {
+	apiKey:'qfSxFoUGHBA1EuUlqhux_op2fy6oF_wy',     
+});
+```
+
+And here it is commented out:
+
+```
+var Presidents = $resource('https://api.mongolab.com/api/1/databases/elvenlab01/collections/Foo/:id', {      
+	apiKey:'qfSxFoUGHBA1EuUlqhux_op2fy6oF_wy',
+	// id:'@_id.$oid'
+});
+```
+
+I've updated both samples to fix the problem, and now include the
+latest Angular code with them.
+
+- [MongoLab01](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab01)
+- [MongoLab02](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab02)
 
 I've updated [JsObjects/JavaScript/Games/CharacterCreate01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/CharacterCreate01). It now contains
 a button, and when you click it, there is a mock encounter between 
 a Hero and a Tower. The point of the demo is to show how you can 
 create similar simulations outside the context of the game. 
 
-
->>>>>>> 56932a7d0fda1fc6161d35c8396891375354962a
