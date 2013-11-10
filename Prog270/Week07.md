@@ -19,6 +19,19 @@ Online
 
 It is time for the midterm. 
 
+Validate your Code
+------------------
+
+Go to this address: <http://validator.w3.org/>
+
+Paste in the URL of your index.html page. You should
+be able to see errors in your HTML that cloud nine
+and other editors won't see. You should ignore errors
+about ng-resource or any other attribute that starts
+with ng.
+
+
+
 ###Midterm Part I
 
 Most of this will be the same as before,
@@ -26,9 +39,9 @@ only this time it counts for one third of your grade.
 
 You have three tasks:
 
-- Create a bootstrap based set of HTML pages with images that run
+- Create a bootstrap based set of at least four HTML pages with images that run
 on Cloud 9 and Linux.
-- Add in JavaScript that accesses your Mongo Lab database and JavaScript
+- On one of the pages add in JavaScript that accesses your Mongo Lab database and JavaScript
 that shows an animated image.
 - Create a screen shot of your program running on both:
 	- Your phone or tablet if you have one

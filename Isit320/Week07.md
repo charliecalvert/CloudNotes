@@ -56,3 +56,12 @@ Your assignment must:
 	- The character to rest (briefly, till he feels better!)
 	- The village to sleep (just for awhile)
 	- Grunt
+	
+For instance get the Tower information now found in Characters.js 
+from Mongo, and the Hero information from a JSON file.
+
+As a reference, Go to:
+
+- [Mongo Example 01](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab01)
+- [Mongo Example 02](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab02)
+- [JSON Example](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer)
