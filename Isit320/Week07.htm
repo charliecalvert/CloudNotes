@@ -42,7 +42,7 @@
 <ul>
 <li>The character to rest (briefly, till he feels better!)</li>
 <li>The village to sleep (just for awhile)</li>
-<li>Grunt &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
+<li>Grunt</li>
 </ul></li>
 </ul>
 <p>For instance get the Tower information now found in Characters.js from Mongo, and the Hero information from a JSON file.</p>
@@ -50,21 +50,24 @@
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab01">Mongo Example 01</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab02">Mongo Example 02</a></li>
-<li><h1><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer">JSON Example</a></h1></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer">JSON Example</a></li>
+</ul>
+<p>I've ran some Mongo Database code against the most recent angular code and started getting an error like this:</p>
+<pre><code>Error: Referencing private fields in Angular expressions is disallowed! Expression: _id.$oid</code></pre>
+<p>This is a reference to this line from index.js (MongoLab01) and MongoData.js (MongoLab02):</p>
+<pre><code>id:&#39;@_id.$oid&#39;</code></pre>
+<p>For now, to fix the problem, just comment out or delete the line:</p>
+<pre><code>var Presidents = $resource(&#39;https://api.mongolab.com/api/1/databases/elvenlab01/collections/Presidents/:id&#39;, {
+    apiKey:&#39;qfSxFoUGHBA1EuUlqhux_op2fy6oF_wy&#39;,     
+});</code></pre>
+<p>And here it is commented out:</p>
+<pre><code>var Presidents = $resource(&#39;https://api.mongolab.com/api/1/databases/elvenlab01/collections/Foo/:id&#39;, {      
+    apiKey:&#39;qfSxFoUGHBA1EuUlqhux_op2fy6oF_wy&#39;,
+    // id:&#39;@_id.$oid&#39;
+});</code></pre>
+<p>I've updated both samples to fix the problem, and now include the latest Angular code with them.</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab01">MongoLab01</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab02">MongoLab02</a></li>
 </ul>
 <p>I've updated <a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/CharacterCreate01">JsObjects/JavaScript/Games/CharacterCreate01</a>. It now contains a button, and when you click it, there is a mock encounter between a Hero and a Tower. The point of the demo is to show how you can create similar simulations outside the context of the game.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>56932a7d0fda1fc6161d35c8396891375354962a</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>

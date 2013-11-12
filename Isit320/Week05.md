@@ -136,6 +136,17 @@ Aptana you won't be able to open that particular project. You should
 then delete the project from Aptana and reimport it, or do something
 similar that has the same affect.
 
+**Note**: When cleaning up, you may decide to rename some of your 
+folders. That kind of renaming is not really a necessary part of the 
+assignment, but it can be useful to both you and me. When you rename 
+a folder, remember to do it with git: **git mv Week01 
+Week01-ForLoops**. That command would rename a folder called 
+**Week01** to **Week01-ForLoops**. If you don't ask Git to perform 
+this task, and do it instead with the Windows Explorer or Windows 
+command tools, then Git will think you deleted Week01 and created a 
+new folder called **Week01-ForLoops**. That can cause no end of
+problems for you.
+
 If you opt to edit the .project files directly, or you want to check 
 your work, here is one entirely optional way to proceed. At the 
 command prompt:

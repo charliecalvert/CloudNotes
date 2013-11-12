@@ -74,9 +74,34 @@ themes:
 Further details on this test will follow. This is just enough to let you 
 understand what will be expected of you.
 
-###Midterm Part II
+NOTE: You don't need to actually load Cloud 9 itself in Android X86. 
+Sign in to Cloud 9 on your PC. Then run your server in Cloud 9 by 
+focusing **Server.js**, and pressing the **Run** button. At the bottom 
+of the IDE, there will be a window called Output that says something 
+like this:
 
-There will be a quiz in which you will be expected to answer some
+```
+Running Node Process 
+
+Your code is running at 'https://prog270-calvert-c9-charliecalvert.c9.io'.
+Important: use 'process.env.PORT' as the port and 'process.env.IP' as the host in your scripts!
+```
+ 
+Take the URL that they show. In the example shown above, the URL is:
+ 
+	https://prog270-calvert-c9-charliecalvert.c9.io
+ 
+Take that URL and type it into the Android x86 browser address bar. 
+I don't think there is any way to cut and paste. You have to type it 
+in manually. After a bit your app should appear in the "mobile' 
+browser. The point is to display the output from your HTML code on a 
+"mobile device." Trying to do development by loading Cloud 9 itself 
+on a mobile device is still not possible, or at any rate practical, 
+in most cases.
+
+###Assignment for Week 7
+
+There may be a quiz in which you will be expected to answer some
 questions about Android. You will be able to answer the questions
 by using your Android X86 emulator.
 
