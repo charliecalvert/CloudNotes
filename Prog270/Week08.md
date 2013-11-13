@@ -91,8 +91,8 @@ Week08-GitPractice and issue this command: **ls -la > CloudNine.txt**
 command: **ls -la > Lubuntu.txt**
 - Checkin and push your code from Lubuntu
 - Pull your code in Windows.
-- Navigate to your Week08-GitPractice folder and issue this command:
-** dir /od > Windows.txt
+- Navigate to your Week08-GitPractice folder and at the command
+line issue this command: **dir /od > Windows.txt**
 - Checkin and push your code and submit your Git URL.
 
 On the images below, right click and pick "open image in new tab" to see
