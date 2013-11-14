@@ -4,7 +4,7 @@ Week06
 - [The Deck](http://bit.ly/1ci0rKP)
 - [CloudNotes Index](../CloudNotes.html)
 
-Suppose you have accidentally committed something to the repo that
+Suppose you and your friend have accidentally committed something to the repo that
 you want to keep on your local drive, but remove from the repo. Do
 this:
 
