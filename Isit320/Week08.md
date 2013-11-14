@@ -6,3 +6,27 @@ Note the free downloads of chapters 4 and 8 from a book on Node found on this pa
 -	[Dataset, databases for lazy people](http://bit.ly/HPAjNX)
 -	[Mongo Lab Api](https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB-)
 -	[Mongo Lab Angular](https://support.mongolab.com/entries/24387816-Using-the-MongoLab-API-from-AngularJS)
+
+###Change Bitmaps on the fly
+
+I have now updated Crafty06 to include code to change the bitmap of 
+an entity on the fly. It turned out to be quite simple, as shown in
+Food.js:
+
+	this.sprite(1, 0);
+
+Here 1 and 0 and indexes into the grid of the bitmap associated with 
+the component. You associated the bitmap with the component like this:
+
+```
+Crafty.load(assets, function(){
+	Crafty.sprite(32, assets[0], {
+		spr_tree:    [0, 3],
+		spr_bush:    [2, 0],
+		spr_village: [0, 1],
+		spr_food: [1, 0]			
+	});
+	etc....
+```
+
+To see the code, pull down the latest Crafty.06, and look in **Food.js**.

@@ -13,26 +13,6 @@ In Class
 
 - [Day 15 Deck](http://bit.ly/16ZBljB)
 
-###MongoDb {#mongo}
-
-This is an in class exercise.
-
-- Go to [https://mongolab.com/](https://mongolab.com/)
-- Create an account
-- Create a database
-- Create a collection
-- Put some data in the collection
-
-Here is some sample data
-
-```
-{
-	"firstName": "George",
-	"lastName": "Washington"
-}
-```
-- [Mongo Lab Api](https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB-)
-
 
 ###Genymotion
 
@@ -101,3 +81,43 @@ a full sized image.
 ![Step01](../Images/GitPractice01.png)
 ![Step02](../Images/GitPractice02.png)
 
+###MongoDb {#mongo}
+
+This is your main assignment. It is similar to the midterm, only
+this time the data will be updatable. 
+
+If you have not done so already:
+
+- Go to [https://mongolab.com/](https://mongolab.com/)
+- Create an account
+- Create a database
+- Create a collection
+- Put some data in the collection
+
+Here is some sample data
+
+```
+{
+    "firstName": "A",
+    "lastName": "B",
+    "address": "C",
+    "city": "D",
+    "state": "E",
+    "zip": "F",
+    "phoneHome": "G",
+    "phoneMobile": "H",
+    "email": "I"
+}
+```
+
+Modify the program linked from the assignment page on Canvas so
+that you can connect to your data in your database. Add at least
+three records to your database. 
+
+Check in your code in a folder of your repository called Week08-Mongo.
+Include a screenshot of your collection in MongoLab site.
+
+More later.
+
+
+- [Mongo Lab Api](https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB-)
