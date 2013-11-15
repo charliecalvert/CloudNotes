@@ -117,7 +117,50 @@ three records to your database.
 Check in your code in a folder of your repository called Week08-Mongo.
 Include a screenshot of your collection in MongoLab site.
 
-More later.
+I tried to make it easier to fix up database name and collection. See
+MondoData.js:
 
+```
+.constant('CONFIG', {
+    DB_NAME: 'elvenlab01',
+    COLLECTION: 'address',
+    API_KEY: 'qfSxFoUGHBA1EuUlqhux_op2fy6oF_wy'
+})
+```
+
+For instane, if your database was called **lucydatabase**, and your
+collection was called **lucydata** and your API_KEY was **qmykey1**, then you
+would change the above code to read like this:
+
+```
+.constant('CONFIG', {
+    DB_NAME: 'lucydatabase',
+    COLLECTION: 'lucydata',
+    API_KEY: 'qmykey1'
+})
+```
+
+I also want you to create one page that links to the Pictures menu
+item that is similar to the custom page you created for the midterm.
+It should, for instance, contain custom text and pictures. 
+
+You should also modify the About the page so that it is attactive
+and contains reasonable data, rather than the default data that I
+have included in the sample about page provided with the starter
+code.
+
+Key Points:
+
+- Connect to your own database using your own key
+- Use your own data. Make sure you can add, delete and modify records
+- Follow the format (firstName, lastName, address, etc) outlined
+above.
+- Create a customer **Pictures** page with text and images
+- Modify the about page.
+
+I provide some default images for the "carousel" at the top of the
+main page. You can use those images or create different images.
+
+Don't forget to ask questions in the discussion area.
 
 - [Mongo Lab Api](https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB-)
