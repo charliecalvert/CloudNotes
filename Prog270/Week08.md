@@ -157,6 +157,9 @@ Key Points:
 above.
 - Create a customer **Pictures** page with text and images
 - Modify the about page.
+- In your repository, include screenshots showing your application 
+running in Cloud Nine and Lubuntu
+- Check your work into your repository
 
 I provide some default images for the "carousel" at the top of the
 main page. You can use those images or create different images.
