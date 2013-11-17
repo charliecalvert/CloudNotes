@@ -47,6 +47,32 @@ mail account.
 Place your screen shot an Week08-LastPass folder in your repository
 and submit the URL of your repository.
 
+Terrence added these helpful notes in the discussion area:
+
+Here are the detailed steps. Folks who have installed the plug-in can 
+probably duplicate this and get the desired results:
+
+- Sign into LastPass from the browser plug-in. 
+- Click the LastPass icon on the browser (see screen shot)
+- fill in the applicable fields, and click Login. 
+
+![Detail of Lastpass icon](../Images/LastPass02.png)
+
+You should now be signed in to LastPass and the icon changed color 
+from black to red to indicate this. (The icon is black when you are 
+not signed in.)
+
+Now: 
+
+- Log onto a site in your vault by using LastPass. 
+- Click the icon again, click Sites, and click a listed site to automatically log on to it.
+- Open your LastPass vault. 
+- Click the icon again, and click My LastPass Vault. 
+
+You will probably see a default folder named "(none)" that lists the 
+sites you added to LastPass. You should now also see a "recently 
+used" folder above this that shows the last sites you visited.
+
 ###Git Practice {#gitPractice}
 
 - On Windows, create a folder in your repository called **Week08-GitPractice**
