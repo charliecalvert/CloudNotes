@@ -193,3 +193,44 @@ main page. You can use those images or create different images.
 Don't forget to ask questions in the discussion area.
 
 - [Mongo Lab Api](https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB-)
+
+On Carousels
+------------
+
+The bootstrap demo we look at includes a carousel.
+
+Carousels give users the opportunity to iterate over a series of 
+options, much like a menu. Picture galleries are often implemented 
+as carousels:
+
+- <http://wowslider.com/>
+
+Examples of major sites and tools that use carousels include:
+
+- Amazon. If you go to a product page in Amazon, you will find a 
+section called "Customers who bought this product also bought..." 
+That section is a carousel that allows shoppers to pick products 
+that might be related to the current selection.
+- Netflix. When you sign in you are present with a view of multiple 
+rows of movies. Each row is a carousel. You can rotate through the 
+carousel and select movies.
+- Chrome. Chrome uses a carousel on the apps page. You have probably 
+noticed the icon in the upper left hand corner of the Chrome browser 
+with an icon like a colored grid of dots. It is labeled apps. If you 
+sellect that item, you are taken to the apps page with this URL: 
+[chrome://apps/](chrome://apps/). You can shop for Apps in the Chrome 
+store that is linked from the Apps page. If you fill up one page with 
+Chrome Apps, then a carousel will allow you to move to the next page.
+
+This site provides more examples and variations on what can be done 
+with carousels:
+
+- <http://coolcarousels.frebsite.nl/>
+
+An interesting variation on the carousel is the Windows 8/8.1 start 
+screen. Like a carousel, it allows the user to scroll through a 
+serious of options. But instead of dividing the options into pages, 
+the choices simply scroll by, much as they would if you were looking 
+at an ancient Chinese scroll:
+
+- <https://www.google.com/webhp#q=chinese+scrolls>

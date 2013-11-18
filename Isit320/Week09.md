@@ -20,4 +20,12 @@ Read the README.md file for JsonFromServer:
 
 See TestMongoTower.js.
 
+NPM
+---
+
+Make sure all your global copies of NPM packages are at the latest
+version:
+
+	npm update -g 
+
 
