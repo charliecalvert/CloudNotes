@@ -1,6 +1,40 @@
 <h1 id="week09">Week09</h1>
 <h2 id="working-with-bitmaps">Working with Bitmaps</h2>
 <p>Animate changes to a sprite when it's state changes.</p>
+<h2 id="project">Project</h2>
+<p>Add the following to</p>
+<pre><code>project_template &quot;Elvenware Angular Unit Test Project &quot; do |t|
+  t.type = :web
+  t.tags = [&#39;Web&#39;]
+  t.icon = &quot;templates/HTML5_Logo_64.png&quot;
+  t.id = &quot;com.elvenware.project.template.web.html5&quot;
+  t.location = &quot;git://github.com/charliecalvert/AngularTest.git&quot;
+  t.description = &quot;CSC Remote template. Requires network access.&quot;
+  t.replace_parameters = false
+  t.tags = [&#39;Web&#39;]  
+end
+
+project_template &quot;Elvenware Angular Jasmine Karma Project &quot; do |t|
+  t.type = :web
+  t.tags = [&#39;Web&#39;]
+  t.icon = &quot;templates/HTML5_Logo_64.png&quot;
+  t.id = &quot;com.elvenware.project.template.web.html5&quot;
+  t.location = &quot;git://github.com/charliecalvert/AngularKarma.git&quot;
+  t.description = &quot;CSC Remote template. Requires network access.&quot;
+  t.replace_parameters = false
+  t.tags = [&#39;Web&#39;]  
+end
+
+project_template &quot;Elvenware Angular Mongo Bootstrap Project &quot; do |t|
+  t.type = :web
+  t.tags = [&#39;Web&#39;]
+  t.icon = &quot;templates/HTML5_Logo_64.png&quot;
+  t.id = &quot;com.elvenware.project.template.web.html5&quot;
+  t.location = &quot;git://github.com/charliecalvert/AngularMongoBootstrapTest.git&quot;
+  t.description = &quot;CSC Remote template. Requires network access.&quot;
+  t.replace_parameters = false
+  t.tags = [&#39;Web&#39;]  
+end</code></pre>
 <h2 id="karma">Karma</h2>
 <p>If you have karma running in one command window, you can run a test in another command window that will return immediately by typing:</p>
 <pre><code>karma run</code></pre>

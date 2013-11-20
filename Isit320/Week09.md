@@ -6,6 +6,46 @@ Working with Bitmaps
 
 Animate changes to a sprite when it's state changes.
 
+Project
+-------
+
+Add the following to 
+
+```
+project_template "Elvenware Angular Unit Test Project " do |t|
+  t.type = :web
+  t.tags = ['Web']
+  t.icon = "templates/HTML5_Logo_64.png"
+  t.id = "com.elvenware.project.template.web.html5"
+  t.location = "git://github.com/charliecalvert/AngularTest.git"
+  t.description = "CSC Remote template. Requires network access."
+  t.replace_parameters = false
+  t.tags = ['Web']  
+end
+
+project_template "Elvenware Angular Jasmine Karma Project " do |t|
+  t.type = :web
+  t.tags = ['Web']
+  t.icon = "templates/HTML5_Logo_64.png"
+  t.id = "com.elvenware.project.template.web.html5"
+  t.location = "git://github.com/charliecalvert/AngularKarma.git"
+  t.description = "CSC Remote template. Requires network access."
+  t.replace_parameters = false
+  t.tags = ['Web']  
+end
+
+project_template "Elvenware Angular Mongo Bootstrap Project " do |t|
+  t.type = :web
+  t.tags = ['Web']
+  t.icon = "templates/HTML5_Logo_64.png"
+  t.id = "com.elvenware.project.template.web.html5"
+  t.location = "git://github.com/charliecalvert/AngularMongoBootstrapTest.git"
+  t.description = "CSC Remote template. Requires network access."
+  t.replace_parameters = false
+  t.tags = ['Web']  
+end
+```
+
 Karma
 -----
 
