@@ -19,6 +19,7 @@ Prog 270
 -	[Week06](Prog270/Week06.html)
 -	[Week07](Prog270/Week07.html)
 -	[Week08](Prog270/Week08.html)
+-	[Week09](Prog270/Week09.html)
 
 Prog 272
 --------
