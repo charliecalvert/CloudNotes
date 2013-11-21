@@ -39,6 +39,20 @@ project_template &quot;Elvenware Angular Mongo Bootstrap Project &quot; do |t|
   t.replace_parameters = false
   t.tags = [&#39;Web&#39;]  
 end</code></pre>
+<p>After you have restarted Aptana, you can use this Project templates to create new projects. When using these projects:</p>
+<p>To get started, run <strong>npm install</strong> in the root directory for this project:</p>
+<pre><code>npm install</code></pre>
+<p>Next, start Karma by typing <strong>karma start</strong>:</p>
+<pre><code>karma start</code></pre>
+<p>Since this project was pulled from GitHub, it includes a .git folder. You should consider removing this folder if you do not want to use git, or if this folder is embedded inside another git repository.</p>
+<p>Periodically, you should go to the command line in the root directory for this folder and run <strong>grunt jshint</strong>.</p>
+<pre><code>grunt jshint</code></pre>
+<p>You should then examine the <strong>result.xml</strong> file to look for any problems in your code.</p>
+<p>Also, read the <strong>README.md</strong> files for these projects.</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/AngularKarma/blob/master/README.md">Basic Karma</a></li>
+<li><a href="https://github.com/charliecalvert/AngularMongoBootstrapTest/blob/master/README.md">Mongo</a></li>
+</ul>
 <h2 id="karma">Karma</h2>
 <p>If you have karma running in one command window, you can run a test in another command window that will return immediately by typing:</p>
 <pre><code>karma run</code></pre>
