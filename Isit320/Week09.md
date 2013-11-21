@@ -17,10 +17,43 @@ The Project we Built in Class
 Working with Bitmaps
 --------------------
 
-Animate changes to a sprite when it's state changes.
+Animate changes to a sprite when it's state changes. In Crafty 06 you
+can find examples of how to do this. The key code is in **Food.js**,
+particularly the calls this.sprite:
 
-Project
--------
+	visit: function() { 'use strict';
+		this.count++;
+		switch (this.count) {
+			case 1:
+				this.sprite(1, 0);
+				break;
+			case 2:
+				this.sprite(2, 0);
+				break;
+
+			case 3:
+				this.sprite(3, 0);
+				break;
+
+			default:
+				this.destroy();
+				break;
+		}
+
+See also **scenes.js**:
+
+	Crafty.sprite(32, assets[0], {
+		spr_tree:    [0, 3],
+		spr_bush:    [1, 3],
+		spr_village: [0, 1],
+		spr_food: [0, 0]			
+	});
+
+In Class
+--------
+
+###Project
+
 
 Please follow the instructions found here that describe how to install
 Project Templates into Aptana:
@@ -32,8 +65,7 @@ Also, see this:
 - [Basic Karma](https://github.com/charliecalvert/AngularKarma/blob/master/README.md)
 - [Mongo](https://github.com/charliecalvert/AngularMongoBootstrapTest/blob/master/README.md)
 
-Karma
------
+###More on Karma
 
 If you have karma running in one command window, you can run a test in another 
 command window that will return immediately  by typing:
@@ -87,4 +119,8 @@ version:
 
 	npm update -g 
 
+Online
+------
+
+The assignments for this week are:
 
