@@ -1,6 +1,19 @@
 Week09
 ======
 
+Long Builds in Aptana
+---------------------
+
+If you are experiencing long Builds in Aptana, try right clicking on
+**node-modules** in the Project window and choosing:
+
+	Build | Exclude from Build
+
+The Project we Built in Class
+-----------------------------
+
+- [Can be found here](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularModularKarma)
+
 Working with Bitmaps
 --------------------
 
