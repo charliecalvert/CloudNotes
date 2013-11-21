@@ -22,76 +22,12 @@ Animate changes to a sprite when it's state changes.
 Project
 -------
 
-Add the following to the HTML Ruble project. If you need help
-remembering how to access this project, see Week04 Assignment 
-One. 
+Please follow the instructions found here that describe how to install
+Project Templates into Aptana:
 
-- [Week04](Week04.html)
+- [New Project Templates](http://elvenware.com/charlie/development/web/JavaScript/Angular.html#angular-starter-projects)
 
-In **templates | project_templates.rb** add all of the following,
-or the last two of the following if you already have the first
-one installed. Remember to restart Aptance **File | Restart**.
-
-```
-project_template "Elvenware Angular Unit Test Project " do |t|
-  t.type = :web
-  t.tags = ['Web']
-  t.icon = "templates/HTML5_Logo_64.png"
-  t.id = "com.elvenware.project.template.web.html5"
-  t.location = "git://github.com/charliecalvert/AngularTest.git"
-  t.description = "CSC Remote template. Requires network access."
-  t.replace_parameters = false
-  t.tags = ['Web']  
-end
-
-project_template "Elvenware Angular Jasmine Karma Project " do |t|
-  t.type = :web
-  t.tags = ['Web']
-  t.icon = "templates/HTML5_Logo_64.png"
-  t.id = "com.elvenware.project.template.web.html5"
-  t.location = "git://github.com/charliecalvert/AngularKarma.git"
-  t.description = "CSC Remote template. Requires network access."
-  t.replace_parameters = false
-  t.tags = ['Web']  
-end
-
-project_template "Elvenware Angular Mongo Bootstrap Project " do |t|
-  t.type = :web
-  t.tags = ['Web']
-  t.icon = "templates/HTML5_Logo_64.png"
-  t.id = "com.elvenware.project.template.web.html5"
-  t.location = "git://github.com/charliecalvert/AngularMongoBootstrapTest.git"
-  t.description = "CSC Remote template. Requires network access."
-  t.replace_parameters = false
-  t.tags = ['Web']  
-end
-```
-
-After you have restarted Aptana, you can use this Project templates
-to create new projects. When using these projects:
-
-To get started, run **npm install** in the root directory for this
-project:
-
-	npm install
-
-Next, start Karma by typing **karma start**:
-
-	karma start
-
-Since this project was pulled from GitHub, it includes a .git folder. You should
-consider removing this folder if you do not want to use git, or if this folder
-is embedded inside another git repository.
-
-Periodically, you should go to the command line in the root directory
-for this folder and run **grunt jshint**.
-
-	grunt jshint
-	
-You should then examine the **result.xml** file to look for any problems
-in your code.
-
-Also, read the **README.md** files for these projects.
+Also, see this:
 
 - [Basic Karma](https://github.com/charliecalvert/AngularKarma/blob/master/README.md)
 - [Mongo](https://github.com/charliecalvert/AngularMongoBootstrapTest/blob/master/README.md)
