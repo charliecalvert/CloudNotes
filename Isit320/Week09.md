@@ -9,7 +9,15 @@ Animate changes to a sprite when it's state changes.
 Project
 -------
 
-Add the following to 
+Add the following to the HTML Ruble project. If you need help
+remembering how to access this project, see Week04 Assignment 
+One. 
+
+- [Week04](Week04.html)
+
+In **templates | project_templates.rb** add all of the following,
+or the last two of the following if you already have the first
+one installed. Remember to restart Aptance **File | Restart**.
 
 ```
 project_template "Elvenware Angular Unit Test Project " do |t|
