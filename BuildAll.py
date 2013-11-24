@@ -9,7 +9,7 @@ cloudNotesTo=elffiles.ensureFinalSlash(os.environ['ELVENWARE']) + "charlie\\book
 
 # CloudNotes Root
 def cloudRoot(markdown):
-	files = ["CloudNotes"];
+	files = ["CloudNotes", "CloudOutline"];
 	print(cloudNotesFrom)
 	markdown.copyFrom=cloudNotesFrom
 	markdown.destination=cloudNotesTo

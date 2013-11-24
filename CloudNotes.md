@@ -7,6 +7,8 @@ Cloud Notes by [Charlie Calvert](http://www.elvenware.com/charlie/books/CloudNot
 licensed under a [Creative Commons Attribution 3.0 Unported
 License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
+[The Role of the Cloud in Charlie's Courses](CloudOutline.html)
+
 Prog 270
 --------
 
