@@ -54,6 +54,11 @@ for you to figure out how to **share** a photo, but
 if you look in the menu system, you will see that
 the option is available.
 
+###Misc
+
+![Putty](../Images/SshKey.png)
+
+
 Online
 ------
 
@@ -71,9 +76,41 @@ Details on this assignment to follow.
 
 ###Bootstrap
 
+Check the due date of this assignment in Canvas.
+
+- [Assignment page](https://bc.instructure.com/courses/834458/assignments/3016277)
+
 Create a Bootstrap document that uses the images you
 created in class. Include text that describes each of 
 the images.
+
+Include your bitmaps of working in Android Memo in this project and 
+check it in. I want you to link to your files stored in Google Drive 
+directly. If you create a public folder in Google Drive, then you 
+can put your images there and reference them in your HTML.
+
+Here is a sample URL:
+
+	<img src="https://googledrive.com/host/0B1pGBKYyP0gdZ2owNTV3SjdlU00/ScreenShot01.jpg" alt="ScreenShot01.jpg" />
+
+If you go to Google Docs, and you choose to share your folder, you can retrieve
+the URL for the folder. It looks like this:
+
+	https://drive.google.com/folderview?id=0B1pGBKYyP0gdZ2owNTV3SjdlU00&usp=sharing
+
+Notie that the ID shown here is the next to last field of the URL for
+the screenshot:
+
+	https://googledrive.com/host/ID OF DRIVE/ScreenShotName.jpg
+
+<p>And here is the actual image:</p>
+
+![Image from Google Drive](https://googledrive.com/host/0B1pGBKYyP0gdZ2owNTV3SjdlU00/ScreenShot01.jpg)
+
+<p>More Details to follow.</p>
+
+<p>Download the starter source which is linked from the [Assignment 
+page](https://bc.instructure.com/courses/834458/assignments/3016277) in Canvas.</p>
 
 Details on this assignment to follow.
 

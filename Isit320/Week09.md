@@ -54,8 +54,17 @@ In Class
 
 ###Project
 
+There is now an add on (a Ruble) for Aptana that will allow you to 
+create Elven Angular Projects and other things. See the ReadMe for
+details:
 
-Please follow the instructions found here that describe how to install
+- [Elf Ruble README](https://github.com/charliecalvert/ElfRuble/blob/master/README.md)
+
+I've just started working on this Ruble, so it is still in a nascent 
+form, but ulimately it will be a much better way to get you the code
+that you need. Please hvae patience while it is being developed.
+
+For more information please follow the instructions found here that describe how to install
 Project Templates into Aptana:
 
 - [New Project Templates](http://elvenware.com/charlie/development/web/JavaScript/Angular.html#angular-starter-projects)
@@ -92,6 +101,21 @@ Look at PeopleManager in CreateCharactor02
 - Can be consumed by Controller or Jasmine Test
 
 pkozlowski-opensource on github.
+
+It is interesting to note that this a REST API, so you can simply 
+paste URLs into the address bar of your browser, or use them as 
+links on web pages:
+
+https://api.mongolab.com/api/1/databases/YOUR_DATABASE/collections/YOUR_COLLECTION?apiKey=YOUR_API_KEY
+
+That's not a solution for a shipping app, but it is a good tool to 
+use when you are experimenting with a new technology.
+
+I should add that posting your API key as a link on a public web 
+page is a very bad idea, but you can use it on private sites.
+
+The best way to experiement with this technology is just to take the 
+URL and paste it into a the address field of the browser.
 
 Mocking Objects with $httpBackend
 ---------------
