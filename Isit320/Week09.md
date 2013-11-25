@@ -14,6 +14,10 @@ The Project we Built in Class
 
 - [Can be found here](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularModularKarma)
 
+See these notes on creating the project:
+
+- [Create Angular Modular](http://elvenware.com/charlie/development/web/JavaScript/Angular.html#instructions-for-the-angular-three-assignment)
+
 Working with Bitmaps
 --------------------
 
@@ -147,4 +151,8 @@ Online
 ------
 
 The assignments for this week are:
+
+
+
+
 
