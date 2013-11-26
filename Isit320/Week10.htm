@@ -1,0 +1,133 @@
+<h1 id="week-10">Week 10</h1>
+<h2 id="protractor">Protractor</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/UnitTests/Protractor.html">http://www.elvenware.com/charlie/development/web/UnitTests/Protractor.html</a></li>
+</ul>
+<h2 id="rubles">Rubles</h2>
+<h2 id="grunt-distributions">Grunt distributions</h2>
+<h2 id="database">Database</h2>
+<ul>
+<li><p><https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB-></p></li>
+<li><p><a href="https://api.mongolab.com/api/1/databases/test_db/collections/Presidents?apiKey=ZijSwGsOeI8F_L2a7TL3UsCRmkWIM-Ek">https://api.mongolab.com/api/1/databases/test_db/collections/Presidents?apiKey=ZijSwGsOeI8F_L2a7TL3UsCRmkWIM-Ek</a></p></li>
+</ul>
+<h2 id="test-factory">Test Factory</h2>
+<p>It is important to be able to test each module individually. You should be able to do that without ever referencing a controller. Below I show how to proceed.</p>
+<p>Here is the Factory that we want to test:</p>
+<pre><code>angular.module(&#39;circleMod&#39;, [])
+.factory(&#39;circleFactory&#39;, function() {
+
+    return {
+        areaOfCircle : function(radius) {
+            return 0;
+        },
+
+        circumferenceOfCircle : function(radius) {
+            return 1;
+        }
+    };
+});</code></pre>
+<p>As you can see, the factory creates an object with two methods. In this case I just give default return values for the methods.</p>
+<p>Here is the test for that factory. There are three key stages in this test:</p>
+<ol type="1">
+<li>Create an instance of the module</li>
+<li>Use the built in Angular $injector class to retrieve the factory</li>
+<li>Write your test.</li>
+</ol>
+<pre><code>describe(&quot;circle test&quot;, function() {&#39;use strict&#39;;
+
+    var circle = null;
+
+    // Step 1: Create Module
+    beforeEach(function() {
+        module(&#39;circleMod&#39;);
+    });
+
+    // Step 2: Retrieve factory
+    beforeEach(inject(function($injector) {
+        circle = $injector.get(&#39;circleFactory&#39;);
+    }));
+
+    // Step 3: run Test on a method of the factory
+    it(&quot;Get Circle area&quot;, function() {
+        expect(circle.areaOfCircle()).toEqual(0);
+    });
+});</code></pre>
+<h2 id="online">Online</h2>
+<h3 id="angularmodule">AngularModule</h3>
+<p>When you are done, enter the URL of your repository. Your work should be in a folder called Week10-Module</p>
+<p>Start with AngularCalcular from ElfRuble. See also the following project that we developed InClass on Nov 25, 2013.</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/AngularFactoryTest">AngularFactoryTest</a></li>
+</ul>
+<p>Create:</p>
+<ul>
+<li>Music.js</li>
+</ul>
+<p>In it, put a module and a factory:</p>
+<ul>
+<li>musicMod</li>
+<li>musicFactory</li>
+</ul>
+<p>Create Book.js</p>
+<p>In it, put a module and a factory:</p>
+<ul>
+<li>bookMod</li>
+<li>bookFactory</li>
+</ul>
+<p>In Music Module, create an array of five musicians and their albums.</p>
+<pre><code>    [{musician: &#39;Beatles&#39;, album: &#39;The White Albume&#39;},
+     {musician: ... etc }
+    ]</code></pre>
+<ul>
+<li>getMusicianFromAlbum(albumName)</li>
+<li><p>getAlbumFromMusician(musicianName)</p></li>
+<li><p>In the book module module create an array of books and authors. If you want, use the filter method shown in JavaScript/Design/AngularSearch, or just come up with your own way to look up the data in the arrays.</p></li>
+</ul>
+<p>In the book module you should have an array of books and authors, and should define the following methods:</p>
+<p>-- getAuthorFromBook(bookName) -- getBookFromAuthor(authorName)</p>
+<p>Allow the user to view all the albums and books and then just type in the name of an album and see the musician/author or vice versa.</p>
+<p>Write unit tests showing that it all works.</p>
+<h3 id="angularjson">AngularJson</h3>
+<p>Start with the JsonFromServer application in ElfRuble.</p>
+<p>Same as above, but the data should be defined in a JSON file. Your index.html should work with real data, while TestBooks.js and TestMusic.js should work with mock data.</p>
+<p>Your work should be in a folder called Week10-AngularJson</p>
+<h3 id="angularmongo">AngularMongo</h3>
+<p>Start with the AngularMongoBootstrapTest from ElfRuble.</p>
+<p>Same as above, but the data should be defined in MongoLab collections. Your index.html should work with real data, while TestBooks.js and TestMusic.js should work with mock data.</p>
+<p>Your work should be in a folder called Week10-AngularMongo.</p>
+<h3 id="craftynewlevel">CraftyNewLevel</h3>
+<p>In Crafty06 from JsObjects there is some new code that defines what happens when the player loses. It is interesting because it shows how to create a new scene.</p>
+<p>You should create a level 2 for your new game. When you define the new Level, you will use a similar mechanism to that shown when the player looses, but instead of starting a scene that tells the user that he or she lost, you start a scene for a new level.</p>
+<p>Here is the code for showing that the user lost. First we define a condition for loosing, and then we trigger a Crafty method that will start the &quot;You Lose&quot; scene. This code is in ElfGame.js:</p>
+<pre><code>if (this.misses++ &gt; 3) {
+    Crafty.trigger(&#39;youLose&#39;, Crafty);
+}</code></pre>
+<p>The Crafty trigger method is very much like sending a broadcast message in Angular.</p>
+<p>Here is the code the <strong>youLose</strong> method:</p>
+<pre><code>this.bind(&#39;youLose&#39;, function() {
+    Crafty.scene(&#39;Failure&#39;);
+});</code></pre>
+<p>And here is the new scene:</p>
+<pre><code>Crafty.scene(&#39;Failure&#39;, function() { &#39;use strict&#39;;
+    // Display some text in celebration of the victory
+    Crafty.e(&#39;2D, DOM, Text&#39;)
+        .attr({ x: 0, y: 0 })
+        .text(&#39;You Lose!&#39;)
+        .textColor(&#39;#FFFFFF&#39;)
+        .textFont({ size: &#39;48px&#39;, weight: &#39;bold&#39; });
+
+
+    // restart the game when a key is pressed
+    this.restart = function() {
+        Crafty.scene(&#39;Game&#39;);
+    };
+
+    // Bind keydown event. This was done wrong in the demo
+    this.bind(&#39;KeyDown&#39;, this.restart);
+}, function() { &#39;use strict&#39;;
+    // Remove key binding to prevent multiple restarts
+    if (!this.unbind(&#39;KeyDown&#39;, this.restart)) {
+        window.alert(&quot;Could not unbind&quot;);
+    }
+
+});</code></pre>

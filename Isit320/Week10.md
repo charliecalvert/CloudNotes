@@ -1,8 +1,219 @@
 Week 10
+=======
+
+Protractor
+----------
+
+- <http://www.elvenware.com/charlie/development/web/UnitTests/Protractor.html>
 
 Rubles
+------
 
 Grunt distributions
+-------------------
 
-https://api.mongolab.com/api/1/databases/test_db/collections/Presidents?apiKey=ZijSwGsOeI8F_L2a7TL3UsCRmkWIM-Ek
+Database
+--------
 
+- <https://support.mongolab.com/entries/20433053-Is-there-a-REST-API-for-MongoDB->
+
+- <https://api.mongolab.com/api/1/databases/test_db/collections/Presidents?apiKey=ZijSwGsOeI8F_L2a7TL3UsCRmkWIM-Ek>
+
+
+Test Factory
+------------
+
+It is important to be able to test each module individually.
+You should be able to do that without ever referencing 
+a controller. Below I show how to proceed.
+
+Here is the Factory that we want to test:
+
+```
+angular.module('circleMod', [])
+.factory('circleFactory', function() {
+
+    return {
+        areaOfCircle : function(radius) {
+            return 0;
+        },
+
+        circumferenceOfCircle : function(radius) {
+            return 1;
+        }
+    };
+});
+```
+
+As you can see, the factory creates an object with
+two methods. In this case I just give default return
+values for the methods.
+
+Here is the test for that factory. There are three
+key stages in this test:
+
+1. Create an instance of the module
+2. Use the built in Angular $injector class to
+retrieve the factory
+3. Write your test.
+
+```
+describe("circle test", function() {'use strict';
+
+    var circle = null;
+
+	// Step 1: Create Module
+    beforeEach(function() {
+        module('circleMod');
+    });
+
+	// Step 2: Retrieve factory
+    beforeEach(inject(function($injector) {
+        circle = $injector.get('circleFactory');
+    }));
+
+	// Step 3: run Test on a method of the factory
+    it("Get Circle area", function() {
+        expect(circle.areaOfCircle()).toEqual(0);
+    });
+});
+```
+Online
+------
+
+###AngularModule
+
+When you are done, enter the URL of your repository. Your work 
+should be in a folder called Week10-Module
+
+Start with AngularCalcular from ElfRuble. See also the following 
+project that we developed InClass on Nov 25, 2013.
+
+- [AngularFactoryTest](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/AngularFactoryTest)
+
+Create:
+
+- Music.js
+
+In it, put a module and a factory:
+
+- musicMod
+- musicFactory
+
+Create Book.js
+
+In it, put a module and a factory:
+
+- bookMod
+- bookFactory
+
+In Music Module, create an array of five musicians and their albums.
+
+```
+	[{musician: 'Beatles', album: 'The White Albume'},
+	 {musician: ... etc }
+	]
+```
+
+- getMusicianFromAlbum(albumName)
+- getAlbumFromMusician(musicianName)
+
+- In the book module module create an array of books and
+authors. If you want, use the filter method shown in 
+JavaScript/Design/AngularSearch, or just come up with
+your own way to look up the data in the arrays.
+
+In the book module you should have an array of books
+and authors, and should define the following methods:
+
+-- getAuthorFromBook(bookName)
+-- getBookFromAuthor(authorName)
+
+Allow the user to view all the albums and books and 
+then just type in the name of an album and see 
+the musician/author or vice versa.
+
+Write unit tests showing that it all works.
+
+###AngularJson
+
+Start with the JsonFromServer application in ElfRuble.
+
+Same as above, but the data should be defined in a
+JSON file. Your index.html should work with real 
+data, while TestBooks.js and TestMusic.js should
+work with mock data.
+
+Your work should be in a folder called Week10-AngularJson
+
+###AngularMongo
+
+Start with the AngularMongoBootstrapTest from ElfRuble.
+
+Same as above, but the data should be defined in
+MongoLab collections. Your index.html should work with real 
+data, while TestBooks.js and TestMusic.js should
+work with mock data.
+
+Your work should be in a folder called Week10-AngularMongo.
+
+###CraftyNewLevel
+
+In Crafty06 from JsObjects there is some new code that
+defines what happens when the player loses. It is interesting
+because it shows how to create a new scene. 
+
+You should create a level 2 for your new game. When you define the 
+new Level, you will use a similar mechanism to that shown when the 
+player looses, but instead of starting a scene that tells the user 
+that he or she lost, you start a scene for a new level.
+
+Here is the code for showing that the user lost. First
+we define a condition for loosing, and then we trigger
+a Crafty method that will start the "You Lose" scene.
+This code is in ElfGame.js:
+
+```
+if (this.misses++ > 3) {
+	Crafty.trigger('youLose', Crafty);
+}
+```
+
+The Crafty trigger method is very much like sending
+a broadcast message in Angular. 
+
+Here is the code the **youLose** method:
+
+```
+this.bind('youLose', function() {
+    Crafty.scene('Failure');
+});
+```
+
+And here is the new scene:
+
+```
+Crafty.scene('Failure', function() { 'use strict';
+	// Display some text in celebration of the victory
+	Crafty.e('2D, DOM, Text')
+		.attr({ x: 0, y: 0 })
+		.text('You Lose!')
+        .textColor('#FFFFFF')
+        .textFont({ size: '48px', weight: 'bold' });
+
+
+	// restart the game when a key is pressed
+	this.restart = function() {
+		Crafty.scene('Game');
+	};
+
+	// Bind keydown event. This was done wrong in the demo
+	this.bind('KeyDown', this.restart);
+}, function() { 'use strict';
+	// Remove key binding to prevent multiple restarts
+	if (!this.unbind('KeyDown', this.restart)) {
+		window.alert("Could not unbind");
+	}
+
+});
+```
