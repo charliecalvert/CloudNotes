@@ -84,10 +84,11 @@ Create a Bootstrap document that uses the images you
 created in class. Include text that describes each of 
 the images.
 
-Include your bitmaps of working in Android Memo in this project and 
-check it in. I want you to link to your files stored in Google Drive 
-directly. If you create a public folder in Google Drive, then you 
-can put your images there and reference them in your HTML.
+Include your bitmaps of working in our Android Asus Memo Device  in 
+this project and check it in. I want you to link to your files 
+stored in Google Drive directly. If you create a public folder in 
+Google Drive, then you can put your images there and reference them 
+in your HTML.
 
 Here is a sample URL:
 
@@ -103,16 +104,78 @@ the screenshot:
 
 	https://googledrive.com/host/ID OF DRIVE/ScreenShotName.jpg
 
-<p>And here is the actual image:</p>
+<p>And here is an actual image:</p>
 
 ![Image from Google Drive](https://googledrive.com/host/0B1pGBKYyP0gdZ2owNTV3SjdlU00/ScreenShot01.jpg)
 
-<p>More Details to follow.</p>
+Download the starter source which is linked from the in Canvas. There
+is an updated copy of the source available, but
+it differs from the first version in only very small ways. In 
+particular, the menu for the two supplimental pages has been
+updated to match the menu on the first page.</p>
 
-<p>Download the starter source which is linked from the [Assignment 
-page](https://bc.instructure.com/courses/834458/assignments/3016277) in Canvas.</p>
+[Assignment page](https://bc.instructure.com/courses/834458/assignments/3016277) 
 
-Details on this assignment to follow.
+####The Home Page
+
+At the top of the home page, you should create a table or list showing
+the key features of our Android device. List, for instance, the:
+
+- Amount of memory it has on the hard drive
+- The amount of RAM it has
+- Which processor it uses
+- The size of the screen
+- The version of Android that it runs
+- Other details such as ports and buttons
+- The cost, etc.
+
+On the home page, notice that there are three bitmaps arranged in a
+simple pattern:
+
+```
+   [Pix1]
+[Pix2] 
+   [Pix3]
+```
+
+You should preserve this pattern in your version of the app. I have 
+placed a screen shot of our Android device in Pix1. You should put 
+pictures of your Android in positions for Pix2 and Pix3, which are 
+shown below in green and blue. Whether you replace Pix1 with one of 
+your own is up to you.
+
+![Alternate Images](../Images/AndroidPixs01.png)
+
+You should put text describing your pictures next to the pictures
+themselves. Which pictures you put where are up to you. However, some
+screenshots that would be good candidates for this page would include:
+
+- The WiFi Settings page
+- The Applications Page
+- The Widgets Page
+- The About Tablet | Status Page
+- The Google Drive Page
+- A SkyDrive Page
+- AirDroid
+
+And many more.
+
+There are two more pages in the web application. Right now one is called
+**Pictures** and the other **About**. You should put more information
+about your Android device on these pages. There need be only one 
+picture of the device on each page. You might, for instance, create
+two pages similar to these:
+
+- Page 1: The Google Music Player. Describe and show getting music from
+the play store and playing it in the music player
+- Page 2: Google Books. Describe and show getting books from the play
+store and viewing them in Google Books.
+
+Other topics might include Vinio and Overdrive, or any other apps or
+features that interest you. Be creative, use your imagination. Or 
+just do a good workman like job of describing some feature of the 
+Android.
+
 
 ###Edit data on mobile device
 

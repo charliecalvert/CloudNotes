@@ -21,7 +21,7 @@ def cloudRoot(markdown):
 def prog270(markdown):
 	files = ["Resources", "Week01", "Week02", "Week03",
 	"Week04", "Week05", "Week06", "Week07", "Week08", 
-	"Week09", 
+	"Week09", "Week10",
 	"MarkdownAssignment", 'GoogleSiteAssignment'];
 	markdown.copyFrom=cloudNotesFrom + "Prog270"
 	markdown.destination=cloudNotesTo + "Prog270"
