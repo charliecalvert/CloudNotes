@@ -26,7 +26,7 @@ Things you must have in the final:
 
 - At least three levels
 - Each level has a difference predefined set of
-	- Villiages and Towers Sprites
+	- Village/Tower Sprites
 	- FoodBonus Sprites
 	- HealthBonus Sprites
 	- StrengthBonus Sprites
