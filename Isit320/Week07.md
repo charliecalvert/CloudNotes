@@ -28,7 +28,7 @@ Retrieve JSON from a server:
 ###Characters
 
 - Hitpoints: How much damage can a character take before losing consciousness
-- Damage: How much damage does a character weild
+- Damage: How much damage does a character wield
 
 Online
 ------
