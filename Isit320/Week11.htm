@@ -1,0 +1,203 @@
+<h1 id="week-11">Week 11</h1>
+<p>The major topics this week:</p>
+<ul>
+<li>Using S3</li>
+<li>Understand the final</li>
+<li><a href="../CloudNotes.html">CloudNotes TOC</a></li>
+<li><a href="http://post.oreilly.com/rd/9z1z5fm7aqv91e77us75f9jb0soou06g2lo88ibj99g">Cyber Monday at O'Reilly</a></li>
+<li><a href="http://seaspin.org/">SeaSpin Meeting Tuesday</a></li>
+</ul>
+<h2 id="final">Final</h2>
+<p>Things you must have in the final:</p>
+<ul>
+<li>At least three levels</li>
+<li>Predefined sprite positions for each level</li>
+<li>At least 75 separate unit tests</li>
+<li>Module refactoring for Characters.js or your equivelent</li>
+<li><p>Each level has a difference predefined set of sprites:</p>
+<ul>
+<li>Village/Tower Sprites (Encounter Sprites)</li>
+<li>FoodBonus Sprites (Bonus Sprites)</li>
+<li>HealthBonus Sprites (Bonus Sprites)</li>
+<li>StrengthBonus Sprites (Bonus Sprites)</li>
+<li>Wall/Bush Sprites (Blocking Sprites)</li>
+</ul></li>
+<li><p>You must load the predefined sprites from a JSON file or database. Typically, you would at least need to include the X, Y coordinates of the sprite in the file or database document/record.</p></li>
+</ul>
+<h3 id="sprites">Sprites</h3>
+<p>You should have three different types of sprites on your board.</p>
+<p>A sprite is a visual element on the Crafty board. For instance a Village/Tower is a sprite, as are the Food icons.</p>
+<p>The main character interacts with sprites in one of three ways:</p>
+<ul>
+<li>A bush or tree sprite acts like a wall. It is solid and can't be passed.</li>
+<li>A Village/Tower sprite is &quot;encountered&quot; and some kind of competition occurs</li>
+<li>A Food Sprite is a Bonus it causes the main character to gain or lose health, or some other property.</li>
+</ul>
+<p>I realize, of course, that in some people's games sprites are not called Villages or Towers, and they are not called Food. This is not important. What matters is that you have sprites that perform each of these tasks:</p>
+<ul>
+<li>Blocking</li>
+<li>Encounters</li>
+<li>Bonus points</li>
+</ul>
+<p>Exactly what the sprites are called is unimportant, so long as they play one of the roles outlined above.</p>
+<h3 id="unit-tests">Unit Tests</h3>
+<p>You code should have:</p>
+<ul>
+<li>At least 75 individual tests in at least 5 different files</li>
+<li>Karma support for running the tests</li>
+<li>Grunt support for confirming that all your files pass JsHint tests
+<ul>
+<li>Turn on strict</li>
+</ul></li>
+</ul>
+<p>Here is code from the Crafty06 <strong>karma.conf.js</strong> showing how to link in the files in your project that you want to test and exclude from testing:</p>
+<pre><code>files: [   
+    &#39;Library/angular.js&#39;,
+    &#39;Library/angular-mocks.js&#39;,
+    &#39;Library/Crafty.js&#39;,
+    &#39;Source/**/*.js&#39;,
+    &#39;Tests/*.js&#39;
+],
+
+// list of files to exclude
+exclude: [
+    &#39;Source/JasmineStart.js&#39;
+],</code></pre>
+<p>The following line, for instance, links in all the JavaScript files in your <strong>Source</strong> directory and its subdirectories:</p>
+<pre><code>Source/**/*.js</code></pre>
+<p>This line links in all the JavaScript files in your Tests directory:</p>
+<pre><code>Tests/*.js</code></pre>
+<p>Note the difference:</p>
+<ul>
+<li>The first includes the <strong>Source</strong> directory and its subdirectories</li>
+<li>The second include only the files in the <strong>Tests</strong> directory.</li>
+</ul>
+<p>The following line excludes the JasmineStart.js file, even though it is in the Source directory, which we included above:</p>
+<pre><code>exclude: [
+  &#39;Source/JasmineStart.js&#39;
+],</code></pre>
+<p>We don't want to link in JasmineStart, as Karma has similar code built into it.</p>
+<h3 id="grunt-support">Grunt Support</h3>
+<p>You should be able to run JsHint from Grunt across all the JavaScript files in your project.</p>
+<ul>
+<li>JsHint should come back with a clean report.</li>
+<li><p>Strict should be turned on</p></li>
+<li><p><a href="http://elvenware.com/charlie/development/web/UnitTests/Grunt.html">Grunt on Elvenware</a></p></li>
+</ul>
+<h3 id="modules-and-refactoring">Modules and Refactoring</h3>
+<p>I would like to do one last refactoring exercise that will include the creation of multiple modules. Although I like Angular, the main point is not to learn the Angular syntax, but to understand that it is possible to divide your code up into modules.</p>
+<p>Take the Character.js file from Crafty06, or some similar file from your game, and divide it up into multiple modules. Write tests for each module. Here, for instance, are the modules that I created in my own version of the game:</p>
+<figure>
+<img src="../Images/CraftyDirs01.png" alt="Character Modules" /><figcaption>Character Modules</figcaption>
+</figure>
+<ul>
+<li><a href="../Images/CraftyDirs01.png">Full size</a></li>
+</ul>
+<p>Notice that currently the <strong>Characters.js</strong> file has multiple sections in it called <strong>Races</strong>, <strong>Classes</strong>, <strong>Hero</strong> and <strong>Tower</strong>. I want you to refactor this code so that it is divided out into at least four separate files in a folder called Characters:</p>
+<ul>
+<li>Races.js</li>
+<li>Classes.js</li>
+<li>Hero.js</li>
+<li>Tower.js</li>
+</ul>
+<p>Each file should have one Angular module and one Factory. There should be at least four corresponding Test files:</p>
+<ul>
+<li>TestRaces.js</li>
+<li>TestClasses.js</li>
+<li>TestHero.js</li>
+<li>TestTower.js</li>
+</ul>
+<p>One of the tests you write might look like this:</p>
+<pre><code>beforeEach(function() {
+    module(&#39;raceMod&#39;);
+});
+
+beforeEach(inject(function($injector) {
+    raceList = $injector.get(&#39;races&#39;);
+}));
+
+it(&quot;can find halflings&quot;, function() {
+    var singleRace = raceList[1];
+    expect(singleRace.name).toEqual(&#39;Halflings&#39;);
+    expect(singleRace.description.length).toEqual(88);
+    expect(singleRace.hitDie).toEqual(6);
+    expect(singleRace.languages[0]).toEqual(&#39;Common&#39;);
+    expect(singleRace.classes[0]).toEqual(&#39;Cleric&#39;);
+});</code></pre>
+<p>You should, of course, write similar tests for each <strong>race</strong>. In a separate file, you should write tests for each <strong>class</strong>.</p>
+<h3 id="predefined-levels">Predefined Levels</h3>
+<p>One relatively simple way to create predefined levels is to create a set of 2 dimensional arrays, one for each level. Here for example is an array defining the sprites for level 1, and part of level 2:</p>
+<pre><code>Crafty.scene(&#39;Game&#39;, function() { &#39;use strict&#39;;
+
+    this.boards = [
+
+        // Level 1
+        [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]],
+        
+        // Level 2
+        [[1, etc...</code></pre>
+<p>Note that you should put this code in <strong>Scenes.js</strong>, in the <strong>Game</strong> scene:</p>
+<pre><code>Crafty.scene(&#39;Game&#39;, function() { &#39;use strict&#39;;
+
+    this.boards = [
+    
+        // Level 1
+        [[1, 1,</code></pre>
+<p>The numbers in the array represent the various Sprites in your scene. For instance:</p>
+<ul>
+<li>1 = Tree</li>
+<li>2 = Bush</li>
+<li>3 = Food</li>
+<li>4 = Village</li>
+</ul>
+<p>Then you need a nested <strong>for loop</strong> to iterate over the array and create the Crafty entities for each sprite:</p>
+<pre><code>var createEntity = function(col, row, name) {
+    Crafty.e(name).at(col, row);
+};
+
+var createEntities = function(board) {
+    for (var x = 0; x &lt; Crafty.game.map_grid.width; x++) {
+        for (var y = 0; y &lt; Crafty.game.map_grid.height; y++) {
+            var gridValue = board[y][x];
+            if (gridValue === 1) {
+                createEntity(x, y, &#39;Tree&#39;);
+            } else if (gridValue === 2) {
+                createEntity(x, y, &#39;Bush&#39;);
+            } else if (gridValue === 3) {
+                createEntity(x, y, &#39;Food&#39;);
+            } else if (gridValue === 4) {
+                createVillage(x, y);
+            }
+        }
+    }
+};</code></pre>
+<p>The end result is something like this:</p>
+<figure>
+<img src="../Images/CraftyDirs02.png" alt="Crafty Predefined Places" /><figcaption>Crafty Predefined Places</figcaption>
+</figure>
+<ul>
+<li><a href="../Images/CraftyDirs02.png">Full size</a></li>
+</ul>
+<h3 id="s3-support">S3 Support</h3>
+<p>You should be able to deploy your project to S3. See the <strong>SendToS3.js</strong> file in Crafty06 for an example of how to proceed.</p>
+<h3 id="turn-it-in">Turn It In</h3>
+<ul>
+<li>Check your code into Git</li>
+<li>Include screen shots of
+<ul>
+<li>Karma running</li>
+<li>Grunt returning a clean run</li>
+</ul></li>
+<li>The URL of your game on S3</li>
+</ul>

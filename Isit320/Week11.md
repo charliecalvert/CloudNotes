@@ -1,6 +1,13 @@
 Week 11
 =======
 
+The major topics this week:
+
+- Using S3
+- Understand the final
+- [CloudNotes TOC](../CloudNotes.html)
+- [Cyber Monday at O'Reilly](http://post.oreilly.com/rd/9z1z5fm7aqv91e77us75f9jb0soou06g2lo88ibj99g)
+- [SeaSpin Meeting Tuesday](http://seaspin.org/)
 
 Final
 -----
@@ -131,6 +138,8 @@ my own version of the game:
 
 ![Character Modules](../Images/CraftyDirs01.png)
 
+- [Full size](../Images/CraftyDirs01.png)
+
 Notice that currently the **Characters.js** file has multiple
 sections in it called **Races**, **Classes**, **Hero** and **Tower**.
 I want you to refactor this code so that it is divided out into
@@ -168,6 +177,7 @@ it("can find halflings", function() {
 	expect(singleRace.languages[0]).toEqual('Common');
 	expect(singleRace.classes[0]).toEqual('Cleric');
 });
+```
 
 You should, of course, write similar tests for each **race**. In a 
 separate file, you should write tests for each **class**.
@@ -251,9 +261,19 @@ The end result is something like this:
 
 ![Crafty Predefined Places](../Images/CraftyDirs02.png)
 
-
+- [Full size](../Images/CraftyDirs02.png)
 
 ###S3 Support
 
 You should be able to deploy your project to S3. See the **SendToS3.js**
 file in Crafty06 for an example of how to proceed.
+
+
+###Turn It In
+
+- Check your code into Git
+- Include screen shots of 
+	- Karma running
+	- Grunt returning a clean run
+- The URL of your game on S3
+
