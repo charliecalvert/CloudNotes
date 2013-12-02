@@ -32,7 +32,7 @@ def prog270(markdown):
 def isit320(markdown):
 	files = ["Resources", "Week01", "Week02", 
 		"Week03", "Week04", "Week05", "Week06", "Week07",
-		"Week08", "Week09", "Week10", "GitTipsFromKurt"];
+		"Week08", "Week09", "Week10", "Week11", "GitTipsFromKurt"];
 	markdown.copyFrom=cloudNotesFrom + "Isit320"
 	markdown.destination=cloudNotesTo + "Isit320"
 	elffiles.ensureDir(markdown.destination)
