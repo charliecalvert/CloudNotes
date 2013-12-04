@@ -9,6 +9,63 @@ The major topics this week:
 - [Cyber Monday at O'Reilly](http://post.oreilly.com/rd/9z1z5fm7aqv91e77us75f9jb0soou06g2lo88ibj99g)
 - [SeaSpin Meeting Tuesday](http://seaspin.org/)
 
+Notes on Karma
+--------------
+ 
+- [Week02](Week02.html)
+- [Week09](Week09.html)
+
+###Coverage
+
+Code coverage let's you know what code in your program is not covered
+by unit tests.
+
+First install Istanbul:
+
+	npm install -g istanbul
+	
+For Crafty06, I've already added it to package.json, so just rerun
+npm install. However, of other projects:
+
+	npm install karma-coverage --save-dev
+
+Then you need to modify three parts of **karma.conf.js**:
+
+- preprocessors
+- reporters
+- plugins
+
+In the preprocessors section of **karma.conf.js**:
+
+```
+ preprocessors: {
+      'Source/**/*.js': ['commonjs', 'coverage'],
+      'test/client/*.js': ['commonjs']
+    },
+```
+
+Add or your reports:
+
+	reporters: ['progress', 'coverage'],
+
+And in your plugins at the bottom of karam.conf.js:
+
+```
+plugins: [      
+      'karma-jasmine',
+      'karma-coverage',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-junit-reporter',
+      'karma-commonjs'
+    ]
+```
+
+The results end up in a folder called **coverage** in a series of 
+HTML files. Open the files in your browser.
+
+![Coverage of Simpler Controller](../Images/Coverage01.png)
+
 Final
 -----
 
@@ -17,7 +74,9 @@ Things you must have in the final:
 
 - At least three levels
 - Predefined sprite positions for each level
-- At least 75 separate unit tests
+- At least 75 separate unit tests 
+- Testing coverage at 90 percent for at least three files of 100 lines or more.
+- Testing at 65 percent or better for all JavaScript files
 - Module refactoring for Characters.js or your equivelent
 - Each level has a difference predefined set of sprites:
 

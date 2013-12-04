@@ -165,11 +165,11 @@ because it shows how to create a new scene.
 
 You should create a level 2 for your new game. When you define the 
 new Level, you will use a similar mechanism to that shown when the 
-player looses, but instead of starting a scene that tells the user 
+player loses, but instead of starting a scene that tells the user 
 that he or she lost, you start a scene for a new level.
 
 Here is the code for showing that the user lost. First
-we define a condition for loosing, and then we trigger
+we define a condition for losing, and then we trigger
 a Crafty method that will start the "You Lose" scene.
 This code is in ElfGame.js:
 
