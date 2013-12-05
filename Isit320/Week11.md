@@ -72,12 +72,21 @@ Final
 
 Things you must have in the final:
 
-- At least three levels
 - Predefined sprite positions for each level
 - At least 75 separate unit tests 
 - Testing coverage at 90 percent for at least three files of 100 lines or more.
 - Testing at 65 percent or better for all JavaScript files
 - Module refactoring for Characters.js or your equivelent
+
+
+- You must load the predefined sprites from a JSON file
+or database. Typically, you would at least need to include
+the X, Y coordinates of the sprite in the file or database
+document/record.
+
+Optional:
+
+- At least three levels (Ok, predefined levels is now optional)
 - Each level has a difference predefined set of sprites:
 
 	- Village/Tower Sprites (Encounter Sprites)
@@ -85,11 +94,6 @@ Things you must have in the final:
 	- HealthBonus Sprites (Bonus Sprites)
 	- StrengthBonus Sprites (Bonus Sprites)
 	- Wall/Bush Sprites (Blocking Sprites)
-
-- You must load the predefined sprites from a JSON file
-or database. Typically, you would at least need to include
-the X, Y coordinates of the sprite in the file or database
-document/record.
 
 ###Sprites
 
