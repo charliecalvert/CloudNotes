@@ -47,16 +47,20 @@ if (typeof String.prototype.endsWith !== 'function') {
 
 ###Assignment Midterm
 
+This is an extension of the Crafty Game that includes support for 
+encounters that have a real competition between the main character
+and the village where either one or the other can win.
+
 Your assignment must:
 
 - Get some data from MongoDb
 - Some data from JSON file
-- You should have at least some of your own graphics
+- You should have at least some of your own graphics in the Crafty game
 - And the encounter should allow:
-	- The character to rest (briefly, till he feels better!)
-	- The village to sleep (just for awhile)
-	- Grunt
-	
+	- The hero character to be defeated 
+	- The village to be defeated 
+	- Grunt support for jshint
+
 For instance get the Tower information now found in Characters.js 
 from Mongo, and the Hero information from a JSON file.
 

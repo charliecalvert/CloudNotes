@@ -33,16 +33,17 @@
     };
 }</code></pre>
 <h3 id="assignment-midterm">Assignment Midterm</h3>
+<p>This is an extension of the Crafty Game that includes support for encounters that have a real competition between the main character and the village where either one or the other can win.</p>
 <p>Your assignment must:</p>
 <ul>
 <li>Get some data from MongoDb</li>
 <li>Some data from JSON file</li>
-<li>You should have at least some of your own graphics</li>
+<li>You should have at least some of your own graphics in the Crafty game</li>
 <li>And the encounter should allow:
 <ul>
-<li>The character to rest (briefly, till he feels better!)</li>
-<li>The village to sleep (just for awhile)</li>
-<li>Grunt</li>
+<li>The hero character to be defeated</li>
+<li>The village to be defeated</li>
+<li>Grunt support for jshint</li>
 </ul></li>
 </ul>
 <p>For instance get the Tower information now found in Characters.js from Mongo, and the Hero information from a JSON file.</p>
@@ -54,7 +55,7 @@
 </ul>
 <p>I've ran some Mongo Database code against the most recent angular code and started getting an error like this:</p>
 <pre><code>Error: Referencing private fields in Angular expressions is disallowed! Expression: _id.$oid</code></pre>
-<p>This is a reference to this line from index.js (MongoLab01) and MongoData.js (MongoLab02):</p>
+<p>Incredibly, this was a code change that they decided to role back. I think too many people complained. So this is no longer an issue if you have the most recent builds of Angular. But if you want to fix you code so it handles this restriction, then do this: This is a reference to this line from index.js (MongoLab01) and MongoData.js (MongoLab02):</p>
 <pre><code>id:&#39;@_id.$oid&#39;</code></pre>
 <p>For now, to fix the problem, just comment out or delete the line:</p>
 <pre><code>var Presidents = $resource(&#39;https://api.mongolab.com/api/1/databases/elvenlab01/collections/Presidents/:id&#39;, {
