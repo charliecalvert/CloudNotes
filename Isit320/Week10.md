@@ -126,8 +126,8 @@ your own way to look up the data in the arrays.
 In the book module you should have an array of books
 and authors, and should define the following methods:
 
--- getAuthorFromBook(bookName)
--- getBookFromAuthor(authorName)
+- getAuthorFromBook(bookName)
+- getBookFromAuthor(authorName)
 
 Allow the user to view all the albums and books and 
 then just type in the name of an album and see 
