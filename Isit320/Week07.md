@@ -71,8 +71,12 @@ code and started getting an error like this:
 
 	Error: Referencing private fields in Angular expressions is disallowed! Expression: _id.$oid
 
-This is a reference to this line from index.js (MongoLab01) and 
-MongoData.js (MongoLab02):
+Incredibly, this was a code change that they decided to role back. I 
+think too many people complained. So this is no longer an issue if 
+you have the most recent builds of Angular. But if you want to fix 
+you code so it handles this restriction, then do this: This is a 
+reference to this line from index.js (MongoLab01) and MongoData.js 
+(MongoLab02):
 
 	id:'@_id.$oid'
 
