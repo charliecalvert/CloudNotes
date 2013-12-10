@@ -7,12 +7,51 @@
 <li><a href="http://post.oreilly.com/rd/9z1z5fm7aqv91e77us75f9jb0soou06g2lo88ibj99g">Cyber Monday at O'Reilly</a></li>
 <li><a href="http://seaspin.org/">SeaSpin Meeting Tuesday</a></li>
 </ul>
+<h2 id="notes-on-karma">Notes on Karma</h2>
+<ul>
+<li><a href="Week02.html">Week02</a></li>
+<li><a href="Week09.html">Week09</a></li>
+</ul>
+<h3 id="coverage">Coverage</h3>
+<p>Code coverage let's you know what code in your program is not covered by unit tests.</p>
+<p>First install Istanbul:</p>
+<pre><code>npm install -g istanbul</code></pre>
+<p>For Crafty06, I've already added it to package.json, so just rerun npm install. However, of other projects:</p>
+<pre><code>npm install karma-coverage --save-dev</code></pre>
+<p>Then you need to modify three parts of <strong>karma.conf.js</strong>:</p>
+<ul>
+<li>preprocessors</li>
+<li>reporters</li>
+<li>plugins</li>
+</ul>
+<p>In the preprocessors section of <strong>karma.conf.js</strong>:</p>
+<pre><code> preprocessors: {
+      &#39;Source/**/*.js&#39;: [&#39;commonjs&#39;, &#39;coverage&#39;],
+      &#39;test/client/*.js&#39;: [&#39;commonjs&#39;]
+    },</code></pre>
+<p>Add or your reports:</p>
+<pre><code>reporters: [&#39;progress&#39;, &#39;coverage&#39;],</code></pre>
+<p>And in your plugins at the bottom of karam.conf.js:</p>
+<pre><code>plugins: [      
+      &#39;karma-jasmine&#39;,
+      &#39;karma-coverage&#39;,
+      &#39;karma-chrome-launcher&#39;,
+      &#39;karma-firefox-launcher&#39;,
+      &#39;karma-junit-reporter&#39;,
+      &#39;karma-commonjs&#39;
+    ]</code></pre>
+<p>The results end up in a folder called <strong>coverage</strong> in a series of HTML files. Open the files in your browser.</p>
+<figure>
+<img src="../Images/Coverage01.png" alt="Coverage of Simpler Controller" /><figcaption>Coverage of Simpler Controller</figcaption>
+</figure>
 <h2 id="final">Final</h2>
 <p>Things you must have in the final:</p>
 <ul>
 <li>At least three levels</li>
 <li>Predefined sprite positions for each level</li>
 <li>At least 75 separate unit tests</li>
+<li>Testing coverage at 90 percent for at least three files of 100 lines or more.</li>
+<li>Testing at 65 percent or better for all JavaScript files</li>
 <li>Module refactoring for Characters.js or your equivelent</li>
 <li><p>Each level has a difference predefined set of sprites:</p>
 <ul>

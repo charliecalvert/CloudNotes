@@ -1,0 +1,166 @@
+Week 11
+=======
+
+Highlights:
+
+- [Today's Deck](http://bit.ly/Rzi2Da)
+- [AWS on Elvenware](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
+- [AWS](http://aws.amazon.com/)
+- [CloudNotes TOC](../CloudNotes.html)
+- [DropBox Elvenware](http://www.elvenware.com/charlie/development/cloud/DropBox.html)
+- [DropBox Install](https://www.dropbox.com/install)
+- [Node on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
+
+In Class
+--------
+
+###Amazon Web Services and S3
+
+Information is found here:
+
+- [Today's Deck](http://bit.ly/Rzi2Da)
+- [AWS on Elvenware](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
+
+###DropBox
+
+- Turn on Camera Uploads
+- [Referrals, Free Space](https://www.dropbox.com/referrals)
+- [Bonus Space](https://www.dropbox.com/account/bonus)
+
+###SkyDrive
+
+- Create documents in Windows
+- View them on your device.
+
+Online
+------
+
+The final:
+
+- Upload all projects to S3
+- Link from your Google Site and submit the URL of the page.
+	- Choose the open site on new page option when linking to projects
+	
+There is a new copy of Week09Android03.zip that contains a working 
+version of **SendToS3.js**. You will need to edit config.json to host
+your credentials. **SendToS3.js** is designed to run on Windows. You
+should run it on Windows like this.
+
+One time only for each project you want to upload enter this command:
+
+	npm install
+	
+npm  processes a file called package.json.
+
+Next you enter the command to upload the file to S3  
+
+	node SendToS3.js
+	
+Don't forget to set up your config.json file with your access key!
+
+The three changes you can make:
+
+- On line 7: var config = **AWS.config.loadFromPath('config.json');**
+- On line 12. You bucket: **var bucketName = 'prog270.elvenware.com';**
+- Optionally, on line 31, the name of your folder: **nameOnS3 = "Week09Android" + nameOnS3;**
+
+Then edit the files that will be uploaded. 
+
+- Don't upload node_modules, config.json or SendToS3.js
+- For binary files (images) leave the last parameter as **false**
+- List each file that your project needs, including CSS files.
+
+If I can create a copy that works on CloudNine, I will upload it.
+
+- [Download](https://bc.instructure.com/courses/834458/assignments/3016277)
+
+The only changes are the addition of:
+
+- SendToS3.js
+- package.json
+- config.json
+
+These changes should not effect your existing projects. 
+
+Your credentials are found by:
+
+- Signing into AWS
+- Selecting your name in the upper right hand corner
+- Going to the **Security Credentials** page.
+
+###Turn It In
+When grading your final I will look at:
+
+- Your repository, where I hope to find all your projects and SendToS3 files.
+- Your Google Site home page, where I hope to find links to all your
+projects on S3
+- A page in Google Drive with all your links on it
+- A page in SkyDrive with all your links in it
+- A page in EverNote with all your links in it
+
+[Example page](https://sites.google.com/site/elvenware/home/prog270)
+
+Submit all your links in the Text page of the Canvas submission page for
+the Final. I'm looking for something like this, though if you are 
+missing one or two, it is not a big deal:
+
+- Week03 Assignment 01. This should be easy to recreate if you don't still have it.
+- Week04 Media Queries
+- Week04 BootStrap
+- Week05 BootStrap Revisted
+- Week06 Animation
+- Week07 Midterm
+- Week08 Mongo DB
+- Week09 Android
+
+If you don't have all the projects, just do the best you can. Remember
+to check your submissions in Canvas as that might help you recover lost
+files. But in theory, everything is in GitHub.
+
+Don't be too focused on what I want. Focus instead on putting together
+something that shows what you have learned this quarter. If you went to
+a job interview, what would you want to show to highlight your skills?
+
+###Launching from S3
+
+When you put a project on a S3, you can properly launch it by:
+
+- Locating your index.html file
+- Turning to the Properties page
+- Clicking the **Link**
+
+![Launch](../Images/P270S301.png)
+
+- [Full size image](../Images/P270S301.png)
+
+###Your Security Credentials
+
+It is best if you don't check your credentials into GitHub. When you 
+turn in your assignment, you have two choices with the config.json 
+file:
+
+- Don't turn in your credentials. I will test your code on my
+S3 site.
+- Paste your credentials into the text field in Canvas when you
+turn in the assignment. After Finals (Dec 17 on) you
+can change your credentials. 
+
+Probably option 1 is best, but it is up to you. 
+
+###Options on S3
+
+There are buttons to refresh the site and to you can delete "objects"
+and "buckets." That is, you can delete files and folders.
+
+You will also see options to upload files. That can work for you, 
+but in the end, it is generally more work to do things that way, as 
+files are not always automatically made public and the metadata is 
+not set up right. At any rate, I will (randomly) test your 
+**SendToS3.js** files for each project.
+
+Usually the actions you perform on S3 will execute quickly, but
+there will be times when you see a significant delay between the 
+time you issue a command the time when it is executed. It may just
+be coincidence, but it seems to me like commands a I give with
+the AWS-SDK (SendToS3.js) execute more quickly than those I give 
+via the interface.

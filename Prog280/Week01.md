@@ -1,6 +1,8 @@
 Week 01, Prog 280
 =================
 
+- [Prezi](http://prezi.com/)
+
 Our core job today is to provide a course overview and to
 make sure you are familiar with the first set of assignments.
 
