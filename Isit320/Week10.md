@@ -217,3 +217,7 @@ Crafty.scene('Failure', function() { 'use strict';
 
 });
 ```
+
+See also the notes in Week11 on creating new levels:
+
+[New Levels](http://elvenware.com/charlie/books/CloudNotes/Isit320/Week11.html#predefined-levels)

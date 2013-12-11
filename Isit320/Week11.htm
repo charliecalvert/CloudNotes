@@ -27,10 +27,12 @@
 <p>In the preprocessors section of <strong>karma.conf.js</strong>:</p>
 <pre><code> preprocessors: {
       &#39;Source/**/*.js&#39;: [&#39;commonjs&#39;, &#39;coverage&#39;],
-      &#39;test/client/*.js&#39;: [&#39;commonjs&#39;]
     },</code></pre>
+<p>When defining your coverage support, remember that it is up to you to tell coverage where the files are that are being tested. You don't have to point to the test files, just the files that are being tested. For most of our programs, that means doing something like this in the preprocessors statement:</p>
+<pre><code>&#39;Source/**/*.js&#39;</code></pre>
+<p>When you get it right, you should see Coverage produce an HTML file for each JavaScript file in your Source directory.</p>
 <p>Add or your reports:</p>
-<pre><code>reporters: [&#39;progress&#39;, &#39;coverage&#39;],</code></pre>
+<pre><code>reporters: [&#39;progress&#39;, &#39;coverage&#39;, &#39;junit&#39;],</code></pre>
 <p>And in your plugins at the bottom of karam.conf.js:</p>
 <pre><code>plugins: [      
       &#39;karma-jasmine&#39;,
@@ -231,6 +233,63 @@ var createEntities = function(board) {
 <ul>
 <li><a href="../Images/CraftyDirs02.png">Full size</a></li>
 </ul>
+<h3 id="more-on-levels">More on Levels</h3>
+<p>Here is rough outline of how I track levels. In ElfGame.js I declare a property called <strong>level</strong>:</p>
+<pre><code>angular.module(&#39;elfGameMod&#39;, [&#39;characterMod&#39;, &#39;encounterMod&#39;, &#39;gameWrapMod&#39;])
+.factory(&#39;elfGameService&#39;, function(gameEventService, people, gameWrap, encounters) { &#39;use strict&#39;;
+
+    return {
+
+        map_grid : null,
+        
+        people: people,
+        
+        **level: 0,**
+
+        defaultMapGrid : {
+            width : 18,
+            height : 12,
+            tile : {
+                width : 32,
+                height : 32
+            }
+        },</code></pre>
+<p>When I have encounters, I pass that variable into the calculation method so that I can take it into account. For instance, some tasks should be harder at higher levels:</p>
+<pre><code>encounter : function(village) {
+    return encounters.encounter(people.hero, village, gameEventService, this.level);
+},</code></pre>
+<p>Then in <strong>scenes.js</strong> or some similar file I modify the Victory method that gets called when the user completes a level by beating all the bad guys:</p>
+<pre><code>// Show the victory screen once all villages are visisted
+this.show_victory = this.bind(&#39;VillageVisited&#39;, function() {
+    Crafty.game.sendDebugMessage(&quot;Village Length: &quot; + Crafty(&#39;Village&#39;).length);
+    if (!Crafty(&#39;Village&#39;).length) {
+        if(Crafty.game.level++ &gt; 1) {
+            Crafty.scene(&#39;Victory&#39;);
+        } else {
+            Crafty.scene(&quot;Game&quot;);
+        }
+    }
+});</code></pre>
+<p>Here you can see that I increment the level variable and launch new levels. Each new level has a new array defining the position of characters on the board:</p>
+<pre><code>var createEntities = function(board, gameBoard) {   
+    // Place a tree at every edge square on our grid of 16x16 tiles
+    for (var x = 0; x &lt; Crafty.game.map_grid.width; x++) {
+        for (var y = 0; y &lt; Crafty.game.map_grid.height; y++) {
+            var gridValue = board[y][x];
+            if (gridValue === 1) {
+                createEntity(x, y, &#39;Tree&#39;, gameBoard);
+            } else if (gridValue === 2) {
+                createEntity(x, y, &#39;Bush&#39;, gameBoard);
+            } else if (gridValue === 3) {
+                createEntity(x, y, &#39;Food&#39;, gameBoard);
+            } else if (gridValue === 4) {
+                createVillage(x, y);
+            }
+        }
+    }
+};
+
+createEntities(this.boards[Crafty.game.level], this.gameBoard); </code></pre>
 <h3 id="s3-support">S3 Support</h3>
 <p>You should be able to deploy your project to S3. See the <strong>SendToS3.js</strong> file in Crafty06 for an example of how to proceed.</p>
 <h3 id="turn-it-in">Turn It In</h3>

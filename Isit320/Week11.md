@@ -40,13 +40,24 @@ In the preprocessors section of **karma.conf.js**:
 ```
  preprocessors: {
       'Source/**/*.js': ['commonjs', 'coverage'],
-      'test/client/*.js': ['commonjs']
     },
 ```
 
+When defining your coverage support, remember that it is up to you 
+to tell coverage where the files are that are being tested. You 
+don't have to point to the test files, just the files that are being 
+tested. For most of our programs, that means doing something like 
+this in the preprocessors statement:
+
+	'Source/**/*.js'
+
+
+When you get it right, you should see Coverage produce an HTML file 
+for each JavaScript file in your Source directory.
+
 Add or your reports:
 
-	reporters: ['progress', 'coverage'],
+	reporters: ['progress', 'coverage', 'junit'],
 
 And in your plugins at the bottom of karam.conf.js:
 
@@ -65,6 +76,8 @@ The results end up in a folder called **coverage** in a series of
 HTML files. Open the files in your browser.
 
 ![Coverage of Simpler Controller](../Images/Coverage01.png)
+
+
 
 Final
 -----
@@ -325,6 +338,85 @@ The end result is something like this:
 ![Crafty Predefined Places](../Images/CraftyDirs02.png)
 
 - [Full size](../Images/CraftyDirs02.png)
+
+###More on Levels
+
+Here is rough outline of how I track levels. In ElfGame.js I declare 
+a property called **level**:
+
+```
+angular.module('elfGameMod', ['characterMod', 'encounterMod', 'gameWrapMod'])
+.factory('elfGameService', function(gameEventService, people, gameWrap, encounters) { 'use strict';
+
+	return {
+
+		map_grid : null,
+		
+		people: people,
+		
+		**level: 0,**
+
+		defaultMapGrid : {
+			width : 18,
+			height : 12,
+			tile : {
+				width : 32,
+				height : 32
+			}
+		},
+```
+
+When I have encounters, I pass that variable into the calculation 
+method so that I can take it into account. For instance, some tasks 
+should be harder at higher levels:
+
+```
+encounter : function(village) {
+	return encounters.encounter(people.hero, village, gameEventService, this.level);
+},
+```
+
+Then in **scenes.js** or some similar file I modify the Victory method 
+that gets called when the user completes a level by beating all the 
+bad guys:
+
+	// Show the victory screen once all villages are visisted
+	this.show_victory = this.bind('VillageVisited', function() {
+		Crafty.game.sendDebugMessage("Village Length: " + Crafty('Village').length);
+		if (!Crafty('Village').length) {
+			if(Crafty.game.level++ > 1) {
+				Crafty.scene('Victory');
+			} else {
+				Crafty.scene("Game");
+			}
+		}
+	});
+
+Here you can see that I increment the level variable and launch new 
+levels. Each new level has a new array defining the position of 
+characters on the board:
+
+	var createEntities = function(board, gameBoard) {	
+		// Place a tree at every edge square on our grid of 16x16 tiles
+		for (var x = 0; x < Crafty.game.map_grid.width; x++) {
+			for (var y = 0; y < Crafty.game.map_grid.height; y++) {
+				var gridValue = board[y][x];
+				if (gridValue === 1) {
+					createEntity(x, y, 'Tree', gameBoard);
+				} else if (gridValue === 2) {
+					createEntity(x, y, 'Bush', gameBoard);
+				} else if (gridValue === 3) {
+					createEntity(x, y, 'Food', gameBoard);
+				} else if (gridValue === 4) {
+					createVillage(x, y);
+				}
+			}
+		}
+	};
+
+	createEntities(this.boards[Crafty.game.level], this.gameBoard);	
+
+
 
 ###S3 Support
 
