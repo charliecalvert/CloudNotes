@@ -25,15 +25,15 @@
 <li>plugins</li>
 </ul>
 <p>In the preprocessors section of <strong>karma.conf.js</strong>:</p>
-<pre><code> preprocessors: {
-      &#39;Source/**/*.js&#39;: [&#39;commonjs&#39;, &#39;coverage&#39;],
+<pre><code>preprocessors: {
+    &#39;Source/**/*.js&#39;: [&#39;commonjs&#39;, &#39;coverage&#39;],
     },</code></pre>
 <p>When defining your coverage support, remember that it is up to you to tell coverage where the files are that are being tested. You don't have to point to the test files, just the files that are being tested. For most of our programs, that means doing something like this in the preprocessors statement:</p>
 <pre><code>&#39;Source/**/*.js&#39;</code></pre>
 <p>When you get it right, you should see Coverage produce an HTML file for each JavaScript file in your Source directory.</p>
-<p>Add or your reports:</p>
+<p>Add on support for your reports:</p>
 <pre><code>reporters: [&#39;progress&#39;, &#39;coverage&#39;, &#39;junit&#39;],</code></pre>
-<p>And in your plugins at the bottom of karam.conf.js:</p>
+<p>And in your plugins at the bottom of karam.conf.js and in karam-coverage:</p>
 <pre><code>plugins: [      
       &#39;karma-jasmine&#39;,
       &#39;karma-coverage&#39;,

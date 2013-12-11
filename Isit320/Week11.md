@@ -38,9 +38,9 @@ Then you need to modify three parts of **karma.conf.js**:
 In the preprocessors section of **karma.conf.js**:
 
 ```
- preprocessors: {
-      'Source/**/*.js': ['commonjs', 'coverage'],
-    },
+preprocessors: {
+	'Source/**/*.js': ['commonjs', 'coverage'],
+	},
 ```
 
 When defining your coverage support, remember that it is up to you 
@@ -51,15 +51,14 @@ this in the preprocessors statement:
 
 	'Source/**/*.js'
 
-
 When you get it right, you should see Coverage produce an HTML file 
 for each JavaScript file in your Source directory.
 
-Add or your reports:
+Add on support for your reports:
 
 	reporters: ['progress', 'coverage', 'junit'],
 
-And in your plugins at the bottom of karam.conf.js:
+And in your plugins at the bottom of karam.conf.js and in karam-coverage:
 
 ```
 plugins: [      
