@@ -1,12 +1,10 @@
 Week 01, Prog 280
 =================
 
-- [Prezi](http://prezi.com/)
+Our core job today include:
 
-Our core job today is to provide a course overview and to
-make sure you are familiar with the first set of assignments.
-
-[1]: <https://bc.instructure.com/courses/793364/wiki/week05-freebase>
+- A course overview 
+- Review the first set of assignments.
 
 Key Links
 ---------
@@ -35,4 +33,5 @@ Assignments
 Elvenware Links
 ---------------
 
--   <http://www.elvenware.com/charlie/development/cloud/index.shtml>
+- <http://www.elvenware.com/charlie/development/cloud/index.shtml>
+- [Prezi](http://prezi.com/)

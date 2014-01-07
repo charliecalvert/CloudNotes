@@ -7,6 +7,13 @@ from elfutils.MarkdownToHtml import MarkdownToHtml
 cloudNotesFrom= os.environ['GITHUB'] + "CloudNotes\\"
 cloudNotesTo=elffiles.ensureFinalSlash(os.environ['ELVENWARE']) + "charlie\\books\\CloudNotes\\"
 
+# process and Copy the files
+def makeItSo(markdown, folder, files):
+	markdown.copyFrom=cloudNotesFrom + folder
+	markdown.destination=cloudNotesTo + folder
+	elffiles.ensureDir(markdown.destination)
+	markdown.runner(files);
+
 # CloudNotes Root
 def cloudRoot(markdown):
 	files = ["CloudNotes", "CloudOutline"];
@@ -27,7 +34,7 @@ def prog270(markdown):
 	markdown.destination=cloudNotesTo + "Prog270"
 	elffiles.ensureDir(markdown.destination)
 	markdown.runner(files);
-	
+
 # Isit320
 def isit320(markdown):
 	files = ["Resources", "Week01", "Week02", 
@@ -38,8 +45,21 @@ def isit320(markdown):
 	elffiles.ensureDir(markdown.destination)
 	markdown.runner(files);
 
+# Prog280
+def prog280(markdown):
+	files = ["Week01"];
+	makeItSo(markdown, "Prog280", files);
+
+def prog272(markdown):
+	files=["Resources", "Week01"];
+	makeItSo(markdown, "Prog272", files);
+
+
+
 # Run Program
 markdown = MarkdownToHtml()
 cloudRoot(markdown)
-prog270(markdown)
-isit320(markdown)
+prog280(markdown)
+prog272(markdown)
+#prog270(markdown)
+#isit320(markdown)
