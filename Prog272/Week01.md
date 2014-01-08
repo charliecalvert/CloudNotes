@@ -10,7 +10,7 @@ covered in this class. You will have a few assignments:
 4.  Read [Crockford on JavaScript](http://javascript.crockford.com/javascript.html).
 5.  Using Books 24X7, review Chapter Three from [Pro JavaScript by Zakas](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=44953)
 
-I'm not asking you to read every page of Chapter Three from Zakas's 
+I'm not asking you to read every page of Chapter Three from Zakas' 
 book. You should however, become familiar with the matarial it covers,
 and be prepared to answer questions from an open book quiz on its 
 primary themes.
