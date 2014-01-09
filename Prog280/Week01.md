@@ -9,19 +9,25 @@ Our core job today include:
 Key Links
 ---------
 
--   Course Overview Deck: <http://bit.ly/WYFwVJ>
--   Syllabus: <http://bit.ly/YLA9Ix>
--   Data Centers: <http://bit.ly/X1FWuj>
--   Cloud Services: <http://bit.ly/ZTiaWN>
--   Canvas Homepage: <https://bc.instructure.com/courses/793364>
--   Take the Quiz
--   Cloud Services Deck (SaaS etc): <http://bit.ly/ZTiaWN>
--   [Discussion Area][2]
-    [2]: <https://bc.instructure.com/courses/793364/discussion_topics>
--   [Announcements][3]
-    [3]: <https://bc.instructure.com/courses/793364/announcements>
--   [DreamSpark][4]
-    [4]: <http://e5.onthehub.com/WebStore/Welcome.aspx?vsro=8&ws=30da76c3-be9b-e011-969d-0030487d8897>
+-   [Course Overview Deck](http://bit.ly/WYFwVJ)
+-   [Syllabus](http://bit.ly/YLA9Ix)
+-   [Resources](Resources.html)
+-   [Cloud Services Deck](http://bit.ly/ZTiaWN)
+-   [Data Centers Deck](http://bit.ly/X1FWuj)
+-   [Canvas Homepage](https://bc.instructure.com/courses/913550)
+-   [Discussion Area](https://bc.instructure.com/courses/913550/discussion_topics)
+-   [Announcements](https://bc.instructure.com/courses/793364/announcements)
+-   [DreamSpark](http://e5.onthehub.com/WebStore/Welcome.aspx?vsro=8&ws=30da76c3-be9b-e011-969d-0030487d8897)
+
+Market Share
+------------
+
+Smartphone: 244 million shipped in 3rd quarter 2013
+Samsung has 35% of smartphone market
+Apple has 14% of smartphone market
+Windows Phone: 4% (165% growth)
+
+80.6% of smartphones shipped are Android based.
 
 Assignments
 -----------

@@ -34,6 +34,7 @@ Prog 272
 Prog 280
 --------
 
+-   [Resources](Prog280/Resources.html)
 -   [Week01](Prog280/Week01.html)
 
 Prog 282

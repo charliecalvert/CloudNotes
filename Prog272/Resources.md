@@ -61,6 +61,7 @@ Books
 -----
 
 - [JavaScript Books](http://www.elvenware.com/charlie/development/web/JavaScript/GettingStarted.html#the-right-books)
+- [Python Book](http://www.greenteapress.com/thinkpython/html/index.html)
 
 ###24X7 Books
 
@@ -83,3 +84,36 @@ NODE
 - [Professional NodeJS](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=46610)
 - [Smashing NodeJS](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=45126)
 
+Podcasts and Blogs
+--------
+
+If you have free time, a long commute, or long walks that you like 
+to take, then it can be nice to listen to podcasts. Here is at least 
+one (of many) places you can find a good list of podcasts:
+
+- <http://stackoverflow.com/questions/1644/what-good-technology-podcasts-are-out-there>
+- <http://stackoverflow.com/questions/409056/top-rated-javascript-blogs>
+
+The Google IO videos are very worth watching:
+
+- <https://developers.google.com/events/io/>
+- <https://developers.google.com/events/io/sessions>
+- <http://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw>
+
+I'm no longer deeply hooked into the Microsoft world, but I recall the following sites can be useful:
+
+- <http://www.hanselminutes.com/archives>
+- [.NET Rocks](http://www.dotnetrocks.com/)
+- [Herding Code](http://herdingcode.com/)
+- [Deep Fried Bytes](http://deepfriedbytes.com/)
+- <http://channel9.msdn.com/Media/Podcasts/>
+
+And finally, the videos on Channel 9:
+
+- <http://channel9.msdn.com/>
+- <http://channel9.msdn.com/search?term=javascript>
+- <http://channel9.msdn.com/search?term=HTML>
+
+And, of course, there is always something on Elvenware:
+
+- <http://www.elvenware.com/charlie/links.html#podcast>
