@@ -35,9 +35,15 @@ Assignments
 -   Canvas Discussion Area: Introductions
 -   System Information
 -   Online Presence
+-   [Google Drive and Folders](http://elvenware.com/charlie/books/CloudNotes/Assignments/GoogleDriveAndFolders.html)
 
 Elvenware Links
 ---------------
 
 - <http://www.elvenware.com/charlie/development/cloud/index.shtml>
 - [Prezi](http://prezi.com/)
+
+Privacy
+-------
+
+- <http://www.nytimes.com/2014/01/11/opinion/the-kugel-family-big-in-brazil.html?hp&rref=opinion&_r=0>
