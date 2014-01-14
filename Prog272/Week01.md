@@ -15,12 +15,21 @@ book. You should however, become familiar with the matarial it covers,
 and be prepared to answer questions from an open book quiz on its 
 primary themes.
 
-Links
+Links for Week01 Day 1
 -----
 
-1.  The Getting Started Deck: <http://bit.ly/TDEtd5>
-2.  The Syllabus Prog 272: <http://bit.ly/X1QNVg>
+1.  [Getting Started Deck](http://bit.ly/TDEtd5)
+2.  [Syllabus Prog 272](http://bit.ly/X1QNVg)
 3.  Study the all important [Resources page](Resources.html)
 4.  <http://spectrum.ieee.org/at-work/tech-careers/the-top-10-programming-languages>
 5.  <http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel>
 6.  [YAML](http://pyyaml.org/wiki/PyYAMLDocumentation#YAMLsyntax)
+
+Links for Week02 Day 2
+
+-  [HTML5 and CSS Part 01 Deck: HTML Basics](http://bit.ly/QwLhc8)
+-  [HTML5 and CSS Part 02 Deck: CSS](http://bit.ly/PEc6bG)
+-  [HTML5 and CSS Part 03 Deck: Media Queries](http://bit.ly/1imauBZ)
+-  [JavaScript Intro Deck](http://bit.ly/1ilT1tk)
+-  [JavaScript Basics Deck](http://bit.ly/OPDg3s)
+

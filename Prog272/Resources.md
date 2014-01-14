@@ -26,16 +26,19 @@ of these languages, APIs and tools.
 
 - [HTML](http://elvenware.com/charlie/development/web/HtmlGuide/)
 - [CSS](http://elvenware.com/charlie/development/web/CssGuide/)
+- [HTML5 and CSS Part 01 Deck: HTML Basics](http://bit.ly/QwLhc8)
+- [HTML5 and CSS Part 02 Deck: CSS](http://bit.ly/PEc6bG)
+- [HTML5 and CSS Part 03 Deck: Media Queries](http://bit.ly/1imauBZ)
 - [Bootstrap]()
 
 ###JavaScript
 
-- [JavaScript](http://elvenware.com/charlie/development/web/JavaScript/)
-- [Cordova/PhoneGap](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
-- [jQuery](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
-- [NodeJs and Express](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
-- [Angular and Jasmine](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
-- [RequireJS](http://requirejs.org/)
+- [JavaScript Intro Deck with Useful Links](http://bit.ly/1ilT1tk)
+- [JavaScript on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/)
+- [Cordova/PhoneGap on Elvewnware](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
+- [jQuery on Elvewnare](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
+- [NodeJs and Express on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
+- [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 
 ###Python
 
