@@ -1,33 +1,44 @@
-The primary goals of week 2 will be an introduction to:
--------------------------------------------------------
+
+Week02
+======
+
+Primary Goals
+-------------
 
 1.  HTML5, CSS3
-2.  JavaScript
-3.  [Privacy](http://bit.ly/1ak3jVM)
+2.  JavaScript and Node
+3.  Unit Tests, Karma, Jasmine and QUnit
+4.  Aptana
+5.  Git
+
+We might also discuss, as needed:
+
+1.  [Privacy](http://bit.ly/1ak3jVM)
 
 Decks
 -----
 
-You can learn more about HTML and CSS by viewing these decks and documents:
+You can learn more about JavaScript, HTML and CSS by viewing these decks:
 
--   Deck \> HTML Part 1: <http://bit.ly/QwLhc8>
+-  [HTML Basics - QwLhc8](http://bit.ly/QwLhc8)
+-  [CSS - PEc6bG](http://bit.ly/PEc6bG)
+-  [Media Queries - 1imauBZ](http://bit.ly/1imauBZ)
+-  [JavaScript Intro](http://bit.ly/1ilT1tk)
+-  [JavaScript Basics - OPDg3s](http://bit.ly/OPDg3s)
+-  [Eclipse - VPK2UE](http://bit.ly/VPK2UE)
 
--   Deck \> HTML Part 2: <http://bit.ly/PEc6bG>
+The funny letters after each name are the Bitly URLS. If you need
+to manually reach the first link, write:
 
--   Deck \> JavaScript: <http://bit.ly/OPDg3s>
+- <http://bit.ly/QwLhc8>
 
--   Deck \> Eclipse: <http://bit.ly/VPK2UE>
+And these documents:
 
--   Doc \>
-    HTML: <http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html>
+-   [HTML](http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html)
+-   [JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html)
+-   [Eclipse](http://www.elvenware.com/charlie/development/android/Eclipse.shtml)
 
--   Doc \>
-    JavaScript: <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html>
-
--   Doc \>
-    Eclipse: <http://www.elvenware.com/charlie/development/android/Eclipse.shtml>
-
-**NOTE**:* You will have to be patient with the documents you find on Elvenware.
+**NOTE**:* You will have to be patient with the documents you find on Elvenware.
 Someday they will mature, but for now, they are a work in progress. Don't expect
 anything fully polished, just take what you can get from them. One thing they do
 provide, is a good sense of what I think is important. Generally material that
@@ -38,16 +49,8 @@ IDE
 
 We will also introduce our primary IDEs, which include:
 
--   [Eclipse][1]
-
-    [1]: <http://www.elvenware.com/charlie/development/android/Eclipse.shtml>
-
--   [Expression Web][2]
-
-    [2]: <http://www.elvenware.com/charlie/development/web/HtmlGuide/ExpressionWebOverview.html>
-
+-   [Aptana and Eclipse](http://www.elvenware.com/charlie/development/android/Eclipse.shtml)
 -   Visual Studio
-
 -   NotePad++
 
 Sharing Files
@@ -70,25 +73,27 @@ Links
 Git
 ---
 
+- [Use the Git Gui](http://www.elvenware.com/charlie/development/cloud/Git.html#git-gui-basics)
+
 Update all globally install packages: **npm update -g**
+
+Do a pull with GitGui:
+
+- Remote | Fetch From Origin
+- Merge | Local Merge
 
 Podcasts and Videos
 -------------------
 
--   <http://geekswithblogs.net/mbcrump/archive/2010/06/15/10-best-programming-podcast-2010-edition.aspx>
-
 I have a number of videos that you should watch:
 
-<http://www.youtube.com/user/charliecalvert>
+- <http://www.youtube.com/user/charliecalvert>
 
-Douglas Crockford on JavaScript:
+Douglas Crockford on JavaScript and other subjects:
 
-<http://www.youtube.com/watch?v=hQVTIJBZook>
-
-  
-[Minimize Video][3]
-
-[3]: <https://bc.instructure.com/courses/795060/wiki/week02-overview?module_item_id=4861821#>
+- [Crockford](http://www.youtube.com/watch?v=hQVTIJBZook)
+- <http://geekswithblogs.net/mbcrump/archive/2010/06/15/10-best-programming-podcast-2010-edition.aspx>
+- [Minimize Video](https://bc.instructure.com/courses/795060/wiki/week02-overview?module_item_id=4861821#)
 
 
 Unit Tests
@@ -150,21 +155,21 @@ Tips
 
 In FireFox, install FireBug:
 
--   Choose **Firefox | Add-ons**. Then search for and install FireBug.
+-   Choose **Firefox | Add-ons**. Then search for and install FireBug.
 
 IE can sometimes turn on compatibility settings, particular on Intranets, even
 though our code is fully HTML 5 compliant. To stop this:
 
-\<!-- Turn off compatibility settings in IE --\>  
-\<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /\>
+```
+<!-- Turn off compatibility settings in IE --\>  
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /\>
+```
 
 Links
 -----
 
 -   <http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html>
-
 -   <http://www.techrepublic.com/blog/10things/10-new-html5-tags-you-need-to-know-about/3219?tag=content;siu-container>
-
 -   <http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#mso9>
 
 Tips
@@ -172,6 +177,9 @@ Tips
 
 ### Add jQuery from CDN
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+
+
+> Written with [StackEdit](https://stackedit.io/).
