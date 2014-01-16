@@ -5,15 +5,24 @@ Week02
 Primary Goals
 -------------
 
-1.  HTML5, CSS3
-2.  JavaScript and Node
-3.  Unit Tests, Karma, Jasmine and QUnit
-4.  Aptana
-5.  Git
+- HTML5, CSS3
+- Karma
+- Grunt and JsHint
+- Git
+- Pull JsObjects
+- Pull ElfRuble
+- Create a GitHub Repository
+- JavaScript and Node
+- Unit Tests, Karma, Jasmine and QUnit
+- JavaScript Simple Types
+- JavaScript Objects
+- JavaScript Functions
+- xConvert 
 
 We might also discuss, as needed:
 
 1.  [Privacy](http://bit.ly/1ak3jVM)
+2.  [InClass](../Assignments/Prog270-011414.html)
 
 Decks
 -----

@@ -1,6 +1,41 @@
 Installing Lamp and MediaWiki
 -----------------------------
 
+### Virtual Machines
+
+See the virtual box decks linked near the top of this document.
+
+- [Elvenware Linux and VBox](http://www.elvenware.com/charlie/os/linux/VirtualBox.html)
+- [Elvenware Virtualization](http://www.elvenware.com/charlie/development/cloud/virtualization.html)
+- [Elvenware AndroidX86 and VBox](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
+- [Install Latest NodeJS](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#node)
+- [VBox HowTos](https://www.virtualbox.org/wiki/User_HOWTOS)
+
+The simplest way to get Lubuntu on VirtualBox is to download a prebuilt
+machine.
+
+- [Download Lubuntu Image](http://virtualboximages.com/Lubuntu+VirtualBox+Virtual+Appliances)
+
+I prefer the site listed above, but this one is also interesting:
+
+- [Lubuntu Alternate](http://virtualboxes.org/images/lubuntu/)
+
+The references for using VirtualBox are in the individual assignments.
+
+-   VirtualBox
+-   Windows on VirtualBox
+-   Linux on VirtualBox
+-   SSH
+
+
+###Juju Install
+
+- <https://juju.ubuntu.com/install/>
+
+	sudo add-apt-repository ppa:juju/stable
+	sudo apt-get update && sudo apt-get install juju-core
+	juju generate-config
+
 Lamp
 ----
 

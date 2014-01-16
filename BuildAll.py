@@ -47,19 +47,22 @@ def isit320(markdown):
 
 # Prog280
 def prog280(markdown):
-	files = ["Resources", "Week01"];
+	files = ["Resources", "Week01", "Week02"];
 	makeItSo(markdown, "Prog280", files);
 
 def prog272(markdown):
 	files=["Resources", "Week01", 'Week02'];
 	makeItSo(markdown, "Prog272", files);
 
-
+def assignments(markdown):
+	files=["Prog270-011414"]
+	makeItSo(markdown, "Assignments", files);
 
 # Run Program
 markdown = MarkdownToHtml()
 cloudRoot(markdown)
 prog280(markdown)
 prog272(markdown)
+assignments(markdown);
 #prog270(markdown)
 #isit320(markdown)
