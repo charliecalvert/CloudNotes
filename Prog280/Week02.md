@@ -31,8 +31,12 @@ juju generate-config
 
 ###OwnCloud
 
-Don't try to type these commands in. First open up a SSH window,
-then just cut and paste.
+- <http://doc.owncloud.org/>
+- <http://software.opensuse.org/download/package?project=isv:ownCloud:community&package=owncloud>
+
+Typing in commands on a Linux server can be tryuing. Don't try to 
+type these commands in. First open up a SSH window, then just cut 
+and paste.
 
 To install OwnCloud:
 
@@ -76,10 +80,9 @@ $CONFIG = array (
   'installed' => true,
 );
 
-sudo chown www-data:www-data data/
-sudo chmod 770 data
-
-This is probably best, but use your user name (ubuntu, charlie, etc):
+Do one of these, propably the first. It will move your data 
+directory to your home directory. This gets rid of warning from
+owncloud.
 
 sudo mv /var/www/owncloud/data/ /home/ubuntu/owncloud/. 
 
@@ -87,7 +90,23 @@ Or, alternatively:
 
 sudo cp -r /var/www/owncloud/data/ /home/ubuntu/owncloud/.
 
+Then do this:
 
+sudo chown -R www-data:www-data data
+sudo chmod 770 data
+
+
+This is probably best, but use your user name (ubuntu, charlie, etc):
+
+###WebDav
+
+Access WebDav
+
+- <https://XX.XX.XXX.XXX/owncloud/remote.php/webdav>
+
+isWebDAVWorking: NO - Reason: [CURL] Error while making request: 
+SSL: certificate subject name 'domU-12-31-39-06-E4-18.compute-1.internal' 
+does not match target host name 'XX.XX.XXX.XXX' (error code: 51) (Sabre_DAV_Exception)
 
 ### Cloud Applications
 
