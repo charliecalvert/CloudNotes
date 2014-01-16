@@ -10,6 +10,84 @@ We will focus on two different subjects:
 In Class
 --------
 
+###OpenStack
+
+- <http://uksysadmin.wordpress.com/2011/02/17/running-openstack-under-virtualbox-a-complete-guide/>
+
+
+ To run, check, connect and terminate an instance
+      euca-run-instances $emi -k openstack -t m1.tiny
+      euca-describe-instances
+      ssh -i cloud/creds/openstack.pem root@ipaddress
+      euca-terminate-instances instanceid
+
+###Juju Install
+
+- <https://juju.ubuntu.com/install/>
+
+sudo add-apt-repository ppa:juju/stable
+sudo apt-get update && sudo apt-get install juju-core
+juju generate-config
+
+###OwnCloud
+
+Don't try to type these commands in. First open up a SSH window,
+then just cut and paste.
+
+To install OwnCloud:
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_13.10/ /' >> /etc/apt/sources.list.d/owncloud.list"
+sudo apt-get update
+sudo apt-get install owncloud
+
+now access your instance: http://[IPADDRESS]/owncloud
+
+For instance: http://127.0.0.1/owncloud
+
+But your IP address is probably your AWS elastic IP.
+
+###Apache SSL
+
+- Modssl let's use https
+- https://help.ubuntu.com/10.04/serverguide/httpd.html
+
+Here are the three commands you must give to set things up properly
+so you can access your site with https:
+
+- sudo a2enmod ssl
+- sudo a2ensite default-ssl
+- sudo /etc/init.d/apache2 restart
+
+now access your instance: http://[IPADDRESS]/owncloud
+
+For instance: https://127.0.0.1/owncloud
+
+###Move Data Dir
+
+sudo nano /var/www/owncloud/config/config.php
+
+<?php
+$CONFIG = array (
+  'instanceid' => 'oc8dec0ea37a',
+  'passwordsalt' => '3828ac017c32ea27ffe9d59fa0dc66',
+  'datadirectory' => '/home/ubuntu/owncloud/data',
+  'dbtype' => 'sqlite3',
+  'version' => '6.0.0.14',
+  'installed' => true,
+);
+
+sudo chown www-data:www-data data/
+sudo chmod 770 data
+
+This is probably best, but use your user name (ubuntu, charlie, etc):
+
+sudo mv /var/www/owncloud/data/ /home/ubuntu/owncloud/. 
+
+Or, alternatively:
+
+sudo cp -r /var/www/owncloud/data/ /home/ubuntu/owncloud/.
+
+
 
 ### Cloud Applications
 
