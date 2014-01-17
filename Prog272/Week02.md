@@ -24,6 +24,28 @@ We might also discuss, as needed:
 1.  [Privacy](http://bit.ly/1ak3jVM)
 2.  [InClass](../Assignments/Prog270-011414.html)
 
+The list above is long, perhaps too long. To sum up, the emphasis
+is on JavaScript basics, unit testing, Git and Aptana. These will
+be our core "tools." 
+
+JavaScript basics include primitive types, objects and functions. You
+should be able to write unit tests that involve these key elements
+of the language. And finally, you should be able to check your code
+in and out of a git repository.
+
+Grunt and Karma are tools you can use to help ensure that you are
+writing valid JavaScript code. In particular, we use Grunt in
+conjuntion with JsHint, and Karma to automate the running of
+our unit tests.
+
+JsHint is a syntax checker which we can use to confirm that our
+code conforms to basic rules, many of which are conventions 
+enforced only to help you write code that is easier to maintain.
+
+But again, if you are overwhelmed, focus on learning JavaScript
+primitive types, objects and functions. That is the core of
+our work this first week.
+
 Decks
 -----
 
