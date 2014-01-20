@@ -9,6 +9,7 @@ We will focus on two different subjects:
 - [Virtual Box Part 02](http://bit.ly/1at3L77)
 - [Privacy](http://bit.ly/1ak3jVM)
 - [CloudNotes TOC](../CloudNotes.html)
+- [Assignment OwnCloud Install](http://elvenware.com/charlie/books/CloudNotes/Assignments/OwnCloudInstall.html)
 
 In Class
 --------

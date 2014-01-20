@@ -1,7 +1,6 @@
+-   Unit Tests (http://bit.ly/1dTjs8h)
 -   Getting started with PhoneGap
-
 -   Connecting to Linux in VirtualBox and setting up a web server.
-
 -   please open the assignment and respond to the discussion for that assignment
     from inside that assignment. It makes it easier for me to see which comments
     belong to which assignment.

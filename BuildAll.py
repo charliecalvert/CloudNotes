@@ -55,7 +55,7 @@ def prog272(markdown):
 	makeItSo(markdown, "Prog272", files);
 
 def assignments(markdown):
-	files=["Prog270-011414"]
+	files=["Prog270-011414", "OwnCloudInstall"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program
