@@ -40,6 +40,10 @@ of these languages, APIs and tools.
 - [NodeJs and Express on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 
+###Jasmine and Karma
+
+- [Jasmine](http://pivotal.github.io/jasmine/)
+
 ###Python
 
 - [Python](http://elvenware.com/charlie/development/web/Python/)
