@@ -40,6 +40,10 @@ of these languages, APIs and tools.
 - [NodeJs and Express on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 
+###Cordova and PhoneGap
+
+- [See Elvenware PhoneGap Page](http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap)
+
 ###Jasmine and Karma
 
 - [Jasmine](http://pivotal.github.io/jasmine/)

@@ -31,6 +31,7 @@ Prog 272
 -   [Resources](Prog272/Resources.html)
 -   [Week01](Prog272/Week01.html)
 -   [Week02](Prog272/Week02.html)
+-   [Week03](Prog272/Week03.html)
 
 Prog 280
 --------
@@ -38,6 +39,7 @@ Prog 280
 -   [Resources](Prog280/Resources.html)
 -   [Week01](Prog280/Week01.html)
 -   [Week02](Prog280/Week02.html)
+-   [Week03](Prog280/Week03.html)
 
 Prog 282
 --------

@@ -1,35 +1,26 @@
 Week03
 ======
 
--   Unit Tests (http://bit.ly/1dTjs8h)
--   VirtualBox 
--   Working with Files: (http://bit.ly/1jzIpHU)
--   Add node_modules to .gitignore
--   BowerCopy: JsObjects/JavaScript/UnitTests/Jasmine05
--   Getting started with PhoneGap
+- [Unit Tests Deck](http://bit.ly/1dTjs8h)
+- [PhoneGap Cordova](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
+- [Cordova Setup CheatSheet](http://localhost:33222/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
+- [VirtualBox and AndroidX86](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
+- [Working with Files](http://bit.ly/1jzIpHU)
+- Add node_modules, coverage and bower_components to .gitignore
+- Getting started with PhoneGap
 
--   Connecting to Linux in VirtualBox and setting up a web server.
--   Getting started with PhoneGap
--   please open the assignment and respond to the discussion for that assignment
-    from inside that assignment. It makes it easier for me to see which comments
-    belong to which assignment.
+Downloads
+---------
 
--   How to expose white space and line endings in NotePad++
+- [Details Cordova downloads](http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap)
 
--   Understanding "trailing white space"
 
--   How to automate the formatting of a document in Eclipse and NotePad++. (Use
-    Tidy plugin in NotePad)
+RequireJs and Bower
+-------------------
 
--   The HTML Header and Foot tags, etc.
-
--   W3C Validator
-
--   for loops
-
--   images
-
--   Create a home page for your Google Site.
+- [RequireJs Getting Started](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/RequireJs01)
+- [RequireJs and Karma JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/Jasmine02)
+- [BowerCopy JsObjects Example](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/Jasmine05)
 
 Bower
 ------
@@ -73,46 +64,9 @@ Here is a bower.json file for installing Jasmine 1.3.1.
 	}
 ```
 
-
-HTML Suggestions
-----------------
-
-you are mixing up places where you put tabs and places where you put spaces.
-Open up your HTML in notepad++. Turn on View | Show Symbol | Show Write Space.
-Look at your \<LI\> elements, you will see that you use different characters for
-your indentation. It probably looks fine on your system, but on mine, where tabs
-have a different value than on your system, it is not pretty.
-
-Be sure to specify the charset:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<meta content="en-us" http-equiv="Content-Language">
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Instead of writing the above in the head element, Write this:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<body lang="en-us">
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We have not focused on this, but you should specify the content type and char
-set in the header:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Even better is the following:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<meta charset="utf-8" />
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Links
 -----
 
 -   <http://www.brucelawson.co.uk/2012/best-of-time/>
-
 -   <http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/>
-
 -   <http://git-scm.com/book>
