@@ -1,7 +1,12 @@
--  Unit Tests (http://bit.ly/1dTjs8h)
--  VirtualBox 
+Week03
+======
 
-
+-   Unit Tests (http://bit.ly/1dTjs8h)
+-   VirtualBox 
+-   Working with Files: (http://bit.ly/1jzIpHU)
+-   Add node_modules to .gitignore
+-   BowerCopy: JsObjects/JavaScript/UnitTests/Jasmine05
+-   Getting started with PhoneGap
 
 -   Connecting to Linux in VirtualBox and setting up a web server.
 -   Getting started with PhoneGap
@@ -25,6 +30,52 @@
 -   images
 
 -   Create a home page for your Google Site.
+
+Bower
+------
+
+First you need to install [Bower](http://bower.io/):
+
+	npm install -g bower
+	
+Now use it to install something:
+
+1. Create bower.json files
+2. Run bower install
+
+Here is a bower.json file for installing Jasmine 1.3.1.
+
+```
+	{
+	  "name": "Jasmine02",
+	  "version": "0.1.0",
+	  "homepage": "https://github.com/charliecalvert/JsObjects",
+	  "authors": [
+		"Charlie CedarIsle Calvert <charlie@elvenware.com>"
+	  ],
+	  "description": "Jasmine example",
+	  "main": "SpecRunner.html",
+	  "keywords": [
+		"jasmine"
+	  ],
+	  "license": "MIT",
+	  "private": true,
+	  "ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"    
+	  ],
+	  "dependencies": {
+		"jasmine": "~1.3.1"
+	  }
+	}
+```
+
+
+HTML Suggestions
+----------------
 
 you are mixing up places where you put tabs and places where you put spaces.
 Open up your HTML in notepad++. Turn on View | Show Symbol | Show Write Space.
