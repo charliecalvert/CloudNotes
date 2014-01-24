@@ -35,6 +35,27 @@ The references for using VirtualBox are in the individual assignments.
 	sudo add-apt-repository ppa:juju/stable
 	sudo apt-get update && sudo apt-get install juju-core
 	juju generate-config
+	
+On AWS:
+
+- Go to Security Credentials.
+- export AWS_ACCESS_KEY_ID=[YOUR ACCESS KEY]
+- export AWS_SECRET_ACCESS_KEY=[YOUR SECRET ACCESS KEY]
+
+Then run **juju bootstrap** at the command line. If it works, it
+just returns with no error messages and no success message. 
+
+Now you can deploy something to your instance:
+
+- juju deploy wordpress
+- juju deploy mysql
+- juju add-relation wordpress mysql
+- juju expose wordpress
+- juju status
+
+Juju instances are very expensive. When you are done: 
+
+- juju destroy-environment
 
 Lamp
 ----
