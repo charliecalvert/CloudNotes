@@ -3,7 +3,7 @@ Week03
 
 - [Unit Tests Deck](http://bit.ly/1dTjs8h)
 - [PhoneGap Cordova](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
-- [Cordova Setup CheatSheet](http://localhost:33222/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
+- [Cordova Setup CheatSheet](http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
 - [VirtualBox and AndroidX86](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
 - [Working with Files](http://bit.ly/1jzIpHU)
 - Add node_modules, coverage and bower_components to .gitignore
@@ -14,6 +14,9 @@ Downloads
 
 - [Details Cordova downloads](http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap)
 
+This is the URL you put in Eclipse when adding Aptana:
+
+- <http://download.aptana.com/studio3/plugin/install>
 
 RequireJs and Bower
 -------------------
