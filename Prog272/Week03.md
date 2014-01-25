@@ -15,6 +15,37 @@ Downloads
 - [Details Cordova downloads](http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap)
 
 
+Set your PATH and ENVIRONMENT on Linux
+----------------------
+
+This is certainly less than complete, but I do have Linux resources on Elvenware:
+
+- [PATH](http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#path)
+- [ENVIRONEMNT](http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#BashProfileBashRC)
+
+And more generally:
+
+- [Linux](http://elvenware.com/charlie/os/linux/index.html)
+- [Working with Linux Files](http://elvenware.com/charlie/os/linux/LinuxFiles.html)
+- [File Permisions](http://elvenware.com/charlie/os/linux/LinuxFiles.html#fileOverview)
+
+Setting your path on the MAC
+----------------------------
+
+These references for the MAC should be helpful:
+
+- [Set Environment on OSX Lion](http://stackoverflow.com/questions/7501678/set-environment-variables-on-mac-os-x-lion)
+
+Here are some particularly useful sections of the above link:
+
+- <http://stackoverflow.com/a/8841666/253576>
+- <http://stackoverflow.com/a/7502128/253576>
+
+Additional information:
+
+- [Set PATH and Environment](http://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/)
+- [ENVIRONMENT variables](http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x)
+
 RequireJs and Bower
 -------------------
 
