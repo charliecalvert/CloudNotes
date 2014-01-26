@@ -40,6 +40,16 @@ of these languages, APIs and tools.
 - [NodeJs and Express on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 
+###Working with Buttons, Input Controls and jQuery
+
+- [Simple Buttons in JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/SimpleButtons)
+- [Simple Buttons ReadMe](https://github.com/charliecalvert/JsObjects/blob/master/HtmlCssJavascript/SimpleButtons/README.md)
+- [Simple Buttons and Input Controls](https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/SimpleButtons02)
+- [jQuery Basics on Elvewnare](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
+- [jQuery and Buttons on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqueryClick)
+- [jQuery and input Controls](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jquery-and-input-controls)
+
+
 ###Cordova and PhoneGap
 
 - [See Elvenware PhoneGap Page](http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap)

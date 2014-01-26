@@ -1,3 +1,6 @@
+Week03 Exercises
+================
+
 Cordova First Exercise
 ----------------------
 
@@ -8,6 +11,26 @@ a Cordova project.
 device. 
 - Take a screenshot of your program running
 - Put both your project and your screenshot in Git
+
+###Alternative way to create Cordova project:
+
+	npm install -g cordova
+
+Now go to your temp directory:
+
+	cordova create Cordova01
+	cordova platform add android
+
+Then just open Eclipse and Import **C:\\Temp\\Cordova01**, using the same 
+steps we have described elsewhere.
+
+On the MAC, you might want to try this:
+
+	npm install -g cordova
+	cordova create Cordova01
+	cordova platform add ios
+
+I can't test on the MAC, however.
 
 Second Assignment
 -----------------
@@ -29,7 +52,10 @@ The design is pretty much up to you. For instance:
 - Three input areas and three buttons
 - Something else
 
-It's your choice
+It's your choice. Here is some information on how to get buttons and
+input controls talking to one another with jQuery:
+
+- [jQuery, Buttons, InputControls](http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html#working-with-buttons-input-controls-and-jquery)
 
 All three conversion methods should be in a single JavaScipt object.
 Whether the object is a function or conventional JavaScript object

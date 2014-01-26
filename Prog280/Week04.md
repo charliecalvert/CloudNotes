@@ -23,6 +23,50 @@
     announcement section of this stie, or write me, or both, to let me know if
     you are interested. The session would be from 10 AM to 12 noon in N252.
 
+
+
+WordPress
+
+-   <http://www.elvenware.com/charlie/development/cloud/Wordpress.html>
+-   <https://help.ubuntu.com/community/WordPress>
+
+MediaWiki
+---------
+
+-   <http://www.elvenware.com/charlie/development/cloud/MediaWiki.html>
+-   <https://help.ubuntu.com/community/MediaWiki>
+-   <http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Ubuntu>
+
+###Juju Install
+
+- <https://juju.ubuntu.com/install/>
+
+	sudo add-apt-repository ppa:juju/stable
+	sudo apt-get update && sudo apt-get install juju-core
+	juju generate-config
+	
+On AWS:
+
+- Go to Security Credentials.
+- export AWS_ACCESS_KEY_ID=[YOUR ACCESS KEY]
+- export AWS_SECRET_ACCESS_KEY=[YOUR SECRET ACCESS KEY]
+
+Then run **juju bootstrap** at the command line. If it works, it
+just returns with no error messages and no success message. 
+
+Now you can deploy something to your instance:
+
+- juju deploy wordpress
+- juju deploy mysql
+- juju add-relation wordpress mysql
+- juju expose wordpress
+- juju status
+
+Juju instances are very expensive. When you are done: 
+
+- juju destroy-environment
+
+
 ### Links
 
 -   The Amazon Web Services Deck: <http://bit.ly/Rzi2Da>
@@ -41,3 +85,6 @@
 
 -   WordPress
     Edit: <http://www.elvenware.com/charlie/development/cloud/Wordpress.html#edit>
+    
+    
+    

@@ -1,3 +1,4 @@
+<h1 id="week03-exercises">Week03 Exercises</h1>
 <h2 id="cordova-first-exercise">Cordova First Exercise</h2>
 <ul>
 <li>Set up your machine to use Cordova <strong>create</strong> command to create a Cordova project.</li>
@@ -6,6 +7,17 @@
 <li>Take a screenshot of your program running</li>
 <li>Put both your project and your screenshot in Git</li>
 </ul>
+<h3 id="alternative-way-to-create-cordova-project">Alternative way to create Cordova project:</h3>
+<pre><code>npm install -g cordova</code></pre>
+<p>Now go to your temp directory:</p>
+<pre><code>cordova create Cordova01
+cordova platform add android</code></pre>
+<p>Then just open Eclipse and Import <strong>C:\Temp\Cordova01</strong>, using the same steps we have described elsewhere.</p>
+<p>On the MAC, you might want to try this:</p>
+<pre><code>npm install -g cordova
+cordova create Cordova01
+cordova platform add ios</code></pre>
+<p>I can't test on the MAC, however.</p>
 <h2 id="second-assignment">Second Assignment</h2>
 <ul>
 <li>Create a second project called Cordova02-LastName</li>
@@ -23,7 +35,10 @@
 <li>Three input areas and three buttons</li>
 <li>Something else</li>
 </ul>
-<p>It's your choice</p>
+<p>It's your choice. Here is some information on how to get buttons and input controls talking to one another with jQuery:</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html#working-with-buttons-input-controls-and-jquery">jQuery, Buttons, InputControls</a></li>
+</ul>
 <p>All three conversion methods should be in a single JavaScipt object. Whether the object is a function or conventional JavaScript object is up to you.</p>
 <pre><code>var myObject = {
     func: function() {},

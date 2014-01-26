@@ -55,7 +55,8 @@ def prog272(markdown):
 	makeItSo(markdown, "Prog272", files);
 
 def assignments(markdown):
-	files=["Prog270-011414", "OwnCloudInstall", "Cordova01"]
+	files=["Prog270-011414", "OwnCloudInstall", "Cordova01",
+		"LampBootstrap"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program
