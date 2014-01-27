@@ -21,7 +21,21 @@
 <h2 id="project02">Project02</h2>
 <ul>
 <li>Create a project in Aptana called MilesFunction</li>
+<li>Like above, but make the object be a JavaScript Function, not an object.</li>
 <li>Add index.js</li>
 <li>Add JavaScript function called milesConvert</li>
 <li>Repeat above, but pass in miles as parameter</li>
 </ul>
+<p>Some hints on how to create the function:</p>
+<pre><code>var MyFunc = function() {
+    
+    var name = &#39;sam&#39;;
+    
+    this.sayName = function() {
+        console.log(name);
+    };
+};
+
+var myFunc = new MyFunc();
+myFunc.sayName();
+</code></pre>

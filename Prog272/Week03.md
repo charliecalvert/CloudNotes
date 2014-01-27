@@ -100,6 +100,7 @@ Here are some particularly useful sections of the above link:
 
 Additional information:
 
+- [Setting up Cordova on the Mac](http://iphonedevlog.wordpress.com/2013/08/16/using-phonegap-3-0-cli-on-mac-osx-10-to-build-ios-and-android-projects/)
 - [Set PATH and Environment](http://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/)
 - [ENVIRONMENT variables](http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x)
 
