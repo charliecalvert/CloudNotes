@@ -37,5 +37,8 @@
 };
 
 var myFunc = new MyFunc();
-myFunc.sayName();
-</code></pre>
+myFunc.sayName();</code></pre>
+<p>You will need to call new in your tests:</p>
+<pre><code>it (&quot;can create milesFunction&quot;, function() {
+    expect(new milesFunction()).toBeTruthy();
+});</code></pre>

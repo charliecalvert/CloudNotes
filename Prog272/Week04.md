@@ -19,8 +19,30 @@ Core Subjects
 
 -   Cordova File System
 
+Always Include Last Name in Project Names
+-----------------------------------------
+
+I often fail to make this clear, but can you always call any project 
+your turn in XXX-LastName. For instance: MilesObject-Calvert. Thank 
+you.
+
+In fact, it usually helps if you include the Week in the project name
+as well:
+
+	Week03-MilesObject-Calvert
+
+This name ends up in the Eclipse/Aptana file called **.project**.
+
+Format Code
+------------
+
+Don't forget to format your code in Eclipse/Aptana. Right click on  
+a JavaScript file and choose Source | Format. The shortcut is 
+**Ctrl-Shift-F**.
+
 Other
 -----
+
 
 -   Connecting to Linux in VirtualBox and setting up a web server.
 -   Getting started with PhoneGap
