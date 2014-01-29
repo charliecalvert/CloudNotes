@@ -1,6 +1,12 @@
 Core Subjects
 -------------
 
+Our main goals this week is to:
+
+- Learn more about JavaScript Objects and Functions. 
+- Introduce jQuery
+- Finish the setup issues
+
 -   [Homework Review](http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html)
 -   [JSHint and Grunt](http://jshint.com/)
 -   [Grunt on Elvenware](http://elvenware.com/charlie/development/web/UnitTests/Grunt.html)
@@ -47,6 +53,26 @@ as well:
 This name ends up in the Eclipse/Aptana file called **.project**. Cordova 
 projects use some Java code, so in them, you must use an underbar
 rather than a dash.
+
+VirtualBox Kernal Driver Error
+-------------------------------
+
+If you get an error trying to start your VM, try this solution:
+
+Navigate to:
+
+	C:\Program Files\Oracle\VirtualBox\drivers\USB\filter
+
+Find the **VBoxUSBMon.inf** and right click on it. Select **Install**.
+
+Navigate to:
+
+	C:\Program Files\Oracle\VirtualBox\drivers\vboxdrv
+
+
+Find VBoxDrv.inf and right click on it. Select install.
+
+This fixed the problem for me.
 
 Format Code
 ------------

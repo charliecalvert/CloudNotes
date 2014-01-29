@@ -39,6 +39,7 @@ Set up PATH and Environment on Windows
 - [Cordova Cheat Sheet](http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
 - [Cordova Setup Details](http://www.elvenware.com/charlie/development/android/PhoneGap.html#details)
 - [Run Cordova Project](http://www.elvenware.com/charlie/development/android/PhoneGap.html#runProject)
+- [Use SetX](http://www.elvenware.com/charlie/development/android/PhoneGap.html#use-setx-to-set-the-environment)
 
 I recognize that these steps are difficult. On the other hand, it 
 simply is not right for students interested in computers to graduate 
