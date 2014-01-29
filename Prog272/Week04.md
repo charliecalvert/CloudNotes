@@ -32,6 +32,9 @@ There are several assignments, including:
 - A Code Academy exercise
 - A programming exercise using jQuery
 
+Look in the modules section of Canvas to find links to these 
+assignments.
+
 
 Get the right ViewPort statement
 --------------------------------
