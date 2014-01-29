@@ -25,3 +25,4 @@ account and start over.
 I don't think you can delete work you have done and reset a course
 you have already completed. You can use the left panel to pick a section
 you have not done yet, but I don't see a way to completely start over.
+
