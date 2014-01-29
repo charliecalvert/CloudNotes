@@ -26,6 +26,13 @@ jQuery
 -   [jQuery Button](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jquery-button-and-paragraph-demo)
 
 
+There are several assignments, including:
+
+- A quiz on Git
+- A Code Academy exercise
+- A programming exercise using jQuery
+
+
 Get the right ViewPort statement
 --------------------------------
 
