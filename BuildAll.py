@@ -51,12 +51,12 @@ def prog280(markdown):
 	makeItSo(markdown, "Prog280", files);
 
 def prog272(markdown):
-	files=["Resources", "Week01", 'Week02', 'Week03'];
+	files=["Resources", "Week01", 'Week02', 'Week03', 'Week04'];
 	makeItSo(markdown, "Prog272", files);
 
 def assignments(markdown):
 	files=["Prog270-011414", "OwnCloudInstall", "Cordova01",
-		"LampBootstrap"]
+		"LampBootstrap", "InfoManager01"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program

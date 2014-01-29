@@ -6,7 +6,7 @@ Cordova First Exercise
 
 - Set up your machine to use Cordova **create** command to create
 a Cordova project.
-- Create a project called Cordova01-LastName
+- Create a project called Cordova01_LastName. (Use an underbar, not a dash, when creating Cordova projects.)
 - Create the project and deploy it to the emulator, AndroidX86 or your
 device. 
 - Take a screenshot of your program running

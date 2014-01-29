@@ -1,0 +1,57 @@
+<h1 id="information-manager-part01">Information Manager Part01</h1>
+<p>For the next few weeks, at least, we shall be working on creating an <strong>Information Manager</strong> (for lack of a better term) that can be displayed on mobile devices.</p>
+<p>Some of the goals</p>
+<ul>
+<li>Place data on a server</li>
+<li>Create a single page PhoneGap app.</li>
+<li>All the user to display various information in the app.</li>
+</ul>
+<p>For instance:</p>
+<ul>
+<li>On server a list of Presidents, their dates, and information about their lives.</li>
+<li>Allow the user to pick a president</li>
+<li>Display an overview of the President's life</li>
+<li>All the user to see details about the President such as spouse, date of birth, etc.</li>
+</ul>
+<p>Or:</p>
+<ul>
+<li>Store information about some technical area, such jQuery or JavaScript objects</li>
+<li>All the user to find out what subjects you have stored</li>
+<li>Allow them to drill down into that information</li>
+</ul>
+<p>Exactly what type of information you store will be up to you. You can pick any subject that interests you. If you don't have any subject you want to pursue, then US Presidents can be a default value.</p>
+<h2 id="server-side">Server Side</h2>
+<p>Information can, and probably will, be stored in various ways:</p>
+<ul>
+<li>On MongoDb at MongoLab</li>
+<li>On MongoDb in a Linux instance on VirtualBox and/or EC2.</li>
+<li>In S3</li>
+<li>As raw JSON files on S3 or a Linux instance</li>
+<li>At raw JSON on your local machine</li>
+<li>On Freebase</li>
+<li>And so on</li>
+</ul>
+<p>Even if we store data on MongoLab, Freebase or S3, we will likely have a Node server with Exress to help us manage users and provide other services. We may also do some work with an Apache Server.</p>
+<h2 id="client-side">Client Side</h2>
+<p>We be using various technologies, including:</p>
+<ul>
+<li>jQuery</li>
+<li>Angular</li>
+<li>RequireJs</li>
+<li>Various templating engines such as mustache, jade, handlebars, etc.</li>
+<li>CSS rendering with <strong>Less</strong> or similar tools.</li>
+</ul>
+<p>And of course we will be learning about Ajax and sending database requests.</p>
+<ul>
+<li><a href="http://engineering.linkedin.com/frontend/client-side-templating-throwdown-mustache-handlebars-dustjs-and-more">Templating Engines</a></li>
+</ul>
+<h2 id="tdd-and-unit-tests">TDD and Unit Tests</h2>
+<p>We will be testing everything we do on the client and the server . We will be following a <strong>test first</strong> philosophy, so that we will write tests first, and then implement our code.</p>
+<h2 id="week04-assignment">Week04 Assignment</h2>
+<p>Your assignment for this week involves learning how to use jQuery to</p>
+<ul>
+<li>Change the content of a web page</li>
+<li>Make Ajax queries</li>
+<li>Insert HTML retrieved from the server or some other source into an existing page.</li>
+</ul>
+<p>Details to follow, but the core deliverable will be a Cordova application that can do the three things described above. You will submit the code via GitHub.</p>

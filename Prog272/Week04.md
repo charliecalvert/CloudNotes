@@ -1,23 +1,36 @@
 Core Subjects
 -------------
 
--   [Homework Review][1]
-
-    [1]: <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html>
-
--   Creating Cordova Projects batch file
-
--   [VirtualBox and Android x86][2]
-
-    [2]: <http://www.elvenware.com/charlie/development/android/Androidx86.shtml>
-
--   JavaScript Module Review
-
--   [JSHint][3]
-
-    [3]: <http://jshint.com/>
-
+-   [Homework Review](http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html)
+-   [JSHint and Grunt](http://jshint.com/)
+-   [Grunt on Elvenware](http://elvenware.com/charlie/development/web/UnitTests/Grunt.html)
+-   [Karma](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#using-karma)
+-   [Coverage](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#coverage)
 -   Cordova File System
+-   [JavaScript Modules](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html)
+-   [Ajax and jQuery Load](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqueryLoad)
+-   [jQuery getJSON](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON)
+-   [JSON](http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html)
+
+jQuery
+------
+
+-   [jQuery](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
+-   [jQuery Attribute Selectors](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors)
+-   [jQuery Button](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jquery-button-and-paragraph-demo)
+
+
+Get the right ViewPort statement
+--------------------------------
+
+You might want to replace the ViewPort statement created by default by
+Cordova with this statement:
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+See this Elvenware entry:
+
+- [ViewPort Basics](http://www.elvenware.com/charlie/development/web/CssGuide/MediaQueries.html#viewportBasics)
 
 Always Include Last Name in Project Names
 -----------------------------------------
@@ -31,7 +44,9 @@ as well:
 
 	Week03-MilesObject-Calvert
 
-This name ends up in the Eclipse/Aptana file called **.project**.
+This name ends up in the Eclipse/Aptana file called **.project**. Cordova 
+projects use some Java code, so in them, you must use an underbar
+rather than a dash.
 
 Format Code
 ------------
@@ -44,8 +59,6 @@ Other
 -----
 
 
--   Connecting to Linux in VirtualBox and setting up a web server.
--   Getting started with PhoneGap
 -   please open the assignment and respond to the discussion for that assignment
     from inside that assignment. It makes it easier for me to see which comments
     belong to which assignment.
@@ -55,18 +68,41 @@ Other
     Tidy plugin in NotePad)
 -   The HTML Header and Foot tags, etc.
 -   W3C Validator
--   for loops
--   images
--   Create a home page for your Google Site.
 
 HTML Suggestions
 ----------------
 
-you are mixing up places where you put tabs and places where you put spaces.
-Open up your HTML in notepad++. Turn on View | Show Symbol | Show Write Space.
-Look at your \<LI\> elements, you will see that you use different characters for
-your indentation. It probably looks fine on your system, but on mine, where tabs
-have a different value than on your system, it is not pretty.
+If JsHint complains that you are mixing up places where you put tabs 
+and places where you put spaces. Open up your HTML in notepad++. 
+Turn on View | Show Symbol | Show Write Space. Look at your \<LI\> 
+elements, you will see that you use different characters for your 
+indentation. It probably looks fine on your system, but on mine, 
+where tabs have a different value than on your system, it is not 
+pretty.
+
+###Karma
+
+Configure:
+
+- karma.conf.js
+
+Start Karma:
+
+	karma start
+
+If you have karma running in one command window, you can run a test in another 
+command window that will return immediately  by typing:
+
+	karma run
+
+Working Examples:
+
+- [CreateCharacters02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/CharacterCreate02)
+- [Crafty06](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/Crafty06)
+- [Crafty03](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/Crafty03)
+
+In HTML Files
+-------------
 
 Be sure to specify the charset:
 
