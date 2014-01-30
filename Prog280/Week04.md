@@ -1,14 +1,29 @@
 
-### Primary goals for today:
+Primary goals for today:
+-----------------------
 
--   Markdown
--   Filezilla
--   [DropBox](http://www.elvenware.com/charlie/development/cloud/DropBox.html)
+-   Use markdown to create HTML files
+-   Use StackEdit to create markdown.
+-   Sync StackEdit with Google Drive and with DropBox
+-   Install DropBox and Pandoc on Linux EC2 and Lubuntu.
+-   Use Filezilla to transfer files
+-   Set up Putty correctly with GIT_SSH environment variable
 
--   Set up your account on Amazon Web Services (AWS)
--   Create your first virtual machine on AWS EC2
+Elvenware Links
+-----
 
-### Pandoc on Linux
+-   [Install DropBox on Linux](http://www.elvenware.com/charlie/development/cloud/DropBox.html)
+-   [Filezilla]()
+
+Other Links
+-----------
+
+-   [StackEdit]()
+-   [PanDoc]()
+-   [Filezilla]()
+
+Pandoc on Linux
+---------------
 
 	sudo apt-get install pandoc
 	
@@ -32,89 +47,31 @@ Here is another example:
 This takes a file called **MyFile.md** that is in the current directory,
 converts it to HTML and saves in the user's home directory as **MyFile.html**
 
+Using Putty and Git
+-------------------
 
-	
-### Secondary Goals
+If you are using SSH with Git, you want to make sure that Git can
+find the Putty program called **plink**. To do that, be sure that
+the environment variables GIT_SSH is set to 
 
--   Learn more about Linux
+	C:\Program Files (x86)\PuTTY\plink.exe
 
--   Learn more about MediaWiki and Wordpress
+[More details are here](http://www.elvenware.com/charlie/development/cloud/Git.html#running-git)
 
-### Reminder
+From the command line, that would look like:
 
--   There will be no class Wednesday, Jan 30.
+	SetX GIT_SSH C:\Program Files (x86)\PuTTY\plink.exe
 
--   Instead, there will be an online video and a regular weekly assignment
-
-### Tutoring
-
--   If you are interested in tutoring on Saturday, Jan 26, I can come in if
-    there is enough interest. Please respond to the announcement in the
-    announcement section of this stie, or write me, or both, to let me know if
-    you are interested. The session would be from 10 AM to 12 noon in N252.
-
-
-
-WordPress
-
--   <http://www.elvenware.com/charlie/development/cloud/Wordpress.html>
--   <https://help.ubuntu.com/community/WordPress>
-
-MediaWiki
----------
-
--   <http://www.elvenware.com/charlie/development/cloud/MediaWiki.html>
--   <https://help.ubuntu.com/community/MediaWiki>
--   <http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Ubuntu>
-
-###Juju Install
-
-- <https://juju.ubuntu.com/install/>
-
-	sudo add-apt-repository ppa:juju/stable
-	sudo apt-get update && sudo apt-get install juju-core
-	juju generate-config
-	
-On AWS:
-
-- Go to Security Credentials.
-- export AWS_ACCESS_KEY_ID=[YOUR ACCESS KEY]
-- export AWS_SECRET_ACCESS_KEY=[YOUR SECRET ACCESS KEY]
-
-Then run **juju bootstrap** at the command line. If it works, it
-just returns with no error messages and no success message. 
-
-Now you can deploy something to your instance:
-
-- juju deploy wordpress
-- juju deploy mysql
-- juju add-relation wordpress mysql
-- juju expose wordpress
-- juju status
-
-Juju instances are very expensive. When you are done: 
-
-- juju destroy-environment
-
+There is an updated **SanityCheck.bat** file that includes a check
+for **GIT_SSH**.
 
 ### Links
 
 -   The Amazon Web Services Deck: <http://bit.ly/Rzi2Da>
-
 -   The Web Server Deck: <http://bit.ly/Q9A4Ne>
-
--   The Elvenware
-    Page: <http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2>
-
+-   [The Elvenware WebServices Page](http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2)
 -   Linux Basics Deck: <http://bit.ly/PDuWUB>
-
 -   Internet Deck: <http://bit.ly/Xk4H5t>
-
--   MediaWiki
-    Edit: <http://www.elvenware.com/charlie/development/cloud/MediaWiki.html#basicEditing>
-
--   WordPress
-    Edit: <http://www.elvenware.com/charlie/development/cloud/Wordpress.html#edit>
     
     
     

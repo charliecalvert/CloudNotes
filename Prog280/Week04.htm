@@ -1,10 +1,12 @@
 <h3 id="primary-goals-for-today">Primary goals for today:</h3>
 <ul>
-<li>Markdown</li>
-<li>Filezilla</li>
-<li><p><a href="http://www.elvenware.com/charlie/development/cloud/DropBox.html">DropBox</a></p></li>
-<li>Set up your account on Amazon Web Services (AWS)</li>
-<li><p>Create your first virtual machine on AWS EC2</p></li>
+<li>Use markdown to create HTML files</li>
+<li>Use StackEdit to create markdown.</li>
+<li>Sync StackEdit with Google Drive and with DropBox</li>
+<li>Install DropBox and Pandoc on Linux EC2 and Lubuntu.</li>
+<li>Use Filezilla to transfer files</li>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/DropBox.html">DropBox</a></li>
+<li>Set up Putty correctly with GIT_SSH environment variable</li>
 </ul>
 <h3 id="pandoc-on-linux">Pandoc on Linux</h3>
 <pre><code>sudo apt-get install pandoc</code></pre>
@@ -15,31 +17,13 @@
 <p>Here is another example:</p>
 <pre><code>pandoc -t html5 -o ~/MyFile.html MyFile.md</code></pre>
 <p>This takes a file called <strong>MyFile.md</strong> that is in the current directory, converts it to HTML and saves in the user's home directory as <strong>MyFile.html</strong></p>
-<h3 id="secondary-goals">Secondary Goals</h3>
-<ul>
-<li><p>Learn more about Linux</p></li>
-<li><p>Learn more about MediaWiki and Wordpress</p></li>
-</ul>
-<h3 id="reminder">Reminder</h3>
-<ul>
-<li><p>There will be no class Wednesday, Jan 30.</p></li>
-<li><p>Instead, there will be an online video and a regular weekly assignment</p></li>
-</ul>
-<h3 id="tutoring">Tutoring</h3>
-<ul>
-<li>If you are interested in tutoring on Saturday, Jan 26, I can come in if there is enough interest. Please respond to the announcement in the announcement section of this stie, or write me, or both, to let me know if you are interested. The session would be from 10 AM to 12 noon in N252.</li>
-</ul>
-<p>WordPress</p>
-<ul>
-<li><a href="http://www.elvenware.com/charlie/development/cloud/Wordpress.html">http://www.elvenware.com/charlie/development/cloud/Wordpress.html</a></li>
-<li><a href="https://help.ubuntu.com/community/WordPress">https://help.ubuntu.com/community/WordPress</a></li>
-</ul>
-<h2 id="mediawiki">MediaWiki</h2>
-<ul>
-<li><a href="http://www.elvenware.com/charlie/development/cloud/MediaWiki.html">http://www.elvenware.com/charlie/development/cloud/MediaWiki.html</a></li>
-<li><a href="https://help.ubuntu.com/community/MediaWiki">https://help.ubuntu.com/community/MediaWiki</a></li>
-<li><a href="http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Ubuntu">http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Ubuntu</a></li>
-</ul>
+<h2 id="using-putty-and-git">Using Putty and Git</h2>
+<p>If you are using SSH with Git, you want to make sure that Git can find the Putty program called <strong>plink</strong>. To do that, be sure that the environment variables GIT_SSH is set to</p>
+<pre><code>C:\Program Files (x86)\PuTTY\plink.exe</code></pre>
+<p><a href="http://www.elvenware.com/charlie/development/cloud/Git.html#running-git">More details are here</a></p>
+<p>From the command line, that would look like:</p>
+<pre><code>SetX GIT_SSH C:\Program Files (x86)\PuTTY\plink.exe</code></pre>
+<p>There is an updated <strong>SanityCheck.bat</strong> file that includes a check for <strong>GIT_SSH</strong>.</p>
 <h3 id="juju-install">Juju Install</h3>
 <ul>
 <li><p><a href="https://juju.ubuntu.com/install/">https://juju.ubuntu.com/install/</a></p>
