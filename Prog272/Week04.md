@@ -30,7 +30,7 @@ There are several assignments, including:
 
 - A quiz on Git
 - A Code Academy exercise
-- A programming exercise using jQuery
+- [A programming exercise using jQuery](../Assignments/InfoManager01.html)
 
 Look in the modules section of Canvas to find links to these 
 assignments.
