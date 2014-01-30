@@ -77,33 +77,35 @@ Your assignment for this week involves learning how to use jQuery to
 
 - Change the content of a Cordova web page
 - Make Ajax queries (load, getJSON)
-- Insert HTML and JSON retrieved from the server or some other source into an existing page.
+- Insert HTML and JSON retrieved from the file system into your web page.
 
 The core deliverable will be a Cordova application and accompanying 
-unit tests that can do the three things described above. You will 
-submit the code via GitHub.
+unit tests that can do the three things described above. The unit 
+tests run in your browser, not in the Cordova app. You will submit 
+the code via GitHub.
 
 ###Part01
 
 - Use jQuery [load](http://api.jquery.com/load/) to load an HTML page called **Sources.html**
 - Include at least three paragraphs in **Sources.html**
 - Give the paragraphs ids: **paragraph01**, **paragraph02**, **paragraph03**
-- In your HTML file create a div with an id of **div01**.
-- Place three buttons on your HTML file with the ids **buttonHtml01**, etc
-- When the user clicks the button01 insert in **paragraph01** into **div01**, 
-when button02 is selected, put **paragraph02** into **div01**, etc.
+- In your Cordova HTML file (**index.html**) create a **div** with an id of **div01**.
+- Place three buttons on **index.html** with the ids **buttonHtml01**, etc
+- When the user clicks **button01** insert the contents of **paragraph01** from **Sources.html** into **div01**. 
+- When button02 is selected, put **paragraph02** into **div01**, etc.
+- Remember, **paragraph0X** will be in **Sources.html** and **div01** is in **index.html**
 - Include mock unit tests proving that your **load** requests work
 
 ###Part02
 
-In the same Cordova app, we do the same sort of thing the jQuery 
+In the same Cordova app, we do the same sort of thing with the jQuery 
 [getJson](http://api.jquery.com/jquery.getjson/) command.
 
 - Use jQuery **getJSON** to load a list of at least three Presidents
-- Include id, firstName, lastName
+- Include id, firstName, lastName in your JSON.
 - Add three more buttons with the id's: **buttonJson01**, etc.
-- When the user clicks a button, show the first president
-- When the user clicks the second button, show the second president
+- When the user clicks the first JSON button, show the first president
+- When the user clicks the second button, show the second president, etc.
 - Display the data about the presidents in the three paragraphs 
 defined in the previous section of this assignment. 
 - Include mock unit tests proving that your **getJSON** requests work.
