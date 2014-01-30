@@ -75,10 +75,58 @@ Week04 Assignment
 
 Your assignment for this week involves learning how to use jQuery to
 
-- Change the content of a web page
-- Make Ajax queries
-- Insert HTML retrieved from the server or some other source into an existing page.
+- Change the content of a Cordova web page
+- Make Ajax queries (load, getJSON)
+- Insert HTML and JSON retrieved from the server or some other source into an existing page.
 
-Details to follow, but the core deliverable will be a Cordova application
-that can do the three things described above. You will submit the code
-via GitHub.
+The core deliverable will be a Cordova application and accompanying 
+unit tests that can do the three things described above. You will 
+submit the code via GitHub.
+
+###Part01
+
+- Use jQuery [load](http://api.jquery.com/load/) to load an HTML page called **Sources.html**
+- Include at least three paragraphs in **Sources.html**
+- Give the paragraphs ids: **paragraph01**, **paragraph02**, **paragraph03**
+- In your HTML file create a div with an id of **div01**.
+- Place three buttons on your HTML file with the ids **buttonHtml01**, etc
+- When the user clicks the button01 insert in **paragraph01** into **div01**, 
+when button02 is selected, put **paragraph02** into **div01**, etc.
+- Include mock unit tests proving that your **load** requests work
+
+###Part02
+
+In the same Cordova app, we do the same sort of thing the jQuery 
+[getJson](http://api.jquery.com/jquery.getjson/) command.
+
+- Use jQuery **getJSON** to load a list of at least three Presidents
+- Include id, firstName, lastName
+- Add three more buttons with the id's: **buttonJson01**, etc.
+- When the user clicks a button, show the first president
+- When the user clicks the second button, show the second president
+- Display the data about the presidents in the three paragraphs 
+defined in the previous section of this assignment. 
+- Include mock unit tests proving that your **getJSON** requests work.
+
+Sample Json:
+
+```
+[
+    {
+        "id": 1,
+        "firstName": "George",
+        "lastName": "Washington"
+    }, {
+        "id": 2,
+        "firstName": "John",
+        "lastName": "Adams"
+    }, {
+        "id": 3,
+        "firstName": "Thomas",      
+        "lastName": "Jefferson"
+    }
+]
+```
+
+
+- [Validate your Json](http://jsonlint.com/)
