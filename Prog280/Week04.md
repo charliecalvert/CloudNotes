@@ -1,9 +1,39 @@
+
 ### Primary goals for today:
 
--   Set up your account on Amazon Web Services (AWS)
+-   Markdown
+-   Filezilla
+-   [DropBox](http://www.elvenware.com/charlie/development/cloud/DropBox.html)
 
+-   Set up your account on Amazon Web Services (AWS)
 -   Create your first virtual machine on AWS EC2
 
+### Pandoc on Linux
+
+	sudo apt-get install pandoc
+	
+Now convert from Markdown to HTML 5:
+
+	pandoc -t html5 -o MyFile.html MyFile.md
+	
+This command converts **MyFile.md** to HTML and saves it in a file
+called **MyFile.html**. 
+
+The **-t** parameter allows you to specify the type of file you want to
+save, which in this case is HTML 5. The **-o** parameters allows to 
+specify the **outfile**, that is, the name you want to give to the output
+of the program. In this case the output is an HTML file which we have
+decided to call **MyFile.html**.
+
+Here is another example:
+
+	pandoc -t html5 -o ~/MyFile.html MyFile.md
+
+This takes a file called **MyFile.md** that is in the current directory,
+converts it to HTML and saves in the user's home directory as **MyFile.html**
+
+
+	
 ### Secondary Goals
 
 -   Learn more about Linux
