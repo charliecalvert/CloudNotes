@@ -47,7 +47,7 @@ def isit320(markdown):
 
 # Prog280
 def prog280(markdown):
-	files = ["Resources", "Week01", "Week02", "Week03"];
+	files = ["Resources", "Week01", "Week02", "Week03", "Week04"];
 	makeItSo(markdown, "Prog280", files);
 
 def prog272(markdown):
