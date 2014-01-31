@@ -1,14 +1,24 @@
-<h3 id="primary-goals-for-today">Primary goals for today:</h3>
+<h2 id="primary-goals-for-today">Primary goals for today:</h2>
 <ul>
 <li>Use markdown to create HTML files</li>
 <li>Use StackEdit to create markdown.</li>
 <li>Sync StackEdit with Google Drive and with DropBox</li>
 <li>Install DropBox and Pandoc on Linux EC2 and Lubuntu.</li>
 <li>Use Filezilla to transfer files</li>
-<li><a href="http://www.elvenware.com/charlie/development/cloud/DropBox.html">DropBox</a></li>
 <li>Set up Putty correctly with GIT_SSH environment variable</li>
 </ul>
-<h3 id="pandoc-on-linux">Pandoc on Linux</h3>
+<h2 id="elvenware-links">Elvenware Links</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/DropBox.html">Install DropBox on Linux</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#filezilla">Filezilla</a></li>
+</ul>
+<h2 id="other-links">Other Links</h2>
+<ul>
+<li><a href="https://stackedit.io/">StackEdit</a></li>
+<li><a href="http://johnmacfarlane.net/pandoc/">PanDoc</a></li>
+<li><a href="https://filezilla-project.org/">Filezilla Client</a></li>
+</ul>
+<h2 id="pandoc-on-linux">Pandoc on Linux</h2>
 <pre><code>sudo apt-get install pandoc</code></pre>
 <p>Now convert from Markdown to HTML 5:</p>
 <pre><code>pandoc -t html5 -o MyFile.html MyFile.md</code></pre>
@@ -24,37 +34,11 @@
 <p>From the command line, that would look like:</p>
 <pre><code>SetX GIT_SSH C:\Program Files (x86)\PuTTY\plink.exe</code></pre>
 <p>There is an updated <strong>SanityCheck.bat</strong> file that includes a check for <strong>GIT_SSH</strong>.</p>
-<h3 id="juju-install">Juju Install</h3>
-<ul>
-<li><p><a href="https://juju.ubuntu.com/install/">https://juju.ubuntu.com/install/</a></p>
-<p>sudo add-apt-repository ppa:juju/stable sudo apt-get update &amp;&amp; sudo apt-get install juju-core juju generate-config</p></li>
-</ul>
-<p>On AWS:</p>
-<ul>
-<li>Go to Security Credentials.</li>
-<li>export AWS_ACCESS_KEY_ID=[YOUR ACCESS KEY]</li>
-<li>export AWS_SECRET_ACCESS_KEY=[YOUR SECRET ACCESS KEY]</li>
-</ul>
-<p>Then run <strong>juju bootstrap</strong> at the command line. If it works, it just returns with no error messages and no success message.</p>
-<p>Now you can deploy something to your instance:</p>
-<ul>
-<li>juju deploy wordpress</li>
-<li>juju deploy mysql</li>
-<li>juju add-relation wordpress mysql</li>
-<li>juju expose wordpress</li>
-<li>juju status</li>
-</ul>
-<p>Juju instances are very expensive. When you are done:</p>
-<ul>
-<li>juju destroy-environment</li>
-</ul>
 <h3 id="links">Links</h3>
 <ul>
-<li><p>The Amazon Web Services Deck: <a href="http://bit.ly/Rzi2Da">http://bit.ly/Rzi2Da</a></p></li>
-<li><p>The Web Server Deck: <a href="http://bit.ly/Q9A4Ne">http://bit.ly/Q9A4Ne</a></p></li>
-<li><p>The Elvenware Page: <a href="http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2">http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2</a></p></li>
-<li><p>Linux Basics Deck: <a href="http://bit.ly/PDuWUB">http://bit.ly/PDuWUB</a></p></li>
-<li><p>Internet Deck: <a href="http://bit.ly/Xk4H5t">http://bit.ly/Xk4H5t</a></p></li>
-<li><p>MediaWiki Edit: <a href="http://www.elvenware.com/charlie/development/cloud/MediaWiki.html#basicEditing">http://www.elvenware.com/charlie/development/cloud/MediaWiki.html#basicEditing</a></p></li>
-<li><p>WordPress Edit: <a href="http://www.elvenware.com/charlie/development/cloud/Wordpress.html#edit">http://www.elvenware.com/charlie/development/cloud/Wordpress.html#edit</a></p></li>
+<li>The Amazon Web Services Deck: <a href="http://bit.ly/Rzi2Da">http://bit.ly/Rzi2Da</a></li>
+<li>The Web Server Deck: <a href="http://bit.ly/Q9A4Ne">http://bit.ly/Q9A4Ne</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2">The Elvenware WebServices Page</a></li>
+<li>Linux Basics Deck: <a href="http://bit.ly/PDuWUB">http://bit.ly/PDuWUB</a></li>
+<li>Internet Deck: <a href="http://bit.ly/Xk4H5t">http://bit.ly/Xk4H5t</a></li>
 </ul>

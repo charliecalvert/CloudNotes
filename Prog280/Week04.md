@@ -13,14 +13,14 @@ Elvenware Links
 -----
 
 -   [Install DropBox on Linux](http://www.elvenware.com/charlie/development/cloud/DropBox.html)
--   [Filezilla]()
+-   [Filezilla](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#filezilla)
 
 Other Links
 -----------
 
--   [StackEdit]()
--   [PanDoc]()
--   [Filezilla]()
+-   [StackEdit](https://stackedit.io/)
+-   [PanDoc](http://johnmacfarlane.net/pandoc/)
+-   [Filezilla Client](https://filezilla-project.org/)
 
 Pandoc on Linux
 ---------------
