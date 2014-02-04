@@ -30,7 +30,7 @@ There are several assignments, including:
 
 - A quiz on Git
 - A Code Academy exercise
-- A programming exercise using jQuery
+- [A programming exercise using jQuery](../Assignments/InfoManager01.html)
 
 Look in the modules section of Canvas to find links to these 
 assignments.
@@ -63,6 +63,24 @@ as well:
 This name ends up in the Eclipse/Aptana file called **.project**. Cordova 
 projects use some Java code, so in them, you must use an underbar
 rather than a dash.
+
+Using Putty and Git
+-------------------
+
+If you are using SSH with Git, you want to make sure that Git can
+find the Putty program called **plink**. To do that, be sure that
+the environment variables GIT_SSH is set to 
+
+	C:\Program Files (x86)\PuTTY\plink.exe
+
+[More details are here](http://www.elvenware.com/charlie/development/cloud/Git.html#running-git)
+
+From the command line, that would look like:
+
+	SetX GIT_SSH C:\Program Files (x86)\PuTTY\plink.exe
+
+There is an updated **SanityCheck.bat** file that includes a check
+for **GIT_SSH**.
 
 VirtualBox Kernal Driver Error
 -------------------------------

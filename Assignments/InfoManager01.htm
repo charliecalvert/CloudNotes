@@ -50,8 +50,50 @@
 <h2 id="week04-assignment">Week04 Assignment</h2>
 <p>Your assignment for this week involves learning how to use jQuery to</p>
 <ul>
-<li>Change the content of a web page</li>
-<li>Make Ajax queries</li>
-<li>Insert HTML retrieved from the server or some other source into an existing page.</li>
+<li>Change the content of a Cordova web page</li>
+<li>Make Ajax queries (load, getJSON)</li>
+<li>Insert HTML and JSON retrieved from the file system into your web page.</li>
 </ul>
-<p>Details to follow, but the core deliverable will be a Cordova application that can do the three things described above. You will submit the code via GitHub.</p>
+<p>The core deliverable will be a Cordova application and accompanying unit tests that can do the three things described above. The unit tests run in your browser, not in the Cordova app. You will submit the code via GitHub.</p>
+<h3 id="part01">Part01</h3>
+<ul>
+<li>Use jQuery <a href="http://api.jquery.com/load/">load</a> to load an HTML page called <strong>Sources.html</strong></li>
+<li>Include at least three paragraphs in <strong>Sources.html</strong></li>
+<li>Give the paragraphs ids: <strong>paragraph01</strong>, <strong>paragraph02</strong>, <strong>paragraph03</strong></li>
+<li>In your Cordova HTML file (<strong>index.html</strong>) create a <strong>div</strong> with an id of <strong>div01</strong>.</li>
+<li>Place three buttons on <strong>index.html</strong> with the ids <strong>buttonHtml01</strong>, etc</li>
+<li>When the user clicks <strong>button01</strong> insert the contents of <strong>paragraph01</strong> from <strong>Sources.html</strong> into <strong>div01</strong>.</li>
+<li>When button02 is selected, put <strong>paragraph02</strong> into <strong>div01</strong>, etc.</li>
+<li>Remember, <strong>paragraph0X</strong> will be in <strong>Sources.html</strong> and <strong>div01</strong> is in <strong>index.html</strong></li>
+<li>Include mock unit tests proving that your <strong>load</strong> requests work</li>
+</ul>
+<h3 id="part02">Part02</h3>
+<p>In the same Cordova app, we do the same sort of thing with the jQuery <a href="http://api.jquery.com/jquery.getjson/">getJson</a> command.</p>
+<ul>
+<li>Use jQuery <strong>getJSON</strong> to load a list of at least three Presidents</li>
+<li>Include id, firstName, lastName in your JSON.</li>
+<li>Add three more buttons with the id's: <strong>buttonJson01</strong>, etc.</li>
+<li>When the user clicks the first JSON button, show the first president</li>
+<li>When the user clicks the second button, show the second president, etc.</li>
+<li>Display the data about the presidents in the three paragraphs defined in the previous section of this assignment.</li>
+<li>Include mock unit tests proving that your <strong>getJSON</strong> requests work.</li>
+</ul>
+<p>Sample Json:</p>
+<pre><code>[
+    {
+        &quot;id&quot;: 1,
+        &quot;firstName&quot;: &quot;George&quot;,
+        &quot;lastName&quot;: &quot;Washington&quot;
+    }, {
+        &quot;id&quot;: 2,
+        &quot;firstName&quot;: &quot;John&quot;,
+        &quot;lastName&quot;: &quot;Adams&quot;
+    }, {
+        &quot;id&quot;: 3,
+        &quot;firstName&quot;: &quot;Thomas&quot;,      
+        &quot;lastName&quot;: &quot;Jefferson&quot;
+    }
+]</code></pre>
+<ul>
+<li><a href="http://jsonlint.com/">Validate your Json</a></li>
+</ul>
