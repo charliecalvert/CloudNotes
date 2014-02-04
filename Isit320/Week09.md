@@ -94,50 +94,12 @@ Working Examples:
 Working with Mongo Data
 -----------------------
 
-We need to understand updating and deleting records in the database.
-
-A general review of mongo DB.
-
-Look at PeopleManager in CreateCharactor02
-
-- Mongo is in factory
-- People Manager is a factory
-- Can be consumed by Controller or Jasmine Test
-
-pkozlowski-opensource on github.
-
-It is interesting to note that this a REST API, so you can simply 
-paste URLs into the address bar of your browser, or use them as 
-links on web pages:
-
-https://api.mongolab.com/api/1/databases/YOUR_DATABASE/collections/YOUR_COLLECTION?apiKey=YOUR_API_KEY
-
-That's not a solution for a shipping app, but it is a good tool to 
-use when you are experimenting with a new technology.
-
-I should add that posting your API key as a link on a public web 
-page is a very bad idea, but you can use it on private sites.
-
-The best way to experiement with this technology is just to take the 
-URL and paste it into a the address field of the browser.
+- [Mongo on Elvenware](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html)
 
 Mocking Objects with $httpBackend
 ---------------
 
-Read the README.md file for JsonFromServer:
-
-- [JsonFromServer on GitHub](https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/JsonFromServer/README.md)
-
-The example demonstrates how to proceed.
-
-Mocking Mongo Data:
-
-- [MongoLab01](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab01)
-- [MongoLab02](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab02)
-- [MongoLab03](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoLab03)
-- [CreateCharacters02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/CharacterCreate02)
-
-See TestMongoTower.js.
+- [Angular, Jasmine and Httpbackend](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend)
 
 NPM
 ---
