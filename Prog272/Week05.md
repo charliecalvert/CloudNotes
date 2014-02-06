@@ -86,6 +86,43 @@ Use npm to install the Node mongodb driver:
 	db.getCollection("test_insert").find()
 
 
+Passing Parameters
+------------------
+
+One tip I should share with everyone: You can pass in parameters to click functions.
+
+Suppose you respond to a button click:
+
+	$("#button01").click(foo);
+
+And you implement foo:
+
+	function foo() { return 2 };
+
+But sometimes you want to pass in a parameter to foo:
+
+	function foo(x) { return 2 * x; }
+
+You can pass in the parameter inside a JavaScript object like this:
+
+	$("#button01").click({ x: 2 }, foo);
+
+Then implement foo like this:
+
+	function foo(event) {
+	  var x = event.data.x; 
+	  return 2 * x;
+	}
+
+This is better than the buttonClickPrivate solution that I showed in
+class.
+
+- <http://api.jquery.com/event.data/>
+- <http://api.jquery.com/category/events/event-object/>
+- <http://stackoverflow.com/a/9467172/253576>
+
+All of the above is also in Elvenware proper. 
+
 Mocking Objects
 ---------------
 
