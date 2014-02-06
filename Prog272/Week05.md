@@ -9,6 +9,12 @@ Main Goals
 Get ReadOnly JsObjects
 ----------------------
 
+If necessary, install Git:
+
+    sudo apt-get install git
+    
+And then clone my repo:
+
 	git clone git://github.com/charliecalvert/JsObjects.git
 
 No HelloCordova Accepted
@@ -54,7 +60,10 @@ Install MongoDb on Linux
 - [Follow these instructions](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
 - [Mongo on Elvenware](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html)
 
+Try:
 
+	sudo apt-get install mongodb
+	
 Or just put the following in bash script called InstallMongoDb.sh:
 
 	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -71,18 +80,16 @@ Start, restart and stop MongoDb:
 	
 Install the NPM driver:
 
-	Use npm to install the Node mongodb driver:
-	
+Use npm to install the Node mongodb driver:	
+
 	sudo npm install mongodb
-	
-	
 	db.getCollection("test_insert").find()
 
 
 Mocking Objects
 ---------------
 
-- [$HttpBackEnd and Jasmine](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend)
+- [HttpBackEnd and Jasmine](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend)
 
 
 In Class 01
@@ -105,39 +112,25 @@ Code Academy
 Bring both HTML and JavaScript to 25%. Let's add in jQuery. Get it to
 25% also....
 
+
 Links
 -----
 
 -   <http://www.elvenware.com/charlie/development/web/Mobile/>
-
 -   <http://jquerymobile.com/blog/2013/01/14/announcing-jquery-mobile-1-3-0-beta/#download>
-
 -   <http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html>
-
 -   <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#objects>
-
 -   <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#compareObjFunc>
-
-
 
 Day 2
 -----
 
-
-
 Topics
 ------
 
--   [LogCat][1]
-
-    [1]: <http://www.elvenware.com/charlie/development/android/AndroidLogging.html>
-
+-   [LogCat](http://www.elvenware.com/charlie/development/android/AndroidLogging.html)
 -   Fake jQuery Mobile
-
--   [jQuery Mobile][2]
-
-    [2]: <http://www.elvenware.com/charlie/development/web/Mobile/>
-
+-   [jQuery Mobile](http://www.elvenware.com/charlie/development/web/Mobile/)
 -   LocalFileSystem
 
 jQuery Attribute Selectors
@@ -150,11 +143,8 @@ JSHint
 
 -   <http://www.elvenware.com/charlie/development/android/Eclipse.shtml#jsHintExternal>
 
- JQuery Fake Source
+JQuery Fake Source
 -------------------
 
--   [JQueryFakeMobile02.zip][3][^4]
-
-    [3]: <https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1>
-
-    [^4]: <https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1>
+-   [JQueryFakeMobile02.zip](https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1)
+-   [More](https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1)
