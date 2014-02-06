@@ -48,6 +48,28 @@ sudo service mongodb restart</code></pre>
 <p>Use npm to install the Node mongodb driver:</p>
 <pre><code>sudo npm install mongodb
 db.getCollection(&quot;test_insert&quot;).find()</code></pre>
+<h2 id="passing-parameters">Passing Parameters</h2>
+<p>One tip I should share with everyone: You can pass in parameters to click functions.</p>
+<p>Suppose you respond to a button click:</p>
+<pre><code>$(&quot;#button01&quot;).click(foo);</code></pre>
+<p>And you implement foo:</p>
+<pre><code>function foo() { return 2 };</code></pre>
+<p>But sometimes you want to pass in a parameter to foo:</p>
+<pre><code>function foo(x) { return 2 * x; }</code></pre>
+<p>You can pass in the parameter inside a JavaScript object like this:</p>
+<pre><code>$(&quot;#button01&quot;).click({ x: 2 }, foo);</code></pre>
+<p>Then implement foo like this:</p>
+<pre><code>function foo(event) {
+  var x = event.data.x; 
+  return 2 * x;
+}</code></pre>
+<p>This is better than the buttonClickPrivate solution that I showed in class.</p>
+<ul>
+<li><a href="http://api.jquery.com/event.data/">http://api.jquery.com/event.data/</a></li>
+<li><a href="http://api.jquery.com/category/events/event-object/">http://api.jquery.com/category/events/event-object/</a></li>
+<li><a href="http://stackoverflow.com/a/9467172/253576">http://stackoverflow.com/a/9467172/253576</a></li>
+</ul>
+<p>All of the above is also in Elvenware proper.</p>
 <h2 id="mocking-objects">Mocking Objects</h2>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend">HttpBackEnd and Jasmine</a></li>

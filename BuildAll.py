@@ -61,8 +61,8 @@ def assignments(markdown):
 
 # Run Program
 markdown = MarkdownToHtml()
-#cloudRoot(markdown)
-#prog280(markdown)
+cloudRoot(markdown)
+prog280(markdown)
 prog272(markdown)
 #assignments(markdown);
 #prog270(markdown)
