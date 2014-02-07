@@ -1,0 +1,58 @@
+<h1 id="node-express-and-mongodb">Node, Express and MongoDb</h1>
+<p>We are going to continue work on our Information Manager. This assignment will be mostly a skill building exercise. I hope to tie this assignment and the previous assignment together next week.</p>
+<p>There will be three primary steps in this assignment:</p>
+<ul>
+<li>Create a server side method that will automatically insert 250 auto-generated records into MongoDb</li>
+<li>Create a server side method that will retrieve the records, place them in an array from the database and send them to the client.</li>
+<li>Create an HTML interface that will display any one record from the array of records to the user.</li>
+</ul>
+<p>Passing a parameter from the client (the web broswer) to the server is a bit tricky. As a result, in this assignment, I just want you to return an array of all 250 records. Later, we can learn how to ask for one of the records.</p>
+<p>You should, however, provide an interface that lets the user ask for any one record from the array of 250 that were returned. In particular, you should display the first record from the array when it is returned, then allow the user to enter a number between 1 and 250, and retrieve one of the associated records. You need not do any range checking at this point. I won't care if the app creates an error if the user enters a number like -15 or 266.</p>
+<p>I expect your interface to include:</p>
+<ul>
+<li>a place to show the selected record retrieved from the server. This would probably be a series of paragraph tags, but other options will be accepted.</li>
+<li>An input element where the user can enter the number of the item they want to retreive.</li>
+<li>A button to press to activate the retrieval of the next item.</li>
+</ul>
+<p>You will need to retrieve the array only once. This should occur immediately after your application loads. Once the array is on the client side, the user will be able to select any one item from the array.</p>
+<p>On the server side, you will have a default method that will return HTML containing the interface for your application. It will be much like the method we created in class, except this time, you will not hardcode the HTML into Server.js. Instead, you will retrieve it from a file kept on the server side:</p>
+<pre><code>var fs = require(&#39;fs&#39;);
+
+var html = fs.readFileSync(__dirname + &#39;/Public/index.html&#39;);
+res.writeHeader(200, {&quot;Content-Type&quot;: &quot;text/html&quot;});   
+res.write(html);
+res.end();</code></pre>
+<p>The complete example is in JsObjects:</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/HelloExpress">Hello Express</a></li>
+</ul>
+<p>I also provide an example called MongoTalk02 which gives you at least a few hints as to how to get started with this application. Here is a screenshot from the application:</p>
+<figure>
+<img src="../Images/NodeExpressMongo01.png" alt="MongoTalk02" /><figcaption>MongoTalk02</figcaption>
+</figure>
+<p>If you have not already done so, you need to run <strong>MongoTalk</strong> before you run <strong>MongoTalk02</strong> so that at least some data will be in MongoDb. In the screenshot shown above, you can see that MongoTalk02 retrieves the data that I created with <strong>MongoTalk</strong> during our class on Tuesday, Feb 04. The data you created will likely be different. For this assignment, you will want to create a new collection and new data, as explained below.</p>
+<p>And here is the example that is shown in the previous screenshot:</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoTalk02">MongoTalk02 in JsObjects</a></li>
+</ul>
+<p>You might also find this example helpful:</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/NodeCode/SimpleReadWriteJson/server.js">SimpleReadWriteJson</a></li>
+</ul>
+<p>SimpleReadWriteJson shows how to read and write a Json file. You will be reading from a database, not a file. Also, you will not need to write anything to the database at this stage. Still, the example is interesting, particularly as it shows how to send back HTML, CSS and JavaScript to the client.</p>
+<h2 id="creating-the-data">Creating the Data</h2>
+<p>The method you write to insert data into the database should have at least these two features:</p>
+<ul>
+<li>Write to a collection called <strong>test_data</strong>. Do not write to the <strong>test_insert</strong> collection used in MongoTalk and MongoTalk02.</li>
+<li>Your data should look like sample address book data, with firstName, lastName, address, city, state and zip fields.</li>
+</ul>
+<p>Here is what the first record should look like:</p>
+<pre><code>Rita10001 Hill10001
+10001 Ruby Street
+Bellevue, WA 98002</code></pre>
+<p>Here is what the second record should look like:</p>
+<pre><code>Rita10002 Hill10002
+10002 Ruby Street
+Bellevue, WA 98002</code></pre>
+<p>And so on up to Rita10250. Remember, you should auto-generate these records in some kind of loop.</p>
+<p>This should be enough to get you started. More information coming soon.</p>
