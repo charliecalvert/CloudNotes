@@ -56,7 +56,7 @@ Finally, add a reminder and two tags. The tags should read as follows:
 
 Here is what your work would look like in the Evernote app for Windows:
 
-![Evernote Week05](images/EvernoteWeek0501.png)
+![Evernote Week05](../Images/EvernoteWeek0501.png)
 
 The note looks very much the same in a browser. The look on an Android
 device is a bit different, but not radically so.
@@ -66,7 +66,7 @@ Part II
 
 Perform the same operation in Microsoft OneNote. 
 
-![OneNote](images/OneNote01.png)
+![OneNote](../Images/OneNote01.png)
 
 To create a OneNote folder, select the Create menu item in SkyDrive, 
 and then choose to create a **OneNote notebook**. You should do all 

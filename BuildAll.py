@@ -65,6 +65,6 @@ markdown = MarkdownToHtml()
 cloudRoot(markdown)
 prog280(markdown)
 prog272(markdown)
-#assignments(markdown);
+assignments(markdown);
 #prog270(markdown)
 #isit320(markdown)
