@@ -61,7 +61,7 @@ Here is what your work would look like in the Evernote app for Windows:
 The note looks very much the same in a browser. The look on an Android
 device is a bit different, but not radically so.
 
-Part II
+Part II: OneNote
 -------
 
 Perform the same operation in Microsoft OneNote. 
