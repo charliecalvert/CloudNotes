@@ -1,7 +1,8 @@
-Evernote Assignment 01
+Evernote and OneNote Assignment 01
 ===============
 
-The purpose of this exercise is to help you understand Evernote.
+The purpose of this exercise is to help you understand Evernote and
+OneNote.  
 
 Part I: Evernote
 ----------------
@@ -69,13 +70,20 @@ Perform the same operation in Microsoft OneNote.
 ![OneNote](../Images/OneNote01.png)
 
 To create a OneNote folder, select the Create menu item in SkyDrive, 
-and then choose to create a **OneNote notebook**. You should do all 
-your work in a web browser or mobile device, and not in Microsoft 
-Office.
+and then choose to create a **OneNote notebook**. You might find it 
+most useful if you do all your work in a web browser or mobile 
+device, and not in Microsoft Office. You probably already know how
+to use Microsoft Office, so stretch yourself a bit and learn to use
+other tools.
 
 You will have to share the OneNote Notebook that you create with me.
 Share it with same address that you used when sharing the SkyDrive 
-folder with me. 
+folder with me. (The point here is that I don't think it is possible
+to put a OneNote notebook in a SkyDrive folder. So you have to create
+the notebook, and then share it with me. Once you have shared the folder
+with me, then you can create more notes in the folder and I will see
+them automatically. Unlike Evernote, OneNote provides the ability to
+share notebooks that both parties can edit.
 
 When creating lists, numbered lists, and checklists you generally
 right click to get started. Suppose you entered a value like this:
