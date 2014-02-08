@@ -82,7 +82,7 @@ You might also find this example helpful:
 
 - [SimpleReadWriteJson](https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/NodeCode/SimpleReadWriteJson/server.js)
 
-SimpleReadWriteJson shows how to read and write a Json file. You will be
+**SimpleReadWriteJson** shows how to read and write a Json file. You will be
 reading from a database, not a file. Also, you will not need to write
 anything to the database at this stage. Still, the example is interesting,
 particularly as it shows how to send back HTML, CSS and JavaScript to
@@ -90,6 +90,16 @@ the client.
 
 Creating the Data
 -----------------
+
+It might make sense to create two scripts:
+
+- One for populating and maintaing the database
+- One that serves up data to the client
+
+Or you could check to see if the database is populated, and if not,
+to populate it. Or we could add a button to our client to populate 
+the database. For now, though, the two script idea is probably 
+simplest.
 
 The method you write to insert data into the database should have 
 at least these two features:

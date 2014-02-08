@@ -39,8 +39,14 @@ res.end();</code></pre>
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/NodeCode/SimpleReadWriteJson/server.js">SimpleReadWriteJson</a></li>
 </ul>
-<p>SimpleReadWriteJson shows how to read and write a Json file. You will be reading from a database, not a file. Also, you will not need to write anything to the database at this stage. Still, the example is interesting, particularly as it shows how to send back HTML, CSS and JavaScript to the client.</p>
+<p><strong>SimpleReadWriteJson</strong> shows how to read and write a Json file. You will be reading from a database, not a file. Also, you will not need to write anything to the database at this stage. Still, the example is interesting, particularly as it shows how to send back HTML, CSS and JavaScript to the client.</p>
 <h2 id="creating-the-data">Creating the Data</h2>
+<p>It might make sense to create two scripts:</p>
+<ul>
+<li>One for populating and maintaing the database</li>
+<li>One that serves up data to the client</li>
+</ul>
+<p>Or you could check to see if the database is populated, and if not, to populate it. Or we could add a button to our client to populate the database. For now, though, the two script idea is probably simplest.</p>
 <p>The method you write to insert data into the database should have at least these two features:</p>
 <ul>
 <li>Write to a collection called <strong>test_data</strong>. Do not write to the <strong>test_insert</strong> collection used in MongoTalk and MongoTalk02.</li>
