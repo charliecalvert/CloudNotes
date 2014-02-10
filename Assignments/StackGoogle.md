@@ -11,7 +11,7 @@ Overview
 
 Complete the following steps:
 
-- Create an account in StackEdit.
+- Go to the [StackEdit](https://stackedit.io) site on the web.
 - Create a markdown document in StackEdit
 - Save the document in your Google Drive **Online Presence** shared
 folder

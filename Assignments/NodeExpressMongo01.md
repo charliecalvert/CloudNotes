@@ -74,7 +74,55 @@ Tuesday, Feb 04. The data you created will likely be different.  For
 this assignment, you will want to create a new collection and new 
 data, as explained below.
 
-And here is the example that is shown in the previous screenshot:
+Screenshots
+-----------
+
+The screenshot shown below is probably not exactly the interface for
+the program you want to turn in. However, it might be helpful to look
+at it for a second.
+
+![MongoTalk02](../Images/NodeExpressMongo02.png)
+
+Notice the following from the above screen shot:
+
+- The display of one record, including: firstName, lastName, address, etc.
+- The input box (type="number") for entering the number of the record you want to view.
+- The button to click to show the record.
+
+Here is what the screen looks like after the user as requested to see the
+second record:
+
+![MongoTalk02](../Images/NodeExpressMongo03.png)
+
+Finally, notice the array of five records displayed at the bottom of 
+the screen. This is not part of the assignment. In this case, I just 
+deleted all existing records from the **collection** and added only 
+five new ones. I had my program display these five records using a 
+technique illustrated in **MongoTalk02**. My goal was to provide a 
+screen shot for you that illustrats key elements of the interface I 
+want to see in your assignment. It also provides a few tips as to 
+what is happening behind the scenes. In particular, it shows the 
+loaded data looks like as it sits in memory.
+
+Code to Delete Records
+----------------------
+
+The heart of your delete function might look something like this, though
+your implementation may differ in various small details:
+
+	var collection = database.collection('test_insert');
+	collection.remove(function(err) {
+		if (err) {
+			throw err;
+		}
+		database.close();
+	});
+
+
+Example Code
+------------
+
+And here is the MongoTalk02 example that is shown in a previous screenshot:
 
 - [MongoTalk02 in JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoTalk02)
 

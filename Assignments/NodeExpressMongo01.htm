@@ -31,7 +31,33 @@ res.end();</code></pre>
 <img src="../Images/NodeExpressMongo01.png" alt="MongoTalk02" /><figcaption>MongoTalk02</figcaption>
 </figure>
 <p>If you have not already done so, you need to run <strong>MongoTalk</strong> before you run <strong>MongoTalk02</strong> so that at least some data will be in MongoDb. In the screenshot shown above, you can see that MongoTalk02 retrieves the data that I created with <strong>MongoTalk</strong> during our class on Tuesday, Feb 04. The data you created will likely be different. For this assignment, you will want to create a new collection and new data, as explained below.</p>
-<p>And here is the example that is shown in the previous screenshot:</p>
+<h2 id="screenshots">Screenshots</h2>
+<p>The screenshot shown below is probably not exactly the interface for the program you want to turn in. However, it might be helpful to look at it for a second.</p>
+<figure>
+<img src="../Images/NodeExpressMongo02.png" alt="MongoTalk02" /><figcaption>MongoTalk02</figcaption>
+</figure>
+<p>Notice the following from the above screen shot:</p>
+<ul>
+<li>The display of one record, including: firstName, lastName, address, etc.</li>
+<li>The input box (type=&quot;number&quot;) for entering the number of the record you want to view.</li>
+<li>The button to click to show the record.</li>
+</ul>
+<p>Here is what the screen looks like after the user as requested to see the second record:</p>
+<figure>
+<img src="../Images/NodeExpressMongo03.png" alt="MongoTalk02" /><figcaption>MongoTalk02</figcaption>
+</figure>
+<p>Finally, notice the array of five records displayed at the bottom of the screen. This is not part of the assignment. In this case, I just deleted all existing records from the <strong>collection</strong> and added only five new ones. I had my program display these five records using a technique illustrated in <strong>MongoTalk02</strong>. My goal was to provide a screen shot for you that illustrats key elements of the interface I want to see in your assignment. It also provides a few tips as to what is happening behind the scenes. In particular, it shows the loaded data looks like as it sits in memory.</p>
+<h2 id="code-to-delete-records">Code to Delete Records</h2>
+<p>The heart of your delete function might look something like this, though your implementation may differ in various small details:</p>
+<pre><code>var collection = database.collection(&#39;test_insert&#39;);
+collection.remove(function(err) {
+    if (err) {
+        throw err;
+    }
+    database.close();
+});</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>And here is the MongoTalk02 example that is shown in a previous screenshot:</p>
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoTalk02">MongoTalk02 in JsObjects</a></li>
 </ul>

@@ -1,20 +1,20 @@
-WikiMedia
----------
 
--   Create Pages
 
--   Create Users
+Install Guest Additions in Linux
+--------------------------------
 
--   Change Skin
+If you set up the VirtualBox Guest Additions in Linux, you will find
+that you have better control over your virtual machine. In particular,
+you will find it easier to resize your desktop or make it full screen.
+You should also have better control over the mouse.
 
-WikiMedia Editing
------------------
+- [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#guest)
 
--   Headings
+Share Clipboard Between Windows and Linux
+-----------------------------------------
 
--   Bullets - Lists
+- [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard)
 
--   Links
 
 DropBox
 -------
@@ -23,14 +23,12 @@ DHCP
 ----
 
 -   IP Addresses
-
 -   Routers
 
 Networking and VirtualBox
 -------------------------
 
 -   MAC Addresses
-
 -   Copy from One Machine to Another
 
 Virtual Appliances
@@ -41,10 +39,11 @@ virtual appliances, read the first page listed here. It is a good idea, however,
 to become familiar with all three pages:
 
 -   <http://www.elvenware.com/charlie/development/cloud/virtualization.html>
-
 -   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html>
-
 -   <http://www.elvenware.com/charlie/development/android/Androidx86.shtml>
+
+Networks
+--------
 
 See also this page:
 
@@ -53,12 +52,10 @@ See also this page:
 You can run the PING command to find out if you are connected to the Internet.
 Also, run **ifconfig** on Linux, and **ipconfig /all** on Windows.
 
-![](<https://bc.instructure.com/courses/793364/files/23946284/preview>)
+![NetRouter](http://elvenware.com/charlie/development/cloud/images/NetRouter01.png)
+![NetRouter](http://elvenware.com/charlie/development/cloud/images/NetRouter02.png)
+![NetRouter](http://elvenware.com/charlie/development/cloud/images/NetRouter03.png)
 
-<https://bc.instructure.com/courses/793364/files/23946285/preview>
-------------------------------------------------------------------
-
-![](<https://bc.instructure.com/courses/793364/files/23946286/preview>)
 
 Figure 03: There are two active network adapters on my system. One is for my
 ethernet cable, the other for wifi. If I connect to a VM, and choose Realtek
@@ -74,4 +71,4 @@ out, the option to choose a new adapter is still available, and I can switch
 back and forth at run time. However, it often takes about 15 to 30 seconds
 before the change registers with the VM. So you need patience.
 
-![](<https://bc.instructure.com/courses/793364/files/23946287/preview>)
+![NetRouter](http://elvenware.com/charlie/development/cloud/images/NetRouter04.png)

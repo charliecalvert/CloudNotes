@@ -6,6 +6,33 @@ Main Goals
 -   Review module pattern
 -   Review File System
 
+Install Guest Additions in Linux
+--------------------------------
+
+If you set up the VirtualBox Guest Additions in Linux, you will find
+that you have better control over your virtual machine. In particular,
+you will find it easier to resize your desktop or make it full screen.
+You should also have better control over the mouse.
+
+- [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#guest)
+
+Share Clipboard Between Windows and Linux
+-----------------------------------------
+
+- [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard)
+
+Virtual Appliances
+------------------
+
+There are three pages on Elvenware that focus on VirtualBox. To learn about
+virtual appliances, read the first page listed here. It is a good idea, however,
+to become familiar with all three pages:
+
+-   <http://www.elvenware.com/charlie/development/cloud/virtualization.html>
+-   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html>
+-   <http://www.elvenware.com/charlie/development/android/Androidx86.shtml>
+
+
 Get ReadOnly JsObjects
 ----------------------
 

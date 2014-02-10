@@ -25,3 +25,23 @@ Git
 See this page for more information on installing and using Git:
 
 <http://www.elvenware.com/charlie/development/cloud/Git.html>
+
+
+WikiMedia
+---------
+
+-   Create Pages
+
+-   Create Users
+
+-   Change Skin
+
+WikiMedia Editing
+-----------------
+
+-   Headings
+
+-   Bullets - Lists
+
+-   Links
+
