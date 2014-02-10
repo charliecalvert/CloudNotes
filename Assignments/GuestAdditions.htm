@@ -1,0 +1,33 @@
+<p>Title: VirtualBox Guest Additions Author: Charlie Calvert Keywords: Data, VirtualBox, Linux</p>
+<h1 id="virtualbox-guest-additions">VirtualBox Guest Additions</h1>
+<h2 id="install-guest-additions-in-linux">Install Guest Additions in Linux</h2>
+<p>This is not a difficult assignment, but it can make your experience with Linux and VirtualBox significantly simpler.</p>
+<p>If you set up the VirtualBox Guest Additions in Linux, you will find that you have better control over your virtual machine. In particular, you will find it easier to resize your desktop or view it in full screen. You should also have better control over the mouse.</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#guest">Details</a></li>
+</ul>
+<h2 id="share-clipboard-between-windows-and-linux">Share Clipboard Between Windows and Linux</h2>
+<p>Again, this is not a difficult assignment, but I suggest that you do set up the clipboard so that you can copy text back and forth between Windows and Linux.</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard">Details</a></li>
+</ul>
+<h1 id="turn-it-in">Turn it In</h1>
+<p>When you are done, open the command box in Linux. You are probably already in your home directory, but just in case, issue the following command:</p>
+<pre><code>cd</code></pre>
+<p>Just type <strong>cd</strong> and then press enter. That will take you to your home directory.</p>
+<p>Now run the following command:</p>
+<pre><code>sudo VBoxControl guestproperty enumerate</code></pre>
+<p>You should see a lot of text. One of the first lines probably looks something like this:</p>
+<pre><code>Name: /VirtualBox/GuestInfo/OS/Product, value: Linux, timestamp: 1391973938040846300, flags: &lt;NULL&gt;</code></pre>
+<p>Now run the command again, only this time pipe the output into a file called <strong>Guest.txt</strong>:</p>
+<pre><code>sudo VBoxControl guestproperty enumerate &gt; Guest.txt</code></pre>
+<p>Use Geany or some other text editor to open <strong>Guest.txt</strong>. Block copy its entire contents. Now open the browser and sign into Evernote. Create a new note in your Evernote shared folder from the <strong>Online Presence assignment</strong>. Call your note <strong>GuestAdditions-LastName</strong>, where LastName is your last name.</p>
+<p>To submit the assignment, provide a link to your Evernote folder.</p>
+<p>Your note will be fairly long, but the top bit should look something like this:</p>
+<figure>
+<img src="../Images/VBoxManage01.png" alt="VBoxControl on Linux" /><figcaption>VBoxControl on Linux</figcaption>
+</figure>
+<p>Once you have the document in Evernote, you can view it everywhere. Here, for instance, is how it looks on Windows:</p>
+<figure>
+<img src="../Images/VBoxManage02.png" alt="VBoxControl on Linux" /><figcaption>VBoxControl on Linux</figcaption>
+</figure>

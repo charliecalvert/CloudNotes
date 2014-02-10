@@ -9,24 +9,31 @@ Main Goals
 Install Guest Additions in Linux
 --------------------------------
 
-If you set up the VirtualBox Guest Additions in Linux, you will find
-that you have better control over your virtual machine. In particular,
-you will find it easier to resize your desktop or make it full screen.
-You should also have better control over the mouse.
+This is not an assignment, but I suggest that you do install the 
+Guest Additions.
+
+If you set up the VirtualBox Guest Additions in Linux, you will find 
+that you have better control over your virtual machine. In 
+particular, you will find it easier to resize your desktop or make 
+it full screen. You should also have better control over the mouse.
 
 - [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#guest)
 
 Share Clipboard Between Windows and Linux
 -----------------------------------------
 
+Again, this is not an assignment, but I suggest that you do set up 
+the clipboard so that you can copy text back and forth between 
+Windows and Linux.
+
 - [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard)
 
 Virtual Appliances
 ------------------
 
-There are three pages on Elvenware that focus on VirtualBox. To learn about
-virtual appliances, read the first page listed here. It is a good idea, however,
-to become familiar with all three pages:
+There are three pages on Elvenware that focus on VirtualBox. To 
+learn about virtual appliances, read the first page listed here. It 
+is a good idea, however, to become familiar with all three pages:
 
 -   <http://www.elvenware.com/charlie/development/cloud/virtualization.html>
 -   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html>
@@ -36,9 +43,17 @@ to become familiar with all three pages:
 Get ReadOnly JsObjects
 ----------------------
 
-If necessary, install Git:
+Having a copy of JsObjects on your various machines can be useful, as it contains many helpful examples. For instance, when you create a new Virtual Machine, you probably want to have JsObjects installed on it. Here is a brief review of how you can, as necessary, install Git:
 
     sudo apt-get install git
+    
+Now navigate to place on your hard drive where you can clone JsObjects. On Linux, that would usually be a folder called Git or GitHub. Here is how to create the folder:
+
+    mkdir ~/Git
+    
+Now navigate to that folder:
+
+    cd ~/Git
     
 And then clone my repo:
 
@@ -74,7 +89,12 @@ existing projects as per the instructions for the assignment.
 SSH
 ---
 
+You want to be sure that your copy of Linux has SSH installed. Here is the command to install SSH:
+
 	sudo apt-get install ssh
+	
+Here are two commands that create a pulic and private key for your Linux box, and save them in your .ssh folder:
+
 	ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
 	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
@@ -118,37 +138,7 @@ Passing Parameters
 
 One tip I should share with everyone: You can pass in parameters to click functions.
 
-Suppose you respond to a button click:
-
-	$("#button01").click(foo);
-
-And you implement foo:
-
-	function foo() { return 2 };
-
-But sometimes you want to pass in a parameter to foo:
-
-	function foo(x) { return 2 * x; }
-
-You can pass in the parameter inside a JavaScript object like this:
-
-	$("#button01").click({ x: 2 }, foo);
-
-Then implement foo like this:
-
-	function foo(event) {
-	  var x = event.data.x; 
-	  return 2 * x;
-	}
-
-This is better than the buttonClickPrivate solution that I showed in
-class.
-
-- <http://api.jquery.com/event.data/>
-- <http://api.jquery.com/category/events/event-object/>
-- <http://stackoverflow.com/a/9467172/253576>
-
-All of the above is also in Elvenware proper. 
+- [Details](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#clickParam)
 
 Mocking Objects
 ---------------

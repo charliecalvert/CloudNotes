@@ -6,11 +6,13 @@
 <li>Review File System</li>
 </ul>
 <h2 id="install-guest-additions-in-linux">Install Guest Additions in Linux</h2>
+<p>This is not an assignment, but I suggest that you do install the Guest Additions.</p>
 <p>If you set up the VirtualBox Guest Additions in Linux, you will find that you have better control over your virtual machine. In particular, you will find it easier to resize your desktop or make it full screen. You should also have better control over the mouse.</p>
 <ul>
 <li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#guest">Details</a></li>
 </ul>
 <h2 id="share-clipboard-between-windows-and-linux">Share Clipboard Between Windows and Linux</h2>
+<p>Again, this is not an assignment, but I suggest that you do set up the clipboard so that you can copy text back and forth between Windows and Linux.</p>
 <ul>
 <li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard">Details</a></li>
 </ul>
@@ -22,8 +24,12 @@
 <li><a href="http://www.elvenware.com/charlie/development/android/Androidx86.shtml">http://www.elvenware.com/charlie/development/android/Androidx86.shtml</a></li>
 </ul>
 <h2 id="get-readonly-jsobjects">Get ReadOnly JsObjects</h2>
-<p>If necessary, install Git:</p>
+<p>Having a copy of JsObjects on your various machines can be useful, as it contains many helpful examples. For instance, when you create a new Virtual Machine, you probably want to have JsObjects installed on it. Here is a brief review of how you can, as necessary, install Git:</p>
 <pre><code>sudo apt-get install git</code></pre>
+<p>Now navigate to place on your hard drive where you can clone JsObjects. On Linux, that would usually be a folder called Git or GitHub. Here is how to create the folder:</p>
+<pre><code>mkdir ~/Git</code></pre>
+<p>Now navigate to that folder:</p>
+<pre><code>cd ~/Git</code></pre>
 <p>And then clone my repo:</p>
 <pre><code>git clone git://github.com/charliecalvert/JsObjects.git</code></pre>
 <h2 id="no-hellocordova-accepted">No HelloCordova Accepted</h2>
@@ -37,8 +43,10 @@ cordova build</code></pre>
 <p>Assuming you have the right tools and right setup, both work, and both give you a project with a custom name, rather than a default name of <strong>HellowCordova</strong>. I just won't accept projects named <strong>HelloCordova</strong>, it puts the onus on me to do something in multiple steps that you should have done in one step.</p>
 <p>Bottom line: I understand that we are still in the early phases, and it is hard to understand everything we need to do. But please don't turn in projects called <strong>HelloCordova</strong>. After this, I just won't grade any more projects with that name, and please rename any existing projects as per the instructions for the assignment.</p>
 <h2 id="ssh">SSH</h2>
-<pre><code>sudo apt-get install ssh
-ssh-keygen -t rsa -P &#39;&#39; -f ~/.ssh/id_rsa 
+<p>You want to be sure that your copy of Linux has SSH installed. Here is the command to install SSH:</p>
+<pre><code>sudo apt-get install ssh</code></pre>
+<p>Here are two commands that create a pulic and private key for your Linux box, and save them in your .ssh folder:</p>
+<pre><code>ssh-keygen -t rsa -P &#39;&#39; -f ~/.ssh/id_rsa 
 cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/cloud/Git.html#the-ssh-key">Git and SSH Key</a></li>
@@ -66,26 +74,9 @@ sudo service mongodb restart</code></pre>
 db.getCollection(&quot;test_insert&quot;).find()</code></pre>
 <h2 id="passing-parameters">Passing Parameters</h2>
 <p>One tip I should share with everyone: You can pass in parameters to click functions.</p>
-<p>Suppose you respond to a button click:</p>
-<pre><code>$(&quot;#button01&quot;).click(foo);</code></pre>
-<p>And you implement foo:</p>
-<pre><code>function foo() { return 2 };</code></pre>
-<p>But sometimes you want to pass in a parameter to foo:</p>
-<pre><code>function foo(x) { return 2 * x; }</code></pre>
-<p>You can pass in the parameter inside a JavaScript object like this:</p>
-<pre><code>$(&quot;#button01&quot;).click({ x: 2 }, foo);</code></pre>
-<p>Then implement foo like this:</p>
-<pre><code>function foo(event) {
-  var x = event.data.x; 
-  return 2 * x;
-}</code></pre>
-<p>This is better than the buttonClickPrivate solution that I showed in class.</p>
 <ul>
-<li><a href="http://api.jquery.com/event.data/">http://api.jquery.com/event.data/</a></li>
-<li><a href="http://api.jquery.com/category/events/event-object/">http://api.jquery.com/category/events/event-object/</a></li>
-<li><a href="http://stackoverflow.com/a/9467172/253576">http://stackoverflow.com/a/9467172/253576</a></li>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#clickParam">Details</a></li>
 </ul>
-<p>All of the above is also in Elvenware proper.</p>
 <h2 id="mocking-objects">Mocking Objects</h2>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend">HttpBackEnd and Jasmine</a></li>

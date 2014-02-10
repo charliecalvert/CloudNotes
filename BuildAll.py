@@ -58,7 +58,7 @@ def assignments(markdown):
 	files=["Prog270-011414", "OwnCloudInstall", "Cordova01",
 		"LampBootstrap", "InfoManager01", "CodeAcademy01",
 		"Evernote01", "NodeExpressMongo01", "StackGoogle",
-		"StackDropBox"]
+		"StackDropBox", "GuestAdditions"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program
