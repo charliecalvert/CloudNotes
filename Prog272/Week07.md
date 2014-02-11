@@ -9,7 +9,34 @@ at jQuery.getJSON.
 -   JQueryLoad01
 -   JQuerySelect01 (Cordova)
 
-Working with JSON:
+Other Programs of Interest
+--------------------------
+
+- CordovaListDirectories
+- CordovaListDirs02
+- CordovaFileReader
+- WebFileTests
+- HandleBarDemo01
+
+Source from class: [ObjectVariables01.zip][1][^2]
+
+[1]: <https://bc.instructure.com/courses/795060/files/23932861/download?wrap=1>
+
+[^2]: <https://bc.instructure.com/courses/795060/files/23932861/download?wrap=1>
+
+
+Handlebars
+----------
+
+<http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars>
+
+Install Linux
+-------------
+
+-   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install>
+
+Working with JSON
+-----------------
 
 <http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON>
 
