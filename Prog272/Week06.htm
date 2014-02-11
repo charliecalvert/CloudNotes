@@ -150,9 +150,16 @@ db.version() current version of the server</code></pre>
 <p>Instead, it is better to put code like this in your JavaScript file:</p>
 <pre><code>\$(&quot;#myButton01&quot;).click(myObject.runButton01);</code></pre>
 <h2 id="more-on-adb">More on ADB</h2>
-<p>You can install program, copy files, and start a shell. See here:</p>
+<p>We generally use ADB to connect to our AndroidX86 instances:</p>
+<pre><code>adb connect 192.168.XX.XX</code></pre>
+<p>However, you can use ADB for a lot more than just establishing a connection. For instance, ou can install a compiled Android program (an APK), you can copy files to your device, and start a shell session on the device. That is like opening the commannd prompt on the device, but you can do it from the Windows command prompt. For more details, see here:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK">http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK</a></li>
+</ul>
+<h2 id="install-linux">Install Linux</h2>
+<p>Just a reminder that there is some information here on installing Linux. This is just an fyi, just information that you might find useful:</p>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install">http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install</a></li>
 </ul>
 <blockquote>
 <p>Written in part with <a href="https://stackedit.io/">StackEdit</a>.</p>

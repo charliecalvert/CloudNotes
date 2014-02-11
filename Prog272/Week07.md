@@ -30,10 +30,6 @@ Handlebars
 
 <http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars>
 
-Install Linux
--------------
-
--   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install>
 
 Working with JSON
 -----------------

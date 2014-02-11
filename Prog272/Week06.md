@@ -219,11 +219,27 @@ Instead, it is better to put code like this in your JavaScript file:
 More on ADB
 -----------
 
-You can install program, copy files, and start a shell. See here:
+We generally use ADB to connect to our AndroidX86 instances:
+
+	adb connect 192.168.XX.XX
+	
+However, you can use ADB for a lot more than just establishing a 
+connection. For instance, ou can install a compiled Android program 
+(an APK), you can copy files to your device, and start a shell session
+on the device. That is like opening the commannd prompt on the
+device, but you can do it from the Windows command prompt. For more
+details, see here:
 
 - <http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK>
 
 
+Install Linux
+-------------
+
+Just a reminder that there is some information here on installing Linux. 
+This is just an fyi, just information that you might find useful:
+
+-   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install>
 
 
 > Written in part with [StackEdit](https://stackedit.io/).
