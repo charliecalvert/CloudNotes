@@ -51,7 +51,8 @@ def prog280(markdown):
 	makeItSo(markdown, "Prog280", files);
 
 def prog272(markdown):
-	files=["Resources", "Week01", 'Week02', 'Week03', 'Week04', 'Week05'];
+	files=["Resources", "Week01", 'Week02', 'Week03', 'Week04', 
+		'Week05', 'Week06'];
 	makeItSo(markdown, "Prog272", files);
 
 def assignments(markdown):
@@ -59,7 +60,7 @@ def assignments(markdown):
 		"LampBootstrap", "InfoManager01", "CodeAcademy01",
 		"Evernote01", "NodeExpressMongo01", "StackGoogle",
 		"StackDropBox", "GuestAdditions", "NodeModulesAssignment",
-		"MongoMark"]
+		"MongoMark", "NodeRoutes01"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program
