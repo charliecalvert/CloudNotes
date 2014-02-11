@@ -1,7 +1,3 @@
-Title: VirtualBox Guest Additions
-Author: Charlie Calvert
-Keywords: Data, VirtualBox, Linux
-
 VirtualBox Guest Additions
 ===========================
 
