@@ -69,12 +69,16 @@ app.use(&quot;/&quot;, express.static(__dirname + &#39;/Public&#39;));</code></p
         }).error(function(err) {
             console.log(err.responseText);
         });
-}
+    }
 
-// return the constructor.
-return Run;</code></pre>
-<p>})();</p>
-<p>$(document).ready(function() { new Run();<br />});</p>
+    // return the constructor.
+    return Run;
+})();
+
+$(document).ready(function() {
+    new Run();  
+});</code></pre>
+<p>Here we use the modular pattern.</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>

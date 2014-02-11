@@ -85,20 +85,16 @@ The important code on the client is found **index.js**:
     		}).error(function(err) {
     			console.log(err.responseText);
     		});
-	}
-	
-	// return the constructor.
-	return Run;
-})();
+		}
 
+		// return the constructor.
+		return Run;
+	})();
 
+	$(document).ready(function() {
+		new Run();	
+	});
 
-$(document).ready(function() {
-	new Run();	
-});
-
-
-
-
+Here we use the modular pattern.
 
 > Written with [StackEdit](https://stackedit.io/).
