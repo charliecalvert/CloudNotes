@@ -1,6 +1,7 @@
 <h1 id="prog-272-week-06-2013">Prog 272 Week 06, 2013</h1>
 <p>This week we want to focus on:</p>
 <ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html">Modular Pattern</a></li>
 <li>Express routes</li>
 <li>Node Modules (require)</li>
 <li>Markdown</li>
@@ -8,19 +9,29 @@
 <li>jQuery selectors</li>
 </ul>
 <h2 id="programs-to-look-at">Programs to look At</h2>
+<p>For parsing HTML</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/DocParse01">DocParse01</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/DocParse02">DocParse02</a></li>
+</ul>
+<p>For working with modules:</p>
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeModules">NodeModules</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01">NodeRoutes01</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02">NodeRoutes02</a></li>
 </ul>
-<h2 id="other-programs-of-interest">Other Programs of Interest</h2>
+<p>For working with Routes:</p>
 <ul>
-<li>CordovaListDirectories</li>
-<li>CordovaListDirs02</li>
-<li>CordovaFileReader</li>
-<li>WebFileTests</li>
-<li>HandleBarDemo01</li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01">NodeRoutes01</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02">NodeRoutes02</a></li>
 </ul>
+<h2 id="globals">Globals</h2>
+<pre><code>function foo() {
+  var number01 = 0;
+  number02 = 0; 
+}</code></pre>
+<p>In this example, number01 is not a global variable, but number02 is global. That is, it is part of window: window.number02.</p>
+<p>JSHint is designed to help you catch problems like this, particularly if you turn on strict mode. In fact, in strict mode, many browsers will through a ReferenceError if number02 is not defined.</p>
 <h2 id="module-pattern">Module Pattern</h2>
 <p>The module pattern pattern</p>
 <ul>
@@ -29,6 +40,11 @@
 </ul>
 <p>More on functions, methods and constructors.</p>
 <p>More on passing functions as a parameter.</p>
+<h2 id="global-abatement">Global Abatement</h2>
+<pre><code>var MyApp = {};
+MyApp.InitCordova = (function() { } )();
+MyApp.ShowDirectories = (function() { } )();</code></pre>
+<p>There are also tools like AMD modules used with RequireJS or Dojo. We are not going to cover them in this part of this course.</p>
 <h2 id="mongodb-notes">MongoDb Notes</h2>
 <p>If you try to start MongoDB, and find that it won't start, or at least won't stay running after it starts, the problem could be that you are out of disk space. MongoDB wants lots of diskspace, something like 3.5 GB. You can, however, request that it use less disk space by putting <strong>smallfiles = true</strong> at the end of <strong>/etc/mongodb.conf</strong>. Now your database will be limited in size in half a gig, but that should be plenty for our needs.</p>
 <p>You can access at least a few minimal facts about your running instance of MongoDb in a broswer by going to this address:</p>
@@ -107,8 +123,7 @@ db.stats()
 db.version() current version of the server</code></pre>
 <h2 id="notes">Notes</h2>
 <p>Reply in conversations in the appropriate assignment, not just as a general comment.</p>
-<p>It's JavaScript first, jQuery second. jQuery is a library built on top of JavaScript. No matter how could the library, it is the language that is primary.</p>
-<p>Put ShowDirectories in your main object.</p>
+<p>It's JavaScript first, jQuery second. jQuery is a library built on top of JavaScript. No matter how good the library, it is the language that is primary.</p>
 <h2 id="working-with-input-and-select-controls">Working with Input and Select Controls</h2>
 <ul>
 <li><a href="http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#input">http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#input</a></li>
@@ -129,15 +144,6 @@ db.version() current version of the server</code></pre>
     var lastName;
     x = 2 + 3;
 }</code></pre>
-<h2 id="globals">Globals</h2>
-<p>Source from class: <a href="https://bc.instructure.com/courses/795060/files/23932861/download?wrap=1">ObjectVariables01.zip</a><sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup></p>
-<p>In this example, number01 is not a global variable, but number02 is global. That is, it is part of window: window.number02.</p>
-<p>JSHint is designed to help you catch problems like this, particularly if you turn on strict mode. In fact, in strict mode, many browsers will through a ReferenceError if number02 is not defined.</p>
-<h2 id="global-abatement">Global Abatement</h2>
-<pre><code>var MyApp = {};
-MyApp.InitCordova = (function() { } )();
-MyApp.ShowDirectories = (function() { } )();</code></pre>
-<p>There are also tools like AMD modules used with RequireJS or Dojo. We are not going to cover them in this part of this course.</p>
 <h2 id="separate-html-css-and-javascript">Separate HTML, CSS and JavaScript</h2>
 <p>Reasons:</p>
 <ul>
@@ -154,24 +160,18 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 01\&lt;/button\&gt;</code></pre>
 <p>Instead, it is better to put code like this in your JavaScript file:</p>
 <pre><code>\$(&quot;#myButton01&quot;).click(myObject.runButton01);</code></pre>
-<h2 id="handlebars">Handlebars</h2>
-<p><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars">http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars</a></p>
 <h2 id="more-on-adb">More on ADB</h2>
-<p>You can install program, copy files, and start a shell. See here:</p>
+<p>We generally use ADB to connect to our AndroidX86 instances:</p>
+<pre><code>adb connect 192.168.XX.XX</code></pre>
+<p>However, you can use ADB for a lot more than just establishing a connection. For instance, ou can install a compiled Android program (an APK), you can copy files to your device, and start a shell session on the device. That is like opening the commannd prompt on the device, but you can do it from the Windows command prompt. For more details, see here:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK">http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK</a></li>
 </ul>
 <h2 id="install-linux">Install Linux</h2>
+<p>Just a reminder that there is some information here on installing Linux. This is just an fyi, just information that you might find useful:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install">http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install</a></li>
 </ul>
 <blockquote>
-<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+<p>Written in part with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
-<section class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p><a href="https://bc.instructure.com/courses/795060/files/23932861/download?wrap=1">https://bc.instructure.com/courses/795060/files/23932861/download?wrap=1</a></p>
-<p>function foo() { var number01 = 0; number02 = 0; }<a href="#fnref1">↩</a></p></li>
-</ol>
-</section>
