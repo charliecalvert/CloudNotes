@@ -34,7 +34,9 @@ After reading in the file it inserts places it insert a JSON object and stores i
 - Remember the name of the markdown file
 - Store the markdown text.
 
-**CreateJson.js** can also read the data back from the database, convert the markdown into html, and send it to the client browser. Conversion from markdown to HTML is handled by an external program called [Pandoc](http://johnmacfarlane.net/pandoc/):
+**CreateJson.js** can also read the data back from the database. It converts the markdown into html, and sends it to the client browser. An external program called Pandoc handles conversion from markdown to HTML.
+
+- [Pandoc](http://johnmacfarlane.net/pandoc/)
 
     var exec = require('child_process').exec;
     
