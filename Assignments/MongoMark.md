@@ -9,6 +9,8 @@ Your MongoMark application should be able to do the following:
 - Read the file back from the database
 - Convert the file to HTML
 - Display portions of the converted HTML in a browser
+- One the client you should be able to choose the different sections of 
+your HTML file. See the DocParse01 and 02 examples from JsObjects.
 
 The application contains:
 

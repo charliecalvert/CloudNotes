@@ -13,7 +13,19 @@ This week we want to focus on:
 Programs to look At
 -------------------
 
+For parsing HTML
+
+- [DocParse01](https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/DocParse01)
+- [DocParse02](https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/DocParse02)
+
+For working with modules:
+
 - [NodeModules](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeModules)
+- [NodeRoutes01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01)
+- [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02)
+
+For working with Routes:
+
 - [NodeRoutes01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01)
 - [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02)
 
