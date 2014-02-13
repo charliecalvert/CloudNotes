@@ -39,6 +39,7 @@ of these languages, APIs and tools.
 - [jQuery on Elvewnare](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
 - [NodeJs and Express on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
+- [JavaScript Patterns](http://shichuan.github.io/javascript-patterns/)
 
 ###Working with Buttons, Input Controls and jQuery
 

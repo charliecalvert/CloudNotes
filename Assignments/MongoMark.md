@@ -68,7 +68,7 @@ All three pages are stored in a directory called **Public**. They are loaded wit
     // Give express access to the Public directory
     app.use("/", express.static(__dirname + '/Public'));
 
-The above code is used so often that can be considered a patter. If you have place where you store default code, you should paste it in so you can access it again later. The following link provides an overview of the code like that shown above:
+We use code like this often.  If you have place where you store default code, you should paste it in so you can access it again later. The following link provides an overview of the code that follows this pattern:
 
 - [Elvenware Express](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-express)
 - [app.use](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-a-directory-with-app.use)

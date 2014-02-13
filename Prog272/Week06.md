@@ -10,6 +10,28 @@ This week we want to focus on:
 - Storing Markdown in MongoDB
 - jQuery selectors
 
+
+Yeoman
+-----
+
+[Yeoman](http://yeoman.io/) is a way out of control that will automatically
+create a web application for you, and set up grunt and bower.
+
+You need to install [Ruby](https://www.ruby-lang.org/en/installation/). 
+
+Now you are ready to build your app:
+
+	gem install compass
+	npm install -g yo
+	npm install -g generator-webapp
+	mkdir MyApp
+	yo webapp
+	bower install underscore
+	grunt
+	
+When you are done, CD into the dist directory and open index.html in
+a browser.
+
 Programs to look At
 -------------------
 
@@ -252,6 +274,14 @@ Just a reminder that there is some information here on installing Linux.
 This is just an fyi, just information that you might find useful:
 
 -   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install>
+
+Links
+-----
+
+Nothing you have to do here, these are just links you might be interested
+in seeing:
+
+- [CodeProject Web Mailing](http://www.codeproject.com/script/Mailouts/View.aspx?mlid=10668&_z=1516867)
 
 
 > Written in part with [StackEdit](https://stackedit.io/).

@@ -174,3 +174,9 @@ records in some kind of loop.
 
 This should be enough to get you started. More information coming
 soon.
+
+Turn it In
+----------
+
+You should submit your work by checking it into Git in a directory
+called Week05-NodeExpressMongo.
