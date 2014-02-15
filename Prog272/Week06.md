@@ -95,6 +95,18 @@ MongoDb Notes
 
 If you try to start MongoDB, and find that it won't start, or at least won't stay running after it starts, the problem could be that you are out of disk space. MongoDB wants lots of diskspace, something like 3.5 GB. You can, however, request that it use less disk space by putting **smallfiles = true** at the end of **/etc/mongodb.conf**. Now your database will be limited in size in half a gig, but that should be plenty for our needs.
 
+- Remove lockfile: sudo rm /var/lib/mongodb/mongod.lock
+- Repair: sudo -u mongodb mongod -f /etcd/mongodb.conf --repair
+
+And these:
+
+- sudo service mongodb start
+- sudo service mongodb stop
+- sudo service mongodb restart
+
+And (sudo fdisk -l)
+https://help.ubuntu.com/community/SwapFaq#Why_is_my_swap_not_being_used.3F
+
 You can access at least a few minimal facts about your running instance of MongoDb in a broswer by going to this address:
 
 - <http://localhost:28017/>
