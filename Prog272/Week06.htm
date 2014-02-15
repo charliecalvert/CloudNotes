@@ -8,6 +8,18 @@
 <li>Storing Markdown in MongoDB</li>
 <li>jQuery selectors</li>
 </ul>
+<h2 id="yeoman">Yeoman</h2>
+<p><a href="http://yeoman.io/">Yeoman</a> is a way out of control that will automatically create a web application for you, and set up grunt and bower.</p>
+<p>You need to install <a href="https://www.ruby-lang.org/en/installation/">Ruby</a>.</p>
+<p>Now you are ready to build your app:</p>
+<pre><code>gem install compass
+npm install -g yo
+npm install -g generator-webapp
+mkdir MyApp
+yo webapp
+bower install underscore
+grunt</code></pre>
+<p>When you are done, CD into the dist directory and open index.html in a browser.</p>
 <h2 id="programs-to-look-at">Programs to look At</h2>
 <p>For parsing HTML</p>
 <ul>
@@ -47,6 +59,17 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 <p>There are also tools like AMD modules used with RequireJS or Dojo. We are not going to cover them in this part of this course.</p>
 <h2 id="mongodb-notes">MongoDb Notes</h2>
 <p>If you try to start MongoDB, and find that it won't start, or at least won't stay running after it starts, the problem could be that you are out of disk space. MongoDB wants lots of diskspace, something like 3.5 GB. You can, however, request that it use less disk space by putting <strong>smallfiles = true</strong> at the end of <strong>/etc/mongodb.conf</strong>. Now your database will be limited in size in half a gig, but that should be plenty for our needs.</p>
+<ul>
+<li>Remove lockfile: sudo rm /var/lib/mongodb/mongod.lock</li>
+<li>Repair: sudo -u mongodb mongod -f /etcd/mongodb.conf --repair</li>
+</ul>
+<p>And these:</p>
+<ul>
+<li>sudo service mongodb start</li>
+<li>sudo service mongodb stop</li>
+<li>sudo service mongodb restart</li>
+</ul>
+<p>And (sudo fdisk -l) https://help.ubuntu.com/community/SwapFaq#Why_is_my_swap_not_being_used.3F</p>
 <p>You can access at least a few minimal facts about your running instance of MongoDb in a broswer by going to this address:</p>
 <ul>
 <li><a href="http://localhost:28017/">http://localhost:28017/</a></li>
@@ -171,6 +194,11 @@ db.version() current version of the server</code></pre>
 <p>Just a reminder that there is some information here on installing Linux. This is just an fyi, just information that you might find useful:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install">http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install</a></li>
+</ul>
+<h2 id="links">Links</h2>
+<p>Nothing you have to do here, these are just links you might be interested in seeing:</p>
+<ul>
+<li><a href="http://www.codeproject.com/script/Mailouts/View.aspx?mlid=10668&amp;_z=1516867">CodeProject Web Mailing</a></li>
 </ul>
 <blockquote>
 <p>Written in part with <a href="https://stackedit.io/">StackEdit</a>.</p>
