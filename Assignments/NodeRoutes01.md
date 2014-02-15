@@ -29,9 +29,18 @@ radius looks like this:
 	Circumference = 2 * radius * Math.PI;
 
 All the calculations should be performed on the server side, in a 
-module, per the 
-[NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02/Library) 
+module, per the [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02/Library) 
 example in JsObjects.
+
+For three points extra credit, implement **getFeetInMile** and 
+**calculateFeet** using HTTP GET calls, and use POST for 
+**calculateRadius**:
+
+	var express = require('express');
+	var app = express();
+	app.get(...
+	app.post(...
+
 
 Turn It In
 ==========

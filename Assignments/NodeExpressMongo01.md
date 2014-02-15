@@ -13,7 +13,9 @@ auto-generated records into MongoDb
 them in an array  from the
 database and send them to the client.
 - Create an HTML interface that will display any one record from the
-array of records to the user.
+array of records to the user. This is not a Cordova assignment. You can 
+do your work with HTML, CSS and JavaScript.
+
 
 Passing a parameter from the client (the web broswer) to the server
 is a bit tricky. As a result, in this assignment, I just want you to
