@@ -6,6 +6,7 @@
 <li>Read the file back from the database</li>
 <li>Convert the file to HTML</li>
 <li>Display portions of the converted HTML in a browser</li>
+<li>One the client you should be able to choose the different sections of your HTML file. See the DocParse01 and 02 examples from JsObjects.</li>
 </ul>
 <p>The application contains:</p>
 <ul>
@@ -27,12 +28,12 @@ fs.readFileSync(&#39;Sample.md&#39;, &#39;utf8&#39;);</code></pre>
 <li>Remember the name of the markdown file</li>
 <li>Store the markdown text.</li>
 </ul>
-<p><strong>CreateJson.js</strong> can also read the data back from the database, convert the markdown into html, and send it to the client browser. Conversion from markdown to HTML is handled by an external program called <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>:</p>
-<pre><code>var exec = require(&#39;child_process&#39;).exec;
-
-exec(&#39;pandoc -t html5 -o output.html output.md&#39;, function callback(error, stdout, stderr) { 
-   // Read in the HTML send the HTML to the client
-});</code></pre>
+<p><strong>CreateJson.js</strong> can also read the data back from the database. It converts the markdown into html, and sends it to the client browser. An external program called Pandoc handles conversion from markdown to HTML.</p>
+<ul>
+<li><p><a href="http://johnmacfarlane.net/pandoc/">Pandoc</a></p>
+<p>var exec = require('child_process').exec;</p>
+<p>exec('pandoc -t html5 -o output.html output.md', function callback(error, stdout, stderr) { // Read in the HTML send the HTML to the client });</p></li>
+</ul>
 <h2 id="server.js">Server.js</h2>
 <p>This program uses a small subset of <a href="http://expressjs.com/guide.html">Express</a>. It serves up HTML pages to a browser. There are actually three served up to the client:</p>
 <ul>
@@ -51,7 +52,7 @@ app.get(&#39;/&#39;, function(request, result){
 
 // Give express access to the Public directory
 app.use(&quot;/&quot;, express.static(__dirname + &#39;/Public&#39;));</code></pre>
-<p>The above code is used so often that can be considered a patter. If you have place where you store default code, you should paste it in so you can access it again later. The following link provides an overview of the code like that shown above:</p>
+<p>We use code like this often. If you have place where you store default code, you should paste it in so you can access it again later. The following link provides an overview of the code that follows this pattern:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-express">Elvenware Express</a></li>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-a-directory-with-app.use">app.use</a></li>
