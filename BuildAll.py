@@ -9,19 +9,16 @@ cloudNotesTo=elffiles.ensureFinalSlash(os.environ['ELVENWARE']) + "charlie\\book
 
 # process and Copy the files
 def makeItSo(markdown, folder, files):
-	markdown.copyFrom=cloudNotesFrom + folder
-	markdown.destination=cloudNotesTo + folder
+	markdown.copyFrom = cloudNotesFrom + folder
+	markdown.destination = cloudNotesTo + folder
 	elffiles.ensureDir(markdown.destination)
-	markdown.runner(files);
+	markdown.runner(files, ['start.html', 'nav.html', 'footer.html', 'end.html']);
 
 # CloudNotes Root
 def cloudRoot(markdown):
 	files = ["CloudNotes", "CloudOutline"];
 	print(cloudNotesFrom)
-	markdown.copyFrom=cloudNotesFrom
-	markdown.destination=cloudNotesTo
-	elffiles.ensureDir(markdown.destination)
-	markdown.runner(files);
+	makeItSo(markdown, "", files);
 
 
 # Prog270
@@ -30,20 +27,14 @@ def prog270(markdown):
 	"Week04", "Week05", "Week06", "Week07", "Week08", 
 	"Week09", "Week10", "Week11",
 	"MarkdownAssignment", 'GoogleSiteAssignment'];
-	markdown.copyFrom=cloudNotesFrom + "Prog270"
-	markdown.destination=cloudNotesTo + "Prog270"
-	elffiles.ensureDir(markdown.destination)
-	markdown.runner(files);
+	makeItSo(markdown, "Prog270", files);
 
 # Isit320
 def isit320(markdown):
 	files = ["Resources", "Week01", "Week02", 
 		"Week03", "Week04", "Week05", "Week06", "Week07",
 		"Week08", "Week09", "Week10", "Week11", "GitTipsFromKurt"];
-	markdown.copyFrom=cloudNotesFrom + "Isit320"
-	markdown.destination=cloudNotesTo + "Isit320"
-	elffiles.ensureDir(markdown.destination)
-	markdown.runner(files);
+	makeItSo(markdown, "Isit320", files);
 
 # Prog280
 def prog280(markdown):
