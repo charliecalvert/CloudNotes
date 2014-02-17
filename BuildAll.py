@@ -51,7 +51,7 @@ def assignments(markdown):
 		"LampBootstrap", "InfoManager01", "CodeAcademy01",
 		"Evernote01", "NodeExpressMongo01", "StackGoogle",
 		"StackDropBox", "GuestAdditions", "NodeModulesAssignment",
-		"MongoMark", "NodeRoutes01"]
+		"MongoMark", "NodeRoutes01", "Pandoc01"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program

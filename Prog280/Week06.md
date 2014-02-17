@@ -30,6 +30,10 @@ Networking and VirtualBox
 
 -   MAC Addresses
 -   Copy from One Machine to Another
+-   Own cloud free accounts: <http://owncloud.org/providers/>
+-   Other owncloud: <https://owndrive.com/>
+-   Host in the cloud: <https://www.arvixe.com/linux_web_hosting>
+
 
 Virtual Appliances
 ------------------
