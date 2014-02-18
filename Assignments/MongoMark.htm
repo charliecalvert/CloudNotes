@@ -34,6 +34,13 @@ fs.readFileSync(&#39;Sample.md&#39;, &#39;utf8&#39;);</code></pre>
 <p>var exec = require('child_process').exec;</p>
 <p>exec('pandoc -t html5 -o output.html output.md', function callback(error, stdout, stderr) { // Read in the HTML send the HTML to the client });</p></li>
 </ul>
+<p>This file can be a stand alone program, but it would be best if you could trigger this event from a button click on the client. The user clicks the button and the program reads in a <strong>markdown</strong> file. For now, we can hardcode in the name of the <strong>markdown</strong> file to be read. In a later version of this program, however, we will want to specify one or more of the following:</p>
+<ul>
+<li>The name of a file to read</li>
+<li>A chunk of markdown and a file name to be passed in from the client</li>
+<li>The name of a directory where multiple markdown files reside, each of which is to be read in, and inserted into the database, each in a separate record.</li>
+</ul>
+<p>But all of that is for later on. For now, just a button click and read in a hard coded file will be fine.</p>
 <h2 id="server.js">Server.js</h2>
 <p>This program uses a small subset of <a href="http://expressjs.com/guide.html">Express</a>. It serves up HTML pages to a browser. There are actually three served up to the client:</p>
 <ul>
@@ -80,6 +87,8 @@ $(document).ready(function() {
     new Run();  
 });</code></pre>
 <p>Here we use the modular pattern.</p>
+<h2 id="turn-it-in">Turn it In</h2>
+<p>Place your code in your repository in a directory called Week06-MongoMark. Enter the URL of your repository when you submit the assignment.</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>

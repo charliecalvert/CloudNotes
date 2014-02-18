@@ -46,6 +46,22 @@ After reading in the file it inserts places it insert a JSON object and stores i
        // Read in the HTML send the HTML to the client
     });
     
+This file can be a stand alone program, but it would be best if you could
+trigger this event from a button click on the client. The user clicks 
+the button and the program reads in a **markdown** file. For now, we
+can hardcode in the name of the **markdown** file to be read. In 
+a later version of this program, however, we will want to specify one or
+more of the following:
+
+- The name of a file to read
+- A chunk of markdown and a file name to be passed in from the client
+- The name of a directory where multiple markdown files reside, each
+of which is to be read in, and inserted into the database, each in a
+separate record.
+
+But all of that is for later on. For now, just a button click and read
+in a hard coded file will be fine.
+    
 Server.js
 ---------
 
@@ -100,5 +116,13 @@ The important code on the client is found **index.js**:
 	});
 
 Here we use the modular pattern.
+
+Turn it In
+----------
+
+Place your code in your repository in a directory called Week06-MongoMark.
+Enter the URL of your repository when you submit the assignment.
+
+
 
 > Written with [StackEdit](https://stackedit.io/).

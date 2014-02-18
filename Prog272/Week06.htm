@@ -58,92 +58,12 @@ MyApp.InitCordova = (function() { } )();
 MyApp.ShowDirectories = (function() { } )();</code></pre>
 <p>There are also tools like AMD modules used with RequireJS or Dojo. We are not going to cover them in this part of this course.</p>
 <h2 id="mongodb-notes">MongoDb Notes</h2>
-<p>If you try to start MongoDB, and find that it won't start, or at least won't stay running after it starts, the problem could be that you are out of disk space. MongoDB wants lots of diskspace, something like 3.5 GB. You can, however, request that it use less disk space by putting <strong>smallfiles = true</strong> at the end of <strong>/etc/mongodb.conf</strong>. Now your database will be limited in size in half a gig, but that should be plenty for our needs.</p>
+<p>These are all on <a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html">Elvenware</a></p>
 <ul>
-<li>Remove lockfile: sudo rm /var/lib/mongodb/mongod.lock</li>
-<li>Repair: sudo -u mongodb mongod -f /etcd/mongodb.conf --repair</li>
+<li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#stopStart">Stop, start and restart MongoDb</a></li>
+<li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#noStart">MongoDb won't start</a></li>
+<li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoHelp">MongoDb Help on Elvenware</a></li>
 </ul>
-<p>And these:</p>
-<ul>
-<li>sudo service mongodb start</li>
-<li>sudo service mongodb stop</li>
-<li>sudo service mongodb restart</li>
-</ul>
-<p>And (sudo fdisk -l) https://help.ubuntu.com/community/SwapFaq#Why_is_my_swap_not_being_used.3F</p>
-<p>You can access at least a few minimal facts about your running instance of MongoDb in a broswer by going to this address:</p>
-<ul>
-<li><a href="http://localhost:28017/">http://localhost:28017/</a></li>
-</ul>
-<p><strong>Mongo</strong> is the command line utility you can use to query your MongoDB collections and to maintain your database. Start <strong>mongo</strong> by typing <strong>mongo</strong> at the command line.</p>
-<p>When in mongo, type help to get a list of things you can do:</p>
-<pre><code>db.help()                    help on db methods
-db.mycoll.help()             help on collection methods
-sh.help()                    sharding helpers
-rs.help()                    replica set helpers
-help admin                   administrative help
-help connect                 connecting to a db help
-help keys                    key shortcuts
-help misc                    misc things to know
-help mr                      mapreduce
-
-show dbs                     show database names
-show collections             show collections in current database
-show users                   show users in current database
-show profile                 show most recent system.profile entries with time &gt;= 1ms
-show logs                    show the accessible logger names
-show log [name]              prints out the last segment of log in memory, &#39;global&#39; is default
-use &lt;db_name&gt;                set current database
-db.foo.find()                list objects in collection foo
-db.foo.find( { a : 1 } )     list objects in foo where a == 1
-it                           result of the last line evaluated; use to further iterate
-DBQuery.shellBatchSize = x   set default number of items to display on shell
-exit                         quit the mongo shell</code></pre>
-<p>Try, for instance, db.help():</p>
-<pre><code>DB methods:
-db.addUser(userDocument)
-db.adminCommand(nameOrDocument) - switches to &#39;admin&#39; db, and runs command [ just calls db.runCommand(...) ]
-db.auth(username, password)
-db.cloneDatabase(fromhost)
-db.commandHelp(name) returns the help for the command
-db.copyDatabase(fromdb, todb, fromhost)
-db.createCollection(name, { size : ..., capped : ..., max : ... } )
-db.currentOp() displays currently executing operations in the db
-db.dropDatabase()
-db.eval(func, args) run code server-side
-db.fsyncLock() flush data to disk and lock server for backups
-db.fsyncUnlock() unlocks server following a db.fsyncLock()
-db.getCollection(cname) same as db[&#39;cname&#39;] or db.cname
-db.getCollectionNames()
-db.getLastError() - just returns the err msg string
-db.getLastErrorObj() - return full status object
-db.getMongo() get the server connection object
-db.getMongo().setSlaveOk() allow queries on a replication slave server
-db.getName()
-db.getPrevError()
-db.getProfilingLevel() - deprecated
-db.getProfilingStatus() - returns if profiling is on and slow threshold
-db.getReplicationInfo()
-db.getSiblingDB(name) get the db at the same server as this one
-db.hostInfo() get details about the server&#39;s host
-db.isMaster() check replica primary status
-db.killOp(opid) kills the current operation in the db
-db.listCommands() lists all the db commands
-db.loadServerScripts() loads all the scripts in db.system.js
-db.logout()
-db.printCollectionStats()
-db.printReplicationInfo()
-db.printShardingStatus()
-db.printSlaveReplicationInfo()
-db.removeUser(username)
-db.repairDatabase()
-db.resetError()
-db.runCommand(cmdObj) run a database command.  if cmdObj is a string, turns it into { cmdObj : 1 }
-db.serverStatus()
-db.setProfilingLevel(level,&lt;slowms&gt;) 0=off 1=slow 2=all
-db.setVerboseShell(flag) display extra information in shell output
-db.shutdownServer()
-db.stats()
-db.version() current version of the server</code></pre>
 <h2 id="notes">Notes</h2>
 <p>Reply in conversations in the appropriate assignment, not just as a general comment.</p>
 <p>It's JavaScript first, jQuery second. jQuery is a library built on top of JavaScript. No matter how good the library, it is the language that is primary.</p>
@@ -168,22 +88,17 @@ db.version() current version of the server</code></pre>
     x = 2 + 3;
 }</code></pre>
 <h2 id="separate-html-css-and-javascript">Separate HTML, CSS and JavaScript</h2>
-<p>Reasons:</p>
+<p>We want to be sure to put:</p>
 <ul>
-<li>Separation of concerns</li>
-<li>Loose coupling</li>
+<li>HTML in HTML files</li>
+<li>CSS in CSS files</li>
+<li>JavaScript in JavaScript files</li>
 </ul>
-<p>If you have a JavaScript error, you want to know that the problem is in a JavaScript file. It is simply confusing to have to look through all your code, HTML, CSS, and JavaScript to find the error. The same rule applies to CSS and HTML problems.</p>
-<p>Keep HTML in HTML files and you will know where to look for solutions. This means that we like writing code like this:</p>
-<pre><code>\$(&quot;#test01&quot;).addClass(&quot;green&quot;);</code></pre>
-<p>But we don't really like this:</p>
-<pre><code>\$(&quot;#test01).css( { backgroundColor: &quot;blue&quot; } );</code></pre>
-<p>If you write code like this, you are putting JavaScript in your HTML:</p>
-<pre><code>\&lt;button id=&quot;myButton01&quot; onclick=&quot;myObject.runButton01()&quot;\&gt;Click Me
-01\&lt;/button\&gt;</code></pre>
-<p>Instead, it is better to put code like this in your JavaScript file:</p>
-<pre><code>\$(&quot;#myButton01&quot;).click(myObject.runButton01);</code></pre>
-<h2 id="more-on-adb">More on ADB</h2>
+<p>A few additional details are found here:</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#seperateConcerns">Details</a></li>
+</ul>
+<h1 id="more-on-adb">More on ADB</h1>
 <p>We generally use ADB to connect to our AndroidX86 instances:</p>
 <pre><code>adb connect 192.168.XX.XX</code></pre>
 <p>However, you can use ADB for a lot more than just establishing a connection. For instance, ou can install a compiled Android program (an APK), you can copy files to your device, and start a shell session on the device. That is like opening the commannd prompt on the device, but you can do it from the Windows command prompt. For more details, see here:</p>
