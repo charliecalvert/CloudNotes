@@ -1,5 +1,5 @@
-Week 07
-=======
+# Week 07
+
 
 Today we are going to look at loading data using several different techniques.
 We will look at Handlebars.js and templating. We will look at jQuery load, and
@@ -9,8 +9,13 @@ at jQuery.getJSON.
 -   JQueryLoad01
 -   JQuerySelect01 (Cordova)
 
-Other Programs of Interest
---------------------------
+# Debug Node in Eclipse
+
+- [Debug on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#debug-node-in-eclipse)
+
+
+# Other Programs of Interest
+
 
 - CordovaListDirectories
 - CordovaListDirs02
@@ -25,51 +30,18 @@ Source from class: [ObjectVariables01.zip][1][^2]
 [^2]: <https://bc.instructure.com/courses/795060/files/23932861/download?wrap=1>
 
 
-Handlebars
-----------
-
-<http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars>
+# Handlebars
 
 
-Working with JSON
------------------
+Notes on Elvenware: 
 
-<http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON>
+- [Handlebars](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars)
 
-This code can go in the head section of your HTML:
- 
-~~~~
 
-	<script type="textx-handlebars-template" id="par01">  
-		<p>{{text}}</p>  
-	</script>
+# Working with JSON
 
-~~~~
 
-Here is code for using the template:
+Notes on Elvenware:
 
-~~~~
-	function addItem(text) {  
-		'use strict';  
-	  
-		var script = \$("#par01").html(),  
-		template=Handlebars.compile(script);  
-	  
-		var result = template({  
-			text: text  
-		});  
-	  
-		$("#myDiv").append(result);  
-	}
-
-	$.getJSON("index.json", function(data) {  
-		$.each(data, function(i, president) {  
-			$('#data01').append("<p>" + president.firstName 
-				+ ' ' + president.lastName + "</p>");  
-		});  
-	});
-
-~~~~
-
-You can download jQuery from http://jquery.com
-
+- [getJSON](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON)
+- [Working with JSON](http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html#working)
