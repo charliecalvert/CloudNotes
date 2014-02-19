@@ -168,7 +168,7 @@ function loadContent(request, response) { 'use strict';
 			getBinaryFile(results[0], response);
 		});
 	} else {
-		lastHtmlFile = '/Week06.html';
+		lastHtmlFile = '/Week07.html';
 		var html = fs.readFileSync(__dirname + lastHtmlFile);
 		response.writeHead(200, {
 			'Content-Type' : 'text/html'
