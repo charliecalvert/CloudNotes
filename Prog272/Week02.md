@@ -1,6 +1,6 @@
+## Prog 272 Week 02, 2014
 
-Week02
-======
+toc
 
 Primary Goals
 -------------

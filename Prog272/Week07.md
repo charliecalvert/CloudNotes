@@ -1,4 +1,8 @@
-# Week 07
+# Prog 272 Week 07, 2014
+
+toc
+
+# Overview
 
 Today we are going to look at loading data using several different techniques.
 We will look at Handlebars.js and templating. We will look at jQuery load, and
@@ -7,6 +11,7 @@ at jQuery.getJSON.
 -   HandleBarsDemo01
 -   JQueryLoad01
 -   JQuerySelect01 (Cordova)
+-   [Web GL Water](http://madebyevan.com/webgl-water/)
 
 # Debug Node in Eclipse
 
@@ -31,7 +36,6 @@ Here is how to get an instance of QueryMongo:
 	var qm = require('./Library/QueryMongo');
 	var queryMongo = qm.QueryMongo; 
 
-
 # Calling QueryMongo
 
 Once you have an instance of QueryMongo, you can call it like this:
@@ -39,8 +43,6 @@ Once you have an instance of QueryMongo, you can call it like this:
 	app.get('/readAll', function(request, response) {'use strict';
 		queryMongo.getCollection(response);
 	});
-
-
 
 # Other Programs of Interest
 
@@ -61,7 +63,6 @@ Notes on Elvenware:
 
 
 #  Working with JSON
-
 
 Notes on Elvenware:
 

@@ -1,5 +1,9 @@
-Week03
-======
+## Prog 272 Week 03, 2014
+
+toc
+
+Overview
+---------
 
 - [Unit Tests Deck](http://bit.ly/1dTjs8h)
 - [PhoneGap Cordova](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
@@ -99,7 +103,7 @@ Here are some particularly useful sections of the above link:
 - <http://stackoverflow.com/a/8841666/253576>
 - <http://stackoverflow.com/a/7502128/253576>
 
-Additional information:
+## Additional information:
 
 - [Setting up Cordova on the Mac](http://iphonedevlog.wordpress.com/2013/08/16/using-phonegap-3-0-cli-on-mac-osx-10-to-build-ios-and-android-projects/)
 - [Set PATH and Environment](http://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/)
@@ -131,7 +135,7 @@ Now use it to install something:
 
 Here is a bower.json file for installing Jasmine 1.3.1.
 
-```
+
 	{
 	  "name": "Jasmine02",
 	  "version": "0.1.0",
@@ -157,9 +161,6 @@ Here is a bower.json file for installing Jasmine 1.3.1.
 		"jasmine": "~1.3.1"
 	  }
 	}
-```
-
-
 
 Links
 -----

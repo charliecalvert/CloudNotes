@@ -36,8 +36,12 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section id="prog-272-week-06-2013" class="level2">
-<h2><a href="#prog-272-week-06-2013">Prog 272 Week 06, 2013</a></h2>
+				<section id="prog-272-week-06-2014" class="level2">
+<h2>Prog 272 Week 06, 2014</h2>
+<p>toc</p>
+</section>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This week we want to focus on:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html">Modular Pattern</a></li>
@@ -49,7 +53,7 @@
 </ul>
 </section>
 <section id="yeoman" class="level2">
-<h2><a href="#yeoman">Yeoman</a></h2>
+<h2>Yeoman</h2>
 <p><a href="http://yeoman.io/">Yeoman</a> is a way out of control that will automatically create a web application for you, and set up grunt and bower.</p>
 <p>You need to install <a href="https://www.ruby-lang.org/en/installation/">Ruby</a>.</p>
 <p>Now you are ready to build your app:</p>
@@ -63,7 +67,7 @@ grunt</code></pre>
 <p>When you are done, CD into the dist directory and open index.html in a browser.</p>
 </section>
 <section id="programs-to-look-at" class="level2">
-<h2><a href="#programs-to-look-at">Programs to look At</a></h2>
+<h2>Programs to look At</h2>
 <p>For parsing HTML</p>
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/DocParse01">DocParse01</a></li>
@@ -82,7 +86,7 @@ grunt</code></pre>
 </ul>
 </section>
 <section id="globals" class="level2">
-<h2><a href="#globals">Globals</a></h2>
+<h2>Globals</h2>
 <pre><code>function foo() {
   var number01 = 0;
   number02 = 0; 
@@ -91,7 +95,7 @@ grunt</code></pre>
 <p>JSHint is designed to help you catch problems like this, particularly if you turn on strict mode. In fact, in strict mode, many browsers will through a ReferenceError if number02 is not defined.</p>
 </section>
 <section id="module-pattern" class="level2">
-<h2><a href="#module-pattern">Module Pattern</a></h2>
+<h2>Module Pattern</h2>
 <p>The module pattern pattern</p>
 <ul>
 <li>The book analogy</li>
@@ -101,14 +105,14 @@ grunt</code></pre>
 <p>More on passing functions as a parameter.</p>
 </section>
 <section id="global-abatement" class="level2">
-<h2><a href="#global-abatement">Global Abatement</a></h2>
+<h2>Global Abatement</h2>
 <pre><code>var MyApp = {};
 MyApp.InitCordova = (function() { } )();
 MyApp.ShowDirectories = (function() { } )();</code></pre>
 <p>There are also tools like AMD modules used with RequireJS or Dojo. We are not going to cover them in this part of this course.</p>
 </section>
 <section id="mongodb-notes" class="level2">
-<h2><a href="#mongodb-notes">MongoDb Notes</a></h2>
+<h2>MongoDb Notes</h2>
 <p>These are all on <a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html">Elvenware</a></p>
 <ul>
 <li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#stopStart">Stop, start and restart MongoDb</a></li>
@@ -117,19 +121,19 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 </ul>
 </section>
 <section id="notes" class="level2">
-<h2><a href="#notes">Notes</a></h2>
+<h2>Notes</h2>
 <p>Reply in conversations in the appropriate assignment, not just as a general comment.</p>
 <p>It's JavaScript first, jQuery second. jQuery is a library built on top of JavaScript. No matter how good the library, it is the language that is primary.</p>
 </section>
 <section id="working-with-input-and-select-controls" class="level2">
-<h2><a href="#working-with-input-and-select-controls">Working with Input and Select Controls</a></h2>
+<h2>Working with Input and Select Controls</h2>
 <ul>
 <li><a href="http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#input">http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#input</a></li>
 <li><a href="http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#select">http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#select</a></li>
 </ul>
 </section>
 <section id="variable-declarations" class="level2">
-<h2><a href="#variable-declarations">Variable Declarations</a></h2>
+<h2>Variable Declarations</h2>
 <p>Regardless of where you declare a var statement, it will be moved by the compiler to the top of the method (or scope) in which it is declared:</p>
 <pre><code>function run() {    
     var x = 0;    
@@ -146,7 +150,7 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 }</code></pre>
 </section>
 <section id="separate-html-css-and-javascript" class="level2">
-<h2><a href="#separate-html-css-and-javascript">Separate HTML, CSS and JavaScript</a></h2>
+<h2>Separate HTML, CSS and JavaScript</h2>
 <p>We want to be sure to put:</p>
 <ul>
 <li>HTML in HTML files</li>
@@ -159,7 +163,7 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 </ul>
 </section>
 <section id="more-on-adb" class="level2">
-<h2><a href="#more-on-adb">More on ADB</a></h2>
+<h2>More on ADB</h2>
 <p>We generally use ADB to connect to our AndroidX86 instances:</p>
 <pre><code>adb connect 192.168.XX.XX</code></pre>
 <p>However, you can use ADB for a lot more than just establishing a connection. For instance, ou can install a compiled Android program (an APK), you can copy files to your device, and start a shell session on the device. That is like opening the commannd prompt on the device, but you can do it from the Windows command prompt. For more details, see here:</p>
@@ -168,14 +172,14 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 </ul>
 </section>
 <section id="install-linux" class="level2">
-<h2><a href="#install-linux">Install Linux</a></h2>
+<h2>Install Linux</h2>
 <p>Just a reminder that there is some information here on installing Linux. This is just an fyi, just information that you might find useful:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install">http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install</a></li>
 </ul>
 </section>
 <section id="links" class="level2">
-<h2><a href="#links">Links</a></h2>
+<h2>Links</h2>
 <p>Nothing you have to do here, these are just links you might be interested in seeing:</p>
 <ul>
 <li><a href="http://www.codeproject.com/script/Mailouts/View.aspx?mlid=10668&amp;_z=1516867">CodeProject Web Mailing</a></li>

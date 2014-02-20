@@ -1,3 +1,7 @@
+## Prog 272 Week 04, 2014
+
+toc
+
 Core Subjects
 -------------
 
