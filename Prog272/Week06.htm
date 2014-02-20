@@ -1,4 +1,43 @@
-<h1 id="prog-272-week-06-2013">Prog 272 Week 06, 2013</h1>
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>TempTitleStringToReplace</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Charlie Calvert">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../Library/css/reveal.min.css">
+		<link rel="stylesheet" href="../Library/css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../Library/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../Library/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../Library/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="prog-272-week-06-2013" class="level2">
+<h2><a href="#prog-272-week-06-2013">Prog 272 Week 06, 2013</a></h2>
 <p>This week we want to focus on:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html">Modular Pattern</a></li>
@@ -8,7 +47,9 @@
 <li>Storing Markdown in MongoDB</li>
 <li>jQuery selectors</li>
 </ul>
-<h2 id="yeoman">Yeoman</h2>
+</section>
+<section id="yeoman" class="level2">
+<h2><a href="#yeoman">Yeoman</a></h2>
 <p><a href="http://yeoman.io/">Yeoman</a> is a way out of control that will automatically create a web application for you, and set up grunt and bower.</p>
 <p>You need to install <a href="https://www.ruby-lang.org/en/installation/">Ruby</a>.</p>
 <p>Now you are ready to build your app:</p>
@@ -20,7 +61,9 @@ yo webapp
 bower install underscore
 grunt</code></pre>
 <p>When you are done, CD into the dist directory and open index.html in a browser.</p>
-<h2 id="programs-to-look-at">Programs to look At</h2>
+</section>
+<section id="programs-to-look-at" class="level2">
+<h2><a href="#programs-to-look-at">Programs to look At</a></h2>
 <p>For parsing HTML</p>
 <ul>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/DocParse01">DocParse01</a></li>
@@ -37,14 +80,18 @@ grunt</code></pre>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01">NodeRoutes01</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02">NodeRoutes02</a></li>
 </ul>
-<h2 id="globals">Globals</h2>
+</section>
+<section id="globals" class="level2">
+<h2><a href="#globals">Globals</a></h2>
 <pre><code>function foo() {
   var number01 = 0;
   number02 = 0; 
 }</code></pre>
 <p>In this example, number01 is not a global variable, but number02 is global. That is, it is part of window: window.number02.</p>
 <p>JSHint is designed to help you catch problems like this, particularly if you turn on strict mode. In fact, in strict mode, many browsers will through a ReferenceError if number02 is not defined.</p>
-<h2 id="module-pattern">Module Pattern</h2>
+</section>
+<section id="module-pattern" class="level2">
+<h2><a href="#module-pattern">Module Pattern</a></h2>
 <p>The module pattern pattern</p>
 <ul>
 <li>The book analogy</li>
@@ -52,27 +99,37 @@ grunt</code></pre>
 </ul>
 <p>More on functions, methods and constructors.</p>
 <p>More on passing functions as a parameter.</p>
-<h2 id="global-abatement">Global Abatement</h2>
+</section>
+<section id="global-abatement" class="level2">
+<h2><a href="#global-abatement">Global Abatement</a></h2>
 <pre><code>var MyApp = {};
 MyApp.InitCordova = (function() { } )();
 MyApp.ShowDirectories = (function() { } )();</code></pre>
 <p>There are also tools like AMD modules used with RequireJS or Dojo. We are not going to cover them in this part of this course.</p>
-<h2 id="mongodb-notes">MongoDb Notes</h2>
+</section>
+<section id="mongodb-notes" class="level2">
+<h2><a href="#mongodb-notes">MongoDb Notes</a></h2>
 <p>These are all on <a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html">Elvenware</a></p>
 <ul>
 <li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#stopStart">Stop, start and restart MongoDb</a></li>
 <li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#noStart">MongoDb won't start</a></li>
 <li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoHelp">MongoDb Help on Elvenware</a></li>
 </ul>
-<h2 id="notes">Notes</h2>
+</section>
+<section id="notes" class="level2">
+<h2><a href="#notes">Notes</a></h2>
 <p>Reply in conversations in the appropriate assignment, not just as a general comment.</p>
 <p>It's JavaScript first, jQuery second. jQuery is a library built on top of JavaScript. No matter how good the library, it is the language that is primary.</p>
-<h2 id="working-with-input-and-select-controls">Working with Input and Select Controls</h2>
+</section>
+<section id="working-with-input-and-select-controls" class="level2">
+<h2><a href="#working-with-input-and-select-controls">Working with Input and Select Controls</a></h2>
 <ul>
 <li><a href="http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#input">http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#input</a></li>
 <li><a href="http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#select">http://localhost:1835/charlie/development/web/HtmlGuide/GettingStarted.html#select</a></li>
 </ul>
-<h2 id="variable-declarations">Variable Declarations</h2>
+</section>
+<section id="variable-declarations" class="level2">
+<h2><a href="#variable-declarations">Variable Declarations</a></h2>
 <p>Regardless of where you declare a var statement, it will be moved by the compiler to the top of the method (or scope) in which it is declared:</p>
 <pre><code>function run() {    
     var x = 0;    
@@ -87,7 +144,9 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
     var lastName;
     x = 2 + 3;
 }</code></pre>
-<h2 id="separate-html-css-and-javascript">Separate HTML, CSS and JavaScript</h2>
+</section>
+<section id="separate-html-css-and-javascript" class="level2">
+<h2><a href="#separate-html-css-and-javascript">Separate HTML, CSS and JavaScript</a></h2>
 <p>We want to be sure to put:</p>
 <ul>
 <li>HTML in HTML files</li>
@@ -98,19 +157,25 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 <ul>
 <li><a href="http://elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#seperateConcerns">Details</a></li>
 </ul>
-<h1 id="more-on-adb">More on ADB</h1>
+</section>
+<section id="more-on-adb" class="level2">
+<h2><a href="#more-on-adb">More on ADB</a></h2>
 <p>We generally use ADB to connect to our AndroidX86 instances:</p>
 <pre><code>adb connect 192.168.XX.XX</code></pre>
 <p>However, you can use ADB for a lot more than just establishing a connection. For instance, ou can install a compiled Android program (an APK), you can copy files to your device, and start a shell session on the device. That is like opening the commannd prompt on the device, but you can do it from the Windows command prompt. For more details, see here:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK">http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK</a></li>
 </ul>
-<h2 id="install-linux">Install Linux</h2>
+</section>
+<section id="install-linux" class="level2">
+<h2><a href="#install-linux">Install Linux</a></h2>
 <p>Just a reminder that there is some information here on installing Linux. This is just an fyi, just information that you might find useful:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install">http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install</a></li>
 </ul>
-<h2 id="links">Links</h2>
+</section>
+<section id="links" class="level2">
+<h2><a href="#links">Links</a></h2>
 <p>Nothing you have to do here, these are just links you might be interested in seeing:</p>
 <ul>
 <li><a href="http://www.codeproject.com/script/Mailouts/View.aspx?mlid=10668&amp;_z=1516867">CodeProject Web Mailing</a></li>
@@ -118,3 +183,43 @@ MyApp.ShowDirectories = (function() { } )();</code></pre>
 <blockquote>
 <p>Written in part with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
+</section>
+			</div>
+
+		</div>
+
+		<script src="../Library/lib/js/head.min.js"></script>
+		<script src="../Library/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../Library/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../Library/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../Library/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../Library/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../Library/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../Library/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

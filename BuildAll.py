@@ -12,7 +12,9 @@ def makeItSo(markdown, folder, files):
 	markdown.copyFrom = cloudNotesFrom + folder
 	markdown.destination = cloudNotesTo + folder
 	elffiles.ensureDir(markdown.destination)
-	markdown.runner(files, ['start.html', 'nav.html', 'footer.html', 'end.html']);
+	markdown.runReveal(files);
+	#markdown.runner(files, ['StartReveal.html', 'Empty.html', 'Empty.html', 'EndReveal.html']);
+	#markdown.runner(files, ['start.html', 'nav.html', 'footer.html', 'end.html']);
 
 # CloudNotes Root
 def cloudRoot(markdown):
@@ -56,9 +58,9 @@ def assignments(markdown):
 
 # Run Program
 markdown = MarkdownToHtml()
-cloudRoot(markdown)
-prog280(markdown)
+#cloudRoot(markdown)
+#prog280(markdown)
 prog272(markdown)
-assignments(markdown);
+#assignments(markdown);
 #prog270(markdown)
 #isit320(markdown)

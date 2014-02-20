@@ -1,5 +1,9 @@
-Prog 272 Week 06, 2013
-======================
+Prog 272 Week 06, 2014
+-------
+
+toc
+
+## Overview
 
 This week we want to focus on:
 
@@ -152,7 +156,7 @@ A few additional details are found here:
 
 - [Details](http://elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#seperateConcerns)
 
-# More on ADB
+## More on ADB
 
 
 We generally use ADB to connect to our AndroidX86 instances:

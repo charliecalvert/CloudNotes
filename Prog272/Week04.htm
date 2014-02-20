@@ -1,4 +1,43 @@
-<h2 id="core-subjects">Core Subjects</h2>
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>TempTitleStringToReplace</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Charlie Calvert">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../Library/css/reveal.min.css">
+		<link rel="stylesheet" href="../Library/css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../Library/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="../Library/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../Library/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="core-subjects" class="level2">
+<h2><a href="#core-subjects">Core Subjects</a></h2>
 <p>Our main goals this week is to:</p>
 <ul>
 <li>Learn more about JavaScript Objects and Functions.</li>
@@ -15,7 +54,9 @@
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON">jQuery getJSON</a></li>
 <li><p><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html">JSON</a></p></li>
 </ul>
-<h2 id="jquery">jQuery</h2>
+</section>
+<section id="jquery" class="level2">
+<h2><a href="#jquery">jQuery</a></h2>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html">jQuery</a></li>
 <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors">jQuery Attribute Selectors</a></li>
@@ -28,26 +69,34 @@
 <li><a href="../Assignments/InfoManager01.html">A programming exercise using jQuery</a></li>
 </ul>
 <p>Look in the modules section of Canvas to find links to these assignments.</p>
-<h2 id="get-the-right-viewport-statement">Get the right ViewPort statement</h2>
+</section>
+<section id="get-the-right-viewport-statement" class="level2">
+<h2><a href="#get-the-right-viewport-statement">Get the right ViewPort statement</a></h2>
 <p>You might want to replace the ViewPort statement created by default by Cordova with this statement:</p>
 <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></pre>
 <p>See this Elvenware entry:</p>
 <ul>
 <li><a href="http://www.elvenware.com/charlie/development/web/CssGuide/MediaQueries.html#viewportBasics">ViewPort Basics</a></li>
 </ul>
-<h2 id="always-include-last-name-in-project-names">Always Include Last Name in Project Names</h2>
+</section>
+<section id="always-include-last-name-in-project-names" class="level2">
+<h2><a href="#always-include-last-name-in-project-names">Always Include Last Name in Project Names</a></h2>
 <p>I often fail to make this clear, but can you always call any project your turn in XXX-LastName. For instance: MilesObject-Calvert. Thank you.</p>
 <p>In fact, it usually helps if you include the Week in the project name as well:</p>
 <pre><code>Week03-MilesObject-Calvert</code></pre>
 <p>This name ends up in the Eclipse/Aptana file called <strong>.project</strong>. Cordova projects use some Java code, so in them, you must use an underbar rather than a dash.</p>
-<h2 id="using-putty-and-git">Using Putty and Git</h2>
+</section>
+<section id="using-putty-and-git" class="level2">
+<h2><a href="#using-putty-and-git">Using Putty and Git</a></h2>
 <p>If you are using SSH with Git, you want to make sure that Git can find the Putty program called <strong>plink</strong>. To do that, be sure that the environment variables GIT_SSH is set to</p>
 <pre><code>C:\Program Files (x86)\PuTTY\plink.exe</code></pre>
 <p><a href="http://www.elvenware.com/charlie/development/cloud/Git.html#running-git">More details are here</a></p>
 <p>From the command line, that would look like:</p>
 <pre><code>SetX GIT_SSH C:\Program Files (x86)\PuTTY\plink.exe</code></pre>
 <p>There is an updated <strong>SanityCheck.bat</strong> file that includes a check for <strong>GIT_SSH</strong>.</p>
-<h2 id="virtualbox-kernal-driver-error">VirtualBox Kernal Driver Error</h2>
+</section>
+<section id="virtualbox-kernal-driver-error" class="level2">
+<h2><a href="#virtualbox-kernal-driver-error">VirtualBox Kernal Driver Error</a></h2>
 <p>If you get an error trying to start your VM, try this solution:</p>
 <p>Navigate to:</p>
 <pre><code>C:\Program Files\Oracle\VirtualBox\drivers\USB\filter</code></pre>
@@ -56,9 +105,13 @@
 <pre><code>C:\Program Files\Oracle\VirtualBox\drivers\vboxdrv</code></pre>
 <p>Find VBoxDrv.inf and right click on it. Select install.</p>
 <p>This fixed the problem for me.</p>
-<h2 id="format-code">Format Code</h2>
+</section>
+<section id="format-code" class="level2">
+<h2><a href="#format-code">Format Code</a></h2>
 <p>Don't forget to format your code in Eclipse/Aptana. Right click on<br />a JavaScript file and choose Source | Format. The shortcut is <strong>Ctrl-Shift-F</strong>.</p>
-<h2 id="other">Other</h2>
+</section>
+<section id="other" class="level2">
+<h2><a href="#other">Other</a></h2>
 <ul>
 <li>please open the assignment and respond to the discussion for that assignment from inside that assignment. It makes it easier for me to see which comments belong to which assignment.</li>
 <li>How to expose white space and line endings in NotePad++</li>
@@ -67,9 +120,12 @@
 <li>The HTML Header and Foot tags, etc.</li>
 <li>W3C Validator</li>
 </ul>
-<h2 id="html-suggestions">HTML Suggestions</h2>
+</section>
+<section id="html-suggestions" class="level2">
+<h2><a href="#html-suggestions">HTML Suggestions</a></h2>
 <p>If JsHint complains that you are mixing up places where you put tabs and places where you put spaces. Open up your HTML in notepad++. Turn on View | Show Symbol | Show Write Space. Look at your &lt;LI&gt; elements, you will see that you use different characters for your indentation. It probably looks fine on your system, but on mine, where tabs have a different value than on your system, it is not pretty.</p>
-<h3 id="karma">Karma</h3>
+<section id="karma" class="level3">
+<h3><a href="#karma">Karma</a></h3>
 <p>Configure:</p>
 <ul>
 <li>karma.conf.js</li>
@@ -84,7 +140,10 @@
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/Crafty06">Crafty06</a></li>
 <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Games/Crafty03">Crafty03</a></li>
 </ul>
-<h2 id="in-html-files">In HTML Files</h2>
+</section>
+</section>
+<section id="in-html-files" class="level2">
+<h2><a href="#in-html-files">In HTML Files</a></h2>
 <p>Be sure to specify the charset:</p>
 <pre><code>&lt;meta content=&quot;en-us&quot; http-equiv=&quot;Content-Language&quot;&gt;</code></pre>
 <p>Instead of writing the above in the head element, Write this:</p>
@@ -102,13 +161,57 @@
 <li><p>The Equals Operator</p></li>
 <li><p>JavaScript Modules</p></li>
 </ul>
-<h2 id="links">Links</h2>
+</section>
+<section id="links" class="level2">
+<h2><a href="#links">Links</a></h2>
 <ul>
 <li><p><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html">http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html</a></p></li>
 <li><p><a href="http://www.elvenware.com/charlie/development/android/Androidx86.shtml">http://www.elvenware.com/charlie/development/android/Androidx86.shtml</a></p></li>
 <li><p><a href="http://www.digitalnoiz.com/mobile-development/photo-gallery-with-phonegap-and-jquery-mobile/">http://www.digitalnoiz.com/mobile-development/photo-gallery-with-phonegap-and-jquery-mobile/</a></p></li>
 </ul>
-<h2 id="tips">Tips</h2>
+</section>
+<section id="tips" class="level2">
+<h2><a href="#tips">Tips</a></h2>
 <p><em>&quot;Go into Hyper V. Go into the Virtual Switch Manager. Create a virtual switch called 'Windows Phone Emulator Internal Switch'. Make it's connection type Internal. Now launch the emulator. It should work.&quot;</em></p>
 <p><em> </em>Test if HAXM is installed :</p>
 <pre><code>sc query intelhaxm</code></pre>
+</section>
+			</div>
+
+		</div>
+
+		<script src="../Library/lib/js/head.min.js"></script>
+		<script src="../Library/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../Library/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../Library/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../Library/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../Library/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../Library/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../Library/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
