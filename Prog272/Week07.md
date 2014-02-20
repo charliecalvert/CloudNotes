@@ -12,6 +12,7 @@ at jQuery.getJSON.
 -   JQueryLoad01
 -   JQuerySelect01 (Cordova)
 -   [Web GL Water](http://madebyevan.com/webgl-water/)
+-   [Average Progammers Talk](https://www.quora.com/Computer-Programmers/What-does-it-feel-like-to-be-an-average-programmer-among-very-talented-ones)
 
 # Debug Node in Eclipse
 
