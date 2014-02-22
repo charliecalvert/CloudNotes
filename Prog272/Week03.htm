@@ -36,138 +36,138 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section id="prog-272-week-03-2014" class="level2">
-<h2>Prog 272 Week 03, 2014</h2>
-<p>toc</p>
-</section>
-<section id="overview" class="level2">
-<h2>Overview</h2>
-<ul>
-<li><a href="http://bit.ly/1dTjs8h">Unit Tests Deck</a></li>
-<li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html">PhoneGap Cordova</a></li>
-<li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet">Cordova Setup CheatSheet</a></li>
-<li><a href="http://www.elvenware.com/charlie/development/android/Androidx86.shtml">VirtualBox and AndroidX86</a></li>
-<li><a href="http://bit.ly/1jzIpHU">Working with Files</a></li>
-<li>Add node_modules, coverage and bower_components to .gitignore</li>
-<li>Getting started with PhoneGap</li>
-<li><a href="http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html">Resources</a></li>
-</ul>
-</section>
-<section id="downloads" class="level2">
-<h2>Downloads</h2>
-<ul>
-<li><a href="http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap">Details Cordova downloads</a></li>
-</ul>
-<p>This is the URL you put in Eclipse when adding Aptana:</p>
-<ul>
-<li><a href="http://download.aptana.com/studio3/plugin/install">http://download.aptana.com/studio3/plugin/install</a></li>
-</ul>
-</section>
-<section id="set-your-path-and-environment-on-linux" class="level2">
-<h2>Set your PATH and ENVIRONMENT on Linux</h2>
-<p>This is certainly less than complete, but I do have Linux resources on Elvenware:</p>
-<ul>
-<li><a href="http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#path">PATH</a></li>
-<li><a href="http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#BashProfileBashRC">ENVIRONEMNT</a></li>
-</ul>
-<p>And more generally:</p>
-<ul>
-<li><a href="http://elvenware.com/charlie/os/linux/index.html">Linux</a></li>
-<li><a href="http://elvenware.com/charlie/os/linux/LinuxFiles.html">Working with Linux Files</a></li>
-<li><a href="http://elvenware.com/charlie/os/linux/LinuxFiles.html#fileOverview">File Permisions</a></li>
-</ul>
-</section>
-<section id="set-up-path-and-environment-on-windows" class="level2">
-<h2>Set up PATH and Environment on Windows</h2>
-<ul>
-<li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet">Cordova Cheat Sheet</a></li>
-<li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#details">Cordova Setup Details</a></li>
-<li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#runProject">Run Cordova Project</a></li>
-<li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#use-setx-to-set-the-environment">Use SetX</a></li>
-</ul>
-<p>I recognize that these steps are difficult. On the other hand, it simply is not right for students interested in computers to graduate from Bellevue College without a good understanding of the Windows/Linux/Mac Environment variables and PATH statements. Once the penny finally drops, and you feel as though you understand these concepts, you should find that you will use them over and over.</p>
-<p>Some history is perhaps helpful. For quite some time, it appeared that Microsoft was simply going to have complete control of our operating systems. This allowed them to assume that all programs would be set up by a Windows install, which would configure the PATH and ENVIRONMENT for you. Over the last three to five years, however, that plan unraveled, and now most web development, at least, is done with open source tools. These tools are not designed to be installed with Windows Install programs. Instead, they are usually put on your system by Git, NPM or downloaded as a zip file. To get them working properly, you have to set up the ENVIRONMENT and PATH yourself. Or at least you have to understand the PATH and ENVIRONMENT so you can trouble shoot problems. The PATH and ENVIRONMENT variables are available on all systems, Linux, Windows and Mac.</p>
-<p>We need to understand the PATH, and the ENVIRONMENT, to set up the many tools that we use when creating Web applications based on Open Source code. And at this point, most web applications are based on Open Source code. As we start working with tools like Karma, Grunt and RequireJs, a good understanding of the path will become doubly important as we struggle to ensure that all our JavaScript source files can be found by these tools. This usually involves GLOB patterns, which can only be understood properly if you understand how your PATH works.</p>
-<p>I like the current exercise (setting up your system to run Cordova create), in part because it really makes you wrestle with your PATH and ENVIRONMENT variables. Frankly, I want you in there struggling with these things a bit until you start to really understand how the system works. I don't want to automate the process for you. I want you to understand enough so you can master the subject. This mastery is necessary because the subject keeps coming up, over and over, in various contexts, as we work with Open Source code that is designed to run on multiple platforms, each of which require you to set up your PATH and ENVIRONMENT. Also, these skills make you more employable. Whether you do open source web development or not, understanding the PATH and ENVIRONMENT are crucial skills for anyone charged with setting up software, either as a developer, or an IT worker.</p>
-</section>
-<section id="setting-your-path-on-the-mac" class="level2">
-<h2>Setting your path on the MAC</h2>
-<p>These references for the MAC should be helpful:</p>
-<ul>
-<li><a href="http://stackoverflow.com/questions/7501678/set-environment-variables-on-mac-os-x-lion">Set Environment on OSX Lion</a></li>
-</ul>
-<p>Here are some particularly useful sections of the above link:</p>
-<ul>
-<li><a href="http://stackoverflow.com/a/8841666/253576">http://stackoverflow.com/a/8841666/253576</a></li>
-<li><a href="http://stackoverflow.com/a/7502128/253576">http://stackoverflow.com/a/7502128/253576</a></li>
-</ul>
-</section>
-<section id="additional-information" class="level2">
-<h2>Additional information:</h2>
-<ul>
-<li><a href="http://iphonedevlog.wordpress.com/2013/08/16/using-phonegap-3-0-cli-on-mac-osx-10-to-build-ios-and-android-projects/">Setting up Cordova on the Mac</a></li>
-<li><a href="http://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/">Set PATH and Environment</a></li>
-<li><a href="http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x">ENVIRONMENT variables</a></li>
-</ul>
-</section>
-<section id="working-with-buttons-input-controls-and-jquery" class="level2">
-<h2>Working with Buttons, Input Controls and jQuery</h2>
-<ul>
-<li><a href="http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html#working-with-buttons-input-controls-and-jquery">Links are in Resources</a></li>
-</ul>
-</section>
-<section id="requirejs-and-bower" class="level2">
-<h2>RequireJs and Bower</h2>
-<ul>
-<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/RequireJs01">RequireJs Getting Started</a></li>
-<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/Jasmine02">RequireJs and Karma JsObjects</a></li>
-<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/Jasmine05">BowerCopy JsObjects Example</a></li>
-</ul>
-</section>
-<section id="bower" class="level2">
-<h2>Bower</h2>
-<p>First you need to install <a href="http://bower.io/">Bower</a>:</p>
-<pre><code>npm install -g bower</code></pre>
-<p>Now use it to install something:</p>
-<ol type="1">
-<li>Create bower.json files</li>
-<li>Run bower install</li>
-</ol>
-<p>Here is a bower.json file for installing Jasmine 1.3.1.</p>
-<pre><code>{
-  &quot;name&quot;: &quot;Jasmine02&quot;,
-  &quot;version&quot;: &quot;0.1.0&quot;,
-  &quot;homepage&quot;: &quot;https://github.com/charliecalvert/JsObjects&quot;,
-  &quot;authors&quot;: [
-    &quot;Charlie CedarIsle Calvert &lt;charlie@elvenware.com&gt;&quot;
-  ],
-  &quot;description&quot;: &quot;Jasmine example&quot;,
-  &quot;main&quot;: &quot;SpecRunner.html&quot;,
-  &quot;keywords&quot;: [
-    &quot;jasmine&quot;
-  ],
-  &quot;license&quot;: &quot;MIT&quot;,
-  &quot;private&quot;: true,
-  &quot;ignore&quot;: [
-    &quot;**/.*&quot;,
-    &quot;node_modules&quot;,
-    &quot;bower_components&quot;,
-    &quot;test&quot;,
-    &quot;tests&quot;    
-  ],
-  &quot;dependencies&quot;: {
-    &quot;jasmine&quot;: &quot;~1.3.1&quot;
-  }
-}</code></pre>
-</section>
-<section id="links" class="level2">
-<h2>Links</h2>
-<ul>
-<li><a href="http://www.brucelawson.co.uk/2012/best-of-time/">http://www.brucelawson.co.uk/2012/best-of-time/</a></li>
-<li><a href="http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/">http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/</a></li>
-<li><a href="http://git-scm.com/book">http://git-scm.com/book</a></li>
-</ul>
-</section>
+				<section class="level2" id="prog-272-week-03-2014">
+    <h2>Prog 272 Week 03, 2014</h2>
+    <p>toc</p>
+    </section>
+    <section class="level2" id="overview">
+    <h2>Overview</h2>
+    <ul>
+    <li><a href="http://bit.ly/1dTjs8h">Unit Tests Deck</a></li>
+    <li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html">PhoneGap Cordova</a></li>
+    <li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet">Cordova Setup CheatSheet</a></li>
+    <li><a href="http://www.elvenware.com/charlie/development/android/Androidx86.shtml">VirtualBox and AndroidX86</a></li>
+    <li><a href="http://bit.ly/1jzIpHU">Working with Files</a></li>
+    <li>Add node_modules, coverage and bower_components to .gitignore</li>
+    <li>Getting started with PhoneGap</li>
+    <li><a href="http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html">Resources</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="downloads">
+    <h2>Downloads</h2>
+    <ul>
+    <li><a href="http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap">Details Cordova downloads</a></li>
+    </ul>
+    <p>This is the URL you put in Eclipse when adding Aptana:</p>
+    <ul>
+    <li><a href="http://download.aptana.com/studio3/plugin/install">http://download.aptana.com/studio3/plugin/install</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="set-your-path-and-environment-on-linux">
+    <h2>Set your PATH and ENVIRONMENT on Linux</h2>
+    <p>This is certainly less than complete, but I do have Linux resources on Elvenware:</p>
+    <ul>
+    <li><a href="http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#path">PATH</a></li>
+    <li><a href="http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#BashProfileBashRC">ENVIRONEMNT</a></li>
+    </ul>
+    <p>And more generally:</p>
+    <ul>
+    <li><a href="http://elvenware.com/charlie/os/linux/index.html">Linux</a></li>
+    <li><a href="http://elvenware.com/charlie/os/linux/LinuxFiles.html">Working with Linux Files</a></li>
+    <li><a href="http://elvenware.com/charlie/os/linux/LinuxFiles.html#fileOverview">File Permisions</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="set-up-path-and-environment-on-windows">
+    <h2>Set up PATH and Environment on Windows</h2>
+    <ul>
+    <li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet">Cordova Cheat Sheet</a></li>
+    <li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#details">Cordova Setup Details</a></li>
+    <li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#runProject">Run Cordova Project</a></li>
+    <li><a href="http://www.elvenware.com/charlie/development/android/PhoneGap.html#use-setx-to-set-the-environment">Use SetX</a></li>
+    </ul>
+    <p>I recognize that these steps are difficult. On the other hand, it simply is not right for students interested in computers to graduate from Bellevue College without a good understanding of the Windows/Linux/Mac Environment variables and PATH statements. Once the penny finally drops, and you feel as though you understand these concepts, you should find that you will use them over and over.</p>
+    <p>Some history is perhaps helpful. For quite some time, it appeared that Microsoft was simply going to have complete control of our operating systems. This allowed them to assume that all programs would be set up by a Windows install, which would configure the PATH and ENVIRONMENT for you. Over the last three to five years, however, that plan unraveled, and now most web development, at least, is done with open source tools. These tools are not designed to be installed with Windows Install programs. Instead, they are usually put on your system by Git, NPM or downloaded as a zip file. To get them working properly, you have to set up the ENVIRONMENT and PATH yourself. Or at least you have to understand the PATH and ENVIRONMENT so you can trouble shoot problems. The PATH and ENVIRONMENT variables are available on all systems, Linux, Windows and Mac.</p>
+    <p>We need to understand the PATH, and the ENVIRONMENT, to set up the many tools that we use when creating Web applications based on Open Source code. And at this point, most web applications are based on Open Source code. As we start working with tools like Karma, Grunt and RequireJs, a good understanding of the path will become doubly important as we struggle to ensure that all our JavaScript source files can be found by these tools. This usually involves GLOB patterns, which can only be understood properly if you understand how your PATH works.</p>
+    <p>I like the current exercise (setting up your system to run Cordova create), in part because it really makes you wrestle with your PATH and ENVIRONMENT variables. Frankly, I want you in there struggling with these things a bit until you start to really understand how the system works. I don't want to automate the process for you. I want you to understand enough so you can master the subject. This mastery is necessary because the subject keeps coming up, over and over, in various contexts, as we work with Open Source code that is designed to run on multiple platforms, each of which require you to set up your PATH and ENVIRONMENT. Also, these skills make you more employable. Whether you do open source web development or not, understanding the PATH and ENVIRONMENT are crucial skills for anyone charged with setting up software, either as a developer, or an IT worker.</p>
+    </section>
+    <section class="level2" id="setting-your-path-on-the-mac">
+    <h2>Setting your path on the MAC</h2>
+    <p>These references for the MAC should be helpful:</p>
+    <ul>
+    <li><a href="http://stackoverflow.com/questions/7501678/set-environment-variables-on-mac-os-x-lion">Set Environment on OSX Lion</a></li>
+    </ul>
+    <p>Here are some particularly useful sections of the above link:</p>
+    <ul>
+    <li><a href="http://stackoverflow.com/a/8841666/253576">http://stackoverflow.com/a/8841666/253576</a></li>
+    <li><a href="http://stackoverflow.com/a/7502128/253576">http://stackoverflow.com/a/7502128/253576</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="additional-information">
+    <h2>Additional information:</h2>
+    <ul>
+    <li><a href="http://iphonedevlog.wordpress.com/2013/08/16/using-phonegap-3-0-cli-on-mac-osx-10-to-build-ios-and-android-projects/">Setting up Cordova on the Mac</a></li>
+    <li><a href="http://www.cyberciti.biz/faq/appleosx-bash-unix-change-set-path-environment-variable/">Set PATH and Environment</a></li>
+    <li><a href="http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x">ENVIRONMENT variables</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="working-with-buttons-input-controls-and-jquery">
+    <h2>Working with Buttons, Input Controls and jQuery</h2>
+    <ul>
+    <li><a href="http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html#working-with-buttons-input-controls-and-jquery">Links are in Resources</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="requirejs-and-bower">
+    <h2>RequireJs and Bower</h2>
+    <ul>
+    <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/RequireJs01">RequireJs Getting Started</a></li>
+    <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/Jasmine02">RequireJs and Karma JsObjects</a></li>
+    <li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/Jasmine05">BowerCopy JsObjects Example</a></li>
+    </ul>
+    </section>
+    <section class="level2" id="bower">
+    <h2>Bower</h2>
+    <p>First you need to install <a href="http://bower.io/">Bower</a>:</p>
+    <pre><code>npm install -g bower</code></pre>
+    <p>Now use it to install something:</p>
+    <ol type="1">
+    <li>Create bower.json files</li>
+    <li>Run bower install</li>
+    </ol>
+    <p>Here is a bower.json file for installing Jasmine 1.3.1.</p>
+    <pre><code>{
+      &quot;name&quot;: &quot;Jasmine02&quot;,
+      &quot;version&quot;: &quot;0.1.0&quot;,
+      &quot;homepage&quot;: &quot;https://github.com/charliecalvert/JsObjects&quot;,
+      &quot;authors&quot;: [
+        &quot;Charlie CedarIsle Calvert &lt;charlie@elvenware.com&gt;&quot;
+      ],
+      &quot;description&quot;: &quot;Jasmine example&quot;,
+      &quot;main&quot;: &quot;SpecRunner.html&quot;,
+      &quot;keywords&quot;: [
+        &quot;jasmine&quot;
+      ],
+      &quot;license&quot;: &quot;MIT&quot;,
+      &quot;private&quot;: true,
+      &quot;ignore&quot;: [
+        &quot;**/.*&quot;,
+        &quot;node_modules&quot;,
+        &quot;bower_components&quot;,
+        &quot;test&quot;,
+        &quot;tests&quot;    
+      ],
+      &quot;dependencies&quot;: {
+        &quot;jasmine&quot;: &quot;~1.3.1&quot;
+      }
+    }</code></pre>
+    </section>
+    <section class="level2" id="links">
+    <h2>Links</h2>
+    <ul>
+    <li><a href="http://www.brucelawson.co.uk/2012/best-of-time/">http://www.brucelawson.co.uk/2012/best-of-time/</a></li>
+    <li><a href="http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/">http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/</a></li>
+    <li><a href="http://git-scm.com/book">http://git-scm.com/book</a></li>
+    </ul>
+    </section>
 			</div>
 
 		</div>
