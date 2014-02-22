@@ -25,6 +25,15 @@ You will also want to install request locally:
 Or
 
 	npm install request --save-dev
+
+# Create Route
+
+Create a simple route you want to test:
+
+	app.get('/hello', function(request, response) { 'use strict';
+		response.send('Hi there.');
+	});
+	
 	
 # Basic Jasmine-Node
 
@@ -41,7 +50,13 @@ Save the following as **Tests/SimpleSpec.js**:
 		});
 	}); 
 
-Now run:
+# Run the test:
+
+Now run start your server running in one shell:
+
+	node Server.js
+	
+Then open a second shell and run your tests:
 
 	jasmine-node Tests/
 
