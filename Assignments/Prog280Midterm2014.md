@@ -106,6 +106,18 @@ files to HTML and copy them out to your **/var/www/bc** folder. Include
 or create a **/var/www/bc/index.html** that will allow you to click on
 link and display each file: **Sonnet01.html**, **Sonnet02.html** etc.
 
+The sample BuildAll script is found in:
+
+	JsObjects/Python/Utils
+	
+It is run with Python 3.3:
+
+	python3.3 BuildAll.py
+	
+You should also be able to run it like this:
+
+	./BuildAll.py
+
 ## Display it on S3
 
 Once you have everything working, copy the contents of your **index.html**
