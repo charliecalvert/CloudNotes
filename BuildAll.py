@@ -57,14 +57,15 @@ def assignments(markdown):
 		"LampBootstrap", "InfoManager01", "CodeAcademy01",
 		"Evernote01", "NodeExpressMongo01", "StackGoogle",
 		"StackDropBox", "GuestAdditions", "NodeModulesAssignment",
-		"MongoMark", "NodeRoutes01", "Pandoc01"]
+		"MongoMark", "NodeRoutes01", "Pandoc01", "Prog272Midterm2014",
+		"Prog280Midterm2014"]
 	makeItSo(markdown, "Assignments", files);
 
 # Run Program
 markdown = MarkdownToHtml()
 #cloudRoot(markdown)
-prog280(markdown)
-# prog272(markdown)
+# prog280(markdown)
+prog272(markdown)
 #assignments(markdown);
 #prog270(markdown)
 #isit320(markdown)

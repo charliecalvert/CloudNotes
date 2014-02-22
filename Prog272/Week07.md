@@ -14,6 +14,14 @@ at jQuery.getJSON.
 -   [Web GL Water](http://madebyevan.com/webgl-water/)
 -   [Average Progammers Talk](https://www.quora.com/Computer-Programmers/What-does-it-feel-like-to-be-an-average-programmer-among-very-talented-ones)
 
+
+# Permanently Delete from Git Repository
+
+A tool called BFG can make permanently deleting files from a repository
+fairly easy. 
+
+- [Elvenware Git](http://www.elvenware.com/charlie/development/cloud/Git.html#permanent-delete)
+
 # Debug Node in Eclipse
 
 - [Debug on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#debug-node-in-eclipse)
