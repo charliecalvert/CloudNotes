@@ -1,5 +1,4 @@
-ISIT 320 Resources
-=========
+# ISIT 320 Resources
 
 Here are number of links that you can use to help stay up to date
 with events and topics covered in our class. 

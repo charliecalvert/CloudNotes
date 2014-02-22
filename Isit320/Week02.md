@@ -1,5 +1,5 @@
-Week 02 ISIT 320
-================
+# Week 02 ISIT 320
+
 
 Here is a list of some of the key resources you can use this week. We
 start off with a link to the CloudNotes Resources page, then links

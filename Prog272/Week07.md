@@ -14,6 +14,36 @@ at jQuery.getJSON.
 -   [Web GL Water](http://madebyevan.com/webgl-water/)
 -   [Average Progammers Talk](https://www.quora.com/Computer-Programmers/What-does-it-feel-like-to-be-an-average-programmer-among-very-talented-ones)
 
+# Install Jasmine-Node
+
+	sudo npm install -g jasmine-node
+	
+You will also want to install request locally:
+
+	npm install request
+	
+Or
+
+	npm install request --save-dev
+	
+# Basic Jasmine-Node
+
+Save the following as **Tests/SimpleSpec.js**:
+
+	var request = require('request');
+
+	describe("A suite", function() {
+		it("should respond with hello world", function(done) {
+			request("http://localhost:30025/hello", function(error, response, body) {
+				expect(body).toEqual("Hi there.");
+				done();
+			});
+		});
+	}); 
+
+Now run:
+
+	jasmine-node Tests/
 
 # Permanently Delete from Git Repository
 
