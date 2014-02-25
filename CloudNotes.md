@@ -36,6 +36,7 @@ Prog 272
 -   [Week05](Prog272/Week05.html)
 -   [Week06](Prog272/Week06.html)
 -   [Week07](Prog272/Week07.html)
+-   [Week08](Prog272/Week08.html)
 
 Prog 280
 --------
@@ -47,6 +48,8 @@ Prog 280
 -   [Week04](Prog280/Week04.html)
 -   [Week05](Prog280/Week05.html)
 -   [Week06](Prog280/Week06.html)
+-   [Week07](Prog280/Week07.html)
+-   [Week08](Prog280/Week08.html)
 
 Prog 282
 --------
