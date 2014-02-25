@@ -36,168 +36,168 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section class="level2" id="prog-272-week-05-2014">
-    <h2>Prog 272 Week 05, 2014</h2>
-    <p>toc</p>
-    </section>
-    <section class="level2" id="main-goals">
-    <h2>Main Goals</h2>
-    <ul>
-    <li>There is no class on Thursday</li>
-    <li>Review objects</li>
-    <li>Review module pattern</li>
-    <li>Review File System</li>
-    </ul>
-    </section>
-    <section class="level2" id="install-guest-additions-in-linux">
-    <h2>Install Guest Additions in Linux</h2>
-    <p>This is not an assignment, but I suggest that you do install the Guest Additions.</p>
-    <p>If you set up the VirtualBox Guest Additions in Linux, you will find that you have better control over your virtual machine. In particular, you will find it easier to resize your desktop or make it full screen. You should also have better control over the mouse.</p>
-    <ul>
-    <li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#guest">Details</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="share-clipboard-between-windows-and-linux">
-    <h2>Share Clipboard Between Windows and Linux</h2>
-    <p>Again, this is not an assignment, but I suggest that you do set up the clipboard so that you can copy text back and forth between Windows and Linux.</p>
-    <ul>
-    <li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard">Details</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="virtual-appliances">
-    <h2>Virtual Appliances</h2>
-    <p>There are three pages on Elvenware that focus on VirtualBox. To learn about virtual appliances, read the first page listed here. It is a good idea, however, to become familiar with all three pages:</p>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/cloud/virtualization.html">http://www.elvenware.com/charlie/development/cloud/virtualization.html</a></li>
-    <li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html">http://www.elvenware.com/charlie/os/linux/VirtualBox.html</a></li>
-    <li><a href="http://www.elvenware.com/charlie/development/android/Androidx86.shtml">http://www.elvenware.com/charlie/development/android/Androidx86.shtml</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="get-readonly-jsobjects">
-    <h2>Get ReadOnly JsObjects</h2>
-    <p>Having a copy of JsObjects on your various machines can be useful, as it contains many helpful examples. For instance, when you create a new Virtual Machine, you probably want to have JsObjects installed on it. Here is a brief review of how you can, as necessary, install Git:</p>
-    <pre><code>sudo apt-get install git</code></pre>
-    <p>Now navigate to place on your hard drive where you can clone JsObjects. On Linux, that would usually be a folder called Git or GitHub. Here is how to create the folder:</p>
-    <pre><code>mkdir ~/Git</code></pre>
-    <p>Now navigate to that folder:</p>
-    <pre><code>cd ~/Git</code></pre>
-    <p>And then clone my repo:</p>
-    <pre><code>git clone git://github.com/charliecalvert/JsObjects.git</code></pre>
-    </section>
-    <section class="level2" id="no-hellocordova-accepted">
-    <h2>No HelloCordova Accepted</h2>
-    <p>Whether you use create or cordova create, be sure to always pass in the name of the project you are creating:</p>
-    <pre><code>create C:\Temp\MyApp com.goober.myapp MyApp</code></pre>
-    <p>or:</p>
-    <pre><code>cordova create C:\Temp\MyApp MyApp
-    cd C:\Temp\KewlApp
-    cordova platform add ios android
-    cordova build</code></pre>
-    <p>Assuming you have the right tools and right setup, both work, and both give you a project with a custom name, rather than a default name of <strong>HellowCordova</strong>. I just won't accept projects named <strong>HelloCordova</strong>, it puts the onus on me to do something in multiple steps that you should have done in one step.</p>
-    <p>Bottom line: I understand that we are still in the early phases, and it is hard to understand everything we need to do. But please don't turn in projects called <strong>HelloCordova</strong>. After this, I just won't grade any more projects with that name, and please rename any existing projects as per the instructions for the assignment.</p>
-    </section>
-    <section class="level2" id="ssh">
-    <h2>SSH</h2>
-    <p>You want to be sure that your copy of Linux has SSH installed. Here is the command to install SSH:</p>
-    <pre><code>sudo apt-get install ssh</code></pre>
-    <p>Here are two commands that create a pulic and private key for your Linux box, and save them in your .ssh folder:</p>
-    <pre><code>ssh-keygen -t rsa -P &#39;&#39; -f ~/.ssh/id_rsa 
-    cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/cloud/Git.html#the-ssh-key">Git and SSH Key</a></li>
-    <li><a href="http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#sshKeys">SSH Connections</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="install-mongodb-on-linux">
-    <h2>Install MongoDb on Linux</h2>
-    <ul>
-    <li><a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">Follow these instructions</a></li>
-    <li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html">Mongo on Elvenware</a></li>
-    </ul>
-    <p>Try:</p>
-    <pre><code>sudo apt-get install mongodb</code></pre>
-    <p>Or just put the following in bash script called InstallMongoDb.sh:</p>
-    <pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-    echo &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; | sudo tee /etc/apt/sources.list.d/mongodb.list
-    sudo apt-get update
-    sudo apt-get install mongodb-10gen</code></pre>
-    <p>Start, restart and stop MongoDb:</p>
-    <pre><code>sudo service mongodb start
-    sudo service mongodb stop
-    sudo service mongodb restart</code></pre>
-    <p>Install the NPM driver:</p>
-    <p>Use npm to install the Node mongodb driver:</p>
-    <pre><code>sudo npm install mongodb
-    db.getCollection(&quot;test_insert&quot;).find()</code></pre>
-    </section>
-    <section class="level2" id="passing-parameters">
-    <h2>Passing Parameters</h2>
-    <p>One tip I should share with everyone: You can pass in parameters to click functions.</p>
-    <ul>
-    <li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#clickParam">Details</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="mocking-objects">
-    <h2>Mocking Objects</h2>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend">HttpBackEnd and Jasmine</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="in-class-01">
-    <h2>In Class 01</h2>
-    <p>We have three main HTML files that can be run:</p>
-    <ul>
-    <li>index.html - for Cordova</li>
-    <li>Main.html - For standalone</li>
-    <li>Test.html - For unit testing</li>
-    </ul>
-    <p>Then we have 1 HTML file with the code used in index.html and Main.html. We call jQuery load to load that code into Main.html and index.html. Thus both programs have the same HTML, but different headers. Thus we can debug the code without having to worry about</p>
-    </section>
-    <section class="level2" id="code-academy">
-    <h2>Code Academy</h2>
-    <p>Bring both HTML and JavaScript to 25%. Let's add in jQuery. Get it to 25% also....</p>
-    </section>
-    <section class="level2" id="links">
-    <h2>Links</h2>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/web/Mobile/">http://www.elvenware.com/charlie/development/web/Mobile/</a></li>
-    <li><a href="http://jquerymobile.com/blog/2013/01/14/announcing-jquery-mobile-1-3-0-beta/#download">http://jquerymobile.com/blog/2013/01/14/announcing-jquery-mobile-1-3-0-beta/#download</a></li>
-    <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html">http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html</a></li>
-    <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#objects">http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#objects</a></li>
-    <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#compareObjFunc">http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#compareObjFunc</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="day-2">
-    <h2>Day 2</h2>
-    </section>
-    <section class="level2" id="topics">
-    <h2>Topics</h2>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/android/AndroidLogging.html">LogCat</a></li>
-    <li>Fake jQuery Mobile</li>
-    <li><a href="http://www.elvenware.com/charlie/development/web/Mobile/">jQuery Mobile</a></li>
-    <li>LocalFileSystem</li>
-    </ul>
-    </section>
-    <section class="level2" id="jquery-attribute-selectors">
-    <h2>jQuery Attribute Selectors</h2>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors">http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="jshint">
-    <h2>JSHint</h2>
-    <ul>
-    <li><a href="http://www.elvenware.com/charlie/development/android/Eclipse.shtml#jsHintExternal">http://www.elvenware.com/charlie/development/android/Eclipse.shtml#jsHintExternal</a></li>
-    </ul>
-    </section>
-    <section class="level2" id="jquery-fake-source">
-    <h2>JQuery Fake Source</h2>
-    <ul>
-    <li><a href="https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1">JQueryFakeMobile02.zip</a></li>
-    <li><a href="https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1">More</a></li>
-    </ul>
-    </section>
+				<section id="prog-272-week-05-2014" class="level2">
+<h2>Prog 272 Week 05, 2014</h2>
+<p>toc</p>
+</section>
+<section id="main-goals" class="level2">
+<h2>Main Goals</h2>
+<ul>
+<li>There is no class on Thursday</li>
+<li>Review objects</li>
+<li>Review module pattern</li>
+<li>Review File System</li>
+</ul>
+</section>
+<section id="install-guest-additions-in-linux" class="level2">
+<h2>Install Guest Additions in Linux</h2>
+<p>This is not an assignment, but I suggest that you do install the Guest Additions.</p>
+<p>If you set up the VirtualBox Guest Additions in Linux, you will find that you have better control over your virtual machine. In particular, you will find it easier to resize your desktop or make it full screen. You should also have better control over the mouse.</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#guest">Details</a></li>
+</ul>
+</section>
+<section id="share-clipboard-between-windows-and-linux" class="level2">
+<h2>Share Clipboard Between Windows and Linux</h2>
+<p>Again, this is not an assignment, but I suggest that you do set up the clipboard so that you can copy text back and forth between Windows and Linux.</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard">Details</a></li>
+</ul>
+</section>
+<section id="virtual-appliances" class="level2">
+<h2>Virtual Appliances</h2>
+<p>There are three pages on Elvenware that focus on VirtualBox. To learn about virtual appliances, read the first page listed here. It is a good idea, however, to become familiar with all three pages:</p>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/virtualization.html">http://www.elvenware.com/charlie/development/cloud/virtualization.html</a></li>
+<li><a href="http://www.elvenware.com/charlie/os/linux/VirtualBox.html">http://www.elvenware.com/charlie/os/linux/VirtualBox.html</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/android/Androidx86.shtml">http://www.elvenware.com/charlie/development/android/Androidx86.shtml</a></li>
+</ul>
+</section>
+<section id="get-readonly-jsobjects" class="level2">
+<h2>Get ReadOnly JsObjects</h2>
+<p>Having a copy of JsObjects on your various machines can be useful, as it contains many helpful examples. For instance, when you create a new Virtual Machine, you probably want to have JsObjects installed on it. Here is a brief review of how you can, as necessary, install Git:</p>
+<pre><code>sudo apt-get install git</code></pre>
+<p>Now navigate to place on your hard drive where you can clone JsObjects. On Linux, that would usually be a folder called Git or GitHub. Here is how to create the folder:</p>
+<pre><code>mkdir ~/Git</code></pre>
+<p>Now navigate to that folder:</p>
+<pre><code>cd ~/Git</code></pre>
+<p>And then clone my repo:</p>
+<pre><code>git clone git://github.com/charliecalvert/JsObjects.git</code></pre>
+</section>
+<section id="no-hellocordova-accepted" class="level2">
+<h2>No HelloCordova Accepted</h2>
+<p>Whether you use create or cordova create, be sure to always pass in the name of the project you are creating:</p>
+<pre><code>create C:\Temp\MyApp com.goober.myapp MyApp</code></pre>
+<p>or:</p>
+<pre><code>cordova create C:\Temp\MyApp MyApp
+cd C:\Temp\KewlApp
+cordova platform add ios android
+cordova build</code></pre>
+<p>Assuming you have the right tools and right setup, both work, and both give you a project with a custom name, rather than a default name of <strong>HellowCordova</strong>. I just won't accept projects named <strong>HelloCordova</strong>, it puts the onus on me to do something in multiple steps that you should have done in one step.</p>
+<p>Bottom line: I understand that we are still in the early phases, and it is hard to understand everything we need to do. But please don't turn in projects called <strong>HelloCordova</strong>. After this, I just won't grade any more projects with that name, and please rename any existing projects as per the instructions for the assignment.</p>
+</section>
+<section id="ssh" class="level2">
+<h2>SSH</h2>
+<p>You want to be sure that your copy of Linux has SSH installed. Here is the command to install SSH:</p>
+<pre><code>sudo apt-get install ssh</code></pre>
+<p>Here are two commands that create a pulic and private key for your Linux box, and save them in your .ssh folder:</p>
+<pre><code>ssh-keygen -t rsa -P &#39;&#39; -f ~/.ssh/id_rsa 
+cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</code></pre>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/Git.html#the-ssh-key">Git and SSH Key</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#sshKeys">SSH Connections</a></li>
+</ul>
+</section>
+<section id="install-mongodb-on-linux" class="level2">
+<h2>Install MongoDb on Linux</h2>
+<ul>
+<li><a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">Follow these instructions</a></li>
+<li><a href="http://elvenware.com/charlie/development/database/NoSql/MongoDb.html">Mongo on Elvenware</a></li>
+</ul>
+<p>Try:</p>
+<pre><code>sudo apt-get install mongodb</code></pre>
+<p>Or just put the following in bash script called InstallMongoDb.sh:</p>
+<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39; | sudo tee /etc/apt/sources.list.d/mongodb.list
+sudo apt-get update
+sudo apt-get install mongodb-10gen</code></pre>
+<p>Start, restart and stop MongoDb:</p>
+<pre><code>sudo service mongodb start
+sudo service mongodb stop
+sudo service mongodb restart</code></pre>
+<p>Install the NPM driver:</p>
+<p>Use npm to install the Node mongodb driver:</p>
+<pre><code>sudo npm install mongodb
+db.getCollection(&quot;test_insert&quot;).find()</code></pre>
+</section>
+<section id="passing-parameters" class="level2">
+<h2>Passing Parameters</h2>
+<p>One tip I should share with everyone: You can pass in parameters to click functions.</p>
+<ul>
+<li><a href="http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#clickParam">Details</a></li>
+</ul>
+</section>
+<section id="mocking-objects" class="level2">
+<h2>Mocking Objects</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend">HttpBackEnd and Jasmine</a></li>
+</ul>
+</section>
+<section id="in-class-01" class="level2">
+<h2>In Class 01</h2>
+<p>We have three main HTML files that can be run:</p>
+<ul>
+<li>index.html - for Cordova</li>
+<li>Main.html - For standalone</li>
+<li>Test.html - For unit testing</li>
+</ul>
+<p>Then we have 1 HTML file with the code used in index.html and Main.html. We call jQuery load to load that code into Main.html and index.html. Thus both programs have the same HTML, but different headers. Thus we can debug the code without having to worry about</p>
+</section>
+<section id="code-academy" class="level2">
+<h2>Code Academy</h2>
+<p>Bring both HTML and JavaScript to 25%. Let's add in jQuery. Get it to 25% also....</p>
+</section>
+<section id="links" class="level2">
+<h2>Links</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/Mobile/">http://www.elvenware.com/charlie/development/web/Mobile/</a></li>
+<li><a href="http://jquerymobile.com/blog/2013/01/14/announcing-jquery-mobile-1-3-0-beta/#download">http://jquerymobile.com/blog/2013/01/14/announcing-jquery-mobile-1-3-0-beta/#download</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html">http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#objects">http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#objects</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#compareObjFunc">http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#compareObjFunc</a></li>
+</ul>
+</section>
+<section id="day-2" class="level2">
+<h2>Day 2</h2>
+</section>
+<section id="topics" class="level2">
+<h2>Topics</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/android/AndroidLogging.html">LogCat</a></li>
+<li>Fake jQuery Mobile</li>
+<li><a href="http://www.elvenware.com/charlie/development/web/Mobile/">jQuery Mobile</a></li>
+<li>LocalFileSystem</li>
+</ul>
+</section>
+<section id="jquery-attribute-selectors" class="level2">
+<h2>jQuery Attribute Selectors</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors">http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors</a></li>
+</ul>
+</section>
+<section id="jshint" class="level2">
+<h2>JSHint</h2>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/android/Eclipse.shtml#jsHintExternal">http://www.elvenware.com/charlie/development/android/Eclipse.shtml#jsHintExternal</a></li>
+</ul>
+</section>
+<section id="jquery-fake-source" class="level2">
+<h2>JQuery Fake Source</h2>
+<ul>
+<li><a href="https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1">JQueryFakeMobile02.zip</a></li>
+<li><a href="https://bc.instructure.com/courses/795060/files/23818793/download?wrap=1">More</a></li>
+</ul>
+</section>
 			</div>
 
 		</div>

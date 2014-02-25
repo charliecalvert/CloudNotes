@@ -1,11 +1,11 @@
 import os
 import sys
-import elfutils.elffiles as elffiles
+import elfutils.elffiles as elfFiles
 from elfutils.MarkdownToHtml import MarkdownToHtml
 
 # Site Root
-cloudNotesFrom= os.environ['GITHUB'] + "CloudNotes\\"
-cloudNotesTo=elffiles.ensureFinalSlash(os.environ['ELVENWARE']) + "charlie\\books\\CloudNotes\\"
+cloudNotesFrom=elfFiles.ensureFinalSlash(os.environ['GITHUB']) + "CloudNotes\\"
+cloudNotesTo=elfFiles.ensureFinalSlash(os.environ['ELVENWARE']) + "charlie\\books\\CloudNotes\\"
 normalHtml = 0
 revealHtml = 1
 
@@ -14,7 +14,7 @@ revealHtml = 1
 def makeItSo(markdown, folder, files, technique = normalHtml):
 	markdown.copyFrom = cloudNotesFrom + folder
 	markdown.destination = cloudNotesTo + folder
-	elffiles.ensureDir(markdown.destination)
+	elfFiles.ensureDir(markdown.destination)
 	if technique == revealHtml:
 		markdown.runReveal(files);
 	else:
