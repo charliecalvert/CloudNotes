@@ -147,3 +147,65 @@ Here is the syntax for links in markdown:
 	- [MongoMark](MongoMark.html)
  
 Remember to put it in a file called **index.md**.
+
+Here is what my bucket on AWS looks like:
+
+![View on AWS](../Images/AwsS301.png)
+
+Notice that I have three HTML files. Yours will be called Sonnet01.html,
+Sonnet02.html, etc. Notice also the three folders that I copied from 
+our bc folder in the Linux box. Notice also the URL that I created for
+my S3 box:
+
+	bucket02.elvenware.com.
+
+You should create one like that. Use all lower case.
+
+## Bug Fix in BuildAll.py
+
+I realized, rather belatedly, that there was a bug in the **start.html**
+file from this directory:
+
+  /JsObjects/Utilities/Templates
+
+This meant that some of the CSS for our files in **/var/www/bc** did 
+not resolve correctly. Your files would still show up, but they might
+look a bit odd with an image missing, some of the text not in the right
+place.
+
+I have created two new files called **StartLinux.html** and 
+**NavLinux.html** and put them in **Templates** folder. If you pull the 
+latest from Git you will get them.
+
+I also updated line 23 in **BuildAll.py** to make sure they get linked in:
+
+	markdown.runner(files, ['StartLinux.html', 'NavLinux.html', 'footer.html', 'end.html']);
+
+If you pull down the latest from **JsObjects** you will also get 
+that change. If your HTML files does not look exactly right because 
+of the broken CSS, I will understand, but if you can make this 
+change all should be well with your code.
+
+The only thing you need to do is pull down the latest from Git:
+
+	cd /Git/JsObjects
+	git pull
+
+Then rerun the updated **BuildAll.py**. You want to make sure to 
+preserve your list of files to transfer to the /var/www/bc directory:
+
+	def prog280(markdown):
+		files = ["DropBox", "MongoMark", "index"]; // Keep this list in sync with the files that you want to copy. ie (Sonnet01, Sonnet02, etc)
+		makeItSo(markdown, "", files);
+
+The mistake in my **start.html** file caused three lines to have 
+the wrong path in them. They should read:
+
+	<link rel="shortcut icon" href="Images/favicon.png">
+	<script src="Scripts/elvenware.js" type="text/javascript"></script>
+	<link href="Styles/BootstrapIndex.css" rel="stylesheet" type="text/css" />
+
+If, instead, you see the word **charlie** in those bits of text from 
+the top of your HTML file, then that is the bug, and you need to pull
+the latest code and rerun **BuildAll.py**, being sure not to lose the
+list of files that you want it to copy.
