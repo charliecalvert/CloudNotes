@@ -78,3 +78,40 @@ I have not yet decided about unit tests. Please check back later.
 ## Notes
 
 RegEx: Sonnet\s(\d+)
+
+## Unit Tests
+
+You must include:
+
+- Three server side tests (MongoTalk04: jasmine-node)
+- Three client tests (JasmineSpy)
+
+On the client side include:
+
+- One method which is an Async function
+- Two methods that use Spys
+
+Example Async:
+
+	it("Integration test makes a real AJAX request", function(done) {
+		textLoader.loadFile("Sources.html", function(responseText) {
+			var bar = $(responseText).filter('#paragraph04').html();
+			expect(bar).toBe('Fine time.');
+			done();
+		});
+	});
+	
+Example Spy:
+
+	it("Tests that loadFile is called with Sources.html", function() {
+		// get is stubbed and never really called
+		spyOn($, "get");
+		textLoader.loadFile("Sources.html", function(data) {
+			console.log(data);
+		});
+		expect($.get).toHaveBeenCalledWith("Sources.html", 	jasmine.any(Function));
+	});
+	
+## Connection Pool
+
+- <http://blog.mongolab.com/2013/11/deep-dive-into-connection-pooling/>
