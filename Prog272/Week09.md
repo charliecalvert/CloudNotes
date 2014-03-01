@@ -2,13 +2,22 @@ Week 09 Days One and Two
 ========================
 
 
+Unit Tests
+---------
+
+-   [Unit Testing](http://bit.ly/1dTjs8h)
+-   grunt Deploy in JasmineSpy
 
 AWS
 ---
 
--   Automate Setup
 
+-   Automate Setup
 -   Running Scripts on Linux
+-   Cloud 9
+-   Markdown and Pandoc
+-   AWS
+
 
 Git
 ---
