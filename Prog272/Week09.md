@@ -7,6 +7,7 @@ Unit Tests
 
 -   [Unit Testing](http://bit.ly/1dTjs8h)
 -   grunt Deploy in JasmineSpy
+-   [Git Tagging](http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag)
 
 AWS
 ---
