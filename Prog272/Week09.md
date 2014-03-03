@@ -7,7 +7,15 @@ Unit Tests
 
 -   [Unit Testing](http://bit.ly/1dTjs8h)
 -   grunt Deploy in JasmineSpy
+-   PubSub Always
 -   [Git Tagging](http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag)
+
+PubSub
+------
+
+In the interest of preserving loose coupling and proper separation of
+concerns, we are going to begin using PubSub in all our programs.
+
 
 AWS
 ---
