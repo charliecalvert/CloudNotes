@@ -12,6 +12,9 @@ Unit Tests
 -   [Pub Sub01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/PubSubTopic01)
 -   [Pub Sub02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/PubSubTopic02)
 
+Use an environment variable that defines the URL we want to use to connect.
+That way we can set the ENV and everything just works.
+
 PubSub
 ------
 

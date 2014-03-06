@@ -55,7 +55,7 @@ def prog272(markdown):
 def assignments(markdown):
 	files=["Prog270-011414", "OwnCloudInstall", "Cordova01",
 		"LampBootstrap", "InfoManager01", "CodeAcademy01",
-		"Evernote01", "NodeExpressMongo01", "StackGoogle",
+		"CodeAcademy03", "Evernote01", "NodeExpressMongo01", "StackGoogle",
 		"StackDropBox", "GuestAdditions", "NodeModulesAssignment",
 		"MongoMark", "NodeRoutes01", "Pandoc01", "Prog272Midterm2014",
 		"Prog280Midterm2014"]
