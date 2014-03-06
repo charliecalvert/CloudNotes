@@ -1,14 +1,19 @@
-Working with Scripts
---------------------
+## Prog 280 Week 09
 
--   Get the scripts from JsObjects
+-  [Internet Deck](http://bit.ly/Xk4H5t)
+-  [Filezilla](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#filezilla)
+-  [SSH](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#networks-ssh-sftp-and-putty)
+-  [Putty](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty)
+-  [Git](http://www.elvenware.com/charlie/development/cloud/Git.html)
+-  [VNC Servers](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#vnc)
+-  Scripts
 
--   \\JsObjects\\Utilities\\SetupLinuxBox
+# Scripts
 
-Git
----
+Get the scripts from JsObjects
 
--   <http://www.elvenware.com/charlie/development/cloud/Git.html>
+-  \\JsObjects\\Utilities\\SetupLinuxBox
+
 
 SSH Remote Host ID has Changed 
 -------------------------------
