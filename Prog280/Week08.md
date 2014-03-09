@@ -12,9 +12,6 @@ You can learn about Filezilla here:
 -   <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#filezilla>
 
 
-
-
-
 Assignment
 ----------
 

@@ -44,13 +44,14 @@ def isit320(markdown):
 
 # Prog280
 def prog280(markdown):
-	files = ["Resources", "Week01", "Week02", "Week03", "Week04"];
+	files = ["Resources", "Week01", "Week02", "Week03", "Week04", 
+		"Week05", "Week06", "Week07", "Week08", "Week09"];
 	makeItSo(markdown, "Prog280", files);
 
 def prog272(markdown):
 	files=["Resources", "Week01", 'Week02', 'Week03', 'Week04', 
-		'Week05', 'Week06', 'Week07'];
-	makeItSo(markdown, "Prog272", files, revealHtml);
+		'Week05', 'Week06', 'Week07', 'Week08', 'Week09'];
+	makeItSo(markdown, "Prog272", files);
 
 def assignments(markdown):
 	files=["Prog270-011414", "OwnCloudInstall", "Cordova01",
