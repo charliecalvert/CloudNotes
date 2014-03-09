@@ -5,6 +5,9 @@ GIT
 ---
 
 -   Advantages of SSH over HTTPS
+-   RequreJs
+-   PubSub
+-   Express and Jade in AwsBasicS3
 
 Shell Scripts
 -------------
