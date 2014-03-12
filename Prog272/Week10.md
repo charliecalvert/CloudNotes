@@ -8,23 +8,39 @@ GIT
 -   RequreJs
 -   PubSub
 -   Express and Jade in AwsBasicS3
--   Free owncloud: arvixe.com
+-   Static sites (node-static)
 
-Shell Scripts
--------------
 
--   SetupLinux.sh
+##AWSBasic
 
-ELF own and run
----------------
+- Env: PythonPath
+- Env: JsObjects
+- config.json
+- Your dropbox folder
 
--   Then we use that to keep track of associations between objects.
--   Associations, aggregation, composition
--   An association is any relationship between two objects
--   An aggregation is a "has a" relationship
--   Composition is the case where one object cannot exist without its parent,
-    then it is called composition. A container, where the contained object
-    cannot exist without its container.
+## Require
+
+- [Design RequireBoat](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/RequireBoat)
+- [Design RequireJsO1](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/RequireJs01)
+- [Data MongoTalk05](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/RequireJs01)
+
+## Express
+
+If you have not done so already:
+
+	sudo npm install -g express
+
+**sudo** is not needed on Windows.
+
+Then create a project:
+
+	express MyProject
+
+- JavaScript NodeCode HelloExpress03
+
+Set the environment variable PORT to 30025:
+
+	app.set('port', process.env.PORT || 30025);
 
 Argo Uml
 --------
@@ -33,18 +49,6 @@ Argo Uml
 -   <http://sourceforge.net/apps/mediawiki/textuml/index.php?title=TextUML_Toolkit>
 -   <http://sourceforge.net/apps/mediawiki/textuml/index.php?title=TextUML_Tutorial>
 -   <http://modeling-languages.com/uml-tools-textual-notations-define-uml-models/>
-
-TryCatch
---------
-
-We have an example in JSObjects:
-
-<https://github.com/charliecalvert/JsObjects/tree/master/JavaScriptObjects/TryCatch>
-
-Async Unit Tests and Stop Start
--------------------------------
-
--   ElvenTests: makeRow, getAllRows
 
 Agile
 -----
