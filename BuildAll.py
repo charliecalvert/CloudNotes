@@ -50,7 +50,7 @@ def prog280(markdown):
 
 def prog272(markdown):
 	files=["Resources", "Week01", 'Week02', 'Week03', 'Week04', 
-		'Week05', 'Week06', 'Week07', 'Week08', 'Week09'];
+		'Week05', 'Week06', 'Week07', 'Week08', 'Week09', 'Week10'];
 	makeItSo(markdown, "Prog272", files);
 
 def assignments(markdown):
