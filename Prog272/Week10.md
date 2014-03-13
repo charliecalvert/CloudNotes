@@ -13,9 +13,8 @@ GIT
 
 ##AWSBasic
 
-- Env: PythonPath
-- Env: JsObjects
-- config.json
+- [Set environment variables JSOBJECTS and PYTHONPATH](https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/NodeCode/AwsBasicS3/README.md)
+- You need to get the access keys from the [AWS security page](https://console.aws.amazon.com/iam/home?#security_credential) and put them in **config.json**
 - Your dropbox folder
 
 ## Require
