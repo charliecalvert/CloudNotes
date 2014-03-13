@@ -8,11 +8,16 @@
 -  [VNC Servers](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#vnc)
 -  Scripts
 
+Meld is a directory compare utility. Install meld:
+
+  - sudo apt-get install meld
+  
 # Scripts
 
 Get the scripts from JsObjects
 
 -  \\JsObjects\\Utilities\\SetupLinuxBox
+
 
 
 SSH Remote Host ID has Changed 
