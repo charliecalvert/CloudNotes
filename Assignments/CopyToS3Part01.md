@@ -10,6 +10,89 @@ The simplest way to get started is to watch the now outdated intro video:
 
 Since the video, I've integrated **BuildAll.py** into the project. It is now called **MarkdownTransform.py**, and you should never have to open it. Instead, you edit the contents of the **MarkdownTransformConfig.json** file. The process is the same as that described in the video, but you are now transforming markdown files into HTML, and in the process copying them from one folder to another. This is the same thing that **BuildAll.py** did, only now the file hopefully has a better name and is easier to use.
 
+## Set Up
+
+You need to be sure you have the environmonent variables JSOBJECTS and PYTHON path set up correctly. I have the following at the bottom of my .bashrc file:
+
+    export JSOBJECTS=$HOME/Git/JsObjects
+    export PYTHONPATH=${PYTHONPATH}:$JSOBJECTS/Python/:$JSOBJECTS/Python/Utils/:$JSOBJECTS/Python/Utils/RegEx/:
+
+You may need to tweak the first of these two lines slightly to fit the set up on your system. 
+
+- [See the video](http://youtu.be/v4DFrhBHuCU)
+
+After making the video I removed the final slash from JSOBJECTS environment variable.
+
+On Windows I set up my enviornment variables with this batch file that I call **SetEnvionmentVariables.bat:**
+
+    @ECHO OFF
+    
+    ECHO =========================
+    SetX GITHUB %USERPROFILE%\Documents\GitHub
+    REM Setx GITHUB C:\Src\Git
+    SetX JSOBJECTS %GITHUB%\JsObjects
+    
+    set BASE=%JSOBJECTS%\Python
+    SetX PYTHONPATH %BASE%;%BASE%\Utils;%BASE%\RegEx;%BASE%
+    ECHO =========================
+    ECHO GITHUB = %GITHUB%
+    ECHO JSOBJECTS = %JSOBJECTS%
+    ECHO PYTHONPATH = %PYTHONPATH%
+    ECHO =========================
+    ECHO You will need to restart this command window 
+    ECHO before these variables take effect.
+    ECHO =========================
+    
+I maintain **SetEnvironmentVariables** in [JsObjects](https://github.com/charliecalvert/JsObjects/blob/master/Utilities/InstallScripts/SetEnvironmentVariables.bat).
+
+## Config.json
+
+You need to get the access keys from the [AWS security page](https://console.aws.amazon.com/iam/home?#security_credential) and put them in **config.json**:
+
+    { "accessKeyId": "ACCESS KEY HERE", "secretAccessKey": "SECRET KEY HERE", "region": "us-east-1" }
+
+You need to replace the strings **ACCESS KEY HERE** and **SECRET KEY HERE** with your access and secret keys from AWS.
+
+Your access key will look like this: **AKIAIOSFODNN7EXAMPLE**
+
+Your secret key will look like this: **wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY**
+
+More information is available in the [AWS security credential docs](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html): 
+
+## Copying Files on Linux
+
+This programs works with two sites:
+
+- A staging site.
+- The release site on S3
+
+On Linux, I typically use **/var/www/bc** as my staging site. Then I access it by typing the following in the address bar of my browser:
+
+    http://localhost/bc
+    
+For security reasons, by default, you do not have rights to write to **/var/www/bc**. Since we talking about a staging site, and not a release site, there is usually little reason to be overly concerned about security. As a result, I simply give myself full rights to copy files to the site:
+
+    sudo chown charlie:charlie /var/www/bc
+    
+This is a more flexible way to say the same thing:
+
+    sudo chown $USER:$USER /var/www/bc
+
+Before running **chown** we can use the list (ls) command to see that **/var/www/bc** is owned by root:
+
+    charlie@mongovbox:~$ ls -l /var/www/
+    total 12
+    drwxr-xr-x  5 root    root    4096 Mar 10 14:39 bc
+    -rw-r--r--  1 root    root     177 Feb 14 23:10 index.html
+    
+Next we run **chown** and check the results with the list command:
+
+    charlie@mongovbox:~$ sudo chown $USER:$USER /var/www/bc
+    charlie@mongovbox:~$ ls -l /var/www/
+    total 12
+    drwxr-xr-x 5 charlie charlie 4096 Mar 10 14:39 bc
+    -rw-r--r-- 1 root    root     177 Feb 14 23:10 index.html
+    
 ## Caveats and Limitations
 
 This program can only copy folders one level deep. This means you can create a structure like this on S3:
