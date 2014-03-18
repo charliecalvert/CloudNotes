@@ -9,6 +9,10 @@ GIT
 -   PubSub
 -   Express and Jade in AwsBasicS3
 -   Static sites (node-static)
+-   Grunt
+-   Deploy
+-   Karma
+
 
 
 ##AWSBasic

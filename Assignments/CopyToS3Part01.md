@@ -10,12 +10,18 @@ The simplest way to get started is to watch the now outdated intro video:
 
 Since the video, I've integrated **BuildAll.py** into the project. It is now called **MarkdownTransform.py**, and you should never have to open it. Instead, you edit the contents of the **MarkdownTransformConfig.json** file. The process is the same as that described in the video, but you are now transforming markdown files into HTML, and in the process copying them from one folder to another. This is the same thing that **BuildAll.py** did, only now the file hopefully has a better name and is easier to use.
 
+## Set up config file
+
+    { "accessKeyId": "YOUR KEY HERE", "secretAccessKey": "YOUR KEY HERE", "region": "us-east-1" }
+    
+if you are using us-east-1 then your bucket should be created in US STANDARD. I know that works. If you want to try creating a bucket in Oregon then set it to us-west-2.
+
 ## Set Up
 
 You need to be sure you have the environmonent variables JSOBJECTS and PYTHON path set up correctly. I have the following at the bottom of my .bashrc file:
 
     export JSOBJECTS=$HOME/Git/JsObjects
-    export PYTHONPATH=${PYTHONPATH}:$JSOBJECTS/Python/:$JSOBJECTS/Python/Utils/:$JSOBJECTS/Python/Utils/RegEx/:
+    export PYTHONPATH=${PYTHONPATH}:$JSOBJECTS/Python/:$JSOBJECTS/Python/Utils/:$JSOBJECTS/Python/RegEx/:
 
 You may need to tweak the first of these two lines slightly to fit the set up on your system. 
 
@@ -45,6 +51,15 @@ On Windows I set up my enviornment variables with this batch file that I call **
     
 I maintain **SetEnvironmentVariables** in [JsObjects](https://github.com/charliecalvert/JsObjects/blob/master/Utilities/InstallScripts/SetEnvironmentVariables.bat).
 
+## Set Up Lamp
+
+LAMP = Linux, Apache, MySql and Python/Php/Perl
+
+- [Go here](http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux)
+
+    sudo apt-get install tasksel
+    sudo tasksel install lamp-server
+
 ## Config.json
 
 You need to get the access keys from the [AWS security page](https://console.aws.amazon.com/iam/home?#security_credential) and put them in **config.json**:
@@ -58,6 +73,20 @@ Your access key will look like this: **AKIAIOSFODNN7EXAMPLE**
 Your secret key will look like this: **wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY**
 
 More information is available in the [AWS security credential docs](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html): 
+
+## Set up the Static Site
+
+The files you need are here:
+
+-  JsObjects JavaScript NodeCode StaticSite
+
+## Templates
+
+- The html pieces (start, nav, etc)
+- The bootstrap files and elvenware log
+
+- JsObjects Utilities Templates
+- You need the Images, Styles and Scripts folders.
 
 ## Copying Files on Linux
 
