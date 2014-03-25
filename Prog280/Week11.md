@@ -1,8 +1,35 @@
-# Week 11
+# Week 11 Prog 280
 
 The focus for this week will be:
 - Plex
 - Review of cloud basics
+
+## Run StackEdit Locally
+
+First we need to download the StackEdit repository from GitHub:
+
+    git clone git://github.com/benweet/stackedit.git
+
+It turns out that things will work best if we run on Port 80. The problem is not with connecting to StackEdit, but in getting StackEdit to connect to Google Drive and Dropbox. When we try to get authentication to use those services, they don't understand that we are running on particular port, so the verification fails.
+
+**NOTE**: *What I'm about to say in this note does not appear to be true, but I'm going to say it anyway, just to be safe. It would seem logical that our server will "forget" the files we have open when we stop and start our local copy of StackEdit by hitting Control C at the command line. Hence we could lose our work unless it is backed up to Google Drive or Dropbox. In fact, it appears that StackEdit does remember, but I don't understand how, so play it safe and back up to Google Drive or StackEdit before exiting. That should occur automatically so long as your document is linked to those services.*
+
+Stop apache so that we have access to port 80:
+
+    sudo /etc/init.d/apache2 stop
+
+Create a script called **StartStackEdit.sh** with this content and place it in or near your stackedit folder:
+
+    export PORT=80
+    sudo node server.js
+
+On Linux, to listen on ports below 80, you must run as root.
+
+## Look at the Final
+
+Coming soon:
+
+- [Final]()
 
 ## Plex Details
 
