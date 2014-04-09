@@ -8,6 +8,18 @@ Our Main Goals are to learn more about:
 -   Karma
 -   Static sites (node-static)
 
+## Problems with Automatic semicolon insertion
+
+- [From Stackoverflow](http://stackoverflow.com/a/2846298/253576)
+
+This code is dangerous because of possible semi-colon insertion:
+
+    if (request.query.createFolderToWalkOnS3 === true
+			|| request.query.createFolderToWalkOnS3 === "true")
+		request.query.createFolderToWalkOnS3 = true;
+
+The lesson here is not to start a line with an OR symbol.
+
 ## Environment variables in Eclipse
 
 If you run Node in Eclipse, to access JSOBJECTS, you made need 

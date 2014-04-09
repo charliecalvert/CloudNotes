@@ -109,5 +109,38 @@ Each file in the database should have at least four fields besides the built in 
 ## Convert to Markdown from HTML
 
     pandoc -t markdown -o FILENAME.md FileName.html
+    
+## Transform and Copy not Working
+
+There is a challenge in this code that is a bit harder to solve than I wanted it to be. In AwsBasicS3,
+in **app.js**, there is a **buildAll** route:
+
+    app.get('/buildAll', function(request, response) { 'use strict';
+    	console.log("buildAll called");	
+    	var options = JSON.parse(request.query.options);
+    	buildAll(response, options, request.query.index);
+    });
+
+This works fine with my current code. The call to buildAll launches my Python code:
+
+    var command = config[index].pathToPython + " MarkdownTransform.py -i " + index;	
+	try {
+		exec(command, function callback(error, stdout, stderr) {
+
+This is all very nice, but unfortunately **MarkdownTransform.py** directly reads in **MarkdownTransformConfig.json**. The job of your final, and of **CopyToS3Part02**, was to stop working with **MarkdownTransformConfig.json**, and to start working with code that reads and writes from the database. All that is good well, but if you are updating the database, as I asked, then you are probably not also updating **MarkdownTransformConfig.json**. This means that the **Transform and Copy** button on your updated copy of **AwsBasicS3** will no longer work out of the box.
+
+I *could* argue that you need to see what is wrong, and fix the problem yourself. But that's going a bit too far. So I'll show you some code that should fix the problem:
+
+    app.get('/buildAll', function(request, response) { 'use strict';
+    	console.log("buildAll called");	
+    	var options = request.query.options;
+    	fs.writeFile("MarkdownTransformConfig.json", options, function(err, data) {
+    		var options = JSON.parse(request.query.options);
+    		buildAll(response, options, request.query.index);
+    	});
+    });
+
+Here you can see that the **buildAll** route handler now creates a new **MarkdownTransformConfig.json** based on code sent to it from the client. Some of you will be able to take the code shown here and use it directly. Others, will find they have to think about what code they actually end up writing to **MarkdownTransformConfig.json**. That is, what code is in **request.query.options**. Do the best you can. I will focus more on whether your code updates the config files in the database, and copies the sonnets to folders. But getting this bit right would be very nice, and with the above code it should not be hard. Do not worry too much if your new copy of **MarkdownTransformConfig.json** looks exactly right. Just see if it works.
+
 
 > Written with [StackEdit](https://stackedit.io/).

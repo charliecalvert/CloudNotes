@@ -67,11 +67,13 @@ In Figure One, I give an example of the type of document I want you to create. Y
 
  OnlinePresnce01.png
 
-Figure 1: Here is the type of Google Docs file I want you create for Assignment Two. You do not need to use the same colors. Click to expand
+Figure 1: Here is the type of Google Docs file I want you to create. You do not need to use the same colors.
 
 OnlinePresence02.png
 
-Figure 2: Sharing a document in Google Docs. This dialog was instantiated when I pushed the Share button seen in the background near the top right of the screen. It will be shared when I enter a valid email address and push the green Share and Save button. Think long and hard before you enter the email address. ***Is it the right address***?
+Figure 2: Sharing a document in Google Docs. 
+
+The dialog shown in Figure 2  was instantiated when I pushed the Share button seen in the background near the top right of the screen. It will be shared when I enter a valid email address and push the **Send** button. Think long and hard before you enter the email address. ***Is it the right address***?
 
 ## Google Site Creation
 Besides creating a document in Google Drive, I also want you to create a Google Site. This is a free web site that you can use to publish data or to experiment with web services. Here is the URL of my site, so that you can have an example of what I'm asking you to do:
@@ -88,7 +90,7 @@ After you have created your google account, it takes only a single click to begi
 - Enter the captcha.
 - Click Create Site
 
-After creating the site choose **More Actions | Manage Site | Automatically Adjust Site** to **Mobile Phones**.
+After creating the site choose **More Actions | Manage Site | Automatically Adjust Site to Mobile Phones**.
 
 If things go completely awry, you will be able to delete the site and start again. In that case, choose **More Actions | Manage Site| Delete Site**.
 
