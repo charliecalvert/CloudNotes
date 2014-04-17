@@ -132,9 +132,11 @@ To learn more about sharing documents, watch this video:
 
 - <http://youtu.be/gMACtVIEV0A>
 
-## EverNote
+## EverNote and Microsoft OneNote
 
-You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with **charliecalvertbc@gmail.com**.
+You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
+
+Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with **charliecalvertbc@gmail.com**.
 
 **NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.* 
 
@@ -154,6 +156,8 @@ Steps:
 - Test Message @2014-Prog282-LastName #Prog282
 
 *If the message you see in Evernote has **#Prog282** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
+
+Also create a note in Microsoft One Note, which is part of OneDrive. Share it with me, just as you did your OneDrive document.
 
 Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
 

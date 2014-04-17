@@ -2,11 +2,14 @@
 
 Week 01 is dedicated to getting us up and running. Our focus will be on:
 
-- Git
-- Cloud Application Basics (Google Drive, OneDrive, Evernote)
-- JavaScript and Node Basics.
+- [VirtualBox Deck Part I](http://bit.ly/1at2JZ2)
+- [Cloud Apps - Google Drive, etc](http://www.elvenware.com/charlie/os/Android/AndroidApplications.html)
+- [JavaScript and Node Basics](http://www.elvenware.com/charlie/development/web/JavaScript/index.html)
+- [Eclipse](http://www.elvenware.com/charlie/development/android/Eclipse.html)
 - [Syllablus](http://bit.ly/1qf71t1)
 - [Agile Deck](http://bit.ly/1qf6V4t)
+- [Git](http://www.elvenware.com/charlie/development/cloud/Git.html)
+- [Linux Files](http://www.elvenware.com/charlie/os/linux/LinuxFiles.html)
 
 See the new JsHint Assignment in the Assignment folder.
 
