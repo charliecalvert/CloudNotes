@@ -1,11 +1,13 @@
-Week03 Overview
+Week03 Prog282 Overview
 ===============
 
 Primary Goals:
 
-* Start running our game from a node server, using Express
-* Log in to our app with OpenId
-* Add basic scoring to our game
+- [Agile Development](http://bit.ly/1qf6V4t)
+- [Patterns: Factories]()
+- [Data Structures: Queues]()
+- [Learn about Markdown]()
+
 
 Node and Express
 ----------------
