@@ -3,7 +3,8 @@ Prog 282 Overview
 
 Welcome to Prog 282. You can read the syllabus here:
 
-<http://bit.ly/YUJRsL>
+- [Syllabus](http://bit.ly/1qf71t1)
+- [Old Syllabus](<http://bit.ly/YUJRsL>)
 
 
 Core Technologies
@@ -101,6 +102,8 @@ discuss something, try using the search box:
 
 If there is something I covered in class that you wish was covered on Elvenware,
 please let me know.
+
+Also, see the Syllabus.
 
 Summary
 -------

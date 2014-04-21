@@ -61,7 +61,9 @@ Prog 282
 --------
 
 -	[Overview](Prog282/Overview.html)
+-	[Resources](Prog282/Resources.html)
 -	[Week01](Prog282/Week01.html)
+-	[Week02](Prog282/Week02.html)
 
 ISIT 320
 --------
