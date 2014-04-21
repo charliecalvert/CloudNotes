@@ -8,9 +8,9 @@ basic facts about HTML and JavaScript, in case you need to brush up
 on your skills.
 
 - [Go to Web Fundamentals](http://www.codecademy.com/tracks/web)
-- Complete *HTML Basics* and *Build Your own Web Page*
+- Complete at least 10% of the track.
 - [Go to JavaScript](http://www.codecademy.com/tracks/javascript)
-- Complete *Getting Started with Programming*
+- Complete at least 10% of the track.
 
 When you are done, submit a link to your Code Academy **profile page**,
 like this:

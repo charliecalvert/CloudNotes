@@ -6,7 +6,6 @@ Welcome to Prog 282. You can read the syllabus here:
 - [Syllabus](http://bit.ly/1qf71t1)
 - [Old Syllabus](<http://bit.ly/YUJRsL>)
 
-
 Core Technologies
 -----------------
 

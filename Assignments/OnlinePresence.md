@@ -67,11 +67,13 @@ In Figure One, I give an example of the type of document I want you to create. Y
 
  OnlinePresnce01.png
 
-Figure 1: Here is the type of Google Docs file I want you create for Assignment Two. You do not need to use the same colors. Click to expand
+Figure 1: Here is the type of Google Docs file I want you to create. You do not need to use the same colors.
 
 OnlinePresence02.png
 
-Figure 2: Sharing a document in Google Docs. This dialog was instantiated when I pushed the Share button seen in the background near the top right of the screen. It will be shared when I enter a valid email address and push the green Share and Save button. Think long and hard before you enter the email address. ***Is it the right address***?
+Figure 2: Sharing a document in Google Docs. 
+
+The dialog shown in Figure 2  was instantiated when I pushed the Share button seen in the background near the top right of the screen. It will be shared when I enter a valid email address and push the **Send** button. Think long and hard before you enter the email address. ***Is it the right address***?
 
 ## Google Site Creation
 Besides creating a document in Google Drive, I also want you to create a Google Site. This is a free web site that you can use to publish data or to experiment with web services. Here is the URL of my site, so that you can have an example of what I'm asking you to do:
@@ -88,7 +90,7 @@ After you have created your google account, it takes only a single click to begi
 - Enter the captcha.
 - Click Create Site
 
-After creating the site choose **More Actions | Manage Site | Automatically Adjust Site** to **Mobile Phones**.
+After creating the site choose **More Actions | Manage Site | Automatically Adjust Site to Mobile Phones**.
 
 If things go completely awry, you will be able to delete the site and start again. In that case, choose **More Actions | Manage Site| Delete Site**.
 
@@ -130,9 +132,11 @@ To learn more about sharing documents, watch this video:
 
 - <http://youtu.be/gMACtVIEV0A>
 
-## EverNote
+## EverNote and Microsoft OneNote
 
-You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with **charliecalvertbc@gmail.com**.
+You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
+
+Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with **charliecalvertbc@gmail.com**.
 
 **NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.* 
 
@@ -152,6 +156,8 @@ Steps:
 - Test Message @2014-Prog282-LastName #Prog282
 
 *If the message you see in Evernote has **#Prog282** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
+
+Also create a note in Microsoft One Note, which is part of OneDrive. Share it with me, just as you did your OneDrive document.
 
 Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
 

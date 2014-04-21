@@ -22,6 +22,7 @@ It is here:
 Very recently, Express moved from 3.0 to 4.0 which resulted in a number of changes. Here are some of the key parts of Express:
 
 - [Jade](http://jade-lang.com/) generates HTML
+- Jade generates HTML
 - Stylus and SASS generate CSS
 - Morgan is a logging tool that was part of Connect
 - Hogan is templating engine made by Twitter
@@ -241,8 +242,9 @@ This command finds all the JavaScript files that are not in the node_modules fol
 And optionally, at the bottom of Gruntfile.js:
 
     grunt.registerTask('pretty', ['jsbeautifier']);
-    
-    
+
+* <http://www.elvenware.com/charlie/development/cloud/Git.html>
+* [The Git Book](http://git-scm.com/book)
 
 HTML Example
 ------------
@@ -278,6 +280,13 @@ The JsHint install into Eclipse is covered here:
 Summary:
 
 [http://github.eclipsesource.com/jshint-eclipse/updates/](http://github.eclipsesource.com/jshint-eclipse/updates/)
+
+##Learn
+Here are some great online resources for folks who want to learn more about CSS and HTML:
+
+- <http://adamschwartz.co/magic-of-css/>
+- <http://learnlayout.com/>
+- <http://css-tricks.com/>
 
 In Eclipse:
 
