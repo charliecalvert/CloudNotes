@@ -1,12 +1,31 @@
-Week03 Overview
+Week03 Prog282 Overview
 ===============
 
 Primary Goals:
 
-* Start running our game from a node server, using Express
-* Log in to our app with OpenId
-* Add basic scoring to our game
+- [Agile Development](http://bit.ly/1qf6V4t)
+- [Callbacks in JsObjects][JsObjectCallbacks]
+- [Callbacks on Elvenware][ElvenwareCallbacks]
+- [Patterns: Factory in JsOjbects][Factory]
+- [Data Structures: Queues in JsObjects][Queue]
+- [Use Strict on MDN][UseStrict]
+- [Jasmine Unit Tests][Jasmine]
+- [Jasmine-node](https://github.com/mhevery/jasmine-node)
+- [Learn about Markdown]()
 
+#Jasmine
+
+To install jasmine-node:
+
+    sudo npm install -g jasmine-node
+    
+In Designt Factory and Queue Run:
+
+    grunt check
+    RunJasmineTests.sh
+    node TestRunner.js
+    grunt pretty
+    
 Node and Express
 ----------------
 
@@ -56,3 +75,9 @@ Here are some OpenID Links:
 - [Open ID Home Page](http://openid.net/)
 - [Difference between Open ID and O Auth](http://stackoverflow.com/questions/1087031/whats-the-difference-between-openid-and-oauth)
 
+[JsObjectCallbacks]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Functions/README.md
+[ElvenwareCallbacks]: http://elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html#callbacks-passing-functions-as-parameters
+[UseStrict]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode
+[Queue]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/SimpleQueue
+[Factory]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/FactorySimple01
+[Jasmine]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests
