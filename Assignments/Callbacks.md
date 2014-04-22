@@ -1,6 +1,8 @@
 #Callbacks
 
-Create a function named **callbackHandler** that takes three parameters. The first parameter is
+Create an Express project called **Week02-Callbacks**. Add a JavaScript file called **Callbacks.js** and place it in the **public/javascripts**. Link that file into your project.
+
+In **Callbacks.js** create a function named **callbackHandler** that takes three parameters. The first parameter is
 a callback (that is, a function), the other two parameters are integers.
 
 Now call the function the three times:
@@ -27,4 +29,13 @@ The JavaScript to display the result of your function calls:
 ## Turn it in
 
 Place it in your git folder under the name Week02-Callbacks. Provide a link to your folder.
+
+## Links
+
+The following links should help you complete this assignment.
+
+- [JsObjects Callback Demos](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Functions)
+- [JsObjects Function This](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Functions)
+- [Week02 Notes](http://elvenware.com/charlie/books/CloudNotes/Prog282/Week02.html)
+
 

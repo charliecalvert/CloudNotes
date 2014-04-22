@@ -2,7 +2,7 @@
 
 Create a new express app.
 
-Create a JavaScript file called **ExpressJquery.js**. Put the following code in it:
+In the **public/javascripts** folder create a JavaScript file called **ExpressJquery.js**. Modify **layout.jade** to include this file. Put the following code in it:
 
     var MyObject = (function() {
 
@@ -13,7 +13,7 @@ Create a JavaScript file called **ExpressJquery.js**. Put the following code in 
             $("#readyCalled").html("Ready was called and myObjected created");
         }
         return MyObject;
-    });
+    }());
 
 
     $(document).ready(function() {
@@ -22,12 +22,12 @@ Create a JavaScript file called **ExpressJquery.js**. Put the following code in 
     });
 
 
-Use Jade to create a button and two paragraphs:
+In **index.jade** use Jade to create a button and two paragraphs:
 
     button#sendString Send String
     p#stringHolder
     p#readyCalled
     
-Add a button to index.jade with an id of **sendString**. Use the constuctor of **myObject** to set
-up a handler for the button click. Create a private method called **stringSender** that places
-a string in your paragraph.
+Add a button to index.jade with an id of **sendString**. Use the constuctor of **MyObject** to set
+up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places
+a string in your **stringHolder** paragraph.
