@@ -7,6 +7,7 @@ Primary Goals:
 - [Callbacks in JsObjects][JsObjectCallbacks]
 - [Callbacks on Elvenware][ElvenwareCallbacks]
 - [Patterns: Factory in JsOjbects][Factory]
+- [Data Structures on Elvenware][DataStructures]
 - [Data Structures: Queues in JsObjects][Queue]
 - [Use Strict on MDN][UseStrict]
 - [Jasmine Unit Tests][Jasmine]
@@ -81,3 +82,4 @@ Here are some OpenID Links:
 [Queue]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/SimpleQueue
 [Factory]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/FactorySimple01
 [Jasmine]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests
+[DataStructures]: http://www.elvenware.com/charlie/development/web/JavaScript/DataStructures.html

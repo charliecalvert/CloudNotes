@@ -11,6 +11,7 @@ A primary resource for information is Git. It can be difficult to find informati
 - [CloudNotes](http://elvenware.com/charlie/books/CloudNotes/CloudNotes.html)
 - [Git](http://www.elvenware.com/charlie/development/cloud/Git.html)
 - [Cloud](http://www.elvenware.com/charlie/development/cloud/)
+- [Data Structures on Elvenware][DataStructures]
 
 ##Learn
 Here are some great online resources for folks who want to learn more about CSS and HTML:
@@ -62,6 +63,8 @@ Here are some great online resources for folks who want to learn more about CSS 
 ### Python
 
 - [Learn the Hard Way](http://learnpythonthehardway.org/book/)
+
+[DataStructures]: http://www.elvenware.com/charlie/development/web/JavaScript/DataStructures.html
 
 
 
