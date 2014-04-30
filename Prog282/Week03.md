@@ -4,9 +4,11 @@ Week03 Prog282 Overview
 Primary Goals:
 
 - [Agile Development](http://bit.ly/1qf6V4t)
+- [JavaScript Basics Deck](http://bit.ly/OPDg3s)
 - [Callbacks in JsObjects][JsObjectCallbacks]
 - [Callbacks on Elvenware][ElvenwareCallbacks]
 - [Patterns: Factory in JsOjbects][Factory]
+- [Patterns: Osmani on Factories][OsmaniFactory]
 - [Data Structures on Elvenware][DataStructures]
 - [Data Structures: Queues in JsObjects][Queue]
 - [Use Strict on MDN][UseStrict]
@@ -14,7 +16,14 @@ Primary Goals:
 - [Jasmine-node](https://github.com/mhevery/jasmine-node)
 - [Learn about Markdown]()
 
-#Jasmine
+##Assignments
+
+The definitive list of assignments is in the modules section on Canvas. However, the following links are provided as a convenience:
+
+- [Callbacks](http://elvenware.com/charlie/books/CloudNotes/Assignments/Callbacks.html)
+- [Queue](http://www.elvenware.com/charlie/books/CloudNotes/Assignments/QueueSpec.html)
+
+##Jasmine
 
 To install jasmine-node:
 
@@ -81,5 +90,6 @@ Here are some OpenID Links:
 [UseStrict]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode
 [Queue]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/SimpleQueue
 [Factory]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/FactorySimple01
+[OsmaniFactory]: http://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript
 [Jasmine]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests
 [DataStructures]: http://www.elvenware.com/charlie/development/web/JavaScript/DataStructures.html
