@@ -34,6 +34,10 @@ Use the factory pattern to create a **JsonReader**. Pass the **JsonReader** obje
 
 Use the factory pattern to create a **MarkdownReader**. Pass the **MarkdownReader** object to your Bridge **Reader** or **FancyReader** pattern and show that it can read and display markdown files in a markdown editor.
 
+##Turn it in
+
+Place your work in a folder called **Week04BridgeReader** and check it in to your repository. Submit a link to your repository.
+
 ## Links
 
 - [DoFactory](http://www.dofactory.com/javascript-patterns.aspx)
