@@ -191,4 +191,3 @@ Watch the video:
 
 - [Video](http://youtu.be/iwUwiQr-HIo)
 
-> Written with [StackEdit](https://stackedit.io/).
