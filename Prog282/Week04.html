@@ -82,6 +82,9 @@
 <h2>Table of Contents</h2>
 <ul>
 	<li><a href='#week04'>Week04</a></li>
+	<li><a href='#fix-karma'>Fix Karma</a></li>
+	<li><a href='#key-programs'>Key Programs</a></li>
+	<li><a href='#reading-and-writing-json-and-text'>Reading and Writing Json and Text</a></li>
 	<li><a href='#error-loading-eclipseaptana'>Error Loading Eclipse/Aptana</a></li>
 	<li><a href='#the-gitignore-file-and-nodemodules'>The GitIgnore File and NodeModules</a></li>
 	<li><a href='#references'>References</a></li>
@@ -89,17 +92,60 @@
 <h1 id="week04">Week04</h1>
 <p>This week our Main Topics, in no particular order, will be:</p>
 <ul>
+<li><a href="http://bit.ly/1frmrZV">Patterns Deck</a></li>
+<li><a href="http://bit.ly/OPDg3s">JavaScript Deck</a></li>
+<li><a href="http://www.elvenware.com/charlie/books/CloudNotes/Assignments/BridgePattern.html">Homework: BridgePattern</a></li>
+<li>Ajax and reading JSON</li>
+<li>Karma and Karam-Jasmine
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html">KarmaJasmine on Elvenware</a></li>
+</ul></li>
 <li>AmDefine - use same require syntax in Node and a Browser
 <ul>
 <li><a href="https://github.com/jrburke/amdefine">AmDefine GitHub Home</a></li>
 <li><a href="http://requirejs.org/docs/node.html#2">RequireJs on AmDefine</a></li>
 <li>Factories</li>
 </ul></li>
-<li>Run the <a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/FactoryInterface">FactoryInterface program</a></li>
 <li>More on Queues and Callbacks</li>
 <li>JavaScript Syntax: properties</li>
 <li>Unit tests: handling exceptions</li>
 <li>Agile Manifesto</li>
+</ul>
+<p>We use AmDefine so that we can use the same syntax for RequireJs in the browser and in <strong>node-jasmine</strong>.</p>
+<h2 id="fix-karma">Fix Karma</h2>
+<p>In class, I asked you to type:</p>
+<pre><code>sudo npm install -g karma</code></pre>
+<p>That was wrong. It should have been:</p>
+<pre><code>sudo npm install -g karma-cli</code></pre>
+<p>Unfortunately, I asked you to issue this command:</p>
+<pre><code>sudo ln -s /usr/lib/node_modules/karma/bin/karma /usr/bin/karma</code></pre>
+<p>That worked, but it attached us to the wrong version of karma. So we need to delete it:</p>
+<pre><code>sudo rm /usr/bin/karma</code></pre>
+<p>After doing that, you should be able to type:</p>
+<pre><code>sudo npm install -g karma-cli</code></pre>
+<p>Then you should have karma properly installed, and should be able to type the following to start karma:</p>
+<pre><code>./RunKarma.sh </code></pre>
+<h2 id="key-programs">Key Programs</h2>
+<p>Some of these programs are still evolving, but they should all have something for you.</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/BridgeSailor">Bridge Sailor</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/DecorateSailor">Decorate Sailor</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/FactorySimple01">FactorySimple</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/FactoryInterface">FactoryInterface</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/Singleton">Singleton</a></li>
+</ul>
+<h2 id="reading-and-writing-json-and-text">Reading and Writing Json and Text</h2>
+<p>The key reference is multiple sections on Elvenware, starting here:</p>
+<ul>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqueryLoad">Ajax on Elvenware</a></li>
+<li><a href="https://api.jquery.com/category/ajax/">Ajax on jQuery site</a></li>
+<li><a href="http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html">Json Basics</a></li>
+</ul>
+<p>Here are some programs to peruse. There are other programs in the NodeCode folder with obvious relevance.</p>
+<ul>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/jsonRead">JsonRead</a></li>
+<li><a href="" title="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/SimpleReadWriteJson">SimpleReadWrite</a></li>
+<li><a href="https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/SimpleReadWriteJson02">SimpleReadWriteJson</a></li>
 </ul>
 <h2 id="error-loading-eclipseaptana">Error Loading Eclipse/Aptana</h2>
 <p>If you get this error: ** unable to load the Chromium browser. Please check the documentation for details on possible workarounds/fixes**. Try this:</p>
