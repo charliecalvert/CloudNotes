@@ -13,6 +13,16 @@ A primary resource for information is Git. It can be difficult to find informati
 - [Cloud](http://www.elvenware.com/charlie/development/cloud/)
 - [Data Structures on Elvenware][DataStructures]
 
+##Assignments
+
+Here are links to some of our assignments.
+
+- [BridgePattern][bp]
+- [QueueSpec][queueSpec]
+
+[bp]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/BridgePattern.html
+[queueSpec]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/QueueSpec.html 
+
 ##Common Node Errors
 
 - [EADDRINUSE][EINUSE]

@@ -113,18 +113,23 @@
 </ul>
 <p>We use AmDefine so that we can use the same syntax for RequireJs in the browser and in <strong>node-jasmine</strong>.</p>
 <h2 id="fix-karma">Fix Karma</h2>
-<p>In class, I asked you to type:</p>
+<p>Thanks to work by Chelsa and Michael, we found the problem with our Karma install. In class, I asked you to type:</p>
 <pre><code>sudo npm install -g karma</code></pre>
 <p>That was wrong. It should have been:</p>
 <pre><code>sudo npm install -g karma-cli</code></pre>
-<p>Unfortunately, I asked you to issue this command:</p>
+<p>Unfortunately, I then asked you to issue this command:</p>
 <pre><code>sudo ln -s /usr/lib/node_modules/karma/bin/karma /usr/bin/karma</code></pre>
-<p>That worked, but it attached us to the wrong version of karma. So we need to delete it:</p>
+<p>That worked, but it attached us to the wrong version of karma. If you issued that command, it is now blocking the proper install of karma-cli. So we need to delete it:</p>
 <pre><code>sudo rm /usr/bin/karma</code></pre>
-<p>After doing that, you should be able to type:</p>
+<p>That will remove the link to the bad version of karam. After doing that, you should be able to type:</p>
 <pre><code>sudo npm install -g karma-cli</code></pre>
-<p>Then you should have karma properly installed, and should be able to type the following to start karma:</p>
+<p>Then you should have karma properly installed, and should be able to type the following from our BridgeSailor directory to start karma:</p>
 <pre><code>./RunKarma.sh </code></pre>
+<p><a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/BridgeSailor/RunKarma.sh">That file</a> first sets up an environment variable that points at chromium-browser:</p>
+<pre><code>export CHROME_BIN=/usr/bin/chromium-browser</code></pre>
+<p>Then it starts Karma:</p>
+<pre><code>karma start</code></pre>
+<p>On Windows, and on some Linux machines, you will just be able to type <strong>karma start</strong>, but on most of our machines we have to explicitly tell Karam where the chromium-browser is located.</p>
 <h2 id="key-programs">Key Programs</h2>
 <p>Some of these programs are still evolving, but they should all have something for you.</p>
 <ul>

@@ -1,23 +1,78 @@
 Week05
 ======
 
-How to clone the Prog282-tips repository that has the answers in it:
+Key features:
 
-- git clone git@bitbucket.org:ccalvert/prog282-tips.git
+- [Ajax Deck - http://bit.ly/ajaxjq](http://bit.ly/ajaxjq)
+- [ClickEvents - http://bit.ly/ClickEvents](http://bit.ly/ClickEvents)
+- [JavaScript Properties Deck](http://bit.ly/1n7yrSG)
+- [Property Descriptors on JsObjects][PropDesc]
+- [Agile Deck](http://bit.ly/1qf6V4t)
+- [Refactoring - http://bit.ly/elfrefactor](http://bit.ly/elfrefactor)
+- [Unit Test Overview - http://bit.ly/elfunit][ElfUnit]
+- [Unit Tests Part01][UnitTestsPart01]
 
-It is time for the midterm. Rather than learn any big new topics this
-week, we will focus on refining what we have learned, and seeing how
-to test the code we have written.
+[UnitTestsPart01]: http://bit.ly/1dTjs8h
+[ElfUnit]: http://bit.ly/elfunit
+[PropDesc]: http://bit.ly/propdesc
+[callbacks]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Functions/CallbackBasics02/README.md
 
 Some of the key subjects
 
-- Modularize your code
-- Unit Tests
-- More on Express
+- Each function should do only one thing. Don't calculate and print result. Just calculate. (For correct implementation, see Week02-Callbacks by pm.)
+- Rubles
+- Review [Callbacks][callbacks] and Unit Tests
+- [Properties][PropDesc]
 - Prototype and Inheritance
+
+Possible Subjects of Interest:
+
 - Upstart
 - SSH on Linux
-- Properties
+- More on Express
+
+
+##JavaScript Ruble
+
+A ruble can help you customize your experience inside Eclipse.
+
+Navigate to the Aptana Rubles directory:
+
+    cd ~/Documents/Aptana\ Rubles
+    
+Install the JavaScript Ruble:
+
+    git clone git://github.com/aptana/js.ruble.git
+    
+You might also want to get the HTML ruble:
+
+    git clone http://github.com/aptana/html.ruble.git
+    
+Since the HTML and JS rubles are built into Aptana, simple downloading these rubles doesn't do you that much good. with the possible The power comes when you start to edit the rubles.
+
+To begin editing the files, just import the Ruble into eclipse exactly as you would any other Eclipse Web project. It comes with a **.project** file, so it is easy to import. Just choose **File | Import | General | Existing Projects into Workspace**. Then choose **next** and browse to your downloaded ruble. That is, browse to the git repository that you downloaded: **/home/bcuser/Documents/Aptana Rubles/js.ruble**. Of course, your home directory might not be in **bcuser**
+
+After you have imported the JavaScript ruble, you can easily add File templates. These appear when you right click in the Project Explorer and choose **New from Template.** If you choose one, a new file is added to your project based on your template. This allows you to, for instance, automatically insert a file set up for the Modular or Factory pattern. First open up **template.rb** from the **templates** directory. Add the following code:
+
+    template "Modular" do |t|
+      t.filetype = "*.js"
+      t.location = "templates/Modular.template"
+    end
+
+I keep some Ruble supplies in [JsObjects/Utilities/EclipseTools][JsEclipseTools]. 
+
+In addition to the Rubles that ship with Eclipse, there is one that I built. It is, unfortunately, tailored for other classes than this one:
+
+And there is always the [Elvenware Ruble](https://github.com/charliecalvert/ElfRuble/blob/master/README.md):
+
+    git clone http://github.com/charliecalvert/ElfRuble.git
+
+Here are few notes, not particularly relevant to this class, on the Elvenware ruble: 
+
+- [Angular and the Elf Ruble][AngularElfRuble]
+
+[AngularElfRuble]: http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#elf-ruble-and-angular
+[JsEclipseTools]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/EclipseTools/JsRubleTemplates
 
 jQuery Load, getJSON and ajax
 -----------------------------
@@ -45,5 +100,3 @@ Unit Tests
 <http://www.elvenware.com/charlie/development/web/UnitTests/>
 <http://qunitjs.com/>
 
-SSH CopyPrivate Files
----------------------
