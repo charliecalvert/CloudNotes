@@ -13,6 +13,26 @@ A primary resource for information is Git. It can be difficult to find informati
 - [Cloud](http://www.elvenware.com/charlie/development/cloud/)
 - [Data Structures on Elvenware][DataStructures]
 
+##Assignments
+
+Here are links to some of our assignments.
+
+- [BridgePattern][bp]
+- [QueueSpec][queueSpec]
+
+[bp]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/BridgePattern.html
+[queueSpec]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/QueueSpec.html 
+
+##Common Node Errors
+
+- [EADDRINUSE][EINUSE]
+- [Cannot Find Module][MNOTFOUND]
+- [Could not read Dependencies][NODEPENDENCIES]
+
+[NODEPENDENCIES]: http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html#error-couldnt-read-dependencies
+[EINUSE]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#EADDRINUSE
+[MNOTFOUND]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#error-cannot-find-module
+
 ##Learn
 Here are some great online resources for folks who want to learn more about CSS and HTML:
 
@@ -73,6 +93,7 @@ When using these links, most folks have a little trouble signing in. But once yo
 [BC247]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/bookshelf.asp
 [liblog]: http://bellevue.library.ctc.edu/vwebv/login
 [MyBcc]: http://mybcc.net/
+
 
 ###Linux
 

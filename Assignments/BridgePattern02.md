@@ -113,7 +113,7 @@ You must have at least 25 tests, no matter how trivial. For instance write tests
  7. Use hasOwnProperty to prove a markdownReader has a **readFile** method
  8. Use hasOwnProperty to prove a defaultReader has a **readFile** method
 
-Maybe when I type grunt jshint, I want it to come back clean.
+If you can, when you type **grunt jshint**, I want it to come back clean.
     
 ##Turn it in
 
@@ -123,4 +123,3 @@ Place your work in a folder called **Week05BridgeReader02** and check it in to y
 
 - [DoFactory](http://www.dofactory.com/javascript-patterns.aspx)
 
-> Written with [StackEdit](https://stackedit.io/).

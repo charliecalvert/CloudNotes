@@ -87,11 +87,14 @@ Books
 
 ###24X7 Books
 
-These books should be available on 24 X 7, so they can be an excellent
-resource. However, I'm not singling out any of these books, or 
-explicitly stating that I think they are particularly good. I've 
-simply looked them over and seen that they contain useful content, and
-then left it at that. The links listed above are more carefully vetted.
+These books should be available on 24 X 7, so they can be an excellent resource. However, I'm not singling out any of these books, or explicitly stating that I think they are particularly good. I've simply looked them over and seen that they contain useful content, and then left it at that. The links listed above are more carefully vetted.
+
+When using these links, most folks have a little trouble signing in. But once you are signed in, you can easily use the links. The best strategy I can find is to sign in first to the library and mybcc, then try the links below. So try [logging in to the library][liblog] in a new tab. Now, also sign in to [MyBcc][MyBcc] in a new tab. Once you are logged in to both places, try going here, again right clicking and opening the link in a new tab: [first sign in to 24X7 books][BC247]. If all that works, you should be able to click the links below and be taken directly to the individual books.
+
+[DomScript]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=56585
+[BC247]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/bookshelf.asp
+[liblog]: http://bellevue.library.ctc.edu/vwebv/login
+[MyBcc]: http://mybcc.net/
 
 HTML
 

@@ -16,7 +16,14 @@ Primary Goals:
 - [Jasmine-node](https://github.com/mhevery/jasmine-node)
 - [Learn about Markdown]()
 
-#Jasmine
+##Assignments
+
+The definitive list of assignments is in the modules section on Canvas. However, the following links are provided as a convenience:
+
+- [Callbacks](http://elvenware.com/charlie/books/CloudNotes/Assignments/Callbacks.html)
+- [Queue](http://www.elvenware.com/charlie/books/CloudNotes/Assignments/QueueSpec.html)
+
+##Jasmine
 
 To install jasmine-node:
 
