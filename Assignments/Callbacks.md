@@ -5,7 +5,7 @@ Create an Express project called **Week02-Callbacks**. Add a JavaScript file cal
 In **Callbacks.js** create a function named **callbackHandler** that takes three parameters. The first parameter is
 a callback (that is, a function), the other two parameters are integers.
 
-Now call the function the three times:
+Now call the **callbackHandler** function three times:
 
 - First pass a function that adds the second and third parameters.
 - Pass a function that returns the remainder from dividing two numbers (modulus operator)

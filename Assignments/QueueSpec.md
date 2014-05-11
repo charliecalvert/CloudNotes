@@ -185,4 +185,9 @@ In this assignment, there are other places, such as **back** and **front**, wher
 
 Newcomers to JavaScript: Don't worry too much about the Modular pattern unless you are comfortable with it. The main thing for you here is that there are several tips as to how to put together your **queue** class.
 
-> Written with [StackEdit](https://stackedit.io/).
+##Video
+
+Watch the video:
+
+- [Video](http://youtu.be/iwUwiQr-HIo)
+
