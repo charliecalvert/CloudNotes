@@ -89,9 +89,31 @@ To start the tests, I should be able to run:
 
     node TestRunner.js
     
-You must have at least 25 tests, no matter how trivial. 
+You must have at least 25 tests, no matter how trivial. For instance write tests that prove you can:
 
-Maybe when I type grunt jshint, I want it to come back clean.
+ 1. Use require to reach your BridgeFactory
+ 2. Use require to reach your FancyBridgeFactory
+ 3. Use require to reach your BridgeReader
+ 4. Use require to reach your FancyBridgeReader
+ 5. Use require to reach your JsonReader
+ 6. Use require to reach your MarkdownReader
+ 7. Use require to reach your DefaultReader
+ 2. Create a BridgeFactory
+ 2. Create a FancyBridgeFactory
+ 3. Create a BridgeReader
+ 4. Create a FancyBridgeReader
+ 3. Create a JsonReader 
+ 4. create a MarkdownReader
+ 5. create a DefaultReader
+ 4. Use a factory to create a JsonReader and prove it is a JsonReader: 
+     5. expect(jsonReader instanceof JsonReader).toBe(true);
+ 4. Create a MarkdownReader with a factory and prove it is a MarkdownReader
+ 5. Prove the DefaultReader with a factory and prove it is a DefaultReader
+ 6. Use hasOwnProperty to prove a jsonReader has a **readFile** method
+ 7. Use hasOwnProperty to prove a markdownReader has a **readFile** method
+ 8. Use hasOwnProperty to prove a defaultReader has a **readFile** method
+
+If you can, when you type **grunt jshint**, I want it to come back clean.
     
 ##Turn it in
 
@@ -101,4 +123,3 @@ Place your work in a folder called **Week05BridgeReader02** and check it in to y
 
 - [DoFactory](http://www.dofactory.com/javascript-patterns.aspx)
 
-> Written with [StackEdit](https://stackedit.io/).

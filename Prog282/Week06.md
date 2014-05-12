@@ -1,6 +1,9 @@
 Week06-Overview
 ---------------
 
+- Talk about the Obama Bridge Analogy
+- Working with baseURL in require.config (See BridgeReader in writing...)
+
 I'll pass out the midterm this week. You will get it on Wednesday, and
 it will be due Sunday night. It will be open book, but will probably
 be fairly time consuming, so you might begin planning for that contingency.

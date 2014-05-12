@@ -2,7 +2,8 @@
 
 Create an Express project called **Week02-Callbacks**. Add a JavaScript file called **Callbacks.js** and place it in the **public/javascripts**. Link that file into your project.
 
-In **Callbacks.js** create a function named **callbackHandler** that takes three parameters. The first parameter is a callback (that is, a function), the other two parameters are integers.
+In **Callbacks.js** create a function named **callbackHandler** that takes three parameters. The first parameter is
+a callback (that is, a function), the other two parameters are integers.
 
 Now call the **callbackHandler** function three times:
 
