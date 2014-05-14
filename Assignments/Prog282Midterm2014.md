@@ -79,7 +79,7 @@ This document will likely go through multiple iterations over the course of the 
 
     {
         "title": "Favorite Shapes",
-        "type": "PictureDisplay",
+        "type": "ImageDisplay",
         "version": "v0.0.1",
         "keywords": "images, shapes",
         "License": "Creative Commons",
@@ -120,9 +120,10 @@ It will look like this:
 
 We will be able to define new types as needed. These types are specified in the **<type>** field of our metaDocument. At first, we will work with three types:
 
-- PictureDisplay: Images and captions
+- ImageDisplay: Images and captions
 - DocumentDisplay: Captions and text
 - Quiz: Questions and Answers
+
 
 
 

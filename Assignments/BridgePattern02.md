@@ -69,6 +69,21 @@ Or what have you. Display the items in an unordered list and/or a
 series of radiobuttons. See Presidents.json for additional information
 on how to handle the auto generation of radiobuttons.
 
+If you want, you can gussy up an unordered list with a few lines of CSS:
+
+    li {
+      background-color: #00BBFF;
+      border: black solid 1px;
+      margin: 3px;
+      width: 250px;  
+    }
+    
+    li:hover {
+        background-color: #00FFBB;
+    }
+
+The CSS shown above puts each item in a list in its own block, and it highlights each item in turn as the user moves the mouse over it.
+
 When the user clicks on a particular file name, read it in and display 
 its contents to the user. You can use the Presidents.json file from
 BridgeReader01 as the basis for your Foo.json and Bar.json files, but
@@ -78,6 +93,38 @@ You cam read FileList.json in directly, but for the other files, you
 must send the file name and path, have the server get it from request.query 
 or request.body, then read it in with fs.readFile (asynch version) and
 send it back via response.send.
+
+##User Choice
+
+When the user clicks on an item in our unordered list, we want to send a request back to the server based on the selection the user made. In particular, they click on a file name, and then send a request back to the server for the contents of the file the user selected.
+
+Ideally, it is safest to keep all the information about filepaths on the server side, and never send it to the client. However, at this stage, it is probably okay for us to cheat. Here is a hurried explanation of how to keep track of two bits of information in a single list item.
+
+The file list that we read in has two bits of information per line:
+
+    "Foo.json": "/home/bcuser/files/Foo.json",
+
+There is a file name: **Foo.json**. There is also the path to the file: **/home/bcuser/files/Foo.json**. Here is how to encode both pieces of information in a list item:
+
+    $.getJSON('/read', fileObject, function(fileList) {
+        var serverData = fileList;
+        for (var file in serverData) {
+            $('#displayList').append('<li data=' + serverData[file] + '>' + file + '</li>');
+        }
+    }).error(function....
+
+Now the list items in your unordered list look like this:
+
+    <li data="/home/charlie/Documents/Data/Presidents01.json">President01.json</li>
+    
+When the user clicks on the items, you can retrieve the data like this:
+
+    function pickFile(event) {
+        var fileName = event.target.innerText;
+        var filePathName = event.target.attributes.data.value;
+    }
+    
+    $("#displayList").click(pickFile);
 
 ##Test and run
 
@@ -91,15 +138,15 @@ To start the tests, I should be able to run:
     
 You must have at least 25 tests, no matter how trivial. For instance write tests that prove you can:
 
- 1. Use require to reach your BridgeFactory
- 2. Use require to reach your FancyBridgeFactory
+ 1. Use require to reach your ReaderFactory
+ 2. Use require to reach your BridgeFactory
  3. Use require to reach your BridgeReader
  4. Use require to reach your FancyBridgeReader
  5. Use require to reach your JsonReader
  6. Use require to reach your MarkdownReader
  7. Use require to reach your DefaultReader
+ 2. Create a ReaderFactory
  2. Create a BridgeFactory
- 2. Create a FancyBridgeFactory
  3. Create a BridgeReader
  4. Create a FancyBridgeReader
  3. Create a JsonReader 

@@ -18,10 +18,20 @@ A primary resource for information is Git. It can be difficult to find informati
 Here are links to some of our assignments.
 
 - [BridgePattern][bp]
+- [BridgePattern02][bp02]
+- [Callbacks][callbacks]
+- [ExpressJQuery][expj]
+- [Midterm][midterm]
 - [QueueSpec][queueSpec]
 
+
 [bp]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/BridgePattern.html
+[bp02]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/BridgePattern02.html
+[callbacks]:  http://www.elvenware.com/charlie/books/CloudNotes/Assignments/Callbacks.html
+[expj]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/ExpressJQuery.html
+[midterm]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/Prog282Midterm2014.html
 [queueSpec]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/QueueSpec.html 
+
 
 ##Common Node Errors
 
