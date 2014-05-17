@@ -94,6 +94,22 @@ must send the file name and path, have the server get it from request.query
 or request.body, then read it in with fs.readFile (asynch version) and
 send it back via response.send.
 
+##Property Names
+
+Just a reminder. There are no rules about the names for properties in JavaScript. Thus we can create properties shaped like this:
+
+    "Foo.json": "/home/bcuser/files/Foo.json",
+
+Note, however, that you can't write this to access the value for the property shown above: 
+
+    myJsonObject.Foo.json 
+    
+Think about it for a second, and you can see why. (The second period is going to cause problems!)
+
+You can, however, do this:
+
+    myJsonObject['Foo.json']; // Yields home/bcuser/files/Foo.json
+
 ##User Choice
 
 When the user clicks on an item in our unordered list, we want to send a request back to the server based on the selection the user made. In particular, they click on a file name, and then send a request back to the server for the contents of the file the user selected.
@@ -161,7 +177,44 @@ You must have at least 25 tests, no matter how trivial. For instance write tests
  8. Use hasOwnProperty to prove a defaultReader has a **readFile** method
 
 If you can, when you type **grunt jshint**, I want it to come back clean.
+
+##Markdown
+
+You can place a markdown file such as this one in your public directory. Call it **MarkdownSample.md**:
+
+    # Markdown Sample Header
     
+    This is a sample markdown file. You can make lists like this:
+    
+    - One
+    - Two
+    - Three
+    
+    ## Details
+    
+    Try pasting the contents of this file into this editor:
+    
+    - [StackEditIO](https://stackedit.io/)
+    
+    That's the editor found at **https://Stackedit.io**
+
+Then use Jade to create a **pre** in which you can display it:
+
+    div
+        pre#markdown
+
+And display it like this:
+
+    $("#markdown").load("MarkdownSample.md");
+
+\$.load is a wrapper around \$.Ajax for use when you just want to load a file from the file system.
+
+We will get a real markdown editor and display tool going next week.
+
+For a working example, see the [NodesRoutes03][nodeRoute03] example.
+    
+[nodeRoute03]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes03
+
 ##Turn it in
 
 Place your work in a folder called **Week05BridgeReader02** and check it in to your repository. Submit a link to your repository.
