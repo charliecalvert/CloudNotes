@@ -108,34 +108,7 @@ Here are two commands that create a pulic and private key for your Linux box, an
 Install MongoDb on Linux
 ---------------
 
-- [Follow these instructions](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/)
-- [Mongo on Elvenware](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html)
-
-Try:
-
-	sudo apt-get install mongodb
-	
-Or just put the following in bash script called InstallMongoDb.sh:
-
-	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-	echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
-	sudo apt-get update
-	sudo apt-get install mongodb-10gen
-
-Start, restart and stop MongoDb:
-
-	sudo service mongodb start
-	sudo service mongodb stop
-	sudo service mongodb restart
-	
-	
-Install the NPM driver:
-
-Use npm to install the Node mongodb driver:	
-
-	sudo npm install mongodb
-	db.getCollection("test_insert").find()
-
+- [Details](http://www.elvenware.com/charlie/development/database/NoSql/MongoDb.html#install)
 
 Passing Parameters
 ------------------

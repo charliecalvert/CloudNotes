@@ -141,6 +141,33 @@ When the user clicks on the items, you can retrieve the data like this:
     }
     
     $("#displayList").click(pickFile);
+    
+##Handling User Input
+
+It is perhaps saying a word about what to do when the user clicks on a **listitem** to make a file selection. The best example of what you want to do is in [ClickEvents][click].
+
+When you respond to a click on a **listItem**, you want to call **\$.getJSON.**
+
+    $(listItem).click(listClick);
+    
+    ... // Code omitted here
+    
+    var listClick = function(event) { 
+       // Your getJSON code here.
+    };
+ 
+The user clicks on a **listItem** and invokes the click handler shown above. Use .getJSON to invoke a route on the server and to send a simple JavaScript object to the server specifying the user's choice. Assuming you saved the path to the file in an attribute called data, as recommended above, you can get the user's choice like this:
+
+    $('#debug01').html("You picked: " + event.target.innerText)
+	$('#debug02').html("Value: " + event.target.attributes.data.value);
+	
+The server gets the call and uses **request.query** to discover the file the user requested. Use **fs.readFile** to read the file from disk. Use response.send to send the contents of the file back to the client. There are many examples of how to do this sort of thing in JsObjects, including [AsyncJsonReader][async].
+
+Parse the content of the file sent from the server. It is sent as a parameter to your \$.getJSON callback. The callback is an anonymous function passed as the second parameter to \$.getJSON.
+Display the parsed content to the user
+
+[click]: https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/ClickEvents
+[async]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/AsyncJsonReader
 
 ##Test and run
 

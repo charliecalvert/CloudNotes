@@ -104,7 +104,13 @@ Get Main.js, require and jquery:
     wget http://code.jquery.com/jquery-2.1.1.js
     wget http://elvenware.com/charlie/development/web/JavaScript/Scripts/Main.js 
     
-**Note**: *The **wget** program ships with Linux. For Windows it is [here][wget]. I store the above commands as scripts on [JsObjects][wgetscript] in **RequiryJQuery.bat** and **RequireJquery.sh**. You should copy one of these scripts to some place on your path, such as your **$HOME/bin** directory. Then the commands are*:
+**Note**: *The **wget** program ships with Linux. For Windows it is [here][wget]. I store the above commands as scripts on [JsObjects][wgetscript] in **RequiryJQuery.bat** and **RequireJquery.sh**. You should copy one of these scripts to some place on your path, such as your **$HOME/bin** directory. After copying it, you might need to set its executable permissions*:
+
+    chmod +x RequireJquery.sh
+
+*Alternatively, you can browse to it using the GUI file explorer, right click on it, and use the permissions to set the permissions for the file to executable. (If you skip this step, you might get a permissions error when you try to run the file.)*
+
+*Once the script is set up, then the commands to use it are*:
 
     cd public/javascripts
     RequireJQuery.sh

@@ -5,6 +5,9 @@ In class on Wednesday we developed an express application that we called, I beli
     unzip ClickReader.zip
     
 [ClickRoute]: http://elvenware.com/charlie/downloads/ClickRoute.zip
+
+- Put your routes in /routes/index.js
+- Be sure you include documentready or DomReady in require
     
 ##Step01 - Rename the Eclipse Project File {#step01}
 
@@ -77,6 +80,12 @@ When you are done, the app should respond to clicks on the list items as follows
 - On the client receive the data, and display each of the three properties to the user. Each property should appear in a separate paragraph tag that was configured with Jade.
 
 [getJson]: http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON
+
+##Sample Interface
+
+It can look as you please, but here is an example interface.
+
+![Click Route](http://www.elvenware.com/charlie/books/CloudNotes/Images/ClickEvents05.png)
 
 ##Step05: Turn it In {#step05}
 

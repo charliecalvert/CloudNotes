@@ -1,6 +1,15 @@
 Week 08
 =======
 
+We should start placing app.get calls (the routes) in routes/index.js as router.get
+
+We should start putting document.ready INSIDE our calls require in Main.js. 
+
+See attached, including my solution so you can see it all working together.
+
+- Put your routes in /routes/index.js
+- Be sure you include documentready or DomReady in require
+
 The Week 08 Assignment:
 
 - <http://elvenware.com/charlie/books/CloudNotes/Prog282/Week08-Assignment.html>

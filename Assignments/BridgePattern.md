@@ -70,13 +70,57 @@ Default Markdown:
     - Item02
     - Item03
 
-When you call **Reader.display()**, then you project should display the data returned by **readFile** in an HTML DIV element. You should use jQuery to transfer the data to the **DIV**.
+When you call **Reader.display()**, then you project should display the data returned by **readFile** in an HTML DIV element. You should use jQuery to transfer the data to a **DIV** or **PRE** tag.
 
 The **FrancyReader** uses the **readFile** object to read data. It then reports the length of it. You may need to convert the JSON to string by running
 
     JSON.stringify(myJsonData);
-    
+
 In the above, **myJsonData** is the data returned when you call **readFile**.
+
+#Hints
+    
+Here is a sample output screen:
+
+![Sample Output](http://elvenware.com/charlie/books/CloudNotes/Images/BridgePattern05.png)
+
+In the above screenshot, I have Jade that looks like this:
+
+    h2 JSON Display
+    pre#displayJson
+    
+    h2 Markdown Display
+    pre#displayMarkdown
+    
+    h2 FancyReader
+    p The length of the string from the reader is: 
+      span#showLength
+
+
+I'm declaring long strings in JavaScript like this:
+
+		function hereDoc(func) {
+			return func.toString().replace(/^[^\/]+\/\*!?/, '').replace(
+					/\*\/[^\/]+$/, '').replace(/\t/g, '');
+		}
+
+		MarkdownReader.prototype.readFile = function() {
+			return hereDoc(function() {
+				/*
+				#Title
+				
+				This is a ginned up markdown document. I'm using a slightly modified
+				trick I learned on StackOverflow to handle this long string.
+				I found the **hereDoc** method [here](http://stackoverflow.com/a/5571069). 
+				
+				## SubSection.
+				
+				You can learn more about markdown
+				[here](http://daringfireball.net/projects/markdown/)
+				*/
+			})
+		};
+
 
 ##Turn it in
 
