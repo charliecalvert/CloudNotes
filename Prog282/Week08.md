@@ -30,7 +30,36 @@ One of the most important samples is JsObjects/HtmlCssJavaScript/UnitTestCouchDb
 It shows how to read and write complex data from CouchDb. Right now,
 despite what I said on Wednesday, I'm not using QueryString in most 
 cases.
-	
+
+##Github Pages
+
+Set up your github pages as described here:
+
+- [GitHub Pages](https://pages.github.com/)
+- create a repository called: **username**.github.io
+- Example [http://**charliecalvert**.github.io/](http://charliecalvert.github.io/)
+- Clone the repository: git clone git@github.com:**username**/**username**.github.io.git
+- Create an index.html page and push it:
+
+```
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Charlie on Github</title>
+    </head>
+    <body>
+        <h1>Charlie on Github</h1>
+        <p>Let's get started</p>
+    </body>
+</html>
+```
+
+You will have to wait a few minutes until your site comes up.
+
+
+
+
 Important Links
 ---------------
 
