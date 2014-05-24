@@ -41,7 +41,7 @@ Set the **result** property to **Success** as shown above. Set **route** to the 
 Open up ClickEvent.js and look for the listClick method:
 
     var listClick = function(event) {
-        var clickText = event.target.innerText;
+        var clickText = event.target.innerHTML; // was innerText
     };
 
 This method is called whenever the user clicks on one of the list items in the unordered list found on the site's web page. 

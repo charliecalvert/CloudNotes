@@ -76,6 +76,281 @@ For now, the JSON you save to MongoDb should look like this:
 
 Ultimately, we will probably replace or generate FileList.json from these records in the database. So you should see a parallel between these records and the information in **FileList.json**. The big difference, of course, is that the JSON contains a copy of the markdown, rather than just pointing to it. 
 
+## Some Steps
+
+There are many ways to finish this assignment. You could build off your BridgePattern02 assignment, off of BridgeSailor from JsObjects/Design, from the midterm, or start from scratch. I'll show how to start from scratch, and hopefully you can pick and choose from what I show depending on your needs.
+
+Create a new project:
+
+    express JsonMarkdown
+    cd JsonMarkdown
+    npm install
+    
+Create a dot project file and sets it name:
+
+	<?xml version="1.0" encoding="UTF-8"?>
+    <projectDescription>
+    	<name>JsonMarkdown-Calvert</name>
+    	<comment></comment>
+    	<projects>
+    	</projects>
+    	<buildSpec>
+    		<buildCommand>
+    			<name>com.aptana.ide.core.unifiedBuilder</name>
+    			<arguments>
+    			</arguments>
+    		</buildCommand>
+    	</buildSpec>
+    	<natures>
+    		<nature>com.aptana.projects.webnature</nature>
+    	</natures>
+    </projectDescription>
+
+Open up the project in Eclipse or your favorite editor. (In Eclipse, you use **File | Import**, and then **General | Existing Projects into Workspace**.
+
+Set the port:
+
+    app.set('port', process.env.PORT || 30025);
+
+## Borrow what you Can
+
+From your Week08InClassMarkdown (exact name?) project, take:
+
+    /public/javascripts/Markdown // The whole directory
+    /public/javascripts/jquery.js // Which ever version you used
+    /public/javascripts/require.js
+    /public/javascripts/Main.js
+    /public/stylesheets/markdown.css
+    /public/wmd-buttons.png
+    /views/layout.jade
+
+Layout looks like this:
+
+    doctype html
+    html
+      head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="javascripts/require.js" data-main="javascripts/Main")
+      body
+        block content
+    
+Get MarkShow.js and PagedownSetup.js. 
+
+## Create or Borrow a Control Class
+
+Put in **/public/javascripts**
+
+    define(function() {
+    	
+    	var Control = (function() {
+    	
+    		function Control() {
+    			
+    		}
+    		
+    		return Control;
+    	}());
+    	
+    	return Control;
+    	
+    });
+    
+Modify your **Main.js** to load **Control.js** instead of Markshow:
+
+    require.config({
+        paths: {
+            "jquery": "jquery-2.1.1",
+            "Markdown": "Markdown/Converter",
+            "Editor": "Markdown/Editor"
+        }
+    });
+    
+    require(['jquery', "Control"], function(jq, Control) {
+        'use strict';
+        console.log("Main called");
+        
+        var showMark = new Control();
+    });
+
+
+This is a good time to make sure you can get things up and running. Load your program in Chrome. Press up F12 to bring up the Developer Tools. Turn to the Networking page. You should be able to see:
+
+ - localhost 
+ - style.css 
+ - markdown.css 
+ - require.js 
+ - Main.js 
+ - jquery*.js
+ - Control.js
+
+I don't see the bitmap loading. Is that just because it doesn't like me or because we aren't using it yet? I'll come back to this.
+
+##Create New Routes
+
+Create your new route:
+
+    /routes/Markdown.js
+    /views/Markdown.jade
+    
+Markdown.jade will at least start like this:
+
+extends layout
+
+    block content
+    link(rel='stylesheet', href='/stylesheets/markdown.css')
+    
+      h1= title
+      p Welcome to #{title}
+    
+      div#markdown.clearfix
+        div.wmd-panel
+          div#wmd-button-bar-elf
+          textarea.wmd-input#wmd-input-elf
+    
+        div#wmd-preview-elf.wmd-panel.wmd-preview
+        
+**Markdown.js** can be almost identical to the default **index.js**, but it should contain a line like this:
+
+      res.render('Markdown', { title: 'Markdown' });
+
+The same thing is done in the [midterm][addNewPage] when you add a [NewPage][addNewPage], so base your work on that. But instead of readering a NewPage, render the markdown, as shown above. Also add the appropriate **require** and **app.use** statements to **app.js**, as explained in the same section of the [midterm][addNewPage]. 
+
+[addNewPage]: http://elvenware.com/charlie/books/CloudNotes/Assignments/Prog282Midterm2014.html#add-a-new-page
+
+## Launch the Markdown Editor
+
+Define two buttons in **index.jade**:
+
+  button#showJson Show Json
+  button#showMarkdown Show Markdown
+  
+Edit **Control.js** to Respond to clicks on the **markdown** button.
+
+    define(function(requre) {
+    	
+    	var Control = (function() {
+    	
+    		function Control() {
+    			$("#showMarkdown").click(showMarkdown);
+    		}
+    		
+    		var showMarkdown = function() {			
+    			window.location.href = '/Markdown';
+    		};
+    		
+    		return Control;
+    	}());
+    	
+    	return Control;
+    	
+    });
+
+When you page load, everything looks fine, but the controls are not initialized. MarkShow is crucial to us, because it initializes our markdown editor with code that begins like this:
+
+    var pagedownSetup = new PagedownSetup();
+    converter = pagedownSetup.setupConverter(Markdown);
+
+So we have to load **MarkShow** and we have to do it after the new page is loaded. The question is when and where?
+
+We could place a button on the **markDown** Jade page:
+
+    button#editLoad Edit Load
+  
+We would then respond to button clicks in order to initialize the editor:
+
+    define(["MarkShow"], function(MarkShow) {
+    	
+    	var Control = (function() {
+    	
+    		function Control() {
+                $("#showMarkdown").click(showMarkdown);
+                $("#editLoad").click(editLoad); // Clicks on the MarkDown page.
+    		}
+    		
+    		var showMarkdown = function() {			
+    			window.location.href = '/Markdown';
+    		};
+    		
+    		var editLoad = function() {
+    			var markShow = new MarkShow();
+    		}
+    		
+    		return Control;
+    	}());
+    	
+    	return Control;
+    	
+    });
+
+The problem with this approach is that it forces the user to perform an extra button click. A better approach is to restore Control.js to the state we were in before our experiment:
+
+    define(function(requre) {
+    	
+    	var Control = (function() {
+    	
+    		function Control() {
+    			$("#showMarkdown").click(showMarkdown);
+    		}
+    		
+    		var showMarkdown = function() {			
+    			window.location.href = '/Markdown';
+    		};
+    		
+    		return Control;
+    	}());
+    	
+    	return Control;
+    	
+    });
+    
+You will also want to remove the button from Markdown.jade.
+
+Now edit **Main.js** to behave one way when the main page is loaded, and another way when the Markdown page is loaded:
+
+```
+require(['jquery', "Control", "MarkShow"], function(jq, Control, MarkShow) {
+    'use strict';
+    console.log("Main called");
+
+    $(document).ready(function() {
+	    
+	    if (document.URL === "http://localhost:30025/Markdown") {
+	        var showMark = new MarkShow();
+	    } else {
+	        var control = new Control();
+	    }
+    })
+});
+```    
+
+The key line is this one:
+
+    if (document.URL === "http://localhost:30025/Markdown") {
+    
+This tests if we are loading http://localhost:30025 or http://localhost:30025/Markdown. Obviously this won't work in a production environment. This should do the same thing, but work anywhere, even if it is a bit more difficult to read:
+
+    function endsWith(value, suffix) {
+    	return value.indexOf(suffix, this.length - suffix.length) !== -1;
+    }
+    
+    require([ 'jquery', "Control", "MarkShow" ], function(jq, Control, MarkShow) {
+    	'use strict';
+    	console.log("Main called");
+    
+    	$(document).ready(function() {
+    		
+    		if (endsWith(document.URL, "Markdown")) {
+    			var showMark = new MarkShow();
+    		} else {
+    			var control = new Control();
+    		}
+    	})
+    });
+    
+Ultimately, I believe it makes more sense to simply insert the appropriate HTML into our current page rather than load an entirely new page. However, we'll do that later. Or you can do it now if you want.
+
+
 ##Turn it In
 
 Save your work in a Week08BridgePattern03 folder in your repository. Include a .project that has your last name appended to the directory name: Week08BridgePattern03-LastName.

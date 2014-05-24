@@ -65,6 +65,13 @@ In **index.jade**, or whichever jade file you want to use for this editor, add t
         
       div#wmd-preview.wmd-panel.wmd-preview
 
+The above is the generic case. I want to show what you to do if you need to distinguish one editor from another, so I append -elf to the ids, like this:
+
+    div.wmd-panel
+      div#wmd-button-bar-elf
+      textarea.wmd-input#wmd-input-elf
+    
+    div#wmd-preview-elf.wmd-panel.wmd-preview
 
 ## Setup pagedown
 
@@ -88,7 +95,8 @@ The follwing code initializes pagedown.
     
     			var help = function() {
     				alert("Do you need help?");
-    			}
+    			};
+    			
     			var options = {
     				helpButton : {
     					handler : help
@@ -102,11 +110,11 @@ The follwing code initializes pagedown.
     			editor.run();
     			
     			return editor.getConverter();
-    		}
+    		};
     
     		return PagedownSetup;
     		
-    	}())
+    	}());
 
 	    return PagedownSetup;
 
@@ -192,7 +200,12 @@ The variable **saveHtml** is the html you want to save. The following line of co
     
 ##Require
 
-To create the program, all you have to do is set up the *Main.js* file used by require. You will, of course, need to set up the paths to our copy of **pagedown**:
+To create the program, all you have to do is:
+
+- Set up the **Main.js** file used by require 
+- Make sure that **layout.jade** is loading require in the usual manner. 
+
+In **Main.js**, you will, of course, need to set up the paths to our copy of **pagedown**:
 
     require.config({
     	paths : {
