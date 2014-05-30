@@ -67,6 +67,10 @@ Prog 282
 -	[Week03](Prog282/Week03.html)
 -	[Week04](Prog282/Week04.html)
 -	[Week05](Prog282/Week05.html)
+-	[Week06](Prog282/Week06.html)
+-	[Week07](Prog282/Week07.html)
+-	[Week08](Prog282/Week08.html)
+-	[Week09](Prog282/Week09.html)
 
 ISIT 320
 --------

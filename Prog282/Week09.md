@@ -3,30 +3,51 @@ Week09 Overview
 
 Our major topic:
 
-- [Express Generated Apps on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#express-generated-applications)
-- [Jade](http://jade-lang.com/)
-- [Stylus](http://learnboost.github.io/stylus/)
-- [CouchDb on Elvenware](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html)
-- [PhantomJs site. Also see below.](http://phantomjs.org/)
+- AWS and EC2
+    - [AWS Deck: http://bit.ly/Rzi2Da](http://bit.ly/Rzi2Da)
+    - [On Elvenware](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
+- Singleton
+    - [On JsObjects][singleton]
+- Sessions
+- NoDemon
+- [WebServers Review: http://bit.ly/Q9A4Ne](http://bit.ly/Q9A4Ne)
+
 
 The assignments:
 
 - [Week09-InClass](http://www.elvenware.com/charlie/books/CloudNotes/Prog282/Week09-InClass.html)
 - [Week09-Assignment](http://www.elvenware.com/charlie/books/CloudNotes/Prog282/Week09-Assignment.html)
 
+[singleton]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/Singleton
+
+
+## Nodemon Watches for Changes
+
+Install nodemon:
+
+	npm install -g nodemon
+	
+Now use it to start your application:
+
+	nodemon server.js
+	
+Now you won't have to restart your application each time you change
+the source.
 
 PhantomJs and QUnit
 -------------------
 
+- [PhantomJs site. Also see below.](http://phantomjs.org/)
+
 You can use PhantomJs to run tests on your program from the command line. This
 means that we can run QUnit tests from the command line:
 
-~~~~
+```
 G:\Src>phantomjs Tests\run-qunit.js http://localhost:30025/TestCanvasCode.html
 'waitFor()' finished in 233ms.
 Tests completed in 141 milliseconds.
 44 assertions of 58 passed, 14 failed.
-~~~~
+```
 
 Here is the home page for PhantomJs and a related tool called CasperJs:
 
@@ -43,7 +64,7 @@ Create Database
 
 Check if a database exists, if it does not, create it:
 
-~~~~
+```
 	var makeDatabase = function(response, dbName) {
 		nano.db.create(dbName, function(err, body) {
 			if (!err) {
@@ -77,7 +98,7 @@ Check if a database exists, if it does not, create it:
 			}
 		});
 	};
-~~~~
+```
 
 Call it like this:
 
@@ -99,25 +120,13 @@ Some links for express and a note or two.
 
 Express application is here:
 
-~~~~
+```
 C:\Users\Charlie\AppData\Roaming\npm\node_modules\.bin
-~~~~
+```
 
 Of sometimes just in your ../node_modules/express/.bin directory
 
-Nodemon Watches for Changes
----------------------------
 
-Install nodemon:
-
-	npm install -g nodemon
-	
-Now use it to start your application:
-
-	nodemon server.js
-	
-Now you won't have to restart your application each time you change
-the source.
 
 
 Initializing Buttons on Dynamically Inserted HTML
@@ -129,7 +138,7 @@ way to do that is to link in a JavaScript page from the loaded
 HTML page, and load the buttons there. However, sometimes that
 is not practical. In that case, do something like this:
 
-~~~~
+```
 	var htapp.get('/readJson', function(request, response) {
     console.log('readJson called: ' + request.query)
     var prog = nano.db.use(dbName);
@@ -155,4 +164,4 @@ is not practical. In that case, do something like this:
 			}
 		);
 	}
-~~~~
+```

@@ -136,7 +136,7 @@ Now the list items in your unordered list look like this:
 When the user clicks on the items, you can retrieve the data like this:
 
     function pickFile(event) {
-        var fileName = event.target.innerText;
+        var fileName = event.target.innerHTML;  // Was innerText
         var filePathName = event.target.attributes.data.value;
     }
     
@@ -158,7 +158,7 @@ When you respond to a click on a **listItem**, you want to call **\$.getJSON.**
  
 The user clicks on a **listItem** and invokes the click handler shown above. Use .getJSON to invoke a route on the server and to send a simple JavaScript object to the server specifying the user's choice. Assuming you saved the path to the file in an attribute called data, as recommended above, you can get the user's choice like this:
 
-    $('#debug01').html("You picked: " + event.target.innerText)
+    $('#debug01').html("You picked: " + event.target.innerHTML) // innerText
 	$('#debug02').html("Value: " + event.target.attributes.data.value);
 	
 The server gets the call and uses **request.query** to discover the file the user requested. Use **fs.readFile** to read the file from disk. Use response.send to send the contents of the file back to the client. There are many examples of how to do this sort of thing in JsObjects, including [AsyncJsonReader][async].

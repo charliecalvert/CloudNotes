@@ -12,6 +12,7 @@ A primary resource for information is Git. It can be difficult to find informati
 - [Git](http://www.elvenware.com/charlie/development/cloud/Git.html)
 - [Cloud](http://www.elvenware.com/charlie/development/cloud/)
 - [Data Structures on Elvenware][DataStructures]
+- [WebServers Deck](http://bit.ly/Q9A4Ne)
 
 ##Assignments
 

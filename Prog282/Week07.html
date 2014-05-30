@@ -99,7 +99,7 @@
 <p>I'll pass out the midterm this week. It will be due Sunday night. It will be open book, but will probably be fairly time consuming, so you might begin planning for that contingency. One thing is certain, if you start it on Sunday evening, you probably won't do very well.</p>
 <h2 id="routes">Routes</h2>
 <pre><code>router.get(&#39;/read&#39;, function(request, response) {
-    var queryObject = request.query
+    var queryObject = request.query;
     var queryAsString = JSON.stringify(request.query);
     console.log(&quot;Read called: &quot; + queryAsString);
     response.send({ &quot;firstName&quot;: queryObject.firstName });

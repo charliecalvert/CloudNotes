@@ -1,0 +1,143 @@
+#AWS EC2 Expert
+
+Primary goals:
+
+ 1. Learn to set up Elastic IP
+ 2. Gain confidence creating EC2 instances
+
+## Step One Elastic IP
+
+The goal of this step is to be sure you have an [elastic IP][elasticip], and that it is attached to your instance.
+
+- Sign into AWS and follow the [steps outlined on Elvenware][elasticip] for setting up an Elastic IP.
+
+  [elasticip]: http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
+
+## Step Two: SSH into your Instance
+
+On Pristince Ubuntu, navigate to your .ssh directory:
+
+    cd ~/.ssh
+
+Load your EC2 instanec private key, which probably has the name Prog282-2014.pem, but which might have some other name:
+
+    ssh-add Prog282-2014.pem
+    
+Now SSH into your AWS instance:
+
+    ssh ubuntu@[YOUR_ELASTIC_IP]
+  
+## Step Three: Create Three Instances
+
+On AWS, create three Ubuntu 14.04 64 bit VMs. Use the same key pair and same security credentials for all three instances.
+
+Take a screen shot of the Volumes page and show the **Created** date. I want to see that all three images you created were made on May 29, 2014 or later. In the screen shot shown below you can see two images that I created and the dates when they were created. Note that neither was created on May 29, 2014, or later, so they are not new enough for this assignment. Your screen shot must show the date created and as many other fields as you can manage to show. I've cut this image off, so that it was not too big to view on your browser. But the image you create need have no such limitation and it must show that your images were created after May 28, 2014. It should also show your attachment information. For instance, my attachment information is i-94bc2dc7. Make sure that ID is visible in your screenshot.
+
+![EC2][ec2Vol01]
+
+[ec2Vol01]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Ec2Vol01.png
+
+## Step Four: Provision
+
+Run these commands in each instance. First update the instance to the latest software:
+
+    sudo apt-get update
+    sudo apt-get upgrade
+    
+Install GIT: 
+
+    sudo apt-get install git
+    
+Install node:
+
+    sudo apt-get install python-software-properties python g++ make
+    sudo add-apt-repository ppa:chris-lea/node.js
+    sudo apt-get update
+    sudo apt-get install nodejs
+
+## Step Five: Set up SSH
+
+Right now you have to work with two SSH keys. The one from your Pristince Ubuntu instance, and the one on your AWS instance. There is no need for that. You can use the same key on both machines. This section describes how to do that.
+
+When you started work on your Pristine Ubuntu instance early in the quarter, one of the first things you did was create an SSH key pair called, by default, **id_rsa** and **id_rsa.pub**. If you put your **id_rsa.pub** key in the **./ssh/authorized_keys** file for your AWS instance, then you will be able to SSH into your AWS instance and access your BitBucket repository with the same key.
+
+On your AWS instance, type this command to open your **authorized_keys** file in the **nano** editor that ships with Ubuntu:
+
+    nano ~/.ssh/authorized_keys
+    
+This old screen shots shows something of what you might see when you open your authorized keys file in the **nano** editor:
+
+![authorized_keys][akeys01]
+
+Note that your authorized_keys file already contains the public key for the key pair your created when you created your AWS instance. You need to add the **id_rsa.pub** file from your pristine_ubuntu instance to this authorized_keys file. Open the **~/.ssh/id_rsa.pub** file from pristine ubuntu in Geany. Select and copy the key. Now switch to your AWS instance and paste your key into Nano. 
+
+You know how to cut and paste. Just remember you have no mouse in Nano, and be careful not to damage your authorized_keys file. If you do, that will be the end of your instance. You will have to delete it and create a new one. You might, for instance, use the **end** key to navigate to the end of your existing key in your authorized_keys file. Press **enter** to create a new line. Now paste in your **id_rsa.pub** key. The result should look something like what you see below. Press Ctrl-O to save your work. Then press Ctrl-X to exit.
+
+![authorized_keys02][akeys02]
+
+**NOTE**: *It's easy to accidentally press Ctrl-Z and exit the nano editor without really closing it. If you are in the editor, and suddenly find yourself back at the command prompt without quite knowing how you got there, try typing **jobs** to see if you have any running jobs. If you do, type **fg** to return to the editor.*
+
+Okay. Once you have added your key to the authorized key file, type exit to close your AWS SSH shell and return to Pristine Ubuntu. From now on you should be able to access your AWS instance with just **id_rsa** private key loaded. You should also be able to copy your id_rsa_private key to your EC2 instance. From the pristine ubuntu **.ssh** directory type this command:
+
+    scp id_rsa ubuntu@[YOUR_ELASTIC_IP]:/home/ubuntu/.ssh/.
+
+SSH back to your EC2 instance. Edit your ~/.bashrc file in nano and the following:
+
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`  
+fi
+
+ssh-add ~/.ssh/id_rsa
+
+Be sure there is at least one blank line after the last command in the file. Now you should be able to push and pull from your repository without having worry about loading ssh-agent or your private key.
+
+[akeys01]: http://www.elvenware.com/charlie/development/cloud/images/Putty06.png
+[akeys02]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Ec2Vol02.png
+
+
+##Step 6: Clone your repository. 
+
+Clone your repository on each of your three new instances. On each instance, start one of your programs (npm start) that talks back and forth between the server and the client. Do something to make it talk back and forth some. Press Ctrl-C to close your node instance. Run this command:
+
+    wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
+    
+Create a screen shot that might look something like this:
+
+![wget Shot][akeys03]
+
+Note the GET lines with the green 200 in them. Those show that your client is talking to your server. I'm looking for that kind of thing. I'm particularly interested in requests like the one for /getFullName. That shows you are requesting more than just HTML, CSS and JS files. See right at the bottom on the left where it says **i-94bc2dc7**? That is the Volume ID for EC2 hard drive. Yours will be different than mine. I'm looking for that ID and matching it to the IDs in your first screen shot. Three IDs, one for each instance.
+
+My **package.json** started the app like this:
+
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+
+In total, you will need to create three of these screen shots, one for each of your instances. I'm machine the ID returned by the call to **wget** to the id from the list of volumes in your previous screen shot.
+
+**NOTE**: *You don't have to all three new instances running at once. You can*:
+
+- Create the three instances. Stop each on as soon as it starts.
+- Create the first screen shot of the three volumes.
+- Start the first instance. Provision it, create the second screen shot.
+- Terminate the first instance
+- Start the second instance. Provision it, create the second screen shot. etc.
+
+**TIP**: *You may find it useful to create scripts that perform certain tasks. You might also want to secure copy (scp) your scripts back and forth between pristine ubuntu and your AWS instances. For instance put the lines that install node into a script called [installNode.sh][installNode]*
+
+Then:
+
+    chmod +x InstallNode.sh
+
+And thereafter:
+
+    ./InstallNode.sh
+
+
+[installNode]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/InstallScripts/InstallNode.sh
+[akeys03]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Ec2Vol03.png
+
+##Step 7: Turn it in
+
+Create a folder in your repo called **Week08Ec2Instances**. Place your four (or more) screen shots in your folder. Push.
+
