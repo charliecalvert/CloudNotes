@@ -235,7 +235,8 @@ Edit **Control.js** to Respond to clicks on the **markdown** button.
     			$("#showMarkdown").click(showMarkdown);
     		}
     		
-    		var showMarkdown = function() {		
+
+    		var showMarkdown = function() {
     			window.location.href = '/Markdown';
     		};
     		
@@ -350,7 +351,6 @@ This tests if we are loading http://localhost:30025 or http://localhost:30025/Ma
     
 Ultimately, I believe it makes more sense to simply insert the appropriate HTML into our current page rather than load an entirely new page. However, we'll do that later. Or you can do it now if you want.
 
-
 ## Data and Pages
 
 When we load the /Markdown page our data gets refreshed. So how do we keep track of the data selected by the user? There are several ways to do this. Here's what we'll do for now:
@@ -440,8 +440,6 @@ Display the pick to the user
 ## Session Support
 
     npm install express-session --save-dev
-    
-    
 
 ##Turn it In
 
