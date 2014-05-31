@@ -2,7 +2,7 @@
 
 Primary goals:
 
- 1. Learn to set up Elastic IP
+ 1. Learn to set up an Elastic IP
  2. Gain confidence creating EC2 instances
 
 ## Step One Elastic IP
@@ -11,7 +11,9 @@ The goal of this step is to be sure you have an [elastic IP][elasticip], and tha
 
 - Sign into AWS and follow the [steps outlined on Elvenware][elasticip] for setting up an Elastic IP.
 
-  [elasticip]: http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
+[elasticip]: http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
+
+When you are done, take a screen shot of your elastic IP page on AWS.
 
 ## Step Two: SSH into your Instance
 
@@ -19,19 +21,31 @@ On Pristince Ubuntu, navigate to your .ssh directory:
 
     cd ~/.ssh
 
-Load your EC2 instanec private key, which probably has the name Prog282-2014.pem, but which might have some other name:
+Load your EC2 instance private key, which probably has the name **Prog282-2014.pem**, but which might have some other name:
 
     ssh-add Prog282-2014.pem
     
 Now SSH into your AWS instance:
 
     ssh ubuntu@[YOUR_ELASTIC_IP]
+    
+Remember, there are two steps necessary to load a key into memory:
+
+ 1. Make sure ssh-agent is running (eval `ssh-agent`). This step is already done automatically for you in pristince ubuntu because it is included in the **.bashrc** file I gave you at the start of the quarter.
+ 2. Load a specific into in the **ssh-agent** by running **ssh-add**.
+
   
 ## Step Three: Create Three Instances
 
-On AWS, create three Ubuntu 14.04 64 bit VMs. Use the same key pair and same security credentials for all three instances.
+On AWS, create three Ubuntu 14.04 64 bit VMs. Use the same key pair and same security credentials for all three instances. You already know what to do, but you might want a reminder. This older video isn't exactly what you want, but it is close enough:
 
-Take a screen shot of the Volumes page and show the **Created** date. I want to see that all three images you created were made on May 29, 2014 or later. In the screen shot shown below you can see two images that I created and the dates when they were created. Note that neither was created on May 29, 2014, or later, so they are not new enough for this assignment. Your screen shot must show the date created and as many other fields as you can manage to show. I've cut this image off, so that it was not too big to view on your browser. But the image you create need have no such limitation and it must show that your images were created after May 28, 2014. It should also show your attachment information. For instance, my attachment information is i-94bc2dc7. Make sure that ID is visible in your screenshot.
+<iframe width="420" height="315" src="//www.youtube.com/embed/TjVWpNZfTPE" frameborder="0" allowfullscreen></iframe>
+
+You can also look here:
+
+- [AWS Ec2 on Elvenware](http://elvenware.com/charlie/development/cloud/WebServices.html#ec2)
+
+Take a screen shot of the Volumes page and show the **Created** date. I want to see that all three images you created were made on May 29, 2014 or later. In the screen shot shown below you can see two images that I created and the dates when they were created. Note that neither was created on May 29, 2014, or later, so they are not new enough to meet the requirements for this assignment. Your screen shot must show the date created and as many other fields as you can manage to show. I've cut this image off, so that it was not too big to view on your browser. But the image you create need have no such limitation and it must show that your images were created after May 28, 2014. ***It should also show your attachment information.*** My attachment information inludes the instance id **i-94bc2dc7**. Make sure that ID is visible in your screen shot.
 
 ![EC2][ec2Vol01]
 
@@ -97,23 +111,25 @@ Be sure there is at least one blank line after the last command in the file. Now
 
 ##Step 6: Clone your repository. 
 
-Clone your repository on each of your three new instances. On each instance, start one of your programs (npm start) that talks back and forth between the server and the client. Do something to make it talk back and forth some. Press Ctrl-C to close your node instance. Run this command:
+Create a **Git** folder in your home directory. Navigate into that folder and then clone your repository on each of your three new instances. On each instance, start one of your programs (npm start). Pick a program that talks back and forth between the server and the client. I'm looking for a program that calls into a route such as '**/read**' that you created on the server. Do something to make it talk back and forth some. Press Ctrl-C to close your node instance. Immediately run this command:
 
     wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
     
-Create a screen shot that might look something like this:
+The result is somewhat messy, but it is informative. Create a screen shot that might look something like this:
 
 ![wget Shot][akeys03]
 
-Note the GET lines with the green 200 in them. Those show that your client is talking to your server. I'm looking for that kind of thing. I'm particularly interested in requests like the one for /getFullName. That shows you are requesting more than just HTML, CSS and JS files. See right at the bottom on the left where it says **i-94bc2dc7**? That is the Volume ID for EC2 hard drive. Yours will be different than mine. I'm looking for that ID and matching it to the IDs in your first screen shot. Three IDs, one for each instance.
+Note the GET lines with the green 200 in them. Those show that your client is talking to your server. I'm looking for that kind of thing. I'm particularly interested in requests like the one for **/getFullName**. That shows you are requesting more than just HTML, CSS and JS files. In other words, requests for style.css, or Utilities.js are nice, but they just prove that your app is loading, They don't show that you are calling specific routes.
 
-My **package.json** started the app like this:
+If you don't see GET statements like those shown here, check how you are starting your app. My **package.json** started the app like this:
 
     "scripts": {
         "start": "node ./bin/www"
     },
 
-In total, you will need to create three of these screen shots, one for each of your instances. I'm machine the ID returned by the call to **wget** to the id from the list of volumes in your previous screen shot.
+Now let's talk about the output you get from the call to wget. See right at the bottom on the left where it says **i-94bc2dc7**? That is the Volume ID for my EC2 virtual hard drive. The ID was retrieved by using wget to pull down the results from accessing the specific URL shown above. Your results will be different than mine. I'm looking for your instance ID and matching it to the ID's in your second screen shot, the one that showed your three volumes. In total, your screen shots should show three ids, one in each screen shot. Each screen shot contains one instance id, and each one is different. That's three IDs, one for each instance. For instance, the sample screen shot I show here represents one screen shot and one instance id.
+
+In total, you will need to create three of these screen shots, one for each of your instances. I'm matching the ID returned by the call to **wget** to the id from the list of volumes in your previous screen shot.
 
 **NOTE**: *You don't have to all three new instances running at once. You can*:
 
@@ -139,5 +155,9 @@ And thereafter:
 
 ##Step 7: Turn it in
 
-Create a folder in your repo called **Week08Ec2Instances**. Place your four (or more) screen shots in your folder. Push.
+Create a folder in your repo called **Week08Ec2Instances**. Place your five (or more) screen shots in your folder. Push.
+
+- Elastic IP screen shot.
+- Volumes for VM screen shot that inclues date and instance id (like i-94bc2dc7)
+- Three running instances including the instance-id (like i-94bc2dc7)
 
