@@ -15,6 +15,15 @@ The goal of this step is to be sure you have an [elastic IP][elasticip], and tha
 
 When you are done, take a screen shot of your elastic IP page on AWS.
 
+Hint on managing elastic IPs:
+
+A single Elastic IP can be associated with only one instance at a time. When you switch from one instance to another, you might want to follow these steps.
+
+- Exit from the 1st instance.
+- Disassociate the Elastic IP with the 1st instance.
+- Associate the Elastic IP with the 2nd instance.
+- Sign on the 2nd instance.
+
 ## Step Two: SSH into your Instance
 
 On Pristince Ubuntu, navigate to your .ssh directory:
@@ -51,6 +60,18 @@ Take a screen shot of the Volumes page and show the **Created** date. I want to 
 
 [ec2Vol01]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Ec2Vol01.png
 
+**NOTE**: *You might get an error when you try to sign on to a new instance using the same elastic IP address you used for another virtual machine. The problem is this: in your **./ssh/known_hosts** file an IP address is identified with a key that uniquely identifies a particular machine or VM. When you switch from one VM to another, but keep the same elastic IP, then you can get an **ECDSA error** about the key being changed. To fix it, remove the key from the **./ssh/known_hosts** file. That is the file where the keys are kept. The error you got specifies the line number in the known_hosts file where the problem record is stored. This command will remove a particular line, in this case the 6th line, from **known_hosts** file*:
+
+    sed -i '6d' ~/.ssh/known_hosts
+
+*After doing this, you should be able to ssh into your new VM*:
+
+    ssh ubuntu@<Your ELASTIC IP>
+    
+*See [here for more info][kh]*
+
+[kh]: http://superuser.com/questions/30087/remove-key-from-known-hosts
+    
 ## Step Four: Provision
 
 Run these commands in each instance. First update the instance to the latest software:
@@ -97,9 +118,9 @@ Okay. Once you have added your key to the authorized key file, type exit to clos
 
 SSH back to your EC2 instance. Edit your ~/.bashrc file in nano and the following:
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent`  
-fi
+    if [ -z "$SSH_AUTH_SOCK" ] ; then
+        eval `ssh-agent`  
+    fi
 
 ssh-add ~/.ssh/id_rsa
 

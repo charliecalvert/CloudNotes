@@ -237,6 +237,281 @@ This code provides special treatment for three consecutive backticks before and 
 
 I don't think the **pre** tags are actually necessary if you use the code button shown in the previous example, but I'm not going to retake the screenshot just now.
 
+##Routes
+
+Basic steps to set up routing with **markShow**.
+
+Create **/views/Markdown.jade**. When doing this, be sure, one way or another, that you load **public/stylesheets/markdown.css**. That may involve editing **layout.jade** or creating a **layoutMarkdown.jade**:
+
+```
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  button#editLoad Edit Load
+  p#sessionNumber
+  
+  div#markdown.clearfix
+    div.wmd-panel
+      div#wmd-button-bar-elf
+      textarea.wmd-input#wmd-input-elf
+
+    div#wmd-preview-elf.wmd-panel.wmd-preview
+```
+
+Create **/routes/Markdown.js**:
+
+```
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res) {
+  res.render('Markdown', { title: 'Markdown' });
+});
+
+module.exports = router;
+```
+
+Now we want to add in support for sesisons:
+
+    npm install express-session --save
+
+In **app.js** we load the session object:
+
+    var session = require('express-session');       // Place just after body parser
+    app.use(session({secret: 'stealthy'}));         // Place just before use routes
+    var markdown = require("./routes/Markdown");    // Place just before app=express()
+    app.use('/Markdown', markdown);                 // Place just before error handlers
+
+In **/routes/index.js**:
+
+```
+// Code omitted here
+var internalSessionNumber = 0;  // Place near top of file
+
+/* GET home page. */
+router.get('/', function(request, response) {
+	response.render('index', { title : 'Week08BridgePattern' });
+	if (typeof request.session.sessionNumber === 'undefined') {
+		console.log("Session undefined, setting number");
+		request.session.sessionNumber = internalSessionNumber++;
+	}
+});
+
+router.get('/setPick', function(request, response) {
+	'use strict';
+	console.log("SetPick Query: " + request.query.pick );	
+	request.session.pick = request.query.pick;
+	console.log("SetPick Session: " + JSON.stringify(request.session));
+	response.send({"result": "success", "sessionNumber": request.session.sessionNumber});
+	console.log("Sent message");
+});
+
+router.get('/getPick', function(request, response) {
+	'use strict';
+	console.log("GetPick: " + request.session.sessionNumber);	
+	console.log("GetPick Session: " + JSON.stringify(request.session));
+	response.send({"userPick": request.session.pick, "sessionNumber": request.session.sessionNumber})
+});
+```
+
+I'll leave it up to you to setup **require.config** and to copy in:
+
+- MarkShow
+- PagedownSetup
+- Markdown/Converter
+- Markdown/Editor
+
+Add a handler for markdown in **Main.js**. 
+
+```
+function endsWith(value, suffix) {
+	return value.indexOf(suffix, this.length - suffix.length) !== -1;
+}
+
+require([ 'jquery', "Control", "MarkShow", "PubSub" ],
+function(jq, Control, MarkShow, PubSub) {
+	'use strict';
+	console.log("Main called");
+
+	$(document).ready(function() {
+		if (endsWith(document.URL, "Markdown")) {
+			var markShow = new MarkShow();
+			markShow.getPick();
+		} else {
+			var control = new Control();
+		};
+	});
+});
+```
+
+We need to get 
+
+```
+var showMarkdown = function() {
+	$.getJSON('/setPick', {pick: "public/Test.md"}, function(result){
+		if (result.result !== "success") {
+			throw "Error";
+		}
+		window.location.href = '/Markdown';
+	}).error = function(f, a, b) {
+		alert(f);
+	};
+};
+```
+
+## Loading a file
+
+Let's rewrite getPick so that we can handle a request for a file:
+
+```
+router.get('/getPick', function(request, response) {
+	'use strict';
+	console.log("GetPick: " + request.session.sessionNumber);
+	console.log("GetPick Session: " + JSON.stringify(request.session));
+	fs.readFile(request.session.pick, 'utf8', function(error, markdown) {
+		if (error) {
+			console.log("Sending Error");
+			response.send({
+				"Could_Not_Find_File" : error,
+				fileName : fileName
+			});
+			return;
+		}
+		response.send({
+			"userPick" : request.session.pick,
+			"content" : markdown,
+			"sessionNumber" : request.session.sessionNumber
+		})
+	});
+});
+```
+
+## Refactor
+
+Our job now is to clean things up. What we did above was too complicated. It should be only one or two steps to move code from one place to another. if we want to add Markdown editor to our program, it should be simple.
+
+Let's start by getting the markdown code out of the main folder:
+
+    git mv MarkShow.js Markdown/.
+    git mv PagedownSetup.js Markdown/.
+
+Don't forget to make the appropriate changes to **require.config** in **Main.js**.   
+
+We need a **getExtension** method:
+
+```
+function getExtension(fileName) {
+    fileName = fileName.trim();
+    var array = fileName.split(".");    
+    if( array.length === 1 || ( array[0] === "" && array.length === 2 ) ) {
+        return "";
+    }
+    return array.pop().toLowerCase();
+}
+```
+
+And now, we just do this:
+
+```
+fileTypeSorter : {
+			getExtension : function(fileName) {
+				fileName = fileName.trim();
+				var array = fileName.split(".");
+				if (array.length === 1
+						|| (array[0] === "" && array.length === 2)) {
+					return "";
+				}
+				return array.pop().toLowerCase();
+			},
+
+			getObjectType : function(options) {
+				switch (options.currentExtension) {
+				case 'json':
+					return options.readers[0];
+					break
+				case 'md':
+					return options.readers[1];
+					break;
+				default:
+					return options.readers[0];
+				}
+			},
+
+			setFileName : function(options, event) {
+				if (options.useDefaultFile) {
+					options.fileName = options.defaultFileName;
+				} else {
+					options.fileName = event.target.attributes.data.value;
+				}
+				options.currentExtension = this.getExtension(options.fileName);
+				options.objectType = this.getObjectType(options);
+				return !options.useDefaultFile;
+			}
+		}
+```
+
+And this:
+
+```
+define([ 'DefaultReader', 'JsonReader', "MarkdownReader" ], function(
+		DefaultReader, JsonReader, MarkdownReader) {
+	'use strict';
+
+	var ReaderFactory = (function() {
+
+		function ReaderFactory() {
+		}
+
+		ReaderFactory.prototype.product = {};
+
+		var showMarkdown = function() {
+		
+		};
+		
+		ReaderFactory.prototype.create = function(options) {
+
+			switch (options.objectType) {
+			case "JsonReader":
+				this.product = new JsonReader();
+				break;
+			case "MarkdownReader":
+				$.getJSON('/setPick', {pick: "public/Test.md"}, function(result){
+					if (result.result !== "success") {
+						throw "Error";
+					}
+					window.location.href = '/Markdown';
+				}).error = function(f, a, b) {
+					alert(f);
+				};		
+				//this.product = new MarkdownReader();
+				break;
+			case "DefaultReader":
+				this.product = new DefaultReader();
+				break;
+			default:
+				this.product = {};
+			}
+
+			return this.product;
+
+		};
+
+		return ReaderFactory;
+
+	}());
+
+	return ReaderFactory;
+});
+```
+
+We don't have to change control at all!
+
+
+
   [1]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/JavaScript/Markdown
   [2]: http://www.escapecodes.info/
   [markShow01]: http://elvenware.com/charlie/books/CloudNotes/Images/MarkShow01.png 

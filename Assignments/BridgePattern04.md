@@ -8,6 +8,7 @@ Primary goals:
 
 Below I step you through the creation of the entire app. You may, however want to start with existing code. There is an argument, I think, for rebuilding from scratch so that you are sure you get the architecture right.
 
+Our theme: Defining responsibilities is the key step in software development. We use objects, modules, patterns and methods to separate the tasks our software performs, and to link these tasks to one another as loosely as possible.
 
 ##Step 01: Create a Project
 
@@ -159,7 +160,7 @@ Create your **UnitTests** page:
 
 - routes/UnitTests.js
 - views/UnitTests.jade
-- /Tests/MainTests.js
+- /Tests/MainTest.js
 - /Tests/Jasmine2.0.0/*
 
 In **app.js** add these lines:
@@ -243,7 +244,7 @@ block content
   a(href="UnitTests") Unit Tests
 ```  
 
-And we need **Tests/MainTests.js** so that require will know where to find our files. Note that we don't have to say that a file is in either the public or Tests directory, per the lengthy description of app.use given above:
+And we need **Tests/MainTest.js** so that require will know where to find our files. Note that we don't have to say that a file is in either the public or Tests directory, per the lengthy description of app.use given above:
 
 ```
 require.config({
@@ -282,7 +283,7 @@ require([ 'boot' ], function(jasmine) {
 });
 ```
 
-And finally we write our Jasmine test of the simple **Control** module. Our sole test simply confirms that we can create an instance of the **Control** object:
+And finally we write our Jasmine test of the simple **Control** module. In **Tests/BridgeTests.js** we create a test that confirms that we can create an instance of the **Control** object.:
 
 ```
 define([ "Control"], 
@@ -305,6 +306,7 @@ define([ "Control"],
 });
 ```
 
+ There are actually two tests in the above code: the default "proves we can run a test" code, and then the test that proves we can create a control.
 
 When we run our app and click on the Unit Tests link we see this:
 
@@ -427,7 +429,7 @@ define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ],
 });
 ```
 
-We can now add code to **MainTests.js** so that this file can be loaded:
+We can now add code to **MainTest.js** so that this file can be loaded:
 
 ```
 require.config({
@@ -606,7 +608,7 @@ Summary diagram of tests:
 
 ##Step07: The DisplayFactory
 
-For now we will set aside the code for our **BridgeTests**. Instead, let's create a test for a **DisplayFactory**. Here is the current state of **MainTests.js**:
+For now we will set aside the code for our **BridgeTests**. Instead, let's create a test for a **DisplayFactory**. Here is the current state of **MainTest.js**:
 
 ```
 /**
