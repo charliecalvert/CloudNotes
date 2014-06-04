@@ -161,7 +161,9 @@ Create your **UnitTests** page:
 - routes/UnitTests.js
 - views/UnitTests.jade
 - /Tests/MainTest.js
-- /Tests/Jasmine2.0.0/*
+- /Tests/jasmine-2.0.0/*
+
+Getting the jasmine folder can be tricky. Be sure your case is correct, and that there actually are files in the jasmine folder. Other projects we have used have Jasmine included, so you can just borrow the folder from another project.
 
 In **app.js** add these lines:
 

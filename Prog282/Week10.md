@@ -1,108 +1,89 @@
 Week 10
 =======
 
-We have three classes left, 6/3, 6/5, 6/10.
+I believe We have four classes left, 6/4, 6/9, 6/12, 6/16.
 
 Main Topics discussed this week include:
 
-* More on CouchDb and maybe CouchApp/Erica
-* Sessions
-* Redis
+- Sessions: npm install express-session
+- Nodemon: npm install -g nodemon
+- Refactoring
+- Integrate Markdown
+- Observer: PubSub
 
-Key Demos:
+#Class Overview
 
-- [JsObjects/Data/CouchSession01](https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession01)
-- [JsObjects/Data/CouchSession02](https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession02)
+Things you've learned these last two quarters in 280 and 282:
 
-Note that NodeJs is now up to v0.10.9.
+Technolgies:
 
-CouchDb Attach Example
-----------------------
+    MongoDb
+    MongoLab
+    Aws EC2 and S3
+    SSH
+    JSON
+    Web Servers
+    Ports and IP Addresses
+    Linux command line
+    Eclipse
+    Geany
+    Node
+    Express
+    Jade
+    Require
+    jQuery
+    Karma
+    Grunt
+    
+JavaScript:
 
-You can find it here: 
+    Callbacks
+    JavaScript Objects and Arrays
+    Constructor Functions
+    Prototypal Inheritance
+    Unit testing and Jasmine
+    Async Programming and Testing
+    Express Routes
+    Rest and Ajax
+    JsHint
 
-	JsObjects/Data/CouchUtils/CouchAttach01
-	
-Pass in the document name you want to use in couchDb and the name of the 
-document you want send to couchDb. For example:
+Patterns:
 
-	node CouchAttach.js index index.html
+    Singleton
+    Factory
+    Bridge
+    Observer (PubSub)
+    Modular
+    Queue
+    Stack
 
-Redis
------
+Tools:
 
-[Redis](http://redis.io/) is a NoSql database that stores sets, lists 
-and numbers. It includes a nice [tutorial](http://try.redis.io/) and 
-[documentation](http://redis.io/documentation).
+    Git and GitGui
+    Debugging with the Chrome Developer Tools
+    Cloud9
+    Google Drive
+    Evernote
+    Microsoft OneDrive
+    
+##Comments
 
-On Windows, we can [download](https://github.com/MSOpenTech/redis) the
-unofficial Windows build of Redis like this:
+Why don't I comment my code more? 
 
--  git clone git://github.com/MSOpenTech/redis.git
+Comments have a way of getting out of sync. We are constantly refactoring our code. We expect things to change. As a result, our comments can easily get out of date, and end up causing more trouble than they save.
 
-After the download, look in the **bin** directory and unzip the 64 bit
-binaries.
+Each object should do one thing, and do it well. As a result, it should be easy to come up with a name for it that completely describes what it does: **JsonReader**, **ReaderFactory**, **PictureDisplay**, etc. Adding a comment is just redundant. We already described what the object does. What else is there to say?
 
-On Linux, first make sure you have gcc and make installed:
+It is an error to add comments that do nothing more than repeat what was already made clear by a good naming convention. Consider this comment: "**JsonReader: This object reads Json files**." Comments like this one should be deleted. They just clutter the page, making it harder to understand and harder to maintain.
 
-~~~~
-	gcc -v
-	make -v 
-~~~~
+As to how it works and how to use it, that should be covered by your unit tests. If the user does not understand how to use an object, they should be able to open up the unit tests and see what to do. But our objects should be so simple, and so well designed, that it is easy to intuit how to use the object.
 
-The above should produce lengthy, but reasonable output. If you see
-errors, then you need to install [these tools](https://help.ubuntu.com/community/InstallingCompilers):
+In general, comments should be reserved for that moment when something needs clarification. If all is going well, all you have to do is name something properly, and your documentation is complete. But when you are forced to write a hack, then you need to comment it to explain what you are doing. In that sense, comments are an admission that something has gone awry.
 
-~~~~
-	sudo apt-get install build-essential
-~~~~
+There are exceptions, of course. There are times when comments are needed. And of course, if you are publishing an API for public consumption, then it is helpful, or at least expected. But comment code that it is in heavy development and subject to constant refactoring can be problematic. 
 
-You can then use the following script to install redis:
+Final Note: Everyone always tells you to comment your code. Okay, maybe they have a point. But the funny thing is that you can make almost as good a case for not commenting your code as for commenting code. ***If you feel you really need to comment your code to make it comprehensible, that usually means you need to refactor the code.*** If the proper refactorings are found, then most of your comments should become redundant. 
 
-~~~~
-wget http://download.redis.io/redis-stable.tar.gz
-tar xvzf redis-stable.tar.gz
-cd redis-stable
-make
-~~~~
-
-I have placed this script in JsObjects/Utilities/InstallScripts.
-
-
-After installing redis, you probably have a copy of the redis tar 
-file and a directory containing the stable version of redis right
-in the middle of your JsObjects repository. If that is the case, move
-the stable directory to some other location:
-
-mv redis-stable ~/.
-
-Then cd into redis-stable and run the test:
-
-~~~~
-cd ~/redis-stable
-./runtest
-~~~~
-
-If necessary, also install tcl:
-
-~~~~
-sudo apt-get install tcl
-~~~~
-
-To run the server, type: 
-
-~~~~
-src/redis-server
-~~~~
-
-If you are working on AWS, you might want to open two Putty windows,
-one for running redis, and another for running your application.
-
-There is also a redis client:
-
-~~~~
-src/redis-cli 
-~~~~
 
 Sessions
 --------
@@ -135,22 +116,22 @@ the code discussed in this section.
 
 Be sure to include the session code from Express:
 
-~~~~
+```
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
-~~~~
+```
 
 The addUser method responds to a click on a button. It retrieves the 
 **userName** that the user typed in to our client side HTML.
 
-~~~~
+```
 app.post('/addUser', function(req, res) {
     console.log('/addUser called.')
     console.log(req.body);
     req.session.userName = req.body.userName;
     res.send({'Result': JSON.stringify(req.session)});
 });
-~~~~
+```
 
 When you call up a particular page, the program first tracks the page
 you selected in the session object, and then uses handlebars to display
@@ -163,7 +144,7 @@ We pass in the request object to the SessionHelper, and it uses that
 object to retrieve the data that we need to help us track an individual
 session, or an individual user:
 
-~~~~
+```
     var mainFile = readHtml('./Templates/SessionInfo.html');
 
     var template = handlebars.compile(mainFile);
@@ -175,7 +156,7 @@ session, or an individual user:
         cookieId : request.id,
         sessionId: request.sessionID      
     });
-~~~~        
+```        
 
 Cookies
 -------
@@ -242,13 +223,13 @@ One of the things you need to watch out for is that you don't name two HTML file
 
 Remeber to put your route in app.js and routes/index.js. Here is app.js:
 
-~~~~
+```
 app.get('/page02', routes.page02);
-~~~~
+```
 
 And here is routes/index.js:
 
-~~~~
+```
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
@@ -256,11 +237,11 @@ exports.index = function(req, res){
 exports.page02 = function(req, res){
   res.render('page02', { title: 'Page02' });
 };
-~~~~
+```
 
 And here is layout.jade:
 
-~~~~
+```
 doctype 5
 html
 	head
@@ -278,7 +259,7 @@ html
 
 body
 	block content
-~~~~
+```
 
 
 Turn off the Bell in Linux
