@@ -104,6 +104,27 @@ Note also that our getPick route simply mirrors back the file name sent by the u
 
 Ultimately, We want to do more than this: we want to read the **markdown** file selected by the user and send it back as part of our response. But let's put that on the back burner for now. Once we have the route set up, then we can focus on actually getting it to do something useful.
 
+**NOTE**: *If you don't already have it, you'll need to add the /read route to routes/index.js*:
+
+    router.get('/read', function(request, response) {
+    	console.log('root read called: ' + JSON.stringify(request.query));
+    	var fileName = request.query.fileName;
+    	fs.readFile(fileName, 'utf8', function(error, data) {
+    		if (error) {
+    			response.send({ "Could_Not_Find_File": error, fileName: fileName});
+    			return;
+    		}
+    		
+    		try {
+    			var jsonObject = JSON.parse(data);
+    			console.log("Sending result");
+    			response.send(jsonObject);
+    		} catch(e) {			
+    			response.send({ "error": "Could not parse", "Could_Not_Parse_JSON": "error"});
+    		};		
+    	});
+    });
+
 I'll leave it up to you to setup **require.config** and to copy in:
 
 - MarkShow

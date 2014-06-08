@@ -4,11 +4,8 @@ Week 11 - Overview
 Major Topics
 ------------
 
-- CouchDb
-- CouchDb and Errors
-- CouchDb and Bitmaps
-- Jade/Stylus plus Game: Using the **public** directory
-- Run **git gc** on your repository to clean it up
+- Position Page and Maps
+- MongoDb 
 
 Using the Public Directory
 --------------------------
@@ -16,14 +13,14 @@ Using the Public Directory
 It is easy to link in standard HTML files to an Express program that uses 
 Jade. Just create a standard HTML file with a name like **game.html**:
 
-~~~~
+```
 <!DOCTYPE html>
 <html>
 <body>
 <h1>MyFile</h1>
 </body>
 </html>
-~~~~
+```
 
 This file can be placed in the **public** directory.
 
