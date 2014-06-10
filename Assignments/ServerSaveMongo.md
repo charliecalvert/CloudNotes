@@ -23,7 +23,6 @@ In **javascripts/MarkShow.js** we need to:
 - In **routes/Markdown.js** create a route that receives the object from the client and saves both the HTML and the markdown to disk.
 - Send both the Markdown and the HTML to MongoDb
 
-
 ## Client
 
 We have to make some major refactorings, in part to correct mistakes I'd made earlier.
@@ -218,6 +217,7 @@ Change insertCollection to take a callback rather than response:
 		});
 	};
 ```
+
 In **routes/Markdown.js** we need to set up the callback:
 
 ```
@@ -259,3 +259,4 @@ please make it abundantly clear where you did do your work.
 
 
   [1]: http://marketplace.eclipse.org/content/jshint-eclipse
+
