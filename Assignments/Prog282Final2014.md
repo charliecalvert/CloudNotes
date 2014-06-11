@@ -6,32 +6,25 @@ Goal:
  
 We will define a set of rules or structure for our JSON document that will allow us to use it as a guide, or **meta-document**, for a page that we show to the user. We read in the JSON document, and then parse it to discover what we want to show to the user. We will call this file **MetaDocument.json**, or just *the meta document*.
 
+
 ##Overview
 
-I've found myself thinking some about your application, which is very cool, you have done a great job. Two things came to mind:
+Part of your grade will be a review of how closely you follow the following guidelines:
 
-1) We talked about there being two parallel sets of code that are very similar in your implementation of Control.js. One loaded your top view of FileList.json, and the other the results picked by the user when they click on a particular file. This is a very reasonable approach and probably more intuitive from the users point of view than my solution. The problem, I think, is the two sets of parallel code in Control.js. They are a problem because they violate DRY (Don't repeat yourself) and possible SRP, the Single responsibility principle (one reason to change). How about this for a solution. Your Document Descriptor, ie in FileList.json and similar files, could include a field called targetDiv. If the user selects FileList.json, then the target DIV as specified in FileList.json is set to topDiv, which is the place in your HTML where you currently display FileList.json. If the users selects some other file, say Presidents01.json, then the targetDiv listed in Presidents01.json is set to bottomDiv, and so the contents of that file displays in the lower part of your main HTML page. Now you can solve the problem with one set of code, rather than two. That one set of code reads the targetDiv to decide where to display the code. Then move all the code that sorts these kinds of things into their own object, something like FileTypeSorter.js, and out of Control.js. 
+- Use known Patterns whereever possible.
+- Don't corrupt the patterns. Implement them correctly and don't modify or corrupt them
+- When you can't wedge your code into a pattern, adhere to SRP and DRY
 
-2) The second point is more general. Basically what I'm doing above is trying to reduce my code to a series of patterns, and to make sure each pattern is clean. In doing so, I adhere to the SRP, "every class has but one reason to change." In class on Monday and Wednesday we saw how a chunk of code, the code for launching markdown files, had corrupted the "pattern" we had set up for Control.js. So we moved it into ReaderFactory. Then we decided, "Well that cleans up Control, but oh gosh, now our ReaderFactory is no longer following the Factory Pattern, so we moved it from there to MarkdownReader, where I at least, felt it belonged. What were we doing? We were first getting out code to work, then refactoring, twice, to ensure that we followed the guidelines for our patterns as closely as possible. My point was that we should obey the canonical patterns as defined by the community as closely as possible, and when we don't follow them, we should start refactoring until we do follow them. When working with backbone or angular, we don't go in and change the way they implemented the factory pattern because we can't easily do that. We should exercise the same discipline when we write the factory or bridge patterns ourselves. Just implement the bridge or factory as it should be implemented, and then leave it alone. Ideally we can write all our code inside the core patterns: observer, factory, reader, bridge, singleton, modular and decorator. But if we can't, then we don't let that be a reason to corrupt the existing patterns we are using, instead we create classes like Utilities or FileTypeSorter, that isolate, and simplify any code that we can't wedge into a pattern. (Of course, we can also look for other patterns that might solve our problem, if one of the ones covered in class doesn't solve it.)
-
-In our case the rules are simple. We use our patterns and adhere to them as closely as possible. We like these patterns for these reasons:
-
-- Factory: To create objects cleanly in one place and to make sure they are set up fully by the time we see them.
-- Bridge: To create loose coupling, or in the canonical words from the community: "decouple an abstraction from its implementation so that the two can vary independently". The abstraction in our case is the reader, and the implementation is JsonReader or MarkdownReader. The two things that vary independently is the reader itself, and the decorated bridge. (Perhaps one solution to your problem is to have the decorator in FancyBridge do the extra things that you want to do...?)
-- Singleton: Ensure that a particular class can only be created once
-- Reader: This is, as far as I know, our own pattern or "abstraction". It says each reader has a readFile method with two parameters, a file name and an optional callback, and the ability to create a DisplayObject that will display the content it reads. The DisplayObject is another abstraction like Reader.
-- Observer: Allow objects to communicate without directly referencing one another
-- Modular: Give JavaScript a more traditional object model
-- Decorator: In our case we use it to extend or customize our Bridge through prototypal inheritance.
-
-Please feel free to do whatever you want to do in your code. It is just that as a teacher, I feel I need to set clear goals and clearly define them. You are a good enough developer to decide on your own what you want to do. You'll get a good grade however you implement your code, so long as it works, and of course it will work because you are good at what you do. But I like the idea of using patterns whenever possible, and making sure that the patterns follow the guidelines as closely as possible. I constantly refactor my code to ensure that my code adheres to the guidelines, and is as simple and spare as possible. 
+More discussion of this can be found on Elvenware on the [JavaScript Patterns page][1].
 
 On the meta level, the guiding principles are:
 
--  SRP, the single responsibility principle, that a class should have only one reason to change. For me, this usually means each class is small, and easy to understand.
+- SRP, the single responsibility principle, that a class should have only one reason to change. For me, this usually means each class is small, and easy to understand.
+- DRY: Don't repeat yourself. Always review your code, looking for parallel sections. If you see two blocks of code that are essentially the same, then merge them into one block of code, and pass in a parameters or implement some other means of sorting out any minor differences there might be between the original two blocks of code.
 - Working Software is the measure of Progress. Don't plan ten steps into the future. Just write the code that works now, and make it as clean and simple as possible.
 
 And of course we should unit test everything as much as possible so we feel confident that our refactorings don't break our code.
+
 ##Requirements
 
 Before we begin to describing the midterm itself, here are some base line requirements.
@@ -147,5 +140,17 @@ We will be able to define new types as needed. These types are specified in the 
 
 - ImageDisplay: Images and captions
 - DocumentDisplay: Captions and text
-- Quiz: Questions and Answers
 
+## Two Sections on One Page
+
+Some students have opted to have two sections on the main page:
+
+- FileList.json is display on top
+- The selected file is displayed on the bottom
+
+This a good solution. Don't, however, allow it to be an excuse for having two parallel sets of code in Control.js. That would be a mistake because it likely violates DRY (Don't repeat yourself). The solution is simple: the same code that displays **FileList.json** at the top can also display the selected file on the bottom.
+
+Your Document Descriptor, ie in **FileList.json** and similar files, could include a field called targetDiv. If the user selects FileList.json, then the target DIV as specified in FileList.json is set to topDiv, which is the place in your HTML where you currently display FileList.json. If the users selects some other file, say Presidents01.json, then the targetDiv listed in Presidents01.json is set to bottomDiv, and so the contents of that file displays in the lower part of your main HTML page. Now you can solve the problem with one set of code, rather than two. That one set of code reads the targetDiv to decide where to display the code. Then move all the code that sorts these kinds of things into their own object, something like FileTypeSorter.js, and out of Control.js. 
+
+
+  [1]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptPatterns.html#refactoring-and-patterns
