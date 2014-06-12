@@ -72,7 +72,7 @@ Before we begin to describing the midterm itself, here are some base line requir
 | documentData     | 0  | Optional     | No     | Document | No      | JsonReader     | DisplayDocumentData   | Optional     |
 | pictureCaption   | 0  | Optional     | No     | Pictures | No      | JsonReader     | DisplayPictureCaption | Optional     |
 | Markdown File    | 1  | Optional     | Yes    | Markdown | Yes     | MarkdownReader | MarkShow              | Optional     |
-| HTML View        | 2  | Optional     | No     | HtmlView | Yes     | None           | NA                    | Optional     |
+| HTML View        | 3  | Optional     | No     | HtmlView | Yes     | None           | NA                    | Optional     |
 | Position Map     | 1  | Optional     | No     | Position | No      | None           | NA                    | Optional No  |
 | Login            | 3  | Yes          | No     | Login    | No      | None           | NA                    | Yes          |
 | Account Info     | 3  | Yes          | Yes    | Account  | No      | None           | NA                    | Yes          |
