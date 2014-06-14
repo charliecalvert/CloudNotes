@@ -243,13 +243,6 @@ At the end of successful calls to write the html, write the markdown, and write 
 
 Don't forget to add **mongodb** to your package.json file: **npm install mongodb --save-dev**.
  
-##Move Picks
-
-This is old business, but it's something that needs to be done. Right 
-now we have the **setPick** and **getPick** routes in **/routes/index.js**.
-They are part of the Markdown code, so they belong in **/routes/Markdown.js**.
-As a result, we need to move the pick methods to **routes/Markdown.js**.
-
 ##Turn it in
 
 All you need to do is commit your work and submit the assignment. As mentioned

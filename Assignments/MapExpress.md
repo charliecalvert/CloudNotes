@@ -38,7 +38,7 @@ We need one variable in Control with object scope:
 
     var mapDiv;
 
-Here is an updated and simplified call to **getCurrentPosition**:
+There are a few more methods we need. Put in this case, things are very simple, all the code goes into Control.js. (For the final, you will arrange things differently, but for now, just put all the code in Control.js.) Here is an updated and simplified call to **getCurrentPosition**:
 
 
 		function position() {
@@ -92,6 +92,14 @@ This function allows us to put a pin, or marker, on the map:
 				mapDiv.setZoom(10);
 			});
 		}
+
+And here is ShowDebug:
+
+```
+var showDebug = function(textToDisplay) {
+	$("#debug").append('<li>' + textToDisplay + '</li>');
+};
+```
 
 
 ## The Constructor
