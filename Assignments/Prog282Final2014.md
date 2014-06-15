@@ -210,7 +210,7 @@ When you click on a Markdown file, the file should open in the markdown editor. 
 - When you next load the markdown file back into the editor the changes you made before your last save should persist
 - Store the file in the database
 - View the HTML stored in the database in the HTML page, as explained below.
-- Use the extra syntax for code in three backticks and tables.
+- Use the markdown [extra syntax][2] for [code in three backticks][3] and [tables][4]. We reviewed this code, in class, it supports extended markdown syntax.
 
 ##HTML View
 
@@ -348,7 +348,7 @@ This document will likely go through multiple iterations over the course of the 
         "type": "ImageDisplay",
         "version": "v0.0.1",
         "keywords": "images, shapes",
-        "License": "Creative Commons",
+        "license": "Creative Commons",
         "authorInfo": {
             "name": "Claudio Coder",
             "website": "http://agilemanifesto.org/principles.html",
@@ -413,6 +413,188 @@ You should have an instance on AWS that:
 
 Use Git to upload your code. Run your application either as a standard
 
+##Hints
+
+Some hints
+
+###TinyPubSub and jQuery
+
+If you get the "jquery undefined" error with TinyPubSub, try using Shim with TinyPubSub
+
+```
+require.config({
+    paths: {
+        "jquery": "jquery-2.1.1"
+    },
+    shim: {
+        'TinyPubSub': {
+            deps: ['jquery'],
+            exports: 'TinyPubSub'
+        }
+    }
+});
+
+require(['TinyPubSub'],
+
+    function(tiny) {
+        'use strict';
+        console.log("Main called");
+```
+
+###Bootstrap and Markdown
+
+If you want to use bootstrap on your markdown page...
+
+First edit **MarkdownLayout.jade** to include the bootstrap CSS and a definition for your navigation bar:
+
+```
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css")
+    link(rel='stylesheet', href='/stylesheets/markdown.css')
+    link(rel='stylesheet', href='/stylesheets/prettify.css')
+    script(src="javascripts/require.js" data-main="javascripts/Main")
+  body
+    div.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      div.container
+        div.navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Prog282-Calvert
+
+    block content
+```
+
+You can now delete the button that takes you to the home page as the navigator does the job for you. You will, however, find one more small problem: the top of your page disappears underneath the navigation bar. To fix that, you could edit **markdown.css** to add a little padding at the top of the body:
+
+```
+body 
+{ 
+	background-color: White;
+    font-family: sans-serif;
+    padding-top: 50px;
+    padding-left: 10px;
+}
+```
+
+To spice up the table, you could entirely optionally add a few borders:
+
+```
+td, th { 
+    border: solid black 1px;    
+    padding: 3px;
+}
+
+
+th {
+    background: #D0FFE0;
+}
+
+td {
+    background: #D0FFF0;
+}
+
+table {
+    border: solid black 2px;    
+    margin: 25px;
+}
+```
+
+The end result should be a page with navigation bar, some nicer fonts, and a border around any tables you draw:
+
+![Markdown Css][markdownCss]
+
+[markdownCss]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final01.png
+
+###Bootstrap Layout in other Pages
+
+Above we put all the code for for the Markdown page in one jade file. But usually we will want to work with a layout.jade where we set the HEAD section for the HTML, and a second page where we define the HTML BODY.
+
+When converting the other pages to support bootstrap, I stuck fairly closely to the original bootstrap assignment. The one change I needed to make was to include a slightly different bootstrap navigation bar in each file. To make that work, I took the definition of the navigation bar out of **bootstraplayout.jade**:
+
+```
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="javascripts/require.js" data-main="javascripts/Main")
+
+  body
+  
+  block content
+```
+
+Then  I included a bootstrap navigation bar definition in each of the pages where I wanted bootstrap to appear:
+
+```
+extends BootStrapLayout
+
+block content
+  div.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+    div.container
+      div.navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/') Prog282-Calvert
+
+  h1= title
+  p Welcome to #{title}
+```
+
+The bootstrap navigation bar for my main page at this stage looks like this:
+
+```
+extends BootStrapLayout
+
+block content
+  div.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+    div.container
+      div.navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/') Prog282-Calvert
+
+      div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a(href='MapDisplay') Map
+          li
+            a(href='About') About
+          li
+            a(href='UnitTests') Test
+```
+       
+You can change the definition of navbar in each page depending on your needs. With this approach we have **bootstraplayout** only be concerned with loading the CSS, and leave it up to each page to decide exactly how you want the navigation bar to look.
+
+![Bootstrap 01][bootstrapCss01]
+
+And though my version of the final is not yet complete, here is at least a sample of what the main page might look like when you click on Presidents01.json:
+
+![Bootstrap 03][bootstrapCss03]
+
+You don't have to follow this design. Do what you want, if you need some idea of what pages should look like, here is my map page at this stage. When you click on the map button in the screen shot above, this is what you see. If you click on **Prog282-Calvert** you go back to the main page, shown above:
+
+![Bootstrap 02][bootstrapCss02]
+
+[bootstrapCss01]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final02.png
+[bootstrapCss02]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final03.png
+[bootstrapCss03]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final04.png
+  
 ##Turn It In
 
 There are three parts:
@@ -423,4 +605,8 @@ There are three parts:
 
 You must provide at least two screenshots, but four or five might be more reasonable. Show your app running on AWS or on your local machine. Describe the level of completeness of your application. Describe which features you completed and which you left undone. If you have known bugs, you can list them.
 
+
   [1]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptPatterns.html#refactoring-and-patterns
+  [2]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/ServerSaveMongo.html
+  [3]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code
+  [4]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables
