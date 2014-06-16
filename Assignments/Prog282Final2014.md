@@ -1,3 +1,4 @@
+<!-- GUID: NONE -->
 #Prog282 Finale Spring 2014
 
 Goals:
@@ -419,7 +420,7 @@ Some hints
 
 ###TinyPubSub and jQuery
 
-If you get the "jquery undefined" error with TinyPubSub, try using Shim with TinyPubSub
+If you get the "jquery undefined" error with TinyPubSub, try using shim with TinyPubSub. The point is that we have done nothing to make **TinyPubSub** work with require. That is, we don't wrap it in a require **define** function. As a result, we need to **shim** it into memory.
 
 ```
 require.config({
@@ -512,6 +513,25 @@ The end result should be a page with navigation bar, some nicer fonts, and a bor
 
 [markdownCss]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final01.png
 
+###Bootstrap on the Left
+
+Some folks had mentioned that bootstrap is putting the menu in near the middle of the page, that it is not aligned on the left. I put this in **style.css** and it seemed to help:
+
+```
+.container {
+    margin-left: 25px;
+}
+```
+
+You can set the left margin closer in if your want. For instance, it could be set to **10px**. This changes the location of the container found in these lines from index.jade:
+
+```
+block content
+  div.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+    div.container
+      div.navbar-header
+```
+
 ###Bootstrap Layout in other Pages
 
 Above we put all the code for for the Markdown page in one jade file. But usually we will want to work with a layout.jade where we set the HEAD section for the HTML, and a second page where we define the HTML BODY.
@@ -594,10 +614,257 @@ You don't have to follow this design. Do what you want, if you need some idea of
 [bootstrapCss01]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final02.png
 [bootstrapCss02]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final03.png
 [bootstrapCss03]: http://elvenware.com/charlie/books/CloudNotes/Images/Prog282Final04.png
-  
+
+###Document Descriptors and the Fancy Bridge
+
+The document descriptors have a number of details that we are supposed to display with the help of the **FancyReaderBridge**. These include the following fields seen in files such as **Presidents01.json** and **FileList.json**:
+
+```
+    "title": "Main File List",
+    "type": "fileList",
+    "version": "v0.0.1",
+    "keywords": "images, shapes",
+    "license": "Creative Commons",
+``` 
+
+The act of displaying this data poses two problems:
+
+- If the **FancyReaderBridge** is to know about the document descriptor, how will it gain that knowledge. The only objects with any know about these fields are the readers (JsonReader, etc) and display objects (DisplayAddress, etc). How can we get the information to the **FancyReaderBridge** from these remote outposts? 
+- The second problem is a more an aesthetic delimna. Is it wrong from the FancyReaderBridge to directly change the user interface?
+
+Let's begin with the first question. How do we get the information to the FancyReaderBridge? We've actually faced this problem before when we had to hook up button response methods to objects on the main page. We solved that problem with the Observer Pattern, with our TinyPubSub class. I think we should do that same thing here. In fact, we can use the same event. When our display object publish a message **pageRefresh** event, we can tack on the whole document descriptor record:
+
+```
+$.publish('pageRefresh', {
+    message: "Refreshed Address",
+    serverData: serverData
+}
+```
+
+Here **serverData** is the entire contents of a file such as **Presidents01.json** or **FileList.json**. These files include the fields we are interested in such as **title**, **type** or **keywords**.
+
+Then we can have **FancyBridgeReader** subscribe to the **pageRefresh** event:
+
+> \$.subscribe("pageRefresh", displayData);
+
+As you recall, the callbacks for these functions look like this:
+
+```
+var displayData = function(event, data) {
+	// YOUR CODE HERE
+};
+```
+
+So that solves our first problem: how to get data from the display object to the reader bridge. The key point is that we moved the data without ever disrupting the loose coupling in the application. The **FancyReaderBridge** and the **DisplayAddress** object still do not know one another in the Biblical sense, and yet they are able to communicate. 
+
+This leaves us with the second question: Is it okay for the **FancyReaderBridge** to directly modify the UI? There are two arguments here that hold weight with me, one from each side of the debate:
+
+- The FancyReaderBridge follows the decorator pattern. As such, it could be argued that it would be okay to modify the **bridge** pattern with non-bridge-like behavior.
+- If we let the **FancyReaderBridge** modify the UI, how is anyone trying to maintain the app ever going to think to look in **FancyReaderBridge.js** to solve a UI issue?
+
+I find the first argument mildly compeling, but the second one is, in my opinion, overwhelming. We have a **Display** directory, and in it are a series of display objects. These objects should, as much as possible, be responsible for handling our display. As a result, the code to update the UI with metadata from our Document Descriptors should be handled in a display object. 
+
+So we can create a simple **Display Object** and put it in the **Display** folder:
+
+/**
+ * DisplayMetaData.js
+ */
+
+define(function() {
+	
+	var DisplayMetaData = (function() {
+	
+		function DisplayMetaData() {
+		}
+		
+		DisplayMetaData.prototype.display = function(serverData) {
+		    // YOUR METADATA DISPLAY CODE HERE
+		};
+		
+		return DisplayMetaData;
+		
+	}());
+	
+	return DisplayMetaData;  // require
+	
+});
+
+It might make sense to have the display object create the DisplayMetaData object, but still let **FancyMetaData** make the decision as to whether or not to display it. You could do that like this:
+
+```
+$.publish('pageRefresh', {
+    message : "Refreshed Address",
+    serverData : serverData,
+    okToDisplay: function(serverData) {
+        var displayMetaData = new DisplayMetaData();
+        displayMetaData.display(serverData);                
+    }
+});
+```
+
+It may not be a perfect solution, but it gets the job done, and it keeps the act of playing with the user interface in the **Display** directory, where it belongs.
+
+###The Elf and the Map
+
+I declared an elf object **public/javascripts**:
+
+```
+/**
+ * Elf
+ */
+
+define(function() {
+	'use strict';
+
+	var elf = {
+		position : function() {
+			elf.displayMap.position();
+		}
+	};
+
+	return elf;
+
+});
+```
+
+Then in main we need to declare a global instance of elf. This is our only global variable: we are allowed only one!
+
+```
+var elf;
+
+require([ 'bootstrap', 'Elf', 'MarkdownExtra', 'Control', 'MarkShow', 'DisplayMap' ],
+	function(bootstrap, elfInit, MarkdownExtra, Control, MarkShow, DisplayMap) {
+		'use strict';
+		console.log("Main called.");
+		prettyPrint();
+		
+		elf = elfInit; // We need something in the global space
+
+		$(document).ready(function() {
+			if (endsWith(document.URL, "Markdown")) {
+				elf.markShow = new MarkShow();
+				elf.markShow.getPick();
+			}
+			if (endsWith(document.URL, "MapDisplay")) {
+				elf.displayMap = new DisplayMap();   // elf.displayMap.position is public
+			} else {
+				elf.control = new Control();
+			}
+		});
+	});
+```
+
+Then you take the code from the **Control.js** file in the MapExpress example and you put it in **DisplayMap**.
+
+I believe you can write either this:
+
+	var elf = {
+		position : function() {
+			elf.displayMap.position();
+		}
+	};
+
+or this:
+
+	var elf = {
+		position : function() {
+			this.displayMap.position();
+		}
+	};
+
+We are doing all this work to make this one line which is now in **DisplayMap** work:
+
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=elf.position';
+    
+This is telling Google maps that the callback method that it can use to reach our code is called **elf.position**. Of course Google Maps can't see our private objects, it can only see global objects. So we create one global object, called **elf**, and we make sure that it has a property called **position** that points at our code. In effect, **elf.position** is the entry point, the **main** for our map object. That is the role it plays in our **MapExpress** example, so nothing really new is going on here. It's just that we have to do a little dance to make the **elf** object global so that Google maps can see it.
+
+##More on Databases
+
+Folks have pointed out that the code we have now just keeps inserting new data into the database rather than updating a record if it already exists. In other words, we end up with multiple copies of the same record in the database. This is to be expected, since our code is doing an **insert** each time. The fix, of course, is to do an **update** rather than an **insert**.
+
+We are using the **MongoClient** object from the [mongodb][5] package.
+
+> var MongoClient = mongodb.MongoClient;
+
+If we dig into the [docs][6] a bit we see that there is an optional **upsert** parameter we passed to **update**. If we set this to true we can automatically turn an update into an insert if there is no existing record to update. We can also pass in a query parameters that specifies which record we want to update. 
+
+Here is the whole function, which you should use to overright the existing **QueryMongo.UpdateCollection** method:
+
+```
+    // Will create collection if it does not exist, will create record if does
+	// not exist. From QueryMongo.js
+	QueryMongo.prototype.updateCollection = function(objectToInsert, callback) {
+		console.log("QueryMongo.updateCollection called");
+		getDatabase(function getCol(database) {
+			console.log("In the update callback");
+			var collection = database.collection(collectionName);
+			collection.update(objectToInsert.query, 
+				objectToInsert.update,
+				{ upsert: true },
+				function(err, docs) {
+					if (err) {
+						throw err;
+					}
+					if (callClose) {
+						closeDatabase();
+					}
+					console.log("update succeeded");
+					callback({
+						result : "Success",
+						mongoDocument : docs
+					});
+				}
+			);
+		});
+	};
+```
+
+Notice the first three parameters to the update call:
+
+```
+collection.update(
+  objectToInsert.query,    // Query specifying the record to update
+  objectToInsert.update,   // The data we want to put in the database
+  { upsert: true },        // Do an insert if no data matches our query
+  etc...
+```
+
+The first is the query that identifies the record we want to update. The second is the data we want to put in the database, the third is the flag specifying our desire that a record be created if there is none that matches our query.
+
+We can call it from **routes/Markdown.js** like this:
+
+```
+var markdownData = {
+	query : {
+		fileName : request.query.fileName
+	},
+	update : {
+		dataType : "BridgeReader",
+		markdown : request.query.markdown,
+		html : request.query.html,
+		fileName : request.query.fileName
+	}
+};
+
+queryMongo.updateCollection(markdownData, handleSuccess);
+```
+
+Right now I'm specifying all records of this type as having a **dataType** of **BridgeReader**. This field allows us to write a query that discovers all the records in the database that were inserted by our program using this technique. Right now my query to discover the record we want to update is simply to use the fileName as a unique string. 
+
+Using the fileName as unique identifier is an idea that has numerous holes in it, but I just want to get this hint up here so I'm going with that for now. One possible solution to this issue is to associate a GUID with each record:
+
+> https://www.npmjs.org/package/guid
+
+[GUIDs][8] are guaranteed to be globally unique throughout the [entire universe][7]. How's that for a claim? I'll see if I can get that going, but not right now.
+
+##The Config File
+
+We are going to use MongoTalk.config for more than just the database.
+
 ##Turn It In
 
 There are three parts:
+
 
 - Put the assignment in your respository in a folder called **Week12Final**. 
 - Leave your app running on Aws, preferrably with **upstart**. 
@@ -610,4 +877,7 @@ You must provide at least two screenshots, but four or five might be more reason
   [2]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/ServerSaveMongo.html
   [3]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code
   [4]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables
-
+  [5]: https://www.npmjs.org/package/mongodb
+  [6]: http://docs.mongodb.org/manual/reference/method/db.collection.update/
+  [7]: http://en.wikipedia.org/wiki/Universally_unique_identifier
+  [8]: http://en.wikipedia.org/wiki/Globally_unique_identifier
