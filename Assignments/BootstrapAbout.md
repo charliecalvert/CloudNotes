@@ -40,17 +40,19 @@ We should edit it so it looks like this:
 
 ## Create
 
+You need to create some files. You can just make a copy of index.jade and name it About.jade, then make a copy of index.js and name it About.js, then make a copy of layout.jade and name it BootstrapLayout.jade. You'll need to edit these files, as explained below, but making these copies gets you started.
+
 - views/About.jade
 - views/BootstrapLayout.jade
 - routes/About.js
 
-Add to app.js:
+So now that you have those files you need to tell Express that it should load the About page when it is requested. To do this, you need to add the following to app.js:
 
     var about = require('./routes/About')
     app.use('/About', about);   
 
 
-BootstrapLayout:
+Here is the contents of **BootstrapLayout.jade**:
 
 ```
 doctype html
@@ -77,7 +79,7 @@ html
   block content
 ```
 
-Or alternately, put this in it:
+Or alternately, put this in it, which is probably a bit easier to use. It is only the last few lines that differ from above:
 
 ```
 doctype html
@@ -110,7 +112,7 @@ html
 
 When creating Jade from HTML you find on the bootstrap site, don't forget about: http://html2jade.org/.
 
-About.js:
+And here is your **About.js** file:
 
 ```
 var express = require('express');
@@ -125,7 +127,9 @@ router.get('/', function(req, res) {
 module.exports = router;
 ```
 
-About.jade:
+Please note the changes to the line that begins **res.render**. 
+
+And here is **About.jade**:
 
 ```
 extends BootStrapLayout

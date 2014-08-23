@@ -60,30 +60,20 @@ Prog 280
 Prog 282
 --------
 
--	[Overview](Prog282/Overview.html)
--	[Resources](Prog282/Resources.html)
--	[Week01](Prog282/Week01.html)
--	[Week02](Prog282/Week02.html)
--	[Week03](Prog282/Week03.html)
--	[Week04](Prog282/Week04.html)
--	[Week05](Prog282/Week05.html)
--	[Week06](Prog282/Week06.html)
--	[Week07](Prog282/Week07.html)
--	[Week08](Prog282/Week08.html)
--	[Week09](Prog282/Week09.html)
+- [Overview](Prog282/Overview.html)
+- [Resources](Prog282/Resources.html)
+- [Week01](Prog282/Week01.html)
+- [Week02](Prog282/Week02.html)
+- [Week03](Prog282/Week03.html)
+- [Week04](Prog282/Week04.html)
+- [Week05](Prog282/Week05.html)
+- [Week06](Prog282/Week06.html)
+- [Week07](Prog282/Week07.html)
+- [Week08](Prog282/Week08.html)
+- [Week09](Prog282/Week09.html)
 
 ISIT 320
 --------
 
 - [Resources](Isit320/Resources.html)
-- [Week01](Isit320/Week01.html)
-- [Week02](Isit320/Week02.html)
-- [Week03](Isit320/Week03.html)
-- [Week04](Isit320/Week04.html)
-- [Week05](Isit320/Week05.html)
-- [Week06](Isit320/Week06.html)
-- [Week07](Isit320/Week07.html)
-- [Week08](Isit320/Week08.html)
-- [Week09](Isit320/Week09.html)
-- [Week10](Isit320/Week10.html)
-- [Week11](Isit320/Week11.html)
+- [Isit320-Prep](Isit320/Isit320-Prep.html)

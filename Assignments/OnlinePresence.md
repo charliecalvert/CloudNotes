@@ -4,13 +4,19 @@ In this class, we will spend a good deal of time using various cloud services. M
 
 To use the cloud properly, you must have a public presence in the cloud. As a rule, I would say that most people who fear developing a public presence in the cloud exaggerate the importance of the threats they face. However, there are real threats in the cloud, and one of the main goals in this course is to teach you to use the cloud in a safe, secure and public spirited manner. To get started, you must begin actually participating in a carefully chosen set of cloud services.
 
+##Turn it In
+
+When you complete this assignment, press the submit button and enter the URL for your Google Drive folder, as described below.
+
 ## Should I Use a Mobile Device or a Desktop PC?
 
 I use my desktop for tasks like those described here. However, it is possible to complete many of them on a mobile device. Please feel free to try, and if it becomes too frustrating, switch to the desktop. I have chosen these cloud applications because they are useful additions to mobile devices. That does not mean, however, that you have to set up the accounts on those devices.
 
-## What Account Should I Use for Services like Google or Twitter?
+## What Account Should I Use?
 
-Privacy is a personal subject. If you already have an account with any of the services we will use in this class, and you don't feel comfortable using that same account for your class activities, then I recommend creating a second account with that service. Some cloud services, such as Twitter, are very public. What you publish on Twitter for this class will likely be seen by your friends who use Twitter, and vice versa. Some people aren't bothered by this, others find it upsetting. 
+Some of you may already have accounts for services like Google or Twitter. Should you use that account in this class?
+
+Privacy is a personal subject. If you already have an account with any of the services we will use in this class, and you don't feel comfortable using that same account for your class activities, then I recommend creating a second account with that service. Some cloud services, such as Twitter, are very public. What you publish on Twitter for this class will likely be seen by your friends who use Twitter, and vice versa. Some people aren't bothered by this, others find it upsetting.
 
 **NOTE**: *It is possible to do some things in private on Twitter, and there are valid scenarios for doing so. Nevertheless, this class will focus on the public interface to Twitter. Please provide an address of a Twitter account that you do not mind using publicly, without restrictions. That may be an existing account you already own, or you may want to create a new account.*
 
@@ -25,9 +31,8 @@ This assignment is designed to ensure that you have familiarity with several clo
 I provide a certain amount of guidance on creating accounts. If you need more information, please use the discussion area to ask questions, or refer to this Elvenware document.
 
 **NOTE**: *In this assignment, I will frequently make reference to an email address I want to use when sharing a document with me. Pay careful attention to these addresses. They are frequently similar, but not identical. Get the address right. Failure to do so will cause problems on this assignment, and future assignments. Get the email address right!*
+
 **NOTE**: *At several points in this assignment I provide specific file or folder names that include our class name. For instance, **Prog282-Calvert**. Unless it is obvious that I mean to refer to another course, whenever I write I Prog2XX-XXX, I mean to write Prog282-XXX. However, I reuse this same document in multiple courses, and sometimes my search and replace fails. Unless it is obvious that I am referring to another course, just assume I mean **Prog282** and a reference to **Prog280** or **Prog272** is just an oversight on my part.*
-
-
 
 ## Google
 
@@ -50,7 +55,7 @@ See the following for information on working with Google Drive:
 
 ## The Google Document Assignment
 
-This assignment is designed to ensure that you have familiarity with Google Drive/Docs. Please step carefully through this part of the assignment and make sure you have all the details right.
+This assignment is designed to ensure that you are familiar with Google Drive/Docs. Please step carefully through this part of the assignment and make sure you have all the details right.
 
 When you are ready to submit this assignment, name it **OnlinePresence-LastName**, and place it in your Google Docs folder. Please share both the folder and the document with my **charliecalvertbc@gmail.com** account. Be sure I have rights to edit this document, your folder and everything you submit via Google Docs. In general, if you first share the folder with me, then everything you place in the folder should be shared with me automatically.
 
@@ -65,11 +70,11 @@ Create a document called **OnlinePresence-LastName**, where LastName is your las
 
 In Figure One, I give an example of the type of document I want you to create. Your document will include more data and more links.
 
- OnlinePresnce01.png
+![OnlinePresence](../Images/OnlinePresnce01.png)
 
 Figure 1: Here is the type of Google Docs file I want you to create. You do not need to use the same colors.
 
-OnlinePresence02.png
+![OnlinePresence02.png](../Images/OnlinePresnce01.png)
 
 Figure 2: Sharing a document in Google Docs. 
 
@@ -113,9 +118,9 @@ After you are set up, you should edit your Profile from the black menu bar at th
 - For your location you can just enter Washington, or be more specific if you want. For instance, you could enter Bellevue, WA.
 - Follow my [CalvertBc](https://twitter.com/CalvertBc) Twitter account and leave a message to @calvertbc announcing your presence. Remember tweets are 140 characters or less, so keep you message short. To see who has left you a post, choose @mentions from your menu bar.
 
-The last time I looked, it was not particularly easy to delete a twitter account. If you make a mistake and want to start over, you can try reading this and see if it helps.
+The last time I looked, it was not particularly easy to delete a twitter account. If you make a mistake and want to start over, you can try searching for solutions on the web, or just abandon the corrupted account and create a new one.
 
-Sooner or later some student always seems to ask: "Why Twitter?" That is a reasonable question. Twitter is an odd tool, but it is particular well suited for use on mobile devices because it works with small chunks of text. It is true that a huge amount of useless junk is posted on Twitter every day. On the other hand, some of the smartest and most powerful people in the world have Twitter accounts and use them regularly, sometimes to great affect. I have also found that many people don't really understand how Twitter works or how to use it. Everyone should know how to use Twitter. It is a part of the fabric of modern life. We will not spend much time with Twitter, but I do want to be sure that everyone who passes through my mobile and cloud courses understands this relatively simple tool, and knows how to use it. 
+Sooner or later some student always seems to ask: Why Twitter? Twitter is an odd tool. A huge amount of useless junk is posted on Twitter every day. On the other hand, some of the smartest and most powerful people in the world have Twitter accounts and use them regularly, sometimes to great affect. Twitter users post short announcements, or point others to valuable resources. If the chief architect for one of your favorite libraries tweets that he is moving from one technology to another, then just that single sentence might be of great interest to you. If she links to a video about the new library, then that link might also be useful to you. To be good at Twitter you have to learn to follow the right people, and to pay attention to what they say.
 
 ## Microsoft
 
