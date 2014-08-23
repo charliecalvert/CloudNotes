@@ -699,7 +699,8 @@ define(function() {
 	
 });
 
-It might make sense to have the display object create the DisplayMetaData object, but still let **FancyReaderBridge** make the decision as to whether or not to display it. You could do that like this:
+It might make sense to have the display object create the DisplayMetaData object, but still let **FancyMetaData** make the decision as to whether or not to display it. You could do that like this:
+
 
 ```
 $.publish('pageRefresh', {
@@ -815,7 +816,6 @@ var elf = {
     elf.displayMap.position();
 }
 ```
-
 ##More on Databases
 
 Folks have pointed out that the code we have now just keeps inserting new data into the database rather than updating a record if it already exists. In other words, we end up with multiple copies of the same record in the database. This is to be expected, since our code is doing an **insert** each time. The fix, of course, is to do an **update** rather than an **insert**.
@@ -893,7 +893,8 @@ Using the fileName as unique identifier is an idea that has numerous holes in it
 
 > https://www.npmjs.org/package/guid
 
-[GUIDs][7] are guaranteed to be globally unique throughout the [entire universe][8]. How's that for a claim? I'll see if I can get that going, but not right now.
+GUIDs][8] are guaranteed to be globally unique throughout the [entire universe][7]. How's that for a claim? I'll see if I can get that going, but not right now.
+
 
 ##The Config File
 
