@@ -1,12 +1,30 @@
 #Online Presence
 
-In this class, we will spend a good deal of time using various cloud services. Most of these services are free, or very inexpensive. They do, however, require that you register before using them. This assignments is designed to help you establish a foothold in these various services.
+In this class we use a variety of cloud services. Most of these services are free, or very inexpensive. They do, however, require that you register before using them. This assignments is designed to help you establish a foothold in these various services.
 
 To use the cloud properly, you must have a public presence in the cloud. As a rule, I would say that most people who fear developing a public presence in the cloud exaggerate the importance of the threats they face. However, there are real threats in the cloud, and one of the main goals in this course is to teach you to use the cloud in a safe, secure and public spirited manner. To get started, you must begin actually participating in a carefully chosen set of cloud services.
 
 ##Turn it In
 
 When you complete this assignment, press the submit button and enter the URL for your Google Drive folder, as described below.
+
+This assignment has many parts. To help you make sure that you complete everything, here is a check List of sorts: 
+
+- Google Folder
+- Google Doc
+- Google Site
+- Microsoft Folder (Double check the email address!)
+- Microsoft Document (Double check the email address!)
+- Twitter
+- EverNote
+- OneNote (Double check the email address!)
+- Turn it in: Press the submit button in Canvas!
+
+
+The key point you need to grasp is that ***sharing a document with another person involves associating the document with the right email address***. In the assignment, ***I spell out which document should be shared with which email address***. 
+
+If you get the assignment kicked back, and I ask you to do some more work, then do your best to finish the assignment, and then resubmit it. It is only when you resubmit the assignment that I know to check to to see if it is now complete!
+
 
 ## Should I Use a Mobile Device or a Desktop PC?
 
@@ -32,7 +50,10 @@ I provide a certain amount of guidance on creating accounts. If you need more in
 
 **NOTE**: *In this assignment, I will frequently make reference to an email address I want to use when sharing a document with me. Pay careful attention to these addresses. They are frequently similar, but not identical. Get the address right. Failure to do so will cause problems on this assignment, and future assignments. Get the email address right!*
 
-**NOTE**: *At several points in this assignment I provide specific file or folder names that include our class name. For instance, **Prog282-Calvert**. Unless it is obvious that I mean to refer to another course, whenever I write I Prog2XX-XXX, I mean to write Prog282-XXX. However, I reuse this same document in multiple courses, and sometimes my search and replace fails. Unless it is obvious that I am referring to another course, just assume I mean **Prog282** and a reference to **Prog280** or **Prog272** is just an oversight on my part.*
+
+**NOTE**: *At several points in this assignment I provide specific file or folder names that include our class name. For instance, **Isit320-Calvert**. Unless it is obvious that I mean to refer to another course, whenever I write I Prog2XX-XXX, I mean to write Isit320-XXX. However, I reuse this same document in multiple courses, and sometimes I drop the ball or my search and replace fails. Unless it is obvious that I am referring to another course, just assume I mean **Isit320** (or whatever course you are in currently) and a reference to some other course is just an oversight on my part. I'm sorry if I slip up on this one, but try to use your common sense to fill in the correct value.*
+
+**NOTE**: *I think everyone in **Prog270** has turned in their Online Presence Assignment. If you have not, please use **Prog270** instead of **Isit320***.
 
 ## Google
 
@@ -41,9 +62,9 @@ The first step is to create a Google Account if you don't already have one.
 - Go to http://www.google.com and create a google account.  
 - Set up a gmail account. (http://www.google.com/mail)
 - Create a Google site (http://www.google.com/sites).
-- In Google Drive (aka Google Docs) create a Google Folder called Prog282-LastName* and share it with me at **charliecalvertbc@gmail.com**. 
+- In Google Drive (aka Google Docs) create a Google Folder called Isit320-LastName* and share it with me at **charliecalvertbc@gmail.com**. 
 - In your new folder, create a document called **OnlinePresence-LastName** that contains the same information as found in the HTML document described below.
-- When creating documents and folders I will often say that you should name it XXX-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, Prog282-LastName would become Prog282-Calvert in my case.
+- When creating documents and folders I will often say that you should name it XXX-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, Isit320-LastName would become Isit320-Calvert in my case.
 
 ## A video showing how to share documents on Google Drive:
 
@@ -55,7 +76,7 @@ See the following for information on working with Google Drive:
 
 ## The Google Document Assignment
 
-This assignment is designed to ensure that you are familiar with Google Drive/Docs. Please step carefully through this part of the assignment and make sure you have all the details right.
+This assignment is designed to ensure that you understand Google Drive. Please step carefully through this part of the assignment and make sure you have all the details right.
 
 When you are ready to submit this assignment, name it **OnlinePresence-LastName**, and place it in your Google Docs folder. Please share both the folder and the document with my **charliecalvertbc@gmail.com** account. Be sure I have rights to edit this document, your folder and everything you submit via Google Docs. In general, if you first share the folder with me, then everything you place in the folder should be shared with me automatically.
 
@@ -120,7 +141,11 @@ After you are set up, you should edit your Profile from the black menu bar at th
 
 The last time I looked, it was not particularly easy to delete a twitter account. If you make a mistake and want to start over, you can try searching for solutions on the web, or just abandon the corrupted account and create a new one.
 
-Sooner or later some student always seems to ask: Why Twitter? Twitter is an odd tool. A huge amount of useless junk is posted on Twitter every day. On the other hand, some of the smartest and most powerful people in the world have Twitter accounts and use them regularly, sometimes to great affect. Twitter users post short announcements, or point others to valuable resources. If the chief architect for one of your favorite libraries tweets that he is moving from one technology to another, then just that single sentence might be of great interest to you. If she links to a video about the new library, then that link might also be useful to you. To be good at Twitter you have to learn to follow the right people, and to pay attention to what they say.
+Sooner or later some student always seems to ask: "Why Twitter?" That is a reasonable question. Twitter is an odd tool, but it is particular well suited for use on mobile devices because it works with small chunks of text. It is true that a huge amount of useless junk is posted on Twitter every day. On the other hand, some of the smartest and most powerful people in the world have Twitter accounts and use them regularly, sometimes to great effect. This is particularly true in the development world. Lot's of smart developers post to twitter regularly, and following them can be very useful. It is a great way to see what [the best minds in the industry][tweetbest] are thinking.
+
+I have also found that many people don't really understand how Twitter works or how to use it. Everyone should know how to use Twitter. It is a part of the fabric of modern life. We will not spend much time with Twitter, but I do want to be sure that everyone who passes through my mobile and cloud courses understands this relatively simple tool, and knows how to use it. 
+
+[tweetbest]:http://www.elvenware.com/charlie/development/cloud/TwitterAccountsToFollow.html
 
 ## Microsoft
 
@@ -131,7 +156,7 @@ canvas:
 
 **NOTE**: *Though they can easily be confused, **charliecalvertbc@hotmail.com** is not the same address as **charliecalvertbc@gmail.com**. Please do not confuse them. This mistake can cost you points in multiple assignments.*
 
-You should then sign in to Live and go to your **OneDrive** account. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention (Prog282-LastName) and share it with the hotmail address shown above, and put the same document in it that you put in the Google Drive folder. 
+You should then sign in to Live and go to your **OneDrive** account. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention (Isit320-LastName) and share it with the hotmail address shown above, and put the same document in it that you put in the Google Drive folder. 
 
 To learn more about sharing documents, watch this video:
 
@@ -149,20 +174,20 @@ Steps:
 
 - Install the Evernote app. There is one for the PC.
 - Choose: File | New Notebook (Ctrl-Shift-N)
-- Create a synchronized notebook called **2014-Prog282-LastName**, where LastName is your last name.
+- Create a synchronized notebook called **2014-Isit320-LastName**, where LastName is your last name.
 - Right click on the new notebook and choose Share.
 - Share the notebook with charliecalvertbc@gmail.com
 - Put a note in the notebook
 - More information is found here:
     - <http://elvenware.com/charlie/os/Android/AndroidApplications.html#evernote>
 
-**TIP**: *Many students struggle to learn how to place a message in a shared Evernote notebook. One technique that may help some students is to add content to Evernote by sending email. That will allow you to automate the process of adding notes to Evernote in the correct folder with a default tag. Assuming you have already created your folder, and already tagged one message with the tag **Prog282**, then you can send a message to the correct folder by creating a subject line something like this:*
+**TIP**: *Many students struggle to learn how to place a message in a shared Evernote notebook. One technique that may help some students is to add content to Evernote by sending email. That will allow you to automate the process of adding notes to Evernote in the correct folder with a default tag. Assuming you have already created your folder, and already tagged one message with the tag **Isit320**, then you can send a message to the correct folder by creating a subject line something like this:*
 
-- Test Message @2014-Prog282-LastName #Prog282
+- Test Message @2014-Isit320-LastName #Isit320
 
-*If the message you see in Evernote has **#Prog282** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
+*If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
 
-Also create a note in Microsoft One Note, which is part of OneDrive. Share it with me, just as you did your OneDrive document.
+Also create a note in Microsoft One Note, which is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document.
 
 Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
 

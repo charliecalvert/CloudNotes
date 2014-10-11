@@ -28,15 +28,15 @@ Videos
 
 From Google:
 
-- [A](https://www.youtube.com/user/GoogleDevelopers)
-- [B](https://www.youtube.com/watch?v=GFinc7TC1Ws)
-- [B](http://goo.gl/dX91br)
-- [B](http://goo.gl/swrjal)
-- [B](http://goo.gl/K4Qi9F)
-- [B](http://goo.gl/13qZLI)
-- [B](http://goo.gl/K4Qi9F)
-- [B](http://goo.gl/s9i1TL)
-- [B](http://goo.gl/zD1n0B)
+- [Google Developers](https://www.youtube.com/user/GoogleDevelopers)
+- [GDL Weekly with Louis Gray October 14th, 2013](https://www.youtube.com/watch?v=GFinc7TC1Ws)
+- [What In The World Places API](http://goo.gl/dX91br)
+- [Google Summer of Code](http://goo.gl/swrjal)
+- [Google Code-in 2013](http://goo.gl/K4Qi9F)
+- [Hands on with Load Balancing on Google Compute Engine](http://goo.gl/13qZLI)
+- [Google Code-in 2013](http://goo.gl/K4Qi9F)
+- [Speed up iOS development with Google Cloud Platform](http://goo.gl/s9i1TL)
+- [What's New In Enterprise Maps](http://goo.gl/zD1n0B)
 
 
 Interesting Books
