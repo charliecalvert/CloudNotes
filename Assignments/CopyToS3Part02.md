@@ -1,6 +1,6 @@
-# Copy To S3 Part 02
+#Copy To S3 Part 02
 
-Here is where we are headed over the remaining weeks of the class:
+Here are the steps we will accomplish:
 
 - Convert **AwsBasicS3** so that it stores all its **config** files and markdown files in MongoDb.
 - Convert the interface so that it can be run from a mobile device. 

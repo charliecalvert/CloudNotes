@@ -1,4 +1,4 @@
-
+# All Assignments
 
 ## AWS
 
@@ -7,6 +7,15 @@
 *   [CopyToS3Part02.html](CopyToS3Part02.html)
 *   [Ec2CloudOnly.html](Ec2CloudOnly.html)
 *   [Ec2Provision.html](Ec2Provision.html)
+
+## Cloud
+
+*  [Evernote01.html](Evernote01.html)
+*  [GoogleDriveAndFolders](GoogleDriveAndFolders.html)
+*  [GuestAdditions.html](GuestAdditions.html)
+*  [OwnCloudInstall.html](OwnCloudInstall.html)
+*  [StackGoogle.html](StackGoogle.html)
+*  [StackDropbox.html](StackDropbox.html)
 
 ## Code Academy
 
@@ -19,10 +28,18 @@
 
 *   [Prog282Final2014.html](Prog282Final2014.html)
 *   [Prog282Midterm2014.html](Prog282Midterm2014.html)
+*   [Prog270-011414.html](Prog270-011414.html)
+*   [Prog272Final2014.html](Prog272Final2014.html)
+*   [Prog272Midterm2014.html](Prog272Midterm2014.html)
+*   [Prog280Final2014.html](Prog280Final2014.html)
+*   [Prog280Midterm2014.html](Prog280Midterm2014.html)
+
 
 ## Database
 
 *   [MongoStarter.html](MongoStarter.html)
+*   [MongoMark.html](MongoMark.html)
+*   [RoutingData](RoutingData.html)
 *   [ServerSaveMongo.html](ServerSaveMongo.html)
 
 ## Games
@@ -37,20 +54,34 @@
 
 *   [OnlinePresence.html](OnlinePresence.html)
 *   [AskQuestion.html](AskQuestion.html)
+*   [Introductions.html](Introductions.html)
 
 ## Git
 
 *   [BitBucketBasics.html](BitBucketBasics.html)
+
+## HTML and CSS
+
 *   [BootstrapAbout.html](BootstrapAbout.html)
-*   [Callbacks.html](Callbacks.html)
-*   [ClickRoute.html](ClickRoute.html)
+*   [LampBootstrap.html](LampBootstrap.html)
 
 ## JavaScript
 
+*   [Callbacks.html](Callbacks.html)
+*   [ClickRoute.html](ClickRoute.html)
+*   [Cordova01.html](Cordova01.html)
+*   [InfoManager01.html](InfoManager01.html)
+*   [JQuerySelectors.html](JQuerySelectors.html)
 *   [ExpressJQuery.html](ExpressJQuery.html)
+*   [JadeBasics.html](JadeBasics.html)
 *   [MapExpress.html](MapExpress.html)
-*   [QueueSpec.html](QueueSpec.html)
+*   [NodeExpressMongo01.html](NodeExpressMongo01.html)
+*   [NodeModulesAssignment.html"](NodeModulesAssignment.html)
+*   [NodeRoutes01.html](NodeRoutes01.html)
 *   [Passport.html](Passport.html)
+*   [PubSub01.html](PubSub01.html)
+*   [PubSubRequire.html](PubSubRequire.html)
+*   [QueueSpec.html](QueueSpec.html)
 *   [WebSocket.html](WebSocket.html)
 
 ## Patterns
@@ -68,10 +99,11 @@
 *   [SetupJsHintEclipse.html](SetupJsHintEclipse.html)
 *   [MarkdownEditor.html](MarkdownEditor.html)
 *   [MarkdownRoutes.html](MarkdownRoutes.html)
-
+*   [Pandoc01.html](Pandoc01.html)
 
 ## Un-Categorized
 
+*   [Amazon.html](Amazon.html)
 *   [PictureCaption.html](PictureCaption.html)
 *   [WalkingMap.html](WalkingMap.html)
 

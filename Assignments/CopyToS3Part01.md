@@ -1,8 +1,8 @@
-# Copy to S3 Part 01
+#Copy to S3 Part 01
 
-The goal of this assignment is simply to get you up to speed with AwsBasicS3. This program aids content creators who produce a lot of HTML files. 
+This assignment helps you get up to speed with AwsBasicS3. This program aids content creators who produce a lot of HTML files. 
 
-The simplest way to get started is to watch the now outdated intro video:
+To get started is to watch the now outdated intro video:
 
 - [AwsBasic Intro](http://youtu.be/EF0kHY8mYXg)
 

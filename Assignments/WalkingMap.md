@@ -56,8 +56,9 @@ When you are done, your code should look much like the  **Weowna to Lake Hills G
 
 To complete the exercise, do the following:
 
-- Download the markdown and html for your document from stackedit. Name the markdown **WalkingMap&#95;LastName.md**. Name the html **WalkingMap&#95;LastName.html**. In all cases LastName is your lastName. 
+- Download the markdown and HTML for your document from stackedit. Name the markdown file **WalkingMap&#95;LastName.md**. Name the HTML file **WalkingMap&#95;LastName.html**. In all cases LastName is your last name. 
 - Wrap your HTML in a bootstrap document, as we did in the CodeAnywhereS3 assignment.
+- Paste your HTML into a Google Sites 
 - Upload your files to S3
 - Upload your files to CodeAnywhere and place them in a folder in your repository. The name of the folder should be **Week04_WalkingMap**. 
 - Take screenshot of your files in CodeAnywhere. Put the screenshot in your **Week04_WalkingMap** folder.
@@ -68,7 +69,7 @@ To complete the exercise, do the following:
 Submit the following:
 
  - A zip file containing your files
- - In the comment area put the URL of your walking map page on S3.
+ - In the comment area put the URLs of your walking map pages on S3 and Google Sites.
  - In the comment area put the URL of your git repository. It should look something like this:
 
 ```
