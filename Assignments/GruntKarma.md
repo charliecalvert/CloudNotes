@@ -1,13 +1,17 @@
-#Grunt and Karma
+#Grunt
 
-Make sure that your final project (currently covered in PictureCaption) and Week08InClassMarkdown pass:
+**jsHint** and **jsBeautifier** help you write clean, well formed code. In general, **jsHint** looks for syntax errors, while **jsBeautifier** helps with indentation and formatting. Grunt is a tool that allows you to run **jsHint** and **jsBeautifier** on all the files in your project at once, rather than running the tools on one file at a time.
+
+To use these tools first install [Grunt](http://gruntjs.com/) like this:
+
+    sudo npm install -g grunt-cli
+
+Install the local packages per the **package.json** file shown below. Then make sure your projects passes the syntax checks and properly formats your code:
 
 - grunt jshint
 - grunt pretty
 
-Copy Week08InClassMarkdown into a folder called Week10GruntKarma, and make the fixes there. See note in the [**Turn it in**][1] section at the bottom of this file.
-
-Best practice: RunJsHint first. Optionally ignore mixed tabs and spaces, and then commit. Then run grunt pretty to beautify, and then git status to see which files changed. If you accidentally beautify something like jasmine.js, then you can run git checkout jasmine.js to get the original back. Then fix your GruntFile.js and teach it to ignore jasmines.js, and then try again.
+**Best practice**: *Run JsHint first. Optionally ignore mixed tabs and spaces, and then commit. Then run grunt pretty to beautify, and then git status to see which files changed. If you accidentally beautify something like require.js, then you can run git checkout require.js to get the original back. Then fix your GruntFile.js and teach it to ignore require.js, and then try again.*
 
 ## The Grunt File
 
@@ -24,15 +28,20 @@ module.exports = function(grunt) {
 
             options: {
                 ignores: [
-                    '**/coverage/**',
                     '**/node_modules/**',
-                    '**/Tests/Jasmine-2.0.0/**',
-                    '**/jquery-2.1.0.min.js',
-                    '**/jquery-2.1.1.js',
+                    '**/routes/**',
+                    '**/app.js',
+                    '**/handlebars.js',
+                    '**/jquery*.js',
+                    '**/ColladaLoader.js',
+                    '**/cordova*.js',
+                    '**/MTLLoader.js',
+                    '**/OBJMTLLoader.js',
+                    '**/PointerLockControls.js',
                     '**/require.js',
-                    '**/Markdown/Converter.js',
-                    '**/Markdown/Editor.js',
-                    '**/Markdown/Sanitizer.js'
+                    '**/TinyPubSub.js',
+                    '**/three.js',
+                    '**/qunit*.js' ]
                 ],
                 reporter: 'checkstyle',
                 reporterOutput: 'result.xml',
@@ -59,23 +68,13 @@ module.exports = function(grunt) {
             }
         },
 
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js',
-                singleRun: true
-            }
-        },
-
         jsbeautifier: {
             files: ["**/*.js",
                 '!**/node_modules/**',
                 '!**/coverage/**',
                 '!**/jasmine-2.0.0/**',
                 '!**/jquery-2.1.1.js',
-                '!**/require.js',
-                '!**/Markdown/Converter.js',
-                '!**/Markdown/Editor.js',
-                '!**/Markdown/Sanitizer.js'
+                '!**/require.js'
             ],
             options: {
                 js: {
@@ -88,7 +87,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jsbeautifier');
-
     grunt.registerTask('pretty', ['jsbeautifier']);
 };
 ```
@@ -97,9 +95,9 @@ When you are done, you should get back a completely clean **result.xml** file. H
 
 ```
 <file name="app.js">
-	<error line="38" column="5" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
-	<error line="49" column="9" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
-	<error line="60" column="5" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
+    <error line="38" column="5" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
+    <error line="49" column="9" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
+    <error line="60" column="5" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
 </file>
 ```
 
@@ -128,12 +126,20 @@ After making that one change, if you run **grunt jshint**, then the results will
 
 ```
 <file name="app.js">
-	<error line="49" column="9" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
-	<error line="60" column="5" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
+    <error line="49" column="9" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
+    <error line="60" column="5" severity="error" message="Missing &quot;use strict&quot; statement." source="jshint.E007" />
 </file>
 ```
 
 As you can see, the error reported for line 38 has now disappeared because we fixed the error on that line.
+
+You can, for now, ignore this error:
+
+```
+<error line="16" column="25" severity="warning" message="Bad line breaking before '||'." source="jshint.W014"/>
+```
+
+There is a way to get to Eclipse to put the line breaks in the right place when it formats code, but I don't remember it right now.
 
 
 ##Package.json
@@ -143,10 +149,10 @@ Here is:
 
 ```
 {
-  "name": "BridgeReader04",
-  "version": "0.0.1",
+  "name": "MyProgram",
+  "version": "0.0.2",
   "private": true,
-  "description": "BridgeReader reads files of various formats",
+  "description": "MyProgram",
   "repository": {
     "type": "git",
     "url": "http://github.com/charliecalvert/JsObjects.git"
@@ -155,124 +161,27 @@ Here is:
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "debug": "~0.7.4",
-    "express": "~4.0.0",
-    "express-session": "^1.2.1",
-    "jade": "~1.3.0",
-    "morgan": "~1.0.0",
-    "static-favicon": "~1.0.0"
+    "express": "~4.9.0",
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "morgan": "~1.3.0",
+    "serve-favicon": "~2.1.3",
+    "debug": "~2.0.0",
+    "jade": "~1.6.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsbeautifier": "^0.2.7",
-    "karma": "^0.12.16"
+    "grunt-jsbeautifier": "^0.2.7"
   }
 }
 ```
 
-## Karma Config
+The dependencies may vary in your project. It is **devDependencies** that call **grunt** that you need to set up correctly based on the file above.
 
-Don't try to run any tests that hit the server from Karma for now. Just tests that go to the client side only.
+##Turn it in
 
-```
-// Karma configuration
-// Generated on Wed Apr 30 2014 10:31:53 GMT-0700 (PDT)
+Make, sure all your projects pass jshint, or come close to passing. I'm mostly concerned with the files in your express projects that are in the **public** directory or one of its sub-directories. As you can see from the **GruntFile.js**, right now I'm just ignoring the **routes** directory, but that is likely to change over time.
 
-module.exports = function(config) {
-	'use strict';
-
-	config.set({
-
-		// base path that will be used to resolve all patterns (eg. files,
-		// exclude)
-		basePath : '.',
-
-		// frameworks to use
-		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-		frameworks : [ 'jasmine', 'requirejs' ],
-
-		// list of files / patterns to load in the browser
-		files : [ 'TestMain.js', {
-			pattern : 'Tests/DefaultSingletonTests.js',
-			included : false
-		},{
-			pattern : 'Tests/DisplayTests.js',
-			included : false
-		},{
-			pattern : 'public/javascripts/**/*.js',
-			included : false
-		}, {
-			pattern : 'Tests/jasmine-2.0.0/*.js',
-			included : false
-		} ],
-
-		// list of files to exclude
-		exclude : [
-
-		],
-
-		// preprocess matching files before serving them to the browser
-		// available preprocessors:
-		// https://npmjs.org/browse/keyword/karma-preprocessor
-		preprocessors : {
-
-		},
-
-		// test results reporter to use
-		// possible values: 'dots', 'progress'
-		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters : [ 'progress' ],
-
-		// web server port
-		port : 9876,
-
-		// enable / disable colors in the output (reporters and logs)
-		colors : true,
-
-		// level of logging
-		// possible values: config.LOG_DISABLE || config.LOG_ERROR ||
-		// config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-		logLevel : config.LOG_INFO,
-
-		// enable / disable watching file and executing tests whenever any file
-		// changes
-		autoWatch : true,
-
-		// start these browsers
-		// available browser launchers:
-		// https://npmjs.org/browse/keyword/karma-launcher
-		browsers : [ 'Chrome' ],
-
-		// Continuous Integration mode
-		// if true, Karma captures browsers, runs the tests and exits
-		singleRun : false
-	});
-};
-```
-
-To run karma, type:
-
-    karma start
-    
-If you get an error about not being able to find Chrome, then do this:
-
-- [RunKarma.sh][2]
-
-##Turn It In {#turnItIn}
-
-Copy the [Week10InClassMarkdownRoutes][3] project into Week10GruntKarma. Make sure it:
-
-- Passes **grunt jshint**
-- That you have run **grunt pretty**
-- That you can run Karma against your tests: **karma start**
-
-**NOTE**: *An earlier version of this assignment asked you to clean up Week08InClassMarkdown. It should have specified Week10InClassMarkDownRoutes. To tell you the truth, I don't care which one you get to pass, though I prefer the latter. If you have already done Week08, you can turn that one in. In general, if you turn the assignment in on Sunday, I would expect to Week10InClassMarkdownRoutes rather than Week08InClassRoutes. If you turn it in earlier, then.... I apologize for making the mistake, but fixing problems with jshint usually only takes a few minutes. If you hit an error that you don't know how to fix, then please ask about it in the discussion area.*
-
-
-  [1]: #turnItIn
-  [2]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/BridgeSailor/RunKarma.sh
-  [3]: http://www.elvenware.com/charlie/books/CloudNotes/Assignments/MarkdownRoutes.html
+When you have everything in good shape, submit the project and enter the URL of your repository.
