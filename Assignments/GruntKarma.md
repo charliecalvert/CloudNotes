@@ -180,6 +180,80 @@ Here is:
 
 The dependencies may vary in your project. It is **devDependencies** that call **grunt** that you need to set up correctly based on the file above.
 
+##Grunt Eclipse
+
+Right click on the root note for a project in the Eclipse **Project Explorer** and choose **Preferences**. (Apple computers have a different way of accessing Preferences.)
+
+Open up the **jshint** note for your project. Make sure you have you have excluded **node_modules**, **jquery\*.js**, and other obvious files that don't need to be checked. 
+
+Open up the jshint **Configuration** page. It is node underneath the main page. You will see a copy of the **.jshintrc** file that is stored at the root of your project folder. Set  **browser**, **devel**, **jquery** and **strict** to true. At the bottom of the file is a little **predef** area where you can define some globals that you want to exclude such as **define**. 
+
+## Update Packages
+
+It is nice to know that your project is using the latest packages. You can do this by running the **npm outdated** command:
+
+	npm outdated
+
+If you first delete your **node_modules** folder, and then run it, you might see output like this:
+
+```
+charlie@mongovbox:~/Git/writings/Tech/Games/ThreeFloor$ npm outdated
+npm http GET https://registry.npmjs.org/morgan
+npm http GET https://registry.npmjs.org/cookie-parser
+npm http GET https://registry.npmjs.org/body-parser
+npm http GET https://registry.npmjs.org/debug
+npm http GET https://registry.npmjs.org/serve-favicon
+npm http GET https://registry.npmjs.org/express
+npm http GET https://registry.npmjs.org/jade
+npm http 304 https://registry.npmjs.org/morgan
+npm http 304 https://registry.npmjs.org/body-parser
+npm http 304 https://registry.npmjs.org/serve-favicon
+npm http 304 https://registry.npmjs.org/express
+npm http 304 https://registry.npmjs.org/debug
+npm http 304 https://registry.npmjs.org/jade
+npm http 304 https://registry.npmjs.org/cookie-parser
+Package        Current  Wanted  Latest  Location
+morgan         MISSING   1.3.2   1.4.1  morgan
+body-parser    MISSING   1.8.4   1.9.2  body-parser
+serve-favicon  MISSING   2.1.6   2.1.6  serve-favicon
+express        MISSING   4.9.8  4.10.1  express
+debug          MISSING   2.0.0   2.1.0  debug
+jade           MISSING   1.6.0   1.7.0  jade
+cookie-parser  MISSING   1.3.3   1.3.3  cookie-parser
+```
+
+Here you can see that our **package.json** file requests **morgan** 1.3.2. We can see that by opening up **package.json** and looking:
+
+```
+{
+  "name": "Test05",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.9.0",
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "morgan": "~1.3.0",
+    "serve-favicon": "~2.1.3",
+    "debug": "~2.0.0",
+    "jade": "~1.6.0"
+  }
+}
+```
+
+As you can see, we are explicitly asking for 1.3.0. But **npm outdated** tells us that there is a newer version. So we just update **package.json** so that it asks for the latest, which is 1.4.1:
+
+    "morgan": "~1.4.1",
+
+We can do the same for all the packages we are using. Then run **npm update** after you have updated your **package.json** file. That will ensure that the installed versions of the files in **node_modules** are up to date. If the call to **npm update** fails, you can always just delete the files in your **node_modules** directory and run **npm install**.
+
+You get the same output if you run **npm outdated** if you have a **node_modules** directory, but you may see reports on the nested packages in the **node_modules**. That information may not be useful. As a result, it might be best to start by deleting the folder:
+
+	rm -r node_modules
+
 ##Turn it in
 
 Make, sure all your projects pass jshint, or come close to passing. I'm mostly concerned with the files in your express projects that are in the **public** directory or one of its sub-directories. As you can see from the **GruntFile.js**, right now I'm just ignoring the **routes** directory, but that is likely to change over time.

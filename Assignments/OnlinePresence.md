@@ -16,7 +16,7 @@ This assignment has many parts. To help you make sure that you complete everythi
 - Microsoft Folder (Double check the email address!)
 - Microsoft Document (Double check the email address!)
 - Twitter
-- EverNote
+- EverNote (Double check the email address)
 - OneNote (Double check the email address!)
 - Turn it in: Press the submit button in Canvas!
 
@@ -62,9 +62,14 @@ The first step is to create a Google Account if you don't already have one.
 - Go to http://www.google.com and create a google account.  
 - Set up a gmail account. (http://www.google.com/mail)
 - Create a Google site (http://www.google.com/sites).
-- In Google Drive (aka Google Docs) create a Google Folder called Isit320-LastName* and share it with me at **charliecalvertbc@gmail.com**. 
-- In your new folder, create a document called **OnlinePresence-LastName** that contains the same information as found in the HTML document described below.
-- When creating documents and folders I will often say that you should name it XXX-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, Isit320-LastName would become Isit320-Calvert in my case.
+- In Google Drive (aka Google Docs) create a Google Folder called Isit320-LastName* and share it with me.
+- Use the email address shown below when sharing your Google Drive folder. This is not the same address you use when sharing Microsoft folders.
+
+The email address to use when sharing your Google Drive folder:
+
+-  **charliecalvertbc@gmail.com**
+
+In your new folder, create a document called **OnlinePresence-LastName**, where LastName is your last name. It should contain the same information as found in the HTML document described below. When creating documents and folders I will often say that you should name it XXX-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, Isit320-LastName would become Isit320-Calvert in my case.
 
 ## A video showing how to share documents on Google Drive:
 
@@ -149,24 +154,29 @@ I have also found that many people don't really understand how Twitter works or 
 
 ## Microsoft
 
-If you don't have one already, go to [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90). My Live ID for this course is found on
-canvas:
+If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90). 
 
-- <charliecalvertbc@hotmail.com>
+You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder Prog270-LastName, where LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **Prog270-Calvert**, **Isit320-Calvert**, **Prog272-Calvert**, **Prog219-Calvert**, **Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
 
-**NOTE**: *Though they can easily be confused, **charliecalvertbc@hotmail.com** is not the same address as **charliecalvertbc@gmail.com**. Please do not confuse them. This mistake can cost you points in multiple assignments.*
+Share the folder with me, using my Live ID for Bellevue College work:
 
-You should then sign in to Live and go to your **OneDrive** account. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention (Isit320-LastName) and share it with the hotmail address shown above, and put the same document in it that you put in the Google Drive folder. 
+- **charliecalvertbc@hotmail.com**
+
+**NOTE**: *Though they can easily be confused, the **hotmail** address shown above is not the same as the **gmail** address used in other sections of this document. In some of my courses confusing them can cost you points in multiple assignments including the midterm and the final. Because the mistake can be propagated across so many parts of the course, it can easily move your grade down a whole letter. For instance, it can change your final grade from an A to a B, or from a B to a C.*
+
+Put the same document in it that you put in the Google Drive folder. 
 
 To learn more about sharing documents, watch this video:
 
 - <http://youtu.be/gMACtVIEV0A>
 
-## EverNote and Microsoft OneNote
+## EverNote 
 
 You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
 
-Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with **charliecalvertbc@gmail.com**.
+Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
+
+-  **charliecalvertbc@gmail.com**
 
 **NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.* 
 
@@ -187,7 +197,9 @@ Steps:
 
 *If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
 
-Also create a note in Microsoft One Note, which is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document.
+## Microsoft OneNote
+
+Also create a note in Microsoft One Note, which is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document. In particular, put it in the same OneDrive folder where you placed your other Microsoft related documents. Double check to make sure you are sharing the folder with the email specified in the section on OneDrive.
 
 Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
 

@@ -64,6 +64,19 @@ To complete the exercise, do the following:
 - Take screenshot of your files in CodeAnywhere. Put the screenshot in your **Week04_WalkingMap** folder.
 - Check your files into your BitBucket repository
 
+## Google Sites Detailed
+
+Here is one way to set up your Google Site.
+
+- In StackEdit, save your markdown as HTML. (# menu | Export to Disk | As markdown). 
+- Open the HTML in a text editor such as Geany, NotePad++, CodeAnywhere, nano or Visual Studio. (Wordpad might also work.)
+- Block Copy the HTML to the clipboard (Ctrl-C).
+- Open Your Google Site page. Go into edit mode. 
+- Click the little HTML symbol on the top of the page at the right. 
+- Delete any and all HTML shown in the HTML editor. 
+- Paste in your HTML that you exported from StackEdit (Ctrl-V). 
+- Save your work.
+
 ##Turn it in
 
 Submit the following:

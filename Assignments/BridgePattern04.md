@@ -577,7 +577,7 @@ Now what happens when we run our tests?
 
 ![Tests][route12]
 
-[Milagrosamente aprobó el examen][milagro]! By some miracle we have passed the test! Our hope is but a flickering candle, and yet it still burns! 
+[Milagrosamente aprobo el examen][milagro]! By some miracle we have passed the test! Our hope is but a flickering candle, and yet it still burns! 
 
 But what are we going to do about the offending code? How can we fix this mess that we commented out:
 
