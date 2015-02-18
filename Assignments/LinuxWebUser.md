@@ -251,6 +251,30 @@ In sum, when you submit the assignment:
 - Attach your screen shots and the two HTML pages you created.
 - As a comment add the URL of your EC2 site.
 
+If you navigate into the CreatePage folder, you should see a listing like this:
+
+```
+cabox@box-codeanywhere CreatePage]$ ls -la                                                                                                                                                                                                   
+total 168                                                                                                                                                                                                                                     
+drwxrwxr-x 2 cabox cabox   4096 Oct 29 02:20 .                                                                                                                                                                                                
+drwxrwxr-x 4 cabox cabox   4096 Oct 29 02:20 ..                                                                                                                                                                                               
+-rw-rw-r-- 1 cabox cabox    177 Oct 29 02:19 **End.html**                                                                                                                                                                                         
+-rw-rw-r-- 1 cabox cabox   3627 Oct 29 02:19 **Middle.html**                                                                                                                                                                                      
+-rw-rw-r-- 1 cabox cabox   5063 Oct 29 02:19 **Page01.html**                                                                                                                                                                                      
+-rw-rw-r-- 1 cabox cabox   1259 Oct 29 02:19 **Start.html**                                                                                                                                                                                       
+-rw-rw-r-- 1 cabox cabox 132546 Oct 29 02:19 **bootstrap.css**                                                                                                                                                                                    
+-rw-rw-r-- 1 cabox cabox     95 Oct 29 02:19 **index.css**                                                                                                                                                                                            
+```
+
+NOTE: *You will probably want to call the Pages your create Page01.html, Page02.html and Page03.html. You might also call them after their subjects:
+
+- Music.html
+- Books.html
+- Hobbies.html
+
+Or what have you.
+
+[booty]: http://elvenware.com/charlie/development/web/CssGuide/Bootstrap.html
 
 - Understand permissions per the Linux quizzes.
 - **chown** -R ubuntu:ubuntu /var/www/html
@@ -258,3 +282,6 @@ In sum, when you submit the assignment:
 To learn more, visit the Elvenware pages on [Linux Files][linuxFiles].
 
 [linuxFiles]: http://www.elvenware.com/charlie/os/linux/LinuxFiles.html#copy
+
+
+

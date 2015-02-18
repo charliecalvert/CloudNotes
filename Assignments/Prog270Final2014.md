@@ -85,7 +85,6 @@ Getting the data from your Microsoft Spread Sheet into a Microsoft Word document
 
 ## Devices
 
-
 On your mobile device, provide a screenshots of:
 
 - **OneDrive/Excel**: Show your FinalData spreadsheet in Microsoft Office

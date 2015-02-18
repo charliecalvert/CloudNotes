@@ -15,7 +15,6 @@ This assignment has many parts. To help you make sure that you complete everythi
 - Microsoft Document (Double check that you are using a Microsoft email address!)
 - OneNote Document (Double check that you are using a Microsoft email address!)
 - Twitter
-
 - EverNote (Double check the email address!)
 - OneNote (Double check the email address!)
 
@@ -96,9 +95,7 @@ The first step is to create a Google Account if you don't already have one.
 - Go to http://www.google.com and create a google account.  
 - Set up a gmail account. (http://www.google.com/mail)
 - Create a Google site (http://www.google.com/sites).
-
 - In Google Drive (aka Google Docs) create a Google Folder and share it with me. See above for a description of how to name that folder.
-
 - Use the email address shown below when sharing your Google Drive folder. This is not the same address you use when sharing Microsoft folders.
 
 The email address to use when sharing your Google Drive folder:
@@ -205,7 +202,6 @@ Put the same document in it that you put in the Google Drive folder.
 To learn more about sharing documents, watch this video:
 
 - <http://youtu.be/gMACtVIEV0A>
-
 
 ## Microsoft OneNote
 
