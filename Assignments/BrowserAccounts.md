@@ -1,0 +1,119 @@
+# Browser Accounts
+
+The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device. This assignment, like the one's on using Google Drive and OneDrive, is deceptive. We think we know how to use these tools, but in truth there is more here than meets the eye at first. Your phone can begin to seem like a useless paperweight until you start to see how to share information between your desktop and phone. In particular, we live in our browsers these days, so knowing how to use the browsers on your phone is crucial. (Confession: I learned quite a bit about Chrome and Firefox while working on this assignment.)
+
+If you don't already have one: 
+
+- Create a FireFox account
+- Create a Chrome account.
+
+Log in and take screenshots in multiple locations. 
+
+##ScreenShots
+
+It want three screens from each of your platforms, for a total of at least six screenshots. Include a screenshot of:
+
+On your desktop Firefox:
+
+- Sync page (pix01)
+- All Bookmarks (pix02)
+
+On your desktop Chrome:
+
+- You signed in to your browser (pix03)
+- The recent tabs in Chrome (pix04)
+- You signed out of your browser and displaying your Google Site (pix05)
+
+On mobile or alternate Chrome:
+
+- Logged in to Google (pix06)
+- Recent tabs (pix07)
+
+On Mobile or alternate:
+
+- Sync page (pix08)
+- Synced bookmarks (pix09)
+
+That's a total of 9 screenshots. Please follow the example screenshots below to get the details right.
+
+## Platorms
+
+Here are the platforms:
+
+- Show pictures of your browser on your main machine, be it a laptop of PC.
+- If you have a mobile device such as a phone or tablet, then take screenshots of it working on that device.
+- If you do not have a mobile device, or you can't run a particular browser on your mobile device, make a second screenshot in VirtualBox instead.
+
+Here is a picture showing me logged into Google, the key part is in the upper right, where it says +Charlie and shows my picture (pix03):
+
+![pix03](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGVUU5MFBrYU1rblk)
+
+Here are my Chrome recent tabs, and an indication that I am logged in on the right near the bottom:
+
+![Pix04](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGVmlnT09HbTQ1Y0U)
+
+Signed out, and browsed to my Google Site, notice that no one is signed in to Chrome:
+
+![Pix05](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGamlnV05XV1NxZGM)
+
+## Mobile Chrome
+
+Here is the the Logged in to Google image (pix06). Note the picture at top right shows I'm logged in as me.
+
+<img alt= "pix06" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGdVRsMjdyRXoxWEU">
+
+Here are the Chrome Mobile Recent tabs (pix07). Note that at the top you see a list of recently closed tabs. That can be very useful:
+
+<img alt="pix07" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGb1ZNWXJ2LWN1NUk">
+
+##FireFox
+
+We only need to create two screenshots on the PC side with FireFox. The first is of you signed in on PC to FireFox Sync (pix01):
+
+<img alt="pix01" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGZXFYTlhNaS1jZDg">
+
+The second screenshot is of the **Show all bookmarks** page on the desktop version of Firefox (pix02). Reach it by pressing **Ctrl-Shift-B** or using the Bookmarks menu (**Alt-B**).
+
+## FireFox Mobile
+
+From the settings menu in Firefox for your phone, you can reach the screen that lets you log into your Firefox Sync account. You don't need to show a screenshot like this one in your homework. I provide it simply to help you find your way around:
+
+<img width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGcFJtYkFYOWctZWs">
+
+Firefox on Phone Sync account setup (pix08):
+
+<img alt="pix08" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGMWRVRm1ENzZUa2s" alt="25">
+
+Firefox on Phone, looking at my synced bookmarks. Choose **Menu | New Tab** to get to this page (pix09):
+
+<img alt="pix09" src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGaHVDd25hd3FSS2s" width=500  alt="25>
+
+Please make at least a few bookmarks so that I can see you understand how the system works.
+
+## Tip: Firefox Sync
+
+This is not part of the assignment, but you may find it useful.
+
+Syncing Firefox is slow. You need to go to the FireFox menu (the three bars on the top right), and choose Customize. In the main window on the left is a button that says Sync.
+
+
+![start](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGWWxHT3RRejVYM2s)
+
+
+Drag that button up onto the toolbar at the top right of Firefox. Now you can force a sync whenever you need to do so.
+
+![start](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGQ185THVYbFVuTzg)
+
+Granted, Chrome does a better job of handling these types of services. Nevertheless, it works in Firefox. We just have to invest the time necessary to get good at using our tools. The lesson here is not just how to do something in Firefox. In fact, that is secondary. The real lesson is about the need to learn what our tools can do, and then investing the time necessary to get good at using them. Sometimes if you want to get good at using a particular tool, you have to "join" the community for that tool and track the latest changes.
+
+## Tip: Chrome Data
+
+If you want to stop syncing Chrome data and clear the data you have synced, go here:
+
+ -  https://www.google.com/settings/chrome/sync
+
+## Turn it in. 
+
+Put all the screenshots in a folder in our shared Google folder. Call the folder BrowserAccounts.
+
+Remember: base your screen shots on the images I have given you here in this assignment description. I want to see your sync account on Firefox both on the desktop and the phone. I want to see the bookmarks in your browser on your phone, etc.

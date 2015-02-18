@@ -26,11 +26,11 @@ A single Elastic IP can be associated with only one instance at a time. When you
 
 ## Step Two: SSH into your Instance
 
-On Pristince Ubuntu, navigate to your .ssh directory:
+From the Linux command line, navigate to your .ssh directory:
 
     cd ~/.ssh
 
-Load your EC2 instance private key, which probably has the name **Prog282-2014.pem**, but which might have some other name:
+Load your EC2 instance's private key, which probably has a name like **Prog282-2014.pem**, but which might have some other name:
 
     ssh-add Prog282-2014.pem
     
@@ -42,6 +42,10 @@ Remember, there are two steps necessary to load a key into memory:
 
  1. Make sure ssh-agent is running (eval `ssh-agent`). This step is already done automatically for you in pristince ubuntu because it is included in the **.bashrc** file I gave you at the start of the quarter.
  2. Load a specific into in the **ssh-agent** by running **ssh-add**.
+
+If you want to work in a browser, watch [this video](http://youtu.be/fZE_fLw7Qrg):
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/fZE_fLw7Qrg" frameborder="0" allowfullscreen></iframe>
 
   
 ## Step Three: Create Three Instances
@@ -76,19 +80,30 @@ Take a screen shot of the Volumes page and show the **Created** date. I want to 
 
 Run these commands in each instance. First update the instance to the latest software:
 
-    sudo apt-get update
-    sudo apt-get upgrade
+	sudo apt-get update
+	sudo apt-get upgrade
     
-Install GIT: 
+Install [GIT][giter]: 
 
-    sudo apt-get install git
+	sudo apt-get install git
     
-Install node:
+Install [node][noder]:
 
-    sudo apt-get install python-software-properties python g++ make
-    sudo add-apt-repository ppa:chris-lea/node.js
-    sudo apt-get update
-    sudo apt-get install nodejs
+	sudo apt-get install python-software-properties python g++ make
+	sudo add-apt-repository ppa:chris-lea/node.js
+	sudo apt-get update
+	sudo apt-get install nodejs
+
+Install [Lamp][lamper]:
+
+	sudo apt-get install tasksel
+	sudo tasksel install lamp-server
+
+Increasingly, I'm finding that taskself comes with Ubuntu distros, so you may be able to skip that step.
+
+[noder]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html
+[giter]: http://www.elvenware.com/charlie/development/cloud/Git.html#install-git-on-ubuntu-server
+[lamper]: (http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux)
 
 ## Step Five: Set up SSH
 

@@ -85,6 +85,28 @@ require.config({
         'Sockets' : '/socket.io/socket.io',
 ```
 
+And shim it:
+
+```
+shim: {
+   'Sockets': {
+       exports: 'io'
+  }
+```
+
+If you don't add these lines, then this line on the client fails:
+
+```
+var socket = io.connect('http://127.0.0.1:30025');
+```
+
+And then, at the top of Control.js (or wherever), write something like, where you are probably loading more than just sockets:
+
+```
+define([ "Sockets" ], function(io) {
+```
+
+Do you see that I'm linking Sockets and io in with the requirejs call define?
 
 ## GameListener Server Special
 

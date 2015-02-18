@@ -1,59 +1,90 @@
 #Online Presence
 
-In this class we use a variety of cloud services. Most of these services are free, or very inexpensive. They do, however, require that you register before using them. This assignments is designed to help you establish a foothold in these various services.
+In this class we use a variety of cloud services. Most of these services are free, or very inexpensive. This assignments is designed to help you establish a foothold in these various services.
 
-To use the cloud properly, you must have a public presence in the cloud. As a rule, I would say that most people who fear developing a public presence in the cloud exaggerate the importance of the threats they face. However, there are real threats in the cloud, and one of the main goals in this course is to teach you to use the cloud in a safe, secure and public spirited manner. To get started, you must begin actually participating in a carefully chosen set of cloud services.
+To enter the world of modern computing, you must have a public presence in the cloud. Most people who fear developing a presence in the cloud exaggerate the importance of the threats they face. One of the main goals in this course is to teach you to use the cloud in a safe, secure and public spirited manner. To get started, you must begin actually participating in a carefully chosen set of cloud services.
 
 ##Turn it In
-
-When you complete this assignment, press the submit button and enter the URL for your Google Drive folder, as described below.
 
 This assignment has many parts. To help you make sure that you complete everything, here is a check List of sorts: 
 
 - Google Folder
 - Google Doc
 - Google Site
-- Microsoft Folder (Double check the email address!)
-- Microsoft Document (Double check the email address!)
+- Microsoft Folder (Double check that you are using a Microsoft email address!)
+- Microsoft Document (Double check that you are using a Microsoft email address!)
+- OneNote Document (Double check that you are using a Microsoft email address!)
 - Twitter
-- EverNote
-- OneNote (Double check the email address!)
+- EverNote (Double check the email address!)
 - Turn it in: Press the submit button in Canvas!
 
+**Sharing a document with another person involves associating the document with the right email address**. In this assignment, I spell the email addresses of mine to use when you share a document with me. Don't share everything with the same email address. Read the instructions carefully!
 
-The key point you need to grasp is that ***sharing a document with another person involves associating the document with the right email address***. In the assignment, ***I spell out which document should be shared with which email address***. 
+When you complete this assignment, press the submit button and enter the URL for your Google Drive folder, as described below.
 
-If you get the assignment kicked back, and I ask you to do some more work, then do your best to finish the assignment, and then resubmit it. It is only when you resubmit the assignment that I know to check to to see if it is now complete!
-
-
-## Should I Use a Mobile Device or a Desktop PC?
-
-I use my desktop for tasks like those described here. However, it is possible to complete many of them on a mobile device. Please feel free to try, and if it becomes too frustrating, switch to the desktop. I have chosen these cloud applications because they are useful additions to mobile devices. That does not mean, however, that you have to set up the accounts on those devices.
+**NOTE**: *Unless you have done this assignment before, you may well get it kicked back. Perhaps you will get it kicked back more than once. Do your best to fix your errors and then resubmit. **It is only when you resubmit the assignment that I know to check to see if it is now complete so that I can update your grade!** You cannot skip this assignment. To do well in most of my courses you must complete this assignment and complete it correctly.*
 
 ## What Account Should I Use?
 
 Some of you may already have accounts for services like Google or Twitter. Should you use that account in this class?
 
-Privacy is a personal subject. If you already have an account with any of the services we will use in this class, and you don't feel comfortable using that same account for your class activities, then I recommend creating a second account with that service. Some cloud services, such as Twitter, are very public. What you publish on Twitter for this class will likely be seen by your friends who use Twitter, and vice versa. Some people aren't bothered by this, others find it upsetting.
+Privacy is a personal subject. Some cloud services, such as Twitter, are very public. What you publish on Twitter for this class will likely be seen by your friends who use Twitter, and vice versa. Some people aren't bothered by this, others find it upsetting. If you already have an account with any of the services we will use in this class, and you don't feel comfortable using that same account for your class activities, then I recommend creating a second account with that service. 
 
-**NOTE**: *It is possible to do some things in private on Twitter, and there are valid scenarios for doing so. Nevertheless, this class will focus on the public interface to Twitter. Please provide an address of a Twitter account that you do not mind using publicly, without restrictions. That may be an existing account you already own, or you may want to create a new account.*
+**NOTE**: *It is possible to do some things in private on Twitter, and there are valid scenarios for doing so. Nevertheless, this class will focus on the public interface to Twitter.*
 
-I find that some tools, such as Google Drive and Microsoft OneDrive, do such a good job of helping you separate public and private data, that there is no reason to have two accounts. However, if you are very fidgety about privacy, or process a lot of information on one of these tools already, then you might still wish to start a new account for this course even if you already have one for that service.
+I find that some tools, such as Google Drive and Microsoft OneDrive, do such a good job of helping you separate public and private data, that there is no reason to have two accounts when using those services. However, if you are very fidgety about privacy, or process a lot of information on one of these tools already, then you might still wish to start a new account for this course even if you already have one for that service.
 
-There is no need at all to create two accounts with Amazon. If you already have an Amazon account, you can use that account in this course.
+## Folder names
 
-## The Assignment
+This assignment involves creating folders on Google Drive, OneDrive and Evernote. The name of your folder should contain three parts:
 
-This assignment is designed to ensure that you have familiarity with several cloud based services. Perhaps you have done most of this already, but please step through this part of the assignment and make sure you have all the details right. When you are done, be sure to Submit the assignment. There is a link on the right hand side of canvas that will allow you to explicitly submit the assignment.
+- The year
+- The class name
+- Your last name
 
-I provide a certain amount of guidance on creating accounts. If you need more information, please use the discussion area to ask questions, or refer to this Elvenware document.
+Here are example names for each of my classes, pick the appropriate name for this class:
 
-**NOTE**: *In this assignment, I will frequently make reference to an email address I want to use when sharing a document with me. Pay careful attention to these addresses. They are frequently similar, but not identical. Get the address right. Failure to do so will cause problems on this assignment, and future assignments. Get the email address right!*
+- 2015-Prog270-LastName
+- 2015-Prog272-LastName
+- 2015-Isit320-LastName
+- 2015-Isit322-LastName
 
+Where I write **LastName**, please substitute your last name. For instance, if this class is Prog272, then I would create a folder called **2015-Prog272-Calvert**. 
 
-**NOTE**: *At several points in this assignment I provide specific file or folder names that include our class name. For instance, **Isit320-Calvert**. Unless it is obvious that I mean to refer to another course, whenever I write I Prog2XX-XXX, I mean to write Isit320-XXX. However, I reuse this same document in multiple courses, and sometimes I drop the ball or my search and replace fails. Unless it is obvious that I am referring to another course, just assume I mean **Isit320** (or whatever course you are in currently) and a reference to some other course is just an oversight on my part. I'm sorry if I slip up on this one, but try to use your common sense to fill in the correct value.*
+Here are some examples of **improper** folder names:
 
-**NOTE**: *I think everyone in **Prog270** has turned in their Online Presence Assignment. If you have not, please use **Prog270** instead of **Isit320***.
+- Prog270-LastName -- > *Year missing*
+- Prog272 --> *Year and last name missing*
+- 2015-Isit320 --> *Last name missing*
+- 2015-PROG270-CALVERT --> **Capitalization (casing) wrong**
+- 2015_PROG270_CALVERT --> **Underscore rather than dash and case issues**
+
+No one but you and me will ever see these folders. It is not a risk to use your name in their creation.
+
+## Anonymity
+
+As described above, always use your real name when creating folders. 
+
+Please, if possible, also use your real name or some variant of it when creating new accounts and email addresses.  If you want to use an existing Google or Microsoft account, and your email address for that account does not fit in with my guidelines, then okay, I can live with it. But be sure, be absolutely sure, that when you share your folder with me that you name it correctly, as described in the previous section.
+
+I understand, however, that out of a class of 30 people, one or two of you may have a real reason to want to remain anonymous online. If so, it is okay for you to use a pseudonym on public accounts so long as it is a recognizable variant on your real name. For instance, instead of Calvert, I could Colbert or Clavert.
+
+If you create an email address such as **seattle25\@gmail.com** or a Google Site such as **bc-student-235** or **c00lgal56**, it will be very hard for me to figure out which account to link to which student. Please use your real name or some recognizable variant on your real name.
+
+Some of the services I ask you to use are public, some are not.
+
+**Public**:
+
+- Twitter
+- Google Sites
+
+**Private**:
+
+- Google Drive
+- Microsoft OneDrive
+- Evernote
+
+When creating accounts on private services you don't need to worry about including your real name. When creating accounts on public services someone may be able to link an account name to you. This is an extremely, almost vanishingly, small possibility, but it is possible. In those cases, you can use a pseudonym of the type I describe above. If you use a name like **fancydude456**, and the account did not already exist, then I will probably kick the assignment back to you.
 
 ## Google
 
@@ -62,9 +93,14 @@ The first step is to create a Google Account if you don't already have one.
 - Go to http://www.google.com and create a google account.  
 - Set up a gmail account. (http://www.google.com/mail)
 - Create a Google site (http://www.google.com/sites).
-- In Google Drive (aka Google Docs) create a Google Folder called Isit320-LastName* and share it with me at **charliecalvertbc@gmail.com**. 
-- In your new folder, create a document called **OnlinePresence-LastName** that contains the same information as found in the HTML document described below.
-- When creating documents and folders I will often say that you should name it XXX-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, Isit320-LastName would become Isit320-Calvert in my case.
+- In Google Drive (aka Google Docs) create a Google Folder and share it with me. See above for a description of how to name that folder.
+- Use the email address shown below when sharing your Google Drive folder. This is not the same address you use when sharing Microsoft folders.
+
+The email address to use when sharing your Google Drive folder:
+
+-  **charliecalvertbc@gmail.com**
+
+In your new folder, create a document called **OnlinePresence-LastName**, where LastName is your last name. It should contain the same information as found in the HTML document described below. When creating documents and folders I will often say that you should name it XXX-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, Isit320-LastName would become Isit320-Calvert in my case.
 
 ## A video showing how to share documents on Google Drive:
 
@@ -147,26 +183,37 @@ I have also found that many people don't really understand how Twitter works or 
 
 [tweetbest]:http://www.elvenware.com/charlie/development/cloud/TwitterAccountsToFollow.html
 
-## Microsoft
+## Microsoft OneDrive
 
-If you don't have one already, go to [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90). My Live ID for this course is found on
-canvas:
+If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90). 
 
-- <charliecalvertbc@hotmail.com>
+You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder Prog270-LastName, where LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **Prog270-Calvert**, **Isit320-Calvert**, **Prog272-Calvert**, **Prog219-Calvert**, **Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
 
-**NOTE**: *Though they can easily be confused, **charliecalvertbc@hotmail.com** is not the same address as **charliecalvertbc@gmail.com**. Please do not confuse them. This mistake can cost you points in multiple assignments.*
+Share the folder with me, using my Live ID for Bellevue College work:
 
-You should then sign in to Live and go to your **OneDrive** account. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention (Isit320-LastName) and share it with the hotmail address shown above, and put the same document in it that you put in the Google Drive folder. 
+- **charliecalvertbc@hotmail.com**
+
+**NOTE**: *Though they can easily be confused, the **hotmail** address shown above is not the same as the **gmail** address used in other sections of this document. In some of my courses confusing them can cost you points in multiple assignments including the midterm and the final. Because the mistake can be propagated across so many parts of the course, it can easily move your grade down a whole letter. For instance, it can change your final grade from an A to a B, or from a B to a C.*
+
+Put the same document in it that you put in the Google Drive folder. 
 
 To learn more about sharing documents, watch this video:
 
 - <http://youtu.be/gMACtVIEV0A>
 
-## EverNote and Microsoft OneNote
+## Microsoft OneNote
+
+Also create a note with Microsoft One Note. OneNote is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document. **In particular, put it in the same *OneDrive* folder where you placed your other Microsoft related documents.** Double check to make sure you are sharing the folder with the Microsoft email specified in the section on **OneDrive**.
+
+Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
+
+## Evernote 
 
 You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
 
-Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with **charliecalvertbc@gmail.com**.
+Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
+
+-  **charliecalvertbc@gmail.com**
 
 **NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.* 
 
@@ -187,9 +234,24 @@ Steps:
 
 *If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
 
-Also create a note in Microsoft One Note, which is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document.
+## Should I Use a Mobile Device or a Desktop PC?
 
-Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
+I use my desktop for tasks like those described here. However, it is possible to complete many of them on a mobile device. Please feel free to try, and if it becomes too frustrating, switch to the desktop. I have chosen these cloud applications because they are useful additions to mobile devices. That does not mean, however, that you have to set up the accounts on those devices.
+
+## Passwords
+
+I have well a number of online accounts. To help me manage the passwords for those accounts, I use a service called [LastPass](https://lastpass.com/). Getting some people to feel comfortable using services such as Google or Evernote can be difficult, getting them to trust their passwords to LastPass is much more challenging. 
+
+During this quarter, many of you will curse and fret as you attempt to manage your passwords. I have one suggestion: use LastPass or some similar password manager. 
+
+Eventually, most of us will end up using LastPass or a similar service. Exactly when you make the transition can be calculated by dividing your tolerance for pain over your propensity towards paranoia.
+
+## Account Creation
+
+I provide a certain amount of guidance on creating accounts. If you need more information, please use the discussion area to ask questions, or refer to [this Elvenware document][elf-app].
+
+[elf-app]: http://www.elvenware.com/charlie/os/Android/AndroidApplications.html
+
 
 ## Links
 
