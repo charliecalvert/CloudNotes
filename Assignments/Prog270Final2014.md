@@ -85,6 +85,7 @@ Getting the data from your Microsoft Spread Sheet into a Microsoft Word document
 
 ## Devices
 
+
 On your mobile device, provide a screenshots of:
 
 - **OneDrive/Excel**: Show your FinalData spreadsheet in Microsoft Office
@@ -145,7 +146,6 @@ A few folks seem to be leaving pictures up there too. I suppose that is okay so 
 This part of the assignment is mostly for fun, but please do participate. I will check to be sure you contributed to our group effort. 
 
 If you have not yet received an invite then let me know. The invite was sent to the Google email account you gave me in the online presence assignment. If something else went wrong, and you can't access the sheet even though you tried, then let me know.
-
 
 ## Final Document
 

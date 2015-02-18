@@ -15,7 +15,10 @@ This assignment has many parts. To help you make sure that you complete everythi
 - Microsoft Document (Double check that you are using a Microsoft email address!)
 - OneNote Document (Double check that you are using a Microsoft email address!)
 - Twitter
+
 - EverNote (Double check the email address!)
+- OneNote (Double check the email address!)
+
 - Turn it in: Press the submit button in Canvas!
 
 **Sharing a document with another person involves associating the document with the right email address**. In this assignment, I spell the email addresses of mine to use when you share a document with me. Don't share everything with the same email address. Read the instructions carefully!
@@ -93,7 +96,9 @@ The first step is to create a Google Account if you don't already have one.
 - Go to http://www.google.com and create a google account.  
 - Set up a gmail account. (http://www.google.com/mail)
 - Create a Google site (http://www.google.com/sites).
+
 - In Google Drive (aka Google Docs) create a Google Folder and share it with me. See above for a description of how to name that folder.
+
 - Use the email address shown below when sharing your Google Drive folder. This is not the same address you use when sharing Microsoft folders.
 
 The email address to use when sharing your Google Drive folder:
@@ -201,6 +206,7 @@ To learn more about sharing documents, watch this video:
 
 - <http://youtu.be/gMACtVIEV0A>
 
+
 ## Microsoft OneNote
 
 Also create a note with Microsoft One Note. OneNote is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document. **In particular, put it in the same *OneDrive* folder where you placed your other Microsoft related documents.** Double check to make sure you are sharing the folder with the Microsoft email specified in the section on **OneDrive**.
@@ -251,7 +257,6 @@ Eventually, most of us will end up using LastPass or a similar service. Exactly 
 I provide a certain amount of guidance on creating accounts. If you need more information, please use the discussion area to ask questions, or refer to [this Elvenware document][elf-app].
 
 [elf-app]: http://www.elvenware.com/charlie/os/Android/AndroidApplications.html
-
 
 ## Links
 
