@@ -85,19 +85,19 @@ Getting the data from your Microsoft Spread Sheet into a Microsoft Word document
 
 ## Devices
 
-On your mobile device, provide screenshots of
+On your mobile device, provide a screenshots of:
 
-- Your FinalData spreadsheet data in OneDrive
-- Your sheet data in GoogleDrive
-- Your document in Google Docs
-- Your document in Microsoft Office for Mobile
-- Your document in Evernote
+- **OneDrive/Excel**: Show your FinalData spreadsheet in Microsoft Office
+- **OneDrive/Word**: Show your docment in Microsoft Office for Mobile
+- **Google Sheets**: Show your spreadsheet 
+- **Google Docs**: Show your document
+- **Evernote:** Show your document or sheet or web page pasted into a note
 
 Here is what the Microsoft Office for Android version of the SpreadSheet looks like:
 
 ![OneDrive](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGYmxfTXNjQm5fNFk)
 
-Here is the Microsoft Office for Android version of the Word Document*emphasized text* looks like:
+Here is the Microsoft Office for Android version of the Word Document looks like:
 
 ![OneDrive](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGVE40XzNoSU5BVlk)
 
@@ -131,9 +131,20 @@ On at least one of the sites, and perhaps all three, create a main page that lin
 
 ## Big Share
 
-I will share two documents with groups of you:
+I will share one document with everyone in the class:
 
-- A Google Sheet and/or OneDrive Spreadsheet will be shared with everyone in the class. There will be about 25 rows in the sheet. Your name will be on one of the rows. You should add 
+A Google Sheet will be shared with everyone in the class. There will be about 25 rows in the sheet. Your name will be on one of the rows. You should add your favorite:
+
+- book
+- movie
+- link (Some link to a place on the web that you think is interesting, cool, representative of who you are, etc.)
+- An optional comment. If you have some cheerful thought you want to share with others...
+
+A few folks seem to be leaving pictures up there too. I suppose that is okay so long as we don't get too carried away....
+
+This part of the assignment is mostly for fun, but please do participate. I will check to be sure you contributed to our group effort. 
+
+If you have not yet received an invite then let me know. The invite was sent to the Google email account you gave me in the online presence assignment. If something else went wrong, and you can't access the sheet even though you tried, then let me know.
 
 ## Final Document
 
