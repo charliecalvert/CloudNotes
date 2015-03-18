@@ -1,23 +1,24 @@
-# Prog 272 Final 2015
+# Isit 322 Final 2015
 
 There are two primary goals:
 
-- Move the Midterm into a Cordova Application
-- Add some the ability to get the users location and to make a phone call. We will discuss these features on Thursday.
-- Start your server running on AWS, and call a route from inside your Cordova App. We will cover this step in class in Thursday. 
+- Polish the Midterm inside the Cordova Application
+- Add some the ability to get the users location and to make a phone call. We will discuss these features on Wednesday.
+- Start your server running on AWS, and call various routes from inside your Cordova App. We will cover this step in class in Wednesday. 
 
 There is enough information here to get you well into this project, but check up here regularly for updates. 
 
 Sample Screenshot:
 
-<img class="small" src="https://drive.google.com/uc?id=0B25UTAlOfPRGb0xXVlV6RkR2aGc" alt="Prog272Final">
+<img class="small" src="https://drive.google.com/uc?id=0B25UTAlOfPRGTzhXLWYxVnh4cFk" alt="Isit 322 Final Home Page">
+
 
 **NOTE**: *Start working today, the moment you see this document. Don't wait until the night before it is due to begin! We have a hard stop on the final, you must get it in on time.*
 
 
 ## Step One
 
-Create your working folder. The syntax for the command looks a bit like this:
+If you have not done so already, create your working folder for the Cordova project. The syntax for the command looks a bit like this:
 
 ```
 $ cordova create --help
@@ -33,15 +34,19 @@ Create a Cordova project
     CONFIG ....................... json string with key/values
 ```                                    
 
-For additional details, issue the **cordova create --help** command yourself. 
+For additional details, issue the **cordova create --help** command yourself in the bash shell. 
 
 Given the above, you want to navigate to your repository and type
 
-    cordova create Week12Final com.lastname.prog272_final Prog272FinalLastName
+    cordova create Week12Final com.lastname.Isit322_final Isit322FinalLastName
     
 Be sure to use underscores and not hyphens. The command above will place your
-project in a directory called Week12Final. The project name on your android
-will be Prog272FinalLastName, where LastName is your last name.
+project in a directory called **Week12Final**. The project name on your android
+will be Isit322FinalLastName, where LastName is your last name.
+
+If you need to rename a project, see the information found here:
+
+- <http://www.ccalvert.net/development/android/CordovaPlugin.html#names>
 
 ## Step Two
 
@@ -83,29 +88,13 @@ There is lots of information on how to convert an Express project to a Cordova p
 - [Build Node Routes][build-node]
 
 
-**HINT**: *Make sure the two projects are next to each other in your directory structure. This will make the act of copying from one project to another as simple as possible. For instance, if your repository is called **prog272-lastname** and your best version of the Midterm is in a folder called **Source**, then you want the folders arranged like this *:
+**HINT**: *Make sure the two projects are next to each other in your directory structure. This will make the act of copying from one project to another as simple as possible. For instance, if your repository is called **isit322-lastname** and your best version of the Midterm is in a folder called **Source**, then you want the folders arranged like this *:
 
-- prog272-lastname/Source
-- prog272-lastname/Week12Final
+- isit322-lastname/Source
+- isit322-lastname/Week12Final
     
-    
-When copying the files over from **Source**, I made sure to copy the following files:
-
-- ../Source/public/js/Control.js -> www/js/Control.js
-- ../Source/public/css/style.css -> www/css/style.css
-- ../Source/public/Presidents.json -> www/Presidents.json
-- ../Source/public/Scientists.json -> www/Scientists.json
-
-Then I saved my Cordova geneated copy of **index.html** and copied over **index.js** from **Source**:
-
-- www/index.html -> www/index.html.old
-- ../Source/views/index.html -> www/index.html
-- ../Source/views/JsonAjax.html -> www/JsonAjax.html
-- ../Source/bower.json -> www/bower.json
-
-**NOTE**: *Be sure you have used our **JadeToHtml** to convert **JsonAjax.jade** to **JsonAjax.html**, etc....*
-
-A script for automating the process might look something like this:
+A script for automating the process might look something like this, though the 
+details will of course differ considerably:
 
 ```
     #! /bin/bash
@@ -135,14 +124,8 @@ cp -v $SOURCE_QUERY/public/css/Button.css www/css/.
 Note that the line **SOURCE_QUERY="../Source"** will likely differ on your system since the folder where you keep your best vesions of the Midterm is not likely to be called **Source**.
 
 Now you want to install the updated version of your project and fuss with it until it starts
-to work. For instance, you will have to make the menus work when requestion HTML files rather than rendered Jade. This will mean making changes to your HTML. Line 1 is the original call to load json-ajax as rendered Jade, while line 2 shows how it should look in your Cordova project:
 
-```
-    <li id="json-ajax"><a href="json-ajax">JsonAjax</a></li>
-    <li id="json-ajax"><a href="JsonAjax.html">JsonAjax</a></li>
-```
-
-**NOTE**: *You should probably remove the live reload code from **index.html**.*
+**NOTE**: *If it exists, you should probably remove the live reload code from **index.html**.*
 
 ## Step Five
 
@@ -150,11 +133,20 @@ Add support for detecting if you are connect to an android device and reporting 
 
 You should also add support for location to your best version of the Midterm, and ensure that it looks good on a mobile device. 
          
-## Extra Credit
+## Step Six
 
-Add support for phone calls.
+Add support for finding your current location and for making phone calls.
 
-Add support for iterating over multiple records instead of just viewing male and female records. You should be able to load a JSON file, then change the male and buttons to forward and back.
+A good place to start would be here:
+
+- [ElvenGeo][elvenGeo]
+- [Apache Geo](https://github.com/apache/cordova-plugin-geolocation)
+## Step Seven
+
+Add support for routes, as detailed on Wednesday. A good place to start would be with these two projects:
+
+- [NodeRoutes03][nodeRoutes03]
+- [NodeParams][nodeParams]
 
             
 ## Hints
@@ -171,7 +163,7 @@ At some point, you are going to find that the code in **Week12Final** is close e
     
 This will allow you to compare the contents of **www** and **public**. You can see line by line differences between the files in the two projects, and you can copy individual lines from one file to the other.    
 
-Linking to Bootstrap and JQuery. This worked for me:
+Linking to Bootstrap and JQuery. This kind of thing worked for me in one project, though the details for this project may differ considerably:
 
 ```
     <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
@@ -182,7 +174,7 @@ Linking to Bootstrap and JQuery. This worked for me:
     <script src="js/Control.js"></script>
 ```
 
-Of course there has to really be a **components** folder. For instance, there should not be a **public/components** folder.   
+Of course there has to really be a **components** folder.
 
 [build-node]: https://github.com/charliecalvert/JsObjects/blob/master/Cordova/CordovaNodeRoutes/www/BuildNodeRoutes
 [nodeRoutes03]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes03
