@@ -144,17 +144,39 @@ to work. For instance, you will have to make the menus work when requestion HTML
 
 **NOTE**: *You should probably remove the live reload code from **index.html**.*
 
-## Step Five
+## Step Five: Location
 
 Add support for detecting if you are connect to an android device and reporting location. Adding support for detecting if you are connected to a device is relatively simple, since the code is in the generated **index.js** that comes with all Cordova projects. It is the code that makes the that glows green in the default Cordova project.
 
 You should also add support for location to your best version of the Midterm, and ensure that it looks good on a mobile device. 
+
+## Step Six: Route Parameters
+
+Complete the Route Parameters assigment. This is an in class exercise, but it will also count as part of the final. Make sure you complete it.
+
+- [Route Parameters](http://www.ccalvert.net/books/CloudNotes/Assignments/RouteParameters.html)
+
+## Step Seven: Cordova Plugins
+
+- [Cordova Various Plugins](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaVariousPlugins.html)
+
+Includes:
+
+- ElvenGeo
+- Elven Various
+- Elven Phone
          
 ## Extra Credit
 
-Add support for phone calls.
+Add support for phone calls, vibration, and location (Elven Geo) to your Final.
 
-Add support for iterating over multiple records instead of just viewing male and female records. You should be able to load a JSON file, then change the male and buttons to forward and back.
+If you have what can only be described as too much time on your hands, or perhaps it
+could be called a craven need to write code, add support for iterating over multiple 
+records instead of just viewing male and female records. You should be able to load 
+a JSON file, then change the male and buttons to forward and back. See
+The **PresidentsJson** project for a somewhat outdated guide:
+
+- [Presidents Json](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/PresidentsJson)
 
             
 ## Hints

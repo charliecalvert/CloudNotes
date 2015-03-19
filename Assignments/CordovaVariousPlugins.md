@@ -1,8 +1,50 @@
-# Cordova Plugins In Class
+# Various Cordova Plugins
 
-Project name: 
+The goal of this assignment is to learn about Cordova Plugins. There are also
+some advanced sections that discuss integrating these plugins into a single
+applications based on our final.
 
-Week11-InClassPlugins
+## Step One: ElvenGeo
+
+Create the ElvenGeo project described here:
+
+- [ElvenGeo](http://www.ccalvert.net/development/android/CordovaPlugin.html#geo)
+
+Modify the name of the project so that the title at the top of the home screen
+says **Lastname-Geo** instead of **Elven-Geo**. Submit a screen shot of your 
+application running on your phone or on AndroidX86 in VirtualBox.
+
+<img class="small" src="https://drive.google.com/uc?id=0B25UTAlOfPRGWkJVMXJvQWhjSDA" alt="ElvenGeo">
+
+## Step Two: CordovaPhoneCall
+
+Install the **CordovaPhoneCall** application. Change the name shown at the top
+of the main screen from **Elven Phone** to **LastName Phone**, where LastName 
+is your last name. Submit screenshots of it running
+on your Phone or on AndroidX86 in VirtualBox.
+
+![ElvenPhone](https://drive.google.com/uc?id=0B25UTAlOfPRGSTNzbHgzRDRBbHc)
+
+## Step Three: Cordova Various Plugins
+
+Install the **CordovaVariousPlugins** application. Change the name shown at the top
+of the main screen from **Elven Various** to **LastName Various**, where LastName 
+is your last name. Submit screenshots of it running on your Phone or on AndroidX86 
+in VirtualBox.
+
+![ElvenVarious](https://drive.google.com/uc?id=0B25UTAlOfPRGdXZjN3dBdDRoRHc)
+
+## Step Four: Extra Credit
+
+As advanced work and for extra credit, integrate as many of the standalone Cordova 
+applications reviewed above as you can into your Midterm/Final project. Each one 
+should have its own Page and own menu item, preferrably in their own dropdown
+menu called **Plugins**:
+
+- Plugins
+    - ElvenGeo
+    - ElvenVarious
+    - ElvenPhone
 
 Use the scripts from **JsObjects/Utilities/Cordova**
 
@@ -112,3 +154,7 @@ Don't forget to use:
 - python3 -m http.server 30025
 
 Both ways to debug application. See the slides.
+
+If you want to change the name of the APK file you create, read this tip:
+
+- <http://stackoverflow.com/a/13157188/253576>
