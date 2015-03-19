@@ -1,10 +1,11 @@
 #JQueryMochaBasics
 
-This assignment is not yet complete. However, there should be enough information here to allow you to get well over the 50% complete mark.
+here should be enough information here to allow you to complete this assignment. There are two parts to this project:
 
-What's missing is not so much the description of what to do, but hints as to how to do it.
+- **Part I**: Create a program that demonstrates an understanding of how to use jQuery to manipular DOM elements such as buttons, input controls, paragraph elements, and lists.
+- **Part II**: Write integration tests, including two async tests, that show that your program works correctly.
 
-**NOTE**: *It would be madness to wait until the night this assignment is due to complete it. There is quite a bit of work here, and you will need to put in an hour or two a night on it to get it completed on time. This is not the midterm, but it is the march to the midterm, so expect it to be a bit demanding. In other words, you will probably need to complete this assignment first before knowing enough to complete the midterm. Or, to put it another way, some of this same material will be on the midterm in more or less this form. If you complete this project you are completing at least part of the midterm.*
+**NOTE**:  It would be madness to wait until the night this assignment is due to complete it. There is quite a bit of work here, and you will need to put in an hour or two a night on it to get it completed on time. This is not the midterm, but it is the march to the midterm, so expect it to be a bit demanding. In other words, you will probably need to complete this assignment first before knowing enough to complete the midterm. Or, to put it another way, some of this same material will be on the midterm in more or less this form. If you complete this project you are completing at least part of the midterm.*
 
 This project involves:
 
@@ -14,17 +15,31 @@ This project involves:
 - Mocha
 - Yeoman
 
-The Yeoman deck: [http://bit.ly/angular-yeoman](http://bit.ly/angular-yeoman)
+The Yeoman deck [http://bit.ly/angular-yeoman](http://bit.ly/angular-yeoman) contains hints on how to get started, but stay focused on Express, not on Angular.
 
-## Video
+Check back regularly for hints as to how to complete this assignment.
 
-Here is a video showing the interface for the JQuery Mocha Basics program. Its just the interface, not much technical depth. But here you can see what it is I want you to build.
+## Example Program and Video {#video}
+
+This example program from JsObjects should help you get started:
+
+- [JsObjects/JavaScript/Design/UnitTests/MochaIntegrationTest][mochint]
+
+Here is a video showing the interface for the JQuery Mocha Basics program. Its just the interface, not much technical depth and some of it may be outdated. But here you can see what it is I want you to build.
 
 - [http://youtu.be/3zzHSSzFKyo](http://youtu.be/3zzHSSzFKyo)
 
+The Elvenware [jQuery page](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html).
+
+Some of these slides, especially near the beginning, may be useful:
+
+- Ajax and jQuery: [http://bit.ly/ajaxjq](http://bit.ly/ajaxjq)
+
 ## Goal
 
-The goal is to get a set of Mocha tests to pass. You do this primarily by creating or completing three files:
+The goal is to create a working program and to get a set of Mocha tests to pass. The working program will serve as the foundation for a more complex program that we will create over the coming weeks. This is one step on the way to a bigger program, but it is an important step. In particular, this is the stage in which we set up a framework for our tests. Our tests will help guide us through the development of the rest of the application.
+
+Your focus should be primarily on creating or completing three files:
 
 - **public/js/Control.js**
 - **views/layout.jade**
@@ -68,6 +83,80 @@ Here is the female view and the getAjax button press.
 Here is the male view and the getJSON button press:
 
 ![Male View](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGckVNN2xPU2lrT0U)
+
+## Binding Event Handlers to Button Clicks {#bind-click}
+
+When you click a button you frequently want a method to be called. The method typically defines the action associated with the button. 
+
+To bind an event handler to a button click you need to use the [jQuery click](http://api.jquery.com/click/) method. For instance, here is how to use jQuery to bind an on-click event handler called **getAddress()** to a button click:
+
+```
+function getAddress() {
+	var address = $('#inputAddress').val();
+	$('#address').html(address);
+}
+
+$('#getAddress').click(getAddress);
+```
+
+This is how to write the same code with an anonymous function for the callback:
+
+```
+
+$('#getAddress').click(function() {
+	var address = $('#inputAddress').val();
+	$('#address').html(address);
+});
+
+```
+
+This latter technique is what you see most often, but both examples get the job done.
+
+
+
+## No On-Click Initialization in DocumentReady {#init-on-click}
+
+Even though I may have shown it in the video, do not put any jQuery onclick initialization in the **document.ready**. In fact, you need only one call in **document.ready**. Here is how to proceed:
+
+ - Select and cut all the code from inside **\$(document.ready)**. Place it above **\$(document).ready** in a method called **initialize**. Leave the public methods outside of **initialize**.
+ - Call **initialize** from inside **$(document).ready**.
+
+Here is what it looks like, minus a few details such as the **getAjax** method:
+
+```
+function errorHandler(jqxhr, textStatus, error) {
+    var err = textStatus + ", " + error;
+    $('#debug').html("Request Failed: " + err);
+}
+
+function getJson(callback) {
+    var result = $.getJSON('./Presidents.json', callback);
+    result.fail(errorHandler);
+}
+
+function initialize() {
+   // place all the code from document ready here.
+   // This is mostly the jquery onClick handlers that begin $("#... 
+}
+
+$(document).ready(function() {
+    initialize();
+});
+```
+
+We ask jquery to connect you onclick events to the HTML by writing code like this:
+
+```
+ $('#getJson').click(function() {
+        getJson(display);
+});
+```	
+
+Its these types of methods that need to be in **initialize**. You should have a good number of them.
+
+For more guidance on this and the next section, see the [MochaIntegrationTests][mochaIntegrate] from JsObjects.
+
+[mochaIntegrate]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/MochaIntegrationTest
 
 ## Jade To Html
 
@@ -117,6 +206,7 @@ When your test is run, it will programmatically and automagically load your HTML
 
 ```
 $('#mainArea').load('./MainCode.html', function() {
+	initialize();
 	// code omitted here
         done();
 });
@@ -124,15 +214,13 @@ $('#mainArea').load('./MainCode.html', function() {
 
 This code first loads **MainCode.html** from the server, and then inserts it into **test/index.html**.
 
-**NOTE**: *In an earlier version of this assignment, I had written **load('MainCode.html')** instead of **load('./MainCode.html')**. That worked in Windows, but not in Linux. Please use the second option, that begins with dot slash. My Apologies.*
+The point is that we have to initialize the onclick methods after we have loaded the HTML. JQuery does not know how to connect your on click methods to your HTML unless the HTML is already loaded. So first we load MainCode.html, then we call the initialize method found in **Control.js*.*
 
-I give you this code in the test, and you don't have to change it. All you have to do is create **MainCode.html** by running the Jade command shown above. Run the command, open up **views/index.html**, pull out almost everything between the **body** tags, and paste it into **MainCode.html**. Add code to load **Control.js** and **style.css**. The screenshot of the IDE shown above reveals the place to put **MainCode.html** in your project. 
+I give you this code in the test, and you don't have to change it. All you have to do is create **MainCode.html** by running the Jade command shown above. Run the command, open up **views/index.html**, pull out almost everything between the **body** tags, and paste it into **MainCode.html**.  The screenshot of the IDE shown above reveals the place to put **MainCode.html** in your project. 
 
 My copy of **MainCode.html** begins like this:
 
 ```
-<script src="../public/js/Control.js"></script>
-<link href="../public/css/style.css" rel="stylesheet" type="text/css">
 <div class="jsonArea">
     <h2>HTML fields</h2>
     <div class="displayArea">
@@ -142,6 +230,17 @@ My copy of **MainCode.html** begins like this:
     </div>
     <hr>
     <div class="displayArea">
+```
+
+Now you can load jquery, **Control.js** and your css in **index.html**:
+
+```
+    <div id="mainArea"></div>
+
+    <!-- include source files here... -->
+    <link href="../public/css/style.css" rel="stylesheet" type="text/css">
+    <script src="../public/components/jquery/dist/jquery.js"></script>
+    <script src="../public/js/Control.js"></script>
 ```
 
 Here is what my test looks like when I run it:
@@ -244,7 +343,11 @@ Scientists.json:
 
 ## getJSON and Ajax calls
 
-I'll talk you through this later.
+There is some information here you might find useful:
+
+- <http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html#async>
+- <http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html#async-done>
+
 
 ## The CSS
 
@@ -380,5 +483,7 @@ Make sure you put **bower_components** and **components** in your **.gitignore**
 Place your project in your repository and submit your repository URL, which should look something like this:
 
 	git@bitbucket.org:lastname/lastname.git
+
+[mochint]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/MochaIntegrationTest
 
 > by [Charlie Calvert](http://elvenware.com/charlie).
