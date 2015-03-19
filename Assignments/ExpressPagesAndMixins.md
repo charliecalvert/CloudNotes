@@ -17,7 +17,13 @@ References:
 
 ## Create page
 
-The details are in the slides listed above, in a slide from noderoutes called *Add About Page***. It's about the third slide in the deck.
+The details are in the slides listed above, in a slide from noderoutes called **Add About Page**. It's about the third slide in the deck. Two key lines are:
+
+```
+var about = require('./routes/About');
+// Code omitted here
+app.use('/about', about);
+```
 
 ## BootStrap
 
@@ -66,6 +72,35 @@ function setActiveMenuItem() {
 ```
 
 After we covered this method in class, I realized that it would throw an exception in your unit tests because it may not be able to find the menus, which at least for now, may not be part of your tests. So I have added a **try catch** statement to suppress the exception if it occurs.
+
+## Bootswatch
+
+[Bootswatch](https://bootswatch.com/) is a tool for adding themes to bootstrap. When working with our mixins, try using it like this:
+ 
+    +bootswatch('cerulean')
+
+For instance:
+
+```
+extends menu-mixin
+
+block append content
+  h1= title
+  p Welcome to #{title}
+
+  +attribution
+
+  +bio
+
+  +bootswatch('cerulean')
+```
+ 
+
+Here bcerulean** is one of the bootswatch themes. Don't, as a number of you did, try using it like this, as it just throws an error:
+
+    +bootswatch
+    
+You have to pass in the name of the theme you want to use, as described above.    
 
 ## The JavaScript
 
@@ -206,4 +241,4 @@ mixin listText
 
 In Week07-InClassMixin
 
-> Written by [Charlie Calvert](https://www.elvenware.com/charlie/).
+

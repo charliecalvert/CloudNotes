@@ -4,6 +4,19 @@
 
 Ask a technical question in the discussion area related to this week's assignments, or to a technology that we have been using regularly. 
 
+## Why Ask Questions
+
+Asking Questions in the discussion are can be helpful because it:
+
+- Gives you the chance of getting the answer earlier. If you ask a question on a Monday, then you could get the answer the same day or the next day, rather than having to wait until Thursday for the answer.
+- Ensures that everyone can benefit from the question. Often questions asked in class can only be answered by me looking at the machine of the person who asked the question, but then no one else in class can see what is on that machine. If we ask questions in the discussion area the right way, then everyone can see the problem and the solution.
+- Does not take up class time, which means that we have more time in class to focus on learning new material, and discussing issues of importance to everyone in the class, rather than issues that may be of importance to only a few people. In the dicussion area all questions are equally important. In class, the best questions are those that will benefit large numbers of students.
+
+Other benefits of asking questions here include:
+
+- Learning how to work inside online forums. Places like stackoverflow, superuser and askubuntu are as important, or more important, than books in this day and age. Just learning to rely on online forums as a means of learning is beneficial
+- The discussion area is a great place to practice answering questions. There is an art form to asking and answering questions online. One way to learn is to practice. The discussion area gives us a safe, protected place to practice writing and answering questions.
+
 ##Appropriate Questions
 
 It would be appropriate to ask about:
