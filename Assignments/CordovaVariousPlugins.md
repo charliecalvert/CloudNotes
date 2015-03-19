@@ -103,3 +103,12 @@ Don't forget near bottom of index.html:
     </script>
 
 ```
+
+## Tips
+
+Don't forget to use:
+
+- chrome://inspect
+- python3 -m http.server 30025
+
+Both ways to debug application. See the slides.
