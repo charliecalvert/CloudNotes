@@ -99,6 +99,9 @@ directory:
 
 ## Step Four: Set Port
 
+In **bin/www**:
+
+
 ```
 #!/usr/bin/env node
 var debug = require('debug')('expressapp');
@@ -208,6 +211,7 @@ Save your work.
 Now install this cordova application on your phone or on AndroidX86
 running in VirtualBox. 
 
+
 First use ADB to ensure that you are connected to your device:
 
 ```
@@ -219,6 +223,20 @@ e8e5bc06	device
 If you are using your phone you don't have to 
 explicitly connect adb. But if you are using VirtualBox, you
 have to run **adb connect <IP OF ANDROIDX86>.**
+
+Remember these commands:
+
+- cordova platform add android
+- cordova build android
+- adb install platforms/android/ant-build/CordovaApp-debug.apk
+
+**NOTE**:*On some systems it may be **MainActivity** instead of **CordovaApp**.*
+
+To uninstall it:
+
+- adb uninstall com.elvenware.elven_node_routes
+
+Details are here: [http://bit.ly/elven-android-studio](http://bit.ly/elven-android-studio)
      
 ## Turn it in
 

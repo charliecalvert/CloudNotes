@@ -170,6 +170,9 @@ Includes:
 
 Add support for phone calls, vibration, and location (Elven Geo) to your Final.
 
+Add a markdown loader page. One page in your final, two buttons. Button one loads
+a Jade/Markdown page. Button two loads an additional Jade/Markdown page.
+
 If you have what can only be described as too much time on your hands, or perhaps it
 could be called a craven need to write code, add support for iterating over multiple 
 records instead of just viewing male and female records. You should be able to load 
