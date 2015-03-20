@@ -8,6 +8,8 @@ The goal of this assignment is to get the RouteParameters program running on:
 This is not a coding assignment. It is just an exercise. You will, however, 
 have to demonstrate an understanding of the program we will be running.
 
+- [Video](http://youtu.be/ft_ih30yqIY)
+
 ## Step One: Find Route Parameters
 
 
