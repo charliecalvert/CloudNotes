@@ -97,7 +97,17 @@ You should see that NodeParams is a symbolic link to your Source/NodeRoutesParam
 directory:
 
     NodeRoutesParams -> /home/charlie/Source/NodeRoutesParams/
-    
+
+Here is the whole process:
+
+```
+cd ~/bin
+ubuntu@ip-172-31-33-228:~/bin
+$ ls -l
+total 0
+lrwxrwxrwx 1 ubuntu ubuntu 37 Mar 19 22:58 NodeRoutesParams -> /home/ubuntu/Source/NodeRoutesParams/
+ubuntu@ip-172-31-33-228:~/bin
+```
 
 ## Step Four: Set Port
 

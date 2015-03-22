@@ -14,6 +14,11 @@ Sample Screenshot:
 
 **NOTE**: *Start working today, the moment you see this document. Don't wait until the night before it is due to begin! We have a hard stop on the final, you must get it in on time.*
 
+## Videos
+
+- [Cordova Node Routes](https://youtu.be/ft_ih30yqIY)
+- [Cordova Phone](https://youtu.be/figWUktn_2I)
+- [Cordova Vibrations Camera](https://youtu.be/_BU4h-Oe3-A)
 
 ## Step One
 
@@ -186,10 +191,6 @@ The **PresidentsJson** project for a somewhat outdated guide:
 
 Work through the entire **JsObjects/Cordova/CordovaFromExpress** project very carefully. Make sure you understand it. It is so very close to what you need to do in the final that you can all but use it as an exact template with illustrations of how to complete each step.
 
-As detailed elsewhere, run the Python web server in your www folder to see if you have at least parts of the app working correctly. For instance, you can check if you are loading all the files properly. 
-
-    python3 -m http.server 30025           
-
 At some point, you are going to find that the code in **Week12Final** is close enough to what you want that you don't want to copy the files over the **Source** folder again. And yet, you will still likely be making changes to both **Week12Final** and **Source** and you will want to be sure some of those changes end up in both projects. The tool you want is **meld**. Here is the command, as it would be issued from the root of your repository:
 
     meld Week12Final/www Source/public
@@ -209,7 +210,75 @@ Linking to Bootstrap and JQuery. This worked for me:
 
 Of course there has to really be a **components** folder. For instance, there should not be a **public/components** folder.   
 
+## Python Web Server {#python-web}
+
+As detailed elsewhere, run the Python web server in your www folder to see if you have at least parts of the app working correctly. For instance, you can check if you are loading all the files properly.
+
+```
+    $ python3 -m http.server 30025
+    Serving HTTP on 0.0.0.0 port 30025 ...
+    127.0.0.1 - - [21/Mar/2015 10:01:02] "GET / HTTP/1.1" 200 -
+    127.0.0.1 - - [21/Mar/2015 10:01:04] "GET /www/ HTTP/1.1" 200 -
+```
+
+You only need to type the first line shown above. The rest are output from the server once it starts.
+
+### Using the Phone Code in a Browser {#phone-browser}
+
+Go here with your phone: [http://calvert.work/phone/](http://calvert.work/phone/)
+
+Click on the two bottom links. They should pop up the phone. If they do not, I
+would imagine this means that the browser on your phone does not support
+those features.
+
+We did not cover in this class, but I did the following to get the page
+running on my AWS site:
+
+- Install lamp, as described [here][phoneBrowser]. I believe that ubuntu
+now comes with tasksel installed, so you can skip that step. Remember to
+pick a password for MySql that you can remember as you might want the
+feature x months from now, but not today.
+- Save and copy the attached index.html to your AWS instance as described below.
+- Pull the latest from JsObjects, navigate to the **Cordova/CordovaPhoneCall**
+directory, run **bower install**, and copy the www folder to /var/www/html:
+
+**NOTE**:*Installing lamp puts support for the Apache Web Server, MySQL,
+PHP, Python and Perl on your system. We are really only interested in
+Apache. The root folder from which Apache serves up HTML is **/var/www/html**.*
+
+Copy index.html:
+
+```
+sudo mv /var/www/html/index.html /var/www/html/apache.html
+sudo cp index.html /var/www/html/index.html
+```
+
+Set up and copy Cordova Phone Call:
+
+```
+cd ~/Git/JsObjects/Cordova/CordovaPhoneCall/
+bower install
+sudo mkdir /var/www/html/phone
+sudo cp -r www/* /var/www/html/phone/.
+```
+
+If you want to edit index.html on EC2, then
+
+```
+cd /var/www/html/
+sudo nano index.html
+```
+
+We did not have time to get into in class, but the availability of individual
+features can be detected in various ways, but the most common is with modernizr.
+If you can't make a phone call from inside your browser, I'd like to know. Go to
+the discussion area, find the appropriate thread, and tell
+me what device you are running, what version of the OS, and what browser you
+are using.
+
+
 [build-node]: https://github.com/charliecalvert/JsObjects/blob/master/Cordova/CordovaNodeRoutes/www/BuildNodeRoutes
 [nodeRoutes03]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes03
 [nodeParams]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesParams
 [elvenGeo]: https://github.com/charliecalvert/JsObjects/tree/master/Cordova/ElvenGeo
+[phoneBrowser]:http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
