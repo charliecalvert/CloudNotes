@@ -223,9 +223,14 @@ For instance:
 	C:\Users\charles.calvert\Git>echo %GIT_SSH%
 	c:\Users\charles.calvert\Bin\PLINK.EXE
 
-Make sure **Git.exe** is on your path. It can usually be found here:
+Make sure **Git.exe** is on your path. It can usually be found here,
+being careful to get the spaces right:
 
 	C:\Program Files (x86)\Git\cmd
+	
+Make sure you enter the following at the command prompt:
+
+	git config --global push.default simple
 	
 It is best if you can see Pageant in the **notification area**. Start 
 pageant, then set "Show icon and notifications.*
