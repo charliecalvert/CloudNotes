@@ -22,14 +22,17 @@ You will need, at minimun:
 - An Evernote account
 - An account on Cloud9 and/or Koding
 - A Twitter account
+- A JetBrains account for the student version of WebStorm
 
 I have no idea why Twitter has a bad reputation at BC. It is an
 essential resource for developers. You should be following all the 
 accounts found here:
 
-[twiess]: 
+[twiess]: http://elvenware.com/charlie/development/cloud/TwitterAccountsToFollow.html
 
-
+An excellent way to start each day would be to follow the links in
+the above file to see what the best developers in the industry are 
+thinking on a day to day basis.
 
 ## Class Time
 
@@ -136,10 +139,67 @@ at times, but if I judge that it is likely that we might end up working
 on the wrong instance of a project or document, then I will ask the 
 student to sort things out on their own before giving them more help.
 
+**NOTE**:*Never put a space in a file name or folder name. This may work
+with some programs, but there are various command line tools commonly
+used by open source programmers that do not understand Windows spaces.
+There are occasions when a space in a file or directory name makes sense,
+but if you are writing code, the suggested practice is not to use 
+spaces at all in file or directory names. If you absolutely have to
+use a space in a file or folder name, and encounter problems, try 
+putting the path in quotes. But even if you can figure out how to work
+around it, other developers will likely be frustrated by the presence
+of spaces in a folder name. They will not appreciate their presence. 
+Also, nothing is worse than a two hour debug session which ends by the
+realization that the problem was caused by a space in a directory name.
+Whatever you gained by adding the space is usually not worth the 
+potential downside.*
+
 
 ## DOSKEY
 
 Everyone should put together a DOSKEY file with a structure like this:
+
+```
+@ECHO OFF
+
+call doskey.exe home=cd %USERPROFILE%
+call doskey.exe jo=cd %USERPROFILE%\Git\JsObjects
+call doskey.exe jod=cd %USERPROFILE%\Git\JsObjects\Data
+call doskey.exe joj=cd %USERPROFILE%\Git\JsObjects\JavaScript
+call doskey.exe jou=cd %USERPROFILE%\Git\JsObjects\Utilities
+call doskey.exe jot=cd %USERPROFILE%\Git\JsObjects\JavaScript\UnitTests
+call doskey.exe gitdir=cd %USERPROFILE%\Git
+
+```
+
+Place something like the above, with your own additions, in your
+**Bin** directory:
+
+	%USERPROFILE%\Bin\DosAlias.bat
+	
+You can then create a shortcut to C:\Windows\System32\Cmd.exe. Windows
+will ask if you want to put the shortcut on the Desktop. That will do
+for now. Right click on the shortcut and put this in the **Target**
+field:
+
+	C:\Windows\System32\cmd.exe /k DosAlias.bat
+	
+That will start a command prompt and run your DosAlias.bat file.
+
+Put this in the **start in** field:
+
+	%USERPROFILE%
+
+There are numerous variants you can run on this process, but you get
+the general idea.
+
+Especially during the first few weeks of class, many students will
+probably want to dedicate considerable time to honing their **DosAlias**
+file. 
+
+- [DosKey](http://en.wikipedia.org/wiki/DOSKEY)
+
+- [Reference](http://superuser.com/a/106850)
 
 
 
@@ -303,7 +363,55 @@ Other apps that I use regularly:
 - Cloud Nine
 - Koding
 
-[chromeApps][https://chrome.google.com/webstore/launcher]
+Launch them from the [Chrome Launcher][chromeLauncher].
+
+[chromeLauncher]: https://chrome.google.com/webstore/launcher
+[chromeApps]: https://chrome.google.com/webstore/category/apps
+
+## WebStorm
+
+Create [a student account][jbstudent] on the JetBrains site. See the
+**apply now** button at the bottom of the [linked page][jbstudent].
+
+Download WebStorm. Install it into your %USERPROFILE%/Bin (Home/Bin) 
+directory:
+
+	c:\Users\UserName\Bin\WebStorm
+	
+During the install, you will have a chance to enter your JetBrains
+user name and password. 
+
+We use WebStorm instead of Visual Studio because it is entirely cross
+platform. It runs on Linux, Mac and Windows.
+
+[jbstudent]: https://www.jetbrains.com/student/
 
 
+## NPM Config
+
+To see the contents of the config file:
+
+	npm config list
+	
+It might look like this by default:
+
+```
+C:\Users\charles.calvert\Git\JsObjects\Utilities\NodeInstall>npm config list
+; cli configs
+user-agent = "npm/2.7.4 node/v0.12.2 win32 x64"
+
+; builtin config undefined
+prefix = "C:\\Users\\charles.calvert\\AppData\\Roaming\\npm"
+
+; node bin location = C:\Program Files\nodejs\\node.exe
+; cwd = C:\Users\charles.calvert\Git\JsObjects\Utilities\NodeInstall
+; HOME = C:\Users\charles.calvert
+; 'npm config ls -l' to show all defaults.
+```
+
+Let's get the NPM directory somewhere we can more easily find it:
+
+	npm config set prefix %USERPROFILE%\Npm	
+	
+	
 
