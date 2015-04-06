@@ -237,7 +237,7 @@ pageant, then set "Show icon and notifications.*
 
 **TIP**: *Consider putting your SSH keys in an encrypted folder.*
 
-Error:
+You might get this error:
 
 ```
 Cloning into 'CloudNotes'...
@@ -260,9 +260,19 @@ Fix it like this:
 When they ask you to store the key in the cache, answer yes. Then use
 CTRL-C to exit the process. (Don't log in.)
 	
-	
+Check the contents of your .gitconfig file:
 
-
+```
+C:\Users\charles.calvert>type .gitconfig
+[gui]
+        recentrepo = C:/Users/charles.calvert/Git/JsObjects
+        recentrepo = C:/Users/charles.calvert/Git/CloudNotes
+[push]
+        default = simple
+[user]
+        email = charlie@elvenware.com
+        name = Charlie at A134
+```
 
 ## Chrome
 
