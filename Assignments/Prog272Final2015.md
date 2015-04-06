@@ -187,9 +187,25 @@ The **PresidentsJson** project for a somewhat outdated guide:
 - [Presidents Json](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/PresidentsJson)
 
             
+## Turn it in
+
+The bottom line is this:
+
+- Complete steps 6 and 7: Route parameters, Cordova Plugins
+- Move your midterm to Cordova as best you can
+- Add new pages to the Cordova app for extra credit.
+
+
+Also, don't miss the [menu on mobile][menuMobile] hint.
+
+[menuMobile]:https://bc.instructure.com/courses/1078221/discussion_topics/4173551
+
+
 ## Hints
 
-Work through the entire **JsObjects/Cordova/CordovaFromExpress** project very carefully. Make sure you understand it. It is so very close to what you need to do in the final that you can all but use it as an exact template with illustrations of how to complete each step.
+Look over the **JsObjects/Cordova/CordovaNodeRoutes** project very carefully. Make sure you understand it. The relationship between **CordovaNodeRoutes** and **NodeRouteParams** is similar to the relationship between your Cordova and Web App versions of the Final. Compare, for instance, their respective versions of **Control.js** and **style.css**. 
+
+**NOTE**: *You can use **meld** to compare two files or directories.*
 
 At some point, you are going to find that the code in **Week12Final** is close enough to what you want that you don't want to copy the files over the **Source** folder again. And yet, you will still likely be making changes to both **Week12Final** and **Source** and you will want to be sure some of those changes end up in both projects. The tool you want is **meld**. Here is the command, as it would be issued from the root of your repository:
 
@@ -209,6 +225,74 @@ Linking to Bootstrap and JQuery. This worked for me:
 ```
 
 Of course there has to really be a **components** folder. For instance, there should not be a **public/components** folder.   
+
+## Index.html format {#index-format}
+
+In **index.html**, when linking in files, the name of the folder you use does not matter. You can call your bower folder **components** or **bower_components**. Just be sure you don't put a slash in front of it.
+
+Write this:
+
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+or this:
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+Not this
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">   
+
+If you are at all uncertain as to whether or not **jquery** and **bootstrap** are getting
+loaded, don't forget to use the Chrome debugger to inspect your results on your device.
+Type this in the address bar of the browser:
+
+    chrome://inspect
+    
+Then go the Network page and press F5 to refresh. You will be able to see what files are 
+loading.    
+
+## JadeToHtml
+
+Here is my **JadeToHtml** file:
+
+```
+#! /bin/bash
+
+./node_modules/.bin/jade --pretty views/index.jade
+./node_modules/.bin/jade --pretty views/JsonAjax.jade
+```
+
+The first line tells Linux where the bash scripting engine is located. The script 
+would still work without this line.
+
+The next line begins by pointing at the copy of Jade in my **node_modules**
+folder. Of course, this won't work unless you have first run **npm install**
+and created a **node_modules** folder. Most of you have done that by now.
+
+The line continues by passing the pretty flag, which is described like this:
+
+```
+jade --help
+ Usage: jade [options] [dir|file ...]
+
+  Options:
+
+// Text omitted here
+    -P, --pretty           compile pretty html output
+// Text omitted here
+```
+
+Finally, we pass in the name of the file that we want to convert to HTML:
+
+```
+    views/JsonAjax.jade
+```
+
+Put it all together and we get this:
+
+    ./node_modules/.bin/jade --pretty views/JsonAjax.jade
+
 
 ## Python Web Server {#python-web}
 

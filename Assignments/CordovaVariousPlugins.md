@@ -46,7 +46,7 @@ menu called **Plugins**:
     - ElvenVarious
     - ElvenPhone
 
-Use the scripts from **JsObjects/Utilities/Cordova**
+Use the scripts from **JsObjects/Utilities/CordovaTools**
 
 Put **plugins** in your **.gitignore**. Save the code to set up plugins in **SetupPlugins**:
 
@@ -145,6 +145,21 @@ Don't forget near bottom of index.html:
     </script>
 
 ```
+
+## Turn it in
+
+To complete this assignment, create three screenshots, one for each application.
+Attach these screen shots to your Final submission. 
+
+The screen shots should look similar to the ones shown above, but I should see 
+your name in the title instead of the word Elven. For instance, **LastName Geo**, 
+**LastName Various**, **LastName Phone**,  where **LastName** is your last name.
+
+The programs may not work correctly in VirtualBox, depending a little on
+the machine that hosts the VirtualBox VM. This does not matter. I just want
+to see the programs running, and your name in them. 
+
+Check in your version of the code.
 
 ## Tips
 

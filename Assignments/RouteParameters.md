@@ -80,8 +80,12 @@ of JsObjects:
 ```    
 
 Now we need to create a symbolic link to our project. We want it to
-appear that our project is in the **~/bin directory**. To do this, create
-a symbolic link. The simplest way to do that is to navigate to the
+appear that our project is in the **~/bin directory**. To do this, first
+be sure that **~/bin** exists on your system. If it doesn't create it:
+
+    mkdir ~/bin
+    
+Now create a symbolic link. The simplest way to do that is to navigate to the
 folder that contains your project. For instance, if you project is in
 **Source** directory, then navigate to the source directory. Then
 create the symbolic link like this:
@@ -139,7 +143,7 @@ Upstart can be used to keep your program running after you close
 your shell and to ensure that it restarts automatically when you
 reboot the system. Take a momement to learn about upstart:
 
-- [UpStart on Elvenware][elfUpstate]
+- [UpStart on Elvenware][elfUpstart]
 - [UpStart home page](http://upstart.ubuntu.com/index.html)
 
 [elfUpstart]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart
@@ -252,10 +256,14 @@ Details are here: [http://bit.ly/elven-android-studio](http://bit.ly/elven-andro
      
 ## Turn it in
 
-Create screen shots of your web app and cordova app running. Attach
-these screen shots when you submit the assignment. Also include
+Create screen shots of your web app and cordova app running and talking
+to the server. For instance, press the **RouteParms/Able** button and 
+then take the screen shot.
+
+Attach these screen shots when you submit the assignment. Also include
 the address of your instance running on AWS at your Elastic IP
-and assignment Port.
+and assignment Port. Put your source code for both programs 
+in Week12-NodeRoutes.
 
 
 [nodeParams]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesParams

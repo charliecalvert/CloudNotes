@@ -34,8 +34,8 @@ extends layout
 
 block content
 
-    body
-        +nav("Prog272 Midterm", "dropdown_menu", "navbar-default navbar-fixed-top")
+    .header
+        +nav("Prog272 Midterm", "navigationbar", "navbar-default navbar-fixed-top")
             +nav_item( "/", "home", "active" ) Home
             +nav_item( "json-ajax", "json-ajax") JsonAjax
             +nav_item( "about", "about" ) About
@@ -47,6 +47,7 @@ block content
                 +nav_header Nav header
                 +nav_item( "#" ) Separated link
                 +nav_item( "#" ) One more separated link
+
 ```                
 
 Set the active menu:
@@ -146,19 +147,19 @@ mixin bootswatch(theme)
 //- Navbar mixins
 mixin nav(name, id, style)
     - var style = (typeof style === 'undefined') ? "navbar-default" : style
-    nav( role="navigation", class=["navbar", style] )
-        .container-fluid
+    nav(class=["navbar", style], role="navigation")
+        .container-fluid#navfluid
             .navbar-header
-                .navbar-header
-                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navigationbar')
                     span.sr-only Toggle navigation
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href='#') Project name
+                a.navbar-brand(href='./index.html') Project name
             .collapse.navbar-collapse( id=id )
                 ul.nav.navbar-nav
                     block
+
 mixin nav_item(href, idName, active)
     li(class=active, id=idName): a( href=href )
         block
@@ -177,8 +178,10 @@ mixin nav_item_dropdowna(href, active)
         span.caret
         ul.dropdown-menu( role="menu" )
             block
+
 mixin nav_divider
     li.divider
+
 mixin nav_header
     li.dropdown-header
         block
@@ -191,7 +194,6 @@ mixin panel(heading, style)
         .panel-heading= heading
         .panel-body
             block
-
 
 //- Button mixin
 mixin button(style, href, size)
@@ -209,15 +211,16 @@ mixin button(style, href, size)
 
 //- List group mixins
 - var groupType
-mixin listGroup(type)
+mixin listGroup(type, id)
     - groupType = type
     case groupType
         when 'list'
-            ul.list-group
+            ul.list-group(id=id)
                 block
         default
-            .list-group
+            .list-group(id=id)
                 block
+
 mixin listItem(arg1, arg2)
     case groupType
         when 'list'
@@ -229,9 +232,11 @@ mixin listItem(arg1, arg2)
         default
             .list-group-item( class=["list-group-item", arg1] )
                 block
+
 mixin listHeading
     h4.list-group-item-heading
         block
+
 mixin listText
     .list-group-item-text
         block

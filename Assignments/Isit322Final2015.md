@@ -212,7 +212,9 @@ we use the following technologies to create modern, connected applications:
             
 ## Hints
 
-Work through the entire **JsObjects/Cordova/CordovaFromExpress** project very carefully. Make sure you understand it. It is so very close to what you need to do in the final that you can all but use it as an exact template with illustrations of how to complete each step.
+Look over the **JsObjects/Cordova/CordovaNodeRoutes** project very carefully. Make sure you understand it. The relationship between **CordovaNodeRoutes** and **NodeRouteParams** is similar to the relationship between your Cordova and Web App versions of the Final. Compare, for instance, their respective versions of **Control.js** and **style.css**. 
+
+**NOTE**: *You can use **meld** to compare two files or directories.*
 
 At some point, you are going to find that the code in **Week12Final** is close enough to what you want that you don't want to copy the files over the **Source** folder again. And yet, you will still likely be making changes to both **Week12Final** and **Source** and you will want to be sure some of those changes end up in both projects. The tool you want is **meld**. Here is the command, as it would be issued from the root of your repository:
 
