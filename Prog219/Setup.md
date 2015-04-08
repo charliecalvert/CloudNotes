@@ -10,6 +10,14 @@ cross platform tools:
 - Package Manager: NPM
 - SSH: Putty
 
+Some Links:
+
+- [JavaScript Page][javaScript]
+- [JavaScript Books][books]
+
+[javaScript]: http://elvenware.com/charlie/development/web/JavaScript/GettingStarted.html
+[books]: http://elvenware.com/charlie/development/web/JavaScript/GettingStarted.html#the-right-books
+
 ## Accounts
 
 You will need, at minimun:
