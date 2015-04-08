@@ -1,6 +1,6 @@
 # Express Basics
 
-This assignment is very similar to the in-class exercise we did on Thursday.
+This assignment is designed to introduce you to [Express Js](http://expressjs.com/).
 
 - Express Presentation: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 

@@ -1,29 +1,35 @@
-# Git New Repo
+# Git Account
 
 Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
-    Create a new BitBucket account if you don't have one already
-    Use an existing BitBucket account.
+- Create a new BitBucket account if you don't have one already
+- Use an existing BitBucket account.
+- If you prefer GitHub or some other cloud repository, that should also work.
 
 In the account, create a new repository. Name your git repository like this, where isit322 should be name of your class:
 
-	isit322_lastname
+	prog219_lastname
 
 For instance:
 
+	prog219_calvert
 	prog272_calvert
 	prog270_calvert
 	isit320_calvert
-	isit320_calvert
+	isit322_calvert
 
-Make sure you give me read/write access to it. Use the send invitation link and use ccalvert as my id.
+Make sure you give me read/write access to it. Use the send invitation link and use **ccalvert** as my id.
 
 And most important, include a .gitignore with the following items in it:
 
 	node_modules
 	.metadata
 	.idea
+	bower_components
+	components
 	Thumbs.db
+	*.zip
+
 
 This video shows how to proceed:
 
