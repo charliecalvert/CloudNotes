@@ -15,6 +15,8 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
 ## Get Started
 
+	npm install -g express-generator
+
 To create an express application:
 
 	express MyProject
