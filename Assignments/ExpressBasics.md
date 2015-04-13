@@ -25,6 +25,8 @@ To create an express application:
 
 Load the project in WebStorm. Open up **/bin/www** and set the port 30025. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to *start* your project when you type **npm start**.
 
+**NOTE**: *You will need to install **nodemon** if you have not done so already. To install, issue this command **npm install -g nodemon**.*
+
 Now start the project:
 
 	npm start
@@ -74,11 +76,11 @@ Also, in index.jade, be sure you have created a paragraph in which to display yo
 
 #Turn it in
 
-Place your project files in a folder of your repository called **Week04-TempProject**. In the same folder of your repository, Include a screen shot of your project running in a browser.
+Place your project files in a folder of your repository called **Week01-MyProject**. In the same folder of your repository, Include a screen shot of your project running in a browser. 
 
 
 ![shot](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGS0lFaUNiY3RjOUE)
 
 When you turn in the the assignment, include the URL of your repository. It should look something like this:
 
-	git@bitbucket.com:lastname/prog270_lastname.git
+	git@bitbucket.com:lastname/prog219_lastname.git

@@ -39,6 +39,11 @@ Other related videos are here:
 
 - Git PlayList YouTube: [http://bit.ly/GitYouTube](http://bit.ly/GitYouTube)
 
+Here is a deck with some information that you might find useful:
+
+- Git Basics: [http://bit.ly/git-basics](http://bit.ly/git-basics)
+- Git on Elvenware: [http://bit.ly/elven-git](http://bit.ly/elven-git)
+
 Please submit the URL of your repository in the Text Entry section of Canvas when you post this assignment. The URL you submit should, in a general way, follow this format:
 
 	git clone git@bitbucket.org:lastname/prog272_lastname.git
