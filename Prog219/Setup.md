@@ -265,6 +265,9 @@ zip file. Since everyone
 
 Download the zip file from here: 
 
+- [Putty][puttydn]
+
+[puttydn]:http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 ### Step Two: Bin Directory
 

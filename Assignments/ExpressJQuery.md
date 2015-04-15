@@ -120,7 +120,7 @@ html
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
-        scripts('javascripts/components/jquery/dist/jquery.js')
+        script(src='components/jquery/dist/jquery.js')
         etc...
 ```
 
