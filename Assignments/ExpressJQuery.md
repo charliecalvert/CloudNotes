@@ -134,9 +134,19 @@ In **index.jade** use Jade to create a button and two paragraphs:
     p#stringHolder
     p#readyCalled
     
-Add a button to index.jade with an id of **sendString**. Use the constuctor of **MyObject** to set
-up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places
-a string in your **stringHolder** paragraph.
+Add a button to index.jade with an id of **sendString**. Use the constuctor of **MyObject** to set up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places a string in your **stringHolder** paragraph.
+
+When the user clicks on the button a method must be called. To make the possible, add code in the constructor that defines an event handler for the button click and method to handle the event:
+
+```
+    function MyObject() {
+        $('#sendString').click(showString);
+    }
+
+    function showString() {
+        $('#stringHolder').html('Send string was clicked');
+    }
+```
 
 ## Step Five: Lists {#lists}
 
