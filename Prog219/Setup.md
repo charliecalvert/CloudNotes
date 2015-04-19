@@ -247,11 +247,9 @@ Here is how to clone JsObjects:
 
 - git clone http://github.com/charliecalvert/JsObjects.git
 
-
 ## Git and Putty
 
-Unfortunately, we don't have putty set up on our machines. This we will
-have to setup by ourselves.
+On Windows, we have no built in SSH client. As result, we use a tool called Putty, which is an open source, third party, project.
 
 ### Step One: Download
 
@@ -261,9 +259,9 @@ Putty comes in two forms:
 - A Windows installer
 
 If you are admin on your machine, use the installer, otherwise use the
-zip file. Since everyone 
+zip file. 
 
-Download the zip file from here: 
+Download the zip  file or installer from here: 
 
 - [Putty][puttydn]
 
@@ -271,41 +269,38 @@ Download the zip file from here:
 
 ### Step Two: Bin Directory
 
-We need a place to put executables that we will run frequently. This
-will be:
+If you are not admin on your machine, you will need to decide where to put Putty. This is really a general issue, and not one limited just to Putty. In particular, we need a place to put executables and scripts that we will run frequently. This could be:
 
 - C:\Users\UserName\Bin
 - %USERPROFILE%\Bin
 
-Create this directory and put it on your path. Restart your command
-session.
+The two lines above are just two ways of saying the same thing. I show them both hoping that at least one of them will make sense to you. Create the **Bin** directory and put it on your path. Restart your command session.
 
 ### Step Three: Putty in Bin
 
-Put the contents of the Putty zip file in your bin directory. 
+If you are not admin on your machine, then put the contents of the Putty zip file in your bin directory. Otherwise, just leave the Putty files where they were installed, but make sure they are on your path. 
 
-Make sure you have an environment variable called GIT_SSH. It
-should be set to:
+Create an environment variable called GIT_SSH. It should be set to:
 
 	c:\Users\charles.calvert\Bin\PLINK.EXE
 	
-For instance:	
+You can use the Windows GUI tools for manipulating the environment, or you can try using the built-in SETX utility:
 
-	C:\Users\charles.calvert\Git>echo %GIT_SSH%
+    setx GIT_SSH=c:\Users\charles.calvert\Bin\PLINK.EXE
+
+You will probably need to restart the Windows Command Line after making this change. To test your work, echo it from the command line. For instance:	
+
+	>echo %GIT_SSH%
 	c:\Users\charles.calvert\Bin\PLINK.EXE
 
-Make sure **Git.exe** is on your path. It can usually be found here,
-being careful to get the spaces right:
+You should also make sure **Git.exe** is on your path. It can usually be found here. When working with this path, be careful to get the spaces right:
 
 	C:\Program Files (x86)\Git\cmd
 	
-Make sure you enter the following at the command prompt:
+Also Make sure you enter the following at the command prompt:
 
 	git config --global push.default simple
 	
-It is best if you can see Pageant in the **notification area**. Start 
-pageant, then set "Show icon and notifications.*
-
 **TIP**: *Consider putting your SSH keys in an encrypted folder.*
 
 You might get this error:

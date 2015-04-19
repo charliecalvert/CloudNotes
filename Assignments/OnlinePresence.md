@@ -207,6 +207,11 @@ To learn more about sharing documents, watch this video:
 
 Also create a note with Microsoft One Note. OneNote is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document. **In particular, put it in the same *OneDrive* folder where you placed your other Microsoft related documents.** Double check to make sure you are sharing the folder with the Microsoft email specified in the section on **OneDrive**.
 
+When you are done, there should be two documents in OneDrive folder:
+
+- A Word online document similar to the document you created in Google Drive
+- A OneNote document as described in this section.
+
 Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
 
 ## Evernote 

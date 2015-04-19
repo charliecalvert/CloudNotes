@@ -43,7 +43,7 @@ Create a **button** with an id of **getKipling**.  The caption for the button sh
 
 ## Step Four
 
-Add another button with the id **getNumbers** and the caption **Get Numbers**. Write a loop that displays, in **myList** the squares of the numbers between 5 and 15.
+Add another button with the id **getNumbers** and the caption **Get Numbers**. Write a loop that displays, in **myList** the squares of the numbers between 5 and 15. Include the squares of both 5 and 15 in your answer. So one might start with 25, etc....
 
 ## Step Five
 
@@ -71,11 +71,11 @@ When I open the folder that contains your project, I should see the code for you
 
 Good: 
 
-    .../Git/prog219-lastname/Week02-ExpressjQuery/package.json
+    .../Git/prog219-lastname/Week02-ExpressjQueryNumbers/package.json
 
 Not so good:
 
-    .../Git/prog219-lastname/Week02-ExpressjQuery/ExpressProject/package.json
+    .../Git/prog219-lastname/Week02-ExpressjQueryNumbers/MyProject/package.json
 
 ##Optional
 

@@ -148,6 +148,8 @@ When the user clicks on the button a method must be called. To make the possible
     }
 ```
 
+**NOTE**: *The above code should appear in **Control.js**. As a rule, it makes no sense to place JavaScript code in a Jade file. The purpose of a Jade file is to create HTML. It is not a place for, or a means of creating, JavaScript.* 
+
 ## Step Five: Lists {#lists}
 
 Create **ul** element in your **index.jade**:
@@ -158,13 +160,13 @@ Add a button:
 
     button#getItems Get Items
 
-Handle it:
+In **Control.js** we handle the button click like this:
 
     function MyObject() {
         $('#getItems').click(showItems);
     }
 
-Add items to the list inside the **addItems** method:
+In **Control.js** we add items to the list with this **showItems** method:
 
 ```
 function showItems() {
@@ -176,18 +178,19 @@ function showItems() {
 
 ## Step Six: Add Marie {#marie}
 
-Add a marie button:
+Add a marie button to **index.jade**:
 
     button#getMarie Get Marie
 
-Handle it:
+Handle it like this in **Control.js**:
 
     function MyObject() {
+        $('#sendString').click(showString);
         $('#getItems').click(showItems);
         $('#getMarie').click(showMarie);
     }
 
-Inside **showMarie** create a JavaScript object that follows the rules of JSON:
+Inside the **showMarie** method create a JavaScript object that follows the rules of JSON:
 
 ```
 var marie = {
@@ -222,3 +225,15 @@ for (var property in marie) {
 ## Turn it in
 
 Place the contents of your project in your repository in a folder called **Week02-ExpressJQuery**.
+
+When you make the submission remind me of the URL of your repository and specify the folder in your repository where the project resides. 
+
+When I open the folder that contains your project, I should see the code for your project, not another folder that contains the code. 
+
+Good: 
+
+    .../Git/prog219-lastname/Week02-ExpressjQuery/package.json
+
+Not so good:
+
+    .../Git/prog219-lastname/Week02-ExpressjQuery/ExpressProject/package.json
