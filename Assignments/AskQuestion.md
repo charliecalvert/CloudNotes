@@ -4,6 +4,10 @@
 
 Ask a technical question in the discussion area related to this week's assignments, or to a technology that we have been using regularly. 
 
+Here is a quick video about how to create new questions and how to reply to existing questions.
+
+
+
 ## Why Ask Questions
 
 Asking Questions in the discussion are can be helpful because it:
