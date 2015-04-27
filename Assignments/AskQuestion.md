@@ -6,7 +6,7 @@ Ask a technical question in the discussion area related to this week's assignmen
 
 Here is a quick video about how to create new questions and how to reply to existing questions.
 
-
+- [https://youtu.be/60kUajiq4as](https://youtu.be/60kUajiq4as)
 
 ## Why Ask Questions
 

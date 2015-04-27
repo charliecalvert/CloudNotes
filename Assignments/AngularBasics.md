@@ -31,7 +31,9 @@ Once you have have the set up completed, then you want to create an angular proj
     cd Week02-Angular
     yo angular
 
-The last command will take a long time to run, even on a reasonably fast machine. On a slow machine, it might take a significant period of time, perhaps 15 minutes or more.
+When working through the prompts you get when you type **yo angular**, you should probably say **no** to SASS (with Compass) and yes to everything else. But you can use SASS if you want -- it's just that some would probably appreciate it if we don't learn another new tool right at this time in the course unless we absolutely have to use it. Also, to be honest, CSS templating is not a subject I know very well....
+
+The **yo angular** command will take a long time to run, even on a reasonably fast machine. On a slow machine, it might take a significant period of time, perhaps 15 minutes or more. On my home machine, which is reasonably powerful, it takes 1 minute and forty seconds.
 
 ## Step Three
 
@@ -39,19 +41,25 @@ Run the application with this command:
 
     grunt serve
 
+When you run grunt serve, the page should automatically be launched in Chrome. If it does not, you can browse to [http://localhost:9000](http://localhost:9000). Ultimately, of course, we should change the port to 30025 by editing **Gruntfile.js**.
+
 Run the unit tests with this command:
 
     grunt test
 
+When running the tests, you should see output that says: **Executed 2 of 2 SUCCESS**. And also **Done, without errors.**. That is part of what I would like to see in one of your screen shots.
+
 ## Step Four
 
-Add your name to one of the HTML files such as about.html so that it appears on the main screen or on the about page. 
+Add your name to one of the HTML files such as **about.html** so that it appears on the main screen or on the about page. 
 
 Take screen shots of the interface and of the results from running the tests.
 
 ## Turn it in.
 
-Check in your project to BitBucket. Attach the two screen shots to your assignment when you submit it. As always, it is helpful, or at least nice, to provide the URL for your repository and the name of the directory where you submitted the assignment. (Since this project was delayed so many times, I'm hardly in a position to get fussy if it is in **Week02-Angular** or **Week03-Angular** etc....)
+Check in your project to BitBucket. Attach the two screen shots to your assignment when you submit it. As always, it is helpful, or at least nice, to provide the URL for your repository and the name of the directory where you submitted the assignment. 
+
+Since this project was delayed so many times, I'm hardly in a position to get fussy if it is in **Week02-Angular** or **Week03-Angular** etc.... But it might be nice to include the name of the folder you used when you submit the assignment.
 
 
  
