@@ -17,7 +17,7 @@ There are many [generators](http://yeoman.io/generators/) for use with yeoman. W
 
 Ensure that all the pre-requisites are installed. Go to the command prompt and run this command:
 
-    npm install -g grunt-cli bower yo generator-karma generator-angular
+    npm install -g karma-cli grunt-cli bower yo generator-karma generator-angular
 
 If you have already given one or more of the those commands, I don't think any harm will be done by issuing the command a second time. On the other hand, you only need to install these global utilities one time. There is no need to issue the command again. (You might, however, want to update them at some point, but that is a separate topic.) Remember that you can see what is currently installed globally with this command:
 
