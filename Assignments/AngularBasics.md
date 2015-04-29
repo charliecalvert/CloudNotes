@@ -13,6 +13,10 @@ There are many [generators](http://yeoman.io/generators/) for use with yeoman. W
 
 [genang]:https://github.com/yeoman/generator-angular
 
+I want to see your about page, but here is what the main page of the application looks like when all is running correctly.
+
+![AngularBasics](https://drive.google.com/uc?id=0B25UTAlOfPRGNjNraXhmdk5udjA)
+
 ## Step One
 
 Ensure that all the pre-requisites are installed. Go to the command prompt and run this command:
@@ -34,6 +38,11 @@ Once you have have the set up completed, then you want to create an angular proj
 When working through the prompts you get when you type **yo angular**, you should probably say **no** to SASS (with Compass) and yes to everything else. But you can use SASS if you want -- it's just that some would probably appreciate it if we don't learn another new tool right at this time in the course unless we absolutely have to use it. Also, to be honest, CSS templating is not a subject I know very well....
 
 The **yo angular** command will take a long time to run, even on a reasonably fast machine. On a slow machine, it might take a significant period of time, perhaps 15 minutes or more. On my home machine, which is reasonably powerful, it takes 1 minute and forty seconds.
+
+**HINT**: *I'm not really sure that this will work, but it is perhaps worth a try. Below is a link to one of my copies of **node_modules**. It is a 7-Zip compressed file because of the very long paths. This means you would need to install 7-Zip if you have not done so already. I think 7-Zip is already on the school computers. Just unzip the file with 7 Zip and place it in your project. You would only do this if you cannot get the **yo angular** command to complete correctly. Frankly, I think it generally will complete correctly if you have the patience to wait for it to finish. This is an attempt to let you skip a step. You may still, however, have to run **bower install**.*
+
+
+- [Node Modules 7z](https://drive.google.com/file/d/0B25UTAlOfPRGM3ItTlZ6Z0tOOTQ/view?usp=sharing)
 
 ## Step Three
 

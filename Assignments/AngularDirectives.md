@@ -19,11 +19,23 @@ Then:
 
 Then add in **bar** directive. Then **marie**.
 
-Finally, let's add in HTML5 Canvas directives.
+## Step 02
+
+Let's add into **index.html** some HTML5 directives:
+
+```
+<div elf-marie></div>
+
+<div>
+   <elf-marie></elf-marie>
+</div>
+```
+
+The first example above is our preferred technique, using the directive as an attribute of an HTML element. However, as the second example shows, it is also legal to use it as a tag. There are additional ways to use the directive not covered in this example, but mentioned earlier in this slide deck.
 
 ## Some Code
 
-And in the controller itself:
+In **about.js**, in the controller itself, we can put our model:
 
 ```
    $scope.marie = {
@@ -35,7 +47,7 @@ And in the controller itself:
 ```    
 
 
-And add in the same about.js file, but near the bottom, after the controller:
+Also in the **about.js** file, but near the bottom, after the controller, add in our directives:
 
 
 ```
@@ -57,11 +69,5 @@ app.directive('bar', function() {
 });
 ```
 
+Note how these directive can be attached to our HTML as shown in the previous section. Finding a way to make the **bar** directive display output in the **console** window of your browser is left as an exercise, though we did demonstrate how to use it in class on Monday.
 
-
-
-## Tips
-
-Create a short cut that opens command line and runs DosAlias.bat:
-
-	C:\Windows\system32\cmd.exe /k %USERPROFILE%\Bin\DosAlias.bat
