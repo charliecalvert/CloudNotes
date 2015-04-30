@@ -116,15 +116,19 @@ Add this to the bottom of index.jade:
 Create the angular modules that will query and display the database.
 
 ```
+/**
+ * Created by charlie on 4/29/2015.
+ */
+
 angular.module('pres', ['ngResource'])
     .constant('CONFIG', {
-        DB_NAME: <DB_NAME>,
+        DB_NAME: 'prog219-lastname',
         COLLECTION: 'scientists',
-        API_KEY: <YOUR_API_KEY>
+        API_KEY: '<YOUR_KEY>'
     })
-   .factory('presidents', function($resource, CONFIG) {
-        console.log('Presidents factory called');
-        var presidents = $resource(
+    .factory('scientists', function ($resource, CONFIG) {
+        console.log('Scientists factory called');
+        var scientists = $resource(
             'https://api.mongolab.com/api/1/databases/' + CONFIG.DB_NAME +
             '/collections/' + CONFIG.COLLECTION + '/:id', {
                 apiKey: CONFIG.API_KEY
@@ -133,8 +137,48 @@ angular.module('pres', ['ngResource'])
                 update: {method: 'PUT'}
             });
 
-        return presidents;
+        scientists.prototype.getFirstName = function () {
+            return this.firstName;
+        };
+
+        scientists.prototype.getLastName = function () {
+            return this.lastName;
+        };
+
+        scientists.prototype.getSubject = function () {
+            return this.subject;
+        };
+
+        return scientists;
     });
+
+```
+
+and in mongodb: 
+
+```
+angular.module('elvenApp', ['pres'])
+    .controller('MyController', function($scope, $http, scientists) {
+        $scope.hint = "<p>Start with <strong>node server.js</strong> to retrieve JSON from Server</p>";
+
+        $scope.loadPresidents = function() {
+            $scope.scientists = scientists.query({}, function(scientists) {
+                $scope.presidentsLength = scientists.length;
+                $scope.firstName = scientists[0].firstName;
+                $scope.lastName = scientists[0].lastName;
+                console.log(scientists[0].firstName);
+                console.log(scientists[0].lastName);
+                console.log(scientists[0].getFirstName());
+            });
+        };
+    });
+```
+
+And then add to **layout.jade**:
+
+```
+script(src='javascripts/resources.js')
+script(src='javascripts/control.js')
 ```
 
 Your api key is on your Account page.
