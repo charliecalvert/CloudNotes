@@ -2,6 +2,12 @@
 
 Use Angular and MongoDb in a single express project.
 
+The image shown below shows the first row in the database as it is displayed by the angular ng-repeat loop. At this point there is only one document in the collection, so **Rows in DB** count is set to **1**, and there is only one list item with three fields. Below it are a series of input fields containing the data from the first record.
+
+![Angular MongoDb Starter](https://drive.google.com/uc?id=0B25UTAlOfPRGRUZ4REF1ZGY5b1E)
+
+In this version of this app, the Add President button does not work, neither do the Delete or Update buttons. Later, we will use CSS to format the buttons and the fields in this page, but for now, they are just arranged more or less as we declare them in the raw Jade file.
+
 ## Step One
 
     express Week04-AngularMongoStart
@@ -77,13 +83,13 @@ Add this to the bottom of index.jade:
         .inputDiv
           p Rows in DB: {{presidentsLength}}
           ul
-            li(ng-repeat='president in presidents')
+            li(ng-repeat='scientist in scientists')
               p
-                | {{president.getPresidentName()}}
-                br
-                |                                    TermStart: {{president.getTermStart()}}
-                br
-                |                                    TermEnd: {{president.getTermEnd()}}
+              | FirstName: {{scientist.firstName}}
+              br
+              | LastName: {{scientist.lastName}}
+              br
+              | Subject: {{scientist.subject}}
           div(ng-bind-html-unsafe='hint')
         .inputDiv
           input(type='text', ng-model='firstName')
@@ -170,3 +176,7 @@ Your api key is on your Account page near the very bottom. It does
 not look like a URI. Rather it looks like a long string of meaningless
 numbers and letters. Though much shorter, it looks a bit like the keys 
 in an SSH file.
+
+## Turn it in
+
+Put the folder in your repository and check it in. Include the URI of your repository and the name of the folder your used. 
