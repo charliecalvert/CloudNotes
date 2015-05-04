@@ -21,7 +21,7 @@ Then add in **bar** directive. Then **marie**.
 
 ## Step 02
 
-Let's add into **index.html** some HTML5 directives:
+Let's add into **about.html** some HTML5 directives:
 
 ```
 <div elf-marie></div>
