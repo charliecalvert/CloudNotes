@@ -19,6 +19,11 @@ This is a bit artificial. We would normally have just one project and add our te
 
 Install [Jasmine](http://jasmine.github.io/2.3/introduction.html "Jasmine").
 
+Run the following command to install yeoman generator for Jasmine. You
+only need to do it once:
+
+	npm install -g generator-jasmine
+
 At the root of your project, type **yo jasmine**. This creates a folder called **test** with this structure:
 
 ```
@@ -97,7 +102,9 @@ When you are done, **index.html** might look something like this:
 
 ## Step Three
 
-Bad luck, Charlie prefers **chai**.
+Bad luck, Charlie prefers **chai**. Start by adding [chai](http://chaijs.com/) to **test/bower.json**:
+
+	bower install chai --save
 
 Add this to **index.html**.
 
@@ -131,7 +138,77 @@ Notice that:
 - We changed the descriptions of the suites and tests
 - We added an expectation to our test
 
-## Step Four 
+## Step Four
+
+It is now time to start testing our program.
+
+First load into **index.html** Angular and the code you want to test:
+
+```
+<!-- include source files here... -->
+<script src="../public/components/angular/angular.js"></script>
+<script src="../public/components/angular-mocks/angular-mocks.js"></script>
+<script src="../public/javascripts/resources.js"></script>
+<script src="../public/javascripts/control.js"></script>
+```
+
+Add this code beneath the word **describe** and above your first test:
+
+```
+		var MyController, scope;
+		
+        beforeEach(module('elvenApp'));
+
+        // Initialize the controller and a mock scope
+        beforeEach(inject(function ($controller, $rootScope) {
+            scope = $rootScope.$new();
+            MyController = $controller('MyController', {
+                $scope: scope
+            });
+        }));
+```
+
+Now add in a real test of your object:
+
+```
+  it('should get a hint', function() {
+     expect(scope.hint.length).to.equal(78);
+  });
+```
+
+Do what you need to do to set up your mock object in resources.js:
+
+```
+angular.module('pres', [])
+    .constant('CONFIG', {
+        DB_NAME: 'elvenlab01',
+        COLLECTION: 'scientists',
+        API_KEY: 'qfSxFoUGHBA1EuUlqhux_op2fy6oF_wy'
+    })
+    .factory('scientists', function (CONFIG) {
+        console.log('Scientists factory called');
+
+   function scientists() {
+
+   }
+
+   scientists.prototype.query = function() {
+      return [{firstName: 'Marie', lastName: 'Curie', subject: 'Radiation'}];
+   };
+	return new scientists();
+```
+
+A
+Then run this test:
+
+```
+    it('should get a database hit', function() {
+            scope.loadScientists();
+            expect(scope.scientists[0].firstName).to.equal('Marie');
+	});
+```
+
+## Step Five 
 
 Grunt
 
