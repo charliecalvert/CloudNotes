@@ -22,7 +22,7 @@ largely on HTML, CSS and JavaScript on the front end, and JavaScript
 and/or Python on the back end. Below I provide links to key descriptions
 of these languages, APIs and tools.
 
-###HTML and CSS
+### HTML and CSS
 
 - [HTML](http://elvenware.com/charlie/development/web/HtmlGuide/)
 - [CSS](http://elvenware.com/charlie/development/web/CssGuide/)
@@ -31,7 +31,7 @@ of these languages, APIs and tools.
 - [HTML5 and CSS Part 03 Deck: Media Queries](http://bit.ly/1imauBZ)
 - [Bootstrap]()
 
-###JavaScript
+### JavaScript
 
 - [JavaScript Intro Deck with Useful Links](http://bit.ly/1ilT1tk)
 - [JavaScript on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/)
@@ -41,7 +41,7 @@ of these languages, APIs and tools.
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 - [JavaScript Patterns](http://shichuan.github.io/javascript-patterns/)
 
-###Working with Buttons, Input Controls and jQuery
+### Working with Buttons, Input Controls and jQuery
 
 - [Simple Buttons in JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/HtmlCssJavascript/SimpleButtons)
 - [Simple Buttons ReadMe](https://github.com/charliecalvert/JsObjects/blob/master/HtmlCssJavascript/SimpleButtons/README.md)
@@ -51,19 +51,19 @@ of these languages, APIs and tools.
 - [jQuery and input Controls](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jquery-and-input-controls)
 
 
-###Cordova and PhoneGap
+### Cordova and PhoneGap
 
 - [See Elvenware PhoneGap Page](http://localhost:33222/charlie/development/android/PhoneGap.html#setupPhoneGap)
 
-###Jasmine and Karma
+### Jasmine and Karma
 
 - [Jasmine](http://pivotal.github.io/jasmine/)
 
-###Python
+### Python
 
 - [Python](http://elvenware.com/charlie/development/web/Python/)
 
-###Java
+### Java
 
 We will probably not being using Java and the Android SDK in this course,
 but it you want information on the subject, it is here:
