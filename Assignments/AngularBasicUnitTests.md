@@ -9,7 +9,20 @@ This documents describes the Basic Unit Testing assignment.
 - Use ControllerAs
 - Write Tests
 
+## Step Minus Zero
+
+Find **GetAngularTests.bat** from this folder:
+
+	C:\Users\charles.calvert\Git\JsObjects\Utilities\SetupWindows
+	
+Copy it to your %USERPROFILE%/Bin folder.
+
+Then naviage to the root of your repository and type:
+
+	GetAngularTests
+
 ## Step Zero
+
 
     git clone http://github.com/charliecalvert/AngularJasmine.git
     cd AngularJasmine    
@@ -17,6 +30,11 @@ This documents describes the Basic Unit Testing assignment.
     bower install
     cd ..
     npm install & bower install & npm start
+    
+    
+And then delete the .git folder:
+
+	rmdir /s /q .git
 
 ## Step One
 

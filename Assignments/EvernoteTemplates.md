@@ -27,7 +27,7 @@ Open up %USERPROFILE%\Bin\DosAlias.bat in your editor of choice.
 Be sure it contains the following lines near the top:
 
 ```
-set GITDIR=C:\Src\Git
+set GITDIR=%USERPROFILE%\Git
 set JSOBJECTS=%GITDIR%\JsObjects
 set ELF_TEMPLATES=%JSOBJECTS%\Utilities\Templates
 ```
