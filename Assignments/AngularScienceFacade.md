@@ -7,6 +7,8 @@ Our goal is to implement tests and methods for a two classes:
 
 In particular, we will move the state shown in image one to the state shown in image two.
 
+Begin with the project found in [this zip file](https://drive.google.com/file/d/0B25UTAlOfPRGTzhOcVk5RTRveFU/view?usp=sharing).
+
 ## Step One
 
 ![StepOne](https://drive.google.com/uc?id=0B25UTAlOfPRGTkZIeEhlZjFQWjA)
