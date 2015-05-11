@@ -9,7 +9,8 @@ This documents describes the Basic Unit Testing assignment.
 - Use ControllerAs
 - Write Tests
 
-## Step Minus Zero
+
+## Intro
 
 Find **GetAngularTests.bat** from this folder:
 
@@ -21,8 +22,25 @@ Then naviage to the root of your repository and type:
 
 	GetAngularTests
 
-## Step Zero
+Let's begin by examing two ways to create an express program that includes
+angular.
 
+## Step One Option A
+
+Find GetAngularTests.bat from this folder:
+
+```
+C:\Users\charles.calvert\Git\JsObjects\Utilities\SetupWindows
+```
+Copy it to your %USERPROFILE%/Bin folder.
+
+Then naviagate to the root of your repository and type:
+
+    GetAngularTests
+
+## Step One OptionB
+
+Here is an alternative way to achieve the same result as in the previous step:
 
     git clone http://github.com/charliecalvert/AngularJasmine.git
     cd AngularJasmine    
@@ -36,26 +54,24 @@ And then delete the .git folder:
 
 	rmdir /s /q .git
 
-## Step One
+And then delete the .git folder:
 
-```
-express Week05-AngularTest
-cd Week05-AngularTest
-yo jasmine
-```
+    rmdir /s /q .git
+
 
 ## Step Two
 
-Open the project in WebStorm. Right click on **test/ndex.html**. Select **Run**.
+Open the project in WebStorm. Right click on **test/index.html**. Select **Run**.
 
-Set up the project:
+If not done already, set up the project:
 
 - In **bin/www** set the **port** to 30025. 
 - In **package.json** use **nodemon** in the **start** property of the **scripts** object.
 
-Install angular:
+If not done already, install angular:
 
 First create **.bowerrc** and **bower.json**. To do so, make sure you have the most recent copy of JsObjects by running **git pull** at the root of the JsObjects folder.
+
 Then do this:
 
 ```
@@ -76,7 +92,7 @@ npm install & bower install & npm start
 
 ## Step Three
 
-Upgrade to Jasmine 2.3.
+If it has not be done for you automatically, upgrade to Jasmine 2.3.
 
 In **test/bower.json**:
 
@@ -149,9 +165,47 @@ Refresh your browser to confirm its works:
 
 ![jasmine](https://drive.google.com/uc?id=1_a10tc7BcVR1uNfH6I6-uJq8W9nNRGvcXg)
 
+Create our test:
+
+```
+/*global describe, it */
+'use strict';
+
+(function () {
+
+    'use strict';
+
+    var elvenController, scope;
+
+    describe('Integration Tests', function() {
+
+        beforeEach(module('elvenApp'));
+
+        // Initialize the controller and a mock scope
+        beforeEach(inject(function($controller, $rootScope) {
+            scope = $rootScope.$new();
+            elvenController = $controller('ElvenController', {
+                $scope: scope
+            });
+        }));
+
+        it('should prove we loaded chai', function() {
+            expect(true).toBe(true);
+        });
+
+        it('should get a hint', function() {
+            expect(elvenController.hint.length).toBe(8);
+        });
+    });
+})();
+
+```
+
+    copy %ELF_TEMPLATES%\AngularTestSpec.js test\spec\test.js
+
 ## Step Four
 
-Create a file to test.
+If it has not been done already, create a file to test. Otherwise, just review the existing copy of **control.js**.
 
 - Create a file called **public/javascripts/Control.js**
 - Create a simple angular controller using **ControllerAs**
@@ -176,7 +230,7 @@ In Control.js:
 Or:
 
 ```
-    copy %ELF_TEMPLATES%\AngularControl.js public\javascripts\Control.js
+    copy %ELF_TEMPLATES%\AngularControl.js public\javascripts\control.js
 ```
 
 In **layout.jade**:
@@ -206,7 +260,7 @@ Or:
     copy %ELF_TEMPLATES%\AngularLayout.jade views\layout.jade
 
 
-In **index.jade**:
+Make sure you have the following code in **index.jade**:
 
 ```
 extends layout
