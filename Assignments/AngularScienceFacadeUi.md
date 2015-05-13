@@ -16,7 +16,7 @@ Our goals are two fold:
 
 ## Step One
 
-Download the starter project.
+Download the [starter project](https://drive.google.com/file/d/0B25UTAlOfPRGSTNRRk5qVkF1eTg/view?usp=sharing).
 
 Note that it is similar to the project we used on Monday but we have renamed some methods in ScienceFacade to bring them in line with the Angular $resource object that uses MongoDb. In the list below, the original method name is on the left and the new name on the right: 
 
