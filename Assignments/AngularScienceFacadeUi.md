@@ -191,6 +191,7 @@ Now lets test dependency injection. In **layout.js**, swap out
 
 Check your final working program into your repository in a folder called **Week06-TestLive02**. Press the submit button for the assignment and add a comment or two as appropriate.
 
+Make sure your requests go against your database, not against my database.
 
 ## Discussion
 
