@@ -43,14 +43,22 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 
 ## Angular
 
+Slide Decks:
+
+- Angular Controllers: [http://bit.ly/elf-angular-control](http://bit.ly/elf-angular-control)
 - Angular Directives: [http://bit.ly/elf-directive](http://bit.ly/elf-directive)
 - Angular Intro: [http://bit.ly/AngularPart01](http://bit.ly/AngularPart01)
 - Angular Modes: [http://bit.ly/angular-mod](http://bit.ly/angular-mod)
-- Angular Controllers: [http://bit.ly/elf-angular-control](http://bit.ly/elf-angular-control)
-- Angular and Yeoman: [http://bit.ly/angular-yeoman](http://bit.ly/angular-yeoman)
 - Angular Projects: [http://bit.ly/angular-projects](http://bit.ly/angular-projects)
+- Angular Routes: [http://bit.ly/angular-routes](http://bit.ly/angular-routes)
+- Angular and Yeoman: [http://bit.ly/angular-yeoman](http://bit.ly/angular-yeoman)
+
+Other:
+
+- [Ten Reasons to use Angular](http://www.sitepoint.com/10-reasons-use-angularjs/)
 - [Angular Best Practices][angBest]
 - [Angular on Elvenware][angelf]
+- [Angular Modules for Great Justice](http://codingsmackdown.tv/blog/2013/04/19/angularjs-modules-for-great-justice/)
 
 ## HTML and CSS
 

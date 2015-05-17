@@ -2,7 +2,7 @@
 
 Angular Mongo Test in class.
 
-**NOTE**: *I've noticed a few of you are using the git bash command prompt rather than the Windows Command Prompt. If you truly are more comfortable using bash instead of the Windows Command Prompt, then please continue, but if you don't have a strong preference, I think you will find it easier to use the Windows Command Prompt. I think bash is better than the Windows command, but it is meant to be run with Linux, and trying to get it to work on Windows can be a struggle.*  
+**NOTE**: *I've noticed a few of you are using the git bash command prompt rather than the Windows Command Prompt. If you truly are more comfortable using bash instead of the Windows Command Prompt, then please continue, but if you don't have a strong preference, I think you will find it easier to use the Windows Command Prompt. I think bash is better than the Windows command prompt, but it is meant to be run with Linux, and trying to get it to work on Windows can be a struggle.*  
 
 ## Step One
 
@@ -39,7 +39,7 @@ test/bower_components/jasmine/*
 
 There are multiple files in the jasmine folder. I indicated that fact with an asterisk.
 
-Unfortunately, the copy of Jasmine that yo installs is ancient, and of interst primarily to biblical scholars who want to reinterpret .  To fix things up, do the following:
+Unfortunately, the copy of Jasmine that yo installs is ancient, and of interest primarily to biblical scholars who want to reinterpret .  To fix things up, do the following:
 
 - Open **test/bower.json** and set the version of jasmine to 2.3.0
 - Run **bower install**
@@ -102,41 +102,9 @@ When you are done, **index.html** might look something like this:
 
 ## Step Three
 
-Bad luck, Charlie prefers **chai**. Start by adding [chai](http://chaijs.com/) to **test/bower.json**:
+Good luck, Charlie prefers **chai**, but is having trouble getting it to integrate with Jasmine. Please skip this step. 
 
-	bower install chai --save
-
-Add this to **index.html**.
-
-```
-<script src="bower_components/chai/chai.js"></script>
-```
-
-Modify **test.js** so that it looks, in its entirety, like this:
-
-```
-(function() {
-    'use strict';
-
-    var expect = chai.expect;
-
-    describe('Integration Tests', function() {
-
-        it('should prove we loaded chai', function() {
-            expect(true).to.equal(true);
-        });
-
-    });
-})();
-```
-
-Notice that:
-
-- We use strict
-- We use **chai expect**
-- We removed one **describe** suite
-- We changed the descriptions of the suites and tests
-- We added an expectation to our test
+Information about chai is [available on Elvenware](http://www.elvenware.com/charlie/development/web/UnitTests/Mocha.html#chai).
 
 ## Step Four
 
@@ -172,7 +140,7 @@ Now add in a real test of your object:
 
 ```
   it('should get a hint', function() {
-     expect(scope.hint.length).to.equal(78);
+     expect(scope.hint.length).toEqual(78);
   });
 ```
 
@@ -198,14 +166,34 @@ angular.module('pres', [])
 	return new scientists();
 ```
 
-A
+We can modify the above further by removing the constant we named **CONFIG**. This constant is needed if we want to access MongoDb, but it serves no purpose in this mock object:
+
+```
+angular.module('pres', [])
+    .factory('scientists', function () {
+        console.log('Scientists factory called');
+
+        function scientists() {
+
+        }
+
+        scientists.prototype.query = function() {
+            return [{firstName: 'Marie', lastName: 'Curie', subject: 'Radiation'}];
+        };
+
+        // CODE OMITTED HERE
+
+	return new scientists();
+   });
+```
+
 Then run this test:
 
 ```
     it('should get a database hit', function() {
             scope.loadScientists();
-            expect(scope.scientists[0].firstName).to.equal('Marie');
-	});
+            expect(scope.scientists[0].firstName).toEqual('Marie');
+    });
 ```
 
 ## Step Five 
@@ -242,16 +230,26 @@ The **browser**,  and **boss** properties already exist. I'm adding them just fo
 
 Run **grunt jshint**. Look at result.xml in your browser.
 
-## Step Five
+To load **result.xml** in your browser, go to the directory where **result.xml** exists, and type **start result.xml**. It should open up in your default browser. If Chrome is your default browser, then this is something that you might be see:
 
-Load a real test
+ ![Not so good](https://drive.google.com/uc?id=0B25UTAlOfPRGREFYcnBkNXh3WWs)
 
-In **index.html**:
+We'll have to spend some time in class talking about how to get rid of these various warnings. One trick that would help in this case would be to be to put the following at the top, for instance, of test.js:
 
-```
-<!-- include source files here... -->
-<script src="../public/javascripts/resources.js"></script>
-```
+    /*global describe, it, expect, inject, beforeEach */
 
-In test.js:
+Of course, using global to make errors go away is not always the right solution. Usually we fix the problem in our code. But in this case these are legitimate variables that jshint just happens not to know about, so we can tell it that all is well with the syntax shown above. If however, you had made a mistake like this, then you would correct the typo rather than use **global**
+
+    var supper = 2;
+    consolue.log(suppper);   <== suppper is NOT A LEGITIMATE GLOBAL, JUST A TYPO
+
+Now run **grunt jshint** again and you will see that the problems with test.js went away:
+
+![better](https://drive.google.com/uc?id=0B25UTAlOfPRGd29iRTk3X1E5Tkk)
+ 
+We'll talk about constructor names and capitalization on Monday or sometime soon.
+
+## Turn it in
+
+Be sure your code is in the **Week05-AngularMongoTest** folder of your repository. Check it in and push the submit button for the assignment, adding comments as usual or as needed. 
 
