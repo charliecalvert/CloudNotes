@@ -1,4 +1,8 @@
-#Provision EC2
+## Description
+
+Create and provision an EC2 instance suitable for node development in one of Charlie's classes.
+
+## Provision EC2
 
 This assignment is perhaps not entirely complete, but here is enough to get you started. Perform the following tasks:
 
@@ -19,7 +23,7 @@ We can go over this in class, but you will also need to understand how to open u
 
 - <http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2SecurityGroups>
 
-##Turn it In
+## Turn it In
 
 To turn in the assignment, you should provide a screen shot showing:
 
@@ -36,7 +40,8 @@ Here is a sample of what the Apache welcome screen should look like:
 
 ![Lamp](http://www.elvenware.com/charlie/books/CloudNotes/Images/LampApache2.png)
 
-##More Information
+## More Information
+
 The following document used in another class also contains information that you might find useful:
 
  - [AwsEc2Expert](http://www.elvenware.com/charlie/books/CloudNotes/Assignments/AwsEc2Expert.html)

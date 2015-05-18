@@ -1,4 +1,4 @@
-# AngularResolve
+## Description
 
 This was the project we worked on in class on Wednesday, Nov 19.
 
@@ -24,7 +24,7 @@ Create a spreadsheet. Enter three rows of data:
 
 Save to CSV. Import into Angular Resolve, doing the transformation on the client side.
 
-Put the Json data from the CSV in CouchDb. Load data from CouchDb.
+Put the JSON data from the CSV in CouchDb. Load data from CouchDb.
 
 I believe the code (from the GameData01 assignment) looked something like this:
 

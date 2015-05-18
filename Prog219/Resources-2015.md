@@ -79,6 +79,11 @@ Other:
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 - [JavaScript Patterns](http://shichuan.github.io/javascript-patterns/)
 
+## Design
+
+- [http://refactoring.com/](http://refactoring.com/)
+
+
 ## Unit Tests
 
 - Unit Tests Part 01: Intro Deck: [http://bit.ly/1dTjs8h ](http://bit.ly/1dTjs8h)
@@ -107,11 +112,15 @@ Other:
 - [JsObjects Setup and SanityChecks](https://github.com/charliecalvert/JsObjects/tree/master/Utilities/SetupWindows)
 - [Elvenware Windows Home Page](http://www.elvenware.com/charlie/os/windows/index.html)
 
-AWS
----
+## AWS
+
 
 - [AWS on Elvenware](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
 - [AWS](http://aws.amazon.com/)
+
+## Linux
+
+- [Working with files in Linux][linuxFiles]
 
 Cloud Computing
 ---------------
