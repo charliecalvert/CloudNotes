@@ -108,6 +108,54 @@ html
     block content
 ```
 
+In **index.jade** we will have a:
+
+- Container
+- Header with menu and title
+- The main body of the program, including a place for our routing content, our controllers.
+- Footer
+
+To get started, define the container:
+
+```
+extends layout
+
+block content
+  .container
+```
+
+Now, inside the container, add a menu:
+
+```
+    .header
+      nav.navbar-default.navbar-fixed-top
+        ul.nav.nav-pills
+          li(ng-class="{ active: isActive('/')}")
+            a(ng-href='#/') Home
+          li(ng-class="{ active: isActive('/about')}")
+            a(ng-href='#/about') About
+      h3.text-muted #{title}
+```
+
+Inside the container, but not inside the header, add the body of the page:
+
+```
+    h1= title
+    p Welcome to #{title}
+
+    h1 The View
+    div(data-ng-view="")
+```
+
+And finally, still inside the container, add the footer:
+
+```
+    .footer
+      p
+        span.glyphicon.glyphicon-grain
+        |  from Elvenware
+```
+
 ## Turn it in
 
 The usual.

@@ -23,6 +23,84 @@ We can go over this in class, but you will also need to understand how to open u
 
 - <http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2SecurityGroups>
 
+## SSH
+
+Type **cd** and press enter to get to your home directory. Type **pwd** to be sure you are in the right place:
+
+```
+ubuntu@ip-172-31-33-240:~$ pwd
+/home/ubuntu
+```
+
+In your home directory, paste in the following by right clicking on the ssh window:
+
+```
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+Navigate to the .ssh directory and cat your public file:
+
+```
+cd .ssh
+cat id_rsa.pub
+```
+
+Select the entire key with the mouse and press **Ctrl-C** to copy it. Then go to bitbucket, choose manage account, and add you new public ssh key, calling it something like Prog219AwsKey.
+
+Type **cd** to go to the home directory. Then type: **nano .bashrc**
+
+Scroll to the bottom, and paste in the following:
+
+```
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+fi
+
+export PATH="$PATH:$HOME/npm/bin"
+
+export NODE_PATH=:/home/ubuntu/npm/lib/node_modules
+```
+
+Type **Ctrl-O + enter** to save, and **Ctrl-X** to exit nano. 
+
+Now process your updated **.bashrc** file from the command line: **source ~/.bashrc**
+
+Make the key only readable by you, the owner:
+
+    chmod 400 ~/.ssh/id_rsa
+
+Then type the following to load the private key. (Like loading a key into Pageant): 
+
+    ssh-add ~/.ssh/id_rsa
+
+It might look like this:
+
+```
+ubuntu@ip-172-31-33-240:~/.ssh$ ssh-add id_rsa
+Identity added: id_rsa (id_rsa)
+```
+
+Go to your Git Folder and clone your repo:
+
+```
+cd Git
+git clone git@bitbucket.com:lastname/reponame.git
+```
+
+See also this section on using SSH config files:
+
+- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config>
+
+## Git
+
+Please read this section of the Elvenware Git docs:
+
+- [Configuring Git][config-git]
+
+[config-git]:http://www.elvenware.com/charlie/development/cloud/Git.html#configuring-git
+
+
 ## Turn it In
 
 To turn in the assignment, you should provide a screen shot showing:

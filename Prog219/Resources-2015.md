@@ -22,6 +22,8 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [Week03](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week03-2015.html)
 - [Week04](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week04-2015.html)
 - [Week05](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week05-2015.html)
+- [Week06](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week06-2015.html)
+- [Week07](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week07-2015.html)
  
 ## Assignments
 
@@ -41,6 +43,10 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [Angular MongoDb Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbStarter.html)
 - [Angular MongoDb Crud](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbCrud.html)
 
+## Git
+
+- [Convert PEM File](https://youtu.be/EV9QSSX2w9I)
+
 ## Angular
 
 Slide Decks:
@@ -59,6 +65,7 @@ Other:
 - [Angular Best Practices][angBest]
 - [Angular on Elvenware][angelf]
 - [Angular Modules for Great Justice](http://codingsmackdown.tv/blog/2013/04/19/angularjs-modules-for-great-justice/)
+- [Top Ten Mistakes](https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make)
 
 ## HTML and CSS
 
