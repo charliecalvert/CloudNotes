@@ -24,3 +24,7 @@ Convert the PEM file to a PPK file.
 Connect to your EC2 instance with Putty:
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
+
+## Step Five
+
+Take a screen shot of the command prompt and submit that with your assignment.

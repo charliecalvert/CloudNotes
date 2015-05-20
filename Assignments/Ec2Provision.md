@@ -124,4 +124,63 @@ The following document used in another class also contains information that you 
 
  - [AwsEc2Expert](http://www.elvenware.com/charlie/books/CloudNotes/Assignments/AwsEc2Expert.html)
 
+## History
+
+What I did in class
+
+```
+ 1  exit
+    2  sudo apt-get update
+    3  sudo apt-get upgrade
+    4  exit
+    5  ls
+    6  sudo apt-get install git
+    7  git --version
+    8  git
+    9  mkdir Git
+   10  cd Git/
+   11  git clone http://git@github.com/charliecalvert/JsObjects.git git clone http://git@github.com/charliecalvert/JsObjects.git
+   12  git clone http://git@github.com/charliecalvert/JsObjects.git
+   13  cd ,,
+   14  cd
+   15  cd .ssh/
+   16  ls
+   17  cd
+   18  ckear'
+   19  clear
+   20  pwd
+   21  cd Git/
+   22  cd
+   23  ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+   24  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+   25  pwd
+   26  ubuntu@ip-172-31-33-240:~$ pwd
+   27  /home/ubuntu
+   28  cd .ssh/
+   29  ls
+   30  clear
+   31  ls
+   32  ls -l
+   33  nano id_rsa.pub
+   34  cat id_rsa.pub
+   35  cat id_rsa.pub
+   36  cd
+   37  nano .bashrc
+   38  cd .ssh
+   39  ls
+   40  chmod 400 id_rsa
+   41  ssh-add id_rsa
+   42  source ~/.bashrc
+   43  ssh-add id_rsa
+   44  ubuntu@ip-172-31-33-240:~/.ssh$ ssh-add id_rsa
+   45  Identity added: id_rsa (id_rsa)
+   46  cd ..
+   47  cd Git/
+   48  dir
+   49  git clone git@bitbucket.org:ccalvert/prog219-calvert.git
+   50  cd prog219-calvert/
+   51  ls
+   52  cd Week05-AngularMongoCrud/
+   53  npm install
+```
 > by [Charlie Calvert](http://elvenware.com/charlie).
