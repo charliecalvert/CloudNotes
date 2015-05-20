@@ -91,6 +91,10 @@ about.jade:
 
 ## Five
 
+There is information about menus here:
+
+- [http://bit.ly/jade-mixins](http://bit.ly/jade-mixins)
+
 In Layout.jade:
 
 ```
