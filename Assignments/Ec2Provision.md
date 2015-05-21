@@ -92,6 +92,42 @@ See also this section on using SSH config files:
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config>
 
+## bash_aliases
+
+You can copy a bash_alias file from JsObjects to your home directory. Type **cd** to get to your home directory:
+
+	cd
+
+then copy the file:
+
+	cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases .
+
+Then you can edit it with nano:
+
+	nano .bash_aliases
+	
+Change this line to reflect what is on your system:
+
+	alias sshadd="ssh-add ~/.ssh/rsa-key-git.pem"
+	
+It should probably read like this:
+
+	alias sshadd="ssh-add ~/.ssh/id_rsa"
+	
+Save your work with Ctrl-O and the Ctrl-X to exit. Then process your .bash_alias file with
+the **source** command:
+
+	source ~/.bash_aliases
+	
+## Install Node
+
+	cd Git/JsObjects/Utilities/NodeInstall/
+	./NodeInstall.sh
+	
+Then install the node packages that you need:
+
+	./InstallNodePackages.sh
+
 ## Git
 
 Please read this section of the Elvenware Git docs:

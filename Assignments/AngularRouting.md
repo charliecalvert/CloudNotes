@@ -13,6 +13,8 @@ Create the project in your repository:
 
     express Week07-AngularRoutes
 
+Navigate into the directory you created and then run **npm install**.
+	
 Open the project in WebStorm or your choice of editor/IDE.
 
 Set port to 30025 in **bin/www**, use **nodemon** in **package.json**.
@@ -21,13 +23,16 @@ In **routes/index.js** set the title to **Angular Routes LastName**, where LastN
 
 ## Step Two
 
+
 Add angular, bower and bootstrap.
 
 - bower init
-- copy %ELF_TEMPLATES%\.bowerrc .
+- copy %ELF_TEMPLATES%\\.bowerrc .
 - bower install angular angular-route jquery bootstrap  --save
 
 ## Step Three
+
+In your **public\javascripts** directory:
 
 Create **app.js**
 
@@ -51,6 +56,8 @@ myModule.config(function($routeProvider, $locationProvider) {
 
 ## Step Four
 
+In your **public\javascripts** directory:
+
 Create main.js:
 
 ```
@@ -72,7 +79,11 @@ elfApp.controller('AboutController', function() {
     aboutController.aboutData = "About Data";
 
 });
+
 ```
+
+In your **views** directory:
+
 main.jade:
 
 ```
@@ -89,6 +100,14 @@ about.jade:
 <p>{{aboutController.aboutData}}</p>
 ``` 
 
+Then add this to **routes/index.js** right before **module.exports**:
+
+```
+router.get('/:id', function(req, res, nest) {
+  res.render(req.params.id, { title: ' Angular Routes Calvert' });
+});
+```
+
 ## Five
 
 There is information about menus here:
@@ -102,7 +121,11 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='components/bootstrap/dist/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="components/jquery/dist/jquery.js")
+    script(src="components/bootstrap/dist/js/bootstrap.js")
     script(src="components/angular/angular.js")
     script(src="components/angular-route/angular-route.js")
     script(src="javascripts/app.js")
