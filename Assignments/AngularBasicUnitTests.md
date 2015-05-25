@@ -1,6 +1,6 @@
 ## Description
 
-This documents describes the Basic Unit Testing assignment.
+This documents describes the Basic Unit Testing assignment. It belongs in a folder called **Week05-AngularTests.**
 
 ## Overview
 
@@ -278,4 +278,15 @@ Or:
 
     copy %ELF_TEMPLATES%\AngularIndex.jade views\index.jade
 
+## Step Five
 
+Create methods in your controller called **square** and **add**. They first should square a single parameter passed into it, the second should add the two parameters passed into it.
+
+Write two tests to prove the methods work. The tests should have descriptions and matching code a bit like this:
+
+- it("should square 5 and get 25" etc....
+- it("should add 3 and 2 and get 5" etc....
+
+## Turn it in.
+
+Save your work in a folder of your repository called **Week05-AngularTests**. Submit your work and include a note stating the folder where you saved your work, particularly if it differs from the default value specified in this paragraph. 

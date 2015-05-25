@@ -20,7 +20,7 @@ This assignment has many parts. To help you make sure that you complete everythi
 
 - Turn it in: Press the submit button in Canvas!
 
-**Sharing a document with another person involves associating the document with the right email address**. In this assignment, I spell the email addresses of mine to use when you share a document with me. Don't share everything with the same email address. Read the instructions carefully!
+**Sharing a document with another person involves associating the document with the right email address**. In this assignment, I spell the email addresses of mine to use when you share a document with me. Don't share everything with the same email address. Read the instructions carefully! For Google, use a Google email address -- on both ends. For Microsoft, use a Microsoft address - again on both ends. There are workarounds, but this is the general goal and best practice. Read each section of the assignment, and find the email address that I want you to use for that portion of the assignment. 
 
 When you complete this assignment, press the submit button and enter the URL for your Google Drive folder, as described below.
 

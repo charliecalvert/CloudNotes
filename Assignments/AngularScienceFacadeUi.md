@@ -13,6 +13,8 @@ Our goals are two fold:
 - Learn more about querying with the **$resource** object and its custom URLs.
 - Mostly for fun, but also because it can be useful during development, lets have some of our tests be part of the our running program.
 
+![Sample output for tests](https://s3.amazonaws.com/bucket01.elvenware.com/images/AngularScienceFacadeUi01.png)
+
 
 ## Step One
 
@@ -192,6 +194,10 @@ Now lets test dependency injection. In **layout.js**, swap out
 Check your final working program into your repository in a folder called **Week06-TestLive02**. Press the submit button for the assignment and add a comment or two as appropriate.
 
 Make sure your requests go against your database, not against my database.
+
+There is no need to match the sample output shown below exactly. It is meant only as a general guideline.
+
+![Sample output for main page](https://s3.amazonaws.com/bucket01.elvenware.com/images/AngularScienceFacadeUi02.png)
 
 ## Discussion
 

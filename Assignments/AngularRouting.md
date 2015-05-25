@@ -87,17 +87,17 @@ In your **views** directory:
 main.jade:
 
 ```
-<p>This is main</p>
+p This is main
 
-<p>{{mainController.mainData}}</p>
+p {{mainController.mainData}}
 ```
 
 about.jade:
 
 ```
-<p>This is about</p>
+p This is about
 
-<p>{{aboutController.aboutData}}</p>
+p {{aboutController.aboutData}}
 ``` 
 
 Then add this to **routes/index.js** right before **module.exports**:
@@ -181,6 +181,26 @@ And finally, still inside the container, add the footer:
       p
         span.glyphicon.glyphicon-grain
         |  from Elvenware
+```
+
+In index.jade, the indentation should appear something like this, where each dash (-) represents a tab or an equal number of spaces:
+
+```
+block content
+- container
+- - header
+- - navbar
+- - - nav
+- - - - ul
+- - - - - li
+- - - - - li
+- - - - - h3
+- - - h1
+- - - p
+- - - h1
+- - - div
+- - - footer
+- - - - p
 ```
 
 ## Turn it in

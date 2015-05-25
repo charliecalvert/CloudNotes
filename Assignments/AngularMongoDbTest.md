@@ -198,54 +198,13 @@ Then run this test:
 
 ## Step Five 
 
-Grunt
+Grunt and jshint. Get them to run, get them to come back clean. Please note that **[jshint][jsh]** is as close as JavaScript is going to come to having static type checking outside of actually using something like TypeScript. If you like static type checking, you might well find **jshint** helpful.
 
-When running **yo gruntfile**, we care about the DOM, but not about minification.
+Vaguely defined details are [here][gruntyo].
 
-```
-npm install -g generator-gruntfile
-npm install grunt --save-dev
-npm install grunt-contrib-qunit --save-dev
-npm install grunt-contrib-jshint --save-dev
-npm install grunt-contrib-watch --save-dev
-yo gruntfile
-```
+[gruntyo]:http://www.elvenware.com/charlie/development/web/UnitTests/Grunt.html#grunt-yo-and-jshint
 
-Modify the **jshint options** section in **Gruntfile.js** to look like this:
-
-```
-browser: true,
-globals: { jQuery: true, chai: true, angular: true },
-boss: true,
-ignores: [
-    '**/components/**',
-    '**/bower_components/**',
-    '**/node_modules/**'
-],
-reporter: 'checkstyle',
-reporterOutput: 'result.xml'
-```
-
-The **browser**,  and **boss** properties already exist. I'm adding them just for context. You need to modify globals by adding chai, and you need to add **ignores**, **reporter** and **reporterOutput**. Some variables that we use such as **jQuery, chai and angular** that should be ignored. That is, they should not be reported as **undefined**.
-
-Run **grunt jshint**. Look at result.xml in your browser.
-
-To load **result.xml** in your browser, go to the directory where **result.xml** exists, and type **start result.xml**. It should open up in your default browser. If Chrome is your default browser, then this is something that you might be see:
-
- ![Not so good](https://drive.google.com/uc?id=0B25UTAlOfPRGREFYcnBkNXh3WWs)
-
-We'll have to spend some time in class talking about how to get rid of these various warnings. One trick that would help in this case would be to be to put the following at the top, for instance, of test.js:
-
-    /*global describe, it, expect, inject, beforeEach */
-
-Of course, using global to make errors go away is not always the right solution. Usually we fix the problem in our code. But in this case these are legitimate variables that jshint just happens not to know about, so we can tell it that all is well with the syntax shown above. If however, you had made a mistake like this, then you would correct the typo rather than use **global**
-
-    var supper = 2;
-    consolue.log(suppper);   <== suppper is NOT A LEGITIMATE GLOBAL, JUST A TYPO
-
-Now run **grunt jshint** again and you will see that the problems with test.js went away:
-
-![better](https://drive.google.com/uc?id=0B25UTAlOfPRGd29iRTk3X1E5Tkk)
+[jsh]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#jshint
  
 We'll talk about constructor names and capitalization on Monday or sometime soon.
 

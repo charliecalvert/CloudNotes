@@ -121,9 +121,21 @@ Other:
 
 ## AWS
 
+- [AWS on Elvenware][awsElf]
+- [AWS itself, the home page](http://aws.amazon.com/)
+- [EC2 Provision](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html)
+- [Configure Linux](http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html)
 
-- [AWS on Elvenware](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
-- [AWS](http://aws.amazon.com/)
+[awsElf]:http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws
+
+## Videos
+
+- [Amazon Web Services EC2 Setup](https://youtu.be/TjVWpNZfTPE)
+- [LinuxWebUser Part II](https://youtu.be/mSKxHKTQAc4)
+- [LinuxWebUser Part III](https://youtu.be/RTICenN5n8Q)
+- [Import Files into Git with SSH](https://youtu.be/p1obmWF6Nks)
+- [Billing on AWS](https://youtu.be/4w0hKs35cdg)
+- [PlayList](https://www.youtube.com/playlist?list=PLe8CjTxuUQ3_RmFD4ROFth7nX_UoUP6pV)
 
 ## Linux
 

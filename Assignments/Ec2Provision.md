@@ -11,7 +11,7 @@ This assignment is perhaps not entirely complete, but here is enough to get you 
  - Download JsObjects from GitHub into your Git folder.
  - Install Node 
  - Install MongoDb 
- - Install Lamp
+ - Install [Lamp][lamp]
  
 Use the notes found here:
  
@@ -22,6 +22,15 @@ Use the notes found here:
 We can go over this in class, but you will also need to understand how to open up ports, such as 30025, on AWS. For this assignment, you must at least get as far as opening up Port 80:
 
 - <http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2SecurityGroups>
+
+## Videos
+
+- [Amazon Web Services EC2 Setup](https://youtu.be/TjVWpNZfTPE)
+- [LinuxWebUser Part II](https://youtu.be/mSKxHKTQAc4)
+- [LinuxWebUser Part III](https://youtu.be/RTICenN5n8Q)
+- [Import Files into Git with SSH](https://youtu.be/p1obmWF6Nks)
+- [Billing on AWS](https://youtu.be/4w0hKs35cdg)
+- [PlayList](https://www.youtube.com/playlist?list=PLe8CjTxuUQ3_RmFD4ROFth7nX_UoUP6pV)
 
 ## SSH
 
@@ -136,12 +145,21 @@ Please read this section of the Elvenware Git docs:
 
 [config-git]:http://www.elvenware.com/charlie/development/cloud/Git.html#configuring-git
 
+## Lamp
+
+Lamp stands for Linux Apache MySql and Python/Perl/Php.
+
+We are interested in Apache, which is a web server running on Port 80.
+
+Details are [here][lamp].
+
+[lamp]:http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
 
 ## Turn it In
 
 To turn in the assignment, you should provide a screen shot showing:
 
-- A listing of your Git (ls -la ~/Git). A sample screen shot is shown below, but it has more directories in it than your's will have.
+- A listing of your Git folder (ls -la ~/Git). A sample screen shot is shown below, but it has more directories in it than your's will have.
 - A listing of the JsObjects directory (ls -la ~/Git/JsObjects)
 - A listing of your .ssh folder: (ls -la ~/.ssh
 - A link to your site and/or a screen shot of it running. It should show the Apache welcome screen, as shown below. This part of the assignment will not work unless you have first opened up Port 80.
