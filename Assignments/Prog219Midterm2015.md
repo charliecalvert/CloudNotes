@@ -47,9 +47,119 @@ Most of the code is written for you and you completed it in FacadeUI and MangoEx
  
 ## Angular Routing
 
-Please come back later and I will detail what I want to see here. The key is that you have code in your program that looks somewhat like the code in [this slide][angRoutes].
+The key is that you have code in your program that looks somewhat like the code in [this slide][angRoutes].
+
+Start by adding Angular Route to your project:
+
+    bower install angular-route --save
+
+Then you will need to create the main and about jade files
+
+    views/about.jade
+    views/main.jade
+
+At this stage, it does not much matter what you put in about.jade. This will do:
+
+    p About 
+
+In **main.jade**, you will want to put most of what you currently have in **index.jade**. I would leave only the jumbotron and its contents in index.jade. But of course you will want to add a menu:
+
+```
+extends layout
+block content
+	.container
+		.header
+			nav.navbar-default.navbar-fixed-top
+				ul.nav.nav-pills
+					li(ng-class="{ active: isActive('/')}")
+						a(ng-href='#/') Home
+					li(ng-class="{ active: isActive('/about')}")
+						a(ng-href='#/about') About
+
+		div.jumbotron
+			h1= title
+			p Welcome to #{title}
+
+		#monogoData(data-ng-view="")
+```
+
+There are several ways to solve the next problem, but I created an **app.js** file in my **public/javascripts** directory. It can look more or less identical to the one in the [Angular Routing][angRouting] assignment. You don't need a **main.js** file on the client side, as you already have **Control.js**. You will, however, need an **about.js** file in the client. It can look very much like the corresponding file in the Angular Routing assignment.
+
+One tricky thing can be setting up the routing on the server side. You are now going to load **about.jade** and **main.jade** from **routes/index.js**. That means you want to change the code in that file to look in the **views** directory for paramters. In particular, it should not look for them in the **views/ScienceInfo** directory, or its equivalent in your application. 
+
+So how are we going to load ScienceInfo files like **physics**, **astronomy** and **radioactivety**? One solution is to do this. Create a **routes\science.js** file with this content:
+
+```
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+
+router.get('/:id', function(req, res, next) {
+  console.log('ScienceInfo', req.params.id);
+  res.render('ScienceInfo/' + req.params.id, { title: 'Astronomy' });
+});
+
+module.exports = router;
+
+```
+
+In the root of your entire project, open up **app.js**. (This is not the **app.js** you may have added on the client side.) Around line 9 of **app.js** add this line:
+
+    var science = require('./routes/science');
+
+Around line 26, add this line:
+
+    app.use('/ScienceInfo', science);
+
+Okay, now you have a way to handle **ScienceInfo routes**. But there is one more step you need to take to complete the process. You also have to add **ScienceInfo** to the route you call when you load your equivalents of the **astronomy**, **physics**, etc files. This is the URL you will send back to your server from the client when **loadDocument** is called.
+
+The fix is simple. In **Control.js** update **loadDocument**. You will need to include **/ScienceInfo/** in the route you pass to **$http.get**:
+
+```
+myController.loadDocument = function() {
+            $http.get('/ScienceInfo/' + myController.subject.toLowerCase())
+            // etc. The rest is the same
+```
+
+Now your routes should be working, and you should be able to load your jade files. Here is break down of what we have done:
+
+- **main.jade** and **about.jade** are loaded from the routes in **routes/index.js**. These are triggered when you select items from the menu. These routes pass through the client side **public/javascripts/app.js.** file.
+- The loading of your equivalent of the **astronomy** etc files are triggered in **Control.js** when **loadDocuments** is called. On the server side, these requests pass through the routes in **routes/science.js**.
+
+To test the route for the custom files such as **astronomy**, enter a URL like this in the address field of your browser:
+
+- <http://localhost:30025/ScienceInfo/astronomy>
+
+To test main, enter something like either of these:
+
+- <http://localhost:30025/#/main>
+- <http://localhost:30025/main>
+
+The former will probably resolve your angular routes, while the latter will not. The second URL, can, however, prove that your route to **views/main.jade** is set up correctly.  
+
+After doing all this, you may find that your unit tests are no longer running. To get the unit tests back on their feet you will need to add, at minimum, **angular-route.js** to **index.html**. I think you will also need to load the client side version **app.js**, but I'm not sure of that. 
+
+You may find that the unit tests on the client side (Test.js) won't pass the test that asks for the length of the hint in the input control. To fix that, place this code at the top of your client side tests:
+
+```
+ // Wait half a second to allow main (myController) to load
+ beforeAll(function(done) {
+     console.log('outer');
+     setTimeout(function() {
+         var value = 0;
+         done();
+     }, 500);
+ });
+``` 
+
+The goal is to **main.js** time to load. In some cases, you may need to wait longer than 500 milleseconds, depending on performance on your machine.
+
+**NOTE**: *When I talk about the client side, I'm talking about the files in the **public** directory. In particular, I'm usually talking the files in the **public/javascripts** directory.*
 
 [angRoutes]:https://docs.google.com/presentation/d/1V2Hu53TXH7COUT50MCskIHn1N3H4nEvHCOpxykgTaeY/edit#slide=id.g9f89ca564_0_72
+
+[angRouting]:http://www.ccalvert.net/books/CloudNotes/Assignments/AngularRouting.html
 
 ## Extra Credit
 
