@@ -47,6 +47,9 @@ Most of the code is written for you and you completed it in FacadeUI and MangoEx
  
 ## Angular Routing
 
+It would be great if you can complete this section, but it can be extra
+credit if you would like.
+
 The key is that you have code in your program that looks somewhat like the code in [this slide][angRoutes].
 
 Start by adding Angular Route to your project:
