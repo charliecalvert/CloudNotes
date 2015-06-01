@@ -183,9 +183,33 @@ Because they are executed in callbacks, I believe it is better to write myContro
 
 The Load Marie button, or some variant of it, should still be available. It should use a directive, the way the Load Marie button does. Perhaps it would be something like "Load Current Record".
 
+### Ports
+
+You may get an **EADDRINUSE** error. This occurs if you already running a program, such as the midterm, on Port 30025, and you try to load another program, or another instance of the same program, on the same port.
+
+**NOTE**: * The message **EADDRINUSE** stands for Error ADDRess IN USE. In our case, it usually means you already have a program running on port 30025.*
+
+One thing we can do, which I meant to mention on Wednesday, is run our **upstart** driven applications on a different port. If you want to keep your midterm running all the time with **upstart**, then stop the program, open up **bin\www**, and set the port to 30026 rather than 30025. 
+
+Here are the steps in order of execution:
+
+```
+sudo stop midterm
+// CHANGE THE PORT AFTER STOPPING THE PROGRAM
+sudo start midterm
+```
+
+Let's all try to pick 30026 as the alternate port number. That way we won't have to guess what it is.
+
+If you make this change, and you want me to see your running midterm, then be sure to tell me the port you are running on. Providing a link to your project would be the simplest way to convey your selection and to allow me to see your application.
+
+Also, of course, you will need to use the appropriate security group in AWS console to punch another hole in the firewall for your server. We are already opening ports 22, 80, 443, 30025. We would need to add 30026. That would be in the EC2 dashboard, your Security Group. If you have more than one security group, you can check your running instance to see which security group you are currently using.
+
 ## Turn it in
 
 Include at least two screen shots of the app running on EC2. Attach the screen shots directly to the assignment submission. Use PNG or JPG format for the images. Do not embed the screen shots in Word, and do not place them in a zip file. Simply attached the raw PNG or JPG files directly to your assignment submission.
 
 Put your source for the project in a folder called Week08-Midterm and check it into your repository. Be sure to include up to date **package.json**, **bower.json** and **bowerrc** files. 
+
+
 

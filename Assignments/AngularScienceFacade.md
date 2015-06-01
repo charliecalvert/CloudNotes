@@ -143,3 +143,5 @@ And here is a test:
 
 When you are done, check in your code in a folder called Week06-TestLive.
 
+![AngularTestLive](https://s3.amazonaws.com/bucket01.elvenware.com/images/AngularTestLive.png)
+

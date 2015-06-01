@@ -4,6 +4,8 @@ Angular Mongo Test in class.
 
 **NOTE**: *I've noticed a few of you are using the git bash command prompt rather than the Windows Command Prompt. If you truly are more comfortable using bash instead of the Windows Command Prompt, then please continue, but if you don't have a strong preference, I think you will find it easier to use the Windows Command Prompt. I think bash is better than the Windows command prompt, but it is meant to be run with Linux, and trying to get it to work on Windows can be a struggle.*  
 
+![Unit tests](https://s3.amazonaws.com/bucket01.elvenware.com/images/AngularMongoDbTest01.png)
+
 ## Step One
 
 Create the base project by making a copy of **AngularMongoCrud**:

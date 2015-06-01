@@ -108,7 +108,9 @@ Pick a theme that you are interested in. It could be something technical like An
 
     https://www.google.com/trends/topcharts
 
-Convert the database from Scientists to your own subjects. Create your pages instead of **astronomy.jade** and **physics.jade**. For instance, if your subject is book authors then you have pages with names like **henry-james.jade** or **mark-twain.jade**. Or maybe you want to focus on books rather than authors, or authors and books, in which case you might need something like this:  **tom-sawyer.jade**. 
+Convert the database from Scientists to your own subjects. You should, of course, be running the database out of your own MongoLab or Mongo database. Don't try to use my database. 
+
+Create your pages instead of **astronomy.jade** and **physics.jade**. For instance, if your subject is book authors then you have pages with names like **henry-james.jade** or **mark-twain.jade**. Or maybe you want to focus on books rather than authors, or authors and books, in which case you might need something like this:  **tom-sawyer.jade**. 
 
 Make sure you are using your own database and not mine. Change field names and labels as appropriate. Continue to have a field that can be matched to the name of your associated **jade** document.
 
