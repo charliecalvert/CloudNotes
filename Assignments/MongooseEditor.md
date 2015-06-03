@@ -83,8 +83,9 @@ Right now the structure of our **mongoFactory** looks like this:
 	app.factory('mongoFactory', function($http) {
 
 		return {
-                        // code omitted here
+            // code omitted here
 		};		
+		
 	});
 ```
 
@@ -96,11 +97,11 @@ Let's make a slight change to that code so that we can reference the factory its
 	app.factory('mongoFactory', function($http) {
 
 		var mongoFactory =  {
-                        // code omitted here
-                        // With this new structure, we can reference the mongoFactory in here.
+            // code omitted here
+            // With this new structure, we can reference the mongoFactory in here.
 		};		
 
-               return mongoFactory;
+        return mongoFactory;
 	});
 ```
 
