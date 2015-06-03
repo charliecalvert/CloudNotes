@@ -73,7 +73,31 @@ The selectScientist method looks like this:
 		};
 ```
 
-## MongoFactory Search
+We are also going to change the way that we load data into the main screen. Begin by deleting the old
+code from **control.js**:
+
+```
+    $http.get('/all-data').success(function(data) {
+        mongoController.allData = data;
+        mongoController.scientistsLength = data.allData.length;
+    }).error(function(err) {
+        console.log(err);
+    });
+```
+
+In its place, at the bottom of the file, ask the **mongoFactory** to retrieve the data:
+
+```
+    mongoFactory.getScientists(mongoController);
+```
+
+If there are save and insert methods left over from Monday, you can delete them. We are going to do
+those tasks elsewhere. 
+
+The code we have added won't work quite yet. We still need to make some changes to MongoFactory, as
+shown in the next section.
+
+## MongoFactory
 
 Right now the structure of our **mongoFactory** looks like this:
 
@@ -303,6 +327,133 @@ myModule.config(function($routeProvider, $locationProvider) {
 });
 ```
 
+Now that we are initiliazing our **elvenApp** module in **app.js**, don't forget to remove the dependencies to the module declaration in **control.js**:
+
+- Wrong code in **control.js**: var app = angular.module('elvenApp', []);
+- Right code in **control.js**: var app = angular.module('elvenApp');
+
+## Directives
+
+There are two directives we will use now, or later. Put them both in a file called **public/javascripts/science-input.js**:
+
+```
+(function() {
+
+	var app = angular.module('elvenApp');
+
+	app.directive('scienceShow', function() {
+
+		return {
+			controller: 'MongoController',
+			controllerAs: 'mongoController',
+			template:
+			'First: {{mongoController.data.firstName}} ' +
+			'<br>Last: {{mongoController.data.lastName}}' +
+			'<br>Topic: {{mongoController.data.subject}}'
+		};
+	});
+
+	app.directive('scienceInput', function() {
+
+		return {
+			controller: 'MongoController',
+			controllerAs: 'mongoController',
+			template: "<hr/>" +
+			"<label class='col-sm-2 control-label'>First Name</label>" +
+			"<div class='col-sm-4'>" +
+				"<input type='text' class='form-control' ng-model='mongoController.data.firstName'>" +
+			"</div>" +
+			"<label class='col-sm-2 control-label'>Last Name</label>" +
+			"<div class='col-sm-4'>" +
+				"<input type='text' class='form-control' ng-model='mongoController.data.lastName'>" +
+			"</div>" +
+			"<label class='col-sm-2 control-label'>Subject</label>" +
+			"<div class='col-sm-4'>" +
+				"<input type='text' class='form-control' ng-model='mongoController.data.subject'>" +
+			"</div>"
+		};
+	});
+
+})();
+```
+
+As you can see, the **scienceShow** directive is just another version of **elfMarie**, so you can remove that directive from **control.js**.
+
+## Finding Data
+
+I've rewritten the connect method to make it easier to see the user name, password and database. Remember
+that we want to create a REST URL that looks like this:
+
+    mongoose.connect('mongodb://csc:Re*lD*t*22#@ds049848.mongolab.com:49848/elvenlab01');
+    
+Here is the new method, where the parts that specify the user name, password and database
+are perhaps easier for you to see. Remember that the user name and password are separated
+by a colon:    
+
+```
+function doConnection() {
+	var baseUrl = 'mongodb://';
+	var namePassword = 'csc:Re*lD*t*22#';
+	var site = '@ds049848.mongolab.com:49848/'
+	var databaseName = 'elvenlab01'
+	var url = baseUrl+ namePassword + site + databaseName;
+	mongoose.connect(url);
+
+	var db = mongoose.connection;
+	db.on('error', console.error.bind(console, 'connection error:'));
+	db.once('open', function(callback) {
+		connected = true;
+		console.log('Opened connection to mongo');
+	});
+
+}
+```
+
+We have changed the way several methods in **routes/index.js** work:
+
+```
+router.get('/data/:id', function(request, response) {
+	console.log('Request id: ' + request.params.id);
+	console.log('type of request:' + typeof request.params.id);
+	var idInvalid = (request.params.id === 'undefined');
+	console.log('IdInvalid: ' + idInvalid);
+	if (!idInvalid) {
+		response.send({
+			result: 'Success',
+			numberOfDocuments: allData.length,
+			id: allData[request.params.id]._id,
+			firstName: allData[request.params.id].firstName,
+			lastName: allData[request.params.id].lastName,
+			subject: allData[request.params.id].subject,
+			subjects: allData[request.params.id].subjects,
+			comments: allData[request.params.id].comments
+		});
+	} else {
+		response.send({result: 'Invalid id'});
+	}
+});
+
+router.get('/find-by-id/:id', function(request, response) {
+	console.log('Request id: ' + request.params.id);
+	console.log('type of request:' + typeof request.params.id);
+	var idInvalid = (request.params.id === 'undefined');
+	console.log('IdInvalid: ' + idInvalid);
+	if (!idInvalid) {
+		var query = scientists.where({_id: request.params.id});
+		query.findOne(function(err, scientist) {
+			if (err) {
+				response.send(err);
+			}
+			if (scientist) {
+				response.send(scientist);
+			}
+		});
+	} else {
+		response.send({result: 'Invalid id'});
+	}
+});
+```
+
 ## Posting Data
 
 We want to update the database, we have to post data from the client to the server and from the server to the database. Information about the transaction is that routed back to the client.
@@ -441,7 +592,77 @@ router.post('/updateComments', function(request, response) {
 });
 ```
 
+## Edit Main Fields
+
+Now that we have things set up, the first step will be to enable editing of the **firstName** 
+and **lastName**. This will take place in **edit.js**. We begin by modifying **edit.jade**:
+
+```
+h1 Edit
+
+p hint: {{editController.hint}}
+
+hr
+button(data-ng-click="editController.saveCurrentDocument()") Save Current Document
+br
+br
+button(data-ng-click="editController.insertDocument()") Insert New Document
+
+
+div(ng-form="myform")
+   hr
+   label(class='col-sm-2, control-label') First Name
+   input.form-control(type='text', ng-model='editController.data.firstName')
+   br
+   label(class='col-sm-2, control-label') Last Name
+   input.form-control(type='text', ng-model='editController.data.lastName')
+   br
+   label(class='col-sm-2, control-label') Subject
+   input.form-control(type='text', ng-model='editController.data.subject')
+```
+
+Then, in **edit.js**, our first task is to get hold of the individual
+scientist that we want to edit:
+
+
+```
+		mongoFactory.getScientistById(mongoFactory.currentId, editController);
+```
+
+Now we are able to display the scientist data. The final step is to save and insert
+documents:
+
+
+```
+		editController.saveCurrentDocument = function() {
+			mongoFactory.postDocument("/save", editController);
+		};
+
+		editController.insertDocument = function() {
+			mongoFactory.postDocument("/insert", editController);
+		};
+```
+
 ## Subjects
+
+Now we want to be able to create a detailed list of subjects associated with a particular scientist. Let's start by adding 
+in the jade code in **views/subjects.jade**:
+
+```
+h1 Subjects
+
+label(class='col-sm-2, control-label') New Subject
+input.form-control(type='text', ng-model='subjectsController.newSubject')
+
+
+button(ng-click="subjectsController.addItem()") Add Item
+button(ng-click="subjectsController.saveItems()") Save Items
+button(ng-click="subjectsController.deleteSelected()") Delete Selected
+
+ul
+   li(ng-repeat='subject in subjectsController.data.subjects')
+      span {{subject}}
+```
 
 Here is the code for inserting and updating the detailed list of subjects. It belongs, of course, in **public/javascripts/subjects.js**:
 
