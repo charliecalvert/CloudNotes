@@ -2,7 +2,7 @@
 
 This is the followup to the [MongooseBasics assignment][mb].
 
-The main goal will be to create multiple pages:
+The main goal of this assignment will be to create multiple pages in our application:
 
 - Main Page: View the data
 - Edit: Edit scientist name and main subject
@@ -188,23 +188,52 @@ block content
 
 We will need to modify this menu next week. When run on a phone, for instance, we need it to morph into a hamburger menu. But for now, let's keep it as simple as possible.
 
+
 ## Program Structure
 
 We need jade and javascript files to support each of the menu items:
 
-| Menu | Jade | JavaScript |
-| ------------- |:-------------:| -----:|
-| Home| main.jade| control.js |
-| Edit| edit.jade | edit.js |
-| Subjects| subjects.jade | subjects.js |
-| Comments | comments.jade| comments.js|
-| About| about.jade|about.js| 
+| Menu           | Jade           | JavaScript   |
+| --------------:| --------------:| ------------:|
+| Home           | main.jade      | control.js   |
+| Edit           | edit.jade      | edit.js      |
+| Subjects       | subjects.jade  | subjects.js  |
+| Comments       | comments.jade  | comments.js  |
+| About          | about.jade     | about.js     | 
 
-You can sketch out these files by putting code like this in each jade file:
+
+Of course we need to make corresponding changes in **layout.jade**:
+
+```
+doctype html
+
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+		script(src="components/jquery/dist/jquery.js")
+		script(src="components/bootstrap/dist/js/bootstrap.js")
+		script(src="components/angular/angular.js")
+		script(src="components/angular-route/angular-route.js")
+		script(src="javascripts/app.js")
+		script(src="javascripts/control.js")
+		script(src="javascripts/subjects.js")
+		script(src="javascripts/comments.js")
+		script(src="javascripts/mongo-factory.js")
+		script(src="javascripts/about.js")
+		script(src="javascripts/edit.js")
+		script(src="javascripts/science-input.js")
+	body(data-ng-app="elvenApp")
+		block content
+```
+
+You can sketch out the jade files by putting code like this in each of them:
 
     h1: About
 
 And in the javascript files, you can put code like this:
+
 
 ```
 (function() {
@@ -222,7 +251,26 @@ And in the javascript files, you can put code like this:
 
 It should be obvious the small changes that need to be made to this sample code in order to make it unique to a particular file. For instance, in **subjects.jade** one would write: **h1: Subjects**. You can use the **app.js** file shown below to help you fill in the details, if they are not already obvious to you.
 
+The **main.jade** file is a special case, as it will now contain the working code that was in **index.jade**:
+
+```
+hr
+ul
+	li(data-ng-repeat='scientist in mongoController.allData')
+		<a ng-click="mongoController.selectScientist(scientist)"> {{scientist.id}} {{scientist.name}} </a>
+
+
+h2 Main
+div(science-show="")
+h2 Subjects
+p {{mongoController.data.subjects}}
+h2 Comments
+p {{mongoController.data.comments}}
+
+```
+
 We also need to create a file where we can specifyg our client side routes. The file, will be called **app.js** and it belongs in the **public/javascripts** folder. It structure should be second nature to you by this time:
+
 
 ```
 var myModule = angular.module("elvenApp", [ 'ngRoute' ]);
@@ -280,7 +328,11 @@ Now lets compose the **$http** requests that will send data to the server. There
 - Update the detailed list of **subjects**.
 - Update the the list of **comments**.
 
-Here is what the code in **mongoFactory** looks like. Remember that each method is  requests to update the database. It will be sent to the server using REST calls:
+Here is what the code in **mongoFactory** looks like. Remember that each method is  requests to update the database. It will be sent to the server using REST calls.
+
+When pasting in the code shown here, replace your existing **postDocument** function
+and then add two new methods for **subjects** and **comments**:
+
 
 ```
 			postDocument: function(route, controller) {
@@ -326,7 +378,7 @@ Here is what the code in **mongoFactory** looks like. Remember that each method 
 
 ```
 
-In **routes/index.js** we respond to the requests that originate in **mongoFactory**:
+In **routes/index.js** we respond to the requests that originate in **mongoFactory**. We need to replace our existing **/insert** route and create two new routes for **subjects** and **comments**:
 
 
 ```
