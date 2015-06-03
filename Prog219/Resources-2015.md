@@ -24,6 +24,8 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [Week05](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week05-2015.html)
 - [Week06](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week06-2015.html)
 - [Week07](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week07-2015.html)
+- [Week08](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week08-2015.html)
+- [Week09](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week09-2015.html)
  
 ## Assignments
 
@@ -42,6 +44,9 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [AngularDirectives](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularDirectives.html)
 - [Angular MongoDb Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbStarter.html)
 - [Angular MongoDb Crud](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbCrud.html)
+- [MangoExpress](http://www.ccalvert.net/books/CloudNotes/Assignments/MangoExpress.html)
+- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/Prog219Midterm2015.html)
+- [MongooseBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html)
 
 ## Git
 
@@ -85,6 +90,12 @@ Other:
 - [NodeJs and Express on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/NodeJs.html)
 - [Angular and Jasmine on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/Angular.html)
 - [JavaScript Patterns](http://shichuan.github.io/javascript-patterns/)
+
+
+## Database
+
+- [MongoDb on Elvenware][elf-mongodb]
+- Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
 
 ## Design
 

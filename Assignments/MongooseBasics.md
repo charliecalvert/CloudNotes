@@ -2,6 +2,10 @@
 
 Mongoose Basics is an ORM for MongoDB.
 
+- Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
+- [Week09 Overview](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week09-2015.html)
+- [Prog219 Resources](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Resources.html)
+
 ## Step One
 
 	express Week09-MongooseBasics
@@ -46,6 +50,9 @@ First install **mongoose**:
 
 	npm install mongoose --save
 
+You may see messages about mongoose, C++ and bson. If you are concerned about them, see the Elvenware notes on [this subject][gypbson].
+
+
 - Create a folder called models at the root of your project
 - Put this source in a file called **models/scientists.js**.
 
@@ -62,7 +69,7 @@ var scientistsSchema = mongoose.Schema({
     "firstName": String,
     "lastName": String,
     "subject": String,
-    "subjects": [{ subject: String}],
+    "subjects": [String],
     comments: [{ body: String, date: Date }]
 });
 
@@ -216,7 +223,16 @@ app.controller('MongoController', function($http, mongoFactory) {
 		};
 ```
 
-And here is our factory, saved in **mongo-factory.js**
+After the above code, you should also add the **elfMarie** directive used in our previous projects. You will need to tweak it a bit. For instance, the name of our controller has changed, and the template should look like this:
+
+```
+    template:
+            'First: {{mongoController.data.firstName}} ' +
+            '<br>Last: {{mongoController.data.lastName}}' +
+            '<br>Subject: {{mongoController.data.subject}}'
+```    
+
+And here is our factory, saved in **mongo-factory.js**. When adding this file to **layout.jade**, put it after **control.js**.
 
 ```
 (function() {
@@ -377,3 +393,5 @@ router.get('/:id', function(request, response) {
 	response.render(request.params.id, {});
 });
 ```
+
+[gypbson]:http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoose-gyp-bson
