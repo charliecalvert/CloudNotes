@@ -10,6 +10,12 @@ The main goal will be to create multiple pages:
 - Comments: Comment on a scientist
 - About: Standard about page
 
+We are breaking the app up into multiple pages for several reasons:
+
+- It creates a number of small pages that will fit on a mobile device
+- It helps the user understand each discreet task by isolating it on a simple page
+- It teaches you how to create and maintain a multi-page angular application
+
 References:
 
 - The Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
@@ -247,6 +253,186 @@ myModule.config(function($routeProvider, $locationProvider) {
 	});
 });
 ```
+
+## Posting Data
+
+We want to update the database, we have to post data from the client to the server and from the server to the database. Information about the transaction is that routed back to the client.
+
+On the client side, we use **$http.post** to send data to the server. These calls take two parameters:
+
+- The route we want to call on the server. For instance: **'/data'**.
+- The new data that we want to send to the database. This is the update itself.
+
+First, let's create a helper function that can handle our success and error messages:
+
+```
+    report: function(data, status, headers, config) {
+		console.log(data);
+		console.log(status);
+		console.log(headers);
+		console.log(config);
+	},
+```
+
+Now lets compose the **$http** requests that will send data to the server. There are three of them:
+
+- Update the **firstName**, **lastName** and main **subject**.
+- Update the detailed list of **subjects**.
+- Update the the list of **comments**.
+
+Here is what the code in **mongoFactory** looks like. Remember that each method is  requests to update the database. It will be sent to the server using REST calls:
+
+```
+			postDocument: function(route, controller) {
+				var scientist = {
+					id: controller.data._id,
+					firstName: controller.data.firstName,
+					lastName: controller.data.lastName,
+					subject: controller.data.subject
+				};
+				$http.post(route, scientist)
+				.success(function(data, status, headers, config) {
+					mongoFactory.report(data, status, headers, config);
+				}).error(function(data, status, headers, config) {
+					mongoFactory.report(data, status, headers, config);
+				});
+			},
+
+			postSubjects: function(initId, subjects) {
+				var subjectsUpdate = {
+					id: initId,
+					subjects: subjects
+				};
+				$http.post('/updateSubjects', subjectsUpdate)
+				.success(function(data, status, headers, config) {
+					mongoFactory.report(data, status, headers, config);
+				}).error(function(data, status, headers, config) {
+					mongoFactory.report(data, status, headers, config);
+				});
+			},
+
+			postComments: function(initId, comments) {
+				var subjectsUpdate = {
+					id: initId,
+					comments: comments
+				};
+				$http.post('/updateComments', subjectsUpdate)
+				.success(function(data, status, headers, config) {
+					mongoFactory.report(data, status, headers, config);
+				}).error(function(data, status, headers, config) {
+					mongoFactory.report(data, status, headers, config);
+				});
+			},
+
+```
+
+In **routes/index.js** we respond to the requests that originate in **mongoFactory**:
+
+
+```
+router.post('/insert', function(request, response) {
+	console.log('Save called. Body is next: ');
+	//var newData = getNewData(request.body);
+	var newData = {
+		firstName: request.body.firstName,
+		lastName: request.body.lastName,
+		subject:  request.body.subject,
+		comments: [],
+		subjects: []
+	};
+	console.log("New Data", newData);
+
+	if (!connected) {
+		doConnection();
+	}
+
+	console.log("about to call update");
+	var f = new scientists(newData);
+	f.save(function(e, a) {
+		response.send({result: e + a});
+	});
+});
+
+router.post('/updateSubjects', function(request, response) {
+	console.log('updateSubjects called. Body is next: ');
+	console.log(request.body);
+	scientists.update({ _id: request.body.id }, {
+			$set: {
+				subjects: request.body.subjects
+			}
+		}, function(err, numUpdated) {
+			console.log(err, {numUpdated: numUpdated});
+			if (err) {
+				console.log(err);
+			}
+			response.send({result: 'Success', data: numUpdated});
+		}
+	);
+});
+
+router.post('/updateComments', function(request, response) {
+	console.log('updateComments called. Body is next: ');
+	console.log(request.body);
+	scientists.update({ _id: request.body.id }, {
+			$set: {
+				comments: request.body.comments
+			}
+		}, function(err, numUpdated) {
+			console.log(err, {numUpdated: numUpdated});
+			if (err) {
+				console.log(err);
+			}
+			response.send({result: 'Success', data: numUpdated});
+		}
+	);
+});
+```
+
+## Subjects
+
+Here is the code for inserting and updating the detailed list of subjects. It belongs, of course, in **public/javascripts/subjects.js**:
+
+```
+(function() {
+
+	var app = angular.module('elvenApp');
+
+	app.controller('SubjectsController', function($http, mongoFactory) {
+		var subjectsController = this;
+
+		subjectsController.hint = "Edit Document";
+
+		subjectsController.addItem = function() {
+			subjectsController.data.subjects.push(subjectsController.newSubject);
+		};
+
+		subjectsController.saveItems = function() {
+			mongoFactory.postSubjects(subjectsController.data._id,
+				subjectsController.data.subjects);
+		};
+
+		subjectsController.deleteSelected = function() {
+
+		};
+
+		function getScientist() {
+			mongoFactory.getScientistById(mongoFactory.currentId, subjectsController);
+		}
+
+		getScientist();
+	});
+
+})();
+```
+
+The code starts in **getScientist** by retrieving the current record from the **mongoFactory**:
+
+		mongoFactory.getScientistById(mongoFactory.currentId, subjectsController);
+
+This code works because the factory is always tracking the currently selected record back on the main page.
+
+
+
 
 [filter]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 [high]:http://eloquentjavascript.net/05_higher_order.html
