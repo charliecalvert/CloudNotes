@@ -61,8 +61,9 @@ Remove the numeric input from **index.jade** and from **control.js**. This means
 With the numeric input gone, we need another way to select items. We will do that by making each item in our list a hyperlink:
 
 ```
-	li(data-ng-repeat='scientist in mongoController.allData')
-		<a ng-click="selectScientist(scientist)"> {{scientist.id}} {{scientist.name}} </a>
+	ul
+		li(data-ng-repeat='scientist in mongoController.allData')
+			<a ng-click="mongoController.selectScientist(scientist)"> {{scientist.id}} {{scientist.name}} </a>
 ```
 
 The selectScientist method looks like this:
