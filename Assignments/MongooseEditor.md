@@ -393,20 +393,21 @@ by a colon:
 
 ```
 function doConnection() {
-	var baseUrl = 'mongodb://';
-	var namePassword = 'csc:Re*lD*t*22#';
-	var site = '@ds049848.mongolab.com:49848/'
-	var databaseName = 'elvenlab01'
-	var url = baseUrl+ namePassword + site + databaseName;
-	mongoose.connect(url);
+  var baseUrl = 'mongodb://';
+  var userName = 'csc';
+  var password = 'Re*lD*t*22#';
+  var siteAndPort = 'ds049848.mongolab.com:49848';
+  var databaseName = 'elvenlab01';
+  var url = baseUrl + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
+  console.log(url);
+  mongoose.connect(url);
 
-	var db = mongoose.connection;
-	db.on('error', console.error.bind(console, 'connection error:'));
-	db.once('open', function(callback) {
-		connected = true;
-		console.log('Opened connection to mongo');
-	});
-
+  var db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', function(callback) {
+    connected = true;
+    console.log('Opened connection to mongo');
+  });
 }
 ```
 
