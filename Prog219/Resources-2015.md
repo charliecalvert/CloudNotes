@@ -47,9 +47,15 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [MangoExpress](http://www.ccalvert.net/books/CloudNotes/Assignments/MangoExpress.html)
 - [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/Prog219Midterm2015.html)
 - [MongooseBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html)
+- [MongooseEditor](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseEditor.html)
+- [MongooseMagic](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseMagic.html)
+- [MongooseMtgSets](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseMtgSets.html)
+- [MongooseSubDocuments](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSubdocuments.html)
+- [MongooseSignIn](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSignIn.html)
 
 ## Git
 
+- [Git on Elvenware][gitelf]
 - [Convert PEM File](https://youtu.be/EV9QSSX2w9I)
 
 ## Angular
@@ -228,3 +234,4 @@ Other:
 
 [angBest]: https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
 [angelf]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html
+[gitelf]:http://www.elvenware.com/charlie/development/cloud/Git.html
