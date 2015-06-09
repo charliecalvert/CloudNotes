@@ -11,8 +11,12 @@ Create the project
     express Week10-MongooseSubdocs
     cd Week10-MongooseSubdocs
     npm install mongoose --save
+    npm install
     copy %ELF_TEMPLATES%\.bowerrc
     bower init
+    
+Then after bower init, do this:
+    
     bower install angular --save
     bower install angular-route --save
     bower install bootstrap --save
@@ -70,7 +74,7 @@ html
 		script(src="components/bootstrap/dist/js/bootstrap.js")
 		script(src="components/angular/angular.js")
 		script(src="javascripts/control.js")
-		script(src="javascripts/mongo-factory.js")
+		script(src="javascripts/comment-factory.js")
 	body(ng-app='elvenApp')
 		block content
 ```
@@ -384,43 +388,93 @@ Here is **public/javascripts/comment-factory.js**:
 ```
 (function() {
 
-	var app = angular.module('elvenApp', []);
+	var app = angular.module('elvenApp');
 
-	app.controller('MainController', function(commentFactory) {
-		
-		var mainController = this;
+	app.factory('commentFactory', function($http) {
 
-		mainController.newComment = function() {
-			commentFactory.newComment(mainController.scientist, mainController.newCommentText);
+		var mongoFactory = {
+
+			allData: null,
+
+			currentId: null,
+
+			getScientists: function(controller) {
+				$http.get('/all-data').success(function(data) {
+					if (data.allData.length > 0) {
+						mongoFactory.allData = data.allData;
+						allDataNames = data.allData.map(function(scientist) {
+							return {id: scientist._id, name: scientist.firstName + ' ' + scientist.lastName};
+						});
+						controller.scientists = allDataNames;
+						mongoFactory.getScientistById(allDataNames[0].id, controller);
+					}
+				}).error(function() {
+					console.log("error");
+				});
+
+			},
+
+			newComment: function(scientist, text) {
+				var comment = {
+					commentText: text,
+					date: new Date().toJSON().slice(0, 10)
+				};
+				if (scientist.comments === null) {
+					scientist.comments = [];
+				}
+				var payLoad = {scientist: scientist, comment: comment};
+				$http.post('/newComment', payLoad).success(function(result) {
+					console.log(result.data.comments[result.data.comments.length - 1]._id);
+					scientist.comments.push(result.data.comments[result.data.comments.length - 1]);
+				}).error(function(err) {
+					console.log(err);
+				});
+			},
+
+			updateComment: function(scientist) {
+				var payLoad = {id: scientist._id, comments: scientist.comments};
+				$http.post('/updateComments', payLoad).success(function(result) {
+					console.log(result.electionObject);
+				}).error(function(err) {
+					console.log(err);
+				});
+			},
+
+			getScientistById: function(id, controller) {
+				mongoFactory.currentId = id;
+				var items = mongoFactory.allData.filter(function(scientist) {
+					return scientist._id === id;
+				});
+				return controller.scientist = items[0];
+			},
+
+			insertValidCollection: function() {
+				$http.post('/insertValidCollection', {}).success(function(result) {
+					console.log(result);
+				}).error(function() {
+					console.log(err);
+				});
+			},
+
+			emptyCollection: function() {
+				$http.post('/emptyCollection', {}).success(function(result) {
+					console.log(result);
+				}).error(function(err) {
+					console.log(err);
+				});
+			},
+
+			deleteComment: function(scientist, comment) {
+				$http.post('/deleteComment', {scientist: scientist, comment: comment}).success(function(result) {
+					console.log(result);
+					scientist.comments = result.update.comments;
+				}).error(function(err) {
+					console.log(err);
+				});
+			}
 		};
 
-		mainController.updateComment = function() {
-			commentFactory.updateComment(mainController.scientist);
-		};
-
-		mainController.selectScientist = function(scientist) {
-			commentFactory.getScientistById(scientist.id, mainController)
-		};
-
-		mainController.selectComment = function(comment) {
-			mainController.comment = comment;
-		};
-
-		mainController.insertValidCollection = function() {
-			commentFactory.insertValidCollection();
-		};
-
-		mainController.emptyCollection = function() {
-			commentFactory.emptyCollection();
-		};
-
-		mainController.deleteComment = function() {
-			commentFactory.deleteComment(mainController.scientist, mainController.comment);
-		};
-
-
-		commentFactory.getScientists(mainController);
-		console.log(mainController.scientists);
+		return mongoFactory;
 	});
 
 })();

@@ -8,7 +8,7 @@ The core goal is to create a web application that runs on AWS with **upstart** a
 
 The final should be built with HTML, CSS, and JavaScript. It should  contain the following elements:
 
-- Expressel
+- Express
 - Angular
 - Bootstrap
 - MongoDb and Mongoose
@@ -16,6 +16,7 @@ The final should be built with HTML, CSS, and JavaScript. It should  contain the
 - Support of logging in users
 - A bootstrap menu that folds into the Hamburger menu on a mobile device
 - Support for multiple bootstrap themes
+- Jasmine Unit Tests
 
 ## Pages
 
@@ -45,6 +46,10 @@ The following database features should be included
 - The ability to edit the main fields of your document. There should be at least three main fields.
 - The ability to add a list of subjects and store them in the database
 - The ability to add comments and store them in the database as a sub-document
+
+## Jasmine Unit Tests
+
+To be determined
 
 ## Extra Credit
 

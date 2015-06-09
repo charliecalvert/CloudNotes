@@ -22,6 +22,8 @@ Create an express app
 
 Don't forget port 30025, the title and **nodemon**.
 
+- <https://drive.google.com/file/d/0B25UTAlOfPRGVXR3SHFJa05sNjQ/view?usp=sharing>
+
 ## Step Two
 
 Setup Mongoose
@@ -155,6 +157,10 @@ var mongoose = require('mongoose');
 mongoose.connect(dbConfig.url);
 ```
 
+On about line 13, comment out the existing routes call:
+
+	// var routes = require('./routes/index');
+
 In app.js around line 28:
 
 ```
@@ -162,7 +168,7 @@ In app.js around line 28:
 var passport = require('passport');
 var expressSession = require('express-session');
 app.use(expressSession({
-    secret: 'mySecretKey'
+    secret: 'mySecretKey',
     resave: true,
     saveUninitialized: true
 }));
