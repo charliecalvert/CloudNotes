@@ -36,6 +36,9 @@ Details:
 - Subjects: Add and view topics
 - Comments: Add, delete and edit comments
 
+On all pages you should be able to see the name of the currently selected topic. For instance, here we can see the name of the selected scientist:
+
+![Subjects Name](https://s3.amazonaws.com/bucket01.elvenware.com/images/Prog219-Final-2015-01.png)
 
 ## Database
 
@@ -67,6 +70,42 @@ Suppose your subject was scientists. The user should be able to:
     - Click on subject and view a document related to that subject
 
 
+## Hints
 
+Some hints
 
+## Bootswatch in bower.json {#bootswatch}
+
+One of your duties as a developer is to make sure that your code can be compiled and run by other developers. Don't leave mistakes in your code, or in **package.json**, or **bower.json**, that cause build errors. You should test the code that you check in, and make sure it builds.
+
+In particular, in your bower file, don't write this:
+
+    "bootswatch": "~3.3.4+1"
+
+It causes an error when I type **bower install**. Instead, write this, where the tilde has been removed:
+
+    "bootswatch": "3.3.4+1"
+
+### Define Scientists
+
+In subdocuments I redefined **models/scientists.js**. Some of that was probably not necessary and will only be confusing. For now, at least, let export only one Schema, but keep the updates to the **comment** schema:
+
+```
+var mongoose = require('mongoose');
+
+var comment = mongoose.Schema({
+    commentText: String,
+    date: { type: Date, default: Date.now }
+});
+
+var scientistsSchema = mongoose.Schema({
+    "firstName": String,
+    "lastName": String,
+    "subject": String,
+    "subjects": [String],
+    comments: [comment]
+});
+
+module.exports = mongoose.model('scientist', scientistsSchema);
+```
  

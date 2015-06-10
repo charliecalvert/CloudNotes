@@ -7,6 +7,22 @@ Mongoose sign in has two major parts:
 
 The code also encrypts and validates user names and passwords.
 
+The sign in Screen:
+
+![Sign In](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn01.png)
+
+Register a new users:
+
+![Sign In](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn02.png)
+
+Logged in:
+
+![Sign In](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn03.png)
+
+The users in MongoLab:
+
+
+
 ## Step One
 
 Create an express app
@@ -78,26 +94,24 @@ In **views/index.jade**
 
 ```
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
-
-  div.container
-    div.row
-      div.col-sm-6.col-md-4.col-md-offset-4
-        h1.text-center.login-title Sign in to our Passport app
-          div.account-wall
-            img(class='profile-img', src='images/SpaceNeedle.png')
-            form(class='form-signin', action='/login', method='POST')
-              input(type='text', name='username' class='form-control', placeholder='UserName',required, autofocus)
-              input(type='password', name='password' class='form-control', placeholder='Password', required)
-              button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
-              span.clearfix
-          a(href='/signup', class='text-center new-account') Create an account
-          #message
-          if message
-            h1.text-center.error-message #{message}
+	h1= title
+	p Welcome to #{title}
+	div.container
+		div.row
+			div.col-sm-6.col-md-4.col-md-offset-4
+				h1.text-center.login-title Sign in to our Passport app
+					div.account-wall
+						img(class='profile-img', src='images/SpaceNeedle.png')
+						form(class='form-signin', action='/login', method='POST')
+							input(type='text', name='username' class='form-control', placeholder='UserName',required, autofocus)
+							input(type='password', name='password' class='form-control', placeholder='Password', required)
+							button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
+							span.clearfix
+					a(href='/signup', class='text-center new-account') Create an account
+					#message
+					if message
+						h1.text-center.error-message #{message}
 ```
 
 in **views/register.jade**
@@ -128,21 +142,23 @@ In **views/home.jade**
 
 ```
 extends layout
-
 block content
 	div.container
 		div.row
 			div.col-sm-6.col-md-4.col-md-offset-4
 				#user
 					h1.text-center.login-title Welcome #{user.firstName}. Check your details below:
-						div.signup-wall
-							ul.user-details
-								li Username ---> #{user.username}
-								li Email    ---> #{user.email}
-								li First Name ---> #{user.firstName} 
-								li Last Name ---> #{user.lastName}
-						a(href='/signout', class='text-center new-account') Sign Out 
+					div.signup-wall
+						ul.user-details
+							li Username ---> #{user.username}
+							li Email    ---> #{user.email}
+							li First Name ---> #{user.firstName}
+							li Last Name ---> #{user.lastName}
+					a(href='/signout', class='text-center new-account') Sign Out
+
 ```
+
+Be careful about the whitespace in these files.
 
 ## Step Three
 
@@ -203,13 +219,11 @@ router.post('/login', passport.authenticate('login', {
 In **routes/index.js**
 
 ```
-// http://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
-
 var express = require('express');
 var router = express.Router();
 
-var isAuthenticated = function (req, res, next) {
-	// if user is authenticated in the session, call the next() to call the next request handler 
+var isAuthenticated = function(req, res, next) {
+	// if user is authenticated in the session, call the next() to call the next request handler
 	// Passport adds this method to request object. A middleware is allowed to add properties to
 	// request and response objects
 	if (req.isAuthenticated())
@@ -218,32 +232,30 @@ var isAuthenticated = function (req, res, next) {
 	res.redirect('/');
 };
 
-module.exports = function(passport){
+module.exports = function(passport) {
 
 	router.get('/', function(req, res) {
-		res.render('index', { title: "sign in" });
+		res.render('index', {title: "sign in"});
 	});
 
 	router.post('/login', passport.authenticate('login', {
 		successRedirect: '/home',
-		failureRedirect: '/',
-		failureFlash : true  
+		failureRedirect: '/'
 	}));
 
-	router.get('/signup', function(req, res){
-		res.render('register', {message: req.flash('message')});
+	router.get('/signup', function(req, res) {
+		res.render('register', {});
 	});
 
 	/* Handle Registration POST */
 	router.post('/signup', passport.authenticate('signup', {
 		successRedirect: '/home',
-		failureRedirect: '/signup',
-		failureFlash : true  
+		failureRedirect: '/signup'
 	}));
 
 	/* GET Home Page */
-	router.get('/home', isAuthenticated, function(req, res){
-		res.render('home', { user: req.user });
+	router.get('/home', isAuthenticated, function(req, res) {
+		res.render('home', {user: req.user});
 	});
 
 	router.get('/signout', function(req, res) {
@@ -252,7 +264,7 @@ module.exports = function(passport){
 	});
 
 	return router;
-}
+};
 ```
 
 ## Step Five
@@ -293,46 +305,50 @@ module.exports = function(passport) {
 In **/passport/login.js**
 
 ```
+/**
+ * Created by charlie on 6/8/2015.
+ */
+
 var LocalStrategy   = require('passport-local').Strategy;
 var User = require('../models/user');
 var bCrypt = require('bcrypt-nodejs');
 
 module.exports = function(passport) {
 
-    passport.use('login', new LocalStrategy({
-            passReqToCallback : true
-        },
-        function(req, username, password, done) { 
-            // check in mongo if a user with username exists or not
-            User.findOne({ 'username' :  username }, 
-                function(err, user) {
-                    // In case of any error, return using the done method
-                    if (err)
-                        return done(err);
-                    // Username does not exist, log the error and redirect back
-                    if (!user){
-                        console.log('User Not Found with username '+username);
-                        return done(null, false, req.flash('message', 'User Not found.'));                 
-                    }
-                    // User exists but wrong password, log the error 
-                    if (!isValidPassword(user, password)){
-                        console.log('Invalid Password');
-                        return done(null, false, req.flash('message', 'Invalid Password')); // redirect back to login page
-                    }
-                    // User and password both match, return user from done method
-                    // which will be treated like success
-                    return done(null, user);
-                }
-            );
+	passport.use('login', new LocalStrategy({
+				passReqToCallback : true
+			},
+			function(req, username, password, done) {
+				// check in mongo if a user with username exists or not
+				User.findOne({ 'username' :  username },
+					function(err, user) {
+						// In case of any error, return using the done method
+						if (err)
+							return done(err);
+						// Username does not exist, log the error and redirect back
+						if (!user){
+							console.log('User Not Found with username '+username);
+							return done(null, false);
+						}
+						// User exists but wrong password, log the error
+						if (!isValidPassword(user, password)){
+							console.log('Invalid Password');
+							return done(null, false); // redirect back to login page
+						}
+						// User and password both match, return user from done method
+						// which will be treated like success
+						return done(null, user);
+					}
+				);
 
-        })
-    );
+			})
+	);
 
 
-    var isValidPassword = function(user, password){
-        return bCrypt.compareSync(password, user.password);
-    }
-    
+	var isValidPassword = function(user, password){
+		return bCrypt.compareSync(password, user.password);
+	}
+
 };
 ```
 
@@ -399,3 +415,115 @@ module.exports = function(passport){
 
 };
 ```
+
+## Step Six
+
+Add css. Append this to **public/css/style.css**:
+
+```
+.form-signin{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox{
+    font-weight: normal;
+}
+.form-signin .form-control{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus{
+    z-index: 2;
+}
+.form-signin input[type="text"]{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signin input[type="password"].nomargin{
+	margin-bottom: 0px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.signup-wall{
+	margin-top: 20px;
+    padding: 20px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);	
+}
+.login-title{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.new-account{
+    display: block;
+    margin-top: 10px;
+}
+h1.error-message{
+    color: red;
+}
+ul.user-details{
+    list-style: none;
+}
+```
+
+## Step Seven View Data on MongoLab
+
+When viewing the data on MongoLab, select **edit table view** in the view of your **users** collection and paste in the following code:
+
+```
+{
+    "_id": "id",
+    "username": "username",
+    "email": "email",
+    "firstName": "firstName",
+    "lastName": "lastName",
+    "password": "password"
+}
+```
+
+When you are done, you are view of the data could look something like this:
+
+![MongoLab](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn04.png)
+
+##Turn it in
+
+Submit four screen shots as PNG attachments. Each screen shot except the last should contain your first and last names. Model your screen shots after the four images found in this assignment.
+
+Also check in your code in **Week10-MongooseSignIn** or some similar name beginning with **Week10**. If there might be any question at all as to where I would find your code, please include the folder name when you submit the assignment.
+

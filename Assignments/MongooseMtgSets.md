@@ -26,6 +26,12 @@ Run the **ParseSets.js** file. Take the following screenshots:
 - A screen shot of the command line on your system after you finish running this command:
     - **node ParseSets.js** 
 
+There are calls to two methods at the bottom of **ParseSets.json**:
+
+    insertData();
+    search();
+
+The first pushes the data into the database, the second reads one set back from the database. You might want to comment out the **Search()** call that reads from the database the first time you run it, and then switch the process, commenting out the call to **insertData** and commenting the call to **search**. 
 
 ## Thoughts
 
