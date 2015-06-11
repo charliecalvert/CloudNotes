@@ -16,6 +16,46 @@ Again, just to make clear what is happening:
 - We then find the next set and push it and all its cards into a single document in **all-magic-sets**.
 - By the time we are done, there will be 178 documents in **all-magic-sets**. Each document will contain, as a series of sub-documents, all the cards in that particular set. Sometimes there may be only a few cards, at other times there may be over a hundred. Regardless of how many cards are in the set, each set is treated as a single document with a series of sub-documents.
 
+## Overview
+
+The code:
+
+- First ensures that the MongoDb **all-magic-sets** collection, if it exists, is empty
+    - It is not an error to try to empty a collection that does not exist.
+- Then it opens **AllSets.json**
+- In **writeSetToFile** it writes each set to disk as a JSON file
+- In **insertSet** it inserts each set into **all-magic-sets**.
+    - The cards are shown as sub-documents of the set
+- Then in **Search** it retrieves one set and displays one card.
+
+Each call is made in the callback to the previous call
+
+- The code to empty the set, when complete, kicks of the process of reading **AllSets.json**.
+- The code that inserts the sets, after it has inserted **all** the sets, calls the code to **Search** for a set.
+
+For instance, here is how the code to empty the collection, once it is finished, calls the code to insertData:
+
+```javascript
+MagicSet.remove({}, function(err) {
+	if (err) throw(err);
+	insertData()
+});
+```
+
+Here is how the code to insert a set, when it has finished inserting all the sets, calls **Search**: 
+
+
+```javascript
+set.save(function(err) {
+	console.log('saved: ', set.name);
+	totalSetsSaved++;
+	if (totalSetsSaved === setNames.length) {
+		console.log(setNames.length);
+		search();
+	}
+});
+```
+
 ## Turn It In
 
 Run the **ParseSets.js** file. Take the following screenshots:
@@ -26,12 +66,6 @@ Run the **ParseSets.js** file. Take the following screenshots:
 - A screen shot of the command line on your system after you finish running this command:
     - **node ParseSets.js** 
 
-There are calls to two methods at the bottom of **ParseSets.json**:
-
-    insertData();
-    search();
-
-The first pushes the data into the database, the second reads one set back from the database. You might want to comment out the **Search()** call that reads from the database the first time you run it, and then switch the process, commenting out the call to **insertData** and commenting the call to **search**. 
 
 ## Thoughts
 
