@@ -69,6 +69,59 @@ html
 
 The viewport is essential to make it work on a mobile device. See HTML5 Boilerplate web site for latest and details.
 
+Also add this code to make sure we can see the whole of the jumbotron:
+
+```
+	.elf-container
+		div.jumbotron
+			h1= title
+			p Welcome to #{title}
+
+		#monogoData(data-ng-view="")
+```
+
+And this CSS in **JavaScripts/css/Styles.css**:
+
+```
+.elf-container {
+  border: solid #004b63 thin;
+  margin-top: 25px;
+```
+
+Here is my code complete:
+
+```
+extends layout
+block content
+	nav.navbar-default.navbar-fixed-top
+		.container-fluid
+			div.navbar-header
+				button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myTarget")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href="#/") Final
+			#myTarget.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li(ng-class="{ active: isActive('/')}")
+						a(ng-href='#/') Home
+					li(ng-class="{ active: isActive('/edit')}")
+						a(ng-href='#/edit') Edit
+					li(ng-class="{ active: isActive('/subjects')}")
+						a(ng-href='#/subjects') Subjects
+					li(ng-class="{ active: isActive('/comments')}")
+						a(ng-href='#/comments') Comments
+					li(ng-class="{ active: isActive('/about')}")
+						a(ng-href='#/about') About
+	div.jumbotron
+		h1= title
+		p Welcome to #{title}
+
+	#monogoData(data-ng-view="")
+```
+
+
 This is the example that I use when I get confused about how to build menus:
 
 - <http://getbootstrap.com/examples/theme/#>
@@ -204,6 +257,16 @@ And then a bit further on in the server side **app.js** file we add more famiila
 app.use('/', routes);
 app.use('/ScienceInfo', science);
 app.use('/comments/', comments);
+```
+
+Here is the way the top of **index.js** looks now:
+
+```
+var express = require('express');
+var router = express.Router();
+var connect = require('./connect');
+var scientists = require('../models/scientists');
+
 ```
 
 ## Routing Login
