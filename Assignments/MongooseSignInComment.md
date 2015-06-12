@@ -311,12 +311,17 @@ app.controller('LoginController', function($http, $location) {
 	loginController.hint = "Sign in";
 
 	loginController.update = function() {
-		$http.post('/login/login/', {"username": loginController.userName, "password": loginController.password}).success(function(user) {
-                        console.log(user);
-			$location.path('/');
-		}).error(function(err) {
-			loginController.hint = 'Bad Password/User. Try again';
-		})
+            var user = {
+                "username": loginController.userName, 
+                "password": loginController.password
+            };
+
+            $http.post('/login/login/', user).success(function(user) {
+                console.log(user);
+            	$location.path('/');
+            }).error(function(err) {
+            	loginController.hint = 'Bad Password/User. Try again';
+            })
 	}
 });
 ```
