@@ -1,15 +1,6 @@
 ## Description
 
-In this assignment we will integrate our comments into our main application.
-
-Key points:
-
-- Establish a stand-alone **connect** object for connecting to Mongoose.
-- Set up a separate route for **comments**. We don't route these requests throught **routes/index.js**. Instead, we set up **routes/comment.js**.
-
-
-Whether you want to do this in your midterm or in your **MongooseSubDocuments** assignment is up to you. If you are uncertain, I would make a copy of **MongooseSubDocuments** and work from there. It should not matter too much if you have not yet completed **MongooseSubDocuments**.
-
+In this assignment we will integrate menus and sorting into a single application. The goal is provide you a blue print for doing the same thing in your final. 
 
 ## Menus
 
@@ -25,7 +16,7 @@ Inside the div with the class **container-fluid** we want to put two more divs. 
 
 
 ```
-div.navbar-header
+.navbar-header
 	button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myTarget")
 		span.sr-only Toggle navigation
 			span.icon-bar
@@ -34,8 +25,9 @@ div.navbar-header
 		a.navbar-brand(href="#/") Final
 ```
 
-Then we put in our menu, giving it the same id as the data-target from **navbar-header**. The
-point is that this is the menu that will collapse into the hamburger menu:
+The hamburger menu is boilerplate. It will look the same in all code, with the exception of the last line, **navbar-brand** which is the title of your application. The **data-target** can also change, as explained below.
+
+Then we put in our menu, giving it the same id as the **data-target** from **navbar-header**. The ID we assign to **data-target** ties this list of menu items to the hamburger menu. It is what tells **bootstrap** what to show when the user selects the hamburger menu. The point is that this is the menu that will collapse into the hamburger menu:
 
 ```
 #myTarget.collapse.navbar-collapse
@@ -88,14 +80,18 @@ And this CSS in **JavaScripts/css/Styles.css**:
   margin-top: 25px;
 ```
 
-Here is my code complete:
+Below is my complete for my menus. It's nice to be able to just paste this in, but it is much better if you can see the two main sections:
+
+- The Hamburger menu which is the begings with **.navbar-header**
+- The menu items, which bigin with the div labeled **#myTarget.collapse.navbar-collapse**
+- Notice that the id **#myTarget** ties the two sections together. If you don't match the two ids, then when you click on the hamburger menu, nothing happens.
 
 ```
 extends layout
 block content
 	nav.navbar-default.navbar-fixed-top
 		.container-fluid
-			div.navbar-header
+			.navbar-header
 				button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myTarget")
 					span.sr-only Toggle navigation
 					span.icon-bar
@@ -140,14 +136,14 @@ callback allows you to compare two items from the array, returning:
 Lets assume we have a simple object with an id and name. We place these
 objects in an array:
 
-```
+```javascript
 	var allNames = [{id: scientist._id, name: scientist.firstName + ' ' + scientist.lastName}];
 ```
 
 Here we have only one item in the array, but if we had more items we would
 want to sort the array by name. We could approach that task like this:
 
-```
+```javascript
 allDataNames.sort(function(scientistA, scientistB) {
 	if (scientistA.name > scientistB.name) {
 		return 1;
@@ -162,111 +158,16 @@ allDataNames.sort(function(scientistA, scientistB) {
 
 ## Routing Comments
 
-We need to set up a separate route for comments. This means making edits to the server side **app.js** and adding a new file called **routes/comment.js**.
-
-We should also have a separate http factory. It contains everything from our subdocs code that is not already in mongoFactory. In particular, get the code for updating, inserting and deleting comments. Here is the beginning of **public/javascripts/comment-factory.js**.
-
-```
-(function() {
-
-	var app = angular.module('elvenApp');
-
-	app.factory('commentFactory', function($http) {
-
-		var commentFactory = {
-
-			newComment: function(scientist, text) {
-				etc...
-```
-
-The methods are **newComment**, **updateComment** and **deleteComment**. You will also need a **routes/comments.js** file that contains the three corresponding routes from the subdocs **routes/index.js** assignment. The top of **routes/comments.js** looks like this:
-
-```
-var express = require('express');
-var router = express.Router();
-var connect = require('./connect');
-var scientists = require('../models/scientists');
-var fs = require('fs');
-
-
-router.post('/newComment', function(request, response) {
-
-	if (!connect.connected) {
-		connect.doConnection();
-	}
-
-console.log('newComments called. Body is next: ');
-
-etc...
-```
-
-Because you now have two files that need to connect to the MongoDb database, you will probably want to create a file called **routes/connect.js** that you use in both **routes/index.js** and in **routes/comments.js**. It might look like this:
-
-```
-var mongoose = require('mongoose');
-
-var connect = {
-
-	connected: false,
-
-	doConnection: function() {
-		connect.connected = true;
-		var userName = 'csc';
-		var password = 'Re*lD*t*22#';
-		var siteAndPort = 'ds049848.mongolab.com:49848';
-		var databaseName = 'elvenlab01';
-		var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
-		console.log(url);
-		mongoose.connect(url);
-
-		// This part is optional
-		var db = mongoose.connection;
-		db.on('error', console.error.bind(console, 'connection error:'));
-		db.once('open', function(callback) {
-			connected = true;
-			console.log('Opened connection to mongo');
-		});
-	}
-};
-
-module.exports = connect;
-```
-
-Take a close look at the beginning of **newComments** above. Notice how it ensures you are connected before trying to access the database:
-
-```
-if (!connect.connected) {
-	connect.doConnection();
-}
-```
-
-The code in **app.js** that links in **routes/comments** should be familiar by now:
-
-```
-var routes = require('./routes/index');
-var science = require('./routes/science');
-var comments = require('./routes/comments');
-var app = express();
-```
-
-Some of the details will differ in your program, but the general approach is similar.
-
-And then a bit further on in the server side **app.js** file we add more famiilar code:
-
-```
-app.use('/', routes);
-app.use('/ScienceInfo', science);
-app.use('/comments/', comments);
-```
-
-Here is the way the top of **index.js** looks now:
-
-```
-var express = require('express');
-var router = express.Router();
-var connect = require('./connect');
-var scientists = require('../models/scientists');
-
-```
+This part of this assignment has been moved into a new, separate assignment, called [MongooseComments][moncom].
 
 ## Routing Login
+
+This part of this assignment will be included in a new assignment that I am currently building.
+
+## Turn it in
+
+Put your work in a folder called either **Week11-MongooseRoutes** or **Week11-MongooseMenuSort**, which is a better name for this project. Please specify the name of the folder that contains your work when you submit this assignment.
+
+If your project already contains a solution for the **MongooseComments** assignment, that is, if it contains a working page that handles comments in **routes/comments.js** and **public/javascript/comment-factory.js**, then that is fine. I will give you credit for that work in the **[MongooseComments][moncom]** assignment.
+
+[moncom]:http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseComments.html 
