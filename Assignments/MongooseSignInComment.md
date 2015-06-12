@@ -311,7 +311,8 @@ app.controller('LoginController', function($http, $location) {
 	loginController.hint = "Sign in";
 
 	loginController.update = function() {
-		$http.post('/login/login/', {"username": loginController.userName, "password": loginController.password}).success(function(data) {
+		$http.post('/login/login/', {"username": loginController.userName, "password": loginController.password}).success(function(user) {
+                        console.log(user);
 			$location.path('/');
 		}).error(function(err) {
 			loginController.hint = 'Bad Password/User. Try again';
@@ -325,7 +326,7 @@ Notice how it works. We have two paths:
 - success
 - error
 
-If the user is logged in successfully the success path is invoked and the user is redirected back to the home page. If the error path is invoked, then a hint is displayed telling the user to try again.
+If the user is logged in successfully the success path is invoked and the user is redirected back to the home page. We are also passed information about the user from our database. That is, we are passed the user name, email, etc. If the error path is invoked, then a hint is displayed telling the user to try again.
 
 We don't have signup working at this time. If you need to create a user, for now use the signup [assignment][sign] example to create the user, then switch back to this code.
 
