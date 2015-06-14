@@ -109,6 +109,54 @@ if (!connected) {
 
 Your should have to make three such substitutions, one at the top of each methods in **comments.js**.
 
+```javascript
+var express = require('express');
+var router = express.Router();
+var connect = require('./connect');
+var scientists = require('../models/scientists');
+
+router.post('/newComment', function(request, response) {
+    if (!connect.connected) {
+    	connect.doConnection();
+    }
+    
+    console.log('newComments called. Body is next: ');
+    console.log(request.body);
+    var scientist = request.body.scientist;
+    var comment = request.body.comment;
+    console.log(comment);
+
+    // Code omitted here
+});
+
+function remove(arr, item) {
+	for(var i = arr.length; i--;) {
+		if(arr[i]._id == item._id) {
+			arr.splice(i, 1);
+		}
+	}
+}
+
+router.post('/deleteComment', function(request, response) {
+    if (!connect.connected) {
+    	connect.doConnection();
+    }
+
+    // Code omitted here
+});
+
+router.post('/updateComments', function(request, response) {
+    if (!connect.connected) {
+    	connect.doConnection();
+    }
+
+    // Code omitted here
+});
+
+module.exports = router;
+
+```
+
 Your copy of **models/scientists.js** may already look like this, but just to avoid confusion, the version of that file I'm using in this project looks like this:
 
 ```
