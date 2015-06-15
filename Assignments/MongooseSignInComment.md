@@ -2,24 +2,6 @@
 
 This assignment is not complete yet. I give it to you only because it contains enough information to show some of you how to use sign in with angular.
 
-tldr: replace this method from the routes folder:
-
-```
-router.post('/login', passport.authenticate('login', {
-	successRedirect: '/#/home',
-	failureRedirect: '/'
-}));
-```
-
-With this one:
-
-```
-router.post('/login', passport.authenticate('login'),
-	function(req, res) {
-		res.send(req.user);
-});
-```
-
 Now passport will authenticate our user for us, and then put the user's information (username, email, etc) in **request.user**. It then relays the information back to the front end with **response.send(request.user)**. If the user can't log in, an error is sent back, per these lines from **passport/login**:
 
 ```
@@ -209,25 +191,18 @@ var express = require('express');
 var router = express.Router();
 
 var isAuthenticated = function(req, res, next) {
-	// if user is authenticated in the session, call the next() to call the next request handler
-	// Passport adds this method to request object. A middleware is allowed to add properties to
-	// request and response objects
-	if (req.isAuthenticated())
+	if (req.isAuthenticated()) {
 		return next();
-	// if the user is not authenticated then redirect him to the login page
-	res.redirect('/');
+        } else {
+	   // if the user is not authenticated then redirect him to the login page
+	   res.redirect('/');
+        }
 };
 
 module.exports = function(passport) {
 	router.get('/', function(req, res) {
 		res.render('index', {title: "sign in"});
 	});
-
-	/*
-	router.post('/login', passport.authenticate('login', {
-		successRedirect: '/#/home',
-		failureRedirect: '/'
-	})); */
 
 	router.post('/login', passport.authenticate('login'),
 		function(req, res) {
@@ -257,6 +232,25 @@ module.exports = function(passport) {
 	return router;
 };
 ```
+
+Notice that we have replaced this method from the routes folder:
+
+```
+router.post('/login', passport.authenticate('login', {
+	successRedirect: '/#/home',
+	failureRedirect: '/'
+}));
+```
+
+With this one:
+
+```
+router.post('/login', passport.authenticate('login'),
+	function(req, res) {
+		res.send(req.user);
+});
+```
+
 
 ## Step Five
 
