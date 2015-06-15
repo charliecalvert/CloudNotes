@@ -190,7 +190,7 @@ Include this in index.jade:
 
 Add all these methods to **control.js**. Note currentItem and the calls to **getScientist and save, insert and indexchanged**. Also add mongoFactory as dependency injection:
 
-```
+```javascript
 app.controller('MongoController', function($http, mongoFactory) {
 
         var mongoController = this;

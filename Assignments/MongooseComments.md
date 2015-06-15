@@ -293,4 +293,10 @@ Congrats. You now have everything set up correctly. In addition, it should be re
 
 Put his project in a folder of your repository called **Week11-MongooseComments**. If you already completed this project  as part of the **MongooseRoutes** assignment, then simply point me to the folder that contains your version of the assignment. For instance, when you submit this assignment, add a comment saying that this project can be found in the **XXX** folder.
 
+## Hints
 
+Please see this information:
+
+- Sending a [new comment][restreq] from the browser to the server to a database. 
+
+[restreq]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html#http

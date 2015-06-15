@@ -40,6 +40,18 @@ On all pages you should be able to see the name of the currently selected topic.
 
 ![Subjects Name](https://s3.amazonaws.com/bucket01.elvenware.com/images/Prog219-Final-2015-01.png)
 
+On you main page, you might want to show a summary of all the data about a particular topic. Here you can see the bottom portion of the summary information for one scientist:
+
+![Summary info](https://s3.amazonaws.com/bucket01.elvenware.com/images/Prog219-Final-2015-02.png)
+
+All I want to see at this point is a login page. But ideally, in some later course, we would learn how to allow the user to see the home page, the about page and the login page, but to use the pages that provide the ability to edit data, one would have to be signed in. We are most of the way to getting that done, but we are just out of time.
+
+It would be cool, I suppose, to have two levels of logging in: 
+
+- One for adding comments
+- One for *admin* privileges such as editing the data about the scientist
+
+
 ## Database
 
 The following database features should be included
@@ -69,10 +81,18 @@ Suppose your subject was scientists. The user should be able to:
     - View, edit, add and delete a list of subjects
     - Click on subject and view a document related to that subject
 
-
 ## Hints
 
 Some hints
+
+## REST Calls from Client to Database and Back {#rest-call}
+
+Please see this information:
+
+- Sending a [new comment][restreq] from the browser to the server to a database. 
+
+[restreq]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html#http
+
 
 ## Bootswatch in bower.json {#bootswatch}
 

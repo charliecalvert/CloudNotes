@@ -483,3 +483,11 @@ Here is **public/javascripts/comment-factory.js**:
 ## Turn it in
 
 Submit the project in your repository in a folder called **Week10-MongooseSubdocs**
+
+## Hints
+
+Please see this information:
+
+- Sending a [new comment][restreq] from the browser to server to database. 
+
+[restreq]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html#http

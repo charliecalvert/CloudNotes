@@ -594,6 +594,32 @@ router.post('/updateComments', function(request, response) {
 });
 ```
 
+You should already have it in there, but if not, be sure you have include a **save** route:
+
+```javascript
+router.post('/save', function(request, response) {
+  console.log('Save called. Body is next: ')
+
+  var newData = getNewData(request.body);
+
+  if (!connected) {
+    doConnection();
+  }
+
+  console.log("about to call update");
+  scientists.update({ _id: request.body.id }, { $set: newData},
+      function(err, data) {
+        console.log(err, data);
+        if (err) {
+          console.log(err);
+        }
+        response.send({result: 'Success', data: data});
+      }
+  );
+
+});
+```
+
 ## Edit Main Fields
 
 Now that we have things set up, the first step will be to enable editing of the **firstName** 
