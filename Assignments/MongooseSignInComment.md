@@ -8,7 +8,7 @@ tldr: replace this method from the routes folder:
 router.post('/login', passport.authenticate('login', {
 	successRedirect: '/#/home',
 	failureRedirect: '/'
-})); 
+}));
 ```
 
 With this one:
@@ -20,14 +20,14 @@ router.post('/login', passport.authenticate('login'),
 });
 ```
 
-The point is that passport will authenticate our user for us, and then it will put the user's information (username, email, etc) in **request.user**. At that point we simply send the information back to the front end with **response.send(request.user)**. If the user can't log in, an error is sent back, per these lines from **passport/login**:
+Now passport will authenticate our user for us, and then put the user's information (username, email, etc) in **request.user**. It then relays the information back to the front end with **response.send(request.user)**. If the user can't log in, an error is sent back, per these lines from **passport/login**:
 
 ```
 if (!user){
     console.log('User Not Found with username '+username);
     return done(null, false);
 }
- 
+
 if (!isValidPassword(user, password)){
     console.log('Invalid Password');
     return done(null, false); // redirect back to login page
@@ -56,7 +56,7 @@ npm install bcrypt-nodejs --save
 npm install passport --save
 npm install passport-local --save
 npm install express-session --save
-bower install angular-route --save 
+bower install angular-route --save
 ```
 
 ## Step Two
@@ -143,11 +143,11 @@ Copy in the CSS from the [SignIn][sign] assignment.
 
 ## Step Four
 
-Most things on the backend for passport are the same. Just make sure you get rid of all references to **flash**. 
- 
-We are going to create a file called **routes/login.js**. It provides new middleware routes for logging in. This is like the example code from the previous example that was found in **routes/index.js**, but now we don't invoke it off the main route ('/'), instead we have **login** route ('/login'). 
+Most things on the backend for passport are the same. Just make sure you get rid of all references to **flash**.
 
-Here are the changes to make in **app.js**. You can keep the loading of routes middleware the same: 
+We are going to create a file called **routes/login.js**. It provides new middleware routes for logging in. This is like the example code from the previous example that was found in **routes/index.js**, but now we don't invoke it off the main route ('/'), instead we have **login** route ('/login').
+
+Here are the changes to make in **app.js**. You can keep the loading of routes middleware the same:
 
 ```
 var routes = require('./routes/index');
@@ -179,6 +179,13 @@ app.use(passport.session());
 var initPassport = require('./passport/init');
 initPassport(passport);
 
+var auth = function(req, res, next){
+    if (!req.isAuthenticated())
+        res.send(401);
+    else
+        next();
+};
+
 var login = require('./routes/login')(passport);
 app.use('/', routes);
 app.use('/users', users);
@@ -187,7 +194,9 @@ app.use('/login', login);
 
 ```
 
-The key line is the last one, where we load the new middleware for handling our new **login** route.
+The most important addition here is the section that begins **var auth...**. We will discuss it later in this document.
+
+Another key line is the last one, where we load the new middleware for handling our new **login** route.
 
 And below you see **routes/login.js**. Notice that this is pretty much the same as in our login example, but the **post('/login'** method has been replaced (I commented out the old version):
 
@@ -253,7 +262,52 @@ module.exports = function(passport) {
 
 We need a login route in app.js:
 
+Put this code in **public/javascripts/app.js**:
+
 ```
+//================================================
+// Check if the user is connected
+//================================================
+var checkLoggedin = function($q, $timeout, $http, $location, $rootScope){
+	// Initialize a new promise
+	var deferred = $q.defer();
+
+	// Make an AJAX call to check if the user is logged in
+	$http.get('/loggedin').success(function(user){
+		// Authenticated
+		if (user !== '0')
+		/*$timeout(deferred.resolve, 0);*/
+			deferred.resolve();
+
+		// Not Authenticated
+		else {
+			$rootScope.message = 'You need to log in.';
+			//$timeout(function(){deferred.reject();}, 0);
+			deferred.reject();
+			$location.url('/login');
+		}
+	});
+
+	return deferred.promise;
+};
+
+//================================================
+// Add an interceptor for AJAX errors
+//================================================
+$httpProvider.interceptors.push(function($q, $location) {
+	return {
+		response: function(response) {
+			// do something on success
+			return response;
+		},
+		responseError: function(response) {
+			if (response.status === 401)
+				$location.url('/login');
+			return $q.reject(response);
+		}
+	};
+});
+
 var myModule = angular.module("elvenApp", [ 'ngRoute' ]);
 
 myModule.config(function($routeProvider, $locationProvider) {
@@ -274,6 +328,13 @@ myModule.config(function($routeProvider, $locationProvider) {
 	});
 });
 ```
+
+Near the top of the file, you will have to inject the **$httpProvider** in the signature for the config provider:
+
+```
+myModule.config(function($routeProvider, $httpProvider, $locationProvider) {
+```
+
 
 This is your updated login jade, which has been adapted to work with angular:
 
@@ -312,7 +373,7 @@ app.controller('LoginController', function($http, $location) {
 
 	loginController.update = function() {
             var user = {
-                "username": loginController.userName, 
+                "username": loginController.userName,
                 "password": loginController.password
             };
 
@@ -334,5 +395,26 @@ Notice how it works. We have two paths:
 If the user is logged in successfully the success path is invoked and the user is redirected back to the home page. We are also passed information about the user from our database. That is, we are passed the user name, email, etc. If the error path is invoked, then a hint is displayed telling the user to try again.
 
 We don't have signup working at this time. If you need to create a user, for now use the signup [assignment][sign] example to create the user, then switch back to this code.
+
+## Step Six
+
+Logging out.
+
+Add the following at the bottom of **routes/index.html**. Place it before **get('/:id', function... etc**.
+
+```
+router.post('/logout', function(request, response){
+	request.logOut();
+	response.send(200);
+});
+
+router.get('/loggedin', function(request, response) {
+	response.send(request.isAuthenticated() ? request.user : '0');
+});
+
+```
+
+
+You will get a warning 'Synchronous XMLHttpRequest on the main thread is deprecated'. I believe this has something to do with the dialog we are loading to login and the related code. I don't think it has to do with the way we are rerouting events. In other words, it happens when we go directly to the login page, not just when we get there from the comments link. For now we are ignorning this warning.
 
 [sign]:http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSignIn.html
