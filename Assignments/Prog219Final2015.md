@@ -66,6 +66,14 @@ The following database features should be included
 
 To be determined
 
+## Turn it in
+
+Put the program itsefl in your repository in **Week11-Final**.
+
+Provide a link to the place on AWS where you program is running with
+upstart. By default it will be: <YOUR-ELASTIC-IP>:30027
+
+
 ## Extra Credit
 
 There are several ways to get extra credit.
@@ -128,4 +136,35 @@ var scientistsSchema = mongoose.Schema({
 
 module.exports = mongoose.model('scientist', scientistsSchema);
 ```
+
+### upstart
+
+There are a number of ways to solve this. One is:
+
+- Create a **final.conf** in your final folder.
+	- final.conf is same as midterm.conf but change the word midterm to final in the text of file itself
+	- Look in file and change the line that begins with the word **exec**
+- In bin/www set the port to 30027
+	- We will also need to go to the AWS console and open up 30027
+	- Go to AWS console. 
+	- Select your running instance (in green) from Instances Menu
+	- Check the name of the security group (launch-wizard-1)
+	- Select **Security Groups** from the menu
+	- Select your security group
+	- Choose **Inbound | Edit | Add**
+	- Open port 30027 and set the source to **Anywhere.**
+- Copy final.conf to **/etc/init/final.conf**
+	- sudo cp final.conf /etc/init/.
+- Create a link to your final folder from the bin folder:
+
+```
+cd ~/bin
+ln -s ~/Git/prog219-lastName/Week11-Final final;
+```
  
+When everything is set up, test your work:
+
+	sudo start final
+	
+Then go to the appropriate URL and test your work. For problems, check
+**/var/log/final.conf**.
