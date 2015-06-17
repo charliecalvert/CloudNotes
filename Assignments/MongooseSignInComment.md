@@ -1,21 +1,5 @@
 ## Description
 
-This assignment is not complete yet. I give it to you only because it contains enough information to show some of you how to use sign in with angular.
-
-Now passport will authenticate our user for us, and then put the user's information (username, email, etc) in **request.user**. It then relays the information back to the front end with **response.send(request.user)**. If the user can't log in, an error is sent back, per these lines from **passport/login**:
-
-```
-if (!user){
-    console.log('User Not Found with username '+username);
-    return done(null, false);
-}
-
-if (!isValidPassword(user, password)){
-    console.log('Invalid Password');
-    return done(null, false); // redirect back to login page
-}
-```
-
 SignIn and Comments in one program with a menu.
 
 Found a [good article][goodart] on passport and angular. The [code][artcode] is available and that is how I knew to replace the method shown above.
@@ -96,6 +80,11 @@ block content
 	p Welcome to #{title}
 	div(data-ng-view="")
 ```
+
+Here is a reference for ng-switch:
+
+- [ng-switch angular docs](https://docs.angularjs.org/api/ng/directive/ngSwitch)
+- [ng-switch stackOverflow](http://stackoverflow.com/a/14297556)
 
 ## Step Three
 
@@ -276,7 +265,7 @@ We are going to create a file called **routes/login.js**. It provides new middle
 
 Here are the changes to make in **app.js**. You can keep the loading of routes middleware the same:
 
-```
+```javascript
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var comments = require('./routes/comments');
@@ -284,7 +273,7 @@ var comments = require('./routes/comments');
 
 And then further down we have code that is quite similar to the original example:
 
-```
+```javascript
 // Configuring Passport
 var passport = require('passport');
 var expressSession = require('express-session');
@@ -313,11 +302,7 @@ Notice the last line, where we load the new middleware for handling our new **lo
 
 And below you see **routes/login.js**. Notice that this is pretty much the same as in our login example, but the **post('/login'** method has been replaced (I commented out the old version):
 
-```
-/**
- * Created by charlie on 6/11/2015.
- */
-
+```javascript
 var express = require('express');
 var router = express.Router();
 
@@ -495,7 +480,7 @@ block content
 
 This is your login controller:
 
-```
+```javascript
 var app = angular.module('elvenApp');
 
 app.controller('LoginController', function($http, $location, themeFactory) {
@@ -607,10 +592,8 @@ router.get('/loggedin', function(request, response) {
 
 Tie together the login and log out code and provide support for switching themes:
 
-```
+```javascript
 (function () {
-
-	// https://scotch.io/tutorials/use-angularjs-and-nghref-to-grab-css-dynamically
 
 	var app = angular.module('elvenApp');
 
@@ -634,19 +617,7 @@ Tie together the login and log out code and provide support for switching themes
 			{name: "Cerulean", url: "cerulean"},
 			{name: "Cosmo", url: "cosmo"},
 			{name: "Cyborg", url: "cyborg"},
-			{name: "Darkly", url: "darkly"},
-			{name: "Flatly", url: "flatly"},
-			{name: "Journal", url: "journal"},
-			{name: "Lumen", url: "lumen"},
-			{name: "Paper", url: "paper"},
-			{name: "Readable", url: "readable"},
-			{name: "Sandstone", url: "sandstone"},
-			{name: "Simplex", url: "simplex"},
-			{name: "Slate", url: "slate"},
-			{name: "Spacelab", url: "spacelab"},
-			{name: "Superhero", url: "superhero"},
-			{name: "United", url: "united"},
-			{name: "Yeti", url: "yeti"}
+                        etc...
 		];
 	});
 
@@ -662,56 +633,38 @@ Here is **public/javascripts/comments.jade**
 ```
 (function() {
 
-	var app = angular.module('elvenApp');
+    var app = angular.module('elvenApp');
+    
+    app.controller('CommentsController', function(mongoFactory, commentFactory) {
+    	var commentsController = this;
+    
+    	commentsController.updateComment = function() {
+    		commentFactory.updateComment(commentsController.scientist);
+    	};
 
-	app.controller('CommentsController', function(mongoFactory, commentFactory) {
-		var commentsController = this;
+        // Code omitted here....
 
-		commentsController.updateComment = function() {
-			commentFactory.updateComment(commentsController.scientist);
-		};
-
-		commentsController.newComment = function() {
-			commentFactory.newComment(commentsController.scientist, commentsController.newCommentText);
-		};
-
-		commentsController.deleteComment = function() {
-			commentFactory.deleteComment(commentsController.scientist, commentsController.comment);
-		};
-
-		commentsController.selectComment = function(comment) {
-			commentsController.comment = comment;
-		};
-
-		function getScientist() {
-			mongoFactory.getScientistById(mongoFactory.currentId, commentsController);
-		}
-
-		getScientist();
-	});
+    	function getScientist() {
+    		mongoFactory.getScientistById(mongoFactory.currentId, commentsController);
+    	}
+    
+    	getScientist();
+    });
 
 })();
 ```
 
-Here is the code from **mongo-factory** that provides you with a name property you can display at the top of the **edit**, **comments**, and **subjects** pages of your final:
+Here is the code from **mongo-factory** that provides you with a **name** property you can display at the top of the **edit**, **comments**, and **subjects** pages of your final:
 
 ```javascript
-setControllerName: function(controller) {
-	controller.name = controller.scientist.firstName + ' ' + controller.scientist.lastName;
-},
-
-getScientistById: function(id, controller) {
-	mongoFactory.currentId = id;
-	var items = mongoFactory.allData.filter(function(scientist) {
-		return scientist._id === id;
-	});
-	controller.scientist = items[0];
-	mongoFactory.setControllerName(controller);
-	return controller.scientist;
-},
+    setControllerName: function(controller) {
+    	controller.name = controller.scientist.firstName + ' ' + controller.scientist.lastName;
+    },
 ```
 
-This means that a file like **comments.jade** will would look like this:
+Call it from **getScientistById**.
+
+This means that a file like **comments.jade** will would begin like this:
 
 ```
 h1 Comments: {{commentsController.name}}
@@ -719,32 +672,12 @@ div.names
     ul
         li(ng-repeat='comment in commentsController.scientist.comments')
             a(ng-click="commentsController.selectComment(comment)") {{comment.commentText}}
-    div.names(ng-form="newCommentForm")
-        hr
-        button.btn.btn-default(ng-click='commentsController.newComment()') New Comment
-        br
-        br
-        label(class='col-sm-2, control-label') Text
-        input.form-control(type='text', ng-model='commentsController.newCommentText')
-    div.names(ng-form="myform")
-        hr
-        button.btn.btn-default(ng-click='commentsController.updateComment()') Update Comment
-        button.btn.btn-default(ng-click='commentsController.deleteComment()') Delete Comment
-        br
-        br
-        label(class='col-sm-2, control-label') Text
-        input.form-control(type='text', ng-model='commentsController.comment.commentText')
-        br
-        label(class='col-sm-2, control-label') Date
-        input.form-control(type='text', ng-model='commentsController.comment.date')
-        br
-        label(class='col-sm-2, control-label') Id
-        input.form-control(type='text', ng-model='commentsController.comment._id')
-
 ```
+
+The fist line shows how to use the new **name** property.
 
 ## Hints
 
-You will get a warning 'Synchronous XMLHttpRequest on the main thread is deprecated'. I believe this has something to do with the dialog we are loading to login and the related code. I don't think it has to do with the way we are rerouting events. In other words, it happens when we go directly to the login page, not just when we get there from the comments link. For now we are ignorning this warning.
+You may get a warning 'Synchronous XMLHttpRequest on the main thread is deprecated'. I believe this has something to do with the dialog we are loading to login and the related code. I don't think it has to do with the way we are rerouting events. In other words, it happens when we go directly to the login page, not just when we get there from the comments link. For now we are ignorning this warning.
 
 [sign]:http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSignIn.html
