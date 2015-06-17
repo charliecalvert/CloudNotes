@@ -168,3 +168,17 @@ When everything is set up, test your work:
 	
 Then go to the appropriate URL and test your work. For problems, check
 **/var/log/final.conf**.
+
+## Jasmine and $httpBackend
+
+I have added at least a little more text to my explanation of **$httpBackend**:
+
+- <http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend>
+
+Press F5 a few times to make sure you have the most recent copy if you are going back to that page after viewing it recently.
+
+## SignIn
+
+This video shows one way to handle the login functionality in your application. This is not the only possible solution. You can do it differently, but if you are not sure what is wanted, this gives you an idea of what to shoot for. 
+
+- [https://youtu.be/xCmgU7iSYO4](https://youtu.be/xCmgU7iSYO4)
