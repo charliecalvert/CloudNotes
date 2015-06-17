@@ -33,12 +33,28 @@ In **layout.jade**, copy in meta tags to prepare for use in a mobile device:
 
 ```
 doctype html
-html
+html(data-ng-app="elvenApp" ng-controller="ThemeController as themeController")
 	head
 		meta(charset='utf-8')
 		meta(name='description', content='Final by Charlie Calvert for Prog 219 Spring 2015')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		title= title
+```
+
+Notice that we are adding an ng-app directive here in the first line
+above. That means we should remove it from the body tag near the bottom
+of the file:
+
+```
+		script(src="javascripts/logout.js")
+	body
+		block content
+```
+
+And then optionally, for theme switching:
+
+```
+link(rel="stylesheet", ng-href="components/bootswatch/{{themeController.bootStrapCss}}/bootstrap.css")
 ```
 
 Then also load **angular-route** and **app.js**
