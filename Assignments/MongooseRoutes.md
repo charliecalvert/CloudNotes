@@ -162,7 +162,9 @@ This part of this assignment has been moved into a new, separate assignment, cal
 
 ## Routing Login
 
-This part of this assignment will be included in a new assignment that I am currently building.
+This part of this assignment will not be graded. It is included in a [new document][nd] which is purely informational, it is not an assignment.
+
+[nd]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSignInComments.html
 
 ## Turn it in
 

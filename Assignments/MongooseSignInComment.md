@@ -7,6 +7,20 @@ Found a [good article][goodart] on passport and angular. The [code][artcode] is 
 [goodart]:https://vickev.com/#!/article/authentication-in-single-page-applications-node-js-passportjs-angularjs
 [artcode]:https://github.com/Anomen/AuthenticationAngularJS
 
+A working example of how to handle the SignIn program is in the following directory: 
+
+- [JsObjects/JavaScript/Design/AngularSignIn](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularSignIn "Angular Sign In on JsObjects")
+
+To get the program, go to your JsObjects directory and get the latest with a:
+
+    git pull
+
+Or get the whole repository, **being very careful not to issue this command inside your own repository**:
+
+    git clone http://github.org/charliecalvert/JsObjects.git
+
+The **AngularSignIn** example program contains the SignIn code, but not the Comments code. 
+
 ## Step One
 
 Copy the MongooseComments program into a new folder:
@@ -593,6 +607,22 @@ app.controller('LogoutController', function($http, $sce, $location, themeFactory
 });
 ```
 
+Here is **logout.jade**:
+
+```
+h1 Logout
+
+p hint: {{logoutController.hint}}
+
+p logged in: {{logoutController.loggedInStatus}}
+
+div.names
+   div.btn-group
+      button.btn.btn-default(ng-click='logoutController.isLoggedIn()') Is user logged in?
+
+#document(ng-bind-html="logoutController.error")
+```
+
 We have already added the following at the bottom of **routes/login.js**. 
 
 ```
@@ -640,11 +670,13 @@ Tie together the login and log out code and provide support for switching themes
 })();
 ```
 
+
+
 Notice that the themeFactory is used in the **login** and **logout** controllers.
 
 ## Step Seven
 
-Here is **public/javascripts/comments.jade**
+Here is **public/javascripts/comments.js**
 
 ```
 (function() {
@@ -678,9 +710,21 @@ Here is the code from **mongo-factory** that provides you with a **name** proper
     },
 ```
 
-Call it from **getScientistById**.
+Call it from **getScientistById**:
 
-This means that a file like **comments.jade** will would begin like this:
+```javascript
+getScientistById: function(id, controller) {
+	mongoFactory.currentId = id;
+	var items = mongoFactory.allData.filter(function(scientist) {
+		return scientist._id === id;
+	});
+	controller.scientist = items[0];
+	mongoFactory.setControllerName(controller);
+	return controller.scientist;
+},
+```
+
+This means that a file like **views/comments.jade** would begin like this:
 
 ```
 h1 Comments: {{commentsController.name}}

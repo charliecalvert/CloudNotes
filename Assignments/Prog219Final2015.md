@@ -64,14 +64,13 @@ The following database features should be included
 
 ## Jasmine Unit Tests
 
-To be determined
+These will be for extra credit only.
 
 ## Turn it in
 
 Put the program itsefl in your repository in **Week11-Final**.
 
-Provide a link to the place on AWS where you program is running with
-upstart. By default it will be: <YOUR-ELASTIC-IP>:30027
+Provide a valid link to the place on AWS where you program is running with upstart. By default it will be: **<YOUR-ELASTIC-IP>:30027**. Just to be clear: it is important that you include specific information on how to find your program running on AWS. A valid link with the correct text in the anchor tag would be good.
 
 
 ## Extra Credit
@@ -88,6 +87,7 @@ Suppose your subject was scientists. The user should be able to:
 - Navigate to the subjects page
     - View, edit, add and delete a list of subjects
     - Click on subject and view a document related to that subject
+- Add in the unit tests from the midterm. No need to have the "live" tests on the main page, but the one's from the **test** folder.
 
 ## Hints
 
@@ -182,3 +182,7 @@ Press F5 a few times to make sure you have the most recent copy if you are going
 This video shows one way to handle the login functionality in your application. This is not the only possible solution. You can do it differently, but if you are not sure what is wanted, this gives you an idea of what to shoot for. 
 
 - [https://youtu.be/xCmgU7iSYO4](https://youtu.be/xCmgU7iSYO4)
+
+A working example of how to handle the SignIn program is in the following directory: 
+
+- [JsObjects/JavaScript/Design/AngularSignIn](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularSignIn "Angular Sign In on JsObjects")
