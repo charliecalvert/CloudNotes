@@ -272,7 +272,102 @@ Recall that we set that middleware up in **/app.js** with this line of code:
 
     app.use('/comments', comments);
 
-##Step Seven
+And we will need a **/views/commentds.jade** file to go with **public/javascripts/comments.js**
+
+```jade
+h1 Comments: {{commentsController.name}}
+div.names
+    ul
+        li(ng-repeat='comment in commentsController.scientist.comments')
+            a(ng-click="commentsController.selectComment(comment)") {{comment.commentText}}
+    div.names(ng-form="newCommentForm")
+        hr
+        button.btn.btn-default(ng-click='commentsController.newComment()') New Comment
+        br
+        br
+        label(class='col-sm-2, control-label') Text
+        input.form-control(type='text', ng-model='commentsController.newCommentText')
+    div.names(ng-form="myform")
+        hr
+        button.btn.btn-default(ng-click='commentsController.updateComment()') Update Comment
+        button.btn.btn-default(ng-click='commentsController.deleteComment()') Delete Comment
+        br
+        br
+        label(class='col-sm-2, control-label') Text
+        input.form-control(type='text', ng-model='commentsController.comment.commentText')
+        br
+        label(class='col-sm-2, control-label') Date
+        input.form-control(type='text', ng-model='commentsController.comment.date')
+        br
+        label(class='col-sm-2, control-label') Id
+        input.form-control(type='text', ng-model='commentsController.comment._id')
+```
+
+You should probably add support for an about page as well.
+
+## Step Seven
+
+Include a menu in **index.jade**
+
+```jade
+extends layout
+block content
+	nav.navbar-default.navbar-fixed-top
+		.container-fluid
+			.navbar-header
+				button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myTarget")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href="#/") Final
+			#myTarget.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li(ng-class="{ active: isActive('/')}")
+						a(ng-href='#/') Home
+					li(ng-class="{ active: isActive('/comments')}")
+						a(ng-href='#/comments') Comments
+					li(ng-class="{ active: isActive('/about')}")
+						a(ng-href='#/about') About
+	h1= title
+	p Welcome to #{title}
+	div(data-ng-view="")
+```
+
+And add in support for routes:
+
+    bower install angular-route --save
+
+Make sure that **bower.json** is using a single version of angular throughout.
+
+Then provide support for your routes on the client:
+
+```
+var myModule = angular.module("elvenApp", [ 'ngRoute' ]);
+
+myModule.config(function($routeProvider, $httpProvider, $locationProvider) {
+
+	$routeProvider.when("/", {
+		templateUrl : "main",
+		controller : "MainController",
+		controllerAs: "mainController"
+	}).when('/comments', {
+		templateUrl : "comments",
+		controller : "CommentsController",
+		controllerAs: 'commentsController',
+		resolve: {
+			loggedin: checkLoggedin
+		}
+	}).when('/about', {
+		templateUrl : "about",
+		controller : "AboutController",
+		controllerAs: 'aboutController'
+	}).otherwise({
+		redirectTo : '/'
+	});
+});
+```
+## Step Eight
 
 Some finishing touches.
 
@@ -300,3 +395,36 @@ Please see this information:
 - Sending a [new comment][restreq] from the browser to the server to a database. 
 
 [restreq]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html#http
+
+### References
+
+As of version 3 of Mongoose, there are two ways to declare sub-documents. Method 1 and method 2 are functionally equivalent.
+
+Method 1:
+
+```
+var commentSchema = new Schema({ commentText: 'string' });
+
+var scientistSchema = new Schema({
+  comments: [commentSchema]
+})
+``` 
+
+Method 2:
+
+```
+var scientistSchema = new Schema({
+  comments: [{ commentText: 'string' }]
+})
+```
+
+The reference is here:
+
+- <http://mongoosejs.com/docs/subdocs.html#altsyntax>
+
+There are sometimes also called embedded documents:
+
+- <http://mongoosejs.com/docs/subdocs.html>
+
+The docs state: "Sub-documents enjoy all the same features as normal documents. The only difference is that they are not saved individually, they are saved whenever their top-level parent document is saved."
+
