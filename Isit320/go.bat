@@ -1,0 +1,10 @@
+ren Prog219-Week02-2015.jade Isit320-Week02-2015.jade
+ren Prog219-Week03-2015.jade Isit320-Week03-2015.jade
+ren Prog219-Week04-2015.jade Isit320-Week04-2015.jade
+ren Prog219-Week05-2015.jade Isit320-Week05-2015.jade
+ren Prog219-Week06-2015.jade Isit320-Week06-2015.jade
+ren Prog219-Week07-2015.jade Isit320-Week07-2015.jade
+ren Prog219-Week08-2015.jade Isit320-Week08-2015.jade
+ren Prog219-Week09-2015.jade Isit320-Week09-2015.jade
+ren Prog219-Week10-2015.jade Isit320-Week10-2015.jade
+ren Prog219-Week11-2015.jade Isit320-Week11-2015.jade

@@ -1,6 +1,6 @@
 ## Description
 
-Various resources related to Prog 219.
+Prog 219 related resources.
 
 ## Basics
 
@@ -15,7 +15,7 @@ Various resources related to Prog 219.
 I'm not quite sure what to do with ccalvert.net. For now, it seems to be the place where 
 BC class related resources end up. It might ultimately end up replacing CloudNotes on Elvenware.
 
-## Overviews
+## Weekly Overviews {#overviews}
 
 - [Week01](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week01-2015.html)
 - [Week02](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week02-2015.html)
@@ -26,6 +26,8 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [Week07](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week07-2015.html)
 - [Week08](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week08-2015.html)
 - [Week09](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week09-2015.html)
+- [Week10](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week10-2015.html)
+- [Week11](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week11-2015.html)
  
 ## Assignments
 
