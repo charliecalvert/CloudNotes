@@ -1,5 +1,35 @@
 # All Assignments
 
+## Android
+
+*  [AndroidStates.html](AndroidStates.html)
+*  [AndroidX86Cordova.html](AndroidX86Cordova.html)
+
+## Angular
+
+* [AngularBasics.html](AngularBasics.html)
+* [AngularBasicUnitTests.html](AngularBasicUnitTests.html)
+* [AngularCanvasShapes.html](AngularCanvasShapes.html)
+* [AngularChartCensus.html](AngularChartCensus.html)
+* [AngularChartOrganic.html](AngularChartOrganic.html)
+* [AngularControllerAsInClass.html](AngularControllerAsInClass.html)
+* [AngularControllerAsUnitTests.html](AngularControllerAsUnitTests.html)
+* [AngularControllerShapes.html](AngularControllerShapes.html)
+* [AngularDirectives.html](AngularDirectives.html)
+* [AngularMongoDbCrud.html](AngularMongoDbCrud.html)
+* [AngularMongoDbStarter.html](AngularMongoDbStarter.html)
+* [AngularMongoDbTest.html](AngularMongoDbTest.html)
+* [AngularMongooseOnePage.html](AngularMongooseOnePage.html)
+* [AngularOnePage.html](AngularOnePage.html)
+* [AngularResolve.html](AngularResolve.html)
+* [AngularRouting.html](AngularRouting.html)
+* [AngularScienceFacade.html](AngularScienceFacade.html)
+* [AngularScienceFacadeUi.html](AngularScienceFacadeUi.html)
+* [AngularStarter.html](AngularStarter.html)
+* [AngularTestsInClass.html](AngularTestsInClass.html)
+* [AngularYeomanCensus.html](AngularYeomanCensus.html)
+
+
 ## AWS
 
 *   [AwsEc2Expert.html](AwsEc2Expert.html)
@@ -8,9 +38,17 @@
 *   [Ec2CloudOnly.html](Ec2CloudOnly.html)
 *   [Ec2Provision.html](Ec2Provision.html)
 
+## Classroom
+
+*   [CheckProjects.html](CheckProjects.html)
+
+
 ## Cloud
 
+*  [DropBoxEc2.html](DropBoxEc2.html)
 *  [Evernote01.html](Evernote01.html)
+*  [EvernoteFinalNodes.html](EverNoteFinalNotes.html)
+*  [EvernoteTemplates.html](EverNoteTemplates.html)
 *  [GoogleDriveAndFolders](GoogleDriveAndFolders.html)
 *  [GuestAdditions.html](GuestAdditions.html)
 *  [OwnCloudInstall.html](OwnCloudInstall.html)
@@ -23,6 +61,21 @@
 *   [CodeAcademy02.html](CodeAcademy02.html)
 *   [CodeAcademy03.html](CodeAcademy03.html)
 *   [CodeAcademy04.html](CodeAcademy04.html)
+*   [CodeAcademy05.html](CodeAcademy05.html)
+*   [CodeAcademy06.html](CodeAcademy06.html)
+
+## Cordova
+
+*   [Cordova01.html](Cordova01.html)
+*   [CordovaEventsPlugins.html](CordovaEventsPlugins.html)
+*   [CordovaVariousPlugins.html](CordovaVariousPlugins.html)
+
+## Database
+
+*   [MongoStarter.html](MongoStarter.html)
+*   [MongoMark.html](MongoMark.html)
+*   [RoutingData](RoutingData.html)
+*   [ServerSaveMongo.html](ServerSaveMongo.html)
 
 ## Exams
 
@@ -33,14 +86,6 @@
 *   [Prog272Midterm2014.html](Prog272Midterm2014.html)
 *   [Prog280Final2014.html](Prog280Final2014.html)
 *   [Prog280Midterm2014.html](Prog280Midterm2014.html)
-
-
-## Database
-
-*   [MongoStarter.html](MongoStarter.html)
-*   [MongoMark.html](MongoMark.html)
-*   [RoutingData](RoutingData.html)
-*   [ServerSaveMongo.html](ServerSaveMongo.html)
 
 ## Games
 
@@ -64,12 +109,12 @@
 
 *   [BootstrapAbout.html](BootstrapAbout.html)
 *   [LampBootstrap.html](LampBootstrap.html)
+*   [CanvasTest.html](CanvasTest.html)
 
 ## JavaScript
 
 *   [Callbacks.html](Callbacks.html)
 *   [ClickRoute.html](ClickRoute.html)
-*   [Cordova01.html](Cordova01.html)
 *   [InfoManager01.html](InfoManager01.html)
 *   [JQuerySelectors.html](JQuerySelectors.html)
 *   [ExpressJQuery.html](ExpressJQuery.html)
@@ -107,5 +152,8 @@
 *   [PictureCaption.html](PictureCaption.html)
 *   [WalkingMap.html](WalkingMap.html)
 
-
+## Web
+* [BrowserAccounts.html](BrowserAccounts.html)
+* [DomainNames.html](DomainNames.html)
+* 
 
