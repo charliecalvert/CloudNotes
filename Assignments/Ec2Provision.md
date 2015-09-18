@@ -68,7 +68,7 @@ fi
 
 export PATH="$PATH:$HOME/npm/bin"
 
-export NODE_PATH=:/home/ubuntu/npm/lib/node_modules
+export NODE_PATH=:$HOME/npm/lib/node_modules
 ```
 
 Type **Ctrl-O + enter** to save, and **Ctrl-X** to exit nano. 

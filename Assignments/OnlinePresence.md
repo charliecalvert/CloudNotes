@@ -129,11 +129,11 @@ Create a document called **OnlinePresence-LastName**, where LastName is your las
 
 In Figure One, I give an example of the type of document I want you to create. Your document will include more data and more links.
 
-![OnlinePresence](../Images/OnlinePresnce01.png)
+![OnlinePresence](http://www.elvenware.com/charlie/books/CloudNotes/Images/OnlinePresnce01.png)
 
 Figure 1: Here is the type of Google Docs file I want you to create. You do not need to use the same colors.
 
-![OnlinePresence02.png](../Images/OnlinePresnce01.png)
+![OnlinePresence02.png](http://www.elvenware.com/charlie/books/CloudNotes/Images/OnlinePresnce01.png)
 
 Figure 2: Sharing a document in Google Docs. 
 
