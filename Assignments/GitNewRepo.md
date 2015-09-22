@@ -59,3 +59,24 @@ You can get the exact phrase to submit by selecting the **Actions | Clone** menu
 - Push create repository button
 - Follow the instructions in "I'm starting from scratch" using the video as a guide to a few slight variations such as creating the .gitignore file with at least node_modules in it.
 - When you are done, on the overview page choose send invitation, type in ccalvert and give me read write privileges.
+
+## Turn it in
+
+Paste in the the URLs for your repository when you submit your assignment. There are two URLs that can be interesting:
+
+* The URL for your BitBucket or GitHub repository
+* The URL used to clone your repository
+
+Examples:
+
+* https://bitbucket.org/ccalvert/prog219-calvert
+* git@bitbucket.org:lastname/prog272_lastname.git
+
+Or
+
+* https://github.com/charliecalvert/JsObjects
+* git@github.com:charliecalvert/JsObjects.git
+
+Most of the time, when I ask for your Git your URL, I want the one I can I use to clone it. It should be clear, however, that either URL will allow me to access your repository.
+
+Whenever you need to send me information when submitting an assignment, you can either enter a comment or use the Text page. When possible, use the Text page, because you can insert live hyperlinks and relatively well formatted text using that option. However, either technique will work.
