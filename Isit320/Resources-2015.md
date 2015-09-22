@@ -1,13 +1,16 @@
 # ISIT 320 Resources for 2015
 
+The most important resource in this class is Google search. Make sure you know the basics about searching:
+
+- [Browsers][elf-browse]
+
 Here are number of links that you can use to help stay up to date
 with events and topics covered in our class. 
 
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](http://library.books24x7.com.ezproxy.bellevuecollege.edu/bookshelf.asp)
-- [Delicious](https://delicious.com/charliecalvert)
-- [Elvenware Links](http://elvenware.com/charlie/links.html)
-- [Bitly](http://bitly.com/u/charliecalvert)
+
+[elf-browse]: http://www.elvenware.com/charlie/development/cloud/Browsers.html
 
 ## Elvenware Links
 
@@ -32,6 +35,11 @@ with events and topics covered in our class.
 - [Week09](http://www.ccalvert.net/books/CloudNotes/Isit320/Isit320-Week09-2015.html)
 - [Week10](http://www.ccalvert.net/books/CloudNotes/Isit320/Isit320-Week10-2015.html)
 - [Week11](http://www.ccalvert.net/books/CloudNotes/Isit320/Isit320-Week11-2015.html)
+
+## Key Technologies
+
+* [Boostrap Slides](http://bit.ly/elf-bootstrap)
+* [Bootstrap on Elvenware](http://bit.ly/elven-bootstrap)
 
 
 ## Videos
