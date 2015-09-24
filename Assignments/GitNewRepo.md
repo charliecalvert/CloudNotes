@@ -4,8 +4,10 @@ This assignment is designed to help you create a new git repository. The text is
 
 See also:
 
-* [Git Slide Deck]()
-* [Git on Cloud 9]()
+* [Git Slide Deck](http://bit.ly/git-basics)
+* [Git on Elvenware][elven-git]
+* [Git and Cloud 9](http://bit.ly/elf-cloud9)
+* [Git Video][git-video]
 
 ## Git Account
 
@@ -14,6 +16,9 @@ Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.co
 - Create a new BitBucket account if you don't have one already
 - Use an existing BitBucket account.
 - If you prefer GitHub or some other cloud repository, that should also work.
+	- For GitHub, see the [student pack][github-edu]
+	- The student pack might take a few days to set up
+	- If the delay means you can't use the student pack for this assignment, apply anyway.
 
 ## Create Repo Home {#create-home}
 
@@ -29,11 +34,13 @@ Name your git repository like this, where **isit320** should be name of your cla
 For instance, your repository might have a name like this, depending
 on the class you are in:
 
-	prog219_calvert-2015
-	prog270_calvert-2015
-        prog272_calvert-2015
-	isit320_calvert-2015
-	isit322_calvert-2015
+```
+prog219_calvert-2015
+prog270_calvert-2015
+prog272_calvert-2015
+isit320_calvert-2015
+isit322_calvert-2015
+```
 
 Then make the following selections:
 
@@ -55,15 +62,15 @@ sudo apt-get install ssh
 
 It won't hurt to run the command if SSH is already installed.
 
-At the Linux command prompt Issue these commands, where the first command takes you to your home directory: 
+At the Linux command prompt Issue these commands, where the first command takes you to your home directory:
 
 ```
 cd
-ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
-Now copy your public key into the BitBucket SSH page. The first step will be to copy the key to your clipboard. Begin by navigating into the hidden **.ssh** directory created in the previous step. 
+Now copy your public key into the BitBucket SSH page. The first step will be to copy the key to your clipboard. Begin by navigating into the hidden **.ssh** directory created in the previous step.
 
 ```
 cd ~/.ssh
@@ -191,18 +198,18 @@ git add README.md
 
 In all cases, after doing an add, you should check your work to make sure all is going well. If, for instance, you see that you have accidentally added in a **node_modules** directory, then you should [cancel the add][git-reset], adjust your **.gitignore** file, and try again.
 
-You only need to use **git push -u origin master** the first time you commit to your repository. After that, you can simply type **git push**. 
+You only need to use **git push -u origin master** the first time you commit to your repository. After that, you can simply type **git push**.
 
-You can learn more about git on [Elvenware][elven-git]. 
+You can learn more about git on [Elvenware][elven-git].
 
 [git-reset]: http://stackoverflow.com/a/348234
 [elven-git]: http://www.elvenware.com/charlie/development/cloud/Git.html
- 
+
 ## The Video
 
 This video shows how to proceed:
 
-- [video](http://youtu.be/HCoC3FbdcQk)
+- [video][git-video]
 
 Other related videos are here:
 
@@ -253,7 +260,48 @@ Whenever you need to send me information when submitting an assignment, you can 
 
 ## Hints
 
-Sample code from the BitBucket when you first create a repository
+Various Hints
+
+### Identify a repository {#id-git}
+
+You can identify a repository by looking for the hidden directory named **.git**. If that file
+exists, then you are in the root of a git repository.
+
+In this listing, you can tell that the file called **README.md** is in a git repository
+because a long (l) listing (ls) of the directory with the hidden flag (a) reveals the existence of
+the .git folder:
+
+```bash
+$ ls -la
+total 16
+drwxrwxr-x  3 charlie charlie 4096 Sep 24 10:55 .
+drwxrwxr-x 14 charlie charlie 4096 Sep 24 10:55 ..
+drwxrwxr-x  7 charlie charlie 4096 Sep 24 10:55 .git
+-rw-rw-r--  1 charlie charlie    4 Sep 24 10:55 README.md
+```
+
+### Don't Nest Repositories {#git-nest}
+
+Don't create one repository inside another unless you are sure you know what
+you are doing. It is possible to nest repos, but it is special case and requires
+specific knowledge on how to proceed.
+
+In particular:
+
+* Don't **pull** the Elvenware JsObjects repository into your repository.
+* Don't create your repository inside the JsObjects repository
+* Don't create your repository inside any other repository.
+
+### SSH Config {#ssh-config}
+
+Simplify your life with SSH Config files.
+
+* [SSH Config][ssh-config]
+
+### BitBucket Sample Code {#bitbucket-code}
+
+Sample code from the BitBucket when you first create a repository. I'm
+including this just because it.
 
 Set up local directory:
 
@@ -272,3 +320,74 @@ git add contributors.txt
 git commit -m 'Initial commit with contributors'
 git push -u origin master
 ```
+
+### GitHub Sample Code {#github-code}
+
+Here is the sample code suggested by GitHub.
+
+Create a new repository in an existing directory from the command line:
+
+```
+echo "# deleteme06" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:charliecalvert/deleteme06.git
+git push -u origin master
+```
+
+Push an existing repository for the first time to a new repository:
+
+```
+git remote add origin git@github.com:charliecalvert/deleteme06.git
+git push -u origin master
+```
+
+### RSA Fingerprints {#fingerprints}
+
+It is possible to spoof a URL or even an IP address. As a result, when you
+push and pull from BitBucket or GitHub, git checks to see that the machine
+you are connecting to is the correct machine. In particular, it looks in
+this file for the fingerprint of your remote machine:
+
+```
+~/.ssh/known-hosts
+```
+
+If the machine you are going to connect to is not listed in known-hosts, then
+the connection will be aborted.
+
+When you first push to bitbucket or any new SSH server, you should be prompted
+to confirm the authenticity of the site:
+
+```
+git push -u origin --all
+The authenticity of host 'bitbucket.org (131.103.20.168)' can't be established.
+RSA key fingerprint is 97:8c:1b:f2:6f:14:6b:5c:3b:ec:aa:46:46:74:7c:40.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bitbucket.org' (RSA) to the list of known hosts.
+```
+
+When you type in **yes** at the prompt, the fingerprint for this server is
+stored in your **known_hosts** file. You can read more about this process on
+Elvenware.
+
+See also:
+
+* [More on SSH][more-ssh]
+
+If you ever need to remove a line from a known_hosts file, see this:
+
+* [Remove from known_hosts][known-hosts-remove]
+
+
+
+<!-- ********************************* -->
+<!-- ** URLS ************************* -->
+<!-- ********************************* -->
+
+[git-video]: http://youtu.be/HCoC3FbdcQk
+[github-edu]: https://education.github.com/pack
+[more-ssh]: http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#moreSsh
+[ssh-config]: http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config
+[known-hosts-remove]: http://superuser.com/questions/30087/remove-key-from-known-hosts
