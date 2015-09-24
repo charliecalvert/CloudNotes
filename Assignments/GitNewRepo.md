@@ -6,21 +6,73 @@ Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.co
 - Use an existing BitBucket account.
 - If you prefer GitHub or some other cloud repository, that should also work.
 
-In the account, create a new repository. Name your git repository like this, where isit322 should be name of your class:
+## Create Repo Home {#create-home}
 
-	prog219_lastname
+In the account, create a new repository. Name your git repository like this, where isit320 should be name of your class:
+
+	isit320_lastname-year
 
 For instance:
 
-	prog219_calvert
-	prog272_calvert
-	prog270_calvert
-	isit320_calvert
-	isit322_calvert
+	prog219_calvert-2015
+	prog272_calvert-2015
+	prog270_calvert-2015
+	isit320_calvert-2015
+	isit322_calvert-2015
+
+Type: Git
+Project: Wiki, IssueTracking
+Language: JavaScript
 
 Make sure you give me read/write access to it. Use the send invitation link and use **ccalvert** as my id.
 
-And most important, include a .gitignore with the following items in it:
+## Setup SSH {#ssh}
+
+Issue these commands, where the first command takes you to your home directory: 
+
+```
+cd
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+```
+
+Now copy your public key into the BitBucket SSH page:
+
+```
+cd .ssh
+cat id_rsa.pub
+```
+
+Block copy the key to the clipboard. Then in BitBucket:
+
+* At upper right of page select your image
+* Choose : Manage Account | SSH Keys | Add Key
+* Paste in your public key and press save
+
+## Build Repository
+
+On your hard drive:
+
+```
+cd Git
+mkdir isit320-lastname-2015
+cd isit320-lastname-2015
+git init
+```
+
+Now issue this command where the details will differ in your case:
+
+```
+git remote add origin git@bitbucket.org:username/isit320-lastname-2015.git
+```
+
+Now put some README markdown file in your repository:
+
+```
+echo lastname >> README.md
+```
+
+Create a **.gitignore** file with the following items in it:
 
 	node_modules
 	.metadata
@@ -30,6 +82,39 @@ And most important, include a .gitignore with the following items in it:
 	Thumbs.db
 	*.zip
 
+You can create the file with the **nano** editor, or do it like this:
+
+```
+echo node_modules >> .gitignore
+echo .metadata >> .gitignore
+echo .idea >> .gitignore
+echo bower_components >> .gitignore
+echo components >> .gitignore
+echo Thumbs.db >> .gitignore
+echo *.zip >> .gitignore
+```
+
+## Configure Git {#configure}
+
+Issue these commands, editing as appropriate:
+
+```
+git config --global user.name "charlie at school"
+git config --global user.email "noone@nowhere.net"
+git config --global push.default simple
+```
+
+## Commit your Work {#commit}
+
+Now add, commit and push your content:
+
+```
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+## The Video
 
 This video shows how to proceed:
 
@@ -41,8 +126,9 @@ Other related videos are here:
 
 Here is a deck with some information that you might find useful:
 
-- Git Basics: [http://bit.ly/git-basics](http://bit.ly/git-basics)
+- Git Basics Deck: [http://bit.ly/git-basics](http://bit.ly/git-basics)
 - Git on Elvenware: [http://bit.ly/elven-git](http://bit.ly/elven-git)
+- Cloud Nine Deck: [http://bit.ly/elf-cloud9](http://bit.ly/elf-cloud9)
 
 Please submit the URL of your repository in the Text Entry section of Canvas when you post this assignment. The URL you submit should, in a general way, follow this format:
 
