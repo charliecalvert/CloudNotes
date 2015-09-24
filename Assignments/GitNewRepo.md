@@ -1,4 +1,13 @@
-# Git Account
+## Overview
+
+This assignment is designed to help you create a new git repository. The text is oriented towards BitBucket and Linux, but it should be possible to use it with GitHub as well. I focus on BitBucket because they provide free private repositories. Since my students turn in assignments with git, it is important that the repositories be private.
+
+See also:
+
+* [Git Slide Deck]()
+* [Git on Cloud 9]()
+
+## Git Account
 
 Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
@@ -21,8 +30,8 @@ For instance, your repository might have a name like this, depending
 on the class you are in:
 
 	prog219_calvert-2015
-	prog272_calvert-2015
 	prog270_calvert-2015
+        prog272_calvert-2015
 	isit320_calvert-2015
 	isit322_calvert-2015
 
@@ -54,22 +63,32 @@ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
-Now copy your public key into the BitBucket SSH page:
+Now copy your public key into the BitBucket SSH page. The first step will be to copy the key to your clipboard. Begin by navigating into the hidden **.ssh** directory created in the previous step. 
 
 ```
-cd .ssh
+cd ~/.ssh
+```
+
+We now need to block copy the key to the [clipboard][define-clipboard]. It might be enough to simply echo the key to your bash shell, and then copy it with the mouse or keyboard:
+
+```
 cat id_rsa.pub
 ```
 
-Block copy the key to the clipboard. Then in BitBucket:
+An alternative might be to open the key in **Geany** or some other text editor, and then select it in the editor with **Ctrl-A** and copy it with **Ctrl-C**. In any case, be sure you have the key saved to your clipboard.
+
+Then in BitBucket:
 
 * At upper right of page select your image
 * Choose : Manage Account | SSH Keys | Add Key
 * Paste in your public key and press save
 
+[foo]:http://www.elvenware.com
+[define-clipboard]: http://www.google.com/search?q=clipboard+computer
+
 ## Build Repository
 
-On your hard drive:
+On your hard drive, enter the following, where **lastname** should be your last name, in all lower case letters:
 
 ```
 cd Git
@@ -78,13 +97,21 @@ cd isit320-lastname-2015
 git init
 ```
 
+For instance:
+
+```
+mkdir isit320-calvert-2015
+```
+
 Now issue this command where the details will differ in your case:
 
 ```
 git remote add origin git@bitbucket.org:username/isit320-lastname-2015.git
 ```
 
-Now put some README markdown file in your repository:
+You can find the exact string, or something very close to it, in BitBucket. For instance, when you first create a repository in BitBucket, this is string is displayed in the confirmation page for the creation of your repository. For existing repositories, you can find something very like that string by choosing **Actions** (...) and **Clone** from the navigation menu on the left.
+
+Now create README file in [markdown][markdown] format:
 
 ```
 echo lastname >> README.md
@@ -100,7 +127,7 @@ Create a **.gitignore** file with the following items in it:
 	Thumbs.db
 	*.zip
 
-You can create the file with the **nano** editor, or do it like this:
+You can create the file with the [nano][nano] editor, or do it like this:
 
 ```
 echo node_modules >> .gitignore
@@ -112,6 +139,12 @@ echo Thumbs.db >> .gitignore
 echo *.zip >> .gitignore
 ```
 
+**NOTE**: *You can learn more about nano by searching for [cheat sheets][nano-cheat].*
+
+[markdown]:https://www.google.com/search?q=markdown+syntax
+[nano]:http://www.tuxradar.com/content/text-editing-nano-made-easy
+[nano-cheat]:https://www.google.com/search?q=nano+editor+cheat+sheet
+
 ## Configure Git {#configure}
 
 Issue these commands, editing as appropriate:
@@ -122,16 +155,49 @@ git config --global user.email "noone@nowhere.net"
 git config --global push.default simple
 ```
 
+These commands are stored in your git config file, usually found here:
+
+```
+~/.gitconfig
+```
+
+You can see the contents of the file by issuing this command:
+
+```
+cat ~/.gitconfig
+```
+
+**NOTE**: *I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig].*
+
+[gitconfig]: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
+
 ## Commit your Work {#commit}
 
 Now add, commit and push your content:
 
 ```
 git add .
+git status
 git commit -m "Initial commit"
 git push -u origin master
 ```
 
+When we type git add followed by a period we are asking git to add all the changes we have made to the repository. If you want to add just one file, issue a command like this:
+
+```
+git add README.md
+```
+
+In all cases, after doing an add, you should check your work to make sure all is going well. If, for instance, you see that you have accidentally added in a **node_modules** directory, then you should [cancel the add][git-reset], adjust your **.gitignore** file, and try again.
+
+You only need to use **git push -u origin master** the first time you commit to your repository. After that, you can simply type **git push**. 
+
+You can learn more about git on [Elvenware][elven-git]. 
+
+[git-reset]: http://stackoverflow.com/a/348234
+[elven-git]: http://www.elvenware.com/charlie/development/cloud/Git.html
+ 
 ## The Video
 
 This video shows how to proceed:
