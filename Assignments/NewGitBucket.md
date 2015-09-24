@@ -1,3 +1,9 @@
+
+See the [GitNewRepo][git-new-repo] assignment which is more complete than this.
+
+[git-new-repo]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
+
+
 Use BitBucket (Links to an external site.) to host a private git repository. You have two choices:
 
 Create a new BitBucket account if you don't have one already
@@ -18,20 +24,20 @@ node_modules
 .metadata
 .idea
 Thumbs.db
- 
+
 
 This video shows how to proceed:
 
 http://youtu.be/HCoC3FbdcQk (Links to an external site.)
 
 
- 
+
 
 Other related videos are here (Links to an external site.).
 
 Please include the URL of your repository when you post this assignment in Canvas.
 
- 
+
 
 Summary
 Create Bitbucket account if necessary

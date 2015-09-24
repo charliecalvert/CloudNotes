@@ -270,6 +270,41 @@ Whenever you need to send me information when submitting an assignment, you can 
 
 Various Hints
 
+### Avoid Merge Conflicts {#merge}
+
+Most of us have a copy of our repository:
+
+* At home
+* At school
+* In the cloud (BitBucket, GitHub)
+
+Nearly every day we:
+
+* We push our repository to the cloud
+* We pull our repository from the cloud:
+
+We do that with these commands:
+
+To push we typically:
+
+```
+git add .
+git commit -m "Some message"
+git push
+```
+
+Pull:
+
+```
+git pull
+```
+
+If you pull without pushing first, eventually you will hit merge conflicts. You will have one version of your code at home, another version in the cloud, and yet another version at school. This is bad. To avoid Merge conflicts:
+
+* Don't forget to push before you go home
+* And to pull as soon as you start work at home
+* If you do get a merge conflict, then read this
+
 ### Identify a repository {#id-git}
 
 You can identify a repository by looking for the hidden directory named **.git**. If that file
@@ -387,7 +422,6 @@ See also:
 If you ever need to remove a line from a known_hosts file, see this:
 
 * [Remove from known_hosts][known-hosts-remove]
-
 
 
 <!-- ********************************* -->
