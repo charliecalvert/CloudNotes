@@ -8,11 +8,17 @@ Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.co
 
 ## Create Repo Home {#create-home}
 
-In the account, create a new repository. Name your git repository like this, where isit320 should be name of your class:
+In BitBucket, from the home page, create a new repository:
+
+* Choose the Create menu at top
+* Select **Create Repository**
+
+Name your git repository like this, where **isit320** should be name of your class:
 
 	isit320_lastname-year
 
-For instance:
+For instance, your repository might have a name like this, depending
+on the class you are in:
 
 	prog219_calvert-2015
 	prog272_calvert-2015
@@ -20,15 +26,27 @@ For instance:
 	isit320_calvert-2015
 	isit322_calvert-2015
 
-Type: Git
-Project: Wiki, IssueTracking
-Language: JavaScript
+Then make the following selections:
 
-Make sure you give me read/write access to it. Use the send invitation link and use **ccalvert** as my id.
+* Set the Type: Git
+* Set the Project options: Wiki, IssueTracking
+* Set the Language: JavaScript
+
+Make sure you give me read/write access to it. Use the send invitation link and use **ccalvert** as my id. You can select it from a dropdown.
 
 ## Setup SSH {#ssh}
 
-Issue these commands, where the first command takes you to your home directory: 
+Make sure SSH is installed. Pristine Lubuntu should have it installed,
+but just in case, or if for some reason you need to install it, here
+is the command:
+
+```
+sudo apt-get install ssh
+```
+
+It won't hurt to run the command if SSH is already installed.
+
+At the Linux command prompt Issue these commands, where the first command takes you to your home directory: 
 
 ```
 cd
