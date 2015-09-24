@@ -166,3 +166,25 @@ Or
 Most of the time, when I ask for your Git your URL, I want the one I can I use to clone it. It should be clear, however, that either URL will allow me to access your repository.
 
 Whenever you need to send me information when submitting an assignment, you can either enter a comment or use the Text page. When possible, use the Text page, because you can insert live hyperlinks and relatively well formatted text using that option. However, either technique will work.
+
+## Hints
+
+Sample code from the BitBucket when you first create a repository
+
+Set up local directory:
+
+```
+mkdir /path/to/your/project
+cd /path/to/your/project
+git init
+git remote add origin git@bitbucket.org:ccalvert/isit320-deleteme-2015.git
+```
+
+Create your first file, commit, and push
+
+```
+echo "Charlie Calvert" >> contributors.txt
+git add contributors.txt
+git commit -m 'Initial commit with contributors'
+git push -u origin master
+```
