@@ -200,10 +200,18 @@ In all cases, after doing an add, you should check your work to make sure all is
 
 You only need to use **git push -u origin master** the first time you commit to your repository. After that, you can simply type **git push**.
 
+When upi type **git push -u origin master** then:
+
+* origin is BitBucket (or GitHub)
+* master is the main [branch][branch] of you repository
+* The u bit sets the upstream repository, the place where you pull and push from
+	* In our case the upstream server is BitBucket or GitHub.
+
 You can learn more about git on [Elvenware][elven-git].
 
 [git-reset]: http://stackoverflow.com/a/348234
 [elven-git]: http://www.elvenware.com/charlie/development/cloud/Git.html
+[branch]: http://www.elvenware.com/charlie/development/cloud/Git.html#working-with-branches
 
 ## The Video
 
