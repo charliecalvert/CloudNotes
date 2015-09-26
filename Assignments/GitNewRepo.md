@@ -93,6 +93,60 @@ Then in BitBucket:
 [foo]:http://www.elvenware.com
 [define-clipboard]: http://www.google.com/search?q=clipboard+computer
 
+## Load SSH Key
+
+Right now your private key is called **id_rsa** and your public key is called **id_rsa.pub**. You might consider renaming them to something more meaningful:
+
+```bash
+mv ~/.ssh/id_rsa ~/.ssh/Isit320-Fall-2015
+mv ~/.ssh/id_rsa.pub ~/.ssh/Isit320-Fall-2015.pub
+```
+
+At this point, you should be able to load your SSH private key into memory:
+
+```bash
+ssh-add ~/.ssh/Isit320-Fall-2015
+```
+
+If this works as expected, you should see the words **Identity added** in the response:
+
+```
+ssh-add ~/.ssh/Isit320-Fall-2015
+Identity added: /home/charliecalvert/.ssh/Isit320-Fall-2015 (rsa w/o comment)
+```
+
+At this point, you are all set to begin pushing and pulling data from your repository, as described below.
+
+**NOTE**: *I should have already added this code for you, but if you have trouble with ssh-add, make sure this code that loads ssh-agent is found near the bottom of your /home/username/.bashrc file:*
+
+```
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent` 
+fi
+```
+
+You will need to load your SSH key with **ssh-add** each time your start a new bash (command line) session. Or at least you will need to do so each time you reboot lubuntu. If you don't want to perform this task manually, you could add the following code at the bottom of your **~/.bashrc** file:
+
+```
+ssh-add ~/.ssh/Isit320-Fall-2015
+```
+
+To add the line, open your **~/.bashrc** file in either nano or geany. For instance:
+
+```
+geany ~/.bashrc
+```
+
+Adding this line is guarrenteed to load your private key for you because your **.bashrc** is processed each time you open the bash shell (command line). If you ever want to manually load your **.bashrc** file, you can execute this code:
+
+```
+source ~/.bashrc
+```
+
+To learn more, search for the Linux **source** command with Google.
+
+One final tip. I like to zip up both the private and public key and upload it to my Google Drive. That way I can download it at home, and use the private key at both home and school. You don't have to do it that way, but it allows you to skip the step of creating a new key at home, and uploading that public key to BitBucket. Either system works, and there are arguments in favor of each system, but I want to at least suggest that you do things this way.
+
 ## Build Repository
 
 On your hard drive, enter the following, where **lastname** should be your last name, in all lower case letters:
