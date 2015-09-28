@@ -35,7 +35,9 @@ Favicon
 
 Get a default favicon:
 
+	cp $HOME/Git/JsObjects/Data/MongoBootstrap/favicon.png public/.
 	copy %USERPROFILE%\Git\JsObjects\Data\MongoBootstrap\favicon.png public\.
+	
 
 - In an editor, open up app.js. (Server side)
 - On line 18 uncomment: **app.use(favicon(__dirname + '/public/favicon.ico'));**
@@ -52,6 +54,14 @@ First install **mongoose**:
 
 You may see messages about mongoose, C++ and bson. If you are concerned about them, see the Elvenware notes on [this subject][gypbson].
 
+**NOTE**: *On Linux, I need to install libkrb5-dev before I can install the Mongoose
+NPM package.*
+
+```
+sudo apt-get install libkrb5-dev
+```
+
+Once Mongoose is installed, you should set up the schema:
 
 - Create a folder called models at the root of your project
 - Put this source in a file called **models/scientists.js**.
@@ -122,6 +132,47 @@ When you are looking at your database in MongoLab you can see the actual URL tha
 In **index.js**, make sure that this is the last line in the file:
 
 	module.exports = router;
+	
+	
+Here is a perhaps more sophisticated tool for connecting to the database.
+It belongs in its own file called connect.js:
+
+```
+/**
+ * Created by charlie on 9/26/15.
+ */
+
+/**
+ * Created by charlie on 6/9/2015.
+ */
+
+var mongoose = require('mongoose');
+
+var connect = {
+
+    connected: false,
+
+    doConnection: function() {
+        connect.connected = true;
+        var userName = 'csc';
+        var password = 'secret';
+        var siteAndPort = 'ds049848.mongolab.com:49848';
+        var databaseName = 'elvenlab01';
+        var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
+        console.log(url);
+        mongoose.connect(url);
+
+        var db = mongoose.connection;
+        db.on('error', console.error.bind(console, 'connection error:'));
+        db.once('open', function(callback) {
+            connected = true;
+            console.log('Opened connection to mongo');
+        });
+    }
+};
+
+module.exports = connect;
+```	
  
 ## Step 5
 

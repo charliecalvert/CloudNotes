@@ -14,6 +14,15 @@ See also the [MongooseMtgSets][mtgsets] assignment.
 
 [mtgsets]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseMtgSets.html
 
+## AllSets
+
+You can download AllSets.json from [http://mtgjson.com](http://mtgjson.com).
+The simplest way to proceed is to use this command to get the file from the Linux command prompt:
+
+```
+wget http://mtgjson.com/json/AllSets.json
+```
+
 ## Overview
 
 Here are the two main projects:
@@ -72,3 +81,10 @@ This says that git should ignore all files with a **.json** extension except for
 and so on.... The above would prevent you from checking in any JSON files except **package.json** and **LEA.json**. Assuming you have the **.gitignore** file in your directory, to complete the assignment, you would need to add additional lines to **.gitignore**. 
 
 Please don't check in all your JSON files, and especially not the large file called **AllSets.json**.
+
+## Mongoose on Linux
+
+On Linux, I need to install libkrb5-dev before I can install the Mongoose
+NPM package.
+
+sudo apt-get install libkrb5-dev
