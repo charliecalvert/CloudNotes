@@ -37,6 +37,8 @@ If your version of node is older than 4.0.0, or your version of NPM is older tha
 
 - [Node Install](http://bit.ly/elven-node-install)
 
+In particular, check the sections on updating node and updating packages.
+
 ## Step02: Create Application {#create}
 
 In the bash shell, navigate to your Git folder. Create a nodejs express project called Week02-NpmBower:
