@@ -38,8 +38,25 @@ with events and topics covered in our class.
 
 ## Key Technologies
 
+Bootstrap:
+
 * [Boostrap Slides](http://bit.ly/elf-bootstrap)
 * [Bootstrap on Elvenware](http://bit.ly/elven-bootstrap)
+
+Elvenware Node:
+
+* [Node Install](http://bit.ly/elven-node-install)
+* [Node Packages](http://bit.ly/node-packages)
+* [Node Main](http://bit.ly/elven-node)
+* [Node and Jade](http://bit.ly/elven-jade)
+
+Elvenware JavaScript:
+
+- [JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/index.html#javascript-and-jquery)
+- [JavaScript Objects](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html)
+- [JavaScript Functions](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html)
+- [JavaScript Module Pattern](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html)
+- [JSON Basics](http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html)
 
 
 ## Videos

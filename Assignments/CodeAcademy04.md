@@ -1,7 +1,7 @@
 # Code Academy Part IV
 
 Bring both [JavaScript](http://www.codecademy.com/tracks/javascript) 
-and [HTML CSS](http://www.codecademy.com/tracks/web) to 70%.
+and [HTML CSS](http://www.codecademy.com/tracks/web) to 60%.
 
 When you are done, submit a screen shot of your progress. If you are completely done with the Skill, then submit a link to your Code Academy **profile page**,
 like this:

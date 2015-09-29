@@ -1,16 +1,32 @@
-
-
 #Ask a Question
 
-Ask a technical question in the discussion area related to this week's assignments, or to a technology that we have been using regularly. 
+The goal of this assignment is to foster participation in online discussions. In particular I want you to:
+
+- Ask a question
+- Answer a question
+- Provide a useful technical tip
 
 Here is a quick video about how to create new questions and how to reply to existing questions.
 
 - [https://youtu.be/60kUajiq4as](https://youtu.be/60kUajiq4as)
 
+## Don't Provide an Answer
+
+In general don't quote code in your questions. The worst possible question would be:
+
+*Here is the code for me answer to question 3. Is it correct?*
+
+    var a = 3 * square(5);
+    
+A close second might be:
+
+*What is the answer to question three?*
+
+Try to ask questions that can benefit yourself and others, and that don't become a platform for stating the answer to a question.
+
 ## Why Ask Questions
 
-Asking Questions in the discussion are can be helpful because it:
+Asking and answering questions in the discussion are can be helpful because it:
 
 - Gives you the chance of getting the answer earlier. If you ask a question on a Monday, then you could get the answer the same day or the next day, rather than having to wait until Thursday for the answer.
 - Ensures that everyone can benefit from the question. Often questions asked in class can only be answered by me looking at the machine of the person who asked the question, but then no one else in class can see what is on that machine. If we ask questions in the discussion area the right way, then everyone can see the problem and the solution.
@@ -20,6 +36,7 @@ Other benefits of asking questions here include:
 
 - Learning how to work inside online forums. Places like stackoverflow, superuser and askubuntu are as important, or more important, than books in this day and age. Just learning to rely on online forums as a means of learning is beneficial
 - The discussion area is a great place to practice answering questions. There is an art form to asking and answering questions online. One way to learn is to practice. The discussion area gives us a safe, protected place to practice writing and answering questions.
+
 
 ##Appropriate Questions
 
@@ -48,35 +65,25 @@ Just be careful that you are not asking a question that has already been asked.
 Subjects that would not be appropriate:
 
 - How to create a class in C#? (Wrong subject)
-- What is better, C# or Python? Why are we using JavaScript instead of X? (Too general. Not technical. Just a matter of opinion.)
 - How do I use Git to host a gamer development project? (We are using Git, but this is not a part of Git we are covering.)
 - Who will win the 2016 Presidential election? (Not related to our class at all. Likely to foment controversy)
 - My Dad gets a dreamy look in his eyes when my girlfriend comes over and I signed up for 5 graduate level courses in addition to this class. I feel like I'm drowning and this Internet stuff is just a flash in the pan anyway, so do you think I should move out of my parent's house and live on my own? I find myself watching The Terminator over and over and sweating a lot because I can't understand this assignment. Do you think its okay if I skip class week? (Too emotional and too personal.)
 - Where on Elvenware are callbacks covered? This is a good question, but it needs to be rephrased: How do I find the place on Elvenware where JavaScript callbacks are covered? Answer: search on Google for [JavaScript callbacks site:elvenware.com][1].
+
+The following questions are okay, and you will get credit for asking them, but there is a sense in which they are second class questions. I would prefer a more technical, more specific, question, but these are much better than nothing, and are sometimes appropriate:
+
 - Why are we using Jasmine instead of QUnit? This is a reasonable question and okay to ask, but it is not technical or specific enough to satisfy the requirements of this assignment.
+- What is better, C# or Python? Why are we using JavaScript instead of X? (Too general. Not technical. Just a matter of opinion.)
+
 
 ##Question Guidelines
 
 Your question must be:
 
 - Unique. This means that you should refresh (F5) the discussion area before you ask the question, and make sure no one else has already asked the question. If two people ask the same question, whoever asks first gets credit, and the person who asked second must ask another question.
-- Related to our class, and preferrably to an assignment we are working on this week.
-- Technical. Don't ask open ended questions that can't be answered concisely. Your questions should be about JavaScript, node, the libraries we use, or the tools we use. 
+- Related to our class, and preferably to an assignment we are working on this week.
+- Technical. Try not to ask to many open ended questions that can't be answered concisely. A preferred question would be about JavaScript, node, the libraries we use, or the tools we use. 
 - Reasonable. For instance, if I asked you to create a table with the time of the sunrise in Bellevue WA over the next week, you can't ask: "What is the sun? I don't understand." That is not a reasonable question. Everyone knows about the sun, and it is not plausible that you don't understand that part of the assignment.
-
-## Don't Provide an Answer
-
-In general don't quote code in your questions. The worst possible question would be:
-
-*Here is the code for me answer to question 3. Is it correct?*
-
-    var a = 3 * square(5);
-    
-A close second might be:
-
-*What is the answer to question three?*
-
-Try to ask questions that can benefit yourself and others, and that don't become a platform for stating the answer to a question.
 
 ##Question Format
  
