@@ -39,6 +39,13 @@ If your version of node is older than 4.0.0, or your version of NPM is older tha
 
 In particular, check the sections on updating node and updating packages.
 
+I have decided that the node version manager (nvm) is more trouble than it is worth. These two lines of code can be used to turn off the node version manager, or at least to ensure that we use the primary version of node installed on a system:
+
+    nvm use system
+    nvm alias default system
+
+You may need to restart your bash shell after issuing these commands.
+
 ## Step02: Create Application {#create}
 
 In the bash shell, navigate to your Git folder. Create a nodejs express project called Week02-NpmBower:
@@ -201,4 +208,21 @@ Keep redoing it until you have it memorized. You should be able to do everything
 
 Even if it is hard to take that request seriously, you should nonetheless strive to become familiar with the basics of NPM and Bower. These tools are an essential part of node development as practiced in this class. Indeed, most node developers use NPM, and many of them use Bower. Understanding how to work with **bower.json** and **package.json** files, and how to install packages with NPM and Bower are very useful and important skills.  
 
+## Get the Most Recent Copy of .bash_aliases {#new-bash-aliases}
+
+The first step is to get the most recent copy of JsObjects. Navigate to the JsObjects folder and pull down the most recent content:
+
+```
+cd ~/Git/JsObjects/
+git pull
+```
+
+Now navigate to the Utilities folder and copy my updated version of **.bash_aliases** to the root of your home folder:
+
+```
+cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.bash_aliases
+source ~/.bash_aliases
+```
+
+The last command shown above loads the updated **.bash_aliases** file into memory. You could do the same thing by restarting the bash shell.
  
