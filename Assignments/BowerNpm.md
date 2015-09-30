@@ -119,7 +119,7 @@ We'll learn about grunt later. For now, just install it.
 Use bower to install jquery and boostrap:
 
 ```
-bower install bootstrap -- save
+bower install bootstrap --save
 ```
 
 This single command will install both jquery and bootstrap. If you wanted to install jquery without installing bootstrap, then issue this command:
