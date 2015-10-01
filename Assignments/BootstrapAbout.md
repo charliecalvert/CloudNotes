@@ -1,11 +1,29 @@
-#Week11 In Class Bootstrap
+# In Class Bootstrap
 
 Bootstrap allows you to create great projects with beautiful CSS that looks good on a PC, a tablet or a phone.
 
-To get started using bootstrap, create a new express project called **Week11InClassBootstrap**.
+To get started using bootstrap, create a new express project called **Week02InClassBootstrap**.
 
-## Download
+## Step One: Install {#install}
 
+There are two several ways to get Bootstrap. For now, I want you to use bower to install it. However, as an FYI, I will also provide a link that allows you to download bootstrap from their website. Download
+
+### Download with Bower {#bower}
+
+First copy our default **bower.json** and **.bowerrc** files from [JsObjects][bower-copy].
+
+```
+cp $ELF_TEMPLATES/bower.json .
+cp $ELF_TEMPLATES/.bowerrc .
+bower install bootstrap --save
+```
+
+Remember that we define **$ELF_TEMPLATES** in our **.bash_alias** file. That file is maintained on [JsObjects][bash-alias].
+
+[bower-copy]:https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates
+[bash-alias]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
+
+### Download directly {#down-direct}
 Now we will add in **bootstrap**.
 
 - [Download bootstrap](http://getbootstrap.com/getting-started/#download)
@@ -13,7 +31,43 @@ Now we will add in **bootstrap**.
 - Copy **bootstrap.min.css** and **bootstrap-theme.in.css** to your project's **publis/stylesheets** folder.
 - Copy **bootstrap.min.js** to **public/javascripts**
 
-Now in **Main.js** we need to shim in bootstrap by adding it to the end of our list of shims in **require.config**:
+
+## Step Two: Link to Bootstrap {#link}
+
+There are multiple ways to link in bootstrap. The two we care about are:
+
+* Directly in your header
+* Via **requirejs**
+
+In this exercise, I want you to link in Bootstrap directly in the header. As an FYI, I will include information about use **requirejs**.
+
+
+### Link directly {#direct}
+
+We need to link in three files:
+
+* boostrap.css
+* jquery.js
+* bootstrap.js
+
+Here is what **layout.jade** looks like when you are done:
+
+```
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+    script(src="components/jquery/dist/jquery.js")
+    script(src="components/bootstrap/dist/js/bootstrap.js")
+  body
+    block content
+```
+
+### With Require {#requirejs}
+
+Please skip this section. In **Main.js** we need to shim in bootstrap by adding it to the end of our list of shims in **require.config**:
 
 ```
 paths: {

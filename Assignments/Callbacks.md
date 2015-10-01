@@ -181,7 +181,9 @@ cd Week02-Callbacks
 npm install
 cp $ELF_TEMPLATES/bower.json .
 cp $ELF_TEMPLATES/.bowerrc .
-bower install jquery --save
+bower install bootstrap --save
+sed -i -- 's/3000/30025/g' bin/www
+sed -i -- 's/node\s/nodemon /g' package.json
 ``` 
 
 Here is a more complete script that allows you to pass in the name of the file you want to create:
@@ -194,7 +196,9 @@ cd $1
 npm install
 cp $ELF_TEMPLATES/bower.json .
 cp $ELF_TEMPLATES/.bowerrc .
-bower install jquery --save
+bower install bootstrap --save
+sed -i -- 's/3000/30025/g' bin/www
+sed -i -- 's/node\s/nodemon /g' package.json
 ```
 
 This script is maintained in **JsObjects/Utilities/DeveloperUtilities**.
