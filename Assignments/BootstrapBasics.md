@@ -73,7 +73,24 @@ html
     block content
 ```
 
-## Step Three: Define Controls {#define-controls}
+## Step Three: Query Delicious {#query-delicious}
+
+```
+function delicious() {
+    $.ajax(
+        {
+            url: 'http://feeds.delicious.com/v2/json/charliecalvert/javascript',
+
+            dataType: 'jsonp',
+
+            success: function(data) {
+                $('#viewer').html(JSON.stringify(data, null, 4));
+            }
+    });
+}
+```
+
+## Step Four: Define Controls {#define-controls}
 
 Get started by creating a single input control:
 
@@ -85,6 +102,28 @@ div.panel.panel-default
             label(for='i1') Env Variable
             input#i1.form-control(type='text', name='foo', placeholder="foo")
 ````
+
+Provide three radio buttons:
+
+* javascript
+* node
+* bootstrap
+
+When the user selects one of them, they see the delicious options for links to those items
+
+That is, change the URL in the **delicious** call to one of these:
+
+```
+url: 'http://feeds.delicious.com/v2/json/charliecalvert/javascript'
+url: 'http://feeds.delicious.com/v2/json/charliecalvert/nodejs'
+url: 'http://feeds.delicious.com/v2/json/charliecalvert/bootstrap'
+```
+
+Provide three checkboxes
+
+If the user selects one or more of them, they see delicious links for multiple items
+
+
 
 ##Turn It In
 
