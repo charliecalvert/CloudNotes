@@ -1,6 +1,6 @@
 #Callbacks
 
-Learn about JavaScripts callbacks.
+Learn about JavaScripts callbacks. We will cover this in class on Thursday, so you can wait until then to do it, if you wish.
 
 * [Callbacks Deck](http://bit.ly/elf-callbacks)
 * [Callbacks on Elvenware][elven-callbacks]
@@ -22,13 +22,19 @@ Create an Express project called **Week02-Callbacks**.
 Either Create or Copy a **bower.json** file. Here is how to copy it:
 
 ```
-    cp $ELF_TEMPLATES/bower.json .
+    cp $ELF_TEMPLATES/bower.json .    
 ``` 
 
-Here is how to create it:
+Alternatively, here is how to create it using an interactive utility:
 
 ```
     bower init
+```
+
+And then copy in our **.bowerrc** file so the components are installed in the **public** directory:
+
+```
+cp $ELF_TEMPLATES/.bowerrc .
 ```
 
 Now install jQuery:
@@ -52,7 +58,7 @@ In **views/layout.jade**, use a script statement to link jQuery and your custom 
 
 ```
 script(src='components/jquery/dist/jquery.min.js')
-script(src='javascripts/callbacks.js)
+script(src='javascripts/callbacks.js')
 ```
 
 From the command line, run the project, load it into Chrome, open the Developer Tools with F12, confirm that both **jquery** and **callbacks.js** are loading properly.
@@ -111,12 +117,19 @@ Now call the **callbackHandler** function three times:
 
 1. First pass a function that adds the second and third parameters. (plus operator)
 - Pass in a function that subtracts the second and third parameters. (minus operator)
-- Pass a function that returns the remainder from dividing two numbers (modulus operator)
+- Pass in a function that returns the remainder from dividing two numbers (modulus operator)
 
 JavaScript doesn't care whether you pass in or use a parameter. To see this in action:
 
-- Pass in a function that returns the number 9
-- Pass a function that converts the second parameter from miles to feet
+- Pass in a function called **getNine** that returns the number 9 and displays it in the list.
+- Pass in a function called **milesToFeet** that converts the first parameter from miles to feet and display the result in the list.
+
+Even though the above code works, create two more callbackHandlers, one for functions that take one parameter and one for functions that take zero parameters. Call them:
+
+* zeroParamCallbackHandler
+* oneParamCallbackHandler
+
+Pass in **getNine** to **zeroParamCallbackHandler** and **milesToFeet** to **oneParamCallbackHandler** 
 
 To get you started, I'll show how to complete the first step shown above.
 
@@ -138,11 +151,50 @@ $(document).ready(function() {
 
 Note that the result of the call to the **callbackHandler** is displayed to the user by our jQuery based **showMessage** function.
 
+## Step Seven: Debugger {#show-debug}
+
+Step through the code in the Chrome debugger.
+
+* In Chrome, make sure the developer tools are open. (Press F12)
+* Turn to the **Sources** page.
+* Select the **callbacks.js** file from the **javascripts folder**
+* Put a breakpoint on the sole line in the **callBackHandler** function. To create the breakpoint, click in the gutter to the left of the line. 
+* Run your code to the breakpoint as it appears when the **add** function is passed in. To simplify this process, pass in add first, as in the example above. Then the first time the breakpoint is hit the the parameter called **func** with hold the **add** function.
+* Take a screenshot. It should show the values of a and b, which should be set to 2 and 3.
+* Attach the screen shot to your assignment when you turn it in.
+
 ## Turn it in
 
 Be sure you have placed your work in your git folder under the name **Week02-Callbacks**. Submit the URL of your repository, or optionally provide a link to your folder inside your Git project.
 
+Don't forget to attach your screenshot to your assignment.
+
 **NOTE**: *When naming your folder, small things like casing and dashes rather than underscores matter. Remember, I'm grading multiple assignments, and I want to automate the process as best I can. This means I need to know the exact name of your folder, which I specify above.*
 
+## Hint
 
+Here is a script to set up a project of this type from scratch:
 
+```
+express Week02-Callbacks
+cd Week02-Callbacks
+npm install
+cp $ELF_TEMPLATES/bower.json .
+cp $ELF_TEMPLATES/.bowerrc .
+bower install jquery --save
+``` 
+
+Here is a more complete script that allows you to pass in the name of the file you want to create:
+
+```
+#!/bin/bash
+
+express $1
+cd $1
+npm install
+cp $ELF_TEMPLATES/bower.json .
+cp $ELF_TEMPLATES/.bowerrc .
+bower install jquery --save
+```
+
+This script is maintained in **JsObjects/Utilities/DeveloperUtilities**.
