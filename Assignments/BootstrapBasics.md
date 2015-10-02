@@ -75,11 +75,14 @@ html
 
 ## Step Three: Query Delicious {#query-delicious}
 
+Add a file into the javascripts directory called **control.js**. Use the **script** tag to link it into our app from **layout.jade**. Begin by placing the following code in it.
+
 ```
-function delicious() {
+function callDelicious(subject) {
+    var delicious = 'http://feeds.delicious.com/v2/json/charliecalvert/' + subject;
     $.ajax(
         {
-            url: 'http://feeds.delicious.com/v2/json/charliecalvert/javascript',
+            url: delicious,
 
             dataType: 'jsonp',
 
@@ -88,20 +91,29 @@ function delicious() {
             }
     });
 }
+
+function delicious() {
+    var subject = $("#subject").val();
+    callDelicious(subject);
+}
 ```
 
 ## Step Four: Define Controls {#define-controls}
 
-Get started by creating a single input control:
+Get started defining the HTML for your app by creating a single button and input control:
 
 ```
+button(onclick="delicious()") Delicous
+
 div.panel.panel-default
     div.panel-heading Text Input
     div.panel-body
         div.form-group
-            label(for='i1') Env Variable
-            input#i1.form-control(type='text', name='foo', placeholder="foo")
+            label(for='subject') Subject
+            input#subject.form-control(type='text', placeholder="subject")
 ````
+
+For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
 
 Provide three radio buttons:
 
@@ -119,11 +131,13 @@ url: 'http://feeds.delicious.com/v2/json/charliecalvert/nodejs'
 url: 'http://feeds.delicious.com/v2/json/charliecalvert/bootstrap'
 ```
 
-Provide three checkboxes
+Provide three checkboxes with the same labels.
 
-If the user selects one or more of them, they see delicious links for multiple items
+If the user selects one or more of them, they see delicious links for multiple items for instance, both **javascript** and **nodejs**.
 
+## Still thinking about this option
 
+We should probably create our own delicious accounts and query them. Provide radiobuttons for switching between your account and my account.
 
 ##Turn It In
 
