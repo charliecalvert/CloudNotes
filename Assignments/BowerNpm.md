@@ -182,6 +182,14 @@ Now you need to confirm that your work in **layout.jade** did in fact create cod
 
 There should be no red text on the page. Red text is usually reserved for errors. If you see errors, modify your **layout.jade** file to correct them.
 
+You should also change the title in **routes/index.js**:
+
+```javascript
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'PUT YOUR TITLE HERE'' });
+});
+```
+
 ## Turn it in
 
 Check your project into Git. Push it to BitBucket or GitHub. When you submit the project in Canvas, include the URL of your Git repository.
