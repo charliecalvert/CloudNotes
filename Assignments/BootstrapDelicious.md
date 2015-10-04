@@ -10,7 +10,7 @@ To get started using bootstrap, navigate to your repository and create a new exp
 
 ```
 express Week03_BootstrapBasics
-cd Week02_BootstrapBasics
+cd Week03_BootstrapBasics
 npm install
 ```
 
@@ -33,16 +33,22 @@ Now set the port to **bin/www** to 30025. You can do it manually in WebStorm, or
 sed -i -- 's/3000/30025/g' bin/www
 ```
 
-And this should replace **node** with **nodemon** in **package.json**:
+Replace **node** with **nodemon** in **package.json**:
 
 ```
 sed -i -- 's/node\s/nodemon /g' package.json
 ```
 
-And get the **favicon**:
+Get the **favicon**:
 
 ```
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
+```
+
+Change the title:
+
+```
+sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 ```
 
 This part of your work is done now, but as an fyi, this is how it looks if you put it all together:
@@ -57,7 +63,38 @@ bower install bootstrap --save
 sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
+sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 ```
+
+Remember that you can save code like that shown above into **bash** script, and then run it as needed:
+
+* First create the file with an editor such as geany or nano
+* Save the file as **CreateBootstrapDelicous**
+* Make it executable: chmod +x CreateBootstrapDelicious
+* Run it like this: ./CreateBootstrapDelicious
+
+If you want to pass in a parameter, you can pick it off with $1, $2, etc. For instance if you pass in BootstrapDelicious as a parameter when you run your script:
+
+```
+#! /bin/bash
+
+express $1
+cd $1
+npm install
+cp $ELF_TEMPLATES/bower.json .
+cp $ELF_TEMPLATES/.bowerrc .
+bower install bootstrap --save
+sed -i -- 's/3000/30025/g' bin/www
+sed -i -- 's/node\s/nodemon /g' package.json
+cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
+sed -i -- 's/Express/'$1'/g' routes/index.js
+```
+
+Now you can use this script to create a project with an random name. For instance, you could:
+
+* Save the new script as CreateExpressProject and put it in your ~/bin directory
+* chmod +x ~/bin/CreateExpressProject
+* Invoke it like this: CreateExpressProject Week03-Test-LastName
 
 ## Step Two: Link to Bootstrap {#link}
 
