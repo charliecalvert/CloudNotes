@@ -1,14 +1,16 @@
 # Bootstrap Basics
 
+We'll work on this assignment in class on Tuesday, Oct 6, 2015.
+
 Bootstrap allows you to create projects with CSS that looks good on a PC, a tablet or a phone.
 
 ## Step One: Install {#install}
 
-To get started using bootstrap, navigate to your repository and create a new express project called **Week02-BootstrapBasics**.
+To get started using bootstrap, navigate to your repository and create a new express project called **Week03-BootstrapBasics**.
 
 ```
-express Week02_BootstrapBasics
-cd Week02_BootstrapBasics
+express Week03_BootstrapBasics
+cd Week03_BootstrapBasics
 npm install
 ```
 
@@ -40,8 +42,8 @@ sed -i -- 's/node\s/nodemon /g' package.json
 This part of your work is done now, but as an fyi, this is how it looks if you put it all together:
 
 ```
-express Week02_BootstrapBasics
-cd Week02_BootstrapBasics
+express Week03-BootstrapBasics
+cd Week03-BootstrapBasics
 npm install
 cp $ELF_TEMPLATES/bower.json .
 cp $ELF_TEMPLATES/.bowerrc .
@@ -73,30 +75,10 @@ html
     block content
 ```
 
-## Step Three: Query Delicious {#query-delicious}
+## Step Three: Create Public JavaScript File  {#create-main-public}
 
 Add a file into the javascripts directory called **control.js**. Use the **script** tag to link it into our app from **layout.jade**. Begin by placing the following code in it.
 
-```
-function callDelicious(subject) {
-    var delicious = 'http://feeds.delicious.com/v2/json/charliecalvert/' + subject;
-    $.ajax(
-        {
-            url: delicious,
-
-            dataType: 'jsonp',
-
-            success: function(data) {
-                $('#viewer').html(JSON.stringify(data, null, 4));
-            }
-    });
-}
-
-function delicious() {
-    var subject = $("#subject").val();
-    callDelicious(subject);
-}
-```
 
 ## Step Four: Define Controls {#define-controls}
 
@@ -115,31 +97,20 @@ div.panel.panel-default
 
 For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
 
-Provide three radio buttons:
+Provide two radio buttons:
 
-* javascript
-* node
-* bootstrap
+* radio01
+* radio02
 
-When the user selects one of them, they see the delicious options for links to those items
+When the user selects one of them...
 
-That is, change the URL in the **delicious** call to one of these:
+Provide three checkboxes with the these labels:
 
-```
-url: 'http://feeds.delicious.com/v2/json/charliecalvert/javascript'
-url: 'http://feeds.delicious.com/v2/json/charliecalvert/nodejs'
-url: 'http://feeds.delicious.com/v2/json/charliecalvert/bootstrap'
-```
-
-Provide three checkboxes with the same labels.
-
-If the user selects one or more of them, they see delicious links for multiple items for instance, both **javascript** and **nodejs**.
-
-## Still thinking about this option
-
-We should probably create our own delicious accounts and query them. Provide radiobuttons for switching between your account and my account.
+* check box 01
+* check box 02
+* check box 03
 
 ##Turn It In
 
-Be sure your work is in your repository in a folder called **Week02-BootstrapBasics**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
+Be sure your work is in your repository in a folder called **Week03-BootstrapBasics**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
 
