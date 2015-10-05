@@ -8,7 +8,7 @@ Bootstrap allows you to create projects with CSS that looks good on a PC, a tabl
 
 To get started using bootstrap, navigate to your repository and create a new express project called **Week03-BootstrapDelicious**.
 
-```
+```bash
 express Week03_BootstrapBasics
 cd Week03_BootstrapBasics
 npm install
@@ -16,7 +16,7 @@ npm install
 
 First copy our default **bower.json** and **.bowerrc** files from [JsObjects][bower-copy].
 
-```
+```bash
 cp $ELF_TEMPLATES/bower.json .
 cp $ELF_TEMPLATES/.bowerrc .
 bower install bootstrap --save
@@ -149,9 +149,7 @@ function callDelicious(subject) {
     $.ajax(
         {
             url: delicious,
-
             dataType: 'jsonp',
-
             success: function(data) {
                 $('#viewer').html(JSON.stringify(data, null, 4));
             }
@@ -168,6 +166,8 @@ You can query for either JSON or RSS:
 
 * http://feeds.delicious.com/v2/json/charliecalvert/
 * http://feeds.delicious.com/v2/rss/charliecalvert/
+
+We, however, will prefer JSON.
 
 Read more about the URL for RSS and JSON feeds here: 
 
