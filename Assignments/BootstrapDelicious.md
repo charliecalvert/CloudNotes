@@ -1,4 +1,4 @@
-# Bootstrap Basics
+# Bootstrap Delicious
 
 We'll work on this assignment in class on Tuesday, Oct 6, 2015.
 
