@@ -14,7 +14,7 @@ cd Week03_BootstrapBasics
 npm install
 ```
 
-First copy our default **bower.json** and **.bowerrc** files from [JsObjects][bower-copy].
+Copy our default **bower.json** and **.bowerrc** files from [JsObjects][bower-copy].
 
 ```
 cp $ELF_TEMPLATES/bower.json .
@@ -39,11 +39,11 @@ And this should replace **node** with **nodemon** in **package.json**:
 sed -i -- 's/node\s/nodemon /g' package.json
 ```
 
-Then let's copy in a favicon and change the title:
+Then let's copy in a favicon and change the title to include your last name:
 
 ```
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
-sed -i -- 's/Express/Week03-Bootstrap-Basics/g' routes/index.js
+sed -i -- 's/Express/Bootstrap-Basics-LastName/g' routes/index.js
 ```
 
 This part of your work is done now, but as an fyi, this is how it looks if you put it all together:
@@ -58,9 +58,11 @@ bower install bootstrap --save
 sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
-sed -i -- 's/Express/Week03-Bootstrap-Basics/g' routes/index.js
+sed -i -- 's/Express/Bootstrap-Basics-LastName/g' routes/index.js
 npm start
 ```
+
+**NOTE**: *If you used the **CreateProject** script to build this application, manually go in and change the title to include your last name.*
 
 ## Step Two: Link to Bootstrap {#link}
 
@@ -85,9 +87,14 @@ html
     block content
 ```
 
+**NOTE**: *I'm aware that most of the examples on the web that you find will show raw HTML rather than jade. However, it is trivial to convert HTML to jade. In particular, you should find this html2jade site. It will help you convert HTML to jade.*
+
+* [Google Search](https://www.google.com/search?q=html+to+jade)
+* [HTML to Jade](http://html2jade.org)
+
 ## Step Three: Create Public JavaScript File  {#create-main-public}
 
-Add a file into the javascripts directory called **control.js**. You can create the file inside WebStorm, or use the following code:
+Add a file into the javascripts directory called **control.js**. You can create the file inside WebStorm, or use the following code to build it from the bash shell:
 
 ```
 ELF_NOW=$(date +"%m/%d/%Y")
@@ -97,109 +104,38 @@ echo " * Created by Charlie Calvert $ELF_NOW" >> $ELF_FILE
 echo " */" >> $ELF_FILE
 ```
 
-Use the **script** tag to link it into our app from **layout.jade**:
+Use the **script** tag to link it into our app from **layout.jade**. See the previous section for hints as to how to do this.
 
-## Step Four: Define Controls {#define-controls}
+## Step Four: Create Debug Output
 
-Get started defining the HTML for your app by creating a single button and input control:
+Put the following at the bottom of your index.jade file:
 
-```
-div.panel.panel-default
-    div.panel-heading Text Input
-    div.panel-body
-        div.form-group
-            label(for='subject') Subject
-            input#subject.form-control(type='text', placeholder="subject")
-````
+## Step Four: Create Debug Display {#debug-display}
 
-For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
+We want to build a page that looks something like this:
 
-Provide two radio buttons:
+[![Bootstrap Form](http://bit.ly/bootstrap-basics-01-sm)](http://bit.ly/bootstrap-basics-01)
 
-```
-  div.panel.panel-default
-    div.panel-heading Radios
-    div.panel-body
-      div.btn-group.elves(role="group")
-        button.btn.btn-default(type="button") radio01
-        button.btn.btn-default(type="button") radio02
-```
+**Bootstrap Form**: *Click the image to see a larger view*
 
-When the user selects one of them...
-
-Provide three checkboxes:
-
-```
-  div.panel.panel-default
-    div.panel-heading CheckBoxes
-    div.panel-body
-      div
-        input#checkBox01(type='checkbox', name='check', value='check1' )
-        label(for='checkBox01') CheckBox 01
-      div
-        input#checkBox02(type='checkbox', name='check', value='check2' )
-        label(for='checkBox02') CheckBox 02
-
-```
-
-## Add a box
-
-Put a box around all the controls:
-
-```
-	div.panel.panel-default
-		div.panel-heading My Controls
-		div.panel-body
-    		PUT THE INPUT HERE
-            THE CHECKBOXES HERE
-            THE RADIOBUTTONS HERE
-```
-
-## Put them in rows:
-
-To define a row, create a **DIV** with class **row**
-
-```html
-	<div class="row">
-    	<div class="col-md-6">column01</div>
-        <div class="col-md-6">column02</div>
-    </div>
-```
-
-Each row you create should have columns that add up to twelve. For instance col-md-6 + col-md-6 = 6 + 6 = 12. For three columns, do this: col-md-4 + col-md-4 + col-md-4. Example and more docs are here:
-
-* [https://getbootstrap.com/examples/grid/](https://getbootstrap.com/examples/grid/)
-
-The following code creates to two columns in one row, and then below that row you see the radio buttons:
+Let's get started by putting in the debug display shown at the bottom of the page. This code goes at the bottom of **index.jade**:
 
 ```jade
-  div.panel.panel-default
-	div.panel-heading My Controls
-	div.panel-body
-		div.row
-			div.col-md-6
-        		PUT THE TEXT INPUT HERE
-			div.col-md-6
-				PUT THE CHECKBOXES HERE
-        PUT THE RADIO BUTTONS HERE
-```
-
-You can arrange things  this way, or else create a single row with three colums, each containing all three sets of controls.
-
-Remember, indentation is very important in Jade.
-
-## Create Debug Display {#debug-display}
-
-```
 div.panel.panel-default
     div.panel-heading Debug Display
     div.panel-body
         div.row
             div.col-md-6
                 div.panel.panel-default
+                    div.panel-heading Search result
+                    div.panel-body
+                        p#searchResults
+            div.col-md-6
+                div.panel.panel-default
                     div.panel-heading RadioButtons
                     div.panel-body
                         p#radioButtonDisplay01
+        div.row
             div.col-md-6
                 div.panel.panel-default
                     div.panel-heading CheckBoxes
@@ -208,9 +144,77 @@ div.panel.panel-default
                         p#checkBoxDisplay02
                         p#checkBoxDisplay03
                         p#allCheckBoxes
+
+            div.col-md-6
+                div.panel.panel-default
+                    div.panel-heading Form Submit Button Results
+                    div.panel-body
+                        p#formResults
 ```
 
-## Process
+Remember, this code should always be at the bottom of the file. Whatever else we add goes above this block code.
+
+## Step Five: Define Controls {#define-controls}
+
+Get started defining the body of the HTML for your app by creating a single button and input control:
+
+```
+div.panel.panel-default
+    div.panel-heading Text Input
+    div.panel-body
+        div.form-group
+            label(for='subject') Subject
+            input#subject.form-control(type='text', name="subject" value="subject" placeholder="subject")
+        br
+        div
+            button.btn.btn-success(onclick='search()') Search
+```
+
+For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
+
+Provide two radio buttons:
+
+```jade
+div.panel-heading Radios:
+    div.panel-body
+        div.btn-group.elves(role="group")
+            .radio
+                label
+                    input(type='radio', name='radio', value='option1', id='option1', checked='')
+                    |     radio01
+            .radio
+                label
+                    input(type='radio', name='radio', value='option2', id='option2')
+                    |     radio02
+
+```
+
+When the user selects one of them...
+
+Provide three checkboxes:
+
+```jade
+div.panel.panel-default
+    div.panel-heading CheckBoxes
+    div.panel-body
+        div
+            input#checkBox01(type='checkbox', name='check', value='check1' )
+            label(for='checkBox01') &nbsp; CheckBox 01
+        div
+            input#checkBox02(type='checkbox', name='check', value='check2' )
+            label(for='checkBox02') &nbsp; CheckBox 02
+```
+
+Sometimes we want to know that radio button or checkbox was clicked. Here is how to proceed. In **control.js** let's detect if checkbox buttons or radiobuttons were clicked:
+
+```javascript
+$(document).ready(function() {
+	$("input[name=check]:checkbox").click(displayCheckboxSelection);
+	$('.btn-group.elves').click(displayRadioButtonSelection);
+});
+```
+
+And here are the methods for handling these events:
 
 ```javascript
 function displayCheckboxSelection()
@@ -237,15 +241,156 @@ function displayCheckboxSelection()
 }
 
 function displayRadioButtonSelection() {
-	var id = $(this).text();
-	$("#radioButtonDisplay01").html("You clicked " + id);
+	if ($('#option1').is(':checked')) {
+		$("#radioButtonDisplay01").html("You clicked option1 ");
+	} else {
+		$("#radioButtonDisplay01").html("You clicked option2 ");
+	}
 }
+
+```
+
+Here is how to handle a click on **Search** button:
+
+```javascript
+function search() {
+	var input = $('#subject').val();
+	$('#searchResults').html(input);
+}
+```
+
+## Step Six: Add a box {#box-it}
+
+Put a box around all the controls:
+
+```
+div.panel.panel-default
+    div.panel-heading My Controls
+    div.panel-body
+        PUT THE INPUT HERE
+        THE CHECKBOXES HERE
+        THE RADIOBUTTONS HERE
+```
+
+## Step Seven: Put them in rows: {#add-rows}
+
+To define a row, create a **DIV** with class **row**
+
+```html
+	<div class="row">
+    	<div class="col-md-6">column01</div>
+        <div class="col-md-6">column02</div>
+    </div>
+```
+
+Each row you create should have columns that add up to twelve. For instance col-md-6 + col-md-6 = 6 + 6 = 12. For three columns, do this: col-md-4 + col-md-4 + col-md-4. Example and more docs are here:
+
+* [https://getbootstrap.com/examples/grid/](https://getbootstrap.com/examples/grid/)
+
+The following code creates to two columns in one row, and then below that row you see the radio buttons:
+
+```jade
+div.panel.panel-default
+    div.panel-heading My Controls
+    div.panel-body
+        div.row
+            div.col-md-6
+                PUT THE TEXT INPUT HERE
+            div.col-md-6
+                PUT THE CHECKBOXES HERE
+        div.row
+        	div.col-md-6
+        		PUT THE RADIO BUTTONS HERE
+            div.col-md-6
+				PUT OTHER CONTROLS HERE
+```
+
+Remember, indentation is very important in Jade.
+
+**NOTE**: *Jade and bootstrap are not really that hard, but it takes some time to wrap your head around them. Many of you want to be good at design. In todays world, that means you must be good at bootstrap. I think you should also have a good understanding of templating engines such as jade.
+
+## Step Eight: Add a form {#use-form}
+
+Wrap all the main HTML (not the debug output) in a form:
+
+```
+form#target
+    div.panel.panel-default
+        div.panel-heading My Controls
+        div.panel-body
+        etc...
+```
+
+Inside your document ready method, you should handle the form click:
+
+```
+$("#target").submit(function(event) {
+    event.preventDefault();
+    var userFormData = $(this).serialize();
+    $('#formResults').html(userFormData);
+});
+```
+
+This code:
+
+* Is called when the submit button is selected
+* Uses the jquery **serialize** method to pull everything from the form
+* Displays the output in **paragraph** control.
+* Calls **preventDefault** to keep the form from trying to submit everything to the server. We'll handle that part when we are ready to do so. And today, we are not yet ready to do that. We will cover that in a later class.
+
+## Step Nine: Review Code {#code-review}
+
+I've shown you all this code already, but just to be sure, here is the complete source for **control.js**:
+
+```javascript
+function displayCheckboxSelection()
+{
+	var tag, query = '';
+	var options = ['CheckBox01', 'CheckBox02'];
+
+	if ($("#checkBox01").is(':checked')) {
+		$("#checkBoxDisplay01").html("CheckBox01 Selected");
+		query += options[0];
+	} else {
+		$("#checkBoxDisplay01").html("CheckBox01 not Checked");
+	}
+
+	if ($("#checkBox02").is(':checked')) {
+		$("#checkBoxDisplay02").html("CheckBox02 Selected");
+		tag = query === '' ?  '' : '+';
+		query +=  tag + options[1];
+	} else {
+		$("#checkBoxDisplay02").html("CheckBox02 not Selected");
+	}
+
+	$("#allCheckBoxes").html(query);
+}
+
+function displayRadioButtonSelection() {
+	if ($('#option1').is(':checked')) {
+		$("#radioButtonDisplay01").html("You clicked option1 ");
+	} else {
+		$("#radioButtonDisplay01").html("You clicked option2 ");
+	}
+}
+
+function search() {
+	var input = $('#subject').val();
+	$('#searchResults').html(input);
+}
+
 
 $(document).ready(function() {
 
+	$("#target").submit(function(event) {
+		event.preventDefault();
+		var userFormData = $(this).serialize();
+		$('#formResults').html(userFormData);
+	});
+
 	// Handle button clicks
 	$("input[name=check]:checkbox").click(displayCheckboxSelection);
-	$('.btn-group .btn').click(displayRadioButtonSelection);
+	$('.btn-group.elves').click(displayRadioButtonSelection);
 
 	// Initialize controls
 	displayCheckboxSelection();
@@ -257,3 +402,4 @@ $(document).ready(function() {
 
 Be sure your work is in your repository in a folder called **Week03-BootstrapBasics**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
 
+Attach a screen shot of your running application to the assignment when you submit it. All I need to see is the output in your browser. Your lastname in the title should be clearly visible.

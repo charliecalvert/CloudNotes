@@ -136,6 +136,107 @@ This works because the **~/bin** folder is placed on your path by the default **
 
 **NOTE**: *A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command: **CreateExpressProject**.
 
+## Step Four: System Check {#system-check}
+
+I've made some progress with creating a **SystemCheck** script for Linux. The script is maintained here:
+
+```
+$JSOBJECTS/Utilities/SetupLinux
+```
+
+Hence you can run it like this:
+
+```
+$JSOBJECTS/Utilities/SetupLinuxBox/SystemCheck
+```
+
+The script itself looks something like this when it runs:
+
+```
+=======================
+Menu
+=======================
+
+b) Basic System Check
+n) Node
+p) PhoneGap
+x) Exit
+
+Please make a selection:
+```
+
+Select options b and n (Basic System Check and Node). Take screen shots of the output from both options and call them:
+
+* SystemCheck.png
+* Node.png
+
+## Step Five: Aliases {#aliases}
+
+Sometimes our prompt in bash shell gets really long. As a result, I like to show the system name and path on one line, and the $ prompt on a second line. To make this change on your system, edit the [PS1][ps1] environment variable that is set around line 62 of your **~/.bashrc** file. Make it looks like this:
+
+```bash
+PS1='${debian_chroot:+($debian_chroot)}\u@\h\w\n\$ '
+```
+
+If you want to experiment with the above line, you can simply paste in the above to the bash prmopt and you can see the effect right away. Otherwise type this to process your changes to the **~/bashrc** file: **source ~/.bashrc**
+
+Once you have your prompt set up correctly, make sure you are familiar with some of the aliases in the **.bash_alias** file. For instance, here is a simple bash alias:
+
+```bash
+alias jo="cd $JSOBJECTS"
+```
+
+After this alias is processed, you can just type **jo** to navigate to the **/home/bcuser/Git/JsObjects** directory. On our sytems, that alias is always available to you. This is true because:
+
+* That alias is in the **~/.bash_aliases** file
+* The **~/.bash_aliases** file is loaded by the **~/.bashrc** file
+* The **~/.bashrc** file is processed everytime you open a bash prompt
+
+Create an alias called **i3** that takes you to your git home, which in our case is your **~/Git/isit320-lastname-2015** folder. The alias should look something like this:
+
+```bash
+alias i3="cd $GIT_HOME/isit320-lastname-2015
+```
+
+Now run the following commands/aliases:
+
+```
+clear
+jo
+jou
+joj
+gd
+i3
+```
+
+Take a screen shot of the result and call it **aliases.png**.
+
+**NOTE**: *Becoming comfortable using and creating aliases can be a big boon for developers. There are a lot of things you can do with them. If you understand aliases and scripting, you can make Linux an enormously powerful development environment.
+
+It might be best to complete the above before doing this, but you can create color prompts if you want. Paste the following into the bash shell to see a prompt that goes way over the top:
+
+```bash
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\n\\$ \[$(tput sgr0)\]"
+```
+
+If you want to make this prompt permanent, you can uncomment **force_color_prompt=yes** found around line 46 of your **~/.bashrc**. Comments in a bash shell script are made with the hash symbol: **#**.
+
+Then change the color prompt, found around line 59 of your **~/bashrc**, to the following:
+
+```
+if [ "$color_prompt" = yes ]; then
+    PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\n\\$ \[$(tput sgr0)\]"
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h\w\n\$ '
+fi
+```
+
+The color prompt is all one line. It should not wrap.
+
+If the color prompt is too much, then you can revert to a black and white prompt by commenting out the **force_color_prompt=yes** line with the # symbol.
+
+[ps1]:http://linuxconfig.org/bash-prompt-basics
+
 ## Turn it in
 
 Echo out the contents of your **CreateExpressProject** script:
@@ -153,6 +254,9 @@ Attach the following to your project when you submit it:
 * **BashAliasListing.png**
 * **BashAliasJsObjects.png**
 * **UtilityListings.png**
+* **SystemCheck.png**
+* **Node.png**
+* **aliases.png**
 * **CreateExpressProject.png**
 * **Create-LastName.txt**
 
