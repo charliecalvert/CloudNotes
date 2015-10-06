@@ -167,22 +167,22 @@ You can query for either JSON or RSS:
 * http://feeds.delicious.com/v2/json/charliecalvert/
 * http://feeds.delicious.com/v2/rss/charliecalvert/
 
-We, however, will prefer JSON.
+We, however, will prefer JSON. We like JSON because it is subset of JavaScript, and is therefore easily made compatible with our existing JavaScript codebase.
 
 Read more about the URL for RSS and JSON feeds here: 
 
 * [Delicious RSS and JSON](https://delicious.com/rss)
 * [Delicious oauth](https://github.com/SciDevs/delicious-api/blob/master/api/oauth.md)
 
-This code:
+The code in the delicious and callDelicious methods do the following:
 
-* Retrieves the query the user wants to run. For instance, the user might enter **javascript**
+* Retrieve the query the user wants to run. For instance, the user might enter **javascript**
 * Pass the user's request to a method that can query the Delicious web site.
 * Append the user's request to our default query URL.
 * Use ajax to run the assembled query
 * Display the results
 
-Step Five: Create Additional Controls and Response Methods {#more-controls}
+## Step Five: Create Additional Controls and Response Methods {#more-controls}
 
 For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
 
@@ -212,5 +212,5 @@ Ceate our own delicious account and query them. Provide radiobuttons for switchi
 
 ##Turn It In
 
-Be sure your work is in your repository in a folder called **Week02-BootstrapBasics**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
+Be sure your work is in your repository in a folder called **Week03-BootstrapDelicious**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
 
