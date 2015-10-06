@@ -1,5 +1,5 @@
 
-Bash scripts help you automate tasks. If you know how to create and run relatively simple bash scripts you can become enormously productive. 
+Bash scripts help you automate tasks. If you know how to create and run relatively simple bash scripts you can become enormously productive.
 
 
 ## Step One: Navigate {#navigate}
@@ -20,6 +20,10 @@ Here is another way to run the same command:
 ls $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
+**NOTE**:*If $JSOBJECTS is not defined, this is a problem with your .bashrc file. See this document for details:*
+
+* [Configure Linux][configure-linux]
+
 Run both of these commands and create a screenshot that shows the output. Call the screenshot: **BashAliasListing.png**
 
 Now run this command:
@@ -31,6 +35,7 @@ less $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 Take a screenshot and call it: **BashAliasJsObjects.png**
 
 [jsba]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
+[configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#set-up-environment
 
 ## Step Two: What's Available {#available}
 
@@ -68,14 +73,14 @@ If given one at a time, these commands will:
 * Set the port and switch our run command from node to nodemon
 * Change the title of our project.
 
-We can save code like that shown above into **bash** script, and then run it as needed:
+We can save code like that shown above into a **bash** script, and then run it as needed:
 
-* First create the file with an editor such as geany or nano
+* First create the file with an editor such as **geany** or **nano**
 * At the top of the script, tell bash that this is a bash script: **#! /bin/bash**
 * Paste in the code shown above
 * Save the file as **CreateBootstrapDelicous**
-* Make it executable: chmod +x CreateBootstrapDelicious
-* Run it like this: ./CreateBootstrapDelicious
+* Make it executable: **chmod +x CreateBootstrapDelicious**
+* Run it like this: **./CreateBootstrapDelicious**
 
 ```bash
 #! /bin/bash
@@ -92,7 +97,15 @@ cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 ```
 
-The only problem with this script is that it hard codes in the project name. If we want to make the script more generally useful, then we need to pass in a parameter with designating the project name. 
+The only problem with this script is that it hard codes in the project name. If we want to make the script more generally useful, then we need to pass in a parameter that specifies the project name. We aren't ready to run the command yet, but the command we want to use might look like this:
+
+```bash
+CreateExpressProject Week03-MyProject
+```
+
+This would create and configure an express project called **Week03-MyProject**.
+
+How do we create such a script? The first step will be to capture, or "pick off" the parameters passed to the bash script.
 
 We can pick off parameters in a bash script with $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1. Now I can pass in a project name as a parameter to the script:
 
@@ -111,12 +124,17 @@ cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/'$1'/g' routes/index.js
 ```
 
-Use this script to create a project with an random name. For instance, you could:
+Use this script to create a project with a random name. For instance, you could:
 
-* Save the new script as CreateExpressProject and put it in your ~/bin directory
-* Make it executable: chmod +x ~/bin/CreateExpressProject
+* If a **~/bin** directory does not exist, you should create it: **mkdir ~/bin**
+* Save the new script as **CreateExpressProject** and put it in your **~/bin** directory
+* Make it executable: **chmod +x ~/bin/CreateExpressProject**
 * Invoke it from any place else in your home folder like this: **CreateExpressProject Week03-Test-LastName**
 * Now navigate (cd) into **Week03-Test-LastName** and start the project: **npm start**
+
+This works because the **~/bin** folder is placed on your path by the default **.bashrc** script that ships with Ubuntu. We don't have to add the **bin** folder to the path, the **.bashrc** file does that for us automatically.
+
+**NOTE**: *A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command: **CreateExpressProject**.
 
 ## Turn it in
 
