@@ -107,7 +107,7 @@ This would create and configure an express project called **Week03-MyProject**.
 
 How do we create such a script? The first step will be to capture, or "pick off" the parameters passed to the bash script.
 
-We can pick off parameters in a bash script with $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1. Now I can pass in a project name as a parameter to the script:
+We can pick off parameters in a bash script with $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1. Now I can pass in a project name as a parameter to the script. Each instance of $1 will be replaced at run time with the parameter passed in by the user:
 
 ```bash
 #! /bin/bash

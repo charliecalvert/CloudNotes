@@ -39,6 +39,13 @@ And this should replace **node** with **nodemon** in **package.json**:
 sed -i -- 's/node\s/nodemon /g' package.json
 ```
 
+Then let's copy in a favicon and change the title:
+
+```
+cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
+sed -i -- 's/Express/Week03-Bootstrap-Basics/g' routes/index.js
+```
+
 This part of your work is done now, but as an fyi, this is how it looks if you put it all together:
 
 ```
@@ -50,6 +57,9 @@ cp $ELF_TEMPLATES/.bowerrc .
 bower install bootstrap --save
 sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
+cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
+sed -i -- 's/Express/Week03-Bootstrap-Basics/g' routes/index.js
+npm start
 ```
 
 ## Step Two: Link to Bootstrap {#link}
@@ -77,16 +87,23 @@ html
 
 ## Step Three: Create Public JavaScript File  {#create-main-public}
 
-Add a file into the javascripts directory called **control.js**. Use the **script** tag to link it into our app from **layout.jade**. Begin by placing the following code in it.
+Add a file into the javascripts directory called **control.js**. You can create the file inside WebStorm, or use the following code:
 
+```
+ELF_NOW=$(date +"%m/%d/%Y")
+ELF_FILE=public/javascripts/control.js
+echo "/**" >> $ELF_FILE
+echo " * Created by Charlie Calvert $ELF_NOW" >> $ELF_FILE
+echo " */" >> $ELF_FILE
+```
+
+Use the **script** tag to link it into our app from **layout.jade**:
 
 ## Step Four: Define Controls {#define-controls}
 
 Get started defining the HTML for your app by creating a single button and input control:
 
 ```
-button(onclick="delicious()") Delicous
-
 div.panel.panel-default
     div.panel-heading Text Input
     div.panel-body
@@ -99,16 +116,142 @@ For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for he
 
 Provide two radio buttons:
 
-* radio01
-* radio02
+```
+  div.panel.panel-default
+    div.panel-heading Radios
+    div.panel-body
+      div.btn-group.elves(role="group")
+        button.btn.btn-default(type="button") radio01
+        button.btn.btn-default(type="button") radio02
+```
 
 When the user selects one of them...
 
-Provide three checkboxes with the these labels:
+Provide three checkboxes:
 
-* check box 01
-* check box 02
-* check box 03
+```
+  div.panel.panel-default
+    div.panel-heading CheckBoxes
+    div.panel-body
+      div
+        input#checkBox01(type='checkbox', name='check', value='check1' )
+        label(for='checkBox01') CheckBox 01
+      div
+        input#checkBox02(type='checkbox', name='check', value='check2' )
+        label(for='checkBox02') CheckBox 02
+
+```
+
+## Add a box
+
+Put a box around all the controls:
+
+```
+	div.panel.panel-default
+		div.panel-heading My Controls
+		div.panel-body
+    		PUT THE INPUT HERE
+            THE CHECKBOXES HERE
+            THE RADIOBUTTONS HERE
+```
+
+## Put them in rows:
+
+To define a row, create a **DIV** with class **row**
+
+```html
+	<div class="row">
+    	<div class="col-md-6">column01</div>
+        <div class="col-md-6">column02</div>
+    </div>
+```
+
+Each row you create should have columns that add up to twelve. For instance col-md-6 + col-md-6 = 6 + 6 = 12. For three columns, do this: col-md-4 + col-md-4 + col-md-4. Example and more docs are here:
+
+* [https://getbootstrap.com/examples/grid/](https://getbootstrap.com/examples/grid/)
+
+The following code creates to two columns in one row, and then below that row you see the radio buttons:
+
+```jade
+  div.panel.panel-default
+	div.panel-heading My Controls
+	div.panel-body
+		div.row
+			div.col-md-6
+        		PUT THE TEXT INPUT HERE
+			div.col-md-6
+				PUT THE CHECKBOXES HERE
+        PUT THE RADIO BUTTONS HERE
+```
+
+You can arrange things  this way, or else create a single row with three colums, each containing all three sets of controls.
+
+Remember, indentation is very important in Jade.
+
+## Create Debug Display {#debug-display}
+
+```
+div.panel.panel-default
+    div.panel-heading Debug Display
+    div.panel-body
+        div.row
+            div.col-md-6
+                div.panel.panel-default
+                    div.panel-heading RadioButtons
+                    div.panel-body
+                        p#radioButtonDisplay01
+            div.col-md-6
+                div.panel.panel-default
+                    div.panel-heading CheckBoxes
+                    div.panel-body
+                        p#checkBoxDisplay01
+                        p#checkBoxDisplay02
+                        p#checkBoxDisplay03
+                        p#allCheckBoxes
+```
+
+## Process
+
+```javascript
+function displayCheckboxSelection()
+{
+	var tag, query = '';
+	var options = ['CheckBox01', 'CheckBox02'];
+
+	if ($("#checkBox01").is(':checked')) {
+		$("#checkBoxDisplay01").html("CheckBox01 Selected");
+		query += options[0];
+	} else {
+		$("#checkBoxDisplay01").html("CheckBox01 not Checked");
+	}
+
+	if ($("#checkBox02").is(':checked')) {
+		$("#checkBoxDisplay02").html("CheckBox02 Selected");
+		tag = query === '' ?  '' : '+';
+		query +=  tag + options[1];
+	} else {
+		$("#checkBoxDisplay02").html("CheckBox02 not Selected");
+	}
+
+	$("#allCheckBoxes").html(query);
+}
+
+function displayRadioButtonSelection() {
+	var id = $(this).text();
+	$("#radioButtonDisplay01").html("You clicked " + id);
+}
+
+$(document).ready(function() {
+
+	// Handle button clicks
+	$("input[name=check]:checkbox").click(displayCheckboxSelection);
+	$('.btn-group .btn').click(displayRadioButtonSelection);
+
+	// Initialize controls
+	displayCheckboxSelection();
+	$("#radioButtonDisplay01").html('No radiobutton selected');
+});
+```
 
 ##Turn It In
 
