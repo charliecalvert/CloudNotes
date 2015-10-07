@@ -175,7 +175,8 @@ For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for he
 Provide two radio buttons:
 
 ```jade
-div.panel-heading Radios:
+div.panel.panel-default
+	div.panel-heading Radios:
     div.panel-body
         div.btn-group.elves(role="group")
             .radio
@@ -193,7 +194,7 @@ When the user selects one of them...
 
 Provide three checkboxes:
 
-```jade
+```jadedefault
 div.panel.panel-default
     div.panel-heading CheckBoxes
     div.panel-body
