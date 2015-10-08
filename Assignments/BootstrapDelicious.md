@@ -51,6 +51,15 @@ Change the title:
 sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 ```
 
+Create control.js and use add strict:
+
+```
+echo -e "\$(document).ready(function() { 'use strict'; \n});" >> public/javascripts/control.js
+sed -i "s/{$/{ 'use strict';/" routes/index.js
+sed -i "s/{$/{ 'use strict';/" routes/users.js
+sed -i "s/next) {/next) { 'use strict';/" app.js
+```
+
 This part of your work is done now, but as an fyi, this is how it looks if you put it all together:
 
 ```
@@ -64,6 +73,10 @@ sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
+echo -e "\$(document).ready(function() {\n});" >> public/javascripts/control.js
+sed -i "s/{$/{ 'use strict';/" routes/index.js
+sed -i "s/{$/{ 'use strict';/" routes/users.js
+sed -i "s/next) {/next) { 'use strict';/" app.js
 ```
 
 Remember that you can save code like that shown above into **bash** script, and then run it as needed:
@@ -88,6 +101,10 @@ sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/'$1'/g' routes/index.js
+echo -e "\$(document).ready(function() {\n});" >> public/javascripts/control.js
+sed -i "s/{$/{ 'use strict';/" routes/index.js
+sed -i "s/{$/{ 'use strict';/" routes/users.js
+sed -i "s/next) {/next) { 'use strict';/" app.js
 ```
 
 Now you can use this script to create a project with an random name. For instance, you could:
@@ -132,19 +149,21 @@ div.panel.panel-default
         div.form-group
             label(for='subject') Subject
             input#subject.form-control(type='text', placeholder="subject")
+	div
+		pre#viewer
 ````
 
 ## Step Four: Query Delicious {#query-delicious}
 
-Add a file into the javascripts directory called **control.js**. 
+Make sure a file called **control.js** is in the **public/javascripts** directory. It should have been created by our **CreateExpressProject** script back in Step One.
 
-Use the **script** tag to link it into our app from **layout.jade**. 
+We will, however, have to use the **script** tag to link **control.js** into our app from **layout.jade**.
 
 Place the following code inside **control.js**:
 
 
 ```
-function callDelicious(subject) {
+function callDelicious(subject) { 'use strict';
     var delicious = 'http://feeds.delicious.com/v2/json/charliecalvert/' + subject;
     $.ajax(
         {
@@ -156,7 +175,7 @@ function callDelicious(subject) {
     });
 }
 
-function delicious() {
+function delicious() { 'use strict';
     var subject = $("#subject").val();
     callDelicious(subject);
 }
@@ -184,7 +203,7 @@ The code in the delicious and callDelicious methods do the following:
 
 ## Step Five: Create Additional Controls and Response Methods {#more-controls}
 
-For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
+For what follows, refer to your **Week03-BootstrapBasics** for help setting up radio buttons and check boxes.
 
 Provide three radio buttons:
 
@@ -205,6 +224,25 @@ url: 'http://feeds.delicious.com/v2/json/charliecalvert/bootstrap'
 Provide three checkboxes with the same labels.
 
 If the user selects one or more of them, they see delicious links for multiple items for instance, both **javascript** and **nodejs**. For instance, if they select **javascript** and **node**, ensure they see all the links that use both javascript and node from the Delicious site. This is the interesction, not the combined scripts.
+
+Below is an example interface. The three buttons labelled JavaScript, Bootstrap and Node can be replaced with ordinary radio buttons. The large gray area near the bottom is a a PRE tag inside a DIV:
+
+```
+div
+	pre#viewer
+```
+
+The id for my text input control is **#subject** and for the radiobuttons its **chJavaScript**, **chBootstrap** and **chNodeJs**:
+
+```
+input#chJavaScript(type='checkbox', name='check', value='JavaScript')
+```
+
+Here is an approximation of something you can create:
+
+![Delicious][boot-del]
+
+[boot-del]: https://s3.amazonaws.com/bucket01.elvenware.com/images/BootstrapDelicious.png
 
 ## Step Six: Create Your own Delicious Links {#delicious-account}
 

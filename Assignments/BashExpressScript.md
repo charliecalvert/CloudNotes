@@ -63,6 +63,7 @@ sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
+echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
 If given one at a time, these commands will:
@@ -95,6 +96,7 @@ sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
+echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
 The only problem with this script is that it hard codes in the project name. If we want to make the script more generally useful, then we need to pass in a parameter that specifies the project name. We aren't ready to run the command yet, but the command we want to use might look like this:
@@ -122,6 +124,7 @@ sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/'$1'/g' routes/index.js
+echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
 Use this script to create a project with a random name. For instance, you could:

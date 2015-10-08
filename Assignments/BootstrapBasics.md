@@ -176,7 +176,7 @@ Provide two radio buttons:
 
 ```jade
 div.panel.panel-default
-	div.panel-heading Radios:
+    div.panel-heading Radios:
     div.panel-body
         div.btn-group.elves(role="group")
             .radio
@@ -210,8 +210,8 @@ Sometimes we want to know that radio button or checkbox was clicked. Here is how
 
 ```javascript
 $(document).ready(function() {
-	$("input[name=check]:checkbox").click(displayCheckboxSelection);
-	$('.btn-group.elves').click(displayRadioButtonSelection);
+    $("input[name=check]:checkbox").click(displayCheckboxSelection);
+    $('.btn-group.elves').click(displayRadioButtonSelection);
 });
 ```
 
@@ -220,33 +220,33 @@ And here are the methods for handling these events:
 ```javascript
 function displayCheckboxSelection()
 {
-	var tag, query = '';
-	var options = ['CheckBox01', 'CheckBox02'];
+    var tag, query = '';
+    var options = ['CheckBox01', 'CheckBox02'];
 
-	if ($("#checkBox01").is(':checked')) {
-		$("#checkBoxDisplay01").html("CheckBox01 Selected");
-		query += options[0];
-	} else {
-		$("#checkBoxDisplay01").html("CheckBox01 not Checked");
-	}
+    if ($("#checkBox01").is(':checked')) {
+        $("#checkBoxDisplay01").html("CheckBox01 Selected");
+        query += options[0];
+    } else {
+        $("#checkBoxDisplay01").html("CheckBox01 not Checked");
+    }
 
-	if ($("#checkBox02").is(':checked')) {
-		$("#checkBoxDisplay02").html("CheckBox02 Selected");
-		tag = query === '' ?  '' : '+';
-		query +=  tag + options[1];
-	} else {
-		$("#checkBoxDisplay02").html("CheckBox02 not Selected");
-	}
+    if ($("#checkBox02").is(':checked')) {
+        $("#checkBoxDisplay02").html("CheckBox02 Selected");
+        tag = query === '' ?  '' : '+';
+        query +=  tag + options[1];
+    } else {
+        $("#checkBoxDisplay02").html("CheckBox02 not Selected");
+    }
 
-	$("#allCheckBoxes").html(query);
+    $("#allCheckBoxes").html(query);
 }
 
 function displayRadioButtonSelection() {
-	if ($('#option1').is(':checked')) {
-		$("#radioButtonDisplay01").html("You clicked option1 ");
-	} else {
-		$("#radioButtonDisplay01").html("You clicked option2 ");
-	}
+    if ($('#option1').is(':checked')) {
+        $("#radioButtonDisplay01").html("You clicked option1 ");
+    } else {
+        $("#radioButtonDisplay01").html("You clicked option2 ");
+    }
 }
 
 ```
@@ -255,8 +255,8 @@ Here is how to handle a click on **Search** button:
 
 ```javascript
 function search() {
-	var input = $('#subject').val();
-	$('#searchResults').html(input);
+    var input = $('#subject').val();
+    $('#searchResults').html(input);
 }
 ```
 
@@ -278,8 +278,8 @@ div.panel.panel-default
 To define a row, create a **DIV** with class **row**
 
 ```html
-	<div class="row">
-    	<div class="col-md-6">column01</div>
+    <div class="row">
+        <div class="col-md-6">column01</div>
         <div class="col-md-6">column02</div>
     </div>
 ```
@@ -294,16 +294,16 @@ The following code creates to two columns in one row, and then below that row yo
 div.panel.panel-default
     div.panel-heading My Controls
     div.panel-body
-        div.row
+       div.row
+            div.col-md-6
+                PUT A DESCRIPTION HERE
             div.col-md-6
                 PUT THE TEXT INPUT HERE
+        div.row
             div.col-md-6
                 PUT THE CHECKBOXES HERE
-        div.row
-        	div.col-md-6
-        		PUT THE RADIO BUTTONS HERE
             div.col-md-6
-				PUT OTHER CONTROLS HERE
+                PUT THE RADIO BUTTONS HERE
 ```
 
 Remember, indentation is very important in Jade.
@@ -346,56 +346,56 @@ I've shown you all this code already, but just to be sure, here is the complete 
 ```javascript
 function displayCheckboxSelection()
 {
-	var tag, query = '';
-	var options = ['CheckBox01', 'CheckBox02'];
+    var tag, query = '';
+    var options = ['CheckBox01', 'CheckBox02'];
 
-	if ($("#checkBox01").is(':checked')) {
-		$("#checkBoxDisplay01").html("CheckBox01 Selected");
-		query += options[0];
-	} else {
-		$("#checkBoxDisplay01").html("CheckBox01 not Checked");
-	}
+    if ($("#checkBox01").is(':checked')) {
+        $("#checkBoxDisplay01").html("CheckBox01 Selected");
+        query += options[0];
+    } else {
+        $("#checkBoxDisplay01").html("CheckBox01 not Checked");
+    }
 
-	if ($("#checkBox02").is(':checked')) {
-		$("#checkBoxDisplay02").html("CheckBox02 Selected");
-		tag = query === '' ?  '' : '+';
-		query +=  tag + options[1];
-	} else {
-		$("#checkBoxDisplay02").html("CheckBox02 not Selected");
-	}
+    if ($("#checkBox02").is(':checked')) {
+        $("#checkBoxDisplay02").html("CheckBox02 Selected");
+        tag = query === '' ?  '' : '+';
+        query +=  tag + options[1];
+    } else {
+        $("#checkBoxDisplay02").html("CheckBox02 not Selected");
+    }
 
-	$("#allCheckBoxes").html(query);
+    $("#allCheckBoxes").html(query);
 }
 
 function displayRadioButtonSelection() {
-	if ($('#option1').is(':checked')) {
-		$("#radioButtonDisplay01").html("You clicked option1 ");
-	} else {
-		$("#radioButtonDisplay01").html("You clicked option2 ");
-	}
+    if ($('#option1').is(':checked')) {
+        $("#radioButtonDisplay01").html("You clicked option1 ");
+    } else {
+        $("#radioButtonDisplay01").html("You clicked option2 ");
+    }
 }
 
 function search() {
-	var input = $('#subject').val();
-	$('#searchResults').html(input);
+    var input = $('#subject').val();
+    $('#searchResults').html(input);
 }
 
 
 $(document).ready(function() {
 
-	$("#target").submit(function(event) {
-		event.preventDefault();
-		var userFormData = $(this).serialize();
-		$('#formResults').html(userFormData);
-	});
+    $("#target").submit(function(event) {
+        event.preventDefault();
+        var userFormData = $(this).serialize();
+        $('#formResults').html(userFormData);
+    });
 
-	// Handle button clicks
-	$("input[name=check]:checkbox").click(displayCheckboxSelection);
-	$('.btn-group.elves').click(displayRadioButtonSelection);
+    // Handle button clicks
+    $("input[name=check]:checkbox").click(displayCheckboxSelection);
+    $('.btn-group.elves').click(displayRadioButtonSelection);
 
-	// Initialize controls
-	displayCheckboxSelection();
-	$("#radioButtonDisplay01").html('No radiobutton selected');
+    // Initialize controls
+    displayCheckboxSelection();
+    $("#radioButtonDisplay01").html('No radiobutton selected');
 });
 ```
 
