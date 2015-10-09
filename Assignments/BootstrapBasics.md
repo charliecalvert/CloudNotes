@@ -78,6 +78,8 @@ Here is what **layout.jade** looks like when you are done:
 doctype html
 html
   head
+  	meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')

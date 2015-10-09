@@ -101,7 +101,7 @@ sed -i -- 's/3000/30025/g' bin/www
 sed -i -- 's/node\s/nodemon /g' package.json
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/'$1'/g' routes/index.js
-echo -e "\$(document).ready(function() {\n});" >> public/javascripts/control.js
+echo -e "\$(document).ready(function() { 'use strict'; \n});" >> public/javascripts/control.js
 sed -i "s/{$/{ 'use strict';/" routes/index.js
 sed -i "s/{$/{ 'use strict';/" routes/users.js
 sed -i "s/next) {/next) { 'use strict';/" app.js
@@ -127,6 +127,8 @@ Here is what **layout.jade** looks like when you are done:
 doctype html
 html
   head
+  	meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
@@ -252,3 +254,16 @@ Ceate our own delicious account and query them. Provide radiobuttons for switchi
 
 Be sure your work is in your repository in a folder called **Week03-BootstrapDelicious**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
 
+## Hint
+
+To get you started, I'll show you a halfway step that displays just a single url in the viewer. But remember, I want you to show not in the viewer, but in an unordered list. We've done that before.
+
+```javascript
+success: function(data) {
+    $.each(data, function(index, obj) {
+        var url = obj.u + '<br />';
+        $('#viewer').append(url);
+    })
+    // $('#viewer').html(JSON.stringify(data, null, 4));
+			}
+```
