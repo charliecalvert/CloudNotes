@@ -25,10 +25,10 @@ meld $JSOBJECTS/Utilities/NodeInstall/CreateExpressProject ~/bin/CreateExpressPr
 There are a number of steps you need to go through to properly configure you project for unit testing. In particular, we need to set up:
 
 1. A test runner called **Karma**
-* A build utility called **Grunt**
-* A syntax checker called **JsHint**
-* Set up our testing framework, which is called **Jasmine**
-* Create a default unit test in a directory called **spec**
+1. A build utility called **Grunt**
+1. A syntax checker called **JsHint**
+1. Set up our testing framework, which is called **Jasmine**
+1. Create a default unit test in a directory called **spec**
 
 To prove that we have done the above steps correctly, we create a default test and run it.
 
@@ -58,6 +58,12 @@ mkdir spec
 cp $UNIT_TEST/test-basic.js spec/.
 ```
 
+This script is called **DevReady** and it is maintained in:
+
+```
+JsObjects/Utilities/Templates/UnitTests
+```
+
 The script first copies two files from ELF_TEMPLATES:
 
 * Gruntfile.js: Configure Grunt.
@@ -82,7 +88,10 @@ TOTAL: 1 SUCCESS
 If you get errors related to **JsHint**
 
 
-## Step Three
+## Step Three: Test our Test Framework {#test-test}
+
+The **DevReady** script creates a single simple test that it puts in the **spec** folder:
+
 ```javascript
 /**
  * Created by charlie on 10/7/15.
@@ -98,11 +107,27 @@ describe("Elvenware Simple Plain Suite", function() {
 
 });
 
+```
+
+This test has a single purpose:
+
+* It tests whether **true** is actually **true**
+
+Why would one want to run such a test? Simply to find out if **karma** and the **jasmine** unit test library are set up correctly. Since we know that **true** is equal to true, any errors we see are almost certainly the result of problems in our configuration, not in our test. If our test succeeds, then we know we have set things up correctly. In particular, we want to see a line that looks like this:
+
+```
+  Elvenware Simple Plain Suite
+    ✓ expects true to be true
+```
+
+## Step Four: Create Useful Tests {#useful-test}
+
+Assuming we can get our single test to pass, the next step will be copy in some tests that do a bit more:
+
+```javascript
 describe("Elvenware Object Number Suite", function () {
 
     'use strict';
-
-
 
     it("Call a function in getNumber that returns 9", function () {
         expect(getNine()).toBe(9);
@@ -134,10 +159,86 @@ describe("Elvenware Object Number Suite", function () {
 
 ```
 
+The first method checks to see if there is a method called **getNine** that returns the number nine.
 
-## Step Three
+The second test checks to see if there is an object call bar, with a method called **parseSimpleJson.**. If that method is passed a JavaScript object with a property called **nine** set to the value **10** then it should return the value 10. Remember, we haven't written a method that does that yet, we have just stated that we want to create such a method.
 
-Gruntfile
+The third test checks that a method of **bar** called **getAjaxServerNine** sets property of **bar** called **value** to the number nine. **getAjaxServerNine** is problematic for us because it uses the jQuery **ajax** method to call the server and retrieve some JSON. We don't want our test to rely on server working properly, or even to rely on the fact that it is running at all. So we use the Jasmine **spyOn** method to mock the call. We don't really call the server, instead the **spyOn** method fakes the call to the server, and then passes to the **getAjaxServerNine** nine **success** a mock up of the data it would recieve had the call to the server succeeded.
+
+Take a moment to consider how the **ajax** method it works. It calls the server, and the server sends back some data. In this case, we know that the server shoud send back a JSON object shaped like this:
+
+```JSON
+{ 
+	"nine": 9
+}
+```
+
+We therefore set up a **callFake** to the success function, passing in expect value. Our tests then confirms that the success method knows how to successfully handle the data it might receive from the server.
+
+At first, this technique of mocking objects seems like it can't possibly be useful. But it is useful. Very useful. In fact, it simulates exactly what happens when a successful call to the server is made, only we don't actually have to call the server. Instead we can **mock** such a call. The Jasmine **spyOn** method is a very clever, and useful, piece of code.
+
+The fourth and last test is just like the previous test, only this time we call **$.getJSON** instead of **$.ajax**.
+
+## Step Five: Write Code
+
+Now that we have defined our tests, the next step is to write our program. If the code we write passes our tests, then can assume it is working properly.
+
+
+```javascript
+
+function getNine() {
+    'use strict';
+    return 9;
+}
+
+var bar = {
+
+    url: './simple.json',
+
+    value: null,
+
+    parseSimpleJson: function (simpleJson) { 'use strict';
+        bar.value = simpleJson.nine;
+    },
+
+    getAjaxServerNine: function () {
+        'use strict';
+
+        $.ajax({
+            url: bar.url,
+            success: function (simpleJson) {
+                bar.parseSimpleJson(simpleJson);
+                console.log(bar.value);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + "incoming Text " + jqXHR.responseText);
+            }
+        });
+    },
+
+    getJsonServerNine: function () {
+        'use strict';
+
+        $.getJSON(bar.url,function (simpleJson) {
+                bar.parseSimpleJson(simpleJson);
+                console.log(bar.value);
+        }); /*.fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus + "incoming Text " + jqXHR.responseText);
+        });*/
+    }
+
+};
+```
+
+
+## Grunt
+
+The grunt utility is configured in a file called **Gruntfile.js**. You can do many, many things in this file. In our case, however, we have two relatively simple goals:
+
+* Establish the config file for **karma**
+* Configure **jshint**
+
+It should be fairly simple for you to pick out the places where these tasks are performed:
 
 ```javascript
 module.exports = function(grunt) {
@@ -185,7 +286,14 @@ module.exports = function(grunt) {
 
 ```
 
-kama config
+The last three lines perform two tasks:
+
+* The first two lines load libraries that define how grunt controls **karma** and **jshint**
+* The third line defines a task called **test** that runs both **jshint** and **karma**
+
+If the **jshint** task does not pass, then **karma** will never be run. In other words, if **jshint** finds that your code is not syntactically correct, then **karma** will never get a chance to your tests.
+
+## Karma config
 
 ```javascript
 /* global process: true */
@@ -239,4 +347,31 @@ module.exports = function(config) {
 
     });
 };
+```
+
+## Hint
+
+Normally, it is simplest to use the **headless** phantomjs browser. However, it does not contain the great debugger found in Chrome. To switch to Chrome, change the bottom of **karma.conf.js** to look like this:
+
+```
+// Start these browsers, currently available:
+// browsers: ['PhantomJS'],
+browsers: ['Chrome'],
+
+// If browser does not capture in given timeout [ms], kill it
+captureTimeout: 20000,
+
+// Set to false to watch files for changes
+singleRun: false,
+
+plugins: ["karma-jasmine",
+    "karma-spec-reporter",
+    "karma-chrome-launcher",
+    "karma-phantomjs-launcher"]
+```
+
+Be sure to install the chrome-launcher:
+
+```
+npm install karma-chrome-launcher --save
 ```
