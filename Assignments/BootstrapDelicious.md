@@ -267,3 +267,28 @@ success: function(data) {
     // $('#viewer').html(JSON.stringify(data, null, 4));
 			}
 ```
+
+### Deugger Hints
+
+**NOTE**: *Inspired by Brian*
+
+* Open the Developer Tools with F12. Go to the source tab
+* On the left, expand the doo-hickey and click on **javascripts/control.js**
+* Click in the gutter on the left to set a breakpoint in the body of the **success** method found in the call to **$.ajax**. It might look like this:
+
+```javascript
+$('#viewer').html(JSON.stringify(data, null, 4));
+```
+
+On the right side, select the **watch **section and add the following watch expression
+
+*   data[0].u
+*   This selects the u (url) property of the first element in the data array.
+
+Now let's trigger the breakpoint. Use the program's interface:
+
+* To enter **javascript** in the input box
+* Select the **Delicious** button
+* Your watch express **data[0].u** should now be set to the URL of the first object in the array returned from the server.
+
+Take the time to explore the other features of the debugger such as the **locals** where you can open up the **data** array and explore its contents.
