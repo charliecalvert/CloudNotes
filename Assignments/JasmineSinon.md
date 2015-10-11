@@ -211,3 +211,8 @@ $(document).ready(function () {
 
 The code shown above contains one standalone method called **getNine** and one JavaScript object called **bar**.
 
+## Turn it in
+
+Put your work in your repository, and send me the url when you submit your work. Check your folder name. It should be as specified above.
+
+* [More on sinon](http://sinonjs.org/)
