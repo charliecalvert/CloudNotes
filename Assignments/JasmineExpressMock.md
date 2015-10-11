@@ -183,6 +183,8 @@ The fourth and last test is just like the previous test, only this time we call 
 
 Now that we have defined our tests, the next step is to write our program. If the code we write passes our tests, then can assume it is working properly.
 
+Place the following code in **control.js:**
+
 
 ```javascript
 
@@ -230,6 +232,7 @@ var bar = {
 };
 ```
 
+The code shown above contains one standalone method called **getNine** and one JavaScript object called **bar**
 
 ## Grunt
 
