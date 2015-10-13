@@ -1,5 +1,8 @@
 # BitlyQuery
 
+* [Bitly API Getting Started](http://dev.bitly.com/get_started.html)
+
+
 Start with the default project you learned how to create in 
 Assignment 1 for this week. Modify the project so that you can:
 

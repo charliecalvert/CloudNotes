@@ -29,6 +29,28 @@ x) Exit
 Please make a selection: 
 ```
 
+Run b and n. For instance:
+
+```
+=======================
+Basic System Check
+=======================
+
+=== Environment Variables ===
+
+	OK: $JAVA_HOME = /usr/lib/jvm/java-8-oracle
+	OK: $CHROME_BIN = /usr/bin/chromium-browser
+
+=== Directories ===
+
+	OK: /home/charlie/Git
+	OK: /home/charlie/bin
+
+=== Files ===
+
+	OK: /home/charlie/.bash_aliases
+```
+
 ## Step One
 
 Create our project using our script.
@@ -149,6 +171,12 @@ Once **result.xml** is loaded in your browser, you can check for updates to **re
 * Review **result.xml** in the browser and fix your errors.
 * Run **grunt jshint** to update your **result.xml** file with the current status of your files.
 * Refresh (F5) your browser to see if you have indeed fixed all the errors.
+
+A clean result.xml might look something like this in your browser:
+
+```
+<checkstyle version="4.3"></checkstyle>
+```
 
 JsHint plays a similar role in JavaScript development that the type checker plays in C# development: It scans your source file looking for obvious syntactical errors. There are some things that a type checker does better than JsHint, and somethings that JsHint does better than a type checker. There are always trade offs in these situations. But certainly running **JsHint** is better than not running it.
 
@@ -331,6 +359,9 @@ var queryServer = {
 
 The code shown above contains one standalone method called **getNine** and one JavaScript object called **bar**.
 
+## Turn it in
+
+All the usual steps. Place your work in your repository in a folder with the name specified in Step One. When you submit the assignment, include the URL of your repository and/or the name of the folder you used when you submitted the assignment.
 
 ## Hint
 
