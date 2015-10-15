@@ -5,6 +5,12 @@ Learn more about testing.
 
 ## Step00: System Check {#system-check}
 
+If you have not done so already run **git pull** on JsObjects. Copy **SystemCheck** into your bin directory:
+
+```bash
+cp $JSOBJECTS/Utilities/SetupLinuxBox/SystemCheck ~/bin/.
+```
+
 Check you system:
 
 ```
@@ -16,6 +22,7 @@ Menu
 
 b) Basic System Check
 n) Node
+c) Common
 p) PhoneGap
 x) Exit
 
@@ -40,6 +47,8 @@ Open the project in WebStorm.
 
 ## Step02: Configure Test
 
+There is a copy of the output from a typical call to Delicious in the **JsObjects** directory. In other words, I have saved the data you got when you typed in **javascript** in **BootstrapDelicious** and pressed the submit button. That data is in a file called **delicious-links.js**. You should copy it into your spec directory:
+
 ```
 cp $ELF_TEMPLATES/WebServices/delicious-links.js spec/.
 ```
@@ -56,6 +65,8 @@ files: [
 ```
 
 ## Step03: Core Tests {#core-tests}
+
+To help you get started, lets copy in a set of core tests:
 
 ```javascript
 describe("Elvenware Simple Plain Suite", function() {  'use strict';
@@ -105,7 +116,7 @@ The **beforeEach** method is called once before each test. It's presence in this
 
 ## Step04: Implementation {#implementation}
 
-In control.js we can put a small :
+In control.js we can put a few methods that will help you get started. The **callDeliciousGetJson** method is very similar to one you saw in **BootstrapDelicious**. The **getMap** method introduces the JavaScript **map** method, which is essential to this assignment, and in general an important part of JavaScript :
 
 ```javascript
 
@@ -140,7 +151,7 @@ queryDelicious.runQuery = function(subject) { 'use strict';
 };
 ```
 
-We create an object called queryDelicious with with four methods and two properties. Three of the methods are defined inside the object literal, the fourth, call **runQuery** is defined after the object literal is declared. Normally one would not mix the two styles like this, however, I do this only because we are in a teaching environment: I want to show you that you have a choice of two difference styles. It is up to you choose the one you prefer.
+We create an object called queryDelicious with with four methods and two properties. Three of the methods are defined inside the object literal, the fourth, called **runQuery** is defined after the object literal is declared. Normally one would not mix the two styles like this, however, I do this only because we are in a teaching environment: I want to show you that you have a choice of two different styles when declaring JavaScript objects. It is up to you choose the one you prefer.
 
 ## Step 05: Add More Tests {#more-tests}
 
@@ -159,7 +170,7 @@ A test that shows we can create an array containing all ten URLs from our delici
     });
 ```
 
-A test that shows we can create a map that creates an array of object containg the following fieldsfrom our original query:
+A test that shows we can create a map that creates an array of object containg the following fields from our original query:
 
 * Description (d)
 * URL (u)
@@ -181,14 +192,14 @@ The test should look exactly like this:
     });
 ```
 
-Create a method and a test for map that contains these fields:
+Create a method and a test for a map that contains these fields:
 
 * url
 * description
 * date
 * tags
 
-The method should be called **getMapBig** and the test should start like this:
+The method should be called **getMapBig**. It should be declared outside the object literal, the way that **runQuery** is declared above. The test should start like this:
 
 ```javascript
     it("shows we can get a big map", function() {
@@ -203,13 +214,49 @@ This time the index should be set to 1, and the following two tests should be in
     expect(map[index].tags[2]).toBe('ebook');
 ```
 
-As always, these tests should appear exactly as shown.
+These tests should appear exactly as shown.
+
+Do you one more map called **getDescriptionTag** with these three fields:
+
+* Description
+* URL
+* Tags
+
+This time, after you do the map, filter to the results so we see only those that contain a tag for **nodejs**. The 
+
+The Javascript [filter][js-filter] method looks like this:
+
+```javascript
+queryDelicious.filter = function(map, filter) { 'use strict';
+	return map.filter(function (link) {
+		return ... // EITHER TRUE OR FALSE. PUT YOUR FILTER HERE
+	});
+};
+```
+
+Is an element in an array:
+
+```javascript
+return link.tags.indexOf(filter) > -1;
+```
+
+Or:
+
+```javascript
+return link.tags.includes(filter) === true;
+```
+
+**NOTE**: The **includes** function is for EcmaScript 6. I believe it works in FireFox, but not in Chrome. So we will use **indexOf** instead.
+
+[js-filter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+[indexOf]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+[includes]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes
 
 ##Turn it in
 
 Be sure your work is in a folder of your repository with the name specified in **Step01**. When you submit the assignment, include the URL of your repostory and/or the name of the folder where your program resides. When I run **grunt test**, I'm expecting to see output like this:
 
-```bash
+```
   Elvenware Simple Plain Suite
     ✓ expects true to be true
 
@@ -219,9 +266,9 @@ Be sure your work is in a folder of your repository with the name specified in *
     ✓ show we can get a map
     ✓ shows we can get a midsize map
     ✓ shows we can get a big map
+    ✓ shows we can map on description tag
+    ✓ shows we can filter a a description tag
     ✓ shows that deliciousLink was set to null by afterEach
-
-PhantomJS 1.9.8 (Linux 0.0.0): Executed 7 of 7 SUCCESS (0.038 secs / 0.004 secs)
-TOTAL: 7 SUCCESS
-
 ```
+
+Please include a screenshot attached to your submission showing the output you get when you run your tests.
