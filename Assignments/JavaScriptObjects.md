@@ -2,6 +2,8 @@
 
 Learn about JavaScript objects.
 
+* [The Slide Deck](http://bit.ly/OPDg3s)
+
 This is an object:
 
 ```javascript
@@ -22,7 +24,7 @@ In this exercise, we are working with objects, not function objects.
 
 ## Part One
 
-Create a **nodejs** program called **Week04-JavaScriptObjects** that contains a JavaScript object called **person** with two properties:
+Create a **nodejs** program called **Week04-JavaScriptObjects** that contains a file called **work.js**. In that file create a JavaScript object called **person** with two properties:
 
 * firstName
 * lastName

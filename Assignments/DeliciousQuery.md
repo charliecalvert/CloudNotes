@@ -50,7 +50,7 @@ Open the project in WebStorm.
 There is a copy of the output from a typical call to Delicious in the **JsObjects** directory. In other words, I have saved the data you got when you typed in **javascript** in **BootstrapDelicious** and pressed the submit button. That data is in a file called **delicious-links.js**. You should copy it into your spec directory:
 
 ```
-cp $ELF_TEMPLATES/WebServices/delicious-links.js spec/.
+cp $ELF_TEMPLATES/WebServices/delicious-javascript-links.js spec/.
 ```
 
 In **karma.conf.js** load our **delicious-javascript-links**:

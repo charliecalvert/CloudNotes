@@ -12,6 +12,15 @@ If you have not done so already run **git pull** on JsObjects. Copy **SystemChec
 cp $JSOBJECTS/Utilities/SetupLinuxBox/SystemCheck ~/bin/.
 ```
 
+If NODE_PATH does not exist, add this to the end of your .bashrc:
+
+```
+export NODE_PATH=$NODE_PATH:$HOME/npm/lib/node_modules
+```
+
+Don't forget to source your .bashrc file: **source ~/.bashrc 
+**
+
 Type **SystemCheck** or **syscheck** and check you system:
 
 ```
