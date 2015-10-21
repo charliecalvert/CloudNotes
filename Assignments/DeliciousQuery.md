@@ -110,7 +110,7 @@ describe("Test Delicious Links", function() {  'use strict';
 });
 ```
 
-The **beforeEach** method is called once before each test. It's presence in this case ensures that we are spying on calls to **getJSON**. After each test we reset the key field of the **queryDelicious** object. This is a simple way of ensuring that we are starting from scratch when each test begins.
+The **beforeEach** method is called once before each test. It's presence in this case ensures that we are spying on calls to **getJSON**. After each test we reset the key field of the **queryDelicious** object. This is a simple way of ensuring that we are starting from scratch when each test begins. The **afterEach** method is its counterpart, and is called after each test is run.
 
 **NOTE**: *For those who have worked with **httpBackend**, please note that these **beforeEach** and **afterEach** calls are quite different from those we used when testing angular with **httpBackend**. All we are doing here is setting up our tests, we aren't doing book-keeping for our testing suite.
 
@@ -216,20 +216,18 @@ This time the index should be set to 1, and the following two tests should be in
 
 These tests should appear exactly as shown.
 
-Do you one more map called **getDescriptionTag** with these three fields:
+Create one more map called **getDescriptionTag** with these three fields:
 
 * Description
 * URL
 * Tags
 
-This time, after you do the map, filter to the results so we see only those that contain a tag for **nodejs**. The 
-
-The Javascript [filter][js-filter] method looks like this:
+This time, after you do the map, filter the results so we see only those that contain a tag for **nodejs**. The Javascript [filter][js-filter] method looks like this:
 
 ```javascript
 queryDelicious.filter = function(map, filter) { 'use strict';
 	return map.filter(function (link) {
-		return ... // EITHER TRUE OR FALSE. PUT YOUR FILTER HERE
+		return ... // PUT YOUR FILTER HERE BY RETURNING EITHER TRUE OR FALSE.
 	});
 };
 ```
@@ -252,7 +250,7 @@ return link.tags.includes(filter) === true;
 [indexOf]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 [includes]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/includes
 
-##Turn it in
+## Turn it in
 
 Be sure your work is in a folder of your repository with the name specified in **Step01**. When you submit the assignment, include the URL of your repostory and/or the name of the folder where your program resides. When I run **grunt test**, I'm expecting to see output like this:
 
@@ -267,8 +265,92 @@ Be sure your work is in a folder of your repository with the name specified in *
     ✓ shows we can get a midsize map
     ✓ shows we can get a big map
     ✓ shows we can map on description tag
-    ✓ shows we can filter a a description tag
+    ✓ shows we can filter a description tag
     ✓ shows that deliciousLink was set to null by afterEach
 ```
 
+When writing the last test, you can use a Jasmine operator called **toBeFalsy.** This operator tests whether a variable or result is set to **undefined**, **false** or some other value considered to be similar to false. For instance, the following tests all pass:
+
+```javascript
+    it("shows how toBeFalsy works", function() {
+        expect(false).toBeFalsy();
+        expect(undefined).toBeFalsy();
+        expect(0).toBeFalsy();
+        expect(-1).not.toBeFalsy();
+        expect(true).not.toBeFalsy();
+	});
+```
+
 Please include a screenshot attached to your submission showing the output you get when you run your tests.
+
+## Working with Filters
+
+Here is filter that returns only odd numbers from an array of numbers:
+
+```javascript
+function removeEvens(numbers) {
+    return numbers.filter(function(number) {
+       return number % 2 !== 0;
+    });
+}
+```
+
+Here is a test that provies it works:
+
+```javascript
+    it("shows how to create a simple filter and proves it works", function() {
+        function removeEvens(numbers) {
+            return numbers.filter(function(number) {
+               return number % 2 !== 0;
+            });
+        }
+
+        var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        var odds = removeEvens(numbers);
+        expect(odds).not.toContain(0);
+        expect(odds).not.toContain(2);
+        expect(odds).not.toContain(4);
+        expect(odds).toContain(3);
+        expect(odds).toContain(5);
+        expect(odds).toContain(7);
+        var expected = [1, 3, 5, 7, 9, 11];
+        var result = arraysAreEqual(expected, odds);
+        expect(result).toBeTruthy();
+    })
+```
+
+And here is the arraysAreEqual function:
+
+```javascript
+// Similar to here: http://stackoverflow.com/a/14853974
+var arraysAreEqual = function (array1, array2) { 'use strict';
+
+    // if the other array is a falsy value, return
+    if (!array1 || !array2)
+        return false;
+
+    // compare lengths - can save a lot of time
+    if (array1.length != array2.length)
+        return false;
+
+    for (var i = 0, l = array1.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (array1[i] instanceof Array && array2[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!arraysAreEqual(array1[i], array2[i]))
+                return false;
+        }
+        else if (array1[i] != array2[i]) {
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;
+        }
+    }
+    return true;
+};
+```
+
+See this sample program for more details on comparing arrays:
+
+* [JsObjects][equal]
+
+[equal]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/ArraysEqual

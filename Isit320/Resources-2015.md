@@ -59,6 +59,18 @@ Elvenware JavaScript:
 - [JSON Basics](http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html)
 
 
+## Assignments
+
+* [Bash Express Script][bash-express-script]
+* [Bootstrap Basics][boot-basics]
+* [Delicious Query][del-query]
+* [Jasmine Express Mock][jas-mock]
+
+[bash-express-script]: http://www.ccalvert.net/books/CloudNotes/Assignments/BashExpressScript.html
+[boot-basics]: http://www.ccalvert.net/books/CloudNotes/Assignments/BootstrapBasics.html
+[del-query]: http://www.ccalvert.net/books/CloudNotes/Assignments/DeliciousQuery.html
+[jas-mock]: http://www.ccalvert.net/books/CloudNotes/Assignments/JasmineExpressMock.html
+
 ## Videos
 
 - [Charlie on YouTube](https://www.youtube.com/user/charliecalvert/videos)
