@@ -61,15 +61,48 @@ Elvenware JavaScript:
 
 ## Assignments
 
-* [Bash Express Script][bash-express-script]
-* [Bootstrap Basics][boot-basics]
-* [Delicious Query][del-query]
-* [Jasmine Express Mock][jas-mock]
+There is a lot of information in the assignments themselves. The main goal here is point you directly at the assignments, so you can find the information readily.
 
-[bash-express-script]: http://www.ccalvert.net/books/CloudNotes/Assignments/BashExpressScript.html
+* [Express Basics][express-basics]
+* [NPM and Bower][npm-bower]
+* [Callbacks][callbacks]
+* [Bootstrap Basics][boot-basics]
+* [Bootstrap Delicious][bootstrap-delicious]
+* [Bash Express Script][bash-express-script]
+* [Delicious Query][del-query]
+* [Jasmine Express Mock][jasmine-mock]
+* [Cloud 9 Intro][cloud9-intro]
+* [Javascript Objects][javascript-objects]
+
+[express-basics]:http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html
+[npm-bower]: http://www.ccalvert.net/books/CloudNotes/Assignments/BowerNpm.html
+[callbacks]: http://www.ccalvert.net/books/CloudNotes/Assignments/Callbacks.html
 [boot-basics]: http://www.ccalvert.net/books/CloudNotes/Assignments/BootstrapBasics.html
+[bootstrap-delicious]: http://www.ccalvert.net/books/CloudNotes/Assignments/BootstrapDelicious.html
+[bash-express-script]: http://www.ccalvert.net/books/CloudNotes/Assignments/BashExpressScript.html
 [del-query]: http://www.ccalvert.net/books/CloudNotes/Assignments/DeliciousQuery.html
-[jas-mock]: http://www.ccalvert.net/books/CloudNotes/Assignments/JasmineExpressMock.html
+[jasmine-mock]: http://www.ccalvert.net/books/CloudNotes/Assignments/JasmineExpressMock.html
+[cloud9-intro]: http://www.ccalvert.net/books/CloudNotes/Assignments/Cloud9Intro.html
+[javascript-objects]: http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html
+
+### Code Academy Assignments
+
+* [Code Academy 01][ca01]
+* [Code Academy 02][ca02]
+* [Code Academy 03][ca03]
+* [Code Academy 04][ca04]
+* [Code Academy 05][ca05]
+* [Code Academy 06][ca06]
+* [Code Academy 07][ca07]
+
+[ca01]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy01.html
+[ca02]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy02.html
+[ca03]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy03.html
+[ca04]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy04.html
+[ca05]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy05.html
+[ca06]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy06.html
+[ca07]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy07.html
+
 
 ## Videos
 

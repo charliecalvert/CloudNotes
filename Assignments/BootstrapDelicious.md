@@ -2,7 +2,14 @@
 
 We'll work on this assignment in class on Tuesday, Oct 6, 2015.
 
-Bootstrap allows you to create projects with CSS that looks good on a PC, a tablet or a phone.
+The main goal of the assignment is to retrieve information from the Delicious web site based on the user's input.
+
+There are various controls on the main page of the app we are creating in this assignments. We form queries to send to the Delicious site based on the information the user enters as she clicks on, or enters text into, these controls. Here are two sample queries that we might create based on the user's input:
+
+* <http://feeds.delicious.com/v2/json/charliecalvert/javascript>
+* <http://feeds.delicious.com/v2/json/charliecalvert/nodejs>
+
+In addition, we will learn about Bootstrap. Bootstrap allows you to create projects with CSS that looks good on a PC, a tablet or a phone.
 
 ## Step One: Install {#install}
 
