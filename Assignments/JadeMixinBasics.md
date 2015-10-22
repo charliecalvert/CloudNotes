@@ -56,8 +56,26 @@ block append content
             pre#formResults
 ```
 
+## A Second Program
+
+Now that you have the rhythm, create a second program with:
+
+- Three Check Boxes in a Panel
+	- Kurosawa
+	- Tolstoy
+	- Mifune
+- Five Radio Buttons in a Panel. Name them:
+	- Seven Samurai
+	- Ran
+	- Rashomon
+	- High and Low
+	- Ikiru
+- A submit button
+
+Create a screen shot to show that the submit button works. That is, that it can be used to display the user's selections in **pre#formResults**.
+
 ## Turn it in
 
-Select a radio button and two check boxes. Press the submit button. Take a screen shot showing that  the contents of the form selections are displayed in **pre#formResults**.
+In both programs, select a radio button and two check boxes. Press the submit button. Take a screen shot showing that  the contents of the form selections are displayed in **pre#formResults**.
 
 Place your work in the folder designated above and turn in as usual.
