@@ -2,34 +2,174 @@
 
 * [Bitly API Getting Started](http://dev.bitly.com/get_started.html)
 
+The goal of this program is to create something similar to what we have done with DeliciousQuery, but this time use the Bitly API.
 
-Start with the default project you learned how to create in 
-Assignment 1 for this week. Modify the project so that you can:
+At first, let's just get the unit tests working.
 
-- Convert Miles to Inches
-- Convert Miles to Feet
-- Convert Miles to Yards
-- Convert Miles to Kilometers
-- Convert Kilometers to Miles
+**NOTE**: *This project is likely the predecessor to the midterm. Get this program working correctly, and the midterm will be much easier.*
 
-Write a unit test for each method. 
+This assignment is not complete, but there should be enough here to get you started.
 
-When you are done, the user of index.html should be able to perform
-each of the conversions. If we run Test01.html, we should be able
-to confirm that each of the conversions work. You should create at
-least a few unit tests that go after corner cases such as:
+## Get Started
 
-- The user enters 0
-- The user enters a negative number
-- The user enters a really, really big number
+Create the project
 
-It doesn't matter so much how your program performs in each of those
-cases, so long as your test defines how you expect the program to
-behave. This is a way of defining the spec for your API.
+```
+CreateExpressProject Week06-BitlyQuery
+cd Week06-BitlyQuery
+TestReady
+```
 
-Soon, perhaps next week. We will learn how to raise and handle 
-exceptions if we get unexpected input.
+## Set up Unit Tests
 
-When you are done, upload your project to repositority and send
-me the URL. You can keep using your existing ISIT320 repository, and 
-just put this assignment in a folder called **Week04-UnitTests**.
+For now, we won't query the actual Bitly servers. Instead, we will use mock data that I store in JsObjects:
+
+```
+cp $ELF_TEMPLATES/WebServices/bitly-links.js spec/.
+```
+
+You will have to modify **karma-conf.js** so that it loads the mock data. In particular, modify the **files** property by adding the following to the list of files that will be loaded will be loaded when karma is launched:
+
+```
+'spec/bitly-links.js'
+```
+
+If you don't complete the above step properly, you might get an error such as: **ReferenceError: Can't find variable: bitlyLinks**.
+
+Here are the tests that you should get to pass. Put them in **spec/test-basic.js**:
+
+```
+describe("Elvenware Simple Plain Suite", function() { 'use strict';
+
+    it("expects true to be true", function() {
+        expect(true).toBe(true);
+    });
+
+});
+
+
+describe("Test Bitly Suite", function() {
+    'use strict';
+
+    var accessToken = '2ac4b4ccf91019cff6a6b3f23bcbe05ec2bf7a8c';
+
+    it("gets a url", function () {
+        var url = bitlyUrlParser.getUrl(accessToken);
+
+        expect(url).toBeTruthy();
+        expect(url).toContain(accessToken);
+        expect(url).toContain('https');
+
+    });
+});
+
+describe("Test Bitly Links", function() { 'use strict';
+
+    beforeEach(function () {
+        spyOn($, 'getJSON').and.callFake(function (url, success) {
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+    });
+
+    it("shows we can directly get the status code and text", function() {
+        bitlyUrlParser.getBitlyLinks();
+        expect(bitlyUrlParser.bitlyLinks.status_code).toBe(200);
+        expect(bitlyUrlParser.bitlyLinks.status_txt).toBe('OK');
+
+    });
+
+    it("shows we have a status code of 200", function () {
+
+        bitlyUrlParser.getBitlyLinks();
+        var statusCode = bitlyUrlParser.getStatusCode();
+        expect(statusCode).toBe(200);
+    });
+
+    it("shows we have a status txt of OK", function () {
+
+        bitlyUrlParser.getBitlyLinks();
+        var statusText = bitlyUrlParser.getStatusText();
+        expect(statusText).toBe('OK');
+    });
+
+    it("shows we have a count of 165 links", function () {
+
+        bitlyUrlParser.getBitlyLinks();
+        expect(bitlyUrlParser.bitlyLinks.data.result_count).toBe(165);
+    });
+
+    it("show we can get the title of the first element", function() {
+        bitlyUrlParser.getBitlyLinks();
+        var firstLink = bitlyUrlParser.bitlyLinks.data.link_history[0];
+        expect(firstLink.title).toBe("BootstrapBasics01Small.png (307×261)");
+        expect(firstLink.title).toContain("BootstrapBasics01Small.png");
+    });
+
+    it("show we can get the first item from the link history", function() {
+        bitlyUrlParser.getBitlyLinks();
+        var firstLink = bitlyUrlParser.getLinkHistory(0);
+        expect(firstLink.title).toBe("BootstrapBasics01Small.png (307×261)");
+        expect(firstLink.title).toContain("BootstrapBasics01Small.png");
+    });
+
+    it("Shows we can transform the data", function() {
+        bitlyUrlParser.getBitlyLinks();
+        var map = bitlyUrlParser.getMap();
+        console.log(JSON.stringify(map[0], null, 4));
+        expect(map.length).toBe(50);
+    });
+});
+```
+
+For now, it won't really matter what kind of map you create. Any transformation will do.
+
+**NOTE**: *I have 165 bitly links, but by default the API returns only 50 links at a time. That is why I test can check to see the length of the map, and expect it to be set to 50.*
+
+## The Code
+
+Here is some of the object in **control.js**. I'm expecting you to fill in the missing pieces so that the tests will pass. You may not modify the tests themselves. All your changes should be to **control.js**. The **spec/test-basic.js** should not change at all.
+
+```
+var bitlyUrlParser = {
+
+    bitlyLinks: null,
+
+    // https://api-ssl.bitly.com/v3/user/link_history?access_token=<ACCESS_TOKEN_HERE>&query=angular
+
+
+    getUrl: function(accessToken) { 'use strict';
+        var url = 'https://api-ssl.bitly.com/v3/user/link_history?access_token=';
+        return url += accessToken;
+    },
+
+    getBitlyLinks: function(accessToken) { 'use strict';
+
+        var url = bitlyUrlParser.getUrl();
+
+        $.getJSON(url, function (result) {
+            bitlyUrlParser.bitlyLinks = result;
+            $('#displayLinks').html(result);
+        }).fail(function() {
+            console.log("Error");
+        });
+    },
+
+
+};
+
+You do not need to include a real access token at this point, as we will not be querying Bitly itself at this stage.
+
+## The interface
+
+Now stop unit testing and start the program normally: npm start.
+
+Copy the bitly-links.js to the public/javascripts directory. Load it from document ready.
+
+Using our mixins, create an interface that will show at least the link, aggregate link, keyword_link and title for the first record. They should appear as the program loads so the user sees them by default once the program has loaded.
+
+## Turn it in
+
+I'm hoping to be able to run your tests and see that they all pass. Put your work in your repository in the folder specified above. The rest per usual.
