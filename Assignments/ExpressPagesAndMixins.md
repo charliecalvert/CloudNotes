@@ -4,8 +4,10 @@ In class exercise
 
 References:
 
--  [http://bit.ly/jade-mixins](http://bit.ly/jade-mixins)
--  [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
+* [http://bit.ly/jade-mixins](http://bit.ly/jade-mixins)
+* [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
+* Bootstrap Slides: [http://bit.ly/elf-bootstrap](http://bit.ly/elf-bootstrap)
+
 
 ## Steps
 

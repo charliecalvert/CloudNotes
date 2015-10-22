@@ -40,8 +40,10 @@ with events and topics covered in our class.
 
 Bootstrap:
 
-* [Boostrap Slides](http://bit.ly/elf-bootstrap)
-* [Bootstrap on Elvenware](http://bit.ly/elven-bootstrap)
+* Boostrap Basics Slides: [http://bit.ly/elf-bootstrap](http://bit.ly/elf-bootstrap)
+* Bootstrap Menu Slides: [http://bit.ly/bootstrap-menus](http://bit.ly/bootstrap-menus)
+* Bootstrap on Elvenware: [http://bit.ly/elven-bootstrap](http://bit.ly/elven-bootstrap)
+
 
 Elvenware Node:
 
