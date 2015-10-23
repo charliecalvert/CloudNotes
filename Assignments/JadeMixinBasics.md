@@ -83,7 +83,7 @@ block append content
 
         +elfFormPanel("Main Form")#target
 
-            +radioPanel("Radio Buttons")
+            +elfRadioPanel("Radio Buttons")
                 +elfRadio("Radio1", "option1")
                 +elfRadio("Radio2", "option2")
 
@@ -91,7 +91,7 @@ block append content
                 +elfCheckBox("CheckBox 01", "checkBox01", "checkBox01")#checkBox01
                 +elfCheckBox("CheckBox 02", "checkBox02", "checkBox02")#checkBox02
 
-            +elfPanel("Inputs")
+            +elfPanel("Input")
                 +elfInput("Enter a name", "subject", "Enter a subject")#subject.form-control
 
             +elfPanel("Actions")
@@ -100,6 +100,16 @@ block append content
         div
             pre#formResults
 
+
+```
+
+Also put this code in **routes/index.js**, updating the already existing method:
+
+```
+router.get('/', function(req, res, next) { 'use strict';
+  res.render('index', { pageTitle: 'Main Page',
+        programTitle: 'Week05-JadeMixinBasics'});
+});
 ```
 
 ## A Second Program
