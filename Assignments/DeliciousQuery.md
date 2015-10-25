@@ -153,7 +153,7 @@ queryDelicious.runQuery = function(subject) { 'use strict';
 
 We create an object called queryDelicious with with four methods and two properties. Three of the methods are defined inside the object literal, the fourth, called **runQuery** is defined after the object literal is declared. Normally one would not mix the two styles like this, however, I do this only because we are in a teaching environment: I want to show you that you have a choice of two different styles when declaring JavaScript objects. It is up to you choose the one you prefer.
 
-## Step 05: Add More Tests {#more-tests}
+## Step 05: Create Array {#create-array}
 
 In **test-basic.js** add the following tests, and get them to pass:
 
@@ -169,6 +169,16 @@ A test that shows we can create an array containing all ten URLs from our delici
         expect(allUrls[4]).toBe("https://twitter.com/nodejs");
     });
 ```
+
+Here are some hints on how to **get an array containing only the url from each item**:
+
+* Define a method in control.js called **getAllUrls**.
+* In that method, create an empty array.
+* Use **$.each** to iterate over the array of mock data from Delicious
+* Add the URL from each object in the mockdata to your array
+* After the loop, return the array you created.
+
+## Step 06: Create maps {#create-map}
 
 A test that shows we can create a map that creates an array of object containg the following fields from our original query:
 
@@ -216,6 +226,7 @@ This time the index should be set to 1, and the following two tests should be in
 
 These tests should appear exactly as shown.
 
+## Step 07: Filtering {#filter}
 Create one more map called **getDescriptionTag** with these three fields:
 
 * Description
@@ -232,16 +243,16 @@ queryDelicious.filter = function(map, filter) { 'use strict';
 };
 ```
 
-Is an element in an array:
+How is how to detect if something is an element in an array:
 
 ```javascript
 return link.tags.indexOf(filter) > -1;
 ```
 
-Or:
+The following is more intuitive, but is not supported by all browsers at this time:
 
 ```javascript
-return link.tags.includes(filter) === true;
+return link.tags.includes(filter) === true; // Don't use this in 2015-2016?
 ```
 
 **NOTE**: The **includes** function is for EcmaScript 6. I believe it works in FireFox, but not in Chrome. So we will use **indexOf** instead.
@@ -354,3 +365,8 @@ See this sample program for more details on comparing arrays:
 * [JsObjects][equal]
 
 [equal]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/ArraysEqual
+
+
+
+
+
