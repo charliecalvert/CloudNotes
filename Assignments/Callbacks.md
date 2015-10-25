@@ -103,6 +103,20 @@ The **jquery** function called [document ready][doc-ready] will be called when y
 
 In Chrome/Chromium, press F5 to refresh the page. You should see our message displayed on the main page of your web app.
 
+Alternatively, you can use a captioned **showMessage** function:
+
+```javascript
+function showCaptionMessage(caption, message) {
+    $("#myList").append("<li><strong>" + caption + "</strong>: " + message + "</li>");
+}
+```
+
+Use it like this:
+
+```javascript
+showCaptionMessage("Caption", "We can display messages with captions");
+```
+
 [jq-append]:http://api.jquery.com/append/
 [so-append]: http://stackoverflow.com/questions/1145208/jquery-how-to-add-li-in-an-existing-ul
 [gs-append]:https://www.google.com/search?q=jquery+list+append
@@ -202,3 +216,4 @@ sed -i -- 's/node\s/nodemon /g' package.json
 ```
 
 This script is maintained in **JsObjects/Utilities/DeveloperUtilities**.
+
