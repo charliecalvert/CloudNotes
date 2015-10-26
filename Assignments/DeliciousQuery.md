@@ -160,7 +160,7 @@ In **test-basic.js** add the following tests, and get them to pass:
 A test that shows we can create an array containing all ten URLs from our delicious query:
 
 ```
-    it("shows we can get an array containing only the url from each item", function() {
+    it("get an array with only the url from the objects in mock delicious data", function() {
         queryDelicious.runQuery('javascript');
         var allUrls = queryDelicious.getAllUrls();
         expect(allUrls.length).toBe(10);
@@ -180,7 +180,87 @@ Here are some hints on how to **get an array containing only the url from each i
 
 ## Step 06: Create maps {#create-map}
 
-A test that shows we can create a map that creates an array of object containg the following fields from our original query:
+Recall the we create a simple map like this:
+
+```javascript
+	getMap: function() { 'use strict';
+		return this.deliciousLinks.map(function(link) {
+			return { 'url': link.u };
+		});
+	}
+```
+
+This function takes the data in our deliciousLinks array of objects and converts it into a much simpler array of objects. In particular, the first two objects in our delicious data look like this:
+
+```javascript
+var deliciousLinks = [
+	{
+		"a": "charliecalvert",
+		"d": "Elvenware JavaScript Home Page",
+		"n": "",
+		"u": "http://www.elvenware.com/charlie/development/web/JavaScript/",
+		"t": [
+			"javascript",
+			"elvenware"
+		],
+		"dt": "2015-10-08T19:33:33Z"
+	},
+	{
+		"a": "charliecalvert",
+		"d": "Speaking JavaScript",
+		"n": "",
+		"u": "http://speakingjs.com/es5/index.html",
+		"t": [
+			"javascript",
+			"books",
+			"ebook",
+			"learning"
+		],
+		"dt": "2015-10-04T04:16:39Z"
+	}, etc...
+```
+
+After our map function runs, we have create a simplified array of objects that look like this:
+
+```javascript
+[
+    {
+        "url": "http://www.elvenware.com/charlie/development/web/JavaScript/"
+    },
+    {
+        "url": "http://speakingjs.com/es5/index.html"
+    }, etc...
+```
+
+We have converted an array of complex objects with six properties into an array of simple objects with only one property called **url**.
+
+In this section, I ask you to create more maps. For instance, here would be a method that maps both the **u** and the **a** properties of our original object in an object with two properties called **url** and **ownerName**:
+
+```javascript
+getOwnerNameMap: function() { 'use strict';
+    return this.deliciousLinks.map(function(link) {
+    	return { "url": link.u, "ownerName": link.a };
+    });
+}
+```
+
+**NOTE**: *You can include the above method in **control.js** if you want, but it is not a necessary part of the assignment.*
+
+The first two records in the array returned by the **getOwnerNameMap** function might look something like this:
+
+```javascript
+[
+    {
+        "url": "http://www.elvenware.com/charlie/development/web/JavaScript/",
+        "owner-name": "charliecalvert"
+    },
+    {
+        "url": "http://speakingjs.com/es5/index.html",
+        "owner-name": "charliecalvert"
+    }, etc...
+```
+
+Using this information on maps as background, I want you to create several more tests. To start, create a test that shows we can create a map that creates an array of object containg the following fields from our original query:
 
 * Description (d)
 * URL (u)
@@ -271,7 +351,7 @@ Be sure your work is in a folder of your repository with the name specified in *
 
   Test Delicious Links
     ✓ shows we can get our deliciousLink array
-    ✓ shows we can get an array containing only the url from each item
+    ✓ get an array with only the url from the objects in mock delicious data
     ✓ show we can get a map
     ✓ shows we can get a midsize map
     ✓ shows we can get a big map
@@ -366,7 +446,24 @@ See this sample program for more details on comparing arrays:
 
 [equal]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/ArraysEqual
 
+## DeliciousLinks is Null {#set-to-null}
 
+After each of our tests we set the **deliciousLinks** array to null:
 
+```javascript
+afterEach(function() {
+   queryDelicious.deliciousLinks = null;
+});
+```
+
+Testing to see if this works is very easy:
+
+```javascript
+it("shows that deliciousLink was set to null by afterEach", function() {
+    expect(queryDelicious.deliciousLinks).toBeFalsy();
+});
+```
+
+We just check to see that at the beginning of the test **deliciousLinks** is indeed null.
 
 
