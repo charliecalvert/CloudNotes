@@ -169,7 +169,7 @@ div.panel.panel-default
             input#subject.form-control(type='text', name="subject" value="subject" placeholder="subject")
         br
         div
-            button.btn.btn-success(onclick='search()') Search
+            button.btn.btn-success(type="button", onclick='search()') Search
 ```
 
 For what follows, refer to **JsObjects/HtmCssJavaScript/BootstrapBasics** for help setting up radio buttons and check boxes.
@@ -298,7 +298,7 @@ div.panel.panel-default
     div.panel-body
        div.row
             div.col-md-6
-                PUT A DESCRIPTION HERE
+                PUT A DESCRIPTION AND SUBMIT BUTTON HERE
             div.col-md-6
                 PUT THE TEXT INPUT HERE
         div.row
@@ -308,7 +308,32 @@ div.panel.panel-default
                 PUT THE RADIO BUTTONS HERE
 ```
 
-Remember, indentation is very important in Jade.
+Remember, indentation is very important in Jade. For instance, the description
+section could be indented something like this:
+
+```jade
+form#target
+	div.panel.panel-default
+		div.panel-heading My Controls
+		div.panel-body
+
+			div.row
+				div.col-md-6
+					div.panel.panel-default
+						div.panel-heading Text Input
+						div.panel-body
+							p Learn how to use controls in bootstrap. 
+								| Fill in the input and push the
+								| Search button. See the results
+								| displayed below. Try the radio
+								| buttons and checkboxes. The radio
+								| buttons display the output from
+								| each button, and the combined
+								| output from both buttons.
+
+						div.panel-body.form-group
+							button.btn.btn-primary(type="submit") Submit
+```
 
 **NOTE**: *Jade and bootstrap are not really that hard, but it takes some time to wrap your head around them. Many of you want to be good at design. In todays world, that means you must be good at bootstrap. I think you should also have a good understanding of templating engines such as jade.
 
@@ -406,3 +431,56 @@ $(document).ready(function() {
 Be sure your work is in your repository in a folder called **Week03-BootstrapBasics**. Include the URL of your repository when you submit the assignment. You might also make a note of the folder in which your project resides. This might help you remember to put it in exactly the right folder.
 
 Attach a screen shot of your running application to the assignment when you submit it. All I need to see is the output in your browser. Your lastname in the title should be clearly visible.
+
+## The Two Buttons
+
+Note that we have two buttons in this project:
+
+```
+<button type="submit" class="btn btn-primary">Submit</button>
+<button type="button" onclick="search()" class="btn btn-success">Search</button>
+```
+
+The Jade looks like this:
+
+```
+button.btn.btn-primary(type="submit") Submit
+button.btn.btn-success(type="button", onclick='search()') Search
+```
+
+One button is labeled **Submit** and the other **Search**. One is of type **submit** the other of type **button**.
+
+By default a button will be of type of **submit**. This means that it will **submit** the form it is in automatically unless you specifically ask it not to by setting its type.
+
+We don't want the **Search** button to trigger a **form** submit, so we set its type to **button**. When clicked, it triggers the **search** method:
+
+```javascript
+function search() {
+	var input = $('#subject').val();
+	$('#searchResults').html(input);
+}
+```
+
+It will not trigger the jQuery submit method:
+
+```javascript
+$("#target").submit(function(event) {
+    event.preventDefault();
+    var userFormData = $(this).serialize();
+    $('#formResults').html(userFormData);
+});
+```
+
+The **submit** button has the opposite effect. It triggers the jQuery **submit** method but does not trigger the **search** method.
+
+## Column Size
+
+You have three choices for column size:
+
+- div.col-sm-6  (small)
+- div.col-md-6  (medium)
+- div.col-lg-6  (large)
+
+If you make your page smaller, there will come a point at which the two columns you set up won't fit any longer. In that case, Bootstrap puts each column on a separate row. If you choose small (div.col-sm-6), then you can make the page quite narrow before the columns are wrapped around into separate rows. If you choose large, then the columns will be wrapped around into one row much sooner.
+
+Here is another way to say the same thing. The smallest column can be less wide than the medium and large columns. This affects the point at which the columns wrap when you shrink the width of your page. If you choose small, then the page can be small (less wide) before the two colums are wrapped around into one column.

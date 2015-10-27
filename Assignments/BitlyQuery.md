@@ -159,17 +159,12 @@ var bitlyUrlParser = {
 
 
 };
+```
 
 You do not need to include a real access token at this point, as we will not be querying Bitly itself at this stage.
-
-## The interface
-
-Now stop unit testing and start the program normally: npm start.
-
-Copy the bitly-links.js to the public/javascripts directory. Load it from document ready.
-
-Using our mixins, create an interface that will show at least the link, aggregate link, keyword_link and title for the first record. They should appear as the program loads so the user sees them by default once the program has loaded.
 
 ## Turn it in
 
 I'm hoping to be able to run your tests and see that they all pass. Put your work in your repository in the folder specified above. The rest per usual.
+
+**NOTE**: *I have pulled the interface portion of this assignment. We will cover that in class on Tuesday.*
