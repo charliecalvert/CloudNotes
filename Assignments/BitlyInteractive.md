@@ -151,7 +151,7 @@ var movement = {
 
     right: function () {
         'use strict';
-		// You fill in this bit.
+		// YOUR CODE HERE
     }
 };
 ```
@@ -213,6 +213,24 @@ var bitlyUrlParser = {
 ```
 
 Notice that the **getUrl** method returns different data depending on whether you pass in a Bitly access token or the number **-1**. This is how the program knows whether to get local data, or data from Bitly itself.
+
+The JADE for the location where you display the data from a single object might start like this:
+
+```
++elfFormPanel("Main Form")#target
+
+    +elfPanel("Input")
+        +elfInputB("Keyword Link", "keywordLink", "keywordLink")#keywordLink.form-control
+        MORE CODE HERE
+```
+
+In the same part of the **index.jade**, you should display the **private** and **archive** bits:
+
+```
++elfPanel("CheckBoxes")
+    +elfCheckBox("Private", "checkBoxPrivate", "checkBoxPrivate")#checkBoxPrivate
+    +elfCheckBox("Archived", "checkBoxArchived", "checkBoxArchived")#checkBoxArchived
+```
 
 ## Multiple Modules
 
