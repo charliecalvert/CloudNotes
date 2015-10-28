@@ -76,6 +76,13 @@ We need checkboxes to display these fields
 
 These should appear as the program loads so the user sees them by default. In other words, call your method that contains your getJson method from your **document ready** function.
 
+Be sure to go to JsObjects, run **git pull**, and then copy in the latest mixins:
+
+```
+cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixins.jade views/.
+```
+
 ## Check a CheckBox
 
 Here is how to check a checkbox in JavaScript:
@@ -214,6 +221,91 @@ var bitlyUrlParser = {
 
 Notice that the **getUrl** method returns different data depending on whether you pass in a Bitly access token or the number **-1**. This is how the program knows whether to get local data, or data from Bitly itself.
 
+## Load JSON {#load-json}
+
+You need to copy **spec/bitly-links.js** into **public/data/bitly-links.json**. There are three steps involved:
+
+```
+	mkdir public/data
+    cp spec/bitly-links.js public/data/bitly-links.json
+```
+
+Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are two problems:
+
+- There is a variable declaration at the beginning
+- And a semicolon at the end
+
+Suppose this was the contents of the file:
+
+```javascript
+var bitlyLinks = {
+    "status_code": 200,
+    "data": {
+    "link_history": [
+        {
+            "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
+            "archived": false
+        },
+        {
+            "keyword_link": "http://bit.ly/bootstrap-basics-02-sm",
+            "archived": false
+        }
+   ],
+        "result_count": 165
+},
+    "status_txt": "OK"
+};
+```
+
+To turn it into JSON, remove the variable declaration and the closing semicolon:
+
+```javascript
+{
+    "status_code": 200,
+    "data": {
+        "link_history": [
+            {
+                "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
+                "archived": false
+            },
+            {
+                "keyword_link": "http://bit.ly/bootstrap-basics-02-sm",
+                "archived": false
+            }
+        ],
+        "result_count": 165
+    },
+    "status_txt": "OK"
+}
+```
+
+At this point, you should be able to load the JSON with this call in your document ready:
+
+```javascript
+$(document).ready(function() { 'use strict'; 
+    bitlyUrlParser.getBitlyLinks(-1);
+});
+```
+
+Two things to check, to be sure it will work:
+
+- Make sure your **getUrl** and **getBitlyLinks** methods are as shown in this document. They have been messaged slightly from the version in **BitlyQuery**.
+- Make sure your **index.jade** file has an a **PRE** tag that can be used to display your JSON:
+
+```jade
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  div
+    pre#displayLinks
+```
+
+
+## Display with Jade
+
 The JADE for the location where you display the data from a single object might start like this:
 
 ```
@@ -286,4 +378,19 @@ downloads.getBitlyData = function () {
     }
 };
 
+```
+
+## Grunt Issues
+
+In Gruntfile.js make this change:
+
+```
+reporter : require('jshint-stylish'),
+// reporterOutput : 'result.xml',
+```
+
+At the command line, do this:
+
+```
+npm install jshint-stylish --save-dev
 ```

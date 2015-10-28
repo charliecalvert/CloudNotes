@@ -147,7 +147,7 @@ var bitlyUrlParser = {
 
     getBitlyLinks: function(accessToken) { 'use strict';
 
-        var url = bitlyUrlParser.getUrl();
+        var url = bitlyUrlParser.getUrl(accessToken);
 
         $.getJSON(url, function (result) {
             bitlyUrlParser.bitlyLinks = result;
@@ -156,8 +156,6 @@ var bitlyUrlParser = {
             console.log("Error");
         });
     },
-
-
 };
 ```
 
@@ -168,3 +166,5 @@ You do not need to include a real access token at this point, as we will not be 
 I'm hoping to be able to run your tests and see that they all pass. Put your work in your repository in the folder specified above. The rest per usual.
 
 **NOTE**: *I have pulled the interface portion of this assignment. We will cover that in class on Tuesday.*
+
+If you want to begin displaying data in the interface for your program, please turn to the **BitlyInteractive** assignment description. In particular, see the section on loading JSON.
