@@ -219,7 +219,11 @@ var bitlyUrlParser = {
     }
 ```
 
-Notice that the **getUrl** method returns different data depending on whether you pass in a Bitly access token or the number **-1**. This is how the program knows whether to get local data, or data from Bitly itself.
+Notice that the **getUrl** method returns different data depending on whether you pass in a Bitly access token or the number **-1**. This is how the program knows whether to get local data, or data from Bitly itself. This method has changed from the implementation in **BitlyQuery**. The **getBitlyLinks** method also has several changes, including the fact that the call to **getUrl** now takes a parameter (as indeed it should have from the start):
+
+```
+var url = bitlyUrlParser.getUrl(accessToken);
+```
 
 ## Load JSON {#load-json}
 
@@ -230,12 +234,13 @@ You need to copy **spec/bitly-links.js** into **public/data/bitly-links.json**. 
     cp spec/bitly-links.js public/data/bitly-links.json
 ```
 
-Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are two problems:
+Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are three problems:
 
-- There is a variable declaration at the beginning
-- And a semicolon at the end
+- We need to remove the comments at the top of the file
+- There is a variable declaration at the beginning of the object declaration that needs to be deleted.
+- And we also need to remove a semicolon at the end of the object
 
-Suppose this was the contents of the file:
+Suppose this were the contents of the file:
 
 ```javascript
 var bitlyLinks = {
@@ -278,6 +283,10 @@ To turn it into JSON, remove the variable declaration and the closing semicolon:
     "status_txt": "OK"
 }
 ```
+
+Don't stop working in **jsonlint** until your code passes their test. You must be working with valid JSON or you can't retrieve it with **getJSON**. When you are done, paste your cleaned up code back into your file. 
+
+**NOTE**: *Don't attempt to make the changes by hand, instead delete the old contents and replace it with the new code that passed jsonlint. Experience has taught me that this is the only reasonably safe way to do this operation.*
 
 At this point, you should be able to load the JSON with this call in your document ready:
 
@@ -394,3 +403,44 @@ At the command line, do this:
 ```
 npm install jshint-stylish --save-dev
 ```
+
+## Test the URL
+
+I've come up with some additional tests that were not part of the first 2015 version of **BitlyQuery**. Make sure these tests are included in the **Test Bitly Suite**:
+
+```
+    it("tests the local url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(-1);
+        expect(finalUrl).toBe('data/bitly-links.json');
+    });
+
+    it("tests the acccess token url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(accessToken);
+        expect(finalUrl).toContain(accessToken);
+        expect(finalUrl).toContain('https');
+    });
+```
+
+These don't require any extra work on your part, they are just they to help you make sure that your implementations of getUrl and getBitlyLinks are correct. In particular, they check to ensure that you have test to distinguish requests for the local url (-1) from the url that contains an access token. Take a look at the updated [BitlyQuery][bq] assignment, as these tests are now included in that assignment in their proper context.
+
+[bq]:http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyQuery.html#set-up-unit-tests

@@ -61,6 +61,38 @@ describe("Test Bitly Suite", function() {
         expect(url).toContain('https');
 
     });
+
+    it("tests the local url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(-1);
+        expect(finalUrl).toBe('data/bitly-links.json');
+    });
+
+    it("tests the accesstoken url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(accessToken);
+        expect(finalUrl).toContain(accessToken);
+        expect(finalUrl).toContain('https');
+    });
+
 });
 
 describe("Test Bitly Links", function() { 'use strict';
