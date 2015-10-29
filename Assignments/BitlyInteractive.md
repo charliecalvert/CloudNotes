@@ -16,6 +16,13 @@ Other goals include:
 
 **Bitly Interactive**: *Part of the interface. Click image to see larger version.*
 
+Bitly Api Official Docs:
+
+* [Getting Started](http://dev.bitly.com/get_started.html)
+* [API Docs](http://dev.bitly.com/api.html)
+* [User Info](http://dev.bitly.com/user_info.html)
+* [Best Practices](http://dev.bitly.com/best_practices.html)
+
 [bi]:https://s3.amazonaws.com/bucket01.elvenware.com/images/Bitly-Interactive01.png
 [bis]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Bitly-Interactive01Small.png
 
