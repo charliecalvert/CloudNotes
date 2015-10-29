@@ -125,6 +125,37 @@ Most of what you need to know is at the [epochconverter.com][epoch-converter] si
 [epoch-converter]: http://www.epochconverter.com
 [epoch-js]: http://www.epochconverter.com/programming/#javascript
 
+## Multiple Modules
+
+There comes a point where you program begins to be too complicated to fit inside one object in file. In other words, our **bitlyUrlParser** is no longer adequate for our needs. The problem here is the same one you encounter when you are told that you should not put all your code for a C, Java or C# program in the **main** module.
+
+We need to divide and conquor. We need to modularize our program. We need to create objects and methods that properly delineate the various parts of our program. 
+
+This step is essential. If you do not create small, easy to use objects, you code will quickly become a tangled mess of spaghetti that no one can understand.
+
+To make your code maintainable, it should have several objects in it. In particular, you should have at least three files on the client side:
+
+* javascripts/control.js
+* javascripts/downloads.js
+* javascripts/movement.js
+
+Each of these files are described in this document.
+
+Don't forget to modify **layout.jade** to include links to these files. 
+
+While we are on the subject of **layout.jade**, be sure that you declaring the **charset** and configuring the viewport:
+
+```
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    etc...
+```
+
 ## Iterate
 
 Your program should be able to iterate over the bitly objects in our bitly array. At the top of the program are three buttons:
@@ -340,30 +371,29 @@ In the same part of the **index.jade**, you should display the **private** and *
     +elfCheckBox("Archived", "checkBoxArchived", "checkBoxArchived")#checkBoxArchived
 ```
 
-## Multiple Modules
-
-Your program should have several objects in it. In particular, you should have at least three files on the client side:
-
-* javascripts/control.js
-* javascripts/downloads.js
-* javascripts/movement.js
-
-Don't forget to modify **layout.jade** to include links to these files. 
-
-While we are on the subject of **layout.jade**, be sure that you declaring the **charset** and configuring the viewport:
-
-```
-doctype html
-html
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    etc...
-```
-
 ## The **downloads** module
+
+This is the first time we are going to use function objects rather than plain old JavaScript literal objects. A plain old JavaScript object is declared like this:
+
+```
+var myObject = { ... // STUFF IN HERE };
+```
+
+A function object is declared like this:
+
+```
+function myFunction() { ... // STUFF IN HERE }
+```
+
+Or like this:
+
+```
+var myFunction = function() { ... // STUFF IN HERE }
+```
+
+In my opinion, at least, function objects are much more flexible and powerful than plain objects.
+
+In the code below, the first line creates an JavaScript object. We then declare three properties and two methods of that object:
 
 ```javascript
 var downloads = function () { 'use strict'; };
@@ -380,7 +410,9 @@ downloads.dataTypeSelection = function () {
         $("#radioButtonDisplay01").html("You clicked localData ");
         downloads.dataType = downloads.dataTypes[0];
     } else {
-    	YOUR CODE HERE
+    	YOUR CODE HERE. 
+        YOU NEED TO DEFINE THE CODE for THE dtCloud OPTION.
+        IT IS VERY SIMILAR TO THE OTHER HALF OF THIS IF STATEMENT
     }
 };
 
@@ -390,10 +422,24 @@ downloads.getBitlyData = function () {
         console.log("getBitlyData called: ", this.dataTypes[0]);
         bitlyUrlParser.getBitlyLinks(WHAT GOES HERE?);
     } else if (this.dataType === this.dataTypes[1]) {
-    	YOUR CODE HERE
+    	YOUR CODE FOR THE CLOUD OPTION HERE
     }
 };
 
+```
+
+When we are done, we can do things like this:
+
+```
+console.log(downloads.dataTypes[0]);
+console.log(downloads.accessToken);
+console.log(downloads.dataType);
+```
+
+Or we could call the methods of the object:
+
+```
+downloads.getBitlyData(-1);
 ```
 
 ## Grunt Issues
