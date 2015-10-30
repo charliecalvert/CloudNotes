@@ -475,7 +475,9 @@ downloads.getBitlyData(-1);
 
 ## Grunt Issues
 
-In Gruntfile.js make this change:
+By default, our Gruntfile has been set up to display output in **result.xml** in **checkstyle** format. This does not work well on Cloud 9, and can be confusing to beginners. To fix the problem, switch from **checkstyle** to **jshint-stylish**.
+
+To make the switch, open **Gruntfile.js** and make this change:
 
 ```
 reporter : require('jshint-stylish'),
@@ -487,6 +489,18 @@ At the command line, do this:
 ```
 npm install jshint-stylish --save-dev
 ```
+
+Now your **jshint** errors will be displayed in the bash shell rather than in **result.xml**.
+
+**NOTE**: *The more you know about jshint the better. There is additional information available in the following places.*
+
+- [jshint docs](http://jshint.com/docs/)
+- [jshint on github](https://github.com/jshint/jshint)
+- [jshint and grunt](https://github.com/gruntjs/grunt-contrib-jshint)
+
+There is more information in [Grunt on Elvenware][goe].
+
+[goe]: http://www.elvenware.com/charlie/development/web/UnitTests/Grunt.html
 
 ## Test the URL
 
