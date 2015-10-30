@@ -55,6 +55,37 @@ Once you have done that, go to the bitly API home page: [http://dev.bitly.com/](
 
 On the right, at the bottom, choose **Manage my apps**. Generate a **Generic Access Token**.
 
+## Get New Mixins++
+
+Run **git pull** on JsObjects. Copy in the new mixins from $ELF_TEMPLATES/JadeMixins. There are several files there now:
+
+```bash
+cp $ELF_TEMPLATES/JadeMixins/mixin-inputs.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixin-buttons.jade views/.
+```
+
+Check to see if there are more that might be helpful, and copy them over if they look useful:
+
+```
+ls $ELF_TEMPLATES/JadeMixins/
+```
+
+Or compare the code in your project to the code in $ELF_TEMPLATES/JadeMixins/:
+
+```
+meld views $ELF_TEMPLATES/JadeMixins/
+```
+
+At the top of **index.jade**, link in the mixins that you want to use:
+
+```
+extends layout
+include mixin-radios
+include mixin-inputs
+include mixin-buttons
+```
+
 ## The interface
 
 To get started, just boot up the program normally: **npm start**.
