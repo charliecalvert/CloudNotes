@@ -56,6 +56,7 @@ It is probably a good idea to keep both the program and your unit tests running 
 
 To get started:
 
+<<<<<<< HEAD
 * boot up the program normally: **npm start**.
 * In another terminal, start your tests: **grunt test**
 
@@ -69,6 +70,40 @@ Copy the **bitly-links.json** file to a directory you create called **public/dat
 	mkdir public/data
     cp spec/bitly-links.js public/data/bitly-links.json
 ```
+=======
+## Get New Mixins++
+
+Run **git pull** on JsObjects. Copy in the new mixins from $ELF_TEMPLATES/JadeMixins. There are several files there now:
+
+```bash
+cp $ELF_TEMPLATES/JadeMixins/mixin-inputs.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixin-buttons.jade views/.
+```
+
+Check to see if there are more that might be helpful, and copy them over if they look useful:
+
+```
+ls $ELF_TEMPLATES/JadeMixins/
+```
+
+Or compare the code in your project to the code in $ELF_TEMPLATES/JadeMixins/:
+
+```
+meld views $ELF_TEMPLATES/JadeMixins/
+```
+
+At the top of **index.jade**, link in the mixins that you want to use:
+
+```
+extends layout
+include mixin-radios
+include mixin-inputs
+include mixin-buttons
+```
+
+## The interface
+>>>>>>> 778a0ec1aa1b605cf77c11d63e76d44304153885
 
 Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are three problems:
 
@@ -265,6 +300,37 @@ Most of what you need to know is at the [epochconverter.com][epoch-converter] si
 [epoch-converter]: http://www.epochconverter.com
 [epoch-js]: http://www.epochconverter.com/programming/#javascript
 
+## Multiple Modules
+
+There comes a point where you program begins to be too complicated to fit inside one object in file. In other words, our **bitlyUrlParser** is no longer adequate for our needs. The problem here is the same one you encounter when you are told that you should not put all your code for a C, Java or C# program in the **main** module.
+
+We need to divide and conquor. We need to modularize our program. We need to create objects and methods that properly delineate the various parts of our program. 
+
+This step is essential. If you do not create small, easy to use objects, you code will quickly become a tangled mess of spaghetti that no one can understand.
+
+To make your code maintainable, it should have several objects in it. In particular, you should have at least three files on the client side:
+
+* javascripts/control.js
+* javascripts/downloads.js
+* javascripts/movement.js
+
+Each of these files are described in this document.
+
+Don't forget to modify **layout.jade** to include links to these files. 
+
+While we are on the subject of **layout.jade**, be sure that you declaring the **charset** and configuring the viewport:
+
+```
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    etc...
+```
+
 ## Iterate
 
 Your program should be able to iterate over the bitly objects in our bitly array. At the top of the program are three buttons:
@@ -399,30 +465,29 @@ In the same part of the **index.jade**, you should display the **private** and *
     +elfCheckBox("Archived", "checkBoxArchived", "checkBoxArchived")#checkBoxArchived
 ```
 
-## Multiple Modules
-
-Your program should have several objects in it. In particular, you should have at least three files on the client side:
-
-* javascripts/control.js
-* javascripts/downloads.js
-* javascripts/movement.js
-
-Don't forget to modify **layout.jade** to include links to these files. 
-
-While we are on the subject of **layout.jade**, be sure that you declaring the **charset** and configuring the viewport:
-
-```
-doctype html
-html
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    etc...
-```
-
 ## The **downloads** module
+
+This is the first time we are going to use function objects rather than plain old JavaScript literal objects. A plain old JavaScript object is declared like this:
+
+```
+var myObject = { ... // STUFF IN HERE };
+```
+
+A function object is declared like this:
+
+```
+function myFunction() { ... // STUFF IN HERE }
+```
+
+Or like this:
+
+```
+var myFunction = function() { ... // STUFF IN HERE }
+```
+
+In my opinion, at least, function objects are much more flexible and powerful than plain objects.
+
+In the code below, the first line creates an JavaScript object. We then declare three properties and two methods of that object:
 
 ```javascript
 var downloads = function () { 'use strict'; };
@@ -439,7 +504,9 @@ downloads.dataTypeSelection = function () {
         $("#radioButtonDisplay01").html("You clicked localData ");
         downloads.dataType = downloads.dataTypes[0];
     } else {
-    	YOUR CODE HERE
+    	YOUR CODE HERE. 
+        YOU NEED TO DEFINE THE CODE for THE dtCloud OPTION.
+        IT IS VERY SIMILAR TO THE OTHER HALF OF THIS IF STATEMENT
     }
 };
 
@@ -449,15 +516,31 @@ downloads.getBitlyData = function () {
         console.log("getBitlyData called: ", this.dataTypes[0]);
         bitlyUrlParser.getBitlyLinks(WHAT GOES HERE?);
     } else if (this.dataType === this.dataTypes[1]) {
-    	YOUR CODE HERE
+    	YOUR CODE FOR THE CLOUD OPTION HERE
     }
 };
 
 ```
 
+When we are done, we can do things like this:
+
+```
+console.log(downloads.dataTypes[0]);
+console.log(downloads.accessToken);
+console.log(downloads.dataType);
+```
+
+Or we could call the methods of the object:
+
+```
+downloads.getBitlyData(-1);
+```
+
 ## Grunt Issues
 
-In Gruntfile.js make this change:
+By default, our Gruntfile has been set up to display output in **result.xml** in **checkstyle** format. This does not work well on Cloud 9, and can be confusing to beginners. To fix the problem, switch from **checkstyle** to **jshint-stylish**.
+
+To make the switch, open **Gruntfile.js** and make this change:
 
 ```
 reporter : require('jshint-stylish'),
@@ -470,3 +553,58 @@ At the command line, do this:
 npm install jshint-stylish --save-dev
 ```
 
+<<<<<<< HEAD
+=======
+Now your **jshint** errors will be displayed in the bash shell rather than in **result.xml**.
+
+**NOTE**: *The more you know about jshint the better. There is additional information available in the following places.*
+
+- [jshint docs](http://jshint.com/docs/)
+- [jshint on github](https://github.com/jshint/jshint)
+- [jshint and grunt](https://github.com/gruntjs/grunt-contrib-jshint)
+
+There is more information in [Grunt on Elvenware][goe].
+
+[goe]: http://www.elvenware.com/charlie/development/web/UnitTests/Grunt.html
+
+## Test the URL
+
+I've come up with some additional tests that were not part of the first 2015 version of **BitlyQuery**. Make sure these tests are included in the **Test Bitly Suite**:
+
+```
+    it("tests the local url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(-1);
+        expect(finalUrl).toBe('data/bitly-links.json');
+    });
+
+    it("tests the acccess token url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(accessToken);
+        expect(finalUrl).toContain(accessToken);
+        expect(finalUrl).toContain('https');
+    });
+```
+
+These don't require any extra work on your part, they are just they to help you make sure that your implementations of getUrl and getBitlyLinks are correct. In particular, they check to ensure that you have test to distinguish requests for the local url (-1) from the url that contains an access token. Take a look at the updated [BitlyQuery][bq] assignment, as these tests are now included in that assignment in their proper context.
+
+[bq]:http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyQuery.html#set-up-unit-tests
+>>>>>>> 778a0ec1aa1b605cf77c11d63e76d44304153885
