@@ -311,7 +311,12 @@ Your program should be able to iterate over the bitly objects in our bitly array
 The code above can be improved with mixins:
 
 ```
-
+div.row
+    div.col-sm-6
+        +forwardBack("elfMovement.left()", "elfMovement.right()")
+    div.col-sm-6
+        +elfCheckBox("Private", "checkBoxPrivate", "checkBoxPrivate")#checkBoxPrivate
+        +elfCheckBox("Archived", "checkBoxArchived", "checkBoxArchived")#checkBoxArchived
 ```
 
 The first two buttons allow you to move back and forth from record 0, to record 1 and so on. The third button can be used to load the data either from the:
@@ -319,7 +324,7 @@ The first two buttons allow you to move back and forth from record 0, to record 
 * local json file
 * Bitly web site
 
-When iterating over the records, you need first an object that will allow you to respond to button clicks:
+When iterating over the records, you need an object that will allow you to respond to button clicks:
 
 ```javascript
 var movement = {
@@ -333,11 +338,11 @@ var movement = {
 
     right: function () {
         'use strict';
-		// YOUR CODE HERE
+		// YOUR CODE HERE. WHAT IS THE TEST TO BE SURE
+        // YOU DON'T GO PAST THE END OF THE ARRAY?
     }
 };
 ```
-
 The **bitlyUrlParser.display** method in **control.js** might look, in part, a bit like this:
 
 ```javascript
@@ -399,7 +404,6 @@ Notice that the **getUrl** method returns different data depending on whether yo
 ```
 var url = bitlyUrlParser.getUrl(accessToken);
 ```
-
 
 ## Display with Jade
 
@@ -532,3 +536,17 @@ At the command line, do this:
 npm install jshint-stylish --save-dev
 ```
 
+## Switch Data Source {#switch-source}
+
+Your should allow the user to choose the data source. Do they want to view:
+
+* The local **bitly-links.json** file?
+* The live data from your **Bitly** account?
+
+Include two radio buttons that allow the user to make this selection. If they select the local option, then call **getBitlyLinks** with an argument of **-1**. If they want the live data, then pass in the access token to your account.
+
+**NOTE**: *Ultimately we will want to make the call to the live Bitly data on the server side so the user cannot see your access token. We aren't doing that yet, however.*
+
+## Turn it in
+
+Place your code in your repository in a folder with the name specified above. When you submit the assignment include the url of your repository and/or the folder in which the code you created resides. You can also include a comment of your choosing.
