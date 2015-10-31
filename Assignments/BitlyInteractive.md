@@ -11,7 +11,6 @@ Other goals include:
 * Function Objects
 * Creating an access token for bitly
 
-
 [![interface][bis]][bi]
 
 **Bitly Interactive**: *Part of the interface. Click image to see larger version.*
@@ -40,7 +39,7 @@ You will have to make a few changes to the name of the application. In particula
 - routes/index.js
 - package.json
 
-Find instances of the string **BitlyQuery**, or something similar, in each file, and change them to **BitlyInteractive**
+Find instances of the string **BitlyQuery**, or something similar, in each file, and change them to **BitlyInteractive**. If you are working in WebStorm, also update the name of the project by right clicking on the top node in the project view and choosing refactor.
 
 ## Get a Bitly Access Token {#access-token}
 
@@ -52,7 +51,7 @@ On the right, at the bottom, choose **Manage my apps**. Generate a **Generic Acc
 
 ## Run Code and Tests {#run-code}
 
-It is probably a good idea to keep both the program and your unit tests running at all time. To do this, you need to open two terminal windows.
+It is probably a good idea to keep both the program and your unit tests running at all times. To do this, you need to open two terminal windows.
 
 To get started:
 
@@ -69,40 +68,6 @@ Copy the **bitly-links.json** file to a directory you create called **public/dat
 	mkdir public/data
     cp spec/bitly-links.js public/data/bitly-links.json
 ```
-
-## Get New Mixins++
-
-Run **git pull** on JsObjects. Copy in the new mixins from $ELF_TEMPLATES/JadeMixins. There are several files there now:
-
-```bash
-cp $ELF_TEMPLATES/JadeMixins/mixin-inputs.jade views/.
-cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
-cp $ELF_TEMPLATES/JadeMixins/mixin-buttons.jade views/.
-```
-
-Check to see if there are more that might be helpful, and copy them over if they look useful:
-
-```
-ls $ELF_TEMPLATES/JadeMixins/
-```
-
-Or compare the code in your project to the code in $ELF_TEMPLATES/JadeMixins/:
-
-```
-meld views $ELF_TEMPLATES/JadeMixins/
-```
-
-At the top of **index.jade**, link in the mixins that you want to use:
-
-```
-extends layout
-include mixin-radios
-include mixin-inputs
-include mixin-buttons
-```
-
-## The interface
->>>>>>> 778a0ec1aa1b605cf77c11d63e76d44304153885
 
 Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are three problems:
 
@@ -247,15 +212,38 @@ We need checkboxes to display these fields
 
 These should appear as the program loads so the user sees them by default. In other words, call your method that contains your getJson method from your **document ready** function.
 
-Be sure to go to JsObjects, run **git pull**, and then copy in the latest mixins:
+## Get New Mixins++
 
-```
+Run **git pull** on JsObjects. Copy in the new mixins from $ELF_TEMPLATES/JadeMixins. There are several files there now:
+
+```bash
+cp $ELF_TEMPLATES/JadeMixins/mixin-inputs.jade views/.
 cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
-cp $ELF_TEMPLATES/JadeMixins/mixins.jade views/.
-cp $ELF_TEMPLATES/JadeMixins/mixins.inputs views/.
+cp $ELF_TEMPLATES/JadeMixins/mixin-buttons.jade views/.
 ```
 
-**NOTE**: *My mixins are in a state of flux right now, so you might want to check for others by looking in **$ELF_TEMPLATES/JadeMixins**. Also, don't forget to **include** these files at the top of **index.jade**.
+**NOTE**: *My mixins are in a state of flux right now, so you might want to check for other mixins by looking in **$ELF_TEMPLATES/JadeMixins**. Also, don't forget to **include** these files at the top of **index.jade**. If there are more mixins that might be helpful, copy them over:
+
+```
+ls $ELF_TEMPLATES/JadeMixins/
+```
+
+Or compare the code in your project to the code in $ELF_TEMPLATES/JadeMixins/:
+
+```
+meld views $ELF_TEMPLATES/JadeMixins/
+```
+
+At the top of **index.jade**, link in the mixins that you want to use:
+
+```
+extends layout
+include mixin-radios
+include mixin-inputs
+include mixin-buttons
+```
+
+## Creating Special Fields {#special-fields}
 
 When creating the interface for your program, you need to know how to 
 
@@ -264,7 +252,7 @@ When creating the interface for your program, you need to know how to
 
 The next two sections describe how to perform these relatively simple tasks.
 
-## Check a CheckBox
+### Check a CheckBox
 
 Here is how to check a checkbox in JavaScript:
 
@@ -280,7 +268,7 @@ if (bitlyLink.archived) {
 }
 ```
 
-## Converting Dates
+### Converting Dates
 
 The time stamps in the bitly data consist of numbers called epochs:
 
