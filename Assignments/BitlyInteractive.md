@@ -42,24 +42,154 @@ You will have to make a few changes to the name of the application. In particula
 
 Find instances of the string **BitlyQuery**, or something similar, in each file, and change them to **BitlyInteractive**
 
-## Load the data
+## Get a Bitly Access Token {#access-token}
 
-Your program should be able to load data either directly from the Bitly website, or from a JSON file stored in your public directory.
-
-
-## Get a Bitly Access Token
-
-You will need a Bitly account, and you will need to create at least a few bitly links.
+Your program should be able to load data either directly from the Bitly website, or from a JSON file stored in your public directory. As a result, you will need a Bitly account, and you will need to create at least a few bitly links.
 
 Once you have done that, go to the bitly API home page: [http://dev.bitly.com/](http://dev.bitly.com/). You should always be able to find a link to the API page under the **more** button at the bottom of the bitly home page, and at various other places, such as on the **tools** page.
 
-On the right, at the bottom, choose **Manage my apps**. Generate a **Generic Access Token**.
+On the right, at the bottom, choose **Manage my apps**. Generate a **Generic Access Token**. Save the token somewhere you can find it. For instance, in **control.js**, or create a **README.md** file for your project and put it there.
+
+## Run Code and Tests {#run-code}
+
+It is probably a good idea to keep both the program and your unit tests running at all time. To do this, you need to open two terminal windows.
+
+To get started:
+
+* boot up the program normally: **npm start**.
+* In another terminal, start your tests: **grunt test**
+
+You probably want to focus on the terminal window that contains your unit tests. The other one is necessary to run you program, but you will probably need to view it much less frequently. Both programs should continue running automatically, and will restart each time your change your code. The main exception would be changes to the karma config file, which would require a manual restart of your tests.
+
+## Load JSON {#load-json}
+
+Copy the **bitly-links.json** file to a directory you create called **public/data**. Load it from document ready. More specifically, copy **spec/bitly-links.js** into **public/data/bitly-links.json**. There are three steps involved:
+
+```
+	mkdir public/data
+    cp spec/bitly-links.js public/data/bitly-links.json
+```
+
+Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are three problems:
+
+- Remove the comments at the top of the file
+- Delete the variable declaration assigned to your bitly object.
+- Remove the semicolon at the end of the object
+
+Suppose this were the contents of the file:
+
+```javascript
+var bitlyLinks = {
+    "status_code": 200,
+    "data": {
+    "link_history": [
+        {
+            "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
+            "archived": false
+        },
+        {
+            "keyword_link": "http://bit.ly/bootstrap-basics-02-sm",
+            "archived": false
+        }
+   ],
+        "result_count": 165
+},
+    "status_txt": "OK"
+};
+```
+
+To turn it into JSON, remove the variable declaration and the closing semicolon:
+
+```javascript
+{
+    "status_code": 200,
+    "data": {
+        "link_history": [
+            {
+                "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
+                "archived": false
+            },
+            {
+                "keyword_link": "http://bit.ly/bootstrap-basics-02-sm",
+                "archived": false
+            }
+        ],
+        "result_count": 165
+    },
+    "status_txt": "OK"
+}
+```
+
+Don't stop working in **jsonlint** until your code passes their test. You must be working with valid JSON or you can't retrieve it with **getJSON**. When you are done, paste your cleaned up code back into your file, entirely replacing its contents.
+
+**NOTE**: *Don't attempt to make the changes by hand, instead delete all of the old contents and replace it with the new code that passed jsonlint. Experience has taught me that this is the only reasonably safe way to do this operation. Don't forget to delete the comments at the top of the file.*
+
+At this point, you should be able to load the JSON with this call in your document ready:
+
+```javascript
+$(document).ready(function() { 'use strict'; 
+    bitlyUrlParser.getBitlyLinks(-1);
+});
+```
+
+## Test the URL
+
+If your call to **getBlitlyLinks** does not work, there are two things to check:
+
+- Make sure your **getUrl** and **getBitlyLinks** methods are as shown in this document. They have been messaged slightly from the version in **BitlyQuery**.
+- Make sure your **index.jade** file has an a **PRE** tag that can be used to display your JSON:
+
+```jade
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  div
+    pre#displayLinks
+```
+
+I've come up with some additional tests that were not part of the first 2015 version of **BitlyQuery**. Make sure these tests are included in the **Test Bitly Suite**. The tests are designed to help ensure that **getUrl** and **getBitlyLinks** are properly implemented:
+
+```
+    it("tests the local url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(-1);
+        expect(finalUrl).toBe('data/bitly-links.json');
+    });
+
+    it("tests the acccess token url we pass to getBitlyLinks", function() {
+        var finalUrl;
+
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            finalUrl = url;
+            success(bitlyLinks);
+            return {
+                fail: function() {}
+            };
+        });
+
+        bitlyUrlParser.getBitlyLinks(accessToken);
+        expect(finalUrl).toContain(accessToken);
+        expect(finalUrl).toContain('https');
+    });
+```
+
+Ideally, these don't require any extra work on your part; they are just there to ensure that your implementations of **getUrl** and **getBitlyLinks** are correct. In particular, they check to ensure that your code can distinguish requests for the local url (-1) from the url that contains an access token. Take a look at the updated [BitlyQuery][bq] assignment, as these tests are now included in that assignment in their proper context.
+
+[bq]:http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyQuery.html#set-up-unit-tests
 
 ## The interface
-
-To get started, just boot up the program normally: **npm start**.
-
-Copy the **bitly-links.json** file to a directory you create called **public/data**. Load it from document ready.
 
 Using our mixins, create an editable interface that will show the following fields from a single object in bitlyLinks array. These fields should be in input controls:
 
@@ -88,7 +218,17 @@ Be sure to go to JsObjects, run **git pull**, and then copy in the latest mixins
 ```
 cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
 cp $ELF_TEMPLATES/JadeMixins/mixins.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixins.inputs views/.
 ```
+
+**NOTE**: *My mixins are in a state of flux right now, so you might want to check for others by looking in **$ELF_TEMPLATES/JadeMixins**. Also, don't forget to **include** these files at the top of **index.jade**.
+
+When creating the interface for your program, you need to know how to 
+
+* Write JavaScript code that checks a checkBox.
+* Convert an epoch date used in JSON to a human readable date.
+
+The next two sections describe how to perform these relatively simple tasks.
 
 ## Check a CheckBox
 
@@ -144,6 +284,12 @@ Your program should be able to iterate over the bitly objects in our bitly array
     button.btn.btn-default(type='button', onclick="downloads.getBitlyData()")
         | Get Bitly Data &nbsp;&nbsp;
         span.glyphicon.glyphicon-download
+```
+
+The code above can be improved with mixins:
+
+```
+
 ```
 
 The first two buttons allow you to move back and forth from record 0, to record 1 and so on. The third button can be used to load the data either from the:
@@ -230,93 +376,6 @@ Notice that the **getUrl** method returns different data depending on whether yo
 
 ```
 var url = bitlyUrlParser.getUrl(accessToken);
-```
-
-## Load JSON {#load-json}
-
-You need to copy **spec/bitly-links.js** into **public/data/bitly-links.json**. There are three steps involved:
-
-```
-	mkdir public/data
-    cp spec/bitly-links.js public/data/bitly-links.json
-```
-
-Then you need to transform the JavaScript in bitly-links.json into real JSON. The simplest way to do this is to block copy the entire contents of the file. Then navigate to the [jsonlint.com](http://jsonlint.com/). Now best all the code from **bitly-links.json** into the text box on the jsonlint web site. Click the **Validate** button. Your JavaScript code will fail the test. That is because it is not pure JSON. In particular, there are three problems:
-
-- We need to remove the comments at the top of the file
-- There is a variable declaration at the beginning of the object declaration that needs to be deleted.
-- And we also need to remove a semicolon at the end of the object
-
-Suppose this were the contents of the file:
-
-```javascript
-var bitlyLinks = {
-    "status_code": 200,
-    "data": {
-    "link_history": [
-        {
-            "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
-            "archived": false
-        },
-        {
-            "keyword_link": "http://bit.ly/bootstrap-basics-02-sm",
-            "archived": false
-        }
-   ],
-        "result_count": 165
-},
-    "status_txt": "OK"
-};
-```
-
-To turn it into JSON, remove the variable declaration and the closing semicolon:
-
-```javascript
-{
-    "status_code": 200,
-    "data": {
-        "link_history": [
-            {
-                "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
-                "archived": false
-            },
-            {
-                "keyword_link": "http://bit.ly/bootstrap-basics-02-sm",
-                "archived": false
-            }
-        ],
-        "result_count": 165
-    },
-    "status_txt": "OK"
-}
-```
-
-Don't stop working in **jsonlint** until your code passes their test. You must be working with valid JSON or you can't retrieve it with **getJSON**. When you are done, paste your cleaned up code back into your file. 
-
-**NOTE**: *Don't attempt to make the changes by hand, instead delete the old contents and replace it with the new code that passed jsonlint. Experience has taught me that this is the only reasonably safe way to do this operation.*
-
-At this point, you should be able to load the JSON with this call in your document ready:
-
-```javascript
-$(document).ready(function() { 'use strict'; 
-    bitlyUrlParser.getBitlyLinks(-1);
-});
-```
-
-Two things to check, to be sure it will work:
-
-- Make sure your **getUrl** and **getBitlyLinks** methods are as shown in this document. They have been messaged slightly from the version in **BitlyQuery**.
-- Make sure your **index.jade** file has an a **PRE** tag that can be used to display your JSON:
-
-```jade
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
-
-  div
-    pre#displayLinks
 ```
 
 
@@ -411,43 +470,3 @@ At the command line, do this:
 npm install jshint-stylish --save-dev
 ```
 
-## Test the URL
-
-I've come up with some additional tests that were not part of the first 2015 version of **BitlyQuery**. Make sure these tests are included in the **Test Bitly Suite**:
-
-```
-    it("tests the local url we pass to getBitlyLinks", function() {
-        var finalUrl;
-
-        spyOn($, 'getJSON').and.callFake(function(url, success) {
-            finalUrl = url;
-            success(bitlyLinks);
-            return {
-                fail: function() {}
-            };
-        });
-
-        bitlyUrlParser.getBitlyLinks(-1);
-        expect(finalUrl).toBe('data/bitly-links.json');
-    });
-
-    it("tests the acccess token url we pass to getBitlyLinks", function() {
-        var finalUrl;
-
-        spyOn($, 'getJSON').and.callFake(function(url, success) {
-            finalUrl = url;
-            success(bitlyLinks);
-            return {
-                fail: function() {}
-            };
-        });
-
-        bitlyUrlParser.getBitlyLinks(accessToken);
-        expect(finalUrl).toContain(accessToken);
-        expect(finalUrl).toContain('https');
-    });
-```
-
-These don't require any extra work on your part, they are just they to help you make sure that your implementations of getUrl and getBitlyLinks are correct. In particular, they check to ensure that you have test to distinguish requests for the local url (-1) from the url that contains an access token. Take a look at the updated [BitlyQuery][bq] assignment, as these tests are now included in that assignment in their proper context.
-
-[bq]:http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyQuery.html#set-up-unit-tests
