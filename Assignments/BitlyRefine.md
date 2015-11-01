@@ -95,6 +95,27 @@ In particular, rename the main objects in your program as follows:
 
 We are not changing any file names, just the objects in the files.
 
+Given these changes, we would call the **renderTable** method in **display.js** from a modified **getBlitlyLinks** method:
+
+```javascript
+getBitlyLinks: function(accessToken) {
+    'use strict';
+    var url = elfBitly.getUrl(accessToken);
+
+    $.getJSON(url, function(result) {
+        elfBitly.bitlyLinks = result;
+        elfDisplay.render();
+        elfDisplay.renderTable(elfBitly.getLinkHistoryArray());
+        $('#displayLinks').html(JSON.stringify(result, null, 4));
+    }).fail(function(jqxhr, textStatus, error) {s
+        var err = textStatus + ', ' + error;
+        console.log('Request Failed: ' + err);
+        console.log('url:', url);
+    });
+},
+```
+
+
 ## CSS Updates
 
 Create the **.elfDiv** class in styles.css
