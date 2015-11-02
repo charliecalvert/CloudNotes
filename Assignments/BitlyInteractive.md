@@ -29,7 +29,7 @@ Bitly Api Official Docs:
 
 Rather than start from scratch, copy your **BitlyQuery** program into a new folder called **Week06-BitlyInteractive**. To perform this action, first navigate to the root of your repository. Then issue a command like this:
 
-```
+```bash
 cp -r Week06-BitlyQuery Week06-BitlyInteractive
 ```
 
@@ -64,7 +64,7 @@ You probably want to focus on the terminal window that contains your unit tests.
 
 Copy the **bitly-links.json** file to a directory you create called **public/data**. Load it from document ready. More specifically, copy **spec/bitly-links.js** into **public/data/bitly-links.json**. There are three steps involved:
 
-```
+```bash
 	mkdir public/data
     cp spec/bitly-links.js public/data/bitly-links.json
 ```
@@ -151,7 +151,7 @@ block content
 
 I've come up with some additional tests that were not part of the first 2015 version of **BitlyQuery**. Make sure these tests are included in the **Test Bitly Suite**. The tests are designed to help ensure that **getUrl** and **getBitlyLinks** are properly implemented:
 
-```
+```javascript
     it("tests the local url we pass to getBitlyLinks", function() {
         var finalUrl;
 
@@ -254,7 +254,31 @@ The next two sections describe how to perform these relatively simple tasks.
 
 ### Check a CheckBox
 
-Here is how to check a checkbox in JavaScript:
+There are two boolean fields in our bitly links data. These fields are called **archived** and **private**:
+
+```json
+{
+    "keyword_link": "http://bit.ly/bootstrap-basics-01-sm",
+    "archived": false,
+    "user_ts": 1444163942,
+    "title": "BootstrapBasics01Small.png (307×261)",
+    "created_at": 1444163942,
+    "tags": [
+        "image"
+    ],
+    "modified_at": 1444164000,
+    "campaign_ids": [],
+    "private": false,
+    "aggregate_link": "http://bit.ly/1OWCsXX",
+    "long_url": "https://s3.amazonaws.com/bucket01.elvenware.com/images/BootstrapBasics01Small.png",
+    "client_id": "298b336871d6aa29e06b3033269f21ced9717625",
+    "link": "http://bit.ly/1OWCsXW"
+}
+```
+
+We can capture a boolean field with a checkbox: **checked** means true, while **unchecked** means false. In our program, it is simplest for us to set these fields from inside our JavaScript code. This means we have to know how to check or uncheck a control depending on the value of a boolean variable.
+
+Here are two ways to check a check box; one using jQuery, the other use raw JavaScript code:
 
 ```javascript
 // with jquery
@@ -267,6 +291,11 @@ if (bitlyLink.archived) {
     document.getElementById("checkBoxArchived").checked = true;
 }
 ```
+
+Reference:
+
+- jQuery [prop method](http://api.jquery.com/prop/).
+- Stackoverflow discussion of [this issue](http://stackoverflow.com/a/8206573)
 
 ### Converting Dates
 
@@ -291,7 +320,7 @@ Most of what you need to know is at the [epochconverter.com][epoch-converter] si
 
 Your program should be able to iterate over the bitly objects in our bitly array. At the top of the program are three buttons:
 
-```
+```jade
 +elfPanel("Iterate")
     button.btn.btn-success.btn-large(type='button', onclick="movement.left()")
         span.glyphicon.glyphicon-arrow-left
@@ -310,7 +339,7 @@ Your program should be able to iterate over the bitly objects in our bitly array
 
 The code above can be improved with mixins:
 
-```
+```jade
 div.row
     div.col-sm-6
         +forwardBack("elfMovement.left()", "elfMovement.right()")
@@ -401,7 +430,7 @@ var bitlyUrlParser = {
 
 Notice that the **getUrl** method returns different data depending on whether you pass in a Bitly access token or the number **-1**. This is how the program knows whether to get local data, or data from Bitly itself. This method has changed from the implementation in **BitlyQuery**. The **getBitlyLinks** method also has several changes, including the fact that the call to **getUrl** now takes a parameter (as indeed it should have from the start):
 
-```
+```javascript
 var url = bitlyUrlParser.getUrl(accessToken);
 ```
 
@@ -452,19 +481,19 @@ html
 
 This is the first time we are going to use function objects rather than plain old JavaScript literal objects. A plain old JavaScript object is declared like this:
 
-```
+```javascript
 var myObject = { ... // STUFF IN HERE };
 ```
 
 A function object is declared like this:
 
-```
+```javascript
 function myFunction() { ... // STUFF IN HERE }
 ```
 
 Or like this:
 
-```
+```javascript
 var myFunction = function() { ... // STUFF IN HERE }
 ```
 
@@ -507,7 +536,7 @@ downloads.getBitlyData = function () {
 
 When we are done, we can do things like this:
 
-```
+```javascript
 console.log(downloads.dataTypes[0]);
 console.log(downloads.accessToken);
 console.log(downloads.dataType);
@@ -515,7 +544,7 @@ console.log(downloads.dataType);
 
 Or we could call the methods of the object:
 
-```
+```javascript
 downloads.getBitlyData(-1);
 ```
 
@@ -525,14 +554,14 @@ By default, our Gruntfile has been set up to display output in **result.xml** in
 
 To make the switch, open **Gruntfile.js** and make this change:
 
-```
+```javascript
 reporter : require('jshint-stylish'),
 // reporterOutput : 'result.xml',
 ```
 
 At the command line, do this:
 
-```
+```bash
 npm install jshint-stylish --save-dev
 ```
 

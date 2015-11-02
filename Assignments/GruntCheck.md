@@ -282,11 +282,7 @@ Remember, you should not need to modify the files included in this assignment. I
 
 ## Updated Unit Tests
 
-```
-/**
- * Created by charlie on 10/7/15.
- */
-
+```javascript
 describe('Elvenware Simple Plain Suite', function() {
     'use strict';
 
@@ -409,7 +405,7 @@ describe('Test Bitly Links', function() {
 
 When turn, I should be able to see updated files in the projects mentioned above. In particular, I should be able to go to any of those three projects, run **grunt check**, and see results like this:
 
-```
+```bash
 $ grunt check
 Running "jsbeautifier:files" (jsbeautifier) task
 Beautified 5 files, changed 0 files...OK

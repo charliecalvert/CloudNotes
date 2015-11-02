@@ -14,7 +14,7 @@ This assignment is not complete, but there should be enough here to get you star
 
 Create the project
 
-```
+```bash
 CreateExpressProject Week06-BitlyQuery
 cd Week06-BitlyQuery
 TestReady
@@ -24,13 +24,13 @@ TestReady
 
 For now, we won't query the actual Bitly servers. Instead, we will use mock data that I store in JsObjects:
 
-```
+```base
 cp $ELF_TEMPLATES/WebServices/bitly-links.js spec/.
 ```
 
 You will have to modify **karma-conf.js** so that it loads the mock data. In particular, modify the **files** property by adding the following to the list of files that will be loaded will be loaded when karma is launched:
 
-```
+```base
 'spec/bitly-links.js'
 ```
 
@@ -38,7 +38,7 @@ If you don't complete the above step properly, you might get an error such as: *
 
 Here are the tests that you should get to pass. Put them in **spec/test-basic.js**:
 
-```
+```javascript
 describe("Elvenware Simple Plain Suite", function() { 'use strict';
 
     it("expects true to be true", function() {
@@ -164,7 +164,7 @@ For now, it won't really matter what kind of map you create. Any transformation 
 
 Here is some of the object in **control.js**. I'm expecting you to fill in the missing pieces so that the tests will pass. You may not modify the tests themselves. All your changes should be to **control.js**. The **spec/test-basic.js** should not change at all.
 
-```
+```javascript
 var bitlyUrlParser = {
 
     bitlyLinks: null,
@@ -184,8 +184,10 @@ var bitlyUrlParser = {
         $.getJSON(url, function (result) {
             bitlyUrlParser.bitlyLinks = result;
             $('#displayLinks').html(result);
-        }).fail(function() {
-            console.log("Error");
+        }).fail(jqxhr, textStatus, error) {
+            var err = textStatus + ', ' + error;
+            console.log('Request Failed: ' + err);
+            console.log('url:', url);
         });
     },
 };
@@ -200,3 +202,22 @@ I'm hoping to be able to run your tests and see that they all pass. Put your wor
 **NOTE**: *I have pulled the interface portion of this assignment. We will cover that in class on Tuesday.*
 
 If you want to begin displaying data in the interface for your program, please turn to the **BitlyInteractive** assignment description. In particular, see the section on loading JSON.
+
+
+## Maps
+
+The objects in the array returned by the **map** method have three properties:
+
+- title
+- link
+- created-at
+
+Like this:
+
+``` javascript
+{
+	title: "My Title",
+    link: "http://foo.com",
+    created-at: 234324342 }
+}
+```

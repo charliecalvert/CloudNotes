@@ -29,26 +29,26 @@ Remember that we define **$ELF_TEMPLATES** in our **.bash_alias** file. That fil
 
 Now set the port to **bin/www** to 30025. You can do it manually in WebStorm, or use this command to do it from the command line:
 
-```
+```bash
 sed -i -- 's/3000/30025/g' bin/www
 ```
 
 And this should replace **node** with **nodemon** in **package.json**:
 
-```
+```bash
 sed -i -- 's/node\s/nodemon /g' package.json
 ```
 
 Then let's copy in a favicon and change the title to include your last name:
 
-```
+```bash
 cp ~/Git/JsObjects/Data/MongoLab03/favicon.png public/.
 sed -i -- 's/Express/Bootstrap-Basics-LastName/g' routes/index.js
 ```
 
 This part of your work is done now, but as an fyi, this is how it looks if you put it all together:
 
-```
+```bash
 express Week03-BootstrapBasics
 cd Week03-BootstrapBasics
 npm install
@@ -74,7 +74,7 @@ We need to link in three files:
 
 Here is what **layout.jade** looks like when you are done:
 
-```
+```jade
 doctype html
 html
   head
@@ -160,7 +160,7 @@ Remember, this code should always be at the bottom of the file. Whatever else we
 
 Get started defining the body of the HTML for your app by creating a single button and input control:
 
-```
+```jade
 div.panel.panel-default
     div.panel-heading Text Input
     div.panel-body
@@ -196,7 +196,7 @@ When the user selects one of them...
 
 Provide three checkboxes:
 
-```jadedefault
+```jade
 div.panel.panel-default
     div.panel-heading CheckBoxes
     div.panel-body
@@ -207,6 +207,8 @@ div.panel.panel-default
             input#checkBox02(type='checkbox', name='check', value='check2' )
             label(for='checkBox02') &nbsp; CheckBox 02
 ```
+
+## Step 5.5: Button Response Methods {#button-response}
 
 Sometimes we want to know that radio button or checkbox was clicked. Here is how to proceed. In **control.js** let's detect if checkbox buttons or radiobuttons were clicked:
 
