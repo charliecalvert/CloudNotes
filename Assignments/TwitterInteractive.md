@@ -131,6 +131,12 @@ Of course, we want something a bit more fancy. But by now, you know how to trans
 The first step might be to declare a little jade:
 
 ```
++elfPanel("Bitly Links Table").elfDiv
+    div.scroller
+        table.table#tableLinks
+
++elfPanel("Debug", "panel-default").elfDiv
+    button.btn.btn-default#getTweets(type='button') Get Tweets
     button.btn.btn-default#search(type='button') Search
 
     div
