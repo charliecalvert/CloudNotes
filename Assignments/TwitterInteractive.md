@@ -247,7 +247,7 @@ function appendUrl(selector, index, text, url) {
 
 ## Step Five
 
-The final step will be to use our scrolling table for the links, and our list for any items that have no links.
+The final step will be to use our scrolling table for items without links, and our list for any items that have links. Our vice-versa if you prefer. I'm not sure which is best. The point for now is just to get practice with both ways of displaying data.
 
 Here is a method that you might find useful:
 
