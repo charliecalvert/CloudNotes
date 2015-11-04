@@ -16,6 +16,12 @@ cp $JSOBJECTS/Utilities/NodeInstall/TestReady ~/bin/.
 cp $JSOBJECTS/Utilities/SetupLinuxBox/strip-triple-spaces ~/bin/.
 ```
 
+If you don't have js-beautify installed globally, which you well might not, then run this command:
+
+```
+npm install -g js-beautify
+```
+
 Or use a different name for my scripts if you have custom versions with the same name.
 
 I think most of you can then type **i3** to get back to your repositories.
