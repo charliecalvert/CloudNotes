@@ -126,8 +126,8 @@ Don't stop working in **jsonlint** until your code passes their test. You must b
 At this point, you should be able to load the JSON with this call in your document ready:
 
 ```javascript
-$(document).ready(function() { 'use strict'; 
-    bitlyUrlParser.getBitlyLinks(-1);
+$(document).ready(function() { 'use strict';
+    bitlyUrlParser.getBitlyLinks(downloads.dataTypes.dtLocal);
 });
 ```
 
@@ -387,14 +387,17 @@ var bitlyUrlParser = {
         bitlyUrlParser.showRecord(bitlyLink);
     },
 
-    getUrl: function (accessToken) {
+    getUrl: function(accessToken) {
         'use strict';
 
-        if (accessToken === -1) {
-            return 'data/bitly-links.json';
+        var cloudBaseUrl = 'https://api-ssl.bitly.com/v3/user/link_history';
+        var cloudParams = '?access_token=';
+        var localUrl = 'data/bitly-links.json';
+
+        if (accessToken === downloads.dataTypes.dtLocal) {
+            return localUrl;
         } else {
-            var url = 'https://api-ssl.bitly.com/v3/user/link_history?access_token=';
-            return url += accessToken;
+            return cloudBaseUrl + cloudParams + downloads.accessToken;
         }
     },
 
@@ -502,42 +505,38 @@ In my opinion, at least, function objects are much more flexible and powerful th
 In the code below, the first line creates an JavaScript object. We then declare three properties and two methods of that object:
 
 ```javascript
-var downloads = function () { 'use strict'; };
+var downloads = function() {
+    'use strict';
+};
 
-downloads.accessToken = YOUR TOKEN HERE. AS A STRING...;
+downloads.accessToken = '2ac4b4ccf91019cff6a6b3f23bcbe05ec2bf7a8c';
 
-downloads.dataTypes = ["dtLocal", "dtCloud"];
+downloads.dataTypes = {"dtLocal": 0, "dtCloud": 1};
 
-downloads.dataType = downloads.dataTypes[0];
+downloads.dataType = downloads.dataTypes.dtLocal;
 
-downloads.dataTypeSelection = function () {
+downloads.dataTypeSelection = function() {
     'use strict';
     if ($('#localData').is(':checked')) {
-        $("#radioButtonDisplay01").html("You clicked localData ");
-        downloads.dataType = downloads.dataTypes[0];
+        $('#radioButtonDisplay01').html('You clicked localData ');
+        downloads.dataType = downloads.dataTypes.dtLocal;
     } else {
-    	YOUR CODE HERE. 
-        YOU NEED TO DEFINE THE CODE for THE dtCloud OPTION.
-        IT IS VERY SIMILAR TO THE OTHER HALF OF THIS IF STATEMENT
+        $('#radioButtonDisplay01').html('You clicked cloudData ');
+        downloads.dataType = downloads.dataTypes.dtCloud;
     }
 };
 
-downloads.getBitlyData = function () {
+downloads.getBitlyData = function() {
     'use strict';
-    if (this.dataType === this.dataTypes[0]) {
-        console.log("getBitlyData called: ", this.dataTypes[0]);
-        bitlyUrlParser.getBitlyLinks(WHAT GOES HERE?);
-    } else if (this.dataType === this.dataTypes[1]) {
-    	YOUR CODE FOR THE CLOUD OPTION HERE
-    }
+    console.log('getBitlyData called: ', Object.keys[downloads.dataType]);
+    bitlyUrlParser.getBitlyLinks(downloads.dataType);
 };
-
 ```
 
 When we are done, we can do things like this:
 
 ```javascript
-console.log(downloads.dataTypes[0]);
+console.log(downloads.dataTypes.dtLocal);
 console.log(downloads.accessToken);
 console.log(downloads.dataType);
 ```
@@ -545,8 +544,16 @@ console.log(downloads.dataType);
 Or we could call the methods of the object:
 
 ```javascript
-downloads.getBitlyData(-1);
+downloads.getBitlyData(downloads.dataTypes.dtLocal);
 ```
+
+Remember that the method **downloads.dataTypeSelection** won't respond to clicks on your radio butons unless you tell it do so:
+
+```
+$(WHAT SELECTOR GOES HERE?).click(WHAT METHOD GOES HERE?);
+```
+
+I would put code like this in my **document ready** handler.
 
 ## Grunt Issues
 

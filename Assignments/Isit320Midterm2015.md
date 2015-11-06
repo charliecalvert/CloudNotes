@@ -2,3 +2,9 @@
 
 Polish the **BitlyRefine** and **TwitterRefine** programs.
 
+## No FavIcon Errors
+
+Your favicon should load on program startup.
+
+
+
