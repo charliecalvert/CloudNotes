@@ -20,14 +20,27 @@ And anywhere else that is appropriate.
 Add a button labeled **User Timeline** and two input controls labeled **Search Query**, **Timeline Query**. For the input control, use **elfInputB** or something else that pleases you.
 
 - [Click here to a screenshot of my interface][tr01]
- 
+
 [tr01]:https://s3.amazonaws.com/bucket01.elvenware.com/images/TwitterRefine01.png
 
 ## Step Two
 
+Put this code in **index.jade**. You can replace your existing code, or edit it. In the end, it should look like this:
+
+```
++elfPanel("Debug", "panel-default").elfDiv
+    +elfInputB("Search Query", "search", "timeline")#searchQuery
+    +elfInputB("Timeline Query", "timeline", "timeline")#timelineQuery
+    hr
+    button.btn.btn-default#getTimeline(type='button') Timeline
+    button.btn.btn-default#search(type='button') Search
+```
+
+## Step Three
+
 Make the search query configurable so the user can search on any subject they choose, rather than just **nodejs**.
 
-Here is how to send a custom query from the client to the server:
+Here is how to send a custom query from the client to the server. Make these changes in **control.js**:
 
 ```javascript
 function clearControls() {
