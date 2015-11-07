@@ -1,4 +1,4 @@
-# Week04-DeliciousQuery
+# Comments on Week04-DeliciousQuery
 
 Various comments on creating filters. The recently enhanced question about filters can be found here:
 
@@ -15,6 +15,8 @@ I have updated the question asking for an "array containing only the URL from ea
 [car]: http://www.ccalvert.net/books/CloudNotes/Assignments/DeliciousQuery.html#create-array
 
 ## Mapping
+
+The JavaScript **map** function takes an array of one sort, and converts it into a modified array of a similar type. You pass it to a callback, and each element in the array will be passed to it. Inside that callback, you can transform the objects in the array. After map returns, you have a new array, one in which each element of your array has been transformed by your callback.
 
 I have updated the question on mapping to provide more explanation of what I want. You can see the updated question here:
 
@@ -79,6 +81,41 @@ This is valid JavaScript, and it performs reasonably well. However, it is:
 * Not an example of functional programming. We want to tell the compiler what to do, not how to do it. We just tell the compiler: **map**. We never really define how the map should be made. That is a difference between functional and imperative programming.
 
 The "correct" way to handle this map is shown above, in the section on **Tag Maps**.
+
+## Wrong Way 2 {#wrong-way-two}
+
+Consider this code:
+
+```javascript
+    getMapMidSize: function() { 'use strict';
+        var arrayLength = [];
+        $.each(data, function(index, obj) {
+            arrayLength.push(obj.length);
+            return arrayLength;
+        });
+    },
+```
+
+This code does not use the JavaScript **map** function. We are trying to learn how to use that function to transform an ugly or ungainly array of objects into one that is well suited to our application. In this assignment, all the methods that are named **getMapXXXSize** should call the **map** method. Once again, here is an example call similar to the one that should be found in **getMidSizeMap** method:
+
+```javascript
+	getMap: function() { 'use strict';
+		return this.deliciousLinks.map(function(link) {
+			return { 'url': link.u };
+		});
+	}
+```
+
+The key code is the call to **map**:
+
+```javascript
+deliciousLinks.map(function(etc...
+```
+
+Reference: [map][mdn-map]
+
+[mdn-map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
 
 ## Handling Filters
 

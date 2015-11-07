@@ -153,6 +153,8 @@ queryDelicious.runQuery = function(subject) { 'use strict';
 
 We create an object called queryDelicious with with four methods and two properties. Three of the methods are defined inside the object literal, the fourth, called **runQuery** is defined after the object literal is declared. Normally one would not mix the two styles like this, however, I do this only because we are in a teaching environment: I want to show you that you have a choice of two different styles when declaring JavaScript objects. It is up to you choose the one you prefer.
 
+The JavaScript **map** function takes an array of one sort, and converts it into a modified array of a similar type. You pass it to a callback, and each element in the array will be passed to it. Inside that callback, you can transform the objects in the array. After map returns, you have a new array, one in which each element of your array has been transformed by your callback.
+
 ## Step 05: Create Array {#create-array}
 
 In **test-basic.js** add the following tests, and get them to pass:

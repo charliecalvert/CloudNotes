@@ -117,7 +117,7 @@ jscs: {
 
 In the code above, note how we use the bang operator to tell **jscs** to skip a file: **!spec/bitly-links.js**.
 
-We also need to turn off checking for [Camel Case violations][ccv]. While we are at it, let's set the max line length to 120, which is more reasonable for modern editors. This means our **.jscsrc** file for **BitlyInteractive** and **BitlyRefine** should look like this:
+We also need to turn off checking for [CamelCase violations][ccv]. While we are at it, let's set the max line length to 120, which is more reasonable for modern editors. This means our **.jscsrc** file for **BitlyInteractive** and **BitlyRefine** should look like this:
 
 ```json
 {

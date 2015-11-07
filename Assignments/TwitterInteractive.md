@@ -176,7 +176,18 @@ $(document).ready(function() {
 });
 ```
 
-At first, just display the **text** property from **statuses** array. Once that is working, you might want to get the first url from the **urls** array in the **entities** property and turn the text field into a hyperlink.
+At first, just display the **text** property from **statuses** array. Once that is working, you might want to get the first url from the **urls** array in the **entities** property and turn the text field into a hyperlink. More specifically:
+
+Our code should add the tweet text:
+
+- to the list as a hyperlink if it has a Url
+
+If it does not have a url, it should add it:
+
+- to the list but without a hyperlink
+- To the table
+
+It is **very important** that you test to make sure there are actually are URLs in the **entities.urls** array. If there are none, and you try to access one, then your code will throw a variable **undefined** error.
 
 The data you get back is shaped a bit like this:
 
