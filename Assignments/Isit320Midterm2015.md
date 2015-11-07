@@ -1,8 +1,34 @@
 # Isit320 Midterm 2015
 
-Polish the **BitlyRefine** and **TwitterRefine** programs. Create a program for viewing images stored in the cloud. The program should integrate both Bitly and Twitter. In particular, you should be able to view a *gallery* of images created from Bitly links or Twitter posts.
+This document is not complete, but there is enough here to get you started.
 
-## Image Viewing
+Polish the **BitlyRefine** and **TwitterRefine** programs.
+
+Extend these programs to support viewing images stored in the cloud. The program should integrate Delicious, Bitly and Twitter. In particular, you should be able to view a *gallery* of images created from Bitly or Delicious links and Twitter posts.
+
+Store links in:
+
+- Bitly
+- Delicious
+- Twitter
+
+## What to Build {#overview}
+
+Create a new project or copy your **Bitly Refine** or **Twitter Refine** application into a new folder labeled: **Week08-Midterm**.
+
+Your modified app should have the following.
+
+Three radio buttons in a panel labeled **Image Source**:
+
+- Bitly
+- Delicious
+- Twitter
+
+When the buttons are selected, search Bitly, Delicious or Twitter for images. These means you need to create groups or tags that will return the results you expect.
+
+Display the images in a clickable list. When the user clicks on an item, display the image.
+
+## Finding Images
 
 There are two ways that I know about for storing images in the cloud:
 
@@ -11,11 +37,52 @@ There are two ways that I know about for storing images in the cloud:
 
 Both Google Photos (with Picassa Web) and Imagur provide at least a limited ability to create galleries and show them on your web site. However, these services have real limitations, and they feel, to me at least, a bit tentative, as if they may not be available for very long.
 
-For the final I want you to get these services up and running. You will then store links at least two of these services:
+As a result, I want you to use a combination of:
 
-- Bitly
-- Delicious
-- Twitter
+- Free Creative Commons Images
+- Images from S3 for which you must pay
+
+## Creative Common's Images
+
+The images under the creative commons license are usually free for you to use in your own program. Sometimes you need to provide attribution, and some images can be edited and others can't, but overall, this is a great source of free images. Here are two simple ways to find creative commons images:
+
+- Google search
+- Creative commons search
+
+### Google Search
+
+- Go to Google. Search on subject, for instance: [cpu](http://www.google.com/search?q=cpu)
+- Click on Images: [CPU Image Search](http://www.google.com/search?q=cpu&source=lnms&tbm=isch)
+- Click on Search Tools
+- Set the license option to: [labeled for reuse with modification](http://www.google.com/search?q=cpu&source=lnms&tbm=isch&tbs=sur:fmc)
+
+You are looking at images that you are free to reuse. Right click and choose **Copy image url**.
+
+**NOTE**: *By clicking on some of these images, you can sometimes drill down to the site on which they are hosted. In those cases, you can often get more information, such as licensing, links to images of various sizes, etc.*
+
+Here is a freely reusable image found on Google search:
+
+![cpu](https://pixabay.com/static/uploads/photo/2014/12/11/22/07/cpu-564772_640.jpg)
+
+Below is a thumbnail which you can click to get the full size image.
+
+[![arch](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/500px-80486DX2_arch.svg.png)[https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/2000px-80486DX2_arch.svg.png]]
+
+### Creative Commons Search
+
+Go to the creative commons search site:
+
+- [https://search.creativecommons.org/](https://search.creativecommons.org/).
+
+Enter a search string such as **sailing**. Select one of the boxes under the **Search using** tag:
+
+- Flickr Images
+- Google Images
+- Pixabay
+
+Muck around until you get the URL for your image.
+
+![Sailing](https://pixabay.com/static/uploads/photo/2015/03/31/21/24/ships-701596_640.jpg)
 
 ## AWS S3
 
@@ -25,58 +92,35 @@ It simply makes no sense to go through the hastle of trying to get around the li
 
 One pay service that I use frequently is Amazon Web Services S3. Anyone can create an AWS account and use it (within reason) for one year for free. After that, you need to start paying.
 
-First sign up for the free tier or sign into your existing account. Then start to [use S3][use-s3].
+First sign up for [the free tier][free-tier] or sign into your existing account. Then start to [use S3][use-s3].
 
+**NOTE**: *AWS offers one year of free usage for reasonable requests. Be sure to sign up for the free tier. If you have any doubts, please wait until Tuesday before creating your account. However, it is not really that complicated.*
+
+- Use the free tier
+- Have a credit card and a phone ready.
+- Follow [my instructions][use-s3] to start uploading images to your S3 account.
+
+[free-tier](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
 [use-s3]:http://www.elvenware.com/charlie/development/cloud/WebServices.html#s3
 
-http://calculator.s3.amazonaws.com/index.html
 
-![Flower](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/IMG_7818.JPG)
-![Coast](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/IMG_7853.JPG)
-![BigCoast](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/IMG_7866-PANO.jpg)
-![Bernini](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/IMG_8066.JPG)
-![Bernini01](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/IMG_8079.JPG)
-
-## No FavIcon Errors
-
-Your favicon should load on program startup.
+- <http://calculator.s3.amazonaws.com/index.html>
 
 
-[Compare Google Photos and Picasa](https://sites.google.com/site/picasaresources/Home/Picasa-FAQ/general/comparison-different-products)
+## Fav-Icon Missing - 404 {#icon-missing}
 
-## Imagur
+Sometimes, on startup, you get an error about your favorite icon missing. I believe the **CreateExpressProject** script will put a 32 X 32 image file called called **favicon.png** in your **public** directory. To display the icon, you need to open **app.js**. Around line 17 you will find this code:
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/lzuIw"><a href="//imgur.com/a/lzuIw">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+```javascript
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+```
 
-- [Notes](https://help.imgur.com/hc/en-us/articles/204766005-Image-Album-Embed)
+Uncomment the second line and change **favicon.ico** to **favicon.png**.
 
+```javascript
+// uncomment after placing your favicon in /public
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
+```
 
-## Google Plus
-
-Click a photo and choose share. A link becomes available.
-
-Go to Google Photos: [https://photos.google.com/](https://photos.google.com/)
-
-
-
-
-
-http://i.kinja-img.com/gawker-media/image/upload/s--NToAsUmD--/az26xd7xzruqmgauynx0.png
-
-http://webapps.stackexchange.com/questions/48577/how-do-i-embed-a-google-photos-album-into-a-web-site
-
-## Picasa Web Slideshow Shockwave 800px
-
-<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf" width="800" height="533" flashvars="host=picasaweb.google.com&captions=1&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F114412839635832707446%2Falbumid%2F6049859910300540689%3Falt%3Drss%26kind%3Dphoto%26authkey%3DGv1sRgCLT7xri8ktLxBQ%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
-
-
-- [https://goo.gl/photos/WFb5gyU9DWQ6eeRT8](https://goo.gl/photos/WFb5gyU9DWQ6eeRT8)
-
-## Picasa Web Album Image II
-
-<table style="width:194px;"><tr><td align="center" style="height:194px;background:url(https://www.gstatic.com/pwa/s/v/lighthousefe_20150907.00_p0/transparent_album_background.gif) no-repeat left"><a href="https://picasaweb.google.com/114412839635832707446/11615?authuser=0&feat=embedwebsite"><img src="https://lh3.googleusercontent.com/-C0svApvb9gA/Vj1xYGFdhkE/AAAAAAABIG0/XMk13YpHebM/s160-c-Ic42/11615.jpg" width="160" height="160" style="margin:1px 0 0 4px;"></a></td></tr><tr><td style="text-align:center;font-family:arial,sans-serif;font-size:11px"><a href="https://picasaweb.google.com/114412839635832707446/11615?authuser=0&feat=embedwebsite" style="color:#4D4D4D;font-weight:bold;text-decoration:none;">11/6/15</a></td></tr></table>
-
-## And Picasa Web SWF Shockwave 288 px
-
-<embed type="application/x-shockwave-flash" src="https://photos.gstatic.com/media/slideshow.swf" width="288" height="192" flashvars="host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F114412839635832707446%3Falt%3Drss%26kind%3Dphoto%26access%3Dpublic%26psc%3DF%26q%26uname%3D114412839635832707446" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
-
+Now the error should go away. You can use any image editor you want to modify the **favicon.png** file. On Linux, the tool of choice is called **gimp**, but simpler tools will probably a do simple job like this just as well.
