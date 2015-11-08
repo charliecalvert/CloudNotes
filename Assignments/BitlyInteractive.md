@@ -583,6 +583,67 @@ Include two radio buttons that allow the user to make this selection. If they se
 
 **NOTE**: *Ultimately we will want to make the call to the live Bitly data on the server side so the user cannot see your access token. We aren't doing that yet, however.*
 
+## Jasmine Fixtures
+
+Suppose we write code like the following where one of two branches will execute:
+
+```javascript
+if (bitlyLink.archived) {
+    document.getElementById('checkBoxArchived').checked = true;
+} else {
+    document.getElementById('checkBoxArchived').checked = false;
+}
+```
+
+Suppose further that this code gets called by our unit tests. Since at least one branch in this **if** statement is sure to execute, we need to be sure it will not throw an error.
+
+We have, however, a problem: *we are not loading any HTML in our tests.* As a result, there will be no element with an ID of **checkBoxArchived**. This means, the code will fail with an error like one of these:
+
+```
+ TypeError: Cannot set property 'checked' of null
+ TypeError: 'null' is not an object (evaluating document.getElementById etc...)
+```
+
+It is possible to have our tests load our program's HTML files, but it turns out there is a simpler solution. We can take the little fragment of HTML that we need, and insert it into our tests. The code, which belongs in **spec/test-basic** looks like this:
+
+```javascript
+describe('Test Bitly Links', function() {
+    'use strict';
+
+
+    beforeEach(function() {
+        var fixture =
+            '<div id="fixture">' +
+                '<input type="checkbox" name="checkBoxPrivate" value="checkBoxPrivate" id="checkBoxPrivate">' +
+                '<label for="checkBoxPrivate">&nbsp; Private</label>' +
+                '<input type="checkbox" name="checkBoxArchived" value="checkBoxArchived" id="checkBoxArchived">' +
+                '<label for="checkBoxArchived">&nbsp; Private</label>' +
+            '</div>';
+
+        document.body.insertAdjacentHTML('afterbegin',  fixture);
+    });
+
+    // remove the html fixture from the DOM
+    afterEach(function() {
+        document.body.removeChild(document.getElementById('fixture'));
+    });
+
+    beforeEach(function() {
+        spyOn($, 'getJSON').and.callFake(function(url, success) {
+            success(bitlyLinks);
+			etc....
+```
+
+I've tried to provide enough context so you can see exactly where to put it. The code is quite simple:
+
+- We put the HTML for our checkboxes in a string called **fixture**.
+- We use the built-in JavaScript **insertAdjacentHTML** function to insert out HTML into the empty body of the document object provided by the instance of **PhantomJS** launched by karma. (This would work if we used **Chrome** instead of **PhontomJS**).
+- After the test is done, remove the **fixture** to ensure that one test does not rely on the results of another test.
+
+With this code in place our calls to **document.getElementById** succeed and our tests pass.
+
+If it takes you a moment to wrap your head around this, please sit back and read all this again. It is an extremely useful technique, and one that can help us write much more robust tests.
+
 ## Turn it in
 
 Place your code in your repository in a folder with the name specified above. When you submit the assignment include the url of your repository and/or the folder in which the code you created resides. You can also include a comment of your choosing.
