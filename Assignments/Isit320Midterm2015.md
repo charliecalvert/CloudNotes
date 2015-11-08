@@ -14,7 +14,7 @@ Store links in:
 
 ## What to Build {#overview}
 
-Create a new project or copy your **Bitly Refine** or **Twitter Refine** application into a new folder labeled: **Week08-Midterm**.
+Create a new project or copy your **Bitly Refine** or **Twitter Refine** application into a new folder labeled: **Week08-Midterm**. If you copied a project, make all the appropriate changes regarding the name of the application. When changing the title in **/routes/index.js** make sure to include your name. For instance: **midterm-lastname**.
 
 Your modified app should have the following.
 
@@ -24,9 +24,19 @@ Three radio buttons in a panel labeled **Image Source**:
 - Delicious
 - Twitter
 
-When the buttons are selected, search Bitly, Delicious or Twitter for images. These means you need to create groups or tags that will return the results you expect.
+When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images:
+
+- **#isit320-calvert-images**
+
+Make sure the dashes work. I tried this on Bitly: **elf-image**. It did not work. But **image** did. I assume the trouble was the tag.
+
+The query on bitly:
+
+	https://api-ssl.bitly.com/v3/user/link_history?access_token=<TOKEN>&query=image
 
 Display the images in a clickable list. When the user clicks on an item, display the image.
+
+![Midterm Overview](https://s3.amazonaws.com/bucket01.elvenware.com/images/isit320-midterm-2015.png)
 
 ## Finding Images
 
@@ -62,11 +72,13 @@ You are looking at images that you are free to reuse. Right click and choose **C
 
 Here is a freely reusable image found on Google search:
 
-![cpu](https://pixabay.com/static/uploads/photo/2014/12/11/22/07/cpu-564772_640.jpg)
+![cpu](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/cpu-564772_640.jpg)
 
 Below is a thumbnail which you can click to get the full size image.
 
-[![arch](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/500px-80486DX2_arch.svg.png)[https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/2000px-80486DX2_arch.svg.png]]
+[![arch](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/500px-80486DX2_arch.svg.png)][big-link]
+
+[big-link]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/2000px-80486DX2_arch.svg.png
 
 ### Creative Commons Search
 
@@ -82,7 +94,9 @@ Enter a search string such as **sailing**. Select one of the boxes under the **S
 
 Muck around until you get the URL for your image.
 
-![Sailing](https://pixabay.com/static/uploads/photo/2015/03/31/21/24/ships-701596_640.jpg)
+![Sailing](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/ships-701596_640.jpg)
+
+**NOTE**: *Apparently pixabay images can't loaded directly from their site. You will therefore have to download them, and then host them on another site, such as S3.
 
 ## AWS S3
 
