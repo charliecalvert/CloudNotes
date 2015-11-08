@@ -38,6 +38,82 @@ Display the images in a clickable list. When the user clicks on an item, display
 
 ![Midterm Overview](https://s3.amazonaws.com/bucket01.elvenware.com/images/isit320-midterm-2015.png)
 
+## Showing Images
+
+To show an image dynamically, you can start with an image tag in your HTML:
+
+```jade
++elfPanel("Image Display").elfDiv
+    img#image
+```
+
+Then its nice to have a little code that will fill in the **src** field of the image tag when the user selects an image:
+
+```javascript
+hyperlinkUrl: function(index, text, url) {
+    var anchor = '<a href="' + url + '" target="_blank">' + text + '</a>';
+    var details = '<a onclick="elfDisplay.displayImage(' + index + ')">Details</a>';
+    return { title: anchor, keyword: details };
+},
+
+displayImage: function(index) {
+    var link = elfBitly.getLinkHistoryItem(index);
+    $('#image').attr('src', link.keyword_link);
+},
+```
+
+You have seen a variation of the first method before under the name **appendUrl**. It is used to wrap a bit of text in an anchor. This makes it clickable; it turns it into a hyperlink.
+
+Here is what you **img** tag looks like before the **displayImage** method is called:
+
+```xml
+<img id="image">
+```
+
+After the **displayImage** method is called, the HTML that you create looks like this:
+
+```xml
+<img id="image" src="http://bit.ly/bootstrap-basics-01">
+```
+
+The second line of code in the method sets the **src** attribute of the **img** element. This is all that needs to be done to load the image. If you are at all unclear on how the [img tag][img-tag] and its **src** attribute work, please take a moment to do some research on the web. You have to understand those subjects to understand this code, or to continue doing any kind of serious work on the web.
+
+**NOTE**: *In my implementation, both the **hyperlinkUrl** method, which you have seen before, and the **displayImage** method, are part of the **elfDisplay** object.*
+
+[img-tag]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+
+## Create Modules
+
+I might well need more before I'm done, but I'm working hard to create small, easy to manage objects:
+
+```bash
+[charlie@rohan-gate ~/Git/isit320-calvert-2015/Week08-Midterm]
+$ ls -l public/javascripts/
+total 16
+-rw-rw-r-- 1 charlie charlie 2467 Nov  7 15:19 control.js
+-rw-rw-r-- 1 charlie charlie 2357 Nov  7 15:47 display.js
+-rw-rw-r-- 1 charlie charlie 1143 Nov  7 15:26 downloads.js
+-rw-rw-r-- 1 charlie charlie  475 Nov  7 14:51 movement.js
+```
+
+Of course, you will have to load this code in **layout.jade:**
+
+```jade
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+    script(src="components/jquery/dist/jquery.js")
+    script(src="components/bootstrap/dist/js/bootstrap.js")
+    script(src="javascripts/control.js")
+    script(src="javascripts/downloads.js")
+	etc...
+```
+
 ## Finding Images
 
 There are two ways that I know about for storing images in the cloud:
