@@ -585,6 +585,8 @@ Include two radio buttons that allow the user to make this selection. If they se
 
 ## Jasmine Fixtures
 
+Test fixtures are created to help us set up the environment for our tests. Generally, they involve creating a fake, or ideal, environment that cannot fail. When our tests run against that environment, we can be sure it is the code we are testing that is failing, rather than the environment in which it runs. When we **SpyOn** a function we are set up a fixture. In particular, we create a fake version of **getJSON** that is more or less guaranteed not to fail. In this section, we will create another fixture: a few lines of HTML that we use in our tests.
+
 Suppose we write code like the following where one of two branches will execute:
 
 ```javascript
@@ -643,6 +645,12 @@ I've tried to provide enough context so you can see exactly where to put it. The
 With this code in place our calls to **document.getElementById** succeed and our tests pass.
 
 If it takes you a moment to wrap your head around this, please sit back and read all this again. It is an extremely useful technique, and one that can help us write much more robust tests.
+
+Here is a sample program you can study:
+
+- JsObjects [InjectHtmlFixture][ihf]
+
+[ihf]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/InjectHtmlFixture
 
 ## Turn it in
 
