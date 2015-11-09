@@ -76,6 +76,10 @@ script(src="javascripts/etc...
 script(src="javascripts/etc...
 ```
 
+Don't forget to include the **downloads** module in the project. It was given to you in [bitly interactive][bid].
+
+[bid]: http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyInteractive.html#the-downloads-module
+
 ## Elf Unity
 
 This is a refactoring issue. We want to take a halfway step to fixing the global namespace problem. Let's begin by making sure all our objects begin with the letters **elf**.

@@ -509,7 +509,7 @@ var downloads = function() {
     'use strict';
 };
 
-downloads.accessToken = '2ac4b4ccf91019cff6a6b3f23bcbe05ec2bf7a8c';
+downloads.accessToken = '2ac etc';
 
 downloads.dataTypes = {"dtLocal": 0, "dtCloud": 1};
 
