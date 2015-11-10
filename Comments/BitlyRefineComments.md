@@ -40,6 +40,24 @@ var keyword = "<td>" + link.user + "</td>";
 
 That code won't work because Bitly does not return data with a property called **text** or **user**. Instead it has properties called **title** and **keyword_link**.
 
+## Clear Data
+
+Before you fill in the table, you should clear any data that might already be in it. Otherwise our code continually appends code to the table. It is unlikely the user would even know this is happening since the new rows are not visible. We can only see four or five rows at a time, so if you append data down on the 25th row, for instance, the user won't be able to see it.
+
+There are several reasonable solutions to this problem. One simple fix might be to write code like this:
+
+```javascript
+renderTable: function(links) {
+    'use strict';
+    $("#tableLinks").empty();
+    $.each(links, function(index, link) { 
+    
+    // Code omitted here...
+},
+```
+
+The call to empty ensures that the any data appended to the table will at least begin on row 1. This ensures that at least the first few rows of data are visible, and that the user is given a visual cue that something has changed.
+
 ## Don't forget the Movement Object
 
 A few students did not link in the **movement** object. It is described in general terms in the [Iterate section][bii] of the Bitly Interactive assignment. Those of you who turned that assignment in should also have the complete code for that object.

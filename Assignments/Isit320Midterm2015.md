@@ -23,8 +23,15 @@ Three radio buttons in a panel labeled **Image Source**:
 - Bitly
 - Delicious
 - Twitter
+- Local
 
-When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images:
+When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images: **#calvert images**.
+
+Be sure you include at least the tests from **Bitly-Refine**. I'll give you more tests in class on Tuesday.
+
+## Classes
+
+The main class in **control.js** should now be called **elfMidterm**. In the past similar objects have had names such as **elfBitly**, **queryDelicious** and **bitlyUrlParser**
 
 - **#isit320-calvert-images**
 
@@ -214,3 +221,113 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 ```
 
 Now the error should go away. You can use any image editor you want to modify the **favicon.png** file. On Linux, the tool of choice is called **gimp**, but simpler tools will probably a do simple job like this just as well.
+
+## Create Launcer
+
+When we run our tests, **control.js** gets loaded. At the bottom (or top) of **control.js** is this code:
+
+```javascript
+$(document).ready(function() {
+    'use strict';
+    $('#localData').prop('checked', true);
+    elfMidterm.getBitlyLinks(-1);
+    $('#dataSource').click(elfDownloads.dataTypeSelection);
+});
+```
+
+Notice in particular the call to **getBitlyLinks**. This call, or any similar call, will fail when we are running our tests. There are several solutions to this, but on simple solution is to move **documennt ready** into its own file, and then exclude that file from our tests. In particular, we can create a file called **loader.js**:
+
+```javascript
+$(document).ready(function() {
+    'use strict';
+    $('#localData').prop('checked', true);
+    elfMidterm.getBitlyLinks(-1);
+    $('#dataSource').click(elfDownloads.dataTypeSelection);
+});
+```
+
+Then load the file in **layout.jade**
+
+```javascript
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+    script(src="components/jquery/dist/jquery.js")
+    script(src="components/bootstrap/dist/js/bootstrap.js")
+    script(src="javascripts/loader.js")
+    script(src="javascripts/control.js")
+    script(src="javascripts/downloads.js")
+    script(src="javascripts/movement.js")
+    script(src="javascripts/display.js")
+  body
+    block content
+```
+
+And exclude it form **karma.conf.js**:
+
+```javascript
+        files: [
+            'public/components/jquery/dist/jquery.min.js',
+            'public/javascripts/*.js',
+            'spec/test*.js',
+            'spec/bitly-links.js'
+        ],
+
+        // list of files to exclude
+        exclude: ['public/javascripts/loader.js'],
+```
+
+Now our **document ready** function will get loaded when we run our program, but not when we run our tests.
+
+
+## Hint: Manually Run One Test {#run-one-test-manual}
+
+If you want to run only one test, change, **it** to **fit**. To run only one suite, change **describe** to **fdescribe**. In this example, the **elfMidterm** test will be run but the **elfDownloads** test will not be run:
+
+```javascript
+describe('File Suite', function() {
+    'use strict';
+
+    fit('expects elfMidterm to be defined', function() {
+        var isDefined = typeof elfMidterm !== 'undefined';
+        expect(isDefined).toBe(true);
+    });
+
+    it('expects elfDownloads to be defined', function() {
+        var isDefined = typeof elfDownloads !== 'undefined';
+        expect(isDefined).toBe(true);
+    });
+
+```
+
+## Hint Automatically Run One Test
+
+Open up two terminal windows. In one window, start your tests with either of these commands:
+
+```bash
+grunt test
+karma start
+```
+
+In the other termainl window, run this command:
+
+```bash
+karma run -- --grep="status code of 200"
+```
+
+This tells karma to run the tests, and display the output, but to show the results for only the test that includes the text **status code of 200**. In particular, that would be a test that looks like this:
+
+```javascript
+it('shows we have a status code of 200', function() {
+    elfMidterm.getBitlyLinks();
+    var statusCode = elfMidterm.getStatusCode();
+    expect(statusCode).toBe(200);
+});
+```
+
+The string you pass to **grep** can be any regular expression. We have not covered reg-ex in this class, but there is a vast amount of information on that topic on the web.
