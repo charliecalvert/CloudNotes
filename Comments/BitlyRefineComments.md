@@ -104,6 +104,26 @@ elfDownloads.dataTypes = {
 etc...
 ```
 
+## More on Consistent Names
+
+In index.jade, a student wrote this:
+
+```jade
+button.btn.btn-success.btn-large(type='button', onclick="movement.left()")
+```
+
+But in **movement.js** the **movement** object was correctly renamed to **elfMovement**. This means we must update our jade code:
+
+```jade
+button.btn.btn-success.btn-large(type='button', onclick="elfMovement.left()")
+```
+
+Notice that the jade code now references **elfMovement** rather than movement.
+
+I'm intentionally putting up these kinds of roadblocks so that I can be sure that everyone understands the relationship between the IDs and objects referenced in one file, and the IDs and objects declared in another file.
+
+Here is another way to look at it: I frequently give you code to help you get started, but you must show that you have worked with the code and understood its syntax. I put tests like this in front of you so you can demonstrate your understanding.
+
 ## Don't Directly Link to JSON Files
 
 Some students wrote **layout.jade** files that look like this:
@@ -148,4 +168,5 @@ Now consider this JSON object:
 It too consists of a list of name-value pairs separated by a comma. Functions, however, are not allowed. Nor is the object assigned to a variable. In JSON, strings must be in double quotes.
 
 We can link JavaScript files into a web application with a **script** tag. We should not link JSON files into our projects with a script tag. Instead, we usually access JSON in a web application by loading it with an http request (**ajax**).
+
 
