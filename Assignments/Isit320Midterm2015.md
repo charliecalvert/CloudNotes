@@ -222,7 +222,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 
 Now the error should go away. You can use any image editor you want to modify the **favicon.png** file. On Linux, the tool of choice is called **gimp**, but simpler tools will probably a do simple job like this just as well.
 
-## Create Launcer
+## Create Launcher
 
 When we run our tests, **control.js** gets loaded. At the bottom (or top) of **control.js** is this code:
 
@@ -285,17 +285,19 @@ And exclude it form **karma.conf.js**:
 Now our **document ready** function will get loaded when we run our program, but not when we run our tests.
 
 
-## Hint: Manually Run One Test {#run-one-test-manual}
 
-If you want to run only one test, change, **it** to **fit**. To run only one suite, change **describe** to **fdescribe**. In this example, the **elfMidterm** test will be run but the **elfDownloads** test will not be run:
+## Test Downloads
+
+Save the following as **spec/test-downloads.js** and make sure all the tests pass:
 
 ```javascript
-describe('File Suite', function() {
+describe('Downloads Suite', function() {
     'use strict';
 
-    fit('expects elfMidterm to be defined', function() {
-        var isDefined = typeof elfMidterm !== 'undefined';
-        expect(isDefined).toBe(true);
+    var downloadKeys;
+
+    beforeEach(function() {
+        downloadKeys = Object.keys(elfDownloads);
     });
 
     it('expects elfDownloads to be defined', function() {
@@ -303,31 +305,66 @@ describe('File Suite', function() {
         expect(isDefined).toBe(true);
     });
 
-```
+    it('Expects elfDownloads to contain Keys', function() {
+        var downloadKeys = Object.keys(elfDownloads);
+        expect(downloadKeys).toBeTruthy();
+    });
 
-## Hint Automatically Run One Test
+    it('Expects elfDownloads to contain accessToken', function() {
+        expect(downloadKeys.indexOf('accessToken')).toBeGreaterThan(-1);
+    });
 
-Open up two terminal windows. In one window, start your tests with either of these commands:
+    it('Expects elfDownloads to contain dataTypes', function() {
+        expect(downloadKeys.indexOf('dataTypes')).toBeGreaterThan(-1);
+    });
 
-```bash
-grunt test
-karma start
-```
+    it('Expects elfDownloads to contain dataType', function() {
+        expect(downloadKeys.indexOf('dataType')).toBeGreaterThan(-1);
+    });
 
-In the other termainl window, run this command:
+    it('Expects elfDownloads to contain dataTypeSelection', function() {
+        expect(downloadKeys.indexOf('dataTypeSelection')).toBeGreaterThan(-1);
+    });
 
-```bash
-karma run -- --grep="status code of 200"
-```
+    it('Expects elfDownloads to contain getBitlyData', function() {
+        expect(downloadKeys.indexOf('getBitlyData')).toBeGreaterThan(-1);
+    });
 
-This tells karma to run the tests, and display the output, but to show the results for only the test that includes the text **status code of 200**. In particular, that would be a test that looks like this:
+    it('Expects elfDownloads to contain clearControls', function() {
+        expect(downloadKeys.indexOf('clearControls')).toBeGreaterThan(-1);
+    });
 
-```javascript
-it('shows we have a status code of 200', function() {
-    elfMidterm.getBitlyLinks();
-    var statusCode = elfMidterm.getStatusCode();
-    expect(statusCode).toBe(200);
+    it('Expects elfDownloads.dataTypes to be defined', function() {
+        expect(elfDownloads.dataTypes).toBeTruthy();
+    });
+
+    it('Expects elfDownloads.dataTypes to be an array', function() {
+        expect(elfDownloads.dataTypes instanceof Array).toBeTruthy();
+    });
+
+    it('Expects elfDownloads.dataTypes to contain four elements', function() {
+        expect(elfDownloads.dataTypes.length).toBe(4);
+    });
+
+    it('Expects elfDownloads.dataType to be defined', function() {
+        expect(elfDownloads.dataType).toBeTruthy();
+    });
+
+    it('Expects elfDownloads.dataType to be of type string', function() {
+        expect(typeof elfDownloads.dataType).toBe('string');
+    });
+
+    it('Shows that elfDownloads.getBitlyData is a function', function() {
+        expect(typeof elfDownloads.getBitlyData).toBe('function');
+    });
+
+    it('Shows that elfDownloads.dataTypeSelection is a function', function() {
+        expect(typeof elfDownloads.dataTypeSelection).toBe('function');
+    });
+
+    it('Shows that elfDownloads.clearControls is a function', function() {
+        expect(typeof elfDownloads.clearControls).toBe('function');
+    });
+
 });
 ```
-
-The string you pass to **grep** can be any regular expression. We have not covered reg-ex in this class, but there is a vast amount of information on that topic on the web.
