@@ -111,7 +111,7 @@ getBitlyLinks: function(accessToken) {
         elfDisplay.render();
         elfDisplay.renderTable(elfBitly.getLinkHistoryArray());
         $('#displayLinks').html(JSON.stringify(result, null, 4));
-    }).fail(function(jqxhr, textStatus, error) {s
+    }).fail(function(jqxhr, textStatus, error) {
         var err = textStatus + ', ' + error;
         console.log('Request Failed: ' + err);
         console.log('url:', url);

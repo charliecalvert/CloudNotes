@@ -2,6 +2,24 @@
 
 Grunt Check Part II provides more information on Grunt.
 
+## The Error Handler
+
+```javascript
+if (app.get('env') === 'development') {
+    console.log("Using Development error handler");
+    app.use(function(err, req, res, next) {
+        'use strict';
+        console.log("Development error handler called");
+        res.status(err.status || 500);
+        console.log("About to render error", err);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+```
+
 ## Get Recent Templates.
 
 Start by getting the tests from **$ELF_TEMPLATES/UnitTest/BitlyRefine**. In **JsObjects** do a **git pull.**. Then from your git repository root folder:
@@ -16,6 +34,15 @@ or
 cp $ELF_TEMPLATES/UnitTest/BitlyRefine/* spec/.
 ```
 
+## Create start Function
+
+```javascript
+    start: function() {
+        $('#localData').prop('checked', true);
+        elfMidterm.getBitlyLinks(elfDownloads.dataTypes.dtLocal);
+        $('#dataSource').click(elfDownloads.dataTypeSelection);
+    }
+```
 
 ## Create Launcher {#create-launcher}
 
