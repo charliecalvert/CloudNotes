@@ -78,6 +78,8 @@ script(src="javascripts/etc...
 
 Don't forget to include the **downloads** module in the project. It was given to you in [bitly interactive][bid].
 
+More information is available below in the Create Table section.
+
 [bid]: http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyInteractive.html#the-downloads-module
 
 ## Elf Unity

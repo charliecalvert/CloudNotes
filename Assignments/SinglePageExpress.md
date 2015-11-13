@@ -209,8 +209,13 @@ The updated Jade:
 ```jade
 h1 Page Two
 
+button#pageTwoButton Page Two Button
+
+hr
+
 div
     p#display
+    p#pageTwoButtonDisplay
 
 div
     p#error
@@ -277,3 +282,33 @@ grunt test
 ## Turn it in
 
 The usual. Be sure to call out the folder name if it differs from what is specified above in the **setup** section.
+
+## Hint
+
+Suppose you want to show the content from TwitterRefine in Page02. (This is close to what you do for the midterm.)
+
+What I've done below, is copy part of the Jade from TwitterRefine into Page02.jade. Also copy over the mixins. Don't forget to get the CSS for elfDiv and scroller class.
+
+```jade
+include mixin-radios
+include mixin-inputs
+
+h1 Page Two
+
+button#pageTwoButton Page Two Button
+
+hr
+
+div
+    p#display
+    p#pageTwoButtonDisplay
+
+div
+    p#error
+
++elfPanel("TItle").elfDiv
+    h1= title
+    p Welcome to #{title}
+
+	// FILL IN THE REST OF YOUR TWITTER REFINE INDEX.JADE HERE
+```
