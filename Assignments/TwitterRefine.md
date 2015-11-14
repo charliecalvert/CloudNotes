@@ -44,11 +44,13 @@ Here is how to send a custom query from the client to the server. Make these cha
 
 ```javascript
 function clearControls() {
+	'use strict';
     $('#tweetList').empty();
     $('#tableLinks').empty();
 }
 
 function search() {
+	'use strict';
     var searchQuery = $('#searchQuery').val();
     $.getJSON('/search', {"q": searchQuery}, function(result) {
         $('#tweetData').html(JSON.stringify(result, null, 4));
@@ -113,6 +115,7 @@ We want to create a new route that searches on a user timeline. In effect, you a
 
 ```javascript
 router.get('/user-timeline', function(req, res, next) {
+	'use strict';
     var client = getClient();
     var params = {
         screen_name: 'calvertbc'
@@ -147,6 +150,7 @@ Normally, we would create a method like this that would initilize our buttons:
 
 ```javascript
 $(document).ready(function() {
+	'use strict';
     $('#getTimeline').click(twitterRefine.getTimeline);
     $('#search').click(twitterRefine.search);
 });
@@ -156,6 +160,7 @@ Let's move it into its own method:
 
 ```javascript
 var init: function() {
+	'use strict';
     $('#getTimeline').click(twitterRefine.getTimeline);
     $('#search').click(twitterRefine.search);
 }
@@ -172,6 +177,7 @@ Then, as we refine the code further, let's move it into an object that holds all
 var twitterRefine = {
 
     init: function() {
+    	'use strict';
         $('#search').click(twitterRefine.search);
         $('#getTimeline').click(twitterRefine.getTimeline);
     },
