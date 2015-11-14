@@ -27,9 +27,34 @@ Three radio buttons in a panel labeled **Image Source**:
 
 When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images: **#calvert images**.
 
-Be sure you include at least the tests from **Bitly-Refine**. I'll give you more tests in class on Tuesday.
+Make some other minor changes. For instance:
 
-## Classes
+- **elfDownloads.getBitlyData** should now be **elfDownloads.getLinks**. The point is that the function now handles more than just Bitly data.
+
+## What to Test
+
+There is a folder called $ELF_TEMPLATES/UnitTest/Isit320Midterm2015 which currently contains at least one test suite. Over the weekend I will be moving more tests into it.
+
+Make sure all the tests for **BitlyRefine** pass, as expained [here][brut].
+
+Make sure the **check-karma-grunt-config** bash script passes. This file shold be in your **~/bin** directory:
+
+```bash
+cp $JSOBJECTS/Utilities/NodeInstall/check-karma-grunt-config ~/bin/.
+```
+
+Then copy the tests from the Isit320Midterm2015 directory to your **spec** folder and make sure they all pass. The goal here is to help you complete the midterm, but getting the tests to pass also effects your grade.
+
+You can have tests of your own besides the ones that I create. It would be good to prefix your tests with your last name:
+
+- lastname-test-basic.js
+- lastname-custom-tests.js
+
+And so on. I'm not concerned about the name you give you the test files, only that I can easily tell your tests from my tests.
+
+[brut]: http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyRefine.html#unit-tests
+
+## Objects
 
 The main class in **control.js** should now be called **elfMidterm**. In the past similar objects have had names such as **elfBitly**, **queryDelicious** and **bitlyUrlParser**
 

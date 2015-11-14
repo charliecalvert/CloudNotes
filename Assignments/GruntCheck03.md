@@ -39,27 +39,27 @@ Add these tasks to your Gruntfile:
 
 ```javascript
 jade: {
-            compile: {
-                options: {
-                    pretty: true,
-                    data: {
-                        debug: false
-                    }
-                },
-                files: {
-                    'spec/fixtures/fixture.html': ['views/fixture.jade', '$ELF_TEMPLATES/JadeMixins/*.jade']
-                }
+    compile: {
+        options: {
+            pretty: true,
+            data: {
+                debug: false
             }
         },
-
-        exec: {
-
-            stripExtends: {
-                cmd: function() {
-                    return 'sed "/extend/d" views/index.jade > views/fixture.jade';
-                }
-            }
+        files: {
+            'spec/fixtures/fixture.html': ['views/fixture.jade', '$ELF_TEMPLATES/JadeMixins/*.jade']
         }
+    }
+},
+
+exec: {
+
+    stripExtends: {
+        cmd: function() {
+            return 'sed "/extend/d" views/index.jade > views/fixture.jade';
+        }
+    }
+}
 ```
 
 Then near the bottom load the tasks:
@@ -112,7 +112,7 @@ describe('Test Jade', function() {
 
     it('shows we can get at least 1 <P> element', function() {
         var paragraphs = $('p');
-        expect(inputs.length).toBeGreaterThan(0);
+        expect(paragraphs.length).toBeGreaterThan(0);
     });
 
 });

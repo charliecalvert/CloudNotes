@@ -1,4 +1,4 @@
-#BitlyRefine
+# Overview
 
 This is the midterm. Your goal is to refine the BitlyProgram into something reasonably attractive and easy to use.
 
@@ -343,3 +343,25 @@ Change the title to show the author:
         h1= title
         p by WHAT GOES HERE?
 ```
+
+## Unit Tests
+
+There are many unit tests in $ELF_TEMPLATES/UnitTest/BitlyRefine. Copy them all into your **spec** folder and make sure they all pass.
+
+There are some jasmine-jquery (fixture) tests in some of the specs. For instance, look for these calls to **loadFixtures** or **elfFixtureUtil.loadFixture** in:
+
+- test-jade.js
+- test-interface.js
+
+To get these specs running correctly, see the [GruntCheck03][gc3] assignment. In particular, make sure you have run the following without error:
+
+- check-karma-grunt-config
+- grunt fixture
+
+Run **check-karma-grunt-config** first as it helps you with the setup. Once it is all green, then run **grunt fixture**. Also, take a moment to look at **spec/test-fixture-util.js**.
+
+[gc3]:http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck03.html
+
+## Turn it in
+
+Per usual.
