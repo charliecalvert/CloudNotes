@@ -139,6 +139,76 @@ var timeline = $("#timelineQuery").val();
 $.getJSON('/time-line', {"screen_name": timeline}, function(result) {
 ```
 
+## Startup
+
+**NOTE**: *No one has to follow the structure defined in this section. But if you need help building the application, this section might help.*
+
+Normally, we would create a method like this that would initilize our buttons:
+
+```javascript
+$(document).ready(function() {
+    $('#getTimeline').click(twitterRefine.getTimeline);
+    $('#search').click(twitterRefine.search);
+});
+```
+
+Let's move it into its own method:
+
+```javascript
+var init: function() {
+    $('#getTimeline').click(twitterRefine.getTimeline);
+    $('#search').click(twitterRefine.search);
+}
+
+$(document).ready(function() {
+    'use strict';
+    init();
+});
+```
+
+Then, as we refine the code further, let's move it into an object that holds all the main methods for the program:
+
+```javascript
+var twitterRefine = {
+
+    init: function() {
+        $('#getTimeline').click(twitterRefine.getTimeline);
+        $('#search').click(twitterRefine.search);
+    },
+
+    appendUrl: function (selector, index, text, url) {
+    	// CODE OMITTED HERE
+    },
+
+    // LOTS OF CODE OMITTED HERE
+
+    getTimeline: function () {
+        var timeline = $('#timelineQuery').val();
+        $.getJSON('/time-line', {
+            'screen_name': timeline
+        }, function (result) {
+            $('#tweetData').html(JSON.stringify(result, null, 4));
+            clearControls();
+            $.each(result, function (index, tweet) {
+                if (tweet.entities.urls.length > 0) {
+                    appendUrl('#tweetList', index, tweet.text, tweet.entities.urls[0].url);
+                } else {
+                    renderTable(tweet.text, tweet.user.name);
+                    $('#tweetList').append('<li>' + tweet.text + '</li>');
+                }
+            });
+        });
+    }
+};
+
+$(document).ready(function() {
+    'use strict';
+    twitterRefine.init();
+});
+```
+
+There is a unit test called **test-twitter-core.js** in **$ELF_TEMPLATES/UnitTest/TwitterRefine** that can help you define this object. Just copy the test into your spec folder.
+
 ## Turn it in
 
 As usual. Submit your repository URL and/or the name of the folder designated above.
