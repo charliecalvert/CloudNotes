@@ -172,33 +172,11 @@ Then, as we refine the code further, let's move it into an object that holds all
 var twitterRefine = {
 
     init: function() {
-        $('#getTimeline').click(twitterRefine.getTimeline);
         $('#search').click(twitterRefine.search);
-    },
-
-    appendUrl: function (selector, index, text, url) {
-    	// CODE OMITTED HERE
+        $('#getTimeline').click(twitterRefine.getTimeline);
     },
 
     // LOTS OF CODE OMITTED HERE
-
-    getTimeline: function () {
-        var timeline = $('#timelineQuery').val();
-        $.getJSON('/time-line', {
-            'screen_name': timeline
-        }, function (result) {
-            $('#tweetData').html(JSON.stringify(result, null, 4));
-            clearControls();
-            $.each(result, function (index, tweet) {
-                if (tweet.entities.urls.length > 0) {
-                    appendUrl('#tweetList', index, tweet.text, tweet.entities.urls[0].url);
-                } else {
-                    renderTable(tweet.text, tweet.user.name);
-                    $('#tweetList').append('<li>' + tweet.text + '</li>');
-                }
-            });
-        });
-    }
 };
 
 $(document).ready(function() {
@@ -207,7 +185,6 @@ $(document).ready(function() {
 });
 ```
 
-There is a unit test called **test-twitter-core.js** in **$ELF_TEMPLATES/UnitTest/TwitterRefine** that can help you define this object. Just copy the test into your spec folder.
 
 ## Turn it in
 

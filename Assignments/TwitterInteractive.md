@@ -268,6 +268,7 @@ function appendUrl(selector, index, text, url) {
 }
 ```
 
+
 ## Step Five
 
 The final step will be to use our scrolling table for items without links, and our list for any items that have links. Our vice-versa if you prefer. I'm not sure which is best. The point for now is just to get practice with both ways of displaying data.
@@ -286,6 +287,57 @@ var renderTable = function (text, user) {
 ```
 
 You would want to call this from your loop in the success callback for **getJSON**. The user should be the user name: **result.user.name** (or something like that).
+
+## Step 5.5 Startup
+
+**NOTE**: *No one has to follow the structure defined in this section. But if you need help building the application, this section might help.*
+
+Normally, we would create a method like this that would initilize our buttons:
+
+```javascript
+$(document).ready(function() {
+    $('#search').click(twitterRefine.search);
+});
+```
+
+Let's move it into its own method:
+
+```javascript
+var init: function() {
+    $('#search').click(twitterRefine.search);
+}
+
+$(document).ready(function() {
+    'use strict';
+    init();
+});
+```
+
+
+Then, as we refine the code further, let's move it into an object that holds all the main methods for the program:
+
+```javascript
+var twitterInteractive = {
+
+    init: function() {
+        $('#search').click(twitterRefine.search);
+    },
+
+    appendUrl: function (selector, index, text, url) {
+    	// CODE OMITTED HERE
+    },
+
+    // LOTS OF CODE OMITTED HERE
+
+};
+
+$(document).ready(function() {
+    'use strict';
+    twitterInteractive.init();
+});
+```
+
+There is a unit test called **test-twitter-core.js** and a file called **tweets.js** in **$ELF_TEMPLATES/UnitTest/TwitterInteractive** that can help you define this object. Just copy the test into your spec folder. Don't forget to load **tweets.js** in **karma.conf.js**
 
 ## Turn it in
 
