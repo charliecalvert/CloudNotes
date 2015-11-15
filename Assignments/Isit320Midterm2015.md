@@ -1,10 +1,10 @@
 # Isit320 Midterm 2015
 
-This document is still being tweaker, but there is enough here to get you to a reasonably complete state.
+This document is still being tweaked, but there is enough here to get you to a reasonably complete state.
 
 Here are the steps to complete the midterm:
 
-Polish the following programs, making sure they work smoothly and are reasonably complete:
+Polish the following programs, making sure they run smoothly, test cleanly, and are reasonably complete:
 
 - **BitlyRefine**
 - **TwitterRefine** 
@@ -20,7 +20,7 @@ Store links in:
 - Delicious
 - Twitter
 
-**NOTE**: I have pulled this section of the midterm as too ambitious: View a *gallery* of images created from Bitly or Delicious links and Twitter posts. We will do this before the quarter ends, but not yet.
+**NOTE**: *I have pulled this section of the midterm as too ambitious: **View a *gallery* of images created from Bitly or Delicious links and Twitter posts.** We will do this before the quarter ends, but not yet.*
 
 ## What to Build {#overview}
 
