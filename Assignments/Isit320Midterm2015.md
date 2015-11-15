@@ -1,10 +1,18 @@
 # Isit320 Midterm 2015
 
-This document is not complete, but there is enough here to get you started.
+This document is still being tweaker, but there is enough here to get you to a reasonably complete state.
 
-Polish the **BitlyRefine** and **TwitterRefine** programs. Make sure **BootstrapDelicious** at least works.
+Here are the steps to complete the midterm:
 
-Extend these programs to support viewing images stored in the cloud. The program should integrate Delicious, Bitly and Twitter. In particular, you should be able to view a *gallery* of images created from Bitly or Delicious links and Twitter posts.
+Polish the following programs, making sure they work smoothly and are reasonably complete:
+
+- **BitlyRefine**
+- **TwitterRefine** 
+- **BootstrapDelicious**
+
+Extend at least one of these programs to support viewing images stored in the cloud. Twitter might be a good choice for this.
+
+Create a new program called **Week08-Midterm**. The program should integrate Delicious, Bitly and Twitter.
 
 Store links in:
 
@@ -12,65 +20,148 @@ Store links in:
 - Delicious
 - Twitter
 
+**NOTE**: I have pulled this section of the midterm as too ambitious: View a *gallery* of images created from Bitly or Delicious links and Twitter posts. We will do this before the quarter ends, but not yet.
+
 ## What to Build {#overview}
 
-Create a new project or copy your **Bitly Refine** or **Twitter Refine** application into a new folder labeled: **Week08-Midterm**. If you copied a project, make all the appropriate changes regarding the name of the application. When changing the title in **/routes/index.js** make sure to include your name. For instance: **midterm-lastname**.
+Create a new project based on **Week08-Single-Page-Express**. Alternatively, copy your **Bitly Refine** or **Twitter Refine** application into a new folder labeled: **Week08-Midterm**. If you copied a project, make all the appropriate changes regarding the name of the application. When changing the title in **/routes/index.js** make sure to include your name. For instance: **midterm-lastname**.
 
 Your modified app should have the following.
 
-Three radio buttons in a panel labeled **Image Source**:
+Four radio buttons in a panel labeled **Image Source**:
 
 - Bitly
 - Delicious
 - Twitter
 - Local
 
-When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images: **#calvert images**.
+When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images: **#calvert-images**.
 
-To make all this work, I created three three files:
+To make all this work, I created three three files and put them in **public/javascripts/link**:
 
 - bitly.js
 - twitter.js
 - delicious.js
 
-The code for handling our various link options is in each of these files. The bitly cloud and bitly local requests are handled in bitly.js, the twitter requests in twitter.js, and the delicious requests in delicious.js. In general, the code from:
+The code for handling our various link options is in each of these files. The bitly cloud and bitly local requests are handled in **bitly.js**, the twitter requests in **twitter.js**, and the delicious requests in **delicious.js**. In general, the code from the:
 
-- TwitterRefine **control.js** is found in **twitter.js**
-- DelicousBootstrap **control.js** is found in **delicious.js**
-- BitlyRefine **control.js** is found in **bitly.js**
+- TwitterRefine version of **control.js** is found in **twitter.js**
+- DelicousBootstrap version of **control.js** is found in **delicious.js**
+- BitlyRefine version of **control.js** is found in **bitly.js**
 
-I tweaked the code here and there, and wrapped stand alone functions in JavaScript literal objects, but otherwise the majority of the code ported over unchanged. In general, the code changes were simply because of changes in naming conventions, not in a program logic.
+I tweaked the code here and there, and wrapped stand alone functions in JavaScript literal objects, but otherwise the majority of the code ported over unchanged. In general, the code changes were focused on changes in naming conventions, not in a program logic.
 
-Make some other minor changes. For instance:
+For instance, consider this excerpt from the sole object found in **delicious.js**:
+
+```javascript
+var elfDelicious = {
+
+	// CODE OMITTED HERE
+
+	delicious: function() {
+        'use strict';
+        var subject = $('#subject').val();
+        elfDelicious.callDelicious(subject);
+    },
+
+    // CODE OMITTED HERE
+}
+```
+
+As you can see, this is similar to a method found in **BootstrapDelicious**. There was only one change:
+
+```javascript
+callDelicious(subject) -> elfDelicious.callDelicious(subject)
+```
+
+Make some other minor changes to ensure that the unit tests pass. For instance:
 
 - For better of worse, I have changed **elfDownloads.getBitlyData** to **elfDownloads.getLinks**.
 
+![Midterm Uml Diagram][imu]
+
+[imu]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit320-midterm-uml-2015.png
+
 ## What to Test
 
-There is a folder called $ELF_TEMPLATES/UnitTest/Isit320Midterm2015 which currently contains at least one test suite. Over the weekend I will be moving more tests into it.
+There is a folder called **$ELF_TEMPLATES/UnitTest/Isit320Midterm2015** which currently contains at least numerous test suites. Use the new *focused specs* feature from Jasmine 2.1 to work with one suite at a time. To do this, change **describe** to **fdescribe** or **it** to **fit**. It you make a suite with **fdescribe**, then just that one suite will run and the others won't clutter your screen:
 
-Make sure all the tests for **BitlyRefine** pass, as expained [here][brut].
+- [Focused Spec Examples][fse]
+- [Focused Spec Announcement for Jasmine 2.1][fsa]
 
-Make sure the **check-karma-grunt-config** bash script passes. This file shold be in your **~/bin** directory:
+[fse]: http://jasmine.github.io/2.1/focused_specs.html
+[fsa]: https://blog.pivotal.io/labs/labs/new-key-features-jasmine-2-1
+
+Don't forget to add this to **karma.conf.js**:
+
+```javascript
+reporters: ['spec'],
+
+specReporter: {
+    suppressSkipped: true // do not print information about skipped tests
+},
+
+plugins: [
+    'karma-jasmine',
+    'karma-spec-reporter',
+    etc...
+]
+```
+
+Don't forget that moving code in the **link** folder means you have to tweak the **karma.conf.js** files property:
+
+```javascript
+files: [
+    'public/components/jquery/dist/jquery.js',
+    'node_modules/jasmine-jquery/lib/*.js',
+    'public/javascripts/**/*.js',
+    'spec/test*.js',
+    'spec/bitly-links.js',
+    'spec/**/*.html'
+]
+```
+
+The change is in the third line of the array. We morphed **public/javascripts/*.js** to **public/javascripts/\*\*/*.js**. This ensures that all javascripts in the **public/javascripts** and its subdirectiries gets loaded.
+
+**NOTE**: *It is definitely worth the effort to learn at least a little about glob syntax such as \*\*/*.js*
+
+Also make sure all the tests for **BitlyRefine** pass, as expained [here][brut]. The tests for that program are maintained here:
+
+	$ELF_TEMPLATES/UnitTest/BitlyRefine
+
+These tests are similar to the midterm tests, but not identical.
+
+Make sure the **check-karma-grunt-config** bash script passes. This file can be copied from JsObjects to your **~/bin** directory:
 
 ```bash
 cp $JSOBJECTS/Utilities/NodeInstall/check-karma-grunt-config ~/bin/.
 ```
 
-Then copy the tests from the Isit320Midterm2015 directory to your **spec** folder and make sure they all pass. The goal here is to help you complete the midterm, but getting the tests to pass also effects your grade.
+Then copy the tests from the **Templates/UnitTest/Isit320Midterm2015** directory to your **spec** folder and make sure they all pass. The goal here is to help you complete the midterm, but getting the tests to pass also effects your grade.
 
 You can have tests of your own besides the ones that I create. It would be good to prefix your tests with your last name:
 
 - lastname-test-basic.js
 - lastname-custom-tests.js
 
-And so on. I'm not concerned about the name you give you the test files, only that I can easily tell your tests from my tests.
+And so on. I'm not concerned about the name you give you the test files, only that I can easily tell your tests from my tests. Also, this will ensure that your custom tests are not lost when copy tests from JsObjects.
 
 [brut]: http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyRefine.html#unit-tests
 
+
+## Turn it in
+
+Update your Bitly, Delicious and Twitter projects. Create and complete as best you can the midterm, placing it in the folder specified above.
+
+## Hints
+
+Below are various hints, suggestions and details that will help you complete the midterm.
+
 ## Objects
 
-The main class in **control.js** should now be called **elfMidterm**. In the past similar objects have had names such as **elfBitly**, **queryDelicious** and **bitlyUrlParser**
+The main class in **control.js** should now be called **elfMidterm**. The code for calling the server, creating the URL, and similar tasks should all be in the objects found in the **public/javascripts/link** folder.
+
+
 
 - **#isit320-calvert-images**
 
@@ -142,105 +233,7 @@ total 16
 -rw-rw-r-- 1 charlie charlie  475 Nov  7 14:51 movement.js
 ```
 
-Of course, you will have to load this code in **layout.jade:**
-
-```jade
-doctype html
-html
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
-    script(src="components/jquery/dist/jquery.js")
-    script(src="components/bootstrap/dist/js/bootstrap.js")
-    script(src="javascripts/control.js")
-    script(src="javascripts/downloads.js")
-	etc...
-```
-
-## Finding Images
-
-There are two ways that I know about for storing images in the cloud:
-
-- Free services
-- Pay services
-
-Both Google Photos (with Picassa Web) and Imagur provide at least a limited ability to create galleries and show them on your web site. However, these services have real limitations, and they feel, to me at least, a bit tentative, as if they may not be available for very long.
-
-As a result, I want you to use a combination of:
-
-- Free Creative Commons Images
-- Images from S3 for which you must pay
-
-## Creative Common's Images
-
-The images under the creative commons license are usually free for you to use in your own program. Sometimes you need to provide attribution, and some images can be edited and others can't, but overall, this is a great source of free images. Here are two simple ways to find creative commons images:
-
-- Google search
-- Creative commons search
-
-### Google Search
-
-- Go to Google. Search on subject, for instance: [cpu](http://www.google.com/search?q=cpu)
-- Click on Images: [CPU Image Search](http://www.google.com/search?q=cpu&source=lnms&tbm=isch)
-- Click on Search Tools
-- Set the license option to: [labeled for reuse with modification](http://www.google.com/search?q=cpu&source=lnms&tbm=isch&tbs=sur:fmc)
-
-You are looking at images that you are free to reuse. Right click and choose **Copy image url**.
-
-**NOTE**: *By clicking on some of these images, you can sometimes drill down to the site on which they are hosted. In those cases, you can often get more information, such as licensing, links to images of various sizes, etc.*
-
-Here is a freely reusable image found on Google search:
-
-![cpu](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/cpu-564772_640.jpg)
-
-Below is a thumbnail which you can click to get the full size image.
-
-[![arch](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/500px-80486DX2_arch.svg.png)][big-link]
-
-[big-link]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/80486DX2_arch.svg/2000px-80486DX2_arch.svg.png
-
-### Creative Commons Search
-
-Go to the creative commons search site:
-
-- [https://search.creativecommons.org/](https://search.creativecommons.org/).
-
-Enter a search string such as **sailing**. Select one of the boxes under the **Search using** tag:
-
-- Flickr Images
-- Google Images
-- Pixabay
-
-Muck around until you get the URL for your image.
-
-![Sailing](https://s3.amazonaws.com/bucket01.elvenware.com/images-test-01/ships-701596_640.jpg)
-
-**NOTE**: *Apparently pixabay images can't loaded directly from their site. You will therefore have to download them, and then host them on another site, such as S3.
-
-## AWS S3
-
-When all is said and done, I think the simplest way to store images in the cloud that you want to view on your web site is to pay for it. To make a long story short, Amazon Web Services S3 option allows you store images in the cloud for pennies a month. For instance, most of the images that you see on our Isit320 web sites are stored on S3, and I paid three cents last months for the privilege.
-
-It simply makes no sense to go through the hastle of trying to get around the limitations of the Google and Imagur services when Amazon provides such an inexpensive solution.
-
-One pay service that I use frequently is Amazon Web Services S3. Anyone can create an AWS account and use it (within reason) for one year for free. After that, you need to start paying.
-
-First sign up for [the free tier][free-tier] or sign into your existing account. Then start to [use S3][use-s3].
-
-**NOTE**: *AWS offers one year of free usage for reasonable requests. Be sure to sign up for the free tier. If you have any doubts, please wait until Tuesday before creating your account. However, it is not really that complicated.*
-
-- Use the free tier
-- Have a credit card and a phone ready.
-- Follow [my instructions][use-s3] to start uploading images to your S3 account.
-
-[free-tier](http://www.elvenware.com/charlie/development/cloud/WebServices.html#aws)
-[use-s3]:http://www.elvenware.com/charlie/development/cloud/WebServices.html#s3
-
-
-- <http://calculator.s3.amazonaws.com/index.html>
+Of course, you will have to load this code in **layout.jade** as shown below.
 
 
 ## Fav-Icon Missing - 404 {#icon-missing}
@@ -316,11 +309,12 @@ html
         script(src="javascripts/control.js")
         script(src="javascripts/downloads.js")
         script(src="javascripts/movement.js")
-        script(src="javascripts/display.js")
-        script(src="javascripts/twitter.js")
-        script(src="javascripts/delicious.js")
-        script(src="javascripts/bitly.js")
         script(src="javascripts/call-server.js")
+        script(src="javascripts/link/display.js")
+        script(src="javascripts/link/twitter.js")
+        script(src="javascripts/link/delicious.js")
+        script(src="javascripts/link/bitly.js")
+
     body
         block content
 ```
@@ -328,21 +322,68 @@ html
 And exclude it form **karma.conf.js**:
 
 ```javascript
-        files: [
-            'public/components/jquery/dist/jquery.min.js',
-            'public/javascripts/*.js',
-            'spec/test*.js',
-            'spec/bitly-links.js'
-        ],
+files: [
+    'public/components/jquery/dist/jquery.js',
+    'node_modules/jasmine-jquery/lib/*.js',
+    'public/javascripts/**/*.js',
+    'spec/test*.js',
+    'spec/bitly-links.js',
+    'spec/**/*.html'
+],
 
-        // list of files to exclude
-        exclude: ['public/javascripts/loader.js'],
+// list of files to exclude
+exclude: ['public/javascripts/loader.js'],
 ```
 
 Now our **document ready** function will get loaded when we run our program, but not when we run our tests.
 
 
 ## Call Server
+
+When the user selects a radio button designating the service he wants to see, this method gets called:
+
+```javascript
+elfDownloads.dataTypeSelection = function(event) {
+    'use strict';
+    if ($('#localData').is(':checked')) {
+        $('#radioButtonDisplay01').html('You clicked Local');
+        if (elfDownloads.dataType !== elfDownloads.dataTypes.dtLocal) {
+            elfDownloads.dataType = elfDownloads.dataTypes.dtLocal;
+            elfCallServer.loadBitly();
+        }
+    } else if ($('#bitlyData').is(':checked')) {
+        $('#radioButtonDisplay01').html('You clicked Bitly ');
+        if (elfDownloads.dataType !== elfDownloads.dataTypes.dtBitly) {
+            elfDownloads.dataType = elfDownloads.dataTypes.dtBitly;
+            elfCallServer.loadBitly();
+        }
+    } else if ($('#deliciousData').is(':checked')) {
+        if (elfDownloads.dataType !== elfDownloads.dataTypes.dtDelicious) {
+            $('#radioButtonDisplay01').html('You clicked Delicious ');
+            elfDownloads.dataType = elfDownloads.dataTypes.dtDelicious;
+            elfCallServer.loadDelicious();
+            return;
+        }
+    } else if ($('#twitterData').is(':checked')) {
+        if (elfDownloads.dataType !== elfDownloads.dataTypes.dtTwitter) {
+            $('#radioButtonDisplay01').html('You clicked Twitter ');
+            elfDownloads.dataType = elfDownloads.dataTypes.dtTwitter;
+            elfCallServer.loadTwitter();
+            return;
+        }
+    }
+    elfDownloads.getLinkData();
+};
+```
+
+If the user chooses either local or cloud bitly, then **elfCallServer.loadBitly** is called. If they choose delicious or twitter, then similar methods is **elfCallServer** are triggered.
+
+The code in **elfCallServer** handles:
+
+- Calling the server to ask it to transform JADE into HTML and to send it to us via HTTP. For instance, delicious.jade becomes delicious.html.
+- Call a setup method that ensures that the buttons and other controls for programs are properly initialized.
+
+The one exceptoin is **bitly** which still just uses the **downloads** object to set up its display. This will need to be changed in a later version.
 
 ```javascript
 var elfCallServer = {
@@ -357,7 +398,6 @@ var elfCallServer = {
         $('#displayContainer').load('/delicious', function (response, status, xhr) {
             if (status == 'error') {
                 var msg = 'Sorry but there was an error: ';
-                // $('#error' ).html( msg + xhr.status + ' ' + xhr.statusText );
                 console.log(msg + xhr.status + ' ' + xhr.statusText);
             } else {
                 elfDelicious.deliciousSetup();
@@ -370,7 +410,6 @@ var elfCallServer = {
         $('#displayContainer').load('/twitter', function (response, status, xhr) {
             if (status == 'error') {
                 var msg = 'Sorry but there was an error: ';
-                // $( '#error' ).html( msg + xhr.status + ' ' + xhr.statusText );
                 console.log(msg + xhr.status + ' ' + xhr.statusText);
             } else {
                 elfTwitter.twitterSetup();
@@ -381,9 +420,11 @@ var elfCallServer = {
 };
 ```
 
-## Test Downloads
+## Find Images
 
-The code for testing downloads is in **spec/test-downloads.js**. The latest version is in:
+A discussion of how to find and store images will be on elvenware in [cloud/FindImages page][find-images]. For now, however, you can find it [on ccalvert.net][cfimg].
 
-	$ELF_TEMPLATES/UnitTest/Isit320Midterm2015
+[find-images]:http://www.elvenware.com/charlie/development/cloud/FindImages.html
+
+[cfimg]:http://www.ccalvert.net/development/cloud/FindImages.html
 
