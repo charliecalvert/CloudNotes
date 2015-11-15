@@ -1,6 +1,6 @@
 # Overview
 
-This is the midterm. Your goal is to refine the BitlyProgram into something reasonably attractive and easy to use.
+Your goal is to refine the BitlyProgram into something reasonably attractive and easy to use.
 
 [![BitlyRefine][br01s]][br01]
 
