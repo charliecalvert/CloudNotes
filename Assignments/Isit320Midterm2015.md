@@ -2,7 +2,7 @@
 
 This document is not complete, but there is enough here to get you started.
 
-Polish the **BitlyRefine** and **TwitterRefine** programs.
+Polish the **BitlyRefine** and **TwitterRefine** programs. Make sure **BootstrapDelicious** at least works.
 
 Extend these programs to support viewing images stored in the cloud. The program should integrate Delicious, Bitly and Twitter. In particular, you should be able to view a *gallery* of images created from Bitly or Delicious links and Twitter posts.
 
@@ -27,9 +27,23 @@ Three radio buttons in a panel labeled **Image Source**:
 
 When the buttons are selected, search Bitly, Delicious or Twitter for your images. These means you need to create groups or hash tags in Bitly, Delicious and Twitter that will return the results you expect. For instance here is a possible twitter tag for my images: **#calvert images**.
 
+To make all this work, I created three three files:
+
+- bitly.js
+- twitter.js
+- delicious.js
+
+The code for handling our various link options is in each of these files. The bitly cloud and bitly local requests are handled in bitly.js, the twitter requests in twitter.js, and the delicious requests in delicious.js. In general, the code from:
+
+- TwitterRefine **control.js** is found in **twitter.js**
+- DelicousBootstrap **control.js** is found in **delicious.js**
+- BitlyRefine **control.js** is found in **bitly.js**
+
+I tweaked the code here and there, and wrapped stand alone functions in JavaScript literal objects, but otherwise the majority of the code ported over unchanged. In general, the code changes were simply because of changes in naming conventions, not in a program logic.
+
 Make some other minor changes. For instance:
 
-- **elfDownloads.getBitlyData** should now be **elfDownloads.getLinks**. The point is that the function now handles more than just Bitly data.
+- For better of worse, I have changed **elfDownloads.getBitlyData** to **elfDownloads.getLinks**.
 
 ## What to Test
 
@@ -255,7 +269,7 @@ When we run our tests, **control.js** gets loaded. At the bottom (or top) of **c
 $(document).ready(function() {
     'use strict';
     $('#localData').prop('checked', true);
-    elfMidterm.getBitlyLinks(-1);
+    elfMidterm.getLinks(elfDownloads.dataTypes.dtLocal);
     $('#dataSource').click(elfDownloads.dataTypeSelection);
 });
 ```
@@ -265,10 +279,24 @@ Notice in particular the call to **getBitlyLinks**. This call, or any similar ca
 ```javascript
 $(document).ready(function() {
     'use strict';
-    $('#localData').prop('checked', true);
-    elfMidterm.getBitlyLinks(-1);
-    $('#dataSource').click(elfDownloads.dataTypeSelection);
+    elfMidterm.initialize();
 });
+```
+
+My elfMidterm is in **control.js** and looks like this:
+
+```javascript
+var elfMidterm = {
+
+    initialize: function() {
+        'use strict';
+        $('#localData').prop('checked', true);
+        elfCallServer.loadBitly();
+        elfBitly.getLinks(elfDownloads.dataTypes.dtLocal);
+        $('#dataSource').click(elfDownloads.dataTypeSelection);
+    },
+
+};
 ```
 
 Then load the file in **layout.jade**
@@ -276,21 +304,25 @@ Then load the file in **layout.jade**
 ```javascript
 doctype html
 html
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width')
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
-    script(src="components/jquery/dist/jquery.js")
-    script(src="components/bootstrap/dist/js/bootstrap.js")
-    script(src="javascripts/loader.js")
-    script(src="javascripts/control.js")
-    script(src="javascripts/downloads.js")
-    script(src="javascripts/movement.js")
-    script(src="javascripts/display.js")
-  body
-    block content
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+        script(src="components/jquery/dist/jquery.js")
+        script(src="components/bootstrap/dist/js/bootstrap.js")
+        script(src="javascripts/loader.js")
+        script(src="javascripts/control.js")
+        script(src="javascripts/downloads.js")
+        script(src="javascripts/movement.js")
+        script(src="javascripts/display.js")
+        script(src="javascripts/twitter.js")
+        script(src="javascripts/delicious.js")
+        script(src="javascripts/bitly.js")
+        script(src="javascripts/call-server.js")
+    body
+        block content
 ```
 
 And exclude it form **karma.conf.js**:
@@ -310,86 +342,48 @@ And exclude it form **karma.conf.js**:
 Now our **document ready** function will get loaded when we run our program, but not when we run our tests.
 
 
+## Call Server
+
+```javascript
+var elfCallServer = {
+
+    loadBitly: function () {
+        'use strict';
+        $('#displayContainer').load('/bitly');
+    },
+
+    loadDelicious: function () {
+        'use strict';
+        $('#displayContainer').load('/delicious', function (response, status, xhr) {
+            if (status == 'error') {
+                var msg = 'Sorry but there was an error: ';
+                // $('#error' ).html( msg + xhr.status + ' ' + xhr.statusText );
+                console.log(msg + xhr.status + ' ' + xhr.statusText);
+            } else {
+                elfDelicious.deliciousSetup();
+            }
+        });
+    },
+
+    loadTwitter: function () {
+        'use strict';
+        $('#displayContainer').load('/twitter', function (response, status, xhr) {
+            if (status == 'error') {
+                var msg = 'Sorry but there was an error: ';
+                // $( '#error' ).html( msg + xhr.status + ' ' + xhr.statusText );
+                console.log(msg + xhr.status + ' ' + xhr.statusText);
+            } else {
+                elfTwitter.twitterSetup();
+            }
+        });
+
+    }
+};
+```
 
 ## Test Downloads
 
-Save the following as **spec/test-downloads.js** and make sure all the tests pass:
+The code for testing downloads is in **spec/test-downloads.js**. The latest version is in:
 
-```javascript
-describe('Downloads Suite', function() {
-    'use strict';
+	$ELF_TEMPLATES/UnitTest/Isit320Midterm2015
 
-    var downloadKeys;
-
-    beforeEach(function() {
-        downloadKeys = Object.keys(elfDownloads);
-    });
-
-    it('expects elfDownloads to be defined', function() {
-        var isDefined = typeof elfDownloads !== 'undefined';
-        expect(isDefined).toBe(true);
-    });
-
-    it('Expects elfDownloads to contain Keys', function() {
-        var downloadKeys = Object.keys(elfDownloads);
-        expect(downloadKeys).toBeTruthy();
-    });
-
-    it('Expects elfDownloads to contain accessToken', function() {
-        expect(downloadKeys.indexOf('accessToken')).toBeGreaterThan(-1);
-    });
-
-    it('Expects elfDownloads to contain dataTypes', function() {
-        expect(downloadKeys.indexOf('dataTypes')).toBeGreaterThan(-1);
-    });
-
-    it('Expects elfDownloads to contain dataType', function() {
-        expect(downloadKeys.indexOf('dataType')).toBeGreaterThan(-1);
-    });
-
-    it('Expects elfDownloads to contain dataTypeSelection', function() {
-        expect(downloadKeys.indexOf('dataTypeSelection')).toBeGreaterThan(-1);
-    });
-
-    it('Expects elfDownloads to contain getBitlyData', function() {
-        expect(downloadKeys.indexOf('getBitlyData')).toBeGreaterThan(-1);
-    });
-
-    it('Expects elfDownloads to contain clearControls', function() {
-        expect(downloadKeys.indexOf('clearControls')).toBeGreaterThan(-1);
-    });
-
-    it('Expects elfDownloads.dataTypes to be defined', function() {
-        expect(elfDownloads.dataTypes).toBeTruthy();
-    });
-
-    it('Expects elfDownloads.dataTypes to be an array', function() {
-        expect(elfDownloads.dataTypes instanceof Array).toBeTruthy();
-    });
-
-    it('Expects elfDownloads.dataTypes to contain four elements', function() {
-        expect(elfDownloads.dataTypes.length).toBe(4);
-    });
-
-    it('Expects elfDownloads.dataType to be defined', function() {
-        expect(elfDownloads.dataType).toBeTruthy();
-    });
-
-    it('Expects elfDownloads.dataType to be of type string', function() {
-        expect(typeof elfDownloads.dataType).toBe('string');
-    });
-
-    it('Shows that elfDownloads.getBitlyData is a function', function() {
-        expect(typeof elfDownloads.getBitlyData).toBe('function');
-    });
-
-    it('Shows that elfDownloads.dataTypeSelection is a function', function() {
-        expect(typeof elfDownloads.dataTypeSelection).toBe('function');
-    });
-
-    it('Shows that elfDownloads.clearControls is a function', function() {
-        expect(typeof elfDownloads.clearControls).toBe('function');
-    });
-
-});
-```
