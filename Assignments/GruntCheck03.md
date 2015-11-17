@@ -97,6 +97,16 @@ preprocessors: {
 },
 ```
 
+If you are using the **spec** reporter, and most of us are, then filter out tests that are being skipped:
+
+```javascript
+reporters: ['spec'],
+
+specReporter: {
+    suppressSkipped: true // do not print information about skipped tests
+},
+```
+
 ## Writing a Test
 
 And here is the test, which goes in **spec/test-jasmine-jquery.js**

@@ -204,7 +204,7 @@ The solution is to wait until **Page Two** is loaded before we set up the events
 
 **NOTE**: *I can't emphasize enough how important it is that you understand this. Countless developers in my class and throughout the world have spent hours trying to understand why a click on a button doesn't generate the event. The problem is that they are trying to set up the handler before the button itself is loaded onto the page. This problem will bite you and bite you hard and unless you understand what is being said here.*
 
-The updated Jade:
+The updated Jade for **Page Two**:
 
 ```jade
 h1 Page Two

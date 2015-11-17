@@ -86,6 +86,10 @@ Make some other minor changes to ensure that the unit tests pass. For instance:
 
 ## What to Test
 
+And the test runs should look a bit like this:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PCqDX047PdI" frameborder="0" allowfullscreen></iframe>
+
 There is a folder called **$ELF_TEMPLATES/UnitTest/Isit320Midterm2015** which currently contains at least numerous test suites. Use the new *focused specs* feature from Jasmine 2.1 to work with one suite at a time. To do this, change **describe** to **fdescribe** or **it** to **fit**. It you make a suite with **fdescribe**, then just that one suite will run and the others won't clutter your screen:
 
 - [Focused Spec Examples][fse]

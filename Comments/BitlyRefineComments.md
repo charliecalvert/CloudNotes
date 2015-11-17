@@ -2,6 +2,98 @@
 
 Notes on Bitly Refine by Charlie Calvert
 
+## Grunt Jade
+
+Move document ready into its own folder
+Test for number of inputs
+Simulate click?
+
+npm install grunt-contrib-jade --save-dev
+grunt.loadNpmTasks('grunt-contrib-jade');
+npm install grunt-exec --save-dev
+grunt.loadNpmTasks('grunt-exec');
+
+## Consistent Naming
+
+If you rename an object, be sure you change all references to that object. If you change any identifier, you have to rename all instances of that identifier. Consider this code:
+
+```javascript
+elfDownloads = function() {
+    'use strict';
+};
+
+downloads.accessToken = '2ac etc...'; //YOUR TOKEN HERE. AS A STRING...;
+
+downloads.dataTypes = {
+    'dtLocal': 0,
+    'dtCloud': 1
+};
+```
+
+In the first line, the **downloads** object has been renamed to **elfDownloads**, per my instructions. This student did not, however, rename all instances of this variable. In particular, **acccessToken** and **dataTypes** still have the old object name of **downloads**. It should be changed from **downloads.accessToken** to **elfDownloads.accessToken**. When the changes are complete, the code should look like this:
+
+```javascript
+elfDownloads = function() {
+    'use strict';
+};
+
+elfDownloads.accessToken = '2ac etc...'; //YOUR TOKEN HERE. AS A STRING...;
+
+elfDownloads.dataTypes = {
+    'dtLocal': 0,
+    'dtCloud': 1
+};
+
+etc...
+```
+
+## Use Proper Access Token
+
+Some folks wrote code that looks a bit like this:
+
+```javascript
+ getUrl: function(accessToken) {
+    'use strict';
+
+    var params = '?access_token=';
+
+    if (accessToken === elfDownloads.dataTypes.dtLocal) {
+        return this.localUrl;
+    } else {
+        var url = this.baseUrl + params;
+        return url += accessToken;
+    }
+}
+```
+
+The problem is that the wrong accessToken is being accessed in the **else** block. In this case, **accessToken** is either 0 or 1, which will not work when querying Bitly.
+
+Here is the proper implementation, which ensures that you use the access token
+from the **elfDownloads object:**.
+
+```javascript
+getUrl: function(userSelection) {
+    'use strict';
+
+    var params = '?access_token=';
+
+    if (userSelection === elfDownloads.dataTypes.dtLocal) {
+        return this.localUrl;
+    } else {
+        var url = this.baseUrl + params;
+        return url += elfDownloads.accessToken;
+    }
+},
+```
+
+The key line is the last one to include a valid statement, the one in the **else** block:
+
+```javascript
+return url += elfDownloads.accessToken;
+```
+
+See the previous section for an example of how to declare the **accessToken.**
+
 ## Include Jade for the Table
 
 Be sure you include this code in **index.jade**:
@@ -70,39 +162,6 @@ A number of students failed to include the **downloads** module in the project. 
 
 [bid]: http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyInteractive.html#the-downloads-module
 
-## Consistent Naming
-
-If you rename an object, be sure you change all references to that object. If you change any identifier, you have to rename all instances of that identifier. Consider this code:
-
-```javascript
-elfDownloads = function() {
-    'use strict';
-};
-
-downloads.accessToken = '2ac etc...'; //YOUR TOKEN HERE. AS A STRING...;
-
-downloads.dataTypes = {
-    'dtLocal': 0,
-    'dtCloud': 1
-};
-```
-
-In the first line, the **downloads** object has been renamed to **elfDownloads**, per my instructions. This student did not, however, rename all instances of this variable. In particular, **acccessToken** and **dataTypes** still have the old object name of **downloads**. It should be changed from **downloads.accessToken** to **elfDownloads.accessToken**. When the changes are complete, the code should look like this:
-
-```javascript
-elfDownloads = function() {
-    'use strict';
-};
-
-elfDownloads.accessToken = '2ac etc...'; //YOUR TOKEN HERE. AS A STRING...;
-
-elfDownloads.dataTypes = {
-    'dtLocal': 0,
-    'dtCloud': 1
-};
-
-etc...
-```
 
 ## More on Consistent Names
 
