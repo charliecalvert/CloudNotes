@@ -28,6 +28,16 @@ $ meld Week04-JavaScriptObjects/ $ELF_TEMPLATES/UnitTest
 
 [gruntfile]: http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck.html#setup
 
+## Run Grunt Check
+
+Don't forget to run **grunt check** before turning in your midterm. It is important to get your code cleaned up so that I don't have to fuss with it too much. If beautify changes a bunch of your files on my end, then I have to clean that up before I can do another **git pull**. That's a time sink for me, and during midterms you want me thinking fondly of you....
+
+A simple way to make sure you get this right is to issue the following command:
+
+	grunt jscs
+
+If that gives you errors because of spacing issues, then try running **grunt check** so that it forces jsbeautify to process all your files. Then check in your code for the midterm.
+
 ## Invalid Quotes
 
 If you see a message about invalid quote marks, you can generally do a search and replace on double quotes, replacing them with single quote. For example, as you can see from the error, code like this needs to be updated:
@@ -77,6 +87,63 @@ The corrected code looks like this:
 	firstName: 'George',
 
 The point is not so much that one type of quote is provably better than the other. It is just that JavaScript gives us a choice, and we ought to pick one or the other and stick with our decision. The **jscs** helps us stay honest about our decision. Which decision you make is configurable, but for not we are going with single quotes.
+
+## Illegal Trailing WhiteSpace {#illegal-whitespace}
+
+The error might look a bit like this:
+
+```bash
+$ grunt jscs
+Running "jscs:src" (jscs) task
+Illegal trailing whitespace at public/javascripts/display.js :
+    38 |        $('#client_id').val(bitlyLink.client_id);
+    39 |        $('#link').val(bitlyLink.link);
+    40 |        
+----------------^
+    41 |        $('#userTs').val(new Date(bitlyLink.user_ts * 1000));
+    42 |        $('#createdAt').val(new Date(bitlyLink.created_at * 1000));
+>> 1 code style errors found!
+Warning: Task "jscs:src" failed. Use --force to continue.
+
+Aborted due to warnings.
+```
+
+JsBeautify should fix this error. If you don't want to run that tool, another solution is to open it in Geany and choose **Document | Strip Trailing Spaces**.
+
+## Two Blank Lines
+
+```bash
+getMap should have at most 2 line(s) between them at public/javascripts/elf-bitly.js :
+    78 |        return this.bitlyLinks.data.link_history[0];
+    79 |
+    80 |    },
+--------------^
+    81 |
+    82 |
+>> 4 code style errors found!
+Warning: Task "jscs:src" failed. Use --force to continue.
+
+Aborted due to warnings.
+```
+
+When you get this error, that means you have two blank lines in a row. Delete that line so there is only one line in your code. This is important. When your teacher, or an employer, sees a bunch of blank lines in your code, it frequently looks like you have careless habits. Clean it up!
+
+## Can't Find BitlyLinks {#no-bitlylinks}
+
+You might get this error:
+
+	Can't find variable: bitlyLinks
+
+That usually means that you are not loading **bitly-links.js** in **karma.conf.js**:
+
+```javascript
+files: [
+    'public/components/jquery/dist/jquery.min.js',
+    'public/javascripts/*.js',
+    'spec/test*.js',
+    'spec/bitly-links.js'
+],
+```
 
 ## Fixture Issues
 
