@@ -203,3 +203,88 @@ $(document).ready(function() {
 
 ```
 
+## Server Query
+
+On the server side, some students wrote something like this:
+
+```javascript
+router.get('/search', function(req, res, next) {
+    'use strict';
+    var client = getClient();
+    var params = {
+        text: ''
+    };
+    client.get('search/tweets', params, function(error, tweets, response) {
+        if (!error) {
+            res.send(tweets);
+        } else {
+            res.send({
+                fail: error
+            });
+        }
+    });
+});
+```
+
+The problem here is in the second parameter to **client.get**:
+
+```javascript
+var params = {
+    text: ''
+};
+client.get('search/tweets', params, function(error, tweets, response) {
+```
+
+The right thing to do is delete the declaration for params and take the parameters passed from the client side by access request.query:
+
+```javascript
+router.get('/search', function(req, res, next) {
+    'use strict';
+    var client = getClient();
+    /* var params = {
+        q: '#node.js'
+    }; */
+    client.get('search/tweets', req.query, function(error, tweets, response) {
+```
+
+If we delete the dead code, it looks like this:
+
+```javascript
+router.get('/search', function(req, res, next) {
+    'use strict';
+    var client = getClient();
+    client.get('search/tweets', req.query, function(error, tweets, response) {
+```
+
+The req.query bit is supplied on the client side in the second parameter to getJSON:
+
+```javascript
+search: function () {
+    'use strict';
+    var searchQuery = $('#searchQuery').val();
+    $.getJSON('/search', {'q': searchQuery}, function (result) {
+        $('#tweetData').html(JSON.stringify(result, null, 4));
+        clearControls();
+        $.each(result.statuses, function (index, tweet) {
+            if (tweet.entities.urls.length > 0) {
+                appendUrl('#tweetList', index, tweet.text, tweet.entities.urls[0].url);
+            } else {
+                renderTable(tweet.text, tweet.user.name);
+                $('#tweetList').append('<li>' + tweet.text + '</li>');
+            }
+        });
+    });
+},
+```
+
+The key line is here, where we pass as the second parameter the tiny object that takes the place of **params** and that becomes **req.query**:
+
+```javascript
+$.getJSON('/search', {'q': searchQuery}, function (result) {
+```
+
+The object, which defines our search query, looks like this:
+
+```javascript
+{'q': searchQuery}
+```

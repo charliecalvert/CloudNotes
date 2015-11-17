@@ -10,16 +10,40 @@ Create an account on EC2.
 
 ## Step Two
 
-Create an EC2 Instance
+Create an EC2 Instance.
+
+It will be assigned:
+
+- A public private key pair that you can download
+- A non-permanent public IP address. 
+
+We will need a permanent IP address, so later will create an elastic IP address. They are permenant.
 
 
 ## Step Three
+
+From Linux:
+
+Load you PEM file on your local machine. On the client.
+
+Add a PEM file to your Ubuntu instance, to the server, in the **~/.ssh/authorized_keys** file.
+
+For windows users:
 
 Convert the PEM file to a PPK file.
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#pem>
 
 ## Step Four
+
+Connect to your EC2 instance with SSH.
+
+	ssh ubuntu@<YOUR IP PUBLIC IP or ELASTIC IP ADDRESS>
+
+For instance:
+
+	ssh ubuntu@192.168.1.25
+
 
 Connect to your EC2 instance with Putty:
 

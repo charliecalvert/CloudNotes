@@ -164,7 +164,7 @@ The values **-1** and **0** have no semantic value. They are just numbers which 
 The following changes replace my magic numbers with meaningful variables that have semantic value. In **downloads.js**, here are two updated properties and two updated methods:
 
 ```javascript
-downloads.dataTypes = {"dtLocal": 0, "dtCloud": 1};
+downloads.dataTypes = {'dtLocal': 0, 'dtCloud': 1};
 
 downloads.dataType = downloads.dataTypes.dtLocal;
 
@@ -316,4 +316,26 @@ getLinkHistoryArray: function() {
     'use strict';
     return bitlyUrlParser.bitlyLinks.data.link_history;
 },
+```
+
+When the user wants to move left, wants to iterate backwards through the data, our only concern is that we don't move past the beginning of our array:
+
+```javascript
+if (bitlyUrlParser.linkIndex > 0) {
+	etc...
+```
+
+## Test with Chrome
+
+Make sure the karma chrome launcher is available:
+
+```
+npm install karma-chrome-launcher --save-dev
+```
+
+Replace PhantomJS with Chrome:
+
+```
+sed -i -- "s/browsers: \['PhantomJS'\]/browsers: \['Chrome'\]/" karma.conf.js
+sed -i -- "s/karma-phantomjs-launcher/karma-chrome-launcher/" karma.conf.js
 ```

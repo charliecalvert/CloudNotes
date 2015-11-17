@@ -4,6 +4,13 @@ Grunt Check Part II provides more information on Grunt.
 
 ## The Error Handler
 
+I want you to modify the error handler in **app.js**. The updated code does two things:
+
+- It makes you aware that the node environment (env) is set to **development**. 
+- When something goes wrong in your code, it helps you more clearly see the type of errors that are being thrown.
+
+The changes are the addition of two **console.log statements**:
+
 ```javascript
 if (app.get('env') === 'development') {
     console.log("Using Development error handler");
