@@ -1,5 +1,7 @@
 ## Overview
 
+I'm thinking mostly of BitlyRefine in this discussion. So do your work in that directory.
+
 A tool called Jasmine JQuery will allow us to load arbitray HTML files (fixtures) into Jasmine so that we can run tests against them. Normally, we want to load only small chunks of HTML. However, at one point we might want to load the entire contents of the HTML code produced by **vidws/index.jade** into our tests and make sure it contains certain key elements.
 
 We want to tests the contents of **views/index.jade** but not **views/layout.jade**. To do this, we need to remove the line that reads **extend layout** from **views/index.jade** and copy the results to another file called **views/fixture.jade**. When doing so, **views/index.jade** should not be changed. When we are done, **views/fixture.jade** should be very similar to **views/index.jade** but without the first line about extending **layout.jade**.
@@ -22,7 +24,7 @@ The rest of this document is an explanation of how to proceed if you want to set
 
 Copy over the new and updated unit tests from:
 
-	cp $ELF_TEMPLATES/UnitTest/BitlyRefine/*.js views/.
+	cp $ELF_TEMPLATES/UnitTest/BitlyRefine/*.js spec/.
 
 Then install some tools:
 
@@ -30,7 +32,10 @@ Then install some tools:
 npm install jasmine-jquery --save-dev
 npm install grunt-contrib-jasmine --save-dev
 npm install grunt-exec --save
-npm install grunt-contrib-jade --save
+npm install grunt-contrib-jade --save-dev
+npm install grunt-contrib-clean --save-dev
+npm install grunt-jscs --save-dev
+npm install grunt-jsbeautifier --save-dev
 ```
 
 ## Grunt
@@ -81,13 +86,16 @@ In karma.conf load **jasmine-jquery**. The following is a sample of what your **
 
 ```javascript
 files: [
-	'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
     'public/components/jquery/dist/jquery.min.js',
+	'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
     'public/javascripts/*.js',
     'spec/test*.js',
+    'spec/bitly-links.js',
     'spec/**/*.html'
 ],
 ```
+
+Please note that bitly-links and \*\*/\*.html are specific to our app. The other entries are generic, and will be used in most tests. The HTML line will be used in all tests that use jasmine-jquery, so it is frequently used. But bitly links is just for programs like BitlyRefine, and might not be used in other applications.
 
 And put this in **karma.conf.js**:
 
@@ -132,7 +140,13 @@ We are simply asking jasmine to prove to us that our HTML has at least one parag
 
 ## Sanity Check
 
-In JsObjects, there is a new script that does a rather shoddy job of looking through your **karma-conf.js** and **Gruntfile.js** files to be sure you have things set up correctly. You can copy the script to your **~/bin** directory and then run it in the root of the project you want to check. Here is a sample run:
+In JsObjects, there is a new script that does a rather shoddy job of looking through your **karma-conf.js** and **Gruntfile.js** files to be sure you have things set up correctly. You can copy the script to your **~/bin** directory and then run it in the root of the project you want to check.
+
+```bash
+cp $JSOBJECTS/Utilities/NodeInstall/check-karma-grunt-config ~/bin/.
+```
+
+Here is a sample run:
 
 ```
 $ ./check-karma-grunt-config
@@ -238,4 +252,10 @@ plugins: ['karma-jasmine',
     'karma-chrome-launcher',
     'karma-jasmine-jquery'
 ]
+```
+
+Do this in .jscsrc:
+
+```
+"excludeFiles": ["**/node_modules/**", "**/components/**", "spec/bitly-links.js"]
 ```
