@@ -140,6 +140,20 @@ Then install the node packages that you need:
 
 	./InstallNodePackages.sh
 
+## Notes on Node Install
+
+If we try to install npm or any other global npm packages, by default they go into places owned globally by the entire system. This means you need to use sudo to install or change them. I don't like that. So instead, I tell the system to put npm and all global packages in my home directory where I can have the rights to do what I want with them. In particular, I put them in $HOME/npm. This is why we modify our path in the **.bashrc** file:
+
+export PATH="$PATH:$HOME/npm/bin"
+
+This is the line from InstallNodePackages.sh that tells the system to put npm and npm packages in our $HOME/npm directory:
+
+	npm config set prefix ~/npm
+
+We can check that setting with this command:
+
+	npm get prefix
+
 ## Git
 
 Please read this section of the Elvenware Git docs:

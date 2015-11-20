@@ -434,3 +434,13 @@ A discussion of how to find and store images will be on elvenware in [cloud/Find
 
 [cfimg]:http://www.ccalvert.net/development/cloud/FindImages.html
 
+## Package Compare
+
+Sometimes it helps to compare the **package.json** files for two projects when you want to combine them. For instance, if we are trying to add TwitterRefine code to our midterm, then compare the TwitterRefine package.json file to the midterm package.json file. See if there is something obvious missing that you include in the TwitterRefine package.json that should be in the Midterm **package.json**. In this particular case, the following line might be relevent:
+
+	"twitter": "^1.2.5"
+
+The version is not some important, just the inclusion of the twitter package in **package.json**. You will, of course, have to either:
+
+- Add the package to **package.json** by running npm install twitter --save-dev
+- Or run **npm install** after editing **package.json** by hand.
