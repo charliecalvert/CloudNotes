@@ -1,0 +1,525 @@
+## Overview
+
+Week08-Midterm comments
+
+by Charlie Calvert
+
+## One layout.jade {#one-layout-jade}
+
+A rather subtle, and quite pernicious, bug can be introduced in our programs if we try to **extend** the file called **layout.jade** in the wrong places. This bug took me awhile to track down, and appeared in more than one student's midterm. It can cause a strange, repetitive loading of our jade files that quickly brings a program to its knees.
+
+Our single page application has one main page defined in **index.jade**. That page **extends layout.jade**:
+
+```
+extends layout
+include mixin-buttons
+include mixin-inputs
+include  mixin-radios
+block content
+   h1= title
+   etc...
+```
+
+We also have secondary pages that are swapped in and out as the user makes selections. Make sure you do not try to extend **layout.jade** in any of those files. For instance, this would cause an error if included at the top of **bitly.jade**:
+
+```
+extends layout
+include mixin-buttons
+include mixin-inputs
+include  mixin-radios
+block content
+   h1= title
+   etc...
+```
+
+Instead, the code should probably look a bit like this:
+
+```
+include mixin-inputs
+include mixin-radios
+include mixin-buttons
+
++elfPanel("Bitly Links Table").elfDiv
+    div.scroller
+        table.table#tableLinks
+
+etc...
+```
+
+## Set up Event Handlers
+
+The following code is not sufficient to properly launch the project because it does not set up any event handlers:
+
+```javascript
+$(document).ready(function() { 'use strict';
+    elfBitly.getBitlyLinks(-1); // loads data on page load
+});
+```
+
+Here is the one way to proceed. In **loader.js**:
+
+```javascript
+$(document).ready(function() {
+    'use strict';
+    elfMidterm.initialize();
+});
+```
+
+In control.js:
+
+```javascript
+var elfMidterm = {
+
+    initialize: function() {
+        'use strict';
+        $('#localData').prop('checked', true);
+        elfCallServer.loadBitly();
+        elfBitly.getLinks(elfDownloads.dataTypes.dtLocal);
+        $('#dataSource').click(elfDownloads.dataTypeSelection);
+    },
+};
+```
+
+Note the presence of the following lines, which set up our event handlers:
+
+```javascript
+$('#localData').prop('checked', true);
+$('#dataSource').click(elfDownloads.dataTypeSelection);
+```
+
+You have to have code like that or nothing in your application will work. The program is inert unless it starts responding to button, radio button, and checkbox events.
+
+## Update Unit Tests
+
+Unit testing is an important part of this course. In most cases, I don't want anyone to radically change the way they implement the midterm simply to make it conform with my tests. Your approach should, however, conform closely enough to my model so that most tests pass with no changes to the tests, or only minor changes to the tests. In some cases, we may need to sit down together so that we can bring your code more closely in line with my tests without losing your unique approach to the problems posed by the midterm.
+
+In any case, be sure you have the most recent copy of the unit tests.
+
+To confirm that the directories are the same, issue this command in pristine lubuntu or similar GUI OS:
+
+```javascript
+meld spec/ $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/
+```
+
+Issue this command in either cloud 9, pristine lubuntu, or virtually any Linux based environment:
+
+```javascript
+diff spec/ $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/
+```
+
+On my system this currently yields:
+
+```bash
+$ diff spec/ $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/
+Only in spec/: deleteme.txt
+Common subdirectories: spec/fixtures and /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/fixtures
+```
+
+This comparison tells me that the only difference between the two directories is a file called **deletme.txt**. That's the kind of name I give to temporary files that I eventually want to delete. Within reason, I don't mind if you have additional files in your directory. This is not an error.
+
+I also see that both directories have a directory fixtures. Here is a comparison of those two directories:
+
+```bash
+$ diff spec/fixtures $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/fixtures
+Only in spec/fixtures: bitly.html
+Only in spec/fixtures: fixture.html
+```
+This is what I'd expect since both **bitly.html** and **fixtures.html** are files that will differ from student to student, so you need to create them.
+
+Suppose I opened up **test-basic.js** and added a comment to line 18:
+
+```javascript
+elfBitly.getLinks(elfDownloads.dataTypes.dtBitly); // random comment
+```
+
+Now my local copy of **test-basic.js** differs from the one in JsObjects. When I run **diff** I get the following results:
+
+```bash
+$ diff spec/ $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/
+Only in spec/: deleteme.txt
+Common subdirectories: spec/fixtures and /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/fixtures
+diff spec/test-basic.js /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/test-basic.js
+18c18
+<         elfBitly.getLinks(elfDownloads.dataTypes.dtBitly); // random comment
+---
+>         elfBitly.getLinks(elfDownloads.dataTypes.dtBitly);
+```
+
+In addition to the lines already explained, this output tells me that on line of test-basic.js there is a difference between the two files. That is not good. The files should be identical. 
+
+If I see a few minor changes to your files, such as a change to the **accessToken**, that is fine. But lots of changes are not good. If I see several hundred lines of differences such as the one shown above, then we have some work to do to get your code up to speed.
+
+## Copy Over Unit Tests {#copy-tests}
+
+In most cases, students will simple want to copy over the unit tests from **$ELF_TEMPLATES/UnitTest/Isit320Midterm2015**:
+
+```bash
+cp $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/*.js spec/.
+```
+
+If you don't, then the diff command described in the previous section might produce output like this:
+
+```bash
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-downloads.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-elf-bitly.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-elf-midterm.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-files.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-fixture-util.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-interface.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-jade-index.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-jade.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-local-cloud.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/: test-sanity.js
+```
+
+This is a red flag that something is wrong. It's okay if a few tests are missing, or if a few fail, but this is too much.
+
+## Update Mixins
+
+You should be working my most recent mixins. To test that, run the following and be sure they come back clean:
+
+```bash
+diff views/mixin-buttons.jade /home/charlie/Git/JsObjects/Utilities/Templates/JadeMixins/mixin-buttons.jade
+diff views/mixin-inputs.jade /home/charlie/Git/JsObjects/Utilities/Templates/JadeMixins/mixin-inputs.jade
+diff views/mixin-radios.jade /home/charlie/Git/JsObjects/Utilities/Templates/JadeMixins/mixin-radios.jade
+diff views/mixins.jade /home/charlie/Git/JsObjects/Utilities/Templates/JadeMixins/mixins.jade
+```
+
+## Proper Naming
+
+Be sure to name your objects properly. Don't call an object **delicious**, call it **elfDelicious**.
+
+There is no reason for this kind of problem to appear in your code. It breaks a lot of unit tests, which we designed explicitly to be sure that you did follow set naming conventions. Your ability to conform the specification outlined in the unit tests is an important part of this class.
+
+When you change the name of a class, this frequently breaks your code in several places. I want to see that you know how to fix these kinds of problems. 
+
+Summary:
+
+- I want to be sure you can follow a specification laid out in a unit test.
+- I want to be sure that you can fix certain problems, such as name mismatches, that frequently occur in code.
+
+## Naming GetLinks
+
+A number of students wrote, or have written, something like this:
+
+```javascript
+elfDownloads.dataTypeSelection = function(event) {
+    'use strict';
+    if ($('#localData').is(':checked')) {
+
+    	// CODE OMITTED HERE
+
+	}
+    elfDownloads.getLinkData();
+};
+
+elfDownloads.getBitlyData = function() {
+    'use strict';
+    console.log('getBitlyData called: ', Object.keys[elfDownloads.dataType]);
+    if (elfDownloads.dataType === elfDownloads.dataTypes.dtLocal) {
+        elfBitly.getBitlyLinks(elfDownloads.dataType);
+    } else {
+        elfBitly.getBitlyLinks(elfDownloads.accessToken);
+    }
+};
+```
+
+I wanted you to rename:
+
+- elfDownloads.getBitlyData -> elfDownloads.getLinkData
+- elfBitly.getBitlyLinks -> elfBitly.getLinks
+
+The result might be something like this:
+
+```javascript
+elfDownloads.dataTypeSelection = function(event) {
+    'use strict';
+    if ($('#localData').is(':checked')) {
+
+		// CODE OMITTED HERE
+
+    }
+    elfDownloads.getLinkData();
+};
+
+elfDownloads.getLinkData = function() {
+    'use strict';
+    elfDownloads.clearControls();
+    elfBitly.getLinks(elfDownloads.dataType);
+};
+
+```
+
+The following tests in **test-downloads** tried to establish the specification for these naming conventions. That is, they tried to help you update your code so that it supported the expected naming conventions:
+
+```javascript
+    it('Expects elfDownloads to contain getLinkData (but not getBitlyData)', function() {
+        expect(downloadKeys.indexOf('getLinkData')).toBeGreaterThan(-1);
+        expect(downloadKeys.indexOf('getBitlyData')).toBe(-1);
+    });
+
+    it('Shows that elfDownloads.getLinkData is a function', function() {
+        expect(typeof elfDownloads.getLinkData).toBe('function');
+    });
+
+    it('shows that we call to get more links on last line of radio button select', function() {
+        spyOn(elfDownloads, 'getLinkData');
+        elfDownloads.dataTypeSelection();
+        expect(elfDownloads.getLinkData).toHaveBeenCalled();
+    });
+```
+
+The point here is that the tests, the specs, specify what is expected of you, the developer.
+
+## Update Data Types
+
+Our **elfDownloads.dataTypes** originally looked like this:
+
+```javascript
+elfDownloads.dataTypes = {
+    'dtLocal': 0,
+    'dtCloud': 1
+};
+```
+
+But now we have not just two choices, but four choices. As a result, we need to create an object that looks like this:
+
+```javascript
+elfDownloads.dataTypes = {
+    'dtLocal': 0,
+    'dtDelicious': 1,
+    'dtBitly': 2,
+    'dtTwitter': 3
+};
+```
+
+The following test, when added to **test-downloads.js**, provides reasonable checks to confirm that we are defining this type correctly:
+
+```javascript
+it('shows that our datatypes have four options', function() {
+    var linkTypes = Object.getOwnPropertyNames(elfDownloads.dataTypes).sort();
+    console.log(linkTypes);
+    expect(linkTypes.length).toBeGreaterThan(3);
+    expect(linkTypes.indexOf('dtBitly') !== -1).toBeTruthy();
+    expect(linkTypes.indexOf('dtDelicious') !== -1).toBeTruthy();
+    expect(linkTypes.indexOf('dtLocal') !== -1).toBeTruthy();
+    expect(linkTypes.indexOf('dtTwitter') !== -1).toBeTruthy();
+});
+```
+
+Tests like this are very useful in class setting. They might also be useful in a corporate setting, since they help to clearly define the specification for our object.
+
+If we don't declare these types correctly, then code like the following, found in **elfDownloads.dataTypeSelection**, will not work correctly:
+
+```javascript
+if (elfDownloads.dataType !== elfDownloads.dataTypes.dtLocal) {
+    elfDownloads.dataType = elfDownloads.dataTypes.dtLocal;
+if (elfDownloads.dataType !== elfDownloads.dataTypes.dtBitly) {
+    elfDownloads.dataType = elfDownloads.dataTypes.dtBitly;
+if (elfDownloads.dataType !== elfDownloads.dataTypes.dtDelicious) {
+    elfDownloads.dataType = elfDownloads.dataTypes.dtDelicious;
+if (elfDownloads.dataType !== elfDownloads.dataTypes.dtTwitter) {
+    elfDownloads.dataType = elfDownloads.dataTypes.dtTwitter;
+};
+```
+
+## Form panels and keyword Links
+
+Here is the code for my input controls in **bitly.jade**:
+
+```javascript
++elfFormPanel("Bitly Link Record").elfDiv
+
+    +elfInputVB("Keyword Link", "keywordLink", "keywordLink")#keywordLink.form-control.input-sm
+    +elfInputVB("Link Title", "linkTitle", "linkTitle")#linkTitle.form-control.input-sm
+    +elfInputVB("Aggregate Link", "aggregateLink", "aggregateLink")#aggregateLink.form-control.input-sm
+    +elfInputVB("Long URL", "longUrl", "longUrl")#longUrl.form-control.input-sm
+    +elfInputVB("Client ID", "clientId", "clientId")#clientId.form-control.input-sm
+    +elfInputVB("Link", "link", "link")#link.form-control.input-sm
+    +elfInputVB("User Time Stamp", "userTs", "userTs")#userTs.form-control.input-sm
+    +elfInputVB("Created At", "createdAt", "createAt")#createdAt.form-control.input-sm
+    +elfInputVB("Modified At", "modifiedAt", "modifiedAt")#modifiedAt.form-control.input-sm
+
+    hr
+
+    div.row
+        div.col-sm-6
+            +forwardBack("elfMovement.left()", "elfMovement.right()")
+        div.col-sm-6
+            +elfCheckBox("Private", "checkBoxPrivate", "checkBoxPrivate")#checkBoxPrivate
+            +elfCheckBox("Archived", "checkBoxArchived", "checkBoxArchived")#checkBoxArchived
+```
+
+The **elfFormPanel** is flush left in the editor. I separate the checkboxes and forward backward buttons from the input controls with an HR element, which was, called a *horizontal rule*, but which is now represents a [thematic break](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr).
+
+I believe that formatting your code this way ensures that it will pass the following test:
+
+```javascript
+it('shows we can get some of the attributes of the text input keywordLink', function() {
+    var element = document.getElementById('keywordLink');
+    var arr = elfTestUtils.getAttributesFromElement(element);
+    // elfTestUtils.showAttributes(element, arr);
+    expect(arr.length).toBeGreaterThan(4);
+});
+```
+
+## JSHint
+
+I want to get see clean JSHint results when I type **grunt test**. One student's midterm produced these results:
+
+```javascript
+$ grunt test
+Running "jshint:files" (jshint) task
+
+public/javascripts/link/delicious.js
+  line 6   col 9   Missing "use strict" statement.
+  line 10  col 9   Missing "use strict" statement.
+  line 18  col 9   Missing "use strict" statement.
+  line 45  col 9   Missing "use strict" statement.
+  line 73  col 42  Missing semicolon.
+  line 77  col 9   Missing "use strict" statement.
+
+  ✖  5 errors
+  ⚠  1 warnings
+
+Warning: Task "jshint:files" failed. Use --force to continue.
+
+Aborted due to warnings.
+```
+
+The good side of the above results is that they are limited to problems in one file: everything else came back clean. On the other hand, these are simple problems to fix, and turning on **strict** can help us find problems in our code.
+
+## Error Messages
+
+Don't forget to add support for better error messages, as explained in [GruntCheck02][err-msg]. Before I put in this error handler, this is what I saw at the command line when I hit an error:
+
+```bash
+GET /delicious 500 48.191 ms - 2369
+```
+
+After I installed the error handler, this is what I saw:
+
+```bash
+GET /bitly 304 552.907 ms - -
+Development error handler called
+About to render error { [TypeError: .../Week08-Midterm-Gan/views/delicious.jade:6
+    4| block content
+    5| 
+  > 6|    +elfPanel("Image Display").elfDiv#imagePanel
+    7|       img#image
+    8| 
+    9|    div.panel.panel-default
+
+Cannot read property 'call' of undefined]
+  path: '/home/charlie/Git/isit320-2015/etc.../views/delicious.jade' }
+GET /delicious 500 93.348 ms - 2369
+```
+
+As you can see, without the good error handler, it is almost impossible to know what is wrong, with it, the problem becomes obvious right away. In particular, this error usually results from a missing **include mixins...** statement in our jade.
+
+[err-msg]: http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck02.html#the-error-handler
+
+## Mixins
+
+We created files such as **bitly.jade**, **delicious.jade**, and **twitter.jade**. If you use mixins in these files, then you must **include** them at the top of the **jade** file. One student made an interesting mistake. It happens that our **delicous.jade** file did not use mixins. But this student added one mixin to the file:
+
+```javascript
+block content
+
++elfPanel("Image Display").elfDiv#imagePanel
+  img#image
+
+div.panel.panel-default
+  div.panel-heading Text Input
+  div.panel-body
+     div.form-group
+        label(for='subject') Subject
+        input#subject.form-control(type='text', placeholder="subject")
+        br
+        button.btn.btn-primary(onclick="elfDelicious.delicious()") Delicous
+  div
+```
+
+Once the mixin was added, even if most of the file did not use mixins, then we have to have add an **include** statement:
+
+```javascript
+include mixin-radios
+```
+
+## When to Load Scripts Dynamically {#when-to-load-dynamic}
+
+At least one student decided to load JavaScript not in **layout.jade** but dynamically as needed:
+
+```javascript
+$('input[id="delicious"]').click(function() {
+    elfMidterm.clear();
+    $('#displayContainer').load('/delicious', function(response, status, xhr) {
+        if (status == 'error') {
+            var msg = 'Sorry but there was an error: ';
+            $('#error').html(msg + xhr.status + ' ' + xhr.statusText);
+            console.log(msg + xhr.status + ' ' + xhr.statusText);
+        }
+    });
+    $.getScript('javascripts/link/delicious.js');
+});
+```
+
+**NOTE**: *The Chrome and Firefox debuggers have a hard time with code like this, but there is a simple work around covered near the end of this document in a section called **Script Debug Work Around**.*
+
+The problem with the above code is that that the script will frequently be loaded before the HTML has loaded. As a result, the buttons and other controls do not get hooked up properly. The solution is to do this:
+
+```javascript
+```javascript
+$('input[id="delicious"]').click(function() {
+    elfMidterm.clear();
+    $('#displayContainer').load('/delicious', function(response, status, xhr) {
+        if (status == 'error') {
+            var msg = 'Sorry but there was an error: ';
+            $('#error').html(msg + xhr.status + ' ' + xhr.statusText);
+            console.log(msg + xhr.status + ' ' + xhr.statusText);
+        }
+        $.getScript('javascripts/link/delicious.js');
+    });
+});
+```
+
+By putting the **getScript** call in the callback, we can be certain script gets loaded after the HTML is ready. As a results, checkboxes, radiobuttons and other controls get hooked up properly.
+
+## Script Debug Workaround {#debug-work-around}
+
+If you choose to load scripts dynamically, which is not wrong, but also not something I'd recommend for most students, you should add the following code to your project so that you can properly debug it. You'd want this at least during the coding and debugging phase of your development cycle. It overrides the original jQuery version of **getScript**. I put this code in the main **document.ready**:
+
+```javascript
+jQuery.extend({
+    getScript: function(url, callback) {
+        var head = document.getElementsByTagName("head")[0];
+        var script = document.createElement("script");
+        script.src = url;
+
+        // Handle Script loading
+        {
+            var done = false;
+
+            // Attach handlers for all browsers
+            script.onload = script.onreadystatechange = function(){
+                if ( !done && (!this.readyState ||
+                    this.readyState == "loaded" || this.readyState == "complete") ) {
+                    done = true;
+                    if (callback)
+                        callback();
+
+                    // Handle memory leak in IE
+                    script.onload = script.onreadystatechange = null;
+                }
+            };
+        }
+
+        head.appendChild(script);
+
+        // We handle everything using the script element injection
+        return undefined;
+    }
+});
+```
+
+- [Reference](http://stackoverflow.com/a/691661/253576)

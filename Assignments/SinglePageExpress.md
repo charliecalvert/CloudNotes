@@ -312,3 +312,45 @@ div
 
 	// FILL IN THE REST OF YOUR TWITTER REFINE INDEX.JADE HERE
 ```
+
+## One layout.jade {#one-layout-jade}
+
+A rather subtle, and quite pernicious, bug can be introduced in our programs if we try to **extend** the file called **layout.jade** in the wrong places. This bug took me awhile to track down when I first saw it in a student's work. Don't let it happen to you, as it can cause a strange, repetitive loading of our jade files that quickly brings a program to its knees.
+
+Our single page application has one main page defined in **index.jade**. That page **extends layout.jade**:
+
+```
+extends layout
+include mixin-buttons
+include mixin-inputs
+include  mixin-radios
+block content
+   h1= title
+   etc...
+```
+
+We also have secondary pages that are swapped in and out as the user makes selections. Make sure you do not try to extend **layout.jade** in any of those files. For instance, this would cause an error if included at the top of a secondary file:
+
+```
+extends layout
+include mixin-buttons
+include mixin-inputs
+include  mixin-radios
+block content
+   h1= title
+   etc...
+```
+
+Instead, the code might, in some cases look a bit like this:
+
+```
+include mixin-inputs
+include mixin-radios
+include mixin-buttons
+
++elfPanel("Bitly Links Table").elfDiv
+    div.scroller
+        table.table#tableLinks
+
+etc...
+```

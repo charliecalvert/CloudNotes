@@ -27,6 +27,32 @@ if (app.get('env') === 'development') {
 }
 ```
 
+Before I put in this error handler, this is what I saw at the command line when I hit an error:
+
+```bash
+GET /delicious 500 48.191 ms - 2369
+```
+
+After I installed the error handler, this is what I saw:
+
+```bash
+GET /bitly 304 552.907 ms - -
+Development error handler called
+About to render error { [TypeError: .../Week08-Midterm-Gan/views/delicious.jade:6
+    4| block content
+    5| 
+  > 6|    +elfPanel("Image Display").elfDiv#imagePanel
+    7|       img#image
+    8| 
+    9|    div.panel.panel-default
+
+Cannot read property 'call' of undefined]
+  path: '/home/charlie/Git/isit320-2015/etc.../views/delicious.jade' }
+GET /delicious 500 93.348 ms - 2369
+```
+
+As you can see, without the extended error handler, it is almost impossible to know what is wrong, with it, the problem becomes obvious right away. In particular, this error usually results from a missing **include mixins...** statement in our jade.
+
 ## Get Recent Templates.
 
 Start by getting the tests from **$ELF_TEMPLATES/UnitTest/BitlyRefine**. In **JsObjects** do a **git pull.**. Then from your git repository root folder:
