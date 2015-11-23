@@ -145,6 +145,14 @@ files: [
 ],
 ```
 
+Of course, you also need to have a copy of **bitly-links.js** in the spec directory or this won't work. There are copies of this file in various projects that we created this quarter. There are also copies in **$ELF_TEMPLATES/UnitTest/...**
+
+If you are looking for a file in a set of directories, try:
+
+```bash
+find . -iname bitly-links.js
+```
+
 ## Fixture Issues
 
 You may get an error such as **null is not an object (evaluating 'document.getElementById etc...**

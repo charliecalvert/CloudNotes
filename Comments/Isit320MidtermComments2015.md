@@ -198,6 +198,55 @@ Summary:
 - I want to be sure you can follow a specification laid out in a unit test.
 - I want to be sure that you can fix certain problems, such as name mismatches, that frequently occur in code.
 
+## Properly Qualify Names
+
+We place the Delicious code in an object called **elfDelicious**. When calling methods and referencing properties that belong to **elfDelicious** we have to properly qualify the method or property name. To reference the property of **elfDelicious** called **deliciousLinks** we don't write **deliciousLinks**, we write either:
+
+- elfDelicious.deliciousLinks
+- this.deliciousLinks
+
+Look below at the success block inside **callDelicious**. Notice the places where we write:
+
+- elfDelicious.deliciousLinks
+- elfDelicious.appendUrl
+
+```javascript
+var elfDelicious = {
+
+    deliciousLinks: null,
+
+    appendUrl: function(index, deliciousLink) {
+        'use strict';
+        var url = deliciousLink.u;
+        var description = deliciousLink.d;
+        var anchor = '<a href="' + url + '" target="_blank">' + description + '</a>';
+        var details = '<a onclick="elfDelicious.detailDelicious(' + index + ')">Details</a>';
+        $('#urlDelicious').append('<li>' + anchor + ' - ' + details + '</li>');
+    },
+
+    callDelicious: function(subject) {
+        'use strict';
+        var feedUrl = 'http://feeds.delicious.com/v2/json/charliecalvert/' + subject;
+        $.ajax({
+            url: feedUrl,
+
+            dataType: 'jsonp',
+
+            success: function(data) {
+                elfDelicious.deliciousLinks = data;
+                $('#urlDelicious').empty();
+                $.each(elfDelicious.deliciousLinks, function(index, deliciousLink) {
+                    elfDelicious.appendUrl(index, deliciousLink);
+                });
+                $('#deliciousDetails').html(JSON.stringify(elfDelicious.deliciousLinks, null, 4));
+            }
+        });
+    },
+
+    // CODE OMITTED
+};
+```
+
 ## Naming GetLinks
 
 A number of students wrote, or have written, something like this:
@@ -446,6 +495,101 @@ Once the mixin was added, even if most of the file did not use mixins, then we h
 include mixin-radios
 ```
 
+## Copy All Tests {#all-tests}
+
+Be sure that you have copied in all the tests from JsObjects. First run one of these commands to see if there are any differences between your **specs** directory and the ELF_TEMPLATES BitlyRefine specs:
+
+```bash
+diff spec/ $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/
+meld spec/ $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/
+```
+
+If something is wrong, you might get results like this if you used **diff**:
+
+```bash
+diff spec/test-urls.js /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/Isit320Midterm2015/test-urls.js
+8c8
+<     var accessToken = '2ac4b4ccf91019cff6a6b3f23bcbe05ec2bf7a8c';
+---
+>     var accessToken = elfDownloads.accessToken;
+12d11
+< 
+14c13
+<         expect(url).toContain(elfBitly.localUrl);
+---
+>         expect(url).toContain('data/bitly-links.json');
+17,18c16,17
+<     it('gets a cloud url', function() {
+<         var url = elfBitly.getUrl(elfDownloads.dataTypes.dtCloud);
+```
+
+This kind of output occurs if there are significant differences between the tests you have in your in your folder and the tests I wanted you to run. To fix this problem, consider running this command:
+
+```bash
+cp $ELF_TEMPLATES/UnitTest/Isit320Midterm2015/* spec/
+```
+
+Now the **diff** command should come back relatively clean.
+
+## Jade in Content Block {#content-block}
+
+Make sure your jade in **index.jade** is inside the content block. Consider this bit of code:
+
+```jade
+extends layout
+include mixin-radios
+include mixin-inputs
+include mixin-buttons
+include mixins
+
+block content
+	h1= title
+	p Welcome to #{title}
+
+    +elfPanel('Options')
+        div.panel.panel-default
+            div.panel-heading Iterate
+            div.panel-body
+                div.row
+    // CODE OMITTED HERE
+hr
+#displayContainer
+```
+
+The HTML that we want to see should be inside the content block. The H1 and P elements, for instance, are inside the **content block**. The HR and the **displayContainer**, however, are outside it. As a result, they are not rendered. They are invisible. To fix this, move them to the right:
+
+```jade
+extends layout
+include mixin-radios
+include mixin-inputs
+include mixin-buttons
+include mixins
+
+block content
+	h1= title
+	p Welcome to #{title}
+
+    +elfPanel('Options')
+        div.panel.panel-default
+            div.panel-heading Iterate
+            div.panel-body
+                div.row
+    // CODE OMITTED HERE
+    hr
+    #displayContainer
+```
+
+**NOTE**: *Remember to look at the HTML for your application at run time. Is it what you expect to see? In this case, when I looked at the students HTML, I saw that **displayContainer** was missing. Once I knew that, it was relatively easy to look at the Jade and see what was wrong. The student had included a DIV with an ID of **displaycontainer** in their jade, but it was indented improperly and hence was not rendered into HTML.*
+
+I have added the following test to **test-jade-index** to help student's catch this problem:
+
+```javascript
+it('shows that we have one DIV with an ID of displayContainer', function() {
+    var displayContainer = $('#displayContainer');
+    expect(displayContainer.length).toBe(1);
+});
+```
+
 ## When to Load Scripts Dynamically {#when-to-load-dynamic}
 
 At least one student decided to load JavaScript not in **layout.jade** but dynamically as needed:
@@ -468,7 +612,6 @@ $('input[id="delicious"]').click(function() {
 
 The problem with the above code is that that the script will frequently be loaded before the HTML has loaded. As a result, the buttons and other controls do not get hooked up properly. The solution is to do this:
 
-```javascript
 ```javascript
 $('input[id="delicious"]').click(function() {
     elfMidterm.clear();

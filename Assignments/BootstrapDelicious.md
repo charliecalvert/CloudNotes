@@ -153,7 +153,7 @@ html
 Get started defining the HTML for your app by creating a single button and input control. This code belongs in **index.jade**:
 
 ```jade
-button(onclick="delicious()") Delicous
+button(onclick="deliciousEventHandler()") Query Delicious
 
 div.panel.panel-default
     div.panel-heading Text Input
@@ -189,7 +189,7 @@ function callDelicious(subject) { 'use strict';
     });
 }
 
-function delicious() { 'use strict';
+function deliciousEventHandler(event) { 'use strict';
     var subject = $("#subject").val();
     callDelicious(subject);
 }
@@ -282,8 +282,6 @@ $(document).ready(function() {
     // Initialize controls
     // CALL CODE THAT HANDLES CHECK BOX SELECTION
 });
-
-elicious}
 
 ## Step 6.5: Compose URL {#compose-url}
 

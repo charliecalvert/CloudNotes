@@ -161,7 +161,7 @@ $("#target").submit(function(event) {
 For now, however, we are ensuring that even if we had a form, our button does not trigger form submit by setting the button **type** to **button**:
 
 ```jade
-button.btn.btn-primary(type="button", onclick="delicious()") Search Delicious
+button.btn.btn-primary(type="button", onclick="deliciousEventHandler()") Search Delicious
 ```
 
 ## Pass Parameters
@@ -169,7 +169,7 @@ button.btn.btn-primary(type="button", onclick="delicious()") Search Delicious
 Consider the following functions:
 
 ```javascript
-function delicious() {
+function deliciousEventHandler() {
     'use strict';
     var subject = $("#subject").val();
     console.log(subject);
@@ -181,14 +181,14 @@ function displayCheckboxSelection()
 {
     if ($("#chJavaScript").is(':checked')) {
         $("#myList").empty();
-        delicious('javascript');
+        deliciousEventHandler('javascript');
     } else {
         $("#checkBoxDisplay01").html("CheckBox01 not Checked");
     }
 
     if ($("#chBootstrap").is(':checked')) {
         $("#myList").empty();
-        delicious('bootstrap');
+        deliciousEventHandler('bootstrap');
         etc...
 ```
 
@@ -197,58 +197,68 @@ There are two problems with this code:
 - To many calls to **$("#myList").empty()**
 - Missing parameter in the declaration of **delicious**
 
-These are checkboxes, and so more than one of them can be selected. If we clear the list when responding to our check for each check box, then the following happens:
+### Pass Parameters: Empty List {#empty-list}
+
+Let's deal with empty list issue first.
+
+In general, this is not the right place to clear the controls. Do that just before you populate them. For instance, in the callDelicious method. The problem is that these are checkboxes, and so more than one of them can be selected. If we clear the list when responding to our check for each check box, then the following happens:
 
 - Suppose the first checkbox is checked
 - Our code responds to this by
 	- emptying the list
-	- and Attempting the fill the list
+	- and Attempting to fill the list
 - Suppose the second check box is checked
 - Our code responds to this
 	- emptying the list
 
-And lets just stop right there. We filled the list, in the first case, and emptied it in the second case. This means our work showing the results of the first checkbox was obliterated. This will never do. Instead, we should call **empty** once at the beginning of the function:
+And lets just stop right there. We filled the list, in the first case, and emptied it in the second case. This means our work showing the results of the first checkbox was obliterated. This will never do. Instead, we should call **empty** in **callDelicious**, just before we display data, as shown above.
+
+### Pass Parameters: The Arguments {#parameter-arguments}
+
+Notice also that the student's call to the **delicious** method passes in the string **javascript** as its single argument:
 
 ```javascript
-function displayCheckboxSelection()
-{
-    var tag, query = '';
-    var options = ['bootstrap', 'javascript', 'nodejs'];
-
-    $("#myList").empty();
-
-    // Complete implementation for this method shown above.
+deliciousEventHandler('javascript');
 ```
 
-Even better, call **empty** just before we fill the list in our **callDelicious** method, as shown above.
-
-Notice also that the student's call to the **delicious** method passes in a parameter:
+But the **deliciousEventHandler** method does not take a parameter:
 
 ```javascript
-delicious('javascript');
-```
-
-But the **delicious** method, as declared in the student's code, does not take a parameter:
-
-```javascript
-function delicious() {
+function deliciousEventHandler() {
     'use strict';
     var subject = $("#subject").val();
-     console.log(subject);
+    console.log(subject);
     callDelicious(subject);
-    resultList(subject);
 }
 ```
 
-The solution is to give the method a parameter, and not to try to retrieve the user's input at this point in our code:
+One possible, but ultimately incorrect, solution would be to give the **delicious** method a parameter, and not to try to retrieve the user's input at this point in our code:
 
 ```javascript
-function delicious(subject) {
+function deliciousEventHandler(subject) {
     'use strict';
     console.log(subject);
     callDelicious(subject);
-    resultList(subject);
 }
 ```
 
 Notice that the call to **$("#subject").val();** has been removed.
+
+That would solve our immediate problem, but it would introduce other problems in our code. A better solution would be to restore our original **deliciousEventHandler** method:
+
+```javascript
+function deliciousEventHandler() {
+    'use strict';
+    var subject = $("#subject").val();
+    console.log(subject);
+    callDelicious(subject);
+}
+```
+
+Instead of calling this method directly, we can invoke **callDelicious** as shown in the **displayCheckboxSelection** method quoted in full above. Notice the invocation of **callDelicious** near the end of the **displayCheckboxSelection** method:
+
+```javascript
+callDelicious(query)
+```
+
+Notice also that **deliciousEventHandler** is not called at all in **displayCheckboxSelection**. The **deliciousEventHandler** method should only be called from our **HTML** based button click method.

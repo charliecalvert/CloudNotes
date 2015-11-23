@@ -96,3 +96,70 @@ specReporter: {
     suppressSkipped: true // do not print information about skipped tests
 },
 ```
+
+## Copy All Tests {#all-tests}
+
+Be sure that you have copied in all the tests from JsObjects. First run this command to see if there are any differences between your **specs** directory and the ELF_TEMPLATES BitlyRefine specs:
+
+```bash
+diff spec/ $ELF_TEMPLATES/UnitTest/BitlyRefine/
+```
+
+If something is wrong, you might get results like this:
+
+```bash
+diff spec/test-basic.js /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/BitlyRefine/test-basic.js
+98a99,110
+>     it('shows we can call getLinkHistoryArray', function() {
+>         elfBitly.getBitlyLinks();
+>         var historyArray = elfBitly.getLinkHistoryArray();
+>         expect(historyArray.length).toBe(50);
+>     });
+> 
+>     it('shows getLinkHistoryItem sets elfBitly.linkIndex', function() {
+>         elfBitly.getBitlyLinks();
+>         var historyArray = elfBitly.getLinkHistoryItem(12, true);
+>         expect(elfBitly.linkIndex).toBe(12);
+>     });
+> 
+118a131
+> 
+diff spec/test-files.js /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/BitlyRefine/test-files.js
+0a1,4
+> /**
+>  * Created by charlie on 11/9/15.
+>  */
+> 
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/BitlyRefine/: test-fixture-util.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/BitlyRefine/: test-interface.js
+Only in /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/BitlyRefine/: test-jade.js
+Only in spec/: test-jasmine-jquery.js
+diff spec/test-local-cloud.js /home/charlie/Git/JsObjects/Utilities/Templates/UnitTest/BitlyRefine/test-local-cloud.js
+0a1,4
+
+ETC ...
+```
+
+To fix this problem, consider running this command:
+
+```bash
+cp $ELF_TEMPLATES/UnitTest/BitlyRefine/* spec/
+```
+
+Now the **diff** command should come back clean.
+
+## Include Jade for the Radio Buttons
+
+Something like this:
+
+```javascript
++elfPanelType("Options", "panel-primary").elfDiv
+    div.row
+        div.col-sm-6
+            +elfPanel("Iterate", "panel-default")
+                +downloadButton("Get Bitly Data", "elfDownloads.getBitlyData()")
+        div.col-sm-6
+            +elfRadioPanel("Radio Buttons", "dataSource")
+                +elfRadio("Local Data", "localData")
+                +elfRadio("Cloud Data", "cloudData")
+```

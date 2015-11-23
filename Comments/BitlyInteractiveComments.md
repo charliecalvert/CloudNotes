@@ -40,6 +40,8 @@ html
     block content
 ```
 
+You should not put all your code in *control.js*. Instead you should break the objects out into separate files, with **elfDownloads** in **downloads.js**, etc.
+
 ## Switching Sources {#Switch Source}
 
 We have two buttons that allow us to switch between the local and remote data.
@@ -338,4 +340,50 @@ Replace PhantomJS with Chrome:
 ```
 sed -i -- "s/browsers: \['PhantomJS'\]/browsers: \['Chrome'\]/" karma.conf.js
 sed -i -- "s/karma-phantomjs-launcher/karma-chrome-launcher/" karma.conf.js
+```
+
+## Calling ShowRecord
+
+Since we call showRecord in our **display** method, then we are also going to have to declare and implement **showRecord** in the same object:
+
+```javascript
+var bitlyUrlParser = {
+
+	// CODE OMITTED HERE
+
+    display: function() {
+        'use strict';
+        var index = this.linkIndex;
+        var bitlyLink = this.getLinkHistoryItem(index);
+        this.showRecord(bitlyLink);
+    },
+
+	// CODE OMITTED HERE
+
+    showRecord: function(bitlyLink) {
+        'use strict';
+        if (bitlyLink.private) {
+            $('#checkBoxPrivate').prop('checked', true);
+        }
+		etc ...
+    }
+}
+```
+
+In our case, we could also implement **display** like this:
+
+```javascript
+var bitlyUrlParser = {
+
+    // CODE OMITTED HERE
+
+    display: function() {
+        'use strict';
+        var index = bitlyUrlParser.linkIndex;
+        var bitlyLink = bitlyUrlParser.getLinkHistoryItem(index);
+        bitlyUrlParser.showRecord(bitlyLink);
+    },
+
+    // CODE OMITTED HERE
+}
 ```

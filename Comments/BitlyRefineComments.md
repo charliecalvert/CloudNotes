@@ -106,6 +106,55 @@ Be sure you include this code in **index.jade**:
 
 Without this code, the rest of your project will never work as the code that you insert into your table will not have a home in your HTML.
 
+## Include Jade for the Radio Buttons
+
+Something like this:
+
+```jade
++elfPanelType("Options", "panel-primary").elfDiv
+    div.row
+        div.col-sm-6
+            +elfPanel("Iterate", "panel-default")
+                +downloadButton("Get Bitly Data", "elfDownloads.getBitlyData()")
+        div.col-sm-6
+            +elfRadioPanel("Radio Buttons", "dataSource")
+                +elfRadio("Local Data", "localData")
+                +elfRadio("Cloud Data", "cloudData")
+```
+
+## Render the Links
+
+In **elf-bitly.js** don't call **elfBitly.display**. That method should be deleted and moved to **elfDisplay**. The following code, for instance, is wrong, since it calls **elfBitly.display**:
+
+```javascript
+$.getJSON(url, function(result) {
+        elfBitly.bitlyLinks = result;
+        elfBitly.display();
+```
+
+You should instead call code in **elfDisplay**:
+
+```javascript
+$.getJSON(url, function(result) {
+    elfBitly.bitlyLinks = result;
+    elfDisplay.render();
+    elfDisplay.renderTable(elfBitly.getLinkHistoryArray());
+```
+
+The code in **elfDisplay.render** is similar to the code that was in **elfBitly.display**:
+
+```javascript
+render: function() {
+    'use strict';
+    var index = elfBitly.linkIndex;
+    var bitlyLink = elfBitly.getLinkHistoryItem(index);
+    elfDisplay.showRecord(bitlyLink);
+},
+
+```
+
+I changed the name of the method from **display** to **render** because I thought that **elfDisplay.display** sounded awkward and repetitious.
+
 ## Render the Table
 
 Here is the correct code for rendering the table:
