@@ -67,3 +67,38 @@ Copy in the delicious test suite:
 	cp $ELF_TEMPLATES/UnitTest/HyperExplorer/test-delicious.js spec/.
 
 Make sure they all pass.
+
+## New Tests
+
+```javascript
+it('checks that elfBitly.getLinks calls elfDisplay.renderTable', function() {
+    spyOn(elfDisplay, 'renderTable');
+    elfBitly.getLinks(elfDownloads.dataTypes.dtBitly);
+    expect(elfDisplay.renderTable).toHaveBeenCalled();
+});
+
+it('checks elfBitly.getLinks calls elfDisplay.render', function() {
+    spyOn(elfDisplay, 'render');
+    elfBitly.getLinks(elfDownloads.dataTypes.dtBitly);
+    expect(elfDisplay.render).toHaveBeenCalled();
+});
+
+it('checks elfBitly.getLinks calls elfBitly.getUrl', function() {
+    spyOn(elfBitly, 'getUrl');
+    elfBitly.getLinks(elfDownloads.dataTypes.dtBitly);
+    expect(elfBitly.getUrl).toHaveBeenCalled();
+});
+
+it('shows we can call getLinkHistoryArray', function() {
+    elfBitly.getLinks(elfDownloads.dataTypes.dtBitly);
+    var historyArray = elfBitly.getLinkHistoryArray();
+    expect(historyArray.length).toBe(50);
+});
+
+it('shows getLinkHistoryItem sets elfBitly.linkIndex', function() {
+    elfBitly.getLinks(elfDownloads.dataTypes.dtBitly);
+    var historyArray = elfBitly.getLinkHistoryItem(12, true);
+    expect(elfBitly.linkIndex).toBe(12);
+});
+
+```

@@ -82,6 +82,17 @@ More information is available below in the Create Table section.
 
 [bid]: http://www.ccalvert.net/books/CloudNotes/Assignments/BitlyInteractive.html#the-downloads-module
 
+## Clear Controls
+
+You will also want to clear the table so that the user can see the new data when you switch back and forth between **local** and **cloud** data. The call should be made just before you want to fill in the table with new data.
+
+```javascript
+elfDownloads.clearControls = function() {
+    'use strict';
+    $('#tableLinks').empty();
+};
+```
+
 ## Elf Unity
 
 This is a refactoring issue. We want to take a halfway step to fixing the global namespace problem. Let's begin by making sure all our objects begin with the letters **elf**.
