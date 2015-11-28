@@ -749,3 +749,39 @@ jQuery.extend({
 ```
 
 - [Reference](http://stackoverflow.com/a/691661/253576)
+
+
+## Images
+
+The code from display.js that helps you create links for images in bitly.
+
+```javascript
+hyperlinkUrl: function(index, text, url) {
+    'use strict';
+    var anchor = '<a href="' + url + '" target="_blank">' + text + '</a>';
+    var details = '<a onclick="elfDisplay.displayImage(' + index + ')">Details</a>';
+    return {
+        title: anchor,
+        keyword: details
+    };
+},
+
+displayImage: function(index) {
+    'use strict';
+    var link = elfBitly.getLinkHistoryItem(index);
+    $('#image').attr('src', link.keyword_link);
+},
+
+renderTable: function(links) {
+    'use strict';
+    $.each(links, function(index, link) {
+        var links = elfDisplay.hyperlinkUrl(index, link.title, link.keyword_link);
+        var title = '<td>' + links.title + '</td>';
+        var keyword = '<td>' + links.keyword + '</td>';
+        var tableRowStart = '<tr class="linkTitle" index=' + index + '>';
+        $('#tableLinks').append(tableRowStart + title + keyword + '<tr>');
+    });
+    $('.linkTitle').click(elfDisplay.showTableSelection);
+},
+
+```
