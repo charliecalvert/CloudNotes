@@ -30,12 +30,17 @@ Then install some tools:
 
 ```bash
 npm install jasmine-jquery --save-dev
-npm install grunt-contrib-jasmine --save-dev
 npm install grunt-exec --save
 npm install grunt-contrib-jade --save-dev
 npm install grunt-contrib-clean --save-dev
 npm install grunt-jscs --save-dev
 npm install grunt-jsbeautifier --save-dev
+```
+
+No longer needed:
+
+```bash
+npm install grunt-contrib-jasmine --save-dev
 ```
 
 ## Grunt
