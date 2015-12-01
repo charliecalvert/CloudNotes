@@ -84,7 +84,54 @@ Copy in the delicious test suite:
 
 Make sure they all pass.
 
+## The logger
 
+In **elf-log.js**
+
+```javascript
+(function() {
+
+    'use strict';
+
+    function ElfLog() {
+        this.debugLevel = this.logLevelWarn;
+    }
+
+    //var levels = ['error', 'warn', 'info', 'silent'];
+    var that;
+
+    ElfLog.prototype.logLevelError = 0;
+    ElfLog.prototype.logLevelWarn = 1;
+    ElfLog.prototype.logLevelDetails = 2;
+    ElfLog.prototype.logLevelInfo = 3;
+    ElfLog.prototype.logLevelSilent = 4;
+
+    ElfLog.prototype.debugLevel = undefined;
+
+    ElfLog.prototype.setLevel = function(level) {
+        this.debugLevel = level;
+    };
+
+    ElfLog.prototype.log = function(level, message) {
+        // console.log("Level:", level, 'debugLevel: ', this.debugLevel);
+        if (level >= this.debugLevel) {
+            if (typeof message !== 'string') {
+                message = JSON.stringify(message);
+            }
+            console.log(level+': '+message);
+        }
+    };
+
+    that = new ElfLog();
+    window.elfLog = that;
+})();
+```
+
+Use it like this:
+
+```javascript
+elfLog.setLevel(elfLog.logLevelDetails); // Done once per application
+elfLog.log(elfLog.logLevelDetails, 'ElfDisplay.Render index: ' + index);
 ## Movement Tests
 
 Make sure you have created spec/fixtures/bitly.html:
@@ -206,6 +253,23 @@ it('shows getLinkHistoryItem sets elfBitly.linkIndex', function() {
 });
 ```
 
+Here are some results:
+
+```
+Test Delicous Fixture
+    ✓ expects a checkbox with an id of #chJavaScript
+    ✓ expects a checkbox with an id of #chJavaScript to be a checkbox
+    ✓ expects a checkbox with an id of #chBootstrap
+    ✓ expects a checkbox with an id of #chBootstrap to be a checkbox
+    ✓ expects a checkbox with an id of #chNodeJs
+    ✓ expects a checkbox with an id of #chNodeJs to be a checkbox
+    ✓ expects selecting #chBootstrap to cause displayCheckBoxSelection to have been called
+    ✓ expects selecting #chBootstrap to cause callDelicious to be called
+    ✓ expects selecting #chBootstrap to cause callDelicious to be called with bootstrap
+    ✓ expects selecting #chJavaScript to cause callDelicious to be called with javascript
+    ✓ expects selecting #chNodeJs to cause callDelicious to be called with nodejs
+    ✓ selecting #chNodeJs & #chJavaScript to cause callDelicious to be called with javascript+nodejs
+```
 
 ## Favicon
 

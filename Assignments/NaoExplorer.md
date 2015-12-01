@@ -146,6 +146,360 @@ Check for caption using jQuery:
 
 Note that with jQuery we have to index into the result: **button[0]**. You should feel comfortable with either technique.
 
+## Logging
+
+In **elf-log.js**:
+
+```javascript
+(function() {
+
+    'use strict';
+
+    function ElfLog() {
+        this.debugLevel = this.logLevelWarn;
+    }
+
+    //var levels = ['error', 'warn', 'info', 'silent'];
+    var that;
+
+
+    ElfLog.prototype.logLevelError = 0;
+    ElfLog.prototype.logLevelWarn = 1;
+    ElfLog.prototype.logLevelDetails = 2;
+    ElfLog.prototype.logLevelInfo = 3;
+    ElfLog.prototype.logLevelSilent = 4;
+
+    ElfLog.prototype.debugLevel = undefined;
+
+    ElfLog.prototype.setLevel = function(level) {
+        this.debugLevel = level;
+    };
+
+    ElfLog.prototype.log = function(level, message) {
+        // console.log("Level:", level, 'debugLevel: ', this.debugLevel);
+        if (level >= this.debugLevel) {
+            if (typeof message !== 'string') {
+                message = JSON.stringify(message);
+            }
+            console.log(level+': '+message);
+        }
+    };
+
+    that = new ElfLog();
+    window.elfLog = that;
+})();
+```
+
+## Parse Behaviors
+
+This is **parse-behavior.js**:
+
+```javascript
+var ElfParseBehaviors = (function() {
+
+    'use strict';
+
+    var behaviors;
+    var that;
+
+    ParseBehaviors.prototype.infoCount = 0;
+
+    function ParseBehaviors(behaviorsInit) {
+        behaviors = behaviorsInit;
+        that = this;
+    }
+
+    var getInfoCount = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getInfoCount called');
+        var count = 0;
+        $.each(behaviors.result, function(index, item) {
+            // console.log(typeof item);
+            if (item.indexOf('[I]') !== -1) {
+                count++;
+            }
+        });
+        that.infoCount = count;
+        return count;
+    };
+
+    ParseBehaviors.prototype.getBehaviors = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getBehaviors called');
+        var infoCount = getInfoCount(behaviors.result);
+        return JSON.parse(elfBehaviors.result[infoCount]);
+    };
+
+    ParseBehaviors.prototype.getBehaviorsAsArray = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getBehaviorAsArray called');
+        var b = this.getBehaviors();
+        var arrayOfBehaviorArrays = [];
+        $.each(b, function(index, value) {
+            var behaviorArray = value.split('/');
+            arrayOfBehaviorArrays.push(behaviorArray);
+        });
+        return arrayOfBehaviorArrays;
+    };
+
+    function isNotInArray(value, valueArray) {
+        return (valueArray.indexOf(value) === -1);
+    }
+
+    ParseBehaviors.prototype.getAnimationTypes = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimationTypes called');
+        var b = this.getBehaviorsAsArray();
+        var animationTypes = [];
+        $.each(b, function(index, valueArray) {
+            var value = valueArray[1];
+            if (valueArray[0] === 'animations' && isNotInArray(value, animationTypes)) {
+                animationTypes.push(value);
+            }
+        });
+        return animationTypes;
+    };
+
+    /* ParseBehaviors.prototype.getAnimationTypes = function() {
+        var b = this.getBehaviorsAsArray();
+        var animationTypes = [];
+        $.each(b, function (index, valueArray) {
+            var value = valueArray[1];
+            if (valueArray[0] === 'animations' && isNotInArray(value, animationTypes)) {
+                animationTypes.push(value);
+            }
+        });
+        return animationTypes;
+    }; */
+
+    ParseBehaviors.prototype.getAnimationCategoryFromType = function(type) {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimationCategoryFromType called');
+        var b = this.getBehaviorsAsArray();
+        var animationCategories = [];
+        $.each(b, function(index, valueArray) {
+            var value = valueArray[2];
+            if (valueArray[0] === 'animations' && valueArray[1] === type && isNotInArray(value, animationCategories)) {
+                animationCategories.push(value);
+            }
+        });
+        return animationCategories;
+    };
+
+    ParseBehaviors.prototype.getAnimationActions = function(type, category) {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimationActions called');
+        var b = this.getBehaviorsAsArray();
+        var animationActions = [];
+        $.each(b, function(index, valueArray) {
+            var value = valueArray[3];
+            if (valueArray[0] === 'animations' &&
+                valueArray[1] === type &&
+                valueArray[2] === category &&
+                isNotInArray(value, animationActions)) {
+                animationActions.push(value);
+            }
+        });
+        return animationActions;
+    };
+
+    ParseBehaviors.prototype.getAnimations = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimations called');
+        var b = this.getBehaviors();
+        var singleBehavior;
+        $.each(b, function(index, value) {
+            // singleBehavior = index + ': ' + value.split('/') + '\n';
+            singleBehavior = index + ': [' + value.split('/') + ']\n';
+            console.log(singleBehavior);
+            $('#robotResult').append(singleBehavior);
+        });
+    };
+
+    return ParseBehaviors;
+
+})();
+```
+
+## The Robot
+
+```javascript
+
+var ElfParseBehaviors = (function() {
+
+    'use strict';
+
+    var behaviors;
+    var that;
+
+    ParseBehaviors.prototype.infoCount = 0;
+
+    function ParseBehaviors(behaviorsInit) {
+        behaviors = behaviorsInit;
+        that = this;
+    }
+
+    var getInfoCount = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getInfoCount called');
+        var count = 0;
+        $.each(behaviors.result, function(index, item) {
+            // console.log(typeof item);
+            if (item.indexOf('[I]') !== -1) {
+                count++;
+            }
+        });
+        that.infoCount = count;
+        return count;
+    };
+
+    ParseBehaviors.prototype.getBehaviors = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getBehaviors called');
+        var infoCount = getInfoCount(behaviors.result);
+        return JSON.parse(elfBehaviors.result[infoCount]);
+    };
+
+    ParseBehaviors.prototype.getBehaviorsAsArray = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getBehaviorAsArray called');
+        var b = this.getBehaviors();
+        var arrayOfBehaviorArrays = [];
+        $.each(b, function(index, value) {
+            var behaviorArray = value.split('/');
+            arrayOfBehaviorArrays.push(behaviorArray);
+        });
+        return arrayOfBehaviorArrays;
+    };
+
+    function isNotInArray(value, valueArray) {
+        return (valueArray.indexOf(value) === -1);
+    }
+
+    ParseBehaviors.prototype.getAnimationTypes = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimationTypes called');
+        var b = this.getBehaviorsAsArray();
+        var animationTypes = [];
+        $.each(b, function(index, valueArray) {
+            var value = valueArray[1];
+            if (valueArray[0] === 'animations' && isNotInArray(value, animationTypes)) {
+                animationTypes.push(value);
+            }
+        });
+        return animationTypes;
+    };
+
+    /* ParseBehaviors.prototype.getAnimationTypes = function() {
+        var b = this.getBehaviorsAsArray();
+        var animationTypes = [];
+        $.each(b, function (index, valueArray) {
+            var value = valueArray[1];
+            if (valueArray[0] === 'animations' && isNotInArray(value, animationTypes)) {
+                animationTypes.push(value);
+            }
+        });
+        return animationTypes;
+    }; */
+
+    ParseBehaviors.prototype.getAnimationCategoryFromType = function(type) {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimationCategoryFromType called');
+        var b = this.getBehaviorsAsArray();
+        var animationCategories = [];
+        $.each(b, function(index, valueArray) {
+            var value = valueArray[2];
+            if (valueArray[0] === 'animations' && valueArray[1] === type && isNotInArray(value, animationCategories)) {
+                animationCategories.push(value);
+            }
+        });
+        return animationCategories;
+    };
+
+    ParseBehaviors.prototype.getAnimationActions = function(type, category) {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimationActions called');
+        var b = this.getBehaviorsAsArray();
+        var animationActions = [];
+        $.each(b, function(index, valueArray) {
+            var value = valueArray[3];
+            if (valueArray[0] === 'animations' &&
+                valueArray[1] === type &&
+                valueArray[2] === category &&
+                isNotInArray(value, animationActions)) {
+                animationActions.push(value);
+            }
+        });
+        return animationActions;
+    };
+
+    ParseBehaviors.prototype.getAnimations = function() {
+        elfLog.log(elfLog.logLevelDetails, 'ParseBehaviors.getAnimations called');
+        var b = this.getBehaviors();
+        var singleBehavior;
+        $.each(b, function(index, value) {
+            // singleBehavior = index + ': ' + value.split('/') + '\n';
+            singleBehavior = index + ': [' + value.split('/') + ']\n';
+            console.log(singleBehavior);
+            $('#robotResult').append(singleBehavior);
+        });
+    };
+
+    return ParseBehaviors;
+
+})();
+```
+
+## Launcher and Control
+
+```javascript
+$(document).ready(function() {
+    'use strict';
+    elfControl.initialize();
+});
+```
+
+And control:
+
+```javascript
+var elfControl = {
+    initialize: function() {
+        'use strict';
+
+        elfLog.setLevel(elfLog.logLevelDetails);
+
+        $('#leftArm').click(elfArm.armServerCall);
+
+        $('#behaviors').click(function(event) {
+            elfRobot.callingRobot();
+            $.getJSON('/behaviors', function(result, status, details) {
+                elfDisplay.clear();
+                elfDisplay.appendRobotResult(JSON.stringify(result, null, 4));
+            }).fail(function() {
+                console.log('error');
+            });
+        });
+
+        $('#parse').click(elfRobot.parseBehaviors);
+        $('#getAnimationCount').click(elfRobot.getAnimationCount);
+        $('#showAllObjects').click(elfRobot.showAllObjects);
+        $('#getAnimationTypes').click(elfRobot.getAnimationTypes);
+        $('#getAnimationCategoryFromType').click(elfRobot.getAnimationCategoryFromType);
+        $('#getAnimationActions').click(elfRobot.getAnimationActions);
+        $('#network').click(function(event) {
+            elfRobot.callingRobot();
+            elfRobot.basicServerCall('/network');
+        });
+    }
+};
+```
+
+## Display
+
+In **display.js**:
+
+```javascript
+var elfDisplay = {
+
+    appendRobotResult: function(value) {
+        'use strict';
+        $('#robotResult').append(value + '\n');
+    },
+
+    clear: function() {
+        'use strict';
+        $('#robotResult').empty();
+    }
+};
+```
+
 ## Turn it in
 
 For now, just make sure that you have:
