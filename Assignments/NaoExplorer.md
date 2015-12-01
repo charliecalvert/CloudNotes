@@ -29,13 +29,8 @@ You may have already done these tasks, in which case you should not run **Fixtur
 To get **FixtureReady**, first run **git pull** on **JsObjects** and then run this command:
 
 ```bash
-ln -s $ELF_TEMPLATES/UnitTest/FixtureReady ~/bin/FixtureReady
-ln -s $JSOBJECTS/Utilities/NodeInstall/CreateExpressProject ~/bin/CreateExpressProject
-ln -s $JSOBJECTS/Utilities/NodeInstall/CreateAllExpress ~/bin/CreateAllExpress
-ln -s $JSOBJECTS/Utilities/NodeInstall/check-karma-grunt-config ~/bin/check-karma-grunt-config
+ln -s $ELF_TEMPLATES/UnitTest/FixtureReady ~/bin/.
 ```
-
-This creates a symbolic link to the script in JsObjects. This way, when we update **JsObjects**, the "code" in **~/bin/FixtureReady** is automatically updated.
 
 
 ## Latest Check Karma
@@ -150,3 +145,14 @@ Check for caption using jQuery:
 ```
 
 Note that with jQuery we have to index into the result: **button[0]**. You should feel comfortable with either technique.
+
+## Turn it in
+
+For now, just make sure that you have:
+
+- Created the files described above
+- Gotten all the tests in test_fixture.js to work
+
+We will work more on this project, and more on updating the midterm, during class on Tuesday and Thursday.
+
+Remember that the midterm is now the final, so you want to get your program in good shape. In other words, this probably not a good week to miss class.
