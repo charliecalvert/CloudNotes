@@ -16,6 +16,22 @@ Make the necessary changes regarding names.
 
 Change the name of the class called elfMidterm to **elfHyperExplorer**. As a result of this change you will probably also need to make a change to your **document.ready** function.
 
+## Updates
+
+Copy in the most recent tests from the templates directory:
+
+```bash
+cp $ELF_TEMPLATES/UnitTest/HyperExplorer/test*.js spec/.
+```
+
+Unless you have made your own modifications to these files, simply copy in the most recent mixins:
+
+```bash
+cp $ELF_TEMPLATES/JadeMixins/mixin*.jade views/.
+```
+
+If you did modify them, then do a diff or meld to update the files, being sure that the left and right iteration buttons have ID's of **leftButton** and **rightButton**.
+
 ## Create a Spec Data Directory {#data-directory}
 
 Something like this:
@@ -68,7 +84,95 @@ Copy in the delicious test suite:
 
 Make sure they all pass.
 
-## New Tests
+
+## Movement Tests
+
+Make sure you have created spec/fixtures/bitly.html:
+
+```
+jade views/bitly.jade --out spec/fixtures/
+```
+
+Copy over **test-movement** and make sure all the tests pass:
+
+```bash
+cp $ELF_TEMPLATES/UnitTest/HyperExplorer/test-movement.js spec/.
+```
+
+Key Points:
+
+- If you spy on function, it is not really called. We can just check if it is called.
+	- Therefore, don't check methods down stream of it to see if they are called
+- We need to click the right button before we can expect the left button to do anything
+
+
+The output we want:
+
+```
+Test Movement
+    ✓ expects a button with an id of #leftButton
+    ✓ expects a button with an id of #rightButton
+    ✓ shows that elfMovement.left is called when selecting left button
+    ✓ shows that elfMovement.right is called when selecting right button
+    ✓ shows that elfDisplay.render is not called when selecting only left button
+    ✓ shows that elfDisplay.render is called when selecting right then left button
+    ✓ shows that elfDisplay.render is called when selecting right button
+    ✓ shows that elfDisplay.showRecord is not called when selecting only left button
+    ✓ shows that elfDisplay.showRecord is called when selecting right then left button
+    ✓ shows that elfDisplay.showRecord is called when selecting right button
+    ✓ shows that elfDisplay.showRecord gets valid data
+    ✓ shows that movement.right called even if we click many times past end of array
+    ✓ shows that the right boundary condition is checked
+    ✓ shows that the right boundary condition gets valid data
+```
+
+## Delicious Tests
+
+Make sure you have created spec/fixtures/delicious.html:
+
+```
+jade views/delicious.jade --out spec/fixtures/
+```
+
+Make sure that there is no checkbox selected by default.
+
+```jade
+div.panel.panel-default
+    div.panel-heading Select one or more CheckBoxes to search Delicious
+    div.panel-body
+        div
+            input#chJavaScript(type='checkbox', name='deliciousCheckBox', value='JavaScript')
+            label(for='chJavaScript') JavaScript
+        div
+            input#chBootstrap(type='checkbox', name='deliciousCheckBox', value='Bootstrap')
+            label(for='chBootstrap')  Bootstrap
+        div
+            input#chNodeJs(type='checkbox', name='deliciousCheckBox', value='Node')
+            label(for='chNodeJs')  NodeJs
+```
+
+Copy in **text-delicious-fixtures.js**:
+
+```bash
+cp $ELF_TEMPLATES/UnitTest/HyperExplorer/test-delicious-fixture.js spec/.
+```
+
+Note that if we are spying on a method that has an onclick event, we need to initialize the event after we have spied on the method:
+
+```javascript
+it('expects selecting #chBootstrap to cause displayCheckBoxSelection to have been called', function() {
+    var checkBox = document.getElementById('chBootstrap');
+    spyOn(elfDelicious, 'displayCheckboxSelection');
+    elfDelicious.deliciousSetup();
+    $(checkBox).trigger('click');
+    expect(elfDelicious.displayCheckboxSelection).toHaveBeenCalled();
+});
+```
+
+
+## Other Tests
+
+Ignore these for now.
 
 ```javascript
 it('checks that elfBitly.getLinks calls elfDisplay.renderTable', function() {
@@ -100,5 +204,37 @@ it('shows getLinkHistoryItem sets elfBitly.linkIndex', function() {
     var historyArray = elfBitly.getLinkHistoryItem(12, true);
     expect(elfBitly.linkIndex).toBe(12);
 });
+```
 
+
+## Favicon
+
+Be sure your favicon is set up correctly in **app.js** around line 18. The correct code will probably look like this:
+
+```javascript
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
+```
+
+## Tests Clean
+
+The following should all come back clean and work:
+
+- grunt jscs
+- grunt jshint
+- grunt check
+- grunt fixture
+- grunt test
+- karma start
+- npm start
+- npm test
+
+There are some exceptions. In the **spec/data** directory you should have one or more files with names like **bitly-links.js** and **delicious-links.js**. In **Gruntfile.js** you can exclude these files from your **jscs** checks:
+
+```javascript
+jscs: {
+    src: ['**/*.js', '!spec/data/*.js'],
+    options: {
+        config: '.jscsrc'
+    }
+},
 ```
