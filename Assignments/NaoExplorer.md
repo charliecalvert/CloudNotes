@@ -14,6 +14,10 @@ If you don't have TestReady:
 
 cp $JSOBJECTS/Utilities/NodeInstall/TestReady ~/bin/.
 
+Download a [copy of the source][naoexp] from Google Drive.
+
+[naoexp]:https://drive.google.com/file/d/0B25UTAlOfPRGZzg3NkQtV2h3U3c/view?usp=sharing
+
 ## FixtureReady
 
 I have created a new script called **FixtureReady**. It is designed to automate the process of moving a project from the state that **TestReady** creates to the point where it can handle working with Fixtures. In particular, it does the following tasks.
