@@ -190,6 +190,50 @@ In **elf-log.js**:
 })();
 ```
 
+## Sample Data from Nao
+
+I saved this as **responses.js**:
+
+```javascripts
+var responses = {
+    network: {
+        'status': 200,
+        'result': [
+            '[I] 10222 qimessaging.session: Session listener created on tcp://0.0.0.0:0',
+            '[I] 10222 qimessaging.transportserver: TransportServer will listen on: tcp://192.168.2.13:38884',
+            '[I] 10222 qimessaging.transportserver: TransportServer will listen on: tcp://127.0.0.1:38884',
+            '[I] 10222 qimessaging.transportserver: TransportServer will listen on: tcp://192.168.42.16:38884',
+            'network state: online',
+            'elfap wifi_bc307d749827_656c666170_managed_psk',
+            'ElvenKnight wifi_bc307d749827_456c76656e4b6e69676874_managed_psk',
+            'xfinitywifi wifi_bc307d749827_7866696e69747977696669_managed_none',
+            'HOME-D902 wifi_bc307d749827_484f4d452d44393032_managed_psk',
+            'ElvenBishop wifi_bc307d749827_456c76656e426973686f70_managed_psk',
+            'DIRECT-DA-HP Officejet 5740 wifi_bc307d749827_444952454356a65742035373430_managed_psk'
+        ]
+    },
+
+    transportResult01: {
+        'status': 200,
+        'result': [
+            '[I] 8901 qimessaging.session: Session listener created on tcp://0.0.0.0:0',
+            '[I] 8901 qimessaging.transportserver: TransportServer will listen on: tcp://192.168.2.13:43749',
+            '[I] 8901 qimessaging.transportserver: TransportServer will listen on: tcp://127.0.0.1:43749',
+            '[I] 8901 qimessaging.transportserver: TransportServer will listen on: tcp://192.168.42.16:43749'
+        ]
+    },
+
+    transportResult02: {
+        'status': 200,
+        'result': [
+            '[I] 10299 qimessaging.session: Session listener created on tcp://0.0.0.0:0',
+            '[I] 10299 qimessaging.transportserver: TransportServer will listen on: tcp://127.0.0.1:45481',
+            '[I] 10299 qimessaging.transportserver: TransportServer will listen on: tcp://192.168.42.11:45481'
+        ]
+    }
+};
+```
+
 ## Parse Behaviors
 
 This is **parse-behavior.js**:

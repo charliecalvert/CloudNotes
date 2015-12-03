@@ -132,6 +132,8 @@ Use it like this:
 ```javascript
 elfLog.setLevel(elfLog.logLevelDetails); // Done once per application
 elfLog.log(elfLog.logLevelDetails, 'ElfDisplay.Render index: ' + index);
+```
+
 ## Movement Tests
 
 Make sure you have created spec/fixtures/bitly.html:
