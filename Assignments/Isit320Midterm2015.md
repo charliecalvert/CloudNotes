@@ -10,7 +10,7 @@ Polish the following programs, making sure they run smoothly, test cleanly, and 
 - **TwitterRefine** 
 - **BootstrapDelicious**
 
-Extend at least one of these programs to support viewing images stored in the cloud. Twitter might be a good choice for this.
+Extend at least one of these programs to support viewing images stored in the cloud. Delicious might be a good choice for this.
 
 Create a new program called **Week08-Midterm**. The program should integrate Delicious, Bitly and Twitter.
 
