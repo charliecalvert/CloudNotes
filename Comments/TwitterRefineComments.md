@@ -203,6 +203,18 @@ $(document).ready(function() {
 
 ```
 
+## Correct Route
+
+Be sure to matched up the route defined in **index.js** with the route you call in **control.js**. In some cases the route looks like this in **routes/index.js**:
+
+	/user-timeline
+
+Bit the route in **control.js**, looked like this:
+
+	/time-line
+
+This will never work. They need to be the same string.
+
 ## Server Query
 
 On the server side, some students wrote something like this:

@@ -180,6 +180,19 @@ Update your Bitly, Delicious and Twitter projects. Create and complete as best y
 
 Below are various hints, suggestions and details that will help you complete the midterm.
 
+## Load Routes
+
+Make sure that you have code in **routes/index.js** for handling all three routes that load the HTML for our application. There needs to be one route for **Bitly**, one for **Delicious**, and one for **Twitter**:
+
+```javascript
+router.get('/delicious', function(req, res, next) {
+    'use strict';
+    res.render('delicious', { title: 'Delcious' });
+});
+
+// and so on...
+```
+
 ## Objects
 
 The main class in **control.js** should now be called **elfMidterm**. The code for calling the server, creating the URL, and similar tasks should all be in the objects found in the **public/javascripts/link** folder.
@@ -461,3 +474,4 @@ The version is not some important, just the inclusion of the twitter package in 
 
 - Add the package to **package.json** by running npm install twitter --save-dev
 - Or run **npm install** after editing **package.json** by hand.
+

@@ -62,7 +62,9 @@ As you can see, without the good error handler, it is almost impossible to know 
 
 ## One layout.jade {#one-layout-jade}
 
-A rather subtle, and quite pernicious, bug can be introduced in our programs if we try to **extend** the file called **layout.jade** in the wrong places. This bug took me awhile to track down, and appeared in more than one student's midterm. It can cause a strange, repetitive loading of our jade files that quickly brings a program to its knees.
+Make sure you insert only one copy of layout.jade in your project when it runs. An error occurs if load layout.jade from multiple files.
+
+This bug can be introduced in our programs if we try to **extend** the file called **layout.jade** in the wrong places. Making this mistake can cause a strange, repetitive loading of our jade files that quickly brings a program to its knees.
 
 Our single page application has one main page defined in **index.jade**. That page **extends layout.jade**:
 
@@ -751,6 +753,39 @@ jQuery.extend({
 - [Reference](http://stackoverflow.com/a/691661/253576)
 
 
+## Handle All Three Routes
+
+Make sure that you have code in **routes/index.js** for handling all three routes that load the HTML for our application. There needs to be one route for **Bitly**, one for **Delicious**, and one for **Twitter**:
+
+```javascript
+router.get('/delicious', function(req, res, next) {
+    'use strict';
+    res.render('delicious', {
+        title: 'Delcious'
+    });
+});
+
+router.get('/bitly', function(req, res, next) {
+    'use strict';
+    console.log('bitly called');
+    try {
+        res.render('bitly', {
+            title: 'Bitly'
+        });
+    } catch (e) {
+        console.log(e);
+        next(e);
+    }
+});
+
+router.get('/twitter', function(req, res, next) {
+    'use strict';
+    res.render('twitter', {
+        title: 'Twitter'
+    });
+});
+```
+
 ## Images
 
 The code from display.js that helps you create links for images in bitly.
@@ -784,4 +819,24 @@ renderTable: function(links) {
     $('.linkTitle').click(elfDisplay.showTableSelection);
 },
 
+```
+
+## Calling Delicious 
+
+One student wrote the following in delicious.jade:
+
+```
+button.btn.btn-primary(onclick="delicious()") Search Delicious
+```
+
+It should probably look a bit more like this:
+
+```
+button.btn.btn-primary(type="button", onclick="elfDelicious.delicious()") Search Delicious
+```
+
+The point is that *delicious()* has been moved into an object called *elfDelicious*. So we reference that method like this in our HTML:
+
+```javascript
+elfDelicious.delicious()
 ```
