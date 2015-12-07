@@ -427,3 +427,30 @@ cp $ELF_TEMPLATES/UnitTest/BitlyRefine/* spec/
 ```
 
 Now the **diff** command should come back clean.
+
+## Delicious Links
+
+elfDelicious.deliciousLInks should be declared like this:
+
+```javascript
+var elfDelicious = {
+
+    deliciousLinks: null,
+```
+
+It should contain the contents of the delicious-javascript-links.js file which is part, I believe, of the Week0X.DeliciousQuery project. It is also in $ELF_TEMPLATES/WebServices. Once you find it, I would put it in Week1X-HyperExplore/spec/data directory. Make sure that Karma loads it by writing something like this in the files object of karma.conf.js:
+
+	'spec/data/*.js'
+
+That way both it and bitly-links.js will be loaded by karma. The file's contents should be loaded automatically and assigned to elfDelicious.deliciousLinks by this code in our tests:
+
+```javascript
+beforeEach(function() {
+    spyOn($, 'ajax').and.callFake(function(ajaxObject) {
+        ajaxObject.success(deliciousLinks);
+        return {
+            fail: function() {}
+        };
+    });
+});
+```
