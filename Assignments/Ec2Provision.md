@@ -10,6 +10,7 @@ This assignment is perhaps not entirely complete, but here is enough to get you 
  - Install Git
  - Download JsObjects from GitHub into your Git folder.
  - Install Node
+ - Create and Configure an Elastic IP (See Lamp Section)
 
 Optional, at least for now:
 
@@ -164,13 +165,16 @@ Please read this section of the Elvenware Git docs:
 
 ## Lamp
 
-Lamp stands for Linux Apache MySql and Python/Perl/Php.
+LAMP stands for Linux Apache MySql and Python/Perl/Php.
 
-We are interested in Apache, which is a web server running on Port 80.
+We are interested in Apache, which is a web server running on Port 80. Details on setting up LAMP are [here][lamp].
 
-Details are [here][lamp].
+The **Public IP** addresses assigned to you by default on EC2 are not permanent. Since I want a link to your Apache2 running on EC2, I need a permanent link that will not go away. To do this, you need to create an **Elastic IP** and assogiciate it with your running instance. Details are [here][elasticip].
+
+**NOTE**: *Once you create an Elastic IP address, your Elastic IP and Public IP address are usually the same. At that point, your Public IP address should be permanent, but only because you have created an Elastic IP address and associated it with your instance.*
 
 [lamp]:http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
+[elasticip]:http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
 
 ## Turn it In
 

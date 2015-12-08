@@ -104,16 +104,16 @@ Stop the program
 
 If you reboot the system, your program will start automatically.
 
-Error messages and and other output are in: /var/log/node.log 
+Error messages and and other output are in: /var/log/node.log
 
 Browse to your instance:
 
-    <elasticIp>:30101/
-    
-For instance, if you were testing all this out on your copy of Lubunutu,
+    <elasticIp>:30025/
+
+If you were testing all this out on your copy of Lubunutu,
 you would do this:
 
-    127.0.0.1:30101/    
+    127.0.0.1:30025/
 
 ## systemd
 
@@ -200,6 +200,18 @@ Other:
 
 [sysd-node]:https://www.digitalocean.com/community/tutorials/how-to-deploy-node-js-applications-using-systemd-and-nginx
 [sysdrh]:https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html
+
+## Elastic IP
+
+Be sure that you create, properly associate and submit an **Elastic IP** for your instance running on EC2. In order to confirm that your project is running on EC2, I must be able to reach it, and I can't do that if you only have a **Public IP**. The **Public IP** addresses automatically associated with your instance on EC2 is not necessarily permanent. To create a permenant IP address, you need an **Elastic IP**, as explained [here][elasticip].
+
+**NOTE**: *Once you create an Elastic IP address, your Elastic IP and Public IP address are usually the same. At that point, your Public IP address should be permanent, but only because you have created an Elastic IP address and associated it with your instance.*
+
+[elasticip]: http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
+
+## Turn it in
+
+Submit the **Elastic IP** address of your instance running on EC2. I'm not checking to see if the program is working correctly, only that it is running at all. Also, add your **hyper-explore.conf** and/or **hyper-explore.service** file to your **HyperExplore** project.
 
 ## Hints
 

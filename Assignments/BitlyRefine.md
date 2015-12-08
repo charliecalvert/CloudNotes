@@ -454,3 +454,41 @@ beforeEach(function() {
     });
 });
 ```
+
+## Test Directories
+
+In **$ELF_TEMPLATES/UnitTest/HyperExplorer** there are two directories called **data** and **fixtures**. Your data directory should hold files like:
+
+- bitly-links.js
+- delicious-javascript-links.js
+- tweets.js
+- tweets-timeline.js
+
+There is also a fixture directory. Your fixture directory should hold files like this:
+
+- bitly.html
+- delicious.html
+- fixture.html
+- test-local-cloud.html
+- twitter.html
+
+To create some of the fixture code, expand the code in the files directory for **karma.conf.js**:
+
+```javascript
+jade: {
+    compile: {
+        options: {
+            pretty: true,
+            data: {
+                debug: false
+            }
+        },
+        files: {
+            'spec/fixtures/delicious.html': ['views/delicious.jade', '$ELF_TEMPLATES/JadeMixins/*.jade'],
+            'spec/fixtures/fixture.html': ['views/fixture.jade', '$ELF_TEMPLATES/JadeMixins/*.jade'],
+            'spec/fixtures/twitter.html': ['views/twitter.jade', '$ELF_TEMPLATES/JadeMixins/*.jade']
+
+        }
+    }
+},
+```
