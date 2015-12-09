@@ -114,7 +114,7 @@ That code yields this on the command line:
 We want to create a new route that searches on a user timeline. In effect, you are searching for tweets by a particular user, rather than tweets on a particular subject. The version of the query shown below will need to be modified slightly to complete the assignment. Right now it contains a hardcoded search on my screen name. You will want to make it possible for the user to enter a random search on any screen name, including your own:
 
 ```javascript
-router.get('/user-timeline', function(req, res, next) {
+router.get('/time-line', function(req, res, next) {
 	'use strict';
     var client = getClient();
     var params = {

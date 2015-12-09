@@ -557,4 +557,8 @@ For now, just make sure that you have:
 
 We will work more on this project, and more on updating the midterm, during class on Tuesday and Thursday.
 
-Remember that the midterm is now the final, so you want to get your program in good shape. In other words, this probably not a good week to miss class.
+As always, make sure everything comes back clean when you run **grunt check**.
+
+## Hint
+
+The main goal here is to get the Jade right. My thought was that these tests give you enough of a hint as to what the jade needed to look like that you should be able to figure the jade out, to reverse engineer it, as it were.
