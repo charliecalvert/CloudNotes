@@ -68,6 +68,14 @@ callDelicious: function(subject) {
     },
 ```
 
+Copy in the delicious test suite:
+
+	cp $ELF_TEMPLATES/UnitTest/HyperExplorer/test-delicious.js spec/.
+
+Make sure they all pass.
+
+## Delicious Utils
+
 Move the following functions from DeliciousQuery to an object called **elfDeliciousUtils**:
 
 - 'filter'
@@ -78,11 +86,33 @@ Move the following functions from DeliciousQuery to an object called **elfDelici
 - 'getMapMidSize'
 - 'getOwnerNameMap'
 
-Copy in the delicious test suite:
+Something like this:
 
-	cp $ELF_TEMPLATES/UnitTest/HyperExplorer/test-delicious.js spec/.
+```javascript
+var elfDeliciousUtils = {
 
-Make sure they all pass.
+    getAllUrls: function() {
+        'use strict';
+		// AND SO ON...
+	},
+
+    getMap: function() { ...
+
+	// LOTS OF CODE OMITTED HERE
+};
+```
+
+To see if you have construcuted it correctly, see the tests in **charlie-test-delicious-analysis.js**. To get the test to load, be sure something like this is in the file object in **karma.conf.js**
+
+```javascript
+files: [
+	// CODE OMITTED HERE
+    'spec/test*.js',
+    'spec/opt-test*.js',
+    'spec/charlie-test*.js',
+    // CODE OMITTED HERE
+],
+```
 
 ## The logger
 

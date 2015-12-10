@@ -88,7 +88,25 @@ Some tests are optional (extra credit) and begin with **opt**. These are mostly 
 'spec/opt-test*.js',
 ```
 
-When included these tests in my project, I had about 126 total tests.
+Also, super optional, and for extra credit:
+
+```javascript
+'spec/charlie-test*.js',
+```
+
+Perhaps like this:
+
+```javascript
+files: [
+    // CODE OMITTED HERE
+    'spec/test*.js',
+    'spec/opt-test*.js',
+    'spec/charlie-test*.js',
+    'spec/data/*.js',
+    'spec/**/*.html'
+],
+```
+When included these tests in my project, I had, as of Dec 10, about 153 total tests.
 
 ## Test Directories
 
@@ -130,4 +148,64 @@ jade: {
 },
 ```
 
+## Exclude Data Folder from JSCS
 
+My configuration object for JSCS in **Gruntfile.js** looks like this:
+
+```
+jscs: {
+    src: ['**/*.js', '!spec/data/*.js'],
+    options: {
+        config: '.jscsrc'
+    }
+},
+```
+
+The second rule in the **src** array excludes the following files from **spec/data** directory, that we did not create, from our JSCS tests:
+
+- bitly-links.js
+- delicious-javascript-links.js
+- tweets.js
+- tweets-timeline.js
+
+Sometimes these files follow JSON syntax, which uses double quotes, while our JSCS rule says that we want to use single quotes. Since we did not really create the content for these files, and since we want to use their data exactly as it was sent to use by our web services, we should not edit them. The best solution I could see was just to exclude them from our JSCS tests. That way we could keep the data sent to us by delicious, twitter and bitly exactly as we got it without needing to change the rules for the rest of our code.
+
+## Changes
+
+I made some last minute changes on Thursday, Dec 10 in the AM
+
+I've made yet one more change to [elfDownloads.dataTypeSelection][data-type].
+
+[data-type]: http://www.ccalvert.net/books/CloudNotes/Comments/HyperExplorerComments.html#datatypeselection 
+
+This change, which simplifies our code, does require a change to the last test in **test-downloads.js**, since we are now calling **elfDownloads.getLinkData** from inside the bitly options and not calling it at the end of the method. This is at least a somewhat cleaner design. The changed test:
+
+```javascript
+it('shows that we don\'t call to get more links on last line of radio button select', function() {
+        spyOn(elfDownloads, 'getLinkData');
+        elfDownloads.dataTypeSelection();
+        expect(elfDownloads.getLinkData).not.toHaveBeenCalled();
+});
+```
+
+Notice that we now call **not.toHaveBeenCalled**.
+
+**NOTE**: *My recent changes to **dataTypeSelection** broke the old version of the test shown above. Therefore, you probably want to copy over the new versions of tests:*
+
+```
+meld spec/ $ELF_TEMPLATES/UnitTest/HyperExplorer/
+```
+
+Or, possibly copy them all over, with copy set to interactive mode. (Just remove the -i if you don't want to be prompted before each file is replaced):
+
+```
+cp -i $ELF_TEMPLATES/UnitTest/HyperExplorer/*.js spec/.
+```
+
+## ShowRecord
+
+I noticed a few folks were still having trouble with matching the names in bitly.jade to the ID's used in **elfDisplay.showRecord**. As a result, I have written a new, optional set of unit tests called **opt-test-bitly-show-record.js**.
+
+I also moved one test out of **test-interface.js** and put it in **opt-test-bitly-show-record.js**. I made the move because the test was similar to whole series of tests that I created in **opt-test-bitly-show-record.js**. These tests simply check for the existence of an input control with a specific ID. These changes mean that you now have to use the same ID's I use for your input controls if you want the optional tests to pass, but it is, I hope, a small price to pay for helping people to get this part of their code to work.
+
+With all the required and optional unit tests, including those in **charlie-test-delicious-analysis.js**, we now have 153 tests.

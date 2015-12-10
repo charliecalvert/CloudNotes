@@ -2,6 +2,15 @@
 
 by Charlie Calvert
 
+## Images
+
+If you try to load an image and it fails, do this in your jade:
+
+```jade
++elfPanel("Image Display").elfDiv
+    img(onerror="this.src = 'images/default.png'")#image
+```
+
 ## Put Your Name in Title
 
 Be sure to put your name in **routes/index.js**. I'm grading a lot of assignments, and I want to be able to tell immediately whose assignment is running:
@@ -115,7 +124,7 @@ var elfDelicious = {
     deliciousLinks: null,
 
     deliciousSetup: function () {
-    	// CODE OMITTED HERE
+        // CODE OMITTED HERE
     },
 
     delicious: function () {
@@ -124,13 +133,13 @@ var elfDelicious = {
         elfDelicious.callDelicious(subject);
     },
 
-	detailDelicious: function(index) {
+    detailDelicious: function(index) {
         'use strict';
         $('#deliciousDetails').html(JSON.stringify(elfDelicious.deliciousLinks[index], null, 4));
     },
 
     appendUrl: function(index, deliciousLink) {
-    	// CODE OMITTED HERE
+        // CODE OMITTED HERE
     },
 
     callDelicious: function (subject) {
@@ -142,13 +151,13 @@ var elfDelicious = {
             dataType: 'jsonp',
 
             success: function (data) {
-            	// SOMEWHERE IN HERE CALL APPEND URL
+                // SOMEWHERE IN HERE CALL APPEND URL
                 // IF YOU WANT THE TABLE, THEN ALSO CALL RENDERTABLE
             }
         });
     },
 
-	// CODE OMITTED HERE
+    // CODE OMITTED HERE
 };
 ```
 
@@ -169,7 +178,11 @@ Some tests are optional (extra credit) and begin with **opt**. These are mostly 
 
 When included these tests in my project, I had about 126 total tests.
 
-You may also see some tests that begin **charlie-test-**. You can ignore these tests.
+You may also see some tests that begin **charlie-test-**. You can ignore these tests.  Of course, if you did want to use them, you should add the following to the **files** configuration object in **karma.conf.js**:
+
+```javascript
+'spec/charlie-test*.js'
+```
 
 ## Test Directories
 
@@ -238,27 +251,25 @@ delicious: function() {
 
 ## DataTypeSelection
 
-Here is my current **elfDownloads.dataTypeSelection()**:
+On some student's assignments, When I switch to Twitter (or sometimes Delicious) I see results from Bitly at first in the Bitly Table Links. A number of things could cause this, but frequently it is related to the implemenation of elfDownloads.dataTypeSelection. In particular, sometimes a call to **elfDownloads.getLinkData**, down at the very bottom of the method, gets triggered.
+
+Here is my current **elfDownloads.dataTypeSelection()**. Frankly, it is not very nice code, it is overly convoluted. But it did clear the problem up on my system, and in the programs of some students. It is question of calling **return** at the right time to so that **elfDownloads.getLinkData** does not get called:
 
 ```javascript
 elfDownloads.dataTypeSelection = function(event) {
     'use strict';
     if ($('#localData').is(':checked')) {
-        $('#radioButtonDisplay01').html('You clicked Local');
-        // TODO: We shouldn't need to make this check
+        // TODO: We shouldn't need to make this check?
         if (elfDownloads.dataType !== elfDownloads.dataTypes.dtLocal) {
             elfDownloads.dataType = elfDownloads.dataTypes.dtLocal;
             elfCallServer.loadBitly();
-        } else {
-            return;
+            elfDownloads.getLinkData();
         }
     } else if ($('#bitlyData').is(':checked')) {
-        $('#radioButtonDisplay01').html('You clicked Bitly ');
         if (elfDownloads.dataType !== elfDownloads.dataTypes.dtBitly) {
             elfDownloads.dataType = elfDownloads.dataTypes.dtBitly;
             elfCallServer.loadBitly();
-        } else {
-            return;
+            elfDownloads.getLinkData();
         }
     } else if ($('#deliciousData').is(':checked')) {
         if (elfDownloads.dataType !== elfDownloads.dataTypes.dtDelicious) {
@@ -266,15 +277,12 @@ elfDownloads.dataTypeSelection = function(event) {
             elfDownloads.dataType = elfDownloads.dataTypes.dtDelicious;
             elfCallServer.loadDelicious();
         }
-        return;
     } else if ($('#twitterData').is(':checked')) {
         if (elfDownloads.dataType !== elfDownloads.dataTypes.dtTwitter) {
             $('#radioButtonDisplay01').html('You clicked Twitter ');
             elfDownloads.dataType = elfDownloads.dataTypes.dtTwitter;
             elfCallServer.loadTwitter();
         }
-        return;
     }
-    elfDownloads.getLinkData();
 };
 ```
