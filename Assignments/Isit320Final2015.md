@@ -12,7 +12,9 @@ More unit tests may show up during the weekend, so check back to see if there ha
 
 ## Turn it in
 
-Check your work into your repository. When submitting the final, give me the [Elastic IP address][elasticip] of instance running on EC2. You should submit a link to your running project in this format:
+Check your work into your repository keeping your work in the WeekXX-HyperExplorer folder, or tell me clearly which folder it is in.
+
+When submitting the final, give me the [Elastic IP address][elasticip] of instance running on EC2. You should submit a link to your running project in this format:
 
 - http://<YOUR ELASTIC IP>:30025
 
@@ -209,3 +211,9 @@ I noticed a few folks were still having trouble with matching the names in bitly
 I also moved one test out of **test-interface.js** and put it in **opt-test-bitly-show-record.js**. I made the move because the test was similar to whole series of tests that I created in **opt-test-bitly-show-record.js**. These tests simply check for the existence of an input control with a specific ID. These changes mean that you now have to use the same ID's I use for your input controls if you want the optional tests to pass, but it is, I hope, a small price to pay for helping people to get this part of their code to work.
 
 With all the required and optional unit tests, including those in **charlie-test-delicious-analysis.js**, we now have 153 tests.
+
+## Delicous Uitls
+
+See [here][dutil].
+
+[dutil]: http://www.ccalvert.net/books/CloudNotes/Assignments/HyperlinkExplorer.html#delicious-utils
