@@ -273,16 +273,74 @@ elfDownloads.dataTypeSelection = function(event) {
         }
     } else if ($('#deliciousData').is(':checked')) {
         if (elfDownloads.dataType !== elfDownloads.dataTypes.dtDelicious) {
-            $('#radioButtonDisplay01').html('You clicked Delicious ');
             elfDownloads.dataType = elfDownloads.dataTypes.dtDelicious;
             elfCallServer.loadDelicious();
         }
     } else if ($('#twitterData').is(':checked')) {
         if (elfDownloads.dataType !== elfDownloads.dataTypes.dtTwitter) {
-            $('#radioButtonDisplay01').html('You clicked Twitter ');
             elfDownloads.dataType = elfDownloads.dataTypes.dtTwitter;
             elfCallServer.loadTwitter();
         }
     }
 };
 ```
+
+## Delicious Radio Buttons
+
+I used the bootstrap buttons that acted like radioButtons rather than real radioButtons:
+
+```jade
+div.panel.panel-default
+    div.panel-heading Click a button to search delicious
+    div.panel-body
+        div.btn-group.elves(role="group")
+            button.btn.btn-default#radioJavaScript(type="button" name='radioChoice') JavaScript
+            button.btn.btn-default(type="button" name='radioChoice') Bootstrap
+            button.btn.btn-default(type="button" name='radioChoice') Node
+```
+
+Then I set it up like this **elfDelicious.deliciousSetup**:
+
+```jade
+$('.btn-group .btn').click(elfDelicious.displayRadioButtonSelection);
+```
+
+And then handle clicks on the "radio buttons" like this:
+
+```javascript
+displayRadioButtonSelection: function() {
+    'use strict';
+    var id = $(this).text();
+    $('#radioButtonDisplay01').html('You clicked ' + id);
+    elfDelicious.callDelicious(id);
+}
+```
+
+We get the text from the button, which will be **javascript**, **bootstrap** or **nodejs**. Then we pass that string to **callDelicious** which retrieves the data for us.
+
+## Delicious Check Boxes
+
+Some students had some trouble with the Delicious section. We should have something like this in **deliciousSetup**, where the name for all the check boxes is **deliciousCheckBox**:
+
+```
+$('input[name=deliciousCheckBox]:checkbox').click(elfDelicious.displayCheckboxSelection);
+```
+
+And then in the JADE, something like this, where we again spell out the name:
+
+```
+div.panel.panel-default
+   div.panel-heading Select one or more CheckBoxes to search Delicious
+   div.panel-body
+       div
+           input#chJavaScript(type='checkbox', name='deliciousCheckBox', value='JavaScript')
+           label(for='chJavaScript') JavaScript
+       div
+           input#chBootstrap(type='checkbox', name='deliciousCheckBox', value='Bootstrap')
+           label(for='chBootstrap')  Bootstrap
+       div
+           input#chNodeJs(type='checkbox', name='deliciousCheckBox', value='NodeJs')
+           label(for='chNodeJs')  NodeJs
+```
+
+It didn't really matter what the name of the checkboxes was, so long as it matched the name of the selector in **deliciousSetup**. In this case, the match was on the word **deliciousCheckBox**.
