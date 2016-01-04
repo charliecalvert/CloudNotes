@@ -27,10 +27,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=5
-FILE_NAME_0=1284;Python;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2FFindFiles.py;0;4
-FILE_NAME_1=18;Python;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-calvert-2016%2Fgovdata.py;0;4
-FILE_NAME_2=7353;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fwritings%2FElvenware%2Fdevelopment%2Fweb%2FJavaScript%2FJavaScriptFunctions.md;0;4
-FILE_NAME_3=70;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2Fviews%2Foptions.json;0;4
-FILE_NAME_4=44;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2Fviews%2Ftemp.jade;0;4
-FILE_NAME_5=0;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FCloudNotes%2FAssignments%2FAllAssignments.md;0;4
+current_page=7
+FILE_NAME_0=0;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2FFileList.json;0;4
+FILE_NAME_1=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2Fviews%2FAssignments%2FAngularBasics.jade;0;4
+FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2Fviews%2FAssignments%2FAllAssignments.jade;0;4
+FILE_NAME_3=0;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FCloudNotes%2FAssignments%2FAllAssignments.md;0;4
+FILE_NAME_4=99;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2Ffoo.js;0;4
+FILE_NAME_5=427;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FCloudNotes%2Fmaster-list.md;0;4
+FILE_NAME_6=474;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2FWinter2016Class.txt;0;4

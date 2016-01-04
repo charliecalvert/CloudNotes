@@ -1,4 +1,4 @@
-#Introductions
+# Introductions
 
 Use this thread to write a short personal introduction. I am interested in, and will read, all your contributions. I often will have occasion to refer back to these documents later in the course. I should add, however, that one of the secondary goals of this assignment is to be sure that you know how to use this Canvas discussion area.
 
