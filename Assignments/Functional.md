@@ -1,11 +1,16 @@
-# Functional
+# Overview
 
-Create a single Express based application. On the client side, create a file called **Control.js**. Use that file to perform the exercises shown below. Display the output as you wish. A simple solution might be to show the output in a DIV. More complex solutions might use listBox or tree to display the data. 
+Create a single Express based application called **Week02-Functional**:
 
+- **CreateExpressProject Week02-Functional**
 
-Based on [JsObjects/JavaScript/Syntax/Functional](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/Functional). Use the examples you find there to help you complete this exercise.
+Create or use an existing client side file called **public/control.js**. Implement the exercises shown below in that file. Display the output as you wish. A simple solution might be to show the output in a DIV. More complex solutions might use listBox or tree to display the data. 
 
-**NOTE**: 'Your code must use array.filter, array.map, and array.mergeAll exactly as they appear in JavaScript, or in my code Functional examples. In particular, mergeAll must look exactly like this:':
+## Background
+
+Your work can be based on the examples found in [JsObjects/JavaScript/Syntax/Functional](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/Functional). Use the examples you find there to help you complete this exercise.
+
+**NOTE**: *Your code must use both the native [array.filter][af], [array.map][amap] exactly as they appear in JavaScript, or in my code Functional examples. There is no mergeAll in JavaScript at this time, and so you can use this method:*
 
 ```
 Array.prototype.mergeAll = function() {
@@ -20,22 +25,29 @@ Array.prototype.mergeAll = function() {
 };
 ```
 
-**HINT**: *You could read the data in once and store it in an object scoped variable, and/or use a function that takes a callback to read in your data:*
+[af]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+[amap]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+[amerge]:
 
-```
-function readData(callback) {
-	$.getJSON('States.json', function(states) {
-		callback(states);
-	});
-}
-```
-These might be helpful as well: 
+## Display and Read
 
+Recall that you can create an empty list in your HTML with the following Jade:
+
+```HTML
+ul#output
 ```
+
+If you want to add a list item to an HTML list, you could use a function like this: 
+
+```javascript
 function show(data) {
 	$("#output").append('<li>{ ' + data + ' }</li>');
 }
+```
 
+If you want to load an entire array into an HTML list, you could use a function like this:
+
+```javascript
 function showArray(data) {
 	data.forEach(function(row) {
 		$("#output").append('<li> ' + row + ' </li>');
@@ -43,15 +55,33 @@ function showArray(data) {
 }
 ```
 
+## Reading Data from Disk
+
+Later in this assignment, I will ask you to download a zip file that contains a data file called **States.json**. Place that JSON file in a directory called **public/data**.
+
+At run time, you could read the data in once and store it in an object scoped variable, and/or use a function that takes a callback to read in your data:
+
+```
+function readData(callback) {
+	$.getJSON('data/States.json', function(states) {
+		callback(states);
+	});
+}
+```
+
 ## Part I
 
-Write a program that uses **Array.forEach** to itereate over this data and creates an array of objects. Each object should have two fields: **name** and **abbreviation**. The data for the two properties should be taken from [this larger array](elvenware.com/charlie/downloads/States.json.zip).
+Write a program that uses **Array.forEach** to itereate over this data and creates an array of objects. Each object should have two fields: **name** and **abbreviation**. The data for the two properties should be taken from [this larger array][states-json-zip].
+
+[states-json-zip]:https://s3.amazonaws.com/bucket01.elvenware.com/downloads/states.json.zip
 
 ![Funky](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGQnh2U08wUTBiZzg)
 
 ## Part II
 
-Add a method to the program that does the same things as in Part I, but using the built in Array.map function.
+Add a method to the program that does the same things as in Part I, but using the built in **Array.map** function. 
+
+Now that the program can do more than one thing, you will need some buttons or links to switch back and forth between the task outlined in Part I, and the task outlined in Part II. In the screenshot, the buttons are labelled **For Each** and **Map**.
 
 ![Funky](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGYkdVek9UQjVVaFk)
 
@@ -61,7 +91,7 @@ Create an array with five names in it:
 
 	['Able', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot'];
  
-And use the built in Array.filter method to return those objects begin with A.
+And use the built in Array.filter method to return those strings that begin with A.
 
 
 ## Part IV
@@ -329,4 +359,4 @@ Both flatten (mergeAll) and map the data to a set of new objects containing the 
 
 ## Turn it in
 
-
+Place your work in your repository in the folder specified above. When you submit the assignment, include a link to your repository or a URL for your repository, or something that will get me to your repository.

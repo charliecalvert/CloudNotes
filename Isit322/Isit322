@@ -27,7 +27,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=7
+current_page=9
 FILE_NAME_0=0;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2FFileList.json;0;4
 FILE_NAME_1=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2Fviews%2FAssignments%2FAngularBasics.jade;0;4
 FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2Fviews%2FAssignments%2FAllAssignments.jade;0;4
@@ -35,3 +35,6 @@ FILE_NAME_3=0;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FCloudNotes%2FAss
 FILE_NAME_4=99;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2Ffoo.js;0;4
 FILE_NAME_5=427;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FCloudNotes%2Fmaster-list.md;0;4
 FILE_NAME_6=474;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2FWinter2016Class.txt;0;4
+FILE_NAME_7=0;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FCouchView02%2FStates.json;0;4
+FILE_NAME_8=1591;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FCouchView01%2Froutes%2FCouch.js;0;4
+FILE_NAME_9=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FCouchView01%2Fpublic%2Fjavascripts%2FControl.js;0;4
