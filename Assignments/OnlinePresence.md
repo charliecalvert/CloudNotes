@@ -214,6 +214,8 @@ When you are done, there should be two documents in OneDrive folder:
 
 Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
 
+![OneNote](https://s3.amazonaws.com/bucket01.elvenware.com/images/OneDriveOneNote.png)
+
 ## Evernote 
 
 You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
