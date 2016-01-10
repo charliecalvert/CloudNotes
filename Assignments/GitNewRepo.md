@@ -32,7 +32,7 @@ Name your git repository like this, where **isit320** should be name of your cla
 	isit320_lastname-year
 
 For instance, your repository might have a name like this, depending
-on the class you are in:
+on the class you are in and the current year:
 
 ```
 prog219_calvert-2015
@@ -41,6 +41,8 @@ prog272_calvert-2015
 isit320_calvert-2015
 isit322_calvert-2015
 ```
+
+**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.
 
 Then make the following selections:
 
@@ -125,7 +127,15 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 fi
 ```
 
-You will need to load your SSH key with **ssh-add** each time your start a new bash (command line) session. Or at least you will need to do so each time you reboot lubuntu. If you don't want to perform this task manually, you could add the following code at the bottom of your **~/.bashrc** file:
+You will need to load your SSH key with **ssh-add** each time your start a new bash (command line) session. Or at least you will need to do so each time you reboot lubuntu. 
+
+```
+ssh-add ~/.ssh/Isit320-Fall-2015
+```
+
+## Automating the load process
+
+If you don't want to perform this task manually, you could add the following code at the bottom of your **~/.bashrc** file:
 
 ```
 ssh-add ~/.ssh/Isit320-Fall-2015
@@ -144,6 +154,15 @@ source ~/.bashrc
 ```
 
 To learn more, search for the Linux **source** command with Google.
+
+Alternatively, I have created an alias in our **.bash_aliases** file called **sshadd**. (Not **ssh-add** but **sshadd**.) It depends on a symbolic link in your **~/.ssh** directory. Create the link like this:
+
+```bash
+cd ~/.ssh
+ln -s main-key Isit320-Fall-2015
+```
+
+Where Isit320-Fall-2015 is the name of the private key you want to load when you type **sshadd**. This second approach means you can decide when you want to load the key. This is perhaps better than loading it automatically each time you start a new bash shell instance.
 
 One final tip. I like to zip up both the private and public key and upload it to my Google Drive. That way I can download it at home, and use the private key at both home and school. You don't have to do it that way, but it allows you to skip the step of creating a new key at home, and uploading that public key to BitBucket. Either system works, and there are arguments in favor of each system, but I want to at least suggest that you do things this way.
 
