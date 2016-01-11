@@ -44,7 +44,7 @@ That's a total of 9 screenshots. Please follow the example screenshots below to 
 
 Here are the platforms:
 
-- Show pictures of your browser on your main machine, be it a laptop of PC.
+- Show pictures of your browser on your main machine, be it a laptop or PC.
 - If you have a mobile device such as a phone or tablet, then take screenshots of it working on that device.
 - If you do not have a mobile device, or you can't run a particular browser on your mobile device, make a second screenshot in VirtualBox instead.
 
@@ -62,7 +62,7 @@ Signed out, and browsed to my Google Site, notice that no one is signed in to Ch
 
 ## Mobile Chrome
 
-Here is the the Logged in to Google image (pix06). Note the picture at top right shows I'm logged in as me.
+Here is the Logged in to Google image (pix06). Note the picture at top right shows I'm logged in as me.
 
 <img alt= "pix06" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGdVRsMjdyRXoxWEU">
 
@@ -70,7 +70,7 @@ Here are the Chrome Mobile Recent tabs (pix07). Note that at the top you see a l
 
 <img alt="pix07" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGb1ZNWXJ2LWN1NUk">
 
-##FireFox
+## FireFox
 
 We only need to create two screenshots on the PC side with FireFox. The first is of you signed in on PC to FireFox Sync (pix01):
 
