@@ -123,6 +123,23 @@ Success
 
 Edit the H1 element in **www/index.html** to include your last name. Rebuild the application and reinstall it.
 
+## Push to Your Repository
+
+This part of the assignment is optional for now. If you have not done so already, create a private repository on BitBucket or Github. 
+
+Use this naming scheme:
+
+- isit322-lastname-2016
+
+Push your work to the repository.
+
+Information on SSH is here:
+
+- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#sshKeys>
+
+Be sure to share the repository with me. I'm ccalvert on BitBucket and charliecalvert on GitHub.
+
+
 ## Turn it in
 
 Submit a screen shot of your Cordova project running in Androidx86 inside VirtualBox.
@@ -151,6 +168,8 @@ Here is the body of index.html, with the place where I want to see your name cal
 ![AndroidX86Cordrova](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGb3BKVmdtMG5XZVU)
 
 You need not write APACHE YOURNAME. It can be YOURNAME CORDOVA or whatever (within reason) strikes your fancy, so long as it is in the H1 tag and it contains your name.
+
+
 
 ## Hint
 

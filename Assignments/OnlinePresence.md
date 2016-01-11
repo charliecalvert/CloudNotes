@@ -189,7 +189,7 @@ I have also found that many people don't really understand how Twitter works or 
 
 If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90). 
 
-You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder Prog270-LastName, where LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **Prog270-Calvert**, **Isit320-Calvert**, **Prog272-Calvert**, **Prog219-Calvert**, **Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
+You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder 2016-Prog270-LastName, where the 2016 can be adjusted to match the current year, LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **2016-Prog270-Calvert**, **2016-Isit320-Calvert**, **2016-Prog272-Calvert**, **2016-Prog219-Calvert**, **2016-Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
 
 Share the folder with me, using my Live ID for Bellevue College work:
 
@@ -216,13 +216,23 @@ Don't forget, if you have trouble, join the discussion group and ask for help! D
 
 ![OneNote](https://s3.amazonaws.com/bucket01.elvenware.com/images/OneDriveOneNote.png)
 
+To create a OneNote document, select the menu-item/toolbar icon entitled **New**.
+
 ## Evernote 
 
 You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
 
-Create a new synchronized notebook by choosing **File | New Notebook**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
+Create a new synchronized notebook by choosing **File | New Notebook**. Name it according the pattern established in earlier exercises. For instance, **2016-Prog270-Calvert**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
 
 -  **charliecalvertbc@gmail.com**
+
+Add three tags to your note:
+
+- BC 
+- Prog270 
+- 2016
+
+The first tag stands for Bellevue College. The second should be the name of the course you are in, whether it is Isit320, Isit322, Prog270, Prog272 or Prog219.
 
 **NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.* 
 
