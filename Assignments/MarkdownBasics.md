@@ -129,7 +129,7 @@ It can also be useful to tell markdown to leave the formatting for a text alone.
 ```
 	# Ozymandias
 
-	```
+	` ` `
 	I met a traveller from an antique land
 	Who said: `Two vast and trunkless legs of stone
 	Stand in the desert. Near them, on the sand,
@@ -144,10 +144,12 @@ It can also be useful to tell markdown to leave the formatting for a text alone.
 	Nothing beside remains. Round the decay
 	Of that colossal wreck, boundless and bare
 	The lone and level sands stretch far away.' 
-	``` 
+	` ` ` 
+	*Percy Bysshe Shelley*
+
 ```
  
-*Percy Bysshe Shelley*
+
  
 The markdown shown above is rendered like this:
 
@@ -170,7 +172,7 @@ The markdown shown above is rendered like this:
 	Of that colossal wreck, boundless and bare
 	The lone and level sands stretch far away.' 
 ```	 
-
+*Percy Bysshe Shelley*
 
 
  
