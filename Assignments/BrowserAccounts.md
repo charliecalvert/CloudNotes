@@ -1,13 +1,17 @@
 # Browser Accounts
 
-The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device. This assignment, like the one's on using Google Drive and OneDrive, is deceptive. We think we know how to use these tools, but in truth there is more here than meets the eye at first. Your phone can begin to seem like a useless paperweight until you start to see how to share information between your desktop and phone. In particular, we live in our browsers these days, so knowing how to use the browsers on your phone is crucial. (Confession: I learned quite a bit about Chrome and Firefox while working on this assignment.)
+The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device. 
+
+This assignment, like the one's on using Google Drive and OneDrive, is deceptive. We think we know how to use these tools, but in truth there is more here than first meets the eye. 
+
+We live in our browsers, so knowing how to use them both on the desktop and on your phone is crucial. (Confession: I learned quite a bit about Chrome and Firefox while working on this assignment.)
 
 If you don't already have one: 
 
 - Create a FireFox account
 - Create a Chrome account.
 
-Log in and take screenshots in multiple locations. 
+Log in and follow the instructions below about taking screenshots in multiple locations. 
 
 ##ScreenShots
 
