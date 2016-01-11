@@ -10,6 +10,7 @@ The goal of this assignment is three fold:
     - HTML to your github pages
 
 ## Set up the Markdown Editor
+
 We are using **pagedown**
 
 - [Preferred pagedown from Google Code](https://code.google.com/p/pagedown/)

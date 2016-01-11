@@ -3,13 +3,24 @@ Week 2 Markdown Assignment
 
 This assignment is still being created, but here is enough information to get your started.
 
+## Install Remarkable
+
+Remarkable is a Markdown editor. It may already be installed on Pristine Lubuntu. If not, download it:
+
+- [https://remarkableapp.github.io/linux/download.html](https://remarkableapp.github.io/linux/download.html)
+
+Download the free deb file. After downloading it, click on it to launch it in the **Package Installer**. Select the install button. 
+
+Once the install is complete, Remarkable should appear as an item in your **Accessories** menu.
+
+## Using Markdown
+
 Markdown is a mark up language for creating documents. It is a tool for creating 
 richly formatted documents with a simple easy to use syntax. For instance, if 
-you underline some text, then that marks it as a header:
+you underline some text, or place to hash marks in front of it, then that marks it as an H1 header:
 
 ~~~~
-Markdown
-========
+# Markdown
 ~~~~
 
 There are many other ways to mark up a document with markdown. You can also translate markdown to HTML.
