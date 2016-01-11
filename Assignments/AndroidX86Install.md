@@ -31,7 +31,7 @@ After you are signed in, click as many blue buttons as you can find until Google
 
 Click the grid at the bottom of the Android X86 screen to view the Apps. Select terminal emulator. On the top right is a menu. Use it to set the font to something much bigger than 10 PX.
 
-Type **netcgf** and note your IP address.
+Type **netcfg** and note your IP address.
 
 ## Black Screen
 
