@@ -240,7 +240,7 @@ Steps:
 
 - Install the Evernote app. There is one for the PC.
 - Choose: File | New Notebook (Ctrl-Shift-N)
-- Create a synchronized notebook called **2014-Isit320-LastName**, where LastName is your last name.
+- Create a synchronized notebook with a name similar to **2016-Prog270-LastName**, where LastName is your last name. (As always, use your common sense to substitute the proper year and class if the one's you see here don't seem right).
 - Right click on the new notebook and choose Share.
 - Share the notebook with charliecalvertbc@gmail.com
 - Put a note in the notebook

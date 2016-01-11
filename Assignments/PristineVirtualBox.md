@@ -45,3 +45,9 @@ Create a screen shot of VirtualBox running on your system. Attach the image to y
 
 [scrshot]: http://www.google.com/search?q=windows+screen+capture
 
+## Hints
+
+Choose **Settings | System | Acceleration** and confirm that **VT-x | AMD-V** is selected. You can confirm this at run time by selecting **Machine | System Info**. If you don't have virtualization help from the processor then your VM will either be very slow, or not work at all.
+
+![vtx](https://s3.amazonaws.com/bucket01.elvenware.com/images/VirtualBoxVtxInfoAndroid.png)
+
