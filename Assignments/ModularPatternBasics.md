@@ -161,6 +161,30 @@ karma start --single-run > TestResults05.txt
 
 ## Step 07: Create MyObject Failing Test {#create-my-object-failing}
 
+Do this:
+
+```
+bower install jasmine-jquery --save
+```
+
+Make sure the Jasmine Jquery path is right in **karma.conf.js**:
+
+```
+        files: [
+            'public/components/jquery/dist/jquery.min.js',
+            'public/components/jasmine-jquery/lib/*.js',
+            'public/javascripts/*.js',
+            'spec/**/*.html',
+            'spec/test*.js'
+        ],
+```
+
+Then create your fixture:
+
+```
+grunt fixture
+```
+
 The test:
 
 ```javascript
