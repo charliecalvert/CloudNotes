@@ -81,6 +81,12 @@ The HTML looks something like this:
 <a href="http://www.elvenware.com">Elvenware</a>
 ```
 
+## Creating Pictures
+
+Start with an exclamation point, a bang, and then put a few words in square brackets, then put the URL of the image in paranthesis.
+
+![My Picture](http://www.ccalvert.net/charlie/images/elvenwarelogo.png)
+
 ## Creating Documents
 
 Here is a longer example:
