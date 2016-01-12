@@ -27,15 +27,5 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=10
-FILE_NAME_0=0;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FElfSite%2FCode%2FFileList.json;0;4
-FILE_NAME_1=2667;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2F.bash_aliases;0;4
-FILE_NAME_2=654;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Fbin%2FTestCheck;0;4
-FILE_NAME_3=617;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FUtilities%2FTemplates%2FUnitTest%2FTestCheck%2FDevDependencies.json;0;4
-FILE_NAME_4=789;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Fbin%2FFixtureReady;0;4
-FILE_NAME_5=1402;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FJavaScript%2FUnitTests%2FUtilsTests%2FElfUtils.js;0;4
-FILE_NAME_6=1;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fwritings%2FData%2FSunriseSunset-31.json;0;4
-FILE_NAME_7=0;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fwritings%2FData%2FSunriseSunset-15.json;0;4
-FILE_NAME_8=738;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-calvert-2016%2FWeek02-Sunrise%2Ffoo.txt;0;4
-FILE_NAME_9=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-calvert-2016%2FWeek01-ModularPattern%2FCheckResults.txt;0;4
-FILE_NAME_10=1989;Conf;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2F.bashrc;0;4
+current_page=0
+FILE_NAME_0=146;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fwritings%2FUnitTests%2FJs%2FSplitSlice%2FSource%2FSlices.js;0;4
