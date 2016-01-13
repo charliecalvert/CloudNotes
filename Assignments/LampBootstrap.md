@@ -1,13 +1,15 @@
-Install LAMP
-============
+## Overview
+
+Set up the Apache Web Server and display a simple HTML file that uses bootstrap in it.
+
+## Install LAMP
 
 The goal of this assignment is to install LAMP on your copy of 
 VirtualBox. Then replace the default index.html file with default
 page from Bootstrap site. Remove the default text on the page,
 and replace it with a paragraph of your own.
 
-LAMP
-----
+## LAMP
 
 Lamp is the primary platform of the web. It is an acronym for: Linux - Apache -
 MySQL - Python/Php/Perl. Both WordPress and MediaWiki depend on LAMP.
@@ -16,8 +18,7 @@ To install, from the Linux prompt, follow these instructions:
 
 -   <http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux>
 
-Bootstrap
----------
+## Bootstrap
 
 You do not need to actually write any HTML or CSS to complete this
 assignment. However, I want you to include the following code
@@ -114,8 +115,7 @@ cp $ELF_TEMPLATES/Html/bootstrap-starter.html .
 cp $ELF_TEMPLATES/Html/index.css .
 ```
 
-Create Files on Linux
----------------------
+## Create Files on Linux
 
 We are now about to create some files on Lubuntu. The question of where
 to put the files is largely up to you. The most important thing is
