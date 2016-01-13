@@ -137,24 +137,17 @@ Geany, and paste the HTML for this assignment into the editor. Open the files we
 
 ![**Saving into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Geany01.png)
 
-Here is what Geany should look like once **index.html** is successfully loaded from **Documents/Site**. (The details may differ a bit, depending on the name of your current user.)
+Here is what Geany should look like once **index.html** is successfully loaded from **Documents/Site**. (The details may differ a bit, depending on the name of your current user.) Edit **index.html** so it contains the proper content including your last name and the first paragraph from your introduction.
 
 ![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Geany03.png)
 
-Open **index.css** in Geany. Edit **index.html** so it contains
-the proper content including your last name and the first paragraph
-from your introduction.
+Open **index.css** in Geany. Take a look at it, and see if you can understand what it does.
 
-Now you need to copy all three files **index.html**, **index.css** and
-**bootstrap.css** into **/var/www**. The **/var/www** folder is where
-the Apache Web Server serves up HTML files. You will need to use both
-**sudo** and **cp** to perform this operation. The quizes you took
-earlier are designed to help you perform these operations.
+Now you need to copy or link **index.html**, **index.css** into **/var/www**. The **/var/www** folder is where the Apache Web Server serves up HTML files. You will need to use both **sudo** and **cp/ln** to perform this operation. The quizes you took earlier are designed to help you perform these operations.
 
 ![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Lubuntu03.png)
 
-When you have copied all three files in **/var/www**, go back to the
-browser and use the address bar to navigate to:
+When you have copied or linked the files into **/var/www**, go back to the browser and use the address bar to navigate to:
 
 	http://localhost
 	
@@ -162,12 +155,6 @@ You should see your file in the browser, as shown below:
 
 ![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Lubuntu04.png)
 
-Turn it in
-----------
+## Turn it in
 
-Go back to Windows and use the Snipping Tool that comes with Windows 
-to take a screen shot of your copy of index.html running in 
-VirtualBox and Lubuntu. The screen shot should look a lot like the 
-image shown at the end of the last section, only it will have your 
-lastname and a description from your introduction. Submit this 
-screenshot to complete the assignment.
+Use the Windows Snipping Tool or your preferred technique to take a screen shot of your copy of **index.html** running in VirtualBox and Lubuntu. The screen shot should look a lot like the image shown at the end of the last section, only it will have your lastname and a description from your introduction in the discussion section. Submit this screenshot to complete the assignment.
