@@ -42,17 +42,19 @@ by default.
 
 Here is the HTML to put in a file called **index.html**:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
   	<meta charset="utf-8">
-    <title>Prog280 Template</title>
-    <meta name="description" content="Prog280 Starter Template">
+    <title>Prog270 Template</title>
+    <meta name="description" content="Prog270 Starter Template">
     <meta name="author" content="Lastname">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="bootstrap.css" rel="stylesheet">
+    <!-- link href="bootstrap.css" rel="stylesheet" -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
   </head>
@@ -67,7 +69,7 @@ Here is the HTML to put in a file called **index.html**:
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Prog280-Lastname</a>
+          <a class="navbar-brand" href="#">Prog270-Lastname</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -87,14 +89,15 @@ Here is the HTML to put in a file called **index.html**:
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- script src="js/bootstrap.min.js"></script -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>
 </html>
 ```
 
 Here is the CSS to put in a file called **index.css**.:
 
-```
+```css
 body {
   padding-top: 50px;
 }
@@ -104,55 +107,43 @@ body {
 }
 ```
 
+Assuming **JsObjects** is installed on your system, the following will allow you to copy these files to your current directory:
+
+```bash
+cp $ELF_TEMPLATES/Html/bootstrap-starter.html .
+cp $ELF_TEMPLATES/Html/index.css .
+```
+
 Create Files on Linux
 ---------------------
-
-You should probably start by installing Geany. From the Lubuntu menu
-choose **System Tools | Lubuntu Software Center**.
-
-![**Finding the Lubuntu Software Center**](../Images/Lubuntu01.png)
-
-In the Software Center, choose to install Geany. You can search for 
-it by typing its name in the editor control on the right. 
-Alternatively, look under the category in the **Software Center** 
-called **Developer Tools**.
-
-![**The Lubuntu Software Center**](../Images/Lubuntu02.png)
-
-Put Geany in the **Apps Basket**. Switch to the **Apps Basket** view
-and choose **Install Packages**. (Remember that the default password
-for your copy of Lubuntu is the same as the user name.)
 
 We are now about to create some files on Lubuntu. The question of where
 to put the files is largely up to you. The most important thing is
 have a logical system. For now, however, I suggest that you place your
 files in your **Documents** folder in a subdirectory called **Site**.
 
-	/home/adminuser/Documents/Site
+	mkdir $HOME/Documents/Site
+
+Given the existence of that directory, you could copy the files we want to use into that directory with this command:
+
+```bash
+cp $ELF_TEMPLATES/Html/bootstrap-starter.html $HOME/Documents/Site/index.html
+cp $ELF_TEMPLATES/Html/index.css $HOME/Documents/Site/.
+```
 
 In the Lubuntu Start menu, you should have a new item entitled 
 **Programming**. Geany will be available in that menu folder. Open 
-Geany, and paste the HTML for this assignment into the editor. Save 
-it into **Documents/Site** as **index.html**. Create a new file in 
-Geany and paste the CSS into it. Save it in **Documents/Site** as 
-**index.css**.
+Geany, and paste the HTML for this assignment into the editor. Open the files we copied into **Documents/Site** in the editor.
 
-![**Saving into Documents Site**](../Images/Geany01.png)
+![**Saving into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Geany01.png)
 
-Here is what Geany should look like once **index.html** is successfully
-saved in **Documents/Site**.
+Here is what Geany should look like once **index.html** is successfully loaded from **Documents/Site**. (The details may differ a bit, depending on the name of your current user.)
 
-![**Saved into Documents Site**](../Images/Geany03.png)
+![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Geany03.png)
 
-Create the **index.css** in Geany. Save it just as you did 
-**index.html**. You should also edit **index.html** so it contains
+Open **index.css** in Geany. Edit **index.html** so it contains
 the proper content including your last name and the first paragraph
 from your introduction.
-
-Open the Lubuntu Chromium browser and download **bootstrap.css** 
-from the bootstrap site and also place it in **Documents/Site**:
-
-- <http://getbootstrap.com/dist/css/bootstrap.css>
 
 Now you need to copy all three files **index.html**, **index.css** and
 **bootstrap.css** into **/var/www**. The **/var/www** folder is where
@@ -160,7 +151,7 @@ the Apache Web Server serves up HTML files. You will need to use both
 **sudo** and **cp** to perform this operation. The quizes you took
 earlier are designed to help you perform these operations.
 
-![**Saved into Documents Site**](../Images/Lubuntu03.png)
+![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Lubuntu03.png)
 
 When you have copied all three files in **/var/www**, go back to the
 browser and use the address bar to navigate to:
@@ -169,7 +160,7 @@ browser and use the address bar to navigate to:
 	
 You should see your file in the browser, as shown below:
 
-![**Saved into Documents Site**](../Images/Lubuntu04.png)
+![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Lubuntu04.png)
 
 Turn it in
 ----------
