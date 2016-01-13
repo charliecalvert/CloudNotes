@@ -136,6 +136,8 @@
 * [NodeJsMocksWithRewire.html](NodeJsMocksWithRewire.html)
 * [NodeModulesAssignment.html](NodeModulesAssignment.html)
 * [NodeRoutes01.html](NodeRoutes01.html)
+* [NpmPublishing.html](NpmPublishing.html)
+* [NpmUtilities.html](NpmUtilities.html)
 * [OnlinePresence.html](OnlinePresence.html)
 * [OwnCloudInstall.html](OwnCloudInstall.html)
 * [Pandoc01.html](Pandoc01.html)
@@ -179,3 +181,4 @@
 * [UpstartAndSystemd.html](UpstartAndSystemd.html)
 * [WalkingMap.html](WalkingMap.html)
 * [WebSocket.html](WebSocket.html)
+* [master-list.html](master-list.html)
