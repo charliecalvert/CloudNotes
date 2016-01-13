@@ -1,7 +1,6 @@
 * [AllFiles.html](AllFiles.html)
 * [GoogleSiteAssignment.html](GoogleSiteAssignment.html)
 * [Ideas.html](Ideas.html)
-* [MarkdownAssignment.html](MarkdownAssignment.html)
 * [Prog270-Week01-2015.html](Prog270-Week01-2015.html)
 * [Prog270-Week01-2016.html](Prog270-Week01-2016.html)
 * [Prog270-Week02-2015.html](Prog270-Week02-2015.html)

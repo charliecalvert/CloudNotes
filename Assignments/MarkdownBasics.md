@@ -132,10 +132,10 @@ This is a markdown document with a list in it.
 
 It can also be useful to tell markdown to leave the formatting for a text alone. For those of you who know HTML, this is similar to using the PRE tag. It can be helpful when you are trying to render code that has complex formatting, or when you are displaying poetry, that again has its own special formatting. We can render such text in several ways, but one of the simplest is by starting with a row of three back ticks. You can usually also use four tildas, or simply indent the text you want to format. To mark the end of the formatted text, add another three backticks:
 
-```
+```nohighlighting
 	# Ozymandias
 
-	` ` `
+	` ` `text
 	I met a traveller from an antique land
 	Who said: `Two vast and trunkless legs of stone
 	Stand in the desert. Near them, on the sand,
@@ -150,9 +150,9 @@ It can also be useful to tell markdown to leave the formatting for a text alone.
 	Nothing beside remains. Round the decay
 	Of that colossal wreck, boundless and bare
 	The lone and level sands stretch far away.' 
-	` ` ` 
-	*Percy Bysshe Shelley*
 
+	<em>Percy Bysshe Shelley</em>
+	` ` ` 
 ```
  
 
@@ -162,9 +162,9 @@ The markdown shown above is rendered like this:
 
 # Ozymandias
 
-```
-	I met a traveller from an antique land
-	Who said: `Two vast and trunkless legs of stone
+```nohighlighting
+    I met a traveller from an antique land
+    Who said: `Two vast and trunkless legs of stone
 	Stand in the desert. Near them, on the sand,
 	Half sunk, a shattered visage lies, whose frown,
 	And wrinkled lip, and sneer of cold command,
@@ -177,8 +177,11 @@ The markdown shown above is rendered like this:
 	Nothing beside remains. Round the decay
 	Of that colossal wreck, boundless and bare
 	The lone and level sands stretch far away.' 
-```	 
-*Percy Bysshe Shelley*
+
+	<em>Percy Bysshe Shelley</em>
+```
+
+
 
 
  
