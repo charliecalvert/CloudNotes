@@ -4,7 +4,7 @@ Set up the Apache Web Server and display a simple HTML file that uses bootstrap 
 
 ## Install LAMP
 
-The goal of this assignment is to install LAMP on your copy of 
+The goal of this assignment is to install LAMP on your copy of
 VirtualBox. Then replace the default index.html file with default
 page from Bootstrap site. Remove the default text on the page,
 and replace it with a paragraph of your own.
@@ -22,21 +22,21 @@ To install, from the Linux prompt, follow these instructions:
 
 You do not need to actually write any HTML or CSS to complete this
 assignment. However, I want you to include the following code
-verbatim. Or nearly verbatim. Find the places in the HTML file 
+verbatim. Or nearly verbatim. Find the places in the HTML file
 where it says **Lastname** and replace them with your lastname. Also,
 find this text:
 
-	<p>This is a document</p>
-	
+    <p>This is a document</p>
+
 Replace the parts between \<p\> and \<\/p\> with the first paragraph
 from your introduction that you published in the discussion area. For
 instance:
 
-	<p>I'm Charlie Calvert and I'm your teacher. I've been working with 
-	computers and writing code in one form or another for about 25 
-	years. I started out with Turbo Pascal and Delphi, spent time with 
-	Java, C++, Python and Perl, and then spent a number of years working 
-	in C#. Now my primary focus is on JavaScript.</p>
+    <p>I'm Charlie Calvert and I'm your teacher. I've been working with
+    computers and writing code in one form or another for about 25
+    years. I started out with Turbo Pascal and Delphi, spent time with
+    Java, C++, Python and Perl, and then spent a number of years working
+    in C#. Now my primary focus is on JavaScript.</p>
 
 Put the files in: **/var/www**, replacing the index.html that is there
 by default.
@@ -47,7 +47,7 @@ Here is the HTML to put in a file called **index.html**:
 <!DOCTYPE html>
 <html>
   <head>
-  	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Prog270 Template</title>
     <meta name="description" content="Prog270 Starter Template">
     <meta name="author" content="Lastname">
@@ -60,7 +60,7 @@ Here is the HTML to put in a file called **index.html**:
     <link href="index.css" rel="stylesheet">
   </head>
   <body>
-  
+
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -74,7 +74,7 @@ Here is the HTML to put in a file called **index.html**:
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>           
+            <li class="active"><a href="#">Home</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -108,12 +108,21 @@ body {
 }
 ```
 
-Assuming **JsObjects** is installed on your system, the following will allow you to copy these files to your current directory:
+Assuming **JsObjects** is installed on your system, your should update it by calling **git pull** from inside the JsObjects folder:
+
+```bash
+cd ~/Git/JsObjects/
+git pull
+```
+
+This will download (pull) the latest code from the GitHub based JsObjects repository. After updating JsObjects, the following will allow you to copy the files shown above to your current directory:
 
 ```bash
 cp $ELF_TEMPLATES/Html/bootstrap-starter.html .
 cp $ELF_TEMPLATES/Html/index.css .
 ```
+
+**NOTE**: *Not always, but usually, it is best to get code from JsObjects rather than from an assignment document. Of course, I often put code in an assignment that I don't put in JsObjects, but when I do put them in both places, it is usually best to prefer the copy in JsObjects. I'm more likely to update JsObjects than to update a document, and there is less chance of a typo (on my part or yours) causing a problem.*
 
 ## Create Files on Linux
 
@@ -122,7 +131,7 @@ to put the files is largely up to you. The most important thing is
 have a logical system. For now, however, I suggest that you place your
 files in your **Documents** folder in a subdirectory called **Site**.
 
-	mkdir $HOME/Documents/Site
+    mkdir $HOME/Documents/Site
 
 Given the existence of that directory, you could copy the files we want to use into that directory with this command:
 
@@ -131,8 +140,8 @@ cp $ELF_TEMPLATES/Html/bootstrap-starter.html $HOME/Documents/Site/index.html
 cp $ELF_TEMPLATES/Html/index.css $HOME/Documents/Site/.
 ```
 
-In the Lubuntu Start menu, you should have a new item entitled 
-**Programming**. Geany will be available in that menu folder. Open 
+In the Lubuntu Start menu, you should have a new item entitled
+**Programming**. Geany will be available in that menu folder. Open
 Geany, and paste the HTML for this assignment into the editor. Open the files we copied into **Documents/Site** in the editor.
 
 ![**Saving into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Geany01.png)
@@ -149,8 +158,8 @@ Now you need to copy or link **index.html**, **index.css** into **/var/www**. Th
 
 When you have copied or linked the files into **/var/www**, go back to the browser and use the address bar to navigate to:
 
-	http://localhost
-	
+    http://localhost
+
 You should see your file in the browser, as shown below:
 
 ![**Saved into Documents Site**](https://s3.amazonaws.com/bucket01.elvenware.com/images/Lubuntu04.png)
