@@ -107,7 +107,14 @@ body {
 }
 ```
 
-Assuming **JsObjects** is installed on your system, the following will allow you to copy these files to your current directory:
+Assuming **JsObjects** is installed on your system, your should update it by calling **git pull** from inside the JsObjects folder:
+
+```bash
+cd ~/Git/JsObjects/
+git pull
+```
+
+After updating JsObjects, the following will allow you to copy these files to your current directory:
 
 ```bash
 cp $ELF_TEMPLATES/Html/bootstrap-starter.html .
