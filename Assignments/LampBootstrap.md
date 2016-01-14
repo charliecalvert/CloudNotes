@@ -114,15 +114,16 @@ cd ~/Git/JsObjects/
 git pull
 ```
 
-After updating JsObjects, the following will allow you to copy these files to your current directory:
+This will download (pull) the latest code from the GitHub based JsObjects repository. After updating JsObjects, the following will allow you to copy the files shown above to your current directory:
 
 ```bash
 cp $ELF_TEMPLATES/Html/bootstrap-starter.html .
 cp $ELF_TEMPLATES/Html/index.css .
 ```
 
-Create Files on Linux
----------------------
+**NOTE**: *Not always, but usually, it is best to get code from JsObjects rather than from an assignment document. Of course, I often put code in an assignment that I don't put in JsObjects, but when I do put them in both places, it is usually best to prefer the copy in JsObjects. I'm more likely to update JsObjects than to update a document, and there is less chance of a typo (on my part or yours) causing a problem.*
+
+## Create Files on Linux
 
 We are now about to create some files on Lubuntu. The question of where
 to put the files is largely up to you. The most important thing is
