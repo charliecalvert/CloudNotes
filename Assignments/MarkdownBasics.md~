@@ -134,16 +134,36 @@ It can also be useful to tell markdown to leave the formatting for a text alone.
 
 We can render such text in several ways, but one of the simplest is by starting with a row of three back ticks **with no spaces between them**. You can usually also use four tildas, or simply indent the text you want to format. To mark the end of the formatted text, add another three backticks:
 
-![Ozymadias Backtick](https://s3.amazonaws.com/bucket01.elvenware.com/images/MarkdownBasics11.png)
+```nohighlighting
+	# Ozymandias
 
+	` ``
+	I met a traveller from an antique land
+	Who said: `Two vast and trunkless legs of stone
+	Stand in the desert. Near them, on the sand,
+	Half sunk, a shattered visage lies, whose frown,
+	And wrinkled lip, and sneer of cold command,
+	Tell that its sculptor well those passions read
+	Which yet survive, stamped on these lifeless things,
+	The hand that mocked them and the heart that fed.
+	And on the pedestal these words appear --
+	"My name is Ozymandias, king of kings:
+	Look on my works, ye Mighty, and despair!"
+	Nothing beside remains. Round the decay
+	Of that colossal wreck, boundless and bare
+	The lone and level sands stretch far away.'
 
-**NOTE**: *The exact way to turn off syntaix highlighting with a particular renderer is not clearly defined. Here I have used the class **text**. You might als try **nohighlighting**.*
+	` ``
+*Percy Bysshe Shelley*
+```
+
+**NOTE**: *Because of the way my markdown renderers interpreted backticks, I put a space after the first backtick I show above. It can be hard, at times, to use markdown to show how markdown syntax works. At any rate, Make sure you don't have spaces between the backticks in your own code.*
 
 The markdown shown above is rendered like this:
 
 # Ozymandias
 
-```nohighlighting
+```text
 I met a traveller from an antique land
 Who said: `Two vast and trunkless legs of stone
 Stand in the desert. Near them, on the sand,
@@ -248,24 +268,3 @@ If you take the HTML shown above, and save it to a file called Markdown01.html, 
 Take a moment to consider what we are doing. We are using an extremely simple form of markup to create nicely formatted HTML files that look reasonably attractive on the web. Markdown is flexible enough so that you can provide complex formatting for the HTML pages you render. For instance, much of Elvenware is now created with simple markdown files like the one shown above. Relatively complex tools, such as Stackoverflow,  also use markdown as their primary means of formatting the text and code supplied by its users.
 
 In this class we looking to find ways to create content of various kinds that can be shared between desktop machines, tablets, and phones. We are learning that we can create documents in Google Drive, in SkyDrive, on Google Sites, and on Evernote, and view them in all three places. We can also create markdown files and have them rendered in all three locations. In other words, this is another means of sharing information between multiple devices. As we will see, having information in simple text format like this provides special advantages that are hard to achieve with any of the other tools we have looked at so far.
-
-## Step By Step Summary
-
-Thanks to Erina Sugita who helped come up with this list:
-
-1.  Open a blank page in Remarkable.
-1.  Create the Ozymandias poem using markdown syntax and save it as **Ozymandias.md** in a folder called **~/Documents/Prog270**.
-1.  Export the markdown (File -> Export HTML). Save it in the folder called **~/Documents/Prog270**. At this point, you have the **Ozymandias.md** and **Ozymandias.html** files in the **Prog270** folder
-1.  Now, start Geany and open **Ozymandias.html**.
-1.  Block copy the code between the BODY tags (Ctrl-C).
-1.  Go to your Google sites home page and create a new page.
-1.  Click the "html" link at the far right of the tool bar. This open an HTML editor.
-1.  Paste the code in your clipboard into the HTML editor. (Ctrl-V)
-1.  Save your Google Sites page.
-
-Also do the steps outlined above for your **Prog270-Test-Document.md** file. When you submit the assignment, include **Ozymandias.md** and **Prog270-Test-Document.md**. You also need to include the URL for your Ozymandias and Test pages.
-
-**NOTE**: *Remember, when you see a tilda, you can mentally substitute the path to your home folder for it. So on a system where you are logged in as **bcuser**, then following are two ways of saying the same thing:
-
-- ~/Documents/Prog270
-- /home/bcuser/Documents/Prog270
