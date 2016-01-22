@@ -2,6 +2,10 @@
 
 The goal of this project is to help you move quickly from raw markdown files to a working Apache based web site.
 
+A video associated with this assignment is available here:
+
+- [Lamp Markdown Video](https://youtu.be/kz2R1EIpnis)
+
 ## Step One
 
 You need to get the most recent code from **JsObjects**. Navigate to your JsObjects directory:
@@ -115,6 +119,8 @@ Now browse to your website:
 - [http://localhost/master-list.html](http://localhost/master-list.html)
 
 There should be at least one link in the file you see. Start clicking, and you should be able to navigate all the files in your site either directly, or through the back button.
+
+**NOTE**: *I reminded you above, but don't forget that you need to run **npm install** before the first time you run **npm start**. You usually only need to type **npm install** one time per project. Once you have issued the command, then the packages that that project relies on have been installed, and you need not issue the install command again. Type **npm install** one time. After that, you need only type **npm start** to run the project.*
 
 ## Turn it in
 
