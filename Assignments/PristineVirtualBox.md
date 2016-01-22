@@ -7,15 +7,17 @@ Most people will be working in Windows and trying to install Pristine Lubuntu in
 - Your host machines is running Windows
 - The guest machine you will be installing is running Linux
 
-You may, of course, be on a Mac, or even on Linux. None of the should matter. The key point is that you know the difference between the host machine and the guest machine.
+You may, of course, be on a Mac, or even on Linux. None of that should matter so long as you know the difference between the host machine and the guest machine.
 
 ## Get Started
 
-Before doing anything else, confirm that you have VirtualBox installed. If it is not installed, go here and install it:
+Before doing anything else, confirm that you have VirtualBox installed and updated. If it is not installed, go here and install it:
 
 - [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-Once you are reasonable certain you have the **most recent** copy of VirtualBox installed, then you should download the Pristine Lubuntu OVA (virtual appliance):
+**NOTE**: *In some cases, you may not be able to update VirtualBox. This happens frequently, for instance, in N252. In that case, you may be stuck or you can ask me for help, which I may or may not able to supply.*
+
+Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance):
 
 - [Download the 3 GB Pristine Lubuntu 2016 v03][pristine-2016-03]
 

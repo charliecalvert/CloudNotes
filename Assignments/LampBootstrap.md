@@ -14,7 +14,7 @@ and replace it with a paragraph of your own.
 Lamp is the primary platform of the web. It is an acronym for: Linux - Apache -
 MySQL - Python/Php/Perl. Both WordPress and MediaWiki depend on LAMP.
 
-To install, from the Linux prompt, follow these instructions:
+To get started, follow these instructions for installing LAMP. You don't need to do anything with MySql beyond assigning it a password, just read the one short section on installing LAMP and then return to this document. Here is the document that contains a short description on installing LAMP:
 
 -   <http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux>
 
