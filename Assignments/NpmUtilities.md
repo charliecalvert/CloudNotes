@@ -129,6 +129,10 @@ $.getJSON('/readFile', fileToRead,  function(result) {
 });
 ```
 
+I also want you to pass in the arguments that padNumber receives. In other words, when you call getJSON, I want you to pass values such as 5, 3 and '0' to the server side. On the server, you should use the **request.query** object to get the values passed from the client to the server. As shown above, When calling **getJSON**, use the second parameter to create an object that specifies the values you want to pass. A brief related discussion is found here:
+
+- [Elvenwre Node Parameters](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#node-parameters)
+
 Of course, if you want to build a real front with buttons and input controls, you can, but that is not a requirement at this time. But you should read and write real files on the server side.
 
 [fsrf]:https://nodejs.org/api/fs.html#fs_fs_readfile_file_options_callback
@@ -144,4 +148,10 @@ Given the number 5, the following call sets **result** to the string '005':
 
 ```javascript
 var result = padNumber(5, 3, '0');
+```
+
+But of course, in our code, **padNumber** would be a method of the utils object:
+
+```javascript
+var result = utils.padNumber(5, 3, '0');
 ```

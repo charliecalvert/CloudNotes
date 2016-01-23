@@ -104,6 +104,12 @@ mkdir -p /var/www/html/css/highlight/
 cp ./node_modules/highlight.js/styles/googlecode.css /var/www/html/css/highlight/.
 ```
 
+If you are not in the **~/Source/MakeHtml** directory, then try this command:
+
+```
+cp ~/Source/MakeHtml/node_modules/highlight.js/styles/googlecode.css /var/www/html/css/highlight/.
+```
+
 Step Five
 
 It is now time to convert your markdown files into HTML and copy them out to your website.
