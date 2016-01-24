@@ -80,7 +80,9 @@ var isit = require('isit322-calvert');
 var utils = isit.utils;
 ```
 
-Now use one of the methods:
+**NOTE**: *You should, of course, be loading your NPM package, not mine. Where I write calvert, you should be writing your last name.*
+
+Now use one of the methods from your package:
 
 ```javascript
 router.get('/readFile', function(request, response) {
@@ -155,3 +157,10 @@ But of course, in our code, **padNumber** would be a method of the utils object:
 ```javascript
 var result = utils.padNumber(5, 3, '0');
 ```
+
+## Hint
+
+I found that I would install my package, only to find it did not work right. At that point, I could:
+
+* Create unit tests in my NPM package to prove that my code worked as expected. Once I felt they were working, I would increment the patch number (**npm patch**) and then run **npm publish**. Back in my project I would edit **package.json** by manually incrementing the version number for **isit322-lastname**. For instance, package ~0.0.3 would become ~0.0.4 or whatever number matched the latest version for my package. Then I would run **npm install** to get the updated package.
+* And/or, in my project, I could simply edit the files for my package directly in **node_modules/isit322-lastname** until they started to work. Then I would *meld* the updated files with my original package, and then run **npm patch** and **npm publish** and so on.
