@@ -1,6 +1,8 @@
 ## Overview
 
-This assignment is designed to help you create a new git repository. The text is oriented towards BitBucket and Linux, but it should be possible to use it with GitHub as well. I focus on BitBucket because they provide free private repositories. Since my students turn in assignments with git, it is important that the repositories be private.
+This assignment is designed to help you create a new git repository. The text is oriented towards both GitHub and Bitbucket on Linux. Bitbucket provides free private repositories. Since my students turn in assignments with git, in some, but not all, cases it is important that the repositories be private.
+
+**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution, and take care to distinguish between the instrucitons for the two sites. The underlying technology is the same. Git is an open source project entirely separate from either GitHub or BitBucket. Git is git no matter where it is. Nevertheless, Bitbucket and GitHub have differences, so proceed with caution.*
 
 See also:
 
@@ -9,29 +11,35 @@ See also:
 * [Git and Cloud 9](http://bit.ly/elf-cloud9)
 * [Git Video][git-video]
 
-## Git Account
+## Git Account GitHub
+
+Use [Github](https://github.com) to host your [git](http://git-scm.com/book/en/v2) repository. You have two choices:
+
+- Create a new GitHub account if you don't have one already
+- Use an existing GitHub account.
+- Sign up for the Github [student pack][github-edu]
+	- The student pack might take a few days to set up
+	- Even though there is a delay, apply anyway.
+
+## Git Account BitBucket
 
 Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
 - Create a new BitBucket account if you don't have one already
 - Use an existing BitBucket account.
-- If you prefer GitHub or some other cloud repository, that should also work.
-	- For GitHub, see the [student pack][github-edu]
-	- The student pack might take a few days to set up
-	- If the delay means you can't use the student pack for this assignment, apply anyway.
 
 ## Create Repo Home {#create-home}
 
-In BitBucket, from the home page, create a new repository:
+In GitHub or BitBucket, from the home page, create a new repository:
 
-* Choose the Create menu at top
+* Choose the **Create** or **New Repository** menu item near the top
 * Select **Create Repository**
 
 Name your git repository like this, where **isit320** should be name of your class:
 
 	isit320_lastname-year
 
-For instance, your repository might have a name like this, depending
+For instance, your repository might have a name like one of the following, depending
 on the class you are in and the current year:
 
 ```
@@ -42,15 +50,19 @@ isit320_calvert-2015
 isit322_calvert-2015
 ```
 
-**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.
+**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.*
 
 Then make the following selections:
 
 * Set the Type: Git
-* Set the Project options: Wiki, IssueTracking
-* Set the Language: JavaScript
+* Do not initialize with a **README** or **.gitignore**. (GitHub only)
+* Set the Project options: Wiki, IssueTracking (Bitbucket only)
+* Set the Language: JavaScript (BitBucket only)
 
-Make sure you give me read/write access to it. Use the send invitation link and use **ccalvert** as my id. You can select it from a dropdown.
+If you have created a private repository, make sure you give me read/write access to it.
+
+- GitHub: Choose the gear icon near top on right. Select **collaborators** page. My GitHub user name is **charliecalvert**.
+- Bitbucket: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
 
 ## Setup SSH {#ssh}
 
@@ -123,11 +135,11 @@ At this point, you are all set to begin pushing and pulling data from your repos
 
 ```
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent` 
+    eval `ssh-agent`
 fi
 ```
 
-You will need to load your SSH key with **ssh-add** each time your start a new bash (command line) session. Or at least you will need to do so each time you reboot lubuntu. 
+You will need to load your SSH key with **ssh-add** each time your start a new bash (command line) session. Or at least you will need to do so each time you reboot lubuntu.
 
 ```
 ssh-add ~/.ssh/Isit320-Fall-2015

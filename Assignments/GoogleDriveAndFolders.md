@@ -49,6 +49,10 @@ It is important to understand there should be only one copy of **Doc01**, **Shee
 
 To place a document in one folder, simply navigate to that folder and create the document inside it. To move it from one folder to another, put a check mark in front of the file or folder, then click the **Move To** icon, which is shaped like a folder, and which is located near the top of Google Drive window.
 
+**NOTE**: *Something has changed. It appars that now you should select the file and then **Shift+Z**. This will allow you to add one file to multiple places.*
+
+**NOTE**: *To see where a file is located, choose the file, click the **Information Button | Details | Location**.*
+
 ![FilesFolders](http://elvenware.com/charlie/os/Android/images/GoogleDriveFilesFolders00.png)
 
 If you hold down the Ctrl key, and click with the left mouse button, then you can place a document or folder in more than one location.
