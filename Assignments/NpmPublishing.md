@@ -17,6 +17,12 @@ Once you have the account set up and verified, go to the command line and log in
 npm login
 ```
 
+That should be all you have to do. Sometimes it takes a long time to log in. You can also try:
+
+```bash
+npm adduser
+```
+
 Just enter the user name and password that you just set up.
 
 Verify that all is good by going to this site:
@@ -37,7 +43,7 @@ Create a folder in your repository called NpmLastName where lastname is your nam
 npm init
 ```
 
-The **name** and **version** fields are required. For your name, add something like **lastname-code**, for instance, **calvert-code**. (Actually, my package is called **elven-code**, but for now, it would be simplest if you just used your last name so I can more easily grade and track your work.)
+The **name** and **version** fields are required. For your name, use only small letters. Add something like **isit322-lastname**, for instance, **isit322-calvert**. (Actually, my package is called **elven-code**, but for now, it would be simplest if you just used your last name so I can more easily grade and track your work.)
 
 Put some code in your folder in a file called **index.js**:
 
