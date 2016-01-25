@@ -27,12 +27,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=6
-FILE_NAME_0=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FCordova%2FCordovaVariousPlugins%2Fwww%2Fjs%2FControl.js;0;4
-FILE_NAME_1=1173;HTML;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FCordova%2FCordovaVariousPlugins%2Fwww%2Findex.html;0;4
-FILE_NAME_2=744;HTML;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FCordova%2FCordovaResourceIcons%2Fwww%2Findex.html;0;4
-FILE_NAME_3=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FCordova%2FCordovaVariousPlugins%2Fwww%2Fjs%2Findex.js;0;4
-FILE_NAME_4=233;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FPullAll;0;4
-FILE_NAME_5=327;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-calvert-2016%2FWeek02-CordovaDevice%2FREADME.md;0;4
-FILE_NAME_6=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FJavaScript%2FElvenCode%2Felf-utils.js;0;4
-FILE_NAME_7=3704;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FJavaScript%2FElvenCode%2Fwalker.js;0;4
+current_page=2
+FILE_NAME_0=93;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftmp%2FIsit322PullPackages;0;4
+FILE_NAME_1=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-2016%2Fisit322-thygesen-2016%2FWeek02-NpmPackage%2Futils.js;0;4
+FILE_NAME_2=1151;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FStandardMessages%2FCannot%20access%20repository.md;0;4
