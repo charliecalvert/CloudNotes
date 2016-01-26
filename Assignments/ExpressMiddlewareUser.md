@@ -67,6 +67,8 @@ In **routes/index.js**:
 
 ```javascript
 
+var loggedIn = false;
+
 var check = function(request, response, next) {
   console.log('Check called and loggedIn status:', loggedIn);
   if (loggedIn) {

@@ -112,8 +112,8 @@ Then in BitBucket:
 Right now your private key is called **id_rsa** and your public key is called **id_rsa.pub**. You might consider renaming them to something more meaningful:
 
 ```bash
-mv ~/.ssh/id_rsa ~/.ssh/Isit320-Fall-2015
-mv ~/.ssh/id_rsa.pub ~/.ssh/Isit320-Fall-2015.pub
+mv ~/.ssh/id_rsa ~/.ssh/Prog270-Fall-2016
+mv ~/.ssh/id_rsa.pub ~/.ssh/Prog270-Fall-2016.pub
 ```
 
 At this point, you should be able to load your SSH private key into memory:
@@ -125,8 +125,8 @@ ssh-add ~/.ssh/Isit320-Fall-2015
 If this works as expected, you should see the words **Identity added** in the response:
 
 ```
-ssh-add ~/.ssh/Isit320-Fall-2015
-Identity added: /home/charliecalvert/.ssh/Isit320-Fall-2015 (rsa w/o comment)
+ssh-add ~/.ssh/Prog270-Fall-2016
+Identity added: /home/charliecalvert/.ssh/Prog270-Fall-2016 (rsa w/o comment)
 ```
 
 At this point, you are all set to begin pushing and pulling data from your repository, as described below.
@@ -142,7 +142,7 @@ fi
 You will need to load your SSH key with **ssh-add** each time your start a new bash (command line) session. Or at least you will need to do so each time you reboot lubuntu.
 
 ```
-ssh-add ~/.ssh/Isit320-Fall-2015
+ssh-add ~/.ssh/Prog270-Fall-2016
 ```
 
 ## Automating the load process
@@ -150,7 +150,7 @@ ssh-add ~/.ssh/Isit320-Fall-2015
 If you don't want to perform this task manually, you could add the following code at the bottom of your **~/.bashrc** file:
 
 ```
-ssh-add ~/.ssh/Isit320-Fall-2015
+ssh-add ~/.ssh/Prog270-Fall-2016
 ```
 
 To add the line, open your **~/.bashrc** file in either nano or geany. For instance:
@@ -171,7 +171,7 @@ Alternatively, I have created an alias in our **.bash_aliases** file called **ss
 
 ```bash
 cd ~/.ssh
-ln -s main-key Isit320-Fall-2015
+ln -s Prog270-Fall-2016 main-key
 ```
 
 Where Isit320-Fall-2015 is the name of the private key you want to load when you type **sshadd**. This second approach means you can decide when you want to load the key. This is perhaps better than loading it automatically each time you start a new bash shell instance.
@@ -211,13 +211,15 @@ echo lastname >> README.md
 
 Create a **.gitignore** file with the following items in it:
 
-	node_modules
-	.metadata
-	.idea
-	bower_components
-	components
-	Thumbs.db
-	*.zip
+```
+node_modules
+.metadata
+.idea
+bower_components
+components
+Thumbs.db
+*.zip
+```
 
 You can create the file with the [nano][nano] editor, or do it like this:
 

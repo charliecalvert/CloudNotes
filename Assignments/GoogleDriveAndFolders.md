@@ -21,7 +21,8 @@ Details
 
 Here's the assignment:
 
-1. Create a folder called Prog280-Week02 inside the Google Drive folder you have already shared with me.
+1. Create a folder inside our shared folder.
+1. Call it **GoogleDriveAndFolders**. And be sure to put it inside the Google Drive folder you have already shared with me.
 2. Create a Google Document, Spreadsheet(Sheet01) and Presentation(Deck01) inside that folder.
 3. Name the Document Doc01, the SpreadSheet Sheet01 and the Presentation Deck01.
 4. Create two folders called Folder01 and Folder02.
