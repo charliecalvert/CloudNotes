@@ -2,6 +2,18 @@
 
 The Markdown Basics document will help you get up to speed with a simple markup language called Markdown. It is easy, and common to convert markdown to HTML. Since markdown is much easier to write than HTML, it is a great way to create HTML documents.
 
+Summary of what we are going to do:
+
+<ul>
+<li>First we create two markdown files. Attach these files to your assignment when you submit it.</li>
+<li>Now create two html files from the markdown files. Save them to disk.</li>
+<li>Also create two blank pages in your Google Site.</li>
+<li>To open up the HTML editor, select the HTML doo-hickey from the Control bar in your Google Site. Open up one of your HTML files in a text editor such as geany. Copy and Paste the HTML from your text editor to the HTML editor on your Google Site. One file on each page.</li>
+<li>Save your work in Google Sites.</li>
+<li>Provide links to both pages you created on your Google site</li>
+<li>Turn in the assignment.</li>
+</ul>
+
 ## Install Remarkable
 
 [Remarkable](https://remarkableapp.github.io/) is a Markdown editor. It may already be installed on Pristine Lubuntu. If not, download it:

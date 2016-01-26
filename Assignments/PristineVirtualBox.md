@@ -25,11 +25,15 @@ Once you are reasonable certain you have the **most recent** obtainable copy of 
 
 The file you download should have an OVA extension.
 
-Double click on the download once it is is completed. Alternatively choose:
+Double click on the download once it is is completed. Alternatively choose the following, browse for the downloaded file, and import it into VirtualBox:
 
 - **File | Import Appliance** (Ctrl - i)
 
-After the file has been imported, select it and choose **run** from the menu or icon bar.
+After the file has been imported via the simple wizard, select the new item in VirtualBox and choose **Start** from the menu or icon bar.
+
+![Staring Lubuntu][slub]
+
+[slub]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics00.png
 
 ## Trouble Shoot
 
@@ -63,6 +67,24 @@ Create a screen shot of VirtualBox running Lubuntu as a guest OS on your system.
 **Note**: *If VirtualBox has the focus on your desktop, then any keystrokes you make will go to VirtualBox, not to your Windows desktop. As a result, you can't press **Ctrl-PrtScrn** with VirtualBox focused and expect it to work the way it does when other applications have the focus. One solution is to use the Windows Snipping tool or follow one of [these suggestions][scrshot]. You can also usually create screen shots in Lubuntu and submit them. But the screen shot will be in the Lubuntu file system, not your Windows file system.*
 
 [scrshot]: http://www.google.com/search?q=windows+screen+capture
+
+## Sanity Check
+
+Is it working right? Try to open the bash shell, that is, try to open a terminal. There are several ways to this. Here's one:
+
+- Start by clicking the **Start** button at the bottom left of Lubuntu Desktop.
+- Select **Start | System Tools | LXTerminal**.
+
+The two steps listed above should, in practice, look a bit like this:
+
+![SanityCheck01][sc01]
+
+Once you have selected the **LXTerminal** menu item, your VM should look something like the image shown below. We can see the Lubuntu desktop. We can see some icons. And most importantly, we can see the bash shell (the terminal) open on the right hand side of the desktop. The shell is open on the home folder. The user is **bcuser** and the machine name is **pristine2016**. What you see is probably not exactly like this, but you should at least be looking at something vaguely resembling this screen shot of the bash shell.
+
+![SanityCheck02][sc02]
+
+[sc01]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics01.png
+[sc02]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics02.png
 
 ## Hints
 
