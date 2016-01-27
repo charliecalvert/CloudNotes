@@ -72,7 +72,15 @@ alias nm="ln -s ~/tmp/node_modules/"
 alias components="ln -s ~/tmp/components/ public/components"
 ```
 
-**NOTE**: *The point is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*
+For this project, do the following in **~/tmp**, or, if you have completed the above, in your project:
+
+```
+npm install supertest --save-dev
+npm install jasmine --save-dev
+npm install -g jasmine
+```
+
+**NOTE**: *The point of setting up this ~/tmp directory is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*
 
 ## Step Three: Client Interface {#interface}
 
@@ -98,14 +106,17 @@ All the calculations should be performed on the server side, in a
 module, per the [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02/Library) 
 example in JsObjects.
 
+The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9.
+
 For three points extra credit, implement **getFeetInMile** and 
 **calculateFeet** using HTTP GET calls, and use POST for 
 **calculateRadius**:
 
 	var express = require('express');
-	var app = express();
-	app.get(...
-	app.post(...
+    var router = express.Router();
+	
+	router.get(...
+	router.post(...
 
 The formula for calculating the circumference of a circle given its
 radius looks like this:
