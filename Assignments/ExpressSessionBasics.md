@@ -15,7 +15,17 @@ Go to redis directory:
 
 - redis downloads: [http://redis.io/download](http://redis.io/download)
 
+Before you begin:
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install tcl
+```
+
 Version number is not important, this is just the general rhythm:
+
+
 
 ```
 cd ~/Downloads
@@ -67,6 +77,15 @@ router.get('/', foo, function(req, res, next) { 'use strict';
 
 ## Step05
 
+The following installs:
+
+```
+npm install express-session --save
+npm install uuid --save
+```
+
+And this code in **app.js**:
+
 ```javascript
 var session = require('express-session');
 
@@ -87,7 +106,7 @@ app.use(session({
 
 ## Step06
 
-In **routes/index.js**
+In **routes/index.js**, put this code, but return a JSON object, not a string. (Modify call to res.send.)
 
 ```javascript
 router.get('/page01', function(req, res) {

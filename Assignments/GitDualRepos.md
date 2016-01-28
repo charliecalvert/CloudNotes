@@ -167,3 +167,22 @@ Doing this gives me read and write acccess to this repository, but not to any ot
 Check to make sure all your work is pushed. When turning in the assignment, submit the URI and URL of your repository.
 
 I think it is probably nicest to use the Text page of the Canvas submit process to do this kind of thing. Then if you enter a URL, it will be clickable. If you submit the URL as a comment, then I have to block copy and paste it in to the browser address bar. That seems a small thing, but in a worst case scenario, it's gets old if I have to do it 25 times for two or three different assignments (50, 60 or more times total). So please use the the text page if possible.
+
+## Git Ignore
+
+Create the file:
+
+```
+geany .gitignore
+```
+
+Add these items
+
+```
+node_modules
+components
+bower_components
+.idea
+*.zip
+.metadata
+```
