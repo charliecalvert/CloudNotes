@@ -43,11 +43,11 @@ For instance, your repository might have a name like one of the following, depen
 on the class you are in and the current year:
 
 ```
-prog219_calvert-2015
-prog270_calvert-2015
-prog272_calvert-2015
-isit320_calvert-2015
-isit322_calvert-2015
+prog219_calvert-2016
+prog270_calvert-2016
+prog272_calvert-2016
+isit320_calvert-2016
+isit322_calvert-2016
 ```
 
 **NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.*
@@ -176,7 +176,25 @@ ln -s Prog270-Fall-2016 main-key
 
 Where Isit320-Fall-2015 is the name of the private key you want to load when you type **sshadd**. This second approach means you can decide when you want to load the key. This is perhaps better than loading it automatically each time you start a new bash shell instance.
 
-One final tip. I like to zip up both the private and public key and upload it to my Google Drive. That way I can download it at home, and use the private key at both home and school. You don't have to do it that way, but it allows you to skip the step of creating a new key at home, and uploading that public key to BitBucket. Either system works, and there are arguments in favor of each system, but I want to at least suggest that you do things this way.
+Zip up both the private and public key and upload it to Google Drive. That way you can download it at home, and use the private key at both home and school. You don't have to do it that way, but it allows you to skip the step of creating a new key at home, and uploading that public key to BitBucket. Either system works, and there are arguments in favor of each system, but I want to at least suggest that you do things this way.
+
+Suppose you created **main-key** with a command like this:
+
+```
+ln -s MyKey main-key
+```
+
+When you type **ls -la** you see **main-key** in red, which means it is not value. After some thought, you realize that you made a mistake creating the key. Perhaps the name of your key was **Prog270Key** and not **MyKey**. Before trying again to create a new version of main-key, first delete it:
+
+```
+rm main-key
+```
+
+Now try again:
+
+```
+ln -s Prog270Key main-key
+```
 
 ## Build Repository
 
