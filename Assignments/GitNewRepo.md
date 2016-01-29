@@ -318,6 +318,18 @@ You can learn more about git on [Elvenware][elven-git].
 [elven-git]: http://www.elvenware.com/charlie/development/cloud/Git.html
 [branch]: http://www.elvenware.com/charlie/development/cloud/Git.html#working-with-branches
 
+If you have problems, check these items:
+
+- Is your shh key loaded properly?
+- Does the URL in your .git/config match the url you see in github. It should begin with git, not https. In general, it follows this format:
+		- git@github.com:username/prog270-lastname-2016.git
+
+Also, you can learn something about the keys that are currently loaded with this command: **ssh-add -l**. That's a small l for **list**. More details are [here][keyload01] and [here][keyload02]. Also, try [capital L][keyload03] to see public keys.
+
+[keyload01]: http://manpages.ubuntu.com/manpages/precise/en/man1/ssh-add.1.html
+[keyload02]: http://unix.stackexchange.com/questions/58969/how-to-list-keys-added-to-ssh-agent-with-ssh-add
+[keyload03]: http://unix.stackexchange.com/questions/82489/how-to-check-which-ssh-keys-are-currently-active
+
 ## The Video
 
 This video shows how to proceed:
