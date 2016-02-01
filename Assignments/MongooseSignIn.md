@@ -19,30 +19,31 @@ Logged in:
 
 ![Sign In](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn03.png)
 
-The users in MongoLab:
-
-
 
 ## Step One
 
 Create an express app
 
-    express Week10-MongooseSignIn
-    cd Week10-MongooseSignIn
-    npm install
-    npm install bcrypt-nodejs --save
-    npm install mongoose --save
-    npm install passport --save
-    npm install passport-local --save
-    npm install express-session --save
+    CreateAllExpress Week05-MongooseSignIn
+    cd Week05-MongooseSignIn
 
 Don't forget port 30025, the title and **nodemon**.
 
 - <https://drive.google.com/file/d/0B25UTAlOfPRGVXR3SHFJa05sNjQ/view?usp=sharing>
 
+Some npm packages we are using. This is no-op, it is just fyi:
+
+```
+npm install bcrypt-nodejs --save
+npm install mongoose --save
+npm install passport --save
+npm install passport-local --save
+npm install express-session --save
+```
+
 ## Step Two
 
-Setup Mongoose in the root of the project in a file called **db.js**. 
+Setup Mongoose in the root of the project in a file called **db.js**.
 The **getUrl** method is designed to work with [MongoLab](https://mongolab.com/). Fill
 in your own **userName**, **password**, **siteAndPort** and database name:
 
@@ -101,7 +102,7 @@ Be careful about the whitespace in these files.
 
 ## Step Three
 
-Set up MongoDb database for storing the user name. We will use two libraries 
+Set up MongoDb database for storing the user name. We will use two libraries
 called Mongoose and Passport.
 
 In **app.js**, about line 8.
@@ -130,7 +131,7 @@ app.use(expressSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
- 
+
 // Initialize Passport
 var initPassport = require('./passport/init');
 initPassport(passport);
@@ -282,7 +283,7 @@ Add css. Append this to **public/css/style.css**:
     background-color: #f7f7f7;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);	
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 .login-title{
     color: #555;
@@ -335,4 +336,3 @@ When you are done, you are view of the data could look something like this:
 Submit four screen shots as PNG attachments. Each screen shot except the last should contain your first and last names. Model your screen shots after the four images found in this assignment.
 
 Also check in your code in **Week10-MongooseSignIn** or some similar name beginning with **Week10**. If there might be any question at all as to where I would find your code, please include the folder name when you submit the assignment.
-
