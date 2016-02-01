@@ -1,7 +1,8 @@
 ## Description
 
-Mongoose sign in has two major parts:
+Mongoose sign in has three major parts:
 
+- A collection for your users in [MongoLab](https://mongolab.com/). If you don't have an account create one.
 - An interface built in express and jade (no angular) that allows the user to enter a username and password
 - A Mongooose library for storing and retrieving the user names and passwords
 
@@ -27,11 +28,9 @@ Create an express app
     CreateAllExpress Week05-MongooseSignIn
     cd Week05-MongooseSignIn
 
-Don't forget port 30025, the title and **nodemon**.
-
 - <https://drive.google.com/file/d/0B25UTAlOfPRGVXR3SHFJa05sNjQ/view?usp=sharing>
 
-Some npm packages we are using. This is no-op, it is just fyi:
+Some npm packages we are using. You need do nothing as **AllInclusive** should handle this. So this is a no-op, it is just an fyi:
 
 ```
 npm install bcrypt-nodejs --save
@@ -43,14 +42,14 @@ npm install express-session --save
 
 ## Step Two
 
-Setup Mongoose in the root of the project in a file called **db.js**.
+Setup Mongoose in a file called **routes/db.js**.
 The **getUrl** method is designed to work with [MongoLab](https://mongolab.com/). Fill
 in your own **userName**, **password**, **siteAndPort** and database name:
 
 ```
 module.exports = {
 	getUrl: function() {
-        var baseUrl = 'mongodb://';
+    var baseUrl = 'mongodb://';
 		var userName = 'USER-NAME';
 		var password = 'PASSWORD';
 		var siteAndPort = 'ds?????.mongolab.com:?????';
@@ -74,44 +73,39 @@ cp -r $ELF_TEMPLATES/SignIn/models/ .
 
 ## Step Two
 
-Front end
-
-In **views/layout.jade**
-
-```
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
-  body
-    block content
-```
-
-In index.jade:
-
-
-And then retrieve the jade for the various dialogs needed to complete the sign in process:
+Let's work on the front end. Retrieve the jade for the various dialogs needed to complete the sign in process:
 
 ```
 cp $ELF_TEMPLATES/SignIn/views/*.jade views/.
 ```
 
-Be careful about the whitespace in these files.
+We just copied in three files:
+
+```
+login.jade
+logout.jade
+register.jade
+```
 
 ## Step Three
 
-Set up MongoDb database for storing the user name. We will use two libraries
-called Mongoose and Passport.
+Set up Passport. Also setup the MongoDb database for storing the user name. To accomplish these tasks We will use three libraries
+called **express-session**, **Mongoose** and **Passport**, all of which should already be in **AllInclusive**.
 
 In **app.js**, about line 8.
 
-```
-var dbConfig = require('./db');
+```javascript
+var dbConfig = require('./routes/db');
 var mongoose = require('mongoose');
 // Connect to DB
-mongoose.connect(dbConfig.url);
+console.log('Mongoose URL:', dbConfig.getUrl());
+mongoose.connect(dbConfig.getUrl());
+```
+
+And remove the line that reads, as we will include it later:
+
+```javascript
+var routes = require('./routes/index')
 ```
 
 On about line 13, comment out the existing routes call:
@@ -120,7 +114,7 @@ On about line 13, comment out the existing routes call:
 
 In app.js around line 28:
 
-```
+```javascript
 // Configuring Passport
 var passport = require('passport');
 var expressSession = require('express-session');
@@ -139,9 +133,23 @@ initPassport(passport);
 var routes = require('./routes/index')(passport);
 ```
 
-##Step Four
+## Step Four
 
-Backend
+Copy in passport specific JavaScript files:
+
+```bash
+cp -r $ELF_TEMPLATES/SignIn/passport/ .
+```
+
+You just copied the following files into a folder called **passport** :
+
+- init.js
+- login.js
+- signup.js
+
+##Step Five
+
+Set up the routes for logging in and signing up.
 
 Passport provides authentication. If the user can be authenticated, then they will be allowed to do something, otherwise will they will be redirected to another screen:
 
@@ -152,8 +160,8 @@ Here is the classic **authenticate** middleware in action:
 
 ```
 router.post('/login', passport.authenticate('login', {
-    successRedirect: '/home',
-    failureRedirect: '/'
+    successRedirect: '/',
+    failureRedirect: '/login'
   }));
 ```
 
@@ -217,104 +225,17 @@ module.exports = function (passport) {
 };
 ```
 
+##Turn it in
 
-## Step Five
+Submit four screen shots as PNG attachments. Each screen shot except the last should contain your first and last names. Model your screen shots after the four images found in this assignment.
 
-Passport
+Also check in your code in **Week10-MongooseSignIn** or some similar name beginning with **Week10**. If there might be any question at all as to where I would find your code, please include the folder name when you submit the assignment.
 
-```bash
-cp -r $ELF_TEMPLATES/SignIn/passport/ .
-```
+## MongoLab
 
-## Step Six
+In MongoLab you should be able to see the **Users** table where your users are stored.
 
-Add css. Append this to **public/css/style.css**:
-
-```
-.form-signin{
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
-}
-.form-signin .form-signin-heading, .form-signin .checkbox{
-    margin-bottom: 10px;
-}
-.form-signin .checkbox{
-    font-weight: normal;
-}
-.form-signin .form-control{
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.form-signin .form-control:focus{
-    z-index: 2;
-}
-.form-signin input[type="text"]{
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.form-signin input[type="password"]{
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.form-signin input[type="password"].nomargin{
-	margin-bottom: 0px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-.account-wall{
-    margin-top: 20px;
-    padding: 40px 0px 20px 0px;
-    background-color: #f7f7f7;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.signup-wall{
-	margin-top: 20px;
-    padding: 20px 0px 20px 0px;
-    background-color: #f7f7f7;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-.login-title{
-    color: #555;
-    font-size: 18px;
-    font-weight: 400;
-    display: block;
-}
-.profile-img{
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-.new-account{
-    display: block;
-    margin-top: 10px;
-}
-h1.error-message{
-    color: red;
-}
-ul.user-details{
-    list-style: none;
-}
-```
-
-## Step Seven View Data on MongoLab
-
-When viewing the data on MongoLab, select **edit table view** in the view of your **users** collection and paste in the following code:
+When viewing the data on MongoLab, you can optionally select **edit table view** in the view of your **users** collection and paste in the following code:
 
 ```
 {
@@ -330,9 +251,3 @@ When viewing the data on MongoLab, select **edit table view** in the view of you
 When you are done, you are view of the data could look something like this:
 
 ![MongoLab](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn04.png)
-
-##Turn it in
-
-Submit four screen shots as PNG attachments. Each screen shot except the last should contain your first and last names. Model your screen shots after the four images found in this assignment.
-
-Also check in your code in **Week10-MongooseSignIn** or some similar name beginning with **Week10**. If there might be any question at all as to where I would find your code, please include the folder name when you submit the assignment.

@@ -59,9 +59,7 @@ cat $ELF_UTILS/SetupLinuxBox/.bash_aliases
 In particular, these three:
 
 ```
-alias nm="ln -s ~/tmp/node_modules/"
-alias components="ln -s ~/tmp/components/ public/components"
-alias run="nm && components && npm start"
+alias nm="ln -se& components && npm start"
 ```
 
 If you just want to link in **node_modules**, go to the root of your project and:
