@@ -10,6 +10,7 @@ Create a new project.
 CreateAllExpress Week03-ElvenSiteStarter
 cd Week03-ElvenSiteStarter
 npm install elven-site-tools --save
+npm install marked --save
 ```
 
 The version of **elven-site-tools** should (automatically) be at least **0.0.6**.

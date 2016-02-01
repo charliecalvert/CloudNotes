@@ -145,3 +145,17 @@ zip -r MakeHtml-Calvert /var/www/html/*
 ```
 
 You should, of course, use your last name and not mine.
+
+## Example Images
+
+Your images must be different from these, but they should have much in common with them:
+
+![Master][lmd01]
+
+![Summary][lmd02]
+
+![Typical Files][lmd03]
+
+[lmd01]:https://s3.amazonaws.com/bucket01.elvenware.com/images/LampMarkdown01.png
+[lmd02]:https://s3.amazonaws.com/bucket01.elvenware.com/images/LampMarkdown02.png
+[lmd03]:https://s3.amazonaws.com/bucket01.elvenware.com/images/LampMarkdown03.png

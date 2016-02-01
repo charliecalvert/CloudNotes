@@ -64,3 +64,9 @@ Turn it In
 ----------
 
 When you are done with the assignment, simply submit the URL of your Google Drive or submit almost anything that lets me know you have completed your work. I can then find your files and folders and check that you have completed the assignment correctly.
+
+Be sure you are meeting he basic requirements of the assignment, which are:
+
+1) To create three different types of files: Google docs, sheets and slides
+2) Create folders and put documents in them
+3) Have at least some documents appear in multiple folders.

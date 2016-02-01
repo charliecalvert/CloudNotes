@@ -8,43 +8,11 @@ Session Basics
 
 CreateAllExpress Week04-SessionBasics
 
-
 ## Step 02
 
-Go to redis directory:
+If you have not done so already, at some point we need to install redis. Details are here:
 
-- redis downloads: [http://redis.io/download](http://redis.io/download)
-
-Before you begin:
-
-```
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install tcl
-```
-
-Version number is not important, this is just the general rhythm:
-
-
-
-```
-cd ~/Downloads
-tar xvfz redis-3.0.6.tar.gz
-cd redis-3.0.6/
-make
-make test
-cd src
-./redis-server
-```
-
-You can also, but not yet:
-
-```
-/etc/init.d/redis_6379 start
-```
-
-See here: <http://redis.io/topics/quickstart>
-
+- <http://www.elvenware.com/charlie/development/database/NoSql/redis.html>
 
 ## Step 03
 
