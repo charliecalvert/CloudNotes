@@ -27,19 +27,20 @@ Each walk should have:
 ##Creating Walks
 
  - Click on a location on the map that you want to be the start of a walk. As a rule, it is best to pick a known place visible on the map, but you can simply right click and choose a random location in order to create a random starting point.
+ - A window should open on the left.
  - Click on another point to make your end point.
  - Click on the walking icon to show the distance and time for walking rather than by car or public transportation
  - The addresses of both locations should appear in a window in the top left of Google Maps.
 
 ![maps](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGUWEweUM1WUVLOTA)
 
-Once you have your map planned out, click on the gear icon on the bottom right of the map. In the screen shot shown above it is very near the tiny window that says **23min - 1.2 miles**. A window will open. Choose **Share and embed map**. 
+Once you have your map planned out, click on the hamburder menu at the top of the window that opened on the left. Choose **Share and embed map**.
 
  - For the share link choose **Short URL**. Create a [hyperlink](https://goo.gl/maps/89Whj) to it in your markdown document. The link should include square brackets and parenthesis. But there is a globe icon at the top of StackEdit that will create the link for you automatically.
  - For the embed link, copy the whole iframe code shown you on Google sites, Paste it in unchanged in your markdown document. (You can mix markdown and HTML all you want in a markdown document. In this case, you are embedding an HTML iframe tag directly in your markdown.
- 
+
 Here you can see how to find the **Share and Embed map** menu item:
- 
+
 ![maps](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGVzRIZlB5RS00Z2s)
 
 This screenshot shows how to create the short URL that you will turn into a hyperlink in your markdown document:
@@ -56,11 +57,11 @@ When you are done, your code should look much like the  **Weowna to Lake Hills G
 
 To complete the exercise, do the following:
 
-- Download the markdown and HTML for your document from stackedit. Name the markdown file **WalkingMap&#95;LastName.md**. Name the HTML file **WalkingMap&#95;LastName.html**. In all cases LastName is your last name. 
+- Download the markdown and HTML for your document from stackedit. Name the markdown file **WalkingMap&#95;LastName.md**. Name the HTML file **WalkingMap&#95;LastName.html**. In all cases LastName is your last name.
 - Wrap your HTML in a bootstrap document, as we did in the CodeAnywhereS3 assignment.
-- Paste your HTML into a Google Sites 
+- Paste your HTML into a Google Sites
 - Upload your files to S3
-- Upload your files to CodeAnywhere and place them in a folder in your repository. The name of the folder should be **Week04_WalkingMap**. 
+- Upload your files to CodeAnywhere and place them in a folder in your repository. The name of the folder should be **Week04_WalkingMap**.
 - Take screenshot of your files in CodeAnywhere. Put the screenshot in your **Week04_WalkingMap** folder.
 - Check your files into your BitBucket repository
 
@@ -68,13 +69,13 @@ To complete the exercise, do the following:
 
 Here is one way to set up your Google Site.
 
-- In StackEdit, save your markdown as HTML. (# menu | Export to Disk | As markdown). 
+- In StackEdit, save your markdown as HTML. (# menu | Export to Disk | As markdown).
 - Open the HTML in a text editor such as Geany, NotePad++, CodeAnywhere, nano or Visual Studio. (Wordpad might also work.)
 - Block Copy the HTML to the clipboard (Ctrl-C).
-- Open Your Google Site page. Go into edit mode. 
-- Click the little HTML symbol on the top of the page at the right. 
-- Delete any and all HTML shown in the HTML editor. 
-- Paste in your HTML that you exported from StackEdit (Ctrl-V). 
+- Open Your Google Site page. Go into edit mode.
+- Click the little HTML symbol on the top of the page at the right.
+- Delete any and all HTML shown in the HTML editor.
+- Paste in your HTML that you exported from StackEdit (Ctrl-V).
 - Save your work.
 
 ##Turn it in
