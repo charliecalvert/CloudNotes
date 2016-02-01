@@ -23,11 +23,11 @@ Here's the assignment:
 
 1. Create a folder inside our shared folder.
 1. Call it **GoogleDriveAndFolders**. And be sure to put it inside the Google Drive folder you have already shared with me.
-2. Create a Google Document, Spreadsheet(Sheet01) and Presentation(Deck01) inside that folder.
-3. Name the Document Doc01, the SpreadSheet Sheet01 and the Presentation Deck01.
+2. Create a Google Document, Spreadsheet(Sheet01) and Google Slide(Deck01) inside that folder.
+3. Name the Document Doc01, the SpreadSheet Sheet01 and the Google Slide Deck01.
 4. Create two folders called Folder01 and Folder02.
 5. The document and spreadsheet should be in the following folders: Prog280-Week02 and Folder01.
-6. The presentation should be in Prog280-Week02 and Folder02
+6. The Google Slide Deck should be in Prog280-Week02 and Folder02
 7. A document called Folder01Overview should be in Folder01.
 8. A document called Folder02Overview should be in Folder02.
 9. Each file in your folder should have one line of text in it: "This is Doc01", "This is Deck01", etc.
@@ -50,11 +50,11 @@ It is important to understand there should be only one copy of **Doc01**, **Shee
 
 To place a document in one folder, simply navigate to that folder and create the document inside it. To move it from one folder to another, put a check mark in front of the file or folder, then click the **Move To** icon, which is shaped like a folder, and which is located near the top of Google Drive window.
 
-**NOTE**: *Something has changed. It appars that now you should select the file and then **Shift+Z**. This will allow you to add one file to multiple places.*
+**NOTE**: *If want a file to appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places.*
 
 **NOTE**: *To see where a file is located, choose the file, click the **Information Button | Details | Location**.*
 
-![FilesFolders](http://elvenware.com/charlie/os/Android/images/GoogleDriveFilesFolders00.png)
+![Placing a file in multiple places](https://s3.amazonaws.com/bucket01.elvenware.com/images/google-drive-folders-01.jpg)
 
 If you hold down the Ctrl key, and click with the left mouse button, then you can place a document or folder in more than one location.
 
@@ -64,3 +64,9 @@ Turn it In
 ----------
 
 When you are done with the assignment, simply submit the URL of your Google Drive or submit almost anything that lets me know you have completed your work. I can then find your files and folders and check that you have completed the assignment correctly.
+
+Be sure you are meeting he basic requirements of the assignment, which are:
+
+1) To create three different types of files: Google docs, sheets and slides
+2) Create folders and put documents in them
+3) Have at least some documents appear in multiple folders.

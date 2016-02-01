@@ -8,33 +8,11 @@ Session Basics
 
 CreateAllExpress Week04-SessionBasics
 
-
 ## Step 02
 
-Go to redis directory:
+If you have not done so already, at some point we need to install redis. Details are here:
 
-- redis downloads: [http://redis.io/download](http://redis.io/download)
-
-Version number is not important, this is just the general rhythm:
-
-```
-cd ~/Downloads
-tar xvfz redis-3.0.6.tar.gz
-cd redis-3.0.6/
-make
-make test
-cd src
-./redis-server
-```
-
-You can also, but not yet:
-
-```
-/etc/init.d/redis_6379 start
-```
-
-See here: <http://redis.io/topics/quickstart>
-
+- <http://www.elvenware.com/charlie/development/database/NoSql/redis.html>
 
 ## Step 03
 
@@ -67,6 +45,15 @@ router.get('/', foo, function(req, res, next) { 'use strict';
 
 ## Step05
 
+The following installs:
+
+```
+npm install express-session --save
+npm install uuid --save
+```
+
+And this code in **app.js**:
+
 ```javascript
 var session = require('express-session');
 
@@ -87,7 +74,7 @@ app.use(session({
 
 ## Step06
 
-In **routes/index.js**
+In **routes/index.js**, put this code, but return a JSON object, not a string. (Modify call to res.send.)
 
 ```javascript
 router.get('/page01', function(req, res) {

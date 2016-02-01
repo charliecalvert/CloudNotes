@@ -42,35 +42,33 @@ Don't forget port 30025, the title and **nodemon**.
 
 ## Step Two
 
-Setup Mongoose
-
-In /db.js:
+Setup Mongoose in the root of the project in a file called **db.js**. 
+The **getUrl** method is designed to work with [MongoLab](https://mongolab.com/). Fill
+in your own **userName**, **password**, **siteAndPort** and database name:
 
 ```
 module.exports = {
-    'url' : 'mongodb://csc:Re*lD*t*22#@ds049848.mongolab.com:49848/elvenlab01'
+	getUrl: function() {
+        var baseUrl = 'mongodb://';
+		var userName = 'USER-NAME';
+		var password = 'PASSWORD';
+		var siteAndPort = 'ds?????.mongolab.com:?????';
+		var databaseName = 'DB-NAME';
+		var url = baseUrl + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
+		console.log(url);
+		return url;
+	}
 }
 ```
 
-If working with a local database, then do this:
+If working with a local database, then do something like this:
 
     'url' : 'mongodb://localhost/test'
 
-In **models/user.js**:
+Define the schema for your database in **models/user.js**. To get a working copy of the file:
 
-```
-var mongoose = require('mongoose');
-
-var userSchema = mongoose.Schema({
-	id: String,
-	firstName: String,
-	lastName: String,
-	username: String,
-	password: String,
-	email: String
-});
-
-module.exports = mongoose.model('User', userSchema);
+```bash
+cp -r $ELF_TEMPLATES/SignIn/models/ .
 ```
 
 ## Step Two
@@ -90,79 +88,21 @@ html
     block content
 ```
 
-In **views/index.jade**
+In index.jade:
+
+
+And then retrieve the jade for the various dialogs needed to complete the sign in process:
 
 ```
-extends layout
-block content
-	h1= title
-	p Welcome to #{title}
-	div.container
-		div.row
-			div.col-sm-6.col-md-4.col-md-offset-4
-				h1.text-center.login-title Sign in to our Passport app
-					div.account-wall
-						img(class='profile-img', src='images/SpaceNeedle.png')
-						form(class='form-signin', action='/login', method='POST')
-							input(type='text', name='username' class='form-control', placeholder='UserName',required, autofocus)
-							input(type='password', name='password' class='form-control', placeholder='Password', required)
-							button(class='btn btn-lg btn-primary btn-block', type='submit') Sign in
-							span.clearfix
-					a(href='/signup', class='text-center new-account') Create an account
-					#message
-					if message
-						h1.text-center.error-message #{message}
-```
-
-in **views/register.jade**
-
-```
-extends layout
-
-block content
-	div.container
-		div.row
-			div.col-sm-6.col-md-4.col-md-offset-4
-				h1.text-center.login-title Registration Details
-					div.signup-wall
-						form(class='form-signin', action='/signup', method='POST')
-							input(type='text', name='username', class='form-control', placeholder='Username',required, autofocus)
-							input(type='password', name='password', class='form-control nomargin', placeholder='Password', required)
-							input(type='email', name='email', class='form-control', placeholder='Email',required)
-							input(type='text', name='firstName', class='form-control', placeholder='First Name',required)
-							input(type='text', name='lastName', class='form-control', placeholder='Last Name',required)
-							button(class='btn btn-lg btn-primary btn-block', type='submit') Register
-							span.clearfix
-					#message
-						if message
-							h1.text-center.error-message #{message}
-```
-
-In **views/home.jade**
-
-```
-extends layout
-block content
-	div.container
-		div.row
-			div.col-sm-6.col-md-4.col-md-offset-4
-				#user
-					h1.text-center.login-title Welcome #{user.firstName}. Check your details below:
-					div.signup-wall
-						ul.user-details
-							li Username ---> #{user.username}
-							li Email    ---> #{user.email}
-							li First Name ---> #{user.firstName}
-							li Last Name ---> #{user.lastName}
-					a(href='/signout', class='text-center new-account') Sign Out
-
+cp $ELF_TEMPLATES/SignIn/views/*.jade views/.
 ```
 
 Be careful about the whitespace in these files.
 
 ## Step Three
 
-Database Mongoose
+Set up MongoDb database for storing the user name. We will use two libraries 
+called Mongoose and Passport.
 
 In **app.js**, about line 8.
 
@@ -218,202 +158,71 @@ router.post('/login', passport.authenticate('login', {
 
 In **routes/index.js**
 
-```
+```javascript
 var express = require('express');
 var router = express.Router();
 
-var isAuthenticated = function(req, res, next) {
-	// if user is authenticated in the session, call the next() to call the next request handler
-	// Passport adds this method to request object. A middleware is allowed to add properties to
-	// request and response objects
-	if (req.isAuthenticated())
-		return next();
-	// if the user is not authenticated then redirect him to the login page
-	res.redirect('/');
+var isAuthenticated = function (req, res, next) {
+    // Passport added the this method to the request object.
+    console.log('isAuthenticated called');
+    if (req.isAuthenticated()) {
+        console.log('successfully authenticated');
+        return next();
+    }
+
+    console.log('in isAuthenticated, user not authenticate, send to login');
+    res.redirect('/login');
 };
 
-module.exports = function(passport) {
+module.exports = function (passport) {
+    /* GET home page. */
+    router.get('/', isAuthenticated, function (req, res, next) {
+        'use strict';
+        console.log('about to send root page');
+        res.render('index', {title: 'BarFoo'});
+    });
 
-	router.get('/', function(req, res) {
-		res.render('index', {title: "sign in"});
-	});
+    function foo(req, res, next) {
+        console.log('calling login');
+        next();
+    }
 
-	router.post('/login', passport.authenticate('login', {
-		successRedirect: '/home',
-		failureRedirect: '/'
-	}));
+    router.get('/login', function (req, res, next) {
+        console.log('in get login');
+        res.render('login', {user: req.user});
+    });
 
-	router.get('/signup', function(req, res) {
-		res.render('register', {});
-	});
+    router.post('/loginUser', passport.authenticate('login', {
+            successRedirect: '/',
+            failureRedirect: '/login'
+    }));
 
-	/* Handle Registration POST */
-	router.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/home',
-		failureRedirect: '/signup'
-	}));
+    router.get('/loggedin', function(request, response) {
+        response.send(request.isAuthenticated() ? true : false);
+    });
 
-	/* GET Home Page */
-	router.get('/home', isAuthenticated, function(req, res) {
-		res.render('home', {user: req.user});
-	});
+    router.get('/signup', function(req, res) {
+        console.log('Get signup');
+        res.render('register', {});
+    });
 
-	router.get('/signout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-	});
+    /* Handle Registration POST */
+    router.post('/signup', passport.authenticate('signup', {
+        successRedirect: '/#/login',
+        failureRedirect: '/signup'
+    }));
 
-	return router;
+    return router;
 };
 ```
+
 
 ## Step Five
 
 Passport
 
-In **/passport/init.js**
-
-```
-var login = require('./login');
-var signup = require('./signup');
-var User = require('../models/user');
-
-module.exports = function(passport) {
-
-    // Passport needs to be able to serialize and deserialize
-    // users to support persistent login sessions
-    passport.serializeUser(function(user, done) {
-        console.log('serializing user: ');
-        console.log(user);
-        done(null, user._id);
-    });
-
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            console.log('deserializing user:', user);
-            done(err, user);
-        });
-    });
-
-    // Setting up Passport Strategies for Login and SignUp/Registration
-    login(passport);
-    signup(passport);
-
-};
-```
-
-In **/passport/login.js**
-
-```
-/**
- * Created by charlie on 6/8/2015.
- */
-
-var LocalStrategy   = require('passport-local').Strategy;
-var User = require('../models/user');
-var bCrypt = require('bcrypt-nodejs');
-
-module.exports = function(passport) {
-
-	passport.use('login', new LocalStrategy({
-				passReqToCallback : true
-			},
-			function(req, username, password, done) {
-				// check in mongo if a user with username exists or not
-				User.findOne({ 'username' :  username },
-					function(err, user) {
-						// In case of any error, return using the done method
-						if (err)
-							return done(err);
-						// Username does not exist, log the error and redirect back
-						if (!user){
-							console.log('User Not Found with username '+username);
-							return done(null, false);
-						}
-						// User exists but wrong password, log the error
-						if (!isValidPassword(user, password)){
-							console.log('Invalid Password');
-							return done(null, false); // redirect back to login page
-						}
-						// User and password both match, return user from done method
-						// which will be treated like success
-						return done(null, user);
-					}
-				);
-
-			})
-	);
-
-
-	var isValidPassword = function(user, password){
-		return bCrypt.compareSync(password, user.password);
-	}
-
-};
-```
-
-In **/passport/signup.js**
-
-```
-var LocalStrategy   = require('passport-local').Strategy;
-var User = require('../models/user');
-var bCrypt = require('bcrypt-nodejs');
-
-module.exports = function(passport){
-
-    passport.use('signup', new LocalStrategy({
-            passReqToCallback : true // allows us to pass back the entire request to the callback
-        },
-        function(req, username, password, done) {
-
-            findOrCreateUser = function(){
-                // find a user in Mongo with provided username
-                User.findOne({ 'username' :  username }, function(err, user) {
-                    // In case of any error, return using the done method
-                    if (err){
-                        console.log('Error in SignUp: '+err);
-                        return done(err);
-                    }
-                    // already exists
-                    if (user) {
-                        console.log('User already exists with username: '+username);
-                        return done(null, false, req.flash('message','User Already Exists'));
-                    } else {
-                        // if there is no user with that email
-                        // create the user
-                        var newUser = new User();
-
-                        // set the user's local credentials
-                        newUser.username = username;
-                        newUser.password = createHash(password);
-                        newUser.email = req.param('email');
-                        newUser.firstName = req.param('firstName');
-                        newUser.lastName = req.param('lastName');
-
-                        // save the user
-                        newUser.save(function(err) {
-                            if (err){
-                                console.log('Error in Saving user: '+err);  
-                                throw err;  
-                            }
-                            console.log('User Registration succesful');    
-                            return done(null, newUser);
-                        });
-                    }
-                });
-            };
-            // Delay the execution of findOrCreateUser and execute the method
-            // in the next tick of the event loop
-            process.nextTick(findOrCreateUser);
-        })
-    );
-
-    // Generates hash using bCrypt
-    var createHash = function(password){
-        return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-    }
-
-};
+```bash
+cp -r $ELF_TEMPLATES/SignIn/passport/ .
 ```
 
 ## Step Six

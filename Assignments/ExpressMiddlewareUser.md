@@ -8,30 +8,9 @@ CreateAllExpress Week04-MiddlewareUser
 
 ## Step 02
 
-Go to redis directory:
+We will not use redis in this assignment, but we need to install it at some point. Details are here:
 
-- redis downloads: [http://redis.io/download](http://redis.io/download)
-
-Version number is not important, this is just the general rhythm:
-
-```
-cd ~/Downloads
-tar xvfz redis-3.0.6.tar.gz
-cd redis-3.0.6/
-make
-make test
-cd src
-./redis-server
-```
-
-You can also, but not yet:
-
-```
-/etc/init.d/redis_6379 start
-```
-
-See here: <http://redis.io/topics/quickstart>
-
+- <http://www.elvenware.com/charlie/development/database/NoSql/redis.html>
 
 ## Step 03
 
@@ -138,12 +117,6 @@ $(document).ready(function() { 'use strict';
     });
 });
 ```
-
-## Not yet
-
-var session = require('express-session');
-
-https://www.npmjs.com/package/uuid
 
 ## Turn it in
 
