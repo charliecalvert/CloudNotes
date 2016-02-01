@@ -41,7 +41,7 @@ Once you have your map planned out, click on the hamburder menu at the top of th
 
 Here you can see how to find the **Share and Embed map** menu item:
 
-![maps](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGVzRIZlB5RS00Z2s)
+![maps](https://s3.amazonaws.com/bucket01.elvenware.com/images/WalkingMapShareEmbed.png)
 
 This screenshot shows how to create the short URL that you will turn into a hyperlink in your markdown document:
 
@@ -57,15 +57,27 @@ When you are done, your code should look much like the  **Weowna to Lake Hills G
 
 To complete the exercise, do the following:
 
-- Download the markdown and HTML for your document from stackedit. Name the markdown file **WalkingMap&#95;LastName.md**. Name the HTML file **WalkingMap&#95;LastName.html**. In all cases LastName is your last name.
-- Wrap your HTML in a bootstrap document, as we did in the CodeAnywhereS3 assignment.
-- Paste your HTML into a Google Sites
-- Upload your files to S3
-- Upload your files to CodeAnywhere and place them in a folder in your repository. The name of the folder should be **Week04_WalkingMap**.
-- Take screenshot of your files in CodeAnywhere. Put the screenshot in your **Week04_WalkingMap** folder.
-- Check your files into your BitBucket repository
+- Download the markdown and HTML for your markdown editor. Name the markdown file **WalkingMapLastName.md**. Name the HTML file **WalkingMapLastName.html**. In all cases LastName is your last name.
+- Place your code in your **~/Documents/AllDrive** folder.
+- Run your MakeHtml program to refresh the code on your Apache server.
+- Copy the files from **AllDrive** to your repository, per the work we did in a previous assignment.
+- Push your repository.
 
-## Google Sites Detailed
+##Turn it in
+
+Take a screen shot of your page running on your Apache Server. (localhost/WalkingMapLastName.html). Attach (upload) when you submit the assignment in Canvas.
+
+Push your repository. By now I should be able to find it, but if you have any doubts, add your github url as a comment.
+
+Your url might look vaguely like this:
+
+```
+git@github.com:username/prog270_lastname-2016.git
+```
+
+## Please Ignore
+
+Those of you in Prog270, Winter 2016, don't do this. Just ignore this section. I'm just saving it here for now for my personal use.
 
 Here is one way to set up your Google Site.
 
@@ -78,14 +90,8 @@ Here is one way to set up your Google Site.
 - Paste in your HTML that you exported from StackEdit (Ctrl-V).
 - Save your work.
 
-##Turn it in
-
-Submit the following:
+More stuff to ignore:
 
  - A zip file containing your files
  - In the comment area put the URLs of your walking map pages on S3 and Google Sites.
  - In the comment area put the URL of your git repository. It should look something like this:
-
-```
-git@bitbucket.org:Prog270_Lastname/prog270_Lastname.git
-```
