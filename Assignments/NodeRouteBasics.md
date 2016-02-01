@@ -96,8 +96,9 @@ by the user.
 You interface will probably consist of three buttons:
 
 - Get Feet in Mile
-- Calculate Feet
-- Calculate Radius
+- Calculate Feet from Miles
+- Calculate Circumference
+- One input control for entering number used by the last two butttons  
 
 
 ## Step Four: Server {#server}
@@ -109,8 +110,8 @@ example in JsObjects.
 The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9.
 
 For three points extra credit, implement **getFeetInMile** and 
-**calculateFeet** using HTTP GET calls, and use POST for 
-**calculateRadius**:
+**calculateFeetFromMiles** using HTTP GET calls, and use POST for 
+**calculateCircumference**:
 
 	var express = require('express');
     var router = express.Router();
@@ -122,6 +123,16 @@ The formula for calculating the circumference of a circle given its
 radius looks like this:
 
 	Circumference = 2 * radius * Math.PI;
+
+The parameter for calculateFeetFromMiles: miles
+
+The parameter for calculateCircumference: radius
+
+## Step Five
+
+Put a **calculateCircumference** method in your NpmPackage **utils** object
+and use it in the call from your server. The method should take one parameter
+called **radius** and it should return the calculated circumference.
 
 ## Turn It In
 
