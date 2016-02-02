@@ -2,11 +2,11 @@
 
 Let's learn a little about maps, how to create our own maps, and how to share them with others on computers and on phones.
 
-##Create Walks
+## Create Walks
 
 Create a markdown document, that shows how to walk from one place to another in the Seattle area. Here, for instance, is an example walk, called **Weowna to Lake Hills GreenBelt**
 
-###Weowna to Lake Hills GreenBelt
+### Weowna to Lake Hills GreenBelt
 
 This is a nice little walk you can take from Sammish Lake up to the area near the Blueberry Farm on 148th. There is a bit of an uphill climb near the start of the hike, but there is lots of nice buculoc wandering in the hike. It is wonderful to live in a town that has so much park land so near the city center.
 
@@ -24,17 +24,17 @@ Each walk should have:
 - A link to the walk on Google Maps
 - A map showing the walk itself
 
-##Creating Walks
+## Creating Walks
 
  - Click on a location on the map that you want to be the start of a walk. As a rule, it is best to pick a known place visible on the map, but you can simply right click and choose a random location in order to create a random starting point.
- - A window should open on the left.
+ - A window should open on the left. Click on the Directions icon.
  - Click on another point to make your end point.
  - Click on the walking icon to show the distance and time for walking rather than by car or public transportation
  - The addresses of both locations should appear in a window in the top left of Google Maps.
 
 ![maps](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGUWEweUM1WUVLOTA)
 
-Once you have your map planned out, click on the hamburder menu at the top of the window that opened on the left. Choose **Share and embed map**.
+Once you have your map planned out, click on the hamburger menu at the top of the window that opened on the left. Choose **Share and embed map**.
 
  - For the share link choose **Short URL**. Create a [hyperlink](https://goo.gl/maps/89Whj) to it in your markdown document. The link should include square brackets and parenthesis. But there is a globe icon at the top of StackEdit that will create the link for you automatically.
  - For the embed link, copy the whole iframe code shown you on Google sites, Paste it in unchanged in your markdown document. (You can mix markdown and HTML all you want in a markdown document. In this case, you are embedding an HTML iframe tag directly in your markdown.
@@ -58,7 +58,7 @@ When you are done, your code should look much like the  **Weowna to Lake Hills G
 To complete the exercise, do the following:
 
 - Download the markdown and HTML for your markdown editor. Name the markdown file **WalkingMapLastName.md**. Name the HTML file **WalkingMapLastName.html**. In all cases LastName is your last name.
-- Place your code in your **~/Documents/AllDrive** folder.
+- Place your code in your **~/Documents/AllTest** folder.
 - Run your MakeHtml program to refresh the code on your Apache server.
 - Copy the files from **AllDrive** to your repository, per the work we did in a previous assignment.
 - Push your repository.

@@ -4,6 +4,12 @@ I'm removing calls to npm install and bower install from **CreateExpressProject*
 
 ## Step One
 
+Before you install our packages, install a library needed by kerberos:
+
+```
+sudo apt-get install libkrb5-dev
+```
+
 Set up NPM for symbolic links. You probably already have a **~/tmp** folder, and you probably don't have a ~/tmp/package.json, but just in case:
 
 ```
@@ -26,6 +32,7 @@ It should come back clean, with no output. If you see outdated packages, let me 
 
 ```
 npm install debug
+npm install kerberos
 ```
 
 From time to time:
@@ -59,7 +66,9 @@ cat $ELF_UTILS/SetupLinuxBox/.bash_aliases
 In particular, these three:
 
 ```
-alias nm="ln -se& components && npm start"
+alias run="nm && components && npm start"
+alias nm="ln -s ~/tmp/node_modules/"
+alias components="ln -s ~/tmp/components/ public/components"
 ```
 
 If you just want to link in **node_modules**, go to the root of your project and:

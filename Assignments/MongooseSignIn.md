@@ -147,7 +147,7 @@ You just copied the following files into a folder called **passport** :
 - login.js
 - signup.js
 
-##Step Five
+## Step Five
 
 Set up the routes for logging in and signing up.
 
@@ -227,7 +227,7 @@ module.exports = function (passport) {
 
 ##Turn it in
 
-Submit four screen shots as PNG attachments. Each screen shot except the last should contain your first and last names. Model your screen shots after the four images found in this assignment.
+Submit four screen shots as PNG attachments. Model your screen shots after the four images found in this assignment. Instead of the logged in image, take one of the bash shell showing serializing and deserializing of the user. (Just convince me you got it to work....)
 
 Also check in your code in **Week10-MongooseSignIn** or some similar name beginning with **Week10**. If there might be any question at all as to where I would find your code, please include the folder name when you submit the assignment.
 

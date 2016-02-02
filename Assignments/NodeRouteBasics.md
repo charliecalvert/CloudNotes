@@ -1,8 +1,8 @@
-## Overview 
+## Overview
 
 The Node Route Basics assignment gives you practice create NodeJs Express routes and calling them with **$.getJSON** or **$.ajax**.
 
-If you need help with this this assignment, study the NodeRoutes 
+If you need help with this this assignment, study the NodeRoutes
 examples in JsObjects.
 
 - [NodeRoutes01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01)
@@ -13,7 +13,7 @@ examples in JsObjects.
 I have renamed the **Prog270-Assignments** repository to **elven-assignments**. If you don't have the repo, then do this:
 
 ```
-git clone git@github.com:charliecalvert/elven-assignments.git
+git clone http://github.com/charliecalvert/elven-assignments.git
 ```
 
 If you already have the repo, then:
@@ -59,7 +59,7 @@ npm outdated --depth=0
 
 And then get the latest of everything as needed.
 
-Now go back to your project and create symbolic links to these packages. The best way to do this is to use 
+Now go back to your project and create symbolic links to these packages. The best way to do this is to use
 
 - the run alias from **~/.bash_aliases**
 - or the **nm** and **component** aliases from **~/.bash_aliases**.
@@ -90,8 +90,8 @@ It should include the following:
 - When the user clicks on one button, return the number of feet in a mile.
 - When the user clicks on another button, calculate the number of feet
 in X miles, where X is supplied by the user in an HTML **input** element.
-- Also provide the circumference of a circle given a radius supplied 
-by the user. 
+- Also provide the circumference of a circle given a radius supplied
+by the user.
 
 You interface will probably consist of three buttons:
 
@@ -103,19 +103,19 @@ You interface will probably consist of three buttons:
 
 ## Step Four: Server {#server}
 
-All the calculations should be performed on the server side, in a 
-module, per the [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02/Library) 
+All the calculations should be performed on the server side, in a
+module, per the [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02/Library)
 example in JsObjects.
 
 The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9.
 
-For three points extra credit, implement **getFeetInMile** and 
-**calculateFeetFromMiles** using HTTP GET calls, and use POST for 
+For three points extra credit, implement **getFeetInMile** and
+**calculateFeetFromMiles** using HTTP GET calls, and use POST for
 **calculateCircumference**:
 
 	var express = require('express');
     var router = express.Router();
-	
+
 	router.get(...
 	router.post(...
 
