@@ -35,15 +35,15 @@ After opening the picture in your gallery app, you should be able to touch the p
 
 ![acs02](https://s3.amazonaws.com/bucket01.elvenware.com/images/AndroidCameraShare03-Medium.png)
 
-Below you see the share screen. It allows you to share your image with yourself or others via any number of applications. I have outlined three in red, since they suite out immediate needs. However, there are other tools for sharing images that you might want to use. 
+Below you see the share screen. It allows you to share your image with yourself or others via any number of applications. I have outlined three in red, since they suite out immediate needs. However, there are other tools for sharing images that you might want to use.
 
-![acs03](https://s3.amazonaws.com/bucket01.elvenware.com/images/AndroidCameraShare02-Medium.png) 
+![acs03](https://s3.amazonaws.com/bucket01.elvenware.com/images/AndroidCameraShare02-Medium.png)
 
 ## Edit Your Image
 
  Download your image from Google Drive, Dropbox, your email folder, or where ever it was you stored it. Use a paint program to load the the picture so you can edit it.
 
-I want to see a close up your face. I don't want to see your dog, or your grandfather, or your car. This is not because I don't like your dog, your grandfather, or your car, but because this exercise is about showing me what you look like. 
+I want to see a close up your face. I don't want to see your dog, or your grandfather, or your car. This is not because I don't like your dog, your grandfather, or your car, but because this exercise is about showing me what you look like.
 
 Edit your picture to focus on your head from your shoulders up.
 
@@ -52,16 +52,24 @@ Edit your picture to focus on your head from your shoulders up.
 Now, in this particular picture, I look a little demented, and bit like I have a room temperature IQ. But that's okay with me, perhaps because I am a bit demented and because I do have a room temperature IQ. It's just happens to be a very hot room.
 
 My problem, is that this picture is being shown on the internet. The picture that you will share with us in the class will only be shown on Canvas, and only to members of our class. You are safe. Or at least sort of safe.
- 
+
 ## Upload to Canvas
 
-Suppose you have saved the image to Google Drive, downloaded it to your system, and edited it. Now upload it to the discussion area in Canvas. When you start typing a message, a control that will allow you to upload pictures will appear on the right, as shown below. 
+Suppose you have saved the image to Google Drive, downloaded it to your system, and edited it. Now upload it to the discussion area in Canvas. When you start typing a message, a control that will allow you to upload pictures will appear on the right, as shown below.
 
   [![canvas edit](https://s3.amazonaws.com/bucket01.elvenware.com/images/AndroidCameraShare04-Small.png)](https://s3.amazonaws.com/bucket01.elvenware.com/images/AndroidCameraShare04-Medium.png)
 
 **NOTE**: *Click on the image shown above to see a larger version of it.*
 
 Select the browse button. Navigate to your picture. Now place the cursor in your picture at the point where you want your image to appear. Press the upload button.
+
+Here is an alternative means of uploading images to Canvas:
+
+1. Sign in to Canvas
+1. Click on your name near the upper right of the page.
+1. Click Files in the menu on the left.
+1. Optionally create folders with button on right.
+1. Click the **Upload** button.
 
 ## Turn it in
 

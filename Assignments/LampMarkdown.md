@@ -128,6 +128,16 @@ There should be at least one link in the file you see. Start clicking, and you s
 
 **NOTE**: *I reminded you above, but don't forget that you need to run **npm install** before the first time you run **npm start**. You usually only need to type **npm install** one time per project. Once you have issued the command, then the packages that that project relies on have been installed, and you need not issue the install command again. Type **npm install** one time. After that, you need only type **npm start** to run the project.*
 
+Here is a bit more detail for the technically minded:
+
+- JavaScript is a programming language like C#, Java, Perl, Python, C++ and Ruby.
+- JavaScript can be run in the browser, and that is where we usually see it.
+- JavaScript can also be run on the server, or just run as a utility. Most of the time, when use it this way, it is via a compiler called [NodeJs](https://nodejs.org).
+- The **MakeHtml** program uses NodeJs. It is a custom program that I wrote. More specifically, it is a utility that converts markdown files to HTML and copies the HTML files to specific directory.
+- NodeJs has a system for creating and consuming libraries. This system is called [NPM](https://www.npmjs.com/), which stands for the Node Package Manager. So a library in Node is often called a Package. These libraries provide various services such as access to the file system, access to databases, access to the HTTP protocol.
+
+When we type **npm start**, behind the scenes we are running a command that might look something like this: **node server.js**. This command tells the node compiler to compile and run **server.js**, where **server.js** is a JavaScript source file.
+
 ## Turn it in
 
 Take at least three screen shots of your pages running in the browser.
