@@ -15,18 +15,27 @@ Create an EC2 Instance.
 It will be assigned:
 
 - A public private key pair that you can download
-- A non-permanent public IP address. 
+- A non-permanent public IP address.
 
-We will need a permanent IP address, so later will create an elastic IP address. They are permenant.
-
+We will need a permanent IP address, so later we will create an elastic IP address. The elastic IP will not change.
 
 ## Step Three
 
 From Linux:
 
-Load you PEM file on your local machine. On the client.
+- Load you PEM file on your local machine. On the client.
 
-Add a PEM file to your Ubuntu instance, to the server, in the **~/.ssh/authorized_keys** file.
+Add a PEM file to your Ubuntu instance, to the server, in the **~/.ssh/authorized_keys** file. From your instance of Pristine Lubuntu:
+
+```
+	scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
+```
+
+Then on EC2:
+
+```
+echo ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
+```
 
 For windows users:
 

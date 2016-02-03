@@ -1,6 +1,6 @@
 ## Description
 
-Create and provision an EC2 instance suitable for node development in one of Charlie's classes.
+Create and provision an EC2 instance suitable for node development or running at least running node applications.
 
 ## Provision EC2
 
@@ -48,7 +48,7 @@ ubuntu@ip-172-31-33-240:~$ pwd
 In your home directory, paste in the following by right clicking on the ssh window:
 
 ```
-ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
@@ -75,7 +75,7 @@ export PATH="$PATH:$HOME/npm/bin"
 export NODE_PATH=:$HOME/npm/lib/node_modules
 ```
 
-Type **Ctrl-O + enter** to save, and **Ctrl-X** to exit nano. 
+Type **Ctrl-O + enter** to save, and **Ctrl-X** to exit nano.
 
 Now process your updated **.bashrc** file from the command line: **source ~/.bashrc**
 
@@ -83,7 +83,7 @@ Make the key only readable by you, the owner:
 
     chmod 400 ~/.ssh/id_rsa
 
-Then type the following to load the private key. (Like loading a key into Pageant): 
+Then type the following to load the private key. (Like loading a key into Pageant):
 
     ssh-add ~/.ssh/id_rsa
 
