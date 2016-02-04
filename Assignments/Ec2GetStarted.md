@@ -14,8 +14,8 @@ Create an EC2 Instance.
 
 It will be assigned:
 
-- A public private key pair that you can download
-- A non-permanent public IP address.
+- A public private key pair that you can download. Put it in your **.ssh** folder.
+- A non-permanent public IP address for your EC2 instance. You can see this in your AWS console, under EC2 instances.
 
 We will need a permanent IP address, so later we will create an elastic IP address. The elastic IP will not change.
 
@@ -23,19 +23,12 @@ We will need a permanent IP address, so later we will create an elastic IP addre
 
 From Linux:
 
-- Load you PEM file on your local machine. On the client.
-
-Add a PEM file to your Ubuntu instance, to the server, in the **~/.ssh/authorized_keys** file. From your instance of Pristine Lubuntu:
+- Load you EC2 PEM file on your local machine. On the Pristine Lubuntu:
 
 ```
-	scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
+ssh-add ~/ssh/<YOUR EC2 PRIVATE KEY>
 ```
 
-Then on EC2:
-
-```
-echo ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
-```
 
 For windows users:
 
@@ -59,5 +52,19 @@ Connect to your EC2 instance with Putty:
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
 
 ## Step Five
+
+Add a the public part of your PROG270 Key to your Ubuntu instance in the **~/.ssh/authorized_keys** file. From your instance of Pristine Lubuntu use SSH to *secure copy* (scp) your file from pristine Lubuntu to your EC2 instance:
+
+```
+	scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
+```
+
+Then on EC2 append your public key to your **authorized keys file**:
+
+```
+echo ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
+```
+
+## Turn it in
 
 Take a screen shot of the command prompt and submit that with your assignment.

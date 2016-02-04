@@ -6,18 +6,18 @@ Create and provision an EC2 instance suitable for node development or running at
 
 This assignment is perhaps not entirely complete, but here is enough to get you started. Perform the following tasks:
 
- - Update your server
- - Install Git
- - Download JsObjects from GitHub into your Git folder.
- - Install Node
- - Create and Configure an Elastic IP (See Lamp Section)
+- Update your server (sudo apt-get update etc...)
+- Install Git (sudo apt-get install git)
+- Download JsObjects from GitHub into your Git folder. (git clone etc...)
+- Install Node (In ~/Git/JsObjects/Utilities/NodeInstall)
+- Create and Configure an Elastic IP (See Lamp Section)
+- Install Lamp (sudo apt-get install tasksel, sudo tasksel install lamp-server)
 
 Optional, at least for now:
 
  - Install MongoDb
- - Install [Lamp][lamp]
 
-Use the notes found here:
+Additional, highly useful, notes are found here:
 
 - <http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html>
 
@@ -38,7 +38,9 @@ We can go over this in class, but you will also need to understand how to open u
 
 ## SSH
 
-Type **cd** and press enter to get to your home directory. Type **pwd** to be sure you are in the right place:
+We are going to create a second SSH key and put the public portion of it on GitHub. We could reuse or previous key, but I want you to get practice creating and storing keys. (It's easy once you get used to it.)
+
+On your EC2 instance, type **cd** and press enter to get to your home directory. Type **pwd** to be sure you are in the right place:
 
 ```
 ubuntu@ip-172-31-33-240:~$ pwd
@@ -59,7 +61,7 @@ cd .ssh
 cat id_rsa.pub
 ```
 
-Select the entire key with the mouse and press **Ctrl-C** to copy it. Then go to bitbucket, choose manage account, and add you new public ssh key, calling it something like Prog219AwsKey.
+Select the entire key with the mouse and press **Ctrl-C** to copy it. Then go to gitgub or bitbucket, as appropriate. Choose manage account, and add you new public ssh key, calling it something like Prog219AwsKey.
 
 Type **cd** to go to the home directory. Then type: **nano .bashrc**
 
@@ -94,7 +96,7 @@ ubuntu@ip-172-31-33-240:~/.ssh$ ssh-add id_rsa
 Identity added: id_rsa (id_rsa)
 ```
 
-Go to your Git Folder and clone your repo:
+Go to your Git Folder and clone your repo, using your github or bitbucket git url as appropriate:
 
 ```
 cd Git
@@ -201,7 +203,7 @@ The following document used in another of my classes also contains information t
 
 ## History
 
-What I did in class
+What I did in class some time in the past. Might be useful:
 
 ```
  1  exit
