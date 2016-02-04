@@ -103,6 +103,13 @@ cd Git
 git clone git@bitbucket.com:lastname/reponame.git
 ```
 
+And also install JsObjects:
+
+```
+cd ~/Git
+git clone https://github.com/charliecalvert/JsObjects.git
+```
+
 See also this section on using SSH config files:
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config>

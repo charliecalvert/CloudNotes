@@ -64,7 +64,7 @@ We will build our own config tools, but we will note the presence and try to rem
 
 - <https://github.com/lorenwest/node-config>
 
-Here is our code, where you will finish implementing **load** by using the **readFile** method from your **npmPackage**.
+Here is our code, where you will finish implementing **load** by using the **readFile** method from your **npmPackage**. Call it **routes/elven-config.js**:
 
 ```javascript
 /**
@@ -204,6 +204,13 @@ Use a select object to display the paths to your markdown files. The user will c
       <option value="/home/charlie/Git/CloudNotes/Assignments">/home/charlie/Git/CloudNotes/Assignments</option>
     </select>
   </div>
+```
+
+And here is how to get the selected item out of the **select** element, which we have called 'dirsToWalk':
+
+```javascript
+var dirsToWalk = document.getElementById("dirsToWalk");
+var directory = dirsToWalk.options[dirsToWalk.selectedIndex].value;
 ```
 
 [cget]: https://github.com/lorenwest/node-config/wiki/Common-Usage

@@ -26,9 +26,14 @@ From Linux:
 - Load you EC2 PEM file on your local machine. On the Pristine Lubuntu:
 
 ```
-ssh-add ~/ssh/<YOUR EC2 PRIVATE KEY>
+ssh-add ~/.ssh/<YOUR EC2 PRIVATE KEY>
 ```
 
+It might look like this:
+
+```
+ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
+```
 
 For windows users:
 
@@ -62,8 +67,18 @@ Add a the public part of your PROG270 Key to your Ubuntu instance in the **~/.ss
 Then on EC2 append your public key to your **authorized keys file**:
 
 ```
-echo ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
+cat ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
 ```
+
+Don't forget to put your new private key on Google Drive. Go to the ~/.ssh folder and issue this command:
+
+```
+zip Prog270-Ec2-Calvert-2016 Prog270-Ec2-Calvert-2016.pem
+```
+
+Now upload the zip file to Google Drive. It doesn't have to be in our shared folder. Just so you can get it at home.
+
+Choose **New | File Upload** on Google Drive.
 
 ## Turn it in
 
