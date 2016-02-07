@@ -27,16 +27,6 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=11
+current_page=1
 FILE_NAME_0=161;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-2016%2Fisit322-gankhuyag-2016%2FWeek04-SessionBasics%2Froutes%2Findex.js;0;4
-FILE_NAME_1=641;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FProg270%2FComments.txt;0;4
-FILE_NAME_2=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Fbin%2Fcheck-karma-grunt-config;0;4
-FILE_NAME_3=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Fbin%2FTestCheck;0;4
-FILE_NAME_4=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FMongoTalk05%2FRoutes%2Findex.js;0;4
-FILE_NAME_5=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FMongoTalk05%2FLibrary%2FLoadConfig.js;0;4
-FILE_NAME_6=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FUtilities%2FTemplates%2FJavaScript%2FLoadConfig.js;0;4
-FILE_NAME_7=0;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FMongoTalk05%2FMongoTalk.json;0;4
-FILE_NAME_8=2703;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FMongoTalk05%2FLibrary%2FQueryMongo.js;0;4
-FILE_NAME_9=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FData%2FMongoCreateData%2FLoadConfig.js;0;4
-FILE_NAME_10=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-calvert-2016%2FWeek03-ElvenSiteStarter%2Fnode_modules%2Fconfig%2Flib%2Fconfig.js;0;4
-FILE_NAME_11=37;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fdeleteme02%2FREADME.md;0;4
+FILE_NAME_1=653;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fprog270-2016%2Ffoo;0;4

@@ -4,7 +4,7 @@ Create a single Express based application called **Week02-Functional**:
 
 - **CreateExpressProject Week02-Functional**
 
-Create or use an existing client side file called **public/control.js**. Implement the exercises shown below in that file. Display the output as you wish. A simple solution might be to show the output in a DIV. More complex solutions might use listBox or tree to display the data. 
+Create or use an existing client side file called **public/control.js**. Implement the exercises shown below in that file. Display the output as you wish. A simple solution might be to show the output in a DIV. More complex solutions might use listBox or tree to display the data.
 
 ## Background
 
@@ -37,7 +37,7 @@ Recall that you can create an empty list in your HTML with the following Jade:
 ul#output
 ```
 
-If you want to add a list item to an HTML list, you could use a function like this: 
+If you want to add a list item to an HTML list, you could use a function like this:
 
 ```javascript
 function show(data) {
@@ -65,7 +65,15 @@ At run time, you could read the data in once and store it in an object scoped va
 function readData(callback) {
 	$.getJSON('data/States.json', function(states) {
 		callback(states);
-	});
+	}).done(function() {
+   showDebug( "Config loaded second success" );
+  })
+  .fail(function(jqxhr, textStatus, error) {
+      showDebug( "Walk loaded error: " + jqxhr.status + ' ' + textStatus + ' ' + error );
+  })
+  .always(function() {
+      showDebug( "Config loaded complete" );
+  });
 }
 ```
 
@@ -79,7 +87,7 @@ Write a program that uses **Array.forEach** to itereate over this data and creat
 
 ## Part II
 
-Add a method to the program that does the same things as in Part I, but using the built in **Array.map** function. 
+Add a method to the program that does the same things as in Part I, but using the built in **Array.map** function.
 
 Now that the program can do more than one thing, you will need some buttons or links to switch back and forth between the task outlined in Part I, and the task outlined in Part II. In the screenshot, the buttons are labelled **For Each** and **Map**.
 
@@ -90,7 +98,7 @@ Now that the program can do more than one thing, you will need some buttons or l
 Create an array with five names in it:
 
 	['Able', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot'];
- 
+
 And use the built in Array.filter method to return those strings that begin with A.
 
 
@@ -99,7 +107,7 @@ And use the built in Array.filter method to return those strings that begin with
 Use **MergeAll** and one call to **map** to flatten the following:
 
 ```
-var states1 = [ 
+var states1 = [
         [ {
 			"state" : {
 				"name" : "ALABAMA",
@@ -349,7 +357,7 @@ var presidents = [
             }
         ]
     }
-] 
+]
  ;
 ```
 

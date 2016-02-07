@@ -8,6 +8,16 @@ examples in JsObjects.
 - [NodeRoutes01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01)
 - [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02)
 
+We are sending a message from the client to the server, and then getting a response:
+
+![http](https://s3.amazonaws.com/bucket01.elvenware.com/images/http.png)
+
+The client (web browser) uses HTTP to make a request for HTML, CSS, JavaScript or an image. The request might be triggered when we click on a link, type in the address bar or call an **ajax** function such as **getJSON**.
+
+TCP/IP is used to send the request via the network to the server. The server, which in our case is a NodeJs express web server, reads the HTTP request and we create a custom route in **routes/index.js** that sends a response back. The response is typically an HTML file, some JSON, or some other artifact sent via the HTTP protocol.
+
+On the client, the browser unpacks the request. If it an HTML file the user requested, it parses the HTML, and displays the results to the user. If it is an ajax request, then we typically parse the JSON and display the result to the user in some HTML element.
+
 ## Step One: Pull Elven Assignments {#elven-assignments}
 
 I have renamed the **Prog270-Assignments** repository to **elven-assignments**. If you don't have the repo, then do this:

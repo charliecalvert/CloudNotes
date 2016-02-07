@@ -23,8 +23,8 @@ Here's the assignment:
 3. Name the Document BulletPoints.
 4. Create two folders called Folder01 and Folder02.
 5. The document should go in these folders: **GoogleDriveAndFoldersPart02** and **GoogleDriveAndFoldersPart02/Folder01**.
-6. You should already have at least three images in your folder. If you do not have them, create them and put them anyplace else but in **GoogleDriveAndFoldersPartII**.
-7. Create links to at least three image in Folder02.
+6. You should already have at least three images in your shared folder (2016-prog270-lastname). If you do not have them, create them and put them anyplace else but in **GoogleDriveAndFoldersPartII**.
+7. In Folder02 create links (Shift+Z) to at least three images. The images will be somewhere else in shared folders, the links in Folder02.
 
 ```
   *2016-prog270-lastname

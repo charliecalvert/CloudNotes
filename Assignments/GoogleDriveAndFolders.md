@@ -25,11 +25,13 @@ Here's the assignment:
 2. Create a Google Document, Spreadsheet(Sheet01) and Google Slide(Deck01) inside that folder.
 3. Name the Document Doc01, the SpreadSheet Sheet01 and the Google Slide Deck01.
 4. Create two folders called Folder01 and Folder02.
-5. The document and spreadsheet should be in the following folders: Prog280-Week02 and Folder01.
-6. The Google Slide Deck should be in Prog280-Week02 and Folder02
+5. The document and spreadsheet should be in the following folders: GoogleDriveAndFolders and Folder01.
+6. The Google Slide Deck should be in GoogleDriveAndFolders and Folder02
 7. A document called Folder01Overview should be in Folder01.
 8. A document called Folder02Overview should be in Folder02.
 9. Each file in your folder should have one line of text in it: "This is Doc01", "This is Deck01", etc.
+
+This should be a reasonably accurate view of the file hierarchy in your Google Drive for the folders and files associated with this assignment:
 
 ```
     * 2016-Prog270-LastName

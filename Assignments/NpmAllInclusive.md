@@ -90,9 +90,8 @@ Go to your **/temp** dir or some other folder and folder and type:
 ```
 CreateAllExpress MyTempProject
 cd MyTempProject
-ls -la
 ```
 
-Take a screen shot.
+Type **run** or **nm** or something that else that will create a link to the **~/tmp/node_modules**. Type **ls -la** so I can see the symbolic link. Take a screen shot.
 
 Attach (upload) all three screen shots when you submit the assignment. No word files, not zip files. Just attach the bitmaps directly to the Canvas assignment.

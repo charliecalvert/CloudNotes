@@ -132,8 +132,7 @@ Here is a bit more detail for the technically minded:
 
 - JavaScript is a programming language like C#, Java, Perl, Python, C++ and Ruby.
 - JavaScript can be run in the browser, and that is where we usually see it.
-- JavaScript can also be run on the server, or just run as a utility. Most of the time, when use it this way, it is via a compiler called [NodeJs](https://nodejs.org).
-- The **MakeHtml** program uses NodeJs. It is a custom program that I wrote. More specifically, it is a utility that converts markdown files to HTML and copies the HTML files to specific directory.
+- JavaScript can also be run on the server, or just run as a utility. Most of the time, when use it this way, it is via a compiler called [NodeJs](https://nodejs.org). **MakeHtml** program uses NodeJs. It is a custom program that I wrote. More specifically, it is a utility that converts markdown files to HTML and copies the HTML files to specific directory.
 - NodeJs has a system for creating and consuming libraries. This system is called [NPM](https://www.npmjs.com/), which stands for the Node Package Manager. So a library in Node is often called a Package. These libraries provide various services such as access to the file system, access to databases, access to the HTTP protocol.
 
 When we type **npm start**, behind the scenes we are running a command that might look something like this: **node server.js**. This command tells the node compiler to compile and run **server.js**, where **server.js** is a JavaScript source file.
@@ -169,3 +168,14 @@ Your images must be different from these, but they should have much in common wi
 [lmd01]:https://s3.amazonaws.com/bucket01.elvenware.com/images/LampMarkdown01.png
 [lmd02]:https://s3.amazonaws.com/bucket01.elvenware.com/images/LampMarkdown02.png
 [lmd03]:https://s3.amazonaws.com/bucket01.elvenware.com/images/LampMarkdown03.png
+
+## Hint
+
+Here are some tips and thoughts about this program to help you understand it better.
+
+- Whenever we add to or edit the markdown files in AllTest, we need to run MakeHtml (npm start) in order to have the changes we made in AllTest reflected in our web site (localhost).
+- There is a bug in the MakeHtml program that results in the summary.html or master-list.html files not being properly created when we first create a new directory in AllTest. As a result, we sometimes need to run npm start twice.
+
+Summary: The MakeHtml program converts our markdown in the AllTest folder to HTML. It copies the HTML to the **/var/www/html** folder. MakeHtml is not a service that runs continually. Therefore, each time we update files in the AllTest directory, we need to run (**npm start**) MakeHtml in order to update the files in **/var/www/html**. The conversion does not take place automatically, it only happens when we explicitly run the MakeHtml program by typing **npm start**.
+
+NOTE: In Windows, we typically click on an executable to run it. Here, we are running a program implemented as a NodeJs script. The way to run the script is to type **npm start**.

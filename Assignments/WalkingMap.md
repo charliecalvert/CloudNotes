@@ -61,13 +61,18 @@ To complete the exercise, do the following:
 - Place your code in your **~/Documents/AllTest** folder.
 - Run your MakeHtml program to refresh the code on your Apache server.
 - Copy the files from **AllDrive** to your repository, per the work we did in a previous assignment.
-- Push your repository.
+- Push your repository. (It should now contain **AllTest/WalkingMap.md** or something similar.)
 
-##Turn it in
+## Turn it in
 
 Take a screen shot of your page running on your Apache Server. (localhost/WalkingMapLastName.html). Attach (upload) when you submit the assignment in Canvas.
 
 Push your repository. By now I should be able to find it, but if you have any doubts, add your github url as a comment.
+
+Check list:
+
+- Image attached to assignment?
+- **WalkingMap.md** in **AllTest** folder in your repository?
 
 Your url might look vaguely like this:
 

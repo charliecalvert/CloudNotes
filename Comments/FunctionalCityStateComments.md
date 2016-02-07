@@ -2,6 +2,8 @@
 
 Comments on the Functional City State assignment.
 
+## Mapping
+
 The first one should be easy for most of you:
 
 ```javascript
@@ -30,6 +32,8 @@ function mapIt() {
     }
 ```
 
+## Filtering
+
 I think you can see fairly easily how to do Filter example:
 
 
@@ -45,6 +49,8 @@ function filterArray() {
 ```
 
 It's really just a matter of passing a predicate (function that returns a boolean value) to the built-in filter method. Set up a condition in the predicate that only returns true for the rows that you want to pass the filter. All other rows fail, and are excluded from the results.
+
+## Merging
 
 In Part IV, call **mergeAll** to flatten the two arrays into one array, then call map to make the resulting data a bit more presentable. It's arguable that the call to map isn't even needed, but it is nice to see what it can do for us:
 
@@ -85,4 +91,39 @@ function mergeMap() {
         });
         showArray(data);
 }
+```
+
+## Utils
+
+At least in part, ElfUtils looks like this:
+
+```
+var elf = {};
+
+elf.Utils = (function () {
+    'use strict';
+
+    // Code omitted here
+    
+    ElfUtils.prototype.show = function (data) {
+        $("#output").append('<li>{ ' + data + ' }</li>');
+    };
+
+    ElfUtils.prototype.showArray = function (data) {
+        data.forEach(function (row) {
+            $("#output").append('<li> {' + row + '} </li>');
+        });
+    };
+
+    // Code omitted here
+    
+    return ElfUtils;
+
+})();
+```
+
+Use it like this:
+
+```
+var elfUtils = new elf.Utils();
 ```

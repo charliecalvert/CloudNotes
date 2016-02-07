@@ -65,6 +65,57 @@ Install your package. For instance, I type:
 npm install isit322-calvert --save
 ```
 
+Commands you can use to learn more about a package:
+
+  npm show <PACKAGE NAME>
+
+For instance:
+
+```bash
+  npm show isit322-kariungi
+  npm show isit322-calvert
+```
+
+Typical output:
+
+```
+{ name: 'isit322-calvert',
+  description: 'My test package',
+  'dist-tags': { latest: '1.1.3' },
+  versions: [ '1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3' ],
+  maintainers: [ 'charliecalvert <xxx@xxx.com>' ],
+  time:
+   { modified: '2016-02-04T03:12:54.452Z',
+     created: '2016-01-14T02:09:55.073Z',
+     '1.0.0': '2016-01-14T02:09:55.073Z',
+     '1.0.1': '2016-01-14T02:19:59.955Z',
+     '1.0.2': '2016-01-14T02:59:12.265Z',
+     '1.1.0': '2016-01-20T01:53:08.120Z',
+     '1.1.1': '2016-01-20T02:10:53.173Z',
+     '1.1.2': '2016-01-20T02:18:01.199Z',
+     '1.1.3': '2016-02-04T03:12:54.452Z' },
+  keywords: [ 'npm', 'test' ],
+  repository:
+   { type: 'git',
+     url: 'git@bitbucket:ccalvert/isit322-calvert-2016.git' },
+  author: 'Charlie Calvert',
+  license: 'MIT',
+  readmeFilename: '',
+  version: '1.1.3',
+  main: 'index.js',
+  scripts: { test: 'echo "Error: no test specified" && exit 1' },
+  dist:
+   { shasum: '8a17e79386028001a3f84cd304be1e266ef57085',
+     tarball: 'http://registry.npmjs.org/isit322-calvert/-/isit322-calvert-1.1.3.tgz' },
+  directories: {} }
+```
+
+Or
+
+```
+npm show isit322-kariungi version
+1.2.1
+```
 ## Step Three
 
 Now we want to be able to call each of these functions from our npm **utils** module. On the server side, here is how to use one function as I defined it above:
@@ -100,6 +151,14 @@ On the client side, something like this:
 $(document).ready(function() { 'use strict';
     $.getJSON('/readFile', function(result) {
         $('#readFile').html(JSON.stringify(result));
+    }).done(function() {
+     showDebug( "readFile second success" );
+    })
+    .fail(function(jqxhr, textStatus, error) {
+        showDebug( "readFile error: " + jqxhr.status + ' ' + textStatus + ' ' + error );
+    })
+    .always(function() {
+        showDebug( "readFile complete" );
     });
 });
 ```

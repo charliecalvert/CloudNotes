@@ -2,6 +2,8 @@
 
 Basic branching.
 
+To get started, be sure that you have a copy (clone) of your repository in your **~/Git** folder and your **~/temp** folder. We can imagine that one copy is your repository at school, and the other copy is your repository at home.
+
 ## Step One: Create a Branch (#create-branch)
 
 Open a repository. Create a file called **MyTest.md**:
@@ -161,9 +163,9 @@ You could also do **git push all -u**, which pushes all your branches upstream.
 
 Suppose you are now on your home machine and you want to view the branch you just created.
 
-**NOTE**: *You don't actually have to be on your machine to see all this. Just clone your repository into your temp directory (if you have not done so already) and switch back and forth between the view of your repository found in the **~/temp** folder and the view in your **~/Git** directory. An alternative would be to have two machines next to each other on your desk, such as a desktop machine and a laptop machine.*
+**NOTE**: *As implied earlier, you don't actually have to be on your home or school machine to see all this. Wherever you are, just clone your repository into your temp directory (if you have not done so already) and switch back and forth between the view of your repository found in the **~/temp** folder and the view in your **~/Git** directory. An alternative would be to have two machines next to each other on your desk, such as a desktop machine and a laptop machine. (We can't do this latter alternative, of course, on "no laptop Mondays"!)*
 
-If you did a clone, you are all set. If already had a second copy of your repository, then do a **git pull** on your existing, but outdated, repository:
+Suppose you have been doing your work in the **~/Git** version of your repository. Now switch to the version in your **~/temp** directory and do a **git pull**:
 
 ```
 $ git pull
@@ -306,7 +308,7 @@ To git@github.com:charliecalvert/deleteme02.git
 
 ## Turn it in
 
-Push everything (git push --all). Go up on github, switch between views of the different branches, make sure it all makes sense.
+Push everything (git push --all). Go up on github or bitbucket as appropriate. Switch between views of the different branches. Make sure it all makes sense:
 
 - You should see three branches: **master**, **test**, **qux**.
 - **qux** should have a file called **qux.txt** that the other two branches do not have
