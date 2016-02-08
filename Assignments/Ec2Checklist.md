@@ -14,6 +14,8 @@ Subjects of interest include checking to see if you:
 - Have Node Setup correctly?
 - Have Lamp installed
 
+**NOTE**: *Assuming you already have JsObjects installed, be sure to run **git pull** in JsObjects before beginning this assignment.*
+
 Related Assignments or Documents include:
 
 - [EC2 Get Started][ec2gs]
