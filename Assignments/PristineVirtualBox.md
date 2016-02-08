@@ -91,3 +91,19 @@ Once you have selected the **LXTerminal** menu item, your VM should look somethi
 Choose **Settings | System | Acceleration** and confirm that **VT-x | AMD-V** is selected. You can confirm this at run time by selecting **Machine | System Info**. If you don't have virtualization help from the processor then your VM will either be very slow, or not work at all. In the screen shot shown below, I'm not running Pristine Lubuntu. In this screenshot, I just want to show you the Session Information dialog, not the Lubuntu desktop. In your assignment, however, I want to see your instance of Pristine Lubuntu running. In other words, don't use the picture below as a guide. Your picture should look quite different from this.
 
 ![vtx](https://s3.amazonaws.com/bucket01.elvenware.com/images/VirtualBoxVtxInfoAndroid.png)
+
+## Memory
+
+I have been setting the base memory for our VM's too low. Instead of setting to 2048 MB, let's try setting it to 4096 MB (4 GB) or even 6144 (6 GB).
+
+**NOTE**: *I'm talking about the settings for our school machine, which has 32 GB total memory. Using up 4 GB for our VM is not excessive on such a machine. On your laptop and home machine, however, 2 GB might be the right number, depending on how much memory is available on your machine.*
+
+To see the memory:
+
+- Close your VM
+- In VirtualBox, select **Settings | System | Motherboard | Base Memory**. Set it to 4096.
+- Restart your VM, open the bash shell, type **free -h**. You should see about 3.9 GB available.
+
+Throughout the day, you may want to monitor your memory usage with any of the following commands:
+
+- free -h

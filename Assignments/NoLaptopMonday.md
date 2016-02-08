@@ -2,14 +2,14 @@
 
 The goals of the **No Laptop Monday** are two fold:
 
-- To be sure all students are familiar with Git. If you are using your machine at school, then most students will have to push and pull from Git when working at home. We can more easily learn Git if we use it regularly to maintain multiple repositories.
+- To be sure all students are familiar with Git. If you are using your machine at school, then most students will have to push and pull from Git when working at home. We can more easily learn Git if we use it regularly to maintain multiple versions of our repositories.
 - To make sure all students, especially those in my programming courses, have a solid platform on which they can work.
 
 ## Memory
 
-Several students have, I think been trying to tell me this, but I have recently come to understand that I have been setting the base memory for our VM's too low. Instead of setting to 2048 MB, let's try setting it to 4096 MB (4 GB) or even 6144 (6 GB).
+I have been setting the base memory for our VM's too low. Instead of setting to 2048 MB, let's try setting it to 4096 MB (4 GB) or even 6144 (6 GB).
 
-**NOTE**: *I'm talking about the settings for our school machine, which as 32 GB total memory. Using up 4 GB for our VM is not excessive on such a machine. On your laptop and home machine, however, 2 GB might be the right number, depending on how much memory is available on your machine.*
+**NOTE**: *I'm talking about the settings for our school machine, which has 32 GB total memory. Using up 4 GB for our VM is not excessive on such a machine. On your laptop and home machine, however, 2 GB might be the right number, depending on how much memory is available on your machine.*
 
 To see the memory:
 
@@ -33,6 +33,16 @@ Mem:          3.9G       3.8G        47M
 Swap:         2.0G       816K       2.0G
 ```
 
+Given the above, I upped my base memory for Pristine Lubuntu to 6GB and ended up with these numbers, which are more comfortable:
+
+```bash
+$ free -h
+             total       used       free
+Mem:          5.8G       3.9G       2.0G
+-/+ buffers/cache:       2.3G       3.5G
+Swap:         2.0G         0B       2.0G
+```
+
 ## Maintain
 
 You should be familiar with all of the resources listed below, and should use them as needed to help you maintain your system and to check that it is working properly.
@@ -50,8 +60,17 @@ You should be familiar with all of the resources listed below, and should use th
 [ec2cl]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Checklist.html
 [ec2gs]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html
 [ec2p]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html
-[gnrepo]: [alp]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
+[gnrepo]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
 [linux-files]: http://www.elvenware.com/charlie/os/linux/LinuxFiles.html
 [configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
 
 ## Turn it in
+
+Run the following commands in Pristine Lubuntu, then take a screen shot. Attach (upload) the screenshot directly to the assignment:
+
+```
+cat /proc/cpuinfo | grep "model name"
+npm --version
+node --version
+free -h
+```

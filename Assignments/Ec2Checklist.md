@@ -27,7 +27,7 @@ Related Assignments or Documents include:
 
 [ec2gs]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html
 [ec2p]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html
-[gnrepo]: [alp]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
+[gnrepo]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
 [linux-files]: http://www.elvenware.com/charlie/os/linux/LinuxFiles.html
 [configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
 
@@ -76,7 +76,7 @@ Run this command:
 
 Select **B** or **b** for **Basic System Check**. You should see at least to Directory entries and at least one file entry. Each of these lines should begin with **OK:**. Take a screen shot and call it **basic-system-check.png**.
 
-Especially if you are in one of my programming courses, compare the code at the end of your **~/.bashrc** file with the outpur from this command:
+Especially if you are in one of my programming courses, compare the code at the end of your **~/.bashrc** file with the output from this command:
 
 ```bash
 cat ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras
