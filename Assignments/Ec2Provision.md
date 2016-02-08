@@ -36,9 +36,50 @@ We can go over this in class, but you will also need to understand how to open u
 - [Billing on AWS](https://youtu.be/4w0hKs35cdg)
 - [PlayList](https://www.youtube.com/playlist?list=PLe8CjTxuUQ3_RmFD4ROFth7nX_UoUP6pV)
 
+## Update Server
+
+Type the following:
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+This ensures that the programs comprising the Ubuntu OS are up to date. You should issue these commands at least once a week, but I tend to it the first time I log on to an EC2 instance on a particular day. In other words, when I am using the server regularl, I do it more than once a week.
+
+## .bashrc
+
+In Windows you have the Windows (or DOS) Command Prompt (CMD). You also have Power Shell. On Linux you have the bash shell. On Lubuntu, you typically open it by selecting LxTerminal. On plain Ubuntu, just select Terminal. The bash shell is the Linux command line where we do most of our work. Though intimidating to new-comers, the Linux bash shell is very powerful and very useful.  
+
+The hidden **~/.bashrc** file contains code that is run each time you open a bash shell. The code in this file ensures that your bash environment is set up correctly.
+
+Type **cd** to go to the home directory. Then type either: **geany .bashrc** or **nano .bashrc**.
+
+Scroll to the bottom of the file, and paste in the following:
+
+```
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+fi
+
+export PATH="$PATH:$HOME/npm/bin"
+
+export NODE_PATH=:$HOME/npm/lib/node_modules
+```
+
+If you are using **nano**, type **Ctrl-O + enter** to save, and **Ctrl-X** to exit.
+
+Now process your updated **.bashrc** file from the command line: **source ~/.bashrc**.
+
+One final task we should complete at this time: *make sure you have ~/bin folder.* If the folder does not exist already, type the following code to create it:
+
+```bash
+mkdir ~/bin
+```
+
 ## SSH
 
-We are going to create a second SSH key and put the public portion of it on GitHub. We could reuse or previous key, but I want you to get practice creating and storing keys. (It's easy once you get used to it.)
+We are going to create a second SSH key and put the public portion of it on GitHub. We could reuse our previous key, but I want you to get practice creating and storing keys. (It's easy once you get used to it.)
 
 On your EC2 instance, type **cd** and press enter to get to your home directory. Type **pwd** to be sure you are in the right place:
 
@@ -47,7 +88,7 @@ ubuntu@ip-172-31-33-240:~$ pwd
 /home/ubuntu
 ```
 
-In your home directory, paste in the following by right clicking on the ssh window:
+In your home directory, paste in the following by right clicking on the bash shell:
 
 ```
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
@@ -61,27 +102,9 @@ cd .ssh
 cat id_rsa.pub
 ```
 
-Select the entire key with the mouse and press **Ctrl-C** to copy it. Then go to gitgub or bitbucket, as appropriate. Choose manage account, and add you new public ssh key, calling it something like Prog219AwsKey.
+Select the entire public key with the mouse and press **Ctrl-C** to copy it. Then go to gitgub or bitbucket, as appropriate. Choose **manage account**, and add you new public ssh key, calling it something like Prog219AwsKey, modifying the name as appropriate to the class you are in.
 
-Type **cd** to go to the home directory. Then type: **nano .bashrc**
-
-Scroll to the bottom, and paste in the following:
-
-```
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent`
-fi
-
-export PATH="$PATH:$HOME/npm/bin"
-
-export NODE_PATH=:$HOME/npm/lib/node_modules
-```
-
-Type **Ctrl-O + enter** to save, and **Ctrl-X** to exit nano.
-
-Now process your updated **.bashrc** file from the command line: **source ~/.bashrc**
-
-Make the key only readable by you, the owner:
+Make the key readable only by you, the owner:
 
     chmod 400 ~/.ssh/id_rsa
 
@@ -96,23 +119,29 @@ ubuntu@ip-172-31-33-240:~/.ssh$ ssh-add id_rsa
 Identity added: id_rsa (id_rsa)
 ```
 
-Go to your Git Folder and clone your repo, using your github or bitbucket git url as appropriate:
+Also, add a **main-key**, as explained in the automating section of the [GitNewRepo][alp] assignment.
+
+Go to your Git Folder and clone your repo, using your github or bitbucket git url as appropriate. The command might look something like this:
 
 ```
 cd Git
 git clone git@bitbucket.com:lastname/reponame.git
 ```
 
-And also install JsObjects:
+See also this section on using SSH config files:
+
+- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config>
+
+[alp]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html#automating-the-load-process
+
+## JsObjects
+
+Be sure to install JsObjects:
 
 ```
 cd ~/Git
 git clone https://github.com/charliecalvert/JsObjects.git
 ```
-
-See also this section on using SSH config files:
-
-- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config>
 
 ## bash_aliases
 
@@ -143,12 +172,31 @@ the **source** command:
 
 ## Install Node
 
+Go to the **NodeInstall** directory in **JsObjects**:
+
+```
 	cd Git/JsObjects/Utilities/NodeInstall/
+```
+
+There are two scripts there that you should run.
+
+- **NodeInstall.sh**
+- **InstallNodePackages.sh**
+
+Run them one at a time, like this:
+
+```
 	./NodeInstall.sh
+  ./InstallNodePackages.sh
+```
 
-Then install the node packages that you need:
+The first install node and npm. The second presents you with a menu. Install only the essentials.
 
-	./InstallNodePackages.sh
+After completing the above steps, also install **jade** globally:
+
+```
+npm install -g jade
+```  
 
 ## Notes on Node Install
 

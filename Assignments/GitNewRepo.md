@@ -535,6 +535,7 @@ Elvenware.
 See also:
 
 * [More on SSH][more-ssh]
+* [Best Practices Blog Entry](https://blog.0xbadc0de.be/archives/300)
 
 If you ever need to remove a line from a known_hosts file, see this:
 
