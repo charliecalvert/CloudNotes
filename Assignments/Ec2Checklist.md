@@ -76,6 +76,12 @@ Run this command:
 
 Select **B** or **b** for **Basic System Check**. You should see at least to Directory entries and at least one file entry. Each of these lines should begin with **OK:**. Take a screen shot and call it **basic-system-check.png**.
 
+Especially if you are in one of my programming courses, compare the code at the end of your **~/.bashrc** file with the outpur from this command:
+
+```bash
+cat ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras
+```
+
 ## Lamp
 
 Make sure LAMP is installed:

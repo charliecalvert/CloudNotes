@@ -69,7 +69,9 @@ export NODE_PATH=:$HOME/npm/lib/node_modules
 
 If you are using **nano**, type **Ctrl-O + enter** to save, and **Ctrl-X** to exit.
 
-Now process your updated **.bashrc** file from the command line: **source ~/.bashrc**.
+**NOTE**: *Students in my programming course should also see the following file, which has a more complete listing of what I have added at the end of my own **~/.bashrc**: file: **~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras**.*
+
+When you have finished editing it, process your updated **.bashrc** file from the command line: **source ~/.bashrc**.
 
 One final task we should complete at this time: *make sure you have ~/bin folder.* If the folder does not exist already, type the following code to create it:
 
