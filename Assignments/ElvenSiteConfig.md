@@ -2,6 +2,8 @@
 
 In Elven Site Config we add configuration files to our ElvenSite.
 
+See [this note][est] on setting up the proper version of **elven-site-tools**.
+
 ## Step One: Copy Project {#copy-project}
 
 Navigate to the root of your repository and copy ElvenSiteStarter to ElvenSiteConfig:
@@ -134,11 +136,15 @@ Update **elven-site-tools**.
 npm install elven-site-tools --save
 ```
 
-**NOTE**: _The **elven-site-tools** package needs to be updated. At the time of this writing is at **0.1.0**. Because we are installing something new, I have updated the package.json file found in your **~/tmp** directory. Since you already ran **npm install elven-site-tools** above, this could be a no-op for you. I'm simply reminding you that the contents of **~/temp/package.json** was updated. So long as you have a symbolic link to JsObjects set up for that file, then all should be good. Make sure, however, that you are accessing version 0.1.0 or greater of **elven-site-tools._
+**NOTE**: _The **elven-site-tools** package needs to be updated. At the time of this writing is at **0.1.0**. Because we are installing something new, I have updated the package.json file found in your **~/tmp** directory. Since you already ran **npm install elven-site-tools** above, this could be a no-op for you. I'm simply reminding you that the contents of **~/temp/package.json** was updated. So long as you have a symbolic link to JsObjects set up for that file, then all should be good. Make sure, however, that you are accessing version 0.1.0 of **elven-site-tools._
+
+**IMPORTANT**: *See [this note][est] on setting up the proper version of **elven-site-tools**.*
 
 This update fixes the bug reported in the discussion area, and adds a new property to the return value **destinationDir**:
 
 ![Elven Site Config](https://s3.amazonaws.com/bucket01.elvenware.com/images/elven-site-config-01.png)
+
+
 
 ## Step Three: Load Config {#load-config}
 
@@ -221,6 +227,4 @@ Push folder to repository and submit something in Canvas so I know its available
 
 **NOTE**: *Be sure that you application is not throwing favicon error.*
 
-## ToDo
-
-In a future version, we need to make webServerDir configurable. It should probably be called destinationDir.
+[est]: http://www.ccalvert.net/books/CloudNotes/Assignments/ElvenSiteOptions.html#elven-site-tools
