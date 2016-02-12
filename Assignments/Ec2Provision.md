@@ -69,7 +69,7 @@ export NODE_PATH=:$HOME/npm/lib/node_modules
 
 If you are using **nano**, type **Ctrl-O + enter** to save, and **Ctrl-X** to exit.
 
-**NOTE**: *Students in my programming course should also see the following file, which has a more complete listing of what I have added at the end of my own **~/.bashrc**: file: **~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras**.*
+**NOTE**: *Students in my programming course should also see the following file, which has a more complete listing of what I have added at the end of my own **~/.bashrc**: file for use on Ubuntu and Lubuntu desktop. This more complete listing is not usually helpful on EC2: **~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras**.*
 
 When you have finished editing it, process your updated **.bashrc** file from the command line: **source ~/.bashrc**.
 

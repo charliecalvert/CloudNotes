@@ -14,7 +14,7 @@ Subjects of interest include checking to see if you:
 - Have Node Setup correctly?
 - Have Lamp installed
 
-**NOTE**: *Assuming you already have JsObjects installed, be sure to run **git pull** in JsObjects before beginning this assignment.*
+**NOTE**: *Assuming you already have JsObjects [installed][jso-install03], if not, please [install it][jso-install01] now. If you already have it installed, be sure to run **git pull** in JsObjects before beginning this assignment.*
 
 Related Assignments or Documents include:
 
@@ -24,6 +24,7 @@ Related Assignments or Documents include:
 - [Linux Files][linux-files]
 - [Git New Repo][gnrepo]
 
+**NOTE**: *At several points in this assignment I talk about a utility called **SystemCheck**. When using that utility, don't run the sections of it that check Common things such as Java and Chrome, or the part that checks PhoneGap.*
 
 [ec2gs]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html
 [ec2p]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html
@@ -57,12 +58,16 @@ Run this command from your home directory:
 ./Git/JsObjects/Utilities/SetupLinuxBox/SystemCheck
 ```
 
-**NOTE**: *If the above command fails, then you probably have not installed JsObjects yet. Details on that process are found []
+**NOTE**: *If the above command fails, then you probably have not installed JsObjects yet. Details on that process are found [here][jso-install01] and [here][jso-install02], and also [here][jso-install03].*
+
 Select **S** or **s** for SSH. You should see the words **SSH Setup** followed by four lines that begin **OK:**. Take a screen shot of the results.
+
+**NOTE**: *Remember, don't run the sections of SystemCheck that check **Common** things such as Java and Chrome, or the part that checks **PhoneGap**. It's not an error to run those options, it just is not helpful in terms of completing this assignment.*
 
 If you are having problems, go to the Git New Repo assignment, and read the section on setting up SSH.
 
 Take a screenshot showing that the SystemCheck | SSH command works on your system.
+
 
 ## Update
 
@@ -88,14 +93,7 @@ Especially if you are in one of my programming courses, compare the code at the 
 cat ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras
 ```
 
-Under SystemCheck Common, to fix **CHROME_BIN** errors, put this line near the bottom of **~/.bashrc**.
-
-```
-export CHROME_BIN=/usr/bin/chromium-browser
-```
-
-After making the change run **source ~/.bashrc** in the same bash shell where you are running SYSTEM CHECK. Exit the program, run the command, then enter SystemCheck again.
-
+On EC2, there is no Chrome browser. So you don't want to select **c** for Common. See below for notes on how to set this section up on Pristine Lubuntu, and how to install Java on either Pristine or EC2.
 
 ## Lamp
 
@@ -150,3 +148,7 @@ Developers will want to set up the programmer utilities in the ~/bin directory. 
 ```
 ~/Git/JsObjects/Utilities/SetupLinuxBox/CreateSymbolicLinks
 ```
+
+[jso-install01]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#jsobjects
+[jso-install02]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#jsobjects
+[jso-install03]: https://github.com/charliecalvert/JsObjects/blob/master/README.md

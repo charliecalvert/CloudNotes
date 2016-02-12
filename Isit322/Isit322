@@ -27,13 +27,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=4
-FILE_NAME_0=161;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-2016%2Fisit322-gankhuyag-2016%2FWeek04-SessionBasics%2Froutes%2Findex.js;0;4
-FILE_NAME_1=823;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fprog270-2016%2Ffoo;0;4
-FILE_NAME_2=148;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2FAdamlocalhost-1454814692967.log;0;4
-FILE_NAME_3=1005;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2Fnegate.js;0;4
-FILE_NAME_4=576;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftemp%2Ffoo.txt;0;4
-FILE_NAME_5=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FUtilities%2FSetupLinuxBox%2FSanityCheck01.sh;0;4
-FILE_NAME_6=1151;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FUtilities%2FSetupLinuxBox%2FSystemCheck;0;4
-FILE_NAME_7=99;Conf;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2F.ssh%2Fconfig;0;4
-FILE_NAME_8=2396;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FCloudNotes%2FAssignments%2FEc2Checklist.md;0;4
+current_page=2
+FILE_NAME_0=1075;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit320-calvert-2015%2FWeek03-BootstrapBasics%2Fpublic%2Fjavascripts%2Fcontrol.js;0;4
+FILE_NAME_1=14;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit320-calvert-2015%2FWeek03-BootstrapBasics%2Fviews%2Findex.jade;0;4
+FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FUtilities%2FSetupLinuxBox%2FBashrcExtras;0;4
