@@ -142,7 +142,9 @@ img.twenty-five-percent {
 }
 ```
 
-And here is code for it:
+You should put the CSS in **/var/www/html/css/style.css**.
+
+And here is the HTML code for using this new CSS class:
 
 ```html
 <img class="twenty-five-percent" src="https://foo.com/my-picture.jpg" alt="bridge">
@@ -151,6 +153,18 @@ And here is code for it:
 <img class="twenty-five-percent" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Manhattan_Bridge_Construction_1909.jpg/800px-Manhattan_Bridge_Construction_1909.jpg" alt="bridge">
 
 [bridge]: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Manhattan_Bridge_Construction_1909.jpg/800px-Manhattan_Bridge_Construction_1909.jpg
+
+You can paste the line with the HTML IMG tag in it directly into your markdown file while using Remarkable. Markdown supports both markdown itself, and HTML. When using markdown, you can just switch to HTML as needed:
+
+```
+## Some Header
+
+Some markdown text. You can mix HTML and markdown in the same file.
+
+<img class="twenty-five-percent" src="https://foo.com/my-picture.jpg" alt="bridge">
+```
+
+For all this to work, make sure you are using the most recent version of MakeHtml, as explained near the top of the file. In particular, the new version of **MakeHtml** includes code that loads **style.css**.
 
 ## Turn it in
 

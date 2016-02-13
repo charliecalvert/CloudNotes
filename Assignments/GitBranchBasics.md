@@ -315,3 +315,29 @@ Push everything (git push --all). Go up on github or bitbucket as appropriate. S
 - **test** and **master** should look pretty much alike, but there should be differences in the first line of **MyTest.md**.
 
 Submit the assignment.
+
+## Hints
+
+When performing a merge between branches, use the Git difftool:
+
+```
+git difftool -d --tool=meld master <SomeBranch>
+```
+
+Or, if you don't want to pass the **--tool** parmater each time, set it globally:
+
+```
+git config --global diff.tool meld
+```
+
+Then you get git automaticgit difftool -d master ElvenSite01ally when you do something like this:
+
+```
+git difftool -d master <SOME BRANCH>
+```
+
+For instance,
+
+```
+git difftool -d master qux
+```

@@ -157,6 +157,10 @@ cd -
 
 The last command switches you back to the directory you were in before you navigated to the **~/tmp** directory.
 
+See Point 1 in this blog post:
+
+- [10-cool-things-you-probably-didnt-realize-npm](http://blog.izs.me/post/1675072029/10-cool-things-you-probably-didnt-realize-npm)
+
 ## Step Five
 
 Create a checkbox:
