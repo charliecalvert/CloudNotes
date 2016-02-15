@@ -16,7 +16,7 @@ https://goo.gl/maps/wNCEu
 
 ### Details on creating walks.
 
-Create at least three walks. Pick walks that you enjoy. If you like downtown Bellevue or Seattle best, then map your walks there. If you prefer to walk in the Issaquah Alps, then that is fine to. You could have one walk on Tiger, another along the Seattle waterfront. It's up to you.
+Create at least three walks and place them all in a file called **WalkingMap.md**. Pick walks that you enjoy. If you like downtown Bellevue or Seattle best, then map your walks there. If you prefer to walk in the Issaquah Alps, then that is fine to. You could have one walk on Tiger, another along the Seattle waterfront. It's up to you.
 
 Each walk should have:
 
@@ -63,6 +63,10 @@ To complete the exercise, do the following:
 - Copy the files from **AllDrive** to your repository, per the work we did in a previous assignment.
 - Push your repository. (It should now contain **AllTest/WalkingMap.md** or something similar.)
 
+To copy the updated code in **AllTest** directory to the existing **AllTest** folder in your repository, use the instructions in the **GitDualRepos** assignment:
+
+- [Git Dual Repos](http://www.ccalvert.net/books/CloudNotes/Assignments/GitDualRepos.html#alltest)
+
 ## Turn it in
 
 Take a screen shot of your page running on your Apache Server. (localhost/WalkingMapLastName.html). Attach (upload) when you submit the assignment in Canvas.
@@ -71,8 +75,9 @@ Push your repository. By now I should be able to find it, but if you have any do
 
 Check list:
 
-- Image attached to assignment?
 - **WalkingMap.md** in **AllTest** folder in your repository?
+- Three walks included in **WalkingMap.md**?
+- Image showing your **WalkingMap** displayed in your browser attached to assignment? Try to show that at least two walks are visible on your page.
 
 Your url might look vaguely like this:
 
@@ -100,3 +105,23 @@ More stuff to ignore:
  - A zip file containing your files
  - In the comment area put the URLs of your walking map pages on S3 and Google Sites.
  - In the comment area put the URL of your git repository. It should look something like this:
+
+ ## Hint
+
+ Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
+
+ ```
+ {
+   "calvert": {
+     "base-dir": "/home/bcuser/",
+     "site-dirs": [
+       "Documents/AllTest",
+       "Documents/AllSite"
+     ],
+     "destination-dirs": [
+       "/var/www/html/",
+       "/home/bcuser/temp/test-site/"
+     ]
+   }
+ }
+ ```

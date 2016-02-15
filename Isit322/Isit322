@@ -27,7 +27,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=2
+current_page=5
 FILE_NAME_0=1075;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit320-calvert-2015%2FWeek03-BootstrapBasics%2Fpublic%2Fjavascripts%2Fcontrol.js;0;4
 FILE_NAME_1=14;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit320-calvert-2015%2FWeek03-BootstrapBasics%2Fviews%2Findex.jade;0;4
 FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2FJsObjects%2FUtilities%2FSetupLinuxBox%2FBashrcExtras;0;4
+FILE_NAME_3=3700;Conf;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2F.bashrc;0;4
+FILE_NAME_4=1592;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FSource%2FMakeHtml%2Findex.js;0;4
+FILE_NAME_5=104;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2F.config%2FElvenConfig.json;0;4

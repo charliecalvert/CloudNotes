@@ -164,9 +164,9 @@ Doing this gives me read and write acccess to this repository, but not to any ot
 
 ## Turn it in
 
-Check to make sure all your work is pushed. When turning in the assignment, submit the URI and URL of your repository.
+Check to make sure all your work is pushed. When turning in the assignment, submit the URL of your repository. Submit both the URL used to clone your repository, and the URL to find your repository on the web.
 
-At minimum, I will for a .gitignore file and and AllTest folder with something in it. I also want to see is some sensible text in your README.md file, and a git log showing that you committed your work multiple times. Perhaps 5 times at minimum. I can also look at the dates in the log, and see if it appears you actually were following along in class.
+At minimum, I will look for a **.gitignore** file and an **AllTest** folder with something in it. I also want to see some sensible text in your **README.md** file, and a git log showing that you committed your work multiple times. Perhaps 5 times at minimum. I can also look at the dates in the log, and see if it appears you actually were following along in class.
 
 Checklist:
 

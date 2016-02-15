@@ -147,7 +147,7 @@ Issue the following command and take a screen shot of the results:
 ls /var/www/html/
 ```
 
-Create a zip file containing the contents of your **/var/www** folder and put it in our shared google drive folder:
+Create a zip file called **MakeHtml-LastName** containing the contents of your **/var/www** folder and put it in our shared google drive folder:
 
 ```
 zip -r MakeHtml-Calvert /var/www/html/*
@@ -179,3 +179,23 @@ Here are some tips and thoughts about this program to help you understand it bet
 Summary: The MakeHtml program converts our markdown in the AllTest folder to HTML. It copies the HTML to the **/var/www/html** folder. MakeHtml is not a service that runs continually. Therefore, each time we update files in the AllTest directory, we need to run (**npm start**) MakeHtml in order to update the files in **/var/www/html**. The conversion does not take place automatically, it only happens when we explicitly run the MakeHtml program by typing **npm start**.
 
 NOTE: In Windows, we typically click on an executable to run it. Here, we are running a program implemented as a NodeJs script. The way to run the script is to type **npm start**.
+
+## Hint
+
+Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
+
+```
+{
+  "calvert": {
+    "base-dir": "/home/bcuser/",
+    "site-dirs": [
+      "Documents/AllTest",
+      "Documents/AllSite"
+    ],
+    "destination-dirs": [
+      "/var/www/html/",
+      "/home/bcuser/temp/test-site/"
+    ]
+  }
+}
+```

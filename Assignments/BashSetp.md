@@ -38,12 +38,40 @@ Now that you have turned on the color prompt, you need to notify the system of t
 source ~/.bashrc
 ```
 
-You will only have to run the command one time. 
+You will only have to run the command one time.
 
 When you are done, the prompt in your bash shell (terminal) should now be in color, and show the system and path on line, and the $ symbol on a second line. By starting the prompt near the left of the screen, you can avoid the situation where your commands start to wrap around to a new line when you are typing long lines of text.
+
+## Bash Extras
+
+Especially if you are in one of my programming courses, compare the code at the end of your **~/.bashrc** file with the output from this command:
+
+```bash
+cat ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras
+```
+
+You should append the code found in BashrcExtras to the end of your **./.bashrc** file. Please use the code from **BashrcExtras** as it will be updated more often than this file. However, the code you want to append to the end of your file might look something like this:
+
+```bash
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+fi
+
+export CHROME_BIN=/usr/bin/chromium-browser
+
+export NODE_PATH=:$HOME/npm/lib/node_modules
+export PATH="$PATH:$HOME/npm/bin:$HOME/bin/pynaoqi"
+export PYTHONPATH=${PYTHONPATH}:$JSOBJECTS/Python/:$JSOBJECTS/Python/Utils/:$HOME/bin/pynao
+
+# Java Path Support
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+# Android Path Support
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_PLATFORM_TOOLS="$HOME/Android/Sdk/platform-tools"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_PLATFORM_TOOLS:
+```
 
 ## Turn it in
 
 Take a screen shot of the color prompt and turn it in.
-
-

@@ -54,20 +54,22 @@ See this code in the config folder:
 ```
 {
   "calvert": {
-    "base-dir": "/home/charlie/",
+    "base-dir": "/home/bcuser/",
     "site-dirs": [
       "Documents/AllTest",
       "Documents/AllSite"
     ],
     "destination-dirs": [
       "/var/www/html/",
-      "/home/charlie/temp/test-site/"
+      "/home/bcuser/temp/test-site/"
     ]
   }
 }
 ```
 
 You can use this file to specify where to copy markdown files from, and where to copy HTML to. By default, the first item in each list will be used.
+
+**NOTE**: *You may need to modify this file, and particularly the **base-dir** to fit your system.*
 
 ## Getting Started
 
@@ -81,8 +83,13 @@ mkdir ~/Documents
 cp -r AllTest ~/Documents/.
 ```
 
-Set up the MakeHtml program on EC2. Run it. Access your website using your Elastic IP address.
+Don't forget to set up permissions on **/var/www/html**:
 
+```
+sudo chown -R ubuntu:ubuntu /var/www/html/
+```
+
+Set up the MakeHtml program on EC2. Run it. Access your website using your Elastic IP address.
 Repeat the process of developing your site on Pristine Lubuntu, pushing it to your repository, and then pulling on EC2.
 
 **NOTE**: *The point here is that an EC2 server instance does not make a good development machine. Do your development on Pristine Lubuntu, then use Git to transfer your files EC2, and to ultimately display the result in your web site.*
@@ -121,6 +128,11 @@ Example results:
 
 [wm-main]:http://commons.wikimedia.org/wiki/Main_Page
 [tree-types]:http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Contrasting_Tree_Types_Coexist_in_a_Forest.jpg/640px-Contrasting_Tree_Types_Coexist_in_a_Forest.jpg
+
+When working with bitmaps, see also:
+
+- [LampMarkDown](http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html#step-four)
+- [MarkdownBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/MarkdownBasics.html#creating-pictures)
 
 ## CSS
 
@@ -179,4 +191,24 @@ Here XX.XX.XX.XX is your elastic IP address, and **master-list.html** is some va
  When you submit the assignment, include at least two pictures:
 
  - One of your web site on a page that shows a bitmap
- - One of you running the MakeHtml program at the EC2 ubuntu command prompt.
+ - One of the output generated from running the MakeHtml program at the EC2 ubuntu command prompt.
+
+## Hint
+
+Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
+
+```
+{
+  "calvert": {
+    "base-dir": "/home/bcuser/",
+    "site-dirs": [
+      "Documents/AllTest",
+      "Documents/AllSite"
+    ],
+    "destination-dirs": [
+      "/var/www/html/",
+      "/home/bcuser/temp/test-site/"
+    ]
+  }
+}
+```

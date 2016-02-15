@@ -67,6 +67,8 @@ export PATH="$PATH:$HOME/npm/bin"
 export NODE_PATH=:$HOME/npm/lib/node_modules
 ```
 
+**NOTE**: *In the above **eval** statement those are backticks, not single quotes. The backtick is under the tilda at the top left of most keyboards.*
+
 If you are using **nano**, type **Ctrl-O + enter** to save, and **Ctrl-X** to exit.
 
 **NOTE**: *Students in my programming course should also see the following file, which has a more complete listing of what I have added at the end of my own **~/.bashrc**: file for use on Ubuntu and Lubuntu desktop. This more complete listing is not usually helpful on EC2: **~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras**.*
@@ -239,10 +241,11 @@ The **Public IP** addresses assigned to you by default on EC2 are not permanent.
 
 To turn in the assignment, you should provide a screen shot showing:
 
-- A listing of your Git folder (ls -la ~/Git). A sample screen shot is shown below, but it has more directories in it than your's will have.
+- A listing of your Git folder (ls -la ~/Git). A sample screen shot is shown below, but it has more directories in it than your's will have. I want to see both JsObjects and your repository.
 - A listing of the JsObjects directory (ls -la ~/Git/JsObjects)
+- A listing of your repository (ls -la ~/Git/isit322-lastname-2016)
 - A listing of your .ssh folder: (ls -la ~/.ssh
-- A link to your site and/or a screen shot of it running. It should show the Apache welcome screen, as shown below. This part of the assignment will not work unless you have first opened up Port 80.
+- A link to your site and/or a screen shot of it running. It should show the Apache welcome screen, and your IP address, as shown below. This part of the assignment will not work unless you have first opened up Port 80.
 
 Here is a sample listing screen shot:
 

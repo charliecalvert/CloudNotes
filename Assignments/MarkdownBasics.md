@@ -95,7 +95,13 @@ The HTML looks something like this:
 
 ## Creating Pictures
 
-Start with an exclamation point, a bang, and then put a few words in square brackets, then put the URL of the image in paranthesis.
+Start with an exclamation point, a bang, and then put a few words in square brackets, then put the URL of the image in parenthesis.
+
+```
+  ![My Picture](http://www.ccalvert.net/charlie/images/elvenwarelogo.png)
+```
+
+It looks like this:
 
 ![My Picture](http://www.ccalvert.net/charlie/images/elvenwarelogo.png)
 
