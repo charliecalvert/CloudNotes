@@ -89,15 +89,15 @@ function getConfigName() { 'use strict';
 }
 
 function reportError(err) { 'use strict';
-	console.log("*********************************");
+	console.log('*********************************');
 	console.log(err);
-	console.log("*********************************");
-	console.log("Error condition in elven-config.js!");
-	console.log("This program requires a config file");
-	console.log("Please put ElvenConfig.json somewhere we can find it.");
-	console.log("Contrl-C to abort");
-	console.log("Error condition!");
-	console.log("*********************************");
+	console.log('*********************************');
+	console.log('Error condition in elven-config.js!');
+	console.log('This program requires a config file');
+	console.log('Please put ElvenConfig.json somewhere we can find it.');
+	console.log('Contrl-C to abort');
+	console.log('Error condition!');
+	console.log('*********************************');
 }
 
 function elvenConfig() {
@@ -117,7 +117,7 @@ var load = function(callback) {
 };
 
 elvenConfig.get = function(property) {
-	console.log("in get", elvenConfig.configData);
+	console.log('in get', elvenConfig.configData);
 	return elvenConfig.configData.calvert[property];
 };
 
@@ -168,13 +168,13 @@ On the client, create two methods called **loadConfig** and **writeConfig**. Imp
   $.getJSON(<SOME ROUTE>, function(result) {
       // Success: display results
     }).done(function() {
-            showDebug( "Config loaded second success" );
+            showDebug('Config loaded second success');
         })
         .fail(function(jqxhr, textStatus, error) {
-            showDebug( "Walk loaded error: " + jqxhr.status + ' ' + textStatus + ' ' + error );
+            showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error );
         })
         .always(function() {
-            showDebug( "Config loaded complete" );
+            showDebug('Config loaded complete');
         });
 ```
 
