@@ -22,6 +22,9 @@ Other things to check:
 - No favicon errors
 - Minimize errors on console screen even after picking every possible option available to the user in all possible orders.
 
+![Midterm Overview Pic][mt-pic-01]
+
+[mt-pic-01]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-2016-01.png
 
 ## Step One: Set up a Midterm Branch {#midterm-branch}
 
@@ -50,7 +53,7 @@ Your program should include the following log types:
 
 ```javascript
 div.elf-radio
-    .btn-group(data-toggle='buttons')
+    .btn-group#walktype(data-toggle='buttons')
         label.btn.btn-default.active
             input#qSingle(type='radio', name='walktype', checked='checked', value='Single')
             |  Single
@@ -61,6 +64,42 @@ div.elf-radio
             input#qCustom(type='radio', name='walktype', value='Custom')
             |  Custom
 ```
+
+
+Then in your **constructor** for your main object (**SiteConfig**), set up onclick event to record what is happening when the user clicks an item:
+
+```javascript
+var radioWalkType;
+
+function SiteConfig() {
+  // Code omitted here
+  $("#walktype").click(function() {
+      radioWalkType = $("input[name=walktype]:checked").attr('id');
+  });
+}
+```
+
+And when the user clicks the walk button:
+
+```javascript
+  // Code omitted here.
+  var requestQuery = {
+       directoryToWalk: directory,
+       destinationDir: destinationDir,
+       highlight: highlight,
+       radioWalkType: radioWalkType
+   };
+
+   $.getJSON('/walk', requestQuery, function(result) {
+       etc...  
+```
+
+## Step Five
+
+Don't work hard on this, but create some markdown/HTML that you might, over time, develop into something you can show to others. Include these in two folders:
+
+- Week08-MidtermMarkdown
+- Week08-MidtermHtml
 
 ## Turn it in
 
