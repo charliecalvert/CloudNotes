@@ -33,6 +33,8 @@ Five of the pages should have bitmaps on them. At least two of the bitmaps must 
 
 Since your site will be visible to the public, you should make an effort not to use copyrighted images. This means you should create the images yourself with a camera or drawing program, find the images in the creative commons, or take some other step to show that you are a law abiding citizens and not some crazed web cowboy without regard for the very humanity of which you yourself are a part. In short, you demonstrate respect for yourself and others.
 
+- [Learn to use WikiMedia Images](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#bitmaps)
+
 ## Step Three: Create Site {#create-site}
 
 By now, you all should be familiar with the **MakeHtml** program and how to use it to convert your markdown files to HTML files that are stored in the **/var/www/html** directory.
@@ -62,3 +64,5 @@ cp -r /var/www/html ~/Git/prog270-lastname-2016/Week07-HTML
 ```
 
 When you turn in the assignment, go to the text page and provide a link to the home page of your running web site.
+
+Also submit a URL leading to your website running on AWS through an elastic ip.

@@ -116,6 +116,27 @@ Go to GitHub. Sign in. Create a new empty repository with a name like **lastname
 
 They will tell you how to push the contents of your repository to GitHub. It is two lines of code. Run those lines of code in your repository.
 
+## Step Six: Use it {#use-it}
+
+```
+bower install elven-tools --save
+```
+
+In your layout.jade load **components/elven-tools/elfLog.js**.
+
+Like this in **layout.jade**:
+
+```
+script(src="components/elven-tools/elf-log.js")
+```
+
+Now set it up:
+
+```
+elfLog.setLevel(elfLog.logLevelError);
+elfLog.log(elfLog.logLevelDetails, "button 1 clicked");
+```
+
 ## Turn it in
 
 When you submit the assignment, tell me:
