@@ -40,13 +40,15 @@ Complete the following steps:
 
 **NOTE**: *We don't usually put bitmaps in Git, but you can do so, and in this case, I would like you to do so. Git is good at keeping track of text files and the differences between versions of text files. It can keep track of various versions of a binary file such as a bitmap, but that is not its real purpose. As a result, I usually put bitmaps and zip files someplace else, such as Google Drive or AWS S3. This assignment is an exception to that rule.*
 
-Make two copies of one of the pictures and make one of them work with our CSS **img class="twenty-five-percent"**.
+Have each pictures appear twice. Once at a normal size, and once using our CSS **img class="twenty-five-percent"**. I talked about the **twenty-five-percent** class in the [Ec2MarkdownToHtml][ec2css] assignment, in the CSS section.
 
 Copy the updated code in **AllTest** directory to the existing **AllTest** folder in your repository, per the instructions in the **GitDualRepos** assignment:
 
 - [Git Dual Repos](http://www.ccalvert.net/books/CloudNotes/Assignments/GitDualRepos.html#alltest)
 
 Add, commit and push your work.
+
+[ec2css]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#css
 
 ## Step Three
 
