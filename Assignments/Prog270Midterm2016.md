@@ -127,7 +127,7 @@ The result should look like this:
 
 ## Turn off Directory Browsing {#dir-browse-off}
 
-This is not part of the assignment. You don't have to do this, at least not yet.
+This is not part of the assignment. You don't have to do this, at least not for the midterm.
 
 The goal is to turn off directory browsing so hackers can't learn your file structure. This is not a big risk for us, but it is reasonable to want to do this sort of thing.
 
