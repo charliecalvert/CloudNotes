@@ -112,7 +112,7 @@ git push origin master --tags
 
 ## Step Five
 
-Go to GitHub. Sign in. Create a new empty repository with a name like **lastname-tools** or whatever you like.
+Go to GitHub. Sign in. (I think we can use either GitHub or BitBucket, but your repository should be public.) Create a new empty repository with a name like **lastname-tools** or whatever you like.
 
 They will tell you how to push the contents of your repository to GitHub. It is two lines of code. Run those lines of code in your repository.
 
