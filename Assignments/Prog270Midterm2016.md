@@ -8,7 +8,7 @@ The basic goal of the midterm is for each student to:
 - Develop at least seven completed web pages five of which contain pictures.
 - To create the web site using our MakeHtml program. The pages of the site should therefore be based on markdown files.
 - To display the web site on AWS and ensuring that it is accessible through an Elastic IP
-- View the site on a real or emulated phone and make at least minimal corrections to ensure it looks good.
+- View the site on an emulated phone and if possible on a real phone. Make at least minimal corrections to ensure it looks good.
 
 Here is a step by step outline of what needs to be done to move your WebSite from Pristine Lubuntu to EC2. The process seems a bit complex at first, but the steps can be mastered if you approach them one at time. Here they are in English, as a counterpoint to your good command list:
 
@@ -60,7 +60,34 @@ The contents of **index.md** should contain links that point directly to pages i
 
 ## Step Four: Display on AWS {#display-on-aws}
 
+Make sure you have connected an elastic IP to your running instance. Go to your elastic IP. If you have set up index.html correctly, then this should be the main page of your web site. If not, navigate to your main page. I'll want to see:
+
+- A link to your main page (Normally your elastic IP.)
+- A screen shot of your main page.
+
 ## Step Five: Phone {#phone}
+
+I'll want to see a screen shot of:
+
+- Your web site running in the Chrome emulator for phones.
+- And, if possible, your web site running on your phone (Any phone will do. Does not need to be Android.)
+
+To emulate your phone on Chrome:
+
+- Open Chrome
+- Bring up the Developer tools by
+  - Selecting either **F12** or **Ctrl-Shift+I**
+  - Or opening the Hamburger menu at top right (**Alt+F**) then **More Tools | Developer Tools**
+
+In the developer choose toggle the Device Mode doohickey at the top left (**Ctrl-Shift + M**).
+
+In the **device** drop down at the top left, you can optionally pick a particular device, such as **Samsung Galaxy S4** or **Apple IPhone 6**.
+
+In the screen shot below, the doohickey and the **device** drop down are circled in red:
+
+![Device Mode Chrome](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-02.png)
+
+**Note**: *I selected **Samsung Galaxy S4** in the **device** drop down. You can select any device, I just mention my selection so you can more easily find and identify the control I'm talking about.*
 
 ## Turn it in
 

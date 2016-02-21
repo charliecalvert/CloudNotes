@@ -97,6 +97,19 @@ Create the log, which for now looks like this:
 
 ## Step Four
 
+Go to GitHub. Sign in. (I think we can use either GitHub or BitBucket, but in either case, your repository should be public.) Create a new empty repository with a name like **lastname-tools** or whatever you like.
+
+Both GitHub and BitBucket will tell you how to push the contents of your repository to GitHub. I believe it is just two lines of code that might look something like this:
+
+```
+git remote add origin git@github.com:charliecalvert/deletemenow.git
+git push -u origin master
+```
+
+To finish setting up your repository, perform a git **add** and **commit** and then run those lines of code from inside your repository. That is, run the commands from inside the directories of your repository on your file system.
+
+## Step Five
+
 Create a **Git Tag** and push it:
 
 ```
@@ -110,16 +123,40 @@ git push origin master v0.0.1
 git push origin master --tags
 ```
 
-## Step Five
+## Step Six: Register it {#register}
 
-Go to GitHub. Sign in. (I think we can use either GitHub or BitBucket, but your repository should be public.) Create a new empty repository with a name like **lastname-tools** or whatever you like.
+Register it like this:
 
-They will tell you how to push the contents of your repository to GitHub. It is two lines of code. Run those lines of code in your repository.
+```
+$ bower register <my-package-name> <git-url>
+```
 
-## Step Six: Use it {#use-it}
+For example:
+
+```
+bower register bowerdeleteme git@github.com:charliecalvert/deletemenow.git
+```
+
+If you modify your code, just update the tag (semver) and then you can just re-issue the above command to update your package to the next version.
+
+## Step Seven: Use it {#use-it}
+
+First check to make sure your bower package actually exists:
+
+- <http://bower.io/search/?q=elven-tools>
+
+As you can see, a search for **elven-tools** on the bower site succeeds. A search for your package should also succeed.
+
+Add your package to a new project called **Week07-ElfLogBower**. You can install your bower package into your project like this:
 
 ```
 bower install elven-tools --save
+```
+
+But of course, I want to see that you are using ***your copy*** of **elf-log.js**, not mine. So you should do something like this, where last name is your last name:
+
+```
+bower install lastname-tools --save
 ```
 
 In your layout.jade load **components/elven-tools/elfLog.js**.

@@ -27,7 +27,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=9
+current_page=11
 FILE_NAME_0=1221;CSS;0;EUTF-8;1;1;0;%2Fvar%2Fwww%2Fhtml%2Fcss%2Fstyle.css;0;4
 FILE_NAME_1=280;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FAllTest%2FFoo.md;0;4
 FILE_NAME_2=740;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FSource%2FMakeHtml%2Fnode_modules%2Felven-site-tools%2Fviews%2Flayout.jade;0;4
@@ -38,3 +38,5 @@ FILE_NAME_6=894;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FSource%2FMakeHtml%
 FILE_NAME_7=347;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftmp%2Fpackage.json;0;4
 FILE_NAME_8=16;None;0;EUTF-8;1;1;0;%2Fvar%2Fwww%2Fhtml%2Fgoo%2F.htaccess;0;4
 FILE_NAME_9=5576;Conf;0;EUTF-8;1;1;0;%2Fetc%2Fapache2%2Fapache2.conf;0;4
+FILE_NAME_10=1444;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FAllTest%2FPictures.md;0;4
+FILE_NAME_11=156;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FProg270%2FCommentsHtmlPictures.txt;0;4

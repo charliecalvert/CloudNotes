@@ -22,14 +22,16 @@ Put the two bitmaps from your GoogleDriveGitZip assignment in the **/var/www/htm
 
 Write the markdown to display them in your **GoogleDriveGitZip.md** file, using a variant of the syntax shown in the **LampMarkdown** assignment:
 
+- [Ec2MarkdownToHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#bitmaps)
 - [LampMarkDown](http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html#step-four)
 - [MarkdownBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/MarkdownBasics.html#creating-pictures)
-- [Ec2MarkdownToHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#bitmaps)
 
-Add additional to your markdown that:
+Add your pictures to your markdown so that your page:
 
-- Shows each image inside a level 2 header (two hashmarks: ##)
-- Text explaining each of the images.
+- Shows each image under a level 2 header (two hashmarks: ##).
+  - First the header describing the picture.
+  - Then beneath the header put the picture. So the picture is under the header, just as this text is under the **Step One** header.
+- Either above or below the picture include text explaining each of the images.
 
 ## Step Two
 
@@ -68,6 +70,34 @@ Take a screen shot and attach (upload) it to your assignment. Also submit the UR
 
 **NOTE**: *All this awkward language about 'containing an elastic IP' just means I want to be able to navigate to your page from my browser. I want your page to be on the world wide web, I want to see in my browser or phone the instance of your page that you are hosting on EC2. In short, the URL you submit might look at least something like this: http://52.xx.xx.xxx/Assignments/GoogleDriveGitZip.html.*
 
+## Example Picture
+
+Here is a normal picture of a bridge with no CSS attached to it:
+
+![Bridge](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Manhattan_Bridge_Construction_1909.jpg/800px-Manhattan_Bridge_Construction_1909.jpg)
+
+If you want to get more control over the picture, you can use CSS. For instance, you can use the picture, and the same file, but have the image appear to be smaller. This usually involves writing real HTML in your markdown, and including a class. Here is my simple CSS class:
+
+```css
+img.twenty-five-percent {
+   width: 25%;
+}
+```
+
+This code says that if there is a class of an image tag named **twenty-five-percent** then set its width to 25% of the entire page. Put this CSS in a file called **/var/www/html/css/style.css**. If you have the most recent version of MakeHtml, then the code you put in this file should be reflected in your web pages.
+
+And here is code for using this CSS class:
+
+```html
+<img class="twenty-five-percent" src="https://foo.com/my-picture.jpg" alt="bridge">
+```
+
+Note the word **class** and the specific use of our **twenty-five-percent** code from the CSS file.
+
+Below is the output from code like that shown above. This is the same image, and the same file, as the big one shown above, but here we use CSS to make the image smaller:
+
+<img class="twenty-five-percent" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Manhattan_Bridge_Construction_1909.jpg/800px-Manhattan_Bridge_Construction_1909.jpg" alt="bridge">
+
 ## The Nano Editor
 
 Some helpful links:
@@ -80,3 +110,4 @@ Some helpful links:
 A video:
 
 - [https://youtu.be/k3XdhVwzIlk](https://youtu.be/k3XdhVwzIlk)
+-

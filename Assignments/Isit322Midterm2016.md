@@ -117,7 +117,7 @@ Provide four screen shots which should be attached (uploaded) directly to the as
 
 Quick Check
 
-1. Program in proper branch?
+1. Program in proper branch? Even if not, tell me what branch to view.
 -  Npm and bower work?
 -  Elf log set to info?
 -  Single source destination works?
@@ -126,3 +126,6 @@ Quick Check
 -  Button for Edit Config?
 -  Grunt check comes back clean?
 -  Four screen shots included
+
+**NOTE**: *I'm also going to need your most recent config file. Make sure that your
+**config/ElvenConfig.json** file contains your most recent configuration data.*

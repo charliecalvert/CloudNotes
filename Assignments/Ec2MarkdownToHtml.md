@@ -115,7 +115,7 @@ Alternatively, go to the [main page][wm-main] and use the search box on the top 
 Once you see an image you like:
 
 - Click on it.
-- Choose More Details at bottom right.
+- Choose **More Details** at bottom right.
 - Right lick on image sizes beneath the picture, choosing one that is approximately 640X480.  
 - Choose **Copy Location**, **Copy Link Address**  or some similar option.
 - Click on the Image icon at the top of StackEdit and paste in the URL of your image.

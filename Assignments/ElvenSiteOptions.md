@@ -2,19 +2,19 @@
 
 In Elven Site Options we will:
 
-- Skip Syntax Highlighting
-- Make Webserver Dir Configurable and name to destination dir
+- Create an option allowing the user to skip Syntax Highlighting
+- Make the Webserver Directory Configurable and name the destination dir
 
 ## Step One:
 
-Create a branch called ElvenSiteOptions. Check it out:
+Create a branch called **ElvenSiteOptions**. Check it out:
 
 ```
 git branch ElvenSiteOptions
 git checkout ElvenSiteOptions
 ```
 
-Now copy Site Config to SiteOptions:
+Now copy the **ElvenSiteConfig** project to **ElvenSiteOptions**:
 
 ```
 cp -r Week05-ElvenSiteConfig Week06-ElvenSiteOptions
@@ -30,7 +30,7 @@ res.render('index', { title: 'Elven Site Options' etc... })
 
 ## Step Two
 
-Track Destination Dirs:
+Note that our config file now tracks an array called **destination-dirs**:
 
 ```
 {
@@ -48,7 +48,7 @@ Track Destination Dirs:
 }
 ```
 
-Now get the code in **routes/index.js**:
+Write a route in **routes/index.js** that will retrieve all the sections from our configuration file:
 
 ```
 router.get('/config', function(request, response) {
@@ -91,9 +91,9 @@ http://localhost/test-site/goo/Summary.html
 
 ## Step Three
 
-Do what needs to be done to show the destinations-dirs in a select on the client side.
+Do what needs to be done to show the **destinations-dirs** in a select on the client side.
 
-Send the users destinationDir selection back to the server when the user choses walk. In doing so, on the client side, create a variable called **requestQuery** that equals a JavaScript object literal with two properties:
+Send the users **destinationDir** selection back to the server when the user choses walk. In doing so, on the client side, create a variable called **requestQuery** that equals a JavaScript object literal with two properties:
 
 - directoryToWalk
 - destinationDir
@@ -261,6 +261,16 @@ $( "#elfform" ).submit(function( event ) {
 
 Push your repository, submit your the assignment.
 
+Checklist:
+
+- Create **ElvenSiteOptions** branch
+- Copied **ElvenSiteConfig** to **ElvenSiteOptions**
+- Retrieve from server and display **destination-dirs** config file data.
+- Use new version of server side **router.get('\walk'...** route.
+- Create check box for **highlight** option.
+
+**NOTE**: *I'm also going to need your most recent config file. Make sure that your
+**config/ElvenConfig.json** file contains your most recent configuration data.*
 
 ## Hints
 
