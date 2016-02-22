@@ -9,7 +9,7 @@ The Elf Log Bower project involves:
 ## Step One
 
 
-Make an empty directory in your **~/Git** folder called **Week07-ElfLogBower**. Navigate into it and run **git init**.
+Make an empty directory in your **~/Git** folder called **lastname-tools**, where last name is your last name. Navigate into it and run **git init**.
 
 Create a **bower.json** file with **bower init**.
 
@@ -147,13 +147,15 @@ First check to make sure your bower package actually exists:
 
 As you can see, a search for **elven-tools** on the bower site succeeds. A search for your package should also succeed.
 
-Add your package to a new project called **Week07-ElfLogBower**. You can install your bower package into your project like this:
+**NOTE**: *If your search fails, you can also try the **bower info** command. For instance: **bower info elven-tools**.*
+
+Use CreateAllExpress to create a new project called **Week07-ElfLogBower**. Add your package this project. For instance, you can install my bower package into your project like this:
 
 ```
 bower install elven-tools --save
 ```
 
-But of course, I want to see that you are using ***your copy*** of **elf-log.js**, not mine. So you should do something like this, where last name is your last name:
+But of course, you should use ***your copy*** of **elf-log.js**, not mine. So you should do something like this, where last name is your last name:
 
 ```
 bower install lastname-tools --save

@@ -73,7 +73,7 @@ var radioWalkType;
 
 function SiteConfig() {
   // Code omitted here
-  $("#walktype").click(function() {
+  $("#walktype").change(function() {
       radioWalkType = $("input[name=walktype]:checked").attr('id');
   });
 }
@@ -92,6 +92,7 @@ And when the user clicks the walk button:
 
    $.getJSON('/walk', requestQuery, function(result) {
        etc...  
+   });
 ```
 
 ## Step Five
@@ -100,6 +101,14 @@ Don't work hard on this, but create some markdown/HTML that you might, over time
 
 - Week08-MidtermMarkdown
 - Week08-MidtermHtml
+
+Don't forget, in **layout.jade**:
+
+```
+meta(charset='UTF-8')
+meta(name='viewport', content='width=device-width')
+title= title
+```
 
 ## Turn it in
 
@@ -129,3 +138,7 @@ Quick Check
 
 **NOTE**: *I'm also going to need your most recent config file. Make sure that your
 **config/ElvenConfig.json** file contains your most recent configuration data.*
+
+## Display Class
+
+I end up creating a number of methods whose sole purpose is to display data. It is frequently considered a good idea to separate this kind of code from the rest of your code.
