@@ -2,7 +2,7 @@
 
 The **ApacheHtml** configuration assignments helps you set up your Apache Server and the **MakeHtml** program.
 
-The MakeHtml program assumes that certain files are already in place in your Apache directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders. 
+The MakeHtml program assumes that certain files are already in place in your Apache directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders.
 
 ## CSS
 
@@ -34,6 +34,12 @@ $(document).ready(function() {
 ## GoogleCode
 
 The file called **googlecode.css** provides syntax highlight for code that appears in our HTML. We place this file here:
+
+```
+/var/www/html/css/highlight
+```
+
+Like this:
 
 ```
 /var/www/html/css/highlight/googlecode.css
@@ -146,6 +152,12 @@ Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
 At minimum, you need the **elvenwarelogo.png** in this directory:
 
 ```
+/var/www/html/images
+```
+
+Like this:
+
+```
 /var/www/html/images/elvenwarelogo.png
 ```
 
@@ -166,3 +178,7 @@ Checklist:
   - elvenwarelogo.png (This can be your own logo)
 - js
   - elven-help.js
+
+Here is an image showing the Apache directory:
+
+![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)

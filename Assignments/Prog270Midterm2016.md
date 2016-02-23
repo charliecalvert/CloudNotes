@@ -89,20 +89,6 @@ In the screen shot below, the doohickey and the **device** drop down are circled
 
 **Note**: *I selected **Samsung Galaxy S4** in the **device** drop down. You can select any device, I just mention my selection so you can more easily find and identify the control I'm talking about.*
 
-## Turn it in
-
-Put the markdown for your completed site in your repository in a folder called **Week07-Markdown**.
-
-Put the HTML for your completed site in your repository in a folder called **Week07-HTML**. There are numerous ways to get the HTML from your web site to your repository. One might be to issue a command similar to this:
-
-```
-cp -r /var/www/html ~/Git/prog270-lastname-2016/Week07-HTML
-```
-
-When you turn in the assignment, go to the text page and provide a link to the home page of your running web site.
-
-Also submit a URL leading to your website running on AWS through an elastic ip.
-
 ## CSS and JS Files
 
 Create three files:
@@ -118,6 +104,21 @@ The files can be empty. The user will probably never know, but errors will occur
 - **elven-help.js**: Custom JavaScript which I will give you. (There is some example code in **Tables** section below.)
 - **style.css**: Put most of your css in here. Loaded after bootstrap is loaded.
 - **first-style.css**: This file is loaded before the bootstrap styles, so things in here may be over ridden by bootstrap.
+
+Also make sure **googlecode.css** is in place.
+
+## Turn it in
+
+Put the markdown for your completed site in your repository in a folder called **Week07-Markdown**.
+
+Put the HTML for your completed site in your repository in a folder called **Week07-HTML**. There are numerous ways to get the HTML from your web site to your repository. One might be to issue a command similar to this:
+
+```
+cp -r /var/www/html ~/Git/prog270-lastname-2016/Week07-HTML
+```
+
+When you turn in the assignment, go to the text page and provide a link to the home page of your running web site. What I'm looking for is a clickable URL leading to your website running on AWS through an elastic ip.
+
 
 
 ## Tables
@@ -186,3 +187,7 @@ The hash mark (#) is the comment character, like // in a curly brace language su
 Restart the server:
 
 <pre>sudo service apache2 restart</pre>
+
+## Directory Structure
+
+![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
