@@ -54,6 +54,8 @@ Add, commit and push your work.
 
 [ec2css]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#css
 
+![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
+
 ## Step Three
 
 Complete the following steps:
@@ -64,8 +66,7 @@ Complete the following steps:
 - Run the MakeHtml
 - View site using your Elastic IP to confirm all is good.
 
-![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
-
+![Workflow on EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/update-site-on-ec2.png)
 
 ## Turn it in
 

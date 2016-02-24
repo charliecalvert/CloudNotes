@@ -184,3 +184,7 @@ Checklist:
 Here is an image showing the Apache directory:
 
 ![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
+
+Here is the typical workflow when setting up the web site on EC2:
+
+![Workflow on EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/update-site-on-ec2.png)

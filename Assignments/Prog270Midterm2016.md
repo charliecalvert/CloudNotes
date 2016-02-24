@@ -71,6 +71,10 @@ Make sure you have connected an elastic IP to your running instance. Go to your 
 
 ![Connect to EC2 activity diagram](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
 
+The following diagram shows the workflow on EC2:
+
+![Workflow on EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/update-site-on-ec2.png)
+
 ## Step Five: Phone {#phone}
 
 I'll want to see a screen shot of:
@@ -155,7 +159,7 @@ Copy it in to the **~/Source** folder, using the technique outlined in the Lamp 
 
 The result should look like this:
 
-![](https://s3.amazonaws.com/bucket01.elvenware.com/images/table-css.png)
+![Table CSS ](https://s3.amazonaws.com/bucket01.elvenware.com/images/table-css.png)
 
 [lmd]:http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html#step-two
 
