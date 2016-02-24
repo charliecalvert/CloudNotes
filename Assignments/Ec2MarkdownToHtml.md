@@ -197,6 +197,12 @@ Here XX.XX.XX.XX is your elastic IP address, and **master-list.html** is some va
 
 ![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
 
+## Workflow
+
+Here is the typical workflow when setting up the web site on EC2:
+
+![Workflow on EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/update-site-on-ec2.png)
+
 ## Hint
 
 Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
