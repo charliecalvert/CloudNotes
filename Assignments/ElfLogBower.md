@@ -149,7 +149,7 @@ As you can see, a search for **elven-tools** on the bower site succeeds. A searc
 
 **NOTE**: *If your search fails, you can also try the **bower info** command. For instance: **bower info elven-tools**.*
 
-Use CreateAllExpress to create a new project called **Week07-ElfLogBower**. Add your package this project. For instance, you can install my bower package into your project like this:
+Use **CreateAllExpress** to create a new project called **Week07-ElfLogBower**. Add your package this project. For instance, you can install my bower package into your project like this:
 
 ```
 bower install elven-tools --save
