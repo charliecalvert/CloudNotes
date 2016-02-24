@@ -115,7 +115,7 @@ Also make sure **googlecode.css** is in place.
 
 ## Turn it in
 
-Put the markdown for your completed site in your repository in a folder called **Week07-Markdown**.
+Make sure the markdown for your completed site in your repository in the folder called **AllTest**.
 
 Put the HTML for your completed site in your repository in a folder called **Week07-HTML**. There are numerous ways to get the HTML from your web site to your repository. One might be to issue a command similar to this:
 
