@@ -33,21 +33,23 @@ From the Linux command line, navigate to your .ssh directory:
 Load your EC2 instance's private key, which probably has a name like **Prog282-2014.pem**, but which might have some other name:
 
     ssh-add Prog282-2014.pem
-    
+
 Now SSH into your AWS instance:
 
     ssh ubuntu@[YOUR_ELASTIC_IP]
-    
+
 Remember, there are two steps necessary to load a key into memory:
 
  1. Make sure ssh-agent is running (eval `ssh-agent`). This step is already done automatically for you in pristince ubuntu because it is included in the **.bashrc** file I gave you at the start of the quarter.
- 2. Load a specific into in the **ssh-agent** by running **ssh-add**.
+ 2. Load a specific key into the **ssh-agent** by running **ssh-add**.
 
 If you want to work in a browser, watch [this video](http://youtu.be/fZE_fLw7Qrg):
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/fZE_fLw7Qrg" frameborder="0" allowfullscreen></iframe>
 
-  
+![Connect to EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
+
+
 ## Step Three: Create Three Instances
 
 On AWS, create three Ubuntu 14.04 64 bit VMs. Use the same key pair and same security credentials for all three instances. You already know what to do, but you might want a reminder. This older video isn't exactly what you want, but it is close enough:
@@ -71,22 +73,22 @@ Take a screen shot of the Volumes page and show the **Created** date. I want to 
 *After doing this, you should be able to ssh into your new VM*:
 
     ssh ubuntu@<Your ELASTIC IP>
-    
+
 *See [here for more info][kh]*
 
 [kh]: http://superuser.com/questions/30087/remove-key-from-known-hosts
-    
+
 ## Step Four: Provision
 
 Run these commands in each instance. First update the instance to the latest software:
 
 	sudo apt-get update
 	sudo apt-get upgrade
-    
-Install [GIT][giter]: 
+
+Install [GIT][giter]:
 
 	sudo apt-get install git
-    
+
 Install [node][noder]:
 
 	sudo apt-get install python-software-properties python g++ make
@@ -114,12 +116,12 @@ When you started work on your Pristine Ubuntu instance early in the quarter, one
 On your AWS instance, type this command to open your **authorized_keys** file in the **nano** editor that ships with Ubuntu:
 
     nano ~/.ssh/authorized_keys
-    
+
 This old screen shots shows something of what you might see when you open your authorized keys file in the **nano** editor:
 
 ![authorized_keys][akeys01]
 
-Note that your authorized_keys file already contains the public key for the key pair your created when you created your AWS instance. You need to add the **id_rsa.pub** file from your pristine_ubuntu instance to this authorized_keys file. Open the **~/.ssh/id_rsa.pub** file from pristine ubuntu in Geany. Select and copy the key. Now switch to your AWS instance and paste your key into Nano. 
+Note that your authorized_keys file already contains the public key for the key pair your created when you created your AWS instance. You need to add the **id_rsa.pub** file from your pristine_ubuntu instance to this authorized_keys file. Open the **~/.ssh/id_rsa.pub** file from pristine ubuntu in Geany. Select and copy the key. Now switch to your AWS instance and paste your key into Nano.
 
 You know how to cut and paste. Just remember you have no mouse in Nano, and be careful not to damage your authorized_keys file. If you do, that will be the end of your instance. You will have to delete it and create a new one. You might, for instance, use the **end** key to navigate to the end of your existing key in your authorized_keys file. Press **enter** to create a new line. Now paste in your **id_rsa.pub** key. The result should look something like what you see below. Press Ctrl-O to save your work. Then press Ctrl-X to exit.
 
@@ -145,12 +147,12 @@ Be sure there is at least one blank line after the last command in the file. Now
 [akeys02]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Ec2Vol02.png
 
 
-##Step 6: Clone your repository. 
+##Step 6: Clone your repository.
 
 Create a **Git** folder in your home directory. Navigate into that folder and then clone your repository on each of your three new instances. On each instance, start one of your programs (npm start). Pick a program that talks back and forth between the server and the client. I'm looking for a program that calls into a route such as '**/read**' that you created on the server. Do something to make it talk back and forth some. Press Ctrl-C to close your node instance. Immediately run this command:
 
     wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
-    
+
 The result is somewhat messy, but it is informative. Create a screen shot that might look something like this:
 
 ![wget Shot][akeys03]
@@ -196,4 +198,3 @@ Create a folder in your repo called **Week08Ec2Instances**. Place your five (or 
 - Elastic IP screen shot.
 - Volumes for VM screen shot that inclues date and instance id (like i-94bc2dc7)
 - Three running instances including the instance-id (like i-94bc2dc7)
-

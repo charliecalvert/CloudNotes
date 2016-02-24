@@ -2,7 +2,13 @@
 
 This is the Isit322 Midterm for 2016. Your program should be in a directory called **Week08-Midterm**.
 
-The main goal of the midterm is to bring the ElvenSite program further along the road to completion. Your midterm should include the following features:
+The main goal of the midterm is to bring the ElvenSite program further along the road to completion.
+
+The following diagram is for use with the command line version of this program, which is called **MakeHtml**. However, the **MakeHtml** program does the same thing as **ElvenSite**. Just substitute the word **ElvenSite** (your midterm) every place you see **MakeHtml**
+
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
+Your midterm should include the following features:
 
 1. Branches. Do your work in a branch called **midterm**. When you turn in the midterm, there should be no **Week08-Midterm** folder in the **master** branch.
 - I should be able to run **npm install && bower install && npm start** and have the program launch smoothly.

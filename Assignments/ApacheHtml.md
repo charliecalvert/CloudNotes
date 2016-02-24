@@ -4,6 +4,8 @@ The **ApacheHtml** configuration assignments helps you set up your Apache Server
 
 The MakeHtml program assumes that certain files are already in place in your Apache directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders.
 
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
 ## CSS
 
 There are two files:

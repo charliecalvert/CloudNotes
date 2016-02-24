@@ -8,6 +8,8 @@ The goal of the EC2 Markdown to Html assignment is set up MakeHtml on our EC2 in
 
 Part of the midterm will be to create a web site on EC2 using our Markdown to HTML technology. You will be able asked to choose a theme for your website, and the content that should appear on it.
 
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
 When doing this assignment, you might consider focusing on some subject that you would like to explore on the midterm. For instance, if you want your midterm website to be about the Mars rover missions, then you might want to consider choosing bitmaps about that subject while working on this assignment. I mention this only as a heads up, there is no requirement, nor am I expecting, that you have a complete theme in this assignment. Nor am I asking you to pick any particular type of bitmap to display. I simply want to let you know where we are headed, so you can make informed choices.
 
 You can and should pick a topic that interests you. If no idea comes to mind, then possible topics include:
@@ -192,6 +194,8 @@ Here XX.XX.XX.XX is your elastic IP address, and **master-list.html** is some va
 
  - One of your web site on a page that shows a bitmap
  - One of the output generated from running the MakeHtml program at the EC2 ubuntu command prompt.
+
+![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
 
 ## Hint
 

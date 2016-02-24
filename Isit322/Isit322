@@ -27,9 +27,18 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=4
+current_page=11
 FILE_NAME_0=1605;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2F.config%2FElvenConfig.json;0;4
 FILE_NAME_1=636;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2Ftmp%2Fpackage.json;0;4
 FILE_NAME_2=238;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fisit322-2016%2Faliases;0;4
 FILE_NAME_3=191;JSON;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fbowerdeleteme%2Fbower.json;0;4
 FILE_NAME_4=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FIsit322%2FComments.txt;0;4
+FILE_NAME_5=214;Sh;0;EUTF-8;1;1;0;%2Fvar%2Fwww%2Fhtml%2Fclean;0;4
+FILE_NAME_6=0;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fprog270-calvert-2016%2FApacheHelpers%2Fjs%2Felven-help.js;0;4
+FILE_NAME_7=43;CSS;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fprog270-calvert-2016%2FApacheHelpers%2Fcss%2Fstyle.css;0;4
+FILE_NAME_8=252;CSS;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fprog270-calvert-2016%2FApacheHelpers%2Fcss%2Fhighlight%2Fgooglecode.css;0;4
+FILE_NAME_9=236;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FDocuments%2FAllTest%2Ffile1.md;0;4
+FILE_NAME_10=142;None;0;EUTF-8;1;1;0;%2Fhome%2Fcharlie%2FGit%2Fprog270-calvert-2016%2FCopyAllTestAndApacheFilesToRepository;0;4
+
+[VTE]
+last_dir=/home/charlie

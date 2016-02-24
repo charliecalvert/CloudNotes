@@ -4,13 +4,13 @@ ElvenSiteRefactorPair.
 
 Do your work in a branch called ....
 
+The following diagram is for use with the command line version of our program, which is called **MakeHtml**. However, the **MakeHtml** program does the same thing as **ElvenSite**. Just substitute the word **ElvenSite** (your midterm) every place you see **MakeHtml**
+
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
 ## Create Display Class
 
 ```javascript
-/**
- * Created by charlie on 2/22/16.
- */
-
 var elf = {
     init: function() {
         'use strict';
@@ -24,6 +24,11 @@ elf.display = {
     clear:function() {
         $('#displayArea').empty();
         $('#displayList').empty();
+    },
+
+    clearConfig: function() {
+        $('#dirsToWalk').empty();
+        $('#destinationDirs').empty();
     },
 
     fillDisplayArea: function(stringToDisplay) {

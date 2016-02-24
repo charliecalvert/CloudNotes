@@ -8,6 +8,8 @@ The purpose of the **EC2 Git Html and Pictures** assignment is to give you pract
 - Working with the MakeHtml program
 - Working with the Apache web server
 
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
 ## Step One
 
 Create a directory called:
@@ -60,6 +62,9 @@ Complete the following steps:
 - Pull the work you did on Pristine Lubuntu
 - Copy the code from your repository's **AllTest** folder to your **~/Documents/AllTest** folder.
 - Run the MakeHtml
+- View site using your Elastic IP to confirm all is good.
+
+![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
 
 
 ## Turn it in

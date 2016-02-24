@@ -5,6 +5,10 @@ In Elven Site Options we will:
 - Create an option allowing the user to skip Syntax Highlighting
 - Make the Webserver Directory Configurable and name the destination dir
 
+The following diagram is for use with the command line version of our program, which is called **MakeHtml**. However, the **MakeHtml** program does the same thing as **ElvenSite**. Just substitute the word **ElvenSite** (your midterm) every place you see **MakeHtml**
+
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
 ## Step One:
 
 Create a branch called **ElvenSiteOptions**. Check it out:

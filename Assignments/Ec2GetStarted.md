@@ -52,9 +52,21 @@ For instance:
 	ssh ubuntu@192.168.1.25
 
 
+![Connect to EC2 activity diagram](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
+
 Connect to your EC2 instance with Putty:
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
+
+See also:
+
+- [AwsExpect][aws-expert]
+- [.bashrc and ssh-agent][ec2-provision]
+- [SSH and Configuring Linux][ssh-configure-linux]
+
+[aws-expert]:http://www.ccalvert.net/books/CloudNotes/Assignments/AwsEc2Expert.html#step-two-ssh-into-your-instance
+[ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
+[ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh
 
 ## Step Five
 

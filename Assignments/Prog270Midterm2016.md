@@ -20,6 +20,8 @@ Here is a step by step outline of what needs to be done to move your WebSite fro
 6.  Make sure **JsObjects** is up to date (**git pull**) and then set up and run **MakeHtml** in the **~/Source/MakeHtml** directory.
 7.  Now browse to your elastic IP and display **master-list.html.**
 
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
 ## Step One: Theme {#theme}
 
 Pick a subject that you want for your web site. I don't care what subject you pick. It could be any of the following:
@@ -48,6 +50,8 @@ Since your site will be visible to the public, you should make an effort not to 
 
 By now, you all should be familiar with the **MakeHtml** program and how to use it to convert your markdown files to HTML files that are stored in the **/var/www/html** directory.
 
+![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
+
 The one extra step I want you to perform this time is to create a home page. By default, the page on your site called **index.html** is your home page.
 
 When you installed the lamp-server, your web site automatically contained a page called **index.html** that contains data about your apache server. For some, this information may be useful, so lets not lose this page. Simply rename it from **index.html** to **apache-home-page.html**.
@@ -64,6 +68,8 @@ Make sure you have connected an elastic IP to your running instance. Go to your 
 
 - A link to your main page (Normally your elastic IP.)
 - A screen shot of your main page.
+
+![Connect to EC2 activity diagram](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
 
 ## Step Five: Phone {#phone}
 
@@ -119,7 +125,7 @@ cp -r /var/www/html ~/Git/prog270-lastname-2016/Week07-HTML
 
 When you turn in the assignment, go to the text page and provide a link to the home page of your running web site. What I'm looking for is a clickable URL leading to your website running on AWS through an elastic ip.
 
-
+Include any screen shots mentioned above.
 
 ## Tables
 
