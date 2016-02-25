@@ -148,3 +148,99 @@ called **radius** and it should return the calculated circumference.
 
 Check your code into your Git repository and submit the URL of your
 repository or of the project you submitted.
+
+## Hint: Passing Data {#pass-data}
+
+First, an example showing how to call a route without parameters:
+
+```javascript
+function callServerWithoutParms() {
+
+	$.getJSON('/walk', function (result) {
+		elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
+		elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
+	}).done(function () {
+			elf.display.showDebug('Walk loaded second success');
+		})
+		.fail(function (jqxhr, textStatus, error) {
+			elf.display.showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
+		})
+		.always(function () {
+			elf.display.showDebug('Walk loaded complete');
+		});
+
+}
+```
+
+Now an example showing how to call a route with parameters:
+
+```javascript
+function callServerWithParms() {
+
+	// Get Data We Want to Pass to the Server
+	var dirsToWalk = document.getElementById('dirsToWalk');
+	var directory = dirsToWalk.options[sourceIndex].value;
+	var destinationDirs = document.getElementById('destinationDirs');
+	var destinationDir = destinationDirs.options[destinationIndex].value;
+
+	var highlight = $('#highlight').prop('checked');
+
+	// Put that data in JavaScript Object
+	var requestQuery = {
+		directoryToWalk: directory,
+		destinationDir: destinationDir,
+		highlight: highlight,
+	};
+
+	// Call the server and pass the data as a parameter.
+	$.getJSON('/walk', requestQuery, function (result) {
+		elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
+		elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
+	}).done(function () {
+			elf.display.showDebug('Walk loaded second success');
+		})
+		.fail(function (jqxhr, textStatus, error) {
+			elf.display.showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
+		})
+		.always(function () {
+			elf.display.showDebug('Walk loaded complete');
+		});
+
+}
+```
+
+Below, in the next section, we look more closely at passing parameters.
+
+
+### Client Server Interactions {#interact}
+
+
+Look at these code excerpts from the code shown above. We look specifically at the call to the server:
+
+```javascript
+
+	// Put that data in JavaScript Object
+	var requestQuery = {
+		directoryToWalk: directory,
+		destinationDir: destinationDir,
+		highlight: highlight,
+	};
+
+	// Call the server and pass the data as a parameter.
+	$.getJSON('/walk', requestQuery, function (result) {
+
+```
+
+And here is what it looks like on the server. Notice how we
+use the request object to discover the parameters passed
+by the client:
+
+```javascript
+
+router.get('/walk', function(request, response) {
+    'use strict';
+    console.log('In walk', request.query);
+    var directoryToWalk = request.query.directoryToWalk;
+    var destinationDir = request.query.destinationDir;
+    var highlight = request.query.highlight;
+```

@@ -39,9 +39,9 @@ cp -r ~/Documents/AllTest $REPO/
 # Ensure destination dir exists for CSS, JS and Images
 mkdir -p $CSS_JS_IMAGE
 # Copy CSS, JavaScript and Images
-cp -r /var/www/html/css $CSS_JS_IMAGE/css
-cp -r /var/www/html/images $CSS_JS_IMAGE/images
-cp -r /var/www/html/js $CSS_JS_IMAGE/js
+cp -r /var/www/html/css $CSS_JS_IMAGE/.
+cp -r /var/www/html/images $CSS_JS_IMAGE/.
+cp -r /var/www/html/js $CSS_JS_IMAGE/.
 cp /var/www/html/clean $CSS_JS_IMAGE/.
 ```
 
@@ -64,6 +64,51 @@ rm *.html <LIST ANY OTHER FILES>
 rm -r MoreFiles Assignments <LIST ANY OTHER FOLDERS>
 rm apache-helpers.zip
 zip -r apache-helpers css/ js/ images/
+```
+## Copy from Repository to Documents AllTest {#copy-alltest}
+
+From the root of your repository, issue this command.
+
+```
+cp -rv AllTest/ ~/Documents/.
+```
+
+## Copy RenewMakeHtml
+
+```
+cp ~/Git/JsObjects/JavaScript/NodeCode/MakeHtml/renewMakeHtml .
+```
+
+Then run **renewMakeHtml**.
+
+```
+cd ~/Source
+./renewMakeHtml
+cd MakeHtml
+```
+
+After doing this on EC2 don't forget to open up **config/ElvenConfig.json** in nano and change the path from **bcuser** to **ubuntu**:
+
+```
+nano config/ElvenConfig.json
+```
+
+Then change it like this:
+
+```json
+{
+  "calvert": {
+    "base-dir": "/home/ubuntu/",
+    "site-dirs": [
+      "Documents/AllTest",
+      "Documents/AllSite"
+    ],
+    "destination-dirs": [
+      "/var/www/html/",
+      "/home/ubuntu/temp/test-site/"
+    ]
+  }
+}
 ```
 
 ## Turn it in

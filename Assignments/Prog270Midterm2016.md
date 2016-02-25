@@ -16,7 +16,7 @@ Here is a step by step outline of what needs to be done to move your WebSite fro
 2.  Push your repository
 3.  SSH to Ec2
 4.  Pull your repository
-5.  Copy **AllTest** form your repository to **~/Documents/AllTest**
+5.  Copy **AllTest** from your repository to **~/Documents/AllTest**
 6.  Make sure **JsObjects** is up to date (**git pull**) and then set up and run **MakeHtml** in the **~/Source/MakeHtml** directory.
 7.  Now browse to your elastic IP and display **master-list.html.**
 
@@ -201,3 +201,9 @@ Restart the server:
 ## Directory Structure
 
 ![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
+
+## Copy to Ubuntu
+
+```
+scp <SOME_FILE> ubuntu@52.32.188.136:/home/ubuntu/.ssh/.
+```
