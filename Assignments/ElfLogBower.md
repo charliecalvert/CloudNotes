@@ -13,6 +13,19 @@ Make an empty directory in your **~/Git** folder called **lastname-tools**, wher
 
 Create a **bower.json** file with **bower init**.
 
+When you get to the section that looks like this, I just press enter without selecting any of them:
+
+```
+what types of modules does this package expose? (Press <space> to select)
+❯◯ amd
+ ◯ es6
+ ◯ globals
+ ◯ node
+ ◯ yui
+```
+
+If I were to pick one, I would perhaps find it appropriate to select globals, since we end up using a global variable to access the code in the module. If you are using **requirejs**, which we do from time to time in my classes, the pick **amd**. I don't think it reallhy matters what you pick, however, as this is just information. Bower does not, as far as I know, do anything with this information.
+
 For instance:
 
 ```json
@@ -122,6 +135,8 @@ And then either of these:
 git push origin master v0.0.1
 git push origin master --tags
 ```
+
+This tag is the version number for your bower package. Increment it and push it when you want to publish a new version of your code.
 
 ## Step Six: Register it {#register}
 
