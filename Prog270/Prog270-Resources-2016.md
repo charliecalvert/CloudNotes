@@ -27,6 +27,33 @@
 - [Ec2Checklist](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Checklist.html)
 - [Ec2MarkdownToHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html)
 
+## Diagrams
+
+Various diagrams to help understand commonly performed tasks.
+
+### Create Site Activities
+
+Review the activities involved in creating a web site on Pristine Lubuntu.
+
+![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
+
+### Make HTML Workflow
+
+Review of how to run the MakeHtml program.
+
+![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
+
+### SSH Key for EC2
+
+The workflow when connecting to EC2 with an SSH key.
+
+![SSH Key for EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
+
+### Update Site on EC2
+
+Once you have created the site on Pristine Lubuntu, you want to deploy it on EC2. Here is how to proceed.
+
+![Update Site on EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/update-site-on-ec2.png)
 
 Other
 -----

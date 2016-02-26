@@ -16,7 +16,7 @@ Here is a step by step outline of what needs to be done to move your WebSite fro
 2.  Push your repository
 3.  SSH to Ec2
 4.  Pull your repository
-5.  Copy **AllTest** form your repository to **~/Documents/AllTest**
+5.  Copy **AllTest** from your repository to **~/Documents/AllTest**
 6.  Make sure **JsObjects** is up to date (**git pull**) and then set up and run **MakeHtml** in the **~/Source/MakeHtml** directory.
 7.  Now browse to your elastic IP and display **master-list.html.**
 
@@ -71,6 +71,10 @@ Make sure you have connected an elastic IP to your running instance. Go to your 
 
 ![Connect to EC2 activity diagram](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
 
+The following diagram shows the workflow on EC2:
+
+![Workflow on EC2](https://s3.amazonaws.com/bucket01.elvenware.com/images/update-site-on-ec2.png)
+
 ## Step Five: Phone {#phone}
 
 I'll want to see a screen shot of:
@@ -115,7 +119,7 @@ Also make sure **googlecode.css** is in place.
 
 ## Turn it in
 
-Put the markdown for your completed site in your repository in a folder called **Week07-Markdown**.
+Make sure the markdown for your completed site in your repository in the folder called **AllTest**.
 
 Put the HTML for your completed site in your repository in a folder called **Week07-HTML**. There are numerous ways to get the HTML from your web site to your repository. One might be to issue a command similar to this:
 
@@ -155,7 +159,7 @@ Copy it in to the **~/Source** folder, using the technique outlined in the Lamp 
 
 The result should look like this:
 
-![](https://s3.amazonaws.com/bucket01.elvenware.com/images/table-css.png)
+![Table CSS ](https://s3.amazonaws.com/bucket01.elvenware.com/images/table-css.png)
 
 [lmd]:http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html#step-two
 
@@ -197,3 +201,9 @@ Restart the server:
 ## Directory Structure
 
 ![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
+
+## Copy to Ubuntu
+
+```
+scp <SOME_FILE> ubuntu@52.32.188.136:/home/ubuntu/.ssh/.
+```
