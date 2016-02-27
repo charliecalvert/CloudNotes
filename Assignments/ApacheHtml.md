@@ -1,8 +1,12 @@
 ## Overview
 
-The **ApacheHtml** configuration assignments helps you set up your Apache Server and the **MakeHtml** program.
+The **ApacheHtml** configuration assignments helps you set up your Apache Server and the **MakeHtml** program. In particular, it helps you put the right files in these directories:
 
-The MakeHtml program assumes that certain files are already in place in your Apache directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders.
+- /var/www/html/css
+- /var/www/html/js
+- /var/www/html/images
+
+The MakeHtml program assumes that certain files are already in place in your Apache directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders. Without these files, the pages you produce might have missing links, or fail to render your HTML properly. This will effect various parts of your pages, including images and their size, code blocks, and tables.
 
 ![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
 
@@ -185,7 +189,16 @@ Here is an image showing the Apache directory:
 
 ![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
 
-## Hint
+Your pages just won't look right unless you have the right images, css and javascript in place. This assignment is an attempt to help you get those files in place. This would be a way to prove to me that you have done it correctly. take a screen shot of the output from these commands:
+
+-  ls -la /var/www/html/css
+-  ls -la /var/www/html/js
+-  ls -la /var/www/html/images
+
+
+## Save CSS, JS and Images in Repo {#apache-helpers}
+
+I want you save your /var/www/html/css, /var/www/html/js/ and var/www/html/images folders to your repository.
 
 Put this script in the root folder of your repository. Run it to back back up your **css**, **js**, and **image** files to a folder in your repository called **ApacheHelpers**. You will need to make
 a few changes for instance, your lastname, not mine, and possibly
