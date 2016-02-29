@@ -207,7 +207,7 @@ Here is the typical workflow when setting up the web site on EC2:
 
 Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
 
-```
+```json
 {
   "calvert": {
     "base-dir": "/home/bcuser/",
@@ -218,6 +218,57 @@ Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatibl
     "destination-dirs": [
       "/var/www/html/",
       "/home/bcuser/temp/test-site/"
+    ]
+  }
+}
+```
+
+## renewMakeHtml
+
+In the root of the **MakeHtml** is a program called **renewmakeHtml**. You can copy this program in the ~/Source directory.
+
+Whenever we run **renewMakeHtml** from the **~/Source** directory, it will copy a new version of **MakeHtml** into a directory called **Source/MakeHtml**. First it deletes any existing **~/Source/MakeHtml** directory, then it copies in an updated version of the program. This will overwrite our changes to **ElvenConfig.json**. We therefore should:
+
+*   Just use **MakeHtml** unless Charlie says there is an update, or you learn that there is an update.
+  *   To run **MakeHtml** do this: **cd ~/Source/MakeHtml** and then **npm start**
+*   If you there is an update, then run **renewMakeHtml** from the **~/Source** directory
+  *   The **renewMakeHtml** script automatically runs **npm install.**
+  *   We need to run **npm install** only once. We run **npm start** every time we want to start/run the program.
+*   After running **renewMakeHtml** navigate (**cd MakeHtml**) into the **MakeHtml** directory and edit **config/ElvenConfig.json** as appropriate: **nano config/ElvenConfig.json**
+*   Now run **MakeHtml** as shown above.
+
+
+When on pristine Lubuntu ElvenConfig should look like this:
+
+```json
+{
+  "calvert": {
+    "base-dir": "/home/bcuser/",
+    "site-dirs": [
+      "Documents/AllTest",
+      "Documents/AllSite"
+    ],
+    "destination-dirs": [
+      "/var/www/html/",
+      "/home/bcuser/temp/test-site/"
+    ]
+  }
+}
+```
+
+When on EC2, ElvenConfig should look like this:
+
+```json
+{
+  "calvert": {
+    "base-dir": "/home/ubuntu/",
+    "site-dirs": [
+      "Documents/AllTest",
+      "Documents/AllSite"
+    ],
+    "destination-dirs": [
+      "/var/www/html/",
+      "/home/ubuntu/temp/test-site/"
     ]
   }
 }

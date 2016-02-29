@@ -11,6 +11,28 @@ See also:
 * [Git and Cloud 9](http://bit.ly/elf-cloud9)
 * [Git Video][git-video]
 
+## Git in 2016
+
+Topics like "is git reliable?", "is it me, or is it git?" come up from time to time. My concern is that students will spin their wheels, focusing on imaginary problems with git, rather than trying to problem solve.
+
+- Git is used by 42.9 percent of all software developers
+- In the UK, nearly one quarter (23.5) of developer job postings cite git. The details:
+	- 23.5% Git
+	- 16.3% Subversion
+	- 11.58% Microsoft Team Software Foundation
+	- 1.62% Mercurial (like Git, but easier to use)
+	- 1.13% Visual Source Safe
+- Git hub has about 12 million users and 31 million repositories. Tha's just github, not total git users. You can use git and not use any cloud repository, or use git and use a different cloud repository such as BitBucket.
+
+Related links which probably contain updates to total github users:
+
+- <https://github.com/about>
+- <https://github.com/explore>
+
+Of course, it is always possible that one of us will hit a bug in git. All I can say is that the odds we hit a git bug when performing basic operations with git is very, very low.
+
+Git is not perfect. No piece of software is perfect. But git is, in my opinion, one of the most reliable, tested, and proven software programs in the world.
+
 ## Git Account GitHub
 
 Use [Github](https://github.com) to host your [git](http://git-scm.com/book/en/v2) repository. You have two choices:

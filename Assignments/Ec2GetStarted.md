@@ -95,3 +95,22 @@ Choose **New | File Upload** on Google Drive.
 ## Turn it in
 
 Take a screen shot of the command prompt and submit that with your assignment.
+
+## Keep System Up to Date
+
+The update commands:
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+You should run **sudo apt-get update** and then **sudo apt-get upgrade** every few days. Afterwards, you may need to reboot your EC2 instance.
+
+Your EC2 system can be rebooted with this command:
+
+```bash
+sudo shutdown -r now.
+```
+
+This will cause your connection to EC2 to close or freeze. You will need to wait about 2 to 5 minutes, and then try to reconnect to your EC2 instance.
