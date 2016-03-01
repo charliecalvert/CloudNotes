@@ -28,9 +28,12 @@ Get the canada images zip file from my Google Drive:
 Unzip into /var/www/html/images/canada:
 
 ```bash
-cp canada.zip ~/var/www/html/images
+cp canada.zip /var/www/html/images/.
+cd /var/www/html/images
 unzip canada.zip
 ```
+
+**NOTE**: *In most cases, you will want to issue the above command from your ~/Downloads directory. The key is that you are in the same directory as **canada.zip** when you issue the command. Also be sure to unzip from **/var/www/html/images**.*
 
 ## Step Three
 
@@ -42,6 +45,10 @@ npm start
 ```
 
 Copy **images.md** to **~/Documents/AllTest/canada.md** and open **canada.md** in Remarkable. Edit as necessary.
+
+```
+cp ~/Source/ElvenImages/images.md ~/Documents/AllTest/canada.md
+```
 
 Run the **MakeHtml** program. Open **localhost/canada.html** in the browser. If you are satisfied, take a screenshot.
 
@@ -75,3 +82,41 @@ Turn in the three screen shots:
 - canada.html on local host
 - canada.html on elastic ip
 - A screen capture showing you running MakeHtml on ubuntu and showing that you processed a file called **canada.html**
+
+## Hint
+
+On EC2, after you have done your pull, this is the command to copy AllTest to ~/Documents'. Issue the command from the root of your repository:
+
+```
+cp -r AllTest ~/Documents/.
+```
+
+This will copy your new images to the images directory:
+
+```
+cp -r ApacheHelpers/images/canada/ /var/www/html/images/.
+```
+
+You already have this script, which copies files from Prisitine Lubuntu file system into the directory that holds your repository:
+
+```
+#! /bin/bash
+
+# Declare destination dir for AllTest in
+# one place so it is easy to modify
+REPO=$GIT_HOME/prog270-calvert-2016
+
+# Declare destination for CSS, JavaScript and Images
+CSS_JS_IMAGE=$REPO/ApacheHelpers
+
+# Copy AllTest
+cp -r ~/Documents/AllTest $REPO/
+
+# Ensure destination dir exists for CSS, JS and Images
+mkdir -p $CSS_JS_IMAGE
+# Copy CSS, JavaScript and Images
+cp -r /var/www/html/css $CSS_JS_IMAGE/.
+cp -r /var/www/html/images $CSS_JS_IMAGE/.
+cp -r /var/www/html/js $CSS_JS_IMAGE/.
+cp /var/www/html/clean $CSS_JS_IMAGE/.
+```
