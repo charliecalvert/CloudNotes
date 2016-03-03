@@ -45,7 +45,7 @@ jasmine
 However, it is nice to have a good reporter set up. So we should, one way or another, do the equivalent of:
 
 ```
-npm install jasmine-spec-reporter --save
+npm install jasmine-spec-reporter --save-dev
 ```
 
 Then create a file called **jasmine-runner.js** that looks like this:
