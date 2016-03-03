@@ -7,13 +7,19 @@ Do you work on master or the branch of your choice. Your code will be in **Week0
 Add a tag to your repository right now, before you begin work, where you decide on the version number, but use the semver scheme:
 
 ```
- git tag -a v1.4.1 -m "my version 1.4.1"
+ git tag -a v0.0.1 -m "Before elf npm unit test 0.0.1"
  git push origin --tags
 ```
 
 - [semver explained](https://docs.npmjs.com/getting-started/semantic-versioning#semver-for-publishers)
 
 ## Jasmine
+
+Install jasmine globally:
+
+```bash
+npm install -g jasmine
+```
 
 Run **TestReady**. This is a bit of overkill in our case, but it helps set things up properly.
 
@@ -146,7 +152,7 @@ Put elf-config in your packagen and write tests that show you can use it.
 
 ## Custom reporter
 
-If you ever get a hankering to create your own custom reporter, here is a start:
+If you ever get a hankering to create your own custom reporter, here is a start, to be saved in **customer-report.js**:
 
 ```javascript
 /**
@@ -216,7 +222,7 @@ var myReporter = {
 module.exports = myReporter;
 ```
 
-And the code to run it looks like this:
+And the code to run it looks like this. Save it in **custom-runner.js**:
 
 ```javascript
 /**
@@ -238,6 +244,102 @@ jasmineRep.execute();
 ```
 This is mostly cut and paste, so go ahead and do it, just so you will know how to create started if you ever want to create a custom reporter. Not really likely, but it could be useful at some point.
 
+## ElfLog
+
+A recent copy of elfLog for use on the server.
+
+```javascript
+/**
+ * Created by charlie on 11/30/15.
+ */
+
+function elfLog() {
+    'use strict';
+}
+
+elfLog.logLevelMinorDetails = 0;
+elfLog.logLevelDetails = 1;
+elfLog.logLevelWarn = 2;
+elfLog.logLevelError = 3;
+elfLog.logLevelInfo = 4;
+elfLog.logLevelSilent = 5;
+
+elfLog.debugLevel = undefined;
+
+elfLog.init = function() {
+    'use strict';
+    this.debugLevel = this.logLevelSilent;
+};
+
+elfLog.setLevel = function(level) {
+    'use strict';
+    this.debugLevel = level;
+};
+
+elfLog.getLevel = function(level) {
+    'use strict';
+    switch (level) {
+        case 0:
+            return 'Minor-Details';
+        case 1:
+            return 'Details';
+        case 2:
+            return 'Warning';
+        case 3:
+            return 'Error';
+        case 4:
+            return 'Information';
+        case 5:
+            return 'Silent';
+        default:
+            return 'Unknown level';
+    }
+};
+
+elfLog.setMessage = function(level, message) {
+    'use strict';
+    if (level >= this.debugLevel) {
+        if (typeof message !== 'string') {
+            message = JSON.stringify(message);
+        }
+        var output = this.getLevel(level) + ': ' + message;
+        return output;
+    }
+    return '';
+};
+
+elfLog.log = function(level, message) {
+    'use strict';
+    message = this.setMessage(level, message);
+    if (message.trim().length > 0) {
+        console.log(message);
+    }
+};
+
+elfLog.init();
+
+module.exports = elfLog;
+```
+
+Some elflog tests to write:
+
+```javascript
+    it('expects elflog to be silent with logLevelSilent and level is error', function() {
+    });
+
+    it('expects elflog warning to be silent if level is info', function() {
+    });
+
+    it('expects elflog info to be Information: Ok if level is info',     });
+    });
+
+    it('expects not to see warnings if level is logLevelError', function() {
+    });
+
+    it('expects to see errors if level is warning', function() {
+    });
+```
+
 ## Update your Package
 
 You will need to update the package:
@@ -245,6 +347,18 @@ You will need to update the package:
 ```bash
 npm version minor
 npm publish
+```
+
+## Debugging Node
+
+```
+npm install -g node-inspector
+```
+
+Use it:
+
+```
+node-debug jasmine-runner.js
 ```
 
 ## Turn it in

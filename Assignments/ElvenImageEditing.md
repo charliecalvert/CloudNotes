@@ -2,6 +2,10 @@
 
 I did some more work on the **Elven Image** Editing program. It can, if used properly, now create a script that will sort out the images you have used from those you kept.
 
+Some images to use:
+
+- [http://bit.ly/california-images](http://bit.ly/california-images)
+
 ## Step One: Install {#install}
 
 Get the latest copy of ElvenImages and set up a script that will help you "install" it. There are three steps:
@@ -105,7 +109,7 @@ The keymaps for the atom markdown writer:
   "ctrl-5":       "markdown-writer:toggle-h5"
 ```
 
-In the atom menu choose: **Edit | Preference** to open the settings page. At the top of the page choose the link to **your keymap file**. It is called **keymap.cson** and can paste the following into it and hope that it works:
+In the atom menu choose: **Edit | Preferences** to open the settings page. At the top of the key bindings page choose the link to **your keymap file**. It is called **keymap.cson** and can paste the following into it and hope that it works:
 
 ```
 ".platform-linux atom-text-editor[data-grammar~='gfm']":
@@ -130,6 +134,8 @@ In the atom menu choose: **Edit | Preference** to open the settings page. At the
   "cmd-j cmd-d": "markdown-writer:jump-between-reference-definition"
   "shift-alt-t": "markdown-writer:jump-to-next-table-cell"
 ```
+
+To have the markdown preview show up in a right hand pane, choose **Ctrl-Shift-M**.
 
 ## Step Four: Delete or Move Unused Images {#not-used}
 

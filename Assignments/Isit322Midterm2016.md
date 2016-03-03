@@ -136,8 +136,8 @@ Quick Check
 -  Npm and bower work?
 -  Elf log set to info?
 -  Single source destination works?
--  Paired source and destination works?
--  Options for picture, single source, paired source and custom?
+-  Extra Credit: Paired source and destination works?
+-  Options for picture, single source,, paired (extra credit) source and custom?
 -  Button for Edit Config?
 -  Grunt check comes back clean?
 -  Four screen shots included
