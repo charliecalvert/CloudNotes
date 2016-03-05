@@ -6,6 +6,28 @@ Some images to use:
 
 - [http://bit.ly/california-images](http://bit.ly/california-images)
 
+The images, by default, have spaces in their names. This is almost always a problem waiting to happen. To fix it, unzip the images into:
+
+```
+/var/www/html/images/california
+```
+
+Like this:
+
+```
+mkdir /var/www/html/images/california
+cp California.zip /var/www/html/images/california
+unzip California.zip
+```
+
+Navigate to the directory where the images are now stored, and run the following command:
+
+```
+find -name "* *" -type f | rename "s/ /_/g"
+```
+
+This command changes a filename like **foo bar.zip** to **foo_bar.zip**.
+
 ## Step One: Install {#install}
 
 Get the latest copy of ElvenImages and set up a script that will help you "install" it. There are three steps:
@@ -27,13 +49,13 @@ cd ~/Source
 Like MakeHtml, we have a config file. It looks something like this:
 
 ```
-"elvenImages": {
-		"baseDir": "/var/www/html",		
+	"elvenImages": {
+		"baseDir": "/var/www/html",
+		"markdownFileWithImages": "/home/charlie/Documents/AllTest/california.md",
 		"allImagesJsonFile": "all-images.json",
-    "markdownFileWithImages": "/home/bcuser/Documents/AllTest/canada02.md",
-		"imageDir": "/images/canada/",
-		"notUsedDir": "/home/bcuser/temp/not-used/"
-	},
+		"imageDir": "/images/california/",
+		"notUsedDir": "/home/charlie/temp/not-used/california"
+	}
 ```
 
 Make sure it points at **bcuser** or **ubuntu** as appropriate. (This program will probably be run most often from pristine lubuntu, so **bcuser** is the most common choice.)
@@ -57,13 +79,13 @@ Now open the **markdownFileWithImages** in a markdown edit. Delete the images yo
 I decided, at least for now, to not put the full path to the images in the **markdownFileWithImages**. Instead I used the relative path expected on our website. Here is an example full path:
 
 ```
-/var/www/html/images/canada/somefile.jpg
+/var/www/html/images/california/somefile.jpg
 ```
 
 Here is an example relative path of the type I'm now using:
 
 ```
-/images/canada/somefile.jpg
+/images/california/somefile.jpg
 ```
 
 This means that you won't see an image in the markdown editor by default. To fix this issue, create a symbolic link from the root of the system to the apache images directory:
