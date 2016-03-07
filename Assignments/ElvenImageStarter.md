@@ -44,7 +44,10 @@ cd ~/Source/ElvenImages
 npm start
 ```
 
-Copy **images.md** to **~/Documents/AllTest/canada.md** and open **canada.md** in Remarkable. Edit as necessary.
+Copy **images.md** to **~/Documents/AllTest/canada.md** and open **canada.md** in Remarkable. Edit as necessary. In particular, after you have picked the images you want to keep:
+
+- Remove all the HTML and text from **canada.html** that do not refer to your chosen images.
+- Delete all but the five to ten files you want to keep from **/var/www/html/images/canada**. (There is now a tool for doing this, explained elsewhere.)
 
 ```
 cp ~/Source/ElvenImages/images.md ~/Documents/AllTest/canada.md
@@ -56,20 +59,11 @@ Repeat this step or some variation of this step as often as necessary until you 
 
 Your goal is to create a **canada.html** file that focuses on 5 to 10 images.
 
-**NOTE**: *Unfortunately, at this stage, you will need to do a search an replace to remove all references to **/var/www/html** from your markdown. Do this in Geany, not in Remarkable. The completed links should look like this:*
+**NOTE**: *Fortunately, you no longer need to do a search an replace to remove all references to **/var/www/html** from your markdown. You can now run **node image-not-used.js** instead. Then run the **moveNotUsed.sh** file created by the previous command. The completed links should look like this:*
 
 - /images/canada/2016-02-27_11.41.35-small.jpg
 
-
-
 ## Step Four
-
-After you have picked the images you want to keep:
-
-- Remove all the HTML and text from **canada.html** that do not refer to your chosen images.
-- Delete all but the five to ten files you want to keep from **/var/www/html/images/canada**.
-
-## Step Five
 
 Copy your completed html and images to your repository.
 

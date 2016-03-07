@@ -159,9 +159,15 @@ You should, of course, use your last name and not mine.
 
 Your images must be different from these, but they should have much in common with them:
 
+The master list:
+
 ![Master][lmd01]
 
+The summary:
+
 ![Summary][lmd02]
+
+A random page:
 
 ![Typical Files][lmd03]
 

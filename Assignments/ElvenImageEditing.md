@@ -74,7 +74,7 @@ If everything is set up right, then run the program:
 npm start
 ```
 
-Now open the **markdownFileWithImages** in a markdown edit. Delete the images you don't want, add comments for the images you do want.
+Now open the **markdownFileWithImages** in a markdown editor. Delete the images you don't want, add comments for the images you do want.
 
 I decided, at least for now, to not put the full path to the images in the **markdownFileWithImages**. Instead I used the relative path expected on our website. Here is an example full path:
 

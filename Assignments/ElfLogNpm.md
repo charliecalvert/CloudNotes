@@ -38,83 +38,97 @@ Add, commit, push. Submit the assignment so I know you are done.
 
 ## Hint
 
-Here is a current copy of my ElfLog for use on the server side. It is, at the time of this writing, one iteration advanced over what I have pushed to NPM.
+Here is a current copy of my ElfLog for use on the server side. You can look for updated copies in **isit322-calvert.**.
 
 ```javascript
 /**
  * Created by charlie on 11/30/15.
  */
 
-function elfLog() {
-    'use strict';
-}
+ function elfLog() {
+     'use strict';
+ }
 
-elfLog.logLevelMinorDetails = 0;
-elfLog.logLevelDetails = 1;
-elfLog.logLevelWarn = 2;
-elfLog.logLevelError = 3;
-elfLog.logLevelInfo = 4;
-elfLog.logLevelSilent = 5;
+ elfLog.logLevelNanoDetails = 0;
+ elfLog.logLevelMinorDetails = 1;
+ elfLog.logLevelDetails = 2;
+ elfLog.logLevelWarn = 3;
+ elfLog.logLevelError = 4;
+ elfLog.logLevelInfo = 5;
+ elfLog.logLevelSilent = 6;
 
-elfLog.debugLevel = undefined;
+ elfLog.debugLevel = undefined;
 
-elfLog.init = function() {
-    'use strict';
-    this.debugLevel = this.logLevelSilent;
-};
+ elfLog.init = function() {
+     'use strict';
+     this.debugLevel = this.logLevelSilent;
+ };
 
-elfLog.setLevel = function(level) {
-    'use strict';
-    this.debugLevel = level;
-};
+ elfLog.setLevel = function(level) {
+     'use strict';
+     this.debugLevel = level;
+ };
 
-elfLog.getLevel = function(level) {
-    switch(level) {
-        case 0:
-            return 'Minor-Details';
-            break;
-        case 1:
-            return 'Details';
-            break;
-        case 2:
-            return 'Warning';
-            break;
-        case 3:
-            return 'Error';
-            break;
-        case 4:
-            return 'Information';
-            break;
-        case 5:
-            return 'Silent';
-            break;
-        default:
-            return 'Unknown level';
-    }
-};
+ elfLog.getLevel = function(level) {
+     'use strict';
+     switch (level) {
+         case 0:
+             return 'Nano-Details';
+         case 1:
+             return 'Minor-Details';
+         case 2:
+             return 'Details';
+         case 3:
+             return 'Warning';
+         case 4:
+             return 'Error';
+         case 5:
+             return 'Information';
+         case 6:
+             return 'Silent';
+         default:
+             return 'Unknown level';
+     }
 
-elfLog.setMessage = function(level, message) {
-    'use strict';
-    if (level >= this.debugLevel) {
-        if (typeof message !== 'string') {
-            message = JSON.stringify(message);
-        }
-        var output = this.getLevel(level) + ': ' + message;
-        return output;
-    }
-    return '';
-};
+ };
 
-elfLog.log = function(level, message) {
-    var message = this.setMessage(level, message);
-    if (message.trim().length > 0) {
-        console.log(message);
-    }
-};
+ elfLog.setMessage = function(level, message01, message02, message03) {
+     'use strict';
+     if (level >= this.debugLevel) {
+         if (typeof message01 !== 'string') {
+             message01 = JSON.stringify(message01);
+         }
+         var output = this.getLevel(level) + ': ' + message01;
+         if (message02) {
+             output = this.getLevel(level) + ': ' + message01 + ' ' + message02;
+             if (message03) {
+                 output = output + ' ' + message03;
+             }
+         }
+         return output;
+     }
+     return '';
+ };
 
-elfLog.init();
+ elfLog.log = function(level, message01, message02, message03) {
+     'use strict';
+     message01 = this.setMessage(level, message01, message02, message03);
+     if (message01.trim().length > 0) {
+         console.log(message01);
+     }
+ };
 
-module.exports = elfLog;
+ elfLog.minorDetails = function(message01, message02, message03) {
+     this.log(elfLog.logLevelMinorDetails, message01, message02, message03);
+ };
+
+ elfLog.details = function(message01, message02, message03) {
+     this.log(elfLog.logLevelDetails, message01, message02, message03);
+ };
+
+ elfLog.init();
+
+ module.exports = elfLog;
 ```
 
 ## Tests

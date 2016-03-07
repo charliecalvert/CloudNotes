@@ -1,29 +1,29 @@
 # Browser Accounts
 
-The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device. 
+The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device.
 
 **NOTE**: *Some of the screen shots used in this assignment are out of date due to the rapid evolution of programs on the web. Don't try to follow the screen shots too closely. Just use them as a general guide to helping you follow the spirit, if not the letter, of thise assignment.*
 
 This assignment, like the one's on using Google Drive and OneDrive, is deceptive. We think we know how to use these tools, but in truth there is more here than first meets the eye.
 
-The key take away from the assignment is this: "As we learn to use mobile devices, we have to learn to move our operation from our PC desktop to the cloud. If we log into our browsers they provide the ability to sync information across machines. This is not a minor point. It is important. For instance, if we create a bookmark on our PC at school, we want to see the same bookmark on our phone, and on our PC at home. 
+The key take away from the assignment is this: "As we learn to use mobile devices, we have to learn to move our operation from our PC desktop to the cloud. If we log into our browsers they provide the ability to sync information across machines. This is not a minor point. It is important. For instance, if we create a bookmark on our PC at school, we want to see the same bookmark on our phone, and on our PC at home.
 
 Our focus is now switching from the PC desktop to the Chrome Browser or the Firefox Browser or the Microsoft browser. The desktop is not our home, the browser is our home. But the browser won't really be our home until we learn how to log into our browser accounts on multiple machines."
 
-This is an important assignment. If we open browsers, and don't sign in, then we aren't really understanding how the world of modern computing works. Browsers are now more than just another application on the desktop. I believe they have a centrally important role to play on PC's, tablets, Phones, and other mobile devices. Furthermore, our cloud based accounts, particularly our Google, Firefox or Microsoft accounts, are more than just a nicety. They are important, and they play an important role in the experience we have inside those company's respective browsers. 
+This is an important assignment. If we open browsers, and don't sign in, then we aren't really understanding how the world of modern computing works. Browsers are now more than just another application on the desktop. I believe they have a centrally important role to play on PC's, tablets, Phones, and other mobile devices. Furthermore, our cloud based accounts, particularly our Google, Firefox or Microsoft accounts, are more than just a nicety. They are important, and they play an important role in the experience we have inside those company's respective browsers.
 
 We live in our browsers, so knowing how to use them both on the desktop and on your phone is crucial. (Confession: I learned quite a bit about Chrome and Firefox while working on this assignment.)
 
-If you don't already have one: 
+If you don't already have one:
 
-- Create a FireFox account
+- Create a Firefox account
 - Create a Chrome account.
 
-Log in and follow the instructions below about taking screenshots in multiple locations. 
+Log in and follow the instructions below about taking screenshots in multiple locations.
 
-##ScreenShots
+## ScreenShots
 
-It want three screens from each of your platforms, for a total of at least six screenshots. Include a screenshot of:
+I want three screens from each of your platforms, for a total of at least six screenshots. Include a screenshot of:
 
 On your desktop Firefox:
 
@@ -46,7 +46,7 @@ On Mobile or alternate:
 - Sync page (pix08)
 - Synced bookmarks (pix09)
 
-That's a total of 9 screenshots. Please follow the example screenshots below to get the details right.
+That's a total of 9 screen shots. Please follow the example screenshots below to get the details right.
 
 ## Platorms
 
@@ -124,11 +124,11 @@ If you want to stop syncing Chrome data and clear the data you have synced, go h
 
  -  https://www.google.com/settings/chrome/sync
 
-## Turn it in. 
+## Turn it in.
 
 Put all the screenshots in a folder in our shared Google folder. Call the folder BrowserAccounts.
 
-Remember: base your screen shots on the images I have given you here in this assignment description. I want to see your sync account on Firefox both on the desktop and the phone. I want to see the bookmarks in your browser on your phone, etc.
+Remember: base your screen shots on the images I have given you here in this assignment description. I want to see your sync account on Firefox both on the desktop and the phone. I want to see the bookmarks in your browser on your phone, etc. See the list of screenshots near the top of this file for additional information and a review of what is expected.
 
 ## Additional Thoughts
 
@@ -136,6 +136,6 @@ There are a number of ways to complete this assignment. Any screenshots that sho
 
 I assume everyone can log into both Chromium and Firefox on Pristine Lubuntu. Devices you can use to complete the assignment with full honors include: iPhone, Android phone, iPad, Android tablet, Windows Phone and Androidx86. If none of those are an option for you, then you can fall back on second tier solution such as using an Apple or Windows desktop or laptop machine.
 
-A Linux machine would also work as the second device, though it might be confusing if it were running Lubuntu. I want to be sure you are not logged in twice to the same instance of Lubuntu running in VirtualBox. If you have another Linux distro running on a laptop or desktop, that would work. 
+A Linux machine would also work as the second device, though it might be confusing if it were running Lubuntu. I want to be sure you are not logged in twice to the same instance of Lubuntu running in VirtualBox. If you have another Linux distro running on a laptop or desktop, that would work.
 
 I suppose it could also work if you can take a picture that somehow proves that you are logged into Chrome on Pristine Lubuntu at school, and Chrome on Pristine Lubuntu on your home machine. That would be a demonstration of an important scenario. If you, for instance, create bookmarks in your instance of Chrome at school, you definitely want the same bookmarks to show up when you log into Chrome at home. So somehow showing me that you are doing that would be another good way to finish the assignment.
