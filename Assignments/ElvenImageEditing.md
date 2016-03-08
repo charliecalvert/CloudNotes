@@ -167,16 +167,13 @@ Once you have edited you page, you frequently find that there are now images in 
 
 The code finds the difference between the original set of images and images left in the **markdownFileWithImages**. It saves the difference in a script called **moveNotUsed.sh**. If you run this script, it will move all the images that are not being used to **notUsedDir** specified in the config file.
 
-To create the script, run the **image-not-used.js** script:
+To create the script, run the program again with **npm start**. This time choose the menu item that says: **Find Used Images**.
 
-```bash
-node image-not-used.js
-```
 
-Now run the bash script created by the **image-not-used.js** JavaScript program.  To run it, do something like this:
+Now run the bash script created by the **Find Used Images** menu choice.  To run it, do something like this:
 
 ```
-sh moveNoteUsed.sh
+sh moveNotUsed.sh
 ```
 
 **NOTE**: _Because of space considerations, please don't leave more than ten, and perferably about 5, images in the folder you used for this assignment._
