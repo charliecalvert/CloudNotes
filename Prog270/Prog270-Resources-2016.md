@@ -26,6 +26,11 @@
 - [Ec2Provision](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html)
 - [Ec2Checklist](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Checklist.html)
 - [Ec2MarkdownToHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html)
+- [GitNewRepo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
+- [GitDualRepos](http://www.ccalvert.net/books/CloudNotes/Assignments/GitDualRepos.html)
+- [Ec2 Get Html and Pictures](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GitHtmlPictures.html)
+- [ApacheHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html)
+
 
 ## Diagrams
 

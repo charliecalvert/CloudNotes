@@ -369,3 +369,8 @@ Your code will be in **Week02-NpmPackage**. Push your repository then add a tag 
  git tag -a v1.5.0 -m "After ElfNpmUnitTest class 1.5.0"
  git push origin --tags
 ```
+
+Create at least:
+
+- Six tests for elf-log
+- Six tests for elf-utils (utils)

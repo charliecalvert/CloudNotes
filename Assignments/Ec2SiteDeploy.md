@@ -18,14 +18,14 @@ The following diagram shows the workflow on EC2:
 
 ## Links
 
-[GitNewRepo]()
-[GitDualRepo]()
-[Ec2GetStarted]()
-[Ec2Provision]()
-[Ec2Checklist]()
-[Ec2Markdown to Html]()
-[Ec2 Get Html and Pictures]()
-[ApacheHtml]()
+- [GitNewRepo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
+- [GitDualRepos](http://www.ccalvert.net/books/CloudNotes/Assignments/GitDualRepos.html)
+- [Ec2GetStarted](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html)
+- [Ec2Provision](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html)
+- [Ec2Checklist](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Checklist.html)
+- [Ec2Markdown to Html](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html)
+- [Ec2 Get Html and Pictures](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GitHtmlPictures.html)
+- [ApacheHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html)
 
 ## Turn it in
 

@@ -171,7 +171,7 @@ You can just right click and download the logo from the elvenware site, or else 
 
 ## Turn it in
 
-Besides putting them in your Apache dir on Pristine Lubuntu and EC2, you should put all your configuration files in a folder of your repository called **ApacheHelpers**. It should have the structure shown below. When you are done, push your repository.
+Besides putting them in your Apache dir on Pristine Lubuntu and EC2, you should put all your configuration files in a folder of your repository called **ApacheHelpers**. It should have the structure shown below. When you are done, push your repository and take the screenshot described below.
 
 Checklist:
 
@@ -189,12 +189,38 @@ Here is an image showing the Apache directory:
 
 ![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
 
-Your pages just won't look right unless you have the right images, css and javascript in place. This assignment is an attempt to help you get those files in place. This would be a way to prove to me that you have done it correctly. take a screen shot of the output from these commands:
+Your pages just won't look right unless you have the right images, CSS and JavaScript in place. This assignment is an attempt to help you get those files in place. This would be a way to prove to me that you have done it correctly. take a screen shot of the output from these commands:
 
 -  ls -la /var/www/html/css
 -  ls -la /var/www/html/js
 -  ls -la /var/www/html/images
 
+If you want, you can save this script as ShowApache in the root of your repository. Then run it and take a screenshot. This will satisfy the requirments outlined in the previous few lines of text.
+
+```
+#! /bin/bash
+
+ls -la /var/www/html/css
+ls -la /var/www/html/js
+ls -la /var/www/html/images
+```
+
+## Network Page
+
+You should turn frequently to the the network pages in the Chrome and Firefox developer tools. Access them with F12 or Ctrl-Shift-I. Press F5 if necessary to refresh the display.
+
+The images below show that **first-style.css**, **style.css**, **googlecode.css**, **elven-help.js** and the elvenware logo have all been loaded.
+
+### Network Page Chrome
+
+![Developer Tools Network Page Chrome][network-chrome]
+
+### Network Page Firefox
+
+![Developer Tools Network Page Firefox][network-firefox]
+
+[network-chrome]: https://s3.amazonaws.com/bucket01.elvenware.com/images/network-chrome.png
+[network-firefox]: https://s3.amazonaws.com/bucket01.elvenware.com/images/network-firefox.png
 
 ## Save CSS, JS and Images in Repo {#apache-helpers}
 
@@ -217,15 +243,29 @@ REPO=$GIT_HOME/prog270-calvert-2016
 CSS_JS_IMAGE=$REPO/ApacheHelpers
 
 # Copy AllTest
-cp -r ~/Documents/AllTest $REPO/.
+cp -ruvp ~/Documents/AllTest $REPO/
 
 # Ensure destination dir exists for CSS, JS and Images
-mkdir -p $CSS_JS_IMAGE
+if [ ! -d "$CSS_JS_IMAGE" ]; then
+	mkdir -p $CSS_JS_IMAGE
+fi
+
 # Copy CSS, JavaScript and Images
-cp -r /var/www/html/css $CSS_JS_IMAGE/.
-cp -r /var/www/html/images $CSS_JS_IMAGE/.
-cp -r /var/www/html/js $CSS_JS_IMAGE/.
-cp /var/www/html/clean $CSS_JS_IMAGE/.
+cp -ruvp /var/www/html/css $CSS_JS_IMAGE/.
+cp -ruvp /var/www/html/images $CSS_JS_IMAGE/.
+cp -ruvp /var/www/html/js $CSS_JS_IMAGE/.
+cp -uvp /var/www/html/clean $CSS_JS_IMAGE/.
+```
+
+And here is copy from repository to AllTest and **/var/www/html**:
+
+```
+#! /bin/bash
+
+cp -ruvp AllTest/ ~/Documents/.
+cp -ruvp ApacheHelpers/images /var/www/html/.
+cp -ruvp ApacheHelpers/css /var/www/html/.
+cp -ruvp ApacheHelpers/js /var/www/html/.
 ```
 
 ## Clean

@@ -12,6 +12,8 @@ In particular:
 
 ![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
 
+## Screenshots
+
 Include three screen shots
 
 - Your Home Page running on Local Host.
