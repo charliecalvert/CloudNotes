@@ -86,6 +86,17 @@ For instance, if you choose **cosmos**, then it puts this line in the HEAD:
 <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css', rel='stylesheet'>
 ```
 
+## CSS
+
+Put this in **/var/www/html/css/style.css**:
+
+```css
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+```
+
 ## Styling
 
 There are now various styled HTML elements that we can add to our pages. In most cases, it is simplest just to insert HTML directly into your markdown when creating these elements.
@@ -109,19 +120,71 @@ When you see **alert-success** or **btn-default** try these options:
 - alert-warning
 - alert-danger
 
+## Carousel
+
+```html
+<div class="page-header">
+  <h1>Carousel</h1>
+</div>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide">
+    </div>
+    <div class="item">
+      <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide">
+    </div>
+    <div class="item">
+      <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide">
+    </div>
+  </div>
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+```
+
 ## Turn it in
 
 Create examples of the following, showing examples of the **default**, **primary**, **success**, etc styles when possible.
 
-- 6 buttons (style)
-- 6 alerts (style)
-- 6 labels (style)
-- List panels (style)
+- 6 buttons (style with default, primary, info etc)
+- 4 alerts (style with info, warning, danger, success etc)
+- 6 labels (style with default, primary, info etc)
+- List panels (style  with default, primary, info etc)
 - List group with 3 items
-- Carousel
+- Carousel (with images from california or canada or your choice of images)
 
 More information is found:
 
 - <http://getbootstrap.com/components/>
+- <http://getbootstrap.com/css/>
 - <http://getbootstrap.com/getting-started/>
 - <http://getbootstrap.com/examples/theme/>
+
+Give me a link to the page running EC2.
+
+## Hint Moving to EC2
+
+See the [ApacheHtml][ap-html] Assignment and the ApacheHelp section called Sava CSS etc.
+
+Also, if you get an error working on EC2 about lwip, try this:
+
+```
+sudo apt-get install build-essential
+```
+
+Just give it the okay to install what it wants to install.
+
+[ap-html]: http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html#apache-helpers

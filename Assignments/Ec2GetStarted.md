@@ -114,3 +114,46 @@ sudo shutdown -r now.
 ```
 
 This will cause your connection to EC2 to close or freeze. You will need to wait about 2 to 5 minutes, and then try to reconnect to your EC2 instance.
+
+This is looking ahead, but these references are useful:
+
+- <www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html>
+- <http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html>
+
+## Details
+
+```
+1  exit
+2  sudo apt-get update
+3  sudo apt-get upgrade
+4  exit
+5  cd .ssh/
+6  ls -la
+7  cd
+8  mkdir Git
+9  cd Git/
+10  ls
+11  sudo apt-get install git
+12  git clone http://github.com/charliecalvert/JsObjects.git
+13  cd JsObjects/Utilities/NodeInstall/
+14  ls
+15  ./NodeInstall.sh
+16  ls
+17  cd ..
+18  ls
+19  find . -iname Bash*
+20  cat SetupLinuxBox/BashrcExtras
+21  nano ~/.bashrc
+22  source ~/.bashrc
+23  sudo apt-get install ssh
+24  exit
+25  cd .ssh/
+26  ls
+27  ln -s bc-2016-01 main-key
+28  ls
+29  cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.
+30  source ~/.bash_aliases
+31  sshadd
+34  sudo apt-get install tasksel
+35  sudo tasksel install lamp-server
+```
