@@ -66,6 +66,8 @@ As a general rul, you can leave the **baseDir** and **allImagesJsonFile** alone.
 - **imageDir**: This is the folder that contains the images you want use in your page. Typically, you move the images from your camera to this folder. Right now, I'm thinking the **imageDir** will always be a subdirectory of **baseDir**. If this proves awkward, we can change it, but for now I'm thinking this is the right choice.
 - **noteUsedDir** will be discussed later.
 
+**NOTE**: _Be sure you understand what I mean by the markdownFileWithImages. I'll use that term throughout this assignment. I'm referring to the copy of **california.md** in your **AllTest** directory._
+
 ## Step Three: Run {#run}
 
 If everything is set up right, then run the program:
@@ -182,9 +184,9 @@ sh moveNotUsed.sh
 
 Run **MakeHtml** and test your page on the Pristine Lubuntu Apache Server.
 
-Now move the images you kept and the **markdownFileWithImages** that you created into your repository. Push.
+Now move the images you kept and the **markdownFileWithImages** that you created into your repository. In particular, copy **california.md** from **~/Documents/AllTest** to the **AllTest** folder in your repository. Then copy the images in **/var/www/html/images/california** into the appropriate directory in your **ApachaHelpers** folder.
 
-SSH to Ec2. Pull your repository. Copy your images to your **/var/www/images/XXX** directory. Run **MakeHtml** and view your converted **markdownFileWithIimages** HTML file via your elastic IP.
+SSH to Ec2. Pull your repository. Copy your images from **ApacheHelpers/california** to your **/var/www/images/california** directory. Copy your latest markdown, including **california.md** to your **~/Documents/AllTest** folder. Run **MakeHtml** and view your converted **markdownFileWithIimages** HTML file via your elastic IP. In other words, show me **calfifornia.html** running on EC2.
 
 ## Turn it in
 

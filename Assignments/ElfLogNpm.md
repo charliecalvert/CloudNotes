@@ -9,6 +9,12 @@ I am currently keeping a copy of Elf Log in Isit322-calvert.
 var elfLog = require('isit322-calvert').elfLog;
 ```
 
+But I want you to set up your own log, where you use your last name:
+
+```javascript
+var elfLog = require('isit322-lastname').elfLog;
+```
+
 By default, the log is completely silent. So start by setting it to run at some level:
 
 ```
@@ -38,7 +44,7 @@ Add, commit, push. Submit the assignment so I know you are done.
 
 ## Hint
 
-Here is a current copy of my ElfLog for use on the server side. You can look for updated copies in **isit322-calvert.**.
+Here is a current copy of my ElfLog for use on the server side. You can look for updated copies in **isit322-calvert.**. _But of course I want you to use your own package, not mine._
 
 ```javascript
 /**
@@ -133,7 +139,7 @@ Here is a current copy of my ElfLog for use on the server side. You can look for
 
 ## Tests
 
-These unit tests should help you see how to use it.
+These unit tests that you can place in your package should help you see how to use it.
 
 ```javascript
 var getNine = require('../index.js').getNine;

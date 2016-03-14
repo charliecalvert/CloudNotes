@@ -225,7 +225,7 @@ module.exports = function (passport) {
 };
 ```
 
-##Turn it in
+## Turn it in
 
 Submit four screen shots as PNG attachments. Model your screen shots after the four images found in this assignment. Instead of the logged in image, take one of the bash shell showing serializing and deserializing of the user. (Just convince me you got it to work....)
 

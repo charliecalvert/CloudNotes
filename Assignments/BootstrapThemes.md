@@ -105,6 +105,23 @@ For instance, if you choose **cosmos**, then it puts this line in the HEAD:
 <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css', rel='stylesheet'>
 ```
 
+Sun Mi Kim came up with this list:
+
+1. cerulean - dark blue with white background
+2. cosmos - blue with white background
+3. cyborg - black or dark background
+4. darkly - green navigation and dark background
+5. flatly - green navigation
+6. journal - dark orange & bigger text style
+7. lumen - white (no color difference in panel)
+8. sandstone - green navigation
+9. slate - dark gray navigation
+10. spacelab - white navigation
+11. superhero - blue navigation & small text style
+12. united - purple navigation with white background
+13. yeti - blue navigation with white background
+
+
 ## CSS
 
 Put this in **/var/www/html/css/style.css**:
@@ -171,8 +188,21 @@ When you see **alert-success** or **btn-default** try these options:
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 ```
+
+When we embed HTML in markdown, then we are writing inline HTML. There are specific rules for writing inline HTML. The HTML we want to render should start flush left.  In particular, we cannot indent the beginning or end of a block of HTML. That's clear enough.
+
+The rub comes if we put empty lines in the HTML we want to display. A markdown parser will treat each block of text as a new syntactical element, as a new block. If that block of text is indented, then all is lost. So the fix is to either not indent any blocks, or to eliminate empty lines. In the code above, I opted for the latter solution, but I tested the former, and it also worked.
+
+**NOTE**: _Each markdown parser has its own qwirks, so we may also encounter something in the specific behavior of the tool we are using to translate markdown to HTML. Such is life._
+
+When the markdown parser hits an empty line, it thinks it has come to the end of the inline HTML. Then another rule kicks in. Markdown treats indented text as PRE code, as pre=formated text. So it starts trying to render the HTML as text, rather than leaving it as HTML to be viewed in a browser. You can see the rendered HTML text at the end of your screenshot. The primary problem, of course, is not that the text is visible, but that it is not being treated as HTML code.
+
+Here is a more technical explanation of the rules for writing inline HTML:
+
+- <https://daringfireball.net/projects/markdown/syntax#html>
+
+In particular, the line that is relevant here is this one: "and the start and end tags of the block should not be indented with tabs or spaces." By removing empty lines, I'm limiting the start and end tags for our blocks to the beginning and end of the entire chunk (block) of in-line HTML. If we leave the spaces in, then some of the blocks start with indents, and then chaos results.
 
 ## Turn it in
 
@@ -207,3 +237,15 @@ sudo apt-get install build-essential
 Just give it the okay to install what it wants to install.
 
 [ap-html]: http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html#apache-helpers
+
+## Hint on Inspect
+
+One fun thing you can do with list groups is shown on this page:
+
+http://getbootstrap.com/examples/theme/ (Links to an external site.)
+
+Go to this page:
+
+- <http://getbootstrap.com/examples/theme/>
+
+Scroll down to the list groups, then right click on an example that interests you. Choose **Inspect Element** (Firefox) or Inspect (Chrome). The developer tools will open and the code for the element you clicked on will be displayed. To get the code for creating the element, choose **Edit as Html** or **Copy Outer Html**. Then you can see exactly how to create some interesting list groups.

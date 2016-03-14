@@ -108,6 +108,47 @@ function readFile() {
 
 // Code for handling other buttons and getNine and getPackageDescription is omitted.
 
-// I then went even further and wrapped all this in the modular pathern. 
+// I then went even further and wrapped all this in the modular pattern. 
 
+```
+
+An alternate solution:
+
+```javascript
+function padNumber(numberToPad, width, padValue) {
+    'use strict';
+    padValue = padValue || '0';
+    numberToPad = numberToPad.toString();
+    if (numberToPad.length >= width) {
+        return numberToPad;
+    } else {
+        return new Array(width - numberToPad.length + 1).join(padValue) + numberToPad;
+    }
+}
+
+function writeFile(fileName, contents, callback) {
+    'use strict';
+    fs.writeFile(fileName, contents, function(err) {
+        callback({
+            result: 'success'
+        });
+    });
+}
+
+function readFile(fileName, callback) {
+    'use strict';
+    fs.readFile(fileName, 'utf8', function(err, fileContents) {
+        if (err) {
+            throw (err);
+        }
+        callback({
+            'result': fileContents
+        });
+    });
+}
+
+
+module.exports.padNumber = padNumber;
+exports.writeFile = writeFile;
+exports.readFile = readFile;
 ```

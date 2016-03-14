@@ -144,6 +144,17 @@ This update fixes the bug reported in the discussion area, and adds a new proper
 
 ![Elven Site Config](https://s3.amazonaws.com/bucket01.elvenware.com/images/elven-site-config-01.png)
 
+Some code for creating links:
+
+```javascript
+function showHtmlFiles(files, destinationDir) {
+    $('#displayList').empty();
+    files.forEach(function(file) {
+        var url = 'http://localhost/' + file.slice(destinationDir.length, file.length);
+        $('#displayList').append('<li><a href="' + url + '" target="_blank">' + url + '</a></li>' );
+    })
+}
+```
 
 
 ## Step Three: Load Config {#load-config}

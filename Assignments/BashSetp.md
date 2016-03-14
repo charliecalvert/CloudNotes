@@ -42,6 +42,18 @@ You will only have to run the command one time.
 
 When you are done, the prompt in your bash shell (terminal) should now be in color, and show the system and path on line, and the $ symbol on a second line. By starting the prompt near the left of the screen, you can avoid the situation where your commands start to wrap around to a new line when you are typing long lines of text.
 
+If you want to see the branch of your repository when you are in a repository, try this:
+
+```bash
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)\n\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n$ '
+fi
+```
+
+The key change is to add **$(__git_ps1)**.
+
 ## Bash Extras
 
 Especially if you are in one of my programming courses, compare the code at the end of your **~/.bashrc** file with the output from this command:
