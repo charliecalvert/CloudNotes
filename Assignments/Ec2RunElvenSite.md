@@ -9,6 +9,12 @@ For help moving your Apache based CSS, JavaScript and images back and forth betw
 - [ApacheHtml][ahtml]
 - [ApacheHelper Scripts Section][ahah]
 
+You probably need to do this before you do much else:
+
+```
+sudo apt-get install build-essential
+```
+
 ## Include Bootswatch
 
 Please complete the simple [Elven Site Styles][ess] assignment before turning in this assignment. When using your _Elven Site_ web site creator on EC2 I want to be able to select the bootswatch theme for the created site.

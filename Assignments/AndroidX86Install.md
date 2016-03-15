@@ -2,10 +2,10 @@
 
 Install AndroidX86 into VirtualBox. Most students will perform this task in Windows, then use VirtualBox to run AndroidX86 on your Windows desktop.
 
-## Download 
+## Download
 Download Pristine Android from the link below. This is an OVA file. I also provide a link to an ISO if you want to play with that for a bit, but I recommend the OVA.
 
-- [Pristine Android 4.4][pa]
+- [Pristine Android 4.4 OVA File][pa]
 - [Android ISO 4.4][ai]
 
 [pa]:https://drive.google.com/file/d/0B25UTAlOfPRGVC1BSGpIc25LT3c/view?usp=sharing
@@ -39,7 +39,7 @@ At some point, the screen might time out and go completely black. To fix that, c
 
 ## Turn it in
 
-Provide screen shots of: 
+Provide screen shots of:
 
 - Android home screen running on your desktop.
 - Android App View
@@ -51,4 +51,3 @@ Provide screen shots of:
 As always, choose **Settings | System | Acceleration** and confirm that **VT-x | AMD-V** is selected. You can confirm this at run time by selecting **Machine | System Info**. If you don't have virtualization help from the processor then your VM will either be very slow, or not work at all.
 
 ![vtx](https://s3.amazonaws.com/bucket01.elvenware.com/images/VirtualBoxVtxInfoAndroid.png)
-

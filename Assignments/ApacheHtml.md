@@ -230,7 +230,7 @@ Put this script in the root folder of your repository. Run it to back back up yo
 a few changes for instance, your lastname, not mine, and possibly
 the name of the class: prog270 or isit322.
 
-Call it something like: **CopyAllTestAndApacheToRepository**. And then **chmod +x CopyAllTestAndApacheToRepository**.
+Call it something like: **CopyAllTestAndApacheToRepository**. And then **chmod +x CopyAllTestAndApacheToRepository**. Be sure to change **prog270-calvert-2016** to use your last name!
 
 ```
 #! /bin/bash

@@ -40,6 +40,12 @@ If you get the first response, then do this:
 service apache2 restart
 ```
 
+On EC2, I needed to use sudo:
+
+```
+sudo service apache2 restart
+```
+
 Once CGI is enabled, then it should stay enabled. You normally don't need to repeat this operation.
 
 Install pip3 and pymysql. We will want these to access MySQL from a Python script:
@@ -52,7 +58,7 @@ sudo pip3 install pymysql
 And this might be useful later:
 
 ```
-python3 -m pip install pymongo
+sudo python3 -m pip install pymongo
 ```
 
 Again, you need only pip and pymsql once. Once they are installed, they should stay installed.
