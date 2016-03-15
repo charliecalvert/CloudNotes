@@ -257,7 +257,7 @@ cp -ruvp /var/www/html/js $CSS_JS_IMAGE/.
 cp -uvp /var/www/html/clean $CSS_JS_IMAGE/.
 ```
 
-And here is copy from repository to AllTest and **/var/www/html**:
+And here is a script that will copy files from your repository to **~/Documents/AllTest** and **/var/www/html**. Call it CopyFromRepoToAllTestAndApache:
 
 ```
 #! /bin/bash
