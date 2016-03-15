@@ -21,6 +21,8 @@ app.use('/', routes);
 app.use('/users', users);
 ```
 
+Notice that the last two lines in the code shown above provide context as to where place this code. At the time of this writing, it might be around line 25.
+
 Add some more middleware in **routes/index.js**:
 
 ```

@@ -63,7 +63,14 @@ Back on the client, remember that jQuery has a **val** method (not **html**) for
 
 Be sure you can pass in a string specifying the **directoryToWalk** and that you routine uses it rather than the default string I provide in the code above.
 
+Help on **input** controls for Jade:
+
+- <http://naltatis.github.io/jade-syntax-docs/#attributes>
+- [Elvenware Input Controls][elfinput]
+
 ![Walking](https://s3.amazonaws.com/bucket01.elvenware.com/images/elven-site-starter-01.png)
+
+[elfinput]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#input-controls
 
 ## Step Four
 

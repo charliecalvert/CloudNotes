@@ -197,7 +197,7 @@ After this alias is processed, you can just type **jo** to navigate to the **/ho
 
 Create an alias called **i3** that takes you to your git home, which in our case is your **~/Git/isit320-lastname-2015** folder. The alias should look something like this:
 
-```bash
+```
 alias i3="cd $GIT_HOME/isit320-lastname-2015
 ```
 
@@ -214,7 +214,7 @@ i3
 
 Take a screen shot of the result and call it **aliases.png**.
 
-**NOTE**: *Becoming comfortable using and creating aliases can be a big boon for developers. There are a lot of things you can do with them. If you understand aliases and scripting, you can make Linux an enormously powerful development environment.
+**NOTE**: *Becoming comfortable using and creating aliases can be a big boon for developers. There are a lot of things you can do with them. If you understand aliases and scripting, you can make Linux an enormously powerful development environment.*
 
 It might be best to complete the above before doing this, but you can create color prompts if you want. Paste the following into the bash shell to see a prompt that goes way over the top:
 
@@ -239,6 +239,18 @@ The color prompt is all one line. It should not wrap.
 If the color prompt is too much, then you can revert to a black and white prompt by commenting out the **force_color_prompt=yes** line with the # symbol.
 
 [ps1]:http://linuxconfig.org/bash-prompt-basics
+
+If you want to see the branch of your repository when you are in a repository, try this:
+
+```bash
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)\n\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n$ '
+fi
+```
+
+The key change is to add **$(__git_ps1)**.
 
 ## Turn it in
 

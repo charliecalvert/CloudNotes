@@ -33,7 +33,7 @@ cd /var/www/html/images
 unzip canada.zip
 ```
 
-**NOTE**: *In most cases, you will want to issue the above command from your ~/Downloads directory. The key is that you are in the same directory as **canada.zip** when you issue the command. Also be sure to unzip from **/var/www/html/images**.*
+When you are done, the images should be in **/var/www/html/images/canada/**
 
 ## Step Three
 
@@ -104,13 +104,28 @@ REPO=$GIT_HOME/prog270-calvert-2016
 CSS_JS_IMAGE=$REPO/ApacheHelpers
 
 # Copy AllTest
-cp -r ~/Documents/AllTest $REPO/
+cp -ruvp ~/Documents/AllTest $REPO/
 
 # Ensure destination dir exists for CSS, JS and Images
-mkdir -p $CSS_JS_IMAGE
+if [ ! -d "$CSS_JS_IMAGE" ]; then
+	mkdir -p $CSS_JS_IMAGE
+fi
+
 # Copy CSS, JavaScript and Images
-cp -r /var/www/html/css $CSS_JS_IMAGE/.
-cp -r /var/www/html/images $CSS_JS_IMAGE/.
-cp -r /var/www/html/js $CSS_JS_IMAGE/.
-cp /var/www/html/clean $CSS_JS_IMAGE/.
+cp -ruvp /var/www/html/css $CSS_JS_IMAGE/.
+cp -ruvp /var/www/html/images $CSS_JS_IMAGE/.
+cp -ruvp /var/www/html/js $CSS_JS_IMAGE/.
+cp -uvp /var/www/html/clean $CSS_JS_IMAGE/.
+```
+
+And this for copying them back out, where you must issue the command from the root of your repository:
+
+```
+$ cat CopyRepoToDocumentsAllTest
+#! /bin/bash
+
+cp -ruvp AllTest/ ~/Documents/.
+cp -ruvp ApacheHelpers/images /var/www/html/.
+cp -ruvp ApacheHelpers/css /var/www/html/.
+cp -ruvp ApacheHelpers/js /var/www/html/.
 ```

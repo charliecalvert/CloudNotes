@@ -6,8 +6,8 @@ The basic goal of the midterm is for each student to:
 
 - Pick a theme for a web site
 - Develop at least seven completed web pages five of which contain pictures.
-- To create the web site using our MakeHtml program. The pages of the site should therefore be based on markdown files.
-- To display the web site on AWS and ensuring that it is accessible through an Elastic IP
+- Create the web site using our MakeHtml program. The pages of the site should therefore be based on markdown files.
+- Display the web site on AWS and ensuring that it is accessible through an Elastic IP
 - View the site on an emulated phone and if possible on a real phone. Make at least minimal corrections to ensure it looks good.
 
 Here is a step by step outline of what needs to be done to move your WebSite from Pristine Lubuntu to EC2. The process seems a bit complex at first, but the steps can be mastered if you approach them one at time. Here they are in English, as a counterpoint to your good command list:

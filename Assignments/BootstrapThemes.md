@@ -1,6 +1,16 @@
 ## Overview
 
-In this exercise you will learn how to add new themes to your bootstrap pages.
+In this exercise you will learn how to add new themes to your bootstrap pages. In particular we will:
+
+- Apply various themes to change the look and feel of the pages we create when we run **MakeHtml**
+- Learn about various HTML snippets that we can place in our markdown files in order to create flashy components. The components themselves might be unique to bootstrap, or just be oridinary HTML elements such as a button. The key point is that the often complex CSS in bootstrap can turn even ordinary HTML elements into what many users find to be _bright shining objects_. This is your chance to make your pages shine, to give them a modern, fancy look. Or at any rate, I and many other users find these controls attractive. If you don't like the bootstrap look and feel, there are other, similar libraries out there:
+
+- <http://responsive.vermilion.com/compare.php>
+- [CodeMentor bootrap vs foundation][bsvsf]
+
+**NOTE**: _When moving to Ec2, if you get unexpected errors, see the hint found near the end of this assignments._
+
+[bsvsf]: https://www.codementor.io/css/tutorial/bootstrap-3-vs-foundation-5-front-end-framework-comparison
 
 ## Custom CSS
 
@@ -15,13 +25,22 @@ Frankly, only a very few people have both:
 
 It is possible to get to the point where you can do that kind of thing, but it is difficult, or at least not easy. For most developers, using a tool like bootstrap is the best solution.
 
+## Hint
+
+Here is an overview of what you will do in this assignment:
+
+1. Run renewMakeHtml one time. This ensures that MakeHtml is at the latest version.
+2. Change and play with the bootswatch property in the config file. Do this as often as you want.
+3. Create markdown files that use bootstrap related components. Change the the boostwatch theme to see how the bootstrap components look under different themes.
 
 ## Get Started
 
 Two steps:
 
 - Pull the latest from JsObjects.
-- Go to your **~/Source** directory and run **renewMakeHtml**
+- Go to your **~/Source** directory and run **renewMakeHtml** one time. This will ensure you have the latest version of **MakeHtml.** There are recent changes, so you want to be sure you have the latest version. After you get the latest version, there is no need to run **renewMakeHtml** again until I update the source code for **MakeHtml**. It is usually days, and potentially weeks, months, or even years between releases. So it is unlikely that you would need to run **renewMakeHtml** twice on the same day unless we are sitting down together and working interactively.
+
+Now you are ready to begin trying the new theme feature in the program. You are also ready to create markdown pages that take advantage of features found in these themes. All this is explained below.
 
 ## Configure
 
@@ -86,6 +105,23 @@ For instance, if you choose **cosmos**, then it puts this line in the HEAD:
 <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css', rel='stylesheet'>
 ```
 
+Sun Mi Kim came up with this list:
+
+1. cerulean - dark blue with white background
+2. cosmos - blue with white background
+3. cyborg - black or dark background
+4. darkly - green navigation and dark background
+5. flatly - green navigation
+6. journal - dark orange & bigger text style
+7. lumen - white (no color difference in panel)
+8. sandstone - green navigation
+9. slate - dark gray navigation
+10. spacelab - white navigation
+11. superhero - blue navigation & small text style
+12. united - purple navigation with white background
+13. yeti - blue navigation with white background
+
+
 ## CSS
 
 Put this in **/var/www/html/css/style.css**:
@@ -99,7 +135,7 @@ body {
 
 ## Styling
 
-There are now various styled HTML elements that we can add to our pages. In most cases, it is simplest just to insert HTML directly into your markdown when creating these elements.
+There are now various styled HTML elements that we can add to our pages. In this assignment, we will be inserting HTML directly into our markdown pages. This will allow us to create various HTML elements with a special look and feel associated with bootstrap, and which many users find appealing.
 
 ```html
   <button type="button" class="btn btn-lg btn-default">Default</button>
@@ -109,7 +145,7 @@ There are now various styled HTML elements that we can add to our pages. In most
   <span class="label label-default">Default</span>
 ```
 
-And so on.
+And so on. Just insert this code directly into your markdown pages.
 
 When you see **alert-success** or **btn-default** try these options:
 
@@ -152,8 +188,21 @@ When you see **alert-success** or **btn-default** try these options:
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 ```
+
+When we embed HTML in markdown, then we are writing inline HTML. There are specific rules for writing inline HTML. The HTML we want to render should start flush left.  In particular, we cannot indent the beginning or end of a block of HTML. That's clear enough.
+
+The rub comes if we put empty lines in the HTML we want to display. A markdown parser will treat each block of text as a new syntactical element, as a new block. If that block of text is indented, then all is lost. So the fix is to either not indent any blocks, or to eliminate empty lines. In the code above, I opted for the latter solution, but I tested the former, and it also worked.
+
+**NOTE**: _Each markdown parser has its own qwirks, so we may also encounter something in the specific behavior of the tool we are using to translate markdown to HTML. Such is life._
+
+When the markdown parser hits an empty line, it thinks it has come to the end of the inline HTML. Then another rule kicks in. Markdown treats indented text as PRE code, as pre=formated text. So it starts trying to render the HTML as text, rather than leaving it as HTML to be viewed in a browser. You can see the rendered HTML text at the end of your screenshot. The primary problem, of course, is not that the text is visible, but that it is not being treated as HTML code.
+
+Here is a more technical explanation of the rules for writing inline HTML:
+
+- <https://daringfireball.net/projects/markdown/syntax#html>
+
+In particular, the line that is relevant here is this one: "and the start and end tags of the block should not be indented with tabs or spaces." By removing empty lines, I'm limiting the start and end tags for our blocks to the beginning and end of the entire chunk (block) of in-line HTML. If we leave the spaces in, then some of the blocks start with indents, and then chaos results.
 
 ## Turn it in
 
@@ -163,7 +212,7 @@ Create examples of the following, showing examples of the **default**, **primary
 - 4 alerts (style with info, warning, danger, success etc)
 - 6 labels (style with default, primary, info etc)
 - List panels (style  with default, primary, info etc)
-- List group with 3 items
+- List group with three items. I think at least some verison of this can be styled with four variations: (success, warning, info, danger.)
 - Carousel (with images from california or canada or your choice of images)
 
 More information is found:
@@ -188,3 +237,15 @@ sudo apt-get install build-essential
 Just give it the okay to install what it wants to install.
 
 [ap-html]: http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html#apache-helpers
+
+## Hint on Inspect
+
+One fun thing you can do with list groups is shown on this page:
+
+http://getbootstrap.com/examples/theme/ (Links to an external site.)
+
+Go to this page:
+
+- <http://getbootstrap.com/examples/theme/>
+
+Scroll down to the list groups, then right click on an example that interests you. Choose **Inspect Element** (Firefox) or Inspect (Chrome). The developer tools will open and the code for the element you clicked on will be displayed. To get the code for creating the element, choose **Edit as Html** or **Copy Outer Html**. Then you can see exactly how to create some interesting list groups.
