@@ -158,6 +158,8 @@ When you see **alert-success** or **btn-default** try these options:
 
 ## Carousel
 
+The carousel lets you see a rotating array of images. The key is setting up the **carousel-inner** section with the proper **src** for the **img** control.
+
 ```html
 <div class="page-header">
   <h1>Carousel</h1>
@@ -170,13 +172,13 @@ When you see **alert-success** or **btn-default** try these options:
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide">
+      <img src="/images/canada/2016-02-27_10.09.03.jpg" alt="First slide">
     </div>
     <div class="item">
-      <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide">
+      <img src="/images/canada/2016-02-27_10.30.58.jpg" alt="Second slide">
     </div>
     <div class="item">
-      <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide">
+      <img src="/images/canada/2016-02-27_09.08.04.jpg" alt="Third slide">
     </div>
   </div>
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

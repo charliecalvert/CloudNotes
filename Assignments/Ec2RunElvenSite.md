@@ -15,6 +15,16 @@ You probably need to do this before you do much else:
 sudo apt-get install build-essential
 ```
 
+In **package.json**, we should now include **phantomjs-prebuilt** instead of **phantomjs**. Read more:
+
+- [here][phjs00]
+- [here][phjs01]
+- [here][phjs02]
+
+[phjs00]: https://www.npmjs.com/package/phantomjs-prebuilt
+[phjs01]: https://github.com/gruntjs/grunt-lib-phantomjs/issues/97
+[phjs02]: https://github.com/Medium/phantomjs/issues/447
+
 ## Include Bootswatch
 
 Please complete the simple [Elven Site Styles][ess] assignment before turning in this assignment. When using your _Elven Site_ web site creator on EC2 I want to be able to select the bootswatch theme for the created site.

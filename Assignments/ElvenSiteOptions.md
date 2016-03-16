@@ -108,9 +108,12 @@ On the server side, capture both properties sent from the client. Send them on t
 
 ```javascript
 router.get('/walk', function(request, response) {
+  'use strict';
   console.log('In walk', request.query);
   var directoryToWalk = request.query.directoryToWalk;
   var destinationDir = request.query.destinationDir;
+  var highlight = request.query.highlight || 'true';
+  var bootswatchTheme = request.query.theme || 'darkly';
 
   fs.access(directoryToWalk, fs.F_OK | fs.R_OK, function(err) {
     if (err) {
@@ -126,11 +129,12 @@ router.get('/walk', function(request, response) {
           directoryToWalk: directoryToWalk,
           destinationDir: destinationDir,
           directories: directories,
-          highlight: true,
-          testRun: false
+          highlight: highlight === 'true' ? true : false,
+          testRun: false,
+          bootswatch: bootswatchTheme
         };
         try {
-          walker.makePage(settings, function (masterListOfNames, htmlFilesWritten) {
+          walker.makePage(settings, function(masterListOfNames, htmlFilesWritten) {
             response.send({
               result: 'success',
               destinationDir: destinationDir,

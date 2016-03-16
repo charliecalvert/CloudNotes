@@ -131,3 +131,27 @@ Make sure you get the stylesheets, where you will need to edit the second line:
 mkdir www/stylesheets
 cp ../Week10-ElvenImagePicker/public/stylesheets/style.css www/stylesheets/.
 ```
+
+## Load Html
+
+Make your pages:
+
+```
+jade index.jade
+jade make-html.jade
+```
+
+Then copy the html to your www folder. Load it:
+
+```
+$('#pageLoad').load('./pix-picker.html', function(response, status, xhr) {
+    if ( status == "error" ) {
+        var msg = "Sorry but there was an error: ";
+        $( "#debug" ).html( msg + xhr.status + " " + xhr.statusText );
+    } else {
+      DO WHAT YOU NEED TO DO HERE
+    }
+});
+```   
+
+I don't think it matters whether you write **./pix-picker.html** or **pix-picker.html**.     
