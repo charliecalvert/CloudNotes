@@ -5,7 +5,7 @@ There are two ways to start projects on Ubuntu based distros:
 - upstart
 - systemd
 
-If you are using ubuntu 15.10, use either **systemd** or **upstart**. If you are using 16.04 or above, you should use **systemd**. If you are using 15.04 or earlier, then you should use **upstart**.
+If you are using ubuntu 15.10 or later, use **systemd**. That means, if you are using 16.04, you should use **systemd**. If you are using 15.04 or earlier, then you should use **upstart**.
 
 Use the following command to get your ubuntu version number
 
@@ -78,7 +78,7 @@ end script
 Create a link our project, or whatever project you want to use for your final:
 
 ```bash
-$ ln -s ~/Git/isit320-calvert-2015/Week10-ElvenImagePicker/ ~/bin/elven-site
+$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/elven-site
 ```
 
 Our upstart script is called **NodeRoutesParams**. If you look inside it, you will see that
@@ -93,6 +93,8 @@ you keep **NodeRoutesParams** on your system, our script can find it.
 Copy the **NodeRoutesParams** file to the **/etc/init** directory:
 
     sudo cp elven-site.conf /etc/init/.
+    sudo mkdir /root/.config
+    sudo cp ~/.config/ElvenConfig.json /root/.config/.
 
 Start the program
 
@@ -104,7 +106,15 @@ Stop the program
 
 If you reboot the system, your program will start automatically.
 
-Error messages and and other output are in: /var/log/node.log
+Error messages and and other output are in: **/var/log/node.log**. That means you can see the debug output with this command:
+
+```
+cat /var/log/node.log
+```
+
+That is the case because of this bit from our conf file: **>> /var/log/node.log 2>&1**
+
+
 
 Browse to your instance:
 

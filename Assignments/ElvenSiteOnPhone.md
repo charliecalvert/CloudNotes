@@ -29,10 +29,9 @@ adb connect 168.156.46.231
 
 Now find and install your apk file:
 
-```
-find . -iname *.apk
-adb install /platforms/android/build/outputs/apk/android-debug.apk
-```
+  find . -iname *.apk
+  adb install /platforms/android/build/outputs/apk/android-debug.apk
+
 
 Now install it:
 
@@ -47,6 +46,11 @@ If you want, copy an install script like this:
 cp ~/Git/JsObjects/Cordova/ElvenGeo/install .
 ```
 
+If you can't install **lwip** then install **build-essential**:
+
+```
+sudo apt-get install build-essential
+```
 
 ## Copy Working Code
 
@@ -154,4 +158,38 @@ $('#pageLoad').load('./pix-picker.html', function(response, status, xhr) {
 });
 ```   
 
-I don't think it matters whether you write **./pix-picker.html** or **pix-picker.html**.     
+I don't think it matters whether you write **./pix-picker.html** or **pix-picker.html**.
+
+## Get Server Url
+
+Here is the updated **elf** object:
+
+```
+var elf = {
+    init: function() {
+        'use strict';
+        elf.siteConfig = new elf.SiteConfig();
+        elf.walking = new elf.Walking();
+        elf.imagePicker = new elf.ImagePicker();
+    },
+    server: 'http://52.38.4.3',
+    port: '30025',
+    getServerUrl: function() {
+        return elf.server + ':' + elf.port;
+    }
+};
+```
+
+Here is how to use the **getServerUrl** method:
+
+```
+function loadConfig() {       
+       $.getJSON(elf.getServerUrl() + '/config', function(result) {
+           // ETC   
+```
+
+And here is what the first parameter looks like after elf.getSeverUrl() executes:
+
+```
+$.getJSON('http://52.38.4.3:30025/config'
+```

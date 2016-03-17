@@ -4,6 +4,11 @@ Divide your work up into Folders.
 
 Put class work in one folder (walkingmap, etc.). Put your theme on another folder.
 
+- How Light Works (This was an exercise created exploring the facets light.)
+- Basic Markdown Exercises  
+- Mapping Exercises  
+- Image Camera
+
 Put together a front page that points at each of these folders and explains what is in them.
 
 ## Network Page
