@@ -28,9 +28,16 @@
 - [Ec2MarkdownToHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html)
 - [GitNewRepo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
 - [GitDualRepos](http://www.ccalvert.net/books/CloudNotes/Assignments/GitDualRepos.html)
+- [Google Drive Git Zip](http://www.ccalvert.net/books/CloudNotes/Assignments/GoogleDriveGitZip.html)
 - [Ec2 Get Html and Pictures](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GitHtmlPictures.html)
 - [ApacheHtml](http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html)
-
+- [Prog270 Midterm Prep](http://www.ccalvert.net/books/CloudNotes/Assignments/Prog270MidtermPrep.html)
+- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/Prog270Midterm2016.html)
+- [Ec2 Site Deplory](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2SiteDeploy.html)
+- [Elven Image Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/ElvenImageStarter.html)
+- [Elven Image Editing](http://www.ccalvert.net/books/CloudNotes/Assignments/ElvenImageEditing.html)
+- [Bootstrap Themes](http://www.ccalvert.net/books/CloudNotes/Assignments/BootstrapThemes.html)
+- [Python MySQL Json Markdown](http://www.ccalvert.net/books/CloudNotes/Assignments/PythonMySqlJsonMarkdown.html)
 
 ## Diagrams
 
