@@ -1,5 +1,14 @@
 # Prog 270-2016-Student-Sites
 
+## Zobia Arshad
+
+- [Zobia](http://52.25.251.210/master-list.html)
+
+## Alexey Avodayev
+
+- [Alexey](http://52.36.221.2/)
+- [Canada](http://52.36.221.2/canada.html)
+
 ## John Bihay
 
 - [John Bihay](http://52.25.159.182/index.html)

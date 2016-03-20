@@ -7,6 +7,7 @@ There are several primary goals:
 - Start your ElvenImagePicker or equivalent server running on AWS with UpStart.
 - Make sure that the web front end for it works smoothly.
 - Port the ElvenImagePicker or equivalent to a new Cordova Application and make sure it can call into the ElvenImagePicker server
+- Use elf-log from your bower and npm packages on both the client and server sides.
 
 Do your work in a branch with the name **final** in it. Specify the branch name when you turn in the assignment.
 
@@ -119,6 +120,15 @@ cp -v $SOURCE_QUERY/public/css/Custom.css www/css/.
 
 Now you want to build and install the updated version of your android project and fuss with it until it starts
 
+## Elf Log
+
+Include both your bower **lastname-tools** and your npm **isit322-lastname** packages in the project. I don't care how much you use elf-log, but give me at least one example of it actually printing something (set log level to details) so that I can see it working. In particular, use it:
+
+- Once at the top of **control.js**.
+- Once at the top of **routes/index.js**.
+
+I pick these two locations just because they should be easy for me to find.
+
 ## Turn it in
 
 Specify the branch name when you turn in the assignment.
@@ -130,7 +140,7 @@ The final you turn in should contain two pieces:
 
 Use your common sense when developing the final:
 
-- To do well on the final, you need to complete
+- To do well on the final, you need to:
     - Have your midterm running as a web app and as a Cordova app. Not perfect, but at least something. Even if it errors out, submit at least something.
 - If you are one of the best students in the class, go for more features, more extra credit.
 - If you are struggling, go for fewer features, just the core, not so much extra credit.
@@ -138,6 +148,19 @@ Use your common sense when developing the final:
 
 My major goal is to see that you have some understanding of the various technologies we have
 covered this quarter.
+
+Include:
+
+1. The complete URL, including elastic ip, for your web app running on EC2
+- Screen shot of your android app running on your mobile device or on AndroidX86.
+- **lastname-tools** set to latest version in your **bower.json**
+- **isit322-lastname** set to latest version in your **package.json**
+- Test your work to make sure that both **package.json** and **bower.json** are complete. For you web app I should be able to run **npm install** and **bower install** and then have everything just work.
+- A working install script for your android application.
+- A link to the Apache web site your created with your web application.
+- User can pick bootstrap them (cerulian, darkly, cosmos, etc)
+- Links for web app and android app after you run walk lead to your apache site on EC2.
+
 
 THIS SECTION IS NOT YET COMPLETE.
 

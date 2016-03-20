@@ -2,9 +2,11 @@
 
 When using your _Elven Site_ web site creator the user should be able to select the [bootswatch][btsw] theme for the created site. In short, I want you to add Bootswatch to your latest Elven Sites code. That is the goal of the **Elven Site Styles** assignment.
 
+![picker](https://s3.amazonaws.com/bucket01.elvenware.com/images/elven-site-styles01.png)
+
 Do your work in **Week10-ElvenImagePicker** in a branch called FinalPrep which should be based on your midterm branch or some branch you created after midterm.
 
-## Get Started
+## Client Side
 
 Allow the user to select from a drop down list (HTML SELECT control) of these styles:
 
@@ -24,8 +26,19 @@ var requestQuery = {
     bootswatch: selectedBootswatchTheme          
 };
 
-$.getJSON('/walk', requestQuery, function (result) { ...
+$.getJSON('/walk', requestQuery, function (result) { etc
+});
 ```
+
+To make this work, you will need:
+
+- A new HTML SELECT element in your jade code
+- Code to insert the themes array content into the SELECT element
+  - You've done several many times before. Hint it involves **append**
+- Code to get the selected theme from the SELECT control.
+  - You've done this several times before as well.
+
+## Server Side
 
 On the server side, make sure you are using **elven-site-tools@4.0.0** or newer. The settings should now contain your new field:
 
@@ -46,7 +59,7 @@ try {
 
 ## Turn it in
 
-
+When you turn in the assignment, include the branch and folder name where I should look for yur work.
 
 ## Hints
 

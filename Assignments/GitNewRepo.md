@@ -259,6 +259,7 @@ bower_components
 components
 Thumbs.db
 *.zip
+npm-debug.log
 ```
 
 You can create the file with the [nano][nano] editor, or do it like this:
@@ -271,6 +272,7 @@ echo bower_components >> .gitignore
 echo components >> .gitignore
 echo Thumbs.db >> .gitignore
 echo *.zip >> .gitignore
+echo npm-debug.log >> .gitignore
 ```
 
 **NOTE**: *You can learn more about nano by searching for [cheat sheets][nano-cheat].*

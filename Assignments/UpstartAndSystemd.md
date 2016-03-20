@@ -210,6 +210,15 @@ To see logs and debug information, try this:
 journalctl -u elven-site
 ```
 
+To completely remove a service from a system, I believe we shoud first stop it, and then disable it:
+
+```
+systemctl stop elven-site
+systemctl disable elven-site
+```
+
+I'm not certain about the disable command at this time. I think it tells systemd not to load at boot, but allows us to leave the file in **/etc/systemd/system**. Not sure though.
+
 The first and second links below will get you up to speed fairly quickly.
 
 - [Sysdemd for Node Developers][sysd-node]

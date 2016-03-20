@@ -179,13 +179,13 @@ I think it is probably nicest to use the Text page of the Canvas submit process 
 
 ## Git Ignore
 
-Create the file:
+If it does not already exist, create the file:
 
 ```
 geany .gitignore
 ```
 
-Add these items
+And if they are not already present, add these items
 
 ```
 node_modules
@@ -195,4 +195,5 @@ bower_components
 *.zip
 .metadata
 Thumbs.db
+npm-debug.log
 ```
