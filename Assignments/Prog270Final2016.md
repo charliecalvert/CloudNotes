@@ -27,18 +27,23 @@ I also want to see that you understand:
 
 Finally, I want to see that you can use an markdown and Apache web server to create a set of related files that deal with a single theme.
 
-## Expectations
+## Overview
 
-As a teacher, I have two responsibilities:
+The overall goal of this assignment is to display the work you have already done. You don't necessarily have to create any new pages, though some might be useful if they help you to organize your already existing work.
 
-- To provide students with an eduction
-- To provide employers with an indication of a student's value as an employee
+Think of it this way: **Create a site that contains all the files you created this quarter.** You don't need to create new files, you just need to show the files you did create.
 
-To satisfy the first requirement, I need to see evidence that you can complete certain technical tasks. To satisfy the second requirement, I need both evidence of technical skill, and also evidence that a student has a good attitude and a good work ethic.
+I'm also asking you to organize the files you created. I want you to create folders for each kind of file you created. Then sort all your files into types and put related files into the appropriate folder.
 
-Let's consider for a moment the theme that I want you to develop. If you create a page that contains nothing more than a heading and an image, I will conclude that you are interested in doing the least possible amount of work to satisfy the bare bones of a requirement. If that is the case, then I am obligated to let employers know something about your attitude and your work ethic. You would, in fact, have satisfied the requirements of the assignment, but on a level that would earn, at best, a C. To get an A or a B, I would want to see, not only a heading and an image, but also text explaining the purpose of the page, the purpose of the image, and how they fit into your larger theme. The text should, of course, be your text, and not text borrowed from another site. To get an excellent grade, you might want to work on the appearance of the page by adding bootstrap components that make the page appealing to the reader.
+For instance, if this quarter we had studied lions, and tigers and bears, then you would create three folders:
 
-In short, I expect you not only to master the basic technologies we covered this quarter, but to also spend some time developing a site that demonstrates your ability to use these technologies to create something of value.
+*   Lions
+*   Tigers
+*   Bears
+
+All the files related to lions go into the **Lions** folder, tiger material in the **Tigers** folder, and so on. If it helps to create one or more overview files, then create them also. For instance, you could create a file called **AboutLions.html**, and put it in the **Lions** folder. In that overview file you could summarize what you learned about lions, and then have links from that file to the individual lion files you created earlier in the quarter. For instance, you might write something like this: "Lions like to pace back and forth in their cages." Then provide a link to a file that has pictures of lions pacing in their cages. Then you might write: "Male lions have a nice thick mane". Then provide a link to a page that has pictures of lions with a nice mane.
+
+Please understand that this is a hypothetical example, I'm not really expecting to see a **Lions** folder nor an **AboutLions.html** file, nor pictures of a lion's mane. In particular, one folder I actually am looking for would be called **markdown-examples.** In it, I'm expecting to see files we created earlier in the quarter that contain basic markdown syntax such as paragraphs, lists, headings, etc. Or rather, I'm expecting your website to contain the HTML files created from that markdown.
 
 ## First Steps
 
@@ -190,4 +195,18 @@ Final Score: 93
 
 I then have a little fudge factor to help someone with a 91 average to get a 92, if their class participation, enthusiasm, and overall effort indicated that they deserved that reward.
 
+
 [syllabus]: https://docs.google.com/document/d/1XHeHxdevWWhLTK5N1NRsmyAqtMNakDOqKEtJMG5MfH0/edit?usp=sharing
+
+## Expectations
+
+As a teacher, I have two responsibilities:
+
+- To provide students with an eduction
+- To provide employers with an indication of a student's value as an employee
+
+To satisfy the first requirement, I need to see evidence that you can complete certain technical tasks. To satisfy the second requirement, I need both evidence of technical skill, and also evidence that a student has a good attitude and a good work ethic.
+
+Let's consider for a moment the theme that I want you to develop. If you create a page that contains nothing more than a heading and an image, I will conclude that you are interested in doing the least possible amount of work to satisfy the bare bones of a requirement. If that is the case, then I am obligated to let employers know something about your attitude and your work ethic. You would, in fact, have satisfied the requirements of the assignment, but on a level that would earn, at best, a C. To get an A or a B, I would want to see, not only a heading and an image, but also text explaining the purpose of the page, the purpose of the image, and how they fit into your larger theme. The text should, of course, be your text, and not text borrowed from another site. To get an excellent grade, you might want to work on the appearance of the page by adding bootstrap components that make the page appealing to the reader.
+
+In short, I expect you not only to master the basic technologies we covered this quarter, but to also spend some time developing a site that demonstrates your ability to use these technologies to create something of value.
