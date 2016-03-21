@@ -149,7 +149,7 @@ Use your common sense when developing the final:
 My major goal is to see that you have some understanding of the various technologies we have
 covered this quarter.
 
-Include:
+The following list is both a reminder of what to include  and a checklist to go through before submitting:
 
 1. The complete URL, including elastic ip, for your web app running on EC2
 - Screen shot of your android app running on your mobile device or on AndroidX86.
@@ -160,9 +160,19 @@ Include:
 - A link to the Apache web site your created with your web application.
 - User can pick bootstrap them (cerulian, darkly, cosmos, etc)
 - Links for web app and android app after you run walk lead to your apache site on EC2.
+- Your **elven-site.conf** file for upstart. Put it in the root of your final project.
+- Don't forget to tell me the name of the folder and branch that contains your final project.
 
 
 THIS SECTION IS NOT YET COMPLETE.
+
+## Extra Credit
+
+I've updated **ElvenSitePixPicker**:
+
+- [Elven Site Pix Picker](http://www.ccalvert.net/books/CloudNotes/Assignments/ElvenSitePixPicker.html)
+
+See if you can get it running in the final.
 
 ## Hints
 

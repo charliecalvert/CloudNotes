@@ -31,7 +31,11 @@ Please complete the simple [Elven Site Styles][ess] assignment before turning in
 
 ## Turn it in
 
-Submit your elastic IP pointing at your running app. I expect to be able to click on links and go to your IP address (sans port) to see your newly styled pages.
+Submit a screen shot of your elastic IP pointing at your running app. Or, if you have upstart working, a link to your running app. At minimum, I expect to be able to click on links and go to your IP address (sans port) to see your newly styled pages. So, any two of the following will fulfill the requirements:
+
+- Screen shot of your app running on EC2 as it appears after you click the walk button.
+- Link to your running app on EC2
+- Link to a page your created with your app. This URL has no port number (30025), it just points at a page you created that is accessible through the Apache Server on the default Port 80.
 
 [ahtml]: http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html
 [ahah]: http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html#apache-helpers

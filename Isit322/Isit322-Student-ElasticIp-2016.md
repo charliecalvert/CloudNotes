@@ -1,5 +1,11 @@
 Isit322-Student-ElasticIp-2016
 
+## Balaji
+
+- <http://52.34.112.155/california.html>
+
+curl http://52.34.112.155/california.html
+
 ## Brehm
 
 curl http://54.200.251.98/california.html
@@ -18,6 +24,11 @@ curl http://54.200.251.98/california.html
 
 http://52.37.203.92:30025/
 http://52.37.203.92/AllTest/california.html
+http://52.37.203.92/AllTest/california.html
+
+## Maya Ganghuyag
+
+- <http://52.35.121.105:30025>
 
 ## Andy Hong
 
@@ -30,6 +41,7 @@ http://52.37.203.92/AllTest/california.html
 ## Evan Thygesen
 
 - <http://52.24.128.163/california.html>
+- <http://52.24.128.163:30025/>
 
 ## Sunny
 

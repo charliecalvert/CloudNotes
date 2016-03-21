@@ -80,3 +80,64 @@ function pageTwo() {
     });
 }
 ```
+
+## Server Side
+
+Here are the methods found in **routes/index.js** for calling into the image code in **elven-stite-tools**.
+
+```javascript
+router.get('/makeMarkdown', function(request, response) {
+    console.log('makeMarkdown route called');
+    var makeMarkdown = new imageHelp.MakeMarkdown();
+
+    makeMarkdown.loadAndRun(function(report) {
+        if (report.spacesInFileNames) {
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log('You have spaces in one or more file names.');
+            console.log('The problem is probably in your images directory.');
+            console.log('FileNames or Directories with spaces in their ');
+            console.log('names is not a good idea. Run this command in ');
+            console.log('the offending directory and then restart:');
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log('find -name "* *" -type f | rename "s/ /_/g"');
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            response.send({ error: 'spaces in file name' });
+        } else if (report.markdownFileExists) {
+            response.send({ error: 'Markdown file exists: ' + report.markdownFileWithImages });
+        } else {
+            response.send({
+                'success': 'makeMarkdown',
+                'report': report
+            });
+        }
+        console.log(report);
+    });
+});
+
+router.get('/deleteMarkdown', function(request, response) {
+    var makeMarkdown = new imageHelp.MakeMarkdown();
+    makeMarkdown.deleteMarkdownFileWithImages(function(result) {
+        console.log(result);
+        response.send({ 'result': 'file deleted'});
+    })
+});
+```
+
+On the client side, these are simple button clicks, with no parameters (requestQuery) being passed.
+
+## Nodemon Warning
+
+There is one catch here. Since **all-images.json** gets rewritten, you have to tell nodemon to ignore that file or it will keep restarting your application.
+
+Save the following as **nodemon.json** in the root of your project:
+
+```javascript
+{
+  "verbose": false,
+  "ignore": ["all-images.json"]
+}
+```
+
+## Turn it in
+
+Tell me the project and branch.
