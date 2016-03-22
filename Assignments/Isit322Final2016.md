@@ -190,7 +190,15 @@ This will allow you to compare the contents of **www** and **public**. You can s
 
 ## Python Web Server {#python-web}
 
-Run the Python web server in your www folder to see if you have at least parts of the app working correctly. For instance, you can check if you are loading all the files properly.
+Python has a small web server built into it. You can start the server running in your www directory:
+
+    $ python3 -m http.server 30025
+
+ Then go to [http://localhost:30025](http://localhost:30025).
+
+ You can then debug some parts of your application. By no means will everything work. In particular, you can't call into your server this way, since it is not running, or at least it was not loaded by the Python web server. This means that the SELECT controls won't fill in. But you can check if the pages are loading properly, if css and bootstrap are set up, etc.
+
+Run the Python web server in your **www** folder to see if you have at least parts of the app working correctly. For instance, you can check if you are loading all the files properly.
 
 ```
     $ python3 -m http.server 30025

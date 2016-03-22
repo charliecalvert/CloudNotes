@@ -20,6 +20,11 @@ There are two files:
 The optional contents of **style.css**:
 
 ```css
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
 img.twenty-five-percent {
    width: 25%;
 }
