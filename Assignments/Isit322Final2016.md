@@ -1,23 +1,31 @@
-# Isit 322 Final 2015
+## Overview
 
 Hopefully there is enough information here to get you well into this project, but check up here regularly for updates. This document is not complete, nor completely fact checked.
 
+**NOTE**: _After you have received a final grade, consider whether or not you want to turn off your running EC2 instance on AWS._
+
 There are several primary goals:
 
-- Start your ElvenImagePicker or equivalent server running on AWS with UpStart.
+- Start your **ElvenImagePicker** or equivalent server running on AWS with UpStart.
 - Make sure that the web front end for it works smoothly.
-- Port the ElvenImagePicker or equivalent to a new Cordova Application and make sure it can call into the ElvenImagePicker server
-- Use elf-log from your bower and npm packages on both the client and server sides.
+- Port the **ElvenImagePicker** or equivalent to a new Cordova Application and make sure it can call into the **ElvenImagePicker** server on EC2.
+- Use **elf-log** from your bower and npm packages on both the client and server sides.
 
-Do your work in a branch with the name **final** in it. Specify the branch name when you turn in the assignment.
+Do your work in a branch with the name **final** in it. Specify the branch and project names when you turn in the assignment.
 
-Sample Screenshot coming soon:
+I'm willing to show some flexibility in most cases if you don't complete every step of the final. Get a reasonable amount of work done, but don't stay up too late trying to complete every last step. Do the best you can, and explain clearly what you were able to complete so I can know where to focus my attention.
+
+You need not duplicate this exactly. It is just for those who find it useful:
+
+![Sample Run](https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-final-2016-01.png)
+
+The image shown here is running on localhost. On EC2 it would have an IP address in the hyperlinks leading to the created documents.
 
 ## Step One
 
 We created a **CordovaFinalPrep** Cordova app. Create new app called **Week12Final**.
 
-Here is how to create your working folder for the final Cordova project. The syntax for the command looks a bit like this:
+Here is how to create your working folder for the final Cordova project. The syntax for the [Cordova create command][ccc] looks a bit like this:
 
 ```
 $ cordova create --help
@@ -41,7 +49,7 @@ Given the above, you want to navigate to your repository and type
 
 Be sure to use underscores and not hyphens. The command above will place your project in a directory called **Week12Final**. The project name on your android will be **Isit322FinalLastName**, where LastName is your last name.
 
-Copy the **install** script over from the FinalPrep project and alter the uninstall command so that it uses **com.lastname.isit322_final**.
+Copy the **install** script over from the **FinalPrep** project and alter the uninstall command so that it uses **com.lastname.isit322_final**.
 
 If you need to rename a project, see the information found here:
 
@@ -53,26 +61,21 @@ Optionally copy custom icons over as explained here.
 
 - <http://www.ccalvert.net/development/android/CordovaPlugin.html#custom-icons>
 
-Now add the platform:
+Now [add the platform][atp]:
 
-    cordova platform add android
+```
+cordova platform add android
+```
 
-## Step Three
+## Step Three: Connect {#connect}
 
 Make sure you are connected to your phone or to an instance of Android x86.
-
-- <http://www.ccalvert.net/development/android/CordovaPlugin.html#phone-connect>
-- [Video](http://youtu.be/qmUcJ2Jxp6g)
-- [Video](http://youtu.be/LNgkRhsgzIc)
-- [Android Studio Slids](http://bit.ly/elven-android-studio)
-- [Slides](http://bit.ly/1at2JZ2)
-- [Elvenware](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
-- [Week03 Overview](https://bc.instructure.com/courses/1078221/pages/week03-overview)
-- [Remote Debugging](https://developer.chrome.com/devtools/docs/remote-debugging)
 
 Connect to your device:
 
   adb connect <IP-ADDRESS>
+
+## Step Four: Build {#build}
 
 Build and install the project
 
@@ -81,21 +84,33 @@ Build and install the project
 
 Test it, make sure it works.
 
-## Step Four: Source Code: {#source-code}
+## Step Four: Merge Source Code: {#source-code}
 
 Copy over files from the **CordovaFinalPrep** project. Use meld to add any necessary updates from your **ElvenImagePicker** or equivalent project. Find the version you like the most, and copy over its files.
 
 There is information on how to convert an Express project to a Cordova project on this page:
 
-- <http://www.ccalvert.net/development/android/CordovaPlugin.html>
+- [Cordova Plugin](http://www.ccalvert.net/development/android/CordovaPlugin.html)
 - [Build Node Routes][build-node]
 
-**HINT**: _Make sure the two projects are next to each other in your directory structure. This will make the act of copying from one project to another as simple as possible. For instance, if your repository is called **isit322-lastname-2016** and your best version of the Midterm is in a folder called **Week10-ElvenImagePicker**, then you want the folders arranged like this_:
+**HINT**: _Make sure the two projects are near each other in your directory structure. This will make the act of copying from one project to another as simple as possible. For instance, if your repository is called **isit322-lastname-2016** and your best version of the Midterm is in a folder called **Week10-ElvenImagePicker**, then you want the folders arranged like this_:
 
 - isit322-lastname-2016/Week10-ElvenImagePicker
 - isit322-lastname-2016/Week12Final
 
-A script for automating the process might look something like this, though the details will of course differ considerably:
+Navigate to the root of your repository and use meld. One useful comparison might be one like this:
+
+```
+meld  Week10-ElvenImagePickter/public Week12Final/www
+```
+
+Or compare with **CordovaFinalPrep**:
+
+```
+meld  Week10-CordovaFinalPrep/www Week12Final/www
+```
+
+A script for automating the process can be both useful and a bit dangerous. It might look something like this, though the details will of course differ considerably:
 
 ```
     #! /bin/bash
@@ -122,7 +137,7 @@ Now you want to build and install the updated version of your android project an
 
 ## Elf Log
 
-Include both your bower **lastname-tools** and your npm **isit322-lastname** packages in the project. I don't care how much you use elf-log, but give me at least one example of it actually printing something (set log level to details) so that I can see it working. In particular, use it:
+Include both your bower **lastname-tools** and your npm **isit322-lastname** packages in the project. I don't care how much you use **elf-log** and your **utils**, but give me at least one example of your log actually printing something (set log level on your outgoing message to details) so that I can see it working. In particular, use it:
 
 - Once at the top of **control.js**.
 - Once at the top of **routes/index.js**.
@@ -131,12 +146,14 @@ I pick these two locations just because they should be easy for me to find.
 
 ## Turn it in
 
-Specify the branch name when you turn in the assignment.
+Specify the branch name and project names when you turn in the assignment.
+
+**NOTE**: _After you have received a final grade, consider whether or not you want to turn off your running EC2 instance on AWS._
 
 The final you turn in should contain two pieces:
 
 - Your Web App running on EC2 under UpStart
-- The source code for your Cordova Project.
+- The source code for your Web App and Cordova Project.
 
 Use your common sense when developing the final:
 
@@ -144,10 +161,9 @@ Use your common sense when developing the final:
     - Have your midterm running as a web app and as a Cordova app. Not perfect, but at least something. Even if it errors out, submit at least something.
 - If you are one of the best students in the class, go for more features, more extra credit.
 - If you are struggling, go for fewer features, just the core, not so much extra credit.
-- Note that having the web app running on AWS can be a nice calling card at a job interview. Having your app on our phone would be nice too.
+- Note that having the web app running on AWS can be a nice calling card at a job interview. Having your app on our phone would be nice too. If the phone is overwhelming for you, I can give you some leeway here, but turn in at least something.
 
-My major goal is to see that you have some understanding of the various technologies we have
-covered this quarter.
+My major goal is to see that you have some understanding of the various technologies we have covered this quarter.
 
 The following list is both a reminder of what to include  and a checklist to go through before submitting:
 
@@ -164,7 +180,18 @@ The following list is both a reminder of what to include  and a checklist to go 
 - Don't forget to tell me the name of the folder and branch that contains your final project.
 
 
-THIS SECTION IS NOT YET COMPLETE.
+This section is not yet complete. Just try to use your common sense.
+
+## Links
+
+- [Elvenware Phone Connect][elfphone]
+- [Video](http://youtu.be/qmUcJ2Jxp6g)
+- [Video](http://youtu.be/LNgkRhsgzIc)
+- [Android Studio Slides](http://bit.ly/elven-android-studio)
+- [Slides](http://bit.ly/1at2JZ2)
+- [Elvenware](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
+- [Remote Debugging](https://developer.chrome.com/devtools/docs/remote-debugging)
+- [Cordova Android Links][calinks]
 
 ## Extra Credit
 
@@ -172,7 +199,12 @@ I've updated **ElvenSitePixPicker**:
 
 - [Elven Site Pix Picker](http://www.ccalvert.net/books/CloudNotes/Assignments/ElvenSitePixPicker.html)
 
-See if you can get it running in the final.
+See if you can get it running in the final. What I'm looking for is the ability to do what **ElvenImages** does from the command line. It should create a **california.md** or similar file based on the images found in **/var/www/html/images/california** or a similar folder. I would like to see two buttons:
+
+- One that creates the file
+- One that deletes the file
+
+I would also like to see enough feedback on the client side  to know if the calls succeed or fail.
 
 ## Hints
 
@@ -250,6 +282,8 @@ Final Score: 93
 
 I then have a little fudge factor to help someone with a 91 average to get a 92, if their class participation, enthusiasm, and overall effort indicated that they deserved that reward.
 
+[atp]: https://cordova.apache.org/docs/en/4.0.0/guide/cli/#add-platforms
+[ccc]: https://cordova.apache.org/docs/en/4.0.0/guide/cli/#create-the-app
 [syllabus]: https://docs.google.com/document/d/1Y2s1iPO_8caytpsr99k-scZlQQGxNvXK6HM2VtBI30k/edit?usp=sharing
 [build-node]: https://github.com/charliecalvert/JsObjects/blob/master/Cordova/CordovaNodeRoutes/www/BuildNodeRoutes
 [nodeRoutes03]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes03
@@ -258,3 +292,5 @@ I then have a little fudge factor to help someone with a 91 average to get a 92,
 [phoneBrowser]:http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
 [routeParams]:http://www.ccalvert.net/books/CloudNotes/Assignments/RouteParameters.html
 [variousPlugins]:http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaVariousPlugins.html
+[calinks]: http://www.ccalvert.net/development/android/CordovaAndroidLinks.html
+[elfphone]: http://www.ccalvert.net/development/android/CordovaPlugin.html#phone-connect

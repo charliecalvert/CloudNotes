@@ -26,6 +26,10 @@ http://52.37.203.92:30025/
 http://52.37.203.92/AllTest/california.html
 http://52.37.203.92/AllTest/california.html
 
+## Chani Enochs
+
+- <http://52.35.222.48:30025/>
+
 ## Maya Ganghuyag
 
 - <http://52.35.121.105:30025>
@@ -33,10 +37,12 @@ http://52.37.203.92/AllTest/california.html
 ## Andy Hong
 
 - <http://52.11.175.238/california.html>
+- <http://52.11.175.238:30025/>
 
 ## John Kariungi
 
 - <http://52.34.47.255/california.html>
+- <http://52.34.47.255:30025/>
 
 ## Evan Thygesen
 

@@ -28,6 +28,8 @@ Finally, I want to see that you can:
 - Demonstrate basic organization skills
 - Use markdown and the Apache web server to create a set of related files that deal with a single theme.
 
+**NOTE**: _After you have received a final grade, consider whether or not you want to turn off your running EC2 instance on AWS._
+
 ## Overview
 
 A primary goal of this assignment is to organize and display the work you have done this quarter. You don't necessarily have to create any new pages, though some might be useful if they help you to organize your already existing work.
@@ -170,6 +172,8 @@ I'll want to see
 - A screen shot of you running **MakeHtml** on EC2. I'm expecting to see output that shows at least five or six file names from the HTML for your site.
 - A screen shot showing you using **git pull** to update at least one file on your ec2.
 - **Extra Credit** A screen shot of the network page in either Chrome or Firefox. Before taking the screen shot, press F5 or do something else to refresh the page. Hopefully there will be no red on the page indicating files that were not found.
+
+**NOTE**: _After you have received a final grade, consider whether or not you want to turn off your running instance on EC2._
 
 ## Grading
 
