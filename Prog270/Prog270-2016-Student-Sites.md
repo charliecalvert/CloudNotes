@@ -64,6 +64,7 @@
 ## Thukral
 
 - [Thukral](http://52.36.252.235/Astrology.html)
+- [http://52.36.252.235/master-list.html](http://52.36.252.235/master-list.html)
 
 ## Troendle
 
