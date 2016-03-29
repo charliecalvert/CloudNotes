@@ -21,6 +21,16 @@ You need not duplicate this exactly. It is just for those who find it useful:
 
 The image shown here is running on localhost. On EC2 it would have an IP address in the hyperlinks leading to the created documents.
 
+## Setup
+
+Running these can help ensure EC2 and Pristine Lubuntu are set up correctly. The latter two are probably only needed on Pristine where we use Cordova, but do them in both places just in case:
+
+```
+sudo apt-get install build-essential
+sudo apt-get install lib32stdc++6
+sudo apt-get install lib32z1
+```
+
 ## Step One
 
 We created a **CordovaFinalPrep** Cordova app. Create new app called **Week12Final**.

@@ -1,7 +1,21 @@
 # AndroidX86 Cordova
 
+The goal of this assignment is to get a simple, default, Android Cordova application running on your phone or on an AndroidX86 build.
+Preliminaries. Be sure the following installed:
+
+```bash
+sudo apt-get install lib32stdc++6
+sudo apt-get install lib32z1
+```
+
+In general, when doing development, it can also be useful to install the C++ compiler, though it is probably not essential to this process. In particular, if you get an error saying that **make** is missing, then install **build-essential**:
+
+```
+sudo apt-get install build-essential
+```
 
 ## Setup
+
 
 This should already have been done for you. But if you ever need to do it:
 
@@ -18,7 +32,13 @@ Now you can start the Android Manager:
 android
 ```
 
-Install Android API 22 by doing the following:
+## Android SDK
+
+The following is done inside the Android Manager, launched in the previous section. The goal is install the Android API verison 23.
+
+**Note**: _The version of the Android API that you need can change over time, but if you need to get version 24 or 22 instead of 23, it should not be too difficult to adapt these instructions to help you achieve that goal. Also note that the big danger here is installing way more than you need. Gigabyte upon gigabyte more than you need. Install as little as possible._
+
+Install Android API 23 by doing the following:
 
 - First un-check all Android 6.0 (API 23)
 
@@ -30,12 +50,11 @@ Now prepare to add the following items by placing a check in front of them:
 
 - Android SDK Platform-Tools
 - Android SDK Build Tools
-- Check Android 5.1.1 (API 22) 
+- Check Android 6.0 (API 23)
 	- SDK Platform
-	- Google APIs (Optional?)
 - Extras: Android Support Library
 
-Now select the **Install Five Packages** button. You may get an error about failing to stop the ADB server. Since ADB is probably not yet installed, this error is expected, and you can ignore. 
+Now select the **Install Five Packages** button. You may get an error about failing to stop the ADB server. Since ADB is probably not yet installed, this error is expected, and you can ignore.
 
 ## Create a project
 
@@ -62,7 +81,7 @@ Execution failed for task ':CordovaLib:processDebugResources'.
 > java.io.IOException: Cannot run program "/home/bcuser/Android/Sdk/build-tools/22.0.1/aapt": error=2, No such file or directory
 ```
 
-You might be able to fix it with these commands: 
+You might be able to fix it with these commands, which were mentioned earlier:
 
 ```bash
 sudo apt-get install lib32stdc++6
@@ -102,7 +121,7 @@ adb install [YOUR APK file]
 A bit like this, perhaps:
 
 ```
-$ adb install platforms/android/build/outputs/apk/android-debug.apk 
+$ adb install platforms/android/build/outputs/apk/android-debug.apk
 10208 KB/s (1822587 bytes in 0.174s)
 	pkg: /data/local/tmp/android-debug.apk
 Success
@@ -119,13 +138,13 @@ $ adb uninstall io.cordova.hellocordova
 Success
 ```
 
-## Edit 
+## Edit
 
 Edit the H1 element in **www/index.html** to include your last name. Rebuild the application and reinstall it.
 
 ## Push to Your Repository
 
-This part of the assignment is optional for now. If you have not done so already, create a private repository on BitBucket or Github. 
+This part of the assignment is optional for now. If you have not done so already, create a private repository on BitBucket or Github.
 
 Use this naming scheme:
 
