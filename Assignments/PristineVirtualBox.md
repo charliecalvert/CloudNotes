@@ -19,7 +19,7 @@ Before doing anything else, confirm that you have VirtualBox installed and updat
 
 Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance):
 
-- [Download the 3 GB Pristine Lubuntu 2016 v03][pristine-2016-03]
+- Download Pristine Lubuntu Spring 2016 (4GB): [http://bit.ly/pristine-april-2016](http://bit.ly/pristine-april-2016)
 
 [pristine-2016-03]: https://drive.google.com/file/d/0B25UTAlOfPRGOGV1dFN4SnBscW8/view?usp=sharing
 
@@ -29,7 +29,11 @@ Double click on the download once it is is completed. Alternatively choose the f
 
 - **File | Import Appliance** (Ctrl - i)
 
+**NOTE**: _You should select the option to reinitialize the Mac address. We each need a unique Mac address or conflicts may occur when using the network. If you forgot to click this option during install, you can do it later by choosing **Settings | Network | Advanced** from the VirtualBox menu before you launch your Lubuntu VM. (If necessary, close the VM, then select this menu option.) There is a blue doo-hickey that you can click to reinitialize the address._
+
 After the file has been imported via the simple wizard, select the new item in VirtualBox and choose **Start** from the menu or icon bar.
+
+**NOTE**: _Our pristine Lubuntu image is set up to have about 6GB of RAM. This is fine at school since we have 32 GB of memory on these machines. When using this image at home or on a laptop, however, you may need to change this setting. To do so, select **Settings | System | Motherboard | Base Memory.** Many machines have 4 GB of memory, so setting the memory to 2048 is acceptable, if a bit painful slow at times._
 
 ![Staring Lubuntu][slub]
 

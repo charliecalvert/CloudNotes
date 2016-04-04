@@ -21,10 +21,11 @@ book. You should however, become familiar with the material it covers.
 
 ## Links for Week01 Day 1
 
-1.  [Getting Started Deck](http://bit.ly/TDEtd5)
-2.  Syllabus Prog 272: [http://bit.ly/Prog272-2016](http://bit.ly/Prog272-2016)
-3.  Study the all important [Resources page](Resources.html)
-4.  <http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel>
+1. [Getting Started Deck](http://bit.ly/TDEtd5)
+2. Syllabus Prog 272: [http://bit.ly/Prog272-2016](http://bit.ly/Prog272-2016)
+3. Study the all important [Resources page](Resources.html)
+4. <http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel>
+5. Pristine Lubuntu Spring 2016: [http://bit.ly/pristine-april-2016](http://bit.ly/pristine-april-2016)
 
 ## Links for Week01 Day 2
 
