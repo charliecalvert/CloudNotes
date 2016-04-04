@@ -1,13 +1,21 @@
-Key Points:
+## Overview
+
+The Syllabus: [http://bit.ly/Prog219-2016](http://bit.ly/Prog219-2016)
+
+**Key Points**:
 
 - Angular
-- Express
+- Express or Python or maybe Mono
+- REST routes and parameters
+- Unit testing
 - Jade, markdown and mixins
 - JavaScript Objects
 - JavaScript Functions and callbacks
-- REST and Routes
-- Express parameters
 - bootstrap
+
+## Node Version Manager {#nvm}
+
+The node verison manager.
 
 ## Discussion Area
 
@@ -16,7 +24,7 @@ Key Points:
 And particularly:
 
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/AskQuestions.html#why-ask-questions>
- 
+
 ## Wednesday
 
 - DosAlias
@@ -26,4 +34,3 @@ And particularly:
 - Introductions
 - WebStorm
 - Express Basics
-
