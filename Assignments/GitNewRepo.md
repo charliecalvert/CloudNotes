@@ -65,11 +65,11 @@ For instance, your repository might have a name like one of the following, depen
 on the class you are in and the current year:
 
 ```
-prog219_calvert-2016
-prog270_calvert-2016
-prog272_calvert-2016
-isit320_calvert-2016
-isit322_calvert-2016
+prog219-calvert-2016
+prog270-calvert-2016
+prog272-calvert-2016
+isit320-calvert-2016
+isit322-calvert-2016
 ```
 
 **NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.*
