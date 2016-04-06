@@ -1,10 +1,19 @@
 # Cloud 9 Intro
 
-Sign into Cloud 9 and set up a workspace based on your **isit320-lastname-2015** repository. Use this as a guide:
+Sign into Cloud 9 and set up a workspace based on your repository. Typically, your repository will have a name like this:
+
+- **prog219-lastname-2016**
+- **prog272-lastname-2016**
+- **isit320-lastname-2016**
+- etc...
+
+Use this as a guide:
 
 * [Cloud 9 Slides](http://bit.ly/elf-cloud9)
 
 ## Step One
+
+**NOTE**: _If you are using Pristine Lubuntu, then your NODE_PATH is probably already set up. That means you can skip this section and go on to the next Nevertheless, it is often helpful to run SystemCheck._
 
 If you have not done so already run **git pull** on JsObjects. Copy **SystemCheck** into your bin directory:
 
@@ -18,7 +27,7 @@ If NODE_PATH does not exist, add this to the end of your .bashrc:
 export NODE_PATH=$NODE_PATH:$HOME/npm/lib/node_modules
 ```
 
-Don't forget to source your .bashrc file: **source ~/.bashrc 
+Don't forget to source your .bashrc file: **source ~/.bashrc
 **
 
 Type **SystemCheck** or **syscheck** and check you system:
