@@ -67,6 +67,12 @@ cordova platform add android
 cordova build android
 ```
 
+If Cordova is unknown, then do this:
+
+```
+npm install -g cordova
+```
+
 ## Build Failed
 
 If your build fails like this:

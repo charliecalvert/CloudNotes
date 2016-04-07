@@ -44,7 +44,8 @@ Provide screen shots of:
 - Android home screen running on your desktop.
 - Android App View
 - The Google Drive App
-- Google Docs with your shared Google Document in it.
+
+Let's skip the Google Docs shared document part of this assignment. It is no longer necessary.
 
 ## Hints
 
