@@ -1,8 +1,10 @@
 ## Overview
 
-This assignment is designed to help you create a new git repository. The text is oriented towards both GitHub and Bitbucket on Linux. Bitbucket provides free private repositories. Since my students turn in assignments with git, in some, but not all, cases it is important that the repositories be private.
+This assignment is designed to help you create a new git repository. The text is designed to be used with either [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.org/). I assume the user is running on Linux, but it would not be hard to follow along if you are using Windows.
 
-**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution, and take care to distinguish between the instrucitons for the two sites. The underlying technology is the same. Git is an open source project entirely separate from either GitHub or BitBucket. Git is git no matter where it is. Nevertheless, Bitbucket and GitHub have differences, so proceed with caution.*
+Since my students turn in assignments with git, in some, but not all, cases it is important that the repositories be private. Bitbucket provides free private repositories.  I believe free private repositories are also available on GitHub if you sign up for the [Student Pack][github-edu].
+
+**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Not that git itself is an open source project entirely separate from either GitHub or BitBucket. Git is git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
 
 See also:
 
@@ -22,14 +24,19 @@ Topics like "is git reliable?", "is it me, or is it git?" come up from time to t
 	- 11.58% Microsoft Team Software Foundation
 	- 1.62% Mercurial (like Git, but easier to use)
 	- 1.13% Visual Source Safe
-- Git hub has about 12 million users and 31 million repositories. Tha's just github, not total git users. You can use git and not use any cloud repository, or use git and use a different cloud repository such as BitBucket.
+- As of April, 2016, GitHub has about 14 million users and 35 million repositories. Those numbers are growing quickly. That's just github, not total git users. You can use git and not use any cloud repository, or use git and use a different cloud repository such as BitBucket. Many companies have a dozen or more users who share a single account.
 
 Related links which probably contain updates to total github users:
 
 - <https://github.com/about>
 - <https://github.com/explore>
 
-Of course, it is always possible that one of us will hit a bug in git. All I can say is that the odds we hit a git bug when performing basic operations with git is very, very low.
+GitHub and BitBucket are websites, and websites are sometimes down due to operational errors of denial of service attacks. But GitHubs record is usually good:
+
+- [GitHub Status](https://status.github.com/graphs/past_month)
+- [Bitbucket Status](http://status.bitbucket.org/)
+
+Of course, it is always possible that one of us will hit a bug in git. Yet the odds that we hit a git bug when performing basic operations is very, very low.
 
 Git is not perfect. No piece of software is perfect. But git is, in my opinion, one of the most reliable, tested, and proven software programs in the world.
 
@@ -85,6 +92,30 @@ If you have created a private repository, make sure you give me read/write acces
 
 - GitHub: Choose the gear icon near top on right. Select **collaborators** page. My GitHub user name is **charliecalvert**.
 - Bitbucket: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
+
+## Git URLs
+
+You can read about git URLs on Elvenware:
+
+- [Git URLs and SSH][urls-and-ssh]
+- [Finding and Changing URLs][find-change]
+
+[urls-and-ssh]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-urls-and-ssh
+[find-change]: http://www.elvenware.com/charlie/development/cloud/Git.html#find-change-url
+
+Find the URL:
+
+```
+git remote -v
+```
+
+Change the URL:
+
+```
+git remote set-url origin git@github.com:my-user-name/my-repo.git
+```
+
+If you are uncertain about the URL for your repository, you should able to easily find it on either GitHub or BitBucket.
 
 ## Setup SSH {#ssh}
 
