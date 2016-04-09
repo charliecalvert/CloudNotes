@@ -210,3 +210,30 @@ For instance:
 
 - cordova create Week01Test com.elvenware.test_calvert IsitTestCalvert
 - cordova create [Directory] [URL] [Name]
+
+## Install Script
+
+If you save the following in the root of your project folder as **install**, then you should be able to automate this process:
+
+<pre>#! /bin/bash
+
+cordova build android
+adb uninstall io.cordova.hellocordova
+adb install platforms/android/build/outputs/apk/android-debug.apk
+</pre>
+
+Then make it executable:
+
+<pre>chmod +x install</pre>
+
+To run it, type this:
+
+<pre>./install</pre>
+
+We'll discuss in class on Monday.
+
+## Use Phone
+
+To try using your phone instead of AndroidX86, see this
+
+- <http://www.elvenware.com/charlie/development/android/UsbDebugging.html>

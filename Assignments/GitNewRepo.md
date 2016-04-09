@@ -88,7 +88,9 @@ Then make the following selections:
 * Set the Project options: Wiki, IssueTracking (Bitbucket only)
 * Set the Language: JavaScript (BitBucket only)
 
-If you have created a private repository, make sure you give me read/write access to it.
+## Share Repository {#share}
+
+Make sure you give me _read/write_ access to your repository.
 
 - GitHub: Choose the gear icon near top on right. Select **collaborators** page. My GitHub user name is **charliecalvert**.
 - Bitbucket: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
@@ -596,6 +598,24 @@ If you ever need to remove a line from a known_hosts file, see this:
 
 * [Remove from known_hosts][known-hosts-remove]
 
+## Error Checks
+
+If you get the error "Not a git repository", then it is likely that one of two things has happened:
+
+1. You are not in your repository, and need to use **cd** to navigate into it.
+- You are in your repository, but have not yet run **git init**. But remember, once you have created your repository for this course, this is no need to run **git init** a second time. Instead, just clone the repository.
+
+If you try to clone your repository, and you get a public key error then it is likely that one of the two things has happened:
+
+1. You have forgotten to load your private key with **ssh-add** or **sshadd**.
+- Or you have loaded a private key, but failed to place its matching public key in BitBuctket/GitHub.
+
+Remember that when you create a repository for the first time, you need to share it with me. To share your repository, you need to know my user name. On
+
+- BitBucket it is ccalvert
+- GitHub it is charliecalvert
+
+Though it may confuse matters somewhat, I should perhaps add that it is not wrong to pull down an existing repository onto your machine for the first time by first typing git init. It is just that I think it is simpler to pull it down by cloning it. Also, we have to be sure never to type git init outside our repository, and particular, by typing it in our home directory or in the ~/Git directory.
 
 <!-- ********************************* -->
 <!-- ** URLS ************************* -->

@@ -1,12 +1,12 @@
-#Online Presence
+## Overview
 
 In this class we use a variety of cloud services. Most of these services are free, or very inexpensive. This assignments is designed to help you establish a foothold in these various services.
 
 To enter the world of modern computing, you must have a public presence in the cloud. Most people who fear developing a presence in the cloud exaggerate the importance of the threats they face. One of the main goals in this course is to teach you to use the cloud in a safe, secure and public spirited manner. To get started, you must begin actually participating in a carefully chosen set of cloud services.
 
-##Turn it In
+## Turn it In
 
-This assignment has many parts. To help you make sure that you complete everything, here is a check List of sorts: 
+This assignment has many parts. To help you make sure that you complete everything, here is a check List of sorts:
 
 - Google Folder
 - Google Doc
@@ -18,9 +18,9 @@ This assignment has many parts. To help you make sure that you complete everythi
 - EverNote (Double check the email address!)
 - OneNote (Double check the email address!)
 
-- Turn it in: Press the submit button in Canvas!
+- Turn it in: Press the submit button in Canvas! You might also consider pasting the Online Presence document you put in your Google folder into the Text page of Canvas. On that page, I believe, links are **live** so that I can just click on them.
 
-**Sharing a document with another person involves associating the document with the right email address**. In this assignment, I spell the email addresses of mine to use when you share a document with me. Don't share everything with the same email address. Read the instructions carefully! For Google, use a Google email address -- on both ends. For Microsoft, use a Microsoft address - again on both ends. There are workarounds, but this is the general goal and best practice. Read each section of the assignment, and find the email address that I want you to use for that portion of the assignment. 
+**Sharing a document with another person involves associating the document with the right email address**. In this assignment, I spell out the email addresses of mine to use when you share a document with me. Don't share everything with the same email address. Read the instructions carefully! For Google, use a Google email address when you share the document with me. For Microsoft, use my Microsoft address. There are workarounds, but this is the general goal and best practice. Read each section of the assignment, and find the email address that I want you to use for that portion of the assignment.
 
 When you complete this assignment, press the submit button and enter the URL for your Google Drive folder, as described below.
 
@@ -30,7 +30,7 @@ When you complete this assignment, press the submit button and enter the URL for
 
 Some of you may already have accounts for services like Google or Twitter. Should you use that account in this class?
 
-Privacy is a personal subject. Some cloud services, such as Twitter, are very public. What you publish on Twitter for this class will likely be seen by your friends who use Twitter, and vice versa. Some people aren't bothered by this, others find it upsetting. If you already have an account with any of the services we will use in this class, and you don't feel comfortable using that same account for your class activities, then I recommend creating a second account with that service. 
+Privacy is a personal subject. Some cloud services, such as Twitter, are very public. What you publish on Twitter for this class will likely be seen by your friends who use Twitter, and vice versa. Some people aren't bothered by this, others find it upsetting. If you already have an account with any of the services we will use in this class, and you don't feel comfortable using that same account for your class activities, then I recommend creating a second account with that service.
 
 **NOTE**: *It is possible to do some things in private on Twitter, and there are valid scenarios for doing so. Nevertheless, this class will focus on the public interface to Twitter.*
 
@@ -51,7 +51,7 @@ Here are example names for each of my classes, pick the appropriate name for thi
 - 2015-Isit320-LastName
 - 2015-Isit322-LastName
 
-Where I write **LastName**, please substitute your last name. For instance, if this class is Prog272, then I would create a folder called **2015-Prog272-Calvert**. 
+Where I write **LastName**, please substitute your last name. For instance, if this class is Prog272, then I would create a folder called **2015-Prog272-Calvert**.
 
 Here are some examples of **improper** folder names:
 
@@ -65,7 +65,7 @@ No one but you and me will ever see these folders. It is not a risk to use your 
 
 ## Anonymity
 
-As described above, always use your real name when creating folders. 
+As described above, always use your real name when creating folders.
 
 Please, if possible, also use your real name or some variant of it when creating new accounts and email addresses.  If you want to use an existing Google or Microsoft account, and your email address for that account does not fit in with my guidelines, then okay, I can live with it. But be sure, be absolutely sure, that when you share your folder with me that you name it correctly, as described in the previous section.
 
@@ -135,7 +135,7 @@ Figure 1: Here is the type of Google Docs file I want you to create. You do not 
 
 ![OnlinePresence02.png](http://www.elvenware.com/charlie/books/CloudNotes/Images/OnlinePresnce01.png)
 
-Figure 2: Sharing a document in Google Docs. 
+Figure 2: Sharing a document in Google Docs.
 
 The dialog shown in Figure 2  was instantiated when I pushed the Share button seen in the background near the top right of the screen. It will be shared when I enter a valid email address and push the **Send** button. Think long and hard before you enter the email address. ***Is it the right address***?
 
@@ -181,13 +181,13 @@ The last time I looked, it was not particularly easy to delete a twitter account
 
 Sooner or later some student always seems to ask: "Why Twitter?" That is a reasonable question. Twitter is an odd tool, but it is particular well suited for use on mobile devices because it works with small chunks of text. It is true that a huge amount of useless junk is posted on Twitter every day. On the other hand, some of the smartest and most powerful people in the world have Twitter accounts and use them regularly, sometimes to great effect. This is particularly true in the development world. Lot's of smart developers post to twitter regularly, and following them can be very useful. It is a great way to see what [the best minds in the industry][tweetbest] are thinking.
 
-I have also found that many people don't really understand how Twitter works or how to use it. Everyone should know how to use Twitter. It is a part of the fabric of modern life. We will not spend much time with Twitter, but I do want to be sure that everyone who passes through my mobile and cloud courses understands this relatively simple tool, and knows how to use it. 
+I have also found that many people don't really understand how Twitter works or how to use it. Everyone should know how to use Twitter. It is a part of the fabric of modern life. We will not spend much time with Twitter, but I do want to be sure that everyone who passes through my mobile and cloud courses understands this relatively simple tool, and knows how to use it.
 
 [tweetbest]:http://www.elvenware.com/charlie/development/cloud/TwitterAccountsToFollow.html
 
 ## Microsoft OneDrive
 
-If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90). 
+If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90).
 
 You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder 2016-Prog270-LastName, where the 2016 can be adjusted to match the current year, LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **2016-Prog270-Calvert**, **2016-Isit320-Calvert**, **2016-Prog272-Calvert**, **2016-Prog219-Calvert**, **2016-Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
 
@@ -197,7 +197,7 @@ Share the folder with me, using my Live ID for Bellevue College work:
 
 **NOTE**: *Though they can easily be confused, the **hotmail** address shown above is not the same as the **gmail** address used in other sections of this document. In some of my courses confusing them can cost you points in multiple assignments including the midterm and the final. Because the mistake can be propagated across so many parts of the course, it can easily move your grade down a whole letter. For instance, it can change your final grade from an A to a B, or from a B to a C.*
 
-Put the same document in it that you put in the Google Drive folder. 
+Put the same document in it that you put in the Google Drive folder.
 
 To learn more about sharing documents, watch this video:
 
@@ -218,7 +218,7 @@ Don't forget, if you have trouble, join the discussion group and ask for help! D
 
 To create a OneNote document, select the menu-item/toolbar icon entitled **New**.
 
-## Evernote 
+## Evernote
 
 You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
 
@@ -228,13 +228,13 @@ Create a new synchronized notebook by choosing **File | New Notebook**. Name it 
 
 Add three tags to your note:
 
-- BC 
-- Prog270 
+- BC
+- Prog270
 - 2016
 
 The first tag stands for Bellevue College. The second should be the name of the course you are in, whether it is Isit320, Isit322, Prog270, Prog272 or Prog219.
 
-**NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.* 
+**NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.*
 
 Steps:
 
@@ -259,9 +259,9 @@ I use my desktop for tasks like those described here. However, it is possible to
 
 ## Passwords
 
-I have well a number of online accounts. To help me manage the passwords for those accounts, I use a service called [LastPass](https://lastpass.com/). Getting some people to feel comfortable using services such as Google or Evernote can be difficult, getting them to trust their passwords to LastPass is much more challenging. 
+I have well a number of online accounts. To help me manage the passwords for those accounts, I use a service called [LastPass](https://lastpass.com/). Getting some people to feel comfortable using services such as Google or Evernote can be difficult, getting them to trust their passwords to LastPass is much more challenging.
 
-During this quarter, many of you will curse and fret as you attempt to manage your passwords. I have one suggestion: use LastPass or some similar password manager. 
+During this quarter, many of you will curse and fret as you attempt to manage your passwords. I have one suggestion: use LastPass or some similar password manager.
 
 Eventually, most of us will end up using LastPass or a similar service. Exactly when you make the transition can be calculated by dividing your tolerance for pain over your propensity towards paranoia.
 

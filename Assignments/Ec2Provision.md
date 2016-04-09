@@ -176,31 +176,9 @@ the **source** command:
 
 ## Install Node
 
-Go to the **NodeInstall** directory in **JsObjects**:
+See [this section][node-elf] on Elvenware.
 
-```
-	cd Git/JsObjects/Utilities/NodeInstall/
-```
-
-There are two scripts there that you should run.
-
-- **NodeInstall.sh**
-- **InstallNodePackages.sh**
-
-Run them one at a time, like this:
-
-```
-	./NodeInstall.sh
-  ./InstallNodePackages.sh
-```
-
-The first install node and npm. The second presents you with a menu. Install only the essentials.
-
-After completing the above steps, also install **jade** globally:
-
-```
-npm install -g jade
-```  
+[node-elf]: 
 
 ## Notes on Node Install
 

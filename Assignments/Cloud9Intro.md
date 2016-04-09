@@ -161,7 +161,7 @@ Make sure b, l and n are good. Take a screen shot of the output from b and n. Ca
 
 ## Step Five
 
-When working with Git on Cloud 9, you can see your SSH key by going to **Dashboard | SSH Keys**. Also, go to **Dashboard | Connected Services**, and make sure you are connected to either GitHub or BitBucket.
+When working with Git on Cloud 9, you can see your SSH key by going to **Dashboard | SSH Keys**. Also, go to **Dashboard | Connected Services**, and make sure you are connected to either GitHub or BitBucket. Copy your SSH key
 
 In your **workspace** directory, type **git init**.
 
