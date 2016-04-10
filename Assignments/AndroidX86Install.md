@@ -43,9 +43,9 @@ Provide screen shots of:
 
 - Android home screen running on your desktop.
 - Android App View
-- The Google Drive App
+- Optional: Open the terminal window and show the results for typing **netcfg**
 
-Let's skip the Google Docs shared document part of this assignment. It is no longer necessary.
+Let's skip the Google Drive and Google Docs shared document part of this assignment. Just getting AndroidX86 installed will be enough for now.
 
 ## Hints
 

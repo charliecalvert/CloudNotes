@@ -170,9 +170,9 @@ In your **workspace** directory, type **git init**.
 Take a screen shot displaying the following:
 
 * The root file system from the Project page on left
-* **Control.js** from the JasmineExpress project open in the editor.
-* Your JasmineExpress project running in a terminal
-* The intereface of your project in a preview window
+* Any file of your choosing open in the editor.
+* A screen shot of **SystemCheck** running.
+* Optionally, the interface of some project of your choosing in a preview window
 
 **Note**: *It really doesn't matter much to me which project you show in Cloud9. If for some reason you don't have JasmineExpress up and running, just choose a different a project.*
 
