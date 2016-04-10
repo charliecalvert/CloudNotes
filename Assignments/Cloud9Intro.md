@@ -174,9 +174,9 @@ Take a screen shot displaying the following:
 * A screen shot of **SystemCheck** running.
 * Optionally, the interface of some project of your choosing in a preview window
 
-**Note**: *It really doesn't matter much to me which project you show in Cloud9. If for some reason you don't have JasmineExpress up and running, just choose a different a project.*
+**Note**: *It really doesn't matter much to me which project you show in Cloud9. If you know how to get an Express project up and running, then show that, otherwise, just choose a different a project or a different set of files.*
 
-The screenshot you want to create will be similar to, but not identical too, the image shown below:
+The screenshot you want to create might be similar to, but not identical too, the image shown below:
 
 [![Cloud9Small][cloud9Small]][Cloud9]
 
