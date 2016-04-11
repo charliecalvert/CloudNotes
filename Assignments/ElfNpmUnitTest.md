@@ -13,72 +13,12 @@ Add a tag to your repository right now, before you begin work, where you decide 
 
 - [semver explained](https://docs.npmjs.com/getting-started/semantic-versioning#semver-for-publishers)
 
-## Jasmine
+## Jasmine Server Side {#jasmine-node}
 
-Install jasmine globally:
+We want to be able to run tests that test our code on the server side, not in the browser. We will use Jasmine to do this. For instructions on how to set Jasmine up for these kinds of tests, see the following two sections of the Jasmine document on Elvenware:
 
-```bash
-npm install -g jasmine
-```
-
-Run **TestReady**. This is a bit of overkill in our case, but it helps set things up properly.
-
-Create the **/spec/support/jasmine.json** file. It should contain something like this:
-
-```javascript
-{
-  "spec_dir": "spec",
-  "spec_files": [
-    "**/test*.js"
-  ]
-}
-```
-
-## Reporter
-
-This is jasmine for node, and you can run it like this:
-
-```
-jasmine
-```
-
-However, it is nice to have a good reporter set up. So we should, one way or another, do the equivalent of:
-
-```
-npm install jasmine-spec-reporter --save-dev
-```
-
-Then create a file called **jasmine-runner.js** that looks like this:
-
-```javascript
-var Jasmine = require('jasmine');
-var SpecReporter = require('jasmine-spec-reporter');
-var noop = function() {};
-
-var jrunner = new Jasmine();
-jrunner.configureDefaultReporter({
-    print: noop
-}); // remove default reporter logs
-jasmine.getEnv().addReporter(new SpecReporter()); // add jasmine-spec-reporter
-jrunner.loadConfigFile(); // load jasmine.json configuration
-jrunner.execute();
-```
-
-Run it like this:
-
-```bash
-nodemon jasmine-runner.js
-```
-
-You can put the command shown above, or some variant on it, in your **package.json** file:
-
-```javascript
-"scripts": {
-  "test": "node jasmine-runner.js"
-},
-```
-
-Now you can type **npm test** to run your tests.
+- [Jasmine Server](http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html#jasmine-server)
+- [Jasmine Reporter](http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html#reporter)
 
 ## Some more utilities
 

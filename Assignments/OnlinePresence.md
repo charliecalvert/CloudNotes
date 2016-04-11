@@ -226,7 +226,15 @@ Create a new synchronized notebook by choosing **File | New Notebook**. Name it 
 
 -  **charliecalvertbc@gmail.com**
 
-Add three tags to your note:
+Here is the page in the web version that I use to share notebooks:
+
+![Evernote Share](https://s3.amazonaws.com/bucket01.elvenware.com/images/evernote-share-01.png)
+
+Here is the second step of the sharing process:
+
+![Evernote Share 02](https://s3.amazonaws.com/bucket01.elvenware.com/images/evernote-share-02.png)
+
+After you share the notebook, add three tags to your note:
 
 - BC
 - Prog270

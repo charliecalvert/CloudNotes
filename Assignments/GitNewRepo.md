@@ -40,6 +40,29 @@ Of course, it is always possible that one of us will hit a bug in git. Yet the o
 
 Git is not perfect. No piece of software is perfect. But git is, in my opinion, one of the most reliable, tested, and proven software programs in the world.
 
+## Clone and Existing Repository
+
+This assignment is designed to help your create a new repository from scratch. Sometimes students try to use it as a guide for cloning an existing repository, but I would not recommending doing that. If you already have a repository in **GitHub** or **BitBucket** you can get a local copy of that repository by cloning it:
+
+<pre>
+git clone git@github.com:USERNAME/REPO_NAME.git
+git clone git@bitbucket.org:USERNAME/REPO_NAME.git
+</pre>
+
+In most cases, I call **git clone** from my **~/Git** folder:
+
+<pre>
+cd ~/Git
+git clone git@bitbucket.org:ccalvert/deleteme06.git
+Cloning into 'deleteme06'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+</pre>
+
+Okay, if we are straight on what to do with an existing repositories, lets go back to our current task, which is setting up a new repository.
+
 ## Git Account GitHub
 
 Use [Github](https://github.com) to host your [git](http://git-scm.com/book/en/v2) repository. You have two choices:
@@ -616,6 +639,53 @@ Remember that when you create a repository for the first time, you need to share
 - GitHub it is charliecalvert
 
 Though it may confuse matters somewhat, I should perhaps add that it is not wrong to pull down an existing repository onto your machine for the first time by first typing git init. It is just that I think it is simpler to pull it down by cloning it. Also, we have to be sure never to type git init outside our repository, and particular, by typing it in our home directory or in the ~/Git directory.
+
+## Git Clone and Git Init
+
+You can use **git clone** only on existing repositories. You can't use **git clone** if the repository does not already exist somewhere. Even if the repository is completely empty, you can still use **git clone**. There is, of course, a difference between an non-existent repository and an empty repository.
+
+You can use **git init** to help you fetch an existing repository, or to create an entirely new repository that does not exist yet.
+
+Once again, you can clone an empty repository, you just can't clone a non-existent repository.
+
+- **git clone** sets up your local repository to use the remote cloud server for your repository. It also tells your local repository which branch to use.
+- **git init** creates a repository, but does not automatically set up the remote server nor specify the branch.
+
+To put the matter somewhat differently: **git clone** makes a copy of an existing repository, but gives you little control of the process. In most cases, you don't need that control, so use **git clone**. However, if you want more control, or more in depth understanding of how **git** works, then use **git init**.
+
+The following are two ways of doing the same thing. We could use either one when pulling down an existing repository with some content in it.
+
+Use **git init** plus **git remote** plus **git pull**:
+
+<pre>mkdir DeleteMe05
+cd DeleteMe05
+git init
+git remote add origin git@bitbucket.org:ccalvert/DeleteMe05.git
+git pull origin master</pre>
+
+Or use clone:
+
+<pre>git clone git@bitbucket.org:ccalvert/DeleteMe05.git</pre>
+
+If we have an existing repository in the cloud, one that contains content, even if the only content is a README, then we usually don't want to use **git init**. Instead, we just use **git clone** and pull down the whole repository. We do this, in our case, from the **~/Git** directory. In other words, we almost never do it from inside an existing repository, or from inside a folder that we want to make the root of a new repository. You can use either technique to pull down an existing repository, but **git clone** is less likely to lead to errors because it has fewer steps and less typing.
+
+Here are the instructions that BitBucket gives us for creating a new repository:
+
+<pre>mkdir /path/to/your/project
+cd /path/to/your/project
+git init
+git remote add origin git@bitbucket.org:ccalvert/deleteme06.git
+
+echo "Charlie Calvert" >> contributors.txt
+git add contributors.txt
+git commit -m 'Initial commit with contributors'
+git push -u origin master</pre>
+
+Note that these instructions say **git push** while the first example I give above says **git pull**. Take a moment to look and see the difference. It's not obvious.
+
+The **git push** shown in the BitBucket instructions only makes sense because we created an empty repository in BitBucket and we want to push new content that we created locally into it. If we have an existing repository with content, then use **git pull**.
+
+One thing in favor of the code shown in my first example and in the BitBucket example is that it shows exactly what is happening, while git clone does a lot of work behind the scenes. Still, **git clone** is a lot simpler to use... Perhaps BitBucket and GitHub use the somewhat more complex code simply to raise the bar a bit, and keep out complete neophytes?
 
 <!-- ********************************* -->
 <!-- ** URLS ************************* -->

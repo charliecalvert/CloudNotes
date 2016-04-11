@@ -1,7 +1,5 @@
 ## Overview
 
-I'm thinking mostly of BitlyRefine in this discussion. So do your work in that directory.
-
 A tool called Jasmine JQuery will allow us to load arbitray HTML files (fixtures) into Jasmine so that we can run tests against them. Normally, we want to load only small chunks of HTML. However, at one point we might want to load the entire contents of the HTML code produced by **vidws/index.jade** into our tests and make sure it contains certain key elements.
 
 We want to tests the contents of **views/index.jade** but not **views/layout.jade**. To do this, we need to remove the line that reads **extend layout** from **views/index.jade** and copy the results to another file called **views/fixture.jade**. When doing so, **views/index.jade** should not be changed. When we are done, **views/fixture.jade** should be very similar to **views/index.jade** but without the first line about extending **layout.jade**.
@@ -24,7 +22,8 @@ The rest of this document is an explanation of how to proceed if you want to set
 
 Copy over the new and updated unit tests from:
 
-	cp $ELF_TEMPLATES/UnitTest/BitlyRefine/*.js spec/.
+	cp $ELF_TEMPLATES/UnitTest/BitlyRefine/\*.js spec/.
+
 
 Then install some tools:
 
@@ -185,7 +184,7 @@ test registered task mentioned
 This script doesn't really prove much of anything, but it may help us find errors. Here, for instance, is a run in a project that is not properly configured for our jasmine-jquery tests:
 
 ```
-check-karma-grunt-config 
+check-karma-grunt-config
 
 *** setup ***
 
@@ -202,7 +201,7 @@ exec task config not found
 jade task config not found
 grunt-contrib-clean loadNpmTask not found
 grunt-contrib-jshint loadNpmTask mentioned
-grunt-jscs loadNpmTask not found 
+grunt-jscs loadNpmTask not found
 grunt-jsbeautifier loadNpmTask not found
 grunt-karma loadNpmTask mentioned
 grunt-contrib-jade loadNpmTask not found

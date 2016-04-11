@@ -1,6 +1,8 @@
 # Grunt Check
 
-Learn how to use [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it. The goal of this assignment is to be able to run the following commands and have them come back clean:
+In this assignment you will learn how to use [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it.
+
+More specifically, the goal of this assignment is to be able to run the following custom commands and have them come back clean:
 
 ```
 grunt check
@@ -16,7 +18,7 @@ The emphasis here is on learning to format your code correctly. In particular, s
 
 This assignment turned out to be more difficult than I thought it would be at first. The main problem came when shortening lines longer than 120 characters. Yet, these style guidelines are reasonable, and we should follow them. Furthermore, it has proved nearly impossible to get either me or my students to properly format their code without some kind of hard metric, and this provides one for us.
 
-**NOTE**: *When viewing the Google style guide, you may find it easiest to select the **Toggle All Summaries** option at the top of the file.*
+**NOTE**: _When viewing the Google style guide, you may find it easiest to select the **Toggle All Summaries** option at the top of the file._
 
 See also:
 
@@ -467,4 +469,3 @@ Done, without errors
 ```
 
 The number of files may differ, but the general format should be the same. Be sure all the JavaScript code in **public/javascripts/** and **routes/** passes these tests.
-

@@ -6,7 +6,7 @@ Grunt Check Part II provides more information on Grunt.
 
 I want you to modify the error handler in **app.js**. The updated code does two things:
 
-- It makes you aware that the node environment (env) is set to **development**. 
+- It makes you aware that the node environment (env) is set to **development**.
 - When something goes wrong in your code, it helps you more clearly see the type of errors that are being thrown.
 
 The changes are the addition of two **console.log statements**:
@@ -35,21 +35,21 @@ GET /delicious 500 48.191 ms - 2369
 
 After I installed the error handler, this is what I saw:
 
-```bash
+<pre>
 GET /bitly 304 552.907 ms - -
 Development error handler called
 About to render error { [TypeError: .../Week08-Midterm-Gan/views/delicious.jade:6
     4| block content
-    5| 
+    5|
   > 6|    +elfPanel("Image Display").elfDiv#imagePanel
     7|       img#image
-    8| 
+    8|
     9|    div.panel.panel-default
 
 Cannot read property 'call' of undefined]
   path: '/home/charlie/Git/isit320-2015/etc.../views/delicious.jade' }
 GET /delicious 500 93.348 ms - 2369
-```
+</pre>
 
 As you can see, without the extended error handler, it is almost impossible to know what is wrong, with it, the problem becomes obvious right away. In particular, this error usually results from a missing **include mixins...** statement in our jade.
 
@@ -57,15 +57,12 @@ As you can see, without the extended error handler, it is almost impossible to k
 
 Start by getting the tests from **$ELF_TEMPLATES/UnitTest/BitlyRefine**. In **JsObjects** do a **git pull.**. Then from your git repository root folder:
 
-```
-meld spec $ELF_TEMPLATES/UnitTest/BitlyRefine
-```
+  meld spec $ELF_TEMPLATES/UnitTest/BitlyRefine
 
 or
 
-```
-cp $ELF_TEMPLATES/UnitTest/BitlyRefine/* spec/.
-```
+  cp $ELF_TEMPLATES/UnitTest/BitlyRefine/* spec/.
+
 
 ## Create start Function
 
@@ -451,5 +448,3 @@ This would run this **run** option
     "run": "karma run -- --grep='status code of 200'"
 },
 ```
-
-

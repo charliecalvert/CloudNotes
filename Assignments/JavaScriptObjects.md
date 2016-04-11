@@ -4,10 +4,16 @@ Learn about JavaScript objects.
 
 * [The Slide Deck](http://bit.ly/OPDg3s)
 
+The simplest possible JavaScript object:
+
+```javascript
+var myObject = {};
+```
+
 This is an object:
 
 ```javascript
-var foo = { "name": "Suzie" };
+var person = { "name": "Suzie" };
 ```
 
 This is a function object:
@@ -15,8 +21,7 @@ This is a function object:
 ```javascript
 function bar() {
 	var a: 1;
-
-    function foo() {}
+  function foo() {}
 };
 ```
 
