@@ -10,7 +10,8 @@ We want to be able to run tests that test our code on the server side, not in th
 Get the assignment repo:
 
 ```
-git clone git@github.com:charliecalvert/elven-assignments.git
+cd ~/Git
+git clone http://github.com/charliecalvert/elven-assignments.git
 ```
 
 Copy the **GetNumbers** and **ObjectBasicsJasmine** assignments to your repository. The destination folders should be called **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**.
@@ -106,4 +107,4 @@ Push.
 
 When you submit the assignment, tell me the names of the folders in your repository where I can find your work, especially if you did not use the names specified above.
 
-**NOTE**: _I don't want anyone to feel any pressure to use the names I provide for the folders you use. I should, however, warn you that if you do not, then Clause 231, subsection 23, subparagraph 18 of the standard Bellevue College Agreement that you signed when you entered the college will be activated. This is the clause that involves the three to five year trip to Antarctica in search of the famous but highly elusive Antarctic Python. Food will be supplied, or at least tools with which you can procure food will be provided, but it is suggested that you dress warmly, and due to Climate Change, that you bring plenty of waterproof clothing in case the Ross Ice Shelf breaks up while you are crossing it._ 
+**NOTE**: _I don't want anyone to feel any pressure to use the names I provide for the folders you use. I should, however, warn you that if you do not, then Clause 231, subsection 23, subparagraph 18 of the standard Bellevue College Agreement that you signed when you entered the college will be activated. This is the clause that involves the three to five year trip to Antarctica in search of the famous but highly elusive Antarctic Python. Food will be supplied, or at least tools with which you can procure food will be provided, but it is suggested that you dress warmly, and due to Climate Change, that you bring plenty of waterproof clothing in case the Ross Ice Shelf breaks up while you are crossing it._
