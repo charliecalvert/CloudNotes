@@ -9,14 +9,14 @@ grunt check
 grunt test
 ```
 
-The emphasis here is on learning to format your code correctly. In particular, see the [Google style guide][gsg]. The JSCS tests in this project follow the Google style guides, except that our indent is four spaces rather than two.
+The emphasis here is on learning to format your code correctly. In particular, see the [Google style guide][gsg]. The [JSCS][jscs] tests in this project follow the Google style guides, except that our indent is four spaces rather than two.
 
 [jscs]: https://github.com/jscs-dev/node-jscs
 [jshint]: http://jshint.com/docs/
 [jsb]: https://github.com/beautify-web/js-beautify
 [gsg]: https://google.github.io/styleguide/javascriptguide.xml
 
-This assignment turned out to be more difficult than I thought it would be at first. The main problem came when shortening lines longer than 120 characters. Yet, these style guidelines are reasonable, and we should follow them. Furthermore, it has proved nearly impossible to get either me or my students to properly format their code without some kind of hard metric, and this provides one for us.
+Note that I want you shorten lines longer than 120 characters. This can be complicated at time, but I believe this and the other style guidelines are reasonable, and we should follow them. Furthermore, it has proved nearly impossible to get either my students or me to properly format our code without some kind of hard metric, and this provides one for us.
 
 **NOTE**: _When viewing the Google style guide, you may find it easiest to select the **Toggle All Summaries** option at the top of the file._
 
@@ -24,24 +24,63 @@ See also:
 
 - [jsbeautifier.org](http://jsbeautifier.org/)
 
-## Setup
-
-You need to create two files:
+In this assignment we will need to create two files:
 
 - **.jscsrc**: Configure JSCS
 - **Gruntfile.js**: Configure Grunt
 
-One is used to configure **grunt**, the other to configure **jscs**. Another configuration file that we have dealt with regularly is **.bowerrc**. It is used, of course, to configure **bower**. I mention it only because it is similar to **.jscsrc**.
+One is used to configure **grunt**, the other to configure **jscs**.
 
-Here is the **.jscsrc** config file:
+## Setup JSCS {#setup}
+
+JSCS enforces rules that help us properly format our code. Properly formatted code is **_much_** easier to read than poorly formatted code. Most professional teams adopt a specific set of rules for formatting their code. These rules are usually strictly enforced, and most developers quickly get very annoyed with developers who do not follow these rules. JSCS provides a means of checking your code before you push it to git so you can be sure it meets specific formatting standards.
+
+The **.jscsrc** begins with a period, so it is a hidden file. That means you will need to type something like **ls -la** to check for its existence.
+
+The **.jscsrc** file is a configuration file, just as **.bashrc** and **.bowerrc** are configuration files. We use these files to configure the tools we use. The **.bashrc** file contains code that configures our bash shell. It tweaks the shell to work the way we want it to work. The **.bowerrc** file does the same for bower, and this **.jscsrc** file configures the way that JSCS works.
+
+Here is the **.jscsrc** config file I suggest we use in this class:
 
 ```javascript
 {
     "preset": "google",
     "validateIndentation": 4,
-    "excludeFiles": ["**/node_modules/**", "**/components/**"]
+    "excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower-components/**"],
+    "maximumLineLength": 120
 }
 ```
+
+This file says that we will follow the Google code formatting standards, except that we want:
+
+- 4 spaces for indentation
+- To skip reporting on files in certain directories that contain code we did not create.
+- To not allow lines of code to exceed 120 characters.
+
+In some cases, it may makes sense to add this line to our **.jscsrc** file:
+
+```javascript
+"requireCamelCaseOrUpperCaseIdentifiers": false
+```
+
+On very, very, very rare occasions it might be necessary to turn off a rule for a specific line in your code:
+
+```javascript
+// jscs:disable specificRule
+// Code here will be ignored by JSCS.
+// jscs:enable specificRule
+```
+
+For instance:
+
+```javascript
+// jscs:disable maximumLineLength
+// Code here will be ignored by JSCS.
+// jscs:enable maximumLineLength
+```
+
+**NOTE**: _In general, when grading homework, I will consider it an error if I find you have turned off jscs rules. In most cases, only do so if I have specifically asked you to. The same goes for modifications to your **.jscsrc** file. In general, it will be considered an error if you don't check that file in, or if you modify it in ways I don't specifically spell out in class or in an assignment. I don't mean to be overly dogmatic, but it is important that I make clear what I am expecting to see in most cases._
+
+## Setup Grunt {#grunt}
 
 Here is **Gruntfile.js**:
 

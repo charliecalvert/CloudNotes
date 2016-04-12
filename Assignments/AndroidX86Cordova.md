@@ -1,4 +1,4 @@
-# AndroidX86 Cordova
+## Overview
 
 The goal of this assignment is to get a simple, default, Android Cordova application running on your phone or on an AndroidX86 build.
 Preliminaries. Be sure the following installed:
@@ -133,7 +133,9 @@ $ adb install platforms/android/build/outputs/apk/android-debug.apk
 Success
 ```
 
-To uninstall:
+**NOTE**: _An APK file contains your project. You can think of an APK file as an executable, as a program. It is really just a compressed file with your project inside it. If you install "Google Drive" on your phone, or if you install a computer game on your phone, then you are installing an APK file. The game comes in an APK file and your app comes in an APK file._
+
+To uninstall your project:
 
 - **adb uninstall [URL of your APP from config.xml in project root]**
 
@@ -143,6 +145,8 @@ Perhaps something like this:
 $ adb uninstall io.cordova.hellocordova
 Success
 ```
+
+You must uninstall an existing APK before you try to update it. In other words, you can't copy your APK file over an existing APK file on a phone or on AndroidX86. Instead, you first uninstall it, then install your updated copy.
 
 ## Edit
 

@@ -1,9 +1,10 @@
-#Ask a Question
+## Ask a Question
 
 The goal of this assignment is to encourage participation in on-line discussions. In particular I want you to:
 
 - Ask a question
 - Answer a question
+- Behave in a civil, friendly manner
 
 Secondary goals might be to:
 
@@ -59,6 +60,7 @@ Other benefits of asking questions in the discussion area include:
 
 - Learning how to work inside online forums. Places like [StackOverflow](http://stackoverflow.com/), [Super User](http://superuser.com/) and [Ask Ubuntu](http://askubuntu.com/) are as important, or more important, than books in this day and age. Just learning to rely on online forums as a means of learning is beneficial
 - The discussion area is a great place to practice answering questions. There is an art form to asking and answering questions online. One way to learn is to practice. The discussion area gives us a safe, protected place to practice writing and answering questions.
+- To learn the value of being civil in public discussions. If you go to sites like Stack Overflow and behave in an angry or ego-driven manner, you usually won't get very far. You don't need to be Miss Manners, but you should avoid being insulting, arrogant, or dismissive of others.
 
 ## Appropriate Questions
 
