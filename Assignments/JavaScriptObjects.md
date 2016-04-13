@@ -1,8 +1,8 @@
 # JavaScriptObjects
 
-Learn about JavaScript objects.
+Learn about JavaScript objects. There are lots of tips in this slide deck:
 
-* [The Slide Deck](http://bit.ly/OPDg3s)
+* [http://bit.ly/elven-javascript-basics](http://bit.ly/elven-javascript-basics)
 
 The simplest possible JavaScript object:
 
@@ -29,7 +29,7 @@ In this exercise, we are working with objects, not function objects.
 
 ## Part One
 
-Create a **nodejs** program called **Week04-JavaScriptObjects** that contains a file called **work.js**. In that file create a JavaScript object called **person** with two properties:
+Create a **nodejs** program called **Week02-JavaScriptObjects** that contains a file called **work.js**. In that file create a JavaScript object called **person** with two properties:
 
 * firstName
 * lastName
