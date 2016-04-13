@@ -15,13 +15,17 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
 ## Get Started
 
-	npm install -g express-generator
+The express-generator automatically generates a default express application. It is installed automatically from the essentials menu **JsObjects** object script called [InstallNodePackages][inpack]. However, if you find it is missing, or need to update it, this is the install command:
 
-To create an express application:
+  npm install -g express-generator
 
-	express MyProject
-	cd MyProject
-	npm install
+To use the **There**express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
+
+<pre>
+express MyProject
+cd MyProject
+npm install
+</pre>
 
 Load the project in WebStorm. Open up **/bin/www** and set the port 30025. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to *start* your project when you type **npm start**.
 
@@ -76,7 +80,7 @@ Also, in index.jade, be sure you have created a paragraph in which to display yo
 
 #Turn it in
 
-Place your project files in a folder of your repository called **Week01-MyProject**. In the same folder of your repository, Include a screen shot of your project running in a browser. 
+Place your project files in a folder of your repository called **Week01-MyProject**. In the same folder of your repository, Include a screen shot of your project running in a browser.
 
 
 ![shot](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGS0lFaUNiY3RjOUE)
@@ -84,3 +88,5 @@ Place your project files in a folder of your repository called **Week01-MyProjec
 When you turn in the the assignment, include the URL of your repository. It should look something like this:
 
 	git@bitbucket.com:lastname/prog219_lastname.git
+
+[inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh

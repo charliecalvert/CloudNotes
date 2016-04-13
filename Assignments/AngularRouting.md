@@ -1,34 +1,57 @@
 ## Description
 
-Learn Angular Routing basics.
+Learn about single page applications and Angular Routing.
 
 - Some slides are here: [http://bit.ly/angular-routes](http://bit.ly/angular-routes)
 - Angular Routing View Example: [On JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularRoutingView)
 
 The example in the slides is not the one I want you to create for this assignment.
 
+## Goals
+
+- Create an express application
+- Add support for Angular Routing
+- Learn to use Routing to help you create a single page application
+- Learn to load HTML dynamically from the server
+- Work with Controllers
+- Work with Controller As
+- Work with Bootstrap Menus
+
 ## Step One
 
 Create the project in your repository:
 
-    express Week07-AngularRoutes
+    express Week03-AngularRoutes
 
 Navigate into the directory you created and then run **npm install**.
-	
+
 Open the project in WebStorm or your choice of editor/IDE.
 
-Set port to 30025 in **bin/www**, use **nodemon** in **package.json**.
+Set port to 30025 in **bin/www**. Use **nodemon** in **package.json**:
+
+```javascript
+"scripts": {
+  "start": "nodemon server.js"
+},
+```
 
 In **routes/index.js** set the title to **Angular Routes LastName**, where LastName is your last name.
 
 ## Step Two
-
 
 Add angular, bower and bootstrap.
 
 - bower init
 - copy %ELF_TEMPLATES%\\.bowerrc .
 - bower install angular angular-route jquery bootstrap  --save
+
+Recall that our **.bowerrc** tells bower to install packages in the **public/components** folder. It looks like this:
+
+```javascript
+{
+  "directory": "public/components"
+}
+```
 
 ## Step Three
 
@@ -98,7 +121,7 @@ about.jade:
 p This is about
 
 p {{aboutController.aboutData}}
-``` 
+```
 
 Then add this to **routes/index.js** right before **module.exports**:
 
@@ -108,7 +131,7 @@ router.get('/:id', function(req, res, nest) {
 });
 ```
 
-## Five
+## Step Five
 
 There is information about menus here:
 
@@ -205,4 +228,4 @@ block content
 
 ## Turn it in
 
-The usual.
+If you have not done so already, put your work in your repository in the folder designated above. Push. Submit the name of the folder where you have you done your work.

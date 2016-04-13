@@ -2,6 +2,8 @@
 
 Prog 219 related resources.
 
+URL: [http://bit.ly/Prog219-Resources](http://bit.ly/Prog219-Resources)
+
 ## Basics
 
 - [Charlie on Elvenware](http://www.elvenware.com/charlie)
@@ -12,48 +14,21 @@ Prog 219 related resources.
 - [Ebooks and 24X7](http://www.bellevuecollege.edu/lmc/catalogs.html)
 - [Tentative ccalvert.net site, for BC Class Resources?](http://www.ccalvert.net/)
 
-I'm not quite sure what to do with ccalvert.net. For now, it seems to be the place where 
+I'm not quite sure what to do with ccalvert.net. For now, it seems to be the place where
 BC class related resources end up. It might ultimately end up replacing CloudNotes on Elvenware.
+
 
 ## Weekly Overviews {#overviews}
 
-- [Week01](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week01-2015.html)
-- [Week02](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week02-2015.html)
-- [Week03](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week03-2015.html)
-- [Week04](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week04-2015.html)
-- [Week05](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week05-2015.html)
-- [Week06](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week06-2015.html)
-- [Week07](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week07-2015.html)
-- [Week08](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week08-2015.html)
-- [Week09](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week09-2015.html)
-- [Week10](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week10-2015.html)
-- [Week11](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week11-2015.html)
- 
+- [Week01](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week01.html)
+- [Week02](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Week02.html)
+
 ## Assignments
 
 - [Introduce Yourself](http://www.ccalvert.net/books/CloudNotes/Assignments/Introductions.html)
 - [GitNewRepo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
 - [Online Presence](http://elvenware.com/charlie/books/CloudNotes/Assignments/OnlinePresence.html)
-- [WindowsSetup](http://www.ccalvert.net/Os/Windows/WindowsSetup.html)
-- [ExpressBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html)
-- [ExpressJQuery](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressJQuery.html)
-- [ExpressJQueryNumbers](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressJQueryNumbers.html)
-- [Git Tag](http://www.ccalvert.net/books/CloudNotes/Assignments/GitTag.html)
-- [Angular Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularStarter.html)
-- [Angular Controller Shapes](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularControllerShapes.html)
-- [Angular Canvas Shapes](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularCanvasShapes.html)
-- [AngularBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularBasics.html)
-- [AngularDirectives](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularDirectives.html)
-- [Angular MongoDb Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbStarter.html)
-- [Angular MongoDb Crud](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongoDbCrud.html)
-- [MangoExpress](http://www.ccalvert.net/books/CloudNotes/Assignments/MangoExpress.html)
-- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/Prog219Midterm2015.html)
-- [MongooseBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html)
-- [MongooseEditor](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseEditor.html)
-- [MongooseMagic](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseMagic.html)
-- [MongooseMtgSets](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseMtgSets.html)
-- [MongooseSubDocuments](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSubdocuments.html)
-- [MongooseSignIn](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSignIn.html)
+
 
 ## Git
 
@@ -62,11 +37,18 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 
 ## Angular
 
+Elvenware:
+
+- [Angular on Elvenware][angelf]
+
 Slide Decks:
 
-- Angular Controllers: [http://bit.ly/elf-angular-control](http://bit.ly/elf-angular-control)
-- Angular Directives: [http://bit.ly/elf-directive](http://bit.ly/elf-directive)
 - Angular Intro: [http://bit.ly/AngularPart01](http://bit.ly/AngularPart01)
+- Angular Controller Boat: [http://bit.ly/elf-angular-control](http://bit.ly/elf-angular-control)
+- Angular Directives: [http://bit.ly/elf-directive](http://bit.ly/elf-directive)
+- Angular Modules and ControllerAs: [http://bit.ly/angular-mod](http://bit.ly/angular-mod)
+- Angular Unit Tests: [http://bit.ly/angular-unit-test](http://bit.ly/angular-unit-test)
+- Angular Design: [http://bit.ly/angular-design](http://bit.ly/angular-design)
 - Angular Modes: [http://bit.ly/angular-mod](http://bit.ly/angular-mod)
 - Angular Projects: [http://bit.ly/angular-projects](http://bit.ly/angular-projects)
 - Angular Routes: [http://bit.ly/angular-routes](http://bit.ly/angular-routes)
@@ -76,7 +58,6 @@ Other:
 
 - [Ten Reasons to use Angular](http://www.sitepoint.com/10-reasons-use-angularjs/)
 - [Angular Best Practices][angBest]
-- [Angular on Elvenware][angelf]
 - [Angular Modules for Great Justice](http://codingsmackdown.tv/blog/2013/04/19/angularjs-modules-for-great-justice/)
 - [Top Ten Mistakes](https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make)
 
@@ -91,7 +72,7 @@ Other:
 
 ## JavaScript
 
-- [JavaScript Intro Deck with Useful Links](http://bit.ly/1ilT1tk)
+- [JavaScript Intro Deck with Useful Links](http://bit.ly/javascript-intro)
 - [JavaScript on Elvenware](http://elvenware.com/charlie/development/web/JavaScript/)
 - [Cordova/PhoneGap on Elvewnware](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
 - [jQuery on Elvewnare](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html)
@@ -198,8 +179,8 @@ NODE
 Podcasts and Blogs
 --------
 
-If you have free time, a long commute, or long walks that you like 
-to take, then it can be nice to listen to podcasts. Here is at least 
+If you have free time, a long commute, or long walks that you like
+to take, then it can be nice to listen to podcasts. Here is at least
 one (of many) places you can find a good list of podcasts:
 
 - <http://stackoverflow.com/questions/1644/what-good-technology-podcasts-are-out-there>
