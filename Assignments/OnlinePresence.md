@@ -261,6 +261,19 @@ Steps:
 
 *If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
 
+## Why not Just Use Google for Everything?
+
+Google does a great job with their online tools, and most other products are playing catch up. However, there are a huge number of tools out there. Just doing a search on note taking tools for the cloud, I get links to articles on the "12 Best Note Taking Apps" and "7 Cloud Based note-taking apps". The cloud is huge place, with lots of interesting solutions to many different problems.
+
+- <https://www.google.com/search?q=online+note+cloud+app>
+
+We all did the "Microsoft solves all my problems, so I'll use only Microsoft tools" solution to computing. That didn't work out well for either us or Microsoft. Google is an amazing company, but it is important we don't make the same mistake with them.
+
+I think we should both:
+
+- Learn exactly how Google tools are better or worse than other, similar solutions so we can learn from their mistakes and accomplishments. To do that, we have to try the other tools.
+- Learn to overcome common problems so that we can take advantage of smaller companies' tools that may have special values not immediately apparent. For instance, Evernote may be a bit clumsy on a desktop browser, but I find their tool is great on an Android phone. Also, it is very common for online sites to send us verification emails. At first, that step may seem odd or intrusive. But I have learned the importance of following up on that kind of request from a cloud based company. For me, the best way to learn is by experience, and I'm trying to give you experience.
+
 ## Should I Use a Mobile Device or a Desktop PC?
 
 I use my desktop for tasks like those described here. However, it is possible to complete many of them on a mobile device. Please feel free to try, and if it becomes too frustrating, switch to the desktop. I have chosen these cloud applications because they are useful additions to mobile devices. That does not mean, however, that you have to set up the accounts on those devices.
