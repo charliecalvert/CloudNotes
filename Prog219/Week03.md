@@ -1,5 +1,9 @@
 # Week 03 Prog 219 2015
 
+- Answering questions in the discussion area: Profrock
+- Following instructions precisely: Unexpected consequences
+- Practice: Raising a Baby
+
 The main focus this week is Angular.
 
 - [Prog 219 Resources][p219res]
@@ -26,7 +30,7 @@ Other:
 - [Angular Best Practices][angBest]
 - [Yo Angular](https://github.com/yeoman/generator-angular)
 - Node Modules: [Download 7Zip Angular NodeModules](http://bit.ly/ang-node-modules)
- 
+
 
 [angBest]: https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
 [angelf]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html
@@ -41,10 +45,10 @@ To get started:
 ## HTML and CSS
 
 - Html5 Test: [http://html5test.com/](http://html5test.com/)
-- Can I Use: [http://caniuse.com/](http://caniuse.com/) 
+- Can I Use: [http://caniuse.com/](http://caniuse.com/)
 
 ## Agile Development
 
 - Patterns: [http://bit.ly/1frmrZV](http://bit.ly/1frmrZV)
 - Agile Overview: [http://bit.ly/1qf6V4t](http://bit.ly/1qf6V4t)
-- 
+-

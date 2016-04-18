@@ -11,17 +11,17 @@ Goals:
 ## Step 01: Create {#create}
 Create a new express app:
 
-	express Week02-ExpressJQuery
+	express Week03-ExpressJQuery
 	cd Week02-ExpressJQuery
 	npm install
 
-Open up your project in WebStorm. 
+Open up your project in WebStorm.
 
 Open **bin/www**. Set the port to 30025. In **package.json**,  plug in **nodemon** instead of **node**. Set the title in **routes/index.js** to some string that contains your last name.
 
 ## Step 02: Control.js {#control}
 
-In the **public/javascripts** folder create a JavaScript file called **Control.js**. 
+In the **public/javascripts** folder create a JavaScript file called **Control.js**.
 
 Put the following code in **Control.js**:
 
@@ -31,7 +31,7 @@ var MyObject = (function() {
 
     function MyObject() {
     }
-    
+
     MyObject.prototype.readyCalled = function() {
         $("#readyCalled").html("Ready was called and myObjected created");
     };
@@ -66,7 +66,7 @@ Remember that Windows does not like to start a file with a period. As a result, 
 
 Edit **.bowerrc** in geany and add the following so that we will install bower components into the **public/components** directory:
 
-```
+```javascript
 {
   "directory": "public/components",
   "json": "bower.json"
@@ -74,7 +74,7 @@ Edit **.bowerrc** in geany and add the following so that we will install bower c
 ```
 
 Again, test in **jsonlint.com** to make sure it is valid.
-    
+
 Install jquery:
 
     bower install jquery --save
@@ -83,7 +83,7 @@ The **--save** parameter saves your request for jquery into the **bower.json fil
 
 My **bower.json** file now looks like this:
 
-```
+```javascript
 {
   "name": "Week02-ExpressJQuery",
   "version": "0.0.0",
@@ -113,7 +113,7 @@ My **bower.json** file now looks like this:
 The most important part is the **dependencies** object at the end of the file.
 
 Modify **/views/layout.jade** to include jquery and **Control.js**
- 
+
 ```
 doctype html
 html
@@ -133,12 +133,12 @@ In **index.jade** use Jade to create a button and two paragraphs:
     button#sendString Send String
     p#stringHolder
     p#readyCalled
-    
+
 Add a button to index.jade with an id of **sendString**. Use the constuctor of **MyObject** to set up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places a string in your **stringHolder** paragraph.
 
 When the user clicks on the button a method must be called. To make the possible, add code in the constructor that defines an event handler for the button click and method to handle the event:
 
-```
+```javascript
     function MyObject() {
         $('#sendString').click(showString);
     }
@@ -148,7 +148,7 @@ When the user clicks on the button a method must be called. To make the possible
     }
 ```
 
-**NOTE**: *The above code should appear in **Control.js**. As a rule, it makes no sense to place JavaScript code in a Jade file. The purpose of a Jade file is to create HTML. It is not a place for, or a means of creating, JavaScript.* 
+**NOTE**: *The above code should appear in **Control.js**. As a rule, it makes no sense to place JavaScript code in a Jade file. The purpose of a Jade file is to create HTML. It is not a place for, or a means of creating, JavaScript.*
 
 ## Step Five: Lists {#lists}
 
@@ -168,7 +168,7 @@ In **Control.js** we handle the button click like this:
 
 In **Control.js** we add items to the list with this **showItems** method:
 
-```
+```javascript
 function showItems() {
     $("#myList").append('<li>' + 'item01' + '</li>');
     $("#myList").append('<li>' + 'item02' + '</li>');
@@ -192,7 +192,7 @@ Handle it like this in **Control.js**:
 
 Inside the **showMarie** method create a JavaScript object that follows the rules of JSON:
 
-```
+```javascript
 var marie = {
     "firstName": "Marie",
     "lastName": "Curie",
@@ -203,7 +203,7 @@ var marie = {
 
 Cut and paste the curly braces and the syntax between them into [jsonlint.com](jsonlint.com) to be sure it is valid JSON:
 
-```
+```javascript
 {
     "firstName": "Marie",
     "lastName": "Curie",
@@ -212,9 +212,9 @@ Cut and paste the curly braces and the syntax between them into [jsonlint.com](j
 }
 ```
 
-Now inside **showMarie ** iterate over the items and add them to your list:
+Now inside **showMarie** iterate over the items and add them to your list:
 
-```
+```javascript
 for (var property in marie) {
     if (marie.hasOwnProperty(property)) {
         $("#myList").append('<li>' + marie[property] + '</li>');        
@@ -226,11 +226,11 @@ for (var property in marie) {
 
 Place the contents of your project in your repository in a folder called **Week02-ExpressJQuery**.
 
-When you make the submission remind me of the URL of your repository and specify the folder in your repository where the project resides. 
+When you make the submission remind me of the URL of your repository and specify the folder in your repository where the project resides.
 
-When I open the folder that contains your project, I should see the code for your project, not another folder that contains the code. 
+When I open the folder that contains your project, I should see the code for your project, not another folder that contains the code.
 
-Good: 
+Good:
 
     .../Git/prog219-lastname/Week02-ExpressjQuery/package.json
 

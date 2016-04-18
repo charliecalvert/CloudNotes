@@ -21,7 +21,7 @@ This is a function object:
 ```javascript
 function bar() {
 	var a: 1;
-  function foo() {}
+	function foo() {}
 };
 ```
 
@@ -29,7 +29,7 @@ In this exercise, we are working with objects, not function objects.
 
 ## Part One
 
-Create a **nodejs** program called **Week02-JavaScriptObjects** that contains a file called **work.js**. In that file create a JavaScript object called **person** with two properties:
+Create a **nodejs** program called **Week03-JavaScriptObjects** that contains a file called **work.js**. In that file create a JavaScript object called **person** with two properties:
 
 * firstName
 * lastName
