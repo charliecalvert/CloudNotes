@@ -13,6 +13,7 @@ Create folder called **Week03-AngularStarter-Add**. Inside it, save the followin
 <html>
     <head>
         <meta charset="utf-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Starter Add</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     </head>
@@ -36,7 +37,7 @@ Nomenclature:
 
 -   The File shown above: an Angular **template**.
 -   **ng-app**: It is both an HTML **attribute** and an Angular **directive**
--   {{5 * 7}}: Those double curly braces are called Angular **expressions**.
+-   {{5 \* 7}}: Those double curly braces are called Angular **expressions**.
 
 We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** have the same meaning and work in most browsers. A syntax checker will choke on **ng-app**, but will approve **data-ng-app**
 
@@ -87,16 +88,17 @@ Create a folder called **Week02-AngularStarter-Lists**
 
 If necessary, inside the folder put your **StartPythonWebServer** file. Also add the following as **index.html**:
 
-```
+```html
 <!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="utf-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Starter Lists</title>
         <script src="bower_components/angular/angular.js"></script>
     </head>
     <body ng-app="main">
-        <h1>Angular Start Lists</h1>
+        <h1>Angular Starter Lists</h1>
 
         <p>Enter a name and I will add it to our list.</p>
         <input type="text" ng-model="listItem"  placeholder="Enter list item name">
@@ -118,7 +120,7 @@ Add **angular** to your bower file:
 
 ## Step Six
 
-In the **index.js**:
+Create a file called **index.js** in the root of your project. Place the following code in it:
 
 ```
 (function() {
@@ -139,15 +141,29 @@ In the **index.js**:
 })();
 ```
 
+Be sure to load **index.js** in your HTML template:
+
+```html
+<head>
+    <meta charset="utf-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Starter Lists</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+```
+
 Take all of the code in the body of index.html and wrap it in a DIV:
 
 ```
 <div ng-controller="ListControl as list">
-
+    // PUT THE CODE FROM THE BODY HERE
 </div>
-
 ```
-And in the template:
+
+You will end up with an H1 tag, two P tags, and an INPUT tag inside your DIV. Note that the DIV is an Angular Controller. Though this program uses $Scope most of the time, note that this Controller at least supports **ControllerAs** syntax.
+
+And in the angular HTML template, just below the **{{listItem}}** expression:
 
 ```
 	<ul class="unstyled">
@@ -160,10 +176,16 @@ And in the template:
 
 ## Step Seven
 
+Add the following code to your **index.js** file just beneath the **todo** list:
+
+```
 	$scope.listItem = "New Item";
 	$scope.itemCount = getItemCount();
+```
 
-Here are the methods:
+Since the above code uses **$scope** it has to be inside your **Controller**.
+
+Still working inside the controller, add the following methods:
 
 ```
        $scope.addTodo = function() {
@@ -184,7 +206,7 @@ Here are the methods:
         };
 ```
 
-And for the HTML:
+Now switch to the HTML and add a FORM with an INPUT control and a BUTTON. It goes under the text that asks for user input:
 
 ```
 <form ng-submit="addTodo()">        
@@ -194,6 +216,19 @@ And for the HTML:
 
 <p>Items in list: {{itemCount}}</p>
 ```
+
+When done, the Controller in my HTML has the following HTML tags, shown in the order in which they appear:
+
+- H1
+- P
+- FORM (INPUT and BUTTON inside it)
+- P (With angular expression)
+- UL (with INPUT and more angular expressions in it, as shown above)
+- P (Witn angular express for the count)
+
+The result looks like this:
+
+![Angular Starter List](https://s3.amazonaws.com/bucket01.elvenware.com/images/angular-starter-lists-02.png)
 
 ## Turn it in
 
@@ -208,3 +243,22 @@ Do not submit nested folders of this type:
 In the bad scenario, the **/Git/Week02-MyProject** folder is empty except for the sub-directory. Don't do that. Instead, copy of the contents of **MyProject** into **Week02-MyProject** and then delete the empty **MyProject** folder.
 
 **NOTE**: _In the "bad scenario" outlined above, the exact name of your folders may differ. The point is not to submit your project inside a nested set of folders. It is, of course, legitimate to have folders with names like **views** or **routes**. They are just parts of the project._
+
+## Errors
+
+Suppose you get an error like this:
+
+<pre>
+angular.js:68 Uncaught Error: [$injector:modulerr]
+Failed to instantiate module main due to:
+Error: [$injector:nomod] Module 'main' is not available!
+You either misspelled the module name or forgot to load it.
+If registering a module ensure that you specify the dependencies as the second argument.
+</pre>
+
+- Did you load **index.js** with a script tag?
+- Did you define a module called **main** in JavaScript. The code to define an angular module named **main** would look like this:
+
+```javascript
+var app = angular.module('main', []);
+```

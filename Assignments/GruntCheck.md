@@ -6,7 +6,7 @@ More specifically, the goal of this assignment is to be able to run the followin
 
 ```
 grunt check
-grunt test
+npm test
 ```
 
 The emphasis here is on learning to format your code correctly. In particular, see the [Google style guide][gsg]. The [JSCS][jscs] tests in this project follow the Google style guides, except that our indent is four spaces rather than two.
@@ -16,7 +16,7 @@ The emphasis here is on learning to format your code correctly. In particular, s
 [jsb]: https://github.com/beautify-web/js-beautify
 [gsg]: https://google.github.io/styleguide/javascriptguide.xml
 
-Note that I want you shorten lines longer than 120 characters. This can be complicated at time, but I believe this and the other style guidelines are reasonable, and we should follow them. Furthermore, it has proved nearly impossible to get either my students or me to properly format our code without some kind of hard metric, and this provides one for us.
+Note that I want you to shorten lines longer than 120 characters. This can be complicated at times, but I believe this and the other style guidelines are reasonable, and we should follow them as closely as possible. Furthermore, it has proved nearly impossible to get either my students or me to properly format our code without some kind of hard metric, and this provides one for us.
 
 **NOTE**: _When viewing the Google style guide, you may find it easiest to select the **Toggle All Summaries** option at the top of the file._
 
@@ -33,11 +33,11 @@ One is used to configure **grunt**, the other to configure **jscs**.
 
 ## Setup JSCS {#setup}
 
-JSCS enforces rules that help us properly format our code. Properly formatted code is **_much_** easier to read than poorly formatted code. Most professional teams adopt a specific set of rules for formatting their code. These rules are usually strictly enforced, and most developers quickly get very annoyed with developers who do not follow these rules. JSCS provides a means of checking your code before you push it to git so you can be sure it meets specific formatting standards.
+JSCS enforces rules that help us properly format our code. Properly formatted code is **_much_** easier to read than poorly formatted code. Most professional teams adopt a specific set of rules for formatting their code. These rules are usually strictly enforced, and most developers quickly get very annoyed when someone does not follow these rules. JSCS provides a means of checking your code before you push it to git so you can be sure it meets specific formatting standards.
 
-The **.jscsrc** begins with a period, so it is a hidden file. That means you will need to type something like **ls -la** to check for its existence.
+**NOTE**: _The **.jscsrc** begins with a period, so it is a hidden file. That means you will need to type something like **ls -la** to check for its existence._
 
-The **.jscsrc** file is a configuration file, just as **.bashrc** and **.bowerrc** are configuration files. We use these files to configure the tools we use. The **.bashrc** file contains code that configures our bash shell. It tweaks the shell to work the way we want it to work. The **.bowerrc** file does the same for bower, and this **.jscsrc** file configures the way that JSCS works.
+The **.jscsrc** file is a configuration file, just as **.bashrc** and **.bowerrc** are configuration files. We use these files to configure the tools we use. The **.bashrc** file contains code that configures our bash shell. It tweaks the shell to work the way we want it to work. The **.bowerrc** file does the same for bower, and our **.jscsrc** files configure the JSCS.
 
 Here is the **.jscsrc** config file I suggest we use in this class:
 
@@ -56,25 +56,25 @@ This file says that we will follow the Google code formatting standards, except 
 - To skip reporting on files in certain directories that contain code we did not create.
 - To not allow lines of code to exceed 120 characters.
 
-In some cases, it may makes sense to add this line to our **.jscsrc** file:
+In some cases, it may make sense to add this line to our **.jscsrc** file:
 
 ```javascript
 "requireCamelCaseOrUpperCaseIdentifiers": false
 ```
 
-On very, very, very rare occasions it might be necessary to turn off a rule for a specific line in your code:
+On very, very, very rare occasions it might be necessary to turn off a rule for one or more lines of your code. In that case, we can a bit of syntax to our sources files that allows us to break a rule in specific instances.
 
 ```javascript
-// jscs:disable specificRule
-// Code here will be ignored by JSCS.
-// jscs:enable specificRule
+// jscs:disable <specificRule>
+console.log("This line of code does not need to obey some rule.")
+// jscs:enable <specificRule>
 ```
 
 For instance:
 
 ```javascript
 // jscs:disable maximumLineLength
-// Code here will be ignored by JSCS.
+console.log('Could be a long string since we turned off the line length rule.');
 // jscs:enable maximumLineLength
 ```
 
@@ -82,7 +82,9 @@ For instance:
 
 ## Setup Grunt {#grunt}
 
-Here is **Gruntfile.js**:
+[Grunt](http://gruntjs.com/) is a task runner. Use to configure utilities that help you with various chores that developers perform on a common basis. For instance, we want to run JSCS on each JavaScript and JSON file in our projects. In a large project, that could be a very laborious task if performed by hand. Grunt automates this task. It can be configured to automatically run JSCS, or some other utility, on every JavaScript and JSON file in your project. But this is only the beginning. There are many other things it can do from cleaning up directories, to helping you distribute your code.
+
+Grunt is configured in a file called **Gruntfile.js**. Here, is an example file. For now, just focus on the part that tells Grunt how to run JSCS:
 
 
 ```javascript
@@ -126,26 +128,39 @@ module.exports = function(grunt) {
             }
         },
 
-        karma: {
-            karma: {
-                configFile: 'karma.conf.js'
-            }
-        }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jscs');
     grunt.loadNpmTasks('grunt-jsbeautifier');
-    grunt.loadNpmTasks('grunt-karma');
     grunt.registerTask('beautify', ['jsbeautifier']);
     grunt.registerTask('check', ['beautify', 'jscs', 'jshint']);
-    grunt.registerTask('test', ['jshint', 'karma']);
 };
 ```
 
 In **jscs**, you can skip checking **bitly-links.js**:
+
+Here is the section that applies to JSCS:
+
+```javascript
+jscs: {
+    src: '**/*.js',
+    options: {
+        config: '.jscsrc'
+    }
+},
+```
+
+This code says that JSCS should be run on every JavaScript file in our project, regardless of which directory it might be stored in. In particular, see this line:
+
+```javascript
+    src: '**/*.js',
+```
+
+The \*\* part is a glob syntax meaning to look in all directories of the project. This part tells JSCS to look only at JavaScript files: **\*.js**. The code above also confirms that we want to use the default name **.jscsrc** for our configuration file. We could, of course, set up a different name here if that suited our purposes. However, it is rarely a good idea to break a strong convention such as this. Just name your configuration file **.jscsrc**. That is simplest.
+
+It is fairly easy to tell JSCS to skip a particular file. For instance, the bang character is used here to tell JSCS **not** to parse **spec/bitly-links.js**:
 
 ```
 jscs: {
@@ -156,7 +171,7 @@ jscs: {
 },
 ```
 
-In the code above, note how we use the bang operator to tell **jscs** to skip a file: **!spec/bitly-links.js**.
+Take a moment to be sure you see we use the bang operator to tell **jscs** to skip a file: **!spec/bitly-links.js**.
 
 We also need to turn off checking for [Camel Case violations][ccv]. While we are at it, let's set the max line length to 120, which is more reasonable for modern editors. This means our **.jscsrc** file for **BitlyInteractive** and **BitlyRefine** should look like this:
 
@@ -198,76 +213,8 @@ If a line is too long, try to find a way to break it up. The following method ha
     },
 ```
 
-Let's make a breaking change that will allows us to shorten some other lines:
 
-```javascript
-    getLinkHistoryArray: function() {
-        'use strict';
-        return bitlyUrlParser.bitlyLinks.data.link_history;
-    },
-
-    getLinkHistoryItem: function(index) {
-        'use strict';
-        return bitlyUrlParser.bitlyLinks.data.link_history[index];
-    },
-
-    getMap: function() {
-        'use strict';
-        return bitlyUrlParser.getLinkHistoryArray().map(function(history) {
-            var myDate = new Date(history.created_at * 1000);
-            return {
-                title: history.title,
-                link: history.link,
-                created_at: myDate.toLocaleString()
-            };
-        });
-    },
-```
-
-Notice that we now call **getLinkHistoryArray** in the **getMap** function.
-
-And let's clean up the way we report errors in the **fail** handler:
-
-```javascript
-    getBitlyLinks: function(accessToken) {
-        'use strict';
-        var url = bitlyUrlParser.getUrl(accessToken);
-
-        $.getJSON(url, function(result) {
-            bitlyUrlParser.bitlyLinks = result;
-            bitlyUrlParser.display();
-            $('#displayLinks').html(JSON.stringify(result, null, 4));
-        }).fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ', ' + error;
-            console.log('Request Failed: ' + err);
-            console.log('url:', url);
-        });
-    },
-```
-
-Though you probably have these changes already, I'll remind you that in **BitlyRefine** the code looks like this, :
-
-```javascript
-getBitlyLinks: function(accessToken) {
-    'use strict';
-    var url = elfBitly.getUrl(accessToken);
-
-    $.getJSON(url, function(result) {
-        elfBitly.bitlyLinks = result;
-        elfDisplay.render();
-        elfDisplay.renderTable(elfBitly.getLinkHistoryArray());
-        $('#displayLinks').html(JSON.stringify(result, null, 4));
-    }).fail(function(jqxhr, textStatus, error) {s
-        var err = textStatus + ', ' + error;
-        console.log('Request Failed: ' + err);
-        console.log('url:', url);
-    });
-},
-```
-
-This change will break some of our tests, since **getLinkHistory** has been renamed to **getLinkHistoryItem**.
-
-The **package.json** file for this code might look like this:
+The **package.json** file for this code might look a bit like this, though the version numbers of packages are going to change:
 
 ```json
 {
@@ -277,7 +224,7 @@ The **package.json** file for this code might look like this:
   "main": "work.js",
   "scripts": {
     "start": "nodemon work.js",
-    "test": "grunt test"
+    "test": "node jasmine-runner.js"
   },
   "keywords": [
     "JavaScript",
@@ -294,39 +241,59 @@ The **package.json** file for this code might look like this:
     "grunt-karma": "^0.12.1",
     "jasmine-core": "^2.3.4",
     "jshint-stylish": "^2.0.1",
-    "karma": "^0.13.14",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-spec-reporter": "0.0.22",
-    "phantomjs": "^1.9.18"
   }
 }
 ```
 
-This assignment does not actually use Karma, but I include the code for configuring karma in case you want to use this assignment as a template for that task.
+This assignment does not actually use Karma, but I include the code for configuring karma in case you want to use this assignment as a template for that task. Our code does not use karma and phantomjs, but if you wanted to add them, you could append the following to your devdependencies:
+
+```javascript
+"karma": "^0.13.14",
+"karma-jasmine": "^0.3.6",
+"karma-phantomjs-launcher": "^0.2.1",
+"karma-spec-reporter": "0.0.22",
+"phantomjs-prebuilt": "^2.1.6"
+```
 
 ## Clean Code
 
 I want to be sure that the following projects, and all future projects, pass the tests set up in this project:
 
-- Week04-JavaScriptObjects
-- Week06-BitlyInteractive
-- Week07-BitlyRefine
+- Week01-CordovaStarter
+- Week02-GetNumbers
+- Week02-ObjectBasicsJasmine
 
-Start with **Week04-JavaScriptObjects** as it is a very simple project. By the time you get it to pass, you should know enough to be able to test the code in the other two projects.
+Start with **Week02-GetNumbers** as it is a very simple project. By the time you get it to pass, you should know enough to be able to test the code in the other two projects.
 
-The [PrimitiveTypes][pt] project in **JsObjects** provides an example of what I would, at minimum, like to see. Note that both **grunt check** and **grunt test** pass without errors. (The test is not very interesting, but it does work. That would be fine for **Week04-JavaScriptObjects**, but I want, of course, better tests in the other two projects.)
+Note that both **grunt check** and **npm test** should pass without errors. (The test is not very interesting, but it does work. That would be fine for **Week04-JavaScriptObjects**, but I want, of course, better tests in the other two projects.)
 
 Remember, you should not need to modify the files included in this assignment. It is your JavaScript files that may need to change as a result of the tests shown here.
+
+## Unit Tests
+
+We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-CordovaStarter**. Copy the **tests** directory from the GetNumbers project to **Week01-CordovaStarter**. Also copy over **jasmine-runner.js**. Open up **spec/test-numbers.js** and delete all the tests except the first one:
+
+```javascript
+describe('GetNumbers Jasmine intro tests', function() {
+    'use strict';
+
+  it('proves true is true', function() {
+      expect(true).toBe(true);
+  });
+
+});
+```
+
+Make sure that one test passes when you type **npm test**.
 
 [pt]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/PrimitiveTypes
 
 ## Very Long Lines {#long-lines}
 
-In some cases, you may encounter files that have extremely long lines that you do not want to edit. For instance, in JSON files that we download from the **Bitly** site, there could be urls that are very long. Here is what I think we should do about that issue:
+In some cases, you may encounter files that have extremely long lines that you do not want to edit. Here are reasons to skip a file:
 
-1. We are not ever actually going to do any work in that file.
-2. As result, we don't care what it looks like. It's like code in **node_modules**. We don't maintain, so we don't care what it looks like.
+1. We are not ever actually going to do any work in that file. It just contains boilerplate code we will never touch.
+2. As result, we don't care what it looks like. It's like code in **node_modules**. We don't maintain it, so we don't care what it looks like.
 3. As a result, we can tell JSCS to ignore it by modifying our **.jscs** file.
 
 Here is what to do.
@@ -366,127 +333,6 @@ An alternate solution might be to modify the **.jscsrc** file:
 
 The main point: *we are never going to edit or maintain **bitly-links.js** so we don't care what it looks like. It's like the files in the **node_modules** directory. They can have any formatting they want. We don't care what they look like as we are not tasked with maintaining them. We do, however, care about our own code, and that should look right so that others can understand it. Be very careful about which files you exclude. As a rule, don't exclude files that contain code that you wrote. There may be exceptions to that rule, but they would have to be very unusual and very clearly defined.*
 
-## Updated Unit Tests
-
-```javascript
-describe('Elvenware Simple Plain Suite', function() {
-    'use strict';
-
-    it('expects true to be true', function() {
-        expect(true).toBe(true);
-    });
-
-});
-
-describe('Test Bitly Suite', function() {
-    'use strict';
-
-    var accessToken = 'YOUR ACCESS CODE HERE';
-
-    it('gets a url', function() {
-        var url = elfBitly.getUrl(accessToken);
-
-        expect(url).toBeTruthy();
-        expect(url).toContain(accessToken);
-        expect(url).toContain('https');
-
-    });
-
-    it('tests the the local url we pass to getBitlyLinks', function() {
-        var finalUrl;
-
-        spyOn($, 'getJSON').and.callFake(function(url, success) {
-            finalUrl = url;
-            success(bitlyLinks);
-            return {
-                fail: function() {}
-            };
-        });
-
-        elfBitly.getBitlyLinks(-1);
-        expect(finalUrl).toBe('data/bitly-links.json');
-    });
-
-    it('tests the accesstoken url we pass to getBitlyLinks', function() {
-        var finalUrl;
-
-        spyOn($, 'getJSON').and.callFake(function(url, success) {
-            finalUrl = url;
-            success(bitlyLinks);
-            return {
-                fail: function() {}
-            };
-        });
-
-        elfBitly.getBitlyLinks(accessToken);
-        expect(finalUrl).toContain(accessToken);
-        expect(finalUrl).toContain('https');
-    });
-
-});
-
-describe('Test Bitly Links', function() {
-    'use strict';
-
-    beforeEach(function() {
-        spyOn($, 'getJSON').and.callFake(function(url, success) {
-            success(bitlyLinks);
-            return {
-                fail: function() {}
-            };
-        });
-    });
-
-    it('shows we can directly get the status code and text', function() {
-        elfBitly.getBitlyLinks();
-        expect(elfBitly.bitlyLinks.status_code).toBe(200);
-        expect(elfBitly.bitlyLinks.status_txt).toBe('OK');
-
-    });
-
-    it('shows we have a status code of 200', function() {
-
-        elfBitly.getBitlyLinks();
-        var statusCode = elfBitly.getStatusCode();
-        expect(statusCode).toBe(200);
-    });
-
-    it('shows we have a status txt of OK', function() {
-
-        elfBitly.getBitlyLinks();
-        var statusText = elfBitly.getStatusText();
-        expect(statusText).toBe('OK');
-    });
-
-    it('shows we have a count of 165 links', function() {
-
-        elfBitly.getBitlyLinks();
-        expect(elfBitly.bitlyLinks.data.result_count).toBe(165);
-    });
-
-    it('show we can get the title of the first element', function() {
-        elfBitly.getBitlyLinks();
-        var firstLink = elfBitly.bitlyLinks.data.link_history[0];
-        expect(firstLink.title).toBe('BootstrapBasics01Small.png (307×261)');
-        expect(firstLink.title).toContain('BootstrapBasics01Small.png');
-    });
-
-    it('show we can get the first item from the link history', function() {
-        elfBitly.getBitlyLinks();
-        var firstLink = elfBitly.getLinkHistoryItem(0);
-        expect(firstLink.title).toBe('BootstrapBasics01Small.png (307×261)');
-        expect(firstLink.title).toContain('BootstrapBasics01Small.png');
-    });
-
-    it('Shows we can transform the data', function() {
-        elfBitly.getBitlyLinks();
-        var map = elfBitly.getMap();
-        // console.log(JSON.stringify(map[0], null, 4));
-        expect(map.length).toBe(50);
-    });
-});
-```
-
 ## Turn it in
 
 When turn, I should be able to see updated files in the projects mentioned above. In particular, I should be able to go to any of those three projects, run **grunt check**, and see results like this:
@@ -507,4 +353,6 @@ Running "jshint:files" (jshint) task
 Done, without errors
 ```
 
-The number of files may differ, but the general format should be the same. Be sure all the JavaScript code in **public/javascripts/** and **routes/** passes these tests.
+The number of files may differ, but the general format should be the same.
+
+I should also be able to run **npm test** on all three projects and have it come back clean.

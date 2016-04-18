@@ -313,6 +313,7 @@ node_modules
 .idea
 bower_components
 components
+platforms
 Thumbs.db
 *.zip
 npm-debug.log

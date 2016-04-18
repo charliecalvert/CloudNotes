@@ -100,11 +100,21 @@ To connect to your Android X86, do the following:
 
 - **adb connect [YOUR IP from netcfg]**
 
-To see your connections:
+**NOTE**: _We use the **netcfg** command on AndroidX86 in order to see the IP address of the device. In particular, go to the application page and run the **Terminal Emulator**. All this is described in more depth in the [AndroidX86Install][axinstall] assignment._
 
-- **adb devices**
+Suppose the IP address you found in the terminal on AndroidX86 was 192.168.1.2. Then you would type this on your Linux box to establish the connection:
 
-For instance:
+```
+adb connect 192.168.1.2
+```
+
+To confirm that it worked, you can can ask **adb** to display your connections:
+
+<pre>
+adb devices
+</pre>
+
+For instance, here is a sample run of both **adb connect** and **adb devices**:
 
 ```
 charlie@forestpath:~/temp/Week01-Foo
@@ -115,6 +125,8 @@ $ adb devices
 List of devices attached
 192.168.2.33:5555	device
 ```
+
+[axinstall]:http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Install.html#log-in
 
 ## Install
 
