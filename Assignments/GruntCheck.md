@@ -271,7 +271,7 @@ Remember, you should not need to modify the files included in this assignment. I
 
 ## Unit Tests
 
-We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-CordovaStarter**. Copy the **tests** directory from the GetNumbers project to **Week01-CordovaStarter**. Also copy over **jasmine-runner.js**. Open up **spec/test-numbers.js** and delete all the tests except the first one:
+We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. Copy the **tests** directory from the GetNumbers project to **Week01-CordovaStarter**. Also copy over **jasmine-runner.js** and **.jscsrc**. Open up **spec/test-numbers.js** and delete all the tests except the first one:
 
 ```javascript
 describe('GetNumbers Jasmine intro tests', function() {
@@ -284,7 +284,18 @@ describe('GetNumbers Jasmine intro tests', function() {
 });
 ```
 
-Make sure that one test passes when you type **npm test**.
+Make sure that **grunt check** passes and that the one test shown above passes when you type **npm test**.
+
+When working on this assignment, open up **Gruntfile.js** and **.jscs** and make sure that ignore the **platforms** and **plugins** directory. We don't need to run jscs, jsbeautifier or jshint against the code in those folders since we did not write the code found in them. For instance, here is how to tell jsbeautifier to ignore the code in the **node_modules**, **components** and **platforms** folders:
+
+```
+'jsbeautifier': {
+    files: ['**/*.js', '!**/node_modules/**', '!**/components/**', '!**/platforms/**'],
+    options: {
+        'indentSize': 4
+    }
+}
+```
 
 [pt]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/PrimitiveTypes
 
