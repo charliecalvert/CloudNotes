@@ -245,6 +245,25 @@ Write two tests to prove the methods work. The tests should have descriptions an
 - it("should square 5 and get 25" etc....
 - it("should add 3 and 2 and get 5" etc....
 
+Or to say the same thing a different way:
+
+- Create a function called square that takes one parameter. Pass in the number 5.
+- Create a function called add, pass in two parameters: 3 and 2.
+
+The first should return 25, the second 5. For example here is a function called getNine that returns 9:
+
+```javascript
+// In Control.js
+elvenController.getNine = function() {
+    return 9;
+}
+
+// In test.js
+it('should get nine', function() {
+  expect(elvenController.getNine()).toBe(9);
+});
+```
+
 ## Turn it in.
 
 Make sure you have saved your work in the proper folder of your repository. Submit your work and include a note stating the folder where you saved your work, particularly if it differs from the default value specified in this paragraph.

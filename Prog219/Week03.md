@@ -1,6 +1,6 @@
 # Week 03 Prog 219 2015
 
-- Answering questions in the discussion area: Profrock
+- Answering questions in the discussion area: Prufrock
 - Following instructions precisely: Unexpected consequences
 - Practice: Raising a Baby
 

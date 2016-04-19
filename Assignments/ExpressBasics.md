@@ -22,8 +22,8 @@ The express-generator automatically generates a default express application. It 
 To use the **There**express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
 
 <pre>
-express MyProject
-cd MyProject
+express Week03-ExpressBasics
+cd Week03-ExpressBasics
 npm install
 </pre>
 
