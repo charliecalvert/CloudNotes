@@ -240,10 +240,12 @@ Not so good:
 
 ## Extra Credit
 
-Try loading the JSON with **$getJSON**. Save the Maire object into the public directory as **marie.json**. Now load it with getJSON:
+Try loading the JSON with []$.getJSON](http://api.jquery.com/jquery.getjson/). Save the Maire object into the public directory as **marie.json**. Now load it with getJSON:
 
 ```javascript
-$getJSON('mairie.json', function(marie) {
+$.getJSON('mairie.json', function(marie) {
 	// The variable marie now holds your JSON. Process it and display it as shown above.
 });
 ```
+
+If for some reason it doesn't work, try moving **marie.json** around to different directories.
