@@ -240,7 +240,7 @@ Not so good:
 
 ## Extra Credit
 
-Try loading the JSON with []$.getJSON](http://api.jquery.com/jquery.getjson/). Save the Maire object into the public directory as **marie.json**. Now load it with getJSON:
+Try loading the JSON with [$.getJSON](http://api.jquery.com/jquery.getjson/). Save the Maire object into the public directory as **marie.json**. Now load it with getJSON:
 
 ```javascript
 $.getJSON('mairie.json', function(marie) {
