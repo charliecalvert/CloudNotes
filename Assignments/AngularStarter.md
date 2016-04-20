@@ -120,7 +120,7 @@ Add **angular** to your bower file:
 
 ## Step Six
 
-Create a file called **index.js** in the root of your project. Place the following code in it:
+Create a file called **index.js** in the root of your **AngularStarter-Lists** project. Place the following code in it:
 
 ```
 (function() {

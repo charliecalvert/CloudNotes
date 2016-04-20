@@ -265,7 +265,7 @@ I want to be sure that the following projects, and all future projects, pass the
 
 Start with **Week02-GetNumbers** as it is a very simple project. By the time you get it to pass, you should know enough to be able to test the code in the other two projects.
 
-Note that both **grunt check** and **npm test** should pass without errors. (The test is not very interesting, but it does work. That would be fine for **Week04-JavaScriptObjects**, but I want, of course, better tests in the other two projects.)
+Note that both **grunt check** and **npm test** should pass without errors.
 
 Remember, you should not need to modify the files included in this assignment. It is your JavaScript files that may need to change as a result of the tests shown here.
 

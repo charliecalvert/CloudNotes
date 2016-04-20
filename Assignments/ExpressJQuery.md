@@ -12,7 +12,7 @@ Goals:
 Create a new express app:
 
 	express Week03-ExpressJQuery
-	cd Week02-ExpressJQuery
+	cd Week03-ExpressJQuery
 	npm install
 
 Open up your project in WebStorm.
@@ -237,3 +237,13 @@ Good:
 Not so good:
 
     .../Git/prog219-lastname/Week02-ExpressjQuery/ExpressProject/package.json
+
+## Extra Credit
+
+Try loading the JSON with **$getJSON**. Save the Maire object into the public directory as **marie.json**. Now load it with getJSON:
+
+```javascript
+$getJSON('mairie.json', function(marie) {
+	// The variable marie now holds your JSON. Process it and display it as shown above.
+});
+```
