@@ -79,7 +79,7 @@ Add three methods with zero parameters that operate on **operator01** and **oper
 * subtract
 * multiply
 
-Put **add** and **subject** inside the object and implement **multiply** outside the object:
+Put **add** and **subtract** inside the object and implement **multiply** outside the object:
 
 ```javascript
 var calculator = {
