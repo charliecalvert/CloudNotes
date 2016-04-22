@@ -80,8 +80,7 @@ Also, in index.jade, be sure you have created a paragraph in which to display yo
 
 #Turn it in
 
-Place your project files in a folder of your repository called **Week01-MyProject**. In the same folder of your repository, Include a screen shot of your project running in a browser.
-
+Place your project files in the folder of your repository specified above. In the same folder of your repository, or attached to your assignment, include a screen shot of your project running in a browser.
 
 ![shot](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGS0lFaUNiY3RjOUE)
 
