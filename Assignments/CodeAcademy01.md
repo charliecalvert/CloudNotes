@@ -27,7 +27,7 @@ We'll likely keep progressing through Code Academy on a weekly basis, doing abou
 
 If you have already completed these skills, then just turn in the assignment each week pointing me toward the page showing that you have completed the skill, and you will get credit. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
 
-##Turn it in
+## Turn it in
 
 When you are done, submit either a screen shot or a link to your Code Academy **profile page**. Whether you submit a screen shot or a link depends on whether or not you have entirely completed a Code Academy skill. To help you understand what I want, consider the two following concepts:
 
@@ -36,7 +36,7 @@ When you are done, submit either a screen shot or a link to your Code Academy **
 
 In this **assignment** we are working on fifteen percent of the Code Academy JavaScript **skill**. If you have completed only 15% of a skill, then submit a screen shot. In this assignment, I ask for only 15% of a skill to be completed, so most of you will submit a screen shot. If, however, you have completed the entire skill, then submit a link to your profile page. I describe the profile page and the screen shot below.
 
-##Profile Pages and Screen Shots
+## Profile Pages and Screen Shots
 
 On Code Academy, I am known as netslayer43536. As a result, a link to my profile page looks like this:
 

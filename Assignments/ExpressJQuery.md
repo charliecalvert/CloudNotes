@@ -9,7 +9,8 @@ Goals:
 - JSON and Lists
 
 ## Step 01: Create {#create}
-Create a new express app:
+
+Create a new express app by issuing these commands starting from the root of your repository:
 
 	express Week03-ExpressJQuery
 	cd Week03-ExpressJQuery

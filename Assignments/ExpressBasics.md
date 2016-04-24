@@ -4,7 +4,7 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
 - Express Presentation: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
-##Goals
+## Goals
 
  - Create an express application
  - Change the title that appears in **index.jade** and on the main page of the application at run time
@@ -19,7 +19,7 @@ The express-generator automatically generates a default express application. It 
 
   npm install -g express-generator
 
-To use the **There**express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
+To use the **express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
 
 <pre>
 express Week03-ExpressBasics
@@ -45,12 +45,12 @@ Open up **/routes/index.js**. Change the title to **Prog272-LastName**, where La
 
 ## Create Custom JavaScript
 
-Create a file called **/public/javascripts/Control.js**. It should contain the following code:
+Create a file called **/public/javascripts/control.js**. It should contain the following code:
 
 ```javascript
 $(document).ready(function() {
-    console.log("Control.js loaded");
-    $("#dynamic").html("Control.js loaded");
+    console.log("control.js loaded");
+    $("#dynamic").html("control.js loaded");
 });
 ```
 
@@ -67,7 +67,7 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-1.11.2.min.js')
-    script(src="/javascripts/Control.js")
+    script(src="/javascripts/control.js")
   body
     block content
 ```
