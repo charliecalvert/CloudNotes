@@ -78,7 +78,7 @@ Also, in index.jade, be sure you have created a paragraph in which to display yo
   p#dynamic
 ```
 
-#Turn it in
+## Turn it in
 
 Place your project files in the folder of your repository specified above. In the root of same folder of your repository, or attached to your assignment, include a screen shot of your project running in a browser.
 
@@ -89,3 +89,34 @@ When you turn in the the assignment, include the URL of your repository. It shou
 	git@bitbucket.com:lastname/prog219_lastname.git
 
 [inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
+
+## Debug
+
+Look in **bin/www**. Find a line like this:
+
+```javascript
+var debug = require('debug')('Week03-ExpressBasics:server');
+```
+
+Go to the bash shell and set the DEBUG environment variable:
+
+<pre>
+export DEBUG=Week03-ExpressBasics:server
+</pre>
+
+Now run your program:
+
+<pre>
+$ npm start
+
+> Week03-ExpressBasics@0.0.0 start /home/charlie/Git/prog272-calvert-2016/Week03-ExpressBasics
+> nodemon ./bin/www
+
+[nodemon] 1.9.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www`
+  Week03-ExpressBasics:server Listening on port 30025 +0ms
+</pre>
+
+You are getting extra debug output, such as the last line showing what port you are running on.
