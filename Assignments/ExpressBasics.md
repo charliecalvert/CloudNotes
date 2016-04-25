@@ -4,7 +4,7 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
 - Express Presentation: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
-##Goals
+## Goals
 
  - Create an express application
  - Change the title that appears in **index.jade** and on the main page of the application at run time
@@ -19,7 +19,7 @@ The express-generator automatically generates a default express application. It 
 
   npm install -g express-generator
 
-To use the **There**express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
+To use the **express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
 
 <pre>
 express Week03-ExpressBasics
@@ -45,12 +45,12 @@ Open up **/routes/index.js**. Change the title to **Prog272-LastName**, where La
 
 ## Create Custom JavaScript
 
-Create a file called **/public/javascripts/Control.js**. It should contain the following code:
+Create a file called **/public/javascripts/control.js**. It should contain the following code:
 
 ```javascript
 $(document).ready(function() {
-    console.log("Control.js loaded");
-    $("#dynamic").html("Control.js loaded");
+    console.log("control.js loaded");
+    $("#dynamic").html("control.js loaded");
 });
 ```
 
@@ -67,7 +67,7 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-1.11.2.min.js')
-    script(src="/javascripts/Control.js")
+    script(src="/javascripts/control.js")
   body
     block content
 ```
@@ -78,10 +78,9 @@ Also, in index.jade, be sure you have created a paragraph in which to display yo
   p#dynamic
 ```
 
-#Turn it in
+## Turn it in
 
-Place your project files in a folder of your repository called **Week01-MyProject**. In the same folder of your repository, Include a screen shot of your project running in a browser.
-
+Place your project files in the folder of your repository specified above. In the root of same folder of your repository, or attached to your assignment, include a screen shot of your project running in a browser.
 
 ![shot](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGS0lFaUNiY3RjOUE)
 
@@ -90,3 +89,34 @@ When you turn in the the assignment, include the URL of your repository. It shou
 	git@bitbucket.com:lastname/prog219_lastname.git
 
 [inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
+
+## Debug
+
+Look in **bin/www**. Find a line like this:
+
+```javascript
+var debug = require('debug')('Week03-ExpressBasics:server');
+```
+
+Go to the bash shell and set the DEBUG environment variable:
+
+<pre>
+export DEBUG=Week03-ExpressBasics:server
+</pre>
+
+Now run your program:
+
+<pre>
+$ npm start
+
+> Week03-ExpressBasics@0.0.0 start /home/charlie/Git/prog272-calvert-2016/Week03-ExpressBasics
+> nodemon ./bin/www
+
+[nodemon] 1.9.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node ./bin/www`
+  Week03-ExpressBasics:server Listening on port 30025 +0ms
+</pre>
+
+You are getting extra debug output, such as the last line showing what port you are running on.

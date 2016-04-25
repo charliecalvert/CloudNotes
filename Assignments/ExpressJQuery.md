@@ -9,7 +9,8 @@ Goals:
 - JSON and Lists
 
 ## Step 01: Create {#create}
-Create a new express app:
+
+Create a new express app by issuing these commands starting from the root of your repository:
 
 	express Week03-ExpressJQuery
 	cd Week03-ExpressJQuery
@@ -29,6 +30,7 @@ Put the following code in **Control.js**:
 
 var MyObject = (function() {
 
+		// constructor
     function MyObject() {
     }
 
@@ -136,7 +138,7 @@ In **index.jade** use Jade to create a button and two paragraphs:
 
 Add a button to index.jade with an id of **sendString**. Use the constuctor of **MyObject** to set up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places a string in your **stringHolder** paragraph.
 
-When the user clicks on the button a method must be called. To make the possible, add code in the constructor that defines an event handler for the button click and method to handle the event:
+When the user clicks on the button a method must be called. To make the possible, add code in the constructor that defines an event handler for the button click. And then outside the constructor add a method called **showString** to handle the event:
 
 ```javascript
     function MyObject() {
@@ -160,7 +162,7 @@ Add a button:
 
     button#getItems Get Items
 
-In **Control.js** we handle the button click like this:
+In **Control.js**, in the constructor we handle another button click like this:
 
     function MyObject() {
         $('#getItems').click(showItems);

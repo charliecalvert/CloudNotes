@@ -12,6 +12,8 @@ The main focus this week is Angular.
 
 ## JavaScript
 
+Style guides set standards for how we should format and declare our code.
+
 - [Google Style Guide][styleGuide]
 
 [styleGuide]:http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
