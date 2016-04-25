@@ -31,7 +31,7 @@ Set port to 30025 in **bin/www**. Use **nodemon** in **package.json**:
 
 ```javascript
 "scripts": {
-  "start": "nodemon server.js"
+  "start": "nodemon ./bin/www"
 },
 ```
 
