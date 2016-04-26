@@ -52,7 +52,7 @@ To run the application, at the bash shell type **npm start**. In Cloud9 choose "
 
 ## Step Three
 
-In this project we use Jasmine to compose a test suite called "Angular Basic Tests:"
+In this project we use Jasmine to compose a test suite called "Angular Basic Tests." We put code like the following in **test/spec/test.js**:
 
 ```javascript
 describe('Angular Basic Tests', function() {
