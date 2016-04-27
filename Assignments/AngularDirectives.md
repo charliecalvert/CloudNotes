@@ -69,5 +69,61 @@ app.directive('bar', function() {
 });
 ```
 
-Note how these directive can be attached to our HTML as shown in the previous section. Finding a way to make the **bar** directive display output in the **console** window of your browser is left as an exercise, though we did demonstrate how to use it in class on Monday.
+## Template vs TemplateUrl
 
+The **elfMarie** directive above is okay. But consider this:
+
+```javascript
+elfApp.directive('elfMarie', function() {
+    return {
+        controller: 'MainController',
+        template: '<p><span class="caption">First</span>: {{marie.firstName}}</p>' +
+        '<p><span class="caption">Last</span>: {{marie.lastName}}</p>' +
+        '<p><span class="caption">City</span>: {{marie.city}}</p>'
+
+    };
+});
+```
+
+We have added only a bit more complexity, and suddenly we are looking at chaos. The solution, of course, is to switch to a templateUrl, and load the template from our **views** folder. Here is **marie.jade**:
+
+<pre>
+div#marie
+    p
+        span.caption First
+        | : {{marie.firstName}}
+    p
+        span.caption Last
+        | : {{marie.lastName}}
+    p
+        span.caption City
+        | : {{marie.city}}
+</pre>
+
+This is none so lovely either, but it keeps our JavaScript clean:
+
+```javascript
+elfApp.directive('elfMarie', function() {
+	  'use strict';
+    return {
+        controller: 'MainController',
+        templateUrl: 'marie'
+    };
+});
+```
+
+Create the HTML for our test:
+
+	jade views/marie.jade --out spec/fixtures/
+
+The rendered HTML looks like this:
+
+```html
+<div id="marie">
+    <p><span class="caption">First</span>: {{marie.firstName}}</p>
+    <p><span class="caption">Last</span>: {{marie.lastName}}</p>
+    <p><span class="caption">City</span>: {{marie.city}}</p>
+</div>
+```
+
+Note how these directive can be attached to our HTML as shown in the previous section. Finding a way to make the **bar** directive display output in the **console** window of your browser is left as an exercise, though we did demonstrate how to use it in class on Monday.

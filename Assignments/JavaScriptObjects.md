@@ -18,7 +18,7 @@ This is a slightly more complex object, again declared using object literal synt
 var person = { 'name': 'Suzie' };
 ```
 
-Here is a second way to declare the same object:
+Here is a second way to declare the same object. First we care object using object literal syntax, then we use got notation to create the name property:
 
 ```javascript
 var person = {};
@@ -89,7 +89,7 @@ Inside the object literal, give it two operators called:
 
 Initialize these properties to -1, much as we initialized the name property of **person** to **'Suzie'** in the first of the two examples in [Part Zero](#Part Zero). Of course, this property is of type **number**, not of type **string**.  
 
-Inside your program, but outside the object declaration, set the properties to the number of letters in your first and last name:
+Inside your program, but outside the object literal declaration, set the properties to the number of letters in your first and last name using dot notation:
 
 ```javascript
 calculator.operator01 = person.firstName.length;
@@ -104,15 +104,15 @@ Add three methods with zero parameters that operate on **operator01** and **oper
 * subtract
 * multiply
 
-Put **add** and **subtract** inside the object and implement **multiply** outside the object:
+Put **add** and **subtract** inside the object literal and implement **multiply** [outside][obj-outside] the object literal declaration using dot notation:
 
 ```javascript
 var calculator = {
 	// CODE OMITTED HERE
-	// PUT ADD AND SUBJECT IN HERE
+	// PUT ADD AND SUBTRACT IN HERE
 };
 
-var multiply etc.... // IMPLEMENT MULTIPLY HERE
+calculator.multiply = etc.... // IMPLEMENT MULTIPLY HERE
 ```
 
 Print the output. For instance, since my name is Charlie Calvert
@@ -122,6 +122,8 @@ Print the output. For instance, since my name is Charlie Calvert
 0
 49
 ```
+
+[obj-outside]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#outside
 
 ## Gussie it up
 
