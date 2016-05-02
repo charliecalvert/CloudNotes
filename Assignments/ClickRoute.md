@@ -1,4 +1,4 @@
-#Click Route
+# Click Route
 
 Information on routes and Express is available here:
 
@@ -7,11 +7,11 @@ Information on routes and Express is available here:
 I have created a project named **Week09-ClickRoute** and made it available for from the **Prog272-Assignments** repository:
 
     http://github.com/charliecalvert/Prog272-Assignments.git
-    
+
 **NOTE**: This project was created with **express ClickRoute** rather than **yo express**. As a result, you should start it with **npm start** or **node bin/www** or, better, **nodemon bin/www**.
 
 
-##RequireJs
+## RequireJs
 
 This project uses [RequireJs](http://requirejs.org). We have not used this technology yet, but most large applications use it, or some similar system. I have a description of it here:
 
@@ -39,10 +39,10 @@ And if we want to use jquery in ClickRoutes.js, then be sure to include it:
 define(["jquery"], function(jquery) {'use strict';
 ```
 
-If you skip this latter step, then the program will still run without error, but jquery 
+If you skip this latter step, then the program will still run without error, but jquery
 events may not be fired until you press refresh.
-    
-##Step01 - Copy the project to your repository {#step01}
+
+## Step01 - Copy the project to your repository {#step01}
 
 Clone or pull the repository. Find the **Week09-ClickRoute** project. Copy it to your repository.
 
@@ -50,7 +50,7 @@ Clone or pull the repository. Find the **Week09-ClickRoute** project. Copy it to
 
     cp -r Week09-ClickRoute ~/Git/prog272-lastName/.
 
-##Step02 - Server Side {#step02}
+## Step02 - Server Side {#step02}
 
 Define three routes in **routes/index.js**. The routes are as follows:
 
@@ -75,19 +75,19 @@ Change the **result** object literal so that it has three properties:
 
 The object you return should now have three properties:
 
-- Set the **result** property to **Success** as shown above. 
-- Set a new property called **route** to the name of the route, such as **/Item01**. 
+- Set the **result** property to **Success** as shown above.
+- Set a new property called **route** to the name of the route, such as **/Item01**.
 - Set a new property called **message** to the string **The server sent me.**
 
 Again, this means your declaration for this result object will change. To give a very broad hint, consider the following bit of pseudo-code:
 
         var result = { "result": "Success" WHAT GOES HERE? };
-        
+
 The tricky part, I suppose, will be properly parsing these three properties and displaying them exactly as you define in them. In other words the value of the properties you define in **routes/index.js** should appear verbatim on your HTML page at run time. When you click on Item 1, we should see all three properties for Item 1, when you click on Item 2, we should see all three properties of Item 2, etc.
 
 **Remember**: *Put your routes in /routes/index.js*
 
-##Step03 - Client Side {#step03}
+## Step03 - Client Side {#step03}
 
 Open up ClickEvent.js and look for the listClick method:
 
@@ -95,7 +95,7 @@ Open up ClickEvent.js and look for the listClick method:
         var clickText = event.target.innerHTML; // was innerText
     };
 
-This method is called whenever the user clicks on one of the list items in the unordered list found on the site's web page. 
+This method is called whenever the user clicks on one of the list items in the unordered list found on the site's web page.
 
 From inside this one method, I want you to call [getJSON][getJson]. As you remember, getJSON looks a bit like this:
 
@@ -106,23 +106,23 @@ From inside this one method, I want you to call [getJSON][getJson]. As you remem
 I want you to dynamically change **/SOME_ROUTE** depending on what list item the user clicked. If they clicked on **Item01**, then set the route to **/Item01**. This should call the appropriate route that you set up on the server in the previous step. There are multiple ways to solve this problem, but it would be nice if you only had to call getJSON once. In other words, set the string to pass as the route, then pass that string in the first parameter to getJSON:
 
     var someString = // Define the route based on the information you already have
-    $.getJSON(someString, function ... 
-    
-##Step04 - Parse the data {#step04}
+    $.getJSON(someString, function ...
+
+## Step04 - Parse the data {#step04}
 
 When you called **response.send** back on the server, you sent an object from the client to the server. On the client side, this object is passed to the **getJSON** callback:
 
     $.getJSON('/SOME_ROUTE, function(DATA_FROM_SERVER) {
-    
+
 Parse the data sent from the server and display it to the user in three paragraph tags that appear on your HTML page. In Jade, that will look like this:
 
     p#result
     p#route
     p#message
-    
-Inside the call to **getJSON**, use jQuery to set each of these paragraphs to one of the properties from the object sent by your server. 
 
-**Hint**: *Compare the ID's shown above to the properties of the object you set up in [Step02](#step02)*. 
+Inside the call to **getJSON**, use jQuery to set each of these paragraphs to one of the properties from the object sent by your server.
+
+**Hint**: *Compare the ID's shown above to the properties of the object you set up in [Step02](#step02)*.
 
 When you are done, the app should respond to clicks on the list items as follows:
 
@@ -132,15 +132,15 @@ When you are done, the app should respond to clicks on the list items as follows
 
 [getJson]: http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON
 
-##Sample Interface
+## Sample Interface
 
 It can look as you please, but here is an example interface.
 
 ![Click Route](http://www.elvenware.com/charlie/books/CloudNotes/Images/ClickEvents05.png)
 
-##Step05: Turn it In {#step05}
+## Step05: Turn it In {#step05}
 
-Check it into your repository in a folder called **Week09-ClickRoute**. 
+Check it into your repository in a folder called **Week09-ClickRoute**.
 
 ## Hints
 

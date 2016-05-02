@@ -2,6 +2,17 @@
 
 Slide Deck: [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
 
+- The IP address gets you to the right machine (localhost)
+- The port gets you to the right program/service on that machine. Which in this case our express webserver running on port 30025
+- The route gets you to the right method in the service
+
+Suppose you write this URL:
+
+  http://localhost:30025/read
+
+- The machine is localhost
+- The port is 30025
+- And the route is read (in index.js)
 
 ## Create
 

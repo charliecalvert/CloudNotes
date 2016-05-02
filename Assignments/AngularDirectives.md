@@ -218,7 +218,7 @@ Make sure these are in **karma.conf.js**:
 		},
 ```
 		
-Now add in some code into **spec/test-basic.js** that will set things up so we can:
+Now add code to **spec/test-basic.js** that will set things up so we can:
 
 - Load the **elfApp** module from **control.js**
 - Load the **MainController** from **control.js**
