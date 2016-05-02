@@ -210,6 +210,12 @@ In the **files** section of **karma.conf.js**, above **public/javascripts** and 
 'public/components/angular-mocks/angular-mocks.js',
 ```
 
+And install phantomjs globally:
+
+```
+npm install -g phantomjs-prebuilt
+```
+
 Make sure these are in **karma.conf.js**:
 
 ```
@@ -217,7 +223,7 @@ Make sure these are in **karma.conf.js**:
 				'**/*.html': []
 		},
 ```
-		
+
 Now add code to **spec/test-basic.js** that will set things up so we can:
 
 - Load the **elfApp** module from **control.js**
@@ -299,6 +305,7 @@ Then rendered HTML looks like this:
 
 Add the library that enables us to load HTML into our tests. This is called loading a fixture.
 
+	npm uninstall grunt-exec --save-dev
 	npm install jasmine-jquery --save-dev
 
 Here is how to load the **marie.html** fixture in our test and check that it works:
