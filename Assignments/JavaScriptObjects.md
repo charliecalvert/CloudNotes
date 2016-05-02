@@ -80,14 +80,16 @@ Take a screen shot and call it **FullName.png**.
 
 ## Part Three
 
-In the same file, create a new JavaScript object called **calculator**. Using JavaScript object literal syntax, create a new object called **calculator**
+In the same file, using JavaScript object literal syntax, create a new object called **calculator**.
 
-Inside the object literal, give it two operators called:
+Inside the object literal, give it two properties called:
 
 * operator01
 * operator02
 
 Initialize these properties to -1, much as we initialized the name property of **person** to **'Suzie'** in the first of the two examples in [Part Zero](#Part Zero). Of course, this property is of type **number**, not of type **string**.  
+
+**HINT**: _See [this slide][obj-slide] for help understanding what I want._
 
 Inside your program, but outside the object literal declaration, set the properties to the number of letters in your first and last name using dot notation:
 
@@ -124,6 +126,7 @@ Print the output. For instance, since my name is Charlie Calvert
 ```
 
 [obj-outside]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#outside
+[obj-slide]: https://docs.google.com/presentation/d/1uT8eqrBayG6ZgdBsGIWbxOr9Lf7nWnTZSHi1mlKfZks/edit#slide=id.g29c371fd0_022
 
 ## Gussie it up
 

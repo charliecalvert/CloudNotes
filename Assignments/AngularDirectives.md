@@ -196,7 +196,7 @@ In the **files** section of **karma.conf.js**:
 'public/components/angular-mocks/angular-mocks.js',
 ```
 
-Now add in some code that will set things up so we can:
+Now add code to **spec/test-basic.js** that will set things up so we can:
 
 - Load the **elfApp** module from **control.js**
 - Load the **MainController** from **control.js**
