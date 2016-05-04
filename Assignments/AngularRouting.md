@@ -41,8 +41,8 @@ In **routes/index.js** set the title to **Angular Routes LastName**, where LastN
 
 Add angular, bower and bootstrap.
 
-- bower init
-- cp %ELF_TEMPLATES%\\.bowerrc .
+- To create a new **bower.json** file use **bower init** or get one from JsObjects with **cp $ELF_TEMPLATES/bower.json**.
+- cp $ELF_TEMPLATES/.bowerrc .
 - bower install angular angular-route bootstrap  --save
 
 You should find that bootstrap brings jQuery along with it.
