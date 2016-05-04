@@ -12,7 +12,7 @@ Notice the address bar. As you can see, I'm listening on a specific IP address, 
 
 - Run the game on Linux and play it on Windows.
 - Run the game on one machine, and run the listener on a totally different machine, such as your phone.
- 
+
 ## Server Side
 
 On the server side, you should move your main socket code out of **bin/www**. In fact, you should make two changes:
@@ -38,12 +38,12 @@ module.exports = {
 };
 ```
 
-It would not be hard, obviously, to merge this code back into **bin/Sockets.js**. 
+It would not be hard, obviously, to merge this code back into **bin/Sockets.js**.
 
 
 ## Client Side
 
-On the client side, you need to listen for events, just as we have done previously when working with other examples. 
+On the client side, you need to listen for events, just as we have done previously when working with other examples.
 
 ```
 var socket = io.connect('http://192.168.2.11:30025');
@@ -70,7 +70,7 @@ html
     script(src="javascripts/jquery-2.1.1.js")
     script(src="/socket.io/socket.io.js")
     script(src="javascripts/Control.js")
-     
+
   body
     block content
 ```
@@ -121,7 +121,7 @@ module.exports = {
         var io = require('socket.io').listen(server);
 
         io.sockets.on('connection', function(socket) {
-            socket.emit('socket_listener_connect', 
+            socket.emit('socket_listener_connect',
                 'Listener connected!');            
         });
 
@@ -136,7 +136,7 @@ var socket = io.connect('http://192.168.2.11:30025');
 socket.on('socket_is_connected', function(message) {
     $('#debug').html(message);
 });
-        
+
 var socketLocal = io.connect('http://192.168.2.11:30026');
 socketLocal.on('socket_listener_connect', function(message) {
     $('#debugListener').html(message);
