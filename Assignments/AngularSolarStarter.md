@@ -10,6 +10,8 @@ Our goal, at this stage, is to get a proof of concept app running. This will be 
 
 To ensure our code works, we will take the first steps toward writing tests with HTML fixtures loaded from disk.
 
+To get rid of locale error in Cloud 9: LC_ALL=C
+
 ## Step One
 
 From the root of your repository, copy the **AngularDirectiveTesting** project to a new project call **SolarExplorer**. Then navigate to your new project folder:
@@ -174,6 +176,7 @@ mainController.index = 0;
 
 Create a directive and display all eight fields of the JSON:
 
+```javascript
 elfApp.directive('elfRenewable', function() {
     'use strict';
     return {
@@ -185,9 +188,17 @@ elfApp.directive('elfRenewable', function() {
         // CODE OMITTED HERE...
     };
 });
+```
+
+Recall that in JavaScript the following are identical:
+
+```javascript
+myObject.foo = 1;
+myObject['foo'] = 1;
+```
 
 ## Turn it in
 
-Create a **main.html** fixture and load it, and convert your "marie" tests to work with the renewable data and directive. Then push, and if necessary, specify the folder your work is in.
+Create a **renewable.html** fixture and load it, and convert your "marie" tests to work with the renewable data and directive. Then push, and if necessary, specify the folder your work is in.
 
 **NOTE**: _No nested project folders!_
