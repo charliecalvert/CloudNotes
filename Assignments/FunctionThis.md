@@ -7,6 +7,26 @@ Understanding the **this** keyword in JavaScript is not easy. One step on the wa
 [function-types]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html#function-types
 [function-this]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html#function-this
 
+## Get started
+
+Install phantomjs if you have not done so already:
+
+<pre>
+npm install -g phantomjs-prebuilt
+</pre>
+
+Then get the project from the elven-assignments repository:
+
+<pre>
+cd ~/Git/elven-assignments
+git pull
+cp -rv FunctionThis/ ~/Git/prog272-XXX-2016/Week05-FunctionThis
+cd ~/Git/prog272-XXX-2016/Week05-FunctionThis
+npm install && bower install
+</pre>
+
+
+
 ## Strict
 
 In this example, set strict off.

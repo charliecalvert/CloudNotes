@@ -28,6 +28,10 @@ Then:
     grunt check
     grunt test
 
+Also do this:
+
+	npm install -g phantomjs-prebuilt
+
 ## Step 02
 
 Let's add into **index.jade** some HTML5 directives. First, very simple:
@@ -40,7 +44,7 @@ bar
 This creates the following HTML:
 
 ```html
-hr
+<hr>
 <bar></bar>
 ```
 
@@ -131,6 +135,7 @@ Also in the **control.js** file, near the bottom, after the controller, add in a
 elfApp.directive('elfMarie', function() {
 	  'use strict';
     return {
+			  controller: 'MainController',
         template: 'First: {{marie.firstName}} ' +
             '<br>Last: {{marie.lastName}}' +
             '<br>City: {{marie.city}}'
@@ -187,13 +192,36 @@ Be sure to modify your **elfMarie** directive to match the code shown above.
 
 Finally, insert code into **routes/index.js** that will allow us to response to requests for **marie** by converting **marie.jade** to **marie.html** and sending back the HTML via HTTP.
 
+```javascript
+router.get('/:id', function(req, res, nest) {
+    'use strict';
+    res.render(req.params.id, {
+        title: ' Angular Directive Calvert'
+    });
+});
+```
+
 ## Testing
 
-In the **files** section of **karma.conf.js**:
+In the **files** section of **karma.conf.js**, above **public/javascripts** and below **jasmine-jquery**:
 
 ```javascript
 'public/components/angular/angular.js',
 'public/components/angular-mocks/angular-mocks.js',
+```
+
+And install phantomjs globally:
+
+```
+npm install -g phantomjs-prebuilt
+```
+
+Make sure these are in **karma.conf.js**:
+
+```
+		preprocessors: {
+				'**/*.html': []
+		},
 ```
 
 Now add code to **spec/test-basic.js** that will set things up so we can:
@@ -201,6 +229,8 @@ Now add code to **spec/test-basic.js** that will set things up so we can:
 - Load the **elfApp** module from **control.js**
 - Load the **MainController** from **control.js**
 - Initialize **$compile** and **$templateCache** so we can convert angular templates into valid HTML
+
+Here is the code for **test-basic**:
 
 ```javascript
 describe('Elvenware Simple Plain Suite', function() {
@@ -275,6 +305,7 @@ Then rendered HTML looks like this:
 
 Add the library that enables us to load HTML into our tests. This is called loading a fixture.
 
+	npm uninstall grunt-exec --save-dev
 	npm install jasmine-jquery --save-dev
 
 Here is how to load the **marie.html** fixture in our test and check that it works:
