@@ -125,3 +125,20 @@ $(document).ready(function() {
    }
 });
 ```
+
+## Add method
+
+Let's add an add method to our project. First on the server:
+
+```javascript
+router.get('/add' etc....)
+```
+
+And a button with an id of **add** to your jade. And set up a button response method in **control.js**.
+
+```javascript
+var operatorA = $('#operatorA').val();
+      var operatorB = $('#operatorB').val();
+      console.log('operators:', operatorA, operatorB);
+      var requestQuery = { operatorA: operatorA, operatorB: operatorB };
+```
