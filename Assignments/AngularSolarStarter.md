@@ -2,6 +2,8 @@
 
 Angular Solar Starter
 
+**NOTE**: _I decided that using **controller as** was too difficult when it came to testing. So for now, I have stripped it out of my own code and of this assignment. This means that if you created a version of this code that uses controller as, you will have to strip it out completely. That can be tricky, but I have done so in my code, and hopefully I have done so in the code now found in these instructions. The pith instruction: If you see **mainController** with a small em in your code, then remove it. For instance, **mainController.index** becomes **index** in your HTML and **$scope.index** in your **MainController**. If you want to keep the **controller as** syntax and feel you can get the tests to work while doing so, then do so. But at least for now, I do not recommend that for anyone in the class. It gets tricky when loading templates and we are not ready for that yet._
+
 The goal of this assignment is to load a file called **Renewable.json** and iterate over its contents. This JSON file contains an array of objects. We will use a number control to iterate through the array and a directive to display the objects.
 
 Our goal, at this stage, is to get a proof of concept app running. This will be the first of multiple iterations.
@@ -43,11 +45,11 @@ In **test-basic**, let's start by declaring a variable and method that we will w
 
 ```javascript
 fit('should find the index', function() {
-    expect( mainController.index).toBe(0);
+    expect( scope.index).toBe(0);
 });
 
 fit('should have a getRenewable method ', function() {
-    expect(mainController.getRenewable).toBeDefined();
+    expect(scope.getRenewable).toBeDefined();
 });
 
 it('should be possible to access the fixture', function() {
@@ -131,12 +133,12 @@ Alternatively, you can download them and save them to disk:
 Add a button and a number control to **main.jade**:
 
 ```
-button.btn.btn-primary(ng-click="mainController.getRenewable()") Energy Renewable
+button.btn.btn-primary(ng-click="getRenewable()") Energy Renewable
 
 div
     label
         | Number:
-        input(type='number', name='input', ng-model='mainController.index', min='0', max='10', required='')
+        input(type='number', name='input', ng-model='index', min='0', max='10', required='')
 
 hr
 ```
@@ -148,7 +150,7 @@ When the button is clicked, a method on your controller called **getRenwewable**
 Set up **main.js** and use dependency injection to pass in **$http** as the sole parameter to the anonymous callback for your **MainController**:
 
 ```javascript
-  elfApp.controller('MainController', function($http) {
+  elfApp.controller('MainController', function($scope, $http) {
      // CODE OMITTED HERE
   });
 ```
@@ -156,12 +158,12 @@ Set up **main.js** and use dependency injection to pass in **$http** as the sole
 Inside the controller add a method to load your JSON and store it in a variable called **renawable**. In particular, we are, at this stage, loading only the **Renewable.json** file:
 
 ```javascript
-mainController.getRenewable = function() {
+$scope.getRenewable = function() {
     console.log('getRenewable');
     $http.get('data/Renewable.json')
         .then(function(res){
             console.log(res.data[0]);
-            mainController.renewable = res.data;
+            $scope.renewable = res.data;
         });
 }
 ```
@@ -169,7 +171,8 @@ mainController.getRenewable = function() {
 We also add our **index** for tracking the data in the **INPUT** control:
 
 ```javascript
-mainController.index = 0;
+$scope.mainData = "Main Data";
+$scope.index = 0;
 ```
 
 ## Step Seven: Directive {#directive}
@@ -181,10 +184,9 @@ elfApp.directive('elfRenewable', function() {
     'use strict';
     return {
         controller: 'MainController',
-        controllerAs: 'mainController',
-        template: 'First: {{mainController.renewable[mainController.index].Year}} ' +
-        '<br>Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}' +
-        '<br>Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}' +
+        template: 'First: {{renewable[index].Year}} ' +
+        '<br>Solar: {{renewable[index]["Solar (quadrillion Btu)"]}}' +
+        '<br>Geothermal: {{renewable[index]["Geothermal (quadrillion Btu)"]}}' +
         // CODE OMITTED HERE...
     };
 });
@@ -197,8 +199,45 @@ myObject.foo = 1;
 myObject['foo'] = 1;
 ```
 
+After you complete the template in the code above, you should convert the directive to work with a **templateUrl** rather than a template:
+
+```javascript
+controller: 'MainController',
+templateUrl: 'renewable'
+```
+
+This is probably the simplest path to being able to complete the tests, so it is a step most developers would take while ensuring their code is testable. Remember that you can use one of the [html to jade](http://html2jade.org/) utilities to help with the process.
+
+## Testing
+
+Convert your "marie" tests to work with the renewable data and directive. These tests are already written, but they work with the **marie** directive. Change them so they work with the new **renewable** directive and **renewable** fixture. For instance, you will need to use our global jade npm package to convert your **renewable.jade** file to a **renewable.html** fixture and load it in your tests. The steps involved were all described in the previous assignment on Angular Directives.
+
+For instance, this test passes for me:
+
+```javascript
+it('tests scope variable access in template loaded through fixture', function() {
+    // Get element from fixture
+    scope.renewable = [{
+        "Year": "2017",
+        "Solar (quadrillion Btu)": "0.8045307",
+        "Geothermal (quadrillion Btu)": "0.2349284",
+        "Other biomass (quadrillion Btu)": "0.50916",
+        "Wind power (quadrillion Btu)": "2.202328",
+        "Liquid biofuels (quadrillion Btu)": "1.2329197",
+        "Wood biomass (quadrillion Btu)": "1.9860924",
+        "Hydropower (quadrillion Btu)": "2.5859957"
+    }];
+
+    var el = document.getElementById('renewable');
+
+    // ETC. The rest of the code is nearly, but not exactly identical to the marie code.
+});
+```
+
+We will see a better way to mock scope.renewable on Monday.
+
 ## Turn it in
 
-Create a **renewable.html** fixture and load it, and convert your "marie" tests to work with the renewable data and directive. Then push, and if necessary, specify the folder your work is in.
+Push, and if necessary, specify the folder your work is in.
 
 **NOTE**: _No nested project folders!_
