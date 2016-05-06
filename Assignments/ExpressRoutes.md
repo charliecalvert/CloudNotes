@@ -142,3 +142,25 @@ var operatorA = $('#operatorA').val();
       console.log('operators:', operatorA, operatorB);
       var requestQuery = { operatorA: operatorA, operatorB: operatorB };
 ```
+
+Add two numeric **INPUT** controls and an **add** BUTTON to your page. When the user enters two numbers, then selects the button, a request should be sent to the server to add the two numbers. To do this, pass **requestQuery** as the second parameter to [**getJSON**](http://api.jquery.com/jquery.getjson/):
+
+```javascript
+getJSON('/add', requestQuery, etc...);
+```
+
+In the server side, use **request.query** to retrieve the parameters:
+
+```javascript
+router.get('/add', function(request, response) {
+  console.log('add method called');
+  console.log('The parameters are:', request.query);
+```
+
+Using **parseInt** as an aid, add the two numbers and then use the **response** object to send back the result. Display the output to the user. For instance, if the user enters 2 and 3, the server should add these numbers together and send back an object containing the value 5.
+
+## Turn it in
+
+Make sure your runs smoothly and the **read** and **add** routes work. push your work. If you did not use the folder specified above, please let me know.
+
+**NOTE**: _No nested project folders!_

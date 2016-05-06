@@ -60,7 +60,14 @@ describe('Angular Basic Tests', function() {
 });
 ```
 
-We add code to load our Angular module:
+This code sets up a Jasmine Test Suite called 'Angular Basic Tests'. We will place two things inside these suite:
+
+- Our tests.
+  - These begin with a call to the function **it()**
+- Code to set up and tear down the environment in which we want our suites to run
+  - These include calls to **beforeEach()** and **afterEach()**. Those methods are called before and after each test.
+
+Here we add code to load our Angular module before each test:
 
 ```javascript
 describe('Angular Basic Tests', function() {
