@@ -53,22 +53,37 @@ Put a button on the main HTML file. When they click it, call the renewables rout
 
 ## More complete Error
 
-On server
+On server, include the built in file system package near the top of your file:
 
 ```javascript
-fs.readFile('data/Renewabasdfle.json', 'utf8', function(err, data) {
-    if (err) {
-      // response.send(err, 404);
-      response.status(404).send(err);
-    } else {
-      console.log(data);
-      response.send({ result: 'Success', renewables: data });
-    }
-});
+var express = require('express');
+var router = express.Router();
+var fs = require('fs');
 ```
 
-On client:
+Then, in your **/renewables** route, do something like this:
 
+```javascript
+fs.readFile('data/Renewable.json', 'utf8', function (err, data) {
+    if (err) {
+        // response.send(err, 404);
+        response.status(404).send(err);
+    } else {
+        var json = JSON.parse(data);
+        console.log(json);
+        response.send({result: 'Success', renewables: json});
+    }
+});
+
+```
+
+Note that we translated the string that we loaded from the file system in JSON with this call:
+
+```javascript
+var json = JSON.parse(data);
+```
+
+On the client lets begin to handle all the events associated with a call to getJSON:
 
 ```javascript
 $(document).ready(function () {
