@@ -1,37 +1,114 @@
 ## Branches
 
-Let's learn about git branches.
+## Git Branch
 
-Create a week05 branch so that we can easily see the state of our program in Week05
+Create a new branch and check it out:
 
 <pre>
-  git branch week05
-  git checkout week05
+git branch week05
+git checkout week05
 </pre>
 
-Switch back to master.
+Modify the readme:
 
-  git checkout master
+  geany README.md &
 
-Create a Week06 branch.
+We should add text like this:
+
+<pre>
+  ## Week 05 Branch
+
+  - [Angular Solar Starter Assignment][solar-start]
+
+  [solar-start]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
+</pre>
+
+Now check it in and bush it on the new branch and then push that branch to your BitBucket or GitHub repository:
+
+<pre>
+git status
+git add README.md
+git commit -m "Week05 Read me"
+git push --set-upstream origin week05
+</pre>
+
+**NOTE**: _Your branch in the cloud is the **origin** in our case. When we talk about the origin, we are referring to our repository on BitBucket or GitHub. The origin doesn't have to be in the cloud or on those sites, but it is in our case._
+
+Take a look at the new branch's metadata:
+
+<pre>
+git branch -a
+</pre>
+
+Now switch back to master and merge in your changes:
+
+<pre>
+git checkout master
+git merge week05
+</pre>
+
+It might looks something like this as we merge the **week05** README with the **master** README:
+
+<pre>
+git merge week05
+Updating d0aee52..7ae1b47
+Fast-forward
+README.md | 9 +++++++++
+1 file changed, 9 insertions(+)
+</pre>
+
+## Week 06 Branch
+
+Now create a week06 branch and modify the readme as we did in week05:
 
 <pre>
 git branch week06
 git checkout week06
+geany README.md &
 </pre>
 
-We will work in this branch, continuing in our Week05-ExpressRoutesSolar project. For now, don't attempt to rename the project.
-
-We check the current branch like this:
+The changes might look like this:
 
 <pre>
-$ git branch
-  master
-  week05
-* week06
+  ## Week 06 Branch
+
+  - [Angular Solar Starter Tests Assignment][solar-start-test]
 </pre>
 
-Or like this:
+Check the status:
+
+<pre>
+git status
+git branch -a
+</pre>
+
+Add in your changes, commit and push your new branch to the cloud (BitBucket/GitHub):
+
+<pre>
+git add .
+git commit -m "Week06 Readme"
+git push --set-upstream origin week06
+</pre>
+
+## Merge Week06 into Master
+
+Now we merge in our changes to the master branch:
+
+<pre>
+git checkout master
+git merge week06
+</pre>
+
+**NOTE**: _We don't necessarily have to merge our changes back into master every day. You should merge them, however, before we go on to week 07. The point being that master ends up contains our latest while our branches show our status at the end of each week. This is not the only thing you can do with branches, nor is it even a common strategy, but it fits our goals in this class. In other words, its nice in this class to have a handy record of where we are at the end of each week. But other teams would do very different things with branches. One of our goals, of course, is simply to be sure we understand how to use git branches. The exact way we use them is not important._
+
+Now check the status, and go back to **week06** where we will do our work this week:
+
+<pre>
+git branch -a
+git checkout week06
+</pre>
+
+Like this:
 
 <pre>
 $ git branch -a
@@ -43,19 +120,20 @@ $ git branch -a
   remotes/origin/master
 </pre>
 
-
 ## Get Started
 
 Get our jasmine server side configuration file from the Get Numbers project:
 
 <pre>
-cp GetNumbers spec/support/jasmine.json
+cd spec
+mkdir support
+cp ~/Git/prog272-calvert-2016/Week02-GetNumbers/spec/support/jasmine.json .
 </pre>
 
 Copy jasmine-runner to the root of our project:
 
 <pre>
-cp GetNumbers/jasmine-runner.js .
+cp ~/Git/prog272-calvert-2016/Week02-GetNumbers/jasmine-runner.js .
 </pre>
 
 Change so that we skip files that begin with **test** and get only those that begin with **spec**:
@@ -79,6 +157,22 @@ Add a script for running our test to **package.json**. Here I quote several line
   "start": "nodemon ./bin/www"
 },
 "dependencies": {
+```
+
+Install:
+
+<pre>
+npm install jasmine-spec-reporter --save-dev
+</pre>
+
+Create a simple test in **spec/spec-routes.js**:
+
+```javascript
+describe('Elvenware Simple Plain Suite', function () {
+    it('shows we can test', function () {
+        expect(true).toBe(true);
+    });
+});
 ```
 
 We use the new script with the npm **run** command, something like this, where you execute the code on the first line:

@@ -5,6 +5,7 @@ Look at [directive template names][dir-names] slide.
 [dir-names]: https://docs.google.com/presentation/d/1QHZunZfwAQIplala60HkLaGYaRGzJ5eO4oKIg_S1iyk/edit#slide=id.g9ad18c47f_0_91
 
 ## Git Branch
+
 Create a new branch and check it out:
 
 <pre>
@@ -183,7 +184,7 @@ You might also want temporarily add a test from our **test-basic** file that ens
 Here is a test that actually mocks the **$http.get** call in our **getRenewable** method. This method, as you know,   retrieves data from the server. Only this time, instead of getting data from a real server, we put in our own mock data instead:
 
 ```javascript
-it('proves we can detect request', function() {
+it('proves we can mock getting JSON data', function() {
 
   var renewable = [{
       "Year": "2017",
@@ -206,5 +207,5 @@ it('proves we can detect request', function() {
   $httpBackend.flush();
   expect(scope.renewable[0].Year).toEqual('2017');
 
-})
+});
 ```
