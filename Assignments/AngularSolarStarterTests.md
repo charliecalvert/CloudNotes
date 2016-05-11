@@ -212,6 +212,8 @@ it('proves we can mock getting JSON data', function() {
 
 ## Testing Renewables
 
+Be sure to remove controller as from **public/javascripts/app.js**.
+
 Add this to **karma.conf.js** files:
 
 ```javascript
@@ -253,5 +255,61 @@ elfApp.directive('elfSimpleFormat', function() {
 });
 ```
 
+You will need to create a **simple-format.jade** file and get it set up to test as a fixture:
 
-jade views/simple-format.jade --out='spec/fixtures/'
+  jade views/simple-format.jade --out='spec/fixtures/'
+
+You will, of course, have to add this directive to **main.jade**. You can just append it to the end of the file for now.
+
+Call the **renewableUtils.simpleFormat** from within **$scope.getRenewables**. It makes no sense to call it until you have loaded **renewables.json**. In particular, since it relies on **renewables.json** being present, it won't work properly until you have loaded that file.
+
+In **.jscsrc** exclude the **data** folder. In **Gruntfile.js** don't try to beautify the **data** folder.
+
+Don't forget to run **grunt check** and clean up all errors such as missing use strict, invalid quote marks, etc.
+
+**NOTE**: _With JSCS, you can use single quotes for a string, and double quotes for embedded quotes inside a string: 'My "embedded" string'._
+
+With angular, you can usually delete an **$(document).ready()** statements as it takes care of this for you.
+
+## Create JSON JavaScript
+
+Create a JavaScript file called **spec/data/json-as-js-renewables.js**. Inside it, put **renewables.json**. It should begin a bit like this:
+
+```javascript
+var renewables = [{
+    "Year": "2017",
+    "Solar (quadrillion Btu)": "0.8045307",
+    "Geothermal (quadrillion Btu)": "0.2349284",
+    "Other biomass (quadrillion Btu)": "0.50916",
+    "Wind power (quadrillion Btu)": "2.202328",
+    "Liquid biofuels (quadrillion Btu)": "1.2329197",
+    "Wood biomass (quadrillion Btu)": "1.9860924",
+    "Hydropower (quadrillion Btu)": "2.5859957"
+}, {
+    "Year": "2016",
+    etc.
+```
+
+There is no real need to format, syntax check or run JSCS on this file. As a result, you can exclude the entire **data** directory from those tools. In general, whenever we create a data directory, we should tell JSCS and JsBeautify to leave it alone. It might be useful to run JsHint over that directory, but it is not strictly necessary.
+
+## Create renewables-utils
+
+You need to create a file called **renewable-utils.js**. For now, we can put it in the **public/javascripts** folder. Later on we can spend some time organizing our files so they are divided by category and easier to find.
+
+Don't forget to add it to **layout.jade**!
+
+## Create test-renewables
+
+We need to test.... in **spec/test-renewables.js**
+
+## Test Simple Format
+
+We need to create **spec/test-simple-format.js**, which is our holy grail.
+
+## Test Simple Format Backend
+
+We need to create **spec/test-simple-format-backend.js**, which is our holy grail.
+
+## Suite Titles
+
+Get the suite titles right for each test.

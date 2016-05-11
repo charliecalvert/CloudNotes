@@ -243,6 +243,67 @@ fit('renewables first object body', function (done) {
 });
 ```
 
+## Create JSON JavaScript
+
+Create a JavaScript file called **spec/data/json-as-js-renewables.js**. Inside it, put **renewables.json**. It should begin a bit like this:
+
+```javascript
+var renewables = [{
+    "Year": "2017",
+    "Solar (quadrillion Btu)": "0.8045307",
+    "Geothermal (quadrillion Btu)": "0.2349284",
+    "Other biomass (quadrillion Btu)": "0.50916",
+    "Wind power (quadrillion Btu)": "2.202328",
+    "Liquid biofuels (quadrillion Btu)": "1.2329197",
+    "Wood biomass (quadrillion Btu)": "1.9860924",
+    "Hydropower (quadrillion Btu)": "2.5859957"
+}, {
+    "Year": "2016",
+    etc.
+```
+
+There is no real need to format, syntax check or run JSCS on this file. As a result, you can exclude the entire **data** directory from those tools. In general, whenever we create a data directory, we should tell JSCS and JsBeautify to leave it alone. It might be useful to run JsHint over that directory, but it is not strictly necessary.
+
+## Tests
+
+Consider using **nodemon** instead of **node** for **test-server** in **package.json**.
+
+Create an **objectToArray** method in **routes/energy-utils.js**. Require this file in **index.js**.
+
+In **index.js** add routes:
+
+- renewableByIndex
+- renewableByYear
+- renewablesSorted (renewableByIndexSorted)
+
+## Spec Routes
+
+Should contain the following tests:
+
+
+## Spec Energy Utils
+
+Create **spec/spec-energy-utils.js**.
+
+
+## Interface
+
+Add **getByYear** and **getByIndex** buttons to jade and response methods to **control.js**.
+
+Create a **.basicDiv** class in **style.css**. You might right something like this, or whatever strikes your fancy:
+
+```css
+.basicDiv {
+  margin-top: 5px;
+  padding: 5px;
+  border: solid seagreen 2px;
+}
+```
+
+We will probably replace this with **bootstrap** css later on, or you can do so now.
+
+For now, my interface looks like this:
+
 ## Turn it in
 
 The usual...
