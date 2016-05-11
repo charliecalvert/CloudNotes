@@ -4,6 +4,8 @@ Look at [directive template names][dir-names] slide.
 
 [dir-names]: https://docs.google.com/presentation/d/1QHZunZfwAQIplala60HkLaGYaRGzJ5eO4oKIg_S1iyk/edit#slide=id.g9ad18c47f_0_91
 
+**NOTE** _Be sure to remove controller as from **public/javascripts/app.js**. In general, scour your files looking for and removing the case sensitive references to **mainController**._
+
 ## Git Branch
 
 Create a new branch and check it out:
@@ -179,6 +181,7 @@ You might also want temporarily add a test from our **test-basic** file that ens
 
 [elf-http-backend]: http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend
 
+
 ## Mocking JSON Requests
 
 Here is a test that actually mocks the **$http.get** call in our **getRenewable** method. This method, as you know,   retrieves data from the server. Only this time, instead of getting data from a real server, we put in our own mock data instead:
@@ -210,9 +213,76 @@ it('proves we can mock getting JSON data', function() {
 });
 ```
 
-## Testing Renewables
+## All Tests
 
-Be sure to remove controller as from **public/javascripts/app.js**.
+Now it is time to start filling out all our tests. When done, all our tests should look at least a bit like this:
+
+<pre>
+$ karma start
+11 05 2016 11:40:58.127:WARN [karma]: No captured browser, open http://localhost:9876/
+11 05 2016 11:40:58.140:INFO [karma]: Karma v0.13.22 server started at http://localhost:9876/
+11 05 2016 11:40:58.146:INFO [launcher]: Starting browser PhantomJS
+11 05 2016 11:40:58.689:INFO [PhantomJS 2.1.1 (Linux 0.0.0)]: Connected on socket /#JH6RX6HZ4uCmsKBMAAAA with id 91505964
+
+  Elvenware Fixture and Template Cache Suite
+    ✓ expects true to be true
+    ✓ should find the index
+    ✓ should have a getRenewable method
+    ✓ should be possible to access the fixture
+    ✓ tests template loaded through simple raw text
+    ✓ tests template loaded through more complex raw text
+    ✓ tests scope variable access in template loaded through fixture
+
+  Elvenware Simple Mocks with HttpBackend Suite
+    ✓ proves we can run tests
+    ✓ should find the index
+    ✓ should have a getRenewable method
+    ✓ proves we can detect request
+
+  Renewables Suite
+    ✓ proves we can run tests
+    ✓ proves we can get renewableUtils name
+    ✓ proves we can get renewableUtils method called getNine
+    ✓ proves we can get from renewableUtils a particular renewable object by index
+    ✓ proves we can transform our json into a new array consisting only of years
+    ✓ proves our array of years contains the expected data
+    ✓ proves we can transform our json into an array with three properties: geo, solar, and wind
+    ✓ proves that getSimpleStringFormat returns the expected string data
+    ✓ proves that getSimpleFormat returns the expected numeric data
+
+  Simple Format HttpBackend Suite
+    ✓ expects true to be true
+    ✓ tests simple-format directive loaded through fixture with httpBackend
+    ✓ tests that we can index through simple-format directive
+
+  Simple Format Suite
+    ✓ expects true to be true
+    ✓ should find the index
+    ✓ should be possible to access the fixture
+</pre>
+
+## Create JSON JavaScript
+
+Create a JavaScript file called **spec/data/json-as-js-renewables.js**. Inside it, put **renewables.json**. It should begin a bit like this:
+
+```javascript
+var renewables = [{
+    "Year": "2017",
+    "Solar (quadrillion Btu)": "0.8045307",
+    "Geothermal (quadrillion Btu)": "0.2349284",
+    "Other biomass (quadrillion Btu)": "0.50916",
+    "Wind power (quadrillion Btu)": "2.202328",
+    "Liquid biofuels (quadrillion Btu)": "1.2329197",
+    "Wood biomass (quadrillion Btu)": "1.9860924",
+    "Hydropower (quadrillion Btu)": "2.5859957"
+}, {
+    "Year": "2016",
+    etc.
+```
+
+There is no real need to format, syntax check or run JSCS on this file. As a result, you can exclude the entire **data** directory from those tools. In general, whenever we create a data directory, we should tell JSCS and JsBeautify to leave it alone. It might be useful to run JsHint over that directory, but it is not strictly necessary.
+
+## Testing Renewables
 
 Add this to **karma.conf.js** files:
 
@@ -227,6 +297,8 @@ Put it right before or after you load the tests:
 'spec/data/*.js',
 'spec/test*.js'
 ```
+
+## Simple Format Directive
 
 The html directive:
 
@@ -271,40 +343,150 @@ Don't forget to run **grunt check** and clean up all errors such as missing use 
 
 With angular, you can usually delete an **$(document).ready()** statements as it takes care of this for you.
 
-## Create JSON JavaScript
-
-Create a JavaScript file called **spec/data/json-as-js-renewables.js**. Inside it, put **renewables.json**. It should begin a bit like this:
-
-```javascript
-var renewables = [{
-    "Year": "2017",
-    "Solar (quadrillion Btu)": "0.8045307",
-    "Geothermal (quadrillion Btu)": "0.2349284",
-    "Other biomass (quadrillion Btu)": "0.50916",
-    "Wind power (quadrillion Btu)": "2.202328",
-    "Liquid biofuels (quadrillion Btu)": "1.2329197",
-    "Wood biomass (quadrillion Btu)": "1.9860924",
-    "Hydropower (quadrillion Btu)": "2.5859957"
-}, {
-    "Year": "2016",
-    etc.
-```
-
-There is no real need to format, syntax check or run JSCS on this file. As a result, you can exclude the entire **data** directory from those tools. In general, whenever we create a data directory, we should tell JSCS and JsBeautify to leave it alone. It might be useful to run JsHint over that directory, but it is not strictly necessary.
-
 ## Create renewables-utils
 
-You need to create a file called **renewable-utils.js**. For now, we can put it in the **public/javascripts** folder. Later on we can spend some time organizing our files so they are divided by category and easier to find.
+You need to create a file called **renewables-utils.js**. For now, we can put it in the **public/javascripts** folder. Later on we can spend some time organizing our files so they are divided by category and easier to find.
 
 Don't forget to add it to **layout.jade**!
 
+```javascript
+var elfApp = angular.module('elfApp');
+
+function RenewableUtils() {
+    'use strict';
+
+    var renewables;
+
+    this.name = 'renewableUtils';
+
+    this.init = function(initRenewables) {
+        renewables = initRenewables;
+    };
+
+    this.getItemCount = function() {
+        // YOUR CODE HERE
+    };
+
+    this.getByIndex = function(index) {
+        // YOUR CODE HERE
+    };
+
+    this.getYears = function() {
+        return renewables.map(function(renewable) {
+            return renewable.Year;
+        });
+    };
+
+    // YOU WRITE THE LASt TWO METHODS
+}
+
+elfApp.service('renewableUtils', RenewableUtils);
+```
+
 ## Create test-renewables
 
-We need to test.... in **spec/test-renewables.js**
+We need to test **renewable-utils.js** in **spec/test-renewables.js**
+
+```javascript
+describe('Renewables Suite', function() {
+    'use strict';
+
+    var $httpBackend;
+    var scope;
+    var mainController;
+
+    // Set up the module
+    beforeEach(module('elfApp'));
+
+    beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_, _$controller_) {
+        scope = _$rootScope_.$new();
+        var $compile = _$compile_;
+        $httpBackend = _$httpBackend_;
+        mainController = _$controller_('MainController', {
+            $scope: scope
+        });
+    }));
+
+    beforeEach(function() {
+        //scope.renewableUtils.init(renewables);
+        var requestHandler = $httpBackend
+            .when('GET', 'data/Renewable.json')
+            .respond(renewables);
+
+        $httpBackend.expectGET('data/Renewable.json');
+        scope.getRenewable();
+        $httpBackend.flush();
+    });
+
+    afterEach(function() {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+
+    it('proves we can run tests', function() {
+        expect(true).toBe(true);
+    });
+
+    it('proves we can get renewableUtils name', function() {
+        expect(scope.renewableUtils.name).toBe('renewableUtils');
+    });
+
+    it('proves we can get renewableUtils method called getNine', function() {
+        expect(scope.renewableUtils.getItemCount()).toBe(12);
+    });
+
+    it('proves we can get from renewableUtils a particular renewable object by index', function() {
+        var renewable = scope.renewableUtils.getByIndex(0);
+        expect(renewable.Year).toBe('2017');
+    });
+
+    it('proves we can transform our json into a new array consisting only of years', function() {
+        var years = scope.renewableUtils.getYears();
+        expect(years.length).toBe(12);
+    });
+
+    it('proves our array of years contains the expected data', function() {
+        var years = scope.renewableUtils.getYears();
+        expect(years[0]).toBe('2017');
+        expect(years[1]).toBe('2016');
+        expect(years[5]).toBe('2012');
+    });
+
+    it('proves we can transform our json into an array with three properties: geo, solar, and wind', function() {
+        var simpleFormat = scope.renewableUtils.getSimpleFormat();
+        var keys = Object.keys(simpleFormat[0]);
+        keys.sort();
+        expect(keys).toEqual(['geo', 'solar', 'wind']);
+    });
+
+    it('proves that getSimpleStringFormat returns the expected string data', function() {
+        var simpleFormat = scope.renewableUtils.getSimpleStringFormat();
+        expect(simpleFormat[0].geo).toBe('0.2349284');
+        expect(simpleFormat[0].wind).toBe('2.202328');
+        expect(simpleFormat[0].solar).toBe('0.8045307');
+        expect(simpleFormat[5].geo).toBe('0.211592042');
+        expect(simpleFormat[5].wind).toBe('1.3393646844');
+        expect(simpleFormat[5].solar).toBe('0.227349746');
+    });
+
+    it('proves that getSimpleFormat returns the expected numeric data', function() {
+        var simpleFormat = scope.renewableUtils.getSimpleFormat();
+        expect(simpleFormat[0].geo).toBe(0.2349284);
+        expect(simpleFormat[0].wind).toBe(2.202328);
+        expect(simpleFormat[0].solar).toBe(0.8045307);
+        expect(simpleFormat[5].geo).toBe(0.211592042);
+        expect(simpleFormat[5].wind).toBe(1.3393646844);
+        expect(simpleFormat[5].solar).toBe(0.227349746);
+    });
+});
+```
 
 ## Test Simple Format
 
-We need to create **spec/test-simple-format.js**, which is our holy grail.
+We need to create **spec/test-simple-format.js**.
+
+```javascript
+```
 
 ## Test Simple Format Backend
 
