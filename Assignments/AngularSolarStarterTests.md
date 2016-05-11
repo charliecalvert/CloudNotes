@@ -209,3 +209,49 @@ it('proves we can mock getting JSON data', function() {
 
 });
 ```
+
+## Testing Renewables
+
+Add this to **karma.conf.js** files:
+
+```javascript
+'spec/data/*.js',
+```
+
+Put it right before or after you load the tests:
+
+```javascript
+'spec/**/*.html',
+'spec/data/*.js',
+'spec/test*.js'
+```
+
+The html directive:
+
+```javascript
+elfApp.directive('elfSimpleFormat', function() {
+  'use strict';
+  return {
+      controller: 'MainController',
+      template: 'Solar: {{simpleFormat[index].solar}}' +
+          '<br>Geo: {{simpleFormat[index].geo}}' +
+          '<br>Wind: {{simpleFormat[index].wind}}'
+
+  };
+});
+```
+
+You make it like this:
+
+```javascript
+elfApp.directive('elfSimpleFormat', function() {
+    'use strict';
+    return {
+        controller: 'MainController',
+        templateUrl: 'simple-format'
+    };
+});
+```
+
+
+jade views/simple-format.jade --out='spec/fixtures/'
