@@ -266,11 +266,11 @@ There is no real need to format, syntax check or run JSCS on this file. As a res
 
 ## Create Energy Utils
 
-We want to take an object and return its properties in an array:
+In **routes/energy-utils.js**, we want to take an object and return its properties in an array:
 
 var start = { a: 1, b: 2 };
 
-return finish = [[]]
+var finish = [['a', 1], ['b', 2]];
 
 ```javascript
 function objectToArray(obj) {
