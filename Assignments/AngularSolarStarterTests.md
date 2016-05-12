@@ -499,7 +499,7 @@ Get the suite titles right for each test.
 
 ## Hints
 
-In **karma.conf.js** be sure you are loading **angular**, **angular-mocks** and **angular-routes**:
+In **karma.conf.js** be sure you are loading **angular**, **angular-mocks** and **angular-route**:
 
 ```javascript
 files: [
