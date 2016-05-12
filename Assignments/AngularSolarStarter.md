@@ -31,10 +31,13 @@ Run **karma start** to confirm all is working.
 
 ## Step Two: Tests {#tests}
 
-In the files section of **karma.conf.js** make sure **app.js** is loaded first:
+In the files section of **karma.conf.js** make sure **app.js** is loaded first and that you are loading **ng-route**:
 
 ```javascript
-// CODE OMITTED HERE
+'public/components/jquery/dist/jquery.min.js',
+'public/components/angular/angular.js',
+'public/components/angular-mocks/angular-mocks.js',
+'public/components/angular-route/angular-route.js', << == HERE
 'node_modules/jasmine-jquery/lib/*.js',
 'public/javascripts/app.js',      << ==== HERE
 'public/javascripts/*.js',
