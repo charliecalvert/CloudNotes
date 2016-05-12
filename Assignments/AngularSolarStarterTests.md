@@ -243,7 +243,7 @@ $ karma start
   Renewables Suite
     ✓ proves we can run tests
     ✓ proves we can get renewableUtils name
-    ✓ proves we can get renewableUtils method called getNine
+    ✓ proves we can get renewableUtils method called getItemCount
     ✓ proves we can get from renewableUtils a particular renewable object by index
     ✓ proves we can transform our json into a new array consisting only of years
     ✓ proves our array of years contains the expected data
@@ -334,7 +334,7 @@ You will need to create a **simple-format.jade** file and get it set up to test 
 
 You will, of course, have to add this directive to **main.jade**. You can just append it to the end of the file for now.
 
-Call the **renewableUtils.simpleFormat** from within **$scope.getRenewables**. It makes no sense to call it until you have loaded **renewables.json**. In particular, since it relies on **renewables.json** being present, it won't work properly until you have loaded that file.
+Call the **renewableUtils.simpleFormat** from within **$scope.getRenewable**. It makes no sense to call it until you have loaded **renewables.json**. In particular, since it relies on **renewables.json** being present, it won't work properly until you have loaded that file.
 
 In **.jscsrc** exclude the **data** folder. In **Gruntfile.js** don't try to beautify the **data** folder.
 
@@ -432,7 +432,7 @@ describe('Renewables Suite', function() {
         expect(scope.renewableUtils.name).toBe('renewableUtils');
     });
 
-    it('proves we can get renewableUtils method called getNine', function() {
+    it('proves we can get renewableUtils method called getItemCount', function() {
         expect(scope.renewableUtils.getItemCount()).toBe(12);
     });
 
@@ -515,3 +515,90 @@ files: [
     'spec/test-*.js'
 ],
 ```
+
+## Before Each
+
+This beforeEach statement loads your angular module:
+
+```javascript
+beforeEach(module('elfApp'));
+```
+
+Specically, it loads the module that you define like this in **app.js** and use in **main.js** and **about.js**:
+
+```javascript
+var myModule = angular.module('elfApp', ['ngRoute']);
+```
+
+This **beforeEach** loads you HTML fixture:
+
+```javascript
+beforeEach(function() {
+    jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
+    loadFixtures('renewable.html');
+});
+```
+
+This before each does three things:
+
+```javascript
+beforeEach(inject(function(_$compile_, _$rootScope_, _$templateCache_, _$controller_) {
+    scope = _$rootScope_.$new();
+    $compile = _$compile_;
+    $templateCache = _$templateCache_;
+
+    mainController = _$controller_('MainController', {
+        $scope: scope
+    });
+}));
+```
+
+First, it gets the scope that you are using in your application. I believe that this is a global scope object for the entire app, and this line narrows the scope down to work only with the scope of your controller:
+
+```javascript
+mainController = _$controller_('MainController', {
+    $scope: scope
+});
+```
+
+The above code also loads your controller.
+
+These line gets the compile and templateCache, both of which are needed to process our fixture so that it is converted from an angular template to live HTML that contains resolved references to scope variables:
+
+```javascript
+$compile = _$compile_;
+$templateCache = _$templateCache_;
+```
+
+There are also beforeEach and afterEach calls to load **$httpBackend**:
+
+```javascript
+beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_, _$controller_) {
+    scope = _$rootScope_.$new();
+    var $compile = _$compile_;
+    $httpBackend = _$httpBackend_;
+    mainController = _$controller_('MainController', {
+        $scope: scope
+    });
+}));
+
+afterEach(function() {
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
+});
+```
+
+The beforeEach shown above is the same as the ones we looked at before, except it does not get the compile and templateCache for handling fixtures, and instead it gets httpBackend. We use **httpBackend** for mocking calls to the server. Instead of aclled $http.get directly, we use httpBackend calls such as this to mock or fake the call to the server. Instead of making a real call, we just return pre-defined data:
+
+```javascript
+var requestHandler = $httpBackend
+    .when('GET', 'data/Renewable.json')
+    .respond(PUT THE MOCK DATA HERE);
+
+$httpBackend.expectGET('data/Renewable.json');
+scope.getRenewable();
+$httpBackend.flush();
+expect(scope.renewable[0].Year).toEqual('2017');
+```
+
+The **afterEach** code will raise an error if your set up a call to **httpBackend** but don't ever execute it by calling **httpBackend.flush()**.
