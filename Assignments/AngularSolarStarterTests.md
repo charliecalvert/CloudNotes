@@ -26,8 +26,9 @@ We should add text like this:
 
   - [Angular Solar Starter Assignment][solar-start]
 
-  [solar-start]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
 </pre>
+
+[solar-start]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
 
 Now check it in and bush it on the new branch and then push that branch to your BitBucket or GitHub repository:
 
@@ -487,7 +488,7 @@ We need to create **spec/test-simple-format.js**.
 
 ```javascript
 ```
-
+c
 ## Test Simple Format Backend
 
 We need to create **spec/test-simple-format-backend.js**, which is our holy grail.
@@ -495,3 +496,22 @@ We need to create **spec/test-simple-format-backend.js**, which is our holy grai
 ## Suite Titles
 
 Get the suite titles right for each test.
+
+## Hints
+
+In **karma.conf.js** be sure you are loading **angular**, **angular-mocks** and **angular-routes**:
+
+```javascript
+files: [
+    'public/components/jquery/dist/jquery.min.js',
+    'public/components/angular/angular.js',
+    'public/components/angular-mocks/angular-mocks.js',
+    'public/components/angular-route/angular-route.js',
+    'node_modules/jasmine-jquery/lib/*.js',  
+    'public/javascripts/app.js',
+    'public/javascripts/*.js',
+    'spec/**/*.html',
+    'spec/data/*.js',
+    'spec/test-*.js'
+],
+```
