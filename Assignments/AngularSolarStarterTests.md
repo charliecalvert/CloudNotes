@@ -518,7 +518,9 @@ files: [
 
 ## Before Each
 
-This beforeEach statement loads your angular module:
+**beforeEach** methods load before each test is run. **afterEach** methods are loaded after each test is run.
+
+This **beforeEach** statement loads your angular module:
 
 ```javascript
 beforeEach(module('elfApp'));

@@ -47,6 +47,15 @@ In the files section of **karma.conf.js** make sure **app.js** is loaded first a
 In **test-basic**, let's start by declaring a variable and method that we will want to create. We will mark this as **fit** to see that we want to get those tests to pass first. Put them right after the **beforeEach** methods. Anticipating where we will be going, also modify the code that tests if we loaded a fixture:
 
 ```javascript
+it('should be possible to access the renewable fixture', function() {
+    var spanElement = document.getElementById('renewable');
+    expect(spanElement).toBeDefined();
+    console.log(spanElement);
+    expect(spanElement.innerHTML).toContain('First');
+    expect(spanElement.innerHTML).toContain('Btu');
+    expect(spanElement.innerHTML).toContain('quadrillion');
+});
+
 fit('should find the index', function() {
     expect( scope.index).toBe(0);
 });
