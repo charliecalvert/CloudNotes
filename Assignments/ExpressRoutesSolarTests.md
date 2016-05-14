@@ -1,128 +1,37 @@
+## Overview
+
+The primary goal is to learn how to run unit tests against a web server. This involves setting up jasmine to run server side tests with **jasmine-runner.js**, rather than running browser based tests with **karma**.
+
+We will also learn how to convert the properties and values of an object into an array. Consider this object:
+
+```javascript
+var myObject {
+  a: 1,
+  b: 2
+}
+```
+We want to convert this object into an array that looks like this:
+
+```javascript
+var myArray = [
+  [ 'a', 1 ],
+  [ 'b', 2 ]
+]
+```
+
+As you can see, this array has two elements in it, each of which is an array containing a key value pair from our original object. We do this in part because it is easier to perform operations such as sorting on the elements of an array than on the properties of an object.
+
 ## Branches
 
-## Git Branch
+The git branch portion of the assignment has been moved here:
 
-Create a new branch and check it out:
-
-<pre>
-git branch week05
-git checkout week05
-</pre>
-
-Modify the readme:
-
-  geany README.md &
-
-We should add text like this:
-
-<pre>
-  ## Week 05 Branch
-
-  - [Angular Solar Starter Assignment][solar-start]
-
-  [solar-start]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
-</pre>
-
-Now check it in and bush it on the new branch and then push that branch to your BitBucket or GitHub repository:
-
-<pre>
-git status
-git add README.md
-git commit -m "Week05 Read me"
-git push --set-upstream origin week05
-</pre>
-
-**NOTE**: _Your branch in the cloud is the **origin** in our case. When we talk about the origin, we are referring to our repository on BitBucket or GitHub. The origin doesn't have to be in the cloud or on those sites, but it is in our case._
-
-Take a look at the new branch's metadata:
-
-<pre>
-git branch -a
-</pre>
-
-Now switch back to master and merge in your changes:
-
-<pre>
-git checkout master
-git merge week05
-</pre>
-
-It might looks something like this as we merge the **week05** README with the **master** README:
-
-<pre>
-git merge week05
-Updating d0aee52..7ae1b47
-Fast-forward
-README.md | 9 +++++++++
-1 file changed, 9 insertions(+)
-</pre>
-
-## Week 06 Branch
-
-Now create a week06 branch and modify the readme as we did in week05:
-
-<pre>
-git branch week06
-git checkout week06
-geany README.md &
-</pre>
-
-The changes might look like this:
-
-<pre>
-  ## Week 06 Branch
-
-  - [Angular Solar Starter Tests Assignment][solar-start-test]
-</pre>
-
-Check the status:
-
-<pre>
-git status
-git branch -a
-</pre>
-
-Add in your changes, commit and push your new branch to the cloud (BitBucket/GitHub):
-
-<pre>
-git add .
-git commit -m "Week06 Readme"
-git push --set-upstream origin week06
-</pre>
-
-## Merge Week06 into Master
-
-Now we merge in our changes to the master branch:
-
-<pre>
-git checkout master
-git merge week06
-</pre>
-
-**NOTE**: _We don't necessarily have to merge our changes back into master every day. You should merge them, however, before we go on to week 07. The point being that master ends up contains our latest while our branches show our status at the end of each week. This is not the only thing you can do with branches, nor is it even a common strategy, but it fits our goals in this class. In other words, its nice in this class to have a handy record of where we are at the end of each week. But other teams would do very different things with branches. One of our goals, of course, is simply to be sure we understand how to use git branches. The exact way we use them is not important._
-
-Now check the status, and go back to **week06** where we will do our work this week:
-
-<pre>
-git branch -a
-git checkout week06
-</pre>
-
-Like this:
-
-<pre>
-$ git branch -a
-  a
-  master
-  week05
-* week06
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
-</pre>
+- [Git Branch Weeks](http://www.ccalvert.net/books/CloudNotes/Assignments/GitBranchWeeks.html)
 
 ## Get Started
 
-Get our jasmine server side configuration file from the Get Numbers project:
+To get started we want to copy the **jasmine-runner.js** and **jasmine.json** file from our **GetNumbers** project or some similar source. The commands shown below should be run from the root of your current project.
+
+Get our jasmine server side configuration file from the Get Numbers project and put it in a folder called **spec/support.**. We do this because the server side jasmine unit test code expects to find its configuration file in this location. We might copy the file over using commands similar to these:
 
 <pre>
 cd spec
@@ -130,13 +39,13 @@ mkdir support
 cp ~/Git/prog272-calvert-2016/Week02-GetNumbers/spec/support/jasmine.json .
 </pre>
 
-Copy jasmine-runner to the root of our project:
+Copy **jasmine-runner.js** to the root of our project with a command like this:
 
 <pre>
 cp ~/Git/prog272-calvert-2016/Week02-GetNumbers/jasmine-runner.js .
 </pre>
 
-Change so that we skip files that begin with **test** and get only those that begin with **spec**:
+Change **jasmine.json** so that we skip files that begin with **test** and get only those that begin with **spec**:
 
 ```javascript
 {
@@ -147,7 +56,17 @@ Change so that we skip files that begin with **test** and get only those that be
 }
 ```
 
-Add a script for running our test to **package.json**. Here I quote several lines to provide context, but you only need to add the line that starts with **test-server**:
+We will use files that begin with **test** in our browser based karma tests, and files beginning with **spec** for our server side tests. Both types of files will be found in the **spec** directory.
+
+## Starting the Jasmine Tests
+
+Before we can run **jasmine-runner.js** we need to install the spec reporter:
+
+<pre>
+npm install jasmine-spec-reporter --save-dev
+</pre>
+
+We can add a script for running our test to **package.json**. Here I quote several lines to provide context, but you only need to add the line that starts with **test-server**:
 
 ```javascript
 "private": true,
@@ -159,23 +78,33 @@ Add a script for running our test to **package.json**. Here I quote several line
 "dependencies": {
 ```
 
-Install:
+The point here is that we run **jasmine-runner.js** by issuing this command:
 
 <pre>
-npm install jasmine-spec-reporter --save-dev
+node jasmine-runner.js
 </pre>
+
+All we have done is create second means of running that test. In particular, we can do so with this command:
+
+<pre>
+npm run test-server
+</pre>
+
+**NOTE**: _It is, of course, arguable that it is easier to run the tests by just typing **node jasmine-runner**. One could also come up with a simpler command than **test-server**. Frankly, the route you take is up to you, but please leave test-runner in your package.json file as I will expect to find it when grading your work._
+
+## Creating a Test
 
 Create a simple test in **spec/spec-routes.js**:
 
 ```javascript
-describe('Elvenware Simple Plain Suite', function () {
+describe('Elvenware Spec Routes Suite', function () {
     it('shows we can test', function () {
         expect(true).toBe(true);
     });
 });
 ```
 
-We use the new script with the npm **run** command, something like this, where you execute the code on the first line:
+As mentioned earlier, we can run this simple suite through jasmine with the npm **run** command. In practice, a session might look something like this, where you execute the code on the first line:
 
 <pre>
 $ npm run test-server
@@ -191,19 +120,25 @@ Spec started
 Executed 1 of 1 spec SUCCESS in 0.006 sec.
 </pre>
 
-Now you add in the [**supertest**](https://github.com/visionmedia/supertest) package. This package will allow us to test our routes from the command line:
+Now you add in the [**supertest**](https://github.com/visionmedia/supertest) package to your **node_modules** folder and your **package.json** file. This package will allow us to test our routes from the command line:
 
+<pre>
   npm install supertest --save-dev  
+</pre>  
 
-## Test
+[**supertest**](https://github.com/visionmedia/supertest) is a powerful tool. It allows us to emulate a call from the browser to our HTTP server, but without ever having to launch a browser. It makes real HTTP requests to our server, and provides support for testing the validity of the values returned from these requests.
 
-This code simply tests that we can call a route, and that the call succeeds. We learn only that the route exists, and that it does not raise an error:
+## Test if a Route Exists {#route-exists}
+
+The following code belongs in **spec-routes.js**. It replaces the existing code. Or to state the same thing somewhat differently, it adds to calls to require and a test case to our previously existing test suit.
+
+The code in the new tests shows that we can call a route, and that the call succeeds. Please note that this simple test is meant only to prove that the route exists, and that it does not raise an error:
 
 ```javascript
 var request = require('supertest');
 var app = require('../app');
 
-describe('Elvenware Simple Plain Suite', function () {
+describe('Elvenware Spec Routes Suite', function () {
     it('shows we can test', function () {
         expect(true).toBe(true);
     });
@@ -223,7 +158,29 @@ describe('Elvenware Simple Plain Suite', function () {
 });
 ```
 
-This test actually examines the result of making a call so we can see if the route sends the correct content:
+The code starts with a call to the supertest request method. It then asks supertest to make an HTTP request of our server side code on the **'/renewables'** route. It then checks to see that the return value is 200. HTTP returns 200 when a call succeeds. We also check to see that the returned type is JSON.
+
+You have probably noticed that we pass in the **app.js** file from the root of our project as the sole parameter to request. You might be wondering how giving this code to supertest allows supertest to call our route. An in depth explanation would be too complex in the current context. However, the curious should examine the following code from **app.js** as it provides the link between **app.js** and our route in **routes/index.js**:
+
+```javascript
+// On about line 8 of app.js Link in index.js:
+var routes = require('./routes/index');
+
+// Then on about line 25 send routes on the root URL to index.js:
+
+app.use('/', routes);
+```
+
+The last call tells express to send commands like these to **routes/index.js**:
+
+<pre>
+http://localhost:30025/
+http://localhost:30025/renewables
+</pre>
+
+## Test the Return Value from a Route {#return-value}
+
+This second test examines the result of making a call so we can see if the route sends the correct content:
 
 ```javascript
 fit('renewables first object body', function (done) {
@@ -245,10 +202,12 @@ fit('renewables first object body', function (done) {
 
 ## Create JSON JavaScript
 
+You have seen two simple examples of how to call routes and see if they return expected values. Now lets move on and see if we can test the code that returns an object into an array.
+
 Create a JavaScript file called **spec/data/json-as-js-renewables.js**. Inside it, put **renewables.json**. It should begin a bit like this:
 
 ```javascript
-var renewables = [{
+var module_exports = [{
     "Year": "2017",
     "Solar (quadrillion Btu)": "0.8045307",
     "Geothermal (quadrillion Btu)": "0.2349284",
@@ -280,13 +239,13 @@ function objectToArray(obj) {
 }
 ```
 
+We stepped through this process in class, so I will say no more about it here.
+
 ## Spec Energy Utils
 
 Create **spec/spec-energy-utils.js**.
 
 ```javascript
-var request = require('supertest');
-var app = require('../app');
 var renewables = require('./data/json-as-js-renewables');
 var energyUtils = require('../routes/energy-utils');
 
@@ -306,146 +265,65 @@ describe('Elvenware Energy Utils Suite', function() {
 });
 ```
 
-## Tests
+## Two More Routes
 
-Consider using **nodemon** instead of **node** for **test-server** in **package.json**.
+Add these tests to **spec-routes**:
 
-Create an **objectToArray** method in **routes/energy-utils.js**. Require this file in **index.js**.
+```javascript
+it('shows we can call renewableByIndex route and can get a single renewable object by Index', function(done) {
+    request(app)
+        .get('/renewableByIndex/1')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect(function(response) {
+            expect(response.body.result).toBe('Success');
+            //console.log(response.body.renewables);
+            expect(response.body.renewables.Year).toBe('2016');
+        })
+        .end(function(err, res) {
+            if (err) { throw err; }
+            done();
+        });
+});
 
-In **index.js** add routes:
+it('call renewableByYear and get renewable object with specific year', function(done) {
+    request(app)
+        .get('/renewableByYear/2016')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect(function(response) {
+            // console.log('expect called');
+            expect(response.body.result).toBe('Success');
+            //console.log(response.body.renewables);
+            var renewable = response.body.renewable;
+            expect(renewable.Year).toBe('2016');
+        })
+        .end(function(err, res) {
+            if (err) { throw err; }
+            done();
+        });
+});
+```
 
-- renewableByIndex
+Be sure you put them inside the suite. They are not standalone function calls, but part of the **Elvenware Spec Routes Suite**. These two methods call routes with these names:
+
+<pre>
 - renewableByYear
-- renewablesSorted (renewableByIndexSorted)
+- renewableByIndex
+</pre>
 
-## Spec Routes
+Recall that you can implement renewableByIndex in **routes/index.js** with code that looks a bit like this:
 
-Your code should pass the following tests in **spec/spec-routes.js**:
-
-```javascript
-var request = require('supertest');
-var app = require('../app');
-var energyUtils = require('../routes/energy-utils');
-
-describe('Elvenware Routes Suite', function() {
-    'use strict';
-
-    it('shows we can test', function() {
-        expect(true).toBe(true);
-    });
-
-    it('shows we can call renewables route without error and get a 200 back', function(done) {
-        request(app)
-            .get('/renewables')
-            .expect(200)
-            .expect('Content-Type', /json/)
-            .end(function(err, res) {
-                if (err) { throw err; }
-                done();
-            });
-    });
-
-    it('call renewables routes and see that first object body has Year set to 2017', function(done) {
-        request(app)
-            .get('/renewables')
-            .expect(200)
-            .expect('Content-Type', /json/)
-            .expect(function(response) {
-                expect(response.body.result).toBe('Success');
-                //console.log(response.body.renewables);
-                expect(response.body.renewables[0].Year).toBe('2017');
-            })
-            .end(function(err, res) {
-                if (err) { throw err; }
-                done();
-            });
-    });
-
-    it('shows we can call renewableByIndex route and can get a single renewable object by Index', function(done) {
-        request(app)
-            .get('/renewableByIndex/1')
-            .expect(200)
-            .expect('Content-Type', /json/)
-            .expect(function(response) {
-                expect(response.body.result).toBe('Success');
-                //console.log(response.body.renewables);
-                expect(response.body.renewables.Year).toBe('2016');
-            })
-            .end(function(err, res) {
-                if (err) { throw err; }
-                done();
-            });
-    });
-
-    it('can call renewablesByIndexSorted route with an index and gets energy object as sorted array', function(done) {
-        request(app)
-            .get('/renewablesByIndexSorted/1')
-            .expect(200)
-            .expect('Content-Type', /json/)
-            .expect(function(response) {
-                expect(response.body.result).toBe('Success');
-                var powers = response.body.sortedEnergy;
-                for (var i = 0; i < powers.length - 1; i++) {
-                    expect(powers[i][1]).toBeLessThan(powers[i + 1][1]);
-                }
-            })
-            .end(function(err, res) {
-                if (err) { throw err; }
-                done();
-            });
-    });
-
-    it('call renewableByYear and get renewable object with specific year', function(done) {
-        request(app)
-            .get('/renewableByYear/2016')
-            .expect(200)
-            .expect('Content-Type', /json/)
-            .expect(function(response) {
-                // console.log('expect called');
-                expect(response.body.result).toBe('Success');
-                //console.log(response.body.renewables);
-                var renewable = response.body.renewable;
-                expect(renewable.Year).toBe('2016');
-            })
-            .end(function(err, res) {
-                if (err) { throw err; }
-                done();
-            });
-    });
+router.get('/renewableByIndex/:id', function (request, response) {
+  console.log('Renewables with id called', request.params.id);
+  // CODE OMITTED HERE
 });
-```
 
-## Spec Routes Students
-
-Students should write these two tests in **spec/spec-routes-student.js**:
-
-```javascript
-/**
- * Created by charlie on 5/11/16.
- */
-
-var request = require('supertest');
-var app = require('../app');
-
-describe("Spec Routes Student Suite", function() {
-    'use strict';
-
-    it('shows renewables route returns an object array with length set to 12', function(done) {
-        expect(true).toBe(false);
-    });
-
-    it('call renewables route, parse text property of response object and show first object contains 2017', function(done) {
-        expect(true).toBe(false);
-    });
-
-});
-```
-
-
+Finish this method and implement **renewableByYear** in such a way that the tests pass and the code responds in a reasonble, expected way. In particular, the requests should return the specified objects from the array found in **Renewables.json**. For instance, calls to **renewableByIndex/1** should return the second object from the array. One way to implement the **renewableByYear** route would be to iterate over the existing objects, and return the one with the requested year. One way to perform such an iteration is with a **for loop**.
 
 ## Interface
 
-Add **getByYear** and **getByIndex** buttons to jade and response methods to **control.js**.
+Add **getByYear** and **getByIndex** buttons to jade and response methods to **control.js**. Call the **renewableByIndex** and **renewableByYear** routes created above.
 
 Create a **.basicDiv** class in **style.css**. You might right something like this, or whatever strikes your fancy:
 
@@ -461,6 +339,12 @@ We will probably replace this with **bootstrap** css later on, or you can do so 
 
 For now, my interface looks like this:
 
+![Express Solar Tests][est]
+
+[est]:https://s3.amazonaws.com/bucket01.elvenware.com/images/express-solar-test-01.png
+
+Of course, this interface needs work. But it will do for now.
+
 ## Turn it in
 
-The usual...
+Put it in the **week06** route. Otherwise, just the usual...

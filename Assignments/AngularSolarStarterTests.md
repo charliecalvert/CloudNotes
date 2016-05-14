@@ -1,218 +1,34 @@
 ## Overview
 
-Look at [directive template names][dir-names] slide.
+Look at [directive template names][dir-names] slide. This shows that we can use a template called **elfRenewable** in several difference ways in our angular templates. In other words there are more choices than just <elf-renewable></elf-renewable>
 
 [dir-names]: https://docs.google.com/presentation/d/1QHZunZfwAQIplala60HkLaGYaRGzJ5eO4oKIg_S1iyk/edit#slide=id.g9ad18c47f_0_91
 
-**NOTE** _Be sure to remove controller as from **public/javascripts/app.js**. In general, scour your files looking for and removing the case sensitive references to **mainController**._
+**NOTE** _Be sure to remove controller as from **public/javascripts/app.js**. In general, scour your files looking for and removing the case sensitive references to **mainController**. Don't remove **MainController**, but do remove **mainController**. Look at least in all your javascript jade and html files._
 
-## Git Branch
+## Branching
 
-Create a new branch and check it out:
+The description of the branching part of this assignment can now be find here:
 
-<pre>
-git branch week05
-git checkout week05
-</pre>
+- [Git Branch Weeks][git-branch-weeks]
 
-Modify the readme:
+[git-branch-weeks]: http://www.ccalvert.net/books/CloudNotes/Assignments/GitBranchWeeks.html
 
-  geany README.md &
+## Loading Files
 
-We should add text like this:
-
-<pre>
-  ## Week 05 Branch
-
-  - [Angular Solar Starter Assignment][solar-start]
-
-</pre>
-
-[solar-start]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html
-
-Now check it in and bush it on the new branch and then push that branch to your BitBucket or GitHub repository:
-
-<pre>
-git status
-git add README.md
-git commit -m "Week05 Read me"
-git push --set-upstream origin week05
-</pre>
-
-**NOTE**: _Your branch in the cloud is the **origin** in our case. When we talk about the origin, we are referring to our repository on BitBucket or GitHub. The origin doesn't have to be in the cloud or on those sites, but it is in our case._
-
-Take a look at the new branch's metadata:
-
-<pre>
-git branch -a
-</pre>
-
-Now switch back to master and merge in your changes:
-
-<pre>
-git checkout master
-git merge week05
-</pre>
-
-It might looks something like this as we merge the **week05** README with the **master** README:
-
-<pre>
-git merge week05
-Updating d0aee52..7ae1b47
-Fast-forward
-README.md | 9 +++++++++
-1 file changed, 9 insertions(+)
-</pre>
-
-## Week 06 Branch
-
-Now create a week06 branch and modify the readme as we did in week05:
-
-<pre>
-git branch week06
-git checkout week06
-geany README.md &
-</pre>
-
-The changes might look like this:
-
-<pre>
-  ## Week 06 Branch
-
-  - [Angular Solar Starter Tests Assignment][solar-start-test]
-</pre>
-
-Check the status:
-
-<pre>
-git status
-git branch -a
-</pre>
-
-Add in your changes, commit and push your new branch to the cloud (BitBucket/GitHub):
-
-<pre>
-git add .
-git commit -m "Week06 Readme"
-git push --set-upstream origin week06
-</pre>
-
-## Merge Week06 into Master
-
-Now we merge in our changes to the master branch:
-
-<pre>
-git checkout master
-git merge week06
-</pre>
-
-**NOTE**: _We don't necessarily have to merge our changes back into master every day. You should merge them, however, before we go on to week 07. The point being that master ends up contains our latest while our branches show our status at the end of each week. This is not the only thing you can do with branches, nor is it even a common strategy, but it fits our goals in this class. In other words, its nice in this class to have a handy record of where we are at the end of each week. But other teams would do very different things with branches. One of our goals, of course, is simply to be sure we understand how to use git branches. The exact way we use them is not important._
-
-Now check the status, and go back to **week06** where we will do our work this week:
-
-<pre>
-git branch -a
-git checkout week06
-</pre>
-
-## HttpBackend
-
-We use the Angular $httpBackend object from the **angular-mocks** to allow us to mock the loading of JSON from the server.
-
-**NOTE**: _Angular mocks and httpBackend do much more than just allow us to mock loading JSON, but lets start there, and move on to mocking whole objects a bit later on._
-
-For more on httpbackend, see the
-
-- The last few slides here: [http://bit.ly/unittestasync](http://bit.ly/unittestasync)
-- [Elvenware on httpBackend][elf-http-backend]
-
-Start by creating a test called **spec/test-mocks.js**:
-
-```javascripts
-describe('Elvenware Simple Plain Suite', function() {
-
-    'use strict';
-
-    fit('proves we can run tests', function() {
-       expect(true).toBe(true);
-    });
-});
-```
-
-Now angularize it by loading the mainController, this time adding code to load $httpBackend:
-
-```javascripts
-describe('Elvenware Simple Plain Suite', function() {
-
-    'use strict';
-
-    var $httpBackend, scope, mainController;
-
-    // Set up the module
-    beforeEach(module('elfApp'));
-
-    beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_, _$controller_) {
-        scope = _$rootScope_.$new();
-        var $compile = _$compile_;
-        $httpBackend = _$httpBackend_;
-        mainController = _$controller_('MainController', {
-            $scope: scope
-        });
-    }));
-
-    afterEach(function() {
-        $httpBackend.verifyNoOutstandingExpectation();
-        $httpBackend.verifyNoOutstandingRequest();
-    });
-
-    it('proves we can run tests', function() {
-       expect(true).toBe(true);
-    });
-
-    it('should find the index', function() {
-      expect(scope.index).toBe(0);
-    });
-
-});
-```
-
-Notice that we also have an **afterEach** section. This ensures that there are no pending http request after our tests. In particular, we are going to use $httpBackend to mock the act of loading JSON. In particular, we will write code that ensures that calls to $http.get actually call our method, rather than making a request to a server. The **afterEach** method tests that we actually called these mocks, rather than leave them hanging. This helps us ensure that we are doing what we set out to do, and that the next test starts with a clean slate.
-
-You might also want temporarily add a test from our **test-basic** file that ensures we can access the scope. You can delete this test later if you want, it is just a sanity check.
-
-[elf-http-backend]: http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend
-
-
-## Mocking JSON Requests
-
-Here is a test that actually mocks the **$http.get** call in our **getRenewable** method. This method, as you know,   retrieves data from the server. Only this time, instead of getting data from a real server, we put in our own mock data instead:
+Before getting started, make sure you are loading **angular-route.js** in the files section of **karma-conf.js**. We load this file in **layout.jade**, so we should be sure to load it here.
 
 ```javascript
-it('proves we can mock getting JSON data', function() {
-
-  var renewable = [{
-      "Year": "2017",
-      "Solar (quadrillion Btu)": "0.8045307",
-      "Geothermal (quadrillion Btu)": "0.2349284",
-      "Other biomass (quadrillion Btu)": "0.50916",
-      "Wind power (quadrillion Btu)": "2.202328",
-      "Liquid biofuels (quadrillion Btu)": "1.2329197",
-      "Wood biomass (quadrillion Btu)": "1.9860924",
-      "Hydropower (quadrillion Btu)": "2.5859957"
-  }];
-
-  // Define what happens when $http.get() is called.
-  var requestHandler = $httpBackend
-      .when('GET', 'data/Renewable.json')
-      .respond(renewable);
-
-  $httpBackend.expectGET('data/Renewable.json');
-  scope.getRenewable();
-  $httpBackend.flush();
-  expect(scope.renewable[0].Year).toEqual('2017');
-
-});
+files: [
+  'public/components/jquery/dist/jquery.min.js',
+  'public/components/angular/angular.js',
+  'public/components/angular-mocks/angular-mocks.js',
+  'public/components/angular-route/angular-route.js',
+  'node_modules/jasmine-jquery/lib/*.js',
+  etc...
 ```
+
+We also need **angular-mocks** in our tests, but not in our program. That is why it is included here but not in **layout.jade**.
 
 ## All Tests
 
@@ -262,6 +78,114 @@ $ karma start
     ✓ should be possible to access the fixture
 </pre>
 
+It will take us a while to get there. But this gives you sense of where we are headed.
+
+## HttpBackend
+
+Use the Angular **$httpBackend** object from **angular-mocks** to fake or "mock" the loading of JSON from the server.
+
+**NOTE**: _Angular mocks and httpBackend do much more than just allow us to mock loading JSON, but lets start there, and move on to mocking whole objects a bit later on. If you have not done so already, to install angular-mocks type this: **npm install angular-mocks --save-dev**._
+
+For more on httpbackend, seeL
+
+- The last few slides here: [http://bit.ly/unittestasync](http://bit.ly/unittestasync)
+- [Elvenware on httpBackend][elf-http-backend]
+
+## Get Started
+
+Create a test called **spec/test-mocks.js**:
+
+```javascripts
+describe('Elvenware Test Mocks Suite', function() {
+
+    'use strict';
+
+    fit('proves we can run tests', function() {
+       expect(true).toBe(true);
+    });
+});
+```
+
+Make sure it works.
+
+Now angularize it by loading the **MainController**, this time adding code to load $httpBackend and adding one test to be sure we can access the **$scope** of our **MainController**:
+
+```javascript
+describe('Elvenware Test Mocks Suite', function() {
+
+    'use strict';
+
+    var $httpBackend;
+    var scope;
+    var mainController;
+
+    // Set up the module
+    beforeEach(module('elfApp'));
+
+    beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_, _$controller_) {
+        scope = _$rootScope_.$new();
+        var $compile = _$compile_;
+        $httpBackend = _$httpBackend_;
+        mainController = _$controller_('MainController', {
+            $scope: scope
+        });
+    }));
+
+    afterEach(function() {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+
+    it('proves we can run tests', function() {
+       expect(true).toBe(true);
+    });
+
+    it('should find the index', function() {
+      expect(scope.index).toBe(0);
+    });
+
+});
+```
+
+Notice that we also have an **afterEach** section. This ensures that there are no pending http request after our tests. In particular, we are going to use **$httpBackend** to mock the act of loading JSON. When doing so, we will set up some mock $http requests. The **afterEach** method tests that we actually called these mocks, rather than leave them hanging. This helps us ensure that we are doing what we set out to do, and that the next test starts with a clean slate.
+
+As mentioned earlier, we add a test from our **test-basic** file that ensures we can access the index declared out **MainController's** scope. It is just a sanity check to ensure we are in a stable state and can access our **MainController**.
+
+[elf-http-backend]: http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend
+
+## Mocking JSON Requests
+
+Here is a test that actually mocks the **$http.get** call in our **getRenewable** method. This method, as you know, retrieves data from the server. Only this time, instead of getting data from a real server, we put in our own mock data instead:
+
+```javascript
+it('proves we can mock getting JSON data', function() {
+
+  var renewable = [{
+      "Year": "2017",
+      "Solar (quadrillion Btu)": "0.8045307",
+      "Geothermal (quadrillion Btu)": "0.2349284",
+      "Other biomass (quadrillion Btu)": "0.50916",
+      "Wind power (quadrillion Btu)": "2.202328",
+      "Liquid biofuels (quadrillion Btu)": "1.2329197",
+      "Wood biomass (quadrillion Btu)": "1.9860924",
+      "Hydropower (quadrillion Btu)": "2.5859957"
+  }];
+
+  // Define what happens when $http.get() is called.
+  var requestHandler = $httpBackend
+      .when('GET', 'data/Renewable.json')
+      .respond(renewable);
+
+  $httpBackend.expectGET('data/Renewable.json');
+  scope.getRenewable();
+  $httpBackend.flush();
+  expect(scope.renewable[0].Year).toEqual('2017');
+
+});
+```
+
+Put this method at the bottom of your **test-mocks.js** and make sure it works.
+
 ## Create JSON JavaScript
 
 Create a JavaScript file called **spec/data/json-as-js-renewables.js**. Inside it, put **renewables.json**. It should begin a bit like this:
@@ -299,56 +223,13 @@ Put it right before or after you load the tests:
 'spec/test*.js'
 ```
 
-## Simple Format Directive
-
-The html directive:
-
-```javascript
-elfApp.directive('elfSimpleFormat', function() {
-  'use strict';
-  return {
-      controller: 'MainController',
-      template: 'Solar: {{simpleFormat[index].solar}}' +
-          '<br>Geo: {{simpleFormat[index].geo}}' +
-          '<br>Wind: {{simpleFormat[index].wind}}'
-
-  };
-});
-```
-
-You make it like this:
-
-```javascript
-elfApp.directive('elfSimpleFormat', function() {
-    'use strict';
-    return {
-        controller: 'MainController',
-        templateUrl: 'simple-format'
-    };
-});
-```
-
-You will need to create a **simple-format.jade** file and get it set up to test as a fixture:
-
-  jade views/simple-format.jade --out='spec/fixtures/'
-
-You will, of course, have to add this directive to **main.jade**. You can just append it to the end of the file for now.
-
-Call the **renewableUtils.simpleFormat** from within **$scope.getRenewable**. It makes no sense to call it until you have loaded **renewables.json**. In particular, since it relies on **renewables.json** being present, it won't work properly until you have loaded that file.
-
-In **.jscsrc** exclude the **data** folder. In **Gruntfile.js** don't try to beautify the **data** folder.
-
-Don't forget to run **grunt check** and clean up all errors such as missing use strict, invalid quote marks, etc.
-
-**NOTE**: _With JSCS, you can use single quotes for a string, and double quotes for embedded quotes inside a string: 'My "embedded" string'._
-
-With angular, you can usually delete an **$(document).ready()** statements as it takes care of this for you.
-
 ## Create renewables-utils
 
 You need to create a file called **renewables-utils.js**. For now, we can put it in the **public/javascripts** folder. Later on we can spend some time organizing our files so they are divided by category and easier to find.
 
 Don't forget to add it to **layout.jade**!
+
+Here is the structure for the RenewableUtils function object:
 
 ```javascript
 var elfApp = angular.module('elfApp');
@@ -384,9 +265,88 @@ function RenewableUtils() {
 elfApp.service('renewableUtils', RenewableUtils);
 ```
 
+Note that this code has three sections. The first references our module:
+
+```javascript
+var elfApp = angular.module('elfApp');
+```
+
+**NOTE**: _We are still working with only one module. The purpose of modules is to help us divide the code for bit programs into discreet sections much as we divide a book into chapters. Soon we will create more than one module, but for now, continue working with elfApp. I mention this because there is argument for putting this object in its own module. But we will take that step later._
+
+The section section is the implementation of our new object:
+
+```javascript
+function RenewableUtils() {
+    'use strict';
+    // CODE OMITTED HERE
+}
+```
+
+Finally, we put our object in something called an Angular service:
+
+```javascript
+elfApp.service('renewableUtils', RenewableUtils);
+```
+
+A service is a major Angular tools like a **controller** or **directive**. It is very similar to an angular **factory**, which we will likely study later in the quarter. In general, we tend to refer to Angular tools of this type as **providers**.
+
+As you can hopefully see, a service is designed to help you create a clearly partitioned place for you objects. In other words, a service is wrapper for an object. We wrap it so it can be partitioned from the rest of our code, so it can support code injection, and in general, so it acts in the way that Angular believes your objects ought to can.
+
+As stated above, you can, and should use code injection to inject this object into your controllers or other objects as needed. Here for instance, is how we will inject this service into our **MainController**:
+
+```javascript
+elfApp.controller('MainController', function($scope, $http, renewableUtils) {
+
+     // CODE FOR mainData and index THAT HAS NOT CHANGED OMITTED HERE
+
+     $scope.getRenewable = function() {
+         // console.log('getRenewable');
+         $http.get('data/Renewable.json')
+             .then(function(res) {
+                 renewableUtils.init(res.data);
+                 $scope.renewable = res.data;
+                 $scope.renewableUtils = renewableUtils;
+                 $scope.simpleFormat = renewableUtils.getSimpleFormat();
+             });
+     };
+
+})
+```
+
+Note that inside our **MainController**, we updated the call to **getRenewable**. It now initializes the renewableUtils object. In particular, it passes the content of our **Renewable.json** file to the object. The object can then be used to perform certain operations on that JSON data. A main task of our program will be to manipulate the data found in JSON files and show the results to the user. So this is clearly a very important part of our program.
+
+For the curious, and we should all be curious, here are the angular docs on factories, provides, services and so on:
+
+- [Providers](https://docs.angularjs.org/guide/providers)
+- [Services](https://docs.angularjs.org/guide/services)
+
+
 ## Create test-renewables
 
-We need to test **renewable-utils.js** in **spec/test-renewables.js**
+As you no doubt noticed, we did not complete **RenewableUtils** object found in **renewables-utils.js**. To help you complete that task, I have created a suite of unit tests that should guide you step by step through the process of implementing the **renewable-utils.js** object. The tests are shown below.
+
+Put these tests for **renewable-utils.js** in a file called **spec/test-renewables.js**. Update the implementation of **RenewableUtils** so that all these tests will pass.
+
+Before you work with these tests, take a careful look at the third call to **beforeEach** found in the tests:
+
+```javascript
+beforeEach(function() {
+    //scope.renewableUtils.init(renewables);
+    var requestHandler = $httpBackend
+        .when('GET', 'data/Renewable.json')
+        .respond(renewables);
+
+    $httpBackend.expectGET('data/Renewable.json');
+    scope.getRenewable();
+    $httpBackend.flush();
+});
+```
+
+As we did earlier in this assignment, we use **$httpBackend** to ensure that any calls to **$http.get** will "mock load" our data. In particular, it will load our renewables data by called **MainController.getRenwable**. You saw this method in the previous section. As you recall, it loads **Renewable.json** and passes it to our RenewableUtils object. This ensures that our utilities have data on which they can perform various operations. The object is meant to manipulate the data found in the JSON file, so obviously it needs a copy of the JSON before it can work its magic.
+
+**NOTE**: _Don't just hurry through the assignment at this point. Take some time to make sure you understand what is happening. These kinds of operations are performed all the time in JavaScript programs, and you need to be sure you understand how they work. In particular, we need to properly partition off our objects, then feed them exactly the right amount of data so they can perform their task._
+
+Here are the tests. Your job is to get them to pass by changing RenewableUtils. The tests themselves should not change:
 
 ```javascript
 describe('Renewables Suite', function() {
@@ -408,8 +368,7 @@ describe('Renewables Suite', function() {
         });
     }));
 
-    beforeEach(function() {
-        //scope.renewableUtils.init(renewables);
+    beforeEach(function() {        
         var requestHandler = $httpBackend
             .when('GET', 'data/Renewable.json')
             .respond(renewables);
@@ -482,125 +441,12 @@ describe('Renewables Suite', function() {
 });
 ```
 
-## Test Simple Format
+## Turn it in
 
-We need to create **spec/test-simple-format.js**.
-
-```javascript
-```
-c
-## Test Simple Format Backend
-
-We need to create **spec/test-simple-format-backend.js**, which is our holy grail.
-
-## Suite Titles
-
-Get the suite titles right for each test.
-
-## Hints
-
-In **karma.conf.js** be sure you are loading **angular**, **angular-mocks** and **angular-route**:
-
-```javascript
-files: [
-    'public/components/jquery/dist/jquery.min.js',
-    'public/components/angular/angular.js',
-    'public/components/angular-mocks/angular-mocks.js',
-    'public/components/angular-route/angular-route.js',
-    'node_modules/jasmine-jquery/lib/*.js',  
-    'public/javascripts/app.js',
-    'public/javascripts/*.js',
-    'spec/**/*.html',
-    'spec/data/*.js',
-    'spec/test-*.js'
-],
-```
+You know the drill. This will be in the **Week05-Angular_SolarExplorer** in your **week06** branch.
 
 ## Before Each
 
-**beforeEach** methods load before each test is run. **afterEach** methods are loaded after each test is run.
+I have moved the section on **beforeEach** here:
 
-This **beforeEach** statement loads your angular module:
-
-```javascript
-beforeEach(module('elfApp'));
-```
-
-Specically, it loads the module that you define like this in **app.js** and use in **main.js** and **about.js**:
-
-```javascript
-var myModule = angular.module('elfApp', ['ngRoute']);
-```
-
-This **beforeEach** loads you HTML fixture:
-
-```javascript
-beforeEach(function() {
-    jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
-    loadFixtures('renewable.html');
-});
-```
-
-This before each does three things:
-
-```javascript
-beforeEach(inject(function(_$compile_, _$rootScope_, _$templateCache_, _$controller_) {
-    scope = _$rootScope_.$new();
-    $compile = _$compile_;
-    $templateCache = _$templateCache_;
-
-    mainController = _$controller_('MainController', {
-        $scope: scope
-    });
-}));
-```
-
-First, it gets the scope that you are using in your application. I believe that this is a global scope object for the entire app, and this line narrows the scope down to work only with the scope of your controller:
-
-```javascript
-mainController = _$controller_('MainController', {
-    $scope: scope
-});
-```
-
-The above code also loads your controller.
-
-These line gets the compile and templateCache, both of which are needed to process our fixture so that it is converted from an angular template to live HTML that contains resolved references to scope variables:
-
-```javascript
-$compile = _$compile_;
-$templateCache = _$templateCache_;
-```
-
-There are also beforeEach and afterEach calls to load **$httpBackend**:
-
-```javascript
-beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_, _$controller_) {
-    scope = _$rootScope_.$new();
-    var $compile = _$compile_;
-    $httpBackend = _$httpBackend_;
-    mainController = _$controller_('MainController', {
-        $scope: scope
-    });
-}));
-
-afterEach(function() {
-    $httpBackend.verifyNoOutstandingExpectation();
-    $httpBackend.verifyNoOutstandingRequest();
-});
-```
-
-The beforeEach shown above is the same as the ones we looked at before, except it does not get the compile and templateCache for handling fixtures, and instead it gets httpBackend. We use **httpBackend** for mocking calls to the server. Instead of aclled $http.get directly, we use httpBackend calls such as this to mock or fake the call to the server. Instead of making a real call, we just return pre-defined data:
-
-```javascript
-var requestHandler = $httpBackend
-    .when('GET', 'data/Renewable.json')
-    .respond(PUT THE MOCK DATA HERE);
-
-$httpBackend.expectGET('data/Renewable.json');
-scope.getRenewable();
-$httpBackend.flush();
-expect(scope.renewable[0].Year).toEqual('2017');
-```
-
-The **afterEach** code will raise an error if your set up a call to **httpBackend** but don't ever execute it by calling **httpBackend.flush()**.
+- [Jasmine Unit Tests and beforeEach](http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html#before-each)
