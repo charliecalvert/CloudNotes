@@ -1,40 +1,16 @@
 # JavaScriptObjects
 
-Learn about JavaScript objects. There are lots of tips in this slide deck:
+Learn about JavaScript objects.
+
+There are lots of tips in this slide deck:
 
 * [http://bit.ly/elven-javascript-basics](http://bit.ly/elven-javascript-basics)
 
-## Part Zero
+Also see this section of Elvenware for details on Object Literals:
 
-The simplest possible JavaScript object declared using object literal syntax:
+- [Object Literals][elf-obj-literal]
 
-```javascript
-var myObject = {};
-```
-
-This is a slightly more complex object, again declared using object literal syntax:
-
-```javascript
-var person = { 'name': 'Suzie' };
-```
-
-Here is a second way to declare the same object. First we care object using object literal syntax, then we use got notation to create the name property:
-
-```javascript
-var person = {};
-person.name = 'Suzie';
-```
-
-As far as we are concerned at this point, there is no significant difference between these two ways of declaring an object.
-
-This is a function object:
-
-```javascript
-function bar() {
-	var a: 1;
-	function foo() {}
-};
-```
+[elf-obj-literal]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#object-literal
 
 In this exercise, we are working with object literals, not function objects.
 
@@ -178,6 +154,8 @@ As always, use Grunt to make sure your code is properly formated.
 **NOTE**: _[Previously][gc-proj], in [Grunt Check][gc-proj], I said "in this and all future projects" be sure you code passes grunt check. I'll let that go this time, but remember, this is implicit in all our assignments unless I say otherwise. I will, however, take off points if your code is clearly improperly formated. Grunt check was created to help you do the right thing. It is easier, I think, if we run it than if we don't. To make it work, of course, you need **.jscsrc** and **Gruntfile.js** plus a **package.json** file. But these are boiler plate at this time._
 
 [gc-proj]: http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck.html#clean-code
+
+In summary: The **firstName** and **lastName** properties of the **person** object should be declared with object literal syntax. I want the **fullName**, **add** and **subject** methods to be part of object literals, and I want **multiply** to be part of the calculator object but declared outside the original object literal declaration.
 
 ## Hint
 

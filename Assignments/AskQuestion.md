@@ -29,6 +29,33 @@ A close second might be: *What is the answer to question three?*
 
 Try to ask questions that can benefit yourself and others; don't become a platform for disseminating the answer to a question.
 
+## Inspiration
+
+Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: www.google.com".
+
+Suppose I show you a chunk of code like this:
+
+```javascript
+var objectAsArray = [];
+for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+        objectAsArray.push([key, obj[key]]);
+    }
+}
+```
+
+There are three pieces of syntax you might want to ask about.
+
+1. The code that initializes the array: **var a = []**;
+2. The code code for iterating over the fields of an object: **var key in obj**
+3. The **hasOwnProperty** or **push** methods.
+
+I know for certain that students who often seem unable to ask a good question don't understand bits of syntax like that. I understand you having questions, but don't understand why you don't ask them. Rather than get a middling grade on the discussion assignment, why not ask a question about one of those pieces of syntax? Then students who understand can reply, or if necessary I can step in. Most importantly, you will learn something.
+
+There is no shame in not understanding any of the syntactical elements in the bulleted list above. Even if you think you understand one of them, for instance, the first one, I bet there are questions you might have about the statement. Maybe you know what it does, but not exactly how it works. I know I have questions about it, and could stand to do more research on the subject if encouraged by a student.
+
+This is one example from one assignment, but there are similar section in nearly every technical assignment I give. There are probbaly 5 to 10 obvious question to ask in any assignment, and 20, 30 or even 50 in more complex assignments.
+
 ## Scoring
 
 In general, I'm looking for questions and answers. However, just proving that you looked at the discussion area will keep you from getting a failing grade. Here are some loose guidelines that I might use when grading discussions:

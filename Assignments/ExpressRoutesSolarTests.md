@@ -260,6 +260,7 @@ function objectToArray(obj) {
 
 Find out more about sorting here:
 
+- [Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptBasics.html#sorting)
 - [JavaScript Sorting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 We stepped through this process in class, so I will say no more about it here.
@@ -365,6 +366,8 @@ For now, my interface looks like this:
 ![Express Solar Tests][est]
 
 [est]:https://s3.amazonaws.com/bucket01.elvenware.com/images/express-solar-test-01.png
+
+In the image shown here, we see the expected results from pressing the By Year button with 2011 in the input control.
 
 Of course, this interface needs work. But it will do for now.
 
