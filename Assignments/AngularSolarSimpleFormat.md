@@ -1,3 +1,37 @@
+## Overview
+
+The goals:
+
+- Write tests for a new directive called **elfSimpleFormat**
+- Create the **elfSimpleFormat** directive.
+- Write tests for a front end for our new directive
+- Create a front end for the new directive on a new page
+
+## Branches
+
+Before we get started, let's set up our branch for this week. We have at least three tasks:
+
+1. Create a new branch.
+2. Check it out.
+3. Rename **Week05-SolarExplorer** to **Week07-SolarExplorer**.
+
+Something like this:
+
+<pre>
+git branch week07
+git checkout week07
+git mv Week05-SolarExplorer Week07-SolarExplorer
+</pre>
+
+If you have not done so already, you should also merge your work from the week06 branch into master:
+
+<pre>
+git checkout master
+git merge week06
+</pre>
+
+Now switch back to week07: **git checkout week07**
+
 ## Simple Format Directive
 
 Now lets create a new directive called **elfSimpleFormat**. Declare it just below the point in **main.js** where you declare the **elfRenewable** directive.
