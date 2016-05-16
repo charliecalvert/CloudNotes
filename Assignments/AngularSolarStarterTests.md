@@ -526,3 +526,7 @@ You know the drill. This will be in the **Week05-Angular_SolarExplorer** in your
 I have moved the section on **beforeEach** here:
 
 - [Jasmine Unit Tests and beforeEach](http://www.elvenware.com/charlie/development/web/UnitTests/Jasmine.html#before-each)
+
+## Hints
+
+Call the **renewableUtils.simpleFormat** from within **$scope.getRenewable**. It makes no sense to call it until you have loaded **renewables.json**. In particular, since it relies on **renewables.json** being present, it won't work properly until you have loaded that file.
