@@ -320,6 +320,82 @@ For the curious, and we should all be curious, here are the angular docs on fact
 - [Providers](https://docs.angularjs.org/guide/providers)
 - [Services](https://docs.angularjs.org/guide/services)
 
+Here is the method of **RenewablesUtls** that calls the built in JavaScript **map** function:
+
+```javascript
+this.getYears = function() {
+    return renewables.map(function(renewable) {
+        return renewable.Year;
+    });
+};
+```
+
+This method pulls our a single field from each member of our array of renewable objects array. In particular, it finds the Year field of each object in our array. The map method then creates an array consisting only of those fields. For instance, suppose we had only two members in our array:
+
+```javascript
+[
+    {
+        "Year": "2017",
+        "Solar (quadrillion Btu)": "0.8045307",
+        "Geothermal (quadrillion Btu)": "0.2349284",
+        "Other biomass (quadrillion Btu)": "0.50916",
+        "Wind power (quadrillion Btu)": "2.202328",
+        "Liquid biofuels (quadrillion Btu)": "1.2329197",
+        "Wood biomass (quadrillion Btu)": "1.9860924",
+        "Hydropower (quadrillion Btu)": "2.5859957"
+    },
+    {
+        "Year": "2016",
+        "Solar (quadrillion Btu)": "0.6298938",
+        "Geothermal (quadrillion Btu)": "0.232438",
+        "Other biomass (quadrillion Btu)": "0.5113525",
+        "Wind power (quadrillion Btu)": "2.0395132492",
+        "Liquid biofuels (quadrillion Btu)": "1.2406718727",
+        "Wood biomass (quadrillion Btu)": "1.9724914",
+        "Hydropower (quadrillion Btu)": "2.5965158"
+    }
+]
+```
+
+Our method would return this:
+
+```javascript
+[2017, 2016]
+```
+
+You can also return more complex arrays. For instance, you could return an array that looked like this:
+
+```javascript
+[
+    {wood: "1.9860924"},
+    {wood: "1.92724914"}
+]
+```
+
+This might involve writing code like this:
+
+```javascript
+this.getWood = function() {
+	return renewables.map(function(renewable) {
+	    return { wood: renewable['Hydropower (quadrillion Btu)'] };
+	});
+}
+```
+
+You could test it something like this:
+
+```javascript
+it('proves we can get our wood map', function() {
+    var woods = scope.renewableUtils.getWood();
+    console.log(woods);
+    expect(woods.length).toBe(12);
+    expect(woods[11]).toEqual({ wood: '2.869035197' });
+});
+```
+
+More info is here:
+
+- [Elvenware Functional Programming](http://www.elvenware.com/charlie/development/web/JavaScript/Functional.html)
 
 ## Create test-renewables
 

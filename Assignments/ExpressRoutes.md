@@ -128,7 +128,13 @@ $(document).ready(function() {
 
 ## Add method
 
-Let's add an add method to our project. First on the server:
+Let's append an **add** method to our project. It will involve a call from the client to the server. Here are the steps:
+
+- The user enters data on the client.
+- The data is sent to the server.
+- The server performs an addition operation on that data and sends back a result.
+
+The implementation is relatively straight forward. First on the server:
 
 ```javascript
 router.get('/add' etc....)
