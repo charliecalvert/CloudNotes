@@ -256,6 +256,8 @@ function objectToArray(obj) {
 
     return objectAsArray;
 }
+
+module.exports.objectToArray = objectToArray;
 ```
 
 Find out more about sorting here:
