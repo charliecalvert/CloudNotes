@@ -142,6 +142,12 @@ Our next goal is to create client side components. We will learn about:
 
 ## Require
 
+Install requirejs:
+
+<pre>
+bower install requirejs --save
+</pre>
+
 In **layout.jade**:
 
 <pre>
