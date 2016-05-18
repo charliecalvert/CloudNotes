@@ -325,7 +325,7 @@ We are going to add a new page to the application and use it to display the **Si
 
 **Caption**: _The Home page displays the elf renewable directive._
 
-![Simple Format Page][as-01]
+![Simple Format Page][as-02]
 
 **Caption**: _The Simple Format page displays the simple format directive._
 
@@ -336,7 +336,7 @@ li(ng-class="{ active: isActive('/simple-format')}")
   a(ng-href='#/simple-format') Simple Format
 ```
 
-In **app.js**, between Home and About, add the following angular route:
+In **public/javascript/app.js**, between Home and About, add the following angular route:
 
 ```javascript
 .when('/simple-format', {
@@ -370,7 +370,7 @@ Be sure to load **simple-format-page.js** in **layout.jade**.
 
 ## Test Rewewable by Year
 
-Copy **main.js** to **renewableByYear.js**. Set the controller name **RenewableByYearController**:
+Copy **main.js** to **renewable-by-year.js**. Set the controller name **RenewableByYearController**:
 
 ```javascript
 elfApp.controller('RenewableByYearController', function($scope, $http, renewableUtils) {
@@ -409,11 +409,29 @@ When implementing **renewableUtils.getByYear(year)** be sure you can handle the 
 Don't forget to run:
 
 
-Create **renweably-by-year.jade** and base it on **renewable.jade** but set the ID to **renewableByYear**. Convert it to a fixture:
+Create **renewable-by-year.jade** and base it on **renewable.jade** but set the ID to **renewableByYear**. And don't index into renewable. For instance, where you see this:
+
+<pre>
+| First: {{renewable[index].Year}}
+</pre>
+
+Do this instead:
+
+<pre>
+| First: {{renewableByYear.Year}}
+</pre>
+
+Convert it to a fixture:
 
 <pre>
 jade views/renewable-by-year.jade --out spec/fixtures
 </pre>
+
+Also rename the **RenewableByYearController** (in **renewable-by-year.js**) method called **getRenewable** to **getRenewableByYear**. Like this:
+
+```javascript
+$scope.getRenewableByYear = function() { }
+```
 
 Your code should pass these tests which should be found in **test-renewable-by-year.js**:
 
