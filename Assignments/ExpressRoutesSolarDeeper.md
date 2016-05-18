@@ -1,14 +1,37 @@
 ## More Tests
 
+In this assignment we will learn:
+
+- More about routes
+  - More about passing parameters to
+  - More about returning values from routes
+- How to create JavaScript components that use:
+  - requirejs
+  - jQuery load
+
 Consider using **nodemon** instead of **node** for **test-server** in **package.json**.
 
 Create an **objectToArray** method in **routes/energy-utils.js**. Require this file in **index.js**.
 
-In **index.js** add routes:
+## New Routes
+
+In **routes/index.js** add routes:
 
 - renewableByIndex
 - renewableByYear
 - renewablesSorted (renewableByIndexSorted)
+
+## Sorted Index
+
+The **renewablesByIndexSorted** method takes a single parameter as an id, just like renewablesByIndex:
+
+```javascript
+router.get('/renewablesByIndexSorted/:id', function(request, response) {
+   YOU FILL IN THE IMPLEMENTATION
+})
+```
+
+The implmentation is very similar to **renewablesByIndex**, but instead of returning a single object, return an array of arrays. The array of arrays is created by a single call to **energyUtils.objectToArray**. The **renewablesByIndexSorted** route should then return the array built in the call to **objectToArray**.
 
 ## Spec Routes
 
@@ -123,10 +146,12 @@ describe("Spec Routes Student Suite", function() {
     'use strict';
 
     it('shows renewables route returns an object array with length set to 12', function(done) {
+      // FILL IN THE CODE FOR THE TEST HERE. THEN REMOVE THE BOOLEAN TEST SHOWN BELOW THIS LINE
         expect(true).toBe(false);
     });
 
-    it('call renewables route, parse text property of response object and show first object contains 2017', function(done) {
+    it('shows the renewables route, parse text property of response object and show first object contains 2017', function(done) {
+        // FILL IN THE CODE FOR THE TEST HERE. THEN REMOVE THE BOOLEAN TEST SHOWN BELOW THIS LINE
         expect(true).toBe(false);
     });
 
@@ -138,17 +163,29 @@ describe("Spec Routes Student Suite", function() {
 Our next goal is to create client side components. We will learn about:
 
 - Require
-- The Module Pattern
+- Loading HTML with the jQuery [load](http://api.jquery.com/load/) method.
+- Learn how to create single page app (SPA) that changes content according to the users needs.
+
+**NOTE**: _Above I provide a link to the official definition of jQuery load on the jQuery site. You should follow that link at least once, and perhaps return there as often as necessary as you gain familiarity with the method. I frequently provide links of this type in my assignments, and you should at least take the time to see where the lead in case you want to study them at the time, or later on._
 
 ## Require
 
-Install requirejs:
+RequireJs provides:
+
+- More control over the loading of JavaScript files. Load scripts on demand
+- Support for JavaScript modules that stand alone and do not pollute the global name space
+- An asynchronous alternative to the synchronous commonjs require calls used on the server
+- A form of code injection similar to what we have in angular
+
+To install **requirejs**:
 
 <pre>
 bower install requirejs --save
 </pre>
 
-In **layout.jade**:
+In **layout.jade** we load **requirejs** and specify a file, usually called **main.js**, where we configure **require** and load the core files for our application:
+
+
 
 <pre>
 doctype html
@@ -162,7 +199,9 @@ html
     block content
 </pre>
 
-In **public/javascripts/main.js**:
+In **public/javascripts/main.js** we configure require and bootstrap our application:
+
+**NOTE**: _By bootstrap I mean "load the core files of our application". I'm not referring to the CSS library._
 
 ```javascript
 requirejs.config({
@@ -170,27 +209,31 @@ requirejs.config({
     paths: {
         jquery: 'components/jquery/dist/jquery',
         bootstrap: 'components/bootstrap/dist/js/bootstrap',
-        control: 'javascripts/control',
-        work: 'javascripts/work',
-        about: 'javascripts/about',
-        funcObj: 'javascripts/func-obj'
+        control: 'javascripts/control'
     }
 });
 
 requirejs(['jquery'], function($) {
 
-    requirejs(['bootstrap', "control", 'work', 'about', 'funcObj'], function(bootstrap, control, work, about, funcObj) {
+    requirejs(['bootstrap', 'control'], function(bootstrap, control) {
         control.init();
     });
 });
 ```
 
-## Module Pattern
+We configure requirejs in a call to **requirejs.config**. The key tasks are:
 
-In **public/javascripts/control.js**:
+- State the [baseUrl][base-url], which in this case is the **public** folder of our application.
+- We then define maps that tell require JS how to find modules that not stored directly in the baseUrl. After making defining these paths, we can refer to individual moduels by these names, rather than having to spell out the whole path. For instance, we can write **control** rather than **javascripts/control**.
+
+[base-url]: http://requirejs.org/docs/api.html#config-baseUrl
+
+## Require JS Modules
+
+Require JS modules are defined in specific way, usually through calls to function named **define**. For instance, in **public/javascripts/control.js** we define our first require js module:
 
 ```javascript
-define(['jquery', 'about', 'work'], function($, about, work) {
+define(['jquery'], function($) {
     //Do setup work here
 
     function showBar() {
@@ -208,9 +251,7 @@ define(['jquery', 'about', 'work'], function($, about, work) {
         init: function() {
             //console.log(this.color);
             that = this;
-            $('#aboutButton').click(about.init);
-            $('#workButton').click(work.init);
-            $('#elf-view').load('/main', this.setup);
+            work.init();            
         }
     };
 
@@ -218,22 +259,25 @@ define(['jquery', 'about', 'work'], function($, about, work) {
 });
 ```
 
-In **work.jade**:
+We begin by calling the require js **define** function:
 
 ```javascript
-h1 Main
-
-p#display
-
-p#display2
+define(['jquery'], function($) {
+  // DEFINE THE OBJECT STORED IN THIS MODULE AND RETURN IT
+});
 ```
 
-In **public/javascripts/work.js**:
+Inside the define function we define the object stored in our module, and return it. You need do nothing special when writing your object. Just define it using standard JavaScript code and it is ready to use. It automatically inherits the features of a require module because it is declared this way. It is as if you declared it using the module pattern, but it is perhaps simpler to understand, and easier to use as part of a larger application architecture.
+
+Many of the major libraries that are commonly used automatically implement the requirejs define function or do something similar. In other words, jQuery, and many other libraries, are requirejs modules. Or maybe it would be more correct to say that the meet the requirements of a requirejs module. This is the case because requirejs is so popular, and so commonly used. Some libraries do not support requirejs, and we will have to take special steps to load them.
+
+## The Worker
+
+It is now time to create our first component.
+We will call the component worker and define it like this in **public/javascripts/work.js**:
 
 ```javascript
-define(['funcObj'], function (funcObj) {
-    //Do setup work here
-
+define(function() {
     var work = {
         color: "red",
         size: "big",
@@ -245,11 +289,110 @@ define(['funcObj'], function (funcObj) {
         }
     };
     return work;
-
 });
 ```
 
-In **about.jade**:
+As you can see, we are using requirejs syntax to create a requirejs module. In **control.js** we call **work.init()**. That method is defined in **work.js**. As you can see, it consists primarily of a call to the jQuery method called **load**. We will discuss that method in the next section. For now, just note that it takes an anonymous function as a callback. Inside that function we print some code an HTML element with the ID of **display**. We must make that call here because it is defined in HTML loaded by the jQuery **load** method.
+
+In the next section we learn about that HTML, and how it is loaded.
+
+## Loading HTML into Our Page {#create-html}
+
+You might have noticed that we make this call in our work module:
+
+```javascript
+$('#elf-view').load('/work', this.setup);
+```
+
+**NOTE**: _In an earlier version of this assignment, the route was called **main**. As you can see, I have changed it to work._
+
+The call to the jQuery **load** method calls a route on the server, just as **getJSON** calls a route on the server. The **load** method, however, expects the server to return HTML rather than JSON:
+
+- $.getJSON << ==== For requesting JSON data
+- $.load << ==== For requestion HTML
+-
+ The HTML returned by the call is placed in a DIV on our page with the ID of **elf-view**. In Jade, that DIV might be defined like this:
+
+<pre>
+#elf-view
+</pre>
+
+In HTML it looks like this:
+
+```HTML
+<div id='elf-view'></div>
+```
+
+We place this div in **index.jade**:
+
+<pre>
+block content
+  h1= title
+  p Welcome to #{title}
+
+  #elf-view
+</pre>
+
+That's all well and good, but how do we load the HTML? In our case, we will define chunks of HTML in Jade, and then define a route in **routes/index.js** that is able to load any arbitrary JADE file, convert it HTML and send it back to the browser:
+
+```javascript
+router.get('/:id', function(request, response) {
+  response.render(request.params.id, { title: 'ElfComponent' });
+});
+```
+
+This code sees our request for **work**. It then calls the built-in resonse.render method, which converts the JADE to HTML and send **sends** it back to the browser.
+
+**NOTE**: _It can take awhile to see why Express is able to route our request to this particular route. Perhaps the key point to grasp is that there is no route explicitly defined as **router.get('/work', function etc...** As a result express passes over all the other routes in **index.js**. When it reaches this one, it tests to see if '/:id' can be interpreted to mean '/work'. It can, and so this method is called. This may not be clear to all students at first, but as you work with routes more, you should have an ah-ah moment that helps you see the simiararities between a route route like '/renewableByIndex/:id and a route that consists only of an id: '/:id'._
+
+Our code in **work.jade** looks like this:
+
+```javascript
+h1 Work Page
+
+p#display
+
+p#display2
+```
+
+This code is converted to HTML, passed back to browser, and display in our **elf-view**. Hopefully you can see how the work.html file loaded by work.js are connected. For those of you who know angular, you can perhaps see that this is a poor man's version of the HTML that is associated with an angular **controller**. Furthermore, the ID's in the HTML are in the **scope** of our **work.js** module. In particular, some code will work best in our work.js module just as the $scope in an angular **controller** has special access to our angular expressions in an angular template. For instance, this code belongs in **work.js** because it accesses HTML with ID's that are loaded by that module:
+
+```javascript
+$('#display').html(work.color + ' ' + work.size);
+```
+
+ This is not a complete solution like angular, but it helps us organize our code.
+
+ I'm calling the combination of **work.js** and **work.jade** a component. Again, there are other tools such as angular or react that do the same thing with much more rigor, but this solution helps us see what such libraries are doing. It is also much lighter and much more flexible than an opinionated library such as Angular.
+
+## About Page
+
+Now that you have loaded one page, you know all that you need to know to load additional pages. So lets add two buttons **index.jade** and see if we can figure out how to switch between two pages.
+
+<pre>
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  button#workButton Work
+  button#aboutButton About
+
+  #elf-view
+</pre>
+
+Modify the **control** object so it handles clicks on these buttons:
+
+```javascript
+init: function() {                    
+    $('#aboutButton').click(about.init);
+    $('#workButton').click(work.init);
+    work.init();
+}
+```
+
+Then define **about.jade**:
 
 <pre>
 h1 About
@@ -259,7 +402,7 @@ p#display
 p#display2
 </pre>
 
-In **public/javascripts/about.js**:
+And then your about file. **public/javascripts/about.js**:
 
 ```javascript
 define(function () {
@@ -280,3 +423,13 @@ define(function () {
 
 });
 ```
+
+## Turn it in
+
+Modify your work page so that it loads the three routes we defined earlier:
+
+- renewable
+- renewableByIndex
+- renewableByYear
+
+Turn it in as usual.
