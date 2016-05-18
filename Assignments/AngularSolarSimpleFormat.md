@@ -313,28 +313,117 @@ beforeEach(function() {
 
 This code calls the **getRenewable** method on our **MainController's** scope.
 
-## Exercises
+## Simple Format Page
 
-Write a method:
+We are going to add a new page to the application and use it to display the **SimpleFormat** directory. When we are done, our Single Page App (SPA) will have three "pages":
 
-- on **renewableUtils** called **getByYear**. Pass it a year, and it should return an object with
-  - An **index** property set to the index of the object with that year
-  - The object at that index
-- on the scope of your **MainController** called **getByYear**. It should
-  - Call your new method: **renewableUtils.getByYear(year)**
-  - Set the **$scope.index** and **$scope.renewable** property to values returned by your call
-  - Return the **renewable** object that you found.
+- Home
+- Simple Format
+- About
 
-Your code should pass these tests:
+![Home Page][as-01]
+
+**Caption**: _The Home page displays the elf renewable directive._
+
+![Simple Format Page][as-01]
+
+**Caption**: _The Simple Format page displays the simple format directive._
+
+In **index.jade**, between home and about, add the following menu item:
 
 ```javascript
-describe('Simple Format Exercises Suite', function () {
+li(ng-class="{ active: isActive('/simple-format')}")
+  a(ng-href='#/simple-format') Simple Format
+```
+
+In **app.js**, between Home and About, add the following angular route:
+
+```javascript
+.when('/simple-format', {
+    templateUrl: 'simple-format-page',
+    controller: 'SimpleFormatController'
+})
+```
+
+Make a copy of **main.js** and call it **simple-format-page.js**. We want to display the **elfRenewable** directive on the main page and the **elfSimpleFormat** directive on the **simple-format-page**. As a result, you should:
+
+- remove the **elfSimpleFormat** directive from **main.js**
+- remove the **elfRenewable** directive from **simple-format-page.js**.
+
+Copy **main.jade** to **simple-format-page.jade** and perform similar operations. For instance:
+
+- remove the **elfSimpleFormat** tag from **main.jade**
+- remove the **elfRenewable** tag from **simple-format-page.jade**
+
+Change the name of the **controller** in **simple-format-page.js** from **MainController** to **SimpleFormatController**:
+
+```javascript
+elfApp.controller('SimpleFormatController', function($scope, $http, renewableUtils) {
+  etc...
+});
+```
+
+Be sure to load **simple-format-page.js** in **layout.jade**.
+
+[as-01]:https://s3.amazonaws.com/bucket01.elvenware.com/images/angular-solar-simple-01.png
+[as-02]:https://s3.amazonaws.com/bucket01.elvenware.com/images/angular-solar-simple-02.png
+
+## Test Rewewable by Year
+
+Copy **main.js** to **renewableByYear.js**. Set the controller name **RenewableByYearController**:
+
+```javascript
+elfApp.controller('RenewableByYearController', function($scope, $http, renewableUtils) {
+   // We'll change this code later.
+});
+```
+
+Write a method on **renewableUtils** called **getByYear(year)**. Pass it a year, and it should return an object with
+
+  - An **index** property set to the index of the object with that year
+  - The object at that index
+
+You should also write a method on the scope of your **RenewableByYearController** called **getByYear**. It should
+
+  - Call your new method: **var yearData = renewableUtils.getByYear(year)**
+  - Set the **$scope.index** to yearData.index.
+  - Create a new property **$scope.renewableBy** and set it to yearData.renewable
+  - Return **renewableByYear**
+
+Like this:
+
+```javascript
+$scope.getByYear = function(year) {
+    var renewableData = $scope.renewableUtils.getByYear(year);
+    $scope.index = renewableData.index;
+    $scope.renewableByYear = renewableData.renewable;
+    return $scope.renewableByYear;
+};
+```
+
+When implementing **renewableUtils.getByYear(year)** be sure you can handle the year in either string or numeric format. For instance, consider either:
+
+- Doing a test to see the **year** parameter is a number and if so converting it to string.
+- Using **==** rather than **===** so that you can compare a string like **'2017'** to the number **2017** and get back true.
+
+Don't forget to run:
+
+
+Create **renweably-by-year.jade** and base it on **renewable.jade** but set the ID to **renewableByYear**. Convert it to a fixture:
+
+<pre>
+jade views/renewable-by-year.jade --out spec/fixtures
+</pre>
+
+Your code should pass these tests which should be found in **test-renewable-by-year.js**:
+
+```javascript
+describe('Renewable By Year Suite', function () {
 
     'use strict';
 
     var scope;
     var $httpBackend;
-    var mainController;
     var $templateCache;
     var $compile;
 
@@ -345,14 +434,14 @@ describe('Simple Format Exercises Suite', function () {
         $compile = _$compile_;
         $templateCache = _$templateCache_;
         $httpBackend = _$httpBackend_;
-        mainController = _$controller_('MainController', {
+        _$controller_('RenewableByYearController', {
             $scope: scope
         });
     }));
 
     beforeEach(function () {
         jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
-        loadFixtures('simple-format.html');
+        loadFixtures('renewable-by-year.html');
     });
 
     beforeEach(function () {
@@ -361,7 +450,7 @@ describe('Simple Format Exercises Suite', function () {
             .respond(renewables);
 
         $httpBackend.expectGET('data/Renewable.json');
-        scope.getRenewable();
+        scope.getRenewableByYear();
         $httpBackend.flush();
     });
 
@@ -369,8 +458,8 @@ describe('Simple Format Exercises Suite', function () {
         expect(true).toBe(true);
     });
 
-    it('proves renewables.getByYear returns index & expected object', function() {
-        var renewable = {
+    it('proves renewables.getByYear returns index & expected object with string year', function() {
+        var renewableByYear = {
             "Year": "2015",
             "Solar (quadrillion Btu)": "0.532293912",
             "Geothermal (quadrillion Btu)": "0.22367033",
@@ -382,26 +471,81 @@ describe('Simple Format Exercises Suite', function () {
         };
 
         var result = scope.renewableUtils.getByYear('2015');
-        expect(result).toEqual({ index:2, renewable: renewable })
+        expect(result).toEqual({ index:2, renewable: renewableByYear });
     });
 
-    it('tests that we can get an item in simpleFormat by Year', function () {
+    it('proves renewables.getByYear returns index & expected object with numeric year', function() {
+        var renewableByYear = {
+            "Year": "2012",
+            "Solar (quadrillion Btu)": "0.227349746",
+            "Geothermal (quadrillion Btu)": "0.211592042",
+            "Other biomass (quadrillion Btu)": "0.466604262",
+            "Wind power (quadrillion Btu)": "1.3393646844",
+            "Liquid biofuels (quadrillion Btu)": "1.0906491156",
+            "Wood biomass (quadrillion Btu)": "2.010265721",
+            "Hydropower (quadrillion Btu)": "2.628701965"
+        };
+
+        var result = scope.renewableUtils.getByYear(2012);
+        expect(result).toEqual({ index:5, renewable: renewableByYear });
+
+    });
+
+    it('tests that we can get a renewable object by Year from our controller', function () {
         var renewableByYear = scope.getByYear('2015');
+        //console.log(renewableByYear);
         expect(JSON.stringify(renewableByYear)).toContain('0.532293912');
     });
 
-    it('tests that we can get an item in simpleFormat by Year', function () {
-        var simpleFormatHtml = document.getElementById('simpleFormat');
-        $templateCache.put('simple-format', simpleFormatHtml);
-        var element = $compile('<elf-simple-format></elf-simple-format>')(scope);
+    it('tests that we can get a renewable object by Year in our elfRenewableByYear directive', function () {
+        var simpleFormatHtml = document.getElementById('renewableByYear');
+        $templateCache.put('renewable-by-year', simpleFormatHtml);
+        var element = $compile('<elf-renewable-by-year></elf-renewable-by-year>')(scope);
         scope.$digest();
         var renewableByYear = scope.getByYear('2015');
+        //console.log(renewableByYear);
         scope.$digest();
+        //console.log(element.text());
         expect(element.text()).toContain('1.8151574968');
     });
 
 });
 ```
+
+## Get By Year Page
+
+Create a page called **Renewable By Year**. Allow the user to enter a year using an input control. Retrieve the user input, call your **getByYear** function, and display the year.
+
+![By Year](https://s3.amazonaws.com/bucket01.elvenware.com/images/angular-solar-simple-03.png)
+
+**Caption**: _Enter a year, retrieve the data and call renewableUtils.byYear. Display the result in a directive._
+
+- Menu Item Title: **Renewable By Year**,
+  - url: **renewable-by-year**
+  - Make corresponding changes in **app.js** and **index.jade**.
+- Controller Name: **RenewableByYearController** in **renewable-by-year.js**
+  - The jade page associated with this controller should be called **renewable-by-year-page.jade**
+  - In this file create a directive called **renewable-by-year**. Use to display the results of your call to **getByYear**
+- Jade Name for controller: **renewable-by-year-page.jade**.
+- Jade Name for directive: **renewable-by-year.jade**.
+
+This is a matter of taste. Nevertheless, when doing this kind of work, I find it helpful to keep my tests running and keep my app running in Chrome with the developers tools turned to the **console** page. I use the errors as I see as guides to help me see what needs to be done next, and what I have not yet done correctly.
+
+**NOTE**: _Watch the console and network pages in the Chrome developer tools carefully as you do this kind of work. Check, for instance, if you have remembered to load your new JavaScript page in **layout.jade**._
+
+**renewable-by-year-page.jade** should look a bit like this:
+
+<pre>
+input(type="number", data-ng-model="userYearInput")
+
+button.btn.btn-primary(ng-click="getRenewableByYear()") Get Renewable by Year
+
+hr
+
+elf-renewable-by-year
+</pre>
+
+Rename **getRenewable** to **getRenewableByYear** and call $scope.getByYear in its last line.
 
 ## Turn it in
 
