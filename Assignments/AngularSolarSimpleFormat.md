@@ -518,16 +518,18 @@ Create a page called **Renewable By Year**. Allow the user to enter a year using
 
 ![By Year](https://s3.amazonaws.com/bucket01.elvenware.com/images/angular-solar-simple-03.png)
 
-**Caption**: _Enter a year, retrieve the data and call renewableUtils.byYear. Display the result in a directive._
+**Figure 03**: _Enter a year, retrieve the data and call renewableUtils.byYear. Display the result in a directive._
 
-- Menu Item Title: **Renewable By Year**,
-  - url: **renewable-by-year**
+Hear are some of the key steps shown in Figure 03:
+
+- Menu Item Title seen at top of page: **Renewable By Year**,
+  - url associated with menu item: **renewable-by-year**
   - Make corresponding changes in **app.js** and **index.jade**.
-- Controller Name: **RenewableByYearController** in **renewable-by-year.js**
+- Be sure that controller name is **RenewableByYearController** in **renewable-by-year.js**
   - The jade page associated with this controller should be called **renewable-by-year-page.jade**
-  - In this file create a directive called **renewable-by-year**. Use to display the results of your call to **getByYear**
-- Jade Name for controller: **renewable-by-year-page.jade**.
-- Jade Name for directive: **renewable-by-year.jade**.
+- In **renewableByYear.js** create a directive called **renewable-by-year**.
+  - Use it to display the results of your call to **getByYear**
+  - Jade Name for the directive **templateUrl**: **renewable-by-year.jade**.
 
 This is a matter of taste. Nevertheless, when doing this kind of work, I find it helpful to keep my tests running and keep my app running in Chrome with the developers tools turned to the **console** page. I use the errors as I see as guides to help me see what needs to be done next, and what I have not yet done correctly.
 
