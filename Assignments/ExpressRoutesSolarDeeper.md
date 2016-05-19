@@ -175,7 +175,7 @@ RequireJs provides:
 - More control over the loading of JavaScript files. Load scripts on demand
 - Support for JavaScript modules that stand alone and do not pollute the global name space
 - An asynchronous alternative to the synchronous commonjs require calls used on the server
-- A form of code injection similar to what we have in angular
+- A form of dependency injection similar to what we have in angular
 
 To install **requirejs**:
 
@@ -284,7 +284,8 @@ define(function() {
         init: function() {
             console.log(work.color);            
             $('#elf-view').load('/work', function() {
-                $('#display').html(work.color + ' ' + work.size);
+                $('#display').html(work.color);
+                $('#display2').html(work.size);
             });
         }
     };
@@ -333,7 +334,7 @@ block content
   #elf-view
 </pre>
 
-That's all well and good, but how do we load the HTML? In our case, we will define chunks of HTML in Jade, and then define a route in **routes/index.js** that is able to load any arbitrary JADE file, convert it HTML and send it back to the browser:
+That's all well and good, but how do we load the HTML? In our case, we will define chunks of HTML in Jade, and then define a route in **routes/index.js** at the bottom but above the **module.exports** statement. It is able to load any arbitrary JADE file, convert it HTML and send it back to the browser:
 
 ```javascript
 router.get('/:id', function(request, response) {
@@ -424,11 +425,36 @@ define(function () {
 });
 ```
 
+## Pretty
+
+Here is a fancy version of work.jade file that uses bootstrap to add some styling to our page:
+
+<pre>
+.jumbotron
+    h1 Worker
+
+    .alert.alert-success
+        p#display
+
+    .alert.alert-info
+        p#display2
+</pre>
+
+Learn more about bootstrap
+
+- [Components](getbootstrap.com/components)
+- [CSS](http://getbootstrap.com/css/)
+
 ## Turn it in
 
-Modify your work page so that it loads the three routes we defined earlier:
+Modify your work page so it acts as a home page. For now it can just say Home, maybe in an H1 or other appropriate place.
+
+Then create a new page called **renewables** that loads one of the three routes we defined earlier:
 
 - renewable
+
+Then create two new pages called **renewable-by-index** and **renewable-by-year**. Use them to load these two routes:
+
 - renewableByIndex
 - renewableByYear
 
