@@ -13,6 +13,10 @@ Consider using **nodemon** instead of **node** for **test-server** in **package.
 
 Create an **objectToArray** method in **routes/energy-utils.js**. Require this file in **index.js**.
 
+![express-routes-solar-deepter](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-routes-solar-deeper-01.png)
+
+**Figure01**: _Sample interface for Express Routes Solar Deeper. Feel free to use our own ideas for the look and feel of the page._
+
 ## New Routes
 
 In **routes/index.js** add routes:
@@ -183,9 +187,9 @@ To install **requirejs**:
 bower install requirejs --save
 </pre>
 
+**NOTE**: _When using **requirejs** you no longer need the jQuery **document.ready** method. You can, and should, remove it._
+
 In **layout.jade** we load **requirejs** and specify a file, usually called **main.js**, where we configure **require** and load the core files for our application:
-
-
 
 <pre>
 doctype html
@@ -459,3 +463,26 @@ Then create two new pages called **renewable-by-index** and **renewable-by-year*
 - renewableByYear
 
 Turn it in as usual.
+
+## On Change for Input {#input-on-change}
+
+It would be nice not to hit the button each time the user selects a new index or year value in our input controls. Here is example code for handling that. I put it in the **init** method for my **renewablesByIndex** object found in **renewable-by-index.js**.
+
+```javascript
+$( "#renewableByIndex" ).change(function() {
+    getRenewableByIndex();
+});
+```
+
+The ID renewableByIndex belongs to a numeric input control:
+
+<pre>
+.alert.alert-info
+    input#renewableByIndex(type='number', value='2')
+
+    pre#debug
+</pre>
+
+![By Index Scroller](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-routes-solar-deeper-02.png)
+
+**Figure02**: _The idea is that when the user clicks the up or down arrow on the input control the index changes and so does the data._
