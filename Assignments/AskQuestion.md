@@ -91,6 +91,20 @@ Other benefits of asking questions in the discussion area include:
 - The discussion area is a great place to practice answering questions. There is an art form to asking and answering questions online. One way to learn is to practice. The discussion area gives us a safe, protected place to practice writing and answering questions.
 - To learn the value of being civil in public discussions. If you go to sites like Stack Overflow and behave in an angry or ego-driven manner, you usually won't get very far. You don't need to be Miss Manners, but you should avoid being insulting, arrogant, or dismissive of others.
 
+## Prefer Modesty {#easy-does-it}
+
+Avoid leading with your ego. If you come across as an expert, then you become a target.
+
+I've had some students who said the equivalent of something like this: "I've figured our how to solve the **higgs boson** extra credit assignment. I was stumped at first, then I remembered that the sun rises in the west, and from there on, it was easy. If you have questions, just ask and I'll help you catch up with folks like me." After reading this, I am more or less compelled to tell him that he is wrong about where the sun rises, and that therefore much of the rest of his reasoning is likely built on a false premise.
+
+The problem here is the distance the student had to fall. He was the expert, ready to give everyone the secret of the universe. It is a long way from master of the universe to the person who got mixed up about where the sun rises.
+
+A much better approach would be to frame the question in a more modest or matter of fact manner. "I think I'm making progress on the higgs boson assignment, but I'm concerned that one of my premises may be incorrect. I believe that the sun rises in the west, and that this fact can help us solve the problem. Am I on the right track? I wanted to check with others before moving on."
+
+Now its much easier for someone to answer, "Hey, looks like you are making good progress, but don't forget that the sun rises in the east, not in the west."
+
+While it is not always necessary, or even helpful, to be actively modest, it is almost always a mistake to come across as the superior expert. Measure the distance that you will fall if proven wrong, and try to limit the extent of the damage. We all make mistakes. Its fair to say that most of us even make dumb mistakes. That's okay. Just don't be caught trying to play the expert when you really aren't ready to assume guru status quite yet. Just state the facts in plain, simple language. Or if, you are feeling very uncertain, prefer being modest to hiding behind a grandiose pose.
+
 ## Appropriate Questions
 
 It would be appropriate to ask about:
