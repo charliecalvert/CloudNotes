@@ -483,6 +483,8 @@ The ID renewableByIndex belongs to a numeric input control:
     pre#debug
 </pre>
 
+Alternatively, try setting the model for the input control to **index**:
+
 ![By Index Scroller](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-routes-solar-deeper-02.png)
 
 **Figure02**: _The idea is that when the user clicks the up or down arrow on the input control the index changes and so does the data._
