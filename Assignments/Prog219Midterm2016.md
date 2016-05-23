@@ -219,6 +219,55 @@ Your pages don't have to look like the images shown below. Feel free to make the
 **Figure 03** Bottom portion of the page for selecting a subset of the msn types.
 
 
+## The Menu
+
+The menu is a pain. I would certainly need a whole day, and perhaps two days to really explain it in depth. We don't have time for that, so here is my **index.jade** with just a couple items left as an exercise:
+
+```javascript
+extends layout
+
+block content
+    header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav(role='banner')
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='.#/') Solar Explorer
+            nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
+                ul.nav.navbar-nav
+                    li.trigger-collapse(ng-class="{ active: isActive('/')}")
+                        a(ng-href='#/') Home
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Renewables
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                            li.trigger-collapse(ng-class="{ active: isActive('/renewables')}")
+                                a(ng-href='#/renewables') Renewables
+                            // ADD TWO MORE MENU ITEMS HERE    
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Energy
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                            // ADD THE ENERGY MENU ITEMS HERE.
+                            // BASE THEM ON THE RENEWABLES Menu item above
+                    li.trigger-collapse(ng-class="{ active: isActive('/about')}")
+                        a(ng-href='#/about') About
+    .container
+        h1= title
+        p Welcome to #{title}
+        p Author #{author}
+
+        div(data-ng-view="")
+
+```
+
+The key point to grasp is that it changes shape to fit properly on a mobile device. The hamburger menu for the mobile device is the bit with the **span.icon-bar** syntax.
+
 ## Turn it in
 
 The usual
