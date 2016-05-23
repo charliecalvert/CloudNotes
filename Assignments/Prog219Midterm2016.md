@@ -112,10 +112,111 @@ h1 Energy Types
 // The remaining to panels are left as an exercise.
 </pre>
 
+## MSN Types
 
+A single energy type looks like this:
+
+```json
+{
+    "MSN": "FFPRBUS",
+    "YYYYMM": "194913",
+    "Value": "28.748176",
+    "Column_Order": "1",
+    "Description": "Total Fossil Fuels Production",
+    "Unit": "Quadrillion Btu"
+}
+```
+
+There are two oddities here:
+
+- The MSN property. Here it is FFPREBUS, which we see in the Description stands for "Fossile Fuel Produciton."
+- The YYYYMM property, which contains the year and a month: 1949 is the 13, is the month. I believe they are using 13 to say that they don't track months for this year, and that this is the production for the entire year. Starting around 1972 they will begin tracking production by month, and then the month field will be easier to understand.
+
+We want to know all the available MSN types. Just scanning through the file will reveal that there are several different types, such as FFPRBUS and NUETBUS. Since we have 7008 records, it is a bit hard to manually track down all the different types and their counts. So let's write code to do it, and also to break out our years and months.
+
+It might be possible to use Angular filters to find our MSN types, but I would prefer to do it myself. This would be a fairly simple task if we only wanted to find the unique MSN types. But it is better to find both the type and the accompanying description. That can get a bit fussy, so I will just give you the code, which I put in **public/javascripts/energy-types/msn-types.js**:
+
+```javascript
+var elfApp = angular.module('elfApp');
+
+elfApp.factory('msnTypes', function() {
+    function getMsnTypes(energyTypes) {
+        console.log('getMsnTypes called');
+        var currentMsn = {msn: null, description: ''};
+        var msnTypes = [];
+
+        function insertNewCurrentMsn(energyType) {
+            currentMsn = Object.create(currentMsn);
+            currentMsn.msn = energyType.MSN;
+            currentMsn.description = energyType.Description;
+            msnTypes.push(currentMsn);
+        }
+
+        insertNewCurrentMsn(energyTypes[0]);
+
+        function isUnique(msn) {
+            var result = true;
+            for (var i = 0; i < msnTypes.length; i++) {
+                if (msn === msnTypes[i].msn) {
+                    console.log('msn vs c.msn', msn, currentMsn.msn);
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        energyTypes.forEach(function (energyType, index) {
+            // console.log('energyType index and index length', index, msnTypes.length);
+            energyType.Year = energyType.YYYYMM.substr(0, 4);
+            energyType.Month = energyType.YYYYMM.substr(4);
+            if (energyType.MSN !== currentMsn.msn) {
+                if (isUnique(energyType.MSN)) {
+                    //console.log('isUnique');
+                    insertNewCurrentMsn(energyType);
+                }
+            }
+        });
+        return msnTypes;
+    }
+
+    return getMsnTypes
+});
+```
+
+We can use it like this:
+
+```javascript
+$scope.getEnergyTypes = function () {
+        $http.get('data/EnergyTypes.json')
+            .then(function (response) {                
+                $scope.msnTypes = msnTypes(response.data);
+                etc... // CODE HERE LEFT AS EXERCISE
+              }, function errorCallback(response) {
+          console.log('Error:', response.status, response.statusText);
+      });
+};
+```
 
 ## Energy Selectors
 
+The goal of the Energy Selectors page is to allow the user to click on an MSN type and see only the records of that type. There are about 7008 objects in our array, and each MSN type encapsulates about 584 of those records.
+
+Your pages don't have to look like the images shown below. Feel free to make the page uniquely your own. You have freedom to do what you want so long as your page includes:
+
+- A clickable list of MSN types
+- An iterable view of the 584 objects for any selected MSN type
+- The count of all objects in the array
+- The count of all objects for the selected MSN type
+
+
+![MSN Selection](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-midterm-2016-02.png)
+
+**Figure 02** Top portion of the page for selecting a subset of the msn types.
+
+![MSN Selection](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-midterm-2016-03.png)
+
+**Figure 03** Bottom portion of the page for selecting a subset of the msn types.
 
 
 ## Turn it in

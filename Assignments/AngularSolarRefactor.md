@@ -47,6 +47,20 @@ Note the glob syntax (\*\*). This says that we want karma to load any javascript
 - <http://man7.org/linux/man-pages/man7/glob.7.html>
 - <http://gruntjs.com/configuring-tasks#globbing-patterns>
 
+These changes effect your tests. You should change the path you use when putting things in the template cache. Here, for instance, is what we had in some tests for **Simple Format Http Backend Suite**
+
+```javascript
+$templateCache.put('simple-format', el);
+```
+
+It should now look like this so as to take into account our new **renewables** folder:
+
+```javascript
+$templateCache.put('renewables/simple-format', el);
+```
+
+You will have to make similar changes in other tests. The details are left as an exercise.
+
 ## Refactor Server Folders
 
 Move all the **renewable** related jade files into a folder called **views/renewables**.
@@ -134,3 +148,16 @@ $http.get('data/EnergyTypes.json')
         });
 };
 ```
+
+## Remove Marie
+
+It's finally time to clean up some messiness. Let's use git to remove:
+
+- **public/javascripts/control.js**
+- **views/marie.jade**
+
+Run your tests and your app and make sure that this didn't break anything. It shouldn't, but if you had any lingering references to these files, this is the time to clean them up.
+
+## Turn it in
+
+The usual
