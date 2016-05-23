@@ -6,6 +6,8 @@ We will also improve the first of its three pages, the renewable-page, so that i
 
 Do your work in a branch called **week08**. Rename your project from **Week07-ExpressRoutesSolar** to **SolarVoyager**. I think this will be the last name change, and we will continue to use this name throughout the quarter.
 
+**NOTE**: _This is an in-class exercise that we can perform to help you see how to complete the final._
+
 ## Rename Renewables {#renewables-rename}
 
 We have created a lot of files, and it is time to start organizing them. Let's create some subfolders and move our work into them.
