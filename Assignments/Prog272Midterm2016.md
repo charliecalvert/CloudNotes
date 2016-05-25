@@ -70,9 +70,6 @@ In **views/high-tech-energy**, place these files
 **Figure 02**: _Just getting far enough to see you can load the types._
 
 
-## Hints
-
-Be sure you renamed work.js to home.js. Rename all associated buttons, menus and files.
 
 ### Create New Page Steps {#page-steps}
 
@@ -200,4 +197,18 @@ define(['home'], function(home) {
 });
 ```
 
+In general, you will find the tests here:
+
+- JsObjects/Utilities/Templates/UnitTest/SolarVoyager
+
+Check regularly for updates. All the tests should pass.
+
 [jasmine-requirejs]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+
+## Turn it in
+
+Make sure the tests from JsObjects pass and **grunt check** passes. Put your work in a branch called **week08** or **week08-midterm**. Be sure to tell me the branch it is in when you turn in the assignment.
+
+## Hints
+
+Be sure you renamed work.js to home.js. Rename all associated buttons, menus and files.
