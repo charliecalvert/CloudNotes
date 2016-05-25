@@ -405,11 +405,32 @@ In karma.conf.js, make sure you are loading all your new files:
 'public/javascripts/**/*.js',
 ```
 
+And don't forget to include **jasmine-jquery**. First check that it is installed via package.json. If it is not installed, then run this command:
+
+<pre>
+npm install jasmine-jquery --save-dev
+</pre>
+
+In the **files** section **karma.conf.js** make sure you are loading jasmine-jquery and all the HTML files from your fixtures directory:
+
+```javascript
+'node_modules/jasmine-jquery/lib/*.js',
+'spec/**/*.html',
+```
+
+And I think we need to add this preprocessor directive as well in **karma.conf.js**:
+
+```javascript
+preprocessors: {
+   '**/*.html': []
+},
+```
+
 ### File Name Conventions
 
 Executive Summary
 
-- If a JavaScript or Jade file ends with **-page** it is used to define the main page seen by the user for a particular subject
+- If a JavaScript or Jade file ends with **-page** it is used to define the main page seen by the user for a particular subject. This is where the Controller is defined.
 - If the file does not end with -page, it is the Jade file for a directive.
 
 If you ask to see the **Renewable by Year** or **Renewable by Index** page then some HTML is loaded into the main page of the application. The JavaScript and Jade files that define what that page looks like have **-page** in their name. For instance, **renewable-by-year-page.jade**.
@@ -444,5 +465,29 @@ Jade Files:
 
 -**renewable-by-year-page.jade**: The Jade for the page the viewer sees.
 -**renewable-by-year,jade**: The Jade for the directive seen as a subset of the page.
+
+## Hint on Energy Selector
+
+This is your jade.
+
+<pre>
+.panel.panel-default
+    .panel-heading Select MSN Type
+    .panel-body
+        div(data-ng-repeat="msnType in msnTypes track by msnType.description")
+            a(id="{{msnType.msn}}", href="", ng-click='selectMsnType()') {{msnType.msn}}: {{msnType.description}}
+</pre>
+
+This is your ng-click handler from the anchor:
+
+```javascript
+$scope.selectMsnType = function() {
+    $scope.selectedMsnType = this.msnType.description;
+    $scope.filteredEnergyTypes = $scope.energyTypes.filter(function(energyType) {
+        return energyType.Description === $scope.selectedMsnType;
+    });
+    $scope.filteredRecordCount = $scope.filteredEnergyTypes.length;
+};
+```
 
 [test-se]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarExplorer
