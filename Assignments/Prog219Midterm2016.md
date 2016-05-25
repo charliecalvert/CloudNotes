@@ -34,15 +34,23 @@ As a general rule, these are the rules, ideas and guiding principles that make p
 [srp]:http://www.oodesign.com/single-responsibility-principle.html
 [tdd]:http://agiledata.org/essays/tdd.html
 
-## New Files
+## Angular Client Side Routes
 
-Create:
+Recall that in an angular app we often have two sets of routes. One set of routes are sent back to server and handled there. The code for handling these files is often found in **routes/index.js**. A second set of routes are handled on the client side in **public/javascripts/app.js**.  When specifying a route, we use the hash tag (#) to designate a route that should be handled on the client. For instance, this route is handled on the server: **/renewables**. This route is handled on the client: **/#/home**.
 
-- **EnergyTypesController** in **public/javascripts/energy-types/energy-types.js**
-- **energy-types-page.jade** in **views/energy-types/**
-- **energy-types.jade** in **views/energy-types/**
+As we add more pages to our app, we have to be sure that our menu and button selections will properly load them. This means making changes to **public/javascripts/app.js**. The routes we need to establish or keep include:
 
-When you load **energy-types.js** in **layout.jade**, don't forget that you need to specify the directory where it lives.
+- home (HomeController)
+- renewable (main) (MainController: renamed to RewnewableController)
+- simple-format (SimpleFormatController)
+- renewable-by-year (RenewableByYearController)
+- energy-types (EnergyTypesController)
+- energy-selector (EnergySelectorController)
+- about (AboutController)
+
+You have already seen how to create some of this functionality in previous assignments. <uch of the remainder of this document explains how to create the files associated with the new routes listed here. In particular, we will discuss the **home** page route and the **energy** routes.
+
+## Home Page
 
 In **public/javascripts** we also want to create a _home_ page. For now, it can be very simple:
 
@@ -50,45 +58,22 @@ In **public/javascripts** we also want to create a _home_ page. For now, it can 
 h1 Home
 </pre>
 
-## Angular Routes
+Feel free to add anything you want to this page to make it more interesting.
 
-As we add more pages to our app, we have to be sure that our menu and button selections will properly load them. This means making changes to **public/javascripts/app.js**. The routes we need to establish or keep include:
+- Set up a route for it in **app.js**
+- Put the JavaScript for it in **public/javascripts/home.js**
+- The Jade that defines its appearance is in **views/home.jade**
+- Menu items or buttons to reach it are defined in **views/index.jade**
 
-- home (HomeController)
-- renewable (main) (MainController, RewnewableController)
-- simple-format (SimpleFormatController)
-- renewable-by-year (RenewableByYearController)
-- energy-types (EnergyTypesController)
-- energy-selector (EnergySelectorController)
-- about (AboutController)
+## Display EnergyTypes.json {#new-files}
 
+One of our goals is to start handling the **EnergyTypes.json** file from our data directory. To that end, create the following:
+
+- **EnergyTypesController** in **public/javascripts/energy-types/energy-types.js**
+- **energy-types-page.jade** in **views/energy-types/**
+- **energy-types.jade** in **views/energy-types/**
 
 When you load **energy-types.js** in **layout.jade**, don't forget that you need to specify the directory where it lives.
-
-Make sure menu collapses in mobile device mode:
-
-<pre>
-li.trigger-collapse(ng-class="{ active: isActive('/')}")
-</pre>
-
-```javascript
-$(document).ready(function () {
-    $(".navbar-nav li.trigger-collapse a").click(function(event) {
-        $(".navbar-collapse").collapse('hide');
-    });
-});
-```
-
-## Energy Types
-
-We are not done with this page, but for the midterm, it should look something like this. The design is not important, but the functionality is. In other words, be creative about the way it looks, but be sure your page contains only these features:
-
-- Menu
-- The permanent elements from index.jade such as the title **Solar Explorer**.
-- A title for the loaded page: **Energy Types**
-- A dynamic record count showing how the length of the array you loaded (7008)
-- The ability to iterate over all 7008 records
-- A static list of all the unique MSN types
 
 My page looks like this at the time of this writing:
 
@@ -96,7 +81,19 @@ My page looks like this at the time of this writing:
 
 **Figure 01**: _Note the three bootstrap panels used to display the data in the energy types page._
 
-Note that my static MSN list and iterable record list are shown inside of bootstrap panels. You don't have to use them, but it is a reasonable way to organize a page.
+We may work on this page more later, but for the midterm, it should look something like this.
+
+## Energy Types
+
+The details of your design are up to you, but you should be sure certain functionality is present. In other words, be creative about the way it looks, but be sure your page contains these features:
+
+- The permanent elements from index.jade such as the menu and the title **Solar Explorer**.
+- A title for the loaded page: **Energy Types**
+- A dynamic record count showing how the length of the array you loaded (7008)
+- The ability to iterate over all 7008 records
+- A static list of all the unique MSN types
+
+Note that my static MSN list and iterable record list are shown inside of bootstrap panels. You don't have to use them, but it is a reasonable way to organize a page. Here is some of the code from my jade file for creating the panels:
 
 <pre>
 h1 Energy Types
@@ -114,7 +111,7 @@ h1 Energy Types
 
 ## MSN Types
 
-A single energy type looks like this:
+Let's take a moment to be sure we understand MSN types. Our Energy Types are defined in **data/EnergyTypes.json**. A single energy type from our array of energy types looks like this:
 
 ```json
 {
@@ -132,57 +129,103 @@ There are two oddities here:
 - The MSN property. Here it is FFPREBUS, which we see in the Description stands for "Fossile Fuel Produciton."
 - The YYYYMM property, which contains the year and a month: 1949 is the 13, is the month. I believe they are using 13 to say that they don't track months for this year, and that this is the production for the entire year. Starting around 1972 they will begin tracking production by month, and then the month field will be easier to understand.
 
-We want to know all the available MSN types. Just scanning through the file will reveal that there are several different types, such as FFPRBUS and NUETBUS. Since we have 7008 records, it is a bit hard to manually track down all the different types and their counts. So let's write code to do it, and also to break out our years and months.
+We want to know all the available MSN types. Just scanning through the file will reveal that there are several different types, such as FFPRBUS and NUETBUS. Since we have 7008 records, it is a bit hard to manually track down all the different types and their counts. So let's write code to do it, and also to break out our years and months. It turns out that the MSN value NUETBUS is used both for Nuclear Production and Nuclear Consumption. As a result, we have to distinguish the different types not on abbreviations such NUETBUS but on the description itself. Figure 01 shows that there are two NUETBUS types, one for consumption and one for production. Here you can see on of each type of object, where the description field differs even though the MSN field is the same:
+
+```json
+{
+    "MSN": "NUETBUS",
+    "YYYYMM": "201511",
+    "Value": ".630301",
+    "Column_Order": "2",
+    "Description": "Nuclear Electric Power Production",
+    "Unit": "Quadrillion Btu"
+}
+{
+    "MSN": "NUETBUS",
+    "YYYYMM": "201512",
+    "Value": ".728298",
+    "Column_Order": "10",
+    "Description": "Nuclear Electric Power Consumption",
+    "Unit": "Quadrillion Btu"
+}
+```
 
 It might be possible to use Angular filters to find our MSN types, but I would prefer to do it myself. This would be a fairly simple task if we only wanted to find the unique MSN types. But it is better to find both the type and the accompanying description. That can get a bit fussy, so I will just give you the code, which I put in **public/javascripts/energy-types/msn-types.js**:
+
+**NOTE**: _This code changed on Wednesday, May 25, 2016, when I realized the MSN type abbreviation is not unique. The unique field is the description._
 
 ```javascript
 var elfApp = angular.module('elfApp');
 
-elfApp.factory('msnTypes', function() {
-    function getMsnTypes(energyTypes) {
-        console.log('getMsnTypes called');
-        var currentMsn = {msn: null, description: ''};
-        var msnTypes = [];
+elfApp.factory('msnTypes', function () {
+    'use strict';
 
-        function insertNewCurrentMsn(energyType) {
-            currentMsn = Object.create(currentMsn);
-            currentMsn.msn = energyType.MSN;
-            currentMsn.description = energyType.Description;
-            msnTypes.push(currentMsn);
-        }
+    var currentMsn = {msn: null, description: ''};
+    var msnTypes = [];
+    var count = 0;
 
-        insertNewCurrentMsn(energyTypes[0]);
+    function insertMsnType(energyType) {
+        currentMsn = Object.create(currentMsn);
+        currentMsn.msn = energyType.MSN;
+        currentMsn.description = energyType.Description;
+        msnTypes.push(currentMsn);
+    }
 
-        function isUnique(msn) {
-            var result = true;
-            for (var i = 0; i < msnTypes.length; i++) {
-                if (msn === msnTypes[i].msn) {
-                    console.log('msn vs c.msn', msn, currentMsn.msn);
-                    result = false;
-                    break;
-                }
+    function isUniqueMsn(description) {
+        console.log('isUniqueMsn called:', count, currentMsn.msn);
+        var result = true;
+        for (var i = 0; i < msnTypes.length; i++) {
+            if (description === msnTypes[i].description) {
+                result = false;
+                break;
             }
-            return result;
         }
+        return result;
+    }
 
+    function iterateEnergyTypes(energyTypes) {
         energyTypes.forEach(function (energyType, index) {
-            // console.log('energyType index and index length', index, msnTypes.length);
+            count = count + 1;
             energyType.Year = energyType.YYYYMM.substr(0, 4);
             energyType.Month = energyType.YYYYMM.substr(4);
-            if (energyType.MSN !== currentMsn.msn) {
-                if (isUnique(energyType.MSN)) {
-                    //console.log('isUnique');
-                    insertNewCurrentMsn(energyType);
+            if (energyType.Description !== currentMsn.description) {
+                if (isUniqueMsn(energyType.Description)) {
+                    insertMsnType(energyType);
                 }
             }
         });
+    }
+
+    function getMsnTypes(energyTypes) {
+        console.log('getMsnTypes called');
+        if (msnTypes.length === 0) {
+            iterateEnergyTypes(energyTypes);
+        }
         return msnTypes;
     }
 
-    return getMsnTypes
+    return getMsnTypes;
 });
 ```
+
+The code:
+
+- Is passed our array of **energyTypes** loaded from **data/EnergyTypes.json**
+- Uses **forEach** to iterate over the **energyTypes** array.
+
+While iterating over the energy types:
+
+- For each item in the array it pulls out the Year and Month from the **YYYYMM** field.
+- It adds this data to the object as new properties called **Year** and **Month**
+
+It also
+
+- Defines a JavaScript object called **currentMsn** with two properties: **msn**, **description**
+- Defines an array called **msnTypes** for holding our **currentMsn** objects.
+- Uses **forEach** to iterate over the **energyTypes** array.
+- It checks to see if the description of the MSN type differs from the description of the last unique MSN type that we found
+- If it is different, it checks to see if it is unique, that is, if it is already in our list of known MSN types
+- If it is not in the list, it is added to the list.
 
 We can use it like this:
 
@@ -201,7 +244,7 @@ $scope.getEnergyTypes = function () {
 
 ## Energy Selectors
 
-The goal of the Energy Selectors page is to allow the user to click on an MSN type and see only the records of that type. There are about 7008 objects in our array, and each MSN type encapsulates about 584 of those records.
+The goal of the Energy Selectors page is to allow the user to click on an MSN type and see only the records of that type. There are about 7008 objects in our array, and each MSN type encapsulates about 584 of those records. The distinction between types is made on the **Description** property, not the **MSN** property.
 
 Your pages don't have to look like the images shown below. Feel free to make the page uniquely your own. You have freedom to do what you want so long as your page includes:
 
@@ -209,7 +252,6 @@ Your pages don't have to look like the images shown below. Feel free to make the
 - An iterable view of the 584 objects for any selected MSN type
 - The count of all objects in the array
 - The count of all objects for the selected MSN type
-
 
 ![MSN Selection](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-midterm-2016-02.png)
 
@@ -222,7 +264,7 @@ Your pages don't have to look like the images shown below. Feel free to make the
 
 ## The Menu
 
-The menu is a pain. I would certainly need a whole day, and perhaps two days to really explain it in depth. We don't have time for that, so here is my **index.jade** with just a couple items left as an exercise:
+Bootstrap menus are not easy to understand. I would certainly need a whole day, and perhaps two days to really explain it in depth. We don't have time for that, so here is my **index.jade**. As an exercise, I've left just a couple items for you to complete:
 
 ```javascript
 extends layout
@@ -248,7 +290,7 @@ block content
                         ul.dropdown-menu(role='menu')
                             li.trigger-collapse(ng-class="{ active: isActive('/renewables')}")
                                 a(ng-href='#/renewables') Renewables
-                            // ADD TWO MORE MENU ITEMS HERE    
+                            // ADD TWO MORE MENU ITEMS HERE (ByYear, ByIndex)    
                     li.collapse.dropdown
                         a.dropdown-toggle(data-toggle='dropdown')
                             | Energy
@@ -256,6 +298,7 @@ block content
                         ul.dropdown-menu(role='menu')
                             // ADD THE ENERGY MENU ITEMS HERE.
                             // BASE THEM ON THE RENEWABLES Menu item above
+                            // THEY SHOULD Energy Types AND Energy Selectors
                     li.trigger-collapse(ng-class="{ active: isActive('/about')}")
                         a(ng-href='#/about') About
     .container
@@ -267,11 +310,88 @@ block content
 
 ```
 
-The key point to grasp is that it changes shape to fit properly on a mobile device. The hamburger menu for the mobile device is the bit with the **span.icon-bar** syntax.
+The menu changes shape to fit properly on a mobile device. The hamburger menu for the mobile device is the bit with the **span.icon-bar** syntax.
+
+The menu will not automatically collapse when you make a selection. To help fix this problem, we can add the following to **app.js**:
+
+```javascript
+$(document).ready(function() {
+    'use strict';
+    $('.navbar-nav li.trigger-collapse a').click(function(event) {
+        $('.navbar-collapse').collapse('hide');
+    });
+});
+```
+
+Or perhaps there is a way to make this work:
+
+<pre>
+li.trigger-collapse(ng-class="{ active: isActive('/')}")
+</pre>
+
+## Testing
+
+The tests are in **JsObjects/Utilities/Templates/UnitTest** in the [**SolarExplorer**][test-se] folder.
+
+Run them against your own code, and make sure they pass. Depending on whether I've updated them or not, the output might look a bit like this:
+
+<pre>
+Elvenware Fixture and Template Cache Suite
+  ✓ expects true to be true
+  ✓ should find the index
+  ✓ should have a getRenewable method
+  ✓ should be possible to access the fixture
+  ✓ tests template loaded through simple raw text
+  ✓ tests template loaded through more complex raw text
+  ✓ tests scope variable access in template loaded through fixture
+
+Energy Types Suite
+  ✓ proves we can test
+  ✓ shows we can find each of the 12 MSN types
+
+Elvenware Simple Mocks with HttpBackend Suite
+  ✓ proves we can run tests
+  ✓ should find the index
+  ✓ should have a getRenewable method
+  ✓ proves we can detect request
+
+Renewable By Year Suite
+  ✓ expects true to be true
+  ✓ proves renewables.getByYear returns index & expected object with string year
+  ✓ proves renewables.getByYear returns index & expected object with numeric year
+  ✓ tests that we can get a renewable object by Year from our controller
+  ✓ tests that we can get a renewable object by Year in our elfRenewableByYear directive
+
+Renewables Suite
+  ✓ proves we can run tests
+  ✓ proves we can get renewableUtils name
+  ✓ proves we can get renewableUtils method called getItemCount
+  ✓ proves we can get from renewableUtils a particular renewable object by index
+  ✓ proves we can transform our json into a new array consisting only of years
+  ✓ proves we can get our wood map
+  ✓ proves our array of years contains the expected data
+  ✓ proves we can transform our json into an array with three properties: geo, solar, and wind
+  ✓ proves that getSimpleStringFormat returns the expected string data
+  ✓ proves that getSimpleFormat returns the expected numeric data
+
+Simple Format HttpBackend Suite
+  ✓ expects true to be true
+  ✓ tests simple-format directive loaded through fixture with httpBackend
+  ✓ tests that we can index to the fifth element
+
+Simple Format Fixture Suite
+  ✓ expects true to be true
+  ✓ should find the index
+  ✓ should be possible to access the fixture
+  ✓ should be possible to access the fixture and put real data in it.
+
+PhantomJS 2.1.1 (Linux 0.0.0): Executed 35 of 35 SUCCESS (0.06 secs / 1.045 secs)
+TOTAL: 35 SUCCESS
+</pre>
 
 ## Turn it in
 
-The usual
+Make sure your tests pass and **grunt check** passes, then the usual. I'm expecting it in your **week08** branch. It would be helpful if you spell out the branch even if you are putting it in **week08**. A possible alternative would be **week08-midterm** for those cases where you want to turn in something different than your current program. For instance, if there were features you are still trying to develop, but don't want to show for the midterm.
 
 ## Hints
 
@@ -324,3 +444,5 @@ Jade Files:
 
 -**renewable-by-year-page.jade**: The Jade for the page the viewer sees.
 -**renewable-by-year,jade**: The Jade for the directive seen as a subset of the page.
+
+[test-se]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarExplorer
