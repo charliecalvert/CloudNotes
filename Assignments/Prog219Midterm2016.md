@@ -193,8 +193,9 @@ $scope.getEnergyTypes = function () {
                 $scope.msnTypes = msnTypes(response.data);
                 etc... // CODE HERE LEFT AS EXERCISE
               }, function errorCallback(response) {
-          console.log('Error:', response.status, response.statusText);
-      });
+                console.log('Error:', response.status, response.statusText);
+              }
+            );
 };
 ```
 
@@ -283,3 +284,43 @@ In karma.conf.js, make sure you are loading all your new files:
 ```javascript
 'public/javascripts/**/*.js',
 ```
+
+### File Name Conventions
+
+Executive Summary
+
+- If a JavaScript or Jade file ends with **-page** it is used to define the main page seen by the user for a particular subject
+- If the file does not end with -page, it is the Jade file for a directive.
+
+If you ask to see the **Renewable by Year** or **Renewable by Index** page then some HTML is loaded into the main page of the application. The JavaScript and Jade files that define what that page looks like have **-page** in their name. For instance, **renewable-by-year-page.jade**.
+
+If you need to define some jade for use with a directive, then don't use **-page** in the name. For instance: **renewable-by-year.jade**.
+
+Consider the **Renewable by Year** page that we display to the user. It is made up of several files.
+
+The core files:
+
+- public/javascript/renewable-by-year-page.js
+- views/renewables/renewable-by-year-page.jade
+- views/renewables/renewable-by-year.jade
+
+The test and server side files:
+
+- spec/test-renewable-by-year.js
+- routes/index.js
+
+Let's look at the rules governing the layout of the files above a bit more closely.
+
+JavaScript files for a page like **Renewable by Year**:
+
+- Client side:
+  - One file In public javascript
+  - Ends with -page.js
+  - Example: **renewable-by-year-page.js**
+- Server Side
+  - For now, the only server side JavaScript is in **routes/index.js**
+
+Jade Files:
+
+-**renewable-by-year-page.jade**: The Jade for the page the viewer sees.
+-**renewable-by-year,jade**: The Jade for the directive seen as a subset of the page.

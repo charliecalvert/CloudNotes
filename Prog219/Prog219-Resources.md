@@ -28,7 +28,14 @@ BC class related resources end up. It might ultimately end up replacing CloudNot
 - [Introduce Yourself](http://www.ccalvert.net/books/CloudNotes/Assignments/Introductions.html)
 - [GitNewRepo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
 - [Online Presence](http://elvenware.com/charlie/books/CloudNotes/Assignments/OnlinePresence.html)
-
+- [Angular Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularStarter.html)
+- [Angular Routing](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularRouting.html)
+- [Angular Directives](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularDirectives.html)
+- [Angular Solar Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarter.html)
+- [Angular Solar Starter Tests](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarStarterTests.html)
+- [Angular Solar Simple Format](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarSimpleFormat.html)
+- [Angular Solar Refactor](http://www.ccalvert.net/books/CloudNotes/Assignments/AngularSolarRefactor.html)
+- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/Prog219Midterm2016.html)
 
 ## Git
 

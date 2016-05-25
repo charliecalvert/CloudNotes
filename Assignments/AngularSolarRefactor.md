@@ -140,13 +140,23 @@ Add error handler to our calls to $http.get. The first four or five lines are ch
 ```javascript
 $http.get('data/EnergyTypes.json')
         .then(function(res) {
-            //renewableUtils.init(res.data);
             $scope.energyTypes = res.data;
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
+            console.log('Error:', response.status, response.statusText);
         });
-};
+```
+
+You can think about the call a bit like this:
+
+```javascript
+$http.get('data/EnergyTypes.json')
+        .then(function(res) {
+             // HANDLE SUCCESS
+        }, function errorCallback(response) {
+            // HANDLE ERROR
+        });
 ```
 
 ## Remove Marie

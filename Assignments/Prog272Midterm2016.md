@@ -73,3 +73,131 @@ In **views/high-tech-energy**, place these files
 ## Hints
 
 Be sure you renamed work.js to home.js. Rename all associated buttons, menus and files.
+
+### Create New Page Steps {#page-steps}
+
+Executive Summary
+
+In **public/javascripts**
+
+- Modify **control.js**
+- Create your file for your page: **renewables-index**
+- In **main.js**: load **renewables-index**
+
+In Views:
+
+- Create corresponding jade file: **renewables-by-index.jade**
+- Add launch button or menu item to **index.jade**
+
+See this project: [Jasmine Require Js][jasmine-requirejs]
+
+## Testing
+
+Again, see this project: [Jasmine Require Js][jasmine-requirejs]
+
+<pre>
+npm install karma-requirejs --save-dev
+npm install requirejs --save-dev
+npm install jasmine-jquery --save-dev
+</pre>
+
+We need to create a requirejs file explicitly for our tests. Call the file **spec/main-test.js**.
+
+```javascript
+/**
+ * @author Charlie Calvert
+ */
+
+function loadTestsIntoArray() {
+	var tests = [];
+	for (var file in window.__karma__.files) {
+		if (/test-/.test(file)) {
+			console.log('Loaded test:', file);
+			tests.push(file);
+		}
+	}
+	return tests;
+}
+
+require.config({
+	baseUrl: '/base',
+
+    paths: {
+        control: 'public/javascripts/control',
+        home: 'public/javascripts/home',
+        renewables: 'public/javascripts/renewables/renewables',
+        // THE REST LEFT AS AN EXERCISE
+    },
+    deps: loadTestsIntoArray(),
+    callback: window.__karma__.start
+});
+```
+
+It is one of the oddities of karma that **/base** points to the root of your project.
+
+Your **karma.conf.js** file should explicitly load **main-test.js** and explicitly ignore **public/javascripts/main.js**.
+
+```javascript
+frameworks: ['jasmine', 'requirejs'],
+
+files: [
+    'public/components/jquery/dist/jquery.min.js',
+    //'public/components/requirejs/require.js',
+    'node_modules/jasmine-jquery/lib/*.js',
+    {
+        pattern : 'spec/test-*.js',
+        included : false
+    }, {
+        pattern : 'public/javascripts/**/*.js',
+        included : false
+    },
+    'spec/main-test.js',
+    '*.html'
+],
+
+// list of files to exclude
+exclude: ['public/javascripts/main.js'],
+```
+
+Remove the **plugins** section from the end of **karma.conf.js**:
+
+```javascript
+singleRun: false,
+
+/*
+  YOU CAN JUST DELETE IT, BUT I WANT TO SHOW YOU WHAT TO DELETE
+plugins: ['karma-jasmine',
+    'karma-spec-reporter',
+    'karma-phantomjs-launcher',
+    'karma-chrome-launcher'
+] */
+```
+
+A simple test of the home page would look like this:
+
+```javascript
+define(['home'], function(home) {
+
+
+    describe('Home Page Suite', function () {
+
+        'use strict';
+
+        it('expects true to be true', function () {
+            expect(true).toBe(true);
+        });
+
+        it('expects home.color to be red', function () {
+            expect(home.color).toBe('red');
+        });
+
+        it('expects home.size to be big', function () {
+            expect(home.size).toBe('big');
+        });
+
+    });
+
+});
+```
+
+[jasmine-requirejs]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
