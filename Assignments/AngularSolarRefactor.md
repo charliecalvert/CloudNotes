@@ -135,7 +135,9 @@ You will have to make several such changes which I will leave as an exercise. Do
 
 ## Handling HTTP Errors {#http-errors}
 
-Add error handler to our calls to $http.get. The first four or five lines are changed. What we have added is the **errorCallback**. It gets called if an error occurs:
+Add error handler to our calls to $http.get. Suppose, for instance, that you wanted to load the JSON file in the data directory that is called EnergyTypes.json. In other words, you wanted to load this file: **data/EnergyTypes.json**. Sometimes we make mistakes simple in specifying the file name, writing **EnergTypes.json** instead of **EnergyTypes.json**. The missing y doesn't mean much to us, but it baffles the computer. So we need to handle not only the case when the file loads successfully, but also the case where the file fails to load, perhaps because of a typo like that shown above.
+
+Look at the example below. What we have added to our previous implementations of this method is the **errorCallback**. It gets called if an error occurs:
 
 ```javascript
 $http.get('data/EnergyTypes.json')
@@ -147,6 +149,8 @@ $http.get('data/EnergyTypes.json')
             console.log('Error:', response.status, response.statusText);
         });
 ```
+
+So if we did type in the name of a file that did not exists, the console.log statement near the end of the method would print out our error. You might want to have better ways of calling out the error, but at least this is a start. If you look at our calls to $.gitJSON and $.load, you will see that they also have error handling similar to this.
 
 You can think about the call a bit like this:
 

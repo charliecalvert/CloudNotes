@@ -77,9 +77,10 @@ Executive Summary
 
 In **public/javascripts**
 
-- Modify **control.js**
-- Create your file for your page: **renewables-index**
-- In **main.js**: load **renewables-index**
+- Modify **control.js** to call **renewables.init**
+- Create your main object in page: **renewables/renewables-index.js**
+- In the requirejs based **main.js** load **renewables/renewables-index.js**
+- In **renewables/renewables-index.js**: load **view/renewables-index.jade**
 
 In Views:
 
@@ -135,25 +136,26 @@ It is one of the oddities of karma that **/base** points to the root of your pro
 Your **karma.conf.js** file should explicitly load **main-test.js** and explicitly ignore **public/javascripts/main.js**.
 
 ```javascript
-frameworks: ['jasmine', 'requirejs'],
-
 files: [
-    'public/components/jquery/dist/jquery.min.js',
-    //'public/components/requirejs/require.js',
-    'node_modules/jasmine-jquery/lib/*.js',
-    {
-        pattern : 'spec/test-*.js',
-        included : false
-    }, {
-        pattern : 'public/javascripts/**/*.js',
-        included : false
-    },
-    'spec/main-test.js',
-    '*.html'
-],
+            'public/components/jquery/dist/jquery.min.js',
+            //'public/components/requirejs/require.js',
+            'node_modules/jasmine-jquery/lib/*.js', {
+                pattern: 'spec/test-*.js',
+                included: false
+            }, {
+                pattern: 'spec/data/client-renewables.js',
+                included: false
+            }, {
+                pattern: 'public/javascripts/**/*.js',
+                included: false
+            },
+            'spec/main-test.js',
+            '*.html'
+        ],
 
-// list of files to exclude
-exclude: ['public/javascripts/main.js'],
+        // list of files to exclude
+        exclude: ['public/javascripts/main.js'],
+
 ```
 
 Remove the **plugins** section from the end of **karma.conf.js**:
@@ -197,13 +199,73 @@ define(['home'], function(home) {
 });
 ```
 
-In general, you will find the tests here:
+You will find the tests for the midterm here:
 
 - JsObjects/Utilities/Templates/UnitTest/SolarVoyager
+
+Copy those files into your spec directory, and make sure they all pass.
 
 Check regularly for updates. All the tests should pass.
 
 [jasmine-requirejs]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+
+## Menu
+
+<pre>
+extends layout
+
+block content
+    header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav(role='banner')
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') Solar Explorer
+            nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
+                ul.nav.navbar-nav
+                    li.trigger-collapse(ng-class="{ active: isActive('/')}")
+                        a.homeMenu Home
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Renewables
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                            li.trigger-collapse(ng-class="{ active: isActive('/renewables')}")
+                                a.renewablesMenu Renewables
+														// YOU FILL IN THESE TWO ITEMS		
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Energy
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+														// BASED ON THE DROP DOWN SHOWN ABOVE
+														// YOU DEFINE EnerygyOverview and EnergyTypes
+                    li.trigger-collapse(ng-class="{ active: isActive('/about')}")
+                        a.aboutMenu About
+    .container
+
+        h1= title
+        p Welcome to #{title}
+
+        button.homeMenu.btn.btn-primary Home
+        button.renewablesMenu.btn.btn-info Renewables
+        button.renewablesByIndexMenu.btn.btn-danger Renewables by Index
+        button.renewablesByYearMenu.btn.btn-warning Renewables by Year
+        button.aboutMenu.btn.btn-success About
+
+        div
+            button.highTechEnergyOverviewMenu.btn.btn-info High Tech Energy Overview
+            button.highTechEnergyTypesMenu.btn.btn-danger High Tech Energy Types
+
+
+    #elf-view
+
+  pre#debug
+</pre>
+
 
 ## Turn it in
 
