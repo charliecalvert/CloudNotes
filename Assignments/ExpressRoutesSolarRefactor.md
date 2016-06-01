@@ -10,9 +10,19 @@ Do your work in a branch called **week08**. Rename your project from **Week07-Ex
 
 ## Rename Renewables {#renewables-rename}
 
-We have created a lot of files, and it is time to start organizing them. Let's create some subfolders and move our work into them.
+We have created a lot of files, and it is time to start organizing them. Let's create some subfolders and move our work into them. This kind of work is known as refactoring. It helps us create a more maintainable and easier to understand application. It does not, however, usually change the behavior of our application.
 
-Create a **views/renewables/** folder and move (**git mv**) our renewable files into it:
+The goal is to move all files that handle our **data/Renewable.json** file into folders called **renewables**. Doing so will make it easier to find and understand the code that manipulates the data from **Renewables.json**.
+
+This move will involve at least two sets of files:
+
+- The files in **public/javascript** that open, parse or manipulate the data from our **Renewable.json** file.
+- The core jade files associated with the **renewables** files from our **public/javascript** directories
+  - This does not include **layout.jade** or **index.jade** though those files do mention renewables
+
+**NOTE**: _By now, most of the files that handle **Renewable.json** data have the renewable in their name. For instance, **renewable-by-year.js**. If, however, you have files with a different naming scheme in your project, then you should move them also and consider renaming them._
+
+To get started, create a **views/renewables/** folder and move (**git mv**) our renewable files into it:
 
 <pre>
 $ ls -la
@@ -24,6 +34,8 @@ drwxrwxr-x 3 charlie charlie 4096 May 22 09:41 ..
 -rw-rw-r-- 1 charlie charlie 2217 May 21 10:35 renewable-page.jade
 charlie@rohan-elf:~/Git/prog272-calvert-2016/SolarVoyager/views/renewables
 </pre>
+
+
 
 In **routes/index.js** create a new route for handling renewable calls in their own folder:
 
@@ -244,6 +256,51 @@ $.getJSON('/renewables', function(response) {
  })
 ```
 
+For instance, the code, with much omitted, might look like this:
+
+```javascript
+function getRenewable() {
+      console.log('getRenewable called');
+
+      $.getJSON('/renewables', function(response) {
+              //console.log(response);
+              renewables.renewablesList = response.renewables;
+              //console.log('RenewablesList', renewablesList);
+              showRenewable(renewables.renewablesList[index]);
+              // $('#debug').html(JSON.stringify(response, null, 4));
+          })
+          .fail(function(a, b, c) {
+              console.log('Error', a, b, c);
+              $('#debug').html('Error occured: ', a.status);
+          })
+          .done(function() {
+              console.log('second success');
+          })
+          .always(function() {
+              console.log('complete');
+          });
+  }
+
+  function showRenewable(renewable) {
+      renewable = getSimpleKeys(renewable);
+      $('#yearView').val(renewable.year);
+      // YOUR CODE HERE
+  }
+
+  function getSimpleKeys(renewable) {
+      // jscs:disable requireDotNotation
+      return {
+          year: renewable.Year,
+          solar: renewable['Solar (quadrillion Btu)'],
+          // YOUR CODE HERE
+      };
+      // jscs:enable requireDotNotation
+  }
+
+```
+
+**NOTE**: _The code shown above demonstrates how to get jscs to ignore places where just can't use dot notation._
+
 ## Button Iteration {#iteration}
 
 When the user clicks on the red and green buttons, this code is called:
@@ -268,6 +325,40 @@ var buttonChange = function() {
     indexChange(parseInt(test));
 };
 ```
+
+## Simple Iteration
+
+As an alternative, if the above is too much, you can have simple iteration. Put this in your init method:
+
+```javascript
+$('#renewableByIndex').change(function() {
+    getRenewableByIndex();
+});
+```
+
+Like this:
+
+```javascript
+var renewablesByIndex = {
+    color: 'red',
+    size: 'big',
+    init: function() {
+        console.log(renewablesByIndex.color);
+        $('#elf-view').load('/renewables/renewable-by-index', function() {
+            $('#renewableByIndex').change(function() {
+                getRenewableByIndex();
+            });
+            etc....
+        });
+    }
+};
+```
+
+And the input control:
+
+<pre>
+input#renewableByIndex(type='number', value='2', min='0', max='12')
+</pre>
 
 ## Turn it in
 

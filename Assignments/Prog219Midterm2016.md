@@ -41,7 +41,7 @@ Recall that in an angular app we often have two sets of routes. One set of route
 As we add more pages to our app, we have to be sure that our menu and button selections will properly load them. This means making changes to **public/javascripts/app.js**. The routes we need to establish or keep include:
 
 - home (HomeController)
-- renewable (main) (MainController: renamed to RewnewableController)
+- renewable (main) (MainController: renamed to RenewablesController)
 - simple-format (SimpleFormatController)
 - renewable-by-year (RenewableByYearController)
 - energy-types (EnergyTypesController)

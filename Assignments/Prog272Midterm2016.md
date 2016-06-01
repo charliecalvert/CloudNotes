@@ -1,7 +1,3 @@
-## Renewables Refactor
-
-Time to refactor
-
 ## Overview
 
 We are now turning a major corner in the course. Rather than learning new technologies, we are going to spend most of our time refactoring code and adding new features.
@@ -69,6 +65,9 @@ In **views/high-tech-energy**, place these files
 
 **Figure 02**: _Just getting far enough to see you can load the types._
 
+![A bit more](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-midterm-2016-01a.png)
+
+**Figure 02a**: _Making a bit more progress on displaying types._
 
 
 ### Create New Page Steps {#page-steps}
@@ -271,6 +270,36 @@ block content
 
 Make sure the tests from JsObjects pass and **grunt check** passes. Put your work in a branch called **week08** or **week08-midterm**. Be sure to tell me the branch it is in when you turn in the assignment.
 
+Make sure both **karma start** and **node jasmine-runner** pass without error. Use the latest versions of the tests from JsObjects. When preparing your tests for the midterm, please make sure all of the following works:
+
+    grunt check
+    node jasmine-runner.js
+    karma start
+
+If you have any **fits** or **fdescribes** in your code, please remove them so I can see all your tests running. Make sure you have the latest tests from JsObjects.
+
 ## Hints
 
 Be sure you renamed work.js to home.js. Rename all associated buttons, menus and files.
+
+## The Hardest Test {#hard-test}
+
+There are several ways to solve this problem. However, I should mention that to get the test called _'expects get renewable to be defined'_ in **spec/test-renewables.js** to pass, I made some changes to the way my code is structured in **public/javascript/renewables-page.js**:
+
+```javascript
+var renewables = {
+		color: 'red',
+		size: 'big',
+		renewablesList: [],         < ==== HERE
+		getRenewable: getRenewable, < ==== HERE
+		init: function() {
+				console.log(renewables.color);
+```
+
+Then in **getRenewable**, I wrote code like this:
+
+```javascript
+$.getJSON('/renewables', function(response) {				
+				renewables.renewablesList = response.renewables; < ==== HERE				
+				showRenewable(renewables.renewablesList[index]); < ==== HERE
+```

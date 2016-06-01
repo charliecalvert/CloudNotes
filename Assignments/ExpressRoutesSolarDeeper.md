@@ -275,6 +275,115 @@ Inside the define function we define the object stored in our module, and return
 
 Many of the major libraries that are commonly used automatically implement the requirejs define function or do something similar. In other words, jQuery, and many other libraries, are requirejs modules. Or maybe it would be more correct to say that the meet the requirements of a requirejs module. This is the case because requirejs is so popular, and so commonly used. Some libraries do not support requirejs, and we will have to take special steps to load them.
 
+## Testing Require
+
+I've created a [sample project][jas-req] to help you see how to test and use requirejs. It is called **JasmineRequireJs** and is hosted on JsObjects.
+
+Looking at that project, see this part of [**karma.conf.js**][karma-req]:
+
+```javascript
+frameworks: ['jasmine', 'requirejs'],
+
+files: [
+    'public/components/jquery/dist/jquery.min.js',
+    'node_modules/jasmine-jquery/lib/*.js', {
+        pattern: 'spec/test-*.js',
+        included: false
+    }, {
+        pattern: 'public/javascripts/**/*.js',
+        included: false
+    },
+    'spec/main-test.js'
+],
+
+// list of files to exclude
+exclude: ['public/javascripts/main.js'],
+```
+
+You are going to have to port this code directly into your **SolarVoyager** folder. Just replace the similar lines of code in your **karma.conf.js** with the lines shown above. Note:
+
+- The exclusion of **public/javascripts/main.js**
+- and inclusion of **spec/main-test.js**
+
+Note also that there are no frameworks loaded at the very bottom of the file. (You can't see the bottom of the file in the code excerpt shown above, but you can inside the sample project.)
+
+There may be other subtle tweaks required, but the above gives you most of what you need.
+
+Looking at the updated **files** section above, we see that karma will allow, for instance, the loading of the the JavaScript files in **public/javascripts**. It will not, however, actually load them. That fact is designated by the the **included** property: **included:false**. We are saying: "We want karma to make the files available, but not to actually load them. We will instead let requirejs actually load them." We use a file called **spec/main-test.js** to tell require what to load.
+
+I'll repeat the point again to make sure it is clear. **requirejs** can't load anything unless we have the **pattern** and **included** properties in the **file** section as shown above. You have to have the **pattern** and **included** properties, and you also have to have **main-test.js**, as explained below.
+
+**NOTE** _I use **test-XXX.js** as the naming convention for require based tests, and **spec-XXX.js** for jasmine server side tests._
+
+Look at [this sample][main-test-req] **main-test.js** file from the **spec** directory:
+
+```javascript
+function loadTestsIntoArray() {
+    'use strict';
+    var tests = [];
+    for (var file in window.__karma__.files) {
+        if (/test-/.test(file)) {
+            console.log('Loaded test:', file);
+            tests.push(file);
+        }
+    }
+    return tests;
+}
+
+require.config({
+    baseUrl: '/base',
+
+    paths: {
+        home: 'public/javascripts/home'
+    },
+    deps: loadTestsIntoArray(),
+    callback: window.__karma__.start
+});
+```
+
+You will need to save this file into your **SolarVoyager** project. You are going to have to add a good deal to the **paths** section of **require.config**. You can use **/public/javascripts/main** as a guide as to what is needed. The files are very similar, but note that in **spec/main-tests.js** we write **public/javascripts/home** while in **public/javascripts/main.js** we write **javascripts/home**. This is necessary because the tests don't assume that your code lives in the **public** folder.
+
+Finally, look at the way we [wrap our test suites][test-sample-req] in a require **define** function:
+
+```javascript
+define(['home'], function(home) {
+    'use strict';
+
+    describe('Elvenware Simple Plain Suite', function() {
+
+        it('expects true to be true', function() {
+            expect(true).toBe(true);
+        });
+
+        it('expects home.color to be red', function() {
+            expect(home.color).toBe('red');
+        });
+
+    });
+
+});
+```
+
+You can save this test into **SolarVoyager** as **spec/test-basic.js**. Then type **karma start**. If your tests pass, then you have things set up correctly and you can begin writing requirejs tests in earnest.
+
+The results might look something like this:
+
+<pre>
+PhantomJS 2.1.1 (Linux 0.0.0) LOG LOG: 'Loaded test:', '/base/spec/test-basic.js'
+
+  Elvenware Simple Plain Suite
+    ✓ expects true to be true
+    ✓ expects color to be red
+
+PhantomJS 2.1.1 (Linux 0.0.0): Executed 2 of 2 SUCCESS (0 secs / 0.001 secs)
+TOTAL: 2 SUCCESS
+</pre>
+
+[jas-req]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+[karma-req]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/UnitTests/JasmineRequireJs/karma.conf.js
+[main-test-req]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/UnitTests/JasmineRequireJs/spec/main-test.js
+[test-sample-req]:https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/UnitTests/JasmineRequireJs/spec/test-basic.js
+
 ## The Worker
 
 It is now time to create our first component.

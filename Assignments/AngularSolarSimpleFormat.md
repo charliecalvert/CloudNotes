@@ -553,17 +553,34 @@ This is a matter of taste. Nevertheless, when doing this kind of work, I find it
 
 **NOTE**: _Watch the console and network pages in the Chrome developer tools carefully as you do this kind of work. Check, for instance, if you have remembered to load your new JavaScript page in **layout.jade**._
 
-**renewable-by-year-page.jade** should look a bit like this:
+## Iterate by Year
+
+There are several ways to allow the user to iterate over the years in the renewables array of data. Here is one.
+
+The input in **renewable-by-year-page.jade** could look like this:
 
 <pre>
-input(type="number", data-ng-model="userYearInput")
+input(type="number", data-ng-model="userYearInput" data-ng-change="yearChange()" min='2007' max='2017' placeholder='2013')
 
 button.btn.btn-primary(ng-click="getRenewableByYear()") Get Renewable by Year
 
 hr
 
 elf-renewable-by-year
+
 </pre>
+
+And handle it like this:
+
+```javascript
+$scope.userYearInput = 2017;
+
+// CODE NOT RELATED TO THIS ISSUE OMITTED HERE
+
+$scope.yearChange = function() {
+    $scope.getByYear($scope.userYearInput);
+};
+```
 
 Rename **getRenewable** to **getRenewableByYear** and call $scope.getByYear in its last line.
 

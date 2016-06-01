@@ -11,6 +11,49 @@ Use this as a guide:
 
 * [Cloud 9 Slides](http://bit.ly/elf-cloud9)
 
+## Step Zero
+
+If you have not done so already,
+
+- In Cloud 9 hit the Plus icon and create
+  - new nodejs workspace
+  - Based on your repository
+- Once it opens
+  - Clone [JsObjects](jsobjects) into **~/Git**
+  - Run this: cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.
+  - Run this: source ~/.bash_aliases
+
+Check out this file: ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras
+
+Put at least portions of it at the end of your **~/.bashrc**. For instance, get at least these these parts:
+
+<pre>
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+fi
+
+export NODE_PATH=:$HOME/npm/lib/node_modules
+export PATH="$PATH:$HOME/npm/bin"
+</pre>
+
+Then run **source ~/.bashrc**.
+
+Run these commands:
+
+<pre>
+jou
+cd NodeInstall
+$ ./InstallNodePackages.sh
+</pre>
+
+Just to be clear, **InsteallNodePackages.sh** is in this location:
+
+<pre>
+~/Git/JsObjects/Utilities/NodeInstall
+</pre>
+
+Now you should be okay to get started.
+
 ## Step One
 
 **NOTE**: _If you are using Pristine Lubuntu, then your NODE_PATH is probably already set up. That means you can skip this section and go on to the next Nevertheless, it is often helpful to run SystemCheck._
@@ -79,3 +122,4 @@ Submit your work and attach the screenshots.
 
 [cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
 [cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
+[jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
