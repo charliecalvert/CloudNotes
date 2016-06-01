@@ -136,24 +136,24 @@ Your **karma.conf.js** file should explicitly load **main-test.js** and explicit
 
 ```javascript
 files: [
-            'public/components/jquery/dist/jquery.min.js',
-            //'public/components/requirejs/require.js',
-            'node_modules/jasmine-jquery/lib/*.js', {
-                pattern: 'spec/test-*.js',
-                included: false
-            }, {
-                pattern: 'spec/data/client-renewables.js',
-                included: false
-            }, {
-                pattern: 'public/javascripts/**/*.js',
-                included: false
-            },
-            'spec/main-test.js',
-            '*.html'
-        ],
+    'public/components/jquery/dist/jquery.min.js',
+    //'public/components/requirejs/require.js',
+    'node_modules/jasmine-jquery/lib/*.js', {
+        pattern: 'spec/test-*.js',
+        included: false
+    }, {
+        pattern: 'spec/data/client-renewables.js',
+        included: false
+    }, {
+        pattern: 'public/javascripts/**/*.js',
+        included: false
+    },
+    'spec/main-test.js',
+    '*.html'
+],
 
-        // list of files to exclude
-        exclude: ['public/javascripts/main.js'],
+// list of files to exclude
+exclude: ['public/javascripts/main.js'],
 
 ```
 
@@ -302,4 +302,74 @@ Then in **getRenewable**, I wrote code like this:
 $.getJSON('/renewables', function(response) {				
 				renewables.renewablesList = response.renewables; < ==== HERE				
 				showRenewable(renewables.renewablesList[index]); < ==== HERE
+})
+```
+
+## JSCS
+
+It is okay to turn a JSCS test off in specific cases like this:
+
+```javascript
+// jscs:disable requireDotNotation
+return {
+    year: renewable.Year,
+    solar: renewable['Solar (quadrillion Btu)'],
+    geo: renewable['Geothermal (quadrillion Btu)'],
+    otherBiomass: renewable['Other biomass (quadrillion Btu)'],
+    wind: renewable['Wind power (quadrillion Btu)'],
+    liquidBiofuels: renewable['Liquid biofuels (quadrillion Btu)'],
+    wood: renewable['Wood biomass (quadrillion Btu)'],
+    hydropower: renewable['Hydropower (quadrillion Btu)']
+};
+// jscs:enable requireDotNotation
+```
+
+Note the jscs:enable and jscs:disable directives.
+
+- <http://jscs.info/overview#error-suppression>
+
+- <http://stackoverflow.com/questions/25223149/is-there-any-way-for-jscs-to-ignore-rules-per-file-block-or-line>
+
+Just don't do it at random. Only in small, isolated cases like this where we really have a good reason to go against the JSCS formatting rules.
+
+## getJSON Tests
+
+The order in which you declare the event handlers for getJSON can matter because of the way I have set up the tests. I do them in this order:
+
+- fail
+- done
+- always
+
+Like this:
+
+```javascript
+$.getJSON('/renewables', function(response) {
+	 // CODE OMITTED HERE
+	 })
+	 .fail(function(a, b, c) {
+			 console.log('Error', a, b, c);
+			 $('#debug').html('Error occured: ', a.status);
+	 })
+	 .done(function() {
+			 console.log('second success');
+	 })
+	 .always(function() {
+			 console.log('complete');
+	 });
+```
+
+This matters because my test calls each of them in a specific order. From **test-renewables.js** in **expects getRenewable to be defined**:
+
+```javascript
+return {
+	 fail: function() {
+			 return {
+					 done: function() {
+							 return {
+									 always: function() {}
+							 };
+					 }
+			 };
+	 }
+};
 ```

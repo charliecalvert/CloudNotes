@@ -2,6 +2,23 @@
 
 Prog 219 related resources.
 
+Angular has a lot of black boxes in it. Dependency Injection is great, but it is hard to trouble shoot since its implementation is lost, for most of us, in the internals of angular itself. The same for factories, controllers, services, directives, etc.
+
+We need to spend time just "playing" with the technology. If you are having trouble seeing the relationship between scope variables ($scope.foo) and the expressions in an angular template ({{foo}}), then go back to the first examples in weeks one and two. Copy the examples to a new directory, and just start playing with them. Try getting more scope variables and displaying them in an angular template. Instead of addition, try multiplication, or what have you.
+
+It's all about building up knowledge piece by piece. Get the foundational knowledge down, then it is easier to build on top of it. For instance, it is hard to see what a directive does unless you can first see how to display a scope variable. If we are trying to juggle too many balls at once, then we get nowhere. For instance, if an assignment involves directives, factories, scope variables and template directives such as ng-click and ng-repeat, it just becomes overwhelming if you don't understand the individual pieces.
+
+Go back and master them one at a time. People learn at different paces, but most of us do learn.
+
+Anticipating a possible question: if a problem has too many new concepts in it, then you can spend fruitless hours trying to solve it. In that case, you have to go back a step and see if you can master each of the pieces first. Take them one  at a time. We have to be able to recognize when we are not making progress because we don't have the foundational pieces internalized. Then we go back a step and concentrate on the parts we don't understand, one at a time.
+
+If you are unsure how to learn about a particular piece, ask me about it. Ask others about it. Those who do get it, are probably likely to share information. It will help them learn.
+
+One of the key themes in this course is divide and conquer. Each piece may be simple enough, but it seems confusing if we try to do too much at a time.
+
+You've probably seen me debug a problem by starting to comment things out until I finally get down to a simple chunk of code that demonstrates the problem. I'm doing the same thing I suggest above. I'm looking at a bug and feeling overwhelmed. Is it this? Is it that? I don't know. So let's comment out this big chunk of code? Is the problem still there? Yes. Okay, it wasn't in that code. Let's comment out something else. Problem still there? Yes, then okay, let's comment out still more. Oh, the problem is gone. So it is probably in that chunk I just commented out. Well that i can deal with. The problem isn't anywhere in a big program, its probably in, or at least related to, these ten lines I just comment out.
+
+
 URL: [http://bit.ly/Prog219-Resources](http://bit.ly/Prog219-Resources)
 
 ## Basics
