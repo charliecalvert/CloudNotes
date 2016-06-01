@@ -302,4 +302,34 @@ Then in **getRenewable**, I wrote code like this:
 $.getJSON('/renewables', function(response) {				
 				renewables.renewablesList = response.renewables; < ==== HERE				
 				showRenewable(renewables.renewablesList[index]); < ==== HERE
+});
 ```
+
+## client-renewables
+
+This is the mock data used in the hard test from **test-renewables**.
+
+```javascript
+define(function() {
+    'use strict';
+    return [{
+        "Year": "2017",
+        "Solar (quadrillion Btu)": "0.8045307",
+        "Geothermal (quadrillion Btu)": "0.2349284",
+        "Other biomass (quadrillion Btu)": "0.50916",
+        "Wind power (quadrillion Btu)": "2.202328",
+        "Liquid biofuels (quadrillion Btu)": "1.2329197",
+        "Wood biomass (quadrillion Btu)": "1.9860924",
+        "Hydropower (quadrillion Btu)": "2.5859957"
+    }, {
+        "Year": "2016",
+        "Solar (quadrillion Btu)": "0.6298938",
+        "Geothermal (quadrillion Btu)": "0.232438",
+        "Other biomass (quadrillion Btu)": "0.5113525",
+        "Wind power (quadrillion Btu)": "2.0395132492",
+        "Liquid biofuels (quadrillion Btu)": "1.2406718727",
+        "Wood biomass (quadrillion Btu)": "1.9724914",
+        "Hydropower (quadrillion Btu)": "2.5965158"
+    }, {
+    etc...
+});
