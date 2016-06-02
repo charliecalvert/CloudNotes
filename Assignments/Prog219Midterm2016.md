@@ -72,6 +72,7 @@ One of our goals is to start handling the **EnergyTypes.json** file from our dat
 - **EnergyTypesController** in **public/javascripts/energy-types/energy-types.js**
 - **energy-types-page.jade** in **views/energy-types/**
 - **energy-types.jade** in **views/energy-types/**
+- **json-as-energy-types.js** in **spec/data**
 
 When you load **energy-types.js** in **layout.jade**, don't forget that you need to specify the directory where it lives.
 
@@ -82,6 +83,29 @@ My page looks like this at the time of this writing:
 **Figure 01**: _Note the three bootstrap panels used to display the data in the energy types page._
 
 We may work on this page more later, but for the midterm, it should look something like this.
+
+In spec/data create a file called json-as-energy-types.js. In it, put the contents of your energy types array. Like this:
+
+```javascript
+var energyTypes = [
+{
+    "MSN": "FFPRBUS",
+    "YYYYMM": "194913",
+    "Value": "28.748176",
+    "Column_Order": "1",
+    "Description": "Total Fossil Fuels Production",
+    "Unit": "Quadrillion Btu"
+},
+{
+    "MSN": "FFPRBUS",
+    "YYYYMM": "195013",
+    "Value": "32.562667",
+    "Column_Order": "1",
+    "Description": "Total Fossil Fuels Production",
+    "Unit": "Quadrillion Btu"
+},
+etc....
+```
 
 ## Energy Types
 
@@ -491,3 +515,32 @@ $scope.selectMsnType = function() {
 ```
 
 [test-se]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarExplorer
+
+## JSCS
+
+It is okay to turn a JSCS test off in specific cases like this:
+
+```javascript
+// jscs:disable requireDotNotation
+return {
+    year: renewable.Year,
+    solar: renewable['Solar (quadrillion Btu)'],
+    geo: renewable['Geothermal (quadrillion Btu)'],
+    otherBiomass: renewable['Other biomass (quadrillion Btu)'],
+    wind: renewable['Wind power (quadrillion Btu)'],
+    liquidBiofuels: renewable['Liquid biofuels (quadrillion Btu)'],
+    wood: renewable['Wood biomass (quadrillion Btu)'],
+    hydropower: renewable['Hydropower (quadrillion Btu)']
+};
+// jscs:enable requireDotNotation
+```
+
+Note the jscs:enable and jscs:disable directives.
+
+- <http://jscs.info/overview#error-suppression>
+
+- <http://stackoverflow.com/questions/25223149/is-there-any-way-for-jscs-to-ignore-rules-per-file-block-or-line>
+
+Just don't do it at random. Only in small, isolated cases like this where we really have a good reason to go against the JSCS formatting rules.
+
+ 

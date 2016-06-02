@@ -17,13 +17,13 @@ If you don't have it installed, install it like this:
 sudo apt-get install ruby-full
 </pre>
 
-Now install Heroku:
+On Cloud 9, heroku is already installed. But on Pristine Lubunutu you will need to install Heroku. The command is simple:
 
 <pre>
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 </pre>
 
-Type **heroku** and log in with your heroku user name and password.
+Now Type **heroku** on Pristine or Lubuntu or **heroku auth:login** on Cloud 9. Log in with your heroku user name and password. On Pristine Lubuntu:
 
 <pre>
 $ heroku
@@ -40,7 +40,17 @@ See all apps with heroku apps --all
 See other CLI commands with heroku help
 </pre>
 
-Make sure you have node 4.0 or greater installed. Check also for npm and git:
+On Cloud Nine, or if you don't see the login pronpt when you type **heroku**, the try **heroku auth:login** instead:
+
+<pre>
+heroku auth:login
+Enter your Heroku credentials.
+Email: foo@foobar.com
+Password (typing will be hidden):
+Logged in as foo@foobar.com
+</pre>
+
+Make sure you have node 4.0 or greater installed. Check also for npm and git. You don't need the exact numbers, but they should not be wildly different:
 
 </pre>
 $ node --version
@@ -76,11 +86,23 @@ echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
 <pre>
 
+Push to git:
+
+<pre>
 git push --set-upstream heroku master
+</pre>
 
+Make sure you have your app running:
+
+<pre>
 heroku ps:scale web=1h
+</pre>
 
+On Pristine Lubuntu, but probably not on Cloud Nine, you can start your app in a browser like this:
+
+<pre>
 heroku open
+</pre>
 
 Push your app:
 
@@ -88,8 +110,7 @@ Push your app:
 git push heroku master
 </pre>
 
-
-All at once check list:
+All at once check list, but probably don't do the last command, open, on Cloud 9:
 
 <pre>
 CreateExpressProject Heru02
@@ -266,3 +287,13 @@ $ git remote -v
 origin	ssh://git@heroku.com/charlie001.git (fetch)
 origin	ssh://git@heroku.com/charlie001.git (push)
 </pre>
+
+## Turn it in
+
+Send me the URL of your app
+
+## Hints
+
+The best docs are on the Heroku site. But there are others, such as:
+
+- <https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku>
