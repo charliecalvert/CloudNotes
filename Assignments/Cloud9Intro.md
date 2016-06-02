@@ -54,6 +54,74 @@ Just to be clear, **InsteallNodePackages.sh** is in this location:
 
 Now you should be okay to get started.
 
+## Auto Setup
+
+## Setup
+
+We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.
+
+After the workspace opens:
+
+- Choose Gear on left and **Show Favorites**
+- Right click the root of the Favorites and choose **New Folder**. Name it **bin**
+- Right click bin and choose **New File**. Call it **CloudNineSetup**. Press enter to open the file.
+- Go to [this URL][c9-setup], select **Raw**, block copy the content, and paste it into the **CloudNineSetup** file. Save your work.
+
+Now go to the terminal in Cloud 9. One should be open on the bottom right of your screen. It might have a label with the word bash in it.
+
+**NOTE**: _If you can't find a termainl open, then **Window | Termina (Alt T)** from the menu._
+
+Type the following in the terminal:
+
+<pre>
+cd ~/bin
+chmod +x CloudNineSetup
+./CloudNineSetup
+<pre>
+
+A script will run. Choose **Install All**.
+
+The script will take several minutes. When it is done, type the following:
+
+<pre>
+source ~/.bashrc
+nvm use system
+</pre>
+
+## Setup
+
+We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.
+
+After the workspace opens:
+
+- Choose Gear on left and **Show Favorites**
+- Right click the root of the Favorites and choose **New Folder**. Name it **bin**
+- Right click bin and choose **New File**. Call it **CloudNineSetup**. Press enter to open the file.
+- Go to [this URL][c9-setup], select **Raw**, block copy the content, and paste it into the **CloudNineSetup** file. Save your work.
+
+Now go to the terminal in Cloud 9. One should be open on the bottom right of your screen. It might have a label with the word bash in it.
+
+**NOTE**: _If you can't find a termainl open, then **Window | Termina (Alt T)** from the menu._
+
+Type the following in the terminal:
+
+<pre>
+cd ~/bin
+chmod +x CloudNineSetup
+./CloudNineSetup
+<pre>
+
+A script will run. Choose **Install All**.
+
+The script will take several minutes. When it is done, type the following:
+
+<pre>
+source ~/.bashrc
+nvm use system
+</pre>
+
+Your environment shown now be set up. To test it, type the following:
+
 ## Step One
 
 **NOTE**: _If you are using Pristine Lubuntu, then your NODE_PATH is probably already set up. That means you can skip this section and go on to the next Nevertheless, it is often helpful to run SystemCheck._
