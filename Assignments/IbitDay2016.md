@@ -41,6 +41,7 @@ Create a new NodeJs workspace.
 
 Read the cloud nine setup from here:
 
+- [Cloud Nine Setup][c9-setup]
 
 [c9-setup]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CloudNineSetup
 
@@ -503,6 +504,14 @@ Elvenware Home Directive Suite
 PhantomJS 2.1.1 (Linux 0.0.0): Executed 7 of 7 SUCCESS (0.038 secs / 0.025 secs)
 TOTAL: 7 SUCCESS
 </pre>
+
+## Heroku
+
+Read the Heroku Setup from here:
+
+- [Heroku Starter][heroku-starter]
+
+[heroku-starter]: http://www.ccalvert.net/books/CloudNotes/Assignments/HerokuStarter.html
 
 ## Git Hints
 
