@@ -69,6 +69,9 @@ Run:
 
 <pre>
 CreateExpressProject lastname01
+cd lastname01
+git init
+npm install
 </pre>
 
 Now create the heroku app:
@@ -84,7 +87,8 @@ echo 'web: node bin/www' > Procfile
 echo 'node_modules' > .gitignore
 echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
-<pre>
+echo 'components' >> .gitignore
+</pre>
 
 Push to git:
 
@@ -247,6 +251,37 @@ If you want to stop running your dyno:
 <pre>
 heroku ps:scale web=0
 </pre>
+
+## Create SolarExplorer
+
+Pick the branch in **~/workspace** that you like. Go to **~/temp** and copy your SolarExplorer, issuing the command only once:
+
+<pre>
+cd ~/temp
+cp -r ~/workspace/SolarExplorer/ .
+</pre>
+
+Remove from **package.json** your dev-dependencies. Run this command:
+
+<pre>
+npm install bower --save
+</pre>
+
+And add a postinstall to the scripts section of package.json:
+
+<pre>
+"scripts": {
+   "start": "node ./bin/www",
+   "postinstall": "node_modules/bower/bin/bower install"
+ },
+</pre>
+
+Then run **git init**.  And set up **.gitignore** we did above. Then run **heroku create**:
+
+<pre>
+heroku create SolarExplorerCalvert
+</pre>
+
 
 ## SSH
 
