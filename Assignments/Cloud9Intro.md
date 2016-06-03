@@ -56,30 +56,29 @@ Now you should be okay to get started.
 
 ## Auto Setup
 
-## Setup
-
 We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.
 
-After the workspace opens:
+After the workspace opens go to the terminal in Cloud 9. One should be open on the bottom of your screen. It might have a label with the word bash in it.
+
+**NOTE**: _If you can't find a terminal open, then **Window | Terminal (Alt T)** from the menu._
+
+<pre>
+mkdir ~/bin
+cd ~/bin
+wget https://raw.githubusercontent.com/charliecalvert/JsObjects/master/Utilities/SetupLinuxBox/CloudNineSetup
+chmod +x CloudNineSetup
+./CloudNineSetup
+</pre>
+
+A script will run. Choose **Install All**.
+
+Alternatively, you can do the same thing with the Cloud 9 tools:
 
 - Choose Gear on left and **Show Favorites**
 - Right click the root of the Favorites and choose **New Folder**. Name it **bin**
 - Right click bin and choose **New File**. Call it **CloudNineSetup**. Press enter to open the file.
 - Go to [this URL][c9-setup], select **Raw**, block copy the content, and paste it into the **CloudNineSetup** file. Save your work.
-
-Now go to the terminal in Cloud 9. One should be open on the bottom right of your screen. It might have a label with the word bash in it.
-
-**NOTE**: _If you can't find a termainl open, then **Window | Termina (Alt T)** from the menu._
-
-Type the following in the terminal:
-
-<pre>
-cd ~/bin
-chmod +x CloudNineSetup
-./CloudNineSetup
-<pre>
-
-A script will run. Choose **Install All**.
+- Now run the last two commands from the series shown above. The ones that begin **chmod** and **./CloudNineSetup**
 
 The script will take several minutes. When it is done, type the following:
 
@@ -88,39 +87,6 @@ source ~/.bashrc
 nvm use system
 </pre>
 
-## Setup
-
-We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.
-
-After the workspace opens:
-
-- Choose Gear on left and **Show Favorites**
-- Right click the root of the Favorites and choose **New Folder**. Name it **bin**
-- Right click bin and choose **New File**. Call it **CloudNineSetup**. Press enter to open the file.
-- Go to [this URL][c9-setup], select **Raw**, block copy the content, and paste it into the **CloudNineSetup** file. Save your work.
-
-Now go to the terminal in Cloud 9. One should be open on the bottom right of your screen. It might have a label with the word bash in it.
-
-**NOTE**: _If you can't find a termainl open, then **Window | Termina (Alt T)** from the menu._
-
-Type the following in the terminal:
-
-<pre>
-cd ~/bin
-chmod +x CloudNineSetup
-./CloudNineSetup
-<pre>
-
-A script will run. Choose **Install All**.
-
-The script will take several minutes. When it is done, type the following:
-
-<pre>
-source ~/.bashrc
-nvm use system
-</pre>
-
-Your environment shown now be set up. To test it, type the following:
 
 ## Step One
 
