@@ -69,6 +69,60 @@ In **views/high-tech-energy**, place these files
 
 **Figure 02a**: _Making a bit more progress on displaying types._
 
+## MSN Types
+
+Here is one way to implement the **public/javascripts/high-tech-energy/msn-types.js** file. Some of you have done it on the server, some of you did it by yourself. But if you need help with it, here is my version, which is on the client:
+
+```javascript
+define(function() {
+    'use strict';
+
+    function getMsnTypes(energyTypes) {
+        console.log('getMsnTypes called');
+        var currentMsn = {
+            msn: null,
+            description: ''
+        };
+        var msnTypes = [];
+
+        function insertNewCurrentMsn(energyType) {
+            currentMsn = Object.create(currentMsn);
+            currentMsn.msn = energyType.MSN;
+            currentMsn.description = energyType.Description;
+            msnTypes.push(currentMsn);
+        }
+
+        insertNewCurrentMsn(energyTypes[0]);
+
+        function isUnique(msn) {
+            var result = true;
+            for (var i = 0; i < msnTypes.length; i++) {
+                if (msn === msnTypes[i].msn) {
+                    console.log('msn vs c.msn', msn, currentMsn.msn);
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        energyTypes.forEach(function(energyType, index) {
+            // console.log('energyType index and index length', index, msnTypes.length);
+            energyType.Year = energyType.YYYYMM.substr(0, 4);
+            energyType.Month = energyType.YYYYMM.substr(4);
+            if (energyType.MSN !== currentMsn.msn) {
+                if (isUnique(energyType.MSN)) {
+                    //console.log('isUnique');
+                    insertNewCurrentMsn(energyType);
+                }
+            }
+        });
+        return msnTypes;
+    }
+
+    return getMsnTypes;
+});
+```
 
 ### Create New Page Steps {#page-steps}
 
@@ -302,7 +356,7 @@ Then in **getRenewable**, I wrote code like this:
 $.getJSON('/renewables', function(response) {				
 				renewables.renewablesList = response.renewables; < ==== HERE				
 				showRenewable(renewables.renewablesList[index]); < ==== HERE
-})
+});
 ```
 
 ## JSCS
@@ -372,4 +426,34 @@ return {
 			 };
 	 }
 };
+```
+
+## client-renewables
+
+This is the mock data used in the hard test from **test-renewables**. Put it in **spec/data/client-renewables.js**:
+
+```javascript
+define(function() {
+    'use strict';
+    return [{
+        "Year": "2017",
+        "Solar (quadrillion Btu)": "0.8045307",
+        "Geothermal (quadrillion Btu)": "0.2349284",
+        "Other biomass (quadrillion Btu)": "0.50916",
+        "Wind power (quadrillion Btu)": "2.202328",
+        "Liquid biofuels (quadrillion Btu)": "1.2329197",
+        "Wood biomass (quadrillion Btu)": "1.9860924",
+        "Hydropower (quadrillion Btu)": "2.5859957"
+    }, {
+        "Year": "2016",
+        "Solar (quadrillion Btu)": "0.6298938",
+        "Geothermal (quadrillion Btu)": "0.232438",
+        "Other biomass (quadrillion Btu)": "0.5113525",
+        "Wind power (quadrillion Btu)": "2.0395132492",
+        "Liquid biofuels (quadrillion Btu)": "1.2406718727",
+        "Wood biomass (quadrillion Btu)": "1.9724914",
+        "Hydropower (quadrillion Btu)": "2.5965158"
+    }, {
+    etc...
+});
 ```

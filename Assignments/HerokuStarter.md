@@ -1,4 +1,4 @@
-Join [heroku](https://www.heroku.com/). Note your user name and password, or save your account into LastPass or the like.
+Join [heroku](https://www.heroku.com/). Note your user name and password, or save your account into LastPass or the like. For language, choose NodeJs.
 
 Take a moment to think about heroku's pricing. We will be using the free tier:
 
