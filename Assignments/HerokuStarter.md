@@ -309,13 +309,15 @@ origin	https://git.heroku.com/charlie001.git (fetch)
 origin	https://git.heroku.com/charlie001.git (push)
 </pre>
 
-To switch from using HTTPS to SSH, issue this command:
+To switch from using HTTPS to SSH, you can issue this command, but I have found it to be very dangerous:
 
 <pre>
 git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/
 </pre>
 
-Check it, to confirm that you are now using an SSH command:
+It would be simpler just to open **.git/config** and edit your git URLs by hand.
+
+To check your work and confirm that you are now using SSH, run **git remote -v**:
 
 <pre>
 $ git remote -v
