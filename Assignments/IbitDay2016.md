@@ -171,6 +171,7 @@ As stated above, we are building a SPA. As a result, the H1 and two paragraph el
 
 ## Menu
 
+```javascript
 extends layout
 
 block content
@@ -197,6 +198,8 @@ block content
     p Author #{author}
 
     div(data-ng-view="")
+
+```
 
 ## Simple Directive:
 
