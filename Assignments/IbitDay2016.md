@@ -41,8 +41,10 @@ Create a new NodeJs workspace.
 
 Read the cloud nine setup from here:
 
-- [Cloud Nine Setup][c9-setup]
+- [Cloud Nine Setup Description (AutoSetup)][c9-auto]
+- [Cloud Nine Setup Script][c9-setup]
 
+[c9-auto]: http://www.ccalvert.net/books/CloudNotes/Assignments/Cloud9Intro.html#auto-setup
 [c9-setup]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CloudNineSetup
 
 ## Build
