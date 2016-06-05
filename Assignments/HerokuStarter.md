@@ -134,7 +134,7 @@ heroku open
 
 ## Status
 
-There's **heroku apps:info**:
+There's **heroku apps:info** from inside the folder of one of your apps:
 
 <pre>
 $ heroku apps:info
