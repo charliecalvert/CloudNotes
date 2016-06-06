@@ -8,23 +8,15 @@ Mongoose Basics is an ORM for MongoDB.
 
 ## Step One
 
-	express Week09-MongooseBasics
+	CreateAllExpress Week09-MongooseBasics
 	npm install
 
 Open the project in Web Storm
-
-- Set the port
-- in **routes/index.js** give it the name MongooseBasics
-- In **package.json** use **nodemon**
-
 
 ## Step Two
 
 Set up bower
 
-- Copy .bowerrc from %ELF_TEMPLATES%\.bowerrc
-	- copy %ELF_TEMPLATES%\.bowerrc
-- bower init
 - bower install angular bootstrap angular-route --save
 
 Now might be a good time to start the project.
@@ -33,16 +25,16 @@ Now might be a good time to start the project.
 
 Favicon
 
-Get a default favicon:
+Because you used CreateAllExpress, you should already have a **favicon.png** file in **public.** But in case you have some reason to do it manually, here is how to get a default favicon on Linux (first example) or on Windows:
 
-	cp $HOME/Git/JsObjects/Data/MongoBootstrap/favicon.png public/.
+	cp $JSOBJECTS/Data/MongoBootstrap/favicon.png public/.
 	copy %USERPROFILE%\Git\JsObjects\Data\MongoBootstrap\favicon.png public\.
-	
+
+This is not done for you automatically, so do this by hand:
 
 - In an editor, open up app.js. (Server side)
 - On line 18 uncomment: **app.use(favicon(__dirname + '/public/favicon.ico'));**
 - Change **favicon.ico** to **favicon.png**.
-
 
 ## Step Four
 
@@ -66,13 +58,7 @@ Once Mongoose is installed, you should set up the schema:
 - Create a folder called models at the root of your project
 - Put this source in a file called **models/scientists.js**.
 
-
-
 ```
-/**
- * Created by charlie on 5/31/2015.
- */
-
 var mongoose = require('mongoose');
 
 var scientistsSchema = mongoose.Schema({
@@ -97,8 +83,9 @@ And then create methods to open your collection:
 var connected = false;
 
 function doConnection() {
-	//mongodb://<dbuser>:<dbpassword>@ds049848.mongolab.com:49848/elvenlab01
-	mongoose.connect('mongodb://<USERNAME>:<PASSWORD>@ds049848.mongolab.com:49848/elvenlab01');
+	// mongodb://<dbuser>:<dbpassword>@ds049848.mongolab.com:49848/elvenlab01
+	// mongoose.connect('mongodb://<USERNAME>:<PASSWORD>@ds049848.mongolab.com:49848/elvenlab01');
+	mongoose.connect('mongodb://localhost/test');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function(callback) {
@@ -132,8 +119,8 @@ When you are looking at your database in MongoLab you can see the actual URL tha
 In **index.js**, make sure that this is the last line in the file:
 
 	module.exports = router;
-	
-	
+
+
 Here is a perhaps more sophisticated tool for connecting to the database.
 It belongs in its own file called connect.js:
 
@@ -172,8 +159,8 @@ var connect = {
 };
 
 module.exports = connect;
-```	
- 
+```
+
 ## Step 5
 
 Get the code in angular
@@ -338,7 +325,7 @@ And here is our factory, saved in **mongo-factory.js**. When adding this file to
 			}
 		};
 	});
-    
+
 })();
 ```
 
