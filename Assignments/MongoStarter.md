@@ -8,7 +8,17 @@ Create an account on [MongoLab](https://mongolab.com/).
 
 ## Step 2: Install Mongo on Linux
 
-Follow the steps outlined in the Elvenware [Install Mongo][mongoInstall] section to install MongoDb on your system. When you are done with the install, come back to this assignment.
+To install on Cloud 9:
+
+```
+cd
+mkdir data
+echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > ~/mongod
+chmod a+x ~/mongod
+mongod
+```
+
+Otherwise, follow the steps outlined in the Elvenware [Install Mongo][mongoInstall] section to install MongoDb on your system. When you are done with the install, come back to this assignment.
 
 [mongoInstall]: http://www.elvenware.com/charlie/development/database/NoSql/MongoDb.html#install
 
