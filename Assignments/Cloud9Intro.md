@@ -11,6 +11,14 @@ Use this as a guide:
 
 * [Cloud 9 Slides](http://bit.ly/elf-cloud9)
 
+Our primary goal in this exercise is to create a Cloud Nine environment in which:
+
+- **JsObjects** has been cloned and is available to us
+- We have set up customized **.bashrc** and **.bash_aliases** files.
+  - This includes setting up our path and other environment variables
+- We have a pre-configured **bin** directory with useful scripts in it.
+- Have certain Npm global packages installed.
+
 ## Step Zero
 
 If you have not done so already,

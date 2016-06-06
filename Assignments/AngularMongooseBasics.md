@@ -7,7 +7,7 @@ Mongoose Basics is an ORM for MongoDB.
 
 ## Step One
 
-	CreateAllExpress Week09-MongooseBasics
+	CreateAllExpress Week09-AngularMongooseBasics
 	npm install
 
 Open the project in Web Storm.
@@ -95,124 +95,107 @@ In **index.js**, make sure that this is the last line in the file:
 
 	module.exports = router;
 
-Here is a tool for connecting to the database. It belongs in its own file called **routes/connect.js**:
-
-```
-var mongoose = require('mongoose');
-
-var connect = {
-
-    connected: false,
-
-    simpleConnect: function() {
-        var url= 'mongodb://127.0.0.1:27017/test';
-        connect.connected = true;
-        mongoose.connect(url);
-        var db = mongoose.connection;
-        db.on('error', console.error.bind(console, 'connection error:'));
-        db.once('open', function(callback) {
-            connected = true;
-            console.log('Opened connection to mongo');
-        });
-    },
-
-    mlabConnect:function() {
-        connect.connected = true;
-        var userName = 'MyUserName';
-        var password = 'MyPassWord';
-        var siteAndPort = 'ds049848.mongolab.com:49848';
-        var databaseName = 'elvenlab01';
-        var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
-        console.log(url);
-        mongoose.connect(url);
-
-        // This part is optional
-        var db = mongoose.connection;
-        db.on('error', console.error.bind(console, 'connection error:'));
-        db.once('open', function(callback) {
-            connected = true;
-            console.log('Opened connection to mongo');
-        });
-    },
-
-    doConnection: function(useSimple) {
-				var connectType = useSimple || true;
-				if (connectType) {
-          connect.simpleConnect();
-				} else {
-          connect.mlabConnect();
-			  }
-    }
-};
-
-module.exports = connect;
-```
-
 ## Step 5
+
+Get the code in angular
+
+This is **controll.js** at this early stage:
+
+```
+(function() {
+
+    var app = angular.module('elfApp', []);
+
+    app.controller('MongoController', function($http) {
+        var mongoController = this;
+
+        $http.get('/all-data').success(function(data) {
+            mongoController.allData = data;
+        }).error(function(err) {
+            console.log(err);
+        });
+    });
+
+})();
+```
 
 Here is index.jade:
 
-```
+<pre>
 extends layout
 
 block content
   h1= title
   p Welcome to #{title}
 
-  button#insertValidData Insert Valid Data
-  button#getAll Get All
-	button#emptyCollection Empty Collection
 
-  pre#display
+  div(ng-controller="MongoController")
+    button(ng-click="insertValidData()") Insert Valid Data
+    button(ng-click="getAll()") Get All
+    button(ng-click="emptyCollection()") EmptyCollection
 
-```
+    div
+      pre {{allData}}
+
+    p {{display}}
+</pre>
 
 and layout.jade
 
-```
+<pre>
 doctype html
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+    script(src="components/jquery/dist/jquery.js")
+    script(src="components/bootstrap/dist/js/bootstrap.js")
     script(src="components/angular/angular.js")
     script(src="javascripts/control.js")
-  body(ng-app="elfApp")
+  body(data-ng-app="elfApp")
     block content
-```
+</pre>
 
 ## Step Six
 
 Here is **public/javascripts/control.js**:
 
 ```javascript
-$(document).ready(function() { 'use strict';
-    var insertUrl = '/insertValidCollection';
+(function() {
 
-    function insertCollection() {
-        var jqxhr = $.post(insertUrl, function(result) {
-            alert( "success" );
-            console.log(JSON.stringify(result, null, 4));
-        })
-            .done(function() {
-                console.log( "second success" );
-            })
-            .fail(function() {
-                alert( "error" );
-            })
-            .always(function() {
-                console.log( "finished" );
+    var app = angular.module('elfApp', []);
+
+    app.controller('MongoController', function($scope, $http) {
+
+
+        $scope.insertValidData = function() {
+            $http.get('/insertValidCollection').then(function(data) {
+                $scope.display = data;
+            }, function(err) {
+                console.log(err);
             });
-    }
+        };
 
-    $('#insertValidData').click(insertCollection);
+        $scope.emptyCollection = function() {
+            $http.get('/emptyCollection', {name: 'lincoln'}).then(function(data) {
+                $scope.display = data;
+            }, function(err) {
+                console.log(err);
+            });
+        };
 
-    $("#getAll").click(function() {
-       $.getJSON('/all-data', function(result) {
-           $('#display').html(JSON.stringify(result, null, 4));
-       })
+        $scope.getAll = function() {
+            $http.get('/all-data').then(function(data) {
+                $scope.allData = JSON.stringify(data, null, 4);
+            }, function(err) {
+                console.log(err);
+            });
+        };
     });
-});
+
+})();
+
 ```
 
 ## Step Seven
@@ -350,14 +333,12 @@ var scientists = require('../models/scientists');
 var fs = require('fs');
 
 var allData;
+var numberOfScientists = 0;
 var totalScientistsSaved = 0;
 
 function allMongo() {
 
 }
-
-allMongo.numberOfScientists = 0;
-
 function insertScientist(scientist, response) {
     if (!connect.connected) {
         connect.doConnection();
@@ -373,10 +354,9 @@ function insertScientist(scientist, response) {
     console.log('inserting', newScientist.lastName);
 
     newScientist.save(function(err) {
+        console.log('saved: ', newScientist.lastName);
         totalScientistsSaved++;
-        console.log('saved: ', newScientist.lastName, allMongo.numberOfScientists, totalScientistsSaved);
-
-        if (totalScientistsSaved === allMongo.numberOfScientists) {
+        if (totalScientistsSaved === numberOfScientists) {
             //mongoose.disconnect();
             response.send({result: 'Success'});
         }
@@ -394,8 +374,8 @@ allMongo.writeData = function(fileName, data) {
 allMongo.readDataAndInsert = function(response) {
     fs.readFile('ValidScientists.json', function(err, scientists) {
         if (err) throw (err);
+        numberOfScientists = scientists.length;
         scientists = JSON.parse(scientists);
-        allMongo.numberOfScientists = scientists.length;
         for (var i = 0; i < scientists.length; i++) {
             insertScientist(scientists[i], response);
         }
@@ -404,6 +384,5 @@ allMongo.readDataAndInsert = function(response) {
 
 module.exports = allMongo;
 ```
-
 
 [gypbson]:http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoose-gyp-bson

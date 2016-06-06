@@ -1,5 +1,7 @@
 # In Class Mongo
 
+In many cases, you will be asked to only do the first five or six steps in this assignment.
+
 ## Step 1: Mongo Account
 
 Create an account on [MongoLab](https://mongolab.com/).
@@ -34,9 +36,13 @@ MongoDb ships with a client. Elvenware has [a description][4] of how to use it.
 
 ## Step06: MongoLab URLs and Users
 
+Unless you are using Mlab/MongoLab, you can skip this step.
+
 Learn about them on [Elvenware][5].
 
 ## Step07: An Express Mongo Program
+
+In some cases, we will move to another assignment and not complete this or the other steps in this assignment.
 
 - Create a new express program called **Week09-InClassMongoView**
   - CreateAllExpress Week09-InClassMongoView
@@ -119,6 +125,18 @@ Handle the data and display it to the user.
 - In the getJSON callback, define a parameter called serverData.
 - Start by popping up an alert
 - Inside the alert: JSON.stringify(serverData[0], null, 4);
+
+## Turn it in
+
+Attach a screenshot of the mongo client running in the bash shell and using **find** to show the contents of a collection you created. For instance, show the output of this command:
+
+<pre>
+db.lincoln.find()
+</pre>
+
+**NOTE**: _Do not put your screen shot in a zip file or embed it in a word document. Simply attach the screen shot to your assignment when you turn it in._
+
+If you completed the whole assignment, you should also push your work to your repository.
 
 [1]: https://github.com/charliecalvert/JsObjects/blob/master/Data/README.md
 [2]: https://github.com/charliecalvert/JsObjects/tree/master/Data/MongoCreateData
