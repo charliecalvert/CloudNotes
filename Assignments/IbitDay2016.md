@@ -151,6 +151,14 @@ Create two other pages in the same directory:
 
 Change the H1 element to refect the page contents. In other words, they should have similar, but not identical contents. For instance, change the word **Home** to **First** and **About** as appropriate.
 
+We will also need to add a new route to **routes/index.js**:
+
+```javascript
+router.get('/:id', function(req, res, next) { 'use strict';
+  res.render(req.params.id, { title: 'ibitday' });
+});
+```
+
 ## Main Index Page
 
 This is a SPA. As a result, our main page is always loaded. We need to have a location in that page where we load in content for our other "pages". The end result is that the top few lines of our main page are static. As the user selects items from the menu, the area below this main section morphs to reflect the content of the user's selection. Thus we have one main page that morphs into other "pages" as the user requests.
@@ -242,7 +250,7 @@ At some point, see if you can add similar directives to **home.js** and **about.
 
 ## Loading Data
 
-Here is a JSON file. Save it in **public/javascripts/Presidents.json**:
+Here is a JSON file. Save it in **public/Presidents.json**:
 
 ```json
 [
@@ -283,7 +291,7 @@ elfApp.controller('FirstController', function($scope, $http) {
 Here is the directive to display the data:
 
 ```javascript
-elfApp.directive('firstData', function() {
+elfApp.directive('elfFirstData', function() {
     'use strict';
     return {
         controller: 'FirstController',
