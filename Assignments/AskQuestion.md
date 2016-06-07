@@ -31,9 +31,11 @@ Try to ask questions that can benefit yourself and others; don't become a platfo
 
 ## Inspiration
 
-Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: www.google.com".
+Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: [http://www.google.com](http://www.google.com)".
 
-Suppose I show you a chunk of code like this:
+When a student has everything running perfectly, and there are no problems with their code, I can understand why they have trouble coming up with a question. But if your programming is not working, then usually you receive some kind of error. If nothing else, you can ask about the error you are getting. What causes this error? How can I fix it?
+
+Or perhaps the assignment includes a chunk of code like this:
 
 ```javascript
 var objectAsArray = [];
