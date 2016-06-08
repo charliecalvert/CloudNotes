@@ -18,13 +18,206 @@ Some files that need to change:
 
 npm install mongoose --save
 
+
+## Settings
+
+To help you get started using database in your app, let's add the ability to track some settings in MongoDB.
+
+## Settings-Model
+
+We want to save settings:
+
+The model looks like this, only use your last name:
+
+```javascript
+var mongoose = require('mongoose');
+
+var settingsSchema = mongoose.Schema({
+    "keyNote": String,
+    "dataSource": String,
+    "dataType": String,
+    "comment": String
+});
+
+module.exports = mongoose.model('prog272_lastname_setting', settingsSchema);
+```
+
+## Settings-Database
+
+Create a file in **routes** called **database-settings.js**. Make appropriate changes in **app.js**. Beside the standard code, such as requiring **connect.js**, also include this:
+
+```javascript
+// CODE OMITTED HERE
+
+var settings = require('../models/settings');
+
+// CODE OMITTED HERE
+
+function saveSettings(request, response) {
+    console.log('request body', request.body);
+
+    var newSettings = new settings({
+        "keyNote": 'settings',
+        "dataSource": request.body.dataSource,
+        "dataType": request.body.dataType,
+        "comment": request.body.comment
+    });
+
+    console.log('inserting', newSettings.comment);
+
+    newSettings.save(function(err) {
+        console.log('saved: ', newSettings.dataSource, newSettings.dataType, newSettings.comment);
+        response.send({ result: 'success', query: request.body});
+
+    });
+}
+
+router.post('/updateSettings', function(request, response) {
+    console.log('request body', request.body);
+    if (!connect.connected) {
+        connect.doConnection();
+    }
+
+    settings.findOne({keyNote: 'settings'}, function(err, doc) {
+        console.log('findone', err, doc);
+        if (err) {
+            response.send({result: 'error'});
+        } else {
+            if(doc === null) {
+                saveSettings(request, response);
+            } else {
+                doc.dataType = request.body.dataType;
+                doc.dataSource = request.body.dataSource;
+                doc.comment = request.body.comment;
+                doc.save();
+            }
+        }
+    });
+});
+
+router.get('/getSettings', function(request, response) {
+    console.log('request body', request.body);
+    if (!connect.connected) {
+        connect.doConnection();
+    }
+
+    settings.findOne({keyNote: 'settings'}, function(err, doc) {
+        console.log('findone', err, doc);
+        if (err) {
+            response.send({result: 'error'});
+        } else {
+            if(doc === null) {
+                response.send({settings: {dataType: 'Database', dataSource: 'Local MongoDb', comment: 'Default Comment'}})
+            } else {
+                response.send({settings: doc});
+            }
+        }
+    });
+});
+```
+
+## Settings Home Page
+
+Update **home.jade**
+
+<pre>
+.container
+    .jumbotron
+        h1 Home Page
+
+    .panel.panel-default
+        .panel-heading Renewable
+        .panel-body
+            form#target(method='post', action='/bar')
+                select#dataType(name='dataType')
+                    option Database
+                    option JSON
+                hr
+                select#dataSource(name='dataSource')
+                    option Local MongoDb
+                    option MLab
+                hr
+                input#comment(type="text", name='comment' value='foo')
+                hr
+                input.btn.btn-success(type="submit", value='Submit')
+
+    .panel.panel-default
+        .panel-heading Renewable
+        .panel-body
+            .alert.alert-info
+                pre#debug
+
+</pre>
+
+Update **home.js**
+
+```javascript
+/**
+ * Created by charlie on 5/18/16.
+ */
+
+define(function() {
+    'use strict';
+
+    function getSettings() {
+        $.getJSON('/databaseSettings/getSettings', function(response) {
+            $('#debug').html(JSON.stringify(response, null, 4));
+            $('#dataType').val(response.settings.dataType);
+            $('#dataSource').val(response.settings.dataSource);
+            $('#comment').val(response.settings.comment);
+        })
+            .fail(function(a, b, c) {
+                console.log('Error', a, b, c);
+                $('#debug').html('Error occured: ', a.status);
+            })
+            .done(function() {
+                console.log('second success');
+            })
+            .always(function() {
+                console.log('complete');
+            });
+    }
+
+    var home = {
+        color: 'red',
+        size: 'big',
+        init: function() {
+            console.log(home.color);
+            $('#elf-view').load('/home', function() {
+                $('#display').html(home.color);
+                $('#display2').html(home.size);
+                getSettings();
+                $("#target").submit(function(event) {
+                    event.preventDefault();
+                    var userFormData = $(this).serialize();
+                    $('#debug').html(userFormData);
+                    var userData = {
+                        dataType: $('#dataType').val(),
+                        dataSource: $('#dataSource').val(),
+                        comment: $('#comment').val()
+                    };
+                    $.post('/databaseSettings/updateSettings', userData, function(result) {
+                        console.log(settings);
+                    });
+                });
+
+            });
+        }
+    };
+    return home;
+});
+```
+
+
 ## Database
 
 Make sure you put your preface your collections with prog219 and end them with your last name:
 
 ```javascript
-module.exports = mongoose.model('prog219-calvert-renewables', renewablesSchema);
+module.exports = mongoose.model('prog219_calvert_renewables', renewablesSchema);
 ```
+
+**NOTE**: _Please do not use hypens (-) in your model (collection) names. They work okay in mongoose, but the mongo shell has a hard time with them. Let's use underscores instead._
 
 In **routes/connect.js**, set your simple url to use a dbs called renew:
 
@@ -38,10 +231,10 @@ If you are in both prog219 and prog272, and your last name is ng, then I'm expec
 
 <pre>
 > show collections
-prog219-calvert-renewables
-prog272-calvert-renewables
-prog219-ng-renewables
-prog272-ng-renewables
+prog219_calvert_renewables
+prog272_calvert_renewables
+prog219_ng_renewables
+prog272_ng_renewables
 renewables
 </pre>
 
