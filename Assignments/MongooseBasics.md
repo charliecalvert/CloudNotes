@@ -410,7 +410,7 @@ module.exports = allMongo;
 
 ## Valid Scientists
 
-save in the root of your project as ValidScientiests.json
+Save in the root of your project as ValidScientists.json
 
 ```javascript
 [

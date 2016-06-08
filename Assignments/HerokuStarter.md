@@ -90,7 +90,7 @@ echo '.c9' >> .gitignore
 echo 'components' >> .gitignore
 </pre>
 
-Push to git:
+Perform a standard **git add .** and **git commit -m "First commit to heroku of XXX project"**. Customize the commit comment in any way want, the text I show is just a suggestion. Then push to git like this:
 
 <pre>
 git push --set-upstream heroku master
