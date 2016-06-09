@@ -317,6 +317,9 @@ router.get('/all-data', function(request, response) {
 });
 
 router.get('/emptyCollection', function(request, response) {
+	if (!connect.connected) {
+			connect.doConnection();
+	}
   scientists.remove({}, function(err) {
     if (err) {
       response.send({result: 'err', err: err});
@@ -674,5 +677,8 @@ Save in the root of your project as ValidScientists.json
 ]
 ```
 
+## Turn it in
+
+Push you code to your repository, and when you turn it in tell me the branch and folder where it resides.
 
 [gypbson]:http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoose-gyp-bson

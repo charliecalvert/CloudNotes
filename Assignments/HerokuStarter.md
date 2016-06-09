@@ -65,7 +65,9 @@ git version 2.7.4
 
 ## Deploy
 
-Run:
+Go to your ~/Source or ~/temp directory and run the following:
+
+**NOTE**: _Don't create your heroku project in your repository. If you do, you will end up with a repository nested in a repository, which you want to avoid._
 
 <pre>
 CreateExpressProject lastname01
@@ -74,7 +76,7 @@ git init
 npm install
 </pre>
 
-Now create the heroku app:
+Now create the heroku app, executing this command from the root of your new project:
 
 <pre>
 heroku create lastname01
@@ -254,16 +256,18 @@ heroku ps:scale web=0
 
 ## Create SolarExplorer
 
-Pick the branch in **~/workspace** that you like. Go to **~/temp** and copy your SolarExplorer, issuing the command only once:
+Pick the branch in repository that you like. Go to your **~/Source** or **~/temp** directory and copy your **SolarExplorer** or **SolarVoyager** or whatever is the best version of your project, by issuing the command only once. Your command might look something likie this:
 
 <pre>
 cd ~/temp
-cp -r ~/workspace/SolarExplorer/ .
+cp -r ~/Git/prog272-calvert-2016/SolarExplorer/ .
 </pre>
 
 Remove from **package.json** your dev-dependencies. Run this command:
 
 <pre>
+cd SolarVoyager
+git init
 npm install bower --save
 </pre>
 
@@ -276,6 +280,30 @@ And add a postinstall to the scripts section of package.json:
  },
 </pre>
 
+The package.json file might look a bit like this after you edit it:
+
+```javascript
+{
+  "name": "Week05-ExpressRoutesSolar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "postinstall": "node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "bower": "^1.7.9",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
+}
+```
+
 Then run **git init**.  And set up **.gitignore** we did above. Then run **heroku create**:
 
 <pre>
@@ -284,6 +312,8 @@ heroku create SolarExplorerCalvert
 
 
 ## SSH
+
+Don't do this section. It is not important.
 
 Create new key called **id_rsa** if you don't have one already:
 
