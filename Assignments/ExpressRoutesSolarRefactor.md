@@ -326,6 +326,29 @@ var buttonChange = function() {
 };
 ```
 
+The code won't be called unless you set up the event handler. Looking above at the menu, you see that the idea of the plus button is **plusButton**:
+
+<pre>
+button#plusButton.btn.btn-success.btn-number(type="button")
+    span.glyphicon.glyphicon-plus
+</pre>
+
+Using jQuery, can you connect clicks on the button to the **indexButtonChange**. At the same time, you can pass in a parameter stating that the index has been incremented by one. To understand how to do this, see this elvenware section on [passing parameters with the click event][click-param]. In particular, you will need to write code like:
+
+```javascript
+$('#plusButton').click(
+  // DO SOMETHING IN HERE LIKE WHAT IS DONE IN THE ELVENWARE EXAMPLE
+)
+```
+
+Notice the code in **indexButtonChange** where we access the parameter like this:
+
+```javascript
+var test = event.data.value + index;
+```
+
+[click-param]: http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#clickParam
+
 ## Simple Iteration
 
 As an alternative, if the above is too much, you can have simple iteration. Put this in your init method:
