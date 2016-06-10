@@ -233,3 +233,42 @@ Some files that need to change:
 - app.js
 
 npm install mongoose --save
+
+## Jade Routes {#jade-routes}
+
+Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
+
+See the [JadeRoutes][jade-routes] program from JsObjects.
+
+[loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
+[jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
+
+## Can't Start Mongod
+
+If you can't get Mongod to start on Cloud 9, try one of these two options:
+
+**Option 1**: On Cloud 9, delete the **~/data** folder. This means you will loose your databases and collections, but that should not be a big issue in this class. Now go through the set up process again:
+
+<pre>
+    cd
+    mkdir data
+    echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
+    chmod a+x mongod
+    ./mongod
+</pre>
+
+Alternatively, try this:
+
+<pre>
+mongod --dbpath /data/db --smallfiles"
+</pre>
+
+Thanks to Jonas Olesen and Norman Jenks for these suggestions.
+
+## Grunt Check
+
+Stop whatever you are doing and run **grunt check** immediately. Get everything to pass. It is not a hard task. Just get it done.
+
+Then do it at least one more time just before you turn in the assignment. But don't leave it to last. At the end, you will feel too much pressure and will forget to do it or feel too discouraged to do it. Do it now! Immediately! You might introduce a few more problems between now and when you turn in the final, but better two or three problems than twenty, thirty or even fifty!
+
+This is a simple way to get points!

@@ -18,6 +18,26 @@ Some files that need to change:
 
 npm install mongoose --save
 
+## Jade Routes {#jade-routes}
+
+Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
+
+See the [JadeRoutes][jade-routes] program from JsObjects.
+
+[loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
+[jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
+
+## Testing
+
+If you are having trouble getting your tests to run, don't forget to review the [testing section from the midterm][test-midterm]. Focus on comparing your karma.conf.js file with the one in the my [JasmineRequireJs][jas-req-js] example program.
+
+You will find the tests for the midterm here:
+
+- [JsObjects/Utilities/Templates/UnitTest/SolarVoyager][solar-tests]
+
+[test-midterm]: http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Midterm2016.html#testing
+[jsm-req-js]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+[solar-tests]:https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarVoyager
 
 ## Settings
 

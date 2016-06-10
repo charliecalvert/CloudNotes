@@ -348,7 +348,6 @@ In **routes/all-mongo.js**:
  * Created by charlie on 6/5/16.
  */
 
-
 var express = require('express');
 //var router = express.Router();
 var connect = require('./connect');
