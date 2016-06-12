@@ -272,3 +272,32 @@ Stop whatever you are doing and run **grunt check** immediately. Get everything 
 Then do it at least one more time just before you turn in the assignment. But don't leave it to last. At the end, you will feel too much pressure and will forget to do it or feel too discouraged to do it. Do it now! Immediately! You might introduce a few more problems between now and when you turn in the final, but better two or three problems than twenty, thirty or even fifty!
 
 This is a simple way to get points!
+
+## Containers
+
+I've noticed a lot of student's applications don't look quite right on a large screen. The problem is that the various "pages" we are loading are not restricted to the middle of the screen, but instead "bleed" off to the right and left. To fix this, put them inside a container. Consider the jade for our standard **about.jade** page. This is not right because there is no container:
+
+<pre>
+h1 About
+p version 2.0
+
+p#display
+
+p#display2
+</pre>
+
+This is right because the content is inside a container:
+
+<pre>
+.container
+    h1 About
+    p version 2.0
+
+    p#display
+
+    p#display2
+</pre>
+
+Try adding a container to all your pages. Not to the jade for a directive, but the jade used to define the appearance of a page. For instance, **renewables-page.jade**.
+
+**NOTE**: _On a low resolution screen, or on a mobile device, you can't tell the difference between the two sets of jade shown above. But on a big screen, when the app is maximized, it becomes obvious. The screens at school are certainly big enough to show this._

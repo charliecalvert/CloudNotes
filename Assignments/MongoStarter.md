@@ -15,7 +15,7 @@ cd
 mkdir data
 echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > ~/mongod
 chmod a+x ~/mongod
-mongod
+./mongod
 ```
 
 Otherwise, follow the steps outlined in the Elvenware [Install Mongo][mongoInstall] section to install MongoDb on your system. When you are done with the install, come back to this assignment.
@@ -35,6 +35,8 @@ Create a copy of [JsObjects/Data/MongoCreateData][2]. For instance, to create a 
 cd ~/Source
 cp -r ~/Git/JsObjects/Data/MongoCreateData/ .
 </pre>
+
+**NOTE**: _If **~/Source** does not exist, then create it like this **mkdir ~/Source**._
 
 Run **npm install**.
 

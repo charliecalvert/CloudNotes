@@ -116,7 +116,9 @@ Push your app:
 git push heroku master
 </pre>
 
-All at once check list, but probably don't do the last command, open, on Cloud 9:
+## Deploy Checklist
+
+Here are all the commands seen at once, as culled from my bash history. It might serve as something like a checklist.
 
 <pre>
 CreateExpressProject Heru02
@@ -133,6 +135,8 @@ git commit -m "Initial commit"
 git push --set-upstream heroku master
 heroku open
 </pre>
+
+**NOTE**: _If you are working on Cloud 9, you probably won't be able to do the last command. Just use the regular Cloud 9 tools for previewing or starting an app._
 
 ## Status
 
@@ -260,7 +264,12 @@ Pick the branch in repository that you like. Go to your **~/Source** or **~/temp
 
 <pre>
 cd ~/temp
-cp -r ~/Git/prog272-calvert-2016/SolarExplorer/ .
+cp -r ~/Git/prog272-calvert-2016/SolarExplorer/ .  <== FOR PRISTINE LUBUNTU
+</pre>
+
+<pre>
+cd ~/temp
+cp -r ~/workspace/SolarExplorer/ .                 <== FOR CLOUD NINE
 </pre>
 
 **NOTE**: _What I'm looking for is the most recent version of your current project. In Prog219 it is SolarExplorer, in Prog272 is SolarVoyager. In some other class I hold in the future, it may be some other assignment. The point is to give the latest working version of the project you developed for the midterm and are creating for the Final. I won't be grading the project itself, just seeing that you are able to get it up and running on the heroku servers. Even if most of the commands fail, that will not affect your grade. For this assignment, you are being graded only on your ability to get the application running in some form on the Heroku server. I ask you to do this, because it will be part of the final, and I'm doing what I can to encourage you to get started on this part of the assignment as soon as possible. Don't wait to the last minute!_

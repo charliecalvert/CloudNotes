@@ -18,3 +18,5 @@ Proposed weekly progress:
 	Part 5:  75%
 	Part 6:  90%
 	Part 7: 100%
+
+**NOTE**: _You can see an icon or a picture of yourself in the upper right hand corner of the Code Academy site. Click that picture, there you will find a way to get your profile page._
