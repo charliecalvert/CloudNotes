@@ -138,15 +138,36 @@ Handle the data and display it to the user.
 
 ## Turn it in
 
-If you are in Prog 219, attach a screenshot of the mongo client running in the bash shell and using **find** to show the contents of a collection you created. For instance, show the output of this command:
+If you are in **Prog 272**, take a picture of MongoLab, showing any collection that you were able to insert into your database.
+
+**NOTE**: _Do not put your screen shot in a zip file or embed it in a word document. Simply attach the screen shot to your assignment when you turn it in._
+
+If you are in **Prog 219**, attach a screenshot of the mongo client running in the bash shell and using **find** to show the contents of a collection you created. To start the mongo client, aka [mongo shell](), just type **mongo** at the bash shell. Then run a few commands such as **show dbs**, **use test**, **show collections** and then show the contents of a collection. For instance, show the output of this command:
 
 <pre>
 db.lincoln.find()
 </pre>
 
-If you are in Prog 272, take a picture of MongoLab, showing any collection that you were able to insert into your database.
+Take a screenshot of the output from running these commands.
 
-**NOTE**: _Do not put your screen shot in a zip file or embed it in a word document. Simply attach the screen shot to your assignment when you turn it in._
+Sample output when starting the mongo shell:
+
+<pre>
+$ mongo
+MongoDB shell version: 3.2.7
+connecting to: test
+// A FEW WARNINGS OMITTED HERE
+> show dbs
+local          0.000GB
+prog219-renew  0.000GB
+renew          0.000GB
+test           0.000GB
+>
+</pre>
+
+Reference:
+
+- <https://docs.mongodb.com/getting-started/shell/client/>
 
 If you completed the whole assignment, you should also push your work to your repository.
 
