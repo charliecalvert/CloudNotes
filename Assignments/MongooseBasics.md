@@ -7,7 +7,7 @@ Mongoose Basics is an ORM for MongoDB.
 
 **NOTE**: _There is both an angular and jquery version of this assignment. Make sure you are looking at the right one. This is the jquery assignment, the other is called [AngularMongooseBasics][angular-mongoose]._
 
-- [angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
+[angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
 
 ## Step One
 
