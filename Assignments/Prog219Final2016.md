@@ -10,6 +10,23 @@ Bad: **module.exports = mongoose.model('prog219LastnameSetting', settingsSchema)
 
 ## Database Notes
 
+If you get **Unclean shutdown detected.**, run this to fix it:
+
+<pre>
+cd
+./mongod --repair
+</pre>
+
+On Cloud 9, To shutdown we should be able to do **CTRL-C** in the window where mongo is running. Or, try this from inside the mongo shell:
+
+<pre>
+db.shutdownServer()
+</pre>
+
+For more details on shuting down, go here:
+
+- <https://docs.mongodb.com/manual/tutorial/recover-data-following-unexpected-shutdown/>
+
 In mongo shell, to empty a collection: **db.myCollection.remove({})**.
 
 Make sure you put your preface your collections with prog219 and end them with your last name:
@@ -60,7 +77,7 @@ module.exports = mongoose.model('prog219_lastname_setting', settingsSchema);
 
 ## Settings-Database
 
-Create a file in **routes** called **database**. Beside tne standard code, include this:
+Create a file in **routes** called **database**. Beside the standard code that can be found in **routes/users.js**, include this code:
 
 ```javascript
 // CODE OMITTED HERE
@@ -131,6 +148,18 @@ router.get('/getSettings', function(request, response) {
     });
 });
 ```
+
+You will also need to set up the route in app.js:
+
+```javascript
+// CODE OMITTED HERE
+var database = require('./routes/database'); <= About line 8
+
+// CODE OMITTED HERE
+app.use('/database', database); <= About line 28
+```
+
+Remember that you are also going to need **connect.js** from our earlier assignment. Make sure the database is et  to **renew**.
 
 ## Settings Home Page
 

@@ -138,10 +138,11 @@ Handle the data and display it to the user.
 
 ## Turn it in
 
-Attach a screenshot of the mongo client running in the bash shell and using **find** to show the contents of a collection you created. For instance, show the output of this command:
+Attach a screenshot of the mongo shell running in the bash shell and using **find** to show the contents of a collection you created. For instance, show the output of this command:
 
 <pre>
 db.lincoln.find()
+db.prog219_lastname.settings()
 </pre>
 
 **NOTE**: _Do not put your screen shot in a zip file or embed it in a word document. Simply attach the screen shot to your assignment when you turn it in._
