@@ -1,21 +1,21 @@
 ## Overview
 
-The Prog 219 Final for 2016.
+The Prog 219 Final for 2016 should contain, at minimum, the following elements:
 
-The Prog 272 Final for 2016 should contain, at minimum, the following elements:
-
-- Home and About pages
-- Renewables by index
-- Renewables by Year
+1. Home and About pages
+- Renewables by Index and Renewables by Year pages
 - Simple Format Page
-- Use a Bootswatch theme
+- A Bootswatch theme
+- Karma tests run smoothly
+- **grunt check** comes back clean
+- Running your program on Heroku
 
 These features of your final demonstrate that you understand the basics taught in the course, that you came to class regularly, and made a good faith effort to complete the course.
 
 Your next priority should be to:
 
-- Thoroughly refactor your code into
-  - Renewable folders on the client and server
+- Be sure your code is thoroughly refactored into
+  - Renewable and Energy Types folders on the client and server
   - Files in the routes directory for handling various tasks such as responding to requests for  **renewables** data, **high-tech-energy** data and **settings** data.
 - At least one of the following:
   - High Tech Energy Overview Page
@@ -23,8 +23,9 @@ Your next priority should be to:
 
 This demonstrates your ability to take some of the concepts taught in the core portion of the course and implement them on your own with a minimum of hand holding.
 
-Finally, you should work to add database elements:
+Finally, you should work to produce a complete, well structured application:
 
+- An Energy Types page with clickable **msnTypes** that filter your data
 - Database page to import JSON data into MongoDB and display it.
 - Settings page pulling and setting data in MongoDB
 - Ability to use either JSON or MongoDB as your datasource
@@ -36,11 +37,11 @@ Extra credit
 
 ## Images
 
-![HomePage](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog210-final-2016-01.png)
+![HomePage](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-final-2016-01.png)
 
 **Figure 01**: _The home page of the final._
 
-![Database Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog210-final-2016-02.png)
+![Database Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-final-2016-02.png)
 
 **Figure 01**: _The database page is import JSON data into the MongoDb database. In this screenshot you can see many of the menu items._
 
@@ -67,6 +68,12 @@ Cyborg is just one of the many themes available from bootswatch.
 - [Darkly](https://bootswatch.com/darkly/)
 - [Superhero](https://bootswatch.com/superhero/)
 - And so on. They are all linked from the main menu at the bootswatch site.
+
+Note that some of the controls, such as selects, won't render correctly with some bootswatch themes unless you decorate them with the proper class. Here the **form-control** class provides support needed to allow bootswatch themes such as darkly to render correctly. This particular examples is from the **settings** page:
+
+<pre>
+select.form-control(ng-model='formData.dataSource')
+</pre>
 
 ![Bootswatch Cyborg Theme](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-final-2016-03.png)
 
@@ -408,9 +415,15 @@ npm install mongoose --save
 
 ## Jade Routes {#jade-routes}
 
-Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
+A number of students have been confused about how to load jade. In particular, they have had trouble:
 
-See the [JadeRoutes][jade-routes] program from JsObjects.
+- Building the URLs for their routes on the client side.
+- Setting up the routes for loading jade on the server side.
+
+To get a better understanding of these issues:
+
+- Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
+- See the [JadeRoutes][jade-routes] demo program from JsObjects.
 
 [loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
 [jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
@@ -473,3 +486,9 @@ This is right because the content is inside a container:
 Try adding a container to all your pages. Not to the jade for a directive, but the jade used to define the appearance of a page. For instance, **renewables-page.jade**.
 
 **NOTE**: _On a low resolution screen, or on a mobile device, you can't tell the difference between the two sets of jade shown above. But on a big screen, when the app is maximized, it becomes obvious. The screens at school are certainly big enough to show this._
+
+## Turn it in
+
+Put your work in a branch called **Final** in a folder called **SolarVoyager**. If you do anything else other than this, please spell it out carefully when you turn in the Final. I will **take off points** and will likely ask you to re-submit if I don't immediately know where to look for final.
+
+Submit the URL of your program running on Heroku.
