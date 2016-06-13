@@ -2,6 +2,14 @@
 
 The Prog 272 Final for 2016.
 
+![Main Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-final-2016-01.png)
+
+**Figure 01**: _The main page of the final._
+
+![Database Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-final-2016-01.png)
+
+**Figure 01**: _The database page is import JSON data into the MongoDb database._
+
 ## Install
 
 Some key files and commands:
@@ -18,6 +26,26 @@ Some files that need to change:
 
 npm install mongoose --save
 
+## Jade Routes {#jade-routes}
+
+Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
+
+See the [JadeRoutes][jade-routes] program from JsObjects.
+
+[loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
+[jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
+
+## Testing
+
+If you are having trouble getting your tests to run, don't forget to review the [testing section from the midterm][test-midterm]. Focus on comparing your karma.conf.js file with the one in the my [JasmineRequireJs][jas-req-js] example program.
+
+You will find the tests for the midterm here:
+
+- [JsObjects/Utilities/Templates/UnitTest/SolarVoyager][solar-tests]
+
+[test-midterm]: http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Midterm2016.html#testing
+[jsm-req-js]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+[solar-tests]:https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarVoyager
 
 ## Settings
 
@@ -90,6 +118,7 @@ router.post('/updateSettings', function(request, response) {
                 doc.dataSource = request.body.dataSource;
                 doc.comment = request.body.comment;
                 doc.save();
+                response.send( {result: 'success', query: request.body });
             }
         }
     });
@@ -197,6 +226,7 @@ define(function() {
                         comment: $('#comment').val()
                     };
                     $.post('/databaseSettings/updateSettings', userData, function(result) {
+                        $('#debug').html(JSON.stringify(result, null, 4));
                         console.log(settings);
                     });
                 });
@@ -208,6 +238,66 @@ define(function() {
 });
 ```
 
+## Settings Options
+
+You know how to load and save the settings for your application. The next step is to change the behavior of the application based on those settings.
+
+The user can choose to read data from either the database or a JSON file:
+
+- Database
+- JSON
+
+Let's capture that choice in a simple object to be stored in its own file called **public/javascripts/settings.js**:
+
+```javascript
+define(function() {
+   return {
+        useDatabase: true,
+        useLocalMongoDb: true,
+        report: function() {
+            console.log('useDatabase', this.useDatabase);
+            console.log('useLocalMongoDb', this.useLocalMongoDb)
+        },
+        setSettings: function(settings) {
+            this.useDatabase = settings.dataType.toLowerCase() === 'database';
+            this.useLocalMongoDb = settings.dataSource.toLowerCase() === 'local mongodb';
+            this.report()
+        }
+    };
+});
+```
+
+Given this object, we can now decide whether to get our data from the database or from a JSON file depending on the options the user choose. For instance, in **public/javascripts/renewables/renewables.js**, we can use the require js dependency injection to access the settings object and decide whether or not to use the mongodb database:
+
+```javascript
+define(['jquery', 'settings'], function($, settings) {
+    'use strict';
+
+    var index = 0;
+    //var useDatabase = true;
+
+    function getRenewable() {
+        //console.log('getRenewable called');
+        var routeType = settings.useDatabase ? 0 : 1;
+
+        var renewableRoutes = ['/allRenewables', '/renewables'];
+        $.getJSON(renewableRoutes[routeType], function(response) {
+            // CODE OMITTED HERE
+        });
+    }
+});
+```
+
+Your job is to make sure the settings are set correctly when the user either loads or saves the settings from the database. This typically takes place in **home.js** Again, you will use dependency injection to access the settings object:
+
+```javascript
+define(['settings'], function (settings) {
+  // MAKE SURE THE SETTINGS ARE SAVED TO THE settings OBJECT
+  // CODE OMITTED HERE
+});
+```
+
+The exact details of what happens in **home.js** are left as an exercise. You will have to add only a small amount of code that saves the settings to the **settings** object. This will involve a call to **settings.setSettings()**.
 
 ## Database
 
@@ -267,3 +357,32 @@ function showRenewable(renewable) {
         renewable = getSimpleKeys(renewable);
     }
 ```
+
+## Containers
+
+I've noticed a lot of student's applications don't look quite right on a large screen. The problem is that the various "pages" we are loading are not restricted to the middle of the screen, but instead "bleed" off to the right and left. To fix this, put them inside a container. Consider the jade for our standard **about.jade** page. This is not right because there is no container:
+
+<pre>
+h1 About
+p version 2.0
+
+p#display
+
+p#display2
+</pre>
+
+This is right because the content is inside a container:
+
+<pre>
+.container
+    h1 About
+    p version 2.0
+
+    p#display
+
+    p#display2
+</pre>
+
+Try adding a container to all your pages. Not to the jade for a directive, but the jade used to define the appearance of a page. For instance, **renewables-page.jade**.
+
+**NOTE**: _On a low resolution screen, or on a mobile device, you can't tell the difference between the two sets of jade shown above. But on a big screen, when the app is maximized, it becomes obvious. The screens at school are certainly big enough to show this._

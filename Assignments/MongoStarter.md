@@ -15,7 +15,7 @@ cd
 mkdir data
 echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > ~/mongod
 chmod a+x ~/mongod
-mongod
+./mongod
 ```
 
 Otherwise, follow the steps outlined in the Elvenware [Install Mongo][mongoInstall] section to install MongoDb on your system. When you are done with the install, come back to this assignment.
@@ -35,6 +35,8 @@ Create a copy of [JsObjects/Data/MongoCreateData][2]. For instance, to create a 
 cd ~/Source
 cp -r ~/Git/JsObjects/Data/MongoCreateData/ .
 </pre>
+
+**NOTE**: _If **~/Source** does not exist, then create it like this **mkdir ~/Source**._
 
 Run **npm install**.
 
@@ -138,14 +140,35 @@ Handle the data and display it to the user.
 
 ## Turn it in
 
-Attach a screenshot of the mongo shell running in the bash shell and using **find** to show the contents of a collection you created. For instance, show the output of this command:
+If you are in **Prog 272**, take a picture of MongoLab, showing any collection that you were able to insert into your database.
+
+**NOTE**: _Do not put your screen shot in a zip file or embed it in a word document. Simply attach the screen shot to your assignment when you turn it in._
+
+If you are in **Prog 219**, attach a screenshot of the mongo client running in the bash shell and using **find** to show the contents of a collection you created. To start the mongo client, aka [mongo shell](https://docs.mongodb.com/getting-started/shell/client/), just type **mongo** at the bash shell. Then run a few commands such as **show dbs**, **use test**, **show collections** and then show the contents of a collection. For instance, take a screenshot showing the output of these or similar commands:
 
 <pre>
 db.lincoln.find()
 db.prog219_lastname.settings()
 </pre>
 
-**NOTE**: _Do not put your screen shot in a zip file or embed it in a word document. Simply attach the screen shot to your assignment when you turn it in._
+Sample output when starting the mongo shell:
+
+<pre>
+$ mongo
+MongoDB shell version: 3.2.7
+connecting to: test
+// A FEW WARNINGS OMITTED HERE
+> show dbs
+local          0.000GB
+prog219-renew  0.000GB
+renew          0.000GB
+test           0.000GB
+>
+</pre>
+
+Reference:
+
+- <https://docs.mongodb.com/getting-started/shell/client/>
 
 If you completed the whole assignment, you should also push your work to your repository.
 

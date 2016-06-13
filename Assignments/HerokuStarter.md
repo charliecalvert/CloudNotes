@@ -65,7 +65,9 @@ git version 2.7.4
 
 ## Deploy
 
-Run:
+Go to your ~/Source or ~/temp directory and run the following:
+
+**NOTE**: _Don't create your heroku project in your repository. If you do, you will end up with a repository nested in a repository, which you want to avoid._
 
 <pre>
 CreateExpressProject lastname01
@@ -74,7 +76,7 @@ git init
 npm install
 </pre>
 
-Now create the heroku app:
+Now create the heroku app, executing this command from the root of your new project:
 
 <pre>
 heroku create lastname01
@@ -114,7 +116,9 @@ Push your app:
 git push heroku master
 </pre>
 
-All at once check list, but probably don't do the last command, open, on Cloud 9:
+## Deploy Checklist
+
+Here are all the commands seen at once, as culled from my bash history. It might serve as something like a checklist.
 
 <pre>
 CreateExpressProject Heru02
@@ -131,6 +135,8 @@ git commit -m "Initial commit"
 git push --set-upstream heroku master
 heroku open
 </pre>
+
+**NOTE**: _If you are working on Cloud 9, you probably won't be able to do the last command. Just use the regular Cloud 9 tools for previewing or starting an app._
 
 ## Status
 
@@ -252,22 +258,31 @@ If you want to stop running your dyno:
 heroku ps:scale web=0
 </pre>
 
-## Create SolarExplorer
+## Create SolarExplorer or SolarVoyager
 
-Pick the branch in **~/workspace** that you like. Go to **~/temp** and copy your SolarExplorer, issuing the command only once:
+Pick the branch in repository that you like. Go to your **~/Source** or **~/temp** directory and copy your **SolarExplorer** or **SolarVoyager** or whatever is the best version of your project, by issuing the command only once. Your command might look something likie this:
 
 <pre>
 cd ~/temp
-cp -r ~/workspace/SolarExplorer/ .
+cp -r ~/Git/prog272-calvert-2016/SolarExplorer/ .  <== FOR PRISTINE LUBUNTU
 </pre>
 
-Remove from **package.json** your dev-dependencies. Run this command:
+<pre>
+cd ~/temp
+cp -r ~/workspace/SolarExplorer/ .                 <== FOR CLOUD NINE
+</pre>
+
+**NOTE**: _What I'm looking for is the most recent version of your current project. In Prog219 it is SolarExplorer, in Prog272 is SolarVoyager. In some other class I hold in the future, it may be some other assignment. The point is to give the latest working version of the project you developed for the midterm and are creating for the Final. I won't be grading the project itself, just seeing that you are able to get it up and running on the heroku servers. Even if most of the commands fail, that will not affect your grade. For this assignment, you are being graded only on your ability to get the application running in some form on the Heroku server. I ask you to do this, because it will be part of the final, and I'm doing what I can to encourage you to get started on this part of the assignment as soon as possible. Don't wait to the last minute!_
+
+Run these commands, where the directory in first command may differ depending on the name of your project and the folder in which it is stored:
 
 <pre>
+cd SolarVoyager
+git init
 npm install bower --save
 </pre>
 
-And add a postinstall to the scripts section of package.json:
+Remove from **package.json** your dev-dependencies. We won't need them. Add a **postinstall** to the scripts section of **package.json**:
 
 <pre>
 "scripts": {
@@ -276,14 +291,49 @@ And add a postinstall to the scripts section of package.json:
  },
 </pre>
 
-Then run **git init**.  And set up **.gitignore** we did above. Then run **heroku create**:
+The **package.json** file might look a bit like this after you edit it:
+
+```javascript
+{
+  "name": "Week05-ExpressRoutesSolar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "postinstall": "node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "bower": "^1.7.9",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
+}
+```
+
+Set up **.gitignore** as we did above. Just in case, I'll remind you again that you should run **git init** before moving. If you have run **git init**, then go ahead and run **heroku create**, using a command a bit like this:
 
 <pre>
 heroku create SolarExplorerCalvert
 </pre>
 
+## Turn it in
+
+Send me the URL of your app
+
+## Hints
+
+The best docs are on the Heroku site. But there are others, such as:
+
+- <https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku>
 
 ## SSH
+
+Don't do this section. It is not important, but I leave it here in case anyone is interested. You don't need to set up SSH because of the way Heroku works, but it certainly is not wrong to do so.
 
 Create new key called **id_rsa** if you don't have one already:
 
@@ -324,13 +374,3 @@ $ git remote -v
 origin	ssh://git@heroku.com/charlie001.git (fetch)
 origin	ssh://git@heroku.com/charlie001.git (push)
 </pre>
-
-## Turn it in
-
-Send me the URL of your app
-
-## Hints
-
-The best docs are on the Heroku site. But there are others, such as:
-
-- <https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku>

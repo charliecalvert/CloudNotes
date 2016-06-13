@@ -144,13 +144,62 @@ See this project: [Jasmine Require Js][jasmine-requirejs]
 
 ## Testing
 
-Again, see this project: [Jasmine Require Js][jasmine-requirejs]
+Again, see this project which gives a working demonstration of how to set up jasmine to test a requirejs project
+
+- [Jasmine Require Js][jasmine-requirejs]
+
+Pay special attention to the **karma.conf.js** file. Some key points in it are called out later in this section.
+
+But first, make sure you have some key packages installed:
 
 <pre>
 npm install karma-requirejs --save-dev
 npm install requirejs --save-dev
 npm install jasmine-jquery --save-dev
 </pre>
+
+Your **karma.conf.js** file should use the requirejs framework. Explicitly load **main-test.js** and explicitly ignore **public/javascripts/main.js**.
+
+```javascript
+frameworks: ['jasmine', 'requirejs'],
+
+files: [
+    'public/components/jquery/dist/jquery.min.js',
+    //'public/components/requirejs/require.js',
+    'node_modules/jasmine-jquery/lib/*.js', {
+        pattern: 'spec/test-*.js',
+        included: false
+    }, {
+        pattern: 'spec/data/client-renewables.js',
+        included: false
+    }, {
+        pattern: 'public/javascripts/**/*.js',
+        included: false
+    },
+    'spec/main-test.js',
+    '*.html'
+],
+
+// list of files to exclude
+exclude: ['public/javascripts/main.js'],
+
+```
+
+Remove the **plugins** section from the end of **karma.conf.js**:
+
+```javascript
+singleRun: false
+
+/*
+  YOU CAN JUST DELETE IT, BUT I WANT TO SHOW YOU WHAT TO DELETE
+plugins: ['karma-jasmine',
+    'karma-spec-reporter',
+    'karma-phantomjs-launcher',
+    'karma-chrome-launcher'
+] */
+```
+
+Once again, don't forget the JasmineRequireJs project linked at the beginning of this section.
 
 We need to create a requirejs file explicitly for our tests. Call the file **spec/main-test.js**.
 
@@ -186,45 +235,6 @@ require.config({
 
 It is one of the oddities of karma that **/base** points to the root of your project.
 
-Your **karma.conf.js** file should explicitly load **main-test.js** and explicitly ignore **public/javascripts/main.js**.
-
-```javascript
-files: [
-    'public/components/jquery/dist/jquery.min.js',
-    //'public/components/requirejs/require.js',
-    'node_modules/jasmine-jquery/lib/*.js', {
-        pattern: 'spec/test-*.js',
-        included: false
-    }, {
-        pattern: 'spec/data/client-renewables.js',
-        included: false
-    }, {
-        pattern: 'public/javascripts/**/*.js',
-        included: false
-    },
-    'spec/main-test.js',
-    '*.html'
-],
-
-// list of files to exclude
-exclude: ['public/javascripts/main.js'],
-
-```
-
-Remove the **plugins** section from the end of **karma.conf.js**:
-
-```javascript
-singleRun: false,
-
-/*
-  YOU CAN JUST DELETE IT, BUT I WANT TO SHOW YOU WHAT TO DELETE
-plugins: ['karma-jasmine',
-    'karma-spec-reporter',
-    'karma-phantomjs-launcher',
-    'karma-chrome-launcher'
-] */
-```
-
 A simple test of the home page would look like this:
 
 ```javascript
@@ -254,13 +264,14 @@ define(['home'], function(home) {
 
 You will find the tests for the midterm here:
 
-- JsObjects/Utilities/Templates/UnitTest/SolarVoyager
+- [JsObjects/Utilities/Templates/UnitTest/SolarVoyager][solar-tests]
 
 Copy those files into your spec directory, and make sure they all pass.
 
 Check regularly for updates. All the tests should pass.
 
 [jasmine-requirejs]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+[solar-tests]:https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarVoyager
 
 ## Menu
 

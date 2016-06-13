@@ -5,6 +5,10 @@ Mongoose Basics is an ORM for MongoDB.
 - Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
 - [Prog219 Resources](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Resources.html)
 
+**NOTE**: _There is both an angular and jquery version of this assignment. Make sure you are looking at the right one. This is the jquery assignment, the other is called [AngularMongooseBasics][angular-mongoose]._
+
+[angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
+
 ## Step One
 
 	CreateAllExpress Week10-MongooseBasics
@@ -20,6 +24,26 @@ Set up bower
 - bower install bootstrap --save
 
 Now might be a good time to start the project: **npm start**
+
+## Ignore Scientists
+
+Add a file called **nodemon.json** in the root of your project. Place the following content in it:
+
+```javascript
+{
+  "verbose": true,
+  "ignore": ["scientists.json", "**/components/**"]
+}
+```
+
+This project is going to create a file called **scientists.json** each time you insert data into the database. By default, this will cause **nodemon** to restart the project each time we write data to **scientists.json**. This can cause miscellaneous errors on the on the client side, such as a false report for failure for the **insertValidCollection**. The fix is to ask nodemon to ignore **scientists.json**. We should also ask it to ignore our components.folder.
+
+For more on nodemon configuration, see here:
+
+- <https://github.com/remy/nodemon>
+- <https://github.com/remy/nodemon/blob/master/doc/sample-nodemon.md>
+
+You should also create a **.gitignore** file for this project and put the single line **scientists.json** in it.
 
 ## Step Three
 
@@ -57,7 +81,7 @@ Once Mongoose is installed, you should set up a schema:
 - Create a folder called models at the root of your project
 - Put this code in a file called **models/presidents.js**:
 
-```
+```javascript
 var mongoose = require('mongoose');
 
 var presidentsSchema = mongoose.Schema({
@@ -70,7 +94,7 @@ module.exports = mongoose.model('presidents', presidentsSchema);
 
 While we are at it, let's create a more complex schema which we can use once we learn the basics. Put the follow code in a file called **models/scientists.js**.
 
-```
+```javascript
 var mongoose = require('mongoose');
 
 var scientistsSchema = mongoose.Schema({
@@ -78,7 +102,7 @@ var scientistsSchema = mongoose.Schema({
     "lastName": String,
     "subject": String,
     "subjects": [String],
-    comments: [{ commentText: String, date: Date }]
+    "comments": [{ commentText: String, date: Date }]
 });
 
 module.exports = mongoose.model('scientists', scientistsSchema);
@@ -98,7 +122,7 @@ In **index.js**, make sure that this is the last line in the file:
 
 Here is a tool for connecting to the database. It belongs in its own file called **routes/connect.js**:
 
-```
+```javascript
 var mongoose = require('mongoose');
 
 var connect = {
@@ -106,21 +130,23 @@ var connect = {
     connected: false,
 
     simpleConnect: function() {
-        var url= 'mongodb://127.0.0.1:27017/test';
+        'use strict';
+        var url = 'mongodb://127.0.0.1:27017/test';
         connect.connected = true;
         mongoose.connect(url);
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
-            connected = true;
+            connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
 
-    mlabConnect:function() {
+    mlabConnect: function() {
+        'use strict';
         connect.connected = true;
-        var userName = 'MyUserName';
-        var password = 'MyPassWord';
+        var userName = 'foo';
+        var password = 'foobar';
         var siteAndPort = 'ds049848.mongolab.com:49848';
         var databaseName = 'elvenlab01';
         var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
@@ -131,19 +157,21 @@ var connect = {
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
-            connected = true;
+            connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
 
     doConnection: function(useSimple) {
-				var connectType = useSimple || true;
-				if (connectType) {
-          connect.simpleConnect();
-				} else {
-          connect.mlabConnect();
-			  }
+        'use strict';
+        var connectType = useSimple || true;
+        if (connectType) {
+            connect.simpleConnect();
+        } else {
+            connect.mlabConnect();
+        }
     }
+
 };
 
 module.exports = connect;
@@ -286,57 +314,72 @@ var router = express.Router();
 var scientists = require('../models/scientists');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
-//var mongoose = require('mongoose');
 
 /* GET home page. */
-router.get('/', function(req, res, next) { 'use strict';
-  res.render('index', { title: 'Week09-MongooseBasics' });
+router.get('/', function(req, res, next) {
+    'use strict';
+    res.render('index', {
+        title: 'Week09-MongooseBasics'
+    });
 });
 
 var connected = false;
 
 router.get('/all-data', function(request, response) {
-  console.log("AllData route invoked.");
-  if (!connect.connected) {
-    connect.doConnection();
-  }
+    'use strict';
+    console.log('AllData route invoked.');
+    if (!connect.connected) {
+        connect.doConnection();
+    }
 
-  console.log("About to find scientists.");
-  scientists.find({}, function(err, data) {
-    console.log(data.length);
-    console.log(data[0]);
-    allData = data;
+    console.log('About to find scientists.');
+    scientists.find({}, function(err, allData) {
+        console.log(allData.length);
+        console.log(allData[0]);
 
-    allMongo.writeData('scientists.json', allData);
+        allMongo.writeData('scientists.json', allData);
 
-    response.send({
-      result: 'Success',
-      allData: data
+        response.send({
+            result: 'Success',
+            allData: allData
+        });
     });
-  });
 });
 
 router.get('/emptyCollection', function(request, response) {
-  scientists.remove({}, function(err) {
-    if (err) {
-      response.send({result: 'err', err: err});
-    } else {
-      response.send({result: 'collection removed'});
+    'use strict';
+    if (!connect.connected) {
+        connect.doConnection();
     }
-  });
+
+    scientists.remove({}, function(err) {
+        if (err) {
+            response.send({
+                result: 'err',
+                err: err
+            });
+        } else {
+            response.send({
+                result: 'collection removed'
+            });
+        }
+    });
 });
 
 router.get('/insertValidCollection', function(request, response) {
-  allMongo.readDataAndInsert(response);
+    'use strict';
+    allMongo.readDataAndInsert(response);
 });
 
 router.get('/:id', function(request, response) {
-  response.render(request.params.id, {});
+    'use strict';
+    response.render(request.params.id, {});
 });
-
 
 module.exports = router;
 ```
+
+## All Mongo
 
 In **routes/all-mongo.js**:
 
@@ -345,32 +388,29 @@ In **routes/all-mongo.js**:
  * Created by charlie on 6/5/16.
  */
 
-
 var express = require('express');
-//var router = express.Router();
 var connect = require('./connect');
-var scientists = require('../models/scientists');
+var Scientists = require('../models/scientists');
 var fs = require('fs');
-
-var allData;
 var totalScientistsSaved = 0;
 
 function allMongo() {
-
+    'use strict';
 }
 
 allMongo.numberOfScientists = 0;
 
 function insertScientist(scientist, response) {
+    'use strict';
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newScientist = new scientists({
-        "firstName": scientist.firstName,
-        "lastName": scientist.lastName,
-        "subject": scientist.subject,
-        "subjects": scientist.subjects,
-        "comments": scientist.comments
+    var newScientist = new Scientists({
+        'firstName': scientist.firstName,
+        'lastName': scientist.lastName,
+        'subject': scientist.subject,
+        'subjects': scientist.subjects,
+        'comments': scientist.comments
     });
 
     console.log('inserting', newScientist.lastName);
@@ -380,33 +420,54 @@ function insertScientist(scientist, response) {
         console.log('saved: ', newScientist.lastName, allMongo.numberOfScientists, totalScientistsSaved);
 
         if (totalScientistsSaved === allMongo.numberOfScientists) {
-            //mongoose.disconnect();
-            response.send({result: 'Success'});
+            response.send({
+                result: 'Success Saving Scientists',
+                totalSaved: totalScientistsSaved
+            });
         }
     });
 }
 
 allMongo.writeData = function(fileName, data) {
-    var data = JSON.stringify(data, null, 4);
-    fs.writeFile(fileName, data, function(err, data) {
-        if (err) throw(err);
+    'use strict';
+    var dataAsString = JSON.stringify(data, null, 4);
+    fs.writeFile(fileName, dataAsString, function(err, result) {
+        if (err) {
+            throw (err);
+        }
         console.log('success writing file');
     });
-}
+};
 
 allMongo.readDataAndInsert = function(response) {
-    fs.readFile('ValidScientists.json', function(err, scientists) {
-        if (err) throw (err);
-        scientists = JSON.parse(scientists);
-        allMongo.numberOfScientists = scientists.length;
-        for (var i = 0; i < scientists.length; i++) {
-            insertScientist(scientists[i], response);
+    'use strict';
+    fs.readFile('ValidScientists.json', function(err, scientistsText) {
+        if (err) {
+            throw (err);
+        }
+        scientistsText = JSON.parse(scientistsText);
+        totalScientistsSaved = 0;
+        allMongo.numberOfScientists = scientistsText.length;
+        for (var i = 0; i < scientistsText.length; i++) {
+            insertScientist(scientistsText[i], response);
         }
     });
-}
+};
 
 module.exports = allMongo;
 ```
+
+## Another query
+
+Don't forget to open a terminal and type **mongo** to start the mongo shell. Then do something like this:
+
+<pre>
+show dbs
+use test
+show collections
+db.scientists.find()
+db.scientists.find({} , {_id: 0, firstName: 1, lastName: 1})
+</pre>
 
 ## Valid Scientists
 
@@ -673,6 +734,10 @@ Save in the root of your project as ValidScientists.json
     }
 ]
 ```
+
+## Turn it in
+
+Push you code to your repository, and when you turn it in tell me the branch and folder where it resides.
 
 
 [gypbson]:http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoose-gyp-bson
