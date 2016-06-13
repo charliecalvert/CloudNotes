@@ -9,7 +9,7 @@ The Prog 272 Final for 2016 should contain, at minimum, the following elements:
 - **grunt check** comes back clean
 - Running your program on Heroku
 
-This demonstrates that you understand the basics taught in the course, that you came to class regularly, and made a good faith effort to complete the course.
+These features of your final demonstrate that you understand the basics taught in the course, that you came to class regularly, and made a good faith effort to complete the course.
 
 Your next set of priorities include:
 
@@ -22,21 +22,28 @@ Your next set of priorities include:
 
 This demonstrates your ability to take some of the concepts taught in the core portion of the course and implement them on your own with a minimum of hand holding.
 
-Finally, you should work to produce a complete, well structured application:
+Finally, if you have completed the features outlined above, you can attempt to produce a complete, well structured application:
 
 - An Energy Types page with clickable **msnTypes** that filter your data
 - Database page to import JSON data into MongoDB and display it.
 - Settings page pulling and setting data in MongoDB
-- Ability to use either JSON or MongoDB as your datasource
-- Ability to use the settings page to dynamically switch back and forth between displaying JSON data and MongoDB data.
+- Ability to use either JSON or MongoDB as your datasource for the renewables page.
+- Ability to use the settings page to dynamically switch back and forth between displaying JSON data and MongoDB data for the renewables page.
 
 I'm expecting that most students won't be able to complete all the features of the final. Consider adopting the following strategies:
 
--
+- Put only your best work Heroku. This is your **release** and should contain only working features.
+  - Suppose you could only get one page working properly. Then put only that one page on Heroku.
+- The code in your main repository can optionally contain broken features if you want to show that you nearly completed X or Y. In general, it will help to show that you at least tried to complete a page rather than never tried at all. For instance, if you got parts of the Energy Types page working, but not all of it, then include that page even if it is buggy. In your repository, but not on Heroku, I want to see what you tried to do as well as what you completed successfully. Again, put only your best work on Heroku.
+- Don't work too hard. A sane approach to a course like this is to work steadily throughout the quarter. It is very hard to solve an entire quarters worth of problems in two days.
+  - I understand that not everyone came into this course with the same level of experience. Don't compare your work to the work of other students. I divided the features of the final into priorities in part to give students who are new to this kind of development some guidance. In some cases, just completing the first set of priorities will be enough to get you a respectable grade in this course. In other cases, I will expect to see nearly all the features in the third set of priorities completed. I think most of you know what I expect, but if you are unsure you can ask me for additional guidance. Consider, however, surprising me. Sometimes students do better than I expect. That's always nice.
+- Go to this page (the one you are reading right now) on the web frequently. Refresh the page at least once every time you visit it. At this stage, it will be difficult for me to add or remove features of the final, but it is likely that I will add hints or clarifications. You don't won't miss seeing a hint that could help you create a better program.
 
 Extra credit
 
 - Dynamically switch back and forth between using mLab and local data.
+- Have the ability to switch back and forth between MongoDB and JSON as the datasource on all your pages.
+  - This would include, on the database page, the ability to import Energy Types data.
 
 ## Images
 
@@ -82,11 +89,13 @@ select.form-control#dataType(name='dataType')
 
 **Figure03**: _Bootswatch Darkly Theme._
 
-## Core Files
+## Settings
 
-Some key files and commands:
+To help you get started using database in your app, let's add the ability to track some settings in MongoDB.
 
-- models/renewables.js
+Some key files and commands involved in implementing the settings page and its link to MongoDB:
+
+- models/settings.js
 - routes/connect.js
 - routes/all-mongo.js
 - public/javascript/database.js
@@ -97,37 +106,6 @@ Some files that need to change:
 - app.js
 
 npm install mongoose --save
-
-## Jade Routes {#jade-routes}
-
-A number of students have been confused about how to load jade. In particular, they have had trouble:
-
-- Building the URLs for their routes on the client side.
-- Setting up the routes for loading jade on the server side.
-
-To get a better understanding of these issues:
-
-- Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
-- See the [JadeRoutes][jade-routes] demo program from JsObjects.
-
-[loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
-[jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
-
-## Testing
-
-If you are having trouble getting your tests to run, don't forget to review the [testing section from the midterm][test-midterm]. Focus on comparing your karma.conf.js file with the one in the my [JasmineRequireJs][jas-req-js] example program.
-
-You will find the tests for the midterm here:
-
-- [JsObjects/Utilities/Templates/UnitTest/SolarVoyager][solar-tests]
-
-[test-midterm]: http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Midterm2016.html#testing
-[jsm-req-js]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
-[solar-tests]:https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarVoyager
-
-## Settings
-
-To help you get started using database in your app, let's add the ability to track some settings in MongoDB.
 
 ## Settings-Model
 
@@ -383,7 +361,26 @@ define(['settings'], function (settings) {
 
 The exact details of what happens in **home.js** are left as an exercise. You will have to add only a small amount of code that saves the settings to the **settings** object. This will involve a call to **settings.setSettings()**.
 
-## Database
+## Database Notes
+
+If you get **Unclean shutdown detected.**, run this to fix it:
+
+<pre>
+cd
+./mongod --repair
+</pre>
+
+On Cloud 9, To shutdown we should be able to do **CTRL-C** in the window where mongo is running. Or, try this from inside the mongo shell:
+
+<pre>
+db.shutdownServer()
+</pre>
+
+For more details on shuting down, go here:
+
+- <https://docs.mongodb.com/manual/tutorial/recover-data-following-unexpected-shutdown/>
+
+In mongo shell, to empty a collection: **db.myCollection.remove({})**.
 
 Make sure you put your preface your collections with prog219 and end them with your last name:
 
@@ -409,7 +406,6 @@ prog219_calvert_renewables
 prog272_calvert_renewables
 prog219_ng_renewables
 prog272_ng_renewables
-renewables
 </pre>
 
 ## Data Choice
@@ -471,8 +467,37 @@ Try adding a container to all your pages. Not to the jade for a directive, but t
 
 **NOTE**: _On a low resolution screen, or on a mobile device, you can't tell the difference between the two sets of jade shown above. But on a big screen, when the app is maximized, it becomes obvious. The screens at school are certainly big enough to show this._
 
+## Testing
+
+If you are having trouble getting your tests to run, don't forget to review the [testing section from the midterm][test-midterm]. Focus on comparing your karma.conf.js file with the one in the my [JasmineRequireJs][jas-req-js] example program.
+
+You will find the tests for the midterm here:
+
+- [JsObjects/Utilities/Templates/UnitTest/SolarVoyager][solar-tests]
+
+[test-midterm]: http://www.ccalvert.net/books/CloudNotes/Assignments/Prog272Midterm2016.html#testing
+[jsm-req-js]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
+[solar-tests]:https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarVoyager
+
+## Jade Routes {#jade-routes}
+
+A number of students have been confused about how to load jade. In particular, they have had trouble:
+
+- Building the URLs for their routes on the client side.
+- Setting up the routes for loading jade on the server side.
+
+To get a better understanding of these issues:
+
+- Read the [Loading Jade][loading-jade] section in the Elvenware Jade page.
+- See the [JadeRoutes][jade-routes] demo program from JsObjects.
+
+[loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
+[jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
+
 ## Turn it in
 
 Put your work in a branch called **Final** in a folder called **SolarVoyager**. If you do anything else other than this, please spell it out carefully when you turn in the Final. I will **take off points** and will likely ask you to re-submit if I don't immediately know where to look for final.
 
 Submit the URL of your program running on Heroku.
+
+**NOTE:** _It might also be helpful to submit the Heroku git URL. You can find it with this command issued in the root of your heroku project: **git remote -v**._
