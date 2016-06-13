@@ -15,8 +15,8 @@ These features of your final demonstrate that you understand the basics taught i
 Your next set of priorities include:
 
 - Ensuring your code is thoroughly refactored into
-  - Renewable and Energy Types folders on the client and server
-  - Files in the routes directory for handling various tasks such as responding to requests for  **renewables** data, **high-tech-energy** data and **settings** data.
+  - Renewable and Energy Types folders on the client and server (public/javascripts, views)
+  - Files in the routes directory for handling **settings** (database) data.
 - At least one of the following:
   - High Tech Energy Overview Page
   - High Tech Energy Types Page
@@ -342,6 +342,25 @@ myModule.factory('settings', function () {
     return settings;
 });
 ```
+
+Then in **home.js**, you will need to use dependency injecttion to access the settings object:
+
+```javascript
+elfApp.controller('HomeController', function($scope, $http, settings) {
+  // LOTS OF CODE OMITTED HERE
+})
+```
+
+Then in the same file, use it like this:
+
+```javascript
+$scope.submit = function() {
+    settings.setSettings($scope.formData);
+    etc ...
+}
+```
+
+Then in your renewables page, again use dependency injection to insert the object into the **RenewablesController**. You can then use it like this:
 
 ```javascript
 $scope.getRenewable = function() {
