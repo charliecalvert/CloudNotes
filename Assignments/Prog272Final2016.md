@@ -1,16 +1,76 @@
 ## Overview
 
-The Prog 272 Final for 2016.
+The Prog 272 Final for 2016 should contain, at minimum, the following elements:
+
+- Home and About pages
+- Renewables page
+- Renewables by index
+- Renewables by Year
+- Use a Bootswatch theme
+
+This demonstrates that you understand the basics taught in the course, that you came to class regularly, and made a good faith effort to complete the course.
+
+Your next priority should be to:
+
+- Thoroughly refactor your code into
+  - Renewable folders on the client and server
+  - Files in the routes directory for handling various tasks such as responding to requests for  **renewables** data, **high-tech-energy** data and **settings** data.
+- At least one of the following:
+  - High Tech Energy Overview Page
+  - High Tech Energy Types Page
+
+This demonstrates your ability to take some of the concepts taught in the core portion of the course and implement them on your own with a minimum of hand holding.
+
+Finally, you should work to add database elements:
+
+- Database page to import JSON data into MongoDB and display it.
+- Settings page pulling and setting data in MongoDB
+- Ability to use either JSON or MongoDB as your datasource
+- Ability to use the settings page to dynamically switch back and forth between displaying JSON data and MongoDB data.
+
+Extra credit
+
+- Dynamically switch back and forth between using mLab and local data.
+
+## Images
 
 ![Main Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-final-2016-01.png)
 
-**Figure 01**: _The main page of the final._
+**Figure 01**: _The home page of the final._
 
-![Database Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-final-2016-01.png)
+![Database Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-final-2016-02.png)
 
-**Figure 01**: _The database page is import JSON data into the MongoDb database._
+**Figure 01**: _The database page is import JSON data into the MongoDb database. In this screenshot you can see many of the menu items._
 
-## Install
+## Bootswatch
+
+[Bootswatch](https://bootswatch.com/) provides themes for bootstrap.
+
+Install it:
+
+<pre>
+bower install bootswatch --save
+</pre>
+
+Use it in **layout.jade**. Modify the line that loads **bootstrap.css** so that it looks something like this:
+
+<pre>
+link(rel='stylesheet', href='/components/bootswatch/cyborg/bootstrap.css')
+</pre>
+
+Cyborg is just one of the many themes available from bootswatch.
+
+- [Cerulean](https://bootswatch.com/cerulean/)
+- [Cosmo](https://bootswatch.com/cosmo/)
+- [Darkly](https://bootswatch.com/darkly/)
+- [Superhero](https://bootswatch.com/superhero/)
+- And so on. They are all linked from the main menu at the bootswatch site.
+
+![Bootswatch Cyborg Theme](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-final-2016-03.png)
+
+**Figure03**: _Bootswatch Cyborg Theme._
+
+## Core Files
 
 Some key files and commands:
 
@@ -69,6 +129,12 @@ var settingsSchema = mongoose.Schema({
 
 module.exports = mongoose.model('prog272_lastname_setting', settingsSchema);
 ```
+
+**NOTE**: _Please do not use hypens (-) in your model (collection) names. They work okay in mongoose, but the mongo shell has a hard time with them. Use underscores instead._
+
+Good: **module.exports = mongoose.model('prog272_lastname_setting', settingsSchema);**
+Bad: **module.exports = mongoose.model('prog272-lastname-setting', settingsSchema);**
+Bad: **module.exports = mongoose.model('prog272LastnameSetting', settingsSchema);**
 
 ## Settings-Database
 

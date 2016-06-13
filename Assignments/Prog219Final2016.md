@@ -2,11 +2,75 @@
 
 The Prog 219 Final for 2016.
 
-**NOTE**: _Please do not use hypens (-) in your model (collection) names. They work okay in mongoose, but the mongo shell has a hard time with them. Let's use underscores instead._
+The Prog 272 Final for 2016 should contain, at minimum, the following elements:
 
-Good: **module.exports = mongoose.model('prog219_lastname_setting', settingsSchema);**
-Bad: **module.exports = mongoose.model('prog219-lastname-setting', settingsSchema);**
-Bad: **module.exports = mongoose.model('prog219LastnameSetting', settingsSchema);**
+- Home and About pages
+- Renewables by index
+- Renewables by Year
+- Simple Format Page
+- Use a Bootswatch theme
+
+These features of your final demonstrate that you understand the basics taught in the course, that you came to class regularly, and made a good faith effort to complete the course.
+
+Your next priority should be to:
+
+- Thoroughly refactor your code into
+  - Renewable folders on the client and server
+  - Files in the routes directory for handling various tasks such as responding to requests for  **renewables** data, **high-tech-energy** data and **settings** data.
+- At least one of the following:
+  - High Tech Energy Overview Page
+  - High Tech Energy Types Page
+
+This demonstrates your ability to take some of the concepts taught in the core portion of the course and implement them on your own with a minimum of hand holding.
+
+Finally, you should work to add database elements:
+
+- Database page to import JSON data into MongoDB and display it.
+- Settings page pulling and setting data in MongoDB
+- Ability to use either JSON or MongoDB as your datasource
+- Ability to use the settings page to dynamically switch back and forth between displaying JSON data and MongoDB data.
+
+Extra credit
+
+- Dynamically switch back and forth between using mLab and local data.
+
+## Images
+
+![HomePage](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog210-final-2016-01.png)
+
+**Figure 01**: _The home page of the final._
+
+![Database Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog210-final-2016-02.png)
+
+**Figure 01**: _The database page is import JSON data into the MongoDb database. In this screenshot you can see many of the menu items._
+
+## Bootswatch
+
+[Bootswatch](https://bootswatch.com/) provides themes for bootstrap.
+
+Install it:
+
+<pre>
+bower install bootswatch --save
+</pre>
+
+Use it in **layout.jade**. Modify the line that loads **bootstrap.css** so that it looks something like this:
+
+<pre>
+link(rel='stylesheet', href='/components/bootswatch/cyborg/bootstrap.css')
+</pre>
+
+Cyborg is just one of the many themes available from bootswatch.
+
+- [Cerulean](https://bootswatch.com/cerulean/)
+- [Cosmo](https://bootswatch.com/cosmo/)
+- [Darkly](https://bootswatch.com/darkly/)
+- [Superhero](https://bootswatch.com/superhero/)
+- And so on. They are all linked from the main menu at the bootswatch site.
+
+![Bootswatch Cyborg Theme](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-final-2016-03.png)
+
+**Figure03**: _Bootswatch Darkly Theme._
 
 ## Database Notes
 
@@ -34,6 +98,13 @@ Make sure you put your preface your collections with prog219 and end them with y
 ```javascript
 module.exports = mongoose.model('prog219_calvert_renewables', renewablesSchema);
 ```
+
+**NOTE**: _Please do not use hypens (-) in your model (collection) names. They work okay in mongoose, but the mongo shell has a hard time with them. Let's use underscores instead._
+
+Good: **module.exports = mongoose.model('prog219_lastname_setting', settingsSchema);**
+Bad: **module.exports = mongoose.model('prog219-lastname-setting', settingsSchema);**
+Bad: **module.exports = mongoose.model('prog219LastnameSetting', settingsSchema);**
+
 In **routes/connect.js**, set your simple url to use a dbs called renew:
 
 ```javascript
