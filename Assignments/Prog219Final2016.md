@@ -218,6 +218,78 @@ elfApp.controller('HomeController', function ($scope, $http) {
 });
 ```
 
+## Settings Options
+
+You know how to load and save the settings for your application. The next step is to change the behavior of the application based on those settings.
+
+The user can choose to read data from either the database or a JSON file:
+
+- Database
+- JSON
+
+Let's capture that choice in a simple object to be stored in its own file called **public/javascripts/settings.js**:
+
+```javascript
+var myModule = angular.module('elfApp');
+
+myModule.factory('settings', function () {
+
+    function settings() {
+    }
+
+    settings.useDatabase = true;
+    settings.useLocalMongoDb = true;
+
+    var report = function () {
+        console.log('useDatabase', settings.useDatabase);
+        console.log('useLocalMongoDb', settings.useLocalMongoDb)
+    };
+
+    settings.setSettings = function (settings) {
+        this.useDatabase = settings.dataType.toLowerCase() === 'database';
+        this.useLocalMongoDb = settings.dataSource.toLowerCase() === 'local mongodb';
+        report()
+    };
+
+    return settings;
+});
+```
+
+```javascript
+$scope.getRenewable = function() {
+    var dataType = settings.useDatabase ? 0 : 1;
+    var urls = ['/database/allRenewables', 'data/Renewable.json'];
+    $http.get(urls[dataType])
+        .then(function(res) {
+            if (settings.useDatabase) {
+                $scope.renewable = renewableUtils.getComplexFormat(res.data.renewables);
+            } else {
+                $scope.renewable = res.data;
+            }
+            renewableUtils.init($scope.renewable);
+            renewableUtils.init($scope.renewable);
+            $scope.renewableUtils = renewableUtils;
+        });
+};
+```
+
+```javascript
+this.getComplexFormat = function(simpleRenewables) {
+    return simpleRenewables.map(function(renewable) {
+        return {
+            Year: renewable.year,
+            'Solar (quadrillion Btu)': renewable.solar,
+            'Geothermal (quadrillion Btu)': renewable.geothermal,
+            'Wind power (quadrillion Btu)': renewable.wind,
+            'Other biomass (quadrillion Btu)': renewable.biomass,
+            'Liquid biofuels (quadrillion Btu)': renewable.biofuels,
+            'Wood biomass (quadrillion Btu)': renewable.wood,
+            'Hydropower (quadrillion Btu)': renewable.hydropower
+        };
+    });
+};
+```
+
 ## Install
 
 Some key files and commands:

@@ -110,6 +110,7 @@ router.post('/updateSettings', function(request, response) {
                 doc.dataSource = request.body.dataSource;
                 doc.comment = request.body.comment;
                 doc.save();
+                response.send( {result: 'success', query: request.body });
             }
         }
     });
@@ -217,6 +218,7 @@ define(function() {
                         comment: $('#comment').val()
                     };
                     $.post('/databaseSettings/updateSettings', userData, function(result) {
+                        $('#debug').html(JSON.stringify(result, null, 4));
                         console.log(settings);
                     });
                 });
@@ -228,6 +230,66 @@ define(function() {
 });
 ```
 
+## Settings Options
+
+You know how to load and save the settings for your application. The next step is to change the behavior of the application based on those settings.
+
+The user can choose to read data from either the database or a JSON file:
+
+- Database
+- JSON
+
+Let's capture that choice in a simple object to be stored in its own file called **public/javascripts/settings.js**:
+
+```javascript
+define(function() {
+   return {
+        useDatabase: true,
+        useLocalMongoDb: true,
+        report: function() {
+            console.log('useDatabase', this.useDatabase);
+            console.log('useLocalMongoDb', this.useLocalMongoDb)
+        },
+        setSettings: function(settings) {
+            this.useDatabase = settings.dataType.toLowerCase() === 'database';
+            this.useLocalMongoDb = settings.dataSource.toLowerCase() === 'local mongodb';
+            this.report()
+        }
+    };
+});
+```
+
+Given this object, we can now decide whether to get our data from the database or from a JSON file depending on the options the user choose. For instance, in **public/javascripts/renewables/renewables.js**, we can use the require js dependency injection to access the settings object and decide whether or not to use the mongodb database:
+
+```javascript
+define(['jquery', 'settings'], function($, settings) {
+    'use strict';
+
+    var index = 0;
+    //var useDatabase = true;
+
+    function getRenewable() {
+        //console.log('getRenewable called');
+        var routeType = settings.useDatabase ? 0 : 1;
+
+        var renewableRoutes = ['/allRenewables', '/renewables'];
+        $.getJSON(renewableRoutes[routeType], function(response) {
+            // CODE OMITTED HERE
+        });
+    }
+});
+```
+
+Your job is to make sure the settings are set correctly when the user either loads or saves the settings from the database. This typically takes place in **home.js** Again, you will use dependency injection to access the settings object:
+
+```javascript
+define(['settings'], function (settings) {
+  // MAKE SURE THE SETTINGS ARE SAVED TO THE settings OBJECT
+  // CODE OMITTED HERE
+});
+```
+
+The exact details of what happens in **home.js** are left as an exercise. You will have to add only a small amount of code that saves the settings to the **settings** object. This will involve a call to **settings.setSettings()**.
 
 ## Database
 
