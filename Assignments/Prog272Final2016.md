@@ -19,6 +19,7 @@ Your next set of priorities include:
 - At least one of the following:
   - High Tech Energy Overview Page
   - High Tech Energy Types Page
+- Menu works on both desktop and mobile device
 
 This demonstrates your ability to take some of the concepts taught in the core portion of the course and implement them on your own with a minimum of hand holding.
 
@@ -206,6 +207,17 @@ router.get('/getSettings', function(request, response) {
     });
 });
 ```
+
+In **connect.js** you need to change this line:
+
+```javascripts
+db.once('open', function(callback) {
+    connect.connected = true;   <== THIS IS CORRECT
+    console.log('Opened connection to mongo');
+});
+```
+
+If you see **connected = true;** then you need to change it as shown above. Change in both simple and mLab. This is around lines 20 and 42 of **routes/connect.js**.
 
 ## Settings Home Page
 
@@ -493,6 +505,10 @@ To get a better understanding of these issues:
 
 [loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
 [jade-routes]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
+
+## Menu
+
+You should have menu that works both on a mobile device and on desktop.
 
 ## Turn it in
 
