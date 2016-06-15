@@ -707,24 +707,7 @@ The assignment now has the [right code](#connecting).
 
 ### Mongoose Basics Empty Collection
 
-Notice that emptyCollection has now changed and contains a check to make sure you are connected:
-
-```javascript
-router.get('/emptyCollection', function(request, response) {
-    'use strict';
-    if (!connect.connected) {
-        connect.doConnection();
-    }
-  scientists.remove({}, function(err) {
-    if (err) {
-      response.send({result: 'err', err: err});
-    } else {
-      response.send({result: 'collection removed'});
-    }
-  });
-});
-```
-The assignment now has the [right code](#step-seven).
+Notice that emptyCollection has now changed and contains a check to make sure you are connected. The assignment now has the [right code](#step-seven).
 
 ### Match get and post
 
@@ -741,3 +724,7 @@ router.get('/insertValidCollection', function(request, response) { ... })
 ```
 
 If you do a get on the client, do a get on the server. Don't do a get in one place and post in the other. (I had this mixed up in one version of the assignment. You need to get this cleaned up if you followed my example and made a mistake.)
+
+### Scientists File
+
+Be sure to [add the code to ignore scientists](#ignore-scientists).
