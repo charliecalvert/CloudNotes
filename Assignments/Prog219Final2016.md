@@ -87,6 +87,8 @@ Note that some of the controls, such as selects, won't render correctly with som
 select.form-control(ng-model='formData.dataSource')
 </pre>
 
+Add the **.form-confol** CSS class to all your HTML **SELECT** and **INPUT** controls. I just opened each jade file, looked for **SELECT** and **INPUT** controls, and added the class. Without it, I was having trouble reading the text in some of my controls when using certain bootswatch themes. In particular, I was sometimes finding that the text was rendering as black on a black background or white on a white background, making the text difficult or impossible to read. Just use the appropriate [bootstrap CSS](http://getbootstrap.com/css/) to fix these kinds of problems.
+
 ![Bootswatch Cyborg Theme](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog219-final-2016-03.png)
 
 **Figure03**: _Bootswatch Darkly Theme._
@@ -547,7 +549,7 @@ You should have menu that works both on a mobile device and on desktop.
 
 ## Turn it in
 
-Put your work in a branch called **Final** in a folder called **SolarVoyager**. If you do anything else other than this, please spell it out carefully when you turn in the Final. I will **take off points** and will likely ask you to re-submit if I don't immediately know where to look for final.
+Put your work in a branch called **Final** in a folder called **SolarExplorer**. If you do anything else other than this, please spell it out carefully when you turn in the Final. I will **take off points** and will likely ask you to re-submit if I don't immediately know where to look for final.
 
 Submit the URL of your program running on Heroku.
 

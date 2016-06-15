@@ -120,6 +120,8 @@ In **index.js**, make sure that this is the last line in the file:
 
 	module.exports = router;
 
+## Connecting
+
 Here is a tool for connecting to the database. It belongs in its own file called **routes/connect.js**:
 
 ```javascript
@@ -221,7 +223,7 @@ $(document).ready(function() { 'use strict';
     var insertUrl = '/insertValidCollection';
 
     function insertCollection() {
-        var jqxhr = $.post(insertUrl, function(result) {
+        var jqxhr = $.get(insertUrl, function(result) {
             alert( "success" );
             console.log(JSON.stringify(result, null, 4));
         })
@@ -683,3 +685,59 @@ Push you code to your repository, and when you turn it in tell me the branch and
 
 
 [gypbson]:http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoose-gyp-bson
+
+
+## Additional Notes
+
+Things to remember.
+
+### Mongoose Basics Connect
+
+After you run *grunt check*, run your tests and your program again to make sure everything still works!
+
+This was my bug not yours, so you will not lose points for this. Nevertheless, for the final, be sure that you write the follwing in **routes/connect.js**:
+
+```javascript
+connect.connected = true;
+```
+
+This is about lines 14 and 35.
+
+The assignment now has the [right code](#connecting).
+
+### Mongoose Basics Empty Collection
+
+Notice that emptyCollection has now changed and contains a check to make sure you are connected:
+
+```javascript
+router.get('/emptyCollection', function(request, response) {
+    'use strict';
+    if (!connect.connected) {
+        connect.doConnection();
+    }
+  scientists.remove({}, function(err) {
+    if (err) {
+      response.send({result: 'err', err: err});
+    } else {
+      response.send({result: 'collection removed'});
+    }
+  });
+});
+```
+The assignment now has the [right code](#step-seven).
+
+### Match get and post
+
+Here we do a **get** on the client:
+
+```javascript
+var jqxhr = $.get(insertUrl, function(result) { ... })
+```
+
+Here is the server side, which is also a **get**:
+
+```javascript
+router.get('/insertValidCollection', function(request, response) { ... })
+```
+
+If you do a get on the client, do a get on the server. Don't do a get in one place and post in the other. (I had this mixed up in one version of the assignment. You need to get this cleaned up if you followed my example and made a mistake.)

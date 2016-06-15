@@ -14,7 +14,7 @@ These features of your final demonstrate that you understand the basics taught i
 Your next set of priorities include:
 
 - Ensuring your code is thoroughly refactored into
-  - Renewable and Energy Types folders on the client and server
+  - Renewable and Energy Types folders on the client and server (public/javascripts, views)
   - Files in the routes directory for handling various tasks such as responding to requests for  **renewables** data, **high-tech-energy** data and **settings** data.
 - At least one of the following:
   - High Tech Energy Overview Page
@@ -85,6 +85,8 @@ Note that some of the controls, such as selects, won't render correctly with som
 <pre>
 select.form-control#dataType(name='dataType')
 </pre>
+
+Add the **.form-confol** CSS class to all your HTML **SELECT** and **INPUT** controls. I just opened each jade file, looked for **SELECT** and **INPUT** controls, and added the class. Without it, I was having trouble reading the text in some of my controls when using certain bootswatch themes. In particular, I was sometimes finding that the text was rendering as black on a black background or white on a white background, making the text difficult or impossible to read. Just use the appropriate [bootstrap CSS](http://getbootstrap.com/css/) to fix these kinds of problems.
 
 ![Bootswatch Darkly Theme](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog272-final-2016-03.png)
 
