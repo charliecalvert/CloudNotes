@@ -1,6 +1,10 @@
 ## Overview
 
-The Prog 219 Final for 2016 should contain, at minimum, the following elements:
+The Prog 219 Final for 2016 is broken out into their tiers, three sets of priorities. I'll list the basic priorities first, intermediate level priorities second, and advanced priorities third. The more experience you have as a developer, the deeper into this list you should go. Those with little experience may complete only features from the basic tier and perhaps one or two items from the intermediate level. Those with lots of experience should get deeper into the list of advanced priorities.
+
+**NOTE**: _To some degree, you are being graded based on your relationship with others in the class who have a similar level of experience. Exactly what grade people with little experience will get depends in part on how other students with little experience did. Likewise, experienced students will be graded in relationship to other experienced students._
+
+Everyone's program should contain, at minimum, the following elements:
 
 1. Home and About pages
 - Renewables by Index and Renewables by Year pages
@@ -9,6 +13,7 @@ The Prog 219 Final for 2016 should contain, at minimum, the following elements:
 - Karma tests run smoothly
 - **grunt check** comes back clean
 - Running your program on Heroku
+  - Having the database code working in Heroku is an advanced, third tier priority. I want to see your core program, that loads JSON, running on Heroku. Getting the database running on Heroku is an advanced, level three accomplishment.
 
 These features of your final demonstrate that you understand the basics taught in the course, that you came to class regularly, and made a good faith effort to complete the course.
 
@@ -31,6 +36,7 @@ Finally, if you have completed the features outlined above, you can attempt to p
 - Settings page pulling and setting data in MongoDB
 - Ability to use either JSON or MongoDB as your datasource for the renewables page.
 - Ability to use the settings page to dynamically switch back and forth between displaying JSON data and MongoDB data for the renewables page.
+- Get the database working on Heroku.
 
 I'm expecting that most students won't be able to complete all the features of the final. Consider adopting the following strategies:
 
@@ -546,6 +552,15 @@ To get a better understanding of these issues:
 ## Menu
 
 You should have menu that works both on a mobile device and on desktop.
+
+## Trouble Shoot Errors {#errors}
+
+- Run **grunt check** and your unit tests. Get them to pass. (If you can't run your tests, move on and come back to them later.)
+- Load your program in Chrome with the developer tools open
+- Go to the network page and make sure it is free of any errors
+- Go to the console page and fix errors you see there
+- Also look in the bash shell to see if errors are showing up there.
+- Finally, go to the source page and step through any code that is still broken.
 
 ## Turn it in
 

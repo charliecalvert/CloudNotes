@@ -1,6 +1,9 @@
 ## Overview
 
-The Prog 272 Final for 2016 should contain, at minimum, the following elements:
+The Prog 272 Final for 2016 is broken out into their tiers, three sets of priorities. I'll list the basic priorities first, intermediate level priorities second, and advanced priorities third. The more experience you have as a developer, the deeper into this list you should go. Those with little experience may complete only features from the basic tier and perhaps one or two items from the intermediate level. Those with lots of experience should get deeper into the list of advanced priorities.
+
+**NOTE**: _To some degree, you are being graded based on your relationship with others in the class who have a similar level of experience. Exactly what grade people with little experience will get depends in part on how other students with little experience did. Likewise, experienced students will be graded in relationship to other experienced students._
+
 
 1. Home and About pages
 - Renewables, Renewables by Index and Renewables by Year Pages
@@ -510,7 +513,57 @@ To get a better understanding of these issues:
 
 ## Menu
 
-You should have menu that works both on a mobile device and on desktop.
+You should have menu that works both on a mobile device and on desktop. Be sure the hamburger manu closes automatically after you make a selection. In **main.js**, near the bottom, add code to hide the main when an anchor is selected:
+
+```javascript
+requirejs(['jquery'], function($) {
+    'use strict';
+    requirejs(['bootstrap', 'control'], function(bootstrap, control) {
+        control.init();
+        $('.navbar-nav li.trigger-collapse a').click(function(event) {
+            $('.navbar-collapse').collapse('hide');
+        });
+    });
+});
+```
+
+The three new lines which we use to close the menu after a selection are listed directly after the call to **control.init()**:
+
+```javascript
+$('.navbar-nav li.trigger-collapse a').click(function(event) {
+    $('.navbar-collapse').collapse('hide');
+});
+```
+
+Remember that if you have a link from the menu, and a link from a button, don't try to use IDs to form the link between the button/menu and the code that you want to execute. When setting up the event handler, use a class instead. Here is the menu with a class called **.renewablesMenu**:
+
+<pre>
+li.trigger-collapse(ng-class="{ active: isActive('/renewables')}")
+    a.renewablesMenu Renewables
+</pre>
+
+And here is your button:
+
+<pre>
+button.renewablesMenu.btn.btn-info Renewables
+</pre>
+
+And here is the code that sets up the event handler:
+
+```javascript
+$('.renewablesMenu').click(renewables.init);
+```
+
+## Trouble Shoot Errors {#errors}
+
+Always approach errors one at a time. If something is not working:
+
+- Run **grunt check** and your unit tests. Get them to pass. (If you can't run your tests, move on and come back to them later.)
+- Load your program in Chrome with the developer tools open
+- Go to the network page and make sure it is free of any errors
+- Go to the console page and fix errors you see there
+- Also look in the bash shell to see if errors are showing up there.
+- Finally, go to the source page and step through any code that is still broken.
 
 ## Turn it in
 

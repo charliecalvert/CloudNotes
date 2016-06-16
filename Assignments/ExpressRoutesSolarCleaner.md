@@ -81,3 +81,63 @@ module.exports = router;
 Hopefully you can see that we are, little by little, refactoring our code so that it becomes easier and easier to understand.
 
 Put it in branch **week09** and tell me the name of the folder as well. I'm expecting **SolarVoyager**.
+
+
+## Additional Notes
+
+Additional notes.
+
+### Use Unique Names {#unique-names}
+
+See this elvenware section on [unique names][unique-names].
+
+[unique-names]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#unique-names
+
+### Typical Route
+
+To see an example of how we:
+
+- load jade
+- call server side code
+- inside one program
+- That has both a **routes/index.js** file
+- And a **routes/renewables.js** file
+- See this example: [NodeJade][jade-routes]
+- And this text: [loading-jade]
+
+[jade-routes]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/JadeRoutes
+[loading-jade]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#loading-jade
+
+Here is a summary of the route for loading **Renewable.json**. In **app.js**
+
+```javascript
+var renewables = require('./routes/renewables');
+app.use('/renewable-routes/', renewables);
+```
+
+In **routes/renewables**:
+
+```javascript
+router.get('/', function(request, response) {
+    fs.readFile('data/Renewable.json', 'utf8', function(err, data) {
+      CODE OMITTED...
+    });
+});
+```
+
+On the client, ask for the **Renewable.json**:
+
+```javascript
+$.getJSON('/renewable-routes', function(response) {
+```
+
+Switching topics, let's review loading jade. Also in **reoutes/renewables.js**, you load jade like this:
+
+```javascript
+router.get('/:id', function(request, response) {
+    'use strict';
+    response.render('renewables/' + request.params.id, {
+        title: 'ElfComponent'
+    });
+});
+```
