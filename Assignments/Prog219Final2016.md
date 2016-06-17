@@ -73,6 +73,14 @@ Install it:
 bower install bootswatch --save
 </pre>
 
+In bower.json, you will probably have to edit the entry so it looks like this:
+
+```javascript
+"bootswatch": "^3.3.6"
+```
+
+Make sure it does **not** contain **"^3.3.6+2"**.
+
 Use it in **layout.jade**. Modify the line that loads **bootstrap.css** so that it looks something like this:
 
 <pre>
@@ -531,9 +539,6 @@ You will find the tests for the midterm here:
 
 - [JsObjects/Utilities/Templates/UnitTest/SolarExplorer][solar-tests]
 
-[test-midterm]: http://www.ccalvert.net/books/CloudNotes/Assignments/Prog219Midterm2016.html#testing
-[solar-tests]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarExplorer
-
 ## Jade Routes {#jade-routes}
 
 A number of students have been confused about how to load jade. In particular, they have had trouble:
@@ -562,6 +567,82 @@ You should have menu that works both on a mobile device and on desktop.
 - Also look in the bash shell to see if errors are showing up there.
 - Finally, go to the source page and step through any code that is still broken.
 
+## Testing useDatabase Settings {#test-settings}
+
+It turned out the fix to get the tests working with settings object was both simple and non-intrusive. The fix is now available in JsObjects in the [SolarExplorer Templates area][solar-tests].
+
+The beginning lines of [**test-renewables.js**][test-renewables] tell the story:
+
+```javascript
+describe('Renewables Suite', function() {
+    'use strict';
+
+    var $httpBackend;
+    var scope;
+    var settings = { useDatabase: false };
+
+    // Set up the module
+    beforeEach(module('elfApp'));
+
+    beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_, _$controller_) {
+        scope = _$rootScope_.$new();
+        var $compile = _$compile_;
+        $httpBackend = _$httpBackend_;
+        _$controller_('RenewablesController', {
+            $scope: scope,
+            settings: settings
+        });
+    }));
+```
+
+ There is a new variable at the top called **settings** which mocks out the **useDatabase** part of the settings object that we care about. This mock **settings** object is then injected into the **RenewablesController** near the bottom of the listing, in the object passed to the controller:
+
+```javascript
+_$controller_('RenewablesController', {
+  $scope: scope,
+  settings: settings
+});
+```
+
+That turned out to be all that was necessary. Now the **getRenewables** method has access during our tests to a mock **settings** object that has **useDatabase** set to false, which is what we want for these tests.
+
+This change does not break the code that passes a URL directly to **getRenewables**. In other words, it works whether or not you are using the settings object to configure the users choice of either JSON or MongoDb data. If you are using our old code, before we introduced the database, then these updated tests should still work for you.
+
+**NOTE**: _If you don't use the **settings** object, then this solution may not work for you. I believe, however, that using the settings object is a good idea if you want to implement the code that allows the user to switch between a JSON and MongoDb datasource._
+
+## Ignore Files Written to Disk {#ignore}
+
+Some of you are writing a file to disk when you insert data into the database. Remember that in MongooseBasics we learned how to teach nodemon to ignore that file so that it did not restart the project while you were in the middle of an operation:
+
+- [Ignore Scientists][ignore-file]
+
+[ignore-file]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html#ignore-scientists
+
+That may not be the name of the file you want to ignore in this case, but be sure you do teach nodemon to ignore any JSON files that you write to disk during program operation. Either that, or start the program with **node** rather than **nodemon** when turning in the final.
+
+## Inserting Data Twice
+
+This was a bug on my end, yet at least a few students should have been able to fix it.
+
+If you insert multiple times in one session, then **totalRenewablesSaved** gets increment past 12, and the program never sends a message back to the client that it has completed inserting data. The fix is simple: just set **totalRenewablesSaved** to zero before each insert:
+
+```javascript
+allMongo.readDataAndInsert = function(response) {
+    'use strict';
+    fs.readFile('data/Renewable.json', function(err, renewables) {
+        if (err) {
+            throw (err);
+        }
+        renewables = JSON.parse(renewables);
+        totalRenewablesSaved = 0;    <================= FIX IS HERE
+        allMongo.numberOfRenewables = renewables.length;
+        for (var i = 0; i < renewables.length; i++) {
+            insertRenewable(renewables[i], response);
+        }
+    });
+};
+```
+
 ## Turn it in
 
 Put your work in a branch called **Final** in a folder called **SolarExplorer**. If you do anything else other than this, please spell it out carefully when you turn in the Final. I will **take off points** and will likely ask you to re-submit if I don't immediately know where to look for final.
@@ -569,3 +650,7 @@ Put your work in a branch called **Final** in a folder called **SolarExplorer**.
 Submit the URL of your program running on Heroku.
 
 **NOTE:** _It might also be helpful to submit the Heroku git URL. You can find it with this command issued in the root of your heroku project: **git remote -v**._
+
+[test-midterm]: http://www.ccalvert.net/books/CloudNotes/Assignments/Prog219Midterm2016.html#testing
+[solar-tests]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/Templates/UnitTest/SolarExplorer
+[test-renewables]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/UnitTest/SolarExplorer/test-renewables.js

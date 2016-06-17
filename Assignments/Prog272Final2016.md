@@ -69,6 +69,14 @@ Install it:
 bower install bootswatch --save
 </pre>
 
+In bower.json, you will probably have to edit the entry so it looks like this:
+
+```javascript
+"bootswatch": "^3.3.6"
+```
+
+Make sure it does **not** contain **"^3.3.6+2"**.
+
 Use it in **layout.jade**. Modify the line that loads **bootstrap.css** so that it looks something like this:
 
 <pre>
@@ -554,6 +562,28 @@ And here is the code that sets up the event handler:
 $('.renewablesMenu').click(renewables.init);
 ```
 
+## Disable Buttons
+
+In some cases, such as the Database page, you want to prevent the user from clicking buttons too quickly. In other words, if a call is going to take a long time, such as inserting the data on mLab, then you don't want the user to try to view or empty the collection until the insert is completed. Here are some very broad hints on how to proceed:
+
+```javascript
+function enableAll(disable) {
+    $('#convertRenewables').prop('disabled', disable);
+    $('#allRenewables').prop('disabled', disable);
+    $('#emptyRenewables').prop('disabled', disable);
+}
+
+function insertCollection() {
+    $('#allRenewables').prop('disabled', true);
+    $('#emptyRenewables').prop('disabled', true);
+    $.getJSON('/insertRenewables', function(response) {
+            enableAll(false);
+            // ETC
+    });
+```
+
+Adopt this code as appropriate to your project. For instance, the route I call in the first parameter to **getJSON** may not be write for your final project.
+
 ## Trouble Shoot Errors {#errors}
 
 Always approach errors one at a time. If something is not working:
@@ -564,6 +594,37 @@ Always approach errors one at a time. If something is not working:
 - Go to the console page and fix errors you see there
 - Also look in the bash shell to see if errors are showing up there.
 - Finally, go to the source page and step through any code that is still broken.
+
+## Ignore Files Written to Disk {#ignore}
+
+Some of you are writing a file to disk when you insert data into the database. Remember that in MongooseBasics we learned how to teach nodemon to ignore that file so that it did not restart the project while you were in the middle of an operation:
+
+- [Ignore Scientists][ignore-file]
+
+[ignore-file]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html#ignore-scientists
+
+That may not be the name of the file you want to ignore in this case, but be sure you do teach nodemon to ignore any JSON files that you write to disk during program operation. Either that, or start the program with **node** rather than **nodemon** when turning in the final.
+
+This was a bug on my end, yet at least a few students should have been able to fix it.
+
+If you insert multiple times in one session, then **totalRenewablesSaved** gets increment past 12, and the program never sends a message back to the client that it has completed inserting data. The fix is simple: just set **totalRenewablesSaved** to zero before each insert:
+
+```javascript
+allMongo.readDataAndInsert = function(response) {
+    'use strict';
+    fs.readFile('data/Renewable.json', function(err, renewables) {
+        if (err) {
+            throw (err);
+        }
+        renewables = JSON.parse(renewables);
+        totalRenewablesSaved = 0;    <================= FIX IS HERE
+        allMongo.numberOfRenewables = renewables.length;
+        for (var i = 0; i < renewables.length; i++) {
+            insertRenewable(renewables[i], response);
+        }
+    });
+};
+```
 
 ## Turn it in
 

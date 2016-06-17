@@ -23,46 +23,18 @@ Open **Week11-MongooseComments** in WebStorm and change the name from MongooseSu
 
 ## Step Two
 
-Handle connection to the MongoDb database.
+Create a connection to the MongoDb database.
 
-The goal here is to create a share-able file that can be used when we need to connect to our database. This is needed because our new application is going to have two pieces of middleware both of which need to connect to the Mongoose database:
+Below you will reusable code that can be used when we need to connect to our database. This is needed because our new application is going to have two pieces of middleware both of which need to connect to the Mongoose database:
 
 - **routes/index.js**  will be able to retrieve all the data from the database. In our final, this file might be also used for other tasks such as inserting and deleting scientists and updating the subjects. In short, it handles everything except the comments.
 - **routes/comments.js** will only handle comments. The point is that the CRUD operations for comments are complex enough that they belongs in their own module. We are following the rule that says each object should do one thing and have only one reason for change. The **comments.js** module follows that rule reasonable well, in that it only will change if our technique for handling **comments** changes.
 
 **NOTE**: *It is arguable that we could break more code out of **index.js** and into its own middleware file. I would, in fact, do that, but we have simply run out of time this quarter.*
 
-Here is the **connect.js** file that handles the connection to the mongoose database for both **routes/index.js** and **routes/comments.js**:
+See the [details of how to connect][connect-details] on Elvenware:
 
-```javascript
-var mongoose = require('mongoose');
-
-var connect = {
-
-	connected: false,
-
-	doConnection: function() {
-		connect.connected = true;
-		var userName = 'csc';
-		var password = 'Re*lD*t*22#';
-		var siteAndPort = 'ds049848.mongolab.com:49848';
-		var databaseName = 'elvenlab01';
-		var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
-		console.log(url);
-		mongoose.connect(url);
-
-		// This part is optional
-		var db = mongoose.connection;
-		db.on('error', console.error.bind(console, 'connection error:'));
-		db.once('open', function(callback) {
-			connected = true;
-			console.log('Opened connection to mongo');
-		});
-	}
-};
-
-module.exports = connect;
-```
+[connect-details]:http://www.elvenware.com/charlie/development/database/NoSql/MongoDb.html#how-to-connect
 
 ## Step Three
 
