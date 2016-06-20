@@ -116,6 +116,20 @@ Push your app:
 git push heroku master
 </pre>
 
+## Use Node not Nodemon {#nodemon-no}
+
+In package.json, we should replace **nodemon** with **node**. We like nodemon because it automatically restarts our application when we make changes to our code. But that is not helpful once we are deploying. At that stage, we are no longer changing code, and so we don't need nodemon.
+
+If you do keep nodemon, consider using **nodemon.json** to be sure that writing a JSON file to disk does not restart your project in the middle of a database operation. Here we tell nodemon to ignore changes to a file called **renewables.json**:
+
+```javascript
+{
+  "verbose": true,
+  "ignore": ["renewables.json", "**/components/**"]
+}
+```
+
+
 ## Deploy Checklist
 
 Here are all the commands seen at once, as culled from my bash history. It might serve as something like a checklist.
