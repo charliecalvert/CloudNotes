@@ -42,41 +42,30 @@ npm install express-session --save
 
 ## Step Two
 
-Setup Mongoose in a file called **routes/db.js**.
-The **getUrl** method is designed to work with [MongoLab](https://mongolab.com/). Fill
-in your own **userName**, **password**, **siteAndPort** and database name:
-
-```
-module.exports = {
-	getUrl: function() {
-    var baseUrl = 'mongodb://';
-		var userName = 'USER-NAME';
-		var password = 'PASSWORD';
-		var siteAndPort = 'ds?????.mongolab.com:?????';
-		var databaseName = 'DB-NAME';
-		var url = baseUrl + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
-		console.log(url);
-		return url;
-	}
-}
-```
-
-If working with a local database, then do something like this:
-
-    'url' : 'mongodb://localhost/test'
-
-Define the schema for your database in **models/user.js**. To get a working copy of the file:
+To connect to the MongoDb database, I've been using the **connect.js** file from the **$ELF_TEMPLATES/Database** directory. Copy **connect.js** into the **routes** directory
 
 ```bash
-cp -r $ELF_TEMPLATES/SignIn/models/ .
+cp $ELF_TEMPLATES/Database/connect.js routes/.
 ```
+
+### Define Schema
+
+Define the schema for your database in **models/user.js**. You can do something like the following to copy the file into the models directory:
+
+```bash
+cp -r $ELF_TEMPLATES/SignIn/models .
+```
+
+The above command creates a local project folder called **models** and copies the **user.js** file into it. Issue this command only once, otherwise you will end up with nested folders.
+
+**NOTE**: _If something goes wrong, you can always delete the local **models** directory and try again. (Don't delete the **$ELF_TEMPLATES/SignIn/models** directory!)_
 
 ## Step Two
 
 Let's work on the front end. Retrieve the jade for the various dialogs needed to complete the sign in process:
 
 ```
-cp $ELF_TEMPLATES/SignIn/views/*.jade views/.
+cp -v $ELF_TEMPLATES/SignIn/views/*.jade views/.
 ```
 
 We just copied in three files:
@@ -94,12 +83,12 @@ called **express-session**, **Mongoose** and **Passport**, all of which should a
 
 In **app.js**, about line 8.
 
+New way:
+
 ```javascript
-var dbConfig = require('./routes/db');
-var mongoose = require('mongoose');
 // Connect to DB
-console.log('Mongoose URL:', dbConfig.getUrl());
-mongoose.connect(dbConfig.getUrl());
+var connect = require('./routes/connect');
+connect.doConnection(true);
 ```
 
 And remove the line that reads, as we will include it later:
@@ -108,7 +97,7 @@ And remove the line that reads, as we will include it later:
 var routes = require('./routes/index')
 ```
 
-On about line 13, comment out the existing routes call:
+More specifically, on about line 13, comment out the existing routes call:
 
 	// var routes = require('./routes/index');
 
@@ -147,6 +136,12 @@ You just copied the following files into a folder called **passport** :
 - login.js
 - signup.js
 
+Copy **SpaceNeedle.png** to the **public/images** directory:
+
+<pre>
+cp $ELF_TEMPLATES/SignIn/public/SpaceNeedle.png public/images/.
+</pre>
+
 ## Step Five
 
 Set up the routes for logging in and signing up.
@@ -165,65 +160,21 @@ router.post('/login', passport.authenticate('login', {
   }));
 ```
 
-In **routes/index.js**
+Be careful with the next command, as it will overwrite your existing **index.js** file. Since this is a new project, the command should not cause any harm. However, if you are working with an existing project, and have already modified **routes/index.js**, then open **$ELF_TEMPLATES/SignIn/routes/index.js** in an editor, and selectively copy in the contents of the file, or use the method described below in the [alternative login](#alternative-login).
+
+If you starting fresh, and can safely replace your **routes/index.js** file, then start by copying in the default SignIn **index.js** file, overwriting the existing index.js:
+
+<pre>
+cp $ELF_TEMPLATES/SignIn/routes/index.js routes/.
+</pre>
+
+The most important line is this one:
 
 ```javascript
-var express = require('express');
-var router = express.Router();
-
-var isAuthenticated = function (req, res, next) {
-    // Passport added the this method to the request object.
-    console.log('isAuthenticated called');
-    if (req.isAuthenticated()) {
-        console.log('successfully authenticated');
-        return next();
-    }
-
-    console.log('in isAuthenticated, user not authenticate, send to login');
-    res.redirect('/login');
-};
-
-module.exports = function (passport) {
-    /* GET home page. */
-    router.get('/', isAuthenticated, function (req, res, next) {
-        'use strict';
-        console.log('about to send root page');
-        res.render('index', {title: 'BarFoo'});
-    });
-
-    function foo(req, res, next) {
-        console.log('calling login');
-        next();
-    }
-
-    router.get('/login', function (req, res, next) {
-        console.log('in get login');
-        res.render('login', {user: req.user});
-    });
-
-    router.post('/loginUser', passport.authenticate('login', {
-            successRedirect: '/',
-            failureRedirect: '/login'
-    }));
-
-    router.get('/loggedin', function(request, response) {
-        response.send(request.isAuthenticated() ? true : false);
-    });
-
-    router.get('/signup', function(req, res) {
-        console.log('Get signup');
-        res.render('register', {});
-    });
-
-    /* Handle Registration POST */
-    router.post('/signup', passport.authenticate('signup', {
-        successRedirect: '/#/login',
-        failureRedirect: '/signup'
-    }));
-
-    return router;
-};
+  router.get('/', isAuthenticated, function (req, res, next) {...})
 ```
+
+Here we use the **isauthenticated** middleware to test if we are logged in. If we are logged in, go to the designated page, otherwise go to the login page. Use this same middleware for all the calls you make from the client. That way you can be sure the user is logged in before allowing them to view a page.
 
 ## Turn it in
 
@@ -251,3 +202,91 @@ When viewing the data on MongoLab, you can optionally select **edit table view**
 When you are done, you are view of the data could look something like this:
 
 ![MongoLab](https://s3.amazonaws.com/bucket01.elvenware.com/images/SignIn04.png)
+
+## Summary
+
+
+<pre>
+npm install bcrypt-nodejs --save
+npm install mongoose --save
+npm install passport --save
+npm install passport-local --save
+npm install express-session --save
+cp $ELF_TEMPLATES/Database/connect.js routes/.
+cp -r $ELF_TEMPLATES/SignIn/models .
+cp -v $ELF_TEMPLATES/SignIn/views/\*.jade views/.
+cp -r $ELF_TEMPLATES/SignIn/passport/ .
+if [ ! -d "public/images" ]; then
+  mkdir public/images
+else
+  echo "public/images already exists"
+fi
+cp $ELF_TEMPLATES/SignIn/public/SpaceNeedle.png public/images/.
+</pre>
+
+Before running the following command, be sure to check that your copy of **routes/index.js** does not contain important code. If it does, then copy all the routes from that file into another file and replace your old index.js with the one from $ELF_TEMPLATES. More in the section on the [alternative login](#alternative-login).
+
+<pre>
+cp $ELF_TEMPLATES/SignIn/routes/index.js routes/.
+</pre>
+
+You will need to do StepThree above manually.
+
+## Alternative login {#alternative-login}
+
+Suppose your index.js looked like this:
+
+```javascript
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(request, response, next) {
+    'use strict';
+    response.render('index', {
+        title: 'Elven Site Options',
+        author: 'Charlie Calvert'
+    });
+});
+
+router.get('/foo', function(req, res, next) {
+    console.log('foo');
+    res.send({
+        title: 'Elf Foo',
+        foo: 'foo'
+    });
+});
+```
+
+Move foo and any similar methods into in **routes/foo.js**
+
+```javascript
+var express = require('express');
+var router = express.Router();
+
+router.get('/foo', function(req, res, next) {
+    console.log('foo');
+    res.send({
+        title: 'Elf Foo',
+        foo: 'foo'
+    });
+});
+```
+
+Now add the following to app.js about line 8 or 10:
+
+```javascript
+var foo = require('./routes/foo');
+```
+
+And further down:
+
+```javascript
+app.use('/foo', foo);
+```
+
+Now call the foo route like this:
+
+```javascript
+$.getJSON('/foo/foo', function(result) {...});
+```
