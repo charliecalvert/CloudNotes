@@ -24,6 +24,35 @@ A single Elastic IP can be associated with only one instance at a time. When you
 - Associate the Elastic IP with the 2nd instance.
 - Sign on the 2nd instance.
 
+### Create instance programmatically
+
+<pre>
+aws ec2 run-instances --image-id ami-d732f0b7 --security-group-ids sg-e7915c80 --count 1 --instance-type t2.micro --key-name ElfWest --query 'Instances[0].InstanceId'
+</pre>
+
+- image-id This is the type of instance you want to create. Find in launch wizard
+  - Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-d732f0b7
+  - Amazon Linux AMI 2016.03.3 (HVM), SSD Volume Type - ami-7172b611
+
+To create a tag for the instance you must take a second step. You can't create the tag name with **run-instances**. Instead, do it like this:
+
+aws ec2 create-tags --resources i-1q462a6fg123g99 --tags Key=Name,Value=elf-02
+
+
+### Get Public IP Programmatically {#get-public-ip}
+
+If you haven't already, install the aws cli:
+
+<pre>
+sudo apt install awscli
+</pre>
+
+Here is how to get the Public IP from the command line:
+
+<pre>
+aws ec2 describe-instances --instance-ids i-1q462a6fg123g99 --query 'Reservations[0].Instances[0].PublicIpAddress'
+</pre>
+
 ## Step Two: SSH into your Instance
 
 From the Linux command line, navigate to your .ssh directory:
