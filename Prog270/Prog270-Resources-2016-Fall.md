@@ -9,9 +9,9 @@
 
 There is no text for this course. Instead we will use various online resources.
 
-This is not a programming course, but there are a few subjects you could brush up on that will help you survive the more technical aspects of this course. There is no requirement that you do these things, but if you have some free time before class starts, these are subjects that often give students trouble. If you end up using Codecademy, create an account and remember you user name and password:
+This is not a programming course, but there are a few subjects you could brush up on that will help you survive the more technical aspects of this course. There is no requirement that you do these things, but if you have some free time before class starts, these are subjects that often give students trouble. If you end up using Codecademy, create an account and remember your user name and password:
 
-- The file system both in a tool like the Windows File Explorer and from the command line. From either location can you:
+- Understand the file system both in a tool like the [Windows Explorer][mswe] and from the command line. From either location can you:
   - Create a directory?
   - Navigate to a directory
   - Copy a file
@@ -29,6 +29,8 @@ This is not a programming course, but there are a few subjects you could brush u
   - Create a spreadsheet on Google Drive or Microsoft One Drive?
 - Use Git
   - If you don't know Git, try this [free on-line course](https://www.codecademy.com/learn/learn-git).
+
+[mswe]:https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/app_win_explorer.mspx?mfr=true
 
 ## Assignments
 
