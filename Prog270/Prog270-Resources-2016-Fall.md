@@ -4,6 +4,7 @@
 - [Charlie on Delicious](https://delicious.com/charliecalvert)
 - [Elvenware Links](http://elvenware.com/charlie/links.html)
 - [Ebooks and 24X7](http://www.bellevuecollege.edu/lmc/catalogs.html)
+- [Course Overview][overview]
 
 ## Getting Ready
 
@@ -68,3 +69,5 @@ Other
 -----
 
 - [Connect S4 to your TV](<http://www.pcmag.com/article2/0,2817,2420138,00.asp>)
+
+[overview]: https://docs.google.com/presentation/d/1TVTCMZdE4K10kWc0rv9u-JpaPLI_8zpGUQrmXTGpZJ0/edit?usp=sharing
