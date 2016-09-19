@@ -16,7 +16,7 @@ cd ~/Git
 git clone http://github.com/charliecalvert/elven-assignments.git
 ```
 
-Copy the **GetNumbers** and **ObjectBasicsJasmine** assignments to your repository. The destination folders should be called **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. You will need to make changes to the commands shown below. In particular, substitute valid values for the placeholder **X**. For instance, **progXXX** might become **prog219** or **prog272**. Replace **lastname** with your last name. Its up to you make the proper substitutions.
+Copy the **GetNumbers** and **ObjectBasicsJasmine** assignments to your repository. The destination folders should be called **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. You will need to make changes to the commands shown below. In particular, substitute valid values for the placeholder **X**. For instance, **progXXX** might become **prog219** or **isit320**. Replace **lastname** with your last name. Its up to you make the proper substitutions.
 
 <pre>
 cd ~/Git/elven-assignments

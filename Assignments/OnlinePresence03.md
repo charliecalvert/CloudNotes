@@ -2,73 +2,65 @@
 
 This is the third part of the Online Presence Assignment. Please review the open sections of the first part of this assignment. They contain important information about the steps you need to take to complete this assignment.
 
-## Twitter
 
-If you don't already have one, create a Twitter Account. To get started, you need only enter a name, an email address and a password. Again, you could use a name like **FirstNameLastNameBc**, where **FirstNameLastName** is your first and last names. For instance: **charliecalvertbc**.
+## Microsoft OneDrive
 
-Please make your account public. If you don't want your regular Twitter account to be public, then please create a separate account for this course that is public.
+If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90).
 
-**NOTE**: *Twitter allows you to broadcast short phrases to the world. There are scenarios in which it makes sense to broadcast to a private group, but in general, the purpose of Twitter is to broadcast messages to anyone who wants to listen. In this course, we are exploring the cloud as it presents itself to the world. Public Twitter accounts are one of the major hubs in the cloud, and it is important that you learn how to use them.*
+You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder 2016-Prog270-LastName, where the 2016 can be adjusted to match the current year, LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **2016-Prog270-Calvert**, **2016-Isit320-Calvert**, **2016-Prog272-Calvert**, **2016-Prog219-Calvert**, **2016-Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
 
-After you create the account, you will be taken through a wizard that helps you get plugged in to the Twitter community. There is a “Skip this step” option to help you move through the prompts, or you can fill in any available options that you find appealing.
+Share the folder with me, using my Live ID for Bellevue College work:
 
-After you are set up, you should edit your Profile from the black menu bar at the top of the page. Make sure your twitter account Profile includes:
+- **charliecalvertbc@hotmail.com**
 
-- Your name.
-- A picture of yourself
-- A short bio
-- A url pointing to your your web site, which could be the Google site we just created, or some other site if you prefer to use it.
-- For your location you can just enter Washington, or be more specific if you want. For instance, you could enter Bellevue, WA.
-- Follow my [CalvertBc](https://twitter.com/CalvertBc) Twitter account and leave a message to @calvertbc announcing your presence. Remember tweets are 140 characters or less, so keep you message short. To see who has left you a post, choose @mentions from your menu bar.
+**NOTE**: *Though they can easily be confused, the **hotmail** address shown above is not the same as the **gmail** address used in other sections of this document. In some of my courses confusing them can cost you points in multiple assignments including the midterm and the final. Because the mistake can be propagated across so many parts of the course, it can easily move your grade down a whole letter. For instance, it can change your final grade from an A to a B, or from a B to a C.*
 
-The last time I looked, it was not particularly easy to delete a twitter account. If you make a mistake and want to start over, you can try searching for solutions on the web, or just abandon the corrupted account and create a new one.
+Put the same document in it that you put in the Google Drive folder.
 
-Sooner or later some student always seems to ask: "Why Twitter?" That is a reasonable question. Twitter is an odd tool, but it is particular well suited for use on mobile devices because it works with small chunks of text. It is true that a huge amount of useless junk is posted on Twitter every day. On the other hand, some of the smartest and most powerful people in the world have Twitter accounts and use them regularly, sometimes to great effect. This is particularly true in the development world. Lot's of smart developers post to twitter regularly, and following them can be very useful. It is a great way to see what [the best minds in the industry][tweetbest] are thinking.
+To learn more about sharing documents, watch this video:
 
-I have also found that many people don't really understand how Twitter works or how to use it. Everyone should know how to use Twitter. It is a part of the fabric of modern life. We will not spend much time with Twitter, but I do want to be sure that everyone who passes through my mobile and cloud courses understands this relatively simple tool, and knows how to use it.
+- <http://youtu.be/gMACtVIEV0A>
 
-[tweetbest]:http://www.elvenware.com/charlie/development/cloud/TwitterAccountsToFollow.html
+## Microsoft OneNote
+
+Also create a note with Microsoft One Note. OneNote is part of **OneDrive**. Share it with me, just as you did your **OneDrive** document. **In particular, put it in the same *OneDrive* folder where you placed your other Microsoft related documents.** Double check to make sure you are sharing the folder with the Microsoft email specified in the section on **OneDrive**.
+
+When you are done, there should be two documents in OneDrive folder:
+
+- A Word online document similar to the document you created in Google Drive
+- A OneNote document as described in this section.
+
+Don't forget, if you have trouble, join the discussion group and ask for help! Don't spin your wheels!
+
+![OneNote](https://s3.amazonaws.com/bucket01.elvenware.com/images/OneDriveOneNote.png)
+
+To create a OneNote document, select the menu-item/toolbar icon entitled **New**.
 
 
-## Evernote
+## Why not Just Use Google for Everything?
 
-You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook that more than one person can edit. There is not need to perform the upgrade to the paid version in this course.
+Google does a great job with their online tools, and most other products are playing catch up. However, there are a huge number of tools out there. Just doing a search on note taking tools for the cloud, I get links to articles on the "12 Best Note Taking Apps" and "7 Cloud Based note-taking apps". The cloud is huge place, with lots of interesting solutions to many different problems.
 
-Create a new synchronized notebook by choosing **File | New Notebook**. Name it according the pattern established in earlier exercises. For instance, **2016-Prog270-Calvert**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
+- <https://www.google.com/search?q=online+note+cloud+app>
 
--  **charliecalvertbc@gmail.com**
+We all did the "Microsoft solves all my problems, so I'll use only Microsoft tools" solution to computing. That didn't work out well for either us or Microsoft. Google is an amazing company, but it is important we don't make the same mistake with them.
 
-Here is the page in the web version that I use to share notebooks:
+I think we should both:
 
-![Evernote Share](https://s3.amazonaws.com/bucket01.elvenware.com/images/evernote-share-01.png)
+- Learn exactly how Google tools are better or worse than other, similar solutions so we can learn from their mistakes and accomplishments. To do that, we have to try the other tools.
+- Learn to overcome common problems so that we can take advantage of smaller companies' tools that may have special values not immediately apparent. For instance, Evernote may be a bit clumsy on a desktop browser, but I find their tool is great on an Android phone. Also, it is very common for online sites to send us verification emails. At first, that step may seem odd or intrusive. But I have learned the importance of following up on that kind of request from a cloud based company. For me, the best way to learn is by experience, and I'm trying to give you experience.
 
-Here is the second step of the sharing process:
+## Account Creation
 
-![Evernote Share 02](https://s3.amazonaws.com/bucket01.elvenware.com/images/evernote-share-02.png)
+I provide a certain amount of guidance on creating accounts. If you need more information, please use the discussion area to ask questions, or refer to [this Elvenware document][elf-app].
 
-After you share the notebook, add three tags to your note:
+[elf-app]: http://www.elvenware.com/charlie/os/Android/AndroidApplications.html
 
-- BC
-- Prog270
-- 2016
+## Links
 
-The first tag stands for Bellevue College. The second should be the name of the course you are in, whether it is Isit320, Isit322, Prog270, Prog272 or Prog219.
+Various Sections of this Document will help you complete this assignment:
 
-**NOTE**: *For a long time, on the desktop, I found it easier to actually install Evernote as an application, rather than using the web based tool. I'm not sure that is still the case, but nevertheless the install is not a bad idea. If you can't install the desktop application, then you will now find the web based application adequate.*
+- <http://elvenware.com/charlie/os/Android/AndroidApplications.html>
 
-Steps:
-
-- Install the Evernote app. There is one for the PC.
-- Choose: File | New Notebook (Ctrl-Shift-N)
-- Create a synchronized notebook with a name similar to **2016-Prog270-LastName**, where LastName is your last name. (As always, use your common sense to substitute the proper year and class if the one's you see here don't seem right).
-- Right click on the new notebook and choose Share.
-- Share the notebook with charliecalvertbc@gmail.com
-- Put a note in the notebook
-- More information is found here:
-    - <http://elvenware.com/charlie/os/Android/AndroidApplications.html#evernote>
-
-**TIP**: *Many students struggle to learn how to place a message in a shared Evernote notebook. One technique that may help some students is to add content to Evernote by sending email. That will allow you to automate the process of adding notes to Evernote in the correct folder with a default tag. Assuming you have already created your folder, and already tagged one message with the tag **Isit320**, then you can send a message to the correct folder by creating a subject line something like this:*
-
-- Test Message @2014-Isit320-LastName #Isit320
-
-*If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
+  [1]: https://evernote.com
+  [2]: http://evernote.com/contact/support/kb/#/article/23480523

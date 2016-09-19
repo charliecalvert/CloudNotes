@@ -2,9 +2,10 @@
 
 Learn about JavaScript objects.
 
-There are lots of tips in this slide deck:
+There are lots of tips in these slide decks:
 
 * [http://bit.ly/elven-javascript-basics](http://bit.ly/elven-javascript-basics)
+* [http://bit.ly/function-types](http://bit.ly/function-types)
 
 Also see this section of Elvenware for details on Object Literals:
 

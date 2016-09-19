@@ -8,22 +8,22 @@ To enter the world of modern computing, you must have a public presence in the c
 
 ## Turn it In
 
-This assignment has many parts. To help you make sure that you complete everything, here is a check List of sorts:
+This is the first part of a multi-part series of assignments. To help you make sure that you complete everything, here is a checklist of sorts:
 
-- Part 01:
+- Part 01: (Week01)
   - Google Folder
   - Google Doc
   - Google Site
-- Part 02:
-  - Microsoft Folder (Double check that you are using a Microsoft email address!)
-  - Microsoft Document (Double check that you are using a Microsoft email address!)
-  - OneNote Document (Double check that you are using a Microsoft email address!)
-- Part 03
+- Part 02: (Week02)
   - Twitter
   - EverNote (Double check the email address!)
+- Part 03: (Week03)
+    - Microsoft Folder (Double check that you are using a Microsoft email address!)
+    - Microsoft Document (Double check that you are using a Microsoft email address!)
+    - OneNote Document (Double check that you are using a Microsoft email address!)
 
 
-- Turn it in: Press the submit button in Canvas! You might also consider pasting the Online Presence document you put in your Google folder into the Text page of Canvas. On that page, I believe, links are **live** so that I can just click on them.
+- Turn it in: The primary content of the assignment, such as the various folders and documents, will appear automatically in my Google, Microsoft, Twitter, and Evernote accounts. Thus there is nothing you absolutely must turn in to canvas other than an acknowledgement that you have completed the assignment. To make the acknowledgement, simply press the submit button in Canvas! Having said this, you might also consider pasting the Online Presence document you put in your Google folder into the Text page of Canvas. On that page, I believe, links are **live** so that I can just click on them.
 
 ## Sharing
 
