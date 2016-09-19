@@ -12,13 +12,15 @@ Perhaps the single best resource is Google search. The best way to learn to sear
 
 ## Install Pristine Lubuntu into VirtualBox {#virtualbox-lubuntu}
 
-In this class we use a copy of Lubuntu running in Virtual Box.
+In this class we use a copy of Lubuntu running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. This is a copy of the Linux Lubuntu desktop specially prepared for this course. Here is a link to the approximately 3.0 GB download:
 
-The first step is to download the Lubuntu OVA VirtualBox VM File from Google Drive. Here is a link to the 2.9 GB download:
+* [http://bit.ly/pristine-lubuntu-2016-sept-02](http://bit.ly/pristine-lubuntu-2016-sept-02)
 
-* [http://bit.ly/pristine-lubuntu-2016-sept-03](http://bit.ly/pristine-lubuntu-2016-sept-03)
+Once the OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory. You can simply click on the OVA file to load it in VirtualBox. When doing so, select the option that reads something like **re-initialize Mac address**.
 
-Here is a link to a brief description of what to do with the file once you download it:
+If you get a warning about USB drivers, this usually means that the Virtual Box virtual extensions are not installed. This could be due to a mistake by the Bellevue College IS department. If you have the rights, install them from [here](https://www.virtualbox.org/wiki/Downloads), using the Virtual Box **Preferences** menu. (Or just double click on the download). Otherwise, you can go to **Settings | USB** for your VM and turn USB off for now.
+
+Here is a somewhat dated link to a more detailed description of what to do with the OVA file once you download it:
 
 * [Import a virtual Appliance][import-virtual]
 
@@ -36,7 +38,6 @@ We have two sets of goals:
 
 - Non-technical and end-user goals
 - Technical goals
-
 
 Non-technical and end-user goals:
 
@@ -61,20 +62,17 @@ Technical goals:
 [elf-node]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html
 [elf-boot]: http://www.elvenware.com/charlie/development/web/CssGuide/Bootstrap.html
 
-Decks
------
+## Decks
 
 - [Week01 Day 01 Deck](http://bit.ly/1gNIiFm)
 - [Week01 Day 02 Deck](http://bit.ly/1b3qfOf)
 
-JavaScript
-----------
+## JavaScript
 
 - [JavaScript Basics](http://bit.ly/OPDg3s)
 - [JavaScript Basics on Elvenware](http://bit.ly/1gNAweH)
 
-Programs
---------
+## Programs
 
 We should take a look at a few of the programs found here:
 
