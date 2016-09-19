@@ -16,13 +16,13 @@ In this class we use a copy of Lubuntu running in Virtual Box.
 
 The first step is to download the Lubuntu OVA VirtualBox VM File from Google Drive. Here is a link to the 2.9 GB download:
 
-* [http://bit.ly/pristine-lubuntu-fall-2015](http://bit.ly/pristine-lubuntu-fall-2015)
+* [http://bit.ly/pristine-lubuntu-2016-sept-03](http://bit.ly/pristine-lubuntu-2016-sept-03)
 
 Here is a link to a brief description of what to do with the file once you download it:
 
-* [Import a virtual Appliance][impvirt]
+* [Import a virtual Appliance][import-virtual]
 
-[impvirt]:http://www.elvenware.com/charlie/development/cloud/virtualization.html#importing-an-appliance
+[import-virtual]:http://www.elvenware.com/charlie/development/cloud/virtualization.html#importing-an-appliance
 
 If you need to install VirtualBox on your laptop, here is a description of how to proceed:
 
