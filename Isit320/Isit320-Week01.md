@@ -42,7 +42,7 @@ We have two sets of goals:
 Non-technical and end-user goals:
 
 - Complete introductory comments and Introductions
-- [Review the Syllabus](http://bit.ly/syllabus-isit-320-2015)
+- [Review the Syllabus](bit.ly/isit320-syllabus-2016)
 - Review canvas basics: [Announcements, Modules, Discussions](http://bit.ly/V6JECq)
 - Create core cloud accounts: [Online Presence][online-presence]
 
