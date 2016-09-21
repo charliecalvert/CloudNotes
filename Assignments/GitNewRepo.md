@@ -4,7 +4,7 @@ This assignment is designed to help you create a new git repository. The text is
 
 Since my students turn in assignments with git, in some, but not all, cases it is important that the repositories be private. Bitbucket provides free private repositories.  I believe free private repositories are also available on GitHub if you sign up for the [Student Pack][github-edu].
 
-**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Not that git itself is an open source project entirely separate from either GitHub or BitBucket. Git is git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
+**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Note that git itself is an open source project entirely separate from either GitHub or BitBucket. Git is git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
 
 See also:
 
@@ -31,7 +31,7 @@ Related links which probably contain updates to total github users:
 - <https://github.com/about>
 - <https://github.com/explore>
 
-GitHub and BitBucket are websites, and websites are sometimes down due to operational errors of denial of service attacks. But GitHubs record is usually good:
+GitHub and BitBucket are websites, and websites are sometimes down due to operational errors or denial of service attacks. But GitHubs record is usually good:
 
 - [GitHub Status](https://status.github.com/graphs/past_month)
 - [Bitbucket Status](http://status.bitbucket.org/)
@@ -40,7 +40,7 @@ Of course, it is always possible that one of us will hit a bug in git. Yet the o
 
 Git is not perfect. No piece of software is perfect. But git is, in my opinion, one of the most reliable, tested, and proven software programs in the world.
 
-## Clone and Existing Repository
+## Clone an Existing Repository
 
 This assignment is designed to help your create a new repository from scratch. Sometimes students try to use it as a guide for cloning an existing repository, but I would not recommending doing that. If you already have a repository in **GitHub** or **BitBucket** you can get a local copy of that repository by cloning it:
 
@@ -61,7 +61,9 @@ Receiving objects: 100% (3/3), done.
 Checking connectivity... done.
 </pre>
 
-Okay, if we are straight on what to do with an existing repositories, lets go back to our current task, which is setting up a new repository.
+Now that we understand what to do with an existing repositories, lets go back to our current task, which is setting up a new repository.
+
+**NOTE**: _On GitHub, it is possible to create a repository with a pre-initialized **README.md** file. If you do that, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
 
 ## Git Account GitHub
 
@@ -70,8 +72,9 @@ Use [Github](https://github.com) to host your [git](http://git-scm.com/book/en/v
 - Create a new GitHub account if you don't have one already
 - Use an existing GitHub account.
 - Sign up for the Github [student pack][github-edu]
-	- The student pack might take a few days to set up
+	- The student pack might take a few days to set up, but I believe the delay is shorter than it used to be.
 	- Even though there is a delay, apply anyway.
+	- With the student pack you can create private repositories for free.
 
 ## Git Account BitBucket
 
@@ -107,7 +110,8 @@ isit322-calvert-2016
 Then make the following selections:
 
 * Set the Type: Git
-* Do not initialize with a **README** or **.gitignore**. (GitHub only)
+* Initialize with a **README** or **.gitignore**. (GitHub only)
+	* If you choose this option, then you can simply clone your repository after creating it.
 * Set the Project options: Wiki, IssueTracking (Bitbucket only)
 * Set the Language: JavaScript (BitBucket only)
 
@@ -127,20 +131,6 @@ You can read about git URLs on Elvenware:
 
 [urls-and-ssh]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-urls-and-ssh
 [find-change]: http://www.elvenware.com/charlie/development/cloud/Git.html#find-change-url
-
-Find the URL:
-
-```
-git remote -v
-```
-
-Change the URL:
-
-```
-git remote set-url origin git@github.com:my-user-name/my-repo.git
-```
-
-If you are uncertain about the URL for your repository, you should able to easily find it on either GitHub or BitBucket.
 
 ## Setup SSH {#ssh}
 
@@ -174,7 +164,7 @@ We now need to block copy the key to the [clipboard][define-clipboard]. It might
 cat id_rsa.pub
 ```
 
-An alternative might be to open the key in **Geany** or some other text editor, and then select it in the editor with **Ctrl-A** and copy it with **Ctrl-C**. In any case, be sure you have the key saved to your clipboard.
+An alternative might be to open the key in **geany** or some other text editor, and then select it in the editor with **Ctrl-A** and copy it with **Ctrl-C**. In any case, be sure you have the key saved to your clipboard.
 
 Then in BitBucket:
 
@@ -245,16 +235,16 @@ source ~/.bashrc
 
 To learn more, search for the Linux **source** command with Google.
 
-Alternatively, I have created an alias in our **.bash_aliases** file called **sshadd**. (Not **ssh-add** but **sshadd**.) It depends on a symbolic link in your **~/.ssh** directory. Create the link like this:
+Alternatively, I have created an alias in our **.bash_aliases** file called **sshadd**. (Not **ssh-add** but **sshadd**.) It depends on a symbolic link that you must create in your **~/.ssh** directory. Create the link like this:
 
 ```bash
 cd ~/.ssh
 ln -s Prog270-Fall-2016 main-key
 ```
 
-Where Isit320-Fall-2015 is the name of the private key you want to load when you type **sshadd**. This second approach means you can decide when you want to load the key. This is perhaps better than loading it automatically each time you start a new bash shell instance.
+Where Isit320-Fall-2016 is the name of the private key you want to load when you type **sshadd**. This second approach means you can easily load the key at any time. This is perhaps better than loading it automatically each time you start a new bash shell instance. In particular, if you load it in your bashrc, then you might end up with multiple instances of it running. If you load it by hand **sshadd**, you will likely end up with only one instance.
 
-Zip up both the private and public key and upload it to Google Drive. That way you can download it at home, and use the private key at both home and school. You don't have to do it that way, but it allows you to skip the step of creating a new key at home, and uploading that public key to BitBucket. Either system works, and there are arguments in favor of each system, but I want to at least suggest that you do things this way.
+_**Zip up both the private and public key and upload it to Google Drive**_. That way you can download it at home, and use the private key at both home and school. You don't have to do it that way, but it allows you to skip the step of creating a new key at home, and uploading that public key to BitBucket. Either system works, and there are arguments in favor of each system, but I want to at least suggest that you do things this way.
 
 Suppose you created **main-key** with a command like this:
 
@@ -276,25 +266,27 @@ ln -s Prog270Key main-key
 
 ## Build Repository
 
-On your hard drive, enter the following, where **lastname** should be your last name, in all lower case letters:
+If you created a repository on GitHub with an pre-initialized **README.md** file, then just clone your repository as described above. Otherwise, follow the steps outlined here. It is simpler to have a pre-initialized readme and then clone a repository. But if you don't have a README, and you follow the steps outlined below, you will learn more about git. Every single fact you learn about git makes a bit more employable. Git is central to web development in many shops.
+
+Assuming you have no README.md, then follow these steps. On your hard drive, enter the following, where **lastname** should be your last name, in all lower case letters:
 
 ```
 cd Git
-mkdir isit320-lastname-2015
-cd isit320-lastname-2015
+mkdir isit320-lastname-2016
+cd isit320-lastname-2016
 git init
 ```
 
 For instance:
 
 ```
-mkdir isit320-calvert-2015
+mkdir isit320-calvert-2016
 ```
 
 Now issue this command where the details will differ in your case:
 
 ```
-git remote add origin git@bitbucket.org:username/isit320-lastname-2015.git
+git remote add origin git@bitbucket.org:username/isit320-lastname-2016.git
 ```
 
 You can find the exact string, or something very close to it, in BitBucket. For instance, when you first create a repository in BitBucket, this is string is displayed in the confirmation page for the creation of your repository. For existing repositories, you can find something very like that string by choosing **Actions** (...) and **Clone** from the navigation menu on the left.
@@ -687,6 +679,26 @@ Note that these instructions say **git push** while the first example I give abo
 The **git push** shown in the BitBucket instructions only makes sense because we created an empty repository in BitBucket and we want to push new content that we created locally into it. If we have an existing repository with content, then use **git pull**.
 
 One thing in favor of the code shown in my first example and in the BitBucket example is that it shows exactly what is happening, while git clone does a lot of work behind the scenes. Still, **git clone** is a lot simpler to use... Perhaps BitBucket and GitHub use the somewhat more complex code simply to raise the bar a bit, and keep out complete neophytes?
+
+## Set Git URL
+
+The following information is for advanced users only. You do not need this if you are just getting started.
+
+In your hidden .git folder, in a file called **config**, git stores the URL for your repository. If you want to find that URL without opening up the **config** file, issue this command from inside your repository:
+
+```
+git remote -v
+```
+
+This should work for any repository on your system. For instance, try the above command in **JsObjects**.
+
+If you want to change or set the URL you are using on your local machine, try something like this:
+
+```
+git remote set-url origin git@github.com:my-user-name/my-repo.git
+```
+
+If you are uncertain about the URL for your repository, you should able to easily find it on either GitHub or BitBucket.
 
 <!-- ********************************* -->
 <!-- ** URLS ************************* -->

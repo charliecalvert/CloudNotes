@@ -42,7 +42,7 @@ We have two sets of goals:
 Non-technical and end-user goals:
 
 - Complete introductory comments and Introductions
-- [Review the Syllabus](bit.ly/isit320-syllabus-2016)
+- [Review the Syllabus](http://bit.ly/isit320-syllabus-2016)
 - Review canvas basics: [Announcements, Modules, Discussions](http://bit.ly/V6JECq)
 - Create core cloud accounts: [Online Presence][online-presence]
 
@@ -58,12 +58,13 @@ Technical goals:
 - [Bower](http://bit.ly/elf-bower)
 
 [elven-npm]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#npm-local-libraries
-[online-presence]: http://www.ccalvert.net/books/CloudNotes/Assignments/OnlinePresence.html
+[online-presence]: http://www.ccalvert.net/books/CloudNotes/Assignments/OnlinePresence01.html
 [elf-node]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html
 [elf-boot]: http://www.elvenware.com/charlie/development/web/CssGuide/Bootstrap.html
 
 ## Decks
 
+- Git Basics Deck: [http://bit.ly/git-basics](http://bit.ly/git-basics)
 - [Week01 Day 01 Deck](http://bit.ly/1gNIiFm)
 - [Week01 Day 02 Deck](http://bit.ly/1b3qfOf)
 
