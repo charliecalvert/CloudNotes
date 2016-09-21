@@ -65,6 +65,7 @@ Technical goals:
 ## Decks
 
 - Git Basics Deck: [http://bit.ly/git-basics](http://bit.ly/git-basics)
+- Linux Basics: [http://bit.ly/linux-basics](http://bit.ly/linux-basics)
 - [Week01 Day 01 Deck](http://bit.ly/1gNIiFm)
 - [Week01 Day 02 Deck](http://bit.ly/1b3qfOf)
 
