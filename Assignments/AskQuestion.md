@@ -15,6 +15,8 @@ Here is a quick video about how to create new questions and how to reply to exis
 
 - [https://youtu.be/60kUajiq4as](https://youtu.be/60kUajiq4as)
 
+There is no penalty for providing a wrong answer to a question so long as you are trying to help. My goal is promote participation in the discussion area. So long as you are doing so in the proper spirit, then that is all I ask, all I want to see. There are no dumb questions, and no penalty for accidentally providing a wrong answer.
+
 ## Don't Quote Code {#no-code}
 
 In general don't quote code in your questions or answers. The worst possible question would be:

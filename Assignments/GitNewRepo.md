@@ -700,6 +700,33 @@ git remote set-url origin git@github.com:my-user-name/my-repo.git
 
 If you are uncertain about the URL for your repository, you should able to easily find it on either GitHub or BitBucket.
 
+## Ruminations
+
+Both at home, and at school, you want to have a ~/.ssh directory. In that directory, you should have a private key and a public key. The private key is only on your machines. Never give it to anyone else. The public key you insert into the proper dialog on GitHub (or BitBucket) or some other site as needed.
+
+You have two choices:
+
+- Use the same private key on home and school machine. Put the private key in a zip file, upload it to Google Drive, and download it from there on you second machine. That way you have the same private key on both your home and school machines. That means you need to put only one public key on GitHub.
+
+- Alternatively: Create two private/public key pairs, one at home and one at school. Then put both public keys on GitHub and or BitBucket.
+
+The code for creating a private/public key pair can be seen here, and elsewhere in my notes:
+
+http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#sshKeys
+
+Be sure to look at this deck:
+
+http://bit.ly/git-basics
+
+And this document/assignment: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
+
+It would definitely be a mistake to put a private key in a public git repository. A private repository is probably okay to use, but still not recommended as eventually you may want to share your repository with others. Putting your public keys on Git is probably okay, but also probably not very useful. The best plan is to either create two or more pairs, or to create one pair and upload to Google Drive so you can download it as needed at home or at school.
+
+If you want, it is possible to put a password on your private key.
+
+- [http://stackoverflow.com/a/3818909](http://stackoverflow.com/a/3818909)
+- [https://help.github.com/articles/working-with-ssh-key-passphrases/](https://help.github.com/articles/working-with-ssh-key-passphrases/)
+
 <!-- ********************************* -->
 <!-- ** URLS ************************* -->
 <!-- ********************************* -->
