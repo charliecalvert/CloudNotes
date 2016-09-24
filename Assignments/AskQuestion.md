@@ -1,6 +1,6 @@
 ## Ask a Question
 
-This assignment is designed to encourage participation in on-line discussions. In particular I want you to:
+This assignment is designed to encourage participation in on-line discussions. Each week, I want you to:
 
 - Ask a question
 - Answer a question
