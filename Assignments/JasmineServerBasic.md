@@ -103,6 +103,10 @@ Spec started
 Executed 7 of 7 specs SUCCESS in 0.008 sec.
 ```
 
+This exercise is designed to see if you know how to declare an object literal, and how to use an **exports** statement to export it from the module in which it resides.
+
+When working on this assignment, compare what you see in **Source/MyObject.js** to what you found in the **GetNumbers/Source/GetNumber.js** file. Declare your main object, called **myObject** in a manner similar to the way **getNumbers** is declared in the GetNumbers project. Also, use the same syntax for exporting **myObject**, but use the identifier **myObject** rather than **getNumbers**. You will also need to declare two numeric properties, a string property, and three methods as properties of **myObject**. The numbers, strings and methods you declare can have any values and content you want, the point is simply that you declare them.
+
 ## Turn it in
 
 Make sure all the tests pass, that **grunt check** comes back clean, and that none of the code in the test suites has changed.
