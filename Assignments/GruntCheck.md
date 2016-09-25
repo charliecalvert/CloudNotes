@@ -1,43 +1,40 @@
 # Grunt Check
 
-In this assignment you will learn how to use [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it.
+In this assignment you will learn how to use [grunt][grunt], [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it.
 
-More specifically, the goal of this assignment is to be able to run the following custom commands and have them come back clean:
-
-```
-grunt check
-npm test
-```
-
-The emphasis here is on learning to format your code correctly. In particular, see the [Google style guide][gsg]. The [JSCS][jscs] tests in this project follow the Google style guides, except that our indent is four spaces rather than two.
-
-[jscs]: https://github.com/jscs-dev/node-jscs
-[jshint]: http://jshint.com/docs/
-[jsb]: https://github.com/beautify-web/js-beautify
-[gsg]: https://google.github.io/styleguide/javascriptguide.xml
-
-Note that I want you to shorten lines longer than 120 characters. This can be complicated at times, but I believe this and the other style guidelines are reasonable, and we should follow them as closely as possible. Furthermore, it has proved nearly impossible to get either my students or me to properly format our code without some kind of hard metric, and this provides one for us.
-
-**NOTE**: _When viewing the Google style guide, you may find it easiest to select the **Toggle All Summaries** option at the top of the file._
-
-See also:
-
-- [jsbeautifier.org](http://jsbeautifier.org/)
-
-In this assignment we will need to create two files:
+While working on this assignment, we will learn how to create two files:
 
 - **.jscsrc**: Configure JSCS
 - **Gruntfile.js**: Configure Grunt
 
 One is used to configure **grunt**, the other to configure **jscs**.
 
+## Goals
+
+The goal of this assignment is to be able to run the following custom commands and have them come back clean:
+
+```
+grunt check
+npm test
+```
+
+The emphasis here is on learning to format your code correctly. In particular, see the [Google style guide][gsg], which gives a set of guidelines for formating code. The [JSCS][jscs] tests in this project follow the Google style guides, except that our indent is four spaces rather than two.
+
+Note that I want you to shorten lines longer than 120 characters. This can be complicated at times, but I believe this and the other style guidelines are reasonable, and we should follow them as closely as possible. Furthermore, it has proved nearly impossible to get either my students or me to properly format our code without some kind of hard metric, and these tools provide one for us.
+
+**NOTE**: _When viewing the Google style guide, you may find it easiest to select the **Toggle All Summaries** option at the top of the file._
+
+To some degree, the act of properly formating our code can be automated. To do this, we will use a tool called [jsbeautifier.org](http://jsbeautifier.org/).
+
 ## Setup JSCS {#setup}
 
 JSCS enforces rules that help us properly format our code. Properly formatted code is **_much_** easier to read than poorly formatted code. Most professional teams adopt a specific set of rules for formatting their code. These rules are usually strictly enforced, and most developers quickly get very annoyed when someone does not follow these rules. JSCS provides a means of checking your code before you push it to git so you can be sure it meets specific formatting standards.
 
-**NOTE**: _The **.jscsrc** begins with a period, so it is a hidden file. That means you will need to type something like **ls -la** to check for its existence._
+**NOTE**: _The file name **.jscsrc** begins with a period, so it is a hidden file. That means you will need to type something like **ls -la** to check for its existence._
 
-The **.jscsrc** file is a configuration file, just as **.bashrc** and **.bowerrc** are configuration files. We use these files to configure the tools we use. The **.bashrc** file contains code that configures our bash shell. It tweaks the shell to work the way we want it to work. The **.bowerrc** file does the same for bower, and our **.jscsrc** files configure the JSCS.
+The **.jscsrc** file is a configuration file, just as **.bashrc** and **.bowerrc** are configuration files. We use these files to configure the tools we use. The **.bashrc** file contains code that configures our bash shell. It tweaks the shell to work the way we want it to work. The **.bowerrc** file does the same for bower, and our **.jscsrc** files configure JSCS.
+
+**NOTE**: _In Windows, we frequently configure our tools using a set of pop-up dialogs. That technique is used in Linux also, but much of the time we forgo the GUI tools and edit a text file instead. At first, I found text files harder to use the GUI dialogs, but over time, I have found the opposite to be the case. Dialogs often change from version to version of a product, and searching through a set of dialogs for a particular feature is an onerous task. Text files usually keep the same format for years or even decades, and it is easy to search through them with a simple text editor or similar tool._ 
 
 Here is the **.jscsrc** config file I suggest we use in this class:
 
@@ -367,3 +364,11 @@ Done, without errors
 The number of files may differ, but the general format should be the same.
 
 I should also be able to run **npm test** on all three projects and have it come back clean.
+
+<!-- LINKS -->
+
+[jscs]: https://github.com/jscs-dev/node-jscs
+[jshint]: http://jshint.com/docs/
+[jsb]: https://github.com/beautify-web/js-beautify
+[gsg]: https://google.github.io/styleguide/javascriptguide.xml
+[grunt]: http://gruntjs.com/

@@ -2,16 +2,38 @@
 
 Git Dual Repo gives you a chance to open two views on your repository on one machine. You can then add, commit, push and pull on one machine, but see the results on two repositories.
 
+There are several goals to this exercise. I will try to explain a few of them in the rest of this section of the assignment.
+
+Most of us will be working on at least two machines:
+
+- Our school machine
+- Our home machine.
+
+By creating two versions of repository on one machine, I am, to some degree simulating the actual problem you will face:
+
+- A repository at school
+- A second copy of the that repository at home.
+
+In this assignment, both repositories will be on a single machine, but the lessons you will learn and skills you acquire are the same as those you will need when working on your school and home machines. The point is to learn how to work with two versions of a single repository.
+
+**NOTE**: _Again, I want to emphasize that using the same laptop at home and school is not a good strategy for this class. If you do that, you will use only a subset of Git's functions compared to those who maintain two different copies of their repository. Git, and GitHub, are so ubiquitous in today's programming community that you want to know everything you can about them. In the unlikely event that you can get hired without demonstrating an in depth knowledge of Git, you will still face challenges when you do get hired. You will, during your first few weeks, likely be required to do some relatively complex things with Git. That's not the right time to be learning how Git works. At that point, you want to establish your reputation at the company by focusing on your job, not your tools._
+
+A second, related, reason for completing this exercise is that it will help you deal with the conflicts you encounter when you make changes to the same line in the same file in two different versions of your repository. This is a problem that occurs quite frequently. In fact, if you are working with a larger team, it is not a problem, but just a fact of life when using Git. Whether you encounter the problem through carelessness or through the course of a normal work flow, you have to know how to deal with it.
+
 ## Step One
 
 Find your existing repositories. For now, I'm assuming you have a repository at the following location:
 
-~/temp/qux
+```.code
+~/Git/prog270-lastname-2016
+```
 
-This repository was created during our last class. Navigate to your repository and check the status of your repository:
+**NOTE**: _Your repository may actually be named isit320-lastname-2016 or something similar. Or perhaps even something entirely different. I'm assuming that most readers can mentally make such as adjustments as necessary. At any rate, for this example I'll use prog270-lastname-2016 as the name of the repository, and you can just substitute the actual name of your repository as necessary._
+
+This repository was created during a previous class. Navigate to your repository and check the status of your repository:
 
 ```
-cd ~/temp/qux
+cd ~/Git/prog270-lastname-2016
 git status
 ```
 
@@ -40,6 +62,14 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 If this is the case, then you should add, commit and push your work:
 
+```.code
+git add .
+git commit -m "Updating readme"
+git push
+```
+
+The example shown below is done in my CloudNotes repository, but I'm sure you can see how the same process would look in your own repository:
+
 ```
 bcuser@bcuser-winter-01:~/Git/CloudNotes/Assignments
 $ git add .
@@ -67,28 +97,37 @@ Now let's give you a second view of your repository. This will mimic what happen
 
 Start by opening a second tab in your bash shell:
 
-- File | New Tab (Ctrl-Shift-Tab)
+- **File | New Tab** (Ctrl-Shift-Tab)
 
-Now navigate to your **~/Git** folder.
+Now navigate to your **~/temp** folder.
 
 ```
-cd ~/Git
+cd ~/temp
 ```
 
-Now it is time to clone your repository. When you have completed this step, you will have two copies of your repository on your local machine:
+If this folder does not exist, then create it:
+
+```.code
+cd
+mkdir temp
+```
+
+Now it is time to clone your repository. When you have completed this step, you will have two copies of your repository on your local machine, one in each of the following directories:
 
 ```
 ~/Git/prog270-lastname-2016
-~/temp/qux
+~/temp/prog270-lastname-2016
 ```
 
-You probably already have the URI for your repository in several places, but you can get it from GitHub itself. Just sign in to your account, go to your repository, and it should be fairly obvious where the URI is displayed. Take the URI and prepend the words **git clone** in front of it. It will look something like this, but the details will differ on your system:
+**NOTE**: _Git is a distributed version control system. When I say that you have two copies of your repository, it is important to understand that no one copy is innately more powerful than another. Each copy of your repository is fully functional, and has the same abilities as the other copies of your repository. Even the copy of your repository on GitHub has the same functionality as the copy you have on your local machine. Thus you can have identical or similar copies of your repository "distributed" over several machines and/or locations. Each copy has the potential to be identical to a second copy, but it will not be so until you push or pull your work to sync them up._
+
+In order to clone your repository you need to know its URI. You probably already have the URI for your repository in several places, but you can get it from GitHub itself. Just sign in to your account, go to your repository, and it should be fairly obvious where the URI is displayed. Take the URI and prepend the words **git clone** in front of it. It will look something like this, but the details will differ on your system:
 
 ```
 git clone git@github.com:username/prog270-lastname-2016.git
 ```
 
-Now navigate into your repository and view the log:
+Run the above command from the temp folder. Now navigate into your repository and view the log:
 
 ```
 cd prog270-lastname-2016
@@ -99,9 +138,9 @@ If necessary, press **q** to escape from the log view.
 
 ## Step Three: Edit and Push {#edit-push}
 
-Modify your **README.md** file. Open it in an editor such as **geany** and make some changes to it.
+Modify your **README.md** file. Open it in an editor such as **geany** and make some changes to it. For instance, type in the word "Here are some changes."
 
-**NOTE**: *It is best to open geany first from the start menu or desktop (OS + D). Then issue the command to load your **README** file: **geany README.md**.*
+**NOTE**: _It is best to open geany first from the start menu or desktop (OS + D). Then issue the command to load your **README** file: **geany README.md**. Alternatively, open it like this: **geany READMEmd &**. Note the & symbol at the end. In either case, you will end up still being able to use the command the prompt after issuing the command. Otherwise, the command prompt will be "taken over" by geany until you close that application._
 
 Now add, commit and push your work:
 
@@ -113,42 +152,50 @@ git push
 
 You actually have some choice here. If you want, you can type **git add .** instead of **git add README.md**. (That's git add and a period.) When you use the period instead of a specific file name, then all changes to all files from your current directory on down get added. That probably does not make sense at this point, but often you will find that you edit five, six or more files in a single session, and want to check them all in at once. In that case it is easier to use the period (wild card) than to specify the files one at a time.
 
-**NOTE**: *By "current directory on down" I mean your current directory plus all directories further away from the root than your current location. So if you are in **/foo/bar**, then files in **/foo/bar/baz** would get checked in, but not files in **/foo**.*
+**NOTE**: _By "current directory on down" I mean your current directory plus all directories further away from the root than your current location. So if you are in **/foo/bar**, then files in **/foo/bar/baz** would get checked in, but not files in **/foo**._
 
 ## Step Four: Pull {#pull}
 
-Now switch over to your other tab, the one that gives you a view of your **~/temp/qux**. In that tab, pull down your changes and view your **README.md** file:
+Now switch over to your other tab, the one that gives you a view of your **~/Git/prog270-lastname-2016**. In that tab, pull down your changes and view your **README.md** file:
 
 ```
 git pull
 cat README.md
 ```
 
-Now open that version of the **README.md** file in geany, and make some changes. Add, commit and push them. Switch back to the other tab and pull. Switch back to geany and edit the file and the Add, commit etc...
+This is the basic rhythm that you will use when working with Git:
 
-Repeat this process at least five times. I'm going to look at your log for your repository, and I want to see that you have edited your README.md file at least five times.
+- Modify the file in one copy of your repository. Push it to GitHub.
+- Pull the file in second version of your repository.
 
-## Step Five: Put AllTest in Repository {#alltest}
+Now you have the same version in both copies of your repository. You have synced the contents of your projects across two repositories. In this exercise, both copies of the repository are on one machine. However, if you have one copy of your repository on the school machine, and one on your home machine, then you have just synced up your content between the two machines.
 
-Now we want to copy your AllTest directory into your repository. Make sure you are in the root of your repository. Issue this command:
+**Note**: _When working with text files, such as source code, this is really the only reliable way to sync the content of two machines. It ensures that all versions of your work are accessible to you at all times. It also has the benefit of backing up your work. If you try to use alternative methods, such as toting the file back and forth with a thumb drive, sooner or later you going to lose or corrupt your work. You also won't be able to roll back to a particular version of your work. If you try to do all your work on a single laptop, then you will not be regularly backing up work, and sooner or later you will run into trouble. Either you will lose some of your work, or you will lose the ability to go back to a particular version of your work._
 
-```
-cp -r ~/Documents/AllTest .
-```
+Now open that version of the **README.md** file in geany, and make some changes to it. Add, commit and push them.
 
-That command says to copy the contents of the **AllTest** directory into your current folder. When you are done, you should have a folder in your repository that contains all the files from your **AllTest** directory.
+Switch back to the other tab and pull. Open your file in geany and edit the file and then Add, commit etc...
 
-Add. Commit. Push.
+Repeat this process at least five times. I'm going to look at your log for your repository, and I want to see that you have edited your README.md file at least five times. The point is that I want you to learn how to push and pull your work between copies of your repository.
 
-## Step Six: Pull AllTest
+## Conflicts.
 
-Switch over to your other local copy of your repository. Pull down **AllTest**:
+Now I want you to learn about Git conflicts.
 
-```
-git pull
-```
+1. Edit a single line your README.md file in copy of your repository.
+1. Commit your work.
+1. Switch to the other copy of your repository.
+1. Open your README.md file and make different changes to same line you edited earlier.
+1. Commit your work.
+1. Go back to the first version of your repository. Pull.
 
-Check to make sure AllTest is there. Go to GitHub, check to make sure AllTest is visible on GitHub
+At this stage you will be in an "error" state. You will have a conflict. Resolve the conflict as described here:
+
+- [Git Merge Conflicts][git-conflicts]
+- [Git Merge Tool][git-merge-tool]
+
+[git-conflicts]: http://www.elvenware.com/charlie/development/cloud/Git.html#merging-code
+[git-merge-tool]: http://www.elvenware.com/charlie/development/cloud/Git.html#merge-tool
 
 ## Step Seven: Share Repository
 
