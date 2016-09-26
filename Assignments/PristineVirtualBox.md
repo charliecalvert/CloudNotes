@@ -19,6 +19,7 @@ Before doing anything else, confirm that you have VirtualBox installed and updat
 
 Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance):
 
+- Download Pristine Lubuntu Fall 2016 (2.8 GB): [http://bit.ly/pristine-lubuntu-2016-sept-02](http://bit.ly/pristine-lubuntu-2016-sept-02)
 - Download Pristine Lubuntu Spring 2016 (4GB): [http://bit.ly/pristine-april-2016](http://bit.ly/pristine-april-2016)
 
 [pristine-2016-03]: https://drive.google.com/file/d/0B25UTAlOfPRGOGV1dFN4SnBscW8/view?usp=sharing

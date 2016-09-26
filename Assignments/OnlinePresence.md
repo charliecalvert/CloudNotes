@@ -154,7 +154,7 @@ After you have created your google account, it takes only a single click to begi
 - Enter the captcha.
 - Click Create Site
 
-After creating the site choose **More Actions | Manage Site | Automatically Adjust Site to Mobile Phones**.
+After creating the site choose **Manage Site | General | Mobile | Automatically adjust site to mobile phones**.
 
 If things go completely awry, you will be able to delete the site and start again. In that case, choose **More Actions | Manage Site| Delete Site**.
 

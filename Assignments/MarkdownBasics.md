@@ -14,15 +14,36 @@ Summary of what we are going to do:
 <li>Turn in the assignment.</li>
 </ul>
 
-## Install Remarkable
+An old, funky, out of date, silent video that might still be helpful:
 
-[Remarkable](https://remarkableapp.github.io/) is a Markdown editor. It may already be installed on Pristine Lubuntu. If not, download it:
+- [Funky Video](https://youtu.be/YZUruYmEFG0)
 
-- [https://remarkableapp.github.io/linux/download.html](https://remarkableapp.github.io/linux/download.html)
+The video does not use the Atom editor that I now prefer.
 
-Download the free deb file. After downloading it, click on it to launch it in the **Package Installer**. Select the install button.
+## Install Atom
 
-Once the install is complete, Remarkable should appear as an item in your **Accessories** menu. Open it and use it to work through the exercises in this assignment. Enter the markdown code on the left, see the rendered result on the right. Choose **File | Export HTML** to create HTML from your markdown.
+The Atom editor should already be installed on your Virtual Machine. If it is not, you can get it here:
+
+- [https://atom.io/](https://atom.io/)
+- Click on the **Download deb** link
+- After the download completes, open up the File Manager, navigate to the download, and double click on it. A self explanatory dialog/application will load which will step you through the rest of installation process. More specifically, double click on the downloaded file to launch it in the **Package Installer**. Select the install button.
+
+Once the install is complete, Atom should appear as an item in your **Accessories** or **Development** menu. Open it and use it to work through the exercises in this assignment. Enter the markdown code on the left, see the rendered result on the right when you choose **Ctrl-Alt-M**
+
+To install the **markdown-writer** package:
+
+- Choose **Edit-Preferences** or **Ctrl-,** to open the Settings menu
+- Choose install
+- Type in **markdown-writer**
+- Press the install button
+
+Set up the key bindings.
+
+- Go back to the Settings page if you are not still there.
+- Choose KeyBindings
+- Click the blue **your keybindings** link near the top
+- Paste in the contents of [this file](https://github.com/zhuochun/md-writer/blob/master/keymaps/sample-linux.cson)
+  - In general you can overwrite the contents of the existing **keymaps.cson** file, which is just a long comment. Or keep the comments if you find them helpful. Of course, if there is something other than comments in the file, then you might want to preserve them.
 
 ## Using Markdown
 
@@ -195,7 +216,7 @@ And here is what we want it to look like:
 
 <pre>
 I met a traveller from an antique land
-Who said: `Two vast and trunkless legs of stone
+Who said: 'Two vast and trunkless legs of stone
 Stand in the desert. Near them, on the sand,
 Half sunk, a shattered visage lies, whose frown,
 And wrinkled lip, and sneer of cold command,
@@ -212,10 +233,8 @@ The lone and level sands stretch far away.'
 
 *Percy Bysshe Shelley*
 
+## Markdown on the Web
 
-
-Markdown on the Web
-------------------
 
 We will create most of our markdown in **Remarkable**. You can optionally go to one of these sites and see if you can get started creating your own Markdown document on line:
 
