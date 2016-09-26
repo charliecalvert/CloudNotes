@@ -1,11 +1,13 @@
-# JavaScriptObjects
+## Overview
 
-Learn about JavaScript objects.
+In this assignment we will learn about JavaScript objects.
 
-There are lots of tips in these slide decks:
+These slide decks have useful information in them:
 
 * [http://bit.ly/elven-javascript-basics](http://bit.ly/elven-javascript-basics)
 * [http://bit.ly/function-types](http://bit.ly/function-types)
+* JavaScript Intro: [http://bit.ly/javascript-intro](http://bit.ly/javascript-intro)
+* JavaScript Node: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
 Also see this section of Elvenware for details on Object Literals:
 
@@ -17,34 +19,32 @@ In this exercise, we are working with object literals, not function objects.
 
 ## Part One
 
-Create a **nodejs** folder called **Week03-JavaScriptObjects**. Inside get started by creating a single file called **work.js**. In that file build a JavaScript object called **person** with two properties:
+Create a **nodejs** folder called **Week02-JavaScriptObjects**. Inside get started by creating a single file called **work.js**. In that file build a JavaScript object called **person** with two properties:
 
 * firstName
 * lastName
 
-Set them to _your_ first and last names. Write the two properties to the console.
+Set them to _your_ first and last names. Write the two properties to the console with **console.log()**.
 
-**NOTE**: _You do not have to run this code as an Express program. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single file called **work.js**, plus any grunt related files._
+**NOTE**: _You do not have to run this code as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single file called **work.js** that runs from the command line, plus any grunt related files._
 
 Now run it:
 
 ```
-cd Week03-JavaScriptObjects
+cd Week02-JavaScriptObjects
 node work.js
 ```
 
-Output should look like this:
+The output should look something like this:
 
 ```
 George
 Washington
 ```
 
-Take a screenshot and call it **FirstLast.png**
-
 ## Part Two
 
-Add a **fullName** method to the **person** object and call it.
+Add a **fullName** method to the **person** object. The method should concatenate the first and last names, and return the result. Call the method and print out the return value with **console.log**.
 
 ```
 node work.js
@@ -53,18 +53,16 @@ Washington
 George Washington
 ```
 
-Take a screen shot and call it **FullName.png**.
-
 ## Part Three
 
 In the same file, using JavaScript object literal syntax, create a new object called **calculator**.
 
-Inside the object literal, give it two properties called:
+Inside the object literal, create two properties called:
 
 * operator01
 * operator02
 
-Initialize these properties to -1, much as we initialized the name property of **person** to **'Suzie'** in the first of the two examples in [Part Zero](#Part Zero). Of course, this property is of type **number**, not of type **string**.  
+Initialize these properties to -1, much as we initialized the name property of **person** to **'Suzie'** or some similar name in the first of the two examples in [Part Zero](#Part Zero). Of course, this property is of type **number**, not of type **string**.  
 
 **HINT**: _See [this slide][obj-slide] for help understanding what I want._
 
@@ -146,17 +144,23 @@ Multiply: 60
 
 Unless you name is George Washington, your output will probably differ, but this should give you some general idea of what to produce.
 
+
+## Grunt Check
+
+As always, use Grunt to make sure your code is properly formated. If you have not yet completed the GruntCheck assignment, do so before you turn this assignment in. The point is that you will need to understand the Grunt Check assignment before you can complete this assignment.
+
+**NOTE**: _[Previously][gc-proj], in [Grunt Check][gc-proj], I said "in this and all future projects" be sure you code passes grunt check. I will take off points if your code is clearly improperly formated. Grunt check was created to help you do the right thing. It is easier, I think, if we run it than if we don't. To make it work, of course, you need **.jscsrc** and **Gruntfile.js** plus a **package.json** file. But these are boiler plate at this time._
+
+[gc-proj]: http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck.html#clean-code
+
+
 ## Turn it in
 
 You know the drill. Save your work to your repository. Submit the url of your project and/or the directory in which you did your work.
 
-As always, use Grunt to make sure your code is properly formated.
+Take a screenshot of the output of your program and attach it to the assignment when you turn it in.
 
-**NOTE**: _[Previously][gc-proj], in [Grunt Check][gc-proj], I said "in this and all future projects" be sure you code passes grunt check. I'll let that go this time, but remember, this is implicit in all our assignments unless I say otherwise. I will, however, take off points if your code is clearly improperly formated. Grunt check was created to help you do the right thing. It is easier, I think, if we run it than if we don't. To make it work, of course, you need **.jscsrc** and **Gruntfile.js** plus a **package.json** file. But these are boiler plate at this time._
-
-[gc-proj]: http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck.html#clean-code
-
-In summary: The **firstName** and **lastName** properties of the **person** object should be declared with object literal syntax. I want the **fullName**, **add** and **subject** methods to be part of object literals, and I want **multiply** to be part of the calculator object but declared outside the original object literal declaration.
+In summary: The **firstName** and **lastName** properties of the **person** object should be declared with object literal syntax. I want the **fullName**, **add** and **subject** methods to be part of object literals, and I want the **multiply** method to be part of the **calculator** object but declared outside the original object literal declaration for the **calculator** object.
 
 ## Hint
 
