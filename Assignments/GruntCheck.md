@@ -26,6 +26,17 @@ Note that I want you to shorten lines longer than 120 characters. This can be co
 
 To some degree, the act of properly formating our code can be automated. To do this, we will use a tool called [jsbeautifier.org](http://jsbeautifier.org/).
 
+## Get Started
+
+Create a default Express project called Week02-GruntCheck, and do your initial work for this assignment in that folder.
+
+- Navigate to your repository
+- Run this command:
+  - CreateExpressProject Week02-GruntCheck
+  - (Or experiment CreateAllExpress)
+- Navigate to the Week02-GruntCheck folder
+- Do your work in this folder
+
 ## Setup JSCS {#setup}
 
 JSCS enforces rules that help us properly format our code. Properly formatted code is **_much_** easier to read than poorly formatted code. Most professional teams adopt a specific set of rules for formatting their code. These rules are usually strictly enforced, and most developers quickly get very annoyed when someone does not follow these rules. JSCS provides a means of checking your code before you push it to git so you can be sure it meets specific formatting standards.
@@ -34,7 +45,7 @@ JSCS enforces rules that help us properly format our code. Properly formatted co
 
 The **.jscsrc** file is a configuration file, just as **.bashrc** and **.bowerrc** are configuration files. We use these files to configure the tools we use. The **.bashrc** file contains code that configures our bash shell. It tweaks the shell to work the way we want it to work. The **.bowerrc** file does the same for bower, and our **.jscsrc** files configure JSCS.
 
-**NOTE**: _In Windows, we frequently configure our tools using a set of pop-up dialogs. That technique is used in Linux also, but much of the time we forgo the GUI tools and edit a text file instead. At first, I found text files harder to use the GUI dialogs, but over time, I have found the opposite to be the case. Dialogs often change from version to version of a product, and searching through a set of dialogs for a particular feature is an onerous task. Text files usually keep the same format for years or even decades, and it is easy to search through them with a simple text editor or similar tool._ 
+**NOTE**: _In Windows, we frequently configure our tools using a set of pop-up dialogs. That technique is used in Linux also, but much of the time we forgo the GUI tools and edit a text file instead. At first, I found text files harder to use the GUI dialogs, but over time, I have found the opposite to be the case. Dialogs often change from version to version of a product, and searching through a set of dialogs for a particular feature is an onerous task. Text files usually keep the same format for years or even decades, and it is easy to search through them with a simple text editor or similar tool._
 
 Here is the **.jscsrc** config file I suggest we use in this class:
 
@@ -237,7 +248,7 @@ The **package.json** file for this code might look a bit like this, though the v
     "grunt-jscs": "^2.3.0",
     "grunt-karma": "^0.12.1",
     "jasmine-core": "^2.3.4",
-    "jshint-stylish": "^2.0.1",
+    "jshint-stylish": "^2.0.1"
   }
 }
 ```
@@ -254,21 +265,23 @@ This assignment does not actually use Karma, but I include the code for configur
 
 ## Clean Code
 
-I want to be sure that the following projects, and all future projects, pass the tests set up in this project:
+I want to be sure that any projects you turn in for this course pass our Grunt Check test. So any already completed projects, and all future projects, should pass the tests set up in this assignments. For instance, you might have to go back and make sure assignments like the following all pass Grunt Check:
 
-- Week01-CordovaStarter
 - Week02-GetNumbers
-- Week02-ObjectBasicsJasmine
+- Week02-JavaScriptObjects
+- Week02-JasmineServerBasics
 
-Start with **Week02-GetNumbers** as it is a very simple project. By the time you get it to pass, you should know enough to be able to test the code in the other two projects.
+**NOTE**: _Use your common sense here. I list the projects above as examples. If those names don't make sense for the course you are in, just focus on the projects, if any, that you have completed so far for this course. And of course add Grunt Check to any projects you create in the future for this course._
+
+For instance, start with **Week02-GetNumbers**, or any other relatively simple project you created. By the time you get it to pass, you should know enough to be able to test the code in your other projects.
 
 Note that both **grunt check** and **npm test** should pass without errors.
 
-Remember, you should not need to modify the files included in this assignment. It is your JavaScript files that may need to change as a result of the tests shown here.
+Remember, you should not need to modify the files included in this assignment. It is your JavaScript files that may need to change as a result of the tests shown here. For instance, the GruntFile.js that I give you can probably remain unchanged. Just get your tests to pass.
 
 ## Unit Tests
 
-We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. Copy the **tests** directory from the GetNumbers project to **Week01-CordovaStarter**. Also copy over **jasmine-runner.js** and **.jscsrc**. Open up **spec/test-numbers.js** and delete all the tests except the first one:
+We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. Also copy over **jasmine-runner.js** and **.jscsrc**. Open up **spec/test-numbers.js** and delete all the tests except the first one:
 
 ```javascript
 describe('GetNumbers Jasmine intro tests', function() {
@@ -343,7 +356,7 @@ The main point: *we are never going to edit or maintain **bitly-links.js** so we
 
 ## Turn it in
 
-When turn, I should be able to see updated files in the projects mentioned above. In particular, I should be able to go to any of those three projects, run **grunt check**, and see results like this:
+After you turn it in, I should be able to see updated files in the projects you have completed so far in this course, as well as a new folder called **Week02-GruntCheck**. In particular, I should be able to go to any of your existing and future JavaScript projects, run **grunt check**, and see results like this:
 
 ```bash
 $ grunt check
