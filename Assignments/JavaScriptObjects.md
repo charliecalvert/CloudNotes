@@ -19,7 +19,7 @@ In this exercise, we are working with object literals, not function objects.
 
 ## Part One
 
-Create a **nodejs** folder called **Week02-JavaScriptObjects**. Inside get started by creating a single file called **work.js**. In that file build a JavaScript object called **person** with two properties:
+Create a **nodejs** folder called **Week02-JavaScriptObjects**. Inside get started by creating a single file called **work.js**. In that file build a JavaScript object literal called **person** with two properties:
 
 * firstName
 * lastName
@@ -44,7 +44,7 @@ Washington
 
 ## Part Two
 
-Add a **fullName** method to the **person** object. The method should concatenate the first and last names, and return the result. Call the method and print out the return value with **console.log**.
+Add a **fullName** method to the **person** object. Make it part of the Object literal. The method should concatenate the first and last names, and return the result. Call the method and print out the return value with **console.log**.
 
 ```
 node work.js
