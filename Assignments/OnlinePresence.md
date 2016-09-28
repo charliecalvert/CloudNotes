@@ -298,5 +298,5 @@ Various Sections of this Document will help you complete this assignment:
 
 - <http://elvenware.com/charlie/os/Android/AndroidApplications.html>
 
-  [1]: https://evernote.com
-  [2]: http://evernote.com/contact/support/kb/#/article/23480523
+[1]: https://evernote.com
+[2]: http://evernote.com/contact/support/kb/#/article/23480523

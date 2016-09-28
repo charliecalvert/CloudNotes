@@ -10,7 +10,8 @@ After you have set up your account, I want you to complete some simple exercises
 
 - [Go to Web Fundamentals](http://www.codecademy.com/tracks/web)
 - Complete at least 15% of the skill.
-- [Go to JavaScript](http://www.codecademy.com/tracks/javascript)
+- [Go to the old JavaScript course](http://www.codecademy.com/tracks/javascript)
+- [Go to the new Learn JavaScript course](https://www.codecademy.com/learn/learn-javascript)
 - Complete at least 15% of the skill.
 
 ## Looking Ahead

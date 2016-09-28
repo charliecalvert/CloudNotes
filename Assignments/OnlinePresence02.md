@@ -84,3 +84,6 @@ Steps:
 Create accounts for Twitter and Evernote if you don't have them already. Demonstrate that you can use the apps and in general follow the instructions above.
 
 Add links to your Twitter and Evernote accounts to your Online Presence document. Submit the assignment. As in the previous Online Presence assignment, it is helpful if you paste the contents of your Online Presence document into Canvas on the Text page, but I should be able to double check your latest work by looking at the document on Google Drive.
+
+[1]: https://evernote.com
+[2]: http://evernote.com/contact/support/kb/#/article/23480523
