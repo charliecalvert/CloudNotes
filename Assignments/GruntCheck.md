@@ -28,13 +28,13 @@ To some degree, the act of properly formating our code can be automated. To do t
 
 ## Get Started
 
-Create a default Express project called Week02-GruntCheck, and do your initial work for this assignment in that folder.
+Create a default Express project called **Week02-GruntCheck**, and do your initial work for this assignment in that folder.
 
-- Navigate to your repository
+- Navigate to the root of your repository
 - Run this command:
   - CreateExpressProject Week02-GruntCheck
-  - (Or experiment CreateAllExpress)
-- Navigate to the Week02-GruntCheck folder
+  - (Or experiment with CreateAllExpress)
+- Navigate to the **Week02-GruntCheck** folder
 - Do your work in this folder
 
 ## Setup JSCS {#setup}
@@ -147,9 +147,15 @@ module.exports = function(grunt) {
 };
 ```
 
-In **jscs**, you can skip checking **bitly-links.js**:
+Assuming you have JsObjects available, and my **~/.bash_aliases** file in place, you can get my latest **GruntFile.js** with this command:
 
-Here is the section that applies to JSCS:
+```
+cp $ELF_UNIT_TEST/Gruntfile.js .
+```
+
+See also the **TestReady** script in your **~/bin** directory.
+
+Here is the section of **GruntFile.js** that applies to JSCS:
 
 ```javascript
 jscs: {

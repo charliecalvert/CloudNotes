@@ -213,13 +213,12 @@ Doing this gives me read and write acccess to this repository, but not to any ot
 
 Check to make sure all your work is pushed. When turning in the assignment, submit the URL of your repository. Submit both the URL used to clone your repository, and the URL to find your repository on the web.
 
-At minimum, I will look for a **.gitignore** file and an **AllTest** folder with something in it. I also want to see some sensible text in your **README.md** file, and a git log showing that you committed your work multiple times. Perhaps 5 times at minimum. I can also look at the dates in the log, and see if it appears you actually were following along in class.
+At minimum, I will look for a **.gitignore** file and an updated **README.md** file with something in it. I want to see some sensible text in your **README.md** file. When I run   **git log** I expect it to show that you committed your work multiple times. Perhaps 5 times at minimum. I can also look at the dates in the log, and see if it appears you actually were following along in class.
 
 Checklist:
 
 - README.md file present with reasonable content
 - .gitignore present with reasonable content
-- AllTest folder and content
 - At least five commits in the log
 
 I think it is probably nicest to use the Text page of the Canvas submit process to do this kind of thing. Then if you enter a URL, it will be clickable. If you submit the URL as a comment, then I have to block copy and paste it in to the browser address bar. That seems a small thing, but in a worst case scenario, it's gets old if I have to do it 25 times for two or three different assignments (50, 60 or more times total). So please use the the text page if possible.

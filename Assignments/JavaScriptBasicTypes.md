@@ -100,4 +100,4 @@ var myJavaScriptObject = JSON.parse(myObjectAsAString);
 
 ## Turn it in
 
-Make sure your program
+Make sure your program passes GruntCheck, and then turn it in the usual way by placing it in an appropriately named folder of your repository. Don't forget to submit your assignment so I know you are ready to have me go look for your code.

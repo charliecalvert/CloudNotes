@@ -68,7 +68,7 @@ One hash mark is an h1, two is an h2, etc:
 
 When shown in the right renderer, the text shown above would appear in large bold font:
 
-#My Header
+# My Header
 
 ## Lists
 
@@ -95,6 +95,10 @@ In other words, it produces this HTML:
   <li>Three</li>
 </ul>
 ```
+
+## Saving HTML
+
+You can view the rendered HTML for your document by selection **CTRL-SHIFT-M**. To save as HTML, right click on the rendered preview and choose **Save as HTML**. (This only works if you have Atom 1.9 or greater installed, but that should be the case in our classes.)
 
 ## Creating Links
 
