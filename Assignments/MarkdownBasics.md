@@ -1,20 +1,20 @@
 ## Overview
 
-The Markdown Basics document will help you get up to speed with a simple markup language called Markdown. It is easy, and common to convert markdown to HTML. Since markdown is much easier to write than HTML, it is a great way to create HTML documents.
+The Markdown Basics document will help you get up to speed with a simple markup language called Markdown. You can easily convert markdown files to other formats such as HTML and PDF. Since markdown is much easier to write than HTML, it is a great way to create HTML documents.
 
 Summary of what we are going to do:
 
-<ul>
-<li>First we create two markdown files. Attach these files to your assignment when you submit it.</li>
-<li>Now create two html files from the markdown files. Save them to disk.</li>
-<li>Also create two blank pages in your Google Site.</li>
-<li>To open up the HTML editor, select the HTML doo-hickey from the Control bar in your Google Site. Open up one of your HTML files in a text editor such as geany. Copy and Paste the HTML from your text editor to the HTML editor on your Google Site. One file on each page.</li>
-<li>Save your work in Google Sites.</li>
-<li>Provide links to both pages you created on your Google site</li>
-<li>Turn in the assignment.</li>
-</ul>
+1. First we create two markdown files. Attach these files to your assignment when you submit it.
+1. Now create two html files from the markdown files. Save them to disk.
+1. Also create two blank pages in your Google Site.
+1. Open up one of your HTML files in a text editor such as geany.
+1. To open up the Google Site HTML editor, select the HTML doo-hickey from the Control bar in your Google Site.
+1. Copy and Paste the HTML from your text editor (geany) to the HTML editor on your Google Site. One file on each page.</li>
+1. Save your work in Google Sites.</li>
+1. Provide links to both pages you created on your Google site</li>
+1. Turn in the assignment.</li>
 
-An old, funky, out of date, silent video that might still be helpful:
+An old, funky, out of date, silent video that might still be helpful when you are learning markdown:
 
 - [Funky Video](https://youtu.be/YZUruYmEFG0)
 
