@@ -60,7 +60,6 @@ There are only two reasons to run **renewMakeHtml**:
     To update **MakeHtml**
 
 
-
 The very first time you need to use **MakeHtml** on a new system, you should copy **renewMakeHtml** from **JsObjects** to ~/**Source**:
 
 ```
