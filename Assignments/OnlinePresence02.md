@@ -25,7 +25,7 @@ After you are set up, you should edit your Profile from the black menu bar at th
 - A short bio
 - A url pointing to your your web site, which could be the Google site we just created, or some other site if you prefer to use it.
 - For your location you can just enter Washington, or be more specific if you want. For instance, you could enter Bellevue, WA.
-- Follow my [CalvertBc](https://twitter.com/CalvertBc) Twitter account and leave a message to @calvertbc announcing your presence. Remember tweets are 140 characters or less, so keep you message short. To see who has left you a post, choose @mentions from your menu bar.
+- Follow my [CalvertBc](https://twitter.com/CalvertBc) Twitter account and leave a message to @calvertbc announcing your presence. Remember tweets are 140 characters or less, so keep you message short. To see who has left you a post, choose **notifications** from your menu bar.
 
 The last time I looked, it was not particularly easy to delete a twitter account. If you make a mistake and want to start over, you can try searching for solutions on the web, or just abandon the corrupted account and create a new one.
 
