@@ -39,7 +39,7 @@ npm start
 
 <pre>
 bower init
-cp $ELF_TEMPLATES/.bowerrc
+cp $ELF_TEMPLATES/.bowerrc .
 bower install jquery --save
 </pre>
 
