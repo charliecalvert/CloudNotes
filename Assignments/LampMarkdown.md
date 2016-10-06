@@ -98,6 +98,10 @@ By this point in the class, you should already have LAMP installed, and have the
 sudo chown -R bcuser:bcuser html
 ```
 
+**note**: _If the /var/www/html directory is not present, you need to install LAMP. Directions are here:_
+
+- <http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux>
+
 There is one other little piece that we need to put in place to make this work correctly. On [http://www.elvenware.com](http://www.elvenware.com) there is a logo. A picture of mountains silhouetted against the sky. Go to the site, find the logo, right click on it, and save it to your **Pictures** directory of your home drive.
 
 Now create an **images** folder for your website:

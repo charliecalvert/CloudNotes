@@ -1,6 +1,6 @@
 ## Overview
 
-- [CouchDb Elvenware][couchdbccs]
+- [CouchDb Elvenware][couchdbcc]
 - [CouchDb](http://couchdb.apache.org/)
 
 ## Get Started
@@ -310,7 +310,7 @@ To better understand inquirer, see the docs and examples for this project in Git
 
 ## Turn it in
 
-Save your work and push it to the cloud.
+Save your work and push it to the cloud. Attach a screenshot of the result from calling views function.
 
 
 [couchdb]:http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html
