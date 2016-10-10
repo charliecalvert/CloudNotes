@@ -1,12 +1,16 @@
-#Three Floor
+## Overview
 
-This is assignment is now at least reasonably complete. 
+This is assignment demonstrates key features of [ThreeJs][threejs], a 3D library for JavaScript.
 
-##Concepts
+The repository is here: [https://github.com/mrdoob/three.js](https://github.com/mrdoob/three.js).
+
+The bower library is here: [https://libraries.io/bower/threejs](https://libraries.io/bower/threejs).
+
+## Concepts
 
 Let's look at this code for calling our threejs [renderer](http://threejs.org/docs/#Reference/Renderers/WebGLRenderer):
 
-```
+```javascript
 function render() {
 	requestAnimationFrame(render);
 	cube.rotation.x += 0.01;
@@ -15,11 +19,11 @@ function render() {
 }
 ```
 
-This code first calls **requestAnimationFrame**, which [tells the browser][request] to call the **render** method in its animation loop. The effect is to end up calling **render** over and over, each time the Window is ready to redraw the screen. 
+This code first calls **requestAnimationFrame**, which [tells the browser][request] to call the **render** method in its animation loop. The effect is to end up calling **render** over and over, each time the Window is ready to redraw the screen.
 
 The next two lines rotate the cube we created. In this assignment, we want to stop rotating the cube, so you should comment those lines out, or delete them entirely.
 
-Finally, we call **renderer.render**. That line of code actually draws our scene and tells the camera to show us what it sees. Note that in the **Control.js** constructor, or in a method called by the constructor, we fill the scenes with the objects we want to view. For instance, we load the **cube** in the scene:
+Finally, we call **renderer.render**. That line of code actually draws our scene and tells the camera to show us what it sees. Note that in the **control.js** constructor, or in a method called by the constructor, we fill the scenes with the objects we want to view. For instance, we load the **cube** in the scene:
 
 	scene.add(cube);
 
@@ -27,7 +31,7 @@ Hopefully you now have some sense of how **render** works. It is certainly one o
 
 [request]: https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame
 
-##Add a Floor
+## Add a Floor
 
 The following module will add a floor to our scene in our Test05 program from last week. Note the call to the require method called [define][deffunc].
 
@@ -127,7 +131,7 @@ More later, but this should get you started.
 
 [deffunc]: http://requirejs.org/docs/api.html#deffunc
 
-##Naive Walk
+## Naive Walk
 
 Let's add just primitive support for walking through the scene. Since the camera is our eye on the scene, what we will do is move the camera to the left and right, and backward and forward. This is like moving through a room, but always having to face in the same direction, as if you were a courtier coming to visit the king.
 
@@ -195,12 +199,12 @@ Finally we want to change the **render** method to animate the camera when the k
 Finally, we move the camera to the new position:
 
 	camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z);
-	
+
 When you are finished you should be able to "jump" right, left, forward and backward. You might experiment with moving smaller increments each time to make the jumps less jarring to the viewer.
 
 There is much more complex code that allows us to move more smoothly through the screen, but this at least helps us get started moving around in the scene.
 
-##Add More Objects
+## Add More Objects
 
 First, let's add a few more cubes to the scene. Our goal will be to create a scene that looks something like this:
 
@@ -228,14 +232,14 @@ After you "walk" down the aisle between the boxes for a bit, you might see somet
 
 If you look carefully you can see that there is a small space betwen each box. I'm doing this mostly so that you can clearly see when one box ends and the next starts. In a final version of our game, we might not want to include that space. But for now, its useful. To create the space, just add a small value to the z location of each box. You'll probably want to pick a value well under 1.0.
 
-##Add Textures
+## Add Textures
 
 The scene in your program right now probably looks a bit like the one in the screen shots, but the boxes have bright colors on them rather than a nice wooden texture. To add the texture, swap out this call to [MeshNormalMaterial][normal]:
 
 ```
-var material = new THREE.MeshNormalMaterial({ 
+var material = new THREE.MeshNormalMaterial({
 	color : 0x00ffff,	  
-	wireframe : wireFrame 
+	wireframe : wireFrame
 });
 ```
 
@@ -256,7 +260,7 @@ The results in your program are probably less than satisfying, as the boxes are 
 [material]:http://threejs.org/docs/#Reference/Materials/MeshLambertMaterial
 
 
-##Add Lights
+## Add Lights
 
 Call it from your constructor:
 
@@ -271,7 +275,7 @@ function addLights() {
 }
 ```
 
-##Sphere
+## Sphere
 
 Let's add a [sphere][sphere].
 
@@ -281,8 +285,8 @@ function addSphere(sne, camera, wireFrame, x, y) {
 	var material = new THREE.MeshNormalMaterial({
 	color: 0x00ffff,
 		wireframe: wireFrame
-	}); 
-        
+	});
+
 	var sphere = new THREE.Mesh(geometry, material);
 	sphere.overdraw = true;
 	sphere.position.set(x, 0, y);
@@ -296,9 +300,9 @@ Call the **addSphere** method just after your **for loop**. Be sure to pass in t
 
 [sphere]: http://threejs.org/docs/#Reference/Extras.Geometries/SphereGeometry
 
-##Window Resize
+## Window Resize
 
-One event handler that I should mention is window resize. This event is triggered when the window is resized and it causes the scene to be recalculated so that it fits properly inside the window. 
+One event handler that I should mention is window resize. This event is triggered when the window is resized and it causes the scene to be recalculated so that it fits properly inside the window.
 
 Here is how we hook the event:
 
@@ -324,15 +328,13 @@ block content
 
 As you can see, there is essentially nothing at all happening in **index.jade**. Our HTML body is occupied entirely by Three.Js. Later on we will see how to use CSS to lay HTML over the 3D scene.
 
-##Turn it in
+## Turn it in
 
 Add a .gitignore file to the root of your BitBucket repository. Make sure you include both **.metadata** and **node_modules** in your .gitignore file. Put your project in your BitBucket repository. Reference for .gitignore:
 
 - <http://www.elvenware.com/charlie/development/cloud/Git.html#the-gitignore-file>
 
-Click the **Send Invitation** button and share your BitBucket repository with me. I'm **ccalvert** on BitBucket. 
-
- 
+Click the **Send Invitation** button and share your BitBucket repository with me. I'm **ccalvert** on BitBucket.
 
 
-> by [Charlie Calvert](http://elvenware.com/charlie).
+[threejs]: https://threejs.org/

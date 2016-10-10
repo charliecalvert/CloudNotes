@@ -32,7 +32,7 @@ Once the install is complete, Atom should appear as an item in your **Accessorie
 
 To install the **markdown-writer** package:
 
-- Choose **Edit-Preferences** or **Ctrl-,** to open the Settings menu
+- Choose **Edit-Preferences** or **Ctrl-,** (Control + comma) to open the Settings menu
 - Choose install
 - Type in **markdown-writer**
 - Press the install button

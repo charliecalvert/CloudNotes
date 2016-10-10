@@ -1,13 +1,24 @@
 # Grunt Check
 
-In this assignment you will learn how to use [grunt][grunt], [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it.
+In this assignment you will learn how to use [grunt][grunt], [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it. In particular, this assignment shows how to use them to check the status of a Node Js Express project.
 
 While working on this assignment, we will learn how to create two files:
 
 - **.jscsrc**: Configure JSCS
-- **Gruntfile.js**: Configure Grunt
+- **Gruntfile.js**: Configure Grunt. See the [Setup Grunt](#grunt) section in this document for information on creating this file.
+
+You will also learn how to make important changes to **package.json**.
 
 One is used to configure **grunt**, the other to configure **jscs**.
+
+**note:** _This assignment requires some patience to complete. Unfortunately, you need to work through nearly the whole assignment before the code will start to work properly. In particular, you need to complete the steps outlined above:_
+
+- Create an express project.
+- Configure jscs
+- Add **GruntFile.js**
+- Modify **package.json**
+
+If you are very impatient, you can first skim the assignment and see who to create **.jscsrc** and **GruntFile.js** and how to properly modify **package.json.** Once you have those files in place, you might come pack and read the assignment through, seeing how each piece works.
 
 ## Goals
 
@@ -36,6 +47,8 @@ Create a default Express project called **Week02-GruntCheck**, and do your initi
   - (Or experiment with CreateAllExpress)
 - Navigate to the **Week02-GruntCheck** folder
 - Do your work in this folder
+
+See the [Setup Grunt](#grunt) section in this document for information on creating **GruntFile.js**.
 
 ## Setup JSCS {#setup}
 
@@ -87,6 +100,20 @@ console.log('Could be a long string since we turned off the line length rule.');
 ```
 
 **NOTE**: _In general, when grading homework, I will consider it an error if I find you have turned off jscs rules. In most cases, only do so if I have specifically asked you to. The same goes for modifications to your **.jscsrc** file. In general, it will be considered an error if you don't check that file in, or if you modify it in ways I don't specifically spell out in class or in an assignment. I don't mean to be overly dogmatic, but it is important that I make clear what I am expecting to see in most cases._
+
+## JSCS Cheat
+
+Sometimes, you can "cheat" a bit with jscs errors. First, install the **jscs** global cli:
+
+<pre>
+npm install -g jscs
+</pre>
+
+Now try running **jscs --fix** on your whole project or on a specific file. For attempting to fix a specific file:
+
+<pre>
+jscs --fix app.js
+</pre>
 
 ## Setup Grunt {#grunt}
 
@@ -227,6 +254,7 @@ If a line is too long, try to find a way to break it up. The following method ha
     },
 ```
 
+## Setup NPM {#npm}
 
 The **package.json** file for this code might look a bit like this, though the version numbers of packages are going to change:
 
@@ -247,14 +275,14 @@ The **package.json** file for this code might look a bit like this, though the v
   "author": "Charlie Calvert",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-jsbeautifier": "^0.2.10",
-    "grunt-jscs": "^2.3.0",
-    "grunt-karma": "^0.12.1",
-    "jasmine-core": "^2.3.4",
-    "jshint-stylish": "^2.0.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-jsbeautifier": "^0.2.13",
+    "grunt-jscs": "^3.0.1",
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.5.2",
+    "jshint-stylish": "^2.2.1"
   }
 }
 ```
@@ -268,6 +296,17 @@ This assignment does not actually use Karma, but I include the code for configur
 "karma-spec-reporter": "0.0.22",
 "phantomjs-prebuilt": "^2.1.6"
 ```
+
+**note**: _You may see some warnings when running **npm install**. You can ignore all messages about **fsevents**, as it is for Macs only and does not apply to Windows or Linux. As a rule, messages like the following can be ignored, at least for now_:
+
+<pre>
+npm WARN deprecated jade@1.11.0: Jade has been renamed to pug, please install the latest version of pug instead of jade
+npm WARN deprecated transformers@2.1.0: Deprecated, use jstransformer
+npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+npm WARN prefer global coffee-script@1.10.0 should be installed with -g
+npm WARN prefer global jsonlint@1.6.2 should be installed with -g
+npm WARN prefer global jshint@2.9.3 should be installed with -g
+</pre>
 
 ## Clean Code
 
@@ -287,7 +326,20 @@ Remember, you should not need to modify the files included in this assignment. I
 
 ## Unit Tests
 
-We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. Also copy over **jasmine-runner.js** and **.jscsrc**. Open up **spec/test-numbers.js** and delete all the tests except the first one:
+We have already specified how to set up unit tests for **Week02-GetNumbers** and **Week02-ObjectBasicsJasmine**. Also copy over **jasmine-runner.js** and **.jscsrc**. You may also need to run this command:
+
+<pre>
+  npm install jasmine-spec-reporter --save-dev
+</pre>
+
+In the root of your project, create a **spec** directory and copy over the default **test-basic.js** file from JsObjects:
+
+<pre>
+mkdir spec
+cp $ELF_UNIT_TEST/test-basic.js spec/.
+</pre>
+
+Your **test-basic.js** file should look like this one:
 
 ```javascript
 describe('GetNumbers Jasmine intro tests', function() {
@@ -359,6 +411,48 @@ An alternate solution might be to modify the **.jscsrc** file:
 ```
 
 The main point: *we are never going to edit or maintain **bitly-links.js** so we don't care what it looks like. It's like the files in the **node_modules** directory. They can have any formatting they want. We don't care what they look like as we are not tasked with maintaining them. We do, however, care about our own code, and that should look right so that others can understand it. Be very careful about which files you exclude. As a rule, don't exclude files that contain code that you wrote. There may be exceptions to that rule, but they would have to be very unusual and very clearly defined.*
+
+## Exceptions
+
+At times we need to tweak the way that JSCS handles double or single quotes. This issue can be resolved by adding a line to the **.jscsrc** file. Here is a description of the rule:
+
+[http://jscs.info/rule/validateQuoteMarks](http://jscs.info/rule/validateQuoteMarks)
+
+Here is how to add a line **.jscsrc** to set JSCS to default to accepting double quote marks:
+
+<pre>
+"validateQuoteMarks": "\""
+</pre>
+
+Also note that you can turn a rule off for a small block of code. This is okay to do in rare cases:
+
+```javascript
+// jscs:disable
+var foo = 'exception to rule';
+// jscs:enable
+```
+
+Or, better, turn off a specific rule:
+
+```javascript
+// jscs:disable specificRule
+// Code here will be ignored by JSCS.
+// jscs:enable specificRule
+```
+
+More found here: [http://stackoverflow.com/a/25223150](http://stackoverflow.com/a/25223150)
+
+You can also exclude particular files:
+
+```javascript
+"excludeFiles": ["folder_to_exclude/\*\*", "src/!(bar|foo)"]
+```
+
+We don't usually exclude an entire file or folder other than **node_modules** or **public/components**, but there are cases when it is the right thing to do.
+
+We have to remember why tools like JSCS were created: When a team works together, they want the code they use to be as easy to understand and read as possible. Our brains are good at recognizing patterns. Patterns can be very meaningful. For instance, we don't so much read a for loop, as simply recognize the pattern of a for loop and know immediately what it means. JSCS is designed to help us format our code so that it follows certain conventions that we can all learn to find easy to understand and easy to read.
+
+In short, JSCS is not meant to be an impediment, but an aid. It is okay to create exceptions in rare cases if it helps us achieve our goal of creating well formatted, easy to read code.
 
 ## Turn it in
 

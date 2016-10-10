@@ -230,6 +230,8 @@ To make this work, you may need to install the NPM package (library) called **in
 
 **note**: _We already placed the code to install **inquirer** in our **package.json**. Nevertheless, I'm leaving in this reminder of how to install it and add it to your **package.json** file as it may be a helpful reminder for some readers._
 
+**note**: _Inquirer and nodemon don't get along. Please use node instead of nodemon to start your program: **node server.js**. You may need to edit **package.json** to ensure you don't have **nodemon** in the start option._
+
 Here is the menu itself:
 
 ```javascript

@@ -36,7 +36,6 @@ Don't forget, if you have trouble, join the discussion group and ask for help! D
 
 To create a OneNote document, select the menu-item/toolbar icon entitled **New**.
 
-
 ## Why not Just Use Google for Everything?
 
 Google does a great job with their online tools, and most other products are playing catch up. However, there are a huge number of tools out there. Just doing a search on note taking tools for the cloud, I get links to articles on the "12 Best Note Taking Apps" and "7 Cloud Based note-taking apps". The cloud is huge place, with lots of interesting solutions to many different problems.
@@ -55,6 +54,17 @@ I think we should both:
 I provide a certain amount of guidance on creating accounts. If you need more information, please use the discussion area to ask questions, or refer to [this Elvenware document][elf-app].
 
 [elf-app]: http://www.elvenware.com/charlie/os/Android/AndroidApplications.html
+
+## Turn it in
+
+I want to see:
+
+- A shared folder
+- Two documents in the folder.
+  - A Word Document
+  - A One Note Document
+
+If you share a folder on OneDrive, then the contents of the folder should also be automatically shared. Be sure to put both the **Word** Document and the **One Note** document in that shared folder.
 
 ## Links
 

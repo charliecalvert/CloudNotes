@@ -151,6 +151,13 @@ cat id_rsa.pub >> authorized_keys
 
 This will append your public key to an existing authorized_keys file or create a new file if it does not already exist.
 
+## No Passwords
+
+We use SSH keys in part to avoid being prompted for passwords. In particular, to avoid being prompted for passwords, two conditions must be met:
+
+- Our private key must be loaded on the desktop PC with **sshadd**﻿ or **ssh-add**.
+- The corresponding public key must be stored properly in the **~/.ssh/authorized_keys** file on the Ubuntu server.
+
 ## Copy a File with scp {#scp}
 
 To complete the process, let's make sure that you know how to copy a file from one machine to another. First, switch your Pristine Lubuntu desktop. Create a disposable file called **LinuxServerTest.md** with the **echo** command, then copy it to the remote machine:
@@ -197,7 +204,7 @@ bcuser@ubs:~$ cat LinuxServerTest.md
 
 ## Turn it in
 
-Perform the actions described in the section called [Copy a File with scp][#scp]. Only this time, call the file **LinuxServer-LastName.md** and set the title to your last name:
+Perform the actions described in the section called [Copy a File with scp](#scp). Only this time, call the file **LinuxServer-LastName.md** and set the title to your last name:
 
 ```
 echo '## LastName' >> LinuxServer-LastName.md

@@ -130,15 +130,17 @@ html
 
 ## Step Four: Jade {#jade}
 
-In **index.jade** use Jade to create a button and two paragraphs:
+In **index.jade** use Jade to create a button and two paragraphs. To do this, just paste in the following code, but be careful of your indents:
 
     button#sendString Send String
     p#stringHolder
     p#readyCalled
 
-Add a button to index.jade with an id of **sendString**. Use the constuctor of **MyObject** to set up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places a string in your **stringHolder** paragraph.
+The code above adds a button to **index.jade** with an id of **sendString** and the caption **Send String**.
 
-When the user clicks on the button a method must be called. To make the possible, add code in the constructor that defines an event handler for the button click. And then outside the constructor add a method called **showString** to handle the event:
+In your JavaAScript, use the constuctor of **MyObject** to set up a handler for the button click. Create a private method of **MyObject** called **stringSender** that places a string in your **stringHolder** paragraph.
+
+When the user clicks on the button a method must be called. To make that possible, add code in the constructor that defines an event handler for the button click. And then outside the constructor add a method called **showString** to handle the event:
 
 ```javascript
     function MyObject() {
@@ -150,7 +152,7 @@ When the user clicks on the button a method must be called. To make the possible
     }
 ```
 
-**NOTE**: *The above code should appear in **Control.js**. As a rule, it makes no sense to place JavaScript code in a Jade file. The purpose of a Jade file is to create HTML. It is not a place for, or a means of creating, JavaScript.*
+**NOTE**: _The above code should appear in **control.js**. As a rule, it makes no sense to place JavaScript code in a Jade file. The purpose of a Jade file is to create HTML. It is not a place for, or a means of creating, JavaScript._
 
 ## Step Five: Lists {#lists}
 

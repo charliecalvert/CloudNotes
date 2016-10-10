@@ -17,8 +17,17 @@ This project uses [RequireJs](http://requirejs.org). We have not used this techn
 
 - [Requirejs on Elvenware][reqjs]
 
-[domReady]: http://requirejs.org/docs/api.html#pageload
-[reqjs]: http://www.elvenware.com/charlie/development/web/JavaScript/Require.html
+The basic steps are:
+
+
+
+## Step01 - Copy the project to your repository {#step01}
+
+Clone or pull the repository. Find the **Week09-ClickRoute** project. Copy it to your repository and rename it to reflect our current week. For instance, **Week04-ClickRoute**.
+
+**NOTE**: *Remember you can copy files from the bash shell with a command similar to this:*
+
+    cp -r Week09-ClickRoute ~/Git/prog272-lastName/.
 
 Let's include **$(document).ready(callback)** or [DomReady][domReady] in **Main.js**:
 
@@ -42,13 +51,8 @@ define(["jquery"], function(jquery) {'use strict';
 If you skip this latter step, then the program will still run without error, but jquery
 events may not be fired until you press refresh.
 
-## Step01 - Copy the project to your repository {#step01}
-
-Clone or pull the repository. Find the **Week09-ClickRoute** project. Copy it to your repository.
-
-**NOTE**: *Remember you can copy files from the bash shell with a command similar to this:*
-
-    cp -r Week09-ClickRoute ~/Git/prog272-lastName/.
+[domReady]: http://requirejs.org/docs/api.html#pageload
+[reqjs]: http://www.elvenware.com/charlie/development/web/JavaScript/Require.html
 
 ## Step02 - Server Side {#step02}
 
