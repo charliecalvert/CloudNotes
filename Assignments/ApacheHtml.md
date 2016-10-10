@@ -12,7 +12,7 @@ The MakeHtml program assumes that certain files are already in place in your Apa
 
 ## CSS
 
-There are two files:
+There are two files to put in **/var/www/html**:
 
 - first-style.css // CAN BE EMPTY
 - style.css

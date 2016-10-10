@@ -37,7 +37,7 @@ This gets you the whole threejs project including the examples. If you really wa
 <pre>
 cd ~/Git
 git clone git@github.com:mrdoob/three.js.git
-<pre>
+</pre>
 
 ## Step Three
 
