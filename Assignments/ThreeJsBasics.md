@@ -133,8 +133,7 @@ define(function() {
 
     function addCube(scene, camera, wireFrame, x, y) {
         var geometry = new THREE.BoxGeometry(7, 7, 7);
-        var material = new THREE.MeshNormalMaterial({
-            color : 0x00ffff,
+        var material = new THREE.MeshNormalMaterial({            
             wireframe : wireFrame
         });
         var cube = new THREE.Mesh(geometry, material);
@@ -151,3 +150,32 @@ define(function() {
 <!-- Links -->
 
 [reqjs]: http://www.elvenware.com/charlie/development/web/JavaScript/Require.html
+
+## Turn it in
+
+Make sure you code is in your repository and in the right folder. Push your code. Let me know you have finished your work by submitting the assignment.
+
+## Concepts
+
+Let's look at this code for calling our threejs [renderer](http://threejs.org/docs/#Reference/Renderers/WebGLRenderer):
+
+```javascript
+function render() {
+	requestAnimationFrame(render);
+	cube.rotation.x += 0.01;
+	cube.rotation.y += 0.01;
+	renderer.render(scene, camera);
+}
+```
+
+This code first calls **requestAnimationFrame**, which [tells the browser][request] to call the **render** method in its animation loop. The effect is to end up calling **render** over and over, each time the Window is ready to redraw the screen.
+
+The next two lines rotate the cube we created. In this assignment, we want to stop rotating the cube, so you should comment those lines out, or delete them entirely.
+
+Finally, we call **renderer.render**. That line of code actually draws our scene and tells the camera to show us what it sees. Note that in the **control.js** constructor, or in a method called by the constructor, we fill the scenes with the objects we want to view. For instance, we load the **cube** in the scene:
+
+	scene.add(cube);
+
+Hopefully you now have some sense of how **render** works. It is certainly one of the most important methods in our program.
+
+[request]: https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame
