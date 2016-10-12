@@ -348,6 +348,24 @@ block content
 
 As you can see, there is essentially nothing at all happening in **index.jade**. Our HTML body is occupied entirely by Three.Js. Later on we will see how to use CSS to lay HTML over the 3D scene.
 
+## A Little CSS {#css-border}
+
+To get rid of the borders around the scene:
+
+```css
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #ffffff;
+	margin: 0;
+	overflow: hidden;
+	font-family: arial;
+}
+```
+
 ## Turn it in
 
 Add a .gitignore file to the root of your BitBucket repository. Make sure you include both **.metadata** and **node_modules** in your .gitignore file. Put your project in your BitBucket repository. Reference for .gitignore:
