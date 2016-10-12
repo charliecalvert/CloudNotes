@@ -84,7 +84,7 @@ In **public/names.json**:
 
 ## Client
 
-Make a call to the server in **callRead**:
+Make a call to the server in methods named **read** and **readJson**. Let's start with some code that shows how to set up an **onclick** handler that calls a method named **read**. When the user clicks on an HTML button with the ID identified by the text **#read**, then out JavaScript **read** method is called:
 
 ```javascript
 $(document).ready(function() {
@@ -98,7 +98,10 @@ $(document).ready(function() {
 });
 ```
 
-Then add a **callReadJson** method:
+Now lets evolved the method further with code that shows how to:
+
+- Call a route on the server.
+- Load a JavaScript file stored on the server.
 
 ```javascript
 $(document).ready(function() {
@@ -116,7 +119,7 @@ $(document).ready(function() {
       })
    }
 
-   function callReadJson() {
+   function readJson() {
       console.log('readJson called');
       $.getJSON('names.json', function(result) {
          console.log(result);
@@ -125,6 +128,10 @@ $(document).ready(function() {
    }
 });
 ```
+
+In particular, our JavaScript **read** method makes a REST call to the **/read** route on the server. Our **read** method invokes the **getJSON** method which initiates an HTTP call to the server. The anonymous function in the call is invoked when the response from the server is sent back to our browser hosted application. In short, the message is sent from our JavaScript code in the browser, to an Express method on the server, and then back to our anonymous function. On the Express server, [a **router.get** call you added](#server) to **routes/index.js** receives the call from the browser and sends a result back to the browser.
+
+The method called **readJson** sends an HTTP request to the server for the file called **names.json**. The result of the request is handle by the anonymous function passed to **getJSON**. This method never calls a JavaScript method on the server. Instead, it simply retrieves a file from the server.
 
 ## Add method
 
@@ -161,6 +168,9 @@ In the server side, use **request.query** to retrieve the parameters:
 router.get('/add', function(request, response) {
   console.log('add method called');
   console.log('The parameters are:', request.query);
+
+  ETC... YOUR CODE HERE....
+});
 ```
 
 Using **parseInt** as an aid, add the two numbers and then use the **response** object to send back the result. Display the output to the user. For instance, if the user enters 2 and 3, the server should add these numbers together and send back an object containing the value 5.

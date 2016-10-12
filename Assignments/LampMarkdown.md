@@ -60,13 +60,20 @@ There are only two reasons to run **renewMakeHtml**:
     To update **MakeHtml**
 
 
-The very first time you need to use **MakeHtml** on a new system, you should copy **renewMakeHtml** from **JsObjects** to ~/**Source**:
+The very first time you need to use **MakeHtml** on a new system, you should copy the script called **renewMakeHtml** from **JsObjects** to ~/**Source**:
 
 ```
 cp $JSOBJECTS/JavaScript/NodeCode/MakeHtml/renewMakeHtml ~/Source/.
 ```
 
-Then run the script.
+Then run the script like this:
+
+<pre>
+cd ~/Source
+./renewMakeHtml
+</pre>
+
+**NOTE**: _Just to be clear, you would only need to do this in order to install **MakeHtml** the first time on a new system, or to update **MakeHtml** if I have made changes to it. If I've made changes I would tell you. It is not something you need to figure out on your own._
 
 But you only need to do this once on any particular system. For instance, once on Pristine Lubuntu at school, once on Pristine Lubuntu at home, and once on EC2. After that you can forget it, unless I specifically say: "Hey, I updated **MakeHtml** to fix a bug or to get a new feature such as X or Y." Then you would run it to get the latest bits from **JsObjects** by running the script.
 
