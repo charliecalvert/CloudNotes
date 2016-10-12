@@ -44,7 +44,7 @@ git clone git@github.com:mrdoob/three.js.git
 Let's set up [require js][reqjs]. To get started, put this in **layout.jade**:
 
 <pre>
-script(data-main="javascripts/Main" src="javascripts/require.js")
+script(data-main="javascripts/main" src="javascripts/require.js")
 </pre>
 
 Now in **main.js**, put this:

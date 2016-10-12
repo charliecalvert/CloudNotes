@@ -66,11 +66,11 @@ define([require], function() {
 
         }
 
-        material = new THREE.MeshBasicMaterial({
+        var material = new THREE.MeshBasicMaterial({
             vertexColors: THREE.VertexColors
         });
 
-        mesh = new THREE.Mesh(geometry, material);
+        var mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
     }
 
@@ -217,7 +217,7 @@ To get started, you could create a method called **addCubes**. It would begin so
 ```
 function addCubes(scene, camera, wireFrame) {
 	for (var i = 0; i < 6; i++) {
-	   etc...
+	   etc
 ```
 
 We would call this method from the constructor, rather than calling **addCube**. As you recall the **addCube** call looks like this:
@@ -245,7 +245,8 @@ var material = new THREE.MeshNormalMaterial({
 
 Put this call to [MeshLabertMaterial][material] in its place:
 
-```var material = new THREE.MeshLambertMaterial({
+```
+svar material = new THREE.MeshLambertMaterial({
 	map : THREE.ImageUtils.loadTexture('images/crate.jpg')
 });
 ```
