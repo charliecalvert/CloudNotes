@@ -265,8 +265,9 @@ var material = new THREE.MeshNormalMaterial({
 Put this call to [MeshLabertMaterial][material] in its place:
 
 ```javascript
+var loader = new THREE.TextureLoader();
 var material = new THREE.MeshLambertMaterial({
-	map : THREE.ImageUtils.loadTexture('images/crate.jpg')
+	map : loader.load('images/crate.jpg')
 });
 ```
 
@@ -365,6 +366,14 @@ body {
 	font-family: arial;
 }
 ```
+
+## JSCS Ignore
+
+We should ignore certain files in **.jscsrc**:
+
+<pre>
+"excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower_components/**", "\*\*/three.js"],
+</pre>
 
 ## Turn it in
 

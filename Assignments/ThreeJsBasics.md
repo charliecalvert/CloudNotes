@@ -179,3 +179,11 @@ Finally, we call **renderer.render**. That line of code actually draws our scene
 Hopefully you now have some sense of how **render** works. It is certainly one of the most important methods in our program.
 
 [request]: https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame
+
+## JSCS Ignore
+
+We should ignore certain files in **.jscsrc**:
+
+<pre>
+"excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower_components/**", "\*\*/three.js"],
+</pre>

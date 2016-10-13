@@ -2,9 +2,17 @@
 
 As mentioned earlier, navigating through a scene with the keyboard and mouse can be a tricky task. Fortunately, there is existing code for doing. In this assignment, we will add that code to our existing project.
 
+Our code is based on this example:
+
+- <https://threejs.org/examples/?q=pointer#misc_controls_pointerlock>
+
+## Get Started
+
+Copy the ThreeFloor program into a new folder called **Week04-PointerLock**.
+
 ## The HTML
 
-The first step is to show HTML that tells the user to start game. Put this code in index.jade:
+The next step is to show HTML that tells the user to start game. Put this code in index.jade:
 
 ```
 extends layout
@@ -33,7 +41,7 @@ body {
 	font-family: arial;
 }
 
-#content { 
+#content {
     display: block;
 }
 
@@ -78,7 +86,7 @@ body {
 }
 ```
 
-##PointerLock Implementation
+## PointerLock Implementation
 
 Here is my (slightly modified) version of the the boilerplate PointerLock code. This is from the [Three.js site][plc], and is used widely. Put it in a file called **PointerLockControls.js**:
 
@@ -247,8 +255,8 @@ THREE.PointerLockControls = function(camera) {
         if (moveLeft) velocity.x -= 400.0 * delta;
         if (moveRight) velocity.x += 400.0 * delta;
 
-        // I've changed this code to stop all movement if we 
-        // are about to hit something. Compare to original 
+        // I've changed this code to stop all movement if we
+        // are about to hit something. Compare to original
         // which only set y.
         if (isOnObject === true) {
 
@@ -280,9 +288,9 @@ THREE.PointerLockControls = function(camera) {
 
 Remember that you will need to modify both **Main.js** and the top of **Control.js**. You need to make these changes so that **require** will know how to load these two new files. We have already seen how to make those changes with **Floors.js**, now apply the same knowledge to **PointerLockControls** and **PointerLockSetup**. Remember that **PointerLockControls.js** will need to be shimmed in.
 
-##PointerLockSetup
+## PointerLockSetup
 
-Here is a file I put together to help automate the process of loading the PointerLockControl code:
+Here is a file I put together to help automate the process of loading the PointerLockControl code. Save it as PointerLockSetup.js:
 
 ```
 define(['PointerLockControls'], function(pointerLock) {
@@ -290,7 +298,8 @@ define(['PointerLockControls'], function(pointerLock) {
     'use strict';
 
     var element;
-    var blocker, instructions;
+    var blocker;
+    var instructions;
 
     function PointerLockSetup(controls) {
 
@@ -385,7 +394,7 @@ define(['PointerLockControls'], function(pointerLock) {
 });
 ```
 
-##Initialize
+## Initialize
 
 Let's move the code to initialize the engine out of the constructor and into a method called **init**:
 
@@ -403,7 +412,7 @@ You will need to declare a object scoped variables called **size** and **cubes**
 	var geometry = new THREE.BoxGeometry(size, size, size);
 
 And when you create a cube, in **addCube**, you need to call **cubes.push(cube)**, where cubes is an object scoped array (var cubes = []).
- 
+
 After you make the cubes bigger, you are going to have to change the way you lay out the boxes. They are now much bigger than they were before and so they will be further apart.
 
 
@@ -427,11 +436,11 @@ function init() {
 	var floors = new Floors();
 	floors.drawFloor(scene);
 
-	raycaster = new THREE.Raycaster(new THREE.Vector3(), 
+	raycaster = new THREE.Raycaster(new THREE.Vector3(),
 		new THREE.Vector3(0, -1, 0), 0, 10);
 
 	renderer = new THREE.WebGLRenderer({ antialias : true });
-	
+
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
 
@@ -447,7 +456,7 @@ function doPointerLock() {
 	controls = new THREE.PointerLockControls(camera);
 	var yawObject = controls.getObject();
 	scene.add(yawObject);
-	
+
 	// Move camera to the 1, 1 position
 	yawObject.position.x = size;
 	yawObject.position.z = size;
@@ -456,7 +465,7 @@ function doPointerLock() {
 }
 ```
 
-Note that we create an instance of **PointerLockControls** and store it in a variable called controls. That instance is scoped to be visible inside the entirety of the Controls. It has object scope. 
+Note that we create an instance of **PointerLockControls** and store it in a variable called controls. That instance is scoped to be visible inside the entirety of the Controls. It has object scope.
 
 ## Render or Animate
 
@@ -473,7 +482,7 @@ function animate() {
 
 	var controlObject = controls.getObject();
 	var position = controlObject.position;
-				
+
 	// drawText(controlObject, position);
 
 	collisionDetection(position);
@@ -487,9 +496,9 @@ function animate() {
 
 ## Collision Detection
 
-Another complicated subject is collision detection. In particular, we need to know if our main character (the camera) bumps into a wall. We can't have the main character walking through walls if we want this world to make sense to the user. 
+Another complicated subject is collision detection. In particular, we need to know if our main character (the camera) bumps into a wall. We can't have the main character walking through walls if we want this world to make sense to the user.
 
-In a 2D world it is fairly easy to decide when the main character has bumped into something. Writing such code a 3D world is more complex because objects could be not only in front, behind, or the side of our main character, but also above or below or at some odd angle. 
+In a 2D world it is fairly easy to decide when the main character has bumped into something. Writing such code a 3D world is more complex because objects could be not only in front, behind, or the side of our main character, but also above or below or at some odd angle.
 
 It turns out that the solution for this problem is found by "looking around" with a technology called ray casting. A "ray" shoots out from the camera at various angles. If it pumps into something, then that information is stored and can be acted upon.
 
@@ -516,14 +525,14 @@ function collisionDetection(position) {
 
 Note that the code sets **controls.isOnObject** to true if a collision occurrs.
 
-## Text 
+## Text
 
 Let's add some text.
 
 Put this in your CSS:
 
 ```
-#message { 
+#message {
     /* background-color: #7777AA; */
     background-color:rgba(0,255,0,0.5);
     position: absolute;
@@ -543,9 +552,20 @@ And so on for y and z and anything else you want to display. The HTML will be ge
 ```
   div#message
     p
-      strong CameraX: 
+      strong CameraX:
         span#cameraX Foo
 ```
+
+## JSCS Ignore
+
+We should ignore certain files in **.jscsrc**:
+
+<pre>
+"excludeFiles": ["**/node_modules/**", "**/components/**",
+  "**/bower_components/**", "\*\*/three.js", "\*\*/pointer-lock-controls.js"],
+</pre>
+
+We can set max line length in to 200 in this case.
 
 ##Turn it in
 
