@@ -88,7 +88,7 @@ body {
 
 ## PointerLock Implementation
 
-Here is my (slightly modified) version of the the boilerplate PointerLock code. This is from the [Three.js site][plc], and is used widely. Put it in a file called **PointerLockControls.js**:
+Here is my (slightly modified) version of the boilerplate **PointerLockControls** code that Mr Doob of ThreeJs fame wrote. This is from the [Three.js site][plc], and is used widely. Note that I have recently (10-12-16) converted the code to support **require.js**, as explained below the declaration of the object. Put this code in a file called **PointerLockControls.js**:
 
 [plc]: https://github.com/mrdoob/three.js/blob/master/examples/js/controls/PointerLockControls.js
 
@@ -97,202 +97,254 @@ Here is my (slightly modified) version of the the boilerplate PointerLock code. 
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.PointerLockControls = function(camera) {
+ define(['floor'], function (Floor) {
 
-    var scope = this;
+     var PointerLockControls = function (camera, threeInit) {
 
-    camera.rotation.set(0, 0, 0);
+         var scope = this;
+         var THREE = threeInit;
 
-    var pitchObject = new THREE.Object3D();
-    pitchObject.add(camera);
+         camera.rotation.set(0, 0, 0);
 
-    var yawObject = new THREE.Object3D();
-    yawObject.position.y = 10;
-    yawObject.add(pitchObject);
+         var pitchObject = new THREE.Object3D();
+         pitchObject.add(camera);
 
-    var moveForward = false;
-    var moveBackward = false;
-    var moveLeft = false;
-    var moveRight = false;
+         var yawObject = new THREE.Object3D();
+         yawObject.position.y = 10;
+         yawObject.add(pitchObject);
 
-    var isOnObject = false;
-    var canJump = false;
+         var moveForward = false;
+         var moveBackward = false;
+         var moveLeft = false;
+         var moveRight = false;
 
-    var prevTime = performance.now();
+         var isOnObject = false;
+         var canJump = false;
 
-    var velocity = new THREE.Vector3();
+         var prevTime = performance.now();
 
-    var PI_2 = Math.PI / 2;
+         var velocity = new THREE.Vector3();
 
-    var onMouseMove = function(event) {
+         var PI_2 = Math.PI / 2;
 
-        if (scope.enabled === false) return;
+         var onMouseMove = function (event) {
 
-        var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-        var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+             if (scope.enabled === false) return;
 
-        yawObject.rotation.y -= movementX * 0.002;
-        pitchObject.rotation.x -= movementY * 0.002;
+             var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+             var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
 
-        pitchObject.rotation.x = Math.max(-PI_2, Math.min(PI_2, pitchObject.rotation.x));
+             yawObject.rotation.y -= movementX * 0.002;
+             pitchObject.rotation.x -= movementY * 0.002;
 
-    };
+             pitchObject.rotation.x = Math.max(-PI_2, Math.min(PI_2, pitchObject.rotation.x));
 
-    var onKeyDown = function(event) {
+         };
 
-        switch (event.keyCode) {
+         var onKeyDown = function (event) {
 
-            case 38: // up
-            case 87: // w
-                moveForward = true;
-                break;
+             switch (event.keyCode) {
 
-            case 37: // left
-            case 65: // a
-                moveLeft = true;
-                break;
+                 case 38: // up
+                 case 87: // w
+                     moveForward = true;
+                     break;
 
-            case 40: // down
-            case 83: // s
-                moveBackward = true;
-                break;
+                 case 37: // left
+                 case 65: // a
+                     moveLeft = true;
+                     break;
 
-            case 39: // right
-            case 68: // d
-                moveRight = true;
-                break;
+                 case 40: // down
+                 case 83: // s
+                     moveBackward = true;
+                     break;
 
-            case 32: // space
-                if (canJump === true) velocity.y += 350;
-                canJump = false;
-                break;
+                 case 39: // right
+                 case 68: // d
+                     moveRight = true;
+                     break;
 
-        }
+                 case 32: // space
+                     if (canJump === true) velocity.y += 350;
+                     canJump = false;
+                     break;
 
-    };
+             }
 
-    var onKeyUp = function(event) {
+         };
 
-        switch (event.keyCode) {
+         var onKeyUp = function (event) {
 
-            case 38: // up
-            case 87: // w
-                moveForward = false;
-                break;
+             switch (event.keyCode) {
 
-            case 37: // left
-            case 65: // a
-                moveLeft = false;
-                break;
+                 case 38: // up
+                 case 87: // w
+                     moveForward = false;
+                     break;
 
-            case 40: // down
-            case 83: // s
-                moveBackward = false;
-                break;
+                 case 37: // left
+                 case 65: // a
+                     moveLeft = false;
+                     break;
 
-            case 39: // right
-            case 68: // d
-                moveRight = false;
-                break;
+                 case 40: // down
+                 case 83: // s
+                     moveBackward = false;
+                     break;
 
-        }
+                 case 39: // right
+                 case 68: // d
+                     moveRight = false;
+                     break;
 
-    };
+             }
 
-    document.addEventListener('mousemove', onMouseMove, false);
-    document.addEventListener('keydown', onKeyDown, false);
-    document.addEventListener('keyup', onKeyUp, false);
+         };
 
-    this.enabled = false;
+         document.addEventListener('mousemove', onMouseMove, false);
+         document.addEventListener('keydown', onKeyDown, false);
+         document.addEventListener('keyup', onKeyUp, false);
 
-    this.getObject = function() {
+         this.enabled = false;
 
-        return yawObject;
+         this.getObject = function () {
 
-    };
+             return yawObject;
 
-    this.isOnObject = function(boolean) {
+         };
 
-        isOnObject = boolean;
-        canJump = boolean;
+         this.isOnObject = function (boolean) {
 
-    };
+             isOnObject = boolean;
+             canJump = boolean;
 
-    this.getDirection = function() {
+         };
 
-        // assumes the camera itself is not rotated
+         this.getDirection = function () {
 
-        var direction = new THREE.Vector3(0, 0, -1);
-        var rotation = new THREE.Euler(0, 0, 0, "YXZ");
+             // assumes the camera itself is not rotated
 
-        return function(v) {
+             var direction = new THREE.Vector3(0, 0, -1);
+             var rotation = new THREE.Euler(0, 0, 0, "YXZ");
 
-            rotation.set(pitchObject.rotation.x, yawObject.rotation.y, 0);
+             return function (v) {
 
-            v.copy(direction).applyEuler(rotation);
+                 rotation.set(pitchObject.rotation.x, yawObject.rotation.y, 0);
 
-            return v;
+                 v.copy(direction).applyEuler(rotation);
 
-        }
+                 return v;
 
-    }();
+             }
 
-    this.update = function() {
+         }();
 
-        if (scope.enabled === false) return;
+         this.update = function () {
 
-        var time = performance.now();
-        var delta = (time - prevTime) / 1000;
+             if (scope.enabled === false) return;
 
-        velocity.x -= velocity.x * 10.0 * delta;
-        velocity.z -= velocity.z * 10.0 * delta;
+             var time = performance.now();
+             var delta = (time - prevTime) / 1000;
 
-        velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+             velocity.x -= velocity.x * 10.0 * delta;
+             velocity.z -= velocity.z * 10.0 * delta;
 
-        if (moveForward) velocity.z -= 400.0 * delta;
-        if (moveBackward) velocity.z += 400.0 * delta;
+             velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
 
-        if (moveLeft) velocity.x -= 400.0 * delta;
-        if (moveRight) velocity.x += 400.0 * delta;
+             if (moveForward) velocity.z -= 400.0 * delta;
+             if (moveBackward) velocity.z += 400.0 * delta;
 
-        // I've changed this code to stop all movement if we
-        // are about to hit something. Compare to original
-        // which only set y.
-        if (isOnObject === true) {
+             if (moveLeft) velocity.x -= 400.0 * delta;
+             if (moveRight) velocity.x += 400.0 * delta;
 
-            velocity.y = Math.max(0, velocity.y);
-            velocity.x = 0;
-            velocity.z = 0;
+             // I've changed this code to stop all movement if we
+             // are about to hit something. Compare to original
+             // which only set y.
+             if (isOnObject === true) {
 
-        }
+                 velocity.y = Math.max(0, velocity.y);
+                 velocity.x = 0;
+                 velocity.z = 0;
 
-        yawObject.translateX(velocity.x * delta);
-        yawObject.translateY(velocity.y * delta);
-        yawObject.translateZ(velocity.z * delta);
+             }
 
-        if (yawObject.position.y < 10) {
+             yawObject.translateX(velocity.x * delta);
+             yawObject.translateY(velocity.y * delta);
+             yawObject.translateZ(velocity.z * delta);
 
-            velocity.y = 0;
-            yawObject.position.y = 10;
+             if (yawObject.position.y < 10) {
 
-            canJump = true;
+                 velocity.y = 0;
+                 yawObject.position.y = 10;
 
-        }
+                 canJump = true;
 
-        prevTime = time;
+             }
 
-    };
+             prevTime = time;
 
+         };
+
+     };
+
+     return PointerLockControls;
+ });
+```
+
+Remember that you will need to modify both **main.js** and the top of **control.js**. You need to make these changes so that **require** will know how to load these two new files. We have already seen how to make those changes with **floor.js**, now apply the same knowledge to **PointerLockControls** and **PointerLockSetup**. Because **PointLockControls.js** has been updated to include support for RequireJs, it will not need to be shimmed in.
+
+I will take one moment to explain how I converted **ThreePointerLock** to support RequireJs. The declaration for the code originally began like this:
+
+```javascript
+THREE.PointerLockControls = function ( camera ) {
+
+	var scope = this;
+  etc...
 };
 ```
 
-Remember that you will need to modify both **Main.js** and the top of **Control.js**. You need to make these changes so that **require** will know how to load these two new files. We have already seen how to make those changes with **Floors.js**, now apply the same knowledge to **PointerLockControls** and **PointerLockSetup**. Remember that **PointerLockControls.js** will need to be shimmed in.
+I adopted for **RequireJs** by adding the **define** method and returning the anonymous function we store in the **PointerLockControls** variable. The goal here is simply to define and return out **PointerLockControls** object:
+
+```javascript
+define(['floor'], function (Floor) {
+
+    var PointerLockControls = function (camera, threeInit) {
+
+        var scope = this;
+        var THREE = threeInit;
+
+        // CODE OMITTED HERE
+    };
+
+return PointerLockControls;
+});
+```
+
+Later in this document, we will see how to use this object with code that looks, in part, like this, where the first line uses [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) to load our **PointerLockControls** object:
+
+```javascript
+define(['floor', 'PointerLockControls'], function (Floor, PointerLockControls) {
+
+  // LOTS OF CODE OMITTED
+  controls = new PointerLockControls(camera, THREE);
+  // LOTS OF CODE OMITTED
+});
+```
+
+This is our standard dance for using a RequireJs module:
+
+- In the target module (**PointerLockControls**) use the RequireJs **define** method and have it return an instance of the object you want to create.
+- In the **define** method for the object that will consume the target, use dependency injection to load the target.
+- Use the target object.
+
 
 ## PointerLockSetup
 
-Here is a file I put together to help automate the process of loading the PointerLockControl code. Save it as PointerLockSetup.js:
+Here is a file I put together to help automate the process of loading the PointerLockControl code. Save it as **PointerLockSetup.js**:
 
-```
+```javascript
+
 define(['PointerLockControls'], function(pointerLock) {
 
     'use strict';
@@ -401,15 +453,20 @@ Let's move the code to initialize the engine out of the constructor and into a m
 ```
 function Control() {
 	init();
-	animate();
+	animate();  
 }
 ```
 
-We now start the app by first initializing our engine, and by then rendering the game in our render loop.
+The **render** method from ThreeFloor has been, and should be, renamed to **animate**. We now start the app by first initializing our engine, and by then animating the game in our **animate** loop.
 
-You will need to declare a object scoped variables called **size** and **cubes**. Set **size** equal to 20. In **addCube**, when you create the cube, make it size X size X size square, like this:
+You will need to declare a object scoped variables called **size** and **cubes**. Set **size** equal to 20. Declare cubes to be an empty array.
 
+In **addCube**, when you create the cube, make it a square with a width, height and depth of **size**. It looks like this:
+
+
+```javascript
 	var geometry = new THREE.BoxGeometry(size, size, size);
+```
 
 And when you create a cube, in **addCube**, you need to call **cubes.push(cube)**, where cubes is an object scoped array (var cubes = []).
 
@@ -433,8 +490,8 @@ function init() {
 
 	addLights();
 
-	var floors = new Floors();
-	floors.drawFloor(scene);
+	var floor = new Floor(THREE);
+	floor.drawFloor(scene);
 
 	raycaster = new THREE.Raycaster(new THREE.Vector3(),
 		new THREE.Vector3(0, -1, 0), 0, 10);
@@ -493,6 +550,8 @@ function animate() {
 	renderer.render(scene, camera);
 }
 ```
+
+Note that the code for handling key strokes such as up, down, left and right, have moved into the **PointLockControls** object created by Mr. Doob.
 
 ## Collision Detection
 
