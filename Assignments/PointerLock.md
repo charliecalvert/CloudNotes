@@ -88,7 +88,7 @@ body {
 
 ## PointerLock Implementation
 
-Here is my (slightly modified) version of the boilerplate **PointerLockControls** code that Mr Doob of ThreeJs fame wrote. This is from the [Three.js site][plc], and is used widely. Note that I have recently (10-12-16) converted the code to support **require.js**, as explained below the declaration of the object. Put this code in a file called **PointerLockControls.js**:
+Here is my (slightly modified) version of the boilerplate **PointerLockControls** code that [Mr Doob](https://twitter.com/mrdoob) of ThreeJs fame wrote. This is from the [Three.js site][plc], and is used widely. Note that I have recently (10-12-16) converted the code to support **require.js**, as explained below the declaration of the object. Put this code in a file called **PointerLockControls.js**:
 
 [plc]: https://github.com/mrdoob/three.js/blob/master/examples/js/controls/PointerLockControls.js
 
@@ -506,11 +506,12 @@ function init() {
 ```
 
 ## Set up PointerLock
+
 Here is a function to instantiate an instance of the PointerLockControls:
 
 ```
 function doPointerLock() {
-	controls = new THREE.PointerLockControls(camera);
+  controls = new PointerLockControls(camera, THREE);
 	var yawObject = controls.getObject();
 	scene.add(yawObject);
 
