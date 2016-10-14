@@ -159,8 +159,7 @@ Of course you can find information on sites like Elvenware:
 
 Here is the output created by this markdown code:
 
-Markdown
-========
+## Markdown
 
 This is a markdown document with a list in it.
 
@@ -264,14 +263,13 @@ To convert markdown to HTML in **Remarkable**, choose **File | Export as HTML**.
 
 Duplicate the "Longer Document" and the Ozymandias poem in two separate markdown files. Make sure that each file has the extension **.md**. For instance: **my-file.md**.
 
-Attach the files to your assignment. Just the raw text should be fine. I don't think you need to use a zip file. In Remarkable, save the text as HTML and paste it into two pages in your Google Site. Provide links to your pages when you turn in the assignment.
+Attach the files to your assignment. Just the raw text should be fine. I don't think you need to use a zip file. In Atom or Remarkable, save the text as HTML and paste it into two pages in your Google Site. Provide links to your pages when you turn in the assignment.
 
 Here, for instance, is an example of the kind of link I want to see:
 
 - [https://sites.google.com/site/charliecalvertbc/home/prog270testcalvert](https://sites.google.com/site/charliecalvertbc/home/prog270testcalvert)
 
-Learn More
-----------
+## Learn More
 
 There is more information about [markdown](https://www.google.com/search?q=markdown) on the web.
 
