@@ -263,11 +263,15 @@ To convert markdown to HTML in **Remarkable**, choose **File | Export as HTML**.
 
 Duplicate the "Longer Document" and the Ozymandias poem in two separate markdown files. Make sure that each file has the extension **.md**. For instance: **my-file.md**.
 
-Attach the files to your assignment. Just the raw text should be fine. I don't think you need to use a zip file. In Atom or Remarkable, save the text as HTML and paste it into two pages in your Google Site. Provide links to your pages when you turn in the assignment.
+Place the markdown files you create in a folder of your repository called MarkdownBasics.
+
+In Atom or Remarkable, save the text as HTML and paste it into two pages in your Google Site. Provide links to your pages when you turn in the assignment.
 
 Here, for instance, is an example of the kind of link I want to see:
 
 - [https://sites.google.com/site/charliecalvertbc/home/prog270testcalvert](https://sites.google.com/site/charliecalvertbc/home/prog270testcalvert)
+
+Include at least one image on one of your pages.
 
 ## Learn More
 
@@ -282,7 +286,7 @@ There are many tools available that can convert the Markdown shown into HTML. If
 
 If you take the HTML shown above, and save it to a file called Markdown01.html, then open the file in a browser. When rendered in a browser, the file looks like the screenshot shown below:
 
-![Markdown01.png](../Images/Markdown01.png)
+![Markdown01.png](https://s3.amazonaws.com/bucket01.elvenware.com/images/MarkdownBasics01.png)
 
 Take a moment to consider what we are doing. We are using an extremely simple form of markup to create nicely formatted HTML files that look reasonably attractive on the web. Markdown is flexible enough so that you can provide complex formatting for the HTML pages you render. For instance, much of Elvenware is now created with simple markdown files like the one shown above. Relatively complex tools, such as Stackoverflow,  also use markdown as their primary means of formatting the text and code supplied by its users.
 

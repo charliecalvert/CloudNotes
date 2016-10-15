@@ -190,6 +190,12 @@ zip -r MakeHtml-Calvert /var/www/html/*
 
 You should, of course, use your last name and not mine.
 
+If you put images in Google Drive, don't wrap them in a zip file. This saves me a step.
+
+Just to be clear: one part of this assignment, outlined in the first sentence of this section of the text, did involve creating a zip file with images. I'm talking about the images of your page running that I want to see. Don't put them in a zip file.
+
+Putting images in Google Drive is fine, though just attaching them to the assignment is perhaps better. Then put comments in the Canvas comments area. Thank you.
+
 ## Example Images
 
 Your images must be different from these, but they should have much in common with them:

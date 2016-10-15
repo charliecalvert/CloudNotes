@@ -107,6 +107,12 @@ sudo apt-get upgrade
 
 You should run **sudo apt-get update** and then **sudo apt-get upgrade** every few days. Afterwards, you may need to reboot your EC2 instance.
 
+Sometimes you see messages like "7 packages need to updated, 3 security updates" even after you have run the above commands. So long as it does not cause you to actually upgrade to a new version, you can try to fix those message with this command:
+
+<pre>
+sudo apt-get dist-upgrade
+</pre>
+
 Your EC2 system can be rebooted with this command:
 
 ```bash

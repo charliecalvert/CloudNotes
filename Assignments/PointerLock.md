@@ -507,7 +507,7 @@ function init() {
 
 ## Set up PointerLock
 
-Here is a function to instantiate an instance of the PointerLockControls:
+Here is a function to instantiate an instance of **PointerLockControls**:
 
 ```
 function doPointerLock() {
@@ -515,7 +515,6 @@ function doPointerLock() {
 	var yawObject = controls.getObject();
 	scene.add(yawObject);
 
-	// Move camera to the 1, 1 position
 	yawObject.position.x = size;
 	yawObject.position.z = size;
 
@@ -568,7 +567,7 @@ Here is some code to that does at least a fair job of detecting collisions:
 function collisionDetection(position) {
 	// Collision detection
 	raycaster.ray.origin.copy(position);
-	// raycaster.ray.origin.y -= 10;
+	
 	var dir = controls.getDirection(new THREE.Vector3(0, 0, 0)).clone();
 	raycaster.ray.direction.copy(dir);
 
