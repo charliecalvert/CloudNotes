@@ -383,7 +383,7 @@ describe('File Suite', function() {
         var isDefined = typeof elfDownloads !== 'undefined';
         expect(isDefined).toBe(true);
     });
-
+});
 ```
 
 ## Automatically Run One Test
@@ -429,6 +429,8 @@ Add at **test** property to the **scripts** object in **package.json**:
   "dependencies": {
     "body-parser": "~1.14.1",
     etc...
+  }
+}
 ```
 
 Whether you run **karma start** or **grunt test** is optional. You may choose either one, or some variant of those options. But if you choose **karma start** be sure that you **grunt jshint** runs cleanly before you turn in your assignment.
