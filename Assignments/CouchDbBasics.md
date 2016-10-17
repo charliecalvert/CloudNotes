@@ -79,9 +79,51 @@ The CouchDb material has moved here:
 
 ## Turn it in
 
-Copy the CouchDb04 assignment to your repo as **Week03-CouchDbDemo** and get it to run. Push you work to the cloud.
+Copy the **JsObjects/Data/CouchDb04** assignment to your repo as **Week03-CouchDbDemo** and get it to run.
+
+Modify the program so that it inserts multiple lines into a single document:
+
+```javascript
+prog.insert({"doc": [
+	{ "firstName": "Suzie", "lastName": "Higgins"},
+	{ "firstName": "Harry", "lastName": "Potter"},
+	{ "firstName": "Lisa", "lastName": "Smith"}
+]}, .. ETC ),
+```
+
+Make sure:
+
+- The database name is **bc_data**
+- the document name is **bigNames**
+- The folder has the correct name as quoted at the beginning of this section.
+
+Push your work to the cloud.
 
 Take two screen shots and attach them to your assignment when you turn them in.
 
 - One of the CouchDb04 demo running in your bash shell
 - One of Futon after you have inserted data with **CouchDb04**. Click in far enough to show all the data.
+
+## Sub IP
+
+This script will help you change your IP:
+
+```text
+sed -i "s/http:\/\/[0-9].*[^:5984]*.[^\);]/http:\/\/192.168.2.19:5984'/g" $1
+```
+
+Save it as **~/bin/new-ip**. Make it executable: **chmod +x new-ip**. Call it like this:
+
+<pre>
+new-ip <my-program.js>
+</pre>
+
+Change the IP in the script to the value you want.
+
+## Check Work
+
+Check that the data was created correctly without Futon
+
+<pre>
+curl -X GET http://192.168.2.19:5984/bc_data/bigNames | python -m json.tool
+</pre>

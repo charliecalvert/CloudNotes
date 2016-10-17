@@ -187,3 +187,5 @@ We should ignore certain files in **.jscsrc**:
 <pre>
 "excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower_components/**", "\*\*/three.js"],
 </pre>
+
+The two key places where you will need to tell grunt related code to ignore **three.js** are in **.jscsrc** and in **Gruntfile.js** in the **JsHint** section.
