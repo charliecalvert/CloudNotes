@@ -344,7 +344,6 @@ This is our standard dance for using a RequireJs module:
 Here is a file I put together to help automate the process of loading the PointerLockControl code. Save it as **PointerLockSetup.js**:
 
 ```javascript
-
 define(['PointerLockControls'], function(pointerLock) {
 
     'use strict';
@@ -358,7 +357,9 @@ define(['PointerLockControls'], function(pointerLock) {
         blocker = document.getElementById('blocker');
         instructions = document.getElementById('instructions');
 
-        var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
+        var havePointerLock = 'pointerLockElement' in document ||
+            'mozPointerLockElement' in document ||
+            'webkitPointerLockElement' in document;
 
         if (havePointerLock) {
 
@@ -366,7 +367,9 @@ define(['PointerLockControls'], function(pointerLock) {
 
             var pointerlockchange = function(event) {
 
-                if (document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element) {
+                if (document.pointerLockElement === element ||
+                    document.mozPointerLockElement === element ||
+                    document.webkitPointerLockElement === element) {
 
                     controls.enabled = true;
 
@@ -405,13 +408,17 @@ define(['PointerLockControls'], function(pointerLock) {
                 instructions.style.display = 'none';
 
                 // Ask the browser to lock the pointer
-                element.requestPointerLock = element.requestPointerLock || element.mozRequestPointerLock || element.webkitRequestPointerLock;
+                element.requestPointerLock = element.requestPointerLock ||
+                    element.mozRequestPointerLock ||
+                    element.webkitRequestPointerLock;
 
                 if (/Firefox/i.test(navigator.userAgent)) {
 
                     var fullscreenchange = function(event) {
 
-                        if (document.fullscreenElement === element || document.mozFullscreenElement === element || document.mozFullScreenElement === element) {
+                        if (document.fullscreenElement === element ||
+                            document.mozFullscreenElement === element ||
+                            document.mozFullScreenElement === element) {
 
                             document.removeEventListener('fullscreenchange', fullscreenchange);
                             document.removeEventListener('mozfullscreenchange', fullscreenchange);
@@ -424,7 +431,10 @@ define(['PointerLockControls'], function(pointerLock) {
                     document.addEventListener('fullscreenchange', fullscreenchange, false);
                     document.addEventListener('mozfullscreenchange', fullscreenchange, false);
 
-                    element.requestFullscreen = element.requestFullscreen || element.mozRequestFullscreen || element.mozRequestFullScreen || element.webkitRequestFullscreen;
+                    element.requestFullscreen = element.requestFullscreen ||
+                        element.mozRequestFullscreen ||
+                        element.mozRequestFullScreen ||
+                        element.webkitRequestFullscreen;
 
                     element.requestFullscreen();
 
@@ -542,7 +552,7 @@ function animate() {
 
 	// drawText(controlObject, position);
 
-	collisionDetection(position);
+  collisionDetection(controls, cubes);
 
 	// Move the camera
 	controls.update();
@@ -561,13 +571,13 @@ In a 2D world it is fairly easy to decide when the main character has bumped int
 
 It turns out that the solution for this problem is found by "looking around" with a technology called ray casting. A "ray" shoots out from the camera at various angles. If it pumps into something, then that information is stored and can be acted upon.
 
-Here is some code to that does at least a fair job of detecting collisions:
+Here is some old code to that does at least a fair job of detecting collisions:
 
-```
+```javascript
 function collisionDetection(position) {
 	// Collision detection
 	raycaster.ray.origin.copy(position);
-	
+
 	var dir = controls.getDirection(new THREE.Vector3(0, 0, 0)).clone();
 	raycaster.ray.direction.copy(dir);
 
@@ -583,6 +593,55 @@ function collisionDetection(position) {
 ```
 
 Note that the code sets **controls.isOnObject** to true if a collision occurrs.
+
+Here is updated code that should work a bit better:
+
+```javascript
+var collisionDetection = function(controls, cubes) {
+
+    function bounceBack(position, ray) {
+        position.x -= ray.bounceDistance.x;
+        position.y -= ray.bounceDistance.y;
+        position.z -= ray.bounceDistance.z;
+    }
+
+    var rays = [
+        //   Time    Degrees      words
+        new THREE.Vector3(0, 0, 1),  // 0 12:00,   0 degrees,  deep
+        new THREE.Vector3(1, 0, 1),  // 1  1:30,  45 degrees,  right deep
+        new THREE.Vector3(1, 0, 0),  // 2  3:00,  90 degress,  right
+        new THREE.Vector3(1, 0, -1), // 3  4:30, 135 degrees,  right near
+        new THREE.Vector3(0, 0, -1), // 4  6:00  180 degress,  near
+        new THREE.Vector3(-1, 0, -1),// 5  7:30  225 degrees,  left near
+        new THREE.Vector3(-1, 0, 0), // 6  9:00  270 degrees,  left
+        new THREE.Vector3(-1, 0, 1)  // 7 11:30  315 degrees,  left deep
+    ];
+
+    var position = controls.getObject().position;
+    var rayHits = [];
+    for (var index = 0; index < rays.length; index += 1) {
+
+        // Set bounce distance for each vector
+        var bounceSize = 0.01;
+        rays[index].bounceDistance = {
+            x: rays[index].x * bounceSize,
+            y: rays[index].y * bounceSize,
+            z: rays[index].z * bounceSize
+        };
+
+        raycaster.set(position, rays[index]);
+
+        var intersections = raycaster.intersectObjects(cubes);
+
+        if (intersections.length > 0 && intersections[0].distance <= 3) {
+            controls.isOnObject(true);
+            bounceBack(position, rays[index]);
+        }
+    }
+
+    return false;
+};
+  ```
 
 ## Text
 

@@ -70,10 +70,24 @@ See also:
 
 ## Step Five
 
-Add a the public part of your PROG270 Key to your Ubuntu instance in the **~/.ssh/authorized_keys** file. From your instance of Pristine Lubuntu use SSH to *secure copy* (scp) your file from pristine Lubuntu to your EC2 instance:
+Add a the public part of your PROG270 Key to your Ubuntu instance in the **~/.ssh/authorized_keys** file.
+
+The **ssh-copy-id** command copies the default public key over to the remote machine. The default public key is usually **id_rsa.pub**. I find it safer to specify which key I want to copy over. To do that, use the **-i** flag. Generally, that command looks like this, where **identity-file** is your private key:
 
 ```
-	scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
+ssh-copy-id -i identity_file bcuser@192.168.2.21
+```
+
+For instance, if you have private key called **prog270-2016** then you would issue this command:
+
+```
+ssh-copy-id -i prog270-2016 bcuser@192.168.2.21
+```
+
+Alternatively, if you don't want to use ssh-copy-id, you can use **scp** instead. From your instance of Pristine Lubuntu use SSH to *secure copy* (scp) your public key from pristine Lubuntu to your EC2 instance:
+
+```
+scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
 ```
 
 Then on EC2 append your public key to your **authorized keys file**:
@@ -82,7 +96,9 @@ Then on EC2 append your public key to your **authorized keys file**:
 cat ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
 ```
 
-Don't forget to put your new private key on Google Drive. Go to the ~/.ssh folder and issue this command:
+Whether you use **ssh-copy-id** or **scp** to put your public key in the EC2 **authorized_keys** file is mostly a matter of taste. However, the **ssh-copy-id** program is a bit safer. For instance, it checks to make sure you are not putting duplicate keys in the **authorized_keys** file.
+
+Don't forget to put your new private key on Google Drive. Go to the ~/.ssh folder and issue a command similar to this one:
 
 ```
 zip Prog270-Ec2-Calvert-2016 Prog270-Ec2-Calvert-2016.pem
@@ -123,7 +139,7 @@ This will cause your connection to EC2 to close or freeze. You will need to wait
 
 This is looking ahead, but these references are useful:
 
-- <www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html>
+- <http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html>
 - <http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html>
 
 ## Details

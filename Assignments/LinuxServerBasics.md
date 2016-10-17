@@ -109,7 +109,7 @@ ssh-copy-id bcuser@192.168.2.21
 
 **note**: _You will very likely need to change the IP address from 192.168.2.21 to the IP address of your server._
 
-The command shown above copies the default public key over to the remote machine. This is usually **id_rsa.pub**. I find it safer to specify which key I want to copy over. To do that, use the **-i** flag. Generally, that command looks like this, where **identity-file** is your private key:
+The **ssh-copy-id** command copies the default public key over to the remote machine. The default public key is usually **id_rsa.pub**. I find it safer to specify which key I want to copy over. To do that, use the **-i** flag. Generally, that command looks like this, where **identity-file** is your private key:
 
 ```
 ssh-copy-id -i identity_file bcuser@192.168.2.21
@@ -121,12 +121,19 @@ For instance, if you have private key called **prog270-2016** then you would iss
 ssh-copy-id -i prog270-2016 bcuser@192.168.2.21
 ```
 
-That would copy prog270-2016.pub into the authorized_keys file on the remote server with the IP address of 192.168.2.21.
-
-When you are done, you can check your work by trying to ssh into the remote machine. When you do so, if everything is working correctly, you should not be asked for your password:
+Alternatively, if you don't want to use ssh-copy-id, you can use **scp** instead. From your instance of Pristine Lubuntu use SSH to *secure copy* (scp) your public key from pristine Lubuntu to your EC2 instance:
 
 ```
+scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
 ```
+
+Then on EC2 append your public key to your **authorized keys file**:
+
+```
+cat ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
+```
+
+Whether you use **ssh-copy-id** or **scp** to put your public key in the EC2 **authorized_keys** file is mostly a matter of taste. However, the **ssh-copy-id** program is a bit safer. For instance, it checks to make sure you are not putting duplicate keys in the **authorized_keys** file.
 
 Here are some alternative commands for copying the file to the remote machine:
 
@@ -135,21 +142,6 @@ cat ~/.ssh/id_rsa.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'
 cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 cat ~/.ssh/id_rsa.pub | ssh <user>@<hostname> 'umask 0077; mkdir -p .ssh; cat >> .ssh/authorized_keys && echo "Key copied"'
 ```
-
-Or you could do this:
-
-```
-scp ~/.ssh/id_rsa.pub bcuser@192.168.2.21:/home/bcuser/.ssh/.
-```
-
-That will copy the specified public key to your remote machine. Then, ssh to the remote machine, specifying your password as necessary. Then copy the public key into the authorized key file with commands something like these:
-
-```
-cd ~/.ssh
-cat id_rsa.pub >> authorized_keys
-```
-
-This will append your public key to an existing authorized_keys file or create a new file if it does not already exist.
 
 ## No Passwords
 

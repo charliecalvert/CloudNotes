@@ -30,7 +30,7 @@ function check() {
 
   if [ ! -d node_modules ]; then
      npm install
-     # ln -s node_modules ~/tmp/node_modules
+     # ln -s ~/tmp/node_modules node_modules
   fi   
 
   grunt check
@@ -69,7 +69,7 @@ Run the script:
 
 The first few lines of output should look something like this:
 
-<pre>
+```bash
 $ ./SmokeTest
 /home/charlie/Git/isit320-calvert-2016/Week01-ExpressBasics
 Running "jsbeautifier:files" (jsbeautifier) task
@@ -126,7 +126,7 @@ Running "jsbeautifier:files" (jsbeautifier) task
 Beautified 5 files, changed 0 files...OK
 
 AND SO ON
-</pre>
+```
 
 ## Turn it in
 
