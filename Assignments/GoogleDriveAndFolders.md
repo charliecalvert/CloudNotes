@@ -52,13 +52,13 @@ It is important to understand there should be only one instance of **Doc01**, **
 
 To place a document in one folder, simply navigate to that folder and create the document inside it. To move it from one folder to another, put a check mark in front of the file or folder, then click the **Move To** icon, which is shaped like a folder, and which is located near the top of Google Drive window. But we don't want to move a file, we want to link to it, we want it to appear to be in two places at once. Do this with **Shift-Z**.
 
-**NOTE**: *If want a file to appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places.*
+**NOTE**: _If want a file to appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places._
 
-**NOTE**: *To see where a file is located, choose the file, click the **Information Button | Details | Location**.*
+**NOTE**: _To see where a file is located, choose the file, click the **Information Button | Details | Location**._
 
 ![Placing a file in multiple places](https://s3.amazonaws.com/bucket01.elvenware.com/images/google-drive-folders-01.jpg)
 
-If you hold down the Ctrl key, and click with the left mouse button, then you can place a document or folder in more than one location.
+I don't think this works anymore. But once upon a time, if you held down the Ctrl key, and clicked with the left mouse button, then you could place a document or folder in more than one location.
 
 ![FilesFolders](http://elvenware.com/charlie/os/Android/images/GoogleDriveFilesFolders01.png)
 

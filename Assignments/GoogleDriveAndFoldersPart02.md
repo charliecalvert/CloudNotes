@@ -46,7 +46,7 @@ It is important to understand there should be only one instance of **BulletPoint
 
 To place a document in one folder, simply navigate to that folder and create the document inside it. To move it from one folder to another, put a check mark in front of the file or folder, then click the **Move To** icon, which is shaped like a folder, and which is located near the top of Google Drive window. But we don't want to move a file, we want to link to it, we want it to appear to be in two places at once. Do this with **Shift-Z**.
 
-**NOTE**: *To have a file appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places.*
+**NOTE**: _To have a file appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places._
 
 **NOTE**: *To see where a file is located, choose the file, click the **Information Button | Details | Location**.*
 
@@ -54,8 +54,7 @@ To place a document in one folder, simply navigate to that folder and create the
 
 ![FilesFolders](http://elvenware.com/charlie/os/Android/images/GoogleDriveFilesFolders01.png)
 
-Turn it In
-----------
+## Turn it In
 
 When you are done with the assignment, simply submit the URL of your Google Drive or submit almost anything that lets me know you have completed your work. I can then find your files and folders and check that you have completed the assignment correctly.
 
