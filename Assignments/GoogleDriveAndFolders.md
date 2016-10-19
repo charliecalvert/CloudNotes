@@ -72,3 +72,9 @@ Be sure you are meeting he basic requirements of the assignment, which are:
 1) To create three different types of files: Google docs, sheets and slides
 2) Create folders and put documents in them
 3) Have at least some documents appear in multiple folders.
+
+## Delete Link
+
+This is an FYI.
+
+Suppose you have **Doc01** in **GoogleDriveAndFolders** and in linked **Folder01**. You decide you only want it in **GoogleDriveAndFolders**. Select the file in Google Drive (Click once on it). Then click the **i** for information icon so you can see the info. Turn to the details page if you are not there already. Now you can click the **X** icon to remove it from **Folder1** but keep it in **GoogleDriveAndFolders**.

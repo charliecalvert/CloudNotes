@@ -6,7 +6,7 @@ The **ApacheHtml** configuration assignments helps you set up your Apache Server
 - /var/www/html/js
 - /var/www/html/images
 
-The MakeHtml program assumes that certain files are already in place in your Apache directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders. Without these files, the pages you produce might have missing links, or fail to render your HTML properly. This will effect various parts of your pages, including images and their size, code blocks, and tables.
+The **MakeHtml** program assumes that certain files are already in place in your Apache **DocumentRoot** directory. By **DocumentRoot** I mean the **/var/www/html** directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders. Without these files, the pages you produce might have missing links, or fail to render your HTML properly. This will effect various parts of your pages, including images and their size, code blocks, and tables.
 
 ![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
 
@@ -172,11 +172,11 @@ Like this:
 /var/www/html/images/elvenwarelogo.png
 ```
 
-You can just right click and download the logo from the elvenware site, or else you can create your own version of this file. It must, however, have the correct name: **elvenwarelogo.png**
+You can just right click and download the logo from the Elvenware site, or else you can create your own version of this file. It must, however, have the correct name: **elvenwarelogo.png**
 
 ## Turn it in
 
-Besides putting them in your Apache dir on Pristine Lubuntu and EC2, you should put all your configuration files in a folder of your repository called **ApacheHelpers**. It should have the structure shown below. When you are done, push your repository and take the screenshot described below.
+Besides putting them in your Apache **DocumentRoot** directory on Pristine Lubuntu and EC2, you should put all your configuration files in a folder of your repository called **ApacheHelpers**. It should have the structure shown below. When you are done, push your repository and take the screenshot described below.
 
 Checklist:
 
@@ -190,7 +190,7 @@ Checklist:
 - js
   - elven-help.js
 
-Here is an image showing the Apache directory:
+Here is an image showing the Apache **DocumentRoot** directory:
 
 ![Dirs](https://s3.amazonaws.com/bucket01.elvenware.com/images/prog270-midterm-2016-03.png)
 
@@ -200,7 +200,7 @@ Your pages just won't look right unless you have the right images, CSS and JavaS
 -  ls -la /var/www/html/js
 -  ls -la /var/www/html/images
 
-If you want, you can save this script as ShowApache in the root of your repository. Then run it and take a screenshot. This will satisfy the requirments outlined in the previous few lines of text.
+If you want, you can save this script as **ShowApache** in the root of your repository. Then run it and take a screenshot. This will satisfy the requirements outlined in the previous few lines of text.
 
 ```
 #! /bin/bash
@@ -231,9 +231,7 @@ The images below show that **first-style.css**, **style.css**, **googlecode.css*
 
 I want you save your /var/www/html/css, /var/www/html/js/ and var/www/html/images folders to your repository.
 
-Put this script in the root folder of your repository. Run it to back back up your **css**, **js**, and **image** files to a folder in your repository called **ApacheHelpers**. You will need to make
-a few changes for instance, your lastname, not mine, and possibly
-the name of the class: prog270 or isit322.
+Put this script in the root folder of your repository. Run it to back back up your **css**, **js**, and **image** files to a folder in your repository called **ApacheHelpers**. You will need to make a few changes for instance, your lastname, not mine, and possibly the name of the class: prog270 or isit322.
 
 Call it something like: **CopyAllTestAndApacheToRepository**. And then **chmod +x CopyAllTestAndApacheToRepository**. Be sure to change **prog270-calvert-2016** to use your last name!
 

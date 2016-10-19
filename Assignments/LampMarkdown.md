@@ -50,7 +50,25 @@ npm install -g jade
 ```
 Now just leave that part of the project alone for a bit.
 
-I also have a script called **renewMakeHtml**, which can help with the install or updating process. I keep this script in the **MakeHtml** folder. You don't, however, want to run **renewMakeHtml** from inside of the **~/Source/MakeHtml** folder. I store the file there, just because it belongs to that project, but it should, in our case, be run from **~/Source**.
+You can expect **npm install** to issue some warnings or even a few small errors. But if you hit serious errors when you run **npm install**, try several steps as listed below. The first (jou) should take you to the **~/Git/JsObjects/Utilities** directory. From there, navigate into the **NodeInstall** directory. Some of the install commands might not install anything because the program or programs may already be installed. When running **InstallNodePackages**, choose e for essentials.
+
+```bash
+jou
+cd NodeInstall/
+./NodeInstall.sh
+./InstallNodePackages.sh
+sudo apt-get install python
+sudo apt-get install build-essential
+sudo apt autoremove
+```
+
+## Install Script
+
+I also have a script called **renewMakeHtml**, which can help with the install or updating process. This automates the step by step process described above. So if you have already completed the previous section, you need not run **renewMakeHtml** at this time.
+
+**NOTE**: _I think it is best to go through step by step the first time both so you undrestand what is happening, and also so you can learn how to troubleshoot problems that may occur at each step. However, once you understand the process, the **renewMakeHtml** script can be useful because it can save time. It is also useful if you need to update **MakeHtml** because I have changed it. I will tell you if it has changed._
+
+I keep this script in the **MakeHtml** folder. You don't, however, want to run **renewMakeHtml** from inside of the **~/Source/MakeHtml** folder. I store the file there, just because it belongs to that project, but it should, in our case, be run from **~/Source**.
 
 It only needs to be run occasionally. For instance, run it after I have updated my **MakeHtml** program. (I perhaps should have called it **updateMakeHtml**, or **copyLatestMakeHtml**.)
 
@@ -58,7 +76,6 @@ There are only two reasons to run **renewMakeHtml**:
 
     To install **MakeHtml**
     To update **MakeHtml**
-
 
 The very first time you need to use **MakeHtml** on a new system, you should copy the script called **renewMakeHtml** from **JsObjects** to ~/**Source**:
 

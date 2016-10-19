@@ -65,17 +65,17 @@ router.get('/config', function(request, response) {
 });
 ```
 
-Destination may not always be in our apache folder. By the *apache folder* I mean this one:
+Destination may not always be in our apache **DocumentRoot** folder. By the *apache DocumentRoot folder* I mean this one:
 
 ```
-/var/www/
+/var/www/html
 ```
 
-For instance, the second path shown above in **desitination-dirs** points to a location in my home directory. This kind of path might be useful when we want the created HTML files to be placed in a Git repository, or when want them to be part of a node program that does not serve files from the apache directory.
+For instance, the second path shown above in **desitination-dirs** points to a location in my home directory. This kind of path might be useful when we want the created HTML files to be placed in a Git repository, or when want them to be part of a node program that does not serve files from the apache **DocumentRoot** directory.
 
-There is, however, a problem with this system. Our program creates an interface that allows us to click on links to the files we created in order to view them. The point is to test if they were created correctly. Of course, these links assume that we are serving files out of the Apache directory, and we are now copying files to our home directory.
+There is, however, a problem with this system. Our program creates an interface that allows us to click on links to the files we created in order to view them. The point is to test if they were created correctly. Of course, these links assume that we are serving files out of the Apache **DocumentRoot** directory, and we are now copying files to our home directory.
 
-In order to make the links to files in our home directory work when we are serving web pages out of the apache directory, I created a symbolic link to the destination dir from **/var/www/httml**:
+In order to make the links to files in our home directory work when we are serving web pages out of the Apache **DocumentRoot** directory, I created a symbolic link to the destination dir from **/var/www/httml**:
 
 test-site -> /home/charlie/temp/test-site/
 
