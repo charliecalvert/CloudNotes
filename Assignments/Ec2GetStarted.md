@@ -129,6 +129,8 @@ Sometimes you see messages like "7 packages need to updated, 3 security updates"
 sudo apt-get dist-upgrade
 </pre>
 
+It's sometimes a good idea to run **sudo apt-get autoremove** after this kind of dist-upgrade.
+
 Your EC2 system can be rebooted with this command:
 
 ```bash
