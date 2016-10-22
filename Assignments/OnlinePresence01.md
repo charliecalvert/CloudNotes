@@ -4,6 +4,20 @@ In this class we use a variety of cloud services. Most of these services are fre
 
 To enter the world of modern computing, you must have a public presence in the cloud. Most people who fear developing a presence in the cloud exaggerate the importance of the threats they face. One of the main goals in this course is to teach you to use the cloud in a safe, secure and public spirited manner. To get started, you must begin actually participating in a carefully chosen set of cloud services.
 
+## Inspiration
+
+One way to help you learn these kinds of things on a SaaS application like Google Docs or Evernote is to simply click on everything that looks clickable until you understand what it does. The rhythm can be:
+
+- Click something, try to understand what it did
+- Press the cancel button or the back arrow to go back to where you were
+- Wave your mouse over various buttons that appear clickable. A hint should appear.
+
+It's usually best if you have a little "oh cool, look what that did" reaction from time to time as you click around. In other words, it is best if you enjoy both the process of exploring and the process of puzzling out how something works. If it all seems dreary and boring, then it is hard to summon up the energy required to get good at using computers. But if you find it fun and engaging, then eventually it will start to make sense. As far as I'm concerned, the amount of time it takes someone to learn something is not usually very important. What I look for is that enthusiasm, that little spark that tells me someone really likes this kind of work.
+
+Of course, one person will find some particular task engaging and another task boring, but as long as you are finding some part of the process interesting and exciting, then you will succeed eventually.
+
+Another key trait is fearlessness. Even if we are shy, or don't like to engage others, our passion to learn should help overcome that reticence.
+
 **NOTE**: _While there are some risks involved in using the cloud, most of them can be easily avoided if you follow a few simple practices. In this course, we will learn about these practices._
 
 ## Turn it In

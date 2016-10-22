@@ -14,20 +14,21 @@ Copy the ThreeFloor program into a new folder called **Week04-PointerLock**.
 
 The next step is to show HTML that tells the user to start game. Put this code in index.jade:
 
-```
+```text
 extends layout
 
 block content
 
-  div#blocker(style='display: -webkit-box;')
-    div#instructions(style='')
-      span(style='font-size:40px') Click to play
-      p (W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+    div#blocker
+        .instructions
+            div.instructions-item.instructions-item--bottom Click to play
+        .instructions
+            div.instructions-item.instructions-item--top (W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
 ```
 
 Here is the CSS:
 
-```
+```css
 
 html, body {
 	width: 100%;
@@ -45,7 +46,6 @@ body {
     display: block;
 }
 
-
 #blocker {
 
 	position: absolute;
@@ -57,33 +57,26 @@ body {
 
 }
 
-#instructions {
-
-	width: 100%;
-	height: 100%;
-
-	display: -webkit-box;
-	display: -moz-box;
-	display: box;
-
-	-webkit-box-orient: horizontal;
-	-moz-box-orient: horizontal;
-	box-orient: horizontal;
-
-	-webkit-box-pack: center;
-	-moz-box-pack: center;
-	box-pack: center;
-
-	-webkit-box-align: center;
-	-moz-box-align: center;
-	box-align: center;
-
+.instructions {
+	display: flex;
+	height: 50%;
 	color: #ffffff;
-	text-align: center;
-
-	cursor: pointer;
-
 }
+
+.instructions-item {
+	flex: 1;
+	text-align: center;
+}
+
+.instructions-item--top {
+	align-self: flex-start;
+}
+
+.instructions-item--bottom {
+	font-size: 40px;
+	align-self: flex-end;
+}
+
 ```
 
 ## PointerLock Implementation
@@ -92,9 +85,10 @@ Here is my (slightly modified) version of the boilerplate **PointerLockControls*
 
 [plc]: https://github.com/mrdoob/three.js/blob/master/examples/js/controls/PointerLockControls.js
 
-```
+```javascript
 /**
  * @author mrdoob / http://mrdoob.com/
+ * Modified by Charlie Calvert to support requirejs.
  */
 
  define(['floor'], function (Floor) {
@@ -355,7 +349,7 @@ define(['PointerLockControls'], function(pointerLock) {
     function PointerLockSetup(controls) {
 
         blocker = document.getElementById('blocker');
-        instructions = document.getElementById('instructions');
+        instructions = document.getElementsByClassName('instructions')[0];
 
         var havePointerLock = 'pointerLockElement' in document ||
             'mozPointerLockElement' in document ||
@@ -379,10 +373,7 @@ define(['PointerLockControls'], function(pointerLock) {
 
                     controls.enabled = false;
 
-                    blocker.style.display = '-webkit-box';
-                    blocker.style.display = '-moz-box';
-                    blocker.style.display = 'box';
-
+                    blocker.style.display = 'block';
                     instructions.style.display = '';
 
                 }
