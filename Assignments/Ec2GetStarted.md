@@ -17,7 +17,9 @@ It will be assigned:
 - A public private key pair that you can download. Put it in your **.ssh** folder.
 - A non-permanent public IP address for your EC2 instance. You can see this in your AWS console, under EC2 instances.
 
-We will need a permanent IP address, so later we will create an elastic IP address. The elastic IP will not change.
+We will need a permanent IP address, here are instructions on creating elastic IP address. The elastic IP will not change.
+
+- [Elastic IP](http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic)
 
 ## Step Three
 
@@ -111,6 +113,14 @@ Choose **New | File Upload** on Google Drive.
 ## Turn it in
 
 Take a screen shot of the command prompt and submit that with your assignment.
+
+A good screen shot would show you first on Pristine Lubuntu, then connecting to EC2, and running this command:
+
+<pre>
+ls ~/Git
+</pre>
+
+It should show that you have a JsObjects directory.
 
 ## Keep System Up to Date
 

@@ -14,6 +14,13 @@ Here is a bash script that will check for the existence of folders that I expect
 ```bash
 #! /bin/bash
 
+RED='\033[0;31m'
+LIGHT_RED='\033[1;31m'
+LIGHT_GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;36m'
+NC='\033[0m' # No Color
+
 # Use set -e to exit on error
 set -e
 
@@ -29,8 +36,8 @@ function check() {
   pwd
 
   if [ ! -d node_modules ]; then
-     npm install
-     # ln -s ~/tmp/node_modules node_modules
+     # npm install
+     ln -s ~/tmp/node_modules node_modules
   fi   
 
   grunt check
@@ -38,9 +45,32 @@ function check() {
   cd ..
 }
 
-check Week01-ExpressBasics/
-check Week02-BasicTypes/
-check Week02-BasicTypesExpress/
+A1=Week02-BasicTypes
+A2=Week02-BasicTypesExpress
+BASIC_TYPES="$A1 $A2"
+A_OK=false
+
+function basicTypes() {
+    for i in $BASIC_TYPES
+    do
+         if [ -d $i ]; then
+            echo -e $LIGHT_GREEN"Directory $BLUE$i$LIGHT_GREEN exists$NC"
+            A_OK=true
+            check "$i"
+         else
+            echo -e $LIGHT_RED"Directory $BLUE$i$LIGHT_RED does not exist$NC"
+         fi
+    done
+    if $A_OK ; then
+        echo -e $LIGHT_GREEN"BasicTypes has at least one good directory.$NC"
+    else
+        echo -e $LIGHT_RED"Basic Types is not good$NC"
+        exit 1
+    fi
+}
+
+check Week01-ExpressBasics/  
+basicTypes
 check Week02-GetNumbers/
 check Week02-JavaScriptObjects/
 check Week02-ObjectBasicsJasmine/

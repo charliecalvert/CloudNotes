@@ -56,41 +56,50 @@ Here are functions for creating the database, and then creating, inserting and d
 
 ```javascript
 var readIt = function(docName) {
-    var prog = nano.db.use(dbName);
-    prog.get(docName, {
+    'use strict';
+    var db = nano.db.use(dbName);
+    db.get(docName, {
         revs_info: true
     }, function(err, body) {
-        if (!err)
-            console.log(body);
+        if (err) {
+            throw err;
+        }
+        console.log(body);
     });
 };
 
 function insert(data) {
+    'use strict';
+    var callback = function(err, body) {
+        if (err) {
+            throw err;
+        }
+        console.log(body);
+        readIt();
+    };
     nano.db.create(dbName);
     var prog = nano.db.use(dbName);
 
-
     for (var i = 0; i < data.length; i++) {
-        prog.insert(data[i], function(err, body) {
-            if (!err)
-                console.log(body);
-            readIt();
-        });
+        prog.insert(data[i], callback);
     }
 }
 
 function deleteDoc(docUniqueId) {
+    'use strict';
     var db = nano.db.use(dbName);
     db.get(docUniqueId, function(err, body) {
-        if (!err) {
-            var latestRev = body._rev;
-            db.destroy(docUniqueId, latestRev, function(err, body, header) {
-                if (!err) {
-                    console.log("Successfully deleted doc", docUniqueId);
-                }
-            });
+        if (err) {
+            throw err;
         }
-    })
+        var latestRev = body._rev;
+        db.destroy(docUniqueId, latestRev, function(err, body, header) {
+            if (err) {
+                throw err;
+            }
+            console.log('Successfully deleted doc', docUniqueId);
+        });
+    });
 }
 
 function coreDataInsert() {

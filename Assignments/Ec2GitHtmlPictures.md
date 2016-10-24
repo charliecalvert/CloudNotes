@@ -40,9 +40,8 @@ Add your pictures to your markdown so that your page:
 Complete the following steps:
 
 - Find the two screen shots you created for the **GoogleDriveGitZip** project.
-- Place them in your repository in a folder called **Week07-Ec2GitHtmlPictures**.
-
-**NOTE**: *We don't usually put bitmaps in Git, but you can do so, and in this case, I would like you to do so. Git is good at keeping track of text files and the differences between versions of text files. It can keep track of various versions of a binary file such as a bitmap, but that is not its real purpose. As a result, I usually put bitmaps and zip files someplace else, such as Google Drive or AWS S3. This assignment is an exception to that rule.*
+- [Upload][s3-upload] the pictures to S3.
+- Copy the URL of your picture. Insert it in your markdown document.
 
 Have each pictures appear twice. Once at a normal size, and once using our CSS **img class="twenty-five-percent"**. I talked about the **twenty-five-percent** class in the [Ec2MarkdownToHtml][ec2css] assignment, in the CSS section.
 
@@ -55,6 +54,8 @@ Add, commit and push your work.
 [ec2css]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#css
 
 ![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
+
+[s3-upload]: http://www.elvenware.com/charlie/development/cloud/WebServices.html#s3
 
 ## Step Three
 

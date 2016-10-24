@@ -231,7 +231,7 @@ The images below show that **first-style.css**, **style.css**, **googlecode.css*
 
 I want you save your /var/www/html/css, /var/www/html/js/ and var/www/html/images folders to your repository.
 
-Put this script in the root folder of your repository. Run it to back back up your **css**, **js**, and **image** files to a folder in your repository called **ApacheHelpers**. You will need to make a few changes for instance, your lastname, not mine, and possibly the name of the class: prog270 or isit322.
+Put this script in the root folder of your repository. Run it to back up your **css**, **js**, and **image** files to a folder in your repository called **ApacheHelpers**. You will need to make a few changes for instance, your lastname, not mine, and possibly the name of the class: prog270 or isit322.
 
 Call it something like: **CopyAllTestAndApacheToRepository**. And then **chmod +x CopyAllTestAndApacheToRepository**. Be sure to change **prog270-calvert-2016** to use your last name!
 
@@ -273,10 +273,7 @@ cp -ruvp ApacheHelpers/js /var/www/html/.
 
 ## Clean
 
-When testing your code, you want to make sure you are not relying on any
-files already sitting in **/var/www/html**. This script deletes all the
-HTML files and folders from /var/www/html. It also creates a zip folder
-containing the most recent contents of your **js**, **css** and **images** folders. Save the code as **/var/www/html/clean**. Make it executable with **chmod +x clean**, then run the script as needed.
+When testing your code, you want to make sure you are not relying on any files already sitting in **/var/www/html**. This script deletes all the HTML files and folders from **/var/www/html**. It also creates a zip folder containing the most recent contents of your **js**, **css** and **images** folders. Save the code as **/var/www/html/clean**. Make it executable with **chmod +x clean**, then run the script as needed.
 
 **NOTE**: *Where I write <LIST ANY OTHER FILES/FOLDERS> you should do exactly that, and of course you have to then remove the text in angle brackets.*
 

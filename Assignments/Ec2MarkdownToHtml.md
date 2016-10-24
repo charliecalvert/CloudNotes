@@ -26,7 +26,7 @@ Don't try to polish or make your site fancy at this stage. Just try to get it wo
 
 ## Update
 
-MakeHtml has been updated. On Pristine Lubuntu, copy over the new version.
+If MakeHtml has been updated. On Pristine Lubuntu, copy over the new version.
 
 Begin the process by updating JsObjects:
 
@@ -98,9 +98,55 @@ Repeat the process of developing your site on Pristine Lubuntu, pushing it to yo
 
 **NOTE**: *Some of you may be interested in setting up a domain name, rather than using a raw IP address. We will very likely do that, but later in the course.*
 
+## Git Repository
+
+If you move to a new server, such as EC2, and want to set up your repository, you can usually get a copy of it with git clone.
+
+I prefer that you first copy over your private key to your **~/.ssh** folder and then load it with **ssh-add** or by setting up **sshadd**.
+
+Once your key is loaded, just clone your repo:
+
+```bash
+git clone  git@github.com:<username>/prog270-lastname-2016-fall.git
+```
+
+You can get the exact URI from GitHub/BitBucket. If you do things that way, you should not see the issue you circle above in red. Especially while you are setting it up, you can always just delete or rename a corrupted or poorly configured repo and start again:
+
+```bash
+cd ~/Git
+rm -rf prog270-lastname-2016-fall
+git clone  git@github.com:<username>/prog270-lastname-2016-fall.git
+```
+
+Another issue can come up of we forget these commands:
+
+http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html#configure
+
+## SSH Setup
+
+Students often need a reminder on how to set up SSH on EC2:
+
+- The **~/.ssh/authorized_keys** file contains your public key.
+  - When you created a your Ubuntu Server on AWS, you downloaded a private key with PEM extension. AWS automatically put the public key for that PEM file in your EC2 authorized_keys file.
+  - But you might want to copy the public key that you uploaded to Git to the same file as it will save you a step when you want to SSH to EC2.
+  - Details are here: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html#step-five
+- The **~/.ssh** directory should contain a copy of your private key for GitHub.
+  - Step five of **Ec2GetStarted.html** provides strong hints on how to copy your private key to EC2.
+  - Once you have it on your EC2 instance, load it with **ssh-add** or **sshadd**.
+
+## Important Reminder
+
+Don't forget the scripts that you can find here:
+
+- <http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html#apache-helpers>
+
+Frankly, it is best if you understand how to copy the files by hand, and then start using the scripts. The deeper your understanding the better. But there is no doubt that in the long run these scripts are useful and help to automate a potentially error prone and time consuming task.
+
+When you are trying to move your web site from your local machine to EC2, these scripts can be very useful.
+
 ## Bitmaps
 
-Go into and create three documents on any subject you like. Include at least one picture in each document. The pictures can come from anywhere. They need not be pictures you create. To help you get started, you can use the image icon at the top of *Remarkable*. Just paste in the URL of your picture. As a rule, you want to select smaller images so that they do not take up to much space on your page, but we will talk some about changing the size of a picture in the next section.
+Go into and create three documents on any subject you like. Include at least one picture in each document. The pictures can come from anywhere. They need not be pictures you create. To help you get started, you can use the image icon at the top of *Atom*. Just paste in the URL of your picture. As a rule, you want to select smaller images so that they do not take up to much space on your page, but we will talk some about changing the size of a picture in the next section.
 
 You can search for the images on the [Wiki Media Commons][wm-main]. These images are free to use and usually come without complex copyright issues.
 
@@ -170,7 +216,7 @@ And here is the HTML code for using this new CSS class:
 
 You can paste the line with the HTML IMG tag in it directly into your markdown file while using Remarkable. Markdown supports both markdown itself, and HTML. When using markdown, you can just switch to HTML as needed:
 
-```
+```text
 ## Some Header
 
 Some markdown text. You can mix HTML and markdown in the same file.
@@ -182,7 +228,13 @@ For all this to work, make sure you are using the most recent version of MakeHtm
 
 ## Turn it in
 
-Provide a link to your web site so that I can view it. It should look something like this:
+Make sure both **MakeHtml** and your website are working. Set them up on:
+
+- your local Pristine Lubuntu VM
+- our VirtualBox hosted Ubuntu server
+- and on EC2.
+
+Provide a link to your EC2 web site so that I can view it. It should look something like this:
 
 ```
 http://XX.XX.XX.XX/master-list.html
@@ -190,10 +242,14 @@ http://XX.XX.XX.XX/master-list.html
 
 Here XX.XX.XX.XX is your elastic IP address, and **master-list.html** is some valid page on your site that links to your other pages either directly or indirectly.
 
- When you submit the assignment, include at least two pictures:
+ When you submit the assignment, include at least two screen shots:
 
- - One of your web site on a page that shows a bitmap
- - One of the output generated from running the MakeHtml program at the EC2 ubuntu command prompt.
+ - One of your web site displaying a page that contains a bitmap. In other words, open a browser, navigate to your website, navigate to a page that contains a picture, take a screenshot, and turn in that screen shot.
+ - Also include a screenshot of the output generated from running the MakeHtml program at the EC2 ubuntu command prompt.
+
+## Activities
+
+Here is a drawing that might help some of you visualize what we are doing in this assignment:
 
 ![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
 
