@@ -6,9 +6,10 @@ To get started, create  an account on [Code Academy](http://www.codecademy.com/)
 
 **NOTE**: _The name of the site is actually **codecademy**, not **code academy**. In a no doubt futile attempt to preserve what is left of the English language, I nevertheless tend to call it code academy_.
 
-After you have set up your account, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills.
+After you have set up your account, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills. The site is in transition this quarter, so I'm giving you two ways to complete each half of the course. Pick one from HTML and CSS, and one from JavaScript. You don't need to complete four courses, just two. Complete on HTML and CSS course and one JavaScript course. If you are unsure which one to pick, pick the newer course of the two choices.
 
-- [Go to Web Fundamentals](http://www.codecademy.com/tracks/web)
+- [Go to the old HTML and CSS course](http://www.codecademy.com/tracks/web)
+- [The new HTML and CSS course](https://www.codecademy.com/learn/learn-html-css)
 - Complete at least 15% of the skill.
 - [Go to the old JavaScript course](http://www.codecademy.com/tracks/javascript)
 - [Go to the new Learn JavaScript course](https://www.codecademy.com/learn/learn-javascript)

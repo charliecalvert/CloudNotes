@@ -242,10 +242,14 @@ http://XX.XX.XX.XX/master-list.html
 
 Here XX.XX.XX.XX is your elastic IP address, and **master-list.html** is some valid page on your site that links to your other pages either directly or indirectly.
 
- When you submit the assignment, include at least two pictures:
+ When you submit the assignment, include at least two screen shots:
 
- - One of your web site on a page that shows a bitmap
- - One of the output generated from running the MakeHtml program at the EC2 ubuntu command prompt.
+ - One of your web site displaying a page that contains a bitmap. In other words, open a browser, navigate to your website, navigate to a page that contains a picture, take a screenshot, and turn in that screen shot.
+ - Also include a screenshot of the output generated from running the MakeHtml program at the EC2 ubuntu command prompt.
+
+## Activities
+
+Here is a drawing that might help some of you visualize what we are doing in this assignment:
 
 ![Create Site Activies](https://s3.amazonaws.com/bucket01.elvenware.com/images/create-web-site-activities.png)
 

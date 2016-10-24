@@ -1,10 +1,18 @@
 ## Overview
 
-Create a program called **DataMaster** that will begin to work with the data we will use in the game.
+Create a program based on [**JsObjects/Data/CouchView02**][couch-view-02] and call it **Week0X-DataMaster**. We will use the CouchView02 program as the basis for the program that works with the data we will use in the game.
+
+[couch-view-02]: https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchView02
 
 ## Create the Data
 
-We will bring this portion of the game completely to fruition in a later assignment. For now you don't have to actually insert or update the data you store in CouchDb from the **DataMaster** UI. You may create it by hand, building a JSON file in a text editor. Then insert the file into the database, and view it in your app. Use Angular to handle the insert and view. This is very similar to what we were doing in class on Monday, Dec 1.ll leave integrating the code into the Listener for next quarter.
+We will bring this portion of the game completely to fruition in a later assignment. For now you don't have to actually insert or update individual rows of data that you store in CouchDb from the **DataMaster** UI. In particular, most database programs allow the user to insert and delete individual rows of data with the UI. You do not have to do that with this program at this time. Just create the data inside a JSON file that you build by hand. Then use the existing Angular based UI to insert it all in one fell swoop. In other words, use the existing UI to insert all the records at one time either as a single document or a set of individual documents, one for each row.
+
+To create the data that will be inserted, edit a JSON file in a text editor. Save the file to disk as **Npcs.json**. Place it near the existing **States.json** file. Then ensure you program can insert your new JSON file into the database, and that you can view it in your app. Use the existing Angular UI to handle the insert and view, but add new methods for handling the views of your new data. It should be fairly clear how to create these views from looking at the existing views for the States data. These views can be found in **routes/CouchDesignDocs.js** and **routes/CouchViews.js**.
+
+Again, the user does not have to be able to edit or insert individual rows of data. They just need to be able to view the data you insert from your JSON file.
+
+Be sure to review all the code in the routes directory, especially those files that begin with the word Couch. Since you have existing code in the sample program that calls most of these methods.
 
 ## Data
 
@@ -84,3 +92,7 @@ You program should include working menu items of links that allow you to:
 	- View each of the two views described above
 
 **FOR LATER**: Use **handlebars** to create HTML *templates* that show the various views of your data. This is all in the GameListener or in Helper App.
+
+## Turn it in
+
+Push your program to GitHub/BitBucket and submit the assignment in Canvas.

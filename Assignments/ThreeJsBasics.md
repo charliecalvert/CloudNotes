@@ -41,13 +41,23 @@ git clone git@github.com:mrdoob/three.js.git
 
 ## Step Three
 
-Let's set up [require js][reqjs]. To get started, put this in **layout.jade**:
+Let's set up [require js][reqjs]. To get started, open up **layout.jade** and remove all the script tags. For instance, remove these, if they exist:
+
+```text
+script(src="components/jquery/dist/jquery.js")
+script(src="components/bootstrap/dist/js/bootstrap.js")
+script(src="javascripts/control.js")
+```
+
+Then put this in **layout.jade** on the place of the other tags:
 
 <pre>
 script(data-main="javascripts/main" src="javascripts/require.js")
 </pre>
 
-Now in **main.js**, put this:
+This sets you to start working with **requirejs**. We will use this library to load our JavaScripts files when they are needed, rather than just at the start of the program. It also helps us define modules, and helps us see which modules depend on which other modules.
+
+To get start, open up **main.js**. This is where we will configure **requirejs**. In particular, put this in **main.js**:
 
 ```javascript
 requirejs.config({

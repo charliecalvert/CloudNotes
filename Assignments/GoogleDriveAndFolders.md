@@ -50,17 +50,21 @@ This should be a reasonably accurate view of the file hierarchy in your Google D
 
 It is important to understand there should be only one instance of **Doc01**, **Sheet01**, and **Deck01**.
 
-To place a document in one folder, simply navigate to that folder and create the document inside it. To move it from one folder to another, put a check mark in front of the file or folder, then click the **Move To** icon, which is shaped like a folder, and which is located near the top of Google Drive window. But we don't want to move a file, we want to link to it, we want it to appear to be in two places at once. Do this with **Shift-Z**.
-
-**NOTE**: _If want a file to appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places._
-
-**NOTE**: _To see where a file is located, choose the file, click the **Information Button | Details | Location**._
+To place a document in one folder, simply navigate to that folder and create the document inside it. To move it from one folder to another, put a check mark in front of the file or folder, then click the **Move To** icon, which is shaped like a folder, and which is located near the top of Google Drive window. But we don't want to move a file, we want to link to it, we want it to appear to be in two places at once. Do this with [**Shift-Z**][shift-z-add].
 
 ![Placing a file in multiple places](https://s3.amazonaws.com/bucket01.elvenware.com/images/google-drive-folders-01.jpg)
+
+**Figure01**: _If want a file to appear in multiple places, you should select the file and then type **Shift+Z** and click the **add** button. This will allow you to link to one file from multiple places._
+
+![File in two locations](https://s3.amazonaws.com/bucket01.elvenware.com/images/google-drive-and-folders-03.png)
+
+**Figure02**: _To see where a file is located, choose the file, click the **Information Button | Details | Location**._
 
 I don't think this works anymore. But once upon a time, if you held down the Ctrl key, and clicked with the left mouse button, then you could place a document or folder in more than one location.
 
 ![FilesFolders](http://elvenware.com/charlie/os/Android/images/GoogleDriveFilesFolders01.png)
+
+[shift-z-add]: https://support.google.com/drive/answer/2563044?p=docslist_shortcuts&hl=en&visit_id=1-636127497193211095-2353456294&rd=1
 
 Turn it In
 ----------
