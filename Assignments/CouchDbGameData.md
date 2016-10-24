@@ -59,7 +59,9 @@ You can then either insert this data in bulk, or insert it as a single document:
 	});
 ```
 
-I have created a program in **JsObjects** called CouchView02. It demonstrates all your options:
+## Create DataMaster
+
+I have created a program in **JsObjects** called **CouchView02**. Copy it to **Week05-DataMaster**. The program demonstrates all your options:
 
 - Insert a single document
 	- Retrieve the JSON for whole document
@@ -72,7 +74,11 @@ You can also retrieve an HTML view of the single document, or retrieve an array 
 
 To help you understand better, I created a video: [http://youtu.be/Hy8XkmoEReU](http://youtu.be/Hy8XkmoEReU_)
 
-Store the data in a database, and include at least two views: one to retrieve the **npc_id**, **npc_name** and **value**. Another should retrieve the **npc_id**, **npc_name**, **question** and **answer**.
+Store the data in a database, and include at least two views which you will define in **routes/CouchDesignDocs.js**: one to retrieve the **npc_id**, **npc_name** and **value**. Another should retrieve the **npc_id**, **npc_name**, **question** and **answer**.
+
+In other words, stop getting states data, start getting game data, and write the views for retrieving the game data. Don't delete the states views or **starts.json** as we might need them.
+
+You might also want to modify the if statement at the top of **Control.js** that begins **if(result.ok)**. In particular, you can add another if statement for handling a proper display of the rows of data sent back from the server. It's the code in the Module Controller.
 
 You program should include working menu items of links that allow you to:
 
