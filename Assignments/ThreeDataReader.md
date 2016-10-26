@@ -39,7 +39,7 @@ We don't need to implement this yet, but in the long term, as the main character
 
 For now, we might want to pick 5 places in the maze where we can put an NPC. Place a sphere in each of those five places.
 
-When the main characters reaches one of those places, display in the debug area some data about the NPC. For instance, pick the description and value fields, and show those in the debug area. When the main character (the camera) moves past one of these locations, then the NPC data should disappear, but the main characters stats should still be on display.
+When the main characters reaches one of those places, display in the Game Display area some data about the NPC. For instance, pick the description and value fields, and show those in the green Game Display area. When the main character (the camera) moves past one of these locations, then the NPC data should disappear, but the main characters stats should still be on display.
 
 Here is a grid that provides us one means of defining where the NPC's are in our grid. Here we have an NPC with an ID of 1 of [1, 4] and one with an id of 2 at [3, 8]. Save this is a **NPC000.json** next to your JSON for the main grid.
 
@@ -109,26 +109,6 @@ $.getJSON(query, function (json) {
 ```
 
 The key point is that the **jqxh.responseText** property, which is a string, contains a lot of useful information that you might want to show to yourself while your application is under development. This is not a very good way to show it, but it should help you understand what is involved in finding and parsing the data.
-
-## NPCs
-
-There should be a hierarchy of NPC **values**, as follows:
-
-- yellow: 15
-- green: 45
-- blue: 135
-
-The list above references the **value** field of an **NPC object**. This is the same **NPC Object** discussed in the previous section. These values are stored in the database.
-
-Give the scores shown above, it follows that the **mainCharacter** cannot remove a green character until two yellow characters have been discovered. Likewise, the **mainCharacter** cannot remove a blue character until two green characters have been removed. In other words, the **mainCharacter** must have *earned* 45 points before it can remove a green character.
-
-**NOTE**: At some point, we might want to develop a more complex scoring mechanism, where we can find multiple ways to earn points. In that case, we might develop a different mechanism for determing when a green character can be removed. But for now, let's just keep it simple.
-
-The NPCs on the tiny map should be painted different colors, according to the colors specified in your database. The particle cloud and the item inside it should also correspond to the colors.
-
-When the main character encounters an NPC,  the name of the character should be shown in the game and sent to and displayed in the **GameListener**.  
-
-When 6 characters (2 yellow, 2 green, and 2 blue) have been removed from the board, then the **mainCharacter** can move on to level 2. You only need to set up the NPC scoring for Level 1. Once the **mainCharacter** has moved to level 2, you don't have to "score" the NPCs. In other words, there need be no data associated with the characters on Level 2 at this time. That's something we can leave next quarter.
 
 ## Turn it in
 

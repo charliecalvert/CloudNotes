@@ -211,3 +211,17 @@ After you have created your google account, it takes only a single click to begi
 After creating the site choose **Manage Site | General | Mobile | Automatically adjust site to mobile phones**.
 
 If things go completely awry, you will be able to delete the site and start again. In that case, choose **More Actions | Manage Site| Delete Site**.
+
+## Hints on Google Sites
+
+Here is one way to set up your Google Site.
+
+- Use Atom and MakeHtml, or StackEdit, or some other set of tools, to convert your markdown to HTML.
+  - StackEdit: (# menu | Export to Disk | As markdown).
+- Open the HTML in a text editor such as Geany, NotePad++, CodeAnywhere, nano or Visual Studio. (Wordpad might also work.)
+- Block Copy the HTML to the clipboard (Ctrl-C).
+- Open Your Google Site page. Go into edit mode.
+- Click the little HTML symbol on the top of the page at the right.
+- Delete any and all HTML shown in the HTML editor.
+- Paste in your HTML (Ctrl-V).
+- Save your work.

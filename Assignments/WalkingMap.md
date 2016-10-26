@@ -57,19 +57,22 @@ When you are done, your code should look much like the  **Weowna to Lake Hills G
 
 To complete the exercise, do the following:
 
-- Download the markdown and HTML for your markdown editor. Name the markdown file **WalkingMapLastName.md**. Name the HTML file **WalkingMapLastName.html**. In all cases LastName is your last name.
+- Name the markdown file **WalkingMapLastName.md** where **LastName** is your last name.
 - Place your code in your **~/Documents/AllTest** folder.
 - Run your MakeHtml program to refresh the code on your Apache server.
-- Copy the files from **AllDrive** to your repository, per the work we did in a previous assignment.
+- Copy the files from **AllDrive** to your repository, using our script.
 - Push your repository. (It should now contain **AllTest/WalkingMap.md** or something similar.)
+- Pull it on EC2.
+- Copy it out to AllTest with our script.
+- Run MakeHTML on EC2.
 
-To copy the updated code in **AllTest** directory to the existing **AllTest** folder in your repository, use the instructions in the **GitDualRepos** assignment:
+To copy the updated code in **AllTest** directory to the existing **AllTest** folder in your repository, use the instructions in the **ApacheHtml** assignment:
 
-- [Git Dual Repos](http://www.ccalvert.net/books/CloudNotes/Assignments/GitDualRepos.html#alltest)
+- [Apache HTML](http://www.ccalvert.net/books/CloudNotes/Assignments/ApacheHtml.html#apache-helpers)
 
 ## Turn it in
 
-Take a screen shot of your page running on your Apache Server. (localhost/WalkingMapLastName.html). Attach (upload) when you submit the assignment in Canvas.
+Take a screen shot of your page running on your local Apache Server. (localhost/WalkingMapLastName.html). Attach (upload) the image when you submit the assignment in Canvas. Provide a link to your page running on EC2.
 
 Push your repository. By now I should be able to find it, but if you have any doubts, add your github url as a comment.
 
@@ -78,50 +81,25 @@ Check list:
 - **WalkingMap.md** in **AllTest** folder in your repository?
 - Three walks included in **WalkingMap.md**?
 - Image showing your **WalkingMap** displayed in your browser attached to assignment? Try to show that at least two walks are visible on your page.
+- URL for EC2 instance of your page.
 
-Your url might look vaguely like this:
+
+## Hint
+
+Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
 
 ```
-git@github.com:username/prog270_lastname-2016.git
-```
-
-## Please Ignore
-
-Those of you in Prog270, Winter 2016, don't do this. Just ignore this section. I'm just saving it here for now for my personal use.
-
-Here is one way to set up your Google Site.
-
-- In StackEdit, save your markdown as HTML. (# menu | Export to Disk | As markdown).
-- Open the HTML in a text editor such as Geany, NotePad++, CodeAnywhere, nano or Visual Studio. (Wordpad might also work.)
-- Block Copy the HTML to the clipboard (Ctrl-C).
-- Open Your Google Site page. Go into edit mode.
-- Click the little HTML symbol on the top of the page at the right.
-- Delete any and all HTML shown in the HTML editor.
-- Paste in your HTML that you exported from StackEdit (Ctrl-V).
-- Save your work.
-
-More stuff to ignore:
-
- - A zip file containing your files
- - In the comment area put the URLs of your walking map pages on S3 and Google Sites.
- - In the comment area put the URL of your git repository. It should look something like this:
-
- ## Hint
-
- Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatible with your system. In particular, check the "base-dir", which assumes that your home path is **/home/bcuser**.
-
- ```
- {
-   "calvert": {
-     "base-dir": "/home/bcuser/",
-     "site-dirs": [
-       "Documents/AllTest",
-       "Documents/AllSite"
-     ],
-     "destination-dirs": [
-       "/var/www/html/",
-       "/home/bcuser/temp/test-site/"
-     ]
-   }
+{
+ "calvert": {
+   "base-dir": "/home/bcuser/",
+   "site-dirs": [
+     "Documents/AllTest",
+     "Documents/AllSite"
+   ],
+   "destination-dirs": [
+     "/var/www/html/",
+     "/home/bcuser/temp/test-site/"
+   ]
  }
- ```
+}
+```
