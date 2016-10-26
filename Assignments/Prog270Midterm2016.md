@@ -140,7 +140,15 @@ cp -r /var/www/html ~/Git/prog270-lastname-2016/Midterm-HTML
 
 When you turn in the assignment, go to the text page and provide a link to the home page of your running web site. What I'm looking for is a clickable URL leading to your website running on AWS through an elastic ip.
 
-Include any screen shots mentioned above.
+Include any screen shots mentioned above. Also, include a screen shot of MakeHtml running on Lubuntu. It should show code like this:
+
+```javascript
+{ result: 'success',
+  destinationDir: '/var/www/html/',
+  directories: [ '/home/ubuntu/Documents/AllTest' ],
+  masterListOfNames: [ '* [Summary.html](Summary.html)' ],
+  
+```
 
 ## Tables
 
