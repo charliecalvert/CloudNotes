@@ -67,9 +67,16 @@ Do the same thing with the **addSphere** method that you did with **collisionDet
 
 Inside of **control.js** you probably have a array called **npcs** which is used to keep track of the spheres you have been creating. _Carefully_ rename this variable to **npcList** and declare it is a public property of **Npcs**. You will still reference this property from inside **control.js**. Check each place where you reference and make sure it is being handled correctly.
 
-In **Npcs** delcare a private function called **getName**
+In **Npcs** delcare a private function called **getName** and a couple public properties.
 
 ```javascript
+// When you insert an NPC, put it here.
+// When you delete an NPC remove it from this list.
+Npcs.prototype.npcList = [];
+
+// Track the coordinates of the NPCs here. Possibly redundant?
+Npcs.prototype.npcCoordinates = [];
+
 var baseName = 'npc';
 
 function getName(baseName, x, z) {
@@ -89,24 +96,23 @@ We will use this name to help us find a particular sphere.
 
 ## NPC Detection
 
-Now add a public method to **Collisions** called **npcDetection**. Call it from the animate method. When you are done your program should now how to detect a collision with an NPC. Remember, we are not using ray tracing at this point. Instead, just detect if you are on the same grid coordinates as the NPC.
+Now add a public method to **Collisions** called **npcDetection**. Call it from the animate method. When you are done your program should now how to detect a collision with an NPC. Remember, we are not using ray tracing at this point. Instead, just detect if you are on the same grid coordinates as the NPC. For instance, iterate through the **npcList**, use the name to get the coordinates of the NPC, and compare them to the current position of the **mainCharacter**. Of they match, then you have a hit.
 
-If you find that you have stumbled on an NPC, then remove it. To help you do so, add a method to **Npcs** called **removeNpc**. It might look a little like this, but it should be a public method of **Npcs**:
+If you find that you have stumbled on an NPC, then remove it from the **npcList** and from the **scene**. To help you do so, add a method to **Npcs** called **removeNpc**. It might look a little like this, but it should be a public method of **Npcs**:
 
 ```javascript
-var removeNpc = function(x, z, scene) {
-    core.GridNpc[z][x] = 0;
-
-    // remove npc
-    var objectName = getName(baseName, x, z);
-    var selectedObject = scene.getObjectByName(objectName);
-    var index = npcList.indexOf(selectedObject);
-    npcList.splice(index, 1);
-    scene.remove(selectedObject);
+var removeNpc = function(x, z, scene, gridNpc) {
+      gridNpc[x][z] = 0;      
+      var objectName = getName(baseName, x, z);
+      var selectedObject = scene.getObjectByName(objectName);
+      var index = this.npcList.indexOf(selectedObject);
+      this.npcList.splice(index, 1);
+      scene.remove(selectedObject);
+  };
 }
 ```
 
-Call **removeNpc** from **control.js** when **collisions.npcDetection** finds an NPC.
+Call **removeNpc** from **control.js** when **collisions.npcDetection** finds an NPC. Except for the method not being public, the code shown above works for me. It removes the NPC both from the **npcList** and from the **Scene**. Remove the NPC from the **Scene** results in the character disappearing. The character is removed from the board.
 
 At some point you will probably want to create a variable with object scope in **control.js** called **mainCharacter**. At minimum **mainCharacter** should be an object literal with two properties, **x** and **z** which track the cameras current position in grid coordinates.
 
