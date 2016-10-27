@@ -112,6 +112,8 @@ var removeNpc = function(x, z, scene, gridNpc) {
 }
 ```
 
+The **GridNpc** property should point at the NPC 2D 24X24 array that we load to track the location of the NPCs. The idea is that once we have discovered and removed an NPC from the scene,  we should also remove it from the grid array.
+
 Call **removeNpc** from **control.js** when **collisions.npcDetection** finds an NPC. Except for the method not being public, the code shown above works for me. It removes the NPC both from the **npcList** and from the **Scene**. Remove the NPC from the **Scene** results in the character disappearing. The character is removed from the board.
 
 At some point you will probably want to create a variable with object scope in **control.js** called **mainCharacter**. At minimum **mainCharacter** should be an object literal with two properties, **x** and **z** which track the cameras current position in grid coordinates.
