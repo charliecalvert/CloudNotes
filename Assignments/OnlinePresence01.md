@@ -146,9 +146,9 @@ The first step is to create a Google Account if you don't already have one. Here
 - In Google Drive (aka Google Docs) create a Google Folder and share it with me. See above for a description of how to name that folder.
 - Use the email address shown below when sharing your Google Drive folder. This is not the same address you use when sharing Microsoft folders.
 
-The email address to use when sharing your Google Drive folder:
+The email address to use when sharing your Google Drive is shown below. So that black hat snoopers can't find my email too easily, I have translated it into plain English. It should, however, be a simple task for your to convert it into a normal email address:
 
--  **charliecalvertbc@gmail.com**
+-  **charliecalvertbc at gmail dot com**
 
 In your new folder, create a document called **OnlinePresence-LastName**, where LastName is your last name. It should contain the same information as found in the HTML document described below. When creating documents and folders I will often say that you should name it 201?-???????-LastName. I mean, of course, for you to substitute your last name for the word LastName. For instance, **2016-Isit320-LastName** would become **2016-Isit320-Calvert** in my case.
 
