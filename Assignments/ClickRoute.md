@@ -44,7 +44,7 @@ After you clone or pull the repository. Find the **ClickRoute** project. Copy it
 
     cp -r ClickRoute ~/Git/prog272-lastName-2016/Week04-ClickRoute/
 
-Let's include **$(document).ready(callback)** or [DomReady][domReady] in **Main.js**:
+Let's include **$(document).ready(callback)** or [DomReady][domReady] in **main.js**:
 
 ```
 require(['jquery', 'ClickEvents'], function($, ClickEvents) {
@@ -67,6 +67,13 @@ If you skip this latter step, then the program will still run without error, but
 
 [domReady]: http://requirejs.org/docs/api.html#pageload
 [reqjs]: http://www.elvenware.com/charlie/development/web/JavaScript/Require.html
+
+Be sure to install both **jquery** and **require** with bower. Don't place these files directly in your **public/javascripts** directory. If you do place them in that directory, make especially sure that you exclude them from JSCS and JsHint. If you don't have bower.json in your project, you can get it from JsObjects like this:
+
+```bash
+cp $ELF_TEMPLATES/bower.json .
+cp $ELF_TEMPLATES/.bowerrc .
+```
 
 ## Step02 - Server Side {#step02}
 
@@ -201,3 +208,48 @@ This can mean that you have not properly defined a route for your event handler.
 This information is a bit outdated, in that you should use router.get rather than app.get, but nevertheless, there is information here you might find useful:
 
 - [Node on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-express)
+
+## CSS
+
+```css
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+li {
+  background-color: #00BBFF;
+  border: black solid 1px;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin: 3px;
+  width: 250px;  
+}
+
+#results, #message {
+    width: 300px;
+    border-radius: 5px;    
+    padding-left: 5px;
+    border: solid black 1px;    
+}
+
+li:hover {
+    background-color: #00FFBB;
+}
+
+.blue {
+    background-color: #00BBFF;
+}
+
+.green {
+    background-color: #00FFBB;
+}
+
+.red {
+    background-color: #FFBB00;
+}
+```

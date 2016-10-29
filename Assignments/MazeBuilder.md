@@ -1,12 +1,12 @@
-#MazeBuilder
+## Overview
 
 The goal of this program is to have your main character wander around in a maze, or dungeon, rather than just out in the open.
 
-##Get Started
+## Get Started
 
-Copy your Pointer program into a new folder called Week03_MazeBuilder. Instead of drawing two rows of boxes, use **$.getJSON** to load the two dimensional array of JSON shown below.
+Copy your **PointerLock** program into a new folder called **Week03-MazeBuilder**. Instead of drawing two rows of boxes, use **$.getJSON** to load the two dimensional array of JSON shown below.
 
-Save the following Grid000.json in the public directory or some subdirectory beneath it. In your program, load it with **$.getJSON**.
+Save the following as **Grid000.json** in the **public** directory or some subdirectory beneath it. In your program, load it with **$.getJSON**.
 
 ```
 [
@@ -37,19 +37,38 @@ Save the following Grid000.json in the public directory or some subdirectory ben
 ]
 ```
 
-Iterate over this JSON with a nested for loop. Draw a box wherever there is a one. Leave the zeros blank.
+Iterate over this JSON with a nested for loop. Draw a box wherever there is a one. Leave the zeros blank. In general, we want the maze to go deeper into the scene, so that the Z coordinate is increasingly negative as we move into the maze. Think for a moment about the grid above shown above on this page. Forget the ThreeJs game for a moment. We move "deeper" into the maze by advancing from left to right through the columns. That is, in the grid above the user should start on row two facing to the right. Don't try to move the camera or rotate it to get him in the right starting position. Instead, move the grid. Usually this just means that x is positive and z is negative when you call addCube. X become higher as move from top to bottom in the 2D grid shown above, and Z is negative, and gets lower, gets farther from zero, as we move from left to right.
 
-It is just like the last assignment, but now instead of three columns and two rows, we are building a whole maze which is both much larger and more complex than what we saw before. 
+- On the grid above, moving down is plus X.
+- On the above, moving right is minus Z.
+
+It is just like the last assignment, but now instead of three columns and two rows, we are building a whole maze which is both much larger and more complex than what we saw before.
 
 Have the camera set up so you can walk around in the maze. In other words, the camera starts inside the maze. Your code for detecting collisions should make it difficult for the user to break out of the maze. At this stage, the goal is not to find the way out of the maze, though that might be an interesting exercise if you want to turn this program, as is, into a game. The goal of that game would be to get to the start to a place where you can escape the maze. The maze shown above has no exit, so you would have to modify it very slightly if you wanted to play that game.
 
-Check in and submit repository when you are done. 
+## To many loads of crate.jpg {#many-crates}
 
-##Hints
+Your program might be loading crate.jpg hundreds of times. To stop this behavior, load the crate mesh once, save it in a variable, and use it when necessary.
+
+## Facing wrong Way
+
+If you are not facing in the right direction, this is probably because you are not drawing the grid correctly. Play with the loop where you draw the grid, and particularly this line:
+
+```javascript
+addCube(scene, camera, wireFrame, HERE, HERE);
+```
+
+This line, or the code that affects this line, is likely the problem.
+
+## Turn it in
+
+Check in and commit the code in your repository when you are done. Submit the assignment and leave a comment if you think it will be useful.
+
+## Hints
 
 You can probably do much of the work for this assignment in the addCubes method.  Right now that method has a simple for loop in it. You will need to change that loop so that it iterates over the JSON you load.
-The JSON is a two dimensional array of integers. So we have one or more arrays nested inside another array
-To iterate over the two dimensional array, you need, then, to have nested for loops. [Here][fornest] is an example of the syntax I want you to use in the **addCubes** method, but of course you want to iterate over the arrays in the Grid000.json. In other words, I show you an example of a nested for loop, but not an example of the exact nested for loop that I want you to create.
+
+The JSON is a two dimensional array of integers. So we have one or more arrays nested inside another array To iterate over the two dimensional array, you need, then, to have nested for loops. [Here][fornest] is an example of the syntax I want you to use in the **addCubes** method, but of course you want to iterate over the arrays in the Grid000.json. In other words, I show you an example of a nested for loop, but not an example of the exact nested for loop that I want you to create.
 
 Before you try to display the maze in 3 dimensions, consider using console.log to write the array to the console. That might be one way of confirming that you are properly iterating over the array. Just try to make the display on the console look like the array as it appears above, but perhaps with out the square brackets and commas. That is optional, but you might find it useful if you are having trouble with the iteration over the grid.
 
@@ -57,11 +76,27 @@ Before you try to display the maze in 3 dimensions, consider using console.log t
 
 Here is a view inside the maze:
 
-![inside](https://drive.google.com/uc?export&id=0B25UTAlOfPRGWnZMTzdHT1hXOWM)
+![Figure02: Innside](https://drive.google.com/uc?export&id=0B25UTAlOfPRGWnZMTzdHT1hXOWM)
 
 Our PointerLock code allows us to jump up in the air. We might not want that as a feature of the final game, but here is a picture of how part of the maze looks when one is jumping:
 
-![flying](https://drive.google.com/uc?export&id=0B25UTAlOfPRGVmJaNDJHNlAwM00)
+![Figure01: Flying](https://drive.google.com/uc?export&id=0B25UTAlOfPRGVmJaNDJHNlAwM00)
 
 You do not have to duplicate what I have done exactly. Choose textures that interest you, and modify the maze if you wish. The boxes are obviously half underground in these screen shots, that is not important. In fact, I should probably change my code so it doesn't do that. But whether you do that or not is not important at this stage.
 
+## Color
+
+Somewhere in your code you might be generating this error:
+
+<pre>
+THREE.MeshNormalMaterial: 'color' is not a property of this material.
+</pre>
+
+Here is the kind of code that generally generates this error:
+
+```javascript
+var material = new THREE.MeshNormalMaterial({
+    color: 0x00ffff,   <==== PROBLEM IS HERE. DELETE IT.
+    wireframe: wireFrame
+});
+```

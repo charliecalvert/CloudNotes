@@ -41,7 +41,7 @@ Pick a subject that you want for your web site. I don't care what subject you pi
 
 The most important thing is that it holds your interest. It should be something that you are passionate about, or sincerely attracts your interest.
 
-Try to figure out a way to integrate a Google Map and your images. For instance, if you are writing about sports show the route from BC to a sports stadium. Or if you are writing about art, show the route to the various Seattle art museums. If music, show how to get to music venues. For movies, show the route to various movie theaters. For hiking, the route to your favorite trailheads or show the entire hike. For tech interests, you could show how to get to Google or Microsoft or to the labs here on campus. And so on. If worst comes to worst, just include a page with a map on it even if it doesn't fit into your theme. But usually there is some way to work in a map. 
+Try to figure out a way to integrate a Google Map and your images. For instance, if you are writing about sports show the route from BC to a sports stadium. Or if you are writing about art, show the route to the various Seattle art museums. If music, show how to get to music venues. For movies, show the route to various movie theaters. For hiking, the route to your favorite trailheads or show the entire hike. For tech interests, you could show how to get to Google or Microsoft or to the labs here on campus. And so on. If worst comes to worst, just include a page with a map on it even if it doesn't fit into your theme. But usually there is some way to work in a map.
 
 ## Step Two: Pages {#pages}
 
@@ -56,6 +56,7 @@ Five of the pages should have bitmaps on them.
 Since your site will be visible to the public, you should make an effort not to use copyrighted images. This means you should create the images yourself with a camera or drawing program, find the images in the creative commons, or take some other step to show that you are a law abiding citizens and not some crazed web cowboy. In short, demonstrate respect for yourself and others.
 
 - [Learn to use WikiMedia Images](http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2MarkdownToHtml.html#bitmaps)
+- [Understanding Copyright Issues](http://www.makeuseof.com/tag/concerned-copyright-guide-legally-using-images-web/)
 
 ## Step Three: Create Site {#create-site}
 
@@ -147,7 +148,7 @@ Include any screen shots mentioned above. Also, include a screen shot of MakeHtm
   destinationDir: '/var/www/html/',
   directories: [ '/home/ubuntu/Documents/AllTest' ],
   masterListOfNames: [ '* [Summary.html](Summary.html)' ],
-  
+
 ```
 
 ## Tables

@@ -55,6 +55,8 @@ For instance, here are the first two **NpcObjects** in an array of NPCs:
 };
 ```
 
+Add a few more records and save them as **npcs.json**. The file should be near your **states.json** on disk. Remember, though: Your version of this program should read in **npcs.json** not **states.json**
+
 You can then either insert this data in bulk, or insert it as a single document:
 
 ```

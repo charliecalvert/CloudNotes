@@ -16,9 +16,14 @@ CreateAllExpress Week04-ThreeJsBasics
 
 ## Step 02
 
-Install the libraries we need:
+Make sure you have **bower.json** and **.bowerrc** in place. If these files are missing, get them like this from JsObjects:
 
-bower install
+```bash
+cp $ELF_TEMPLATES/bower.json .
+cp $ELF_TEMPLATES/.bowerrc .
+```
+
+Install the libraries we need with **bower install**:
 
 <pre>
 bower install jquery requirejs --save
@@ -86,6 +91,18 @@ requirejs([ 'jquery'], function($) {
 });
 ```
 
+Here are some reminders to help you check that require is set up correctly.
+
+In **layout.jade** remove all script tags but this one:
+
+```javascript
+script(data-main="javascripts/main" src="components/requirejs/require.js")
+```
+
+In the Chrome developer tools network page, you should see **require.js** loaded first, then see **main.js** loaded, then the other JavaScript files. This helps prove to you that require is working. If jquery, for instance, is loaded before require, then something is wrong, likely in **layout.jade**.
+
+## Buttons
+
 Because we are loading bootstrap, we can create some pretty buttons with simple code in **index.jade**
 
 <pre>
@@ -99,6 +116,7 @@ block content
     button.homeMenu.btn.btn-primary Home
     button.aboutMenu.btn.btn-success About
 </pre>
+
 
 ## Step Four
 

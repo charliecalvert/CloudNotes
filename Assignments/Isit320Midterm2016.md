@@ -125,3 +125,28 @@ Recall that Grid coordinates are the coordinates of the grid we define in our JS
 Put your work in a Git folder called **Week07-Midterm** and **Week07-DataMaster**. Submit the URL of your repository. Be sure to specify the folder in which you have placed your game and listener. I assume it is in **Week07-Midterm**, but if you think there is any reason why their might be some confusion, please clarify exactly where you put the two key projects.
 
 Make sure the CouchDb database has your name appended to it: **game-data-lastname**.
+
+## Hint
+
+Take full advantage of $.getJSON:
+
+```javascript
+function showDebug(value) {
+    console.log(value);
+}
+
+$.getJSON('grid000.json', function (grid) {
+  // YOUR CODE HERE
+}).done(function () {
+    showDebug('Grid loaded second success');
+}).fail(function (jqxhr, textStatus, error) {
+    showDebug('Grid loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
+}).always(function () {
+    showDebug('Grid loaded complete');
+});
+```
+
+
+## Extra Credit
+
+Add sky.
