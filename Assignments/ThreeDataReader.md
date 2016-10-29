@@ -91,6 +91,16 @@ You have two main methods from which you can call your code that calculates the 
 $('#npcs').append('<li>' + npcs[i] + '</li>');
 ```
 
+## Collision with NPC
+
+- Read in the data from the database.
+- When you create the NPC associate a document from the database with it.
+- Keep a list of your NPCs.
+- Create a method that takes the current position of the camera in grid coordinates and the npcList
+  - Name this method **npcDetection** and call it from your animate loop.
+- In the method iterate over the list and see if an NPC is at the same coordinates as the camera/mainCharacter.
+- If there is a collision, tell the user about it and quote from the database doc
+
 ## Getting Database
 
 When you try to connect to the database from the client, when you try to connect from the browser, you might get an error from our Couch code. Most frequently, the error occurs because the database is not running or we don't have the right IP for it. Here is one way to handle the error:

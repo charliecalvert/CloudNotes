@@ -126,6 +126,12 @@ Put your work in a Git folder called **Week07-Midterm** and **Week07-DataMaster*
 
 Make sure the CouchDb database has your name appended to it: **game-data-lastname**.
 
+Set the zeroth item in your Couch.js array of addresses is 192.168.2.19. You don't have to set the index to that number, but do make it the first item in your array. Thank you. (That's the IP address of my CouchDb server here at home.) Example
+
+```javascript
+var servers = ['http://192.168.2.19:5984', 'http://192.168.0.6:5984'];
+```
+
 ## Hint
 
 Take full advantage of $.getJSON:
