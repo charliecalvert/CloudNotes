@@ -122,11 +122,11 @@ Recall that Grid coordinates are the coordinates of the grid we define in our JS
 
 ## Turn it in
 
-Put your work in a Git folder called **Week07-Midterm** and **Week07-DataMaster**. Submit the URL of your repository. Be sure to specify the folder in which you have placed your game and listener. I assume it is in **Week07-Midterm**, but if you think there is any reason why their might be some confusion, please clarify exactly where you put the two key projects.
+Put your work in two Git folders located in the root of your repository. Call them **Week07-Midterm** and **Week07-DataMaster**. Submit the URL of your repository. Please follow these naming conventions. If, for some reason, you want to use other names, be sure to specify the folders in which you have placed your game and your database code.
 
 Make sure the CouchDb database has your name appended to it: **game-data-lastname**.
 
-Set the zeroth item in your Couch.js array of addresses is 192.168.2.19. You don't have to set the index to that number, but do make it the first item in your array. Thank you. (That's the IP address of my CouchDb server here at home.) Example
+Set the zeroth item in your **Couch.js** array of addresses to **192.168.2.19:5984**. You don't have to set the index to that number, but do make it the first item in your array. Thank you. (That's the IP address of my CouchDb server here at home.) Example
 
 ```javascript
 var servers = ['http://192.168.2.19:5984', 'http://192.168.0.6:5984'];

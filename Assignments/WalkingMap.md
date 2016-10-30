@@ -8,7 +8,7 @@ Create a markdown document, that shows how to walk from one place to another in 
 
 ### Weowna to Lake Hills GreenBelt
 
-This is a nice little walk you can take from Sammish Lake up to the area near the Blueberry Farm on 148th. There is a bit of an uphill climb near the start of the hike, but there is lots of nice buculoc wandering in the hike. It is wonderful to live in a town that has so much park land so near the city center.
+This is a nice little walk you can take from Sammamish Lake up to the area near the Blueberry Farm on 148th. There is a bit of an uphill climb near the start of the hike, but there is lots of nice bucolic wandering in the hike. It is wonderful to live in a town that has so much park land so near the city center.
 
 https://goo.gl/maps/wNCEu
 
@@ -16,7 +16,9 @@ https://goo.gl/maps/wNCEu
 
 ### Details on creating walks.
 
-Create at least three walks and place them all in a file called **WalkingMap.md**. Pick walks that you enjoy. If you like downtown Bellevue or Seattle best, then map your walks there. If you prefer to walk in the Issaquah Alps, then that is fine to. You could have one walk on Tiger, another along the Seattle waterfront. It's up to you.
+Create at least three walks, each in its own map, and place them all in a file called **WalkingMap.md**. When you are done, you should have three headings, and under each heading should be a map that outlines a walk.
+
+Pick walks that you enjoy. If you like downtown Bellevue or Seattle best, then map your walks there. If you prefer to walk in the Issaquah Alps, then that is fine to. You could have one walk on Tiger, another along the Seattle waterfront. It's up to you.
 
 Each walk should have:
 
@@ -52,6 +54,20 @@ Here you can see the beginning of the iframe element that you want to copy and p
 ![maps](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGQXdaQVBWU0lQRGM)
 
 When you are done, your code should look much like the  **Weowna to Lake Hills GreenBelt** section shown above in this document. The primary difference, of course, is that your map will show your walk, not mine.
+
+## Waypoints
+
+Sometimes you need to select more than two points in order to properly define your walk. In the image shown below, I added links to the walk by pressing the + symbol shown on the far left about 2/3s of the way from the top. Notice that there are now three "waypoints" on the walk. Note also that you can drag and drop the three waypoints until the line you want appears on the map. The point labeled **Elliot Bay Trail** above is not a known spot, it was just an unnamed spot on the map that I clicked on.
+
+![Google Map Chain](https://s3.amazonaws.com/bucket01.elvenware.com/images/google-map-chain01.png)
+
+Here is a link to the map if you want to study it in more depth:
+
+https://goo.gl/maps/tcTaXV8PAq32
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d10756.33578089456!2d-122.37922945325799!3d47.624499466972466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m5!1s0x5490157db04eaf1d%3A0x256d44cf114863be!2sSmith+Cove+Park%2C+23rd+Ave+W%2C+Seattle%2C+WA+98199!3m2!1d47.632605!2d-122.387577!4m3!3m2!1d47.626886299999995!2d-122.3777563!4m5!1s0x0%3A0x7bfcfe1bfbd29f99!2sOlympic+Sculpture+Park!3m2!1d47.6165126!2d-122.3555086!5e0!3m2!1sen!2sus!4v1477761227379" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+Just to be clear, each walk that you create must contain a starting point and end point, and from 0 to n waypoints. For this assignment, you might create maps that contain only starting and ending points. But one or more of your three maps might also contain multiple waypoints. 
 
 ## Create and Upload your Bootstrap HTML files
 
