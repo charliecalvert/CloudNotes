@@ -4,11 +4,11 @@ Basic branching.
 
 To get started, be sure that you have a copy (clone) of your repository in your **~/Git** folder and your **~/temp** folder. We can imagine that one copy is your repository at school, and the other copy is your repository at home.
 
-## Step One: Create a Branch (#create-branch)
+## Step One: Create a Branch {#create-branch}
 
-Open a repository. Create a file called **MyTest.md**:
+Open a repository. Create a file called **MyTest.md** in **Week0X-BranchBasics**.:
 
-```
+```markdown
 # My Test
 
 This is my test document.
@@ -53,7 +53,7 @@ Now you can see we have two branches:
 
 ## Step Two: Work on Test Branch {#work}
 
-Now switch to your test branch:
+Switch to your test branch:
 
 ```
 git checkout test
@@ -61,7 +61,7 @@ git checkout test
 
 Edit **MyTest.md**:
 
-```bash
+```markdown
 # My Test
 
 This is my test document.
@@ -105,7 +105,7 @@ Let's look at **MyText.md**:
 $ cat MyTest.md
 ## New Test Section
 
-This part of the document was added in the test branch
+This is my test document
 ```
 
 As you can see, it does not contain the changes we made in our test branch. Suppose, that after long consideration, we decide that we like the changes we made in the **test** branch and we want to merge into our current branch. Do it like this:
@@ -120,11 +120,11 @@ Fast-forward
 
 Now let's take a second look at **MyText.md**:
 
-```bash
+```markdown
 $ cat MyTest.md
 ## New Test Section
 
-This part of the document was added in the test branch
+This is my test document
 
 ## New Test Section
 
@@ -163,7 +163,7 @@ You could also do **git push all -u**, which pushes all your branches upstream.
 
 Suppose you are now on your home machine and you want to view the branch you just created.
 
-**NOTE**: *As implied earlier, you don't actually have to be on your home or school machine to see all this. Wherever you are, just clone your repository into your temp directory (if you have not done so already) and switch back and forth between the view of your repository found in the **~/temp** folder and the view in your **~/Git** directory. An alternative would be to have two machines next to each other on your desk, such as a desktop machine and a laptop machine. (We can't do this latter alternative, of course, on "no laptop Mondays"!)*
+**NOTE**: _As implied earlier, you don't actually have to be on your home or school machine to see all this. Wherever you are, just clone your repository into your temp directory (if you have not done so already) and switch back and forth between the view of your repository found in the **~/temp** folder and the view in your **~/Git** directory. An alternative would be to have two machines next to each other on your desk, such as a desktop machine and a laptop machine. (We can't do this latter alternative, of course, on "no laptop Mondays"!)_
 
 Suppose you have been doing your work in the **~/Git** version of your repository. Now switch to the version in your **~/temp** directory and do a **git pull**:
 
@@ -188,7 +188,7 @@ $ git branch -a
   remotes/origin/test
 ```
 
-Now checkout test:
+Now checkout the **test** branch:
 
 ```
 git checkout test
@@ -205,7 +205,7 @@ git branch qux
 git checkout qux
 ```
 
-Inside **qux** create a text file called **qux.txt** with some arbitrary text in it. Don't merge **qux** with any other branches. Simply commit your work in the new branch. Now the **qux** branch has **qux.txt** but no one else does.
+Check to be sure you are on the **qux** branch by typing **git branch**. Switch to the Branch Basics folder we created earlier. In that folder, create a text file called **qux.txt** with some arbitrary text in it. Don't merge **qux** with any other branches. Simply commit your work in the new branch. Now the **qux** branch has **qux.txt** but no one else does. Switch between branches with **checkout** in order to confirm this.
 
 Push everything (git push --all).
 
@@ -242,14 +242,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Open up **MyTest.md** in your editor. You will easily be able to find the place where git could not merge the files. In particular, git shows both versions of the text, one from **master** called **HEAD** and the previous commit, which is from **test**:
 
-```
+```text
 <<<<<<< HEAD
 ## New Test Insurrection
 =======
 ## New Test Inspection
 >>>>>>> test
 
-This part of the document was added in the test branch
+This is my test document
 
 ## New Test Section
 
@@ -261,7 +261,7 @@ Let's fix the problem, choosing one of the two options, or selecting a new optio
 ```
 ## New Test Infection
 
-This part of the document was added in the test branch
+This is my test document.
 
 ## New Test Section
 
@@ -270,7 +270,7 @@ This part of the document was added in the test branch
 
 Notice that the first line **MyTest.md** in **master** is now slightly different from the first line of **MyTest.md** in **test**. Now check the status and commit your work:
 
-```bash
+```text
 $ git status
 On branch master
 Your branch is ahead of 'origin/master' by 3 commits.
@@ -324,7 +324,7 @@ When performing a merge between branches, use the Git difftool:
 git difftool -d --tool=meld master <SomeBranch>
 ```
 
-Or, if you don't want to pass the **--tool** parmater each time, set it globally:
+Or, if you don't want to pass the **--tool** parameter each time, set it globally:
 
 ```
 git config --global diff.tool meld
