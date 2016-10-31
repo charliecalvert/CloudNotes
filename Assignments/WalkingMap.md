@@ -57,7 +57,9 @@ When you are done, your code should look much like the  **Weowna to Lake Hills G
 
 ## Waypoints
 
-Sometimes you need to select more than two points in order to properly define your walk. In the image shown below, I added links to the walk by pressing the + symbol shown on the far left about 2/3s of the way from the top. Notice that there are now three "waypoints" on the walk. Note also that you can drag and drop the three waypoints until the line you want appears on the map. The point labeled **Elliot Bay Trail** above is not a known spot, it was just an unnamed spot on the map that I clicked on.
+Sometimes you need to select more than two points in order to properly define your walk. In the image shown below, I added links to the walk by pressing the + symbol shown on the far left about 2/3s of the way from the top. I believe that Google calls this the "Destinations" button, but I'll go on using the word **waypoint** since it more exactly describes what we are discussing in this context.
+
+If I want to divide a route up into thirds, or specify more exactly how to pass through a certain part of the walk, then I can use waypoints. Use it to break a walk up into sections. Instead of going directly from A to C, you can go first from A to B, then press the plus button, then go from B to C. That is what I have done in the image shown below. Notice that there are now three "waypoints" (destinations) on the walk. You can see them at the top left of the screenshot. Note also that you can drag and drop the three waypoints to reorder them. You may have to drag them back and forth for a bit until the line you want appears on the map. In other words, the order of the waypoints is important. The point labeled **Elliot Bay Trail** above is not a known spot, it was just an unnamed spot on the map that I clicked on.
 
 ![Google Map Chain](https://s3.amazonaws.com/bucket01.elvenware.com/images/google-map-chain01.png)
 
@@ -67,7 +69,7 @@ https://goo.gl/maps/tcTaXV8PAq32
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d10756.33578089456!2d-122.37922945325799!3d47.624499466972466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m5!1s0x5490157db04eaf1d%3A0x256d44cf114863be!2sSmith+Cove+Park%2C+23rd+Ave+W%2C+Seattle%2C+WA+98199!3m2!1d47.632605!2d-122.387577!4m3!3m2!1d47.626886299999995!2d-122.3777563!4m5!1s0x0%3A0x7bfcfe1bfbd29f99!2sOlympic+Sculpture+Park!3m2!1d47.6165126!2d-122.3555086!5e0!3m2!1sen!2sus!4v1477761227379" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-Just to be clear, each walk that you create must contain a starting point and end point, and from 0 to n waypoints. For this assignment, you might create maps that contain only starting and ending points. But one or more of your three maps might also contain multiple waypoints. 
+Just to be clear, each walk that you create must contain a starting point and end point, and from 0 to n waypoints. For this assignment, you might create maps that contain only starting and ending points. But one or more of your three maps might also contain multiple waypoints.
 
 ## Create and Upload your Bootstrap HTML files
 
