@@ -37,10 +37,14 @@ Save the following as **Grid000.json** in the **public** directory or some subdi
 ]
 ```
 
-Iterate over this JSON with a nested for loop. Draw a box wherever there is a one. Leave the zeros blank. In general, we want the maze to go deeper into the scene, so that the Z coordinate is increasingly negative as we move into the maze. Think for a moment about the grid above shown above on this page. Forget the ThreeJs game for a moment. We move "deeper" into the maze by advancing from left to right through the columns. That is, in the grid above the user should start on row two facing to the right. Don't try to move the camera or rotate it to get him in the right starting position. Instead, move the grid. Usually this just means that x is positive and z is negative when you call addCube. X become higher as move from top to bottom in the 2D grid shown above, and Z is negative, and gets lower, gets farther from zero, as we move from left to right.
+Iterate over this JSON with a nested for loop. Draw a box wherever there is a one. Leave the zeros blank. In general, we want the maze to go deeper into the scene, so that the **z** coordinate is increasingly negative as we move into the maze. Think for a moment about the grid shown above on this page. Forget the ThreeJs game for a moment. We move "deeper" into the maze by advancing from left to right through the columns. That is, in the grid above the user should start on row two facing to the right. Don't try to move the camera or rotate it to get him in the right starting position. Instead, move the grid. Usually this just means that x is positive and **z** is negative when you call **addCube**. **x** become higher as move from top to bottom in the 2D grid shown above, and **z** is negative, and gets lower, gets farther from zero, as we move from left to right.
 
-- On the grid above, moving down is plus X.
-- On the above, moving right is minus Z.
+- On the grid above, moving down is plus **x**.
+- On the grid above, moving right is minus **z**.
+
+Here is another way to think about it. There is a nested for loop that we use to paint the "boxes" after we load the **grid000.json** file. Suppose that you use **i** as the counter variable for the outer loop, and **j** for the counter variable for the inner, nested loop. When calling **addCube** we pass in two coordinates as parameters: **x** and **z**. In the nested loop, use **j** to set up **x**, and **i** to set up **z**. Make **x** be positive and **z** negative.
+
+Then you should be facing the doorway when you start the game. As you head into the maze, **z** goes increasingly negative. It gets increasingly small (more negative) as you move deeper into the maze. As you move to the right, **x** gets larger.
 
 It is just like the last assignment, but now instead of three columns and two rows, we are building a whole maze which is both much larger and more complex than what we saw before.
 

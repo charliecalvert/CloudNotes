@@ -139,17 +139,19 @@ Put the HTML for your completed site in your repository in a folder called **Mid
 cp -r /var/www/html ~/Git/prog270-lastname-2016/Midterm-HTML
 ```
 
-When you turn in the assignment, go to the text page and provide a link to the home page of your running web site. What I'm looking for is a clickable URL leading to your website running on AWS through an elastic ip.
+When you turn in the assignment, provide a link to the home page of your running website. I'm looking for a URL leading to your website running on AWS through an Elastic IP. I don't care how you provide the link, but in most cases using the Canvas comment area should be a good enough.
 
-Include any screen shots mentioned above. Also, include a screen shot of MakeHtml running on Lubuntu. It should show code like this:
+Include any screen shots mentioned above. Also, include a screen shot of MakeHtml running on your Ubuntu EC2 instance. It should show, in part, code like this:
 
 ```javascript
-{ result: 'success',
-  destinationDir: '/var/www/html/',
-  directories: [ '/home/ubuntu/Documents/AllTest' ],
-  masterListOfNames: [ '* [Summary.html](Summary.html)' ],
+result: 'success',
+destinationDir: '/var/www/html/',
+directories: [ '/home/ubuntu/Documents/AllTest' ],
+masterListOfNames: [ '* [Summary.html](Summary.html)' ],
 
 ```
+
+It would be best if you showed it running on either on EC2 rather than on Lubuntu or our Ubuntu Server. However, it would be better to show it running anywhere rather than to not show it running at all.
 
 ## Tables
 
