@@ -110,6 +110,14 @@ Now upload the zip file to Google Drive. It doesn't have to be in our shared fol
 
 Choose **New | File Upload** on Google Drive.
 
+## Setup Box
+
+There are a number of steps required to get the instance set up correctly. I outline them in the first few sections of this document:
+
+- [Configure Linux][configure-linux]
+
+See in particular the first three sections.
+
 ## Turn it in
 
 Take a screen shot of the command prompt and submit that with your assignment.
@@ -120,7 +128,9 @@ A good screen shot would show you first on Pristine Lubuntu, then connecting to 
 ls ~/Git
 </pre>
 
-It should show that you have a JsObjects directory.
+It should show that you have a JsObjects directory. Don't forget:
+
+- sudo apt-get install python
 
 ## Keep System Up to Date
 
@@ -149,10 +159,12 @@ sudo shutdown -r now.
 
 This will cause your connection to EC2 to close or freeze. You will need to wait about 2 to 5 minutes, and then try to reconnect to your EC2 instance.
 
-This is looking ahead, but these references are useful:
+These references are useful:
 
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html>
-- <http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html>
+- [http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html][configure-linux]
+
+[configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
 
 ## Details
 
