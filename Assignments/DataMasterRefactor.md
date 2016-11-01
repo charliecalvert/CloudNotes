@@ -1,5 +1,7 @@
 ## Overview
 
+We will discuss this assignment on Wednesday. I'm giving it to you now in case you find it useful. It allows you to step away from Angular, and just write standard jQuery code in the DataMaster program. Do only as much as you find useful.
+
 Our primary goal in the Data Master Refactor assignment will be to strip Angular out of our assignment. I will try to change the structure as little as possible, at least at first. We can make more changes later.
 
 We also need to make improvements on both the server side and the client side in order to be able to see our data better.
