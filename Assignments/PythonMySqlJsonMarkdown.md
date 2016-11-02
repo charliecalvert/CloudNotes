@@ -1,6 +1,6 @@
 ## Overview
 
-Python MySql Json Markdown
+The goal of the Python MySql assignment is to add database support to our program. Here are the major steps invovled:
 
 - Set up Apache Python CGI scripts
 - Set up MySQL database and table
@@ -13,7 +13,7 @@ CGI files are server (for now), from:
 
 - /usr/lib/cgi-bin
 
-They will be owned by root, so use sudo as needed.
+They will be owned by root, so be prepared to use **sudo** as needed.
 
 You will not need them, but the configuration files for Apache are here:
 
@@ -21,7 +21,7 @@ You will not need them, but the configuration files for Apache are here:
 
 ## Step One
 
-Check to ensure Lamp and MySQL are installed. You know how to do this already.
+Check to ensure Lamp and MySQL are installed. You know how to do this already. If they are not installed, then [install them][lamp-server].
 
 Check the status of Apache CGI. Specifically, you will probably need to turn on CGI in order to access python server side scripts from your HTML code:
 
@@ -55,13 +55,19 @@ sudo apt-get install python3-pip
 sudo pip3 install pymysql
 ```
 
+If you get a long error message about ownership try this instead:
+
+```
+sudo -H pip3 install pymysql
+```
+
 And this might be useful later:
 
 ```
 sudo python3 -m pip install pymongo
 ```
 
-Again, you need only pip and pymsql once. Once they are installed, they should stay installed.
+Again, you need only install **pip** and **pymsql** once. Once they are installed, they should stay installed.
 
 ## Step Two
 
@@ -215,6 +221,22 @@ When you are done:
 sudo chmod 755 /usr/lib/cgi-bin/get-presidents.py
 ```
 
+## Problem
+
+At one point, I found that my script worked at the command line, but not in the browser. In particular, I got an error with **import pymsql**. It turned out that I had installed **pymysql** without sudo, so it ended up in my home directory. To fix this, you may need to uninstall from your home directory and reinstall as sudo:
+
+<pre>
+sudo pip3 uninstall pymysql
+sudo -H pip3 install pymysql
+</pre>
+
+Check to see what packages are installed for a particular version of Python:
+
+<pre>
+$ ls /usr/local/lib/python3.5/dist-packages/
+pip  pip-8.1.2.dist-info  pymysql  PyMySQL-0.7.9.dist-info
+</pre>
+
 ## Show Data
 
 Paste some HTML into a markdown file called **AllTest/presidents.md**:
@@ -268,7 +290,7 @@ On the text page of Canvas, include live links to your page on EC2 and to your n
 
 ## Optional Setup cgi dir
 
-THIS SECTION IS NOT YET COMPLETE. IGNORE IT FOR NOW.
+This seems to be working for me now. The goal is to use **/var/www/cgi** as your CGI directory in addition to **/usr/lib/cgi-bin**.
 
 Make sure CGI is turned on:
 
@@ -285,3 +307,58 @@ Create a simple python test script in **/var/www/cgi**. Open a blank file called
 cd /var/www/cgi
 nano simple.py
 ```
+
+Now edit **serve-cgi-bin.conf**:
+
+```
+cd /etc/apache2/conf-available
+sudo nano serve-cgi-bin.conf
+```
+
+ Near the end add the following:
+
+```text
+<IfDefine ENABLE_USR_LIB_CGI_BIN>
+        ScriptAlias /cgi/ /var/www/cgi/
+        <Directory "/var/www/cgi">
+                AllowOverride None
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Require all granted
+        </Directory>
+</IfDefine>
+```
+
+It might be simplest if I just give you my entire file:
+
+```text
+<IfModule mod_alias.c>
+	<IfModule mod_cgi.c>
+		Define ENABLE_USR_LIB_CGI_BIN
+	</IfModule>
+
+	<IfModule mod_cgid.c>
+		Define ENABLE_USR_LIB_CGI_BIN
+	</IfModule>
+
+	<IfDefine ENABLE_USR_LIB_CGI_BIN>
+		ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+		<Directory "/usr/lib/cgi-bin">
+			AllowOverride None
+			Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+			Require all granted
+		</Directory>
+	</IfDefine>
+	<IfDefine ENABLE_USR_LIB_CGI_BIN>
+                ScriptAlias /cgi/ /var/www/cgi/
+                <Directory "/var/www/cgi">
+                        AllowOverride None
+                        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                        Require all granted
+                </Directory>
+        </IfDefine>
+</IfModule>
+```
+
+<!-- URLS -->
+
+[lamp-server]: http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
