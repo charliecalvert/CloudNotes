@@ -292,7 +292,7 @@ On the text page of Canvas, include live links to your page on EC2 and to your n
 
 This seems to be working for me now. The goal is to use **/var/www/cgi** as your CGI directory in addition to **/usr/lib/cgi-bin**.
 
-Make sure CGI is turned on:
+Make sure the CGI directory exists:
 
 ```
 cd /var/www
@@ -349,13 +349,13 @@ It might be simplest if I just give you my entire file:
 		</Directory>
 	</IfDefine>
 	<IfDefine ENABLE_USR_LIB_CGI_BIN>
-                ScriptAlias /cgi/ /var/www/cgi/
-                <Directory "/var/www/cgi">
-                        AllowOverride None
-                        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-                        Require all granted
-                </Directory>
-        </IfDefine>
+    ScriptAlias /cgi/ /var/www/cgi/
+    <Directory "/var/www/cgi">
+      AllowOverride None
+      Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+      Require all granted
+    </Directory>
+  </IfDefine>
 </IfModule>
 ```
 
