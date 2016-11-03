@@ -243,7 +243,7 @@ Paste some HTML into a markdown file called **AllTest/presidents.md**:
 
 ```html
 <div>
-  <button id="getPresidents" type="button"> Get Presidents </button>
+  <button class="btn btn-primary" id="getPresidents" type="button"> Get Presidents </button>
 </div>
 
 <div>
@@ -269,6 +269,8 @@ $(document).ready(function() {
 	}
 });
 ```
+
+Click the button to see the names of the first three presidents. The button click sends a command to the server which queries the database and sends data back in JSON format.
 
 ## Turn it in
 

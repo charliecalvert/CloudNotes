@@ -460,6 +460,12 @@ docs.html(YOUR CODE HERE PUTS INFO IN docs);
 
 In the image shown above the words "It worked" are shown in **$scope** while the array that contains a single object is shown in **docs**.
 
+For the $scope control, consider using, for now:
+
+```
+JSON.stringify('json', null, 4);
+```
+
 ## Name Controller
 
 ```javascript
