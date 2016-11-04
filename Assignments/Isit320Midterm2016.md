@@ -31,11 +31,51 @@ Copy your code from the last assignment into a folder called Week07-Midterm.
 ## Priority Two
 
 - Copy the DataMaster program to **Week07-DataMaster**
-- In the data master, allow the user to insert a record.
+- In the data master, allow the user to view records in edit controls with arrows to iterate through the game records
+
+Look at the **Week03-ExpressRoutes** program. There we have two edit controls. Here is the Jade for them:
+
+```text
+div
+  input#operatorA(type="text", value=2)
+div  
+  input#operatorB(type="text", value=3)
+```
+
+In the DataMaster part of the midterm, place at least three edit controls on your main window. When the user selects the hyperlink to read in records from the database, display at least three fields from the first record in the edit controls. We used code like this to read from an edit control:
+
+```javascript
+$('#operatorA').val();
+```
+
+To insert the number 1 into the the control, do something like this:
+
+```javascript
+$('#operatorA').val(1);
+```
+
+Here is one of my game records, though yours may look different than mine:
+
+```javascript
+{
+    "id": "AA",
+    "npc_id": 1,
+    "npc_name": "Suzie One",
+    "description": "NPC AA",
+    "color": "#00FFFF",
+    "value": 15,
+    "question": "Is 2 + 2 equal to 4?",
+    "answer": true
+},
+```
+
+Display at least three of the value part of the these key/value pairs. For instance, display the **npc_name**, **description** and **question**.
+
+Now place two buttons on the page. If the user clicks one of the buttons you can see the next record, if she presses the other, you can see the previous record. Check to be sure you aren't iterating past the beginning and end of the records.
 
 ## Extra Credit
 
-- Extra credit: Allow the user to delete a record.
+- Extra credit: Allow the user to insert or delete a record.
 - Extra Credit: Show what direction the camera is facing on the minimap. (Forward, Left, Right, Back)
 
 ## Refactor Collisions
