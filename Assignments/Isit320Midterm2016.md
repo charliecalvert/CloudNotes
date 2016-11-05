@@ -75,7 +75,7 @@ Now place two buttons on the page. If the user clicks one of the buttons you can
 
 !['Minimal iterator picture'](https://s3.amazonaws.com/bucket01.elvenware.com/images/data-master-iterate.png)
 
-**Figure01**: _The minimal implementation of edit controls and buttons to allow iteration through couch game data._
+**Figure01**: _The minimal implementation of edit controls and buttons to allow iteration through couch game data. This image shows what happens when the user selects **Read One Doc** and clicks on the **Forward** button a few times._
 
 ## Extra Credit
 
