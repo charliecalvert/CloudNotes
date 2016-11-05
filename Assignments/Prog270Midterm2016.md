@@ -45,7 +45,11 @@ Try to figure out a way to integrate a Google Map and your images. For instance,
 
 ## Step Two: Pages {#pages}
 
-The site should contain at least three directories: the root folder and two subdirectories.
+The site should contain at least three directories: the root folder and two subdirectories. For instance, if your theme was **West Coast States**, you might have three subdirectories:
+
+- California
+- Oregon
+- Washington
 
 Five of the pages should have bitmaps on them.
 
@@ -133,10 +137,10 @@ Also make sure **googlecode.css** is in place.
 
 Make sure the markdown for your completed site is in your repository in the folder called **AllTest**.
 
-Put the HTML for your completed site in your repository in a folder called **Midterm-HTML**. There are numerous ways to get the HTML from your web site to your repository. One might be to issue a command similar to this:
+Put the HTML for your completed site in your repository in a folder created in the root of your repository called **Midterm-HTML**. There are numerous ways to get the HTML from your web site to your repository. One might be to issue a command similar to this:
 
 ```
-cp -r /var/www/html ~/Git/prog270-lastname-2016/Midterm-HTML
+cp -r /var/www/html ~/Git/prog270-lastname-2016/Midterm-HTML/.
 ```
 
 When you turn in the assignment, provide a link to the home page of your running website. I'm looking for a URL leading to your website running on AWS through an Elastic IP. I don't care how you provide the link, but in most cases using the Canvas comment area should be a good enough.
@@ -151,7 +155,7 @@ masterListOfNames: [ '* [Summary.html](Summary.html)' ],
 
 ```
 
-It would be best if you showed it running on either on EC2 rather than on Lubuntu or our Ubuntu Server. However, it would be better to show it running anywhere rather than to not show it running at all.
+It would be best if your screenshot showed it running on EC2 rather than on Lubuntu or our Ubuntu Server. However, it would be better to show it running anywhere rather than to not show it running at all.
 
 ## Tables
 

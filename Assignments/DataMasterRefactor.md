@@ -516,7 +516,7 @@ define(function (require) {
                 response.genericError = error;
                 response.statusText = textStatus;
             }
-            queryController({
+            controller({
                 'requestFailed': response
             });
         });

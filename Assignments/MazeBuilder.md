@@ -46,9 +46,13 @@ Here is another way to think about it. There is a nested for loop that we use to
 
 Then you should be facing the doorway when you start the game. As you head into the maze, **z** goes increasingly negative. It gets increasingly small (more negative) as you move deeper into the maze. As you move to the right, **x** gets larger.
 
-It is just like the last assignment, but now instead of three columns and two rows, we are building a whole maze which is both much larger and more complex than what we saw before.
+If you feel like you are facing in the wrong direction, the problem is most likely not the way you are facing, but the way you are drawing the grid. In particular, at the start you are facing into the scene, at point 0,0, or near that point, and looking deep into the scene. This means that in front of Z gets increasing negative and smaller, and behind you it gets increasing positive larger. Everything in front of you is negative Z. In other words, you drew the grid behind you. Don't do that. Draw it in front of you. You are looking toward Z = Z -1, then Z = Z - 2, and so on. If you feel like you are facing the wrong way, you probably drew the grid growing in a positive direction, Z = Z + 1, Z = Z + 2. Just draw the grid growing not toward the camera, but away from it, and then you will be facing in the right direction. Don't move the camera, move the grid. At least that should be the solution in most cases. Of course, you also have to be sure you are drawing X in the right direction, but most people seem to do that automatically.
 
-Have the camera set up so you can walk around in the maze. In other words, the camera starts inside the maze. Your code for detecting collisions should make it difficult for the user to break out of the maze. At this stage, the goal is not to find the way out of the maze, though that might be an interesting exercise if you want to turn this program, as is, into a game. The goal of that game would be to get to the start to a place where you can escape the maze. The maze shown above has no exit, so you would have to modify it very slightly if you wanted to play that game.
+Otherwise, this assignment is just like the last assignment. But now instead of three columns and two rows, we are building a whole maze which is both much larger and more complex than what we saw before.
+
+Have the camera set up so you can walk around in the maze. In other words, the camera starts just inside, or perhaps just outside the door into the maze.
+
+Your code for detecting collisions should make it difficult for the user to break out of the maze. At this stage, the goal is not to find the way out of the maze, though that might be an interesting exercise if you want to turn this program, as is, into a game. The goal of that game would be to get to the start to a place where you can escape the maze. The maze shown above has no exit, so you would have to modify it very slightly if you wanted to play that game.
 
 ## To many loads of crate.jpg {#many-crates}
 

@@ -73,6 +73,10 @@ Display at least three of the value part of the these key/value pairs. For insta
 
 Now place two buttons on the page. If the user clicks one of the buttons you can see the next record, if she presses the other, you can see the previous record. Check to be sure you aren't iterating past the beginning and end of the records.
 
+!['Minimal iterator picture'](https://s3.amazonaws.com/bucket01.elvenware.com/images/data-master-iterate.png)
+
+**Figure01**: _The minimal implementation of edit controls and buttons to allow iteration through couch game data._
+
 ## Extra Credit
 
 - Extra credit: Allow the user to insert or delete a record.

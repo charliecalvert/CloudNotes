@@ -135,13 +135,7 @@ You can see it has incorporated the changes from our **test** branch.
 
 ## Step Four: Push {#push}
 
-At this stage we have two choices. You could just delete your test branch:
-
-```
-git branch -d test
-```
-
-Or, you could push your branch upstream (-u) to github:
+Now push your branch upstream (-u) to github:
 
 ```
 git push -u origin test
@@ -158,6 +152,12 @@ Branch test set up to track remote branch test from origin.
 You could also do **git push all -u**, which pushes all your branches upstream.
 
 **NOTE**: *The **-u** flag is short for **--set-upstream**. For details, type **git help push**.*
+
+Don't do this right now, but instead of pushing your branch, you could have decided you don't like the branch at all. In that case, you can just delete. Don't do this right now, but if you do want to delete a branch, it is easy:
+
+```
+git branch -d test   # DON'T DO THIS RIGHT NOW
+```
 
 ## Step Five: Pull your Branch {#pull}
 
@@ -240,6 +240,8 @@ CONFLICT (content): Merge conflict in MyTest.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
+If the date is 01-01-2017 or later, take a screen shot of this step. Show that you got a message like the one I display above.
+
 Open up **MyTest.md** in your editor. You will easily be able to find the place where git could not merge the files. In particular, git shows both versions of the text, one from **master** called **HEAD** and the previous commit, which is from **test**:
 
 ```text
@@ -314,7 +316,9 @@ Push everything (git push --all). Go up on github or bitbucket as appropriate. S
 - **qux** should have a file called **qux.txt** that the other two branches do not have
 - **test** and **master** should look pretty much alike, but there should be differences in the first line of **MyTest.md**.
 
-Submit the assignment.
+If the date is 01-01-2017 or later, attach your screen shot of the merge conflict.
+
+Submit the assignment. I'll mostly be checking to see if the branches and files mentioned in this assignment exist.
 
 ## Hints
 
