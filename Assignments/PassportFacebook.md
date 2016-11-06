@@ -112,9 +112,9 @@ if (app.get('env') === 'development') {
 }
 ```
 
-##Passport Code
+## Generic Code
 
-There is quite a bit of set up code needed to get Passport up and running. I ended up putting the code shared by both the Google and Facebook strategies in **index.js**. I then create separate modules for the Google and Facebook specific code.
+There is quite a bit of set up code needed to get Passport up and running. I put code that can be used by multiple strategies in **index.js**. I then create separate modules for the Google and Facebook specific code.
 
 So, in the intest of expediency, set index.js to look like this:
 

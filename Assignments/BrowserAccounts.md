@@ -2,17 +2,13 @@
 
 The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device.
 
-**NOTE**: *Some of the screen shots used in this assignment are out of date due to the rapid evolution of programs on the web. Don't try to follow the screen shots too closely. Just use them as a general guide to helping you follow the spirit, if not the letter, of thise assignment.*
+**NOTE**: *Some of the screen shots used in this assignment are out of date due to the rapid evolution of programs on the web. Don't try to follow the screen shots too closely. Just use them as a general guide to helping you follow the spirit, if not the letter, of this assignment.*
 
-This assignment, like the one's on using Google Drive and OneDrive, is deceptive. We think we know how to use these tools, but in truth there is more here than first meets the eye.
+The key take away from the assignment is this: "As we learn to use mobile devices, we have to learn to move our working environment from our PC desktop to the cloud. Our browsers provide the ability to sync information across machines. This is not a minor point. It is important. For instance, if we create a bookmark on our PC at school, we want to see the same bookmark on our phone, and on our PC at home. To make this work, you need to know how to create accounts and log into your browser.
 
-The key take away from the assignment is this: "As we learn to use mobile devices, we have to learn to move our operation from our PC desktop to the cloud. If we log into our browsers they provide the ability to sync information across machines. This is not a minor point. It is important. For instance, if we create a bookmark on our PC at school, we want to see the same bookmark on our phone, and on our PC at home.
+Our focus is now not the desktop, but the Chrome Browser, Firefox Browser or the Microsoft browser. The desktop is not our home, the browser is our home. But the browser won't really be our home until we learn how to log into our browser accounts on multiple machines.
 
-Our focus is now switching from the PC desktop to the Chrome Browser or the Firefox Browser or the Microsoft browser. The desktop is not our home, the browser is our home. But the browser won't really be our home until we learn how to log into our browser accounts on multiple machines."
-
-This is an important assignment. If we open browsers, and don't sign in, then we aren't really understanding how the world of modern computing works. Browsers are now more than just another application on the desktop. I believe they have a centrally important role to play on PC's, tablets, Phones, and other mobile devices. Furthermore, our cloud based accounts, particularly our Google, Firefox or Microsoft accounts, are more than just a nicety. They are important, and they play an important role in the experience we have inside those company's respective browsers.
-
-We live in our browsers, so knowing how to use them both on the desktop and on your phone is crucial. (Confession: I learned quite a bit about Chrome and Firefox while working on this assignment.)
+This is an important assignment. If we open browsers, and don't sign in, then we aren't really understanding how the world of modern computing works. Browsers are now more than just another application on the desktop. They have a centrally important role to play on PC's, tablets, Phones, and other mobile devices. Furthermore, our cloud based accounts, particularly our Google, Firefox or Microsoft accounts, are more than just a nicety. They are important, and they play an important role in the experience we have in our schools, home and work places.
 
 If you don't already have one:
 
@@ -23,7 +19,7 @@ Log in and follow the instructions below about taking screenshots in multiple lo
 
 ## ScreenShots
 
-I want three screens from each of your platforms, for a total of at least six screenshots. Include a screenshot of:
+I want you to take three screenshots from each of your platforms, for a total of at least six screenshots. Include a screenshot of:
 
 On your desktop Firefox:
 
@@ -48,7 +44,7 @@ On Mobile or alternate:
 
 That's a total of 9 screen shots. Please follow the example screenshots below to get the details right.
 
-## Platorms
+## Platforms
 
 Here are the platforms:
 

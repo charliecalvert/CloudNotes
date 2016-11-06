@@ -14,10 +14,6 @@ The screen shots for this assignment can be taken in Windows, in VirtualBox, on 
 - Google Storage
 - Google Extensions
 
-Also be sure to keep your one drive 15 GB bonus:
-
-- <https://preview.onedrive.com/bonus>
-
 ## Clear the Cache
 
 In Google:
@@ -26,15 +22,18 @@ In Google:
   - Hamburger Menu (Alt+F or Alt+E) | Settings | Advanced also gets you there
 - Check: Cached Images and Files only
 - Clear browsing data from the beginning of time
+- Open the Developer Tools. Click and hold on the Refresh button.
 
 In Firefox
 - Shortcut: Ctrl-Shift + Del
 - Hamburger Menu | History | Clear Recent History
   - Cache and Everything
 
-Screen shots or shot of you clearing the cache in both browsers.
+**Screenshot**: _Take a screen shot or shots of you clearing the cache in both browsers._
 
 ## Incognito Mode
+
+In Incognito mode, your browser will not send as much information about you to advertisers as you browse the web. This doesn't mean the site won't know you are there, only that no record will be kept by your browser.
 
 Google
 - Ctrl+Shift+N
@@ -44,7 +43,7 @@ Firefox
 - Ctrl+Shift+P
 - Hamburger | New Private Window
 
-Screenshot in Firefox.
+**Screenshot**: _Take a screenshot of Incognito in Firefox._
 
 ## Sync Settings
 
@@ -59,7 +58,7 @@ Firefox
 - [about:preferences#sync](about:preferences#sync)
 - Hamburger Menu | Preferences | Sync
 
-Screenshot of Google Sync Settings.
+**Screenshot**: Take a screenshot of Google Sync Settings.
 
 ## Privacy Setiings
 
@@ -76,8 +75,8 @@ Firefox
 - <about:preferences#privacy>
 - Hamburger Menu | Preferences | Privacy
 
-Screenshot of Firefox privacy settings.
-Screenshot of Google Account page.
+**Screenshot**: _Take a screenshot of Firefox privacy settings._
+**Screenshot**: _Take a screenshot of Google Account page._
 
 ## Free Online Storage
 
@@ -87,7 +86,7 @@ OneDrive:
 - <https://www.google.com/settings/storage>
   - Hold mouse over **Total Storage** image to see details
 
-Screenshot of Google Storage options.
+**Screenshot**: _Take a screenshot of Google Storage options._
 
 ## Addins and Extensions
 
@@ -99,9 +98,9 @@ Firefox:
 
 - [about:addons](about:addons)
 
-Screenshot of Google extensions
+**Screenshot**: _Take a screenshot of the Google extensions page._
 
 
 ## Turn it in
 
-Remember to attach your screenshots directly to the assignment. No Word documents, no Zip files!
+Remember to attach your screenshots directly to the assignment. No Word documents, no Zip files! If you want to add some text, use the comment area.

@@ -1,4 +1,4 @@
-#Passport
+## Overview
 
 [Passport](http://passportjs.org/) is a tool that allows you to "sign in with Google", "sign in with Facebook" or "sign with Twitter". There are other options as well, including creating a basic sign in where the user enters their own user name and email. But Google, Facebook and Twitter are the options that most poeple want.
 
@@ -24,7 +24,7 @@ in a database. We'll get to that later.
 - [Facebook Developer Documentation](https://developers.facebook.com/docs/)
 - [Multiple Strategies](http://aleksandrov.ws/2013/09/12/restful-api-with-nodejs-plus-mongodb/#Step5)
 
-##Install Passport
+## Install Passport
 
 To get started, first create a new express project called **Week08-Passport**. At this stage, the best option for creating the app is probably still **CreateAllExpress**. However my fork of the Express Generator is showing signs of improvement:
 
@@ -94,6 +94,7 @@ Click okay, fill in the capcha, and choose **Facebook Login** as Product and **w
 - The Valid OAuth redirect APIs: http://localhost:30025/facebook/login
 
 
+![OAuth Facebook](https://s3.amazonaws.com/bucket01.elvenware.com/images/passport-facebook-oauth.png)
 
 
 ## Basics
@@ -134,11 +135,11 @@ if (app.get('env') === 'development') {
 }
 ```
 
-##Passport Code
+## Generic Code
 
-There is quite a bit of set up code needed to get Passport up and running. I ended up putting the code shared by both the Google and Facebook strategies in **index.js**. I then create separate modules for the Google and Facebook specific code.
+There is quite a bit of set up code needed to get Passport up and running. Some of that code can be used by both the Google and Facebook strategies. This is generic code that you can use if you are logging the user into either Facebook or Google. It can likely be used with other Passport strategies as well. I put code the code can be used by multiple strategies in **index.js**. I then create separate modules for the Google and Facebook specific code.
 
-So, in the intest of expediency, set index.js to look like this:
+Here is the code that can be used by both the Google and Facebook Passport strategies.:
 
 ```javascript
 var express = require('express');
@@ -365,21 +366,7 @@ To log on, go to this URL:
 
 > http://localhost:30025/auth/google
 
-Or better, set up the page to handle all this with clicks. So layout.jade:
-
-```
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="//code.jquery.com/jquery-1.11.0.min.js")
-    script(src="javascripts/Control.js")
-  body
-    block content
-```
-
-And then index.jade:
+And then make it more usable by setting up **index.jade**:
 
 ```
 extends layout
@@ -409,13 +396,13 @@ block content
     pre#debug
 ```
 
-#Is the User Logged On?
+## Is the User Logged On?
 
 It is often helpful for the client to know whether or not the user
 is signed on. Let's add a simple Ajax call to Control.js. The call can
 return information about the status of the user.
 
-#Control
+## Control
 
 ```javascript
 /**
@@ -430,13 +417,8 @@ var Control = (function() {
 	}
 
 	var info = function() {
-		$.ajax({
-			url: '/info'
-		}).success(function(serverInfo) {
-			$("#report").html(JSON.stringify(serverInfo));
-		}).error(function(err) {
-			$("#debug").html(err);
-		});
+		// WRITE AN AJAX OR GET JSON METHOD THAT CALLS THE /info ROUTE AND DISPLAYS THE RESULT
+    // THIS SHOULD INCLUDE THE USER INFORMATION SHOWN BELOW IN MY GOOGLE ACCOUNT SCREENSHOT
 	};
 
 	return Control;
@@ -448,13 +430,11 @@ $(document).ready(function() {
 });
 ```
 
-##Account and Logon
+## Account and Logon
 
-Now we are back on the server side. Here is a simple module with one
-method it in. We can use this code to check if the user is signed in.
+Now we are back on the server side. Here is code we might use to check if the user is signed in.
+
 Notice in particular the **isAuthenticated** method.
-
-Create a file called 'routes/SignedIn.js:
 
 ```
 /**
@@ -473,32 +453,19 @@ function signedIn(request, response, next) {
 exports.signedIn = signedIn;
 ```
 
-And in Account.js:
+Recall the Google Specific code that renders the **account.jade** file. I won't give you the Jade you need for that page, but here is what my version of that page looks like. I got all this information from my Google account. It was the data that I got when I logged into my account. This is the data that I we are agreeing to share when we, as users, agree to use this strategy to validated ourselves.
 
-```
-var express = require('express');
-var router = express.Router();
-var signedIn = require('./SignedIn').signedIn;
+![Google Account Display](https://s3.amazonaws.com/bucket01.elvenware.com/images/passport-google-account.png)
 
-/* GET home page. */
-router.get('/', signedIn, function(request, response) {
-	console.log("Index called");
-	response.render('account', { title: 'Passport Account' });
 
-	// response.render('account', { user : request.user });
-});
-
-module.exports = router;
-```
-
-##Permissions
+## Permissions
 
 You want to track who has permissions to access your account information:
 
 > https://security.google.com/settings/security/permissions
 
 
-##Turn It In
+## Turn It In
 
 Place your work in the appropriate folder in your repository, if it is not there already. Submit your assignment.
 
