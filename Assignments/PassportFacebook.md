@@ -18,6 +18,10 @@ this purpose. There is a discussion of redis on Elvenware. In this
 class, however, we will skip the process of storing the user's name
 in a database due to time constraints.
 
+## Key Places
+
+- [https://developers.facebook.com/](https://developers.facebook.com/)
+
 ##Install Passport
 
 To get started, first create a new project and then download the
@@ -25,8 +29,11 @@ Passport package:
 
     express Passport
     cd Passport
-    npm install passport passport-google --save
+    npm install passport --save
+    npm install passport passport-facebook--save
     npm install express-session --save
+    npm install connect-ensure-login --save
+    npm install passport-google-oauth20 --save
 
 Passport is the tool we will use to allow the user to log on with
 Google.
