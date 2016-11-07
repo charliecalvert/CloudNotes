@@ -2,6 +2,20 @@
 
 To get started deploying our pages to the web, we will use a Google product called [Firebase](https://firebase.google.com/).
 
+## Create App
+
+Go to the firebase console: [https://console.firebase.google.com/](https://console.firebase.google.com/).
+
+Select the **Create New Project** button.
+
+Call it **prog270-lastname**
+
+Find the Hosting tool and click the **Get Started** button. Click through the simple dialogs in the app wizard.
+
+You are now ready to begin deploying apps to the cloud. The next step is to set up a place on your hard drive where you can create and deploy the files for your application.
+
+## Create Workspace
+
 If you have not done so already, create a **Source** directory:
 
 <pre>
@@ -40,7 +54,9 @@ Choose to support hosting, but toggle the database option off with your space ba
 cp public/index.html public/firebase.html
 </pre>
 
-Put the code you want in your public directory. In other words, configure MakeHtml to put your HTML in the ~/Source/public/firebase directory. Do this by changing the config/ElvenConfig.json file:
+## Content
+
+Put the code you want in your public directory. In other words, configure MakeHtml to put your HTML in the ~/Source/public/firebase directory. Do this by changing the **config/ElvenConfig.json** file:
 
 ```javascript
 {
@@ -62,13 +78,15 @@ Put the code you want in your public directory. In other words, configure MakeHt
 
 Note that we have added our firebase directory to the **destination-dirs** section of the JSON file. It should be the first item.
 
-Copy public/master-list.html to public/index.html:
+If you do not already have an **index.html** file set up, copy **public/master-list.html** to **public/index.html**:
 
 <pre>
 cd ~/Source/firebase/public
 cp master-list.html index.html
 cd ..
 </pre>
+
+## Test
 
 To preview before you deploy issue this command:
 
@@ -78,13 +96,19 @@ firebase serve
 
 Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
 
-Deploy your app and browse to it.
+After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web and browse to it.
+
+## Deploy
+
+To deploy your app, issue this command:
 
 <pre>
 firebase deploy
 </pre>
 
 They will show you what URL to visit.
+
+Now go up to the console, find your app, and view the **Deployment History**
 
 ## Turn it in
 

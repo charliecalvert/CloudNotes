@@ -121,3 +121,31 @@ Check **~/Source/MakeHtml/config/ElvenConfig.json** to make sure it is compatibl
  }
 }
 ```
+
+## Responsive Maps
+
+In your CSS:
+
+```css
+.google-maps {
+	position: relative;
+	padding-bottom: 75%; // This is the aspect ratio
+	height: 0;
+	overflow: hidden;
+}
+.google-maps iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+```
+
+In your Markdown wrap the code you got from Goggle in a DIV with the **google-maps** class:
+
+```html
+<div class="google-maps">
+  <iframe src="https://www.google.com/maps/embed?pb=! ETC... ></iframe>
+</div>
+```

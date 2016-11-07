@@ -225,7 +225,7 @@ function ensureAuthenticated(req, res, next) {
 
 router.get('/account', ensureAuthenticated, function(request, response) {
     'use strict';
-    response.render('account', {
+    response.render('profile-google', {
         title: 'Google Account',
         user: request.user
     });
@@ -296,7 +296,7 @@ router.get('/profile', require('connect-ensure-login').ensureLoggedIn(),
     function(req, res) {
         'use strict';
         console.log(req.user);
-        res.render('profile-temp', {
+        res.render('profile-facebook', {
             title: 'Facebook Profile',
             user: req.user
         });
@@ -453,10 +453,11 @@ function signedIn(request, response, next) {
 exports.signedIn = signedIn;
 ```
 
-Recall the Google Specific code that renders the **account.jade** file. I won't give you the Jade you need for that page, but here is what my version of that page looks like. I got all this information from my Google account. It was the data that I got when I logged into my account. This is the data that I we are agreeing to share when we, as users, agree to use this strategy to validated ourselves.
+Create the **profile-google.jade** file that displays information about the logged in user. Here is what my version of that page looks like. I got all this information from my Google account. It was the data that I got when I logged into my account. This is the data that we are agreeing to share when we, as users, agree to use this strategy to validated ourselves.
 
 ![Google Account Display](https://s3.amazonaws.com/bucket01.elvenware.com/images/passport-google-account.png)
 
+Also create **profile-facebook.jade** page.
 
 ## Permissions
 
@@ -467,6 +468,20 @@ You want to track who has permissions to access your account information:
 
 ## Turn It In
 
-Place your work in the appropriate folder in your repository, if it is not there already. Submit your assignment.
+Place your work in the appropriate folder in your repository, if it is not there already. Run **grunt check** one last time. Submit your assignment.
 
 [1]: http://nodejs.org/api/process.html#process_process_nexttick_callback
+
+## Hints
+
+Error message like this one are odd because they have **facebook** in the path:
+
+<pre>
+GET http://localhost:30025/facebook/login/components/requirejs/require.js 404 (Not Found)
+</pre>
+
+To fix them, check in **layout.jade** and **main.js** to be sure you are putting a slash in front of the words **components** and **javascripts**:
+
+```javascript
+'jquery': '/components/jquery/dist/jquery',
+```
