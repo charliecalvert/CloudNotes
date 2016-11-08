@@ -209,6 +209,8 @@ cursor.close()
 conn.close()
 ```
 
+After you paste in the file, you will probably need to change the password in the **pymysql.connect** statement.
+
 You might want to use this command:
 
 ```

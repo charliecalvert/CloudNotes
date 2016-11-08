@@ -178,7 +178,7 @@ router.get('/logout', function(request, response) {
     response.redirect('/');
 });
 
-router.get('/info', function(request, response) {
+router.get('/status', function(request, response) {
     'use strict';
     console.log('Info called');
     console.log('Auth: ' + request.isAuthenticated('google'));
@@ -232,8 +232,8 @@ router.get('/account', ensureAuthenticated, function(request, response) {
 });
 
 passport.use(new GoogleStrategy({
-        clientID: '1026609216908-b0bbgmbq6dsgggokh8ck546794q4tiak.apps.googleusercontent.com',
-        clientSecret: '86pZljGDr0s7CAZ3c8qvvwLQ',
+        clientID: 'YOUR CODE HERE',
+        clientSecret: 'YOUR SECRET CODE HERE',
         callbackURL: 'http://localhost:30025/auth/google/callback',
         passReqToCallback: true
     },
@@ -388,7 +388,10 @@ block content
   div
     a(href='/logout') Logout
 
-  button#info Information
+  div
+    a(href='/status') Status Link
+    // This button was info, check in control.js
+    button#status Status  
 
   div
     pre#report
@@ -413,10 +416,10 @@ var Control = (function() {
 
 	function Control() {
 		console.log("Control constructor called");
-		$("#info").click(info);
+		$("#status").click(status);
 	}
 
-	var info = function() {
+	var status = function() {
 		// WRITE AN AJAX OR GET JSON METHOD THAT CALLS THE /info ROUTE AND DISPLAYS THE RESULT
     // THIS SHOULD INCLUDE THE USER INFORMATION SHOWN BELOW IN MY GOOGLE ACCOUNT SCREENSHOT
 	};
@@ -458,6 +461,24 @@ Create the **profile-google.jade** file that displays information about the logg
 ![Google Account Display](https://s3.amazonaws.com/bucket01.elvenware.com/images/passport-google-account.png)
 
 Also create **profile-facebook.jade** page.
+
+Here is a simple sample facebook profile page:
+
+<pre>
+extends layout
+
+block content
+    h1= title
+
+    p Welcome to #{title}
+
+    p UserName:
+        span#Username #{user.username}
+    p Name:
+        span#name #{user.displayName}
+    p ID:
+        span#ID #{user.id}
+</pre>
 
 ## Permissions
 
