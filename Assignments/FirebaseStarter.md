@@ -112,6 +112,8 @@ Now go up to the console, find your app, and view the **Deployment History**
 
 ## Turn it in
 
-Take a screen shot of what happens when you deploy your application. Attach the in screen shot to your canvas assignment. In the comments section, include the URL of your project running on the world wide web. The URL should look something like this, but not exactly like it:
+Take a screenshot of what happens in your bash terminal when you deploy your application with the **firebase deploy** command. Attach the screenshot to your canvas assignment. Optionally show a screenshot of your site deployed on the firebase site.
+
+In the comments section, include the URL of your project running on the world wide web. The URL should look something like this, but not exactly like it:
 
 - [https://elf01-31681.firebaseapp.com/](https://elf01-31681.firebaseapp.com/)
