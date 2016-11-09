@@ -107,7 +107,7 @@ var session = require('express-session');
 var passport = require('passport');
 ```
 
-And in the use section (around line 26 or wherever, after cookie parser and static public):
+Now we add code to set up the session object:
 
 ```javascript
 app.use(session({
@@ -118,6 +118,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 ```
+
+Put the session code shown above just after the place where we use the **cookieParser** and **express.static** middleware, but before the place where we define the routes and user middleware that looks a bit like this: **app.use('/', routes)**.
 
 While you are at it, set up your **favicon** and update the development error handler:
 
@@ -505,4 +507,12 @@ To fix them, check in **layout.jade** and **main.js** to be sure you are putting
 
 ```javascript
 'jquery': '/components/jquery/dist/jquery',
+```
+
+## Passport Middleware
+
+If you get this error then the problem might well be the order in which you are inserting code into app.js, as explained above:
+
+```javascript
+if (!this._passport) { throw new Error('passport.initialize() middleware not in use'); }
 ```
