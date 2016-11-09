@@ -17,11 +17,16 @@ in a database. We'll get to that later.
 ## Key Places
 
 - [Passport home page](http://passportjs.org/)
-- [https://developers.facebook.com/](https://developers.facebook.com/)
-- <https://developers.facebook.com/quickstarts/>
-- <https://developers.facebook.com/products/>
-- [Facebook Developer Community](https://www.facebook.com/groups/fbdevelopers/)
-- [Facebook Developer Documentation](https://developers.facebook.com/docs/)
+- Twitter
+  - [Twitter Aps](https://apps.twitter.com/)
+  - [Twitter Developers](https://dev.twitter.com/)
+  - [Twitter Build Apps](https://dev.twitter.com/solutions/best-apps)
+- Facebook
+  - [https://developers.facebook.com/](https://developers.facebook.com/)
+  - <https://developers.facebook.com/quickstarts/>
+  - <https://developers.facebook.com/products/>
+  - [Facebook Developer Community](https://www.facebook.com/groups/fbdevelopers/)
+  - [Facebook Developer Documentation](https://developers.facebook.com/docs/)
 - [Multiple Strategies](http://aleksandrov.ws/2013/09/12/restful-api-with-nodejs-plus-mongodb/#Step5)
 
 ## Install Passport
@@ -74,28 +79,6 @@ Set the **Authorized redirect URIs** to:
 We are actually using this, so I don't understand why the above works, but it does:
 
 - http://localhost:30025/auth/google/callback
-
-## Setup Facebook
-
-Go to the Facebook developers site: [https://developers.facebook.com/](https://developers.facebook.com/). Note at the bottom the link to the Login API.
-
-Visit the Facebook Login for Developers Page: [https://developers.facebook.com/products/login/](https://developers.facebook.com/products/login/). Check out the page you see from the Get Started button.
-
-After getting oriented, look at the top right, and select the option to create a **New App**.
-
-- Displan Name: Isit320-Lastname
-- Category: Education
-
-Click okay, fill in the capcha, and choose **Facebook Login** as Product and **www** as login.
-
-- Site URL: http://localhost:30025
-- Get your App ID and Secret
-- Client token on advanced page
-- The Valid OAuth redirect APIs: http://localhost:30025/facebook/login
-
-
-![OAuth Facebook](https://s3.amazonaws.com/bucket01.elvenware.com/images/passport-facebook-oauth.png)
-
 
 ## Basics
 
@@ -201,7 +184,7 @@ You probably want to spend some time examining the user information that you get
 
 ## Google Specific Code
 
-Save the Google specific code in **routes/google-auth.js**:
+Save the Google specific code in **routes/login-google.js**:
 
 ```javascript
 /**
@@ -276,78 +259,18 @@ In the Google Strategy, we need to set up a valid URL. Here some things to keep 
 
 For **process.nextTick**, [see the docs][1]. Instead of making the call immediately, it is more like a callback. We wait until the next time that node is not busy, then make the call. Node runs on an event loop, and in effect this is saying the next time the loop comes around.
 
-## Passport Specific Code
-
-Save the Facebook specific code in **routes/facebook.js**:
-
-```javascript
-/**
- * Created by charlie on 11/5/16.
- */
-
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
-
-/**************************************
- *  Facebook
- **************************************/
-
-router.get('/profile', require('connect-ensure-login').ensureLoggedIn(),
-    function(req, res) {
-        'use strict';
-        console.log(req.user);
-        res.render('profile-facebook', {
-            title: 'Facebook Profile',
-            user: req.user
-        });
-    });
-
-passport.use(new Strategy({
-        clientID: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: 'http://localhost:30025/facebook/login/return'
-    },
-    function(accessToken, refreshToken, profile, done) {
-        'use strict';
-        // In this example, the user's Facebook profile is supplied as the user
-        // record.  In a production-quality application, the Facebook profile should
-        // be associated with a user record in the application's database, which
-        // allows for account linking and authentication with other identity
-        // providers.
-        return done(null, profile);
-    }));
-
-router.get('/login',
-    passport.authenticate('facebook'));
-
-//router.get('/login/facebook/return',
-router.get('/login/return',
-    passport.authenticate('facebook', {
-        failureRedirect: '/login'
-    }),
-    function(req, res) {
-        'use strict';
-        res.redirect('/');
-    });
-
-module.exports = router;
-
-```
-
 ##Login and Logout
 
-Let's take a look at these lines in **google-auth.js**:
+Let's take a look at these lines in **login-google.js**:
 
 ```javascript
-app.get('/auth/google', passport.authenticate('google', {
+app.get('/google', passport.authenticate('google', {
 	failureRedirect : '/login'
 }), function(request, response) {
 	response.redirect('/');
 });
 
-app.get('/auth/google/return', passport.authenticate('google', {
+app.get('/google/callback', passport.authenticate('google', {
 	failureRedirect : '/login'
 }), function(request, response) {
 	response.redirect('/');
@@ -491,9 +414,16 @@ You want to track who has permissions to access your account information:
 
 ## Turn It In
 
+Your application must support Google and either Twitter or Facebook.
+
+- For Twitter specific directions, go [here][twitter-login].
+- For Facebook specific directions, go [here][facebook-login].
+
 Place your work in the appropriate folder in your repository, if it is not there already. Run **grunt check** one last time. Submit your assignment.
 
 [1]: http://nodejs.org/api/process.html#process_process_nexttick_callback
+[twitter-login]: http://www.ccalvert.net/books/CloudNotes/Assignments/PassportTwitter.html
+[facebook-login]: http://www.ccalvert.net/books/CloudNotes/Assignments/PassportFacebook.html
 
 ## Hints
 
