@@ -110,6 +110,12 @@ Now upload the zip file to Google Drive. It doesn't have to be in our shared fol
 
 Choose **New | File Upload** on Google Drive.
 
+Copy your private SSH key that you use to connect to GitHub to your new Ubuntu server:
+
+	scp <YOUR KEY> ubuntu@35.163.123.100:/home/ubuntu/.ssh/.
+
+Of course, use your public or elastic IP address.
+
 ## Setup Box
 
 There are a number of steps required to get the instance set up correctly. I outline them in the first few sections of this document:
