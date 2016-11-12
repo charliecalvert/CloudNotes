@@ -99,7 +99,7 @@ Switched to branch 'master'
 // MORE TEXT MAY APPEAR HERE.
 ```
 
-Let's look at **MyText.md**:
+Let's look at **MyTest.md**:
 
 ```bash
 $ cat MyTest.md
@@ -118,7 +118,7 @@ Fast-forward
  1 file changed, 4 insertions(+)
 ```
 
-Now let's take a second look at **MyText.md**:
+Now let's take a second look at **MyTest.md**:
 
 ```markdown
 $ cat MyTest.md
@@ -344,4 +344,20 @@ For instance,
 
 ```
 git difftool -d master qux
+```
+
+## The Prompt
+
+Add git branch if its present to PS1 in **.bashrc**:
+
+```bash
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+```
+
+Add this chunk to the PS1 line:
+
+```bash
+\[\033[01;31m\]$(parse_git_branch)
 ```

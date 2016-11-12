@@ -260,7 +260,7 @@ cp -ruvp /var/www/html/js $CSS_JS_IMAGE/.
 cp -uvp /var/www/html/clean $CSS_JS_IMAGE/.
 ```
 
-And here is a script that will copy files from your repository to **~/Documents/AllTest** and **/var/www/html**. Call it CopyFromRepoToAllTestAndApache:
+And here is a script that will copy files from your repository to **~/Documents/AllTest** and **/var/www/html**. Call it **CopyFromRepoToAllTestAndApache**:
 
 ```
 #! /bin/bash
@@ -269,6 +269,66 @@ cp -ruvp AllTest/ ~/Documents/.
 cp -ruvp ApacheHelpers/images /var/www/html/.
 cp -ruvp ApacheHelpers/css /var/www/html/.
 cp -ruvp ApacheHelpers/js /var/www/html/.
+```
+
+Here is a fancier version of CopyFromRepoToAllTestAndApache
+
+```
+#! /bin/bash
+
+RED='\033[0;31m'
+LIGHT_RED='\033[1;31m'
+LIGHT_GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;36m'
+NC='\033[0m' # No Color
+
+DEST01=/var/www/html/.
+DEST02=/home/bcuser/Source/firebase/public
+
+function message {
+    echo
+    echo =======================
+    echo -e $LIGHT_RED$1"$NC"    
+    echo =======================
+    echo
+}
+
+function error {
+	echo
+    echo -e $LIGHT_RED=!!!!=
+    echo -e $1
+    echo -e $LIGHT_RED=!!!!="$NC"    
+    echo
+}
+
+function copyFiles() {
+	cp -ruvp AllTest/ ~/Documents/.
+	if [ -d $1 ]; then
+		cp -ruvp ApacheHelpers/images $1
+		cp -ruvp ApacheHelpers/css $1
+		cp -ruvp ApacheHelpers/js $1
+	else
+		error $BLUE$1$LIGHT_RED' does not exist.'
+	fi
+
+}
+
+while true; do
+    message "Menu"
+    echo -e $LIGHT_GREEN"Ubuntu"
+    echo -e $LIGHT_GREEN"  a) Copy to $DEST01"
+    echo -e $LIGHT_GREEN"  b) Copy to $DEST02"
+    echo -e $LIGHT_RED"  x) Exit"
+    echo -e "\n$NC"
+    read -p "Please make a selection: " eotuyx
+    case $eotuyx in
+        [Aa]* ) copyFiles $DEST01; continue;;
+        [Bb]* ) copyFiles $DEST02; continue;;
+        [XxQq]* ) break;;
+        * )  -e "\n$NC" + "Please answer with c, r or x.";;
+    esac
+done
 ```
 
 ## Clean

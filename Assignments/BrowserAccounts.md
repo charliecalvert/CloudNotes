@@ -120,6 +120,10 @@ If you want to stop syncing Chrome data and clear the data you have synced, go h
 
  -  https://www.google.com/settings/chrome/sync
 
+## Tip: Apple Devices
+
+- <https://support.mozilla.org/en-US/kb/sync-firefox-bookmarks-and-browsing-history-iOS>
+
 ## Turn it in.
 
 Put all the screenshots in a folder in our shared Google folder. Call the folder BrowserAccounts.

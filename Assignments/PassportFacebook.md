@@ -8,6 +8,11 @@ Your goal is to get your passport app (and eventually your DataMaster app and Da
 
 [passport]: http://www.ccalvert.net/books/CloudNotes/Assignments/Passport.html
 
+Go to this page to turn on and off which apps have permission to use your information. In other words, to deactivate the app you built so that it can sign on again from the beginning, go to this page:
+
+
+- <https://www.facebook.com/settings?tab=applications>
+- <https://www.facebook.com/help/792552774106866>
 
 ## Setup Facebook
 
@@ -84,8 +89,25 @@ module.exports = router;
 
 ```
 
-##Turn It In
+## Make Public
+
+You need to make your app public if it is going to be used by more than one person. Since both you and I need to access the app, you should make it public.
+
+- Go to https://developers.facebook.com/ (Links to an external site.) and be sure you are signed in.
+- At the top right, you can select your app from a drop down.
+- You are taken to a page focused on your app. Select the App Review menu item on the far left.
+- Set the **Make <app-name> Public** toggle to yes.
+
+![Make Facebook app Public](https://s3.amazonaws.com/bucket01.elvenware.com/images/passport-facebook-public.png)
+
+I think some kinds of apps need to be reviewed, but just using the Login API does not require review. So you can simply toggle Make Public from no to yes. If we wanted to be more cautious, we probably could have added me as co-developer, or some such, which would also be a good exercise. But just toggle the Make Public option for now.
+
+## Turn It In
 
 We are working in the **Week08-Passport** folder in your repository. Place your work in that folder, if it is not there already. Run **grunt check**. Submit your assignment.
+
+
+
+
 
 [1]: http://nodejs.org/api/process.html#process_process_nexttick_callback

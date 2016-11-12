@@ -165,7 +165,7 @@ router.get('/logout', function(request, response) {
 
 router.get('/status', function(request, response) {
     'use strict';
-    console.log('Info called');
+    console.log('Status called');
     console.log('Auth: ' + request.isAuthenticated('google'));
     response.send({
         result: 'Success',
@@ -178,7 +178,7 @@ module.exports = router;
 
 The **serialize** and **deserialize** methods simply preserve state between HTTP requests. We might have multiple sessions going on at the same time. These **serialize** methods helps us track which user is associated with which session. In particular, we store the user information or some subset of that information in the serialize method when the session is first created. Then each time the session for that user resumes, that is, each that user makes another request, the **deserialize** method is called and we get the user information restored to us. (At least this is my understanding of how it works.)
 
-Note the Google Strategy code shown below returns the whole profile. Later, we can use the Profile info to look up a user entry in our database.
+Note the Google Strategy code shown below returns the whole profile. Later, we can use the Profile to look up a user entry in our database.
 
 You probably want to spend some time examining the user information that you get in the serialize or Google Strategy method. It shows you what data was sent from Facebook/Google back to your location.
 
