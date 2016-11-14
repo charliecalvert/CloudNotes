@@ -88,7 +88,13 @@ OneDrive:
 
 **Screenshot**: _Take a screenshot of Google Storage options._
 
+![Total Storage](https://s3.amazonaws.com/bucket01.elvenware.com/images/browser-google-total-storage.png)
+
+**Image**: _Hover your mouse of the yellow and white circle to see your storage._
+
 ## Addins and Extensions
+
+**Screenshot**: _Take a screenshot of the Google extensions page._
 
 Google:
 
@@ -98,8 +104,13 @@ Firefox:
 
 - [about:addons](about:addons)
 
-**Screenshot**: _Take a screenshot of the Google extensions page._
+If there are no extensions, apps or themes installed in Chrome, then I please install at least one. For instance, go to the Google Store, select **Apps**, and search on the string **Google Docs**. Install the **Google Docs app** and then take a screenshot of your **extensions** page, which should now include that app. Here is a link which should lead directly to the Web Store and highlight the Apps search:
 
+- <https://chrome.google.com/webstore/category/apps>
+
+I find the terminology confusing, or at least non-intuitive. It appears that apps, extensions, and themes can all be thought of as Chrome "extensions". You can read about this in more detail here:
+
+https://developer.chrome.com/webstore/apps_vs_extensions
 
 ## Turn it in
 

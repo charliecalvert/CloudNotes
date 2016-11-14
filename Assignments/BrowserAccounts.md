@@ -1,12 +1,12 @@
-# Browser Accounts
+## Overview
 
-The goal of this assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device.
+The goal of the **Browser Accounts** assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device.
 
-**NOTE**: *Some of the screen shots used in this assignment are out of date due to the rapid evolution of programs on the web. Don't try to follow the screen shots too closely. Just use them as a general guide to helping you follow the spirit, if not the letter, of this assignment.*
+**NOTE**: *Some of the screen shots used in this assignment are out of date due to the rapid evolution of programs on the web. Don't try to follow the screen shots too closely. Just use them as a general guide. When in doubt, follow the spirit, if not the letter, of this assignment.*
 
-The key take away from the assignment is this: "As we learn to use mobile devices, we have to learn to move our working environment from our PC desktop to the cloud. Our browsers provide the ability to sync information across machines. This is not a minor point. It is important. For instance, if we create a bookmark on our PC at school, we want to see the same bookmark on our phone, and on our PC at home. To make this work, you need to know how to create accounts and log into your browser.
+The key take away from the assignment is this: "As we learn to use mobile devices, we have to learn to move our working environment from our PC desktop to the cloud." Our browsers provide the ability to sync information across machines. This is not a minor point. It is important. For instance, if we create a bookmark on our PC at school, we want to see the same bookmark on our phone, and on our PC at home. To make this work, you need to know how to create accounts and log into your browser.
 
-Our focus is now not the desktop, but the Chrome Browser, Firefox Browser or the Microsoft browser. The desktop is not our home, the browser is our home. But the browser won't really be our home until we learn how to log into our browser accounts on multiple machines.
+In the past, the desktop was our primary focus when using a computer. It is still important, but it is being supplanted by the Chrome Browser, the Firefox Browser and/or the Microsoft browser. The desktop is no long our exclusive home; the browser is our home. But the power of the browser won't be properly utilized until we learn how to log into our browser accounts on multiple machines.
 
 This is an important assignment. If we open browsers, and don't sign in, then we aren't really understanding how the world of modern computing works. Browsers are now more than just another application on the desktop. They have a centrally important role to play on PC's, tablets, Phones, and other mobile devices. Furthermore, our cloud based accounts, particularly our Google, Firefox or Microsoft accounts, are more than just a nicety. They are important, and they play an important role in the experience we have in our schools, home and work places.
 
@@ -15,34 +15,34 @@ If you don't already have one:
 - Create a Firefox account
 - Create a Chrome account.
 
-Log in and follow the instructions below about taking screenshots in multiple locations.
+Log in and do the best you can to follow the instructions about taking screenshots in multiple locations.
 
-## ScreenShots
+## ScreenShots Summary {#screenshots}
 
-I want you to take three screenshots from each of your platforms, for a total of at least six screenshots. Include a screenshot of:
+I want you to take a few screenshots from each of your platforms, for a total of perhaps nine screenshots. Below I list some of the important screen shots I want to see. I reference them be name as pix01, pix02, etc. Click on the links or search on those words to help you understand what screenshots I'm hoping to see.
 
 On your desktop Firefox:
 
-- Sync page (pix01)
-- All Bookmarks (pix02)
+- Sync page [pix01](#firefox)
+- All Bookmarks [pix02](#firefox)
 
 On your desktop Chrome:
 
-- You signed in to your browser (pix03)
-- The recent tabs in Chrome (pix04)
-- You signed out of your browser and displaying your Google Site (pix05)
+- You signed in to your browser [pix03](#platforms)
+- The **Recent tabs** and/or **History** in Chrome [pix04](#platforms)
+- You signed out of your browser and displaying your Google Site [pix05](#platforms)
 
 On mobile or alternate Chrome:
 
-- Logged in to Google (pix06)
-- Recent tabs (pix07)
+- Logged in to Google [pix06](#mobile-chrome)
+- Recent tabs and/or History [pix07](#mobile-chrome)
 
 On Mobile or alternate:
 
-- Sync page (pix08)
-- Synced bookmarks (pix09)
+- Sync page [pix08](#firefox-mobile)
+- Synced bookmarks [pix09](#firefox-mobile)
 
-That's a total of 9 screen shots. Please follow the example screenshots below to get the details right.
+That's a total of 9 screen shots. Please follow the example screenshots below to get the details right. If you are having trouble getting a particular screenshot, try to take one that is similar, but not necessarily identical, to the examples I provide.
 
 ## Platforms
 
@@ -56,23 +56,33 @@ Here is a picture showing me logged into Google, the key part is in the upper ri
 
 ![pix03](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGVUU5MFBrYU1rblk)
 
-Here are my Chrome recent tabs, and an indication that I am logged in on the right near the bottom:
+**Pix03**: _Logged into Google._
+
+Here are my Chrome recent tabs (sometimes called History), and an indication that I am logged in on the right near the bottom:
 
 ![Pix04](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGVmlnT09HbTQ1Y0U)
+
+**Pix04**: _Recent tabs and History._
 
 Signed out, and browsed to my Google Site, notice that no one is signed in to Chrome:
 
 ![Pix05](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGamlnV05XV1NxZGM)
 
-## Mobile Chrome
+**Pix05**: _Signed out._
 
-Here is the Logged in to Google image (pix06). Note the picture at top right shows I'm logged in as me.
+## Mobile Chrome {#mobile-chrome}
+
+Here is the **Logged in to Google** screenshot (pix06). Note the picture at top right shows I'm logged in as me.
 
 <img alt= "pix06" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGdVRsMjdyRXoxWEU">
+
+**Pix06**: _Logging in to Chrome on a phone._
 
 Here are the Chrome Mobile Recent tabs (pix07). Note that at the top you see a list of recently closed tabs. That can be very useful:
 
 <img alt="pix07" width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGb1ZNWXJ2LWN1NUk">
+
+**Pix07**: _Chrome Recent Tabs/History on a phone._
 
 ## FireFox
 
@@ -82,7 +92,7 @@ We only need to create two screenshots on the PC side with FireFox. The first is
 
 The second screenshot is of the **Show all bookmarks** page on the desktop version of Firefox (pix02). Reach it by pressing **Ctrl-Shift-B** or using the Bookmarks menu (**Alt-B**).
 
-## FireFox Mobile
+## FireFox Mobile {#firefox-mobile}
 
 From the settings menu in Firefox for your phone, you can reach the screen that lets you log into your Firefox Sync account. You don't need to show a screenshot like this one in your homework. I provide it simply to help you find your way around:
 
@@ -102,7 +112,7 @@ Please make at least a few bookmarks so that I can see you understand how the sy
 
 This is not part of the assignment, but you may find it useful.
 
-Syncing Firefox is slow. You need to go to the FireFox menu (the three bars on the top right), and choose Customize. In the main window on the left is a button that says Sync.
+Syncing Firefox is slow. You need to go to the Firefox menu (the three bars on the top right), and choose Customize. In the main window on the left is a button that says Sync.
 
 
 ![start](https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGWWxHT3RRejVYM2s)
@@ -134,8 +144,15 @@ Remember: base your screen shots on the images I have given you here in this ass
 
 There are a number of ways to complete this assignment. Any screenshots that show you are logged into Chromium and Firefox on two different platforms will work. For instance, one in Pristine Lubuntu and one on your Phone. One in Pristine and one in Windows would also work, though I prefer the first. The key thing is demonstrating that you have created accounts on Firefox and Chrome/Chromium, and that you are able to log into those accounts in two different places.
 
-I assume everyone can log into both Chromium and Firefox on Pristine Lubuntu. Devices you can use to complete the assignment with full honors include: iPhone, Android phone, iPad, Android tablet, Windows Phone and Androidx86. If none of those are an option for you, then you can fall back on second tier solution such as using an Apple or Windows desktop or laptop machine.
+I assume everyone can log into both Chromium and Firefox on Pristine Lubuntu. Devices you can use to complete the assignment with full honors include: iPhone, Android phone, iPad, Android tablet, Windows Phone and Androidx86. If none of those are an option for you, then you can fall back on second tier solution such as using an Apple or Windows desktop or a laptop machine. Try to make it obvious that you have signed in on two different browsers, preferably on two different platforms or two different machines.
 
-A Linux machine would also work as the second device, though it might be confusing if it were running Lubuntu. I want to be sure you are not logged in twice to the same instance of Lubuntu running in VirtualBox. If you have another Linux distro running on a laptop or desktop, that would work.
+A Linux machine would also work as the second device, though it might be confusing if it were running Lubuntu. I want to be sure you are not logged in twice to the same instance of Lubuntu running in VirtualBox. If you have another Linux distro running on a laptop or desktop, that would work. I'm looking for any evidence that you are logged into two different machines.
 
 I suppose it could also work if you can take a picture that somehow proves that you are logged into Chrome on Pristine Lubuntu at school, and Chrome on Pristine Lubuntu on your home machine. That would be a demonstration of an important scenario. If you, for instance, create bookmarks in your instance of Chrome at school, you definitely want the same bookmarks to show up when you log into Chrome at home. So somehow showing me that you are doing that would be another good way to finish the assignment.
+
+## Recent Tabs vs History
+
+I find Google's usage of the terms **Recent Tabs** and **History** a bit confusing. I believe the two terms are meant to be used interchangeably. In this document, I may use one term or the other, but for your screenshots I will accept pages with the label **History** or **Recent Tabs** clearly visible. Be sure your screenshot demonstrates, one way or another, that you are in fact viewing a list of sites you have recently visited. In other words, don't adhere too closely to the letter of the assignment, simply try to fulfill the spirit of the assignment.
+
+- [Chome Docs on Viewing Recent Tabs/History across devices](https://support.google.com/chrome/answer/2591582?hl=en)
+- [Google search on this topic](https://www.google.com/search?q=Chrome+recent+tabs+vs+history+sync)

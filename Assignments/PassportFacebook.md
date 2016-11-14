@@ -25,6 +25,10 @@ After getting oriented, look at the top right, and select the option to create a
 - Displan Name: Isit320-Lastname
 - Category: Education
 
+A possible alternative page for creating your app is here:
+
+- [https://developers.facebook.com/apps/](https://developers.facebook.com/apps/)
+
 Click okay, fill in the capcha, and choose **Facebook Login** as Product and **www** as login.
 
 - Site URL: http://localhost:30025
@@ -47,7 +51,7 @@ Save the Facebook specific code in **routes/login-facebook.js**:
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 /**************************************
  *  Facebook
@@ -63,7 +67,7 @@ router.get('/profile', require('connect-ensure-login').ensureLoggedIn(),
         });
     });
 
-passport.use(new Strategy({
+passport.use(new FacebookStrategy({
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
         callbackURL: 'http://localhost:30025/facebook/login/callback'
@@ -88,6 +92,25 @@ router.get('/login/callback',
 module.exports = router;
 
 ```
+
+Here is a way to use the **profileFields** property to alter the Facebook Strategy so you can get more information about the user:
+
+```javascript
+passport.use(new FacebookStrategy({
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        callbackURL: 'http://localhost:30025/facebook/login/return',
+        profileFields: ['id', 'displayName', 'photos', 'email']
+    },
+    function(accessToken, refreshToken, profile, done) {
+        'use strict';
+        console.log('accessToken', accessToken);
+        console.log('refreshToken', refreshToken);
+        console.log('profile', profile);
+        return done(null, profile);
+    }));
+```
+
 
 ## Make Public
 

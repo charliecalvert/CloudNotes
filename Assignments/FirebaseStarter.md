@@ -110,6 +110,12 @@ They will show you what URL to visit.
 
 Now go up to the console, find your app, and view the **Deployment History**
 
+## Copy JS, CSS and Images
+
+Use the tools available, or modify them as necessary, to copy your CSS, JS and Images folders from the ApacheHelpers directory to your **firebase/public** directory.
+
+You should follow a few bsaics steps to make sure all the proper files are being loaded. In Chrome, press F12 to open the Developer Tools. Switch to the Network page. Refresh you page. If everything is set up correctly, there should be no red 404 errors for your GET statements. Instead, you should see 200 or 304 in the Status column.
+
 ## Turn it in
 
 Take a screenshot of what happens in your bash terminal when you deploy your application with the **firebase deploy** command. Attach the screenshot to your canvas assignment. Optionally show a screenshot of your site deployed on the firebase site.
