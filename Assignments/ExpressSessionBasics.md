@@ -255,11 +255,11 @@ module.exports = (function() {
     'use strict';
 
     router.get('/page01', function(request, response, next) {
-        response.send('you viewed this page ' + request.session.views['/views/page01'] + ' times');
+        response.send({ result: 'you viewed this page ' + request.session.views['/views/page01'] + ' times' });
     });
 
-    router.get('/page02', function(request, response, next) {
-        response.send('you viewed this page ' + request.session.views['/views/page02'] + ' times');
+    router.get('/page02', function(request, response, next) {        
+        response.send({ result: 'you viewed this page ' + request.session.views['/views/page02'] + ' times' });
     });
     return router;
 })();
@@ -284,7 +284,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET || 'keyboard cat',
     resave: true,
     saveUninitialized: true,
-    store: new FileStore();  <==== HERE IT IS
+    store: new FileStore()  <==== HERE IT IS
 }));
 ```
 

@@ -1,13 +1,37 @@
+## Overview
 
-Go to this page:
+Go to the console:
 
-https://firebase.google.com/docs/auth/web/google-signin#before_you_begin
+- <https://console.firebase.google.com/>
 
-Enable auth in the console:
+Choose "Get Started" with authentication.
 
-Go to your app on Firebase site. Click on **Add Firebase to your Web App**
-<script src="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css" />
+Go the **Choose Sign in Method** and enable **Google** as a Sign in Provider.
+
+Go to the main page for your app, and choose "Add Firebase to your Web App". A dialog will pop up. Copy the code you see and save it to a text file.
+
+It will look a bit like this:
+
+```javascript
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+    var config = {
+        apiKey: "YOUR KEY",
+        authDomain: "YOUR DOMAIN",
+        databaseURL: "YOUR URL",
+        storageBucket: "YOUR BUCKET",
+        messagingSenderId: "YOUR ID"
+    };
+  firebase.initializeApp(config);
+</script>
+```
+
+If you get stuck, or want to know more, go to this page:
+- <https://firebase.google.com/docs/auth/web/google-signin#before_you_begin>
+
+Enable auth in the console.
+
 
 ## JavaScript
 
@@ -16,11 +40,11 @@ Add the following to **js/elven-help.js**. Put it above the **document.ready** s
 ```javascript
 function elfFireStart() {
     var config = {
-        apiKey: "AIzaSyCUWzSTzNtuqg4D2wExHMPNKP04hq7CWJg",
-        authDomain: "elf01-31681.firebaseapp.com",
-        databaseURL: "https://elf01-31681.firebaseio.com",
-        storageBucket: "elf01-31681.appspot.com",
-        messagingSenderId: "409236055680"
+        apiKey: "YOUR KEY",
+        authDomain: "YOUR DOMAIN",
+        databaseURL: "YOUR URL",
+        storageBucket: "YOUR BUCKET",
+        messagingSenderId: "YOUR ID"
     };
     firebase.initializeApp(config);
 }
