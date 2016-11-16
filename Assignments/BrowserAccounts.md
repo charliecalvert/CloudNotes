@@ -140,6 +140,9 @@ Put all the screenshots in a folder in our shared Google folder. Call the folder
 
 Remember: base your screen shots on the images I have given you here in this assignment description. I want to see your sync account on Firefox both on the desktop and the phone. I want to see the bookmarks in your browser on your phone, etc. See the list of screenshots near the top of this file for additional information and a review of what is expected.
 
+- Provided a brief explanation of what you are submitting. For instance, if there are no pictures of your phone because you don't own a phone, please explain that in the comment section. Include just a few words of explanation of what you are submitting so I don't have to guess.
+- File names like **pix01.png** are not very informative. Please give the files names appropriate to their content. For instance **firebase-sync.png** or **google-signin.png**.
+
 ## Additional Thoughts
 
 There are a number of ways to complete this assignment. Any screenshots that show you are logged into Chromium and Firefox on two different platforms will work. For instance, one in Pristine Lubuntu and one on your Phone. One in Pristine and one in Windows would also work, though I prefer the first. The key thing is demonstrating that you have created accounts on Firefox and Chrome/Chromium, and that you are able to log into those accounts in two different places.
