@@ -446,3 +446,9 @@ If you get this error then the problem might well be the order in which you are 
 ```javascript
 if (!this._passport) { throw new Error('passport.initialize() middleware not in use'); }
 ```
+
+## Jade/Pug Rendering and Templating {#pug-render}
+
+Make sure you understand Jade Templating:
+
+- [Elvenware Jade Render Tamples](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#render-basics)

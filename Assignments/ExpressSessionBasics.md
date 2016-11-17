@@ -265,6 +265,28 @@ module.exports = (function() {
 })();
 ```
 
+## Views Hint
+
+Remember that if we put code in our **routes/views.js** file, then in **app.js** we probably wrote code like this:
+
+```javascript
+var views = require('./routes/views');
+// CODE OMITTED HERE
+app.use('/views', views);
+```
+
+This means that when we call the route, we should include views in the URL:
+
+```javascript
+getJSON('/views/foo', etc...)
+```
+
+But in **views.js** we do not include the **/views** part of the path, and instead write the code that looks like this:
+
+```javascript
+router.get('/foo', function...
+```
+
 ## File Store
 
 Later, we will start saving session and user data to a database. For now, however, let's simplify things by saving some information to a file. At the top of app.js:

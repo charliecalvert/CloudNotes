@@ -74,18 +74,19 @@ example in JsObjects.
 
 The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9.
 
-For three points extra credit, implement **getFeetInMile** and
-**calculateFeetFromMiles** using HTTP GET calls, and use POST for
-**calculateCircumference**:
+For three points extra credit, implement **getFeetInMile** and **calculateFeetFromMiles** using HTTP GET calls, and use POST for **calculateCircumference**:
 
-	var express = require('express');
-    var router = express.Router();
+```javascript
+var express = require('express');
+var router = express.Router();
 
-	router.get(...
-	router.post(...
+router.get(...)
+router.post(...)
+```
 
-The formula for calculating the circumference of a circle given its
-radius looks like this:
+If you are going for extra-credit, please add a note to that effect when you submit the assignment. 
+
+The formula for calculating the circumference of a circle given its radius looks like this:
 
 	Circumference = 2 * radius * Math.PI;
 
@@ -93,11 +94,26 @@ The parameter for calculateFeetFromMiles: miles
 
 The parameter for calculateCircumference: radius
 
+Recall that with **GET** methods we use frequently use **request.query** to find parameters, but with **POST** methods we use **request.body**.
+
+- [Docs on req.body](http://expressjs.com/en/4x/api.html#req.body)
+- [Docs on req.query](http://expressjs.com/en/4x/api.html#req.query)
+- [Interesting Discussion](http://stackoverflow.com/a/12008719)
+
 ## Step Five
 
-Put a **calculateCircumference** method in your NpmPackage **utils** object
-and use it in the call from your server. The method should take one parameter
+Put a **calculateCircumference** method in a file called **routes/utils.js**. In that file create a simple object literal:
+
+```javascript
+module.exports = {
+	// YOUR METHOD HERE
+}
+```
+
+Now **require** your **utils.js** file in **routes/index.js** and use it in the appropriate route on your server. The method should take one parameter
 called **radius** and it should return the calculated circumference.
+
+**NOTE**: _If we are building our own NPM packages, then put this object and method in the package instead. Otherwise just use the technique outlined above. In either case, our goal is to learn how to create reusable code that we can plug into an project on the server side._
 
 ## Turn It In
 
@@ -182,7 +198,7 @@ Look at these code excerpts from the code shown above. We look specifically at t
 	};
 
 	// Call the server and pass the data as a parameter.
-	$.getJSON('/walk', requestQuery, function (result) {
+	$.getJSON('/walk', requestQuery, function (result) { ... });
 
 ```
 
@@ -198,6 +214,8 @@ router.get('/walk', function(request, response) {
     var directoryToWalk = request.query.directoryToWalk;
     var destinationDir = request.query.destinationDir;
     var highlight = request.query.highlight;
+    etc
+});
 ```
 
 ## Update Out of Date Packages

@@ -485,3 +485,7 @@ I should also be able to run **npm test** on all three projects and have it come
 [jsb]: https://github.com/beautify-web/js-beautify
 [gsg]: https://google.github.io/styleguide/javascriptguide.xml
 [grunt]: http://gruntjs.com/
+
+## Can't Find Local Grunt
+
+Have you run **npm install** in the ExpressBasics folder? The error might be saying, "I can't find a copy of grunt in your node_modules directory." To fix this, we need to install the grunt package based on the code in our **package.json** file. To do this, run **npm install**.
