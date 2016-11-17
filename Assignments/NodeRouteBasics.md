@@ -47,51 +47,6 @@ Copy the node express program called **NodeRouteBasics** from my repo to yours:
 cp ~/Git/elven-assignments/NodeRouteBasics ~/Git/isit322-lastname-2016/Week04-NodeRouteBasics
 ```
 
-Instead of running **npm install** and **bower install**, do this:
-
-- Copy a reasonably up to date version of **node_modules** from one of your projects to **~/tmp**.
-- Copy a reasonably up to date version of **public/components** from one of your projects to **~/tmp**.
-
-For instance
-
-```
-mkdir ~/tmp
-cp ~/Git/isit322-lastname-2016/Week04-Middleware/node_modules ~/tmp
-cp ~/Git/isit322-lastname-2016/Week04-Middleware/public/components ~/tmp
-```
-
-You might want to also copy the **package.json** and **bower.json** files to tmp. As needed, update your files to the latest:
-
-```
-cd ~/tmp
-npm outdated --depth=0
-```
-
-And then get the latest of everything as needed.
-
-Now go back to your project and create symbolic links to these packages. The best way to do this is to use
-
-- the run alias from **~/.bash_aliases**
-- or the **nm** and **component** aliases from **~/.bash_aliases**.
-
-Just as an **fyi**, here they are:
-
-```
-alias run="nm && components && npm start"
-alias nm="ln -s ~/tmp/node_modules/"
-alias components="ln -s ~/tmp/components/ public/components"
-```
-
-For this project, do the following in **~/tmp**, or, if you have completed the above, in your project:
-
-```
-npm install supertest --save-dev
-npm install jasmine --save-dev
-npm install -g jasmine
-```
-
-**NOTE**: *The point of setting up this ~/tmp directory is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*
-
 ## Step Three: Client Interface {#interface}
 
 It should include the following:
@@ -244,3 +199,68 @@ router.get('/walk', function(request, response) {
     var destinationDir = request.query.destinationDir;
     var highlight = request.query.highlight;
 ```
+
+## Update Out of Date Packages
+
+```
+$ npm install -g npm-check-updates
+$ npm-check-updates -u
+$ npm install
+```
+
+If it is still not up to date, do: **ncu -a**
+
+Also, be sure to remove **phantomjs** from **packages.json**.
+
+See here:
+
+- <http://stackoverflow.com/a/22849716>
+
+## Temp directory
+
+This is optional. Skip if you are not interested.
+
+Instead of running **npm install** and **bower install**, do this:
+
+- Copy a reasonably up to date version of **node_modules** from one of your projects to **~/tmp**.
+- Copy a reasonably up to date version of **public/components** from one of your projects to **~/tmp**.
+
+For instance
+
+```
+mkdir ~/tmp
+cp ~/Git/isit322-lastname-2016/Week04-Middleware/node_modules ~/tmp
+cp ~/Git/isit322-lastname-2016/Week04-Middleware/public/components ~/tmp
+```
+
+You might want to also copy the **package.json** and **bower.json** files to tmp. As needed, update your files to the latest:
+
+```
+cd ~/tmp
+npm outdated --depth=0
+```
+
+And then get the latest of everything as needed.
+
+Now go back to your project and create symbolic links to these packages. The best way to do this is to use
+
+- the run alias from **~/.bash_aliases**
+- or the **nm** and **component** aliases from **~/.bash_aliases**.
+
+Just as an **fyi**, here they are:
+
+```
+alias run="nm && components && npm start"
+alias nm="ln -s ~/tmp/node_modules/"
+alias components="ln -s ~/tmp/components/ public/components"
+```
+
+For this project, do the following in **~/tmp**, or, if you have completed the above, in your project:
+
+```
+npm install supertest --save-dev
+npm install jasmine --save-dev
+npm install -g jasmine
+```
+
+**NOTE**: *The point of setting up this ~/tmp directory is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*

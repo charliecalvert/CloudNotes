@@ -284,7 +284,7 @@ BLUE='\033[1;36m'
 NC='\033[0m' # No Color
 
 DEST01=/var/www/html/.
-DEST02=/home/bcuser/Source/firebase/public
+DEST02=$HOME/Source/firebase/public
 
 function message {
     echo
