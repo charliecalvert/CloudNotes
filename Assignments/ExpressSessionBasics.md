@@ -2,6 +2,11 @@
 
 Session Basics
 
+Understanding Sessions:
+
+- <https://developer.mozilla.org/en-US/docs/Web/HTTP/Session>
+- <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web>
+
 ## Step 01
 
 CreateAllExpress Week04-SessionBasics
