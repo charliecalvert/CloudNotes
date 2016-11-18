@@ -22,7 +22,7 @@ Visit the Facebook Login for Developers Page: [https://developers.facebook.com/p
 
 After getting oriented, look at the top right, and select the option to create a **New App**.
 
-- Displan Name: Isit320-Lastname
+- Display Name: Isit320-Lastname
 - Category: Education
 
 A possible alternative page for creating your app is here:

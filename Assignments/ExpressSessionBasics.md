@@ -6,6 +6,7 @@ Understanding Sessions:
 
 - <https://developer.mozilla.org/en-US/docs/Web/HTTP/Session>
 - <https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web>
+- [Session Timeout](https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Session_Expiration)
 
 ## Step 01
 

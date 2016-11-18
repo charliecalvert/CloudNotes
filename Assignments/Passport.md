@@ -51,8 +51,9 @@ Navigate to your project directory and then download the Passport package and ot
 ```bash    
 cd Week08-Passport
 npm install passport --save
-npm install passport passport-facebook--save
+npm install passport passport-facebook --save
 npm install passport-google-oauth20 --save
+npm install connect-ensure-login --save
 npm install express-session --save
 npm install connect-ensure-login --save
 ```
@@ -452,3 +453,4 @@ if (!this._passport) { throw new Error('passport.initialize() middleware not in 
 Make sure you understand Jade Templating:
 
 - [Elvenware Jade Render Tamples](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#render-basics)
+- [Official Docs]()
