@@ -18,6 +18,9 @@ Turn on Google Authentication, per the instructions from the previous assignment
 Put the following code in **elven-help.js**. Delete everything that we put in **elven-help.js** for the previous assignment. That is all the code from document.ready on up. Leave document.ready, but delete all the code above it. This is the code that we put in for the previous assignment. After it is deleted, replace it with the following code:
 
 ```javascript
+/************************************
+ * Setup
+************************************/
 
 function elfFireConfig01() {
     var config = {
@@ -30,6 +33,7 @@ function elfFireConfig01() {
     firebase.initializeApp(config);
 }
 
+// We are not using elfFireConfig02 at this time.
 function elfFireConfig02() {
     var config = {
       apiKey: "YOUR KEY",
@@ -42,7 +46,7 @@ function elfFireConfig02() {
 }
 
 function elfFireStart() {
-    elfFireConfigElf01();
+    elfFireConfig01();
     $('#elfDatabasePush').click(elfFireDataPush);
     $('#elfDatabaseGet').click(elfFireDataGet);
     $('#elfDatabaseGetAllQux').click(elfFireDatabaseGetAllQux);
@@ -52,7 +56,6 @@ function elfFireStart() {
 
     elfFireDynamicData();
 }
-
 
 /************************************
  * Users
@@ -134,7 +137,6 @@ function elfFireDynamicPush() {
 
     writeUserData();    
 }
-
 
 function elfFireDataPush() {
 
