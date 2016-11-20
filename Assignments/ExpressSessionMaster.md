@@ -1,33 +1,129 @@
 ## Overview
 
+The goal of this assignment is to combine Sessions and Sign-In. It allows you to track who is signed into which session and something of what they did while they werer in the session.
+
+## Background
+
+There are several ways to track what the user is doing while using a program. On the client side, the following three options are available:
+
+- Cookies
+- LocalStorage
+- sessionStorage
+
+On the server, the following are commonly available:
+
+- Database
+- Text file containing XML, JSON, CSV or the like
+
+There are several advantages to saving on the server side:
+
+- The data is saver there. A hacker can get a cookie or LocalStorage, but they will have a hard time reaching the server.
+- The data is more resiliant. Data stored in a database will not disappear if a session is disrupted.
+
+## Getting Started
+
+Begin by copying your SessionCouch program to SessionMaster.
+
+```bash
 cp -r Week09-SessionCouch/ Week10-SessionMaster
 cd Week10-SessionMaster/
+```
 
+There are several packages which need to be installed:
+
+```bash
 npm install passport --save
-npm install passport passport-facebook --save
+npm install passport-facebook --save
 npm install passport-google-oauth20 --save
 npm install passport-twitter --save
+```
 
+You will also want to copy in the code for handling passport sign-in:
+
+```bash
 cd routes/
 cp ../../Week08-Passport/routes/twitter-login.js .
 cp ../../Week08-Passport/routes/google-auth.js .
 cp ../../Week08-Passport/routes/facebook.js .
+cd ..
+```
 
+```bash
 cd views/
 2129  cp ../../Week08-Passport/views/profile-facebook.jade .
 2130  cp ../../Week08-Passport/views/profile-twitter.jade .
 2131  cp ../../Week08-Passport/views/account.jade profile-google.jade
+cd ..
+```
 
-Make sure you have facebook CLIENT_ID loaded:
+
+Create a script which you can source in order to load the FAMake sure you have facebook CLIENT_ID loaded:
 
 echo $FACEBOOK_CLIENT_ID
+
+## Passport Generic Code
 
 Copy the code from Week08-Passport **index.js** that is Passport specific:
 
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/Passport.html#generic-code>
 
+## SessionStore
 
-Use sessionStore. In the source for it, open up lib/databases/couchdb and do this:
+We will use an object called session store to copy the session data into the database.
+
+Use sessionStore to presist your session state. In **Middleware.js** write this code to iniitialize **sessionStore**:
+
+```javascript
+var sessionStore = sessionstore.createSessionStore({
+    type: 'couchdb',
+    host: 'http://192.168.2.27', // optional
+    port: 5984, // optional
+    dbName: 'sessionstore-calvert', // optional
+    collectionName: 'sessions', // optional
+    timeout: 10000 // optional
+}, function(data) {
+    console.log('sessionStore callback', data);
+});
+```
+
+Now modify our session middleware to use the **sessionStore** package as a **store**:
+
+```javascript
+router.use(session({
+    genid: function(req) {
+        'use strict';
+        console.log('id generated');
+        return uuid.v4(); // use UUIDs for session IDs
+    },
+    key: 'app.sess',
+    secret: process.env.SESSION_SECRET || 'keyboard cat',
+    resave: true,
+    saveUninitialized: true,
+    store: sessionStore
+}));
+```
+
+## Read Session Data
+
+Using our CouchXXX.js files from the **DataMaster**, write code that will allow the user to read from the **sessionStore** database.
+
+This means you will have to add the following views to **couchDesignDocs.js**:
+
+```javascript
+var elfSessionStore = function(doc) {
+  // if the doc **collectionName** property equals **'sessions'** then emit the **doc._id** and the **doc** itself.
+};
+
+var elfSessionExpires = function (doc) {
+  // if the doc **collectionName** property equals **'sessions'** and **doc.expires exists** then emit the **doc.expires**.
+};
+```
+
+Now be sure you can get the views by calling a route in **CouchView.js**.
+
+## SessionStore Fix/Hack
+
+In the source for it, open up lib/databases/couchdb and do this:
 
 ```javascript
 set: function (hash, sess, callback) {
@@ -35,20 +131,13 @@ set: function (hash, sess, callback) {
   if (sess && sess.cookie && sess.cookie.expires) {
     sess.expires = new Date(sess.cookie.expires);
   } else {
-    // If there's no expiration date specified, it is
-    // browser-session cookie or there is no cookie at all,
-    // as per the connect docs.
-    //
-    // So we set the expiration to two-weeks from now
-    // - as is common practice in the industry (e.g Django) -
-    // or the default specified in the options.
     sess.expires = new Date(Date.now() + this.options.ttl * 1000);
   }
   console.log('couchStore', sess);        <===== HERE
   if (sess.elfStoreData === false) {      <===== HERE
       callback(null)                      <===== HERE
       return;                             <===== HERE
-  }                                       <===== HERE 
+  }                                       <===== HERE
   this.db.save(hash, sess._rev, sess, function(err) {
     console.log('actually saved');    
     if (err && err.error === 'conflict' && err.reason.indexOf('update conflict') >= 0) {
@@ -59,3 +148,21 @@ set: function (hash, sess, callback) {
 },
 
 ```
+
+## UI Issues
+
+We have too many buttons and controls on the main page. Use jQuery to hide and expose DIVs so that you can focus on one area at a time. I created the following IDs:
+
+- .panel.panel-default#basics-page
+- .panel.panel-default#database-page
+- .panel.panel-default#authentication-page
+
+The user should be able to toggle these properties at will.
+
+Here we are showing only the basics options:
+
+![basics](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-basics.png)
+
+![database](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-database.png)
+
+![authentication](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-authentication.png)
