@@ -84,7 +84,7 @@ router.get(...)
 router.post(...)
 ```
 
-If you are going for extra-credit, please add a note to that effect when you submit the assignment. 
+If you are going for extra-credit, please add a note to that effect when you submit the assignment.
 
 The formula for calculating the circumference of a circle given its radius looks like this:
 
@@ -96,6 +96,7 @@ The parameter for calculateCircumference: radius
 
 Recall that with **GET** methods we use frequently use **request.query** to find parameters, but with **POST** methods we use **request.body**.
 
+- [Elvenware on POST and GET in Express](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#working-with-post)
 - [Docs on req.body](http://expressjs.com/en/4x/api.html#req.body)
 - [Docs on req.query](http://expressjs.com/en/4x/api.html#req.query)
 - [Interesting Discussion](http://stackoverflow.com/a/12008719)

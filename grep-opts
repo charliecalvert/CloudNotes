@@ -1,0 +1,7 @@
+--include=*.md
+--exclude-dir=node_modules
+--exclude-dir=components
+--exclude-dir=bower_components
+--exclude-dir=.config
+--exclude-dir=.mozilla
+--exclude-dir=.metadata'
