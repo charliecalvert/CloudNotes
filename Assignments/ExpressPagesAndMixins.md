@@ -1,6 +1,6 @@
-# Express Pages and Mixins
+## Overview
 
-In class exercise
+In the  Express Pages and Mixins assignment you will learn about Jade, bootstrap and mixins.
 
 References:
 
@@ -8,12 +8,11 @@ References:
 * [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
 * Bootstrap Slides: [http://bit.ly/elf-bootstrap](http://bit.ly/elf-bootstrap)
 
-
 ## Steps
 
- - Create a new express project: **yo express**
-	 - Or better, start with [JadeMixinSimple](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JadeMixinSimple) from JsObjects.
- - Add a new page called **About**
+ - Start with [JadeMixinSimple](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JadeMixinSimple) from JsObjects.
+   - Or run CreateAllExpress...
+ - Add a new page called **about**
  - Create bootstrap menus
  - Use Jade Mixins
 
@@ -22,7 +21,7 @@ References:
 The details are in the slides listed above, in a slide from noderoutes called **Add About Page**. It's about the third slide in the deck. Two key lines are:
 
 ```
-var about = require('./routes/About');
+var about = require('./routes/about');
 // Code omitted here
 app.use('/about', about);
 ```
@@ -79,7 +78,7 @@ After we covered this method in class, I realized that it would throw an excepti
 ## Bootswatch
 
 [Bootswatch](https://bootswatch.com/) is a tool for adding themes to bootstrap. When working with our mixins, try using it like this:
- 
+
     +bootswatch('cerulean')
 
 For instance:
@@ -97,12 +96,12 @@ block append content
 
   +bootswatch('cerulean')
 ```
- 
+
 
 Here bcerulean** is one of the bootswatch themes. Don't, as a number of you did, try using it like this, as it just throws an error:
 
     +bootswatch
-    
+
 You have to pass in the name of the theme you want to use, as described above.    
 
 ## The JavaScript
@@ -112,11 +111,11 @@ Create two files in **public/javascripts**:
  - **Control.js**: For the main page
  - **About.js**: For the about page
 
-But a button on each page. 
+But a button on each page.
 
 - First button: 	
 	- id: mainButton
-- Second button 
+- Second button
 	- id: aboutButton
 
 When the user clicks on either button, place text on the appropriate page in an HTML paragraph element.
@@ -246,6 +245,4 @@ mixin listText
 
 ## Turn it in
 
-In Week07-InClassMixin
-
-
+Make sure the folder is named correctly. Push your work and submit your assignment.

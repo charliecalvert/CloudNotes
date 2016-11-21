@@ -166,3 +166,79 @@ Here we are showing only the basics options:
 ![database](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-database.png)
 
 ![authentication](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-authentication.png)
+
+## UI Menus
+
+First learn about mixins by completing the mixins assignment. Then, using mixins, add menus to your app.
+
+Also, change the behavior of the pages so that if you select one menu item, the UI for that feature is visible but the UI for the other features is hidden. For instance, if you select Basics, then the Databases and Authentication pages disappear.
+
+![menu](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-menu.png)
+
+![mobile](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-session-master-mobile.png)
+
+The following mixin can be used:
+
+```jade
+mixin littleMenu
+    nav.navbar.navbar-default.navbar-fixed-top
+        .container-fluid
+            // Brand
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button',
+                        data-toggle='collapse',
+                        data-target='#bs-example-navbar-collapse-1',
+                        aria-expanded='false')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+
+                a.navbar-brand(href='/')
+                    img(alt='Elvenware', src='favicon.png')
+            // Nav Links
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li#basics-menu
+                        a.togglePageClick(href='/basics-page')
+                            | Basics
+                            span.sr-only (current)
+                    li#database-menu
+                        a.togglePageClick(href="/database-page") Database
+                    li#authentication-menu
+                        a.togglePageClick(href="/authentication-page") Authentication
+```
+
+## Turn it in
+
+Push your work and submit your assignment.
+
+## Moving to PUG?
+
+If you want to move from Jade to Pug, here are the steps:
+
+```
+npm install pug --save
+npm uninstall jade --save
+```
+
+In **app.js** change the single instance of the word **jade** to **pug**.
+
+In the **views** directory, change all files with the extensions **jade** to have the extension **pug**. This script should do the work for you:
+
+```bash
+#! /bin/bash
+
+for file in *.jade
+do
+  git mv "$file" "${file%.jade}.pug"
+done
+```
+
+Or this:
+
+```
+ln -s ~/Git/JsObjects/Utilities/NodeInstall/JadeToPug ~/bin/JadeToPug
+```
+
+Then run **JadeToPub** in your **views directory**.
