@@ -151,3 +151,7 @@ And then create a new section near the top:
     <p id="account-details"></p>
 </div>
 ```
+
+## Turn it in
+
+Run **firebase deply** to push your site to the cloud. Submit a link to your site.
