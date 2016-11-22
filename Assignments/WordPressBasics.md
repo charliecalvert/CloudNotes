@@ -6,7 +6,7 @@ Learn WordPress basics.
 
 Get WordPress as a gzipped tar file and decompress it.
 
-```
+```bash
 cd ~/temp
 wget https://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
@@ -16,7 +16,7 @@ tar -xzvf latest.tar.gz
 
 Make your own copy of the WordPress config file and set the permissions for the WordPress content directory. Later you may want to tighten these permissions, but it is simplest to make it possible to write to these directories during development.
 
-```
+```bash
 cd wordpress
 cp wp-config-sample.php wp-config.php
 sudo chown -R www-data:www-data wp-content/
@@ -68,11 +68,14 @@ sed -i -- 's/username_here/'$WORDPRESS_DATA_OWNER'/' wp-config.php
 sed -i -- 's/password_here/'$WORDPRESS_DATA_PASSWORD'/' wp-config.php
 ```
 
+Also change the secure key by going here: <https://api.wordpress.org/secret-key/1.1/salt/>
+
 ## Run WordPress
 
 Move the WordPress folder to **/var/www/html**:
 
-  mv $WORDPRESS_DIR /var/www/html/.
+  cd ~/temp
+  mv wordpress /var/www/html/.
 
 Browse to **http://localhost/wordpress/wp-admin**
 
@@ -83,6 +86,12 @@ http://192.168.2.17/wordpress/wp-admin
 </pre>
 
 I think it is fairly obvious how to step through the single configuration page you see when you first load the admin page. After you fill out the simple form, then begin editing your WordPress posts.
+
+Set the site title to 'prog270-lastname'
+
+Set the user name to your first name or something you will remember.
+
+You don't have to use the password that they use especially locally. But when we put on EC2, do pick a good password. Something that can't be easily broken.
 
 ## EC2
 
@@ -99,3 +108,11 @@ Very out of date information is here:
 - [WordPress on Elvenware][elf-wordpress]
 
 [elf-wordpress]: http://www.elvenware.com/charlie/development/cloud/Wordpress.html
+
+## password
+
+Here is a description of how to change the password:
+
+- <http://www.elvenware.com/charlie/development/database/mysql/linux-user-password.html>
+
+Remember, that if you change it you have to change the password in wp-config.php.
