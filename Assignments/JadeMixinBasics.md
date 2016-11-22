@@ -15,6 +15,7 @@ Copy in the mixins:
 ```
 cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
 cp $ELF_TEMPLATES/JadeMixins/mixins.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/mixin-inputs.jade views/.
 ```
 
 **NOTE**: *We might not use the second file, **mixins.jade**, but I will include if for now in case we need it later.*
@@ -74,6 +75,7 @@ The following is the complete code listing for **views/index.jade**:
 ```jade
 extends layout
 include mixin-radios
+include mixin-inputs
 
 block append content
 
