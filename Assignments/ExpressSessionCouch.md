@@ -123,14 +123,13 @@ router.use(session({
 }));
 ```
 
-
 ## Read Sessions
 
 Install Nano:
 
 	npm install nano --save
 
-Copy in the couch files from your DataMaster program or other source. You will, of course, put them in the **routes** folder.
+Copy in the **routes/Couch*.js** files from your DataMaster program or other source. You will, of course, put them in the **routes** folder.
 
 - Modify the top of index.js to load the Couch files that you just added to your project.
 - Modify the database name at the top of **routes/Couch.js**
@@ -161,7 +160,7 @@ router.get('/designDoc', function(request, response) {
 		var designName = '_design/elf-session';
 		var designDocument = {
 				'views': {
-						'elfSesions': {
+						'elf-session': {
 								'map': WHAT_SHOULD_IT_MAP_TO
 						}
 				}

@@ -213,6 +213,14 @@ You will need to load your SSH key with **ssh-add** each time your start a new b
 ssh-add ~/.ssh/Prog270-Fall-2016
 ```
 
+When you want to connect to a remote machine using SSH, you have to specify which private key to use, or at least the location of your private keys. If you get a **permission denied** message, this is likely because:
+
+- You don't have the private key on your machine that matches the public key on the server you want to access
+- You have not given you public key to the site you want to access
+- Or, if you do have the key, and its public key is installed in the authorized_keys file on the server you want to access, then you have not made the private key accessible on your local machine.
+
+In most cases, it is the third of these problems that causes students trouble. A simple way to make a private key accessible is to use **ssh-add** to register it with a program called **ssh-agent**. Then, when you try to access a remote site, all the keys registered with the **ssh-agent** are tried, and if one of them matches, you are golden.
+
 ## Automating the load process
 
 If you don't want to perform this task manually, you could add the following code at the bottom of your **~/.bashrc** file:

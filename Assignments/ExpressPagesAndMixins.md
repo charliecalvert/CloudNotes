@@ -51,9 +51,16 @@ block content
 
 ```                
 
-Set the active menu:
+## Bootstrap Active Selection {#active-selection}
+
+Set the active menu with this code:
 
 ```
+$('nav li').hover(function(event) {
+    setActiveMenuItem(event.currentTarget.id);
+});
+
+
 function setActiveMenuItem() {
 
     $(".nav li").removeClass("active");
@@ -69,11 +76,15 @@ function setActiveMenuItem() {
     } catch(e) {
        // console.log('Could not find selector. This is expected when testing.', e);
     }
-
 }
 ```
 
-After we covered this method in class, I realized that it would throw an exception in your unit tests because it may not be able to find the menus, which at least for now, may not be part of your tests. So I have added a **try catch** statement to suppress the exception if it occurs.
+After we covered this method in class, I realized that it could throw an exception in a unit tests because it may not be able to find the menus, which at least for now, may not be part of your tests. So I have added a **try catch** statement to suppress the exception if it occurs.
+
+I should add that in some cases, you may not need this code. It's purpose is to help you clear and set the highlight over a menu item when the mouse hovers over it. In some cases, Bootstrap will do that for you automatically. But if it is not doing that properly, try inserting this code. Note that the selector **nav li** may not properly select the mouse hover events in some cases, depending on how you crafted your HTML. If necessary, compose another selector.
+
+- [jQuery docs on the all important subject of selectors](https://api.jquery.com/category/selectors/)
+
 
 ## Bootswatch
 
