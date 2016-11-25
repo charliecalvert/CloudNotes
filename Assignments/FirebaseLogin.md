@@ -154,4 +154,13 @@ And then create a new section near the top:
 
 ## Turn it in
 
-Run **firebase deply** to push your site to the cloud. Submit a link to your site.
+Run **firebase deploy** to push your site to the cloud. Submit a link to your site.
+
+You will need to edit this line in ElvenHelp.js:
+
+        'signInSuccessUrl': 'http://localhost:5000/start.html',
+
+You should set it the value, the URL, to the page for your published firebase site. Something like:
+
+  http://prog270-lastname-firebaseapp.com/start.html
+  
