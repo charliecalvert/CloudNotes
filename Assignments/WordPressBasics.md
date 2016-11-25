@@ -12,6 +12,20 @@ wget https://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
 ```
 
+If you need to install PHP:
+
+```bash
+sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+sudo systemctl restart apache2
+```
+
+Some special PHP extensions can optionally be installed this way:
+
+```bash
+sudo apt-get install php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
+sudo systemctl restart apache2
+```
+
 ## Set up WordPress Directory
 
 Make your own copy of the WordPress config file and set the permissions for the WordPress content directory. Later you may want to tighten these permissions, but it is simplest to make it possible to write to these directories during development.
@@ -116,3 +130,11 @@ Here is a description of how to change the password:
 - <http://www.elvenware.com/charlie/development/database/mysql/linux-user-password.html>
 
 Remember, that if you change it you have to change the password in wp-config.php.
+
+## Favicon
+
+I followed these instructions:. Choose this from the menu:
+
+ Appearance | Themes | Site Identitry |  Site Icon
+
+And I uploaded a 512-512 PNG file.
