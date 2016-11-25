@@ -154,7 +154,7 @@ And then create a new section near the top:
 
 ## Turn it in
 
-Run **firebase deploy** to push your site to the cloud. Submit a link to your site.
+Run **firebase deploy** to push your site to the cloud. Submit a link to your firebase site.
 
 You will need to edit this line in ElvenHelp.js:
 
@@ -163,4 +163,5 @@ You will need to edit this line in ElvenHelp.js:
 You should set it the value, the URL, to the page for your published firebase site. Something like:
 
   http://prog270-lastname-firebaseapp.com/start.html
-  
+
+**NOTE**: _If you turn in a screen shot for an assignment like this, it is nice if I can read the URL in the browser address control. But I don't need a screenshot in this case, unless you want to submit one._
