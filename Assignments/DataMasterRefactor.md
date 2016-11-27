@@ -254,33 +254,56 @@ define(['Route', 'nameController', 'queryController'], function (Route, nameCont
 Since we have removed Angular, we need a substitute for the Angular **RouteProvider** object. Place the following object in a file called **Route.js**. Modify **layout.jade** so that this file gets loaded.
 
 ```javascript
-define(function () {
+define(['runQuery'], function(runQuery) {
+    'use strict';
+
+    var that;
 
     function Route() {
         this.route = '';
+        that = this;
     }
 
-    Route.prototype.setRoute = function (routeInit) {
+    Route.prototype.setRoute = function(routeInit) {
         this.route = routeInit;
     };
 
-    Route.prototype.when = function (route, control) {
-        if (route === this.route) {
-            var resolver = {
-                getController: function () {
-                    return control.controller
-                }
-            };
+    function root(control) {
+        $('#elfContent').load(control.templateUrl, function(result) {
+            that.resolveRequest(control)
+        });
+    }
 
+    Route.prototype.resolveRequest = function(control) {
+        var resolver = {
+            getController: function() {
+                return control.controller;
+            }
+        };
+
+        if (control.resolve) {
             for (var funcName in control.resolve) {
                 control.resolve[funcName](resolver);
+            }
+        } else {
+            runQuery(null, resolver)
+        }
+    };
+
+    Route.prototype.when = function(route, control) {
+        if (route === this.route) {
+            if (control.templateUrl) {
+                root(control)
+            } else {
+                this.resolveRequest(control);
             }
         }
         return this;
     };
 
-    Route.prototype.otherwise = function () {
+    Route.prototype.otherwise = function() {
         // DO NOTHING FOR NOW
+        console.log('otherwise');
     };
 
     return Route;

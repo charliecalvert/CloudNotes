@@ -15,6 +15,7 @@ References:
  - Add a new page called **about**
  - Create bootstrap menus
  - Use Jade Mixins
+ - Call the project **Week11-JadeMixinBasics**
 
 ## Create page
 
@@ -28,7 +29,7 @@ app.use('/about', about);
 
 ## BootStrap
 
-	bower install bootstrap --save-dev
+	bower install bootstrap --save
 
 ```
 extends layout
@@ -122,11 +123,13 @@ Create two files in **public/javascripts**:
  - **Control.js**: For the main page
  - **About.js**: For the about page
 
-But a button on each page.
+Put a button on each page.
 
-- First button: 	
+- First button:
+  - text: Main
 	- id: mainButton
 - Second button
+  - text: About
 	- id: aboutButton
 
 When the user clicks on either button, place text on the appropriate page in an HTML paragraph element.
@@ -137,7 +140,7 @@ Put the button handler for the about in **About.js**
 
 Put document ready in **Control.js.** Use the module pattern for each page:
 
-```
+```javascript
 var = Main = (function() {
    function Main() {
 	// Code to initialize button handler (click) goes here.
@@ -149,7 +152,28 @@ var = Main = (function() {
 
 Details are on [Elvenware](http://elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html).
 
-## The Mixins
+If you want to put a button in a form and not have it act like a submit button, then give it a type of button:
+
+```jade
+
+```
+
+## Radio Mixins
+
+From the root of your project, copy in the radio and checkbox mixins:
+
+```bash
+cp -v $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/mixin-radios.pug
+```
+
+In the above, I still have jade as the extension in JsObjects, but I'm copying to a pug file. If you are still using jade:
+
+```bash
+cp -v $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
+```
+
+
+## Mixins {#the-mixins}
 
 Place the following code in **/views/mixins.jade**
 ```
@@ -221,9 +245,10 @@ mixin button(style, href, size)
     a( class=["btn", "btn-" + style, size], href=href )
         block
 
-//- List group mixins
-- var groupType
+  //- List group mixins
+
 mixin listGroup(type, id)
+    - var groupType
     - groupType = type
     case groupType
         when 'list'
@@ -257,3 +282,12 @@ mixin listText
 ## Turn it in
 
 Make sure the folder is named correctly. Push your work and submit your assignment.
+
+## Gravatar
+
+You can use use [gravatar](http://gravatar.com/) for the image on your home page. At the command prompt calculate the md5 hash of your [email](http://gravatar.com/emails/) for the gravatar you want to use. For instance, at the bash prompt type this:
+
+```bash
+echo -n 'charlie@elvenware.com'| md5sum
+b7b972e6d8e9d877abaee3f91b74b4a8  -
+bash
