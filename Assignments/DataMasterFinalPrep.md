@@ -33,3 +33,20 @@ var couchBulk = require('./CouchBulk')(router, dbName, setServer.serverUrl);
 ## Handle Errors
 
 We should now be able to display good error information, particularlly if we try to connect to the wrong server.
+
+![data-master-error](https://s3.amazonaws.com/bucket01.elvenware.com/images/datamaster-error.gif)
+
+## JsonToTable
+
+This is my fork of this project:
+
+
+```bash
+bower install elf-json-to-html-table --save
+```
+
+In main:
+
+```javascript
+'jsonToHtml': '/components/elf-json-to-table/json-to-table',
+```
