@@ -62,7 +62,7 @@ Put the code you want in your public directory. In other words, configure MakeHt
 {
   "calvert": {
     "base-dir": "/home/bcuser/",
-    "bootswatch": "cosmos",
+    "bootswatch": "cosmo",
     "site-dirs": [
       "Documents/AllTest",
       "Documents/AllSite"

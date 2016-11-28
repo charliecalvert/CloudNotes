@@ -30,7 +30,7 @@ Now that this framework is in place, all you need to do is implement objects lik
 - We support the [Open Closed Principle][ocp-wiki]: _**Modules, Classes and Functions should be open to extension by closed to modification.**_
   - To add new features to the program we simply add new objects and register them in findRoutes. We don't have to break existing code.
 - We support [loose coupling][lc-wiki]. No object is linked directly to another object. Instead, we use **requireJs** to load objects as needed. We can replace any of the objects at any time.
-- We support the [single-responsibility princeple][srp-wiki]. Our objects and modules all do one thing and have one reason to change.
+- We support the [single-responsibility principle][srp-wiki]. Our objects and modules all do one thing and have one reason to change.
 
 
 

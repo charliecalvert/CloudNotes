@@ -184,7 +184,7 @@ The following list is both a reminder of what to include  and a checklist to go 
 - Test your work to make sure that both **package.json** and **bower.json** are complete. For you web app I should be able to run **npm install** and **bower install** and then have everything just work.
 - A working install script for your android application.
 - A link to the Apache web site your created with your web application.
-- User can pick bootstrap them (cerulian, darkly, cosmos, etc)
+- User can pick bootstrap them (cerulian, darkly, cosmo, etc)
 - Links for web app and android app after you run walk lead to your apache site on EC2.
 - Your **elven-site.conf** file for upstart. Put it in the root of your final project.
 - Don't forget to tell me the name of the folder and branch that contains your final project.

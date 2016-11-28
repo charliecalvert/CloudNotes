@@ -3,7 +3,7 @@
 
 Goals:
 
-- Read in a JSON file called **FileList.json)
+- Read in a JSON file called **FileList.json**)
 - Use it as a menu for pulling up other JSON or Markdown documents
 - A Position Page with Google Maps view
 - A Login with Google page and Accounts view
@@ -34,7 +34,7 @@ And of course we should unit test everything as much as possible so we feel conf
 
 **NOTE**: *To fully understand this section you may need to read it once, then read the next section, called **requirements**, then come back and read this section again.*
 
-To do well on the final, some students will not have to complete all the sections. There are students of varying levels of experience in this course. Everyone is expected to complete certain core features. Others will have to meet differing requirements depending on their experience level. 
+To do well on the final, some students will not have to complete all the sections. There are students of varying levels of experience in this course. Everyone is expected to complete certain core features. Others will have to meet differing requirements depending on their experience level.
 
 I reserve the right to fix my own grading criteria while going through the finals. Nevertheless, I think giving a few general guidelines might be helpful. These guidelines will help students focus on realizable goals. Everyone is expected to complete at least part of the final if they want to get a passing grade. However, some students will probably only get confused if they try to complete some of the more difficult sections. They should focus instead on core, category 0, features. If they can complete them, then they should attempt other features.
 
@@ -219,7 +219,7 @@ Place a checkbox on the main page near the file list. The label for the checkbox
 
 - Display HTML from database
 
-If the checkbox is checked, and you click on a markdown file in the FileList, then the HTML for that markdown file should be pulled from the database and displayed in its own page. You can use **SetPick** and **GetPick** to store the name of the file to display in the HTML view page. You should have a div or similar control specified in your HtmlView.jade file that will host this html. 
+If the checkbox is checked, and you click on a markdown file in the FileList, then the HTML for that markdown file should be pulled from the database and displayed in its own page. You can use **SetPick** and **GetPick** to store the name of the file to display in the HTML view page. You should have a div or similar control specified in your HtmlView.jade file that will host this html.
 
 **NOTE**: *Because we are using **SetPick** and **GetPick** in multiple places, we will probably have to keep them in **routes/index.js**. This despite what I said in a previous assignment. If you tried to moved them to **Markdown.js**, you will probably want to move them back.*
 
@@ -475,8 +475,8 @@ html
 You can now delete the button that takes you to the home page as the navigator does the job for you. You will, however, find one more small problem: the top of your page disappears underneath the navigation bar. To fix that, you could edit **markdown.css** to add a little padding at the top of the body:
 
 ```
-body 
-{ 
+body
+{
 	background-color: White;
     font-family: sans-serif;
     padding-top: 50px;
@@ -487,7 +487,7 @@ body
 To spice up the table, you could entirely optionally add a few borders:
 
 ```
-td, th { 
+td, th {
     border: solid black 1px;    
     padding: 3px;
 }
@@ -549,7 +549,7 @@ html
     script(src="javascripts/require.js" data-main="javascripts/Main")
 
   body
-  
+
   block content
 ```
 
@@ -598,7 +598,7 @@ block content
           li
             a(href='UnitTests') Test
 ```
-       
+
 You can change the definition of navbar in each page depending on your needs. With this approach we have **bootstraplayout** only be concerned with loading the CSS, and leave it up to each page to decide exactly how you want the navigation bar to look.
 
 ![Bootstrap 01][bootstrapCss01]
@@ -625,11 +625,11 @@ The document descriptors have a number of details that we are supposed to displa
     "version": "v0.0.1",
     "keywords": "images, shapes",
     "license": "Creative Commons",
-``` 
+```
 
 The act of displaying this data poses two problems:
 
-- If the **FancyReaderBridge** is to know about the document descriptor, how will it gain that knowledge. The only objects with any know about these fields are the readers (JsonReader, etc) and display objects (DisplayAddress, etc). How can we get the information to the **FancyReaderBridge** from these remote outposts? 
+- If the **FancyReaderBridge** is to know about the document descriptor, how will it gain that knowledge. The only objects with any know about these fields are the readers (JsonReader, etc) and display objects (DisplayAddress, etc). How can we get the information to the **FancyReaderBridge** from these remote outposts?
 - The second problem is a more an aesthetic delimna. Is it wrong from the FancyReaderBridge to directly change the user interface?
 
 Let's begin with the first question. How do we get the information to the FancyReaderBridge? We've actually faced this problem before when we had to hook up button response methods to objects on the main page. We solved that problem with the Observer Pattern, with our TinyPubSub class. I think we should do that same thing here. In fact, we can use the same event. When our display object publish a message **pageRefresh** event, we can tack on the whole document descriptor record:
@@ -655,14 +655,14 @@ var displayData = function(event, data) {
 };
 ```
 
-So that solves our first problem: how to get data from the display object to the reader bridge. The key point is that we moved the data without ever disrupting the loose coupling in the application. The **FancyReaderBridge** and the **DisplayAddress** object still do not know one another in the Biblical sense, and yet they are able to communicate. 
+So that solves our first problem: how to get data from the display object to the reader bridge. The key point is that we moved the data without ever disrupting the loose coupling in the application. The **FancyReaderBridge** and the **DisplayAddress** object still do not know one another in the Biblical sense, and yet they are able to communicate.
 
 This leaves us with the second question: Is it okay for the **FancyReaderBridge** to directly modify the UI? There are two arguments here that hold weight with me, one from each side of the debate:
 
 - The FancyReaderBridge follows the decorator pattern. As such, it could be argued that it would be okay to modify the **bridge** pattern with non-bridge-like behavior.
 - If we let the **FancyReaderBridge** modify the UI, how is anyone trying to maintain the app ever going to think to look in **FancyReaderBridge.js** to solve a UI issue?
 
-I find the first argument mildly compeling, but the second one is, in my opinion, overwhelming. We have a **Display** directory, and in it are a series of display objects. These objects should, as much as possible, be responsible for handling our display. As a result, the code to update the UI with metadata from our Document Descriptors should be handled in a display object. 
+I find the first argument mildly compeling, but the second one is, in my opinion, overwhelming. We have a **Display** directory, and in it are a series of display objects. These objects should, as much as possible, be responsible for handling our display. As a result, the code to update the UI with metadata from our Document Descriptors should be handled in a display object.
 
 So we can create a simple **Display Object** and put it in the **Display** folder:
 
@@ -671,16 +671,16 @@ So we can create a simple **Display Object** and put it in the **Display** folde
  */
 
 define(function() {
-	
+
 	var DisplayMetaData = (function() {
-	
+
 		function DisplayMetaData() {
 		}
-		
+
 		DisplayMetaData.prototype.show = function(serverData) {
 		    // YOUR METADATA DISPLAY CODE HERE
 		};
-		
+
 		DisplayMetaData.prototype.publish = function(serverData) {
             $.publish('pageRefresh', {
                 message: "Refreshed Address",
@@ -690,13 +690,13 @@ define(function() {
                 }
             });
         };
-        
+
 		return DisplayMetaData;
-		
+
 	}());
-	
+
 	return DisplayMetaData;  // require
-	
+
 });
 
 It might make sense to have the display object create the DisplayMetaData object, but still let **FancyMetaData** make the decision as to whether or not to display it. You could do that like this:
@@ -748,7 +748,7 @@ require([ 'bootstrap', 'Elf', 'MarkdownExtra', 'Control', 'MarkShow', 'DisplayMa
 		'use strict';
 		console.log("Main called.");
 		prettyPrint();
-		
+
 		elf = elfInit; // We need something in the global space
 
 		$(document).ready(function() {
@@ -786,7 +786,7 @@ or this:
 We are doing all this work to make this one line which is now in **DisplayMap** work:
 
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=elf.position';
-    
+
 This is telling Google maps that the callback method that it can use to reach our code is called **elf.position**. Of course Google Maps can't see our private objects, it can only see global objects. So we create one global object, called **elf**, and we make sure that it has a property called **position** that points at our code. In effect, **elf.position** is the entry point, the **main** for our map object. That is the role it plays in our **MapExpress** example, so nothing really new is going on here. It's just that we have to do a little dance to make the **elf** object global so that Google maps can see it.
 
 Just to review. A key piece of code is this one:
@@ -796,9 +796,9 @@ Just to review. A key piece of code is this one:
 Do you see the **callback=elf.position** at the end of that URL? What we are doing is telling Google that once they have loaded their map for us, they need to call the elf.position method in our code in order to kick of our custom code:
 
 - They set up the map and provide the Map API, the Mapping Web Service
-- We call the method in the web service. 
+- We call the method in the web service.
 
-The quote unquote "problem" with our code is that we went way out of our way to make sure that we put nothing in the global name space. Our default code leaves 0 footprint. There are no global, public entry points into our code. Which is a very, very good thing -- unless someone like Google needs to call one of the methods of our code. 
+The quote unquote "problem" with our code is that we went way out of our way to make sure that we put nothing in the global name space. Our default code leaves 0 footprint. There are no global, public entry points into our code. Which is a very, very good thing -- unless someone like Google needs to call one of the methods of our code.
 
 So our goal is to find a way to put something in the global namespace, to intentionally break the rule that we have tried so hard to follow. (Remember, early in the class, I said that we are "allowed" to put one, and only one, variable in the global name space.) So I ask you to declare a variable called **elf** in the global namespace. Then we point that global variable at our elf object:
 
@@ -824,7 +824,7 @@ We are using the **MongoClient** object from the [mongodb][5] package.
 
 > var MongoClient = mongodb.MongoClient;
 
-If we dig into the [docs][6] a bit we see that there is an optional **upsert** parameter we passed to **update**. If we set this to true we can automatically turn an update into an insert if there is no existing record to update. We can also pass in a query parameters that specifies which record we want to update. 
+If we dig into the [docs][6] a bit we see that there is an optional **upsert** parameter we passed to **update**. If we set this to true we can automatically turn an update into an insert if there is no existing record to update. We can also pass in a query parameters that specifies which record we want to update.
 
 Here is the whole function, which you should use to overright the existing **QueryMongo.UpdateCollection** method:
 
@@ -836,7 +836,7 @@ Here is the whole function, which you should use to overright the existing **Que
 		getDatabase(function getCol(database) {
 			console.log("In the update callback");
 			var collection = database.collection(collectionName);
-			collection.update(objectToInsert.query, 
+			collection.update(objectToInsert.query,
 				objectToInsert.update,
 				{ upsert: true },
 				function(err, docs) {
@@ -887,7 +887,7 @@ var markdownData = {
 queryMongo.updateCollection(markdownData, handleSuccess);
 ```
 
-Right now I'm specifying all records of this type as having a **dataType** of **BridgeReader**. This field allows us to write a query that discovers all the records in the database that were inserted by our program using this technique. Right now my query to discover the record we want to update is simply to use the fileName as a unique string. 
+Right now I'm specifying all records of this type as having a **dataType** of **BridgeReader**. This field allows us to write a query that discovers all the records in the database that were inserted by our program using this technique. Right now my query to discover the record we want to update is simply to use the fileName as a unique string.
 
 Using the fileName as unique identifier is an idea that has numerous holes in it, but I just want to get this hint up here so I'm going with that for now. One possible solution to this issue is to associate a GUID with each record:
 
@@ -953,7 +953,7 @@ And in Control, we have to refactor the constructor to call this new method befo
 });
 ```
 
-    
+
 ##Upstart
 
 Some references:
@@ -964,7 +964,7 @@ Some references:
 Here is the line I use to start my app:
 
     exec /usr/bin/nodejs /home/charlie/bin/BridgeReader/bin/www >> /var/log/bridgeReader.log 2>&1
-    
+
 Don't forget to also change the home directory:
 
     script
@@ -979,7 +979,7 @@ First install the bearer-http
 The reference:
 
 - [Git Repo](https://github.com/jaredhanson/passport-http-bearer)
-    
+
 And here is the code for **routes/index.js** or some similar place such as **routes/Login.js**. Start near the top of the file by linking in Bearer Strategy:
 
 ```
@@ -1121,8 +1121,8 @@ The above code should trigger an exception, and cause your newly revamped except
 There are three parts:
 
 
-- Put the assignment in your respository in a folder called **Week12Final**. 
-- Leave your app running on Aws, preferrably with **upstart**. 
+- Put the assignment in your respository in a folder called **Week12Final**.
+- Leave your app running on Aws, preferrably with **upstart**.
 - On Google Drive provide screenshots and a brief description of your final in a shared folder called **Week12Final**.
 
 You must provide at least two screenshots, but four or five might be more reasonable. Show your app running on AWS or on your local machine. Describe the level of completeness of your application. Describe which features you completed and which you left undone. If you have known bugs, you can list them.

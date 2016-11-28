@@ -12,9 +12,13 @@ The DataMaster Final Prep helps you get ready for the final. Major goals include
   - Loose Coupling
   - Modules
   - Single Responsibility Principle
-  - Etc
+  - [The Open Closed Principle][ocp] and the [wiki][ocp-wiki]
+  - etc
 
 Do your work in a branch called **Week11**.
+
+[ocp-wiki]:https://en.wikipedia.org/wiki/Open/closed_principle
+[ocp]:http://www.oodesign.com/open-close-principle.html
 
 ## Updated Routes
 

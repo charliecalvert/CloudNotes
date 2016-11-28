@@ -11,7 +11,7 @@ Do your work in **Week10-ElvenImagePicker** in a branch called FinalPrep which s
 Allow the user to select from a drop down list (HTML SELECT control) of these styles:
 
 ```javascript
-var themes = ['cerulean', 'cosmos', 'cyborg',
+var themes = ['cerulean', 'cosmo', 'cyborg',
             'darkly', 'flatly', 'journal', 'lumen', 'sandstone', 'slate',
             'spacelab', 'superhero', 'united', 'yeti'];
 ```
