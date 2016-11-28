@@ -14,6 +14,8 @@ The DataMaster Final Prep helps you get ready for the final. Major goals include
   - Single Responsibility Principle
   - Etc
 
+Do your work in a branch called **Week11**.
+
 ## Updated Routes
 
 I'll put the files in JsObjects:
@@ -24,6 +26,86 @@ cp -v $ELF_TEMPLATES/Routes/* public/javascripts/route-provider/.
 ```
 
 This copies over updated, but backward compatible, copies of **routes.js** and **run-query.js**.
+
+It is crucial that you understand how these files work. The pith explanation of how to use them:
+
+- Add an anchor and HREF either to the menu or to some Jade file.
+- In control, add a **.when** call that captures the URL in your HREF.
+  - Add a templateURL if there is a HTML to be displayed
+  - Specify which **controller** contains the JavaScript that works with the HTML
+  - Implement the controller.
+
+Here is a sample **.when** block
+
+```javascript
+.when('/deleteDb', {
+    templateUrl: '/display-default',
+    controller: queryController,
+    resolve: {
+        result: queryController.delete
+    }
+}).when('/createDb', { ... })
+```
+
+Here is a sample **controller**:
+
+```javascript
+define(['runQuery', 'utility', 'jsonToHtml'], function(runQuery, utility, jsonToHtml) {
+    'use strict';
+
+    var nameController = function(query, data) {
+        utility.clearAll();
+        if (query.requestFailed) {
+            utility.failed(query.requestFailed);
+            return;
+        }
+
+        var debug = $('#debug');
+        var docs = $('#docs');
+        var displayData = JSON.stringify(data, null, 5);
+        if (query === '/databaseName') {
+            debug.html(displayData);
+        } else {
+            docs.html('allDatabases: ' + displayData);
+            var jsonHtmlTable = jsonToHtml(JSON.parse(displayData), 'jsonTable', 'table table-bordered table-striped', 'Download');
+            $('#myTable').html(jsonHtmlTable);
+
+        }
+    };
+
+    nameController.databaseName = function($q) {
+        return runQuery('/databaseName', $q);
+    };
+
+    nameController.allDbs = function($q) {
+        return runQuery('/listDb', $q);
+    };
+
+    return nameController;
+});
+```
+
+That's the rhythm:
+
+- Add menu item
+- HTML: Add a **templateUrl** pointing toward a pug file that generates HTML
+- JavaScript: Add a controller
+
+## The templateUrl
+
+The HTML you create in your pug file will be loaded into index.jade in the section called:
+
+```jade
+#elfContent
+```
+
+In other words, you have to be sure that your **index.jade/pug** file contains a DIV with the ID **#elfContent**. If it is there, the routing code will insert your HTML into that DIV. See these lines in **route.js** to understand exactly what is happening:
+
+```javascript
+$('#elfContent').load(control.templateUrl, function(result) {
+  that.resolveRequest(control)
+});
+```
 
 ## SetServer
 
@@ -99,3 +181,14 @@ Some background:
 ![Project](https://s3.amazonaws.com/bucket01.elvenware.com/images/data-master-project.png)
 
 **Figure**: _Project_
+
+## Turn it in
+
+Run **grunt check** one last time, push your work. Tell me the branch and project name that you want me to grade. I'm expecting:
+
+- Branch: Week11
+- Project: DataMaster
+
+## Extra Credit
+
+Use pug instead of Jade.
