@@ -248,6 +248,26 @@ $('#myTable').html(jsonHtmlTable);
 
 **Figure**: _Project_
 
+## Default Route for Jade/Pug Files {#default-route}
+
+Near the bottom of **routes/index.js**, create a default route to handle requests for Jade files:
+
+```javascript
+router.get('/:id', function(request, response) {
+    'use strict';
+    console.log('Requested: ', request.params.id);
+    response.render(request.params.id, {
+        title: request.params.id
+    });
+});
+```
+
+This should be last route in the file. It says, in effect: _if none of the other routes in this file have matched the request, then assume this is a request to render a jade/pug file. For instance, if the user asks for /foo, then the code will attempt to render as HTML the file in the views directory called **foo.jade**._
+
+Additional details are in the [NodeJs chapter on Elvenware][node-params]:
+
+[node-params]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#node-parameters
+
 ## Turn it in
 
 Run **grunt check** one last time, push your work. Tell me the branch and project name that you want me to grade. I'm expecting:
