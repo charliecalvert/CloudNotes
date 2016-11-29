@@ -168,13 +168,16 @@ Where the **utility.failed** method is part of an object that looks like this:
 
 ```javascript
 define(function() {
+    'use strict';
 
     var utils = {
 
         clearAll: function() {
+
             function clear(selector) {
                 $(selector).empty();
             }
+
             clear('#docs');
             clear('#debug');
             clear('#myTable');
@@ -256,7 +259,8 @@ Run **grunt check** one last time, push your work. Tell me the branch and projec
 
 We need to be sure that not all anchors end up sending code to the series of **.when** methods in **control.js**. Here is the code that does the sorting out. Please note that I'm ensuring that all the anchors that I want routed to **control.js** have:
 
-- a DIV with the class
+- a DIV or some other HTML element with the class **.databaseOptions**
+  - In particular, I add that class to the **navigationBar** in the menu to meet this requirement.
 - a UL
 - an LI
 - and an anchor.
