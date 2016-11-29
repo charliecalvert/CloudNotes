@@ -19,13 +19,20 @@ firebase --version
 3.2.0
 ```
 
-Make sure you have the latest elven-help.js:
+Make sure you have the latest elven-help.js. First run **git pull** on JsObjects, then look in the Firebase directory like this:
 
   ls $ELF_TEMPLATES/Firebase
 
 You might want to meld it (merge) with your file so you can preserve the configuration data at the top of the file.
 
-**MakeHtml** has also been updated. This is a minor change to get the latest versions of Bootstrap and Bootswatch. I added a new theme called **readable** and corrected a type, which called the **cosmo** theme **cosmos**. Check your config file, and if you are using the **cosmos** theme, switch it to **cosmo**. Here is a list of available themes:
+**MakeHtml** has also been updated. This is a minor change to get the latest versions of Bootstrap and Bootswatch. Go here, and run **renewMakeHtml**
+
+```bash
+cd ~/Git/JsObjects/JavaScript/NodeCode/MakeHtml
+./renewMakeHtml
+```
+
+I added a new theme called **readable** and corrected a type, which called the **cosmo** theme **cosmos**. Check your config file, and if you are using the **cosmos** theme, switch it to **cosmo**. Here is a list of available themes:
 
 ```javascript
 var bootswatchUrls = {
@@ -92,6 +99,38 @@ We want the user to be able to enter the name of a new president. When a button 
 </div>
 ```
 
+Or if you like, use the bootstrap panel, and you can avoid the **majorBlock** css issue:
+
+```html
+<div class="panel panel-default">
+  <div class="panel-heading">Database Input</div>
+  <div class="panel-body">
+      <div>
+        <label for="elfFirstName">First Name</label>
+        <input type="text" id="elfFirstName" name="elfFirstFirst">
+      </div>
+      <div>
+        <label for="elfLastName">Last Name</label>
+        <input type="text" id="elfLastName" name="elfLastName">
+      </div>    
+  </div>
+</div>
+```
+
+## css
+
+Add this CSS to the bottom of **css/style.css**
+
+```css
+div .majorBlock {
+    border: solid black thin;
+    background-color: #FFFFFC;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 5px;
+}
+```
+
 ## President Buttons
 
 Each button defined in this section is automatically paired with a method in **elven-help.js**.  When the user clicks a button, it should initiate the action described in the button's caption. For instance, if you enter in the first and last names for a president in the appropriate controls, then push the **Insert New President** button, a new president should be added to the database. For now, the new president will not be visible on the screen in the president's list until you press the **Get Presidents** button.
@@ -101,6 +140,12 @@ Here is the code to define the input controls where you can enter a first and la
 ```html
 <button id="elfPushPresident" class="btn btn-success">Insert New President</button>
 <button id="elfGetPresidents" class="btn btn-success">Get Presidents</button>
+```
+
+And then under the buttons, you need a place to display the presidents:
+
+```html
+<ul id="presidentsList"></ul>
 ```
 
 Here are two more buttons. The first button will insert the data from JSON into the **presidents** database. This can be a quick way to import a known set of data, which is much faster than asking the user to enter the data over and over. For now, the Update President record doesn't do anything very interesting.

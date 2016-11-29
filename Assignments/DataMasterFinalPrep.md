@@ -92,8 +92,17 @@ define(['runQuery', 'utility', 'jsonToHtml'], function(runQuery, utility, jsonTo
 That's the rhythm:
 
 - Add menu item
-- HTML: Add a **templateUrl** pointing toward a pug file that generates HTML
-- JavaScript: Add a controller
+- Add a three part object to **control.js** in the long series of **.when** statements.
+  - HTML: Add a **templateUrl** pointing toward a pug file that generates HTML
+  - Controller: Specify control
+  - And specify any initialization methods in the resolve part.
+- The read code you need to write:
+  - The Jade that defines your templateUrl
+  - The JavaScript for your controller
+
+## The menu
+
+The menu item requires that you copy in **$ELF_TEMPLATES/JadeMixins/mixin-nav.pug/jade**.
 
 ## The templateUrl
 
@@ -144,7 +153,49 @@ var couchBulk = require('./CouchBulk')(router, dbName, setServer.serverUrl);
 
 We should now be able to display good error information, particularlly if we try to connect to the wrong server.
 
+A key point to grasp is that **run-query.js**, which will be called automatically, always sends errors to the controller in the query, the first parameter, as **requestFailed**.
+
+So you can write code that looks like this:
+
+```javascript
+if (query.requestFailed) {
+    utility.failed(query.requestFailed);
+    return;
+}
+```
+
+Where the **utility.failed** method is part of an object that looks like this:
+
+```javascript
+define(function() {
+
+    var utils = {
+
+        clearAll: function() {
+            function clear(selector) {
+                $(selector).empty();
+            }
+            clear('#docs');
+            clear('#debug');
+            clear('#myTable');
+        },
+
+        failed: function(requestFailed) {
+            var debug = $('#debug');
+            debug.html(JSON.stringify(requestFailed, null, 4));
+            var docs = $('#docs');
+            docs.html(requestFailed.description);
+        }
+    };
+
+    return utils;
+});
+```
+
+Save this file as **public/javascripts/utility.js**. Don't forget to load it in **main.js.**
+
 ![data-master-error](https://s3.amazonaws.com/bucket01.elvenware.com/images/datamaster-error.gif)
+
 
 ## JsonToTable
 
@@ -166,6 +217,14 @@ Some background:
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/ElfLogBower.html>
 
 ## Display Table
+
+Here is how to call jsonToHtml:
+
+```javascript`
+var jsonHtmlTable = jsonToHtml(editedGameDocs, 'jsonTable', 'table table-bordered table-striped', 'Download');
+
+$('#myTable').html(jsonHtmlTable);
+```
 
 ![Bulk](https://s3.amazonaws.com/bucket01.elvenware.com/images/data-master-bulk.png)
 
@@ -192,6 +251,31 @@ Run **grunt check** one last time, push your work. Tell me the branch and projec
 
 - Branch: Week11
 - Project: DataMaster
+
+## When methods {#when-methods}
+
+We need to be sure that not all anchors end up sending code to the series of **.when** methods in **control.js**. Here is the code that does the sorting out. Please note that I'm ensuring that all the anchors that I want routed to **control.js** have:
+
+- a DIV with the class
+- a UL
+- an LI
+- and an anchor.
+
+They have to appear in that order.
+
+```javascript
+var handleClicks = function(event) {
+    event.preventDefault();
+    route.setRoute(event.target.pathname);
+    control(route);
+};
+$('#navigationbar').addClass('databaseOptions');
+$('#main-content').load('/menu-links', function() {
+    $('.databaseOptions ul li a').click(function(event) {
+        handleClicks(event);
+    });
+});
+```
 
 ## Extra Credit
 
