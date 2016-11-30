@@ -2,8 +2,8 @@
 
 There are two ways to start projects on Ubuntu based distros:
 
-- upstart
-- systemd
+- upstart (15.04)
+- systemd (15.10 or greater)
 
 If you are using ubuntu 15.10 or later, use **systemd**. That means, if you are using 16.04, you should use **systemd**. If you are using 15.04 or earlier, then you should use **upstart**.
 
@@ -37,11 +37,120 @@ lsb_release -a
 
 Probably either command would do the job, but I run them both for completeness.
 
+## systemd
+
+Upstart is being replaced by **systemd**. This caused a huge uproar in the Linux community, but the transition is more or less complete at this stage (Nov, 2016). Fortunately, if you understand Upstart it is not hard to switch to **systemd**. You should switch to **systemd** if running on Ubuntu 15.10 or later, otherwise, stick with **upstart**.
+
+If you are uncertain, here is how to find out which version of ubuntu you are running:
+
+```bash
+cat /etc/lsb-release
+$ELF_UTILS/SetupLinuxBox/UbuntuReleaseNumber.sh
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=15.10
+DISTRIB_CODENAME=wily
+DISTRIB_DESCRIPTION="Ubuntu 15.10"
+```
+
+A sample **systemd** start up script (aka service file) called **elven-site.service**:
+
+```
+[Service]
+ExecStart=/usr/bin/node /home/bcuser/bin/elven-site/bin/www
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=elven-site
+User=bcuser
+Group=bcuser
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
+```
+
+When examining the above, check carefully, looking for changes that you will need to make:
+
+- ExecStart path to your **bin/www** file
+- SyslogIdentifier
+- User
+- Group
+
+For instance, the **User** and **Group** would be **ubuntu** on EC2 and **bcuser** on most copies of Pristine Lubuntu.
+
+Deploy the service file:
+
+```
+sudo cp elven-site.service /etc/systemd/system/.
+```
+
+Start the service:
+
+```
+systemctl enable elven-site
+systemctl start elven-site
+```
+
+Get the status:
+
+```
+systemctl status elven-site
+```
+
+To reload after a change:
+
+```
+systemctl daemon-reload
+```
+
+Sample output from status request when all is good:
+
+```bash
+$ systemctl status elven-site
+● elven-site.service
+   Loaded: loaded (/etc/systemd/system/elven-site.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2015-12-03 08:59:01 PST; 4s ago
+ Main PID: 4102 (node)
+   CGroup: /system.slice/elven-site.service
+           └─4102 /usr/bin/node /home/charlie/bin/elven-site/bin/www
+
+Dec 03 08:59:01 forestpath systemd[1]: Started elven-site.service.
+Dec 03 08:59:02 forestpath node-sample[4102]: In bin/www the environment is production
+```
+
+To see logs and debug information, try this:
+
+```
+journalctl -u elven-site
+```
+
+To completely remove a service from a system, I believe we should first stop it, and then disable it:
+
+```
+systemctl stop elven-site
+systemctl disable elven-site
+```
+
+I'm not certain about the disable command at this time. I think it tells systemd not to load at boot, but allows us to leave the file in **/etc/systemd/system**. Not sure though.
+
+The first and second links below will get you up to speed fairly quickly.
+
+- [Sysdemd for Node Developers][sysd-node]
+- [Systemd get started](http://patrakov.blogspot.com/2011/01/writing-systemd-service-files.html)
+- [SystemD for Upstart Users](https://wiki.ubuntu.com/SystemdForUpstartUsers)
+
+Other:
+
+- [systemd on Redhat][sysdrh]
+
+[sysd-node]:https://www.digitalocean.com/community/tutorials/how-to-deploy-node-js-applications-using-systemd-and-nginx
+[sysdrh]:https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html
+
 ## Upstart
 
-Upstart can be used to keep your program running after you close
-your shell and to ensure that it restarts automatically when you
-reboot the system. Take a momement to learn about upstart:
+**NOTE**: _Upstart is no longer used in most circumstances. As a result, you probably want to skip this section. Use **systemd** instjead._
+
+Upstart can be used to keep your program running after you close your shell and to ensure that it restarts automatically when you reboot the system. Take a momement to learn about upstart:
 
 - [UpStart Example in JsObjects][express-send]
 - [UpStart home page](http://upstart.ubuntu.com/index.html)
@@ -125,113 +234,6 @@ you would do this:
 
     127.0.0.1:30025/
 
-## systemd
-
-Upstart is being replaced by **systemd**. This caused a huge uproar in the Linux community, but it is happening. Fortunately, if you understand Upstart it is not hard to switch to **systemd**. You should switch to **systemd** if running on Ubuntu 15.10 or later, otherwise, stick with **upstart**.
-
-```bash
-cat /etc/lsb-release
-$ELF_UTILS/SetupLinuxBox/UbuntuReleaseNumber.sh
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=15.10
-DISTRIB_CODENAME=wily
-DISTRIB_DESCRIPTION="Ubuntu 15.10"
-```
-
-A sample **systemd** start up script (aka service file) called **elven-site.service**:
-
-```
-[Service]
-ExecStart=/usr/bin/node /home/charlie/bin/elven-site/bin/www
-Restart=always
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=elven-site
-User=charlie
-Group=charlie
-Environment=NODE_ENV=production
-
-[Install]
-WantedBy=multi-user.target
-```
-
-When examining the above, check carefully, looking for changes that you will need to make:
-
-- ExecStart path to your **bin/www** file
-- SyslogIdentifier
-- User
-- Group
-
-For instance, the **User** and **Group** would be **ubuntu** on EC2.
-
-Deploy the service file:
-
-```
-sudo cp elven-site.service /etc/systemd/system/.
-```
-
-Start the service:
-
-```
-systemctl enable elven-site
-systemctl start elven-site
-```
-
-Get the status:
-
-```
-systemctl status elven-site
-```
-
-To reload after a change:
-
-```
-systemctl daemon-reload
-```
-
-Sample output from status request when all is good:
-
-```bash
-$ systemctl status elven-site
-● elven-site.service
-   Loaded: loaded (/etc/systemd/system/elven-site.service; enabled; vendor preset: enabled)
-   Active: active (running) since Thu 2015-12-03 08:59:01 PST; 4s ago
- Main PID: 4102 (node)
-   CGroup: /system.slice/elven-site.service
-           └─4102 /usr/bin/node /home/charlie/bin/elven-site/bin/www
-
-Dec 03 08:59:01 forestpath systemd[1]: Started elven-site.service.
-Dec 03 08:59:02 forestpath node-sample[4102]: In bin/www the environment is production
-```
-
-To see logs and debug information, try this:
-
-```
-journalctl -u elven-site
-```
-
-To completely remove a service from a system, I believe we shoud first stop it, and then disable it:
-
-```
-systemctl stop elven-site
-systemctl disable elven-site
-```
-
-I'm not certain about the disable command at this time. I think it tells systemd not to load at boot, but allows us to leave the file in **/etc/systemd/system**. Not sure though.
-
-The first and second links below will get you up to speed fairly quickly.
-
-- [Sysdemd for Node Developers][sysd-node]
-- [Systemd get started](http://patrakov.blogspot.com/2011/01/writing-systemd-service-files.html)
-- [SystemD for Upstart Users](https://wiki.ubuntu.com/SystemdForUpstartUsers)
-
-Other:
-
-- [systemd on Redhat][sysdrh]
-
-[sysd-node]:https://www.digitalocean.com/community/tutorials/how-to-deploy-node-js-applications-using-systemd-and-nginx
-[sysdrh]:https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html
-
 ## Elastic IP
 
 Be sure that you create, properly associate and submit an **Elastic IP** for your instance running on EC2. In order to confirm that your project is running on EC2, I must be able to reach it, and I can't do that if you only have a **Public IP**. The **Public IP** addresses automatically associated with your instance on EC2 is not necessarily permanent. To create a permenant IP address, you need an **Elastic IP**, as explained [here][elasticip].
@@ -246,7 +248,7 @@ Submit the **Elastic IP** address of your instance running on EC2. I'm not check
 
 ## Hints
 
-The below is aimed at updstart users, but it should be obvious how it applies to those who might be using **systemd**. Here are some additional nodes:
+The below is aimed at upstart users, but it should be obvious how it applies to those who might be using **systemd**. Here are some additional nodes:
 
 - Create a **elven-site.conf** in your final folder.
 	- Look at the **JsObjects/JavaScript/NodeCode/ExpressSend** project for hints

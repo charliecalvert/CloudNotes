@@ -126,37 +126,28 @@ Create two files in **public/javascripts**:
 Put a button on each page.
 
 - First button:
-  - text: Main
-	- id: mainButton
+  - text: Help
+	- id: helpButton
 - Second button
   - text: About
 	- id: aboutButton
 
 When the user clicks on either button, place text on the appropriate page in an HTML paragraph element.
 
-Put the button handler for the main page in **Control.js**.
+Put the button handler for the help button in **Control.js**.
 
 Put the button handler for the about in **About.js**
-
-Put document ready in **Control.js.** Use the module pattern for each page:
-
-```javascript
-var = Main = (function() {
-   function Main() {
-	// Code to initialize button handler (click) goes here.
-   }
-
-   return Main;
-})();
-```
 
 Details are on [Elvenware](http://elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html).
 
 If you want to put a button in a form and not have it act like a submit button, then give it a type of button:
 
 ```jade
-
+button.btn.btn-default#help(type="button") Help
 ```
+
+![About Button](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-page-mixin-about.png)
+
 
 ## Radio Mixins
 
