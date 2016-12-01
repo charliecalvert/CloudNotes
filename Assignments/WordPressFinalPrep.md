@@ -21,7 +21,11 @@ Flip back and forth between the two as you work. Or find some other style of wor
 
 ## Picking a Theme
 
-There are many themes. The one's that are maintained by Wordpress are the most commonly used. These have names based on the year of release:
+There are many themes. Find them here:
+
+- wp-admin | Appearance | Themes
+
+The one's that are maintained by Wordpress are the most commonly used. These have names based on the year of release:
 
 - Twenty Fourteen
 - Twenty Fifteen
@@ -36,6 +40,8 @@ The key point to grasp is that this site is aimed at bloggers. You can do a lot 
 The menus on Twenty Sixteen default to the top right. This means that if you want to show multiple items, you should create a dropdown.
 
 Choose **Appearance | Menus**.
+
+First make sure you have created at least one menu. Type in a **menu name** and then press the **Save/Add Menu** button.
 
 On the left you can see:
 

@@ -31,3 +31,19 @@ I'll be expecting your final code to be in your repository, on the **master** br
 You can tell me about other versions of your code on other branches that may be more advanced, but buggier. Remember, however, when looking at your final code, I'm looking for bug free programs. In this final, at least, fewer features and fewer bugs is better than more features and more bugs. But the more bug free features you can create the better.
 
 **NOTE**: _I'm not looking for release quality software. I won't be trying to break your program. When I say bug free, I mean that I can choose a menu item or hyperlinker, be taken to a feature, and have it work correctly at least the first time I select it._
+
+## Hint
+
+Set up CouchDb
+
+Run the **CouchDb** script in **~/Git/JsObjects/Utilities/NodeInstall**
+
+Then edit the **/etc/couchdb/local.ini** file:
+
+  sudo nano /etc/couchdb/local.ini
+
+Set the **bindaddress** to **0.0.0.0**. In the **local.ini** file, a semi-colon is a comment, so you will need to delete the comment.
+
+Be sure to see the details here which describe restarting couchdb:
+
+- [CouchDb on Elvenware](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html#couchdb-linux-install)

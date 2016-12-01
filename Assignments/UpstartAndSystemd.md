@@ -37,6 +37,18 @@ lsb_release -a
 
 Probably either command would do the job, but I run them both for completeness.
 
+## Symbolic Link
+
+You are also going to need to create a symbolic link to your program in the **~/bin** directory. Something like this. First, be sure you have a bin directory:
+
+```bash
+mkdir ~/bin
+```
+
+```bash
+ln -s ~/Git/isit320-calvert-2016/Week04-ThreeFloor ~/bin/three-floor
+```
+
 ## systemd
 
 Upstart is being replaced by **systemd**. This caused a huge uproar in the Linux community, but the transition is more or less complete at this stage (Nov, 2016). Fortunately, if you understand Upstart it is not hard to switch to **systemd**. You should switch to **systemd** if running on Ubuntu 15.10 or later, otherwise, stick with **upstart**.
@@ -87,8 +99,8 @@ sudo cp elven-site.service /etc/systemd/system/.
 Start the service:
 
 ```
-systemctl enable elven-site
-systemctl start elven-site
+sudo systemctl enable elven-site
+sudo systemctl start elven-site
 ```
 
 Get the status:
