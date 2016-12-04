@@ -244,7 +244,9 @@ Be sure that you create, properly associate and submit an **Elastic IP** for you
 
 ## Turn it in
 
-Submit the **Elastic IP** address of your instance running on EC2. I'm not checking to see if the program is working correctly, only that it is running at all. Also, add your **elven-site.conf** and/or **elven-site.service** file to your **ElvenSite** project.
+Submit the **Elastic IP** or **Public DNS** address of your instance running on EC2.
+
+I'm not checking to see if the program is working correctly, only that it is running at all. I don't really care, for this assignment, whether I find **elven-site**, **three-floor** or your final running on port 30025 of your EC2 instance. Just show me that you can get something running via **systemd** or **upstart**.  Also, add your config files, such as **elven-site.conf** and/or **elven-site.service** file to the appropriate project directory in your repository.
 
 ## Hints
 

@@ -268,6 +268,16 @@ Additional details are in the [NodeJs chapter on Elvenware][node-params]:
 
 [node-params]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#node-parameters
 
+## Login
+
+Google, and I believe also Twitter, won't accept an IP address for your auth callback Url. You should instead use your EC2 **Public DNS**.
+
+On the EC2 console, on the **Instances** page, you will see that a Public DNS is automatically assigned to your app. It will be something like:
+
+  ec2-XX-XXX-XXX-XX.us-west-2.compute.amazonaws.com
+
+This should resolve to your elastic IP and should work fine for both Google and Twitter callback addresses in their respective consoles. I have tested it only for Google, but it did work fine for me there. You will have to edit your **routes/google-auth.js** file to make this work.
+
 ## Turn it in
 
 Run **grunt check** one last time, push your work. Tell me the branch and project name that you want me to grade. I'm expecting:

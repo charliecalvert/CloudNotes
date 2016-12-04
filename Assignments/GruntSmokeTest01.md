@@ -179,3 +179,19 @@ git mv check Week01-BasicTypeExpress/ Week02-BasicTypesExpress
 Then push your work and I will be able to see the new name for your folder.
 
 **NOTE**: _I care that your folders are named correctly because I use scripts to help me grade your homework. These scripts won't work correctly if your folders are not named correctly._
+
+## Exclude Files {#exclude}
+
+If there are files you don't want to check, such as **three.js**, then exclude it in **.jscsrc**
+
+```javascript
+"excludeFiles": ["**/node_modules/**", "**/components/**", "**/bower_components/**", "**/three.js", "**/pointer-lock-controls.js"],
+```
+
+Also, exclude files from JsHint by editing **Gruntfile.js**:
+
+```javascript
+ignores: [
+  '**/node_modules/**', '**/components/**', '**/three.js', '**/pointer-lock-controls.js'
+],
+```

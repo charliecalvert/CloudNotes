@@ -129,8 +129,4 @@ I think some kinds of apps need to be reviewed, but just using the Login API doe
 
 We are working in the **Week08-Passport** folder in your repository. Place your work in that folder, if it is not there already. Run **grunt check**. Submit your assignment.
 
-
-
-
-
 [1]: http://nodejs.org/api/process.html#process_process_nexttick_callback

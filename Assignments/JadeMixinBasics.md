@@ -1,6 +1,6 @@
 # Jade Mixin Basics
 
-The goal of this assignment is to learn how to use Jade mixins. In particular, we will see how to use mixins to quickly and easily assemble an interface for an application.
+The goal of this assignment is to learn how to use Jade [mixins](https://pugjs.org/language/mixins.html). In particular, we will see how to use mixins to quickly and easily assemble an interface for an application.
 
 The assignment also reviews creating forms and retrieving data from forms with jQuery.
 
@@ -81,6 +81,7 @@ block append content
 
     .container
         h1 #{pageTitle}
+        
         p You are in the <strong>#{programTitle}</strong> program. Select some controls and press the Go button.
 
         +elfFormPanel("Main Form")#target
