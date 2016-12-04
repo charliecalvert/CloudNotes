@@ -2,6 +2,31 @@
 
 The goal of this lesson is to begin to use the Firebase database.
 
+![Picture showing Firebase database at work](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-data-lotus.png)
+
+## Goals
+
+Our basic rhythm when working on this app is as follows. At first we need to get set up:
+
+- Edit files in **AllTest**
+  - Confirm that **index-firebase.md** and **start.md** are correct.
+- Make sure you have set up the four buttons shown in the image above correctly in **start.md**
+  - **Push President** and **Get Presidents** buttons
+  - **Post Input** and **Get All Qux Data** buttons
+- Make sure the **MakeHtml** config file will copy from AllTest to your **public** firebase directory.
+- Run a script with a name like **run-firebase** that:
+  - Runs **MakeHtml**
+  - And copies or moves **index-firebase.html** to **index.html**
+- Confirm it works by loading site in browser
+
+Once you have your computer set up correctly, then you should only need three steps:
+
+1. Edit files in **AllTest**
+2. Run script that:
+  - Runs **MakeHtml**
+  - Copies **index-firebase.html** to **index.html**
+3. Confirm it works by refreshing page in browser
+
 ## Get Started
 
 Go to the Firebase console:
@@ -15,206 +40,14 @@ Turn on Google Authentication, per the instructions from the previous assignment
 
 ## JavaScript
 
-Put the following code in **elven-help.js**. Delete everything that we put in **elven-help.js** for the previous assignment. That is all the code from document.ready on up. Leave document.ready, but delete all the code above it. This is the code that we put in for the previous assignment. After it is deleted, replace it with the following code:
+Put the following code in **elven-help.js**. Delete everything that we put in **elven-help.js** for the previous assignment. That is all the code from document.ready on up. Leave document.ready, but delete all the code above it. This is the code that we put in for the previous assignment. After it is deleted, replace it with the code found here:
 
-```javascript
-/************************************
- * Setup
-************************************/
+- [Elven-Help on JsObjects Raw][elven-help-raw]
+- [Elven-Help on JsObjects Syntax Highlight][elven-help-syntax]
 
-function elfFireConfig01() {
-    var config = {
-      apiKey: "YOUR KEY",
-      authDomain: "YOUR DOMAIN",
-      databaseURL: "YOUR URL",
-      storageBucket: "YOUR BUCKET",
-      messagingSenderId: "YOUR ID"
-    };
-    firebase.initializeApp(config);
-}
 
-// We are not using elfFireConfig02 at this time.
-function elfFireConfig02() {
-    var config = {
-      apiKey: "YOUR KEY",
-      authDomain: "YOUR DOMAIN",
-      databaseURL: "YOUR URL",
-      storageBucket: "YOUR BUCKET",
-      messagingSenderId: "YOUR ID"
-    };
-    firebase.initializeApp(config);
-}
-
-function elfFireStart() {
-    elfFireConfig01();
-    $('#elfDatabasePush').click(elfFireDataPush);
-    $('#elfDatabaseGet').click(elfFireDataGet);
-    $('#elfDatabaseGetAllQux').click(elfFireDatabaseGetAllQux);
-    $('#elfGetCurrentUser').click(elfFireGetCurrentUser);
-    $('#sign-in').click(elfFireSignOut);
-    $('#elfInput').click(elfFireDynamicPush);
-
-    elfFireDynamicData();
-}
-
-/************************************
- * Users
- ************************************/
-
-function elfFireGetCurrentUser() {
-    var user = firebase.auth().currentUser;
-    var userName;
-    var userEmail;
-    var userPhotoUrl;
-    var userId;
-
-    if (user != null) {
-        userName = user.displayName;
-        userEmail = user.email;
-        userPhotoUrl = user.photoURL;
-        userId = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getToken() instead.
-    }
-
-    $('#userName').html(userName);
-    $('#userEmail').html(userEmail);
-    $('#userPhotoUrl').html(userPhotoUrl);
-    $('#userId').html(userId);
-    $('#userImg').attr('src', userPhotoUrl);
-}
-
-/************************************
- * Database
- ************************************/
-
-var elfOldInput = [];
-
-function elfFireDataGet() {
-    return firebase.database().ref('/bar/foo').once('value').then(function(snapshot) {
-        var userName = snapshot.val();
-        console.log(userName);
-    });
-}
-
-function elfFireDatabaseGetAllQux() {
-    return firebase.database().ref('/bar/qux').once('value').then(function(snapshot) {
-        var userName = snapshot.val();
-        console.log(userName);
-    });
-}
-
-function elfFireDynamicData() {
-    var list = $('#userInputList');
-    var starCountRef = firebase.database().ref('bar/qux');
-    starCountRef.on('value', function(snapshot) {
-      var userVal = snapshot.val()
-      console.log(userVal);
-      if (userVal) {
-        list.append('<li>' + userVal.userInput + '</li>');
-        elfOldInput = userVal.oldInput;
-      }
-    });
-}
-
-function elfFireDynamicPush() {
-
-    function writeUserData() {
-        var userInput = $('#userInput').val();
-        if (userInput === '') {
-            userInput = 'No input from user.';
-        }
-
-        if (!Array.isArray(elfOldInput)) {
-            elfOldInput = [];
-        }
-        elfOldInput.push(userInput);
-        firebase.database().ref('bar/qux').set({
-            userInput: userInput,
-            oldInput: elfOldInput
-        });
-    }
-
-    writeUserData();    
-}
-
-function elfFireDataPush() {
-
-    function writeUserData(userId, name, email, imageUrl) {
-        firebase.database().ref('bar/foo').set({
-            foo: 'foobar',
-        });
-    }
-
-    writeUserData();
-}
-
-/************************************
- * Authentication (Sign-In)
- ************************************/
-
-function elfFireSignOut() {
-    firebase.auth().signOut();
-    window.location.href = '/';
-}
-
-function elfFireConfig() {
-    // FirebaseUI config.
-    var uiConfig = {
-        'signInSuccessUrl': 'start.html',
-        'signInOptions': [
-            // Leave the lines as is for the providers you want to offer your users.
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-            //firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        'tosUrl': '<your-tos-url>',
-    };
-
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
-
-}
-
-function elfFireInitPage() {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            user.getToken().then(function(accessToken) {
-                document.getElementById('sign-in-status').textContent = 'Signed in';
-                document.getElementById('sign-in').textContent = 'Sign out';
-                document.getElementById('account-details').textContent = JSON.stringify({
-                    displayName: displayName,
-                    email: email,
-                    emailVerified: emailVerified,
-                    photoURL: photoURL,
-                    uid: uid,
-                    accessToken: accessToken,
-                    providerData: providerData
-                }, null, '  ');
-            });
-        } else {
-            // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
-        }
-    }, function(error) {
-        console.log(error);
-    });
-};
-```
+[elven-help-raw]: https://raw.githubusercontent.com/charliecalvert/JsObjects/master/Utilities/Templates/Firebase/elven-help.js
+[elven-help-syntax]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/Firebase/elven-help.js
 
 ## Interface
 

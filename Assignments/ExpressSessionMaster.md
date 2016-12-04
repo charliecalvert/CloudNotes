@@ -56,10 +56,23 @@ cd views/
 cd ..
 ```
 
+## Facebook ClientId {#facebook-client-id}
 
-Create a script which you can source in order to load the FAMake sure you have facebook CLIENT_ID loaded:
+Create a script called **setClientId** which you can source in order to load FACEBOOK_CLIENT_ID. The contents of **setClientID** should look a bit like this:
 
+```bash
+export FACEBOOK_CLIENT_ID=<YOUR_CLIENT_ID>
+export FACEBOOK_CLIENT_SECRET=<YOUR_CLIENT_SECRET>
+```
+
+To use it: **source setClientId**.
+
+Check that it worked:
+
+```bash
 echo $FACEBOOK_CLIENT_ID
+echo $FACEBOOK_CLIENT_SECRET
+```
 
 ## Passport Generic Code
 

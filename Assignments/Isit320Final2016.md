@@ -236,3 +236,29 @@ Be sure to see the details here which describe restarting couchdb:
 
 - [CouchDb on Elvenware](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html#couchdb-linux-install)
 
+## Facebook ID {#facebook-client-id}
+
+We have to set up the Facebook ClientId as mentioned here:
+
+- [FaceBook ClientId](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressSessionMaster.html#facebook-client-id)
+
+In your **data-master.service** file, set environment variables in this line:
+
+Environment=NODE_ENV=production FACEBOOK_CLIENT_ID=<YOUR_CLIENT_ID> FACEBOOK_CLIENT_SECRET=<YOUR_SECRET_KEY>
+
+So it looks something like this, but your folder, user name and group are different, and these are fake, and much too short, FACEBOOK IDs:
+
+```bash
+[Service]
+ExecStart=/usr/bin/node /home/charlie/bin/data-master/bin/www
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=data-master
+User=charlie
+Group=charlie
+Environment=NODE_ENV=production FACEBOOK_CLIENT_ID=11234 FACEBOOK_CLIENT_SECRET=abc123
+
+[Install]
+WantedBy=multi-user.target
+```
