@@ -219,3 +219,20 @@ The checkout will replace any existing files and will add new files, but it will
 Note that this will compare only files that are committed, not the difference between files that have been modified or added. See also:
 
 - <http://stackoverflow.com/a/1355990/253576>
+
+## Hint
+
+Set up CouchDb
+
+Run the **CouchDb** script in **~/Git/JsObjects/Utilities/NodeInstall**
+
+Then edit the **/etc/couchdb/local.ini** file:
+
+  sudo nano /etc/couchdb/local.ini
+
+Set the **bindaddress** to **0.0.0.0**. In the **local.ini** file, a semi-colon is a comment, so you will need to delete the comment.
+
+Be sure to see the details here which describe restarting couchdb:
+
+- [CouchDb on Elvenware](http://www.elvenware.com/charlie/development/database/NoSql/CouchDb.html#couchdb-linux-install)
+
