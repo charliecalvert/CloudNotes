@@ -153,6 +153,19 @@ You are able to have more than one callback URL, at least in most cases. For ins
 - Everyone should have sign in working on EC2 for at least two authorities, and I must be able to see that you are logged in or logged out by choosing some menu option that shows me at least some recognizable part of your session object.
 - For **extra credit**, see if you can find out the URL on the client side by looking at the Express **request.header.referer** property. This should be the URL seen in the address bar of the client who makes a request. Use this information to craft the appropriate callback URL for Google and Facebook. In other words, automagically use one callback URL when on EC2 and another callback URL when on localhost. Because twitter does not support multiple callback URLs, I don't think that will work for Twitter unless I started playing with my hosts file.
 
+So that I can easily grade your homework, please add these URIs:
+
+- http://localhost:30026/etc
+- For instance: http://localhost:30026/facebook/login/return
+
+This screenshot might be helpful, but remember that your callback URLs might be slightly different, and you might need more than this to get your code working. The key point is that it provides callback URLs for both localhost on 30025 and on 30026.
+
+![Google Redirects from the Developer Console Page](https://s3.amazonaws.com/bucket01.elvenware.com/images/redirect-url-google.png)
+
+When taking the above screen shot, I was in the Google Developer console, somewhere near here:
+
+- <https://console.developers.google.com/apis/credentials/>
+
 ## Getting the Referer {#referer}
 
 To get the server side code to get the host name (referer) for the client, that is the URL seen in the address bar of the browser when making a request, try looking at
@@ -262,3 +275,32 @@ Environment=NODE_ENV=production FACEBOOK_CLIENT_ID=11234 FACEBOOK_CLIENT_SECRET=
 [Install]
 WantedBy=multi-user.target
 ```
+
+## SetClientId
+
+In your **package.json** file, this works:
+
+```javascript
+"start": ". ../setClientId && nodemon ./bin/www",
+```
+
+This way, when you type npm start, you **source setClientId** and then start your app. In particular, this code means **source** the **setClientId** file in the directory one level closer to the root from your current directory:
+
+- . ../setClientId
+
+This means you want to add a second activity to the **npm start** property:
+
+- &&
+
+And this, of course, is the code to start your application with nodemon:
+
+- nodemon ./bin/www
+
+## Examples
+
+If you are having trouble with **.when** and routes and **queryControllers** and CouchDb, be sure to study these examples:
+
+- <http://www.ccalvert.net/books/CloudNotes/Assignments/DataMasterRefactor.html#examples>
+
+Be sure to run a git pull before trying to find these files in your copy of JsObjects.
+Search entries or author

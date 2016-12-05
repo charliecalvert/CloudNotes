@@ -10,8 +10,21 @@ Our secondary, but perhaps more important goal, is to establish a framework for 
 - [The Single Responsibility Principle][srp]
 - [The Open Closed Principle][ocp]
 
-
 We also need to make improvements on both the server side and the client side in order to be able to see our data better.
+
+## Examples
+
+To help you understand this assignment, please see these two projects in JsObjects, and carefully study their README files:
+
+- [ElfRoutes01 is the simplest project][elfroutes01]
+- [ElfRoutes02 adds an about page to elfRoutes01][elfroutes02]
+- [ElfRoutesNameController with CouchDB][elfroutes-name-controller]
+- [ElfRoutesReadController with CouchDB][elfroutes-read-controller]
+
+[elfroutes01]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/ElfRoutes01
+[elfroutes02]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/ElfRoutes02
+[elfroutes-name-controller]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesNameController
+[elfroutes-read-controller]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesReadController
 
 ## Code Path
 
@@ -568,5 +581,7 @@ pre#docs
 I tend to use the latter tag, **docs** when I want to show a list. The debug tag is where we report the status such as success or failure.
 
 ## Turn it in
+
+Add an about page to your project.
 
 Push your code. Signal that you are ready to be graded by submitting the assignment in Canvas.
