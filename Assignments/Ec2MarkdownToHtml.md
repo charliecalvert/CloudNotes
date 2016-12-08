@@ -329,3 +329,20 @@ When on EC2, ElvenConfig should look like this:
   }
 }
 ```
+
+## Rhythm
+
+When working, perhaps you want to do something like this:
+
+- Make some edits in Atom
+- Run MakeHtml to copy edits to /var/www/html
+- View the results at http://localhost. If all is well:
+  - Run CopyAllTestAndApacheToRepository
+  - Push
+- Switch to Ec2
+  - Pull
+  - Run CopyFromRepoToAllTestAndApache
+  - Run MakeHtml on EC2
+  - View the results at your Elastic IP
+
+The one catch is that before the first step you might need to set things up so that **MakeHtml** copies sends files **~/Documents/AllTest** to **/var/www/html** and not to **~/Source/firebase-data/public**. This involves either editing **config/ElvenConfig.json** or copying in a pre-configured one as Triet suggests. But once that step is done, then you can follow the pattern shown above.

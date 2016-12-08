@@ -212,6 +212,14 @@ You can tell me about other versions of your code on other branches that may be 
 
 **NOTE**: _I'm not looking for release quality software. I won't be trying to break your program. When I say bug free, I mean that I can choose a menu item or hyperlinker, be taken to a feature, and have it work correctly at least the first time I select it._
 
+If there can be any doubt about what code you want me to look at, or even if there can't be any doubt, do something like this when you submit:
+
+- Branch: master
+- Database: DataMaster
+- Game: DataHunter
+
+Just spell it out so there can be no confusion. Thanks.
+
 ## Merging and Checkout
 
 To get **DataMaster**, or changes to **DataMaster**, into the master branch, you should be able to just checkout the **Week11/DataMaster** code into master. Something like this:
@@ -304,3 +312,122 @@ If you are having trouble with **.when** and routes and **queryControllers** and
 
 Be sure to run a git pull before trying to find these files in your copy of JsObjects.
 Search entries or author
+
+## Session Notes
+
+Geting the session data to work in DataMaster is proving a challenge to many people. So lets simplify as CouchDB can easily bare the load in our case.
+
+Though it would be best to have two databases, I think it is simpler to view and store Sesssion code in DataMaster if we use only one database. I don't think we have to do this, but it might be simpler for most of us to implement things this way.
+
+In my own code, I have extended **set-server.js** to include the dbName:
+
+```javascript
+var servers = ['http://127.0.0.1:5984',
+    'http://192.168.2.19:5984',
+    'http://192.168.2.27:5984',
+    'http://168.156.47.57:5984'
+];
+var serverIndex = 2;
+var serverUrl = servers[serverIndex];
+console.log('Middleware attaching to database on: ', serverUrl);
+
+module.exports.serverUrl = serverUrl;
+module.exports.dbName = 'game_data_LASTNAME';  <=== REPLACE LASTNAME
+```
+
+I have used it in two files. Here it is in **Couch.js**:
+
+```javascript
+// Couch.js
+var setServer = require('./set-server');
+var nano = require('nano')(setServer.serverUrl);
+var dbName = setServer.dbName;   <==== HERE
+
+```
+
+And here in **middleware.js**:
+
+```javascript
+// Middleware
+var sessionStore = sessionstore.createSessionStore({
+    type: 'couchdb',
+    host: setServer.serverUrl,
+    port: 5984,
+    dbName: setServer.dbName,   <=== HERE
+    collectionName: 'sessions',
+    timeout: 10000
+}, function(data) {
+    'use strict';
+    console.log('sessionStore callback', data);
+});
+```
+
+Now I am able to get both my game data and my session store data from same database. This meant I had to change my design doc slightly:
+
+```javascript
+var elfSessions = function(doc) {
+    if (doc.collectionName === 'sessions') {
+        emit(doc._id, doc);
+    }
+};
+
+// CODE OMMITTED: npcsBulk and npcsOneDoc DEFINED HERE
+
+router.get('/designDoc', function(request, response) {
+    console.log('Design Doc Called');
+
+    var designName = '_design/game';
+    var designDocument = {
+        'views': {
+            'npcsBulk': {
+                'map': npcsBulk
+            },
+            'npcsOneDoc': {
+                'map': npcsOneDoc
+            },
+            'elf-sessions': {
+                'map': elfSessions
+            }
+        }
+    };
+
+    createDesignDocument(designDocument, designName, response);
+});
+```
+
+And then make sure **CouchViews.js** has this:
+
+```javascript
+router.get('/viewSessions', function(request, response) {
+    console.log('/viewSessions called', request.query, dbName);
+    var nanoDb = nano.db.use(dbName);
+    nanoDb.view(request.query.designDoc, request.query.view, function(err, body) {
+        if (!err) {
+            console.log(body);
+            //var data = body.rows[0].value.map(function(a) {
+            //    return a;
+            //});
+            response.send({
+                'name': 'viewSessions',
+                docs: body
+            });
+        } else {
+            console.log(err);
+            response.status(err.statusCode).send(err);
+        }
+    });
+});
+```
+
+And be sure you call it now not with elf-session but with game:
+
+```javascript
+return runQuery('/viewSessions?designDoc=game&view=elf-sessions', $q);
+```
+
+Also make sure you are using elf-sessionstore and not sessionstore.
+
+    npm uninstall sessionstore --save
+    npm install elf-sessionstore --save
+
+And then, in middleware, require elf-sessionstore, not sessionstore.

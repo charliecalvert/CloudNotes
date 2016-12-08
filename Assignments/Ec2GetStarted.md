@@ -138,6 +138,16 @@ It should show that you have a JsObjects directory. Don't forget:
 
 - sudo apt-get install python
 
+## Billing After Quarter Ends {#billing-after}
+
+After I have given you a final grade, consider what you want to do with AWS and your instance.
+
+- One approach is to set a calendar reminder to delete your instance after one year (in Sept)
+- Another approach is to buy a relatively inexpensive reserved instance once your year is up.
+- Go to Ec2 Instances and select reserved instance and then select the big purchase instance button
+- A third option is to push all your code from the EC2 instance, save anything else of importance to Google Drive, and then delete your instance. If you have no running instance, no EBS volumes (hard drives), no elastic IPs then you should have no bill even after the year is up. Check billing to be sure you have deleted everything.
+- You could also stop the running instance, but leave the EBS (hard drive). That is much less expensive that running your instance month to month. You would still get a bill after your year is up, but it would not be particularly large.
+
 ## Keep System Up to Date
 
 The update commands:

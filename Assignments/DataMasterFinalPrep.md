@@ -149,6 +149,8 @@ var couchBulk = require('./CouchBulk')(router, dbName, setServer.serverUrl);
 
 **Figure**: _Your error display need not look exactly like this, but we want it should display enough information to help a pre-release user understand what has gone wrong._
 
+You will also need to make a change of a similar kind in **middleware.js**.
+
 ## Handle Errors
 
 We should now be able to display good error information, particularlly if we try to connect to the wrong server.

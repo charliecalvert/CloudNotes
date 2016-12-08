@@ -195,3 +195,25 @@ ignores: [
   '**/node_modules/**', '**/components/**', '**/three.js', '**/pointer-lock-controls.js'
 ],
 ```
+
+## How I Grade
+
+I do this:
+
+```bash
+git log --pretty=format:"%H %ad"
+```
+
+I look for the commit you did on the data you turned this in and create a branch on it:
+
+```bash
+git branch charliesmoke 94c2f4b68888
+```
+
+I check it out:
+
+```bash
+git checkout charliesmoke
+```
+
+Then I run SmokeTest
