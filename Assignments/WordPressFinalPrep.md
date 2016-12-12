@@ -35,6 +35,8 @@ That implies that there will soon be a new release. You can use any theme you wa
 
 The key point to grasp is that this site is aimed at bloggers. You can do a lot with WordPress, and many people do, but the path of least resistance if blogging.
 
+Add at least one image into your theme. This will usually be a header image at the top.
+
 ## Menus
 
 The menus on Twenty Sixteen default to the top right. This means that if you want to show multiple items, you should create a dropdown.
@@ -49,6 +51,8 @@ On the left you can see:
 - Open up these lists, select an item or items
 - Click the **Add to Menu** item
 - On the right, drag with your mouse until you have menu that looks right to you.
+
+Create two menu items. One should be a dropdown that contains links to two or Pages. (These are WordPress Pages, not WordPress Posts.)
 
 ## Database
 
@@ -78,7 +82,7 @@ For the database on EC2 or Pristine Lubuntu, it is nice to have a fancy tool tha
 
   sudo apt-get install phpmyadmin
 
-You will be asked to enter select a webserver, which in our case is **apache**. You will also need to enter a password. I suggest you stick with the same one you are using for **mysql**.
+You will be asked to enter select a webserver, which in our case is **apache**.  The way to check a checkbox when the mouse doesn't work is with the space bar. Generally a combination of the tab key and the space bar enables you to navigate through the various dialogs. You will also need to enter a password. I suggest you stick with the same one you are using for **mysql**.
 
 Now browse to your new application:
 

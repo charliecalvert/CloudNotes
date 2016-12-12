@@ -323,16 +323,18 @@ In my own code, I have extended **set-server.js** to include the dbName:
 
 ```javascript
 var servers = ['http://127.0.0.1:5984',
-    'http://192.168.2.19:5984',
+    'http://192.168.2.20:5984',
     'http://192.168.2.27:5984',
     'http://168.156.47.57:5984'
 ];
-var serverIndex = 2;
+var serverIndex = 1;
 var serverUrl = servers[serverIndex];
+var dbName = 'game_data_LASTNAME'; <=== REPLACE LAST NAME
 console.log('Middleware attaching to database on: ', serverUrl);
+console.log('Using Databasse:', dbName);
 
 module.exports.serverUrl = serverUrl;
-module.exports.dbName = 'game_data_LASTNAME';  <=== REPLACE LASTNAME
+module.exports.dbName = dbName;
 ```
 
 I have used it in two files. Here it is in **Couch.js**:

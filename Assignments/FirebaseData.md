@@ -51,9 +51,9 @@ Put the following code in **elven-help.js**. Delete everything that we put in **
 
 ## Interface
 
-What we want to see is that the user comes to the home page, which consists mostly of a description of the site and button to log in. The user presses the login (Google) button, then is taken to the page with the database links on it.
+What we want to see is that the user comes to the home page, which consists mostly of a description of the site and button to log in. The user presses the login (Google) button, then is taken to the start page which is the one with the database links on it.
 
-On the database page, we are going to create three sections:
+On the database (start) page, we are going to create three sections:
 
 - Foo Data: Basic database test
 - Shared Data: The user inputs data and that data is shared between multiple users in real time.

@@ -20,11 +20,15 @@ To help you understand this assignment, please see these two projects in JsObjec
 - [ElfRoutes02 adds an about page to elfRoutes01][elfroutes02]
 - [ElfRoutesNameController with CouchDB][elfroutes-name-controller]
 - [ElfRoutesReadController with CouchDB][elfroutes-read-controller]
+- [ElfRoutesDesign][elfroutes-design]
+- [CouchSession][couch-session]
 
 [elfroutes01]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/ElfRoutes01
 [elfroutes02]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/ElfRoutes02
 [elfroutes-name-controller]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesNameController
 [elfroutes-read-controller]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesReadController
+[elfroutes-design]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesDesignController
+[couch-session]: https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession
 
 ## Code Path
 
