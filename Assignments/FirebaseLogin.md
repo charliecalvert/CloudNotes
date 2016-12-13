@@ -79,7 +79,7 @@ function  elfFireInitPage() {
             var displayName = user.displayName;
             var email = user.email;
             var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
+            var photoURL = user.photoURL ||  user.providerData[0].photoURL;
             var uid = user.uid;
             var providerData = user.providerData;
             user.getToken().then(function(accessToken) {
