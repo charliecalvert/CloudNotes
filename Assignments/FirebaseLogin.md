@@ -127,6 +127,8 @@ Welcome to my Prog270 Website.
 </script>
 ```
 
+## Start Page
+
 At the bottom of start.md,
 
 ```html

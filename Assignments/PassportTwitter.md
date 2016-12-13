@@ -1,4 +1,4 @@
-#Passport
+## Overview
 
 Use [Passport](http://passportjs.org/) "sign in with Twitter". This assignment builds on the [Passport Assignment][passport] which explained how to sign in Google.
 
@@ -126,14 +126,14 @@ And the following bootstrap code in index.jade:
 ```
 
 
-##Permissions
+## Permissions
 
 You want to track who has permissions to access your account information:
 
 > https://twitter.com/settings/applications
 
 
-##Turn It In
+## Turn It In
 
 We are working in the **Week08-Passport** folder in your repository. Place your work in that folder, if it is not there already. Run **grunt check**. Submit your assignment.
 

@@ -138,6 +138,25 @@ It should show that you have a JsObjects directory. Don't forget:
 
 - sudo apt-get install python
 
+## Billing After Quarter Ends {#billing-after}
+
+After I have given you a final grade, consider what you want to do with AWS and your instance.
+
+- One approach is to set a calendar reminder to delete your instance after one year (in Sept)
+- Another approach is to buy a relatively inexpensive reserved instance once your year is up.
+- Go to Ec2 Instances and select reserved instance and then select the big purchase instance button
+- A third option is to push all your code from the EC2 instance, save anything else of importance to Google Drive, and then delete your instance. If you have no running instance, no EBS volumes (hard drives), no elastic IPs then you should have no bill even after the year is up. Check billing to be sure you have deleted everything.
+- You could also stop the running instance, but leave the EBS (hard drive). That is much less expensive that running your instance month to month. You would still get a bill after your year is up, but it would not be particularly large.
+
+Never have more elastic IP addresses than you have running instances. You should not get billed for an elastic IP address so long as it is attached to a running instance. If you stop (shut down) or terminate (delete) an instance, be sure to delete the associated IP address or you will get billed.
+
+To put it another way: Billing for Elastic IP addresses runs precisely counter to our intuition:
+
+- If you use your Elastic IP it is free
+- If you don't use it, you get billed
+
+Amazon has a limited number of IP addresses. They don't mind sharing them, but they don't want to waste them. So long as you use them, all is good, but if you just reserve it and don't use it, don't attach it to a running instance, then they are not happy. If they are not happy, they bill you.
+
 ## Keep System Up to Date
 
 The update commands:

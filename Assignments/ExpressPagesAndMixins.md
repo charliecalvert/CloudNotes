@@ -1,6 +1,6 @@
 ## Overview
 
-In the  Express Pages and Mixins assignment you will learn about Jade, bootstrap and mixins.
+In the  Express Pages and Mixins assignment you will learn about Jade, bootstrap and mixins. I'd like you to build a single page app (SPA) that switches between showing the **main page** and the **about page**.
 
 References:
 
@@ -15,7 +15,23 @@ References:
  - Add a new page called **about**
  - Create bootstrap menus
  - Use Jade Mixins
- - Call the project **Week11-JadeMixinBasics**
+ - Call the project **Week11-ExpressPagesAndMixins**
+
+## Main Page
+
+The main page might look something like this:
+
+![The front page](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-pages-and-mixins.png)
+
+When the user clicks the **Help** button, the user is shown the text that begins "Select some controls...".
+
+## About Page
+
+The about page might look a bit like this:
+
+![The front page](https://s3.amazonaws.com/bucket01.elvenware.com/images/express-pages-and-mixins-about.png)
+
+When the user clicks the **About Charlie** button, the user is shown the text that begins with the words "This is a note...".
 
 ## Create page
 
@@ -120,8 +136,14 @@ You have to pass in the name of the theme you want to use, as described above.
 
 Create two files in **public/javascripts**:
 
- - **Control.js**: For the main page
- - **About.js**: For the about page
+ - **control.js**: For the main page
+   - Appearance defined in **views/home.pug**
+ - **about.js**: For the about page
+   - Appearance defined in **views/about.pug**
+
+**NOTE**: _You can use either jade or pug._
+
+When the user clicks on the home button, the code in control.js should be in effect. When the user clicks on the about button, the code in **about.js** should be in effect.
 
 Put a button on each page.
 
@@ -132,7 +154,7 @@ Put a button on each page.
   - text: About
 	- id: aboutButton
 
-When the user clicks on either button, place text on the appropriate page in an HTML paragraph element.
+When the user clicks on a button, place text on the appropriate page in an HTML paragraph element. For instance, if the user clicks on the **About** button, then text should appear on the About page.
 
 Put the button handler for the help button in **Control.js**.
 
@@ -162,7 +184,6 @@ In the above, I still have jade as the extension in JsObjects, but I'm copying t
 ```bash
 cp -v $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
 ```
-
 
 ## Mixins {#the-mixins}
 
@@ -269,6 +290,23 @@ mixin listText
     .list-group-item-text
         block
 ```
+
+## Load Jade/Pug {#load-pug}
+
+When the user requests to load a Jade file, you will need a route on the server side to handle the request. Here is one simple way to set one up:
+
+```javascript
+router.get('/:id', function(request, response) {
+    'use strict';
+    response.render(request.params.id, {
+        id: request.params.id
+    });
+});
+```
+
+An explanation is in the [node discussion on Elvenware][node-js-parmas].
+
+[node-js-params]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#node-parameters
 
 ## Turn it in
 

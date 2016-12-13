@@ -10,8 +10,25 @@ Our secondary, but perhaps more important goal, is to establish a framework for 
 - [The Single Responsibility Principle][srp]
 - [The Open Closed Principle][ocp]
 
-
 We also need to make improvements on both the server side and the client side in order to be able to see our data better.
+
+## Examples
+
+To help you understand this assignment, please see these two projects in JsObjects, and carefully study their README files:
+
+- [ElfRoutes01 is the simplest project][elfroutes01]
+- [ElfRoutes02 adds an about page to elfRoutes01][elfroutes02]
+- [ElfRoutesNameController with CouchDB][elfroutes-name-controller]
+- [ElfRoutesReadController with CouchDB][elfroutes-read-controller]
+- [ElfRoutesDesign][elfroutes-design]
+- [CouchSession][couch-session]
+
+[elfroutes01]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/ElfRoutes01
+[elfroutes02]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/ElfRoutes02
+[elfroutes-name-controller]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesNameController
+[elfroutes-read-controller]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesReadController
+[elfroutes-design]: https://github.com/charliecalvert/JsObjects/tree/master/Data/ElfRoutesDesignController
+[couch-session]: https://github.com/charliecalvert/JsObjects/tree/master/Data/CouchSession
 
 ## Code Path
 
@@ -184,8 +201,8 @@ define(['Route', 'nameController', 'queryController'], function (Route, nameCont
 
     var findRoutes = (function ($routeProvider) {
         'use strict';
-        $routeProvider.when('/databaseName', {
-            templateUrl: 'templates/DatabaseNames.html',
+        $routeProvider.when('/databaseName.html', {
+            templateUrl: 'templates/DatabaseNames',
             controller: nameController,
             resolve: {
                 databaseName: nameController.databaseName,
@@ -247,6 +264,41 @@ define(['Route', 'nameController', 'queryController'], function (Route, nameCont
     return findRoutes;
 
 });
+```
+
+Note that ultimately we will not want to load HTML files, but Pug templates. However, for now, we can just use raw HTML. In either case, make sure you understand what is being loaded.
+
+## Handling Code
+
+The key thing to understand is that the controller you pick to handle a particular menu item is the controller that will get called when that menu item is selected.
+
+For instance, we see in **control.js** that when the user selects readone, this code will handle it:
+
+```javascript
+.when('/readOne', {
+    templateUrl: '/display-default',
+    controller: queryController,
+    resolve: {
+        result: queryController.readOne
+    }
+})
+```
+
+As you can see, that code points at **queryController**. This means that the **queryController** will (or at least should) be called when you select that particular menu item.
+
+So it is simply a matter of looking that the result variable passed to **queryController** and finding a way to display it. Here is queryController:
+
+```javascript
+var queryController = function(query, result) {
+       utility.clearAll();
+       if (query.requestFailed) {
+           utility.failed(query.requestFailed);
+           return;
+       }
+
+       // FIGURE OUT A GOOD WAY TO DISPLAY THE result VARIABLE ON YOUR HTML PAGE.
+   };
+
 ```
 
 ## New RouteProvider
@@ -568,5 +620,7 @@ pre#docs
 I tend to use the latter tag, **docs** when I want to show a list. The debug tag is where we report the status such as success or failure.
 
 ## Turn it in
+
+Add an about page to your project.
 
 Push your code. Signal that you are ready to be graded by submitting the assignment in Canvas.

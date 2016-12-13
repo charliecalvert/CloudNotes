@@ -1,6 +1,6 @@
 # Jade Mixin Basics
 
-The goal of this assignment is to learn how to use Jade mixins. In particular, we will see how to use mixins to quickly and easily assemble an interface for an application.
+The goal of this assignment is to learn how to use Jade [mixins](https://pugjs.org/language/mixins.html). In particular, we will see how to use mixins to quickly and easily assemble an interface for an application.
 
 The assignment also reviews creating forms and retrieving data from forms with jQuery.
 
@@ -12,10 +12,18 @@ Use **CreateExpressProject** to create **Week05-JadeMixinBasics**.
 
 Copy in the mixins:
 
+```bash
+cp $ELF_TEMPLATES/JadeMixins/jade/mixin-radios.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/jade/mixins.jade views/.
+cp $ELF_TEMPLATES/JadeMixins/jade/mixin-inputs.jade views/.
 ```
-cp $ELF_TEMPLATES/JadeMixins/mixin-radios.jade views/.
-cp $ELF_TEMPLATES/JadeMixins/mixins.jade views/.
-cp $ELF_TEMPLATES/JadeMixins/mixin-inputs.jade views/.
+
+Or:
+
+```bash
+cp $ELF_TEMPLATES/JadeMixins/pug/mixin-radios.pug views/.
+cp $ELF_TEMPLATES/JadeMixins/pug/mixins.pug views/.
+cp $ELF_TEMPLATES/JadeMixins/pug/mixin-inputs.pug views/.
 ```
 
 **NOTE**: *We might not use the second file, **mixins.jade**, but I will include if for now in case we need it later.*
@@ -81,6 +89,7 @@ block append content
 
     .container
         h1 #{pageTitle}
+
         p You are in the <strong>#{programTitle}</strong> program. Select some controls and press the Go button.
 
         +elfFormPanel("Main Form")#target
