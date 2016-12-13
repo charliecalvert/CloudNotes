@@ -201,8 +201,8 @@ define(['Route', 'nameController', 'queryController'], function (Route, nameCont
 
     var findRoutes = (function ($routeProvider) {
         'use strict';
-        $routeProvider.when('/databaseName', {
-            templateUrl: 'templates/DatabaseNames.html',
+        $routeProvider.when('/databaseName.html', {
+            templateUrl: 'templates/DatabaseNames',
             controller: nameController,
             resolve: {
                 databaseName: nameController.databaseName,
@@ -264,6 +264,41 @@ define(['Route', 'nameController', 'queryController'], function (Route, nameCont
     return findRoutes;
 
 });
+```
+
+Note that ultimately we will not want to load HTML files, but Pug templates. However, for now, we can just use raw HTML. In either case, make sure you understand what is being loaded.
+
+## Handling Code
+
+The key thing to understand is that the controller you pick to handle a particular menu item is the controller that will get called when that menu item is selected.
+
+For instance, we see in **control.js** that when the user selects readone, this code will handle it:
+
+```javascript
+.when('/readOne', {
+    templateUrl: '/display-default',
+    controller: queryController,
+    resolve: {
+        result: queryController.readOne
+    }
+})
+```
+
+As you can see, that code points at **queryController**. This means that the **queryController** will (or at least should) be called when you select that particular menu item.
+
+So it is simply a matter of looking that the result variable passed to **queryController** and finding a way to display it. Here is queryController:
+
+```javascript
+var queryController = function(query, result) {
+       utility.clearAll();
+       if (query.requestFailed) {
+           utility.failed(query.requestFailed);
+           return;
+       }
+
+       // FIGURE OUT A GOOD WAY TO DISPLAY THE result VARIABLE ON YOUR HTML PAGE.
+   };
+
 ```
 
 ## New RouteProvider

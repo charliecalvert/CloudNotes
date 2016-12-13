@@ -98,6 +98,22 @@ router.get('/designDoc', function(request, response) {
 
 You will also want to modify **CouchViews** to contain a route called **/viewSessions**. This view should, at least for now, return the entire **body**.
 
+When learning about design documents, you might get errors that look like this:
+
+```javascript
+{
+    "message": "missing",
+    "stack": "Error: missing\n    at Request._callback REST OF STACK DUMP HERE",    
+    "name": "Error",
+    "error": "not_found",
+    "reason": "missing",
+    "scope": "couch",
+    "statusCode": 404
+    ... ETC CODE OMITTED HERE
+}
+```
+ This kind of error may mean that couchDb can't find the view you are asking for. It can't find the view because you have not created it in **routes/CouchDesignDocs.js** and you don't have a method for calling it in **routes/CouchViews.js**.
+
 ## Client Side
 
 Add some buttons:
