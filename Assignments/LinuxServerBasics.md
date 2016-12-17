@@ -14,7 +14,13 @@ Download the 1 GB OVA file for the Ubuntu Linux Server 16.04 with CouchDb to you
 
 - [http://bit.ly/pristine-ubuntu-server-16-10](http://bit.ly/pristine-ubuntu-server-16-10)
 
-Select VirtualBox and use the **File | Import Appliance** menu item to import the OVA file. Double clicking the OVA file in the Windows Explorer also works, but for some reason I find it simpler to use **File | Import Appliance.** .
+I have created an OVA file for use in VirtualBox, VMware, etc. The OVA is several GB in size, so be prepared for a significant download.
+
+I have only tested it in VirtualBox. Be sure you install the VirtualBox Extension Pack for your instance. It is available from the VirtualBox download page.
+
+Once you have downloaded the file, in VirtualBox, choose: File | Import Appliance
+
+More specifically: select VirtualBox and use the **File | Import Appliance** menu item to import the OVA file. Double clicking the OVA file in the Windows Explorer also works.
 
 When importing the OVA, be sure to reset the Mac address.
 
@@ -27,13 +33,13 @@ The Ubuntu Server VM is configured to use 2 GB of RAM, but you can change this:
 
 When you first start your instance, you may get a warning about the network interface. A dialog will appear asking you to update your settings. Select the dialog. You shouldn't need to do anything, as the correct network interface should then be selected automatically. Now restart your instance if it does not restart automatically.
 
-## Fine your IP Address {#ip-address}
+## Find your IP Address {#ip-address}
 
 To connect to this instance using SSH we need to know its IP address. Type **ifconfig** (or **ipconfig** on Windows) find your ip address.
 
 ```
 $ ifconfig
-eno1      Link encap:Ethernet  HWaddr f8:32:e4:9d:22:39  
+eno1      Link encap:Ethernet  HWaddr f8:32:e4:9d:22:39
           inet addr:192.168.2.21  Bcast:192.168.2.255  Mask:255.255.255.0
           inet6 addr: fe80::c0be:4848:dac9:2baa/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
@@ -43,7 +49,7 @@ eno1      Link encap:Ethernet  HWaddr f8:32:e4:9d:22:39
           RX bytes:797472011 (797.4 MB)  TX bytes:1268382292 (1.2 GB)
           Interrupt:20 Memory:dfd00000-dfd20000
 
-lo        Link encap:Local Loopback  
+lo        Link encap:Local Loopback
           inet addr:127.0.0.1  Mask:255.0.0.0
           inet6 addr: ::1/128 Scope:Host
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
@@ -170,7 +176,7 @@ charlie@rohan-elf:~/temp
 $ echo '## My Title' >> LinuxServerTest.md
 charlie@rohan-elf:~/temp
 $ scp LinuxServerTest.md bcuser@192.168.2.21:/home/bcuser/.
-LinuxServerTest.md            100%   12     0.0KB/s   00:00    
+LinuxServerTest.md            100%   12     0.0KB/s   00:00
 charlie@rohan-elf:~/temp
 ```
 
