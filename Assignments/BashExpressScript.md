@@ -1,6 +1,10 @@
+## Overview
 
-Bash scripts help you automate tasks. If you know how to create and run relatively simple bash scripts you can become enormously productive.
+Bash scripts help you automate tasks. Knowing how to create even relatively simple bash scripts can make you significantly more productive. The goal of this assignment is to help you learn how to create simple bash scripts.
 
+This assignment assumes that you have installed [JsObjects][elf-js-objects] on your system.
+
+[elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
 
 ## Step One: Navigate {#navigate}
 
@@ -36,6 +40,7 @@ Take a screenshot and call it: **BashAliasJsObjects.png**
 
 [jsba]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
 [configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#set-up-environment
+
 
 ## Step Two: What's Available {#available}
 
