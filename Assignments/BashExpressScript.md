@@ -1,46 +1,50 @@
 ## Overview
 
-Bash scripts help you automate tasks. Knowing how to create even relatively simple bash scripts can make you significantly more productive. The goal of this assignment is to help you learn how to create simple bash scripts.
+Bash scripts help you automate tasks. Knowing how to create even relatively simple bash scripts can make you significantly more productive. The goal of this assignment is to help you learn how to run and create simple bash scripts.
 
-This assignment assumes that you have installed [JsObjects][elf-js-objects] on your system.
+This assignment assumes that you have installed my collection of sample programs called [JsObjects][elf-js-objects] on your system.
 
 [elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
 
-## Step One: Navigate {#navigate}
+In particular, read the section on Navigating JsObjects.
 
-I maintain the **.bash_aliases** file here:
+## Step One: Learn to Navigate {#navigate}
 
-* [bash_aliases][jsba]
+Let's take a few moments to be sure you know a little bit about how to navigate through your clone of the JsObjects repository. As you learned in the JsObjects README file, navigation through JsObjects relies upon code found in your **.bash_aliases** file.
 
-If your system is set up right, the following commands should all run without error:
+**NOTE**: _Recall that you can find my [.bash_aliases][jsba] file on GitHub._
+
+If your **.bash_aliases** file is set up right, a number of commands should all run without error. Let's start by running a lengthy command that does not rely on any of the aliases or environment variables found in my **.bash_aliases** file:
 
 ```bash
 ls ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
-Here is another way to run the same command:
+Here is another, and slightly shorter, way to run the same command:
 
 ```bash
 ls $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
-**NOTE**:*If $JSOBJECTS is not defined, this is a problem with your .bashrc file. See this document for details:*
-
-* [Configure Linux][configure-linux]
-
 Run both of these commands and create a screenshot that shows the output. Call the screenshot: **BashAliasListing.png**
 
-Now run this command:
+**NOTE**: _If $JSOBJECTS is not defined, this is a problem with your .bashrc or .bash_aliases file. See these document for details:_
+
+* [.bash_aliases][jsba]
+* [Configure Linux][configure-linux]
+
+[jsba]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
+[configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#set-up-environment
+
+## The Linux less Command {#linux-less}
+
+Now run this command, which uses a built in Linux utility called **less**:
 
 ```bash
 less $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
-Take a screenshot and call it: **BashAliasJsObjects.png**
-
-[jsba]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
-[configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#set-up-environment
-
+Use the **j** and **k** keys or the arrow keys to navigate through the document. Press the **q** key to exit. Take a screenshot and call it: **BashAliasJsObjects.png**.
 
 ## Step Two: What's Available {#available}
 
