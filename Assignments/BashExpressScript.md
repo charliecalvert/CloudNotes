@@ -1,30 +1,36 @@
 ## Overview
 
-Bash scripts help you automate tasks. Knowing how to run and create even relatively simple bash scripts can make you significantly more productive. The goal of this assignment is to help you learn how to run and create simple bash scripts.
+The goal of this assignment is to help you learn how to run and create simple bash scripts. Bash scripts help you automate tasks. Knowing how to with even relatively simple scripts can make you significantly more productive.
+
+There will also be sections learning how to use aliases and environment variables to customize your environment. Bash scripts frequently make use of environment variables. Understanding how to use them can be a very skill.
 
 This assignment assumes that you have installed my collection of sample programs called [JsObjects][elf-js-objects] on your system. When reviewing the [JsObjects README][e]f-js-objects], be sure to read the section on Navigating JsObjects.
 
 ## Step One: Learn to Navigate {#navigate}
 
-Let's take a few moments to be sure you know a little bit about how to navigate through your clone of the JsObjects repository. As you learned in the JsObjects README file, navigation through JsObjects relies upon code found in your **.bash_aliases** file.
+Let's take a few moments to be sure you know a little bit about environment variables. In particular, you will how to use them to navigate through your clone of the JsObjects repository.
+
+As you learned in the JsObjects README file, navigation through JsObjects relies upon code found in your **.bash_aliases** file. If your **.bash_aliases** file is set up right, a number of commands should all run without error.
 
 **NOTE**: _Recall that you can find my [.bash_aliases][jsba] file on GitHub._
 
-If your **.bash_aliases** file is set up right, a number of commands should all run without error. Let's start by running a lengthy command that does not rely on any of the aliases or environment variables found in my **.bash_aliases** file:
+Let's start by running a lengthy command that does not rely on any of the aliases or environment variables found in my **.bash_aliases** file:
 
 ```bash
 ls ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
-Here is another, and slightly shorter, way to run the same command:
+Here is another, and slightly shorter, way to run the same command. Note that is uses an environment variable called JSOBJECTS:
 
 ```bash
 ls $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
-Run both of these commands and create a screenshot that shows the output. Call the screenshot: **BashAliasListing.png**
+**NOTE**: _The Bash shell is case sensitive. Thus JsObjects and JSOBJECTS are entirely different variables. In our case, JsObjects is the name of my repository, while JSOBJECTS is an identifier (variable) found in my **.bash_aliases** file._
 
-**NOTE**: _If $JSOBJECTS is not defined, this is a problem with your .bashrc or .bash_aliases file. See these document for details:_
+Run both of the commands shown above and create a screenshot that shows the output. Call the screenshot: **BashAliasListing.png**
+
+**NOTE**: _If $JSOBJECTS is not defined, there is probably a problem with your **.bashrc** or **.bash_aliases** file. See these document for details:_
 
 - [.bash_aliases][jsba]
 - [Configure Linux][configure-linux]
@@ -37,7 +43,11 @@ Now run this command, which uses a built in Linux utility called **less**:
 less $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 ```
 
-Use the **j** and **k** keys or the arrow keys to navigate through the document. Press the **q** key to exit. Take a screenshot and call it: **BashAliasJsObjects.png**.
+**less** is a file viewer. It allows you to see the contents of text files. I use it very frequently. Use the **j** and **k** keys or the arrow keys to navigate through the document. Press the **q** key to exit.
+
+**NOTE**: _There are many useful descriptions of how to use **less** on the internet. You can also type **man less** at the Bash prompt to get a rather technical description of this crucial tool._
+
+Take a screenshot of the **.bash_aliases** file running in **less** and call it: **BashAliasJsObjects.png**.
 
 ## Step Two: What's Available {#available}
 
@@ -68,17 +78,24 @@ sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
-If given one at a time, these commands will:
+These commands help you create and customize a NodeJs Express project called **Week03-BootstrapDelicious**. If given one at a time, these commands will:
 
 - Create an express project
-- Run npm install
-- Create and configure bower
+- Navigate into the directory containing the new project
+- Run npm install to set up the project's server side libraries
+- Create and configure bower to set up the client side libraries
 - Set the port and switch our run command from node to nodemon
 - Change the title of our project.
 
+Experienced developers could type out these commands, one at a time, at the Bash command prompt. Having the skill to do that would have obvious value. However, most developers would find it difficult to remember the syntax for so many different commands. They would also find it a laborious and error prone task to type out so much text.
+
+Fortunately, there is a solution. We can create a single Bash script containing all these commands. By running this single script, we can create our project in a matter of seconds.
+
+**NOTE**: _You will see later that it is a relatively simple matter to configure your script to accept a parameter containing the project name. Thus your script could be easily reused to create an arbitrary project of this type._
+
 We can save code like that shown above into a **bash** script, and then run it as needed:
 
-- First create the file with an editor such as **geany** or **nano**
+- First create the file with an editor such as **geany**, **atom** or **nano**
 - At the top of the script, tell bash that this is a bash script: **#! /bin/bash**
 - Paste in the code shown above
 - Save the file as **CreateBootstrapDelicous**
@@ -101,6 +118,8 @@ sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
+## Generalize our Script {#generalize}
+
 The only problem with this script is that it hard codes in the project name. If we want to make the script more generally useful, then we need to pass in a parameter that specifies the project name. We aren't ready to run the command yet, but the command we want to use might look like this:
 
 ```bash
@@ -111,7 +130,7 @@ This would create and configure an express project called **Week03-MyProject**.
 
 How do we create such a script? The first step will be to capture, or "pick off" the parameters passed to the bash script.
 
-We can pick off parameters in a bash script with $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1\. Now I can pass in a project name as a parameter to the script. Each instance of $1 will be replaced at run time with the parameter passed in by the user:
+We can pick off parameters in a bash script with the built-in variables $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1\. Now I can pass in a project name as a parameter to the script. Each instance of $1 will be replaced at run time with the parameter passed in by the user:
 
 ```bash
 #! /bin/bash
@@ -129,17 +148,17 @@ sed -i -- 's/Express/'$1'/g' routes/index.js
 echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
-Use this script to create a project with a random name. For instance, you could:
+Use this script to create a project with a random name. For instance, you could follow these steps to create a reusable script:
 
 - If a **~/bin** directory does not exist, you should create it: **mkdir ~/bin**
-- Save the new script as **CreateExpressProject** and put it in your **~/bin** directory
-- Make it executable: **chmod +x ~/bin/CreateExpressProject**
-- Invoke it from any place else in your home folder like this: **CreateExpressProject Week03-Test-LastName**
+- Save the new script as **MyExpressProjectCreator** and put it in your **~/bin** directory
+- Make it executable: **chmod +x ~/bin/MyExpressProjectCreator**
+- Invoke it from any place else in your home folder like this: **MyExpressProjectCreator Week03-Test-LastName**
 - Now navigate (cd) into **Week03-Test-LastName** and start the project: **npm start**
 
 This works because the **~/bin** folder is placed on your path by the default **.bashrc** script that ships with Ubuntu. We don't have to add the **bin** folder to the path, the **.bashrc** file does that for us automatically.
 
-**NOTE**: _A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command:_ *CreateExpressProject__.
+**NOTE**: _A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command: *CreateExpressProject*_.
 
 ## Step Four: System Check {#system-check}
 
