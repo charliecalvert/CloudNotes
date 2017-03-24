@@ -1,12 +1,8 @@
 ## Overview
 
-Bash scripts help you automate tasks. Knowing how to create even relatively simple bash scripts can make you significantly more productive. The goal of this assignment is to help you learn how to run and create simple bash scripts.
+Bash scripts help you automate tasks. Knowing how to run and create even relatively simple bash scripts can make you significantly more productive. The goal of this assignment is to help you learn how to run and create simple bash scripts.
 
-This assignment assumes that you have installed my collection of sample programs called [JsObjects][elf-js-objects] on your system.
-
-[elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
-
-In particular, read the section on Navigating JsObjects.
+This assignment assumes that you have installed my collection of sample programs called [JsObjects][elf-js-objects] on your system. When reviewing the [JsObjects README][e]f-js-objects], be sure to read the section on Navigating JsObjects.
 
 ## Step One: Learn to Navigate {#navigate}
 
@@ -30,11 +26,8 @@ Run both of these commands and create a screenshot that shows the output. Call t
 
 **NOTE**: _If $JSOBJECTS is not defined, this is a problem with your .bashrc or .bash_aliases file. See these document for details:_
 
-* [.bash_aliases][jsba]
-* [Configure Linux][configure-linux]
-
-[jsba]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
-[configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#set-up-environment
+- [.bash_aliases][jsba]
+- [Configure Linux][configure-linux]
 
 ## The Linux less Command {#linux-less}
 
@@ -77,20 +70,20 @@ echo -e "# $1\nby Charlie Calvert" >> README.md
 
 If given one at a time, these commands will:
 
-* Create an express project
-* Run npm install
-* Create and configure bower
-* Set the port and switch our run command from node to nodemon
-* Change the title of our project.
+- Create an express project
+- Run npm install
+- Create and configure bower
+- Set the port and switch our run command from node to nodemon
+- Change the title of our project.
 
 We can save code like that shown above into a **bash** script, and then run it as needed:
 
-* First create the file with an editor such as **geany** or **nano**
-* At the top of the script, tell bash that this is a bash script: **#! /bin/bash**
-* Paste in the code shown above
-* Save the file as **CreateBootstrapDelicous**
-* Make it executable: **chmod +x CreateBootstrapDelicious**
-* Run it like this: **./CreateBootstrapDelicious**
+- First create the file with an editor such as **geany** or **nano**
+- At the top of the script, tell bash that this is a bash script: **#! /bin/bash**
+- Paste in the code shown above
+- Save the file as **CreateBootstrapDelicous**
+- Make it executable: **chmod +x CreateBootstrapDelicious**
+- Run it like this: **./CreateBootstrapDelicious**
 
 ```bash
 #! /bin/bash
@@ -118,7 +111,7 @@ This would create and configure an express project called **Week03-MyProject**.
 
 How do we create such a script? The first step will be to capture, or "pick off" the parameters passed to the bash script.
 
-We can pick off parameters in a bash script with $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1. Now I can pass in a project name as a parameter to the script. Each instance of $1 will be replaced at run time with the parameter passed in by the user:
+We can pick off parameters in a bash script with $1, $2, etc. For instance, in the following script I have replaced all reference to the project name with $1\. Now I can pass in a project name as a parameter to the script. Each instance of $1 will be replaced at run time with the parameter passed in by the user:
 
 ```bash
 #! /bin/bash
@@ -138,15 +131,15 @@ echo -e "# $1\nby Charlie Calvert" >> README.md
 
 Use this script to create a project with a random name. For instance, you could:
 
-* If a **~/bin** directory does not exist, you should create it: **mkdir ~/bin**
-* Save the new script as **CreateExpressProject** and put it in your **~/bin** directory
-* Make it executable: **chmod +x ~/bin/CreateExpressProject**
-* Invoke it from any place else in your home folder like this: **CreateExpressProject Week03-Test-LastName**
-* Now navigate (cd) into **Week03-Test-LastName** and start the project: **npm start**
+- If a **~/bin** directory does not exist, you should create it: **mkdir ~/bin**
+- Save the new script as **CreateExpressProject** and put it in your **~/bin** directory
+- Make it executable: **chmod +x ~/bin/CreateExpressProject**
+- Invoke it from any place else in your home folder like this: **CreateExpressProject Week03-Test-LastName**
+- Now navigate (cd) into **Week03-Test-LastName** and start the project: **npm start**
 
 This works because the **~/bin** folder is placed on your path by the default **.bashrc** script that ships with Ubuntu. We don't have to add the **bin** folder to the path, the **.bashrc** file does that for us automatically.
 
-**NOTE**: *A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command: **CreateExpressProject**.
+**NOTE**: _A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command:_ *CreateExpressProject__.
 
 ## Step Four: System Check {#system-check}
 
@@ -179,12 +172,12 @@ Please make a selection:
 
 Select options b and n (Basic System Check and Node). Take screen shots of the output from both options and call them:
 
-* SystemCheck.png
-* Node.png
+- SystemCheck.png
+- Node.png
 
 ## Step Five: Aliases {#aliases}
 
-Sometimes our prompt in bash shell gets really long. As a result, I like to show the system name and path on one line, and the $ prompt on a second line. To make this change on your system, edit the [PS1][ps1] environment variable that is set around line 62 of your **~/.bashrc** file. Make it looks like this:
+Sometimes our prompt in bash shell gets really long. As a result, I like to show the system name and path on one line, and the $ prompt on a second line. To make this change on your system, edit the [PS1] environment variable that is set around line 62 of your **~/.bashrc** file. Make it looks like this:
 
 ```bash
 PS1='${debian_chroot:+($debian_chroot)}\u@\h\w\n\$ '
@@ -200,9 +193,9 @@ alias jo="cd $JSOBJECTS"
 
 After this alias is processed, you can just type **jo** to navigate to the **/home/bcuser/Git/JsObjects** directory. On our sytems, that alias is always available to you. This is true because:
 
-* That alias is in the **~/.bash_aliases** file
-* The **~/.bash_aliases** file is loaded by the **~/.bashrc** file
-* The **~/.bashrc** file is processed everytime you open a bash prompt
+- That alias is in the **~/.bash_aliases** file
+- The **~/.bash_aliases** file is loaded by the **~/.bashrc** file
+- The **~/.bashrc** file is processed everytime you open a bash prompt
 
 Create an alias called **i3** that takes you to your git home, which in our case is your **~/Git/isit320-lastname-2015** folder. The alias should look something like this:
 
@@ -223,7 +216,7 @@ i3
 
 Take a screen shot of the result and call it **aliases.png**.
 
-**NOTE**: *Becoming comfortable using and creating aliases can be a big boon for developers. There are a lot of things you can do with them. If you understand aliases and scripting, you can make Linux an enormously powerful development environment.*
+**NOTE**: _Becoming comfortable using and creating aliases can be a big boon for developers. There are a lot of things you can do with them. If you understand aliases and scripting, you can make Linux an enormously powerful development environment._
 
 It might be best to complete the above before doing this, but you can create color prompts if you want. Paste the following into the bash shell to see a prompt that goes way over the top:
 
@@ -246,8 +239,6 @@ fi
 The color prompt is all one line. It should not wrap.
 
 If the color prompt is too much, then you can revert to a black and white prompt by commenting out the **force_color_prompt=yes** line with the # symbol.
-
-[ps1]:http://linuxconfig.org/bash-prompt-basics
 
 If you want to see the branch of your repository when you are in a repository, try this:
 
@@ -275,13 +266,18 @@ Navigate to a temp folder and run your script, but this time save the output gen
 
 Attach the following to your project when you submit it:
 
-* **BashAliasListing.png**
-* **BashAliasJsObjects.png**
-* **UtilityListings.png**
-* **SystemCheck.png**
-* **Node.png**
-* **aliases.png**
-* **CreateExpressProject.png**
-* **Create-LastName.txt**
+- **BashAliasListing.png**
+- **BashAliasJsObjects.png**
+- **UtilityListings.png**
+- **SystemCheck.png**
+- **Node.png**
+- **aliases.png**
+- **CreateExpressProject.png**
+- **Create-LastName.txt**
 
 Check in your copy of **CreateExpressProject** script into a folder of your repository called **MyScripts**. Push your work.
+
+[configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#set-up-environment
+[elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
+[jsba]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/.bash_aliases
+[ps1]: http://linuxconfig.org/bash-prompt-basics
