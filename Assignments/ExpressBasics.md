@@ -1,6 +1,8 @@
 # Express Basics
 
-This assignment is designed to introduce you to [Express Js](http://expressjs.com/).
+This assignment is designed to introduce you to [Express Js](http://expressjs.com/). Express is the library most often used by NodeJs developers when creating web applications. It is not the only way to create an application, but it is by far the most common.
+
+**NOTE**: _Express is rarely used on its own. It is simply the foundation on which more complex applications are built. In most cases, other libraries such as jQuery, Angular or React will also be used._
 
 - Express Presentation: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
@@ -8,14 +10,19 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
  - Create an express application
  - Change the title that appears in **index.jade** and on the main page of the application at run time
- - Load jquery and a custom JavaScript page
- - Use jquery to display a line of text in an HTML paragraph tag
+ - Load [jQuery][jquery-home] and a custom JavaScript page
+ - Use jQuery to display a line of text in an HTML paragraph tag
  - Switch from using **node** to using **nodemon**
  - Set the port to 30025
 
 ## Get Started
 
-The express-generator automatically generates a default express application. It is installed automatically from the essentials menu **JsObjects** object script called [InstallNodePackages][inpack]. However, if you find it is missing, or need to update it, this is the install command:
+The [express-generator][express-gen] automatically generates a default express application. It is installed automatically by the following scripts, which are described in the [JsObjects README][elf-js-objects]:
+
+- [InstallNodePackages][inpack]
+- [UbuntuAndCloudNineSetup][ubuntu-setup]
+
+However, if you find it is missing, or need to update it, this is the install command:
 
   npm install -g express-generator
 
@@ -88,8 +95,6 @@ When you turn in the the assignment, include the URL of your repository. It shou
 
 	git@bitbucket.com:lastname/prog219_lastname.git
 
-[inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
-
 ## Debug
 
 Look in **bin/www**. Find a line like this:
@@ -120,3 +125,9 @@ $ npm start
 </pre>
 
 You are getting extra debug output, such as the last line showing what port you are running on.
+
+[jquery-home]:https://jquery.com/
+[express-gen]:https://expressjs.com/en/starter/generator.html
+[inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
+[elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
+[ubuntu-setup]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/UbuntuAndCloudNineSetup

@@ -1,10 +1,15 @@
 ## Overview
 
-The goal of this assignment is to help you learn how to run and create simple bash scripts. Bash scripts help you automate tasks. Knowing how to with even relatively simple scripts can make you significantly more productive.
+The goal of this assignment is to help you learn how to:
+
+- Run and create simple bash scripts.
+- Understand and tweak a few aspects of the Bash shell
+
+Bash scripts help you automate tasks. Knowing how to run or create even relatively simple scripts can make you significantly more productive.
 
 There will also be sections learning how to use aliases and environment variables to customize your environment. Bash scripts frequently make use of environment variables. Understanding how to use them can be a very skill.
 
-This assignment assumes that you have installed my collection of sample programs called [JsObjects][elf-js-objects] on your system. When reviewing the [JsObjects README][e]f-js-objects], be sure to read the section on Navigating JsObjects.
+This assignment assumes that you have installed my collection of sample programs called [JsObjects][elf-js-objects] on your system. When reviewing the [JsObjects README][elf-js-objects], be sure to read the section on Navigating JsObjects.
 
 ## Step One: Learn to Navigate {#navigate}
 
@@ -35,7 +40,7 @@ Run both of the commands shown above and create a screenshot that shows the outp
 - [.bash_aliases][jsba]
 - [Configure Linux][configure-linux]
 
-## The Linux less Command {#linux-less}
+## Step Two: The Linux less Command {#linux-less}
 
 Now run this command, which uses a built in Linux utility called **less**:
 
@@ -49,7 +54,39 @@ less $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
 
 Take a screenshot of the **.bash_aliases** file running in **less** and call it: **BashAliasJsObjects.png**.
 
-## Step Two: What's Available {#available}
+## Step Three: A Simple Script (#simple-script)
+
+Use a text editor such as geany or nano to create a file called **bash-view**:
+
+```bash
+geany ~/bin/bash-view
+```
+
+Insert the following text into the file:
+
+```
+#! /bin/bash
+
+less $JSOBJECTS/Utilities/SetupLinuxBox/.bash_aliases
+```
+
+When you are done typing:
+
+- Save your work and exit the editor.
+- Make the script executable: **chmod +x ~/bin/bash-view**
+- Run it like this: **bash-view**
+
+**NOTE**: _If you are in the directory where you created the file, you could also run it like this: **chmod +x ~/bin/bash-view**. But in general, if you put the script in a directory like **~/bin**, that is on your path, you can just type the name of the script, using tab completion to help you with the task._
+
+Even this simple script, or ones like it, can be useful. The advantages of such scripts are that they:
+
+- Save typing
+- Serve as a reference reminding you how to perform certain tasks
+- Knowing how to create them can be a good calling card in a job interview
+
+If you create a goodly number of such scripts, you might want to save them to your Git repository so that you don't lose them.
+
+## Step Four: What's Available {#available}
 
 I have a number of useful scripts in JsObjects. To get a sense of what is available, run the following commands:
 
@@ -60,7 +97,7 @@ ls ~/Git/JsObjects/Utilities/NodeInstall/
 
 Take a screenshot of the output and save it as **UtilityListings.png**.
 
-## Step Three: Create Express Project {#create-express-project}
+## Step Five: Create Express Project {#create-express-project}
 
 Now its time to create one of our own scripts. Consider the following commands:
 
@@ -118,7 +155,7 @@ sed -i -- 's/Express/BootstrapDelicious/g' routes/index.js
 echo -e "# $1\nby Charlie Calvert" >> README.md
 ```
 
-## Generalize our Script {#generalize}
+## Step: Six: Generalize our Script {#generalize}
 
 The only problem with this script is that it hard codes in the project name. If we want to make the script more generally useful, then we need to pass in a parameter that specifies the project name. We aren't ready to run the command yet, but the command we want to use might look like this:
 
@@ -160,7 +197,7 @@ This works because the **~/bin** folder is placed on your path by the default **
 
 **NOTE**: _A nice thing about Linux is that it will perform command completion for you for programs on your path. Thus you should be able to type something like **Cre** and then press to tab to have the system complete the command: *CreateExpressProject*_.
 
-## Step Four: System Check {#system-check}
+## Step Seven: System Check {#system-check}
 
 I've made some progress with creating a **SystemCheck** script for Linux. The script is maintained here:
 
@@ -176,7 +213,7 @@ $JSOBJECTS/Utilities/SetupLinuxBox/SystemCheck
 
 The script itself looks something like this when it runs:
 
-```
+```text
 =======================
 Menu
 =======================
@@ -194,7 +231,9 @@ Select options b and n (Basic System Check and Node). Take screen shots of the o
 - SystemCheck.png
 - Node.png
 
-## Step Five: Aliases {#aliases}
+**NOTE**: _The SystemCheck script has grown more complex over time. As a result, you may see more options, and not all of checks will necessarily pass on your system. Try to focus only on the options that you need at this time, or use failing tests as a guide to additional setup that you might want to perform. The script is fairly complex for beginners, but exploring it should be an option for many users._
+
+## Step Eight: Aliases {#aliases}
 
 Sometimes our prompt in bash shell gets really long. As a result, I like to show the system name and path on one line, and the $ prompt on a second line. To make this change on your system, edit the [PS1] environment variable that is set around line 62 of your **~/.bashrc** file. Make it looks like this:
 
@@ -273,13 +312,13 @@ The key change is to add **$(__git_ps1)**.
 
 ## Turn it in
 
-Echo out the contents of your **CreateExpressProject** script:
+Echo out the contents of your **MyExpressProjectCreator** script:
 
 ```bash
-$ cat ~/bin/CreateExpressProject
+$ cat ~/bin/MyExpressProjectCreator
 ```
 
-Take a screenshot of the result it save it as **CreateExpressProject.png**.
+Take a screenshot of the result it save it as **MyExpressProjectCreator.png**.
 
 Navigate to a temp folder and run your script, but this time save the output generate by your script into a file called **Create-LastName.txt**, where LastName is your last name.
 
@@ -291,7 +330,7 @@ Attach the following to your project when you submit it:
 - **SystemCheck.png**
 - **Node.png**
 - **aliases.png**
-- **CreateExpressProject.png**
+- **MyExpressProjectCreateor.png**
 - **Create-LastName.txt**
 
 Check in your copy of **CreateExpressProject** script into a folder of your repository called **MyScripts**. Push your work.
