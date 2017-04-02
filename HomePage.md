@@ -18,8 +18,9 @@ This page is maintained in HomePage.jade and HomePage.md.
 * [All Assignments](/books/CloudNotes/Assignments/AllAssignments.html)
 
 ## Other
-- [web](web/index)
+- [configure-linux](Os/Linux/ConfigureLinux.html)
 - [LinuxFaq](/Os/Linux/LinuxFAQ.html)
+- [Web Technologies](web/index)
 - [JavaScriptFunctions](/development/web/JavaScript/JavaScriptFunctions.html)
 - [JavaScriptObjects](/development/web/JavaScript/JavaScriptObjects.html)
 - [CordovaPlugin](/development/android/CordovaPlugin.html)
