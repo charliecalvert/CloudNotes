@@ -4,16 +4,18 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
 **NOTE**: _Express is rarely used on its own. It is simply the foundation on which more complex applications are built. In most cases, other libraries such as jQuery, Angular or React will also be used._
 
-- Express Presentation: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
+- Express Presentation: [http://bit.ly/JavaScriptNode][epres]
+
+**NOTE**: _The default Express template library used to be called Jade, but is now called Pug. At this stage, at least, the two tools are essentially identical. If you find places where I reference Jade, you can simply mentally translate that to Pug, or vice-versa, depending on your needs._
 
 ## Goals
 
- - Create an express application
- - Change the title that appears in **index.jade** and on the main page of the application at run time
- - Load [jQuery][jquery-home] and a custom JavaScript page
- - Use jQuery to display a line of text in an HTML paragraph tag
- - Switch from using **node** to using **nodemon**
- - Set the port to 30025
+- Create an express application
+- Change the title that appears in **index.pug** and on the main page of the application at run time
+- Load [jQuery][jquery-home] and a custom JavaScript page
+- Use jQuery to display a line of text in an HTML paragraph tag
+- Switch from using **node** to using **nodemon**
+- Set the port to 30025
 
 ## Get Started
 
@@ -24,27 +26,33 @@ The [express-generator][express-gen] automatically generates a default express a
 
 However, if you find it is missing, or need to update it, this is the install command:
 
-  npm install -g express-generator
+```bash
+npm install -g express-generator
+```
 
 To use the **express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
 
-<pre>
-express Week03-ExpressBasics
+```
+express --pug Week03-ExpressBasics
 cd Week03-ExpressBasics
 npm install
-</pre>
+```
 
-Load the project in WebStorm. Open up **/bin/www** and set the port 30025. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to *start* your project when you type **npm start**.
+Load the project in WebStorm. Open up **/bin/www** and set the port 30025\. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**.
 
-**NOTE**: *You will need to install **nodemon** if you have not done so already. To install, issue this command **npm install -g nodemon**.*
+**NOTE**: _You will need to install **nodemon** if you have not done so already. To install, issue this command **npm install -g nodemon**._
 
 Now start the project:
 
-	npm start
+```
+npm start
+```
 
 Load the project in a browser:
 
-	http://localhost:30025
+```
+http://localhost:30025
+```
 
 ## Change the Title
 
@@ -61,11 +69,11 @@ $(document).ready(function() {
 });
 ```
 
-**NOTE**: *It is often better to use **document ready** rather than **window.onload** because jQuery will call each instance of **document ready** that you create.*
+**NOTE**: _It is often better to use **document ready** rather than **window.onload** because jQuery will call each instance of **document ready** that you create._
 
-## Modify your Jade Files
+## Modify your Pug Files
 
-First load the JavaScript in **/views/layout.jade**:
+First load the JavaScript in **/views/layout.pug**:
 
 ```
 doctype html
@@ -79,10 +87,10 @@ html
     block content
 ```
 
-Also, in index.jade, be sure you have created a paragraph in which to display your custom text:
+Also, in **index.pug**, be sure you have created a paragraph in which to display your custom text:
 
 ```
-  p#dynamic
+p#dynamic
 ```
 
 ## Turn it in
@@ -93,25 +101,29 @@ Place your project files in the folder of your repository specified above. In th
 
 When you turn in the the assignment, include the URL of your repository. It should look something like this:
 
-	git@bitbucket.com:lastname/prog219_lastname.git
+```
+git@bitbucket.com:lastname/prog219_lastname.git
+```
 
 ## Debug
 
-Look in **bin/www**. Find a line like this:
+It is possible to create debug output that is only displayed if the environment variable called **DEBUG** is set to a certain value. Look in **bin/www**. Find a line like this:
 
 ```javascript
 var debug = require('debug')('Week03-ExpressBasics:server');
 ```
 
-Go to the bash shell and set the DEBUG environment variable:
+This statement says that debug output will be shown if the environment variable **DEBUG** is set to **Week03-ExpressBasics:server**.
 
-<pre>
+To set it, go to the bash shell and set the DEBUG environment variable like this:
+
+```
 export DEBUG=Week03-ExpressBasics:server
-</pre>
+```
 
-Now run your program:
+When you run your program you should now see additional output in the shell:
 
-<pre>
+```bash
 $ npm start
 
 > Week03-ExpressBasics@0.0.0 start /home/charlie/Git/prog272-calvert-2016/Week03-ExpressBasics
@@ -122,12 +134,23 @@ $ npm start
 [nodemon] watching: *.*
 [nodemon] starting `node ./bin/www`
   Week03-ExpressBasics:server Listening on port 30025 +0ms
-</pre>
+```
 
-You are getting extra debug output, such as the last line showing what port you are running on.
+You are getting extra debug output, such as the last line showing what port you are running on. In particular, see if you can find code like this near the bottom of **bin/www**
 
-[jquery-home]:https://jquery.com/
-[express-gen]:https://expressjs.com/en/starter/generator.html
-[inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
+```javascript
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);  <==== THE DEBUG STATEMENT
+}
+```
+
 [elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
+[express-gen]: https://expressjs.com/en/starter/generator.html
+[inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
+[jquery-home]: https://jquery.com/
 [ubuntu-setup]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/UbuntuAndCloudNineSetup
+[epres]: http://bit.ly/JavaScriptNode
