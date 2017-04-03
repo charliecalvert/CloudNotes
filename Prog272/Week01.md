@@ -22,10 +22,16 @@ book. You should however, become familiar with the material it covers.
 ## Links for Week01 Day 1
 
 1. [Getting Started Deck](http://bit.ly/TDEtd5)
-2. Syllabus Prog 272: [http://bit.ly/Prog272-2016](http://bit.ly/Prog272-2016)
+2. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2017](http://bit.ly/prog272-syllabus-2017)
 3. Study the all important [Resources page](Resources.html)
 4. [Why Clean Code][why-clean-code]
-5. Pristine Lubuntu Spring 2016: [http://bit.ly/pristine-april-2016](http://bit.ly/pristine-april-2016)
+5. Pristine Lubuntu Spring 2017: [http://bit.ly/plubuntu2017-04-02](http://bit.ly/plubuntu2017-04-02)
+
+## Install WebStorm
+
+Notes on installing WebStorm:
+
+- [InstallWebStorm][webstorm-install]
 
 ## Links for Week01 Day 2
 
@@ -37,4 +43,5 @@ book. You should however, become familiar with the material it covers.
 
 [why-clean-code]: http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel
 [pro-js]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=44953
-[crockford] :(http://javascript.crockford.com/javascript.html)
+[crockford]:(http://javascript.crockford.com/javascript.html)
+[webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
