@@ -6,9 +6,13 @@ To get started, create  an account on [Code Academy](http://www.codecademy.com/)
 
 **NOTE**: _The name of the site is actually **codecademy**, not **code academy**. In a no doubt futile attempt to preserve what is left of the English language, I nevertheless tend to call it code academy_.
 
-After you have set up your account, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills. The site is in transition this quarter, so I'm giving you two ways to complete each half of the course. Pick one from HTML and CSS, and one from JavaScript. You don't need to complete four courses, just two. Complete on HTML and CSS course and one JavaScript course. If you are unsure which one to pick, pick the newer course of the two choices.
+After you have set up your account, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills.
 
-- [Go to the old HTML and CSS course](http://www.codecademy.com/tracks/web)
+Some of the courses are in transition, so I'm giving you two ways to complete each half of the course. Pick one from HTML and CSS, and one from JavaScript. You don't need to complete four courses, just two. Complete on HTML and CSS course and one JavaScript course.
+
+If you are unsure which one to pick, pick the newer course of the two choices. If, however, you have already completed an older version of the course, I will accept that. In other words, this assignment will be very easy for you if you have already completed the course. If you have not yet completed, or worked through a large part of an existing course, then choose the newer option.
+
+- [The old HTML and CSS Course](http://www.codecademy.com/tracks/web)
 - [The new HTML and CSS course](https://www.codecademy.com/learn/learn-html-css)
 - Complete at least 15% of the skill.
 - [Go to the old JavaScript course](http://www.codecademy.com/tracks/javascript)
@@ -17,7 +21,7 @@ After you have set up your account, I want you to complete some simple exercises
 
 ## Looking Ahead
 
-We'll likely keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
+We'll keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
 
 	Part 1:  15%
 	Part 2:  30%
@@ -27,7 +31,7 @@ We'll likely keep progressing through Code Academy on a weekly basis, doing abou
 	Part 6:  90%
 	Part 7: 100%
 
-If you have already completed these skills, then just turn in the assignment each week pointing me toward the page showing that you have completed the skill, and you will get credit. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
+If you have already completed these skills, then just turn in the assignment pointing me toward the page showing that you have completed the skill, and you will get credit. If you have completed the course, you can turn in all the assignments right now. Otherwise, turn them in as you complete them. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
 
 ## Turn it in
 
