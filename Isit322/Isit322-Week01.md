@@ -1,18 +1,20 @@
 ## Isit 322 Week01-2016
 
-- <https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html>
+The links for React are maintained [here][react-resources].
 
-## **VirtualBox**
+[react-resources]: http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Resources.html#react
+
+## VirtualBox
 
 - The OVA: [http://bit.ly/plubuntu2017-04-02](http://bit.ly/plubuntu2017-04-02)
 - Introductions
 - [VirtualBox Deck](http://bit.ly/1at2JZ2)
 - [Pristine VirtualBox Assignment](http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html)
-- Git 
+- Git
 
-## **Syllabus**
+## Syllabus
 
-*   [http://bit.ly/isit322-syllabus-2017](http://bit.ly/isit322-syllabus-2017)
+* [http://bit.ly/isit322-syllabus-2017](http://bit.ly/isit322-syllabus-2017)
 
 
 ## Set up React
