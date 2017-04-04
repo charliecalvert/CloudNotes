@@ -1,10 +1,8 @@
-Resources for Prog 272
-======================
+## Resources for Prog 272
 
 Here I will list various resources for Prog 272.
 
-Basics
-------
+## Basics
 
 - [Charlie on Elvenware](http://www.elvenware.com/charlie)
 - [Charlie on YouTube](http://www.youtube.com/user/charliecalvert)
@@ -13,12 +11,11 @@ Basics
 - [Charlie on Delicious](https://delicious.com/charliecalvert)
 - [Ebooks and 24X7](http://www.bellevuecollege.edu/lmc/catalogs.html)
 
-Languages and APIs
-------------------
+## Languages and APIs
 
 The majority of this course is focused on building Cordava and/or web
 applications designed to run on mobile devices. Hences we will focus
-largely on HTML, CSS and JavaScript on the front end, and JavaScript 
+largely on HTML, CSS and JavaScript on the front end, and JavaScript
 and/or Python on the back end. Below I provide links to key descriptions
 of these languages, APIs and tools.
 
@@ -112,8 +109,8 @@ NODE
 Podcasts and Blogs
 --------
 
-If you have free time, a long commute, or long walks that you like 
-to take, then it can be nice to listen to podcasts. Here is at least 
+If you have free time, a long commute, or long walks that you like
+to take, then it can be nice to listen to podcasts. Here is at least
 one (of many) places you can find a good list of podcasts:
 
 - <http://stackoverflow.com/questions/1644/what-good-technology-podcasts-are-out-there>

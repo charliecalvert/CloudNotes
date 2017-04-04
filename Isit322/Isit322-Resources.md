@@ -67,5 +67,16 @@ with events and topics covered in our class.
 
 ## Weekly Overviews
 
-- [Week01](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week01-2016.html)
-- [Week02](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week02-2016.html)
+The overviews are usually not current until the actual week that they cover. In other words, during Week02 of the course, the Week03 overview may be set to the material covered during the previous year. I often don't update the overviews until the actual week when the material in question is being taught.
+
+- [Week01](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week01-2017.html)
+- [Week02](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week02-2017.html)
+- [Week03](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week03-2017.html)
+- [Week04](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week04-2017.html)
+- [Week05](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week05-2017.html)
+- [Week06](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week06-2017.html)
+- [Week07](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week07-2017.html)
+- [Week08](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week08-2017.html)
+- [Week09](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week09-2017.html)
+- [Week10](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week10-2017.html)
+- [Week11](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week11-2017.html)
