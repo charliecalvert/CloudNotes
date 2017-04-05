@@ -27,6 +27,17 @@ book. You should however, become familiar with the material it covers.
 4. [Why Clean Code][why-clean-code]
 5. Pristine Lubuntu Spring 2017: [http://bit.ly/plubuntu2017-04-02](http://bit.ly/plubuntu2017-04-02)
 
+## React
+
+Here are some [key links][react-links] that introduce react and tools we are using.
+
+[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
+
+React Basics Slides:
+
+- [http://bit.ly/react-basics](http://bit.ly/react-basics)
+
+
 ## Install WebStorm
 
 Notes on installing WebStorm:

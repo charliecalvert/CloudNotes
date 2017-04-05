@@ -21,6 +21,8 @@ with events and topics covered in our class.
 
 ## Assignments
 
+These assignments are not at all final. It is more like a random mix of assignments that I have given in my courses in the past. I will updated this soon.
+
 - [ReactCodeAcademoy Part 01][car01]
 - [ReactCodeAcademoy Part 02][car02]
 - [ReactCodeAcademoy Part 03][car03]
@@ -52,18 +54,9 @@ with events and topics covered in our class.
 
 ## React
 
-- [React][react]
-- [React Native][react-native]
-- [JavaScript Versions][js-ver]
-- EcmaScript 6
-  - [Es6 Luke Hoban][es6-luke]
-  - [Es6 Quick View][es6-over]
+Here are some [key links][react-links].
 
-[js-ver]: https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/
-[es6-over]: http://es6-features.org/#ClassInheritance
-[es6-luke]: https://github.com/lukehoban/es6features
-[react]: https://facebook.github.io/react/
-[react-native]: https://facebook.github.io/react-native/
+[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
 
 ## Weekly Overviews
 

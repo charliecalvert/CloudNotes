@@ -23,7 +23,7 @@ rm -r ~/bin/webstorm/
 Put your newly downloaded version in place:
 
 ```bash
-mv ~/bin/WebStorm-171.3780.79/ ~/bin/webstorm
+mv ~/Downloads/WebStorm-171.3780.79/ ~/bin/webstorm
 ```
 
 Start webstorm the first time from the command line. Thereafter you can use the system menu to start it:
