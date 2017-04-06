@@ -29,7 +29,7 @@ mv ~/Downloads/WebStorm-171.3780.79/ ~/bin/webstorm
 Start webstorm the first time from the command line. Thereafter you can use the system menu to start it:
 
 ```bash
-~/bin/webstorm/webstorm.sh
+~/bin/webstorm/bin/webstorm.sh
 ```
 
 Again, the exact name of the decompressed folder may differ in minor ways.
