@@ -1,23 +1,18 @@
-## Prog 272 Week 02, 2014
+## Prog 272 Week 02, 2017
 
-toc
+A few key facts.
 
-Primary Goals
--------------
+## Primary Goals
 
-- HTML5, CSS3
-- Karma
-- Grunt and JsHint
+- React, HTML5, CSS3
 - Git
 - Pull JsObjects
-- Pull ElfRuble
 - Create a GitHub Repository
 - JavaScript and Node
-- Unit Tests, Karma, Jasmine and QUnit
+- Unit Tests
 - JavaScript Simple Types
 - JavaScript Objects
 - JavaScript Functions
-- xConvert 
 
 We might also discuss, as needed:
 
@@ -25,29 +20,25 @@ We might also discuss, as needed:
 2.  [InClass](../Assignments/Prog270-011414.html)
 
 The list above is long, perhaps too long. To sum up, the emphasis
-is on JavaScript basics, unit testing, Git and Aptana. These will
-be our core "tools." 
+is on JavaScript basics, unit testing, and Git. These will
+be our core "tools."
 
 JavaScript basics include primitive types, objects and functions. You
 should be able to write unit tests that involve these key elements
 of the language. And finally, you should be able to check your code
 in and out of a git repository.
 
-Grunt and Karma are tools you can use to help ensure that you are
-writing valid JavaScript code. In particular, we use Grunt in
-conjuntion with JsHint, and Karma to automate the running of
-our unit tests.
+Grunt and Karma won't be used much this quarter. They are tools you can use to help ensure that you are writing valid JavaScript code. In particular, we use Grunt in conjuntion with JsHint, and Karma to automate the running of our unit tests.
 
 JsHint is a syntax checker which we can use to confirm that our
-code conforms to basic rules, many of which are conventions 
+code conforms to basic rules, many of which are conventions
 enforced only to help you write code that is easier to maintain.
 
 But again, if you are overwhelmed, focus on learning JavaScript
 primitive types, objects and functions. That is the core of
 our work this first week.
 
-Decks
------
+## Decks
 
 You can learn more about JavaScript, HTML and CSS by viewing these decks:
 
@@ -58,8 +49,7 @@ You can learn more about JavaScript, HTML and CSS by viewing these decks:
 -  [JavaScript Basics - OPDg3s](http://bit.ly/OPDg3s)
 -  [Eclipse - VPK2UE](http://bit.ly/VPK2UE)
 
-The funny letters after each name are the Bitly URLS. If you need
-to manually reach the first link, write:
+The funny letters after each name are the Bitly URLS. If you need to manually reach the first link, write:
 
 - <http://bit.ly/QwLhc8>
 
@@ -75,46 +65,50 @@ anything fully polished, just take what you can get from them. One thing they do
 provide, is a good sense of what I think is important. Generally material that
 is assigned as homework is addressed somewhere on Elvenware.*
 
-IDE
----
+## NPM
 
-We will also introduce our primary IDEs, which include:
+You can test if global npm packages are out of date:
 
--   [Aptana and Eclipse](http://www.elvenware.com/charlie/development/android/Eclipse.shtml)
--   Visual Studio
--   NotePad++
+- **npm -g outdated**
+- This might work too: **ncu**
 
-Sharing Files
--------------
+Update all globally installed packages: **npm update -g**
 
--   SkyDrive
+## IDE
+
+We will also talk more about our primary IDEs and text editors, which include:
+
+-   WebStorm
+-   Geany
+
+## Sharing Files
+
 -   Google Drive
--   DropBox
 -   Ubuntu
 -   GitHub
--   Mercurial
 
-Links
------
+## Links
 
--   <http://www.jshint.com/>
--   <http://www.jslint.com/>
--   <http://www.nczonline.net/blog/2012/10/16/does-javascript-need-classes/>
+- <http://www.jshint.com/>
+- <http://www.jslint.com/>
+- <http://eslint.org/>
 
-Git
----
+## Git
 
-- [Use the Git Gui](http://www.elvenware.com/charlie/development/cloud/Git.html#git-gui-basics)
+[Git Elvenware overview][git-elf]
 
-Update all globally install packages: **npm update -g**
+We are not using Git GUI anymore. I have another tool called Git Cola. I'll update this later.
+
+- [Use the Git Gui][git-gui-basics]
+
+[git-gui-basics]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-gui-basics
 
 Do a pull with GitGui:
 
 - Remote | Fetch From Origin
 - Merge | Local Merge
 
-Podcasts and Videos
--------------------
+## Podcasts and Videos {#podandvid}
 
 I have a number of videos that you should watch:
 
@@ -137,7 +131,7 @@ describe("An Elvenware Suite of Specs", function() {
   it("shows true = true", function() {
     expect(true).toBe(true);
   });
-  
+
   it("shows 1 + 1 = 2", function() {
     expect(1+1).toBe(2);
   });
@@ -145,23 +139,23 @@ describe("An Elvenware Suite of Specs", function() {
   it("shows addMe(2, 3) = 5", function() {
     expect(addMe(2, 3)).toBe(5);
   });
-  
+
   it("converts 9 feet to 3 yards", function() {
   	var actual = xConvert(9, 'feet').to('yards');  	
   	expect(actual).toEqual(3);
   });
-  
+
   it("converts 6 feet to 2 yards", function() {
   	var obj = xConvert(6, 'feet');
   	var actual = obj.to('yards');  	
   	expect(actual).toEqual(2);
   });
-  
+
   it("converts 24 inches to 2 feet", function() {
   	var actual = xConvert(24, 'inches').to('feet');  	
   	expect(actual).toEqual(2);
   });
-  
+
   it("converts 4 gallons to 15.14 liters", function() {
   	var actual = xConvert(4, 'gallons').to('liters');  	
   	expect(actual).toEqual(15.14);
@@ -196,21 +190,25 @@ though our code is fully HTML 5 compliant. To stop this:
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /\>
 ```
 
-Links
------
+## Links
 
--   <http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html>
--   <http://www.techrepublic.com/blog/10things/10-new-html5-tags-you-need-to-know-about/3219?tag=content;siu-container>
--   <http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#mso9>
+- [HTML5 New Tags][html5-new-tags]
+- <http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#mso9>
+- We are not using jQuery much, but [Elvenware jquery-basic][elf-jq-basic]
 
-Tips
-----
+## Tips
 
-### Add jQuery from CDN
+Some additional comments are found in the sections below here.
 
-~~~~
+## Add jQuery from CDN
+
+We won't be using jQuery very much, but if we did, here is a way to link it into a client side HTML file:
+
+```HTML
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
-~~~~
+```
 
 
-> Written with [StackEdit](https://stackedit.io/).
+[git-elf]: http://www.elvenware.com/charlie/development/cloud/Git.html
+[html5-new-tags]: http://www.techrepublic.com/blog/10things/10-new-html5-tags-you-need-to-know-about/3219?tag=content;siu-container
+[elf-jq-basic]: http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html
