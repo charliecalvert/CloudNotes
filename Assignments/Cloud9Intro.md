@@ -155,8 +155,9 @@ The screenshot you want to create will be similar to, but not identical too, the
 
 **Image01**: *The Cloud 9 IDE. Click the image above to expand it.*
 
-## Step Two
+## Webpack on Cloud 9
 
+[Webpack on Cloud 9][webpack-c9]
 
 ## Turn it in
 
@@ -165,3 +166,5 @@ Submit your work and attach the screenshots.
 [cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
 [cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
 [jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
+
+[webpack-c9]: https://github.com/webpack/webpack-dev-server/issues/230
