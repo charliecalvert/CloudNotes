@@ -17,31 +17,24 @@ A few key facts.
 We might also discuss, as needed:
 
 1.  [Privacy](http://bit.ly/1ak3jVM)
-2.  [InClass](../Assignments/Prog270-011414.html)
+2.  Before we can use it, I need to update this:
+  - [In Class Exercise](../Assignments/Prog270-011414.html)
 
-The list above is long, perhaps too long. To sum up, the emphasis
-is on JavaScript basics, unit testing, and Git. These will
-be our core "tools."
+The list above is long, perhaps too long. To sum up, the emphasis is on JavaScript basics, unit testing, and Git. These will be our core "tools."
 
-JavaScript basics include primitive types, objects and functions. You
-should be able to write unit tests that involve these key elements
-of the language. And finally, you should be able to check your code
-in and out of a git repository.
+JavaScript basics include primitive types, objects and functions. You should be able to write unit tests that involve these key elements of the language. And finally, you should be able to check your code in and out of a git repository.
 
 Grunt and Karma won't be used much this quarter. They are tools you can use to help ensure that you are writing valid JavaScript code. In particular, we use Grunt in conjuntion with JsHint, and Karma to automate the running of our unit tests.
 
-JsHint is a syntax checker which we can use to confirm that our
-code conforms to basic rules, many of which are conventions
-enforced only to help you write code that is easier to maintain.
+JsHint is a syntax checker which we can use to confirm that our code conforms to basic rules, many of which are conventions enforced only to help you write code that is easier to maintain. We will use eslint in this course, because we are working with ES6. JsLint is for ES5.
 
-But again, if you are overwhelmed, focus on learning JavaScript
-primitive types, objects and functions. That is the core of
-our work this first week.
+But again, if you are overwhelmed, focus on learning JavaScript primitive types, objects and functions. That is the core of our work this first week.
 
 ## Decks
 
 You can learn more about JavaScript, HTML and CSS by viewing these decks:
 
+-  [Jest with create-react-app](http://bit.ly/jest-cra)
 -  [HTML Basics - QwLhc8](http://bit.ly/QwLhc8)
 -  [CSS - PEc6bG](http://bit.ly/PEc6bG)
 -  [Media Queries - 1imauBZ](http://bit.ly/1imauBZ)
