@@ -1,5 +1,3 @@
-* [Cloud9Intro.html](Cloud9Intro.html)
-* [CodeAcademy01.html](CodeAcademy01.html)
 * [GitHubApi.html](GitHubApi.html)
-* [WebStormInstall.html](WebStormInstall.html)
+* [JavaScriptObjects.html](JavaScriptObjects.html)
 * [master-list.html](master-list.html)
