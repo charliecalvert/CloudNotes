@@ -1,10 +1,31 @@
+## Overview
 
-## Create Address Container
+Extend our **week02-react-jest** project to support new React components with **props**.
+
+## Create Address Component
 
 In Webstorm:
 
 * Create **components** directory.
 * Create **components/Address.js**
+
+## Tag
+
+Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
+
+```bash
+$ git tag -a v3.0.0 -m "Start Week03"
+$ git push origin v3.0.0
+$ git tag -n1
+```
+
+The first command creates a tag that has a message associated with it. The message works much like the message in a commit.
+
+The second command pushes the tag from your local machine to the cloud.
+
+The last command lists your tags and their message on one line. If you have only a single tag, it is not particularly useful, but once you have multiple tags you will see how helpful this can be. Increase the value of the number after -n? to see more information about your tag. You can read about tags here:
+
+- [git tag docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 
 ## Define Address
 
@@ -185,6 +206,12 @@ it.only('renders and reads H1 text', () => {
 });
 ```
 
+If you want to start to test the Address component, remember that it expects to passed some props. You already saw how to do this in the main program.
+
 ## Turn it in
 
 Commit your work, push.
+
+As I drew near the end of the assignment, my tests looked, at minimum a bit like this:
+
+![Final Tests][test-final]

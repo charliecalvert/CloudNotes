@@ -177,6 +177,10 @@ You should now have six passing tests.
 
 When you are done, you should be able to display the complete address for Senator Patty Murray and have two tests for each field: one for the default value and one for the value in the field after you click the button. You can pick any Congress Person who interests you. It doesn't have to be Patty Murray. You should have tests that prove everything is displayed as expected both before and after you click the **Set Address** button.
 
+As I drew near the end of the assignment, my tests looked a bit like this:
+
+![Final Tests][test-final]
+
 ## Hints
 
 You don't need a button click handler for each new field you add. Set them all in **setAddress** handler:
@@ -204,3 +208,5 @@ Feel free to be creative with the HTML you generate. At this point, you will pro
 [show-patty]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-patty.png
 
 [test-first]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-default-first-name.png
+
+[test-final]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-test-address.png
