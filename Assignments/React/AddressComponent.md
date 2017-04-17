@@ -70,6 +70,91 @@ const addresses = [
 export default addresses;
 ```
 
+## Pass addresses to Address {#addresses}
+
+Use **props** to pass address list to Address. First link in both our **Address** component and the **address-list**:
+
+```javascript
+import Address from './components/Address'
+import addresses from './address-list';
+```
+Now pass the **address-list** to the **Address** component:
+
+```javascript
+<Address addressList={addresses} />
+```
+
+Altogether, it looks like this:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import Address from './components/Address'
+import addresses from './address-list';
+import './index.css';
+
+ReactDOM.render(
+    <div>
+        <App />
+        <Address addressList={addresses} />
+    </div>,
+    document.getElementById('root')
+);
+```
+
+## Consume props {#props-in-address}
+
+We don't won't the **Address** component to be responsible for updating the **address-list**. Therefore, it does not own the list. Instead, it consumes it as props. We will set things up so the **Address** component can register changes to its state, but ultimately it will pass the changes back up the line and let some other component handle updated the **address-list**.
+
+In the **Address** component, we need to consume the **address-list** passed in **props**:
+
+```javascript
+constructor(props) {
+    super(props);
+
+    console.log('ADDRESS PROPS', typeof this.props);
+    const address = this.props.addressList[0];
+    this.state = {
+        firstName: address.firstName,
+        lastName: address.lastName,
+        street: address.street,
+        city: address.city,
+        state: address.state,
+        zip: address.zip,
+        phone: address.phone,
+        website: address.website
+    }
+}
+```
+
+We grab the first item in the **address-list** array and use it to initialize our state.
+
+## Display State
+
+We now need to change what we display as our current state. At this point we are only part way to our solution, so we will simply get the second item in address-list, and display it to the user.
+
+Note that the constructor gets the first item, this method gets the second item. This helps you see how the system works, but does not fully explain how our code will work in the long run.
+
+```javascript
+setAddress = () => {
+    const address = this.props.addressList[1];
+
+    this.setState({
+        firstName: address.firstName,
+        lastName: address.lastName,
+        street: address.street,
+        city: address.city,
+        state: address.state,
+        zip: address.zip,
+        phone: address.phone,
+        website: address.website
+    })
+};
+```
+
+Note that we are violating DRY. There are two chunks of code, one in the constructor, one here, that are identical. How can that be fixed?
+
 ## Tests
 
 As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
@@ -99,3 +184,7 @@ it.only('renders and reads H1 text', () => {
     expect(wrapper.contains(welcome)).toEqual(true);
 });
 ```
+
+## Turn it in
+
+Commit your work, push.

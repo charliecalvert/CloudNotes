@@ -1,8 +1,28 @@
+## Overview
+
 The goal of this assignment is to display and test a complete set of numbers from 1 to 9, each of which has state and can be set with a button click.
 
 This assignment builds on the [React Jest Unit Tests][rjut] assignment. Also some reference materials [here](http://bit.ly/jest-cra).
 
 Complete that assignment first. You should turn in only one project, which will contain both the **React Jest Unit Tests** and the **Unit Tests Numbers** assignments. You can turn in the **React Jest Unit Tests** assignment first, if you want. In other words, your project need not include both completed assignments before you turn in the first assignment.
+
+## Tag
+
+Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
+
+```bash
+$ git tag -a v3.0.0 -m "Start Week03"
+$ git push origin v3.0.0
+$ git tag -n1
+```
+
+The first command creates a tag that has a message associated with it. The message works much like the message in a commit.
+
+The second command pushes the tag from your local machine to the cloud.
+
+The last command lists your tags and their message on one line. If you have only a single tag, it is not particularly useful, but once you have multiple tags you will see how helpful this can be. Increase the value of the number after -n? to see more information about your tag. You can read about tags here:
+
+- [git tag docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 
 ## Review
 
