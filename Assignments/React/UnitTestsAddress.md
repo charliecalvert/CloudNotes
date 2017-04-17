@@ -1,6 +1,6 @@
 ## Overview
 
-The goal of this assignment is to display and test a complete address with FirstName, LastName, Street, City, State, Zip or more.
+The goal of this assignment is to display and test a complete address with FirstName, LastName, Street, City, State, Zip or more. There should be tests for each field.
 
 This assignment builds on the [Unit Tests with Jest](http://bit.ly/jest-cra) assignment. Complete that assignment first. You should turn in only one project, which will contain both the **Unit Tests with Jest** and the **Unit Tests with Address** assignments. You can turn in the **Unit Tests with Jest** assignment first, if you want. In other words, your project need not include both completed assignments before you turn in the first assignment.
 
@@ -175,7 +175,7 @@ You should now have six passing tests.
 
 ## Turn it in
 
-When you are done, you should be able to display the complete address for Senator Patty Murray. You can pick any Congress Person who interests you. It doesn't have to be Patty Murray. You should have tests that prove everything is displayed as expected both before and after you click the **Set Address** button.
+When you are done, you should be able to display the complete address for Senator Patty Murray and have two tests for each field: one for the default value and one for the value in the field after you click the button. You can pick any Congress Person who interests you. It doesn't have to be Patty Murray. You should have tests that prove everything is displayed as expected both before and after you click the **Set Address** button.
 
 ## Hints
 

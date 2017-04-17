@@ -69,3 +69,33 @@ const addresses = [
 
 export default addresses;
 ```
+
+## Tests
+
+As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
+
+```javascript
+import App from './App';
+
+// Code omitted here
+
+it.only('renders and reads H1 text', () => {
+    const wrapper = shallow(<App />);
+    const welcome = <h2>Welcome to React</h2>;
+    expect(wrapper.contains(welcome)).toEqual(true);
+});
+```
+
+It will likely end up like this:
+
+```javascript
+import Header from './components/Header';
+
+// Code omitted here
+
+it.only('renders and reads H1 text', () => {
+    const wrapper = shallow(<Header />);
+    const welcome = <h2>Welcome to React</h2>;
+    expect(wrapper.contains(welcome)).toEqual(true);
+});
+```

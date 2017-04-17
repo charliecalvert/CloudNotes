@@ -2,6 +2,8 @@
 
 We will learn a bit about React props by continuing to expand the **week02-rest-basics** program. We will try to understand properties, and to see how they can be passed from one component to another.
 
+Check if site is public or private.
+
 ## Tag
 
 Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
@@ -55,7 +57,9 @@ I found images here:
 - <https://pixabay.com/en/gold-fish-aquarium-goldfish-fins-30831/>
 - <https://pixabay.com/en/goldfish-fins-tropical-animal-47022/>
 - <https://commons.wikimedia.org/wiki/File:Small_SVG_house_icon.svg>
-- 
+- <https://commons.wikimedia.org/wiki/File:Flower-of-Life-91circles36arcs.svg>
+- <https://commons.wikimedia.org/wiki/File:Tree-of-Life_Flower-of-Life_Stage.svg>
+-
 Try also, this search in Chrome/Chromium:
 
 ```
@@ -63,3 +67,33 @@ https://www.google.com/search?q=svg+free+small
 ```
 
 Turn to the images page. Select tools, and select **Labeled for non-commercial reuse** or something similar.
+
+## Tests
+
+As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
+
+```javascript
+import App from './App';
+
+// Code omitted here
+
+it.only('renders and reads H1 text', () => {
+    const wrapper = shallow(<App />);
+    const welcome = <h2>Welcome to React</h2>;
+    expect(wrapper.contains(welcome)).toEqual(true);
+});
+```
+
+It will likely end up like this:
+
+```javascript
+import Header from './components/Header';
+
+// Code omitted here
+
+it.only('renders and reads H1 text', () => {
+    const wrapper = shallow(<Header />);
+    const welcome = <h2>Welcome to React</h2>;
+    expect(wrapper.contains(welcome)).toEqual(true);
+});
+```
