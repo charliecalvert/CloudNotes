@@ -42,9 +42,6 @@ Note that the **ID** of the button is **bar**, but I'm trying to **find** someth
 wrapper.find('button#bar').simulate('click');
 ```
 
-
-
-
 ## Tag
 
 Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
@@ -74,6 +71,22 @@ Add **bower-components** to **.gitignore**:
 node_modules
 jspm_packages
 bower-components
+```
+
+Once again, be sure that you remove **components** from **.gitignore**
+
+Here is **server/views/layout.jade** after this change with **bower-components** instead of **components**:
+
+```javascript
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower-components/bootstrap/dist/css/bootstrap.css')
+    // CODE YOU NEED TO MODIFY OMITTED HERE
+  body
+    block content
 ```
 
 ## New Branch
@@ -107,7 +120,81 @@ Try also, this search in Chrome/Chromium:
 https://www.google.com/search?q=svg+free+small
 ```
 
-Turn to the images page. Select tools, and select **Labeled for non-commercial reuse** or something similar.
+In Google, turn to the images page. Select tools, and select **Labeled for non-commercial reuse** or something similar.
+
+Also, let's put our images and CSS in their own folders:
+
+- **src/css**
+- **src/images**
+
+You will need to make some changes to your code after doing this. In fact, you may have to play with these paths several times over the course of this assignment.
+
+## Modularize
+
+The key goal will be to move **App.js** to **components/App.js**. Then break **App.js** into discrete components such as **components/Header.js**, **components/GetFoo.js** and **components/SmallNumbers.js**.
+
+The simplest way to proceed, I believe, is to copy **App.js** into **SmallNumbers.js**. Now delete everything from **SmallNumbers** that is not related to numbers. Go back to **App.js** and delete everything related to numbers from that file.
+
+## Props
+
+In **index.js** pass in some default numbers to **components/smallNumbers.js**:
+
+```javascript
+var numbersInit = {
+    nine: '0',
+    eight: '0'
+};
+
+ReactDOM.render(
+  // CODE OMITTED HERE
+
+     <SmallNumbers numbers={numbersInit} />
+  </div>,
+  document.getElementById('root')
+);
+```
+
+And then use it in **SmallNumbers.js**:
+
+```javascript
+constructor(props) {
+    super(props);
+    this.state = {
+        nine: props.numbers.nine,
+        eight: props.numbers.eight
+    }
+}
+```
+
+## Query the GitHub API
+
+Install request: **npm install --save request**
+
+In **server/routes/api.js** add this method. If you have GitHub account, use yours, not mine:
+
+```javascript
+var request = require('request');
+
+// EXISTING CODE OMITTED HERE
+router.get('/user', function(req, res, next) {
+    var options = {
+        url: 'https://api.github.com/users/charliecalvert',
+        headers: {
+            'User-Agent': 'request'
+        }
+    };
+
+    request(options, function(error, response, body) {
+        // Print the error if one occurred
+        console.log('error:', error);
+        // Print the response status code if a response was received
+        console.log('statusCode:', response && response.statusCode);
+        // Print the HTML for the Google homepage.
+        console.log('body:', body);
+        res.send({error: error, response: response, body: body});
+    });
+
+});
 
 ## Tests
 

@@ -9,6 +9,42 @@ In Webstorm:
 * Create **components** directory.
 * Create **components/Address.js**
 
+## ENOSPC Error {#enospc}
+
+While testing, If you get an **ENOSPC** error, do this:
+
+- **sudo nano /etc/sysctl.conf**
+- Scroll to the bottom of the document.
+- Add this line: **fs.inotify.max_user_watches = 524288**
+- Save with **Ctrl-O**, exit with **Ctrl-X**.
+- Then run: **sudo sysctl -p**
+
+![More watches][enospc]
+
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
+
+## Props Singe Node Error {#props-single-node}
+
+Here is the error: _Method “props” is only meant to be run on a single node. 0 found instead._
+
+I got this when I had a mismatch between what I thought a button click method was called and what it was really called. For instance, here is my test:
+
+```javascript
+wrapper.find('button#foo').simulate('click');
+```
+
+And here is my JSX:
+
+```HTML
+<button id="bar" onClick={this.getBar}>Get User</button>
+```
+
+Note that the **ID** of the button is **bar**, but I'm trying to **find** something with an **ID** of **foo**. To fix the proplem, bring them into sync:
+
+```javascript
+wrapper.find('button#bar').simulate('click');
+```
+
 ## Tag
 
 Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
