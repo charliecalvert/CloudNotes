@@ -11,39 +11,20 @@ In Webstorm:
 
 ## ENOSPC Error {#enospc}
 
-While testing, If you get an **ENOSPC** error, do this:
+Please look here:
 
-- **sudo nano /etc/sysctl.conf**
-- Scroll to the bottom of the document.
-- Add this line: **fs.inotify.max_user_watches = 524288**
-- Save with **Ctrl-O**, exit with **Ctrl-X**.
-- Then run: **sudo sysctl -p**
+- [Elvenware React][elf-enospc]
 
-![More watches][enospc]
-
+[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
 [enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
 
 ## Props Singe Node Error {#props-single-node}
 
-Here is the error: _Method “props” is only meant to be run on a single node. 0 found instead._
+Please look here:
 
-I got this when I had a mismatch between what I thought a button click method was called and what it was really called. For instance, here is my test:
+- [Elvenware React][elf-sync]
 
-```javascript
-wrapper.find('button#foo').simulate('click');
-```
-
-And here is my JSX:
-
-```HTML
-<button id="bar" onClick={this.getBar}>Get User</button>
-```
-
-Note that the **ID** of the button is **bar**, but I'm trying to **find** something with an **ID** of **foo**. To fix the proplem, bring them into sync:
-
-```javascript
-wrapper.find('button#bar').simulate('click');
-```
+[elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
 
 ## Tag
 
