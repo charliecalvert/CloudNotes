@@ -2,7 +2,48 @@
 
 We will learn a bit about React props by continuing to expand the **week02-rest-basics** program. We will try to understand properties, and to see how they can be passed from one component to another.
 
-Check if site is public or private.
+## No Components in Git Ignore {#git-no-components}
+
+Unless you are sure you mean to do it. make sure that **components** is not listed in your **.gitignore** files.
+
+## ENOSPC Error {#enospc}
+
+While testing, If you get an **ENOSPC** error, do this:
+
+- **sudo nano /etc/sysctl.conf**
+- Scroll to the bottom of the document.
+- Add this line: **fs.inotify.max_user_watches = 524288**
+- Save with **Ctrl-O**, exit with **Ctrl-X**.
+- Then run: **sudo sysctl -p**
+
+![More watches][enospc]
+
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
+
+## Props Singe Node Error {#props-single-node}
+
+Here is the error: _Method “props” is only meant to be run on a single node. 0 found instead._
+
+I got this when I had a mismatch between what I thought a button click method was called and what it was really called. For instance, here is my test:
+
+```javascript
+wrapper.find('button#foo').simulate('click');
+```
+
+And here is my JSX:
+
+```HTML
+<button id="bar" onClick={this.getBar}>Get User</button>
+```
+
+Note that the **ID** of the button is **bar**, but I'm trying to **find** something with an **ID** of **foo**. To fix the proplem, bring them into sync:
+
+```javascript
+wrapper.find('button#bar').simulate('click');
+```
+
+
+
 
 ## Tag
 
@@ -97,3 +138,189 @@ it.only('renders and reads H1 text', () => {
     expect(wrapper.contains(welcome)).toEqual(true);
 });
 ```
+
+## Proper Mocking
+
+I made some progress on mocking our **whatwg-fetch**  calls with jest. Recall that our goal is to create a mock implementation of fetch that does not make an HTTP REST call over the network. This allows us to run our tests even if our server is not, or cannot, run.
+
+This new implementation allows us to use **_exactly_** the same code in **App.js** when we are testing and when we are running our app normally. In particular, here are the imports in **App.js**, or wherever we are calling **fetch**:
+
+```javascript
+import React, { Component } from 'react';
+import './App.css';
+import 'whatwg-fetch';
+```
+
+And here is our call to **fetch**:
+
+```javascript
+fetch('/api/foo')
+    .then(function (response) {
+        console.log('GETONE-FETCH-ONE');
+        return response.json();
+    }).then(function (json) {
+        console.log('GETONE-FETCH-TWO');
+        console.log('parsed json', json);
+        that.setState(foo => (json));
+    }).catch(function (ex) {
+        console.log('parsing failed', ex);
+    });
+```
+
+As you can see, this code is back to our initial syntax. In particular, we are no longer passing this as the first parameter:
+
+```javascript
+fetch(this, '/api/user') <===== WE NO LONGER NEED this. COMPARE TO CODE ABOVE.
+fetch('/api/user') <===== THIS IS HOW IT SHOULD LOOK NOW.
+```
+
+So how do we perform this miracle? To make a long story short: we use the mock library built into Jest. Here is how to proceed:
+
+- Create a new folder in the root of your project called: **__mocks__**
+  - Two underscores, the word mocks, two more underscores
+- Create a file in that directory called **whatwg-fetch.js**
+
+First lets create a simple module that contains the data we will use in our mock:
+
+```javascript
+const getData = (url) => {
+    switch (url) {
+        case '/api/foo':
+            return {
+                foo: 'bar',
+                file: 'api.js'
+            };
+
+        case '/api/user':
+            return {
+                error: {},
+                response: {},
+                body: JSON.stringify({
+                    login: 'Robin Dudette'
+                })
+            };
+
+        default:
+            return {}
+    }
+};
+
+export default getData;
+```
+
+This code simply creates sets of data that mimic what our server would return given a call to a specific **url**.
+
+Below is the source code for our new mock for **fetch**. Note in particular the call to [jest.genMockFromModule][gmm]. That call asks Jest to generate a mock object for the module we want to replace with a mock:
+
+```javascript
+import getData from './mock-data';
+
+'use strict';
+
+const whatwgFetch = jest.genMockFromModule('whatwg-fetch');
+
+var fetch = function(url) {
+
+    var objectState = getData(url);
+
+    var response = {};
+    response.json = function() {
+        return objectState;
+    };
+
+    console.log("FETCH STATER", objectState);
+    return {
+        then: function(func) {
+            console.log('FETCH TEST ONE', func(response));
+            return {
+                then: function(func) {
+                    //func(JSON.stringify(stater));
+                    func(objectState);
+                    return {
+                        catch: function() {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+
+whatwgFetch.fetch = fetch;
+window.fetch = fetch;
+
+module.exports = whatwgFetch;
+```
+
+Over time, you can comment out the calls to **console.log**. But they might be helpful at first when you are trying to understand what is going on. Note in particular that we are now putting calls to the callbacks (func) passed into our labyrinthine series of **return** statements. The most important is the second call to **then** where we pass back the **stater** object. Recall that this is used as follows in our call to **fetch**:
+
+```javascript
+.then(function (json) {
+    console.log('GETONE-FETCH-TWO');
+    console.log('parsed json', json);
+    that.setState(foo => (json));
+})
+```
+
+## Control Console {#control-console}
+
+Here are Three steps to a poor man's logger:
+
+- Declare a boolean in your constructor on your object called **quiet**.
+- Create a method on your object called **debug**
+- Use **debug** instead of console.log
+
+Perhaps a bit like this:
+
+```javascript
+constructor() {
+    super();
+    this.state = {
+        file: 'File Result will be placed here.',
+        foo: 'waiting for express server'
+    };
+
+    // SET quiet TO false TO SEE DEBUG MESSAGES    
+    this.quiet = true;
+    this.debug('GetFoo constructor called');
+}
+
+debug = (message) => {
+    if (!this.quiet) {
+        console.log(message);
+    }
+};
+
+getFoo = () => {
+    const that = this;
+    fetch('/api/foo')
+        .then(function (response) {
+            that.debug('GETONE-FETCH-ONE');
+            return response.json();
+        }).then(function (json) {
+            that.debug('GETONE-FETCH-TWO');
+            that.debug('parsed json', json);
+            that.setState(foo => (json));
+        }).catch(function (ex) {
+            console.log('parsing failed', ex);
+        });
+};
+```
+
+## Refactor Tests
+
+Refactor your tests into:
+
+- App.test.js
+- GetFoo.test.js
+- Header.test.js
+- SmallNumbers.test.js
+
+Move tests into their own folder?
+
+## Turn it in
+
+Commit push, designate directory in your repo where you did your work when you turn in the assignment.
+
+[gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename
