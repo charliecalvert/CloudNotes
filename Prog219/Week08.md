@@ -54,7 +54,7 @@ end script
 Here is the line I use to start my app:
 
     exec /usr/bin/nodejs /home/ubuntu/bin/midterm/bin/www >> /var/log/midterm.log 2>&1
-   
+
 Don't forget to also change the home directory:
 
     script
@@ -99,15 +99,16 @@ ExecStart=/usr/bin/nodejs /home/ubuntu/bin/midterm/bin/www
 
 [Install]
 WantedBy=multi-user.target
-``` 
+```
 
 Commands:
 
     systemctl enable midterm.service
     systemctl start midterm.service
-    systemctrl status midterm.service
+    systemctl status midterm.service
+    systemctl stop midterm.service
 
-To stop it, run status, get the PID (a number) and then do this:
+Alternatively, you can run status, get the PID (a number) and then do this:
 
     kill <PID-Number>
 
@@ -120,4 +121,3 @@ For instance:
 - [Web Servers](http://bit.ly/Q9A4Ne)
 - [Linux Basics](http://bit.ly/PDuWUB)
 - [Mobile Playing Field](http://bit.ly/elf-mobile-play)
-

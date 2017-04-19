@@ -2,13 +2,6 @@
 
 Extend our **week02-react-jest** project to support new React components with **props**.
 
-## Create Address Component
-
-In Webstorm:
-
-* Create **components** directory.
-* Create **components/Address.js**
-
 ## ENOSPC Error {#enospc}
 
 Please look here:
@@ -43,6 +36,13 @@ The second command pushes the tag from your local machine to the cloud.
 The last command lists your tags and their message on one line. If you have only a single tag, it is not particularly useful, but once you have multiple tags you will see how helpful this can be. Increase the value of the number after -n? to see more information about your tag. You can read about tags here:
 
 - [git tag docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+
+## Create Address Component
+
+In Webstorm:
+
+* Create **components** directory.
+* Create **components/Address.js**
 
 ## Define Address
 
@@ -110,7 +110,7 @@ export default addresses;
 
 ## Pass addresses to Address {#addresses}
 
-Use **props** to pass address list to Address. First link in both our **Address** component and the **address-list**:
+Use **props** to pass **address** list to **Address**. First link in both our **Address** component and the **address-list**:
 
 ```javascript
 import Address from './components/Address'
@@ -195,14 +195,14 @@ Note that we are violating DRY. There are two chunks of code, one in the constru
 
 ## Tests
 
-As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
+As you refactor your components, your tests might need to change. For instance, if you move the H2 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
 
 ```javascript
 import App from './App';
 
 // Code omitted here
 
-it.only('renders and reads H1 text', () => {
+it.only('renders and reads H2 text', () => {
     const wrapper = shallow(<App />);
     const welcome = <h2>Welcome to React</h2>;
     expect(wrapper.contains(welcome)).toEqual(true);

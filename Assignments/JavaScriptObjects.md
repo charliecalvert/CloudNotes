@@ -59,8 +59,8 @@ In the same file, using JavaScript object literal syntax, create a new object ca
 
 Inside the object literal, create two properties called:
 
-* operator01
-* operator02
+* operand01
+* operand02
 
 Initialize these properties to -1, much as we initialized the name property of **person** to **'Suzie'** or some similar name in the first of the two examples in [Part Zero](#Part Zero). Of course, this property is of type **number**, not of type **string**.  
 
@@ -69,13 +69,13 @@ Initialize these properties to -1, much as we initialized the name property of *
 Inside your program, but outside the object literal declaration, set the properties to the number of letters in your first and last name using dot notation:
 
 ```javascript
-calculator.operator01 = person.firstName.length;
+calculator.operand01 = person.firstName.length;
 etc...
 ```
 
-Use **console.log** to display the values of **operator01** and **operator02**.
+Use **console.log** to display the values of **operand01** and **operand02**.
 
-Add three methods with zero parameters that operate on **operator01** and **operator02**:
+Add three methods with zero parameters that operate on **operand01** and **operand02**:
 
 * add
 * subtract
@@ -119,7 +119,7 @@ And made some calls like this:
 
 ```javascript
 divider('Calculator');
-console.log('operator01 =', calculator.operator01);
+console.log('operand01 =', calculator.operand01);
 ```
 
 And produced output like this:
@@ -135,8 +135,8 @@ George Washington
 ====================================
 Calculator
 ====================================
-operator01 = 6
-operator02 = 10
+operand01 = 6
+operand02 = 10
 Add:  16
 Subtract: -4
 Multiply: 60

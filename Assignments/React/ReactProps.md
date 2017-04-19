@@ -244,7 +244,7 @@ fetch('/api/user') <===== THIS IS HOW IT SHOULD LOOK NOW.
 
 So how do we perform this miracle? To make a long story short: we use the mock library built into Jest. Here is how to proceed:
 
-- Create a new folder in the root of your project called: **__mocks__**
+- Create a new folder in the root of your project called: **\_\_mocks\_\_**
   - Two underscores, the word mocks, two more underscores
 - Create a file in that directory called **whatwg-fetch.js**
 
@@ -385,10 +385,11 @@ Refactor your tests into:
 - Header.test.js
 - SmallNumbers.test.js
 
-Move tests into their own folder?
+Move tests into their own folder called \_\_tests\_\_.
+
 
 ## Turn it in
 
-Commit push, designate directory in your repo where you did your work when you turn in the assignment.
+Commit, push. When you turn in the assignment, designate the directory in your repo where you did your work.
 
 [gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename
