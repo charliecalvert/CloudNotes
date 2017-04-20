@@ -333,7 +333,7 @@ Over time, you can comment out the calls to **console.log**. But they might be h
 
 ## Control Console {#control-console}
 
-Here are Three steps to a poor man's logger:
+Here are Three steps to a poor man\'s logger:
 
 - Declare a boolean in your constructor on your object called **quiet**.
 - Create a method on your object called **debug**

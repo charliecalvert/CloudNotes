@@ -225,6 +225,20 @@ it.only('renders and reads H1 text', () => {
 
 If you want to start to test the Address component, remember that it expects to passed some props. You already saw how to do this in the main program.
 
+## Debug Jest Message
+
+```javascript
+const getLast = (wrapper) => {
+    const ninep = wrapper.find('p').last().debug();
+    console.log(ninep);
+};
+
+const getFirst = (wrapper) => {
+    const ninep = wrapper.find('p').first().debug();
+    console.log(ninep);
+};
+```
+
 ## Turn it in
 
 Commit your work, push.
