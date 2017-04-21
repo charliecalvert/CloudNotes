@@ -331,9 +331,11 @@ Over time, you can comment out the calls to **console.log**. But they might be h
 })
 ```
 
-## Control Console {#control-console}
 
-Here are Three steps to a poor man\'s logger:
+
+## Logger Console {#control-console}
+
+Here are Three steps to a poor man&#39;s logger:
 
 - Declare a boolean in your constructor on your object called **quiet**.
 - Create a method on your object called **debug**
@@ -387,6 +389,11 @@ Refactor your tests into:
 
 Move tests into their own folder called \_\_tests\_\_.
 
+That's two underscores, the word _tests_, followed by two more underscores.
+
+[Project Structure][proj-struct]
+
+[proj-struct]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-refine-project.png
 
 ## Turn it in
 
