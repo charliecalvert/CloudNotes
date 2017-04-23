@@ -1,7 +1,2 @@
-* [AllFiles.html](AllFiles.html)
-* [AssignmentRedo.html](AssignmentRedo.html)
-* [CloudComputing.html](CloudComputing.html)
-* [ManyLinks.html](ManyLinks.html)
-* [SimpleQueueTips.html](SimpleQueueTips.html)
-* [VirtualResources.html](VirtualResources.html)
+* [GradeBranches.html](GradeBranches.html)
 * [master-list.html](master-list.html)

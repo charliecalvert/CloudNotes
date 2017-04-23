@@ -305,14 +305,16 @@ Now create README file in [markdown][markdown] format:
 echo lastname >> README.md
 ```
 
+## Create gitignore File {#gitignore}
+
 Create a **.gitignore** file with the following items in it:
 
 ```
 node_modules
 .metadata
 .idea
+.c9
 bower_components
-components
 platforms
 Thumbs.db
 *.zip
@@ -325,8 +327,8 @@ You can create the file with the [nano][nano] editor, or do it like this:
 echo node_modules >> .gitignore
 echo .metadata >> .gitignore
 echo .idea >> .gitignore
+echo .c9 >> .gitignore
 echo bower_components >> .gitignore
-echo components >> .gitignore
 echo Thumbs.db >> .gitignore
 echo *.zip >> .gitignore
 echo npm-debug.log >> .gitignore

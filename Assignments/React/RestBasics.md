@@ -54,7 +54,9 @@ npm run eject
 
 The last command, which we probably won't use very often, creates a **scripts** directory and modifies **package.json**. Look at **package.json** to see the relationship between the two.
 
-**NOTE**: _Don't forget to set the **Settings | Languages and Frameworks | JavaScript** to **React JSX** Also, copy in **.jscsrc** from the **server** project._
+**NOTE**: _Don't forget to set the **File | Settings | Languages and Frameworks | JavaScript** to **React JSX**_
+
+**NOTE**: _Some students may want to copy in **.jscsrc** from the **server** project._
 
 In **package.json**, just before the dependencies section, add this:
 

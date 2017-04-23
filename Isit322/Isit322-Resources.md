@@ -19,6 +19,11 @@ with events and topics covered in our class.
 - [Web](http://www.elvenware.com/charlie/development/web/index.html)
 - [Google-Elvenware](https://sites.google.com/site/elvenware/)
 
+## Slide Decks
+
+- [React Basics](http://bit.ly/react-basics)
+- [React Just Create App](http://bit.ly/jest-cra)
+
 ## Assignments
 
 These assignments are not at all final. It is more like a random mix of assignments that I have given in my courses in the past. I will updated this soon.
@@ -27,12 +32,24 @@ These assignments are not at all final. It is more like a random mix of assignme
 - [ReactCodeAcademoy Part 02][car02]
 - [ReactCodeAcademoy Part 03][car03]
 - [ReactCodeAcademoy Part 04][car04]
+- [Code Academy Part 01][cajh01]
+- [Code Academy Part 02][cajh02]
+- [Code Academy Part 03][cajh03]
+- [Code Academy Part 04][cajh04]
+- [Code Academy Part 05][cajh05]
+- [Code Academy Part 06][cajh06]
+- [Code Academy Part 07][cajh07]
+- [Git New Repo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
 - [Pristine VirtualBox](http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html)
+- [React Unit Tests][rutests]
+- [React Rest Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html)
+- [React Props](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html)
+- [React Props Refine](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html)
+- [React Unit Test Numbers](http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestNumbers.html)
 - [AndroidX86Install](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Install.html)
 - [AndroidX86Cordova](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Cordova.html)
 - [Modular Pattern Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/ModularPatternBasics.html)
 - [Functional](http://www.ccalvert.net/books/CloudNotes/Assignments/Functional.html)
-- [Git New Repo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
 - [Split Splice](https://github.com/charliecalvert/elven-assignments/tree/master/Week02-SplitSlice)
 - [Get Numbers](https://github.com/charliecalvert/elven-assignments/tree/master/Week02-GetNumbers)
 - [NPM Publishing](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmPublishing.html)
@@ -52,11 +69,25 @@ These assignments are not at all final. It is more like a random mix of assignme
 [car03]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact03.html
 [car04]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact04.html
 
+[cajh01]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy01.html
+[cajh02]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy02.html
+[cajh03]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy03.html
+[cajh04]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy04.html
+[cajh05]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy05.html
+[cajh06]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy06.html
+[cajh07]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy07.html
+
+[rutests]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html
+
 ## React
 
 Here are some [key links][react-links].
 
 [react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
+
+- [ReactBooks][reactghbook]
+
+[reactghbook]: https://github.com/vhf/free-programming-books/blob/master/javascript-frameworks-resources.md
 
 ## Weekly Overviews
 

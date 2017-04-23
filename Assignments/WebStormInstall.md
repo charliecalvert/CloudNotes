@@ -38,3 +38,11 @@ Again, the exact name of the decompressed folder may differ in minor ways.
 - To make sure you are registered, sign in again to your JetBrains Account if prompted to do so.
 
 ![WebStormLicense](https://s3.amazonaws.com/bucket01.elvenware.com/images/WebStormLicense.png)
+
+## Activation Key
+
+If all else fails, go the jetbrains website, and sign in. Go to your account, which should take you to the licenses page. At any rate, the licenses page should be available from your Account page:
+
+- <https://account.jetbrains.com/licenses>
+
+You should be able to download an activation key. You can paste that key into sign in dialog in Webstorm. That dialog usually just appears magically, but if it doesn't, try **Help | Register** from the menu.

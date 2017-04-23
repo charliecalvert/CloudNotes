@@ -1,3 +1,3 @@
-* [AllAssignments.html](AllAssignments.html)
-* [JavaScriptObjects.html](JavaScriptObjects.html)
+* [GitNewRepo.html](GitNewRepo.html)
+* [WebStormInstall.html](WebStormInstall.html)
 * [master-list.html](master-list.html)

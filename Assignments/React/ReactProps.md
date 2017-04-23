@@ -147,6 +147,23 @@ constructor(props) {
 }
 ```
 
+## Put NumbersInit in its Own File {#num-int}
+
+I called mine **numbers-data.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere:
+
+```javascript
+export default {
+    nine: '0',
+    eight: '0'
+};
+```
+
+Of course, you will now need to import this data into **index.js** and into your tests:
+
+```javascript
+import numbersInit from './numbers-data';
+```
+
 ## Query the GitHub API
 
 Install request: **npm install --save request**
