@@ -311,10 +311,10 @@ In the root of your repository, create a **.gitignore** file with the following 
 
 ```
 node_modules
+bower_components
 .metadata
 .idea
 .c9
-bower_components
 platforms
 Thumbs.db
 *.zip
@@ -325,10 +325,10 @@ You can create the file with the [nano][nano] editor, or do it like this:
 
 ```
 echo node_modules >> .gitignore
+echo bower_components >> .gitignore
 echo .metadata >> .gitignore
 echo .idea >> .gitignore
 echo .c9 >> .gitignore
-echo bower_components >> .gitignore
 echo Thumbs.db >> .gitignore
 echo *.zip >> .gitignore
 echo npm-debug.log >> .gitignore

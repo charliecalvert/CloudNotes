@@ -1,4 +1,5 @@
 * [AddressComponent.html](AddressComponent.html)
+* [ReactAddressEdit.html](ReactAddressEdit.html)
 * [ReactProps.html](ReactProps.html)
 * [ReactPropsMounted.html](ReactPropsMounted.html)
 * [ReactPropsRefine.html](ReactPropsRefine.html)
