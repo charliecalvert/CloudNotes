@@ -175,9 +175,9 @@ You should now have six passing tests.
 
 ## Turn it in
 
-When you are done, you should be able to display the complete address for Senator Patty Murray and have two tests for each field: one for the default value and one for the value in the field after you click the button. You can pick any Congress Person who interests you. It doesn't have to be Patty Murray. You should have tests that prove everything is displayed as expected both before and after you click the **Set Address** button.
+When you are done, you should be able to display the complete address for Senator Patty Murray and have two tests for each field: one for the default value and one for the value in the field after you click the button. You can pick any Congress Person who interests you. It doesn't have to be Patty Murray. You should have tests that prove everything is displayed as expected both before and after you click the **Set Address** button. So we should be able to see in the component view, and in the tests, the **FirstName**, **LastName**, **Steet**, **City** etc fields...
 
-As I drew near the end of the assignment, my tests looked a bit like this:
+When you are done, you should have something like 16 to 20 tests. As I drew near the end of the assignment, my tests looked a bit like this:
 
 ![Final Tests][test-final]
 

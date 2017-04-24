@@ -307,7 +307,7 @@ echo lastname >> README.md
 
 ## Create gitignore File {#gitignore}
 
-Create a **.gitignore** file with the following items in it:
+In the root of your repository, create a **.gitignore** file with the following items in it:
 
 ```
 node_modules
@@ -333,6 +333,8 @@ echo Thumbs.db >> .gitignore
 echo *.zip >> .gitignore
 echo npm-debug.log >> .gitignore
 ```
+
+Files that begin with a period are hidden. To see them, type **ls -la** or **ls -a** or **ll**
 
 **NOTE**: *You can learn more about nano by searching for [cheat sheets][nano-cheat].*
 

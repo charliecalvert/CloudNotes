@@ -239,6 +239,47 @@ const getFirst = (wrapper) => {
 };
 ```
 
+Or like this, if you want something a bit more flexible. The important difference is that it has the **quiet** option, but not that this one goes after h2 instead of **P**:
+
+```javascript
+   var quiet = false;
+
+    function getFirst(wrapper) {
+        const eightp = wrapper.find('h2').first().debug();
+        if (!quiet) {
+            console.log("HEADER:", eightp);
+        }
+    }
+
+    function getLast(wrapper) {
+        const eightp = wrapper.find('h2').last().debug();
+        if (!quiet) {
+            console.log("HEADER:", eightp);
+        }
+    }
+```
+
+If want, make the HTML element configurable by passing in two parameters instead of one:
+
+```javascript
+   var quiet = false;
+
+    function getFirst(wrapper, element) {
+        const eightp = wrapper.find(element).first().debug();
+        if (!quiet) {
+            console.log("HEADER:", eightp);
+        }
+    }
+
+    function getLast(wrapper) {
+        const eightp = wrapper.find(element).last().debug();
+        if (!quiet) {
+            console.log("HEADER:", eightp);
+        }
+    }
+```
+
+
 ## Turn it in
 
 Commit your work, push.
@@ -246,3 +287,5 @@ Commit your work, push.
 As I drew near the end of the assignment, my tests looked, at minimum a bit like this:
 
 ![Final Tests][test-final]
+
+[test-final]: 
