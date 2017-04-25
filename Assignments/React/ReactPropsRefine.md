@@ -196,6 +196,27 @@ describe('My Header tests', function () {
 });
 ```
 
+## Each Test Suite Gets Unique Name
+
+Make sure each test suite you create has a unique and easy to understand name:
+
+```javascript
+describe('My Get User Info Test', function () {...})
+```
+
+We need to be able to easily know where each failing test is located. Give the suite a good name, and it can help us quickly find the failing test so we can fix it:
+
+```
+My Get User Info Test › renders default message for state.userLogin
+
+   expect(received).toEqual(expected)
+
+   Expected value to equal:
+     true
+   Received:
+     false
+```
+
 ## Turn it in
 
 Commit, push. When you turn in the assignment, designate the directory in your repo where you did your work.
