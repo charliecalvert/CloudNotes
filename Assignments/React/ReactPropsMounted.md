@@ -71,9 +71,9 @@ class MyComponent extends Component {
 }
 ```
 
-Here **MyComponent** does nothing by as **MyOtherComponent** to render itself.
+Here **MyComponent** does nothing but ask **MyOtherComponent** to render itself.
 
-In cases like this, if you use Enzyme&#39;s [shallow][enzsh], you will only see the output from **MyComponent**. Indeed, that is often what you want. But sometimes, it is simpler to see the output from both **MyComponent** and **MyOtherComponent**. To do that, you use **mount** rather than **shallow**. We usually do this:
+In cases like this, if you use Enzyme&#39;s [shallow][enzsh], you will only see the output from **MyComponent**. Indeed, that is often what you want. But sometimes, it is best to see the output from both **MyComponent** and **MyOtherComponent**. To do that, you use **mount** rather than **shallow**. We usually do this:
 
 ```javascript
 import { shallow } from 'enzyme';
