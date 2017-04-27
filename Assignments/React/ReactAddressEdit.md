@@ -10,6 +10,14 @@ We have several steps that will allow us to start editing the data we view:
 
 ## Create Tests
 
+Please read this one section from Elvenware:
+
+- [Emzyme Mount vs Shallow][emvz]
+
+[emvz]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enzyme-mount-vs-shallow
+
+
+
 ## Create AddressEdit
 
 Make a copy of **AddressShow**. Strip out everything except the render method.
