@@ -2,11 +2,11 @@
 
 Learn to create a component that can automatically generate the HTML elements displayed in its Render method.
 
-Before getting started, read this section from Elvenware:
+We have several major goals in this assignment. To learn how to:
 
-- [Emzyme Mount vs Shallow][emvz]
-
-[emvz]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enzyme-mount-vs-shallow
+- Learn about Nested components
+- Pass state from the parent to the child componen
+- To build a set of HTML controls based on a specification
 
 ## Creating ShowUserInfo
 
@@ -362,5 +362,5 @@ There is not even a need for you to ever switch to that branch. You can just con
 
 For instance:
 
-Assigment Branch: Week04-ReactPropsShow
-Working Branmch: master 
+- Assigment Branch: Week04-ReactPropsShow
+- Working Branmch: master

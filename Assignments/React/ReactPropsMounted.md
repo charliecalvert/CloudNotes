@@ -2,10 +2,9 @@
 
 We have several major goals in this assignment. To learn how to:
 
-- Nest components
-- Pass state from the parent to the child component
+- Test Nested components with Enzyme **shallow** and **mount**
 - Test with Enzyme **shallow** and mounted
-- To build a set of HTML controls based on a specification
+- Look at a logger
 
 ## Logger
 
@@ -58,7 +57,13 @@ if (process.env.SERVERFOO) {
 }
 ```
 
+## Enzyme shallow and mount
 
+Before going further, read this section from Elvenware:
+
+- [Emzyme Mount vs Shallow][emvz]
+
+[emvz]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enzyme-mount-vs-shallow
 
 ## Testing Elements with Complex Attributes {#on-change=attrs}
 
@@ -136,4 +141,53 @@ Note that I'm calling **containsMatchingElement** rather than **contains**. This
 
 ## Testing ShowUserInfo
 
-When we test **GetUserInfo** we might want, in some cases, to use Enzyme's **mount** because GetUserInfo has a child called **ShowUserInfo**. But **ShowUserInfo** has no such child, so we can test it with **shallow**. Inf fact, all your tests
+When we test **GetUserInfo** we might want, in some cases, to use Enzyme's **mount** because GetUserInfo has a child called **ShowUserInfo**. But **ShowUserInfo** appears at first to have no such child, so we can naively think it might be possible to test it with **shallow**. In fact, **ShowUserInfo** relies on **ElfElements**, which is a component. As a result, we should use **mount** if we want to check everything.
+
+Testing **ShowUserInfo**:
+
+```javascript
+describe('Show User Info mount Test', function () {
+
+    let bodyData = {};
+
+    beforeEach(function() {
+        const tempBody = {};
+        for (let value of fieldDefinitions) {
+            tempBody[value.id] = value.sample;
+        }
+        bodyData=tempBody;
+    });
+
+
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<ShowUserInfo
+            fields={fieldDefinitions}
+            body={bodyData}
+            onChange={function() {}}
+        />, div);
+    });
+});
+```
+
+## Testing GetUser Info
+
+```javascript
+import { mount } from 'enzyme';
+import ElfTestShow from '../ElfTestShow';
+const elfShow = new ElfTestShow(false);
+jest.mock('whatwg-fetch');
+
+describe('My Get User Info test', function () {
+
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<GetUserInfo />, div);
+    });
+});
+```
+
+## Turn it in
+
+Follow the instructions in **ReactPropsShow**. Call the branch: ReactPropsMounted. Or just tell me that your code is in the **ReactPropsShow**
+branch.
