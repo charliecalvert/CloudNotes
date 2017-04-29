@@ -9,3 +9,4 @@ node_modules
 *.htm
 CopyToElvenware.sh
 .codenvy
+_mdwriter.cson
