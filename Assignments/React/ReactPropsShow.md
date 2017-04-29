@@ -26,7 +26,7 @@ render() {
             <div className="App">
                 <ShowUserInfo
                     fields={fieldDefinitions}
-                    body={this.state.body}
+                    gitUser={this.state.gitUser}
                 />
             </div>
         );
@@ -59,7 +59,7 @@ class ShowUserInfo extends Component {
 As you know, this state contains two objects:
 
 - fields: A definition of the fields to display
-- body: The data retrieved from GitHub
+- gitUser: The data retrieved from GitHub
 
 ## Too Many Fields
 
@@ -226,15 +226,62 @@ For instance, the first definition in **field-definitions** return something lik
 <p class="ElfFormParagraph" id="login">login-unknown</p>
 ```
 
+## Default Values for the State
+
+We should properly initialize **this.state** in **GetUserInfo**. Fortunately, with our new **field-definitions**, we have a relatively painless way to do so. Here is the updated constructor for **GetUserInfo**:
+
+```javascript
+constructor() {
+    super();
+    const tempGitUser = {};
+    for (let value of fieldDefinitions) {
+        tempGitUser[value.id] = value.sample;
+    }
+    this.state = {
+        gitUser: tempGitUser
+    };
+
+    logger.log('GetUserInfo constructor called.')
+}
+```
+
+We first create an empty object, then iterator over the **fieldDefinitions** array, and create new objects with a single property.  for **tempGitUser**. For instance, we can create a property set to the value of the **fieldDefinitions.id** property to the value of the **fieldDefinitions.sample** property.
+
+**NOTE**: _This ability to easily and dynamically add properties to an object based solely on pairs of strings is a powerful feature of JavaScript. We wish we could write code like this, but we can't since we don't know the property names until runtime_:
+
+```javascript
+ tempGitUser[0].login = 'login-unknown'
+```
+ We can, however, achieve the same result by execute this code:
+
+```javascript
+tempGitUser[value.id] = value.sample;
+```
+
+Suppose we are looking at this member of the **fieldDefinitions** array:
+
+```javascript
+{
+    id: 'login',
+    label: 'loginName',
+    type: types[DEFAULT],
+    sample: 'login-' + unknown
+},
+```
+
+Our code would adds a property to **tempGitUser** that look something like this:
+
+```javascript
+{'login': 'login-unknown'}
+```
+
+Each iteration of the loop adds one more property to the **tempGitUser** object. The end result is that we have default values for all the paragraph fields in our JSX.
+
 ## Using ElfElements
 
 We can understand some of what is going on here, but how did the control the write data. We do it like this:
 
 ```javascript
-/**
- * Created by charlie on 4/20/17.
- */
-
 import React, {Component} from 'react';
 import '../css/forms.css';
 import 'whatwg-fetch';
@@ -255,7 +302,7 @@ class ShowUserInfo extends Component {
             <div className="ElfFormRow" key={field.id}>
                <label className="ElfFormLabel" htmlFor={field.id}>{field.label}:</label>
                <ElfElements {...field}
-                        value={this.props.body[field.id]}
+                        value={this.props.gitUser[field.id]}
                         onChange={this.props.onChange}
                />
             </div>
@@ -293,7 +340,7 @@ render() {
             <div className="App">
                 <ShowUserInfo
                     fields={fieldDefinitions}
-                    body={this.state.body}
+                    gitUser={this.state.gitUser}
                     onChange={this.getUser}
                 />
             </div>
@@ -303,7 +350,7 @@ render() {
 
 As you can see, **GetUserInfo** passes in three pieces of state to **ShowUserInfo**. These become the **props** seen in the constructor of **ShowUserInfo**. They are used when **ShowUserInfo** generates its code.
 
-We got fields by loading a file that we created. The **body** comes from querying our server. But what is **onChange**? Lets tackle it in the last section of this document.
+We got fields by loading a file that we created. The **gitUser** comes from querying our server. But what is **onChange**? Lets tackle it in the last section of this document.
 
 ## Passing Events
 
@@ -317,19 +364,21 @@ getUser = (event) => {
     return response.json();
   }).then(function(json) {
     logger.log('parsed json', json);
-    var body = JSON.parse(json.body);
+    var gitUser = JSON.parse(json.gitUser);
     that.setState({
-      body: body
+      gitUser: gitUser
     });
     etc....
 ```
+
+You will need to **event.preventDefault()** at the end of this method.
 
 As mentioned earlier, we pass this method as a prop from **GetUserInfo** to **ShowUserInfo**:
 
 ```javascript
 <ShowUserInfo
     fields={fieldDefinitions}
-    body={this.state.body}
+    gitUser={this.state.gitUser}
     onChange={this.getUser}
 />
 ```
