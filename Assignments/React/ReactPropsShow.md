@@ -115,7 +115,8 @@ export default [
         label: 'loginName',
         type: types[DEFAULT],
         sample: 'login-' + unknown
-    },
+    },{
+        id: 'avatar_url',
         label: 'Avatar Url',
         type: types[DEFAULT],
         sample: 'ai' + unknown

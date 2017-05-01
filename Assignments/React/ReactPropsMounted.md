@@ -172,6 +172,8 @@ describe('Show User Info mount Test', function () {
 
 ## Testing GetUser Info
 
+Read about ElfTestShow on [Elvenware][elf-ed].
+
 ```javascript
 import { mount } from 'enzyme';
 import ElfTestShow from '../ElfTestShow';
@@ -191,3 +193,5 @@ describe('My Get User Info test', function () {
 
 Follow the instructions in **ReactPropsShow**. Call the branch: ReactPropsMounted. Or just tell me that your code is in the **ReactPropsShow**
 branch.
+
+[elf-ed]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enzyme-debug-class

@@ -360,3 +360,22 @@ Note that I am both setting the **onclick** method to the function object passed
 ## Turn it in
 
 Add, commit then push. Then Tag. Push you tag. When you turn in the assignment, give me the tag and the directory in which you did your work. I may just look at your most recent code, but being able to go back to where you were when you submitted the assignment can be helpful.
+
+## Hint Breakpoint {#breakpoint}
+
+The debugger and breakpoints are essential tools. I personally can do little without them.
+
+- Start your program.
+- Go to Chrome or Chormium
+- F12 to start the developer tools.
+- Click the Sources page
+- Click **webpack** in the "project view" on the left
+- Select a file
+- Click in the gutter to set a breakpoint.
+  - In this case I choose App.js and put the breakpoint in the constructor on line 7
+  - You could pick any file and put the break point anywhere there is an active line.
+  - Press F5 to rerun to your breakpoint.
+
+![Breakpoints][breakpoint]
+
+[breakpoint]: https://s3.amazonaws.com/bucket01.elvenware.com/images/breakpoint01.png
