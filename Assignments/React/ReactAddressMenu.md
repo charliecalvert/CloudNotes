@@ -65,7 +65,7 @@ The solution I have chosen, and there are many possible solutions, is to let **A
 
 ## Address Changer
 
-To create **AddresChanger**, first make a copy of **Address**. Have the component extend Address rather than **Component**:
+To create **AddresChanger**, first make a copy of **Address**. Have the component extend Address rather than **Component**. Be sure to change the component name and the thing it extends:
 
 ```javascript
 class AddressChanger extends Address {
@@ -191,14 +191,21 @@ Next, we define the **Route** itself. Here are the first two, you can create the
 
 ```javascript
 <Route exact path="/" component={Address}/>
-<Route path="/edit" component={AddressChanger}/
+<Route path="/edit" component={AddressChanger}/>
 ```
 
 Note that the home path has the word **exact** in front of it. This is because other paths, such as **/edit** contain both the **/** and the **/edit** paths. So we say that we want an exact match on **/** not a match on either **/** or **/edit**.
 
+Here:
+
+```
+git mv App.js SmallNumbers.js
+git mv App.js components/SmallNumbers.js
+```
+
 ## Turn it in
 
-Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment. 
+Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment.
 
 ## Hint
 

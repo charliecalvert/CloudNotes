@@ -16,11 +16,9 @@ Please read this one section from Elvenware:
 
 [emvz]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enzyme-mount-vs-shallow
 
-
-
 ## Create AddressEdit
 
-Make a copy of **AddressShow**. Strip out everything except the render method.
+Make a copy of **AddressShow**. Rename the class from **AddressShow** to **AddressEdit**. Must be done in at least two places. Strip out everything except the render method.
 
 - Replace the **P** elements with INPUT controls.
 - Add an ID to each INPUT
