@@ -168,7 +168,51 @@ The final step involves defining what the application will do when the user clic
 <Route exact path="/" component={GetUserInfo}/>
 ```
 
-Note the user of the flag **exact**. This is necessary because 
+Note the user of the flag **exact**. This is necessary because a simple match on '/' will pass both '/' and '/get-foo'. In fact, it will match any URL beginning '/'. So we tell the router that we want an exact match.
+
+I want you to have to figure out at least one of these routes on your own, so I will let you discover the solution for creating the Route to GetFoo. It isn't hard, so try not to over-complicate it.
+
+It is, however, a bit tricky to use a **Route** to load a React component that expects props. Here is how to proceed:
+
+```javascript
+<Route path="/get-numbers"
+    render={(props) => (
+        <SmallNumbers {...props}
+            numbers={numbersInit} />
+    )}
+/>
+```
+
+The normal pattern is to define the path, and then the component:
+
+```javascript
+<Route path="/my-component" component={MyComponent}/>
+```
+
+You cannot, however, pass props to **MyComponent** the same way you can elsewhere in a React application. Instead, you use **render** instead of **component**, and the syntax looks like this in our case:
+
+```javascript
+<Route path="/get-numbers"
+    render={(props) => (
+        <SmallNumbers {...props}
+            numbers={numbersInit} />
+    )}
+/>
+```
+
+We use this syntax because **react-router-dom** passes a certain number of props to a component by default, and we don't want to lose them. Here we use the [spread-operator](http://es6-features.org/#SpreadOperator) to pass the Router props and then we pass our own props. Here is what it looks like in the debugger:
+
+![Local Scope Props Numbers][lspn]
+
+**IMAGES**: _You can see the **Sources** tab of Chrome Developer Tools_
+
+I've run to a breakpoint on line 10 of **SmallNumbers.js**. At the bottom right we can see that **props** for SmallNumbers is in the **Local Scope**. The debugger displays our **Numbers** prop, along with three properties passed by the **react-router-dom**:
+
+- history
+- location
+- match
+
+They can come in useful in more advanced scenarios than the one we see here. In particular, they can help preserve history so the user can move back and forth through your site.
 
 ## Style the Menu
 
@@ -179,3 +223,4 @@ Read about it [here][rrdstm]
 [gf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-home.png
 [bf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-barfoo.png
 [sm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-numbers.png
+[lspn]: https://s3.amazonaws.com/bucket01.elvenware.com/images/small-number-props.png

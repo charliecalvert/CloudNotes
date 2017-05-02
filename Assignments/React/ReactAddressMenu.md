@@ -197,12 +197,24 @@ Next, we define the **Route** itself. Here are the first two, you can create the
 
 Note that the home path has the word **exact** in front of it. This is because other paths, such as **/edit** contain both the **/** and the **/edit** paths. So we say that we want an exact match on **/** not a match on either **/** or **/edit**.
 
-Here:
+
+## Hints and Suggestions
+
+Here are two ways to rename App.js to **SmallNumbers.js**:
 
 ```
 git mv App.js SmallNumbers.js
 git mv App.js components/SmallNumbers.js
 ```
+
+The exact command you give depends on:
+
+- Your current directory.
+- Whether **App.js** is currently in your **src** directory or the **components** directory.
+
+If you can't figure out what to do with these hints, you simply must take time to get a better understanding of the file system and how it works. Beyond these broad hints, my simply giving you the right answer will not help you learn. Unfortunately, going into a tutorial on the file system would be to venture well outside the scope of this course. There are, however, many in depth discussions of this topic on the web and in the library.
+
+- <https://www.google.com/search?q=Understanding+File+and+Directory+navigation> 
 
 ## Turn it in
 
