@@ -15,14 +15,13 @@ The first step is to install the library we will use to help us accomplish our g
 npm install --save react-router-dom
 ```
 
-As you know, this will both install the **react router** and also place an entry for it in **package.json**. If you do this at school, then later pull your changed **package.json** and other files down your home machine, you will need to run **npm install**.
+As you know, this will both install the **react router** and also place an entry for it in **package.json**. If you do this at school, then later pull your changed **package.json** and other files down to your home machine, you will need to run **npm install** on your home machine's updated project folder.
 
 **NOTE** _Running **npm install** in this situation usually does not result in our completely reinstalling all packages on our home machine, but only that the new **react router** package is installed on our home machine._
 
 ## Strategy
 
 We want to be able to display either the **AddressShow** component, or the **AddressEdit** component or the SmallNumbers component.
-
 
 ![AddressShow][add-show]
 
@@ -105,7 +104,9 @@ We should now make sure our tests handle the edits we have made.
 
 ## The Main Index
 
-We are going to fundamentally change the structure of our program. This means, at least for now, that **index.js** should no longer be responsible for showing **AddressShow**, **AddressEdit** or **SmallNumbers**. Instead, it should show only **ElfHeader** and the class we we will to switch between component views. It will be called **ElfMenu**. Here is our modified **index.js** file:
+We are going to fundamentally change the structure of our program. This means, at least for now, that **index.js** should no longer be responsible for showing **AddressShow**, **AddressEdit** or **SmallNumbers**. Instead, it should show only **ElfHeader** and the class we will use to help us switch between component views. That class will be called **ElfMenu**.
+
+Here is our modified **index.js** file:
 
 ```javascript
 import React from 'react';
@@ -122,15 +123,15 @@ ReactDOM.render(
 );
 ```
 
-**NOTE**: _A crucial point, in fact, probably the central point, of this class, is how easy it is for us to move classes and views around when we use the **React** architecture. Yes, it is hard to get up to speed on React, and yes, it is fairly complex tool. But once you have everything set up, making relatively large changes to our programs architecture are simple. The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
+**NOTE**: _A crucial point, in fact, probably the central point, of this class, is how easy it is for us to move classes and views around when we use the **React** architecture. Yes, it is hard to get up to speed on React, and yes, it is a fairly complex tool. But once you have everything set up, making relatively large changes to our program's architecture are simple. The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
 
 ## Define a Menu
 
 At this stage, we have three components that can render the separate views that we want to display:
 
-- Address renders the AddressShow view
-- AddressChange renders the AddressEdit view
-- And SmallNumbers renders **getNine** and similar views.
+- Address renders the **AddressShow** view
+- **AddressChange** renders the **AddressEdit** view
+- And **SmallNumbers** renders **getNine** and similar views.
 
 The next step will be for us to define a menu that will allow us to switch between these views. We will do this in a file called **components/ElfMenu.js**.
 
@@ -167,7 +168,7 @@ In the above code I've imported **React** and the classes I want to display, as 
 
 We'll focus only on the **render** method, since the rest of the code in our file stays the same throughout this exercise.
 
-Let's write code to display the simple menu shown in screenshots visible above. Don't fuss over the fact that the menu looks funky at this point. We can fix that later by adding some CSS. Right now, just focus on getting things working:
+Let's write code to display the simple menu shown in the screenshots visible above. Don't fuss over the fact that the menu looks funky at this point. We can fix that later by adding some CSS. Right now, just focus on getting things working:
 
 ```javascript
 <div>
@@ -198,7 +199,7 @@ Note that the home path has the word **exact** in front of it. This is because o
 
 ## Turn it in
 
-Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment. 
+Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment.
 
 ## Hint
 

@@ -1,1 +1,6 @@
+* [AllAssignments.html](AllAssignments.html)
+* [GitHubApi.html](GitHubApi.html)
+* [GitNewRepo.html](GitNewRepo.html)
+* [JavaScriptObjects.html](JavaScriptObjects.html)
+* [WebStormInstall.html](WebStormInstall.html)
 * [master-list.html](master-list.html)
