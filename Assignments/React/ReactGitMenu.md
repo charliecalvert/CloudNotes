@@ -218,6 +218,38 @@ They can come in useful in more advanced scenarios than the one we see here. In 
 
 Read about it [here][rrdstm]
 
+## Show All Fields of Git User
+
+Be sure to replace the field-definitions.js file with new code from the **Git Convert** assignment. You should be able to display all the fields that are returned from Git.
+
+You will need to make some edits here to the string that is assignment to the value attribute:
+
+```javascript
+<ElfElements {...field}
+      value={this.props.gitUser[field.id]}
+      onChange={this.props.onChange}
+```
+
+I ended up calling a function and doing my work there:
+
+```javascript
+value={getValue(this.props.gitUser)}
+```
+
+In the getValue function, you might want to use syntax like this:
+
+```javascript
+return testMe || ''
+```
+
+That code will return an empty string if **testMe** is **null** or **undefined**. You will also need to handle the case with **gitUser[field.id]** is a **boolean**.
+
+When everything is working right, you won't see messages like this in the debugger: _Warning: `value` prop on `input` should not be null. Consider using the empty string to clear the component or `undefined` for uncontrolled components._ Also, your boolean fields such as **site-admin** will have strings in them rather than being blank. The point being, of course, that your code should run without warnings or errors.
+
+## Turn it in
+
+Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass.
+
 [rrdi]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#router-install
 [rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu
 [gf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-home.png
