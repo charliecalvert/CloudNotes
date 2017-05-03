@@ -248,7 +248,48 @@ When everything is working right, you won't see messages like this in the debugg
 
 ## Turn it in
 
-Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass.
+Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass. f
+
+## ElfDebug
+
+```javascript
+export default class ElfDebug {
+    constructor(showInit=false) {
+        this.showData = showInit;
+    }
+
+    getFirst(wrapper, element) {
+        if (this.showData) {
+            const paragraphData = wrapper.find(element).first().debug();
+            console.log(paragraphData);
+        }
+    }
+
+    getLast(wrapper, element) {
+        if (this.showData) {
+            const paragraphData = wrapper.find(element).last().debug();
+            console.log(paragraphData);
+        }
+
+    }
+
+    getAll(wrapper, element) {
+        if (this.showData) {
+            const paragraphData = wrapper.find(element).debug();
+            console.log(paragraphData);
+        }
+    }
+
+    getIndex(wrapper, index) {
+      if (this.showData) {
+          var paragraphData = wrapper.find('form').childAt(index).debug();
+          console.log(paragraphData);
+    }
+}
+
+
+}
+```
 
 [rrdi]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#router-install
 [rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu
