@@ -248,7 +248,7 @@ When everything is working right, you won't see messages like this in the debugg
 
 ## Turn it in
 
-Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass. f
+Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass. For now.
 
 ## ElfDebug
 
@@ -285,9 +285,6 @@ export default class ElfDebug {
           var paragraphData = wrapper.find('form').childAt(index).debug();
           console.log(paragraphData);
     }
-}
-
-
 }
 ```
 
