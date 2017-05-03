@@ -12,6 +12,7 @@ Along with [loose coupling][lc-wiki] the [single-responsibility princeple][srp-w
 - [Loose Coupling](http://edn.embarcadero.com/article/30372)
 - [The Single Responsibility Principle][srp]
 - [The Open Closed Principle][ocp]
+- [Interface Segregation](https://en.wikipedia.org/wiki/Interface_segregation_principle)
 
 Another important design principle not emphasized in this class is the [Dependency Inversion Principle][dip].
 
@@ -542,5 +543,3 @@ Note the jscs:enable and jscs:disable directives.
 - <http://stackoverflow.com/questions/25223149/is-there-any-way-for-jscs-to-ignore-rules-per-file-block-or-line>
 
 Just don't do it at random. Only in small, isolated cases like this where we really have a good reason to go against the JSCS formatting rules.
-
- 
