@@ -76,6 +76,39 @@ To display the **AddressEdit** component, modify the **Address** render method t
 
 When you are done, edits to the INPUT should automatically propogate to the paragraph controls.
 
+
+## ElfTestDebug
+
+Save as ElfEnzymeDebug.js in the root of your project.
+
+The Source is here:
+
+- [ElfEnzymeDebug][eed]
+
+And use it like this:
+
+```javascript
+import ElfTestDebug from '../ElfTestDebug';
+const elfTestDebug = new ElfTestDebug(true);
+
+elfTestDebug.getFirst(...);
+```
+
+[eed]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
+
+## Contains Matching
+
+Don't call wrapper.contains. Instead call wrapper.containsMatchingElement. You can still block copy the thing you want to match from your debug output, but don't include the onChange event.
+
+```javascript
+fit('renders and displays the default value for firstName', () => {
+    const wrapper = mount(<AddressChanger />);
+    elfTestDebug.getFirst(wrapper, 'input');
+    const welcome = <input id="elfFirstName" className="App-intro" value="unknown" />;
+    expect(wrapper.containsMatchingElement(welcome)).toEqual(true);
+});
+```
+
 ## Turn it in
 
 Add, commit, push. Tag. Push your tag.
