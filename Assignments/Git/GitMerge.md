@@ -42,3 +42,17 @@ Use the tools to move the code from the left or right into the center. When the 
 ## DiffTool Merge
 
 Another way to merge two branches is with DiffTool. This is often best when you want to get only specific files from a particular branch, rather than everything. Suppose once again that we are **master** and want to merge into **master** files from **Week05**. Start with this command
+
+```
+git difftool -d <Branch>
+```
+
+For instance:
+
+```
+git difftool -d Week05
+```
+
+## Turn it in
+
+Take at least two screenshots showing meld open and comparing two branches. In at least one of the pictures, show a comparison between two files, one of which has been modified.s

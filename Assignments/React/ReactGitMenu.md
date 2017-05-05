@@ -252,41 +252,10 @@ Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well 
 
 ## ElfDebug
 
-```javascript
-export default class ElfDebug {
-    constructor(showInit=false) {
-        this.showData = showInit;
-    }
+ [ElfEnzymeDebug][eed]
 
-    getFirst(wrapper, element) {
-        if (this.showData) {
-            const paragraphData = wrapper.find(element).first().debug();
-            console.log(paragraphData);
-        }
-    }
+[eed]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 
-    getLast(wrapper, element) {
-        if (this.showData) {
-            const paragraphData = wrapper.find(element).last().debug();
-            console.log(paragraphData);
-        }
-
-    }
-
-    getAll(wrapper, element) {
-        if (this.showData) {
-            const paragraphData = wrapper.find(element).debug();
-            console.log(paragraphData);
-        }
-    }
-
-    getIndex(wrapper, index) {
-      if (this.showData) {
-          var paragraphData = wrapper.find('form').childAt(index).debug();
-          console.log(paragraphData);
-    }
-}
-```
 
 [rrdi]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#router-install
 [rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu
