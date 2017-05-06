@@ -1,5 +1,7 @@
 ## Overview
 
+I'm assuming that you are working in a folder called **week02-ReactJest** and that has both a **client** and **server** folder in it. If there is any doubt about the folder name, be sure to specify it.
+
 Some notes on testing react
 
 ```
@@ -50,7 +52,7 @@ getNine = () => {
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
 ```
-    
+
 ## Call Server
 
 ```javascript
@@ -71,3 +73,7 @@ getFoo = () => {
         });
 };
 ```
+
+## Turn it in
+
+Git **add**, **push** and **commit**. Put your work in a branch called **RestTest** and then Git **tag**.

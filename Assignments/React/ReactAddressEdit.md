@@ -30,6 +30,26 @@ Here is an example:
 <input id="elfFN" className="App-intro" value={this.props.address.firstName} onChange={this.props.onNameChange}/>
 ```  
 
+## Hint
+
+**shallow** can see all the HTML tags in a render method, but it can't see into the sub-components. Consider this code:
+
+```javascript
+render() {
+    if (!this.quiet) { console.log("ADDRESS RENDER"); }
+    return (
+        <div className="App">
+            <MyAddress />
+        </div>
+    );
+}
+```
+
+**shallow** can see that this render method contains a second React component called **MyAddress**, but it can't see the render method of **MyAddress**. **mount** can see into **MyAddress**. This means it can find the list items or paragraphs that may be listed as part of the **MyAddress** react **Component**. In cases like that shown above, it can see the **render** method of **MyAddress**, but shallow cannot.
+
+Just to be clear, it would not matter how many divs, list items, paragraphs or other tags were included in the **render** method shown above. **shallow** could see them all. But it could not see into the contents of the render method of **MyAddress**.
+
+
 ## Teach Address to Load AddressEdit {#load-address-edit}
 
 All you need to do is add a new method for handling changes to the input control:
