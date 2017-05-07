@@ -1,4 +1,4 @@
-## Overview
+# React Props Show
 
 Learn to create a component that can automatically generate the HTML elements displayed in its Render method.
 
@@ -164,14 +164,12 @@ import '../css/forms.css';
 import Debug from '../elf-logger';
 const logger = new Debug(false);
 
-
 class ElfElements extends Component {
     constructor(props) {
-        logger.log("FORM INPUT", 'constructor called', props);
+        logger.log('FORM INPUT', 'constructor called', props);
         super(props);
-        logger.log("FORM PROPS", this.props);
+        logger.log('FORM PROPS', this.props);
     }
-
 
     render() {
         const common = {
@@ -193,18 +191,18 @@ class ElfElements extends Component {
 
             case 'paragraph':
                 return <p
-                    className="ElfFormParagraph"
+                    className='ElfFormParagraph'
                     id={this.props.id}
 
                     onChange={this.props.onChange}
                 >{this.props.value}</p>;
 
             case 'textarea':
-                return <textarea {...common} className="ElfFormInput" value={this.props.value} />;
+                return <textarea {...common} className='ElfFormInput' value={this.props.value} />;
 
             case 'text': {
                 return <input
-                    className="ElfFormInput"
+                    className='ElfFormInput'
                     id={this.props.id}
                     value={this.props.value}
                     type={this.props.type}
@@ -218,7 +216,7 @@ class ElfElements extends Component {
     }
 }
 
-export default ElfElements
+export default ElfElements;
 ```
 
 For instance, the first definition in **field-definitions** return something like this JSX/HTML:

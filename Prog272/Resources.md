@@ -11,6 +11,20 @@ Here I will list various resources for Prog 272.
 - [Charlie on Delicious](https://delicious.com/charliecalvert)
 - [Ebooks and 24X7](http://www.bellevuecollege.edu/lmc/catalogs.html)
 
+## Assignments
+
+- [JavaScriptObjects](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html)
+- [Jest Create React App](http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html)
+- [Unit Tests Address](http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestsAddress.html)
+- [Address Component](http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html`)
+- [Address Component Refine](http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponentRefine.html)
+- [React Address Show](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html)
+- [React Address Edit](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEdit.html)
+- [React Address Menu](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMenu.html)
+- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/MidtermFinal/Prog272Midterm2017.html)
+- [React Get Address](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html)
+
+
 ## Languages and APIs
 
 The majority of this course is focused on building Cordava and/or web

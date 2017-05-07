@@ -1,4 +1,6 @@
-## Overview
+# React Basics
+
+Copyright (c) 2017 by Charlie Calvert
 
 Get Started with React
 
@@ -185,3 +187,64 @@ Browse to:
 http://localhost:8080/
 
 **NOTE**: _You can append the webback-dev-server line above to your build script in package.json. Use &&: command1 && command2._
+
+## Stateless Functions
+
+Stateless functions can provide the same functionality as above, but with very clean, sparse, syntax.
+
+Create a new file called **ReactBasicsStatelessFunctional.js** and insert into it the code the shown below.
+
+```javascript
+import React from 'react';
+
+export const ReactBasics = () => (
+   <h1>An H1 element in a React Stateless Function</h1>
+);
+```
+
+Compare this code to the code in **ReactBasics.js**.
+
+These are two ways of saying the same thing. Pick the way that you prefer.
+
+## Link in Stateless Code
+
+Modify **main.js** by removing the reference to **ReactBasics.js** and replacing it with a reference to **ReactBasicsStatelessFunctional.js**.
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ReactBasics } from './ReactBasicsStatelessFunctional.js';
+
+ReactDOM.render(<ReactBasics/>, document.getElementById('root'));
+```
+
+Now compile and run as shown earlier.
+
+## js-beautify
+
+The file is called .jsbeautifyrc. The first option shown below tells js-beautify to leave JSX alone, the second tells it to leave import statements alone when they contain inline curly braces:
+import { ReactBasics } from '../ReactBasics.js';
+
+```json
+{
+  "e4x": true,
+  "brace_style": "collapse-preserve-inline"
+}
+```
+
+## Turn it in
+
+Git add, commit and push your work. Create a branch called **ReactBasics**:
+
+```
+git branch ReactBasics
+```
+
+Create a tag:
+
+```
+  git tag -a v1.0.1 -m "React Basics turned in."
+  git push origin v1.0.1
+```
+
+Use a numbering system that makes sense in the context of your repository. For instance, if you already have v1.0.1 then use v1.0.2 or whatever is appropriate and so on. Use your common sense.

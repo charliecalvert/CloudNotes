@@ -1,4 +1,4 @@
-## Overview
+# ISIT 322 Midterm 2017
 
 It is a take home, you will have about a week to do it. Check back for updates, which will be announced if they occur, but the basic plan is this:
 
@@ -27,8 +27,15 @@ Put this **.jscsrc** file in the root of your projects. Probably one for **clien
 ```json
 {
     "preset": "google",
-    "validateIndentation": 4,
-    "excludeFiles": ["**/node_modules/**", "**/bower_components/**"],
+    "validateIndentation": 4,    
+    "excludeFiles": [
+        "**/node_modules/**",
+        "**/config/**",
+        "**/scripts/**",
+        "**/bower_components/**",
+        "**/field-definitions.js",
+        "**/mock-user-info.js"
+    ],
     "requireCamelCaseOrUpperCaseIdentifiers": false,
     "maximumLineLength": 120
 }
@@ -38,9 +45,42 @@ Go to **Setting | Editor | Code Style | JavaScript**. On the Settings tab, in th
 
 JSCS should pass for your files. You can probably make this happen by choosing **Code | Reformat** in WebStorm, or by running the NPM package called **js-beautify**, which should be installed on your system in the global ~/npm/bin directory. If it is not installed, install it. But I do most of my formatting with WebStorm not **js-beautify**.
 
-[Hopefully works for you too][jscs-config]
+![Hopefully works for you too][jscs-config]
+
+Remember that you have a **Gruntfile.js** in **GitExplorer/server** directory. This means you can run **grunt jscs** over the **GitExplorer/server** directory without difficulty. I found it only moderately painful to copy it over to **GitExplorer/client** and run it over the client code as well. There were, however, some **Punctuator** errors that I could not eliminate. I do not, however, get the same errors in WebStorm, perhaps because it is using a more recent copy of JSCS. To be sure you have the latest:
+
+  npm install -g jscs
 
 [jscs-config]:https://s3.amazonaws.com/bucket01.elvenware.com/images/jscs-config.png
+
+## JSCS Punctuator in ES6 {#jscs-punctuator}
+
+I can't get JSCS to accept our arrow functions which we use for binding this. In **ElfLogger**, for instance, I write this:
+
+```javascript
+setQuiet = (newValue) => {
+    this.display = newValue;
+};
+```
+
+This is well formed, if experimental, ES6 syntax. If I remove the semi-colon, then I get a missing semicolon complaint from JSCS. If I add the semicolon, then I get this error:
+
+  JSCS: expected end of node list but punctuator found
+
+The solution is to go back to the old syntax for binding **this**. In the constructor, I write the following:
+
+```javascript
+this.setQuiet = this.setQuiet.bind(this);
+```
+
+Now I can switch to the traditional method declaration syntax, and yet still have **this** properly bound. That is, **this** will be valid in the **setQuiet** method. The problem is not unique to this object, and you may need to make similar changes in multiple place to fix the problem.
+
+For an example, look here:
+
+- [ElfLogger Gist](https://gist.github.com/charliecalvert/cf20ae73a21bb34d6605a1f533c9d988)
+- [ElfLogger in ReactPropsMounted](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMounted.html#logger)
+
+Really sorry about the arrow functions. It's easy to fix our code, easy to switch to the explicit bind syntax, but I'm sad to see the arrow functions go. I liked them, and this seems like a trivial reason to give them up. But I mentioned earlier that there is a real debate about whether to include them or not in the final ES6. The silver lining is that it is good to learn more about **bind**.
 
 ## Extra Credit Option One
 

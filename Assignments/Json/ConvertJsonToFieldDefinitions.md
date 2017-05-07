@@ -1,4 +1,4 @@
-## Overview
+# Convert JSON to Field Definitions
 
 This program can, and probably should, be written in ES5. Put in a directory called **git-convert** that is part of the **GitExplorer** project. In short, you will have three directories in the root of the project:
 

@@ -1,4 +1,4 @@
-## Overview
+# Rest Tests
 
 I'm assuming that you are working in a folder called **week02-ReactJest** and that has both a **client** and **server** folder in it. If there is any doubt about the folder name, be sure to specify it.
 

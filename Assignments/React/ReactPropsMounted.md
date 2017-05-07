@@ -1,4 +1,4 @@
-## Overview
+# React Props Mounted
 
 We have several major goals in this assignment. To learn how to:
 
@@ -17,24 +17,30 @@ This is still a bit tentative, but here is a useful, if somewhat naive, simple l
  * Created by charlie on 4/18/17.
  */
 
-const ElfLogger = class {
+ /**
+  * Created by charlie on 4/18/17.
+  */
 
-    constructor(initQuiet) {
-        this.display = initQuiet;
-    }
+ const ElfLogger = class {
 
-    log = (message1, message2='', message3='') => {
-        if (this.display) {
-            console.log(message1, message2, message3);
-        }
-    };
+     constructor(initQuiet) {
+         this.display = initQuiet;
+         this.log = this.log.bind(this);
+         this.setQuiet = this.setQuiet.bind(this);
+     }
 
-    setQuiet = (newValue) => {
-        this.display = newValue;
-    }
-};
+     log(message1, message2 = '', message3 = '') {
+         if (this.display) {
+             console.log(message1, message2, message3);
+         }
+     };
 
-export default ElfLogger;
+     setQuiet(newValue) {
+         this.display = newValue;
+     }
+ };
+
+ export default ElfLogger;
 ```
 
 Use it like this, where the boolean in the second line turns the logger on or off:

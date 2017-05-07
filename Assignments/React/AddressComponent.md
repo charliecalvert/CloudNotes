@@ -1,6 +1,8 @@
-## Overview
+# Address Component
 
 Extend our **week02-react-jest** project to support new React components with **props**.
+
+**NOTE**: _Sometimes in my code I write something like **etc...** or **and so on...** or **You write the code**, then I'm saying that I expect you to complete the code as an exercise. Occasionally students who are not used to my style think I'm being lazy or writing code that has not been tested. This is generally not the case. I cut and paste working code into a document like this, and then delete the parts I want readers to complete. I usually mark the missing code as described above._
 
 ## ENOSPC Error {#enospc}
 
@@ -288,4 +290,4 @@ As I drew near the end of the assignment, my tests looked, at minimum a bit like
 
 ![Final Tests][test-final]
 
-[test-final]: 
+[test-final]:

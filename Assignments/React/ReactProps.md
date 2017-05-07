@@ -1,4 +1,4 @@
-## React Props
+# React Props
 
 We will learn a bit about React props by continuing to expand the **week02-rest-basics** program. We will try to understand properties, and to see how they can be passed from one component to another.
 

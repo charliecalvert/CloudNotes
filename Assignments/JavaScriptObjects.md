@@ -1,4 +1,4 @@
-## Overview
+# Java Script Objects
 
 In this assignment we will learn about JavaScript objects.
 

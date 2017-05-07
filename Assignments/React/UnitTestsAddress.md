@@ -1,4 +1,4 @@
-## Overview
+# Unit Test Address
 
 The goal of this assignment is to display and test a complete address with FirstName, LastName, Street, City, State, Zip or more. There should be tests for each field.
 
@@ -179,7 +179,7 @@ When you are done, you should be able to display the complete address for Senato
 
 When you are done, you should have something like 16 to 20 tests. As I drew near the end of the assignment, my tests looked a bit like this:
 
-![Final Tests][test-final]
+![Final Tests][reactjta]
 
 ## Hints
 
@@ -209,4 +209,4 @@ Feel free to be creative with the HTML you generate. At this point, you will pro
 
 [test-first]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-default-first-name.png
 
-[test-final]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-test-address.png
+[reactjta]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-test-address.png

@@ -1,4 +1,4 @@
-## Overview
+# Git Merge
 
 The goal of this assignment is to help you learn more about Merging git branches.
 
