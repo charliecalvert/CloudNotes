@@ -2,6 +2,12 @@
 
 Clean up the Address Program
 
+## Goals
+
+- New name for folder: CongressAddress
+- Include svg image and **images** and **css** folders.
+- Divide up tests into one test file per component.
+
 ## Rename
 
 Change the name of the folder in which the program is stored:

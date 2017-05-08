@@ -4,7 +4,24 @@ Extend our **week02-react-jest** project to support new React components with **
 
 **NOTE**: _Sometimes in my code I write something like **etc...** or **and so on...** or **You write the code**, then I'm saying that I expect you to complete the code as an exercise. Occasionally students who are not used to my style think I'm being lazy or writing code that has not been tested. This is generally not the case. I cut and paste working code into a document like this, and then delete the parts I want readers to complete. I usually mark the missing code as described above._
 
+## Goals
+
+Here are the core goals of the assignment.
+
+- Tag your work
+- Create **components** and **Address.js** based on **App.js**
+- Remove code from **Address.js** that **does not** have to do with addresses
+- Remove code from **App.js** that has to do with addresses
+- Add **Address** to **index.js**
+- Create **address-list.js** with sample addresses in it
+- Pass the addresses from **address-list** to **Address** as props
+- Consume props in **Address**
+- Switch from record 0 to record of the address list.
+- Get tests working
+
 ## ENOSPC Error {#enospc}
+
+This is a relatively rare error that you should know because it is so hard to diagnose if you get it.
 
 Please look here:
 
@@ -15,7 +32,7 @@ Please look here:
 
 ## Props Singe Node Error {#props-single-node}
 
-Please look here:
+This is a common error that you should know because it is so hard to diagnose if you get it. Please look here:
 
 - [Elvenware React][elf-sync]
 

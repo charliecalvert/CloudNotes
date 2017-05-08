@@ -148,6 +148,37 @@ Frankly, I've totally lost track of which folder this should be in. Mine is in *
 
 **NOTE**: _One thing I'm trying to do here is create one project for each set of related assignments, rather than the old technique of "copy week02-react-foo into week03-react-bar. This is partially selfish, in that it makes my life simpler, but it should also make your life simpler. If you wanted to go crazy, you could use git tags or branches to delineate one assignment in a series from the next assignment in the series. But I will, when I can, just assume that if you can complete the second or third in a series of projects, then you also completed the first in the series._
 
+## Philosophy
+
+I believe the key thing is learning how to see the output from our Components using the Enzyme debug methods. This class is designed to help you do this:
+
+https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
+
+Let's step back a minute and try to understand what we are doing.
+
+- We create a component such as SmallNumber
+- This component produces output in the form of HTML tags that we typically see on a web page.
+- We are writing tests to prove to ourselves that the HTML being produced by our component is valid HTML and has the shape we expect it to have
+- We write tests for each significant line of output created by our component. We are saying in effect, is the HTML that displays the firstName, lastName, street, etc valid HTML and does it contain the data I expect it to contain? For instance, does it contain a valid first name, last name, etc.
+- We are, quite often, trying to match very specific output. So writing the tests is an exact art. We need to know exactly what is being generated so we are sure our tests check for the exact output we expect to see.
+- Know that exact output is tricky to guess blindly, so we use the enzyme debug methods to display exactly the code that our Component is producing for the firstName, lastName, etc, fields.
+- Once we know the exact output, we write our test to prove to ourselves that we can check for that exact output.
+
+
+Once we have created a valid test, from that time forward, we should be able to say with confidence two things:
+
+1. That changes that we make to our code does not produce unexpected changes that break our tests
+1. That we did not accidentally change the behavior of our Component due to a careless edit, a mistake with Git, or some other unexpected event.
+
+It takes time to create good tests, but once we have them, then we can improve, edit, and add new features to our code with confidence. If we keep our tests in memory at all times, and we check them frequently, then they will tell us immediately if something we wrote caused our code to break.
+
+There are other reasons to write tests, such as documentation, but the above perhaps describes some of the obvious and tangible benefits.
+
+Suppose you are on a QA team and some DEV pushes new code. You run your Unit tests, or if the tests are run automatically, and if the DEV made a mistake that broke old code, you would know immediately that it happened, and furthermore, you would know exactly where the error occurred.
+
+I think if you know why you are writing the tests, and what you are looking for, it is easier to see how to construct them.
+
+
 [rjut]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html
 [rutv]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-unit-test-view.png
 [ruto]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-unit-test-output.png

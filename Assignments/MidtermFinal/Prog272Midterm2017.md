@@ -54,6 +54,46 @@ JSCS should pass for your files. You can probably make this happen by choosing *
 
 [jscs-config]:https://s3.amazonaws.com/bucket01.elvenware.com/images/jscs-config.png
 
+## JSCS Punctuator
+
+Here is our current AddressChange:
+
+```javascript
+onAddressChange = (event) => {
+    this.addressIndex += 1;
+    const address = addresses[this.addressIndex];
+
+    this.setState({
+        address: address
+    })
+};
+```
+
+Get rid of the arrow function syntax, which is cutting edge experimental code that JSCS is not handling correctly:
+
+```javascript
+onAddressChange(event) {
+    this.addressIndex += 1;
+    const address = addresses[this.addressIndex];
+
+    this.setState({
+        address: address
+    })
+};
+```
+
+All this is good and well, but now the **this** variable in **onAddressChange** is no longer valid. To fix it, add this code to the **constructor**:
+
+```javascript
+this.onAddressChange = this.onAddressChange.bind(this);
+```
+
+The call to bind shown above is the traditional way to solve this problem. I was enamored of the arrow function syntax and thought it a nice better way to solve the "invalid this" problem. But that solution is not certain to make it into the final ES6 spec. So I'm opting for this alternative solution, even if we lose the array function syntax.
+
+See the **setQuiet** method in this gist for a complete working example of the fix:
+
+- <https://gist.github.com/charliecalvert/cf20ae73a21bb34d6605a1f533c9d988>
+
 ## Turn it in
 
 Git **add**, **commit** and **push**. Git **tag** and/or create a **branch**. (If you are doing both, add the tag after you create the branch.) Use the word **Midterm** in your tag and/or branch messages. If there is any doubt as to which folder and branch your midterm is in, be sure to spell it out. For instance:

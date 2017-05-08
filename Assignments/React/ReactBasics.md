@@ -2,7 +2,9 @@
 
 Copyright (c) 2017 by Charlie Calvert
 
-Get Started with React
+This chapter helps you get started with React.
+
+Here are some useful links:
 
 - [Slides](http://bit.ly/react-basics)
 - [github student](https://education.github.com/pack)
