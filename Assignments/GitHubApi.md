@@ -47,6 +47,11 @@ let getGitHub = function() {
     return gh;
 };
 ```
+
+## Display Gist Data
+
+Create a new components based on GetUserInfo and  call it **DataMaven**.
+
 ## Examples
 
 curl https://api.github.com/zen
