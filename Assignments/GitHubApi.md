@@ -25,3 +25,17 @@ Convert the reset time:
 var f = new Date(1492098563 * 1000);
 console.log(f); => "Thu Apr 13 2017 08:49:23 GMT-0700 (PDT)"
 ```
+
+##
+
+- [GitHub API Docs](http://github-tools.github.io/github/)
+- [Get a GitHub API oauth token][git-token]
+- [OctoNode alternative API](https://github.com/pksunkara/octonode)
+
+npm install --save github-api
+
+var GitHub = require('github-api');
+
+
+
+[git-token]: https://github.com/settings/tokens
