@@ -78,7 +78,16 @@ render() {
 }
 ```    
 
-Like that.
+In **index.js** just load **DataMaven**:
+
+```javascript
+ReactDOM.render(
+    <div>
+        <DataMaven/>
+    </div>,
+    document.getElementById('root')
+);
+```
 
 ## Examples
 
