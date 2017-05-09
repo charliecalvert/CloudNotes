@@ -29,6 +29,24 @@ var GitHub = require('github-api');
 
 [git-token]: https://github.com/settings/tokens
 
+## Sign in
+
+```javascript
+let getGitHub = function() {
+    let gh;
+    if (true) {
+        gh = new GitHub({
+            token: token
+        });
+    } else {
+        gh = new GitHub({
+            username: 'charliecalvert',
+            password: ''
+        });
+    }
+    return gh;
+};
+```
 ## Examples
 
 curl https://api.github.com/zen
