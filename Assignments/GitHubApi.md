@@ -54,6 +54,32 @@ Create a new components based on GetUserInfo and  call it **DataMaven**.
 
 In DataMaven block copy fetchUser and paste it, renaming it to fetchGist. Now you have both fetchUser and fetchGist. In fetchGist, the URL should be '/api/gist-test'.
 
+Your render method for DataMaven should have the routes that were in ElfHeader:
+
+```javascript
+render() {
+    return (
+
+        <Router>
+            <div>
+                <ElfHeader/>
+                <Route exact path='/' component={GetUserInfo}/>
+                <Route path='/get-foo' component={GetFoo}/>
+                <Route path='/get-numbers'
+                       render={(props) => (
+                           <SmallNumbers {...props}
+                                         numbers={numbersInit}/>
+                       )}
+                />
+            </div>
+
+        </Router>
+    );
+}
+```    
+
+Like that.
+
 ## Examples
 
 curl https://api.github.com/zen
