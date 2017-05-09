@@ -52,6 +52,8 @@ let getGitHub = function() {
 
 Create a new components based on GetUserInfo and  call it **DataMaven**.
 
+In DataMaven block copy fetchUser and paste it, renaming it to fetchGist. Now you have both fetchUser and fetchGist. In fetchGist, the URL should be '/api/gist-test'.
+
 ## Examples
 
 curl https://api.github.com/zen
