@@ -3,4 +3,3 @@
 * [MidtermFinal/Summary.html](MidtermFinal/Summary.html)
 * [Json/Summary.html](Json/Summary.html)
 * [Git/Summary.html](Git/Summary.html)
-* [CodeAcademy/Summary.html](CodeAcademy/Summary.html)

@@ -32,17 +32,27 @@ A description of what I want to see on the midterm.
 
 I couldn't figure out what was going on with JSCS earlier in the quarter, or perhaps WebStorm was broken with ES6 code. At any rate, something has changed either in my head or in the world.
 
-You should now first make sure JSCS _**is turned on**_ in WebStorm. Go to **Settings | Languages and Frameworks | JavaScript | Code Quality Tools | JSCS** and make sure it is **enabled**.
+If you have not done so already, install JSCS globally:
+
+  npm install -g jscs
+
+Make sure JSCS _**is turned on**_ in WebStorm. Go to **Settings | Languages and Frameworks | JavaScript | Code Quality Tools | JSCS** and make sure it is **enabled**.
 
 Put this **.jscsrc** file in the root of your projects. Probably one for **client** and one for **server**:
 
 ```json
 {
     "preset": "google",
+    "maximumLineLength": null,
     "validateIndentation": 4,
-    "excludeFiles": ["**/node_modules/**", "**/bower_components/**"],
-    "requireCamelCaseOrUpperCaseIdentifiers": false,
-    "maximumLineLength": 120
+    "excludeFiles": [
+        "**/node_modules/**",
+        "**/config/**",
+        "**/scripts/**",
+        "**/bower_components/**",
+        "**/address-list.js",
+        "**/mock-user-info.js"
+    ]
 }
 ```
 
