@@ -1,6 +1,6 @@
 # Git Hub API
 
-Learn how to call the GitHub API.
+Learn how to call the [GitHub API](https://github.com/github-tools/github).
 
 ## Node Support for ES6 {#node-green}
 
