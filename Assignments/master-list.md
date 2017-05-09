@@ -1,5 +1,2 @@
 * [Summary.html](Summary.html)
-* [React/Summary.html](React/Summary.html)
-* [MidtermFinal/Summary.html](MidtermFinal/Summary.html)
-* [Json/Summary.html](Json/Summary.html)
-* [Git/Summary.html](Git/Summary.html)
+* [Browser/Summary.html](Browser/Summary.html)

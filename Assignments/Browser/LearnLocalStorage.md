@@ -1,6 +1,6 @@
-## Learn Local Storage
+# Learn Local Storage
 
-Learn about local storage.
+Learn about local storage in the browser.
 
 ## Simple Object
 
