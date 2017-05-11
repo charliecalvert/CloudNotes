@@ -122,6 +122,23 @@ Watch Usage
 
 Select **p** and enter part of the name of the test file you want to test. For instance, **Header**. Then only **Header.test.js** will run.
 
+## GetGist Component
+
+You'll need to create a new component called **ShowNewGist** that extends **React.Component**. Its job will be to display the information you get back when you create a gist. This component will take a certain number of props including:
+
+- The method to call to create the Gist: **fetchGist**.
+- The data retrieved from GitHub after you create the Gist: **gitGist**.
+
+You do not need to display all the fields, at least at first. Two or three would be enough while testing. For the midterm, up this to at least five or six. Be sure to include **Description** and **URL** among the fields you display. If possible, making **URL** clickable so we can see the Gist that you create.
+
+Add a new item to the menu called **Insert New Gist** or something similar. In **DataMaven**, you will also need to a new **Route** in the **render** method. It should display a component called ShowNewGist At some point the new route will need to pass two pieces of information to the component it calls.
+
+The new component will have one button that will call the **fetchGist** method from **DataMaven**.
+
+**fetchGist** should retrieve the entirity of the JSON data returned from GitHub. On the client side you should add the data to **DataMaven**'s state. This should cause a call to the **DataMaven** and **ShowNewGist** render methods.
+
+
+
 
 ## Examples
 
