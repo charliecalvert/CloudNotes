@@ -6,6 +6,8 @@ Learn about local storage in the browser.
 
 We need to be able to turn logging on and off as needed. One way to do it is to set it by module. If we set a particular environment variable to the name of a module, then the debug statements for that module will be visible.
 
+The docs for **ElfLogger** are here: [http://bit.ly/elven-utils](http://bit.ly/elven-utils)
+
 The source for **ElfLogger** is available as a gist: [http://bit.ly/elf-logger](http://bit.ly/elf-logger)
 
 The source for **ElfDebugEnzyme** as a gist: [http://bit.ly/elf-debug-enzyme](http://bit.ly/elf-debug-enzyme)

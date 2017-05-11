@@ -89,6 +89,40 @@ ReactDOM.render(
 );
 ```
 
+## Testing Notes
+
+The tests in **Header.test.js** break after the refactoring explained above. After the refactoring, I was getting this error:
+
+- _Failed context type: The context `router` is marked as required in `Link`, but its value is `undefined`._
+
+This is because the **ElfHeader** could not find the **Router** tag is was expected. The fix is as follows:
+
+```javascript
+import { BrowserRouter as Router } from 'react-router-dom';
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Router><ElfHeader /></Router>, div);
+});
+```
+
+**Question**: After making this change, we might want to test to see if **ElfHeader** properly renders an **H2** element. For that test to work, should we now use **shallow** or **mount**?
+
+## Running One Test File or Suite {#one-test}
+
+We have learned how to use **fit** and **.only**. Also, note the menu:
+
+```
+Watch Usage
+ › Press o to only run tests related to changed files.
+ › Press p to filter by a filename regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.
+```
+
+Select **p** and enter part of the name of the test file you want to test. For instance, **Header**. Then only **Header.test.js** will run.
+
+
 ## Examples
 
 curl https://api.github.com/zen
