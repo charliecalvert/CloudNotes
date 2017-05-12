@@ -15,6 +15,8 @@ $ node --version
 v7.9.0
 ```
 
+- [ElfDebugEnzyme](https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab)
+
 ## GitHub API
 
 - [GitHub API Docs](http://github-tools.github.io/github/)
@@ -35,7 +37,7 @@ var GitHub = require('github-api');
 let getGitHub = function() {
     let gh;
     if (true) {
-        gh = new GitHub({
+    https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab    gh = new GitHub({
             token: token
         });
     } else {
@@ -87,7 +89,7 @@ ReactDOM.render(
     </div>,
     document.getElementById('root')
 );
-```
+```https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 
 ## Testing Notes
 
@@ -105,7 +107,7 @@ it('renders without crashing', () => {
     ReactDOM.render(<Router><ElfHeader /></Router>, div);
 });
 ```
-
+https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 **Question**: After making this change, we might want to test to see if **ElfHeader** properly renders an **H2** element. For that test to work, should we now use **shallow** or **mount**?
 
 ## Running One Test File or Suite {#one-test}
