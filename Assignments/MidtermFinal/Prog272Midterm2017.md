@@ -104,6 +104,8 @@ See the **setQuiet** method in this gist for a complete working example of the f
 
 - <https://gist.github.com/charliecalvert/cf20ae73a21bb34d6605a1f533c9d988>
 
+**NOTE**: _When I got the punctuator error, the editor did not usually point right at the source of the problem. Instead, for me, it was often pointing at the first **import** statement at the top of the file. Eventually, I realized the problem was not the **import** statement, but the arrow functions. I found this to be quite confusing, and it took me several tries before I sorted it out. Once I removed the arrow function, however, the other JSCS errors were easier to find, and WebStorm pointed me at the place in the file where the error occurred._
+
 ## Turn it in
 
 Git **add**, **commit** and **push**. Git **tag** and/or create a **branch**. (If you are doing both, add the tag after you create the branch.) Use the word **Midterm** in your tag and/or branch messages. If there is any doubt as to which folder and branch your midterm is in, be sure to spell it out. For instance:
@@ -113,3 +115,88 @@ Git **add**, **commit** and **push**. Git **tag** and/or create a **branch**. (I
 - Folder: **CongressAddress**
 
 I'm happy if your branch is master, but if you feel comfortable creating a **midterm** branch, then do so just before you submit the assignment. You can update the branch at any time until the actual due date for the assignment. Even then, I would probably prefer a late update to a broken program.
+
+## Shallow Button Clicks
+
+By definition, enzyme **shallow** works with only one component at a time. When we use **shallow**, it is therefore not possible to check if a button click is working correctly since that involves the interaction of two components.
+
+However, even when we use shallow, an onClick function can be created within a button test to validate that the button responds to clicks. We implement the **onClick** function as a callback, and then confirm that when we click the button the callback is executed.
+
+Here is an example:
+
+```javascript
+// button test
+it('responds to a button click', () => {
+    //create variable to track button click status
+    let clicked = false;
+    //create function to assign as onClick
+    const callback = () => {
+        clicked = true;
+    };
+
+    const wrapper = shallow(<AddressShow onSetAddress = {callback} address={address}/>);
+    wrapper.find('button#setAddress').simulate('click');
+    expect(clicked).toEqual(true);
+
+});
+```
+
+Thanks to Andrew Wilson for inspiring this tip!
+
+## Contains Matching Element
+
+Remember that for tests on our input elements we need to use containsMatching element:
+
+**contains** insists that all attributes for a tag match exactly, while **containsMatchingElement** allows you to match just one out of multiple attributes. In other words, it ignores attributes you don't care about. We have to use **containsMatchingElement** when testing our input controls since they contain **onChange** functions, and it is not easy or perhaps not even possible to match a function:
+
+```javascript
+const inputElement = <input value='Robin Dudette'/>;
+// Code omitted
+expect(wrapper.containsMatchingElement(inputElement)).toEqual(true);
+```
+
+This works even if the **input** control has a number of other attributes other than **value**.
+
+## Don't Use Fetch on Midterm
+
+Unless you are absolutely sure you know what you are doing, don't call **fetch** on the midterm as it will break your tests. Just continue to get the data from **address-list.js**.
+
+## Filter Tests
+
+Also, notice the menu the tests give you. Note the p option for filtering files. Suppose one of your test files is called Foo.test.js and one is called Bar.test.js. Press p and enter Foo. Only Foo.test.js will run:
+
+```
+Watch Usage
+ › Press a to run all tests.
+ › Press o to only run tests related to changed files.
+ › Press p to filter by a filename regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.
+
+ pattern › Foo
+```
+
+The result might look like this:
+
+```
+ PASS src/__tests__/Foo.test.js
+ React Foo Suite
+ ✓ see if true is true (6ms)
+
+Test Suites: 1 passed, 1 total
+Tests: 1 passed, 1 total
+Snapshots: 0 total
+Time: 0.545s, estimated 1s
+Ran all test suites matching "Foo".
+
+Watch Usage
+ › Press a to run all tests.
+ › Press o to only run tests related to changed files.
+ › Press p to filter by a filename regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.
+ ```
+
+Even though I had several tests in my __tests__ folder, only the one that had **Foo** in its name was run.
+
+- [More information in the docs](https://facebook.github.io/jest/docs/api.html)

@@ -253,7 +253,42 @@ import { mount } from 'enzyme';
 
 The first step will be to load **mount** rather than **shallow** from enzyme.
 
+```javascript
+import React from 'react';
+import Address from '../components/Address';
+import { mount } from 'enzyme';
+import addresses from '../address-list';
+import ElfDebugEnzyme from '../ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(false, 'NaiveAddressEdit.test.js');
+import '../css/index.css';
+
+const address = addresses[0];
+
+describe('Naive Address Edit Mount Jest Suite', function () {
+
+    it('renders and displays the default last name', () => {
+        const wrapper = mount(<Address address={address}  />);
+        const welcome = <p className='App-intro'>lastName: unknown</p>;
+        elfDebugEnzyme.getIndex(wrapper, 'div#addressShowRender', 1, true);
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+    it('renders button click message for first name', () => {
+        const wrapper = mount(<Address address={address}/>);
+        const patty = <p className='App-intro'>lastName: Murray</p>;
+        wrapper.find('button#showAddressClick').simulate('click');
+        elfDebugEnzyme.getIndex(wrapper, 'div#addressShowRender', 1, true);
+        expect(wrapper.contains(patty)).toEqual(true);
+    });
+
+});
+```
+
 After that, the tests look more or less the same.
+
+## Writing Generic, Resuable Tests {#generic-tests}
+
+Some tests are so similar that you can create a test blueprint, and call it:
 
 ```javascript
 import React from 'react';
@@ -295,9 +330,31 @@ describe('Address mount Suite', function () {
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(patty)).toEqual(true);
     };
+
+    it('renders and displays the default first name', () => {
+       defaultFieldTest('firstName: unknown', 0);
+    });
+
+    it('renders and displays the default last name', () => {
+       defaultFieldTest('lastName: unknown', 1);
+    });
 });
 
 ```
+
+Note that once you created the generic **defaultFieldTest** and **afterClickFieldTest** methods you can call them very simply with code that is not likely to break:
+
+```javascript
+it('renders and displays the default street', () => {
+    defaultFieldTest('street: unknown', 2);
+});
+```
+
+## Understanding getIndex
+
+I've moved these methods into ElfDebugEnzyme.
+
+- [http://bit.ly/elf-debug-enzyme](http://bit.ly/elf-debug-enzyme)
 
 Note the **getIndex** method that replaces our **getFirst** method. This will help you pick out individual components from the render method of **AddressShow**.
 

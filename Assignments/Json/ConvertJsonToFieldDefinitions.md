@@ -57,7 +57,7 @@ You can read more here, but for now you need go no further than example shown ab
 
 I'll accept your assignment with **console.log** instead of **debug**, but it will cost 3 points.
 
-[debug-npm]:(https://www.npmjs.com/package/debug)
+[debug-npm]: https://www.npmjs.com/package/debug
 
 ## Promises
 

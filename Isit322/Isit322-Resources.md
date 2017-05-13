@@ -55,6 +55,7 @@ These assignments are not at all final. It is more like a random mix of assignme
 - [Convert JSON](http://www.ccalvert.net/books/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.html)
 - [React Git Menu](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGitMenu.html)
 - [Git Merge](http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GitMerge.html)
+- [Git Hub API](http://www.ccalvert.net/books/CloudNotes/Assignments/GitHubApi.html)
 - [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/MidtermFinal/Isit322Midterm2017.html)
 - [AndroidX86Install](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Install.html)
 - [AndroidX86Cordova](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Cordova.html)

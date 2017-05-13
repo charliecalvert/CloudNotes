@@ -19,15 +19,30 @@ v7.9.0
 
 ## GitHub API
 
-- [GitHub API Docs](http://github-tools.github.io/github/)
+- [JavaScript GitHub API Docs](http://github-tools.github.io/github/)
+- [JavaScript GitHub API Repo](https://github.com/github-tools/github)
+- [Generic (not JavaScript Specific, GitHub API Intro](https://developer.github.com/v3/)
+- [Generic GitHub API Guides](https://developer.github.com/guides/)
+
+Get the GitHub API token:
+
 - [Get a GitHub API oauth token][git-token]
-- [OctoNode alternative API](https://github.com/pksunkara/octonode)
 
+Install the JavaScript GitHub API:
+
+```
 npm install --save github-api
+```
 
+Link in the JavaScript GitHub API:
+
+```javascript
 var GitHub = require('github-api');
+```
 
+Here is an FYI
 
+- [OctoNode alternative API](https://github.com/pksunkara/octonode)
 
 [git-token]: https://github.com/settings/tokens
 
@@ -139,7 +154,25 @@ The new component will have one button that will call the **fetchGist** method f
 
 **fetchGist** should retrieve the entirity of the JSON data returned from GitHub. On the client side you should add the data to **DataMaven**'s state. This should cause a call to the **DataMaven** and **ShowNewGist** render methods.
 
+## Thinking about State
 
+I've been trying to get us to the point where we put all our data in a library called Redux. Redux can be helpful when state starts to get complicated, which it appears to be in our case. So Redux should help us eliminate some of this business and keep things clean. I hope.
+
+Reading more on this subject, I'm beginning to see that maybe I should add this: "We should put all the data that we want to preserve between sessions in Redux." In other words, there is some state that a component might need to preserve at runtime, but that does not need to be preserved between sessions. This type of data can be preserved as state in the component because we don't care if we lose it if the user closes the page. But data that we want to preserve should go to our "data store" which right now is DataMaven, but which I think will eventually be Redux.
+
+If there is a theme to this course it would be: Finding the right design, the right architecture, is not easy. It takes time and requires multiple iterations. This may be a case where we have to search for the right solution. We'll see.
+
+The key reference is probably this one:
+
+- <http://redux.js.org/docs/faq/OrganizingState.html#organizing-state-only-redux-state>
+
+I found this discussion really helpful:
+
+- <https://discuss.reactjs.org/t/redux-and-global-state-vs-local-state/4187/11>
+
+Read the section called Details, Details here:
+
+- <https://daveceddia.com/visual-guide-to-state-in-react/>
 
 
 ## Examples
