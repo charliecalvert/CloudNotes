@@ -2,12 +2,15 @@
 
 A description of what I want to see on the midterm.
 
+
 ## Goals
 
 - Display at least three views:
   - **AddressShow**
   - **AddressEdit**
   - **SmallNumbers**
+    - Show at least five numbers, but you can update them with a single button click.
+  - It's best if React components are in a file that begins with a capital letter and uses Pascal casing.
 - Menu
   - Make sure you are [styling it](https://www.w3schools.com/css/css_navbar.asp).
   - I picked the first of the **Horizontal Navigation Bar Examples**
@@ -22,11 +25,26 @@ A description of what I want to see on the midterm.
   - **ElfHeader.test.js** and **SmallNumbers.test.js**
 - Refactoring
   - Make sure you have the following folders with appropriate content:
-  - **src/__tests__**
+  - **src/\_\_tests\_\_**
   - **src/components**
   - **src/css**
   - **src/images**
   - I'll get back to you with more details of how many tests I want to see, but for now, assume that 30 reasonable tests across all files.
+
+## ElfDebugEnzyme
+
+  You can find ElfDebugEnzyme here:
+
+  - [DebugEnzyme](https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab)
+
+Here is an example of how to use it:
+
+  ```javascript
+  import ElfDebugEnzyme from '../ElfDebugEnzyme';
+  const elfDebug = new ElfDebugEnzyme(true);
+
+  elfDebug.getIndex(wrapper, '.AddressShowDiv', 0);
+  ```
 
 ## JSCS
 
@@ -196,7 +214,6 @@ Watch Usage
  › Press q to quit watch mode.
  › Press Enter to trigger a test run.
  ```
-
-Even though I had several tests in my __tests__ folder, only the one that had **Foo** in its name was run.
+Even though I had several tests in my \_\_tests\_\_ folder, only the one that had **Foo** in its name was run.
 
 - [More information in the docs](https://facebook.github.io/jest/docs/api.html)
