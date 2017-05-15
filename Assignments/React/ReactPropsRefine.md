@@ -19,7 +19,7 @@ Please query your account not mine.
 ## Key Features
 
 - Display at least five rows from the users URL as shown above. Don't display them all, as we will find a shortcut to help you create big forms with lots of fields. I'm displaying these in **INPUT** elements, which makes no sense. You can use P elements.
-- Make sure all your tests pass for the **GetUrlPage** component, the **GetFoo** component, the SmallNumbers component and the **ElfHeader** component. Each component's tests should be in its own file and all tests should be in a directory called **src/\_\_tests\_\_**.
+- Make sure all your tests pass for the **GetUrlPage** component, the **GetFoo** component, the **SmallNumbers** component and the **ElfHeader** component. Each component's tests should be in its own file and all tests should be in a directory called **src/\_\_tests\_\_**.
 - For now, continue to display the other information, such as **SmallNumbers** and **GetFoo**. Ultimately, we will learn how to use client side routes to switch component views, but for now, just show all the data on the same page, as shown below.
 - Strive to eliminate all errors and warnings in your tests, in Chrome Developer Tools, and at the command line for your server and client.
 
@@ -221,7 +221,15 @@ My Get User Info Test › renders default message for state.userLogin
 
 Commit, push. When you turn in the assignment, designate the directory in your repo where you did your work.
 
-It would be good to tag your work just before you push an assignment. Or else put it in a branch, then if you don't like branches, just switch back to master to continue working. The branch would serve as a record of your project at the time your turned it in. So push your work, then:
+It would be good to tag your work just after you push an assignment. An ideal process:
+
+- **add**, **commit**, **push**. When you commit, include a message that mentions the assignment name.
+- **tag**, **push**. When you tag, include a message that mentions the assignment name.
+- create a branch with the name **ReactPropsRefine**.
+
+You don't have to use the branch, just create it. Then I can look in that branch for the code you submitted for the assignment. The branch would serve as a record of your project at the time your turned it in.
+
+A reminder of how to tag:
 
 ```
 $ git tag -a v3.0.? -m "Turning in ReactPropsRefine"

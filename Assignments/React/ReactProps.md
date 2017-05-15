@@ -41,6 +41,8 @@ The last command lists your tags and their message on one line. If you have only
 
 - [git tag docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 
+You might create multiple tags for an assignment, but one of the tags should be made just after you commit and push the code you want me to see. Then turn in that tag with the assignment.
+
 ## Bower
 
 Modify the hidden file **.bowerrc** to reference **public/bower-components**.
@@ -193,6 +195,7 @@ router.get('/user', function(req, res, next) {
     });
 
 });
+```
 
 ## Tests
 
@@ -348,8 +351,6 @@ Over time, you can comment out the calls to **console.log**. But they might be h
 })
 ```
 
-
-
 ## Logger Console {#control-console}
 
 Here are Three steps to a poor man&#39;s logger:
@@ -414,6 +415,6 @@ That's two underscores, the word _tests_, followed by two more underscores.
 
 ## Turn it in
 
-Commit, push. When you turn in the assignment, designate the directory in your repo where you did your work.
+First commit and push. Then tag and push. With the commit and the tag, create a message that includes the assignment name. When you turn in the assignment, designate the directory in your repo where you did your work.
 
 [gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename

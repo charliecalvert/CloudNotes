@@ -197,8 +197,11 @@ describe('My Get User Info test', function () {
 
 ## Turn it in
 
-Follow the instructions in **ReactPropsShow**. Call the branch: ReactPropsMounted. Or just tell me that your code is in the **ReactPropsShow**
-branch.
+Follow the instructions in **ReactPropsShow**. Call the branch: **ReactPropsMounted**. Or, if your code is in the **ReactPropsShow** branch, let me know. Something like this:
+
+- add, commit, push. When you commit, include a message that mentions the assignment name.
+- tag, push. When you tag, include a message that mentions the assignment name.
+- if you are not already in a branch named after your project, then create one:  **git branch ReactPropsMounted**. Whether you ever enter and use the branch is up to you. To enter it: **git checkout ReactPropsMounted**.
 
 [elf-ed]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enzyme-debug-class
 

@@ -199,6 +199,14 @@ You probably should create a new test for each default field you add, and for ea
 
 Feel free to be creative with the HTML you generate. At this point, you will probably feel constrained by your ability to write reasonable tests for complex HTML. Hopefully our skills we improve so that we won't always feel that limitation. In other words, even if you know fancy HTML and CSS for displaying an address, consider limiting, for now, just how fancy you get because the tests might be become to hard.
 
+## Philosophy
+
+We have to remember what our Enzyme unit tests do: They return the HTML produced by our components. These Enzyme methods, especially debug, help us sort through and trigger events in the HTML that is returned so that we can prove to ourselves that our components are producing the right code. If you have one simple form, this makes little sense since you can just run your app and look at your form to see if it is rendering correctly. If you need to push one button, then you push it and see if it works. But if you have a dozen components - or two dozen - then checking the output becomes harder and harder as your app gains in complexity. Then unit testing becomes essential and a huge time saver. These Enzyme methods, once mastered, help us quickly and efficiently right the correct tests to confirm that our components work even after we fix bugs, refactor, or add features.
+
+This is a skill. One is not born from the womb, wet behind the ears, knowing how to do this. But if you work at it and get good at it, then you have a skill that employers might want.
+
+This isn't the only Unit Test library, not by any means. But all unit testing tools have similar features. Learn one library and you can more easily learn the next.
+
 [Get Sen Murray's address](https://www.google.com/search?q=address+for+patty+murray)
 
 [view-jest]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-view.png

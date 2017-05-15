@@ -1,16 +1,20 @@
 # React Get Address
 
-Create a program that generates about 500 addresses that you can use in CongressAddress. Turn in the program, use the addresses in **CongressAddress**.
+We should:
+
+- Create a program that generates about 500 addresses of politicians
+- Discover how to use the addresses in **CongressAddress**.
+- Turn in the program, with code that shows your ability to use the addresses in **CongressAddress**.
 
 Do your work in a folder in the root of your project call **GetAddress**.
 
 ## Get the Addresses
 
 ```
-curl https://www.govtrack.us/api/v2/role?current=true > address.json
+curl https://www.govtrack.us/api/v2/role?current=true > govtrack-address.json
 ```
 
-Study **address.json** until it makes sense.
+Study **govtrack-address.json** until it makes sense.
 
 ## Write Utility
 
@@ -71,7 +75,7 @@ function writeIt(label, value, noComma) {
     console.log('\t' + label, '"'+ value + comma)
 };
 
-readFile('address.json').then(function(text) {
+readFile('govtrack-address.json').then(function(text) {
     debug(text);
     var json = JSON.parse(text.result);
     debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
@@ -136,4 +140,11 @@ Some example output:
 
 ## Turn it in
 
-Add, commit, push, tag and/or branch.
+Add, commit, push, then tag and/or branch.
+
+We want to be able to either:
+
+- The primary goal is to produce a valid JSON file called **address-list.json** containing all our addresses.
+- It would also be good to produce a valid **address-list.js** file
+
+If you can do either, that would fulfill the requirements of the assignment. If you can do both, that would be even better, but it is not required.

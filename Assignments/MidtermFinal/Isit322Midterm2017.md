@@ -211,3 +211,20 @@ Watch Usage
 Even though I had several tests in my __tests__ folder, only the one that had **Foo** in its name was run.
 
 - [More information in the docs](https://facebook.github.io/jest/docs/api.html)
+
+## ENOSPC Error {#enospc}
+
+Please look here:
+
+- [Elvenware React][elf-enospc]
+
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
+[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
+
+## Props Singe Node Error {#props-single-node}
+
+Please go here:
+
+- [Elvenware React][elf-sync]
+
+[elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
