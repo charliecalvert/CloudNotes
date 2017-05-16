@@ -148,3 +148,17 @@ We want to be able to either:
 - It would also be good to produce a valid **address-list.js** file
 
 If you can do either, that would fulfill the requirements of the assignment. If you can do both, that would be even better, but it is not required.
+
+## Pad Number
+
+```javascript
+var padNumber = function(numberToPad, width, padValue) {
+    padValue = padValue || '0';
+    numberToPad += '';
+    if (numberToPad.length >= width) {
+        return numberToPad;
+    } else {
+        return new Array(width - numberToPad.length + 1).join(padValue) + numberToPad;
+    }
+};
+```

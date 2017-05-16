@@ -6,8 +6,8 @@ Some notes on testing react
 
 ```
 npm install enzyme --save-dev
-npm test
 npm install --save-dev react-test-renderer
+npm test
 ```
 
 ## Render

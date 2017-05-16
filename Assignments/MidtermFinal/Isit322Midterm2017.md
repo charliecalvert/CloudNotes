@@ -174,7 +174,7 @@ This works even if the **input** control has a number of other attributes other 
 
 ## Filter Tests
 
-Also, notice the menu the tests give you. Note the p option for filtering files. Suppose one of your test files is called Foo.test.js and one is called Bar.test.js. Press p and enter Foo. Only Foo.test.js will run:
+Also, notice the menu the tests give you. Note the p option for filtering files. Suppose one of your test files is called **Foo.test.js** and one is called **Bar.test.js**. Press **p** and enter **Foo**. Only **Foo.test.js** will run:
 
 ```
 Watch Usage
