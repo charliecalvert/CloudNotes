@@ -1,4 +1,7 @@
+* [GistLister.html](GistLister.html)
+* [GistManager.html](GistManager.html)
 * [ReactAddressMock.html](ReactAddressMock.html)
+* [ReactAddressShow.html](ReactAddressShow.html)
 * [ReactGetAddress.html](ReactGetAddress.html)
 * [ReactProps.html](ReactProps.html)
 * [ReactPropsMounted.html](ReactPropsMounted.html)
