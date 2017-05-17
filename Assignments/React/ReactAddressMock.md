@@ -174,6 +174,13 @@ Over time, you can comment out the calls to **console.log**. But they might be h
 })
 ```
 
+## Using Mocks in Tests
+
+At the top of your address.test.js file, do this:
+
+- jest.mock('whatwg-fetch');
+
+
 ## DataLoader
 
 In the **constructor** for **Address** we have the following code. Its responsibility is to be sure that **localStorage** contains at least 100 records representing the addresses we placed in **address-list.json**.
@@ -210,6 +217,7 @@ Here is some of **DataLoader**:
 import Logger from '../assets/elf-logger';
 const logger = new Logger('data-loader', 'yellow', 'green', '18px');
 import {saveByIndex} from '../assets/elf-local-storage';
+import 'whatwg-fetch';
 
 export default class DataLoader {
 
@@ -225,7 +233,9 @@ export default class DataLoader {
 
     setLocalStorage(addresses) {
         logger.log('SET LOCAL', addresses);
+        //localStorage.setItem('elven-store', 'set');
         localStorage.setItem(this.STORE_SET[0], this.STORE_SET[1]);
+        //localStorage.setItem('elven-count', addresses.length);
         localStorage.setItem(this.STORE_SET[2], addresses.length);
         addresses.forEach(function(address, index) {
             saveByIndex(address, index);
@@ -304,6 +314,31 @@ function clearLocalStorage() {
 }
 
 export {saveByIndex, getByIndex, removeElfKeys, clearLocalStorage};
+```
+
+## Load Local Data
+
+In **onAddressChange** load data from the localStore:
+
+```javascript
+onAddressChange(event) {
+    detailLogger.log('onAddressChange called with', event.target.id);
+    if (event.target.id.startsWith('dec')) {
+        if (this.addressIndex > 0) {
+            this.addressIndex -= 1;
+        }
+    } else {
+        if (this.addressIndex < this.addressCount) {
+            this.addressIndex += 1;
+        }
+    }
+    detailLogger.log('addressIndex', this.addressIndex);
+    const address = getByIndex(this.addressIndex);
+
+    this.setState({
+        address: address
+    });
+};
 ```
 
 ## Turn it in
