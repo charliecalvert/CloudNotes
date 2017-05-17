@@ -471,12 +471,31 @@ ReactDOM.render(
 );
 ```
 
-<AddressEdit
-                    address={this.state.address}
-                    onAddressChange={this.onAddressChange}
-                    onNameChange={this.onNameChange}
-                />
+## DataMaven and AndressEdit
 
+Don't cut and paste yet. Instead, copy the following from **Address.js**:
+
+- The Constructor
+- onAddressChange
+- onNameChange
+
+You can delete **onNameChange** from **Address**.
+
+We now need to instantiate **AddressEdit** which means we need to pass props to it. This is not easy. The syntax, which I find very cumbersome, looks like this:
+
+```javascript
+<Route path='/edit' render={(props) => (
+    <AddressEdit {...props}
+         address={this.state.address}
+         onAddressChange={this.onAddressChange}
+         onNameChange={this.onNameChange}
+    />
+)}/>
+```
+
+We are declaring an arrow function for the render method. It is passed props, which are properties from **react-router-dom**. We use the spread operator on these props, and then pass in our own props.
+
+At this point your program should be working and all your tests should be passing.
 
 ## Turn it in
 
