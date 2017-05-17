@@ -173,3 +173,159 @@ Over time, you can comment out the calls to **console.log**. But they might be h
     that.setState(foo => (json));
 })
 ```
+
+## DataLoader
+
+In the **constructor** for **Address** we have the following code. Its responsibility is to be sure that **localStorage** contains at least 100 records representing the addresses we placed in **address-list.json**.
+
+```javascript
+const that = this;
+dataLoader.loadAddresses(function(addressCount) {
+    if (!addressCount) {
+        throw new Error('Cannot get address count in address.js');
+    }
+    that.addressCount = addressCount;
+});
+```
+
+This code performs a little trick you have seen before:
+
+- We a variable called **that** equal to **this**.
+- Then we create an anonymous callback function.
+- In that anonymous function we use that to be sure that we can initialize the variable called **addressCount**.
+
+The **loadAddress** function has one responsibility but two parts:
+
+- First it checks if **localStorage** already contains a copy of the data for our database. If it does, sends the number of records back to address in the anonymous callback and then exits.
+- If **localStorage** does not contain our data, then it uses **fetch** to load the data and stuff our records into **localStorage**. When it is done it uses the callback to send the **addressCount** back to **Address**.
+
+Here is some of **DataLoader**:
+
+```javascript
+
+/**
+ * Created by bcuser on 5/10/17.
+ */
+
+import Logger from '../assets/elf-logger';
+const logger = new Logger('data-loader', 'yellow', 'green', '18px');
+import {saveByIndex} from '../assets/elf-local-storage';
+
+export default class DataLoader {
+
+    constructor() {
+        this.STORE_SET = ['elven-store', 'set', 'elven-count'];
+        this.loadAddresses = this.loadAddresses.bind(this);
+    }
+
+    dataLoaded() {
+        const elfStore = localStorage.getItem(this.STORE_SET[0]);
+        return (elfStore === this.STORE_SET[1]);
+    }
+
+    setLocalStorage(addresses) {
+        logger.log('SET LOCAL', addresses);
+        localStorage.setItem(this.STORE_SET[0], this.STORE_SET[1]);
+        localStorage.setItem(this.STORE_SET[2], addresses.length);
+        addresses.forEach(function(address, index) {
+            saveByIndex(address, index);
+        });
+        return addresses;
+    }
+
+    loadAddresses(callback) {
+        const that = this;
+        if (this.dataLoaded()) {
+            logger.log('Using data from localstore');
+            callback(localStorage.getItem(this.STORE_SET[2]));
+        } else {
+            logger.log('Loading data');
+            fetch('./address-list.json').then(function(data) {
+                const addresses = data.json();
+                console.log(addresses);
+                return addresses;
+            }).then(function(data) {
+                logger.log(JSON.stringify(data, null, 4));
+                //console.log(that);
+                that.setLocalStorage(data);
+                callback(data.length);
+            }).catch(function (err) {
+                logger.log(err);
+            });
+        }
+    }
+}
+```
+
+## Elf Local Storage
+
+The **DataLoader** code is specific to our current project. Here is a helper object with **localStorage** calls that could be reused in multiple programs. Save it as **elf-local-storage.js** in your assets directory.
+
+```javascript
+/**
+ * Created by Charlie on 5/8/17.
+ */
+
+const ELF_TAG = 'elf';
+
+const padNumber = function(numberToPad, width, padValue) {
+    padValue = padValue || '0';
+    numberToPad += '';
+    if (numberToPad.length >= width) {
+        return numberToPad;
+    } else {
+        return new Array(width - numberToPad.length + 1).join(padValue) + numberToPad;
+    }
+};
+
+function saveByIndex(item, index) {
+    if (typeof item === 'object') {
+        item = JSON.stringify(item, null, 4);
+    }
+    const key = ELF_TAG + padNumber(index, 4, 0);
+    localStorage.setItem(key, item);
+}
+
+function getByIndex(index) {
+    const key = ELF_TAG + padNumber(index, 4, 0);
+    return JSON.parse(localStorage.getItem(key));
+}
+
+function removeElfKeys() {
+    for (var key in localStorage) {
+        if (key.startsWith(ELF_TAG)) {
+            localStorage.removeItem(key);
+        }
+    }
+}
+
+function clearLocalStorage() {
+    localStorage.clear();
+}
+
+export {saveByIndex, getByIndex, removeElfKeys, clearLocalStorage};
+```
+
+## Turn it in
+
+I'll be grading **React Address Mock** and **React Address DataMaven** assignments at the same time from the same codebase. You will get two grades, but I will be looking at one copy of **CongressAddress** when I grade them. I don't want to have to get two versions of **CongressAddress** going. Therefore, I will start a single version of the program, run the tests, and expect to be able to grade both assignments based on the code from the same commit. Two assignments, one version of **CongressAddress**:
+
+- [React Address Mock][ram]
+- [React Address DataMaven][radm]
+
+Once you have a version of **CongressAddress** that contains code fulfilling the requirements for both assignments, then you should push, branch and tag:
+
+```
+git add .
+git commit -m "Code for React Address Mock and React Address DataMaven"
+git push
+git branch week07-DataMavenMock
+git tag -a v7.X.X -m "Code for React Address Mock and React Address DataMaven"
+git push origin v7.X.X
+```
+
+Of course, the X.X bit would contain your idea of the appropriate numbering scheme. For instance: **v7.0.0**.
+
+[edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
+[ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html
+[radm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressDataMaven.html

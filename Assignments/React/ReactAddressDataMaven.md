@@ -416,6 +416,61 @@ Interestingly, our tests now fail by passing. In other words, all our tests pass
 
 As we can see, the ultimate source of the problem is **index.js**, line 7.
 
+Here is the **render** method **index.js**:
+
+```javascript
+ReactDOM.render(
+    <div>
+        <ElfHeader />
+        <ElfMenu/>
+    </div>,
+    document.getElementById('root')
+);
+```
+
+Our problem is that **ElfMenu** now contains code that needs to appear inside a **Router** object. We have moved the **Router** object to **DataMaven**. This means that we need to move **ElfMenu** into **DataMaven**. While we are at it, we might as well move **ElfHeader** there as well.
+
+Here are two tests to place in **DataMaven.test.js**. They help convince us that our DataMaven component includes both the header and the menu:
+
+```javascript
+it('renders and displays the ElfHeader', () => {
+    const wrapper = shallow(<DataMaven  />);
+    elfDebug.getAll(wrapper, false);
+    var router = wrapper.find('ElfHeader');
+    expect(router.length).toEqual(1);
+});
+
+it('renders and displays the ElfMenu', () => {
+    const wrapper = shallow(<DataMaven  />);
+    elfDebug.getAll(wrapper, false);
+    var router = wrapper.find('ElfMenu');
+    expect(router.length).toEqual(1);
+});
+```
+
+The objects in the **DataMaven** render method should appear in the following order:
+
+- Router
+- DIV
+- ElfHeader
+- ElfMenu
+- And three or more Routes
+
+Our render method in **index.js** is very simple:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import DataMaven from "./components/DataMaven";
+
+ReactDOM.render(
+    <div>
+        <DataMaven/>
+    </div>,
+    document.getElementById('root')
+);
+```
+
 <AddressEdit
                     address={this.state.address}
                     onAddressChange={this.onAddressChange}
@@ -423,4 +478,26 @@ As we can see, the ultimate source of the problem is **index.js**, line 7.
                 />
 
 
+## Turn it in
+
+I'll be grading **React Address Mock** and **React Address DataMaven** assignments at the same time from the same codebase. You will get two grades, but I will be looking at one copy of **CongressAddress** when I grade them. I don't want to have to get two versions of **CongressAddress** going. Therefore, I will start a single version of the program, run the tests, and expect to be able to grade both assignments based on the code from the same commit. Two assignments, one version of **CongressAddress**:
+
+- [React Address Mock][ram]
+- [React Address DataMaven][radm]
+
+Once you have a version of **CongressAddress** that contains code fulfilling the requirements for both assignments, then you should push, branch and tag:
+
+```
+git add .
+git commit -m "Code for React Address Mock and React Address DataMaven"
+git push
+git branch week07-DataMavenMock
+git tag -a v7.X.X -m "Code for React Address Mock and React Address DataMaven"
+git push origin v7.X.X
+```
+
+Of course, the X.X bit would contain your idea of the appropriate numbering scheme. For instance: **v7.0.0**.
+
 [edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
+[ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html
+[radm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressDataMaven.html
