@@ -58,7 +58,7 @@ So how do we perform this miracle? To make a long story short: we use the mock l
 
 ## Mock Data
 
-First lets create a simple module that contains the data we will use in our mock:
+First lets create a simple module that contains the data we will use in our mock and call it **\_\_mocks\_\_/mock-data.js**:
 
 ```javascript
 /**
@@ -67,7 +67,7 @@ First lets create a simple module that contains the data we will use in our mock
 
 const getData = (url) => {
     switch (url) {
-        case '/getJson':
+        case './address-list.json':
             return [{
                 "firstName": "Lamar",
                 "lastName": "Alexander",
