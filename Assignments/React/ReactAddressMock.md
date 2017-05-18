@@ -117,7 +117,7 @@ This code simply creates sets of data that mimic what our server would return gi
 
 ## Mock fetch
 
-Below is the source code for our new mock for **fetch**. Note in particular the call to [jest.genMockFromModule][gmm]. That call asks Jest to generate a mock object for the module we want to replace with a mock:
+Below is the source code for our new mock for **fetch** called **whatwg-fetch.js**. Save it and **mock-data.js** in the **\_\_mocks\_\_** folder. Note in particular the call to **jest.genMockFromModule**. That call asks Jest to generate a mock object for the module we want to replace with a mock:
 
 ```javascript
 /**

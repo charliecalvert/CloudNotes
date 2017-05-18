@@ -519,7 +519,9 @@ Of course, the X.X bit would contain your idea of the appropriate numbering sche
 
 ## Hint
 
-Don't forget that in your constructor for Address that you need to initialize this.state.addres with dummy data. And also, in the methods that handle button clicks, don't call addresses[this.addIndex]. The addresses variable is no longer valid. Then call getByIndex instead.
+Don't forget that in your constructor for **Address** that you need to initialize **this.state.address** with dummy data. Just take an object from the array of objects in **mock-data.js**.
+
+And also, in the methods that handle button clicks, don't call **addresses[this.addIndex]**. The **addresses** variable is no longer valid. Call **getByIndex** instead. I'll leave the details to you.
 
 [edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html

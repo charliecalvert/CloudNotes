@@ -120,8 +120,7 @@ Lets swtich to the server side for a second.
 Create a file called **gists.js**. Rename **api.js** to **users.js**.
 
 ```javascript
-me.listGists(
-   ).then(function({data}) {
+me.listGists().then(function({data}) {
        console.log('USER PROMISE', data);
        const results = data.map((item) => ( {Return Object with 4 props} );
        response.status(200).send({
@@ -131,5 +130,96 @@ me.listGists(
    }).catch(function(err) {
        console.log('USER Promise Rejected', err);
        response.status(500).send({'result': err});
-   });
+   })
+ });
+```
+
+## Jasmine
+
+```javascript
+npm install --save-dev supertest
+npm install --save-dev jasmine
+npm install --save-dev jasmine-spec-reporter
+```
+
+Here it is:
+
+```javascript
+var Jasmine = require('jasmine');
+var SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+var noop = function() {};
+
+var jrunner = new Jasmine();
+jrunner.configureDefaultReporter({
+    print: noop
+}); // remove default reporter logs
+jasmine.getEnv().addReporter(new SpecReporter({  // add jasmine-spec-reporter
+    spec: {
+        displayPending: true
+    }
+})); // add jasmine-spec-reporter
+jrunner.loadConfigFile(); // load jasmine.json configuration
+jrunner.execute();
+```
+
+And put this in **spec/support/jasmine.json**:
+
+```javascript
+{
+  "spec_dir": "spec",
+  "spec_files": [
+    "test-basic.js",
+    "test-results.js"
+  ]
+}
+```
+
+The test:
+
+```javascript
+/**
+ * Created by charlie on 10/7/15.
+ */
+
+var request = require('supertest');
+var app = require('../app');
+
+describe('Elvenware Simple Plain Suite', function() {
+
+    'use strict';
+
+    it('expects true to be true', function() {
+        expect(true).toBe(true);
+    });
+
+    it('get the foo route', function(done) {
+        request(app)
+            .get('/foo')
+            .expect(200)
+            .expect('Content-Type', /json/)
+            .end(function(err, res) {
+                if (err) {
+                    throw err;
+                }
+                done();
+            });
+    });
+
+});
+```
+
+Then run it:
+
+```
+$ node jasmine-runner.js
+notoken
+Spec started
+
+  Elvenware Simple Plain Suite
+    ✓ expects true to be true
+GET /foo 200 7.146 ms - 52
+    ✓ get the foo route
+
+Executed 2 of 2 specs SUCCESS in 0.04 sec.
+
 ```
