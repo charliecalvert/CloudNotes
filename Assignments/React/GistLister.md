@@ -223,3 +223,165 @@ GET /foo 200 7.146 ms - 52
 Executed 2 of 2 specs SUCCESS in 0.04 sec.
 
 ```
+
+## Loggers
+
+Many of us have been using **console.log** heavily in our routes. Now that we are running tests, we need to get more control over the amount of information we are sending to the console.
+
+Copy the **elf-logger** over from the client and put it in the **routes** directory. It is set up to handle ES6, switch it to use **require** by changing the way it exports the **ElfLogger**. Instead of **export default**, write this:
+
+```javascript
+module.exports=ElfLogger;
+```
+
+You will probably need to end up inserting the logger in all our test files, and in each of the files in the **routes** directory. When setting up the Environment variable to use, use the name of the file itself as well as path to it:
+
+```javascript
+const Logger = require('../elf-logger');
+var logger = new Logger('gitapi-gists');
+```
+
+Then, before you run the test, set the environment variable:
+
+```
+export REACT_APP_ELF_LOGGER='gitapi-gists'
+nodemon jasmine-runner.js
+```
+
+In fact, we should put the test statement in our **package.json**:
+
+```javascript
+"scripts": {
+  "test-karma": "karma start",
+  "test": "nodemon jasmine-runner.js",
+  "start": "nodemon ./bin/www"
+},
+```
+
+I believe this also works on Linux, but not on Windows:
+
+```javascript
+"scripts": {
+  "test-karma": "karma start",
+  "test": REACT_APP_ELF_LOGGER='gitapt-gists' "nodemon jasmine-runner.js",
+  "start": "nodemon ./bin/www"
+},
+```
+
+## Server Side Tests
+
+In **test-gists.js**:
+
+```javascript
+
+it('gets the basic gists list', function(done) {
+    request(app)
+        .get('/gitapi/gists/get-basic-list')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .end(function(err, res) {
+            if (err) {
+                throw err;
+            }
+            done();
+        });
+});
+
+it('checks the gist response', function(done) {
+    request(app)
+        .get('/gitapi/gists/get-basic-list')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect(function(response) {
+            logger.log(response.body);
+            expect(typeof response.body.count).toBe('number');
+            expect(typeof response.body.result).toBe('object');
+        })
+        .end(function(err, res) {
+            if (err) {
+                throw err;
+            }
+            done();
+        });
+});
+
+it('checks the gist response', function(done) {
+    request(app)
+        .get('/gitapi/gists/get-basic-list')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .expect(function(response) {
+            logger.log(response.body.result[0]);
+            const gist = response.body.result[0];
+            expect(gist.html_url).toBeDefined();
+            expect(gist.id).toBeDefined();
+            expect(gist.description).toBeDefined();
+            expect(gist.git_pull_url).toBeDefined();
+        })
+        .end(function(err, res) {
+            if (err) {
+                throw err;
+            }
+            done();
+        });
+});
+```
+
+## Client Side Test
+
+More mock data for the **mock-data.js**:
+
+```javascript
+case '/gitapi/gists/get-basic-list':
+    return {
+        result: [
+            {
+                html_url: 'https://gist.github.com/a023c7db77926ff58d35087821e12020',
+                id: 'a023c7db77926ff58d35087821e12020',
+                git_pull_url: 'https://gist.github.com/a023c7db77926ff58d35087821e12020.git',
+                description: 'Simple React Component'
+            },
+            {
+                html_url: 'https://gist.github.com/17f8ec886c1ae22f66501fc3cbe760ac',
+                id: '17f8ec886c1ae22f66501fc3cbe760ac',
+                git_pull_url: 'https://gist.github.com/17f8ec886c1ae22f66501fc3cbe760ac.git',
+                description: 'React Npm Install'
+            }
+        ]
+    };
+```
+
+Write  a test.
+
+## Client Side Implementation
+
+Add a menu item:
+
+```html
+<li><Link to='/get-gist-list'>GetGist List</Link></li>
+```
+
+In DataMaven, set up some dummy state:
+
+```javascript
+this.state = {
+  // Stuff here
+  gistLister: 'Fill this in with an appropriate type and dummy data'
+}
+```
+
+In DataMaven, create a method called **fetchGistList**. Don't forget to bind it to this!
+
+Write code in render that passes the data on to the **GistLister**:
+
+```javascript
+<Route path='/get-gist-list'
+   render={(props) => (...)}
+/>
+```
+
+In GistLister, display the data.
+
+## Turn it in
+
+Push, branch, tag.
