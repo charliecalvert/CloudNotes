@@ -418,6 +418,14 @@ Note that I am both setting the **onclick** method to the function object passed
 
 Add, commit then push. Then Tag. Push you tag. When you turn in the assignment, give me the tag and the directory in which you did your work. I may just look at your most recent code, but being able to go back to where you were when you submitted the assignment can be helpful.
 
+## Hint Tagging
+
+- [Git Tag][git-tag]
+- [Understanding Tags][under-tag]
+
+[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
+
 ## Hint Breakpoint {#breakpoint}
 
 The debugger and breakpoints are essential tools. I personally can do little without them.

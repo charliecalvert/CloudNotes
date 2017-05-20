@@ -364,3 +364,11 @@ Of course, the X.X bit would contain your idea of the appropriate numbering sche
 [edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html
 [radm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressDataMaven.html
+
+## Hint Tagging
+
+- [Git Tag][git-tag]
+- [Understanding Tags][under-tag]
+
+[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags

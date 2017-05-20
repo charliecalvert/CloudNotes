@@ -24,3 +24,7 @@ Proposed weekly progress:
 	Part 7: 100%
 
 **NOTE**: _You can see an icon or a picture of yourself in the upper right hand corner of the Code Academy site. Click that picture, there you will find a way to get your profile page._
+
+## Turn it in
+
+Remember, your progress in Code Academy can be used in a job application, a web profile, a resume, etc. But to be able to present the material the right way, you need to be able to provide prospective employers with a proper link to your profile. It's the official way to show your progress, and I want to be sure you know how to use it. Please provide your profile link when submitting this assignment.

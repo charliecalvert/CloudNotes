@@ -385,3 +385,11 @@ In GistLister, display the data.
 ## Turn it in
 
 Push, branch, tag.
+
+## Hint
+
+- [Git Tag][git-tag]
+- [Understanding Tags][under-tag]
+
+[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
