@@ -4,17 +4,37 @@ It is a take home, you will have about a week to do it. Check back for updates, 
 
 ## Goals
 
-- Same app, same name, new tag and branch both labeled **midterm**
-- Include a styled menu and component switching
+- Same app, same name, new branch and then tag.
+  - Both **branch** and **tag** labeled **midterm**
+- Your app should have a styled menu and support component switching.
+- The following menu-items should be present:
   - Home (This is the GitUser view)
-  - GetFoo
-  - Numbers
-- Make at least two more requests of GitHub API
-  - Include in the menu
+  - **GetFoo**
+  - **SmallNumbers**
+- Call at least two other GitHub Js APIs.
+  - Find two [methods on the Git Js API](http://github-tools.github.io/github/) other than the ones we have used and call them.
+  - Include the results of these requests in the menu
   - Switches between all three Git views (The one we have plus two more)
-- Possible extra credit: Integrate git-convert into the code so it converts JSON to field-definitions automatically
-- You should have at least fifty meaningful tests.
-- Polish.
+- Extra credit:
+  - Integrate **git-convert** into the code so it converts JSON to **field-definitions** automatically
+- Testing:
+  - You should have at least fifty meaningful tests.
+  - JSCS available and most major files in the project pass JSCS tests.
+  - Your code should run without warnings and errors.
+  - Polish.
+
+## The GitHub Js API
+
+[Here are the GitHub API's calls][gh-api-calls] available for version 3.1.0. There might be a newer version by the time you read this. In most cases, you should use the new version if it is available.
+
+- [GitHub Js Docs][gh-api-calls]
+- Example APIs to call
+  - getIssues
+  - getMarkdown
+  - getRateLimit
+  - listReleases
+
+
 
 ## JSCS
 
@@ -218,8 +238,6 @@ Please look here:
 
 - [Elvenware React][elf-enospc]
 
-[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
-[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
 
 ## Props Singe Node Error {#props-single-node}
 
@@ -228,3 +246,6 @@ Please go here:
 - [Elvenware React][elf-sync]
 
 [elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
+[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
+[gh-api-calls]: http://github-tools.github.io/github/docs/3.1.0/index.html
