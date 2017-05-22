@@ -1,39 +1,44 @@
 # Prog272 Midterm 2017
 
-A description of what I want to see on the midterm.
+This documents contains a description of what I want to see on the midterm. We want to keep moving to the point where we can take a JSON file containing addresses, and display, iterate and edit them in a React based program. The output from the components you create should be thoroughly tested.
 
+In git-convert, we learned to map the JSON we download with **curl** from a webservice. For extra credit, automatically transform that JSON into a set of data that we can easily consume in our application.
 
 ## Goals
 
-- Display at least three views:
+I want you to polish and extend the CongressAddress program that we have been working on for the last several weeks. Below I list the key features that I'm looking for in your assignment.
+
+- Display at least three views created with React components:
   - **AddressShow**
   - **AddressEdit**
   - **SmallNumbers**
     - Show at least five numbers, but you can update them with a single button click.
-  - It's best if React components are in a file that begins with a capital letter and uses Pascal casing.
+  - Each React component should be in its own file. The file names should begin with a capital letter and use Pascal casing.
 - Menu
   - Make sure you are [styling it](https://www.w3schools.com/css/css_navbar.asp).
   - I picked the first of the **Horizontal Navigation Bar Examples**
-  - Replace the default "Atom" **logo.svg** file with one of your own choosing.
-- Iterate back and forth over at least 5 addresses
+  - Replace the default "Atom" **logo.svg** image file with one of your own choosing.
+- You should be able to iterate back and forth over at least 5 addresses
   - Extra credit button go to first and last
   - Be able to edit any of the address
   - Changes should remain through the session
+  - Full credit comes if you can display the full list of addresses from our **GetAddress** web-service project.
 - Testing
-  - You should have at least 5 test files
+  - You should have at least 5 test files:
   - **Address.test.js**, **AddressEdit.test.js**, **AddressShow.test.js**
   - **ElfHeader.test.js** and **SmallNumbers.test.js**
+  - I'm expecting at least 30 tests, but full credit comes when you write more than 50 tests.
 - Refactoring
   - Make sure you have the following folders with appropriate content:
   - **src/\_\_tests\_\_**
   - **src/components**
   - **src/css**
   - **src/images**
-  - I'll get back to you with more details of how many tests I want to see, but for now, assume that 30 reasonable tests across all files.
+
 
 ## ElfDebugEnzyme
 
-  You can find ElfDebugEnzyme here:
+To help write your tests, you should use **ElfDebugEnzyme**. I'm expecting to see evidence of its use in your code. You can find **ElfDebugEnzyme** here:
 
   - [DebugEnzyme](https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab)
 
@@ -48,9 +53,7 @@ Here is an example of how to use it:
 
 ## JSCS
 
-I couldn't figure out what was going on with JSCS earlier in the quarter, or perhaps WebStorm was broken with ES6 code. At any rate, something has changed either in my head or in the world.
-
-If you have not done so already, install JSCS globally:
+I want you to be able to check the formating of your code with JSCS when I open it in WebStorm. If you have not done so already, install JSCS globally:
 
   npm install -g jscs
 
@@ -84,7 +87,7 @@ JSCS should pass for your files. You can probably make this happen by choosing *
 
 ## JSCS Punctuator
 
-Here is our current AddressChange:
+Many of us have been getting errors or warnings about punctuators. This can be fixed, but there are a couple steps invovled. Here is our current **onAddressChange** method:
 
 ```javascript
 onAddressChange = (event) => {
@@ -97,7 +100,7 @@ onAddressChange = (event) => {
 };
 ```
 
-Get rid of the arrow function syntax, which is cutting edge experimental code that JSCS is not handling correctly:
+Get rid of the arrow function syntax, which is lovely cutting edge experimental code that JSCS is not handling correctly:
 
 ```javascript
 onAddressChange(event) {
@@ -116,7 +119,7 @@ All this is good and well, but now the **this** variable in **onAddressChange** 
 this.onAddressChange = this.onAddressChange.bind(this);
 ```
 
-The call to bind shown above is the traditional way to solve this problem. I was enamored of the arrow function syntax and thought it a nice better way to solve the "invalid this" problem. But that solution is not certain to make it into the final ES6 spec. So I'm opting for this alternative solution, even if we lose the array function syntax.
+The call to bind shown above is the traditional way to solve this problem. I was enamored of the arrow function syntax and thought it a better way to solve the "invalid **this**" problem. But that solution is not certain to make it into the final ES6 spec. So I'm opting for this alternative solution, even if we lose the arrow function syntax.
 
 See the **setQuiet** method in this gist for a complete working example of the fix:
 

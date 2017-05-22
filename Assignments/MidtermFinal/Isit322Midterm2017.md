@@ -1,20 +1,24 @@
 # ISIT 322 Midterm 2017
 
-It is a take home, you will have about a week to do it. Check back for updates, which will be announced if they occur, but the basic plan is this:
+This will be a a take home exam. You will have about a week to do it.
+
+We will continue to build on our project that allows the user to call server side code to query the GitHub API, maps it to a format we like, and displays it to the user. We are getting closer to the point where we can use the API to explore our own and other's repositories with our custom web application.
 
 ## Goals
 
+The basic plan is this:
+
 - Same app, same name, new branch and then tag.
-  - Both **branch** and **tag** labeled **midterm**
-- Your app should have a styled menu and support component switching.
+  - Both **branch** and **tag** your midterm. In both cases, label it **midterm**
+- Your app should have a styled menu and support component switching with **React Router DOM**.
 - The following menu-items should be present:
-  - Home (This is the GitUser view)
+  - **Home** (This is the GitUser view)
   - **GetFoo**
   - **SmallNumbers**
-- Call at least two other GitHub Js APIs.
+- Extend your app by calling at least two other GitHub Js APIs that we have not called so far in this class.
   - Find two [methods on the Git Js API](http://github-tools.github.io/github/) other than the ones we have used and call them.
   - Include the results of these requests in the menu
-  - Switches between all three Git views (The one we have plus two more)
+  - Switches between all three React compoinent Git views (The one we have plus two more)
 - Extra credit:
   - Integrate **git-convert** into the code so it converts JSON to **field-definitions** automatically
 - Testing:
@@ -34,11 +38,9 @@ It is a take home, you will have about a week to do it. Check back for updates, 
   - getRateLimit
   - listReleases
 
-
-
 ## JSCS
 
-I couldn't figure out what was going on with JSCS earlier in the quarter, or perhaps WebStorm was broken with ES6 code. At any rate, something has changed either in my head or in the world.
+I want you to be able to check the formating of your code with JSCS when I open it in WebStorm. If you have not done so already, install JSCS globally:
 
 If you have not done so already, install JSCS globally:
 
@@ -79,7 +81,7 @@ Remember that you have a **Gruntfile.js** in **GitExplorer/server** directory. T
 
 ## JSCS Punctuator in ES6 {#jscs-punctuator}
 
-I can't get JSCS to accept our arrow functions which we use for binding this. In **ElfLogger**, for instance, I write this:
+I can't get JSCS to accept our arrow functions which we use for binding **this**. In **ElfLogger**, for instance, I write this:
 
 ```javascript
 setQuiet = (newValue) => {

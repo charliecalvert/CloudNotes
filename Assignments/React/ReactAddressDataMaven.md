@@ -2,6 +2,8 @@
 
 We are going to add a new component called **DataMaven** so that we can refactor and get rid of **AddressChanger**.
 
+## Change the Menu
+
 The **Routes** from the **ElfMenu** will move to this component. The display of the menu will stay in **ElfMenu**:
 
 ```javascript
@@ -92,7 +94,7 @@ describe('DataMaven Suite', function() {
 
 Now we have a new error: **ReferenceError: React is not defined**. Don't think. Don't plan. This is Test Driven Development. The test is in charge. Do what it tells you to do! Fix the problem by importing the needed library. (I'll leave that step up to you.)
 
-Once that problem is fixed, find the next one, and fix it. And so on, until the test passes. We don't add any code to the test unless the test "tells" us to add it.
+Once that problem is fixed, find the next one, and fix it. And so on, until the test passes. We don't add any code unless the test "tells" us to add it.
 
 ## Create DataMaven
 
@@ -114,7 +116,7 @@ export default DataMaven;
 
 ```
 
-This is, in effect the simplest possible React component.
+This is, in effect, the simplest possible React component.
 
 Create your file in the **components** directory and make sure your tests are passing.
 
@@ -177,7 +179,7 @@ console.log src/ElfDebugEnzyme.js:30
   <div />
 ```
 
-As we can see, the component contains a DIV, but not Router. So we change the component so that it contains a router:
+As we can see, the component contains a **DIV**, but not a **Router**. So we change the component so that it contains a router:
 
 ```javascript
 import React, {Component} from 'react';
@@ -202,6 +204,8 @@ Looking in **ElfMenu**, we find the missing piece:
 import { BrowserRouter as Router } from 'react-router-dom';
 ```
 
+Paste this code into **DataMaven**.
+
 Now our test is very close to passing. Its sole complaint is that the component creates a **BrowserRouter** not a **Router**. Since **Router** is just an alias for **BrowserRouter**, we can feel comfortable in updating our test to support it:
 
 ```javascript
@@ -212,6 +216,8 @@ it('renders and displays a BrowserRouter', () => {
     expect(router.length).toEqual(1);
 });
 ```
+
+**NOTE**: _Normally it is completely against the rules to change a test in order to get it to pass. However, we should not be too dogmatic, and this illustrates one of the occasions where a change to a test is warranted._
 
 ## Understanding the Enzyme find {#enzyme-find}
 
@@ -232,9 +238,9 @@ getElement(wrapper, element, showMe) {
 }
 ```
 
-As you can see, it also calls **find**. Calls **find** return an Ezyme wrapper around all the elments in the component that match name on which your search. For instance, if you had 5 DIVs in the HTML produced by your component, then **find** would return these divs if you searched for them. But our debug tool calls the **debug** method on the element that Enzyme finds. The code in our test just returns the wrapper.
+As you can see, it also calls **find**. Calls to **find** return an Ezyme wrapper around all the elements in the component that match the name on which you search. For instance, if you had 5 **DIVs** in the HTML produced by your component, then **find** would return these **DIVs** if you searched for them. But our enzyme debug tool calls the **debug** method on the element that Enzyme finds. The code in our test doesn't call **debug**, it just returns the **wrapper**.
 
-If you looked at the wrapper returned from this call you would see that it contains a length property. Lets use **console.log** to output that wrapper, so that we can take a look:
+If you looked at the wrapper returned from this call you would see that it contains a **length** property. Lets use **console.log** to output that wrapper, so that we can take a look:
 
 ```javascript
 it('renders and displays a BrowserRouter', () => {
@@ -288,7 +294,7 @@ it('renders and displays at least one Route', () => {
 
 This test checks to see if you have at least one **Route** element in the **render** method for **DataMaven**. Note that we use the **toBeGreaterThan** method to test that we have at least one instance of this object.
 
-What we are trying to do here is move this code from **ElfMenu** to **DataMaven**:
+Recall that we are trying to do here is move this code from **ElfMenu** to **DataMaven**:
 
 ```javascript
 <Route exact path='/' component={Address}/>
@@ -296,7 +302,7 @@ What we are trying to do here is move this code from **ElfMenu** to **DataMaven*
 <Route path='/small' component={SmallNumbers}/>
 ```
 
-In particular, we need to wrap the code inside the **Router** object:
+For this to work, we will need to wrap the code inside the **Router** object:
 
 ```javascript
 <Router>
@@ -331,7 +337,11 @@ Watch Usage
 › Press Enter to trigger a test run.
 ```
 
-To help prove to ourselves that we have properly updated **ElfMenu**, lets create or update an **ElfMenu.test.js** so that it contains at least the following two tests:
+**NOTE**: **_DataMaven** will not be the final location of our **Router** object. In order to get more control in our tests, will later refactor our code and move the **Router** to our main **index.js** file. However, I think it is simplest if you see it first in **DataMaven**. Then it will be easier to understand why the code still works when we move it to **index.js**. I have feeling this may not be the last time refactor this aspect of our code. Remember, we write tests, we get them to pass, and then we refactor. The process never ends._
+
+## Testing ElfMenu
+
+To help prove to ourselves that we have properly updated **ElfMenu**, lets create or update **ElfMenu.test.js** so that it contains at least the following two tests:
 
 ```javascript
 import React from 'react';
@@ -374,7 +384,7 @@ describe('ElfMenu Suite', function() {
 });
 ```
 
-The key point here is that it proves we have removed the **BrowserRourter** (alias Router) object from **ElfMenu.js**. This kind of test is a bit odd, in that it proves a negative. But by asking you to get this test to pass, I'm helping you ensure that you properly refactor your code.
+The key point here is that it proves we have removed the **BrowserRouter** (alias Router) object from **ElfMenu.js**. This kind of test is a bit odd, in that it proves a negative. But by asking you to get this test to pass, I'm helping you ensure that you properly refactored your code.
 
 Be sure the **ElfMenu** test actually runs by typing **p** and then **ElfMenu**, or by typing 'a' and running all your tests.
 
@@ -428,7 +438,20 @@ ReactDOM.render(
 );
 ```
 
-Our problem is that **ElfMenu** now contains code that needs to appear inside a **Router** object. We have moved the **Router** object to **DataMaven**. This means that we need to move **ElfMenu** into **DataMaven**. While we are at it, we might as well move **ElfHeader** there as well.
+Our problem is that **ElfMenu** now contains code that needs to appear inside a **Router** object. We have moved the **Router** object to **DataMaven**. This means that we need to move **ElfMenu** into **DataMaven**. While we are at it, we might as well move **ElfHeader** there as well. We can replace them with **DataMaven** itself. Our render method in **index.js** is now very simple:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import DataMaven from "./components/DataMaven";
+
+ReactDOM.render(
+    <div>
+        <DataMaven/>
+    </div>,
+    document.getElementById('root')
+);
+```
 
 Here are two tests to place in **DataMaven.test.js**. They help convince us that our DataMaven component includes both the header and the menu:
 
@@ -456,21 +479,6 @@ The objects in the **DataMaven** render method should appear in the following or
 - ElfMenu
 - And three or more Routes
 
-Our render method in **index.js** is very simple:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import DataMaven from "./components/DataMaven";
-
-ReactDOM.render(
-    <div>
-        <DataMaven/>
-    </div>,
-    document.getElementById('root')
-);
-```
-
 ## DataMaven and AndressEdit
 
 Don't cut and paste yet. Instead, copy the following from **Address.js**:
@@ -496,6 +504,49 @@ We now need to instantiate **AddressEdit** which means we need to pass props to 
 We are declaring an arrow function for the render method. It is passed props, which are properties from **react-router-dom**. We use the spread operator on these props, and then pass in our own props.
 
 At this point your program should be working and all your tests should be passing.
+
+## Testing ElfMenu
+
+React Router DOM expects components to be created in a certain order. For instance, you need to put your React Router DOM **Link** components inside a **Router**:
+
+```javascript
+<Router>
+  <ul>
+    <li><Link to='/'>Address Show</Link></li>
+  </ul>
+</Router>
+```
+
+Our new code for **ElfMenu**, however, no longer includes a **Router** object. That means that tests like this will fail because there is no **Router** enclosing the **Link** objects:
+
+```javascript
+it('renders the ElfMenu component without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<ElfMenu />, div);
+});
+```
+
+This results in errors like this:
+
+```
+TypeError: Cannot read property 'history' of undefined
+Warning: Failed context type: The context `router` is marked as required in `Link`, but its value is `undefined`.
+```
+
+The fix is obvious enough once you understand what is wrong. In your test, just wrap your **ElfMenu** in a **Router**:
+
+```javascript
+it('renders the ElfMenu component without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Router><ElfMenu /></Router>, div);
+});
+```
+
+## Switch Client Routes when Testing
+
+Start by reading this text from Elvenware:
+
+- [Elvenware on Testing React Router Dom][errd]
 
 ## Turn it in
 
@@ -526,3 +577,4 @@ And also, in the methods that handle button clicks, don't call **addresses[this.
 [edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html
 [radm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressDataMaven.html
+[errd]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#testing
