@@ -117,7 +117,7 @@ This code simply creates sets of data that mimic what our server would return gi
 
 ## Mock fetch
 
-Below is the source code for our new mock for **fetch**. Note in particular the call to [jest.genMockFromModule][gmm]. That call asks Jest to generate a mock object for the module we want to replace with a mock:
+Below is the source code for our new mock for **fetch** called **whatwg-fetch.js**. Save it and **mock-data.js** in the **\_\_mocks\_\_** folder. Note in particular the call to **jest.genMockFromModule**. That call asks Jest to generate a mock object for the module we want to replace with a mock:
 
 ```javascript
 /**
@@ -364,3 +364,11 @@ Of course, the X.X bit would contain your idea of the appropriate numbering sche
 [edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html
 [radm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressDataMaven.html
+
+## Hint Tagging
+
+- [Git Tag][git-tag]
+- [Understanding Tags][under-tag]
+
+[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags

@@ -1,24 +1,46 @@
 # ISIT 322 Midterm 2017
 
-It is a take home, you will have about a week to do it. Check back for updates, which will be announced if they occur, but the basic plan is this:
+This will be a a take home exam. You will have about a week to do it.
+
+We will continue to build on our project that allows the user to call server side code to query the GitHub API, maps it to a format we like, and displays it to the user. We are getting closer to the point where we can use the API to explore our own and other's repositories with our custom web application.
 
 ## Goals
 
-- Same app, same name, new tag and branch both labeled **midterm**
-- Include a styled menu and component switching
-  - Home (This is the GitUser view)
-  - GetFoo
-  - Numbers
-- Make at least two more requests of GitHub API
-  - Include in the menu
-  - Switches between all three Git views (The one we have plus two more)
-- Possible extra credit: Integrate git-convert into the code so it converts JSON to field-definitions automatically
-- You should have at least fifty meaningful tests.
-- Polish.
+The basic plan is this:
+
+- Same app, same name, new branch and then tag.
+  - Both **branch** and **tag** your midterm. In both cases, label it **midterm**
+- Your app should have a styled menu and support component switching with **React Router DOM**.
+- The following menu-items should be present:
+  - **Home** (This is the GitUser view)
+  - **GetFoo**
+  - **SmallNumbers**
+- Extend your app by calling at least two other GitHub Js APIs that we have not called so far in this class.
+  - Find two [methods on the Git Js API](http://github-tools.github.io/github/) other than the ones we have used and call them.
+  - Include the results of these requests in the menu
+  - Switches between all three React compoinent Git views (The one we have plus two more)
+- Extra credit:
+  - Integrate **git-convert** into the code so it converts JSON to **field-definitions** automatically
+- Testing:
+  - You should have at least fifty meaningful tests.
+  - JSCS available and most major files in the project pass JSCS tests.
+  - Your code should run without warnings and errors.
+  - Polish.
+
+## The GitHub Js API
+
+[Here are the GitHub API's calls][gh-api-calls] available for version 3.1.0. There might be a newer version by the time you read this. In most cases, you should use the new version if it is available.
+
+- [GitHub Js Docs][gh-api-calls]
+- Example APIs to call
+  - getIssues
+  - getMarkdown
+  - getRateLimit
+  - listReleases
 
 ## JSCS
 
-I couldn't figure out what was going on with JSCS earlier in the quarter, or perhaps WebStorm was broken with ES6 code. At any rate, something has changed either in my head or in the world.
+I want you to be able to check the formating of your code with JSCS when I open it in WebStorm. If you have not done so already, install JSCS globally:
 
 If you have not done so already, install JSCS globally:
 
@@ -59,7 +81,7 @@ Remember that you have a **Gruntfile.js** in **GitExplorer/server** directory. T
 
 ## JSCS Punctuator in ES6 {#jscs-punctuator}
 
-I can't get JSCS to accept our arrow functions which we use for binding this. In **ElfLogger**, for instance, I write this:
+I can't get JSCS to accept our arrow functions which we use for binding **this**. In **ElfLogger**, for instance, I write this:
 
 ```javascript
 setQuiet = (newValue) => {
@@ -218,8 +240,6 @@ Please look here:
 
 - [Elvenware React][elf-enospc]
 
-[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
-[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
 
 ## Props Singe Node Error {#props-single-node}
 
@@ -228,3 +248,6 @@ Please go here:
 - [Elvenware React][elf-sync]
 
 [elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
+[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
+[gh-api-calls]: http://github-tools.github.io/github/docs/3.1.0/index.html

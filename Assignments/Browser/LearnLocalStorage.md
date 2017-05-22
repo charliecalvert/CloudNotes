@@ -66,21 +66,32 @@ export {saveToLocalStorage, saveToLocalStorageByName,
 
 ## Create JSON File {#create-json}
 
-Copy your array of addresses to **public/addresses.json**. The code you put in the their should pass [json-lint](https://jsonlint.com/). To get this to work, you might need to modify your getAddress code slightly:
+We want to create a valid JSON file containing an array of address objects that we can use in our program. One approach would to copy your array of addresses from **address-list.js** to **public/address-list.json**. The code you put in the their should pass [json-lint](https://jsonlint.com/).
+
+A better way to handle this problem would to modify your [getAddress.js][ga-code] code slightly so that it produces valid JSON. You need to modify the code inside your **for loop**.
+
+- Begin by outputting not just a curly brace, but an open square brance and then an open curley brace.
+- Ensure you have double quotes around the property names, as this is part of the JSON spec.
+- At the end of the file, insert a close curly brace and a close square bracket.
+
+Some sample code to put in your version of **get-address** is shown here:
 
 ```javascript
+// console.log('{');  <=== COMMENT IT OUT AND REPLACE IT WITH THESE TWO LINES
 const open = (i === 0) ? '[\n\t{' : '\t{';
 console.log(open);
 
+// PUT DOUBLE QUOTES AROUND YOUR PROPERTY NAMES
 writeIt('"firstName":', json.objects[i].person.firstname);
 
 // AND SO ON
 
+// console.log('},'); <=== COMMENT IT OUT AND REPLACE IT WITH THESE TWO LINES
 const close = i < jsonLength - 1 ? '\t},' : '\t}\n]';
 console.log(close);
 ```
 
-The open lines start the array and the closing lines close the array. Note that firstName is written to be surrounded in double quotes, which satisfies the JSON spec.
+The open lines start the array and the closing lines close the array. Note that **firstName** is written to be surrounded in double quotes, which satisfies the JSON spec. See the three samples below to better understand the use of double quotes for the property name (key) in a JSON file:
 
 ```javascript
 // Valid JSON
@@ -98,6 +109,8 @@ The open lines start the array and the closing lines close the array. Note that 
   'foo': 'bar'
 }
 ```
+
+[ga-code]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html
 
 ## Load JSON {#load-json}
 

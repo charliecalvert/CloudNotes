@@ -2,8 +2,9 @@
 
 We should:
 
-- Create a program that generates about 500 addresses of politicians
-- Discover how to use the addresses in **CongressAddress**.
+- Download a set of adddress from the website govtrack.us. The address are in JSON format.
+- Create a program that generates about 100 addresses based on the JSON you downloaded.
+- Discover how to use the addresses in **CongressAddress**. In particular, use these addresses to update **address-list.js** and/or **address-list.json**.
 - Turn in the program, with code that shows your ability to use the addresses in **CongressAddress**.
 
 Do your work in a folder in the root of your project call **GetAddress**.
@@ -15,6 +16,18 @@ curl https://www.govtrack.us/api/v2/role?current=true > govtrack-address.json
 ```
 
 Study **govtrack-address.json** until it makes sense.
+
+## Install Debug
+
+If you have not done so already, enter the following code to install the frequently used **debug** package:
+
+  npm install --save debug
+
+Read about it here:
+
+- [debug on npm](https://www.npmjs.com/package/debug)  
+
+If you get this error: **Error: Cannot find module 'debug'** then that probably means you skipped this step and install **debug** with npm as shown above.
 
 ## Write Utility
 
@@ -138,6 +151,12 @@ Some example output:
 },
 ```
 
+In the **LearnLocalStorage** assignment, I explain how to convert the output of this program to JSON.
+
+- [Learn Local Storage JSON][lls-json]
+
+[lls-json]: http://www.ccalvert.net/books/CloudNotes/Assignments/Browser/LearnLocalStorage.html#create-json
+
 ## Turn it in
 
 Add, commit, push, then tag and/or branch.
@@ -148,6 +167,16 @@ We want to be able to either:
 - It would also be good to produce a valid **address-list.js** file
 
 If you can do either, that would fulfill the requirements of the assignment. If you can do both, that would be even better, but it is not required.
+
+See also, this portion of the
+
+## Hint Tagging
+
+- [Git Tag][git-tag]
+- [Understanding Tags][under-tag]
+
+[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
 
 ## Pad Number
 
