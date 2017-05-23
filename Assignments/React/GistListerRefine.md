@@ -123,3 +123,11 @@ And then in **ElfHeader**:
     // ETC....
 </ul>
 ```
+
+## Turn it in
+
+Add, commit, push, branch, tag. Use the words **react-bootstrap** in your messages.
+
+I will grade this assignment in tandem with [ReactBootstrap][elf-rb]. You should create a single commit that has the solution to both assignments. You can turn the assignments in one at a time, but when you have completed both assignments, add a note saying that you are done.
+
+[elf-rb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBootstrap.html
