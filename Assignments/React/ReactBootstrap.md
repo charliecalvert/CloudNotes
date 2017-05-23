@@ -1,10 +1,16 @@
 # React Bootstrap
 
-It's time to tweak our apps appearance so that it works on a phone. We will use bootstrap to help us achieve our goal.
+It's time to tweak our application's appearance so that it works on a phone. We will use bootstrap to help us achieve our goal.
+
+If you are not familiar with bootstrap, you should visit their website and get up to speed with it as best you can. Even if you do know bootstrap, you probably find yourself frequently going back to their valuable reference pages for **components** and for **css**:
+
+- [Bootstrap Home](http://getbootstrap.com/)
+- [Bootstrap Components](http://getbootstrap.com/components/)
+- [Bootstrap CSS](http://getbootstrap.com/css/)
 
 ## Get started
 
-The first thing we want to do is to [install Bootstrap].
+The first thing we want to do is to install Bootstrap and some related technologies.
 
 ```
 npm install --save bootstrap
@@ -12,14 +18,18 @@ npm install --save react-bootstrap
 npm install --save react-router-bootstrap
 ```
 
-Then in **index.js**, we load some bootstrap css:
+The first file is bootstrap itself. The second allows us to use bootstrap in our JSX. The third allows us to use bootstrap in tandem with our **react-router-dom** menus. In fact, that code comes from the [same people][rrb] who made **react-bootstrap**
+
+Then in **index.js**, we load the bootstrap css:
 
 ```javascript
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 ```
 
-## container
+[rrb]: https://github.com/react-bootstrap
+
+## Container
 
 The next step is to ensure all your code is included in a bootstrap **container**. The simplest thing might be to put it in the outer div in **DataMaven**:
 
@@ -27,27 +37,21 @@ The next step is to ensure all your code is included in a bootstrap **container*
 render() {
     return (
 
-            <div className="container">
-                <ElfMenu />
-                // AND SO ON
-            </div>
+        <div className="container">
+            <ElfMenu />
+            // AND SO ON
+        </div>
     )
 }
 ```
 
 ## The header
 
-We will now begin using some bootstrap components. If you are not familiar with bootstrap, you should visit their website and get up to speed with it as best you can. Even if you do know bootstrap, you should continuously be going back to both their reference page for components and for css:
+We can now begin using bootstrap components. You probably noticed that we installed something called **react-bootstrap**. This library is currently under construction, but it will allow us to use bootstrap in our JSX.
 
-- [Bootstrap Home](http://getbootstrap.com/)
-- [Bootstrap Components](http://getbootstrap.com/components/)
-- [Bootstrap CSS](http://getbootstrap.com/css/)
+**NOTE**: _Though it is highly rated, it is possible that I will give up on **react-bootstrap** after a time, but let's try it for now._
 
-You probably noticed that we installed something called **react-bootstrap**. This library is currently under construction, but it will allow us to use bootstrap in our JSX.
-
-**NOTE**: _It is possible that I will give up on **react-bootstrap** after a time, but let's try it for now._
-
-The **react-bootstrap** package turns bootstrap components in JSX components. Lets start working with it by using the **Jumbotron** in our header:
+The **react-bootstrap** package turns bootstrap components into JSX components. Lets start working with it by using the **Jumbotron** in our header. The code below may not fit your case exactly, but it is a complete example of how to use the **Jumbotron**:
 
 ```javascript
 import React, {Component} from 'react';
@@ -84,6 +88,34 @@ import {  Jumbotron } from 'react-bootstrap';
 ```
 
 We can then use it just as we would any other JSX class. After applying it, look at your app in the browser. It's going to take awhile to get it looking as we would wish, but this is a start.
+
+In some cases, your **Header** component may be more complex than the one shown above. In that case, just do something like this:
+
+```javascript
+render() {
+    return (
+        <div className='App'>
+            <Jumbotron>
+                <h2>Welcome to Prog272</h2>
+            </Jumbotron>
+            <ul className='menu'>
+               // ADD ADDITIONAL CODE HERE OR ELSEWHERE IN THIS RENDER METHOD
+            </ul>
+
+        </div>
+    );
+  }
+```
+
+The point is that you need to wrap that HTML that you want to be part of your header in a **Jumbotron**.
+
+## The Old CSS
+
+At this point we may find that the CSS we had before is beginning to conflict with the Bootstrap CSS. It is very possible to combine custom CSS with bootstrap CSS. However, I think it is best to have bootstrap render things its own way at first, and then add our own CSS in on top of it.
+
+I suggest that you either comment out the contents of all your CSS files, or else remove all the places in your application where you import CSS. Don't miss a one. Find every single place where you import CSS, and comment it out.
+
+Then, once you have everything working correctly with bootstrap, you can come back and start selectively including your CSS. In other words, after you have completed this assignment, or as the very last step in this assignment, you may start bringing in some of your own CSS. It is, I think, important that you make a real effort to do things the bootstrap way first. I've seen developers spend a lot of time creating functionality that is already part of bootstrap, and usually implemented better in bootstrap. So proceed with caution.
 
 ## The menu
 
@@ -140,6 +172,19 @@ class ElfMenu extends Component {
 export default ElfMenu;
 ```
 
+In some cases, you return statement may look more like this:
+
+```javascript
+return (
+    <div>
+        {navbarInstance}
+        <Jumbotron>
+            <h2>Welcome to Prog272</h2>
+        </Jumbotron>
+    </div>
+);
+```
+
 If you know bootstrap menus, much or all of this should be familiar to you. The JSX that we use here follows the standard bootstrap syntax quite closely, with a few tiny twists. Notice in particular, that instead of applying classes to our HTML, we import several JSX components from **react-bootstrap**:
 
 ```javascript
@@ -160,7 +205,7 @@ In the code provided above, I leave it up to you use **LinkContainer** twice mor
 
 ## AddressShow
 
-Finally, we want to AddressShow and strip out almost all the CSS we have been using. Replace it with something like this:
+Finally, we want to go to one of our main components and start tweaking the way it looks. Suppose your main component is called **AddressShow**. Strip out almost all the CSS we have been using. Replace it with something like this:
 
 ```html
 import { Button } from 'react-bootstrap';
@@ -178,7 +223,7 @@ import { Button } from 'react-bootstrap';
 </form>
 ```
 
-And then, finally define **elf-p** in **App.css** or whereever you feel is appropriate.
+And then, finally define **elf-p** in **App.css** or whereever you feel is appropriate. This is an example of how we can start adding in our own CSS on top of bootstrap. I fear it may, however, also be an example of me trying to do things myself when bootstrap provides a better solution that I am not yet aware of.
 
 ```css
 .elf-p {
@@ -204,7 +249,7 @@ Or, simplest possible case:
 
 ## Turn it in
 
-Add, commit, push, branch, tag. Use the words **bootstrap-react** in your messages.
+Add, commit, push, branch, tag. Use the words **react-bootstrap** in your messages.
 
 ## Hint
 
