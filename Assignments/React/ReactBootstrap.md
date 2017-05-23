@@ -188,6 +188,20 @@ And then, finally define **elf-p** in **App.css** or whereever you feel is appro
 
 You can tweak as you feel is appropriate. (There are other ways to change fonts in bootstrap, but this might work for us at least for now.)
 
+Here is how to use the Button:
+
+```html
+<Button
+  bsStyle='primary'
+  id='decrementAddressClick'
+  onClick={this.props.onAddressChange}>Prev Address</Button>
+```
+
+Or, simplest possible case:
+
+```html
+<Button bsStyle='warning'>Warning</Button>
+
 ## Turn it in
 
 Add, commit, push, branch, tag. Use the words **bootstrap-react** in your messages.
