@@ -40,6 +40,8 @@ Our rule is that we only set state in DataMaven. However, it is arguable okay to
 
 [state-docs]: https://facebook.github.io/react/docs/react-component.html#setstate
 
+We need to track the index of the list of gists so that we can iterate through them with prev and next buttons.
+
 ## Button Disabled
 
 Consider this button:
