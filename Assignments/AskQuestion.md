@@ -17,6 +17,12 @@ Here is a quick video about how to create new questions and how to reply to exis
 
 There is no penalty for providing a wrong answer to a question so long as you are trying to help. My goal is promote participation in the discussion area. So long as you are doing so in the proper spirit, then that is all I ask, all I want to see. There are no dumb questions, and no penalty for accidentally providing a wrong answer.
 
+## Get it Done
+
+The big difference between an advanced programmer and one who is still learning is that advanced programmers get things done. It doesn't matter how we get things done, only that we get things done. If we have to ask a lot of questions along the way, then that is one thing. Failing to achieve our goal is another. In professional environments in big companies, I've seen successful developers who are just brilliant at getting answers to their questions. As a result, they get things done. Nobody remembers the questions, all they know is that someone gets things done! 
+
+A manager will work hard to find a good niche for someone who gets things done. They aren't always looking for genius or for years of experience, they want competence. Hard workers with a controlled ego who get things done. If someone with a soaring IQ comes along, then that is nice, but that is not the only way to be a valued employee.
+
 ## Don't Quote Code {#no-code}
 
 In general don't quote code in your questions or answers. The worst possible question would be:

@@ -3,6 +3,7 @@ Join [heroku](https://www.heroku.com/). Note your user name and password, or sav
 Take a moment to think about heroku's pricing. We will be using the free tier:
 
 - <https://www.heroku.com/pricing>
+- <https://blog.heroku.com/deploying-react-with-zero-configuration>
 
 Make sure you have ruby installed. If you have it installed you will see the following if you type **which ruby**
 
@@ -17,7 +18,7 @@ If you don't have it installed, install it like this:
 sudo apt-get install ruby-full
 </pre>
 
-On Cloud 9, heroku is already installed. But on Pristine Lubunutu you will need to install Heroku. The command is simple:
+On Cloud 9, heroku is already installed. But on Pristine Lubuntu you will need to install Heroku. The command is simple:
 
 <pre>
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
