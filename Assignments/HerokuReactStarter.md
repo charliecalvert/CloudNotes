@@ -12,20 +12,20 @@ We don't need it yet, but note that there are instructions to install Heroku for
 
 
 
-Make sure you have node 4.0 or greater installed. Check also for npm and git. You don't need the exact numbers, but they should not be wildly different:
+Make sure you have node 6.0 or greater installed. Check also for npm and git. You don't need the exact numbers, but they should not be wildly different:
 
 </pre>
 $ node --version
-v5.11.0
+v7.10.0
 charlie@rohan-elf:~/temp
 $ npm -v
-3.8.6
+4.2.0
 charlie@rohan-elf:~/temp
 $ git --version
-git version 2.7.4
+git version 2.11.0
 </pre>
 
-Type **heroku** to log in. If that doesn't work, try **heroku auth:login** instead:
+Type **heroku** to log in. If that doesn't work, try **heroku auth:login** instead. In either case, it should look something like this:
 
 <pre>
 heroku auth:login
@@ -37,9 +37,24 @@ Logged in as foo@foobar.com
 
 ## Deploy
 
-Go to your ~/Source or ~/temp directory and run the following:
+Make sure your system is set up correctly. In particular, look in the ~/bin directory and see if there is a file there called **CreateExpressProject**. If it is not there, then do this:
+
+```
+slb
+./CreateSymbolicLinks
+```
+
+The **slb** alias takes you to this directory:
+
+- **/Git/JsObjects/Utilities/SetupLinuxBox**
+
+The **CreateSymbolicLinks** script should create the missing **~/bin/CreateExpressProject** script. (It will also create a number of other scripts.)
+
+Go to your ~/Source directory and run a few commands to create your first Heroku project.
 
 **NOTE**: _Don't create your heroku project in your repository. If you do, you will end up with a repository nested in a repository, which you want to avoid._
+
+To create the project, enter the following in your **Source** directory, being sure to use your own lastname, not mine, and not the word **lastname**:
 
 <pre>
 CreateExpressProject lastname01
@@ -57,7 +72,6 @@ heroku create lastname01
 And some details:
 
 <pre>
-echo 'web: node bin/www' > Procfile
 echo 'node_modules' > .gitignore
 echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
@@ -67,6 +81,8 @@ echo 'components' >> .gitignore
 Perform a standard **git add .** and **git commit -m "First commit to heroku of XXX project"**. Customize the commit comment in any way want, the text I show is just a suggestion. Then push to git like this:
 
 <pre>
+git push heroku master
+# Or maybe like this:
 git push --set-upstream heroku master
 </pre>
 
@@ -101,6 +117,37 @@ If you do keep nodemon, consider using **nodemon.json** to be sure that writing 
 }
 ```
 
+## NPM and Bower
+
+In NPM, we don't need dev dependencies. We need, however, to add a manual install of bower and a **postinstall** step:
+
+  npm install --save bower
+
+**NOTE**: _Bower gives a warning. We will fix this later._
+
+Also, open **package.json** and change **nodemon** to **node** in the **start** property. Also add the post install step shown below:
+
+```javascript
+{
+  "name": "calvert04",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "postinstall": "node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "bower": "^1.8.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2"
+  }
+}
+```
 
 ## Deploy Checklist
 
@@ -112,7 +159,6 @@ cd Heru02/
 npm install
 git init
 heroku create heru02
-echo 'web: node bin/www' > Procfile
 echo 'node_modules' > .gitignore
 echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
@@ -165,37 +211,6 @@ heroku apps:destroy --app boiling-brook-54970
 \> boiling-brook-54970
 </pre>
 
-## NPM and Bower
-
-In NPM, we don't need dev dependencies. We need, however, to add a manual install of bower and a **postinstall** step:
-
-  npm install --save bower
-
-**NOTE**: _Bower gives a warning. We will fix this later._
-
-Also, open **package.json** and change nodemon to node in the **start** property:
-
-```javascript
-{
-  "name": "calvert04",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "postinstall": "node_modules/bower/bin/bower install"
-  },
-  "dependencies": {
-    "body-parser": "~1.17.1",
-    "bower": "^1.8.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2"
-  }
-}
-```
 
 ## Trouble Shoot
 
@@ -364,54 +379,4 @@ To check your work and confirm that you are now using SSH, run **git remote -v**
 $ git remote -v
 origin	ssh://git@heroku.com/charlie001.git (fetch)
 origin	ssh://git@heroku.com/charlie001.git (push)
-</pre>
-
-## Outdated
-
-This text is outdated or not relevant to Prog272. You can ignore this section.
-
-Make sure you have ruby installed. If you have it installed you will see the following if you type **which ruby**
-
-<pre>
-$ which ruby
-/usr/bin/ruby
-</pre>
-
-If you don't have it installed, install it like this:
-
-<pre>
-sudo apt-get install ruby-full
-</pre>
-
-On Cloud 9, heroku is already installed. But on Pristine Lubuntu you will need to install Heroku. The command is simple:
-
-<pre>
-wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-</pre>
-
-Now Type **heroku** on Pristine or Lubuntu or **heroku auth:login** on Cloud 9. Log in with your heroku user name and password. On Pristine Lubuntu:
-
-<pre>
-$ heroku
-heroku-cli: Installing CLI... 22.7MB/22.7MBB
-Enter your Heroku credentials.
-Email: foobar@foo.com
-Password (typing will be hidden):
-Logged in as foobar@foo.com
-
- ▸    Add apps to this dashboard by favoriting them with heroku apps:favorites:add
-See all add-ons with heroku addons
-See all apps with heroku apps --all
-
-See other CLI commands with heroku help
-</pre>
-
-On Cloud Nine, or if you don't see the login pronpt when you type **heroku**, the try **heroku auth:login** instead:
-
-<pre>
-heroku auth:login
-Enter your Heroku credentials.
-Email: foo@foobar.com
-Password (typing will be hidden):
-Logged in as foo@foobar.com
 </pre>

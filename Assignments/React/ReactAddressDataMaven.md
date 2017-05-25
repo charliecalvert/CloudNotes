@@ -574,6 +574,23 @@ Don't forget that in your constructor for **Address** that you need to initializ
 
 And also, in the methods that handle button clicks, don't call **addresses[this.addIndex]**. The **addresses** variable is no longer valid. Call **getByIndex** instead. I'll leave the details to you.
 
+## Debug Hint
+
+Here is how I often solve issues with **state** or **props**. I put a breakpoint in the **Source** page of the Chrome Developer Tools at the beginning of the **render** methods both for **DataMaven**, and for the component I'm trying to debug. If there is a class between those two, then I put a breakpoint in that render﻿ method as well. Then, as each breakpoint is hit, I inspect the **props** and or **state**, and make sure it looks valid. Suppose the components are **DataMaven**, **Address** and **AddressShow**. If the state being passed to **Address** is valid, but the props are not valid in **Address**, then I assume I have a typo or similar problem in **Address**. And so on, methodically following the entity I'm interested in as it "travels" from **DataMaven** to **AddressShow**.
+
+## Uncle Bob
+
+The goal is to:
+
+- Write a failing test
+- Make the test pass
+- Refactor your code to find the best architecture you can create, and then ensure tests are still passing.
+
+I think that Uncle Bob Martin is a gifted teacher. He knows how to explain complex ideas in simple terms. I cannot encourage you strongly enough to read at least the first half, and hopefully all, of this excellent blog post:
+
+- [The Cycles of TDD][tdd-cycle]
+
+[tdd-cycle]: http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 [edeg]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMock.html
 [radm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressDataMaven.html
