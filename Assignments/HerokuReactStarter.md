@@ -293,7 +293,7 @@ The goal is to:
 - Then copy your CongressAddress program on top of it.
 - And then push it to Heroku
 
-When you are done, your CongressAddress program should be running on Heroku.
+When you are done, your **CongressAddress** program should be running on Heroku. As a result, you should be able to browse to it with your phone. This will enable you to begin the process of tweaking your code so that it looks right on a phone.
 
 It should be almost automatic. From the root of your react heroku project do this. First copy over CongressAddress on top of the default create-react-app project:
 
@@ -307,9 +307,62 @@ Then add, commit, and finally push to Heroku as described above. Something like:
 
 Now go to your browser and see if it works.
 
+If you look at it on the Heroku dashboard, your application may get a funny name when it is pushed to Heroku. This should not matter, but if it bothers you it should also be configurable.
+
+## Clone on New Machine
+
+If you are now at home, and created your project on the school machine, you can download you project to your current machine like this:
+
+- First be sure Heroku is set up properly on your home machine as described above.
+- Then clone your existing project: **heroku git:clone -a calvert06**
+
+To see a list of your apps on heroku: **heroku apps --all**
+
+- [Heroku Docs on git clone](https://devcenter.heroku.com/articles/git-clone-heroku-app)
+
+## Comparing Two Folders
+
+After copying CongressAddress to a new folder, you will end up with two copies of **CongressAddress** on your system. This is not an ideal scenario, but it can be handled with relatively little fuss if you follow certain precautions.
+
+- As a rule, only make changes to the application in your **prog272-lastname-2017** folder. Your project lives in your repository for this class. The repository in your **~/Source** folder is used primarily for deployment, not for development
+  - There might be exceptions to this rule. For instance, it may, in some cases, be necessary to tweak configuration files such **package.json** before sending the project to Heroku. I don't think I had to do that, but it is not nearly so serious to have two versions of a file like that as it is to have two versions of delicate source file such as **DataMaven.js**.
+- Once you have copied the project over one time, use tools to automate the process of updating the version in **~/Source**.
+
+The primary tool I would use is Meld:
+
+```
+meld ~/Git/prog272-lastname-2017/CongressAddress/ ~/Source/lastname06
+```
+
+If you don't know how to use meld, I would [read up on it][meld-docs]. Understanding how to use tools that allow you to compare directories is an essential skill whether you want to go into development, QA, or IT.
+
+[meld-docs]: http://meldmerge.org/help/index.html
+
+Another option is to automate the process with a simple copy command which you could save in a script. This option would require some testing before you implemented it. It uses the **cp** command with some advanced flags:
+
+  cp -Truvp ~/Git/prog272-calvert-2017/calvert06 ~/Source/calvert06/
+
+This copies only files with differences (u) recursively (r) and verbosely (v) and helps you avoid the nested folder issue (T). For more information, access the manual for **cp** by typing **man cp** at the bash prompt. Scan through the document with the **arrow** keys and exit with the **q** key. Press **h** for help.
+
+A very nice explanation of the valuable **T** option is here on stack overflow:
+
+- [No Target Directory](https://stackoverflow.com/a/24486142/253576)
+
+To create the script, do something like this, where you will need to modify the path to use your last name:
+
+```bash
+echo 'cp -Truvp ~/Git/prog272-calvert-2017/calvert06 ~/Source/calvert06/' > copy-to-heroku
+chmod +x copy-to-heroku
+```
+
 ## Turn it in
 
-Send me the URL of your app
+Send me the URL of your applications running on Heroku. I am expecting to see two URLs:
+
+- The Express Application with your name and a number
+- Your CongressAddress program.
+
+CongressAddress doesn't have to be running perfectly. What I want to see is that you were able to move it to Heroku.
 
 ## Hints
 

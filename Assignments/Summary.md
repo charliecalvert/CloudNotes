@@ -1,5 +1,4 @@
 * [AskQuestion.html](AskQuestion.html)
-* [CodeAcademy07.html](CodeAcademy07.html)
 * [HerokuReactStarter.html](HerokuReactStarter.html)
 * [HerokuStarter.html](HerokuStarter.html)
 * [master-list.html](master-list.html)
