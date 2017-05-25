@@ -105,3 +105,9 @@ router.get('/bar', function(request, response, next) {
 ```
 
 All requests except for **get-foo** should be handled by the micro services.
+
+## Turn it in
+
+All five servers should be build and up and running and callable. Use the npm module **concurrently** to start them all at once.
+
+I'm expecting the **qux**, **git-user** and **gist** servers to more or less be working. The others are just shells for now.
