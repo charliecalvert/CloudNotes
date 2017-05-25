@@ -10,11 +10,9 @@ We don't need it yet, but note that there are instructions to install Heroku for
 
 - <https://blog.heroku.com/deploying-react-with-zero-configuration>
 
-
-
 Make sure you have node 6.0 or greater installed. Check also for npm and git. You don't need the exact numbers, but they should not be wildly different:
 
-</pre>
+<pre>
 $ node --version
 v7.10.0
 charlie@rohan-elf:~/temp
@@ -24,6 +22,12 @@ charlie@rohan-elf:~/temp
 $ git --version
 git version 2.11.0
 </pre>
+
+Install Heroku:
+
+```
+
+```
 
 Type **heroku** to log in. If that doesn't work, try **heroku auth:login** instead. In either case, it should look something like this:
 
@@ -196,6 +200,23 @@ No dynos on ⬢ heru03
 
 See how much time an app has left in its 18 hours:  **heroku ps -a heru03**
 
+## Heroku and React
+
+Its the same drill, but let's do it with **create-react-app**:
+
+```
+cd ~/Source
+create-react-app lastname02
+cd lastname02
+git init
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "Heroku and React"
+git push --set-upstream heroku master
+```
+
+Then you can do **heroku open** if you want. Or go to heroku dashboard.
+
 ## Delete
 
 Delete an app from heroku with: heroku apps:destroy --app <APP_NAME>
@@ -264,68 +285,27 @@ If you want to stop running your dyno:
 heroku ps:scale web=0
 </pre>
 
-## Create SolarExplorer or SolarVoyager
+## Copy CongressAddress
 
-Pick the branch in repository that you like. Go to your **~/Source** or **~/temp** directory and copy your **SolarExplorer** or **SolarVoyager** or whatever is the best version of your project, by issuing the command only once. Your command might look something likie this:
+The goal is to:
 
-<pre>
-cd ~/temp
-cp -r ~/Git/prog272-calvert-2016/SolarExplorer/ .  <== FOR PRISTINE LUBUNTU
-</pre>
+- First create a default react app in Heroku as described above.
+- Then copy your CongressAddress program on top of it.
+- And then push it to Heroku
 
-<pre>
-cd ~/temp
-cp -r ~/workspace/SolarExplorer/ .                 <== FOR CLOUD NINE
-</pre>
+When you are done, your CongressAddress program should be running on Heroku.
 
-**NOTE**: _What I'm looking for is the most recent version of your current project. In Prog219 it is SolarExplorer, in Prog272 is SolarVoyager. In some other class I hold in the future, it may be some other assignment. The point is to give the latest working version of the project you developed for the midterm and are creating for the Final. I won't be grading the project itself, just seeing that you are able to get it up and running on the heroku servers. Even if most of the commands fail, that will not affect your grade. For this assignment, you are being graded only on your ability to get the application running in some form on the Heroku server. I ask you to do this, because it will be part of the final, and I'm doing what I can to encourage you to get started on this part of the assignment as soon as possible. Don't wait to the last minute!_
+It should be almost automatic. From the root of your react heroku project do this. First copy over CongressAddress on top of the default create-react-app project:
 
-Run these commands, where the directory in first command may differ depending on the name of your project and the folder in which it is stored:
-
-<pre>
-cd SolarVoyager
-git init
-npm install bower --save
-</pre>
-
-Remove from **package.json** your dev-dependencies. We won't need them. Add a **postinstall** to the scripts section of **package.json**:
-
-<pre>
-"scripts": {
-   "start": "node ./bin/www",
-   "postinstall": "node_modules/bower/bin/bower install"
- },
-</pre>
-
-The **package.json** file might look a bit like this after you edit it:
-
-```javascript
-{
-  "name": "Week05-ExpressRoutesSolar",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "postinstall": "node_modules/bower/bin/bower install"
-  },
-  "dependencies": {
-    "body-parser": "~1.13.2",
-    "bower": "^1.7.9",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
-  }
-}
+```
+cp -r ~/Git/prog272-lastname-2017/CongressAddress/* .
 ```
 
-Set up **.gitignore** as we did above. Just in case, I'll remind you again that you should run **git init** before moving. If you have run **git init**, then go ahead and run **heroku create**, using a command a bit like this:
+Then add, commit, and finally push to Heroku as described above. Something like:
 
-<pre>
-heroku create SolarExplorerCalvert
-</pre>
+  git push heroku master
+
+Now go to your browser and see if it works.
 
 ## Turn it in
 
