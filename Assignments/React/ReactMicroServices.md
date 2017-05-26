@@ -36,6 +36,10 @@ This is meant for us only during development. When we ship, we do two things.
 
 Now we can just run our server, browse to the page it creates, and begin playing with our app.
 
+```javscript
+res.sendFile('index.html');
+```
+
 ## Micro Services
 
 What this means, then, is that the server part of our GitExplorer project is going to be the server for our main programmer. It will be the thing that launches our client side GitExplorer code.
