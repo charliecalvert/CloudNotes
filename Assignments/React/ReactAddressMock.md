@@ -186,13 +186,27 @@ At the top of your address.test.js file, do this:
 In the **constructor** for **Address** we have the following code. Its responsibility is to be sure that **localStorage** contains at least 100 records representing the addresses we placed in **address-list.json**.
 
 ```javascript
-const that = this;
-dataLoader.loadAddresses(function(addressCount) {
-    if (!addressCount) {
-        throw new Error('Cannot get address count in address.js');
-    }
-    that.addressCount = addressCount;
-});
+import DataLoader from './DataLoader';
+const dataLoader = new DataLoader();
+
+// Code ommitted here.
+// Then, in the constructor:
+constructor(props) {
+    super(props);
+    logger.log('Constructor called');
+    //localStorage.clear();
+
+    this.addressIndex = 0;
+
+    const that = this;
+    dataLoader.loadAddresses(function(addressCount) {
+        if (!addressCount) {
+            throw new Error('Cannot get address count in address.js');
+        }
+        that.addressCount = addressCount;
+    });
+    // AND SO ON
+}
 ```
 
 This code performs a little trick you have seen before:
