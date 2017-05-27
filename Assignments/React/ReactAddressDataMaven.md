@@ -568,6 +568,44 @@ git push origin v7.X.X
 
 Of course, the X.X bit would contain your idea of the appropriate numbering scheme. For instance: **v7.0.0**.
 
+## Testing with DataMaven
+
+If we want to test that button clicks in **AddressShow** perform correctly, then we need to put **DataMaven** in the loop, or at least it is one way to achieve our goal.
+
+Don't forget that you may need to also wrap **DataMaven** in a **Router**, at least in some cases. (It depends on the current state of your application and whether or not you moved the Router to index.js. If you have moved the Router, then index.js looks like this:
+
+```javascript
+ReactDOM.render(
+    <Router>
+        <DataMaven />
+    </Router>,
+    document.getElementById('root')
+);
+```
+
+And your test would need to have code like this in it, where in some cases you would want to use MemoryRouter rather than Router:
+
+```javascript
+import { MemoryRouter } from 'react-router';
+wrapper = mount(
+ <MemoryRouter initialEntries={['/']}>
+   <div>
+     <DataMaven />;
+   </div>
+ </MemoryRouter>
+);
+```
+
+Or like this:
+
+```javascript
+const wrapper = mount(<Router><DataMaven /></Router>);
+```
+
+- [Learn about MemoryRouter][mem-router]
+
+[mem-router]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#testing
+
 ## Hint
 
 Don't forget that in your constructor for **Address** that you need to initialize **this.state.address** with dummy data. Just take an object from the array of objects in **mock-data.js**.

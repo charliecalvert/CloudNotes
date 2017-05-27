@@ -71,7 +71,7 @@ All the server should respond to a **/you-rang** query by responding with:
   - message: i am up and running
   - You can include any additional information about the server you think might be of interest
 
-For instance, you should get responses to these messages from the appropriate server:
+For instance, if sent from the client, you should get responses to these messages from the appropriate server:
 
 - /qux/you-rang
 - /git-user/you-rang
@@ -115,3 +115,19 @@ All requests except for **get-foo** should be handled by the micro services.
 All five servers should be build and up and running and callable. Use the npm module **concurrently** to start them all at once.
 
 I'm expecting the **qux**, **git-user** and **gist** servers to more or less be working. The others are just shells for now.
+
+Make sure you include the [base route](#you-rang) in your calls from the client:
+
+- /qux/you-rang
+
+Put all your micro services in a directory called **Micros** or something similar. This means there should be five programs in that directory. The directory should at the top level of your repository, directly under the root:
+
+- isit322-lastname-2017
+  - GitExplorer
+  - Micros
+
+Don't forget you rename a directory: **git move microtest Micros**.
+
+Not essential, but don't forget to explore **concurrently**.
+
+- [npm concurrently](https://www.npmjs.com/package/concurrently)

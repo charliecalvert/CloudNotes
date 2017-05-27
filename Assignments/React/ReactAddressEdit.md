@@ -3,10 +3,10 @@
 We have several steps that will allow us to start editing the data we view:
 
 - Create an AddressEdit Component
-  - Create a component can all the user to edit the data: **AddressEdit**
+  - The component should allow the user to edit the data: **AddressEdit**
 - Both the **AddressShow** and **AddressEdit** components are children of Address
   - Modify the **Address** **render** method to reflect this
-  - Update Tests, creating new test suite: **AddressEdit.test.js**
+  - Update Tests, creating a new test suite: **AddressEdit.test.js**
 
 ## Create Tests
 
