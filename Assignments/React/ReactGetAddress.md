@@ -85,15 +85,19 @@ function getCity(value, char, len) {
 
 function writeIt(label, value, noComma) {
     var comma = noComma ? '"' : '",';
-    console.log('\t' + label, '"'+ value + comma)
+    console.log('\t\t' + '"' + label + '": ' + '"' + value + comma);
 };
 
-readFile('govtrack-address.json').then(function(text) {
-    debug(text);
-    var json = JSON.parse(text.result);
-    debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
-    var gitUser = [];
-    const unknown = 'unknown';
+readFile('govtrack-address.json').then(function(objectReturned) {
+    debug('Please notice that we don\'t get a string back but an: ', typeof objectReturned);
+    debug('The object has a property:', Object.keys(objectReturned));
+    debug('The type of the property is:', typeof objectReturned.result);
+
+    var json = JSON.parse(objectReturned.result);
+    debug('We were able to parse the JSON.');
+    debug('Total records returned:', json.meta.limit);
+    debug('First person found', JSON.stringify(json.objects[0].person.name));
+
     for (var i = 0; i < json.objects.length; i++) {
         console.log('{');
         writeIt('firstName:', json.objects[i].person.firstname);
@@ -106,9 +110,28 @@ readFile('govtrack-address.json').then(function(text) {
     }
     //console.log('\n\nSTRINGIFY\n\n', JSON.stringify(gitUser, null, 4));
     debug('all done');
+}).catch(function(e) {
+    console.log(e);
 });
-
 ```
+
+Note that you won't see the debug unless you first execute this line at the bash prompt:
+
+  export DEBUG='get-address'
+
+Then you can run the program:
+
+  node get-address
+
+At the start of the main method I point out that we get an object rather than a string back. That is as expected, but you need to be aware of that fact. In the debug statement I'm trying to draw your attention to this issue.
+
+The line that says "We were able to parse the JSON" is valid because **JSON.parse** would blow up if it failed, causing the catch block at the end of code to be triggered. In other words, if we could not parse the JSON, then this line would never be reached:
+
+```javascript
+debug('We were able to parse the JSON.');
+```
+
+If we did get that far, then the odds are that we could parse the JSON.
 
 Some example output:
 

@@ -113,7 +113,7 @@ class ElfMenu extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <LinkContainer this.state.index to='/'><NavItem>Address Show</NavItem></LinkContainer>
+                        <LinkContainer to='/'><NavItem>Address Show</NavItem></LinkContainer>
                         <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}>Action</MenuItem>
                             <MenuItem eventKey={3.2}>Another action</MenuItem>
