@@ -73,13 +73,15 @@ All the server should respond to a **/you-rang** query by responding with:
 
 For instance, if sent from the client, you should get responses to these messages from the appropriate server:
 
-- /qux/you-rang
-- /git-user/you-rang
-- /gist/you-rang
-- /markdown/you-rang
-- /git-socket/you-rang
+- /**qux**/you-rang
+- /**git-user**/you-rang
+- /**gist**/you-rang
+- /**markdown**/you-rang
+- /**git-socket**/you-rang
 
 This feature should be available for all five servers when you turn in this assignment.
+
+**NOTE**: _I will call the words highlighted above, such as **qux**, **gist**, and **markdown**, **base-routes**. These are the base routes for each of our services. All calls to those services should include those base routes. For instance, when calling any **gist** api, the first part of the URL should include the word **gist**._
 
 ## Router IDs
 

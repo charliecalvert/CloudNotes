@@ -247,6 +247,20 @@ componentDidMount() {
 }
 ```
 
+## Double Check
+
+Do this to ensure your code is working:
+
+- Load the Chrome Dev Tools
+- Go to the **Application** page in the Dev Tools
+- Select **Clear Storage**
+- Select only **Local and session storage**
+- Press **Clear selected**
+- Look at **Local Storage | http://localhost:3000**
+
+Then make sure that **localStorage** gets properly initialized after you refresh your home page. In other words, you should see **localStorage** filled up with at least 100 addresses when you refresh your home page.
+
+
 ## Links
 
 - [IndexedDb API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
