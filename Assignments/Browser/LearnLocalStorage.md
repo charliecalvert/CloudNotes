@@ -2,6 +2,11 @@
 
 Learn about local storage in the browser.
 
+- Insert 100 records with format elfXXXX
+- Insert **elven-count**
+- Insert **elven-store**
+- Load Data from Local Storage once Component is mounted
+
 ## Elf Logger
 
 We need to be able to turn logging on and off as needed. One way to do it is to set it by module. If we set a particular environment variable to the name of a module, then the debug statements for that module will be visible.
@@ -12,57 +17,62 @@ The source for **ElfLogger** is available as a gist: [http://bit.ly/elf-logger](
 
 The source for **ElfDebugEnzyme** as a gist: [http://bit.ly/elf-debug-enzyme](http://bit.ly/elf-debug-enzyme)
 
-## Simple Object
+## Elf Local Storage {#simple-object}
+
+Save this as **assets/elf-local-storage**:
 
 ```javascript
-/**
- * Created by Charlie on 5/8/17.
- */
+const ELF_TAG = 'elf';
 
-function saveToLocalStorageByName(key, item) {
-    if (!key) {
-        const storageIndex = localStorage.length + 1;
-        key = 'key' + storageIndex;
+const padNumber = function(numberToPad, width, padValue) {
+    padValue = padValue || '0';
+    numberToPad += '';
+    if (numberToPad.length >= width) {
+        return numberToPad;
+    } else {
+        return new Array(width - numberToPad.length + 1).join(padValue) + numberToPad;
     }
+};
 
-    localStorage.setItem(key, item);
-}
-
-function saveToLocalStorage(item) {
+function saveByIndex(item, index) {
     if (typeof item === 'object') {
         item = JSON.stringify(item, null, 4);
     }
-    const storageIndex = localStorage.length + 1;
-    const key = 'key' + storageIndex;
+    const key = ELF_TAG + padNumber(index, 4, 0);
     localStorage.setItem(key, item);
 }
 
-function getLocalStorage() {
-    let storage = '';
-    let key = '';
-    let storageItem;
-    for (let i = 0; i <= localStorage.length - 1; i++) {
-        key = localStorage.key(i);
-        storageItem = localStorage.getItem(key);
-        if (typeof storageItem === 'object') {
-            storageItem = JSON.stringify(storageItem, null, 4);
-        }
-        if (i === 0) {
-            storage = storageItem;
-        } else {
-            storage = storage + '\n' + storageItem;
+function getByIndex(index) {
+    const key = ELF_TAG + padNumber(index, 4, 0);
+    return JSON.parse(localStorage.getItem(key));
+}
+
+function removeElfKeys() {
+    for (var key in localStorage) {
+        if (key.startsWith(ELF_TAG)) {
+            localStorage.removeItem(key);
         }
     }
-    return storage;
 }
 
 function clearLocalStorage() {
     localStorage.clear();
 }
 
-export {saveToLocalStorage, saveToLocalStorageByName,
-  getLocalStorage, clearLocalStorage};
+export {saveByIndex, getByIndex, removeElfKeys, clearLocalStorage};
 ```
+
+Use it like this:
+
+```javascript
+import { getByIndex } from '../assets/elf-local-storage';
+```
+
+Since the above could get out of data. I will try to maintain it here:
+
+- [Elf Local Storage][elf-local-storage]
+
+[elf-local-storage]: https://gist.github.com/charliecalvert/d8404b826ee22702c501368335624622
 
 ## Create JSON File {#create-json}
 
@@ -146,6 +156,97 @@ fetch('./addresses.json').then(function(data) {
 })
 ```
 
+For example:
+
+```javascript
+/**
+ * Created by Charlie Calvert on 5/10/17.
+ *
+ * Use it like this:
+ *
+ *   import DataLoader from '../assets/DataLoader';
+ *   const dataLoader = new DataLoader();
+ */
+
+import Logger from './ElfLogger';
+const logger = new Logger('data-loader', 'yellow', 'green', '18px');
+import { saveByIndex } from '../assets/elf-local-storage';
+
+export default class DataLoader {
+
+    constructor() {
+        this.STORE_SET = ['elven-store', 'set', 'elven-count'];
+        this.loadAddresses = this.loadAddresses.bind(this);
+    }
+
+    dataLoaded() {
+        const elfStore = localStorage.getItem(this.STORE_SET[0]);
+        return (elfStore === this.STORE_SET[1]);
+    }
+
+    setLocalStorage(addresses) {
+        logger.log('SET LOCAL', addresses);
+        localStorage.setItem(this.STORE_SET[0], this.STORE_SET[1]);
+        localStorage.setItem(this.STORE_SET[2], addresses.length);
+        addresses.forEach(function(address, index) {
+            saveByIndex(address, index);
+        });
+        return addresses;
+    }
+
+    loadAddresses(callback) {
+        const that = this;
+        if (this.dataLoaded()) {
+            logger.log('Using data from localstore');
+            callback(localStorage.getItem(this.STORE_SET[2]));
+        } else {
+            logger.log('Loading data');
+            fetch('./address-list.json').then(function(data) {
+                //const addresses = data.json();
+                //console.log(addresses);
+                return data.json(); //addresses;
+            }).then(function(data) {
+                logger.log(JSON.stringify(data, null, 4));
+                //console.log(that);
+                that.setLocalStorage(data);
+                callback(data.length);
+            }).catch(function (err) {
+                logger.log(err);
+            });
+        }
+    }
+
+}
+```
+
+Since the above code could get out of data, I will try to maintain it here:
+
+- [DataLoader][data-loader]
+
+[data-loader]:https://gist.github.com/charliecalvert/d9fc57f29e16de8970b88a3c89b9b410
+
+## Load After Mounting
+
+We can't really load properly in the constructor because we have a callback and need to setState after we are done. So do it in **componentDidMount**:
+
+```javascript
+componentDidMount() {
+    logger.log('DID MOUNT');
+    const that = this;
+    dataLoader.loadAddresses(function(addressCount) {
+        if (!addressCount) {
+            throw new Error('Cannot get address count in address.js');
+        }
+        that.addressCount = addressCount;
+        logger.log('LOADED ADDRESS');
+        const address = getByIndex(that.addressIndex);
+        that.setState({
+            address: address
+        });
+    });
+}
+```
+
 ## Links
 
 - [IndexedDb API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
@@ -156,5 +257,4 @@ fetch('./addresses.json').then(function(data) {
 - [PouchDb + SqlLite](https://gonehybrid.com/how-to-use-pouchdb-sqlite-for-local-storage-in-your-ionic-app/)
 - [Dexie is nother front end for IndexedDB](http://dexie.org/)
 - [Dexie on GidHub shows modest popularity](https://github.com/dfahlander/Dexie.js)
--
 - [ZangoDb is not very popular](https://github.com/erikolson186/zangodb)
