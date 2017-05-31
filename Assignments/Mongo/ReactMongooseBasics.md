@@ -2,8 +2,8 @@
 
 Mongoose Basics is an ORM for MongoDB.
 
-- Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
 - MongoDb Slides: [http://bit.ly/elf-mongo](http://bit.ly/elf-mongo)
+- Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
 
 **NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **React** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
 [MongooseBasics][jq-mongoose]._
@@ -272,64 +272,14 @@ In **routes/index.js** append all of the following before the module statement:
 ```javascript
 var express = require('express');
 var router = express.Router();
-var politicians = require('../models/politicians');
+//var politicians = require('../models/politicians');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     'use strict';
-    res.render('index', {
-        title: 'Week09-MongooseBasics'
-    });
-});
-
-var connected = false;
-
-router.get('/all-data', function(request, response) {
-    'use strict';
-    console.log('AllData route invoked.');
-    if (!connect.connected) {
-        connect.doConnection();
-    }
-
-    console.log('About to find politicians.');
-    politicians.find({}, function(err, allData) {
-        console.log(allData.length);
-        console.log(allData[0]);
-
-        allMongo.writeData('politicians.json', allData);
-
-        response.send({
-            result: 'Success',
-            allData: allData
-        });
-    });
-});
-
-router.get('/emptyCollection', function(request, response) {
-    'use strict';
-    if (!connect.connected) {
-        connect.doConnection();
-    }
-
-    politicians.remove({}, function(err) {
-        if (err) {
-            response.send({
-                result: 'err',
-                err: err
-            });
-        } else {
-            response.send({
-                result: 'collection removed'
-            });
-        }
-    });
-});
-
-router.get('/insertValidCollection', function(request, response) {
-    'use strict';
-    allMongo.readDataAndInsert(response);
+    res.render('index', {title: 'CongressServer'});
 });
 
 router.get('/:id', function(request, response) {
@@ -349,7 +299,7 @@ In **routes/all-mongo.js**:
  * Created by charlie on 6/5/16.
  */
 
-var express = require('express');
+//var express = require('express');
 var connect = require('./connect');
 var Politicians = require('../models/politicians');
 var fs = require('fs');
@@ -361,24 +311,31 @@ function allMongo() {
 
 allMongo.numberOfPoliticians = 0;
 
-function insertScientist(scientist, response) {
+function insertPolitician(politician, response) {
     'use strict';
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newScientist = new Politicians({
-        'firstName': scientist.firstName,
-        'lastName': scientist.lastName,
-        'subject': scientist.subject,
-        'subjects': scientist.subjects,
-        'comments': scientist.comments
+    var newPolitician = new Politicians({
+        'firstName': politician.firstName,
+        'lastName': politician.lastName,
+        'city': politician.city,
+        'state': politician.state,
+        'zip': politician.zip,
+        'phone': politician.phone,
+        'website': politician.website,
+        'email': politician.email,
+        'contact': politician.contact
     });
 
-    console.log('inserting', newScientist.lastName);
+    console.log('inserting', newPolitician.lastName);
 
-    newScientist.save(function(err) {
+    newPolitician.save(function(err) {
+        if (err) {
+            throw new Error(err);
+        }
         totalPoliticiansSaved++;
-        console.log('saved: ', newScientist.lastName, allMongo.numberOfPoliticians, totalPoliticiansSaved);
+        console.log('saved: ', newPolitician.lastName, allMongo.numberOfPoliticians, totalPoliticiansSaved);
 
         if (totalPoliticiansSaved === allMongo.numberOfPoliticians) {
             response.send({
@@ -388,6 +345,21 @@ function insertScientist(scientist, response) {
         }
     });
 }
+
+allMongo.getAllData = function(response) {
+    console.log('About to find politicians.');
+    Politicians.find({}, function(err, allData) {
+        console.log(allData.length);
+        console.log(allData[0]);
+
+        allMongo.writeData('politicians.json', allData);
+
+        response.send({
+            result: 'Success',
+            allData: allData
+        });
+    });
+};
 
 allMongo.writeData = function(fileName, data) {
     'use strict';
@@ -402,15 +374,57 @@ allMongo.writeData = function(fileName, data) {
 
 allMongo.readDataAndInsert = function(response) {
     'use strict';
-    fs.readFile('ValidPoliticians.json', function(err, politiciansText) {
+    fs.readFile('public/address-list.json', function(err, politiciansText) {
         if (err) {
-            throw (err);
+            //throw (err);
+            response.status(404).send({'result': err});
+            return;
         }
         politiciansText = JSON.parse(politiciansText);
         totalPoliticiansSaved = 0;
         allMongo.numberOfPoliticians = politiciansText.length;
         for (var i = 0; i < politiciansText.length; i++) {
-            insertScientist(politiciansText[i], response);
+            insertPolitician(politiciansText[i], response);
+        }
+    });
+};
+
+allMongo.empty = function(response) {
+    Politicians.remove({}, function(err) {
+        if (err) {
+            response.send({
+                result: 'err',
+                err: err
+            });
+        } else {
+            response.send({
+                result: 'collection removed'
+            });
+        }
+    });
+};
+
+allMongo.update = function(requestQuery, response) {
+    console.log('All Mongo', requestQuery._id);
+    Politicians.findOne({
+        _id: requestQuery._id
+    }, function(err, doc) {
+        console.log('findone', err, doc);
+        if (err) {
+            response.status(404).send({
+                result: err
+            });
+        } else {
+            if (doc === null) {
+                insertPolitician(requestQuery, response);
+            } else {
+                doc.firstName = requestQuery.firstName;
+                doc.save();
+                response.status(200).send({
+                    result: 'success',
+                    query: requestQuery.body
+                });
+            }
         }
     });
 };
@@ -430,271 +444,6 @@ db.politicians.find()
 db.politicians.find({} , {_id: 0, firstName: 1, lastName: 1})
 </pre>
 
-## Valid Politicians
-
-Save in the root of your project as ValidPoliticians.json
-
-```javascript
-[
-    {
-        "_id": "5577c95032fa23f82013611e",
-        "firstName": "Albert",
-        "lastName": "Einstein",
-        "subject": "Physics",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "Albert One",
-                "_id": "5575a4be8ee728bc0da40c49",
-                "date": "2015-06-08T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Foobar",
-            "Able",
-            "Tuna"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f82013611f",
-        "firstName": "Rene",
-        "lastName": "Descartes",
-        "subject": "Radioactivity",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "Fred",
-                "_id": "5574be8c7c93a1180729f3b5",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Suzy",
-                "_id": "5574bf42d525507c0ca48e21",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Lunches",
-                "_id": "5574bfaed525507c0ca48e22",
-                "date": "2015-06-07T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Rene"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136121",
-        "firstName": "Niels",
-        "lastName": "Bohr",
-        "subject": "Physics",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "Niels One",
-                "_id": "5575a4af8ee728bc0da40c48",
-                "date": "2015-06-08T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Math"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136124",
-        "firstName": "Thomas",
-        "lastName": "Edison",
-        "subject": "Radioactivity",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "Sam",
-                "_id": "5574b6dee5c7ed30124b0dca",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Fred",
-                "_id": "5574b6f3e5c7ed30124b0dcb",
-                "date": "2015-06-07T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "asf"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136126",
-        "firstName": "Johanes",
-        "lastName": "Kepler",
-        "subject": "Astronomy",
-        "__v": 2,
-        "comments": [
-            {
-                "commentText": "Hello Johannes",
-                "_id": "55746faa82492e4815d893c4",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Foobar",
-                "_id": "557490926f35aa301a50422a",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "_id": "55749e924c3a43000acf589d",
-                "commentText": "Fable",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Qux",
-                "_id": "55749ebd4c3a43000acf589f",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "_id": "55749f804c3a43000acf58a0",
-                "commentText": "Fingers",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Sam",
-                "_id": "5574b5597d70f4e813d01ec4",
-                "date": "2015-06-07T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Johan",
-            "Able"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136125",
-        "firstName": "Isaac",
-        "lastName": "Newton",
-        "subject": "Astronomy",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "Fig",
-                "_id": "5574bdf631bd81a416bd855f",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Qux",
-                "_id": "5574be373956c08c12f1731c",
-                "date": "2015-06-07T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Bar"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136122",
-        "firstName": "Marie",
-        "lastName": "Curie",
-        "subject": "Radioactivity",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "MarieOne",
-                "_id": "5574e4ff748448b40c26a324",
-                "date": "2015-06-08T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Foo",
-            "Bar",
-            "Qux",
-            "Goober"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136123",
-        "firstName": "Maxi",
-        "lastName": "Planck",
-        "subject": "Radioactivity",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "Foo",
-                "_id": "5574bd333a9db45405200d7b",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Bar",
-                "_id": "5574bd3a3a9db45405200d7c",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Tom",
-                "_id": "5574bd4f3a9db45405200d7d",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Sue",
-                "_id": "5574bd861cc805b81ab0427c",
-                "date": "2015-06-07T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "asdf",
-            "Bar"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f82013611d",
-        "firstName": "Carl",
-        "lastName": "Sagan",
-        "subject": "Radioactivity",
-        "__v": 1,
-        "comments": [
-            {
-                "_id": "5574a552583c8a0005366cd9",
-                "commentText": "Carlbar",
-                "date": "2015-06-07T00:00:00.000Z"
-            },
-            {
-                "commentText": "Foo",
-                "_id": "5577cd7698d1b48420a76be0",
-                "date": "2015-06-10T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Astronomy"
-        ]
-    },
-    {
-        "_id": "5577c95032fa23f820136120",
-        "firstName": "Nikola",
-        "lastName": "Tesla",
-        "subject": "Radioactivity",
-        "__v": 0,
-        "comments": [
-            {
-                "commentText": "One",
-                "_id": "5574e4eb748448b40c26a323",
-                "date": "2015-06-08T00:00:00.000Z"
-            }
-        ],
-        "subjects": [
-            "Serbia",
-            "Electricity",
-            "Physics",
-            "Blink"
-        ]
-    },
-    {
-        "_id": "55786da8c446f6fc4a5d423a",
-        "firstName": "Gregor",
-        "lastName": "Mendel",
-        "subject": "Physics",
-        "__v": 0,
-        "comments": [],
-        "subjects": [
-            "Genetics",
-            "Plants"
-        ]
-    }
-]
-```
 
 ## Turn it in
 
