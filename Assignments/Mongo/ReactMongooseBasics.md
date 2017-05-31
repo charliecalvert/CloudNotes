@@ -102,32 +102,32 @@ Once Mongoose is installed, you should set up a schema:
 - Put this code in a file called **models/politicians.js**:
 
 ```javascript
-
-```
-
-While we are at it, let's create a more complex schema which we can use once we learn the basics. Put the follow code in a file called **models/politicians.js**.
-
-```javascript
 var mongoose = require('mongoose');
 
-var politiciansSchema = mongoose.Schema({
-    "firstName": String,
-    "lastName": String,
-    "subject": String,
-    "subjects": [String],
-    "comments": [{ commentText: String, date: Date }]
+var politicianSchema = mongoose.Schema({
+    'firstName': String,
+    'lastName': String,
 });
 
-module.exports = mongoose.model('politicians', politiciansSchema);
+module.exports = mongoose.model('politician', politicianSchema);
 ```
 
-In **routes/index.js** do these two things:
+Go ahead and fill in the rest of the fields according to the structure for your data. The fields will probably all be of type **String**.
 
-	var politicians = require('../models/politicians');
-	var presidents = require('../models/presidents');
-	var mongoose = require('mongoose');
+In **routes/index.js** add these two things to the existing code:
 
-And then create methods to open your collection:
+```javascript
+var allMongo = require('./all-mongo');
+var connect = require('./connect');
+
+router.get('/:id', function(request, response) {
+    'use strict';
+    response.render(request.params.id, {});
+});
+```
+
+Later we will add methods methods to open your collection.
+
 
 In **index.js**, make sure that this is the last line in the file:
 
@@ -179,8 +179,11 @@ var connect = {
 
     doConnection: function(useSimple) {
         'use strict';
-        var connectType = useSimple || true;
-        if (connectType) {
+				if (typeof useSimple === 'undefined') {
+					useSimple = true;
+				}			
+
+        if (useSimple) {
             connect.simpleConnect();
         } else {
             connect.mlabConnect();
