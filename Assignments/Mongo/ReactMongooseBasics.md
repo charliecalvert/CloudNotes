@@ -3,6 +3,7 @@
 Mongoose Basics is an ORM for MongoDB.
 
 - Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
+- MongoDb Slides: [http://bit.ly/elf-mongo](http://bit.ly/elf-mongo)
 
 **NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **React** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
 [MongooseBasics][jq-mongoose]._
