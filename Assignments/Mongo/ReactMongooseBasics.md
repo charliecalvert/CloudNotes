@@ -3,48 +3,67 @@
 Mongoose Basics is an ORM for MongoDB.
 
 - Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
-- [Prog219 Resources](http://www.ccalvert.net/books/CloudNotes/Prog219/Prog219-Resources.html)
 
-**NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **jquery** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
-ReactMongooseBasics._
+**NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **React** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
+[MongooseBasics][jq-mongoose]._
 
 [angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
+[jq-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html
 
 ## Step One
 
-	CreateAllExpress Week10-MongooseBasics
-	cd Week10-MongooseBasics
+Go to JsObjects:
+
+	jo
+
+Pull the latest from the repository: **git pull**.
+
+Navigate back to your repository. From the root of your repository:
+
+	CreateAllExpress CongressServer
+	cd CongressServer
 	npm install
 
-Open the project in Web Storm.
+Open the project in WebStorm.
 
 ## Step Two
 
-Set up bower
+Set up bower. Your **bower.json** probably already contains Bootstrap, and hence jQuery. But just in case:
 
 - bower install bootstrap --save
 
+Just to be save. Though the above call install bootstrap, lets just be certain all is well:
+
+	bower install
+
 Now might be a good time to start the project: **npm start**
 
-## Ignore Scientists
+## Ignore Politicians
 
 Add a file called **nodemon.json** in the root of your project. Place the following content in it:
 
 ```javascript
 {
   "verbose": true,
-  "ignore": ["scientists.json", "**/components/**"]
+  "ignore": ["politicians.json", "**/bower-components/**"]
 }
 ```
 
-This project is going to create a file called **scientists.json** each time you insert data into the database. By default, this will cause **nodemon** to restart the project each time we write data to **scientists.json**. This can cause miscellaneous errors on the on the client side, such as a false report for failure for the **insertValidCollection**. The fix is to ask nodemon to ignore **scientists.json**. We should also ask it to ignore our components folder.
+This project may create a file called **politicians.json** each time you insert data into the database. By default, this will cause **nodemon** to restart the project each time we write data to **politicians.json**. This can cause miscellaneous errors on the on the client side, such as a false report for failure for the **insertValidCollection**. The fix is to ask nodemon to ignore **politicians.json**. We should also ask it to ignore our components folder.
 
 For more on nodemon configuration, see here:
 
 - <https://github.com/remy/nodemon>
 - <https://github.com/remy/nodemon/blob/master/doc/sample-nodemon.md>
 
-You should also create a **.gitignore** file for this project and put the single line **scientists.json** in it.
+You should also create a **.gitignore** file for this project and put the single line **politicians.json** in it. While you are at it, check your .bowerrc and make sure it has **bower-components** rather than **components** in it:
+
+```javascript
+$ cat .bowerrc
+{
+  "directory": "public/bower-components"
+}
+```
 
 ## Step Three
 
@@ -61,13 +80,13 @@ The next step is not done for you automatically by **CreateAllExpress**, so do t
 
 ## Step Four
 
-Set up and learn a little about [Mongoose](http://mongoosejs.com/). Mongoose is by far the most popular way to access MongoDb from Node Js applications.
+Set up and learn a little about [Mongoose](http://mongoosejs.com/). Mongoose is probably the most popular way to access MongoDb from Node Js applications. Other popular options include **Monk** and the native drivers, which are called **MongoDb**. Mongoose relies on **MongoDb**.
 
 First install **mongoose**:
 
 	npm install mongoose --save
 
-You may see messages about mongoose, C++ and bson. If you are concerned about them, see the Elvenware notes on [this subject][gypbson].
+In the past, you might have seen messages about mongoose, C++ and bson. They should no longer occur, but if you are encountering them, see the Elvenware notes on [this subject][gypbson].
 
 **NOTE**: *On Linux, you may need to install libkrb5-dev before you can install the Mongoose NPM package. This should not be an issue on Cloud 9.*
 
@@ -80,25 +99,18 @@ sudo apt-get install libkrb5-dev
 Once Mongoose is installed, you should set up a schema:
 
 - Create a folder called models at the root of your project
-- Put this code in a file called **models/presidents.js**:
+- Put this code in a file called **models/politicians.js**:
 
 ```javascript
-var mongoose = require('mongoose');
 
-var presidentsSchema = mongoose.Schema({
-    "firstName": String,
-    "lastName": String,
-});
-
-module.exports = mongoose.model('presidents', presidentsSchema);
 ```
 
-While we are at it, let's create a more complex schema which we can use once we learn the basics. Put the follow code in a file called **models/scientists.js**.
+While we are at it, let's create a more complex schema which we can use once we learn the basics. Put the follow code in a file called **models/politicians.js**.
 
 ```javascript
 var mongoose = require('mongoose');
 
-var scientistsSchema = mongoose.Schema({
+var politiciansSchema = mongoose.Schema({
     "firstName": String,
     "lastName": String,
     "subject": String,
@@ -106,12 +118,12 @@ var scientistsSchema = mongoose.Schema({
     "comments": [{ commentText: String, date: Date }]
 });
 
-module.exports = mongoose.model('scientists', scientistsSchema);
+module.exports = mongoose.model('politicians', politiciansSchema);
 ```
 
 In **routes/index.js** do these two things:
 
-	var scientists = require('../models/scientists');
+	var politicians = require('../models/politicians');
 	var presidents = require('../models/presidents');
 	var mongoose = require('mongoose');
 
@@ -256,7 +268,7 @@ In **routes/index.js** append all of the following before the module statement:
 ```javascript
 var express = require('express');
 var router = express.Router();
-var scientists = require('../models/scientists');
+var politicians = require('../models/politicians');
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
@@ -277,12 +289,12 @@ router.get('/all-data', function(request, response) {
         connect.doConnection();
     }
 
-    console.log('About to find scientists.');
-    scientists.find({}, function(err, allData) {
+    console.log('About to find politicians.');
+    politicians.find({}, function(err, allData) {
         console.log(allData.length);
         console.log(allData[0]);
 
-        allMongo.writeData('scientists.json', allData);
+        allMongo.writeData('politicians.json', allData);
 
         response.send({
             result: 'Success',
@@ -297,7 +309,7 @@ router.get('/emptyCollection', function(request, response) {
         connect.doConnection();
     }
 
-    scientists.remove({}, function(err) {
+    politicians.remove({}, function(err) {
         if (err) {
             response.send({
                 result: 'err',
@@ -335,22 +347,22 @@ In **routes/all-mongo.js**:
 
 var express = require('express');
 var connect = require('./connect');
-var Scientists = require('../models/scientists');
+var Politicians = require('../models/politicians');
 var fs = require('fs');
-var totalScientistsSaved = 0;
+var totalPoliticiansSaved = 0;
 
 function allMongo() {
     'use strict';
 }
 
-allMongo.numberOfScientists = 0;
+allMongo.numberOfPoliticians = 0;
 
 function insertScientist(scientist, response) {
     'use strict';
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newScientist = new Scientists({
+    var newScientist = new Politicians({
         'firstName': scientist.firstName,
         'lastName': scientist.lastName,
         'subject': scientist.subject,
@@ -361,13 +373,13 @@ function insertScientist(scientist, response) {
     console.log('inserting', newScientist.lastName);
 
     newScientist.save(function(err) {
-        totalScientistsSaved++;
-        console.log('saved: ', newScientist.lastName, allMongo.numberOfScientists, totalScientistsSaved);
+        totalPoliticiansSaved++;
+        console.log('saved: ', newScientist.lastName, allMongo.numberOfPoliticians, totalPoliticiansSaved);
 
-        if (totalScientistsSaved === allMongo.numberOfScientists) {
+        if (totalPoliticiansSaved === allMongo.numberOfPoliticians) {
             response.send({
-                result: 'Success Saving Scientists',
-                totalSaved: totalScientistsSaved
+                result: 'Success Saving Politicians',
+                totalSaved: totalPoliticiansSaved
             });
         }
     });
@@ -386,15 +398,15 @@ allMongo.writeData = function(fileName, data) {
 
 allMongo.readDataAndInsert = function(response) {
     'use strict';
-    fs.readFile('ValidScientists.json', function(err, scientistsText) {
+    fs.readFile('ValidPoliticians.json', function(err, politiciansText) {
         if (err) {
             throw (err);
         }
-        scientistsText = JSON.parse(scientistsText);
-        totalScientistsSaved = 0;
-        allMongo.numberOfScientists = scientistsText.length;
-        for (var i = 0; i < scientistsText.length; i++) {
-            insertScientist(scientistsText[i], response);
+        politiciansText = JSON.parse(politiciansText);
+        totalPoliticiansSaved = 0;
+        allMongo.numberOfPoliticians = politiciansText.length;
+        for (var i = 0; i < politiciansText.length; i++) {
+            insertScientist(politiciansText[i], response);
         }
     });
 };
@@ -410,13 +422,13 @@ Don't forget to open a terminal and type **mongo** to start the mongo shell. The
 show dbs
 use test
 show collections
-db.scientists.find()
-db.scientists.find({} , {_id: 0, firstName: 1, lastName: 1})
+db.politicians.find()
+db.politicians.find({} , {_id: 0, firstName: 1, lastName: 1})
 </pre>
 
-## Valid Scientists
+## Valid Politicians
 
-Save in the root of your project as ValidScientists.json
+Save in the root of your project as ValidPoliticians.json
 
 ```javascript
 [
@@ -726,6 +738,6 @@ router.get('/insertValidCollection', function(request, response) { ... })
 
 If you do a get on the client, do a get on the server. Don't do a get in one place and post in the other. (I had this mixed up in one version of the assignment. You need to get this cleaned up if you followed my example and made a mistake.)
 
-### Scientists File
+### Politicians File
 
-Be sure to [add the code to ignore scientists](#ignore-scientists).
+Be sure to [add the code to ignore politicians](#ignore-politicians).
