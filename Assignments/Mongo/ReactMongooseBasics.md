@@ -282,9 +282,13 @@ router.get('/', function(req, res, next) {
     res.render('index', {title: 'CongressServer'});
 });
 
-router.get('/:id', function(request, response) {
+router.get('/bar', function(request, response) {
+    response.status(200).send({result: 'bar'});
+});
+
+router.get('/bar/:id', function(request, response) {
     'use strict';
-    response.render(request.params.id, {});
+    response.status(200).send({param: request.params.id});
 });
 
 module.exports = router;
