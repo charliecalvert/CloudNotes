@@ -282,6 +282,7 @@ router.get('/', function(req, res, next) {
     res.render('index', {title: 'CongressServer'});
 });
 
+// here
 router.get('/bar', function(request, response) {
     response.status(200).send({result: 'bar'});
 });
