@@ -36,7 +36,7 @@ Add a file called **nodemon.json** in the root of your project. Place the follow
 }
 ```
 
-This project is going to create a file called **scientists.json** each time you insert data into the database. By default, this will cause **nodemon** to restart the project each time we write data to **scientists.json**. This can cause miscellaneous errors on the on the client side, such as a false report for failure for the **insertValidCollection**. The fix is to ask nodemon to ignore **scientists.json**. We should also ask it to ignore our components.folder.
+This project is going to create a file called **scientists.json** each time you insert data into the database. By default, this will cause **nodemon** to restart the project each time we write data to **scientists.json**. This can cause miscellaneous errors on the on the client side, such as a false report for failure for the **insertValidCollection**. The fix is to ask nodemon to ignore **scientists.json**. We should also ask it to ignore our components folder.
 
 For more on nodemon configuration, see here:
 
@@ -47,7 +47,7 @@ You should also create a **.gitignore** file for this project and put the single
 
 ## Step Three
 
-Let's practice setting up the favicon. Because you used **CreateAllExpress**, you should already have a **favicon.png** file in **public.** But in case you have some reason to do it manually, here is how to get a default favicon on Linux (first example) or on Windows:
+Let's practice setting up the **favicon**. Because you used **CreateAllExpress**, you should already have a **favicon.png** file in **public.** But in case you have some reason to do it manually, here is how to get a default favicon on Linux (first example) or on Windows:
 
 	cp $JSOBJECTS/Data/MongoBootstrap/favicon.png public/.
 	copy %USERPROFILE%\Git\JsObjects\Data\MongoBootstrap\favicon.png public\.
@@ -695,7 +695,7 @@ Things to remember.
 
 After you run *grunt check*, run your tests and your program again to make sure everything still works!
 
-This was my bug not yours, so you will not lose points for this. Nevertheless, for the final, be sure that you write the follwing in **routes/connect.js**:
+This was my bug not yours, so you will not lose points for this. Nevertheless, for the final, be sure that you write the following in **routes/connect.js**:
 
 ```javascript
 connect.connected = true;
