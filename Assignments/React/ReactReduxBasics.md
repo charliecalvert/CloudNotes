@@ -123,6 +123,65 @@ class SimpleRedux extends Component {
 export default SimpleRedux;
 ```
 
+## Set up Index
+
+```javascript
+import spokesman from './spokesman';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+
+let store = createStore(spokesman);
+ReactDOM.render(
+    <div>
+        <Provider store={store}>
+            <div>
+                <App />
+                <FakeRedux/>
+            </div>
+        </Provider>
+    </div>
+
+    , document.getElementById('root'));
+```
+
+## Redux with props
+
+```javascript
+constructor(props) {
+        super(props);
+        this.state = {
+            statement: 'No comment'
+        };
+        this.props.store.subscribe(() => {
+            const storeState = this.props.store.getState();
+            this.setState((prevState) => {
+                return {statement: storeState.statement}
+            });
+        })
+    }
+
+    verifyStatement = () => {
+        this.props.store.dispatch({ type: 'VERIFY' });
+    };
+    <h1>Political Science Props Redux</h1>
+    render() {
+            return (
+                <div className="App">
+
+               <p>This component does not use redux. It uses something redux-like.</p>
+               {this.state.statement}
+               <hr />
+               <button onClick={this.verifyStatement}>Verify</button>
+               <button onClick={this.denyEverything}>Deny</button>
+               <button onClick={this.noComment}>No Comment</button>
+               </div>
+        );
+    }
+```
+
+Okay
+
+
 ## Local Storage
 
 Redux can write the current state to localStorage.
