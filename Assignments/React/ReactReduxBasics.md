@@ -221,6 +221,74 @@ verifyStatement = () => {
 };
 ```
 
+## Updated spokesman
+
+```javascript
+const spokesman = (state = { statement: 'No comment' }, action) => {
+    switch (action.type) {
+        case 'VERIFY':
+            return {
+                statement: 'We stand by it. In fact, we invented it.',
+                kind: 'verify'
+            };
+        case 'DENY':
+            return {
+                statement: 'We deny everything. We have never heard of it.',
+                kind: 'deny'
+            };
+        case 'NO COMMENT':
+            return {
+                statement: 'No comment.',
+                kind: 'no Comment'
+            };
+        default:
+            return state;
+    }
+};
+
+export default spokesman;
+```
+
+And then the function rather than class in **DispatchConnect.js**:
+
+```javascript
+let DispatchConnect = ({dispatch, statement, kind}) => {
+
+    const verifyStatement = () => {
+        dispatch({type: 'VERIFY'});
+    };
+    // And so on
+    return (
+    <div className="App">
+        <div className="App-intro">
+            <h2>Welcome to React</h2>
+        </div>
+
+        <h1>Political Science Dispatch Connect Redux</h1>
+
+        <p>This component does not use redux. It uses something redux-like.</p>
+        <p>{statement}</p>
+        <p>{kind}</p>
+        <hr />
+        <button onClick={verifyStatement}>Verify</button>
+        <button onClick={denyEverything}>Deny</button>
+        <button onClick={noComment}>No Comment</button>
+
+    </div>
+  );
+}
+```
+
+And modify **mapStateToProps** to see the new property:
+
+```javascript
+const mapStateToProps = (state) => {
+    return {
+        statement: state.statement,
+        kind: state.kind
+    }
+};
+```
 ## Local Storage
 
 Redux can write the current state to localStorage.
