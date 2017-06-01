@@ -1,3 +1,5 @@
 * [Summary.html](Summary.html)
 * [React/Summary.html](React/Summary.html)
+* [Mongo/Summary.html](Mongo/Summary.html)
+* [Heroku/Summary.html](Heroku/Summary.html)
 * [Browser/Summary.html](Browser/Summary.html)
