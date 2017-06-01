@@ -121,9 +121,18 @@ In **routes/index.js** add these two things to the existing code:
 var allMongo = require('./all-mongo');
 var connect = require('./connect');
 
+router.get('/', function(req, res, next) {
+    'use strict';
+    res.render('index', {title: 'CongressServer'});
+});
+
+router.get('/bar', function(request, response) {
+    response.status(200).send({result: 'bar'});
+});
+
 router.get('/:id', function(request, response) {
     'use strict';
-    response.render(request.params.id, {});
+    response.status(200).send({ result: request.params.id });
 });
 ```
 
@@ -259,8 +268,14 @@ $(document).ready(function() { 'use strict';
 
     $("#getAll").click(function() {
        $.getJSON('/all-data', function(result) {
-           $('#display').html(JSON.stringify(result, null, 4));
-       })
+  router.get('/bar', function(request, response) {
+    response.status(200).send({result: 'bar'});
+});
+         $('#display').html(JSON.stringify(result, null, 4));
+    router.get('/bar', function(request, response) {
+    response.status(200).send({result: 'bar'});
+});
+   })
     });
 });
 ```
@@ -274,7 +289,10 @@ var express = require('express');
 var router = express.Router();
 //var politicians = require('../models/politicians');
 var allMongo = require('./all-mongo');
-var connect = require('./connect');
+var connrouter.get('/bar', function(request, response) {
+    response.status(200).send({result: 'bar'});
+});
+ect = require('./connect');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
