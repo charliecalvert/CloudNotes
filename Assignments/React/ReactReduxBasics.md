@@ -181,6 +181,45 @@ constructor(props) {
 
 Okay
 
+## AppNoProps
+
+We want to create a component that does not get props, but does have access to the Redux data store.
+
+Import connect:
+
+```javascript
+import {connect} from 'react-redux';
+```
+
+Remove subscribe from the constructor:
+
+```javascript
+constructor(props) {
+    super(props);
+    this.state = {
+        statement: 'No comment'
+    };
+}
+```
+
+Add this code at the bottom:
+```javascript
+const mapStateToProps = (state) => {
+    return {
+        statement: state.statement
+    }
+};
+
+AppNoProps = connect(mapStateToProps)(AppNoProps);
+```
+
+And now we no longer get dispatch as props passed from **index.js**:
+
+```javascript
+verifyStatement = () => {
+    this.props.dispatch({ type: 'VERIFY' });
+};
+```
 
 ## Local Storage
 
