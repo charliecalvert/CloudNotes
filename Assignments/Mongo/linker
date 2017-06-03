@@ -1,23 +1,23 @@
-.././AngularMongooseOnePage.md
-.././MongooseSignInComment.md
-.././MongoMark.md
-.././AngularMongoDbTest.md
-.././AngularMongoDbCrud.md
-.././ServerSaveMongo.md
-.././MongooseSignIn.md
-.././MongooseBasics.md
-.././MongooseMtgSets.md
-.././MongoLabBasics.md
-.././AngularMongooseBasics.md
-.././Mongo
-.././ServerSaveMongo.md~
-.././MongoStarter.md
-.././Express/NodeExpressMongo01.md
-.././MongooseSubDocuments.md
-.././MongooseEditor.md
-.././AngularMongoDbStarter.md
-.././MongooseComments.md
-.././MongooseRoutes.md
-.././AngularMongooseRefine.md
-.././NodeExpressMongo01.md
-.././MongooseMagic.md
+ln -s ../AngularMongooseOnePage.md .
+ln -s ../MongooseSignInComment.md .
+ln -s ../MongoMark.md .
+ln -s ../AngularMongoDbTest.md .
+ln -s ../AngularMongoDbCrud.md .
+ln -s ../ServerSaveMongo.md .
+ln -s ../MongooseSignIn.md .
+ln -s ../MongooseBasics.md .
+ln -s ../MongooseMtgSets.md .
+ln -s ../MongoLabBasics.md .
+ln -s ../AngularMongooseBasics.md .
+ln -s ../Mongo .
+ln -s ../ServerSaveMongo.md~ .
+ln -s ../MongoStarter.md .
+ln -s ../Express/NodeExpressMongo01.md .
+ln -s ../MongooseSubDocuments.md .
+ln -s ../MongooseEditor.md .
+ln -s ../AngularMongoDbStarter.md .
+ln -s ../MongooseComments.md .
+ln -s ../MongooseRoutes.md .
+ln -s ../AngularMongooseRefine.md .
+ln -s ../NodeExpressMongo01.md .
+ln -s ../MongooseMagic.md .
