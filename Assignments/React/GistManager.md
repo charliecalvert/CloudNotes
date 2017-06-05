@@ -9,7 +9,6 @@ You have between now and the end of the quarter to complete this project.
 ## Features
 
 - List User Gists
-- Pick from a hard-coded list of users
 - Insert a new gist based on a file or text in a text area.
 - Working from a list of gists the user should be able to
   - Delete a gist
@@ -21,11 +20,23 @@ You have between now and the end of the quarter to complete this project.
   - Delete a gist
   - Select a user
   - Read a particular gist and display it.
+- Use Micro Services
+  - Divide the app up into about five separate serivices
+  - Start the main app and the services with a single call
+- Use Redux to handle data
+  - Use **connect**
+  - Implement **mapStateToProps** and **mapDispatchToProps** for X number of controls (Exact number to be decided)
+  - Use **Provider** and create store in **index.js**
+- Use DataMaven to launch our various components
 
+## Extra Credit
+
+- Pick from a hard-coded list of users
 
 ## Possible Features
 
 - Pull and push gists
+- Deploy to EC2
 - Save meta information about the gists to a database
 - Create a React Native Version
 

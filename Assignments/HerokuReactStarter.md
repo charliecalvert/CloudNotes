@@ -23,10 +23,16 @@ $ git --version
 git version 2.11.0
 </pre>
 
-Install Heroku:
+I've put an install Heroku script in this JsObjects directory:
+
+- The [JsObjects/Utilities/InstallScripts][install-directory] directory.
+- Here is [a direct link to the script][direct-heroku].
 
 ```
-
+sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+$ curl -fL https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install heroku
 ```
 
 Type **heroku** to log in. If that doesn't work, try **heroku auth:login** instead. In either case, it should look something like this:
@@ -38,6 +44,9 @@ Email: foo@foobar.com
 Password (typing will be hidden):
 Logged in as foo@foobar.com
 </pre>
+
+[install-directory]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/InstallScripts
+[direct-heroku]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/InstallScripts/HerokuInstall
 
 ## Deploy
 

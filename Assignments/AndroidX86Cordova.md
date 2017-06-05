@@ -14,23 +14,45 @@ In general, when doing development, it can also be useful to install the C++ com
 sudo apt-get install build-essential
 ```
 
+## Keyboard Shortcuts
+
+- Screen goes black. Use the **Context Menu Key**. The key to the left of the **Right-Control** key on most machines.
+- Capture the mouse: The little widget in the VirtualBox menu. It works the opposite of the way you would suspect.
+- Release the mouse: **Right-Control** once.
+- Quit: **Right Control - Q**
+
+More info is [here](http://www.coolcomputing.com/article.php?sid=4636)
+
 ## Setup
 
 
 This should already have been done for you. But if you ever need to do it:
 
-- Download the Android SDK. Not Android Studio, just the SDK.
-- Decompress the archive with a command similar to this:
-	- **tar xvfz android-sdk_r24.4.1-linux.tgz**
-- Move the archive to the ~/Android directory
-	- **mkdir ~/Android**
-	-  **mv android-sdk-linux/ ~/Android/Sdk**
+- In the old days, we could download the Android SDK. Not Android Studio, just the SDK. These aren't the old days. So download Android Studio instead.
+
+	- [https://developer.android.com/studio/index.html#downloads][wgasdk]
+
+- Download the zip file
+- Unzip so that android-studio is in your home directory.
+- cd android-studio/bin/
+- Then start it: **./studio.sh &**
+
+When install the Android SDK, install the smallest amount possible. They are in league with various hard drive manufacturers and are trying to find ways to force you to buy a third 5 TB of storage.
+
+This might work:
+
+```
+wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+```
 
 Now you can start the Android Manager:
 
 ```
 android
 ```
+
+[wgasdk]: https://developer.android.com/studio/index.html#downloads
+[sdk-direct]: https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
 
 ## Android SDK
 
@@ -253,3 +275,12 @@ We'll discuss in class on Monday.
 To try using your phone instead of AndroidX86, see this
 
 - <http://www.elvenware.com/charlie/development/android/UsbDebugging.html>
+
+## Older Notes
+
+This is outdated. Ignore it:
+- Decompress the archive with a command similar to this:
+	- **tar xvfz android-sdk_r24.4.1-linux.tgz**
+- Move the archive to the ~/Android directory
+	- **mkdir ~/Android**
+	-  **mv android-sdk-linux/ ~/Android/Sdk**

@@ -26,6 +26,15 @@ This page is maintained in HomePage.jade and HomePage.md.
 - [Ask Questions](books/CloudNotes/Assignments/AskQuestions.html)
 
 
+## Cordova
+
+- [Cordova 01](http://www.ccalvert.net/books/CloudNotes/Assignments/Cordova01.html)
+- [Cordova Events Plugin](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaEventsPlugins.html)
+- [Android X86 Cordova](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Cordova.html)
+- [Cordova Plugin](http://www.ccalvert.net/development/android/CordovaPlugin.html)
+- [Cordova Various Plugins](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaVariousPlugins.html)
+- [Cordova Phone Gap](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
+
 ## Database
 
 - [Mongo](/database/MongoDb)
