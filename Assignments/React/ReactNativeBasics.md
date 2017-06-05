@@ -22,7 +22,32 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Install
 
-I see no way around installing
+Download my Android X86 6.0.3 OVA:
+
+- [http://bit.ly/x86ova](http://bit.ly/x86ova)
+
+I see no way around installing Android Studio. All we really need is the Android SDK, but Google has so entirely hosed the SDK interface, that you probably need [Android Studio][astudio] unless you have the SDK already installed.
+
+[astudio]: https://developer.android.com/
+
+```
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+
+Note the underscore, not hyphen, for the application name:
+
+```
+npm install -g react-native-cli
+react-native init native_lastname
+react-native run-android
+```
+
+There is also something that brought down my entire home network. Very bizarre:
+
+```
+npm install -g create-react-native-app
+```
+
+Install Expo on your Android or iPhone. Follow instructions. It's simple.
 
 ## Turn on Debugging
 
