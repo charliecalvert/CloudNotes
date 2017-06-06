@@ -9,6 +9,8 @@ Mongoose Basics is an ORM for MongoDB.
 **NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **React** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
 [MongooseBasics][jq-mongoose]._
 
+Put your **address-list.json** in the public directory.
+
 [angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
 [jq-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html
 
@@ -249,7 +251,7 @@ module.exports = connect;
 
 ## Step 5
 
-Here is index.jade:
+Here is index.pug:
 
 ```
 extends layout
@@ -266,7 +268,7 @@ block content
 
 ```
 
-and layout.jade
+and layout.pug
 
 ```
 doctype html
@@ -502,7 +504,15 @@ module.exports = allMongo;
 
 ## Another query
 
+This section is optional. Don't do it unless you are comfortable with it.
+
 There is a utility called mongo. You can use it to connect to your database, even the database on **mlab**. At least I think you can.
+
+Install the mongo client only. Then use the string found near the top of mlab database page to connect:
+
+```
+mongo ds049848.mlab.com:49848/elvenlab01 -u <dbuser> -p <dbpassword>
+```
 
 Don't forget to open a terminal and type **mongo** to start the mongo shell. Then do something like this:
 
@@ -554,3 +564,47 @@ router.get('/insertValidCollection', function(request, response) { ... })
 ```
 
 If you do a **get** on the client, do a **get** on the server. Don't do a get in one place and post in the other. (I had this mixed up in one version of the assignment. You need to get this cleaned up if you followed my example and made a mistake.)
+
+## Some More Code
+
+In index.js:
+
+```javascript
+var express = require('express');
+var router = express.Router();
+var allMongo = require('./all-mongo');
+var connect = require('./connect');
+
+/* GET home page. */
+router.get('/', function(req, res) {
+    'use strict';
+    res.render('index', {title: 'CongressServer'});
+});
+
+function checkConnection() {
+    if (!connect.connected) {
+        connect.doConnection('mlab');
+    }
+}
+
+router.get('/all-data', function(request, response) {
+    'use strict';
+    console.log('AllData route invoked.');
+    checkConnection();
+    allMongo.getAllData(response);
+});
+
+router.get('/emptyCollection', function(request, response) {
+    'use strict';
+    checkConnection();
+    allMongo.empty(response);
+});
+
+router.get('/insertValidCollection', function(request, response) {
+    'use strict';
+    console.log('Insert Valid Collection Called.');
+    response.status(200).send({result: 'Insert valid Collection'});
+    //checkConnection();
+    //allMongo.readDataAndInsert(response);
+});
+```
