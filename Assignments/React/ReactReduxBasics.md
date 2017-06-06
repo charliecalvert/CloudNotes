@@ -2,11 +2,20 @@
 
 Install:
 
-  npm install --save redux react-redux redux-devtools
+```
+npm install --save redux react-redux redux-devtools
+```  
 
 ## Redux
 
-We change state by "dispatching" an action. (You can log, serialize or store actions.)
+The overall goal is to:
+
+- Put all our state in one place
+- Make state immutable. You can completely rebuild it, but you can't modify it.
+  - If you want to update it, you completely rebuild state
+
+
+There is only one place where you rebuild state: the **reducer**. Hence there is never any question of where something happened in a big application. It could only have happened in the **reducer**. I explain reducers later in this document.
 
 A Redux tracks your app's state. It has the following methods:
 
@@ -14,15 +23,38 @@ A Redux tracks your app's state. It has the following methods:
 - dispatch,
 - getState
 
-## Store state
+
+## Dispatch
+
+We change state by "dispatching" an action. (You can log, serialize or store actions.)
+
+Here is a typical call to **dispatch**:
 
 ```javascript
+dispatch({
+  type: 'GIT_USER',
+  gitUser: gitUser
+});
+```
+
+We name the action by giving it a **type**. And in this case, we have optionally included some data that will be used a **reducer** when it rebuilds state.
+
+## Store state
+
+Redux maintains your application's **state** in something called a **store**.
+```javascript
+import {createStore} from 'redux';
+
 let store = createStore(spokesman);
 ```
 
+## Example
+
+In the next few sections we will put together an example.
+
 ## Actions
 
-Design some simple actions:
+Lets begin by designing some simple actions:
 
 ```javascript
 let verify = { type: 'VERIFY' }
@@ -30,9 +62,11 @@ let deny = { type: 'DENY' }
 let noComment = { type: 'NO COMMENT' }
 ```
 
+Note that there is no data associated with this actions. This means the actions are simple enough that they can re-build state without any additional information other than the action itself.
+
 ## The Reducer
 
-This we will use, so save it as **spokesman.js**:
+This we will use in serveral places, so save it as **spokesman.js**:
 
 ```javascript
 
@@ -52,15 +86,43 @@ const spokesman = (state = { statement: 'No comment' }, action) => {
 export default spokesman;
 ```
 
+Notice that this application has a very simple **state** object:
+
+```javascript
+state = { statement: 'No comment' }
+```
+
+That's it. That is the only moving part in the application. There are no other variables that can change that have any effect outside of the component in which they are declared.
+
+In a for loop, we often declare a variable called **i**:
+
+```javascript
+  for (let i = 0; i < 3; i++) {}
+```
+
+We don't need to put **i** in our state since it is not used by any other components. In fact, it is only used this one place in one method.
+
+But **statement** is different. It is used by multiple modules, or at least we are pretending it is the type of data will be used in various places throughout the app.
+
+Noe that our **reducer** modifies **statement** by completely rebuilding **state**. And this is the only place in the application where **statement** can be modified.
+
 ## Dispatch
+
+Here is an example call to **dispatch**:
 
 ```javascript
 store.dispatch({ type: 'VERIFY' });
 ```
 
+This message is *dispatched* to our reducer. The reducer responds by modifying the state like this:
+
+```javascript
+{ statement: 'We stand by it. In fact, we invented it.' };
+```
+
 ## Subscribe
 
-When the state changes, you can update the UI by monitoring calls to subscribe():
+When the state changes, several parts of your app might want to be notified. You track changes to state by monitoring calls to subscribe():
 
 ```javascript
 import {createStore} from 'redux';
@@ -75,17 +137,18 @@ store.subscribe(() => {
 });
 ```
 
+Now you can modify the UI based on the changes.
+
 ## Fake Redux
+
+At heart, Redux is very simple. Consider this Fake Redux implementation. Save it as **SimpleRedux.js**:
 
 ```javascript
 import React, { Component } from 'react';
 import spokesman from './spokesman';
 
 class SimpleRedux extends Component {
-    /*constructor() {
-        super();
-        this.
-    }*/
+
     state = spokesman(undefined, {});
 
     dispatch(action) {
@@ -125,10 +188,16 @@ export default SimpleRedux;
 
 ## Set up Index
 
+In **index.js**, we want to do two things:
+
+- Create our **store**
+- Wrap the entire app in a Provider so that all parts of the app can independently access the **store** and other features of Redux.
+
 ```javascript
 import spokesman from './spokesman';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
+import SimpleRedux from 'SimpleRedux';
 
 let store = createStore(spokesman);
 ReactDOM.render(
@@ -136,15 +205,16 @@ ReactDOM.render(
         <Provider store={store}>
             <div>
                 <App />
-                <FakeRedux/>
+                <SimpleRedux/>
             </div>
         </Provider>
     </div>
-
     , document.getElementById('root'));
 ```
 
 ## Redux with props
+
+This is not the "right" way to do Redux. Yet, on the other hand, there is no wrong way. The point of Redux is that it provides much more flexibility than a monolithic tool like **Angular.** So if you want to pass down state with props, go ahead and do it. But there is a "better" way.
 
 ```javascript
 constructor(props) {
@@ -179,7 +249,21 @@ constructor(props) {
     }
 ```
 
-Okay
+To make the above work, your **index.js** might look like this:
+
+```javascript
+ReactDOM.render(
+    <div>
+        <Provider store={store}>
+            <div>
+                <App store={store}/>
+                <hr /> <hr />
+                <FakeRedux />
+            </div>
+        </Provider>
+    </div>,
+    document.getElementById('root'));
+```
 
 ## AppNoProps
 

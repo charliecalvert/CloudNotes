@@ -1,7 +1,3 @@
 * [GistManager.html](GistManager.html)
-* [ReactAddressMock.html](ReactAddressMock.html)
-* [ReactBootstrap.html](ReactBootstrap.html)
-* [ReactGetAddress.html](ReactGetAddress.html)
-* [ReactMicroServices.html](ReactMicroServices.html)
-* [ReactMicroServicesRefine.html](ReactMicroServicesRefine.html)
+* [ReactNativeBasics.html](ReactNativeBasics.html)
 * [ReactReduxBasics.html](ReactReduxBasics.html)
