@@ -2,6 +2,10 @@
 
 The primary goal will be to learn about [concurrently][cc02]
 
+![Micro Services][msloop]
+
+[msloop]:https://s3.amazonaws.com/bucket01.elvenware.com/images/micro-services-uml.png
+
 ## NPM Package
 
 Here is an example package that shows how to launch our existing client and server with concurrently. Place this in the GitExplorer folder. It is expecting both **client** and **server** to be sub-directories.

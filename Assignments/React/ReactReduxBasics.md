@@ -139,9 +139,10 @@ store.subscribe(() => {
 
 Now you can modify the UI based on the changes.
 
-## Fake Redux
+## Simple Redux
 
-At heart, Redux is very simple. Consider this Fake Redux implementation. Save it as **SimpleRedux.js**:
+At heart, Redux is very simple. Consider this _fake_ Redux implementation. It is not Redux itself, but it is Redux-like. Save it as **SimpleRedux.js**:
+
 
 ```javascript
 import React, { Component } from 'react';
@@ -193,6 +194,8 @@ In **index.js**, we want to do two things:
 - Create our **store**
 - Wrap the entire app in a Provider so that all parts of the app can independently access the **store** and other features of Redux.
 
+In this code we are also displaying our **SimpleRedux** file, but it has nothing to do with implementing the real Redux. We only display it so that we can see it in action.
+
 ```javascript
 import spokesman from './spokesman';
 import {Provider} from 'react-redux';
@@ -214,7 +217,7 @@ ReactDOM.render(
 
 ## Redux with props
 
-This is not the "right" way to do Redux. Yet, on the other hand, there is no wrong way. The point of Redux is that it provides much more flexibility than a monolithic tool like **Angular.** So if you want to pass down state with props, go ahead and do it. But there is a "better" way.
+In its pure form, each component that wants to access Redux can do so on its own, without looking at **props**, and without peering into any other modules. But you can, if you want, pass down the Redux state in props. This is not the "right" way to do Redux. Yet, on the other hand, it is not wrong. Redux provides much more flexibility than a monolithic tool like **Angular.** So if you want to pass down **state** with **props**, go ahead and do it. But there is a "better" way, which will be explained later in this document.
 
 ```javascript
 constructor(props) {
@@ -233,6 +236,9 @@ constructor(props) {
     verifyStatement = () => {
         this.props.store.dispatch({ type: 'VERIFY' });
     };
+
+    // IMPLEMENT denyEverything AND noComment HERE.
+
     <h1>Political Science Props Redux</h1>
     render() {
             return (
@@ -247,6 +253,13 @@ constructor(props) {
                </div>
         );
     }
+```
+
+Notice that we do everything Redux-related on the **store** object passed as props from **index.js**:
+
+```javascript
+const storeState = this.props.store.getState();
+this.props.store.dispatch({ type: 'VERIFY' });
 ```
 
 To make the above work, your **index.js** might look like this:
@@ -267,15 +280,15 @@ ReactDOM.render(
 
 ## AppNoProps
 
-We want to create a component that does not get props, but does have access to the Redux data store.
+So what is the better way? What do we do if we want to create a component that does not get **props**, but does have access to the Redux data store?
 
-Import connect:
+We begin by importing connect at the top of the component that we want to give access to the Redux **store**:
 
 ```javascript
 import {connect} from 'react-redux';
 ```
 
-Remove subscribe from the constructor:
+Remove **subscribe** from the **constructor**, or create a **constructor** that does not call **subscribe**:
 
 ```javascript
 constructor(props) {
@@ -286,7 +299,8 @@ constructor(props) {
 }
 ```
 
-Add this code at the bottom:
+Now we use **connect** to _connect_ our component to the Redux data **store**. We do this by adding the following code at the bottom of the component:
+
 ```javascript
 const mapStateToProps = (state) => {
     return {
@@ -297,7 +311,15 @@ const mapStateToProps = (state) => {
 AppNoProps = connect(mapStateToProps)(AppNoProps);
 ```
 
-And now we no longer get dispatch as props passed from **index.js**:
+And now we no longer get **store** in the **props** passed from **index.js**. Here was the old code:
+
+```javascript
+verifyStatement = () => {
+    this.props.store.dispatch({ type: 'VERIFY' });
+};
+```
+
+And here is the new code that does not rely on a **store**. Instead, dispatch is build in because we use **connect**:
 
 ```javascript
 verifyStatement = () => {
@@ -305,7 +327,161 @@ verifyStatement = () => {
 };
 ```
 
+## MapDispatchToProps
+
+Here is code that uses a method of **connect** called **mapDispatchToProps**. This allows us to define simple **dispatch** methods that are triggered by button clicks:
+
+```javascript
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import {connect} from 'react-redux';
+// We change state by "dispatching" an action.
+// You can log, serialize or store actions.
+
+let AppConnect = ({statement, deny, verify, noComment}) => {
+
+    return (
+        <div className="App">
+            <div className="App-header">
+                <img src={logo} className="App-logo" alt="logo"/>
+                <h2>Welcome to React and Redux</h2>
+            </div>
+            <p className="App-intro">
+                This AppConnect component uses Redux and connect.
+            </p>
+            <h1>Political Science</h1>
+            {statement}
+            <hr />
+            <button onClick={verify}>Verify</button>
+            <button onClick={deny}>Deny</button>
+            <button onClick={noComment}>No Comment</button>
+
+        </div>
+    );
+    //}
+};
+
+const mapStateToProps = (state) => {
+    return {
+        statement: state.statement
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deny: () => {
+            dispatch({type: 'DENY'})
+        },
+        verify: () => {
+            dispatch({type: 'VERIFY'})
+        },
+        noComment: () => {
+            dispatch({type: 'NO COMMENT'})
+        }
+    }
+};
+
+AppConnect = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AppConnect);
+
+export default AppConnect;
+```
+
+Notice that we are using an arrow method rather than a component, and notice that it takes parameters, filled in by React, that represent the various methods and properties used by Redux.
+
+Here is the arrow function:
+
+```javascript
+let AppConnect = ({statement, deny, verify, noComment}) => { ... }
+```
+
+And here where we use them in our JSX:
+
+```html
+{statement}
+<hr />
+<button onClick={verify}>Verify</button>
+<button onClick={deny}>Deny</button>
+<button onClick={noComment}>No Comment</button>
+```
+
+## Break out Connect
+
+We can now break out our code into two pieces:
+
+- One file contains **JSX** only
+- One file contains our **connect** code.
+
+JSX only. Save it in **AppConnectJsxOnly**:
+
+```javascript
+import React from 'react';
+import './App.css';
+
+let AppConnect = ({statement, deny, verify, noComment}) => {
+
+    return (
+        <div className="App">
+            <p className="App-intro">
+                This AppConnect component uses Redux and connect.
+                The connect bits are in a separate file called <strong>AppConnectMaps</strong>.
+            </p>
+            <h1>App Connect JSX Only</h1>
+            {statement}
+            <hr />
+            <button onClick={verify}>Verify</button>
+            <button onClick={deny}>Deny</button>
+            <button onClick={noComment}>No Comment</button>
+        </div>
+    );
+};
+
+export default AppConnect;
+```
+
+And here is the connect only code. Save it in AppConnectMaps.js:
+
+```javascript
+/**
+ * Created by charlie on 6/6/17.
+ */
+
+import {connect} from 'react-redux';
+import AppConnectJsxOnly from './AppConnectJsxOnly';
+
+const mapStateToProps = (state) => {
+    return {
+        statement: state.statement
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deny: () => {
+            dispatch({type: 'DENY'})
+        },
+        verify: () => {
+            dispatch({type: 'VERIFY'})
+        },
+        noComment: () => {
+            dispatch({type: 'NO COMMENT'})
+        }
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AppConnectJsxOnly);
+```
+
+
 ## Updated spokesman
+
+Suppose we wanted to update our code to use slightly more complex state that has two properties rather than one.
 
 ```javascript
 const spokesman = (state = { statement: 'No comment' }, action) => {
@@ -350,7 +526,7 @@ let DispatchConnect = ({dispatch, statement, kind}) => {
 
         <h1>Political Science Dispatch Connect Redux</h1>
 
-        <p>This component does not use redux. It uses something redux-like.</p>
+        <p>This component uses Redux.</p>
         <p>{statement}</p>
         <p>{kind}</p>
         <hr />
@@ -380,108 +556,43 @@ const mapStateToProps = (state) => {
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import FakeRedux from './FakeRedux';
-import AppNoProps from './AppNoProps';
-import DispatchConnect from './DispatchConnect';
+import SimpleRedux from './SimpleRedux';
 import AppConnect from './AppConnect';
+import AppConnectMaps from './AppConnectMaps';
+import DispatchConnect from './DispatchConnect';
+import DispactchComponentConnect from './DispatchComponentConnect';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import spokesman from './spokesman';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import Connector from './Connector';
-
 let store = createStore(spokesman);
 
 ReactDOM.render(
     <div>
         <Provider store={store}>
             <div>
-                <App store={store} />
-                <hr /><hr />
-                <AppNoProps/>
-                <hr /><hr />
-                <DispatchConnect/>
-                <hr /><hr />
                 <AppConnect/>
-                <Connector/>
-                <hr /><hr />
-                <FakeRedux/>
+                <hr /> <hr />
+                <AppConnectMaps/>
+                <hr /> <hr />
+                <DispactchComponentConnect/>
+                <hr /> <hr />
+                <DispatchConnect/>
+                <hr /> <hr />
+                <App store={store}/>
+                <hr /> <hr />
+                <SimpleRedux />
             </div>
         </Provider>
-    </div>
-
-    , document.getElementById('root'));
+    </div>,
+    document.getElementById('root'));
 registerServiceWorker();
 ```
 
-And here is the Connector:
+## Turn it in
 
-```javascript
-/**
- * Created by bcuser on 6/1/17.
- */
-
-import {connect} from 'react-redux';
-import AppConnect from './AppConnect';
-
-const mapStateToProps = (state) => {
-    return {
-        statement: state.statement,
-        kind: state.kind
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        verifyStatement: () => {
-            dispatch({type: 'VERIFY'});
-        },
-        denyEverything: () => {
-            dispatch({type: 'DENY'});
-        },
-        noComment: () => {
-            dispatch({type: 'NO COMMENT'});
-        }
-    }
-};
-
-const Connector = connect(mapStateToProps, mapDispatchToProps)(AppConnect);
-
-export default Connector;
-```
-
-And here is AppConnect:
-
-```javascript
-import React from 'react';
-import './App.css';
-
-let AppConnect = ({statement, kind, verifyStatement, denyEverything, noComment}) => {
-
-    return (
-        <div className="App">
-            <div className="App-intro">
-                <h2>Welcome to React</h2>
-            </div>
-
-            <h1>Political Science App Connect Redux</h1>
-
-            <p>This component does not use redux. It uses something redux-like.</p>
-            <p>{statement}</p>
-            <p>{kind}</p>
-            <hr />
-            <button onClick={verifyStatement}>Verify</button>
-            <button onClick={denyEverything}>Deny</button>
-            <button onClick={noComment}>No Comment</button>
-
-        </div>
-    );
-};
-
-
-export default AppConnect;
-```
+Add, commit, push. Create branch and or tag. Push. Tell me branch, tag and folder when turning in assignment.
 
 ## Local Storage
 

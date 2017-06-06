@@ -12,6 +12,10 @@ This principle states that we prefer small interfaces over fat interfaces. "Inst
 
 To help us abide by the spirit of this principle, we will divide our server code into multiple "microservices". Instead of one fat server, we will create several small servers. They will talk to one another over HTTP.
 
+![Micro Services][msloop]
+
+[msloop]:https://s3.amazonaws.com/bucket01.elvenware.com/images/micro-services-uml.png
+
 [solid]: https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
 [srp]: https://en.wikipedia.org/wiki/Single_responsibility_principle
 [isp]: https://en.wikipedia.org/wiki/Interface_segregation_principle
