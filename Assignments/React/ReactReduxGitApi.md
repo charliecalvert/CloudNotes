@@ -115,6 +115,114 @@ case 'NUMBER_EIGHT':
 
 But that can get unwieldy if our **state** becomes complex.
 
+## Small Numbers Implementation
+
+Then do this to connect **SmallNumbers** to Redux:
+
+```javascript
+import {connect} from 'react-redux';
+
+// SMALL NUMBERS ITSELF HERE.
+// AND AT THE BOTTOM:
+
+const mapStateToProps = (state) => {
+    return {
+        numbers: state.numbers
+    };
+};
+
+SmallNumbers = connect(mapStateToProps)(SmallNumbers);
+```
+
+There is no real need for **mapDispatchToProps** because our dispatch calls are so simple:
+
+```javascript
+getNine() {
+  this.props.dispatch({type: 'NUMBER_NINE'});
+};
+```
+
+## GetFoo
+
+Get Foo is bit more complex, but still a very similar process:
+
+
+In the reducer:
+
+```javascript
+const gistState = {
+    getFoo: {
+        foo: 'foo',
+        file: 'api.js'
+    },
+    numbers: {
+        nine: '0',
+        eight: '0'
+    }
+};
+
+const gistReducer = (state = gistState, action) => {
+  switch (action.type) {
+      case 'GETFOO':
+          return Object.assign({}, state, {getFoo: action.getFoo});
+      etc
+  }      
+}
+```    
+
+And here is the connect object in **GetFooConnect**:
+
+```javascript
+/**
+ * Created by charlie on 6/3/17.
+ */
+
+import 'whatwg-fetch';
+import {connect} from 'react-redux';
+import GetFoo from './GetFoo';
+import ElfLogger from '../assets/ElfLogger';
+const logger = new ElfLogger('get-foo-connect');
+
+const mapStateToProps = (state) => {
+    return {
+        foo: state.getFoo.foo,
+        file: state.getFoo.file
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getBar: () => {
+            dispatch({
+                type: 'GETFOO',
+                getFoo: {
+                    foo: 'url-mock-bar',
+                    file: 'url-mock-api.js'
+                }
+            });
+        },
+        getFoo: () => {
+            fetch('/foo')
+                .then(function(response) {
+                      return response.json();
+                }).then(function(json) {
+                  dispatch({
+                    type: 'GETFOO',
+                    getFoo: json
+                });
+            }).catch(function(ex) {
+                console.log('parsing failed', ex);
+            });
+
+        }
+    };
+};
+
+const GetFooConnect = connect(mapStateToProps, mapDispatchToProps)(GetFoo);
+
+export default GetFooConnect;
+```
+
 ## Turn it in
 
 add, commit, push, branch and/or tag. Tell me the branch, tag and folder. I'm expecting it to be done in the folder called **GitExplorer**.
