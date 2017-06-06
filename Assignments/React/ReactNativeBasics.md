@@ -1,64 +1,161 @@
 # React Native Basics
 
-Plub in your phone and lsusb:
+Get started using React Native.
+
+
+## Native with Expo
+
+There is also something that brought down my entire home network. Very bizarre. But it seems to be working better now. I would make sure your phone is signed into EduRoam before beginning.
+
+Install Expo on your Android or iPhone. Follow instructions. It's simple.
+
+- [Home Page Expo Development][hped]
+
+In this example, you can build the app either in your repo or in the **~/Source** folder. It's your choice.
 
 ```
-$ lsusb
-Bus 002 Device 002: ID 8087:8001 Intel Corp.
-Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 002: ID 8087:8009 Intel Corp.
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 004 Device 002: ID 0bc2:ab34 Seagate RSS LLC
-Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 003 Device 032: ID 046d:c041 Logitech, Inc. G5 Laser Mouse
-Bus 003 Device 004: ID 045e:00db Microsoft Corp. Natural Ergonomic Keyboard 4000 V1.0
-Bus 003 Device 003: ID 0557:7000 ATEN International Co., Ltd Hub
-Bus 003 Device 021: ID 04e8:6860 Samsung Electronics Co., Ltd Galaxy (MTP)
-Bus 003 Device 019: ID 05e3:0610 Genesys Logic, Inc. 4-port hub
-Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+npm install -g create-react-native-app
+cd ~/Source
+create-react-native-app expo-lastname
+cd expo-lastname
+npm start
 ```
 
-## Install
+Now use your phone and the expo app to scan your code from the command prompt.
 
-I see no way around installing
+[hped]: https://facebook.github.io/react-native/releases/next/docs/getting-started.html
 
-## Turn on Debugging
+Now open the app in WebStorm and start making changes. The app on your phone should update automatically as you make changes in WebStorm.
 
-On your phone, go to **About Device**. Find the build number. Tap it seven times.
+For now, you have to run the application in Expo. But it is possible to run it standalone.
 
-## Test
+## The Address Component
 
+```javascript
+/**
+ * by Charlie Calvert
+ */
 
-Now run **adb devices**:
+import React, {Component} from 'react';
+import {
+    Alert,
+    Button,
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View
+} from 'react-native';
 
+export default class Address extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            foo: 'expo try state',
+            firstName: 'default firstName'
+            // ADD A DEFAULT LAST NAMED
+        };
+        // NOT USED NOW, BUT YOU MIGHT FIND IT HANDY LATER
+        this.collection = [];
+        this.fetchAddress = this.fetchAddress.bind(this);
+    }
+
+    fetchAddress(event) {
+        this.setState({foo:'fetcher king'});
+        const that = this;
+        const ip = '168.156.47.60';
+        fetch('http://' + ip + ':30025/all-data')
+            .then((response) => response.json())
+            .then(function(result) {
+                this.collection = result.allData;
+                that.setState({
+                    foo: 'qux success',
+                    // SET UP STATE FOR FIRST AND LAST NAMES
+                    // FROM THE DATABASE
+                });
+            }).catch(function(ex) {
+            that.setState({foo: 'qux error'});
+        });
+        if (event) {
+            event.preventDefault();
+        }
+    };
+
+    render() {
+        console.log('tst');
+
+        return (
+            <View>
+                <Text style={styles.instructions}>
+                    {this.state.foo}
+                </Text>
+                // REPLACE THESE COMMENTS WITH CODE  FOR
+                // DISPLAYING THE FIRST AND LAST NAMES
+                <Button
+                    onPress={this.fetchAddress}
+                    title="Get Data"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5,
+    },
+});
+
+AppRegistry.registerComponent('Address', () => Address);
 ```
-$ adb devices
-List of devices attached
-e8e5bc06	device
+
+## Link in Address Component
+
+Now that we have created the **Address** component, all you need to do is link it in.
+
+```javascript
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+
+export default class App extends React.Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>
+                    Welcome to Expo Calvert!
+                </Text>
+                <Text>PUT THE ADDRESS COMPONENT JUST BELOW HERE.</Text>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#F5FCFF',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    },
+
+});
 ```
 
-If you need to connect to a Virtual Instance, get its IP and:
+## Turn it in
 
-```
-adb connect 192.168.2.20
-```
+There are two parts to this assignment.
 
-Like this:
+- Make sure CongressServer can serve up the **/all-data** route
+- Create **expo_lastname** and ensure that it can display data from the **CongressAddress** server.
 
-```
-$ adb connect 192.168.2.20
-connected to 192.168.2.20:5555
-$ adb devices
-List of devices attached
-192.168.2.20:5555	device
-```
+I will start **CongressServer**. Then I will adjust the IP address in **expo-lastname** and start it. I'm expecting to see data and for everything to just work.
 
-Run app:
-
-```
-react-native init test02
-react-native run-android
-react native start
-```
+Both projects should be in the root of your directory.

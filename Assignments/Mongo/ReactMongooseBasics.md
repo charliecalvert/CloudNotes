@@ -5,8 +5,11 @@ Mongoose Basics is an ORM for MongoDB.
 - MongoDb Slides: [http://bit.ly/elf-mongo](http://bit.ly/elf-mongo)
 - Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)
 
+
 **NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **React** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
 [MongooseBasics][jq-mongoose]._
+
+Put your **address-list.json** in the public directory.
 
 [angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
 [jq-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html
@@ -81,6 +84,12 @@ The next step is not done for you automatically by **CreateAllExpress**, so do t
 
 ## Step Four
 
+Download empty lubuntu:
+
+- [http://bit.ly/empty-lubuntu-17](http://bit.ly/empty-lubuntu-17)
+
+## Step Four
+
 Set up and learn a little about [Mongoose](http://mongoosejs.com/). Mongoose is probably the most popular way to access MongoDb from Node Js applications. Other popular options include **Monk** and the native drivers, which are called **MongoDb**. Mongoose relies on **MongoDb**.
 
 First install **mongoose**:
@@ -148,18 +157,24 @@ In **index.js**, make sure that this is the last line in the file:
 Here is a tool for connecting to the database. It belongs in its own file called **routes/connect.js**:
 
 ```javascript
-var mongoose = require('mongoose');
+/**
+ * Created by charlie on 6/6/16.
+ */
 
-var connect = {
+const mongoose = require('mongoose');
+
+const connect = {
 
     connected: false,
 
     simpleConnect: function() {
         'use strict';
-        var url = 'mongodb://127.0.0.1:27017/test';
+        console.log('Connecting with simple.');
+        const url = 'mongodb://127.0.0.1:27017/test';
+        console.log(url);
         connect.connected = true;
         mongoose.connect(url);
-        var db = mongoose.connection;
+        const db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
             connect.connected = true;
@@ -167,15 +182,37 @@ var connect = {
         });
     },
 
+    custom: function() {
+        'use strict';
+        console.log('Connecting with simple.');
+        //const url = 'mongodb://127.0.0.1:27017/test';
+        const userName = 'charlie';
+        const password = 'foobar';
+        const siteAndPort = '192.168.2.18:27017';
+        const databaseName = 'test';
+        const url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
+        console.log(url);
+        connect.connected = true;
+        mongoose.connect(url);
+        const db = mongoose.connection;
+        db.on('error', console.error.bind(console, 'connection error:'));
+        db.once('open', function(callback) {
+            connect.connected = true;
+            console.log('Opened connection to mongo');
+        });
+    },
+
+    // mongodb://<dbuser>:<dbpassword>@ds049848.mlab.com:49848/elvenlab01
     mlabConnect: function() {
         'use strict';
+        console.log('Connecting with mlab.');
         connect.connected = true;
-        var userName = 'foo';
-        var password = 'foobar';
-        var siteAndPort = 'ds049848.mongolab.com:49848';
+        var userName = 'pol';
+        var password = 'polFooBarQux';
+        var siteAndPort = 'ds049848.mlab.com:49848';
         var databaseName = 'elvenlab01';
         var url = 'mongodb://' + userName + ':' + password + '@' + siteAndPort + '/' + databaseName;
-        console.log(url);
+
         mongoose.connect(url);
 
         // This part is optional
@@ -187,19 +224,26 @@ var connect = {
         });
     },
 
-    doConnection: function(useSimple) {
+    doConnection: function(option) {
         'use strict';
-				if (typeof useSimple === 'undefined') {
-					useSimple = true;
-				}			
+        if (typeof option === 'undefined') {
+            option = 'simple';
+        }
 
-        if (useSimple) {
-            connect.simpleConnect();
-        } else {
-            connect.mlabConnect();
+        switch (option) {
+            case 'simple':
+                connect.simpleConnect();
+                break;
+            case 'custom':
+                connect.custom();
+                break;
+            case 'mlab':
+                connect.mlabConnect();
+                break;
+            default:
+                connect.simpleConnect();
         }
     }
-
 };
 
 module.exports = connect;
@@ -207,7 +251,7 @@ module.exports = connect;
 
 ## Step 5
 
-Here is index.jade:
+Here is index.pug:
 
 ```
 extends layout
@@ -224,7 +268,7 @@ block content
 
 ```
 
-and layout.jade
+and layout.pug
 
 ```
 doctype html
@@ -266,17 +310,22 @@ $(document).ready(function() { 'use strict';
 
     $('#insertValidData').click(insertCollection);
 
-    $("#getAll").click(function() {
-       $.getJSON('/all-data', function(result) {
-  router.get('/bar', function(request, response) {
-    response.status(200).send({result: 'bar'});
-});
-         $('#display').html(JSON.stringify(result, null, 4));
-    router.get('/bar', function(request, response) {
-    response.status(200).send({result: 'bar'});
-});
-   })
-    });
+		function getAll() {
+        $.getJSON('/all-data', function(result) {
+            collection = result.allData;
+            $('#display').html(JSON.stringify(result, null, 4));
+        })
+            .done(function() {
+                console.log('second success');
+            })
+            .fail(function(error) {
+                alert(JSON.stringify(error.responseJSON, null, 4));
+            })
+            .always(function() {
+                console.log('finished');
+            });
+    }
+
 });
 ```
 
@@ -322,11 +371,11 @@ In **routes/all-mongo.js**:
  * Created by charlie on 6/5/16.
  */
 
-//var express = require('express');
-var connect = require('./connect');
-var Politicians = require('../models/politicians');
-var fs = require('fs');
-var totalPoliticiansSaved = 0;
+//const express = require('express');
+const connect = require('./connect');
+const Politicians = require('../models/politicians');
+const fs = require('fs');
+let totalPoliticiansSaved = 0;
 
 function allMongo() {
     'use strict';
@@ -339,7 +388,7 @@ function insertPolitician(politician, response) {
     if (!connect.connected) {
         connect.doConnection();
     }
-    var newPolitician = new Politicians({
+    const newPolitician = new Politicians({
         'firstName': politician.firstName,
         'lastName': politician.lastName,
         'city': politician.city,
@@ -361,7 +410,7 @@ function insertPolitician(politician, response) {
         console.log('saved: ', newPolitician.lastName, allMongo.numberOfPoliticians, totalPoliticiansSaved);
 
         if (totalPoliticiansSaved === allMongo.numberOfPoliticians) {
-            response.send({
+            response.status(200).send({
                 result: 'Success Saving Politicians',
                 totalSaved: totalPoliticiansSaved
             });
@@ -372,12 +421,15 @@ function insertPolitician(politician, response) {
 allMongo.getAllData = function(response) {
     console.log('About to find politicians.');
     Politicians.find({}, function(err, allData) {
+        if (err) {
+            throw new Error(err);
+        }
         console.log(allData.length);
         console.log(allData[0]);
 
         allMongo.writeData('politicians.json', allData);
 
-        response.send({
+        response.status(200).send({
             result: 'Success',
             allData: allData
         });
@@ -386,7 +438,7 @@ allMongo.getAllData = function(response) {
 
 allMongo.writeData = function(fileName, data) {
     'use strict';
-    var dataAsString = JSON.stringify(data, null, 4);
+    const dataAsString = JSON.stringify(data, null, 4);
     fs.writeFile(fileName, dataAsString, function(err, result) {
         if (err) {
             throw (err);
@@ -406,7 +458,7 @@ allMongo.readDataAndInsert = function(response) {
         politiciansText = JSON.parse(politiciansText);
         totalPoliticiansSaved = 0;
         allMongo.numberOfPoliticians = politiciansText.length;
-        for (var i = 0; i < politiciansText.length; i++) {
+        for (let i = 0; i < politiciansText.length; i++) {
             insertPolitician(politiciansText[i], response);
         }
     });
@@ -415,12 +467,12 @@ allMongo.readDataAndInsert = function(response) {
 allMongo.empty = function(response) {
     Politicians.remove({}, function(err) {
         if (err) {
-            response.send({
+            response.status(500).send({
                 result: 'err',
                 err: err
             });
         } else {
-            response.send({
+            response.status(200).send({
                 result: 'collection removed'
             });
         }
@@ -457,6 +509,16 @@ module.exports = allMongo;
 
 ## Another query
 
+This section is optional. Don't do it unless you are comfortable with it.
+
+There is a utility called mongo. You can use it to connect to your database, even the database on **mlab**. At least I think you can.
+
+Install the mongo client only. Then use the string found near the top of mlab database page to connect:
+
+```
+mongo ds049848.mlab.com:49848/elvenlab01 -u <dbuser> -p <dbpassword>
+```
+
 Don't forget to open a terminal and type **mongo** to start the mongo shell. Then do something like this:
 
 <pre>
@@ -470,33 +532,27 @@ db.politicians.find({} , {_id: 0, firstName: 1, lastName: 1})
 
 ## Turn it in
 
-Push you code to your repository, and when you turn it in tell me the branch and folder where it resides.
+Push you code to your repository, and when you turn it in tell me the tag, branch and folder where it resides. For instance:
 
+- Folder: XXX
+- Branch: YYY
+- TAG: ZZZ
+
+Please try to keep it simple. I shouldn't have to wade through several pages of text just to find where you pushed your code.
 
 [gypbson]:http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoose-gyp-bson
 
-
 ## Additional Notes
 
-Things to remember.
+Things to remember. Ignore comments about grunt check for now.
 
 ### Mongoose Basics Connect
 
 After you run *grunt check*, run your tests and your program again to make sure everything still works!
 
-This was my bug not yours, so you will not lose points for this. Nevertheless, for the final, be sure that you write the following in **routes/connect.js**:
-
-```javascript
-connect.connected = true;
-```
-
-This is about lines 14 and 35.
-
-The assignment now has the [right code](#connecting).
-
 ### Mongoose Basics Empty Collection
 
-Notice that emptyCollection has now changed and contains a check to make sure you are connected. The assignment now has the [right code](#step-seven).
+Notice that **emptyCollection** has now changed and contains a check to make sure you are connected. The assignment now has the [right code](#step-seven).
 
 ### Match get and post
 
@@ -512,8 +568,48 @@ Here is the server side, which is also a **get**:
 router.get('/insertValidCollection', function(request, response) { ... })
 ```
 
-If you do a get on the client, do a get on the server. Don't do a get in one place and post in the other. (I had this mixed up in one version of the assignment. You need to get this cleaned up if you followed my example and made a mistake.)
+If you do a **get** on the client, do a **get** on the server. Don't do a get in one place and post in the other. (I had this mixed up in one version of the assignment. You need to get this cleaned up if you followed my example and made a mistake.)
 
-### Politicians File
+## Some More Code
 
-Be sure to [add the code to ignore politicians](#ignore-politicians).
+In index.js:
+
+```javascript
+var express = require('express');
+var router = express.Router();
+var allMongo = require('./all-mongo');
+var connect = require('./connect');
+
+/* GET home page. */
+router.get('/', function(req, res) {
+    'use strict';
+    res.render('index', {title: 'CongressServer'});
+});
+
+function checkConnection() {
+    if (!connect.connected) {
+        connect.doConnection('mlab');
+    }
+}
+
+router.get('/all-data', function(request, response) {
+    'use strict';
+    console.log('AllData route invoked.');
+    checkConnection();
+    allMongo.getAllData(response);
+});
+
+router.get('/emptyCollection', function(request, response) {
+    'use strict';
+    checkConnection();
+    allMongo.empty(response);
+});
+
+router.get('/insertValidCollection', function(request, response) {
+    'use strict';
+    console.log('Insert Valid Collection Called.');
+    response.status(200).send({result: 'Insert valid Collection'});
+    //checkConnection();
+    //allMongo.readDataAndInsert(response);
+});
+```
