@@ -63,3 +63,16 @@ In your repository, in a folder off the root called images, Include these screen
 - The bash command line where your server is running as it looks right after you ask for **all-data**.
 - Your program on Heroku.
 - Your program on your phone.
+
+## Concurrently
+
+```
+npm install --save concurrently
+```
+
+And add these lines to the scripts section of **package.json**:
+
+```
+"go": "concurrently 'npm run server' 'npm start'",
+"server": "nodemon ../CongressServer/bin/www"
+```
