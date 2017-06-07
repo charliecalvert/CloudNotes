@@ -6,7 +6,7 @@ This is a take home exam. It will be graded fairly liberally. Not everyone is ex
 
 ## Core Programs
 
-In your repository, either in **master**, or in a branch called **final**, there should be at least the following three programs.
+There should be at least the following three programs.
 
 - CongressAddress
 - CongressServer
@@ -29,3 +29,37 @@ In your repository, either in **master**, or in a branch called **final**, there
 - Delete a record in **localStorage**.
 - Extra Credit: Update a record in the database.
 - Extra Credit: Delete a record
+
+## Platforms
+
+- CongressAddress and CongressServer on Linux
+  - You can develop on Mac or Windows, but I will run them on Linux
+  - This should just work. But you might want to try it to be sure.
+  - Windows users watch for casing issues. On Linux, **MyFile.js** is not the same as **myFile.js**. It will be the same on Windows, but not on Linux.
+- Have a final build of CongressAddress talking to mlab on Heroku
+- Have something that talks to mlab on CongressNative running on Expo.
+  - If it shows even two fields from the database on a single component, then that is fine.
+  - You don't need to duplicate all of CongressAddress
+
+## Turn it in
+
+In your repository, in **master**, in a branch called **final**, or in both.
+
+Add, commit, push. Branch and/or tag. Push your branch and/or tag.
+
+Specify, in the following format, at the top of your comments, on the text page of the Canvas submission process, the following:
+
+- Branch and/or tag
+- CongressAddress folder
+- CongressServer folder
+- CongressNative folder
+- A link to your program running on Heroku.
+
+Optional, include a commit number.
+
+In your repository, in a folder off the root called images, Include these screenshots:
+
+- CongressAddress running on your development machine and displaying a record from the database.
+- The bash command line where your server is running as it looks right after you ask for **all-data**.
+- Your program on Heroku.
+- Your program on your phone.
