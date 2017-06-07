@@ -29,6 +29,7 @@ There should be at least the following three programs.
 - Delete a record in **localStorage**.
 - Extra Credit: Update a record in the database.
 - Extra Credit: Delete a record
+- Extra Credit: Refresh database from CongressAddress with new data from your address-list.json.
 
 ## Platforms
 
@@ -76,3 +77,5 @@ And add these lines to the scripts section of **package.json**:
 "go": "concurrently 'npm run server' 'npm start'",
 "server": "nodemon ../CongressServer/bin/www"
 ```
+
+To use the **go** option, type **npm run go**.
