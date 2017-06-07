@@ -2,8 +2,9 @@
 
 These are OVA files that you install into VirtualBox by choosing **File | Import Appliance**. This is the server version of Ubuntu, so there is only the command line. No Interface.
 
-- MongoDb on Ubuntu No Password: [http://bit.ly/mongodb-ubuntu](http://bit.ly/mongodb-ubuntu)
-- MongoDb on Ubuntu with XFS: [http://bit.ly/mongo-xfs](http://bit.ly/mongo-xfs)
+- MongoDb on Ubuntu No Password: [http://bit.ly/xfs-mongo-open](http://bit.ly/xfs-mongo-open)
+- MongoDb on Ubuntu with XFS: [http://bit.ly/xfs-mongo-secure](http://bit.ly/xfs-mongo-secure)
+- Android X86 6.0.3: [http://bit.ly/x86ova](http://bit.ly/x86ova)
 
 After downloading, move them to some well known place on your hard drive and then double click to install. **Don't forget to select _Reinitialize MAC address of all network cards_ when installing**. If you forget to do this, then close the VM (sudo shutdown -h now) and then go to the VirtualBox Settings, on the **Network** page, choose **Advanced** and twiddle the blue doo-hickey to reset the Mac address.
 
