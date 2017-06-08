@@ -149,6 +149,30 @@ const styles = StyleSheet.create({
 });
 ```
 
+## styles
+
+Note that we don't use StyleSheets. Instead, we define CSS only in JavaScript:
+
+```javascript
+export default class App extends React.Component {
+    render() {
+      return (
+          <View style={styles.container}/>
+      )
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#F5FCFF',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+
+```
+
 ## Turn it in
 
 There are two parts to this assignment.

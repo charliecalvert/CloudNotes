@@ -401,20 +401,22 @@ module.exports = router;
 
 ## All Mongo
 
-In **routes/all-mongo.js**:
+In **routes\/all-mongo.js**:
 
 ```javascript
 /**
  * Created by charlie on 6/5/16.
  */
 
-//const express = require('express');
 const connect = require('./connect');
 const Politicians = require('../models/politicians');
 const fs = require('fs');
 let totalPoliticiansSaved = 0;
 
 function allMongo() {
+	use strict;
+}
+
 allMongo.numberOfPoliticians = 0;
 
 function insertPolitician(politician, response) {
