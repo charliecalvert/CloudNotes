@@ -289,7 +289,8 @@ Here is **public/javascripts/control.js**:
 
 ```javascript
 $(document).ready(function() { 'use strict';
-    var insertUrl = '/insertValidCollection';
+    const insertUrl = '/insertValidCollection';
+		let collection;
 
     function insertCollection() {
         var jqxhr = $.get(insertUrl, function(result) {

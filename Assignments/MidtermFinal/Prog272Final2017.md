@@ -78,4 +78,61 @@ And add these lines to the scripts section of **package.json**:
 "server": "nodemon ../CongressServer/bin/www"
 ```
 
+And also, still in CongressAddress, in its **package.json**, add this line near the top:
+
+```
+"proxy": "http://localhost:30025",
+```
+
+So the first few lines look like this:
+
+```
+{
+  "name": "congress-address",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:30025",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    etc...
+  }
+  etc...
+}
+```
+
 To use the **go** option, type **npm run go**.
+
+## Build
+
+In CongressAddress:
+
+```
+npm run build
+```
+
+This creates a production version of our code in a folder called **build**.
+
+Copy the contents of the **build** folder to **CongressServer** or the equivalent. You could do that by issuing this command from the root of the CongressServer:
+
+```
+cp -rv ../CongressAddress/build/* public/.
+```
+
+Then go into **routes/index.js** and make this change to use **loadFile** to load the **index.html** from your build:
+
+```
+router.get('/', function(req, res) {
+    'use strict';
+    //res.render('index', {title: 'CongressServer'});
+    res.loadFile('index.html');
+});
+```
+
+And then if you want to be able to see the old interface, add this method:
+
+```javascript
+router.get('/admin', function(req, res) {
+    'use strict';
+    res.render('index', {title: 'CongressServer'});
+});
+```
