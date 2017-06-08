@@ -340,8 +340,12 @@ $(document).ready(function() { 'use strict';
     }
 
     function update() {
-        collection[0].firstName = 'foo';
-        $.getJSON('/update', collection[0], function(result) {
+			collection[0].firstName = 'foo';
+			const newData = {
+					id: collection[0]._id,
+					firstName: collection[0].firstName
+			};
+			$.getJSON('/update', newData, function(result) {
             $('#display').html(JSON.stringify(result, null, 4));
         })
             .done(function() {
@@ -413,9 +417,6 @@ const fs = require('fs');
 let totalPoliticiansSaved = 0;
 
 function allMongo() {
-    'use strict';
-}
-
 allMongo.numberOfPoliticians = 0;
 
 function insertPolitician(politician, response) {
@@ -517,7 +518,7 @@ allMongo.empty = function(response) {
 allMongo.update = function(requestQuery, response) {
     console.log('All Mongo', requestQuery._id);
     Politicians.findOne({
-        _id: requestQuery._id
+        _id: requestQuery.id
     }, function(err, doc) {
         console.log('findone', err, doc);
         if (err) {
