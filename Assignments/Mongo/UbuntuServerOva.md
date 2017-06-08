@@ -25,6 +25,7 @@ I have turned on automatic security updates for these machines. Nevertheless, yo
 
 [ubdate]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#update-the-machine
 
+
 ## SSH
 
 Use **ifconfig** to find the IP address of the server. In the example shown below, the IP address is on the third line: **inet 192.168.2.16**.
@@ -96,6 +97,44 @@ Agent pid 1142
 ```
 
 [ssh-copy-id]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#ssh-copy-id
+
+## Who can Query
+
+We may need to edit **/etc/mongod.conf** in order to let other machines query the database. By default, only request from the local machine are allowed:
+
+```
+# network interfaces
+net:
+  port: 27017
+  bindIp: 127.0.0.1
+```
+
+If you want to let everyone else in, then add the IP 0.0.0.0:
+
+```
+# network interfaces
+net:
+  port: 27017
+  bindIp: [127.0.0.1, 0.0.0.0]
+```
+
+Or you can you let some subset of machines in:
+
+```
+# network interfaces
+net:
+  port: 27017
+  bindIp: [127.0.0.1, 192.186.2.*]
+```
+
+After doing this, restart **mongod**:
+
+```
+sudo systemctl restart mongod
+sudo systemctl status mongod
+```
+
+Press q to quit the status view.
 
 ## XPS Sign in Admin
 
