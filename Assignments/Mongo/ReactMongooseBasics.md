@@ -8,6 +8,8 @@ Mongoose Basics is an ORM for MongoDB.
 **NOTE**: _There is an **Angular**, **React** and **jquery** version of this assignment. Make sure you are looking at the right one. This is the **React** assignment, the others are called [AngularMongooseBasics][angular-mongoose] and
 [MongooseBasics][jq-mongoose]._
 
+Before proceeding, be sure you have an account on  [https://mlab.com/](https://mlab.com/).
+
 Put your **address-list.json** in the public directory.
 
 [angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
