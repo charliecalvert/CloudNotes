@@ -307,3 +307,7 @@ sudo apt-get upgrade
 sudo apt-get dist-upgrade
 sudo shutdown -r now
 ```
+
+## Turn it in
+
+We will talk more about this on Monday. For now it is a no-op. Do nothing until Monday unless you want to play with these servers a bit.
