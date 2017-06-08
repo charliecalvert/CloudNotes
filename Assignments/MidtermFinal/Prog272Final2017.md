@@ -12,6 +12,8 @@ There should be at least the following three programs.
 - CongressServer
 - CongressNative
 
+You should have at least 30 unit tests passing. You can pick which ones. But have some working.
+
 ## Core Features
 
 - CongressServer should be running on port 30025 and be able to access your data on **mlab**.
@@ -135,4 +137,28 @@ router.get('/admin', function(req, res) {
     'use strict';
     res.render('index', {title: 'CongressServer'});
 });
+```
+
+## Load from database
+
+```
+componentDidMount() {
+    logger.log('DID MOUNT');
+    this.loadFromDatabase();
+}
+
+loadFromDatabase() {
+    const that = this;
+    dataLoader.loadAddresses(function(addressCount) {
+        if (!addressCount) {
+            throw new Error('Cannot get address count in address.js');
+        }
+        that.addressCount = addressCount;
+        logger.log('LOADED ADDRESS');
+        const address = getByIndex(that.addressIndex);
+        that.setState({
+            address: address
+        });
+    });
+}
 ```
