@@ -148,7 +148,6 @@ router.get('/:id', function(request, response) {
 
 Later we will add methods methods to open your collection.
 
-
 In **index.js**, make sure that this is the last line in the file:
 
 	module.exports = router;
@@ -377,12 +376,9 @@ In **routes/index.js** append all of the following before the module statement:
 ```javascript
 var express = require('express');
 var router = express.Router();
+var connect = require('./connect');
 //var politicians = require('../models/politicians');
 var allMongo = require('./all-mongo');
-var connrouter.get('/bar', function(request, response) {
-    response.status(200).send({result: 'bar'});
-});
-ect = require('./connect');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -650,4 +646,13 @@ router.get('/insertValidCollection', function(request, response) {
     //checkConnection();
     //allMongo.readDataAndInsert(response);
 });
+
+router.get('/update', function(request, response) {
+    'use strict';
+    checkConnection();
+    console.log('request query', request.query);
+    allMongo.update(request.query, response);
+});
+
+// Additional Code here.
 ```
