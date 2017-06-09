@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-## styles
+## Styles
 
 Note that we don't use StyleSheets. Instead, we define CSS only in JavaScript:
 
@@ -173,6 +173,16 @@ const styles = StyleSheet.create({
 
 ```
 
+## React Router Menu
+
+```
+npm install --save react-router-native
+```
+
+```javascript
+import { NativeRouter, Route, Link } from 'react-router-native'
+```
+
 ## Turn it in
 
 There are two parts to this assignment.
@@ -183,3 +193,11 @@ There are two parts to this assignment.
 I will start **CongressServer**. Then I will adjust the IP address in **expo-lastname** and start it. I'm expecting to see data and for everything to just work.
 
 Both projects should be in the root of your directory.
+
+## Hint
+
+Don't forget to import the controls you need for your view:
+
+```javascript
+import {Button, StyleSheet, Text, View} from 'react-native';
+```
