@@ -46,7 +46,7 @@ Add a few more items in the scripts section:
 - micros: Model this one after the **start** script show above. In other words, use it to start all the micro services with a single command.
 - Finally, modify the start script to start not only **server** and **client**, but also **micros**.
 
-Make sure you do not run services on the same port. For instance, my **server** and **micro-second** were both running on port 30026. Therefore I changed server to run on port 30040.
+Make sure you do not run services on the same port. For instance, my **server** and **micro-second** were both running on port 30026. Therefore I changed the **bin/www** file so that the server ran on port 30040. (Or whatever numbering scheme you prefer.)
 
 ## Start Client
 

@@ -250,3 +250,8 @@ Create a tag:
 ```
 
 Use a numbering system that makes sense in the context of your repository. For instance, if you already have v1.0.1 then use v1.0.2 or whatever is appropriate and so on. Use your common sense.
+
+
+## Arrow Functions
+
+Set "parser": "babel-eslint" in .eslintrc to allow arrow functions.

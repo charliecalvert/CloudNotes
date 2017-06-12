@@ -2,14 +2,32 @@
 
 Get started using React Native.
 
+React Native is a relatively simple way of making native Android and iPhone applications. When completed, you can place these applications in the Android Play Store or the iPhone store and sell them for money, or share them with others. The Facebook, Twitter and Instagram apps are examples of native phone applications that you may use. They almost certainly weren't built with React Native, but they are also native Android and iPhone applications of the same type as we can make with React Native.
+
+In this assignment, we will use a tool called [expo](https://expo.io/). The key thing about Expo is that it makes it easy to develop these kinds of applications. Or at least it is easy once you understand React, which hopefully we all do understand at this point.
+
+**NOTE**: _This assignment was designed for my Prog272 course. This spring, 2017, I also gave a link to this assignment to my Isit322 course. This was simply so they can see how to get started with Expo and React Native. I am not suggestting that Isit322 follow the exact steps laid down in this assignment, though some of them may provide very useful hints as to how to proceed._
 
 ## Native with Expo
 
-There is also something that brought down my entire home network. Very bizarre. But it seems to be working better now. I would make sure your phone is signed into EduRoam before beginning.
+For this technology to work, your phone and your development tools should both be signed into the same network. At home, for instance, both your development machine and your phone should be signed in to your local network. You might have your phone on the wireless network, and your development machine wired into the network. That is fine, assuming they are both on the same network, which would normally be the case.
 
-Install Expo on your Android or iPhone. Follow instructions. It's simple.
+If you are at school, make sure your phone is signed into [eduroam](https://cat.eduroam.org/) before beginning. If you are on a laptop, make sure it is signed into Eduroam. The machines in N252 or in the lab for the N-Building are all linked to the same network as eduroam.
+
+- [eduroam cat][educat]
+- [eduroam US](https://www.eduroam.us/)
+- [BC link](http://www.bellevuecollege.edu/wireless/)
+
+Go to the Android Play store or the iPhone store and install Expo on your Android or iPhone. Follow the instructions. It's simple.
+
+[educat]: https://cat.eduroam.org/
+
+Also, make sure your Pristine Lubuntu is using the Bridged Adapter, and not NAT. Check this in **Settings | Network** for the VirtualBox Manager.
 
 - [Home Page Expo Development][hped]
+
+
+## First Build
 
 In this example, you can build the app either in your repo or in the **~/Source** folder. It's your choice.
 
