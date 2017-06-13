@@ -104,6 +104,12 @@ So the first few lines look like this:
 
 To use the **go** option, type **npm run go**.
 
+## Build and Deploy
+
+When you feel you are ready to take your app to Heroku, go to the root of your CongressAddress project and type **npm run build**. This will create a folder called **build**, and in it will be a complete copy of your CongressAddress program.
+
+Now you want to go to CongressServer, or to your existing Heroku app, or even to a new application you built with **create-react-app**. If you choose this last option, remember that you will need to copy some files from **CongressServer/routes** folder.
+
 ## Build
 
 In CongressAddress:
@@ -162,3 +168,16 @@ loadFromDatabase() {
     });
 }
 ```
+
+## Start from Scratch
+
+Go to the ~/Source folder:
+
+```
+CreateExpressProject lastname07
+cd lastname07
+cp -r ~/Git/prog272-calvert-2017/CongressServer/* .
+npm start
+```
+
+Now go to localhost:30025

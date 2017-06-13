@@ -349,4 +349,52 @@ sudo shutdown -r now
 
 ## Turn it in
 
-We will talk more about this on Monday. For now it is a no-op. Do nothing until Monday unless you want to play with these servers a bit.
+Submit a screenshot showing that you can log into the server. Type something like this:
+
+```
+$ ssh bcuser@168.156.47.35    
+bcuser@168.156.47.35's password:
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-79-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Mon Jun 12 12:58:08 2017 from 168.156.47.60
+Agent pid 1770
+bcuser@mongo-xfs:~$
+```
+
+But of course I want to see a screenshot, not just pasted text.
+
+And if you can connect to the database server, submit a screenshot that looks like this:
+
+```
+The app is running at:
+[1]
+[1]   http://localhost:3000/
+[1]
+[1] Note that the development build is not optimized.
+[1] To create a production build, use npm run build.
+[1]
+[0] AllData route invoked.
+[0] Using Simple
+[0] Connecting with simple.
+[0] tried to connect
+[0] mongodb://168.156.47.32:27017/test   <=== SHOW THIS ===<
+[0] Calling getAllData
+[0] About to find politicians.
+[0] Opened connection to mongo
+```
+
+The line I highlight shows that you are connecting to a an IP address other than mlab. It shows that you are connecting to our server, or at least hints at that.
+
+Here again is the line I want to see in a screenshot:
+
+```
+[0] mongodb://168.156.47.32:27017/test   <=== SHOW THIS ===<
+```
