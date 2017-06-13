@@ -146,7 +146,7 @@ Press q to quit the status view.
 
 ## XPS Sign in Admin
 
-Sign in as admin:
+If you are on the server that uses authentication, you can, and should, sign in as admin:
 
 ```
 mongo -u admin -p foobar --authenticationDatabase "admin"
@@ -155,7 +155,7 @@ mongo -u admin -p foobar --authenticationDatabase "admin"
 IN this example we:
 
 - Sign in as **admin**
-- Switch to the test dabase
+- Switch to the test database
 - Show the users
 
 ```
@@ -183,7 +183,7 @@ switched to db test
 }
 ```
 
-Clearly we permissions to do this. Now try to show the tables in the **test** database:
+Clearly we need permissions to do this. Now try to show the tables in the **test** database:
 
 ```
 show tables;
