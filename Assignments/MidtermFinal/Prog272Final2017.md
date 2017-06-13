@@ -30,7 +30,9 @@ You should have at least 30 unit tests passing. You can pick which ones. But hav
   - My button clears localStorage and then pulls again from the MongoDb
   - When you get the data from DB, have it repopulate localStorage
 - Update records in **localStorage**
-- Delete a record in **localStorage**.
+- Extra Credit" Delete a record in **localStorage**.
+  - This is now optional.
+  - A simpler option might be to delete from the server and refersh everything.
 - Extra Credit: Update a record in the database.
 - Extra Credit: Delete a record
 - Extra Credit: Refresh database from CongressAddress with new data from your address-list.json.
