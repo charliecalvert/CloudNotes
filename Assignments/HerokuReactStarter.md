@@ -23,10 +23,12 @@ $ git --version
 git version 2.11.0
 </pre>
 
-I've put an install Heroku script in this JsObjects directory:
+You will need to install Heroku locally in Pristine Lubuntu. I've put an install Heroku script in this JsObjects directory:
 
 - The [JsObjects/Utilities/InstallScripts][install-directory] directory.
 - Here is [a direct link to the script][direct-heroku].
+
+At the time of this writing, the script looks like this:
 
 ```
 sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
@@ -48,7 +50,7 @@ Logged in as foo@foobar.com
 [install-directory]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/InstallScripts
 [direct-heroku]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/InstallScripts/HerokuInstall
 
-## Deploy
+## Get Ready to Create {#deploy}
 
 Make sure your system is set up correctly. In particular, look in the ~/bin directory and see if there is a file there called **CreateExpressProject**. If it is not there, then do this:
 
@@ -63,9 +65,11 @@ The **slb** alias takes you to this directory:
 
 The **CreateSymbolicLinks** script should create the missing **~/bin/CreateExpressProject** script. (It will also create a number of other scripts.)
 
-Go to your ~/Source directory and run a few commands to create your first Heroku project.
+Go to your **~/Source** directory and run a few commands to create your first Heroku project.
 
-**NOTE**: _Don't create your heroku project in your repository. If you do, you will end up with a repository nested in a repository, which you want to avoid._
+**NOTE**: _Don't create your heroku project in your repository. If you do, you will end up with a repository nested in a repository, which you want to avoid. When you turn in an assignment, if I ask for the source, then go ahead and copy the folder into your repository, but then remove the **.git** directory from the directory you copied._
+
+## Create
 
 To create the project, enter the following in your **Source** directory, being sure to use your own lastname, not mine, and not the word **lastname**:
 
@@ -73,7 +77,6 @@ To create the project, enter the following in your **Source** directory, being s
 CreateExpressProject lastname01
 cd lastname01
 git init
-npm install
 </pre>
 
 Now create the heroku app, executing this command from the root of your new project:
@@ -82,21 +85,26 @@ Now create the heroku app, executing this command from the root of your new proj
 heroku create lastname01
 </pre>
 
-And some details:
+## Add Git Ignore
+
+You should create a **.gitignore** file:
 
 <pre>
 echo 'node_modules' > .gitignore
 echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
-echo 'components' >> .gitignore
 echo 'bower-components' >> .gitignore
 </pre>
 
-Perform a standard **git add .** and **git commit -m "First commit to heroku of XXX project"**. Customize the commit comment in any way want, the text I show is just a suggestion. Then push to git like this:
+Perform a standard **git add .** and **git commit -m "First commit to heroku of XXX project"**. Customize the commit comment in any way want, the text I show is just a suggestion. Then push to the heroku git repository like this:
 
 <pre>
 git push heroku master
-# Or maybe like this:
+</pre>
+
+If you don't want to have type heroku master each time you push, then set it as the default:
+
+<pre>
 git push --set-upstream heroku master
 </pre>
 
@@ -120,14 +128,14 @@ git push heroku master
 
 ## Use Node not Nodemon {#nodemon-no}
 
-In package.json, we should replace **nodemon** with **node**. We like nodemon because it automatically restarts our application when we make changes to our code. But that is not helpful once we are deploying. At that stage, we are no longer changing code, and so we don't need nodemon.
+In package.json, we should replace **nodemon** with **node**. We like **nodemon** because it automatically restarts our application when we make changes to our code. But that is not helpful once we are deploying. At that stage, we are no longer changing code, and so we don't need **nodemon**.
 
-If you do keep nodemon, consider using **nodemon.json** to be sure that writing a JSON file to disk does not restart your project in the middle of a database operation. Here we tell nodemon to ignore changes to a file called **renewables.json**:
+If you do keep **nodemon**, consider using **nodemon.json** to be sure that writing a JSON file to disk does not restart your project in the middle of a database operation. You probably won't being using either **nodemon** or a file called **renewables.json**, but just for the record, here is an example **nodemon.json** where we tell **nodemon** to ignore changes to a file called **renewables.json**:
 
 ```javascript
 {
   "verbose": true,
-  "ignore": ["renewables.json", "**/components/**"]
+  "ignore": ["renewables.json"]
 }
 ```
 
@@ -135,7 +143,9 @@ If you do keep nodemon, consider using **nodemon.json** to be sure that writing 
 
 In NPM, we don't need dev dependencies. We need, however, to add a manual install of bower and a **postinstall** step:
 
-  npm install --save bower
+<pre>
+npm install --save bower
+</pre>
 
 **NOTE**: _Bower gives a warning. We will fix this later._
 
@@ -174,6 +184,7 @@ npm install
 git init
 heroku create heru02
 echo 'node_modules' > .gitignore
+echo 'bower-components' > .gitignore
 echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
 git add .
@@ -182,11 +193,13 @@ git push --set-upstream heroku master
 heroku open
 </pre>
 
+In the above, we do not install bower, which means that we won't be loading bootstrap. Since you probably want to load bootstrap, you should take a moment to add bower to **package.json** as explained above, and be sure to push the edits.
+
 **NOTE**: _If you are working on Cloud 9, you probably won't be able to do the last command. Just use the regular Cloud 9 tools for previewing or starting an app._
 
 ## Status
 
-There's **heroku apps:info** from inside the folder of one of your apps:
+Here's a run of **heroku apps:info** from inside the folder of one of your apps:
 
 <pre>
 $ heroku apps:info
@@ -226,6 +239,15 @@ git push --set-upstream heroku master
 ```
 
 Then you can do **heroku open** if you want. Or go to heroku dashboard.
+
+Please note the key step above where we install the Buildpack for **create-react-app**:
+
+```
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+```
+
+This does some special configuration for you automatically, just as we manually did a bit of configuration for bower.
+
 
 ## Delete
 
@@ -295,29 +317,49 @@ If you want to stop running your dyno:
 heroku ps:scale web=0
 </pre>
 
-## Copy CongressAddress
+## Copy Express Server to Heroku
+
+For instance you can use this if you are in
+
+- Prog272 and want to copy the **CongressAddress** server to Heroku
+- Isit322 and want to copy the **GitExplorer/server** or a micro service to Heroku
 
 The goal is to:
 
-- First create a default react app in Heroku as described above.
-- Then copy your CongressAddress program on top of it.
+- First create a default Express application in Heroku as described above.
+  - **CreateExpressProject**
+- Then copy your express server program on top of it.
 - And then push it to Heroku
 
-When you are done, your **CongressAddress** program should be running on Heroku. As a result, you should be able to browse to it with your phone. This will enable you to begin the process of tweaking your code so that it looks right on a phone.
+When you are done, your express server should be running on Heroku. As a result, you should be able to browse to it with your phone. This will enable you to begin the process of tweaking your code so that it looks right on a phone.
 
-It should be almost automatic. From the root of your react heroku project do this. First copy over CongressAddress on top of the default create-react-app project:
+It should be almost automatic. From the root of your react heroku project do this. For instance, if you are in Prog272, first copy over **CongressAddress** on top of the default create-react-app project:
 
 ```
 cp -r ~/Git/prog272-lastname-2017/CongressAddress/* .
 ```
 
+If you are in Isit322, then do something like this:
+
+```
+cp -r ~/Git/isit322-lastname-2017/GitExplorer/server/* .
+```
+
 Then add, commit, and finally push to Heroku as described above. Something like:
 
-  git push heroku master
+```
+git push heroku master
+```
 
 Now go to your browser and see if it works.
 
-If you look at it on the Heroku dashboard, your application may get a funny name when it is pushed to Heroku. This should not matter, but if it bothers you it should also be configurable.
+If you look at it on the Heroku dashboard, your application may get a funny name when it is pushed to Heroku. This should not matter, but if it bothers you it should also be configurable as the third parameter to heroku create:
+
+```
+heroku create myname
+```
+
+**NOTE**: _I once hit a very painful bug by putting a **.gitignore** file in the public directory that kept me from pushing the contents of my static directory. This makes sense in normal day to day life, but obviously causes a serious problem if you are trying to push a working project to heroku. It did not help that I kept getting an error message saying that **res.sendFile** did not exist. It meant that the file **res.sendFile** was trying to find did not exist, not that **res.sendFile** did not exist._
 
 ## Clone on New Machine
 
@@ -325,6 +367,7 @@ If you are now at home, and created your project on the school machine, you can 
 
 - First be sure Heroku is set up properly on your home machine as described above.
 - Then clone your existing project: **heroku git:clone -a calvert06**
+- You can also go to the Heroku dashboard and find the normal git URL for your project under the **Settings** tab.
 
 To see a list of your apps on heroku: **heroku apps --all**
 
@@ -332,9 +375,9 @@ To see a list of your apps on heroku: **heroku apps --all**
 
 ## Comparing Two Folders
 
-After copying CongressAddress to a new folder, you will end up with two copies of **CongressAddress** on your system. This is not an ideal scenario, but it can be handled with relatively little fuss if you follow certain precautions.
+After copying **CongressAddress** or some of the project to an heroku folder, you will end up with two copies of your program on your system. This is not an ideal scenario, but it can be handled with relatively little fuss if you follow certain precautions.
 
-- As a rule, only make changes to the application in your **prog272-lastname-2017** folder. Your project lives in your repository for this class. The repository in your **~/Source** folder is used primarily for deployment, not for development
+- As a rule, only make changes to the application in your **prog272-lastname-2017** or **isit322-lastname-2017** folder. Your project lives in your repository for this class. The repository in your **~/Source** folder is used primarily for deployment, not for development
   - There might be exceptions to this rule. For instance, it may, in some cases, be necessary to tweak configuration files such **package.json** before sending the project to Heroku. I don't think I had to do that, but it is not nearly so serious to have two versions of a file like that as it is to have two versions of delicate source file such as **DataMaven.js**.
 - Once you have copied the project over one time, use tools to automate the process of updating the version in **~/Source**.
 
@@ -365,7 +408,9 @@ echo 'cp -Truvp ~/Git/prog272-calvert-2017/calvert06 ~/Source/calvert06/' > copy
 chmod +x copy-to-heroku
 ```
 
-## Turn it in
+## Turn it in Prog 272
+
+If you are in **prog272** do this:
 
 Send me the URL of your applications running on Heroku. I am expecting to see two URLs:
 
@@ -373,6 +418,29 @@ Send me the URL of your applications running on Heroku. I am expecting to see tw
 - Your CongressAddress program.
 
 CongressAddress doesn't have to be running perfectly. What I want to see is that you were able to move it to Heroku.
+
+## Turn it in Isit 322
+
+If you are in **isit322** do this:
+
+Send me the URL of your applications running on Heroku. I am expecting to see three or four URLs:
+
+- The server from GitExplorer
+- Up to four microservices
+
+I will be happy with just two microservices running:
+
+- One for Gist Users
+- One for Gist Create, Delete and Listing
+- If you have a third that you want to share, add that
+
+As free users on Heroku, we can only run five applications at a time. So that max you could do is GitExplorer plus four micro services.
+
+## Sleepy Time Dollars
+
+Heroku apps go to sleep if they have not been used for a bit. Opening them in the browser or just sending an HTTP request to them with **fetch** will wake them up. That means our micro services will wake up automatically if we query them.
+
+It seems to take about ten seconds to wake an application. This would be not so good for an app in production, but for out purposes, it is fine. Note that it is $7 a month to keep your services running all the time. I believe you only pay for the time you app is actually running, so if you ran your app services only a few hours a day, it would be less than $7. At least I think that is what they are saying.
 
 ## Hints
 

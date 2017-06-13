@@ -29,6 +29,7 @@ You have between now and the end of the quarter to complete this project.
   - Use **Provider** and create store in **index.js**
 - Use DataMaven to launch our various components
 - Heroku support
+- EsLint support
 
 ## Heroku Support
 

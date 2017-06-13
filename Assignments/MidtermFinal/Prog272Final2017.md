@@ -8,22 +8,22 @@ This is a take home exam. It will be graded fairly liberally. Not everyone is ex
 
 There should be at least the following three programs.
 
-- CongressAddress
-- CongressServer
+- Congress
+  - CongressAddress
+  - CongressServer
 - CongressNative
+- Congress Address on Heroku
 
 You should have at least 30 unit tests passing. You can pick which ones. But have some working.
 
 ## Core Features
 
-- CongressServer should be running on port 30025 and be able to access your data on **mlab**.
-- CongressAddress should be able to talk to the server.
-- CongressNative should be able to talk to CongressServer
+- I should be able to run CongressServer on port 30025 and be able to access your data on **mlab**.
+- CongressAddress should be able to talk to the server and concurrency should be in your **package.json** file for CongressAddress.
+- CongressNative should be able to talk to CongressServer. Provide source and a screenshot of it running on your phone.
 - The URL of your CongressServer/CongressAddress app running on Heroku
 
-I just want the URL of your Heroku project.
-
-I'll want the address, not the source. If you do want to give me the source, be sure to remove the .git folder from your Heroku project's directory. You don't want to nest git folders. Heroku, by default, has a .git repository. Don't put that repository in your repository. Instead, first remove the .git folder from the heroku directory.
+I just want the URL of your Heroku project. I want the Heroku HTTP address, not the source. If you do want to give me the source, be sure to remove the .git folder from your Heroku project's directory. You don't want to nest git folders. Heroku, by default, has a .git repository. Don't put that repository in your repository. Instead, first remove the .git folder from the heroku directory.
 
 Better yet, just send me the URL of your app on Heroku, don't try to turn in the source form the heroku directory. I do want the source for CongressAddress and CongressServer and CongressNative, but not the source to the heroku project.
 
