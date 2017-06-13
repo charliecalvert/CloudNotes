@@ -27,6 +27,8 @@ You should have at least 30 unit tests passing. You can pick which ones. But hav
 - Iterate over records.
 - Work disconnected via **localstorage**
 - Refresh data from database.
+  - My button clears localStorage and then pulls again from the MongoDb
+  - When you get the data from DB, have it repopulate localStorage
 - Update records in **localStorage**
 - Delete a record in **localStorage**.
 - Extra Credit: Update a record in the database.
@@ -55,7 +57,8 @@ Specify, in the following format, at the top of your comments, on the text page 
 - Branch and/or tag
 - CongressAddress folder
 - CongressServer folder
-- CongressNative folder
+- CongressNative folder or (expo_lastname)
+  - Just make it clear which folder I should look in. Tell me explicitly.
 - A link to your program running on Heroku.
 
 Optional, include a commit number.
@@ -181,3 +184,8 @@ npm start
 ```
 
 Now go to localhost:30025
+
+Once you see it works. Let's herokuize it:
+
+```
+heroku create calvert07
