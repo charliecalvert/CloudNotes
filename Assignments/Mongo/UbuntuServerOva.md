@@ -100,7 +100,15 @@ Agent pid 1142
 
 ## Who can Query
 
-We may need to edit **/etc/mongod.conf** in order to let other machines query the database. By default, only request from the local machine are allowed:
+We may need to edit **/etc/mongod.conf** in order to let other machines query the database:
+
+```
+sudo nano /etc/mongod.conf
+```
+
+Inside **nano** use **ctrl-o** plus **enter** to save. And then **ctrl-x** to exit.
+
+By default, only request from the local machine are allowed:
 
 ```
 # network interfaces
