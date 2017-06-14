@@ -201,6 +201,7 @@ Or, simplest possible case:
 
 ```html
 <Button bsStyle='warning'>Warning</Button>
+```
 
 ## Turn it in
 

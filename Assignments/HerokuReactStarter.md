@@ -173,6 +173,16 @@ Also, open **package.json** and change **nodemon** to **node** in the **start** 
 }
 ```
 
+If you want, you can also specify the version of Node that you want to use:
+
+```
+"engines": {
+    "node": "7.9.0"
+  },
+```
+
+Recall that you can find the node version by typing **node --version**.
+
 ## Deploy Checklist
 
 Here are all the commands seen at once, as culled from my bash history. It might serve as something like a checklist.

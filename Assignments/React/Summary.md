@@ -1,5 +1,6 @@
 * [GistManager.html](GistManager.html)
 * [ReactBasics.html](ReactBasics.html)
+* [ReactBootstrap.html](ReactBootstrap.html)
 * [ReactEsLint.html](ReactEsLint.html)
 * [ReactMicroServices.html](ReactMicroServices.html)
 * [ReactMicroServicesRefine.html](ReactMicroServicesRefine.html)
