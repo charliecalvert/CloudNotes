@@ -29,6 +29,7 @@ You have between now and the end of the quarter to complete this project.
   - Use **Provider** and create store in **index.js**
 - Use DataMaven to launch our various components
 - Heroku support
+- EsLint support
 
 ## Heroku Support
 
@@ -73,3 +74,69 @@ Get EsLint working. Not all your files have to pass it, but at least get it inst
 - Create a React Native Version
 
 ## Turn it in
+
+Add, commit, push, tag, push, branch, push.
+
+Branch: Final
+
+## Better Fetch
+
+I finally understand the first **.then** in our promise. Like this:
+
+```javascript
+const getServer = (url, dispatch) => {
+    fetch(url)
+        .then(function(response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(response.statusText + '\n' +
+                    response.url + '\n' +
+                    'status: ' + response.status);
+            }
+        }).then(function(json) {
+            dispatch({
+                type: 'YOU-RANG',
+                youRang: json
+            });
+        }).catch(function(ex) {
+            alert(ex);
+            console.log('parsing failed', ex);
+        });
+
+};
+```
+
+Or in excruciating detail:
+
+```javascript
+const getServer = (url, dispatch) => {
+    fetch(url)
+        .then(function(response) {
+            console.log('fetch ok:', response.ok);
+            console.log('fetch status:', response.status);
+            console.log('fetch statusText:', response.statusText);
+            console.log('fetch type:', response.type);
+            console.log('fetch url:', response.url);
+            console.log('fetch body used:', response.bodyUsed);
+            const json = response.json();
+            console.log('fetch json:', json);
+            if (response.ok) {
+                return json;
+            } else {
+                throw new Error(response.statusText + '\n' +
+                    response.url + '\n' +
+                    'status: ' + response.status);
+            }
+        }).then(function(json) {
+            dispatch({
+                type: 'YOU-RANG',
+                youRang: json
+            });
+        }).catch(function(ex) {
+            alert(ex);
+            console.log('parsing failed', ex);
+        });
+
+};
+```

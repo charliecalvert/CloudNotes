@@ -658,3 +658,21 @@ router.get('/update', function(request, response) {
 
 // Additional Code here.
 ```
+
+## Query Data
+
+You can also query the data from the **mongo** app:
+
+> db.politicians.find({}, {"\_id": 0, firstName: 1, "lastName": 1});
+{ "firstName" : "Rogers", "lastName" : "Wickers" }
+{ "firstName" : "Timothy", "lastName" : "Kaine" }
+{ "firstName" : "Angus", "lastName" : "King" }
+{ "firstName" : "Bob", "lastName" : "Corker" }
+{ "firstName" : "Amy", "lastName" : "Klobuchar" }
+{ "firstName" : "Christopher", "lastName" : "Murphy" }
+{ "firstName" : "Thomas", "lastName" : "Carper" }
+{ "firstName" : "Benjamin", "lastName" : "Cardin" }
+
+For more details, see [Elvenware on MongoDb][elven-mongo].
+
+[elven-mongo]: http://www.elvenware.com/charlie/development/database/NoSql/MongoDb.html#sample-session
