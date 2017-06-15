@@ -198,3 +198,40 @@ Once you see it works. Let's herokuize it:
 
 ```
 heroku create calvert07
+```
+
+## Better Fetch
+
+It is not necessary to add this, but it might be informative to some to see this alternate handling of the first .then in a fetch promise:
+
+```javascript
+fetch('/all-data')
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error(response.statusText + '\n' +
+                response.url + '\n' +
+                'status: ' + response.status);
+        }
+    })
+    .then((data) => {
+        if (data.error) {
+            alert(JSON.stringify(data.error, null, 4));
+            callback(0);
+            return;
+        }
+        logger.log('ALL-DATA: ' + JSON.stringify(data.allData, null, 4));
+        that.setLocalStorage(data.allData);
+        callback(data.allData.length);
+    }).catch(function(err) {
+        if (err.message) {
+            alert(err.message);
+        } else {
+            alert('error' + err);
+        }
+        logger.log(err);
+    });
+```    
+
+Note the check for **response.ok**            
