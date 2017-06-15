@@ -13,12 +13,10 @@ You have between now and the end of the quarter to complete this project.
 - Working from a list of gists the user should be able to
   - Delete a gist
   - Read a file from disk and use it to update a gist
-  - Read a gist and write it to disk as a file
   - Read a gist and insert it into a markdown document at a specified location
 - At least some features should work on a phone
   - List gists
   - Delete a gist
-  - Select a user
   - Read a particular gist and display it.
 - Use Micro Services
   - Divide the app up into about five separate serivices
@@ -45,7 +43,7 @@ This will be covered Tuesday. It is not hard. If you want, create an account on 
 - On the **Get User** page, be sure that the button to query the server is at the top of the page, not the bottom.
 - Make some of the links you get back from GitHub into live hyper-links that when clicked take you to a page on GitHub or published by GitHub.
   - The goal is to try to make the application useful
-- Create your own favicon. (You could, for instance, just take my favicon.png and put your own images or data in it.)
+- Create your own **favicon**. (You could, for instance, just take my favicon.png and put your own images or data in it.)
 - If you are not using them, remove unused items from the menu, such as the DropDown, or the bits on the far right.
   - Or maybe use the dropdown. Your call.
 
