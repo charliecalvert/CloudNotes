@@ -138,3 +138,32 @@ const getServer = (url, dispatch) => {
 
 };
 ```
+
+## Deleting Gist Server Side
+
+Do it like this:
+
+```javascript
+router.get('/delete', function(request, response, next) {
+    logger.log('DELETE GIST CALLED', request.query);
+    if (!request.query.gistId) {
+        throw new Error('You must pass a gistID when calling delete');
+    }
+    const gistId = request.query.gistId;
+    logger.log('GIST ID: ', gistId);
+    let gitHub = getGitHub();
+    gist = gitHub.getGist(gistId);
+    logger.log('GOT GIST', gist.__apiBase);
+    gist.delete().then(function({data}) {
+        logger.log('DELETE PROMISE', data);
+        response.status(200).send({
+            'result': 'success',
+            'gistId': gistId,
+            'data': data
+        });
+    }).catch(function(err) {
+        logger.log('Promise Rejected', err);
+        response.status(500).send({'result': err});
+    });
+});
+```
