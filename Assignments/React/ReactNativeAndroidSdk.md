@@ -2,6 +2,7 @@
 
 Here is how to work directly with the Native SDK.
 
+
 ## Phone Connection
 
 Plub in your phone and lsusb:
@@ -38,6 +39,21 @@ I see no way around installing Android Studio. All we really need is the Android
 sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 ```
 
+## Quick Run
+
+Start the Android virtual machine. Get its IP address by running **ifconfig** from the terminal app found in Android X86.
+
+Connect to Android X86 from Pristine Lubuntu or where ever you are doing your development. You do this with **adb connect <IP>** and check your work with **adb devices**:
+
+```
+$ adb connect 192.168.2.21
+connected to 192.168.2.21:5555
+charlie@rohan-elf:~/temp/footoo
+$ adb devices
+List of devices attached
+192.168.2.21:5555	device
+```
+
 Note the underscore, not hyphen, for the application name:
 
 ```
@@ -45,6 +61,8 @@ npm install -g react-native-cli
 react-native init native_lastname
 react-native run-android
 ```
+
+I thought I had this working, but
 
 ## Turn on Debugging
 
