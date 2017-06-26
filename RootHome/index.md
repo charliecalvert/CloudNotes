@@ -17,6 +17,7 @@ This page is maintained in HomePage.jade and HomePage.md.
 * [All Assignments](/books/CloudNotes/Assignments/AllAssignments.html)
 
 ## Other
+- [Git](http://www.ccalvert.net/development/git/)
 - [configure-linux](Os/Linux/ConfigureLinux.html)
 - [LinuxFaq](/Os/Linux/LinuxFAQ.html)
 - [Web Technologies](web/index)
