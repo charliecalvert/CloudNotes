@@ -1,8 +1,10 @@
 # MapPlaces
 
+The goal of this assignment is to help you learn how to drive Google Maps from a JavaScript based application.
+
 This description is a bit incomplete, but should give you enough information to get started. I will come back later and fill in more specifics.
 
-Use [this video][video] as a guide to Google Maps and My Maps: 
+Use [this video][video] as a guide to Google Maps and My Maps:
 
 [video]: http://youtu.be/HiP-YN3kAes
 
@@ -20,11 +22,11 @@ Take a screen shot of the your parks, showing the custom icons. Take a screen sh
 
 If you have an Android, install Google Maps and Google My Maps. Take a screen shot showing that your Marymoor Park marker (pin) made it into the Your Places section of Google Maps for the phone or tablet. You can reach "Your Places** from the Google Maps menu. It is the first item, right at the top.
 
-In My Maps, open up your new **Bellevue Parks** map and create one or two screen shots showing your custom icons and at least one of your routes. 
+In My Maps, open up your new **Bellevue Parks** map and create one or two screen shots showing your custom icons and at least one of your routes.
 
 ## Create a Document
 
-Go into StackEdit and create a short document showing your screen shots. There should be at least a few words introducing each screen shot, but it need not be long. 
+Go into StackEdit and create a short document showing your screen shots. There should be at least a few words introducing each screen shot, but it need not be long.
 
 Save your documents as markdown and HTML. Push them both into Git in a folder called **Week10_MapPlaces**.  You can use CodeAnywhere, Lubuntu on VirtualBox, or any other tool you want to get it into Git. All I care is that it is there.
 
@@ -32,17 +34,16 @@ Copy your document into **/var/www/html** on EC2 and provide a link to your docu
 
 If you need to shrink any of the pictures you took, do this in your markdown:
 
-```
+```html
 <img width=XXXpx src="SOME URL">
 ```
 
-Like this: 
+Like this:
 
-```
+```html
 <img width=500px src="https://drive.google.com/uc?view=export&id=0B25UTAlOfPRGb1ZNWXJ2LWN1NUk">
 ```
 
 ## Turn it in
 
 Submit the URL of your GIT repository and a link to your instance on EC2. The link should point directly at the document your created for this assignment.
-

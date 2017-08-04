@@ -1,3 +1,5 @@
 * [HerokuReactStarter.html](HerokuReactStarter.html)
+* [MapExpress.html](MapExpress.html)
+* [MapPlaces.html](MapPlaces.html)
 * [NewGitBucket.html](NewGitBucket.html)
 * [master-list.html](master-list.html)
