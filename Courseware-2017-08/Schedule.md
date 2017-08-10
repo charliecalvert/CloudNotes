@@ -30,12 +30,15 @@ To turn on **Shared Clipboard** and **Drag 'n Drop'** select **Settings | Genera
 
 There will be two sections on Monday
 
-9:00 - 9:30: Introduction
-9:30 -10:30: VirtualBox and Linux
-10:30-10:40: Break
-10:40-11:40: Git
-11:40-12:00: Summary & Questions
+| Time        | Description           |
+|-------------|:---------------------:|
+| 9:00 - 9:30 |  Introduction         |
+| 9:30 -10:30 |  VirtualBox and Linux |
+| 10:30-10:40 |  Break                |
+| 10:40-11:40 |  Git                  |
+| 11:40-12:00 |  Summary & Questions  |
 
+### Monday Details
 VirtualBox Slide Deck:
 
 - [http://bit.ly/vbox-01](http://bit.ly/vbox-01)
@@ -52,26 +55,46 @@ Git lessons:
 
 ## Tuesday
 
-9:00 -10:15: JavaScript Basics
-10:15-10:30: Break
-10:30-11:00: Linux Tricks and Facts
-11:00-11:45: Git Branching
-11:45-12:00: Summary & Questions
+| Time        | Description           |
+|-------------|:---------------------:|
+| 9:00 -10:15 | JavaScript Basics |
+| 10:15-10:30 | Break |
+| 10:30-11:00 | Linux Tricks and Facts |
+| 11:00-11:45 | Git Branching |
+| 11:45-12:00 | Summary & Questions |
+
+## Tuesday Details
+
+Details are here.
 
 ## Wednesday
 
-9:00 -10:15: JavaScript Callbacks
-10:15-10:30: Break
-10:30-11:45: JavaScript ES6
-11:45-12:00: Summary & Questions
+| Time        | Description           |
+|-------------|:---------------------:|
+| 9:00 -10:15 | JavaScript Callbacks |
+| 10:15-10:30 | Break |
+| 10:30-11:45 | JavaScript ES6 |
+| 11:45-12:00 | Summary & Questions |
+
+### Wednesday Details
 
 - [ReactBasics][react-basics]
 
-## Wednesday
+## Thursday
 
-9:00 -10:15: The Cloud and SSH
-10:15-10:30: Break
-10:30-11:45: JavaScript ES6
-11:45-12:00: Summary & Questions
+| Time        | Description           |
+|-------------|:---------------------:|
+| 9:00 -10:15 | The Cloud and SSH     |
+| 10:15-10:30 | Break                 |
+| 10:30-11:45 | JavaScript ES6        |
+| 11:45-12:00 | Summary & Questions   |
+
+### Thursday Details
+
+Details are here.
+
+## Summary
+
+This is the summary.
 
 [react-basics]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html
