@@ -19,14 +19,14 @@ In this exercise, we are working with object literals, not function objects.
 
 ## Part One
 
-Create a **nodejs** folder called **Week02-JavaScriptObjects**. Inside get started by creating a single file called **work.js**. In that file build a JavaScript object literal called **person** with two properties:
+Create a folder called **Week01-JavaScriptObjects**. Inside it create a single file called **work.js**. In that file build a JavaScript object literal called **person** with two properties:
 
 * firstName
 * lastName
 
 Set them to _your_ first and last names. Write the two properties to the console with **console.log()**.
 
-**NOTE**: _You do not have to run this code as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single file called **work.js** that runs from the command line, plus any grunt related files._
+**NOTE**: _You do not have to run this code as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single nodejs file called **work.js** that runs from the command line, plus any grunt related files._
 
 Now run it:
 
@@ -55,7 +55,7 @@ George Washington
 
 ## Part Three
 
-In the same file, using JavaScript object literal syntax, create a new object called **calculator**.
+In the same file, using JavaScript Object Literal syntax, create a new object called **calculator**.
 
 Inside the object literal, create two properties called:
 
@@ -147,7 +147,7 @@ Unless you name is George Washington, your output will probably differ, but this
 
 ## Grunt Check
 
-**NOTE**: _We are not using Grunt this quarter, Spring 2017, as we are switching to webpack. As a result, you should skip this section._
+**NOTE**: _After Spring 2017, we are not using Grunt as often, but instead we are switching to webpack. As a result, you should skip this section._
 
 As always, use Grunt to make sure your code is properly formated. If you have not yet completed the GruntCheck assignment, do so before you turn this assignment in. The point is that you will need to understand the Grunt Check assignment before you can complete this assignment.
 
@@ -158,11 +158,17 @@ As always, use Grunt to make sure your code is properly formated. If you have no
 
 ## Turn it in
 
-You know the drill. Save your work to your repository. Submit the url of your project and/or the directory in which you did your work.
+Save your work to your repository. Submit the url of your project and/or the directory in which you did your work.
 
 Take a screenshot of the output of your program and attach it to the assignment when you turn it in.
 
-In summary: The **firstName** and **lastName** properties of the **person** object should be declared with object literal syntax. I want the **fullName**, **add** and **subject** methods to be part of object literals, and I want the **multiply** method to be part of the **calculator** object but declared outside the original object literal declaration for the **calculator** object.
+In summary:
+
+- The **firstName** and **lastName** properties of the **person** object should be declared with object literal syntax.
+- The **fullName**, **add** and **subject** methods should be declared inside the object literals
+- The **multiply** method should be part of the **calculator** object but declared outside the original object literal declaration for the **calculator** object.
+
+If you unclear what all this means, look at the JavaScript Basics slide deck again.
 
 ## Hint
 

@@ -1,4 +1,6 @@
+* [GitNewRepo.html](GitNewRepo.html)
 * [HerokuReactStarter.html](HerokuReactStarter.html)
+* [JavaScriptObjects.html](JavaScriptObjects.html)
 * [MapExpress.html](MapExpress.html)
 * [MapPlaces.html](MapPlaces.html)
 * [NewGitBucket.html](NewGitBucket.html)

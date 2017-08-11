@@ -2,20 +2,22 @@
 
 Here is the proposed schedule for our course.
 
-## Downloads
+## Download Lubuntu VM
 
-Click the link below and click through until the download begins. After it ends, double click on the OVA file to load it in VirtualBox.
+The links below require a bit of patience. Select one, and determinedly click through until the download begins. After it ends, double click on the downloaded OVA file to load it in VirtualBox.
 
-You will be given a chance to reset the MAC address. Be sure you select this option. It may work one time if you do not do this, but you are likely to hit problems in the future. Please **reset the MAC address**.
+As the OVA file loads, you will be given a chance to reset the MAC address. Be sure you select this option. Your VM may work one time if you do not do this, but you are likely to hit problems in the future. For instance, either you, or other students in the class, may be blocked from the Internet while in the VM. To avoid this, please **reset the MAC address**.
 
 - [Current Pristine Lubuntu](http://bit.ly/pristine-2017-08-a)
 - [Older Pristine Lubuntu](http://bitly.com/pristine-2017-08)
 
 If you forgot to reset the MAC address, let me know, and I will show you how to go to **Settings | Network | Advanced** to reset the MAC after the install. The VM must be stopped while you perform this operation.
 
-Current Pristine adds the following to the older version:
+**NOTE** _MAC addresses are meant to be unique. The DNS servers set up by the college allocate IP addresses based on the presence of a MAC address. If two VMs have the same MAC address, then the machine that logs on first will get on the Internet, but the second machine will usually get errors when it tries to access the Internet._
 
-- Atom
+Note that I provide to links above. You should pick Current Pristine because it adds the following to the older version:
+
+- The [Atom editor](https://atom.io/)
 - Turned on **Shared Clipboard** and **Drag 'n Drop'** between the host and the guest VM.
 
 If you have the older version, you can add Atom with this command:
@@ -28,7 +30,7 @@ To turn on **Shared Clipboard** and **Drag 'n Drop'** select **Settings | Genera
 
 ## Monday
 
-There will be several topics covered on Monday, but the two most important will be on **VirtualBox and Linux**, and the section on **Git**.
+The two most important topics covered on Monday will be on **VirtualBox and Linux**, and the section on **Git**.
 
 | Time        | Description           |
 |-------------|:---------------------:|
@@ -39,6 +41,7 @@ There will be several topics covered on Monday, but the two most important will 
 | 11:40-12:00 |  Summary & Questions  |
 
 ### Monday Details
+
 VirtualBox Slide Deck:
 
 - [http://bit.ly/vbox-01](http://bit.ly/vbox-01)
@@ -73,7 +76,14 @@ Git lessons:
 JavaScript Basics.
 
 - [Writing Simple Code][simple-code]
+- [JavaScript Basics Slide Deck](http://bit.ly/elven-javascript-basics)
 - [JavaScript Basics][javascript-basics]
+
+Exercise:
+
+- [JavaScript Objects][js-objects]
+
+[js-objects]: http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html
 
 Git Branching
 
@@ -117,11 +127,27 @@ The Cloud and SSH:
 
 JavaScript and ES6:
 
-- 
+- [Create React App and Jest][jest-cra]
 
 ## Summary
 
-This is the summary.
+Useful links:
+
+- [JavaScript Courseware][js-cw]
+- [JavaScript book online][js-online]
+- [JavaScript Book PDF][js-pdf]
+- [Git Courseware][git-cw]
+- [Git book on line][gb-online]
+- [Git Book PDF][gb-pdf]
+
+<!-- Links -->
+
+[js-cw]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptCourseware.html
+[js-pdf]: https://drive.google.com/file/d/0B25UTAlOfPRGeGNpVFJtZ1QxUTA/view?usp=sharing
+[js-online]: http://www.elvenware.com/charlie/development/web/JavaScript/
+[git-cw]: http://www.ccalvert.net/development/git/git.html
+[gb-online]: (http://www.ccalvert.net/development/git/)
+[gb-pdf]: https://drive.google.com/file/d/0B25UTAlOfPRGSlo0NGxSclVLbGs/view?usp=sharing
 
 [linux-file-video]: http://youtu.be/pHIRpHDn7WQ
 
@@ -133,6 +159,8 @@ This is the summary.
 
 [javascript-basics]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptBasics.html
 
+[js-objects]: http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html
+
 [elven-callbacks]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html#callbacks
 
 [callback-exercise]: http://www.ccalvert.net/books/CloudNotes/Assignments/Callbacks.html
@@ -140,3 +168,5 @@ This is the summary.
 [react-basics]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html
 
 [heroku-exercise]: http://www.ccalvert.net/books/CloudNotes/Assignments/HerokuStarter.html
+
+[jest-cra]: http://bit.ly/jest-cra

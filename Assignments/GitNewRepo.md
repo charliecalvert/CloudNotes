@@ -1,46 +1,56 @@
 ## Overview
 
-This assignment is designed to help you create a new git repository. The text is designed to be used with either [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.org/). I assume the user is running on Linux, but it would not be hard to follow along if you are using Windows.
+This assignment is designed to help you create a new Git repository. The text covers both [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/). If possible, you should prefer GitHub since it plays a central role in web development. GitHub is _the_ central repository for code related to web development.
 
-Since my students turn in assignments with git, in some, but not all, cases it is important that the repositories be private. Bitbucket provides free private repositories.  I believe free private repositories are also available on GitHub if you sign up for the [Student Pack][github-edu].
+Since my students turn in assignments with Git, in some, but not all, cases it is important that their repositories be private. Free private repositories are readily available on GitHub if you sign up for the [Student Pack][github-edu]. BitBucket also provides free private repositories.  
 
-**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Note that git itself is an open source project entirely separate from either GitHub or BitBucket. Git is git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
+**NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Note that Git itself is an open source project entirely separate from either GitHub or BitBucket. Git is Git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
+
+I assume the user is running on Linux, but it would not be hard to follow along if you are using Windows. Again, you should prefer Linux as it, and **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
 
 See also:
 
+* [Is Git Reliable?](http://www.ccalvert.net/development/git/git-introduction.html#reliable)
 * [Git Slide Deck](http://bit.ly/git-basics)
 * [Git on Elvenware][elven-git]
 * [Git and Cloud 9](http://bit.ly/elf-cloud9)
 * [Git Video][git-video]
 
-## Git in 2016
+## Configure Git {#configure}
 
-Topics like "is git reliable?", "is it me, or is it git?" come up from time to time. My concern is that students will spin their wheels, focusing on imaginary problems with git, rather than trying to problem solve.
+After installing Git, there are few steps you need to take to set it up. It is perhaps simplest to get these chores out of the way at the very start. Your goals will be to tell Git:
 
-- Git is used by 42.9 percent of all software developers
-- In the UK, nearly one quarter (23.5) of developer job postings cite git. The details:
-	- 23.5% Git
-	- 16.3% Subversion
-	- 11.58% Microsoft Team Software Foundation
-	- 1.62% Mercurial (like Git, but easier to use)
-	- 1.13% Visual Source Safe
-- As of April, 2016, GitHub has about 14 million users and 35 million repositories. Those numbers are growing quickly. That's just github, not total git users. You can use git and not use any cloud repository, or use git and use a different cloud repository such as BitBucket. Many companies have a dozen or more users who share a single account.
+- Your username
+- Your email address
+- Your preferred style to use when pushing data to the cloud.
 
-Related links which probably contain updates to total github users:
+Issue these commands, editing as appropriate:
 
-- <https://github.com/about>
-- <https://github.com/explore>
+```
+git config --global user.name "charlie at school"
+git config --global user.email "noone@nowhere.net"
+git config --global push.default simple
+```
 
-GitHub and BitBucket are websites, and websites are sometimes down due to operational errors or denial of service attacks. But GitHubs record is usually good:
+These commands are stored in your Git config file, usually found here:
 
-- [GitHub Status](https://status.github.com/graphs/past_month)
-- [Bitbucket Status](http://status.bitbucket.org/)
+```
+~/.gitconfig
+```
 
-Of course, it is always possible that one of us will hit a bug in git. Yet the odds that we hit a git bug when performing basic operations is very, very low.
+You can see the contents of the file by issuing this command:
 
-Git is not perfect. No piece of software is perfect. But git is, in my opinion, one of the most reliable, tested, and proven software programs in the world.
+```
+cat ~/.gitconfig
+```
 
-## Clone an Existing Repository
+**NOTE**: *I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig].*
+
+[gitconfig]: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
+**NOTE** _Since I am usually not sharing my repository with a large number of users, I tend to use the name to identify the location from which I am working. For instance **charlie at home**, **charlie at school**, **charlie on his laptop** etc. This is more than a bit quirky, and might not be at all appropriate in a corporate setting, but I nevertheless find it occasionally useful to know where I was when I did some work._
+
+## Clone an Existing Repository {#clone-repo}
 
 This assignment is designed to help your create a new repository from scratch. Sometimes students try to use it as a guide for cloning an existing repository, but I would not recommending doing that. If you already have a repository in **GitHub** or **BitBucket** you can get a local copy of that repository by cloning it:
 
@@ -67,7 +77,7 @@ Now that we understand what to do with an existing repositories, lets go back to
 
 ## Git Account GitHub
 
-Use [Github](https://github.com) to host your [git](http://git-scm.com/book/en/v2) repository. You have two choices:
+Use [Github](https://github.com) to host your [Git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
 - Create a new GitHub account if you don't have one already
 - Use an existing GitHub account.
@@ -78,7 +88,7 @@ Use [Github](https://github.com) to host your [git](http://git-scm.com/book/en/v
 
 ## Git Account BitBucket
 
-Use [BitBucket](https://bitbucket.org) to host a private [git](http://git-scm.com/book/en/v2) repository. You have two choices:
+Use [BitBucket](https://bitbucket.org) to host a private [Git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
 - Create a new BitBucket account if you don't have one already
 - Use an existing BitBucket account.
@@ -90,7 +100,7 @@ In GitHub or BitBucket, from the home page, create a new repository:
 * Choose the **Create** or **New Repository** menu item near the top
 * Select **Create Repository**
 
-Name your git repository like this, where **isit320** should be name of your class:
+Name your Git repository like this, where **isit320** should be name of your class:
 
 	isit320_lastname-year
 
@@ -98,11 +108,11 @@ For instance, your repository might have a name like one of the following, depen
 on the class you are in and the current year:
 
 ```
-prog219-calvert-2016
-prog270-calvert-2016
-prog272-calvert-2016
-isit320-calvert-2016
-isit322-calvert-2016
+prog219-calvert-2017
+prog270-calvert-2017
+prog272-calvert-2017
+isit320-calvert-2017
+isit322-calvert-2017
 ```
 
 **NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.*
@@ -124,7 +134,7 @@ Make sure you give me _read/write_ access to your repository.
 
 ## Git URLs
 
-You can read about git URLs on Elvenware:
+You can read about Git URLs on Elvenware:
 
 - [Git URLs and SSH][urls-and-ssh]
 - [Finding and Changing URLs][find-change]
@@ -274,38 +284,49 @@ ln -s Prog270Key main-key
 
 ## Build Repository
 
-If you created a repository on GitHub with an pre-initialized **README.md** file, then just clone your repository as described above. Otherwise, follow the steps outlined here. It is simpler to have a pre-initialized readme and then clone a repository. But if you don't have a README, and you follow the steps outlined below, you will learn more about git. Every single fact you learn about git makes a bit more employable. Git is central to web development in many shops.
+If you created a repository on GitHub with an pre-initialized **README.md** file, then just clone your repository as [described above](#clone-repo). For instance:
 
-Assuming you have no README.md, then follow these steps. On your hard drive, enter the following, where **lastname** should be your last name, in all lower case letters:
+```bash
+git clone git@github.com:USERNAME/REPO_NAME.git
+```
+
+This is the simplest way to get started, and is the technique you should probably use. There are times, however, when it is useful to understand how to first create a local repository, and then push it into an empty repository on a cloud site such as GitHub or BitBucket. Though it is simpler to have a pre-initialized **README.md** and then clone a repository, there is much to be learned from followning the steps outlined below. Every single fact you learn about Git makes you a bit more employable. Git is central to web development in many shops and a deep knowledge of its working can help make you very employable.
+
+Once again, this scenario shows how to start a repository on your hard drive, then push it to an empty repository on the cloud. This lesson also demonstrates how to push an existing repository to the cloud.
+
+To get started enter the following, where **lastname** should be your last name, in all lower case letters. Be sure to use dashes instead of underscores, and don't use any upper case letters:
 
 ```
-cd Git
-mkdir isit320-lastname-2016
-cd isit320-lastname-2016
+cd ~/Git
+mkdir isit320-lastname-2017
+cd isit320-lastname-2017
 git init
 ```
 
 For instance:
 
 ```
-mkdir isit320-calvert-2016
+mkdir isit320-calvert-2017
+cd isit320-calvert-2017
 ```
 
 Now issue this command where the details will differ in your case:
 
 ```
-git remote add origin git@bitbucket.org:username/isit320-lastname-2016.git
+git remote add origin git@bitbucket.org:username/isit320-lastname-2017.git
 ```
 
-You can find the exact string, or something very close to it, in BitBucket. For instance, when you first create a repository in BitBucket, this is string is displayed in the confirmation page for the creation of your repository. For existing repositories, you can find something very like that string by choosing **Actions** (...) and **Clone** from the navigation menu on the left.
+You can find the exact string, or something very close to it, in GitHub or BitBucket. For instance, when you first create a repository in BitBucket, this string is displayed in the confirmation page for the creation of your repository. For existing repositories, you can find something very like that string by choosing **Actions** (...) and **Clone** from the navigation menu on the left.
 
-Now create README file in [markdown][markdown] format:
+Now create a README file in [markdown][markdown] format:
 
 ```
 echo lastname >> README.md
 ```
 
 ## Create gitignore File {#gitignore}
+
+Before pushing your repository to the cloud, you should create a **.gitignore** file. This file tells Git which files to ignore, which files should not be pushed to the cloud. This may seem like an unimportant step, but for a developer to try to use Git without setting up **.gitignore** file would be a bit like trying to drive a car that had no break. The inevitable result: a 95% chance of rain accompanied by high winds and thunderstorms.
 
 In the root of your repository, create a **.gitignore** file with the following items in it:
 
@@ -342,33 +363,6 @@ Files that begin with a period are hidden. To see them, type **ls -la** or **ls 
 [nano]:http://www.tuxradar.com/content/text-editing-nano-made-easy
 [nano-cheat]:https://www.google.com/search?q=nano+editor+cheat+sheet
 
-## Configure Git {#configure}
-
-Issue these commands, editing as appropriate:
-
-```
-git config --global user.name "charlie at school"
-git config --global user.email "noone@nowhere.net"
-git config --global push.default simple
-```
-
-These commands are stored in your git config file, usually found here:
-
-```
-~/.gitconfig
-```
-
-You can see the contents of the file by issuing this command:
-
-```
-cat ~/.gitconfig
-```
-
-**NOTE**: *I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig].*
-
-[gitconfig]: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
-
-
 ## Commit your Work {#commit}
 
 Now add, commit and push your content:
@@ -380,7 +374,7 @@ git commit -m "Initial commit"
 git push -u origin master
 ```
 
-When we type git add followed by a period we are asking git to add all the changes we have made to the repository. If you want to add just one file, issue a command like this:
+When we type Git add followed by a period we are asking Git to add all the changes we have made to the repository. If you want to add just one file, issue a command like this:
 
 ```
 git add README.md
@@ -397,7 +391,7 @@ When upi type **git push -u origin master** then:
 * The u bit sets the upstream repository, the place where you pull and push from
 	* In our case the upstream server is BitBucket or GitHub.
 
-You can learn more about git on [Elvenware][elven-git].
+You can learn more about Git on [Elvenware][elven-git].
 
 [git-reset]: http://stackoverflow.com/a/348234
 [elven-git]: http://www.elvenware.com/charlie/development/cloud/Git.html
@@ -406,8 +400,8 @@ You can learn more about git on [Elvenware][elven-git].
 If you have problems, check these items:
 
 - Is your shh key loaded properly?
-- Does the URL in your .git/config match the url you see in github. It should begin with git, not https. In general, it follows this format:
-		- git@github.com:username/prog270-lastname-2016.git
+- Does the URL in your **.git/config** match the URL you see in GitHub. It should begin with Git, not https. In general, it follows this format:
+		- git@github.com:username/prog270-lastname-2017.git
 
 Also, you can learn something about the keys that are currently loaded with this command: **ssh-add -l**. That's a small l for **list**. More details are [here][keyload01] and [here][keyload02]. Also, try [capital L][keyload03] to see public keys.
 
@@ -510,11 +504,11 @@ If you pull without pushing first, eventually you will hit merge conflicts. You 
 ### Identify a repository {#id-git}
 
 You can identify a repository by looking for the hidden directory named **.git**. If that file
-exists, then you are in the root of a git repository.
+exists, then you are in the root of a Git repository.
 
-In this listing, you can tell that the file called **README.md** is in a git repository
+In this listing, you can tell that the file called **README.md** is in a Git repository
 because a long (l) listing (ls) of the directory with the hidden flag (a) reveals the existence of
-the .git folder:
+the **.git** folder:
 
 ```bash
 $ ls -la
@@ -591,7 +585,7 @@ git push -u origin master
 ### RSA Fingerprints {#fingerprints}
 
 It is possible to spoof a URL or even an IP address. As a result, when you
-push and pull from BitBucket or GitHub, git checks to see that the machine
+push and pull from BitBucket or GitHub, Git checks to see that the machine
 you are connecting to is the correct machine. In particular, it looks in
 this file for the fingerprint of your remote machine:
 
@@ -602,7 +596,7 @@ this file for the fingerprint of your remote machine:
 If the machine you are going to connect to is not listed in known-hosts, then
 the connection will be aborted.
 
-When you first push to bitbucket or any new SSH server, you should be prompted
+When you first push to BitBucket or any new SSH server, you should be prompted
 to confirm the authenticity of the site:
 
 ```
@@ -643,7 +637,7 @@ Remember that when you create a repository for the first time, you need to share
 - BitBucket it is ccalvert
 - GitHub it is charliecalvert
 
-Though it may confuse matters somewhat, I should perhaps add that it is not wrong to pull down an existing repository onto your machine for the first time by first typing git init. It is just that I think it is simpler to pull it down by cloning it. Also, we have to be sure never to type git init outside our repository, and particular, by typing it in our home directory or in the ~/Git directory.
+Though it may confuse matters somewhat, I should perhaps add that it is not wrong to pull down an existing repository onto your machine for the first time by first typing **git init**. It is just that I think it is simpler to pull it down by cloning it. Also, we have to be sure never to type **git init** outside our repository, and particular, by typing it in our home directory or in the **~/Git** directory.
 
 ## Git Clone and Git Init
 
@@ -656,7 +650,7 @@ Once again, you can clone an empty repository, you just can't clone a non-existe
 - **git clone** sets up your local repository to use the remote cloud server for your repository. It also tells your local repository which branch to use.
 - **git init** creates a repository, but does not automatically set up the remote server nor specify the branch.
 
-To put the matter somewhat differently: **git clone** makes a copy of an existing repository, but gives you little control of the process. In most cases, you don't need that control, so use **git clone**. However, if you want more control, or more in depth understanding of how **git** works, then use **git init**.
+To put the matter somewhat differently: **git clone** makes a copy of an existing repository, but gives you little control of the process. In most cases, you don't need that control, so use **git clone**. However, if you want more control, or more in depth understanding of how Git works, then use **git init**.
 
 The following are two ways of doing the same thing. We could use either one when pulling down an existing repository with some content in it.
 
@@ -690,13 +684,13 @@ Note that these instructions say **git push** while the first example I give abo
 
 The **git push** shown in the BitBucket instructions only makes sense because we created an empty repository in BitBucket and we want to push new content that we created locally into it. If we have an existing repository with content, then use **git pull**.
 
-One thing in favor of the code shown in my first example and in the BitBucket example is that it shows exactly what is happening, while git clone does a lot of work behind the scenes. Still, **git clone** is a lot simpler to use... Perhaps BitBucket and GitHub use the somewhat more complex code simply to raise the bar a bit, and keep out complete neophytes?
+One thing in favor of the code shown in my first example and in the BitBucket example is that it shows exactly what is happening, while Git clone does a lot of work behind the scenes. Still, **git clone** is a lot simpler to use... Perhaps BitBucket and GitHub use the somewhat more complex code simply to raise the bar a bit, and keep out complete neophytes?
 
 ## Set Git URL
 
 The following information is for advanced users only. You do not need this if you are just getting started.
 
-In your hidden .git folder, in a file called **config**, git stores the URL for your repository. If you want to find that URL without opening up the **config** file, issue this command from inside your repository:
+In your hidden **.git** folder, in a file called **config**, Git stores the URL for your repository. If you want to find that URL without opening up the **config** file, issue this command from inside your repository:
 
 ```
 git remote -v
@@ -732,7 +726,7 @@ http://bit.ly/git-basics
 
 And this document/assignment: http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html
 
-It would definitely be a mistake to put a private key in a public git repository. A private repository is probably okay to use, but still not recommended as eventually you may want to share your repository with others. Putting your public keys on Git is probably okay, but also probably not very useful. The best plan is to either create two or more pairs, or to create one pair and upload to Google Drive so you can download it as needed at home or at school.
+It would definitely be a mistake to put a private key in a public Git repository. A private repository is probably okay to use, but still not recommended as eventually you may want to share your repository with others. Putting your public keys on Git is probably okay, but also probably not very useful. The best plan is to either create two or more pairs, or to create one pair and upload to Google Drive so you can download it as needed at home or at school.
 
 If you want, it is possible to put a password on your private key.
 
