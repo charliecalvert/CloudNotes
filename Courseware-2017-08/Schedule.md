@@ -28,7 +28,7 @@ To turn on **Shared Clipboard** and **Drag 'n Drop'** select **Settings | Genera
 
 ## Monday
 
-There will be two sections on Monday
+There will be several topics covered on Monday, but the two most important will be on **VirtualBox and Linux**, and the section on **Git**.
 
 | Time        | Description           |
 |-------------|:---------------------:|
@@ -46,6 +46,11 @@ VirtualBox Slide Deck:
 The following is a very old document and needs to be edited, but still it has some useful information in it:
 
 - [Elven VirtualBox](http://www.elvenware.com/charlie/os/linux/VirtualBox.html)
+
+Linux Reference:
+
+- [Linux Files][linux-files]
+- [Linux File Video][linux-file-video]
 
 Git lessons:
 
@@ -65,7 +70,15 @@ Git lessons:
 
 ## Tuesday Details
 
-Details are here.
+JavaScript Basics.
+
+- [Writing Simple Code][simple-code]
+- [JavaScript Basics][javascript-basics]
+
+Git Branching
+
+- [Git Branching][git-branching]
+
 
 ## Wednesday
 
@@ -77,6 +90,13 @@ Details are here.
 | 11:45-12:00 | Summary & Questions |
 
 ### Wednesday Details
+
+Callbacks:
+
+- [Elvenware Callbacks][elven-callbacks]
+- [Callback Exercise][callback-exercise]
+
+ES6:
 
 - [ReactBasics][react-basics]
 
@@ -91,10 +111,32 @@ Details are here.
 
 ### Thursday Details
 
-Details are here.
+The Cloud and SSH:
+
+- [Heroku][heroku-exercise]
+
+JavaScript and ES6:
+
+- 
 
 ## Summary
 
 This is the summary.
 
+[linux-file-video]: http://youtu.be/pHIRpHDn7WQ
+
+[linux-files]: http://www.elvenware.com/charlie/os/linux/LinuxFiles.html
+
+[git-branching]: http://www.ccalvert.net/development/git/git-branches.html
+
+[simple-code]: http://www.elvenware.com/charlie/development/web/JavaScript/WritingSimpleCode.html
+
+[javascript-basics]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptBasics.html
+
+[elven-callbacks]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html#callbacks
+
+[callback-exercise]: http://www.ccalvert.net/books/CloudNotes/Assignments/Callbacks.html
+
 [react-basics]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html
+
+[heroku-exercise]: http://www.ccalvert.net/books/CloudNotes/Assignments/HerokuStarter.html
