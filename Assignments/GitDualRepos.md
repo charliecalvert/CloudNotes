@@ -194,8 +194,8 @@ At this stage you will be in an "error" state. You will have a conflict. Resolve
 - [Git Merge Conflicts][git-conflicts]
 - [Git Merge Tool][git-merge-tool]
 
-[git-conflicts]: http://www.elvenware.com/charlie/development/cloud/Git.html#merging-code
-[git-merge-tool]: http://www.elvenware.com/charlie/development/cloud/Git.html#merge-tool
+[git-conflicts]: http://www.elvenware.com/charlie/development/git/git-merge.html#merging-code
+[git-merge-tool]: http://www.elvenware.com/charlie/development/git/git-merge.html#merge-tool
 
 ## Step Seven: Share Repository
 

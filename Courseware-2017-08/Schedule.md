@@ -139,6 +139,7 @@ Useful links:
 - [Git Courseware][git-cw]
 - [Git book on line][gb-online]
 - [Git Book PDF][gb-pdf]
+- [Git Book EPUB][gb-epub]
 
 <!-- Links -->
 
@@ -147,7 +148,8 @@ Useful links:
 [js-online]: http://www.elvenware.com/charlie/development/web/JavaScript/
 [git-cw]: http://www.ccalvert.net/development/git/git.html
 [gb-online]: (http://www.ccalvert.net/development/git/)
-[gb-pdf]: https://drive.google.com/file/d/0B25UTAlOfPRGSlo0NGxSclVLbGs/view?usp=sharing
+[gb-pdf]: http://bit.ly/elven-git-pdf
+[gb-epub]: http://bit.ly/elven-git-epub
 
 [linux-file-video]: http://youtu.be/pHIRpHDn7WQ
 

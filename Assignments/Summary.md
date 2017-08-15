@@ -1,3 +1,4 @@
+* [GitDualRepos.html](GitDualRepos.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [HerokuReactStarter.html](HerokuReactStarter.html)
 * [JavaScriptObjects.html](JavaScriptObjects.html)
