@@ -35,7 +35,7 @@ git config --global push.default simple
 These commands are stored in your Git config file, usually found here:
 
 ```
-~/.gitconfig
+	~/.gitconfig
 ```
 
 You can see the contents of the file by issuing this command:
