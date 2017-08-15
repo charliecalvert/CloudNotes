@@ -32,19 +32,13 @@ git config --global user.email "noone@nowhere.net"
 git config --global push.default simple
 ```
 
-These commands are stored in your Git config file, usually found here:
-
-```
-	~/.gitconfig
-```
-
-You can see the contents of the file by issuing this command:
+These commands are stored in your Git config file, usually found here **~/.gitconfig**. You can see the contents of the file by issuing this command:
 
 ```
 cat ~/.gitconfig
 ```
 
-**NOTE**: *I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig].*
+**NOTE**: _Remember that the tilda (~) is a shorthand for your HOME directory. I should add that I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig]._
 
 [gitconfig]: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
@@ -303,7 +297,7 @@ cd isit320-lastname-2017
 git init
 ```
 
-For instance:
+For instance, here we create a directory and navigate into it:
 
 ```
 mkdir isit320-calvert-2017
