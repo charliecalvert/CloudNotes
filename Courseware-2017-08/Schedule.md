@@ -77,13 +77,15 @@ JavaScript Basics.
 
 - [Writing Simple Code][simple-code]
 - [JavaScript Basics Slide Deck](http://bit.ly/elven-javascript-basics)
-- [JavaScript Basics][javascript-basics]
+- [Elvenware JavaScript Basics Simple Types and an Array of Objects][javascript-basics]
+- [Elvenware JavaScript Objects][elf-objects]
 
 Exercise:
 
 - [JavaScript Objects][js-objects]
 
 [js-objects]: http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html
+[elf-objects]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html
 
 Git Branching
 
