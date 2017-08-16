@@ -1,3 +1,5 @@
+* [BowerNpm.html](BowerNpm.html)
+* [ExpressJQuery.html](ExpressJQuery.html)
 * [GitDualRepos.html](GitDualRepos.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [HerokuReactStarter.html](HerokuReactStarter.html)

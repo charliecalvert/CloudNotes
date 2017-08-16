@@ -86,32 +86,11 @@ Among our goals over the next weeks will be to understand these libraries. You d
 
 ## Step03: Bower
 
-We use NPM to install server side dependencies, bower to install client side dependencies. We don't have to do things this way, but it helps us neatly partition our app if we follow this policy.
+The **CreateExpressProject** script automates the setup of Bower. To read more about exactly what it does, see this section from the Elvenware site:
 
-To begin, we need to create a bower.json file. You can do this in one of two ways:
+- [Bower on Elvenware][elf-bower]
 
-* Run **bower init**
-* Copy a sample bower.json from elsewhere: **cp $ELF_TEMPLATES/bower.json .**.
-
-If you choose the first option, you can take all the defaults for the prompts that you see, or fill in the obvious fields with sensible values. If you choose for the second option, don't forget the period at the end of the text for the copy command. It specifies where you should copy bower.json. In particular, it says: copy it here. The environment variable $ELF_TEMPLATES points at:
-
-```
-~/Git/JsObjects/Utilities/Templates 
-```
-
-By default, bower installs your files not into **node_modules** but into a directory called **bower_components**. In express applications, however, we want to install bower components into a different directory. In particular, we want them to go into our project's **public/components** folder. To ensure that happens, copy a bower configuration file into your project:
-
-```
-cp $ELF_TEMPLATES/.bowerrc .
-```
-
-This small text file contains the following text, which tells bower to install its components into the **public/components** folder:
-
-```
-{
-  "directory": "public/components"
-}
-```
+[elf-bower]: http://www.elvenware.com/charlie/development/web/JavaScript/NodePackages.html#bower
 
 ## Step04: Install Packages {#install-packages}
 
@@ -137,7 +116,7 @@ bower install jquery --save
 
 ## Step05: Load Bootstrap and jQuery {#load}
 
-In WebStorm, open up **views/layout.jade**. Jade is sensitive to indentation. As a result, you should be very careful not to disturb the indentation in your file. 
+In WebStorm, open up **views/layout.jade**. Jade is sensitive to indentation. As a result, you should be very careful not to disturb the indentation in your file.
 
 Modify the jade code to load both jQuery and Bootstrap:
 
@@ -178,7 +157,7 @@ To run your project, type the following in the root of your project
 npm start
 ```
 
-Now you need to confirm that your work in **layout.jade** did in fact create code that loads **jquery** and **bootstrap**. Open up Chromium or Chrome. Press F12 to load the developer tools. Turn to the **network** page. Make sure that you can see that both **jquery** and **bootstrap** loaded. 
+Now you need to confirm that your work in **layout.jade** did in fact create code that loads **jquery** and **bootstrap**. Open up Chromium or Chrome. Press F12 to load the developer tools. Turn to the **network** page. Make sure that you can see that both **jquery** and **bootstrap** loaded.
 
 There should be no red text on the page. Red text is usually reserved for errors. If you see errors, modify your **layout.jade** file to correct them.
 
@@ -204,9 +183,9 @@ Read this section from Elvenware:
 
 ## Suggestion Two
 
-Perhaps the following is written with tongue in cheek, but sometimes the truth is said in jest. 
+Perhaps the following is written with tongue in cheek, but sometimes the truth is said in jest.
 
-Once you have completed the project successfully, move to your **Source** directory or to a **temp** directory. 
+Once you have completed the project successfully, move to your **Source** directory or to a **temp** directory.
 
 Redo the whole assignment.
 
@@ -233,4 +212,3 @@ source ~/.bash_aliases
 ```
 
 The last command shown above loads the updated **.bash_aliases** file into memory. You could do the same thing by restarting the bash shell.
- 

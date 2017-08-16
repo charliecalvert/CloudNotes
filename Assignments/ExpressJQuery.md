@@ -12,13 +12,31 @@ Goals:
 
 Create a new express app by issuing these commands starting from the root of your repository:
 
-	express Week03-ExpressJQuery
+	CreateExpressProject Week03-ExpressJQuery
 	cd Week03-ExpressJQuery
 	npm install
 
 Open up your project in WebStorm.
 
-Open **bin/www**. Set the port to 30025. In **package.json**,  plug in **nodemon** instead of **node**. Set the title in **routes/index.js** to some string that contains your last name.
+Open **bin/www**. Check that the port is set to 30025:
+
+```javascript
+var port = normalizePort(process.env.PORT || '30025');
+```
+
+In **package.json**, make sure you are using  **nodemon** instead of **node**:
+
+```javascript
+"start": "nodemon ./bin/www"
+```
+
+Set the title in **routes/index.js** to some string that contains your last name.
+
+```javascript
+router.get('/', function(req, res, next) { 'use strict';
+     res.render('index', { title: 'ExpressJQuery-LastName' });
+});
+```
 
 ## Step 02: Control.js {#control}
 
@@ -48,87 +66,16 @@ $(document).ready(function() {
 });
 ```
 
-## Step Three: Layout {#layout}
+## Step Three: Bower Layout {#layout}
 
-Bower is like npm. Use NPM for server side code. Use Bower for client side code. This is not absolutely necessary, but it is common. As a result, we will learn about both NPM and Bower in this class.
+The **CreateExpressProject** script automates the setup of Bower. To read more about exactly what it does, see this section from the Elvenware site:
 
-Install Bower:
+- [Bower on Elvenware][elf-bower]
 
-    npm install -g bower
+[elf-bower]: http://www.elvenware.com/charlie/development/web/JavaScript/NodePackages.html#bower
 
-Create a **bower.json** file in the root of your current project:
 
-    bower init
-
-You will be prompted for input. Take all the defaults or use your common sense to fill in the fields as you are prompted for them.
-
-Remember that Windows does not like to start a file with a period. As a result, we need to create **.bowerrc** like this:
-
-    echo { } > .bowerrc
-
-Edit **.bowerrc** in geany and add the following so that we will install bower components into the **public/components** directory:
-
-```javascript
-{
-  "directory": "public/components",
-  "json": "bower.json"
-}
-```
-
-Again, test in **jsonlint.com** to make sure it is valid.
-
-Install jquery:
-
-    bower install jquery --save
-
-The **--save** parameter saves your request for jquery into the **bower.json file.**  
-
-My **bower.json** file now looks like this:
-
-```javascript
-{
-  "name": "Week02-ExpressJQuery",
-  "version": "0.0.0",
-  "authors": [
-    "Charlie CedarIsle Calvert <charlie@elvenware.com>"
-  ],
-  "description": "JQuery Demo",
-  "main": "bin/www",
-  "keywords": [
-    "JQuery"
-  ],
-  "license": "MIT",
-  "homepage": "www.elvenware.com",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "~2.1.3"
-  }
-}
-```
-
-The most important part is the **dependencies** object at the end of the file.
-
-Modify **/views/layout.jade** to include jquery and **Control.js**
-
-```
-doctype html
-html
-    head
-        title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        script(src='components/jquery/dist/jquery.js')
-        etc...
-```
-
-**NOTE**: *When I type **etc...**, that can sometimes be translated as: "Filling in this part of the file is left as an exercise for the reader."*
-
-## Step Four: Jade {#jade}
+## Step Four: Jade or Pug {#jade}
 
 In **index.jade** use Jade to create a button and two paragraphs. To do this, just paste in the following code, but be careful of your indents:
 

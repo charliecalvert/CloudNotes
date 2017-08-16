@@ -127,6 +127,12 @@ The Cloud and SSH:
 
 - [Heroku][heroku-exercise]
 
+JavaScript and Express:
+
+- [Express Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html)
+- [Express JQuery](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressJQuery.html)
+
+
 JavaScript and ES6:
 
 - [Create React App and Jest][jest-cra]
