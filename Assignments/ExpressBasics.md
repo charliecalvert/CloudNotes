@@ -2,9 +2,15 @@
 
 This assignment is designed to introduce you to [Express Js](http://expressjs.com/). Express is the library most often used by NodeJs developers when creating web applications. It is not the only way to create an application, but it is by far the most common.
 
+- Express Presentation: [http://bit.ly/JavaScriptNode][epres]
+
+## Before You Begin
+
+Here are several notes that are worth considering before you start working with Node.
+
 **NOTE**: _Express is rarely used on its own. It is simply the foundation on which more complex applications are built. In most cases, other libraries such as jQuery, Angular or React will also be used._
 
-- Express Presentation: [http://bit.ly/JavaScriptNode][epres]
+**NOTE**: _You can combine React and Express, but most React applications are created with a special tool call [Create Express App][cra-home]. If your primary goal is to create a React based application, then consider using Create Express App as explained [here][elf-cra]. Alternatively, look [here][elf-react] to learn how to craft a React app from scratch._
 
 **NOTE**: _The default Express template library used to be called Jade, but is now called Pug. At this stage, at least, the two tools are essentially identical. If you find places where I reference Jade, you can simply mentally translate that to Pug, or vice-versa, depending on your needs._
 
@@ -154,3 +160,6 @@ function onListening() {
 [jquery-home]: https://jquery.com/
 [ubuntu-setup]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/UbuntuAndCloudNineSetup
 [epres]: http://bit.ly/JavaScriptNode
+[cra-home]: https://github.com/facebookincubator/create-react-app
+[elf-cra]: http://bit.ly/jest-cra
+[elf-react]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html

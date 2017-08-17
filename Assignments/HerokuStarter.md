@@ -10,19 +10,23 @@ We don't need it yet, but note that there are instructions to install Heroku for
 
 - <https://blog.heroku.com/deploying-react-with-zero-configuration>
 
+## Install
 
+Read about the install here:
 
-Make sure you have node 4.0 or greater installed. Check also for npm and git. You don't need the exact numbers, but they should not be wildly different:
+- [Heroku Install](https://devcenter.heroku.com/articles/heroku-cli#debian-ubuntu)
 
-</pre>
-$ node --version
-v5.11.0
+Make sure you have **node** 6.11.2 or greater installed. Check also for **npm** and **git**. You don't need the exact numbers, but they should not be wildly different:
+
+<pre>
+node --version
+v8.4.0
 charlie@rohan-elf:~/temp
 $ npm -v
-3.8.6
+5.3.0
 charlie@rohan-elf:~/temp
 $ git --version
-git version 2.7.4
+git version 2.11.0
 </pre>
 
 Type **heroku** to log in. If that doesn't work, try **heroku auth:login** instead:
@@ -35,9 +39,17 @@ Password (typing will be hidden):
 Logged in as foo@foobar.com
 </pre>
 
+You usually won't need to log out, but if you want to, this should do the trick:
+
+<pre>
+heroku auth:logout
+</pre>
+
+To learn more about the **auth** command, type **heroku help auth**.
+
 ## Deploy
 
-Go to your ~/Source or ~/temp directory and run the following:
+Go to your **~/Source** or **~/temp** directory and run the following:
 
 **NOTE**: _Don't create your heroku project in your repository. If you do, you will end up with a repository nested in a repository, which you want to avoid._
 
@@ -57,12 +69,51 @@ heroku create lastname01
 And some details:
 
 <pre>
-echo 'web: node bin/www' > Procfile
 echo 'node_modules' > .gitignore
 echo '.idea' >> .gitignore
 echo '.c9' >> .gitignore
-echo 'components' >> .gitignore
+echo 'bower_components' >> .gitignore
 </pre>
+
+This is no longer needed:
+
+<pre>
+echo 'web: node bin/www' > Procfile
+</pre>
+
+## NPM and Bower
+
+In NPM, we don't need dev dependencies. We need, however, to add a manual install of bower and a **postinstall** step:
+
+  npm install --save bower
+
+**NOTE**: _Bower gives a warning. We will fix this later._
+
+Also, open **package.json** and change nodemon to node in the **start** property:
+
+```javascript
+{
+  "name": "calvert04",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "postinstall": "node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "bower": "^1.8.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2"
+  }
+}
+```
+
+## Git Push
 
 Perform a standard **git add .** and **git commit -m "First commit to heroku of XXX project"**. Customize the commit comment in any way want, the text I show is just a suggestion. Then push to git like this:
 
@@ -97,7 +148,7 @@ If you do keep nodemon, consider using **nodemon.json** to be sure that writing 
 ```javascript
 {
   "verbose": true,
-  "ignore": ["renewables.json", "**/components/**"]
+  "ignore": ["renewables.json", "**/bower_components/**"]
 }
 ```
 
@@ -165,37 +216,7 @@ heroku apps:destroy --app boiling-brook-54970
 \> boiling-brook-54970
 </pre>
 
-## NPM and Bower
 
-In NPM, we don't need dev dependencies. We need, however, to add a manual install of bower and a **postinstall** step:
-
-  npm install --save bower
-
-**NOTE**: _Bower gives a warning. We will fix this later._
-
-Also, open **package.json** and change nodemon to node in the **start** property:
-
-```javascript
-{
-  "name": "calvert04",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "postinstall": "node_modules/bower/bin/bower install"
-  },
-  "dependencies": {
-    "body-parser": "~1.17.1",
-    "bower": "^1.8.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2"
-  }
-}
-```
 
 ## Trouble Shoot
 
@@ -322,6 +343,7 @@ The best docs are on the Heroku site. But there are others, such as:
 
 - <https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku>
 
+
 ## SSH
 
 Don't do this section. It is not important, but I leave it here in case anyone is interested. You don't need to set up SSH because of the way Heroku works, but it certainly is not wrong to do so.
@@ -387,31 +409,4 @@ On Cloud 9, heroku is already installed. But on Pristine Lubuntu you will need t
 
 <pre>
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-</pre>
-
-Now Type **heroku** on Pristine or Lubuntu or **heroku auth:login** on Cloud 9. Log in with your heroku user name and password. On Pristine Lubuntu:
-
-<pre>
-$ heroku
-heroku-cli: Installing CLI... 22.7MB/22.7MBB
-Enter your Heroku credentials.
-Email: foobar@foo.com
-Password (typing will be hidden):
-Logged in as foobar@foo.com
-
- ▸    Add apps to this dashboard by favoriting them with heroku apps:favorites:add
-See all add-ons with heroku addons
-See all apps with heroku apps --all
-
-See other CLI commands with heroku help
-</pre>
-
-On Cloud Nine, or if you don't see the login pronpt when you type **heroku**, the try **heroku auth:login** instead:
-
-<pre>
-heroku auth:login
-Enter your Heroku credentials.
-Email: foo@foobar.com
-Password (typing will be hidden):
-Logged in as foo@foobar.com
 </pre>

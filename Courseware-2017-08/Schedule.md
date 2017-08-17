@@ -129,6 +129,7 @@ The Cloud and SSH:
 
 JavaScript and Express:
 
+- [Express Slide Deck](http://bit.ly/JavaScriptNode)
 - [Express Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html)
 - [Express JQuery](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressJQuery.html)
 
