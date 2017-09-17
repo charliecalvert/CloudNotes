@@ -1,8 +1,10 @@
-## Isit320 Week01 2016
+## Isit320 Week01 2017
 
-There is no main text for this course. Though not always as well organized as I would like, there are plenty of resources:
+There is no main text for this course. There are, however plenty of resources:
 
 - [Resources](Isit320-Resources.html)
+
+## Learning to Search
 
 Perhaps the single best resource is Google search. The best way to learn to search is simply to practice: the more you search the better you feel. Nevertheless, it helps to understand a few basic rules about how Google search works:
 
@@ -12,25 +14,9 @@ Perhaps the single best resource is Google search. The best way to learn to sear
 
 ## Install Pristine Lubuntu into VirtualBox {#virtualbox-lubuntu}
 
-In this class we use a copy of Lubuntu running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. This is a copy of the Linux Lubuntu desktop specially prepared for this course. Here is a link to the approximately 3.0 GB download:
+In this class we use a copy of Lubuntu running in Virtual Box.
 
-* [http://bit.ly/pristine-lubuntu-2016-sept-02](http://bit.ly/pristine-lubuntu-2016-sept-02)
-
-Once the OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory. You can simply click on the OVA file to load it in VirtualBox. When doing so, select the option that reads something like **re-initialize Mac address**.
-
-If you get a warning about USB drivers, this usually means that the Virtual Box virtual extensions are not installed. This could be due to a mistake by the Bellevue College IS department. If you have the rights, install them from [here](https://www.virtualbox.org/wiki/Downloads), using the Virtual Box **Preferences** menu. (Or just double click on the download). Otherwise, you can go to **Settings | USB** for your VM and turn USB off for now.
-
-Here is a somewhat dated link to a more detailed description of what to do with the OVA file once you download it:
-
-* [Import a virtual Appliance][import-virtual]
-
-[import-virtual]:http://www.elvenware.com/charlie/development/cloud/virtualization.html#importing-an-appliance
-
-If you need to install VirtualBox on your laptop, here is a description of how to proceed:
-
-* [Install VirtualBox][instvbox]
-
-[instvbox]:http://www.elvenware.com/charlie/os/linux/VirtualBox.html#virtualbox
+- [Install Pristine Lubuntu][pristine-lubuntu]
 
 ## Goals
 
@@ -132,3 +118,6 @@ Finally, I suggest that we watch some Google IO.
 - [Instant Mobile WebSites](https://developers.google.com/events/io/sessions/325128936)
 - The video is about 37 minutes.
 - There may be a quiz of some kind to confirm that you watched it.
+
+
+[pristine-lubuntu]: http://www.ccalvert.net/books/CloudNotes/tips/InstallPristineLubuntu.html

@@ -1,5 +1,9 @@
 # Cloud 9 Intro
 
+Cloud 9 is free if you get an invitation from me. I pay $1 a month to run an education account, which means that I can let as many students in as I wish.
+
+When you get the invitation, click on the link provided.
+
 Sign into Cloud 9 and set up a workspace based on your repository. Typically, your repository will have a name like this:
 
 - **prog219-lastname-2016**
@@ -156,6 +160,17 @@ The screenshot you want to create will be similar to, but not identical too, the
 **Image01**: *The Cloud 9 IDE. Click the image above to expand it.*
 
 ## Webpack on Cloud 9
+
+Place the properties called **build**, **c9** and **c9a** in the **scripts** object of your **package.json** file.
+
+```
+"scripts": {
+   "start": "node_modules/.bin/webpack-dev-server",
+   "build": "node_modules/.bin/webpack",
+   "c9": "node_modules/.bin/webpack-dev-server --host $IP --port $PORT",
+   "c9a": "node_modules/.bin/webpack-dev-server --host $IP --port $PORT --hot --inline"
+ },
+ ```
 
 [Webpack on Cloud 9][webpack-c9]
 
