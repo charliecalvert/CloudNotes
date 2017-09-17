@@ -2,31 +2,21 @@
 
 Here is the proposed schedule for our course.
 
-## Download Lubuntu VM
+## Install Pristine Lubuntu into VirtualBox {#virtualbox-lubuntu}
 
-The links below require a bit of patience. Select one, and determinedly click through until the download begins. After it ends, double click on the downloaded OVA file to load it in VirtualBox.
+In this class we use a copy of Lubuntu running in Virtual Box.
 
-As the OVA file loads, you will be given a chance to reset the MAC address. Be sure you select this option. Your VM may work one time if you do not do this, but you are likely to hit problems in the future. For instance, either you, or other students in the class, may be blocked from the Internet while in the VM. To avoid this, please **reset the MAC address**.
+- [Install Pristine Lubuntu][pristine-lubuntu]
 
-- [Current Pristine Lubuntu](http://bit.ly/pristine-2017-08-a)
-- [Older Pristine Lubuntu](http://bitly.com/pristine-2017-08)
-
-If you forgot to reset the MAC address, let me know, and I will show you how to go to **Settings | Network | Advanced** to reset the MAC after the install. The VM must be stopped while you perform this operation.
-
-**NOTE** _MAC addresses are meant to be unique. The DNS servers set up by the college allocate IP addresses based on the presence of a MAC address. If two VMs have the same MAC address, then the machine that logs on first will get on the Internet, but the second machine will usually get errors when it tries to access the Internet._
-
-Note that I provide to links above. You should pick Current Pristine because it adds the following to the older version:
+## Atom
 
 - The [Atom editor](https://atom.io/)
-- Turned on **Shared Clipboard** and **Drag 'n Drop'** between the host and the guest VM.
 
 If you have the older version, you can add Atom with this command:
 
 ```
 sudo snap install --classic atom
 ```
-
-To turn on **Shared Clipboard** and **Drag 'n Drop'** select **Settings | General | Advanced** and set both options to **Bitdirectional**. You can access **Settings** from the VirtualBox manager in the Windows (Host) UI.
 
 ## Monday
 
