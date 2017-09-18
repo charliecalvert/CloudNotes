@@ -43,6 +43,7 @@ Here is a more detailed look at some of the topics we will cover:
 - Canvas Discussion Area: Introductions
 - Online Presence Part 01
 - Code Academy
+- Git
 
 # Wednesday {#wednesday}
 

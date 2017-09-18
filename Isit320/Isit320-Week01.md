@@ -1,14 +1,20 @@
 ## Isit320 Week01 2017
 
-There is no main text for this course. There are, however plenty of resources:
+There is no main text for this course. There are, however many resources. Some of these resources I created, but most are available on the web:
 
 - [Resources](Isit320-Resources.html)
 
 ## Learning to Search
 
-Perhaps the single best resource is Google search. The best way to learn to search is simply to practice: the more you search the better you feel. Nevertheless, it helps to understand a few basic rules about how Google search works:
+Perhaps the single best resource is Google search. The best way to learn to search is simply to practice. Nevertheless, it helps to understand a few basic rules about how Google search works:
 
 - [Browsers][elf-browse]
+
+Also worthy of study are Stack Overflow and Super User:
+
+- [StackOverflow](https://stackoverflow.com/)
+- [SuperUser](https://superuser.com/)
+- [Ask Ubuntu](https://askubuntu.com/)
 
 [elf-browse]: http://www.elvenware.com/charlie/development/cloud/Browsers.html
 
@@ -31,11 +37,12 @@ Non-technical and end-user goals:
 - [Review the Syllabus](http://bit.ly/isit320-syllabus-2016)
 - Review canvas basics: [Announcements, Modules, Discussions](http://bit.ly/V6JECq)
 - Create core cloud accounts: [Online Presence][online-presence]
+- Learn about Git.
 
 Technical goals:
 
 - [Git](http://bit.ly/1b3r61o)
-- [Bootstrap][elf-boot]
+- [Bootstrap or Google Material][elf-boot]
 - [JavaScript Basics](http://bit.ly/1gNA3ct)
 - [Node][elf-node]
 - [NPM on Elvenware][elven-npm]

@@ -1,12 +1,12 @@
 ## Overview
 
-This assignment is designed to help you create a new Git repository. The text covers both [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/). If possible, you should prefer GitHub since it plays a central role in web development. GitHub is _the_ central repository for code related to web development.
+This assignment is designed to help you create a new Git repository. The text covers both [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/). If possible, you should prefer GitHub since it is _the_ central repository for code related to web development.
 
 Since my students turn in assignments with Git, in some, but not all, cases it is important that their repositories be private. Free private repositories are readily available on GitHub if you sign up for the [Student Pack][github-edu]. BitBucket also provides free private repositories.  
 
 **NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Note that Git itself is an open source project entirely separate from either GitHub or BitBucket. Git is Git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
 
-I assume the user is running on Linux, but it would not be hard to follow along if you are using Windows. Again, you should prefer Linux as it, and **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
+I assume the user is running on Linux, but it would possible to follow along if you are using Windows. Especially helpful is the Linux subsystem for Windows. Again, you should prefer Linux as it, and **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
 
 See also:
 
@@ -18,13 +18,17 @@ See also:
 
 ## Configure Git {#configure}
 
-After installing Git, there are few steps you need to take to set it up. It is perhaps simplest to get these chores out of the way at the very start. Your goals will be to tell Git:
+Git is probably already installed on your system. To confirm that it is installed, type **git**. If you get an error, then the likely solution is to install Git. Do it like this:
 
-- Your username
-- Your email address
-- Your preferred style to use when pushing data to the cloud.
+	sudo apt-get install git
 
-Issue these commands, editing as appropriate:
+After installing Git, there are few steps you need to take to set it up. It is perhaps simplest to get these chores out of the way at the very start. Your goals will be to tell Git your:
+
+- username
+- email address
+- preferred style to use when pushing data to the cloud.
+
+Issue the following commands, editing as appropriate:
 
 ```
 git config --global user.name "charlie at school"
@@ -44,41 +48,17 @@ cat ~/.gitconfig
 
 **NOTE** _Since I am usually not sharing my repository with a large number of users, I tend to use the name to identify the location from which I am working. For instance **charlie at home**, **charlie at school**, **charlie on his laptop** etc. This is more than a bit quirky, and might not be at all appropriate in a corporate setting, but I nevertheless find it occasionally useful to know where I was when I did some work._
 
-## Clone an Existing Repository {#clone-repo}
-
-This assignment is designed to help your create a new repository from scratch. Sometimes students try to use it as a guide for cloning an existing repository, but I would not recommending doing that. If you already have a repository in **GitHub** or **BitBucket** you can get a local copy of that repository by cloning it:
-
-<pre>
-git clone git@github.com:USERNAME/REPO_NAME.git
-git clone git@bitbucket.org:USERNAME/REPO_NAME.git
-</pre>
-
-In most cases, I call **git clone** from my **~/Git** folder:
-
-<pre>
-cd ~/Git
-git clone git@bitbucket.org:ccalvert/deleteme06.git
-Cloning into 'deleteme06'...
-remote: Counting objects: 3, done.
-remote: Total 3 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (3/3), done.
-Checking connectivity... done.
-</pre>
-
-Now that we understand what to do with an existing repositories, lets go back to our current task, which is setting up a new repository.
-
-**NOTE**: _On GitHub, it is possible to create a repository with a pre-initialized **README.md** file. If you do that, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
-
 ## Git Account GitHub
 
 Use [Github](https://github.com) to host your [Git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
 - Create a new GitHub account if you don't have one already
 - Use an existing GitHub account.
-- Sign up for the Github [student pack][github-edu]
-	- The student pack might take a few days to set up, but I believe the delay is shorter than it used to be.
-	- Even though there is a delay, apply anyway.
-	- With the student pack you can create private repositories for free.
+
+In either case, you should sign up for the Github [student pack][github-edu]:
+
+- The student pack used to take days to set up. Now the delay is usually only a few brief minutes.
+- With the student pack you can create private repositories for free.
 
 ## Git Account BitBucket
 
@@ -109,7 +89,7 @@ isit320-calvert-2017
 isit322-calvert-2017
 ```
 
-**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2016, then set the year to 2016, even if my example uses some other year.*
+**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2017, then set the year to 2017, even if my example uses some other year.*
 
 Then make the following selections:
 
@@ -119,12 +99,59 @@ Then make the following selections:
 * Set the Project options: Wiki, IssueTracking (Bitbucket only)
 * Set the Language: JavaScript (BitBucket only)
 
+**NOTE**: _On GitHub, it is possible to create a repository without any content such as a pre-initialized **README.md** or **.gitignore** file. If you do that, then the act of setting up your repository on your local machine is relatively complex. If you select the options to put a **README** or other content in your repository, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
+
+
 ## Share Repository {#share}
 
 Make sure you give me _read/write_ access to your repository.
 
-- GitHub: Choose the gear icon near top on right. Select **collaborators** page. My GitHub user name is **charliecalvert**.
-- Bitbucket: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
+- **GitHub**: Choose the gear icon near top on right. Select **collaborators** page. My GitHub user name is **charliecalvert**.
+- **Bitbucket**: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
+
+## Set up the Git Folder
+
+Let's now turn our attention from the browser to the Linux command line. Typically, this means that you will open or navigate to a terminal window in your Pristine Lubuntu instance. However, you can also perform similar work in Windows, the Linux subsystem for Windows or the Mac.
+
+I like to keep all my repositories in a directory called **Git**. I first navigate to my **home** directory by issuing the **cd** command with no parameters:
+
+ 	cd
+
+I can then type **ls** to check if my Git repository already exists. If it does not, I create it:
+
+	mkdir ~/Git
+
+If the command returns immediately with no errors then that means the directory was created successfully. If the directory already exists, then you will get an error similar to the following:
+
+	$ mkdir ~/Git
+	mkdir: cannot create directory ‘/home/charlie/Git’: File exists
+
+In either case, you are good to go. The key point was to be sure you have a **Git** folder. If one exists, then all is well.
+
+Once you have confirmed the presence of your **~/Git** folder, navigate into it like this:
+
+ 	cd ~/Git
+
+## Clone an Existing Repository {#clone-repo}
+
+Assuming you already have a repository on **GitHub** or **BitBucket** that contains some content, you can get a local copy of it by cloning it:
+
+<pre>
+git clone git@github.com:USERNAME/REPO_NAME.git
+git clone git@bitbucket.org:USERNAME/REPO_NAME.git
+</pre>
+
+As explained in the previous section, I usually call **git clone** from my **~/Git** folder. The act of cloning a repository typically looks a bit like this:
+
+<pre>
+cd ~/Git
+git clone git@bitbucket.org:ccalvert/deleteme06.git
+Cloning into 'deleteme06'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+</pre>
 
 ## Git URLs
 
@@ -138,9 +165,14 @@ You can read about Git URLs on Elvenware:
 
 ## Setup SSH {#ssh}
 
-Make sure SSH is installed. Pristine Lubuntu should have it installed,
-but just in case, or if for some reason you need to install it, here
-is the command:
+Make sure the Secure Shell ([SSH](https://en.wikipedia.org/wiki/Secure_Shell)) is installed. For instance, try issuing the **ssh** command and passing it **-V** as a parameter:
+
+	$ ssh -V
+	OpenSSH_7.4p1 Ubuntu-10, OpenSSL 1.0.2g  1 Mar 2016
+
+As shown above, you should get information on the current version of ssh.
+
+Pristine Lubuntu should have it installed, but just in case, or if you need to install it yourself on a new system, here is the command:
 
 ```
 sudo apt-get install ssh
