@@ -1,6 +1,23 @@
 ## Overview
 
-Install Lubuntu on VirtualBox from a custom OVA appliance. This is a copy of Lubuntu that I installed on my machine, and then configured so that it was (relatively) easy for students in my course to use.
+The goal of this assignment is to install Lubuntu on VirtualBox from a custom OVA appliance. Inside the OVA file is a compressed instance of the Linux Lubuntu distribution that I installed on my machine.
+
+To help you understand the OVA file, consider the following sequence of events
+
+- On my home machine I installed a Linux distribution called Lubuntu in a VirtualBox virtual machine.
+- I configured this copy of Lubuntu so that it was (relatively) easy for students to use in my course.
+- Then I bundled it up in an OVA file and put the OVA file on Google Drive.
+
+You can:
+
+- Download the OVA file
+- Double click on it
+- Tick the box asking to update the MAC address
+- And then watch it quickly install itself inside VirtualBox.
+
+Once this Virtual Machine is installed, it will contain a copy of my customized version of Lubuntu Linux. You can run this OS and use it as the primary place where you do work throughout the quarter.
+
+## Terminology
 
 Most people will be working in Windows and trying to install Pristine Lubuntu into a Virtual Machine. This means that:
 
@@ -9,36 +26,53 @@ Most people will be working in Windows and trying to install Pristine Lubuntu in
 
 You may, of course, be on a Mac, or even on Linux. None of that should matter so long as you know the difference between the host machine and the guest machine.
 
-## Get Started
+## VirtualBox
 
-Before doing anything else, confirm that you have VirtualBox installed and updated. If it is not installed, go here and install it:
+VirtualBox should be installed on all the machines in N252. Nevertheless, before doing anything else, confirm that you have VirtualBox installed and updated. If you are working on a laptop, go here and install it:
 
 - [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-**NOTE**: *In some cases, you may not be able to update VirtualBox. This happens frequently, for instance, in N252. In that case, you may be stuck or you can ask me for help, which I may or may not able to supply.*
+**NOTE**: _I greatly prefer that you use the school machines rather than your laptop. I simply cannot see the text in most student laptops as it is too small. Also, you will get much, much more out of this class if you learn to use Git to move code between your laptop and school machine, rather than doing all your work on your laptop. In terms of getting a job, learning React and ES6 are the most important aspects of this course. But close behind them is gaining a solid understanding of Git._
 
-Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance):
+**NOTE**: *On the N252 school machines you may not be able to install or update VirtualBox. In that case, you can ask me for help and we can ask IT to install it. If you have Admin privileges, you may be able to install VirtualBox, but this is not always guaranteed to be a permanent solution.*
 
-- Download Pristine Lubuntu Fall 2016 (2.8 GB): [http://bit.ly/pristine-lubuntu-2016-sept-02](http://bit.ly/pristine-lubuntu-2016-sept-02)
-- Download Pristine Lubuntu Spring 2016 (4GB): [http://bit.ly/pristine-april-2016](http://bit.ly/pristine-april-2016)
+## Install Pristine Lubuntu
 
-[pristine-2016-03]: https://drive.google.com/file/d/0B25UTAlOfPRGOGV1dFN4SnBscW8/view?usp=sharing
+Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance). The link below requires a bit of patience. Select it, and determinedly click through the options until the download begins. Once this big 3 GB OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
+
+- [Current Pristine Lubuntu](http://bit.ly/pristine-2017-08-a)
 
 The file you download should have an OVA extension.
 
-Double click on the download once it is is completed. Alternatively choose the following, browse for the downloaded file, and import it into VirtualBox:
+Double click on the download once it is is completed. Alternatively, use the **File | Import Appliance** menu in VirtualBox to browse for the OVA file, and import it into VirtualBox:
 
 - **File | Import Appliance** (Ctrl - i)
 
-**NOTE**: _You should select the option to reinitialize the Mac address. We each need a unique Mac address or conflicts may occur when using the network. If you forgot to click this option during install, you can do it later by choosing **Settings | Network | Advanced** from the VirtualBox menu before you launch your Lubuntu VM. (If necessary, close the VM, then select this menu option.) There is a blue doo-hickey that you can click to reinitialize the address._
+**NOTE**: _You should select the option to reinitialize the MAC address. Every machine on the Internet needs a unique Mac address or conflicts may occur when using the network. If you forgot to click this option during install, you can do it later by choosing **Settings | Network | Advanced** from the VirtualBox menu before you launch your Lubuntu VM. (If necessary, close the VM, then select this menu option.) There is a blue doo-hickey that you can click to reinitialize the address. MAC addresses are meant to be unique. The DNS servers set up by the college allocate IP addresses based on the presence of a MAC address. If two VMs have the same MAC address, then the machine that logs on first will get on the Internet, but the second machine will usually get errors when it tries to access the Internet._
 
 After the file has been imported via the simple wizard, select the new item in VirtualBox and choose **Start** from the menu or icon bar.
 
-**NOTE**: _Our pristine Lubuntu image is set up to have about 6GB of RAM. This is fine at school since we have 32 GB of memory on these machines. When using this image at home or on a laptop, however, you may need to change this setting. To do so, select **Settings | System | Motherboard | Base Memory.** Many machines have 4 GB of memory, so setting the memory to 2048 is acceptable, if a bit painful slow at times._
+**NOTE**: _You may get an error about the audio system when installing the OVA. You can ignore that message. If you get an error about the network card, just click the supplied link and accept the defaults._
 
-![Staring Lubuntu][slub]
+**NOTE**: _If you get a warning about USB drivers, this usually means that the Virtual Box virtual extensions are not installed. This could be due to a mistake by the Bellevue College IS department. If you have the rights, install them from [here](https://www.virtualbox.org/wiki/Downloads), using the Virtual Box **Preferences** menu. (Or just double click on the download). Otherwise, you can go to **Settings | USB** for your VM and turn USB off for now._
+
+Our Pristine Lubuntu image is set up to have about 6GB of RAM. This is fine at school since we have 32 GB of memory on these machines. When using this image at home or on a laptop, however, you may need to change this setting. To do so, select **Settings | System | Motherboard | Base Memory.** Many machines have 4 GB of memory, so setting the memory to 2048 is acceptable, if a bit painful slow at times.
+
+![Starting Lubuntu][slub]
 
 [slub]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics00.png
+
+## Shutdown
+
+Two important warnings:
+
+- Don't close Lubuntu by clicking the **X** icon at the top left or right of the VM window. Instead, use the On/Off switch at the bottom right hand corner of the window, or choose **Logout** from the Start menu located in the bottom left of the VM window.
+- Don't try to put your computer to sleep while the Lubuntu VM is running. Instead, shutdown the VM and then close your laptop or perform some other action that puts your machine into a sleep state.
+
+It may appear at times as if you are getting away with violations of the above two rules, but eventually these bad habits will catch up with you. In particular, these actions can cause your repository to be corrupted.
+
+You don't want to close your VM with cancel (X) icon any more than you want to turn off your computer by pulling its plug. Putting the machine to sleep while the VM is open should in theory work, but in practice it simply does not work very well.
+
 
 ## Trouble Shoot
 
@@ -69,9 +103,11 @@ Given a valid OVA file, it is usually very simple to install a Lubuntu image on 
 
 Create a screen shot of VirtualBox running Lubuntu as a guest OS on your system. Attach the image to your assignment when you turn it in. Normally, I expect to see the Windows desktop, then VirtualBox, and inside VirtualBox, a copy of Lubuntu.
 
-**Note**: *If VirtualBox has the focus on your desktop, then any keystrokes you make will go to VirtualBox, not to your Windows desktop. As a result, you can't press **Ctrl-PrtScrn** with VirtualBox focused and expect it to work the way it does when other applications have the focus. One solution is to use the Windows Snipping tool or follow one of [these suggestions][scrshot]. You can also usually create screen shots in Lubuntu and submit them. But the screen shot will be in the Lubuntu file system, not your Windows file system.*
+**Note**: _If VirtualBox has the focus on your desktop, then any keystrokes you make will go to VirtualBox, not to your Windows desktop. As a result, you can't press **Ctrl-PrtScrn** with VirtualBox focused and expect it to work the way it does when other applications have the focus. One solution is to use the Windows Snipping tool or follow one of [these suggestions][scrshot]. You can also usually create screen shots in Lubuntu and submit them. But the screen shot will be in the Lubuntu file system, not your Windows file system._
 
 [scrshot]: http://www.google.com/search?q=windows+screen+capture
+
+With the possible exception of screenshots, and configuring VirtualBox itself, it is usually best to do all your work inside the VM. This includes browsing, email, downloading, etc. Just go ahead and maximize Lubuntu so that it takes up your whole screen (Right Control - F). I find it confusing to keep switching back and forth between Linux and Windows. Lubuntu is more than powerful enough to allow you to perform the operations you need to perform in this class. It can be a little unstable at times, but if you treat it gently, it should meet your needs.
 
 ## Sanity Check
 

@@ -25,3 +25,6 @@ Here is a somewhat dated link to a more detailed description of what to do with 
 If you need to install VirtualBox on your laptop, here is a description of how to proceed:
 
 - [Install VirtualBox][instvbox]
+
+[import-virtual]: http://www.elvenware.com/charlie/development/cloud/virtualization.html#importing-an-appliance
+[instvbox]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#virtualbox

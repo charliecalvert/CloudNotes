@@ -33,8 +33,8 @@ We have two sets of goals:
 
 Non-technical and end-user goals:
 
+- [Syllabus](http://bit.ly/isit320-syllabus-2017)
 - Complete introductory comments and Introductions
-- [Review the Syllabus](http://bit.ly/isit320-syllabus-2016)
 - Review canvas basics: [Announcements, Modules, Discussions](http://bit.ly/V6JECq)
 - Create core cloud accounts: [Online Presence][online-presence]
 - Learn about Git.

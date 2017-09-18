@@ -30,10 +30,10 @@ Here are the primary goals we have set for this week:
 
 Here is a more detailed look at some of the topics we will cover:
 
+- [Syllabus](http://bit.ly/prog270-syllabus-2017)
 - Prog 270 - Day 1 Outline: <http://bit.ly/RgDgtz>
 - Course Overview Deck: <http://bit.ly/WYFwVJ>
 - What is a mobile device: <http://bit.ly/VaRdrx>
-- [Syllabus](http://bit.ly/prog270-syllabus-fall-2016)
 - Canvas Homepage: <https://bc.instructure.com/courses/1308417>
 - [Discussion Area](https://bc.instructure.com/courses/1308417/discussion_topics)
 - [Announcements](https://bc.instructure.com/courses/1308417/announcements)
@@ -74,8 +74,5 @@ I have not finalized what we will do next week, but it is likely to contain some
 
 - <http://www.elvenware.com/charlie/development/cloud/index.shtml>
 
-
-[import-virtual]: http://www.elvenware.com/charlie/development/cloud/virtualization.html#importing-an-appliance
-[instvbox]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#virtualbox
 [google-console]: https://console.cloud.google.com/
 [pristine-lubuntu]: http://www.ccalvert.net/books/CloudNotes/tips/InstallPristineLubuntu.html
