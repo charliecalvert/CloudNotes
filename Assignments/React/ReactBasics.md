@@ -138,9 +138,9 @@ Now edit the **scripts** section of **package.json** so that it looks like this:
 
 ```javascript
 "scripts": {
-   "start": "node_modules/.bin/webpack-dev-server",
-   "test": "echo \"Error: no test specified\" && exit 1",
-   "build": "node_modules/.bin/webpack"
+   "start": "node_modules/.bin/webpack-dev-server",   
+   "build": "node_modules/.bin/webpack",
+   "test": "echo \"Error: no test specified\" && exit 1"
 },
 ```
 
@@ -178,7 +178,7 @@ For now, you can just think of a module as a file. There is more to the subject 
 
   export default class ReactBasics extends React.Component {
      render() {
-         return <h1>An H1 element in a React Component</h1>
+         return &lt;h1&gt;An H1 element in a React Component&lt;/h1&gt;
      }
   }
 ```
