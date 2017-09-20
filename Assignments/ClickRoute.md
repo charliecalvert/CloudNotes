@@ -4,7 +4,7 @@ Information on routes and Express is available here:
 
 - [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
 
-I have created a project named **ClickRoute** and made it available for from the **elven-assignments** repository:
+I have created a project named **ClickRoute** and made it available from the **elven-assignments** repository:
 
     https://github.com/charliecalvert/elven-assignments
 

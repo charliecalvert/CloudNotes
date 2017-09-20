@@ -1,4 +1,5 @@
 * [BowerNpm.html](BowerNpm.html)
+* [ClickRoute.html](ClickRoute.html)
 * [Cloud9Intro.html](Cloud9Intro.html)
 * [ExpressBasics.html](ExpressBasics.html)
 * [ExpressJQuery.html](ExpressJQuery.html)

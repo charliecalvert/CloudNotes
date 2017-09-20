@@ -112,7 +112,7 @@ This short code produces identical output:
 In particular, both produce HTML that looks like this:
 
 ```html
-<div id="hint"></div>
+&lt;div id="hint"&gt;&lt;/div&gt;
 ```
 
 To be sure you understand this, open the Chrome debugger, turn the **Elements** page, and locate the DIV created by your "#hint" code.
@@ -190,4 +190,55 @@ require(['jquery', 'reactBundle', 'ClickEvents'], function($, ReactBundle, Click
         var clickEvents = new ClickEvents();
     });
 });
+```
+
+## Package.json
+
+In the start section, add the following code:
+
+```javascript
+"build": "node_modules/.bin/webpack --colors --watch"
+```
+
+To use it, type: **npm run build**. This will start webpack, compile your code, and leave webpack running. If you make changes to your code, then webpack will recompile your source automatically. The one drawback is that it keeps your command window busy. Hitting CTRL-C will end the process, but then you will no longer have your code recompiled automatically. There are at least two solutions:
+
+- Open a second tab in the terminal window and run your program from there: **npm start**
+- Run webpack with an ampersand: **node_modules/.bin/webpack --colors --watch &**
+
+If you choose the later option, then a simple return will get you back to bash shell prompt. Webpack will continue running in the background, and will recompile (transpile) your code as needed. To end the session, type **jobs**:
+
+```
+$ jobs
+[1]-  Running                 node_modules/.bin/webpack --colors --watch &
+[2]+  Running                 meld README.md ~/Git/CloudNotes/Assignments/React/
+```
+
+Here the **jobs** command tells me that I am running two processes in the background. To bring one to the fore, I can do type **fg 1**, where 1 is the number of the job I want to bring forward:
+
+```
+$ fg 1
+node_modules/.bin/webpack --colors --watch
+```
+
+Now I can press CTRL-C to shutdown webpack.
+
+**NOTE** _Webpack in **watch** mode will automatically compile your code, but you still need to press **F5** in the browser to refresh your view and see the updates._
+
+## Update _hints.js_
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+export default class Hint extends React.Component {
+
+    render() {
+        return <h1>Hinterland</h1>
+    }
+}
+
+ReactDOM.render(
+    <Hint/>,
+    document.getElementById('hint')
+);
 ```
