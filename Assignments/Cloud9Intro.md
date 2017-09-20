@@ -69,6 +69,8 @@ git clone https://github.com/charliecalvert/JsObjects.git
 
 Again, the code above is a bit redundant, as I have already asked you to navigate into the **~/Git** directory. However, one cannot be too careful.
 
+## Set up .bash_aliases
+
 Many of the shortcut commands that I use all the time are stored in the **.bash_aliases** file stored in my JsObjects repository. Let's back up the default cloud 9 **.bash_aliases** file, copy in my version of the file, and process it so that we can immediately begin using aliases and exports defined in that file:
 
 ```
@@ -77,114 +79,91 @@ cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.
 source ~/.bash_aliases
 ```
 
-Check out this file: ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcExtras
+## Understanding .bashrc
 
-Put at least portions of it at the end of your **~/.bashrc**. For instance, get at least these these parts:
+The **.bashrc** file is located in your home directory. It is processed when you open a bash shell or when you run one of these commands:
+
+```
+source ~/.bashrc
+. ~./bashrc
+```
+
+The second command is a period followed by the path to your **.bashrc** file.
+
+The **.bashrc** contains a series of commands that help to set up the bash environment. It is your chance to customize the environment to suit your needs. You can also review the file to help you understand how bash works.
+
+You can most easily find the .bashrc file in your Cloud 9 editor by following these steps:
+
+- Make sure the menu item **Window | Workspace** is selected
+- Toggle open the **workspace** tab on the far left.
+- Select the **gear** icon
+- Select **Show home in favorites**
+- Ensure that **Show hidden files** is selected
+
+Now you should be able to view your entire directory tree in the **workspace** window. This is useful when you want to edit your **.bashrc** or other configuration files such as **.bash_aliases**. However, much of the time it is just a distraction, and can be turned off.
+
+## Configure .bashrc
+
+There are a few commands you should run to set up node to work the way we prefer. Begin by running the following in the bash shell:
+
+```
+npm config set prefix ~/npm
+```
+
+This command tells **npm** to place your globally installed packages in your home directory, in a folder called **npm**. This is useful for two reasons:
+
+- If you install an NPM library into the default space, then it is owned by root. This means you need to type sudo in order to work with that library. Sometimes that doesn't matter, but sometimes it means that you end up needing to type sudo in order to work with your application. Soon, you end up in a mess, where you can't run your own program without first giving it root permissions. This won't happen all the time, but it is simpler to avoid the whole issue by installing your npm libraries someplace where you have permissions to use them.
+- This second point can be argued either way. If you install your NPM global libraries in a place where only you can see them, then you will not pollute other user's environment. On the other hand, some libraries will be installed multiple times.
+
+The bottom line is that one does not have to install NPM libraries into your home directory, but it is safer, particularly for beginners, to do so.
+
+Check out this file: ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcEasyExtras
+
+Put at least portions of it at the end of your **~/.bashrc**. The sinplest way to do this is as follows:
+
+```
+slb
+cat BashrcEasyExtras >> ~/.bashrc
+source ~/.bashrc
+```
+
+The first command, **slb**, is from our **~/.bash_aliases** file. It won't work unless you have set up **~/.bash_aliases** as described above. The **slb** alias moves you to this directory:
+
+**~/Git/JsObjects/Utilities/SetupLinuxBox**
+
+The second command appends some text onto the end of your **~/.bashrc** file. The text is found in a file from JsObjects called **BashrcEasyExtras**. We then process the **~/.bashrc**.
+
+Optionally, we can display some of the work we did to confirm that everything is set up as expected:
+
+```
+echo $NODE_PATH
+echo $PATH
+```
+
+If you want, you can edit your ~/.bashrc file manually. For instance, you can append the following to the end of the file:
 
 <pre>
 if [ -z "$SSH_AUTH_SOCK" ] ; then
     eval `ssh-agent`
 fi
 
-export NODE_PATH=:$HOME/npm/lib/node_modules
+export NODE_PATH=$HOME/npm/lib/node_modules
 export PATH="$PATH:$HOME/npm/bin"
 </pre>
 
 Then run **source ~/.bashrc**.
 
-Run these commands:
+## The .gitignore file
 
-<pre>
-jou
-cd NodeInstall
-$ ./InstallNodePackages.sh
-</pre>
-
-Just to be clear, **InsteallNodePackages.sh** is in this location:
-
-<pre>
-~/Git/JsObjects/Utilities/NodeInstall
-</pre>
-
-Now you should be okay to get started.
-
-## Auto Setup
-
-We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.
-
-After the workspace opens go to the terminal in Cloud 9. One should be open on the bottom of your screen. It might have a label with the word bash in it.
-
-**NOTE**: _If you can't find a terminal open, then **Window | Terminal (Alt T)** from the menu._
-
-<pre>
-mkdir ~/bin
-cd ~/bin
-wget https://raw.githubusercontent.com/charliecalvert/JsObjects/master/Utilities/SetupLinuxBox/CloudNineSetup
-chmod +x CloudNineSetup
-./CloudNineSetup
-</pre>
-
-A script will run. Choose **Install All**.
-
-Alternatively, you can do the same thing with the Cloud 9 tools:
-
-- Choose Gear on left and **Show Favorites**
-- Right click the root of the Favorites and choose **New Folder**. Name it **bin**
-- Right click bin and choose **New File**. Call it **CloudNineSetup**. Press enter to open the file.
-- Go to [this URL][c9-setup], select **Raw**, block copy the content, and paste it into the **CloudNineSetup** file. Save your work.
-- Now run the last two commands from the series shown above. The ones that begin **chmod** and **./CloudNineSetup**
-
-The script will take several minutes. When it is done, type the following:
-
-<pre>
-source ~/.bashrc
-nvm use system
-</pre>
-
-
-## Step One
-
-**NOTE**: _If you are using Pristine Lubuntu, then your NODE_PATH is probably already set up. That means you can skip this section and go on to the next Nevertheless, it is often helpful to run SystemCheck._
-
-If you have not done so already run **git pull** on JsObjects. Copy **SystemCheck** into your bin directory:
-
-```bash
-cp $JSOBJECTS/Utilities/SetupLinuxBox/SystemCheck ~/bin/.
-```
-
-If NODE_PATH does not exist, add this to the end of your .bashrc:
+Make sure that your repository contains a **.gitignore** file with a section that looks like this:
 
 ```
-export NODE_PATH=$NODE_PATH:$HOME/npm/lib/node_modules
+# IDE Files
+.idea
+.c9
 ```
 
-Don't forget to source your .bashrc file: **source ~/.bashrc
-**
-
-Type **SystemCheck** or **syscheck** and check you system:
-
-```
-=======================
-Menu
-=======================
-
-b) Basic System Check
-n) Node
-c) Common
-p) PhoneGap
-x) Exit
-
-Please make a selection: b
-```
-
-Make sure b and n are good. Take a screen shot of the output from b and n. Call them
-
-* Cloud9IntroOptionB.png
-* Cloud9IntroOptionN.png
-
-**syscheck** is an **alias** pointing at the copy of SystemCheck in your JsObjects directory. So it may be easier to use, but it is harder to remember to use it since there are many aliases in **.bash_aliases**. Having the script in your **~/bin** directory is probably simplest for most people. The point being that we might want to run **SystemCheck** from time to time to be sure everything is still set up right.*
-
-## Step
+## Screen Shots
 
 Take a screen shot displaying the following:
 
@@ -226,25 +205,35 @@ Submit your work and attach the screenshots.
 
 [webpack-c9]: https://github.com/webpack/webpack-dev-server/issues/230
 
+## Install Node Manually
+
+Node should already be installed in your copy of Cloud9. In fact, **NVM** should also be installed, so you can set the current version of Node with that tool, if you know how to use it.
+
+However, if you want to take over control -- and I can't think of a good reason why you should -- then you can do this:
+
+<pre>
+jou
+cd NodeInstall
+$ ./InstallNodePackages.sh
+</pre>
+
+Just to be clear, **InsteallNodePackages.sh** is in this location:
+
+<pre>
+~/Git/JsObjects/Utilities/NodeInstall
+</pre>
+
+Now you should be okay to get started.
 
 ## Minimum Install {#minimum-install}
 
-I don't suggest performing only these minimum steps. Instead, go back to the beginning of this document and follow the steps for properly setting up your environment. However, if all you want is the very minimum steps to get you up and running, then follow the simple code in this example.
-
-**NOTE**: _For the vast majority of students, performing the minimum steps instead of the full environment setup will not save you time. You will indeed get set up faster, but then, throughout the quarter, you will often have to take extra steps that I and the other students in the class don't need to take. In the long run, it will likely take you much longer to do the minimum install than to properly set up your environment. But I want you to have the choice to do things your own way -- even if it costs you egregiously -- if that is what you prefer. Also, in a very few cases, an expert student might have their own system for handling the tasks that I automate. In that case, they need not do the full environment setup that I prefer._
+For the vast majority of students, performing the minimum steps instead of the full environment setup will not save you time. You will indeed get set up faster, but then, throughout the quarter, you will often have to take extra steps that I and the other students in the class don't need to take. In the long run, it will likely take you much longer to do the minimum install than to properly set up your environment. But I want you to have the choice to do things your own way -- even if it costs you egregiously -- if that is what you prefer. Also, in a very few cases, an expert student might have their own system for handling the tasks that I automate. In that case, they need not do the full environment setup that I prefer.
 
 For those who want only the minimum install, start from the bash shell, and run the following:
 
 ```
 npm config set prefix ~/npm
 ```
-
-This command tells npm to place your globally installed packages in your home directory, in a folder called **npm**. This is useful for two reasons:
-
-- If you install an NPM library into the default space, then it is owned by root. This means you need to type sudo in order to work with that library. Sometimes that doesn't matter, but sometimes it means that you end up needing to type sudo in order to work with your application. Soon, you end up in a mess, where you can't run your own program without first giving it root permissions. This won't happen all the time, but it is simpler to avoid the whole issue by installing your npm libraries someplace where you have permissions to use them.
-- This second point can be argued either way. If you install your NPM global libraries in a place where only you can see them, then you will not pollute other user's environment. On the other hand, some libraries will be installed multiple times.
-
-The bottom line is that one does not have to install NPM libraries into your home directory, but it is safer, particularly for beginners, to do so.
 
 Also, at the bottom of your **~/.bashrc** file, add the following lines:
 

@@ -94,13 +94,12 @@ isit322-calvert-2017
 Then make the following selections:
 
 * Set the Type: Git
-* Initialize with a **README** or **.gitignore**. (GitHub only)
+* Initialize with a **README** and **.gitignore**. (GitHub only)
 	* If you choose this option, then you can simply clone your repository after creating it.
 * Set the Project options: Wiki, IssueTracking (Bitbucket only)
 * Set the Language: JavaScript (BitBucket only)
 
 **NOTE**: _On GitHub, it is possible to create a repository without any content such as a pre-initialized **README.md** or **.gitignore** file. If you do that, then the act of setting up your repository on your local machine is relatively complex. If you select the options to put a **README** or other content in your repository, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
-
 
 ## Share Repository {#share}
 
@@ -152,6 +151,20 @@ remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
 Checking connectivity... done.
 </pre>
+
+After cloning your repository, make sure the following are in your **.gitignore** file:
+
+```
+# IDE Files
+.idea
+.c9
+
+# Package files
+node_modules
+bower_components
+```
+
+You can and should have more than just these items, but be sure at least this much is present.
 
 ## Git URLs
 
