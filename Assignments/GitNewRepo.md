@@ -745,6 +745,25 @@ git remote set-url origin git@github.com:my-user-name/my-repo.git
 
 If you are uncertain about the URL for your repository, you should able to easily find it on either GitHub or BitBucket.
 
+## Keep it Simple
+
+Don't over complicate this subject. In the past, I have talked students through some fairly complex things that can be done when creating a new repository. But over time I decided it doesn't have to be complicated. Instead:
+
+- When creating the repository on GitHub put a **.gitignore** and Let me know if this helps. file in it.
+- Clone the repository
+- Add some files and changes. Then push.
+
+Don't use any commands other than clone (once) and then:
+
+- git status
+- git add
+- git commit
+- git push
+
+You shouldn't need any other commands. At least not at first. Don't try to set the origin or anything like that. Just clone your new repository one time. Then add, commit and push your code as needed.
+
+After you start feeling very comfortable with the basics, then you can learn some more complex commands.
+
 ## Ruminations
 
 Both at home, and at school, you want to have a ~/.ssh directory. In that directory, you should have a private key and a public key. The private key is only on your machines. Never give it to anyone else. The public key you insert into the proper dialog on GitHub (or BitBucket) or some other site as needed.
