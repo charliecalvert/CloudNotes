@@ -112,7 +112,7 @@ This short code produces identical output:
 In particular, both produce HTML that looks like this:
 
 ```html
-&lt;div id="hint"&gt;&lt;/div&gt;
+<div id="hint"></div>;
 ```
 
 To be sure you understand this, open the Chrome debugger, turn the **Elements** page, and locate the DIV created by your "#hint" code.

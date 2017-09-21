@@ -178,7 +178,7 @@ For now, you can just think of a module as a file. There is more to the subject 
 
   export default class ReactBasics extends React.Component {
      render() {
-         return &lt;h1&gt;An H1 element in a React Component&lt;/h1&gt;
+         return <h1>An H1 element in a React Component</h1>;
      }
   }
 ```
