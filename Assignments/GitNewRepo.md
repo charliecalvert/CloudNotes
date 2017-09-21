@@ -76,7 +76,7 @@ In GitHub or BitBucket, from the home page, create a new repository:
 
 Name your Git repository like this, where **isit320** should be name of your class:
 
-	isit320_lastname-year
+	isit320-lastname-year
 
 For instance, your repository might have a name like one of the following, depending
 on the class you are in and the current year:
