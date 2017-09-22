@@ -8,11 +8,23 @@ Create a directory called week02-rest-basics in your Repository.
 
 **NOTE**: _Let's try switching to all small letters for now, since npm is getting fussy about this issue._
 
+
+## Create Project Directory
+
+We are going to have two projects in this assignment, so lets set up a directory for them. Navigate to the root of your repository and enter the following commands:
+
+```
+mkdir RestBasics
+cd RestBasics
+```
+
 ## Create Server
 
-CreateAllExpress server
+In the **RestBasics** directory, run the following command:
 
-Let's put our server api in its own file. In **routes** folder create **api.js**:
+  CreateAllExpress server
+
+Let's put our server api in its own file. In the **routes** folder create a file called **api.js**:
 
 ```javascript
 var express = require('express');
@@ -28,15 +40,18 @@ router.get('/foo', function(request, response, next) {
 module.exports = router;
 ```
 
-Now we need to link in this new file. You know how to do this, but just to remind in: in app.js around lines 10 and 28:
+Now we need to link in this new file. You know how to do this, but just to remind in: in **app.js** around lines 10 and 28:
 
 ```javascript
-var api = require('./routes/api');
-app.use('/api', api);
+var api = require('./routes/api');  // on line 10
+app.use('/api', api);               // on line 20
 ```
 
-Set the port, in **bin/www**, to **30026**.
-If you want, go ahead and start it:
+The first line just allows us to gain access to our new file: it links it into our project. The second line states what we want to do: _we want to **use** it as middleware._
+
+Now set the port, in **bin/www**, to **30026**. We are going to run the client on port 30025, so we are setting the port for the server to some other number. I've chosen 30026 in the hopes that it will be easy to remember.
+
+If you want, go ahead and start your new server:
 
 ```
 npm start
@@ -49,10 +64,9 @@ You'll need to create a new bash tab, since the one we were using is now busy: C
 ```
 create-react-app client
 cd client
-npm run eject
 ```
 
-The last command, which we probably won't use very often, creates a **scripts** directory and modifies **package.json**. Look at **package.json** to see the relationship between the two.
+**NOTE**: _Though I don't recommend it, and in fact recommend that you don't do it, if you are terminally curious, you can run this command: npm run eject. The command, which you should not use very often, exposes the inner workings of **create_react_app**. In particular, it creates a **scripts** directory and modifies **package.json**. Look at **package.json** to see the relationship between the two. Rather than do this with a project that you might want to keep, I would do create a temporary project, and try this command there. It's interesting to learn more about **create-react-app**._
 
 **NOTE**: _Don't forget to set the **File | Settings | Languages and Frameworks | JavaScript** to **React JSX**_
 
