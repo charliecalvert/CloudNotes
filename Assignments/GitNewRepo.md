@@ -22,7 +22,7 @@ Git is probably already installed on your system. To confirm that it is installe
 
 	sudo apt-get install git
 
-After installing Git, there are few steps you need to take to set it up. It is perhaps simplest to get these chores out of the way at the very start. Your goals will be to tell Git your:
+Whether Git was pre-installed on your system or not, there are a few steps you need to take to set it up. It is perhaps simplest to get these chores out of the way at the very start. Your goals will be to tell Git your:
 
 - username
 - email address
@@ -103,9 +103,9 @@ Then make the following selections:
 
 ## Share Repository {#share}
 
-Make sure you give me _read/write_ access to your repository.
+Make sure you give me at least _read/write_ access to your repository. If you use:
 
-- **GitHub**: Choose the gear icon near top on right. Select **collaborators** page. My GitHub user name is **charliecalvert**.
+- **GitHub**: Choose the Settings gear icon in the tabs over your repository listing. Select the **collaborators** page. My GitHub user name is **charliecalvert**.
 - **Bitbucket**: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
 
 ## Set up the Git Folder
@@ -319,48 +319,6 @@ Now try again:
 
 ```
 ln -s Prog270Key main-key
-```
-
-## Build Repository
-
-If you created a repository on GitHub with an pre-initialized **README.md** file, then just clone your repository as [described above](#clone-repo). For instance:
-
-```bash
-git clone git@github.com:USERNAME/REPO_NAME.git
-```
-
-This is the simplest way to get started, and is the technique you should probably use. There are times, however, when it is useful to understand how to first create a local repository, and then push it into an empty repository on a cloud site such as GitHub or BitBucket. Though it is simpler to have a pre-initialized **README.md** and then clone a repository, there is much to be learned from followning the steps outlined below. Every single fact you learn about Git makes you a bit more employable. Git is central to web development in many shops and a deep knowledge of its working can help make you very employable.
-
-Once again, this scenario shows how to start a repository on your hard drive, then push it to an empty repository on the cloud. This lesson also demonstrates how to push an existing repository to the cloud.
-
-To get started enter the following, where **lastname** should be your last name, in all lower case letters. Be sure to use dashes instead of underscores, and don't use any upper case letters:
-
-```
-cd ~/Git
-mkdir isit320-lastname-2017
-cd isit320-lastname-2017
-git init
-```
-
-For instance, here we create a directory and navigate into it:
-
-```
-mkdir isit320-calvert-2017
-cd isit320-calvert-2017
-```
-
-Now issue this command where the details will differ in your case:
-
-```
-git remote add origin git@bitbucket.org:username/isit320-lastname-2017.git
-```
-
-You can find the exact string, or something very close to it, in GitHub or BitBucket. For instance, when you first create a repository in BitBucket, this string is displayed in the confirmation page for the creation of your repository. For existing repositories, you can find something very like that string by choosing **Actions** (...) and **Clone** from the navigation menu on the left.
-
-Now create a README file in [markdown][markdown] format:
-
-```
-echo lastname >> README.md
 ```
 
 ## Create gitignore File {#gitignore}
@@ -764,6 +722,10 @@ You shouldn't need any other commands. At least not at first. Don't try to set t
 
 After you start feeling very comfortable with the basics, then you can learn some more complex commands.
 
+## Push Existing Repository to the Cloud
+
+Details are [here][push-to-cloud]
+
 ## Ruminations
 
 Both at home, and at school, you want to have a ~/.ssh directory. In that directory, you should have a private key and a public key. The private key is only on your machines. Never give it to anyone else. The public key you insert into the proper dialog on GitHub (or BitBucket) or some other site as needed.
@@ -791,6 +753,7 @@ If you want, it is possible to put a password on your private key.
 - [http://stackoverflow.com/a/3818909](http://stackoverflow.com/a/3818909)
 - [https://help.github.com/articles/working-with-ssh-key-passphrases/](https://help.github.com/articles/working-with-ssh-key-passphrases/)
 
+
 <!-- ********************************* -->
 <!-- ** URLS ************************* -->
 <!-- ********************************* -->
@@ -800,3 +763,4 @@ If you want, it is possible to put a password on your private key.
 [more-ssh]: http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#moreSsh
 [ssh-config]: http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config
 [known-hosts-remove]: http://superuser.com/questions/30087/remove-key-from-known-hosts
+[push-to-cloud]: http://www.elvenware.com/charlie/development/git/git-configure.html#push-repository-to-cloud
