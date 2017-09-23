@@ -180,7 +180,27 @@ The screenshot you want to create will be similar to, but not identical too, the
 
 **Image01**: *The Cloud 9 IDE. Click the image above to expand it.*
 
+## Running React Basics on Cloud 9
+
+I'm still learning about this too, but this is what worked for me with the Assignment we did in class on Wednesday. First I created a workspace that linked to my version of our new **isit320-lastname-2017** repository. My version of the repository contained the work we did in class on Wednesday.
+
+On the command line, I navigated to our project directory and ran:
+
+npm install && npm run build
+
+I opened Week01-ReactBasics/index.html in the Cloud 9 editor and selected Run. That started Apache. Then I went to Preview | Preview Running Application, which opened a window. I clicked on the directory that held my project, and Bob was my Uncle.
+
+There is a little doo-hickey you can click so your project runs in its own tab in the browser, rather than as a child of Cloud 9's IDE. It's a matter of taste as to what you prefer.
+
+I should mention that there is no need, and in fact you don't want to, install node and npm on Cloud 9. They are already installed if you selected node when you created your workspace. If you didn't select node, I would just delete your workspace, and start again, this time being sure to select node.
+
+**NOTE**: _If you have are going to delete your workspace, and you have already edited your project, and you want to keep your changes, then push before you delete. Then when you recreated your workspace based on your repository, it will contain you latest changes._
+
+![Cloud Nine](https://s3.amazonaws.com/bucket01.elvenware.com/images/cloud9-test-start.png)
+
 ## Webpack on Cloud 9
+
+In the future, we should be able to do something more like this.
 
 Place the properties called **build**, **c9** and **c9a** in the **scripts** object of your **package.json** file.
 
@@ -206,6 +226,8 @@ Submit your work and attach the screenshots.
 [webpack-c9]: https://github.com/webpack/webpack-dev-server/issues/230
 
 ## Install Node Manually
+
+Don't install Node on Cloud 9. This is just old stuff I don't want to delete you.
 
 Node should already be installed in your copy of Cloud9. In fact, **NVM** should also be installed, so you can set the current version of Node with that tool, if you know how to use it.
 

@@ -40,7 +40,7 @@ When prompted for input after running **npm init**, respond like this but with y
 name: react-basics
 version: (1.0.0)
 description: react basics examples
-entry point: (index.js) server.js
+entry point: (index.js) main.js
 test command:
 git repository: https://github.com/charliecalvert/JsObjects.git
 keywords: react
@@ -63,7 +63,7 @@ This gives you a chance to review your new **package.json** file and gain at lea
   "name": "week01-reactbasics",
   "version": "1.0.0",
   "description": "React Basics",
-  "main": "server.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -165,7 +165,7 @@ The point here is that **test** and **start** are scripts that **npm** expects y
 
 ## React
 
-We are, at last, through with the setup. We can now proceed to write some code. In particular, we will create a file called **simple-react.js**. In that file we should:
+We are, at last, through with the setup. We can now proceed to write some code. In particular, we will create a file called **react-simple.js**. In that file we should:
 
 - **import** the react library on which our code depends.
 - Create a simple react component that will display a line of text in an **h1** tag.
@@ -228,7 +228,7 @@ Now create a **.babelrc** file with this content:
 Finally, run bably over your code:
 
 ```
-babel simple-react.js
+babel react-simple.js
 ```
 
 The output, at the time of this writing, looks like this:
@@ -291,12 +291,12 @@ export default class ReactBasics extends React.Component {}
 ## Render HTML with JSX Code
 
 
-Most React projects consist of multiple components. This means we often want to create a single file that joins our components together. In our case, we are only going to need to reference one component, nevertheless, I will still create a simple version of the file used to combine one or more components into a single HTML page or HTML page fragment. We can call this file **server.js**:
+Most React projects consist of multiple components. This means we often want to create a single file that joins our components together. In our case, we are only going to need to reference one component, nevertheless, I will still create a simple version of the file used to combine one or more components into a single HTML page or HTML page fragment. We can call this file **main.js**:
 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSimple from 'react-simple';
+import ReactSimple from './react-simple';
 
 ReactDOM.render(
   <ReactSimple/>,
@@ -331,7 +331,7 @@ Here is how we link the **ReactBasics.js** page from the previous sections into 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSimple from './react-simple.js';
+import ReactSimple from './react-simple';
 
 ReactDOM.render(
   <ReactSimple/>,
@@ -349,14 +349,14 @@ On the next section, you will see a webpack configuration file
 
 ## Webpack Configuration
 
-Save the following code in: webpack.config.js. Note that entry is main.js and output is bundle.js.
+Save the following code in: webpack.config.js. Note that entry is **main.js** and output is **bundle.js**.
 
 ```javascript
 var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-   entry: './server.js',
+   entry: './main.js',
    output: {path: __dirname, filename: 'bundle.js'},
    module: {
        loaders: [

@@ -108,6 +108,14 @@ Make sure you give me at least _read/write_ access to your repository. If you us
 - **GitHub**: Choose the Settings gear icon in the tabs over your repository listing. Select the **collaborators** page. My GitHub user name is **charliecalvert**.
 - **Bitbucket**: Use the **send invitation** link and use **ccalvert** as my id. You can select it from a dropdown.
 
+Look for settings below and to the left of the word Unwatch:
+
+![Settings](https://s3.amazonaws.com/bucket01.elvenware.com/images/github-settings.png)
+
+<p>Select Collaborate and type in my name, which is charliecalvert:</p>
+
+![Collaborate](https://s3.amazonaws.com/bucket01.elvenware.com/images/github-collab.png)
+
 ## Set up the Git Folder
 
 Let's now turn our attention from the browser to the Linux command line. Typically, this means that you will open or navigate to a terminal window in your Pristine Lubuntu instance. However, you can also perform similar work in Windows, the Linux subsystem for Windows or the Mac.
