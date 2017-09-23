@@ -7,7 +7,7 @@ This is the third part of the Online Presence Assignment. Please review the open
 
 If you don't have one already, go to Microsoft's Live website and [Create an account](https://onedrive.live.com?invref=441f942a988a6348&invsrc=90).
 
-You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder 2016-Prog270-LastName, where the 2016 can be adjusted to match the current year, LastName is your name and Prog270 is the name of the course you are taking. For instance, my folder might be named **2016-Prog270-Calvert**, **2016-Isit320-Calvert**, **2016-Prog272-Calvert**, **2016-Prog219-Calvert**, **2016-Isit322-Calvert**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
+You should then sign in to Live and go to your **OneDrive**. Just as you did in Google Drive, use **OneDrive** to create a folder with the same naming convention you used in the Google Section. In particular, name the folder **Prog270-LastName-2017**, where the year can be adjusted to match the current year, **LastName** is your name and **Prog270** is the name of the course you are taking. For instance, my folder might be named **Prog270-Calvert-2017**, **Isit320-Calvert-2017**, **Prog272-Calvert-2017**, **Prog219-Calvert-2017**, **Isit322-Calvert-2017**, and so on, depending on the course you are currently taking. On both Google Drive and OneDrive you can rename a folder you have shared if necessary. You don't have to share it again. Just rename it.
 
 Share the folder with me, using my Live ID for Bellevue College work:
 
@@ -72,5 +72,5 @@ Various Sections of this Document will help you complete this assignment:
 
 - <http://elvenware.com/charlie/os/Android/AndroidApplications.html>
 
-  [1]: https://evernote.com
-  [2]: http://evernote.com/contact/support/kb/#/article/23480523
+[1]: https://evernote.com
+[2]: http://evernote.com/contact/support/kb/#/article/23480523

@@ -40,7 +40,7 @@ I have also found that many people don't really understand how Twitter works or 
 
 You should do much the same thing in [Evernote][1] as you did in Google Drive and in Microsoft SkyDrive. Your Evernote notebook, however, is read only for those who share it. You have to pay to create a notebook with notes that more than one person can edit. There is no need to perform the upgrade to the paid version in this course.
 
-Create a new synchronized notebook by choosing **File | New Notebook**. Name it according the pattern established in earlier exercises. For instance, **2016-Prog270-Calvert**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
+Create a new synchronized notebook by choosing **File | New Notebook**. Name it according the pattern established in earlier exercises. For instance, **Prog270-Calvert-2017**. Place some or all of your document in an Evernote note that is part of this notebook. Choose Synchronize. Now switch to the share tab, choose **Manage Shares** and share it with:
 
 -  **charliecalvertbc@gmail.com**
 
@@ -66,7 +66,7 @@ Steps:
 
 - Optionally install the Evernote app. There is one for the PC. This used to be all but essential, but now is probably not necessary for most people.
 - Choose: File | New Notebook (Ctrl-Shift-N)
-- Create a synchronized notebook with a name similar to **2016-Prog270-LastName**, where LastName is your last name. (As always, use your common sense to substitute the proper year and class if the one's you see here don't seem right).
+- Create a synchronized notebook with a name similar to **Prog270-LastName-2017**, where LastName is your last name. (As always, use your common sense to substitute the proper year and class if the one's you see here don't seem right).
 - Right click on the new notebook and choose Share.
 - Share the notebook with charliecalvertbc@gmail.com
 - Put a note in the notebook
@@ -75,9 +75,9 @@ Steps:
 
 **TIP**: _Many students struggle to learn how to place a message in a shared Evernote notebook. One technique that may help some students is to add content to Evernote by sending email. That will allow you to automate the process of adding notes to Evernote in the correct folder with a default tag. Assuming you have already created your folder, and already tagged one message with the tag **Isit320**, then you can send a message to the correct folder by creating a subject line something like this:_
 
-- Test Message @2014-Isit320-LastName #Isit320
+- Test Message @Isit320-LastName-2017 #Isit320
 
-*If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2].*
+_If the message you see in Evernote has **#Isit320** in the title, then you may have forgotten to first create the tag in Evernote before sending the message. More information is found in the [Evernote documentation][2]._
 
 ## Turn it in
 
