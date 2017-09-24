@@ -1,3 +1,18 @@
+## Overview
+
+This document contains various useful tips related to creating and maintaining an online presence. That is, tips that are useful for people who are learning to work in the cloud.
+
+## Caution is Golden
+
+Don't ever write anything online that you would not like to:
+
+- Show to your spouse, parents, or children
+- See on the cover of the New York Times
+- Show to your employer or employees
+- Show to all your friends.
+
+If you are a novelist or a poet, then perhaps your definition of what you want to share online is different from what a perspective VP at Fortune 500 company might want to share online. 
+
 ## Passwords
 
 I have a number of online accounts. To help me manage the passwords for those accounts, I use a service called [LastPass](https://lastpass.com/). Getting some people to feel comfortable using services such as Google or Evernote can be difficult, getting them to trust their passwords to LastPass is much more challenging. I believe, however, that allowing LastPass to manage your passwords will prove the most secure solution for most users.
