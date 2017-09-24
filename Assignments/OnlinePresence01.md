@@ -1,26 +1,22 @@
 ## Overview
 
-In this class we use a variety of cloud services. Most of these services are free, or very reasonably priced. This assignments is designed to ensure that you have a foothold in these various services.
+In this class we use a variety free or inexpensive cloud services. This assignment is designed to help you use the these services in a safe, public spirited, manner.
 
-Our focus will be on learning to use the cloud in a safe, secure and public spirited manner.
+Here is how to proceed:
 
-In particular, we will be asked to create a Google Account if you don't already have one. Here is a summary of what I want you to do:
-
-- Go to http://www.google.com and create a google account.  
-- Set up a gmail account. (http://www.google.com/mail)
-- Create a Google site (http://www.google.com/sites).
-- In Google Drive (aka Google Docs) create a Google Folder and share it with me. See above for a description of how to name that folder.
-- Use the email address shown below when sharing your Google Drive folder. This is not the same address you use when sharing Microsoft folders.
+- Go to http://www.google.com and create a Google account if you don't already have one.  
+- In Google Drive (aka Google Docs) create a Google Folder and Document
+- Share the folder and document with me.
+- Set up a Gail account. (http://www.google.com/mail)
+- Create a New Google site (https://sites.google.com/new).
 
 ## Useful Tips
 
-Back in the day getting people to use online accounts was difficult. There was a huge resistance by students to doing anything in the cloud. As a result, I added a lot of text to this assignment designed to allay fears and help them understand basic habits for online thinking. I don't think those tips are absolutely necessary any longer, so I have moved them into [their own document][online-presence]. Some students, however, still might want to at least skim over them.
-
-[online-presence]: http://www.ccalvert.net/books/CloudNotes/Assignments/OnlinePresence.html
+In the past, some students resisted doing anything in the cloud. As a result, I added suggestions to this assignment designed to help students understand the online world. Since today's students better understand the cloud I have moved these suggestions into [a tips document][online-tips]. Some students, however, still might want to at least skim over them.
 
 ## Video
 
-A number of years ago I created a video showing how to share documents on Google Drive. Parts of it are now outdated, but the process is substantially still the same, so I'll continue to use it:
+A number of years ago I created a video showing how to share documents on Google Drive. Parts of it are now outdated, but the process is still substantially the same, so I'll continue to use it:
 
 - [Google Share Document Video](http://youtu.be/NMkTz3Rvgfo)
 
@@ -29,6 +25,17 @@ A number of years ago I created a video showing how to share documents on Google
 The email address to use when sharing your Google Drive is shown below. So that black hat snoopers can't find my email too easily, I have translated it into plain English. It should, however, be a simple task for you to convert it into a normal email address:
 
 -  **charliecalvertbc at gmail dot com**
+
+## The Basics
+
+In this assignment we:
+
+- Create a document on Google Drive.
+- Place the document in in a folder you have shared with me.
+- Share both the folder and the document with the email account [described above][#my-email].
+- Be sure I have rights to edit this document, your folder and everything you submit for this course via Google Drive. In general, if you first share the folder with me, then everything you place in the folder should be shared with me automatically.
+
+In your new folder, create a document called **OnlinePresence-LastName**, where **LastName** is your last name. It should contain the same information as found in the HTML document described below.
 
 ## Folder names
 
@@ -45,7 +52,7 @@ Here are example names for each of my classes, pick the appropriate name for thi
 - Isit320-LastName-2017
 - Isit322-LastName-2017
 
-Where I write **LastName**, please substitute your last name. For instance, if this class is Prog272, then I would create a folder called **2015-Prog272-Calvert**.
+Where I write **LastName**, please substitute your last name. For instance, if this class is Prog272, then I would create a folder called **Prog272-Calvert-2017**.
 
 Here are some examples of **improper** folder names:
 
@@ -59,27 +66,11 @@ If you get the casing or name wrong then I might not find your folder at all, an
 
 No one but you and me will ever see these folders. It is not a risk to use your name in their creation.
 
-## The Basics
-
-In this assignment we:
-
-- Create a document on Google Drive.
-- Place the document in in a folder you have shared with me.
-- Share both the folder and the document with the email account [described above][#my-email].
-- Be sure I have rights to edit this document, your folder and everything you submit for this course via Google Drive. In general, if you first share the folder with me, then everything you place in the folder should be shared with me automatically.
-
-In your new folder, create a document called **OnlinePresence-LastName**, where **LastName** is your last name. It should contain the same information as found in the HTML document described below.
-
 ## The Directory
 
-I want you create and share a directory with a specific name. The name should have the correct casing, and your should use a hypen, not an underscore. For instance, the following are valid folder names:
+I want you create and share a directory with a specific name as outlined above. The name should have the correct casing, and your should use a hypen, not an underscore.
 
-- **Isit320-LastName-2017**
-- **Prog270-LastName-2017**
-
- Substitute your last name for the word **LastName**. For instance, I might create a folder called **Isit320-Calvert-2017**.
-
- To share the folder, do one of the following:
+To share the folder, do one of the following:
 
 - Right-click the folder, and choose share
 - Select the folder, and choose the Share icon near the top right of the screen
@@ -168,43 +159,12 @@ This is the first part of a multi-part series of assignments. Here is a checklis
   - Microsoft Document (Double check that you are using a Microsoft email address!)
   - OneNote Document (Double check that you are using a Microsoft email address!)
 
-## Hints on Google Sites
+## Old Google Sites
 
-Google Sites has changed a great deal since I first wrote this assignment. As mentioned above, I now use it primarily as a means of sharing content I create on Google Drive. But should you want to include a custom HTML page in your site, completing the following steps might still work:
-
-- Use Atom and MakeHtml, or StackEdit, or some other set of tools, to convert your markdown to HTML.
-  - StackEdit: (# menu | Export to Disk | As markdown).
-- Open the HTML in a text editor such as Geany, NotePad++, CodeAnywhere, nano or Visual Studio. (Wordpad might also work.)
-- Block Copy the HTML to the clipboard (Ctrl-C).
-- Open Your Google Site page. Go into edit mode.
-- Click the little HTML symbol on the top of the page at the right.
-- Delete any and all HTML shown in the HTML editor.
-- Paste in your HTML (Ctrl-V).
-- Save your work.
-
-## The Old Google Sites
-
-Google Sites has been radically rewritten. For this assignment, create a new Google Site, as outlined above. But if you want to create an old style site for your personal use, then you can click the create button on this page:
-
-- <https://sites.google.com/>
-
-Then follow these steps:
-
-- Use the blank template (the default)
-- Name your site. You will be able to edit the name later. (If you need an idea, use **firstnamelastnamebc**. For instance: **charliecalvertbc**.
-- Create the last word of the URL for your site. Choose a single word using alphanumeric characters. It helps to create a URL that is easy to remember and type. I used **elvenware**.
-- Choose a theme. This is your choice and can be changed later.
-- Open up More Options, give your site a description and choose to share it with everyone.
-- Enter the captcha.
-- Click Create Site
-
-After creating the site choose **Manage Site | General | Mobile | Automatically adjust site to mobile phones**.
-
-If things go completely awry, you will be able to delete the site and start again. In that case, choose **More Actions | Manage Site| Delete Site**.
-
-
+If you are interested in the old Google Sites, some details are found [here](OldGoogleSites.html).
 
 [gsite]: https://sites.google.com/
 [ngsite]: https://sites.google.com/new
 [pwm]: https://www.pcmag.com/article2/0,2817,2407168,00.asp
 [wpwm]: https://en.wikipedia.org/wiki/Password_manager
+[online-tips]: http://www.ccalvert.net/books/CloudNotes/Assignments/OnlinePresence.html

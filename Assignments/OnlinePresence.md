@@ -1,6 +1,6 @@
 ## Overview
 
-This document contains various useful tips related to creating and maintaining an online presence. That is, tips that are useful for people who are learning to work in the cloud.
+This document contains various tips designed to help students work in the cloud.
 
 ## Caution is Golden
 
@@ -11,7 +11,7 @@ Don't ever write anything online that you would not like to:
 - Show to your employer or employees
 - Show to all your friends.
 
-If you are a novelist or a poet, then perhaps your definition of what you want to share online is different from what a perspective VP at Fortune 500 company might want to share online. 
+If you are a novelist or a poet, then perhaps your definition of what you want to share online is different from what a perspective VP at Fortune 500 company might want to share online.
 
 ## Passwords
 
