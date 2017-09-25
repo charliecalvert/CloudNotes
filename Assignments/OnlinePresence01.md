@@ -144,7 +144,7 @@ Though it may be in need of an update, see the following for more information on
 
 ## What's Ahead
 
-This is the first part of a multi-part series of assignments. Here is a checklist of sorts:
+This is the first part of a multi-part series of assignments. Here is a tentative list of what lies ahead:
 
 - **Part 01**: (Week02)
   - Google Folder

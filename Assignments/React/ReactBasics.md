@@ -56,7 +56,7 @@ When you have completed filling in the prompts, you can **cat** the contents of 
 cat pacakge.json
 ```
 
-This gives you a chance to review your new **package.json** file and gain at least a passing understanding of its contents. For instance, I see the following when issuing the command:
+This gives you a chance to review your new **package.json** file and gain at least a passing understanding of its contents. For instance, I see the following after issuing the command:
 
 ```json
 {
@@ -75,7 +75,7 @@ This gives you a chance to review your new **package.json** file and gain at lea
 }
 ```
 
-**NOTE**: _Do you need to understand all the sections of a **package.json** file? Yes, ultimately you should know and understand these files as completely as possible. However, it is possible to work with them for awhile without performing a complete mind meld. If you want more information, follow the link below._
+**NOTE**: _Ultimately you should know and understand your **package.json** as completely as possible. However, it is possible to work with them for awhile without performing the complete mind meld that is your ultimate goal. If you want more information, follow the links below._
 
 - [Elven Node Packages](http://www.elvenware.com/charlie/development/web/JavaScript/NodePackages.html)
 - [Search for information on package.json](https://www.google.com/search?q=package.json)
