@@ -47,9 +47,9 @@ The following diagram provides us with some nomenclature.
            hierarchical part
          ┌─────────┴─────────┐
            authority       path
-         ┌─────┴───────┐ ┌──┴───┐
+         ┌─────┴───────┐ ┌──┴──┐
   http://localhost:30025/api/foo?key=value&amp#qux
-  └┬─┘   └───┬────┘└─┬─┘         └─────┬─────┘└─┬─┘
+  └┬─┘   └───┬────┘└─┬─┘         └─────┬─┘    └─┬─┘
 scheme     host    port              query   fragment
 </pre>
 
