@@ -2,6 +2,8 @@
 
 This document contains various tips designed to help students work in the cloud.
 
+- [Online Presence 01](http://www.ccalvert.net/books/CloudNotes/Assignments/OnlinePresence01.html)
+
 ## Caution is Golden
 
 Don't ever write anything online that you would not like to:

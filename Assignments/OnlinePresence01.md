@@ -121,11 +121,12 @@ Now follow these steps:
 - Click the red plus button to create a new site
 - Set your title to Prog270-LastName, or something similar, using your common sense to set the class name and your last name.
 - Create a simple Google Doc, Google Slide Deck and Google Sheet on Google Drive
+  - Make them public: **Share | Get a Shareable Link**
   - These can be very simple, I won't be grading you on the content of the documents you create
   - These will be public documents found on your public Google Site, so don't put any personal information in them.
   - Share your documents with everyone
 - On your Google Site, choose
-  - **Insert | Google Docs | Docs** to inside your simple document
+  - **Insert | Google Docs | Docs** to insert your simple document
   - **Insert | Google Docs | Sheets** to insert your spread sheet
   - **Insert | Google Docs | Slides** to insert your slide deck
 
