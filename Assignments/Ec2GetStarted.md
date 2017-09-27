@@ -1,51 +1,74 @@
-## Description
+## Overview
 
-EC2 Get Started
+This assignment is designed to help you get started using the AWS application called EC2.
 
-## Step One
+- AWS: [Amazon Web Services][aws-doc]
+- EC2: [Elastic Compute Cloud][ec2-doc]
 
-Create an account on EC2.
+## Step 01 {#step-one}
 
-- Slides that describe process: [http://bit.ly/ec2-aws](http://bit.ly/ec2-aws)
+Your first step will be to create a [free account](https://aws.amazon.com/free/) on AWS.
 
-## Step Two
+- Slides that describe setting up AWS: [http://bit.ly/ec2-aws](http://bit.ly/ec2-aws)
+- [Page with Related Slides](https://sites.google.com/view/elfland/web-services)
 
-Create an EC2 Instance.
+## Step 02 {#step-two}
 
-It will be assigned:
+Once you have an account set up, the next step is to create an EC2 Instance.
 
-- A public private key pair that you can download. Put it in your **.ssh** folder.
-- A non-permanent public IP address for your EC2 instance. You can see this in your AWS console, under EC2 instances.
+- Launch Instance
+- **Step 1, Pick OS**: Ubuntu Server 16.04 LTS (HVM), SSD Volume Type - ami-6e1a0117
+- **Step 2 Choose Instance**: Free t2-micro
+- **Step 3, Configure Instance**: take the defaults.
+- **Step 4, Add Storage**: Take defaults or select up to 30 GB of disk space
+- **Step 5, Add Tag**: Add a single pair: name: prog270-01
+- **Step 6, Configure Security Group**: If you have one set up, use it. Otherwise create a new one:
+	- HTTP
+	- HTTPS
+	- SSH
+	- Custom TCP Rule: 30025
 
-We will need a permanent IP address, here are instructions on creating elastic IP address. The elastic IP will not change.
+You will be asked to choose an SSH public private key pair. Use an existing one if you have created one before and can locate it. Otherwise create a new one. If you create a new one:
+
+- Download it and put it in your **.ssh** folder
+- Zip it up
+- Save it to Google Drive or someplace similar.
+- Don't lose it!
+
+
+Your instance will be assigned a non-permanent public IP address for your EC2 instance. You can see this in your AWS console, under EC2 instances.
+
+## Step 02-a: Elastic IP Address {#elastic-ip-address}
+
+We will need a permanent IP address. On AWS, these permanent IP addresses are called Elastic IPs. Here are instructions on creating elastic IP address.
 
 - [Elastic IP](http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic)
 
-## Step Three
+## Step 03: Load your SSH Key {#step-three}
 
-From Linux:
+Once you have created your instance, and downloaded your keys, you need to learn how to use the keys to access your instance.
 
-- Load you EC2 PEM file on your local machine. On the Pristine Lubuntu:
+The first step is to load your EC2 PEM (private key) file on your local machine. On Pristine Lubuntu:
 
 ```
 ssh-add ~/.ssh/<YOUR EC2 PRIVATE KEY>
 ```
 
-It might look like this:
+More specifically, it might look like this:
 
 ```
 ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
 ```
 
-For windows users:
+Until very recently, Windows did not have SSH built into the OS. I hear this is changing. But for now, windows users can still use [PuTTY][putty]:
 
 Convert the PEM file to a PPK file.
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#pem>
 
-## Step Four
+## Step 04: Access Your Instance {#step-four}
 
-Connect to your EC2 instance with SSH.
+Now that you have your key loaded, you can connect to your EC2 instance with SSH. This gives you access to the command line of your instance.
 
 	ssh ubuntu@<YOUR IP PUBLIC IP or ELASTIC IP ADDRESS>
 
@@ -60,12 +83,27 @@ Connect to your EC2 instance with Putty:
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
 
+
+## Step 04.a: Configure Your Instance {#configure}
+
+You can configure your instance by running a script found in JsObjects.
+
+- [Install JsObjects on your Instance][jsobjects]
+- [Run the Configuration Script][configure]
+
+You should also install a Web Server:
+
+- [Install LAMP][lamp]
+
 See also:
 
 - [AwsExpect][aws-expert]
 - [.bashrc and ssh-agent][ec2-provision]
 - [SSH and Configuring Linux][ssh-configure-linux]
 
+[lamp]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-lamp
+[jsobjects]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#jsobjects
+[configure]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#core-setup
 [aws-expert]:http://www.ccalvert.net/books/CloudNotes/Assignments/AwsEc2Expert.html#step-two-ssh-into-your-instance
 [ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
 [ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh
@@ -190,6 +228,9 @@ These references are useful:
 - [http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html][configure-linux]
 
 [configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
+[ec2-doc]: https://aws.amazon.com/documentation/ec2/
+[aws-doc]: https://aws.amazon.com/documentation/
+[putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 ## Details
 

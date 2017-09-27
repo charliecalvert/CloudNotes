@@ -26,26 +26,41 @@ A single Elastic IP can be associated with only one instance at a time. When you
 
 ### Create instance programmatically
 
+It is possible to create an EC2 instance programmatically. This makes setting up your instances very simple and very fast.
+
+First, install the AWS client. For this to work, you will need to have a tool called pip installed. Since Pristine Lubuntu does not come with pip, I include the instructions for installing it. It should not hurt to run the install command even if pip is already installed:
+
+```
+sudo apt install python-pip
+pip install awscli --upgrade --user
+```
+
+The following command might also work, but I recommend using pip as described above:
+
+<pre>
+sudo apt install awscli
+</pre>
+
+Once **aws** is installed, you can create an instance programmatically.
+
 <pre>
 aws ec2 run-instances --image-id ami-d732f0b7 --security-group-ids sg-e7915c80 --count 1 --instance-type t2.micro --key-name ElfWest --query 'Instances[0].InstanceId'
 </pre>
 
 - image-id This is the type of instance you want to create. Find in launch wizard
+  - Ubuntu Server 16.04 LTS (HVM), SSD Volume Type - ami-6e1a0117
   - Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-d732f0b7
   - Amazon Linux AMI 2016.03.3 (HVM), SSD Volume Type - ami-7172b611
+
 
 To create a tag for the instance you must take a second step. You can't create the tag name with **run-instances**. Instead, do it like this:
 
 aws ec2 create-tags --resources i-1q462a6fg123g99 --tags Key=Name,Value=elf-02
 
+The **--resources** tag is the **instance ID** which you can easily find in the EC2 console.
 
 ### Get Public IP Programmatically {#get-public-ip}
 
-If you haven't already, install the aws cli:
-
-<pre>
-sudo apt install awscli
-</pre>
 
 Here is how to get the Public IP from the command line:
 
