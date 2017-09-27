@@ -180,6 +180,12 @@ At the top of your address.test.js file, do this:
 
 - jest.mock('whatwg-fetch');
 
+Is this still necessary? (Was it ever necessary?) I think you can just do this at the top of your test:
+
+```javascript
+import 'whatwg-fetch';
+```
+
 
 ## DataLoader
 

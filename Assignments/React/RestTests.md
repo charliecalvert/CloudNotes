@@ -46,9 +46,19 @@ npm i --save-dev enzyme enzyme-react-adapter-16
 
 ## Render
 
-If necessary, tweak your render method slightly so that it looks like this:
+If necessary, tweak your render method slightly. Notice that the state is set to a simpler object than in the previous version. Note that there are two paragraphs elements in the JSX. The portions of the code that changed now look like this:
 
-```HTML
+```javascript
+constructor() {
+    super();
+    this.state = {
+        file: 'unknown',
+        foo: 'waiting'
+    };
+}
+
+// CODE OMITTED HERE....
+
 render() {
     return (
         <div className="App">
@@ -69,7 +79,7 @@ render() {
 }
 ```
 
-## Simple Tests
+## Configure Enzyme
 
 Place this code at the top of app.test.js:
 
@@ -81,10 +91,14 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 ```
 
+## The Tests
+
 Beneath this code add a **describe method** and a new test:
 
 ```javascript
 describe('rest basic tests', function() {
+
+    const elfDebugEnzyme = new ElfDebugEnzyme();
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
@@ -94,33 +108,68 @@ describe('rest basic tests', function() {
     it('renders initial value of paragraph with state.nine', () => {
         const wrapper = shallow(<App/>);
         const nineSign = <p className="App-intro">file: unknown</p>;
-        const ninep = wrapper.find('p').last().debug();
-        console.log(ninep);
+        elfDebugEnzyme.getLast(wrapper, 'p', true);
         expect(wrapper.contains(nineSign)).toEqual(true);
     });
 
 });
 ```
 
-**NOTE**: _Make sure you don't end up with two **renders without crashing** tests._
+## Simple Debug Class
+
+Some of you know that there is a relatively complete Enzyme debug object.
+
+- [The original object saved as a gist on my GitHub account][enz-debug].
+- Or clone it like this: https://gist.github.com/51daef341699943b07c9570c3ad2cbab.git
+
+But all that is a bit heavyweight for this exercise. Instead, we can just use this simple ES6 class:
+
+```javascript
+class ElfDebugEnzyme {
+
+    display(value) {
+        console.log(value);
+    }
+
+    getLast(wrapper, element, showMe) {
+        if (showMe) {
+            const paragraphData = wrapper.find(element).last().debug();
+            this.display(paragraphData);
+        }
+    }
+}
+
+export default new ElfDebugEnzyme();
+```
+
+Place this code in a file called **ElfDebugEnzyme.js**. At the top of **App.test.js**, reference the debug object:
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import {configure, shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import elfDebugEnzyme from './ElfDebugEnzyme';
+```
+
+**NOTE**: _Make sure you don not end up with two **renders without crashing** tests._
 
 ## Call Server
 
 ```javascript
-getFoo = () => {
-    console.log('GetFoo is called');
-
+bar = () => {
     const that = this;
-
     fetch('/api/foo')
         .then(function(response) {
-            console.log('got response');
             return response.json();
-        }).then(function(json) {
+        })
+        .then(function(json) {
             console.log('parsed json', json);
             that.setState(foo => (json));
-        }).catch(function(ex) {
-            console.log('elf parsing failed', ex);
+        })
+        .catch(function(ex) {
+            console.log('parsing failed', ex);
         });
 };
 ```
@@ -128,3 +177,5 @@ getFoo = () => {
 ## Turn it in
 
 Git **add**, **push** and **commit**. Put your work in a branch called **RestTest** and then Git **tag**.
+
+[enz-debug]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab#file-elfdebugenzyme-js
