@@ -219,9 +219,28 @@ Checklist:
 
 - README.md file present with reasonable content
 - .gitignore present with reasonable content
-- At least five commits in the log
+- At least six commits in the log
+  - I'm expecting to see some of the commits to have a comment on them about the conflict
 
 I think it is probably nicest to use the Text page of the Canvas submit process to do this kind of thing. Then if you enter a URL, it will be clickable. If you submit the URL as a comment, then I have to block copy and paste it in to the browser address bar. That seems a small thing, but in a worst case scenario, it's gets old if I have to do it 25 times for two or three different assignments (50, 60 or more times total). So please use the the text page if possible.
+
+## Evidence of a Conflict
+
+I can spelunk through your commits to be sure you set up a conflict. At minimum, I want to see some commit comments that mention conflicts. I can see the comments on your commits by running **git log --pretty=oneline**:
+
+```
+$ git log --pretty=oneline
+152b4d8f5dafb97e2c5c9ae3864e849e3feb5480 cloneall
+fb4763e421120d6acdae01401b50191335fca7b8 Fixed conflict
+c6d2dbdd24dc1bc6619faa8fab5aa718dcc10e84 Readme conflict
+20181c7f8186573166d0ca6f12d12ad65a6f9a59 Setting up a conflict
+f3374986b1c0b8c20b8e3b6f2d02634b4f875691 Updating readme with markdown
+7a7d22cd5f5c62e0f3c3dc9383e2089b6d19545d updating my readme
+e1f55e0018328150797ee7c5454844e427e283fd CloneAll updated
+9f25b79d5573049e31254ef328a55bd9f18fdad7 Scripts directory added
+f8e9fc5c7ad65af8567f43dc72aeec9d056c06bd First commit edit
+2fca9860fd4668d69e9e94bf2884e57f248ef826 Initial commit
+```
 
 ## Git Ignore
 

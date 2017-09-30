@@ -1,6 +1,6 @@
 ## Overview
 
-In most of my classes we use a copy of Lubuntu running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. This is a copy of the Linux Lubuntu desktop specially prepared for this course.
+In most of my classes we use a copy of [Lubuntu][lu] running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. This is a copy of the Linux Lubuntu desktop specially prepared for this course.
 
 ## Install
 
@@ -28,3 +28,4 @@ If you need to install VirtualBox on your laptop, here is a description of how t
 
 [import-virtual]: http://www.elvenware.com/charlie/development/cloud/virtualization.html#importing-an-appliance
 [instvbox]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#virtualbox
+[lu]: http://lubuntu.net/

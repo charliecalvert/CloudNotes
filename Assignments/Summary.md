@@ -5,6 +5,7 @@
 * [Ec2GetStarted.html](Ec2GetStarted.html)
 * [ExpressBasics.html](ExpressBasics.html)
 * [ExpressJQuery.html](ExpressJQuery.html)
+* [GitDualRepos.html](GitDualRepos.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [HerokuStarter.html](HerokuStarter.html)
 * [OnlinePresence.html](OnlinePresence.html)
