@@ -1,10 +1,15 @@
 ## Overview
 
-In most of my classes we use a copy of [Lubuntu][lu] running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. This is a copy of the Linux Lubuntu desktop specially prepared for this course.
+In most of my classes we use a copy of [Lubuntu][lu] running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. There is a copy of the Linux Lubuntu desktop specially prepared for this course.
 
 ## Install
 
-The links below require a bit of patience. Select one, and determinedly click through until the download begins. Once the OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
+Downloading the OVA file from the links below require a bit of patience.
+
+- Select the appropriate link for download an OVA file.
+- Determinedly click through until the download begins.
+
+Once the OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
 
 Double click on the downloaded OVA file to load it in VirtualBox. As the OVA file loads, you will be given a chance to **reset the MAC address**. Be sure you select this option. Your VM may work one time if you do not do this, but you are likely to hit problems in the future. For instance, either you, or other students in the class, may be blocked from the Internet while in the VM. To avoid this, please **reset the MAC address**.
 
