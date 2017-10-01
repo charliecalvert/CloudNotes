@@ -309,6 +309,53 @@ npm start
 
 Your application will magically open in the browser. Updates should also appear as you make them.
 
+## Run the server on Cloud 9
+
+First be sure **bower** is installed:
+
+```
+npm -g install bower
+```
+
+Then make sure you have processed both **package.json** and **bower.json**:
+
+```
+npm install && bower install
+```
+
+Then run the application:
+
+```
+npm start
+```
+
+Then **Preview | Preview running application** from the menu items near the top right of the Cloud 9 IDE.
+
+## Run the client on Cloud 9
+
+Right now, I can't get it to work on Cloud 9. Edit your code there. Test everything but the button click. If all is clean:
+
+- Push your code from Cloud 9 to GitHub
+- Log into AWS.
+- Pull your repository on AWS (Clone first if necessary, but your repository should already be on AWS, so you shouldn't need to clone. Don't clone unless your repository is not already on your AWS server. If it is there, just pull. Don't clone.)
+- Edit your security group in the EC2 console to open ports 30025 and 30026
+- Run your server. It runs on 30026.
+- Log into AWS in a second console
+- It runs by default on some weird port, so set the port: **export port=30025**
+- Run the client.
+
+It works for me.
+
+We'll do this later, but skip it for now.:
+
+- Remove the line proxy line from client/package.json:
+  - "proxy": "http://localhost:30026",
+- Then create a final build for the client with this command from the root of the **client** project:
+  - **npm run build**
+- Now create links to your build from the server's **public** directory:
+  - Use your common sense to navigate to your server/public directory
+  - do this: **ln -s ../../client/build/* .**
+
 ## Turn it in
 
 Push, submit.

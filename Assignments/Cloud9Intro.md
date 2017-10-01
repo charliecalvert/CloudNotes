@@ -168,11 +168,13 @@ Make sure that your repository contains a **.gitignore** file with a section tha
 Take a screen shot displaying the following:
 
 * The root file system from the Project page on left
-* **Control.js** from the JasmineExpress project open in the editor.
-* Your JasmineExpress project running in a terminal
-* The intereface of your project in a preview window
+* Either of the following:
+  - **main.js** from **ReactBasics**
+  - **Control.js** from the JasmineExpress project open in the editor.
+* Your **ReactBasics** or **JasmineExpress** project running in a terminal
+* The interface of your project in a preview window
 
-**Note**: *It really doesn't matter much to me which project you show in Cloud9. If for some reason you don't have JasmineExpress up and running, just choose a different a project.*
+**Note**: _It really doesn't matter much to me which project you show in Cloud9. If for some reason you don't have either **ReactBasics** or **JasmineExpress** up and running, just choose a different a project._
 
 The screenshot you want to create will be similar to, but not identical too, the image shown below:
 
@@ -186,9 +188,11 @@ I'm still learning about this too, but this is what worked for me with the Assig
 
 On the command line, I navigated to our project directory and ran:
 
+```
 npm install && npm run build
+```
 
-I opened Week01-ReactBasics/index.html in the Cloud 9 editor and selected Run. That started Apache. Then I went to Preview | Preview Running Application, which opened a window. I clicked on the directory that held my project, and Bob was my Uncle.
+I opened **Week01-ReactBasics/index.html** in the Cloud 9 editor and selected Run. That started Apache. Then I went to Preview | Preview Running Application, which opened a window. I clicked on the directory that held my project, and Bob was my Uncle.
 
 There is a little doo-hickey you can click so your project runs in its own tab in the browser, rather than as a child of Cloud 9's IDE. It's a matter of taste as to what you prefer.
 
@@ -197,6 +201,18 @@ I should mention that there is no need, and in fact you don't want to, install n
 **NOTE**: _If you have are going to delete your workspace, and you have already edited your project, and you want to keep your changes, then push before you delete. Then when you recreated your workspace based on your repository, it will contain you latest changes._
 
 ![Cloud Nine](https://s3.amazonaws.com/bucket01.elvenware.com/images/cloud9-test-start.png)
+
+## Bundle Loaded
+
+The **bundle.js** will load properly so long as we specify the proper paths. Don't forget to run **npm run build**! This runs **webpack** and it is **webpack** that creates **bundle.js**. Our **bundle.js** file will also be created if we run **npm start**. But **npm start** also loads the built-in **webpack** server, and we don't need that in this case, since we are using Apache.
+
+![Cloud9 Bundle](https://s3.amazonaws.com/bucket01.elvenware.com/images/cloud9-react-basics-bundle.png)
+
+## Cloud9 and Index.html
+
+The following screen shot shows **index.html** in the editor, the Apache Web Server hosting our app, and the app itself in the built-in Cloud9 browser. We start Apache by selecting our HTML file in the editory, and pressing the green **Run** button.
+
+![Cloud9 Index HTML](https://s3.amazonaws.com/bucket01.elvenware.com/images/cloud9-react-basics-index-html.png)
 
 ## Webpack on Cloud 9
 

@@ -2,6 +2,20 @@
 
 Here I list various quirks regarding how I grade assignments.
 
+## Workflow
+
+My workflow is usually like this:
+
+- Go to your repository
+- git pull
+- checkout branch if specified
+- navigate to project directory
+- Examine your work
+
+So usually, these days, the most useful information is branch and folder. But if the link you provide points to branch and folder in the cloud, then that works too.
+
+In general, just saying you are done with the assignment works, but details can be helpful, particularly if you did not do your work in the expected folder and branch.
+
 ## Assignment Redo
 
 If you get a 5, or any other very low grade for an assignment, this generally means that I want you to redo the assignment. Depending a little on circumstances, you may lose a few points for having to redo the assignment, but usually not much, and in some cases I won't take anything off. There are some circumstances, of course, when I will ask for a redo and still dock you quite a bit, but those cases are rare. In general, getting a grade of 20 and a request for a redo is just a routine thing, and no cause for concern.
