@@ -31,7 +31,7 @@ Near the bottom of this file I include a [minimum install][#minimum-install] tha
 If you have not done so already,
 
 - In Cloud 9 hit the Plus icon and create
-  - new nodejs workspace
+  - new NodeJs workspace
   - Based on your repository
 
 ## Install JsObjects
@@ -57,6 +57,24 @@ cd Git     // "mkdir ~/Git && cd ~/Git"
 ```
 
 Notice that in this second set of commands I am not including the code that points at our home directory: **~/.**. Nevertheless, in the first example, I do include it, just to be safe. Thus, if a student forgets to first navigate to the home directory, then the commands will still work. Of course, some students will no doubt cut and paste the last two lines of the second example and use it in the wrong place. One can't win. But I can try to point you in the right direction.
+
+Here is an example of the steps I took to clone JsObjects on Cloud9.
+
+<pre>
+charliecalvert:~/workspace (Week02) $ mkdir ~/Git
+charliecalvert:~/workspace (Week02) $ cd ~/Git/
+charliecalvert:~/Git $ pwd
+/home/ubuntu/Git
+charliecalvert:~/Git $ git clone http://github.com/charliecalvert/JsObjects.git
+Cloning into 'JsObjects'...
+warning: redirecting to https://github.com/charliecalvert/JsObjects.git/
+remote: Counting objects: 20274, done.
+remote: Compressing objects: 100% (77/77), done.
+remote: Total 20274 (delta 37), reused 86 (delta 22), pack-reused 20167
+Receiving objects: 100% (20274/20274), 27.55 MiB | 23.91 MiB/s, done.
+Resolving deltas: 100% (11626/11626), done.
+charliecalvert:~/Git $
+</pre>
 
 ## Clone JsObjects
 
@@ -289,3 +307,42 @@ source ~/.bashrc
 This processes the changes to your **.bashrc** file.
 
 This is the end of the minimum install.
+
+## NodeJs and NVM
+
+Know your nomenclature:
+
+*   Node or NodeJs: This the name of the [JavaScript runtime](https://nodejs.org/en/) (compiler).
+*   **node_modules**: This is the name of a directory created when we run **npm install**. The libraries that our node project relies on are downloaded to and stored in, our **node_modules** folder. Each node project that uses a library -- and nearly all node projects do use libraries -- should have a **node_modules** folder in the root of the project.
+
+In this case, we can think of the following terms as being synonymous or closely related:
+
+*   package
+*   library
+*   module or a collection of modules
+
+I should add that you will want to create **node_modules** directories by running **npm install**. But you should not need to install Node (Nodejs) on Cloud9. To check if Node is installed on a system, type **node --version** or **which node**.
+
+On Pristine Lubuntu you should be running the [latest version](https://nodejs.org/en/) of Node automatically:
+
+<pre>$ node --version  
+v8.6.0</pre>
+
+On Cloud9, we use [**nvm**](https://github.com/creationix/nvm) to maintain node. Here is a little Cloud9 session showing that I'm running a [recent LTS version](https://github.com/nodejs/Release#release-schedule1) of Node. That is good enough, but I want the [latest](https://nodejs.org/en/), so I use nvm to switch to the latest:
+
+<pre>
+charliecalvert:~/Git $ which node  
+/home/ubuntu/.nvm/versions/node/v6.11.2/bin/node  
+charliecalvert:~/Git $  <strong>node --version</strong>
+ <strong>v6.11.2</strong>
+charliecalvert:~/Git $  <strong>nvm install node</strong>  
+Downloading https://nodejs.org/dist/v8.6.0/node-v8.6.0-linux-x64.tar.xz...  
+######################################################################## 100.0%  
+Now using node v8.6.0 (npm v5.3.0)  
+charliecalvert:~/Git $ <strong>node --version</strong>
+<strong>v8.6.0</strong>  
+charliecalvert:~/Git $ which node  
+/home/ubuntu/.nvm/versions/node/v8.6.0/bin/node
+</pre>
+
+The NodeJs repository is [here](https://github.com/nodejs/node).

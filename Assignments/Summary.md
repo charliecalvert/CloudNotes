@@ -8,6 +8,8 @@
 * [GitDualRepos.html](GitDualRepos.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [HerokuStarter.html](HerokuStarter.html)
+* [LinuxServerBasics.html](LinuxServerBasics.html)
+* [NpmPublishing.html](NpmPublishing.html)
 * [OnlinePresence.html](OnlinePresence.html)
 * [OnlinePresence01.html](OnlinePresence01.html)
 * [OnlinePresence02.html](OnlinePresence02.html)

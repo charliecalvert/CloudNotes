@@ -1,6 +1,6 @@
 ## Overview
 
-Learn how to use NPM Publishing to put your code on NPM.
+Learn how to use NPM Publishing to put a library of your code on NPM.
 
 ## Account
 

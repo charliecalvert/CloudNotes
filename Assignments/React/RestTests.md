@@ -2,7 +2,7 @@
 
 This assignment is built on top of the [RestBasics][rb] assignments. You should be working in a branch called **Week03-RestTest**.
 
-I'm assuming that you are working in a folder called **Week02-RestBasics** and that has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
+I'm assuming that you are working in a folder called **Week02-RestBasics** and that it has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
 
 ## Install
 
@@ -29,6 +29,8 @@ We want to ensure that we get all of these tools set to use the same version. Fo
 }
 ```
 
+The point is not the specific versions, but that they are all the same version.
+
 After editing your **package.json** file, run the following commands:
 
 ```
@@ -46,16 +48,18 @@ npm i --save-dev react-test-renderer@16
 npm i --save-dev enzyme enzyme-react-adapter-16
 ```
 
-You can find the latest version of a package like this:
+You can find the latest release of a package like this:
 
 ```
 $ npm show react version
 16.0.0
 ```
 
+This is not the latest release on your system, but the latest release available from NPM.
+
 ## Render
 
-If necessary, tweak your render method slightly. Notice that the state is set to a simpler object than in the previous version. Note that there are two paragraphs elements in the JSX. The portions of the code that changed now look like this:
+If necessary, tweak your render method slightly as shown below. Notice that the state is set to a simpler object than in the previous version. Note that there are two paragraphs elements in the JSX. The portions of the code that changed now look like this:
 
 ```javascript
 constructor() {
@@ -102,7 +106,11 @@ configure({ adapter: new Adapter() });
 
 The first line of code imports an object from an Airbnb library called [Enzyme][enz]. We will use a combination of a the unit test library called [Jest][jest] and [Enzyme][enz] to test our code.
 
-[enz]: https://github.com/airbnb/enzyme 
+Enzyme allows us to **wrap** React components in objects that we can transverse as if they were part of a DOM. This means we can test our components without having to load them into a browser.
+ 
+The **shallow** object allows us to look only one level deep at the objects in our React code. For instance, if one React component contains another React component which contains yet a third, **shallow** will allow us to look at only the top level component. The fact that it is made of two other components is hidden from us.
+
+Enzyme needs to be able to _adapt_ to the version of React that you are using. Hence, we have to take the extra step to **configure** an **Adapter**.
 
 ## The Tests
 
@@ -128,8 +136,16 @@ describe('rest basic tests', function() {
 });
 ```
 
+As you can see, this code looks very much like the [Jasmine][jaz] test framework. The **describe** method is used to declare a suite of tests. Each individual is defined inside an **it** method. 
+
+- The first parameter is a description of the test.
+- The second is callback, a test function, that defines the test.
+- There is an option third timeout parameter that is rarely used.
+
 ## Simple Debug Class
 
+Enzyme has the ability to locate and display individual HTML elements. It provides various tools for navigating the Enzyme "DOM". I like to wrap these tools in an object so that I don't have to remember exactly how they work.
+ 
 Some of you know that there is a relatively complete Enzyme debug object.
 
 - [The original object saved as a gist on my GitHub account][enz-debug].
@@ -166,9 +182,11 @@ import Adapter from 'enzyme-adapter-react-16';
 import elfDebugEnzyme from './ElfDebugEnzyme';
 ```
 
-**NOTE**: _Make sure you don not end up with two **renders without crashing** tests._
+**NOTE**: _Make sure you do not end up with two **renders without crashing** tests._
 
 ## Call Server
+
+Just as a reminder, here is the code for querying our server from our client. You should already have this code in your project.
 
 ```javascript
 bar = () => {
@@ -189,7 +207,7 @@ bar = () => {
 
 ## Turn it in
 
-Git **add**, **push** and **commit**. Put your work in a branch called **Week03-RestTest** and then Git **tag**.
+Put your work in a branch called **Week03-RestTest** and then Git **tag**. Then run Git **add**, **push** and **commit**. 
 
 ## Modern Tools
 
@@ -201,3 +219,5 @@ This is an interesting example of someone using a number of the latest technolog
 
 [enz-debug]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab#file-elfdebugenzyme-js
 [rb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html
+[enz]: https://github.com/airbnb/enzyme 
+[jaz]: https://jasmine.github.io/

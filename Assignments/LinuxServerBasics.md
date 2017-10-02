@@ -10,32 +10,43 @@ In this assignment you will learn how to use SSH to communicate between two Linu
 
 If you are in Pristine Lubuntu, switch back to Windows for this opening part of the exercise.
 
-Download the 1 GB OVA file for the Ubuntu Linux Server 16.04 with CouchDb to your Windows machine. Don't download it into Prisiting Lubuntu. The OVA file can be found here:
+Download the 1 GB OVA file for the Ubuntu Linux Server 16.04 with CouchDb to your Windows machine. Don't download it into Prisitine Lubuntu. The OVA file can be found here:
 
 - [http://bit.ly/pristine-ubuntu-server-16-10](http://bit.ly/pristine-ubuntu-server-16-10)
 
-I have created an OVA file for use in VirtualBox, VMware, etc. The OVA is several GB in size, so be prepared for a significant download.
+I have created an OVA file for use in VirtualBox, VMware, etc. The OVA is perhaps 2 GB in size, so be prepared for a significant download.
 
-I have only tested it in VirtualBox. Be sure you install the VirtualBox Extension Pack for your instance. It is available from the VirtualBox download page.
+Be sure you install the VirtualBox Extension Pack for your instance. It is available from the VirtualBox download page. I have only tested it in VirtualBox but it should work in VMware.
 
-Once you have downloaded the file, in VirtualBox, choose: File | Import Appliance
+Once you have downloaded the file choose the following from the VirtualBox menu: **File | Import Appliance**.  This will allow you to add the Ubuntu Server to your VirtualBox Manager. Double clicking the OVA file in the Windows Explorer also works.
 
-More specifically: select VirtualBox and use the **File | Import Appliance** menu item to import the OVA file. Double clicking the OVA file in the Windows Explorer also works.
+When importing the OVA, _**be sure to reset the MAC address**_.
 
-When importing the OVA, be sure to reset the Mac address.
-
-The Ubuntu Server VM is configured to use 2 GB of RAM, but you can change this:
+This Ubuntu Server VM is configured to use 2 GB of RAM, but you can change this:
 
 - Close your instance of the VM
 - Select your instance in VirtualBox
 - Go to Settings | System
-- Change the amount of RAM to 1024 or 768. These smaller numbers may affect performance, but the VM should still work.
+- Change the amount of RAM to 1024 or 768. These smaller numbers may affect performance, but the VM should still work. It can allow you to run the server on underpowered machines. Ubuntu server does not take a lot of resources, and hence works on even very old laptops.
 
 When you first start your instance, you may get a warning about the network interface. A dialog will appear asking you to update your settings. Select the dialog. You shouldn't need to do anything, as the correct network interface should then be selected automatically. Now restart your instance if it does not restart automatically.
 
+![network error](https://s3.amazonaws.com/bucket01.elvenware.com/images/virtualbox-network-error.png)
+
+In the picture shown below the error has been resolved automatically. Just press the OK button and Bob's your uncle.
+
+![network error resolved](https://s3.amazonaws.com/bucket01.elvenware.com/images/virtualbox-error-resolve.png)
+
 ## Find your IP Address {#ip-address}
 
-To connect to this instance using SSH we need to know its IP address. Type **ifconfig** (or **ipconfig** on Windows) find your ip address.
+We will want to connect to this server instance for several reasons. Among the most important:
+
+- So we can access this server from inside Pristine Lubuntu
+  - This includes reaching the CLI of the server
+  - And transferring files to or from the server
+- The SSH interface to the server is, from my point of view at least, much easier to use than the default interface.
+
+To connect to this instance using SSH we need to know its IP address. Type **ifconfig** (or **ipconfig** on Windows) to find your ip address.
 
 ```
 $ ifconfig
@@ -59,21 +70,35 @@ lo        Link encap:Local Loopback
           RX bytes:4731913 (4.7 MB)  TX bytes:4731913 (4.7 MB)
 ```
 
-The IP address appears on about the third line. In this case it is 192.168.2.6. This is typical for the type of address you will see at home. At school, it might look more like 168.156.43.123. But the number can vary. Sometimes, if you get an address that starts with 10, that means you have selected **NAT** rather than **Bridged Adapter** in the VirtualBox network settings for your VM. We should use **Bridged Adaptor** for this assignment.
+The IP address appears on about the third line of the example shown above. In this case it is **192.168.2.21**. This is a typical example of the type of address you will see at home. At school, it might look more like **168.156.43.123**. But the number can, and usually will, be different on your system.
 
-At home, you will probably only need to discover the IP address for your server one time. But at school, this address may change each time you close and restart your ubuntu server. Perhaps on any one day it will stay the same, but if you close your server, then restart it again several days later, you will like be assigned a new IP address by the school DHCP servers. This is normal behavior and to be expected.
+**NOTE**: _Sometimes, if you get an address that starts with 10, that means you have selected **NAT** rather than **Bridged Adapter** in the VirtualBox network settings for your VM. We should use **Bridged Adaptor** for this assignment._
 
-**NOTE**: _It is in fact possible to tell a DHCP server to always give a particular machine a particular IP address, but at least for now, I don't think we will ask IT to do this for us. There is no harm, and some advantage, in us getting a chance to work with IP addresses at least once a day._
+At home, you will probably only need to discover the IP address for your server one time. But at school, this address may change each time you close and restart your ubuntu server. Perhaps on any one day it will stay the same, but if you close your server, then restart it again several days later, you will likely be assigned a new IP address by the school DHCP servers. This is normal behavior.
+
+**NOTE**: _It is possible to tell a DHCP server to always give a particular machine a particular IP address. Nevertheless, there is no harm, and some advantage, in being forced to think about and work with IP addresses at least once a day._
 
 ## SSH First Time {#ssh-first}
 
-Now open up Pristine Lubuntu if you have not done so already. Go to the command line and SSH into your server with this command:
+Open up Pristine Lubuntu if you have not done so already. Go to the command line and SSH into your server with a command something like this:
 
 ```
 $ ssh bcuser@192.168.2.21
 ```
 
-Here we use the ssh command to access the machine running on the IP address 192.168.2.21. We are signing into the machine with the user name **bcuser**. The process should look something like this:
+You will, of course, have to adjust the IP address. Set it to the IP of your Ubuntu Server instance:
+
+```
+ssh bcuser@<REMOTE HOST IP>
+```
+
+Of course the user name will not always be **bcuser**. For instance, when logging into AWS the default user name is **ubuntu**. As a result, we might express the formula for logging into a remote machine with SSH like this:
+
+```
+ssh <USERNAME>@<HOST NAME OR IP>
+```
+
+Below you see an example of using the ssh command to access the machine running on the IP address **192.168.2.21**. We are signing into the machine with the user name **bcuser**. The process should look something like this:
 
 ```
 $ ssh bcuser@192.168.2.21
@@ -92,9 +117,9 @@ Last login: Mon Oct  3 08:44:26 2016
 Agent pid 1559
 ```
 
-**NOTE**: _Remeber that in Linux, you usually get no feedback when entering a password in the bash shell. As a result, some users get the impression that they are not able to enter a password. That is not the case. You just need to keep typing even though you are not getting any feedback, even though you are not getting any indication that you are in fact typing your password._
+**NOTE**: _Remember that in Linux, you usually get no feedback when entering a password in the bash shell. As a result, some users get the impression that they are not able to enter a password. That is not the case. You just need to keep typing even though you are not getting any feedback, even though you are not getting any indication that you are in fact typing your password._
 
-Once you are logged into the remote server, you can do everything that you can at the Pristine Lubuntu bash command prompt. The only difference is that you cannot, at least by default, open a GUI application. In particular, you cannot open **geany**. Instead, you should use an editor called nano that is installed by default on nearly on Ubuntu flavors of Linux. Indeed, the editor is available on most Linux distros.
+Once you are logged into the remote server, you can do everything that you can at the Pristine Lubuntu bash command prompt. The only difference is that you cannot, at least by default, open a GUI application. In particular, you cannot open **geany**. Instead, you should use an editor called **nano** that is installed by default on nearly on Ubuntu flavors of Linux. Indeed, the editor is available on most Linux distros.
 
 ## Setting up SSH
 
