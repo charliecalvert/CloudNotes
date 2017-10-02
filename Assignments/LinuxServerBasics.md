@@ -29,7 +29,7 @@ This Ubuntu Server VM is configured to use 2 GB of RAM, but you can change this:
 - Go to Settings | System
 - Change the amount of RAM to 1024 or 768. These smaller numbers may affect performance, but the VM should still work. It can allow you to run the server on underpowered machines. Ubuntu server does not take a lot of resources, and hence works on even very old laptops.
 
-When you first start your instance, you may get a warning about the network interface. A dialog will appear asking you to update your settings. Select the dialog. You shouldn't need to do anything, as the correct network interface should then be selected automatically. Now restart your instance if it does not restart automatically.
+When you first start your instance, you may get a warning about the network interface. A dialog will appear asking you to update your settings. Select the **Change Network Settings** button. You shouldn't need to do anything in the dialog that VirtualBox then displays. The correct network interface should be selected automatically. Just press the OK button. Now restart your instance if it does not restart automatically.
 
 ![network error](https://s3.amazonaws.com/bucket01.elvenware.com/images/virtualbox-network-error.png)
 
