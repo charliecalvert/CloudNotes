@@ -1,10 +1,12 @@
 # Rest Tests
 
-This assignment is built on top of the [RestBasics] assignments. I'm assuming that you are working in a folder called **Week02-RestBasics** and that has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
+This assignment is built on top of the [RestBasics][rb] assignments. You should be working in a branch called **Week03-RestTest**.
 
-Install
+I'm assuming that you are working in a folder called **Week02-RestBasics** and that has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
 
-Some notes on testing react
+## Install
+
+Navigate to the root of the **client** project and install some NPM packages:
 
 ```
 npm install --save-dev enzyme enzyme-adapter-react-16
@@ -27,7 +29,7 @@ We want to ensure that we get all of these tools set to use the same version. Fo
 }
 ```
 
-After editing your package.json file, run the following commands:
+After editing your **package.json** file, run the following commands:
 
 ```
 npm install
@@ -42,6 +44,13 @@ If you try the above, and the versions still look wrong, try something like this
 npm i --save react@16 react-dom@16
 npm i --save-dev react-test-renderer@16
 npm i --save-dev enzyme enzyme-react-adapter-16
+```
+
+You can find the latest version of a package like this:
+
+```
+$ npm show react version
+16.0.0
 ```
 
 ## Render
@@ -90,6 +99,10 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 ```
+
+The first line of code imports an object from an Airbnb library called [Enzyme][enz]. We will use a combination of a the unit test library called [Jest][jest] and [Enzyme][enz] to test our code.
+
+[enz]: https://github.com/airbnb/enzyme 
 
 ## The Tests
 
@@ -176,6 +189,15 @@ bar = () => {
 
 ## Turn it in
 
-Git **add**, **push** and **commit**. Put your work in a branch called **RestTest** and then Git **tag**.
+Git **add**, **push** and **commit**. Put your work in a branch called **Week03-RestTest** and then Git **tag**.
+
+## Modern Tools
+
+I stumbled across this project. Look at the tools used in building this application
+
+- [HN Clone](https://github.com/clintonwoo/hackernews-react-graphql)
+
+This is an interesting example of someone using a number of the latest technologies to build an application.
 
 [enz-debug]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab#file-elfdebugenzyme-js
+[rb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html
