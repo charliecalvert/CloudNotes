@@ -38,7 +38,26 @@ If you have not done so already,
 
 JsObjects is the ancient, messy repository where I keep example code and many utilities that I use all the time. These utilities automate many tasks, and simplify navigation at the command prompt. You don't have to install JsObjects to code on Cloud9, however, I prefer to have it installed as it helps me simplify many tasks. Since I will have it installed, you should also consider installing it or you may find that it is difficult to follow the steps I take in class.
 
-In your Cloud 9 workspace, navigate to your home directory. Create a folder called **~/Git** and navigate into it::
+Let's think for a moment about the directory structure on Cloud 9. There is your home directory in which they create a directory called workspace. By default, your repo ends up in this directory when you create a Cloud9 Workspace via the method we employed:
+
+```
+/
+/workspace // Your repo here
+  /Week01-ReactBasics  // And other directories from your repo
+```
+
+I ask that you create a folder called Git in the home directory and add JsObjects to it:
+
+```
+/
+/workspace
+  /Week01-ReactBasics // And so on
+/Git
+  /JsObjects
+    /Utilities // And other JsObject directories
+```
+
+Here is how to proceed. In your Cloud 9 Workspace, navigate to your home directory. Create a folder called **~/Git** and navigate into it:
 
 ```
 cd
