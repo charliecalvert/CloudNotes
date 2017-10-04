@@ -4,7 +4,7 @@ A few key facts.
 
 ## Primary Goals
 
-- React, HTML5, CSS3
+- React, HTML5 and CSS3
 - Git
 - Pull JsObjects
 - Create a GitHub Repository

@@ -28,7 +28,41 @@ I have turned on automatic security updates for these machines. Nevertheless, yo
 
 ## SSH
 
-Use **ifconfig** to find the IP address of the server. In the example shown below, the IP address is on the third line: **inet 192.168.2.16**.
+Get your IP address:
+
+```
+ip addr
+```
+
+For instance, if you pipe the result to **grep inet** it yields something like:
+
+```
+$ ip addr | grep inet
+inet 127.0.0.1/8 scope host lo
+inet6 ::1/128 scope host
+inet 192.168.2.5/24 brd 192.168.2.255 scope global eno1
+inet6 fe80::eb4a:4cf8:28e2:54c1/64 scope link
+```
+
+Or match the word **inet** exactly so **inet6** is excluded:
+
+```
+$ ip addr | grep -w inet
+inet 127.0.0.1/8 scope host lo
+inet 192.168.2.5/24 brd 192.168.2.255 scope global eno1
+```
+
+Go to Pristine Lubuntu and put your public key on the server and log in:
+
+```
+ssh-add id_rsa
+ssh-copy-id -i id_rsa bcuser@192.168.2.5
+ssh bcuser@192.168.2.5
+```
+
+## On Older Systems
+
+**ifconfig** no longer ships with Ubuntu. But in the old days, we used **ifconfig** to find the IP address of the server. In the example shown below, the IP address is on the third line: **inet 192.168.2.16**.
 
 ```
 $ ifconfig
