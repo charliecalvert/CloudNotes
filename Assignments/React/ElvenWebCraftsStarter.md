@@ -10,6 +10,8 @@ We are going to work on a project that already exists. It is a tool for building
 
 Think of it this way. You have been handed a project that kind of works, but is not quite yet ready to be released. Your job is to bring it to Version 1.0, a release build. This is a very real world task. Many developers are handed partially broken code, or an existing project, and told to clean it up. This is particularly true for new hires.
 
+**NOTE**: _Use your common sense, but in general, throughout this document, if you see a file name, directory, or repository that has **-lastname** in its title, you should substitute your last name for the word **lastname**. For instance, in my case, **isit-code-lastname** should become **isit-code-calvert**._
+
 ## Get Started
 
 For these projects:
@@ -21,26 +23,26 @@ For these projects:
 
 There will be three main parts of this application:
 
-- **ElvenWebCrafts**: A GUI front end for building websites from markdown.
+- **IsitWebCrafts**: A GUI front end for building websites from markdown.
   - It is based on code written in another of my classes that needs to be updated.
-- **ElvenCode**: an NPM package written by students in another of my classes.
+- **IsitCode**: an NPM package written by students in another of my classes.
   - Also needs updating
-- **ElvenSiteTools**: Code I wrote that needs to be improved
+- **IsitSiteTools**: Code I wrote that needs to be improved
 
 Each student will maintain their own copy of these projects.
 
 ## Create Your Packages
 
-Create two NPM packages based on the code in **ElvenCode** and **ElvenSiteTools**. Append your name to these projects:
+Create two NPM packages based on the code in **isit-code** and **isit-site-tools**. Append your last name to these projects:
 
-- elven-code-lastname
-- elven-site-tools-lastname
+- isit-code-lastname
+- isit-site-tools-lastname
 
 For instance, in my case, the first NPM package would be called:
 
-- elven-code-calvert
+- isit-code-calvert
 
-If you get the casing, the separater (a hypen), or anything else wrong, you will get the assignment kicked back at you. The names need to be exactly right.
+If you get the casing, the separator (a hypen), or anything else wrong, you will get the assignment kicked back at you. The names need to be exactly right.
 
 ## The Login
 
@@ -74,63 +76,58 @@ The **isAuthenticated()** method is middleware that is called before the user ca
 
 Without removing the **isAuthenticated** method, rewrite this bit of middleware so that the user is automatically taken to the home page whether they are logged in or not. You can make whatever changes you want to **isAuthenticated**, but it must continue to be called from the home page route. I would either comment out or otherwise preserve the code in the current working code from the method so that you can replace it later on, when we want to add login again.
 
-## Ubuntu Server 16.04 with MongoDb
+## Fork Repos
 
-Here is a copy of Ubuntu Server with MongoDb pre-installed. It's about 2 GB, so have patience with the download.
+Fork the following repositories:
 
-- [Ubuntu Server OVA](http://www.ccalvert.net/books/CloudNotes/Assignments/Mongo/UbuntuServerOva.html)
+- charliecalvert/isit-code
+- charliecalvert/isit-site-tools
+- charliecalvert/isit-web-crafts
 
-When the download is complete load it in VirtualBox.
 
-**NOTE**: _The server is relatively small. It can run on machines with limited resources. You can lower the amount of RAM allocated to it and it should still work._
+Make them private.
 
-The login:
+On GitHub, use the Settings (gear) icon and rename them to include your last name:
 
-- UserName: bcuser
-- Password: bcuser
+- isit-code-lastname
+- isit-site-tools-lastname
+- isit-web-crafts-lastname
 
-The code first loads your key. Then copies the matching public key to the **authorized_keys** file on the server. Then it logs into the server.
-
-## Example Database Records for Login
-
-The data model is defined in **models/user.js**. Here is a simplified example MongoDb record:
-
-```json
-{
-    "lastName": "bar",
-    "firstName": "bar",
-    "email": "bar@foo.com",
-    "password": "abc",
-    "username": "bar",
-}
-```
-
-Actual records will look more like this.
-
-```json
-{
-    "_id": {
-        "$oid": "557f238c77e80f000a9e4100"
-    },
-    "lastName": "bar",
-    "firstName": "bar",
-    "email": "bar@foo.com",
-    "password": "abc",
-    "username": "bar",
-    "__v": 0
-}
-```
-
-## MLab Database for Login
-
-In routes/connect.js you will need to file in these fields if you want to connect to the database :
+## Get Repos
 
 ```
-var userName = 'YOUR-USER-NAME';
-var password = 'YOUR-PASSWORD';
-var siteAndPort = 'YOUR-MONGODB-SITE-AND-PORT';
-var databaseName = 'YOUR-DATABASE-NAME';
+mkdir isit-lastname-2017
+cd isit-lastname-2017
+git clone <git@github.com:username/isit-code-lastname.git>
+git clone <git@github.com:username/isit-site-tools-lastname>
+git clone <git@github.com:username/isit-web-crafts-lastname>
 ```
+
+Open up the **package.json** file for each project and change the name to include your last name.
+
+Now you will need to create an NPM repository based on your versions of the **isit-code** and **isit-site-tools** repositories. Begin by logging into or creating your account on **NPM**. Then read through this guide and apply the lessons found there to this task.
+
+- [NPM Publishing](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmPublishing.html)
+
+In **isit-site-tools-lastname**, run the following command:
+
+```
+npm install --save isit-code-lastname
+```
+
+In **isit-web-crafts-lastname**, run the following commands:
+
+```
+npm install --save isit-code-lastname isit-site-tools-lastname
+```
+
+Change all references to my repos to your repos. You will have to replace the string **lastname** with your last name:
+
+```
+find . -iname "*.js" -not -path "**/node_modules/**" | xargs sed -i 's/isit\-code\-calvert/isit\-code\-lastname/g' *.js
+```
+
+**NOTE**: _If you turn in your **isit-web-crafts-lastname** project with links to my repos in your source files, you will get it kicked back with a score of 5._
 
 ## The Config File
 
