@@ -31,7 +31,7 @@ Here is the diff for the change I made the repository your forked your code from
 
 - [Diff](https://github.com/charliecalvert/isit-site-tools/commit/0f2a0a400fd81f1fcbcb0655cd85f6caeca91507)
 
-One simple way to fix the problem is to simply edit the your copy **package.json**. But if you want to pull the changes from my original repo into your code, then follow [these instructions][thins] that I just added to our script:
+One simple way to fix the problem is to simply edit the your copy **package.json**. But if you want to pull the changes from my original repo into your code, then refresh the origainal assignment (F5) and follow [these instructions][thins] that I just added to our assignment.
 
 [ist]: https://github.com/charliecalvert/isit-site-tools
 [thins]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ElvenWebCraftsStarter.html#pull-changes-from-the-original-repository
