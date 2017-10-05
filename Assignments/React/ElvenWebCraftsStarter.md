@@ -124,10 +124,38 @@ npm install --save isit-code-lastname isit-site-tools-lastname
 Change all references to my repos to your repos. You will have to replace the string **lastname** with your last name:
 
 ```
-find . -iname "*.js" -not -path "**/node_modules/**" | xargs sed -i 's/isit\-code\-calvert/isit\-code\-lastname/g' *.js
+find . -iname "*.js" -not -path "**/node_modules/**" | xargs sed -i 's/isit-code-calvert/isit-code-lastname/g' *.js
 ```
 
 **NOTE**: _If you turn in your **isit-web-crafts-lastname** project with links to my repos in your source files, you will get it kicked back with a score of 5._
+
+## Pull Changes from the Original Repository
+
+Suppose I have made an update to the repository from which you forked your code. In particular, suppose I have updated this repository:
+
+- [isit-site-tools](https://github.com/charliecalvert/isit-site-tools)
+
+Assuming your code has not diverged too wildly from my original code, you can get my changes like this:
+
+```
+git pull git@github.com:charliecalvert/isit-site-tools.git
+```
+
+You should issue the command from within your repository. It's probably best to be at the root of your repository.
+
+```
+charlie@rohan-elf:~/Git/isit-calvert-2017/isit-site-tools-calvertbc (master)
+$ git pull git@github.com:charliecalvert/isit-site-tools.git
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:charliecalvert/isit-site-tools
+ * branch            HEAD       -> FETCH_HEAD
+Updating 970b5ef..0f2a0a4
+Fast-forward
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
 
 ## The Config File
 
