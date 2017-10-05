@@ -84,6 +84,40 @@ export ANDROID_PLATFORM_TOOLS="$HOME/Android/Sdk/platform-tools"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_PLATFORM_TOOLS:
 ```
 
+## Even more extras
+
+I put this code near the end of my **.bashrc** file so that I don't have to run the **eval `ssh-agent`** command.
+
+<pre>if [ -z "$SSH_AUTH_SOCK" ] ; then  
+    eval `ssh-agent`  
+fi</pre>
+
+It checks to see if the agent is already loaded. If it is not loaded, then it loads it.
+
+You could also add this line to your .bashrc to load the PEM file automatically:
+
+<pre>ssh-add [filename].pem</pre>
+
+So far so good. I haven't really thought about this before, but you can probably go further. Suppose you look at the list of keys you have loaded:
+
+<pre>$ ssh-add -l  
+2048 SHA256:HhGruPl4L9vdD4ePdsdf8g5mXS7Fi/kb7Xki4D3vA made on rohan-elf oct 2017 (RSA)  
+
+</pre>
+
+Here is see that a particular key has been loaded. Once I know what it looks like when loaded, I can run a test to check if it is loaded, and to load it if it is not:
+
+```bash
+ssh-add -l | grep -q "made on rohan-elf"  
+if [ $? -eq 0 ]; then  
+    echo OK  
+else  
+    echo FAIL  
+    ssh-add ~/.ssh/id_rsa  
+fi
+```
+As I say, not much testing on that one, but it appears to work.
+
 ## Turn it in
 
 Take a screen shot of the color prompt and turn it in.

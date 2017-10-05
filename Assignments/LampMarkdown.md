@@ -199,19 +199,13 @@ Issue the following command and take a screen shot of the results:
 ls /var/www/html/
 ```
 
-Create a zip file called **MakeHtml-LastName** containing the contents of your **/var/www** folder and put it in our shared google drive folder:
+Put the contents of your **/var/www/html** in your repository in a directory called **LampMarkdown** and push it: :
 
 ```
-zip -r MakeHtml-Calvert /var/www/html/*
+cp -rv /var/www/html/* ~/Git/<YOUR REPO>/LampMarkdown/.
 ```
 
-You should, of course, use your last name and not mine.
-
-If you put images in Google Drive, don't wrap them in a zip file. This saves me a step.
-
-Just to be clear: one part of this assignment, outlined in the first sentence of this section of the text, did involve creating a zip file with images. I'm talking about the images of your page running that I want to see. Don't put them in a zip file.
-
-Putting images in Google Drive is fine, though just attaching them to the assignment is perhaps better. Then put comments in the Canvas comments area. Thank you.
+Put your images in our shared directory on Google Drive in a folder called LampMarkdown, don't wrap them in a zip file. This saves me a step.
 
 ## Example Images
 

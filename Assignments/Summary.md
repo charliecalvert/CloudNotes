@@ -1,4 +1,5 @@
 * [AwsEc2Expert.html](AwsEc2Expert.html)
+* [BashSetUp.html](BashSetUp.html)
 * [BowerNpm.html](BowerNpm.html)
 * [ClickRoute.html](ClickRoute.html)
 * [Cloud9Intro.html](Cloud9Intro.html)
@@ -8,6 +9,7 @@
 * [GitDualRepos.html](GitDualRepos.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [HerokuStarter.html](HerokuStarter.html)
+* [LampMarkdown.html](LampMarkdown.html)
 * [LinuxServerBasics.html](LinuxServerBasics.html)
 * [NpmPublishing.html](NpmPublishing.html)
 * [OnlinePresence.html](OnlinePresence.html)
