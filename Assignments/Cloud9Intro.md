@@ -116,6 +116,14 @@ cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.
 source ~/.bash_aliases
 ```
 
+Alternatively, you might try this. Pull **JsObject** to get the latest, then go into **~/Git/JsObjects/Utilities/SetupLinuxBox** and run **UbuntuSetup**.
+
+```
+./UbuntuSetup
+```
+
+Pick the second option: **b) Run Basic Setup**. Don't forget to source **./bashrc**. Now many of the aliases we use might work on Cloud9.
+
 ## Understanding .bashrc
 
 The **.bashrc** file is located in your home directory. It is processed when you open a bash shell or when you run one of these commands:

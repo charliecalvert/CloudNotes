@@ -1,8 +1,8 @@
 # Rest Tests
 
-This assignment is built on top of the [RestBasics][rb] assignments. You should be working in a branch called **Week03-RestTest**.
+This assignment is built on top of the [RestBasics][rb] assignments. Make your edits in the same directory you used for **RestBasics**, but you should be working in a new branch called **Week03-RestTest**. Create and switch to the branch first, and then begin your work.
 
-I'm assuming that you are working in a folder called **Week02-RestBasics** and that it has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
+I'm assuming that you are working in a folder called **week02-rest-basics** and that it has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
 
 ## Install
 
@@ -107,45 +107,15 @@ configure({ adapter: new Adapter() });
 The first line of code imports an object from an Airbnb library called [Enzyme][enz]. We will use a combination of a the unit test library called [Jest][jest] and [Enzyme][enz] to test our code.
 
 Enzyme allows us to **wrap** React components in objects that we can transverse as if they were part of a DOM. This means we can test our components without having to load them into a browser.
- 
+
 The **shallow** object allows us to look only one level deep at the objects in our React code. For instance, if one React component contains another React component which contains yet a third, **shallow** will allow us to look at only the top level component. The fact that it is made of two other components is hidden from us.
 
-Enzyme needs to be able to _adapt_ to the version of React that you are using. Hence, we have to take the extra step to **configure** an **Adapter**.
-
-## The Tests
-
-Beneath this code add a **describe method** and a new test:
-
-```javascript
-describe('rest basic tests', function() {
-
-    const elfDebugEnzyme = new ElfDebugEnzyme();
-
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<App/>, div);
-    });
-
-    it('renders initial value of paragraph with state.nine', () => {
-        const wrapper = shallow(<App/>);
-        const nineSign = <p className="App-intro">file: unknown</p>;
-        elfDebugEnzyme.getLast(wrapper, 'p', true);
-        expect(wrapper.contains(nineSign)).toEqual(true);
-    });
-
-});
-```
-
-As you can see, this code looks very much like the [Jasmine][jaz] test framework. The **describe** method is used to declare a suite of tests. Each individual is defined inside an **it** method. 
-
-- The first parameter is a description of the test.
-- The second is callback, a test function, that defines the test.
-- There is an option third timeout parameter that is rarely used.
+Enzyme needs to be able to _adapt_ to the version of React that you are using. Hence, we have to take the extra step to **configure** an **Adapter**. That is the last line of code quoted above.
 
 ## Simple Debug Class
 
 Enzyme has the ability to locate and display individual HTML elements. It provides various tools for navigating the Enzyme "DOM". I like to wrap these tools in an object so that I don't have to remember exactly how they work.
- 
+
 Some of you know that there is a relatively complete Enzyme debug object.
 
 - [The original object saved as a gist on my GitHub account][enz-debug].
@@ -171,7 +141,7 @@ class ElfDebugEnzyme {
 export default new ElfDebugEnzyme();
 ```
 
-Place this code in a file called **ElfDebugEnzyme.js**. At the top of **App.test.js**, reference the debug object:
+Place this code in a file called **ElfDebugEnzyme.js**. At the top of **App.test.js**, reference your new debug object:
 
 ```
 import React from 'react';
@@ -184,9 +154,38 @@ import elfDebugEnzyme from './ElfDebugEnzyme';
 
 **NOTE**: _Make sure you do not end up with two **renders without crashing** tests._
 
+## The Tests
+
+Beneath this code add a **describe method** and a new test:
+
+```javascript
+describe('rest basic tests', function() {    
+
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<App/>, div);
+    });
+
+    it('renders initial value of paragraph with state.nine', () => {
+        const wrapper = shallow(<App/>);
+        const nineSign = <p className="App-intro">file: unknown</p>;
+        elfDebugEnzyme.getLast(wrapper, 'p', true);
+        expect(wrapper.contains(nineSign)).toEqual(true);
+    });
+
+});
+```
+
+As you can see, this code looks very much like the [Jasmine][jaz] test framework. The **describe** method is used to declare a suite of tests. Each individual test is defined inside an **it** method.
+
+- The first parameter to **it** is a description of the test.
+- The second is callback, a test function, that defines the test.
+- There is an optional third timeout parameter that is rarely used.
+
+
 ## Call Server
 
-Just as a reminder, here is the code for querying our server from our client. You should already have this code in your project.
+Just as a reminder, here is the code for querying our server from our client. You should already have this code in your project in the file called **src/App.js**.
 
 ```javascript
 bar = () => {
@@ -205,9 +204,49 @@ bar = () => {
 };
 ```
 
+Note the formatting on the code shown above. Where you place your curly braces and how you indent your code are both very important.
+
+## Run your test
+
+To run the tests, type the following:
+
+<pre>
+npm test
+</pre>
+
+The output should look something like this:
+
+```
+  console.log src/ElfDebugEnzyme.js:4
+    <p className="App-intro">
+      file: 
+      unknown
+    </p>
+
+ PASS  src/App.test.js
+  rest basic tests
+    ✓ renders without crashing (3ms)
+    ✓ renders initial value of paragraph with state.nine (2ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.266s, estimated 1s
+Ran all test suites.
+
+Watch Usage: Press w to show more.
+```
+
 ## Turn it in
 
-Put your work in a branch called **Week03-RestTest** and then Git **tag**. Then run Git **add**, **push** and **commit**. 
+Put your work in a branch called **Week03-RestTest** and then Git **tag**. Then run Git **add**, **push** and **commit**.
+
+It's simplest if you provide a link to the correct folder and branch on GitHub/BitBucket, or else detail what you are doing:
+
+- Branch: <THE BRANCH WHERE YOU DID YOUR WORK>
+- Directory: <THE DIRECTORY WHERE YOU DID YOUR WORK>
+
+Oddly enough, the second technique where you specify the branch and folder is easiest for me, but they both are simple to use from my end.
 
 ## Modern Tools
 
@@ -219,5 +258,6 @@ This is an interesting example of someone using a number of the latest technolog
 
 [enz-debug]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab#file-elfdebugenzyme-js
 [rb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html
-[enz]: https://github.com/airbnb/enzyme 
+[enz]: https://github.com/airbnb/enzyme
 [jaz]: https://jasmine.github.io/
+[jest]: https://facebook.github.io/jest/

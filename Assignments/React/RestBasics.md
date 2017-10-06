@@ -9,7 +9,7 @@ Both of these slide decks contain relevant information that might be useful when
 
 ## Get Started
 
-Create a directory called week02-rest-basics in your Repository.
+Create a directory called **week02-rest-basics** in your Repository.
 
 **NOTE**: _Let's try switching to all small letters for now, since npm is getting fussy about this issue._
 
