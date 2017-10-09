@@ -1,6 +1,6 @@
 ## Overview
 
-We are going to work on a project that already exists. It is a tool for building web sites. Our goal is to take a project students built several years ago and update it to use React. We will:
+For the next several weeks, we are going to work on a project that already exists. It is a tool for building web sites. Our goal is to take a project students built several years ago and update it. We will:
 
 - Clean up the code
 - Improve and extend the tests
@@ -8,7 +8,9 @@ We are going to work on a project that already exists. It is a tool for building
   - to have a cleaner architecture
   - to use React and Redux
 
-Think of it this way. You have been handed a project that kind of works, but is not quite yet ready to be released. Your job is to bring it to Version 1.0, a release build. This is a very real world task. Many developers are handed partially broken code, or an existing project, and told to clean it up. This is particularly true for new hires.
+This set of assignments is designed to mirror a scenario you are likely to encounter in the workplace. Employees are often handed a project that needs to be updated or that is not yet ready to be released. They are asked to polish and improve the code. Their job is to bring it to Version 1.0, a release build.
+
+This is a very real world task. Many developers are handed partially broken code, or an existing project, and told to clean it up. This is particularly true for new hires.
 
 **NOTE**: _Use your common sense, but in general, throughout this document, if you see a file name, directory, or repository that has **-lastname** in its title, you should substitute your last name for the word **lastname**. For instance, in my case, **isit-code-lastname** should become **isit-code-calvert**._
 
@@ -16,29 +18,32 @@ Think of it this way. You have been handed a project that kind of works, but is 
 
 For these projects:
 
-- [https://github.com/charliecalvert/isit-web-crafts](https://github.com/charliecalvert/isit-web-crafts)
-- [https://github.com/charliecalvert/isit-code](https://github.com/charliecalvert/isit-code)
+- [https://github.com/charliecalvert/isit-code][ic]
+- [https://github.com/charliecalvert/isit-site-tools][ist]
+- [https://github.com/charliecalvert/isit-web-crafts][iwc]
+
+[ic]: https://github.com/charliecalvert/isit-code
+[ist]: https://github.com/charliecalvert/isit-site-tools
+[iwc]: https://github.com/charliecalvert/isit-web-crafts
 
 ## The Main Modules
 
-There will be three main parts of this application:
+This project has been divided into a main program and two libraries. This is code left over from half completed projects worked on during previous quarters. They all need to be updated:
 
-- **IsitWebCrafts**: A GUI front end for building websites from markdown.
-  - It is based on code written in another of my classes that needs to be updated.
-- **IsitCode**: an NPM package written by students in another of my classes.
-  - Also needs updating
-- **IsitSiteTools**: Code I wrote that needs to be improved
+- **IsitWebCrafts**: A GUI front end for building websites from markdown.  
+- **IsitCode**: an NPM package written by students in another of my classes  
+- **IsitSiteTools**: Another NPM package that contains various utilities
 
-Each student will maintain their own copy of these projects.
+Each student in this class will maintain their own copy of these projects.
 
-## Create Your Packages
+## Create NPM Packages
 
-Create two NPM packages based on the code in **isit-code** and **isit-site-tools**. Append your last name to these projects:
+We will fork the projects I created. Based on your fork of my original project, you will create two NPM packages. For instance, you will create Git repositories based on the code in **isit-code** and **isit-site-tools**. Append your last name to your versions of these projects:
 
-- isit-code-lastname
-- isit-site-tools-lastname
+- **isit-code-lastname**
+- **isit-site-tools-lastname**
 
-For instance, in my case, the first NPM package would be called:
+In my case, the first NPM package would be called:
 
 - isit-code-calvert
 
@@ -46,7 +51,20 @@ If you get the casing, the separator (a hypen), or anything else wrong, you will
 
 ## The Login
 
-The login works, but at at first, we will simply want to disable login so we don't have to both with it during development. Here is the code from **routes/index.js** that is called when the user asks for the home page:
+When **IsitWebCrafts** is first launched, the user is asked to log in. You can log in with the username and password **foo**. The login works, but at first, we will simply want to disable the login so we don't have to both with it during development.
+
+To know how to disable the login, you need to know something about [Express][ex] Middleware. This is one of the most important parts of the Express package. Please read at least some of this [discussion of middleware][em].
+
+[em]: http://expressjs.com/en/guide/using-middleware.html
+[ex]: http://expressjs.com/
+
+When an HTTP request comes to an Express server, the Express library parses it. It then passes the request to whatever middleware you create. This middleware is typically found in a single method, but you can chain several methods together by calling the **next()** method passed as a parameter parameter to your middleware. In particular, see the last parameter in this code:_
+
+```javascript
+router.get('/', isAuthenticated, function(request, response, next) {})
+```
+
+Here is the code from **routes/index.js** that is called when the user asks for the home page:
 
 ```javascript
 var isAuthenticated = function(request, response, next) {
@@ -74,7 +92,7 @@ router.get('/', isAuthenticated, function(request, response, next) {
 
 The **isAuthenticated()** method is middleware that is called before the user can access the home page. If the user is logged in, then **isAuthenticated** calls **next()**, and the home page loads. Otherwise, the login page is called.
 
-Without removing the **isAuthenticated** method, rewrite this bit of middleware so that the user is automatically taken to the home page whether they are logged in or not. You can make whatever changes you want to **isAuthenticated**, but it must continue to be called from the home page route. I would either comment out or otherwise preserve the code in the current working code from the method so that you can replace it later on, when we want to add login again.
+Without removing the **isAuthenticated** method, rewrite it so that the user is automatically taken to the home page whether they are logged in or not. You can make whatever changes you want to **isAuthenticated**, but it must continue to be called from the home page route. I would either comment out or otherwise preserve the code in the current working code from the method so that you can replace it later on, when we want to add login again.
 
 ## Fork Repos
 
@@ -84,10 +102,12 @@ Fork the following repositories:
 - charliecalvert/isit-site-tools
 - charliecalvert/isit-web-crafts
 
+Your version of these repositories will be public. As a result, you should be sure that they contain a license. Common choices are the [MIT][mit] or [ISC][isc] license.
 
-Make them private.
+[mit]: https://opensource.org/licenses/MIT
+[isc]: https://opensource.org/licenses/ISC
 
-On GitHub, use the Settings (gear) icon and rename them to include your last name:
+On GitHub, use the Settings (gear) icon and rename your fork of my repository to include your last name:
 
 - isit-code-lastname
 - isit-site-tools-lastname
@@ -95,17 +115,20 @@ On GitHub, use the Settings (gear) icon and rename them to include your last nam
 
 ## Get Repos
 
+Create a folder in your **~/Git** directory called **webcrafts** or something similar. Clone your new repositories into your new folder.
 ```
-mkdir isit-lastname-2017
-cd isit-lastname-2017
+mkdir webcrafts
+cd webcrafts
 git clone <git@github.com:username/isit-code-lastname.git>
 git clone <git@github.com:username/isit-site-tools-lastname>
 git clone <git@github.com:username/isit-web-crafts-lastname>
 ```
 
+## Customize your New Repo
+
 Open up the **package.json** file for each project and change the name to include your last name.
 
-Now you will need to create an NPM repository based on your versions of the **isit-code** and **isit-site-tools** repositories. Begin by logging into or creating your account on **NPM**. Then read through this guide and apply the lessons found there to this task.
+If you don't have one already, create an account on **NPM**. Log into it. Then read through this guide and apply the lessons found there to this task.
 
 - [NPM Publishing](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmPublishing.html)
 
