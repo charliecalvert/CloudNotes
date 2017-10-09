@@ -116,6 +116,7 @@ Or
 npm show isit322-kariungi version
 1.2.1
 ```
+
 ## Step Three
 
 Now we want to be able to call each of these functions from our npm **utils** module. On the server side, here is how to use one function as I defined it above:

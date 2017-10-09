@@ -1,6 +1,6 @@
 ## Overview
 
-I'm removing calls to npm install and bower install from **CreateExpressProject**, **CreateAllExpress**, **TestReady** and **TestFixture**. Instead, we will keep one canonical version of node_modules and **components** in our **~/tmp** directories. I will publish our *all inclusive* **package.json** file in JsObjects.
+I'm removing calls to **npm install** and **bower install** from **CreateExpressProject**, **CreateAllExpress**, **TestReady** and **TestFixture**. Instead, we will keep one canonical version of node_modules and **components** in our **~/tmp** directories. I will publish our *all inclusive* **package.json** file in JsObjects.
 
 ## Step One
 
