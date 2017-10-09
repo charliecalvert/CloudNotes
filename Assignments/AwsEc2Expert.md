@@ -171,7 +171,7 @@ You know how to cut and paste. Just remember you have no mouse in Nano, and be c
 
 ![authorized_keys02][akeys02]
 
-**NOTE**: *It's easy to accidentally press Ctrl-Z and exit the nano editor without really closing it. If you are in the editor, and suddenly find yourself back at the command prompt without quite knowing how you got there, try typing **jobs** to see if you have any running jobs. If you do, type **fg** to return to the editor.*
+**NOTE**: _It's easy to accidentally press Ctrl-Z and exit the nano editor without really closing it. If you are in the editor, and suddenly find yourself back at the command prompt without quite knowing how you got there, try typing **jobs** to see if you have any running jobs. If you do, type **fg** to return to the editor._
 
 Okay. Once you have added your key to the authorized key file, type exit to close your AWS SSH shell and return to Pristine Ubuntu. From now on you should be able to access your AWS instance with just **id_rsa** private key loaded. You should also be able to copy your id_rsa_private key to your EC2 instance. From the pristine ubuntu **.ssh** directory type this command:
 

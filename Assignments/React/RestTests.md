@@ -219,7 +219,7 @@ The output should look something like this:
 ```
   console.log src/ElfDebugEnzyme.js:4
     <p className="App-intro">
-      file: 
+      file:
       unknown
     </p>
 
@@ -255,6 +255,35 @@ I stumbled across this project. Look at the tools used in building this applicat
 - [HN Clone](https://github.com/clintonwoo/hackernews-react-graphql)
 
 This is an interesting example of someone using a number of the latest technologies to build an application.
+
+## PolyFill Fix
+
+You may see this error, which is a bug on **react's** side that will be fixed soon.
+
+```
+console.error node_modules/fbjs/lib/warning.js:33
+  Warning: React depends on requestAnimationFrame. Make sure that you load a polyfill in older browsers. http://fb.me/react-polyfills
+```
+
+In the meantime, if that is bothering you, to fix the error create a file called **temp-poly-fills** with the following content:
+
+```
+const raf = global.requestAnimationFrame = (cb) => {
+    setTimeout(cb, 0)
+};
+
+export default raf;
+```
+
+Then include it in your test:
+
+```
+import './temp-poly-fills';
+```
+
+That should clean up the problem. When **react16.01** there should be a fix and this workaround should not be needed. See here:
+
+- <https://github.com/facebookincubator/create-react-app/issues/3199>
 
 [enz-debug]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab#file-elfdebugenzyme-js
 [rb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html

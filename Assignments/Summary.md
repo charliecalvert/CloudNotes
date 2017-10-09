@@ -11,6 +11,7 @@
 * [HerokuStarter.html](HerokuStarter.html)
 * [LampMarkdown.html](LampMarkdown.html)
 * [LinuxServerBasics.html](LinuxServerBasics.html)
+* [MarkdownBasics.html](MarkdownBasics.html)
 * [NpmPublishing.html](NpmPublishing.html)
 * [OnlinePresence.html](OnlinePresence.html)
 * [OnlinePresence01.html](OnlinePresence01.html)
