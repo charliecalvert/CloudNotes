@@ -1,12 +1,13 @@
 ## Overview
 
-In this assignment, to save keystrokes when typing, and cut down on noise when reading, I'll use some simple shortcuts. In particular, when I write **isit-code**, I'm referencing your **isit-code-lastname** project.
+This assignment demonstrates how to use your fork of my [isit-code][ic] package. We will also create an Express and React based project that calls some methods in your fork of **isit-code**.
+
+
+## Note on Names
+
+To save keystrokes when typing, and cut down on noise when reading, I'll use some simple shortcuts. Unless I explicitly state otherwise, when I write **isit-code**, I'm referencing your **isit-code-lastname** project.
 
 - isit-code => isit-code-lastname
-
-In this assignment we will:
-
-- Create an Express and React based project that calls some methods in **isit-code**
 
 ## Create Projects
 
@@ -47,3 +48,5 @@ Create two buttons in a React component on the client:
 - Get First Word
 
 Click the button, call the appropriate method. To get full credit, the second button must retrieve a string from the user via a TextBox. The call should retrieve the first word the user enters.
+
+[ic]:https://github.com/charliecalvert/isit-code
