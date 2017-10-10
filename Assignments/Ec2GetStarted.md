@@ -60,6 +60,8 @@ More specifically, it might look like this:
 ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
 ```
 
+## SSH on Windows
+
 Until very recently, Windows did not have SSH built into the OS. I hear this is changing. But for now, windows users can still use [PuTTY][putty]:
 
 Convert the PEM file to a PPK file.
@@ -110,7 +112,14 @@ See also:
 
 ## Step Five
 
-Add a the public part of your PROG270 Key to your Ubuntu instance in the **~/.ssh/authorized_keys** file.
+AWS gave us a key pair that we can use to access an instance of our server. However, we already have an SSH key pair that we use to access our data on GitHub. If we use the GitHub key for accessing our AWS server, then we would only have to load one key. Otherwise we have to load two keys:
+
+- One for GitHub
+- One for AWS
+
+To sign on to both machines with a single key we have to put the public part of our Prog 270 Key on our Ubuntu instance in the **~/.ssh/authorized_keys** file. We do this by running **ssh-copy-id** command from Pristine Lubuntu.
+
+**NOTE**: _Take a moment to be sure you understand what is happening here. We want to use a single key pair to access both AWS and GitHub. We already have the Prog270 key set up to access GitHub. To also use it with our AWS instance we have to copy the Prog 270 public key into the **authorized_keys** file on our AWS server. Needless to say, we place public keys in our **authorized_keys** file when we want to grant the owner of a particular private public key pair the ability to access a resource such as our AWS server. If you own a private key, and its matching public key is in the **authorized_keys** file for a service we want to access, then we are all set: we can access the service._
 
 The **ssh-copy-id** command copies the default public key over to the remote machine. The default public key is usually **id_rsa.pub**. I find it safer to specify which key I want to copy over. To do that, use the **-i** flag. Generally, that command looks like this, where **identity-file** is your private key:
 
@@ -172,9 +181,7 @@ A good screen shot would show you first on Pristine Lubuntu, then connecting to 
 ls ~/Git
 </pre>
 
-It should show that you have a JsObjects directory. Don't forget:
-
-- sudo apt-get install python
+It should show that you have a JsObjects directory.
 
 ## Billing After Quarter Ends {#billing-after}
 

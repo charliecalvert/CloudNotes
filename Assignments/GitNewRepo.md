@@ -16,6 +16,19 @@ See also:
 * [Git and Cloud 9](http://bit.ly/elf-cloud9)
 * [Git Video][git-video]
 
+## Preview
+
+In short form, the steps to set up your GitHub account are:
+
+*   Create an SSH Key Pair
+*   Load the private key
+*   Put the public key on GitHub
+*   Create a repository on GitHub
+*   Get the URI for your repository
+*   Clone your repository
+
+All of these steps are detailed in this document.
+
 ## Configure Git {#configure}
 
 Git is probably already installed on your system. To confirm that it is installed, type **git**. If you get an error, then the likely solution is to install Git. Do it like this:

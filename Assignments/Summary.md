@@ -1,3 +1,5 @@
+* [Ec2GetStarted.html](Ec2GetStarted.html)
+* [GitNewRepo.html](GitNewRepo.html)
 * [NpmAllInclusive.html](NpmAllInclusive.html)
 * [NpmPublishing.html](NpmPublishing.html)
 * [NpmUtilities.html](NpmUtilities.html)
