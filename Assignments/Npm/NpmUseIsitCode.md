@@ -111,7 +111,7 @@ Our goal is to pass a URL to the server describing the sentence from which we wa
 /first-word?
 ```
 
-First we need to define a method to [URL encode][ue] the parameters:
+First we need to define a method to [URL encode][ue] the [parameters][sor]:
 
 ```javascript
 getQuery() {
@@ -124,6 +124,8 @@ getQuery() {
     }
 }
 ```
+
+The [join][join] statement turns the array produced by [map][map] into a string joined on ampersands.
 
 Then we need to use it when we call fetch:
 
@@ -198,3 +200,6 @@ Read the [References][re] section in [ElvenLinks][el]
 [re]: http://www.ccalvert.net/books/CloudNotes/tips/ElvenLinks.html#references
 [el]: http://www.ccalvert.net/books/CloudNotes/tips/ElvenLinks.html
 [ue]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+[sor]: https://stackoverflow.com/a/34209399/253576
+[map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+[join]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
