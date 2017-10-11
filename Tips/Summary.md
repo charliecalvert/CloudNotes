@@ -1,7 +1,1 @@
-* [AssignmentRedo.html](AssignmentRedo.html)
-* [BooksAndResources.html](BooksAndResources.html)
 * [ElvenLinks.html](ElvenLinks.html)
-* [InstallPristineLubuntu.html](InstallPristineLubuntu.html)
-* [Recent.html](Recent.html)
-* [WindowsBash.html](WindowsBash.html)
-* [master-list.html](master-list.html)
