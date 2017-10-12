@@ -235,4 +235,9 @@ echo '## LastName' >> LinuxServer-LastName.md
 
 Copy the file from your desktop to your remote machine. SSH to your remote machine and **cat** the contents of your copied file.
 
-Take a screen shot or two, as necessary, and attach them to the assignment when you turn it in. I'm looking for evidence that you can use the **ssh** and **scp** command without being prompted for a password.
+Take a screen shot or two, as necessary, and attach them to the assignment when you turn it in. I'm looking for evidence that you can use the **ssh** and **scp** command without being prompted for a password. For instance:
+
+- A screenshot of your Pristine Lubuntu terminal just after you copy a file to the server.
+- A screenshot of your Ubuntu Server showing
+  - the contents of your .ssh directory
+  - A listing (with ls or ll) showing the files you copied over from Pristine Lubuntu
