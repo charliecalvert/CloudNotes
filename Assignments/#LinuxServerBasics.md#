@@ -6,6 +6,11 @@ The goal of this assignment is to set up a Virtual Machine containing an Ubuntu 
 
 In this assignment you will learn how to use SSH to communicate between two Linux instances. You can use these same technology to communicate between machines that are running on the same network, or between machines on two different networks in very different locations. For instance, you can SSH between a machine in Bellevue and another machine running on an AWS server in Portland.
 
+## Important Commands
+
+- Update: sudo apt-get update && sudo apt-get upgrade
+- Shutdown the server: **sudo shutdown -h now**
+
 ## Get Started
 
 If you are in Pristine Lubuntu, switch back to Windows for this opening part of the exercise.
