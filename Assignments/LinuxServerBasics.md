@@ -241,3 +241,25 @@ Take a screen shot or two, as necessary, and attach them to the assignment when 
 - A screenshot of your Ubuntu Server showing
   - the contents of your .ssh directory
   - A listing (with ls or ll) showing the files you copied over from Pristine Lubuntu
+
+## Low Memory
+
+You can tell how much memory an Ubuntu/Lubuntu instance is using with the free command:
+
+```
+charlie@CedarJuju:~$ free -h  
+  total used free shared buff/cache available  
+  Mem: 2.0G 35M 1.8G 3.1M 125M 1.8G  
+  Swap: 2.0G 0B 2.0G
+```
+
+The example above shows that this instance is only using 35 MB, leaving 1.8 GB free. In short, you can run one of the servers in small amounts of memory and they will still work. Here I run the server with 250 MB of memory (RAM) allocated to it:
+
+```
+charlie@CedarJuju:~$ free -h  
+  total used free shared buff/cache available  
+  Mem: 230M 29M 77M 1.6M 123M 181M  
+  Swap: 2.0G 0B 2.0G  
+```
+
+To change this setting, stop the server, choose settings for the VM in the VirtualBox manager, and select the **System** page.
