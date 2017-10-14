@@ -277,12 +277,14 @@ Given a set of images in a directory, the program can create a markdown page tha
 
 ## Run
 
-Make sure you have some markdown files in a directory called **Documents/AllSite** which
+Make sure you have some markdown files in a directory called **Documents/AllSite**. These are the markdown files that the program will transform into HTML. Here is a few lines of code that would create the directory and three simple markdown files:
+
+```
 mkdir -p /home/bcuser/Documents/AllSite
 echo '# One' > /home/bcuser/Documents/AllSite/One.md
 echo '# Two' > /home/bcuser/Documents/AllSite/Two.md
 echo '# Three' > /home/bcuser/Documents/AllSite/Three.md
-
+```
 
 ## The Packages
 
