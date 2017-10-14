@@ -57,7 +57,27 @@ ssh-copy-id -i id_rsa bcuser@192.168.2.34
 ssh-add id_rsa
 ```
 
+## Step IV
+
+We want to access our Git hub repository on the server using SSH. To make this as easy as possible, we are going to copy over the private key to our new server.
+
+**NOTE**: _I can't know what name you have given your private key, so in this text I will just call it **private_key**._
+
+Copy over the private key:
+
 ```
+scp private_key bcuser@192.168.2.34:/home/bcuser/.ssh/.
+```
+
+Now go to your server and lock down the private key to increase security:
+
+```
+ssh bcuser@192.168.2.34
+cd .ssh
+chmod 400 private_key
+```
+
+
 sudo chown -R bcuser:bcuser /var/www/html/
 ln -s ~/Git/isit320-calvert-2017/Week01-ReactBasics/ /var/www/html/.
 http://192.168.2.34/Week01-ReactBasics/
