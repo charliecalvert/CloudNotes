@@ -263,9 +263,18 @@ Given a set of images in a directory, the program can create a markdown page tha
 ![Foo](foo.png)
 ```
 
+## The Packages Hint
 
+We will be modifying our **isit-code** and **isit-site-tools** packages as we work. If we are working on main **WebCrafts** web application, and want to make changes to -- for instance -- our **isit-code** package, we have three choices:
 
-## The Packages
+- Do the fix in the **isit-code**, publish it, run **npm install** to get the updates in **WebCrafts**.
+- Put our fix in our copy of **node_modules/isit-code**.
+  - If we do this then we need to meld (merge) it back to the repository that holds our real copy.
+- Create a symbolic link from our **WebCraft** application's **node_modules** directory to our **isit_code** directory.
+  - If we choose this option, we should temporarily remove our references to **isit-code** from **packages.json**.
+  - Before you turn in your work, restore the references.
+
+Of these three options, the first is the easiest to understand, but the hardest to do in practice. The second option is pretty good, but can cause problems if we forget to the merge. As a result, the third is probably the most useful option, if you know what you are doing.
 
 
 

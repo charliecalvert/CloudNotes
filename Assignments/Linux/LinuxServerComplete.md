@@ -1,6 +1,6 @@
 ## Overview
 
-Watch these videos on the order they are listed. Follow the steps on the video, but name your instance vb-lastname.
+Watch either the [Complete Playlist][cpl] or the videos in the order they are listed. Follow the steps shown in the video, but name your instance vb-lastname so I can recognize it in your screenshots.
 
 - [The complete PlayList][cpl]
 - [Ubuntu Server Download](https://youtu.be/ZuoDFTBEQlE)
@@ -8,9 +8,11 @@ Watch these videos on the order they are listed. Follow the steps on the video, 
 - [Updates and JsObjects Setup](https://youtu.be/fol5LV4JjtE)
 - [Git Repository Setup](https://youtu.be/q27oi_9CXFc)                              
 
-Take screenshots of the work you do. Attach the raw PNG or JPG files that you create to the assignment when you turn it in.
+As you complete the steps outlined here and in the videos, take screenshots of the work you do. Attach the raw PNG or JPG files that you create to the assignment when you turn it in.
 
-Turn in, at minimum, a screenshot of:
+## Screenshots
+
+Create, at minimum, a screenshot of:
 
 - The server in the process of being downloaded in the torrent.
 - Creation of RAM when you first begin VirtualBox configuration.
@@ -21,6 +23,8 @@ Turn in, at minimum, a screenshot of:
   - Either Prog270 or isit320
   - The Prog270 folks should install MakeHtml
   - The Isit320 folks should run Week01-ReactBasics on the Ubuntu server and display it in a browser.
+
+Please also read the [Turn it in][#turn-it-in] section below.
 
 ## Step 01
 
