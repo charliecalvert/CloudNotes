@@ -94,6 +94,16 @@ The **isAuthenticated()** method is middleware that is called before the user ca
 
 Without removing the **isAuthenticated** method, rewrite it so that the user is automatically taken to the home page whether they are logged in or not. You can make whatever changes you want to **isAuthenticated**, but it must continue to be called from the home page route. I would either comment out or otherwise preserve the code in the current working code from the method so that you can replace it later on, when we want to add login again.
 
+After completing the **isAuthenticated** code correctly, you will still get a series of benign database errors when you start **WebCrafts**. The errors don't break the app, but they are ugly to look at. To clean up that annoyance, for now you should comment the references to **connect** from the copy of **app.js** that appears in the root of your repository:
+
+```javascript
+// Connect to DB
+//var connect = require('./routes/connect');
+//connect.doConnection(false);
+```
+
+The second and third lines above were the ones that I commented out.
+
 ## Fork Repos
 
 Fork the following repositories:
@@ -150,7 +160,9 @@ Change all references to my repos to your repos. You will have to replace the st
 find . -iname "*.js" -not -path "**/node_modules/**" | xargs sed -i 's/isit-code-calvert/isit-code-lastname/g' *.js
 ```
 
-**NOTE**: _If you turn in your **isit-web-crafts-lastname** project with links to my repos in your source files, you will get it kicked back with a score of 5._
+In the WebCrafts project, you are going to have to change references to **isit-code-calvert** and **isit-site-tools-calvert**.
+
+**NOTE**: _Please don't turn in your **isit-web-crafts-lastname** project with links to my repos in your source files._
 
 ## Pull Changes from the Original Repository
 
@@ -195,8 +207,8 @@ Here is the configuration file for the project. It is found in **config/ElvenCon
             "Git/CloudNotes/Isit320"
         ],
         "destination-dirs": [
-            "/home/charlie/Git/charliecalvert.github.io/books/CloudNotes/Isit320/",
-            "/var/www/html/"
+            "/var/www/html/AllSite/",
+            "/home/charlie/Git/charliecalvert.github.io/books/CloudNotes/Isit320/"            
         ],
         "destination-dirs-extra": [{
             "base": "/var/www/html/",
@@ -246,7 +258,7 @@ cd ~/.config
 ln -s <PATH TO ElvenConfig.json> .
 ```
 
-The file has three primary sections:
+The config file has three primary sections:
 
 - calvert:
   - Configure the code the creates HTML from Markdown
@@ -263,9 +275,17 @@ Given a set of images in a directory, the program can create a markdown page tha
 ![Foo](foo.png)
 ```
 
+## Run
+
+Make sure you have some markdown files in a directory called **Documents/AllSite** which
+mkdir -p /home/bcuser/Documents/AllSite
+echo '# One' > /home/bcuser/Documents/AllSite/One.md
+echo '# Two' > /home/bcuser/Documents/AllSite/Two.md
+echo '# Three' > /home/bcuser/Documents/AllSite/Three.md
 
 
 ## The Packages
+
 
 
 
