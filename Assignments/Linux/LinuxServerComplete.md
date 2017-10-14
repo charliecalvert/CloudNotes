@@ -2,6 +2,7 @@
 
 Watch these videos on the order they are listed. Follow the steps on the video, but name your instance vb-lastname.
 
+- [The complete PlayList][cpl]
 - [Ubuntu Server Download](https://youtu.be/ZuoDFTBEQlE)
 - [Ubuntu Server Install](https://youtu.be/fym3FG1AfiU)
 - [Updates and JsObjects Setup](https://youtu.be/fol5LV4JjtE)
@@ -77,12 +78,25 @@ cd .ssh
 chmod 400 private_key
 ```
 
+Now clone your repository. In the example below, you will need to supply your Github account name and the proper name for your repository:
 
+```
+git clone git@github.com:account-name/isit320-lastname-2017.git
+```
+
+```
 sudo chown -R bcuser:bcuser /var/www/html/
 ln -s ~/Git/isit320-calvert-2017/Week01-ReactBasics/ /var/www/html/.
-http://192.168.2.34/Week01-ReactBasics/
 ```
+
+Go here: <http://192.168.2.34/Week01-ReactBasics/>
 
 ## Turn it in
 
-Attach your screenshots to your submission.
+Attach your screenshots directly to your submission. Remember:
+
+- Don't embed screenshots in a Word document
+- Use either PNG or JPG formats
+- Don't zip up your screenshots. Attach each one individually.
+
+[cpl]: https://www.youtube.com/watch?v=ZuoDFTBEQlE&list=PLe8CjTxuUQ38pOVF37SyD16fEwYCYyehL
