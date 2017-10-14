@@ -2,6 +2,7 @@
 
 Watch these videos on the order they are listed. Follow the steps on the video, but name your instance vb-lastname.
 
+- [The complete PlayList][cpl]
 - [Ubuntu Server Download](https://youtu.be/ZuoDFTBEQlE)
 - [Ubuntu Server Install](https://youtu.be/fym3FG1AfiU)
 - [Updates and JsObjects Setup](https://youtu.be/fol5LV4JjtE)
@@ -97,3 +98,5 @@ Attach your screenshots directly to your submission. Remember:
 - Don't embed screenshots in a Word document
 - Use either PNG or JPG formats
 - Don't zip up your screenshots. Attach each one individually.
+
+[cpl]: https://www.youtube.com/watch?v=ZuoDFTBEQlE&list=PLe8CjTxuUQ38pOVF37SyD16fEwYCYyehL
