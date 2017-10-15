@@ -51,7 +51,7 @@ Once you have created your instance, and downloaded your keys, you need to learn
 The first step is to load your EC2 PEM (private key) file on your local machine. On Pristine Lubuntu:
 
 ```
-ssh-add ~/.ssh/<YOUR EC2 PRIVATE KEY>
+ssh-add ~/.ssh/&lt;YOUR EC2 PRIVATE KEY&gt;
 ```
 
 More specifically, it might look like this:
@@ -147,6 +147,7 @@ cat ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
 
 Whether you use **ssh-copy-id** or **scp** to put your public key in the EC2 **authorized_keys** file is mostly a matter of taste. However, the **ssh-copy-id** program is a bit safer. For instance, it checks to make sure you are not putting duplicate keys in the **authorized_keys** file.
 
+### Zip and Copy to Google Drive {#zip-key-google-drive}
 Don't forget to put your new private key on Google Drive. Go to the ~/.ssh folder and issue a command similar to this one:
 
 ```
@@ -157,9 +158,13 @@ Now upload the zip file to Google Drive. It doesn't have to be in our shared fol
 
 Choose **New | File Upload** on Google Drive.
 
+### Copy Private Key to Ubuntu {#scp-private-key}
+
 Copy your private SSH key that you use to connect to GitHub to your new Ubuntu server:
 
+```
 	scp <YOUR KEY> ubuntu@35.163.123.100:/home/ubuntu/.ssh/.
+```
 
 Of course, use your public or elastic IP address.
 
