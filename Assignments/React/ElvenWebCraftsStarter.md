@@ -16,7 +16,9 @@ This is a very real world task. Many developers are handed partially broken code
 
 ## Get Started
 
-For these projects:
+It might be helpful if you first [Watch the Video](https://youtu.be/cZ3DrcBS7cI) to help get a feeling for what is going on.
+
+We will be working with these projects:
 
 - [https://github.com/charliecalvert/isit-code][ic]
 - [https://github.com/charliecalvert/isit-site-tools][ist]
@@ -299,3 +301,19 @@ We will be modifying our **isit-code** and **isit-site-tools** packages as we wo
 Of these three options, the first is the easiest to understand, but the hardest to do in practice. The second option is pretty good, but can cause problems if we forget to the merge. As a result, the third is probably the most useful option, if you know what you are doing.
 
 ## Turn it in
+
+- [Watch the Video](https://youtu.be/cZ3DrcBS7cI)
+
+Turn in links to your three repository. Line them all up (probably in the comments area) so I can just block copy them:
+
+- git clone git@github.com:<name><isit-code>
+- git clone git@github.com:<name><isit-site-tools>
+- git clone git@github.com:<name><web-crafts>
+
+**NOTE**: _You can also provide links to your code on github, but the primary things I want to see are **git clone** statements that I can simply block copy and run. Test them on your end in a temp directory to be sure they work._
+
+I should then be able to enter your web-crafts folder, type the following and be up and running:
+
+- **npm install && bower install && npm start**
+
+Attach a screenshot of the program running successfully and producing the three HTML files from the markdown. What you see in the next to last "scene" in my video. The one where I run the app, but before I display the results in a browser.
