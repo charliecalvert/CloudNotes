@@ -252,19 +252,32 @@ Take a screen shot or two, as necessary, and attach them to the assignment when 
 You can tell how much memory an Ubuntu/Lubuntu instance is using with the free command:
 
 ```
-charlie@CedarJuju:~$ free -h  
-  total used free shared buff/cache available  
-  Mem: 2.0G 35M 1.8G 3.1M 125M 1.8G  
+charlie@CedarJuju:~$ free -h
+  total used free shared buff/cache available
+  Mem: 2.0G 35M 1.8G 3.1M 125M 1.8G
   Swap: 2.0G 0B 2.0G
 ```
 
 The example above shows that this instance is only using 35 MB, leaving 1.8 GB free. In short, you can run one of the servers in small amounts of memory and they will still work. Here I run the server with 250 MB of memory (RAM) allocated to it:
 
 ```
-charlie@CedarJuju:~$ free -h  
-  total used free shared buff/cache available  
-  Mem: 230M 29M 77M 1.6M 123M 181M  
-  Swap: 2.0G 0B 2.0G  
+charlie@CedarJuju:~$ free -h
+  total used free shared buff/cache available
+  Mem: 230M 29M 77M 1.6M 123M 181M
+  Swap: 2.0G 0B 2.0G
 ```
 
 To change this setting, stop the server, choose settings for the VM in the VirtualBox manager, and select the **System** page.
+
+## Understanding Keys
+
+- The **~./ssh/authorized_keys** file: Where the public keys that allow access to the machine or some service on the machine are kept. Any machine that has the private key that matches one of the public keys in the **authorized_keys** file can access at least some resources on the machine that has the **authorized_keys** file.
+
+If machine **x** has public key **Y.pub** in its **authorized_keys** file then any machine that has a private key **Y** can access at least some resources on machine **x**. Exactly which resources are made available differs from case to case. For instance, on GitHub, you gain access to your GitHub repository on the GitHub servers.
+
+**An analogy**: its like a set of lockers at a bus station or gym. You give the company the lock and they attach it to one of the lockers. You keep the key or combination that opens the lock.
+
+- lock: public key
+- key/combination: private key
+
+They own the lockers, and they have a copy of your lock. But only you have the key. They probably have a "back door" into your locker, but no one else has the key. So it is only you and them who can access your locker. In practice, it is possible to encrypt data before they see it, so that what is in your locker is unreadable to them. But the main point of the analogy is that you gave them the lock (public key) and you have the key/combination that opens the lock (your private key.) It is still an analogy, and not perfect, but it might help you see how the system works.

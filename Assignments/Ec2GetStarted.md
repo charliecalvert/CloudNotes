@@ -51,7 +51,7 @@ Once you have created your instance, and downloaded your keys, you need to learn
 The first step is to load your EC2 PEM (private key) file on your local machine. On Pristine Lubuntu:
 
 ```
-ssh-add ~/.ssh/&lt;YOUR EC2 PRIVATE KEY&gt;
+ssh-add ~/.ssh/<YOUR EC2 PRIVATE KEY>;
 ```
 
 More specifically, it might look like this:
