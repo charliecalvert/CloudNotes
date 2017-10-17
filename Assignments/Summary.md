@@ -1,3 +1,4 @@
+* [Ec2Checklist.html](Ec2Checklist.html)
 * [Ec2GetStarted.html](Ec2GetStarted.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [LinuxServerBasics.html](LinuxServerBasics.html)

@@ -48,6 +48,7 @@ There is one last step, which involves installing a program called Jade. You can
 ```bash
 npm install -g jade
 ```
+
 Now just leave that part of the project alone for a bit.
 
 You can expect **npm install** to issue some warnings or even a few small errors. But if you hit serious errors when you run **npm install**, try several steps as listed below. The first (jou) should take you to the **~/Git/JsObjects/Utilities** directory. From there, navigate into the **NodeInstall** directory. Some of the install commands might not install anything because the program or programs may already be installed. When running **InstallNodePackages**, choose e for essentials.
@@ -106,7 +107,7 @@ Create a new folder in your **Documents** directory. Name the new folder **AllTe
 mkdir ~/Documents/AllTest/
 ```
 
-Now use Remarkable to create some markdown files and place them in your new directory. You can use files that you already created, but by the time you are done, you should have at least six markdown files, and at least half of them have to be new: not ones that you used in a previous assignment.
+Now use Atom, Remarkable, StackEdit or the editor of your choice to create some markdown files and place them in your new directory. You can use files that you already created, but by the time you are done, you should have at least six markdown files, and at least half of them have to be new: not ones that you used in a previous assignment.
 
 Move at least two of the markdown files into a sub-directory of **AllTest**. You can call that directory whatever you want. For instance, **MoreFiles**:
 

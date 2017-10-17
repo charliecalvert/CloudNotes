@@ -57,10 +57,21 @@ git clone https://github.com/charliecalvert/JsObjects
 Put your private key in the **authorized_keys** file for the server.
 
 ```
+slb
+./SetupSsh
 cd ~/.ssh
-ssh-copy-id -i id_rsa bcuser@192.168.2.34
-ssh-add id_rsa
+// ssh-copy-id -i id_rsa bcuser@192.168.2.34
 ```
+
+The scripts listed above are now consolidated into one script called [GetStarted][gs]. Once you have first booted your server, ssh into it with a password. Before you try to update the server or do anything else, paste in the following commands:
+
+```
+curl https://raw.githubusercontent.com/charliecalvert/JsObjects/master/Utilities/SetupLinuxBox/GetStarted > GetStarted
+chmod +x GetStarted
+./GetStarted
+```
+
+Don't try to paste these into the shell that VirtualBox creates. That doesn't tend to work very well for me. Instead, paste them into your SSH shell. The **GetStarted** script will run all the commands listed above, prompting you only once for input about setting a password on your private key. You probably don't want to create that password, but it is a personal decision.
 
 ## Step IV
 
@@ -104,3 +115,4 @@ Attach your screenshots directly to your submission. Remember:
 - Don't zip up your screenshots. Attach each one individually.
 
 [cpl]: https://www.youtube.com/watch?v=ZuoDFTBEQlE&list=PLe8CjTxuUQ38pOVF37SyD16fEwYCYyehL
+[gs]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/GetStarted

@@ -1,20 +1,20 @@
 ## Overview
 
-The EC2 In Class Checklist is designed to help ensure that you have EC2 set up correctly. This exercise is designed to help you get your machine set up correctly. Don't be too obsessive, but try to get the tests I describe here to pass.
+The EC2 In Class Checklist is designed to help ensure that you have EC2 set up correctly. Don't be too obsessive, but try to get the tests I describe here to pass.
 
-**NOTE**: *Throughout this assignment, I will use the PNG extension in examples of bitmap file names. This is just for convenience when typing the assignment. The file type you use can be either PNG or JPG. Other file types may be accepted so long as I can view them. To be safe, just use PNG or JPG files.*
+**NOTE**: *Throughout this assignment, I will use the PNG extension in examples of bitmap file names. This is just for convenience when typing the assignment. The file type you use can be either PNG or JPG.*
 
-Subjects of interest include checking to see if you:
+Our goals include checking to see if we:
 
-1. Use SSH keys rather than passwords? (Show connection)
-2. Regularly update your machine
-- Access git with a public/private key pair?
-- Know how to copy files to EC2 from Pristine Lubuntu?
-- Have ~./bashrc and ~.bashaliases set up correctly?
-- Have Node Setup correctly?
+- Use SSH keys rather than passwords (Show connection)
+  - Access git with a public/private key pair
+- Regularly update our machine
+- Know how to copy files to EC2 from Pristine Lubuntu
+- Have **~./bashrc** and **~.bash_aliases** set up correctly
+- Have Node Setup correctly
 - Have Lamp installed
 
-**NOTE**: *Assuming you already have JsObjects [installed][jso-install03], if not, please [install it][jso-install01] now. If you already have it installed, be sure to run **git pull** in JsObjects before beginning this assignment.*
+**NOTE**: _I assume you already have JsObjects [installed][jso-install03]. If not, please [install it][jso-install01] now. If you already have it installed, be sure to run **git pull** in JsObjects before beginning this assignment._
 
 Related Assignments or Documents include:
 
@@ -34,9 +34,9 @@ Related Assignments or Documents include:
 
 ## SSH
 
-For those of you in a class that uses AWS, do the following. Otherwise just skip down to the text on running SystemCheck.
+For those of you in a class that uses AWS, or a local instance of Ubuntu Server, do the following. Otherwise just skip down to the text on running **SystemCheck**.
 
-Use SSH with a public private key pair to connect to EC2. This time, however, pass in the -v key to get debug information:
+What I'm looking for here is evidence that your using SSH, not a password, to access your server. If you are using a local Ubuntu Server, I want to make sure you have run **ssh-copy-id** or the equivalent to put your public key in the server's **authorized_keys** file. I want you to proceed as you normally would, using SSH with a public private key pair to connect to EC2. This time, however, pass in the -v key to get debug information:
 
 ```
 ssh -v ubuntu@XX.XX.XX.XX
@@ -50,7 +50,9 @@ debug1: Authentications that can continue
 debug1: Entering interactive session.
 ```
 
-Take a screen shot of all the lines between the first and last inclusive. That is take a screen shot that includes the first and last lines shown above, as well as all the lines between them. Call **ssh-authentication.png**.
+Take a screen shot of all the lines between the first and last inclusive. That is take a screen shot that includes the first and last lines shown above, as well as all the lines between them. Call it **ssh-authentication.png**.
+
+## System Check
 
 Run this command from your home directory:
 
@@ -68,6 +70,7 @@ If you are having problems, go to the Git New Repo assignment, and read the sect
 
 Take a screenshot showing that the SystemCheck | SSH command works on your system.
 
+All of the tests should run smoothly out of the box, with the possible exception of the check for your ssh **main-key**.
 
 ## Update
 
@@ -75,7 +78,16 @@ Update your machine as explained in the [EC2 Provision Update Section][ec2p-upda
 
 [ec2p-update]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#update-server
 
-After updating the server, type **sudo apt-get upgrade** a second time. Create a screen shot and call it **server-update.png**.
+After updating the server, type **sudo apt-get upgrade** a second time. Create a screen shot and call it **server-update.png**. I'm looking for evidence that there was nothing left to upgrade. The output should look something like this, though I want a screen shot, not just block copied text:
+
+```
+charlie@elf-rover:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+```
 
 ## Basic System Check
 
@@ -171,7 +183,24 @@ Turn in your assignment and attach (upload) your images directly to the assignme
 
 ## Hint
 
-Developers will want to set up the programmer utilities in the ~/bin directory. The file that creates these links is here:
+Developers will want to set up the programmer utilities in the ~/bin directory. It should have been run automatically. If your **~/bin** directory contains these files, then you are all set:
+
+```
+charlie@elf-rover:~$ ls ~/bin
+check-karma-grunt-config
+CreateAllExpress
+CreateExpressProject
+elfgrepcomps
+FixtureReady
+InsertJadeExecGrunt.py
+ShowPath
+StartPythonWebServer
+strip-triple-spaces
+TestCheck
+TestReady
+```
+
+ The file that creates these links is here:
 
 ```
 ~/Git/JsObjects/Utilities/SetupLinuxBox/CreateSymbolicLinks

@@ -21,35 +21,27 @@ You can and should pick a topic that interests you. If no idea comes to mind, th
 - Hobbies
 - Interests
 
+Don't try to polish or make your site fancy at this stage. Just try to get it working. Even if you just set up a few pages with little text on them, but a heading, an introductory sentence, and one picture, that would be enough.
 
-Don't try to polish or make your site fancy at this stage. Just try to get it working.
+## Run MakeHtml
 
-## Update
+**MakeHtml** and the code in **JsObjects** is frequently updated. On Pristine Lubuntu, copy over the new version.
 
-If MakeHtml has been updated. On Pristine Lubuntu, copy over the new version.
-
-Begin the process by updating JsObjects:
+Begin the process by updating **JsObjects**:
 
 ```
-jo
+jon
 git pull
+cd MakeHtml
 ```
 
-Rename your old version:
+Run the script called **renewMakeHtml**:
 
 ```
-cd ~/Source
-mv MakeHtml MakeHtml.old
+./renewMakeHtml
 ```
 
 Copy in the new version and run it to be sure it works:
-
-```
-cp -r $JSOBJECTS/JavaScript/NodeCode/MakeHtml .
-cd MakeHtml
-npm install
-npm start
-```
 
 See this code in the config folder:
 
@@ -71,11 +63,11 @@ See this code in the config folder:
 
 You can use this file to specify where to copy markdown files from, and where to copy HTML to. By default, the first item in each list will be used.
 
-**NOTE**: *You may need to modify this file, and particularly the **base-dir** to fit your system.*
+**NOTE**: _Though on most systems it should work out of the box, you may need to modify this file, and particularly the **base-dir** to fit your system._
 
 ## Getting Started
 
-While still on Pristine Lubuntu, follow the instructions in the [Lamp Markdown] assignment and create a site that you like on the Pristine Lubuntu Apache server. Copy your markdown files to your Git repository. Push them.
+While still on Pristine Lubuntu, follow the instructions in the [Lamp Markdown][lmd] assignment and create a site that you like on the Pristine Lubuntu Apache server. Copy your markdown files to your Git repository. Push them.
 
 On EC2, pull your repository. Copy your files back out to a directory called **Documents/AllTest**:
 
@@ -91,8 +83,7 @@ Don't forget to set up permissions on **/var/www/html**:
 sudo chown -R ubuntu:ubuntu /var/www/html/
 ```
 
-Set up the MakeHtml program on EC2. Run it. Access your website using your Elastic IP address.
-Repeat the process of developing your site on Pristine Lubuntu, pushing it to your repository, and then pulling on EC2.
+Set up the **MakeHtml** program on EC2 and -- if possible -- on local Ubuntu Server running in a VM. Run it. Access your website using your Elastic IP or the IP address of your Ubuntu Server. Repeat the process of developing your site on Pristine Lubuntu, pushing it to your repository, and then pulling on EC2.
 
 **NOTE**: *The point here is that an EC2 server instance does not make a good development machine. Do your development on Pristine Lubuntu, then use Git to transfer your files EC2, and to ultimately display the result in your web site.*
 
@@ -114,8 +105,8 @@ You can get the exact URI from GitHub/BitBucket. If you do things that way, you 
 
 ```bash
 cd ~/Git
-rm -rf prog270-lastname-2016-fall
-git clone  git@github.com:<username>/prog270-lastname-2016-fall.git
+rm -rf prog270-lastname-2017
+git clone  git@github.com:<username>/prog270-lastname-2017.git
 ```
 
 Another issue can come up of we forget these commands:
@@ -346,3 +337,5 @@ When working, perhaps you want to do something like this:
   - View the results at your Elastic IP
 
 The one catch is that before the first step you might need to set things up so that **MakeHtml** copies sends files **~/Documents/AllTest** to **/var/www/html** and not to **~/Source/firebase-data/public**. This involves either editing **config/ElvenConfig.json** or copying in a pre-configured one as Triet suggests. But once that step is done, then you can follow the pattern shown above.
+
+[lmd]: http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html
