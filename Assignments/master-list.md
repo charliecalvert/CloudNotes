@@ -1,4 +1,5 @@
 * [Summary.html](Summary.html)
+* [WebCrafts/Summary.html](WebCrafts/Summary.html)
 * [React/Summary.html](React/Summary.html)
 * [Npm/Summary.html](Npm/Summary.html)
 * [Linux/Summary.html](Linux/Summary.html)

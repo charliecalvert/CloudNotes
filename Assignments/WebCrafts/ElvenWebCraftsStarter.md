@@ -28,6 +28,14 @@ We will be working with these projects:
 [ist]: https://github.com/charliecalvert/isit-site-tools
 [iwc]: https://github.com/charliecalvert/isit-web-crafts
 
+## The Port
+
+I have tended to run this program on port 30200. I do this because I leave it running much of the time, and want to leave ports 30025, 30026, 8080 and 3000 open for other node programs. We should, however, run the program on our familiar port 30025. Make the change in **bin/www**
+
+```javascript
+var port = normalizePort(process.env.PORT || '30025');
+```
+
 ## The Main Modules
 
 This project has been divided into a main program and two libraries. This is code left over from half completed projects worked on during previous quarters. They all need to be updated:
