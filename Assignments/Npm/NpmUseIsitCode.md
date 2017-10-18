@@ -24,7 +24,7 @@ In **index.js** use **require** to load your NPM package. The call might look so
 const isitCode = require('isit-code-lastname');
 ```
 
-Most of the time, however, you want to load a particule module from the library. Suppose you want the elf-utils project. Then load it like this:
+Most of the time, however, you want to load a particule module from the library. Suppose you want the **elf-utils** module. Load it like this:
 
 ```javascript
 const elfUtils = require('isit-code-lastname').elfUtils;
@@ -53,7 +53,7 @@ I'll leave it up to you to implement the method. the call to **elfUtils.homeDir*
 
 ## Client
 
-Create a file called **CallIsitCode** in **public/javascripts**. The file should contain ES6 and React code.
+Create a file called **CallIsitCode** in a directory in the root of your project called **source**. The file should contain ES6 and React code.
 
 **THREE NOTES ON STYLE**:
 
@@ -67,6 +67,16 @@ Create two buttons in your React component:
 - Get First Word
 
 A click on the first button should call the appropriate method on the server. Click the second button -- and well -- you know what it should do. Use **fetch** from **whatwg-fetch** to make the calls from the client to the server.
+
+## Webpack
+
+You are going to need to create a **webpack.config.js** file. I would suggest you copy the one from the webpack section of the [ReactBasics][rb] assignment.
+
+You will want to put the **entry** to **CallIsitCode**. The output might look something like this:
+
+```javascript
+output: {path: __dirname, filename: './public/javascripts/bundle.js'},
+```
 
 ## Getting User Input
 
@@ -195,6 +205,7 @@ this.someMethod = this.someMethod.bind(this);
 
 Read the [References][re] section in [ElvenLinks][el]
 
+[rb]:http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html#transpiling-with-webpack
 [ic]:https://github.com/charliecalvert/isit-code
 [abg]:https://github.com/airbnb/javascript/tree/master/react
 [re]: http://www.ccalvert.net/books/CloudNotes/tips/ElvenLinks.html#references
