@@ -73,6 +73,12 @@ chmod +x GetStarted
 
 Don't try to paste these into the shell that VirtualBox creates. That doesn't tend to work very well for me. Instead, paste them into your SSH shell. The **GetStarted** script will run all the commands listed above, prompting you only once for input about setting a password on your private key. You probably don't want to create that password, but it is a personal decision.
 
+## Step III
+
+Run UbuntuSetup.
+
+- [UbuntuSetup][ubs]
+
 ## Step IV
 
 We want to access our Git hub repository on the server using SSH. To make this as easy as possible, we are going to copy over the private key to our new server.
@@ -124,3 +130,4 @@ Developing and deploying applications on VMs or in containers is this the way we
 
 [cpl]: https://www.youtube.com/watch?v=ZuoDFTBEQlE&list=PLe8CjTxuUQ38pOVF37SyD16fEwYCYyehL
 [gs]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/GetStarted
+[ubs]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#ubuntu-setup
