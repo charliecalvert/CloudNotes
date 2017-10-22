@@ -1,6 +1,9 @@
 # Rest Basics
 
-Use Rest with React.
+Use Rest with React. There are two applications joined by a proxy:
+
+- server (Express based)
+- client (Built with create-react-app)
 
 Both of these slide decks contain relevant information that might be useful when working through this assignment:
 

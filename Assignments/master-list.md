@@ -3,4 +3,5 @@
 * [React/Summary.html](React/Summary.html)
 * [Npm/Summary.html](Npm/Summary.html)
 * [Linux/Summary.html](Linux/Summary.html)
+* [CodeAcademy/Summary.html](CodeAcademy/Summary.html)
 * [Aws/Summary.html](Aws/Summary.html)

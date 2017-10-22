@@ -15,3 +15,25 @@ We don't have a book, so you have no reading to do each week. But that doesn't m
 For instance, every once in a while, around week five or six, in the discussion area, someone will suddenly discover the Git book. "'Look what I found', they say. 'A free online book about git.'" But if they had spent two minutes with the Git page on Elvenware, they would have known about the book from week one.
 
 This is far from a perfect system, and you are not graded on the number of links you explore. But I do put them there in the hopes that they will help you succeed.
+
+## Assignment Pace
+
+Sometimes we seem to move slowly, but we have to have certain foundational concepts before working on a bigger project:
+
+    Git
+        Branches
+    NPM
+        Creating our own or working on one we fork
+        Consuming popular third party libraries like express, react and babel
+    Routing
+        Calling with fetch
+        Creating routes with express (router.get('/', function(req, res) {...});
+    Debugging with the Chrome developer tools
+    React
+        Create from scratch (ReactBasics)
+        Create with create-react-app (RestBasics (Links to an external site.))
+        Integrate React into an existing jQuery based app
+
+And so on.
+
+I think it is sometimes easiest to learn or review concepts in smaller projects. Then, once they start to make sense, move on to bigger projects like WebCrafts. It is hard, particularly for beginners, to see how to work with and debug big projects.
