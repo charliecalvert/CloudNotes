@@ -6,6 +6,8 @@ In this assignment we will:
 - Call from **isit-site-tools** to **isit-code**
 - Write a two project, react and express based web application that displays the result of the call in the browser.
 
+Be sure [lamp is installed][li].
+
 ## Note on Names
 
 To save keystrokes when typing, and cut down on noise when reading, I'll use some simple shortcuts. Unless I explicitly state otherwise, when I write **isit-code**, I'm referencing your **isit-code-lastname** project.
@@ -160,11 +162,18 @@ Now call the root from the client using react and display it on the page.
 
 ## Turn it in
 
-First push and then turn in the assignment, specifying:
+First push and then turn in the assignment, specifying the branch and folder where I can find your work. It might look something like this:
 
 - Branch: Week04
 - Folder: Week04-UseSiteTools
+- MainRepo: git@github.com:my-name/my-repo.git
+- IsitSite Repo: git@github.com:my-name/my-repo.git
+- IsitCode Repo: git@github.com:my-name/my-repo.git
+
+
+Specifying the repos isn't absolutely necessary, but if you think there is any possibility that I might be confused about the repos you are using, then add them.
 
 [cc]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ElvenWebCraftsStarter.html#the-config-file
 [lcs]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html#link-client-and-server
 [uic]: http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitCode.html
+[li]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.html#lamp

@@ -6,6 +6,10 @@ A video associated with this assignment is available here:
 
 - [Lamp Markdown Video](https://youtu.be/kz2R1EIpnis)
 
+To help you understand markdown, try this search:
+
+- <https://www.google.com/search?q=learn+markdown>
+
 ## Step One
 
 You need to get the most recent code from **JsObjects**. Navigate to your JsObjects directory:
@@ -131,20 +135,20 @@ There is one other little piece that we need to put in place to make this work c
 
 Now create an **images** folder for your website:
 
-```bash
+```nohighlighting
 mkdir /var/www/html/images
 ```
 
 Copy your file into that directory, and set the correct permissions so that a user who is not you, who browses to the site, can read it:
 
-```bash
+```nohighlighting
 cp ~/Pictures/elvenwarelogo.png /var/www/html/images/.
 chmod 644 /var/www/html/images/elvenwarelogo.png
 ```
 
 When you write 644, you are saying the owner has read and write permissions, while everyone else has only read permissions:
 
-```
+```nohighlighting
 -rw-r--r-- 1 bcuser bcuser 37309 Jan 20 10:49 /var/www/html/images/elvenwarelogo.png
 ```
 
@@ -152,14 +156,14 @@ Sadly, there is one last step. In order to get syntax highlighting after our tri
 
 - Naviagate back to the **~/Source/MakeHtml** directory. Then issue these commands to create a folder for the CSS file, and then copy the file into that folder:
 
-```
+```nohighlighting
 mkdir -p /var/www/html/css/highlight/
 cp ./node_modules/highlight.js/styles/googlecode.css /var/www/html/css/highlight/.
 ```
 
 If you are not in the **~/Source/MakeHtml** directory, then try this command:
 
-```
+```nohighlighting
 cp ~/Source/MakeHtml/node_modules/highlight.js/styles/googlecode.css /var/www/html/css/highlight/.
 ```
 
@@ -196,14 +200,23 @@ Take at least three screen shots of your pages running in the browser.
 
 Issue the following command and take a screen shot of the results:
 
-```
+```nohighlighting
 ls /var/www/html/
 ```
 
 Put the contents of your **/var/www/html** in your repository in a directory called **LampMarkdown** and push it: :
 
+```nohighlighting
+mkdir ~/Git/<PATH TO YOUR REPO>/LampMarkdown
+cp -rv /var/www/html/* ~/Git/<PATH TO YOUR REPO>/LampMarkdown/.
 ```
-cp -rv /var/www/html/* ~/Git/<YOUR REPO>/LampMarkdown/.
+
+For instance:
+
+```nohighlighting
+cd
+mkdir ~/Git/prog270-calvert-2017/LampMarkdown
+cp -rv /var/www/html/*.html ~/Git/prog270-calvert-2017/LampMarkdown/.
 ```
 
 Put your images in our shared directory on Google Drive in a folder called LampMarkdown, don't wrap them in a zip file. This saves me a step.

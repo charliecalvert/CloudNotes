@@ -5,6 +5,14 @@ This assignment is designed to help you get started using the AWS application ca
 - AWS: [Amazon Web Services][aws-doc]
 - EC2: [Elastic Compute Cloud][ec2-doc]
 
+## A diagram.
+
+You might find this diagram helpful when reading this assignment.
+
+![Connect to EC2 activity diagram](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
+
+**NOTE**: _Remember, you only get one chance to download a private key for an EC2 instance. If you miss it the first time, then the only reasonable choice is to start again from scratch._
+
 ## Step 01 {#step-one}
 
 Your first step will be to create a [free account](https://aws.amazon.com/free/) on AWS.
@@ -44,9 +52,18 @@ We will need a permanent IP address. On AWS, these permanent IP addresses are ca
 
 - [Elastic IP](http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic)
 
-## Step 03: Load your SSH Key {#step-three}
+## Step 03: Access EC2 Overview {#step-three}
 
-Once you have created your instance, and downloaded your keys, you need to learn how to use the keys to access your instance.
+Once you have created your instance, and downloaded your keys, you need to learn how to use the keys to access your instance. Here is a sample of how to proceed:
+
+```
+ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
+ssh ubuntu@192.168.1.25
+```
+
+Let's examine these two commands one at a time.
+
+## Step 03a: Load your SSH Key {#step-three-a}
 
 The first step is to load your EC2 PEM (private key) file on your local machine. On Pristine Lubuntu:
 
@@ -60,17 +77,11 @@ More specifically, it might look like this:
 ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
 ```
 
-## SSH on Windows
-
-Until very recently, Windows did not have SSH built into the OS. I hear this is changing. But for now, windows users can still use [PuTTY][putty]:
-
-Convert the PEM file to a PPK file.
-
-- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#pem>
+The second step is detailed in the next section.
 
 ## Step 04: Access Your Instance {#step-four}
 
-Now that you have your key loaded, you can connect to your EC2 instance with SSH. This gives you access to the command line of your instance.
+Once you have your key loaded, you can connect to your EC2 instance with SSH. This gives you access to the command line of your instance. The command looks like this:
 
 	ssh ubuntu@<YOUR IP PUBLIC IP or ELASTIC IP ADDRESS>
 
@@ -79,16 +90,9 @@ For instance:
 	ssh ubuntu@192.168.1.25
 
 
-![Connect to EC2 activity diagram](https://s3.amazonaws.com/bucket01.elvenware.com/images/ssh-key-for-ec2.png)
-
-Connect to your EC2 instance with Putty:
-
-- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
-
-
 ## Step 04.a: Configure Your Instance {#configure}
 
-You can configure your instance by running a script found in JsObjects.
+You can configure your instance by running a script found in JsObjects called **UbuntuSetup**. Follow the links below to learn how to proceed.
 
 - [Install JsObjects on your Instance][jsobjects]
 - [Run the Configuration Script][configure]
@@ -112,28 +116,88 @@ See also:
 
 ## Step Five
 
-AWS gave us a key pair that we can use to access an instance of our server. However, we already have an SSH key pair that we use to access our data on GitHub. If we use the GitHub key for accessing our AWS server, then we would only have to load one key. Otherwise we have to load two keys:
+AWS gave us a key pair that we can use to access an instance of our EC2 server. However, we already have an SSH key pair that we use to access our data on GitHub. If we use the GitHub key for accessing our AWS server, then we would only have to load one key. Otherwise we have to load two keys:
 
 - One for GitHub
 - One for AWS
 
-To sign on to both machines with a single key we have to put the public part of our Prog 270 Key on our Ubuntu instance in the **~/.ssh/authorized_keys** file. We do this by running **ssh-copy-id** command from Pristine Lubuntu.
+To sign on to both machines with a single key we have to put the public part of our Prog 270 (GitHub) key on our Ubuntu instance in the **~/.ssh/authorized_keys** file. We then load it and clone our GitHub repository.
 
-**NOTE**: _Take a moment to be sure you understand what is happening here. We want to use a single key pair to access both AWS and GitHub. We already have the Prog270 key set up to access GitHub. To also use it with our AWS instance we have to copy the Prog 270 public key into the **authorized_keys** file on our AWS server. Needless to say, we place public keys in our **authorized_keys** file when we want to grant the owner of a particular private public key pair the ability to access a resource such as our AWS server. If you own a private key, and its matching public key is in the **authorized_keys** file for a service we want to access, then we are all set: we can access the service._
-
-The **ssh-copy-id** command copies the default public key over to the remote machine. The default public key is usually **id_rsa.pub**. I find it safer to specify which key I want to copy over. To do that, use the **-i** flag. Generally, that command looks like this, where **identity-file** is your private key:
+Start in Pristine Lubuntu and copy our public key to EC2:
 
 ```
-ssh-copy-id -i identity_file bcuser@192.168.2.21
+ssh-add prog270-2017      <== Load Key on Pristine
+ssh-copy-id -i prog270-2017 ubuntu@155.132.2.21
+```
+
+The second step shown above copies our private key into the EC2 **~/.ssh/authorized_keys** file.
+
+Now access our EC2 instance and clone our repository:
+
+```
+ssh ubuntu@35.163.123.100 <== Access EC2 Instance
+cd ~/.ssh                 <== Enter SSH directory on EC2
+ssh-add prog270-2017      <== Load key on EC2
+cd ~/Git                  <== Go to Git and clone
+git clone git@github.com/user-name/repo-name.git
+```
+
+Let's walk through this step by step.
+
+## Copy Public Key
+
+First load the key you use to access GitHub.
+
+```
+ssh-add prog270-2017    <== Load Key on Pristine
+```
+
+Now copy that key to the **~/.ssh/authorized_keys** file on your EC2 instance. We do this by running **ssh-copy-id** command from Pristine Lubuntu.
+
+```
+ssh-copy-id -i identity_file ubuntu@35.163.123.100
 ```
 
 For instance, if you have private key called **prog270-2016** then you would issue this command:
 
 ```
-ssh-copy-id -i prog270-2016 bcuser@192.168.2.21
+ssh-copy-id -i prog270-2016 ubuntu@35.163.123.100
 ```
 
-Alternatively, if you don't want to use ssh-copy-id, you can use **scp** instead. From your instance of Pristine Lubuntu use SSH to *secure copy* (scp) your public key from pristine Lubuntu to your EC2 instance:
+The **ssh-copy-id** command copies the default public key over to the remote machine. The default public key is usually **id_rsa.pub**. I find it safer to specify which key I want to copy over. To do that, use the **-i** flag. Generally, that command looks like this, where **identity-file** is your private key:
+
+### Copy Private Key to Ubuntu {#scp-private-key}
+
+From Prisitine Lubuntu, copy your private SSH key that you use to connect to GitHub to your new Ubuntu server:
+
+```
+	scp <YOUR KEY> ubuntu@35.163.123.100:/home/ubuntu/.ssh/.
+```
+
+For instance:
+
+```
+	scp prog270-2017 ubuntu@35.163.123.100:/home/ubuntu/.ssh/.
+```
+
+
+Of course, use your public or elastic IP address.
+
+### Zip and Copy to Google Drive {#zip-key-google-drive}
+
+Don't forget to put your new private key on Google Drive. Go to the ~/.ssh folder and issue a command similar to this one:
+
+```
+zip Prog270-Ec2-Calvert-2016 Prog270-Ec2-Calvert-2016.pem
+```
+
+Now upload the zip file to Google Drive. It doesn't have to be in our shared folder. Just so you can get it at home.
+
+Choose **New | File Upload** on Google Drive.
+
+## Alternate Copy Method
+
+Alternatively, if you don't want to use **ssh-copy-id**, you can use **scp** instead. From your instance of Pristine Lubuntu use SSH to *secure copy* (scp) your public key from pristine Lubuntu to your EC2 instance:
 
 ```
 scp <YOUR-PUBLIC-KEY> ubuntu@<YOUR-ELASTIC-IP>:/home/ubuntu/.ssh/.
@@ -147,30 +211,21 @@ cat ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
 
 Whether you use **ssh-copy-id** or **scp** to put your public key in the EC2 **authorized_keys** file is mostly a matter of taste. However, the **ssh-copy-id** program is a bit safer. For instance, it checks to make sure you are not putting duplicate keys in the **authorized_keys** file.
 
-### Zip and Copy to Google Drive {#zip-key-google-drive}
-Don't forget to put your new private key on Google Drive. Go to the ~/.ssh folder and issue a command similar to this one:
+## Thoughts
 
-```
-zip Prog270-Ec2-Calvert-2016 Prog270-Ec2-Calvert-2016.pem
-```
+Take a moment to be sure you understand what is happening here. We want to use a single key pair to access both AWS and GitHub. On Pristine Lubuntu we already have the Prog270 key set up to access GitHub. To also use it with our AWS instance we have to copy the Prog 270 public key into the **authorized_keys** file on our AWS server.
 
-Now upload the zip file to Google Drive. It doesn't have to be in our shared folder. Just so you can get it at home.
+Needless to say, we place public keys in our **authorized_keys** file when we want to grant the owner of a particular private public key pair the ability to access a resource such as our AWS server. If you own a private key, and its matching public key is in the **authorized_keys** file for a service we want to access, then we are all set: we can access the service.
 
-Choose **New | File Upload** on Google Drive.
+- I have a private key
+- I have loaded the private key with ssh-add or similar tool.
+- My Public key is in the **authorized_keys** file on a resource such as an Ec2 instance or github
 
-### Copy Private Key to Ubuntu {#scp-private-key}
-
-Copy your private SSH key that you use to connect to GitHub to your new Ubuntu server:
-
-```
-	scp <YOUR KEY> ubuntu@35.163.123.100:/home/ubuntu/.ssh/.
-```
-
-Of course, use your public or elastic IP address.
+If the above are true, then you should be able to access your resource. For instance, you can access EC2 or GitHub.
 
 ## Setup Box
 
-There are a number of steps required to get the instance set up correctly. I outline them in the first few sections of this document:
+Once we have access to our EC2 instance and access to our repository, there are a number of further steps required to get the instance set up correctly. I outline them in the first few sections of this document:
 
 - [Configure Linux][configure-linux]
 
@@ -243,6 +298,18 @@ These references are useful:
 [ec2-doc]: https://aws.amazon.com/documentation/ec2/
 [aws-doc]: https://aws.amazon.com/documentation/
 [putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
+## SSH on Windows
+
+Until very recently, Windows did not have SSH built into the OS. I hear this is changing. But for now, windows users can still use [PuTTY][putty]:
+
+Convert the PEM file to a PPK file.
+
+- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#pem>
+
+On Windows, you can connect to your EC2 instance with Putty:
+
+- <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
 
 ## Details
 

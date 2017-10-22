@@ -11,7 +11,7 @@ When you install Ubuntu server on Windows you get a bash shell to access it. The
 
 When I talk about the Linux File System in this article, I'm talking about the standard Linux directories mentioned above, and also about **/home/charlie/**, or whatever your home directory is called on your system: **/home/<USERNAME>**.
 
-Anything in these directories belongs to Linux and should only be touched and edited with Linux tools such as **nano** and **vim**. You can install additional Linux command line tools with **sudo apt-get install XXX**, where XXX is what you want to install. For instance, I ran **sudo apt-get install build-essentials**.
+Anything in these directories belongs to Linux and should only be touched and edited with Linux tools such as **nano** and **vim**. You can install additional Linux command line tools with **sudo apt-get install XXX**, where XXX is what you want to install. For instance, I ran **sudo apt-get install build-essential**.
 
 The code and files in **/mnt/c/** and **/mnt/d/** belongs to Windows. I can create symbolic links to that content so it is easy to access from my Linux home directory. However, I have to be careful about what I do with it, as explained below.
 

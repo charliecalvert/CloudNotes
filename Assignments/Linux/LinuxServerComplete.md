@@ -40,10 +40,10 @@ sudo apt-get dist-upgrade
 
 Shutdown the server for a moment so we can make some changes to the VM. In the VirtualBox Manager choose **Settings | General | Advanced** for your VM. In **Settings | System | Processor** set up the shared clipboard and give the VM access to more than one processor if it is available.
 
-Reboot the server and install the **build-essentials**:
+Reboot the server and install the **build-essential**:
 
 ```
-sudo apt-get install build-essentials
+sudo apt-get install build-essential
 ```
 
 Install JsObjects:
@@ -113,6 +113,14 @@ Attach your screenshots directly to your submission. Remember:
 - Don't embed screenshots in a Word document
 - Use either PNG or JPG formats
 - Don't zip up your screenshots. Attach each one individually.
+
+## Do I Really Need to Turn in Screenshots
+
+A number of you have asked if you really need to turn in the screenshots. After all, we stepped through this process once in class and most of you did not take screenshots as we were working. I know that.
+
+The point of this exercise is to teach you how to start with an ISO file and end up with an installation suitable for Node Web Development. Just doing this once in class with my guidance doesn't really show me that you can do it on your own. I want you to step through the process a second time at home so you prove to yourself (and to me) that you can create a working VM.
+
+Developing and deploying applications on VMs or in containers is this the way we are headed. In fact, this is the way that many applications are deployed at this time. But I believe what we see now is only the start of a trend that will grow rapidly over the coming years.
 
 [cpl]: https://www.youtube.com/watch?v=ZuoDFTBEQlE&list=PLe8CjTxuUQ38pOVF37SyD16fEwYCYyehL
 [gs]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/GetStarted

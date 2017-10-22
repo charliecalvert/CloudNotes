@@ -261,12 +261,71 @@ Here is the configuration file for the project. It is found in **config/ElvenCon
 }
 ```
 
-Put a symbolic link to this file in your ~/.config directory:
+## ElvenConfig Symbolic Links.
+
+Put a symbolic link to **ElvenConfig.json** file in your **~/.config** directory:
 
 ```
 cd ~/.config
 ln -s <PATH TO ElvenConfig.json> .
 ```
+
+For instance:
+
+```
+ln -s $HOME/Git/WebCrafts/isit-web-crafts-calvertbc/config/ElvenConfig.json .
+```
+
+This should also work:
+
+```
+ln -s $GIT_HOME/WebCrafts/isit-web-crafts-calvertbc/config/ElvenConfig.json .
+```
+
+Consider defining the following in **~/.my_bash_aliases**:
+
+```
+export WEBCRAFTS=$GIT_HOME/WebCrafts
+```
+
+Then you could write:
+
+```
+ln -s $WEBCRAFTS/isit-web-crafts-calvertbc/config/ElvenConfig.json .
+```
+
+And finally, define this in **~/.my_bash_aliases**:
+
+```
+alias i3w='cd $WEBCRAFTS'
+alias i3wc='cd $WEBCRAFTS/isit-code-calvertbc'
+alias i3ws='cd $WEBCRAFTS/isit-site-tools-calvertbc'
+alias i3ww='cd $WEBCRAFTS/isit-web-crafts-calvertbc'
+```
+
+Run **source ~/.bashrc**. Now you can navigate to your repos with commands like this:
+
+- **i3w**
+- **i3wc**
+- **i3ws**
+- **i3ww**
+
+Like this:
+
+```
+$ i3w
+charlie@rohan-elf:~/Git/WebCrafts
+$ i3wc
+charlie@rohan-elf:~/Git/WebCrafts/isit-code-calvertbc (master)
+$ i3ws
+charlie@rohan-elf:~/Git/WebCrafts/isit-site-tools-calvertbc (master)
+$ i3ww
+charlie@rohan-elf:~/Git/WebCrafts/isit-web-crafts-calvertbc (Week05-React)
+```
+
+## Understanding ElvenConfig
+
+Once you have **ElvenConfig.json** installed, the next step is to begin to understand it.
 
 The config file has three primary sections:
 
@@ -284,6 +343,23 @@ Given a set of images in a directory, the program can create a markdown page tha
 ```
 ![Foo](foo.png)
 ```
+
+## Lamp
+
+I assuming that LAMP is installed:
+
+```
+sudo apt-get install tasksel
+sudo tasksel install lamp-server
+```
+
+And then chown /var/www/html so you can access it:
+
+```
+sudo chown -R bcuser:bcuser /var/www/html
+```
+
+Or something close to that.
 
 ## Run
 
@@ -314,9 +390,9 @@ Of these three options, the first is the easiest to understand, but the hardest 
 
 Turn in links to your three repository. Line them all up (probably in the comments area) so I can just block copy them:
 
-- git clone git@github.com:<name><isit-code>
-- git clone git@github.com:<name><isit-site-tools>
-- git clone git@github.com:<name><web-crafts>
+- git clone git@github.com:&lt;name&gt;&lt;isit-code&gt;
+- git clone git@github.com:&lt;name&gt;&lt;isit-site-tools&gt;
+- git clone git@github.com:&lt;name&gt;&lt;web-crafts&gt;
 
 **NOTE**: _You can also provide links to your code on github, but the primary things I want to see are **git clone** statements that I can simply block copy and run. Test them on your end in a temp directory to be sure they work._
 

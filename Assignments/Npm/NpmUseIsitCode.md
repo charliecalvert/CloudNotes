@@ -2,6 +2,8 @@
 
 This assignment demonstrates how to use your fork of my [isit-code][ic] package. We will also create an Express and React based project that calls some methods in your fork of **isit-code**.
 
+Be sure [lamp is installed][li].
+
 ## Note on Names
 
 To save keystrokes when typing, and cut down on noise when reading, I'll use some simple shortcuts. Unless I explicitly state otherwise, when I write **isit-code**, I'm referencing your **isit-code-lastname** project.
@@ -77,6 +79,22 @@ You will want to put the **entry** to **CallIsitCode**. The output might look so
 ```javascript
 output: {path: __dirname, filename: './public/javascripts/bundle.js'},
 ```
+
+## Load ES6
+
+You should know the steps to load the ES6 code by now. But if you need a hint, consider this:
+
+- In **index.pug**, you are going to need a div with a unique ID as in [ReactBasics][rbh] and [WebCraftsReact][wbc].
+- At the end of the same file, you are going to need to load the bundle.
+  - **script(src="javascripts/bundle.js")**
+
+The key pieces you need at the end of **index.pug** are:
+
+- A DIV named **home** or something similar.
+  - This is where your React code will be inserted.
+- A **script** statement to load **bundle.js**
+
+We put the script statement at the end of **index.html** because it uses the **home** DIV. That DIV must already be loaded or the React code won't find a place to insert itself.
 
 ## Getting User Input
 
@@ -176,10 +194,6 @@ router.get('/first-word', function(request, response, next) { 'use strict';
 });
 ```
 
-## Testing
-
-
-
 ## Turn it in
 
 Place your work in a branch called Week04. When turning in the assignment, include the following information:
@@ -188,6 +202,12 @@ Place your work in a branch called Week04. When turning in the assignment, inclu
 - Directory: <NAME OF DIRECTORY>
 
 To get full credit, the second button must retrieve a string from the user via a TextBox. The call should retrieve the first word the user enters.
+
+Also, consider adding the URL of your repos:
+
+- MainRepo: git@github.com:my-name/my-repo.git
+- IsitSite Repo: git@github.com:my-name/my-repo.git
+- IsitCode Repo: git@github.com:my-name/my-repo.git
 
 ## Cannot read property of undefined
 
@@ -206,11 +226,14 @@ this.someMethod = this.someMethod.bind(this);
 Read the [References][re] section in [ElvenLinks][el]
 
 [rb]:http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html#transpiling-with-webpack
+[rbh]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html#html-file
 [ic]:https://github.com/charliecalvert/isit-code
 [abg]:https://github.com/airbnb/javascript/tree/master/react
 [re]: http://www.ccalvert.net/books/CloudNotes/tips/ElvenLinks.html#references
 [el]: http://www.ccalvert.net/books/CloudNotes/tips/ElvenLinks.html
+[li]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.html#lamp
 [ue]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 [sor]: https://stackoverflow.com/a/34209399/253576
 [map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 [join]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+[wbc]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.html#link-it-together

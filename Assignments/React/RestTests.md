@@ -1,6 +1,6 @@
 # Rest Tests
 
-This assignment is built on top of the [RestBasics][rb] assignments. Make your edits in the same directory you used for **RestBasics**, but you should be working in a new branch called **Week03-RestTest**. Create and switch to the branch first, and then begin your work.
+This assignment is built on top of the [RestBasics][rb] assignment. Make your edits in the same directory you used for **RestBasics**, but you should be working in a new branch called **Week03-RestTest**. Create and switch to the branch first, and then begin your work.
 
 I'm assuming that you are working in a folder called **week02-rest-basics** and that it has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
 
