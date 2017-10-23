@@ -93,7 +93,7 @@ img.twenty-five-percent {
 
 This code says that if there is a class of an image tag named **twenty-five-percent** then set its width to 25% of the entire page. Put this CSS in a file called **/var/www/html/css/style.css**. If you have the most recent version of MakeHtml, then the code you put in this file should be reflected in your web pages.
 
-And here is code for using this CSS class:
+And here is code for using the **twenty-five-percent** class:
 
 ```html
 <img class="twenty-five-percent" src="https://foo.com/my-picture.jpg" alt="bridge">

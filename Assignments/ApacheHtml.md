@@ -1,12 +1,14 @@
 ## Overview
 
-The **ApacheHtml** configuration assignments helps you set up your Apache Server and the **MakeHtml** program. In particular, it helps you put the right files in these directories:
+The **ApacheHtml** assignment provides more information on setting up the Apache Server and the **MakeHtml** program. In particular, it helps you put the right files in these directories:
 
 - /var/www/html/css
 - /var/www/html/js
 - /var/www/html/images
 
-The **MakeHtml** program assumes that certain files are already in place in your Apache **DocumentRoot** directory. By **DocumentRoot** I mean the **/var/www/html** directory. The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders. Without these files, the pages you produce might have missing links, or fail to render your HTML properly. This will effect various parts of your pages, including images and their size, code blocks, and tables.
+The **MakeHtml** program assumes that certain files are already in place in your Apache **DocumentRoot** directory. By **DocumentRoot** I mean the **/var/www/html** directory.
+
+The main goal is to ensure that you have the necessary CSS, images and JavaScript in your **/var/www/html** folders. This assignments talks you through the process of creating the files and placing them correctly. Without these files, the pages you produce might have missing links, or fail to render your HTML properly. This will effect various parts of your pages, including images and their size, code blocks, and tables.
 
 ![MakeHtmlWorkFlow](https://s3.amazonaws.com/bucket01.elvenware.com/images/make-html-work-flow.png)
 
@@ -17,7 +19,7 @@ There are two files to put in **/var/www/html**:
 - first-style.css // CAN BE EMPTY
 - style.css
 
-The optional contents of **style.css**:
+I suggest that you put the following code in **style.css**:
 
 ```css
 body {
@@ -30,7 +32,7 @@ img.twenty-five-percent {
 }
 ```
 
-You can create any CSS you want, but think carefully about how it fits in with our primary HTML/CSS framework, which is called [bootstrap](http://getbootstrap.com/). For the most part, your CSS is defined by **bootstrap**. Your goal is mostly to add minor tweaks, rather than trying to take over altogether. We can, perhaps, look at some other options after the midterm.
+In practice, you can create any CSS you want, but think carefully about how it fits in with our primary HTML/CSS framework, which is called [bootstrap](http://getbootstrap.com/). For the most part, your CSS is defined by **bootstrap**. Your goal is mostly to add minor tweaks, rather than trying to take over altogether. We can, perhaps, look at some other options after the midterm.
 
 ## JS
 
@@ -162,13 +164,13 @@ Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
 
 At minimum, you need the **elvenwarelogo.png** in this directory:
 
-```
+```nohighlighting
 /var/www/html/images
 ```
 
 Like this:
 
-```
+```nohighlighting
 /var/www/html/images/elvenwarelogo.png
 ```
 
@@ -202,7 +204,7 @@ Your pages just won't look right unless you have the right images, CSS and JavaS
 
 If you want, you can save this script as **ShowApache** in the root of your repository. Then run it and take a screenshot. This will satisfy the requirements outlined in the previous few lines of text.
 
-```
+```nohighlighting
 #! /bin/bash
 
 ls -la /var/www/html/css
@@ -240,7 +242,7 @@ Call it something like: **CopyAllTestAndApacheToRepository**. And then **chmod +
 
 # Declare destination dir for AllTest in
 # one place so it is easy to modify
-REPO=$GIT_HOME/prog270-calvert-2016
+REPO=$GIT_HOME/prog270-calvert-2017
 
 # Declare destination for CSS, JavaScript and Images
 CSS_JS_IMAGE=$REPO/ApacheHelpers
@@ -271,7 +273,7 @@ cp -ruvp ApacheHelpers/css /var/www/html/.
 cp -ruvp ApacheHelpers/js /var/www/html/.
 ```
 
-Here is a fancier version of CopyFromRepoToAllTestAndApache
+Here is a fancier version of **CopyFromRepoToAllTestAndApache**
 
 ```
 #! /bin/bash
@@ -335,7 +337,7 @@ done
 
 When testing your code, you want to make sure you are not relying on any files already sitting in **/var/www/html**. This script deletes all the HTML files and folders from **/var/www/html**. It also creates a zip folder containing the most recent contents of your **js**, **css** and **images** folders. Save the code as **/var/www/html/clean**. Make it executable with **chmod +x clean**, then run the script as needed.
 
-**NOTE**: *Where I write <LIST ANY OTHER FILES/FOLDERS> you should do exactly that, and of course you have to then remove the text in angle brackets.*
+**NOTE**: *Where I write &lt;LIST ANY OTHER FILES/FOLDERS&gt; you should do exactly that, and of course you have to then remove the text in angle brackets.*
 
 ```bash
 #! /bin/bash
