@@ -170,6 +170,8 @@ Change all references to my repos to your repos. You will have to replace the st
 find . -iname "*.js" -not -path "**/node_modules/**" | xargs sed -i 's/isit-code-calvert/isit-code-lastname/g' *.js
 ```
 
+- [More on sed][mos]
+
 In the WebCrafts project, you are going to have to change references to **isit-code-calvert** and **isit-site-tools-calvert**.
 
 **NOTE**: _Please don't turn in your **isit-web-crafts-lastname** project with links to my repos in your source files._
@@ -401,3 +403,5 @@ I should then be able to enter your web-crafts folder, type the following and be
 - **npm install && bower install && npm start**
 
 Attach a screenshot of the program running successfully and producing the three HTML files from the markdown. What you see in the next to last "scene" in my video. The one where I run the app, but before I display the results in a browser.
+
+[mos]:http://www.elvenware.com/charlie/os/linux/LinuxBasics.html#using-sed
