@@ -1,4 +1,5 @@
 * [ElvenWebCraftsStarter.html](ElvenWebCraftsStarter.html)
+* [WebCraftsJestButtonsPress.html](WebCraftsJestButtonsPress.html)
 * [WebCraftsJestStarter.html](WebCraftsJestStarter.html)
 * [WebCraftsPubSub.html](WebCraftsPubSub.html)
 * [WebCraftsReactStarter.html](WebCraftsReactStarter.html)
