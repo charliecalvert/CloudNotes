@@ -82,6 +82,14 @@ sudo rm /usr/bin/npm
 sudo ln -s ~/npm/bin/npm .
 ```
 
+And:
+
+```nohighlighting
+rm -r node_modules
+rm package-lock.json
+npm install
+```
+
 ## Get Sample Components
 
 Let's now copy over our sample component and give it the name **ReactHome.js**:
