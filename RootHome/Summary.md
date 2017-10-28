@@ -1,2 +1,2 @@
-* [about.html](about.html)
-* [index.html](index.html)
+* [home.html](home.html)
+* [master-list.html](master-list.html)

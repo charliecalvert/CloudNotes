@@ -191,7 +191,7 @@ drwxrwxr-x 15 charlie charlie 4096 Oct 25 09:59 ../
 
 ## Using jQuery in Tests
 
-Right now I'm doing it like this. In package.json:
+Right now I'm using a jest option called setupFiles that we can put in **package.json**:
 
 ```javascript
 "jest": {
@@ -252,12 +252,159 @@ We want to better organize our tests. For now, were are going to have three file
 - **Test 1**:  it expects true to be true (Example [here][rh].)
 - **Test 2**: renders state of XXX after button click
 
+## Ignore Files in Coverage {#coverage-ignore}
+
+By adding a **coveragePathIgnorePatterns** property to our **jest** object in **package.json**, we can clean up the appearance of our coverage reports.
+
+```javascript
+"jest": {
+    "verbose": true,
+    "coveragePathIgnorePatterns": [
+        "/node_modules/",
+        "ElfDebugEnzyme.js",
+        "tiny-pub-sub.js",
+        "temp-poly-fills.js"
+    ],
+    "setupFiles": [
+        "./source/setup-jest.js"
+    ]
+},
+```    
+
+Here is a video showing the results of the **coveragePathIgnorePatterns** flag.
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/8tDc1q5FMUw?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
+## Button Clicks
+
+Our next goal is to test what happens when the user clicks on the **MakeHtml** button.
+
+If you look at the button, you can see that it is has an **ID** set to **MakeHtml**:
+
+```xml
+<RaisedButton
+    id="makeHtml"
+    style={buttonStyle}
+    primary={true}
+    onClick={this.makeHtml}>
+      {this.state.makeHtml}
+</RaisedButton>
+```
+
+You can see also that it calls a method of the **HomeButtons** object like this:
+
+```
+onClick={this.makeHtml}>
+```
+
+The method looks like this:
+
+```javascript
+makeHtml() {
+    $.publish('clientMakeHtml', {
+        message : "The user wants to makeHtml."
+    });
+}
+```
+
+In our unit test, the **enzyme** library allows us to search for our **RaisedButton** by **ID** and simulate a **click event** on that **Button**:
+
+```javascript
+wrapper.find('#makeHtml').simulate('click');
+```
+
+To test that the event actually occurs, and that the button behaves as expected, we can subscribe to the event it generates:
+
+```javascript
+$.subscribe('clientMakeHtml', (event, target) => {
+    console.log(JSON.stringify(event, null, 4));
+    console.log(target);
+    expect(event.type).toBe('clientMakeHtml');
+    expect(target.message).toBe('The user wants to makeHtml.');
+});
+```
+
+The callback for the event has at least two parameters:
+
+- event
+- target
+
+The **event** object is not terribly important to us, but we display its contents with **console.log** in case you are interested:
+
+```javascript
+{
+    "type": "clientMakeHtml",
+    "timeStamp": 1509145167069,
+    "jQuery32102834246722752214": true,
+    "isTrigger": 3,
+    "namespace": "",
+    "rnamespace": null,
+    "target": {},
+    "delegateTarget": {},
+    "currentTarget": {},
+    "handleObj": {
+        "type": "clientMakeHtml",
+        "origType": "clientMakeHtml",
+        "guid": 1,
+        "namespace": ""
+    }
+}
+```
+
+You can more or less ignore this object for now. Just glance at it so that you understand what it looks like.
+
+Here is the target object:
+
+```javascript
+{ message: 'The user wants to makeHtml.' }
+```
+
+This should look familiar as we created it when we published our event:
+
+```javascript
+$.publish('clientMakeHtml', {
+    message : "The user wants to makeHtml."
+});
+```
+
+It should be clear to you that you can use this object to pass all kinds of information with multiple properties. On this occasion, however, we are passing an object with only one property called message.
+
+Given the above, we can write two tests in our callback:
+
+```javascript
+expect(event.type).toBe('clientMakeHtml');
+expect(target.message).toBe('The user wants to makeHtml.');
+```
+
+Putting it altogether, we get a test that looks like this:
+
+```javascript
+it('publishes clientMakeHtml event after button click', () => {
+    const wrapper = shallow(<HomeButtons/>);
+    $.subscribe('clientMakeHtml', (event, target) => {
+        console.log(JSON.stringify(event, null, 4));
+        console.log(target);
+        expect(event.type).toBe('clientMakeHtml');
+        expect(target.message).toBe('The user wants to makeHtml.');
+    });
+    wrapper.find('#makeHtml').simulate('click');
+});
+```
+
+Looking at the code, note that we subscribe to the **event** the **button** generates before we click the **button**. If you understand what is happening, you can see that it could not be otherwise.
+
+You should now write a similar test showing what happens when the **makeImage** button is clicked.
+
+Here is another way of describing the above:
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/Z7bU9vlO6yY?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Turn it in
 
 Push your work. Give me:
 
 - repo
-- branch
+- branch (I'm expecting either master or Week06)
 - folder
 
 You might get a 5 (redo) if you don't tell me where to find your code.

@@ -1,1 +1,0 @@
-* [SetupAtomForMarkdown.html](SetupAtomForMarkdown.html)
