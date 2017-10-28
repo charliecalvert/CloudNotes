@@ -399,6 +399,63 @@ Here is another way of describing the above:
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/Z7bU9vlO6yY?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
+## A Gotcha {#surprise}
+
+When writing my second test, I accidentally misnamed the event I was subscribing to. This meant that the **$.subscribe** method was never called, and my **expect** tests never run. Since there were no failed tests, my code appeared to succeed. (This is perhaps one of the reasons we should always start with failing code. You don't want to start with a test that passes even when the conditions don't meet the requirements.)
+
+At any rate, I added another test that ensured that the **$.subscribe** method was called. You should add this code to your tests.
+
+```javascript
+it('publishes clientMakeHtml event after button click', () => {
+    const wrapper = shallow(<HomeButtons/>);
+    let subscriptionCalled = false;
+    $.subscribe('clientMakeHtml', (event, target) => {
+        console.log(JSON.stringify(event, null, 4));
+        console.log(target);
+        expect(event.type).toBe('clientMakeHtml');
+        expect(target.message).toBe('The user wants to makeHtml.');
+        subscriptionCalled = true;
+    });
+    wrapper.find('#makeHtml').simulate('click');
+    expect(subscriptionCalled).toBeTruthy();
+});
+```
+
+I've added a variable called **subscriptionCalled** that is initialized to false:
+
+```javascript
+let subscriptionCalled = false;
+```
+
+I set it to true at the end of the **$.subscribe** method:
+
+```javascript
+subscriptionCalled = true;
+```
+
+And here is the test to check that it was set to true, thus proving that the **$.subscribe** method was called.
+
+```javascript
+expect(subscriptionCalled).toBeTruthy();
+```
+
+An alternative would have been to use a method called **done** which is used to asynchronous code to tell **Jest** that a callback has been received. Since there are no callbacks in this code, it is not really an appropriate place to use it. However, it does allow us to write less verbose code. In that spirit, in this version, I have tried to remove the methods that are not needed.
+
+```javascript
+it('publishes clientMakeHtml event after button click with done', (done) => {
+    const wrapper = shallow(<HomeButtons/>);
+    $.subscribe('clientMakeHtml', (event, target) => {
+        expect(target.message).toBe('The user wants to makeHtml.');
+        done();
+    });
+    wrapper.find('#makeHtml').simulate('click');    
+});
+```
+
+Though I continually violate this rule, it is generally considered better to write shorter code so that the reader of the code can understand it more readily.
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/TL7_Yg8b_sw?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Turn it in
 
 Push your work. Give me:
