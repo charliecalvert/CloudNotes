@@ -116,7 +116,7 @@ Go here: <http://192.168.2.34/Week01-ReactBasics/>
 
 Attach your screenshots directly to your submission. Remember:
 
-- Don't embed screenshots in a Word document
+- Don't embed screenshots in a Word document.
 - Use either PNG or JPG formats
 - Don't zip up your screenshots. Attach each one individually.
 
@@ -124,9 +124,9 @@ Attach your screenshots directly to your submission. Remember:
 
 A number of you have asked if you really need to turn in the screenshots. After all, we stepped through this process once in class and most of you did not take screenshots as we were working. I know that.
 
-The point of this exercise is to teach you how to start with an ISO file and end up with an installation suitable for Node Web Development. Just doing this once in class with my guidance doesn't really show me that you can do it on your own. I want you to step through the process a second time at home so you prove to yourself (and to me) that you can create a working VM.
+The point of this exercise is to teach you how to start with an ISO file and end up with an installation suitable for Node Web Development. Just doing this once in class with my guidance doesn't really show me that you can do it on your own. I want you to step through the process a second time at home so you can prove to yourself (and to me) that you can create a working VM.
 
-Developing and deploying applications on VMs or in containers is this the way we are headed. In fact, this is the way that many applications are deployed at this time. But I believe what we see now is only the start of a trend that will grow rapidly over the coming years.
+Developing and deploying applications on VMs or in containers is the way the entire technical community is headed. In fact, this is the way that many applications are deployed at this time. I believe what we see now is only the start of a trend that will grow rapidly over the coming years.
 
 [cpl]: https://www.youtube.com/watch?v=ZuoDFTBEQlE&list=PLe8CjTxuUQ38pOVF37SyD16fEwYCYyehL
 [gs]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/GetStarted
