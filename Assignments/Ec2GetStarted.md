@@ -314,10 +314,12 @@ On Windows, you can connect to your EC2 instance with Putty:
 ## Details
 
 ```
-1  exit
-2  sudo apt-get update
-3  sudo apt-get upgrade
-4  exit
+ ---  SSH INTO THE EC2 SERVER ---
+1  sudo apt-get update
+2  sudo apt-get upgrade
+3  sudo apt-get dist-upgrade
+4  sudo shutdown -r now
+ --- You have to SSH back into the ec2 server ---
 5  cd .ssh/
 6  ls -la
 7  cd
@@ -326,21 +328,14 @@ On Windows, you can connect to your EC2 instance with Putty:
 10  ls
 11  sudo apt-get install git
 12  git clone http://github.com/charliecalvert/JsObjects.git
-13  cd JsObjects/Utilities/NodeInstall/
-14  ls
-15  ./NodeInstall.sh
-16  ls
-17  cd ..
-18  ls
-19  find . -iname Bash*
-20  cat SetupLinuxBox/BashrcExtras
-21  nano ~/.bashrc
-22  source ~/.bashrc
+13  cd ~/Git/JsObjects/Utilities/SetupLinuxBox/
+14  ./UbuntuSetup
+15  source ~/.bashrc
 23  sudo apt-get install ssh
 24  exit
 25  cd .ssh/
 26  ls
-27  ln -s bc-2016-01 main-key
+27  ln -s isit320-lastname-2017 main-key
 28  ls
 29  cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.
 30  source ~/.bash_aliases
