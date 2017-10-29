@@ -31,7 +31,7 @@ docker images
 docker run -it charliecalvert/ubuntu-node
 ```
 
-## Install Node
+## Install Node on Docker Instance {#install-node}
 
 ```nohighlighting
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
