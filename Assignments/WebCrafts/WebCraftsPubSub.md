@@ -146,6 +146,9 @@ Push your code and tell me:
 - Branch
 - Folder
 
+## Hint
+
+When you move to the second page, the code attaches to a DIV on index.js called #pageLoad. You don't want to delete that node.
 
 [ps]: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [tp]: https://github.com/cowboy/jquery-tiny-pubsub/blob/master/src/tiny-pubsub.js

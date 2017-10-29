@@ -1,10 +1,12 @@
 ## Overview
 
-The goal of this assignment is to begin the process of integrating React into our WebCrafts application. Your key reference will be the [ReactBasics][rb] assignment.
+The goal of this assignment is to begin the process of integrating React into our [WebCrafts][wcs] application. Your key reference will be the [ReactBasics][rb] assignment. More specifically, I'm expecting you to be working in this repository:
+
+- **isit-web-crafts-lastname**
 
 ## Branch
 
-We will do our work on **Week05-React**. Once we have things in good shape, we can merge that code back into **master**. For the assignment, I will look at **master** unless you specify otherwise, but I expect **Week05-React** to exist.
+We will do our work in a branch called **Week05-React**. Once we have things in good shape, we can merge that code back into **master**. For the assignment, I will look at **master** unless you specify otherwise, but I expect **Week05-React** to exist.
 
 But before we do this, let's tag our work so we can get back to the way it was before we integrated React:
 
@@ -19,7 +21,6 @@ Here are the steps to create and switch to our working branch. Enter the followi
 git branch Week05-React
 git checkout Week05-React
 ```
-
 
 ## WebPack
 
@@ -324,6 +325,17 @@ div.borderMan {
 
 ## Turn it in
 
+I'm looking for:
+
+- WebPack integration
+- ES6 files in the **source** directory called:
+  - react-main
+  - ReactHome
+- a **home** div in **index.pug**
+- **bundle.js** linked into **public/javascripts/main.js**
+- [Material-UI](http://www.material-ui.com/#/)
+- A minor change to your CSS file.
+
 Push your new branch. You may get an error when you try to push since you are in a new branch. However, Git tells you exactly how to fix the problem.
 
 Then merge your fix into master.
@@ -365,9 +377,8 @@ Then push your master branch.
 
 When you turn in the assignment, be sure to tell me the:
 
-- Git URL for all three repositories.
-- The branch you want me to look at.
-- The folder you want me to look at.
+- Git URL for all three repositories (isit-code, isit-site-tools, isit-webcrafts).
+- The branch in **isit-webcrafts** you want me to look at.
 
 ## Revisit the Past
 
@@ -414,3 +425,4 @@ We are back at the state we were in before we added react.
 [nw]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html#create
 [rie]: https://s3.amazonaws.com/bucket01.elvenware.com/images/elven-web-crafts-react-01.png
 [mu]: http://www.material-ui.com
+[wcs]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.html
