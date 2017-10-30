@@ -8,6 +8,7 @@
 * [Json/Summary.html](Json/Summary.html)
 * [Heroku/Summary.html](Heroku/Summary.html)
 * [Git/Summary.html](Git/Summary.html)
+* [Docker/Summary.html](Docker/Summary.html)
 * [CodeAcademy/Summary.html](CodeAcademy/Summary.html)
 * [CloudNine/Summary.html](CloudNine/Summary.html)
 * [Browser/Summary.html](Browser/Summary.html)
