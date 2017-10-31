@@ -26,7 +26,7 @@ And here is at least a starter **.eslintrc** file:
 
 ```
 {
-    "plugins": [ "react" ],
+    "plugins": [ "react", "requirejs" ],
     "rules": {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
@@ -38,10 +38,12 @@ And here is at least a starter **.eslintrc** file:
         "semi": ["error", "always"]
     },
     "env": {
+        "amd": true,
         "browser": true,
         "es6": true,
         "jest": true,
-        "node": true
+        "node": true,
+        "jquery": true
     },
 
     "parser": "babel-eslint",

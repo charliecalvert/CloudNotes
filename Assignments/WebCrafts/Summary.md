@@ -1,4 +1,5 @@
 * [WebCraftsJestButtonsPress.html](WebCraftsJestButtonsPress.html)
 * [WebCraftsMakeHtmlPage.html](WebCraftsMakeHtmlPage.html)
+* [WebCraftsMoreReact.html](WebCraftsMoreReact.html)
 * [WebCraftsPubSub.html](WebCraftsPubSub.html)
 * [WebCraftsReactStarter.html](WebCraftsReactStarter.html)
