@@ -24,7 +24,9 @@ There are two bugs in **isit-site-tools** that need to be fixed. The simplest wa
 
     git pull git@github.com:charliecalvert/isit-site-tools.git
 
-To my surprise, this did not cause the require statements that we inserted with the **find** and **sed** commands to be changed back to their original values.
+Our changes are preserved in this process. In other words, it will not cause the **require** statements that we inserted with the **find** and **sed** commands to be changed back to their original values.
+
+**NOTE** _See point 5 in [this documentation][sync] for confirmation that your changes will not be lost._
 
 Please also see this: which would probably simplify the process, but I have not tried it yet:
 
@@ -112,3 +114,5 @@ walker.makePage = function(details, callback) {
 ```
 
 The key change is the line that looks for an empty directories property and return to emtpy arrays if it is found. Otherwise, the **details.directories** object is iterated with **forEach** and the markdown found in the directories is converted to HTML. The code called by **makePage.run** note only performs the conversion, but also returns an object with detailed information about which files were converted. That object is then passed to our client so that the user can see what the the program did.
+
+[sync]: https://help.github.com/articles/syncing-a-fork/
