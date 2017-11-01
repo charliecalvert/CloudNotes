@@ -26,5 +26,15 @@ For instance, every once in awhile, around week five or six, in the discussion a
 
 This is far from a perfect system, and you are not graded on the number of links you explore. But I do put them there in the hopes that they will help you succeed.
 
+## Code
+
+Code looks like this:
+
+```javascript
+function qux() {
+  console.log('bar');
+}
+```
+
 [elvenware]: http://www.elvenware.com/
 [elf-git]: http://www.elvenware.com/charlie/development/git/

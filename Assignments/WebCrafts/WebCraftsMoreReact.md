@@ -115,4 +115,180 @@ walker.makePage = function(details, callback) {
 
 The key change is the line that looks for an empty directories property and return to emtpy arrays if it is found. Otherwise, the **details.directories** object is iterated with **forEach** and the markdown found in the directories is converted to HTML. The code called by **makePage.run** note only performs the conversion, but also returns an object with detailed information about which files were converted. That object is then passed to our client so that the user can see what the the program did.
 
+## Bug: The Case of the Missing Highlight
+
+Please read the section called [Bugs](#bugs) before reading more. In short, this is done automaticlly, just read it.
+
+This was the big change that has been holding me up from using this version of the app.
+
+We have better support now for highlighting and perhaps for bootswatch. The changes are to two methods to a file called **create-markdown** in **markdown-to-html/private**:
+
+```javascript
+function createDetails(report, directoryToWalk, destinationDir, highlight, bootswatch) {
+    return {
+        report: report,
+        bootswatch: bootswatch,     <=== HERE
+        directoryToWalk: directoryToWalk,
+        destinationDir: destinationDir,
+        directories: walkCore.getDirectories(report),
+        highlight: highlight,       <=== HERE
+        testRun: true
+    };
+}
+```
+
+The changes are in the header for the method, and in the two places called out in the code.
+
+Also this method was changed:
+
+```javascript
+module.exports = function (configSummary, directoryIndex) {
+'use strict';
+  return new Promise(function(resolve, reject) {
+      elfLog.setLevel(elfLog.logLevelNano);
+      const directoryToWalk = configSummary['base-dir'] + configSummary['site-dirs'][directoryIndex];
+      const destinationDir = configSummary['destination-dirs'][directoryIndex];
+      const mostRecentDate = configSummary['most-recent-date'];
+      const bootswatch = configSummary.bootswatch;  <=== HERE
+      const highlight = configSummary['highlight']; <=== HERE
+      fs.access(directoryToWalk, fs.F_OK | fs.R_OK, function(err) {
+          if (err) {
+              reject(err);
+          } else {
+              elfLog.details('Folder to Walk: ' + directoryToWalk);
+
+              walkCore.buildFileReport(directoryToWalk, '.md', mostRecentDate, function(report) {
+                  elfLog.nano('In buildFileReport callback');
+                  const details = createDetails(report, directoryToWalk,
+                       destinationDir, highlight, bootswatch); <=== HERE
+                  pageMaker(details, configSummary, destinationDir)
+                      .then(resolve)
+                      .catch(reject)
+              });
+          }
+      });
+  });
+};
+```
+
+## The React MakeHtml files
+
+There are three:
+
+- MakeHtml.js
+- MakeHtmlDropDowns
+- MakeHtmlHomeButton
+
+## Two DropDowns
+
+Right now we are just trying to create a relatively simple effect. We want:
+
+- Two DropDowns
+  - The first has the **siteDirs** from the **ElvenConfig.json** file.
+  - The second has the **destinationDirs** from the config file.
+- If you select the one or the other, the matching item appears automatically.
+- If you click a **RaisedButton** labeled **Generate HTML** then the markdown files in the **siteDirs** directory should be converted into HTML found in the **destinationDirs** directory.
+- Only the files updated after the **mostRecentDate** from the config file will be processed. If there are no such files in the chosen directory, then the program returns an empty array.
+
+Watch this video for details:
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/aHJ0GzrfnRI?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
+I'll leave it up to you to create the **DropDowns** and the **Button**. For now, we can put this all in **MakeHtmlDropDowns**, but later we may refactor.
+
+## Details
+
+Here is the state for the **MakeHtmlDropDowns.js** file:
+
+```javascript
+this.state = {
+    walk: 'Generate HTML',
+    siteDir: 'unknown',
+    destDir: 'unknown',
+    configSummary: [],
+    value: 1
+};
+```
+
+In module global scope just below the import statements, declare two arrays:
+
+```javascript
+const siteDirs = [];
+const destDirs = [];
+```
+
+There was a method in this file called something like **handleChange**. It should become **handleSiteDir**. A second method should be called **handleDestinationDir**. These methods are referenced in our JSX:
+
+```xml
+<DropDownMenu
+    value={this.state.value}
+    onChange={this.handleSiteDir}
+    autoWidth={true}
+>
+    {siteDirs}
+</DropDownMenu>
+```
+
+Here was **handleChange**:
+
+```javascript
+handleChange(event, index, value) {
+    this.setState({value});
+}
+```
+
+This is using ES6, but it might be clearer like this:
+
+```javascript
+handleChange(event, index, value) {
+    this.setState({value: value});
+}
+```
+
+Change its name to **handleSiteDir** and in the **setState** method also set **state.siteDir** to:
+
+    event.target.innerHTML,
+
+And set **destDir** to:
+
+    destDirs[value].props.primaryText
+
+Right similar code to for **handleDestinationDir**.
+
+**NOTE**: _We don't actually do anything with state.siteDir and state.destDir. But we may display them later, or use them for debugging or delete them. At any rate, get them to work so you are sure you see what is going on here._
+
+## Generate HTML
+
+When the button is clicked it should generate call **makers/walk** route in **routes/makers**:
+
+```javascript
+generateHtml() {
+    console.log(this.state.value);
+    console.log(siteDirs[this.state.value]);
+    //walking.runWalkReact('qSingle', this.state.siteDir, this.state.destDir);
+    const query = '/makers/walk?siteDirsIndex=' + this.state.value;
+    var that = this;
+    fetch(query)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(configSummary) {
+            console.log(JSON.stringify(configSummary, null, 4));
+            // CALL that.setState to **state.configSummary** to configSummary.htmlFilesWritten
+        })
+        .catch(function(ex) {
+            console.log('parsing failed', ex);
+        });
+}
+```
+
+            //Object.keys(configSummary).map(function (key) { return configSummary[key]; });
+
+You'll need a PRE tag in your JSX to display **state.configSummary**
+
+## Turn it in
+
+Push and tell me repo and branch.
+
+
 [sync]: https://help.github.com/articles/syncing-a-fork/
