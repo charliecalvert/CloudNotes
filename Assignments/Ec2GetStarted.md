@@ -79,6 +79,18 @@ ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
 
 The second step is detailed in the next section.
 
+## Step 03b: SSH Access EC2 Shortcut {#ec2-shortcut}
+
+Rather than doing ssh-add and then running ssh, you can use the **-i** flag to combine the two:
+
+```bash
+#!/bin/bash
+
+ssh -i prog270-ec2-2017.pem ubuntu@34.242.67.21
+```
+
+Code like this will both load your key and begin an SSH session on EC2. Of course, you need to supply your own elastic IP address.
+
 ## Step 04: Access Your Instance {#step-four}
 
 Once you have your key loaded, you can connect to your EC2 instance with SSH. This gives you access to the command line of your instance. The command looks like this:

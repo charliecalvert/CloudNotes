@@ -1,6 +1,6 @@
 ## Overview
 
-
+This assignment introduces Docker.
 
 ## Docker Install
 
@@ -33,16 +33,6 @@ docker images
 docker run -it ubuntu
 ```
 
-## Run
-
-When inside Ubuntu, note the image you are using.
-
-```nohighlighting
-docker commit -m "Added node 8.1 and updated os" -a "charlie" a9272b30f0b1 charliecalvert/ubuntu-node
-docker images
-docker run -it charliecalvert/ubuntu-node
-```
-
 ## Docker Push
 
 To push an image created by user **charliecalvert** called **makehtml04** to the cloud, do this:
@@ -72,11 +62,26 @@ To confirm that all is as expected:
     whoami
     pwd
 
+
 ## Save New Image
 
-And then later:
+The changes you make to an image cause the images identifier to change. The identifier is a number like this:
 
-    docker commit -m "Added user and JsObjects" -a "charlie" 21a7589a83ee charliecalvert/makehtml00
+    a9272b30f0b1
+
+This number appears in your command prompt.    
+
+When inside Ubuntu, note the image you are using:
+
+```nohighlighting
+docker commit -m "Added node 8.1 and updated os" -a "charlie" a9272b30f0b1 charliecalvert/makehtml00
+docker images
+docker run -it charliecalvert/ubuntu-node
+```
+
+And then later, if you make more changes:
+
+    docker commit -m "Added user and JsObjects" -a "charlie" 21a7589a83ee charliecalvert/makehtml01
 
 ## Learn More about Apache on Docker
 
