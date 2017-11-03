@@ -4,7 +4,7 @@ The goal of this assignment is to start converting the **MakeHtml** page to Reac
 
 Do your work in a branch called **Week07**
 
-## WebPack
+## WebPack Source Maps {#webpack}
 
 First, let's do something to improve our development experience. In particular, let's add code that will allows us to debug our ES6 code directly in the [Chrome Developer Tools][cdt]
 
@@ -16,9 +16,9 @@ devtool: "source-map"
 
 At runtime, look for a folder in the **source** page for the Chrome Dev Tools that says **webpack**. You have to click around a bit to find your **source** folder, but once you have it, you can set breakpoints and inspect directly on ES6 code. This is much better than having to spelunk through **bundle.js**.
 
-We call run webpack automatically when we update one of our ES6 files. This does for WebPack something similar to what **nodemon** does for your ES5 JavaScript files.
+## Run WebPack when Sources Files Change {#webpack-watch}
 
-Modify the **buildDev** property in **package.json**. (It may be called something else on your system, such as **bundle**. The key thing is to change the property that runs webpack.)
+If we pass in **--watch** to **webpack** then webpack will run automatically when we update one of our ES6 files. This does for WebPack something similar to what **nodemon** does for your ES5 JavaScript files. To get this useful feature, modify the **buildDev** property in **package.json**. (It may be called something else on your system, such as **bundle**. The key thing is to change the property that runs webpack.)
 
 ```javascript
 "buildDev": "node_modules/.bin/webpack --watch"
