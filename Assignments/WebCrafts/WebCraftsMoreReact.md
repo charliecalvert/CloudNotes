@@ -349,6 +349,43 @@ Now run WebCrafts, navigate to the **Make Image** page, and press the **Create I
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/hJETmBVPwpA?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
+## Arrow Functions in React
+
+Sometimes we call bind in our constructors:
+
+```javascript
+this.foo = this.foo.bind(this);
+
+foo() {}
+```
+
+Alternatively we can use Arrow Functions:
+
+```javascript
+foo = () => {}
+```
+
+The advantage here is that we no longer need to explicitly call **bind** in our constructors. Instead, we use ES6 arrow functions, and **this** is automatically bound to the function.
+
+To enable this syntax, install **babel-preset-stage-0**
+
+    npm install babel-preset-stage-0
+
+Then, in **webpack.config.js** add the **stage-0** preset:
+
+```javascript
+module: {
+    loaders: [{
+        test: /.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+            presets: ['env', 'stage-0', 'react']
+        }
+    }]
+},
+```    
+
 ## Turn it in
 
 Push and tell me repo and branch.

@@ -7,6 +7,10 @@ There are two steps:
 
 Do your work in a branch called **Midterm**
 
+## Good Enough
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/gnqDCiIavrY?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Extra Credit
 
 In a branch called **ExtraCredit**. Move all your ES6 code, that is, the entire client side of the application, to run on a **create-react-app** framework stored in a directory called **WebCrafts**.
