@@ -286,9 +286,73 @@ generateHtml() {
 
 You'll need a PRE tag in your JSX to display **state.configSummary**
 
+## Generate Images
+
+Creating web pages from images.
+
+At the end of your **ElvenConfig.json** file there should be a section that looks like this:
+
+```json
+"elvenImages": [
+    {
+        "name": "doc",
+        "baseDir": "The base directory where the images to be processed are found",
+        "cloudPath": "Base string found in markdown files",
+        "createSmallImages": true
+    },
+    {
+        "name": "california",
+        "baseDir": "/var/www/html/images",
+        "cloudPath": "/images",
+        "createSmallImages": true
+    },
+    {
+        "name": "california1",
+        "baseDir": "/var/www/html/images",
+        "cloudPath": "https://s3.amazonaws.com/s3bucket01.elvenware.com",
+        "createSmallImages": true
+    },
+    {
+        "name": "california2",
+        "baseDir": "/var/www/html/images",
+        "cloudPath": "/images",
+        "createSmallImages": true
+    }
+]
+```
+
+We want to concentrate on the last two sections, called **california1** and **california2**. They have a **basedir** set to **/var/www/html/images**. We should combine the **name** and the **baseDir** to point to a specific directory that we will populate with images:
+
+    /var/www/html/images/california1
+    /var/www/html/images/california2
+
+Before proceeding further, be sure that:
+
+- Apache is installed
+- The **/var/www/html/images/** directory exists.
+- **~/ElvenImages** exists.
+
+If necessary, create the directories listed in the latter two bullet points. If **/var/www/html** does not exist, then install **Apache2**:
+
+    sudo apt-get install apache2
+
+I have sample images in a file found here:
+
+- [http://bit.ly/california-pixs][ci].  
+
+Download them and unzip them in **/var/www/html/images/**:
+
+    cd /var/www/html/images/
+    unzip ~/Downloads/california.zip
+
+Now run WebCrafts, navigate to the **Make Image** page, and press the **Create Image Page** button. A series of files should be created in **~/ElvenImages**.
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/hJETmBVPwpA?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Turn it in
 
 Push and tell me repo and branch.
 
 
 [sync]: https://help.github.com/articles/syncing-a-fork/
+[ci]: http://bit.ly/california-pixs

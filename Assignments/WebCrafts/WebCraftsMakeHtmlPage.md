@@ -26,6 +26,8 @@ If we pass in **--watch** to **webpack** then webpack will run automatically whe
 
 By adding the **--watch** flag we tell WebPack to monitor our ES6 files referenced in the **entry** property of **webpack.config.js**. This won't refresh our web page automatically, but it will run **webpack** and generate a new **bundle.js** file. Then you can press F5 in the browser to refresh your Web App.
 
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/glQFWpKRhu4?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Pub Sub Flow {#pubsub-flow}
 
 In the following text, we are going to define, or discuss various events that are published and subscribed to by various parts of our application. The following tables provide an overview of these events.

@@ -361,7 +361,7 @@ In particular, the line that is relevant here is this one: "and the start and en
 
 ## Turn it in
 
-Create examples of the following, showing examples of the **default**, **primary**, **success**, etc styles when possible.
+Create a file called **classwork/bootstrap-themes.md** in your **Documents/AllTest** directory. In that file, include examples of the following, showing the **default**, **primary**, **success**, etc styles when possible.
 
 - 6 buttons (style with default, primary, info etc)
 - 4 alerts (style with info, warning, danger, success etc)
@@ -370,7 +370,7 @@ Create examples of the following, showing examples of the **default**, **primary
 - List group with three items. I think at least some verison of this can be styled with four variations: (success, warning, info, danger.)
 - Carousel (with images from california or canada or your choice of images)
 
-More information is found:
+The way to create this code is shown above, and more information is found:
 
 - <http://getbootstrap.com/components/>
 - <http://getbootstrap.com/css/>
