@@ -1,6 +1,18 @@
-# React Redux Basics
+## Overview
 
-Install:
+The goal of this assignment is to learn about Redux and Props.
+
+- Redux allows us to maintain state. It is the model part of a Model-View-Controller architecture. React is the view part.
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/rAMu5JUjQUs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
+## React Redux Basics
+
+Start in the root of your main (isit320-lastname-2017) repository. Build a **create-react-app** project called **Week08-ReduxBasics**:
+
+    create-react-app week08-redux-basics
+
+Navigate into your new project and install redux:
 
 ```
 npm install --save redux react-redux redux-devtools
@@ -8,21 +20,25 @@ npm install --save redux react-redux redux-devtools
 
 ## Redux
 
-The overall goal is to:
+In Redux projects, it is often best to:
 
 - Put all our state in one place
 - Make state immutable. You can completely rebuild it, but you can't modify it.
   - If you want to update it, you completely rebuild state
 
+There are several pieces in application of this type. One is a module called a **reducer**.
 
 There is only one place where you rebuild state: the **reducer**. Hence there is never any question of where something happened in a big application. It could only have happened in the **reducer**. I explain reducers later in this document.
 
-A Redux tracks your app's state. It has the following methods:
+## Tracking State
+
+Redux tracks your app's state. It has the following methods:
 
 - subscribe,
 - dispatch,
 - getState
 
+They are discussed below in various different sections of the document.
 
 ## Dispatch
 
@@ -37,11 +53,12 @@ dispatch({
 });
 ```
 
-We name the action by giving it a **type**. And in this case, we have optionally included some data that will be used a **reducer** when it rebuilds state.
+We name the action by giving it a **type**. And in this case, we have optionally included some data that will be used in a **reducer** when it rebuilds state.
 
 ## Store state
 
 Redux maintains your application's **state** in something called a **store**.
+
 ```javascript
 import {createStore} from 'redux';
 
@@ -66,10 +83,9 @@ Note that there is no data associated with this actions. This means the actions 
 
 ## The Reducer
 
-This we will use in serveral places, so save it as **spokesman.js**:
+This we will use in serveral places, so save it as **src/spokesman.js**:
 
 ```javascript
-
 const spokesman = (state = { statement: 'No comment' }, action) => {
     switch (action.type) {
         case 'VERIFY':
@@ -86,25 +102,32 @@ const spokesman = (state = { statement: 'No comment' }, action) => {
 export default spokesman;
 ```
 
-Notice that this application has a very simple **state** object:
+The **spokesman** function takes two parameters:
+
+- The current state, which is set to a default value
+- The action, which was explained above.
+
+This function has a very simple **state** object:
 
 ```javascript
 state = { statement: 'No comment' }
 ```
 
-That's it. That is the only moving part in the application. There are no other variables that can change that have any effect outside of the component in which they are declared.
+That's it. The statement is the only moving part in the application. There are other variables, but their scope is limited to the object in which they are declared. The **state** object, however, has broader scope. In short, there are no other variables in the application that can change that have any effect outside of the component in which they are declared.
 
-In a for loop, we often declare a variable called **i**:
+For instance, in a classic for loop, we often declare a variable called **i**:
 
 ```javascript
   for (let i = 0; i < 3; i++) {}
 ```
 
-We don't need to put **i** in our state since it is not used by any other components. In fact, it is only used this one place in one method.
+We don't need to put **i** in our application's **state** since it is not used by any other components. In fact, it is only used in one place in one method. So yes, the variable **i** is declared, and it can change value, but it is not part of our applications **state**. It's scope is very limited.
 
-But **statement** is different. It is used by multiple modules, or at least we are pretending it is the type of data will be used in various places throughout the app.
+But the **state** object in spokesman is different. It is used by multiple modules, or at least we are pretending it is the type of data will be used in various places throughout the app. (This is, after all, an example, an academic exercise meant to teach principles. It is not meant perform a useful function in the real world in the sense that WebCrafts does.)
 
-Noe that our **reducer** modifies **statement** by completely rebuilding **state**. And this is the only place in the application where **statement** can be modified.
+Our **reducer** modifies **statement** by completely rebuilding **state**. This is the only place in the application where **statement** can be modified.
+
+In short, **state** is immutable. It can never be changed in any part of the programmer. We can send ask that **state** be rebuilt in the reducer, but we can't modify **state** on the fly in other parts of the app.
 
 ## Dispatch
 
@@ -122,7 +145,7 @@ This message is *dispatched* to our reducer. The reducer responds by modifying t
 
 ## Subscribe
 
-When the state changes, several parts of your app might want to be notified. You track changes to state by monitoring calls to subscribe():
+When the state changes, several parts of your app might want to be notified. You track changes **state** by monitoring calls to subscribe():
 
 ```javascript
 import {createStore} from 'redux';
@@ -141,14 +164,14 @@ Now you can modify the UI based on the changes.
 
 ## Simple Redux
 
-At heart, Redux is very simple. Consider this _fake_ Redux implementation. It is not Redux itself, but it is Redux-like. Save it as **SimpleRedux.js**:
+At heart, Redux is very simple. Consider this _fake_ Redux implementation. It is not Redux itself, but it is Redux-like. Save it as **src/FakeRedux.js**:
 
 
 ```javascript
 import React, { Component } from 'react';
 import spokesman from './spokesman';
 
-class SimpleRedux extends Component {
+class FakeRedux extends Component {
 
     state = spokesman(undefined, {});
 
@@ -170,7 +193,7 @@ class SimpleRedux extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <h1>Political Science Fake Redux</h1>
 
                 <p>This component does not use redux. It uses something redux-like.</p>
@@ -184,7 +207,7 @@ class SimpleRedux extends Component {
     }
 }
 
-export default SimpleRedux;
+export default FakeRedux;
 ```
 
 ## Set up Index
@@ -194,13 +217,15 @@ In **index.js**, we want to do two things:
 - Create our **store**
 - Wrap the entire app in a Provider so that all parts of the app can independently access the **store** and other features of Redux.
 
-In this code we are also displaying our **SimpleRedux** file, but it has nothing to do with implementing the real Redux. We only display it so that we can see it in action.
+In this code we are also displaying our **FakeRedux** file, but it has nothing to do with implementing the real Redux. We only display it so that we can see it in action.
+
+Keep the declarations for **React** etc, but past this in as the working part of your **src/index.js** file:
 
 ```javascript
 import spokesman from './spokesman';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import SimpleRedux from 'SimpleRedux';
+import FakeRedux from './FakeRedux';
 
 let store = createStore(spokesman);
 ReactDOM.render(
@@ -208,51 +233,58 @@ ReactDOM.render(
         <Provider store={store}>
             <div>
                 <App />
-                <SimpleRedux/>
+                <FakeRedux/>
             </div>
         </Provider>
     </div>
     , document.getElementById('root'));
 ```
 
+Note that we are completely replacing the default call **ReactDOM.render**.
+
 ## Redux with props
 
 In its pure form, each component that wants to access Redux can do so on its own, without looking at **props**, and without peering into any other modules. But you can, if you want, pass down the Redux state in props. This is not the "right" way to do Redux. Yet, on the other hand, it is not wrong. Redux provides much more flexibility than a monolithic tool like **Angular.** So if you want to pass down **state** with **props**, go ahead and do it. But there is a "better" way, which will be explained later in this document.
 
+Save this object into "src/App.js":
+
 ```javascript
 constructor(props) {
-        super(props);
-        this.state = {
-            statement: 'No comment'
-        };
-        this.props.store.subscribe(() => {
-            const storeState = this.props.store.getState();
-            this.setState((prevState) => {
-                return {statement: storeState.statement}
-            });
-        })
-    }
+      super(props);
+      this.state = {
+          statement: 'No comment'
+      };
+      this.props.store.subscribe(() => {
+          const storeState = this.props.store.getState();
+          this.setState((prevState) => {
+              return {statement: storeState.statement}
+          });
+      })
+  }
 
-    verifyStatement = () => {
-        this.props.store.dispatch({ type: 'VERIFY' });
-    };
+  verifyStatement = () => {
+      this.props.store.dispatch({ type: 'VERIFY' });
+  };
 
-    // IMPLEMENT denyEverything AND noComment HERE.
+  // IMPLEMENT denyEverything AND noComment HERE.
 
-    <h1>Political Science Props Redux</h1>
-    render() {
-            return (
-                <div className="App">
 
-               <p>This component does not use redux. It uses something redux-like.</p>
-               {this.state.statement}
-               <hr />
-               <button onClick={this.verifyStatement}>Verify</button>
-               <button onClick={this.denyEverything}>Deny</button>
-               <button onClick={this.noComment}>No Comment</button>
-               </div>
-        );
-    }
+  render() {
+    return (                
+        <div className="App">
+          <h1>Political Science Props Redux in App</h1>
+          <p>This component uses redux.</p>
+          {this.state.statement}
+
+          <div className="Box">
+            <button onClick={this.verifyStatement}>Verify</button>
+            <button onClick={this.denyEverything}>Deny</button>
+            <button onClick={this.noComment}>No Comment</button>
+          </div>
+          <hr />
+       </div>
+  );
+}
 ```
 
 Notice that we do everything Redux-related on the **store** object passed as props from **index.js**:
@@ -282,13 +314,15 @@ ReactDOM.render(
 
 So what is the better way? What do we do if we want to create a component that does not get **props**, but does have access to the Redux data store?
 
-We begin by importing connect at the top of the component that we want to give access to the Redux **store**:
+Create a new file called **src/ComponentConnect** that is based on **src/App.js**. Be sure to rename the React component to match the name of the file.
+
+Import **connect** at the top of the component that we want to give access to the Redux **store**:
 
 ```javascript
 import {connect} from 'react-redux';
 ```
 
-Remove **subscribe** from the **constructor**, or create a **constructor** that does not call **subscribe**:
+This time we have no **subscribe** in the **constructor**:
 
 ```javascript
 constructor(props) {
@@ -299,7 +333,9 @@ constructor(props) {
 }
 ```
 
-Now we use **connect** to _connect_ our component to the Redux data **store**. We do this by adding the following code at the bottom of the component:
+In fact, we don't really need the constructor at all, and you can delete it.
+
+Now we use **connect** to _connect_ our component to the Redux data **store**. We do this by adding the following code at the bottom of the file and outside of the component:
 
 ```javascript
 const mapStateToProps = (state) => {
@@ -308,10 +344,14 @@ const mapStateToProps = (state) => {
     }
 };
 
-AppNoProps = connect(mapStateToProps)(AppNoProps);
+ComponentConnect = connect(mapStateToProps)(ComponentConnect);
 ```
 
-And now we no longer get **store** in the **props** passed from **index.js**. Here was the old code:
+The method called **mapStateToProps** is passed to connect as its first parameter. It is our chance to map the applications state found in **spokesman** to the props found in our component. We get the Redux (spokesman) state in our props, so we are mapping the Redux **state** to our component's **props**.
+
+More information is [here][redox].
+
+We no longer get **store** in the **props** passed from **index.js**. Here was the old code:
 
 ```javascript
 verifyStatement = () => {
@@ -326,6 +366,10 @@ verifyStatement = () => {
     this.props.dispatch({ type: 'VERIFY' });
 };
 ```
+
+Finally, in your JSX, use **this.props.statement** rather than **this.state.statement**.
+
+**NOTE**: _This is one of those occasions when I am not listing explicitly every change you need to make. Hopefully this is enough to help you see what to do, but it more than just a cut and paste operation._
 
 ## MapDispatchToProps
 
@@ -352,11 +396,13 @@ let AppConnect = ({statement, deny, verify, noComment}) => {
             </p>
             <h1>Political Science</h1>
             {statement}
-            <hr />
-            <button onClick={verify}>Verify</button>
-            <button onClick={deny}>Deny</button>
-            <button onClick={noComment}>No Comment</button>
 
+            <div>
+              <button onClick={verify}>Verify</button>
+              <button onClick={deny}>Deny</button>
+              <button onClick={noComment}>No Comment</button>
+            </div>
+            <hr />
         </div>
     );
     //}
@@ -415,42 +461,42 @@ We can now break out our code into two pieces:
 - One file contains **JSX** only
 - One file contains our **connect** code.
 
-JSX only. Save it in **AppConnectJsxOnly**:
+Here is the JSX only part. Save it in **TwoPartJsx**:
 
 ```javascript
 import React from 'react';
 import './App.css';
 
-let AppConnect = ({statement, deny, verify, noComment}) => {
+let TwoPartJsx = ({statement, deny, verify, noComment}) => {
 
     return (
         <div className="App">
+            <h1>Two Parts: Code and JSX</h1>
             <p className="App-intro">
                 This AppConnect component uses Redux and connect.
-                The connect bits are in a separate file called <strong>AppConnectMaps</strong>.
+                The connect bits are in a separate files.
             </p>
-            <h1>App Connect JSX Only</h1>
+
             {statement}
-            <hr />
-            <button onClick={verify}>Verify</button>
-            <button onClick={deny}>Deny</button>
-            <button onClick={noComment}>No Comment</button>
+            <div className="Box">
+                <button onClick={verify}>Verify</button>
+                <button onClick={deny}>Deny</button>
+                <button onClick={noComment}>No Comment</button>
+            </div>
+            <hr/>
         </div>
     );
 };
 
-export default AppConnect;
+export default TwoPartJsx;
+
 ```
 
-And here is the connect only code. Save it in AppConnectMaps.js:
+And here is the **connect** only code. Save it in **TwoPartCode**:
 
 ```javascript
-/**
- * Created by charlie on 6/6/17.
- */
-
 import {connect} from 'react-redux';
-import AppConnectJsxOnly from './AppConnectJsxOnly';
+import TwoPartJsx from './TwoPartJsx';
 
 const mapStateToProps = (state) => {
     return {
@@ -475,9 +521,14 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(AppConnectJsxOnly);
+)(TwoPartJsx);
+
 ```
 
+The point is that our interface is now separate from our logic. This has two advantages:
+
+- We can give the JSX part to the UI team and let them work on it separately from the coding team.
+- We can swap out the JSX easily, thus changing the look and feel without having to worry about changes to our logic.
 
 ## Updated spokesman
 
@@ -509,37 +560,38 @@ const spokesman = (state = { statement: 'No comment' }, action) => {
 export default spokesman;
 ```
 
-And then the function rather than class in **DispatchConnect.js**:
+And then the show the new property in **TwoKindJsx.js**:
 
 ```javascript
-let DispatchConnect = ({dispatch, statement, kind}) => {
+import React from 'react';
+import './App.css';
 
-    const verifyStatement = () => {
-        dispatch({type: 'VERIFY'});
-    };
-    // And so on
+let TwoPartJsx = ({statement, kind, deny, verify, noComment}) => {
+
     return (
-    <div className="App">
-        <div className="App-intro">
-            <h2>Welcome to React</h2>
+        <div className="App">
+            <h1>Two Parts: Code and JSX</h1>
+            <p className="App-intro">
+                This AppConnect component uses Redux and connect.
+                The connect bits are in a separate files.
+            </p>
+            <p><strong>Kind</strong>: {kind}</p>
+            <p><strong>Statement</strong>: {statement}</p>
+            <div className="Box">
+                <button onClick={verify}>Verify</button>
+                <button onClick={deny}>Deny</button>
+                <button onClick={noComment}>No Comment</button>
+            </div>
+            <hr/>
         </div>
+    );
+};
 
-        <h1>Political Science Dispatch Connect Redux</h1>
+export default TwoPartJsx;
 
-        <p>This component uses Redux.</p>
-        <p>{statement}</p>
-        <p>{kind}</p>
-        <hr />
-        <button onClick={verifyStatement}>Verify</button>
-        <button onClick={denyEverything}>Deny</button>
-        <button onClick={noComment}>No Comment</button>
-
-    </div>
-  );
-}
 ```
 
-And modify **mapStateToProps** to see the new property:
+And modify **TwoKindCode** to initialize the new property:
 
 ```javascript
 const mapStateToProps = (state) => {
@@ -552,42 +604,50 @@ const mapStateToProps = (state) => {
 
 ## Final Index
 
+By popular demand, here is the final **index.js**:
+
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import SimpleRedux from './SimpleRedux';
-import AppConnect from './AppConnect';
-import AppConnectMaps from './AppConnectMaps';
-import DispatchConnect from './DispatchConnect';
-import DispactchComponentConnect from './DispatchComponentConnect';
-import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import Header from './Header';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 import spokesman from './spokesman';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-let store = createStore(spokesman);
+import FakeRedux from './FakeRedux';
+import DispatchConnect from './ComponentConnect';
+import AppConnect from './AppConnect';
+import TwoPartCode from './TwoPartCode';
 
+let store = createStore(spokesman);
 ReactDOM.render(
     <div>
         <Provider store={store}>
             <div>
+                <Header/>
+                <TwoPartCode/>
                 <AppConnect/>
-                <hr /> <hr />
-                <AppConnectMaps/>
-                <hr /> <hr />
-                <DispactchComponentConnect/>
-                <hr /> <hr />
                 <DispatchConnect/>
-                <hr /> <hr />
                 <App store={store}/>
-                <hr /> <hr />
-                <SimpleRedux />
+                <FakeRedux/>
             </div>
         </Provider>
-    </div>,
-    document.getElementById('root'));
+    </div>, document.getElementById('root')
+);
+
 registerServiceWorker();
+```
+
+## css
+
+I put this in **App.css**:
+
+```css
+.Box {
+    margin-top: 10px;
+}
 ```
 
 ## Turn it in
@@ -596,4 +656,6 @@ Add, commit, push. Create branch and or tag. Push. Tell me branch, tag and folde
 
 ## Local Storage
 
-Redux can write the current state to localStorage.
+In a later assignment we will see that Redux can write the current state to **localStorage**.
+
+[redox]: https://github.com/reactjs/react-redux/blob/master/docs/api.md
