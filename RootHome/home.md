@@ -15,3 +15,5 @@ Fall 2017
 [uic]: http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitCode.html
 [wcs]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.html
 [wcr]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.html
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TQz257s_ghQ" frameborder="0" allowfullscreen></iframe>

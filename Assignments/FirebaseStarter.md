@@ -2,6 +2,8 @@
 
 To get started deploying our pages to the web, we will use a Google product called [Firebase](https://firebase.google.com/).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O17OWyx08Cg" frameborder="0" allowfullscreen></iframe>
+
 ## Create App
 
 Go to the firebase console: [https://console.firebase.google.com/](https://console.firebase.google.com/).
@@ -123,3 +125,19 @@ Take a screenshot of what happens in your bash terminal when you deploy your app
 In the comments section, include the URL of your project running on the world wide web. The URL should look something like this, but not exactly like it:
 
 - [https://elf01-31681.firebaseapp.com/](https://elf01-31681.firebaseapp.com/)
+
+## Key Commands
+
+Get Started:
+
+    npm install -g firebase-tools
+    firebase logon    
+    firebase init
+    firebase deploy
+
+also
+
+    firebase logout
+    firebase list
+    firebase --version (3.14 as of Nov 2017)
+    firebase --help

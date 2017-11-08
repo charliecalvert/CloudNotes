@@ -1,5 +1,15 @@
 ## Overview
 
+The goal of this assignment is to learn how Firebase provides authentication via sign in with Google, Twitter and other common sites.
+
+You can give individual uses access to all or portions of your site once you allow them to sign in.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8sGY55yxicA" frameborder="0" allowfullscreen></iframe>
+
+Firebase Quickstarts: <https://github.com/firebase/quickstart-js>
+
+## Get Started
+
 Go to the console:
 
 - <https://console.firebase.google.com/>
@@ -109,7 +119,7 @@ function  elfFireInitPage() {
 
 ## Home Page
 
-Rename your index.md to **start.md**. Create a new **index.md** like this:
+Rename your **index.md** to **start.md**. Create a new **index.md** like this:
 
 ```html
 
@@ -129,7 +139,7 @@ Welcome to my Prog270 Website.
 
 ## Start Page
 
-At the bottom of start.md,
+At the bottom of **start.md**,
 
 ```html
 <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css" />
