@@ -8,6 +8,8 @@ In this assignment we will:
 
 Be sure [lamp is installed][li].
 
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/wg-0wif-VyE?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>  
+
 ## Note on Names
 
 To save keystrokes when typing, and cut down on noise when reading, I'll use some simple shortcuts. Unless I explicitly state otherwise, when I write **isit-code**, I'm referencing your **isit-code-lastname** project.
@@ -27,6 +29,8 @@ create-react-app client && CreateAllExpress server
 
 Open the root folder for this project (Week04-UseSiteTools) in WebStorm. You should now be able to work on both the **client** and **server** at the same time.
 
+In the **server**, in **bin/www** set the port to **30026**. (More on ports below.)
+
 Add the [proxy statement][lcs] for port 30026 to **client/package.json**.
 
 Install the **isit-code** and **isit-site-tools** packages in the **server** project. You should be able to do this without further instruction. If you are having trouble, consider the following questions:
@@ -40,6 +44,27 @@ Install the **isit-code** and **isit-site-tools** packages in the **server** pro
 **NOTE**: _It is not cheating to simply cut and paste questions that I ask in these assignment into Google. You might not know the answer, but it probably does. Sometimes you may have to tweak the question slightly, but that should not be hard. For instance, after you know the answer to the first question above, you can replace the words **that tool** with something when specific when querying Google._
 
 Finally, use **npm start** to launch the **client** and **server** applications, each in their own terminal tab.
+
+## Set Ports
+
+If they are not set up already, set the PORT environment variable to 30025. At the bash prompt type the following:
+
+    export PORT=30025
+    export SERVER_PORT=30026
+
+In **server/bin/www**, around line 15, use **SERVER_PORT** rather than **PORT**:
+
+```javascript
+var port = normalizePort(process.env.SERVER_PORT || '30026');
+```
+
+In the Bash shell where you run the server:
+
+    export DEBUG=server.server
+
+If you prefer to have **create-react-app** open in a Chrome rather than Firefox, then do this at the Bash prompt:
+
+    export BROWSER=/usr/bin/google-chrome
 
 ## Link Package to the Server {#link-package}
 

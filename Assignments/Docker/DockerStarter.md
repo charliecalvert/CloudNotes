@@ -2,6 +2,19 @@
 
 This assignment is designed to be an introduction to Docker.
 
+Docker is like VirtualBox plus a VM such as Pristine Lubuntu or Ubuntu server, but Docker is smaller and more easily deployed. It can also share resources in a way that a VM can't, so that multiple docker containers take up little more room than a single container.
+
+Docker images start with a stripped down copy of Linux, or, more recently, something smaller called runc. We can modify that copy of Linux/[runc][runc] to support various tasks such as Apache web servers, MySQL databases, etc. Since Linux and runc are very flexible, the number of things that can be hosted inside a Docker image has few limits. Once we have configured the image to support a particular feature such as MySQL, we can then save the whole thing as a new image. Then we can move the image to other machines, and immediately start using the service we created in the image.
+
+Perhaps the architecture might look a little like this:
+
+- Top Level: Our tools such as MySQL or Apache
+- Middle Level: Linux or [runc][runc]
+- Host Level - Host OS
+- Lowest Level: Hardware
+
+Also, see this: https://stackoverflow.com/a/16048358/253576
+
 ## Docker Install
 
 There are two scripts in **JsObjects/Utilities/InstallScripts**:
@@ -163,6 +176,10 @@ Alternately, you can **commit** the container to an image and then run the image
     docker commit epic_jang foo
     docker run -it foo
 
+## Turn it in
+
+Take a screen shot of the ssh bash shell on your local Ubuntu server after running the **docker images** command. It should show a list of the containers installed on your system. Also include the URL for your Docker Hub page that displays your docker images.
+
 ## References
 
 These are useful:
@@ -173,3 +190,5 @@ This is for later:
 
 - <https://writing.pupius.co.uk/apache-and-php-on-docker-44faef716150>
 - <https://www.linode.com/docs/websites/hosting-a-website>
+
+[runc][https://github.com/opencontainers/runc]

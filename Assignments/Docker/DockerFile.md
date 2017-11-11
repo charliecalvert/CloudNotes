@@ -27,7 +27,9 @@ Place this text in **~/Docker/UbuntuBase/Dockerfile**:
 
 Create the image:
 
-    docker built -t <DOCKER-HUB-NAME>/ubuntu-base
+    docker build -t <DOCKER-HUB-NAME>/ubuntu-base .
+
+When running the above command, not the period at the end.
 
 Run it like this:
 
@@ -68,7 +70,7 @@ Create a directory called **~/Docker/Apache**. Create a file called:
 
 Place this text in it:
 
-```nohighlighting
+```XML
 ServerName www.example.com
 
 <VirtualHost *:80>
@@ -130,22 +132,69 @@ And run it in the background:
 
     docker run -d -p 80:80 charliecalvert/apache
 
-## Create MakeHtml
-
-useradd -ms /bin/bash bcuser
-usermod -aG sudo bcuser
-su bcuser
-
-mkdir Git
-cd Git
-git clone http://git@github.com/charliecalvert/JsObjects.git
-
 
 ## Get Bash Shell in Background Docker Task
 
 Open a bash shell on the instance running in background:
 
     docker exec -it <CONTAINER_ID_OR_NAME> bash
+
+## Create MakeHtml
+
+In a directory called **~/Docker/MakeHtml**, create this **Dockerfile**
+
+
+    FROM charliecalvert/apache
+    RUN apt-get install sudo -y
+    RUN useradd -ms /bin/bash bcuser
+    RUN usermod -aG sudo bcuser
+    RUN echo "bcuser:bcuser" | chpasswd
+    RUN su bcuser
+    RUN mkdir /home/bcuser/Git
+    RUN cd /home/bcuser/Git && git clone http://git@github.com/charliecalvert/JsObjects.git
+    RUN su -c "cd /home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox && ./UbuntuSetup b" bcuser
+    RUN cd /home/bcuser/Git/JsObjects/Utilities/NodeInstall && echo bcuser | sudo -S ./NodeInstall.sh
+    RUN cd /home/bcuser/Git/JsObjects/Utilities/NodeInstall && echo bcuser | sudo -S ./NpmHelper e
+
+This Dockerfile does a number of things, including:
+
+- installing the **sudo** program so the user can use the **sudo** command.
+- Create a user called **bcuser** and give the user the expected password of **bcuser**.
+- Create a Git directory and clone JsObjects into it.
+- Run **UbuntuSetup** in the background so no prompts are presented to the user.
+- Install node and the various global NPM packages that we use most often.
+
+Here is useful little script called **go** that I put in the **MakeHtml** directory:
+
+    #!/bin/bash
+
+    docker build -t charliecalvert/make-html2 .
+    docker run --name maker -d -p 80:80 charliecalvert/make-html2
+    docker exec -it maker /bin/bash
+
+I created a second script called **stop**. Or perhaps you might call it **delete-container-and-image** or just **start-over-from-scratch**. I used it a lot when developing the **Dockerfile** because it allowed me to try a run and check the results. If I wasn't happy or felt the **Dockerfile** was not yet complete, then I could make some adjustments to the **Dockerfile**, delete my image and container, and start over by running an updated copy of the **Dockerfile**. Here is the script:
+
+    #!/bin/bash
+
+    docker stop maker
+    docker rm maker
+    docker rmi charliecalvert/make-html2
+
+Notice that in these scripts I'm giving the container a **name**. Specifically, I'm calling it **maker**. By giving it a known name I'm able to remove (delete) it with **stop** script if I want to start over.
+
+## Push your results
+
+You can push your finished image to the Docker Hub:
+
+docker push charliecalvert/make-html2, though of course you would want to use your name on the Docker Hub.
+
+## Turn it in
+
+Point me to your image on the Docker Hub, and give me at least one screenshot of you processing a docker file. Put your copies of the three Dockerfiles in a folder of your repository. Just copy your **Docker** folder recursively (cp -r) into your repository. So I will be looking for a folder called Docker in your repository. But go ahead and give me:
+
+- repo url (This is your **isit320-lastname-2017** repo.)
+- Directory name
+- Branch
 
 [dsp]: http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerStarter.html
 [df]: https://docs.docker.com/engine/reference/builder
