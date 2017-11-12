@@ -62,4 +62,4 @@ I'm not clear about this. Set "parser": "babel-eslint" in .eslintrc to allow arr
 
 ## Turn it in
 
-Just point me at your final, where I expect to see a **.eslintrc** file.
+Just point me at your midterm, final, or some appropriate project. When I open it, I'll expect to see a **.eslintrc** file and have most of the files relatively error free in terms of eslint errors.

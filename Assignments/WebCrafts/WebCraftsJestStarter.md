@@ -3,11 +3,12 @@
 - Jest Deck [http://bit.ly/jest-cra](http://bit.ly/jest-cra)
 - [React Tutorial][rt]
 
-From the root of your project:
+From the root of your WebCraft project:
 
 ```nohighlighting
 npm install --save-dev jest enzyme-adapter-react-16
 npm install --save-dev react-test-renderer enzyme
+npm install --save-dev babel-preset-stage-0
 mkdir source/__tests__
 ln -s node_modules/.bin/jest .
 ```
@@ -18,7 +19,7 @@ In the root of your project create a **.babelrc** file:
 
 ```javascript
 {
-  "presets": ["env", "react"]
+  "presets": ["env", "stage-0", "react"]
 }
 ```
 

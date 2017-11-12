@@ -388,7 +388,13 @@ module: {
 
 ## Turn it in
 
-Push and tell me repo and branch.
+Push and tell me repo and branch. Check for:
+
+- Bug fixes for isit-site-tools
+- MakeHtml files works
+  - Two dropdowns work in sync
+  - It generates HTML from markdown
+- Generates HTML based on images
 
 
 [sync]: https://help.github.com/articles/syncing-a-fork/
