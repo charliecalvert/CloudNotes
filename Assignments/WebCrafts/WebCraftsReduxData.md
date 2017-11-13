@@ -139,9 +139,13 @@ const spokesman = (state = state, action) => {
 };
 
 export default spokesman;
+```
 
+## Error on Prepare styles
 
+Error: **Cannot read property 'prepareStyles' of undefined**
 
+Don't forget the MuiThemeProvider!
 
 
 
