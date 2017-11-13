@@ -42,6 +42,56 @@ If you get stuck, or want to know more, go to this page:
 
 Enable auth in the console.
 
+## Content
+
+Put the code you want in your public directory. In other words, configure MakeHtml to put your HTML in the ~/Source/public/firebase directory. Do this by changing the **config/ElvenConfig.json** file:
+
+```javascript
+{
+  "calvert": {
+    "base-dir": "/home/bcuser/",
+    "bootswatch": "cosmo",
+    "site-dirs": [
+      "Documents/AllTest",
+      "Documents/AllSite"
+    ],
+    "destination-dirs": [
+      "/home/bcuser/Source/firebase/public/",  <==== HERE
+      "/var/www/html/",
+      "/home/bcuser/temp/test-site/"
+    ]
+  }
+}
+```
+
+Note that we have added our firebase directory to the **destination-dirs** section of the JSON file. It should be the first item.
+
+If you do not already have an **index.html** file set up, copy **public/master-list.html** to **public/index.html**:
+
+<pre>
+cd ~/Source/firebase/public
+cp master-list.html index.html
+cd ..
+</pre>
+
+## Copy JS, CSS and Images
+
+Use the tools available, or modify them as necessary, to copy your CSS, JS and Images folders from the ApacheHelpers directory to your **firebase/public** directory.
+
+You should follow a few bsaics steps to make sure all the proper files are being loaded. In Chrome, press F12 to open the Developer Tools. Switch to the Network page. Refresh you page. If everything is set up correctly, there should be no red 404 errors for your GET statements. Instead, you should see 200 or 304 in the Status column.
+
+## Test
+
+If you are on your local machine or VM like Pristine Lubuntu, you can preview before you deploy by issuing this command:
+
+<pre>
+firebase serve
+</pre>
+
+Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
+
+After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web and browse to it.
+
 
 ## JavaScript
 

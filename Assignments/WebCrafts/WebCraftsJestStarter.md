@@ -1,5 +1,7 @@
 ## Overview
 
+The goal of this assignment is to begin the process of integrating Jest tests into WebCrafts.
+
 - Jest Deck [http://bit.ly/jest-cra](http://bit.ly/jest-cra)
 - [React Tutorial][rt]
 
@@ -165,5 +167,17 @@ ncu
 ncu -a
 npm update
 ```
+
+## Turn it in
+
+I'm looking for evidence that you have integrated Jest into your project, and added a few tests for some of your components. I'm not looking for complete testing, just evidence that you have started the process.
+
+Include:
+
+- Jest in **package.json** with a **test** command
+- A **.babelrc** file.
+- Passing tests that reference at least two of your components.
+  - I'll run: **npm install && npm test**
+
 [rt]: http://facebook.github.io/jest/docs/en/tutorial-react.html
 [ed]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
