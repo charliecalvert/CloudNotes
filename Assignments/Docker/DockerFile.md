@@ -29,7 +29,7 @@ Create the image:
 
     docker build -t <DOCKER-HUB-NAME>/ubuntu-base .
 
-When running the above command, not the period at the end.
+When running the above command, note the period at the end.
 
 Run it like this:
 
@@ -37,7 +37,7 @@ Run it like this:
 
 For instance:
 
-    docker build -t charliecalvert/ubuntu-base
+    docker build -t charliecalvert/ubuntu-base .
     docker run -it charliecalvert/ubuntu-base
 
 The build command creates a Docker image based on your **Dockerfile**. The run command creates a container based on the image and runs it. To delete an image, see the text further down in this file.
@@ -126,7 +126,7 @@ Put this **Dockerfile** in the same directory:
 
 Then build it:
 
-    docker build -t <DOCKER-HUB-NAME>/apache
+    docker build -t <DOCKER-HUB-NAME>/apache .
 
 And run it in the background:
 
