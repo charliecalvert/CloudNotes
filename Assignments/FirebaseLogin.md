@@ -42,6 +42,52 @@ If you get stuck, or want to know more, go to this page:
 
 Enable auth in the console.
 
+## Test
+
+If you are on your local machine or VM like Pristine Lubuntu, you can preview before you deploy by issuing this command:
+
+<pre>
+firebase serve
+</pre>
+
+Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
+
+After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web and browse to it.
+
+
+## JavaScript
+
+Add the following to the **public** directory:
+
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
+
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
+
+## Home Page
+
+Get your home page here:
+
+    cp ~/Git/JsObjects/JavaScript/Syntax//JsonTable/public/favicon.png .
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/html/index.html    
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/stylesheets/firebase-express/main.css
+
+Rename style.css to main.css.
+
+## Start Page
+
+
+## Turn it in
+
+Run **firebase deploy** to push your site to the cloud. Submit a link to your firebase site.
+
+**NOTE**: _If you turn in a screen shot for an assignment like this, it is nice if I can read the URL in the browser address control. But I don't need a screenshot in this case, unless you want to submit one._
+
+## For Later
+
+Don't do the sections from here down at this time.
+
 ## Content
 
 Put the code you want in your public directory. In other words, configure MakeHtml to put your HTML in the ~/Source/public/firebase directory. Do this by changing the **config/ElvenConfig.json** file:
@@ -79,86 +125,3 @@ cd ..
 Use the tools available, or modify them as necessary, to copy your CSS, JS and Images folders from the ApacheHelpers directory to your **firebase/public** directory.
 
 You should follow a few bsaics steps to make sure all the proper files are being loaded. In Chrome, press F12 to open the Developer Tools. Switch to the Network page. Refresh you page. If everything is set up correctly, there should be no red 404 errors for your GET statements. Instead, you should see 200 or 304 in the Status column.
-
-## Test
-
-If you are on your local machine or VM like Pristine Lubuntu, you can preview before you deploy by issuing this command:
-
-<pre>
-firebase serve
-</pre>
-
-Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
-
-After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web and browse to it.
-
-
-## JavaScript
-
-Add the following to **public** directory:
-
-    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
-    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
-
-
-
-## Home Page
-
-Rename your **index.md** to **start.md**. Create a new **index.md** like this:
-
-```html
-
-## Overview
-
-Welcome to my Prog270 Website.
-
-<div id="firebaseui-auth-container"></div>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css" />
-<script src="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>        
-<script>
-    elfFireStart();
-    elfFireConfig();
-</script>
-```
-
-## Start Page
-
-At the bottom of **start.md**,
-
-```html
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css" />
-<script src="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>        
-
-<script>
-  elfFireStart();
-  elfFireInitPage();
-</script>
-```
-
-And then create a new section near the top:
-
-```html
-## Login
-
-<div class="container">
-    <p id="sign-in-status"></p>
-    <p id="sign-in"></p>
-    <p id="account-details"></p>
-</div>
-```
-
-## Turn it in
-
-Run **firebase deploy** to push your site to the cloud. Submit a link to your firebase site.
-
-You will need to edit this line in ElvenHelp.js:
-
-        'signInSuccessUrl': 'http://localhost:5000/start.html',
-
-You should set it the value, the URL, to the page for your published firebase site. Something like:
-
-  http://prog270-lastname-firebaseapp.com/start.html
-
-**NOTE**: _If you turn in a screen shot for an assignment like this, it is nice if I can read the URL in the browser address control. But I don't need a screenshot in this case, unless you want to submit one._

@@ -39,6 +39,7 @@ Inside that directory, create a subdirectory called **firebase**:
 <pre>
 cd ~/Source
 mkdir firebase
+cd firebase
 </pre>
 
 Install firebase:
@@ -64,6 +65,16 @@ Choose to support hosting, but toggle the database option off with your space ba
 <pre>
 cp public/index.html public/firebase.html
 </pre>
+
+## Run
+
+To run your application:
+
+<pre>
+firebase serve
+</pre>
+
+Then browse to the correct page.
 
 ## Deploy
 

@@ -37,7 +37,7 @@ Bring in the pieces of firebase that we need:
     script(defer='', src='https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js')
     script(defer='', src='https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js')
 
-Workikng in the **public/javascripts** folder, download a couple custom bits of code:
+Working in the **public/javascripts** folder, download a couple custom bits of code:
 
     wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
     wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
