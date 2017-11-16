@@ -20,7 +20,7 @@ On the Firebase website, create a Firebase project called **FirebaseExpress**
 
 ## Load Firebase and Google Material
 
-In **layout.pug**, set up your **metadata** after the **title**:
+In **layout.pug**, set up your **metadata** before the **title**:
 
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
