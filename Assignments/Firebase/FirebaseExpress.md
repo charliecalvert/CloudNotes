@@ -81,6 +81,34 @@ block content
 </pre>    
 
 
+## Login
+
+In **elven-fire-login**, in the **elfConfigure** method, put in your configuration object that pasted into **control.js** when you created the app:
+
+```javascript
+function elfConfigure() {
+    var config = {
+        apiKey: "YOUR DATA HERE",
+        authDomain: "YOUR DATA HERE",
+        databaseURL: "YOUR DATA HERE",
+        projectId: "YOUR DATA HERE",
+        storageBucket: "",
+        messagingSenderId: "YOUR DATA HERE"
+    };
+    firebase.initializeApp(config);
+    document.getElementById('elf-sign-in').addEventListener('click', toggleSignIn, false);
+    document.getElementById('elf-sign-in').disabled = false;
+}
+```
+
+In the **authentication** section enable Google and optionally fill in the project name:
+
+![Enable Google](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-google.png)
+
+Run the app and log in.    
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/QwPeLHajmbE?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Turn it in
 
 Push your repository. Give me:
@@ -98,6 +126,9 @@ Also provide a link to your application running on Firebase.
 - [Service Account][sa]
 - [Firebase NPM][fb]
 
+## Stuff and Nonsense
+
+    $ npm install -g firebase-tools
 
 [fa]: https://github.com/firebase/firebase-admin-node
 [fad]: https://firebase.google.com/docs/admin/setup

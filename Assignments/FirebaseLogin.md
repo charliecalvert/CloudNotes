@@ -95,77 +95,12 @@ After confirming that you app works, press Ctrl-C and return to the command line
 
 ## JavaScript
 
-Add the following to **js/elven-help.js**. Put it above the **document.ready** statement:
+Add the following to **public** directory:
 
-```javascript
-function elfFireStart() {
-    var config = {
-        apiKey: "YOUR KEY",
-        authDomain: "YOUR DOMAIN",
-        databaseURL: "YOUR URL",
-        storageBucket: "YOUR BUCKET",
-        messagingSenderId: "YOUR ID"
-    };
-    firebase.initializeApp(config);
-}
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
 
-function elfFireConfig() {
-    // FirebaseUI config.
-    var uiConfig = {
-        'signInSuccessUrl': 'http://localhost:5000/start.html',
-        'signInOptions': [
-            // Leave the lines as is for the providers you want to offer your users.
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            firebase.auth.GithubAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        'tosUrl': '<your-tos-url>',
-    };
 
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
-
-}
-
-function  elfFireInitPage() {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL ||  user.providerData[0].photoURL;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            user.getToken().then(function(accessToken) {
-                document.getElementById('sign-in-status').textContent = 'Signed in';
-                document.getElementById('sign-in').textContent = 'Sign out';
-                document.getElementById('account-details').textContent = JSON.stringify({
-                    displayName: displayName,
-                    email: email,
-                    emailVerified: emailVerified,
-                    photoURL: photoURL,
-                    uid: uid,
-                    accessToken: accessToken,
-                    providerData: providerData
-                }, null, '  ');
-            });
-        } else {
-            // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
-        }
-    }, function(error) {
-        console.log(error);
-    });
-};
-```
 
 ## Home Page
 
