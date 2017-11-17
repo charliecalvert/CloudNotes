@@ -157,6 +157,18 @@ Now you should be able to delete the image:
     Untagged: charliecalvert/foobar:latest
     Deleted: sha256:982c61b5875720bbe5d3a8fa02c0e932734add5c366e2bb6c3d691b4798c128d
 
+To list all containers with just ID:
+
+    docker ps -aq
+
+To delete all containers
+
+    docker rm $(docker ps -aq)
+
+To remove all images:
+
+    docker rmi $(docker images -q)
+    
 ## Start a container
 
 If you have a container (not an image) called **epic_jang**, start it, and then hop into it:

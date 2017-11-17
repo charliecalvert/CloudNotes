@@ -6,10 +6,7 @@ Summary of what we are going to do:
 
 1. First we create two markdown files. Attach these files to your assignment when you submit it.
 1. Create two html files from the markdown files. Save them to disk.
-1. Create two blank pages in your Google Site.
 1. Preview the markdown in Atom and block copy the output.
-1. Open the Google Site pages and paste in a copy of your rendred Markdown into a Text Boxes.
-1. Publish your work in Google Sites.</li>
 1. In Atom, also save the markdown as HTML. Place the HTML and your markdown in your Repository.</li>
 1. Turn in the assignment.</li>
 
@@ -239,7 +236,7 @@ The lone and level sands stretch far away.'
 ## Markdown on the Web
 
 
-We will create most of our markdown in **Remarkable**. You can optionally go to one of these sites and see if you can get started creating your own Markdown document on line:
+We will create most of our markdown in **Atom**. You can optionally go to one of these sites and see if you can get started creating your own Markdown document on line:
 
 - [http://markable.in](http://markable.in)
 - [http://daringfireball.net/projects/markdown/dingus][daball]
@@ -267,8 +264,15 @@ Place the both the markdown and HTML documents in a folder of your repository ca
 	- Prog270 Test Document
 	- Ozymandias
 - While in Atom's preview mode for each document, select the text and press **Ctrl-C** to copy it.
-- Go to Google Sites. Create a new page. Put a **Text Box** on it. Paste in the rendered HTML with **Ctrl-V**.
-- Save your work and note the URL for your document.
+
+
+## Google Sites
+
+This part of the assignment is now obsolete. Do not attempt it. We should be using AWS S3 instead.
+
+- Go to AWS S3.
+- Upload your files
+- Submit a link to your files on S3
 
 Here, for instance, is an example of the kind of link I want to see on Google Sites:
 

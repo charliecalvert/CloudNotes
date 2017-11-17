@@ -54,6 +54,10 @@ Login in to Firebase:
 firebase login
 </pre>
 
+If you don't have a local browser because you are on a server, or if you are on Cloud Nine, then try this:
+
+    firebase login --no-localhost
+
 Create sample code for your project and create some configuration files:
 
 <pre>
