@@ -9,6 +9,17 @@ Here are some useful links:
 - [Slides](http://bit.ly/react-basics)
 - [github student](https://education.github.com/pack)
 
+## Summary
+
+- Create **webpack.config.js**
+- Install React, Webpack and Babel components
+  - react and react-dom
+  - babel core and babel loader
+  - babel env, react and stage-0
+- Add bundle script to **package.json**. This is the script runs webback.
+
+    cp $ELF_TEMPLATES/React/ReactNpm
+
 ## ReactBasics Directory
 
 Ceate a directory called **Week01-ReactBasics** in your repository and navigate into it:
