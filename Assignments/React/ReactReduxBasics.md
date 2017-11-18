@@ -659,3 +659,13 @@ Add, commit, push. Create branch and or tag. Push. Tell me branch, tag and folde
 In a later assignment we will see that Redux can write the current state to **localStorage**.
 
 [redox]: https://github.com/reactjs/react-redux/blob/master/docs/api.md
+
+## Notes
+
+I think the main goal of Redux is to help us maintain state across an entire application. Like so many frameworks, it provides a means of codifying best practices. In this case, some of the benefits include:
+
+- It enforces the best parts of the MVC architecture. In particular, it focuses on Separation of Concerns. It maintains state in a centralized location that is very loosely coupled to the view. So M in MVC is the Redux. It maintains our model, our state. The V in MVC in React. It creates our view.
+
+- Another best practice that it enforces is immutability. We cannot modify the data maintained by Redux, we can only send it a command, an action, and in response Redux may rebuild our entire state, but it will not modify it.
+
+There are other tricks that Redux can perform, like helping with storing state between sessions. But that is a side benefit. The key benefits are the centralized object with strong separation of concerns, along with the immutable object.

@@ -7,6 +7,14 @@ There are two different ways to get files from a host OS into a Docker container
 
 This assignment has enough in it to get you going. I'll try to clarify it over the next little bit.
 
+## Video Simple Docker
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/bYy19vDMRRs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
+## Video Apache Control
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/mDY0dZ_78jE?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Copy files
 
 The advantage of this solution is that it provides a container that will act in a defined and reliable manner wherever it is installed.
@@ -15,7 +23,21 @@ This is simple to do, but place the **Dockerfile** for this part of the assignme
 
     DockerCode/HtmlViewer
 
+For instance:
+
+    mkdir ~/DockerCode/HtmlViewer    
+
 You will need to put at least one file in that directory. In particular, you will need a **Dockerfile**.
+
+The one catch here is that the **html** directory must be in the **context** directory. We can't copy the files directly from a location like **/var/www/html**. First copy them from **/var/www/html** to the directory that contains your **Dockerfile**. This is the context directory. For instance:
+
+    cp -rv /var/www/html ~/DockerCode/HtmlViewer/.
+
+Or this should also work:
+
+    cp -ruvp /var/www/html ~/DockerCode/HtmlViewer/.
+
+Docker says this is necessary so that we can create a reproducable environment. I feel this going to far. But there it is.
 
 The Docker **COPY** command, when placed in a **Dockerfile**, is simple to use:
 
@@ -26,15 +48,30 @@ This will copy the files from the **html** directory on the host to the **/var/w
 
 You should probably also write a little script called **build** containing the code to build this Image:
 
-    build -t charliecalvert/html-viewer
+    #!/bin/bash
+
+    docker build -t charliecalvert/html-viewer .
+    docker run --name html-viewer-container -d -p 80:80 charliecalvert/html-viewer
+
+And to **stop** all and delete what we created:
+
+    #!/bin/bash
+
+    docker stop html-viewer-container
+    docker rm html-viewer-container
+    docker rmi charliecalvert/html-viewer
 
 To be clear, we still have our **MakeHtml** directory. We will work on it more later. But in this directory we have a much simple Docker file. We have removed from the MakeHtml **Dockerfile** all the code that recreated the **bcuser** user, JsObjects and a node environment. The plan is now to build the html files on the host and then copy them to the container.
 
-The one catch here is that the **html** directory must be in the **context** directory. We can't copy the files directly from a location like **/var/www/html**. First copy them from **/var/www/html** to the directory that contains your **Dockerfile**. This is the context directory. For instance:
+## Stop and Start Container
 
-    cp -rv /var/www/html ~/DockerCode/HtmlViewer/.
+Suppose you have a running container and want to stop it:
 
-Docker says this is necessary so that we can create a reproducable environment. I feel this going to far. But there it is.
+    docker stop html-viewer-container
+
+Then you can start it again like this:
+
+    docker start html-viewer-container
 
 ## Link Directory
 
@@ -92,4 +129,60 @@ Stop Apache script:
 
 sudo service apache2 stop
 sudo systemctl disable apache2
+```
+
+Apache status:
+
+```bash
+#!/bin/bash
+
+sudo service apache2 status
+```
+
+Or, perhaps you would prefer the **ApacheControl** program from JsObjects:
+
+    cp $SETUP_LINUXBOX/ApacheControl .
+
+Then just run the script and use the menu. The program looks like this:
+
+```bash
+#!/bin/bash
+
+RED='\033[0;31m'
+LIGHT_RED='\033[1;31m'
+LIGHT_GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;36m'
+NC='\033[0m' # No Color
+
+function start() {
+    sudo systemctl enable apache2
+    sudo service apache2 start
+}
+
+function stop() {
+    sudo service apache2 stop
+    sudo systemctl disable apache2
+}
+
+function status() {
+    sudo service apache2 status
+}
+
+while true; do
+    message "Menu"
+    echo -e "$LIGHT_GREEN  a) Start and Enable Apache"
+    echo -e "$LIGHT_GREEN  b) Stop and Disable Apache"
+    echo -e "$LIGHT_GREEN  c) Apache Status"
+    echo -e "$LIGHT_RED  x) Exit"
+    echo -e "\n$NC"
+    read -p "Please make a selection: " eotuyx
+    case $eotuyx in
+        [Aa]* ) start false; continue;;
+        [Bb]* ) stop false; continue;;
+        [Cc]* ) status true; continue;;
+        [XxQq]* ) break;;
+        * )  -e "\n$NC" + "Please answer with c, r or x.";;
+    esac
+done
 ```

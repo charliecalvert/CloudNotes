@@ -52,8 +52,7 @@ firebase serve
 
 Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
 
-After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web and browse to it.
-
+After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web with **firebase deploy**. After it has been deployed, anyone with a connection to the world wide web will b able to access it with their browser.
 
 ## JavaScript
 
