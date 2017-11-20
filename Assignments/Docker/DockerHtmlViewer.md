@@ -63,6 +63,8 @@ And to **stop** all and delete what we created:
 
 To be clear, we still have our **MakeHtml** directory. We will work on it more later. But in this directory we have a much simple Docker file. We have removed from the MakeHtml **Dockerfile** all the code that recreated the **bcuser** user, JsObjects and a node environment. The plan is now to build the html files on the host and then copy them to the container.
 
+- [Docker Restart Automatically Docs][dra]
+
 ## Stop and Start Container
 
 Suppose you have a running container and want to stop it:
@@ -186,3 +188,5 @@ while true; do
     esac
 done
 ```
+
+[dra]: https://docs.docker.com/engine/admin/start-containers-automatically/#use-a-restart-policy
