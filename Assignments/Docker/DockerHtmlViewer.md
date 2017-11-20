@@ -51,7 +51,7 @@ You should probably also write a little script called **build** containing the c
     #!/bin/bash
 
     docker build -t charliecalvert/html-viewer .
-    docker run --name html-viewer-container -d -p 80:80 charliecalvert/html-viewer
+    docker run --name html-viewer-container --restart unless-stopped -d -p 80:80 charliecalvert/html-viewer    
 
 And to **stop** all and delete what we created:
 
