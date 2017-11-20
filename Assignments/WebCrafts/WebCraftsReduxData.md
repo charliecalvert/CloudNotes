@@ -44,7 +44,14 @@ router.get('/getConfig', function(req, res, next) { 'use strict';
 });
 ```
 
-## The client
+## Client Actions
+
+- ALL
+- BOOTSWATCH
+- SITE_DIRS
+- DESTINATION_DIRS
+
+## The Client Code {#the-client}
 
 Install Material UI
 
@@ -75,15 +82,19 @@ let App = ({put, the, dispatched, functions, here}) => {
         <p className="App-intro">
           App Reducer
         </p>
-        // YOUR JSX HERE
+        // YOUR JSX HERE WITH RaisedButton HERE.
       </div>
     );
 
 };
 
-const mapStateToProps = (state) => {};
+const mapStateToProps = (state) => {
+  // YOUR CODE HERE
+};
 
-const mapDispatchToProps = (dispatch) => {};
+const mapDispatchToProps = (dispatch) => {
+  // YOUR CODE HERE
+};
 
 App = connect(
     mapStateToProps,
@@ -91,6 +102,8 @@ App = connect(
 )(App);
 
 ```
+
+When filling the dispatched functions, review the actions outlined above.
 
 ## Redux
 
