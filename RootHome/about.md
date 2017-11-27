@@ -16,4 +16,8 @@ I enjoy hiking, snow-shoeing, swimming, reading and watching movies. I also like
 
 All the material on this site, and on elvenware.com, ccalvert.net and ccalvert.com is:
 
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/vm5p5NeO11A?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TQz257s_ghQ" frameborder="0" allowfullscreen></iframe>
+
 Copyright &copy; 2017 by Charles Calvert
