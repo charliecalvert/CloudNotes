@@ -6,12 +6,7 @@ The goal is to expand the **FirebaseExpress** project so that it works with **Re
 
 Place your work in a folder called **Week10-FireBaseReact** in your main repository. Work in the **Week10** branch. User **CreateExpressProject** to bootstrap your project.
 
-![sadf](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-react.png)
-![asdf](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-express-signin.png)
-![Users](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebaser-react-user.png)
-![User](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-react-user.png)
-
-## The Gift Outright
+## Login
 
 Here is the **elven-fire-login.js** file converted to React. The file is now called **FireBaseLogin**:
 
@@ -155,6 +150,10 @@ export default ElvenLogin;
 
 ```
 
+Here is the login page:
+
+![asdf](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-express-signin.png)
+
 ## Use Firebase Login
 
 You could use the **ElvenLogin** Firebase code as shown below. Note that I give you the code to get your ElvenConfig file into the Firebase database:
@@ -229,6 +228,9 @@ App = connect(mapStateToProps)(App);
 
 export default App;
 ```
+
+This picture shows what the ElvenConfig.json file looks like after it has been loaded into the Firebase databases:
+![sadf](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-react.png)
 
 ## The Reducer
 
@@ -340,6 +342,40 @@ render() {
 // CODE OMITTED HERE
 ```     
 
+## The Show Users Page
+
+Even if you have only one user at this point, you should create a page that will display that user
+
+![Users](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebaser-react-user.png)
+
+Each user should be represented by a button, shown here in blue. In this case, the buttons are labeled **ALLENBC** and **CALVERT**. If a button is selected, then a new component that displays information about the user should be be instantiated.
+
+Show users contains these JSX (HTML) components:
+
+- H1
+- P
+- One or more Raised buttons.
+
+It gets its data (the list of users) from a call to the Firebase database. Look at the **elven-fire-data.js** file for examples of these types of calls that use **firebase.database.ref(...)**.
+
+When the user's button is selected, a 'SWITCH_COMPONENT' Redux action is dispatched:
+
+```javascript
+this.props.dispatch({type: 'SWITCH_COMPONENT' ...})
+```
+
+## The Show User Page
+
+If the user of the program selects one of the users in the Show Users page, then you should display that user:
+
+![User](https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-react-user.png)
+
+The **ShowUser** page has the following tags:
+
+- H1
+- Two P tags
+
+It also gets its data from the Firebase database. The selected user is discovered by examing the Redux props.
 
 ## Turn it in
 
