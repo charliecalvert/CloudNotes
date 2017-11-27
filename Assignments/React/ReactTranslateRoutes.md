@@ -9,3 +9,11 @@ The goal will be to translate the code to use React, with minor changes.
 ## React Guidelines
 
 You will create four React components.
+
+```html
+<h2>Simple Get Nine</h2>
+
+    <p id="getNineResult">Get Nine Result will be placed here.</p>
+
+<a id="getNine" class="button elf">Get Nine</a>
+```

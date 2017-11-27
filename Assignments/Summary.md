@@ -1,4 +1,5 @@
 * [ApacheHtml.html](ApacheHtml.html)
+* [ExpressPagesAndMixins.html](ExpressPagesAndMixins.html)
 * [FirebaseLogin.html](FirebaseLogin.html)
 * [FirebaseStarter.html](FirebaseStarter.html)
 * [MarkdownBasics.html](MarkdownBasics.html)

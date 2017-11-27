@@ -10,8 +10,8 @@ References:
 
 ## Steps
 
- - Start with [JadeMixinSimple](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JadeMixinSimple) from JsObjects.
-   - Or run CreateAllExpress...
+ - Start with **CreateExpressProject**
+    - See also:  [JadeMixinSimple](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JadeMixinSimple) from 
  - Add a new page called **about**
  - Create bootstrap menus
  - Use Jade Mixins

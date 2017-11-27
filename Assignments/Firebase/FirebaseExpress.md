@@ -119,6 +119,25 @@ Push your repository. Give me:
 
 Also provide a link to your application running on Firebase.
 
+## Users
+
+Here is an example of the file that contains data that can be loaded from the **public** directory:
+
+```json
+[{
+	"first": "George",
+	"last": "Washington"
+}, {
+	"first": "John",
+	"last": "Adams"
+}, {
+	"first": "Thomas",
+	"last": "Jefferson"
+}]
+```
+
+Call the file **users.json**.
+
 ## Links
 
 - [Firebase Admin][fa]
