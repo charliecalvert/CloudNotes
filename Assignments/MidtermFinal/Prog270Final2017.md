@@ -89,7 +89,12 @@ The above shows the final hierarchy of scripts. Each directory has as **build** 
     build
     ... and so on...
 
-# Turn it in
+## Turn it in
+
+Provide links to your:
+
+- Four projects running on EC2
+- Your Firebase Login project running on the Firebase Servers
 
 Make sure your repository contains your:
 
@@ -100,4 +105,10 @@ Make sure your repository contains your:
 - **Week10-ExpressBasics** directory
 - Firebase Login code.
 
-If you have any doubt as to whether or not I will be able to find your file, please spell it out very clearly. It's late in the quarter, and if I can't find your file right away I might just assume they are missing.
+If you have any doubt as to whether or not I will be able to find your files, please spell out their location very clearly. It's late in the quarter, and if I can't find your file right away I might just assume they were not created or not assembled for the final.
+
+## Finding Assignments
+
+A poorly maintained list of assignments is here:
+
+- <http://www.ccalvert.net/>
