@@ -119,12 +119,21 @@ See also:
 - [.bashrc and ssh-agent][ec2-provision]
 - [SSH and Configuring Linux][ssh-configure-linux]
 
-[lamp]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-lamp
-[jsobjects]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#jsobjects
-[configure]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#core-setup
-[aws-expert]:http://www.ccalvert.net/books/CloudNotes/Assignments/AwsEc2Expert.html#step-two-ssh-into-your-instance
-[ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
-[ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh
+## Step 04-b: Security Groups
+
+At some point, you may or may not need to check the currently open ports. After creating and initializing your instance:
+
+- In the EC2 **Instances** page select your EC2 **instance**.
+- Find your **Security Group**
+- View the **inbound rules** and make sure **30025** and/or other ports are listed
+
+If you need to open a port:
+
+- Get the name of your Security Group as described above.
+- Turn to the Security Groups section in the EC2 Dashboard
+- Select your Security Group
+- Turn to the Inbound page at the bottom of the Dashboard
+- Edit and add a **Custom TCP** rule for the appropriate port.
 
 ## Step Five
 
@@ -355,3 +364,10 @@ On Windows, you can connect to your EC2 instance with Putty:
 34  sudo apt-get install tasksel
 35  sudo tasksel install lamp-server
 ```
+
+[lamp]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-lamp
+[jsobjects]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#jsobjects
+[configure]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#core-setup
+[aws-expert]:http://www.ccalvert.net/books/CloudNotes/Assignments/AwsEc2Expert.html#step-two-ssh-into-your-instance
+[ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
+[ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh

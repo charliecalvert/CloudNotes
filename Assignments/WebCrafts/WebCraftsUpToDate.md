@@ -100,5 +100,12 @@ router.get('/config', function(request, response) {
 
 ```
 
+## Atom and merging
+
+Atom makes merging easier:
+
+![Atom makes merging easy][am]
+
+[am]: https://s3.amazonaws.com/bucket01.elvenware.com/images/up-to-date-merge-atom.png
 [csf]:https://gist.github.com/CristinaSolana/1885435
 [gmh]: https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/

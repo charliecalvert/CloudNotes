@@ -37,6 +37,10 @@ lsb_release -a
 
 Probably either command would do the job, but I run them both for completeness.
 
+You probably don't need any more details, but further information on detecting the init system is available here:
+
+- [https://unix.stackexchange.com/a/164092/91728][is]
+
 ## Symbolic Link
 
 You are also going to need to create a symbolic link to your program in the **~/bin** directory. Something like this. First, be sure you have a bin directory:
@@ -300,3 +304,4 @@ Or, on systemd:
 
 [elfUpstart]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart
 [express-send]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/ExpressSend
+[is]:https://unix.stackexchange.com/a/164092/91728

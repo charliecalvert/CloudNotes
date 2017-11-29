@@ -1,5 +1,7 @@
 ## Overview
 
+THIS DOCUMENT IS STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET STARTED.
+
 The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see the following running simultaneously on EC2:
 
 - Your Apache website running on Port 80
@@ -89,6 +91,12 @@ The above shows the final hierarchy of scripts. Each directory has as **build** 
     build
     ... and so on...
 
+## EC2 Ports
+
+View your EC2 instances **inbound rules** and make sure ports such as 30025 and 30026 are listed as open:
+
+- [Details are here][ecsg]
+
 ## Turn it in
 
 Provide links to your:
@@ -107,8 +115,28 @@ Make sure your repository contains your:
 
 If you have any doubt as to whether or not I will be able to find your files, please spell out their location very clearly. It's late in the quarter, and if I can't find your file right away I might just assume they were not created or not assembled for the final.
 
+## Attitude
+
+Complete as much of the exam as you can. It is better to get it in, and get it in more or less on time, than to spin trying to complete something you don't understand.
+
+I'm mostly interested in seeing that you:
+
+- Show clear evidence that you learned something
+- Did the homework more or less on time
+- Came to class
+
+Students start in different places. I'm looking for evidence that a student worked hard and learned something new rather than being overly concerned with whether they can complete each assignment perfectly.
+
+When I was growing up, A's were not fetishized. People could and very frequently did get into Ivy League colleges with a B average. Today, in the technical world, what matters is the interview, not your grades. As a result, I try to keep things simple and give students the grade they deserve.
+
 ## Finding Assignments
 
 A poorly maintained list of assignments is here:
 
 - <http://www.ccalvert.net/>
+
+## Close Down EC2 Instances
+
+You can keep, delete, mangle, change in whatever way you want your EC2 instances after December 11, 2017. See the Canvas announcement on this subject for more information.
+
+[ecsg]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html#step-04-b-security-groups
