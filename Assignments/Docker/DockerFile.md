@@ -132,6 +132,9 @@ And run it in the background:
 
     docker run -d -p 80:80 charliecalvert/apache
 
+The above command maps the Docker container's Port 80 to the hosts Port 80. The following command, which is given only as an fyi, maps the Docker containers Port 80 to the hosts port 10025:
+
+    docker run --name charlie -d -p 10025:80 charliecalvert/apache
 
 ## Get Bash Shell in Background Docker Task
 
@@ -190,7 +193,15 @@ docker push charliecalvert/make-html2, though of course you would want to use yo
 
 ## Turn it in
 
-Point me to your image on the Docker Hub, and give me at least one screenshot of you processing a docker file. Put your copies of the three Dockerfiles in a folder of your repository. Just copy your **Docker** folder recursively (cp -r) into your repository. So I will be looking for a folder called Docker in your repository. But go ahead and give me:
+Point me to your image on the Docker Hub. It should look something like this:
+
+    https://hub.docker.com/r/lastname/make-html/
+
+Give me the command to get your image:
+
+    docker pull lastname/make-html
+
+Give me at least one screenshot of you processing a docker file. Put your copies of the three Dockerfiles in a folder of your repository. Just copy your **Docker** folder recursively (cp -r) into your repository. So I will be looking for a folder called Docker in your repository. But go ahead and give me:
 
 - repo url (This is your **isit320-lastname-2017** repo.)
 - Directory name
