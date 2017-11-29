@@ -115,6 +115,12 @@ Make sure your repository contains your:
 
 If you have any doubt as to whether or not I will be able to find your files, please spell out their location very clearly. It's late in the quarter, and if I can't find your file right away I might just assume they were not created or not assembled for the final.
 
+## Random Tip
+
+Here is how to change all instances of **bcuser** to **ubuntu** inside the **ElvenConfig.json** file:
+
+    sed -i "s/bcuser/ubuntu/g" ElvenConfig.json
+
 ## Attitude
 
 Complete as much of the exam as you can. It is better to get it in, and get it in more or less on time, than to spin trying to complete something you don't understand.

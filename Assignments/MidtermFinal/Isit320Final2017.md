@@ -30,6 +30,12 @@ The goal is to allow me to insert your lastname section in my ElvenConfig file a
 
 Make sure the most recent Config file is on EC2.
 
+When I run **Week10-FirebaseReact**, turn to the **Show Users** page and click a button, I expect them to be configured to use **/home/ubuntu**.
+
+Here is how to change all instances of **bcuser** to **ubuntu** inside the **ElvenConfig.json** file:
+
+    sed -i "s/bcuser/ubuntu/g" ElvenConfig.json
+
 ## Merge Code you Forked1
 
 Be sure to merge in the latest changes from the repositories that you forked. I made changes as recently as November 29, 2017, but may do more.

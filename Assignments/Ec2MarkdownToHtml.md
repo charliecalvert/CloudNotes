@@ -338,4 +338,10 @@ When working, perhaps you want to do something like this:
 
 The one catch is that before the first step you might need to set things up so that **MakeHtml** copies sends files **~/Documents/AllTest** to **/var/www/html** and not to **~/Source/firebase-data/public**. This involves either editing **config/ElvenConfig.json** or copying in a pre-configured one as Triet suggests. But once that step is done, then you can follow the pattern shown above.
 
+## Random Tip
+
+Here is how to change all instances of **bcuser** to **ubuntu** inside the **ElvenConfig.json** file:
+
+    sed -i "s/bcuser/ubuntu/g" ElvenConfig.json
+
 [lmd]: http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html
