@@ -10,6 +10,11 @@ The goal of the final is to demonstrate your ability to deploy web sites to the 
 - Your Docker website using the HTML stored in Apache directory and running on port 30027
 - Your Firebase Login Application running on Firebase
 
+One container should be built as explained here:
+
+- <http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#copy-files>
+- <http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#link-directory>
+
 ## The Website
 
 Your site should look more or less the same as it did on the Midterm, only this is a chance to polish and refine your code. The main page of your site should:
@@ -86,7 +91,7 @@ From the DockerCode folder, we should be able to give a single command to either
 The above shows the final hierarchy of scripts. Each directory has as **build** and **delete** script, where build creates and starts the image. The **delete** removes the container and the image. The **buildAll** and **deleteAll** call each of the scripts in turn. Maybe something like:
 
     cd UbuntuBase
-    build
+    ./build
     cd ../Apache
     build
     ... and so on...

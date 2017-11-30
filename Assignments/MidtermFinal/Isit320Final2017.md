@@ -8,6 +8,9 @@ The goal of the final is to demonstrate your ability to deploy web sites to the 
 - The specified tests working
 - Code running on EC2
 - Code running on the Firebase site
+- Docker Container running on Port 30028
+
+Please get the FirebaseReact assignment melded into your WebCrafts assignment.
 
 ## The Config File
 

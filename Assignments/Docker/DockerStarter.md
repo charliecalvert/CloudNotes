@@ -29,7 +29,7 @@ Run the script.
 
 Create an account and sign into the Docker Hub at [https://hub.docker.com/](https://hub.docker.com/).
 
-From your local machine where you created your Docker image, login:
+From your local machine where you created your install Docker, login:
 
 ```nohighlighting
 $ docker login -u charliecalvert
@@ -47,13 +47,9 @@ docker images
 docker run -it ubuntu
 ```
 
-## Docker Push
-
-To push an image created by user **charliecalvert** called **makehtml04** to the cloud, do this:
-
-    docker push charliecalvert/makehtml04
-
 ## Install Software
+
+Run these commands from inside a Docker container:
 
     apt-get update
     apt-get upgrade
@@ -109,6 +105,12 @@ docker run -it charliecalvert/makehtml00
 And then later, if you make more changes:
 
     docker commit -m "Added user and JsObjects" -a "charlie" 21a7589a83ee charliecalvert/makehtml01
+
+## Docker Push
+
+To push an image created by user **charliecalvert** called **makehtml04** to the cloud, do this:
+
+    docker push charliecalvert/makehtml04
 
 ## Learn More about Apache on Docker
 
@@ -168,7 +170,7 @@ To delete all containers
 To remove all images:
 
     docker rmi $(docker images -q)
-    
+
 ## Start a container
 
 If you have a container (not an image) called **epic_jang**, start it, and then hop into it:

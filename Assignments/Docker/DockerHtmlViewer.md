@@ -29,7 +29,7 @@ For instance:
 
 You will need to put at least one file in that directory. In particular, you will need a **Dockerfile**.
 
-The one catch here is that the **html** directory must be in the **context** directory. We can't copy the files directly from a location like **/var/www/html**. First copy them from **/var/www/html** to the directory that contains your **Dockerfile**. This is the context directory. For instance:
+The one catch here is that the **html** directory must be in the **context** (HtmlViewer) directory. We can't copy the files directly from a location like **/var/www/html**. First copy them from **/var/www/html** to the directory that contains your **Dockerfile**. This is the context directory. For instance execute this command from the EC2 instance (not from inside a container):
 
     cp -rv /var/www/html ~/DockerCode/HtmlViewer/.
 
