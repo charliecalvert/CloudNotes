@@ -2,6 +2,8 @@
 
 We start working with our **ElvenConfig.json** file via Redux.
 
+![Redux Data View](https://s3.amazonaws.com/bucket01.elvenware.com/images/redux-data-view.png)
+
 ## Client and Server
 
 You know the drill:
@@ -14,14 +16,6 @@ You know the drill:
 ## Concurrently
 
 Do the [concurrently][cc] assignment.
-
-## Promises
-
-<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/nWV4Ed2gckk?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
-
-## Chained Promises
-
-<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/PU4gq6yTqyA?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
 ## Load the config File
 
@@ -42,6 +36,25 @@ router.get('/getConfig', function(req, res, next) { 'use strict';
             throw err
         })
 });
+```
+
+To call this route, you would do something like this in a file called **src/get-config.js**:
+
+```javascript
+export default () => {
+    return new Promise(function (resolve, reject) {
+        fetch('/get-config')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (configuration) {
+                resolve(configuration.configuration.users)
+            })
+            .catch(function (ex) {
+                reject(ex);
+            });
+    });
+};
 ```
 
 ## Client Actions
@@ -93,7 +106,15 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  // YOUR CODE HERE
+    siteDirsClick: () => {
+        dispatch({type: 'SITE_DIRS'})
+    },
+    destinationDirsClick: () => {
+        // YOU DO IT
+    },
+    bootswatchClick: () => {
+        // YOU DO IT
+    }
 };
 
 App = connect(
@@ -101,6 +122,7 @@ App = connect(
     mapDispatchToProps
 )(App);
 
+export default App;
 ```
 
 When filling the dispatched functions, review the actions outlined above.
@@ -144,18 +166,119 @@ The actions we respond to in the reducer:
 - DESTINATION_DIRS
 
 ```javascript
-import getConfig from './get-config';
-const state = getConfig();
+let stateInit = {
+    baseDir: 'unknown',
+    bootswatch:'unknown',
+    siteDirs: ['unknown'],
+    destinationDirs: ['unknown']
+};
 
-
-const spokesman = (state = state, action) => {
+const configReducer = (state = stateInit, action) => {
     switch (action.type) {
+        case 'ALL':
+            const user = action.users.calvert;
+            return {
+                ...user,
+                baseDir: user['base-dir'],
+                bootswatch: user.bootswatch,
+                siteDirs: // YOU DO IT,
+                destinationDirs: // YOU DO IT
+            };
+        case 'BOOTSWATCH':
+            return {
+                ...state,
+                bootswatch: 'foo'
+            };
+        case 'SITE_DIRS':
+            return {
+                // YOU DO IT
+            };
+        case 'DESTINATION_DIRS':
+            return {
+                // YOU DO IT
+            };
         default:
             return state;
     }
 };
 
-export default spokesman;
+export default configReducer;
+```
+
+## Dialogs
+
+Invoke the dialog like this in your JSX:
+
+```XML
+<ScrollableDialog dirs={siteDirs} title="Site Dirs"/>
+```
+
+The code passes two parameters to **ScrollableDialog** which turn up in the props of the dialog itself:
+
+```javascript
+constructor(props) {
+    super(props);  << THE PARAMETERS ARE IN HERE
+    ...
+}
+```
+
+And here is the dialog in its entirety:
+
+```javascript
+import React from 'react';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import {List, ListItem} from 'material-ui/List';
+import FileFolder from 'material-ui/svg-icons/file/folder';
+
+export default class DialogExampleScrollable extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+        };
+
+    }
+
+    handleOpen = () => {
+        this.setState({open: true});
+    };
+
+    handleClose = () => {
+        this.setState({open: false});
+    };
+
+    render() {
+        const actions = [
+            <FlatButton
+                label="OK"
+                primary={true}
+                onClick={this.handleClose}
+            />
+        ];
+
+        return (
+            <div>
+                <RaisedButton label={this.props.title} onClick={this.handleOpen} />
+                <Dialog
+                    title={this.props.title}
+                    actions={actions}
+                    modal={false}
+                    open={this.state.open}
+                    onRequestClose={this.handleClose}
+                    autoScrollBodyContent={true}
+                >
+                    <List>
+                    {this.props.dirs.map((dir) => (
+                        <ListItem key={dir} primaryText={dir} leftIcon={<FileFolder />} />
+                    ))}
+                    </List>
+                </Dialog>
+            </div>
+        );
+    }
+}
 ```
 
 ## Error on Prepare styles

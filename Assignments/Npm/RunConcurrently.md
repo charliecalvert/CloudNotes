@@ -2,7 +2,20 @@
 
 The goal of this assignment is to learn to run two programs concurrently. One program is an Express application called **server**. The second is a **create-react-app** program called **client**.
 
-# NPM Package
+## Getting Started
+
+In most cases, you will already have a directory that contains a **server** and **client** project. In case you do not, here is how to set one up starting from the root of your repository:
+
+    mkdir Week10-Concurrently
+    cd Week10-Concurrently/
+    CreateExpressProject server
+    create-react-app client
+
+Set the port in **server/bin/www** to 30026.
+
+In the **Week10-Concurrently** directory set up **package.json** and the starter script as described in the next few sections of the project.
+
+##  NPM Package
 
 Here is an example **package.json** that shows how to launch our existing **client** and **server** programs with [concurrently][cc].
 
@@ -53,14 +66,10 @@ cp.spawn('npm', args, opts);
 
 ## Use Concurrently
 
-For your next step, please choose one of the following:
-
-- Order out for pizza
-- Book a flight to Hawaii
-- Run **npm install && npm start**
+Now run **npm install && npm start**
 
 ## Turn it in
 
-I'd like to see this set up for any project that has both a **client** and **server** of the type described above. I'm just expecting to find it.
+I'd like to see this set up for any project that has both a **client** and **server** of the type described above. I can perhaps find the projects you have set up to support concurrently by searching for **start-click.js** or for  **package.json** files that contain the **concurrently** package.
 
 [cc]: https://www.npmjs.com/package/concurrently

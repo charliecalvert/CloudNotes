@@ -117,7 +117,7 @@ Push your repository. Give me:
 - Branch
 - Directory
 
-Also provide a link to your application running on Firebase.
+For extra credit, create a new branch called **FirebaseServer** and try to see if you can provide a link to your application running on Firebase. I haven't gotten this working yet.
 
 ## Users
 

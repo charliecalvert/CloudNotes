@@ -1,6 +1,6 @@
 ## Overview
 
-THIS IS A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET STARTED.
+THIS IS A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.
 
 The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see:
 
@@ -11,6 +11,33 @@ The goal of the final is to demonstrate your ability to deploy web sites to the 
 - Docker Container running on Port 30028
 
 Please get the FirebaseReact assignment melded into your WebCrafts assignment.
+
+Handy links to at least some assignments:
+
+- [http://www.ccalvert.net/](http://www.ccalvert.net/)
+
+## Routes
+
+Everyone must understand routes to do well in this class. Here is an assignment to show me that you are up to speed:
+
+- At the root of your repository, run1:
+  - **CreateExpressProject final-routes**
+  - **cd final-routes**
+- In **routes/index.js** implement three routes:
+  - One that returns { "result" : "route01"}
+  - One that returns { "result" : "route02"}
+  - One that returns { "result" : "route03"}
+- In **index.pug** define three buttons that have the labels:
+  - Route01, Route02, Route03
+- In **control.js** write code so that the button called
+  - **Route01** uses **fetch** to call **/route01**
+  - **Route02** uses **fetch** to call **/route02**
+  - **Route03** uses **fetch** to call **/route03**
+ - Each button should display the result in a **PRE** tag.
+
+By this time, fetch should just be built into the JavaScript implementation for all major browsers, so you probably don't need to run: **npm install whatwg-fetch**.
+
+You don't have to use React or any other specific tools other than **Express** routes and **fetch**. Just make it work!
 
 ## The Config File
 
@@ -39,7 +66,7 @@ Here is how to change all instances of **bcuser** to **ubuntu** inside the **Elv
 
     sed -i "s/bcuser/ubuntu/g" ElvenConfig.json
 
-## Merge Code you Forked1
+## Merge Code you Forked
 
 Be sure to merge in the latest changes from the repositories that you forked. I made changes as recently as November 29, 2017, but may do more.
 
@@ -49,11 +76,221 @@ The Atom editor makes merging conflicts easier:
 
 ![Atom makes merging easy][am]
 
+## Delete all old jQuery code
+
+For instance:
+
+Put a breakpoint here in make-html.js and make sure it never gets called:
+
+```javascript
+$.getJSON('/makers/config', function(configSummary) { ... })
+```
+
+Then just delete the entire file.
+
+## Get lates isit-code and isit-site-tools
+
+Run **npm outdated**
+
+If there are problems, to fix, run **npm update** or get in there and fix it by hand.
+
+```nohighlighting
+$ npm outdated
+Package                   Current  Wanted  Latest  Location
+babel-eslint                8.0.1   8.0.2   8.0.2  isit-web-crafts
+enzyme                      3.1.0   3.2.0   3.2.0  isit-web-crafts
+enzyme-adapter-react-16     1.0.2   1.1.0   1.1.0  isit-web-crafts
+eslint                     4.10.0  4.12.1  4.12.1  isit-web-crafts
+eslint-plugin-react         7.4.0   7.5.1   7.5.1  isit-web-crafts
+isit-code-lastname         1.0.0   1.0.1   1.0.1  isit-web-crafts
+isit-sitetools-lastname    1.0.1   1.0.3   1.0.3  isit-web-crafts
+mongoose                   4.12.4  4.13.5  4.13.5  isit-web-crafts
+react                      16.0.0  16.2.0  16.2.0  isit-web-crafts
+react-dom                  16.0.0  16.2.0  16.2.0  isit-web-crafts
+react-test-renderer        16.0.0  16.2.0  16.2.0  isit-web-crafts
+webpack                     3.8.1   3.9.1   3.9.1  isit-web-crafts
+webpack-dev-server          2.9.3   2.9.5   2.9.5  isit-web-crafts
+charlie@rohan-mintc ~/Git/WebCrafts-Isit320/jespinoza/isit-webcrafts-jespinoza (master)
+$ npm update
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ isit-sitetools-lastname@1.0.3
++ isit-code-lastname@1.0.1
++ react-dom@16.2.0
++ react@16.2.0
++ babel-eslint@8.0.2
++ enzyme@3.2.0
++ eslint-plugin-react@7.5.1
++ enzyme-adapter-react-16@1.1.0
++ eslint@4.12.1
++ mongoose@4.13.5
++ react-test-renderer@16.2.0
++ webpack-dev-server@2.9.5
++ webpack@3.9.1
+added 138 packages, removed 17 packages, updated 49 packages and moved 5 packages in 11.72s
+````
+
 ## Tests
 
-The following programs should the specified number of tests passing.
+In **isit-web-crafts**, set your **__mocks__/mock-data.js** file to the following:
+
+```javascript
+const getData = (url) => {
+    switch (url) {
+        case '/api/foo':
+            return {
+                foo: 'url-mock-bar',
+                file: 'url-mock-api.js'
+            };
+
+        case '/makers/config':
+            const configSummary = {
+                'base-dir': '/home/bcuser/',
+                'bootswatch': 'cosmo',
+                'most-recent-date': '2017-08-14',
+                'highlight': true,
+                'siteDirs': [
+                    'Documents/AllTest',
+                    'Git/CloudNotes/Isit320'
+                ],
+                'destinationDirs': [
+                    '/var/www/html/AllSite/',
+                    '/home/charlie/Git/CloudNotes/Isit320/'
+                ],
+                'destination-dirs-extra': [{
+                    'base': '/var/www/html/',
+                    'extra': ''
+                }, {
+                    'base': '/var/www/html/Assignments/',
+                    'extra': 'Assignments'
+                }]
+            };
+            return configSummary;
+
+        case '/makers/walk?siteDirsIndex=1':
+            const walkResult = {
+                result: 'success',
+                baseDir: undefined,
+                mostRecentDate: undefined,
+                destinationDir: '/home/charlie/Git/CloudNotes/tips/',
+                directories: ['/home/charlie/Git/CloudNotes/Tips'],
+                masterListOfNames: ['* [Summary.html](Summary.html)'],
+                htmlFilesWritten:
+                    ['/home/charlie/Git/CloudNotes/tips/Summary.html',
+                        '/home/charlie/Git/CloudNotes/tips/master-list.html']
+            };
+
+            return walkResult;
+
+        default:
+            return {};
+    }
+};
+
+export default getData;
+```
+
+Have the render method for **MakeHtmlDropDowns** contain, among other things, button with the ID **generate** and a PRE tag with the ID **configSummary**:
+
+```HTML
+render() {
+      return (
+          <MuiThemeProvider>
+              <div>
+                  <h1>Render Markdown as HTML</h1>
+                  // OTHER CONTROLS OMITTED HERE
+                  <RaisedButton
+                      id="generate"
+                      style={buttonStyle}
+                      primary={true}
+                      onClick={this.generateHtml}
+                  >
+                      {this.state.walk}
+                  </RaisedButton>
+
+                  <pre id="configSummary">{this.state.configSummary}</pre>
+              </div>
+          </MuiThemeProvider>
+      );
+  }
+```
+
+Make sure that **make-html-drop-downs.js** has at least the following in it and that all tests pass:
+
+```javascript
+import React from 'react';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+import MenuItem from 'material-ui/MenuItem';
+import MakeHtmlDropDowns from '../MakeHtmlDropDowns';
+import ElfDebugEnzyme from '../ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(true, 'make-html-drop-downs');
+
+describe('React Home Tests', () => {
+    it('renders default value of H1 tag', () => {
+        const wrapper = shallow(<MakeHtmlDropDowns />);
+        const h1tag = <h1>Render Markdown as HTML</h1>;
+        elfDebugEnzyme.getLast(wrapper, 'h1', true);
+        expect(wrapper.contains(h1tag)).toEqual(true);
+    });
+
+    it('gets drop down value', () => {
+        const wrapper = shallow(<MakeHtmlDropDowns />);
+        //elfDebugEnzyme.getAll(wrapper, true);
+        elfDebugEnzyme.getLast(wrapper, 'MenuItem', true);
+        const code = <MenuItem primaryText='/home/charlie/Git/CloudNotes/Isit320/'/>;
+        expect(wrapper.containsMatchingElement(code)).toBe(true);
+    });
+
+    it('renders button click message for last pre tag', () => {
+        const wrapper = shallow(<MakeHtmlDropDowns />);
+        wrapper.find('#generate').simulate('click');
+        elfDebugEnzyme.getLast(wrapper, 'pre', true);
+        const paragraphData = wrapper.find('pre').last().debug();
+        expect(paragraphData).toContain('/home/charlie/Git/CloudNotes/tips');
+    });
+
+});
+```
+
+In particular, the PRE tag, though empty when the test starts, should be modified during the test, and should contain the following:
+
+```pre
+<pre id="configSummary">
+      [
+          &quot;/home/charlie/Git/CloudNotes/tips/Summary.html&quot;,
+          &quot;/home/charlie/Git/CloudNotes/tips/master-list.html&quot;
+      ]
+</pre>
+```
+
+Add a fourth test that proves that the page has a an element that matches this tag:
+
+```pre
+<pre id="configSummary" />
+```
+
+The body of the test should contains four lines, the last two of which would look like this:
+
+```javascript
+elfDebugEnzyme.getLast(wrapper, 'pre', true);
+expect(wrapper.containsMatchingElement(code)).toBe(true);
+```
+
+The test should not include a button click. In other words, we are proving the tag exists before the button is clicked.
+
+Also, the following programs should the specified number of tests passing.
 
 ## Firebase
+
+Your Firebase app should:
+
+- Run on the Firebase cloud. We also have Firebase running on EC2, but this should have firebaseapp.com in the URL.
+- I should be able to query for, and add new, Presidents.
+  - The presidents can show up only in the console.
+  - For extra credit, display them on the main page in a UL element.
 
 Part of the security mechanism for Firebase is to make sure that the app can only be run from authorized locations. When you move to EC2, you might get an error like this one: **uncaught exception: Error: This domain (34.333.134.3) is not authorized to run this operation. Add it to the OAuth redirect domains list in the Firebase console -> Auth section -> Sign in method tab.**
 
@@ -70,6 +307,25 @@ You can find it on the AWS EC2 **instances** page.
 View your EC2 instances **inbound rules** and make sure 30025, 30026 and 30027 are listed as open:
 
 - [Details are here][ecsg]
+
+## All projects Should Build on EC2
+
+This is not the same thing as saying that they work. It just means I can go into any directory in your repository and type **npm install** and it will complete without errors. I should also be able to type **npm start** and go to the browser and see that the application loads without error. It need not run correctly, but it should not throw errors when it loads. No red text!
+
+## The .gitignore File
+
+Must contain the following:
+
+- .idea
+- node_modules
+- bower_components
+- bundle.js
+- bundle.js.map
+
+
+And should contain:
+
+- .c9
 
 ## Turn it in
 
@@ -94,6 +350,7 @@ Here is a preliminary list of what I'm looking for:
     - ...
 - Firebase
   - Load code that allows me to log in
+  - The URL of your application running on the Firebase servers. Not a local copy, a copy running in the Firebase cloud. (We also have Firebase code running on EC2, but that is a different part of the assignment.)
 - Tests
   - Read the tests section above and make sure you meet the requirements
 
@@ -104,6 +361,16 @@ For all the code I need to see:
 - branch
 
 I'm expecting to find your _final_ code in **master**, but it would not be a serious mistake to have it elsewhere so long as you say where. If you don't say where, I will look only in master. But I want to see that you have been working in various branches with checkin dates distributed throughout the quarter.
+
+The command **npm outdated** should show that you have the most recent versions of your **isit-code** and **isit-site-tools** in your **package.json**. This is not just a minor point. Make sure you have this right! Your code probably won't work if it is not right.
+
+Projects should build on EC2. See the list of projects that need to build on EC2 in the appropriate section above.
+
+## Extra Credit
+
+For Presidents in the FirebaseExpress and FirebaseReact apps, display the Presidents on the appropriate page.
+
+In the testing section of this exam, you saw several examples of how to use the data from MockData file. Add three more tests that involve the MakeImages rather than the MakeHtml page. These tests could be similar to those in **make-html-drop-downs**, but they should involve the images page. You will need to add mock data to the **__mocks__/MockData.js** file.
 
 ## Long Link to EC2
 
@@ -184,6 +451,10 @@ PS1+="\[\$(git_color)\]"
 PS1+="\$(git_branch)"                       # prints current branch
 PS1+="\[$COLOR_BLUE\]\n\$\[$COLOR_RESET\] "   # '#' for root, else '$'
 ```
+
+## I get $ is not defined
+
+If you get a **$ is not defined** it probably means you have not run **bower install**.
 
 ## Close Down EC2 Instances
 

@@ -13,6 +13,7 @@ Fall 2017
 - [NPM Publishing][np]
 - [NPM Run Concurrently][nc]
 - [NPM Use Isit Code][nu]
+- [Redux Data][rd]
 - [RestTests][rt]
 - [RestBasics][rb]
 - [ReactEsLint][re]
@@ -36,6 +37,11 @@ Fall 2017
 - [EC2 Markdown to HTML][ecm]
 - [Final][final-prog]
 
+## Other
+
+- [JavaScript on Elvenware][js]
+- [Promises Videos][jp]
+
 <!----------->
 <!-- Links -->
 <!----------->
@@ -56,11 +62,15 @@ Fall 2017
 [fe]: http://www.ccalvert.net/books/CloudNotes/Assignments/Firebase/FirebaseExpress.html
 [fr]: http://www.ccalvert.net/books/CloudNotes/Assignments/Firebase/FirebaseExpressReact.html
 
+[js]: http://www.ccalvert.net/development/web/JavaScript/
+[jp]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReact.html#promises
+
 [np]: http://localhost/home/books/CloudNotes/Assignments/NpmPublishing.html
 [nc]: http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/RunConcurrently.html
 [nu]: http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitCode.html
 
 [rb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBasics.html
+[rd]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReduxData.html
 [re]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
 [rr]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactReduxBasics.html
 [rt]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html

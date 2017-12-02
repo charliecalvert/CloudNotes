@@ -1,6 +1,6 @@
 ## Overview
 
-THIS DOCUMENT IS STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET STARTED.
+THIS DOCUMENT IS STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.
 
 The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see the following running simultaneously on EC2:
 
@@ -14,6 +14,21 @@ One container should be built as explained here:
 
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#copy-files>
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#link-directory>
+
+## Docker Websites
+
+Above I mention the two different ways we should set up our Docker containers:
+
+- Your Docker website with your site stored inside it running on Port 30026
+- Your Docker website using the HTML stored in Apache directory and running on port 30027
+
+In the first bullet point I want the HTML you generated with **MakeHtml** to be copied into the Docker container. The actual HTML files live in the container. This is discussed here:
+
+- [Copy Files][dcf]
+
+In the second bullet point, I want the HTML files to live on the host and be linked into the container. This technique is discussed here:
+
+- [Link Directory][dld]
 
 ## The Website
 
@@ -151,3 +166,5 @@ A poorly maintained list of assignments is here:
 You can keep, delete, mangle, change in whatever way you want your EC2 instances after December 11, 2017. See the Canvas announcement on this subject for more information.
 
 [ecsg]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html#step-04-b-security-groups
+[dcf]:http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#copy-files
+[dld]:http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#link-directory
