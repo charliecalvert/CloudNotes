@@ -7,6 +7,10 @@ Watch the video and read the [details](http://www.elvenware.com/charlie/developm
 
 [http://youtu.be/fZE_fLw7Qrg](http://youtu.be/fZE_fLw7Qrg)
 
+## Hint
+
+When using Secure Shell, load both a public and private key and make sure the private key does not have an extension.
+
 ## Turn it in
 
 Create the following screenshots:
@@ -17,4 +21,4 @@ Create the following screenshots:
  - Your configuration in Secure Shell
  - Your connection from Secure Shell to your EC2 instance.
 
-In general, your goal is to document, with screen shots, the work that you did creating and seting up your EC2 instance.
+In general, your goal is to document, with screen shots, the work that you did creating and setting up your EC2 instance.

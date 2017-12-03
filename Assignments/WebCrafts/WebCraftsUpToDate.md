@@ -106,6 +106,10 @@ Atom makes merging easier:
 
 ![Atom makes merging easy][am]
 
+## Turn it in
+
+I want to get your latest isit-code and **isit-site-tools** and see that all the tests pass and that certain key parts of the file have indeed been updated to match the latest code from repository you forked.
+
 [am]: https://s3.amazonaws.com/bucket01.elvenware.com/images/up-to-date-merge-atom.png
 [csf]:https://gist.github.com/CristinaSolana/1885435
 [gmh]: https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/
