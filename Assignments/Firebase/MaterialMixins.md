@@ -1,6 +1,6 @@
 ## Overview
 
-The goal is to learn more about material, more about mixins, and find a way to hide and display divs so as to make better use of available real estate.
+The goal is to learn more about Google [Material][md], more about mixins, and find a way to hide and display divs so as to make better use of available real estate.
 
 - [Material Components][mc]
 
@@ -114,9 +114,15 @@ mixin signInCard(title, subTitle, text)
                 p Firebase sign-in status:
                     span#elf-sign-in-status Unknown
 
-                <pre><code id="elf-user">null</code></pre>
-                <pre><code id="elf-details">null</code></pre>
-                <pre><code id="elf-oauthtoken">null</code></pre>
+                h1 User Details
+
+                pre
+                    code#elf-user unknown
+                pre
+                    code#elf-details unknown
+                pre
+                    code#elf-oauthtoken unknown
+                    
                 img#elfPhoto(src='favicon.png', alt='', width="10%", min-width="120px")
             |
             section.mdc-card__actions
@@ -207,3 +213,4 @@ I'm looking for something like this on EC2:
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/VJEGK15ASVw?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
 [mc]: https://material.io/components/web/catalog/
+[md]: https://material.io/

@@ -7,6 +7,11 @@ There are two different ways to get files from a host OS into a Docker container
 
 This assignment has enough in it to get you going. I'll try to clarify it over the next little bit.
 
+## Related Assignments
+
+- [Docker Starter][ds]
+- [Docker Files][df]
+
 ## Video Simple Docker
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/bYy19vDMRRs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
@@ -189,4 +194,8 @@ while true; do
 done
 ```
 
+<!--- Links --->
+
 [dra]: https://docs.docker.com/engine/admin/start-containers-automatically/#use-a-restart-policy
+[df]: http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerFile.html
+[ds]: http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerStarter.html

@@ -65,6 +65,27 @@ import {createStore} from 'redux';
 let store = createStore(spokesman);
 ```
 
+I write this code, which dispatches an action:
+
+```javascript
+store.dispatch({type:'ALL', users });
+```
+In your reducer, action.users is the thing you dispatched: **{type: ALL, users}**.
+
+The usual flow:
+
+-    Something is dispatched, as in the code shown above.
+-    The dispatched code hits the reducer, which converts it into Redux state in the Redux store.
+-    The dispatched message leaves the reducer and goes to all components that are connected to it. In particular, MapStateToProps gets called. Then you map the data from the Redux store to the properties you want to use in your component.
+-    Then each connected components render method is called because (or if) its props were changed.
+
+That's the end of the flow. Summary
+
+-    Event dispatched to reducer
+-    The reducer tracks the new state sent in the dispatched action
+-    The components who are registered (connected) are notified of the updated state, which they transform into the components prop.
+-    The component's render method is then called and you display the updated props.
+
 ## Example
 
 In the next few sections we will put together an example.

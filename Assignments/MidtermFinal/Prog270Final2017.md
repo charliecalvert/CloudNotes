@@ -1,8 +1,8 @@
 ## Overview
 
-THIS DOCUMENT IS STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.
+THIS DOCUMENT IS CLOSER TO FINAL BUT STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.
 
-The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see the following running simultaneously on EC2:
+The goal of the final is to allow you to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see the following running simultaneously on EC2:
 
 - Your Apache website running on Port 80
 - Your Express program running on Port 30025
@@ -10,10 +10,11 @@ The goal of the final is to demonstrate your ability to deploy web sites to the 
 - Your Docker website using the HTML stored in Apache directory and running on port 30027
 - Your Firebase Login Application running on Firebase
 
-One container should be built as explained here:
+All these links need to be live. To be safe, make sure they work even after the system is rebooted.
 
-- <http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#copy-files>
-- <http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#link-directory>
+## Video Summary
+
+- [Watch this important video][flv]
 
 ## Docker Websites
 
@@ -24,18 +25,18 @@ Above I mention the two different ways we should set up our Docker containers:
 
 In the first bullet point I want the HTML you generated with **MakeHtml** to be copied into the Docker container. The actual HTML files live in the container. This is discussed here:
 
-- [Copy Files][dcf]
+- [Copy Files into container][dcf]
 
 In the second bullet point, I want the HTML files to live on the host and be linked into the container. This technique is discussed here:
 
-- [Link Directory][dld]
+- [Map (or Link) Apache Directory to Container Directory][dld]
 
 ## The Website
 
 Your site should look more or less the same as it did on the Midterm, only this is a chance to polish and refine your code. The main page of your site should:
 
 - Feature your last name
-- If it is stored in /var/www/html/ then have the word Apache in it
+- If it is stored in **/var/www/html/** then have the word Apache in it
 - If it is stored in your Docker container, then it should have the word Docker in it.
 
 For instance, create an H1, H2 or H3 tag near the top of the Home Page that says something like:
@@ -119,10 +120,12 @@ View your EC2 instances **inbound rules** and make sure ports such as 30025 and 
 
 ## Turn it in
 
-Provide links to your:
+When you turn in the assignment, use the Text Page to provide live links to your:
 
 - Four projects running on EC2
 - Your Firebase Login project running on the Firebase Servers
+
+Also create a page on your EC2 Apache Server called **final-links.html** that contains links to all the projects you have running on EC2. See [the final-links video][flv] for details.
 
 Make sure your repository contains your:
 
@@ -165,6 +168,27 @@ A poorly maintained list of assignments is here:
 
 You can keep, delete, mangle, change in whatever way you want your EC2 instances after December 11, 2017. See the Canvas announcement on this subject for more information.
 
+## Final Links Page
+
+Just to be clear, here is part of the markdown for my Final Links page from the video. I show the link to my local Ubuntu server hosted on VirtualBox in the first **list-item**, but you should use a link to your Apache Server on your EC2 instance. Then fill in the other links with appropriate values.
+
+```markdown
+## Overview
+
+Here are the links to the pages in my final.
+
+## The Links
+
+- [Apache Page on Host](http://192.168.2.34/)
+- [Express Server](YOUR LINK)
+- [Docker Container with Pages Inside It](YOUR LINK)
+- [Docker Container with Pages Linked (mapped) from Host Apache Server](YOUR LINK)
+- [Docker Hub](YOUR LINK)
+- [Firebase Server](YOUR LINK)
+
+```
+
 [ecsg]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html#step-04-b-security-groups
 [dcf]:http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#copy-files
 [dld]:http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerHtmlViewer.html#link-directory
+[flv]:https://youtu.be/sXgvJze9WMw

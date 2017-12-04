@@ -11,7 +11,7 @@ References:
 ## Steps
 
  - Start with **CreateExpressProject**
-    - See also:  [JadeMixinSimple](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JadeMixinSimple) from 
+    - See also:  [JadeMixinSimple](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JadeMixinSimple) from
  - Add a new page called **about**
  - Create bootstrap menus
  - Use Jade Mixins
@@ -318,5 +318,5 @@ You can use use [gravatar](http://gravatar.com/) for the image on your home page
 
 ```bash
 echo -n 'charlie@elvenware.com'| md5sum
-b7b972e6d8e9d877abaee3f91b74b4a8  -
-bash
+b7b423c6d8d9d877ababb3f91b74b4a8  -
+```
