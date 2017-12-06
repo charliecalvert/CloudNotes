@@ -18,7 +18,7 @@ Watch this video to learn about **material-ui, Drawer, AppBar, Paper, and MenuIt
 
 ## Login
 
-Here is the **elven-fire-login.js** file converted to React. The file is now called **FireBaseLogin**:
+Here is the **elven-fire-login.js** file converted to React. The file is now called **ElvenLogin**:
 
 ```javascript
 import React, {Component} from 'react';
@@ -31,13 +31,13 @@ const buttonStyle = {
 
 const defaultState = {
     googleApiToken: 'Unknown',
-    elfUser: "Unknown",
+    elfUser: 'Unknown',
     signInStatus: 'Not Logged In',
     email: 'Unknown',
     emailVerified: false,
     isAnonymous: false,
     providerData: 'Unknown',
-    photoURL: "favicon.png",
+    photoURL: 'favicon.png',
     uid: 0
 };
 
@@ -69,27 +69,27 @@ class ElvenLogin extends Component {
 
     elfConfigure = () => {
         const config = {
-            apiKey: "AIzaSyDv-GtVcZGjqeZXHYh6aB1ewhRe4nyPYcE",
-            authDomain: "prog270-data-calvert.firebaseapp.com",
-            databaseURL: "https://prog270-data-calvert.firebaseio.com",
-            storageBucket: "prog270-data-calvert.appspot.com",
-            messagingSenderId: "250292177396"
+            apiKey: 'AIzaSyDv-GtVcZGjqeZXHYh6aB1ewhRe4nyPYcE',
+            authDomain: 'prog270-data-calvert.firebaseapp.com',
+            databaseURL: 'https://prog270-data-calvert.firebaseio.com',
+            storageBucket: 'prog270-data-calvert.appspot.com',
+            messagingSenderId: '250292177396'
         };
         firebase.initializeApp(config);
         this.elfSignIn();
     };
 
-    elfSignIn = (showLoginStatus) => {
+    elfSignIn = () => {
         const that = this;
         firebase.auth().getRedirectResult().then(function (result) {
             if (result.credential) {
-                that.setState({googleApiToken: result.credential.accessToken})
+                that.setState({googleApiToken: result.credential.accessToken});
             } else {
-                that.setState({googleApiToken: 'Unknown'})
+                that.setState({googleApiToken: 'Unknown'});
             }
             that.elfUser = result.user;
         }).catch(function (error) {
-            const fireBaseAuthCredential = error.credential;
+            // const fireBaseAuthCredential = error.credential;
             if (error.code === 'auth/account-exists-with-different-credential') {
                 alert('You have already signed up with a different auth provider for that email.');
                 // If you use multiple auth providers handle linking accounts here.
@@ -113,9 +113,9 @@ class ElvenLogin extends Component {
                     providerData: user.providerData,
                     photoURL: user.photoURL,
                     uid: user.uid
-                })
+                });
             } else {
-                that.setState(defaultState)
+                that.setState(defaultState);
             }
 
             document.getElementById('elf-sign-in').disabled = false;
@@ -128,7 +128,7 @@ class ElvenLogin extends Component {
             <div>
                 <p>ElvenLogin</p>
                 <RaisedButton
-                    id="elf-sign-in"
+                    id='elf-sign-in'
                     label={this.props.signInLabel}
                     style={buttonStyle}
                     primary={true}
@@ -139,10 +139,10 @@ class ElvenLogin extends Component {
                 <pre><code>{this.state.elfUser}</code></pre>
                 <pre><code>{this.state.email}</code></pre>
 
-                <img id="elfPhoto" src={this.state.photoURL} alt='' width="10%" min-width="120px"/>
+                <img id='elfPhoto' src={this.state.photoURL} alt='' width='10%' min-width='120px'/>
 
             </div>
-        )
+        );
     }
 }
 
@@ -151,13 +151,12 @@ const mapStateToProps = (state) => {
         loggedIn: state.loggedIn,
         signInLabel: state.signInLabel,
         configured: state.configured
-    }
+    };
 };
 
 ElvenLogin = connect(mapStateToProps)(ElvenLogin);
 
 export default ElvenLogin;
-
 ```
 
 Here is the login page:
@@ -382,7 +381,7 @@ I get the userNames from the Firebase database like this:
 firebase.database()
     .ref('/configuration/users/')
     .once('value')
-    .then(function(snapshot) { ... }
+    .then(function(snapshot) { ... })
 ```
 
 Put the results in a variable called **userNames**.

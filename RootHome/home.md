@@ -8,6 +8,7 @@ Fall 2017
 - [Docker File][df]
 - [Express Basics][eb]
 - [Express Pages and Mixins][epm]
+- [Final][final-isit]
 - [Firebase Express][fe]
 - [Firebase React][fr]
 - [Firebase Material Mixins][fm]
@@ -24,7 +25,7 @@ Fall 2017
 - [WebCrafts Starter][wcs]
 - [WebCrafts React Starter][wcr]
 - [WebCrafts Up To Date][wcu]
-- [Final][final-isit]
+
 
 ## Prog270
 

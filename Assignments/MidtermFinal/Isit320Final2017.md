@@ -51,7 +51,7 @@ I think all this implies connection to the Firebase database.
 
 I'm flexible on all of this. Do what you can. If all you get is the login, that's better than nothing. If we get the **ShowUsers** but not the database, that's also better than nothing. Just merge in what you can.
 
-## Key Steps
+## The Merging: Key Steps {#key-steps}
 
 Watch the [video](https://youtu.be/iA21zK3Idt8)
 
@@ -150,6 +150,39 @@ Here is how to change all instances of **bcuser** to **ubuntu** inside the **Elv
 
     sed -i "s/bcuser/ubuntu/g" ElvenConfig.json
 
+## Config File Route
+
+To accommodate the new format for ElvenConfig.json we had to change our code. Specifically, when working on **Week10-FirebaseReact** we changed the **get-config** route in **routes/index.js**. Here is the the updated version of the method as found in **Week10-FirebaseReact**:
+
+```
+router.get('/get-config', function(req, res, next) { 'use strict';
+    try {
+        config.useLocalConfig = false;
+        config.loadAsync()
+            .then(function (configuration) {
+                res.send({ configuration: configuration });
+            })
+            .catch(function (err) {
+                throw err
+            })
+    } catch(e) {
+        throw new Error(e);
+    }
+});
+```
+
+You should replace the **routes/makers** verison of that method with the code shown in above. Note that we changed the name of the route from **config** to **get-config**. That means you have to change the route you call when you press the **insertConfig** button in **FireDataPush**:
+
+```javascript
+insertConfig() {
+  fetch('/makers/get-config')
+    .then(...)
+    .then(...)
+    .catch(...)
+}
+```
+
+
 ## Merge Code you Forked
 
 Be sure to merge in the latest changes from the repositories that you forked. I made changes as recently as November 29, 2017, but may do more.
@@ -171,6 +204,59 @@ $.getJSON('/makers/config', function(configSummary) { ... })
 ```
 
 Then just delete the entire file.
+
+A simple way to get started is to stop loading **require** in **views/layout.pub**:
+
+    //script(data-main="javascripts/main.js" src="/bower_components/requirejs/require.js")
+
+Without **require**, you don't load jQuery, which means you can no longer use **document.ready** in **react-main**:
+
+    //$(document).ready(function() { ... }
+
+Replace it with **window.onload**:
+
+```javascript
+window.onload = function() { ... }
+```
+
+At that point you should be able to delete the following directories and files:
+
+- **make-html**, **make-image** and **tools**
+- **control.js** and **main.js**
+
+The **public/javascripts** directory before deleting all jQuery related code:
+
+```nohighlighting
+$ ll
+total 3228
+drwxrwxr-x 5 charlie charlie    4096 Dec  4 19:38 ./
+drwxrwxr-x 6 charlie charlie    4096 Nov 21 11:31 ../
+-rw-rw-r-- 1 charlie charlie 1498647 Dec  6 07:30 bundle.js
+-rw-rw-r-- 1 charlie charlie 1775651 Dec  6 07:30 bundle.js.map
+-rw-rw-r-- 1 charlie charlie     563 Dec  4 19:36 control.js
+-rw-rw-r-- 1 charlie charlie    1217 Dec  4 19:36 main.js
+drwxrwxr-x 2 charlie charlie    4096 Dec  4 19:36 make-html/
+drwxrwxr-x 2 charlie charlie    4096 Dec  4 19:36 make-image/
+drwxrwxr-x 2 charlie charlie    4096 Dec  4 19:36 tools/
+```
+
+The commands to delete the jQuery related code, These should be issued in the **public/javascripts** directory:
+
+```nohighlighting
+git rm control.js main.js
+git rm -r make-html/ make-image/ tools/
+```
+
+After issuing the before commands:
+
+```nohighlighting
+$ ll
+total 3208
+drwxrwxr-x 2 charlie charlie    4096 Dec  6 07:35 ./
+drwxrwxr-x 6 charlie charlie    4096 Nov 21 11:31 ../
+-rw-rw-r-- 1 charlie charlie 1498647 Dec  6 07:30 bundle.js
+-rw-rw-r-- 1 charlie charlie 1775651 Dec  6 07:30 bundle.js.map
+```
 
 ## Get latest isit-code and isit-site-tools
 
