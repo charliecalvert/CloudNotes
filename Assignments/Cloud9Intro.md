@@ -15,6 +15,22 @@ Use this as a guide:
 
 * [Cloud 9 Slides](http://bit.ly/elf-cloud9)
 
+## Simplified version
+
+In some cases, I will ask you to perform only these steps and skip the protions on setting up and running Node appliclations with NPM:
+
+- Set up your account on Cloud9
+  - take a screen shot showing you that you are logged on
+- Connect to your repository and create a Cloud 9 WorkSpace based on it.
+  - Take a screenshot of the dashboard showing your workspace
+- Open your workspace and open a file from the AllTest directory or some other part your repository that you created during one of our assignments.
+  - Take a screenshot showing the open file and the project Workspace file hierarchy on the left.
+- Install JsObjects as shown below.
+  - Take a screenshot showing that you have cloned JsObjects
+  - For this simplified version of the assignment, you do not need to do anything more than clone JsObjects and set your **.bash_aliases** file.
+
+## Set up JsObjects
+
 Our primary goal in this exercise is to create a Cloud Nine environment in which:
 
 - **JsObjects** has been cloned and is available to us
@@ -149,6 +165,8 @@ Now you should be able to view your entire directory tree in the **workspace** w
 
 ## Configure .bashrc
 
+If you are doing the simplified assignment you can stop here.
+
 There are a few commands you should run to set up node to work the way we prefer. Begin by running the following in the bash shell:
 
 ```
@@ -229,6 +247,8 @@ The screenshot you want to create will be similar to, but not identical too, the
 
 ## Running React Basics on Cloud 9
 
+This is not part of the Simplified Version of this assignment.
+
 I'm still learning about this too, but this is what worked for me with the Assignment we did in class on Wednesday. First I created a workspace that linked to my version of our new **isit320-lastname-2017** repository. My version of the repository contained the work we did in class on Wednesday.
 
 On the command line, I navigated to our project directory and ran:
@@ -288,9 +308,9 @@ Submit your work and attach the screenshots.
 
 ## Install Node Manually
 
-Don't install Node on Cloud 9. This is just old stuff I don't want to delete you.
+Don't install Node on Cloud 9. When you started your workspace, you had an option to get it set up automatically.
 
-Node should already be installed in your copy of Cloud9. In fact, **NVM** should also be installed, so you can set the current version of Node with that tool, if you know how to use it.
+In other words, Node should already be installed in your copy of Cloud9. In fact, **NVM** should also be installed, so you can set the current version of Node with that tool, if you know how to use it.
 
 However, if you want to take over control -- and I can't think of a good reason why you should -- then you can do this:
 

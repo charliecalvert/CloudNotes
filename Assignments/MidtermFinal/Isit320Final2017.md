@@ -10,7 +10,7 @@ The goal of the final is to demonstrate your ability to deploy web sites to the 
 - Code running on the Firebase site
 - Docker Container running on Port 30028
 
-Please get the FirebaseReact assignment melded into your WebCrafts assignment.
+Please get the FirebaseReact assignment melded into your WebCrafts assignment. See below for what I mean by this.
 
 Handy links to at least some assignments:
 
@@ -39,9 +39,93 @@ By this time, fetch should just be built into the JavaScript implementation for 
 
 You don't have to use React or any other specific tools other than **Express** routes and **fetch**. Just make it work!
 
+## Merging Code into WebCrafts
+
+The parts of the Firebase assignments that I would like to see in WebCrafts:
+
+- Login
+- The **ShowUsers** and **ShowUser** dialogs that start to display the **ElvenConfig** file to the user in an easier to understand format.
+- **Redux**
+
+I think all this implies connection to the Firebase database.
+
+I'm flexible on all of this. Do what you can. If all you get is the login, that's better than nothing. If we get the **ShowUsers** but not the database, that's also better than nothing. Just merge in what you can.
+
+## Key Steps
+
+Watch the [video](https://youtu.be/iA21zK3Idt8)
+
+From **Week10-FirebaseReact** I needed these files:
+
+- The Main Files that load the Login Page. In my case:
+  - AppMain.js
+  - FireDataPush.js
+  - ElvenLogin.js
+- ShowUsers.js
+- ShowUser.js
+- fire-reducer.js
+
+The code from AppMain.js ended up in HomeButtons. And **HomeButtons** had to learn how to support Redux by linking in connect at the top:
+
+    import {connect} from 'react-redux';
+
+And MapStateToProps at the bottom:
+
+```javascript
+const mapStateToProps = (state) => {
+    return {
+        loggedIn: state.loggedIn,
+        component: state.component,
+        signInLabel: state.signInLabel
+
+    }
+};
+
+HomeButtons = connect(mapStateToProps)(HomeButtons);
+```
+
+Near the bottom of **layout.pug**, I needed to add the code to load Firebase:
+
+    script(defer='', src='https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js')
+    script(defer='', src='https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js')
+    script(defer='', src='https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js')
+
+We are stripping out all the jQuery, so the main react file now starts like this:
+
+```javascript
+$(document).ready(function() {
+    try {
+        const root = document.getElementById('home');
+        ReactDOM.render(
+
+            <Provider store={store}>
+                <MuiThemeProvider>
+                    <div>
+                        <HomeButtons/>
+                    </div>
+                </MuiThemeProvider>
+            </Provider>
+            , root);
+    } catch (e) {
+        console.error(e);
+        document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+    }
+//     homeDiv = document.getElementById('home');
+//     home();
+//     $.subscribe('reactMakeHtml', reactMakeHtml);
+//     $.subscribe('reactMakeImages', reactMakeImages);
+//     $.subscribe('home', reactHome);
+});
+```
+
+The jquery removal:
+
+- Remove the JumboTrons from index.pug and elsewhere.
+
+
 ## The Config File
 
-Place your working ElvenConfig.json file in a folder of your repository called **ElvenConfig**. Include a section of the users node called **lastname**, where lastname is your last name. For instance, if your last name is Smith:
+Place your working **ElvenConfig.json** file in a folder of your repository called **ElvenConfig**. Include a section of the users node called **lastname**, where lastname is your last name. For instance, if your last name is Smith:
 
 ```json
 {
@@ -88,7 +172,7 @@ $.getJSON('/makers/config', function(configSummary) { ... })
 
 Then just delete the entire file.
 
-## Get lates isit-code and isit-site-tools
+## Get latest isit-code and isit-site-tools
 
 Run **npm outdated**
 
@@ -371,6 +455,17 @@ Projects should build on EC2. See the list of projects that need to build on EC2
 For Presidents in the FirebaseExpress and FirebaseReact apps, display the Presidents on the appropriate page.
 
 In the testing section of this exam, you saw several examples of how to use the data from MockData file. Add three more tests that involve the MakeImages rather than the MakeHtml page. These tests could be similar to those in **make-html-drop-downs**, but they should involve the images page. You will need to add mock data to the **__mocks__/MockData.js** file.
+
+The Presidents are not part of WebCrafts. But in the pure HTML solution, and FirebaseExpress mixins and Pug solution, you should be able to enter a new president and display a list of existing presidents in the console. The buttons are already there and should call the right methods: pushPresidents and getPresidents. They only work when you are logged in.
+
+
+## Extra Credit Login
+
+It would be nice if the user were first presented with the login page, and only after logging in could see the rest of the app. This is the way the app worked before we commented out the code for the old login system in **routes/index.js**.
+
+For extra credit, you could try to get that working again, but this time with the Firebase login system. I don't care if the solution you come up with is actually secure, just so that it appears to be secure.
+
+In particular, in the old system, if the user went to the home page, all they could see was the login screen until they were logged in. There was middleware that ensured (at least in theory) that no other request worked until the user was logged in. That's a high bar, but any progress you want to make down that road would be great to see.
 
 ## Long Link to EC2
 

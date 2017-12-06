@@ -10,6 +10,7 @@ Fall 2017
 - [Express Pages and Mixins][epm]
 - [Firebase Express][fe]
 - [Firebase React][fr]
+- [Firebase Material Mixins][fm]
 - [NPM Publishing][np]
 - [NPM Run Concurrently][nc]
 - [NPM Use Isit Code][nu]
@@ -60,6 +61,7 @@ Fall 2017
 [epm]: http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressPagesAndMixins.html
 
 [fe]: http://www.ccalvert.net/books/CloudNotes/Assignments/Firebase/FirebaseExpress.html
+[fm]:http://www.ccalvert.net/books/CloudNotes/Assignments/Firebase/MaterialMixins.html
 [fr]: http://www.ccalvert.net/books/CloudNotes/Assignments/Firebase/FirebaseExpressReact.html
 
 [js]: http://www.ccalvert.net/development/web/JavaScript/

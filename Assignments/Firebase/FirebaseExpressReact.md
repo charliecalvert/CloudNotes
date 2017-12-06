@@ -6,6 +6,16 @@ The goal is to expand the **FirebaseExpress** project so that it works with **Re
 
 Place your work in a folder called **Week10-FireBaseReact** in your main repository. Work in the **Week10** branch. User **CreateExpressProject** to bootstrap your project.
 
+## Tools
+
+We will use material-ui in this project:
+
+  npm install --save material-ui
+
+Watch this video to learn about **material-ui, Drawer, AppBar, Paper, and MenuItem**:
+
+- [Material UI Drawer, Paper, AppBar Video](https://youtu.be/-5uVBD6ySIc)
+
 ## Login
 
 Here is the **elven-fire-login.js** file converted to React. The file is now called **FireBaseLogin**:
@@ -364,6 +374,53 @@ When the user's button is selected, a 'SWITCH_COMPONENT' Redux action is dispatc
 this.props.dispatch({type: 'SWITCH_COMPONENT' ...})
 ```
 
+## More on ShowUsers
+
+I get the userNames from the Firebase database like this:
+
+```javascript
+firebase.database()
+    .ref('/configuration/users/')
+    .once('value')
+    .then(function(snapshot) { ... }
+```
+
+Put the results in a variable called **userNames**.
+
+Create an empty array called **users**. Iterate over the users:
+
+```javascript
+for (const userName in userNames) { ... }
+```
+
+Push each **userName** into the **users** array.
+
+Call **setState** with the arrays of users.
+
+**that.setState({ users: users });**
+
+This triggers the render method. Which creates an array of **RaisedButtons**:
+
+```
+{this.state.users.map((user) => (
+    <RaisedButton
+      // YOUR CODE HERE
+    />
+))}
+```
+
+
+The call to **users.map** allows you to transform the array of userNames into some other array. In particular, it takes each user as the **label** for the button.
+
+- [MDN on **map**][map]
+- [JsObjects on **map**][jsmap]
+
+React likes to be able to uniquely identify things in an array, therefore, each **RaisedButton** ought to have a unique key property:
+
+```javascript
+key={user}
+```
+
 ## The Show User Page
 
 If the user of the program selects one of the users in the Show Users page, then you should display that user:
@@ -390,3 +447,6 @@ Features I want to see:
 - Create a ShowUsers component. Even if you have only one user.
   - All the user to select a user
 - Create a ShowUser component. Display some of the properties for the user.
+
+[map]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+[jsmap]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/Functional

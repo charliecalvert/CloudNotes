@@ -83,6 +83,8 @@ In the **DockerCode** folder for your repo, put the Dockerfiles for each of you 
     - Dockerfile
   - MakeHtml
     - Dockerfile
+  - HtmlViewer
+    - Dockerfile
 
 ## Extra Credit Scripts
 
@@ -98,6 +100,10 @@ From the DockerCode folder, we should be able to give a single command to either
     - delete
     - Dockerfile
   - MakeHtml
+    - build
+    - delete
+    - Dockerfile
+  - HtmlViewer
     - build
     - delete
     - Dockerfile

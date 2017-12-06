@@ -94,6 +94,14 @@ mixin baseInput(id, text)
         .mdc-text-field__bottom-line
 ```
 
+## Elf Fire Materials
+
+Get the elf-fire-materials.pug file:
+
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/mixins/elf-fire-materials.pug
+
+This is similar too, but not identical too, **elf-fire-view-mixins.pug**.
+
 ## Cards
 
 Material cards are nice ways to display data. Here is an example of how to wrap the Login section in a card. We should do the same for the other sections:
@@ -122,7 +130,7 @@ mixin signInCard(title, subTitle, text)
                     code#elf-details unknown
                 pre
                     code#elf-oauthtoken unknown
-                    
+
                 img#elfPhoto(src='favicon.png', alt='', width="10%", min-width="120px")
             |
             section.mdc-card__actions
@@ -147,7 +155,7 @@ We are out of real estate on our main screen. As a result, we need to find some 
 ```nohighlighting
 extends layout
 include material-mixins
-include elf-fire-view-mixins
+include elf-fire-materials
 include card-mixins
 
 block content

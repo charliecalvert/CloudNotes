@@ -10,6 +10,18 @@ Simple example:
     FROM ubuntu
     RUN echo 'Dockerfile' > /tmp/Dockerfile
 
+## Where we are headed
+
+Throughout this assignment, we are going to being building several docker files. When we are done, I'm picturing a directory structure something like this:
+
+- DockerCode
+  - UbuntuBase
+    - Dockerfile
+  - Apache
+    - Dockerfile
+  - MakeHtml
+    - Dockerfile
+
 ## Set up Ubuntu:
 
 In this section of the text we learn how to create an UbuntuServer image that is up to date and contains certain key pieces.
