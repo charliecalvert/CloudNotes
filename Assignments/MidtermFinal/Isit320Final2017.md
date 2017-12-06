@@ -1,6 +1,6 @@
 ## Overview
 
-THIS IS A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.
+THIS IS A WORK IN PROGRESS. EACH TIME YOU VIEW IT, PRESS F5 TO REFRESH
 
 The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see:
 
@@ -15,6 +15,10 @@ Please get the FirebaseReact assignment melded into your WebCrafts assignment. S
 Handy links to at least some assignments:
 
 - [http://www.ccalvert.net/](http://www.ccalvert.net/)
+
+Here you can see that I'm now using the app to create our assignments, including this final:
+
+![Isit320FinalProducer][fpr]
 
 ## Routes
 
@@ -499,6 +503,10 @@ And should contain:
 
 ## Turn it in
 
+This video shows one possible interpretation of what to do with the final:
+
+- [Charlie's Final Final](https://youtu.be/joSQBo8swZU)
+
 Here is a preliminary list of what I'm looking for:
 
 - Webcrafts should work
@@ -647,3 +655,4 @@ You can keep, delete, mangle, change in whatever way you want your EC2 instances
 [wu]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsUpToDate.html
 [am]: https://s3.amazonaws.com/bucket01.elvenware.com/images/up-to-date-merge-atom.png
 [fbe]:https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-not-auth.png
+[fpr]:https://s3.amazonaws.com/bucket01.elvenware.com/images/is320-final-2017-producer.png
