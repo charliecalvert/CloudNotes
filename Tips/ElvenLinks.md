@@ -1,6 +1,6 @@
 # Overview
 
-Here are some tips on finding important information for our class.
+These tips should help you find important information for our class.
 
 ## References
 

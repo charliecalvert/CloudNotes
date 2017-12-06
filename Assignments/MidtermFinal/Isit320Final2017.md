@@ -219,7 +219,7 @@ Replace it with **window.onload**:
 window.onload = function() { ... }
 ```
 
-At that point you should be able to delete the following directories and files:
+At that point you should be able to delete code that we commented out earlier. We can also delete the following directories and files:
 
 - **make-html**, **make-image** and **tools**
 - **control.js** and **main.js**
@@ -535,6 +535,8 @@ I'm expecting to find your _final_ code in **master**, but it would not be a ser
 The command **npm outdated** should show that you have the most recent versions of your **isit-code** and **isit-site-tools** in your **package.json**. This is not just a minor point. Make sure you have this right! Your code probably won't work if it is not right.
 
 Projects should build on EC2. See the list of projects that need to build on EC2 in the appropriate section above.
+
+Delete dead code and code that has been commented out. This is your final, and it should look as nice as possible.
 
 ## Extra Credit
 
