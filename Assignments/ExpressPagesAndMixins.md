@@ -47,6 +47,22 @@ app.use('/about', about);
 
 	bower install bootstrap --save
 
+Your **layout.pug/jade** should look like this:
+
+```javascript
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    script(src="/bower_components/requirejs/require.js", data-main="/javascripts/main")
+  body
+    block content
+```  
+
+And here is **views/index.pug**:
+
 ```
 extends layout
 

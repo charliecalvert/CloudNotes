@@ -56,13 +56,12 @@ After confirming that you app works, press Ctrl-C and return to the command line
 
 ## JavaScript
 
-Add the following to the **public** directory:
+Paste in the following at the bash prompt of the **public** directory for your project:
 
     wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
     wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
 
-    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-login.js
-    wget https://s3.amazonaws.com/bucket01.elvenware.com/javascript/elven-fire-data.js
+The **wget** command pulls files from the cloud using HTTP.
 
 ## Home Page
 
