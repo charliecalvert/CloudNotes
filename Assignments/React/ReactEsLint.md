@@ -16,7 +16,14 @@ Or:
 npm install --save-dev eslint eslint-plugin-react babel-eslint
 ```
 
-Perhaps it would make sense to install these globally, but for now, I'm doing it on a per-project basis.
+Perhaps it would make sense to install these globally, but for now, I'm doing it on a per-project basis. If you want to install it globally, try these commands:
+
+```nohighlighting
+npm i -g eslint
+npm i -g eslint-plugin-react
+npm i -g eslint-plugin-requirejs
+npm i -g babel-eslint
+```
 
 Read here [for more details](https://www.npmjs.com/package/eslint).
 
@@ -58,7 +65,26 @@ And here is at least a starter **.eslintrc** file:
 
 ## Arrow Functions
 
-I'm not clear about this. Set "parser": "babel-eslint" in .eslintrc to allow arrow functions.
+I'm not clear about this. Set "parser": "babel-eslint" in **.eslintrc** to allow arrow functions.
+
+## Run from command line
+
+Assuming your ES6 code is in a directory called **source**, do one of these, where the first is for the global install, and the second is for the local install:
+
+    eslint source
+    ./node_modules/.bin/eslint source/
+
+Also, consider putting it in your **package.json** file in the **scripts** section. For instance you might write something like this in one of your **package.json** files:
+
+```javascript
+"scripts": {
+    "start": "DEBUG=firebase-express:server nodemon ./bin/www",
+    "bundle": "node_modules/.bin/webpack --watch",
+    "lint": "./node_modules/.bin/eslint source/**"
+},
+```
+
+When I ran **npm run lint**, it worked, but NPM reports an error until I get all the eslint errors and warnings out of my code. Then it returns cleanly. Before that, I see the results of my tests, but NPM reports an error
 
 ## Turn it in
 

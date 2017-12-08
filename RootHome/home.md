@@ -21,6 +21,7 @@ Fall 2017
 - [ReactEsLint][re]
 - [ReactReduxBasics][rr]
 - [ReactTranslateRoutes (Not Assigned)][rtr]
+- [Upstart and Systemd][ud]
 - [WebCraftsJestButtonsPress][wbp]
 - [WebCrafts Starter][wcs]
 - [WebCrafts React Starter][wcr]
@@ -34,10 +35,11 @@ Fall 2017
 - [Docker Html Viewer][dh]
 - [Docker Starter][ds]
 - [Express Basics][eb]
+- [Final][final-prog]
 - [EC2 Checklist][ecc]
 - [EC2 Git HTML Pictures][ecp]
 - [EC2 Markdown to HTML][ecm]
-- [Final][final-prog]
+- [Upstart and Systemd][ud]
 
 ## Other
 
@@ -78,6 +80,8 @@ Fall 2017
 [rr]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactReduxBasics.html
 [rt]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html
 [rtr]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactTranslateRoutes.html
+
+[ud]:http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html
 
 [wbp]: books/CloudNotes/Assignments/WebCrafts/WebCraftsJestButtonsPress.html
 [wcs]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.html
