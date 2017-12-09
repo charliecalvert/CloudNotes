@@ -152,3 +152,169 @@ I don't really care about the dependency on a .git directory, though it is weird
 Here is an explanation of **watch** vs **watchAll**:
 
 [https://facebook.github.io/jest/docs/en/cli.html#watch](https://facebook.github.io/jest/docs/en/cli.html#watch)
+
+## Dealing with Redux
+
+Now we're switching to original, complete objects found in the original WebCrafts. These objects all use Redux. Without some tinkering, you get this error:
+
+    Invariant Violation: Could not find "store" in either the context or props of ...
+
+One [solution][] is to simply wraps the components in your tests in a Provider. Here is the **sanity** test with that option:
+
+```javascript    
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactHome from '../ReactHome';
+import HomeButtons from '../HomeButtons';
+import MakeHtml from '../MakeHtml';
+import MakeHtmlDropDowns from '../MakeHtmlDropDowns';
+import MakeHtmlHomeButton from '../MakeHtmlHomeButton';
+import MakeImage from '../MakeImage';
+
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import fireReducer from '../fire-reducer';
+
+const store = createStore(fireReducer);
+
+describe('WebCrafts Sanity Test', function() {
+    'use strict';
+
+    it('expects true to be true', function() {
+        expect(true).toBe(true);
+    });
+
+    it('renders ReactHome without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <Provider store={store}>
+                <ReactHome/>
+            </Provider>, div
+        );
+    });
+
+    it('renders HomeButtons without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <Provider store={store}>
+                <HomeButtons/>
+            </Provider>, div
+        );
+    });
+
+    it('tests if we can load MakeHtml', () => {
+        const div = document.createElement('div');
+
+        ReactDOM.render(
+            <Provider store={store}>
+                <MakeHtml/>
+            </Provider>, div
+        );
+    });
+
+    it('tests if we can load MakeHtml DropDowns', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <Provider store={store}>
+                <MakeHtmlDropDowns/>
+            </Provider>, div);
+    });
+
+    it('tests if we can load MakeHtml DropDowns', () => {
+        const div = document.createElement('div');
+
+        ReactDOM.render(
+            <Provider store={store}>
+                <MakeHtmlHomeButton/>
+            </Provider>, div);
+    });
+
+    it('tests if we can load MakeHtml', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <Provider store={store}>
+                <MakeImage/>
+            </Provider>, div);
+    });
+});
+```
+
+The key code is here:
+
+```javascript
+<Provider store={store}>
+    <ReactHome/>
+</Provider>, div
+```
+
+This is pretty much what we do in **react-main.js**.
+
+## Mock Redux
+
+Another approach is to mock calls to **dispatch** by putting this at the end of **source/setup-jest.js**:
+
+```javascript
+const thunk = ({ dispatch, getState }) => next => action => {
+    if (typeof action === 'function') {
+        return action(dispatch, getState)
+    }
+
+    return next(action);
+};
+
+export const elfMockRedux = () => {
+    const store = {
+        getState: jest.fn(() => ({})),
+        dispatch: jest.fn(),
+    };
+    const next = jest.fn();
+
+    const invoke = (action) => thunk(store)(next)(action);
+
+    return {store, next, invoke};
+};
+
+global.elfMockRedux = elfMockRedux;
+```
+
+Then we can ask to get only a named version of the **HomeButtons** components, rather than **connected** HomeButtons. Here is the updated, and now exported, **constructor** for **HomeButtons**:
+
+```javascript
+// OTHER IMPORTS
+import {connect} from 'react-redux';
+
+export class HomeButtons extends React.Component { ... }
+
+export default connect()(HomeButtons);
+```
+
+Note that we continue to export a default **connected** version of **HomeButtons**. But now also have just the component, which is not connected to Redux.
+
+Since we exported the component by name, we can do this:
+
+```javascript
+import React from 'react';
+import {HomeButtons} from '../HomeButtons';
+import {configure, shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({adapter: new Adapter()});
+
+describe('WebCrafts Home Buttons Tests', function() {
+    'use strict';
+
+    it('expects true to be true', function() {
+        expect(true).toBe(true);
+    });
+
+    fit('publishes clientMakeHtml event after button click', () => {
+        const { store } = elfMockRedux();
+
+        const wrapper = shallow(<HomeButtons dispatch={store.dispatch}/>);
+        wrapper.find('#makeHtml').simulate('click');
+        const expected = {'component': 'make-html', 'type': 'SWITCH_COMPONENT'};
+        expect(store.dispatch).toHaveBeenCalledWith(expected);
+    });
+});
+```
+
+Note that we explicitly pass our mocked version of **dispatch** to **HomeButtons**.

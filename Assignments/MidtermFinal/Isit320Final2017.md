@@ -647,6 +647,30 @@ PS1+="\[$COLOR_BLUE\]\n\$\[$COLOR_RESET\] "   # '#' for root, else '$'
 
 If you get a **$ is not defined** it probably means you have not run **bower install**.
 
+## The ES6 Spread Operator
+
+Use of the the [spread operator][soo] still requires STAGE-0:
+
+    npm install --save babel-preset-stage-0
+
+Here is the kind of error you get if you don't have ES6 STAGE-0 installed:
+
+```nohighlighting
+ERROR in ./source/reducer.js
+Module build failed: SyntaxError: Unexpected token (12:16)
+
+  10 |         case 'SWITCH_COMPONENT':
+  11 |             return {
+> 12 |                 ...state,
+     |                 ^
+  13 |                 configured: true,
+  14 |                 component: action.component,
+  15 |                 userName: action.userName
+```
+
+- [Spread Operator Overview][soo]
+- [Stage 0][szero]
+
 ## Close Down EC2 Instances
 
 You can keep, delete, mangle, change in whatever way you want your EC2 instances after December 11, 2017. See the Canvas announcement on this subject for more information.
@@ -656,3 +680,5 @@ You can keep, delete, mangle, change in whatever way you want your EC2 instances
 [am]: https://s3.amazonaws.com/bucket01.elvenware.com/images/up-to-date-merge-atom.png
 [fbe]:https://s3.amazonaws.com/bucket01.elvenware.com/images/firebase-not-auth.png
 [fpr]:https://s3.amazonaws.com/bucket01.elvenware.com/images/is320-final-2017-producer.png
+[soo]:(http://es6-features.org/#SpreadOperator)
+[szero]: (https://babeljs.io/docs/plugins/preset-stage-0/)
