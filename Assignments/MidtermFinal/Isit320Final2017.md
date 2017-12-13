@@ -1,7 +1,5 @@
 ## Overview
 
-THIS IS A WORK IN PROGRESS. EACH TIME YOU VIEW IT, PRESS F5 TO REFRESH
-
 The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see:
 
 - WebCrafts working
@@ -653,6 +651,10 @@ Use of the the [spread operator][soo] still requires STAGE-0:
 
     npm install --save babel-preset-stage-0
 
+And then in webpack.config.js:
+
+    presets: ['env', 'stage-0', 'react']
+
 Here is the kind of error you get if you don't have ES6 STAGE-0 installed:
 
 ```nohighlighting
@@ -670,6 +672,10 @@ Module build failed: SyntaxError: Unexpected token (12:16)
 
 - [Spread Operator Overview][soo]
 - [Stage 0][szero]
+
+## Redux Tests
+
+- [Look here](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsJestMocks.html#dealing-with-redux)
 
 ## Close Down EC2 Instances
 
