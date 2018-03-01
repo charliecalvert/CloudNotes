@@ -178,6 +178,12 @@ sudo systemctl status mongod
 
 Press q to quit the status view.
 
+To ensure that MongoDB starts each time the system reboots do this:
+
+```
+sudo systemctl enable mongod
+```
+
 ## XPS Sign in Admin
 
 If you are on the server that uses authentication, you can, and should, sign in as admin:
