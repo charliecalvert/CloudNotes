@@ -1,6 +1,6 @@
 ## Overview
 
-Information for Week 1, 2017, ISIT322.
+Information for Week 1, 2018, ISIT322.
 
 ## React
 
