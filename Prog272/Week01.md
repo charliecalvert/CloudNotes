@@ -21,11 +21,11 @@ book. You should however, become familiar with the material it covers.
 
 ## Links for Week01 Day 1
 
+1. Pristine Lubuntu 2018-04: [http://bit.ly/plubuntu-2018-04-03][plu]
 1. [Getting Started Deck](http://bit.ly/TDEtd5)
-2. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2018](http://bit.ly/prog272-syllabus-2018)
-3. Study the all important [Resources page](Resources.html)
-4. [Why Clean Code][why-clean-code]
-5. Pristine Lubuntu Spring 2017: [http://bit.ly/plubuntu2017-04-02](http://bit.ly/plubuntu2017-04-02)
+1. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2018](http://bit.ly/prog272-syllabus-2018)
+1. Study the all important [Resources page](Resources.html)
+1. [Why Clean Code][why-clean-code]
 
 ## React
 
@@ -56,3 +56,4 @@ Notes on installing WebStorm:
 [pro-js]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=44953
 [crockford]:(http://javascript.crockford.com/javascript.html)
 [webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
+[plu]: http://bit.ly/plubuntu-2018-04-03

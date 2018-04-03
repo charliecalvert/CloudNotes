@@ -10,7 +10,7 @@ Here are some [key links][react-links].
 
 ## VirtualBox
 
-- The OVA: [http://bit.ly/plubuntu2017-04-02](http://bit.ly/plubuntu2017-04-02)
+- The Pristine Lubuntu OVA: [http://bit.ly/plubuntu-2018-04-03][plu]
 - Introductions
 - [VirtualBox Deck](http://bit.ly/1at2JZ2)
 - [Pristine VirtualBox Assignment](http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html)
@@ -72,3 +72,4 @@ I have videos on various topics, including git, unit tests and mobile devices. T
 
 [elf-playlist]: http://www.elvenware.com/charlie/Videos.html#playlists
 [configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
+[plu]: http://bit.ly/plubuntu-2018-04-03
