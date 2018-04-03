@@ -1,6 +1,6 @@
-## Prog 272 Week 01, 2016
+## Prog 272 Week 01, 2018
 
-Some notes to help us get started during Week01, spring, 2017.
+Some notes to help us get started during Week01, spring, 2018.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ book. You should however, become familiar with the material it covers.
 ## Links for Week01 Day 1
 
 1. [Getting Started Deck](http://bit.ly/TDEtd5)
-2. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2017](http://bit.ly/prog272-syllabus-2017)
+2. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2018](http://bit.ly/prog272-syllabus-2018)
 3. Study the all important [Resources page](Resources.html)
 4. [Why Clean Code][why-clean-code]
 5. Pristine Lubuntu Spring 2017: [http://bit.ly/plubuntu2017-04-02](http://bit.ly/plubuntu2017-04-02)

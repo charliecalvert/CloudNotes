@@ -20,7 +20,7 @@ Here are some [key links][react-links].
 
 ## Syllabus
 
-* [http://bit.ly/isit322-syllabus-2017](http://bit.ly/isit322-syllabus-2017)
+* [http://bit.ly/isit322-syllabus-2018](http://bit.ly/isit322-syllabus-2018)
 
 ## WebStorm Install
 
