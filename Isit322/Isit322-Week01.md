@@ -1,6 +1,6 @@
 ## Overview
 
-Information useful during Week 1, 2018, ISIT322.
+Information useful during Week 1, 2018 for ISIT322.
 
 ## React
 
