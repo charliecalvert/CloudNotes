@@ -8,14 +8,12 @@ To get started, create  an account on [Code Academy](http://www.codecademy.com/)
 
 After you have set up your account, I want you to complete some simple exercises in Code Academy. This should help you recall a few basic facts about HTML and JavaScript, in case you need to brush up on your skills.
 
-Some of the courses are in transition, so I'm giving you two ways to complete each half of the course. Pick one from HTML and CSS, and one from JavaScript. You don't need to complete four courses, just two. Complete on HTML and CSS course and one JavaScript course.
+Some of the courses are in transition or have changed recently. Complete one HTML course and one JavaScript course.
 
-If you are unsure which one to pick, pick the newer course of the two choices. If, however, you have already completed an older version of the course, I will accept that. In other words, this assignment will be very easy for you if you have already completed the course. If you have not yet completed, or worked through a large part of an existing course, then choose the newer option.
+If you have already completed an older version of the course, I will accept that. In other words, this assignment will be very easy for you if you have already completed the course.
 
-- [The old HTML and CSS Course](http://www.codecademy.com/tracks/web)
-- [The new HTML and CSS course](https://www.codecademy.com/learn/learn-html-css)
+- [The new HTML and CSS course](https://www.codecademy.com/learn/learn-html)
 - Complete at least 15% of the skill.
-- [Go to the old JavaScript course](http://www.codecademy.com/tracks/javascript)
 - [Go to the new Learn JavaScript course](https://www.codecademy.com/learn/learn-javascript)
 - Complete at least 15% of the skill.
 

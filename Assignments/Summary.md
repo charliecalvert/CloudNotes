@@ -1,6 +1,2 @@
-* [Cloud9Intro.html](Cloud9Intro.html)
-* [Ec2CloudOnly.html](Ec2CloudOnly.html)
-* [ExpressPagesAndMixins.html](ExpressPagesAndMixins.html)
-* [FirebaseLogin.html](FirebaseLogin.html)
-* [StudentCodeQuiz.html](StudentCodeQuiz.html)
+* [CodeAcademy01.html](CodeAcademy01.html)
 * [master-list.html](master-list.html)
