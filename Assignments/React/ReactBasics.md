@@ -1,7 +1,5 @@
 # React Basics
 
-Copyright (c) 2017 by Charlie Calvert
-
 This chapter covers creating [React][re] program from scratch. We will create a React project from scratch. There are various tools that can automate the creation of React projects, but there is much to be learned by creating a project by scratch.
 
 Here are some useful links:
@@ -500,3 +498,6 @@ cd ~/Source
 You can now create projects in this directory that you want to keep at least for awhile without committing to a repository.
 
 [re]: https://reactjs.org/
+
+
+Copyright (c) 2018 by Charlie Calvert

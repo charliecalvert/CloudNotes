@@ -60,7 +60,7 @@ Notes on installing WebStorm:
 
 [why-clean-code]: http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel
 [pro-js]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=44953
-[crockford]:(http://javascript.crockford.com/javascript.html)
+[crockford]: http://javascript.crockford.com/javascript.html
 [webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
 [pvba]: http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html
