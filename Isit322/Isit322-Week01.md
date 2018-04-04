@@ -16,8 +16,6 @@ Here are some [key links][react-links].
 - [Pristine VirtualBox Assignment](http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html)
 - [Git][git]
 
-[git]: http://www.elvenware.com/charlie/development/cloud/Git.html
-
 ## Syllabus
 
 * [http://bit.ly/isit322-syllabus-2018](http://bit.ly/isit322-syllabus-2018)
@@ -73,3 +71,4 @@ I have videos on various topics, including git, unit tests and mobile devices. T
 [elf-playlist]: http://www.elvenware.com/charlie/Videos.html#playlists
 [configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
+[git]: http://www.elvenware.com/charlie/development/cloud/Git.html

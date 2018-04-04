@@ -27,6 +27,12 @@ book. You should however, become familiar with the material it covers.
 1. Study the all important [Resources page](Resources.html)
 1. [Why Clean Code][why-clean-code]
 
+## VirtualBox and Git
+
+- [VirtualBox Deck](http://bit.ly/1at2JZ2)
+- [Pristine VirtualBox Assignment][pvba]
+- [Git][git]
+
 ## React
 
 Here are some [key links][react-links] that introduce react and tools we are using.
@@ -57,3 +63,5 @@ Notes on installing WebStorm:
 [crockford]:(http://javascript.crockford.com/javascript.html)
 [webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
+[pvba]: http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html
+[git]: http://www.elvenware.com/charlie/development/cloud/Git.html
