@@ -147,13 +147,15 @@ Now edit the **scripts** section of **package.json** so that it looks like this:
 
 ```javascript
 "scripts": {
-   "start": "node_modules/.bin/webpack-dev-server",   
+   "start": "node_modules/.bin/webpack-dev-server --port=30025",   
    "build": "node_modules/.bin/webpack",
    "test": "echo \"Error: no test specified\" && exit 1"
 },
 ```
 
-This section of the **package.json** file defines the various commands you can run in order to perform operations such as starting your project. You can run the **start** and **test** scripts like this:
+This section of the **package.json** file defines the various commands you can run in order to perform operations such as starting your project. Note that we are starting on port 30025.
+
+You can run the **start** and **test** scripts like this:
 
 ```
 npm start

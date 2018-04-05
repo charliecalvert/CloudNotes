@@ -64,4 +64,5 @@ Notes on installing WebStorm:
 [webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
 [pvba]: http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html
-[git]: http://www.elvenware.com/charlie/development/cloud/Git.html
+[git-old]: http://www.elvenware.com/charlie/development/cloud/Git.html
+[git]: http://www.elvenware.com/charlie/development/git/

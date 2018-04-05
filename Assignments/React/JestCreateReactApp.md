@@ -2,7 +2,15 @@
 
 By: _Charlie Calvert_
 
-Learn how to write [Jest][jest] tests with the npm packaged called **create-react-app**. This tool is probably already on your system in **~/npm/bin**. That directory should be on your path in the default Pristine Lubuntu system.
+Learn how to write [Jest][jest] tests with the npm packaged called **create-react-app**.
+
+A deck to accompany this assignment is here:
+
+- [http://bit.ly/jest-cra](http://bit.ly/jest-cra)
+
+## Install
+
+**create-react-app** is probably already on your system in **~/npm/bin**. That directory should be on your path in the default Pristine Lubuntu system.
 
 If **create-react-app** is not on your system, then install it like this:
 
@@ -10,23 +18,53 @@ If **create-react-app** is not on your system, then install it like this:
 npm install -g create-react-app
 ```
 
-A deck to accompany this assignment is here:
+Make sure you are on the latest version:
 
-- [http://bit.ly/jest-cra](http://bit.ly/jest-cra)
+    npm -g outdated
+
+If any globally installed apps are outdated, then reinstall them:
+
+    npm install -g create-react-app
+
+## Set the Default Port
+
+Load your **.bashrc** file into an editor and add this line near the bottom of the file, if it is not already there:
+
+```bash
+export PORT=30025
+```
+
+Some of our programs will use this as the default PORT on which to run.
+
+**NOTE**: _We might want to run some programs, especially Express programs, on some other port than 30025, such as 30026. Note that they will default to the port set in the manner described above. As a result, we will sometimes need to take steps to ensure they run on the port we want. One technique is to define the port in **package.json**:_
+
+```JavaScript
+"config": {
+    "port": "30026"
+},
+```
+
+Then in **www/bin**:
+
+```javascript
+const port = process.env.npm_package_config_port || 30026;
+```
 
 ## Get Started
 
+Switch to your Week01 branch.
+
 - Navigate to the root of your repository
 - Issue this command:
-  - create-react-app week02-react-jest
+  - create-react-app **weekxx-react-jest**, where xx is the number of the current week of this quarter.
+  - rename **weekxx-react-jest** to **Weekxx-React-Jest**
 - Open up the project in WebStorm
 - Set WebStorm to use JSX, React and ES6
   - File | Settings | Languages and Settings | JavaScript | React/JSX
 - If you get lots of JsHint, EsLint or other errors, for now, just disable them:
   - File | Settings | Languages and Settings | JavaScript | Code Quality Tools Tools
 
-
-## Create a test
+## Running Tests
 
 Open up **src/App.test.js**, shown below. This is a test that allows you to see if the syntax in **App.js** is good enough to allow the component to be loaded.
 
@@ -53,6 +91,8 @@ it('renders without crashing', () => {
 ```
 
 This test is built with [Jest][jest] library, but the syntax looks just like the very popular Jasmine library. In most cases, it also behaves much like Jasmine.
+
+## Writing Tests
 
 Let's update the default example by wrapping the test in a **describe** method:
 
@@ -81,8 +121,10 @@ To install it run these commands:
 
 ```
 npm install --save-dev enzyme react-test-renderer
-npm install --save-dev react-addons-test-utils
+npm install --save-dev enzyme-adapter-react-16
 ```
+
+I believe we no longer need to use **react-addons-test-utils**
 
 ## Enzyme Test of Component Output
 
@@ -92,13 +134,16 @@ The updated tests shown below import **shallow** from enzyme. It grabs text from
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { configure, shallow } from 'enzyme';
+configure({ adapter: new Adapter() });
 
 describe('jest test', function() {
 
    it('renders without crashing', () => {
        const div = document.createElement('div');
        ReactDOM.render(<App />, div);
+       ReactDOM.unmountComponentAtNode(div);
    });
 
    it('renders and reads H1 text', () => {
@@ -110,9 +155,64 @@ describe('jest test', function() {
 });
 ```
 
+Perhaps you are getting an error when you run these tests. You may be able to fix it by yourself, but let's learn how to use ElfDebugEnzyme to help you find the error.
+
+## Elf Debug Enzyme
+
+Get a copy of my gist ElfDebugEnzyme and save it to a file with the same name (ElfDebugEnzyme.js):
+
+- [Elf Debug Enzyme](http://bit.ly/elf-debug-enzyme)
+
+One way to save the file is to the choose the **Raw** button on GitHub, and then blockcopy the code. Now create a new file in WebStorm and paste in the code.
+
+Now import **ElfDebugEnzyme** into your test:
+
+```JavaScript
+import ElfDebugEnzyme from '../ElfDebugEnzyme';
+
+const elfDebugEnzyme = new ElfDebugEnzyme(true, 'App.test.js');
+```
+
+Use **ElfDebugEnzyme** to display the first H1 element:
+
+```JavaScript
+it('renders and reads H1 text', () => {
+    const wrapper = shallow(<App />);
+    const welcome = <h1 className="App-title">Welcome to React</h1>;
+    elfDebugEnzyme.getFirst(wrapper, 'h1', true);
+    expect(wrapper.contains(welcome)).toEqual(true);
+});
+```
+
+The key line is this one:
+
+```JavaScript
+elfDebugEnzyme.getFirst(wrapper, 'h1', true);
+```
+
+It calls the **getFirst** method of **ElfDebugEnzyme** and and asks to see the contents of the first H1 element generated by your React component. In our case, there is only one H1 element, and it looks like this, when printed out by **ElfDebugEnzyme**:
+
+```html
+console.log ElfDebugEnzyme.js:45
+  App.test.js:
+  <h1 className="App-title">
+    Welcome to React
+  </h1>
+```
+
+The relevant code in **ElfDebugEnzyme** is simple enough. It asks enzyme to find the first matching H1 element and display the **debug** information associated with that element:
+
+```javascript
+wrapper.find(element).first().debug();
+```
+
+Once you know the HTML that is being generated, you can adjust your test to ensure that it properly matches the HTML. Or vice versa, depending on your needs and circumstances.
+
 ## Add a constructor and declare some state. {#constructor-state}
 
-The constructor is a function on your component. React calls is it before it mounts the component. Call super() first or else the this variable will not be valid in the constructor.
+Once you know how to test for static HTML generated by your React component, then next step will be to test the dynamic code, the code that changes when you -- for instance -- press a button. Let's begin by adding a **constructor** to your React component.
+
+The **constructor** is a function on your component. React calls is it before it mounts the component. Call super() first or else the this variable will not be valid in the constructor.
 
 ```javascript
 class App extends Component {
@@ -156,7 +256,7 @@ getNine = () => {
 In our JSX, we:
 
 - Declare a button
-- Give it **_not_** an HTML **onclick** method, but a JSX **onClick** attribute
+- Give it **_not_** an HTML **onclick** attribute, but a JSX **onClick** attribute
 - And use a react expression, defined with curly braces, to call **getNine** when the button is clicked.
 
 ```html
@@ -198,15 +298,95 @@ it.only('renders button click message', () => {
 
 **NOTE**: _When I write something like **etc...** or **and so on...** or **You write the code**, then I'm saying that I expect you to complete the code as an exercise. Occasionally students who are not used to my style think I'm being lazy or writing code that has not been tested. This is generally not the case. I cut and paste working code into a document like this, and then delete the parts I want readers to complete. I usually mark the missing code as described above._
 
+## ESLint
+
+Eslint should be installed globally in **~./npm/bin**.
+
+Add this **.eslintrc.json** to your project.
+
+```JavaScript
+{
+    "extends": [
+		"eslint:recommended",
+		"plugin:react/recommended"
+	],
+    "rules": {
+        // enable additional rules
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["warn", "single"],
+        "semi": ["error", "always"],
+
+        // override default options for rules from base configurations
+        "comma-dangle": ["off", "always"],
+        "no-cond-assign": ["error", "always"],
+
+        // disable rules from base configurations
+        "no-console": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}
+```
+
+Run it like this:
+
+    eslint *.js
+
 ## Turn it in
 
-Place your work in your repository in a folder called **Week02-ReactJest** if it is not already there.
+Place your work in your repository if it is not already there. Merge your finished project into **master**.
 
 Push your repository. Go to GitHub or BitBucket and ensure that the code you want to turn in is actually in your repository and that it contains the files and folders you expect it to contain.
 
 Find the assignment on Canvas and submit it. Add text that states the name of the folder where you placed your assignment. A link to your folder on GitHub/Bitbucket is nice.
 
 For most of the assignments, I'll just say something like: "Put your work in your repo and push," or simply "Push your work". That's a shorthand for something along the lines of what I'm saying here.
+
+## Test Output
+
+I'm expecting the test output to look something like this:
+
+```javascript
+PASS  src/App.test.js
+ jest test
+   ✓ renders without crashing (4ms)
+   ✓ renders and reads H1 text (3ms)
+   ✓ renders button click message (1ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        0.364s, estimated 1s
+Ran all test suites.
+
+ console.log ElfDebugEnzyme.js:45
+   App.test.js:
+   <h1 className="App-title">
+     Welcome to React
+   </h1>
+
+ console.log src/App.js:14
+   state
+
+ console.log ElfDebugEnzyme.js:45
+   App.test.js:
+   App.test.js:
+   <p className="App-intro">
+     Nine:
+     9
+   </p>
+
+```
 
 ## Hint
 

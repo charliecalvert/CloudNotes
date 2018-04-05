@@ -40,7 +40,7 @@ VirtualBox should be installed on all the machines in N252. Nevertheless, before
 
 Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance). The link below requires a bit of patience. Select it, and determinedly click through the options until the download begins. Once this big 3 GB OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
 
-- [Current Pristine Lubuntu](http://bit.ly/pristine-2017-08-a)
+- [Current Pristine Lubuntu](http://bit.ly/plubuntu-2018-04-03)
 
 The file you download should have an OVA extension.
 
@@ -54,7 +54,9 @@ After the file has been imported via the simple wizard, select the new item in V
 
 **NOTE**: _You may get an error about the audio system when installing the OVA. You can ignore that message. If you get an error about the network card, just click the supplied link and accept the defaults._
 
-**NOTE**: _If you get a warning about USB drivers, this usually means that the Virtual Box virtual extensions are not installed. This could be due to a mistake by the Bellevue College IS department. If you have the rights, install them from [here](https://www.virtualbox.org/wiki/Downloads), using the Virtual Box **Preferences** menu. (Or just double click on the download). Otherwise, you can go to **Settings | USB** for your VM and turn USB off for now._
+**NOTE**: _If you get a warning about USB drivers, this usually means that the Virtual Box Extension Pack is not installed. This could be due to a mistake by the Bellevue College IS department. If you have the rights, install them from [here](https://www.virtualbox.org/wiki/Downloads). To install, just double click on the download. If all else fails, go to **Settings | USB** for your VM and turn USB off for now._
+
+**NOTE**: _If you get an error about the network, this is usually because the network card on the system where I built the VM is different than the one on your current machine. You should be able to select all the default options to solve the problem. Just keep hitting enter, or clicking OK, or something similar, until the problem is resolved._
 
 Our Pristine Lubuntu image is set up to have about 6GB of RAM. This is fine at school since we have 32 GB of memory on these machines. When using this image at home or on a laptop, however, you may need to change this setting. To do so, select **Settings | System | Motherboard | Base Memory.** Many machines have 4 GB of memory, so setting the memory to 2048 is acceptable, if a bit painful slow at times.
 
@@ -82,7 +84,7 @@ Make sure you have installed the [VirtualBox Extension Pack][extpack]. To check,
 
 Make sure [virtualization][virton] is turned on in the bios for your machine.
 
-Make sure you have the [guest additions][gadd] set up properly.
+I install the VirtualBox Guest Additions on the Pristine Lubuntu VM, but after updating VirtualBox itself, you may need to make sure you have the [guest additions][gadd] set up properly.
 
 [gadd]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
 [virton]: http://google.com/search?q=intel+virtualization+bios
