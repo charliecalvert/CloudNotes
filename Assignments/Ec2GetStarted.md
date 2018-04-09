@@ -13,6 +13,9 @@ You might find this diagram helpful when reading this assignment.
 
 **NOTE**: _Remember, you only get one chance to download a private key for an EC2 instance. If you miss it the first time, then the only reasonable choice is to start again from scratch._
 
+![Most Commonly Used Services][mcus]
+**Figure**: _Our most commonly used AWS services._
+
 ## Step 01 {#step-one}
 
 Your first step will be to create a [free account](https://aws.amazon.com/free/) on AWS.
@@ -371,3 +374,4 @@ On Windows, you can connect to your EC2 instance with Putty:
 [aws-expert]:http://www.ccalvert.net/books/CloudNotes/Assignments/AwsEc2Expert.html#step-two-ssh-into-your-instance
 [ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
 [ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh
+[mcus]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsServices.png

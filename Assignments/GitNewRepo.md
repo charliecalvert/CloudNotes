@@ -461,24 +461,33 @@ You can get the exact phrase to submit by selecting the **Actions | Clone** menu
 
 ## Turn it in
 
+Check to make sure you:
+
+- Used all small letters. No caps.
+- Used hyphens instead of underscores
+- Put the hyphens in the right place.
+
+If you need to rename your repository, follow the instructions outlined later in this document.
+
 Paste in the the URLs for your repository when you submit your assignment. There are two URLs that can be interesting:
 
 * The URL for your BitBucket or GitHub repository
 * The URL used to clone your repository
 
-Examples:
+Examples, with the SSH style URL listed first:
 
-* https://bitbucket.org/ccalvert/prog219-calvert
-* git@bitbucket.org:lastname/prog272_lastname.git
-
-Or
-
-* https://github.com/charliecalvert/JsObjects
 * git@github.com:charliecalvert/JsObjects.git
+* https://github.com/charliecalvert/JsObjects
 
-Most of the time, when I ask for your Git your URL, I want the one I can I use to clone it. It should be clear, however, that either URL will allow me to access your repository.
+Or:
 
-Whenever you need to send me information when submitting an assignment, you can either enter a comment or use the Text page. When possible, use the Text page, because you can insert live hyperlinks and relatively well formatted text using that option. However, either technique will work.
+* git@bitbucket.org:lastname/prog272_lastname.git
+* https://bitbucket.org/ccalvert/prog219-calvert
+
+
+Most of the time, when I ask for your Git URL, I want the SSH URL. It should be clear, however, that either URL will allow me to access your repository.
+
+Whenever you need to send me information when submitting an assignment, you can either enter a comment or use the Text page. When possible, use the Text page, because you can insert live hyperlinks and relatively well-formatted text using that option. However, either technique will work.
 
 ## Hints
 
@@ -746,6 +755,22 @@ After you start feeling very comfortable with the basics, then you can learn som
 ## Push Existing Repository to the Cloud
 
 Details are [here][push-to-cloud]
+
+## Rename Your Repository
+
+Some students will not correctly name the repository the first time around. That is, they did not:
+
+- Use all small letters
+- Use hyphens in the correct places
+- Used underscores instead of hyphens
+- etc
+
+If you have not correctly named your repository, go to GitHub and locate your repository. Click on the **Settings** icon near the top right of the page.
+
+You will be taken to the **Settings** page. At the top of the **Settings** page will be an option to rename your repository. Select this option and rename your repository. This will change the URL for your repository.
+
+Save your work. Copy the new URL for your repository. Resubmit your assignment, being sure to include the new name, that is, the new URL for your repository.
+
 
 ## Ruminations
 

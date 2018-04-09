@@ -1,3 +1,7 @@
 * [CodeAcademy01.html](CodeAcademy01.html)
+* [Ec2GetStarted.html](Ec2GetStarted.html)
+* [GitHubApi.html](GitHubApi.html)
+* [GitNewRepo.html](GitNewRepo.html)
+* [LampBootstrap.html](LampBootstrap.html)
 * [PristineVirtualBox.html](PristineVirtualBox.html)
 * [master-list.html](master-list.html)
