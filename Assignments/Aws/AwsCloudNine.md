@@ -29,6 +29,9 @@ We are going to create an AWS user with limited permissions. To do this, we will
   - Deselect "**User must create new password at next signin.**"
 - Attach the user to **EC2Limited** group.
 
+
+**NOTE**: _It seems to take awhile for a new user to propogate through the system. Or sometimes it seems like I have to re-enter the password for the user before it really sticks. I'm not sure which. But try waiting, or recreating the password for a user if you have trouble signing as the new IAM user._
+
 ## Images
 
 Here are some screenshots to help you navigate through AWS menus.
