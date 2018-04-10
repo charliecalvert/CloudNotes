@@ -17,13 +17,13 @@ Use this as a guide:
 
 ## Simplified version
 
-In some cases, I will ask you to perform only these steps and skip the protions on setting up and running Node appliclations with NPM:
+In some cases, I will ask you to perform only these steps and skip the portions on setting up and running Node appliclations with NPM:
 
 - Set up your account on Cloud9
   - take a screen shot showing you that you are logged on
 - Connect to your repository and create a Cloud 9 WorkSpace based on it.
   - Take a screenshot of the dashboard showing your workspace
-- Open your workspace and open a file from the AllTest directory or some other part your repository that you created during one of our assignments.
+- Open your workspace and open a file from the AllTest directory or some other part of your repository that you created during one of our assignments.
   - Take a screenshot showing the open file and the project Workspace file hierarchy on the left.
 - Install JsObjects as shown below.
   - Take a screenshot showing that you have cloned JsObjects
@@ -43,7 +43,6 @@ Near the bottom of this file I include a [minimum install][#minimum-install] tha
 
 ## Create Workspace
 
-
 If you have not done so already,
 
 - In Cloud 9 hit the Plus icon and create
@@ -52,64 +51,42 @@ If you have not done so already,
 
 ## Install JsObjects
 
-JsObjects is the ancient, messy repository where I keep example code and many utilities that I use all the time. These utilities automate many tasks, and simplify navigation at the command prompt. You don't have to install JsObjects to code on Cloud9, however, I prefer to have it installed as it helps me simplify many tasks. Since I will have it installed, you should also consider installing it or you may find that it is difficult to follow the steps I take in class.
+JsObjects is the repository where I keep example code and many utilities that I use all the time. These utilities automate many tasks, and simplify navigation at the command prompt. You don't have to install JsObjects to code on Cloud9, however, I prefer to have it installed as it helps me simplify many tasks. Since I will have it installed, you should also consider installing it or you may find that it is difficult to follow the steps I take in class.
 
-Let's think for a moment about the directory structure on Cloud 9. There is your home directory in which they create a directory called workspace. By default, your repo ends up in this directory when you create a Cloud9 Workspace via the method we employed:
-
-```
-/
-/workspace // Your repo here
-  /Week01-ReactBasics  // And other directories from your repo
-```
-
-I ask that you create a folder called Git in the home directory and add JsObjects to it:
+Let's think for a moment about the directory structure on Cloud 9. There is your home directory in which they create a directory called **workspace**. By default, your repo ends up in this directory when you create a Cloud9 Workspace via the method we employed:
 
 ```
-/
-/workspace
-  /Week01-ReactBasics // And so on
-/Git
-  /JsObjects
-    /Utilities // And other JsObject directories
+-
+-workspace // Your repo here
+--Week01-ReactBasics  // And other directories from your repo
+```
+
+I ask that you create a folder called **Git** in the home directory and add **JsObjects** to it:
+
+```
+-
+- workspace
+-- Week01-ReactBasics // And so on
+- Git
+-- JsObjects
+--- Utilities // And other JsObject directories
+---- SetupLinuxBox
 ```
 
 Here is how to proceed. In your Cloud 9 Workspace, navigate to your home directory. Create a folder called **~/Git** and navigate into it:
 
-```
-cd
+```bash
 mkdir ~/Git
 cd ~/Git
 ```
 
+Or this equivalent code:
+
+```bash
+mkdir ~/Git && cd ~/Git
+```
+
 **NOTE**: _In Cloud 9, just type CTRL-V to paste your code into the bash shell._
-
-The code shown above is a bit redundant in that I have already asked you to navigate to your home directory. Hence, the following code would work if you are carefully following my directions:
-
-```
-cd         // Don't use this example. Instead, play
-mkdir Git  // it safe with the example above:
-cd Git     // "mkdir ~/Git && cd ~/Git"
-```
-
-Notice that in this second set of commands I am not including the code that points at our home directory: **~/.**. Nevertheless, in the first example, I do include it, just to be safe. Thus, if a student forgets to first navigate to the home directory, then the commands will still work. Of course, some students will no doubt cut and paste the last two lines of the second example and use it in the wrong place. One can't win. But I can try to point you in the right direction.
-
-Here is an example of the steps I took to clone JsObjects on Cloud9.
-
-<pre>
-charliecalvert:~/workspace (Week02) $ mkdir ~/Git
-charliecalvert:~/workspace (Week02) $ cd ~/Git/
-charliecalvert:~/Git $ pwd
-/home/ubuntu/Git
-charliecalvert:~/Git $ git clone http://github.com/charliecalvert/JsObjects.git
-Cloning into 'JsObjects'...
-warning: redirecting to https://github.com/charliecalvert/JsObjects.git/
-remote: Counting objects: 20274, done.
-remote: Compressing objects: 100% (77/77), done.
-remote: Total 20274 (delta 37), reused 86 (delta 22), pack-reused 20167
-Receiving objects: 100% (20274/20274), 27.55 MiB | 23.91 MiB/s, done.
-Resolving deltas: 100% (11626/11626), done.
-charliecalvert:~/Git $
-</pre>
 
 ## Clone JsObjects
 
@@ -120,19 +97,30 @@ cd ~/Git
 git clone https://github.com/charliecalvert/JsObjects.git
 ```
 
-Again, the code above is a bit redundant, as I have already asked you to navigate into the **~/Git** directory. However, one cannot be too careful.
+The code above is a bit redundant, as I have already asked you to navigate into the **~/Git** directory. However, one cannot be too careful.
+
+Here is an example of the steps I took to clone JsObjects on Cloud9.
+
+<pre>
+charliecalvert:~/workspace (Week02) $ mkdir ~/Git
+charliecalvert:~/workspace (Week02) $ cd ~/Git/
+charliecalvert:~/Git $ pwd
+/home/ubuntu/Git
+charliecalvert:~/Git $ git clone https://github.com/charliecalvert/JsObjects.git
+Cloning into 'JsObjects'...
+warning: redirecting to https://github.com/charliecalvert/JsObjects.git/
+remote: Counting objects: 20274, done.
+remote: Compressing objects: 100% (77/77), done.
+remote: Total 20274 (delta 37), reused 86 (delta 22), pack-reused 20167
+Receiving objects: 100% (20274/20274), 27.55 MiB | 23.91 MiB/s, done.
+Resolving deltas: 100% (11626/11626), done.
+charliecalvert:~/Git $
+</pre>
+
 
 ## Set up .bash_aliases
 
-Many of the shortcut commands that I use all the time are stored in the **.bash_aliases** file stored in my JsObjects repository. Let's back up the default cloud 9 **.bash_aliases** file, copy in my version of the file, and process it so that we can immediately begin using aliases and exports defined in that file:
-
-```
-cp ~/.bash_aliases ~/.bash_aliases.c9
-cp ~/Git/JsObjects/Utilities/SetupLinuxBox/.bash_aliases ~/.
-source ~/.bash_aliases
-```
-
-Alternatively, you might try this. Pull **JsObject** to get the latest, then go into **~/Git/JsObjects/Utilities/SetupLinuxBox** and run **UbuntuSetup**.
+Pull **JsObject** to get the latest, then go into **~/Git/JsObjects/Utilities/SetupLinuxBox** and run **UbuntuSetup**.
 
 ```
 ./UbuntuSetup
@@ -140,81 +128,17 @@ Alternatively, you might try this. Pull **JsObject** to get the latest, then go 
 
 Pick the second option: **b) Run Basic Setup**. Don't forget to source **./bashrc**. Now many of the aliases we use might work on Cloud9.
 
-## Understanding .bashrc
+**NOTE**: _I prefer to run applications on PORT 30025. However, Cloud 9 wants you to use PORT 8080 when you preview or view your app. As a result, check that the PORT environment variable is set to 8080:_
 
-The **.bashrc** file is located in your home directory. It is processed when you open a bash shell or when you run one of these commands:
-
-```
-source ~/.bashrc
-. ~./bashrc
+```bash
+echo $PORT
 ```
 
-The second command is a period followed by the path to your **.bashrc** file.
+If this does not return 8080, then do this:
 
-The **.bashrc** contains a series of commands that help to set up the bash environment. It is your chance to customize the environment to suit your needs. You can also review the file to help you understand how bash works.
-
-You can most easily find the .bashrc file in your Cloud 9 editor by following these steps:
-
-- Make sure the menu item **Window | Workspace** is selected
-- Toggle open the **workspace** tab on the far left.
-- Select the **gear** icon
-- Select **Show home in favorites**
-- Ensure that **Show hidden files** is selected
-
-Now you should be able to view your entire directory tree in the **workspace** window. This is useful when you want to edit your **.bashrc** or other configuration files such as **.bash_aliases**. However, much of the time it is just a distraction, and can be turned off.
-
-## Configure .bashrc
-
-If you are doing the simplified assignment you can stop here.
-
-There are a few commands you should run to set up node to work the way we prefer. Begin by running the following in the bash shell:
-
+```bash
+export PORT=8080
 ```
-npm config set prefix ~/npm
-```
-
-This command tells **npm** to place your globally installed packages in your home directory, in a folder called **npm**. This is useful for two reasons:
-
-- If you install an NPM library into the default space, then it is owned by root. This means you need to type sudo in order to work with that library. Sometimes that doesn't matter, but sometimes it means that you end up needing to type sudo in order to work with your application. Soon, you end up in a mess, where you can't run your own program without first giving it root permissions. This won't happen all the time, but it is simpler to avoid the whole issue by installing your npm libraries someplace where you have permissions to use them.
-- This second point can be argued either way. If you install your NPM global libraries in a place where only you can see them, then you will not pollute other user's environment. On the other hand, some libraries will be installed multiple times.
-
-The bottom line is that one does not have to install NPM libraries into your home directory, but it is safer, particularly for beginners, to do so.
-
-Check out this file: ~/Git/JsObjects/Utilities/SetupLinuxBox/BashrcEasyExtras
-
-Put at least portions of it at the end of your **~/.bashrc**. The sinplest way to do this is as follows:
-
-```
-slb
-cat BashrcEasyExtras >> ~/.bashrc
-source ~/.bashrc
-```
-
-The first command, **slb**, is from our **~/.bash_aliases** file. It won't work unless you have set up **~/.bash_aliases** as described above. The **slb** alias moves you to this directory:
-
-**~/Git/JsObjects/Utilities/SetupLinuxBox**
-
-The second command appends some text onto the end of your **~/.bashrc** file. The text is found in a file from JsObjects called **BashrcEasyExtras**. We then process the **~/.bashrc**.
-
-Optionally, we can display some of the work we did to confirm that everything is set up as expected:
-
-```
-echo $NODE_PATH
-echo $PATH
-```
-
-If you want, you can edit your ~/.bashrc file manually. For instance, you can append the following to the end of the file:
-
-<pre>
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent`
-fi
-
-export NODE_PATH=$HOME/npm/lib/node_modules
-export PATH="$PATH:$HOME/npm/bin"
-</pre>
-
-Then run **source ~/.bashrc**.
 
 ## The .gitignore file
 
@@ -251,13 +175,16 @@ This is not part of the Simplified Version of this assignment.
 
 I'm still learning about this too, but this is what worked for me with the Assignment we did in class on Wednesday. First I created a workspace that linked to my version of our new **isit320-lastname-2017** repository. My version of the repository contained the work we did in class on Wednesday.
 
-On the command line, I navigated to our project directory and ran:
+**NOTE**: _Make sure your project is in the ~/workspace directory or one of its subdirectory. Cloud9 is setup to run files from this directory, and trying to run from someplace, such as ~/Git or one of its subdirectories, does not work well. But don't try to copy an entire repository from **~/Git** to **~/workspace**, as that has its own set of problems. In particular, **~/workspace** is the location of a repository, and if you copy a second repository into, then you end up with nested repositories._
+
+On the command line, navigate to our project directory and run one of the following:
 
 ```
 npm install && npm run build
+yarn install && yarn run build
 ```
 
-I opened **Week01-ReactBasics/index.html** in the Cloud 9 editor and selected Run. That started Apache. Then I went to Preview | Preview Running Application, which opened a window. I clicked on the directory that held my project, and Bob was my Uncle.
+Open **Week01-ReactBasics/index.html** in the Cloud 9 editor and select **Run**. That starts Apache. Go to **Preview | Preview Running Application**, which opens a window. Click on the directory that helds your project, and Bob is your Uncle.
 
 There is a little doo-hickey you can click so your project runs in its own tab in the browser, rather than as a child of Cloud 9's IDE. It's a matter of taste as to what you prefer.
 
@@ -306,54 +233,28 @@ Submit your work and attach the screenshots.
 
 [webpack-c9]: https://github.com/webpack/webpack-dev-server/issues/230
 
-## Install Node Manually
+## Understanding .bashrc
 
-Don't install Node on Cloud 9. When you started your workspace, you had an option to get it set up automatically.
-
-In other words, Node should already be installed in your copy of Cloud9. In fact, **NVM** should also be installed, so you can set the current version of Node with that tool, if you know how to use it.
-
-However, if you want to take over control -- and I can't think of a good reason why you should -- then you can do this:
-
-<pre>
-jou
-cd NodeInstall
-$ ./InstallNodePackages.sh
-</pre>
-
-Just to be clear, **InsteallNodePackages.sh** is in this location:
-
-<pre>
-~/Git/JsObjects/Utilities/NodeInstall
-</pre>
-
-Now you should be okay to get started.
-
-## Minimum Install {#minimum-install}
-
-For the vast majority of students, performing the minimum steps instead of the full environment setup will not save you time. You will indeed get set up faster, but then, throughout the quarter, you will often have to take extra steps that I and the other students in the class don't need to take. In the long run, it will likely take you much longer to do the minimum install than to properly set up your environment. But I want you to have the choice to do things your own way -- even if it costs you egregiously -- if that is what you prefer. Also, in a very few cases, an expert student might have their own system for handling the tasks that I automate. In that case, they need not do the full environment setup that I prefer.
-
-For those who want only the minimum install, start from the bash shell, and run the following:
-
-```
-npm config set prefix ~/npm
-```
-
-Also, at the bottom of your **~/.bashrc** file, add the following lines:
-
-```
-export PATH="$PATH:$HOME/npm/bin:"
-export NODE_PATH=:$HOME/npm/lib/node_modules
-```
-
-This adds the **~/npm/bin** directory to your path. After adding the line, either restart your shell, or type the following:
+The **.bashrc** file is located in your home directory. It is processed when you open a bash shell or when you run one of these commands:
 
 ```
 source ~/.bashrc
+. ~./bashrc
 ```
 
-This processes the changes to your **.bashrc** file.
+The second command is a period followed by the path to your **.bashrc** file.
 
-This is the end of the minimum install.
+The **.bashrc** contains a series of commands that help to set up the bash environment. It is your chance to customize the environment to suit your needs. You can also review the file to help you understand how bash works.
+
+You can most easily find the .bashrc file in your Cloud 9 editor by following these steps:
+
+- Make sure the menu item **Window | Workspace** is selected
+- Toggle open the **workspace** tab on the far left.
+- Select the **gear** icon
+- Select **Show home in favorites**
+- Ensure that **Show hidden files** is selected
+
+Now you should be able to view your entire directory tree in the **workspace** window. This is useful when you want to edit your **.bashrc** or other configuration files such as **.bash_aliases**. However, much of the time it is just a distraction, and can be turned off.
 
 ## NodeJs and NVM
 
@@ -373,7 +274,7 @@ I should add that you will want to create **node_modules** directories by runnin
 On Pristine Lubuntu you should be running the [latest version](https://nodejs.org/en/) of Node automatically:
 
 <pre>$ node --version  
-v8.6.0</pre>
+v9.10.1</pre>
 
 On Cloud9, we use [**nvm**](https://github.com/creationix/nvm) to maintain node. Here is a little Cloud9 session showing that I'm running a [recent LTS version](https://github.com/nodejs/Release#release-schedule1) of Node. That is good enough, but I want the [latest](https://nodejs.org/en/), so I use nvm to switch to the latest:
 
