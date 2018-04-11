@@ -26,17 +26,21 @@ verbatim. Or nearly verbatim. Find the places in the HTML file
 where it says **Lastname** and replace them with your lastname. Also,
 find this text:
 
-    <p>This is a document</p>
+```html
+<p>This is a document</p>
+```
 
 Replace the parts between \<p\> and \<\/p\> with the first paragraph
 from your introduction that you published in the discussion area. For
 instance:
 
-    <p>I'm Charlie Calvert and I'm your teacher. I've been working with
-    computers and writing code in one form or another for about 25
-    years. I started out with Turbo Pascal and Delphi, spent time with
-    Java, C++, Python and Perl, and then spent a number of years working
-    in C#. Now my primary focus is on JavaScript.</p>
+```html
+<p>I'm Charlie Calvert and I'm your teacher. I've been working with
+computers and writing code in one form or another for about 25
+years. I started out with Turbo Pascal and Delphi, spent time with
+Java, C++, Python and Perl, and then spent a number of years working
+in C#. Now my primary focus is on JavaScript.</p>
+```
 
 Put the files in: **/var/www**, replacing the index.html that is there
 by default.

@@ -104,7 +104,7 @@ ReactDOM.render(
     </div>,
     document.getElementById('root')
 );
-```https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
+```
 
 ## Testing Notes
 
@@ -152,7 +152,7 @@ Add a new item to the menu called **Insert New Gist** or something similar. In *
 
 The new component will have one button that will call the **fetchGist** method from **DataMaven**.
 
-**fetchGist** should retrieve the entirity of the JSON data returned from GitHub. On the client side you should add the data to **DataMaven**'s state. This should cause a call to the **DataMaven** and **ShowNewGist** render methods.
+**fetchGist** should retrieve the entirety of the JSON data returned from GitHub. On the client side you should add the data to **DataMaven**'s state. This should cause a call to the **DataMaven** and **ShowNewGist** render methods.
 
 ## Thinking about State
 
@@ -177,14 +177,15 @@ Read the section called Details, Details here:
 
 ## Examples
 
+```bash
 curl https://api.github.com/zen
- 2009  curl https://api.github.com/users/charliecalvert
-
- 2011  curl -i https://api.github.com/repos/twbs/bootstrap
- 2012  curl -i https://api.github.com/repos/charliecalvert/JsObjects
- 2013  curl -i https://api.github.com/repos/charliecalvert/repos
- 2014  curl -i https://api.github.com/repos/charliecalvert
- 2015  curl -i https://api.github.com/users/charliecalvert/repos
+curl https://api.github.com/users/charliecalvert
+curl -i https://api.github.com/repos/twbs/bootstrap
+curl -i https://api.github.com/repos/charliecalvert/JsObjects
+curl -i https://api.github.com/repos/charliecalvert/repos
+curl -i https://api.github.com/repos/charliecalvert
+curl -i https://api.github.com/users/charliecalvert/repos
+```
 
 ## Time till Renew
 
