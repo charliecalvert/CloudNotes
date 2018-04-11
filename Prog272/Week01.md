@@ -32,6 +32,7 @@ book. You should however, become familiar with the material it covers.
 - [VirtualBox Deck](http://bit.ly/1at2JZ2)
 - [Pristine VirtualBox Assignment][pvba]
 - [Git][git]
+- Git Deck: [http://bit.ly/git-basics](http://bit.ly/git-basics)
 
 ## React
 
