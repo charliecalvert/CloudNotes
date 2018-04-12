@@ -1,6 +1,8 @@
 # React ESLint
 
-Turn on EsLint. I have been very slow to reach this conclusion, even though some of you have tried to tell me this for some time. At any rate, my current thinking is that we should use EsLint, and EsLint only, to lint our React programs. You can, therefore, turn off JsHint and JSCS. You only need to be running eslint.
+We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.
+
+## Project Folder
 
 Install some stuff:
 
@@ -16,7 +18,9 @@ Or:
 npm install --save-dev eslint eslint-plugin-react babel-eslint
 ```
 
-Perhaps it would make sense to install these globally, but for now, I'm doing it on a per-project basis. If you want to install it globally, try these commands:
+## Install Globally
+
+I now think there is value in installing these globally, and not just on a per-project basis. If you want to install it globally, try these commands:
 
 ```nohighlighting
 npm i -g eslint
@@ -31,37 +35,7 @@ Read here [for more details](https://www.npmjs.com/package/eslint).
 
 And here is at least a starter **.eslintrc** file:
 
-```
-{
-    "plugins": [ "react", "requirejs" ],
-    "rules": {
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
-        "react/react-in-jsx-scope": "error",
-        "no-console": "off",
-        "indent": "error",
-        "quotes": ["error", "single"],
-        "linebreak-style": ["error", "unix"],
-        "semi": ["error", "always"]
-    },
-    "env": {
-        "amd": true,
-        "browser": true,
-        "es6": true,
-        "jest": true,
-        "node": true,
-        "jquery": true
-    },
-
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": { "jsx": true }
-    },
-    "extends": "eslint:recommended"
-}
-```
+- [Charlie's ESLint Gist][ceslg]
 
 ## Arrow Functions
 
@@ -69,9 +43,9 @@ I'm not clear about this. Set "parser": "babel-eslint" in **.eslintrc** to allow
 
 ## Run from command line
 
-Assuming your ES6 code is in a directory called **source**, do one of these, where the first is for the global install, and the second is for the local install:
+Assuming your ES6 code is in project tree, do one of these, where the first is for the global install, and the second is for the local install:
 
-    eslint source
+    eslint .
     ./node_modules/.bin/eslint source/
 
 Also, consider putting it in your **package.json** file in the **scripts** section. For instance you might write something like this in one of your **package.json** files:
@@ -80,12 +54,46 @@ Also, consider putting it in your **package.json** file in the **scripts** secti
 "scripts": {
     "start": "DEBUG=firebase-express:server nodemon ./bin/www",
     "bundle": "node_modules/.bin/webpack --watch",
-    "lint": "./node_modules/.bin/eslint source/**"
+    "lint": "./node_modules/.bin/eslint ."
 },
 ```
 
 When I ran **npm run lint**, it worked, but NPM reports an error until I get all the eslint errors and warnings out of my code. Then it returns cleanly. Before that, I see the results of my tests, but NPM reports an error
 
+## WebStorm
+
+In WebStorm, turn on ESLint.
+
+    File | Settings | Languages and Frameworks | JavaScript | Code Quality Tools
+
+My current thinking is that we should use EsLint, and EsLint only, to lint our React programs. You can, therefore, turn off JsHint and JSCS. You only need to be running ESLint.
+
 ## Turn it in
 
-Just point me at your midterm, final, or some appropriate project. When I open it, I'll expect to see a **.eslintrc** file and have most of the files relatively error free in terms of eslint errors.
+Just point me at your midterm, final, or current project. When I open it, I'll expect to see a **.eslintrc.json** file and have most of the files relatively error free in terms of eslint errors.
+
+[ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
+
+## Beautify Files
+
+We want to run js-beautify, but not on all files in a directory. Create a script called **pretty** like this:
+
+```bash
+find . -iname '*.js' | grep -vFf skip | xargs js-beautify -r
+```
+
+Where skip is a text file contents like this, which is a list of files or directories that you want to ignore:
+
+```bash
+bundle.js
+registerServiceWorker.js
+node_modules
+```
+
+These files might go in the root of a project or the root of your repository.
+
+Alternatively, you could do this:
+
+```bash
+find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle.js' -not -path '**/registerServiceWorker.js' -print0 | xargs -0 js-beautify -r
+```

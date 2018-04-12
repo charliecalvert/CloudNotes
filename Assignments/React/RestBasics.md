@@ -12,15 +12,14 @@ Both of these slide decks contain relevant information that might be useful when
 
 ## Get Started
 
-Create a directory called **week02-rest-basics** in your Repository.
-
-**NOTE**: _Let's try switching to all small letters for now, since npm is getting fussy about this issue._
+Create a branch called **Week02**.
+Create a directory called **Week02-RestBasics** in your **Week02** branch.
 
 ## Motivation
 
-Your assignment is to understand how and why a request from a client is processed and routed by your server. If you want to become a web developer, there are many things you need to learn. However, this is one of the central, key, all important subjects that you must digest. _Eventually, you must perform a complete meld with HTTP requests and how they are routed on a server._ What they mean, and how they work, needs to become entirely intuitive to you.
+Your assignment is to understand how and why a request from a client is processed and routed by your server. This is one of the key subjects important subjects that we must understand. _Eventually, we must perform a complete meld with HTTP requests and how they are routed on a server._
 
-**NOTE**: _When you go to parties, and encounter an attractive member of the opposite sex, it should feel entirely natural for you to start talking about HTTP requests and routing. If they don't understand, it should never occur to you that you are at fault. You must believe deep in your heart that you are not an anti-social nerd. The problem is the other person. To not understand HTTP requests and routing is to be completely clueless. "What do you mean you don't understand how to route an HTTP request? What planet are you on?" You should even feel a noticeable cooling of your affection for members of your immediate family if they don't understand HTTP requests and routing. "I know you're my child, and I know you are only 4 years old, but you have to understand that I just don't feel the same way about you since I realized you don't understand HTTP requests." Our goal is complete assimilation into the Borg!_
+**NOTE**: _To not understand HTTP requests and routing should be alien to you. "What do you mean you don't understand how to route an HTTP request? How can that be?" You should even feel a noticeable cooling of your affection for members of your immediate family if they don't understand HTTP requests and routing. "I know you're my child, and I know you are only 4 years old, but you have to understand that I just don't feel the same way about you since I realized you don't understand HTTP requests."_
 
 ## Create the Project Directory
 
@@ -33,15 +32,21 @@ cd Week02-RestBasics
 
 ## Create Server
 
+Before going further, make sure you have the latest copy of JsObjects:
+
+    jo
+    git pull
+
 In the **RestBasics** directory, run the following command:
 
 ```
-CreateAllExpress server
+CreateExpressProject server
 cd server
 ```
 
 You have now created a fully functional, node based, express server that can handle HTTP requests.
 
+**NOTE**: _You can usually return to the directory you were in previously by typing **cd -**._
 ## URLS
 
 The following diagram provides us with some nomenclature.
