@@ -247,11 +247,9 @@ This tells our react app to forward requests for REST calls to our Express Serve
 
 ## Make HTTP Request
 
-In the client, install **fetch**. We will use this native JavaScript call in will use in lieu of **$.ajax** or **$.getJSON**. The **fetch** call is part of the ES6 standard, though it is not finalized anywhere yet, as far as I know. That is why we have to install it explicitly, even though it should one day be built into all JavaScript implementations:
+In the client, we no longer need to install **fetch**. It is now present in all major browsers.
 
-```
-npm install --save whatwg-fetch
-```
+We will use this native JavaScript call in lieu of **$.ajax** or **$.getJSON**. The **fetch** call is part of the ES6 standard, and is now finalized.
 
 ## Rewrite the Client
 
@@ -267,12 +265,12 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            file: 'Get Nine Result will be placed here.',
-            foo: 'waiting for server'
+            file: 'File name will be placed here.',
+            status: 'waiting for server'
         };
     }
 
-    bar = () => {
+    queryServer = () => {
         const that = this;
         fetch('/api/foo')
             .then(function(response) {
@@ -283,7 +281,7 @@ class App extends Component {
                 that.setState(foo => (json));
             })
             .catch(function(ex) {
-                console.log('parsing failed', ex);
+                console.log('parsing failed, URL bad, network down, or similar', ex);
             });
     };
 
@@ -296,9 +294,9 @@ class App extends Component {
                 </div>
 
                 <p className="App-intro">
-                    state: {this.state.foo} file: {this.state.file}
+                    state: {this.state.status} file: {this.state.file}
                 </p>
-                <button onClick={this.bar}>Bar</button>
+                <button onClick={this.queryServer}>Bar</button>
             </div>
         );
     }
@@ -307,9 +305,26 @@ class App extends Component {
 export default App;
 ```
 
+The key call here is to **fetch**, found in the method named **queryServer**. The promise uses two **.then** statements. The first is to check if the HTTP call worked, even if the server reported an error such as 404 Not found or 500 Internal Server error. The second **.then** statement gives us the result if the call succeeds. In other words, if the server sent us back some JSON, then the JSON will be found here.
+
+```javascript
+fetch('/api/foo')
+    .then(function(response) {
+        // DID HTTP TALK TO THE SERVER? BLOWS UP IF NETWORK DOWN, URL BAD, ETC.
+        // CHECK response.ok TO SEE IF THE CALL SUCCEEDED ON THE SERVER SIDE.
+        // response.ok will be false if we return a 404 or 500 error.
+    })
+    .then(function(json) {
+        // IF WE SUCCEED, WE GET RESULT HERE. TYPICALLY SOME JSON.
+    })
+    .catch(function(ex) {
+        console.log('parsing failed, URL bad, network down, or similar', ex);
+    });
+```
+
 ## Run the Application.
 
-Couldn't be simpler:
+Could not be simpler:
 
 ```
 npm start
@@ -343,7 +358,7 @@ Then **Preview | Preview running application** from the menu items near the top 
 
 Right now, I can't get it to work on Cloud 9. Edit your code there. Test everything but the button click. If all is clean:
 
-- Push your code from Cloud 9 to GitHub
+- Push your code from Cloud 9 or Pristine Lubuntu to GitHub.
 - Log into AWS.
 - Pull your repository on AWS (Clone first if necessary, but your repository should already be on AWS, so you shouldn't need to clone. Don't clone unless your repository is not already on your AWS server. If it is there, just pull. Don't clone.)
 - Edit your security group in the EC2 console to open ports 30025 and 30026
