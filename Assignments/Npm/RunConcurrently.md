@@ -6,8 +6,8 @@ The goal of this assignment is to learn to run two programs concurrently. One pr
 
 In most cases, you will already have a directory that contains a **server** and **client** project. In case you do not, here is how to set one up starting from the root of your repository:
 
-    mkdir Week10-Concurrently
-    cd Week10-Concurrently/
+    mkdir WeekXX-Concurrently
+    cd WeekXX-Concurrently/
     CreateExpressProject server
     create-react-app client
 
@@ -74,6 +74,14 @@ Now run **npm install && npm start**
 
 ## Turn it in
 
-I'd like to see this set up for any project that has both a **client** and **server** of the type described above. I can perhaps find the projects you have set up to support concurrently by searching for **start-click.js** or for  **package.json** files that contain the **concurrently** package.
+Provide the following:
+
+- branch
+- folder
+
+For instance:
+
+- Branch: Week02
+- Folder: Week02-Concurrently
 
 [cc]: https://www.npmjs.com/package/concurrently
