@@ -46,7 +46,7 @@ I'm not clear about this. Set "parser": "babel-eslint" in **.eslintrc** to allow
 Assuming your ES6 code is in project tree, do one of these, where the first is for the global install, and the second is for the local install:
 
     eslint .
-    ./node_modules/.bin/eslint source/
+    ./node_modules/.bin/eslint .
 
 Also, consider putting it in your **package.json** file in the **scripts** section. For instance you might write something like this in one of your **package.json** files:
 

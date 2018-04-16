@@ -138,6 +138,10 @@ If you need to open a port:
 - Turn to the Inbound page at the bottom of the Dashboard
 - Edit and add a **Custom TCP** rule for the appropriate port.
 
+Our most commonly used Ports are 30025, 30026. I believe you can edit the inbound security rules to reserve a block of ports: 30025 - 30030. This will open 30025 through 30030.
+
+![Ec2 Elven Security Group][ec2esg]
+
 ## Step Five
 
 AWS gave us a key pair that we can use to access an instance of our EC2 server. However, we already have an SSH key pair that we use to access our data on GitHub. If we use the GitHub key for accessing our AWS server, then we would only have to load one key. Otherwise we have to load two keys:
@@ -375,3 +379,5 @@ On Windows, you can connect to your EC2 instance with Putty:
 [ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
 [ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh
 [mcus]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsServices.png
+
+[ec2esg]: https://s3.amazonaws.com/bucket01.elvenware.com/images/ec2-elven-security-group.png

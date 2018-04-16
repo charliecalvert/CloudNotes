@@ -22,7 +22,7 @@ Menu
   a) Run All (ESLintRc and ElfDebugEnzyme)
   b) Get ElfDebugEnzyme
   c) Get .eslintrc
-  x) Exit 
+  x) Exit
 ```
 
 You'll need write permissions to write the gist in the current directory. By default, you should have such permissions in most cases.
@@ -46,3 +46,5 @@ The original script is found here:
 ## Turn it in
 
 Set up the script on your system. Run one of the commands and take a screenshot of the output. My goal is simply to ensure that you know how to use this tool, and in most cases a screenshot of the output from a run of the script should convince me that you do indeed know how it works.
+
+The screenshot should show the menu of the script, a bit like the text I include at the overview near the top of this page.

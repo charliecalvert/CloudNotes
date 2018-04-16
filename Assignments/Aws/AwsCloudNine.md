@@ -91,7 +91,13 @@ Next to each user name is the group to which they belong.
 
 The **nano** editor is a good tool even if it is strange to those of us who are used to Windows style editors. Learning to use it is worthy goal. Many of the key strokes that work in the editor also work at the Bash shell. For instance **Ctrl-A** (Beginning of line) and **Ctrl-E** (end of line). **Ctrl-F** is move forward one character, and **Ctrl-B** is move back one character. Once you get the hang of it, you will realize there are alternative techniques to using arrow keys.
 
+## Turn it in
 
+I'm looking for pretty much any screen shot that includes a view of your AWS Cloud9 development environment. For instance, attach to your assignment a screen shot similar to, but not identical to, this: 
+
+![Charlie Cloud9 on AWS][c9acc]
+
+[c9acc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/cloud9-aws-charlie-code.png
 
 [asset]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsSshSetup.png
 [aap]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsAttachPolicy.png

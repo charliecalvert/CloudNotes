@@ -101,6 +101,7 @@ To install the libraries that our project needs, run these commands:
 npm install --save react react-dom webpack
 npm install --save-dev babel-loader babel-core webpack-dev-server
 npm install --save-dev babel-preset-react babel-preset-env webpack-cli
+npm install --save-dev babel-preset-env
 ```
 
 **npm** is the Node Package Manager, and it can be used to install packages (libraries) and to perform other tasks such as running tiny scripts that start your project. **node** and **npm** and tightly linked tools which depend on one another. When you install node, npm is also installed. It is hard to do much with node without also running the **npm** command at least once.

@@ -111,6 +111,49 @@ When you turn in the the assignment, include the URL of your repository. It shou
 git@bitbucket.com:lastname/prog219_lastname.git
 ```
 
+## Bower
+
+Your bower files should be set up for you automatically by CreateExpressProject. If you want to confirm that they are correct, or generate them by hand, then follow these guidelines.
+
+There are two of them. The first is **.bowerrc**:
+
+```javascript
+{
+  "directory": "public/bower_components"
+}
+```
+
+The second is **bower.json**:
+
+```javascript
+{
+  "name": "elven-project",
+  "version": "0.0.0",
+  "authors": [
+    "Charlie Calvert"
+  ],
+  "description": "Angular Unit Tests",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "http://www.elvenware.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1"
+  }
+}
+```
+
+They belong in the root of your project. To process the files, type:
+
+    bower install
+
 ## Debug
 
 It is possible to create debug output that is only displayed if the environment variable called **DEBUG** is set to a certain value. Look in **bin/www**. Find a line like this:

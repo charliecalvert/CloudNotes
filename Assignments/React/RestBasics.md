@@ -149,7 +149,15 @@ app.use('/api', api);               // on line 28
 
 The first line just allows us to gain access to our new file: it links it into our project. The second line states what we want to do: _we want to **use** the code in our file as middleware._ We are telling Express that if there is a request from the server that ends with **/api**, then it should be passed to our code in **./routes.api.js**.
 
-Now set the port, in **bin/www**, to **30026**. We are going to run the client on port 30025, so we are setting the port for the server to some other number. I've chosen 30026 in the hopes that it will be easy to remember.
+## Set the Port
+
+Now set the port, in **bin/www**, to **30026**. One way to do that is to write this:
+
+```javascript
+var port = normalizePort('30026');
+```
+
+We are going to run the client on port 30025, so we are setting the port for the server to some other number. I've chosen 30026 in the hopes that it will be easy to remember.
 
 Take a moment to understand what we have done.
 

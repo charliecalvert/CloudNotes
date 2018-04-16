@@ -15,7 +15,9 @@ Install concurrently:
 
     npm install --save concurrently
 
-Set the port in **server/bin/www** to 30026.
+Set the port in **server/bin/www** to 30026. One way to do that is like this:
+
+    var port = normalizePort('30026');
 
 In the **Week10-Concurrently** directory set up **package.json** and the starter script as described in the next few sections of the project.
 
