@@ -33,10 +33,10 @@ constructor() {
 <button className="elf" onClick={this.bar}>Get Nine</button>
 ```
 
-**The bar method:**
+**The getFile method:**
 
 ```javascript
-bar = () => {
+getFile = () => {
     this.setState({
         nine: '9'
     })
@@ -62,35 +62,33 @@ describe('React Jest Suite', function () {
     it('renders and displays the word Nine', () => {
         const wrapper = shallow(<App />);
         console.log(wrapper);
-        const welcome = <p className="App-intro">Nine: 0</p>;
+        const welcome = <p className="App-intro">file: unknown</p>;
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
-    it('renders button click message', () => {
-        const wrapper = shallow(<App />);
-        const nineSign = <p className="App-intro">Nine: 9</p>;
-        wrapper.find('button.elf').simulate('click');
-        expect(wrapper.contains(nineSign)).toEqual(true);
+    it('renders state of File paragraph after button click', () => {
+       const wrapper = shallow(<App />);
+       const file = <p className="App-intro">file: url-file.js</p>;
+       wrapper.find('#getFile').simulate('click');
+       expect(wrapper.contains(file)).toBe(true);
     });
-
 });
 ```
 
 ![Running the tests][run-tests]
 
-## Change Name of Bar
+## Change Name of getFile
 
-Right now we have a method on our App class called **bar**. Let's give it a more sensible name: **getNine**:
+Right now we have a method on our App class called **getFile**. Let's give it a more sensible name: **getFileName**:
 
 ```javascript
-getNine = () => {
-    this.setState({
-        nine: '9'
-    })
+getFileName = () => {
+   console.log('getFile called.');
+   this.setState({fileName: 'url-file.js'})
 };
 ```
 
-Make any other necessary changes to ensure that your app still runs.
+Make any other necessary changes to ensure that your app still runs. and all tests pass.
 
 ## Add firstName test
 
@@ -107,8 +105,8 @@ it('renders and displays the default first name', () => {
 If you are having trouble getting this test to pass, add some debug information to help you see what the last paragraph element on your form is actually rendering:
 
 ```javascript
-const ninep = wrapper.find('p').last().debug();
-console.log(ninep);
+const lastParagraph = wrapper.find('p').last().debug();
+console.log(lastParagraph);
 ```
 
 **TIP**: _The call to last gets the last paragraph on your form. Beside **last()**, there is also a **first()**. See the enzyme docs for more info._
@@ -133,7 +131,7 @@ In the constructor, add first name to state:
 
 ```javascript
 this.state = {
-    nine: '0',
+    file: 'unknown',
     firstName: 'unknown'
 }
 ```
@@ -195,17 +193,17 @@ setAddress = () => {
 };
 ```
 
-You probably should create a new test for each default field you add, and for each new field that is displayed when you click the **setAddress** button. In other words, don't try to write one long test that confirms that all the address fields are set. Instead, write one default test for the **firstName**, one for **lastName**, one for **street**, one for **city**, etc. You should also have one test for each field as it appears after the button is clicked.
+You should create a new test for each property you add to your **state**, and for each **state** property that is displayed when you click the **setAddress** button. In other words, don't try to write one long test that confirms that all the parts of your **state** are set. Instead, write one test for the **firstName**, one for **lastName**, one for **street**, one for **city**, etc. You should also have one button click test for each property as it appears after the button is clicked.
 
-Feel free to be creative with the HTML you generate. At this point, you will probably feel constrained by your ability to write reasonable tests for complex HTML. Hopefully our skills we improve so that we won't always feel that limitation. In other words, even if you know fancy HTML and CSS for displaying an address, consider limiting, for now, just how fancy you get because the tests might be become to hard.
+Feel free to be creative with the HTML you generate, but I suggest not being too fancy. Even if you know fancy HTML and CSS for displaying an address, consider limiting, for now, just how fancy you get because the tests might become to hard to write.
 
 ## Philosophy
 
-We have to remember what our Enzyme unit tests do: They return the HTML produced by our components. These Enzyme methods, especially debug, help us sort through and trigger events in the HTML that is returned so that we can prove to ourselves that our components are producing the right code. If you have one simple form, this makes little sense since you can just run your app and look at your form to see if it is rendering correctly. If you need to push one button, then you push it and see if it works. But if you have a dozen components - or two dozen - then checking the output becomes harder and harder as your app gains in complexity. Then unit testing becomes essential and a huge time saver. These Enzyme methods, once mastered, help us quickly and efficiently right the correct tests to confirm that our components work even after we fix bugs, refactor, or add features.
+We have to remember what our Enzyme unit tests do: They return the HTML produced by our components. These Enzyme methods, especially debug, help us sort through and trigger events in the HTML that is returned so that we can prove to ourselves that our components are producing the right code. If you have one simple form, this makes little sense since you can just run your app and look at your form to see if it is rendering correctly. If you need to push one button, then you push it and see if it works. But if you have a dozen components - or two dozen - then checking the output becomes harder and harder as your app gains in complexity. Then unit testing becomes essential and a huge time saver. These Enzyme methods, once mastered, help us quickly and efficiently write the correct tests to confirm that our components work even after we fix bugs, refactor, or add features.
 
 This is a skill. One is not born from the womb, wet behind the ears, knowing how to do this. But if you work at it and get good at it, then you have a skill that employers might want.
 
-This isn't the only Unit Test library, not by any means. But all unit testing tools have similar features. Learn one library and you can more easily learn the next.
+Jest isn't the only Unit Test library, not by any means. But all unit testing tools have similar features. Learn one library and you can more easily learn the next.
 
 [Get Sen Murray's address](https://www.google.com/search?q=address+for+patty+murray)
 

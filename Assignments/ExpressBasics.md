@@ -111,6 +111,35 @@ When you turn in the the assignment, include the URL of your repository. It shou
 git@bitbucket.com:lastname/prog219_lastname.git
 ```
 
+## Package Missing
+
+Our projects usually have a file called:
+
+package.json
+
+In that file is a list of dependencies that our project relies on.
+
+"dependencies": {  
+    "cookie-parser": "~1.4.3",  
+    "debug": "~2.6.9",  
+    "express": "~4.16.0",  
+    "http-errors": "~1.6.2",  
+    "morgan": "~1.9.0",  
+    "pug": "2.0.0-beta11"  
+  }
+
+These are the libraries that our project uses. As you can see, **http-errors** is one of those libraries.
+
+In order to install these libraries, we type **npm install**. (Or if you want to be cutting edge: **yarn install**, but don't worry about that for now.) Note that **npm install** is run automatically by **CreateExpressProject.**
+
+Running **npm install** causes our **package.json **file to be processed and the libraries listed there to be downloaded from the cloud and placed in a directory called **node_modules.**
+
+All good and well. But in our **.gitignore** file, we tell Git to ignore -- to not check in -- our **node_modules** directory. We do this because that directory is huge and makes our repository unwieldy.
+
+Again, all good well. But when we pull our repository or our project onto a new machine, then **package.json** comes with it but **node_modules** does not. This means we have to run **npm** **install** to recreate our **node_modules**.
+
+In general, when you see the error "Cannot find module XXX," the first thing to do is try running **npm install** from the root of your project.
+
 ## Bower
 
 Your bower files should be set up for you automatically by CreateExpressProject. If you want to confirm that they are correct, or generate them by hand, then follow these guidelines.
