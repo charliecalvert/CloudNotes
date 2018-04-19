@@ -120,6 +120,15 @@ The last contains the core data that we want to retrieve from GitHub. The first 
 }
 ```
 
+You will also want to set up CSS to control the Avatar URL:
+
+```javascript
+img.avatar {
+    width: 75px;
+    height: 75px;
+}
+```
+
 ## Display User Data
 
 The first step would be to rename **components/App.js** to **components/GetUserInfo.js**. That might look something like this on your system, where you may need to change or skip the first line:
