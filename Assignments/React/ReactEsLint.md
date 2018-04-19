@@ -45,8 +45,10 @@ I'm not clear about this. Set "parser": "babel-eslint" in **.eslintrc** to allow
 
 Assuming your ES6 code is in project tree, do one of these, where the first is for the global install, and the second is for the local install:
 
+```bash
     eslint .
     ./node_modules/.bin/eslint .
+```
 
 Also, consider putting it in your **package.json** file in the **scripts** section. For instance you might write something like this in one of your **package.json** files:
 
@@ -59,6 +61,22 @@ Also, consider putting it in your **package.json** file in the **scripts** secti
 ```
 
 When I ran **npm run lint**, it worked, but NPM reports an error until I get all the eslint errors and warnings out of my code. Then it returns cleanly. Before that, I see the results of my tests, but NPM reports an error
+
+## Add .eslintignore
+
+Add a file called .eslintignore so that eslint does not try to parse files that we did not create. For instance, your file might have this content:
+
+```bash
+**/registerServiceWorker.js
+```
+
+## Fix
+
+Often you can automatically fix errors in your code like this:
+
+```bash
+eslint --fix .
+```
 
 ## WebStorm
 

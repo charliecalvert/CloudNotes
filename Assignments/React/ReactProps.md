@@ -2,30 +2,9 @@
 
 We will learn a bit about React props by continuing to expand the **week02-rest-basics** program. We will try to understand properties, and to see how they can be passed from one component to another.
 
-## No Components in Git Ignore {#git-no-components}
-
-Unless you are sure you mean to do it. make sure that **components** is not listed in your **.gitignore** files.
-
-## ENOSPC Error {#enospc}
-
-Please look here:
-
-- [Elvenware React][elf-enospc]
-
-[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
-[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
-
-## Props Singe Node Error {#props-single-node}
-
-Please go here:
-
-- [Elvenware React][elf-sync]
-
-[elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
-
 ## Tag
 
-Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
+Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status:
 
 ```bash
 $ git tag -a v3.0.0 -m "Start Week03"
@@ -43,38 +22,10 @@ The last command lists your tags and their message on one line. If you have only
 
 You might create multiple tags for an assignment, but one of the tags should be made just after you commit and push the code you want me to see. Then turn in that tag with the assignment.
 
-## Bower
-
-Modify the hidden file **.bowerrc** to reference **public/bower-components**.
-
-Add **bower-components** to **.gitignore**:
-
-```
-# Dependency directories
-node_modules
-jspm_packages
-bower-components
-```
-
-Once again, be sure that you remove **components** from **.gitignore**
-
-Here is **server/views/layout.jade** after this change with **bower-components** instead of **components**:
-
-```javascript
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/bower-components/bootstrap/dist/css/bootstrap.css')
-    // CODE YOU NEED TO MODIFY OMITTED HERE
-  body
-    block content
-```
 
 ## New Branch
 
-Create a new branch called **Week03**. You **must** put your homework for week three in this branch! (You can do it!)
+If you have not already done so, create a new branch called **Week03**. You **must** put your homework for week three in this branch! (You can do it!)
 
 ```bash
 git branch Week03
@@ -96,8 +47,21 @@ I found images here:
 - <https://commons.wikimedia.org/wiki/File:Small_SVG_house_icon.svg>
 - <https://commons.wikimedia.org/wiki/File:Flower-of-Life-91circles36arcs.svg>
 - <https://commons.wikimedia.org/wiki/File:Tree-of-Life_Flower-of-Life_Stage.svg>
--
-Try also, this search in Chrome/Chromium:
+
+For instance:
+
+```bash
+cd src
+mkdir images
+cd images
+wget https://upload.wikimedia.org/wikipedia/commons/6/60/Tree-of-Life_Flower-of-Life_Stage.svg
+```
+
+Now modify the line in **App.js** that loads your logo. You should load the image you downloaded instead. Note that I have picked an SVG file which should both be small and should load quickly.
+
+Depending on your tastes and the image you choose to load, you may also want to edit the **background-color** for the **.App-header** in **App.css**.
+
+To find more images you might like, try this search in Chrome/Chromium:
 
 ```
 https://www.google.com/search?q=svg+free+small
@@ -177,7 +141,7 @@ var request = require('request');
 
 // EXISTING CODE OMITTED HERE
 router.get('/user', function(req, res, next) {
-    var options = {
+    const options = {
         url: 'https://api.github.com/users/charliecalvert',
         headers: {
             'User-Agent': 'request'
@@ -185,11 +149,8 @@ router.get('/user', function(req, res, next) {
     };
 
     request(options, function(error, response, body) {
-        // Print the error if one occurred
         console.log('error:', error);
-        // Print the response status code if a response was received
         console.log('statusCode:', response && response.statusCode);
-        // Print the HTML for the Google homepage.
         console.log('body:', body);
         res.send({error: error, response: response, body: body});
     });
@@ -236,7 +197,6 @@ This new implementation allows us to use **_exactly_** the same code in **App.js
 ```javascript
 import React, { Component } from 'react';
 import './App.css';
-import 'whatwg-fetch';
 ```
 
 And here is our call to **fetch**:
@@ -416,5 +376,56 @@ That's two underscores, the word _tests_, followed by two more underscores.
 ## Turn it in
 
 First commit and push. Then tag and push. With the commit and the tag, create a message that includes the assignment name. When you turn in the assignment, designate the directory in your repo where you did your work.
+
+## Props Single Node Error {#props-single-node}
+
+Please go here:
+
+- [Elvenware React][elf-sync]
+
+[elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
+
+## ENOSPC Error {#enospc}
+
+Please look here:
+
+- [Elvenware React][elf-enospc]
+
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
+[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
+
+## Bower
+
+This is an outdated section, and no longer necessary. More specifically, you should already have **bower_components** in your **.gitignore** if you don't, put it there. I am, however, keeping this section for now in case some specific person needs to do this. However, most students can just ignore this entire section.
+
+Unless you are sure you mean to do it. make sure that **components** is not listed in your **.gitignore** files.
+
+Modify the hidden file **.bowerrc** to reference **public/bower-components**.
+
+Add **bower-components** to **.gitignore**:
+
+```
+# Dependency directories
+node_modules
+jspm_packages
+bower-components
+```
+
+Once again, be sure that you remove **components** from **.gitignore**
+
+Here is **server/views/layout.jade** after this change with **bower-components** instead of **components**:
+
+```javascript
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower-components/bootstrap/dist/css/bootstrap.css')
+    // CODE YOU NEED TO MODIFY OMITTED HERE
+  body
+    block content
+```
+
 
 [gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename

@@ -1,4 +1,4 @@
-# Jest Create React App
+## Overview
 
 By: _Charlie Calvert_
 
@@ -219,7 +219,7 @@ class App extends Component {
    constructor() {
        super();
        this.state = {
-           nine: '0'
+           file: 'unknown'
        }
    }
 … etc
@@ -237,17 +237,17 @@ In our JSX, we:
 - Display our state in a react expression defined with curly braces.
 
 ```html
-<p className="App-intro">Nine: {this.state.nine}</p>
+<p className="App-intro">File: {this.state.file}</p>
 ```
 
-## Define a function called getNine {#define-getnine}
+## Define a function called getFile {#define-getnine}
 
-We declare an arrow function function in our component called getNine. Inside it, we call setState. Set state can take an object literal defining the new state.
+We declare an arrow function function in our component called **getFile**. Inside it, we call **setState**. The **setState** call can take an object literal defining the new state.
 
 ```javascript
-getNine = () => {
-   console.log('state');
-   this.setState({nine: '9'})
+getFile = () => {
+    console.log('getFile called.');
+    this.setState({file: 'url-file.js'})
 };
 ```
 
@@ -260,7 +260,7 @@ In our JSX, we:
 - And use a react expression, defined with curly braces, to call **getNine** when the button is clicked.
 
 ```html
-<button className='elf' onClick={this.getNine}>Get Nine</button>
+<button className='elf' onClick={this.getFile}>Get Nine</button>
 ```
 
 ## Test button click {#test-click}
@@ -272,7 +272,7 @@ Call the enzyme simulate method to simulate clicking the button. Check to see if
 ```javascript
 it('renders button click message', () => {
    const wrapper = shallow(<App />);
-   const nineSign = <p className="App-intro">Nine: 9</p>;
+   const nineSign = <p className="App-intro">File: url-file.js</p>;
    wrapper.find('button.elf').simulate('click');
    expect(wrapper.contains(nineSign)).toEqual(true);
 });
@@ -296,13 +296,13 @@ it.only('renders button click message', () => {
 })
 ```
 
-**NOTE**: _When I write something like **etc...** or **and so on...** or **You write the code**, then I'm saying that I expect you to complete the code as an exercise. Occasionally students who are not used to my style think I'm being lazy or writing code that has not been tested. This is generally not the case. I cut and paste working code into a document like this, and then delete the parts I want readers to complete. I usually mark the missing code as described above._
+**NOTE**: _When I write something like **etc...** or **and so on...** or **You write the code**, then I'm saying that I expect you to complete the code as an exercise. I usually cut and paste working code into a document like this, and then delete the parts I want readers to complete. I usually mark the missing code as described above._
 
 ## ESLint
 
 Eslint should be installed globally in **~./npm/bin**.
 
-Add this **.eslintrc.json** to your project.
+Add this **.eslintrc.json** file to your project.
 
 ```JavaScript
 {
@@ -340,7 +340,10 @@ Add this **.eslintrc.json** to your project.
 
 Run it like this:
 
-    eslint *.js
+```bash
+eslint .
+```
+The code above sometimes needs to be updated. To see my current working **.eslintrc.json** file, go [here][eslintrc].
 
 ## Turn it in
 
@@ -382,8 +385,8 @@ Ran all test suites.
    App.test.js:
    App.test.js:
    <p className="App-intro">
-     Nine:
-     9
+     File:
+     'url-file.js'
    </p>
 
 ```
@@ -409,3 +412,6 @@ For awhile, I was seeing warnings due to outdated **react-addons-test-utils** an
 npm uninstall react-addons-test-utils enzyme
 npm install react-addons-test-utils enzyme
 ```
+
+
+[eslintrc]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
