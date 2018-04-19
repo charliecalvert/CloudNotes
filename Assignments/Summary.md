@@ -5,5 +5,7 @@
 * [CodeAcademy05.html](CodeAcademy05.html)
 * [CodeAcademy06.html](CodeAcademy06.html)
 * [CodeAcademy07.html](CodeAcademy07.html)
+* [Ec2GetStarted.html](Ec2GetStarted.html)
 * [ExpressBasics.html](ExpressBasics.html)
+* [JadeBasics.html](JadeBasics.html)
 * [master-list.html](master-list.html)
