@@ -2,6 +2,12 @@
 
 We will learn a bit about React props by continuing to expand the **week02-rest-basics** program. We will try to understand properties, and to see how they can be passed from one component to another.
 
+In this assignment we are trying to create something that looks a bit like this:
+
+![React Props UI](https://s3.amazonaws.com/bucket01.elvenware.com/images/ReactPropsUi.png)
+
+At the top we see some data from our GitHub account. Yours will, of course, differ from what I see in my app. Next we see a call to one or more Micro Servers. Finally, we see the original data retrieved from our **/foo/api** route developed in a previous assignment.
+
 ## Tag
 
 Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status:
@@ -40,7 +46,7 @@ git push --set-upstream origin Week03
 
 ## Images and CSS
 
-I found images here:
+Let's change the revolving image found at the top of our default **create-react-app** program perhaps called something like **Week02-RestBasics**.  I found images here:
 
 - <https://pixabay.com/en/gold-fish-aquarium-goldfish-fins-30831/>
 - <https://pixabay.com/en/goldfish-fins-tropical-animal-47022/>
@@ -48,7 +54,7 @@ I found images here:
 - <https://commons.wikimedia.org/wiki/File:Flower-of-Life-91circles36arcs.svg>
 - <https://commons.wikimedia.org/wiki/File:Tree-of-Life_Flower-of-Life_Stage.svg>
 
-For instance:
+It's easy to swap in one of the these images for the default spinning "atomic logo". For instance, employ **wget** like this to help you get the job done:
 
 ```bash
 cd src
@@ -57,7 +63,7 @@ cd images
 wget https://upload.wikimedia.org/wikipedia/commons/6/60/Tree-of-Life_Flower-of-Life_Stage.svg
 ```
 
-Now modify the line in **App.js** that loads your logo. You should load the image you downloaded instead. Note that I have picked an SVG file which should both be small and should load quickly.
+Now modify the **import** statement in **App.js** that loads your logo. You should load the image you downloaded instead. Note that I have picked an SVG file which should both be small and should load quickly.
 
 Depending on your tastes and the image you choose to load, you may also want to edit the **background-color** for the **.App-header** in **App.css**.
 
@@ -80,54 +86,90 @@ You will need to make some changes to your code after doing this. In fact, you m
 
 The key goal will be to move **App.js** to **components/App.js**. Then break **App.js** into discrete components such as **components/Header.js**, **components/GetFoo.js** and **components/SmallNumbers.js**.
 
-The simplest way to proceed, I believe, is to copy **App.js** into **SmallNumbers.js**. Now delete everything from **SmallNumbers** that is not related to numbers. Go back to **App.js** and delete everything related to numbers from that file.
+For instance:
+
+```bash
+git mv App.js components/.
+```
+
+Right now, we are doing, or in the process of doing, two things in **App.js**. We are calling, with fetch, our server with the following routes:
+
+| Module | Route     | Description |
+| :------------- | :------------- |  :------------- |
+| App.js         | /api/foo      | Get file, status, result |
+| Micro01.js     | /bar       | Call You Rang in Micro Services |
+| GitUser.js     | /user      | Get user information from GitHub |
+
+Each module will contain
+
+- A React Component with the same name as the file in which they reside
+- **Constructor**
+- A method that calls fetch
+- A **render** method containing some JSX
+
+We have not implemented the server side code of the **GitUser** call, but we will do so later in this assignment. So we might as well get started. Just set up a module with the four pieces described above and assume we will define the details later.
+
+You will need to include code to properly maintain the state of each component. For instance, **App.js** will contain code for maintaining the following properties:
+
+- file
+- status
+- result
+
+**Micro01**, on the other hand, will only track **state** for one property called **youRang**.
+
+For now, put all the buttons in the **render** method for **App.js**. Do not include them in the other modules. The buttons should have the following labels:
+
+- Query API (App.js)
+- Query Micro
+- Query Git API  
+
+Finally, you will need a module called **components/Header.js** that contains only the header:
+
 
 ## Props
 
-In **index.js** pass in some default numbers to **components/smallNumbers.js**:
+In **index.js** pass in some default numbers to **components/App.js**:
 
 ```javascript
-var numbersInit = {
-    nine: '0',
-    eight: '0'
+var appInit = {
+  file: 'File name will be placed here.',
+  status: 'status will go here',
+  result: 'result will go here',
 };
 
 ReactDOM.render(
   // CODE OMITTED HERE
 
-     <SmallNumbers numbers={numbersInit} />
+     <App appInit={appInit} />
   </div>,
   document.getElementById('root')
 );
 ```
 
-And then use it in **SmallNumbers.js**:
+And then use it in **App.js**:
 
 ```javascript
 constructor(props) {
     super(props);
     this.state = {
-        nine: props.numbers.nine,
-        eight: props.numbers.eight
+            file: props.appInit.file,
+            status: props.appInit.status,
+            result: props.appInit.result
     }
 }
 ```
 
-## Put NumbersInit in its Own File {#num-int}
+Do something similar for all your modules.
 
-I called mine **numbers-data.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere:
+## Put appInit in its Own File {#num-int}
 
-```javascript
-export default {
-    nine: '0',
-    eight: '0'
-};
-```
+I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere.
+
 
 Of course, you will now need to import this data into **index.js** and into your tests:
 
 ```javascript
-import numbersInit from './numbers-data';
+import appInit from './app-init';
 ```
 
 ## Query the GitHub API
@@ -159,6 +201,9 @@ router.get('/user', function(req, res, next) {
 
 });
 ```
+
+
+
 
 ## Tests
 
