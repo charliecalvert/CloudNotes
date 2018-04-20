@@ -152,7 +152,9 @@ router.get('/user', function(req, res, next) {
         console.log('error:', error);
         console.log('statusCode:', response && response.statusCode);
         console.log('body:', body);
-        res.send({error: error, response: response, body: body});
+        const jsonBody = JSON.parse(body);
+       console.log('body:', JSON.stringify(body, null, 4));
+       res.send({error: error, response: response, body: jsonBody});
     });
 
 });
