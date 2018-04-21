@@ -73,6 +73,8 @@ Create an instance of the **class** and call each of the methods with the follow
 - multiply(3, 5);
 - divide(15, 3);
 
+**HINT**: _You don't need to include a **constructor** in this class. It is not wrong to include it, but there is nothing that needs to be initialized in a **constructor** in order to complete this assignment._
+
 ## Turn it in
 
 If you are using branches, specify the branch:

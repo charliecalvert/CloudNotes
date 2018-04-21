@@ -1,7 +1,1 @@
-* [JestCreateReactApp.html](JestCreateReactApp.html)
-* [ReactBasics.html](ReactBasics.html)
-* [ReactEsLint.html](ReactEsLint.html)
-* [ReactProps.html](ReactProps.html)
-* [ReactPropsRefine.html](ReactPropsRefine.html)
-* [RestBasics.html](RestBasics.html)
 * [UnitTestsAddress.html](UnitTestsAddress.html)
