@@ -1,6 +1,6 @@
 # Code Academy Part VII
 
-Bring the JavaScript and HTML courses to 30%.
+Bring the JavaScript and HTML courses to 100%.
 
 - [Learn JavaScript](https://www.codecademy.com/learn/learn-javascript)
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)

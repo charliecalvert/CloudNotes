@@ -6,4 +6,5 @@
 * [CodeAcademy06.html](CodeAcademy06.html)
 * [CodeAcademy07.html](CodeAcademy07.html)
 * [ExpressBasics.html](ExpressBasics.html)
+* [JavaScriptObjects.html](JavaScriptObjects.html)
 * [master-list.html](master-list.html)

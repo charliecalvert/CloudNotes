@@ -34,6 +34,8 @@ You don't need to display the square brackets, just each item in the array. I'm 
 etc...
 ```
 
+You don't need to generate the members of the Fibannaci serious in the array programmatically, you can just use the array literal that I give you, and then print out its members.
+
 ## Arrays a for..of
 
 Write a ES6 style anonymous function and assign it to a variable called **primeNumbers**. It should use **for..of** to display the members of an array. Call **primeNumbers** with this array:
