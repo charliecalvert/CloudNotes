@@ -124,7 +124,7 @@ console.log('operand01 =', calculator.operand01);
 
 And produced output like this:
 
-<pre>
+```bash
 $ node work.js
 ====================================
 Person
@@ -140,7 +140,7 @@ operand02 = 10
 Add:  16
 Subtract: -4
 Multiply: 60
-</pre>
+```
 
 Unless you name is George Washington, your output will probably differ, but this should give you some general idea of what to produce.
 
