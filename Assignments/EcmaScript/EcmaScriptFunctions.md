@@ -20,10 +20,18 @@ In **work.js** write an ES6 style function that will be invoked immediately. It 
 
 ## Arrays and forEach
 
-Create an ES6 style immediately invoked function that displays the following array:
+Create an ES6 style immediately invoked function that displays the members of the following array:
 
 ```JavaScript
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+You don't need to display the square brackets, just each item in the array. I'm expecting to see one item per line in the output:
+
+```bash
+0
+1
+etc...
 ```
 
 ## Arrays a for..of
