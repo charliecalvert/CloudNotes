@@ -1,6 +1,6 @@
 ## Overview
 
-This assignment is designed to help you get started using the AWS application called EC2.
+This assignment is designed to help you get started using the AWS service called EC2.
 
 - AWS: [Amazon Web Services][aws-doc]
 - EC2: [Elastic Compute Cloud][ec2-doc]
@@ -41,13 +41,15 @@ Once you have an account set up, the next step is to create an EC2 Instance.
 
 You will be asked to choose an SSH public private key pair. Use an existing one if you have created one before and can locate it. Otherwise create a new one. If you create a new one:
 
-- Download it and put it in your **.ssh** folder
+- Download it and put it in your **~/.ssh** folder
+- If necessary, use the [mv][mvc] command rename it to something like **Prog270-Ec2-Calvert.pem**
+	- Feel free to drop the PEM extension when you rename it: **Prog270-Ec2-Calvert**
 - Zip it up
 - Save it to Google Drive or someplace similar.
 - Don't lose it!
 
 
-Your instance will be assigned a non-permanent public IP address for your EC2 instance. You can see this in your AWS console, under EC2 instances.
+Your instance will be assigned a non-permanent public IP address for your EC2 instance. These addresses change ever few days. You can see them in your AWS console, under EC2 instances. In the next step we will replace this ever changing public IP address with an Elastic IP address that will not change.
 
 ## Step 02-a: Elastic IP Address {#elastic-ip-address}
 
@@ -60,15 +62,22 @@ We will need a permanent IP address. On AWS, these permanent IP addresses are ca
 Once you have created your instance, and downloaded your keys, you need to learn how to use the keys to access your instance. Here is a sample of how to proceed:
 
 ```
-ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
+chmod 400 ~/.ssh/Prog270-Ec2-Calvert-2016.pem
+ssh-add ~ /.ssh/Prog270-Ec2-Calvert-2016.pem
 ssh ubuntu@192.168.1.25
 ```
 
-Let's examine these two commands one at a time.
+Let's examine these commands one at a time.
 
 ## Step 03a: Load your SSH Key {#step-three-a}
 
-The first step is to load your EC2 PEM (private key) file on your local machine. On Pristine Lubuntu:
+The first step is to ensure you are the only one who can load your key:
+
+```bash
+chmod 400 ~/.ssh/Prog270-Ec2-Calvert-2016.pem
+```
+
+Now load your EC2 PEM (private key) file on your local machine. On Pristine Lubuntu:
 
 ```
 ssh-add ~/.ssh/<YOUR EC2 PRIVATE KEY>;
@@ -80,19 +89,7 @@ More specifically, it might look like this:
 ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
 ```
 
-The second step is detailed in the next section.
-
-## Step 03b: SSH Access EC2 Shortcut {#ec2-shortcut}
-
-Rather than doing ssh-add and then running ssh, you can use the **-i** flag to combine the two:
-
-```bash
-#!/bin/bash
-
-ssh -i prog270-ec2-2017.pem ubuntu@34.242.67.21
-```
-
-Code like this will both load your key and begin an SSH session on EC2. Of course, you need to supply your own elastic IP address.
+The second step is detailed in [Step 04: Access Your Instance](#step-four).
 
 ## Step 04: Access Your Instance {#step-four}
 
@@ -105,7 +102,36 @@ For instance:
 	ssh ubuntu@192.168.1.25
 
 
-## Step 04.a: Configure Your Instance {#configure}
+## Permission Denied Pubic Key
+
+If you get this:
+
+```bash
+$ git pull  
+Permission denied (publickey).  
+fatal: Could not read from remote repository.  
+
+Please make sure you have the correct access rights  
+and the repository exists.
+```
+
+Then you need to load an SSH key:
+
+```bash
+ssh-add ~/.ssh/<YOUR-KEY>
+```
+
+In examples like this, when you see something in angle brackets or a similar syntax, then the person who wrote the documentation is using the angle brackets as a place holder. They are saying: put your key in the location of the place-holder. Perhaps something like this:
+
+```bash
+ssh-add ~/.ssh/prog272-ec2.pem
+```
+
+If you run **ssh-add**, and you still get the error, then you have loaded the wrong key. If you have lost your private key for your EC2 instance, then usually you are out of luck. Your only recourse is to delete the EC2 instance and create a new instance. When creating the new instance, be sure to keep track of the key that you download from AWS. In particular, zip up the private key and put it in the cloud, as described above.
+
+**NOTE**: _You can add keys to a server by placing the public part of a public/private SSH key pair in the **authorized_keys** file for your EC2 server. That process is described elsewhere. The point is that you can add one of your personal SSH keys to the server instead of relying on the key you got from AWS. However, you can't add the key unless you have used the AWS key at least once to give you access to the **authorized_keys** file on your EC2 instance._
+
+## Step 04.01: Configure Your Instance {#configure}
 
 You can configure your instance by running a script found in JsObjects called **UbuntuSetup**. Follow the links below to learn how to proceed.
 
@@ -122,7 +148,21 @@ See also:
 - [.bashrc and ssh-agent][ec2-provision]
 - [SSH and Configuring Linux][ssh-configure-linux]
 
-## Step 04-b: Security Groups
+## Step 04.02: SSH Access EC2 Shortcut {#ec2-shortcut}
+
+This is an aside. You don't have to do the things this way. I'm including it only as an FYI, as an additional bit of information that you might find useful.
+
+Rather than doing **ssh-add** and then running ssh as described in [Step-4: Access Your Insance](#step-four), you can use the **-i** flag to combine the two:
+
+```bash
+#!/bin/bash
+
+ssh -i prog270-ec2-2017.pem ubuntu@34.242.67.21
+```
+
+Code like this will both load your key and begin an SSH session on EC2. Of course, you need to supply your own elastic IP address.
+
+## Step 04.03: Security Groups
 
 At some point, you may or may not need to check the currently open ports. After creating and initializing your instance:
 
@@ -381,3 +421,4 @@ On Windows, you can connect to your EC2 instance with Putty:
 [mcus]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsServices.png
 
 [ec2esg]: https://s3.amazonaws.com/bucket01.elvenware.com/images/ec2-elven-security-group.png
+[mvc]: https://www.thegeekstuff.com/2010/12/mv-command-examples/

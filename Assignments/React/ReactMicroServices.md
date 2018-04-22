@@ -1,4 +1,4 @@
-# React Micro Services
+## Overview
 
 We have a principle that we talk about quite a bit:
 
@@ -43,6 +43,17 @@ Now we can just run our server, browse to the page it creates, and begin playing
 ```javscript
 res.sendFile('index.html');
 ```
+
+## Basics
+
+I want to see at the following:
+
+- At least two micro-services
+  - Run one on 30027
+  - The other 30028
+- Use or create a **create-react-app** project called **client** that calls into a server
+  - Run it on Port 30025
+- A CreateExpressProject called **server** that runs on Port 30026 and calls the microservices.
 
 ## Micro Services
 
@@ -118,7 +129,13 @@ All requests except for **get-foo** should be handled by the micro services.
 
 ## Turn it in
 
-All five servers should be build and up and running and callable. Use the npm module **concurrently** to start them all at once.
+Specify:
+
+- Branch
+- Folder of both client and server (Week03-React-Jest? Other?)
+- Folders for your microservices.
+
+All your servers should build cleanly and up and running and callable. Use the npm module **concurrently** to start them all at once.
 
 I'm expecting the **qux**, **git-user** and **gist** servers to more or less be working. The others are just shells for now.
 
@@ -129,11 +146,12 @@ Make sure you include the [base route](#you-rang) in your calls from the client:
 Put all your micro services in a directory called **Micros** or something similar. This means there should be five programs in that directory. The directory should at the top level of your repository, directly under the root:
 
 - isit322-lastname-2017
-  - GitExplorer
-  - Micros
+  - Your client and server, with a name like **Week03-React-Jest** or similar.
+  - **Micros**
 
 Don't forget you rename a directory: **git move microtest Micros**.
 
 Not essential, but don't forget to explore **concurrently**.
+
 
 - [npm concurrently](https://www.npmjs.com/package/concurrently)

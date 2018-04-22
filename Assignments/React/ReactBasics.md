@@ -106,34 +106,46 @@ npm install --save-dev babel-preset-env
 
 **npm** is the Node Package Manager, and it can be used to install packages (libraries) and to perform other tasks such as running tiny scripts that start your project. **node** and **npm** and tightly linked tools which depend on one another. When you install node, npm is also installed. It is hard to do much with node without also running the **npm** command at least once.
 
-After running the **npm install** commands shown above, you will find new content in your **package.json** file. In particular, look for the **dependencies** and **devDependencies sections**:
+After running the **npm install** commands shown above, you will find new content in your **package.json** file. Your file should differ from mine in the details, but should be similar in content. In particular, look for the **dependencies** and **devDependencies sections**:
 
 ```json
 $ cat package.json
 {
   "name": "week01-reactbasics",
   "version": "1.0.0",
-  "description": "React Basics",
+  "description": "React from scratch",
   "main": "index.js",
   "scripts": {
+    "start": "node_modules/.bin/webpack-dev-server --port=30025",
+    "build": "node_modules/.bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charliecalvert/isit322-calvert-2018.git"
+  },
   "keywords": [
-    "React"
+    "react",
+    "node"
   ],
   "author": "Charlie Calvert",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charliecalvert/isit322-calvert-2018/issues"
+  },
+  "homepage": "https://github.com/charliecalvert/isit322-calvert-2018#readme",
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "webpack": "^3.6.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "webpack": "^4.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   }
 }
 ```
@@ -368,6 +380,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+    mode: 'development',
     entry: './main.js',
     output: {path: __dirname, filename: 'bundle.js'},
     mode: 'development',
@@ -377,7 +390,9 @@ module.exports = {
                 test: /.js?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {presets: ['env', 'react']}
+                query: {
+                  presets: ['env', 'react']
+                }
             }
         ]
     },

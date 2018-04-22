@@ -2,6 +2,8 @@
 
 Learn how to work with ES6 JavaScript arrow functions, introduce JavaScript classes. Learn about using Babel to transpile ES5 code into ES6. In this assignment, always use ES6 style code when declaring functions.
 
+**NOTE**: _Be sure to use arrow functions in all your code. Don't use the keyword **function**!_
+
 ## Get Started
 
 If your class is using Git branches, do your work in a branch called **Week03**.
@@ -34,7 +36,7 @@ You don't need to display the square brackets, just each item in the array. I'm 
 etc...
 ```
 
-You don't need to generate the members of the Fibannaci serious in the array programmatically, you can just use the array literal that I give you, and then print out its members.
+You don't need to generate the members of the Fibonacci serious in the array programmatically, you can just use the array literal that I give you, and then print out its members.
 
 ## Arrays a for..of
 
@@ -43,6 +45,8 @@ Write a ES6 style anonymous function and assign it to a variable called **primeN
 ```JavaScript
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 ```
+
+Again, you don't need to include the square brackets or do it all on one line. I'm expecting to see a list of numbers, each on its own line, as above. But if you want to get fancier, that is fine, so long as you don't step completely off the reservation...
 
 ## Property Enumeration
 
@@ -72,6 +76,12 @@ Create an instance of the **class** and call each of the methods with the follow
 - subtract(5, 2);
 - multiply(3, 5);
 - divide(15, 3);
+
+Each method should return a number and you should use console.log to print it out:
+
+```javascript
+console.log(add(12, 34));
+```
 
 **HINT**: _You don't need to include a **constructor** in this class. It is not wrong to include it, but there is nothing that needs to be initialized in a **constructor** in order to complete this assignment._
 

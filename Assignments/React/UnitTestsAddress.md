@@ -88,7 +88,7 @@ getFileName = () => {
 };
 ```
 
-Make any other necessary changes to ensure that your app still runs. and all tests pass.
+Make any other necessary changes to ensure that your application still runs. and all tests pass.
 
 ## Add firstName test
 
@@ -102,14 +102,14 @@ it('renders and displays the default first name', () => {
 });
 ```
 
-If you are having trouble getting this test to pass, it is helpful to add some debug information to help you see what the last paragraph element on your form is actually rendering:
+You can, and should, add some [Enzyme debug][deed] information to help us see what the last paragraph element on your form is actually rendering:
 
 ```javascript
 const lastParagraph = wrapper.find('p').last().debug();
 console.log(lastParagraph);
 ```
 
-**TIP**: _The call to last gets the last paragraph on your form. Beside **last()**, there is also a **first()**. See the enzyme docs for more info._
+**TIP**: _The call to last gets the last paragraph on your form. Beside **last()**, there is also a **first()**, and below I'll describe another method called **childAt**. See the [enzyme docs][caed] for more info._
 
 Like this:
 
@@ -236,6 +236,8 @@ When you are done, you should have something like 16 to 20 tests. As I drew near
 
 ![Final Tests][reactjta]
 
+Push your work to your repository. When you turn in the assignment, tell me the name of the folder that contains your work. (If appropriate, add the branch as well.) It is fine if this assignment is built on top of, and in the same directory as, the **Unit Tests with Jest Assignment.**
+
 ## Hints
 
 You don't need a button click handler for each new field you add. Set them all in **setAddress** handler:
@@ -273,3 +275,7 @@ Jest isn't the only Unit Test library, not by any means. But all unit testing to
 [test-first]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-default-first-name.png
 
 [reactjta]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-test-address.png
+
+[caed]: http://airbnb.io/enzyme/docs/api/ReactWrapper/childAt.html
+
+[deed]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/debug.html
