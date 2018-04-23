@@ -125,7 +125,7 @@ const addresses = [
         firstName: 'Patty',
         lastName: 'Murray',
         address: '154 Russell Senate Office Building',
-        city: 'Washingtone',
+        city: 'Washington',
         state: 'D.C.',
         zip: '20510',
         phone: '(202) 224-2621',
@@ -234,7 +234,7 @@ Note that we are violating DRY. There are two chunks of code, one in the constru
 
 ## Tests
 
-As you refactor your components, your tests might need to change. For instance, if you move the H2 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
+As you refactor your components, your tests might need to change. For instance, if you move the **H2** for your app into **components/Header.js**, you might need to change your tests. Consider this code:
 
 ```javascript
 import App from './App';
@@ -262,9 +262,38 @@ it.only('renders and reads H1 text', () => {
 });
 ```
 
-If you want to start to test the Address component, remember that it expects to passed some props. You already saw how to do this in the main program.
+If you want to start to test the Address component, remember that it expects to be passed some **props**. You already saw how to do this in the main program. Simple import the **address-list.js** file, and then use it when you instantiate an instance of that component.
+
+**NOTE**: _I'm intentionally leaving out some detail here to make you did a bit of thinking on your own._
+
+## Refactor Tests
+
+Just as you refactored your components into two modules called **App.js** and **Address.js**, you should also refactor your tests into:
+
+- **src/App.test.js**: All tests related to the **App** component
+- **src/Address.test.js**: All tests related to the **Address** component
+
+This will require a bit of cut and pasting, but it should not be overly difficult.
+
+Don't forget to include a string that describes your individual test suites:
+
+```JavaScript
+describe('Address tests', function () {
+
+  // YOUR TESTS HERE
+
+});
+```
+
+Your other module might use the string **App tests**.
 
 ## Debug Jest Message
+
+As we start writing more complex tests, we want to create some methods that will help us debug them. In particular, we want to use the Enzyme [debug][edb], [find][efind] and [childAt][eca] methods.
+
+[edb]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/debug.html
+[efind]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/find.html
+[eca]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/childAt.html
 
 ```javascript
 const getLast = (wrapper) => {
@@ -276,6 +305,11 @@ const getFirst = (wrapper) => {
     const ninep = wrapper.find('p').first().debug();
     console.log(ninep);
 };
+
+const getChild = (wrapper, element, index) => {
+    const lastParagraph = wrapper.find(element).childAt(index).debug();
+    console.log(lastParagraph);
+};
 ```
 
 Or like this, if you want something a bit more flexible. The important difference is that it has the **quiet** option, but not that this one goes after h2 instead of **P**:
@@ -283,19 +317,27 @@ Or like this, if you want something a bit more flexible. The important differenc
 ```javascript
    var quiet = false;
 
-    function getFirst(wrapper) {
-        const eightp = wrapper.find('h2').first().debug();
-        if (!quiet) {
-            console.log("HEADER:", eightp);
-        }
-    }
+   const getLast = (wrapper) => {
+     const lastParagraph = wrapper.find('p').last().debug();
+     if (!quiet) {
+       console.log(lastParagraph);
+     }
+ };
 
-    function getLast(wrapper) {
-        const eightp = wrapper.find('h2').last().debug();
-        if (!quiet) {
-            console.log("HEADER:", eightp);
-        }
-    }
+ const getFirst = (wrapper) => {
+     const firstParagraph = wrapper.find('p').first().debug();
+     if (!quiet) {
+       console.log(firstParagraph);
+     }
+ };
+
+ const getChild = (wrapper, element, index) => {
+     const indexedParagraph = wrapper.find(element).childAt(index).debug();
+     if (!quiet) {
+        console.log(indexedParagraph);
+     }
+ };
+
 ```
 
 If want, make the HTML element configurable by passing in two parameters instead of one:
@@ -304,32 +346,40 @@ If want, make the HTML element configurable by passing in two parameters instead
    var quiet = false;
 
     function getFirst(wrapper, element) {
-        const eightp = wrapper.find(element).first().debug();
+        const firstElement = wrapper.find(element).first().debug();
         if (!quiet) {
-            console.log("HEADER:", eightp);
+            console.log("HEADER:", firstElement);
         }
     }
 
-    function getLast(wrapper) {
-        const eightp = wrapper.find(element).last().debug();
-        if (!quiet) {
-            console.log("HEADER:", eightp);
-        }
-    }
 ```
-
 
 ## Turn it in
 
-Commit your work, push.
+Make sure your code runs and tests work. Commit your work, push. Tell me where to look for program.
 
-As I drew near the end of the assignment, my tests looked, at minimum a bit like this:
+- Folder: weekXX-YYYY
+
+Your tests might look a bit like this:
 
 ![Final Tests][test-final]
 
-[test-final]:
+[test-final]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-component-charlie-tests.png
 
 
+## Simple Test
+
+Sometimes it seems all my tests are failing and I don't know if the problem is in the logic of my tests, or in the way I have set up my tests. In cases like that, I want to find a way to ensure that I have at least one test that will definitely pass. If that "unbreakable" test fails, then the problem is not the logic of any particular test, but in the setup or syntax of my tests. Here is my test that "cannot fail":
+
+```javascript
+fit('proves we can run a test', () => {
+  expect(true).toBe(true);
+});
+```
+
+**true** should always be **true**, so if this test fails, or our tests won't run at all, the problem is not the logic of the test itself, but the way we have set up our test.
+
+**Note**: _I am using **fit** to ensure that only this one test in my current test module is run. After I can confirm that this test passes, then I might change **fit** to **it** or add **fit** to the next test in the module_.
 
 ## Props Singe Node Error {#props-single-node}
 
