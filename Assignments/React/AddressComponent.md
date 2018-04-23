@@ -2,7 +2,7 @@
 
 Extend our **week02-react-jest** project to support new React components with **props**.
 
-**NOTE**: _Sometimes in my code I write something like **etc...** or **and so on...** or **You write the code**, then I'm saying that I expect you to complete the code as an exercise. Occasionally students who are not used to my style think I'm being lazy or writing code that has not been tested. This is generally not the case. I cut and paste working code into a document like this, and then delete the parts I want readers to complete. I usually mark the missing code as described above._
+**NOTE**: _Sometimes in my code I write something like **etc...** or **and so on...** or **You write the code**. In these cases I expect you to complete the code as an exercise. I usually create sections like these by cutting and pasting working code into assignment, and then delete the parts I want readers to complete._
 
 ## Goals
 
@@ -18,25 +18,6 @@ Here are the core goals of the assignment.
 - Consume props in **Address**
 - Switch from record 0 to record of the address list.
 - Get tests working
-
-## ENOSPC Error {#enospc}
-
-This is a relatively rare error that you should know because it is so hard to diagnose if you get it.
-
-Please look here:
-
-- [Elvenware React][elf-enospc]
-
-[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
-[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png
-
-## Props Singe Node Error {#props-single-node}
-
-This is a common error that you should know because it is so hard to diagnose if you get it. Please look here:
-
-- [Elvenware React][elf-sync]
-
-[elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
 
 ## Tag
 
@@ -60,21 +41,23 @@ The last command lists your tags and their message on one line. If you have only
 
 In Webstorm:
 
-* Create **components** directory.
-* Create **components/Address.js**
+* Create a **src/components** directory.
+* Create **src/components/Address.js**
 
 ## Define Address
 
 Block copy the contents of **App.js** into **Address.js**. Get rid of anything that is not directly associated with the idea of defining an address.
 
 * Rename the class from **App** to **Address**. At the bottom of the file, export **Address** rather than **App**.
-* Inside **Address.js** Remove references **state.nine** and **getNine** from the **constructor** and **render** methods and from anywhere else you find them. Leave the tests alone. We are just editing **Address.js** in this step.
-* Remove the **appHeader** section from **render**.
+* Inside **Address.js** Remove references **state.file** and **getFile** from the **constructor** and **render** methods and from anywhere else you find them. Leave the tests alone. We are just editing **Address.js** in this step.
+* Remove the **header** section from **render**.
 * Remove imports that are no longer needed such as **logo.svg**.
 
 ## Clean Up App.js
 
 In **App.js** do the mirror image of what you did in **Address.js**: remove all references to an address from the **constructor** and **render** methods, etc.
+
+Move **App.js** into the **components** directory.
 
 ## Add Address to our Main File {#add-address}
 
@@ -87,7 +70,7 @@ The next step is to display our new Address component. There are several ways to
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App'; <=== MODIFY THIS LINE ==<
 import Address from './components/Address'
 import './index.css';
 
@@ -100,7 +83,29 @@ ReactDOM.render(
 );
 ```
 
+There is one further change you will need to make this file. I don't spell it explicitly, but I give you a strong hint about where to make the change. It is up to your modify the line and get your code running without error.
+
+Other changes, such as correcting the path to **App.css** and **logo.svg** are left as an exercise. If you don't yet understand relative paths, read about them here:
+
+- [Relative Paths JavaScript][rpsj]
+- [Sadly W3Schools provides a simply example][rpw3s]
+- [Relative Paths][rps]
+
+[rpsj]: https://www.google.com/search?q=relative+paths+javascript
+[rpw3s]: https://www.w3schools.com/html/html_filepaths.asp
+[rps]: http://desktop.arcgis.com/en/arcmap/10.3/tools/supplement/pathnames-explained-absolute-relative-unc-and-url.htm#GUID-5118AC85-57E4-4027-AC24-FB6E99FADEFF
+
+**NOTE**: _Remember to open up the Browser debugger (Developer Tools), usually with F12, to check for any errors._
+
+Use an HR element at the bottom of the render method for **App.js** to help separate the two components.
+
+![Address Program at Runtime][apatrt]
+
+[apatrt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-two-components.png
+
 ## Address List
+
+Let's create a simple file called **src/address-list.js** that contains two addresses:
 
 ```javascript
 const unknown = 'unknown';
@@ -108,18 +113,24 @@ const addresses = [
     {
         firstName: unknown,
         lastName: unknown,
-        street: unknown,
+        address: unknown,
         city: unknown,
         state: unknown,
-        zip: unknown
+        zip: unknown,
+        phone: unknown,
+        fax: unknown,
+        tollfree: unknown
     },
     {
         firstName: 'Patty',
         lastName: 'Murray',
-        street: unknown,
-        city: 'Seattle',
-        state: 'WA',
-        zip: unknown
+        address: '154 Russell Senate Office Building',
+        city: 'Washingtone',
+        state: 'D.C.',
+        zip: '20510',
+        phone: '(202) 224-2621',
+        fax: '(202) 224-0238',
+        tollfree: '(866) 481-9186'
     }
 
 ];
@@ -162,9 +173,11 @@ ReactDOM.render(
 
 ## Consume props {#props-in-address}
 
-We don't won't the **Address** component to be responsible for updating the **address-list**. Therefore, it does not own the list. Instead, it consumes it as props. We will set things up so the **Address** component can register changes to its state, but ultimately it will pass the changes back up the line and let some other component handle updated the **address-list**.
+We don't want the **Address** component to be responsible for updating the **address-list**. It is an anti-pattern for a component to update it's own properties.
 
-In the **Address** component, we need to consume the **address-list** passed in **props**:
+**Address** does not own the addressList. Right now, it is owned by **index.js** and so only **index.js** should change it. **AddressShow** only consumes **address_list** as **props**. We will set things up so the **Address** component can register changes to its **state**, but ultimately it will pass the changes back up the line and let some other component handle updating the **address-list**.
+
+In the **Address** component, we need to consume the **address-list** passed in **props**. Let's just copy it into our state:
 
 ```javascript
 constructor(props) {
@@ -175,13 +188,16 @@ constructor(props) {
     this.state = {
         firstName: address.firstName,
         lastName: address.lastName,
-        street: address.street,
+        address: address.address,
         city: address.city,
         state: address.state,
         zip: address.zip,
         phone: address.phone,
+        fax: address.fax,
+        tollfree: address.tollfree,
         website: address.website
-    }
+    })
+
 }
 ```
 
@@ -189,7 +205,7 @@ We grab the first item in the **address-list** array and use it to initialize ou
 
 ## Display State
 
-We now need to change what we display as our current state. At this point we are only part way to our solution, so we will simply get the second item in address-list, and display it to the user.
+We don't need to change our **render** method, but we do need to change what we display as our current **state** when the user clicks our **button**. Since we are only part way to our solution, we will simply get the second item in **address-list**, and display it to the user.
 
 Note that the constructor gets the first item, this method gets the second item. This helps you see how the system works, but does not fully explain how our code will work in the long run.
 
@@ -198,14 +214,18 @@ setAddress = () => {
     const address = this.props.addressList[1];
 
     this.setState({
-        firstName: address.firstName,
-        lastName: address.lastName,
-        street: address.street,
-        city: address.city,
-        state: address.state,
-        zip: address.zip,
-        phone: address.phone,
-        website: address.website
+          firstName: address.firstName,
+          lastName: address.lastName,
+          address: address.address,
+          city: address.city,
+          state: address.state,
+          zip: address.zip,
+          phone: address.phone,
+          fax: address.fax,
+          tollfree: address.tollfree,
+          website: address.website
+      })
+
     })
 };
 ```
@@ -308,3 +328,24 @@ As I drew near the end of the assignment, my tests looked, at minimum a bit like
 ![Final Tests][test-final]
 
 [test-final]:
+
+
+
+## Props Singe Node Error {#props-single-node}
+
+This is a common error that you should know because it is so hard to diagnose if you get it. Please look here:
+
+- [Elvenware React][elf-sync]
+
+[elf-sync]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#props-single-node
+
+## ENOSPC Error {#enospc}
+
+This is a relatively rare error that you should know because it is so hard to diagnose if you get it.
+
+Please look here:
+
+- [Elvenware React][elf-enospc]
+
+[elf-enospc]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#enospc
+[enospc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-enospc.png

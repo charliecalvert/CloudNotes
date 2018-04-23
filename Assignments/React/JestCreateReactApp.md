@@ -281,7 +281,7 @@ it('renders button click message', () => {
 To run only a single test use **it.only** or **fit**:
 
 ```javascript
-fit.only('renders button click message', () => {
+it.only('renders button click message', () => {
    const wrapper = shallow(<App />);
    etc...   
 })

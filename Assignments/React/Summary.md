@@ -1,3 +1,6 @@
+* [JestCreateReactApp.html](JestCreateReactApp.html)
 * [ReactBasics.html](ReactBasics.html)
 * [ReactMicroServices.html](ReactMicroServices.html)
+* [ReactPropBasics.html](ReactPropBasics.html)
+* [ReactProps.html](ReactProps.html)
 * [UnitTestsAddress.html](UnitTestsAddress.html)

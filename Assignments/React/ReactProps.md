@@ -8,6 +8,16 @@ In this assignment we are trying to create something that looks a bit like this:
 
 At the top we see some data from our GitHub account. Yours will, of course, differ from what I see in my app. Next we see a call to one or more Micro Servers. Finally, we see the original data retrieved from our **/foo/api** route developed in a previous assignment.
 
+## Define Terms
+
+There are a few terms we need to know here:
+
+- API: An Application Programming Interface provides means of communication between software components. It allows us to call functions or objects. It is the same as a Web Service, but without the network, and without SOAP and WSDL.
+- Web Service: A means of communicating across a network, usually by calling functions or objects over the network. Since it is over the web, the protocol used is usually HTTP. Web Services usually use WSDL or SOAP to define their interface. It is an API defined with WSDL or SOAP and called across a network.
+- Web API. Same as an API, but with a network and without the WSDL and SOAP. Usually we just use HTTP to call Routes (endpoints) across a network. Our micro services are Web APIs.
+
+The Github API is a web API. It allows us to make calls across a network, but spares us the arcane details found in SOAP and WSDL.
+
 ## Tag
 
 Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status:

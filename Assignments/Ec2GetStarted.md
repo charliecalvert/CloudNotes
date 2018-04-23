@@ -101,8 +101,32 @@ For instance:
 
 	ssh ubuntu@192.168.1.25
 
+### Unprotected Private Key File
 
-## Permission Denied Pubic Key
+If we get a message like this:
+
+```bash
+$ ssh-add id_rsa
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ WARNING: UNPROTECTED PRIVATE KEY FILE! @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0777 for 'id_rsa' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+```
+
+We fix it like this:
+
+```bash
+$ chmod 400 id_rsa
+charlie@rohan-mintc ~/.ssh
+$ ssh-add id_rsa
+Identity added: id_rsa (id_rsa)
+```
+
+Your key might not be named **id_rsa**, but the general solution outlined here will still apply regardless of the name of your key.
+
+### Permission Denied Pubic Key
 
 If you get this:
 
@@ -181,6 +205,8 @@ If you need to open a port:
 Our most commonly used Ports are 30025, 30026. I believe you can edit the inbound security rules to reserve a block of ports: 30025 - 30030. This will open 30025 through 30030.
 
 ![Ec2 Elven Security Group][ec2esg]
+
+See also [this section](#CIDR) on working with CIDR groups and known  IP addresses rather than 0.0.0.0/0.
 
 ## Step Five
 
@@ -378,6 +404,50 @@ Convert the PEM file to a PPK file.
 On Windows, you can connect to your EC2 instance with Putty:
 
 - <http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#connecting-to-an-ssh-server-with-putty>
+
+## Security Group Rules from Known Addresses {#CIDR}
+
+We might get this error:
+
+>> Rules with source of 0.0.0.0/0 allow all IP addresses to access your instance. We recommend setting security group rules to allow access from known IP addresses only.
+
+I use Xfinity/Comcast and have a dynamic IP address. It is not always the same. So I need to specify a range. So I went to WhatIsMyIp website to get my current IP. Then I went to Comcast and learned the CIDR block associated with my current IP address:
+
+- <https://postmaster.comcast.net/dynamic-IP-ranges.html>
+
+Then I went to AWS and set the source for the SSH address (port 22) in my Security group to the CIDR block from the page linked above. This should mean that only someone with an XFinity account that shares the range of IP addresses that I am assigned could SSH into my EC2 instance, and then only if they had my private key.
+
+I ran some tests, setting some bad CIDR ranges and I could not SSH into my box. Then I set some good ones, and I could SSH in.
+
+While doing all this, I found this site useful:
+
+- <https://www.ipaddressguide.com/cidr>
+
+I have to confess, however, that I simply don't understand how someone could SSH into a server protected with only an RSA public/private key pair (no password) unless they had a copy of the private key itself. My understanding is that this is impossible or next to impossible. (By which I mean that someone could have created a quantum computer in secret that is more advanced than any computer currently known to exist and decided to use it to hack my EC2 instance. Next to impossible, but not impossible.)
+
+Consider this CIDR range:
+
+	192.168.2.0/25
+
+It will allow to consider only the first 25 bits of an IP address. That means that the following addresses will be let through:
+
+	192.168.2.0 - 192.168.2.127
+
+Consider this range:
+
+	192.168.2.0/26
+
+It will allow these addresses through:
+
+	192.168.2.0 - 192.168.2.63
+
+And here, with 24 bits:
+
+	192.168.2.0/24
+
+Which allows:
+
+	192.168.2.0 - 192.168.2.63
 
 ## Details
 
