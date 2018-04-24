@@ -74,6 +74,24 @@ And add this in App.js:
 <p>My prop: {this.props.myProps.testProp}</p>
 ```
 
+## Add PropTypes
+
+Do this at the top of App.js:
+
+```javascript
+import PropTypes from 'prop-types';
+```
+
+And then at the bottom of App.js:
+
+```javascript
+App.propTypes = {
+    appInit: PropTypes.shape({
+      testProp: PropTypes.number
+    })
+};
+```
+
 ## Do Something on Your Own
 
 The only work you need to is modify **index.js** and **App.js** so that **App** takes two props, and can display both the values 2 and 3 on separate lines in the final product.
