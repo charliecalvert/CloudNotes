@@ -183,20 +183,14 @@ Here are part of my header tests with the debug info:
 
 ```javascript
 describe('My Header tests', function () {
-    var quiet = false;            <========== LOOK HERE!
-
-    function getFirst(wrapper) {  <========== LOOK HERE!
-        const eightp = wrapper.find('h2').first().debug();
-        if (!quiet) {
-            console.log("HEADER:", eightp);
-        }
-    }
+   import ElfDebugEnzyme from './ElfDebugEnzyme';
+   const elfDebugEnzyme = new ElfDebugEnzyme(true, 'App.test.js');
 
     it('renders and reads H1 text', () => {
         const wrapper = shallow(<Header />);
         const welcome = <h2>Welcome to React</h2>;
+        elfDebugEnzyme.getFirst(wrapper, 'h2');
         expect(wrapper.contains(welcome)).toEqual(true);
-        getFirst(wrapper)         <========== LOOK HERE!
     });
 
     // MORE CODE HERE AND ELSEWHERE
@@ -223,6 +217,14 @@ My Get User Info Test › renders default message for state.userLogin
    Received:
      false
 ```
+
+## EsLint
+
+Make sure you have [ESLint](https://eslint.org/) installed as part of all your projects:
+
+    npm install --save-dev eslint
+
+Follow the steps in the [ESLint assignment][esl] to set up **.eslintrc.json** and **.eslintignore** as necessary.
 
 ## Turn it in
 
@@ -255,3 +257,5 @@ Don't spend a lot of time fretting over whether or not this is the right archite
 [gha]: https://developer.github.com/v3/
 
 [rep]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html
+
+[esl]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html

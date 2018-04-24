@@ -1,4 +1,4 @@
-# React ESLint
+## Overview
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.
 
