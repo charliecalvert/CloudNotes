@@ -1,24 +1,20 @@
 # React Props Refine
 
-I'm still working on this, but it should get you started.
-
-Clean up the Address Program.
-
-The main goal will be to query the GitHub API for a view your account, if possible, and mine if yours is not accessible for one reason or another.
-
-![Create React Refine View][crrv]
-
-[crrv]:https://s3.amazonaws.com/bucket01.elvenware.com/images/create-react-refine-view.png
-
-This version of the app displays a few rows from the data returned from this URL in a component called GetUserInfo:
-
-- <https://api.github.com/users/charliecalvert>
-
-Please query your account not mine.
+Clean up the [React Props GitHub API Program][rep].
 
 ## Key Features
 
-- Display at least five rows from the users URL as shown above. Don't display them all, as we will find a shortcut to help you create big forms with lots of fields. I'm displaying these in **INPUT** elements, which makes no sense. You can use P elements.
+The main goal will be to query the [GitHub API][gha] for a view of your account. We are building on work we did before.
+
+![Create React Refine View][crrv]
+
+This version of the app displays a few rows from the data returned from GitHub API in a component called **GetUserInfo**. Recall that this is a REST API, so we can call it by simply typing a URL into the address bar of browser. To see this in action, click the link below:
+
+- <https://api.github.com/users/charliecalvert>
+
+In your program remember to query your account not mine.
+
+- Display at least five rows from the users URL as shown above. Don't display them all, as we will find a shortcut to help you create big forms with lots of fields.
 - Make sure all your tests pass for the **GetUrlPage** component, the **GetFoo** component, the **SmallNumbers** component and the **ElfHeader** component. Each component's tests should be in its own file and all tests should be in a directory called **src/\_\_tests\_\_**.
 - For now, continue to display the other information, such as **SmallNumbers** and **GetFoo**. Ultimately, we will learn how to use client side routes to switch component views, but for now, just show all the data on the same page, as shown below.
 - Strive to eliminate all errors and warnings in your tests, in Chrome Developer Tools, and at the command line for your server and client.
@@ -253,3 +249,9 @@ The question mark stands for the next tag in your series of tags. For instance, 
 ## Notes
 
 Don't spend a lot of time fretting over whether or not this is the right architecture. I have several refactorings I want us to do as we add new features, but that is for next week. Just get this far.
+
+[crrv]:https://s3.amazonaws.com/bucket01.elvenware.com/images/create-react-refine-view.png
+
+[gha]: https://developer.github.com/v3/
+
+[rep]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html
