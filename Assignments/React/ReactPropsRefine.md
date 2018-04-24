@@ -33,13 +33,15 @@ Don't fuss too much at this stage with making things beautiful. Right now, we ar
 
 Change the name of the folder in which the program is stored to **GitExplorer**. Perhaps something like:
 
-  git mv week02-rest-basics/ GitExplorer
+```bash
+git mv week02-rest-basics/ GitExplorer
+```
 
 ## Create CSS and Image Directories
 
 Inside the **src** directory create directories called **css** and **images**. Move your CSS and SVG files into these directories. Check your tests and run your program and make sure you are not getting errors or warnings.
 
-- Start your program: npm start
+- Start your program: **npm/yarn start**
 - In Chrome, open the Developer Tools: F12 or CTRL-SHIFT-I or **Settings | More Tools | Dev Tools**
 
 ## Check for Warnings and Errors
@@ -54,13 +56,13 @@ Check for warnings or errors
 
 **IMAGE**: _The same warning as seen from the command line. Sometimes you might see problems at the command line that you don't see in the developer tools and vice versa. As you result, you should check both places._
 
-When you turn in your code, you should always strive to ensure that your program is completely free of warnings and errors.
+When you turn in your code, you should always ensure that your program is completely free of warnings and errors.
 
 [dtw]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-refine-warn.png
 
 [warncmd]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-refine-cmdw.png
 
-## Add Display for Api User
+## Add Display for API User
 
 By this time you should have refactored your code so that there is nothing about headers, **SmallNumbers**, or retrieving information from **/api/foo** in **App.js**. We want to re-purpose **App.js** so that it can be used to handler our request for **/api/users**.
 
