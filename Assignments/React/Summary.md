@@ -8,4 +8,5 @@
 * [ReactProps.html](ReactProps.html)
 * [ReactPropsMocks.html](ReactPropsMocks.html)
 * [ReactPropsRefine.html](ReactPropsRefine.html)
+* [RestBasics.html](RestBasics.html)
 * [UnitTestsAddress.html](UnitTestsAddress.html)

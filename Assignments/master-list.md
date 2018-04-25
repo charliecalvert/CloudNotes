@@ -1,3 +1,6 @@
 * [Summary.html](Summary.html)
 * [React/Summary.html](React/Summary.html)
+* [Npm/Summary.html](Npm/Summary.html)
+* [Git/Summary.html](Git/Summary.html)
 * [EcmaScript/Summary.html](EcmaScript/Summary.html)
+* [Aws/Summary.html](Aws/Summary.html)

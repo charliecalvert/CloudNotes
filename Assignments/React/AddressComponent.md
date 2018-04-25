@@ -196,7 +196,7 @@ constructor(props) {
         fax: address.fax,
         tollfree: address.tollfree,
         website: address.website
-    })
+    }
 
 }
 ```
@@ -224,9 +224,7 @@ setAddress = () => {
           fax: address.fax,
           tollfree: address.tollfree,
           website: address.website
-      })
-
-    })
+      })    
 };
 ```
 

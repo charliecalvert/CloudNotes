@@ -136,24 +136,48 @@ For now, put all the buttons in the **render** method for **App.js**. Do not inc
 Finally, you will need a module called **components/Header.js** that contains only the header:
 
 
+## Refactor
+
+After looking at this, we might decide that index.js is doing too much, and App.js should either be renamed or we should change its task by refactoring it. Let's do two things:
+
+- Give App.js the responsibility to load the components that make up our app.
+- Refactor App.js, and split out the call to the server into a new component.
+
+| Module | Route     | Description |
+| :------------- | :------------- |  :------------- |
+| App.js         | None      | Load components |
+| Header.js  | None   | Show Header  |
+| FooApi.js      | /api/foo      | Get file, status, result |   
+| Micro01.js     | /bar       | Call You Rang in Micro Services |
+| GitUser.js     | /user      | Get user information from GitHub |
+
+
 ## Props
 
 In **index.js** pass in some default numbers to **components/App.js**:
 
 ```javascript
-var appInit = {
-  file: 'File name will be placed here.',
-  status: 'status will go here',
-  result: 'result will go here',
+const appInit = {
+    file: 'File name will be placed here.',
+    status: 'status will go here',
+    result: 'result will go here',
 };
 
-ReactDOM.render(
-  // CODE OMITTED HERE
+class App extends Component {
 
-     <App appInit={appInit} />
-  </div>,
-  document.getElementById('root')
-);
+
+    render() {
+        return (
+            <div className="App">
+                // CODE TO LOAD OTHER COMPONENTS OMITTED
+                <ApiFoo appInit={appInit} />
+            </div>
+        );
+    }
+}
+
+export default App;
+
 ```
 
 And then use it in **App.js**:
@@ -225,6 +249,8 @@ router.get('/user', function(req, res, next) {
 
 });
 ```
+
+We should refactor our code now. In the server/routes folder create a file called **git-api.js**. Move the method shown above into that file. Modify **server/app.js** to load **routes/git-api.js**. Modify our client side code to call the new **git-api/user** route.
 
 ## Tests
 
