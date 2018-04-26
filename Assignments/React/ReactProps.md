@@ -331,24 +331,29 @@ getFoo = () => {
 
 ## Refactor Tests
 
-Refactor your tests into:
+Move your tests and **ElfDebugEnzyme** into their own folder called **src/\_\_tests\_\_**.
+
+Refactor your tests into modules that might look a little like this:
 
 - App.test.js
 - GetFoo.test.js
 - Header.test.js
 - SmallNumbers.test.js
 
-Move tests into their own folder called \_\_tests\_\_.
-
 That's two underscores, the word _tests_, followed by two more underscores.
 
-[Project Structure][proj-struct]
+Some of the individual file names are not right for this project, but this screenshot should help you get a sense of what your directory structure should look like.
+
+![Project Structure][proj-struct]
 
 [proj-struct]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-refine-project.png
 
 ## Turn it in
 
-First commit and push. Then tag and push. With the commit and the tag, create a message that includes the assignment name. When you turn in the assignment, designate the directory in your repo where you did your work.
+First commit and push. Then tag and push. Designate the directory and branch in your repo where you did your work:
+
+- Branch: XXX
+- Folder: YYY
 
 ## Props Single Node Error {#props-single-node}
 
