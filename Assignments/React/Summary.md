@@ -1,5 +1,6 @@
 * [AddressComponent.html](AddressComponent.html)
 * [JestCreateReactApp.html](JestCreateReactApp.html)
+* [ReactAddressInOrder.html](ReactAddressInOrder.html)
 * [ReactAddressShow.html](ReactAddressShow.html)
 * [ReactBasics.html](ReactBasics.html)
 * [ReactEsLint.html](ReactEsLint.html)
