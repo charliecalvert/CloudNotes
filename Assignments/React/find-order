@@ -1,0 +1,32 @@
+function showTitle {
+   echo "=========="
+   echo "$1" 
+}   
+
+function doPrettyA {
+	showTitle "$1"
+	git log --pretty=format:%h%ad%s "$1"	
+}
+   
+function doPrettyB {
+	showTitle "$1"
+	git log --pretty=format:%h%ad "$1"	
+}
+   
+function doPretty {
+	showTitle "$1"
+	git log --pretty=format:%ad "$1"	
+}
+
+doPretty UnitTestsAddress.md
+doPretty AddressComponent.md
+doPretty AddressComponentRefine.md
+doPretty ReactAddressEdit.md
+doPretty ReactAddressShow.md
+doPretty ReactAddressMenu.md  
+doPretty ReactGetAddress.md
+doPretty JestCreateReactApp.md
+doPretty ReactAddressMock.md
+doPretty ReactAddressDataMaven.md
+doPretty ReactNativeBasics.md
+

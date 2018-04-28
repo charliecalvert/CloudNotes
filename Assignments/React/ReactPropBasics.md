@@ -92,6 +92,12 @@ App.propTypes = {
 };
 ```
 
+You should install **PropTypes**:
+
+```bash
+npm install --save prop-types
+```
+
 ## Do Something on Your Own
 
 The only work you need to is modify **index.js** and **App.js** so that **App** takes two props, and can display both the values 2 and 3 on separate lines in the final product.

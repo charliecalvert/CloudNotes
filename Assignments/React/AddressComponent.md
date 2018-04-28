@@ -294,13 +294,13 @@ As we start writing more complex tests, we want to create some methods that will
 [eca]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/childAt.html
 
 ```javascript
-const getLast = (wrapper) => {
-    const ninep = wrapper.find('p').last().debug();
+const getLast = (wrapper, element) => {
+    const ninep = wrapper.find(element).last().debug();
     console.log(ninep);
 };
 
-const getFirst = (wrapper) => {
-    const ninep = wrapper.find('p').first().debug();
+const getFirst = (wrapper, element) => {
+    const ninep = wrapper.find(element).first().debug();
     console.log(ninep);
 };
 
@@ -310,20 +310,31 @@ const getChild = (wrapper, element, index) => {
 };
 ```
 
+Call it like this:
+
+```javascript
+it.only('renders and reads H2 text', () => {
+    const wrapper = shallow(<App />);
+    getFirst(wrapper, 'h1');
+    const welcome = <h2>Welcome to React</h2>;
+    expect(wrapper.contains(welcome)).toEqual(true);
+});
+```
+
 Or like this, if you want something a bit more flexible. The important difference is that it has the **quiet** option, but not that this one goes after h2 instead of **P**:
 
 ```javascript
    var quiet = false;
 
-   const getLast = (wrapper) => {
-     const lastParagraph = wrapper.find('p').last().debug();
+   const getLast = (wrapper, element) => {
+     const lastParagraph = wrapper.find(element).last().debug();
      if (!quiet) {
        console.log(lastParagraph);
      }
  };
 
- const getFirst = (wrapper) => {
-     const firstParagraph = wrapper.find('p').first().debug();
+ const getFirst = (wrapper, element) => {
+     const firstParagraph = wrapper.find(element).first().debug();
      if (!quiet) {
        console.log(firstParagraph);
      }
@@ -338,19 +349,7 @@ Or like this, if you want something a bit more flexible. The important differenc
 
 ```
 
-If want, make the HTML element configurable by passing in two parameters instead of one:
-
-```javascript
-   var quiet = false;
-
-    function getFirst(wrapper, element) {
-        const firstElement = wrapper.find(element).first().debug();
-        if (!quiet) {
-            console.log("HEADER:", firstElement);
-        }
-    }
-
-```
+Then change **quiet** to true to suppress the strings.
 
 ## Turn it in
 
