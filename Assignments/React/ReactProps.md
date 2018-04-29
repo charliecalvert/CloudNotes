@@ -182,6 +182,19 @@ export default App;
 
 And then use it in **App.js**:
 
+## PropTypes
+
+You can also use [PropTypes][ptrt] to get better warnings at runtime for props type mismatches.
+
+![PropType warnings at run time][ptwrt]
+
+First install the prop-types package:
+
+```bash
+npm install --save prop-types
+```
+Then add the tool to your program:
+
 ```javascript
 import PropTypes from 'prop-types';
 
@@ -407,3 +420,7 @@ html
 
 
 [gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename
+
+[ptrt]: https://github.com/facebook/prop-types
+
+[ptwrt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/prop-types-runtime.png

@@ -1,6 +1,8 @@
 # React Address Show
 
-We have several steps:
+We are building on the work from the **AddressComponent** assignment.
+
+In this assignment, we have several steps we want to complete. Among them are:
 
 - Divide the Address Component up into:
   - A component that owns the data: **Address**
@@ -68,7 +70,7 @@ The React component you created my be in a file called **App.js** or perhaps you
 This is a task the WebStorm can help you complete.
 
 - Right click on the file in the Project pane and rename it.
-- Right click on the 
+- Right click on the
 
 In **AddressShow**, rename the class from **Address** to **AddressShow**:
 

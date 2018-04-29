@@ -76,6 +76,17 @@ And add this in App.js:
 
 ## Add PropTypes
 
+We can get some runtime type checking for our properties with [PropTypes][ptrt].
+
+![PropType warnings at run time][ptwrt]
+
+It is very important that we always keep the Developer Tools (F12 or Ctrl-Shift-I) open when we are running our programs. If we do so, we will see runtime errors in the Console pane, and see a little red icon indicating that there are warnings or errors when we are on that page or some other page. You can see both the warning and the small circular icon with the x in the above screenshot. I'm running Chrome in this example, but the warning is also clearly visible on the console page in Firefox.
+
+Install the **prop-types** package:
+
+```bash
+npm install --save prop-types
+```
 Do this at the top of App.js:
 
 ```javascript
@@ -112,3 +123,7 @@ Push your work specify the follwoing when you turn it in:
 
 - Branch (If relevant)
 - Folder
+
+[ptrt]: https://github.com/facebook/prop-types
+
+[ptwrt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/prop-types-runtime.png
