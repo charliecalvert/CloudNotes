@@ -10,7 +10,7 @@ The interface for our **Unit Tests with Jest** by end of class Wednesday:
 
 ![View Unit Jest][view-jest]
 
-In the **Unit Tests with Jest** assignment we had four key pieces of code.
+In the **Unit Tests with Jest** assignment we had four key pieces of code for our component. This code is found in **/src/Apps.js**.
 
 **The Constructor with State Declaration:**
 
@@ -44,6 +44,8 @@ getFile = () => {
 ```
 
 **The Tests**
+
+Our tests are designed to ensure that our component is working correctly. The tests for our program are found in **App.test.js**:
 
 ```javascript
 describe('React Jest Suite', function () {
@@ -92,7 +94,7 @@ Make any other necessary changes to ensure that your application still runs. and
 
 ## Add firstName test
 
-Before we create a first name, let's write a test to see if it exists. The test will fail at first. Our goal in the next section is to get the test to pass.
+Before we create a first name, let's write a test in **App.test.js** to see if it exists. The test will fail at first. Our goal in the next section is to get the test to pass.
 
 ```javascript
 it('renders and displays the default first name', () => {
@@ -179,7 +181,6 @@ console.log src/App.test.js:173
   </p>
 ```
 
-
 ## Add firstName
 
 I'm not going to talk you through all the steps, but let's make sure you know how to add one of the address fields. You will then add the others on your own.
@@ -232,6 +233,10 @@ You should now have six passing tests.
 
 When you are done, you should be able to display the complete address for Senator Patty Murray and have two tests for each field: one for the default value and one for the value in the field after you click the button. You can pick any Congress Person who interests you. It doesn't have to be Patty Murray. You should have tests that prove everything is displayed as expected both before and after you click the **Set Address** button. So we should be able to see in the component view, and in the tests, the **FirstName**, **LastName**, **Steet**, **City** etc fields...
 
+![Final app at runtime with dev tools][run-final]
+
+Note that the Developer Tools show a clean run with no errors and no warnings. We can see two line of output from our console.log statements.
+
 When you are done, you should have something like 16 to 20 tests. As I drew near the end of the assignment, my tests looked a bit like this:
 
 ![Final Tests][reactjta]
@@ -273,6 +278,8 @@ Jest isn't the only Unit Test library, not by any means. But all unit testing to
 [show-patty]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-patty.png
 
 [test-first]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-default-first-name.png
+
+[run-final]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-test-final.png
 
 [reactjta]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-jest-test-address.png
 

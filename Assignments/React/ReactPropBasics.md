@@ -117,6 +117,18 @@ The only work you need to is modify **index.js** and **App.js** so that **App** 
 
 [rpb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-basics.png
 
+For instance, pass in both of these variables to App.js as props:
+
+```javascript
+const myProps = {
+    testProp: 3
+};
+
+const testProp=2;
+```
+
+Now change **ReactDom.render** so that it instantiates **App** and takes both variables as **parameters**, as **attributes**.
+
 ## Turn it in
 
 Push your work specify the follwoing when you turn it in:
