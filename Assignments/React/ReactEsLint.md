@@ -64,10 +64,11 @@ When I ran **npm run lint**, it worked, but NPM reports an error until I get all
 
 ## Add .eslintignore
 
-Add a file called .eslintignore so that eslint does not try to parse files that we did not create. For instance, your file might have this content:
+Add a file called **.eslintignore** so that eslint does not try to parse files that we did not create. For instance, your file might have this content:
 
 ```bash
 **/registerServiceWorker.js
+**/bundle.js
 ```
 
 ## Fix
@@ -92,9 +93,58 @@ Just point me at your midterm, final, or current project. When I open it, I'll e
 
 [ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 
+## Prettier
+
+For help formatting files, I'm moving from [js-beautify][jsbea] to [prettier][pret]. The first time we use it, we need to be sure it is installed. Once we have installed it, it stays installed. So we need to run one of these commands only once:
+
+```bash
+yarn global add prettier
+npm install --global prettier
+```
+
+You can set up a configuration file called .prettierrc in the root of your project or repository:
+
+```javascript
+{
+    "tabWidth": 4,
+    "singleQuote": true
+}
+```
+
+We run [prettier][pret] to clean up the format of our files before we turn in an assignment. We don't want to run it on all files in our project. For instance, we don't want to format the files in **node_modules** since we don't own them.
+
+To ensure we operate on only the files we want to format, create a script called **prettier** like this:
+
+```bash
+#!/bin/bash
+
+find . -iname "*.js" -not -path "**/node_modules/**" -not -path "**/bower_components/**" -not -path "**bundle.js" -not -path "registerServiceWorker.js" -exec "prettier" --write {} \;
+```
+
+Make it executable:
+
+```bash
+chmod +x prettier
+```
+
+Call it like this:
+
+    ./prettier
+
+If you want more, see also [FindNpPrettier][fnpp] in JsObjects. You can install that script with these commands:
+
+```bash
+slb
+./CreateSymbolicLinks
+```
+
+See the [CreateSymbolicLinks][csl] script on GitHub.
+
 ## Beautify Files
 
-We want to run js-beautify, but not on all files in a directory. Create a script called **pretty** like this:
+I'm moving from [js-beautify][jsbea] to [prettier][pret], but don't quite want to delete this section yet. Use **prettier** instead of js-beautify because it handles JSX much better.
+
+Before we had prettier, we used js-beautify, but not on all files in a directory. Create a script called **pretty** like this:
 
 ```bash
 find . -iname '*.js' | grep -vFf skip | xargs js-beautify -r
@@ -115,3 +165,11 @@ Alternatively, you could do this:
 ```bash
 find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle.js' -not -path '**/registerServiceWorker.js' -print0 | xargs -0 js-beautify -r
 ```
+
+[pret]: https://github.com/prettier/prettier
+
+[jsbea]: https://github.com/beautify-web/js-beautify
+
+[fnpp]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/FindScripts/FindNpPrettier
+
+[csl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CreateSymbolicLinks

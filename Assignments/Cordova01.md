@@ -8,7 +8,7 @@ Cordova First Exercise
 a Cordova project.
 - Create a project called Cordova01_LastName. (Use an underbar, not a dash, when creating Cordova projects.)
 - Create the project and deploy it to the emulator, AndroidX86 or your
-device. 
+device.
 - Take a screenshot of your program running
 - Put both your project and your screenshot in Git
 
@@ -21,7 +21,7 @@ Now go to your temp directory:
 	cordova create Cordova01
 	cordova platform add android
 
-Then just open Eclipse and Import **C:\\Temp\\Cordova01**, using the same 
+Then just open Eclipse and Import **C:\\Temp\\Cordova01**, using the same
 steps we have described elsewhere.
 
 On the MAC, you might want to try this:
@@ -38,7 +38,7 @@ Second Assignment
 - Create a second project called Cordova02-LastName
 - Allow the user to enter a value in Fahrenheit and convert to
 Celsius
-- Allow the user to enter a value in miles and convert to 
+- Allow the user to enter a value in miles and convert to
 kilometers
 - Allow the user to enter a number and calculate the Square Root
 - Make the background of the form have some color
@@ -70,7 +70,7 @@ var myObject = {
 var MyObject = function() {
 	function func() {};
 	function func2() {};
-} 
+}
 ```
 
 Remember:
@@ -80,3 +80,79 @@ Remember:
 - Provide unit tests for conversion methods.
 - Pay attention to naming conventions! Don't call things myObject or
 func. Create meaningful names.
+
+
+## Useful
+
+Take a snapshot of your virtual machine. Or do whatever to back it up.
+
+Make sure Java is installed:
+
+```
+which java
+```
+
+If there is none, then:
+
+```
+sudo apt-get install openjdk-8-jre
+sudo apt-get install openjdk-8-jdk-headless
+```
+
+Install [Android Studio](https://developer.android.com/studio/):
+
+Then this:
+
+```bash
+mkdir ~/Android
+mkdir ~/Android/Sdk
+mv tools/ ~/BigDrive/Android/Sdk/.
+cd Android/Sdk/tools/bin/
+./sdkmanager
+java -version
+./sdkmanager --list
+./sdkmanager --list | grep build
+./sdkmanager "build-tools;27.0.3"
+```
+
+At some point, do this:
+
+	touch ~/.android/repositories.cfg
+
+Gradle is here: <https://gradle.org/install/>
+
+Then do this, using the version number that you downloaded:
+
+```bash
+sudo mkdir /opt/gradle
+# Uncomment the version of Gradle you downloaded:
+# sudo unzip -d /opt/gradle gradle-4.7-bin.zip
+sudo unzip -d /opt/gradle gradle-4.7-all.zip
+ls /opt/gradle/gradle-4.7
+```
+
+From .bashrc:
+
+```bash
+# Java Path Support
+#export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/default-java
+
+# Android Path Support
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_PLATFORM_TOOLS="$HOME/Android/Sdk/platform-tools"
+set-system-path "$ANDROID_HOME/tools:$ANDROID_PLATFORM_TOOLS"
+set-system-path "/opt/gradle/gradle-4.7/bin"
+```
+
+And AVD (which is no good):
+
+./avdmanager list | grep pixel
+
+
+## Install on device
+
+```
+sudo apt-get install android-tools-adb
+```
