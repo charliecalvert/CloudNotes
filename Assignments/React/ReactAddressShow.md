@@ -8,14 +8,14 @@ In this assignment, we have several steps we want to complete. Among them are:
   - A component that owns the data: **Address**
   - A component that displays the data: **AddressShow**
   - Update Tests
-- Insure that clicks on the Button work but that **Address** not **AddressShow** does the real work.
+- Insure that clicks on the Button work but that **Address** does the real work. **AddressShow** is mostly about the interface and does little real work other than display JSX.
   - Update Tests
 
 ## Divide
 
 The first step is to split **Address** and **AddressShow** into two distinct components. In particular, we will create a new component called **AddressShow** and put most of **Address** in it. We will then pare down **Address** so that its primary function will be handling data.
 
-The first step will be set up our (initially) failing tests for **AddressShow**:
+The first step will be set up our (initially) failing tests for **AddressShow** in **AddressShow.test.js**:
 
 ```javascript
 // GET THE RIGHT IMPORTS
@@ -55,22 +55,23 @@ describe('AddressShow Shallow Suite', function () {
 
 Note that we don't create any tests for button clicks.
 
-## Create AddressShow
+## Create AddressShow Project
 
-To get started, make a copy of **Address** and call it **address-show**. For instance:
+To get started, make a copy of Address Components assignment and call it **address-show**. For instance:
 
-    cp -r week03-react-address/ week04-address-show
+    cp -r week03-react-address/ week05-address-show
 
 There are many ways to do the same thing, and it doesn't really matter which one you prefer.
 
 ## Rename the React Component
 
-The React component you created my be in a file called **App.js** or perhaps you have renamed it to **Addresss.js**. In either case, rename both the file and the class inside it to **AddressShow**.
+The React component you created maybe in a file called **App.js** or perhaps you have renamed it to **Addresss.js**. In either case, rename both the file and the class inside it to **AddressShow**.
 
 This is a task the WebStorm can help you complete.
 
-- Right click on the file in the Project pane and rename it.
-- Right click on the
+- Right click on the file in the Project pane and copy it.
+- Right click on the components directory and choose paste
+- Rename the new file to **AddressShow.js**
 
 In **AddressShow**, rename the class from **Address** to **AddressShow**:
 
