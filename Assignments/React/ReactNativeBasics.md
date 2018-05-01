@@ -6,8 +6,6 @@ React Native is a relatively simple way of making native Android and iPhone appl
 
 In this assignment, we will use a tool called [expo](https://expo.io/). The key thing about Expo is that it makes it easy to develop these kinds of applications. Or at least it is easy once you understand React, which hopefully we all do understand at this point.
 
-**NOTE**: _This assignment was designed for my Prog272 course. This spring, 2017, I also gave a link to this assignment to my Isit322 course. This was simply so they can see how to get started with Expo and React Native. I am not suggestting that Isit322 follow the exact steps laid down in this assignment, though some of them may provide very useful hints as to how to proceed._
-
 ## Native with Expo
 
 For this technology to work, your phone and your development tools should both be signed into the same network. At home, for instance, both your development machine and your phone should be signed in to your local network. You might have your phone on the wireless network, and your development machine wired into the network. That is fine, assuming they are both on the same network, which would normally be the case.
@@ -18,11 +16,11 @@ If you are at school, make sure your phone is signed into [eduroam](https://cat.
 - [eduroam US](https://www.eduroam.us/)
 - [BC link](http://www.bellevuecollege.edu/wireless/)
 
-Go to the Android Play store or the iPhone store and install Expo on your Android or iPhone. Follow the instructions. It's simple.
-
-[educat]: https://cat.eduroam.org/
-
 Also, make sure your Pristine Lubuntu is using the Bridged Adapter, and not NAT. Check this in **Settings | Network** for the VirtualBox Manager.
+
+## Expo
+
+Go to the Android Play store or the iPhone store and install Expo on your Android or iPhone. Follow the instructions. It's simple.
 
 - [Home Page Expo Development][hped]
 
@@ -40,8 +38,6 @@ npm start
 ```
 
 Now use your phone and the expo app to scan your code from the command prompt.
-
-[hped]: https://facebook.github.io/react-native/releases/next/docs/getting-started.html
 
 Now open the app in WebStorm and start making changes. The app on your phone should update automatically as you make changes in WebStorm.
 
@@ -219,3 +215,7 @@ Don't forget to import the controls you need for your view:
 ```javascript
 import {Button, StyleSheet, Text, View} from 'react-native';
 ```
+
+[educat]: https://cat.eduroam.org/
+
+[hped]: https://facebook.github.io/react-native/releases/next/docs/getting-started.html
