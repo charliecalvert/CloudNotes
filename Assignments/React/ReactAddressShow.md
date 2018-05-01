@@ -69,8 +69,8 @@ The React component you created maybe in a file called **App.js** or perhaps you
 
 This is a task the WebStorm can help you complete.
 
-- Right click on the file in the Project pane and copy it.
-- Right click on the components directory and choose paste
+- Right click on the file in the Project pane and choose to copy it.
+- Right click on the components directory and choose to paste it.
 - Rename the new file to **AddressShow.js**
 
 In **AddressShow**, rename the class from **Address** to **AddressShow**:
@@ -97,7 +97,7 @@ import addresses from '../address-list';
 
 **NOTE**: _Recall that our goal is to perform a complete mind-meld with the file system of our OS. Some part of your brain must become the file system, and you should take great joy and comfort from this fact. In particular, it should be intuitively obvious that the relative path part of the import statement must change after we move this line of code from a file in the **src** directory to a file in the **src/components** directory. You should also grok immediately the difference between a relative path that contains one dot and one that contains two dots. You shouldn't have to think about it any more than you have to think how to tie your shoes. The knowledge should just be there, fully formed, in your brain without thought or effort. I should perhaps remind you that this isn't a Linux thing, as you would have the same issue on Windows._
 
-Lets also stop individual fields in **Address**. Intead, we will work with a single record from the **addresses** array.
+Lets also stop working with the individual fields in **Address**. Instead, we will work with a single record from the **addresses** array.
 
 ```javascript
 import addresses from '../address-list';
@@ -146,7 +146,7 @@ constructor(props) {
 
 As you can see, the constructor is passed **props**. As you know, **props** is the state passed to the object by its parent, which in this case is **Address**. This means that **this.props.address** in **AddressShow** is "the same thing" as **this.state.address** in the **Address** component. The data is passed from the **Address** render method to the **AddressShow** constructor.
 
-You can keep the above constructor, but you should strip everything else from **AddressShow** expcept the **render** method.
+You can keep the above constructor, but you should strip everything else from **AddressShow** except the **render** method. In the **render** method's JSX, reference the fields of the **address** object with **props** rather than **state**.
 
 **NOTE**: _Since the constructor for **AddressShow** doesn't do anything, the only thing we really need in **AddressShow** is the render method, but we are keeping the constructor for pedagogical purposes._
 
@@ -159,18 +159,18 @@ As you probably know, **console.log** is both curse and blessing. Let's try to e
 ```javascript
 constructor(props) {
     super(props);
-    this.quiet = true;
-    this.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
+    this.debug = true;
+    this.log('ADDRESS SHOW CONSTRUCTOR', this.props.address);
 }
 
 log(message, message2 = '', message3 = '') {
-    if (!this.quiet) {
+    if (this.debug) {
         console.log(message, message2, message3);
     }
 }
 ```
 
-Now we can toggle a single variable, **this.quiet**, whenever we want to turn down the volume. For instance, we might want to log to the console in our render method. In the new system we would do it like this:
+Now we can toggle a single variable, **this.debug**, whenever we want to turn down the volume. For instance, we might want to log to the console in our render method. In the new system we would do it like this:
 
 ```javascript
 render() {
@@ -179,20 +179,20 @@ render() {
 }
 ```
 
-Now we can change the **this.quier** property from **true** to **false** to toggle the use of **console.log** throughout the object. There are other solutions, and better loggers, but this is a bit of a start on understanding the subject.
+Now we can change the **this.debug** property from **true** to **false** to toggle the use of **console.log** throughout the object. There are other solutions, and better loggers, but this is a bit of a start on understanding the subject.
 
 **NOTE**: _I state the name of the object in logging message to help me track down where it is coming from. Fancy loggers can give us more information in simpker ways, but we could do this:_
 
 ```javascript
 constructor(props) {
     super(props);
-    this.quiet = false;
+    this.debug = false;
     this.log('CONSTRUCTOR', this.props.address);
 }
 
 log(message, message2 = '', message3 = '') {
 
-    if (!this.quiet) {
+    if (!this.debug) {
         const label = this.constructor.name + ': ';   < === HERE
         console.log(label, message, message2, message3);
     }
@@ -252,7 +252,7 @@ class MyComponent extends Component {
 
 Here **MyComponent** does nothing but ask **MyOtherComponent** to render itself.
 
-In cases like this, if you use Enzyme&#39;s [shallow][enzsh], your tests will only see the output from **MyComponent**. Indeed, that is often what you want. But sometimes, it is best to have the tests the output from both **MyComponent** and **MyOtherComponent**. To do that, you use **mount** rather than **shallow**. We usually do this:
+In cases like this, if you use Enzyme&#39;s [shallow][enzsh], your tests will only see the output from **MyComponent**. Indeed, that is often what you want. But sometimes, it is best to have the tests know about the output from both **MyComponent** and **MyOtherComponent**. To do that, you use **mount** rather than **shallow**. We usually do this:
 
 ```javascript
 import { shallow } from 'enzyme';
