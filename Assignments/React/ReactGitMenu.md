@@ -2,26 +2,32 @@
 
 The goals of this assignment are:
 
-- Create a menu, no matter how limited
+- Create a menu with [react-router][rrb] no matter how limited
 - Switch views between **Git View**, **BarFoo** and **SmallNumbers**
 
-In this serious of screen shots you can see the menu, and the various views it provides. In particular, each view features one component, or one component and its child components.
+In this serious of screen shots you can see the menu, and the various views it provides. In particular, each view features one component, or one component and its child components. This is a [SPA][spa], or Single Page App.
 
-![Git View][gf]
+![Git View][gf2]
 
-**IMAGE**: _Home page with no styling on menu._
+**IMAGE**: _Home page with styling and menu at bottom of header._
 
-![Bar Foo][bf]
+![Bar Foo][bf2]
 
-**IMAGE**: _Get Foo page with menu styling._
+**IMAGE**: _Micro page with menu no styling._
 
-![Small Numbers][sm]
+![Foo API][fapi]
 
-**IMAGE**: _Small Numbers page with menu styling._
+**IMAGE**: _Get Foo page with menu styling and menu at top._
+
+![The components folder][rrcf]
+
+**IMAGE**: The components folder
+
+[rrcf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-router-menu-comps.png
 
 ## Install React Router
 
-Read the [React Router Dom Install][rrdi] section from Elvenware then return to this document.
+Read the [React Router Dom Install][rrdi] section from Elvenware then return to this document and install **react-router-dom** in the **client** directory.
 
 ## Rename Header to ElfHeader
 
@@ -41,56 +47,63 @@ export default ElfHeader;
 
 ## The Main Index
 
-We are going to fundamentally change the structure of our program. This means, at least for now, that **index.js** should no longer be responsible for showing **GetUserInfo**, **GetFoo** or **SmallNumbers**. Instead, it should show only our **ElfHeader**, which is the class we will use to switch between component views. Here is our modified **index.js** file:
+Recall how our modified **index.js** file looks:
 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ElfHeader from './components/ElfHeader';
+import App from './components/App';
 import './css/index.css';
 
 ReactDOM.render(
     <div>
-        <ElfHeader/>
+        <App/>
     </div>,
     document.getElementById('root')
 );
 ```
 
-**NOTE**: _A crucial point, in fact, probably the central point, of this class, is how easy it is for us to move classes and views around when we use the **React** architecture. Yes, it is hard to get up to speed on React, and yes, it is a fairly complex tool. But once you have everything set up, making relatively large changes to our program's architecture are simple. The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
+**NOTE**: _Notice how easy it is for us to move classes and views around when we use the **React** architecture.  The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
 
-## The ElfHeader Shell
+## App
 
-Open up **ElfHeader** in your editor. The first step will be to change our imports to pull in the components we want. We will also want to access some key classes from **react-router-dom**:
+We are going to fundamentally change the structure of our program. This means making changes to this JSX in App.js:
 
 ```javascript
-/**
- * Created by charlie on 4/15/17.
- */
+<div className="App">
+    <ElfHeader/>                        
+    <GitUser/>
+    <Micro/>
+    <ApiFoo appInit={appInit}/>
+</div>
+```
 
-import React, { Component } from 'react';
-import GetUserInfo from './GetUserInfo';
-import GetFoo from './GetFoo';
-import SmallNumbers from './SmallNumbers';
-import numbersInit from '../numbers-data';
-import logo from '../images/gold-fish.svg';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom';
-import '../css/App.css';
+## Add Menu
+
+Let's add in the code in **ElfHeader** that defines the "visible" menu that the user will click on:
+
+```javascript
+// IMPORTS OMITTED HERE
+import {Link} from "react-router-dom";
+
 
 class ElfHeader extends Component {
-
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to React</h2>
-                </div>
-            </div>            
+                <header className="App-header">
+                    <div>
+                        <ul>
+                            <li>
+                                <Link to="/">Git User</Link>
+                            </li>
+                            // YOU WRITE LINKS FOR MICRO & APIFOO
+                        </ul>
+                    </div>
+                    <img ...>
+                    <h1 ...>
+                </header>
+            </div>
         );
     }
 }
@@ -98,90 +111,44 @@ class ElfHeader extends Component {
 export default ElfHeader;
 ```
 
-Note the code we have pulled in from **react-router-dom**. You don't have to do this, but if you are interested, you can view their source:
-
-```bash
-geany node_modules/react-router-dom/BrowserRouter.js
-geany node_modules/react-router-dom/Route.js
-geany node_modules/react-router-dom/Link.js
-```
-
-## Add Menu
-
-Let's focus only on the render method from **ElfHeader**:
-
-```javascript
-render() {
-    return (
-        <Router>
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to React</h2>
-                </div>
-            </div>
-        </Router>
-    );
-}
-```
-
-Here we have added the **Router** react class from **react-router-dom**. I believe that it's goal will be to iterate through its children, find the ones that define the menu, and cause them to render appropriately. In any case, it needs to be there or our code won't work.
-
-## Add Menu
-
-Let's add in the code that defines the "visible" menu that the user will click on:
-
-```javascript
-render() {
-    return (
-        <Router>
-            <div className="App">
-
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/get-foo">BarFoo</Link></li>
-                    <li><Link to="/get-numbers">Numbers</Link></li>
-                </ul>
-
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to React</h2>
-                </div>
-            </div>
-        </Router>
-    );
-}
-```
-
 Here we are using the **react-router-dom** class called **Link** to help us create a link that behaves appropriately in this context. It will, for instance, turn the first two items into code that looks like this at run time:
 
 ```HTML
 <li><a href="/">Home</a></li>
-<li><a href="/get-foo">BarFoo</a></li>
+<li><a href="/api-foo">ApiFoo</a></li>
 ```
 
 ## Defining Routes
 
-The final step involves defining what the application will do when the user clicks on a particular menu item. We do it like this for the home menu:
+The final step involves defining what the application will do when the user clicks on a particular menu item. Here is the basic structure:
+
+```JavaScript
+import {BrowserRouter, Route} from "react-router-dom";
+
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App">
+                    <ElfHeader/>
+                    <Route exact path="/" component={GitUser}/>
+                    // YOU WRITE APIFOO AND MICRO
+                </div>
+            </BrowserRouter>
+        );
+    }
+}
+```
+
+We do it like this for the home menu:
 
 ```HTML
-<Route exact path="/" component={GetUserInfo}/>
+<Route exact path="/" component={GitUser}/>
 ```
 
-Note the user of the flag **exact**. This is necessary because a simple match on '/' will pass both '/' and '/get-foo'. In fact, it will match any URL beginning '/'. So we tell the router that we want an exact match.
+Note the user of the flag **exact**. This is necessary because a simple match on '/' will pass both '/' and '/api-foo'. In fact, it will match any URL beginning '/'. So we tell the router that we want an exact match.
 
 I want you to have to figure out at least one of these routes on your own, so I will let you discover the solution for creating the Route to GetFoo. It isn't hard, so try not to over-complicate it.
-
-It is, however, a bit tricky to use a **Route** to load a React component that expects props. Here is how to proceed:
-
-```javascript
-<Route path="/get-numbers"
-    render={(props) => (
-        <SmallNumbers {...props}
-            numbers={numbersInit} />
-    )}
-/>
-```
 
 The normal pattern is to define the path, and then the component:
 
@@ -192,15 +159,17 @@ The normal pattern is to define the path, and then the component:
 You cannot, however, pass props to **MyComponent** the same way you can elsewhere in a React application. Instead, you use **render** instead of **component**, and the syntax looks like this in our case:
 
 ```javascript
-<Route path="/get-numbers"
+<Route path="/api-foo"
     render={(props) => (
-        <SmallNumbers {...props}
-            numbers={numbersInit} />
+        <ApiFoo {...props}
+            appInit={appInit} />
     )}
 />
 ```
 
-We use this syntax because **react-router-dom** passes a certain number of props to a component by default, and we don't want to lose them. Here we use the [spread-operator](http://es6-features.org/#SpreadOperator) to pass the Router props and then we pass our own props. Here is what it looks like in the debugger:
+We use this syntax because **react-router-dom** passes a certain number of props to a component by default, and we don't want to lose them. Here we use the [spread-operator](http://es6-features.org/#SpreadOperator) to pass the Router props and then we pass our own props.
+
+Here is what it looks like in the debugger when working with a different component than the one we use in program:
 
 ![Local Scope Props Numbers][lspn]
 
@@ -259,7 +228,17 @@ Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well 
 
 [rrdi]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#router-install
 [rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu
+
+[gf2]:https://s3.amazonaws.com/bucket01.elvenware.com/images/react-router-menu-git-user.png
+[bf2]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-router-menu-no-style.png
+[fapi]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-router-menu-styled.png
+
 [gf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-home.png
 [bf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-barfoo.png
 [sm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-numbers.png
+
 [lspn]: https://s3.amazonaws.com/bucket01.elvenware.com/images/small-number-props.png
+
+[rrb]: https://reacttraining.com/react-router/web/example/basic
+
+[spa]: https://en.wikipedia.org/wiki/Single-page_application
