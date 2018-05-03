@@ -1,0 +1,26 @@
+function showTitle {
+   echo "=========="
+   echo "$1" 
+}   
+
+function doPrettyA {
+	showTitle "$1"
+	git log --pretty=format:%h%ad%s "$1"	
+}
+   
+function doPrettyB {
+	showTitle "$1"
+	git log --pretty=format:%h%ad "$1"	
+}
+   
+function doPretty {
+	showTitle "$1"
+	git log --pretty=format:%ad "$1"	
+}
+
+doPretty ReactProps.md
+doPretty ReactPropsRefine.md
+doPretty ReactPropsMounted.md
+doPretty ReactPropsMocks.md
+doPretty ReactPropsShow.md
+doPretty ReactGitMenu.md
