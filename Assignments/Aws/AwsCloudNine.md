@@ -93,9 +93,22 @@ The **nano** editor is a good tool even if it is strange to those of us who are 
 
 ## Turn it in
 
-I'm looking for pretty much any screen shot that includes a view of your AWS Cloud9 development environment. For instance, attach to your assignment a screen shot similar to, but not identical to, this: 
+I'm looking for pretty much any screen shot that includes a view of your AWS Cloud9 development environment. For instance, attach to your assignment a screen shot similar to, but not identical to, this:
 
 ![Charlie Cloud9 on AWS][c9acc]
+
+## Understanding Cloud Services
+
+All three of the cloud services we use can be used to edit code and run programs. However, think of things this way:
+
+- Pristine Lubuntu runs on our local machine. When we type npm start and start a program, it can be reached on Pristine Lubuntu and other machines on the local network.
+- Cloud 9 (c9.io) runs in the cloud. When we start a program on it that program can be reached from anywhere in the world, but it can only be run for a short time.
+- Our EC2 instance on AWS runs in the cloud, and we can create programs on it that run for extended periods of time. They will run until we take them down or take down our instance. We haven't learned how to do this yet. Cloud 9 on AWS fits in this category. Above I talk about c9.io.
+
+Another way to say the same thing:
+
+- Pristine Lubuntu and Cloud 9 are good places to develop code.
+- AWS is a good place to deploy code.
 
 [c9acc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/cloud9-aws-charlie-code.png
 

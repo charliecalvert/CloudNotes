@@ -1,12 +1,16 @@
-# React Native Basics
+## Overview
 
-Get started using React Native.
+Get started using [React Native][rn].
 
-React Native is a relatively simple way of making native Android and iPhone applications. When completed, you can place these applications in the Android Play Store or the iPhone store and sell them for money, or share them with others. The Facebook, Twitter and Instagram apps are examples of native phone applications that you may use. They almost certainly weren't built with React Native, but they are also native Android and iPhone applications of the same type as we can make with React Native.
+React Native is a relatively simple way of making native Android and iPhone applications. When completed, you can place these applications in the Android Play Store or the iPhone store and sell them for money, or share them with others. The AirBnb and Instragram apps are examples of native phone applications built with React Native.
+
+- Articles about apps built with react native are [here][brn] and [here][10rn]
 
 In this assignment, we will use a tool called [expo](https://expo.io/). The key thing about Expo is that it makes it easy to develop these kinds of applications. Or at least it is easy once you understand React, which hopefully we all do understand at this point.
 
 ## Native with Expo
+
+I believe [expo][expo] provides a simple way for us to create React Native programs. There are better ways to do it, but they require more set up, and are hard to use from inside our VirtualBox VM. For now, this is probably the best solution for us. Frankly, I think it is great, but at home or with a laptop you might find more direct ways to put your apps on your phone with the [Android SDK][asdk] and Android Debug Bridge, aka [adb][adb]. I use those technologies a lot, but will not discuss them here. For now, I'm focused on expo.
 
 For this technology to work, your phone and your development tools should both be signed into the same network. At home, for instance, both your development machine and your phone should be signed in to your local network. You might have your phone on the wireless network, and your development machine wired into the network. That is fine, assuming they are both on the same network, which would normally be the case.
 
@@ -24,7 +28,6 @@ Go to the Android Play store or the iPhone store and install Expo on your Androi
 
 - [Home Page Expo Development][hped]
 
-
 ## First Build
 
 In this example, you can build the app either in your repo or in the **~/Source** folder. It's your choice.
@@ -32,8 +35,8 @@ In this example, you can build the app either in your repo or in the **~/Source*
 ```
 npm install -g create-react-native-app
 cd ~/Source
-create-react-native-app expo-lastname
-cd expo-lastname
+create-react-native-app Week05-ReactNativeStarter
+cd Week05-ReactNativeStarter
 npm start
 ```
 
@@ -46,13 +49,8 @@ For now, you have to run the application in Expo. But it is possible to run it s
 ## The Address Component
 
 ```javascript
-/**
- * by Charlie Calvert
- */
-
 import React, {Component} from 'react';
 import {
-    Alert,
     Button,
     AppRegistry,
     StyleSheet,
@@ -60,50 +58,41 @@ import {
     View
 } from 'react-native';
 
-export default class Address extends Component {
+export default class ReactNativeStarter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            foo: 'expo try state',
-            firstName: 'default firstName'
-            // ADD A DEFAULT LAST NAMED
+            foo: 'expo try state'
         };
-        // NOT USED NOW, BUT YOU MIGHT FIND IT HANDY LATER
-        this.collection = [];
-        this.fetchAddress = this.fetchAddress.bind(this);
+
     }
 
-    fetchAddress(event) {
-        this.setState({foo:'fetcher king'});
+    fetchAddress = () => {
+        //this.setState({foo:'fetcher king'});
         const that = this;
-        const ip = '168.156.47.60';
-        fetch('http://' + ip + ':30025/all-data')
+        const ip = 'ccalvert.com';
+        fetch('http://' + ip + ':30027/you-rang')
             .then((response) => response.json())
             .then(function(result) {
                 this.collection = result.allData;
                 that.setState({
-                    foo: 'qux success',
-                    // SET UP STATE FOR FIRST AND LAST NAMES
-                    // FROM THE DATABASE
+                    foo: result.result,
                 });
             }).catch(function(ex) {
-            that.setState({foo: 'qux error'});
-        });
-        if (event) {
-            event.preventDefault();
-        }
+                that.setState({foo: 'qux error'});
+            });
     };
 
     render() {
         console.log('tst');
 
         return (
-            <View>
+            <View style={styles.container}>
+                <Text>Getting started now</Text>
                 <Text style={styles.instructions}>
                     {this.state.foo}
                 </Text>
-                // REPLACE THESE COMMENTS WITH CODE  FOR
-                // DISPLAYING THE FIRST AND LAST NAMES
+
                 <Button
                     onPress={this.fetchAddress}
                     title="Get Data"
@@ -116,56 +105,21 @@ export default class Address extends Component {
 }
 
 const styles = StyleSheet.create({
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});
-
-AppRegistry.registerComponent('Address', () => Address);
-```
-
-## Link in Address Component
-
-Now that we have created the **Address** component, all you need to do is link it in.
-
-```javascript
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-
-export default class App extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to Expo Calvert!
-                </Text>
-                <Text>PUT THE ADDRESS COMPONENT JUST BELOW HERE.</Text>
-            </View>
-        );
-    }
-}
-
-const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-
 });
+
+
+AppRegistry.registerComponent('ReactNativeStarter', () => ReactNativeStarter);
 ```
 
 ## Styles
 
-Note that we don't use StyleSheets. Instead, we define CSS only in JavaScript:
+Note that we don't use CSS stylesheets. Instead, we define CSS only in JavaScript:
 
 ```javascript
 export default class App extends React.Component {
@@ -187,26 +141,13 @@ const styles = StyleSheet.create({
 
 ```
 
-## React Router Menu
-
-```
-npm install --save react-router-native
-```
-
-```javascript
-import { NativeRouter, Route, Link } from 'react-router-native'
-```
-
 ## Turn it in
 
-There are two parts to this assignment.
+Save your work in your repository in a folder called **Week05-ReactNativeStarter**. Push. When you turn in the assignment, tell me the name of the folder that contains your work:
 
-- Make sure CongressServer can serve up the **/all-data** route
-- Create **expo_lastname** and ensure that it can display data from the **CongressAddress** server.
+- Folder: Week05-ReactNativeStarter
 
-I will start **CongressServer**. Then I will adjust the IP address in **expo-lastname** and start it. I'm expecting to see data and for everything to just work.
-
-Both projects should be in the root of your directory.
+**NOTE**: _If you use the correct folder name, I won't have any trouble finding the right code to grade. But just to be safe, spell it out when you turn in the assignment. Be especially careful to do so if for some reason you have the assignment in a folder other than the one I suggest._
 
 ## Hint
 
@@ -219,3 +160,15 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 [educat]: https://cat.eduroam.org/
 
 [hped]: https://facebook.github.io/react-native/releases/next/docs/getting-started.html
+
+[brn]: https://insights.daffodilsw.com/blog/10-amazing-apps-that-are-built-using-react-native
+
+[rn]: (https://facebook.github.io/react-native/)
+
+[10rn]: https://brainhub.eu/blog/famous-apps-built-with-react-native/
+
+[asdk]: https://en.wikipedia.org/wiki/Android_software_development#Android_SDK
+
+[adb]: https://developer.android.com/studio/command-line/adb
+
+[expo]: https://expo.io/
