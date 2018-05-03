@@ -128,22 +128,18 @@ First, an example showing how to call a route without parameters:
 ```javascript
 function callServerWithoutParms() {
 
-	$.getJSON('/walk', function (result) {
-		elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
-		elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
-	}).done(function () {
-			elf.display.showDebug('Walk loaded second success');
-		})
-		.fail(function (jqxhr, textStatus, error) {
-			elf.display.showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
-		})
-		.always(function () {
-			elf.display.showDebug('Walk loaded complete');
-		});
-
+  fetch('/walk')
+    .then(() => response.json())
+    .then(() => {
+       elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
+       elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
+    })
+    .catch((ex) => {
+      elf.display.showDebug('Walk loaded error: ' + ex.status );
+    })
+		
 }
 ```
-
 Now an example showing how to call a route with parameters:
 
 ```javascript
