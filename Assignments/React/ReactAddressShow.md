@@ -13,16 +13,35 @@ In this assignment, we have several steps we want to complete. Among them are:
 
 ## Divide
 
-The first step is to split **Address** and **AddressShow** into two distinct components. In particular, we will create a new component called **AddressShow** and put most of **Address** in it. We will then pare down **Address** so that its primary function will be handling data.
+The first step is to split **Address** and **AddressShow** into two distinct components. In particular, we will create a new component called **AddressShow** and put the **render** method of **Address** in it:
+
+- **AddressShow** contains only the **render** method from the original **Address** component
+- **Address** contains the constructor, the **setAddress** method, and a one line **render** method that references **<AddressShow/>** and passes it props. This render method will be explained later in this assignment.
+
+The **Address** component will handle our data, **AddressShow** will display the data and the button.
+
+## Create AddressShow Project
+
+To get started, make a copy of Address Components assignment and call it **address-show**. For instance:
+
+    cp -r week03-react-address/ week05-address-show
+
+Or, if you prefer use Pascal case for the new project:
+
+    cp -r week03-react-address/ Week05-AddressShow
+
+There are many ways to do the same thing, and it doesn't really matter which one you prefer.
+
+## Testing First Steps
 
 The first step will be set up our (initially) failing tests for **AddressShow** in **AddressShow.test.js**:
 
 ```javascript
-// GET THE RIGHT IMPORTS
+// IT'S UP TO YOU TO INCLUDE THE RIGHT IMPORTS
 
 describe('AddressShow Shallow Suite', function () {
 
-    var quiet = true;
+    const debug = false;
 
     /*
      * Display debug information about a DOM node of a component by index
@@ -31,14 +50,21 @@ describe('AddressShow Shallow Suite', function () {
      * @param {boolean} talkToMe - Speak even if quiet is true
      */
     const getIndex = (wrapper, index, talkToMe) => {
-        if (!quiet || talkToMe) {
-            const ninep = wrapper.find('div#addressShowRender').childAt(index).debug();
+        if (debug || talkToMe) {
+            const ninep = wrapper.find('div#addressShow').childAt(index).debug();
             console.log('NINEP:', ninep);
         }
     };
 
     const defaultFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={address}  />);
+        const wrapper = shallow(<AddressShow address={addresses[0]}  />);
+        const welcome = <p className="App-intro">{name}</p>;
+        getIndex(wrapper, index, talkToMe);
+        expect(wrapper.contains(welcome)).toEqual(true);
+    };
+
+    const afterClickFieldTest = (name, index, talkToMe) => {
+        const wrapper = shallow(<AddressShow address={addresses[1]}  />);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);
@@ -48,24 +74,23 @@ describe('AddressShow Shallow Suite', function () {
         defaultFieldTest('firstName: unknown', 0);
     });
 
-    // AND MANY MORE
+    it('renders and displays the default first name', () => {
+        afterClickFieldTest('firstName: Patty', 0);
+    });
+
+    // EVENTUALLY YOU WILL NEED TO WRITE MORE TESTS LIKE THE LAST TWO
+    // THE GOAL WILL BE TO TEST ALL THE PROPERTIES OF OUR COMPONENT.
+    // AT FIRST, HOWEVER, JUST KEEP THESE TWO TESTS. WHEN THEY START
+    // PASSING, THEN ADD TESTS FOR THE OTHER PROPERTIES SUCH AS LASTNAME...
 
 });
 ```
 
-Note that we don't create any tests for button clicks.
-
-## Create AddressShow Project
-
-To get started, make a copy of Address Components assignment and call it **address-show**. For instance:
-
-    cp -r week03-react-address/ week05-address-show
-
-There are many ways to do the same thing, and it doesn't really matter which one you prefer.
+Our goal now will be to get these tests to pass.
 
 ## Rename the React Component
 
-The React component you created maybe in a file called **App.js** or perhaps you have renamed it to **Addresss.js**. In either case, rename both the file and the class inside it to **AddressShow**.
+The React component you created may be in a file called **App.js** or perhaps you have renamed it to **Addresss.js**. In either case, rename both the file and the class inside it to **AddressShow**.
 
 This is a task the WebStorm can help you complete.
 
@@ -87,6 +112,68 @@ export default Address;      <=== ORIGINAL
 export default AddressShow;  <=== EDITED VERSION
 ```
 
+## Properly Refactor Our Components
+
+If you have not done so already, you should now further refactor your components as follows:
+
+| Component     | Task     |
+| :------------- | :------------- |
+| Header       | Display the Header      |
+| GetFile   | The simple **state.file**, **getFile**, **render** component from week one or two. |
+| Address   | **constructor**, **setAddress** and simple render method to be explained later.  |
+| AddressShow   | Only a relatively lengthy render method to display all the props such as **firstName**, **lastName, etc**.  |
+| App  | Only a relatively short render method to instantiate the **Header**, **GetFile**, **Address**, **AddressShow** |
+| index.js   | Instantiates **App**   |
+
+Here is the way it looks in WebStorm:
+
+![Webstorm project view][wspv]
+
+Here is our new **index.js**:
+
+```JavaScript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './components/App';
+
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(
+    <div>
+        <App/>
+    </div>,
+    document.getElementById('root'));
+registerServiceWorker();
+```
+
+Here is our new **components/App.js**:
+
+```javascript
+import React, {Component} from 'react';
+import '../App.css';
+import Address from './Address'
+import Header from './Header';
+import GetFile from './GetFile';
+
+
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <Header/>
+                <GetFile/>
+                <Address/>
+            </div>
+        );
+    }
+}
+
+export default App;
+```
+
+We don't see **AddressShow** in **App** because it will be created by the **Address** component.
+
 ## Data
 
 We will no longer load **addresses** in **index.js**. Instead, **Address** owns the data. Move the import statement from **index.js** to **Address.js** and straighten out the path:
@@ -106,12 +193,11 @@ class Address extends Component {
     constructor(props) {
         super(props);
 
-        this.addressIndex=0;
-        const address = addresses[this.addressIndex];
+        this.addressIndex=0;        
         this.state = {
-            address: address  <=== HERE
+            address: addresses[this.addressIndex]  <=== HERE
         };
-        this.quiet = true;
+        this.debug = true;
     }
 }
 ```
@@ -124,7 +210,7 @@ We now radically strip down the **render** method for **Address**. Rather than r
 
 ```javascript
 render() {
-    if (!this.quiet) { console.log("ADDRESS RENDER"); }
+    if (this.debug) { console.log("ADDRESS RENDER"); }
     return (
         <div className="App">
             <AddressShow address={this.state.address} />
@@ -140,7 +226,10 @@ The only thing that **AddressShow** really needs to do is display our **Address*
 ```javascript
 constructor(props) {
     super(props);
-    console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
+    this.debug = true;
+    if (this.debug) {
+      console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
+    }
 }
 ```
 
@@ -148,9 +237,9 @@ As you can see, the constructor is passed **props**. As you know, **props** is t
 
 You can keep the above constructor, but you should strip everything else from **AddressShow** except the **render** method. In the **render** method's JSX, reference the fields of the **address** object with **props** rather than **state**.
 
-**NOTE**: _Since the constructor for **AddressShow** doesn't do anything, the only thing we really need in **AddressShow** is the render method, but we are keeping the constructor for pedagogical purposes._
+**NOTE**: _Since the constructor for **AddressShow** doesn't do anything, the only thing we really need in **AddressShow** is the render method, but we are keeping the constructor for pedagogical purposes. Or not, it is up to you. It might be simpler just to open the Developer tools at runtime and put a breakpoint on the **AddressShow** render method to confirm that your props are being passed as expected._
 
-## Logging: Blessed Quiet {#quiet-log}
+## Logging {#quiet-log}
 
 Since we don't really need the **constructor**, and yet we have implemented it anyway to help illustrate a point, we might as well see if we can find a way to complicate the code further.
 
@@ -174,14 +263,14 @@ Now we can toggle a single variable, **this.debug**, whenever we want to turn do
 
 ```javascript
 render() {
-    this.log("SHOW ADDRESS RENDER");
+    this.log("SHOW ADDRESS RENDER", this.props);
     return ( ... );
 }
 ```
 
 Now we can change the **this.debug** property from **true** to **false** to toggle the use of **console.log** throughout the object. There are other solutions, and better loggers, but this is a bit of a start on understanding the subject.
 
-**NOTE**: _I state the name of the object in logging message to help me track down where it is coming from. Fancy loggers can give us more information in simpker ways, but we could do this:_
+**NOTE**: _I state the name of the object in logging message to help me track down where it is coming from. Fancy loggers can give us more information in simpler ways, but we could do this:_
 
 ```javascript
 constructor(props) {
@@ -192,14 +281,14 @@ constructor(props) {
 
 log(message, message2 = '', message3 = '') {
 
-    if (!this.debug) {
+    if (this.debug) {
         const label = this.constructor.name + ': ';   < === HERE
         console.log(label, message, message2, message3);
     }
 }
 
 render() {
-    this.log("RENDER");
+    this.log("RENDER", this.props);
 }
 ```
 
@@ -401,11 +490,10 @@ We said earlier that **AddressShow** would display our data, and that **Address*
 
 ```javascript
 onAddressChange = (event) => {
-    this.addressIndex = 1;
-    const address = addresses[this.addressIndex];
+    this.addressIndex = 1;   
 
     this.setState({
-        address: address
+        address: addressList[this.addressIndex]
     })
 };
 ```
@@ -417,7 +505,7 @@ The solution is to pass the **onAddressChange** function object to **AddressShow
 ```javascript
 <AddressShow
     address={this.state.address}
-    onAddressChange={this.onAddressChange}
+    setAddress={this.setAddress}
 />
 ```
 
@@ -426,7 +514,7 @@ As you can see, we are now passing not one, but two **props** to **AddressShow**
 And here is all we need to do in **AddressShow**. At the bottom of the render method, modify the button to look like this:
 
 ```javascript
-<button id="showAddressClick" onClick={this.props.onAddressChange}>Show Address</button>
+<button id="showAddressClick" onClick={this.props.setAddress}>Show Address</button>
 ```
 
 Note that I am both setting the **onclick** method to the function object passed from the **Address** object, and also being sure to create a unique **id** which is a portmanteau derived from the object's name and the button's purpose.
@@ -439,9 +527,6 @@ Add, commit then push. Then Tag. Push you tag. When you turn in the assignment, 
 
 - [Git Tag][git-tag]
 - [Understanding Tags][under-tag]
-
-[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
-[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
 
 ## Hint Breakpoint {#breakpoint}
 
@@ -461,3 +546,9 @@ The debugger and breakpoints are essential tools. I personally can do little wit
 ![Breakpoints][breakpoint]
 
 [breakpoint]: https://s3.amazonaws.com/bucket01.elvenware.com/images/breakpoint01.png
+
+[git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+
+[under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
+
+[wspv]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-show-project.png

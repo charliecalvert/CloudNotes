@@ -9,7 +9,6 @@
 * [Heroku/Summary.html](Heroku/Summary.html)
 * [Git/Summary.html](Git/Summary.html)
 * [Firebase/Summary.html](Firebase/Summary.html)
-* [Express/Summary.html](Express/Summary.html)
 * [EcmaScript/Summary.html](EcmaScript/Summary.html)
 * [Docker/Summary.html](Docker/Summary.html)
 * [CodeAcademy/Summary.html](CodeAcademy/Summary.html)
