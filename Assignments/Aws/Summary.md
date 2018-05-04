@@ -1,1 +1,5 @@
 * [AwsCloudNine.html](AwsCloudNine.html)
+* [MoreOnCloudNine.html](MoreOnCloudNine.html)
+* [SetupAtomForMarkdown.html](SetupAtomForMarkdown.html)
+* [foo.html](foo.html)
+* [master-list.html](master-list.html)

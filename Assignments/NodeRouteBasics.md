@@ -26,25 +26,12 @@ I have renamed the **Prog270-Assignments** repository to **elven-assignments**. 
 git clone http://github.com/charliecalvert/elven-assignments.git
 ```
 
-If you already have the repo, then:
-
-```
-cd ~/Git/Prog270-Assignments
-nano .git/config
-```
-
-- Change the **Remote Origin | Url** to from **Prog270-Assignments** to **elven-assignments**.
-- Save (Ctrl-O) and exit (Ctrl-X) nano
-- **git pull**
-
-Now go back to **~/Git**. If necessary, rename the folder from **Prog270-Assignments** to **elven-assignments**.
-
 ## Step Two: Copy Project
 
 Copy the node express program called **NodeRouteBasics** from my repo to yours:
 
 ```
-cp ~/Git/elven-assignments/NodeRouteBasics ~/Git/isit322-lastname-2016/Week04-NodeRouteBasics
+cp -r ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2016/Week04-NodeRouteBasics
 ```
 
 ## Step Three: Client Interface {#interface}
@@ -64,6 +51,15 @@ You interface will probably consist of three buttons:
 - Calculate Feet from Miles
 - Calculate Circumference
 - One input control for entering number used by the last two butttons  
+
+
+## Step ThreeA
+
+In index.jade:
+
+```
+button#search Search
+```
 
 
 ## Step Four: Server {#server}
@@ -128,16 +124,15 @@ First, an example showing how to call a route without parameters:
 ```javascript
 function callServerWithoutParms() {
 
-  fetch('/walk')
-    .then(() => response.json())
-    .then(() => {
-       elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
-       elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
-    })
-    .catch((ex) => {
-      elf.display.showDebug('Walk loaded error: ' + ex.status );
-    })
-		
+	fetch('/search')
+	        .then((response) => response.json())
+	        .then((response) => {
+	            console.log(response);
+	        })
+	        .catch((ex) => {
+	            console.log(ex);
+	        })
+
 }
 ```
 Now an example showing how to call a route with parameters:
