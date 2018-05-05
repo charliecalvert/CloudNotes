@@ -20,7 +20,13 @@ If you are at school, make sure your phone is signed into [eduroam](https://cat.
 - [eduroam US](https://www.eduroam.us/)
 - [BC link](http://www.bellevuecollege.edu/wireless/)
 
+## Bridged Adapter
+
 Also, make sure your Pristine Lubuntu is using the Bridged Adapter, and not NAT. Check this in **Settings | Network** for the VirtualBox Manager.
+
+![Bridged Adapter in VirtualBox][bavb]
+
+Your settings may differ in small ways, but the key point is the Attached to field is set to Bridged Adapter. In particulare the name and Adapter Type fields may be different in your case, but should be filled in properly by default or easily picked from the drop down.
 
 ## Expo
 
@@ -156,6 +162,8 @@ Don't forget to import the controls you need for your view:
 ```javascript
 import {Button, StyleSheet, Text, View} from 'react-native';
 ```
+
+[bavb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/BridgedAdapter.png
 
 [educat]: https://cat.eduroam.org/
 

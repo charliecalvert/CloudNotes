@@ -1,18 +1,22 @@
 ## Overview
 
-The Node Route Basics assignment gives you practice create NodeJs Express routes and calling them with **$.getJSON** or **$.ajax**.
+**STATUS**: _This assignment needs polishing but should be complete enough to allow students to complete the assignment._
+
+The Node Route Basics assignment gives you practice creating NodeJs Express routes and calling them with [fetch][fapi]. There is still at least one reference to [$.getJSON][jqg], but by and large, I have tried to strip jQuery code out of the assignment.
 
 If you need help with this this assignment, study the NodeRoutes
 examples in JsObjects.
 
-- [NodeRoutes01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01)
-- [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02)
+- [NodeRoutes01][nr1]
+- [NodeRoutes02][nr2]
+
+## The HTTP Protocol
 
 We are sending a message from the client to the server, and then getting a response:
 
 ![http](https://s3.amazonaws.com/bucket01.elvenware.com/images/http.png)
 
-The client (web browser) uses HTTP to make a request for HTML, CSS, JavaScript or an image. The request might be triggered when we click on a link, type in the address bar or call an **ajax** function such as **getJSON**.
+The client (web browser) uses HTTP to make a request for HTML, CSS, JavaScript or an image. The request might be triggered when we click on a link, type in the address bar or call an **ajax** function such as [fetch][fapi] or jQuery's **getJSON**.
 
 TCP/IP is used to send the request via the network to the server. The server, which in our case is a NodeJs express web server, reads the HTTP request and we create a custom route in **routes/index.js** that sends a response back. The response is typically an HTML file, some JSON, or some other artifact sent via the HTTP protocol.
 
@@ -52,23 +56,113 @@ You interface will probably consist of three buttons:
 - Calculate Circumference
 - One input control for entering number used by the last two butttons  
 
+![Node Route Basics UI][nrbui]
 
-## Step ThreeA
+[nrbui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui.png
 
-In index.jade:
+## Step ThreeA: Buttons, Jade and Clicks {#step-threea}
+
+Put this in **views/index.jade** or **views/index.pug**:
 
 ```
 button#search Search
 ```
 
+**NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, it doesn't matter whether we are using Jade (**index.jade**) or Pug (**index.pug**). Though both behave the same way in nearly all cases._
+
+To detect a click on this button, write something like this:
+
+```javascript
+function search() {
+    // YOUR CODE HERE
+};
+
+document.getElementById('search').onclick = search;
+```
 
 ## Step Four: Server {#server}
 
 All the calculations should be performed on the server side, in a
-module, per the [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02/Library)
-example in JsObjects.
+module, per the [NodeRoutes02][nr2] example in JsObjects.
 
-The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9.
+The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9: **{result: 9}**. Like this:
+
+```JavaScript
+router.get('/getNine', function(request, response) {
+    'use strict';  
+    response.send({"result": 9});
+});
+```
+
+## Call Server without Parameters {#no-params}
+
+First, an example showing how to call a route without parameters:
+
+```javascript
+function callServerWithoutParms() {
+
+  fetch('/search')
+    .then((response) => response.json())
+    .then((response) => {
+        const displayArea = document.getElementById('displayArea');
+        displayArea.innerHTML = JSON.stringify(response, null, 4);
+     })
+    .catch((ex) => {
+       console.log(ex);
+     });
+}
+```
+
+## Call Route (endpoint) with Parameters {#pass-data}
+
+Sometimes we need to not just call a route on the server, but call the route and also pass in parameters. Suppose we want to calculate the number of feet in X miles, which X is supplied by the user in a [text INPUT][ic] or [numeric INPUT][icn] control.
+
+First, define the input control in our Jade/Pug file:
+
+```
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  input#userInput(type="number")  <=== HERE
+
+  div    
+    button#calculateFeetFromMiles Calculate Feet from Miles    
+
+  div
+    pre#displayArea
+```
+
+Here is the client side code that calls that module:
+
+```javascript
+const userMiles = document.getElementById('userInput').value;
+  fetch('/calculateFeetFromMiles' + '?miles=' + userMiles)
+      .then((response) => response.json())
+      .then((response) => {
+          const displayArea = document.getElementById('displayArea');
+          displayArea.innerHTML = JSON.stringify(response, null, 4);
+      })
+      .catch(ex => {
+          console.log(ex);
+      });
+```
+
+## Server Side Parameters
+
+Define server side code that accepts a parameter:
+
+```javascript
+router.get('/calculateFeetFromMiles', function(request, response) {
+    response.send({result: request.query.miles * 5280});
+});
+```
+
+The **request** (**req**) parameter has a property called **query**. Use it to access the parameters you passed to the server: **request.query.miles**.
+
+## Extra Credit
 
 For three points extra credit, implement **getFeetInMile** and **calculateFeetFromMiles** using HTTP GET calls, and use POST for **calculateCircumference**:
 
@@ -84,11 +178,13 @@ If you are going for extra-credit, please add a note to that effect when you sub
 
 The formula for calculating the circumference of a circle given its radius looks like this:
 
-	Circumference = 2 * radius * Math.PI;
+```javascript
+const	circumference = 2 * radius * Math.PI;
+```
 
-The parameter for calculateFeetFromMiles: miles
+The parameter for **calculateFeetFromMiles**: **miles**
 
-The parameter for calculateCircumference: radius
+The parameter for **calculateCircumference**: **radius**
 
 Recall that with **GET** methods we use frequently use **request.query** to find parameters, but with **POST** methods we use **request.body**.
 
@@ -107,8 +203,7 @@ module.exports = {
 }
 ```
 
-Now **require** your **utils.js** file in **routes/index.js** and use it in the appropriate route on your server. The method should take one parameter
-called **radius** and it should return the calculated circumference.
+Now **require** your **utils.js** file in **routes/index.js** and use it in the appropriate route on your server. The method should take one parameter called **radius** and it should return the calculated circumference.
 
 **NOTE**: _If we are building our own NPM packages, then put this object and method in the package instead. Otherwise just use the technique outlined above. In either case, our goal is to learn how to create reusable code that we can plug into an project on the server side._
 
@@ -117,24 +212,44 @@ called **radius** and it should return the calculated circumference.
 Check your code into your Git repository and submit the URL of your
 repository or of the project you submitted.
 
-## Hint: Passing Data {#pass-data}
+## LastPass
 
-First, an example showing how to call a route without parameters:
+I use LastPass. It puts an icon in many input controls. To turn that off, add an attribute to your input controls called **data_lpignore**:
+
+For instance, in your Pug file do this:
+
+```
+input#userInput(type="number", data_lpignore="true")
+```
+
+To turn it off for all INPUT controls on your page, add this near the top of **control.js**:
 
 ```javascript
-function callServerWithoutParms() {
-
-	fetch('/search')
-	        .then((response) => response.json())
-	        .then((response) => {
-	            console.log(response);
-	        })
-	        .catch((ex) => {
-	            console.log(ex);
-	        })
-
+const elements = document.getElementsByTagName("INPUT");
+for (let element of elements) {
+    element.setAttribute("data_lpignore", "true");
 }
 ```
+
+To turn it off in a specific control, one could write something like this:
+
+```javascript
+document.getElementById('userInput').setAttribute("data_lpignore", "true");****
+```
+
+Or, you can do it by class name:
+
+```javascript
+const elements = document.getElementsByClassName('no-last-pass');
+for (let element of elements) {
+    element.setAttribute("data_lpignore", "true");
+}
+```
+
+## More Complex Example
+
+This does not directly relate to the current assignment, but I'm leaving it here for now. It still has jQuery code in it.
+
 Now an example showing how to call a route with parameters:
 
 ```javascript
@@ -274,3 +389,15 @@ npm install -g jasmine
 ```
 
 **NOTE**: *The point of setting up this ~/tmp directory is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*
+
+[nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
+
+[nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
+
+[ic]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text
+
+[icn]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
+
+[fapi]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+[jqg]: http://api.jquery.com/jquery.getjson/
