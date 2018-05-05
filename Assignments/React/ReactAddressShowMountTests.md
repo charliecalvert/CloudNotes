@@ -1,37 +1,15 @@
-## Testing Address
+## Overview
 
-The address component with Enzyme **shallow** does not provide us much in the way of JSX to test.  
+**STATUS**: _This assignment is incomplete. You can look it over, and maybe work on a few sections, but it is not yet possible to complete as is._
 
-```javascript
-describe('Address tests', function () {
+This is assignment is not complete yet.
 
-    const debug = false;
+In this assignment we will get several tests up and running. Before begining this assignment, be sure you have the tests from the **ReactAddressShow** assignment working:
 
-    fit('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<Address/>, div);
-        ReactDOM.unmountComponentAtNode(div);
-    });
+- [Testing Address Show][tas]
+- [Testing Address][ta]
 
-    fit('renders and displays the default first name', () => {
-        const wrapper = shallow(<Address/>);
-        const welcome = <p className="App-intro">firstName: unknown</p>;
-        if (debug) {
-            console.log(wrapper.find('AddressShow').prop('address'));
-        }
-        expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('unknown');
-    });
-
-    fit('renders state of firstName after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const nineSign = <p className="App-intro">firstName: Patty</p>;
-        wrapper.instance().setAddress();
-        expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('Patty');
-    });
-
-    // MORE TESTS NEEDED FOR OTHER PROERTIES
-})
-```
+When you have it right, your tests should look something like the text shown in [ReactAddressShow][ras] assignments [Turn it in][rast] section
 
 ## Understanding Testing Child Components
 
@@ -197,3 +175,10 @@ const getIndex = function(wrapper, index, talkToMe) {
 In this case, I've made an exception to my general rule, and added some comments. This means something is probably wrong. I shouldn't need them, but I think we do here.
 
 You already know what **wrapper** is: it's the collection of HTML elements that Enzyme culled from the DOM. In particular, it is a DIV, a bunch of P elements, and a BUTTON. **talkToMe** is added as a way of asking the method to ignore the **quiet** variable. Even if **quiet** is set to **true**, the component will still render output if **talkToMe** is set to **true**. It's a way of saying: "Ignore all the other calls to **getIndex** except those that have **talkTome** set to **true**."
+
+<!-- LINKS -->
+
+[ras]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html
+[rast]:http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html#turn-it-in
+[tas]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html#testing-address-show
+[ta]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html#testing-address

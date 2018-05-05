@@ -1,1 +1,0 @@
-* [EcmaScriptFunctions.html](EcmaScriptFunctions.html)

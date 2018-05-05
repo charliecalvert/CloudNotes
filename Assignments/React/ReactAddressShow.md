@@ -1,15 +1,17 @@
 ## Overview
 
-We are building on the work from the **AddressComponent** assignment.
+**STATUS**: _This assignment needs work, but should be complete enough to allow students to finish the assignment. [Friday May 4, 6:14 PM]._
 
-In this assignment, we have several steps we want to complete. Among them are:
+This assignment builds on the [AddressComponent][ac] assignment. We have several steps we want to complete. Among them are:
 
 - Divide the Address Component up into:
   - A component that owns the data: **Address**
   - A component that displays the data: **AddressShow**
-  - Update Tests
-- Insure that clicks on the Button work but that **Address** does the real work. **AddressShow** is mostly about the interface and does little real work other than display JSX.
-  - Update Tests
+- Finishing refactoring the other components if we have not done so already
+- Update Tests as described in this document. There will be a [separate assignment][ram] where we will dig more deeply into how to test the code found in this assignment.  
+
+We should insure that clicks on the Button work but that **Address** does the real work. **AddressShow** is mostly about the interface and does little real work other than use JSX to create the appropriate HTML to display our interface.
+
 
 ## Divide
 
@@ -32,16 +34,31 @@ Or, if you prefer use Pascal case for the new project:
 
 There are many ways to do the same thing, and it doesn't really matter which one you prefer.
 
-## Testing First Steps
+## Testing Address Show {#testing-address-show}
+
+We should write our tests first, then write code that makes the tests pass. This is called TDD or Test Driven Development.
 
 The first step will be set up our (initially) failing tests for **AddressShow** in **AddressShow.test.js**:
 
 ```javascript
 // IT'S UP TO YOU TO INCLUDE THE RIGHT IMPORTS
 
-describe('AddressShow Shallow Suite', function () {
+describe('AddressShow Shallow Suite', function() {
 
     const debug = false;
+
+    const addressTest = {
+        firstName: 'Patty',
+        lastName: 'Murray',
+        address: '154 Russell Senate Office Building',
+        city: 'Washington',
+        state: 'D.C.',
+        zip: '20510',
+        phone: '(202) 224-2621',
+        fax: '(202) 224-0238',
+        tollfree: '(866) 481-9186'
+    };
+
 
     /*
      * Display debug information about a DOM node of a component by index
@@ -57,28 +74,25 @@ describe('AddressShow Shallow Suite', function () {
     };
 
     const defaultFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[0]}  />);
+        const wrapper = shallow(<AddressShow address={addresses[0]}/>);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);
     };
 
     const afterClickFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[1]}  />);
+        const wrapper = shallow(<AddressShow address={addresses[1]}/>);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);
     };
 
-    it('renders and displays the default first name', () => {
-        defaultFieldTest('firstName: unknown', 0);
+    it('renders and displays the first name', () => {
+        defaultFieldTest('First Name: unknown', 0);
+        afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
     });
 
-    it('renders and displays the default first name', () => {
-        afterClickFieldTest('firstName: Patty', 0);
-    });
-
-    // EVENTUALLY YOU WILL NEED TO WRITE MORE TESTS LIKE THE LAST TWO
+    // EVENTUALLY YOU WILL NEED TO WRITE MORE TESTS LIKE THE FIRST NAME TEST.
     // THE GOAL WILL BE TO TEST ALL THE PROPERTIES OF OUR COMPONENT.
     // AT FIRST, HOWEVER, JUST KEEP THESE TWO TESTS. WHEN THEY START
     // PASSING, THEN ADD TESTS FOR THE OTHER PROPERTIES SUCH AS LASTNAME...
@@ -87,6 +101,89 @@ describe('AddressShow Shallow Suite', function () {
 ```
 
 Our goal now will be to get these tests to pass.
+
+## Testing Address {#testing-address}
+
+The address component with Enzyme **shallow** does not provide us much in the way of JSX to test. That means we will have to rewrite **Address.test.js** to work with the new structure we have created.
+
+Here is the JSX we will create for our **Address** component:
+
+```html
+<div>
+    <AddressShow address={this.state.address} setAddress={this.setAddress} />
+</div>
+```
+
+We can show the JSX for our **Address** component with this line of enzyme debug code:
+
+```JavaScript
+const wrapper = shallow(<Address/>);
+wrapper.debug()
+```
+
+Here is the enzyme debug output from that command:
+
+```html
+<div>
+  <AddressShow address={{...}} setAddress={[Function]} />
+</div>
+```
+
+As mentioned earlier, it appears there is not much here to debug. But we can get at the properties of **this.state.address** with this line of Enzyme debug code:
+
+```javascript
+wrapper.find('AddressShow').prop('address')
+```
+
+This will return the contents of our **AddressList** in JavaScript code.
+
+Armed with that knowledge, we can start writing tests that look like this:
+
+```javascript
+describe('Address tests', , function() {
+
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<Address/>, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
+
+    it('renders and displays the default first name', () => {
+        const wrapper = shallow(<Address/>);
+        //console.log(wrapper.find('AddressShow').prop('address'));
+        expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('unknown');
+    });
+
+    it('renders state of firstName after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('Patty');
+        });
+    });
+
+    // YOU WRITE TESTS FOR THE OTHER PROPERTIES SUCH AS LASTNAME, CITY, ETC...
+});
+```
+
+Our goal will be to get these tests to pass.
+
+**NOTE**: _I don't provide much debug information here. You can however, uncomment the **console.log** statement in the **default first name** test shown above if you need some help crafting your tests. More specifically, here is the line to uncomment:_
+
+```javascript
+    console.log(wrapper.find('AddressShow').prop('address'));
+```
+
+_Like this:_
+
+```javascript
+it('renders and displays the default first name', () => {
+    const wrapper = shallow(<Address/>);
+    console.log(wrapper.find('AddressShow').prop('address'));
+    expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('unknown');
+});
+```
 
 ## Rename the React Component
 
@@ -358,6 +455,22 @@ Note that I am both setting the **onclick** method to the function object passed
 
 Add, commit then push. Then Tag. Push you tag. When you turn in the assignment, give me the tag and the directory in which you did your work. I may just look at your most recent code, but being able to go back to where you were when you submitted the assignment can be helpful.
 
+Your tests should look something like this:
+
+```bash
+ PASS  src/tests/AddressShow.test.js
+ PASS  src/tests/Address.test.js
+ PASS  src/tests/Header.test.js
+
+Test Suites: 3 passed, 3 total
+Tests:       30 passed, 30 total
+Snapshots:   0 total
+Time:        0.545s, estimated 1s
+Ran all test suites related to changed files.
+
+Watch Usage: Press w to show more.
+```
+
 ## Hints about Tagging {#hint-tagging}
 
 - [Git Tag][git-tag]
@@ -382,7 +495,9 @@ The debugger and breakpoints are essential tools. I personally can do little wit
 
 <!-- Links for this article -->
 
+[ac]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html
 [breakpoint]: https://s3.amazonaws.com/bucket01.elvenware.com/images/breakpoint01.png
 [git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
 [under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
+[ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShowMountTests.html
 [wspv]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-show-project.png
