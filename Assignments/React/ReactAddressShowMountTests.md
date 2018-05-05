@@ -4,7 +4,7 @@
 
 This is assignment is not complete yet.
 
-In this assignment we will get several tests up and running. Before begining this assignment, be sure you have the tests from the **ReactAddressShow** assignment working:
+In this assignment we will get several tests up and running. Before begining this assignment, be sure you have the tests from the [ReactAddressShow][ras] assignment working:
 
 - [Testing Address Show][tas]
 - [Testing Address][ta]
