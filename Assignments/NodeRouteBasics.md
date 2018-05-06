@@ -150,7 +150,7 @@ const userMiles = document.getElementById('userInput').value;
       });
 ```
 
-## Server Side Parameters
+## Server Side HTTP GET Parameters {#server-side-get}
 
 Define server side code that accepts a parameter:
 
@@ -161,6 +161,78 @@ router.get('/calculateFeetFromMiles', function(request, response) {
 ```
 
 The **request** (**req**) parameter has a property called **query**. Use it to access the parameters you passed to the server: **request.query.miles**.
+
+## Server Side HTTP POST Parameters {#post-call}
+
+When you **POST** data to the server you need to pass in a [JavaScript object literal][jol] as a second parameter to **fetch**. This second parameter is used to specify [the options][fo] for your call. For instance, you can specify whether you want to make a **GET** or a **POST** call. By default, **fetch** uses **GET**. There are a number of possible options, but in many cases you will use only these three:
+
+- **method**: Set this to 'POST'
+- **headers**: Create the header defining the content type, which in our case will almost always be JSON.
+- **body**: The parameters you want to pass in. In our case, we can just use a JavaScript object literal.
+
+I find it a bit of a struggle to define the exact format of these options, so I have wrapped them in a little function called get **getPostOptions**:
+
+```javascript
+function getPostOptions(body) {
+    return {
+        method: 'POST',
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        }),
+        body: JSON.stringify(body)
+    };
+}
+```
+
+We call this function, passing in the parameters we want to pass to the server endpoint. If we wanted to pass in to parameters of type of string called **param01** and **param02**, then we might call **getPostOptions** like this:
+
+```javascript
+getPostOptions({
+  param01: 'foo',
+  param02: 'bar'
+})
+```
+
+When we call **fetch** usually just pass in one parameter:
+
+```javascript
+fetch('/some-url')
+  .then etc...
+```
+
+When POSTing data, however, we should pass in two parameters. The first is our URL, and the second the options returned from our utility function:
+
+```
+fetch('/some-url', getPostOptions({...}));
+```
+
+Here is a more complete example of the type of call you can use to complete **calculateCircumference** portion of this assignment:
+
+```
+function callServer() {
+    const userInput = document.getElementById('userInput').value;
+    const query = {propForServer: userInput};
+
+    fetch('/some-url', getPostOptions(query))
+        .then((response) => response.json())
+        .then((response) => {
+            const displayArea = document.getElementById('displayArea');
+            displayArea.innerHTML = JSON.stringify(response, null, 4);
+        })
+        .catch((ex) => {
+            console.log(ex);
+        });
+}
+```
+
+On the server side, everything looks the same except that we use **router.post** rather than **router.get** and we use **request.body** rather than **request.query**:
+
+```javascript
+router.post('/calculateCircumference', function(request, response) {
+    console.log(request.body);
+    // YOU WRITE THE CODE TO SEND BACK THE RESPONSE
+});
+```
 
 ## Extra Credit
 
@@ -401,3 +473,7 @@ npm install -g jasmine
 [fapi]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 [jqg]: http://api.jquery.com/jquery.getjson/
+
+[fo]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Making_fetch_requests
+
+[jol]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals
