@@ -57,30 +57,34 @@ I want to see at the following:
 
 ## Micro Services
 
-What this means, then, is that the server part of our GitExplorer project is going to be the server for our main programmer. It will be the thing that launches our client side GitExplorer code.
+We have:
 
-This means that we want to give it some base functions, and then allow it to delegate responsibility for major tasks to little micro services. In particular, I would like you to have it depend on five micro servers:
+- A **client** running on port 30025
+- A **server** running on port 30026
 
-- The Qux Server: **/qux**
-  - Any messages sent to the Qux server are mirrored back to the client
-  - For instance it would respond to the following:
-    - /qux
+The **server** part of our **GitExplorer** is the conduit between the **client** and the micro services.
+
+This means that we want to give the **server** some base functions, and then ask it to delegate responsibility for major tasks to our little micro services. In particular, I would like our **client** to depend on five micro servers. The client contacts these micro services via our **server**:
+
+- The **Qux** micro service: **/qux**
+  - If the **client** queries a route on the **Qux** micro service the results are mirrored back to the **client** by the **server**.
+  - For instance our **Qux** micro service would respond to the following queries and the JSON produced by **Qux** would be returned to the **client** by the **server** with **res.send** or **pipe** or similar:    
     - /qux/foo
     - /qux/bar
     - /qux/you-rang
-- The Git User Server: **/git-user**
-- The Git Gist Server: **/gist/
+- The Git User micro service is accessed via: **/git-user**
+- The Git Gist micro service: **/gist/
   - Create Gist
   - List Gists
   - Delete Gist
-- The Markdown Server: **/markdown**
+- The Markdown micro service: **/markdown**
   - Insert the contents of a gist in a markdown document and return it
 - The Git Explorer socket server: **/git-socket**
   - Send socket IO messages to any registered client whenever your app creates, lists or deletes gists.
 
 ## You Rang?
 
-All the server should respond to a **/you-rang** query by responding with:
+All the micro services should respond to a **/you-rang** query by responding with:
 
   - result: success
   - message: i am up and running

@@ -33,7 +33,7 @@ var debug = require('debug')('git-convert');
 debug('this is a test');
 ```
 
-At the command line, say that you want to see debug messages for **git-convert**:
+At the command line, say that you want to see debug messages for **git-convert**. To do so, type the following into the bash shell where you are currently working:
 
 ```bash
 export DEBUG='git-convert'
@@ -47,7 +47,7 @@ Now at the command line turn logging off:
 export DEBUG=
 ```
 
-Which set DEBUG to nothing, which makes our logging statements go away. You can achieve the same effect by setting DEBUG to anything but **git-convert**.
+The command shown above sets DEBUG to an empty string, which makes our logging statements go away. You can achieve the same effect by setting DEBUG to anything but **git-convert**.
 
 Except at the very end, to output your final result, don't use **console.log**. Instead, use the debug module in at least 3 places.
 
@@ -61,7 +61,7 @@ I'll accept your assignment with **console.log** instead of **debug**, but it wi
 
 ## Promises
 
-If at all possible, use a [promise][promise-mdn] when reading the JSON file you created with your call to **curl**:
+If at all possible, use a [promise][pr] when reading the JSON file you created with your call to **curl**:
 
 ```javascript
 var fs=require("fs");
@@ -77,11 +77,10 @@ readFile('git-user.json').then(function(text) {
 });       
 ```
 
-**NOTE**: _Don't get intimidated by promises. They are really quite easy to use. And I know we have not covered them in any depth this quarter or last, but I want to see if you can figure it out on your own._
+**NOTE**: _You can learn about promises [here](https://youtu.be/nWV4Ed2gckk), [here][pr] and [here][prc]._
 
 I'll accept it without the promise, but it will cost 3 points. In other words, if you just call **fs.readFile** with a callback instead of **.then** chained method, that will be okay, sort of.
 
-[promise-mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 ## Create output
 
@@ -98,12 +97,25 @@ for (var property in json) {
 console.log( /* LOG YOUR ARRAY OF OBJECTS */)
 ```
 
-You'll need an array. Create some objects, each shaped like one entry in our **field-definitions** file.  Push the object into the array.
-
-Sample output might look something like this. Make sure it is valid JSON. (Go to Google or similar and search on "json validator"):
+You'll need an array. I call mine gitUser:
 
 ```javascript
-[
+const gitUser = [];
+```
+
+I then iterate over the JSON returned from GitHub using [for..in][es6fi]. In the process, I
+create some objects, each shaped like one entry in our **field-definitions** file, an example of which is shown below. As we create each object, we **push** the object into the array.
+
+Print the output to the console:
+
+```javascript
+console.log('export default ' + JSON.stringify(gitUser, null, 4));
+```
+
+Sample output might look something like this. Make sure it is valid JavaScript:
+
+```javascript
+export default [
     {
         "id": "login",
         "label": "login-name",
@@ -122,168 +134,7 @@ Sample output might look something like this. Make sure it is valid JSON. (Go to
         "type": "paragraph",
         "sample": "login-unknown"
     },
-    {
-        "id": "gravatar_id",
-        "label": "gravatar_id-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "url",
-        "label": "url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "html_url",
-        "label": "html_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "followers_url",
-        "label": "followers_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "following_url",
-        "label": "following_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "gists_url",
-        "label": "gists_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "starred_url",
-        "label": "starred_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "subscriptions_url",
-        "label": "subscriptions_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "organizations_url",
-        "label": "organizations_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "repos_url",
-        "label": "repos_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "events_url",
-        "label": "events_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "received_events_url",
-        "label": "received_events_url-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "type",
-        "label": "type-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "site_admin",
-        "label": "site_admin-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "name",
-        "label": "name-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "company",
-        "label": "company-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "blog",
-        "label": "blog-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "location",
-        "label": "location-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "email",
-        "label": "email-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "hireable",
-        "label": "hireable-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "bio",
-        "label": "bio-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "public_repos",
-        "label": "public_repos-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "public_gists",
-        "label": "public_gists-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "followers",
-        "label": "followers-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "following",
-        "label": "following-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "created_at",
-        "label": "created_at-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    },
-    {
-        "id": "updated_at",
-        "label": "updated_at-name",
-        "type": "paragraph",
-        "sample": "login-unknown"
-    }
+    // ETC ...
 ]
 ```
 
@@ -292,17 +143,112 @@ Sample output might look something like this. Make sure it is valid JSON. (Go to
 Why do I have the program output text? Because this is the Linux way of doing things.
 
 ```bash
-npm start > 'field-definitions.js'
+node git-convert > 'field-definitions.js'
 ```
 
-All I really care about at this time is that you create the proper set of fields, as shown above. We can tweak the structure of **field-definitsion.js** to make it usable in our program at a later date.
+All I really care about at this time is that you create the proper set of fields, as shown above.
 
 ## Turn it in
 
-I want to be able to pull your project, navigate to the **GitExplorer/git-convert** folder, and then run the following command:
+The minimum is to create a valid field definitions file.
+
+## Extra Credit
+
+For extra credit, I want to be able to pull your project, navigate to the **GitExplorer** folder, and then run the following command:
 
 ```bash
-npm start
+./create-field-definitions
 ```
 
-I will expect to see the array of objects shown above or something much like it. For now, all the fields can be of type **paragraph**. Or what have you. Just give me something that looks more or less like the above, and I'll be happy. I hope.
+I will expect to see the **field-definitions.js** copied into the **src** or **src/assets** directory of your **client**.
+
+Also, allow me to run the script via NPM:
+
+```bash
+npm run create-field-definitions
+```
+
+For instance, a run might look a little like this:
+
+```bash
+$ npm run create-field-definitions
+
+> lookup-server@0.0.1 create-field-definitions /home/charlie/Git/isit322-calvert-2017/GitExplorer
+> ./create-field-definitions
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1457  100  1457    0     0   5377      0 --:--:-- --:--:-- --:--:--  5396
+field-definitions.js 30ms
+git-convert.js 26ms
+---=======================================---
+	Created field-definitions.js
+---=======================================---
+'git-convert/field-definitions.js' -> 'client/src/assets/./field-definitions.js'
+```
+
+Here is some of the **scripts** section from **package.json**:
+
+```javascript
+"scripts": {
+    // CODE OMITTED HERE
+    "lint": "eslint .",
+    "create-field-definitions": "./create-field-definitions"
+  },
+```
+
+This is the line that allows me to run the **create-field-definitions** script with NPM:
+
+```javascript
+"create-field-definitions": "./create-field-definitions"
+```
+## Scripts
+
+Here is the **git-convert/run-all** script:
+
+```bash
+#!/usr/bin/env bash
+
+function drawLine() {
+    echo -e "---=======================================---"
+}
+
+if [ ! -f "$HOME/npm/bin/jsonlint" ]; then
+    drawLine
+    echo -e "Please install jsonlint: npm install -g jsonlint"
+    drawLine
+    exit
+fi
+
+curl https://api.github.com/users/charliecalvert > git-user.json
+node git-convert.js > field-definitions.js
+./prettier
+
+drawLine
+echo -e "\tCreated field-definitions.js"
+drawLine
+```
+
+The **prettier** script is described in the [eslint][eslp] assignment.
+
+Here is the **create-field-definitions** script:
+
+```bash
+#!/usr/bin/env bash
+
+GIT_CONVERT=git-convert
+
+cd $GIT_CONVERT
+./run-all
+cd ..
+cp -v $GIT_CONVERT/field-definitions.js client/src/assets/.
+```
+
+
+[es6fi]: https://docs.google.com/presentation/d/1G9plS2DRlSmulapF57vimdXYaTzvbfFAra4sSv42q9s/edit#slide=id.g38903caa5f_0_32
+
+[eslp]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html#prettier
+
+[prc]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[pr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
