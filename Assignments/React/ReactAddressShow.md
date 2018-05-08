@@ -74,14 +74,14 @@ describe('AddressShow Shallow Suite', function() {
     };
 
     const defaultFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[0]}/>);
+        const wrapper = shallow(<AddressShow address={AddressList[0]}/>);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);
     };
 
     const afterClickFieldTest = (name, index, talkToMe) => {
-        const wrapper = shallow(<AddressShow address={addresses[1]}/>);
+        const wrapper = shallow(<AddressShow address={AddressList[1]}/>);
         const welcome = <p className="App-intro">{name}</p>;
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(welcome)).toEqual(true);
@@ -155,7 +155,7 @@ describe('Address tests', , function() {
     });
 
     it('renders state of firstName after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
+        const wrapper = shallow(<Address addressList={AddressList}/>);
         wrapper.instance().setAddress();
         setImmediate(() => {
             wrapper.update();
@@ -273,18 +273,18 @@ We don't see **AddressShow** in **App** because it will be created by the **Addr
 
 ## Data
 
-We will no longer load **addresses** in **index.js**. Instead, **Address** owns the data. Move the import statement from **index.js** to **Address.js** and straighten out the path:
+We will no longer load **AddressList** in **index.js**. Instead, **Address** owns the data. Move the import statement from **index.js** to **Address.js** and straighten out the path:
 
 ```javascript
-import addresses from '../address-list';
+import AddressList from '../address-list';
 ```
 
 **NOTE**: _Recall that our goal is to perform a complete mind-meld with the file system of our OS. Some part of your brain must become the file system, and you should take great joy and comfort from this fact. In particular, it should be intuitively obvious that the relative path part of the import statement must change after we move this line of code from a file in the **src** directory to a file in the **src/components** directory. You should also grok immediately the difference between a relative path that contains one dot and one that contains two dots. You shouldn't have to think about it any more than you have to think how to tie your shoes. The knowledge should just be there, fully formed, in your brain without thought or effort. I should perhaps remind you that this isn't a Linux thing, as you would have the same issue on Windows._
 
-Lets also stop working with the individual fields in **Address**. Instead, we will work with a single record from the **addresses** array.
+Lets also stop working with the individual fields in **Address**. Instead, we will work with a single record from the **AddressList** array.
 
 ```javascript
-import addresses from '../address-list';
+import AddressList from '../address-list';
 
 class Address extends Component {
     constructor(props) {
@@ -292,14 +292,14 @@ class Address extends Component {
 
         this.addressIndex=0;        
         this.state = {
-            address: addresses[this.addressIndex]  <=== HERE
+            address: AddressList[this.addressIndex]  <=== HERE
         };
         this.debug = true;
     }
 }
 ```
 
-We create an **addressIndex** property and use it to index into our array of addresses. Our state tracks only a single address since that is all that **AddressShow** needs to know.
+We create an **addressIndex** property and use it to index into our array of AddressList. Our state tracks only a single address since that is all that **AddressShow** needs to know.
 
 **NOTE**: _I'm having some doubts here as to whether this is the best way to do this. Certainly it works, but there may be a more elegant solution. I'll think about it._
 
@@ -421,7 +421,7 @@ The next step will be to set up a button click for **AddressShow**. Recall that 
 We said earlier that **AddressShow** would display our data, and that **Address** would manipulate, modify and save our data. So our code for handling the button click belongs in Address. It is essentially the same code we had before, but now it is somewhat simpler since we are working on with the piece of data in our state:
 
 ```javascript
-onAddressChange = (event) => {
+setAddress = (event) => {
     this.addressIndex = 1;   
 
     this.setState({
@@ -432,7 +432,7 @@ onAddressChange = (event) => {
 
 So now we have the method for changing our state. But that method is in **Address** and in our button is in **AddressShow**. How do we connect them?
 
-The solution is to pass the **onAddressChange** function object to **AddressShow** in the render method of **Address**:
+The solution is to pass the **setAddress** function object to **AddressShow** in the render method of **Address**:
 
 ```javascript
 <AddressShow
