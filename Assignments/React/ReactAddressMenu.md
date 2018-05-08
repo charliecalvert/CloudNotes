@@ -41,15 +41,15 @@ We want to be able to display either the **Address** component, or the **GetFile
 
 ![AddressShow][add-show]
 
-**IMAGE** _AddressShow with paragraph elements_
+**IMAGE** _GetFile with the firefox Developer Tools debugger open._
 
-![AddressEdit][add-edit]
+![Address Get File][add-edit]
 
 **IMAGE**: _Address Edit with input elements_
 
-![SmallNumbers][add-sm]
+![Address Menu Styled][add-sm]
 
-**IMAGE**: _Small Numbers, our hello world._
+**IMAGE**: _A styled menu._
 
 All this is well and good, but we have a problem. Our current architecture has us showing both the **Address** and the **GetFile** component from the **App** component. In particular, review this bit of code found in our current implementation of **Address**:
 
@@ -84,49 +84,25 @@ The common solution for this problem, and there are many possible solutions, is 
 
 At this stage, we have various components that can render the separate views that we want to display:
 
-- Address renders the **AddressShow** view
+- Address renders the **Address** view
 - **GetFile** renders the simple file-url view.
 - **ElfHeader** displays the header seen at the top of the page. We will modify this file to display our menu.
 
-We will define a menu that will allow us to switch between these views. We will do this in the files called **components/ElfHeader.js** and **components/App.js**.
+Our menu will allow us to switch between the **Address** and **GetFile** views. We will do this in the files called **components/ElfHeader.js** and **components/App.js**.
 
-**NOTE**: _I call it **ElfHeader** rather than **Header** in part because the word Menu is such a common word that it is likely to collide with some other name in our program or in the global name space. In particular, **header** is an element in HTML 5._
+**NOTE**: _I call it **ElfHeader** rather than **Header** in part because the word **Header** is such a common word that it is likely to collide with some other name in our program or in the global name space. In particular, **header** is an element in HTML 5._
 
-Start just with a sparsely populated class that brings in one class from **react router** called Router:
+## Create the Menu
 
-```javascript
-import {
-    BrowserRouter,
-    Route,
-    Link
-} from 'react-router-dom'
-
-class ElfHeader extends Component {
-
-    render() {
-        return (
-            <Router>    
-            </Router>
-        );
-    }
-}
-
-export default ElfMenu;
-```
-
-In the above code I've imported **React** and the classes I want to display, as well as the **react-router** code. As mentioned above, the **<ROUTER>** class comes from **react router**.
-
-We'll focus only on the **render** method, since the rest of the code in our file stays the same throughout this exercise.
-
-Let's write code to display the simple menu shown in the screenshots visible above. Don't fuss over the fact that the menu looks funky at this point. We can fix that later by adding some CSS. Right now, just focus on getting things working:
+Let's write code in **ElfHeader** to display the simple menu shown in the screenshots visible above. Don't fuss over the fact that the menu looks funky at this point. We can fix that later by adding some CSS. Right now, just focus on getting things working:
 
 ```javascript
+import { Link } from 'react-router-dom';
 <div>
   <div className="App">
       <ul>
-          <li><Link to="/">AddressShow</Link></li>
-          <li><Link to="/edit">AdressEdit</Link></li>
-          <li><Link to="/small">SmallNumbers</Link></li>
+          <li><Link to="/">Address</Link></li>
+          <li><Link to="/get-file">Get File</Link></li>          
       </ul>
   </div>                
 </div>
@@ -138,37 +114,89 @@ Here we use a class from **react router** called **Link**. It automatically crea
 <li><a href="/edit">AddressEdit</a></li>
 ```
 
-Next, we define the **Route** itself. Here are the first two, you can create the third:
+## BrowserRouter
+
+Modify **App.js** to import two classes from **react router** called **BrowserRouter** and **Route**:
+
+```javascript
+// YOUR IMPORTS HERE
+import { BrowserRouter, Route } from 'react-router-dom'
+
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div className="App">
+                    <ElfHeader />
+                    <Route exact path="/" component={Address}/>
+                    <Route path="/get-file" component={GetFile}/>
+                </div>
+            </BrowserRouter>
+        );
+    }
+}
+
+// ETC ...
+```
+
+In the above code I've imported **React** and the classes I want to display, as well as the **react-router** code.
+
+The following excerpt from the code shown above defines the client side routes that will be executed when the user makes selections from the menu:
 
 ```javascript
 <Route exact path="/" component={Address}/>
-<Route path="/edit" component={AddressChanger}/>
+<Route path="/get-file" component={GetFile}/>
 ```
 
-Note that the home path has the word **exact** in front of it. This is because other paths, such as **/edit** contain both the **/** and the **/edit** paths. So we say that we want an exact match on **/** not a match on either **/** or **/edit**.
+In particular, the home page (**/**) leads to the **Address** component and the **/get-file** route leads to the **GetFile** component.
 
+**Note**: _The home path has the word **exact** in front of it. This is because other paths, such as **/get-file** contains the **/** route. So we say that we want an exact match on **/** not a match on either **/** or **/get-file**._
 
-## Hints and Suggestions
+## Style the Menu
 
-Here are two ways to rename App.js to **SmallNumbers.js**:
+Let's add some styling to our menu to make it look prettier. I've also modified **App.css** to chang the color of the Header. Read about it [here][rrdstm].
 
-```
-git mv App.js SmallNumbers.js
-git mv App.js components/SmallNumbers.js
-```
+![Address Menu Styled][add-sm]
 
-The exact command you give depends on:
+**IMAGE**: _The styled menu appears at the top in brown. Compare to the non-syled menus shown at the beginning of the assignment which appear as list items._
 
-- Your current directory.
-- Whether **App.js** is currently in your **src** directory or the **components** directory.
+Note that you can see **/git-file** URL in the address bar:
 
-If you can't figure out what to do with these hints, you simply must take time to get a better understanding of the file system and how it works. Beyond these broad hints, my simply giving you the right answer will not help you learn. Unfortunately, going into a tutorial on the file system would be to venture well outside the scope of this course. There are, however, many in depth discussions of this topic on the web and in the library.
+    http://localhost:30025/get-file
 
-- <https://www.google.com/search?q=Understanding+File+and+Directory+navigation>
+This is one of the benefits of **React Router**. It allows a user to bookmark a particular screen in your application. In this case the URL shown above should always lead to the **GetFile** component shown in the above screenshot.
+
+## Tests
+
+We should now make sure our tests handle the edits we have made.
 
 ## Turn it in
 
 Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment.
+
+## The Main Index
+
+Remember that we have fundamentally changed the structure of our program. Our **src/index.js** entry point file should no longer be responsible for showing **Address**, and **GetFile**. Instead, it should show only **App**.
+
+Here is our modified **index.js** file:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(
+    <div>
+        <App />        
+    </div>,
+    document.getElementById('root')
+);
+
+registerServiceWorker();
+```
+
+**NOTE**: _A crucial point, in fact, probably the central point, of this class, is how easy it is for us to move classes and views around when we use the **React** architecture. Yes, it is hard to get up to speed on React, and yes, it is a fairly complex tool. But once you have everything set up, making relatively large changes to our program's architecture are simple. The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
 
 ## Hint
 
@@ -193,72 +221,35 @@ If you needed to pass props to your router, and we don't, you would do it like t
 
 This code is not nearly as simple as the code we used when defining our Routes. However, it works, and once written we won't need to fuss with it very often.
 
+## Hints and Suggestions
 
-## Address Changer
+Here are two ways to rename App.js to **GetFile.js**:
 
-To create **AddresChanger**, first make a copy of **Address**. Have the component extend Address rather than **Component**. Be sure to change the component name and the thing it extends:
-
-```javascript
-class AddressChanger extends Address {
-}
+```
+git mv App.js GetFile.js
+git mv App.js components/App.js
 ```
 
-Strip out everything except **OnNameChange** and **render**. Edit **render** to look like this:
+The exact command you give depends on:
 
-```javascript
-render() {
-    if (!this.quiet) { console.log("ADDRESS RENDER"); }
-    return (
+- Your current directory.
+- Whether **App.js** is currently in your **src** directory or the **components** directory.
 
-        <div className="App">
-            <AddressEdit
-                address={this.state.address}
-                onAddressChange={this.onAddressChange}
-                onNameChange={this.onNameChange}
-            />
+If you can't figure out what to do with these hints, you simply must take time to get a better understanding of the file system and how it works. Beyond these broad hints, my simply giving you the right answer will not help you learn. Unfortunately, going into a tutorial on the file system would be to venture well outside the scope of this course. There are, however, many in depth discussions of this topic on the web and in the library.
 
-        </div>
-    );
-}
-```
+- <https://www.google.com/search?q=Understanding+File+and+Directory+navigation>
 
-As you can see, this is one half of what we had in the **Address** render method.
+[add-show]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-menu-no-style.png
 
-Having done this, we can strip **AddressEdit** code from the **Address render** method. I'll you do that on your own. It only involves deleting existing code, so it is a relatively simple operation.
 
-[add-show]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-01.png
-[add-edit]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-02.png
-[add-sm]:https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-nine.png
+[add-edit]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-menu-debug.png
 
-## Tests
-
-We should now make sure our tests handle the edits we have made.
-
-## The Main Index
-
-We are going to fundamentally change the structure of our program. This means, at least for now, that **index.js** should no longer be responsible for showing **AddressShow**, **AddressEdit** or **SmallNumbers**. Instead, it should show only **ElfHeader** and the class we will use to help us switch between component views. That class will be called **ElfMenu**.
-
-Here is our modified **index.js** file:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ElfHeader from './components/ElfHeader';
-import ElfMenu from './components/ElfMenu';
-
-ReactDOM.render(
-    <div>
-        <ElfHeader />
-        <ElfMenu/>
-    </div>,
-    document.getElementById('root')
-);
-```
-
-**NOTE**: _A crucial point, in fact, probably the central point, of this class, is how easy it is for us to move classes and views around when we use the **React** architecture. Yes, it is hard to get up to speed on React, and yes, it is a fairly complex tool. But once you have everything set up, making relatively large changes to our program's architecture are simple. The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
+[add-sm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-menu-styled.png
 
 [rr]: https://github.com/ReactTraining/react-router
 
 [rrd]: https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom
 
 [rrn]: https://github.com/ReactTraining/react-router/tree/master/packages/react-router-native
+
+[rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu

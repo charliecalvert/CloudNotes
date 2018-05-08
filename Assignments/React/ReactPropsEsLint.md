@@ -1,12 +1,12 @@
 ## Overview
 
-Add [ESLint][esl] and [Prettier][pr] to your [AddressShow][as], [AddressNative][an] and [AddressMaterial][am] assignments.
+Add [ESLint][esl] and [Prettier][pr] to your [GitExplorer][ge]  assignment.
 
 Details for completing these tasks are in the [ESLint][esla] assignment.
 
 ## Turn it in
 
-I'm expecting to find the following files in your **AddressShow**, **AddressNative** and **AddressMaterial** project folders:
+I'm expecting to find the following files in your **GitExplorer** project folder:
 
 - .eslintrc.json (or .eslintrc)
 - .eslintignore
@@ -17,9 +17,7 @@ When I run **./prettier** I'm expecting to see that no changes happened to your 
 
 **NOTE**: _Before you turn in an assignment, run **prettier**. Now push. Then again run **prettier** and this time follow it with **git status**. Git should report that no changes happened to your files when you ran **prettier**. Repeat as necessary until **git status** comes back clean after you push and run **prettier**._
 
-We should also be able to run the ESLint command followed by a space and a period without errors or warnings. In particular, the command looks like this:
-
-    $ eslint .
+We should also be able to run the ESLint command followed by a space and a period (eslint .) without errors or warnings.
 
 For instance, this is not good:
 
@@ -40,11 +38,9 @@ $ eslint .
 
 The point is that we see nothing: no errors, no warnings, no output at all when we run **eslint**.
 
-Both **AddressShow** and **AddressMaterial** should pass all these tests. You can assume that all future projects should pass these tests, especially the **ReactAddressMenu**, **AddressNative**, **Midterm** and the **Final**.
+Both **GitExplorer** and **NativeExplorer** should pass all these tests. You can assume that all future projects should pass these tests, especially the **Midterm** and the **Final**.
 
 [esl]: https://eslint.org/
 [esla]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
 [pr]: https://github.com/prettier/prettier
-[as]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html
-[am]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMaterial.html
-[an]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAddress.html
+[ge]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html

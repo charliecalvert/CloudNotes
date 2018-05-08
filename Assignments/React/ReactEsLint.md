@@ -79,6 +79,16 @@ Often you can automatically fix errors in your code like this:
 eslint --fix .
 ```
 
+## Case Statements
+
+I was having trouble with case statements and recently updated the [gist] file eslintrc.json to include this code:
+
+```javascript
+"indent": ["error", 4, {"SwitchCase": 1}],
+```
+
+The little **SwitchCase** object literal seems to have solved the problem. I hope.
+
 ## WebStorm
 
 In WebStorm, turn on ESLint.

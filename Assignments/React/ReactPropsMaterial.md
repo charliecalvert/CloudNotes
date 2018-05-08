@@ -158,6 +158,7 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
 
 All versions of our App are called GitExplorer at this point. So let's add a tag to designate the place where you added the material theme and pushed this assignment.
 
+- Branch: Week06
 - Folder: GitExplorer
 - Tag: v6.0.0 - Added Material-UI to GitExplorer
 
