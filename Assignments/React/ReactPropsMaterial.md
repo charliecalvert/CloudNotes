@@ -154,7 +154,70 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
 </div>
 ```
 
+## Buttons
+
+```javascript
+<RaisedButton
+    label="Query Git API"
+    labelPosition="before"
+    primary={true}
+    icon={<ActionAndroid />}
+    style={styles.button}
+    onClick={this.queryGitApi}
+/>
+```
+
+We need to define our styles in a file called **components/elf-styles.js** which looks like this:
+
+```javascript
+const styles = {
+    button: {
+        margin: 12,
+    },
+    exampleImageInput: {
+        cursor: 'pointer',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        right: 0,
+        left: 0,
+        width: '100%',
+        opacity: 0,
+    },
+};
+
+export default styles;
+```
+
+## Define a FontIcon
+
+Here is where you can find a bunch of icons you can use in your application:
+
+- <https://material.io/tools/icons/?style=baseline>
+
+
+```javascript
+import FontIcon from 'material-ui/FontIcon';
+import { red500 } from 'material-ui/styles/colors';
+import styles from './elf-styles';
+
+// CODE OMITTED HERE
+
+<RaisedButton
+    label="Query Git API"
+    labelPosition="before"
+    primary={true}
+    icon={<FontIcon
+        class="material-icons"
+        color={red500}>rss_feed</FontIcon>}
+    style={styles.button}
+    onClick={this.queryGitApi}
+/>
+```
+
 ## Turn it in
+
+Add another menu item for the Micro page.
 
 All versions of our App are called GitExplorer at this point. So let's add a tag to designate the place where you added the material theme and pushed this assignment.
 
