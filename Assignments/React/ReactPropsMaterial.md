@@ -143,7 +143,6 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
     >
         <AppBar title="Git Explorer"/>
 
-
         <MenuItem
             primaryText='Git User'
             containerElement={<Link to="/"/>}

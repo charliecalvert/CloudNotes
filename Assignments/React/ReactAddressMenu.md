@@ -3,7 +3,50 @@
 The goals of this assignment are:
 
 - Create a menu, no matter how limited
-- Switch views between **AddressShow**, **AddressEdit** and **SmallNumbers**
+- Switch views between **AddressShow** and **GetFile**.
+
+## Tag
+
+Before working on the assignment, do this:
+
+```
+$ git tag -a v6.0.0 -m "In class work in Week06-InClass that gets AddressShow working"
+git push origin v6.0.0
+```
+
+Once you are ready to turn in assignment, do this to mark the commit that contains your finished code. First add, commit and push your repo, then tag it:
+
+```
+git tag -a v6.0.X -m "Address Menu Assignment Complete"
+```
+
+Here we are using version 6 to say we did this work in the sixth week of the quarter. The X starts at zero, and increments each time you create a new tag for week 6. For instance:
+
+```
+v6.0.0
+v6.0.1
+v6.0.2
+etc
+```
+
+One you have created the tag, push it to your GitHub repo with this code:
+
+```
+git push origin v6.0.X
+```
+
+Again, substitute the exaction version number that you want to push for the letter X. For instance:
+
+```
+git tag -a v6.0.1 -m "Address Menu Assignment Complete"
+git push origin v6.0.1
+```
+
+To view your tags, type this:
+
+```
+git tag -n
+```
 
 ## React Router Install
 
@@ -173,6 +216,25 @@ We should now make sure our tests handle the edits we have made.
 ## Turn it in
 
 Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment.
+
+## Images for Header
+
+I found images here:
+
+- <https://pixabay.com/en/gold-fish-aquarium-goldfish-fins-30831/>
+- <https://pixabay.com/en/goldfish-fins-tropical-animal-47022/>
+- <https://commons.wikimedia.org/wiki/File:Small_SVG_house_icon.svg>
+- <https://commons.wikimedia.org/wiki/File:Flower-of-Life-91circles36arcs.svg>
+- <https://commons.wikimedia.org/wiki/File:Tree-of-Life_Flower-of-Life_Stage.svg>
+
+Try also, this search in Chrome/Chromium:
+
+```
+https://www.google.com/search?q=svg+free+small
+```
+
+In the browser, turn to the images page. Select tools, and select **Labeled for non-commercial reuse** or something similar.
+
 
 ## The Main Index
 

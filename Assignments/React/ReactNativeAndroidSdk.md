@@ -5,7 +5,7 @@ Here is how to work directly with the Native SDK.
 
 ## Phone Connection
 
-Plub in your phone and lsusb:
+Plug in your phone and lsusb:
 
 ```
 $ lsusb
@@ -31,7 +31,7 @@ Download my Android X86 6.0.3 OVA:
 
 - [http://bit.ly/x86ova](http://bit.ly/x86ova)
 
-I see no way around installing Android Studio. All we really need is the Android SDK, but Google has so entirely hosed the SDK interface, that you probably need [Android Studio][astudio] unless you have the SDK already installed.
+I see no way around installing Android Studio. All we really need is the Android SDK, but Google has so removed the GUI SDK interface from everything but Android Studio. As a reult, you probably need [Android Studio][astudio] unless you have an old version of the SDK already installed.
 
 [astudio]: https://developer.android.com/
 

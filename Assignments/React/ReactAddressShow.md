@@ -22,6 +22,8 @@ The first step is to split **Address** and **AddressShow** into two distinct com
 
 The **Address** component will handle our data, **AddressShow** will display the data and the button.
 
+**NOTE**: _The button the user clicks on to display the address should be in **AddressShow**._
+
 ## Create AddressShow Project
 
 To get started, make a copy of Address Components assignment and call it **address-show**. For instance:
@@ -451,6 +453,29 @@ And here is all we need to do in **AddressShow**. At the bottom of the render me
 
 Note that I am both setting the **onclick** method to the function object passed from the **Address** object, and also being sure to create a unique **id** which is a portmanteau derived from the object's name and the button's purpose.
 
+## PropTypes {#proptypes}
+
+Near the top of AddressShow link in **PropTypes**:
+
+```JavaScript
+import PropTypes from 'prop-types';
+```
+
+Then define your proptypes. I don't list them all here, but I include enough to get your started.
+
+```JavaScript
+AddressShow.propTypes = {
+    address: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+        // YOU WRITE THE REST
+    }),
+    setAddress: PropTypes.func
+};
+```
+
+If you don't have this right, then [ESLint][esl] will not work correctly.
+
 ## Turn it in
 
 Add, commit then push. Then Tag. Push you tag. When you turn in the assignment, give me the tag and the directory in which you did your work. I may just look at your most recent code, but being able to go back to where you were when you submitted the assignment can be helpful.
@@ -497,6 +522,7 @@ The debugger and breakpoints are essential tools. I personally can do little wit
 
 [ac]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html
 [breakpoint]: https://s3.amazonaws.com/bucket01.elvenware.com/images/breakpoint01.png
+[esl]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
 [git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
 [under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShowMountTests.html

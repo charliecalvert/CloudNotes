@@ -37,6 +37,8 @@ And here is at least a starter **.eslintrc** file:
 
 - [Charlie's ESLint Gist][ceslg]
 
+To get the gist, or other related files discussed in this assignment, try running my script called [get-gist][gg].
+
 ## Arrow Functions
 
 I'm not clear about this. Set "parser": "babel-eslint" in **.eslintrc** to allow arrow functions.
@@ -46,8 +48,11 @@ I'm not clear about this. Set "parser": "babel-eslint" in **.eslintrc** to allow
 Assuming your ES6 code is in project tree, do one of these, where the first is for the global install, and the second is for the local install:
 
 ```bash
-    eslint .
-    ./node_modules/.bin/eslint .
+$ eslint .
+
+OR:
+
+$ ./node_modules/.bin/eslint .
 ```
 
 Also, consider putting it in your **package.json** file in the **scripts** section. For instance you might write something like this in one of your **package.json** files:
@@ -175,6 +180,8 @@ Alternatively, you could do this:
 ```bash
 find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle.js' -not -path '**/registerServiceWorker.js' -print0 | xargs -0 js-beautify -r
 ```
+
+[gg]: http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GetGist.html
 
 [pret]: https://github.com/prettier/prettier
 
