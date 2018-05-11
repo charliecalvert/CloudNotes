@@ -2,6 +2,13 @@
 
 The Goal is to add [Material-UI][limu] to our application to gussy up the menu and give our app a more standard appearance.
 
+## Videos
+
+Two videos are connected to this assignment:
+
+- [Address Material Part 01][am1]
+- [Address Material Part 02][am2]
+
 ## Screenshots
 
 We are adding several things to our Web App.
@@ -111,7 +118,7 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
 ```xml
 <div>
     <AppBar
-        title="GitExplorer"
+        title="Address Maven"
         iconClassNameRight="muidocs-icon-navigation-expand-more"
         onLeftIconButtonClick={this.handleToggle}
     />
@@ -121,10 +128,10 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
         open={this.state.open}
         onRequestChange={this.handleToggle}
     >
-        <AppBar title="Git Explorer"/>
+        <AppBar title="Address Maven"/>
 
         <MenuItem
-            primaryText='Git User'
+            primaryText='Address'
             containerElement={<Link to="/"/>}
             onClick={this.handleToggle}
         />
@@ -139,7 +146,7 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
 We are going to need buttons in each of our components. This means we need to transform code that looks a bit like this:
 
 ```JavaScript
-<button id="setAddress" onClick={...}>
+<button id="" onClick={...}>
     Set Address
 </button>
 ```
@@ -304,6 +311,8 @@ Make sure you have included PropTypes in [AddressShow][asp].
 <!-- Elven Links -->
 
 [ab]: http://www.material-ui.com/#/components/app-bar
+[am1]: https://youtu.be/aLcTr_G5xcI
+[am2]: https://youtu.be/PgMfki8-9ro
 [asp]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html#proptypes
 [mi]: http://www.material-ui.com/#/components/menu
 [dr]: http://www.material-ui.com/#/components/drawer

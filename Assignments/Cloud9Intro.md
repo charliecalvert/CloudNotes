@@ -335,6 +335,28 @@ Place the properties called **build**, **c9** and **c9a** in the **scripts** obj
 
 [Webpack on Cloud 9][webpack-c9]
 
+## Express Apps on Cloud 9
+
+The key is to be sure they run on port 8080. By default the code in **bin/www** for setting up the port looks like this:
+
+```javascript
+var port = normalizePort(process.env.PORT || '30025');
+```
+
+The best solution is to set the port to 8080 and the launch:
+
+```bash
+export PORT=8080
+```
+
+Then start as normal:
+
+```bash
+npm start
+```
+
+Now press the Cloud9 preview button and all should be well so long as you don't make requests back to the server. If you want to do that, run it in Cloud9 on AWS.
+
 ## Turn it in
 
 Submit your work and attach the screenshots.

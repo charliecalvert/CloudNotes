@@ -2,6 +2,33 @@
 
 Here is how to work directly with the Native SDK.
 
+Here is expo running in Android 7.1 hosted in VirtualBox:
+
+![Expo Android X86 in Virtual Box][a86x]
+
+Here is our app running in Android 7.1 hosted on VirtualBox:
+
+![Android X86 hosting Git Explorer][a86g]
+
+Here are the commands to connect to our instance of Android X86 once you have installed and configured with (Android Studio) the SDK.
+
+```
+adb connect 192.168.2.34
+```
+
+Of coure, you have to use your Andriod X86 IP address. To confirm you are connected:
+
+```
+adb devices
+```
+
+Of course, you should use Bridged Adapter for your version version of Android X86. To the get the IP, use the Phone's menu. Its something like **About tablet** and then **Status** .
+
+![Android X86 Status screen for a table][a86s]
+
+[a86s]:https://s3.amazonaws.com/bucket01.elvenware.com/images/android-x86-status.png
+Android Studio runs fine in VirtualBox, it is the emulator it includes that will not, to my knowledge, work in VirtualBox.
+
 
 ## Phone Connection
 
@@ -101,3 +128,6 @@ react-native init test02
 react-native run-android
 react native start
 ```
+
+[a86x]:https://s3.amazonaws.com/bucket01.elvenware.com/images/android-x86-expo.png
+[a86g]: https://s3.amazonaws.com/bucket01.elvenware.com/images/android-x86-vb.png

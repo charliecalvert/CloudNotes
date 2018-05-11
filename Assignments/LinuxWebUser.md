@@ -59,7 +59,7 @@ If StackEdit here is how to create a hyperlink between these two pages:
 [Page02](Page02.html)
 ```
 
-Make sure you text begins flush left. 
+Make sure you text begins flush left.
 
 This is the HTML create by the markdown syntax shown above:
 
@@ -109,8 +109,8 @@ To set up SSH, you should perform the following steps. I outline them here, and 
 The first step in preparing your EC2 instance is to generate your SSH key.  Perform the following commands:
 
 ```
-cd 
-ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+cd
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cd .ssh
 nano config
 ```
@@ -131,6 +131,21 @@ Host bitbucket.org
 
 Now save your work by pressing Ctrl-O. Exit the editor by pressing Ctrl-X.
 
+Some of my **.ssh/config** file looks like this:
+
+```
+Host mongo-server
+    HostName 192.168.2.27
+    Port 22
+    User bcuser
+    IdentityFile ~/.ssh/id_rsa
+
+Host fp
+    HostName 192.168.2.15
+    Port 22
+    User charlie
+    IdentityFile ~/.ssh/common-key
+```
 
 ## Clone a repository on EC2
 
@@ -176,7 +191,7 @@ Vim is more difficult to use than nano, but also more powerful.  Please visit [E
 
 We installed Apache earlier when we [installed LAMP](http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux). As you recall, we installed LAMP with this command:
 
-	sudo tasksel install lamp-server 
+	sudo tasksel install lamp-server
 
 You may be prompted to enter a password for MySql. We are not using MySql, but enter a password anyway so your instance will be secure. Once you are done, Apache will be installed.
 
@@ -240,7 +255,7 @@ To complete this exercise, take four screen shots:
 - Show the contents of your Git folder on EC2.
 - Show the contents of your /var/www/html folder
 - Show the contents of your CreatePages directory in CodeAnywhere.
-- Show your EC2 index.html file running in a browser. To get this screen shot typically you just enter the elastic ip address of your EC2 instance in the address bar of your browser. 
+- Show your EC2 index.html file running in a browser. To get this screen shot typically you just enter the elastic ip address of your EC2 instance in the address bar of your browser.
 
 Also turn in the two hyperlinked pages you created.
 
@@ -282,6 +297,3 @@ Or what have you.
 To learn more, visit the Elvenware pages on [Linux Files][linuxFiles].
 
 [linuxFiles]: http://www.elvenware.com/charlie/os/linux/LinuxFiles.html#copy
-
-
-

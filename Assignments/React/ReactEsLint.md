@@ -84,6 +84,31 @@ Often you can automatically fix errors in your code like this:
 eslint --fix .
 ```
 
+For instance, I run eslint and get multiple errors, then I run **eslint . --fix** and it afterwards eslint comes back clean:
+
+```
+charlie@rohan-mintc ~/Git/isit322-calvert-2018/GitExplorer (Week06-Charlie)
+$ eslint .
+
+/home/charlie/Git/isit322-calvert-2018/GitExplorer/client/src/components/App.js
+  11:1  error  Expected indentation of 4 spaces but found 0  indent
+
+/home/charlie/Git/isit322-calvert-2018/GitExplorer/git-convert/git-test-create.js
+  39:17  warning  Strings must use singlequote  quotes
+  39:65  warning  Strings must use singlequote  quotes
+  49:17  warning  Strings must use singlequote  quotes
+  51:21  warning  Strings must use singlequote  quotes
+
+✖ 5 problems (1 error, 4 warnings)
+  1 error, 4 warnings potentially fixable with the `--fix` option.
+
+charlie@rohan-mintc ~/Git/isit322-calvert-2018/GitExplorer (Week06-Charlie)
+$ eslint . --fix
+charlie@rohan-mintc ~/Git/isit322-calvert-2018/GitExplorer (Week06-Charlie)
+$ eslint .
+charlie@rohan-mintc ~/Git/isit322-calvert-2018/GitExplorer (Week06-Charlie)
+```
+
 ## Case Statements
 
 I was having trouble with case statements and recently updated the [gist] file eslintrc.json to include this code:
@@ -155,6 +180,9 @@ slb
 
 See the [CreateSymbolicLinks][csl] script on GitHub.
 
+- [prettier][prettier]
+- [prettierrc][prettierrc]
+
 ## Beautify Files
 
 I'm moving from [js-beautify][jsbea] to [prettier][pret], but don't quite want to delete this section yet. Use **prettier** instead of js-beautify because it handles JSX much better.
@@ -190,3 +218,6 @@ find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle
 [fnpp]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/FindScripts/FindNpPrettier
 
 [csl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CreateSymbolicLinks
+
+[prettier]: https://gist.github.com/charliecalvert/f19ea847f81f8634b37ef2b9c12a77e0
+[prettierrc]: https://gist.github.com/charliecalvert/2470c97a763ac6791e66f6cb7ff9ae23

@@ -342,6 +342,10 @@ Now try again:
 ln -s Prog270Key main-key
 ```
 
+## Alternative Method
+
+If you are struggling to load your key, try [this][susk], it's easier. But please remember how you did it.
+
 ## Create gitignore File {#gitignore}
 
 Before pushing your repository to the cloud, you should create a **.gitignore** file. This file tells Git which files to ignore, which files should not be pushed to the cloud. This may seem like an unimportant step, but for a developer to try to use Git without setting up **.gitignore** file would be a bit like trying to drive a car that had no break. The inevitable result: a 95% chance of rain accompanied by high winds and thunderstorms.
@@ -815,3 +819,4 @@ If you want, it is possible to put a password on your private key.
 [ssh-config]: http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#ssh-config
 [known-hosts-remove]: http://superuser.com/questions/30087/remove-key-from-known-hosts
 [push-to-cloud]: http://www.elvenware.com/charlie/development/git/git-configure.html#push-repository-to-cloud
+[susk]: http://www.ccalvert.net/books/CloudNotes/Assignments/LinuxWebUser.html#set-up-your-ssh-key

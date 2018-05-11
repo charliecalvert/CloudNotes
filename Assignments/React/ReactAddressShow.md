@@ -218,7 +218,7 @@ If you have not done so already, you should now further refactor your components
 | Component     | Task     |
 | :------------- | :------------- |
 | Header       | Display the Header      |
-| GetFile   | The simple **state.file**, **getFile**, **render** component from week one or two. |
+| GetFile   | The simple [React **Component**][src] with a **constructor** that defines **state.file**, a method called **getFile**, and a **render** method. This component was first shown in week one or two. |
 | Address   | **constructor**, **setAddress** and simple render method to be explained later.  |
 | AddressShow   | Only a relatively lengthy render method to display all the props such as **firstName**, **lastName, etc**.  |
 | App  | Only a relatively short render method to instantiate the **Header**, **GetFile**, **Address**, **AddressShow** |
@@ -357,6 +357,28 @@ log(message, message2 = '', message3 = '') {
     }
 }
 ```
+
+Our logger is a bit deficient at this point as it will often fail to display objects correctly. One solution is to transform objects into strings before we send them:
+
+```JavaScript
+const ObjectAsString = JSON.stringify(this.props.address, null, 4));
+this.log('ADDRESS SHOW CONSTRUCTOR', objectAsString);
+```
+
+A second solution is to check the second parameter to see if it is an object and to transform it there:
+
+```javascript
+log(message, message2 = '', message3 = '') {
+    if (typeof message2 === 'object') {
+            message2 = JSON.stringify(message2, null, 4);
+    }
+    if (this.debug) {
+        console.log(message, message2, message3);
+    }
+}
+```
+
+We should probably do this for all three parameters.
 
 Now we can toggle a single variable, **this.debug**, whenever we want to turn down the volume. For instance, we might want to log to the console in our render method. In the new system we would do it like this:
 
@@ -526,4 +548,5 @@ The debugger and breakpoints are essential tools. I personally can do little wit
 [git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
 [under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShowMountTests.html
+[src]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html#constructor-state
 [wspv]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-show-project.png
