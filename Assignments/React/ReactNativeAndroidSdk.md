@@ -1,3 +1,15 @@
+## Overview
+
+Android X86, React Native and the Android SDK.
+
+## Videos
+
+Here are some videos related to this assignment.
+
+- [Part One](https://youtu.be/qSLl70uTxPk)
+- [Part Two](https://youtu.be/FLUB81lPqMk)
+- [Part Three](https://youtu.be/B0pAUDvYaEc)
+
 ## Native with Android SDK
 
 Here is how to work directly with the Native SDK.
@@ -95,6 +107,10 @@ I thought I had this working, but
 
 On your phone, go to **About Device**. Find the build number. Tap it seven times.
 
+## Exit the Android X86 Instance
+
+In the File menu of VirtualBox, choose **Close | Send the shutdown signal**. A prompt will appear in the VM. Choose to shutdown the tablet.
+
 ## Test
 
 Now run **adb devices**:
@@ -124,10 +140,19 @@ List of devices attached
 Run app:
 
 ```
-react-native init test02
-react-native run-android
-react native start
+npm start
+
+or
+
+yarn start
 ```
+
+## Turn it in
+
+Take a screen shot of your app running in the Android X86 VM.
+
+
+
 
 [a86x]:https://s3.amazonaws.com/bucket01.elvenware.com/images/android-x86-expo.png
 [a86g]: https://s3.amazonaws.com/bucket01.elvenware.com/images/android-x86-vb.png

@@ -2,6 +2,12 @@
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.
 
+## Video
+
+This 15 minute video covers some of the same material discussed in this assignment. Most of what you need to know is in the first 5 to 8 minutes of the video:
+
+- [Using ESLint and Prettier to Lint and Format Project Files][epv]
+
 ## Project Folder
 
 Install some stuff:
@@ -158,7 +164,12 @@ To ensure we operate on only the files we want to format, create a script called
 ```bash
 #!/bin/bash
 
-find . -iname "*.js" -not -path "**/node_modules/**" -not -path "**/bower_components/**" -not -path "**bundle.js" -not -path "registerServiceWorker.js" -exec "prettier" --write {} \;
+find . -iname "*.js" \
+  -not -path "**/node_modules/**" \
+  -not -path "**/bower_components/**" \
+  -not -path "**/bundle.js" \
+  -not -path "**/registerServiceWorker.js" \
+  -exec "prettier" --write {} \;
 ```
 
 Make it executable:
@@ -169,7 +180,9 @@ chmod +x prettier
 
 Call it like this:
 
-    ./prettier
+```bash
+./prettier
+```
 
 If you want more, see also [FindNpPrettier][fnpp] in JsObjects. You can install that script with these commands:
 
@@ -210,14 +223,10 @@ find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle
 ```
 
 [gg]: http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GetGist.html
-
-[pret]: https://github.com/prettier/prettier
-
+[epv]: https://youtu.be/bsxBHLxYMrA
 [jsbea]: https://github.com/beautify-web/js-beautify
-
 [fnpp]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/FindScripts/FindNpPrettier
-
 [csl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CreateSymbolicLinks
-
+[pret]: https://github.com/prettier/prettier
 [prettier]: https://gist.github.com/charliecalvert/f19ea847f81f8634b37ef2b9c12a77e0
 [prettierrc]: https://gist.github.com/charliecalvert/2470c97a763ac6791e66f6cb7ff9ae23
