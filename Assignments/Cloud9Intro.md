@@ -337,13 +337,20 @@ Place the properties called **build**, **c9** and **c9a** in the **scripts** obj
 
 ## Express Apps on Cloud 9
 
-The key is to be sure they run on port 8080. By default the code in **bin/www** for setting up the port looks like this:
+The key steps are two fold:
+
+- Be sure you app is public.
+- Be sure your app runs on port 8080.
+
+On the Window menu and at the top of the IDE on the right is open labeled **Share**. Select it, and set your **Application** to public. That's the key part.
+
+Let's talk about getting the port right. By default the code in **bin/www** for setting up the port looks like this:
 
 ```javascript
 var port = normalizePort(process.env.PORT || '30025');
 ```
 
-The best solution is to set the port to 8080 and the launch:
+The best solution is to set the port in the bash shell to 8080 and then launch your app. Here is how to set the PORT environment varial at the bash prompt:
 
 ```bash
 export PORT=8080
