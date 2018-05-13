@@ -1,5 +1,2 @@
 * [Cloud9Intro.html](Cloud9Intro.html)
-* [GitNewRepo.html](GitNewRepo.html)
-* [LinuxWebUser.html](LinuxWebUser.html)
-* [NodeRouteBasics.html](NodeRouteBasics.html)
 * [master-list.html](master-list.html)

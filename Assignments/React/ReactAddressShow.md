@@ -12,13 +12,38 @@ This assignment builds on the [AddressComponent][ac] assignment. We have several
 
 We should insure that clicks on the Button work but that **Address** does the real work. **AddressShow** is mostly about the interface and does little real work other than use JSX to create the appropriate HTML to display our interface.
 
+## Modules
+
+In this exercise we break our code up into modules. The word module is a somewhat flexible term. JavaScript has specific ways to create single files that can be shared, that can be loosely linked, from other modules. They can also ensure that variables are kept out of the global scope:
+
+- ES5:
+  - require
+  - requirejs
+- ES6
+  - import
+
+But sometimes people use the word in a broader sense, saying that a micro-service is a module or even that a Docker container is a module. But they are talking in a broad, very loose sense, while the term has a technical meaning in JavaScript:
+
+- [JavaScript Modules][jsmod]
+
+As stated above, the purpose of a JavaScript module is to support loose coupling and to keep variables properly scoped, and particularly to keep you from accidentally putting them in global scope, as explained here:
+
+> The main effect of the by-value copy is that global variables of simple types won't be shared across scopes. Always put variables in a wrapper class and export the wrapper (such as bar in the above example).
+
+**NOTE**: _Ruby allows inheriting modules, but in general, inheritance is about classes and objects, and not about modules. Read this description of C# modules. There is no mention of inheritance._:
+
+- [Microsoft Modules][msmod]
+
+Nor is there one in the JavaScript description from Mozilla:
+
+- [JavaScript Modules][jsmod]
 
 ## Divide
 
 The first step is to split **Address** and **AddressShow** into two distinct components. In particular, we will create a new component called **AddressShow** and put the **render** method of **Address** in it:
 
 - **AddressShow** contains only the **render** method from the original **Address** component
-- **Address** contains the constructor, the **setAddress** method, and a one line **render** method that references **<AddressShow/>** and passes it props. This render method will be explained later in this assignment.
+- **Address** contains the **constructor**, the **setAddress** method, and a one line **render** method that references **<AddressShow/>** and passes it props. This render method will be explained later in this assignment.
 
 The **Address** component will handle our data, **AddressShow** will display the data and the button.
 
@@ -340,7 +365,7 @@ You can keep the above constructor, but you should strip everything else from **
 
 ## Logging {#quiet-log}
 
-Since we don't really need the **constructor**, and yet we have implemented it anyway to help illustrate a point, we might as well see if we can find a way to complicate the code further.
+We don't really need a **constructor** in **ShowAddress**, and yet we have implemented it anyway to help illustrate a point. We can use it to give us a view of the props passed in from **Address**.
 
 As you probably know, **console.log** is both curse and blessing. Let's try to emphasize the blessing and mitigate the curse by creating a single place where we call the offending method:
 
@@ -414,6 +439,19 @@ render() {
 ```
 
 _We are using **this.constructor.name** to get the name of our component._
+
+## Logging in Address.js
+
+Suppose we used the logger in **Address.js**:
+
+![Logger in constructor and render methods of Address.js][lia]
+
+The output, when the component is first loaded, would look like this:
+
+![Logger output from Address.js][loa]
+
+[lia]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address.show-address-code.png
+[loa]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-show-console-logger.png
 
 ## Rendering the Data
 
@@ -546,6 +584,10 @@ The debugger and breakpoints are essential tools. I personally can do little wit
 [breakpoint]: https://s3.amazonaws.com/bucket01.elvenware.com/images/breakpoint01.png
 [esl]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
 [git-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag
+[msmod]: https://msdn.microsoft.com/en-us/library/ff921157(v=pandp.20).aspx
+
+[jsmod]: https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules/Using
+
 [under-tag]: http://www.elvenware.com/charlie/development/cloud/Git.html#understanding-tags
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShowMountTests.html
 [src]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html#constructor-state

@@ -37,6 +37,53 @@ npm i -g babel-eslint
 
 Read here [for more details](https://www.npmjs.com/package/eslint).
 
+## Getting Yarn's Global Bin Directory on your PATH {#yarn-global}
+
+On Pristine Lubuntu, I long ago made sure that **~/npm/bin** is on the path. Therefore globally installed NPM packages are available to everyone. I have not, however, yet set up **yarn's** global directory to be on the path.
+
+- [https://github.com/yarnpkg/yarn/issues/2049](https://github.com/yarnpkg/yarn/issues/2049)
+
+So I guess what we want on the path is the directory I list here:
+
+```bash
+charlie@CedarIsle**:~/.config/yarn/global/node_modules/.bin**  
+$ ll  
+total 0  
+drwxrwxrwx 1 charlie charlie 512 May 10 11:11 ./  
+drwxrwxrwx 1 charlie charlie 512 May 10 11:11 ../  
+lrwxrwxrwx 1 charlie charlie 18 May 10 11:11 bower -> ../bower/bin/bower*  
+lrwxrwxrwx 1 charlie charlie 28 May 10 11:11 create-react-app -> ../create-react-app/index.js*  
+lrwxrwxrwx 1 charlie charlie 37 May 10 11:11 css-beautify -> ../js-beautify/js/bin/css-beautify.js*  
+lrwxrwxrwx 1 charlie charlie 39 May 10 11:11 express -> ../express-generator/bin/express-cli.js*  
+lrwxrwxrwx 1 charlie charlie 38 May 10 11:11 html-beautify -> ../js-beautify/js/bin/html-beautify.js*  
+lrwxrwxrwx 1 charlie charlie 36 May 10 11:11 js-beautify -> ../js-beautify/js/bin/js-beautify.js*  
+lrwxrwxrwx 1 charlie charlie 25 May 10 11:11 nodemon -> ../nodemon/bin/nodemon.js*  
+lrwxrwxrwx 1 charlie charlie 21 May 10 11:11 npm -> ../npm/bin/npm-cli.js*  
+lrwxrwxrwx 1 charlie charlie 21 May 10 11:11 npx -> ../npm/bin/npx-cli.js*
+```
+
+We should, therefore, add this near the bottom of our **~/.bashrc**:
+
+```bash
+#Yarn Support
+
+set-system-path "$HOME/.config/yarn/global/node_modules/.bin"
+```
+
+Here is **set-system-path**, which should already be in your **.bashrc**:
+
+```bash
+set-system-path () {  
+  if ! echo "$PATH" | /bin/grep -Eq "(^|:)$1($|:)" ; then  
+    export PATH="$1:$PATH"  
+  fi  
+}
+```
+
+That seems to be working for me, so I've added it in JsObject for future generations.
+
+**NOTE**: _You might be in one of those generations, so perhaps this has already been done for you._
+
 ## RC File
 
 And here is at least a starter **.eslintrc** file:
@@ -144,9 +191,10 @@ Just point me at your midterm, final, or current project. When I open it, I'll e
 For help formatting files, I'm moving from [js-beautify][jsbea] to [prettier][pret]. The first time we use it, we need to be sure it is installed. Once we have installed it, it stays installed. So we need to run one of these commands only once:
 
 ```bash
-yarn global add prettier
 npm install --global prettier
 ```
+
+**NOTE**: _When installing npm packages globally, use NPM rather than yarn. If you really want yarn, make sure the place that yarn puts them is on your path. I've already set things up on Pristine Lubuntu so that npm global packages are on your path. See the bottom of **~/.bashrc** for details._
 
 You can set up a configuration file called .prettierrc in the root of your project or repository:
 
