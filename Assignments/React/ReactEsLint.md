@@ -84,6 +84,17 @@ That seems to be working for me, so I've added it in JsObject for future generat
 
 **NOTE**: _You might be in one of those generations, so perhaps this has already been done for you._
 
+Check whether your apps are installed for Yarn (**.config/yarn/global/node_modules/**) or npm (**~/npm/node_modules**)?
+
+Which is on your path? If you type **which eslint** what comes up? Here is how it looks for me:
+
+```bash
+$ which eslint
+/home/charlie/npm/bin/eslint
+```
+
+That means I'm running the NPM install of **eslint**, not the yarn install of **eslint**. Therefore, something like **babel-eslint** should be installed in with npm. Alternatively, uninstall the npm version of **eslint**.
+
 ## RC File
 
 And here is at least a starter **.eslintrc** file:
