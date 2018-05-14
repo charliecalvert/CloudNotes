@@ -141,6 +141,27 @@ The render method has a couple **Material-UI** [AppBars][ab], [MenuItems][mi] an
 </div>
 ```
 
+## Setting up Routes
+
+Just as a reminder, recall that in **App.js** we defined our **Route** objects that are paired with the **Link** components from the **ElfHeader**. There is no work for you to do here, but I want to make sure you understand all this:
+
+```javascript
+import {BrowserRouter, Route} from 'react-router-dom'
+
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <ElfHeader/>
+                    // Define your routes here.
+                </div>
+            </BrowserRouter>
+        );
+    }
+}
+```
+
 ## Buttons
 
 We are going to need buttons in each of our components. This means we need to transform code that looks a bit like this:
@@ -283,9 +304,46 @@ Our new theme is similar to the one shown above, but the colors are a bit muted,
 
 ![A darker theme][muid]
 
+## Tests
+
+For extra credit, get these tests to pass.
+
+In your App.test.js, you will need to wrap the App in **MuiThemeProvider**:
+
+```javascript
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<MuiThemeProvider><App /></MuiThemeProvider>, div);
+    ReactDOM.unmountComponentAtNode(div);
+});
+```
+
+Here is the code from **ElfHeader** that defines our **title** in the AppBar:
+
+```javascript
+<AppBar
+    title="Address Maven"
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+    onLeftIconButtonClick={this.handleToggle}
+/>
+```
+
+Here is the test that proves that it is set correctly to **Address Maven**:
+
+```javascript
+it('renders and reads Title text', () => {
+    const wrapper = shallow(<Header />);        
+    const headerText = wrapper.find('AppBar').first().prop('title');
+    console.log("HeaderTest", headerText);
+    expect(headerText).toBe('Address Maven');
+});
+```
+
+The key element is the call to **.prop('title')** which picks the text off the virtual DOM.
+
 ## Turn it in
 
-Add another menu item for the Micro page.
+Add another menu item for the Micro page. If you want extra credit, tell me to check your tests then add a note to that effect when you turn in the assignment.
 
 All versions of our App are called GitExplorer at this point. So let's add a tag to designate the place where you added the material theme and pushed this assignment.
 
@@ -302,7 +360,7 @@ git tag -n
 
 [Here][sotag] is the [documentation][tagnum] on using the **n\<num\>** flag when displaying git tags: _n\<num\> specifies how many lines from the annotation, if any, are printed when using -l. The default is not to print any annotation lines. If no number is given to -n, only the first line is printed. If the tag is not annotated, the commit message is displayed instead._
 
-You should also merge your latest **GitExplorer** back into Master.
+You should also merge your latest **Address Maven** back into Master.
 
 ## PropTypes
 

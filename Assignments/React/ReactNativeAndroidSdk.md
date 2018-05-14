@@ -41,6 +41,11 @@ Of course, you should use Bridged Adapter for your version version of Android X8
 [a86s]:https://s3.amazonaws.com/bucket01.elvenware.com/images/android-x86-status.png
 Android Studio runs fine in VirtualBox, it is the emulator it includes that will not, to my knowledge, work in VirtualBox.
 
+## Mouse
+
+Choose **Input | Mouse Integration** from the VirtualBox menu.
+
+
 
 ## Phone Connection
 
