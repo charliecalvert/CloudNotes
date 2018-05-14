@@ -1,4 +1,44 @@
+## Overview
+
+Our goal is to recreate our best current version of AddressShow in React Native. By now you might be calling it AddressMenu or AddressMaterial. But whatever our best Web App code might be, we want to recreate it in React Native.
+
+## Get Started
+
+Create an empty React Native project called **AddressNative**:
+
+```bash
+create-react-native-app AddressNative
+```
+
+## Recreate AddressShow
+
+Begin by copying over the core files from your best version of **AddressShow**:
+
+```
+cp ../AddressMaterial/src/components/Address.js .
+cp ../AddressMaterial/src/components/AddressShow.js .
+cp ../AddressMaterial/src/components/GetFile.js .
+cp ../AddressMaterial/src/components/ElfHeader.js .
+```
+
+Now open up **App.js** and try to link in **GetFile.js**.
+
+```javascript
+import GetFile from './GetFile';
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <GetFile />
+      </View>
+    );
+  }
+}
+```
+
 ## Link in Address Component
+
 
 Now that we have created the **Address** component, all you need to do is link it in.
 

@@ -12,6 +12,12 @@ Run Charlie's course on Windows.
 
 The /home/charlie filesystem is not accessible to the Windows file system. It is only the /mnt/c/ and /mnt/d/ etc drives that Windows sees. It sees them as C:\ and D:\.
 
+## Install Android Studio
+
+Download it. Run the installer.
+
+When it opens, select **Start a new Android Studio Project**. Take the defaults on the first page. On the second page, check the **Android Things** box and select **API 27 Oreo** latest build. When the project builds, you will be able to open the tools menu and select **Tools | SDK Manager**
+
 ## Clone A Repository:
 
 We want to clone our repository into a location on our C or D drive. To do this, we will likely want to clone with HTTPS from PowerShell or the Windows CLI:
