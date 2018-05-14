@@ -331,6 +331,17 @@ Here is the code from **ElfHeader** that defines our **title** in the AppBar:
 Here is the test that proves that it is set correctly to **Address Maven**:
 
 ```javascript
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(
+        <MuiThemeProvider>
+            <BrowserRouter>
+                <ElfHeader />
+            </BrowserRouter>
+        </MuiThemeProvider>, div);
+    ReactDOM.unmountComponentAtNode(div);
+});
+
 it('renders and reads Title text', () => {
     const wrapper = shallow(<Header />);        
     const headerText = wrapper.find('AppBar').first().prop('title');
@@ -340,6 +351,30 @@ it('renders and reads Title text', () => {
 ```
 
 The key element is the call to **.prop('title')** which picks the text off the virtual DOM.
+
+Here is a test to prove that App.js contains at seem of what you expect it to contain:
+
+```JavaScript
+it('renders state of File paragraph after button click', () => {
+    const wrapper = shallow(<App />);
+    //console.log(wrapper.debug());
+    const headerText = wrapper.find('div').childAt(2).prop('path');        
+    //console.log(headerText);
+    expect(headerText).toBe('/get-file');
+});
+```
+
+If you uncomment the first console.log statement, it renders this:
+
+```html
+<BrowserRouter>
+  <div className="App">
+    <ElfHeader />
+    <Route exact={true} path="/" component={[function]} />
+    <Route etc... />
+  </div>
+</BrowserRouter>
+```
 
 ## Turn it in
 

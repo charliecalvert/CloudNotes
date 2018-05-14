@@ -211,7 +211,7 @@ This is one of the benefits of **React Router**. It allows a user to bookmark a 
 
 ## Tests
 
-We should now make sure our tests handle the edits we have made.
+We should now make sure our tests are working.
 
 ## Turn it in
 
