@@ -1,2 +1,1 @@
-* [Isit322-Week01.html](Isit322-Week01.html)
-* [master-list.html](master-list.html)
+* [Isit322Midterm2018.html](Isit322Midterm2018.html)
