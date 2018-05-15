@@ -1,5 +1,27 @@
 ## Overview
 
+There are two parts to the Midterm.
+
+## Part One
+
+- Copy your version of the **Address Material-UI** assignment to a folder called **AddressMaven**.
+- Polish it. No errors, no warnings, all tests pass.
+- Get the addresses from a REST call to our Express Server. You will probably base it on **NodeRouteBasics**. Use **fetch** to make the call to the server. In **routes/index.js** create a route called **'/get-address-list'**. Use **respone.send** to send the addresses to the client.
+- Add three addresses to our **addresses-list** to bring the total to five. All the addresses may be hard coded directly into **routes/index.js** for now, if you like. Or do something fancier if you are so inclined.
+- Put two more buttons on the address page. Label them left and right or the equivalent. When the user clicks the right button, show the next record in the address-left, when they click the left button, show the previous record. Check for the beginning and end of the array and don't go beyond it.
+
+## Part Two
+
+- Polish your version of **AddressNative**.
+- Load your address-list from your server.
+- Put forward and backward buttons as in Part One.
+- For extra credit:
+	- Put your Express Server on EC2 running on Port 30026.
+	- Get the data for **AddressNative** from EC2.
+
+
+## OTHER STUFF TO DELETE
+
 The Goal is to add Material-UI to our application to gussy up the menu and give our app a more standard appearance.
 
 ![Git Explorer App Bar][ge-ab]
