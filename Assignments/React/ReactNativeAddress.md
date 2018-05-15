@@ -19,8 +19,8 @@ cp ../AddressMaterial/src/components/Address.js .
 cp ../AddressMaterial/src/components/AddressShow.js .
 cp ../AddressMaterial/src/components/GetFile.js .
 cp ../AddressMaterial/src/components/ElfHeader.js .
-$ cp ../AddressMaterial/src/components/elf-styles.js .
-$ cp ../AddressMaterial/src/address-list.js .
+cp ../AddressMaterial/src/components/elf-styles.js .
+cp ../AddressMaterial/src/address-list.js .
 ```
 
 ## StyleSheet
@@ -89,7 +89,7 @@ import GetFile from './GetFile';
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.addressContainer}>
         <GetFile />
       </View>
     );
