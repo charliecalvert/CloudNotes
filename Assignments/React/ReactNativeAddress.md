@@ -144,7 +144,7 @@ At this point, your program should look a bit like this on your phone:
 ## Link in Address Component
 
 
-Now that we have created the **Address** component, all you need to do is link it in. I suggest that you leave AddressShow out of the mix for now, as it is the most time consuming component to fix up.
+As for the the **Address** component, all you need to do is link it in. I suggest that you leave AddressShow out of the mix for now, as it is the most time consuming component to fix up.
 
 ```javascript
 import React from 'react';

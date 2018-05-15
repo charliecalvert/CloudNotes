@@ -20,7 +20,6 @@ cp ../GitExplorer/client/src/components/GitUser.ui.js .
 cp ../GitExplorer/client/src/components/Micros.js .
 cp ../GitExplorer/client/src/components/ElfHeader.js .
 cp ../GitExplorer/client/src/components/elf-styles.js .
-cp ../GitExplorer/client/src/GitHub-list.js .
 ```
 
 If your file names or architecture differs in small ways from mine, just make the appropriate changes to the above. Hopefully no one has drifted too far afield, as we want to stay more or less on the same page.
@@ -128,7 +127,7 @@ Recall that a button declaration in React Native looks a bit like this:
 ```javascript
 <View style={styles.buttonView}>
     <Button
-        onPress={this.getFile}
+        onPress={this.getUsers}
         title="Get Data"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
@@ -140,20 +139,20 @@ Note that I have wrapped the button in a style.
 
 At this point, your program should look a bit like this on an emulator:
 
-![Native GitHub and Git File][nagf]
+![Native GitUser and Micros][nagf]
 
 
 ## Link in GitUser Component
 
 
-Now that we have created the **GitUser** component, all you need to do is link it in. I suggest that you leave GitUser.ui out of the mix for now, as it is the most time consuming component to fix up.
+As for the **GitUser** component, all you need to do is link it in. I suggest that you leave **GitUser.ui** out of the mix for now, as it is the most time consuming component to fix up.
 
 ```javascript
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 
-export default class GitHub extends React.Component {
+export default class GitUser extends React.Component {
     render() {
         return (
             <View style={styles.container}>
@@ -161,7 +160,7 @@ export default class GitHub extends React.Component {
                     Welcome to Expo Calvert!
                 </Text>
 
-                {/* Eventually we will link in GitHubShow here, but not yet. */}
+                {/* Eventually we will link in GitUser.ui here, but not yet. */}
                 {/* For now, just comment it out, using the syntax I have used here. */}
             </View>
         );
@@ -170,7 +169,7 @@ export default class GitHub extends React.Component {
 
 ```
 
-Don't forget to comment out the import for **GitHubShow** from **GitHub**. For now, we don't want GitHubShow in the mix at all.
+Don't forget to comment out the import for **GitUser.ui** from **GitUser**. For now, we don't want GitUser.ui in the mix at all.
 
 An explanation of how to create comments in JSX is found [here][cjsx].
 
@@ -182,7 +181,7 @@ Let's start by linking in the version of React Router that works with React Nati
 npm install --save react-router-native
 ```
 
-Let's start with the changes we need to make to **ElfHeader**. The code is much the same as in our GitHub Material assignment, but there are differences. Rather than try to detail them, I'll just ask you to set its content to the following:
+Let's start with the changes we need to make to **ElfHeader**. The code is much the same as in our Git User Material assignment, but there are differences. Rather than try to detail them, I'll just ask you to set its content to the following:
 
 ```javascript
 import React, {Component} from 'react';
@@ -199,7 +198,7 @@ class ElfHeader extends Component {
                     to="/"
                     underlayColor='#f0f4f7'
                     style={styles.navItem}>
-                    <Text>GitHub</Text>
+                    <Text>Git Users</Text>
                 </Link>
                 // You create a /get-file link here.
                 // Hint: Just **to** and the **Text** change.
@@ -211,7 +210,7 @@ class ElfHeader extends Component {
 export default ElfHeader;
 ```
 
-Go back and look at the code for the **ElfHeader** in the GitHubMenu program:
+Go back and look at the code for the **ElfHeader** in the GitExplorer program:
 
 
 ```javascript
@@ -219,8 +218,8 @@ import { Link } from 'react-router-dom';
 <div>
   <div className="App">
       <ul>
-          <li><Link to="/">GitHub</Link></li>
-          <li><Link to="/get-file">Get File</Link></li>          
+          <li><Link to="/">Git User</Link></li>
+          <li><Link to="/micros">Micros</Link></li>          
       </ul>
   </div>                
 </div>
@@ -236,15 +235,15 @@ In **App.js** import these items from React Router Menu.
 import { NativeRouter, Route } from 'react-router-native';
 ```
 
-Now look at the **App.js** file from GitHub Material. Much remains essentially the same, but instead of a **BrowserRouter**, we use a **NativeRouter** and instead of a **DIV**, we use a **View**.
+Now look at the **App.js** file from **GitExplorer**. Much remains essentially the same, but instead of a **BrowserRouter**, we use a **NativeRouter** and instead of a **DIV**, we use a **View**.
 
-At this stage we have a primitive menu at the top. When we click on GitHub, we see the **GitHub** component, when we click on **GetFile** we see this:
+At this stage we have a primitive menu at the top. When we click on **Git User**, we see the **GitUser** component, when we click on **Micros** we see this:
 
-![Native GitHub with menu and view of Get File][nasm]
+![NativeExplorer with menu and view of Micros][nasm]
 
-## Clean Up GitHubShow
+## Clean Up GitUser.ui
 
-Now you need to go through GitHubShow, converting **DIV** elements to **View** elements, and **P** elements to **Text** elements. There are other changes to make, but I will leave all that up to you.
+Now you need to go through GitUserUi, converting **DIV** elements to **View** elements, and **P** elements to **Text** elements. There are other changes to make, but I will leave all that up to you.
 
 ## Turn it in
 
@@ -253,13 +252,24 @@ Commit and push your work. Test it again after pushing to make sure what you com
 When you are done, tag it with something like this:
 
 ```
-git tag -a v7.0.0 -m "GitHub Native assignment complete"
+git tag -a v7.0.0 -m "NativeExplorer assignment complete"
 ```
 
 If you are using branches, specify which you used.
+
+## Further Exploration
+
+Make it easier to use with maybe one of these:
+
+- [React Native Components][rnc]
+- [React Navigation](https://github.com/react-navigation/react-navigation)
+- [React Native Side Menu][rnsm]
 
 [cjsx]: https://wesbos.com/react-jsx-comments/
 
 [nasm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/native-address-simple-menu.png
 
 [nagf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/git-native-micros.png
+
+[rnc]: https://facebook.github.io/react-native/docs/components-and-apis.html
+[rnsm]: https://github.com/react-native-community/react-native-side-menu
