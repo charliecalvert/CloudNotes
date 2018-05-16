@@ -28,7 +28,7 @@ Here is our app running in Expo on Android 7.1 hosted on VirtualBox:
 
 Download my version of the Android X86 Nougat (Android 7.1) build as an OVA file:
 
-- [http://bit.ly/x8671](http://bit.ly/x8671)
+- [http://bit.ly/x8671](http://bit.ly/x8671e)
 
 Download my ancient Android X86 6.0.3 OVA:
 
