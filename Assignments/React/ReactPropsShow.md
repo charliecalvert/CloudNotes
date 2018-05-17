@@ -1,11 +1,11 @@
 # React Props Show
 
-Learn to create a component that can automatically generate the HTML elements displayed in its Render method.
+Learn to create a component that can automatically generate the HTML elements displayed in its **render** method.
 
-We have several major goals in this assignment. To learn how to:
+We have several major goals in this assignment:
 
 - Learn about Nested components
-- Pass state from the parent to the child componen
+- Pass **state** from the parent to the child component as **props**.
 - To build a set of HTML controls based on a specification
 
 ## Creating ShowUserInfo

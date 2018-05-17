@@ -53,6 +53,17 @@ mkdir ~/bin
 ln -s ~/Git/isit320-calvert-2016/Week04-ThreeFloor ~/bin/three-floor
 ```
 
+or like this:
+
+```bash
+$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/elven-site
+```
+
+This symbolic link provides several benefits:
+
+- It shortens your path
+- It can be easily changed to point to a new location without forcing you to rewrite your  **upstart** or **systemd** script.
+
 ## systemd
 
 Upstart is being replaced by **systemd**. This caused a huge uproar in the Linux community, but the transition is more or less complete at this stage (Nov, 2016). Fortunately, if you understand Upstart it is not hard to switch to **systemd**. You should switch to **systemd** if running on Ubuntu 15.10 or later, otherwise, stick with **upstart**.
@@ -73,6 +84,7 @@ A sample **systemd** start up script (aka service file) called **elven-site.serv
 ```
 [Service]
 ExecStart=/usr/bin/node /home/bcuser/bin/elven-site/bin/www
+WorkingDirectory=/home/bcuser/bin/elven-site
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
@@ -200,11 +212,18 @@ post-start script
 end script
 ```
 
+## Symbolic Links
+
 Create a link our project, or whatever project you want to use for your final:
 
 ```bash
 $ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/elven-site
 ```
+
+This symbolic link provides several benefits:
+
+- It shortens your path
+- It can be easily changed to point to a new location without forcing you to rewrite your  **upstart** or **systemd** script.
 
 Our upstart script is called **NodeRoutesParams**. If you look inside it, you will see that
 it assumes your copy of NodeRoutesParams is in **~/bin**:

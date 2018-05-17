@@ -1,6 +1,8 @@
-# Prog 272 Week 07, 2014
+# Prog 272 Week 07, 2018
 
-toc
+- [React Address Native][ran]
+
+[ran]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAddress.html
 
 # Overview
 
@@ -38,7 +40,7 @@ This code shows how to get an instance of the express object:
 Here is how to get an instance of QueryMongo:
 
 	var qm = require('./Library/QueryMongo');
-	var queryMongo = qm.QueryMongo; 
+	var queryMongo = qm.QueryMongo;
 
 # Calling QueryMongo
 
@@ -60,7 +62,7 @@ Source from class: [ObjectVariables01.zip](<ON CANVAS>)
 
 # Handlebars
 
-Notes on Elvenware: 
+Notes on Elvenware:
 
 - [Handlebars](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#jqHandlebars)
 

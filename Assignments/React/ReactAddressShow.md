@@ -38,6 +38,12 @@ Nor is there one in the JavaScript description from Mozilla:
 
 - [JavaScript Modules][jsmod]
 
+## State and Props
+
+It is important to understand the difference between State and Props.
+
+![State and Props][sap]
+
 ## Divide
 
 The first step is to split **Address** and **AddressShow** into two distinct components. In particular, we will create a new component called **AddressShow** and put the **render** method of **Address** in it:
@@ -48,6 +54,9 @@ The first step is to split **Address** and **AddressShow** into two distinct com
 The **Address** component will handle our data, **AddressShow** will display the data and the button.
 
 **NOTE**: _The button the user clicks on to display the address should be in **AddressShow**._
+
+
+![Send Props][sp]
 
 ## Create AddressShow Project
 
@@ -592,3 +601,7 @@ The debugger and breakpoints are essential tools. I personally can do little wit
 [ram]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShowMountTests.html
 [src]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html#constructor-state
 [wspv]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-show-project.png
+
+[sap]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AddressProps.svg
+
+[sp]: https://s3.amazonaws.com/bucket01.elvenware.com/images/SendProps.svg

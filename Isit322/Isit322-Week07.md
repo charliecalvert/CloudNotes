@@ -1,15 +1,19 @@
-*   Angular Controllers, Factories and Promises
+## Overview
 
-*   Setting up the directories
-*   Creating shared chart factory
-*   Creating shared URL factory
-*   Creating shared HTTP factory
+- React Deck on Props and State: <bit.ly/elf-address-props>
+- Shallow Dive
+- Finish React Native
+- systemd and concurrently
 
-*   Sorting data
-*   Filtering data
-*   Using meld to compare two files or directories
 
-*   Proper use of Scope
+## Thinking
+
+- [ReactPropsShow][rps]
+- [ReactPropsNative][rpn]
+
+[rps]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html
+
+[rpn]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsNative.html
 
 Other Topics
 

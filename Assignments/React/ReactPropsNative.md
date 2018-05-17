@@ -2,6 +2,12 @@
 
 Our goal is to recreate our best current version of **GitExplorer** in React Native. By now you might be calling it **GitMenu** or **GitMaterial**. Whatever our best React Web App code might be, we want to recreate it in React Native.
 
+## State and Props
+
+It is important to think about the the difference between State and Props.
+
+![State and Props][sap]
+
 ## Get Started
 
 Create an empty React Native project called **GitNative**:
@@ -245,6 +251,8 @@ At this stage we have a primitive menu at the top. When we click on **Git User**
 
 Now you need to go through GitUserUi, converting **DIV** elements to **View** elements, and **P** elements to **Text** elements. There are other changes to make, but I will leave all that up to you.
 
+![Send Props][sp]
+
 ## Turn it in
 
 Commit and push your work. Test it again after pushing to make sure what you committed actually works. (We are having a rash of incidents where bits of stray code are inserted into a file, breaking an otherwise clean assignment.)
@@ -273,3 +281,7 @@ Make it easier to use with maybe one of these:
 
 [rnc]: https://facebook.github.io/react-native/docs/components-and-apis.html
 [rnsm]: https://github.com/react-native-community/react-native-side-menu
+
+[sap]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AddressProps.svg
+
+[sp]: https://s3.amazonaws.com/bucket01.elvenware.com/images/SendProps.svg
