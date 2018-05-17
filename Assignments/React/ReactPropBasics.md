@@ -1,6 +1,9 @@
 ## Overview
 
-Properties are like state, but they are passed down from a component higher in the component hierarchy. Thus we can define a property in one place, but use it in multiple components without having to redeclare it, or having to perform other gymnastics.
+Properties are like [state][state], but they are passed down from a component higher in the component hierarchy. Thus we can define a property in one place, but use it in multiple components without having to redeclare it, or having to perform other gymnastics.
+
+- [Learn more about state][sr]
+- [State on Elvenware][state]
 
 ## Understanding Props
 
@@ -136,6 +139,41 @@ Push your work specify the follwoing when you turn it in:
 - Branch (If relevant)
 - Folder
 
+Be sure that you are passing in to separate props. Here I pass in one prop, even if **myProps** is an object literal with two properties.
+
+```javscript
+const myProps = {
+    testProp: 3,
+    anotherProp: 5
+};
+
+<App myProps={myProps} />,
+```
+
+Here I pass in two props called **myProps** and **b**:
+
+```html
+<App myProps={myProps} b={something} />,
+```
+
+One prop:
+
+```html
+<App a={...} />
+```
+
+Two props:
+
+```html
+<App a={...} b={...}
+```
+
+Please pass in two props.
+
 [ptrt]: https://github.com/facebook/prop-types
 
 [ptwrt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/prop-types-runtime.png
+
+[state]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#state
+
+[sr]: https://daveceddia.com/visual-guide-to-state-in-react/

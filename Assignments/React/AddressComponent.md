@@ -9,14 +9,14 @@ Extend our **week02-react-jest** project to support new React components with **
 Here are the core goals of the assignment.
 
 - Tag your work
-- Create **components** and **Address.js** based on **App.js**
+- Create the **components** folder and put in it a file called **Address.js** based on **App.js**
 - Remove code from **Address.js** that **does not** have to do with addresses
 - Remove code from **App.js** that has to do with addresses
-- Add **Address** to **index.js**
+- **import** your **Address** component into **index.js**. Use it in **ReactDOM.render**.
 - Create **address-list.js** with sample addresses in it
-- Pass the addresses from **address-list** to **Address** as props
+- In **App.js** pass the addresses from **address-list** to **Address** as props
 - Consume props in **Address**
-- Switch from record 0 to record of the address list.
+- Switch from record 0 to record 1 of the address list.
 - Get tests working
 
 ## Tag

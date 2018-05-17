@@ -8,9 +8,22 @@ This 15 minute video covers some of the same material discussed in this assignme
 
 - [Using ESLint and Prettier to Lint and Format Project Files][epv]
 
-## Project Folder
+## Install Globally
 
-Install some stuff:
+I now think there is value in installing these globally, and not just on a per-project basis. If you want to install it globally, try these commands:
+
+```nohighlighting
+npm i -g eslint
+npm i -g eslint-plugin-react
+npm i -g eslint-plugin-requirejs
+npm i -g babel-eslint
+```
+
+Read here [for more details](https://www.npmjs.com/package/eslint).
+
+## Alternative Local Installation
+
+Alternatively, you can install these packages locally:
 
 ```
 npm install --save-dev eslint
@@ -24,18 +37,13 @@ Or:
 npm install --save-dev eslint eslint-plugin-react babel-eslint
 ```
 
-## Install Globally
+If you do this, then you need to type something like this to reach eslint or prettier:
 
-I now think there is value in installing these globally, and not just on a per-project basis. If you want to install it globally, try these commands:
-
-```nohighlighting
-npm i -g eslint
-npm i -g eslint-plugin-react
-npm i -g eslint-plugin-requirejs
-npm i -g babel-eslint
+```bash
+./node_modules/.bin/eslint .
 ```
 
-Read here [for more details](https://www.npmjs.com/package/eslint).
+It's probably simpler to install them globally, but there are good reasons for each approach.
 
 ## Getting Yarn's Global Bin Directory on your PATH {#yarn-global}
 
