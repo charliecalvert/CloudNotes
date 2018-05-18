@@ -56,7 +56,7 @@ ln -s ~/Git/isit320-calvert-2016/Week04-ThreeFloor ~/bin/three-floor
 or like this:
 
 ```bash
-$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/elven-site
+$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/nrb
 ```
 
 This symbolic link provides several benefits:
@@ -79,19 +79,20 @@ DISTRIB_CODENAME=wily
 DISTRIB_DESCRIPTION="Ubuntu 15.10"
 ```
 
-A sample **systemd** start up script (aka service file) called **elven-site.service**:
+A sample **systemd** start up script (aka service file) called **nrb.service**:
 
 ```
 [Service]
-ExecStart=/usr/bin/node /home/bcuser/bin/elven-site/bin/www
-WorkingDirectory=/home/bcuser/bin/elven-site
+ExecStart=/usr/bin/node /home/ubuntu/bin/nrb/bin/www
+WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=elven-site
-User=bcuser
-Group=bcuser
+SyslogIdentifier=nrb
+User=ubuntu
+Group=ubuntu
 Environment=NODE_ENV=production
+Environment=PORT=30026
 
 [Install]
 WantedBy=multi-user.target
@@ -109,20 +110,20 @@ For instance, the **User** and **Group** would be **ubuntu** on EC2 and **bcuser
 Deploy the service file:
 
 ```
-sudo cp elven-site.service /etc/systemd/system/.
+sudo cp nrb.service /etc/systemd/system/.
 ```
 
 Start the service:
 
 ```
-sudo systemctl enable elven-site
-sudo systemctl start elven-site
+sudo systemctl enable nrb
+sudo systemctl start nrb
 ```
 
 Get the status:
 
 ```
-systemctl status elven-site
+systemctl status nrb
 ```
 
 To reload after a change:
@@ -134,29 +135,29 @@ systemctl daemon-reload
 Sample output from status request when all is good:
 
 ```bash
-$ systemctl status elven-site
-● elven-site.service
-   Loaded: loaded (/etc/systemd/system/elven-site.service; enabled; vendor preset: enabled)
+$ systemctl status nrb
+● nrb.service
+   Loaded: loaded (/etc/systemd/system/nrb.service; enabled; vendor preset: enabled)
    Active: active (running) since Thu 2015-12-03 08:59:01 PST; 4s ago
  Main PID: 4102 (node)
-   CGroup: /system.slice/elven-site.service
-           └─4102 /usr/bin/node /home/charlie/bin/elven-site/bin/www
+   CGroup: /system.slice/nrb.service
+           └─4102 /usr/bin/node /home/charlie/bin/nrb/bin/www
 
-Dec 03 08:59:01 forestpath systemd[1]: Started elven-site.service.
+Dec 03 08:59:01 forestpath systemd[1]: Started nrb.service.
 Dec 03 08:59:02 forestpath node-sample[4102]: In bin/www the environment is production
 ```
 
 To see logs and debug information, try this:
 
 ```
-journalctl -u elven-site
+journalctl -u nrb
 ```
 
 To completely remove a service from a system, I believe we should first stop it, and then disable it:
 
 ```
-systemctl stop elven-site
-systemctl disable elven-site
+systemctl stop nrb
+systemctl disable nrb
 ```
 
 I'm not certain about the disable command at this time. I think it tells systemd not to load at boot, but allows us to leave the file in **/etc/systemd/system**. Not sure though.
@@ -203,7 +204,7 @@ script
 
 # The following assumes nodejs is in /usr/bin
 # It also assumes that the server is in /home/charlie/ExpressSend
-    exec /usr/bin/nodejs /home/charlie/bin/elven-site/bin/www >> /var/log/node.log 2>&1
+    exec /usr/bin/nodejs /home/charlie/bin/nrb/bin/www >> /var/log/node.log 2>&1
 end script
 
 post-start script
@@ -217,7 +218,7 @@ end script
 Create a link our project, or whatever project you want to use for your final:
 
 ```bash
-$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/elven-site
+$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/nrb
 ```
 
 This symbolic link provides several benefits:
@@ -229,24 +230,24 @@ Our upstart script is called **NodeRoutesParams**. If you look inside it, you wi
 it assumes your copy of NodeRoutesParams is in **~/bin**:
 
     exec /usr/bin/nodejs $HOME/bin/NodeRoutesParams/bin/www >> /var/log/node.log 2>&1
-    exec /usr/bin/nodejs /home/ubuntu/bin/elven-site/bin/www >> /var/log/node.log 2>&1
+    exec /usr/bin/nodejs /home/ubuntu/bin/nrb/bin/www >> /var/log/node.log 2>&1
 
 That is why we created a symbolic link in that folder. That way, regardless of where
 you keep **NodeRoutesParams** on your system, our script can find it.    
 
 Copy the **NodeRoutesParams** file to the **/etc/init** directory:
 
-    sudo cp elven-site.conf /etc/init/.
+    sudo cp nrb.conf /etc/init/.
     sudo mkdir /root/.config
     sudo cp ~/.config/ElvenConfig.json /root/.config/.
 
 Start the program
 
-    sudo start elven-site
+    sudo start nrb
 
 Stop the program
 
-    sudo stop elven-site
+    sudo stop nrb
 
 If you reboot the system, your program will start automatically.
 
@@ -281,13 +282,13 @@ Be sure that you create, properly associate and submit an **Elastic IP** for you
 
 Submit the **Elastic IP** or **Public DNS** address of your instance running on EC2.
 
-I'm not checking to see if the program is working correctly, only that it is running at all. I don't really care, for this assignment, whether I find **elven-site**, **three-floor** or your final running on port 30025 of your EC2 instance. Just show me that you can get something running via **systemd** or **upstart**.  Also, add your config files, such as **elven-site.conf** and/or **elven-site.service** file to the appropriate project directory in your repository.
+I'm not checking to see if the program is working correctly, only that it is running at all. I don't really care, for this assignment, whether I find **nrb**, **three-floor** or your final running on port 30025 of your EC2 instance. Just show me that you can get something running via **systemd** or **upstart**.  Also, add your config files, such as **nrb.conf** and/or **nrb.service** file to the appropriate project directory in your repository.
 
 ## Hints
 
 The below is aimed at upstart users, but it should be obvious how it applies to those who might be using **systemd**. Here are some additional nodes:
 
-- Create a **elven-site.conf** in your final folder.
+- Create a **nrb.conf** in your final folder.
 	- Look at the **JsObjects/JavaScript/NodeCode/ExpressSend** project for hints
 	- In particular, modify the line that begins with the word **exec**
 - In **bin/www** set the port to 30025 unless you are running more than one application
@@ -299,17 +300,17 @@ The below is aimed at upstart users, but it should be obvious how it applies to 
 	- Select your security group
 	- Choose **Inbound | Edit | Add**
 	- Open ports 30026, 30027, etc and set the source to **Anywhere.**
-- Copy elven-site.conf to **/etc/init/elven-site.conf**
-	- sudo cp elven-site.conf /etc/init/.
+- Copy nrb.conf to **/etc/init/nrb.conf**
+	- sudo cp nrb.conf /etc/init/.
 - Create a link to your final folder from the bin folder:
 
 ```
-ln -s ~/Git/isit320-lastName-2015/Week10-ElvenImagePicker ~/bin/elven-site;
+ln -s ~/Git/isit320-lastName-2015/Week10-ElvenImagePicker ~/bin/nrb;
 ```
 
 When everything is set up, test your work:
 
-	sudo start elven-site
+	sudo start nrb
 
 Then go to the appropriate URL and see if your application is working correctly. For problems, check the logs:
 
@@ -317,7 +318,7 @@ Then go to the appropriate URL and see if your application is working correctly.
 
 Or, on systemd:
 
-	systemctl status elven-site
+	systemctl status nrb
 
 **NOTE**: *It is often simplest to do your work on your home machine. For instance, do your work on the Mac, in Pristince Lubuntu, or in Cloud 9. Then commit and push your work, and pull it on EC2. If you do decide to work on EC2, make sure you first commit all your work on your home machine, and then pull it on EC2. Then make your changes on EC2, commit and push, and then pull on your home machine.*
 
