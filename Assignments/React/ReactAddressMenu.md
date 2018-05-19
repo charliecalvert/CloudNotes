@@ -213,6 +213,23 @@ This is one of the benefits of **React Router**. It allows a user to bookmark a 
 
 We should now make sure our tests are working.
 
+We should wrap our Header in a **MemoryRouter** when doing the renders without crashing test:
+
+
+```javascript
+import {MemoryRouter} from "react-router-dom";
+
+// CODE OMITTED
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<MemoryRouter><ElfHeader /></MemoryRouter>, div);
+    ReactDOM.unmountComponentAtNode(div);
+});
+```
+
+You probably won't need this for other tests of this type.
+
 ## Turn it in
 
 Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment.

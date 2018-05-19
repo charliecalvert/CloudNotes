@@ -308,6 +308,27 @@ To git@github.com:charliecalvert/deleteme02.git
    45fc491..0b4dc08  master -> master
 ```
 
+## Go Back in Time
+
+Run git log:
+
+```
+commit fa4090fc069adacac6ac60a73d4f0c56a9f8a95f
+Author: gabe at school <w3dev@yahoo.com>
+Date: Mon May 7 11:29:35 2018 -0700
+```
+
+And then do this:
+
+```
+2046 git log
+2047 git branch may7-last-commit fa4090fc06
+2048 git checkout may7-last-commit
+2049 ll
+2050 git log
+2051 git checkout master
+```
+
 ## Turn it in
 
 Push everything (git push --all). Go up on github or bitbucket as appropriate. Switch between views of the different branches. Make sure it all makes sense:

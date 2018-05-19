@@ -118,6 +118,24 @@ Here we are using the **react-router-dom** class called **Link** to help us crea
 <li><a href="/api-foo">ApiFoo</a></li>
 ```
 
+## Testing ElfHeader
+
+We should wrap our Header in a **MemoryRouter** when doing the renders without crashing test:
+
+
+```javascript
+import {MemoryRouter} from "react-router-dom";
+
+// CODE OMITTED
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<MemoryRouter><ElfHeader /></MemoryRouter>, div);
+    ReactDOM.unmountComponentAtNode(div);
+});
+```
+
+
 ## Defining Routes
 
 The final step involves defining what the application will do when the user clicks on a particular menu item. Here is the basic structure:
