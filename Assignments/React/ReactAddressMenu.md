@@ -213,7 +213,7 @@ This is one of the benefits of **React Router**. It allows a user to bookmark a 
 
 We should now make sure our tests are working.
 
-We should wrap our Header in a **MemoryRouter** when doing the renders without crashing test:
+We should wrap our Header in a **MemoryRouter** when doing the renders without crashing test because it use ReactDOM:
 
 
 ```javascript
@@ -228,7 +228,7 @@ it('renders without crashing', () => {
 });
 ```
 
-You probably won't need this for other tests of this type.
+You probably won't need this for other tests of on ElfHeader. It's calling ReactDOM **render** that triggers the need.
 
 ## Turn it in
 

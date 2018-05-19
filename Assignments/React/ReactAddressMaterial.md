@@ -350,6 +350,8 @@ it('renders and reads Title text', () => {
 });
 ```
 
+**NOTE**: _If you get an error about **Cannot read property prepareStyles of undefined** then that usually means you are forgetting to wrap your React object in a **MuiThemeProvider** as shown above._
+
 The key element is the call to **.prop('title')** which picks the text off the virtual DOM.
 
 Here is a test to prove that App.js contains at seem of what you expect it to contain:
