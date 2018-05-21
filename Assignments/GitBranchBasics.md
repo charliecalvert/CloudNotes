@@ -329,6 +329,23 @@ And then do this:
 2051 git checkout master
 ```
 
+## Safe Merge
+
+You can merge without committing the result:
+
+    git merge --no-commit --no-ff <YOUR BRANCH>
+    git difftool -d --cached
+
+If you don't want to use a **difftool**:
+
+    git diff --cached
+
+After looking things over, if you don't like what you see, you can roll back the merge with this command:
+
+```
+$ git merge --abort
+```
+
 ## Turn it in
 
 Push everything (git push --all). Go up on github or bitbucket as appropriate. Switch between views of the different branches. Make sure it all makes sense:

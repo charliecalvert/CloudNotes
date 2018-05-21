@@ -11,6 +11,8 @@ There are two parts to the Midterm. Your work should be done in a branch called 
 - Put at least two buttons on the page. Label them **next** and **previous** or the equivalent. When the user clicks the **next** button, show the next Gist, when they click the **previous** button, show the previous record. Check for the beginning and end of the array and don't go beyond it.
 - Run the **GitHubExplorer** on EC2 on Port 30031.
 
+![Files in the IDE][fide]
+
 ## Part Two
 
 - Polish your version of **ReactPropsNative**.
@@ -22,6 +24,10 @@ There are two parts to the Midterm. Your work should be done in a branch called 
 ## Turn it in
 
 Make sure all your tests pass and that ESLint comes back clean. I will not grade any assignments that do not include **node_modules** in your **.gitignore** or that have a **node_modules** directory in your midterm directories.
+
+This is a bare minimum in terms of tests.
+
+![Midterm Tests 6 suites 18 tests][mtt]
 
 Designate, branch, folder and tag:
 
@@ -53,3 +59,7 @@ git push origin v7.0.2
 Details are [here][trn].
 
 [trn]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReactNative.html
+
+[fide]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-2018-files.png
+
+[mtt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-2018-min-test.png
