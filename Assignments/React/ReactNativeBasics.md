@@ -155,6 +155,34 @@ Save your work in your repository in a folder called **Week05-ReactNativeStarter
 
 **NOTE**: _If you use the correct folder name, I won't have any trouble finding the right code to grade. But just to be safe, spell it out when you turn in the assignment. Be especially careful to do so if for some reason you have the assignment in a folder other than the one I suggest._
 
+## Working on EC2
+
+I found that I could do this kind of development on EC2, though there were a couple extra steps.
+
+**NOTE**: _I should add that I'm not sure how safe this is. I can't pinpoint a problem, but probably after you finish working, you should remove 19000 and 19001 from your security group. Then just add them again the next time you want to work on EC2._
+
+There were a couple steps:
+
+On EC2, at the bash prompt, set an environment variable:
+
+```bash
+export REACT\_NATIVE\_PACKAGER_HOSTNAME=<YOUR ELASTIC IP>
+```
+
+For instance:
+
+```bash
+export REACT\_NATIVE\_PACKAGER_HOSTNAME=52.38.23.147
+```
+
+Go to the EC2 Management console find the security group your using, and open up ports 19000 and 19001.
+
+**NOTE**: _To find the security group associated with your instance, first select **Instances** in the Management Console, select your instance, then look for the name of your security group. It will be on the **Description** page on the left about five or six items down._
+
+Here is what my Security Group looked like after I added in Ports 19000 and 19001:
+
+![Expo Security Group](https://s3.amazonaws.com/bucket01.elvenware.com/images/expo-security-group.png)
+
 ## Hint
 
 Don't forget to import the controls you need for your view:

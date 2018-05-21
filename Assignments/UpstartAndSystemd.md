@@ -322,6 +322,26 @@ Or, on systemd:
 
 **NOTE**: *It is often simplest to do your work on your home machine. For instance, do your work on the Mac, in Pristince Lubuntu, or in Cloud 9. Then commit and push your work, and pull it on EC2. If you do decide to work on EC2, make sure you first commit all your work on your home machine, and then pull it on EC2. Then make your changes on EC2, commit and push, and then pull on your home machine.*
 
+## Troubleshoot
+
+Before digging into this further, remember to run sudo:
+
+sudo systemctl status nrb
+
+It may not always be necessary, but it might be a good call.
+
+If our service is not loading, it is often because we have typed something wrong in our service file or typed the right thing but forgotten a step.
+
+Sometimes running journalctl -u nrb can help. Type the letter h in journalctl to learn how to use it. The most import command is to type the letter capital G to go to the end of the journal.
+
+Sometimes journalctl makes it clear what has gone wrong. If it is not helpful, then check everything step by step:
+
+- Can I run the program on its own without systemd? In other words, does npm start work?
+- Have I set up my symbolic link properly?
+- Did I change all the fields in the service file that needed to be changed?
+    etc.
+
+
 [elfUpstart]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart
 [express-send]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/ExpressSend
 [is]:https://unix.stackexchange.com/a/164092/91728

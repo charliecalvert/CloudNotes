@@ -21,6 +21,8 @@ There are two parts to the Midterm. Your work should be done in a branch called 
 
 ## Turn it in
 
+Make sure all your tests pass and that ESLint comes back clean. I will not grade any assignments that do not include **node_modules** in your **.gitignore** or that have a **node_modules** directory in your midterm directories.
+
 Designate, branch, folder and tag:
 
 - Branch: Midterm
@@ -45,3 +47,9 @@ And push it:
 ```
 git push origin v7.0.2
 ```
+
+## Testing React Native
+
+Details are [here][trn].
+
+[trn]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReactNative.html

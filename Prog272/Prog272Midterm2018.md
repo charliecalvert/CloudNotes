@@ -21,6 +21,9 @@ There are two parts to the Midterm.
 
 ## Turn it in
 
+Make sure all your tests pass and that ESLint is clean. I will not grade any assignments that do not include **node_modules** in your **.gitignore** file.
+
+
 Let me know what folders you are working in and what tag you used:
 
 - Folder: AddressNative
@@ -44,3 +47,9 @@ And push it:
 ```
 git push origin v7.0.2
 ```
+
+## Testing React Native
+
+Details are [here][trn].
+
+[trn]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReactNative.html
