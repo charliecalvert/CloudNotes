@@ -83,7 +83,7 @@ A sample **systemd** start up script (aka service file) called **nrb.service**:
 
 ```
 [Service]
-ExecStart=/usr/bin/node /home/ubuntu/bin/nrb/bin/www
+ExecStart=/home/bcuser/npm/bin/npm start
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
@@ -341,6 +341,27 @@ Sometimes journalctl makes it clear what has gone wrong. If it is not helpful, t
 - Did I change all the fields in the service file that needed to be changed?
     etc.
 
+To see which of your scripts is running, try something like this:
+
+```
+sudo systemctl is-active eip.service
+sudo systemctl is-active micro01.service
+sudo systemctl is-active git-explorer.service
+```
+
+Or try this:
+
+```
+sudo systemctl show
+```
+
+To see only a few properties:
+
+```
+sudo systemctl show -p ActiveState -p SubState micro01.service
+```
+
+To see all running units: **systemctl list-units**
 
 [elfUpstart]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart
 [express-send]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/ExpressSend
