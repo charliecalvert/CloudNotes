@@ -58,6 +58,37 @@ git push origin v7.0.2
 
 Details are [here][trn].
 
+## Button Events
+
+If you need to know which button was clicked in a button event handler, try this:
+
+```JavaScript
+<RaisedButton
+    style={buttonStyle}
+    id="prevGist"
+    onClick={(e) => this.gistIterator('prevGist', e)}
+    disabled={!this.props.gistCanIterate}
+    secondary={true}
+>
+```
+
+Note the onClick event and how we pass the parameter 'prevGist' to it.
+
+Now in the handler:
+
+```JavaScript
+gistIterator(id) {
+    console.log(id);
+    ETC...
+}
+```
+
+**id** will be set to 'prevGist'.
+
+The reference is here, at the bottom of the page:
+
+- <https://reactjs.org/docs/handling-events.html>
+
 [trn]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReactNative.html
 
 [fide]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-2018-files.png
