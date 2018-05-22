@@ -4,6 +4,12 @@ Create a server to serve up addresses. Later we will convert this to a MongoDB s
 
 **NOTE**: _We could more easily put that JSON file in the public directory of our client, but I want to incrementally move toward the point where we will be serving data from a database. The first step is to set up the server that will eventually serve MongoDB data. For now, however, we will just have it forward the content of the **address-list.json** file in JSON format._
 
+We then add code into our AddressMaven project to iterate over the data served by our **AddressServer**:
+
+![Address Proxy Iterate Buttons][api]
+
+**IMAGE**: _The user can click the pink buttons to iterate over the records. As always, the developer tools are open on the right._
+
 ## Step One
 
 Go to JsObjects:
@@ -187,6 +193,27 @@ The final step is to add two buttons to your project so you can iterate forward 
 
 By splitting up our code into Presentation and Log (sometimes called business rules) we are following [good programming practices][gpp].
 
+There is no need to create special event handlers for the forward and backward buttons. Instead, all your buttons can call **Address.setAddress** which now takes a numeric parameter called **offset**.
+
+```javascript
+setAddress = (offset) => { ... }
+```
+
+In **AddressShow**, use the trick **onClick** property shown here to pass a parameter to **setAddress.**
+
+```javascript
+<RaisedButton
+    id="setAddress"
+    primary={true}
+    onClick={(e) => this.props.setAddress(1, e)}>
+    Set Address
+</RaisedButton>
+```
+
+The code shown here set's the **offset** parameter of **setAddress** to 1.
+
+**HINT**: _You could, if you found it convenient, pass in -1 in some cases._
+
 ## Turn it in
 
 Tag it:
@@ -212,3 +239,5 @@ Tell me:
 [gpp]: http://www.elvenware.com/charlie/development/web/JavaScript/GettingStarted.html#good-code
 
 [jsonv]: https://chrome.google.com/webstore/search/json%20viewer
+
+[api]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-proxy-iterate.png
