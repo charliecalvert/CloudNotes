@@ -346,6 +346,8 @@ After looking things over, if you don't like what you see, you can roll back the
 $ git merge --abort
 ```
 
+Otherwise, commit your work.
+
 ## Turn it in
 
 Push everything (git push --all). Go up on github or bitbucket as appropriate. Switch between views of the different branches. Make sure it all makes sense:

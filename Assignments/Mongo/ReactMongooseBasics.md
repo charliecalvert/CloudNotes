@@ -15,75 +15,8 @@ Put your **address-list.json** in the public directory.
 [angular-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/AngularMongooseBasics.html
 [jq-mongoose]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html
 
-## Step One
-
-Go to JsObjects:
-
-	jo
-
-Pull the latest from the repository: **git pull**.
-
-Navigate back to your repository. From the root of your repository:
-
-	CreateAllExpress CongressServer
-	cd CongressServer
-	npm install
-
-Open the project in WebStorm.
-
-## Step Two
-
-Set up bower. Your **bower.json** probably already contains Bootstrap, and hence jQuery. But just in case:
-
-- bower install bootstrap --save
-
-Just to be save. Though the above call install bootstrap, lets just be certain all is well:
-
-	bower install
-
-Now might be a good time to start the project: **npm start**
-
-## Ignore Politicians
-
-Add a file called **nodemon.json** in the root of your project. Place the following content in it:
-
-```javascript
-{
-  "verbose": true,
-  "ignore": ["politicians.json", "**/bower-components/**"]
-}
-```
-
-This project may create a file called **politicians.json** each time you insert data into the database. By default, this will cause **nodemon** to restart the project each time we write data to **politicians.json**. This can cause miscellaneous errors on the on the client side, such as a false report for failure for the **insertValidCollection**. The fix is to ask nodemon to ignore **politicians.json**. We should also ask it to ignore our components folder.
-
-For more on nodemon configuration, see here:
-
-- <https://github.com/remy/nodemon>
-- <https://github.com/remy/nodemon/blob/master/doc/sample-nodemon.md>
-
-You should also create a **.gitignore** file for this project and put the single line **politicians.json** in it. While you are at it, check your .bowerrc and make sure it has **bower-components** rather than **components** in it:
-
-```javascript
-$ cat .bowerrc
-{
-  "directory": "public/bower-components"
-}
-```
 
 ## Step Three
-
-Let's practice setting up the **favicon**. Because you used **CreateAllExpress**, you should already have a **favicon.png** file in **public.** But in case you have some reason to do it manually, here is how to get a default favicon on Linux (first example) or on Windows:
-
-	cp $JSOBJECTS/Data/MongoBootstrap/favicon.png public/.
-	copy %USERPROFILE%\Git\JsObjects\Data\MongoBootstrap\favicon.png public\.
-
-The next step is not done for you automatically by **CreateAllExpress**, so do this by hand:
-
-- In an editor, open up **app.js** from the root of your project. (Server side)
-- On line 18 uncomment: **app.use(favicon(__dirname + '/public/favicon.ico'));**
-- Change **favicon.ico** to **favicon.png**.
-
-## Step Four
 
 Download empty lubuntu:
 
