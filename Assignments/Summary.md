@@ -1,4 +1,5 @@
 * [Cloud9Intro.html](Cloud9Intro.html)
 * [GitBranchBasics.html](GitBranchBasics.html)
+* [GitHubApi.html](GitHubApi.html)
 * [UpstartAndSystemd.html](UpstartAndSystemd.html)
 * [master-list.html](master-list.html)

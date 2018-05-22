@@ -34,7 +34,7 @@ Install the JavaScript GitHub API:
 npm install --save github-api
 ```
 
-Link in the JavaScript GitHub API:
+In a file called **routes/gists.js** link in the JavaScript GitHub API:
 
 ```javascript
 var GitHub = require('github-api');
@@ -48,11 +48,15 @@ Here is an FYI
 
 ## Sign in
 
+Since we are going to being modifying data, we should start by signing in.
+
 ```javascript
+const token = require('./tokens');
+
 let getGitHub = function() {
     let gh;
     if (true) {
-    https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab    gh = new GitHub({
+    gh = new GitHub({
             token: token
         });
     } else {
@@ -65,79 +69,59 @@ let getGitHub = function() {
 };
 ```
 
-## Display Gist Data
+Here is **tokens.js**:
 
-Create a new components based on GetUserInfo and  call it **DataMaven**.
-
-In DataMaven block copy fetchUser and paste it, renaming it to fetchGist. Now you have both fetchUser and fetchGist. In fetchGist, the URL should be '/api/gist-test'.
-
-Your render method for DataMaven should have the routes that were in ElfHeader:
-
-```javascript
-render() {
-    return (
-
-        <Router>
-            <div>
-                <ElfHeader/>
-                <Route exact path='/' component={GetUserInfo}/>
-                <Route path='/get-foo' component={GetFoo}/>
-                <Route path='/get-numbers'
-                       render={(props) => (
-                           <SmallNumbers {...props}
-                                         numbers={numbersInit}/>
-                       )}
-                />
-            </div>
-
-        </Router>
-    );
-}
-```    
-
-In **index.js** just load **DataMaven**:
-
-```javascript
-ReactDOM.render(
-    <div>
-        <DataMaven/>
-    </div>,
-    document.getElementById('root')
-);
+```JavaScript
+const tokens = [
+    '3bd10af220924e317cd3f76601a29231b507d9a7'
+];
+module.exports = tokens[0];
 ```
 
-## Testing Notes
+But you must get your own token from GitHub. It's in:
 
-The tests in **Header.test.js** break after the refactoring explained above. After the refactoring, I was getting this error:
+- **Settings | Developer Settings | Personal Acccess Tokens**
 
-- _Failed context type: The context `router` is marked as required in `Link`, but its value is `undefined`._
+Like this:
 
-This is because the **ElfHeader** could not find the **Router** tag is was expected. The fix is as follows:
+- [https://github.com/settings/tokens](https://github.com/settings/tokens)
 
-```javascript
-import { BrowserRouter as Router } from 'react-router-dom';
+## Get Gist Data
 
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Router><ElfHeader /></Router>, div);
+```JavaScript
+router.get('/get-basic-list', function(request, response) {
+    logger.log('GET BASIC LIST CALLED');
+    let gh = getGitHub();
+    const me = gh.getUser();
+    logger.log('ME', me);
+    me
+        .listGists()
+        .then(function({ data }) {
+            logger.log('FILES PROMISE', Object.keys(data[0].files));
+            const results = data.map(item => ({
+                htmlUrl: item.html_url,
+                id: item.id,
+                gitPullUrl: item.git_pull_url,
+                description: item.description,
+                ownerLogin: item.owner.login,
+                avatarUrl: item.owner.avatar_url,
+                files: Object.keys(item.files)
+            }));
+            response.status(200).send({
+                count: results.length,
+                result: results
+            });
+        })
+        .catch(function(err) {
+            logger.log('USER Promise Rejected', err);
+            response.status(500).send({ result: err });
+        });
 });
 ```
-https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
-**Question**: After making this change, we might want to test to see if **ElfHeader** properly renders an **H2** element. For that test to work, should we now use **shallow** or **mount**?
 
-## Running One Test File or Suite {#one-test}
+## Display Gist Data
 
-We have learned how to use **fit** and **.only**. Also, note the menu:
-
-```
-Watch Usage
- › Press o to only run tests related to changed files.
- › Press p to filter by a filename regex pattern.
- › Press q to quit watch mode.
- › Press Enter to trigger a test run.
-```
-
-Select **p** and enter part of the name of the test file you want to test. For instance, **Header**. Then only **Header.test.js** will run.
+In **App.js** make a copy of the **fetch** code you used to call the **/user** route. For now, use it in **App.js** and call your new method **fetchGistList**. In **fetchGistList**, the URL should be **/gists/get-basic-list**.
 
 ## GetGist Component
 
@@ -205,3 +189,36 @@ Convert the reset time:
 var f = new Date(1492098563 * 1000);
 console.log(f); => "Thu Apr 13 2017 08:49:23 GMT-0700 (PDT)"
 ```
+
+## Testing Notes
+
+The tests in **Header.test.js** break after the refactoring explained above. After the refactoring, I was getting this error:
+
+- _Failed context type: The context `router` is marked as required in `Link`, but its value is `undefined`._
+
+This is because the **ElfHeader** could not find the **Router** tag is was expected. The fix is as follows:
+
+```javascript
+import { BrowserRouter as Router } from 'react-router-dom';
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Router><ElfHeader /></Router>, div);
+});
+```
+https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
+**Question**: After making this change, we might want to test to see if **ElfHeader** properly renders an **H2** element. For that test to work, should we now use **shallow** or **mount**?
+
+## Running One Test File or Suite {#one-test}
+
+We have learned how to use **fit** and **.only**. Also, note the menu:
+
+```
+Watch Usage
+ › Press o to only run tests related to changed files.
+ › Press p to filter by a filename regex pattern.
+ › Press q to quit watch mode.
+ › Press Enter to trigger a test run.
+```
+
+Select **p** and enter part of the name of the test file you want to test. For instance, **Header**. Then only **Header.test.js** will run.
