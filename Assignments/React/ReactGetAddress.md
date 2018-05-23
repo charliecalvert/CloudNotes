@@ -31,7 +31,13 @@ If you get this error: **Error: Cannot find module 'debug'** then that probably 
 
 ## Write Utility
 
-Then in get-address.js:
+Create a **package.json** file:
+
+    npm init
+
+Then just follow the prompts.    
+
+Then in **get-address.js**:
 
 ```javascript
 const fs=require("fs");

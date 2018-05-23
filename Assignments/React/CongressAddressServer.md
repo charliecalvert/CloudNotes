@@ -108,6 +108,8 @@ server.listen(port, () => {
 The first step will be to read in the address-list.json file:
 
 ```JavaScript
+const fs = require('fs');
+
 function readFile(fileName) {
     'use strict';
     return new Promise(function(resolve, reject) {
@@ -162,18 +164,19 @@ Now, when we call **fetch**, our requests are proxied to the **CongressAddressSe
 
 ## Call Server
 
-Modify the first few lines of **App.js**:
+Modify the first few lines of **Address.js** in **AddressMaven**:
 
 ```JavaScript
 import tempAddressList from '../address-list';
 
 class Address extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.debug = false;
+				this.addressIndex = 0;
         this.addressList = null;
         this.state = {
-            address: tempAddressList[0]
+            address: tempAddressList[this.addressIndex]
         };
         this.getAddressList();
         this.log('Temp Address List:', tempAddressList);

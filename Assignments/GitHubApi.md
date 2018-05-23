@@ -119,6 +119,14 @@ router.get('/get-basic-list', function(request, response) {
 });
 ```
 
+listGists returns a fairly complex set of information. The following line of code says that we only want the data property from the bit object that is sent to us:
+
+```JavaScript
+.then(function({ data }) { ... })
+```
+
+In other words, the data call is intentionally wrapped in a object literal : { data }.
+
 ## Display Gist Data
 
 In **App.js** make a copy of the **fetch** code you used to call the **/user** route. For now, use it in **App.js** and call your new method **fetchGistList**. In **fetchGistList**, the URL should be **/gists/get-basic-list**.
@@ -137,6 +145,20 @@ Add a new item to the menu called **Insert New Gist** or something similar. In *
 The new component will have one button that will call the **fetchGist** method from **DataMaven**.
 
 **fetchGist** should retrieve the entirety of the JSON data returned from GitHub. On the client side you should add the data to **DataMaven**'s state. This should cause a call to the **DataMaven** and **ShowNewGist** render methods.
+
+## The Buttons
+
+```javascript
+<RaisedButton
+    style={buttonStyle}
+    id="prevGist"
+    onClick={(e) => this.gistIterator('prevGist', e)}
+    disabled={!this.props.gistCanIterate}
+    secondary={true}
+>
+    Back
+</RaisedButton>
+```
 
 ## Thinking about State
 
