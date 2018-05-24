@@ -242,6 +242,32 @@ The code shown here set's the **offset** parameter of **setAddress** to 1.
 
 **HINT**: _You could, if you found it convenient, pass in -1 in some cases._
 
+## Testing Address
+
+```javascript
+const clickButton = (wrapper, finder) => {
+	 setImmediate(() => {
+			 wrapper.update();
+			 wrapper.instance().setAddress(0);
+			 setImmediate(() => {
+					 wrapper.update();
+					 try {
+							 finder();
+					 } catch (e) {
+							 console.log(e);
+					 }
+			 });
+	 });
+};
+
+it('renders state of firstName after button click', () => {
+	 const wrapper = shallow(<Address addressList={addresses}/>);
+	 clickButton(wrapper, () => {
+			 expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('Patty');
+	 });
+});
+```
+
 ## Turn it in
 
 Tag it:
