@@ -170,22 +170,50 @@ import tempAddressList from '../address-list';
 class Address extends Component {
     constructor() {
         super();
-        this.debug = false;
-        this.addressList = null;
-        this.state = {
-            address: tempAddressList[0]
-        };
-        this.getAddressList();
+        this.debug = false;        
+				this.canceled = false;
+        this.state = {            
+						addressIndex: 0,
+		 			  addressList: [{}],
+		        address: tempAddressList[0]
+        };        
         this.log('Temp Address List:', tempAddressList);
+    }
+
+		componentDidMount() {
+		    this.getAddressList();
+		}		
+
+		componentWillUnmount() {
+        this.canceled = true;
     }
 }
 ```
 
-You write **getAddressList**. It's just another call to fetch, this time with the route being **/address-list**. In the method, include a line that sets **this.addressList**. It might look something like this, where **addressListFromServer** is the JSON data you retrieved from the server:
+You write **getAddressList**. It's just another call to **fetch**, this time with the route being **/address-list**. In the method, include a line that sets **this.state.addressList**. It might look something like this, where **addressListFromServer** is the JSON data you retrieved from the server:
 
 ```javascript
-this.addressList = addressListFromServer;
+if (!this.canceled) {
+    this.setState({addressList: addressListFromServer});
+    this.setState({index: 0});
+}
 ```
+
+The key points to note here:
+
+- Don't call **fetch** from the constructor. Instead, call it from [componentDidMount][cdm] which React will automatically call after the component is mounted.
+- Don't call setState if the component is not mounted. If you do, you get the error below.
+
+
+**ERROR**: _You might get this error, especially while testing: Warning: "Can't call setState (or forceUpdate) on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the **componentWillUnmount** method." To avoid this error, we create a variable called **this.canceled**._
+
+## Load after component is mounted
+
+```javascript
+componentDidMount() {
+    this.getAddress();
+}
+```		
 
 ## Next and Previous Buttons
 
@@ -241,3 +269,5 @@ Tell me:
 [jsonv]: https://chrome.google.com/webstore/search/json%20viewer
 
 [api]: https://s3.amazonaws.com/bucket01.elvenware.com/images/address-proxy-iterate.png
+
+[cdm]: https://reactjs.org/docs/react-component.html#componentdidmount
