@@ -14,3 +14,4 @@
 * [ReactPropBasics.html](ReactPropBasics.html)
 * [ReactPropsNative.html](ReactPropsNative.html)
 * [ReactPropsShow.html](ReactPropsShow.html)
+* [TestSnapShotsAndHints.html](TestSnapShotsAndHints.html)

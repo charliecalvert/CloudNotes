@@ -1,5 +1,7 @@
 * [Cloud9Intro.html](Cloud9Intro.html)
+* [ExpressBasics.html](ExpressBasics.html)
 * [GitBranchBasics.html](GitBranchBasics.html)
 * [GitHubApi.html](GitHubApi.html)
+* [NodeRouteBasics.html](NodeRouteBasics.html)
 * [UpstartAndSystemd.html](UpstartAndSystemd.html)
 * [master-list.html](master-list.html)

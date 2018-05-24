@@ -4,7 +4,7 @@ Create a server to serve up addresses. Later we will convert this to a MongoDB s
 
 **NOTE**: _We could more easily put that JSON file in the public directory of our client, but I want to incrementally move toward the point where we will be serving data from a database. The first step is to set up the server that will eventually serve MongoDB data. For now, however, we will just have it forward the content of the **address-list.json** file in JSON format._
 
-We then add code into our AddressMaven project to iterate over the data served by our **AddressServer**:
+Add code into our **AddressMaven** project to iterate over the data served by our **AddressServer** by selecting forward and back buttons.
 
 ![Address Proxy Iterate Buttons][api]
 
@@ -173,20 +173,20 @@ class Address extends Component {
     constructor() {
         super();
         this.debug = false;        
-				this.canceled = false;
+        this.canceled = false;
         this.state = {            
-						addressIndex: 0,
-		 			  addressList: [{}],
-		        address: tempAddressList[0]
+            addressIndex: 0,
+            addressList: [{}],
+            address: tempAddressList[0]
         };        
         this.log('Temp Address List:', tempAddressList);
     }
 
-		componentDidMount() {
-		    this.getAddressList();
-		}		
+    componentDidMount() {
+       this.getAddressList();
+    }
 
-		componentWillUnmount() {
+    componentWillUnmount() {
         this.canceled = true;
     }
 }

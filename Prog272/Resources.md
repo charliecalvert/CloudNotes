@@ -11,18 +11,55 @@ Here I will list various resources for Prog 272.
 - [Charlie on Delicious](https://delicious.com/charliecalvert)
 - [Ebooks and 24X7](http://www.bellevuecollege.edu/lmc/catalogs.html)
 
-## Assignments
+## Important Assignments
+
+- [AWS][aws]
+- [Get Gist][gist]
+- [ExpressBasics][eb]
+- [Unit Tests with Jest Web Page (JestCreateReactApp)][utwj]
+- [Unit Tests with Jest Deck (JestCreateReactApp)][jcrad]
+- [Unit Tests Address][uta]
+- [Address Components][adc]
+- [React Prop Basics][rpb]
+- [React Props ESLint][rpel]
+- [React Address Show][ras]
+- [Node Route Basics][nrb]
+- [React Address Native][ran]
+- [React ESLint][rel]
+- [React Address Menu][ramenu]
+- [React Address Material][ramat]
+- [React Get Address][rga]
+- [Congress Address Server][cas]
+- [systemd][sysd]
+- [Midterm][mid]
+
+[adc]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html
+[aws]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html
+[cas]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/CongressAddressServer.html
+[eb]: http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html
+[gist]: http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GetGist.html
+[jcrad]: http://bit.ly/jest-cra
+[mid]: http://www.ccalvert.net/books/CloudNotes/Prog272/Prog272Midterm2018.html
+[nrb]: http://www.ccalvert.net/books/CloudNotes/Assignments/NodeRouteBasics.html
+[ramat]:http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMaterial.html
+[ramenu]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMenu.html
+[ran]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAddress.html
+[ras]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html
+[rel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
+[rpel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html
+[rga]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html
+[rpb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html
+[sysd]:http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html
+[uta]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestsAddress.html
+[utwj]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html
+
+
+## Older Assignments
 
 - [JavaScriptObjects](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html)
 - [Jest Create React App](http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html)
-- [Unit Tests Address](http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestsAddress.html)
-- [Address Component](http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html`)
 - [Address Component Refine](http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponentRefine.html)
-- [React Address Show](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html)
 - [React Address Edit](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEdit.html)
-- [React Address Menu](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMenu.html)
-- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/MidtermFinal/Prog272Midterm2017.html)
-- [React Get Address](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html)
 
 
 ## Languages and APIs

@@ -413,6 +413,72 @@ See here:
 
 - <http://stackoverflow.com/a/22849716>
 
+## Setting up the Port
+
+Let's allways use the following:
+
+```
+var port = process.env.PORT || 30025;
+
+// Code omitted here...
+
+app.listen(port);
+console.log('Listening on port :' + port);  
+```
+
+We want to pick a particular port because in some situations, such as running on
+EC2, we need to open the port ahead of time. By choosing one port, and always
+using it, you won't have to edit my code before you can run it, and vice versa.
+
+## Node Express Routing Basics {#routing}
+
+Express offers support for HTTP verbs such as Get, Post, Put, etc.
+
+The verbs provide a response to specific routes, such as '/':
+
+```
+app.get('/', function(req, res) {
+    console.log("root request sent");
+});
+```
+
+Or here is request that uses a wildcards or regular expressions:
+
+```
+app.get('/a*', function(req, res) {
+    console.log("A request sent that begins with an a");
+});
+```
+
+Working with numbers:
+
+```
+app.get('/book/:id((d+)', function(req, res) {
+    console.log("Only requests that are numbers");
+});
+```
+
+## Node Express Serving up Static Pages
+
+Put your static files in a particular directory and tell express about the
+directory:
+
+```
+app.use("/public", express.static(__dirname + '/public'));
+```
+
+Server them up like this:
+
+```
+app.get('/', function(req, res) {
+    var html = fs.readFileSync('public/index.html');
+    res.writeHeader(200, {"Content-Type": "text/html"});
+    res.end(html);
+});
+```
+
+- <http://www.senchalabs.org/connect/static.html>
+
 ## Temp directory
 
 This is optional. Skip if you are not interested.

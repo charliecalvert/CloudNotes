@@ -226,6 +226,52 @@ function onListening() {
 }
 ```
 
+## Understanding package.json
+
+
+Many projects have dependencies on libraries such as Express or Jade. When you
+place it in GitHub, or share with others, it is usually convenient to store your
+project with the libraries it uses because the libraries tend to be big and
+bulky. The ideal situation would be to ship your source code, and then leave a
+reference to the libraries it needs. The user can then install the libraries as
+needed, rather than downloading them with the source. Fortunately, there is an
+automated way to separate your source from their libraries. In particular you
+can include a file called **package.json** with your project. In that file you
+can define the dependencies for your project. The Node Package Manager (npm) can
+read this file and automatically download the needed libraries.
+
+You can use the JSON shown in this file to define the dependencies for your
+project. Here is a typical example:
+
+```
+{
+    "name": "expressSend",
+    "description": "Work with express and sending information",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.1"
+    }
+}
+```
+
+A file like this should usually be called **package.json**. To use the file,
+just type the following:
+
+```
+npm install
+```
+
+In the case of the file shown above, this command will install express version
+3.1.
+
+**Note**: *You can learn the version of number of the most recent release of
+express by typing the following*:
+
+```
+npm info express version
+```
+
 [elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
 [express-gen]: https://expressjs.com/en/starter/generator.html
 [inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
