@@ -244,10 +244,46 @@ The code shown here set's the **offset** parameter of **setAddress** to 1.
 
 **HINT**: _You could, if you found it convenient, pass in -1 in some cases._
 
+## Testing AddressShow
+
+We can't use our Address.setAddress because we are using shallow, and will not access methods from address. So we mock it up in the simple two line **setAddress** method shown here. Then we pass it in as **props** to **AddressShow** as shown in **afterClickFieldTest**. There are no changes to **defaultFieldTest**.
+
+```JavaScript
+let wrapper = null;
+
+const setAddress = () => {
+		const address=addresses[1];
+		wrapper.setProps({ address: address });
+};
+
+const defaultFieldTest = (name, index, talkToMe) => {
+		const wrapper = shallow(<AddressShow address={addresses[0]} />);
+		const welcome = <p className="App-intro">{name}</p>;
+		getIndex(wrapper, index, talkToMe);
+		expect(wrapper.contains(welcome)).toEqual(true);
+};
+
+const afterClickFieldTest = (name) => {
+		wrapper = shallow(<AddressShow address={addresses[0]} setAddress={setAddress}/>);
+		const patty = <p className="App-intro">{name}</p>;
+		wrapper.find('#setAddress').simulate('click');
+		//console.log(wrapper.debug());
+		expect(wrapper.contains(patty)).toBe(true);
+};
+
+it('renders and displays the first name', () => {
+		defaultFieldTest('First Name: unknown', 0);
+		afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
+});
+
+```
+
 ## Testing Address
 
+We have to wait for two events to take place. This is one way to do it. You can reuse **afterClickFieldTest** just as reused a method with the same name in **AddressShow.test.js**.
+
 ```javascript
-const clickButton = (wrapper, finder) => {
+const afterClickFieldTest = (wrapper, finder) => {
 	 setImmediate(() => {
 			 wrapper.update();
 			 wrapper.instance().setAddress(0);
@@ -264,7 +300,7 @@ const clickButton = (wrapper, finder) => {
 
 it('renders state of firstName after button click', () => {
 	 const wrapper = shallow(<Address addressList={addresses}/>);
-	 clickButton(wrapper, () => {
+	 afterClickFieldTest(wrapper, () => {
 			 expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('Patty');
 	 });
 });
