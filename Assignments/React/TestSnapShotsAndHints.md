@@ -454,3 +454,58 @@ it('finds a link', () => {
     expect(wrapper.dive().containsMatchingElement(link)).toBe(true);
 });
 ```
+
+## Native Mocks
+
+I found just putting my mock at the top of my test worked in React Native. the **beforeEach** method is called once before each test is run.
+
+```javascript
+describe('Test Api Foo', function() {
+
+  const debug = false;
+
+  beforeEach(() => {
+      global.fetch = jest.fn().mockImplementation(() => {
+          const promise = new Promise((resolve, reject) => {
+              resolve({
+                  ok: true,
+                  json: function () {
+                      return {
+                          file: 'file name did go here.',
+                          status: 'status did go here',
+                          result: 'result did go here'
+                      };
+                  }
+              });
+          });
+          return promise;
+      });
+  });
+
+  // YOUR TESTS ARE HERE
+});
+```
+
+## Dive for Regular, Non-Native React
+
+```javascript
+function createWrapper() {
+    return shallow(
+        <MuiThemeProvider>
+            <GitUserUI user={userData} />
+        </MuiThemeProvider>
+    );
+}
+
+it('should take a snapshot', () => {
+    const elfTree = createWrapper();
+    expect(elfTree).toMatchSnapshot();
+});
+
+it('renders GitUserUI', () => {
+    const wrapper = createWrapper();
+    elfDebugEnzyme.getAllDive(wrapper, false);
+    const nineSign = <p className="App-intro">login: unknowns</p>;
+    expect(wrapper.dive().containsMatchingElement(nineSign)).toBe(true);
+});
+```
