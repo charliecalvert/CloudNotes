@@ -509,3 +509,15 @@ it('renders GitUserUI', () => {
     expect(wrapper.dive().containsMatchingElement(nineSign)).toBe(true);
 });
 ```
+
+## Turn it in
+
+Attach a screen shot showing that you have run the **--coverage** option.
+
+Add to your AddressMaven project at least one test that uses SnapShots. Push your work. When I look at your projects, I should find a **\_\_snapshots\_\_** directory. For instance, I have one here:
+
+```
+AddressProxy/src/tests/__snapshots__
+```
+
+Please specify where I should look for your **\_\_snapshots\_\_** directory. Give at least the name of the project.

@@ -322,6 +322,30 @@ Tell me:
   - Also tell me the port if not 30026
 - Branch if relevant
 
+## Setting the port
+
+I believe this code is not portable:
+
+	"start": "PORT=30030 nodemon ./bin/www"
+
+It works in Linux and the Mac but not on Windows.
+
+So I usually set the environment variable for PORT separately, in a script or in my .bashrc:
+
+	export PORT=30025
+
+Sometimes I do something like this:
+
+	var port = normalizePort(process.env.SERVER_PORT || '30030');
+
+Then in my .bashrc or elsewhere I can set the port for specific projects.
+
+	export SERVER_PORT=30025
+
+When using systemd you can set the port in your configuration file:
+
+	Environment=SERVER_PORT=30027
+
 [w3icon]: https://www.w3.org/2005/10/howto-favicon
 
 [wmex]: https://commons.wikimedia.org/wiki/File:FAVICON_R5.png

@@ -183,6 +183,23 @@ Here is what my Security Group looked like after I added in Ports 19000 and 1900
 
 ![Expo Security Group](https://s3.amazonaws.com/bucket01.elvenware.com/images/expo-security-group.png)
 
+## Hosts
+
+In a web app, don't list the IP address when  calling fetch.
+
+- **Correct**: fetch('/api/foo')
+
+- **Wrong**: fetch('http://example.com:30026//api/foo')
+
+(I shortened the actually HOST name so it would fit on one line.)
+
+But when we are in React Native, then we are not hosted from a web server and hence we have to specify the HOST name or IP address. In other words, the examples above are swapped in React Native:
+
+- **Wrong**: fetch('/api/foo')
+- **Correct**: fetch('http://example.com:30026//api/foo')
+
+
+
 ## Hint
 
 Don't forget to import the controls you need for your view:
