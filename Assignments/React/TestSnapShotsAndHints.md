@@ -7,8 +7,11 @@ In all our tests, whether they are SnapShot tests or not, we use **shallow** and
 - [Configuring Jest][cj]
 - [SnapShot Testing][ss]
 
-[cj]: https://facebook.github.io/jest/docs/en/configuration.html
-[ss]: https://facebook.github.io/jest/docs/en/snapshot-testing.html
+See these demos in JsObjects. (Run git pull first to be sure you have the latest):
+
+- [Native Fetch Enzyme Tests][wfe]
+- [Web App Fetch Enzyme Tests][nfe]
+
 
 ## Watch Tests
 
@@ -281,6 +284,38 @@ it('renders state of firstName after button click', () => {
 
 ```
 
+## React Spies
+
+Similar tests from the [ReactFetchTest][wfe] demo:
+
+```JavaScript
+it('renders state by calling fetchServer directly', () => {
+    const wrapper = shallow(<FetchServer />);
+    const statusParagraph = (
+        <p className="App-intro">Result: success</p>
+    );
+    wrapper.instance().fetchServer()
+        .then(() => {
+            console.log(wrapper.debug());
+            wrapper.update();
+            try {
+                expect(wrapper.contains(statusParagraph)).toBe(true);
+            } catch(ex) {
+                console.error(ex);
+            }
+        });
+
+});
+
+it('calls fetchServer button click', () => {
+    const spy = jest.spyOn(FetchServer.prototype, 'fetchServer');
+    const wrapper = shallow(<FetchServer />);
+    wrapper.find('#fetchServer').simulate('click');
+    console.log(wrapper.debug());
+    expect(spy).toHaveBeenCalled();
+});
+```
+
 ## AddressShow and afterClickFieldTest
 
 ```javascript
@@ -455,6 +490,37 @@ it('finds a link', () => {
 });
 ```
 
+## Native Spies
+
+From the [Native Enzyme demo][nfe] tests:
+
+```javascript
+it('renders state of File paragraph after button click setimeout', () => {
+    const wrapper = shallow(<App />);
+    const statusParagraph = <Text>You Rang: hello</Text>;
+
+    return wrapper
+        .instance()
+        .fetchMicro()
+        .then(() => {
+            wrapper.update();
+            console.log(wrapper.debug());
+            expect(wrapper.contains(statusParagraph)).toBe(true);
+        });
+});
+
+it('calls queryServer button click', () => {
+    const spy = jest.spyOn(App.prototype, 'fetchMicro');
+    const wrapper = shallow(<App />);
+    wrapper
+        .find('#fetchMicro')
+        .props()
+        .onPress();
+    console.log(wrapper.debug());
+    expect(spy).toHaveBeenCalled();
+});
+```
+
 ## Native Mocks
 
 I found just putting my mock at the top of my test worked in React Native. the **beforeEach** method is called once before each test is run.
@@ -521,3 +587,11 @@ AddressProxy/src/tests/__snapshots__
 ```
 
 Please specify where I should look for your **\_\_snapshots\_\_** directory. Give at least the name of the project.
+
+[nfe]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/React/ReactNativeTesting/EnzymeBasics
+
+[wfe]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/React/ReactFetchTests
+
+[cj]: https://facebook.github.io/jest/docs/en/configuration.html
+
+[ss]: https://facebook.github.io/jest/docs/en/snapshot-testing.html
