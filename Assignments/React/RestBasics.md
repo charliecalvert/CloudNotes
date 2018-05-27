@@ -151,11 +151,8 @@ The first line just allows us to gain access to our new file: it links it into o
 
 ## Set the Port
 
-Now set the port, in **bin/www**, to **30026**. One way to do that is to write this:
+Now set the port, in **bin/www**, to **30026**. Two ways to do that are explained in our [Concurrently assignment][cca].
 
-```javascript
-var port = normalizePort('30026');
-```
 
 We are going to run the client on port 30025, so we are setting the port for the server to some other number. I've chosen 30026 in the hopes that it will be easy to remember.
 
@@ -387,6 +384,10 @@ We'll do this later, but skip it for now.:
   - Use your common sense to navigate to your server/public directory
   - do this: **ln -s ../../client/build/* .**
 
+## Run Concurrently
+
+Make sure you set up the project the same way we did in the [Concurrently assignment][ccn]. We should be able to issue a single command and start both projects.
+
 ## Turn it in
 
 Push, submit.
@@ -413,3 +414,7 @@ entry: [
     ... and so on
 ]
 ```
+
+[cca]:http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/RunConcurrently.html#setting-the-port
+
+[ccn]: http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/RunConcurrently.html#npm-package

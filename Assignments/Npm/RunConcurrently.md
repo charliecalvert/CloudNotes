@@ -15,9 +15,25 @@ Install concurrently:
 
     npm install --save concurrently
 
-Set the port in **server/bin/www** to 30026. One way to do that is like this:
+## Setting the Port
 
-    var port = normalizePort('30026');
+We don't want both programs to try to run on the same port. To solve this potential conflict, set the **port** in **server/bin/www** to 30026. One way to do that is like this:
+
+```javascript
+var port = normalizePort('30026');
+```
+
+A second, more flexible way, looks like this:
+
+```javascript
+var port = normalizePort(process.env.SERVER_PORT || '30026');    
+```
+
+Then in .bashrc, or some other script, set **SERVER_PORT**:
+
+```bash
+export SERVER_PORT=30026
+```
 
 In the **Week10-Concurrently** directory set up **package.json** and the starter script as described in the next few sections of the project.
 

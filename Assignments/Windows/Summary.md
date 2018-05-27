@@ -1,1 +1,0 @@
-* [WindowsGetStarted.html](WindowsGetStarted.html)
