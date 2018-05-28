@@ -23,6 +23,8 @@ There are two parts to the Midterm. Your work should be done in a branch called 
 
 ## Turn it in
 
+When you turn in the Midterm, say specifically which server or servers I should run when I run your client. Say specifically which server you client depends on. Reference the server by Folder name.
+
 Make sure all your tests pass and that ESLint comes back clean. I will not grade any assignments that do not include **node_modules** in your **.gitignore** or that have a **node_modules** directory in your midterm directories.
 
 This is a bare minimum in terms of tests.

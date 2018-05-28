@@ -208,6 +208,19 @@ Don't forget to import the controls you need for your view:
 import {Button, StyleSheet, Text, View} from 'react-native';
 ```
 
+## Font Cochin
+
+This is very nice. When I ran it at first I got the error shown above. I changed your code to read like this:
+
+```javascript
+baseText: {
+    fontFamily: 'sans-serif',
+    fontSize: 16,
+},
+```
+
+Replacing **Cochin** with the more generic **sans-serif**. Then it worked.
+
 [bavb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/BridgedAdapter.png
 
 [educat]: https://cat.eduroam.org/

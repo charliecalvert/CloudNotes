@@ -272,8 +272,15 @@ express by typing the following*:
 npm info express version
 ```
 
+## Debug in Browser
+
+- [One minute video][dib]
+
 [elf-js-objects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
 [express-gen]: https://expressjs.com/en/starter/generator.html
+
+[dib]: https://youtu.be/VUeA1NfwY_o
+
 [inpack]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/InstallNodePackages.sh
 [jquery-home]: https://jquery.com/
 [ubuntu-setup]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/UbuntuAndCloudNineSetup
