@@ -289,7 +289,7 @@ export default class DataLoader {
 
 ## Elf Local Storage
 
-The **DataLoader** code is specific to our current project. Here is a helper object with **localStorage** calls that could be reused in multiple programs. Save it as **elf-local-storage.js** in your assets directory.
+The **DataLoader** code is specific to our current project. Here is a helper object with **localStorage** calls that could be reused in multiple programs. Save it as **elf-local-storage.js** in your **assets** directory.
 
 ```javascript
 /**

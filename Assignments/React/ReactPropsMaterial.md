@@ -32,6 +32,13 @@ or:
 npm install --save material-ui
 ```
 
+New:
+
+```bash
+yarn add @material-ui/core
+yarn add @material-ui/icons
+```
+
 ## Add Roboto Font
 
 I'm not sure this is necessary, but some folks do get fussy about fonts:
