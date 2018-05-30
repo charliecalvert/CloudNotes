@@ -2,6 +2,16 @@
 
 In a bit of bad luck, the **material-ui** folks have updated to a new version which they are labeling 1.0.
 
+## Videos
+
+The main video is the first, the second shows how to merge your code back into the master branch when you are done.
+
+- [Material Ui Update][muiu]
+- [Material Ui Update Merge][muium]
+
+[muiu]: https://youtu.be/itCt2CRj7Ns
+[muium]: https://youtu.be/3omqaK4XMsw
+
 ## Install
 
 ```bash
@@ -31,7 +41,7 @@ git pull
 Run the following from the **client/src** folder:
 
 ```bash
-FindNp "*.js" -print0 | xargs sed -i "s/material-ui/@material-ui\/core"/
+FindNp "*.js" -print0 | xargs sed -i "s/material-ui/@material-ui\/core/"
 FindNp "*.js" -print0 | xargs sed -i "s/RaisedButton/Button/g"
 ```
 
@@ -151,7 +161,7 @@ ReactDOM.render(
 registerServiceWorker();
 ```
 
-## Rewrite ElfHeader
+## Add tileData for ElfHeader Menu
 
 This is not a necessity, but the docs seem to recommend defining our menu items in a separate file that we will call **components/tileData.js**. Oddly, we will not use **MenuItem** objects, but instead **ListItems**:
 
@@ -214,7 +224,9 @@ export const demoItems = (
 );
 ```
 
-I have not chosen the best icons for these **ListItems**.
+It may be necessary to heavily edit the **ListItems** to create a menu that makes sense for your program. Just use your commonsense to edit the menu items as you deem necessary. I have not chosen the best icons for these **ListItems**.
+
+## ElfHeader itself
 
 We will import **tileData.js** into our new **ElfHeader**:
 
@@ -304,6 +316,10 @@ ElfHeader.propTypes = {
 export default withStyles(styles)(ElfHeader);
 ```
 
+The nice thing about this system is that **ElfHeader** becomes boilerplate. There should be no reason ever to modify even when ported to a new project.
+
+**NOTE**: _Or perhaps I should put it this way: "It will not be necessary to rewrite to use it in a new project or to add new menu items. If you want to change the appearance of **ElfHeader**, then of course you will have to modify it. I should add the **sideList** may need to be edited in some cases._
+
 ## Updated Buttons
 
 Finally, let's look at the new "raised" buttons:
@@ -315,10 +331,24 @@ import Button from '@material-ui/core/Button';
 // Down in render we define the button
 <Button
     variant="raised"
-    onClick={this.queryServer}
-    id="queryServer"
     color="primary"
+    onClick={this.queryServer}
+    id="queryServer"    
 >
     Query API
 </Button>
 ```
+
+## Turn it in
+
+Save and push your work. Tell me:
+
+- Branch (if neccesary)
+- Directory
+- Tag
+
+Remember, your tag might look a bit like this:
+
+```
+git tag -a v9.0.0 -m "Updated material-ui to 1.1"
+git push origin v9.0.0
