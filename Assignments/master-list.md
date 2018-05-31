@@ -13,6 +13,7 @@
 * [Express/Summary.html](Express/Summary.html)
 * [EcmaScript/Summary.html](EcmaScript/Summary.html)
 * [Docker/Summary.html](Docker/Summary.html)
+* [CouchDb/Summary.html](CouchDb/Summary.html)
 * [CodeAcademy/Summary.html](CodeAcademy/Summary.html)
 * [CloudNine/Summary.html](CloudNine/Summary.html)
 * [Browser/Summary.html](Browser/Summary.html)

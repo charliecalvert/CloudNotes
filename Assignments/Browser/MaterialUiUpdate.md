@@ -339,6 +339,86 @@ import Button from '@material-ui/core/Button';
 </Button>
 ```
 
+## Icon Buttons Simple
+
+```JavaScript
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+
+/// Code Omitted here
+
+<Button
+    color='secondary'
+    variant='raised'
+    onClick={e => this.addAddress({firstName: 'foo', lastName: 'bar'}, e)}
+>
+    <Icon>arrow_back</Icon>
+</Button>
+```
+
+## With Styles
+
+Here are the things you must have to use **withStyles**. Why this is better or good I do not know.
+
+In **index.js** do this if you have not done so already:
+
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+```    
+
+See also <https://www.npmjs.com/package/material-design-icons>
+
+And here is the code you need:
+
+```javascript
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    rightIcon: {
+        marginLeft: theme.spacing.unit,
+    }
+});
+
+class MyObject extends Component {
+  render() {
+      const { classes } = this.props;
+      return (
+          <div>
+            // An example of using it. Not required.
+            // We do everything else so we can do this.
+            <Icon className={classes.rightIcon}>arrow_back</Icon>
+          </div>
+      )
+  }
+}
+
+MyObject.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+
+export default withStyles(styles)(MyObject);
+```
+
+## Icon Buttons withStyles
+
+
+```javascript
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+
+/// Code Omitted here
+
+<Button
+    color='secondary'
+    variant='raised'
+    onClick={e => this.props.setAddress(-1, e)}
+>
+    <Icon className={classes.rightIcon}>arrow_back</Icon>
+</Button>
+```                    
+
 ## Updated Tests
 
 I'll just give you at least part of my ElfHeader tests:
