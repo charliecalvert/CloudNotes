@@ -1,3 +1,13 @@
+## Elf Logger
+
+ One way to do it is to set it by module. If we set a particular environment variable to the name of a module, then the debug statements for that module will be visible.
+
+The docs for **ElfLogger** are here: [http://bit.ly/elven-utils](http://bit.ly/elven-utils)
+
+The source for **ElfLogger** is available as a gist: [http://bit.ly/elf-logger](http://bit.ly/elf-logger)
+
+The source for **ElfDebugEnzyme** as a gist: [http://bit.ly/elf-debug-enzyme](http://bit.ly/elf-debug-enzyme)
+
 ## Create JSON File {#create-json}
 
 We want to create a valid JSON file containing an array of address objects that we can use in our program. One approach would to copy your array of addresses from **address-list.js** to **public/address-list.json**. The code you put in the their should pass [json-lint](https://jsonlint.com/).
@@ -109,7 +119,7 @@ export default class DataLoader {
     }
 
     setLocalStorage(addresses) {
-        logger.log('SET LOCAL', addresses);
+        console.log('SET LOCAL', addresses);
         localStorage.setItem(this.STORE_SET[0], this.STORE_SET[1]);
         localStorage.setItem(this.STORE_SET[2], addresses.length);
         addresses.forEach(function(address, index) {

@@ -1,4 +1,4 @@
-# Learn Local Storage
+## Overview
 
 Learn about local storage in the browser.
 
@@ -7,15 +7,36 @@ Learn about local storage in the browser.
 - Insert **elven-store**
 - Load Data from Local Storage once Component is mounted
 
+## Video
+
+- [Local Storage Video](https://youtu.be/8Nyph1YaPXI)
+
 ## Elf Logger
 
-We need to be able to turn logging on and off as needed. One way to do it is to set it by module. If we set a particular environment variable to the name of a module, then the debug statements for that module will be visible.
+We need to be able to turn logging on and off as needed. Save as **src/assets/elf-logger.js**
 
-The docs for **ElfLogger** are here: [http://bit.ly/elven-utils](http://bit.ly/elven-utils)
+```javascript
+export default (() => {
+    let saveConsole = null;
+    const logger = {};
 
-The source for **ElfLogger** is available as a gist: [http://bit.ly/elf-logger](http://bit.ly/elf-logger)
+    logger.on = () => {
+        if (saveConsole) {
+            window['console']['log'] = saveConsole;
+        }
+    };
 
-The source for **ElfDebugEnzyme** as a gist: [http://bit.ly/elf-debug-enzyme](http://bit.ly/elf-debug-enzyme)
+    logger.off = () => {
+        saveConsole = console.log;
+        window['console']['log'] = () => {};
+    };
+
+    return logger;
+})();
+```
+
+If you write **logger.on()** then **console.log** works, if you write **logger.off()** then **console.log** does nothing.
+
 
 ## Elf Local Storage {#simple-object}
 
@@ -116,10 +137,15 @@ import { foo } from './foo';
 The previous object is generic. It works for any app that wants to support localStorage. Here is another object tailor made to work with our React-based **Address** component:
 
 ```javascript
+import {saveByIndex} from "./elf-local-storage";
+import logger from "./elf-logger";
+
+logger.off();
+
 const KEY_SET = ['elven-store', 'set', 'elven-count'];
 
 function setLocalStorage(addresses) {
-    logger.log('SET LOCAL', addresses);
+    console.log('SET LOCAL', addresses);
     localStorage.setItem(KEY_SET[0], KEY_SET[1]);
     localStorage.setItem(KEY_SET[2], addresses.length);
     addresses.forEach(function(address, index) {
@@ -141,7 +167,7 @@ export {
 
 We store data in local storage using **key--value** pairs:
 
-| Header One     | Header Two     |
+| Key            | Value          |
 | :------------- | :------------- |
 | elven-store    | set            |
 | elven-count    | 100            |
@@ -149,6 +175,24 @@ We store data in local storage using **key--value** pairs:
 | elf0000        | firstName: "Sherrod", etc |
 
 if **elven-store** is set to **set**, then we can assume our data has been loaded into **localStorage**. Otherwise, it needs to be loaded. **elven-count** shows how many records were loaded. The remaining data, such as elf0000, is where the actual data is stored.
+
+Familiarize yourself with **KEY_SET**:
+
+```javascript
+const KEY_SET = ['elven-store', 'set', 'elven-count'];
+```
+
+This line sets **elven-store** equal to **set**:
+
+```javascript
+localStorage.setItem(KEY_SET[0], KEY_SET[1]);
+```
+
+This line sets **elven-count** equal to 100:
+
+```javascript
+localStorage.setItem(KEY_SET[2], addresses.length);
+```
 
 ![Address Local Storage in Chrome][addls]
 
@@ -227,7 +271,6 @@ Do this to ensure your code is working:
 - Look at **Local Storage | http://localhost:3000**
 
 Then make sure that **localStorage** gets properly initialized after you refresh your home page. In other words, you should see **localStorage** filled up with at least 100 addresses when you refresh your home page.
-
 
 ## Links
 
