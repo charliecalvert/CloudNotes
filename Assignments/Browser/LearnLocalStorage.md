@@ -10,6 +10,7 @@ Learn about local storage in the browser.
 ## Video
 
 - [Local Storage Video](https://youtu.be/8Nyph1YaPXI)
+- [The merge branch step](https://youtu.be/-AICMK2GnXc)
 
 ## Elf Logger
 
