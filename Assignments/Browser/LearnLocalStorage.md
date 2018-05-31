@@ -19,7 +19,7 @@ The source for **ElfDebugEnzyme** as a gist: [http://bit.ly/elf-debug-enzyme](ht
 
 ## Elf Local Storage {#simple-object}
 
-Save this as **assets/elf-local-storage**:
+Save this as **assets/elf-local-storage.js**. It's purpose is to provide a few simple utilities functions that wrap the JavaScript **localStorage** object:
 
 ```javascript
 const ELF_TAG = 'elf';
@@ -59,7 +59,12 @@ function clearLocalStorage() {
     localStorage.clear();
 }
 
-export {saveByIndex, getByIndex, removeElfKeys, clearLocalStorage};
+export {
+  saveByIndex,
+  getByIndex,
+  removeElfKeys,
+  clearLocalStorage
+};
 ```
 
 Use it like this:
@@ -73,6 +78,83 @@ Since the above could get out of data. I will try to maintain it here:
 - [Elf Local Storage][elf-local-storage]
 
 [elf-local-storage]: https://gist.github.com/charliecalvert/d8404b826ee22702c501368335624622
+
+
+## Named Exports
+
+Please note that we don't use **export default** in the **elf-local-storage** module. Instead, we declare a set of functions such as **saveByIndex** and **getByIndex** and we export them explicitly by name:
+
+```javascript
+export {
+  saveByIndex,
+  getByIndex,
+  removeElfKeys,
+  clearLocalStorage
+};
+```
+
+We import them like this, with curly-braces:
+
+```javascript
+import { saveByIndex, getByIndex } from "./elf-local-storage";
+```
+
+In general, when we import code that uses **export default** we write this:
+
+```javascript
+import foo from './foo';
+```
+
+When import code that's exported by name, we use curly-braces, like this:
+
+```javascript
+import { foo } from './foo';
+```
+
+## Define Address LocalStorage
+
+The previous object is generic. It works for any app that wants to support localStorage. Here is another object tailor made to work with our React-based **Address** component:
+
+```javascript
+const KEY_SET = ['elven-store', 'set', 'elven-count'];
+
+function setLocalStorage(addresses) {
+    logger.log('SET LOCAL', addresses);
+    localStorage.setItem(KEY_SET[0], KEY_SET[1]);
+    localStorage.setItem(KEY_SET[2], addresses.length);
+    addresses.forEach(function(address, index) {
+        saveByIndex(address, index);
+    });
+    return addresses;
+}
+
+function dataLoaded() {
+    const elfStore = localStorage.getItem(KEY_SET[0]);
+    return (elfStore === KEY_SET[1]);
+}
+
+export {
+    setLocalStorage,
+    dataLoaded
+};
+```
+
+We store data in local storage using **key--value** pairs:
+
+| Header One     | Header Two     |
+| :------------- | :------------- |
+| elven-store    | set            |
+| elven-count    | 100            |
+| elf0000        | firstName: "Tammy", etc   |
+| elf0000        | firstName: "Sherrod", etc |
+
+if **elven-store** is set to **set**, then we can assume our data has been loaded into **localStorage**. Otherwise, it needs to be loaded. **elven-count** shows how many records were loaded. The remaining data, such as elf0000, is where the actual data is stored.
+
+![Address Local Storage in Chrome][addls]
+
+[addls]:https://s3.amazonaws.com/bucket01.elvenware.com/images/address-local-storage-app-view.png
+
+**IMAGE**: _We can view **localStorage** in the Application page of the Chrome Developer tools._
 
 ## Create JSON File {#create-json}
 

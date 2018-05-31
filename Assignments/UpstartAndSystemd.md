@@ -1,5 +1,15 @@
 ## Overview
 
+Use systemd to ensure your program starts every time your Ubuntu system reboots. systemd keeps your program running.
+
+## Video
+
+- [Talk me through it with a video][sdv]
+
+[sdv]: https://youtu.be/2TFveipFpKQ
+
+## systemd vs UpStart
+
 There are two ways to start projects on Ubuntu based distros:
 
 - upstart (15.04)
@@ -41,22 +51,18 @@ You probably don't need any more details, but further information on detecting t
 
 - [https://unix.stackexchange.com/a/164092/91728][is]
 
-## Symbolic Link
+## Symbolic Links in systemd
 
-You are also going to need to create a symbolic link to your program in the **~/bin** directory. Something like this. First, be sure you have a bin directory:
+We should create a symbolic link to our project. First, be sure you have a bin directory:
 
 ```bash
 mkdir ~/bin
 ```
 
-```bash
-ln -s ~/Git/isit320-calvert-2016/Week04-ThreeFloor ~/bin/three-floor
-```
-
-or like this:
+Then create the link:
 
 ```bash
-$ ln -s ~/Git/isit322-calvert-2016/Week10-ElvenImagePicker/ ~/bin/nrb
+$ ln -s ~/Git/prog272-lastname-2018/NodeRouteBasics/ ~/bin/nrb
 ```
 
 This symbolic link provides several benefits:
@@ -64,26 +70,19 @@ This symbolic link provides several benefits:
 - It shortens your path
 - It can be easily changed to point to a new location without forcing you to rewrite your  **upstart** or **systemd** script.
 
-## systemd
+We will use the link when composing our systemd configuration file.
 
-Upstart is being replaced by **systemd**. This caused a huge uproar in the Linux community, but the transition is more or less complete at this stage (Nov, 2016). Fortunately, if you understand Upstart it is not hard to switch to **systemd**. You should switch to **systemd** if running on Ubuntu 15.10 or later, otherwise, stick with **upstart**.
+## Unit Configuraton File
 
-If you are uncertain, here is how to find out which version of ubuntu you are running:
-
-```bash
-cat /etc/lsb-release
-$ELF_UTILS/SetupLinuxBox/UbuntuReleaseNumber.sh
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=15.10
-DISTRIB_CODENAME=wily
-DISTRIB_DESCRIPTION="Ubuntu 15.10"
-```
-
-A sample **systemd** start up script (aka service file) called **nrb.service**:
+Create a **systemd** service file called **nrb.service**:
 
 ```
+[Unit]
+Description=Run NodeRouteBasics
+After=network.target
+
 [Service]
-ExecStart=/home/bcuser/npm/bin/npm start
+ExecStart=/usr/bin/node ./bin/www
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
@@ -92,7 +91,7 @@ SyslogIdentifier=nrb
 User=ubuntu
 Group=ubuntu
 Environment=NODE_ENV=production
-Environment=PORT=30026
+Environment=NRB_PORT=30029
 
 [Install]
 WantedBy=multi-user.target
@@ -100,12 +99,34 @@ WantedBy=multi-user.target
 
 When examining the above, check carefully, looking for changes that you will need to make:
 
-- ExecStart path to your **bin/www** file
+- ExecStart
+- WorkingDirectory
 - SyslogIdentifier
 - User
 - Group
+- Environment PORT
 
 For instance, the **User** and **Group** would be **ubuntu** on EC2 and **bcuser** on most copies of Pristine Lubuntu.
+
+Make sure the PORT matches the code in your **/bin/www** file:
+
+```javascript
+var port = normalizePort(process.env.NRB_PORT || '30025');
+```
+
+## Symbolic Link Role
+
+Our systemd script is called **nrb.service**. If you look inside it, you will see that it assumes your copy of **NodeRouteBasics** can be accessed via a symbolic link called **nrb** that is found in the **~/bin** directory:
+
+```
+ExecStart=/home/charlie/npm/bin/npm start
+WorkingDirectory=/home/charlie/bin/nrp
+```
+
+Regardless of where you keep **NodeRouteBasics** on your system, our script can find it. If you move the program, you don't have to update your configuration file, just update the symbolic link.    
+
+
+## Deploy Configuration File
 
 Deploy the service file:
 
@@ -147,6 +168,8 @@ Dec 03 08:59:01 forestpath systemd[1]: Started nrb.service.
 Dec 03 08:59:02 forestpath node-sample[4102]: In bin/www the environment is production
 ```
 
+## Manage your Program
+
 To see logs and debug information, try this:
 
 ```
@@ -163,6 +186,72 @@ systemctl disable nrb
 I'm not certain about the disable command at this time. I think it tells systemd not to load at boot, but allows us to leave the file in **/etc/systemd/system**. Not sure though.
 
 The first and second links below will get you up to speed fairly quickly.
+
+## Useful Scripts
+
+No matter how simple the commands, it is almost always worth taking a moment to create some bash scripts to automate the process. Here are three that I find useful:
+
+copy-nrb:
+
+```bash
+sudo cp nrb-charlie.service /etc/systemd/system/nrb.service
+sudo systemctl enable nrb
+sudo systemctl start nrb
+systemctl status nrb
+```
+
+startService:
+
+```bash
+#!/bin/bash
+
+sudo systemctl enable nrb.service
+sudo systemctl start nrb.service
+```
+
+stopService:
+
+```bash
+#!/bin/bash
+
+sudo systemctl stop nrb.service
+sudo systemctl disable nrb.service
+```
+
+## ExecStart
+
+We have a lot of options:
+
+```
+ExecStart=/home/bcuser/npm/bin/npm start
+ExecStart=/usr/bin/node ./bin/www
+ExecStart=/home/charlie/npm/bin/npm run node-start
+WorkingDirectory=/home/ubuntu/bin/nrb
+```
+
+I'm including the **WorkingDirectory** because none of the options will work if that is not setup correctly.
+
+The first option may not work correctly because it often uses **nodemon** which may not be installed for the root user.
+
+The second option should always work if the program is set up correctly, that is, if it runs under normal conditions when not using systemd. It is my preferred solution.
+
+The third option assumes you have set up something like this in **package.json**:
+
+```javascript
+"scripts": {
+    "test": "node jasmine-runner.js",
+    "start": "nodemon ./bin/www",
+    "node-start": "node ./bin/www"
+  },
+```
+
+Again, the option I think is simplest to use is this one:
+
+```
+ExecStart=/usr/bin/node ./bin/www
+```
+
+## Links
 
 - [Sysdemd for Node Developers][sysd-node]
 - [Systemd get started](http://patrakov.blogspot.com/2011/01/writing-systemd-service-files.html)
@@ -213,7 +302,45 @@ post-start script
 end script
 ```
 
-## Symbolic Links
+## Copy the File
+
+Copy the **NodeRoutesParams** file to the **/etc/init** directory:
+
+    sudo cp nrb.conf /etc/init/.
+    sudo mkdir /root/.config
+    sudo cp ~/.config/ElvenConfig.json /root/.config/.
+
+Start the program
+
+    sudo start nrb
+
+Stop the program
+
+    sudo stop nrb
+
+If you reboot the system, your program will start automatically.
+
+Error messages and and other output are in: **/var/log/node.log**. That means you can see the debug output with this command:
+
+```
+cat /var/log/node.log
+```
+
+That is the case because of this bit from our conf file: **>> /var/log/node.log 2>&1**
+
+
+
+Browse to your instance:
+
+    <elasticIp>:30025/
+
+If you were testing all this out on your copy of Lubunutu,
+you would do this:
+
+    127.0.0.1:30025/
+
+
+## Symbolic Links in Upstart
 
 Create a link our project, or whatever project you want to use for your final:
 
@@ -268,7 +395,7 @@ Browse to your instance:
 If you were testing all this out on your copy of Lubunutu,
 you would do this:
 
-    127.0.0.1:30025/
+    127.0.0.1:30025/    
 
 ## Elastic IP
 

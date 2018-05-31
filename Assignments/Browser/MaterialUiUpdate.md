@@ -339,6 +339,105 @@ import Button from '@material-ui/core/Button';
 </Button>
 ```
 
+## Updated Tests
+
+I'll just give you at least part of my ElfHeader tests:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ElfHeader from '../components/ElfHeader';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { BrowserRouter } from 'react-router-dom';
+import {createMuiTheme} from "@material-ui/core/styles/index";
+
+configure({ adapter: new Adapter() });
+
+describe('ElfHeader tests', function() {
+
+    const themeDark = createMuiTheme({
+        palette: {
+            type: 'dark'
+        }
+    });
+
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <MuiThemeProvider theme={themeDark}>
+                <BrowserRouter>
+                    <ElfHeader />
+                </BrowserRouter>
+            </MuiThemeProvider>,
+            div
+        );
+        ReactDOM.unmountComponentAtNode(div);
+    });
+
+    it('renders title and tests with containsMatchingElement', () => {
+        const wrapper = shallow(<ElfHeader />);
+        const target = <Typography>Address Maven</Typography>;
+        expect(wrapper.dive().containsMatchingElement(target)).toBe(true);    
+    });
+});
+```
+
+The most important change was to **MuiThemeProvider**. Finding a way to get the header title was simple once I saw how to do it with dive().
+
+Here is the code from **ElfHeader.js** we are trying to match in the **title with containsMatchingElement** test:
+
+```html
+<Typography variant="title" color="inherit" className={classes.flex}>
+    Address Maven
+</Typography>
+```
+
+Make sure you copy of **ElfHeader.js** contains that string, or **GitExplorer**, or whatever is appropriate. Use your common sense to match the text found in **ElfHeader** in your **ElfHeader.test** file.
+
+There are some notes on testing with material-ui, but at least at the time of this writing I don't see what they bring to the party.
+
+- [MUI Testing](https://material-ui.com/guides/testing/)
+
+## Commentary on tests
+
+I found that material-ui was not breaking my tests even when using **withStyles** and that this worked just fine using plain old enzyme:
+
+```javascript
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+
+// CODE OMITTED HERE
+
+it('renders title matches it with containsMatchingElement', () => {
+     const wrapper = shallow(<ElfHeader />);
+     const target = <Typography>Address Maven</Typography>;
+     expect(wrapper.dive().containsMatchingElement(target)).toBe(true);
+});
+```
+
+Here was the JSX I wanted to match:
+
+```html
+<Typography variant="title" color="inherit" className={classes.flex}>
+    Address Maven
+</Typography>
+```
+
+And here was the messy code material-ui produced:
+
+```html
+<WithStyles(Typography) variant="title" color="inherit" className="ElfHeader-flex-100">
+       Address Maven
+</WithStyles(Typography)>
+```
+
+Nevertheless, my test passed.
+
+I say this only because I want to reassure others that this type of test should pass even when using **withStyles**.
+
 ## Turn it in
 
 Save and push your work. Tell me:
