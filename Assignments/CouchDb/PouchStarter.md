@@ -267,6 +267,18 @@ add-cors-to-couchdb http://192.168.2.25:5984
 
 ## Connect to CouchDb
 
+You need to add this to the body of your index.html:
+
+```javascript
+<div id="sync-wrapper">
+  <div id="sync-success">Currently syncing</div>
+  <div id="sync-error">There was a problem syncing</div>
+</div>
+```
+
+Then add these methods just above your render method:
+
+
 ```
 syncError = () => {
     this.syncDom.setAttribute('data-sync-state', 'error');
@@ -279,6 +291,7 @@ sync = () => {
     this.db.replicate.from(this.remoteCouch, opts, this.syncError);
 };
 ```
+
 
 
 ## Turn it in
