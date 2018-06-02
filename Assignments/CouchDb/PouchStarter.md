@@ -299,3 +299,36 @@ sync = () => {
 Turn in working code. Tag it, specify folder. Add the branch name if you are using one.
 
 Include a screenshot of the CouchDb fouton view of the database showing that you inserted data into the addresses table.
+
+
+## Upgrade to Latest CouchDb
+
+Delete the old version:
+
+```
+sudo apt-get remove --auto-remove couchdb
+```
+
+Since we have not done much with CouchDb, we can simply remove all the data and configuration files as well:
+
+```
+sudo apt-get purge --auto-remove couchdb
+```
+
+Now install 2.1.1:
+
+```
+echo "deb https://apache.bintray.com/couchdb-deb xenial main" \
+    | sudo tee -a /etc/apt/sources.list
+
+curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc \
+    | sudo apt-key add -
+
+sudo apt-get update && sudo apt-get install couchdb
+```
+
+Choose StandAlone
+
+Enter 0.0.0.0
+
+Unless you had one before, continue with the Admin Party for now.
