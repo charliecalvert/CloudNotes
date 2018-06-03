@@ -292,7 +292,11 @@ sync = () => {
 };
 ```
 
+When you sync, you will get several 404 errors that can be ignored. Note this message which should appear at the end of your console messages when you sync:
 
+```
+The above 404 is totally normal. PouchDB is just checking if a remote checkpoint exists.
+```
 
 ## Turn it in
 

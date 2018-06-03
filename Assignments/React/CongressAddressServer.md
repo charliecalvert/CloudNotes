@@ -217,6 +217,21 @@ componentDidMount() {
 }
 ```		
 
+## Help with Errors
+
+This might help you find your errors if you get any. Insert a **console.log** statement as shown below and then set a break point at the start of your render method on the console.log statement that you added:
+
+```javascript
+render() {
+    console.log('Address render called', this.state.address);
+    return (...)
+}
+```
+
+The goal is to see what your state looks like after your fetch.
+
+One more hint. In your fetch method, consider calling **setAddress**.
+
 ## Next and Previous Buttons
 
 The final step is to add two buttons to your project so you can iterate forward and backwards through the address. The buttons should be in the Presentation component, which we are calling **AddressShow** and the logic for iterating over the record should be in a **Address**.
