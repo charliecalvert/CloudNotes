@@ -2,6 +2,7 @@
 
 Refactor Pouch Starter and add support for live syncing.
 
+
 ## Update to Latest CouchDb
 
 Details are [here][ulc].
@@ -14,6 +15,8 @@ Details are [here][ulc].
 1. Run CreateSymbolicLinks: **./CreateSymbolicLinks**
 
 Now you can get a template by typing **get-template** and choosing the template you want from the menu.
+
+Run: **source ./bashrc**
 
 ## Install Packages
 
