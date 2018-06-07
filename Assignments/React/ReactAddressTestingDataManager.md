@@ -2,7 +2,23 @@
 
 The introduction of the **PouchDdManager** complicates our testing. Let's look at **Address.test.js**.
 
+## Testing ElfHeader
 
+We need to use **MuiThemeProvider**
+
+```JavaScript
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const themeDark = createMuiTheme({
+    palette: {
+        type: 'dark'
+    }
+});
+
+// Later
+
+<MuiThemeProvider theme={themeDark}>
+```    
 
 ## Fake Mock PouchDbManager;
 
