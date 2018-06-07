@@ -1,5 +1,3 @@
+* [Prog272Final2018.html](Prog272Final2018.html)
 * [Prog272Midterm2018.html](Prog272Midterm2018.html)
-* [Resources.html](Resources.html)
-* [Week07.html](Week07.html)
-* [Week08.html](Week08.html)
 * [master-list.html](master-list.html)

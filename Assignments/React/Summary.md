@@ -1,6 +1,7 @@
 * [CongressAddressServer.html](CongressAddressServer.html)
 * [ReactAddressEditDialog.html](ReactAddressEditDialog.html)
 * [ReactAddressMock.html](ReactAddressMock.html)
+* [ReactAddressTestingDataManager.html](ReactAddressTestingDataManager.html)
 * [ReactNativeBasics.html](ReactNativeBasics.html)
 * [ReactPropsMaterial.html](ReactPropsMaterial.html)
 * [RestBasics.html](RestBasics.html)
