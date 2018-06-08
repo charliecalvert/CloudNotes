@@ -4,8 +4,8 @@ Allow the user to pop up a dialog and edit a record. Something very much like th
 
 ## Create Files
 
-- component/AddressEditFields
-- component/AddressEdit
+- components/AddressEditFields
+- components/AddressEdit
 
 ## Create Fields
 
@@ -21,7 +21,7 @@ class AddressFields extends Component {
                 <TextField
                     autoFocus
                     margin="dense"
-                    id="name"
+                    id="firstName"
                     label="First Name"
                     type="string"
                     value={this.props.address.firstName}
@@ -115,7 +115,7 @@ In the **Dialog** body below the **DialogTitle** add this:
 </DialogContent>
 ```
 
-In the **DialogContent**, below the **DialogContentText**, add the **AddressEditFields**. It will take two props. Study the **AddressEditFields** object and calculate the two props that need to be passed in:
+In the **DialogContent**, below the **DialogContentText** (after it, not inside it),  add the **AddressEditFields**. It will take two props. Study the **AddressEditFields** object and calculate the two props that need to be passed in:
 
 ```html
 <AddressEditFields // YOU ADD THE PROPS />
