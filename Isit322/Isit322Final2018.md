@@ -70,3 +70,9 @@ State:
 - Branch: Final
 - Folder: GitExplorer
 - Tag: vX.X.X
+
+## Links
+
+Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
+
+[pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle

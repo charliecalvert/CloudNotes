@@ -336,3 +336,18 @@ Choose StandAlone
 Enter 0.0.0.0
 
 Unless you had one before, continue with the Admin Party for now.
+
+## Data Cycle
+
+Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
+
+## Read about Storage Tools
+
+- [Chrome Tools][cdt]
+- [FireFox Tools][fft]
+
+[cdt]: https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage
+
+[fft]: https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
+
+[pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle

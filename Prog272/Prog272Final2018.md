@@ -64,3 +64,9 @@ Get AddressMaven and CongressServer running on EC2 and give me a link to your ru
   - I don't really care what percentage of coverage you have.
   - In your README.md file, list the three files you created with the highest coverage.
   - Extra credit, get 80% coverage on all your files.
+
+## Links
+
+Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
+
+[pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle

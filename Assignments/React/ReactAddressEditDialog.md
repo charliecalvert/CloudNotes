@@ -95,7 +95,21 @@ import Dialog from '@material-ui/core/Dialog';
 
 ## Create a Dialog Title
 
-In the body of the dialog add a title:
+We are going to add several sections to the Dialog. Here is the overall flow, which I will build piece by piece in the next sections of this text:
+
+
+- Dialog
+  - DialogTitle
+  - DialogContent
+    - DialogContentText
+    - AddressEditFields
+  - DialogActions
+    - Button
+    - Button
+
+It's important to get the components nested properly. We create a **Dialog**, then put a **DialogTitle**, **DialogContent** and **DialogActions** inside it. Inside of **DialogContent** we have **DialogContentText** and **AddressEditFields**. Inside of **DialogActions** we have two **Button** components.
+
+Let's start by adding the **DialogTitle**. In the body of the **Dialog** so can have a title for our dialog:
 
 ```javascript
 <DialogTitle id="form-dialog-title">
@@ -114,6 +128,8 @@ In the **Dialog** body below the **DialogTitle** add this:
    </DialogContentText>
 </DialogContent>
 ```
+
+**NOTE**: _The text "Fill in the fields..." etc is an instruction to the end user, not to you, the developer._
 
 In the **DialogContent**, below the **DialogContentText** (after it, not inside it),  add the **AddressEditFields**. It will take two props. Study the **AddressEditFields** object and calculate the two props that need to be passed in:
 
@@ -202,5 +218,20 @@ For this to work, there needs to be a bit of Boolean state called **editOpen** t
 Push, tag, Let me know directory and tag.
 
 
+## Data Cycle
+
+We should pull data from **CongressServer** only once with the **Get Address List** button. Then we push it to **IndexedDB** with the **Convert Address** button.
+
+From there we use the **Sync** button to push it to CouchDB. Once it is in CouchDb, then we get notified of of updates whenever we are in Sync mode.
+
+Of course we can start the cycle again at any time by completely clearing Storage in the browser and deleting the database from CouchDB.
+
+If you are in "Sync mode", that is, if you first push the Sync button, then when you Save your work, it will be saved both to IndexDB (in the browser) and to CouchDB.
+
+The best way to see this is to open your to the same record in two browsers. For instance, one copy in Chrome and the other in FireFox. Now put them both in Sync mode. Then start editing a record you should automagically see the change in both browsers when you make the change in one.
+
+Create Index doesn't copy the whole database, it just creates an Index on the **LastName** field.
+
+When we Sync with CouchDb the first time, our App will send both the current data, including updates and deletes, and it will also send the Index on last name. Thereafter it will sync both to and from CouchDB, only the changes.
 
 [top]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator

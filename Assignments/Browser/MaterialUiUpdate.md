@@ -360,7 +360,7 @@ import Icon from '@material-ui/core/Icon';
 
 Here are the things you must have to use **withStyles**. Why this is better or good I do not know.
 
-In **index.js** do this if you have not done so already:
+In **index.html** do this if you have not done so already:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>

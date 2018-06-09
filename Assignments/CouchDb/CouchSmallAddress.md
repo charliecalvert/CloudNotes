@@ -397,6 +397,20 @@ render() {
 }
 ```
 
+We are using the MaterialUi **Paper** component. Here are the docs:
+
+- [Paper API](https://material-ui.com/api/paper/)
+
+- [Paper Demo](https://material-ui.com/demos/paper/)
+
+Remember to hit the <> symbol to see the code on the demo page.
+
+Here is the import statement:
+
+```javascript
+import Paper from '@material-ui/core/Paper';
+```
+
 ## Enable the Menu
 
 At the top of **App.js**:
@@ -560,6 +574,12 @@ delete = (name) => {
 Push Your work. Tag it. Submit the assignment.
 
 We will add the edit functionality on Thursday.
+
+## Data Cycle
+
+Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
+
+[pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle
 
 [ulc]: http://www.ccalvert.net/books/CloudNotes/Assignments/CouchDb/PouchStarter.html#upgrade-to-latest-couchdb
 [home]:https://s3.amazonaws.com/bucket01.elvenware.com/images/small-address-master-home.png
