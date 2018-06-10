@@ -223,6 +223,12 @@ export default App;
 
 Do something similar for all your modules.
 
+You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
+
+[aa]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html#add-proptypes
+[ab]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html#proptypes
+[ac]: https://reactjs.org/docs/typechecking-with-proptypes.html
+
 ## Put appInit in its Own File {#num-int}
 
 I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere.

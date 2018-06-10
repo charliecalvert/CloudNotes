@@ -4,6 +4,48 @@ Add [ESLint][esl] and [Prettier][pr] to your [GitExplorer][ge]  assignment.
 
 Details for completing these tasks are in the [ESLint][esla] assignment.
 
+## Video
+
+Watch the [video][v1].
+
+## Prettier
+
+To run the script, first make it executable, then run it:
+
+```bash
+chmod +x prettier
+./prettier
+```
+
+## PropTypes
+
+If an object is passed **props**, ESLint wants you to declare the type for each property. Begin by importing **PropTypes**:
+
+```JavaScript
+import PropTypes from 'prop-types';
+```
+
+In this example we define the **props** passed to a React component called **MyReactComponent**. The **address** property is an object with two properties: **firstname** and **lastname**.
+
+```javascript
+MyReactComponent.propTypes = {
+    classes: PropTypes.object.isRequired,
+    address: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string
+    }),
+    save: PropTypes.func    
+};
+```
+
+This usually appears at the bottom of a file, just above an **export** statement.
+
+You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
+
+[aa]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html#add-proptypes
+[ab]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html#proptypes
+[ac]: https://reactjs.org/docs/typechecking-with-proptypes.html
+
 ## Turn it in
 
 I'm expecting to find the following files in your **GitExplorer** project folder:
@@ -38,9 +80,10 @@ $ eslint .
 
 The point is that we see nothing: no errors, no warnings, no output at all when we run **eslint**.
 
-Both **GitExplorer** and **NativeExplorer** should pass all these tests. You can assume that all future projects should pass these tests, especially the **Midterm** and the **Final**.
+Depending on which course you are in, both **AddressMaven/GitExplorer** and **NativeAddress/NativeExplorer** should pass all these tests. You can assume that all future projects should pass these tests, especially the **Midterm** and the **Final**.
 
 [esl]: https://eslint.org/
 [esla]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
 [pr]: https://github.com/prettier/prettier
 [ge]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html
+[v1]: https://youtu.be/bsxBHLxYMrA

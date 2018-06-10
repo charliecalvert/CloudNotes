@@ -579,6 +579,35 @@ We will add the edit functionality on Thursday.
 
 Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
 
+## Where does the DOC come From {#what-doc}
+
+In this code from **PouchDbManager.js**, where does the "doc" parameter come from?   
+
+```javascript
+delete = id => {
+     const that = this;
+     return that.db.get(id).then(function(doc) {
+         return that.db.remove(doc);
+     });
+};
+```
+
+The **doc** is sent back from the database. We want to delete a particular document ( in traditional relational databases it would be called a record). We look it up by ID. The database sends the document (record) back to us, and then we use it in the call that actually removes the document. More details are here and at the top of this same page:
+
+- [PouchDb Delete][delete]
+
+In other words, you might want to read the [section on dancing][dance] from the document pointed to above. It will help you better understand the code for deleting a document.
+
+## Nothing is Lost {#nothing-lost}
+
+CouchDB (and therefore also PouchDB) never really deletes or updates a document. Instead, it marks a document as deleted creates a version of the document. That is what the **_rev** field is about. It marks the version of the document.
+
+Suppose we update Robert Aderholt to Rob Aderholt. The old record is still visible in **IndexedDB**, as is the new one.
+
+![Updated document visible and old document][updv]
+
+Read the links in the previous section for more information on this process.
+
 [pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle
 
 [ulc]: http://www.ccalvert.net/books/CloudNotes/Assignments/CouchDb/PouchStarter.html#upgrade-to-latest-couchdb
@@ -587,3 +616,9 @@ Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
 [idb]:https://s3.amazonaws.com/bucket01.elvenware.com/images/small-address-master-tools.png
 [menu]: https://s3.amazonaws.com/bucket01.elvenware.com/images/small-address-master-menu.png
 [dp]: http://www.elvenware.com/charlie/development/web/JavaScript/GettingStarted.html#good-code
+
+[delete]:  https://pouchdb.com/guides/updating-deleting.html#deleting-documents
+
+[dance]: https://pouchdb.com/guides/updating-deleting.html#why-must-we-dance-this-dance
+
+[updv]: https://s3.amazonaws.com/bucket01.elvenware.com/images/small-address-master-updates.png

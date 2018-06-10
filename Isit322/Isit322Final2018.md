@@ -71,6 +71,28 @@ State:
 - Folder: GitExplorer
 - Tag: vX.X.X
 
+## Data Details
+
+I want you to be able to do offline and online editing of some data that you pull from GitHub. We should be able to edit records found in **IndexedDb** and in **CouchDB**. We are not, however going to try to push this data back to GitHub.
+
+For now, I suggest that we just just download the data we get when we ask for information on Gists. This would be the fields we see in routes/gists.js:
+
+```javascript
+const results = data.map(item => ({
+    htmlUrl: item.html_url,
+    id: item.id,
+    gitPullUrl: item.git_pull_url,
+    description: item.description,
+    ownerLogin: item.owner.login,
+    avatarUrl: item.owner.avatar_url,
+    files: Object.keys(item.files)
+}));
+```
+
+We can store all those fields in the CouchDB database and in IndexDB. We can also edit, delete and refresh them.
+
+The most difficult one would be files if we were storing more than one file in a gist. But I am not in any of my examples and I would settle for the first file if you have gists with more than one file.
+
 ## Links
 
 Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].

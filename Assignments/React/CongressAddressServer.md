@@ -361,6 +361,27 @@ When using systemd you can set the port in your configuration file:
 
 	Environment=SERVER_PORT=30027
 
+## The Same Origin Policy {#same-origin-policy}
+
+Note that we can query the **CongressServer** running on EC2 from Native React programs running on our local machine.
+
+However, the _Same Origin Policy_ (closely related to CORS) prevents us from querying **CongressServer** running on EC2 from a Web App running on our local machine. If both the Web App called **AddressMaven** and **CongressServer** were running on EC2 or on our local machine, then it would work...
+
+It is possible to modify **CongressServer** so that it can handle CORS requests, but I haven't done that for two reasons:
+
+- It can be dangerous.
+- I want you to understand what CORS is. If everything just works all the time, then you will never understand what CORS and the Same Origin Policy is all about. This is an important concept in Web Development and one that you need to understand if you want to work in this field.
+
+Actually try to read some of these links:
+
+- [MDN on Same Origin Policy][msop]
+
+- [Wikipedia on Same Origin Policy][wsop]
+
+[msop]:https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Cross-origin_network_access
+
+[wsop]: https://en.wikipedia.org/wiki/Same-origin_policy
+
 [w3icon]: https://www.w3.org/2005/10/howto-favicon
 
 [wmex]: https://commons.wikimedia.org/wiki/File:FAVICON_R5.png

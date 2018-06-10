@@ -112,6 +112,13 @@ You should install **PropTypes**:
 npm install --save prop-types
 ```
 
+You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
+
+[aa]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html#proptypes
+[ab]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html#proptypes
+[ac]: https://reactjs.org/docs/typechecking-with-proptypes.html
+
+
 ## Do Something on Your Own
 
 The only work you need to is modify **index.js** and **App.js** so that **App** takes two props, and can display both the values 2 and 3 on separate lines in the final product.

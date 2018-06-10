@@ -134,7 +134,7 @@ yarn start
 
 ## Turn it in
 
-Take a screen shot of your app running in the Android X86 VM.
+Take a screen shot of the Android Native application you built that you are most proud of running in the Android X86 VM.
 
 ## Build from ISO
 
