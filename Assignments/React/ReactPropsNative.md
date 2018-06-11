@@ -35,36 +35,43 @@ If your file names or architecture differs in small ways from mine, just make th
 Over time we can develop a good styleSheet for our program. Start by deleting the existing content in **elf-styles** and replacing it with this:
 
 ```
-import {StyleSheet} from "react-native";
+import {StyleSheet} from 'react-native';
 
-export default StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
-        marginTop: 25,
-        padding: 10,
-    },
-    gitContainer: {
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    header: {
-        fontSize: 20,
+        flex: 1,
+        marginTop: 24,
+        marginBottom: 1,
+        padding: 50,
+        backgroundColor: 'powderblue'
     },
     nav: {
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        backgroundColor: 'skyblue'
+    },
+    displayArea: {
+        flexDirection: "column",
+        backgroundColor: "steelblue",
+    },
+    centerContent: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    header: {
+        fontSize: 20
     },
     navItem: {
         flex: 1,
         alignItems: 'center',
-        padding: 10,
+        padding: 10
     },
     subNavItem: {
-        padding: 5,
+        padding: 5
     },
     topic: {
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: 15
     },
     buttonView: {
         marginRight: 40,
@@ -78,10 +85,11 @@ export default StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: '#fff',
-        width: "75%"
+        width: '75%'
     }
 });
 
+export default styles;
 ```
 
 ## Start Porting Our Code
