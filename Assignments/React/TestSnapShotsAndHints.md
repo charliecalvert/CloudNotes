@@ -222,66 +222,39 @@ I need it in **SnapShots.test.js** and **Address.test.js** because we call **fet
 
 ## Address and after Click Field Tests
 
+How can we test the address component? It much fussing, the solution turned out to be simple. We want to call **setAddress** and pass in an index, and ensure that this gets us new data.
+
+- [FakeDataManager][fdm]
+
 ```javascript
-beforeEach(() => {
-   global.fetch = jest.fn().mockImplementation(() => {
-   const promise = new Promise((resolve) => {
-      resolve({
-         ok: true,
-         json: function() {
-            return [{
-               firstName: 'Patty',
-               lastName: 'Murray',
-               address: '154 Russell Senate Office Building',
-               city: 'Washington',
-               state: 'D.C.',
-               zip: '20510',
-               phone: '(202) 224-2621',
-               fax: '(202) 224-0238',
-               tollfree: '(866) 481-9186'
-            }];
-         }
-      });
-   });
-   return promise;
-   });
+import addresses from '../address-list';
+import dataManager from '../assets/FakeDataManager';
+
+describe('Address tests', function() {
+  let wrapper = null;
+
+  beforeEach(() => {
+      wrapper = shallow(<Address
+          dataManager={dataManager}
+          addressList={addresses}/>);
+  });
+
+  const addressProp = wrapper => wrapper.find('WithStyles(AddressShow)').prop('address');
+
+  it('renders and displays the default first name from props', () => {
+      expect(addressProp(wrapper).firstName).toEqual('unknown');
+  });
+
+  it('renders and displays the default first name from FakeData', () => {
+      expect(wrapper.state().address.firstName).toEqual('Patty');
+  });
+
+  it('renders state of firstName after button click', () => {
+      wrapper.instance().setAddress(1);
+      expect(wrapper.state().address.firstName).toEqual('Robert');
+  });
+
 });
-
-const setAddress = (wrapper) => {
-		wrapper.instance().getAddress();
-		setImmediate(() => {
-				wrapper.update();
-		});
-};
-
-it('renders without crashing', () => {
-	const div = document.createElement('div');
-	ReactDOM.render(<MuiThemeProvider><Address/></MuiThemeProvider>, div);
-	ReactDOM.unmountComponentAtNode(div);
-});
-
-const afterClickFieldTest = (wrapper, finder) => {
-	setImmediate(() => {
-		wrapper.update();
-		wrapper.instance().setAddress(0);
-		setImmediate(() => {
-			wrapper.update();
-			try {
-					finder();
-			} catch (e) {
-					console.log(e);
-			}
-		});
-	});
-};
-
-it('renders state of firstName after button click', () => {
-		const wrapper = shallow(<Address addressList={addresses}/>);
-		afterClickFieldTest(wrapper, () => {
-				expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('Patty');
-		});
-});
-
 ```
 
 ## React Spies
@@ -316,30 +289,66 @@ it('calls fetchServer button click', () => {
 });
 ```
 
-## AddressShow and afterClickFieldTest
+## Testing AddressShow
+
+This is the old style, before we needed to call **dive()**:
 
 ```javascript
-let wrapper = null;
+import addresses from '../address-list';
 
-const setAddress = () => {
-	const address=addresses[1];
-	wrapper.setProps({ address: address });
+describe('AddressShow Shallow Suite', function() {
+  let wrapper = null;
+
+  const setAddress = () => {
+  	const address=addresses[1];
+  	wrapper.setProps({ address: address });
+  };
+
+  const afterClickFieldTest = (name) => {
+  	wrapper = shallow(<AddressShow address={addresses[0]} setAddress={setAddress}/>);
+  	const patty = <p className="App-intro">{name}</p>;
+  	wrapper.find('#setAddress').simulate('click');
+  	//console.log(wrapper.debug());
+  	expect(wrapper.contains(patty)).toBe(true);
+  };
+
+  it('renders and displays the first name', () => {
+  	defaultFieldTest('First Name: unknown', 0);
+  	afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
+  });
+
+});
+```	 
+
+Once we add in WithStyles we need to call **dive()**:
+
+```JavaScript
+const getIndex = (wrapper, index, talkToMe) => {
+    if (debug || talkToMe) {
+        const ninep = wrapper
+            .find('div#addressShow')
+            .childAt(index)
+            .debug();
+        console.log('NINEP:', ninep);
+    }
+};
+
+const defaultFieldTest = (name, index, talkToMe) => {
+    const wrapper = shallow(<AddressShow address={addresses[0]} />);
+    const welcome = <p className="App-intro">{name}</p>;
+    getIndex(wrapper, index, talkToMe);
+    expect(wrapper.dive().contains(welcome)).toEqual(true);
 };
 
 const afterClickFieldTest = (name) => {
-	wrapper = shallow(<AddressShow address={addresses[0]} setAddress={setAddress}/>);
-	const patty = <p className="App-intro">{name}</p>;
-	wrapper.find('#setAddress').simulate('click');
-	//console.log(wrapper.debug());
-	expect(wrapper.contains(patty)).toBe(true);
+  wrapper = shallow(<AddressShow address={addresses[0]} setAddress={setAddress}/>);
+  const patty = <p className="App-intro">{name}</p>;
+  wrapper.dive().find('#setAddress').simulate('click');
+  //console.log(wrapper.debug());
+  expect(wrapper.dive().contains(patty)).toBe(true);
 };
+```
 
-it('renders and displays the first name', () => {
-	defaultFieldTest('First Name: unknown', 0);
-	afterClickFieldTest('First Name: ' + addressTest.firstName, 0);
-});
-
-```	 
 
 ## ESLint
 
@@ -587,6 +596,8 @@ AddressProxy/src/tests/__snapshots__
 ```
 
 Please specify where I should look for your **\_\_snapshots\_\_** directory. Give at least the name of the project.
+
+[fdm]:
 
 [nfe]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/React/ReactNativeTesting/EnzymeBasics
 

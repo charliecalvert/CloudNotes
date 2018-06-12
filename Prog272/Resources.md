@@ -33,6 +33,14 @@ Here I will list various resources for Prog 272.
 - [systemd][sysd]
 - [Midterm][mid]
 
+## Test Related
+
+- [Unit Tests with Jest Web Page (JestCreateReactApp)][utwj]
+- [Unit Tests with Jest Deck (JestCreateReactApp)][jcrad]
+- [Unit Tests Address][uta]
+- [Test Snap Shots and Hints][tssh]
+- [React Address Testing DataManager][ratdm]
+
 [adc]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html
 [aws]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html
 [cas]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/CongressAddressServer.html
@@ -45,11 +53,13 @@ Here I will list various resources for Prog 272.
 [ramenu]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMenu.html
 [ran]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAddress.html
 [ras]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html
+[ratdm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressTestingDataManager.html
 [rel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
 [rpel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html
 [rga]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html
 [rpb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html
 [sysd]:http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html
+[tssh]: www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html
 [uta]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestsAddress.html
 [utwj]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html
 

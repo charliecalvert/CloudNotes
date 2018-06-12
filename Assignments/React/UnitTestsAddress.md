@@ -48,7 +48,7 @@ getFile = () => {
 Our tests are designed to ensure that our component is working correctly. The tests for our program are found in **App.test.js**:
 
 ```javascript
-describe('React Jest Suite', function () {
+describe('React Jest App Suite', function () {
 
     it('renders without our App component without crashing', () => {
         const div = document.createElement('div');
@@ -76,6 +76,8 @@ describe('React Jest Suite', function () {
     });
 });
 ```
+
+**NOTE**: _These tests are designed to be run with week02-react-jest. As the course evolves, these tests will change. For instance, **App.js** will be refactored into multiple components, and we will introduce material_ui. After those changes, these tests won't work the same way._
 
 ![Running the tests][run-tests]
 

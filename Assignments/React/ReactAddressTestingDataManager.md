@@ -191,6 +191,19 @@ it('renders and displays the default first name', () => {
 });
 ```
 
+We can also write these:
+
+```JavaScript
+it('renders and displays the default first name from FakeData', () => {
+    expect(wrapper.state().address.firstName).toEqual('Patty');
+});
+
+it('renders state of firstName after button click', () => {
+    wrapper.instance().setAddress(1);
+    expect(wrapper.state().address.firstName).toEqual('Robert');
+});
+```
+
 ## Turn it in
 
 You can do this in the final, or in whatever is your latest and greatest. Just point me to a folder containing a working **AddressMaven** that has at least 12 shallow tests running against **Address.js**:
