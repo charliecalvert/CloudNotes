@@ -59,7 +59,7 @@ Here I will list various resources for Prog 272.
 [rga]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html
 [rpb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html
 [sysd]:http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html
-[tssh]: www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html
+[tssh]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html
 [uta]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestsAddress.html
 [utwj]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html
 

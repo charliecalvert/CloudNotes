@@ -299,6 +299,18 @@ import addresses from '../address-list';
 describe('AddressShow Shallow Suite', function() {
   let wrapper = null;
 
+  const addressTest = {
+        firstName: 'Patty',
+        lastName: 'Murray',
+        street: '154 Russell Senate Office Building',
+        city: 'Washington',
+        state: 'D.C.',
+        zip: '20510',
+        phone: '(202) 224-2621',
+        fax: '(202) 224-0238',
+        tollfree: '(866) 481-9186'
+    };
+
   const setAddress = () => {
   	const address=addresses[1];
   	wrapper.setProps({ address: address });
