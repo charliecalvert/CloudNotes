@@ -57,6 +57,30 @@ cat ~/.gitconfig
 
 **NOTE**: _Remember that the tilda (~) is a shorthand for your HOME directory. I should add that I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig]._
 
+For instance:
+
+```
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+	it = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	gds = for-each-ref --sort=taggerdate --format '%(tag) %(subject)'
+	glog = log --date=short --pretty=format:"%h%x09%x09%ad%x09%s"
+	glogn = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+	glogc = log --pretty=format:"%h %Cblue%ad%Creset %ae %Cgreen%s%Creset"
+
+[user]
+	email = <PUT YOUR EMAIL HERE>
+	name = Charlie on Mint Home
+[push]
+	default = simple
+[diff]
+	tool = meld
+```
+
 [gitconfig]: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
 **NOTE** _Since I am usually not sharing my repository with a large number of users, I tend to use the name to identify the location from which I am working. For instance **charlie at home**, **charlie at school**, **charlie on his laptop** etc. This is more than a bit quirky, and might not be at all appropriate in a corporate setting, but I nevertheless find it occasionally useful to know where I was when I did some work._

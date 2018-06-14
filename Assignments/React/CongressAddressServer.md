@@ -1,6 +1,6 @@
 ## Overview
 
-Create a server to serve up addresses. Later we will convert this to a MongoDB server. For now, we will just have the server forward the list of addresses we created in the **GetAddress** assignment.
+Create a server to serve up addresses. Later we will convert this to a CouchDB server. For now, we will just have the server forward the list of addresses we created in the **GetAddress** assignment.
 
 **NOTE**: _We could more easily put that JSON file in the public directory of our client, but I want to incrementally move toward the point where we will be serving data from a database. The first step is to set up the server that will eventually serve MongoDB data. For now, however, we will just have it forward the content of the **address-list.json** file in JSON format._
 

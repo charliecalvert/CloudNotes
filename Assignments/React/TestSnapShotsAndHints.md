@@ -610,6 +610,7 @@ AddressProxy/src/tests/__snapshots__
 Please specify where I should look for your **\_\_snapshots\_\_** directory. Give at least the name of the project.
 
 [fdm]:
+http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressTestingDataManager.html
 
 [nfe]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/React/ReactNativeTesting/EnzymeBasics
 

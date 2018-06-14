@@ -1,3 +1,12 @@
+## Overview
+
+The main goals of the 2018 Final for Isit322 are to:
+
+- Create a working GitExplorer
+- Create a working NativeExplorer
+- Have at least 20 tests running on GitExplorer
+  - Get at least 10 tests running for Native Explorer
+
 ## Database Steps
 
 I'll do something like this:
@@ -93,8 +102,14 @@ We can store all those fields in the CouchDB database and in IndexDB. We can als
 
 The most difficult one would be files if we were storing more than one file in a gist. But I am not in any of my examples and I would settle for the first file if you have gists with more than one file.
 
+## Testing Hints
+
+There are some hints on testing that can be found [here][th].
+
 ## Links
 
 Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
 
 [pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle
+
+[th]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/GitUserTesting.html
