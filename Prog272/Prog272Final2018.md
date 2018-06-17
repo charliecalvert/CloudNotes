@@ -1,3 +1,14 @@
+## Overview
+
+The main goal is to integrate the code from the Small Address program into Address Maven.
+
+I'll also be looking at:
+
+- ESLint
+- Prettier
+- Tests and coverage
+- EC2
+
 ## Database Steps
 
 I'll do something like this:
@@ -48,7 +59,7 @@ Don't include **PouchDbManager** and **InitializeDatabase** in your tests nor in
 
 ## Address Native
 
-Have **CongressServer** running on EC2 so that it can be accessed from Address Native.
+Have **CongressServer** running on EC2 so that it will be accessed from your copy of Address Native when I run it.
 
 Have Node Routes Basics running on EC2.
 
@@ -58,12 +69,39 @@ Get AddressMaven and CongressServer running on EC2 and give me a link to your ru
 
 ## Turn it in
 
+- AddressMaven should run
 - prettier should pass
 - eslint . should pass
+- 20 Tests should pass.
 - coverage
   - I don't really care what percentage of coverage you have.
   - In your README.md file, list the three files you created with the highest coverage.
   - Extra credit, get 80% coverage on all your files.
+  - Estra Credit AddressMaven on EC2
+
+## Grading
+
+In the table below, if you got it right, you get a zero. If something went wrong, then you lose a certain number points up to the number shown below. Extra Credit you gain points. The graph below shows the estimated max points off you can get for each feature.
+
+| Skill              | Points Off     |
+| :----------------  | :------------- |
+| Congress Server    | -3  |
+| AddressMaven       | -20 |
+| Material UI Update | -3  |
+| PouchDB            | -5  |
+| CouchDB            | -5  |
+| ESLint             | -3  |
+| Prettier           | -3  |
+| 20 Tests           | -10 |
+| Coverage           | -3  |
+| EC2 CongressServer | -5  |
+| EC2 NodeRouteBasics| -5  |
+| Address Native     | -2  |
+| EC2 AddressMaven   | +3  |
+
+| Total              |     |
+
+This means that if you turn in a final that does anything like what I want, the lowest score you can get is a 33. If the final is a complete failure, for instance a default **create-react-app** program with no changes, I might go lower than 33. But if you made some real effort to complete the final, 33 is the lowest possible score.
 
 ## Links
 

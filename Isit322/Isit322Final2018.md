@@ -2,14 +2,15 @@
 
 The main goals of the 2018 Final for Isit322 are to:
 
-- Create a working GitExplorer
+- Create a working GitExplorer integrated with PouchDB.
 - Create a working NativeExplorer
+  - I'm not expecting PouchDB here, but if you can do it, great.
 - Have at least 20 tests running on GitExplorer
   - Get at least 10 tests running for Native Explorer
 
 ## Database Steps
 
-I'll do something like this:
+I'll do something like this when looking at GitExplorer:
 
 1. Look to see if you told me what folder you want me to look at.
 2. Go to that folder and start your program.
@@ -67,6 +68,8 @@ Don't include **PouchDbManager** and **InitializeDatabase** in your tests nor in
 
 ## Turn it in
 
+- Link to GitExplorer Running on EC2
+  - Don't install CouchDB, I won't test Sync on EC2. I'll only test Sync locally on my machine.
 - **prettier** should pass
 - **eslint .** should pass
 - coverage

@@ -83,18 +83,24 @@ constructor(props) {
         lastName: 'unknown',         
         ids: []
     }
+    this.init();
 }
 ```
 
 Now initial the database:
 
 ```javascript
-componentDidMount() {
-    this.db = new PouchDB('addresses');
-    //this.remoteCouch = 'http://192.168.2.25:5984/addresses';
+init = () => {
+    const DB_NAME='address-charlie-nine';
+    this.db = new PouchDB(DB_NAME);
+    //this.remoteCouch = 'http://192.168.2.40:5984/' + DB_NAME;
     this.remoteCouch = false;
     this.syncDom = document.getElementById('sync-wrapper');
-}
+    this.db.changes({
+        since: 'now',
+        live: true
+    }).on('change', this.showAddress);
+};
 ```
 
 ## Add an Address

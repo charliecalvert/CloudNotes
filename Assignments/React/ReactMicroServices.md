@@ -20,6 +20,10 @@ To help us abide by the spirit of this principle, we will divide our server code
 [srp]: https://en.wikipedia.org/wiki/Single_responsibility_principle
 [isp]: https://en.wikipedia.org/wiki/Interface_segregation_principle
 
+## Thumbsucker
+
+For now, you can just think of a microservice as a NodeJs Express app that is dedicated to some single purpose such as logging in a user, or querying a specific database. It is a way to modularize the server side of code. Not so important in small applications, but as applications get huge, being able to divide the server side into distinct services can be helpful. Can also help with maintenance. You don't have to update everything just one service.
+
 ## Build and Deploy
 
 Before going any further, let's understand what our application will look like when it is deployed.

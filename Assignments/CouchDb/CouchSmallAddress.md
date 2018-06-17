@@ -450,12 +450,14 @@ Replace the JSX with this:
 
 Add in the three missing import statements.
 
-While we are at it, add in code for **componentDidMount** that will initialize PouchDB:
+While we are at it, add in code for the **constructor** in **App.js** that will initialize PouchDB:
 
 ```javascript
-componentDidMount() {
+constructor(props) {
+    super(props);
     this.db = dataManager.init();
 }
+
 ```
 
 ## Set Up the Database
