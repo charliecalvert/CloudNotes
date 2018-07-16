@@ -28,6 +28,10 @@ Fall 2017
 - [WebCrafts Up To Date][wcu]
 
 
+## Isit 322
+
+- [Isit 322 Resources](/books/CloudNotes/Isit322/Isit322-Resources.html)
+
 ## Prog270
 
 - [Cloud Nine Intro][ci]
@@ -40,6 +44,11 @@ Fall 2017
 - [EC2 Git HTML Pictures][ecp]
 - [EC2 Markdown to HTML][ecm]
 - [Upstart and Systemd][ud]
+
+## Prog 272
+
+- [Prog272 Resources](/books/CloudNotes/Prog272/Resources.html)
+
 
 ## Other
 
