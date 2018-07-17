@@ -213,6 +213,13 @@ For help formatting files, I'm moving from [js-beautify][jsbea] to [prettier][pr
 npm install --global prettier
 ```
 
+Install with yarn:
+
+```bash
+yarn global add prettier
+```
+
+
 **NOTE**: _When installing npm packages globally, use NPM rather than yarn. If you really want yarn, make sure the place that yarn puts them is on your path. I've already set things up on Pristine Lubuntu so that npm global packages are on your path. See the bottom of **~/.bashrc** for details._
 
 You can set up a configuration file called .prettierrc in the root of your project or repository:

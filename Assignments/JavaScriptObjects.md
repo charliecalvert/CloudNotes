@@ -9,13 +9,13 @@ These slide decks have useful information in them:
 * JavaScript Intro: [http://bit.ly/javascript-intro](http://bit.ly/javascript-intro)
 * JavaScript Node: [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
-Also see this section of Elvenware for details on Object Literals:
+Also see the section of Elvenware on Object Literals:
 
 - [Object Literals][elf-obj-literal]
 
 [elf-obj-literal]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#object-literal
 
-In this exercise, we are working with object literals, not function objects.
+In this exercise, we are mostly working with object literals, not function objects.
 
 ## Part One
 
