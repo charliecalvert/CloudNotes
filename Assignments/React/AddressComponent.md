@@ -1,15 +1,15 @@
 # Address Component
 
-Extend our **week02-react-jest** project to support new React components with **props**.
+The goal is to extend our **week02-react-jest** project to support new React components with **props**.
 
-**NOTE**: _Sometimes in my code I write something like **etc...** or **and so on...** or **You write the code**. In these cases I expect you to complete the code as an exercise. I usually create sections like these by cutting and pasting working code into assignment, and then delete the parts I want readers to complete._
+**NOTE**: _In many cases, my assignments are not simply cut and paste exercises. In my code I might write something like **etc...** or **and so on...** or **You write the code**. In these cases I expect you to complete the code as an exercise. I usually create sections like these by cutting and pasting working code into assignment, and then delete the parts I want readers to complete. Though I try to avoid it, there are places where I leave something out without explicitly making clear that you need to write some code on your own. In any case, you are responsible for creating assignments that compile cleanly and perform specific actions outlined in these assignments._
 
 ## Goals
 
-Here are the core goals of the assignment.
+Here are the core goals of this assignment.
 
-- Tag your work
-- Create the **components** folder and put in it a file called **Address.js** based on **App.js**
+- [Tag](#tag) your work
+- Create the **components** folder and put in it a file called **Address.js**. This file should be based on **App.js**
 - Remove code from **Address.js** that **does not** have to do with addresses
 - Remove code from **App.js** that has to do with addresses
 - **import** your **Address** component into **index.js**. Use it in **ReactDOM.render**.
@@ -19,9 +19,9 @@ Here are the core goals of the assignment.
 - Switch from record 0 to record 1 of the address list.
 - Get tests working
 
-## Tag
+## Use Git to Tag Your Project {#tag}
 
-Since we are often working on a single project that has multiple phases, I suggest creating a git tag marking your current status:
+Since we are often working on a single project that is implemented in multiple phases, I suggest creating a git tag marking the current status of your project:
 
 ```bash
 $ git tag -a v3.0.0 -m "Start Week03"
@@ -35,7 +35,9 @@ The second command pushes the tag from your local machine to the cloud.
 
 The last command lists your tags and their message on one line. If you have only a single tag, it is not particularly useful, but once you have multiple tags you will see how helpful this can be. Increase the value of the number after -n? to see more information about your tag. You can read about tags here:
 
-- [git tag docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+- [Git docs on tagging][gittag]
+
+[gittag]: https://git-scm.com/book/en/v2/Git-Basics-Tagging
 
 ## Create Address Component
 
