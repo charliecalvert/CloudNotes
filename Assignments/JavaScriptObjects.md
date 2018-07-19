@@ -75,7 +75,9 @@ etc...
 
 Use **console.log** to display the values of **operand01** and **operand02**.
 
-Add three methods with zero parameters that operate on **operand01** and **operand02**:
+## Simple Math
+
+Add three methods with zero parameters that operate on **calculator.operand01** and **calculator.operand02**:
 
 * add
 * subtract

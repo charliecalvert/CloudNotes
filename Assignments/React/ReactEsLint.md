@@ -274,13 +274,15 @@ See the [CreateSymbolicLinks][csl] script on GitHub.
 
 I'm moving from [js-beautify][jsbea] to [prettier][pret], but don't quite want to delete this section yet. Use **prettier** instead of js-beautify because it handles JSX much better.
 
-Before we had prettier, we used js-beautify, but not on all files in a directory. Create a script called **pretty** like this:
+Before we had prettier, we used js-beautify, but not on all files in a directory. Create a script called **beauty** with this content:
 
 ```bash
+#! /bin/bash
+
 find . -iname '*.js' | grep -vFf skip | xargs js-beautify -r
 ```
 
-Where skip is a text file contents like this, which is a list of files or directories that you want to ignore:
+In the above code, **skip** is a text file containing a list of files or directories that you want to ignore. For instance the file might contain a list like this:
 
 ```bash
 bundle.js
@@ -288,7 +290,7 @@ registerServiceWorker.js
 node_modules
 ```
 
-These files might go in the root of a project or the root of your repository.
+Both **beauty** and **skip** might go in the root of a project or the root of your repository.
 
 Alternatively, you could do this:
 
