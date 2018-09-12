@@ -10,6 +10,7 @@ I assume the user is running on Linux, but it would possible to follow along if 
 
 See also:
 
+* [Git Hub Guides](https://guides.github.com/)
 * [Is Git Reliable?](http://www.ccalvert.net/development/git/git-introduction.html#reliable)
 * [Git Slide Deck](http://bit.ly/git-basics)
 * [Git on Elvenware][elven-git]
