@@ -19,7 +19,7 @@ There is no penalty for providing a wrong answer to a question so long as you ar
 
 ## Get it Done
 
-The big difference between an advanced programmer and one who is still learning is that advanced programmers get things done. It doesn't matter how we get things done, only that we get things done. If we have to ask a lot of questions along the way, then that is one thing. Failing to achieve our goal is another. In professional environments in big companies, I've seen successful developers who are just brilliant at getting answers to their questions. As a result, they get things done. Nobody remembers the questions, all they know is that someone gets things done! 
+The big difference between an advanced programmer and one who is still learning is that advanced programmers get things done. It doesn't matter how we get things done, only that we get things done. If we have to ask a lot of questions along the way, then that is one thing. Failing to achieve our goal is another. In professional environments in big companies, I've seen successful developers who are just brilliant at getting answers to their questions. As a result, they get things done. Nobody remembers the questions, all they know is that someone gets things done!
 
 A manager will work hard to find a good niche for someone who gets things done. They aren't always looking for genius or for years of experience, they want competence. Hard workers with a controlled ego who get things done. If someone with a soaring IQ comes along, then that is nice, but that is not the only way to be a valued employee.
 
@@ -66,6 +66,12 @@ There is no shame in not understanding any of the syntactical elements in the bu
 
 This is one example from one assignment, but there are similar section in nearly every technical assignment I give. There are probbaly 5 to 10 obvious question to ask in any assignment, and 20, 30 or even 50 in more complex assignments.
 
+## Attitude
+
+When asking questions in most online forums, try to be as friendly and polite as possible. Email and text is a deceptively sharp edged tool. I try to go out of my way to keep a positive attitude. As we all start to spend more time communicating online with text, we have to learn new skills. Developing the ability to join an online community, and become a positive and well liked member of that community, is an important skill. Most of us aren't born with that ability. We have to develop it. In general, when I find myself using negative words like "stupid", "dumb", "incompetent", etc, then a little red flag goes up in my brain. Sometimes they are the appropriate words, but those occasions are rare. Perhaps once or twice a year. If they come up repeatedly in my messages, then it is usually best for me to take time off to relax.
+
+Inside, we might feel upset, but we have to learn to hide that when communicating online. And we have to learn to take care of ourselves, so we are not under too much pressure. Be gentle with others, be gentle with yourself.
+
 ## Scoring
 
 In general, I'm looking for questions and answers. However, just proving that you looked at the discussion area will keep you from getting a failing grade. Here are some loose guidelines that I might use when grading discussions:
@@ -84,8 +90,6 @@ Your question must be:
 - Related to our class, and preferably to an assignment we are working on this week.
 - Technical. Try not to ask too many open ended questions that can't be answered concisely. A preferred question would be about JavaScript, node, the libraries we use, or the tools we use. For instance, the following question is too general: "Which language is better: Python or JavaScript?" It's okay to ask questions like that on occasion, but the goal here is to ask more specific questions directly related to completing assignments.
 - Reasonable. For instance, if I asked you to create a table with the time of the sunrise in Bellevue WA over the next week, you can't ask: "What is the sun? I don't understand." That is not a reasonable question. Everyone knows about the sun, and it is not plausible that you don't understand that part of the assignment.
-
-When asking questions in most online forums, try to be as friendly and polite as possible. Email and text is a deceptively sharp edged tool. I try to go out of my way to keep a positive attitude. As we all start to spend more time communicating online with text, we have to learn new skills. Developing the ability to join an online community, and become a positive and well liked member of that community, is an important skill. Most of us aren't born with that ability. We have to develop it. In general, when I find myself using negative words like "stupid", "dumb", "incompetent", etc, then a little red flag goes up in my brain. Sometimes they are the appropriate words, but those occasions are rare. Perhaps once or twice a year. If they come up repeatedly in my messages, then it is usually time for me to take off to relax. Inside, we might feel upset, but we have to learn to hide that when communicating online. And we have to learn to take care of ourselves, so we are not under too much pressure. Be gentle with others, be gentle with yourself.
 
 ## Why Ask Questions
 

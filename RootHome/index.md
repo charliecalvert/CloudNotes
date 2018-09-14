@@ -7,6 +7,7 @@ This page is maintained in HomePage.jade and HomePage.md.
 ## Class Resources
 
 * [General Resources](/Resources.html)
+* [Prog109](/books/CloudNotes/Prog109)
 * [Prog219 Resources](/books/CloudNotes/Prog219/Prog219-Resources.html)
 * [Prog270 Resources](/books/CloudNotes/Prog270/Prog270-Resources-2016.html)
 * [Prog272 Resources](/books/CloudNotes/Prog272/Resources.html)
