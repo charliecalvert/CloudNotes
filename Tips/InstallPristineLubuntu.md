@@ -15,7 +15,7 @@ Double click on the downloaded OVA file to load it in VirtualBox. As the OVA fil
 
 Here is a link to the approximately 3.0 GB download:
 
-- [Current Pristine Lubuntu](http://bit.ly/pristine-2017-08-a)
+- [Current Pristine Lubuntu](http://bit.ly/pristine-lubuntu-2018-09)
 
 If you forgot to reset the MAC address, let me know, and I will show you how to go to **Settings | Network | Advanced** to reset the MAC after the install. The VM must be stopped while you perform this operation.
 

@@ -1,2 +1,1 @@
-* [Fall2017Projects.html](Fall2017Projects.html)
-* [master-list.html](master-list.html)
+* [Isit320-Week01.html](Isit320-Week01.html)
