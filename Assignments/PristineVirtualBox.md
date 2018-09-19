@@ -30,7 +30,7 @@ You may, of course, be on a Mac, or even on Linux. None of that should matter so
 
 VirtualBox should be installed on all the machines in N252. Nevertheless, before doing anything else, confirm that you have VirtualBox installed and updated. If you are working on a laptop, go here and install it:
 
-- [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Download VirtualBox (Already on N252 Computers)](https://www.virtualbox.org/wiki/Downloads)
 
 **NOTE**: _I greatly prefer that you use the school machines rather than your laptop. I simply cannot see the text in most student laptops as it is too small. Also, you will get much, much more out of this class if you learn to use Git to move code between your laptop and school machine, rather than doing all your work on your laptop. In terms of getting a job, learning React and ES6 are the most important aspects of this course. But close behind them is gaining a solid understanding of Git._
 
@@ -40,7 +40,7 @@ VirtualBox should be installed on all the machines in N252. Nevertheless, before
 
 Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance). The link below requires a bit of patience. Select it, and determinedly click through the options until the download begins. Once this big 3 GB OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
 
-- [Current Pristine Lubuntu](http://bit.ly/plubuntu-2018-04-03)
+- [Current Pristine Lubuntu](http://bit.ly/pristine-lubuntu-2018-09)
 
 The file you download should have an OVA extension.
 

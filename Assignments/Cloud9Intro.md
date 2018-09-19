@@ -4,7 +4,27 @@ Cloud 9 is free if you get an invitation from me. I'm taking advantage of deal w
 
 It will be simplest if you first, set up a Git repository as explained in the [Git New Repo][gnr] assignment. When you get the invitation, click on the link provided.
 
-Sign into Cloud 9 and set up a workspace based on your repository. Typically, your repository will have a name like this:
+[Sign into Cloud 9][c9login]. You'll probably need to create an account first. Then hook it up to GitHub like this:
+
+- Choose the gear icon in the upper right portion of the page.
+- Select **Connected Services**
+- Connect to GitHub by selecting the appropriate button and following the prompts.
+
+
+## Create Workspace
+
+If you have not done so already,
+
+- In Cloud 9 hit the Plus icon next to the **Bellevue College Dev Team Option** found on the [c9 home page](https://c9.io).
+
+Create
+  - new NodeJs private workspace
+  - Based on your GitHub repository
+    - Go to GitHub and copy the URL for your repository.
+    - Put it in the field labeled **Clone from Git or Mercurial URL**.
+  - If you have no GitHub repository then first complete the [Git New Repo][gnr] assignment.
+
+Set up a workspace based on your repository. Typically, your repository will have a name like this, where **lastname** should be your lastname:
 
 - **prog209-lastname-2018**
 - **prog272-lastname-2018**
@@ -14,15 +34,6 @@ Sign into Cloud 9 and set up a workspace based on your repository. Typically, yo
 Be very careful to get the casing and characters right. Use this as a guide:
 
 * [Cloud 9 Slides](http://bit.ly/elf-cloud9)
-
-## Create Workspace
-
-If you have not done so already,
-
-- In Cloud 9 hit the Plus icon and create
-  - new NodeJs workspace
-  - Based on your GitHub repository
-  - If you have no GitHub repository then first complete the [Git New Repo][gnr] assignment.
 
 ## Getting Started
 
@@ -459,6 +470,7 @@ The NodeJs repository is [here](https://github.com/nodejs/node).
 
 [gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
 
+[c9login]: https://c9.io/login
 [cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
 [cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
 [jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
