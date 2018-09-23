@@ -4,6 +4,7 @@
 * [ReactAddressEditDialog.html](ReactAddressEditDialog.html)
 * [ReactAddressMock.html](ReactAddressMock.html)
 * [ReactAddressTestingDataManager.html](ReactAddressTestingDataManager.html)
+* [ReactBasics.html](ReactBasics.html)
 * [ReactEsLint.html](ReactEsLint.html)
 * [ReactMicroServices.html](ReactMicroServices.html)
 * [ReactNativeAddress.html](ReactNativeAddress.html)

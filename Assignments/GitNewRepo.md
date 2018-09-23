@@ -204,6 +204,7 @@ After cloning your repository, make sure the following are in your **.gitignore*
 # IDE Files
 .idea
 .c9
+.vscode
 
 # Package files
 node_modules

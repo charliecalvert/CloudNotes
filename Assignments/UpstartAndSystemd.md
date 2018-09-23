@@ -74,6 +74,17 @@ We will use the link when composing our systemd configuration file.
 
 ## Unit Configuraton File
 
+In package.json, add a script like this:
+
+```javascript
+"scripts": {
+  "start": "nodemon ./bin/www",
+  "start-service": "node ./bin/www",
+},
+```
+
+The issue here is that **nodemon** is not on the global path. Root will run your service, and root does not know about **nodemon**. Yet you want **nodemon** during development. So create another script script called **start-service** that uses **node** rather than **nodemon**. This is arguably better than putting a refernce to node in the service file, as you don't want to have to edit the service file if you change the way you start the program. It is easier to edit **package.json** than it is to edit your service file.
+
 Create a **systemd** service file called **nrb.service**:
 
 ```
@@ -82,7 +93,8 @@ Description=Run NodeRouteBasics
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/node ./bin/www
+# ExecStart=/usr/bin/node ./bin/www
+ExecStart=/home/ubuntu/npm/bin/npm run start-service
 WorkingDirectory=/home/ubuntu/bin/nrb
 Restart=always
 StandardOutput=syslog
@@ -112,6 +124,12 @@ Make sure the PORT matches the code in your **/bin/www** file:
 
 ```javascript
 var port = normalizePort(process.env.NRB_PORT || '30025');
+```
+
+**NOTE** _If you don't like the **start-service** solution, do this instead in your service file_:
+
+```javascript
+ExecStart=/usr/bin/node ./bin/www
 ```
 
 ## Symbolic Link Role
@@ -189,34 +207,15 @@ The first and second links below will get you up to speed fairly quickly.
 
 ## Useful Scripts
 
-No matter how simple the commands, it is almost always worth taking a moment to create some bash scripts to automate the process. Here are three that I find useful:
+No matter how simple the commands, it is almost always worth taking a moment to create some bash scripts to automate the process. Here are three and half scripts that I find useful. They take a moment to setup, but they are very useful.
 
-copy-nrb:
+**NOTE**: To simplify the process, I maintain copies of these scripts here:
 
-```bash
-sudo cp nrb-charlie.service /etc/systemd/system/nrb.service
-sudo systemctl enable nrb
-sudo systemctl start nrb
-systemctl status nrb
-```
+- [elven-systemd-tools README][est-rm]
+- [elven-systemd-tools directory][est]
 
-startService:
-
-```bash
-#!/bin/bash
-
-sudo systemctl enable nrb.service
-sudo systemctl start nrb.service
-```
-
-stopService:
-
-```bash
-#!/bin/bash
-
-sudo systemctl stop nrb.service
-sudo systemctl disable nrb.service
-```
+[est]: https://github.com/charliecalvert/elven-systemd-tools
+[est-rm]: 
 
 ## ExecStart
 

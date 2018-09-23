@@ -1,15 +1,20 @@
 # Cloud 9 Intro
 
-Cloud 9 is free if you get an invitation from me. I'm taking advantage of deal which allows me let in as many students as I wish.
+It will be simplest if you first, set up a Git repository as explained in the [Git New Repo][gnr] assignment.
 
-It will be simplest if you first, set up a Git repository as explained in the [Git New Repo][gnr] assignment. When you get the invitation, click on the link provided.
+Once you have the repository on GitHub, then next step is to set up Cloud 9. It is possible to join Cloud 9 for free if you get an invitation from me. I'm taking advantage of a deal which allows me let in as many students as I wish. When you get the invitation, click on the link provided.
 
-[Sign into Cloud 9][c9login]. You'll probably need to create an account first. Then hook it up to GitHub like this:
+[Sign into Cloud 9][c9login].
+
+## Connect Cloud9 and GitHub
+
+Once you are signed into Cloud9, you can connect the Cloud9 service to GitHub like this:
 
 - Choose the gear icon in the upper right portion of the page.
 - Select **Connected Services**
 - Connect to GitHub by selecting the appropriate button and following the prompts.
 
+You will also have to hit the gear icon a second time in Cloud9, go to the Cloud 9 SSH services, copy the public key that Cloud 9 gives you, and paste it into GitHub. (Choose the icon at the top right of the GitHub site, choose Settings, and then SSH.)
 
 ## Create Workspace
 
