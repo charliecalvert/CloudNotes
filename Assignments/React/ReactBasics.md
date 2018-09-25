@@ -20,10 +20,10 @@ Here are some useful links:
 
 ## ReactBasics Directory
 
-Create a directory called **Week01-ReactBasics** in your repository and navigate into it:
+In a branch called **week02**, create a directory called **Week01-ReactBasics** in your repository and navigate into it:
 
 ```
-mkdir Week01-ReactBasics && cd Week01-ReactBasics
+mkdir week02-react-basics && cd week02-react-basics
 ```
 
 Notice the **&&** operator used to concatenate these two commands. This is a time saver as it allows you to issue two commands on a single line rather than writing something like this:
@@ -98,9 +98,10 @@ At this stage you need to start installing the libraries that your React project
 To install the libraries that our project needs, run these commands:
 
 ```bash
-npm install --save react react-dom webpack wepback-cli
+npm install --save react react-dom webpack webpack-cli
 npm install --save-dev babel-loader webpack-dev-server
 npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
+npm install --save-dev @babel/core @babel/cli
 ```
 
 I'm not sure we need @babel/register. I just tried it without it, and it worked. So I don't think we need to do this:
@@ -412,7 +413,7 @@ Compare the commands above to the all important and oft mentioned **scripts** se
 
 ```json
 "scripts": {
-  "start": "node_modules/.bin/webpack-dev-server",
+  "start": "node_modules/.bin/webpack-dev-server --port=30025 --mode=development",
   "build": "node_modules/.bin/webpack"
 },
 ```
@@ -452,6 +453,8 @@ ReactDOM.render(<ReactBasics/>, document.getElementById('root'));
 Now compile and run as shown earlier.
 
 ## js-beautify
+
+Don't do this section. We will use prettier instead.
 
 The file is called .jsbeautifyrc. The first option shown below tells js-beautify to leave JSX alone, the second tells it to leave import statements alone when they contain inline curly braces:
 import { ReactBasics } from '../ReactBasics.js';
