@@ -6,7 +6,7 @@ Since my students turn in assignments with Git, in some, but not all, cases it i
 
 **NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Note that Git itself is an open source project entirely separate from either GitHub or BitBucket. Git is Git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
 
-I assume the user is running on Linux, but it would possible to follow along if you are using Windows. Especially helpful is the Linux subsystem for Windows. Again, you should prefer Linux as it, and **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
+I assume the user is running on Linux, but it should be possible to follow along if you are using Windows. Especially helpful for Windows users is the Linux subsystem for Windows. Again, you should prefer Linux as it, and **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
 
 See also:
 
@@ -204,6 +204,7 @@ After cloning your repository, make sure the following are in your **.gitignore*
 # IDE Files
 .idea
 .c9
+.vscode
 
 # Package files
 node_modules

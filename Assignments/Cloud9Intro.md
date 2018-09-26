@@ -1,35 +1,87 @@
 # Cloud 9 Intro
 
-Cloud 9 is free if you get an invitation from me. I pay $1 a month to run an education account, which means that I can let as many students in as I wish.
+It will be simplest if you first, set up a Git repository as explained in the [Git New Repo][gnr] assignment.
 
-When you get the invitation, click on the link provided.
+Once you have the repository on GitHub, then next step is to set up Cloud 9. It is possible to join Cloud 9 for free if you get an invitation from me. I'm taking advantage of a deal which allows me let in as many students as I wish. When you get the invitation, click on the link provided.
 
-Sign into Cloud 9 and set up a workspace based on your repository. Typically, your repository will have a name like this:
+[Sign into Cloud 9][c9login].
 
-- **prog219-lastname-2016**
-- **prog272-lastname-2016**
-- **isit320-lastname-2016**
+## Connect Cloud9 and GitHub
+
+Once you are signed into Cloud9, you can connect the Cloud9 service to GitHub like this:
+
+- Choose the gear icon in the upper right portion of the page.
+- Select **Connected Services**
+- Connect to GitHub by selecting the appropriate button and following the prompts.
+
+You will also have to hit the gear icon a second time in Cloud9, go to the Cloud 9 SSH services, copy the public key that Cloud 9 gives you, and paste it into GitHub. (Choose the icon at the top right of the GitHub site, choose Settings, and then SSH.)
+
+## Create Workspace
+
+If you have not done so already,
+
+- In Cloud 9 hit the Plus icon next to the **Bellevue College Dev Team Option** found on the [c9 home page](https://c9.io).
+
+Create
+  - new NodeJs private workspace
+  - Based on your GitHub repository
+    - Go to GitHub and copy the URL for your repository.
+    - Put it in the field labeled **Clone from Git or Mercurial URL**.
+  - If you have no GitHub repository then first complete the [Git New Repo][gnr] assignment.
+
+Set up a workspace based on your repository. Typically, your repository will have a name like this, where **lastname** should be your lastname:
+
+- **prog209-lastname-2018**
+- **prog272-lastname-2018**
+- **isit320-lastname-2018**
 - etc...
 
-Use this as a guide:
+Be very careful to get the casing and characters right. Use this as a guide:
 
 * [Cloud 9 Slides](http://bit.ly/elf-cloud9)
 
-## Simplified version
+## Getting Started
 
-In some cases, I will ask you to perform only these steps and skip the portions on setting up and running Node appliclations with NPM:
+Your workspace should incode NodeJS and NPM. Thus you can skip any prompts to set up and run Node JS and NPM.
 
-- Set up your account on Cloud9
-  - take a screen shot showing you that you are logged on
+Now take three screenshots and attach them to your assignment.
+
+- After you are logged in to Cloud9
+  - take a screen shot showing that you are logged on
 - Connect to your repository and create a Cloud 9 WorkSpace based on it.
   - Take a screenshot of the dashboard showing your workspace
-- Open your workspace and open a file from the AllTest directory or some other part of your repository that you created during one of our assignments.
+- Open your workspace and open a file from your repository. At minimum, you should have a **README.md** file in your repository.
   - Take a screenshot showing the open file and the project Workspace file hierarchy on the left.
+
+  The screenshot you want to create will be similar to, but not identical too, the image shown below:
+
+  [![Cloud9Small][cloud9Small]][Cloud9]
+
+  **Image01**: *The Cloud 9 IDE. Click the image above to expand it.*
+
+
+## The .gitignore file
+
+Make sure that your repository contains a **.gitignore** file with a section that at minimum looks like this:
+
+```
+# IDE Files
+.idea
+.c9
+
+# Other
+node_modules
+bower_components
+```
+Students in Prog109 are now done with this assignment.
+
+## Set up JsObjects
+
+If you are in some other class than Prog109, you should:
+
 - Install JsObjects as shown below.
   - Take a screenshot showing that you have cloned JsObjects
   - For this simplified version of the assignment, you do not need to do anything more than clone JsObjects and set your **.bash_aliases** file.
-
-## Set up JsObjects
 
 Our primary goal in this exercise is to create a Cloud Nine environment in which:
 
@@ -40,14 +92,6 @@ Our primary goal in this exercise is to create a Cloud Nine environment in which
 - Have certain Npm global packages installed.
 
 Near the bottom of this file I include a [minimum install][#minimum-install] that you can perform if you don't want to set up your environment as outlined in the body of this document. For most students, it is much better to do a regular setup than to use the minimum install.
-
-## Create Workspace
-
-If you have not done so already,
-
-- In Cloud 9 hit the Plus icon and create
-  - new NodeJs workspace
-  - Based on your repository
 
 ## Install JsObjects
 
@@ -133,10 +177,13 @@ charliecalvert:~/Git $
 Pull **JsObject** to get the latest, then go into **~/Git/JsObjects/Utilities/SetupLinuxBox** and run **UbuntuSetup**.
 
 ```
+cd ~/Git/JsObjects/Utilities/SetupLinuxBox
 ./UbuntuSetup
 ```
 
-Pick the second option: **b) Run Basic Setup**. Don't forget to source **./bashrc**. Now many of the aliases we use might work on Cloud9.
+Pick the second option: **b) Run Basic Setup**. After it runs, don't forget to **source ./bashrc**. Now many of the aliases we use might work on Cloud9.
+
+## Port Basics
 
 **NOTE**: _I prefer to run applications on PORT 30025. However, Cloud 9 wants you to use PORT 8080 when you preview or view your app. As a result, check that the PORT environment variable is set to 8080:_
 
@@ -252,16 +299,6 @@ cd ~/Git/JsObjects
 cd ~/workspace
 ```
 
-## The .gitignore file
-
-Make sure that your repository contains a **.gitignore** file with a section that looks like this:
-
-```
-# IDE Files
-.idea
-.c9
-```
-
 ## Screen Shots
 
 Take a screen shot displaying the following:
@@ -274,12 +311,6 @@ Take a screen shot displaying the following:
 * The interface of your project in a preview window
 
 **Note**: _It really doesn't matter much to me which project you show in Cloud9. If for some reason you don't have either **ReactBasics** or **JasmineExpress** up and running, just choose a different a project._
-
-The screenshot you want to create will be similar to, but not identical too, the image shown below:
-
-[![Cloud9Small][cloud9Small]][Cloud9]
-
-**Image01**: *The Cloud 9 IDE. Click the image above to expand it.*
 
 ## Running React Basics on Cloud 9
 
@@ -368,12 +399,6 @@ Now press the Cloud9 preview button and all should be well so long as you don't 
 
 Submit your work and attach the screenshots.
 
-[cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
-[cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
-[jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
-
-[webpack-c9]: https://github.com/webpack/webpack-dev-server/issues/230
-
 ## Understanding .bashrc
 
 The **.bashrc** file is located in your home directory. It is processed when you open a bash shell or when you run one of these commands:
@@ -415,23 +440,44 @@ I should add that you will want to create **node_modules** directories by runnin
 On Pristine Lubuntu you should be running the [latest version](https://nodejs.org/en/) of Node automatically:
 
 <pre>$ node --version  
-v9.10.1</pre>
+v8.12.0
+</pre>
 
 On Cloud9, we use [**nvm**](https://github.com/creationix/nvm) to maintain node. Here is a little Cloud9 session showing that I'm running a [recent LTS version](https://github.com/nodejs/Release#release-schedule1) of Node. That is good enough, but I want the [latest](https://nodejs.org/en/), so I use nvm to switch to the latest:
 
-<pre>
-charliecalvert:~/Git $ which node  
-/home/ubuntu/.nvm/versions/node/v6.11.2/bin/node  
-charliecalvert:~/Git $  <strong>node --version</strong>
- <strong>v6.11.2</strong>
-charliecalvert:~/Git $  <strong>nvm install node</strong>  
-Downloading https://nodejs.org/dist/v8.6.0/node-v8.6.0-linux-x64.tar.xz...  
-######################################################################## 100.0%  
-Now using node v8.6.0 (npm v5.3.0)  
-charliecalvert:~/Git $ <strong>node --version</strong>
-<strong>v8.6.0</strong>  
-charliecalvert:~/Git $ which node  
-/home/ubuntu/.nvm/versions/node/v8.6.0/bin/node
-</pre>
+```bash
+charliecalvert:~/workspace (master) $ which node
+/home/ubuntu/.nvm/versions/node/v8.12.0/bin/node
+
+charliecalvert:~/workspace (master) $ node --version
+<strong>v8.12.0</strong>
+```
+Install **Node 10.10.0** with **nvm**:
+
+```bash
+charliecalvert:~/workspace (master) $ nvm install 10.10.0
+...
+Now using node v10.10.0 (npm v6.4.1)
+```
+
+Check node version:
+
+```
+charliecalvert:~/workspace (master) $ node --version
+v10.10.0
+```
 
 The NodeJs repository is [here](https://github.com/nodejs/node).
+
+<!---------------------------->
+<!-- Links in this document -->
+<!---------------------------->
+
+[gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
+
+[c9login]: https://c9.io/login
+[cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
+[cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
+[jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
+
+[webpack-c9]: https://github.com/webpack/webpack-dev-server/issues/230

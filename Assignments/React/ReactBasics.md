@@ -13,24 +13,24 @@ Here are some useful links:
 - Install React, Webpack and Babel components
   - react and react-dom
   - babel core and babel loader
-  - babel env, react and stage-0
+  - babel env, react
 - Add bundle script to **package.json**. This is the script runs webback.
 
     cp $ELF_TEMPLATES/React/ReactNpm
 
 ## ReactBasics Directory
 
-Ceate a directory called **Week01-ReactBasics** in your repository and navigate into it:
+In a branch called **week02**, create a directory called **Week01-ReactBasics** in your repository and navigate into it:
 
 ```
-mkdir Week01-ReactBasics && cd Week01-ReactBasics
+mkdir week02-react-basics && cd week02-react-basics
 ```
 
 Notice the **&&** operator used to concatenate these two commands. This is a time saver as it allows you to issue two commands on a single line rather than writing something like this:
 
 ```
-mkdir Week01-ReactBasics
-cd Week01-ReactBasics
+mkdir week01-react-basics
+cd week01-react-basics
 ```
 
 ## NPM Init
@@ -98,10 +98,16 @@ At this stage you need to start installing the libraries that your React project
 To install the libraries that our project needs, run these commands:
 
 ```bash
-npm install --save react react-dom webpack
-npm install --save-dev babel-loader babel-core webpack-dev-server
-npm install --save-dev babel-preset-react babel-preset-env webpack-cli
-npm install --save-dev babel-preset-env
+npm install --save react react-dom webpack webpack-cli
+npm install --save-dev babel-loader webpack-dev-server
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
+npm install --save-dev @babel/core @babel/cli
+```
+
+I'm not sure we need @babel/register. I just tried it without it, and it worked. So I don't think we need to do this:
+
+```bash
+npm install --save-dev @babel/register
 ```
 
 **npm** is the Node Package Manager, and it can be used to install packages (libraries) and to perform other tasks such as running tiny scripts that start your project. **node** and **npm** and tightly linked tools which depend on one another. When you install node, npm is also installed. It is hard to do much with node without also running the **npm** command at least once.
@@ -111,42 +117,31 @@ After running the **npm install** commands shown above, you will find new conten
 ```json
 $ cat package.json
 {
-  "name": "week01-reactbasics",
-  "version": "1.0.0",
-  "description": "React from scratch",
-  "main": "index.js",
-  "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --port=30025",
-    "build": "node_modules/.bin/webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/charliecalvert/isit322-calvert-2018.git"
-  },
-  "keywords": [
-    "react",
-    "node"
-  ],
-  "author": "Charlie Calvert",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/charliecalvert/isit322-calvert-2018/issues"
-  },
-  "homepage": "https://github.com/charliecalvert/isit322-calvert-2018#readme",
-  "dependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "webpack": "^4.4.1"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
-  }
+    "name": "react-basics",
+    "version": "1.0.0",
+    "description": "React from scratch",
+    "main": "ReactBasics.js",
+    "scripts": {
+        "start": "node_modules/.bin/webpack-dev-server --port=30025 --mode=development",
+        "build": "node_modules/.bin/webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Charlie Calvert",
+    "license": "MIT",
+    "dependencies": {
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.0",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/register": "^7.0.0",
+        "babel-loader": "^8.0.2",
+        "webpack": "^4.19.1",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-server": "^3.1.8"
+    }
 }
 ```
 
@@ -160,7 +155,7 @@ Now edit the **scripts** section of **package.json** so that it looks like this:
 
 ```javascript
 "scripts": {
-   "start": "node_modules/.bin/webpack-dev-server --port=30025",   
+   "start": "node_modules/.bin/webpack-dev-server --port=30025 --mode=development",   
    "build": "node_modules/.bin/webpack",
    "test": "echo \"Error: no test specified\" && exit 1"
 },
@@ -245,11 +240,11 @@ Now create a **.babelrc** file with this content:
 
 ```json
 {
-  "presets": ["env", "react"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
 ```
 
-Finally, run bably over your code:
+Finally, run bablw over your code:
 
 ```
 babel react-simple.js
@@ -376,23 +371,22 @@ On the next section, you will see a webpack configuration file
 Save the following code in: webpack.config.js. Note that entry is **main.js** and output is **bundle.js**.
 
 ```javascript
-var path = require('path');
-var webpack = require('webpack');
-
 module.exports = {
     mode: 'development',
     entry: './main.js',
-    output: {path: __dirname, filename: 'bundle.js'},
-    mode: 'development',
+    output: {
+        path: __dirname,
+        filename: 'bundle.js'
+    },
+    devtool: "source-map",
     module: {
         rules: [
             {
                 test: /.js?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                  presets: ['env', 'react']
-                }
+                exclude: /(node_modules|bower_components)/,
+                use: [{
+                    loader: 'babel-loader'
+                }]
             }
         ]
     },
@@ -403,7 +397,7 @@ module.exports = {
 
 To start your project, type **npm start**. Now browse to:
 
-http://localhost:8080/
+http://localhost:30025/
 
 Optionally issue this command at the command prompt to check your work:
 
@@ -419,7 +413,7 @@ Compare the commands above to the all important and oft mentioned **scripts** se
 
 ```json
 "scripts": {
-  "start": "node_modules/.bin/webpack-dev-server",
+  "start": "node_modules/.bin/webpack-dev-server --port=30025 --mode=development",
   "build": "node_modules/.bin/webpack"
 },
 ```
@@ -459,6 +453,8 @@ ReactDOM.render(<ReactBasics/>, document.getElementById('root'));
 Now compile and run as shown earlier.
 
 ## js-beautify
+
+Don't do this section. We will use prettier instead.
 
 The file is called .jsbeautifyrc. The first option shown below tells js-beautify to leave JSX alone, the second tells it to leave import statements alone when they contain inline curly braces:
 import { ReactBasics } from '../ReactBasics.js';
