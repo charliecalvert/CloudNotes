@@ -1,4 +1,4 @@
-## Isit320 Week01 2017
+## Isit320 Week01 2018
 
 There is no main text for this course. There are, however many resources. Some of these resources I created, but most are available on the web:
 
@@ -36,7 +36,6 @@ Non-technical and end-user goals:
 - [Syllabus](http://bit.ly/isit320-syllabus-2017)
 - Complete introductory comments and Introductions
 - Review canvas basics: [Announcements, Modules, Discussions](http://bit.ly/V6JECq)
-- Create core cloud accounts: [Online Presence][online-presence]
 - Learn about Git.
 
 Technical goals:
