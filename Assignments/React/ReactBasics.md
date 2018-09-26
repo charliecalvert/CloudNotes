@@ -29,8 +29,8 @@ mkdir week02-react-basics && cd week02-react-basics
 Notice the **&&** operator used to concatenate these two commands. This is a time saver as it allows you to issue two commands on a single line rather than writing something like this:
 
 ```
-mkdir Week01-ReactBasics
-cd Week01-ReactBasics
+mkdir week01-react-basics
+cd week01-react-basics
 ```
 
 ## NPM Init
