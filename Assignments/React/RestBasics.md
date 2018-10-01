@@ -12,8 +12,8 @@ Both of these slide decks contain relevant information that might be useful when
 
 ## Get Started
 
-Create a branch called **Week02**.
-Create a directory called **Week02-RestBasics** in your **Week02** branch.
+Create a branch called **week02**.
+Create a directory called **week02-rest-basics** in your **Week03** branch.
 
 ## Motivation
 
@@ -26,8 +26,8 @@ Your assignment is to understand how and why a request from a client is processe
 We are going to have two projects in this assignment, so lets set up a directory for them. Navigate to the root of your repository and enter the following commands:
 
 ```
-mkdir Week02-RestBasics
-cd Week02-RestBasics
+mkdir week03-rest-basics
+cd week02-rest-basics
 ```
 
 ## Create Server
@@ -47,6 +47,7 @@ cd server
 You have now created a fully functional, node based, express server that can handle HTTP requests.
 
 **NOTE**: _You can usually return to the directory you were in previously by typing **cd -**._
+
 ## URLS
 
 The following diagram provides us with some nomenclature.
@@ -153,6 +154,11 @@ The first line just allows us to gain access to our new file: it links it into o
 
 Now set the port, in **bin/www**, to **30026**. Two ways to do that are explained in our [Concurrently assignment][cca].
 
+Be sure to modify listen like this:
+
+```
+server.listen(port, () => console.log("Listening on", port));
+```
 
 We are going to run the client on port 30025, so we are setting the port for the server to some other number. I've chosen 30026 in the hopes that it will be easy to remember.
 
