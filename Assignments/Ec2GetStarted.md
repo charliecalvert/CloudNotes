@@ -233,8 +233,10 @@ ssh ubuntu@35.163.123.100 <== Access EC2 Instance
 cd ~/.ssh                 <== Enter SSH directory on EC2
 ssh-add prog270-2017      <== Load key on EC2
 cd ~/Git                  <== Go to Git and clone
-git clone git@github.com/user-name/repo-name.git
+git clone git@github.com:user-name/repo-name.git
 ```
+
+Note that **git@github.com:user-name/repo-name.git** is the URL of your GitHub repository.
 
 Let's walk through this step by step.
 
