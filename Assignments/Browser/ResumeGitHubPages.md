@@ -6,32 +6,40 @@ Begin building a web site.
 
 Take the **resume.html** file from our [previous assignment][pr-resume]. Copy it into your repository. For now, it will probably be simplest if you use the Windows Explorer or some similar tool to do this.
 
-**Note**: _The file might be in your **documents.prog109** or attached to your first web page assignment._
-
-The file might have had a different name when you turned in the First Web Page assignment. However, you should now rename the page to **resume.html** and put it in the root of your repository. When I say "put it in the root" I mean that you should not put the file in a subdirectory -- at least for now.
+The file might be in your **documents/prog109** folder or attached to your first web page assignment. It might have had a different name when you turned in the First Web Page assignment. Regardless, you should now rename the page to **resume.html** and put it in the root of your repository. When I say "put it in the root" I mean that you should not put the file in a subdirectory -- at least for now. Put it directly in the root of your **prog109-lastname-2018** directory.
 
 ## Correct It
 
-Open up the file in Visual Studio Code or your editor of choice and correct any errors in the file. Many of you can watch the video I attached to your assignment in order to learn about many of the errors in your file. Also use the HTML Validator to clean up errors. The Validator should give your file a clean bill of health before you turn in the assignment.
+Open up the file in Visual Studio Code or your editor of choice and correct any errors in the file. Many of you can watch the video I attached to your assignment in order to learn about many of the errors in your file. Also use the [HTML Validator][hv] to clean up errors. The Validator should give your file a clean bill of health before you turn in the assignment.
+
+**NOTE**: _If you can't get the Chrome HTML Validator to work in your browser, you can try the [W3C validator][w3cv]._
+
+**NOTE**: _We have to try to get to the bottom of why some students are having trouble using the [VLC media player][vlcm]. Admittedly, the [tool I use][kazam] to create videos is not widely known, but it has worked for nearly all students in the past. The VLC Media Player is probably the best tool of its kind available. Launch it, then load the video into the VLC media player. Make sure you are using VLC and not the Windows Media Player or the default MAC video player._
+
+![The VLC Media Player Running on Ubuntu][vlcu]
 
 ## Home Page Basics
 
-By default, most websites will load a file called **index.html** if you do not specify the name of a specific file. For instance, if a file called **index.html** exists in the root of your repository, then it will be loaded automatically if you give the bare URL of you GitHub pages website:
+By default, most websites will load a file called **index.html** if you do not specify the name of a specific file.
+
+If it does not exist already, create a file called **index.html** in the root of your repository. Push your work to GitHub. Now the **index.html** file should be loaded automatically if you give the bare URL of you GitHub pages website:
 
 ```
-https://foo.github.io
+https://example.github.io
 ```
+
+**NOTE**: _There may or may not be an actual GitHub Page site called **example.github.com**. Regardless, I am using this URL only as a template, and you should type in the name of your GitHub Pages site. (When looking at your repository, you can go the **Settings** page to find the URL of your GitHub pages site if you do not know it already.) Remember that there is often a delay between the time you push your repository and the time when your changes are reflected on your GitHub Pages site. The delay is usually less than a minute, but at least subjectively, it has felt longer to me at times._
 
 Another way to load the same file is to load **index.html** is to write a URL that looks like this:
 
 ```
-https://foo.github.io/index.html
+https://example.github.io/index.html
 ```
 
 This link would load a file called **resume.html**:
 
 ```
-https://foo.github.io/resume.html
+https://example.github.io/resume.html
 ```
 
 ## Create Home Page`
@@ -56,8 +64,13 @@ You need not get too fancy. My home page, and yours, is very simple at this poin
 
 ## Turn it in
 
-Finally, push your work to your GitHub Pages web site. When you turn in your assignment, provide me with a link to your home page. From that home page, I should be able to load your corrected resume.
+Finally, push your work to your GitHub Pages web site. When you turn in your assignment, provide me with a link to your home page for your GitHub pages site. From that home page, I should be able to load your corrected resume.
 
-**NOTE:** _If you have a hard time creating the home page (index.html) and the link to **resume.html**, don't fret too much. Remember that if you push your **index.html** and **resume.html** to GitHub, then I can pull it down on to my computer and see how much you were able to accomplish._
+**NOTE:** _If you have a hard time creating the home page (index.html) and/or the link to **resume.html**, don't fret too much. Remember that if you push your **index.html** and **resume.html** to GitHub, then I can pull it down on to my computer and see how much you were able to accomplish._
 
 [pr-resume]: https://www.elvenware.com/teach/prog109/resume.html
+[hv]: http://users.skynet.be/mgueury/mozilla/download_090.html
+[w3cv]: https://validator.w3.org/
+[vlcm]: https://www.videolan.org/vlc/index.html
+[kazam]: https://itsfoss.com/best-linux-screen-recorders/
+[vlcu]: https://s3.amazonaws.com/bucket01.elvenware.com/images/vlc-about.png
