@@ -163,9 +163,9 @@ describe('rest basic tests', function() {
 
     it('renders initial value of paragraph with state.nine', () => {
         const wrapper = shallow(<App/>);
-        const nineSign = <p className="App-intro">file: unknown</p>;
+        const unknown = <p className="App-intro">file: unknown</p>;
         elfDebugEnzyme.getLast(wrapper, 'p', true);
-        expect(wrapper.contains(nineSign)).toEqual(true);
+        expect(wrapper.contains(unknown)).toEqual(true);
     });
 
 });
