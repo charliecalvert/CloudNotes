@@ -2,6 +2,7 @@
 * [Cloud9Intro.html](Cloud9Intro.html)
 * [Ec2GetStarted.html](Ec2GetStarted.html)
 * [ExpressBasics.html](ExpressBasics.html)
+* [ExpressRoutes.html](ExpressRoutes.html)
 * [GitNewRepo.html](GitNewRepo.html)
 * [Introductions.html](Introductions.html)
 * [JavaScriptObjects.html](JavaScriptObjects.html)
