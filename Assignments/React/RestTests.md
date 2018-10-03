@@ -63,7 +63,7 @@ constructor() {
     super();
     this.state = {
         file: 'unknown',
-        foo: 'waiting'
+        status: 'waiting'
     };
 }
 
@@ -78,7 +78,7 @@ render() {
             </div>
 
             <p className="App-intro">
-                state: {this.state.foo}
+                state: {this.state.status}
             </p>
             <p className="App-intro">
                 file: {this.state.file}
