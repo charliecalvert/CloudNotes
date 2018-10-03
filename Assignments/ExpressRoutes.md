@@ -16,11 +16,11 @@ Suppose you write this URL:
 
 ## Create
 
-<pre>
-express Week04-ExpressRoutes
-cd Week04-ExpressRoutes
+```bash
+express week04-express-routes
+cd week04-express-routes
 npm install
-</pre>
+```
 
 The the usual list of items:
 
@@ -30,34 +30,33 @@ The the usual list of items:
 
 Put our DEBUG statement in the OS environment and start the app:
 
-</pre>
-export DEBUG=Week04-ExpressRoutes:server
+```bash
+export DEBUG=week04-express-routes:server
 npm start
-</pre>
+bash
 
 ## Bower
 
-<pre>
+```bash
 bower init
 cp $ELF_TEMPLATES/.bowerrc .
 bower install jquery --save
-</pre>
+```
 
 Then add jquery to **layout.jade**:
 
-<pre>
+```JavaScript
 script(src='components/jquery/dist/jquery.js')
 script(src="javascripts/control.js")
-</pre>
+```
 
 Add some buttons and a paragraph to **index.jade**:
 
-<pre>
-button#read Read
-button#readJson ReadJson
+    button#read Read
+    button#readJson ReadJson
 
-pre#display
-</pre>
+    pre#display
+
 
 ## Server
 
