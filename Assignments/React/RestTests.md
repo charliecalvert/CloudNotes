@@ -10,7 +10,7 @@ Navigate to the root of the **client** project and install some NPM packages:
 
 ```
 npm install --save-dev enzyme enzyme-adapter-react-16
-npm install --save-dev react-test-renderer
+# npm install --save-dev react-test-renderer
 npm test
 ```
 
@@ -20,12 +20,10 @@ We want to ensure that we get all of these tools set to use the same version. Fo
 "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.13",
-    "whatwg-fetch": "^2.0.3"
+    "react-scripts": "1.0.13"
 },
 "devDependencies": {
     "enzyme": "^3.0.0",
-    "react-test-renderer": "^16.0.0"
 }
 ```
 
@@ -44,7 +42,6 @@ If you try the above, and the versions still look wrong, try something like this
 
 ```
 npm i --save react@16 react-dom@16
-npm i --save-dev react-test-renderer@16
 npm i --save-dev enzyme enzyme-react-adapter-16
 ```
 
@@ -121,7 +118,7 @@ Some of you know that there is a relatively complete Enzyme debug object.
 - [The original object saved as a gist on my GitHub account][enz-debug].
 - Or clone it like this: https://gist.github.com/51daef341699943b07c9570c3ad2cbab.git
 
-But all that is a bit heavyweight for this exercise. Instead, we can just use this simple ES6 class:
+But all that is a bit heavyweight for this exercise. Instead, we can just put this simple ES6 class in a file called **src/ElfDebugEnzyme**:
 
 ```javascript
 class ElfDebugEnzyme {
@@ -141,7 +138,7 @@ class ElfDebugEnzyme {
 export default new ElfDebugEnzyme();
 ```
 
-Place this code in a file called **ElfDebugEnzyme.js**. At the top of **App.test.js**, reference your new debug object:
+At the top of **App.test.js**, reference your new debug object:
 
 ```
 import React from 'react';
@@ -151,8 +148,6 @@ import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import elfDebugEnzyme from './ElfDebugEnzyme';
 ```
-
-**NOTE**: _Make sure you do not end up with two **renders without crashing** tests._
 
 ## The Tests
 
@@ -176,7 +171,9 @@ describe('rest basic tests', function() {
 });
 ```
 
-As you can see, this code looks very much like the [Jasmine][jaz] test framework. The **describe** method is used to declare a suite of tests. Each individual test is defined inside an **it** method.
+**NOTE**: _Make sure you do not end up with two **renders without crashing** tests._
+
+This code looks very much like the [Jasmine][jaz] test framework. The **describe** method is used to declare a suite of tests. Each individual test is defined inside an **it** method.
 
 - The first parameter to **it** is a description of the test.
 - The second is callback, a test function, that defines the test.
