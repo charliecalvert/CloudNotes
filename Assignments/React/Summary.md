@@ -16,6 +16,7 @@
 * [ReactPropsMaterial.html](ReactPropsMaterial.html)
 * [ReactPropsNative.html](ReactPropsNative.html)
 * [RestBasics.html](RestBasics.html)
+* [RestTests.html](RestTests.html)
 * [TestSnapShotsAndHints.html](TestSnapShotsAndHints.html)
 * [UnitTestsAddress.html](UnitTestsAddress.html)
 * [index.html](index.html)

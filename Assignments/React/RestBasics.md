@@ -13,7 +13,7 @@ Both of these slide decks contain relevant information that might be useful when
 ## Get Started
 
 Create a branch called **week02**.
-Create a directory called **week02-rest-basics** in your **Week03** branch.
+Create a directory called **week02-rest-basics** in your **week03** branch.
 
 ## Motivation
 
@@ -27,7 +27,7 @@ We are going to have two projects in this assignment, so lets set up a directory
 
 ```
 mkdir week03-rest-basics
-cd week02-rest-basics
+cd week03-rest-basics
 ```
 
 ## Create Server
