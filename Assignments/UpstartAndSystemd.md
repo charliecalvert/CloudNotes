@@ -215,7 +215,7 @@ No matter how simple the commands, it is almost always worth taking a moment to 
 - [elven-systemd-tools directory][est]
 
 [est]: https://github.com/charliecalvert/elven-systemd-tools
-[est-rm]: 
+[est-rm]: https://github.com/charliecalvert/elven-systemd-tools/blob/master/README.md
 
 ## ExecStart
 
