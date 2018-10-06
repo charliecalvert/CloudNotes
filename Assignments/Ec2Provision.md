@@ -1,8 +1,221 @@
 ## Description
 
-Create and provision an EC2 instance suitable for node development or running at least running node applications.
+Create and provision an EC2 instance suitable for node development or at least running node applications.
 
-## Provision EC2
+## Updated and Partially Automated
+
+This assignment is still under construction, but there should be enough here to get you going.
+
+**NOTE**: _Running the code described here creates EC2 instances. After you create them, terminate them or you will be charged beaucoup bucks. The steps described here also work with regular EC2 accounts (non-AWS-EDUCATE) but in that case I put credentials in a **~/.aws/config.json** file. See commented out line of code and line that sets region._
+
+**NOTE**: _This should all work on Cloud 9, but I have not tested it there. If possible, work on Pristine Lubuntu._
+
+## GitHub Part I
+
+The code here does not yet automate setting up GitHub access. All you really need is your the private key associated with the public key you put in your GitHub account Settings GUI. Before beginning this assignment, make sure you have that key.
+
+## Get Started
+
+Create a folder called **week04-aws-setup**. In it run **npm init**.
+
+Install aws:
+
+```
+npm install aws-sdk
+```
+
+In **~/.aws** create this file and call it **credentials**:
+
+```
+[default]
+aws_access_key_id=<YOUR KEY>
+aws_secret_access_key=<YOUR SECRET>
+aws_session_token=<WE MIGHT ALSO NEED THIS ONE>
+```
+
+Aws Educate students get their keys by selecting "Account Details" on the same page where you see **remaining credits** and **session time**. Your region will be **us-east-1**. It's right after you select the classroom. Unfortunately, these keys expire over time, so you will have to recreate the file when your time runs out in AwsEducate. This is not true if you have a regular account.
+
+If you are trying to use a regular account, not an AWS Educate account, create **~/.aws/config.json**. You can leave **~/.aws/credentials**, I think:
+
+```
+{
+	"region":"us-west-2",
+	"accessKeyId":"YOUR KEY",
+	"secretAccessKey": "YOUR SECRET"
+}
+```
+
+You can also put the variables in the environment:
+
+```
+export AWS_DEFAULT_REGION=us-west-2
+export AWS_ACCESS_KEY_ID=<YOUR KEY>
+export AWS_SECRET_ACCESS_KEY=<SECRET>
+```
+
+## Create Your Instance
+
+Create this file and call it **run.js**:
+
+```JavaScript
+var AWS = require('aws-sdk');
+
+AWS.config.credentials.get(function () {
+    var accessKeyId = AWS.config.credentials.accessKeyId;
+    var secretAccessKey = AWS.config.credentials.secretAccessKey;
+    console.log("Access Key:", AWS.config.credentials.accessKeyId);
+    console.log("Secret Access Key:", AWS.config.credentials.secretAccessKey);
+});
+
+//AWS.config.loadFromPath(process.env.HOME + '/.aws/config-aws.json');
+AWS.config.update({region:'us-east-1'});
+
+console.log(AWS.config);
+
+// Create EC2 service object
+var ec2 = new AWS.EC2({apiVersion: '2016-11-15'});
+
+// AMI is amzn-ami-2011.09.1.x86_64-ebs
+var instanceParams = {
+    BlockDeviceMappings: [
+        {
+            DeviceName: "/dev/sda1",
+            Ebs: {
+                VolumeSize: 16,
+                VolumeType: 'gp2'
+            }
+        }
+    ],
+    ImageId: 'ami-0ac019f4fcb7cb7e6',
+    InstanceType: 't2.micro',
+    KeyName: 'ec2-320-inclass',
+    SecurityGroupIds: ['sg-0343e3be157db8175'],
+    MinCount: 1,
+    MaxCount: 1
+};
+
+// Create a promise on an EC2 service object
+var instancePromise = new AWS.EC2({apiVersion: '2016-11-15'}).runInstances(instanceParams).promise();
+
+// Handle promise's fulfilled/rejected states
+instancePromise.then(
+    function (data) {
+        console.log(data);
+        var instanceId = data.Instances[0].InstanceId;
+        console.log("Created instance", instanceId);
+        // Add tags to the instance
+        var date = new Date().toISOString();
+        tagParams = {
+            Resources: [instanceId], Tags: [
+                {
+                    Key: 'Name',
+                    Value: 'isit320-' + date
+                }
+            ]
+        };
+        // Create a promise on an EC2 service object
+        var tagPromise = new AWS.EC2({apiVersion: '2016-11-15'}).createTags(tagParams).promise();
+        // Handle promise's fulfilled/rejected states
+        tagPromise.then(
+            function (data) {
+                console.log("Instance tagged");
+            }).catch(
+            function (err) {
+                console.error(err, err.stack);
+            });
+    }).catch(
+    function (err) {
+        console.error(err, err.stack);
+    });
+```
+
+You will have to tweak:
+
+- KeyName
+- SecurityGroupIds
+- Maybe other?
+
+When ready, run the file: **node run.js**. If you get errors, explore the output and see if you can find the problem. The code should work if you have the details filled in correctly.
+
+## Create ~/.ssh/config
+
+It should contain something like this:
+
+```
+Host ec2-bc
+    HostName <YOUR ELASTIC IP or PUBLIC IP from Aws Educate EC2 instance>
+    Port 22
+    User ubuntu
+    IdentityFile ~/.ssh/<YOUR EC2 KEY>
+```    
+
+## JsObjects Provision
+
+Do this:
+
+```bash
+slb
+git pull
+./CreateSymbolicLinks
+```
+
+Now the new Provision script should be on your path. Run it:
+
+```bash
+Provision
+```
+
+It will copy scripts to your instance
+
+Pick A, B and C in turn from the menu.
+
+- Pick A and read it.
+- Pick B and wait until it completes. It ends up rebooting your instance. Give the instance time to restart. About 2 minutes, but you can check the AWS console Instances page.
+- Pick C. It runs UbuntuSetup from an instance of JsObjects that was automatically installed on your EC2 instance by the Provision script.
+
+Your instance should now be completely configured and ready to use.
+
+**NOTE**: _Don't do any more of this assignment. Stop here._
+
+**NOTE**: _Don't forget to terminate instances you aren't using. You should have only one at a time unless I specifically ask you to do more._
+
+## GitHub Part II
+
+This is not automated yet. For now you need to manually copy your key to your EC2 instance:
+
+```
+scp <MyKey> ec2-bc:/home/ubuntu/.ssh/.
+```
+
+Create an SSH config file in your EC2 instances ~/.ssh directory. Put this in it:
+
+```
+Host github.com
+    HostName github.com
+    Port 22
+    User git
+    IdentityFile ~/.ssh/<YOUR GITHUB KEY>
+```
+
+Now you should, I think, be able to clone, pull and push your repo.
+
+For extra credit, you automate all this in a script called **load-my-repo-on-ec2**. Copy it to EC2 and run it. Look at **Provision** to see how it is done.
+
+## Turn it in
+
+There is another, outdated, Turn it in section below. Use this one.
+
+Delete all your EC2 instances related to this class. On AWS Educate, that means all instances. Create and provision three instances with 20 minutes. Take a screen shot of the EC2 console showing all three instances running. Attach it to the assignment.
+
+I'm looking for:
+
+- Branch
+- Folder
+- A second screen shot of the AWS Console showing that you have only one instance running and it was created after Oct 4. (That's Oct 5 or later.)
+
+## Begin Old Provision EC2 Assignment
+
+**NOTE**: _Don't do this part of the assignment, or any parts after this. This is here as a reference, but it is outdated due to the new Provision script._
 
 This assignment is perhaps not entirely complete, but here is enough to get you started. Perform the following tasks:
 
@@ -178,7 +391,7 @@ the **source** command:
 
 See [this section][node-elf] on Elvenware.
 
-[node-elf]: 
+[node-elf]:
 
 ## Notes on Node Install
 
@@ -215,7 +428,9 @@ The **Public IP** addresses assigned to you by default on EC2 are not permanent.
 [lamp]:http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
 [elasticip]:http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
 
-## Turn it In
+## Old Turn it In
+
+Ignore this.
 
 To turn in the assignment, you should provide a screen shot showing:
 

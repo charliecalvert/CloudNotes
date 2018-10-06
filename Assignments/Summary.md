@@ -1,6 +1,7 @@
 * [AskQuestion.html](AskQuestion.html)
 * [Cloud9Intro.html](Cloud9Intro.html)
 * [Ec2GetStarted.html](Ec2GetStarted.html)
+* [Ec2Provision.html](Ec2Provision.html)
 * [ExpressBasics.html](ExpressBasics.html)
 * [ExpressRoutes.html](ExpressRoutes.html)
 * [GitNewRepo.html](GitNewRepo.html)
