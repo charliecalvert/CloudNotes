@@ -24,16 +24,24 @@ Install aws:
 npm install aws-sdk
 ```
 
-In **~/.aws** create this file and call it **credentials**:
+We are using the AWS SDK to create instances.
+
+## AWS SDK and AWS Educate {#aws-sdk-educate}
+
+If you are using AWS Educate create a file called **credentials** in **~/.aws**:
 
 ```
 [default]
 aws_access_key_id=<YOUR KEY>
 aws_secret_access_key=<YOUR SECRET>
-aws_session_token=<WE MIGHT ALSO NEED THIS ONE>
+aws_session_token=<WE ALSO NEED THIS ONE>
 ```
 
-Aws Educate students get their keys by selecting "Account Details" on the same page where you see **remaining credits** and **session time**. Your region will be **us-east-1**. It's right after you select the classroom. Unfortunately, these keys expire over time, so you will have to recreate the file when your time runs out in AwsEducate. This is not true if you have a regular account.
+Aws Educate students get their keys by selecting "Account Details" on the AWS Educate site. This button is found on the same page where you see **remaining credits** and **session time**. It's right after you select the classroom. Unfortunately, these keys expire over time, so you will have to recreate the file when your time runs out in Aws Educate. This is not true if you have a regular account.
+
+Your AWS Educate region will be **us-east-1**.
+
+## The AWS SDK for AWS Regular Accounts {#aws-sdk-regular}
 
 If you are trying to use a regular account, not an AWS Educate account, create **~/.aws/config.json**. You can leave **~/.aws/credentials**, I think:
 
@@ -52,6 +60,8 @@ export AWS_DEFAULT_REGION=us-west-2
 export AWS_ACCESS_KEY_ID=<YOUR KEY>
 export AWS_SECRET_ACCESS_KEY=<SECRET>
 ```
+
+These will override anything you put in **~/.aws/config.json**.
 
 ## Create Your Instance
 
