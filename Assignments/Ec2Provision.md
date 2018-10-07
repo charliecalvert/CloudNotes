@@ -24,7 +24,13 @@ Install aws:
 npm install aws-sdk
 ```
 
-We are using the AWS SDK to create instances.
+We are using the AWS SDK to create instances. You will need to create some files described below. But them in a directory of Pristine Lubuntu called **~/.aws**:
+
+```bash
+mkdir ~/.aws && cd ~/.aws
+```
+
+As mentioned above, this should also work on Cloud9, I just haven't tried it there yet. I suppose it would also work on EC2 itself, but I have not tried that either.
 
 ## AWS SDK and AWS Educate {#aws-sdk-educate}
 
@@ -210,6 +216,24 @@ Host github.com
 Now you should, I think, be able to clone, pull and push your repo.
 
 For extra credit, you automate all this in a script called **load-my-repo-on-ec2**. Copy it to EC2 and run it. Look at **Provision** to see how it is done.
+
+## A Few Tips
+
+If you can get **run.js** to execute properly, then it should create a new EC2 instance of Ubuntu Server on AWS or AWS Educate.
+
+Provision should install **JsObjects**, **NodeJs** and our global NPM packages in our EC2 instance. The NPM packages should be in **~/npm/bin** and other subdirectories of **~/npm**.
+
+Because you have the **config** file in the **~/.ssh** directory, you should be able to reach your EC2 instance with this command:
+
+```
+ssh ec2-bc
+```
+
+Be careful not to create a bunch of instances on EC2. After you create them and play with them for a bit, go to the AWS EC2 console and terminate them! Probably best not to create more than two at a time. Don't leave more than one running on EC2 for more than an hour. You can leave one running for as long as you want, but don't leave two running for more than a few minutes.
+
+- [EC2 Billing Rules][ec2br]
+
+[ec2br]: https://aws.amazon.com/premiumsupport/knowledge-center/ec2-instance-hour-billing/
 
 ## Turn it in
 
