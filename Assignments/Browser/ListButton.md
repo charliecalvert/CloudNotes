@@ -39,6 +39,10 @@ Be sure your controls sets both the **name** and the **id** attributes to **list
 name="list-data" id="list-data"
 ```
 
+Watch the Video:
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/Yg5JSZ2pGKU?ecver=2" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 ## Create the set-text Button
 
 Create a button that has an id of **set-text** and a **type** of **button**.
@@ -101,5 +105,97 @@ Like this:
 ```
 
 Now load you page in the browser (Ctrl + O) and see if it works. When you click on the button the text "The first item for my list" should appear in the input control.
+
+## Add Library
+
+Here is a very short library. You do not need to understand the code in it. When we use a library, often the whole point is that we don't need to understand how it works. We simply use the library and gain benefit from it. But we don't need to understand it to use it anymore than we need to understand how to build a jet plane in order to take a flight to Hawaii. It is a service we use.
+
+Here is the library, which you should save as **elf-code.js**:
+
+```javascript
+const elfCode = {
+    appendToList: (list, value) => {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(value));
+        list.appendChild(li);
+    }
+}
+```
+
+This code will allow us to dynamically add a list item (li) to an unordered list (ul) when a button is selected.
+
+After saving the code, you should add a second **script** tag to the **head** element in your HTML file. The **script** element should load **elf-code.js** and should be place just above the script element that loads **index.js**. The two script elements will be identical in every way except for the value of their **src** attributes.
+
+## A Second Button and a UL Element
+
+Add a second button with an **id** set to **add-to-list**. It's content (label) should be **Add to list**:
+
+- button#add-to-list[type=button]
+
+Beneath it add an empty UL element with the **id** set to **my-list**. When the **add-to-list** button is selected, the text from the **input** control will be added to the list.
+
+## Clicks on Add to List Button
+
+Here is the code for adding the text from the **input** control to the list. First we get a handle to the button:
+
+```javascript
+const listButton = document.getElementById('add-to-list');    
+```
+
+Put this code at the top of the onload method, just next to the code for getting the **setTextButton**, **userInput** and **listButton**:
+
+```javascript
+const setTextButton = document.getElementById('set-text');
+const userInput = document.getElementById('list-data');
+const listButton = document.getElementById('add-to-list');
+```
+
+At the bottom of the **onload** method, add code for responding to clicks on the button:
+
+```javascript
+listButton.onclick = () => {
+    const myList = document.getElementById('my-list');
+    elfCode.appendToList(myList, userInput.value);
+}
+```
+
+Our **onload** method now has three parts to it. Each part has its own task:
+
+- Part One: Use **getElementById** to retrieve the three controls we are using.
+- Part Two: Handle clicks on the **setTextButton**
+- Part Three: Handle clicks on the **listButton**
+
+Like this:
+
+```javascript
+window.onload = () => {
+    // Part I here
+    // Part II here
+    // Part III here
+}
+```
+
+That's not the code I want you to write, but it shows the structure of the method. Put the code for retrieving the the **setTextButton**, **userInput** and **listButton** in Part I. Put the code for the **setTextButton.onclick** method in Part II. Put the code of the **listButton.onclick** method in Part III.
+
+The code that begins with two forward slashes is a comment. The JavaScript runtime will ignore comments. As a result, you can leave them in place if you like, and paste in the appropriate code beneath each comment:
+
+```javascript
+// Part I here
+const setTextButton = document.getElementById('set-text');
+etc...
+```
+
+## Turn it In
+
+Test your code and make sure it works. Do the best you can, and then push your code to GitHub. When you turn in the assignment, paste in the URL of your repository and the name of the folder that holds your code.
+
+- Folder: ListButton
+- Repository: git@github.com:username/username.github.io
+
+You should, of course, paste in the URL for your repository, not the example URL shown above.
+
+Watch the video:
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/YfqBixQtQ2E?ecver=2" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
 [fc]: https://stackoverflow.com/a/29973358/253576
