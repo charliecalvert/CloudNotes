@@ -21,7 +21,7 @@ Create directory called **ListButton** in your repository.
 
 Create **index.js** in the **ListButton** directory.
 
-In **index.js** use the Emmet **! + tab** command to create the basic HTML.
+In **index.html** use the Emmet **! + tab** command to create the basic HTML.
 
 You may need to format the generated HTML. To do so, press these keys: **Ctrl + Shift + P**. Then type **Format Code**. [Reference][fc]
 
