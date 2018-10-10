@@ -18,7 +18,10 @@ You might find this diagram helpful when reading this assignment.
 
 ## Step 01 {#step-one}
 
-Your first step will be to create a [free account](https://aws.amazon.com/free/) on AWS.
+Your first step will be to create a:
+
+- [free account](https://aws.amazon.com/free/) on AWS.
+- Or an [AWS Educate Account][elf-aws-educate].
 
 - Slides that describe setting up AWS: [http://bit.ly/ec2-aws](http://bit.ly/ec2-aws)
 - [Page with Related Slides](https://sites.google.com/view/elfland/web-services)
@@ -494,3 +497,4 @@ Which allows:
 
 [ec2esg]: https://s3.amazonaws.com/bucket01.elvenware.com/images/ec2-elven-security-group.png
 [mvc]: https://www.thegeekstuff.com/2010/12/mv-command-examples/
+[elf-aws-educate]: 
