@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [[ -z $1 ]]; then
+    echo -e "You must pass in a commit message"
+    exit
+fi
+
+./push "$1"
+./send
+ssh -t aws bin/pull-gitio
