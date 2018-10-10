@@ -17,11 +17,11 @@ You will also learn how to use a very small JavaScript library.
 
 ## Get Started
 
-Create directory called **ListButton** in your repository.
+Create a directory called **ListButton** in your repository.
 
-Create **index.js** in the **ListButton** directory.
+Create a file called **index.js** in the **ListButton** directory.
 
-In **index.html** use the Emmet **! + tab** command to create the basic HTML.
+Create a file called **index.html** in the **ListButton** directory. In **index.html** use the Emmet **! + tab** command to create the basic HTML.
 
 You may need to format the generated HTML. To do so, press these keys: **Ctrl + Shift + P**. Then type **Format Code**. [Reference][fc]
 
