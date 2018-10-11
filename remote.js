@@ -1,4 +1,5 @@
 const exec = require('child_process').exec;
+const spawn = require('child_process').spawn;
     
 const execPush = () => {
    
@@ -11,7 +12,7 @@ const execPush = () => {
         });
         
 	yourscript.stdout.on('data', (data) => {
-		console.log('PUSH', data);
+		console.log('PUSH', JSON.parse(data));
 	});
 	
 	yourscript.stderr.on('data', (data) => {
@@ -23,20 +24,16 @@ const execPush = () => {
 const execSend = () => {
 
     
-    var yourscript = exec('~/Git/CloudNotes/send "new code"',
-        (error, stdout, stderr) => {            
-            // console.log(`${stderr}`);
-            if (error !== null) {
-                console.log(`exec error: ${error}`);
-            }
-        });
+    var yourscript = spawn('/home/charlie/Git/CloudNotes/send', ['test args']);
         
 	yourscript.stdout.on('data', (data) => {
-		console.log("SEND", data);
+		console.log(`child stdout:\n${data}`);
+		//console.log("SEND", data);
 	});
 	
 	yourscript.stderr.on('data', (data) => {
-		console.error("SEND", data);
+		console.log(`child stderr:\n${data}`);
+		//console.error("SEND", data);
 	});
 
 }
