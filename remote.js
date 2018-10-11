@@ -65,5 +65,5 @@ const ssher = () => {
 }
 
 execPush();
-execSend();
+//execSend();
 //ssher();
