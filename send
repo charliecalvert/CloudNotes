@@ -8,6 +8,7 @@ fi
 
 function git-commit() {
 	cd $DESTDIR
+	pwd
 	git add .
 	git commit -m "$1 $NOW"
 	git push
