@@ -1,13 +1,25 @@
 #! /bin/bash
 
+function message {
+    echo
+    echo =======================
+    echo "$1"
+    echo =======================
+    echo
+}
+
 if [[ -z $1 ]]; then
     echo -e "You must pass in a commit message"
     exit
 fi
 
-echo "Push CloudNotes on $HOSTNAME"
+message "Push CloudNotes on $HOSTNAME"
 ./push "$1"
-echo "Push GitIo on $HOSTNAME"
+
+message "Push GitIo on $HOSTNAME"
 ./send "$1"
+
+message "Switching to AWS"
+
 ssh -t aws bin/pull-key-repos
 echo "done."
