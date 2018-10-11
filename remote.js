@@ -119,7 +119,7 @@ execSend()
 Promise.all([execPush(), execSend()])
     .then((code) => {
         console.log(code);
-        //console.log(`send exited with result: ${code.result} and code: ${code.code}`);
+        ssher();
     })
     .catch((code) => {
         console.log(`send errored with code ${code}`);
