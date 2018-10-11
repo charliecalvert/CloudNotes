@@ -3,7 +3,7 @@ const execer = () => {
     
     var yourscript = exec('./push "new code"',
         (error, stdout, stderr) => {
-            console.log(`${stdout}`);
+            //console.log(`${stdout}`);
             //console.log(`${stderr}`);
             if (error !== null) {
                 console.log(`exec error: ${error}`);
