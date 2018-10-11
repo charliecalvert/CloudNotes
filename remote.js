@@ -1,6 +1,7 @@
-const execPush = () => {
-    const exec = require('child_process').exec;
+const exec = require('child_process').exec;
     
+const execPush = () => {
+   
     var yourscript = exec('~/Git/CloudNotes/push "new code"',
         (error, stdout, stderr) => {            
             // console.log(`${stderr}`);
@@ -10,17 +11,17 @@ const execPush = () => {
         });
         
 	yourscript.stdout.on('data', (data) => {
-		console.log(data);
+		console.log('PUSH', data);
 	});
 	
 	yourscript.stderr.on('data', (data) => {
-		console.error(data);
+		console.error('PUSH', data);
 	});
 
 }
 
 const execSend = () => {
-    const exec = require('child_process').exec;
+
     
     var yourscript = exec('~/Git/CloudNotes/send "new code"',
         (error, stdout, stderr) => {            
@@ -31,11 +32,11 @@ const execSend = () => {
         });
         
 	yourscript.stdout.on('data', (data) => {
-		console.log(data);
+		console.log("SEND", data);
 	});
 	
 	yourscript.stderr.on('data', (data) => {
-		console.error(data);
+		console.error("SEND", data);
 	});
 
 }
