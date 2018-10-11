@@ -1,5 +1,5 @@
 const exec = require('child_process').exec;
-var yourscript = exec('./deploy "test"',
+var yourscript = exec('./push "test"',
         (error, stdout, stderr) => {
             console.log(`${stdout}`);
             console.log(`${stderr}`);
