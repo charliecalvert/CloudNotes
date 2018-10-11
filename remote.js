@@ -96,26 +96,6 @@ const ssher = () => {
 };
 
 
-/*
-execPush()
-    .then((code) => {
-        console.log(`send exited with result: ${code.result} and code: ${code.code}`);
-    })
-    .catch((code) => {
-        console.log(`send errored with result: ${code.result} and code: ${code.code}`);
-    });
-
-execSend()
-    .then((code) => {
-        console.log(`send exited with resule: ${code.result} and code: ${code.code}`);
-    })
-    .catch((code) => {
-        console.log(`send errored with code ${code}`);
-    });
-*/
-
-
-
 Promise.all([execPush(), execSend()])
     .then((code) => {
         console.log(code);
@@ -124,6 +104,3 @@ Promise.all([execPush(), execSend()])
     .catch((code) => {
         console.log(`send errored with code ${code}`);
     });
-
-
-//ssher();
