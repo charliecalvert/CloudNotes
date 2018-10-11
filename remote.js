@@ -22,7 +22,7 @@ const execPush = () => {
 const execSend = () => {
     const exec = require('child_process').exec;
     
-    var yourscript = exec('./send "new code"',
+    var yourscript = exec('~/Git/CloudNotes/send "new code"',
         (error, stdout, stderr) => {            
             // console.log(`${stderr}`);
             if (error !== null) {
@@ -67,4 +67,5 @@ const ssher = () => {
 }
 
 execPush();
+execSend();
 //ssher();
