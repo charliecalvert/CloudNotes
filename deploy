@@ -5,7 +5,9 @@ if [[ -z $1 ]]; then
     exit
 fi
 
+echo "Push CloudNotes on $HOSTNAME"
 ./push "$1"
+echo "Push GitIo on $HOSTNAME"
 ./send "$1"
 ssh -t aws bin/pull-key-repos
 echo "done."
