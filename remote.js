@@ -40,7 +40,7 @@ const execPush = () => {
 const execSend = () => {
 
     return new Promise(function (resolve, reject) {
-        var yourscript = spawn('~/Git/CloudNotes/send', ['test args']);
+        var yourscript = spawn(process.env.HOME + '/Git/CloudNotes/send', ['test args']);
         //var yourscript = spawn('/home/charlie/Git/CloudNotes/send test args');
 
         yourscript.stdout.on('data', (data) => {
