@@ -18,6 +18,10 @@ const execPush = () => {
 	yourscript.stderr.on('data', (data) => {
 		console.error('PUSH', data);
 	});
+	
+	yourscript.on('close', (code) => {
+		console.log(`child process exited with code ${code}`);
+	});
 
 }
 
