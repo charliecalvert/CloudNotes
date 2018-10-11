@@ -1,6 +1,6 @@
 ## Overview
 
-The Week02 Prog270 Fall 2018 overview. We have three main tasks:
+Week02 Prog270 Fall 2018 overview. We have three main tasks:
 
 * Learn more about Linux
 * Learn more about Git
