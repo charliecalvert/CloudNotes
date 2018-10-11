@@ -1,0 +1,16 @@
+#! /bin/bash
+DESTDIR="$HOME/Git/charliecalvert.github.io/"
+
+if [[ -z $1 ]]; then
+    echo -e "You must pass in a commit message"
+    exit
+fi
+
+function git-commit() {
+	cd $DESTDIR
+	git add .
+	git commit -m "$1 $NOW"
+	git push
+}
+
+git-commit

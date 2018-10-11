@@ -6,5 +6,5 @@ if [[ -z $1 ]]; then
 fi
 
 ./push "$1"
-./send
+./send "$1"
 ssh -t aws bin/pull-gitio
