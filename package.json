@@ -1,0 +1,25 @@
+{
+  "name": "cloudnotes",
+  "version": "1.0.0",
+  "description": "CloudNotes ==========",
+  "main": "remote.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charliecalvert/CloudNotes.git"
+  },
+  "keywords": [
+    "remote"
+  ],
+  "author": "Charlie Calvert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charliecalvert/CloudNotes/issues"
+  },
+  "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
+  "dependencies": {
+    "ssh2": "^0.6.1"
+  }
+}
