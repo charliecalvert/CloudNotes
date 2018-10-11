@@ -1,9 +1,9 @@
 const exec = require('child_process').exec;
 const spawn = require('child_process').spawn;
 
-//const execPush = () => {
+const execPush = () => {
 
-const execPush = new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
 
         var yourscript = exec('~/Git/CloudNotes/push "new code"',
             (error, stdout, stderr) => {
@@ -35,7 +35,7 @@ const execPush = new Promise(function (resolve, reject) {
             });
         });
     });
-//};
+};
 
 const execSend = () => {
 
@@ -116,7 +116,7 @@ execSend()
 
 
 
-Promise.all([execPush])
+Promise.all([execPush(), execSend()])
     .then((code) => {
         console.log(code);
         //console.log(`send exited with result: ${code.result} and code: ${code.code}`);
