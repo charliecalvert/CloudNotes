@@ -10,7 +10,7 @@ const execer = () => {
         });
         
 	yourscript.stdout.on('data', (data) => {
-		console.log(`child stdout:\n${data}`);
+		console.log(data);
 	});
 
 }
