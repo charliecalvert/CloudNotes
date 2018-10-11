@@ -8,3 +8,4 @@ fi
 ./push "$1"
 ./send "$1"
 ssh -t aws bin/pull-key-repos
+echo "done."
