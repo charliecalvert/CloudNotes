@@ -14,7 +14,7 @@ const execer = () => {
 	});
 	
 	yourscript.stderr.on('data', (data) => {
-		console.error(`child stderr:\n${data}`);
+		console.error(data);
 	});
 
 }
