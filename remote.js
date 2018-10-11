@@ -1,5 +1,6 @@
 const execer = () => {
     const exec = require('child_process').exec;
+    
     var yourscript = exec('./push "new code"',
         (error, stdout, stderr) => {
             console.log(`${stdout}`);
@@ -8,6 +9,11 @@ const execer = () => {
                 console.log(`exec error: ${error}`);
             }
         });
+        
+	yourscript.stdout.on('data', (data) => {
+		console.log(`child stdout:\n${data}`);
+	});
+
 }
 
 const ssher = () => {
