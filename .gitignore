@@ -11,3 +11,4 @@ node_modules
 CopyToElvenware.sh
 .codenvy
 _mdwriter.cson
+package.json
