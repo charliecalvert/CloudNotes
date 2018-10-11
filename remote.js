@@ -20,7 +20,7 @@ const execPush = () => {
 	});
 	
 	yourscript.on('close', (code) => {
-		console.log(`child process exited with code ${code}`);
+		console.log(`PUSH exited with code ${code}`);
 	});
 
 }
@@ -38,6 +38,10 @@ const execSend = () => {
 	yourscript.stderr.on('data', (data) => {
 		console.log(`child stderr:\n${data}`);
 		//console.error("SEND", data);
+	});
+	
+	yourscript.on('close', (code) => {
+		console.log(`send exited with code ${code}`);
 	});
 
 }
