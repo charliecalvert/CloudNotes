@@ -12,7 +12,7 @@ const execPush = () => {
         });
         
 	yourscript.stdout.on('data', (data) => {
-		console.log('PUSH', JSON.parse(data));
+		console.log('PUSH', data);
 	});
 	
 	yourscript.stderr.on('data', (data) => {
