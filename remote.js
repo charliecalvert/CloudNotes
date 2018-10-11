@@ -69,32 +69,6 @@ const execSend = () => {
     });
 };
 
-
-const execSend2 = () => {
-
-    var yourscript = spawn('/home/charlie/Git/CloudNotes/send', ['test args']);
-    //var yourscript = spawn('/home/charlie/Git/CloudNotes/send test args');
-
-    yourscript.stdout.on('data', (data) => {
-        console.log(`child stdout:\n${data}`);
-        //console.log("SEND", data);
-    });
-
-    yourscript.stderr.on('data', (data) => {
-        console.log(`child stderr:\n${data}`);
-        //console.error("SEND", data);
-    });
-
-    yourscript.on('close', (code) => {
-        console.log(`send exited with code ${code}`);
-    });
-
-    yourscript.on('error', (code) => {
-        console.log(`send errored with code ${code}`);
-    });
-
-}
-
 const ssher = () => {
     var Client = require('ssh2').Client;
 
@@ -121,6 +95,7 @@ const ssher = () => {
 
 };
 
+
 execPush()
     .then((code) => {
         console.log(`send exited with result: ${code.result} and code: ${code.code}`);
@@ -137,5 +112,16 @@ execSend()
         console.log(`send errored with code ${code}`);
     });
 
+
+/*
+Promise.all([execPush, execSend])
+    .then((code) => {
+        console.log(code);
+        //console.log(`send exited with result: ${code.result} and code: ${code.code}`);
+    })
+    .catch((code) => {
+        console.log(`send errored with code ${code}`);
+    });
+*/
 
 //ssher();
