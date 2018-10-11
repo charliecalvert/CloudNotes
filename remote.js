@@ -12,6 +12,10 @@ const execer = () => {
 	yourscript.stdout.on('data', (data) => {
 		console.log(data);
 	});
+	
+	yourscript.stderr.on('data', (data) => {
+		console.error(`child stderr:\n${data}`);
+	});
 
 }
 
