@@ -2,8 +2,7 @@ const execer = () => {
     const exec = require('child_process').exec;
     
     var yourscript = exec('./push "new code"',
-        (error, stdout, stderr) => {
-            //console.log(`${stdout}`);
+        (error, stdout, stderr) => {            
             //console.log(`${stderr}`);
             if (error !== null) {
                 console.log(`exec error: ${error}`);
