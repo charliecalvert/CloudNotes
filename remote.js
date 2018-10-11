@@ -1,7 +1,28 @@
-const execer = () => {
+const execPush = () => {
     const exec = require('child_process').exec;
     
-    var yourscript = exec('./push "new code"',
+    var yourscript = exec('~/Git/CloudNotes/push "new code"',
+        (error, stdout, stderr) => {            
+            // console.log(`${stderr}`);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
+        
+	yourscript.stdout.on('data', (data) => {
+		console.log(data);
+	});
+	
+	yourscript.stderr.on('data', (data) => {
+		console.error(data);
+	});
+
+}
+
+const execSend = () => {
+    const exec = require('child_process').exec;
+    
+    var yourscript = exec('./send "new code"',
         (error, stdout, stderr) => {            
             // console.log(`${stderr}`);
             if (error !== null) {
@@ -45,5 +66,5 @@ const ssher = () => {
 
 }
 
-execer();
+execPush();
 //ssher();
