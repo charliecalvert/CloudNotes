@@ -87,7 +87,7 @@ Submit your work and attach the screenshots.
 <!-- Links in this document -->
 <!---------------------------->
 
-[ac9]: Cloud9/CloudNineAdvanced.html
+[ac9]: CloudNine/CloudNineAdvanced.html
 [gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
 
 [c9login]: https://c9.io/login
