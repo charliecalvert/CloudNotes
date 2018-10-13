@@ -6,7 +6,7 @@ Don't ever leave Lubuntu running when you close the laptop. This causes the mach
 
 ## Two
 
-There is some chance that it is the GUI that is frozen, and not your instance itself. If the instance freezes, try Right Ctrl + F1. This make the GUI disappear and the command prompt take its place. Log in. Try the killwebstorm, killchrome and killchromium aliases from ~/.bash_aliases in the General section. Go back to the Gui with Right Ctrl + F7 and see if things are better. Practice the technique of getting to the command line while it is working so you can see how the system should work.
+There is some chance that it is the GUI that is frozen, and not your instance itself. If the instance freezes, try **Right Ctrl + F1**. This make the GUI disappear and the command prompt take its place. Log in. Try the **killwebstorm**, **killchrome** and **killchromium** aliases from **~/.bash_aliases** in the General section. Go back to the Gui with **Right Ctrl + F7** and see if things are better. Practice the technique of getting to the command line while it is working so you can see how the system should work.
 
 ## Three
 
