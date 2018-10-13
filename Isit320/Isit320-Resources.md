@@ -12,6 +12,10 @@ with events and topics covered in our class.
 
 [elf-browse]: http://www.elvenware.com/charlie/development/cloud/Browsers.html
 
+## Tips
+
+- [General Tips for Charlie's Students][gt]
+-
 ## Elvenware Links
 
 - [JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/)
@@ -81,7 +85,8 @@ There is a lot of information in the assignments themselves. The main goal here 
 [bash-express-script]: http://www.ccalvert.net/books/CloudNotes/Assignments/BashExpressScript.html
 [del-query]: http://www.ccalvert.net/books/CloudNotes/Assignments/DeliciousQuery.html
 [jasmine-mock]: http://www.ccalvert.net/books/CloudNotes/Assignments/JasmineExpressMock.html
-[cloud9-intro]: http://www.ccalvert.net/books/CloudNotes/Assignments/Cloud9Intro.html
+[cloud9-intro]: https://www.elvenware.com/teach/assignments/Cloud9Intro.html
+[cloud9-advanced]: https://www.elvenware.com/teach/assignments/CloudNine/CloudNineAdvanced.html
 [javascript-objects]: http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html
 
 ### Code Academy Assignments
@@ -180,3 +185,9 @@ Some Links
 - [Drag and drop](<http://www.html5rocks.com/en/tutorials/file/dndfiles/>)
 - [OpenID](<http://en.wikipedia.org/wiki/OpenID#OpenID_Providers>)
 - [OpenID API](<http://openid.net/specs/openid-authentication-1_1.html>)
+
+<!--==========================-->
+<!--== Links =================-->
+<!--==========================-->
+
+[gt]: https://www.elvenware.com/teach/tips/
