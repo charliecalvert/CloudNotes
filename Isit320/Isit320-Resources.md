@@ -15,7 +15,7 @@ with events and topics covered in our class.
 ## Tips
 
 - [General Tips for Charlie's Students][gt]
--
+
 ## Elvenware Links
 
 - [JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/)
