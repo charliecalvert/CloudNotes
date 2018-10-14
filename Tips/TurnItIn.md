@@ -20,7 +20,7 @@ After you commit and push, tag your commit like this:
     git tag -a vX.X.X -m "<SOME_STRING_CHARLIE_GIVES_YOU>"
     git push origin vX.X.X
 
-Where **vX.X.X** is some version number of your choosing. For instance, **v1.0.1**. Each tag should have a unique version number. Your tag can have more in the string **SOME_STRING_CHARLIE_GIVES_YOU**, but it must have at least that much.
+Where **vX.X.X** is some version number of your choosing. For instance, **v1.0.1**. Each tag should have a unique version number. Your tag can have more in the string **SOME_STRING_CHARLIE_GIVES_YOU**, but it must have at least that much. If I don't give you a string, include the name of the assignment exactly as it appears on the Canvas home page.
 
 View tags:
 
