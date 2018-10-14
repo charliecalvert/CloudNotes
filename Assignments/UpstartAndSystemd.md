@@ -404,11 +404,32 @@ Be sure that you create, properly associate and submit an **Elastic IP** for you
 
 [elasticip]: http://www.elvenware.com/charlie/development/cloud/WebServices.html#elastic
 
+## Git Tag
+
+After you commit and push, tag your commit like this:
+
+    git tag -a vX.X.X -m "finished systemd"
+    git push origin vX.X.X
+
+Where **vX.X.X** is some version number of your choosing. For instance, **v1.0.1**. Each tag should have a unique version number. Your tag can have more in the string **finished systemd**, but it must have at least that much.
+
+View tags:
+
+    git tag -l -n1
+
 ## Turn it in
 
 Submit the **Elastic IP** or **Public DNS** address of your instance running on EC2.
 
 I'm not checking to see if the program is working correctly, only that it is running at all. I don't really care, for this assignment, whether I find **nrb**, **three-floor** or your final running on port 30025 of your EC2 instance. Just show me that you can get something running via **systemd** or **upstart**.  Also, add your config files, such as **nrb.conf** and/or **nrb.service** file to the appropriate project directory in your repository.
+
+When you turn in your assignment specify:
+
+- URL of your GitHub repository. For instance: **https://github.com/charliecalvert/JsObjects**
+- Branch
+- Folder
+- Tag
+- URL that points to your running app. <ELASTIC-IP>:<PORT>
 
 ## Hints
 
