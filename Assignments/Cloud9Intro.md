@@ -83,6 +83,19 @@ Students in other classes, may, if I specifically request, do the [advanced Clou
 
 Submit your work and attach the screenshots.
 
+## GitHub Pages vs Cloud 9
+
+Some students will be using both GitHub Pages and Cloud 9. Here is a brief overview of the differences between the two services.
+
+A **username.github.io** GitHub pages site is something we can share with the world as a means of allowing everyone to see our web site.
+
+Like GitHub Pages, Cloud 9 provides a means of allowing everyone to view a website, but unlike GitHub Pages, that view times-out after a few minutes. Cloud9 offers a preview of a website, while GitHub pages allows us to publish a website for long periods of time.
+
+The primary purpose of Cloud 9 is to allow us to edit our web pages in the cloud, and to push and pull from GitHub. By editing in the cloud on a site like Cloud 9 we get at least two advantages:
+
+1. We can work on our website without having to install Git on our home machines.
+2. We can work on our website from any machine that allows us to access the Internet. If we are on a machine with Internet access, then we can log into cloud 9 and begin editing our website.
+
 <!---------------------------->
 <!-- Links in this document -->
 <!---------------------------->
