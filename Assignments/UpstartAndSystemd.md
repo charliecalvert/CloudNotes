@@ -417,6 +417,10 @@ View tags:
 
     git tag -l -n1
 
+If you have hot yet pushed your tags, you can delete them fairly easily:
+
+    git tag -d vX.X.X
+
 ## Turn it in
 
 Submit the **Elastic IP** or **Public DNS** address of your instance running on EC2.
