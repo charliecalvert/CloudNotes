@@ -432,8 +432,12 @@ When you turn in your assignment specify:
 - URL of your GitHub repository. For instance: **https://github.com/charliecalvert/JsObjects**
 - Branch
 - Folder
-- Tag
+- Tag with string **finished systemd** in it
 - URL that points to your running app. http://&lt;ELASTIC-IP&gt;:&lt;PORT&gt;
+
+Some [tips on turning in assignments][tip-a]
+
+[tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
 
 ## Hints
 

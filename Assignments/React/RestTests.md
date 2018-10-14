@@ -242,8 +242,13 @@ It's simplest if you provide a link to the correct folder and branch on GitHub/B
 
 - Branch: <THE BRANCH WHERE YOU DID YOUR WORK>
 - Directory: <THE DIRECTORY WHERE YOU DID YOUR WORK>
+- Tag with string "RestTests" in it
 
 Oddly enough, the second technique where you specify the branch and folder is easiest for me, but they both are simple to use from my end.
+
+Some [tips on turning in assignments][tip-a]
+
+[tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
 
 ## Modern Tools
 

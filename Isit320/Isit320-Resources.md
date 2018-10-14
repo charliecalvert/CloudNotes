@@ -15,6 +15,7 @@ with events and topics covered in our class.
 ## Tips
 
 - [General Tips for Charlie's Students][gt]
+- Some [tips on turning in assignments][tip-a]
 
 ## Elvenware Links
 
@@ -191,3 +192,4 @@ Some Links
 <!--==========================-->
 
 [gt]: https://www.elvenware.com/teach/tips/
+[tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
