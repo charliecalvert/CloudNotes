@@ -429,7 +429,7 @@ When you turn in your assignment specify:
 - Branch
 - Folder
 - Tag
-- URL that points to your running app. &lt;ELASTIC-IP&t;:&lt;PORT&gt;
+- URL that points to your running app. &lt;ELASTIC-IP&gt;:&lt;PORT&gt;
 
 ## Hints
 
