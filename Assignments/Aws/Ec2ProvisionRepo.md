@@ -85,6 +85,19 @@ Here are the methods called by each button, the text for the button and the rout
 | this.runGetStarted| Run the GetStarted Script | /script-pusher/run-get-started |
 | this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
 
+## Create Endpoints
+
+In **routes/index.js** create endpoints for **createEducate**, **createAwsStandardAccount** and **associateElasticIp**.
+
+In **routes/script-pusher.js** create endpoints for **copyGetStarted**, **runGetStarted**, **removeKnownHost**.
+
+At minimum, each endpoint ought to return a JavaScript object with a **result** property set to the string **success**:
+
+```javascript
+response.send({result: 'success'});
+```
+
+The point is that not all the methods have to actually do anything at this point. We are just fleshing out the structure of the App. However, at least some of these methods are not hard to define, and you might be able to get them to work.
 
 [adt]: https://aws.amazon.com/tools/
 [jsdk]: https://aws.amazon.com/sdk-for-node-js/
