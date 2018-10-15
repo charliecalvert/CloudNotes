@@ -70,3 +70,4 @@ Test your work and ensure that clicks on the button retrieve data from the serve
 [adt]: https://aws.amazon.com/tools/
 [jsdk]: https://aws.amazon.com/sdk-for-node-js/
 [rb]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#link-client-and-server
+[rwc]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#rewrite-the-client
