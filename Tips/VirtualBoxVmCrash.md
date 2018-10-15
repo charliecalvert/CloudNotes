@@ -13,3 +13,9 @@ There is some chance that it is the GUI that is frozen, and not your instance it
 As Brett suggests, use the Virtual Box snap shot feature frequently to keep track of times when your VM is in good shape. Push a lot, so you don't lose work.
 
 And finally, if all else fails, and this is a bad enough problem, do your work on Cloud 9 instead of in Pristine Lubuntu.
+
+## Guest Additions
+
+Make sure the [Guest Additions][ga] are up to date as well as your copy of VirtualBox.
+
+[ga]: https://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
