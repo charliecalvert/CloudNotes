@@ -69,11 +69,25 @@ Test your work and ensure that clicks on the button retrieve data from the serve
 
 ## Add Buttons
 
+Here are the buttons we need to create with React:
 
+![AWS Provision Repo Buttons][aprb]
 
+Here are the methods called by each button, the text for the button and the route to the server endpoint. Please cut and paste so that you match them exactly. We will use these values in our tests and in grading:
+
+| Method | Button Content (Text)     | Route to Endpoint |
+| :------------- | :------------- |  :------------- |
+| this.queryServer | Bar | /foo |
+| this.createEducate | Create with AWS Educate Account | /create-educate |
+| this.createWithAwsStandardAccount| Create with AWS Standard Account | /create-standard |
+| this.associateElasticIp| Associate Elastic Ip | /associate-elastic-ip
+| this.copyGetStarted| Copy the GetStarted Script | /script-pusher/copy-get-started |
+| this.runGetStarted| Run the GetStarted Script | /script-pusher/run-get-started |
+| this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
 
 
 [adt]: https://aws.amazon.com/tools/
 [jsdk]: https://aws.amazon.com/sdk-for-node-js/
 [rb]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#link-client-and-server
 [rwc]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#rewrite-the-client
+[aprb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/aws-provision-repo-buttons.png
