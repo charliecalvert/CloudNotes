@@ -67,6 +67,10 @@ router.get('/foo', function(request, response) {
 
 Test your work and ensure that clicks on the button retrieve data from the server.
 
+## Add Buttons
+
+
+
 
 
 [adt]: https://aws.amazon.com/tools/
