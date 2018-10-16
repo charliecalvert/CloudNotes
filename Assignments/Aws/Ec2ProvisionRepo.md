@@ -99,13 +99,9 @@ response.send({result: 'success'});
 
 The point is that not all the methods have to actually do anything at this point. We are just fleshing out the structure of the App. However, at least some of these methods are not hard to define, and you might be able to get them to work.
 
-## systemd for Server
-
-Set up **systemd** for the server so that it can run automatically on port 30026. (We will have to move this off this port soon, but keep it there for now.) The main goal is to ensure that you can set up systemd for both Pristine Lubuntu and EC2. If you are on Cloud 9, then just set up **systemd** for EC2.
-
 ## One App
 
-Combine Client and Server into one app and start that app running on EC2. When you turn in the assignment, provide a link to that app.
+Combine Client and Server into one app and start that app running on Pristine Lubuntu. When you turn in the assignment, provide a screenshot of the app.
 
 - In the client folder run **npm run build**. This assumes the client was built with **create-react-app**.
 - Copy the contents of the **build** directory created by in the previous step to **../server/public/.**
@@ -129,15 +125,16 @@ Also make sure **client/build** is blocked. You are responsible. I think I've co
 
 Push your work providing:
 
-- git tag: message="Ec2ProvisionRepo v0.1.0". I don't care about the tag version number, that can be whatever works for you. What I want is a system that will allow you to turn the assignment in more than once with each submission tagged: v0.1.1, v0.1.2, etc.
+- git tag: message="ProvisionRepo v0.1.0". I don't care about the tag version number, that can be whatever works for you. What I want is a system that will allow you to turn the assignment in more than once with each submission tagged: v0.1.1, v0.1.2, etc.
 - branch: What branch you are working in. But also merge your working code back in master.
 - folder: What folder you are working in.
 - GitHub: The URL of your github repository.
 
+Also:
+
 - [Turn it in][tin]
 
 [tin]: https://www.elvenware.com/teach/tips/TurnItIn.html#basics
-
 [adt]: https://aws.amazon.com/tools/
 [jsdk]: https://aws.amazon.com/sdk-for-node-js/
 [rb]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#link-client-and-server
