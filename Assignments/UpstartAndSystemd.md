@@ -2,6 +2,20 @@
 
 Use systemd to ensure your program starts every time your Ubuntu system reboots. systemd keeps your program running.
 
+## Useful Scripts
+
+No matter how simple the commands, it is almost always worth taking a moment to create some bash scripts to automate the process. Here is an attempt to automate most of the process of running your program as a system service. They take a moment to setup, but they are very useful.
+
+**NOTE**: I maintain copies of these scripts here:
+
+- [elven-systemd-tools README][est-rm]
+- [elven-systemd-tools directory][est]
+
+Read through the README and you should be up and running fairly quickly.
+
+[est]: https://github.com/charliecalvert/elven-systemd-tools
+[est-rm]: https://github.com/charliecalvert/elven-systemd-tools/blob/master/README.md
+
 ## Video
 
 - [Talk me through it with a video][sdv]
@@ -204,18 +218,6 @@ systemctl disable nrb
 I'm not certain about the disable command at this time. I think it tells systemd not to load at boot, but allows us to leave the file in **/etc/systemd/system**. Not sure though.
 
 The first and second links below will get you up to speed fairly quickly.
-
-## Useful Scripts
-
-No matter how simple the commands, it is almost always worth taking a moment to create some bash scripts to automate the process. Here are three and half scripts that I find useful. They take a moment to setup, but they are very useful.
-
-**NOTE**: To simplify the process, I maintain copies of these scripts here:
-
-- [elven-systemd-tools README][est-rm]
-- [elven-systemd-tools directory][est]
-
-[est]: https://github.com/charliecalvert/elven-systemd-tools
-[est-rm]: https://github.com/charliecalvert/elven-systemd-tools/blob/master/README.md
 
 ## ExecStart
 
