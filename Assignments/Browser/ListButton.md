@@ -49,7 +49,7 @@ Wrap the input control in a FieldSet:
 
 ```html
 <fieldset>
-    <legend>Enter a string to to our list</legend>
+    <legend>Enter a string for our list</legend>
     <!-- Put the INPUT control here. -->
 </fieldset>
 ```
