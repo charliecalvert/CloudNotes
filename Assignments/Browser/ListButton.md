@@ -43,6 +43,17 @@ Watch the Video:
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/Yg5JSZ2pGKU?ecver=2" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
+## FieldSet
+
+Wrap the input control in a FieldSet:
+
+```html
+<fieldset>
+    <legend>Enter a string to to our list</legend>
+    <!-- Put the INPUT control here. -->
+</fieldset>
+```
+
 ## Create the set-text Button
 
 Create a button that has an id of **set-text** and a **type** of **button**.
