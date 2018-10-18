@@ -27,7 +27,7 @@ We want to ensure that we get all of these tools set to use the same version. Fo
 }
 ```
 
-The point is not the specific versions, but that they are all the same version.
+The point is not the specific versions shown in the code above, but that **react** and **react-dom** are on the same version. In other words, your copy of **react** my a higher version that **16.0.0**. That is fine, so long as it matches the version of **react-dom**.
 
 After editing your **package.json** file, run the following commands:
 
