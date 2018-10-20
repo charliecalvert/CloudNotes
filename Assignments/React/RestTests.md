@@ -1,6 +1,8 @@
 # Rest Tests
 
-This assignment is built on top of the [RestBasics][rb] assignment. Make your edits in the same directory you used for **RestBasics**, but you should be working in a new branch called **Week03-RestTest**. Create and switch to the branch first, and then begin your work.
+This assignment has two parts. Part I is described in the document you are currently reading. Part II is described in the slide deck called [jest with create-react-app][bcd]. Be sure to complete both parts. In particular, make sure you have a test for button clicks.
+
+The assignment is built on top of the [RestBasics][rb] assignment. Make your edits in the same directory you used for **RestBasics**, but you should be working in a new branch called **Week03-RestTest**. Create and switch to the branch first, and then begin your work.
 
 I'm assuming that you are working in a folder called **week02-rest-basics** and that it has both a **client** and **server** folder in it. If there is any doubt about the primary folder name, be sure to specify it when you turn in the assignment.
 
@@ -236,6 +238,10 @@ Watch Usage: Press w to show more.
 
 ## Turn it in
 
+Be sure you have also created a button click test as described here:
+
+- [Button Click Deck][bcd]
+
 Put your work in a branch called **Week03-RestTest** and then Git **tag**. Then run Git **add**, **push** and **commit**.
 
 It's simplest if you provide a link to the correct folder and branch on GitHub/BitBucket, or else detail what you are doing:
@@ -292,3 +298,4 @@ That should clean up the problem. When **react16.01** there should be a fix and 
 [enz]: https://github.com/airbnb/enzyme
 [jaz]: https://jasmine.github.io/
 [jest]: https://facebook.github.io/jest/
+[bcd]: http://bit.ly/jest-cra
