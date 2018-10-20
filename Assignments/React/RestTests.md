@@ -1,6 +1,6 @@
 # Rest Tests
 
-This assignment has two parts. Part I is described in the document you are currently reading. Part II is described in the slide deck called [jest with create-react-app][bcd]. Be sure to complete both parts. In particular, make sure you have a test for button clicks.
+This assignment has two parts. Please complete both of them. Part I is described in the document you are currently reading. Part II is described in the slide deck called [jest with create-react-app][bcd]. Be sure to complete both parts. In particular, make sure you have a test for button clicks.
 
 The assignment is built on top of the [RestBasics][rb] assignment. Make your edits in the same directory you used for **RestBasics**, but you should be working in a new branch called **Week03-RestTest**. Create and switch to the branch first, and then begin your work.
 
