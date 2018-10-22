@@ -10,7 +10,7 @@ After you have set up your account, I want you to complete some simple exercises
 
 - [Go to HTML](https://www.codecademy.com/learn/learn-html)
 - Complete at least 25% of the skill.
-  - [Go to CSS](https://www.codecademy.com/learn/learn-css)
+- [Go to CSS](https://www.codecademy.com/learn/learn-css)
 - Complete at least 25% of the skill.
 
 ## Looking Ahead
