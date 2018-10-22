@@ -19,7 +19,7 @@ In the root of your repository, create a directory called **week05-run-ssh** and
 
 From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**.
 
-Run the **elf-concur** script. When prompted, choose the **server** option on 30026 from the menu. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory. 
+Run the **elf-concur** script. When prompted, choose the **server** option on 30026 from the menu. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory.
 
 The **elf-concur** script should have set your programs up so that HTTP commands issued by the **client** will be proxied to the **server**. It did this by placing a **proxy** property in **package.json**. In short, the programs were set up for you automatically.
 
@@ -49,7 +49,9 @@ Choose **File | Import Settings** from the WebStorm menu. Select the **jar** fil
 
 ## Header in render Method
 
-In the render method, remove the header. Type **elf-jsx-start** and press tab or enter.
+We can view the templates by selecting **File | Settings | Editor | Live Templates | user**. Note that some of the templates only work in certain places. For instance, the JSX related templates will only run if your cursor is in the appropriate part of, for instance, a react **render** method.
+
+Let's test our new Live Template. Open up **src/App.js**. In the render method, remove the JSX HTML **header**. Type **elf-jsx-start** to set up one of our live templates. Press tab or enter to invoke it. The following code should be inserted automatically into your code:
 
 ```html
 <header>
@@ -64,7 +66,7 @@ In the render method, remove the header. Type **elf-jsx-start** and press tab or
 </footer>
 ```
 
-Fill in the missing pieces.
+Fill in the missing pieces. For instance, insert your name in the appropriate places, and add some text for the H1 element. Suggested text might **Run SSH**.
 
 ## Button
 
