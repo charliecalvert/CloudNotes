@@ -29,6 +29,8 @@ Navigate to the **client** directory. Run **get-gist** a second time. Select:
 
 Exit **get-gist**. Run the program again in the **server** directory, again selecting the ESLintRc option from the **get-gist** menu.
 
+From the WebStorm menu, choose **File | Settings | Languages & Frameworks | JavaScript | Code Quality Tools**. Enable ESLint and disable the other tools such as JSCS and JsHint.
+
 Navigate back to the root of the **week05-run-ssh** directory. Run **npm start**. The **client** and **server** should now be running on the appropriate ports.
 
 - See **/server/bin/www** for the set up of the port for the server.
