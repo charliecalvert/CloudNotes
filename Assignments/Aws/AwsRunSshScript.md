@@ -19,7 +19,7 @@ In the root of your repository, create a directory called **week05-run-ssh** and
 
 From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**.
 
-Run the **elf-concur** script. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory. When prompted, choose the **server** option on 30026 from the menu.
+Run the **elf-concur** script. When prompted, choose the **server** option on 30026 from the menu. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory. 
 
 The **elf-concur** script should have set your programs up so that HTTP commands issued by the **client** will be proxied to the **server**. It did this by placing a **proxy** property in **package.json**. In short, the programs were set up for you automatically.
 
