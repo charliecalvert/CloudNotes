@@ -15,7 +15,7 @@ Make sure you have pulled the most recent version of JsObjects.
 
 Remember that you can get back to the directory you were in before typing **jo** by typing **cd -**.
 
-Create a directory called **week05-run-ssh** and navigate into it.
+In the root of your repository, create a directory called **week05-run-ssh** and navigate into it.
 
 From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**.
 
