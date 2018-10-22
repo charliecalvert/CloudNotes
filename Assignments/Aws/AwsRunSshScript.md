@@ -47,6 +47,8 @@ At the bash shell, issue this command to download the latest Elven WebStorm [Liv
 
 Choose **File | Import Settings** from the WebStorm menu. Select the **jar** file you just downloaded.
 
+**NOTE**: _If you start creating your own Live Templates, I strongly suggest that you export them frequently so that you do not lose any of your work. I don't think importing live templates deletes existing ones, but I am not sure._
+
 ## Header in render Method
 
 We can view the templates by selecting **File | Settings | Editor | Live Templates | user**. Note that some of the templates only work in certain places. For instance, the JSX related templates will only run if your cursor is in the appropriate part of, for instance, a react **render** method.
