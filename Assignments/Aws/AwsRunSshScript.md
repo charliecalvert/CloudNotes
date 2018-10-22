@@ -15,11 +15,11 @@ Make sure you have pulled the most recent version of JsObjects.
 
 Remember that you can get back to the directory you were in before typing **jo** by typing **cd -**.
 
-In the root of your repository, create a directory called **week05-run-ssh** and navigate into it.
+In the root of your repository, create a directory called **week06-run-ssh** and navigate into it.
 
 From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**.
 
-Run the **elf-concur** script. When prompted, choose the **server** option on 30026 from the menu. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory.
+Run the **elf-concur** script. When prompted, choose the **server** option on 30026 from the menu. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week06-run-ssh** directory.
 
 The **elf-concur** script should have set your programs up so that HTTP commands issued by the **client** will be proxied to the **server**. It did this by placing a **proxy** property in **package.json**. In short, the programs were set up for you automatically.
 
@@ -109,14 +109,14 @@ Fill the missing pieces. The method should be called **callCpuInfo**. The endpoi
 
 ## Server Side
 
-We will need the **ssh2** NPM package.
+Navigate to the **server** directory. We will need the **ssh2** NPM package:
 
     npm install ssh2 --save
 
 At the top of **routes/index.js** require the package:
 
 ```JavaScript
-var Client = require('ssh2').Client;
+const Client = require('ssh2').Client;
 ```
 
 Near the top of **routes index.js** put these declarations and method:
@@ -172,12 +172,22 @@ In **routes/index.js** also put an endpoint for **call-cpu-info**. The **elf-rou
 runCpuInfo(hostAddress, response);
 ```
 
-Test your code and make sure it works. You should see the output from running the CpuInfo script on your EC2 server.
+Test your code and make sure it works. In the console, you should see the output from running the CpuInfo script on your EC2 server.
 
 ## Create sshRunner Module
 
-Create a file called **routes/ssh-runner.js**. Move the
+Create a file called **routes/ssh-runner.js**. Move the appropriate code for handling the **call-cpu-info** endpoint from **routes/index.js** into that file. Remove the redundant code from **routes/index.js**.
 
+## Turn it in
+
+Specify:
+
+- branch (week06)
+- folder (week06-run-ssh)
+- tag (week06-run-ssh)
+- Repo URL
+
+Include a screenshot of the result you see in your browser console when your run the script. If you can, show the bash terminal in the background.
 
 
 [lt]: https://www.jetbrains.com/help/webstorm/using-live-templates.html
