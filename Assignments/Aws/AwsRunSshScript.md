@@ -17,15 +17,19 @@ Remember that you can get back to the directory you were in before typing **jo**
 
 In the root of your repository, create a directory called **week05-run-ssh** and navigate into it.
 
-From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**. Run the **elf-concur** script. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory.
+From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**.
 
-Navigate to the client directory. Run get-gist. Select:
+Run the **elf-concur** script. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory. When prompted, choose the **server** option on 30026 from the menu.
+
+The **elf-concur** script should have set your programs up so that HTTP commands issued by the **client** will be proxied to the **server**. It did this by placing a **proxy** property in **package.json**. In short, the programs were set up for you automatically.
+
+Navigate to the **client** directory. Run **get-gist** a second time. Select:
 
     a) Run ESLintRc and Prettier (cdef)
 
-Do the same in the server directory.
+Exit **get-gist**. Run the program again in the **server** directory, again selecting the ESLintRc option from the **get-gist** menu.
 
-Navigate back to the root of the **week05-run-ssh** directory. Run **./elf-concur**. When it completes, run **npm start**. The **client** and **server** should now be running on the appropriate pots. The HTTP commands issued by the **client** should be proxied to the **server**. In short, the programs were set up for you automatically.
+Navigate back to the root of the **week05-run-ssh** directory. Run **npm start**. The **client** and **server** should now be running on the appropriate ports.
 
 - See **/server/bin/www** for the set up of the port for the server.
 - See **/client/package.json** for the proxy, which is at the bottom of the file.
