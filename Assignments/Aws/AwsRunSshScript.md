@@ -17,7 +17,7 @@ Remember that you can get back to the directory you were in before typing **jo**
 
 In the root of your repository, create a directory called **week05-run-ssh** and navigate into it.
 
-From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**.
+From the root of your new directory, run the **get-gist** program by typing its name at the command prompt and hitting the **enter** key. Select **Elven Create Concurrently** which is probably option **l**. Run the **elf-concur** script. It should create the **client** and **server** directories, configure them, and set up [concurrently][concur] in the **week05-run-ssh** directory.
 
 Navigate to the client directory. Run get-gist. Select:
 
@@ -171,3 +171,4 @@ Create a file called **routes/ssh-runner.js**. Move the
 
 
 [lt]: https://www.jetbrains.com/help/webstorm/using-live-templates.html
+[concur]: https://www.npmjs.com/package/concurrently
