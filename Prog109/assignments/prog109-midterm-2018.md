@@ -8,7 +8,7 @@ The goal of the midterm is for each student to:
 - Develop at least seven completed web pages at least five of which contain pictures.  
 - Create the web pages using Visual Studio Code or your editor of choices. The pages of the site should use HTML5 code.
 - Display the web site on your GitHub Pages site.
-- Ensure that it is linked from your GitHub Pages home page.
+- Ensure that your theme pages are linked from your GitHub Pages home page.
   - Link to the home page of your Theme, and from there link to the individual pages your created.
 - View the site on an emulated phone and if possible on a real phone. Make at least minimal corrections to ensure it looks good. We have not solved all problems related to phones yet, particularly when it comes to NAV sections. Just do the best you can.
 - Include at least one image that you float to the left or right on at least three pages.
@@ -67,13 +67,13 @@ Since a web server such as the one on GitHub Pages will automatically load **ind
 
     &lt;a href="/theme"&gt;Theme&lt;/a&gt;
 
-    <li><a href="/">Home</a></li>
+    <a href="/theme">Theme</a>
 
 You don't have to do this, though it is not wrong:
 
     &lt;a href="/theme/index.html"&gt;Theme&lt;/a>
 
-
+    <a href="/theme/index.html">Theme</a>
 
 ## Repository Check
 
