@@ -86,9 +86,11 @@ There is also **app.use** line needed. You have seen it before when we linked in
     var indexRouter = require('./routes/index');
     var usersRouter = require('./routes/users');
 
-These are the lines that load the files in our routes directory. The code I show you above load **script-pusher.js** rather than **index.js** or **user.js**. Then we need to tell express to use this route:
+These are the lines that load the files in our routes directory. The code I show you above load **script-pusher.js** rather than **index.js** or **user.js**. Then we need to tell express to use this route. Here is how we tell it to use **routes/index.js**:
 
     app.use('/', indexRouter);
+
+How would you tell it to use another file such as **script-pusher**?
 
 ## Test Server Method
 
