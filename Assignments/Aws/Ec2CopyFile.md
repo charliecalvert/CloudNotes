@@ -81,6 +81,15 @@ const scriptPusher = require('./routes/script-pusher');
 
 There is also **app.use** line needed. You have seen it before when we linked in **api.js**.
 
+**HINTS**: _Look in app.js on about line 7 or 8:_
+
+    var indexRouter = require('./routes/index');
+    var usersRouter = require('./routes/users');
+
+These are the lines that load the files in our routes directory. The code I show you above load **script-pusher.js** rather than **index.js** or **user.js**. Then we need to tell express to use this route:
+
+    app.use('/', indexRouter);
+
 ## Test Server Method
 
 Test that you can call the route:
