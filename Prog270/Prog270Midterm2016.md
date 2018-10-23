@@ -2,7 +2,7 @@
 
 This is the Midterm for Prog 270 in 2016.
 
-The basic goal of the midterm is for each student to:
+The goal of the midterm is for each student to:
 
 - Pick a theme for a web site
 - Develop at least seven completed web pages five of which contain pictures and at least one contains a Google Map.  
