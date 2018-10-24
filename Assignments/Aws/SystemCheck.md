@@ -118,4 +118,4 @@ var app = express();
 
 ## Call the Server from the Client
 
-I get Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**. 
+Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**.
