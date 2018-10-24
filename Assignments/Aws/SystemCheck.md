@@ -34,7 +34,7 @@ I don't care what the version number for your tag is, but specify the name of th
 
 Before doing anything else, let's set up systemd in the **server** directory.
 
-In the **server** directory run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
+Go into JsObjects and run **git pull**. In the **server** directory run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
 
 Edit the **setup-environment-service** file:
 
