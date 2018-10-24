@@ -67,11 +67,11 @@ I don't care what the version number for your tag is, but specify the name of th
 
 ## Install EsLint
 
-Close WebStorm temporarily. Run the following
+Close WebStorm temporarily. Run the following from any place on your system because it will install things globall into **~/npm/bin**.
 
 		npm install -g eslint babel-eslint eslint-plugin-react prettier
 
-Now run **get-gist** and select the first item, that sets up **eslint** and **prettier**.
+Now run **get-gist** in both the client and server directories. Select the first item, that sets up **eslint** and **prettier**.
 
 Run prettier in both client and server:
 
