@@ -31,3 +31,9 @@ Then tag your work, following this template as closely as possible:
 I don't care what the version number for your tag is, but specify the name of the branch where you are working in the appropriate place.
 
 **NOTE**: _It's probably clear that I want to be able to confirm that you are starting your project from scratch. This is an important part of this process, so be sure to follow my guidance._
+
+## Set up systemd
+
+Before doing anything else, let's set up systemd.
+
+Run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
