@@ -32,11 +32,11 @@ I don't care what the version number for your tag is, but specify the name of th
 
 ## Set up systemd
 
-Before doing anything else, let's set up systemd.
+Before doing anything else, let's set up systemd in the **server** directory.
 
-Run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
+In the **server** directory run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
 
-Edit the setup-environment file:
+Edit the **setup-environment-service** file:
 
 		export SYSTEMD_PROJECT_NAME="systemcheck"
 		export SYSTEMD_DESCRIPTION="System Check Service"
