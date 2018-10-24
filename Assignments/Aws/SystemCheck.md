@@ -6,11 +6,9 @@ This program should be setup as a service running on port 30032
 
 ## Get Started
 
-		mkdir week07-system-check
-
+		mkdir week06-system-check
 		cd week06-system-check/
-
-		git-gist
+		get-gist
 
 Run the **Create Concurrently** option and then exit **get-gist**.
 
