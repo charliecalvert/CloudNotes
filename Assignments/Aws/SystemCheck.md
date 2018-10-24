@@ -38,9 +38,9 @@ Run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
 
 Edit the setup-environment file:
 
-		export SYSTEMD_PROJECT_NAME=systemcheck
+		export SYSTEMD_PROJECT_NAME="systemcheck"
 		export SYSTEMD_DESCRIPTION="System Check Service"
-		export SYSTEMD_PORT="SERVER_PORT=30033
+		export SYSTEMD_PORT="SERVER_PORT=30033"
 
 Run the code:
 
