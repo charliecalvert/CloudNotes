@@ -47,7 +47,7 @@ Run the code:
 		source setup-environment-service
 		./run-setup-service
 
-Check to make sure your service is running by browsing to **localhost:30033**.
+Check to make sure your service is running by browsing to **localhost:30033**. If it is, press q at the command line to end the systemd check.
 
 After completing this step, immediately, before doing anything else, go on to the _Commit and Tag Part II_ step. Complete that step before doing anything else.
 
