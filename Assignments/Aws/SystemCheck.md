@@ -117,3 +117,41 @@ var app = express();
 ## Call the Server from the Client
 
 Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**.
+
+## Setting up the Service
+
+We need to tell the service the value **SETUP_LINUXBOX** environment variable. In **server/systemcheck.service** add this line or something like it just after the place we set the **SERVER_PORT**:
+
+		Environment=SETUP_LINUXBOX=/home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox
+
+If the server is running as a service, navigate to the **server** directory stop it with our script:
+
+		./stop-service
+
+Navigate to the root of the **client** directory. Deploy the client to run on top of the server:
+
+		npm run build
+		cp -r build/* ../server/public/.
+
+Go back to the server directory and restart the server:
+
+		./start-service
+
+Now the whole program, both server and client, should be running on port 30033.
+
+## Move to EC2 or Elsewhere
+
+At this stage, our **systemcheck.service** file is geared to run on our local machine. For most students, that means the user information in **systemcheck.service** is set to bcuser:
+
+		User=bcuser
+		Group=bcuser
+
+There are in fact multiple places in **systemcheck.service** where the word **bcuser** occurs. If we have moved to EC2, we want to change all these instances to **ubuntu** because the default user on EC2 is **ubuntu**. This seems like a search and replace task, but **mode-service** will fix it up for us automatically. That means that when you move to a new platform, such as EC2, you can just run **run-setup-service** and the service will automatically be deployed with the right user.
+
+Whether you want to check in the change or not is up to you. When you move back to Pristine Lubuntu, you are going to want to have the user set to **bcuser**. If you did check in the service file with ubuntu as the user, then on Pristine Lubuntu, you can just stop the service and redeploy with **run-setup-service**.
+
+**NOTE**: _Check the security-group for your EC2 instance. I believe we set the range Port Range to 30025-30030. We should change that to 30025-30035._
+
+Turn it in		
+
+Tell me branch, folder and tags. Give me a link to your service running on EC2.
