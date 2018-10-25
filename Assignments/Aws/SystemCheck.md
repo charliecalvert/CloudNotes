@@ -2,7 +2,7 @@
 
 Create a program that will allow us to check various system services by running scripts.
 
-This program should be setup as a service running on port 30032
+This program should be setup as a systemd service running on port 30033.
 
 ## Get Started
 
