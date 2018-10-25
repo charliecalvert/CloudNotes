@@ -152,6 +152,12 @@ Whether you want to check in the change or not is up to you. When you move back 
 
 **NOTE**: _Check the security-group for your EC2 instance. I believe we set the range Port Range to 30025-30030. We should change that to 30025-30035._
 
-Turn it in		
+## Turn it in		
 
-Tell me branch, folder and tags. Give me a link to your service running on EC2.
+Tell me
+
+- branch
+- folder
+- tags.
+
+Give me a link to your service running on EC2.
