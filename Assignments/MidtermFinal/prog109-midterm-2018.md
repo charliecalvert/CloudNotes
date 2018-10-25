@@ -28,6 +28,7 @@ The goal of the midterm is for each student to:
 - Include at least one **aside** that you float to the left or right.
 - Include examples of paragraphs, headers (h1, h2, etc) and unordered or ordered lists on several of your pages.
 - Include an **About** page with your picture on it.
+- Make sure the HTML Validator is working properly on all your theme pages. Also check your homework pages. They are important, but not as important as your theme pages.
 
 ## Creating a GitHub Pages WebSite
 
@@ -142,6 +143,12 @@ When you turn in the assignment:
 4. Provide a link to at least one page where you have an aside floated to the left or right.
 
 Since you need to turn in multiple links, the simplest approach will probably be to use the Text page of Canvas when submitting the assignment.
+
+Don't forget to check the HTML Validator, especially for your home page, and for your theme pages. Also, check the console page in the Developer tools, and make sure it is not showing errors. Places to check for errors in the developer tools:
+
+- HTML Validator
+- Console page
+- Network page
 
 ## Phone Emulation {#phone}
 
