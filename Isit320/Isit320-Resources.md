@@ -30,6 +30,7 @@ with events and topics covered in our class.
 ## Weekly Overviews
 
 - [Week01](http://www.ccalvert.net/books/CloudNotes/Isit320/Isit320-Week01.html)
+- [Week06](https://www.elvenware.com/teach/isit320/Isit320-Week06.html)
 
 ## Key Technologies
 
