@@ -1,6 +1,6 @@
 ## Overview
 
-Week six highlights.
+Week six assignments and highlights.
 
 ## Assignments
 
