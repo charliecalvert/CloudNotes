@@ -2,6 +2,8 @@
 
 Week six assignments and highlights.
 
+- [Isit320 Resources][ir]
+
 ## Assignments
 
 - [Discussion][d06]
@@ -13,3 +15,4 @@ Week six assignments and highlights.
 [ca2]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
 [arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
 [sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
+[ir]: https://www.elvenware.com/teach/isit320/Isit320-Resources.html
