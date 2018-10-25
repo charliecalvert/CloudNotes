@@ -6,15 +6,24 @@ This program should be setup as a systemd service running on port 30033.
 
 ## Get Started
 
+Create a directory where we can do our work and set up [concurrently][ccly]:
+
 		mkdir week06-system-check
 		cd week06-system-check/
 		get-gist
 
 Run the **Create Concurrently** option and then exit **get-gist**.
 
-Run **./elf-concur** to create the server and client. When prompted, choose **s** for server.
+Run **./elf-concur** to create the **server** and **client**. When prompted, choose **s** for **SERVER_PORT** 30026.
 
-After **elf-concur** completes, immediately, before doing anything else, go on to the _Commit and Tag Part I_ step. Complete that step before doing anything else.
+		=======================
+		Menu
+		=======================
+
+		n) Create Normal Project on Port 30025
+		s) Create Server Project on Port 30026 with SERVER_PORT
+
+After **elf-concur** completes, immediately, before doing anything else, go on to the _Commit and Tag Part I_ step.
 
 ## Commit and Tag Part I {#ct01}
 
@@ -161,3 +170,5 @@ Tell me
 - tags.
 
 Give me a link to your service running on EC2.
+
+[ccly]: https://www.npmjs.com/package/concurrently
