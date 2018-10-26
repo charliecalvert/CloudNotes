@@ -1,5 +1,13 @@
 #! /usr/bin/env bash
 
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+fi
+
+echo "SSH DIR = $ELF_SSH_DIR"
+
+ssh-add $ELF_SSH_DIR/Home-2016-03
+
 if [[ -z $1 ]]; then
     echo -e "You must pass in a commit message"
     exit
