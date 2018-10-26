@@ -58,7 +58,8 @@ You may be able to click the Cloud 9 service link directly. If not, click:
 - ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 - cd ~/.ssh
 - cat .id_rsa.pub
-- Go to GitHub. Paste it in under **Settings | SSH**
+- You will see your public key. Block copy it.
+- Go to the icon at the top right of GitHub. Open it, and choose **Settings**. Paste the public key in under **Settings | SSH**
 
 Modify .bashrc:
 
