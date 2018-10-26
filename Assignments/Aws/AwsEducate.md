@@ -55,13 +55,17 @@ You may be able to click the Cloud 9 service link directly. If not, click:
 
 ## Clone Your Repository
 
+The first step will be to create a private and public key pair. Use the **cat** command to display it. Then copy your public key into the Settings for GitHub.
+
 - ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 - cd ~/.ssh
 - cat .id_rsa.pub
 - You will see your public key. Block copy it.
 - Go to the icon at the top right of GitHub. Open it, and choose **Settings**. Paste the public key in under **Settings | SSH**
 
-Modify .bashrc:
+**REMINDER**: _The steps shown above are for use in Linux environments such as we have in AWS Cloud9. This won't work on Windows unless you do some setup first._
+
+Here is how to modify **.bashrc** on Cloud9:
 
 - Select **Gear | Show home in Favorites** on the far left.
 - Select **Gear | Show hidden files** on the far left.
