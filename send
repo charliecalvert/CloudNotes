@@ -1,6 +1,10 @@
 #! /bin/bash
 DESTDIR="$HOME/Git/charliecalvert.github.io/"
 
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent`
+fi
+
 if [[ -z $1 ]]; then
     echo -e "You must pass in a commit message"
     exit
