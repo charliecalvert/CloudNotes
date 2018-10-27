@@ -41,9 +41,9 @@ I don't care what the version number for your tag is, but specify the name of th
 
 ## Set up systemd
 
-Before doing anything else, let's set up systemd in the **server** directory.
+Before doing anything else, let's set up **systemd** in the **server** directory.
 
-Go into JsObjects and run **git pull**. In the **server** directory run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
+Go into **JsObjects** and run **git pull**. In the **server** directory run **get-gist** and select "Elven Node systemd Tools" or similar from the menu.
 
 Edit the **setup-environment-service** file:
 
@@ -125,7 +125,7 @@ var app = express();
 
 ## Call the Server from the Client
 
-Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**.
+Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**. Change the names of the methods as necessary, using your common sense.
 
 ## Setting up the Service
 
