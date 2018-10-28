@@ -70,10 +70,10 @@ The theme pages on your GitHub pages site should be stored inside a folder calle
 
 Put at least one page in each sub-directory of your theme and link to it from your theme home page.
 
-Five of the seven pages your create for your theme should have bitmaps on them. The images should be ones that you took yourself, or ones that are clearly marked as released under the Creative Commons license. Do not include any proprietary images belonging to someone other than yourself.
+Five of the seven pages your create for your theme should have images on them. The images should be ones that you took yourself, or ones that are clearly marked as released under the Creative Commons license. Do not include any proprietary images belonging to someone other than yourself.
 
 - You should display at least 10 images on your theme pages. Any particular page may have zero or only one image. However, across all seven pages there should be at least 10 different images displayed.
-- At least two of the bitmaps must be served from your **images** directory.
+- At least two of the images must be served from your **images** directory.
 - At least five of your pictures should be in a **figure** element and have a **figcaption** describing the picture.
 - At least one picture should be served from the WikiMedia Commons. I'm looking for images released under Creative Commons license.
   - This picture should be in a **figure** element and feature a **figcaption**. Where appropriate, the caption should include a link to the page on the WikiMedia site where the image is hosted.
