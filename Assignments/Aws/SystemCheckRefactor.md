@@ -36,7 +36,7 @@ Here are the settings:
 
     export SYSTEMD_PROJECT_NAME=scref
     export SYSTEMD_DESCRIPTION="SystemCheck Refactor Service"
-    export SYSTEMD_PORT="ELF-SCREF_PORT=30030"
+    export SYSTEMD_PORT="ELF_SCREF_PORT=30030"
 
 Add **ELF_SCREF_PORT** to both **.bashrc** and **/bin/www**. You need to export it from **.bashrc**.
 
