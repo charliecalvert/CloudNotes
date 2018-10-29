@@ -114,7 +114,7 @@ Here is how to get the last item from the list:
 
 And here is how to strip off the v from version numbers such as v1.0.0
 
-    git tag | tail -1 |  sed -En "s/v(.*)/\1/p
+    git tag | tail -1 |  sed -En "s/v(.*)/\1/p"
 
 We use said to find the values after the v, and then we return that value. In effect, we are saying this:
 
