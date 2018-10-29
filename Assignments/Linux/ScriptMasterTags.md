@@ -37,6 +37,10 @@ For instance:
 
 Here the commit message is "This is my commit message." The project is "week01-my-project".
 
+Create script called **elf-tagger**. Put this at the top:
+
+- **#! /usr/bin/env bash**.
+
 Our script might blow up if we do not have both of these parameters. Here is how to detect if you have one parameter:
 
 ```bash
