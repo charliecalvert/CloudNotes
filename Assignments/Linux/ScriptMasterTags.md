@@ -124,7 +124,7 @@ The \1 means to get the value in parenthesis. All this is regex and I'm not goin
 
 So we get the current largest tag version like this:
 
-    OLD_TAG_VERSION=`git tag | tail -1 |  sed -En "s/v(.*)/\1/p"`
+    OLD_TAG_VERSION=`git tag --sort=taggerdate | tail -1 |  sed -En "s/v(.*)/\1/p"`
 
 Then we use the **semver-inc** script from the latest JsObjects (git pull) to increment the patch value of the tag:
 
@@ -156,7 +156,9 @@ Then we call git tag, passing in -a and -m as we have done multiple times.
 ```bash
 function push_tag() {
   git status
-  # You call git add, commit and push. Push is the tricky one.
+  # You call git add and commit. Commit is the tricky one.
+  # Here is push:
+  git push --set-upstream origin ${BRANCH}
 
   git tag -a "${TAG_VERSION}" -m "${TAG_STRING}"
   git push origin "${<WHAT GOES IN HERE TO GET THE TAG VERSION?>}"
