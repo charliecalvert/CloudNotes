@@ -134,6 +134,60 @@ handleSubmit= (event) => {
 
 I'll talk you through the refactor.
 
+## Deploy
+
+Other than systemd reated issues, I think I see three issues that are central to deployment.
+
+1. Create a script to automate running the build step in the client.
+2. Create a **.gitignore** file for the server
+3. Handle the case where we change branches on a deployed app.
+
+## The Build Script
+
+This script is designed to be run from the **client** directory. It begins as usual with:
+
+```bash
+#! /usr/bin/env bash
+```
+
+Declare a variable called **SERVER_DIR** that points at the **public** directory in the server folder. This will be a relative link that starts one directory closer to the root than the **client** directory : **../<THE PATH>**
+
+Now run the build:
+
+    npm run build
+
+The next three lines will all use the **SERVER_DIR** variable. They:
+
+- Delete the file called **precache-manifest*.js** from **server/public**
+  - The part where I place the wildcard (\*) will differ every time we build.
+- Delete the **static** directory from the **server/public**
+- Recursively copy the contents of the build directory into **server/public**
+
+**NOTE**: _Only write the words **server/public** once: in the declaration for **SERVER_DIR**. The rest of the time, when you need to refer to that directory, use **$SERVER_DIR**. And once again, you will probably want to use a relative path in the definition of **SERVER_DIR**._
+
+When you are done, you should be able to run the script to perform a build, delete the old files from the **SERVER_DIR**, and copy in the new ones. It's not that these steps are hard to do without the script, but that the script makes the task simpler, and saves us from making a type that might caues trouble when deleting or copying files.
+
+## The .gitignore for the Server
+
+A **.gitignore** file belongs in the **server** directory. I think this covers it:
+
+    public/static
+    public/precache-manifest.*.js
+    public/asset-manifest.json
+    public/index.html
+    public/service-worker.js
+
+## Changing Branches
+
+Once we start a **systemd** service running, problems can occur if we switch branches in our repository. For things to work smoothly, each branch would need to contain more less identical code for a the directory hosting the service. This is not likely to be the case.
+
+I can think of two solutions:
+
+1. Copy the code for the program out of the repository and point symbolic link in the **~/bin** directory to the copy.
+1. Have two copies of your repository on your hard drive: one in your **~/Git** folder in which you do your work, and one in a **~/Deploy** folder which contains the code for your services. Always having working code in the **master** branch and always have the code in **~/Deploy** pointing at **master**.
+
+Of these two solutions, the second seems less likely to cause problems and simplest to maintain. The only draw back is that it takes up more disk space.
+
 ## Turn it in
 
 Tag and push with script:
