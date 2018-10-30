@@ -1,4 +1,4 @@
-Though it is unfair, I find that I sometimes don't reply in depth to assignments of very high quality. If I give someone a 100 or a grade in the high nineties, that is generally just a way of saying they are doing everything right.
+I find that I sometimes don't reply in depth to assignments of very high quality. If I give someone a 100 or a grade in the high nineties, that is generally just a way of saying they are doing everything right.
 
 Ideally, I should go through even the best assignments very carefully and show ways they could be improved. During some quarters, unfortunately, I find that nearly impossible. My justification in such cases, which I think is at least partially valid, is that I work overtime in some quarters to understand important new developments in our technology. That can take away from grading time.
 
