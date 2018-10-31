@@ -4,13 +4,11 @@ The midterm is an an extension of the [SystemCheck][sc] and [SystemCheckRefactor
 
 The goal will be to create a program that will allow us to query both the status of the current system, and a system running on EC2.
 
+The screenshot is designed only to give you a general idea of where I would like to take this program. I haven't finished my version yet, so this is incomplete, but it gives you a good starting point. If you imitate this look and feel you should not have to undo anything, only add more.
+
 ![Midterm System Check Interface][mtsc]
 
-[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
-[scr]: https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html
-[awsp]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
 
-[mtsc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/midterm-system-check.png
 
 ## Get Started
 
@@ -283,13 +281,13 @@ When you are done, you should be able to run the script to perform a build, dele
 
 ## The .gitignore for the Server
 
-A **.gitignore** file belongs in the **server** directory. I think this covers it:
+A **.gitignore** file belongs in the root of the **server** directory. I think this covers it:
 
-    public/static
-    public/precache-manifest.*.js
     public/asset-manifest.json
     public/index.html
+    public/precache-manifest.*.js
     public/service-worker.js
+    public/static
 
 ## Changing Branches
 
@@ -304,12 +302,24 @@ Of these two solutions, the second seems less likely to cause problems and simpl
 
 ## Add SSH
 
-    npm install ssh2
+We are going to use SSH to access services on one of our EC2 instances. Let's again use the NPM [ssh2][ssh2] package to help with that process:
 
-Now bring over **ssh-runner** and call **uptime** on the remote server.
+   npm install ssh2 --save
+
+Now bring over **ssh-runner** and call **uptime** on the remote server. I'll want you to call at least one other service as well. I'll update this document soon with more information.
 
 ## Turn it in
 
 Tag and push with script:
 
-- elf-tagger "Completed system check refactor" "week06-system-check-refactor"
+- elf-tagger "Completed midterm" "midterm"
+
+Probably a good idea to include a screenshot as well.
+
+[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
+[scr]: https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html
+[awsp]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
+
+[mtsc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/midterm-system-check.png
+
+[ssh2]:
