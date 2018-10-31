@@ -324,9 +324,11 @@ The next three lines will all use the **SERVER_DIR** variable. They:
 - Delete the **static** directory from the **server/public**
 - Recursively copy the contents of the build directory into **server/public**
 
-**NOTE**: _Only write the words **server/public** once: in the declaration for **SERVER_DIR**. The rest of the time, when you need to refer to that directory, use **$SERVER_DIR**. And once again, you will probably want to use a relative path in the definition of **SERVER_DIR**._
+**NOTE**: _Only write the words **server/public** once: in the declaration for **SERVER_DIR**. The rest of the time, when you need to refer to that directory, use **\$SERVER_DIR**. And once again, you will probably want to use a relative path in the definition of **SERVER_DIR**._
 
 When you are done, you should be able to run the script to perform a build, delete the old files from the **SERVER_DIR**, and copy in the new ones. It's not that these steps are hard to do without the script, but that the script makes the task simpler, and saves us from making a typo that might cause trouble when deleting or copying files.
+
+Then: **chmod +x build-copy**
 
 ## The .gitignore for the Server
 
