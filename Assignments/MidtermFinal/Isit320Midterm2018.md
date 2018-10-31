@@ -80,7 +80,7 @@ I'll leave it up to you how to edit **app.js**. The act of requiring new files f
 
 ## Radio Buttons
 
-We want to create an interface that will allow us to query both the status of the current system, and a system running on EC2.
+We want to create an interface that will allow us to query both the status of the current system, and a system running on EC2. See the screenshot at the beginning of this document for some hints as to what I want.
 
 Add or modify the radio buttons in your **src/App.js** to render put this before the return statement in render:
 
@@ -123,9 +123,28 @@ const radioWeb = (
 );
 ```
 
-The **fieldset** and it's **legend** visually bind together the form elements by putting a box and title around them. Each **radio input** control is bound to a **label** because the label's **for** and the input control's **id** values match. Because **for** is a reserved word in JavaScript, JSX uses **htmlFor** rather than **for**. But at runtime it is rendered as **for**, which is proper HTML.
+The **fieldset** and it's **legend** visually bind together the form elements by putting a box and title around them. Each **radio input** control is bound to a **label**. The binding occurs because the label's **for** and the input control's **id** values match. Because **for** is a reserved word in JavaScript, JSX uses **htmlFor** rather than **for**. But at runtime it is rendered as **for**, which is proper HTML. Here is the generated runtime code for one of the labels:
 
-The **value** of each **input** control is where you put the code that executes on the **server**. In other words, if you set **value** to **CpuInfo** then the **CpuInfo** script will be executed on the **server** side. The server uses a whitelist to ensure that only safe calls can be made from the client.
+```html
+<label for="elf-radio-uptime">Uptime</label>
+```
+
+I have to decided to create a convention for this about that the **value** of each **input** control is where you put the code that executes on the **server**. This is not magic, and it would not work this way in another program, but it works here because we make it work. Here is the attribute in context when we declare it:
+
+    value="CpuInfo",
+
+In the **handleChange** method shown [a bit later](#handle-ui) in this program you will find the code that picks up on this property and saves it to our React Component's **state**:
+
+```javascript
+const selectedValue = event.target.value;
+```
+
+In other words, if you set **value** attribute of the radio button to **CpuInfo** then we:
+
+- Save it to our state when the user selects the radio button
+- Pass it to our server if the user submits our form.
+
+The **CpuInfo** script will be executed on the **server** side. The server uses a whitelist to ensure that only safe calls can be made from the client. We will discuss how to set up this whitelist [later](#whitelist) in this document.
 
 ## Modify render
 
@@ -143,9 +162,11 @@ Put this in the **render** method:
 </main>
 ```
 
-The key point is the JavaScript JSX expression {radioWeb}.
+The key point is the JavaScript JSX expression {radioWeb}. We declared this variable in the previous section of this document.
 
-And we handle it like this:
+## Handle User Interactions {#handle-ui}
+
+Here is the code we use to handle the user's clicks on radio and submit buttons:
 
 ```javascript
 constructor(props) {
@@ -214,7 +235,25 @@ handleSubmit = (event) => {
 
 ```
 
-## Middleware Whitelist
+We want to perform two different types of actions on the server side:
+
+- Run local scripts that we put in JsObjects or in our own repositories
+- Run system code that is usually located in the **/bin** directory.
+  - This is the system wide bin directory, not the **~/bin** found in our home directory.
+
+The point is that programs we want to run in order to get updates on the system status will be located in different. So we need a system to differentiate between custom scripts in places like JsObjects, and system code found in the **/bin** directory.
+
+Here is the code I'm using to help sort this out:
+
+```javascript
+this.dataEndPoints = ['/script-pusher/run-script?script=', '/script-pusher/run-system-tool?script='];
+```
+
+Calls to **/script-pusher/run-script** run code from JsObjects. Calls to **/script-pusher/run-system-tool** run system utilities. It's up to you to see how this simple array is used in the program to help sort out this problem.
+
+## Middleware Whitelist {#whitelist}
+
+Let's turn now to setting up the whitelist on the server that insures that we do not let a malicious user run some arbitrary script.
 
 Put this code near the top of script-pusher. It defines middleware that will be executed before any of the other routes in **script-push**. Always set up this middleware first, before defining any other router methods. It sets up a whitelist of **validOptions**. You must add calls to this whitelist of **validOptions** before trying to execute them from the client. Otherwise, hackers could execute malicious code. The point is the only the calls **CpuInfo**, **VersionCheck**, and **uptime** will be allowed to execute. For instance, a call to "formate drive c:" would be rejected as an invalid option.
 
