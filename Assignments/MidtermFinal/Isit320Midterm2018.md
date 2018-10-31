@@ -42,6 +42,10 @@ We set up **.prettierignore** because we need to avoid trying to run prettier on
 
 We also need to get **eslint** working. As a start, put **\*\*public/static\*\*** into **.eslintignore**. The goal is to be able to run the following command and have it come back quickly and cleanly: **eslint .**. If the command takes more than a few seconds to run, you probably need to add something else to **.eslintignore.**
 
+To run eslint: **eslint .**. You may need to:
+
+     npm i -g babel-eslint eslint-plugin-react
+     
 ## systemd
 
 - cd server
