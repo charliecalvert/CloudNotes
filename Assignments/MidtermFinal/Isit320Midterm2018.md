@@ -45,7 +45,13 @@ We also need to get **eslint** working. As a start, put **\*\*public/static\*\**
 To run eslint: **eslint .**. You may need to:
 
      npm i -g babel-eslint eslint-plugin-react
-     
+
+In .eslintignore:
+
+**/public/static/**
+service-worker.js
+precache-manifest.*.js
+
 ## systemd
 
 - cd server
@@ -299,7 +305,7 @@ Other than systemd reated issues, I think I see three issues that are central to
 
 ## The Build Script
 
-This script is designed to be run from the **client** directory. It begins as usual with:
+You need to create a script called **build-copy** in the client directory and is designed to be run from the **client** directory. It begins as usual with:
 
 ```bash
 #! /usr/bin/env bash
