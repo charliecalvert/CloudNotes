@@ -111,12 +111,11 @@ Now if you go to **http://localhost:30026** you should see your app running.
 We don't want to check in the files we put in **server/public** nor the files in **client/build**. So put this .gitignore file in **server/public**:
 
 ```bash
-asset-manifest.json
-static
-manifest.json
-index.html
-precache-manifest.*.js
-service-worker.js
+public/asset-manifest.json
+public/index.html
+public/precache-manifest.*.js
+public/service-worker.js
+public/static
 ```
 
 Also make sure **client/build** is blocked. You are responsible. I think I've covered all the bases, but check with **git status** before you commit.

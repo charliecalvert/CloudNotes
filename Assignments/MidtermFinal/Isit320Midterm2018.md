@@ -1,20 +1,36 @@
 ## Overview
 
-Learn to refactor React components.
+The midterm is an an extension of the [SystemCheck][sc] and [SystemCheckRefactor][scr] assignments with perhaps an element or two from the [AWS Provision][awsp] assignment.
+
+The goal will be to create a program that will allow us to query both the status of the current system, and a system running on EC2.
+
+![Midterm System Check Interface][mtsc]
+
+[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
+[scr]: https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html
+[awsp]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
+
+[mtsc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/midterm-system-check.png
 
 ## Get Started
 
-Let's start from the beginning again.
+We have spent a lot of time learning how to automate steps in our work, so I'll ask you to start again from the beginning again.
 
 - Update JsObjects
   - slb
   - ./CreateSynbolicLinks (needed for semver-inc)
 - Navigate back to your repository
-- Branch: **week07**
-- Folder: **week07-system-check-refactor**
+- Branch: **midterm**
+- Folder: **midterm**
 - Navigate into folder
   - **get-gist** and choose **Elven Create Concurrently**
   - Run **elf-concur**, choose s for server
+
+After you are done:
+
+- elf-tagger "starting midterm" "midterm"
+
+So part of the midterm is having a commit and tag made with **elf-tagger** and dated later than Wednesday, Oct 31 at 3:00 PM.
 
 ## Eslint and Prettier
 
@@ -26,47 +42,49 @@ Install eslint and prettier
 
 We set up **.prettierignore** because we need to avoid trying to run prettier on our **client/build** directory.
 
+We also need to get **eslint** working. As a start, put **\*\*public/static\*\*** into **.eslintignore**. The goal is to be able to run the following command and have it come back quickly and cleanly: **eslint .**. If the command takes more than a few seconds to run, you probably need to add something else to **.eslintignore.**
+
 ## systemd
 
 - cd server
-- get-gist and run **Elven Node systemd Tools**
+- Run **get-gist** and run **Elven Node systemd Tools**
 - Open **setup-environment-service** in WebStorm.
 
 Here are the settings:
 
-    export SYSTEMD_PROJECT_NAME=scref
-    export SYSTEMD_DESCRIPTION="SystemCheck Refactor Service"
-    export SYSTEMD_PORT="ELF_SCREF_PORT=30030"
+    export SYSTEMD_PROJECT_NAME=midterm
+    export SYSTEMD_DESCRIPTION="Midterm Service"
+    export SYSTEMD_PORT="MIDTERM_PORT=30035"
 
-Add **ELF_SCREF_PORT** to both **.bashrc** and **/bin/www**. You need to export it from **.bashrc**.
-
-```JavaScript
-var port = normalizePort(process.env.ELF_SCREF_PORT || '30030');
-```
+Add **MIDTERM_PORT** to both **.bashrc** and **/bin/www**. You need to **export** it from **.bashrc**.
 
 **NOTE**: _Ultimately, we may want to put these exports in **.my_bash_aliases**._
 
-Execute **run-setup-service** and confirm that it works. Use the **q** key to exit.
+Execute **run-setup-service** and confirm that it works. Use the **q** key to exit if necessary.
 
 ## Push and Tag
 
-At this point, you should check that you have completed the [Script Master Push and Tag] assignment.
+At this point, you should again check that you have completed the [Script Master Push and Tag] assignment.
 
 Push and tag:
 
-    elf-tagger "Completed setup phase" "week07-system-check-refactor"
+    elf-tagger "Completed Midterm setup phase" "midterm"
 
 ## Setup
 
-Use **meld** to copy the key files from SystemCheck into this project.
+Use **meld** to copy the key files from **SystemCheck** or other projects into this project.
 
-- server/app.js
 - server/routes/script-pusher.js
+- server/routes/ssh-runner.js
 - client/src/App.js
+
+I'll leave it up to you how to edit **app.js**. The act of requiring new files from the **routes** directory should be fairly easy for you by this time.
 
 ## Radio Buttons
 
-Add radios to render put this before the return statement in render:
+We want to create an interface that will allow us to query both the status of the current system, and a system running on EC2.
+
+Add or modify the radio buttons in your **src/App.js** to render put this before the return statement in render:
 
 ```javascript
 const radioWeb = (
