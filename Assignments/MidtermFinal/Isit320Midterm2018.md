@@ -284,6 +284,12 @@ I can think of two solutions:
 
 Of these two solutions, the second seems less likely to cause problems and simplest to maintain. The only draw back is that it takes up more disk space.
 
+## Add SSH
+
+    npm install ssh2
+
+Now bring over **ssh-runner** and call **uptime** on the remote server.
+
 ## Turn it in
 
 Tag and push with script:
