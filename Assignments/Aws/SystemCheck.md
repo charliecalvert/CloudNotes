@@ -96,11 +96,9 @@ Eslint will help catch errors, including formatting errors, in your JavaScript c
 ## Setup Script Running
 
 Last week we created an assignment called EC2 Copy File. Get the
-script-pusher.js file from that assignment and put it in the **server/routes** folder.
+**script-pusher.js** file from that assignment and put it in the **server/routes** folder.
 
-Now link it into your server application. You've done this before, so use the Copy File code as a guide.
-
-As a review, here are the steps involved in making **script-pusher** a part of your server side code. Open up **server/app.js** and **require** your **routes/script-pusher.js** file:
+Now link it into your server application. You've done this before, so use the Copy File code as a guide. As a review, here are the steps involved in making **script-pusher** a part of your server side code. Open up **server/app.js** and **require** your **routes/script-pusher.js** file:
 
 ```javascript
 const scriptPusher = require("WHAT GOES HERE?");

@@ -7,6 +7,8 @@ Our goal is to make it simple to commit and push our work, providing:
 - A version number for our tag that is autoincremented with each commit.
 - A reference to the current branch in both the commit and tag message.
 
+- [Rename a tag](https://stackoverflow.com/a/5719854/253576)
+
 ## Prime the Pump
 
 Our script will not work if there are no tags. In other words, you have to create the first tag yourself with code like this:
