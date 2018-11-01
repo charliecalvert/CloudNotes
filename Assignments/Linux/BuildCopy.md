@@ -145,12 +145,14 @@ while true; do
         [Bb]* ) copyNew; continue;;
         [Cc]* ) deleteOld; continue;;
         [XxQq]* ) break;;
-        * )  -e "\n$NC" + "Please answer with c, r or x.";;
+        * )  -e "\n$NC" + "Please answer with a, b, c or x (or q).";;
     esac
 done
 ```
 
-Notice how were use the colors like $LIGHT_GREEN to give the menu some life. The **eotuyx** is just a variable. It could be **foo** or **userinput**. An explanation, such as it is, can be found on [Stack Overflow][so-menu].
+Notice how were use the colors like $LIGHT_GREEN to give the menu some life.
+
+We use [read][rd] to get the input from the user. The **-p** option says that we want to provide a prompt. In our case the prompt is "Please make a selection." The **eotuyx** bit is just a variable. It could be **foo** or **userinput**. An explanation, such as it is, can be found on [Stack Overflow][so-menu].
 
 ## Put in bin
 
@@ -168,3 +170,4 @@ elf-tagger "Created script to build client and copy to server." "build-copy"
 [ul1]: https://unix.stackexchange.com/questions/4899/var-vs-var-and-to-quote-or-not-to-quote
 [so-menu]: [so-menu]
 [ip]: https://en.wikipedia.org/wiki/String_interpolation
+[rd]: http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_08_02.html
