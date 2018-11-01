@@ -150,7 +150,19 @@ while true; do
 done
 ```
 
-Notice how were use the colors like $LIGHT_GREEN to give the menu some life. The **eotuyx** is just a variable. It could be **foo** or **userinput**. An explanation, such as it is, can be found on [Stack Overflow][so-menu]
+Notice how were use the colors like $LIGHT_GREEN to give the menu some life. The **eotuyx** is just a variable. It could be **foo** or **userinput**. An explanation, such as it is, can be found on [Stack Overflow][so-menu].
+
+## Put in bin
+
+By this time everything should be working. Ask git to move the file to your **script** directory in the root of your repository. Create a symbolic link to **script/build-copy** from the **~/bin** directory. Navigate back to the **client** directory where you developed the script and test it to make sure it works. At this point we should have a script that will work for us in any project of this client/server type that we create.
+
+## Turn it in
+
+elf-tagger "Created script to build client and copy to server." "build-copy"
+
+<!---------------------------->
+<!-- Links in this document -->
+<!---------------------------->
 
 [so1]: https://stackoverflow.com/a/8748880/253576
 [ul1]: https://unix.stackexchange.com/questions/4899/var-vs-var-and-to-quote-or-not-to-quote
