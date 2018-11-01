@@ -79,6 +79,7 @@ bower_components
 Students in Prog109 are now done with this assignment.
 
 Students in other classes, may, if I specifically request, do the [advanced Cloud9 Setup][ac9].
+
 ## Turn it in
 
 Submit your work and attach the screenshots.
@@ -96,11 +97,18 @@ The primary purpose of Cloud 9 is to allow us to edit our web pages in the cloud
 1. We can work on our website without having to install Git on our home machines.
 2. We can work on our website from any machine that allows us to access the Internet. If we are on a machine with Internet access, then we can log into cloud 9 and begin editing our website.
 
+## Run Express on Cloud9
+
+- [Using env.development.local][edl]
+
 <!---------------------------->
 <!-- Links in this document -->
 <!---------------------------->
 
 [ac9]: CloudNine/CloudNineAdvanced.html
+
+[edl]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html#cloud-9-client
+
 [gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
 
 [c9login]: https://c9.io/login

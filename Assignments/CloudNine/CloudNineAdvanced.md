@@ -240,6 +240,8 @@ Take a screen shot displaying the following:
 
 ## Running React Basics on Cloud 9
 
+- [Read this first][edl]
+
 This is not part of the Simplified Version of this assignment.
 
 I'm still learning about this too, but this is what worked for me with the Assignment we did in class on Wednesday. First I created a workspace that linked to my version of our new **isit320-lastname-2017** repository. My version of the repository contained the work we did in class on Wednesday.
@@ -298,6 +300,7 @@ The key steps are two fold:
 
 - Be sure you app is public.
 - Be sure your app runs on port 8080.
+- [And read about env.development.local][edl]
 
 On the Window menu and at the top of the IDE on the right is open labeled **Share**. Select it, and set your **Application** to public. That's the key part.
 
@@ -398,6 +401,8 @@ The NodeJs repository is [here](https://github.com/nodejs/node).
 <!---------------------------->
 <!-- Links in this document -->
 <!---------------------------->
+
+[edl]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html#cloud-9-client
 
 [gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
 
