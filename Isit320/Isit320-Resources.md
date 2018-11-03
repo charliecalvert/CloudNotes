@@ -12,6 +12,15 @@ with events and topics covered in our class.
 
 [elf-browse]: http://www.elvenware.com/charlie/development/cloud/Browsers.html
 
+## 2018 Assignments
+
+- [React II Code Academy Part II][ca2]
+- [AWS Run SSH Script][arss]
+- [System Check][sc]
+- [Ec2Provision][ec2p]
+- [Ec2ProvisionRepo][ec2pr]
+
+
 ## Tips
 
 - [General Tips for Charlie's Students][gt]
@@ -64,7 +73,7 @@ Elvenware JavaScript:
 - [JSON Basics](http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html)
 
 
-## Assignments
+## 2017 Assignments
 
 There is a lot of information in the assignments themselves. The main goal here is point you directly at the assignments, so you can find the information readily.
 
@@ -194,3 +203,8 @@ Some Links
 
 [gt]: https://www.elvenware.com/teach/tips/
 [tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
+[ca2]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
+[arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
+[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
+[ec2p]: https://www.elvenware.com/teach/assignments/Ec2Provision.html
+[ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
