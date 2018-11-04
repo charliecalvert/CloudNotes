@@ -14,12 +14,12 @@ with events and topics covered in our class.
 
 ## 2018 Assignments
 
+- [ReactBasics][rb]
 - [React II Code Academy Part II][ca2]
 - [AWS Run SSH Script][arss]
 - [System Check][sc]
 - [Ec2Provision][ec2p]
 - [Ec2ProvisionRepo][ec2pr]
-
 
 ## Tips
 
@@ -201,10 +201,11 @@ Some Links
 <!--== Links =================-->
 <!--==========================-->
 
-[gt]: https://www.elvenware.com/teach/tips/
-[tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
-[ca2]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
 [arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
-[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
+[ca2]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
 [ec2p]: https://www.elvenware.com/teach/assignments/Ec2Provision.html
 [ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
+[gt]: https://www.elvenware.com/teach/tips/
+[rb]: https://www.elvenware.com/teach/assignments/React/ReactBasics.html
+[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
+[tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
