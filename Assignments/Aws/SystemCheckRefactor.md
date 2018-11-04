@@ -50,7 +50,11 @@ Execute **run-setup-service** and confirm that it works. Use the **q** key to ex
 
 We also need to support the SETUP_LINUXBOX environment variable. Append this to the appropriate place in your service file completing the steps above:
 
-    Environment=SETUP_LINUXBOX=/home/charlie/Git/JsObjects/Utilities/SetupLinuxBox
+```bash
+Environment=SETUP_LINUXBOX=/home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox
+```
+
+Of course, the user name (bcuser) might change depending on where you run it from. If you move from Pristine Lubuntu to EC2, for instance, just execute **run_setup_service** to automatically change **bcuser** to **ubuntu** on all lines in the service file that use it.
 
 ## Push and Tag
 
