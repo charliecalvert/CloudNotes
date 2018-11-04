@@ -1,4 +1,5 @@
 * [Summary.html](Summary.html)
+* [SmokeTests/Summary.html](SmokeTests/Summary.html)
 * [MidtermFinal/Summary.html](MidtermFinal/Summary.html)
 * [Linux/Summary.html](Linux/Summary.html)
 * [CloudNine/Summary.html](CloudNine/Summary.html)
