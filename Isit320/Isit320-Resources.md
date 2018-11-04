@@ -12,6 +12,7 @@ with events and topics covered in our class.
 
 [elf-browse]: http://www.elvenware.com/charlie/development/cloud/Browsers.html
 
+
 ## 2018 Assignments
 
 - [ReactBasics][rb]
