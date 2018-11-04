@@ -48,6 +48,10 @@ var port = normalizePort(process.env.ELF_SCREF_PORT || '30030');
 
 Execute **run-setup-service** and confirm that it works. Use the **q** key to exit.
 
+We also need to support the SETUP_LINUXBOX environment variable. Append this to the appropriate place in your service file completing the steps above:
+
+    Environment=SETUP_LINUXBOX=/home/charlie/Git/JsObjects/Utilities/SetupLinuxBox
+
 ## Push and Tag
 
 At this point, you should check that you have completed the [Script Master Push and Tag] assignment.
