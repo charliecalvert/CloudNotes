@@ -2,6 +2,8 @@
 
 Use systemd to ensure your program starts every time your Ubuntu system reboots. systemd keeps your program running.
 
+Though it is possible, it not a good idea to start with a **create-react-app** project. Use server type applications started with **CreateExpressProject**.
+
 ## Useful Scripts
 
 No matter how simple the commands, it is almost always worth taking a moment to create some bash scripts to automate the process. Here is an attempt to automate most of the process of running your program as a system service. They take a moment to setup, but they are very useful.
