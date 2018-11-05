@@ -19,14 +19,19 @@ In this exercise, we are mostly working with object literals, not function objec
 
 ## Part One
 
-Create a folder called **Week01-JavaScriptObjects**. Inside it create a single file called **work.js**. In that file build a JavaScript object literal called **person** with two properties:
+Create or use a folder called one of the following:
+
+- Prog109: Use your **javascript-tests** directory.
+- Others: Create a directory called **Week0X-JavaScriptObjects**, where X is the current week.
+
+Inside it create a single file called **work.js**. In that file build a JavaScript object literal called **person** with two properties:
 
 * firstName
 * lastName
 
 Set them to _your_ first and last names. Write the two properties to the console with **console.log()**.
 
-**NOTE**: _You do not have to run this code as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single nodejs file called **work.js** that runs from the command line, plus any grunt related files._
+**NOTE**: _You do not have to run this code from an HTML file or as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single nodejs file called **work.js** that runs from the command line. Some students in advanced courses might want to use other tools such as EsLint or Prettier._
 
 Now run it:
 
@@ -172,7 +177,7 @@ In summary:
 
 If you unclear what all this means, look at the JavaScript Basics slide deck again.
 
-## Hint
+## Hint for Linux Users {#linux-hint}
 
 You can put a hash bang at the top of a file like **work.js**:
 
