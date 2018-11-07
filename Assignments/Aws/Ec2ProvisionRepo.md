@@ -37,6 +37,20 @@ GetAwsInstanceParams.js
 Menu.js
 ```
 
+Open up **GetAwsInstanceParams** and set at least these two properties for **awsEducate** and **awsCharlie/awsStandard**:
+
+```javascript
+awsParams.KeyName = 'ec2';
+awsParams.SecurityGroupIds = ['isit320'];
+```
+
+Note that you might need to change this code in **awsStandard**:
+
+```javascript
+awsParams.KeyName = '<KEY_NAME>';
+awsParams.SecurityGroupIds = ['<SECURITY_GROUP_ID>'];
+```
+
 ## Start Server and Client
 
 Start both the client and the server.
@@ -78,7 +92,7 @@ Here are the methods called by each button, the text for the button and the rout
 
 In **routes/index.js** create endpoints for **createEducate**, **createAwsStandardAccount** and **associateElasticIp**.
 
-In **routes/script-pusher.js** create endpoints for **copyGetStarted**, **runGetStarted**, and**removeKnownHost**.
+In **routes/script-pusher.js** create endpoints for **copyGetStarted**, **runGetStarted**, and **removeKnownHost**.
 
 At minimum, each endpoint ought to return a JavaScript object with a **result** property set to the string **success**:
 
