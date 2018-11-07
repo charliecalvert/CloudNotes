@@ -6,24 +6,11 @@ Learn about the [AWS Developer Tools][adt]
 
 ## Clone
 
-In your ~/Git directory clone the AWS Provision repo
+In your **~/Git** directory clone the AWS Provision repository:
 
     git clone git@github.com:charliecalvert/aws-provision.git
 
-
-## Copy Repo and Remove .git Folder
-
-Copy the repo to your repo:
-
-    cp -rv ~/Git/aws-provision/ ~/Git/isit320-calvert-2018/.
-
-Navigate to your repo:
-
-    cd ~/Git/isit320-calvert-2018/aws-provision
-
-Remove the .git file from aws-provision so you do not have nested repositories:
-
-    rm -rf .git
+This repository contains some JavaScript files that will help you provision a remote instance. There is no program in this repository, just a set of useful files.
 
 ## Create Web Application
 
@@ -32,11 +19,13 @@ This is very similar to the [Rest Basics][rb] assignment. In your repository, in
 - Run **CreateExpressProject** to create a server running on port (SERVER_PORT) 30026
 - Use **create-react-app** to create a client runnning on 30025 with a proxy to 30026 in **package.json**.
 
+We may change the port for the Express project, but you can leave the defaults for now.
+
 ## Move Files to server
 
 Create a new directory called **server/routes/aws**.
 
-Move the JavaScript files from ~aws-provision into your new **aws** directory.
+Copy only the JavaScript files from **~/Git/aws-provision** into your new **aws** directory.
 
 When you are done, here is the contents of **aws**:
 
@@ -139,3 +128,22 @@ Also:
 [rb]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#link-client-and-server
 [rwc]: https://www.elvenware.com/teach/assignments/React/RestBasics.html#rewrite-the-client
 [aprb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/aws-provision-repo-buttons.png
+
+
+## Copy aws-provision and Remove .git Folder
+
+This section has been deleted. Ignore it.
+
+Copy the **aws-provision** repo to your repo with a command similar to this:
+
+    cp -rv ~/Git/aws-provision/ ~/Git/isit320-calvert-2018/.
+
+Of course, your repository will probably not be called **isit320-calvert-2018**, so you will need to modify that part of the command.
+
+Navigate to your repo with a command similar to this:
+
+    cd ~/Git/isit320-calvert-2018/aws-provision
+
+Remove the **.git** directory from **aws-provision** so you do not have nested repositories:
+
+    rm -rf .git
