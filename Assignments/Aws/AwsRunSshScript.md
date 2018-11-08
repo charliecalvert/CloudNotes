@@ -51,6 +51,34 @@ Choose **File | Import Settings** from the WebStorm menu. Select the **jar** fil
 
 **NOTE**: _If you start creating your own Live Templates, I strongly suggest that you export them frequently so that you do not lose any of your work. I don't think importing live templates deletes existing ones, but I am not sure._
 
+### Snippets in  Atom and Code
+
+In Atom, choose **Edit | Snippets**
+
+Here is an HTML example:
+
+```
+'.source.html':
+  'elf-table':
+    'prefix': 'Elf table'
+    'body': 'table>(thead>tr>(th*3))*(tbody>tr>(td*3))'
+```
+
+In VS Code, I went to **File | Preferences | User Snippets** and found **html.json**. Like this:
+
+```
+"Create elf table": {
+		"prefix": "elf-table",
+		"body": ["table>(thead>tr>(th*3))*(tbody>tr>(td*3))"],
+		"description": "Create elf table"
+	}
+```  
+
+For VS Code, where they want one line at a time, RegEx to put each line in quotes with comma
+
+- Find: (^\s*)(.*)
+- Replace: \1\"\2\",
+
 ## Header in render Method
 
 We can view the templates by selecting **File | Settings | Editor | Live Templates | user**. Note that some of the templates only work in certain places. For instance, the JSX related templates will only run if your cursor is in the appropriate part of, for instance, a react **render** method.
