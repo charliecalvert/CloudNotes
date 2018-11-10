@@ -86,6 +86,24 @@ Make sure [virtualization][virton] is turned on in the bios for your machine.
 
 I install the VirtualBox Guest Additions on the Pristine Lubuntu VM, but after updating VirtualBox itself, you may need to make sure you have the [guest additions][gadd] set up properly.
 
+A couple thoughts:
+
+- Be sure Lubuntu is always up to date
+- Be sure Windows is up to date
+- Be sure VirtualBox is up to date (If not on school machine)
+
+Be sure everything is fresh:
+
+- Shutdown or reboot Lubuntu regularly and before putting machine to sleep.
+- If things are whacky, reboot Windows.
+
+Check disk space and memory on both Windows and Lubuntu. On Lubuntu:
+
+    df -h
+    free -h
+
+Make sure you are running the latest version of the [Guest Additions][gadd].
+
 [gadd]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
 [virton]: http://google.com/search?q=intel+virtualization+bios
 
