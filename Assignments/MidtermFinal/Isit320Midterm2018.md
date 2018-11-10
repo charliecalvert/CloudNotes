@@ -95,11 +95,9 @@ There are two files that are helpful:
 
 The [script-pusher.js][ec2c] file is in [Ec2CopyFile.html][ec2f].
 
-The core of [run-ssh.js/ssh-runner][arssr] is in [AwsRunSshScript.html][arss]:
+The core of [run-ssh.js aka ssh-runner.js][arssr] is in [AwsRunSshScript.html][arss]:
 
-
-
-The next section after the one I link above describes how to create ssh-runner.js or run-ssh.js. Whatever we call it. (Sorry about confusion on naming.)
+The next section after the one I link above describes how to create **ssh-runner.js** or **run-ssh.js**. Whatever we call it. (Sorry about confusion on naming.) I'll go with **run-ssh.js** as the official name.
 
 
 ## Radio Buttons
