@@ -83,10 +83,24 @@ Push and tag:
 Use **meld** to copy the key files from **SystemCheck** or other projects into this project.
 
 - server/routes/script-pusher.js
-- server/routes/ssh-runner.js
+- server/routes/run-ssh.js
 - client/src/App.js
 
 I'll leave it up to you how to edit **app.js**. The act of requiring new files from the **routes** directory should be fairly easy for you by this time.
+
+There are two files that are helpful:
+
+    run-ssh.js (aka ssh-runner.js)
+    script-pusher.js
+
+The [script-pusher.js][ec2c] file is in [Ec2CopyFile.html][ec2f].
+
+The core of [run-ssh.js/ssh-runner][arssr] is in [AwsRunSshScript.html][arss]:
+
+
+
+The next section after the one I link above describes how to create ssh-runner.js or run-ssh.js. Whatever we call it. (Sorry about confusion on naming.)
+
 
 ## Radio Buttons
 
@@ -372,5 +386,10 @@ Probably a good idea to include a screenshot as well.
 [awsp]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
 
 [mtsc]: https://s3.amazonaws.com/bucket01.elvenware.com/images/midterm-system-check.png
+
+[ec2f]: https://www.elvenware.com/teach/assignments/Aws/Ec2CopyFile.html
+[ec2c]: https://www.elvenware.com/teach/assignments/Aws/Ec2CopyFile.html#copy-file-to-ec2
+[arssr]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html#server-side
+[arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
 
 [ssh2]:
