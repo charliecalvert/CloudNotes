@@ -75,6 +75,21 @@ router.get('/uptime', function(request, response) {
 });
 ```
 
+You'll have to modify this parameters of your equivalent of the **runUpdate** method, and you will need to modify this portion of that code:
+
+```
+.connect({
+    host: hostAddress,
+    port: 22,
+    username: 'ubuntu',
+    privateKey: require('fs').readFileSync(
+        process.env.HOME + '/.ssh/ElfWest.pem'
+    )
+});
+```
+
+Your version of the code will look a bit different than that, but I want you to have to figure out at least a few pieces of the process.
+
 ## Turn it in
 
 There are various projects where this needs to be done. Wherever you are using **ssh-runner-js** you should insert this code. The point is that I should not need to edit your code to insert the IP address and identity file that I use in my **~/.ssh/config**. I should be able to just run your code and it should work.
