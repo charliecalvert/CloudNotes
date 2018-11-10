@@ -260,10 +260,10 @@ handleSubmit = (event) => {
 We want to perform two different types of actions on the server side:
 
 - Run local scripts that we put in JsObjects or in our own repositories
-- Run system code that is usually located in the **/bin** directory.
+- Run system code that is usually located in the **/usr/bin** directory.
   - This is the system wide bin directory, not the **~/bin** found in our home directory.
 
-The point is that programs we want to run in order to get updates on the system status will be located in different. So we need a system to differentiate between custom scripts in places like JsObjects, and system code found in the **/bin** directory.
+The point is that programs we want to run in order to get updates on the system status will be located in different places. So we need a system to differentiate between custom scripts in places like JsObjects, and system code found in the **/usr/bin** directory.
 
 Here is the code I'm using to help sort this out:
 
@@ -272,6 +272,23 @@ this.dataEndPoints = ['/script-pusher/run-script?script=', '/script-pusher/run-s
 ```
 
 Calls to **/script-pusher/run-script** run code from JsObjects. Calls to **/script-pusher/run-system-tool** run system utilities. It's up to you to see how this simple array is used in the program to help sort out this problem.
+
+Here is a different way to think about it. In **script-pusher.js** we have multiple endpoints that looks something like this:
+
+```javascript
+router.get('/run-script', (request, response) => {...});
+router.get('/run-system-tool', (request, response) => {...});
+```
+
+One is designed to help us run scripts found in the SLB directory:
+
+```javascript
+const pushScript = spawn(process.env.SETUP_LINUXBOX + '/' + script);
+```
+
+The other to run scripts found in the **/usr/bin** directory. (Type **which uptime** at the bash prompt to see how I found that directory.
+
+**dataEndPoints** is an array of strings that contains the path to those two endpoints on our server side code. I give you the **handleSubmit** and **handleChange** methods which together ensure that the right endpoint is passed to the runScript method (which I also give you.) By creatomg the **dataEndPoints** array I'm just trying to give you a single place in the code where you can list these, and other other endpoints we use, so that we can look them up, and modify them - if necessary - in a single place.
 
 ## Middleware Whitelist {#whitelist}
 
