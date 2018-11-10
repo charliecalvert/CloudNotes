@@ -204,7 +204,9 @@ Test your code and make sure it works. In the console, you should see the output
 
 ## Create sshRunner Module
 
-Create a file called **routes/ssh-runner.js**. Move the appropriate code for handling the **call-cpu-info** endpoint from **routes/index.js** into that file. Remove the redundant code from **routes/index.js**.
+Create a file called **routes/run-ssh.js**. Move the appropriate code for handling the **call-cpu-info** endpoint from **routes/index.js** into that file. Remove the redundant code from **routes/index.js**.
+
+**NOTE**: _In places, I may also refer to **run-ssh.js** as **ssh-runner.js**. They are both the same, or very similar files. Sorry about the confusion._
 
 ## Turn it in
 
