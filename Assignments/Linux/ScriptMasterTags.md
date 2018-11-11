@@ -134,9 +134,9 @@ Then we use the **semver-inc** script from the latest JsObjects (git pull) to in
 
 Now we get the branch:
 
-
-    BRANCH=&#96;git_branch&#96;
-
+```html
+BRANCH=&#96;git_branch&#96;
+```
 
 And put it altogether to see the message we are going to use on our commit and tag:
 
