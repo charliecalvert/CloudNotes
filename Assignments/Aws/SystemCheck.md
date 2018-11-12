@@ -133,7 +133,9 @@ The path we can get from the environment, just as we did in **CopyFile**. The na
 
 ## Call the Server from the Client
 
-Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**. Change the names of the methods as necessary, using your common sense. The button, for instance, should say **Run CpuInfo**
+Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**. Change the names of the methods as necessary, using your common sense. The button, for instance, should say **Run CpuInfo**.
+
+Display the information sent from the server on your HTML page.
 
 ## Setting up the Service
 

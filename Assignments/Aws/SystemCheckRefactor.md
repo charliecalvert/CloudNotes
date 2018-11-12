@@ -1,6 +1,6 @@
 ## Overview
 
-Learn to refactor React components.
+Learn to clean code with prettier and eslint and refactor React components.
 
 ## Get Started
 
@@ -197,6 +197,10 @@ I can think of two solutions:
 Of these two solutions, the second seems less likely to cause problems and simplest to maintain. The only draw back is that it takes up more disk space.
 
 ## Turn it in
+
+Make sure **prettier** and **eslint** come back with no errors when run from project root, **client**, or **server**.
+
+Set up **systemd** to run locally, but not on EC2.
 
 Tag and push with script:
 
