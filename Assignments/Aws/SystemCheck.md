@@ -1,6 +1,6 @@
 ## Overview
 
-Create a program that will allow us to check various system services by running scripts.
+Create a program that will allow us to check various system services by running scripts. For instance, it should run **CpuInfo** on the local machine.
 
 This program should be setup as a systemd service running on port 30033.
 
@@ -95,8 +95,7 @@ Eslint will help catch errors, including formatting errors, in your JavaScript c
 
 ## Setup Script Running
 
-Last week we created an assignment called EC2 Copy File. Get the
-**script-pusher.js** file from that assignment and put it in the **server/routes** folder.
+Last week we created an assignment called EC2 Copy File. Get the **script-pusher.js** file from the **CopyFile** assignment and put it in the **server/routes** folder.
 
 Now link it into your server application. You've done this before, so use the Copy File code as a guide. As a review, here are the steps involved in making **script-pusher** a part of your server side code. Open up **server/app.js** and **require** your **routes/script-pusher.js** file:
 
@@ -121,9 +120,20 @@ var app = express();
 
 **NOTE**: _If the people who first taught and auto-generated this code had called the variable **express** rather than app, then I think a lot of confusion could have been avoided._
 
+## Call CpuInfo
+
+Inside **script-pusher**, call **CpuInfo** on the local machine. This is simpler than in **CopyFile**, because you don't have to pass any parameters to the script. You just need to know the path to the script, and then name of the script:
+
+
+```javascript
+const pushScript = spawn(<PATH GOES HERE> + '/' + <SCRIPT GOES HERE>);
+```
+
+The path we can get from the environment, just as we did in **CopyFile**. The name of the script should be obvious.
+
 ## Call the Server from the Client
 
-Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**. Change the names of the methods as necessary, using your common sense.
+Get the Copy File button and **copyFile** method from the Copy File program and paste them into **client/App.js**. Change the names of the methods as necessary, using your common sense. The button, for instance, should say **Run CpuInfo**
 
 ## Setting up the Service
 

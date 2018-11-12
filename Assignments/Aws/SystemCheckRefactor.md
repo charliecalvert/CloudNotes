@@ -180,7 +180,7 @@ When you are done, you should be able to run the script to perform a build, dele
 A **.gitignore** file belongs in the **server** directory. I think this covers it:
 
     public/static
-    public/precache-manifest.*.js
+    public/precache-manifest.\*.js
     public/asset-manifest.json
     public/index.html
     public/service-worker.js
