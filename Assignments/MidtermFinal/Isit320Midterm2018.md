@@ -2,7 +2,7 @@
 
 The midterm is an an extension of the [SystemCheck][sc] and [SystemCheckRefactor][scr] assignments with perhaps an element or two from the [AWS Provision][awsp] assignment.
 
-The goal will be to create a program that will allow us to query both the status of the current system, and a system running on EC2.
+The goal will be to create a program that will allow us to query both the status of the current system, and a system running on EC2. The code should compile cleanly with no errors or warnings from **prettier** or **eslint**.
 
 The screenshot is designed only to give you a general idea of where I would like to take this program. I haven't finished my version yet, so this is incomplete, but it gives you a good starting point. If you imitate this look and feel you should not have to undo anything, only add more.
 
@@ -394,7 +394,7 @@ Tag and push with script:
 
 - elf-tagger "Completed midterm" "midterm"
 
-Probably a good idea to include a screenshot as well.
+Probably a good idea to include a screenshot as well. Make sure **prettier** and **eslint** can be run without generating errors or warnings.
 
 [sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
 [scr]: https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html
