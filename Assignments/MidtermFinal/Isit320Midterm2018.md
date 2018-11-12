@@ -254,7 +254,6 @@ handleSubmit = (event) => {
     this.runScript(this.dataEndPoints[this.state.endPointIndex], this.state.selectedValue);
     event.preventDefault();
 };
-
 ```
 
 We want to perform two different types of actions on the server side:
