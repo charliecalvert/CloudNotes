@@ -15,8 +15,8 @@ const getSshIp = () => {
     return new Promise(function (resolve, reject) {
         elfUtils.readFile(process.env.HOME + '/.ssh/config')
             .then((content) => {
-                var pattern = new RegExp('Host ec2-bc[\\s\\S]\\s*(.*)[\\s\\S]\\s*(.*)[\\s\\S]\\s*(.*)[\\s\\S]\\s*(.*)');
-
+                //var pattern = new RegExp('Host ec2-bc[\\s\\S]\\s*(.*)[\\s\\S]\\s*(.*)[\\s\\S]\\s*(.*)[\\s\\S]\\s*(.*)');
+                var pattern = new RegExp('Host ec2-bc\n\t(.*)\n\t(.*)\n\t(.*)\n\t(.*)');
                 const result = {};
                 const match = content.result.match(pattern);
                 for (let i = 1; i < 5; i++) {
@@ -36,6 +36,8 @@ const getSshIp = () => {
     });
 };
 ```
+
+**NOTE**: _You have to add this to the **rules** in eslintrc.json: "no-control-regex": "off"._
 
 This function will open up **~/.ssh/config** and parse this entry or one like it:
 
