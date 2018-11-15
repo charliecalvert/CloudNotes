@@ -3,4 +3,5 @@
 * [AwsServerTest.html](AwsServerTest.html)
 * [Ec2ProvisionRepo.html](Ec2ProvisionRepo.html)
 * [SystemCheck.html](SystemCheck.html)
+* [SystemCheckDetails.html](SystemCheckDetails.html)
 * [SystemCheckRefactor.html](SystemCheckRefactor.html)
