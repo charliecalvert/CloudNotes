@@ -139,13 +139,13 @@ while true; do
     echo -e "$LIGHT_GREEN  c) Only Delete"
     echo -e "$LIGHT_RED  x) Exit (You should source .bashrc when done)"
     echo -e "\n$NC"
-    read -p "Please make a selection: " eotuyx
-    case $eotuyx in
+    read -p "Please make a selection: " userInput
+    case $userInput in
         [Aa]* ) runAll false; continue;;
         [Bb]* ) copyNew; continue;;
         [Cc]* ) deleteOld; continue;;
         [XxQq]* ) break;;
-        * )  -e "\n$NC" + "Please answer with a, b, c or x (or q).";;
+        *) echo -e "\n$NC" + "Please answer with a, b, c or x (or q).";;
     esac
 done
 ```
