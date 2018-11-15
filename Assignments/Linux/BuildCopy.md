@@ -150,9 +150,9 @@ while true; do
 done
 ```
 
-Notice how were use the colors like $LIGHT_GREEN to give the menu some life.
+Notice how were use the colors like **$LIGHT_GREEN** to give the menu some life.
 
-We use [read][rd] to get the input from the user. The **-p** option says that we want to provide a prompt. In our case the prompt is "Please make a selection." The **eotuyx** bit is just a variable. It could be **foo** or **userinput**. An explanation, such as it is, can be found on [Stack Overflow][so-menu].
+We use [read][rd] to get the input from the user. The **-p** option says that we want to provide a prompt. In our case the prompt is "Please make a selection." The **userInput** is a variable that holds the input we get from the user. It could be **foo** or **qux**. If the user enters invalid input, we echo out an explanation of the valid choices. An explanation of all this, such as it is, can be found on [Stack Overflow][so-menu].
 
 ## Put in bin
 
