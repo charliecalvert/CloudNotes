@@ -8,8 +8,6 @@ The screenshot is designed only to give you a general idea of where I would like
 
 ![Midterm System Check Interface][mtsc]
 
-
-
 ## Get Started
 
 We have spent a lot of time learning how to automate steps in our work, so I'll ask you to start again from the beginning again.
@@ -65,6 +63,8 @@ Here are the settings:
     export SYSTEMD_PORT="MIDTERM_PORT=30035"
 
 Add **MIDTERM_PORT** to both **.bashrc** and **/bin/www**. You need to **export** it from **.bashrc**.
+
+    export MIDTERM_PORT=30035
 
 **NOTE**: _Ultimately, we may want to put these exports in **.my_bash_aliases**._
 
