@@ -205,3 +205,26 @@ Set up **systemd** to run locally, but not on EC2.
 Tag and push with script:
 
 - elf-tagger "Completed system check refactor" "week07-system-check-refactor"
+
+## SLB
+
+Issues sometimes surface with the environment variable **SETUP_LINUXBOX**. On my system it looks like this:
+
+```
+$ echo $SETUP_LINUXBOX
+/home/charlie/Git/JsObjects/Utilities/SetupLinuxBox
+```
+
+In our JavaScript code we access that variable like this:
+
+    process.env.SETUP_LINUXBOX
+
+In systemd service files, we set it like this:
+
+    Environment=SETUP_LINUXBOX=/home/charlie/Git/JsObjects/Utilities/SetupLinuxBox
+
+Though the username can differ. In ~/.bash_aliases it gets set on line 14
+
+    export SETUP_LINUXBOX=$ELF_UTILS/SetupLinuxBox
+
+You will need to put the path in **conn.exec** when running a remote call to a file found in the SLB directory.
