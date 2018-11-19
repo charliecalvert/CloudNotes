@@ -2,6 +2,14 @@
 
 Track the status of the programs you run.
 
+## The Port Check List
+
+- .bashrc
+- my.service (The service file)
+- setup-environment-service
+- client package.json
+- server/bin/www
+
 ## The Script
 
 In your scripts directory create a file **system-service-control**.
