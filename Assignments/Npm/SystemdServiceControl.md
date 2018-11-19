@@ -17,13 +17,39 @@ function banner {
 }
 
 function show {
-    banner "$1"
+	banner "$1"
 	sudo systemctl show -p ActiveState -p SubState -p Environment $2
 }
 
-show 'Micro 01' micro01.service
-show 'ElvenImagePicker (EIP)' eip.service
-show 'Git Explorer' git-explorer.service
+function showSystemCheck() {
+	show 'SystemCheck' systemcheck.service
+}
+
+
+function checkPorts() {
+    sudo nmap -p 30025-30035 192.168.2.13
+}
+
+message 'System Service Control'
+T
+echo 'Learn about Systemd and other running services.'
+
+while true; do
+    message "Menu"    
+    echo -e "$LIGHT_GREEN  a) Check Ports 30025-30040"
+    echo -e "$LIGHT_GREEN  b) Only Build"
+    echo -e "$LIGHT_GREEN  c) Only Delete"
+    echo -e "$LIGHT_RED  x) Exit"
+    echo -e "\n$NC"
+    read -p "Please make a selection: " userInput
+    case $userInput in
+        [Aa]* ) checkPorts false; continue;;
+        [Bb]* ) showSystemCheck; continue;;
+        [Cc]* ) deleteOld; continue;;
+        [XxQq]* ) break;;
+        *) echo -e "\n$NC" + "Please answer with a, b, c, or x.";;
+    esac
+done
 ```
 
 The output:
@@ -37,7 +63,7 @@ $ ./serviceActive
 Environment=NODE_ENV=production PORT=30027
 ActiveState=active
 SubState=running
-
+sudo nmap -p 30025-30035 192.168.2.13
 ===============================
 --- ElvenImagePicker (EIP) ---
 ===============================
@@ -46,7 +72,7 @@ ActiveState=active
 SubState=running
 
 ===============================
---- Git Explorer ---
+--- Git Explorer ---sudo nmap -p 30025-30035 192.168.2.13
 ===============================
 Environment=NODE_ENV=production PORT=30031 GEX_SERVER_PORT=30026
 ActiveState=active
@@ -74,6 +100,8 @@ This should launch the client on 30031 and the server on 30026.
 ## Port Scanning
 
 Install **nmap**:
+
+		sudo apt install nmap
 
 Scan for open ports on a specific machine:
 
