@@ -4,6 +4,8 @@ Track the status of the programs you run.
 
 ## The Script
 
+In your scripts directory create a file **system-service-control**.
+
 ```bash
 #!/bin/bash
 
