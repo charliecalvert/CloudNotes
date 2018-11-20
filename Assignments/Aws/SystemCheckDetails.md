@@ -4,7 +4,7 @@ We want to refactor App.js into:
 
 - App.js
 - ElfHeader
-- RadioWeb
+- RadioLocal
   - All calls for local system query
 - RadioRemote
   - All calls for remote system query
@@ -36,7 +36,7 @@ This is a nice example component, because it is stripped down to its bare bones.
 
 ## RadioLocal
 
-This component should contain all the code from **App.js** that has to do with making calls to **source/routes/script-pusher.js**. These are the calls the query the local system.
+This component was once named **RadioWeb** but is now called **RadioLocal**. It should contain all the code from **App.js** that has to do with making calls to **source/routes/script-pusher.js**. These are the calls the query the local system.
 
 - **constructor** to set state
 - **runScript** for **fetch** call
@@ -53,7 +53,7 @@ return (
     <div className="App">
 
         <main>
-            <section>{radioWeb}</section>
+            <section>{radioLocal}</section>
             <section>
                 <pre>{this.state.allData}</pre>
             </section>
@@ -86,7 +86,7 @@ render() {
             <ElfHeader />                                     
             <main>                                            
                 <section>                                     
-                    <RadioWeb />                              
+                    <RadioLocal />                              
                     <RadioRemote/>                            
                 </section>                                    
                 <button onClick={this.runFoo}>Run Foo</button>

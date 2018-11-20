@@ -1,4 +1,4 @@
-## Overview
+=## Overview
 
 Learn to clean code with prettier and eslint and refactor React components.
 
@@ -77,7 +77,7 @@ Use **meld** to copy the key files from SystemCheck into this project.
 Add radios to render put this before the return statement in render:
 
 ```javascript
-const radioWeb =  (
+const radioLocal =  (
       <div className="container">
           <form onSubmit={this.handleSubmit} >
 
@@ -104,7 +104,7 @@ Put this in the **render** method:
 ```html
 <main>
     <section>
-        {radioWeb}
+        {radioLocal}
     </section>
     <section>
         <pre>{this.state.allData}</pre>
@@ -113,7 +113,7 @@ Put this in the **render** method:
 </main>
 ```
 
-The key point is the JavaScript JSX expression {radioWeb}.
+The key point is the JavaScript JSX expression {radioLocal}.
 
 And we handle it like this:
 
