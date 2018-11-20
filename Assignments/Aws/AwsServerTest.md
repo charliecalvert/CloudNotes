@@ -186,6 +186,8 @@ Note that I've set a long timeout. That's because VersionCheck can be slow. On m
 
 ## Turn it in
 
-elf-tagger "completed supertest", 'midterm-code'
+Write tests for the CpuInfo and uptime routes.
+
+    elf-tagger "completed supertest", 'midterm-code'
 
 Please also tell me both branch and folder.
