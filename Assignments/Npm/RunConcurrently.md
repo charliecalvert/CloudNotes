@@ -11,7 +11,7 @@ In most cases, you will already have a directory that contains a **server** and 
     CreateExpressProject server
     create-react-app client
 
-Install concurrently:
+Install concurrently in the root of your project:
 
     npm install --save concurrently
 
@@ -37,7 +37,7 @@ export SERVER_PORT=30026
 
 In the **Week10-Concurrently** directory set up **package.json** and the starter script as described in the next few sections of the project.
 
-Also modify the call to **server.listen** like this:
+Also, in **/bin/www** modify the call to **server.listen** like this:
 
 ```
 server.listen(port, () => console.log("Listening on", port));
