@@ -2,7 +2,7 @@
 
 In this document I will try to give some guidelines on ways that students can work together.
 
-## The Verbal Typewriter Problem
+## Giving Help vs Giving Answers {#verbal-typewriter}
 
 I encourage students to help one another understand problems. But if you feel like a request for help has become a request to simply do all or part of an assignment for another student, then you have not only a right to say no but at least a soft obligation to say no.
 
