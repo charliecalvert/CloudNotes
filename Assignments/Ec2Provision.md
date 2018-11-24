@@ -71,7 +71,7 @@ These will override anything you put in **~/.aws/config.json**.
 
 ## Create Your Instance
 
-Create this file and call it **run.js**:
+Back in the **week04-aws-setup** directory, create this file and call it **run.js**:
 
 ```JavaScript
 var AWS = require('aws-sdk');
