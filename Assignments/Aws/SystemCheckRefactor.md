@@ -152,7 +152,7 @@ Other than systemd reated issues, I think I see three issues that are central to
 
 ## The Build Script
 
-This script is designed to be run from the **client** directory. It begins as usual with:
+Create a bash script file called **build-copy**. This script is designed to be run from the **client** directory. It begins as usual with:
 
 ```bash
 #! /usr/bin/env bash
@@ -175,7 +175,7 @@ The next three lines will all use the **SERVER_DIR** variable. They:
 
 When you are done, you should be able to run the script to perform a build, delete the old files from the **SERVER_DIR**, and copy in the new ones. It's not that these steps are hard to do without the script, but that the script makes the task simpler, and saves us from making a type that might caues trouble when deleting or copying files.
 
-I suggest storing this file in your scripts directory and creating a symbolic link to it from your **client** directory. (It makes sense to also create a link to it from your **~/bin** directory, but I want you to also create one from your **client** directory so I can use it while grading.)
+I suggest storing the **build-copy** file in your scripts directory and creating a symbolic link to it from your **client** directory. (It makes sense to also create a link to it from your **~/bin** directory, but I want you to also create one from your **client** directory so I can use it while grading.)
 
 ## The .gitignore for the Server
 
