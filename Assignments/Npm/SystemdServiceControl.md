@@ -151,6 +151,60 @@ PORT      STATE  SERVICE
 30035/tcp closed unknown
 ```
 
+## Get Your IP
+
+Using NMAP to retrieve services on your local PC is easier if you can automatically get the local IP. Then you will not have to first get the IP, and only then call nmap. The lazier, and hence better, solution is to have a single way to get both the IP and the output from nmap. Below is an outline of such a technique.
+
+This [Stack Overflow solution][sonif] is perhaps reasonably robust, though there might be trouble if you have a single interface with two IP addresses. Our script expects this small app to return a single IP address, but in some cases it might return two. So far I have not found a machine that has two IP addresses for a single interface, so I don't know what will happen in that case or how to work around it. Here is the SO code, only slightly modified:
+
+```javascript
+#!/usr/bin/env node
+
+var os = require('os');
+var ifaces = os.networkInterfaces();
+
+// Based on something found here: https://stackoverflow.com/a/8440736/253576
+Object.keys(ifaces).forEach(function (ifname) {
+  'use strict';
+  var alias = 0;
+  ifaces[ifname].forEach(function (iface) {
+    if ('IPv4' !== iface.family || iface.internal !== false) {
+      // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
+      return;
+    }
+
+    if (alias >= 1) {
+      // this single interface has multiple ipv4 addresses
+      console.log(ifname + ':' + alias, iface.address);
+    } else {
+      // this interface has only one ipv4 adress
+      console.log(iface.address);
+    }
+    ++alias;
+  });
+});
+```
+
+Save the above JavaScript in a file in your **scripts** directory called **get-ip.js**. Then in your **system-service-control** script, do this:
+
+```bash
+LOCAL_IP=$(./get-ip.js)
+```
+
+Now you can do this in your script:
+
+```bash
+function checkPorts() {
+    sudo nmap -p 30025-30235 ${LOCAL_IP}
+}
+```
+
+**NOTE**: _This might work in bash as a way to get your IP, but I haven't quite finished it:_
+
+```bash
+ip addr | grep -o "inet\s[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*\sbrd"
+```
+
 ## Turn it in
 
 Write a similar script that will track the services you are running. Save it as systemdServices in your **scripts** directory. Make sure all your services can be configured through their service files to run on a particular port.
@@ -164,3 +218,6 @@ less /etc/services
 less /usr/share/nmap/nmap-services
 
 sudo apt-get install nmap
+
+
+[sonif]: https://stackoverflow.com/a/8440736/253576
