@@ -132,6 +132,14 @@ So even if we pass a parameter to a bash function we still don't use the call op
 I'll just give it to you since this is the first time:
 
 ```bash
+function message {
+    echo
+    echo =============================
+    echo "$1"
+    echo =============================
+    echo
+}
+
 while true; do
     message "Menu"    
     echo -e "$LIGHT_GREEN  a) Delete Old Files and Run Build"
@@ -150,7 +158,7 @@ while true; do
 done
 ```
 
-Notice how were use the colors like **$LIGHT_GREEN** to give the menu some life.
+Notice how were use the colors like **$LIGHT_GREEN** to give the menu some life. The menu belongs at the bottom of the file, while **message** might be up near the top.
 
 We use [read][rd] to get the input from the user. The **-p** option says that we want to provide a prompt. In our case the prompt is "Please make a selection." The **userInput** is a variable that holds the input we get from the user. It could be **foo** or **qux**. If the user enters invalid input, we echo out an explanation of the valid choices. An explanation of all this, such as it is, can be found on [Stack Overflow][so-menu].
 
