@@ -153,7 +153,7 @@ PORT      STATE  SERVICE
 
 ## Turn it in
 
-Write a similar script that will track the services you are running. Save it as systemdServices in the root of your GitExplorer directory. Make sure all your services can be configured through their service files to run on a particular port.
+Write a similar script that will track the services you are running. Save it as systemdServices in your **scripts** directory. Make sure all your services can be configured through their service files to run on a particular port.
 
 ## hints
 
