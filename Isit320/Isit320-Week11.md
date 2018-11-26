@@ -11,6 +11,6 @@ The key programs for this week are:
 
 [sdscomplete]:https://www.elvenware.com/teach/assignments/Npm/SystemdServiceComplete.html
 
-[sdscontrol]https://www.elvenware.com/teach/assignments/Npm/SystemdServiceControl.html
+[sdscontrol]:https://www.elvenware.com/teach/assignments/Npm/SystemdServiceControl.html
 
 [sipk]:https://www.elvenware.com/teach/assignments/Linux/GetSshIpAndPrivateKey.html
