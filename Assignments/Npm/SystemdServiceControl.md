@@ -13,9 +13,11 @@ Track the status of the programs you run.
 ## The Official Port List {#official-ports}
 
 ```bash
+export PORT=30025
 export SERVER_PORT=30026
+export ELF_SCREF_PORT=30030
 export ELF_SYSTEM_CHECK_PORT=30034
-export ELF_SCREF_PORT=30030 # SYSTEM CHECK REFACTOR
+export MIDTERM_PORT=30035
 ```
 
 ## The Script
