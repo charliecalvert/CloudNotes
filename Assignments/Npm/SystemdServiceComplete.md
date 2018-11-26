@@ -1,5 +1,17 @@
 ## Overview
 
+The goal of this assignment is to help you organze, finalize and hone the projects you have been working on this quarter.
+
+- All your programs should _just work_ when started.
+  - You need to test this by having two copies of your repo
+- It should be possible to start effortlessly all your major programs in four ways:
+  - With concurrently
+  - By separately staring the client and server in the background
+  - By starting the server in the backgrounnd with the client copied into the server with **build-copy**
+  - As a systemd service
+- All your programs should get a clean bill of health from:
+  - eslint
+  - prettier
 - Each server side program must tell its name and author when viewed directly.
 
 ## Showing Server Side Name and Author
