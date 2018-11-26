@@ -1,9 +1,11 @@
 ## Overview
 
-The goal of this assignment is to help you organze, finalize and hone the projects you have been working on this quarter.
+The goal of this assignment is to help you organze, finalize, and hone the projects you have been working on this quarter.
 
 - All your programs should _just work_ when started.
   - You need to test this by having two copies of your repo
+  - It's best if the copies are on two different machines, but two copies on the same machine is much better than just one copy.
+  - Don't worry about the user name in your systemd service files, as my scripts set that automatically.
 - It should be possible to start effortlessly all your major programs in four ways:
   - With concurrently
   - By separately staring the client and server in the background
