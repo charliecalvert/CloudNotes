@@ -10,6 +10,14 @@ Track the status of the programs you run.
 - client package.json
 - server/bin/www
 
+## The Official Port List {#official-ports}
+
+```bash
+export SERVER_PORT=30026
+export ELF_SYSTEM_CHECK_PORT=30034
+export ELF_SCREF_PORT=30030 # SYSTEM CHECK REFACTOR
+```
+
 ## The Script
 
 In your scripts directory create a file **system-service-control**.

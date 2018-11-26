@@ -167,11 +167,12 @@ case $1 in
     *) echo -e "\n$NC" + "Please answer with a, b, c, or x.";;
 esac
 ```
+Notice that this script specifically spells out the environment variable that contains the port number for this app. This number and enviornment variable name changes for each project.
 
-Run it like this:
+Run it like this from the root of your project:
 
 ```bash
-
+./run a
 ```
 
 ## Turn it in
