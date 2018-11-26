@@ -179,6 +179,44 @@ Run it like this from the root of your project:
 ./run a
 ```
 
+## Merging Code
+
+My current **~/.gitconfig**:
+
+```
+[user]
+	email = <YOUR EMAIL>
+	name = <YOUR NAME SUCH AS Charlie on forestpath>
+[push]
+	default = simple
+[diff]
+    tool = meld
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+    tags = tag -n1
+```
+
+If you are on branch x, and want to see what is different between it and master:
+
+    git difftool -d master
+
+The standard merge master into your current branch:
+
+    git merge master
+
+To copy one file from master into your current branch, go to your repo root and:
+
+    git co master -- foldername/filename.txt
+
+To copy one folder from master into your current branch:
+
+    git co master -- foldername
+
+
 ## Turn it in
 
 When you are done, I should be able to start at least the following projects either from the project root, or from the repo root, with a single command:
