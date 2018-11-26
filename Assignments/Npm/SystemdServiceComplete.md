@@ -14,6 +14,8 @@ The goal of this assignment is to help you organze, finalize, and hone the proje
 - All your programs should get a clean bill of health from:
   - eslint
   - prettier
+- All code should be merged into your **master branch**
+  - The best version of all your programs should be on **master**
 - Each server side program must tell its name and author when viewed directly.
 
 ## Showing Server Side Name and Author
