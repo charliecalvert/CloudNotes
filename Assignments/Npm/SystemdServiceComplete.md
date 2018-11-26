@@ -167,7 +167,7 @@ case $1 in
     *) echo -e "\n$NC" + "Please answer with a, b, c, or x.";;
 esac
 ```
-Notice that this script specifically spells out the environment variable that contains the port number for this app. This number and enviornment variable name changes for each project.
+Notice that this script specifically spells out the environment variable that contains the port number for this app. This number and enviornment variable name changes for each project. The most official list of ports is maintained in the [systemd Service Control][sdsc] assignment.
 
 Run it like this from the root of your project:
 
@@ -198,3 +198,5 @@ I want to make clear that this is at least as important as getting the final app
 I also want both **prettier** and **eslint .** coming back clean in from the root of all the projects listed above.
 
 [scsui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/system-check-server-ui.png
+
+[sdsc]:https://www.elvenware.com/teach/assignments/Npm/SystemdServiceControl.html#official-ports
