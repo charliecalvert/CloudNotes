@@ -8,6 +8,8 @@ The goal of this assignment is to help you organze, finalize and hone the projec
 
 - All your programs should _just work_ when started.
   - You need to test this by having two copies of your repo
+  - It's best if the copies are on two different machines, but two copies on the same machine is much better than just one copy.
+  - Don't worry about the user name in your systemd service files, as my scripts set that automatically.
 - It should be possible to start effortlessly all your major programs in four ways:
   - With concurrently
   - By separately staring the client and server in the background
@@ -16,6 +18,8 @@ The goal of this assignment is to help you organze, finalize and hone the projec
 - All your programs should get a clean bill of health from:
   - eslint
   - prettier
+- All code should be merged into your **master branch**
+  - The best version of all your programs should be on **master**
 - Each server side program must tell its name and author when viewed directly.
 
 ## Showing Server Side Name and Author
@@ -178,6 +182,44 @@ Run it like this from the root of your project:
 ```bash
 ./run a
 ```
+
+## Merging Code
+
+My current **~/.gitconfig**:
+
+```
+[user]
+	email = <YOUR EMAIL>
+	name = <YOUR NAME SUCH AS Charlie on forestpath>
+[push]
+	default = simple
+[diff]
+    tool = meld
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+    tags = tag -n1
+```
+
+If you are on branch x, and want to see what is different between it and master:
+
+    git difftool -d master
+
+The standard merge master into your current branch:
+
+    git merge master
+
+To copy one file from master into your current branch, go to your repo root and:
+
+    git co master -- foldername/filename.txt
+
+To copy one folder from master into your current branch:
+
+    git co master -- foldername
+
 
 ## Turn it in
 
