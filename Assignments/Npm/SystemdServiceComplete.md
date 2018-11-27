@@ -1,5 +1,9 @@
 ## Overview
 
+TELL THEM ABOUT build-copy-worker
+TELL THEM ABOUT killnode and kcp.
+TELL THEM TO ADD nohup.out to repo .gitignore
+
 The goal of this assignment is to help you organze, finalize and hone the projects you have been working on this quarter.
 
 - All your programs should _just work_ when started.
