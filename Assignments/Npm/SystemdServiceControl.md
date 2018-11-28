@@ -12,6 +12,8 @@ Track the status of the programs you run.
 
 ## The Official Port List {#official-ports}
 
+I feel like this list is not yet complete, but this is a good start.
+
 ```bash
 export PORT=30025
 export SERVER_PORT=30026
@@ -22,7 +24,7 @@ export MIDTERM_PORT=30035
 
 Remember, these values play a role in at least three places:
 
-- bashrc
+- ~/.bashrc
 - server/bin/www
 - client/package.json
 

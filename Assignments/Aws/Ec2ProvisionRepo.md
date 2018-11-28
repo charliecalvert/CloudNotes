@@ -85,7 +85,7 @@ Here are the methods called by each button, the text for the button and the rout
 | this.createWithAwsStandardAccount| Create with AWS Standard Account | /create-standard |
 | this.associateElasticIp| Associate Elastic Ip | /associate-elastic-ip
 | this.copyGetStarted| Copy the GetStarted Script | /script-pusher/copy-get-started |
-| this.runGetStarted| Run the GetStarted Script | /script-pusher/run-get-started |
+| this.runGetStarted| Run the GetStarted Script | /ssh-runner/run-get-started |
 | this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
 
 ## Create Endpoints
