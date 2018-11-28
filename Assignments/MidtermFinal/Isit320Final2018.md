@@ -36,7 +36,7 @@ The EC2 Provision Repo assignment asked you to create a series of buttons and ma
 
 Be sure that the code in **App.js** is refactored into an appropriate set of React components.
 
-Create or maintain at least five unit tests.
+Create or maintain at least ten unit tests at least three of which should use **supertest**.
 
 ## Bumps in the Road
 
@@ -89,27 +89,27 @@ Get rid of the **queryServer** call to the endpoint **/foo**. We don't want that
 
 ## Refactor
 
-The following classes should exist:
+The following React classes should exist in **client/src**. Beneath each module name I add a few comments and/or the endpoints the module calls:
 
 - App.js
   - Links together the modules listed below in its render method
   - It does nothing else
-- ElfHeader
-  - Show the Title and your name
-- CreateAssociate.js: Creating instances, associate Elastic IP
-  - Much or all of your state will be maintained in this file.
+- CreateAssociate.js
   - /create-standard
   - /create-educate
   - /associate-elastic-ip
-- Tools
+  - Maintains quite a bit of state.
+- ElfHeader.js
+  - Show the Title and your name
+- RunLocal.js
+  - /copy-get-started
+- RunRemote.js
+  - /run-get-started
+  - /run-ubuntu-setup
+- Tools.js
   - /get-instance-status
   - /reboot-instance
   - /remove-known-hosts
-- RunLocal
-  - /copy-get-started
-- RunRemote
-  - /run-get-started
-  - /run-ubuntu-setup
 
 The URLs shown above, are not necessarily complete. I'm just giving  you enough information so you can see which URL goes in which file.
 
