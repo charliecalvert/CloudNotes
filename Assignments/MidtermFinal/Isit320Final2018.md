@@ -53,6 +53,25 @@ All this takes considerable time, and there is no good way at this stage to get 
 
 For me, the whole process takes something like five minutes to complete. It is pretty nice to be able to completely provision an EC2 instance in five minutes without having to do anything more than select a few buttons. So the experience has its upside. I definitely want to improve the app, but at least this is a start.
 
+## EndPoints
+
+Here is a list of all the endpoints I'm using at this time and the file in the **server/routes** directory in which they are found:
+
+- index.js (all use AWS api)
+  - /associate-elastic-ip
+  - /create-educate
+  - /create-standard
+  - /get-instance-status
+  - /reboot-instance
+- ssh-runner.js (all use ssh2)
+  - /run-get-started
+  - /run-ubuntu-setup
+- script-pusher (all use spawn)
+  - /copy-get-started
+  - /remove-known-host
+
+On the client end, I have my code refactored into a similar, but not identical, pattern.
+
 ## Details
 
 The **routes/ssh-runner.js** file must get its HostAddress (the Elastic IP of the server) and Private Key identity file from **~/.ssh/config** via the technique explained in the [Get SSH and Private IP][gsapi] assignment. This is an important part of the assignment, as filling in the information by hand is among the time consuming parts of grading your assignment. Having to do it manually would definitely be a bumpy stretch in the process of grading any assignment.
@@ -73,9 +92,26 @@ Get rid of the **queryServer** call to the endpoint **/foo**. We don't want that
 The following classes should exist:
 
 - App.js
-- CreateAssociate.js: The code for creating instances and associating the IP with the instance.
+  - Links together the modules listed below in its render method
+  - It does nothing else
+- ElfHeader
+  - Show the Title and your name
+- CreateAssociate.js: Creating instances, associate Elastic IP
   - Much or all of your state will be maintained in this file.
-- Others, TBD.
+  - /create-standard
+  - /create-educate
+  - /associate-elastic-ip
+- Tools
+  - /get-instance-status
+  - /reboot-instance
+  - /remove-known-hosts
+- RunLocal
+  - /copy-get-started
+- RunRemote
+  - /run-get-started
+  - /run-ubuntu-setup
+
+The URLs shown above, are not necessarily complete. I'm just giving  you enough information so you can see which URL goes in which file.
 
 ## Associate
 
@@ -197,6 +233,8 @@ Let me know which programs you want me to check to see if they are running corre
 - Environment Variable: ELF_SYSTEM_CHECK_PORT
 
 Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl].
+
+
 
 [apii]: https://s3.amazonaws.com/bucket01.elvenware.com/images/aws-provision-instanceid.png
 [ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
