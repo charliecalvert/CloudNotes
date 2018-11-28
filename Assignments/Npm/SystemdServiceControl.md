@@ -20,6 +20,12 @@ export ELF_SYSTEM_CHECK_PORT=30034
 export MIDTERM_PORT=30035
 ```
 
+Remember, these values play a role in at least three places:
+
+- bashrc
+- server/bin/www
+- client/package.json
+
 ## The Script
 
 In your scripts directory create a file **system-service-control**.
