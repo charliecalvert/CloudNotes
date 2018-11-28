@@ -68,6 +68,17 @@ Get rid of the **queryServer** call to the endpoint **/foo**. We don't want that
 | /ssh-runner/run-get-started | Use the SSH2 Package |
 | this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
 
+## Refactor
+
+The following classes should exist:
+
+- App.js
+- CreateAssociate.js: The code for creating instances and associating the IP with the instance.
+  - Much or all of your state will be maintained in this file.
+- Others, TBD.
+
+## Associate
+
 One of the trickiest parts of this process is getting the instanceId of a newly created instance and using it to bind an elastic IP to an instance.
 
 You need two pieces of information to link an Elastic IP and instance:
