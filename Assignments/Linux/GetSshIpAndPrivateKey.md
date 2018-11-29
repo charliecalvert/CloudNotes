@@ -39,6 +39,8 @@ const getSshIp = () => {
 
 **NOTE**: _You have to add this to the **rules** in eslintrc.json: "no-control-regex": "off"._
 
+## Use Tabs in Config {#tabs-config}
+
 This function will open up **~/.ssh/config** and parse this entry or one like it:
 
 ```
