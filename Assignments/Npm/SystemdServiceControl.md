@@ -46,6 +46,8 @@ ActiveState=active
 SubState=running
 ```
 
+The overall goal is simply to try to give us all a simple way of detecting which services are running on systemd at this point in time. It is not a perfect tool, but it is much better than nothing.
+
 ## The Port Check List
 
 - .bashrc
