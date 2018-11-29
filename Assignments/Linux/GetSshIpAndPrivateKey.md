@@ -50,6 +50,20 @@ Host ec2-bc
 	IdentityFile ~/.ssh/ec2-320-inclass
 ```
 
+Unfortunately, you must use tabs, rather than spaces, to get this to work properly. (In my defense, the JavaScript RegEx for dealing with spaces is very fussy!). So, assuming that backslash t (\t) is the symbol for tabs:
+
+```
+Host ec2-bc
+\tHostName 18.215.138.128
+\tPort 22
+\tUser ubuntu
+\tIdentityFile ~/.ssh/ec2-320-inclass
+```  
+
+But of course, you should have real tabs, not the escaped symbol for them, in your file. I believe you can have any number of entries in the file, that is you can define multiple hosts, and they can be in any order. The only requirement is that each entry for a host must begin with a single tab. Sorry about the limitation.
+
+In geany, see **Document | Replace spaces with tabs** and **View | Show white space**. Also, in **Edit | Preferences | Editor | Indentation** you can set your preferences for tabs vs spaces as the default character.
+
 It returns an object shaped like this:
 
 ```javascript
