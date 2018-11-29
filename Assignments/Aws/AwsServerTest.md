@@ -19,13 +19,13 @@ Install supertest in the midterm **server** directory:
 Create a test file in the **server** directory:
 
 ```    
-mkdir test
-touch test/index-test.js
+mkdir tests
+touch test/apiTest.js
 ```
 
 In the **scripts** section of **package.json**:
 
-    "test": "mocha 'test/index-test.js'"
+    "test": "mocha 'test/apiTest.js'"
 
 ## Module to Test
 
@@ -68,7 +68,7 @@ describe('Test index.js', function() {
             .expect(200, done);
     });
 
-    it('should check foo route', function(done) {
+    it('should check foo route and check JSON', function(done) {
         request(app)
             .get('/foo')
             .set('Accept', 'application/json')
