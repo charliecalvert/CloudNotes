@@ -36,7 +36,7 @@ The EC2 Provision Repo assignment asked you to create a series of buttons and ma
 
 Be sure that the code in **App.js** is refactored into an appropriate set of React components.
 
-Create or maintain at least five unit tests.
+Create or maintain at least ten unit tests at least three of which should use **supertest**.
 
 ## Bumps in the Road
 
@@ -52,6 +52,25 @@ sudo apt autoremove
 All this takes considerable time, and there is no good way at this stage to get feedback to the user. Once the **GetStarted** script is complete, it then reboots the system, which again takes time. By watching the command prompt, you can see the progress, so you, as a technical person, are not in the dark about what is happening. But clearly this is a less than optimal situation. Nevertheless, it does work, and improving the situation will have to wait till a later date, as we out of time this quarter.
 
 For me, the whole process takes something like five minutes to complete. It is pretty nice to be able to completely provision an EC2 instance in five minutes without having to do anything more than select a few buttons. So the experience has its upside. I definitely want to improve the app, but at least this is a start.
+
+## EndPoints
+
+Here is a list of all the endpoints I'm using at this time and the file in the **server/routes** directory in which they are found:
+
+- index.js (all use AWS api)
+  - /associate-elastic-ip
+  - /create-educate
+  - /create-standard
+  - /get-instance-status
+  - /reboot-instance
+- ssh-runner.js (all use ssh2)
+  - /run-get-started
+  - /run-ubuntu-setup
+- script-pusher (all use spawn)
+  - /copy-get-started
+  - /remove-known-host
+
+On the client end, I have my code refactored into a similar, but not identical, pattern.
 
 ## Details
 
@@ -70,12 +89,29 @@ Get rid of the **queryServer** call to the endpoint **/foo**. We don't want that
 
 ## Refactor
 
-The following classes should exist:
+The following React classes should exist in **client/src**. Beneath each module name I add a few comments and/or the endpoints the module calls:
 
 - App.js
-- CreateAssociate.js: The code for creating instances and associating the IP with the instance.
-  - Much or all of your state will be maintained in this file.
-- Others, TBD.
+  - Links together the modules listed below in its render method
+  - It does nothing else
+- CreateAssociate.js
+  - /create-standard
+  - /create-educate
+  - /associate-elastic-ip
+  - Maintains quite a bit of state.
+- ElfHeader.js
+  - Show the Title and your name
+- RunLocal.js
+  - /copy-get-started
+- RunRemote.js
+  - /run-get-started
+  - /run-ubuntu-setup
+- Tools.js
+  - /get-instance-status
+  - /reboot-instance
+  - /remove-known-hosts
+
+The URLs shown above, are not necessarily complete. I'm just giving  you enough information so you can see which URL goes in which file.
 
 ## Associate
 
@@ -197,6 +233,8 @@ Let me know which programs you want me to check to see if they are running corre
 - Environment Variable: ELF_SYSTEM_CHECK_PORT
 
 Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl].
+
+
 
 [apii]: https://s3.amazonaws.com/bucket01.elvenware.com/images/aws-provision-instanceid.png
 [ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
