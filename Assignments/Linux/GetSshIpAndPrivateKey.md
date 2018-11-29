@@ -66,7 +66,9 @@ But of course, you should have real tabs, not the escaped symbol for them, in yo
 
 In geany, see **Document | Replace spaces with tabs** and **View | Show white space**. Also, in **Edit | Preferences | Editor | Indentation** you can set your preferences for tabs vs spaces as the default character.
 
-It returns an object shaped like this:
+## The output
+
+Assuming our **getSshIp** call is working, it returns an object shaped like this:
 
 ```javascript
 {
@@ -75,7 +77,7 @@ It returns an object shaped like this:
 }
 ```
 
-Thus we no longer have to hardcode that info in **ssh-runner**.
+Thus we no longer have to hard-code that info in **ssh-runner**.
 
 Call the method like this:
 
@@ -118,8 +120,10 @@ And continue to specify branch and folder.
 
 **NOTE**: I have not tested the code that thoroughly, but it should work so long as you have done a reasonable job of formatting your **config** file. If its not working, let me know.
 
-For testing, pull JsObjects and look here:
+For testing, pull JsObjects and [look here in Github][gscip] or here on your drive:
 
     ~/Git/JsObjects/JavaScript/SystemCalls/GetSshConfigIp
 
 That's where I developed the code.
+
+[gscip]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/SystemCalls/GetSshConfigIp
