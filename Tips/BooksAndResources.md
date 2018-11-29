@@ -11,3 +11,9 @@ Notice, for instance, that one of those links on the Elvenware page leads to thi
 The point is that we don't always read something like the docs for create-react-app (Links to an external site.) word for word, but we should know they exist, and we should know how to use them as a resource.
 
 I will talk more about books in class today.
+
+## Lynda
+
+Bellevue College students (and KCLS members) get free access to **Lynda.com**.
+
+When you sign-in, select **Sign in with my organization portal.** Then they want <b>bellevuecollege.edu</b>. They take you to the regular BC sign-in portal, and then you are in to Lynda.com.
