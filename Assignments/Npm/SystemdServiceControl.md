@@ -1,6 +1,50 @@
 ## Overview
 
-Track the status of the programs you run.
+Track the status of the programs you run. Your code should do two things:
+
+- Show any ports in the range 30025-30235 that are currently being used.
+- Show if any of the programs you typically run under systemd are currently active.
+
+For instance, when I check for open ports, I get this feedback:
+
+```
+Starting Nmap 7.60 ( https://nmap.org ) at 2018-11-29 11:14 PST
+Nmap scan report for elf-path.lan (192.168.86.26)
+Host is up (0.0000080s latency).
+Not shown: 209 closed ports
+PORT      STATE SERVICE
+30031/tcp open  unknown
+30200/tcp open  unknown
+```
+
+This tells me that of 211 ports I'm checking two are being used:
+
+- 30031
+- 30200
+
+The rest are not being used.
+
+Here is what happens when I check the status of a service that is not running:
+
+```
+===============================
+--- SystemCheck ---
+===============================
+Environment=NODE_ENV=production ELF_SYSTEM_CHECK_PORT=30034 SETUP_LINUXBOX=/home
+ActiveState=inactive
+SubState=dead
+```
+
+And here is what it looks like if it is running:
+
+```
+===============================
+--- SystemCheck ---
+===============================
+Environment=NODE_ENV=production ELF_SYSTEM_CHECK_PORT=30034 SETUP_LINUXBOX=/home
+ActiveState=active
+SubState=running
+```
 
 ## The Port Check List
 
