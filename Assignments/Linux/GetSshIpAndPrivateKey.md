@@ -108,7 +108,7 @@ You'll have to modify this parameters of your equivalent of the **runUpdate** me
 });
 ```
 
-Your version of the code will look a bit different than that, but I want you to have to figure out at least a few pieces of the process.
+Your version of the code will look a bit different than that, but I want you to have to figure out at least a few pieces of the process. The most important part of the process involves making sure that **runUptime** can accept three parameters and knows what to do with them.
 
 ## Turn it in
 
