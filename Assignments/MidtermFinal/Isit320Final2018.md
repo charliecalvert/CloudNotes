@@ -1,5 +1,7 @@
 ## Overview
 
+Pease see [this announcment][new-final] which covers some of the changes to the final discussed near the end of class on Wednesday.
+
 You have three major goals:
 
 - To complete the [systemd Service Complete][sdsc] assignment
@@ -241,3 +243,5 @@ Recall that the official list of ports and names is in [SystemdServiceControl][s
 [gsapi]: https://www.elvenware.com/teach/assignments/Linux/GetSshIpAndPrivateKey.html
 [sdsc]: https://www.elvenware.com/teach/assignments/Npm/SystemdServiceComplete.html
 [sdsctrl]: https://www.elvenware.com/teach/assignments/Npm/SystemdServiceControl.html#official-ports
+
+[new-final]:https://bc.instructure.com/courses/1626572/discussion_topics/8486355
