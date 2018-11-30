@@ -1,6 +1,6 @@
 # React Course Two from Code Academy Part III
 
-Bring [React Part Two][car] to 75%.
+Bring [React Part Two][car] to at least 75%.
 
 When you are done, submit a screen shot of your progress. If you are completely done with the Skill, then submit a link to your Code Academy **profile page**,
 like this:

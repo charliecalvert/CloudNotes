@@ -15,10 +15,12 @@ After you have set up your account, I want you to complete some simple exercises
 
 We'll likely keep progressing through Code Academy on a weekly basis, doing about twenty-five percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
 
-	Part 1:  25%
-	Part 2:  50%
-	Part 3:  75%
-	Part 4:  100%
+| Section     | Percent     |
+| :------------- | :------------- |
+| Part 1 | 25% |
+| Part 2 | 50% |
+| Part 3 | 75% |
+| Part 4 | 100% |
 
 If you have already completed these skills, then just turn in the assignments pointing me toward your Profile page, and you will get credit. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
 

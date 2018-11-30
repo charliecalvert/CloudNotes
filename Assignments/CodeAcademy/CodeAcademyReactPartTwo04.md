@@ -10,10 +10,12 @@ When you have reached 100%, submit a link to your Code Academy **profile page**,
 
 Proposed weekly progress:
 
-	Part 1:  25%
-	Part 2:  50%
-	Part 3:  75%
-	Part 4: 100%
+| Section     | Percent     |
+| :------------- | :------------- |
+| Part 1 | 25% |
+| Part 2 | 50% |
+| Part 3 | 75% |
+| Part 4 | 100% |
 
 **NOTE**: _You can see an icon or a picture of yourself in the upper right hand corner of the Code Academy site. Click that picture, there you will find a way to get your profile page._
 

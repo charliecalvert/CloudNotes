@@ -1,7 +1,7 @@
 # Code Academy Part III
 
 Bring both [Git](https://www.codecademy.com/learn/learn-git)
-and [Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line) to 75%.
+and [Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line) to at least 75%.
 
 When you are done, submit a screen shot of your progress. If you are completely done with the Skill, then submit a link to your Code Academy **profile page**,
 like this:

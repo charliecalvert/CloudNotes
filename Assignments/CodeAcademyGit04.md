@@ -11,7 +11,7 @@ Remember, not just any page for the link, but a link to your profile page. One r
 
 Proposed weekly progress:
 
-| Header One     | Header Two     |
+| Section     | Percent     |
 | :------------- | :------------- |
 | Part 1 | 25% |
 | Part 2 | 50% |
