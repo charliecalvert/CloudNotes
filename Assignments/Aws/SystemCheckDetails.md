@@ -99,6 +99,12 @@ render() {
 
 I like leaving foo in there because it can act as a sanity check. We will remove it eventually, of course.
 
+## Turn it in
+
+Give branch and directory. Probably best to include a tag:
+
+    elf-tagger "Completed refactor", "SystemCheckRefactorDetails"
+
 ## Hint
 
 Don't forget when running code as SYSTEMD, that we have to explicitly set SETUP_LINUXBOX in our service file:
