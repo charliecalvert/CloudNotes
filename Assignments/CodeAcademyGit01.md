@@ -35,7 +35,7 @@ In this **assignment** we are working on twenty five percent of the Code Academy
 
 ## Profile Pages and Screen Shots
 
-On Code Academy, I am known as netslayer43536. As a result, a link to my profile page looks like this:
+On Code Academy, I am known as **netslayer43536**. As a result, a link to my profile page looks like this:
 
 - <http://www.codecademy.com/netslayer43536>
 

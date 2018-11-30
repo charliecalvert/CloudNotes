@@ -11,9 +11,11 @@ Remember, not just any page for the link, but a link to your profile page. One r
 
 Proposed weekly progress:
 
-	Part 1:  25%
-	Part 2:  50%
-	Part 3:  75%
-	Part 4: 100%
+| Header One     | Header Two     |
+| :------------- | :------------- |
+| Part 1 | 25% |
+| Part 2 | 50% |
+| Part 3 | 75% |
+| Part 4 | 100% |
 
 **NOTE**: _You can see an icon or a picture of yourself in the upper right hand corner of the Code Academy site. Click that picture, there you will find a way to get your profile page._

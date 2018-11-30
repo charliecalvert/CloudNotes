@@ -10,7 +10,7 @@ like this:
 
 - <http://www.codecademy.com/netslayer43536>
 
-**Please note**: *You must link to your profile page. Don't just link to some random page on CodeAcademy. The assignment can be graded only if you turn in a link to your profile page!*
+**Please note**: *You must link to your profile page. Don't just link to some random page on CodeAcademy. The assignment can be graded only if you turn in a link to your profile page! There is an icon at the top right of the Code Academy site that should lead to your profile.*
 
 In July, 2014 CodeAcademy changed their profile pages so that I will not be able to see your progress through a particular skill by looking at your profile page. Their change made it so that I can see only your completed skills. If you have not yet completed a particular skill by finishing 100% of the questions, please submit a screen shot of the skills you have completed. It will probably look something like this:
 

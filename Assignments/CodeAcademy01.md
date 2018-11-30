@@ -1,8 +1,8 @@
 ## Overview
 
-The Code Academy web site features interactive lessons on various computer technologies, including JavaScript and HTML. It provides an excellent way for you to brush up on basic skills that we don't have time to cover in class.
+The [Code Academy][caws] web site features interactive lessons on various computer technologies, including JavaScript and HTML. It provides an excellent way for you to brush up on basic skills that we don't have time to cover in class.
 
-To get started, create  an account on [Code Academy](http://www.codecademy.com/).
+To get started, create  an account on [Code Academy][caws].
 
 **NOTE**: _The name of the site is actually **codecademy**, not **code academy**. In a no doubt futile attempt to preserve what is left of the English language, I nevertheless tend to call it code academy_.
 
@@ -63,3 +63,4 @@ I strongly suggest that you set aside a little time at least five days a week to
 Also, there may be times when the Code Academy editor can go a bit wacky. Try refreshing the page or clearing the cache. Even better, try cutting and pasting the code into Cloud 9, Geany or some other editor, and working at the command line with node. Just do a little work in a completely different environment. If it seems to be working there, then try pasting your solution back into Code Academy.
 
 [tljc]: https://www.codecademy.com/learn/learn-javascript
+[caws]:http://www.codecademy.com/
