@@ -1,8 +1,8 @@
 ## Overview
 
-Here is a TOC for Code Academy Skills used in Charlie's courses.
-
+Here is a Table of Contents for Code Academy Skills used in Charlie's courses.
 - [CodeAcademy01.html](../CodeAcademy01.html)
+
 - [CodeAcademy02.html](../CodeAcademy02.html)
 - [CodeAcademy03.html](../CodeAcademy03.html)
 - [CodeAcademy04.html](../CodeAcademy04.html)

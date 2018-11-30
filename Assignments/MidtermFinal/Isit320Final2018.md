@@ -237,6 +237,21 @@ Let me know which programs you want me to check to see if they are running corre
 Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl].
 
 
+## Charlie Notes
+
+Here are some key points I need to integrate into this document. 
+
+- We spent a lot of time learning lots of good stuff, but also trying to get everyone up to speed to do aws-provision, but we didn't quite make it, and I was reluctant to admit it. I see it now.
+- So the unofficial plan at this writing is to have all the implementation of the server side code for aws-provision be extra credit.
+- Instead, I want you to polish the earlier aws-provision assignment in the ways laid out in the SystemdServiceComplete (Links to an external site.)Links to an external site. assignment. The only addition is that I want all the server side methods, that just return placeholder JSON, to be checked with SuperTest code. I'll be more specific later, but essentially each server-side method should return something like {"result": "success", "endpoint-called": "<YOUR ROUTE NAME LIKE /foo>"} and your SuperTest code should confirm that it can do that.
+- This empty, non-working version of aws-provision should be running on as a systemd service on EC2. When I click on the buttons, they should display the default JSON text guessed at above, and specified in more detail by end of day Friday.
+- You should also have a SystemCheck program which only checks methods on the client side running as an EC2 service on EC2. In other words, it never uses server/routes/ssh-runner, only script-pusher.js. It never uses SSH to check services running on other systems, it just checks the services running on the same instance of EC2 that it runs on. So uptime returns how long your EC2 instance has been up and running. (Please make sure you implement the whitelist!)
+- For extra credit, you can have a separate program in your repository in a branch called extra-credit, that actually tries to implement the server side methods in aws-provision. It doesn't have to be complete to get you at least some extra credit. Don't deploy this version to EC2. It is only in the aws-provision directory but in the extra-credit branch. The final branch should contain the version of the program that you deploy to EC2, the version that doesn't do anything. it is that version that should be merged into master. The extra-credit version is never merged into master, it stays in extra-credit. Make it very obvious that you did the extra credit so I notice that you did it and grade it. Assume I'm a basket case and won't read a hint buried somewhere. If you did it, make it very clear that you did the extra credit.
+- Also, I'm going to want to see some refactoring. I'll specify just what in the final document, but it is probably going to be close to what is already in the final.
+- In summary, the Systemd Service Complete assignment is your final, except that I want you to add your aws-provision program to it, as described above.
+
+Again, this is not the final version of the final, as it were, but hopefully, it is close enough to let you continue working until I get the updated text to you.
+
 
 [apii]: https://s3.amazonaws.com/bucket01.elvenware.com/images/aws-provision-instanceid.png
 [ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
