@@ -23,7 +23,7 @@ For extra credit, you can attempt to fully implement Aws-Provision in a branch c
   - Deploy this version to EC2.
 - **Extra Credit Branch**: Use the **extra-credit** branch to create a version of **aws-provision** that actually does something.
 
-It seems to me that the final branch ought to only contain **aws-provision**, **scripts** and **system-check** directories. You can delete everything else. The master branch should contain all the programs we have created.
+The final branch ought to contain at least the **aws-provision**, **scripts** and **system-check** directories. The master branch should contain all the programs we have created.
 
 ## Getting Started
 
