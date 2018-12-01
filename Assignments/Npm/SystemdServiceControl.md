@@ -279,7 +279,7 @@ function checkPorts() {
 }
 ```
 
-**NOTE**: _This might work in bash as a way to get your IP, but I haven't quite finished it:_
+**NOTE**: _As an FYI you need not act on: This might work in bash as a way to get your IP, but I haven't quite finished it:_
 
 ```bash
 ip addr | grep -o "inet\s[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*\sbrd"
