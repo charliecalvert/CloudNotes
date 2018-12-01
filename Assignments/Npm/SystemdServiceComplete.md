@@ -75,54 +75,7 @@ alias kcp="killnode && cleanher && plj"
 
 ## Run any Project from Repo Root {#repo-run}
 
-Save this file as **run-all** in the root of your repository.
-
-```bash
-#! /usr/bin/env bash
-
-if [[ -z $2 ]]; then
-    echo -e "=========================================================="
-    echo -e "Pass in a project directory and a parameter of a, b, or c."
-    echo -e " a) Run Client Server"
-    echo -e " b) Run Server"
-    echo -e " c) Start Service"
-    echo -e "For Run Server, you also need to pass in a port."
-    echo -e "=========================================================="
-    echo -e "Examples: "
-    echo -e "   ./run-all week06-system-check a"
-    echo -e "   ./run-all week06-system-check b 30026"
-    echo -e "   ./run-all week06-system-check c"
-    echo -e "=========================================================="
-    exit
-fi
-
-function runClientServer() {
-    cd $1
-    try-run-both build
-    cd ..
-}
-
-function runServer() {
-    cd $1/client
-    pwd
-    ./build-copy-worker a
-    cd ../server
-    nohup node bin/www &
-    firefox http://localhost:${2}
-}
-
-function startService() {
-    cd $1/server
-    pwd
-    ./run-setup-service
-}
-
-case $2 in
-    [Aa]* ) runClientServer ${1}; shift;;
-    [Bb]* ) runServer ${1} ${3}; shift;;
-    [Cc]* ) startService ${1}; shift;;
-esac
-```
+I've saved the [run-all][rag] script as a gist. Click the link and save the file as **run-all** in the root of your repository.
 
 Run it like this:
 
@@ -252,3 +205,5 @@ I also want both **prettier** and **eslint .** coming back clean in from the roo
 [scsui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/system-check-server-ui.png
 
 [sdsc]:https://www.elvenware.com/teach/assignments/Npm/SystemdServiceControl.html#official-ports
+
+[rag]: https://gist.github.com/charliecalvert/f927c792ac248f2069a629b46ce6ada8
