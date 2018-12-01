@@ -46,7 +46,7 @@ This tells me that of 211 ports I'm checking two are being used:
 
 The rest are not being used.
 
-The next step is see the status of one of our five programs. All we want to know is whether or not a particular program is currently active, whether or not it is currently running as a systemd service. Here is what happens when I pick one of the five programs from the menu (one of option b-f) so I can check the status of a service. In this case I find that the program I selected from the menu is not running as a systemd service:
+The next step is to see the status of one of our five programs. All we want to know is whether or not a particular program is currently active, whether or not it is currently running as a systemd service. Here is what happens when I pick one of the five programs from the menu (one of option b-f) so I can check the status of a service. In this case I find that the program I selected from the menu is not running as a systemd service:
 
 ```
 ===============================
