@@ -73,8 +73,8 @@ describe('Test index.js', function() {
             .get('/foo')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect(200, done)
-            .expect({ file: 'api.js', result: 'success', 'status': 'bar' });
+            .expect({ file: 'api.js', result: 'success', 'status': 'bar' })
+            .expect(200, done);
     });
 
 });
