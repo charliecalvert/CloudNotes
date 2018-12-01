@@ -295,6 +295,34 @@ function showSystemCheck() {
 
 The **show** function uses the name of a service file and the **systemctl** utility to check the status of the program that uses, in this instance, **systemcheck.service**. If you have a menu item that allows you to call **showSystemCheck** then you are at least one seventh of the way through.
 
+If the requirement were to check on three programs, rather than five, then menu might look like this:
+
+```bash
+===============================
+--- Menu ---
+===============================
+  a) Check Ports 30025-30225
+  b) SystemCheck
+  c) SystemCheckRefactor
+  d) AWS Provision
+  x) Exit
+```
+
+You have the option to check the ports, to check three programs, and to exit. If I added code to check two more programs, I would be done:
+
+```bash
+===============================
+--- Menu ---
+===============================
+  a) Check Ports 30025-30225
+  b) SystemCheck
+  c) SystemCheckRefactor
+  d) AWS Provision
+  e) Midterm
+  f) EC2-Copy-File
+  x) Exit
+```
+
 ## hints
 
 Get a list of common ports:
