@@ -2,22 +2,34 @@
 
 Pease see [this announcment][new-final] which covers some of the changes to the final discussed near the end of class on Wednesday.
 
-You have three major goals:
+You have a few major goals:
 
 - To complete the [systemd Service Complete][sdsc] assignment
-- To complete the [EC2 Provision Repo][ec2pr] assignment
-- Get some application running on AWS and send me a link to it.
-  - I'll give more thought as to which app to install and get back to you.
+- To complete a modified version of the [EC2 Provision Repo][ec2pr] assignment
+- Get two applications running on AWS and turn in links to them.
+  - The custom aws-provision app described in this document.
+  - A version of SystemCheck also described in this document.
+- Create unit tests
+  - Create at least 10 Enzyme based tests of your client side code
+  - Create SuperTest tests for each of the routes on the server
 
 As subset of the second goal, you should write your own script that will clown your repository to the remote instance.
 
-The Service Complete assignment is self-explanatory, but the EC2 Provision Repo needs some comment, which is provided below.
+The [Service Complete][sdsc] assignment is self-explanatory, but the EC2 Provision Repo needs some comment, which is provided below.
+
+For extra credit, you can attempt to fully implement Aws-Provision in a branch called **extra-credit.** Do not deploy this version of the program to EC2. It should only be run locally as it could give other people too much power over your account. To be clear:
+
+- **Final Branch**: The **final** contains the custom **Aws-Provision** program that doesn't really do anything.
+  - Deploy this version to EC2.
+- **Extra Credit Branch**: Use the **extra-credit** branch to create a version of **aws-provision** that actually does something.
+
+It seems to me that the final branch ought to only contain **aws-provision**, **scripts** and **system-check** directories. You can delete everything else. The master branch should contain all the programs we have created.
 
 ## Getting Started
 
-I don't see why we can't do our work in the existing aws-provision directory. I would however, like you to:
+I don't see why we can't do our work in the existing **aws-provision** directory. I would however, like you to:
 
-- Create a final branch and do your work in it.
+- Create a **final** branch and do your work in it.
 - As you start: **elf-tagger "starting final" "aws-provision"**
 
 My tag looks like this:
@@ -26,38 +38,11 @@ My tag looks like this:
 v1.1.24  starting final for aws-provision on branch final with tag v1.1.24.
 ```
 
-## Provision Repository
-
-The EC2 Provision Repo assignment asked you to create a series of buttons and make sure that each one had an endpoint on the server. The goal for the final is to make the sure the endpoints actually perform the expected operations. This will involve using calls that we have covered multiple times in this class. In particular, you will need to:
-
-- Copy script files from the local machine to the EC2 instance
-- Run the scripts on the remote machine
-- Use the AWS api to perform a few tasks such as:
-  - Create the instance
-  - Link the Elastic IP to the instance
-
-Be sure that the code in **App.js** is refactored into an appropriate set of React components.
-
-Create or maintain at least ten unit tests at least three of which should use **supertest**.
-
-## Bumps in the Road
-
-At the time of this writing, the process of running even a correctly implemented **aws-provision** application will not go smoothly even under even the best of circumstances. For instance, the application should copy the JsObjects SLB script **GetStarted** to the server and then run it. Among other things, this script runs the following commands in a non-interactive manner:
-
-```
-sudo apt update
-sudo apt upgrade
-sudo apt dist-upgrade
-sudo apt autoremove
-```
-
-All this takes considerable time, and there is no good way at this stage to get feedback to the user. Once the **GetStarted** script is complete, it then reboots the system, which again takes time. By watching the command prompt, you can see the progress, so you, as a technical person, are not in the dark about what is happening. But clearly this is a less than optimal situation. Nevertheless, it does work, and improving the situation will have to wait till a later date, as we out of time this quarter.
-
-For me, the whole process takes something like five minutes to complete. It is pretty nice to be able to completely provision an EC2 instance in five minutes without having to do anything more than select a few buttons. So the experience has its upside. I definitely want to improve the app, but at least this is a start.
+**NOTE**: _It is finally time to get rid of the **queryServer** call to the endpoint **/foo**. We don't need it anymore since we will create many similar calls as part of this final._
 
 ## EndPoints
 
-Here is a list of all the endpoints I'm using at this time and the file in the **server/routes** directory in which they are found:
+Here is a list of the endpoints I want you to implement in the custom Aws-Provision version created for this final. Here are the routes and the file in the **server/routes** directory in which they are found:
 
 - index.js (all use AWS api)
   - /associate-elastic-ip
@@ -74,20 +59,9 @@ Here is a list of all the endpoints I'm using at this time and the file in the *
 
 On the client end, I have my code refactored into a similar, but not identical, pattern.
 
-## Details
+## Host Address and Private Key File
 
-The **routes/ssh-runner.js** file must get its HostAddress (the Elastic IP of the server) and Private Key identity file from **~/.ssh/config** via the technique explained in the [Get SSH and Private IP][gsapi] assignment. This is an important part of the assignment, as filling in the information by hand is among the time consuming parts of grading your assignment. Having to do it manually would definitely be a bumpy stretch in the process of grading any assignment.
-
-Get rid of the **queryServer** call to the endpoint **/foo**. We don't want that anymore.
-
-| Method | Button Content (Text)     | Route to Endpoint |
-| :------------- | :------------- |  :------------- |
-| /create-educate | Use the **AwsPromise** code I gave you.
-| /create-standard | Use the **AwsPromise** code I gave you
-| /associate-elastic-ip | Use the AwsPromise code I gave you
-| /script-pusher/copy-get-started | Use the Node JS spawn API and scp |
-| /ssh-runner/run-get-started | Use the SSH2 Package |
-| this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
+The **routes/ssh-runner.js** file must get its **HostAddress** (the Elastic IP of the server) and Private Key identity file from **~/.ssh/config** via the technique explained in the [Get SSH and Private IP][gsapi] assignment. This is an important part of the assignment, as filling in the information by hand is among the time consuming parts of grading your assignment. Having to do it manually would definitely be a bumpy stretch in the process of grading any assignment.
 
 ## Refactor
 
@@ -113,7 +87,66 @@ The following React classes should exist in **client/src**. Beneath each module 
   - /reboot-instance
   - /remove-known-hosts
 
-The URLs shown above, are not necessarily complete. I'm just giving  you enough information so you can see which URL goes in which file.
+The URLs shown above, are not necessarily complete. I'm just giving  you enough information so you can see which URL goes in which file. In our custom version, each route simply returns a simple JSON object with a few simple text fields.
+
+
+## Turn it in
+
+- elf-tagger "finished final" "aws-provision"
+  - If you need to do this more than once, just use the same strings each time. The git tag number will sort out their order.
+- Merge your work into the **master** branch when you are done.
+
+Let me know which programs you want me to check to see if they are running correctly according the description in **systemd Service Complete**. If you have any doubt as to whether you are using the right port or the port name, then let me know what you used. For instance:
+
+- Program: System Check
+- Port: 30034
+- Environment Variable: ELF_SYSTEM_CHECK_PORT
+
+Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl].
+
+## Extra Credit
+
+Here are the extra credit sections. Each section that begins with the words **Extra Credit** are part of the extra credit portion of the final.
+
+## Extra Credit: Provision Repository
+
+The EC2 Provision Repo assignment asked you to create a series of buttons and make sure that each one had an endpoint on the server. The goal for the final is to make the sure the endpoints actually perform the expected operations. This will involve using calls that we have covered multiple times in this class. In particular, you will need to:
+
+- Copy script files from the local machine to the EC2 instance
+- Run the scripts on the remote machine
+- Use the AWS api to perform a few tasks such as:
+  - Create the instance
+  - Link the Elastic IP to the instance
+
+Be sure that the code in **App.js** is refactored into an appropriate set of React components.
+
+Create or maintain at least ten unit tests at least three of which should use **supertest**.
+
+## Extra Credit: Bumps in the Road
+
+At the time of this writing, the process of running even a correctly implemented **aws-provision** application will not go smoothly even under even the best of circumstances. For instance, the application should copy the JsObjects SLB script **GetStarted** to the server and then run it. Among other things, this script runs the following commands in a non-interactive manner:
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt dist-upgrade
+sudo apt autoremove
+```
+
+All this takes considerable time, and there is no good way at this stage to get feedback to the user. Once the **GetStarted** script is complete, it then reboots the system, which again takes time. By watching the command prompt, you can see the progress, so you, as a technical person, are not in the dark about what is happening. But clearly this is a less than optimal situation. Nevertheless, it does work, and improving the situation will have to wait till a later date, as we out of time this quarter.
+
+For me, the whole process takes something like five minutes to complete. It is pretty nice to be able to completely provision an EC2 instance in five minutes without having to do anything more than select a few buttons. So the experience has its upside. I definitely want to improve the app, but at least this is a start.
+
+## Extra Credit: Route Implementation
+
+| Method | Button Content (Text)     | Route to Endpoint |
+| :------------- | :------------- |  :------------- |
+| /create-educate | Use the **AwsPromise** code I gave you.
+| /create-standard | Use the **AwsPromise** code I gave you
+| /associate-elastic-ip | Use the AwsPromise code I gave you
+| /script-pusher/copy-get-started | Use the Node JS spawn API and scp |
+| /ssh-runner/run-get-started | Use the SSH2 Package |
+| this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
 
 ## Associate
 
@@ -222,24 +255,9 @@ associateElasticIp = () => {
 
 Ultimately, it would probably make sense to automatically call associateElasticIp when we get the **instanceId** from the server, but I do yet do that. At this time, I want to complete each step separately so I can be sure it is working. Getting things to run more smoothly is work left for a later date. (Perhaps we'll do it this spring in Isit322?)
 
-## Turn it in
-
-- elf-tagger "finished final" "aws-provision"
-  - If you need to do this more than once, just use the same strings each time. The git tag number will sort out their order.
-- Merge your work into the **master** branch when you are done.
-
-Let me know which programs you want me to check to see if they are running correctly according the description in **systemd Service Complete**. If you have any doubt as to whether you are using the right port or the port name, then let me know what you used. For instance:
-
-- Program: System Check
-- Port: 30034
-- Environment Variable: ELF_SYSTEM_CHECK_PORT
-
-Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl].
-
-
 ## Charlie Notes
 
-Here are some key points I need to integrate into this document. 
+Here are some key points I need to integrate into this document.
 
 - We spent a lot of time learning lots of good stuff, but also trying to get everyone up to speed to do aws-provision, but we didn't quite make it, and I was reluctant to admit it. I see it now.
 - So the unofficial plan at this writing is to have all the implementation of the server side code for aws-provision be extra credit.
