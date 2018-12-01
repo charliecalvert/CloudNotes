@@ -4,6 +4,7 @@ Track the status of the programs you run. Your code should do two things:
 
 - Show any ports in the range 30025-30235 that are currently being used.
 - Show if any of the programs you typically run under systemd are currently active.
+	- Just call **sudo systemctl show -p ActiveState -p SubState -p Environment awsprov.service** or similar.
 
 For instance, when I check for open ports, I get this feedback:
 
@@ -271,7 +272,7 @@ ip addr | grep -o "inet\s[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:
 
 ## Turn it in
 
-Write a similar script that will track the services you are running. Save it as systemdServices in your **scripts** directory. Make sure all your services can be configured through their service files to run on a particular port.
+Write a similar script that will track the services you are running. Save it as **system-service-control** in your **scripts** directory. This script lets you check the status of ports and individual programs. Use it to help you make sure all your services can be configured through their service files to run on a particular port.
 
 ## hints
 
