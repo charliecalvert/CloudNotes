@@ -85,9 +85,13 @@ Like this:
 }
 ```
 
-![The front end, showing some of hte data retrieved from the server][ifui]
+The front end, showing some of the data retrieved from the server.
 
+![The front end, showing some of the data retrieved from the server][ifui]
 
+- The server should serve up JSON
+- At least some of the JSON data from the server should be put into state, and finally displayed as above.
+- As described below, use SuperTest to confirm that the server is serving up the proper JSON.
 
 ## Host Address and Private Key File
 
