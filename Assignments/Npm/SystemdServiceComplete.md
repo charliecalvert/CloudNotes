@@ -112,9 +112,9 @@ function startService() {
 }
 
 case $2 in
-    [Aa]* ) runClientServer; shift;;
+    [Aa]* ) runClientServer ${1}; shift;;
     [Bb]* ) runServer ${1} ${3}; shift;;
-    [Cc]* ) startService; shift;;
+    [Cc]* ) startService ${1}; shift;;
 esac
 ```
 
