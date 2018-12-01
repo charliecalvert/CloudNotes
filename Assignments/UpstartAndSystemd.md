@@ -15,10 +15,11 @@ No matter how simple the commands, it is almost always worth taking a moment to 
 
 Read through the README and you should be up and running fairly quickly.
 
-[est]: https://github.com/charliecalvert/elven-systemd-tools
-[est-rm]: https://github.com/charliecalvert/elven-systemd-tools/blob/master/README.md
+Most of the rest of this document is just a commentary on **elven-systemd-tools**. Follow the link to the [README][est-rum] and use it as your guide. It is still good to read through the rest of this document and see how to set things up by hand, but the simplest way to get up and running is with [elven-systemd-tools][est].
 
 ## Video
+
+Even this video is more than you need to know to get started. If you are struggling to get systemd working, just use the [scripts][est] outlined in the previous section. Only if you want to understand the process, and you should want to understand it, need you read on.
 
 - [Talk me through it with a video][sdv]
 
@@ -525,3 +526,5 @@ To see all running units: **systemctl list-units**
 [elfUpstart]:http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#upstart
 [express-send]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/ExpressSend
 [is]:https://unix.stackexchange.com/a/164092/91728
+[est]: https://github.com/charliecalvert/elven-systemd-tools
+[est-rm]: https://github.com/charliecalvert/elven-systemd-tools/blob/master/README.md
