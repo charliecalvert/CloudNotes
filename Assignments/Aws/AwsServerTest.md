@@ -173,8 +173,8 @@ it('should check script-pusher/run-script Version Check', function(done) {
         .expect('Content-Type', /json/)
         .expect(200)
         .then((result) => {            
-            assert.equal(result.body.result, 'success');
-            assert.equal(result.body.code, '1');
+            assert.deepStrictEqual(result.body.result, 'success');
+            assert.deepStrictEqual(result.body.code, 1);
             const present = result.body.allData.includes('Ubuntu');
             assert.ok(present);
             done();
