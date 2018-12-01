@@ -61,11 +61,33 @@ On the client end, I have my code refactored into a similar, but not identical, 
 
 Above you can see the methods that take parameters. Both **/create-educate** and **/create-standard** return at least:
 
-- InstanceId
-- KeyName
-- InstanceTagged
-- Architecture
-- result
+- instanceData.InstanceId
+- instanceData.KeyName
+- instanceData.Architecture
+- allocationIds.standard
+- regions.region
+
+Like this:
+
+```JavaScript
+{
+    result: 'success',
+    route: '/create-standard'
+    instanceData: {
+        // YOU FILL IN THIS
+    },
+    allocationIds: {
+        standard: "standard"
+    },
+    regions: {
+        // YOU FILL IN THIS
+    }
+}
+```
+
+![The front end, showing some of hte data retrieved from the server][ifui]
+
+
 
 ## Host Address and Private Key File
 
@@ -419,7 +441,7 @@ Again, this is not the final version of the final, as it were, but hopefully, it
 [apii]: https://s3.amazonaws.com/bucket01.elvenware.com/images/aws-provision-instanceid.png
 [ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
 [gsapi]: https://www.elvenware.com/teach/assignments/Linux/GetSshIpAndPrivateKey.html
+[ifui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit320-final-basic-ui.png
+[new-final]:https://bc.instructure.com/courses/1626572/discussion_topics/8486355
 [sdsc]: https://www.elvenware.com/teach/assignments/Npm/SystemdServiceComplete.html
 [sdsctrl]: https://www.elvenware.com/teach/assignments/Npm/SystemdServiceControl.html#official-ports
-
-[new-final]:https://bc.instructure.com/courses/1626572/discussion_topics/8486355
