@@ -55,7 +55,7 @@ Here is a list of the endpoints I want you to implement in the custom Aws-Provis
   - /run-ubuntu-setup
 - script-pusher (all use spawn)
   - /copy-get-started
-  - /remove-known-host
+  - /remove-known-host?ec2Ip=xxx.xxx.xxx.xxx
 
 On the client end, I have my code refactored into a similar, but not identical, pattern.
 
@@ -89,6 +89,92 @@ The following React classes should exist in **client/src**. Beneath each module 
 
 The URLs shown above, are not necessarily complete. I'm just giving  you enough information so you can see which URL goes in which file. In our custom version, each route simply returns a simple JSON object with a few simple text fields.
 
+## SuperTest
+
+Here is the simplest possible implmentation of an endpoint, and one that we can use in many cases:
+
+```javascript
+router.get('/qux', function(request, response) {
+    response.send({
+        "result": "success",
+        "route": "qux",
+    });
+});
+```
+
+Assuming this fictitious endpoint is in **script-pusher**, then we test it like this:
+
+```javascript
+it('should test /script-pusher/qux returns valid JSON', function (done) {
+    request(app)
+        .get('/script-pusher/qux')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(200, done);
+});
+
+it('should test /script-pusher/qux returns specific values', function (done) {
+    request(app)
+        .get('/script-pusher/qux')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect({
+            "result": "success",
+            "route": "qux"
+        })
+        .expect(200, done);
+});
+```
+
+But it is not always this simple. The methods in **ssh-runner**, for instance, should return not only the default values, but also at least the HOST_ADDRESS and IDENTITY_FILE from our calls to **getSshIp**:
+
+```javascript
+response.send({
+    "result": "success",
+    "route": "run-get-started",
+    "host": result.hostName,
+    "identity-file": result.identityFile
+});
+```
+
+We still make the call to getSshIp, and it still respond to our promise with **.then** and **.catch**, only in this custom version of **aws-provision**, we don't ever call a method that wraps SSH2, instead, we just call **response.send** as outline above.
+
+- Call getSshIp
+- Write the **.then** clause
+  - inside it nest the **response.send** code shown above
+- Write the **.catch** clause.
+  - For now, at least, write the default response unless you see a need to do otherwise. (I haven't so far.).
+
+Another case where we might need to write a special response, is if we send one or more parameters to the endpoint. In that case, you should mirror back the parameter. For instance, if we called **/qux?foo=bar** then our response might be:
+
+```javascript
+response.send({
+    "result": "success",
+    "route": "run-get-started",
+    "foo": <YOU WRITE THE CODE TO GET THE VALUE OF THE PARAMETER>
+});
+```
+
+**NOTE**: _If by some chance you don't know how to get the parameter passed to an endpoint, then head over to the discusison area and start asking questions. No one will give you the exact code, but they will tell you where to look for it._
+
+If the test complains that it is getting HTML rather than JSON then that probably means that you are using the wrong URL or throwing some kind of exception in your endpoint. Here is a trick:
+
+```javascript
+
+request(app)
+    .get('/qux')
+    .expect((response) => {
+        if (response) {
+            console.log('GOT RESPONSE:', response.res.statusMessage);
+        }
+    })
+    .set('Accept', 'application/json')
+    .expect('Content-Type', /json/)
+    .expect(200, done);
+});
+```    
+
+We check to response to see what info we got. If the test executed properly, then response.res.statusMessage will be **OK**. If you get **NOT FOUND** then perhaps the URL of route is wrong.
 
 ## Turn it in
 
