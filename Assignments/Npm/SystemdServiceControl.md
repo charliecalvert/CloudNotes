@@ -274,6 +274,27 @@ ip addr | grep -o "inet\s[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*.[[:
 
 Write a similar script that will track the services you are running. Save it as **system-service-control** in your **scripts** directory. This script lets you check the status of ports and individual programs. Use it to help you make sure all your services can be configured through their service files to run on a particular port.
 
+Suppose you have five services programs that can be run as systemd services. Then your script should have seven menu options:
+
+- Check the Ports
+- Check Programs 1 - 5 to see if the are active active
+- A way to exit the program
+
+For instance:
+
+```javascript
+function show {
+    banner "$1"
+	  sudo systemctl show -p ActiveState -p SubState -p Environment $2
+}
+
+function showSystemCheck() {
+	show 'SystemCheck' systemcheck.service
+}
+```
+
+The **show** function uses the name of a service file and the **systemctl** utility to check the status of the program that uses, in this instance, **systemcheck.service**. If you have a menu item that allows you to call **showSystemCheck** then you are at least one seventh of the way through. 
+
 ## hints
 
 Get a list of common ports:
