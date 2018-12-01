@@ -131,6 +131,14 @@ Create separate tests files for each of the modules in the **server/routes** dir
 - test/script-pusher-tests
 - test/index-aws-tests
 
+To make sure they all run, adjust your **package.json** entry to something like this:
+
+```javascript
+"test": "mocha 'test/*-test.js'"
+```
+
+**NOTE**: _From looking at the above, you can probably see at least one fairly easy way to run one test file at a time manually if you have the need: mocha 'test/ssh-runner-test.js'._
+
 In the call to describe at the top of each file, put a descriptive string such as:
 
 ```JavaScript
