@@ -97,9 +97,16 @@ Create separate tests files for each of the modules in the **server/routes** dir
 - test/script-pusher-tests
 - test/index-aws-tests
 
+In the call to describe at the top of each file, put a descriptive string such as:
+
+```JavaScript
+describe('script-pusher.js tests', () => { ... });
+```
+
 Below I show an example of what the output **script-pusher** tests might look like:
 
 ```
+  script-pusher.js tests
 GET /script-pusher/copy-get-started 200 0.332 ms - 47
     ✓ should test /script-pusher/copy-get-started returns valid JSON
 GET /script-pusher/copy-get-started 200 0.181 ms - 47
@@ -157,7 +164,7 @@ GET /script-pusher/qux 200 4.190 ms - 34
 GET /script-pusher/qux 200 0.418 ms - 34
   ✓ should test /script-pusher/qux returns specific values
 
-  6 passing (11ms)
+  2 passing (11ms)
 ```
 
 But it is not always this simple. The methods in **ssh-runner**, for instance, should return not only the default values, but also at least the HOST_ADDRESS and IDENTITY_FILE from our calls to **getSshIp**:
@@ -173,7 +180,7 @@ response.send({
 
 We still make the call to getSshIp, and it still respond to our promise with **.then** and **.catch**, only in this custom version of **aws-provision**, we don't ever call a method that wraps SSH2, instead, we just call **response.send** as outline above.
 
-- Call getSshIp
+- Call **getSshIp**
 - Write the **.then** clause
   - inside it nest the **response.send** code shown above
 - Write the **.catch** clause.
