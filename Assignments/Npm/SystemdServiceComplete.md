@@ -86,6 +86,12 @@ if [[ -z $2 ]]; then
     echo -e " a) Run Client Server"
     echo -e " b) Run Server"
     echo -e " c) Start Service"
+    echo -e "For Run Server, you also need to pass in a port."
+    echo -e "=========================================================="
+    echo -e "Examples: "
+    echo -e "   ./run-all week06-system-check a"
+    echo -e "   ./run-all week06-system-check b 30026"
+    echo -e "   ./run-all week06-system-check c"
     echo -e "=========================================================="
     exit
 fi
