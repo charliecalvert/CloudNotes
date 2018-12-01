@@ -59,6 +59,14 @@ Here is a list of the endpoints I want you to implement in the custom Aws-Provis
 
 On the client end, I have my code refactored into a similar, but not identical, pattern.
 
+Above you can see the methods that take parameters. Both **/create-educate** and **/create-standard** return at least:
+
+- InstanceId
+- KeyName
+- InstanceTagged
+- Architecture
+- result
+
 ## Host Address and Private Key File
 
 The **routes/ssh-runner.js** file must get its **HostAddress** (the Elastic IP of the server) and Private Key identity file from **~/.ssh/config** via the technique explained in the [Get SSH and Private IP][gsapi] assignment. This is an important part of the assignment, as filling in the information by hand is among the time consuming parts of grading your assignment. Having to do it manually would definitely be a bumpy stretch in the process of grading any assignment.
@@ -206,6 +214,7 @@ At this writing, I can think of three routes that take parameters:
 
 You don't need to know real values for this exercise, but your route should take these parameters and pass them back in its response.
 
+Don't forget that **/create-standard** and **create-educate** each return the values described above. Your tests need to take these into account.
 
 If the test complains that it is getting HTML rather than JSON then that probably means that you are using the wrong URL or throwing some kind of exception in your endpoint. Here is a trick:
 
