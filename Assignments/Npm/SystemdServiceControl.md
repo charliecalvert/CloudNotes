@@ -1,10 +1,16 @@
 ## Overview
 
-Track the status of the programs you run. Create a single script called **system-service-control**. Your code should do two things:
+When I come to help students we often find that they can't start a program because a port is busy. Frequently, it is busy because a systemd service is running on it. The **system-service-control** script is meant to be a first step toward helping you find out which of your programs are running on systemd. That way you will know which program to shut down so you can open up a port.
+
+Create a single script called **system-service-control**. Your code should do two things:
 
 - Show any ports in the range 30025-30235 that are currently being used.
 - Show if any of the programs you typically run under systemd are currently active.
 	- Just call **sudo systemctl show -p ActiveState -p SubState -p Environment awsprov.service** or similar.
+
+## The Specs
+
+Remember, our goal is to track the status of the programs you run on systemd. 
 
 Sample menu:
 
