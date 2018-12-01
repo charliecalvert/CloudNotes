@@ -1,12 +1,27 @@
 ## Overview
 
-Track the status of the programs you run. Your code should do two things:
+Track the status of the programs you run. Create a single script called **system-service-control**. Your code should do two things:
 
 - Show any ports in the range 30025-30235 that are currently being used.
 - Show if any of the programs you typically run under systemd are currently active.
 	- Just call **sudo systemctl show -p ActiveState -p SubState -p Environment awsprov.service** or similar.
 
-For instance, when I check for open ports, I get this feedback:
+Sample menu:
+
+```bash
+===============================
+--- Menu ---
+===============================
+  a) Check Ports 30025-30225
+  b) SystemCheck
+  c) SystemCheckRefactor
+  d) AWS Provision
+  e) Midterm
+  f) EC2-Copy-File
+  x) Exit
+```
+
+For instance, when I check for open ports (option a), I get this feedback:
 
 ```
 Starting Nmap 7.60 ( https://nmap.org ) at 2018-11-29 11:14 PST
@@ -25,7 +40,7 @@ This tells me that of 211 ports I'm checking two are being used:
 
 The rest are not being used.
 
-Here is what happens when I check the status of a service that is not running:
+Here is what happens when I check the status of a service that is not running (one of option b-f):
 
 ```
 ===============================
@@ -118,7 +133,7 @@ while true; do
     case $userInput in
         [Aa]* ) checkPorts false; continue;;
         [Bb]* ) showSystemCheck; continue;;
-        [Cc]* ) deleteOld; continue;;
+        [Cc]* ) showSystemCheckRefactor; continue;;
         [XxQq]* ) break;;
         *) echo -e "\n$NC" + "Please answer with a, b, c, or x.";;
     esac
