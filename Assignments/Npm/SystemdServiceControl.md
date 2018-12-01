@@ -10,9 +10,9 @@ Create a single script called **system-service-control**. Your code should do tw
 
 ## The Specs
 
-Remember, our goal is to track the status of the programs you run on systemd. 
+Remember, our goal is to track the status of the programs you run on systemd.
 
-Sample menu:
+Sample menu allowing you to check a range of ports and the status of five specific programs:
 
 ```bash
 ===============================
@@ -46,7 +46,7 @@ This tells me that of 211 ports I'm checking two are being used:
 
 The rest are not being used.
 
-Here is what happens when I check the status of a service that is not running (one of option b-f):
+The next step is see the status of one of our five programs. All we want to know is whether or not it is currently active, whether or not it is currently running as a systemd service. Here is what happens when I check the status of a service that is not running (one of option b-f):
 
 ```
 ===============================
