@@ -45,10 +45,10 @@ v1.1.24  starting final for aws-provision on branch final with tag v1.1.24.
 Here is a list of the endpoints I want you to implement in the custom Aws-Provision version created for this final. Here are the routes and the file in the **server/routes** directory in which they are found:
 
 - index.js (all use AWS api)
-  - /associate-elastic-ip
+  - /associate-elastic-ip?instanceId=xxx&allocationId=yyy&region=zzz
   - /create-educate
   - /create-standard
-  - /get-instance-status
+  - /get-instance-status?instanceId=xxx
   - /reboot-instance
 - ssh-runner.js (all use ssh2)
   - /run-get-started
@@ -91,7 +91,29 @@ The URLs shown above, are not necessarily complete. I'm just giving  you enough 
 
 ## SuperTest
 
-Here is the simplest possible implmentation of an endpoint, and one that we can use in many cases:
+Create separate tests files for each of the modules in the **server/routes** directory. Something like this:
+
+- test/ssh-runner-tests
+- test/script-pusher-tests
+- test/index-aws-tests
+
+Below I show an example of what the output **script-pusher** tests might look like:
+
+```
+GET /script-pusher/copy-get-started 200 0.332 ms - 47
+    ✓ should test /script-pusher/copy-get-started returns valid JSON
+GET /script-pusher/copy-get-started 200 0.181 ms - 47
+    ✓ should test /script-pusher/copy-get-started returns specific values
+GET /script-pusher/remove-known-host?ec2Ip=192.168.2.2 200 0.274 ms - 70
+    ✓ should test /script-pusher/remove-known-host returns valid JSON
+GET /script-pusher/remove-known-host?ec2Ip=192.168.2.2 200 0.206 ms - 70
+    ✓ should test /script-pusher/remove-known-host returns specific values
+
+
+  6 passing (31ms)
+```
+
+Here is the simplest possible implementation of an endpoint, and one that we can use in many cases:
 
 ```javascript
 router.get('/qux', function(request, response) {
@@ -126,6 +148,18 @@ it('should test /script-pusher/qux returns specific values', function (done) {
 });
 ```
 
+The output would look like this:
+
+```
+script-pusher.js tests
+GET /script-pusher/qux 200 4.190 ms - 34
+  ✓ should test /script-pusher/qux returns valid JSON
+GET /script-pusher/qux 200 0.418 ms - 34
+  ✓ should test /script-pusher/qux returns specific values
+
+  6 passing (11ms)
+```
+
 But it is not always this simple. The methods in **ssh-runner**, for instance, should return not only the default values, but also at least the HOST_ADDRESS and IDENTITY_FILE from our calls to **getSshIp**:
 
 ```javascript
@@ -155,7 +189,16 @@ response.send({
 });
 ```
 
-**NOTE**: _If by some chance you don't know how to get the parameter passed to an endpoint, then head over to the discusison area and start asking questions. No one will give you the exact code, but they will tell you where to look for it._
+**NOTE**: _If by some chance you don't know how to get the parameter passed to an endpoint, then head over to the discussion area and start asking questions. No one will give you the exact code, but they will tell you where to look for it._
+
+At this writing, I can think of three routes that take parameters:
+
+- /remove-known-host: ec2Ip
+- /associate-elastic-ip: InstanceId, allocationId, region
+- /get-instance-status: InstanceId
+
+You don't need to know real values for this exercise, but your route should take these parameters and pass them back in its response.
+
 
 If the test complains that it is getting HTML rather than JSON then that probably means that you are using the wrong URL or throwing some kind of exception in your endpoint. Here is a trick:
 
