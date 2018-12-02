@@ -25,6 +25,24 @@ For extra credit, you can attempt to fully implement Aws-Provision in a branch c
 
 The final branch ought to contain at least the **aws-provision**, **scripts** and **system-check** directories. The **master** branch should contain all the programs we have created.
 
+## Up to date
+
+I'm worried that some might have an older version of [node js](https://nodejs.org/en/) on your system. To fix do this:
+
+```bash
+jou
+cd NodeInstall/
+./NodeInstall.sh
+```
+
+When you are done, the following should be more or less what you see:
+
+```bash
+$ node --version
+v11.3.0
+```
+
+
 ## Getting Started
 
 I don't see why we can't do our work in the existing **aws-provision** directory. I would however, like you to:
