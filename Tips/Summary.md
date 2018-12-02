@@ -1,4 +1,5 @@
 * [AssignmentComments.html](AssignmentComments.html)
+* [AssignmentRedo.html](AssignmentRedo.html)
 * [BooksAndResources.html](BooksAndResources.html)
 * [HelpingOthers.html](HelpingOthers.html)
 * [index.html](index.html)

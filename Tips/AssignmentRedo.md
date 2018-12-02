@@ -2,6 +2,29 @@
 
 Here I list various quirks regarding how I grade assignments.
 
+## Unofficial Grading Policy
+
+Take what follows with a bit of levity. It is half fantasy and half real.
+
+I am a **very** liberal grader. If you turn something in that vaguely resembles what I requested, I almost always give you significant credit for it. Here is an unofficial, at times tongue-in-cheek, guide to the way grading often goes for me:
+
+*   **96-100: **More or less on time and correct
+*   **92-95**: Close but either a few days late or with an obvious bug.
+*   **85-91:** A few days to two weeks late, or with a number of pretty bad bugs
+*   **80-84:** Two weeks to a month late, and with numerous bugs but an obvious effort to get to the correct answer
+*   **60-79:** Over a month late and pretty much a disaster, but I can see that some kind of effort was made to complete the assignment. At worst, you make the effort to type a few lines of code, pushed your work, and clicked the submit button.
+*   **5:** Resubmit required.
+*   **0**: You never turned in anything.
+
+I have, on rare occasions, given a student a grade between 5 and 59, but as a rule, there is a precipitous drop from a bad grade to a zero grade when you don't turn in anything. The point is that turning in almost anything is better than not turning in anything. Why? How can I justify this? I'm just looking for a pulse. Employers don't want employees who won't show a consistent effort to perform.
+
+Please forgive my use of humor at points in the above. Remember: this is an unofficial guide. I do deviate from it significantly at times.
+
+My sincere apologies to students who either:
+
+*   Made an honest mistake signing up for a course that was not right for them. (Though if you read the above carefully, you can see that I do try to give you a path to success of a kind. Also, I believe that some students simply need more experience. They can succeed, it is just going to take time.)
+*   Genuinely encounter a health issue or some family or personal tragedy. I know this can happen, and I try to help in those cases, though I don't accept such claims easily: I'm of Puritan stock and tend to admire a strong work ethic that is unbowed by adversity. Still, I'm not made of stone, I understand that life can get in our way at times.
+
 ## Workflow
 
 My workflow is usually like this:
