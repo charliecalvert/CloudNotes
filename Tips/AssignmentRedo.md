@@ -12,7 +12,7 @@ I am a **very** liberal grader. If you turn something in that vaguely resembles 
 *   **92-95**: Close but either a few days late or with an obvious bug.
 *   **85-91:** A few days to two weeks late, or with a number of pretty bad bugs
 *   **80-84:** Two weeks to a month late, and with numerous bugs but an obvious effort to get to the correct answer
-*   **60-79:** Over a month late and pretty much a disaster, but I can see that some kind of effort was made to complete the assignment. At worst, you make the effort to type a few lines of code, pushed your work, and clicked the submit button.
+*   **60-79:** Over a month late and pretty much a disaster, but I can see that some kind of effort was made to complete the assignment. At worst, you made the effort to type a few lines of code, pushed your work, and clicked the submit button.
 *   **5:** Resubmit required.
 *   **0**: You never turned in anything.
 
