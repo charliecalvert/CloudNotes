@@ -85,9 +85,13 @@ I feel like this list is not yet complete, but this is a good start.
 ```bash
 export PORT=30025
 export SERVER_PORT=30026
+export ELF_SERVER_PORT=30026
 export ELF_SCREF_PORT=30030
+export ELF_AWS_PROV_PORT=30032
+export ELF_EC2_COPY_PORT=30033
 export ELF_SYSTEM_CHECK_PORT=30034
 export MIDTERM_PORT=30035
+export ELF_MIDTERM_PORT=30035
 ```
 
 Though we all should agree on these values, when submitting assignments, it would be best if you included your version of this list of export statements from your **~/.bashrc**. Thank you.
