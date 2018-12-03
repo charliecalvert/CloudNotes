@@ -98,7 +98,7 @@ Though we all should agree on these values, when submitting assignments, it woul
 
 Service files:
 
-| Header One     | Header Two     |
+| Name     | Service File     |
 | :------------- | :------------- |
 | SystemCheck | systemcheck.service |
 | SystemCheckRefractor | scref.service |
