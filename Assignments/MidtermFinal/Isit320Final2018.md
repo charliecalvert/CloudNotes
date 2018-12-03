@@ -287,6 +287,10 @@ request(app)
 
 We check to response to see what info we got. If the test executed properly, then response.res.statusMessage will be **OK**. If you get **NOT FOUND** then perhaps the URL of route is wrong.
 
+## Environment Variables
+
+Rather late in the game I've decided that I should have asked you to include the block of Environment Variables that you [define and export][sdsctrl] in your **.bashrc**. This can't be an official part of the exam, as it is too late for me to add anything now (Sunday evening), but if you can include it, that would be very helpful. A way to get it to me would be to submit the assignment using the Text option in Canvas, and paste them in the Text page. Another good way would be to put in a file and attach that file to Canvas when you turn in the assignment.
+
 ## Turn it in
 
 - elf-tagger "finished final" "aws-provision"
@@ -299,7 +303,7 @@ Let me know which programs you want me to check to see if they are running corre
 - Port: 30034
 - Environment Variable: ELF_SYSTEM_CHECK_PORT
 
-Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl].
+Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl]. If possible, please include the code you have have in **~/.bashrc** for exporting your custom environment variables, especially if they vary from mine.
 
 ## Extra Credit
 
