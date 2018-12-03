@@ -96,6 +96,16 @@ export ELF_MIDTERM_PORT=30035
 
 Though we all should agree on these values, when submitting assignments, it would be best if you included your version of this list of export statements from your **~/.bashrc**. Thank you.
 
+Service files:
+
+| Header One     | Header Two     |
+| :------------- | :------------- |
+| SystemCheck | systemcheck.service |
+| SystemCheckRefractor | scref.service |
+| aws-provision | awsprov.service |
+| EC2 Copy File | ec2-copy-file |
+| Midterm   | midterm.service |
+
 Remember, these values play a role in at least three places:
 
 - ~/.bashrc
