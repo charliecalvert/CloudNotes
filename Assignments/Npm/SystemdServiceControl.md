@@ -96,6 +96,8 @@ export ELF_MIDTERM_PORT=30035
 
 Though we all should agree on these values, when submitting assignments, it would be best if you included your version of this list of export statements from your **~/.bashrc**. Thank you.
 
+**NOTE**: _I've included some repitition in the list to avoid confusion due to late changes. My intention is to pair the list after the quarter is over._
+
 Service files:
 
 | Name     | Service File     |
