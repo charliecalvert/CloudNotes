@@ -90,6 +90,8 @@ export ELF_SYSTEM_CHECK_PORT=30034
 export MIDTERM_PORT=30035
 ```
 
+Though we all should agree on these values, when submitting assignments, it would be best if you included your version of this list of export statements from your **~/.bashrc**. Thank you.
+
 Remember, these values play a role in at least three places:
 
 - ~/.bashrc
