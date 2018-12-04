@@ -46,8 +46,8 @@ if [[ -z $1 ]]; then
     echo -e "======================================================"
     echo -e "Pass in build or run."
     echo -e "build means that npm install will be added to the mix."
-    echo -e "  try-run-both build" <=== performs a build and then runs the app
-    echo -e "  try-run-both run"   <=== there is no build, only run (npm start)
+    echo -e "  try-run-both build" # performs a build and then runs the app
+    echo -e "  try-run-both run"   # there is no build, only run (npm start)
     echo -e "======================================================"
     exit
 fi

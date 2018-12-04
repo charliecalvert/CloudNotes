@@ -145,9 +145,9 @@ The URLs shown above, are not necessarily complete. I'm just giving  you enough 
 
 Create separate tests files for each of the modules in the **server/routes** directory. Something like this:
 
-- test/ssh-runner-tests
-- test/script-pusher-tests
-- test/index-aws-tests
+- test/ssh-runner-test.js
+- test/script-pusher-test.js
+- test/index-aws-test.js
 
 To make sure they all run, adjust your **package.json** entry to something like this:
 

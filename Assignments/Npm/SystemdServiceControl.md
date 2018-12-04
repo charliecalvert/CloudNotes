@@ -113,6 +113,9 @@ Remember, these values play a role in at least three places:
 - ~/.bashrc
 - server/bin/www
 - client/package.json
+- Also appears in your service file.
+
+All three files should be referencing the same port for any particular project. So the .bashrc, the www/bin and client/package.json for any one project should all refer to the same port.
 
 ## The Script
 

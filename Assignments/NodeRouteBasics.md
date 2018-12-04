@@ -96,7 +96,7 @@ router.get('/getNine', function(request, response) {
 
 ## Call Server without Parameters {#no-params}
 
-First, an example showing how to call a route without parameters:
+First, an example showing how to call a route (endpoint) without parameters:
 
 ```javascript
 function callServerWithoutParms() {
