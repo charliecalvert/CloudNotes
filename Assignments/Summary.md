@@ -11,6 +11,7 @@
 * [CodeAcademyGit04.html](CodeAcademyGit04.html)
 * [Ec2Provision.html](Ec2Provision.html)
 * [JavaScriptObjects.html](JavaScriptObjects.html)
+* [NodeRouteBasics.html](NodeRouteBasics.html)
 * [PristineVirtualBox.html](PristineVirtualBox.html)
 * [UpstartAndSystemd.html](UpstartAndSystemd.html)
 * [master-list.html](master-list.html)
