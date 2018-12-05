@@ -16,16 +16,20 @@ Install supertest in the midterm **server** directory:
 
     npm install --save-dev supertest
 
+Also, it would be helpful to install mocha globally:
+
+    npm install -g mocha
+
 Create a test file in the **server** directory:
 
 ```    
 mkdir tests
-touch test/apiTest.js
+touch test/index-test.js
 ```
 
 In the **scripts** section of **package.json**:
 
-    "test": "mocha 'test/apiTest.js'"
+    "test": "mocha 'test/index-test.js'"
 
 ## Module to Test
 
@@ -51,7 +55,7 @@ module.exports = router;
 
 ## The Test
 
-Then our test might look like this:
+Then in **test/index-test.js** our test might look like this:
 
 ```JavaScript
 const request = require('supertest');
