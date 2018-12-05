@@ -2,5 +2,6 @@
 * [AssignmentRedo.html](AssignmentRedo.html)
 * [BooksAndResources.html](BooksAndResources.html)
 * [HelpingOthers.html](HelpingOthers.html)
+* [UpgradeLubuntu.html](UpgradeLubuntu.html)
 * [index.html](index.html)
 * [master-list.html](master-list.html)
