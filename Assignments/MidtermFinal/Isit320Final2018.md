@@ -300,7 +300,7 @@ request(app)
 
 We check the **response** to see what info we got. In this case, if the test executed properly, then **response.res.statusMessage** will be **OK**. If you get **NOT FOUND** then perhaps the URL of route is wrong.
 
-## EC2 and systemd {#ec2-systemd}
+## EC2 and systemd {#ec2-systemdl}
 
 Your empty, non-working version of **aws-provision** that only returns JSON should be running as a **systemd** service on EC2. When I click on the buttons, they should display the default JSON described above.
 
@@ -312,6 +312,16 @@ When I refer to the **SystemCheck** program, I mean an assigment like one of the
 - <https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html>
 
 Some program like that which has no calls to a remote system. It can report on your EC2 system because it is running on it, but it does not report on a remote system.
+
+I'll be expecting the programs to be running on the following ports, but be sure to include links to the running code when you turn in the assignment:
+
+- export ELF_AWS_PROV_PORT=30032
+- export ELF_SYSTEM_CHECK_PORT=30034
+
+That's the same as:
+
+- export AWS_PROV_PORT=30032
+- export SYSTEM_CHECK_PORT=30034
 
 ## Environment Variables
 
