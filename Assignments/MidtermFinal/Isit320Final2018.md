@@ -9,7 +9,7 @@ You have a few major goals:
   - The modified version doesn't do anything  
   - The server only returns JSON. It doesn't do anything real like creating an AWS instances.
   - All routes should return **result** and **route**
-  - Some routes return extra properties as specified [here](#endpoints) and [here][super-special].
+  - Some routes return extra properties as specified [here](#endpoints) and [here](#super-special).
 - Get two applications running on AWS and turn in links to them.
   - The custom aws-provision app described in this document.
   - A version of SystemCheck also described in this document.
@@ -108,7 +108,7 @@ Like this:
 
 Notice that the code above includes **result** and **route** properties. All your endpoints should return JSON that contain those two properties. Of course, the **route** property will be different for each endpoint.
 
-There are, however, some endpoints return more than just those two properties. For instance, **createEducate** and **createStandard** should return the extra properties shown above. Also, see the properties described below in the [SuperTest Special Routes section](#superspecial) that accept extra parameters and that should mirror those back in the JSON it returns. 
+There are, however, some endpoints return more than just those two properties. For instance, **createEducate** and **createStandard** should return the extra properties shown above. Also, see the properties described below in the [SuperTest Special Routes section](#super-special) that accept extra parameters and that should mirror those back in the JSON it returns.
 
 The front end, showing some of the data retrieved from the server.
 
