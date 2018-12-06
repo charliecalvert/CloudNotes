@@ -46,7 +46,6 @@ $ node --version
 v11.3.0
 ```
 
-
 ## Getting Started
 
 I don't see why we can't do our work in the existing **aws-provision** directory. I would however, like you to:
@@ -106,6 +105,8 @@ Like this:
     }
 }
 ```
+
+Notice that the code above includes **result** and **route** properties. All your endpoints should contain those two properties, but some may send more properties, such as **createEducate** and **createStandard**. Of course, the **route** property will be different for each endpoint.
 
 The front end, showing some of the data retrieved from the server.
 
