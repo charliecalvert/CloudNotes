@@ -6,6 +6,8 @@ You have a few major goals:
 
 - To complete the [systemd Service Complete][sdsc] assignment
 - To complete a modified version of the [EC2 Provision Repo][ec2pr] assignment
+  - The modified version doesn't do anything
+  - The server only returns JSON as sepecified [here](#endpoints) and [here].
 - Get two applications running on AWS and turn in links to them.
   - The custom aws-provision app described in this document.
   - A version of SystemCheck also described in this document.
@@ -58,7 +60,7 @@ v1.1.24  starting final for aws-provision on branch final with tag v1.1.24.
 
 **NOTE**: _It is finally time to get rid of the **queryServer** call to the endpoint **/foo**. We don't need it anymore since we will create many similar calls as part of this final._
 
-## EndPoints
+## EndPoints {#endpoints}
 
 Here is a list of the endpoints I want you to implement in the custom Aws-Provision version created for this final. Here are the routes and the file in the **server/routes** directory in which they are found:
 
@@ -258,17 +260,23 @@ response.send({
 
 **NOTE**: _If by some chance you don't know how to get the parameter passed to an endpoint, then head over to the discussion area and start asking questions. No one will give you the exact code, but they will tell you where to look for it._
 
+## SuperTest Special Routes {#super-special}
+
 At this writing, I can think of three routes that take parameters:
 
-- /remove-known-host: ec2Ip
-- /associate-elastic-ip: InstanceId, allocationId, region
-- /get-instance-status: InstanceId
+| Route          | Parameters     |
+| :------------- | :------------- |
+| /remove-known-host    | ec2Ip                            |
+| /associate-elastic-ip | InstanceId, allocationId, region |
+| /get-instance-status  | InstanceId                       |
 
-You don't need to know real values for this exercise, but your route should take these parameters and pass them back in its response.
+For instance, the list above shows that remove-known-host should take a parameter called **ec2Ip**. The second one takes three parameters, and the third takes one called InstanceId. Remember that on the server you can check request.query when looking for these parameters.
 
-Don't forget that **/create-standard** and **create-educate** each return the values described above. Your tests need to take these into account.
+You don't need to know real values for these variables for this exercise, but your route should take these parameters and pass them back in its **response**.
 
-If the test complains that it is getting HTML rather than JSON then that probably means that you are using the wrong URL or throwing some kind of exception in your endpoint. Here is a trick:
+Don't forget that **/create-standard** and **create-educate** each return the values [described above](#endpoints). Your tests need to take these into account.
+
+If the test complains that it is getting HTML rather than JSON then that probably means that you are using the wrong URL or throwing some kind of exception in your endpoint. Here is a trick you can use to help you debug your program by showing all or part of the JSON sent by the server:
 
 ```javascript
 
@@ -285,7 +293,7 @@ request(app)
 });
 ```    
 
-We check to response to see what info we got. If the test executed properly, then response.res.statusMessage will be **OK**. If you get **NOT FOUND** then perhaps the URL of route is wrong.
+We check the **response** to see what info we got. In this case, if the test executed properly, then **response.res.statusMessage** will be **OK**. If you get **NOT FOUND** then perhaps the URL of route is wrong.
 
 ## Environment Variables
 
