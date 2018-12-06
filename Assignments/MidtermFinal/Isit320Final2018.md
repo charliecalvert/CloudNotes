@@ -106,7 +106,9 @@ Like this:
 }
 ```
 
-Notice that the code above includes **result** and **route** properties. All your endpoints should contain those two properties, but some may send more properties, such as **createEducate** and **createStandard**. Of course, the **route** property will be different for each endpoint.
+Notice that the code above includes **result** and **route** properties. All your endpoints should return JSON that contain those two properties. Of course, the **route** property will be different for each endpoint.
+
+There are, however, some endpoints return more than just those two properties. For instance, **createEducate** and **createStandard** should return the extra properties shown above. Also, see the properties described below in the [SuperTest Special Routes section](#superspecial) that accept extra parameters and that should mirror those back in the JSON it returns. 
 
 The front end, showing some of the data retrieved from the server.
 
