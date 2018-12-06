@@ -10,6 +10,7 @@ You have a few major goals:
   - The server only returns JSON. It doesn't do anything real like creating an AWS instances.
   - All routes should return **result** and **route**
   - Some routes return extra properties as specified [here](#endpoints) and [here](#super-special).
+  - The [extra credit Associate](#associate) section has many tips in it that might be useful in the final.
 - Get two applications running on AWS and turn in links to them.
   - The custom aws-provision app described in this document.
   - A version of SystemCheck also described in this document.
@@ -337,7 +338,7 @@ export ELF_SYSTEM_CHECK_PORT=30XXX
 export MIDTERM_PORT=30XXX
 ```
 
-Don't even copy the names from here. Use the _offical list_ so we have one canonical place to to list services and make changes. I'm showing you the above only so there can be little doubt as to what I hope you can give me.
+Don't even copy the names from here. Use the [offical list][sdsctrl] so we have one canonical place to list services and make changes. I'm showing you the above only so there can be little doubt as to what I hope you can give me.
 
 Though we all should agree on these values, when submitting assignments, it would be best if you included your version of this list of export statements from your **~/.bashrc**. Thank you.
 
@@ -345,7 +346,7 @@ Though we all should agree on these values, when submitting assignments, it woul
 
 - elf-tagger "finished final" "aws-provision"
   - If you need to do this more than once, just use the same strings each time. The git tag number will sort out their order.
-- Merge your work into the **master** branch when you are done.
+- I'm expecting to find your work on the **final** branch, but also merge your work into the **master** branch when you are done. I want to see them in both places. The one I'll consider your final is the one in **master**, but please state exactly what code you want me to look at. Give branch and directory and tag.
 
 Let me know which programs you want me to check to see if they are running correctly according the description in **systemd Service Complete**. If you have any doubt as to whether you are using the right port or the port name, then let me know what you used. For instance:
 
@@ -399,7 +400,9 @@ For me, the whole process takes something like five minutes to complete. It is p
 | /ssh-runner/run-get-started | Use the SSH2 Package |
 | this.removeKnownHost| Remove from KnownHost | /script-pusher/remove-known-host |
 
-## Associate
+## Extra Credit: Associate {#associate}
+
+_This section is extra credit, but it has a lot of information in it that will help you complete the simplified final._
 
 One of the trickiest parts of this process is getting the instanceId of a newly created instance and using it to bind an elastic IP to an instance.
 
