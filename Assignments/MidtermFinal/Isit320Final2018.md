@@ -6,8 +6,10 @@ You have a few major goals:
 
 - To complete the [systemd Service Complete][sdsc] assignment
 - To complete a modified version of the [EC2 Provision Repo][ec2pr] assignment
-  - The modified version doesn't do anything
-  - The server only returns JSON as sepecified [here](#endpoints) and [here].
+  - The modified version doesn't do anything  
+  - The server only returns JSON. It doesn't do anything real like creating an AWS instances.
+  - All routes should return **result** and **route**
+  - Some routes return extra properties as specified [here](#endpoints) and [here][super-special].
 - Get two applications running on AWS and turn in links to them.
   - The custom aws-provision app described in this document.
   - A version of SystemCheck also described in this document.
