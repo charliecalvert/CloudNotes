@@ -300,6 +300,19 @@ request(app)
 
 We check the **response** to see what info we got. In this case, if the test executed properly, then **response.res.statusMessage** will be **OK**. If you get **NOT FOUND** then perhaps the URL of route is wrong.
 
+## EC2 and systemd {#ec2-systemd}
+
+Your empty, non-working version of **aws-provision** that only returns JSON should be running as a **systemd** service on EC2. When I click on the buttons, they should display the default JSON described above.
+
+You should also have a **SystemCheck** program which only checks methods on the client side running as an EC2 service on EC2. In other words, it never uses **server/routes/ssh-runner**, only **script-pusher.js**. It never uses SSH to check services running on other systems, it just checks the services running on the same instance of EC2 that it runs on. So uptime returns how long your EC2 instance has been up and running. (Please make sure you implement the whitelist!)
+
+When I refer to the **SystemCheck** program, I mean an assigment like one of these:
+
+- <https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html>
+- <https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html>
+
+Some program like that which has no calls to a remote system. It can report on your EC2 system because it is running on it, but it does not report on a remote system.
+
 ## Environment Variables
 
 Rather late in the game I've decided that I should have asked you to include the block of Environment Variables that you [define and export][sdsctrl] in your **.bashrc**. This can't be an official part of the exam, as it is too late for me to add anything now (Sunday evening), but if you can include it, that would be very helpful. A way to get it to me would be to submit the assignment using the Text option in Canvas, and paste them in the Text page. Another good way would be to put in a file and attach that file to Canvas when you turn in the assignment.
@@ -317,7 +330,6 @@ export MIDTERM_PORT=30XXX
 Don't even copy the names from here. Use the _offical list_ so we have one canonical place to to list services and make changes. I'm showing you the above only so there can be little doubt as to what I hope you can give me.
 
 Though we all should agree on these values, when submitting assignments, it would be best if you included your version of this list of export statements from your **~/.bashrc**. Thank you.
-
 
 ## Turn it in
 
