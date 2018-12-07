@@ -91,7 +91,11 @@ Or like this:
 
 ## Run from Project Root {#project-run}
 
-We want to have a script called **run** in the root of your projects. It makes the most sense to save this file in the **scripts** directory, and then create a symbolic link (with a relative path) from each project.
+We want to have a script called **run** in the root of your projects. Don't forget to make it executable with **chmod**:
+
+    chmod +x run
+
+It makes the most sense to save this file in the **scripts** directory, and then create a symbolic link (with a relative path) from each project. Below I show how to create the symbolic link.
 
 Here is the script.
 
