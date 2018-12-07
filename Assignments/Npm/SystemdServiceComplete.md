@@ -91,7 +91,9 @@ Or like this:
 
 ## Run from Project Root {#project-run}
 
-Save this script as **run** in the root of your projects.
+We want to have a script called **run** in the root of your projects. It makes the most sense to save this file in the **scripts** directory, and then create a symbolic link (with a relative path) from each project.
+
+Here is the script.
 
 ```bash
 #! /usr/bin/env bash
@@ -136,6 +138,12 @@ esac
 ```
 Notice that this script specifically spells out the environment variable that contains the port number for this app. This number and enviornment variable name changes for each project. The most official list of ports is maintained in the [systemd Service Control][sdsc] assignment.
 
+Here is how to create the symbolic link with a relative path from the root of your project:
+
+```bash
+ln -s ../scripts/run .
+```
+
 Run it like this from the root of your project:
 
 ```bash
@@ -152,12 +160,10 @@ My current **~/.gitconfig**:
 	name = <YOUR NAME SUCH AS Charlie on forestpath>
 [push]
 	default = simple
-[diff]
-    tool = meld
 [alias]
 	co = checkout
 	br = branch
-	ci = commit
+Iit
 	st = status
 	last = log -1 HEAD
     tags = tag -n1
@@ -192,7 +198,9 @@ When you are done, I should be able to start at least the following projects eit
 - Aws-Provision
 - And, ultimately, your final. But you don't need that yet.
 
-All of these projects should just work whether I start them with
+Please let me know which programs you want me to check.
+
+All of these projects should just work when I start them as follows:
 
 - runClientServer (Both the **client** and **server** started with **try-run-both**)
 - runServer       (All one app via **build-copy** in the server)
@@ -201,6 +209,8 @@ All of these projects should just work whether I start them with
 I want to make clear that this is at least as important as getting the final app running. You should prioritize getting this to work over getting the final project working.
 
 I also want both **prettier** and **eslint .** coming back clean in from the root of all the projects listed above.
+
+Be sure to include your **run-all** and **run** scripts. They are the first things I'll check for.
 
 [scsui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/system-check-server-ui.png
 
