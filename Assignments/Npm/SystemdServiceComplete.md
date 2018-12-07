@@ -95,7 +95,7 @@ We want to have a script called **run** in the root of your projects. Don't forg
 
     chmod +x run
 
-It makes the most sense to save this file in the **scripts** directory, and then create a symbolic link (with a relative path) from each project. Below I show how to create the symbolic link.
+Each run file has specific port mentioned in it, so each one is unique. Be sure to the official list of ports.
 
 Here is the script.
 
@@ -142,17 +142,13 @@ esac
 ```
 Notice that this script specifically spells out the environment variable that contains the port number for this app. This number and enviornment variable name changes for each project. The most official list of ports is maintained in the [systemd Service Control][sdsc] assignment.
 
-Here is how to create the symbolic link with a relative path from the root of your project:
-
-```bash
-ln -s ../scripts/run .
-```
-
 Run it like this from the root of your project:
 
 ```bash
 ./run a
 ```
+
+**NOTE**: _This would have been better as a script in the scripts directory which took a single parameter, the port on which the service runs. But it is too late to make that change now. Next time._
 
 ## Merging Code
 
