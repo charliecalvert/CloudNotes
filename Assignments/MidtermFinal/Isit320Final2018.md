@@ -356,7 +356,7 @@ Let me know which programs you want me to check to see if they are running corre
 
 Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl]. If possible, please include the code you have have in **~/.bashrc** for exporting your custom environment variables, especially if they vary from mine.
 
-When you turn in the final, tell me two programs that you feel are really polished, and I will look at them first. Try the **run a**, **run b** and **run c** on those two programs, as well as prettier and eslint. Get others working as you can, but focus on just two. My idea of five working programs is perhaps unrealistic. 
+When you turn in the final, tell me two programs that you feel are really polished, and I will look at them first. Try the **run a**, **run b** and **run c** on those two programs, as well as prettier and eslint. Check them after you have run the build-copy step. Get others working as you can, but focus on just two. My idea of five working programs is perhaps unrealistic. Try to get five working, but focus on just two and let me know what they are. Hopefully, one of them is your final aws-provision that just returns JSON. 
 
 ## Extra Credit
 
