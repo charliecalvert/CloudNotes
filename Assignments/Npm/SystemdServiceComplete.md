@@ -198,7 +198,7 @@ When you are done, I should be able to start at least the following projects eit
 - Aws-Provision
 - And, ultimately, your final. But you don't need that yet.
 
-Please let me know which programs you want me to check.
+Please let me know which programs you want me to check. I'm expecting a list like the one above. Be sure the root directory for each project has a **run** file in it.
 
 All of these projects should just work when I start them as follows:
 
