@@ -356,6 +356,8 @@ Let me know which programs you want me to check to see if they are running corre
 
 Recall that the official list of ports and names is in [SystemdServiceControl][sdsctrl]. If possible, please include the code you have have in **~/.bashrc** for exporting your custom environment variables, especially if they vary from mine.
 
+When you turn in the final, tell me two programs that you feel are really polished, and I will look at them first. Try the **run a**, **run b** and **run c** on those two programs, as well as prettier and eslint. Get others working as you can, but focus on just two. My idea of five working programs is perhaps unrealistic. 
+
 ## Extra Credit
 
 Here are the extra credit sections. Each section that begins with the words **Extra Credit** are part of the extra credit portion of the final.
