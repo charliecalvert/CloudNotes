@@ -9,6 +9,7 @@
 * [CodeAcademyGit02.html](CodeAcademyGit02.html)
 * [CodeAcademyGit03.html](CodeAcademyGit03.html)
 * [CodeAcademyGit04.html](CodeAcademyGit04.html)
+* [Ec2GetStarted.html](Ec2GetStarted.html)
 * [Ec2Provision.html](Ec2Provision.html)
 * [JavaScriptObjects.html](JavaScriptObjects.html)
 * [NodeRouteBasics.html](NodeRouteBasics.html)

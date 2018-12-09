@@ -86,6 +86,8 @@ I feel like this list is not yet complete, but this is a good start.
 export PORT=30025
 export SERVER_PORT=30026
 export ELF_SERVER_PORT=30026
+export REST_BASICS_PORT=30027
+export ELF_REST_BASICS_PORT=30027
 export ELF_SCREF_PORT=30030
 export ELF_AWS_PROV_PORT=30032
 export ELF_EC2_COPY_PORT=30033

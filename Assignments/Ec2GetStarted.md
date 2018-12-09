@@ -1,6 +1,6 @@
 ## Overview
 
-This assignment is designed to help you get started using the AWS service called EC2.
+This assignment is designed to help you get started using the AWS service called EC2. It will allow you to start a virtual machine in the cloud.
 
 - AWS: [Amazon Web Services][aws-doc]
 - EC2: [Elastic Compute Cloud][ec2-doc]
@@ -497,4 +497,4 @@ Which allows:
 
 [ec2esg]: https://s3.amazonaws.com/bucket01.elvenware.com/images/ec2-elven-security-group.png
 [mvc]: https://www.thegeekstuff.com/2010/12/mv-command-examples/
-[elf-aws-educate]: 
+[elf-aws-educate]:
