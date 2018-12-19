@@ -1,3 +1,5 @@
 * [BuildCopy.html](BuildCopy.html)
 * [GetSshIpAndPrivateKey.html](GetSshIpAndPrivateKey.html)
+* [LinuxServerComplete.html](LinuxServerComplete.html)
+* [MarkdownBasics.html](MarkdownBasics.html)
 * [ScriptMasterTags.html](ScriptMasterTags.html)
