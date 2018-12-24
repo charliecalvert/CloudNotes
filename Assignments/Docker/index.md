@@ -1,7 +1,3 @@
-## Overview
-
-Docker Assignments
-
 * [DockerFile.html](DockerFile.html)
 * [DockerHtmlMaker.html](DockerHtmlMaker.html)
 * [DockerHtmlViewer.html](DockerHtmlViewer.html)
