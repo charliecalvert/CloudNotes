@@ -17,6 +17,8 @@ Also, see this: https://stackoverflow.com/a/16048358/253576
 
 ## Docker Install
 
+Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
+
 There are two scripts in **JsObjects/Utilities/InstallScripts**:
 
 - InstallDocker
@@ -162,6 +164,8 @@ Now you should be able to delete the image:
 To list all containers with just ID:
 
     docker ps -aq
+
+Also try (docker ps -as)
 
 To delete all containers
 
