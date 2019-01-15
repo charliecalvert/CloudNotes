@@ -67,7 +67,7 @@ Elvenware Node:
 
 Elvenware JavaScript:
 
-- [JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/index.html#javascript-and-jquery)
+- [JavaScript and jQuery](/charlie/development/web/JavaScript/index.html#javascript-and-jquery)
 - [JavaScript Objects](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html)
 - [JavaScript Functions](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html)
 - [JavaScript Module Pattern](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html)
@@ -202,11 +202,11 @@ Some Links
 <!--== Links =================-->
 <!--==========================-->
 
-[arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
-[ca2]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
-[ec2p]: https://www.elvenware.com/teach/assignments/Ec2Provision.html
-[ec2pr]: https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html
-[gt]: https://www.elvenware.com/teach/tips/
-[rb]: https://www.elvenware.com/teach/assignments/React/ReactBasics.html
-[sc]: https://www.elvenware.com/teach/assignments/Aws/SystemCheck.html
-[tip-a]: https://www.elvenware.com/teach/tips/TurnItIn.html
+[arss]: /teach/assignments/Aws/AwsRunSshScript.html
+[ca2]: /teach/assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
+[ec2p]: /teach/assignments/Ec2Provision.html
+[ec2pr]: /teach/assignments/Aws/Ec2ProvisionRepo.html
+[gt]: /teach/tips/
+[rb]: /teach/assignments/React/ReactBasics.html
+[sc]: /teach/assignments/Aws/SystemCheck.html
+[tip-a]: /teach/tips/TurnItIn.html
