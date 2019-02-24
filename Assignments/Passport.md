@@ -31,11 +31,17 @@ in a database. We'll get to that later.
 
 ## Install Passport
 
-To get started, first create a new express project called **Week08-Passport**. At this stage, the best option for creating the app is probably still **CreateAllExpress**. However my fork of the Express Generator is showing signs of improvement:
+To get started, first create a new express project called **week08-passport**. At this stage, the best option for creating the app is probably still **CreateExpressProject**:
+
+```bash
+CreateExpressProject week08-passport
+```
+
+However my fork of the Express Generator is showing signs of improvement:
 
 ```bash
 npm install -g elf-express-generator  
-elf-express Week08-Passport
+elf-express week08-passport
 ```
 
 You need install elf-express-generator only once. However, if you want to check for updates:
@@ -73,6 +79,14 @@ Choose **Credintials** and create an **OAuth Client ID**. Set the Authorized Jav
 
 - http://localhost:30025
 
+These choices:
+
+- Credentials | Create Credentials | Oauth Client ID | Web Application
+- **Name**: ElfLastName2019. For instance: ElfCalvert2019
+- **Authorized JavaScript Origins**: http://localhost:30025
+- **Authorized redirect APIs** http://localhost:30025/oauth2callback
+
+
 Set the **Authorized redirect URIs** to:
 
 - http://localhost:30025/oauth2callback
@@ -80,6 +94,13 @@ Set the **Authorized redirect URIs** to:
 We are actually using this, so I don't understand why the above works, but it does:
 
 - http://localhost:30025/auth/google/callback
+
+**NOTE**: _Further testing suggests that it is best to add two separate entries to the **Authorized Redirect Apis**, one for each of the URLs shown above._
+
+In the Google Strategy, we need to set up a valid URL. Here some things to keep in mind:
+
+- Don't use a private IP like 192.168.1.1 that is not accessible from the WAN.
+- Instead Use the Google Console to set up **localhost:30025** as described above
 
 ## Basics
 
@@ -108,6 +129,20 @@ Put the session code shown above just after the place where we use the **cookieP
 While you are at it, set up your **favicon** and update the development error handler:
 
 ```javascript
+app.use(function(err, req, res) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    console.log(err.message); <==== ADD THIS LINE ==<
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+});
+```
+
+In older versions of express, it might look more like this:
+
+```javascript
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         'use strict';
@@ -121,11 +156,13 @@ if (app.get('env') === 'development') {
 }
 ```
 
+Either way, this code will ensure that 500 errors dump a stack trace to the console. Without that information, debugging can be very difficult.
+
 ## Generic Code
 
-There is quite a bit of set up code needed to get Passport up and running. Some of that code can be used by both the Google and Facebook strategies. This is generic code that you can use if you are logging the user into either Facebook or Google. It can likely be used with other Passport strategies as well. I put code the code can be used by multiple strategies in **index.js**. I then create separate modules for the Google and Facebook specific code.
+There is quite a bit of set up code needed to get Passport up and running. Some of that code can be used by both the Google and Facebook strategies. This is generic code that you can use if you are logging the user into either Facebook or Google. It can likely be used with other Passport strategies as well. I put code the code that can be used by multiple strategies in **routes/index.js**. I then create separate modules for the Google and Facebook specific code.
 
-Here is the code that can be used by both the Google and Facebook Passport strategies.:
+Here is the code we put in **routes/index.js** that can be used by both the Google and Facebook Passport strategies.:
 
 ```javascript
 var express = require('express');
@@ -253,14 +290,21 @@ router.get('/google/callback',
 module.exports = router;
 ```
 
-In the Google Strategy, we need to set up a valid URL. Here some things to keep in mind:
+Be sure to fill in your **clientID** and **clientSecret**. Also, link the code into **app.js** just as **routes/index.js** is linked in. I did it with these two lines of code:
 
-- Don't use a private IP not accessible from the WAN.
-- Use the Google Console to set up local host
+```javascript
+// Near the place where **routes/index.js** is linked in. Around line 11:
+var indexRouter = require('./routes/index'); <== For context
+var googleRouter = require('./routes/login-google'); <== Add this line
+
+// Around line 35 where the indexRouter is used:
+app.use('/', indexRouter);  <== For context
+app.use('/auth', googleRouter);  <== Add this line
+```
 
 For **process.nextTick**, [see the docs][1]. Instead of making the call immediately, it is more like a callback. We wait until the next time that node is not busy, then make the call. Node runs on an event loop, and in effect this is saying the next time the loop comes around.
 
-##Login and Logout
+## Login and Logout
 
 Let's take a look at these lines in **login-google.js**:
 
@@ -278,9 +322,7 @@ app.get('/google/callback', passport.authenticate('google', {
 });
 ```
 
-These are lines that get called when the user is being authenticated. You
-might want to add some console.log lines to this code if you want to
-better understand how the process works.
+These are lines that get called when the user is being authenticated. You might want to add some **console.log** lines to this code if you want to better understand how the process works.
 
 ## Run
 
@@ -420,7 +462,7 @@ Your application must support Google and either Twitter or Facebook.
 - For Twitter specific directions, go [here][twitter-login].
 - For Facebook specific directions, go [here][facebook-login].
 
-Place your work in the appropriate folder in your repository, if it is not there already. Run **grunt check** one last time. Submit your assignment.
+Place your work in the appropriate folder in your repository, if it is not there already. Run **eslint** and **prettier** one last time. Submit your assignment.
 
 [1]: http://nodejs.org/api/process.html#process_process_nexttick_callback
 [twitter-login]: http://www.ccalvert.net/books/CloudNotes/Assignments/PassportTwitter.html
@@ -450,7 +492,7 @@ if (!this._passport) { throw new Error('passport.initialize() middleware not in 
 
 ## Jade/Pug Rendering and Templating {#pug-render}
 
-Make sure you understand Jade Templating:
+Make sure you understand Pug and/or Jade Templating:
 
-- [Elvenware Jade Render Tamples](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#render-basics)
-- [Official Docs]()
+- [Elvenware Jade Render Templates](http://www.elvenware.com/charlie/development/web/JavaScript/NodeJade.html#render-basics)
+- [Official Docs](https://pugjs.org/api/getting-started.html)
