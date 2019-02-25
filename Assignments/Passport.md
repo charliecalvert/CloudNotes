@@ -86,7 +86,6 @@ These choices:
 - **Authorized JavaScript Origins**: http://localhost:30025
 - **Authorized redirect APIs** http://localhost:30025/oauth2callback
 
-
 Set the **Authorized redirect URIs** to:
 
 - http://localhost:30025/oauth2callback
