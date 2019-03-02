@@ -3,7 +3,7 @@
 Here are the steps we will accomplish:
 
 - Convert **AwsBasicS3** so that it stores all its **config** files and markdown files in MongoDb.
-- Convert the interface so that it can be run from a mobile device. 
+- Convert the interface so that it can be run from a mobile device.
 - Create some units tests
 - Move at least some of the markdown files we create into a database
 
@@ -18,6 +18,16 @@ Most of this work will be on my end, but we should also find ways to add:
 - RequireJs
 
 Is this the final? Yes, probably, but we will take it in pieces. We have a few weeks to divide the project up into discreet tasks, as described below. You will be grade on each task as weekly homeworks, and then presumably the finished product will be the final. We can negotiate as to what is the best, and most reasonable final. If I'm asking too much, we can find a reasonable middle ground.
+
+## Use the AWS Utility
+
+You can use the [AWS command line (cli) utility](https://github.com/aws/aws-cli) to copy files to S3 like this:
+
+```
+aws s3 cp Images/ s3://s3bucket01.elvenware.com/dev-images/cloud --recursive
+```
+
+
 
 ## The Primary Use Case
 
@@ -46,7 +56,7 @@ At first, we can run variations on the current program.
 
 - We create markdown files on StackEdit and save them to Google Drive or Drop Box
 - The Google Drive or Drop Box app is running locally, so we have a local copy of the markdown files as soon as we create or edit them.
-- We transform the markdown to HTML and copy it to a local web site. We can use Apache, IIS, or the [NodeStatic](https://github.com/cloudhead/node-static) sample found in **/JsObjects/JavaScript/NodeCode/StaticSite** to set up the web site. 
+- We transform the markdown to HTML and copy it to a local web site. We can use Apache, IIS, or the [NodeStatic](https://github.com/cloudhead/node-static) sample found in **/JsObjects/JavaScript/NodeCode/StaticSite** to set up the web site.
 - Set up a **Options.config** to copy the files to S3 and perform the copy.
 
 ### Scenario 02
@@ -55,10 +65,10 @@ However, I'd ultimately like to be able to do something at least vaguely like th
 
  1. Have a single folder where you can store your markdown files.
  2. Teach AwsBasicS3 to copy all the markdown files from that folder to your database and save them under a specific name and a     set of keyworks. For instance, all the files from **CloudNotes/Prog272**
-    could be stored in the database under that name. 
- 3. When we want to edit them, enter a command to send to our folder, which is part of Google Drive or DropBox. 
+    could be stored in the database under that name.
+ 3. When we want to edit them, enter a command to send to our folder, which is part of Google Drive or DropBox.
  4. Then we edit the markdown in StackEdit.
- 5. When they look right, we transform them to HTML, and copy to them to S3. 
+ 5. When they look right, we transform them to HTML, and copy to them to S3.
  6. Finally, the updated markdown files are copied back into the database.
 
 The above, however, is probably too ambitious. It might be enough to simply copy the markdown files from any given folder into the database.
