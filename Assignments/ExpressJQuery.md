@@ -152,7 +152,7 @@ var marie = {
 };
 ```
 
-Cut and paste the curly braces and the syntax between them into [jsonlint.com](jsonlint.com) to be sure it is valid JSON:
+Cut and paste the curly braces and the syntax between them into [jsonlint.com](https://jsonlint.com/) to be sure it is valid JSON:
 
 ```javascript
 {
