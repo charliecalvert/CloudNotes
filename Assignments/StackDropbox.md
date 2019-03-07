@@ -20,17 +20,17 @@ There are several different ways to install DropBox on Linux. Some of the simple
 
 - [DropBox on Elvenware](http://www.elvenware.com/charlie/development/cloud/DropBox.html#install)
 
-After installing Dropbox, prepare a screenshot like the one shown below. 
+After installing Dropbox, prepare a screenshot like the one shown below.
 
-![DropBox Folder](../Images/DropBoxLinux01.png)
+![DropBox Folder](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/DropBoxLinux01.png)
 
 The image shown above depicts a listing (ls -la) of the **$HOME/.dropbox** folder. I want you to take a similar screenshot, but of the **.dropbox-dist** folder. Here is how to get the listing I want to see:
 
     ls -la $HOME/.dropbox-dist
-    
+
 Looking at the image shown above, you can see the dropbox icon near the bottom right:
 
-![DropBox Folder](../Images/DropBoxLinux02.png)
+![DropBox Folder](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/DropBoxLinux02.png)
 
 Make sure this icon is visible in your screenshot.
 
@@ -39,18 +39,18 @@ Save Your File to Dropbox
 
 In your Dropbox folder on Linux, create a sub-folder called StackEdit. This is where you will place documents that you create in StackEdit.
 
-In StackEdit, choose the pound sign icon on the far left. In the **Synchronize** section, choose **Synchronize | Dropbox | Export to Dropbox**. A dialog like the one shown below appears. 
+In StackEdit, choose the pound sign icon on the far left. In the **Synchronize** section, choose **Synchronize | Dropbox | Export to Dropbox**. A dialog like the one shown below appears.
 
-![DropBox Folder](../Images/DropBoxLinux03.png)
+![DropBox Folder](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/DropBoxLinux03.png)
 
-Choose to save you file in your **StackEdit** folder as 
-**Week05-StackBox-LastName.md**, where LastName is your last name. 
-Use a graphical file browser such **PCManFM** to view your StackEdit 
-folder. In Lubuntu, you can access this tool from **Start | Accessories | 
-File Manager PCManFM**. Take a screenshot of your StackEdit folder. 
-It should look a bit like the one shown below. 
+Choose to save you file in your **StackEdit** folder as
+**Week05-StackBox-LastName.md**, where LastName is your last name.
+Use a graphical file browser such **PCManFM** to view your StackEdit
+folder. In Lubuntu, you can access this tool from **Start | Accessories |
+File Manager PCManFM**. Take a screenshot of your StackEdit folder.
+It should look a bit like the one shown below.
 
-![DropBox Folder](../Images/DropBoxLinux04.png)
+![DropBox Folder](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/DropBoxLinux04.png)
 
 Turn It In
 ----------
@@ -65,5 +65,3 @@ Links
 
 
 > Written with [StackEdit](https://stackedit.io/).
-
-

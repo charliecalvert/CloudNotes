@@ -92,10 +92,10 @@ Create 5 markdown documents based on Shakespeare's sonnets:
 	But flowers distill'd, though they with winter meet,
 	Leese but their show; their substance still lives sweet.
 
-Find the Google Drive folder you shared during the Online Presence 
-assignment. 
+Find the Google Drive folder you shared during the Online Presence
+assignment.
 
-- Create a new folder in it called **Poems**. 
+- Create a new folder in it called **Poems**.
 - Save all five documents to that folder as **Sonnet01.md**, **Sonnet02.md** etc.
 - Also save them also to your DropBox folder.
 
@@ -109,11 +109,11 @@ link and display each file: **Sonnet01.html**, **Sonnet02.html** etc.
 The sample BuildAll script is found in:
 
 	JsObjects/Python/Utils
-	
+
 It is run with Python 3.3:
 
 	python3.3 BuildAll.py
-	
+
 You should also be able to run it like this:
 
 	./BuildAll.py
@@ -126,18 +126,18 @@ files and your five sonnets to S3.
 
 ## Turn It In
 
-In your Google Drive folder, in a directory called Week07-Midterm, turn 
+In your Google Drive folder, in a directory called Week07-Midterm, turn
 in screen shots of:
 
--  Your BuildAll script running in Linux. 
--  You editing your files in **StackEdit**. Be sure to show that 
+-  Your BuildAll script running in Linux.
+-  You editing your files in **StackEdit**. Be sure to show that
 your document is linked to both Google Drive and DropBox.
 
 When you submit the document, include a link to your files running
-on S3. 
+on S3.
 
 Share a document in your existing Evernote **2014-Prog280-LastName**
-folder that contains a link to your code running on S3. 
+folder that contains a link to your code running on S3.
 
 ## Hints
 
@@ -145,15 +145,15 @@ Here is the syntax for links in markdown:
 
 	- [DropBox](DropBox.html)
 	- [MongoMark](MongoMark.html)
- 
+
 Remember to put it in a file called **index.md**.
 
 Here is what my bucket on AWS looks like:
 
-![View on AWS](../Images/AwsS301.png)
+![View on AWS](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/AwsS301.png)
 
 Notice that I have three HTML files. Yours will be called Sonnet01.html,
-Sonnet02.html, etc. Notice also the three folders that I copied from 
+Sonnet02.html, etc. Notice also the three folders that I copied from
 our bc folder in the Linux box. Notice also the URL that I created for
 my S3 box:
 
@@ -168,22 +168,22 @@ file from this directory:
 
   /JsObjects/Utilities/Templates
 
-This meant that some of the CSS for our files in **/var/www/bc** did 
+This meant that some of the CSS for our files in **/var/www/bc** did
 not resolve correctly. Your files would still show up, but they might
 look a bit odd with an image missing, some of the text not in the right
 place.
 
-I have created two new files called **StartLinux.html** and 
-**NavLinux.html** and put them in **Templates** folder. If you pull the 
+I have created two new files called **StartLinux.html** and
+**NavLinux.html** and put them in **Templates** folder. If you pull the
 latest from Git you will get them.
 
 I also updated line 23 in **BuildAll.py** to make sure they get linked in:
 
 	markdown.runner(files, ['StartLinux.html', 'NavLinux.html', 'footer.html', 'end.html']);
 
-If you pull down the latest from **JsObjects** you will also get 
-that change. If your HTML files does not look exactly right because 
-of the broken CSS, I will understand, but if you can make this 
+If you pull down the latest from **JsObjects** you will also get
+that change. If your HTML files does not look exactly right because
+of the broken CSS, I will understand, but if you can make this
 change all should be well with your code.
 
 The only thing you need to do is pull down the latest from Git:
@@ -191,21 +191,21 @@ The only thing you need to do is pull down the latest from Git:
 	cd /Git/JsObjects
 	git pull
 
-Then rerun the updated **BuildAll.py**. You want to make sure to 
+Then rerun the updated **BuildAll.py**. You want to make sure to
 preserve your list of files to transfer to the /var/www/bc directory:
 
 	def prog280(markdown):
 		files = ["DropBox", "MongoMark", "index"]; // Keep this list in sync with the files that you want to copy. ie (Sonnet01, Sonnet02, etc)
 		makeItSo(markdown, "", files);
 
-The mistake in my **start.html** file caused three lines to have 
+The mistake in my **start.html** file caused three lines to have
 the wrong path in them. They should read:
 
 	<link rel="shortcut icon" href="Images/favicon.png">
 	<script src="Scripts/elvenware.js" type="text/javascript"></script>
 	<link href="Styles/BootstrapIndex.css" rel="stylesheet" type="text/css" />
 
-If, instead, you see the word **charlie** in those bits of text from 
+If, instead, you see the word **charlie** in those bits of text from
 the top of your HTML file, then that is the bug, and you need to pull
 the latest code and rerun **BuildAll.py**, being sure not to lose the
 list of files that you want it to copy.
