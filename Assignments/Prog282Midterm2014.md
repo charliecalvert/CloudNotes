@@ -1,17 +1,17 @@
-#Prog 282 Midterm Spring 2014
+## Overview
 
-The goal of this assignment is to learn more about using Ajax to pass data between a client and server. We will also learn more about Express and Jade.
+The goal of the Prog 282 Midterm for Spring 2014 is to learn more about using Ajax to pass data between a client and server. We will also learn more about Express and Jade.
 
 This is the midterm. A variant on the old midterm will probably become the final.
 
-##Step 01: Create an express project.
+## Step 01: Create an express project.
 
 Go to the command line and create an express project:
 
     express Week07RoutingData
     cd Week07RoutingData
     npm install
-    
+
 If you want to edit this in Eclipse:
 
 - **File | Import | Existing *Folder* into Eclipse**
@@ -25,15 +25,15 @@ If you want to edit this in Eclipse:
 If the above fails. Copy the .project file from [JsonRead][jsonread] into your project and change the name field to Week07RoutingData-LastName where LastName is your last name. Then use **File | Import | General | Existing *Project* into Workspace**.
 
 [jsonread]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/NodeCode/jsonRead/.project
-    
-##Step 02: Project Name and Port
 
-Open **index.js** in Eclipse or Geany. 
+## Step 02: Project Name and Port
+
+Open **index.js** in Eclipse or Geany.
 
 **Note**: *If you want to use Geany, remember to first open Geany from the desktop (GUI). Then open the file in geany from the command line like this:*
 
     geany routes/index.js
-    
+
 *If you type the above without first opening Geany from the desktop, then you won't be able to use the command line until you close Geany. It may be possible to avoid this need to first open Geany in the Gui by typing something like this: [geany myfile.txt &][amp].*
 
 Change the title. Change **req** and **res** to **request** and **response**. Indent **response.render** four spaces or one tab instead of two spaces:
@@ -58,7 +58,7 @@ Here is the edit:
     app.set('port', process.env.PORT || 30025);
 
 [amp]: http://bashitout.com/2013/05/18/Ampersands-on-the-command-line.html
-##Step 03: Set up a route on the server:
+## Step 03: Set up a route on the server:
 
 Add a **sayHello** route to **index.js**:
 
@@ -75,8 +75,8 @@ Test it:
 Go to port 30025 and set the route to **sayHello**:
 
 ![RoutingHello](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing01.png)
-    
-##Step04: Set up the Client
+
+## Step04: Set up the Client
 
 First, let's create a button and paragraph element:
 
@@ -87,11 +87,11 @@ First, let's create a button and paragraph element:
 The contents of **index.jade**:
 
     extends layout
-    
+
     block content
       h1= title
       p Welcome to #{title}
-    
+
       button#buttonSayHello Say Hello
       p#paragraph01
 
@@ -102,8 +102,8 @@ Get Main.js, require and jquery:
     cd public/javascripts
     wget http://requirejs.org/docs/release/2.1.11/comments/require.js
     wget http://code.jquery.com/jquery-2.1.1.js
-    wget http://elvenware.com/charlie/development/web/JavaScript/Scripts/Main.js 
-    
+    wget http://elvenware.com/charlie/development/web/JavaScript/Scripts/Main.js
+
 **Note**: *The **wget** program ships with Linux. For Windows it is [here][wget]. I store the above commands as scripts on [JsObjects][wgetscript] in **RequiryJQuery.bat** and **RequireJquery.sh**. You should copy one of these scripts to some place on your path, such as your **$HOME/bin** directory. After copying it, you might need to set its executable permissions*:
 
     chmod +x RequireJquery.sh
@@ -114,11 +114,11 @@ Get Main.js, require and jquery:
 
     cd public/javascripts
     RequireJQuery.sh
-    
+
 *You can simplify the above by creating a [symbolic link][softlink] between bin/requirejq and the JsObjects source*:
 
     ln -s /home/bcuser/Git/JsObjects/Utilities/InstallScripts/RequireJquery.sh requirejq
-    
+
 *Now you should be able to download all three files from anywhere you have file creation rights by just typing **requirejq**.*
 
 The RequireJquery script will download require, jquery and **Main.js**. Your **Main.js** file should look like this:
@@ -128,14 +128,14 @@ The RequireJquery script will download require, jquery and **Main.js**. Your **M
     		"jquery" : "jquery-2.1.1"
     	}
     });
-    
-    require(['jquery'], 
-    
+
+    require(['jquery'],
+
     	function(jq) {
     		'use strict';
     		console.log("Main called");
     	}
-    
+
     );
 
 Modify the callback to look like this:
@@ -147,7 +147,7 @@ Modify the callback to look like this:
             $('#paragraph01').html(helloObject.result);
         });
     }
-    
+
 Refresh the browser. The output should look something like this:
 
 ![Route02](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing02.png)
@@ -160,8 +160,8 @@ We can see the data from the server below the button. Now let's get it to respon
             "jquery" : "jquery-2.1.1"
         }
     });
-    
-    require(['jquery'], 
+
+    require(['jquery'],
 
         function(jq) {
             'use strict';
@@ -171,7 +171,7 @@ We can see the data from the server below the button. Now let's get it to respon
                     $('#paragraph01').html(helloObject.result);
                 });
             }
-            
+
             $("#buttonSayHello").click(getHello);
         }
 
@@ -179,7 +179,7 @@ We can see the data from the server below the button. Now let's get it to respon
 
 Now you see the text only when you click on the button.
 
-##Pass Data to the Server
+## Pass Data to the Server
 
 Modify getHello to pass in some information about your browser:
 
@@ -187,7 +187,7 @@ Modify getHello to pass in some information about your browser:
             $('#debug01').html(fx.responseText);
             $('#debug02').html('error' + error);
         }
-    
+
         function getHello() {
 		    var nav = window.navigator;
 		    var browserInfo = {
@@ -208,15 +208,15 @@ Modify getHello to pass in some information about your browser:
             $('#paragraph05').html(helloObject.userAgent);
 		}).error = errorHandler;
 	}
-    
+
         $("#buttonSayHello").click(getHello);
 
 Handle the Data on the Server something like this:
 
     router.get('/sayHello', function(request, response) {    
         console.log(request.query);    
-    
-         response.send({ 
+
+         response.send({
             "result": "The server says Hello",
             "codeName": request.query.codeName,
             "product": request.query.product,
@@ -228,17 +228,17 @@ Handle the Data on the Server something like this:
 Note that we get the data passed from the server by examining **request.query**. Be sure to look at the command prompt on the server side so you can see what request.query looks like when printed to the console:
 
         console.log(request.query);    
-        
+
 The result should look like this in Chrome, but it will differ depending on browser and server platform:
 
 ![Route03](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing03.png)
-        
-    
+
+
 [wget]: http://wget.addictivecode.org/FrequentlyAskedQuestions?action=show&redirect=Faq#download
 [wgetscript]: https://github.com/charliecalvert/JsObjects/tree/master/Utilities/InstallScripts
 [softlink]: http://www.cyberciti.biz/faq/creating-soft-link-or-symbolic-link/
 
-##Add a new Page
+## Add a new Page
 
 Create a copy of routes/index.js called routes/NewPage.js.
 Create a copy of views/index.jade called views/NewPage.jade
@@ -295,18 +295,18 @@ These are the two new lines that appear in the above code:
 Modify NewPage.jade so that it looks like this:
 
     extends layout
-    
+
     block content
       h1= title
       p Welcome to #{title}
-    
+
       h2 This is the new page!
 
 Restart the server, click on your link on the main page. You should be taken to the second page:
 
 ![Route04](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing04.png)
 
-##Create a Application Control Page
+## Create a Application Control Page
 
 Each object that we create should do one thing, and have one reason to change. Right now, **Main.js** is where we set up **require** and where we respond to button clicks. That's two things and two reasons to change the page as we develop the app. To fix this, we need to move code from **Main.js** into a file called **Control.js**. Here is **control.js**:
 
@@ -363,9 +363,9 @@ require.config({
 });
 
 require([ 'jquery', 'Control' ], function(jq, Control) {
-	'use strict';	
+	'use strict';
 	console.log("Main called");
-	
+
 	var control = new Control();
 });
 ```
@@ -374,7 +374,7 @@ Run you code and make sure it still works. Be sure that you added Control to the
 
     require([ 'jquery', 'Control' ], function(jq, Control) {
 
-##Create a Factory
+## Create a Factory
 
 The problem now is that the coupling between **Main.js** and **Control.js** is much too intimate. We need a Factory.
 
@@ -421,7 +421,7 @@ define([ 'Control' ], function(Control) {
 We specify that Control needs to have new called on it by using Pascal case:
 
     define([ 'Control' ], function(Control) {
-    
+
 The factory is completely responsible for creating the object. If the object needs to have new called on it, then the factory does that, because it is the Factory's job to create the object completely:
 
     case "Control":
@@ -431,7 +431,7 @@ The factory is completely responsible for creating the object. If the object nee
 By the time we get to the return statement in the factory, we just return the product. We don't need to call new on it. We decide that kind of thing in the **switch** statement:
 
     return this.product;
-    
+
 This is what your factories should look like from here on out, until further notification.
 
 Back in **Main.js** we do, however, have to call new on the Factory itself:
@@ -444,15 +444,15 @@ require.config({
 });
 
 require([ 'jquery', 'Factory' ], function(jq, Factory) {
-	'use strict';	
+	'use strict';
 	console.log("Main called");
-	
+
 	var factory = new Factory();
 	factory.create({ 'productType': 'Control'})
 });
 ```
 
-At this stage we can see that we are loading a total of seven files: 
+At this stage we can see that we are loading a total of seven files:
 
 - Our html and css
 - require and jquery
@@ -467,16 +467,16 @@ Here is what they look like in the Chrome developer tools:
 Let's add a button to our second page, the one called NewPage.jade:
 
     extends layout
-    
+
     block content
       h1= title
       p Welcome to #{title}
-    
+
       h2 This is the new page!
-      
+
       p#directory
-      
-      button#buttomDirName Get __dirname
+
+      button#buttomDirName Get \_\_dirname
 
 Define a handler for the new dirName button in Control.js:
 
@@ -527,7 +527,7 @@ The result looks like this on my Windows machine:
 
 As you can see, my server is set up to run in the **/Temp/Week07RoutingData** folder. Note that we also see the **routes** folder because that is where **NewPage.js** lives.
 
-##Refactor
+## Refactor
 
 Our problem now is that Control.js does two or three things, and hence has multiple reasons to change:
 
@@ -556,10 +556,10 @@ define([ 'jquery' ], function(jq) {
 				$('#directory').html(serverResponse.dirName);
 			}).error = errorHandler;
 		}
-		
+
 		return DirName;
 	}());
-	
+
 	return DirName;
 });
 ```
@@ -573,7 +573,7 @@ define([ 'jquery' ], function(jq) {
 
 		function Hello() {
 		}
-		
+
 		Hello.prototype.getHello = function() {
 			var nav = window.navigator;
 			var browserInfo = {
@@ -594,10 +594,10 @@ define([ 'jquery' ], function(jq) {
                 $('#paragraph05').html(helloObject.userAgent);
 			}).error = errorHandler;
 		}
-		
+
 		return Hello;
 	}());
-	
+
 	return Hello;
 });
 ```
@@ -606,14 +606,14 @@ You can see that they both use **errorHandler**, yet neither defines it. So lets
 
 ```
 define(function(require) {
-	
+
 	var Utilities = {
 		errorHandler: function(fx, status, error) {
 			$('#debug01').html(fx.responseText);
 			$('#debug02').html('error' + error);
 		}
 	};
-	
+
 	return Utilities;
 });
 ```
@@ -632,17 +632,17 @@ define([ 'jquery', 'Utilities' ], function(jq, utilities) {
 				$('#directory').html(serverResponse.dirName);
 			}).error = utilities.errorHandler;
 		}
-		
+
 		return DirName;
 	}());
-	
+
 	return DirName;
 });
 
 Notice that we are now requiring both jquery and Utilities:
 
     define([ 'jquery', 'Utilities' ], function(jq, utilities) {
-    
+
 Lets put all three of our new classes in a their own directory called Tools:
 
 ```
@@ -656,9 +656,9 @@ require.config({
 });
 
 require([ 'jquery', 'Factory' ], function(jq, Factory) {
-	'use strict';	
+	'use strict';
 	console.log("Main called");
-	
+
 	var factory = new Factory();
 	factory.create({ 'productType': 'Control'});
 });
@@ -688,7 +688,7 @@ define([ 'Control', "DirName", "Hello" ], function(Control, DirName, Hello) {
 			case "Hello":
 				this.product = new Hello();
 				break;
-			case "DirName": 
+			case "DirName":
 				this.product = new DirName();
 				break;
 			default:
@@ -720,7 +720,7 @@ define([ 'jquery', "Factory"], function(jq) {
 	var Control = (function() {
 
 		var factory;
-		
+
 		function Control(initFactory) {
 			$("#buttonSayHello").click(getHello);			
 			$("#buttonDirName").click(dirName);
@@ -731,7 +731,7 @@ define([ 'jquery', "Factory"], function(jq) {
 			var dirName = factory.create({productType: 'DirName'});
 			dirName.getDirName();
 		}
-		
+
 		function getHello() {
 			var hello = factory.create({productType: 'Hello'});
 			hello.getHello();
@@ -751,7 +751,7 @@ Run your program and make sure it still works after refactoring. There is no new
 
 To understand one of the benefits of our refactoring, open up each of your classes. Notice the small size and simplicity of each of our classes.
 
-##Do It
+## Do It
 
 Now we have the set up done. You now get a chance to show what you have learned. Here is the assignment.
 
@@ -806,7 +806,7 @@ Same as above, but only one input control and return from the /ConvertPage serve
 - Hours converted to seconds
 - Fahrenheit converted to Celsius
 
-##Position Page
+## Position Page
 
 This one is a bit tricky, as not all browsers support getting position and you have to give permission before you can do it. Even if you can't get it to work, get your page and files set up as best you can.
 
@@ -844,9 +844,9 @@ This one is a bit tricky, as not all browsers support getting position and you h
 			}
 		}		
 
-When you run this code, your browser should prompt you to ask if you grant permission for Week07RoutingData to access your GPS. 
+When you run this code, your browser should prompt you to ask if you grant permission for Week07RoutingData to access your GPS.
 
-##Turn It In
+## Turn It In
 
 When you are done, put your code in a folder called **Week08RoutingData**. Make sure you create all objects with the factory. Make sure you are doing the addition, multiplication and conversion on the server. Make sure every route on the server includes a call like this as its first line:
 
@@ -865,12 +865,3 @@ Include screen shots of:
 
 
 This is the midterm, and counts for 33 percent of your grade.
-
-
-
-
-
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
