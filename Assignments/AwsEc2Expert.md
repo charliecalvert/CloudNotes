@@ -149,7 +149,7 @@ Increasingly, I'm finding that taskself comes with Ubuntu distros, so you may be
 
 [noder]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html
 [giter]: http://www.elvenware.com/charlie/development/cloud/Git.html#install-git-on-ubuntu-server
-[lamper]: (http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux)
+[lamper]: http://www.elvenware.com/charlie/development/database/mysql/MySql.html#installOnLinux
 
 ## Step Five: Set up SSH
 

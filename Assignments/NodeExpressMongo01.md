@@ -1,25 +1,25 @@
 Node, Express and MongoDb
 ================
 
-We are going to continue work on our Information Manager. This 
+We are going to continue work on our Information Manager. This
 assignment will be mostly a skill building exercise. I hope to tie
 this assignment and the previous assignment together next week.
 
 There will be three primary steps in this assignment:
 
-- Create a server side method that will automatically insert 250 
-auto-generated records into MongoDb 
+- Create a server side method that will automatically insert 250
+auto-generated records into MongoDb
 - Create a server side method that will retrieve the records, place
 them in an array  from the
 database and send them to the client.
 - Create an HTML interface that will display any one record from the
-array of records to the user. This is not a Cordova assignment. You can 
+array of records to the user. This is not a Cordova assignment. You can
 do your work with HTML, CSS and JavaScript.
 
 
 Passing a parameter from the client (the web broswer) to the server
 is a bit tricky. As a result, in this assignment, I just want you to
-return an array of all 250 records. Later, we can learn how to ask 
+return an array of all 250 records. Later, we can learn how to ask
 for one of the records.
 
 You should, however, provide an interface that lets the user ask for
@@ -39,9 +39,9 @@ be accepted.
 want to retreive.
 - A button to press to activate the retrieval of the next item.
 
-You will need to retrieve the array only once. This should occur 
-immediately after your application loads. Once the array is on the 
-client side, the user will be able to select any one item from the 
+You will need to retrieve the array only once. This should occur
+immediately after your application loads. Once the array is on the
+client side, the user will be able to select any one item from the
 array.
 
 On the server side, you will have a default method that will return
@@ -53,11 +53,11 @@ a file kept on the server side:
 
 	var fs = require('fs');
 
-	var html = fs.readFileSync(__dirname + '/Public/index.html');
+	var html = fs.readFileSync(\_\_dirname + '/Public/index.html');
 	res.writeHeader(200, {"Content-Type": "text/html"});   
 	res.write(html);
 	res.end();
-	
+
 The complete example is in JsObjects:
 
 - [Hello Express](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/HelloExpress)
@@ -66,14 +66,14 @@ I also provide an example called MongoTalk02 which gives you at least
 a few hints as to how to get started with this application. Here is a
 screenshot from the application:
 
-![MongoTalk02](../Images/NodeExpressMongo01.png)
+![MongoTalk02](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/NodeExpressMongo01.png)
 
-If you have not already done so, you need to run **MongoTalk** 
-before you run **MongoTalk02** so that at least some data will be in 
-MongoDb. In the screenshot shown above, you can see that MongoTalk02 
-retrieves the data that I created with **MongoTalk** during our class on 
-Tuesday, Feb 04. The data you created will likely be different.  For 
-this assignment, you will want to create a new collection and new 
+If you have not already done so, you need to run **MongoTalk**
+before you run **MongoTalk02** so that at least some data will be in
+MongoDb. In the screenshot shown above, you can see that MongoTalk02
+retrieves the data that I created with **MongoTalk** during our class on
+Tuesday, Feb 04. The data you created will likely be different.  For
+this assignment, you will want to create a new collection and new
 data, as explained below.
 
 Screenshots
@@ -83,7 +83,7 @@ The screenshot shown below is probably not exactly the interface for
 the program you want to turn in. However, it might be helpful to look
 at it for a second.
 
-![MongoTalk02](../Images/NodeExpressMongo02.png)
+![MongoTalk02](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/NodeExpressMongo02.png)
 
 Notice the following from the above screen shot:
 
@@ -94,16 +94,16 @@ Notice the following from the above screen shot:
 Here is what the screen looks like after the user as requested to see the
 second record:
 
-![MongoTalk02](../Images/NodeExpressMongo03.png)
+![MongoTalk02](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/NodeExpressMongo03.png)
 
-Finally, notice the array of five records displayed at the bottom of 
-the screen. This is not part of the assignment. In this case, I just 
-deleted all existing records from the **collection** and added only 
-five new ones. I had my program display these five records using a 
-technique illustrated in **MongoTalk02**. My goal was to provide a 
-screen shot for you that illustrats key elements of the interface I 
-want to see in your assignment. It also provides a few tips as to 
-what is happening behind the scenes. In particular, it shows the 
+Finally, notice the array of five records displayed at the bottom of
+the screen. This is not part of the assignment. In this case, I just
+deleted all existing records from the **collection** and added only
+five new ones. I had my program display these five records using a
+technique illustrated in **MongoTalk02**. My goal was to provide a
+screen shot for you that illustrats key elements of the interface I
+want to see in your assignment. It also provides a few tips as to
+what is happening behind the scenes. In particular, it shows the
 loaded data looks like as it sits in memory.
 
 Code to Delete Records
@@ -147,11 +147,11 @@ It might make sense to create two scripts:
 - One that serves up data to the client
 
 Or you could check to see if the database is populated, and if not,
-to populate it. Or we could add a button to our client to populate 
-the database. For now, though, the two script idea is probably 
+to populate it. Or we could add a button to our client to populate
+the database. For now, though, the two script idea is probably
 simplest.
 
-The method you write to insert data into the database should have 
+The method you write to insert data into the database should have
 at least these two features:
 
 - Write to a collection called **test_data**. Do not write to the **test_insert**

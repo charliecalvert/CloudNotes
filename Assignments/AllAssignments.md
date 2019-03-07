@@ -48,7 +48,7 @@
 *  [DropBoxEc2.html](DropBoxEc2.html)
 *  [Evernote01.html](Evernote01.html)
 *  [EvernoteFinalNodes.html](EvernoteFinalNotes.html)
-*  [EvernoteTemplates.html](EverNoteTemplates.html)
+*  [EvernoteTemplates.html](EvernoteTemplates.html)
 *  [GoogleDriveAndFolders](GoogleDriveAndFolders.html)
 *  [GuestAdditions.html](GuestAdditions.html)
 *  [OwnCloudInstall.html](OwnCloudInstall.html)
@@ -74,7 +74,6 @@
 
 *   [MongoStarter.html](MongoStarter.html)
 *   [MongoMark.html](MongoMark.html)
-*   [RoutingData](RoutingData.html)
 *   [ServerSaveMongo.html](ServerSaveMongo.html)
 
 Mongoose:
@@ -134,7 +133,6 @@ Mongoose:
 *   [MapExpress.html](MapExpress.html)
 *   [NodeExpressMongo01.html](NodeExpressMongo01.html)
 *   [NodeModulesAssignment.html"](NodeModulesAssignment.html)
-*   [NodeRoutes01.html](NodeRoutes01.html)
 *   [Passport.html](Passport.html)
 *   [PubSub01.html](PubSub01.html)
 *   [PubSubRequire.html](PubSubRequire.html)
