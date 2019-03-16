@@ -200,7 +200,7 @@ This section is not yet complete. Just try to use your common sense.
 - [Android Studio Slides](http://bit.ly/elven-android-studio)
 - [Slides](http://bit.ly/1at2JZ2)
 - [Elvenware](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
-- [Remote Debugging](https://developer.chrome.com/devtools/docs/remote-debugging)
+- [Remote Debugging](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/)
 - [Cordova Android Links][calinks]
 
 ## Extra Credit

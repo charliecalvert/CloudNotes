@@ -110,7 +110,7 @@ If there are no extensions, apps or themes installed in Chrome, then I please in
 
 I find the terminology confusing, or at least non-intuitive. It appears that apps, extensions, and themes can all be thought of as Chrome "extensions". You can read about this in more detail here:
 
-https://developer.chrome.com/webstore/apps_vs_extensions
+- [Apps vs Extensions](https://developer.chrome.com/webstore/apps_vs_extensions)
 
 ## Turn it in
 

@@ -4,9 +4,9 @@ There are two primary goals:
 
 - Move the Midterm into a Cordova Application
 - Add some the ability to get the users location and to make a phone call. We will discuss these features on Thursday.
-- Start your server running on AWS, and call a route from inside your Cordova App. We will cover this step in class in Thursday. 
+- Start your server running on AWS, and call a route from inside your Cordova App. We will cover this step in class in Thursday.
 
-There is enough information here to get you well into this project, but check up here regularly for updates. 
+There is enough information here to get you well into this project, but check up here regularly for updates.
 
 Sample Screenshot:
 
@@ -24,26 +24,16 @@ Sample Screenshot:
 
 Create your working folder. The syntax for the command looks a bit like this:
 
-```
+```bash
 $ cordova create --help
-Synopsis
-
-    cordova create <PATH> [ID [NAME [CONFIG]]] [options] [PLATFORM...]
-
-Create a Cordova project
-
-    PATH ......................... Where to create the project
-    ID ........................... reverse-domain-style package name
-    NAME ......................... human readable field
-    CONFIG ....................... json string with key/values
 ```                                    
 
-For additional details, issue the **cordova create --help** command yourself. 
+For additional details, issue the **cordova create --help** command yourself.
 
 Given the above, you want to navigate to your repository and type
 
     cordova create Week12Final com.lastname.prog272_final Prog272FinalLastName
-    
+
 Be sure to use underscores and not hyphens. The command above will place your
 project in a directory called Week12Final. The project name on your android
 will be Prog272FinalLastName, where LastName is your last name.
@@ -57,8 +47,8 @@ Copy the custom icons over as explained here.
 Now add the platform:
 
     cordova platform add android
-    
-## Step Three 
+
+## Step Three
 
 Make sure you are connected to your phone or to an instance of Android x86.
 
@@ -69,15 +59,15 @@ Make sure you are connected to your phone or to an instance of Android x86.
 - [Slides](http://bit.ly/1at2JZ2)
 - [Elvenware](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
 - [Week03 Overview](https://bc.instructure.com/courses/1078221/pages/week03-overview)
-- [Remote Debugging](https://developer.chrome.com/devtools/docs/remote-debugging)
+- [Remote Debugging](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/)
 
 Build and install the project
 
     cordova build android
     adb install platforms/android/ant-build/CordovaApp-debug.apk
-    
+
 Test it, make sure it works.
-    
+
 ## Step Four        
 
 Copy over files from the most advanced version of the midterm that you have. Find the verison you like the most, and copy over its files.
@@ -92,8 +82,8 @@ There is lots of information on how to convert an Express project to a Cordova p
 
 - prog272-lastname/Source
 - prog272-lastname/Week12Final
-    
-    
+
+
 When copying the files over from **Source**, I made sure to copy the following files:
 
 - ../Source/public/js/Control.js -> www/js/Control.js
@@ -114,11 +104,11 @@ A script for automating the process might look something like this:
 
 ```
     #! /bin/bash
-    
+
     SOURCE_QUERY="../Source"
-    
+
     # mv www/index.html www/index.html.old
-    
+
     cp -v $SOURCE_QUERY/public/js/Control.js www/js/.
     cp -v $SOURCE_QUERY/views/index.html www/.
     cp -v $SOURCE_QUERY/views/JsonAjax.html www/.
@@ -153,7 +143,7 @@ to work. For instance, you will have to make the menus work when requestion HTML
 
 Add support for detecting if you are connect to an android device and reporting location. Adding support for detecting if you are connected to a device is relatively simple, since the code is in the generated **index.js** that comes with all Cordova projects. It is the code that makes the that glows green in the default Cordova project.
 
-You should also add support for location to your best version of the Midterm, and ensure that it looks good on a mobile device. 
+You should also add support for location to your best version of the Midterm, and ensure that it looks good on a mobile device.
 
 ## Step Six: Route Parameters
 
@@ -170,7 +160,7 @@ Includes:
 - ElvenGeo
 - Elven Various
 - Elven Phone
-         
+
 ## Extra Credit
 
 Add support for phone calls, vibration, and location (Elven Geo) to your Final.
@@ -179,14 +169,14 @@ Add a markdown loader page. One page in your final, two buttons. Button one load
 a Jade/Markdown page. Button two loads an additional Jade/Markdown page.
 
 If you have what can only be described as too much time on your hands, or perhaps it
-could be called a craven need to write code, add support for iterating over multiple 
-records instead of just viewing male and female records. You should be able to load 
+could be called a craven need to write code, add support for iterating over multiple
+records instead of just viewing male and female records. You should be able to load
 a JSON file, then change the male and buttons to forward and back. See
 The **PresidentsJson** project for a somewhat outdated guide:
 
 - [Presidents Json](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/PresidentsJson)
 
-            
+
 ## Turn it in
 
 The bottom line is this:
@@ -203,14 +193,14 @@ Also, don't miss the [menu on mobile][menuMobile] hint.
 
 ## Hints
 
-Look over the **JsObjects/Cordova/CordovaNodeRoutes** project very carefully. Make sure you understand it. The relationship between **CordovaNodeRoutes** and **NodeRouteParams** is similar to the relationship between your Cordova and Web App versions of the Final. Compare, for instance, their respective versions of **Control.js** and **style.css**. 
+Look over the **JsObjects/Cordova/CordovaNodeRoutes** project very carefully. Make sure you understand it. The relationship between **CordovaNodeRoutes** and **NodeRouteParams** is similar to the relationship between your Cordova and Web App versions of the Final. Compare, for instance, their respective versions of **Control.js** and **style.css**.
 
 **NOTE**: *You can use **meld** to compare two files or directories.*
 
 At some point, you are going to find that the code in **Week12Final** is close enough to what you want that you don't want to copy the files over the **Source** folder again. And yet, you will still likely be making changes to both **Week12Final** and **Source** and you will want to be sure some of those changes end up in both projects. The tool you want is **meld**. Here is the command, as it would be issued from the root of your repository:
 
     meld Week12Final/www Source/public
-    
+
 This will allow you to compare the contents of **www** and **public**. You can see line by line differences between the files in the two projects, and you can copy individual lines from one file to the other.    
 
 Linking to Bootstrap and JQuery. This worked for me:
@@ -248,8 +238,8 @@ loaded, don't forget to use the Chrome debugger to inspect your results on your 
 Type this in the address bar of the browser:
 
     chrome://inspect
-    
-Then go the Network page and press F5 to refresh. You will be able to see what files are 
+
+Then go the Network page and press F5 to refresh. You will be able to see what files are
 loading.    
 
 ## JadeToHtml
@@ -263,7 +253,7 @@ Here is my **JadeToHtml** file:
 ./node_modules/.bin/jade --pretty views/JsonAjax.jade
 ```
 
-The first line tells Linux where the bash scripting engine is located. The script 
+The first line tells Linux where the bash scripting engine is located. The script
 would still work without this line.
 
 The next line begins by pointing at the copy of Jade in my **node_modules**

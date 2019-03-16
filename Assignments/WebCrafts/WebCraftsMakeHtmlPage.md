@@ -432,4 +432,4 @@ document.getElementById('pageLoad').innerHTML = '';
 
 See also [You Might not Need jQuery](http://youmightnotneedjquery.com/). This site has standard JavaScript code for many of the methods in jQuery. Back in the day, the standard JavaScript code did not run in many browsers, but it does now.
 
-[cdt]: https://developer.chrome.com/devtools
+[cdt]: https://developers.google.com/web/tools/chrome-devtools/

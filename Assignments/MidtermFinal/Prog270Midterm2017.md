@@ -266,4 +266,4 @@ The images below show that **first-style.css**, **style.css**, **googlecode.css*
 
 [network-chrome]: https://s3.amazonaws.com/bucket01.elvenware.com/images/network-chrome.png
 [network-firefox]: https://s3.amazonaws.com/bucket01.elvenware.com/images/network-firefox.png
-[cdt]: https://developer.chrome.com/devtools
+[cdt]: https://developers.google.com/web/tools/chrome-devtools/
