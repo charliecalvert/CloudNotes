@@ -1,15 +1,15 @@
-## Prog 272 Week 01, 2018
+## Prog 272 Week 01, 2019
 
-Some notes to help us get started during Week01, spring, 2018.
+Some notes to help us get started during Week01, spring, 2019.
 
 ## Getting Started
 
-Our job on this first day will be to get an overview of the subjects to be
+Our job on this first week will be to get an overview of the subjects to be
 covered in this class. You will have a few assignments this week:
 
 1. Write an Introduction in the discussion area
 1. Register for some online sites and create an online presence document.
-1. Get Pristine Lubuntu up and running VirtualBox.
+1. Get Pristine Lubuntu up and running in VirtualBox.
 
 And here is some optional reading:
 
@@ -60,10 +60,10 @@ Notes on installing WebStorm:
 -  [JavaScript Basics Deck](http://bit.ly/OPDg3s)
 
 [why-clean-code]: http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel
-[pro-js]: http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=44953
 [crockford]: http://javascript.crockford.com/javascript.html
 [webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
 [pvba]: http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html
 [git-old]: http://www.elvenware.com/charlie/development/cloud/Git.html
 [git]: http://www.elvenware.com/charlie/development/git/
+[pro-js]: /javascript-guide/GettingStarted.html#books247
