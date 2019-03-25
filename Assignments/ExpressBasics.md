@@ -99,7 +99,7 @@ p#dynamic
 
 This is [Pug syntax](https://pugjs.org/language/tags.html) to create an HTML paragraph element with an ID of "dynamic".
 
-Note that Pug cares about white space. Your paragraph should be indented on the same level as the **Welcome** paragraph. If you are in doubt, open your Pug file in Geany and select **View | Show WhiteSpace**. In WebStorm it's **View | Active Editor | Show WhiteSpace**, but my eyes aren't good enough to see the subtle symbols they use to display WhiteSpace. \
+Note that Pug cares about white space. Your paragraph should be indented on the same level as the **Welcome** paragraph. If you are in doubt, open your Pug file in Geany and select **View | Show WhiteSpace**. In WebStorm it's **View | Active Editor | Show WhiteSpace**, but my eyes aren't good enough to see the subtle symbols they use to display WhiteSpace.
 
 **NOTE**: _I think I prefer to use spaces rather than tabs, but the most important thing is to be consistent. Choose one or the other and stick with it in all your files. I reserve the right to change my mind as to my preference._
 
