@@ -6,12 +6,17 @@ I'm expecting to see [Node][node] based code that will run at the command line, 
 
 ## Question One:
 
-Create an example function called **boatFromMastCount** that takes a parameter called **numberOfMasts** and returns the word **schooner** if **numberOfMasts** is set to **2** and **sloop** if **numberOfMasts** is set to **1**. Write the function twice, once with  **if-else** statements and once with a **switch** statement.
+Create an example function called **boatFromMastCount** that takes a parameter called **numberOfMasts** and returns the word **schooner** if **numberOfMasts** is set to **2** and **sloop** if **numberOfMasts** is set to **1**. Write the function twice, once with  **if-else** statements and once with a **switch** statement. Name the two versions as follows:
+
+- **boatFromMastCountIfElse**
+- **boatFromMastCountSwitch**
+
+Call both functions and display their output.
 
 When complete, we should be able to call it like this:
 
 ```javascript
-var result = boatFromMastCount(2);
+var result = boatFromMastCountIfElse(2);
 
 console.log(result);
 ```

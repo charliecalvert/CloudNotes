@@ -8,29 +8,31 @@ This assignment is designed to introduce you to [Express Js](http://expressjs.co
 
 Here are several notes that are worth considering before you start working with Node.
 
-**NOTE**: _Express is rarely used on its own. It is simply the foundation on which more complex applications are built. In most cases, other libraries such as jQuery, Angular or React will also be used._
+**NOTE**: _Express is often combined with other client side libraries. In many cases, other libraries such as jQuery, Angular or React will also be used._
 
 **NOTE**: _You can combine React and Express, but most React applications are created with a special tool call [Create Express App][cra-home]. If your primary goal is to create a React based application, then consider using Create Express App as explained [here][elf-cra]. Alternatively, look [here][elf-react] to learn how to craft a React app from scratch._
 
-**NOTE**: _The default Express template library used to be called Jade, but is now called Pug. At this stage, at least, the two tools are essentially identical. If you find places where I reference Jade, you can simply mentally translate that to Pug, or vice-versa, depending on your needs._
+**NOTE**: _The default Express template library used to be called Jade, but for legal reasons it is now called Pug. At this stage, at least, the two tools are essentially identical. If you find places where I reference Jade, you can simply mentally translate that to Pug, or vice-versa, depending on your needs._
 
 ## Goals
 
 - Create an express application
 - Change the title that appears in **index.pug** and on the main page of the application at run time
 - Load [jQuery][jquery-home] and a custom JavaScript page
-- Use jQuery to display a line of text in an HTML paragraph tag
+- Use raw JavaScript or jQuery to display a line of text in an HTML paragraph tag
 - Switch from using **node** to using **nodemon**
 - Set the port to 30025
 
 ## Get Started
 
-The [express-generator][express-gen] automatically generates a default express application. It is installed automatically by the following scripts, which are described in the [JsObjects README][elf-js-objects]:
+The [express-generator][express-gen] automatically generates a default express application. It is installed automatically by the following scripts from JsObjects, which are described in the [JsObjects README][elf-js-objects]:
 
 - [InstallNodePackages][inpack]
 - [UbuntuAndCloudNineSetup][ubuntu-setup]
 
-However, if you find it is missing, or need to update it, this is the install command:
+**NOTE**: _When reading this section, it is perhaps helpful to understand that Pristine Lubuntu comes with both **nodemon** and the **express generator** installed in **~/npm/bin**. I used the JsObjects scripts mentioned above to perform the install. Everything in JsObjects is open source. That repository has been available for at least a decade, and should remain available for the foreseeable future._
+
+If you find the **experss-generator** is missing, or want to update it without using JsObjects, you can run this command:
 
 ```bash
 npm install -g express-generator
@@ -38,27 +40,27 @@ npm install -g express-generator
 
 To use the **express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
 
-```
+```bash
 express --pug Week03-ExpressBasics
 cd Week03-ExpressBasics
 npm install
 ```
 
-Load the project in WebStorm. Open up **/bin/www** and set the port 30025\. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**.
+The last command, **npm install**, is extremely important. It processes the libraries that are specified in the **dependencies** and **devdependencies** sections of **package.json** and puts the compiled output in a folder called **node_modules**. There will be more on this subject [in other sections of this course](https://www.elvenware.com/javascript-guide/NodeJs.html#npm-install-notes).
 
-**NOTE**: _You will need to install **nodemon** if you have not done so already. To install, issue this command **npm install -g nodemon**._
+Load the project in WebStorm. Open up **/bin/www** and set the port 30025\. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**. I'k intentionally being a big vague here as I want you to study **package.json** in at least enough depth to discover the **start** property and see how to replace the word **node** with **nodemon**. If you find that process baffling then you need to spend time reviewing JavaScript basics. (JSON is a subset of JavaScript.)
 
-Now start the project:
+**NOTE**: _You will also need to install **nodemon** if it has not been installed already. To install it, issue this command **npm install -g nodemon** To test if it is installed, run this command: **nodemon --version**. If it does not return an error, then it is likely properly installed._
 
-```
+Now start the newly created express project:
+
+```bash
 npm start
 ```
 
-Load the project in a browser:
+Load the project in a browser by navigating to this address:
 
-```
-http://localhost:30025
-```
+- [http://localhost:30025](http://localhost:30025)
 
 ## Change the Title
 
@@ -67,6 +69,16 @@ Open up **/routes/index.js**. Change the title to **Prog272-LastName**, where La
 ## Create Custom JavaScript
 
 Create a file called **/public/javascripts/control.js**. It should contain the following code:
+
+```javascript
+window.onload = function() {
+    console.log("control.js loaded");
+    const dynamic = document.getElementById('dynamic');
+    dynamic.textContent = 'control is loaded';  
+};
+```
+
+Or do it with jQuery:
 
 ```javascript
 $(document).ready(function() {
@@ -79,9 +91,21 @@ $(document).ready(function() {
 
 ## Modify your Pug Files
 
-First load the JavaScript in **/views/layout.pug**:
+In **index.pug**, create a paragraph in which to display your custom text:
 
 ```
+p#dynamic
+```
+
+This is [Pug syntax](https://pugjs.org/language/tags.html) to create an HTML paragraph element with an ID of "dynamic".
+
+Note that Pug cares about white space. Your paragraph should be indented on the same level as the **Welcome** paragraph. If you are in doubt, open your Pug file in Geany and select **View | Show WhiteSpace**. In WebStorm it's **View | Active Editor | Show WhiteSpace**, but my eyes aren't good enough to see the subtle symbols they use to display WhiteSpace. \
+
+**NOTE**: _I think I prefer to use spaces rather than tabs, but the most important thing is to be consistent. Choose one or the other and stick with it in all your files. I reserve the right to change my mind as to my preference._
+
+Use the **script** tag to load the **control.js** JavaScript file in **/views/layout.pug**:
+
+```pug
 doctype html
 html
   head
@@ -93,11 +117,7 @@ html
     block content
 ```
 
-Also, in **index.pug**, be sure you have created a paragraph in which to display your custom text:
-
-```
-p#dynamic
-```
+Again, notice that Pug has a short hand for nearly all HTML statements. After you get your program running view the generated HTML so you can confirm that all is working as expected.
 
 ## Turn it in
 
