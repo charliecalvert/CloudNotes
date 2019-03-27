@@ -13,8 +13,9 @@ Here I will list various resources for Prog 272.
 
 ## Important Assignments
 
-- [AWS][aws]
+- [AWS EC2 Get Started][aws]
 - [Get Gist][gist]
+- [EcmaScriptFunctions][esfunc]
 - [ExpressBasics][eb]
 - [Unit Tests with Jest Web Page (JestCreateReactApp)][utwj]
 - [Unit Tests with Jest Deck (JestCreateReactApp)][jcrad]
@@ -41,35 +42,36 @@ Here I will list various resources for Prog 272.
 - [Test Snap Shots and Hints][tssh]
 - [React Address Testing DataManager][ratdm]
 
-[adc]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponent.html
-[aws]: http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2GetStarted.html
-[cas]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/CongressAddressServer.html
-[eb]: http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html
-[gist]: http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GetGist.html
+[adc]: /teach/assignments/react/AddressComponent.html
+[aws]: /teach/assignments/Ec2GetStarted.html
+[cas]: /teach/assignments/react/CongressAddressServer.html
+[eb]: /teach/assignments/ExpressBasics.html
+[esfunc]: /teach/assignments/ecma-script/EcmaScriptFunctions.html
+[gist]: /teach/assignments/git/GetGist.html
 [jcrad]: http://bit.ly/jest-cra
 [mid]: http://www.ccalvert.net/books/CloudNotes/Prog272/Prog272Midterm2018.html
-[nrb]: http://www.ccalvert.net/books/CloudNotes/Assignments/NodeRouteBasics.html
-[ramat]:http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMaterial.html
-[ramenu]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressMenu.html
-[ran]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAddress.html
-[ras]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html
-[ratdm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressTestingDataManager.html
-[rel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
-[rpel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html
-[rga]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGetAddress.html
-[rpb]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html
-[sysd]:http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html
-[tssh]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html
-[uta]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestsAddress.html
-[utwj]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html
+[nrb]: /teach/assignments/NodeRouteBasics.html
+[ramat]:/teach/assignments/react/ReactAddressMaterial.html
+[ramenu]: /teach/assignments/react/ReactAddressMenu.html
+[ran]: /teach/assignments/react/ReactNativeAddress.html
+[ras]: /teach/assignments/react/ReactAddressShow.html
+[ratdm]: /teach/assignments/react/ReactAddressTestingDataManager.html
+[rel]: /teach/assignments/react/ReactEsLint.html
+[rpel]: /teach/assignments/react/ReactPropsEsLint.html
+[rga]: /teach/assignments/react/ReactGetAddress.html
+[rpb]: /teach/assignments/react/ReactPropBasics.html
+[sysd]:/teach/assignments/UpstartAndSystemd.html
+[tssh]: /teach/assignments/react/TestSnapShotsAndHints.html
+[uta]: /teach/assignments/react/UnitTestsAddress.html
+[utwj]: /teach/assignments/react/JestCreateReactApp.html
 
 
 ## Older Assignments
 
-- [JavaScriptObjects](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html)
-- [Jest Create React App](http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html)
-- [Address Component Refine](http://www.ccalvert.net/books/CloudNotes/Assignments/React/AddressComponentRefine.html)
-- [React Address Edit](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEdit.html)
+- [JavaScriptObjects](/teach/assignments/JavaScriptObjects.html)
+- [Jest Create React App](/teach/assignments/React/JestCreateReactApp.html)
+- [Address Component Refine](/teach/assignments/React/AddressComponentRefine.html)
+- [React Address Edit](/teach/assignments/React/ReactAddressEdit.html)
 
 
 ## Languages and APIs

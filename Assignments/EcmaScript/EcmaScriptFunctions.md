@@ -2,7 +2,11 @@
 
 Learn how to work with ES6 JavaScript arrow functions, introduce JavaScript classes. Learn about using Babel to transpile ES5 code into ES6. In this assignment, always use ES6 style code when declaring functions.
 
-**NOTE**: _Be sure to use arrow functions in all your code. Don't use the keyword **function**!_
+**NOTE**: _Be sure to use fat arrow functions in all your code. Don't use the keyword **function**!_
+
+- [Types of functions on Elvenware][tof]
+
+[tof]: https://www.elvenware.com/javascript-guide/JavaScriptFunctions.html#function-types
 
 ## Get Started
 
