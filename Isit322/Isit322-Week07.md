@@ -13,11 +13,11 @@
 - [React ESLint][rel]
 - [Enzyme Dive][ed]
 
-[rps]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html
+[rps]: /teach/assignments/react/ReactPropsShow.html
 
-[rpn]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsNative.html
+[rpn]: /teach/assignments/react/ReactPropsNative.html
 
-[rel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
+[rel]: /teach/assignments/react/ReactEsLint.html
 
 [ed]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/dive.html
 

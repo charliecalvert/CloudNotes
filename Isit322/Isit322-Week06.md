@@ -1,13 +1,13 @@
 *   httpBackend in these slides: <span id="docs-internal-guid-f0a54871-71f6-753e-1a9a-9686e658e5d7"><span>[http://bit.ly/unittestasync](http://bit.ly/unittestasync)</span></span>
 *   <span><span>Antipatterns in these slides: <span id="docs-internal-guid-fa214d7b-748a-993c-e242-0f1263a3fb8c"><span>[http://bit.ly/elfunit](http://bit.ly/elfunit)</span></span></span></span>
 *   <span>Module Dependencies: [http://bit.ly/angular-mod](http://bit.ly/angular-mod)</span>
-*   Refactor Project Modules [In Class](/courses/1085616/assignments/5116841)
-*   [Midterm](/courses/1085616/assignments/5116747)
-*   [Vision](http://elvenware.com/charlie/books/CloudNotes/Isit322/Vision.html)
+*   [Refactor Angular Test Project Modules In Class](/teach/assignments/AngularTestsInClass.html)
+*   [Midterm](/teach/assignments/Isit322Midterm2015.html)
+*   [Vision](/teach/isit322/Vision.html)
 
 ## Add Chai to Karma
 
-In bower.json, add chai, probably by typing **bower install chai --save-dev. **I'm include angular mocks and scenario for context, but you only need to add chai:
+In bower.json, add chai, probably by typing **bower install chai --save-dev.** I'm include angular mocks and scenario for context, but you only need to add chai:
 
 <pre><span>"devDependencies"</span>: {  
   <span>"angular-mocks"</span>: <span>"~1.3.0"</span>,  
