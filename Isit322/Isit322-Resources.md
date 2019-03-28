@@ -5,7 +5,6 @@ with events and topics covered in our class.
 
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](/teach/tips/Books247.html)
-- [Bitly](http://bitly.com/u/charliecalvert)
 
 ## Elvenware Links
 
@@ -37,56 +36,56 @@ These assignments are not at all final. It is more like a random mix of assignme
 - [Code Academy Part 05][cajh05]
 - [Code Academy Part 06][cajh06]
 - [Code Academy Part 07][cajh07]
-- [Git New Repo](http://www.ccalvert.net/books/CloudNotes/Assignments/GitNewRepo.html)
-- [Pristine VirtualBox](http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html)
-- [Jest Create React App](http://www.ccalvert.net/books/CloudNotes/Assignments/React/JestCreateReactApp.html)
-- [Rest Tests](http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html)
-- [React Props](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html)
-- [Unit Test Numbers](http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestNumbers.html)
+- [Git New Repo](/teach/assignments/GitNewRepo.html)
+- [Pristine VirtualBox](/teach/assignments/PristineVirtualBox.html)
+- [Jest Create React App](/teach/assignments/react/JestCreateReactApp.html)
+- [Rest Tests](/teach/assignments/react/RestTests.html)
+- [React Props](/teach/assignments/react/ReactProps.html)
+- [Unit Test Numbers](/teach/assignments/react/UnitTestNumbers.html)
 - [React Unit Tests][rutests]
-- [React Rest Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html)
-- [React Props](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html)
-- [React Unit Test Numbers](http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestNumbers.html)
-- [React Props Refine](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html)
-- [React Props Mounted](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMounted.html)
-- [React Props Show](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html)
-- [Convert JSON](http://www.ccalvert.net/books/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.html)
-- [React Git Menu](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactGitMenu.html)
-- [Git Merge](http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GitMerge.html)
-- [Git Hub API](http://www.ccalvert.net/books/CloudNotes/Assignments/GitHubApi.html)
-- [Midterm](http://www.ccalvert.net/books/CloudNotes/Assignments/MidtermFinal/Isit322Midterm2017.html)
-- [AndroidX86Install](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Install.html)
-- [AndroidX86Cordova](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Cordova.html)
-- [Modular Pattern Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/ModularPatternBasics.html)
-- [Functional](http://www.ccalvert.net/books/CloudNotes/Assignments/Functional.html)
+- [React Rest Basics](/teach/assignments/react/RestBasics.html)
+- [React Props](/teach/assignments/react/ReactProps.html)
+- [React Unit Test Numbers](/teach/assignments/react/UnitTestNumbers.html)
+- [React Props Refine](/teach/assignments/react/ReactPropsRefine.html)
+- [React Props Mounted](/teach/assignments/react/ReactPropsMounted.html)
+- [React Props Show](/teach/assignments/react/ReactPropsShow.html)
+- [Convert JSON](/teach/assignments/json/ConvertJsonToFieldDefinitions.html)
+- [React Git Menu](/teach/assignments/react/ReactGitMenu.html)
+- [Git Merge](/teach/assignments/git/GitMerge.html)
+- [Git Hub API](/teach/assignments/GitHubApi.html)
+- [Midterm](/teach/assignments/midterm-final/Isit322Midterm2017.html)
+- [AndroidX86Install](/teach/assignments/AndroidX86Install.html)
+- [AndroidX86Cordova](/teach/assignments/AndroidX86Cordova.html)
+- [Modular Pattern Basics](/teach/assignments/ModularPatternBasics.html)
+- [Functional](/teach/assignments/Functional.html)
 - [Split Splice](https://github.com/charliecalvert/elven-assignments/tree/master/Week02-SplitSlice)
 - [Get Numbers](https://github.com/charliecalvert/elven-assignments/tree/master/Week02-GetNumbers)
-- [NPM Publishing](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmPublishing.html)
-- [NPM Utilities](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmUtilities.html)
-- [Lamp Markdown](http://www.ccalvert.net/books/CloudNotes/Assignments/LampMarkdown.html)
-- [Elven Site Starter](http://www.ccalvert.net/books/CloudNotes/Assignments/ElvenSiteStarter.html)
-- [Google Shared Folder](http://www.ccalvert.net/books/CloudNotes/Assignments/GoogleSharedFolder.html)
-- [Express Middleware Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressMiddlewareBasics.html)
-- [Express Middleware User](http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressMiddlewareUser.html)
-- [Node Route Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/NodeRouteBasics.html)
-- [NPM All Inclusive](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmAllInclusive.html)
-- [MongoLab Basics](http://www.ccalvert.net/books/CloudNotes/Assignments/MongoLabBasics.html)
-- [Mongoose Sign In](http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSignIn.html)
+- [NPM Publishing](/teach/assignments/NpmPublishing.html)
+- [NPM Utilities](/teach/assignments/NpmUtilities.html)
+- [Lamp Markdown](/teach/assignments/LampMarkdown.html)
+- [Elven Site Starter](/teach/assignments/ElvenSiteStarter.html)
+- [Google Shared Folder](/teach/assignments/GoogleSharedFolder.html)
+- [Express Middleware Basics](/teach/assignments/ExpressMiddlewareBasics.html)
+- [Express Middleware User](/teach/assignments/ExpressMiddlewareUser.html)
+- [Node Route Basics](/teach/assignments/NodeRouteBasics.html)
+- [NPM All Inclusive](/teach/assignments/NpmAllInclusive.html)
+- [MongoLab Basics](/teach/assignments/MongoLabBasics.html)
+- [Mongoose Sign In](/teach/assignments/MongooseSignIn.html)
 
-[car01]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact01.html
-[car02]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact02.html
-[car03]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact03.html
-[car04]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact04.html
+[car01]: /teach/assignments/code-academy/CodeAcademyReact01.html
+[car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
+[car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
+[car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
 
-[cajh01]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy01.html
-[cajh02]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy02.html
-[cajh03]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy03.html
-[cajh04]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy04.html
-[cajh05]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy05.html
-[cajh06]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy06.html
-[cajh07]: http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy07.html
+[cajh01]: /teach/assignments/CodeAcademy01.html
+[cajh02]: /teach/assignments/CodeAcademy02.html
+[cajh03]: /teach/assignments/CodeAcademy03.html
+[cajh04]: /teach/assignments/CodeAcademy04.html
+[cajh05]: /teach/assignments/CodeAcademy05.html
+[cajh06]: /teach/assignments/CodeAcademy06.html
+[cajh07]: /teach/assignments/CodeAcademy07.html
 
-[rutests]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html
+[rutests]: /teach/assignments/react/RestTests.html
 
 ## React
 
@@ -102,14 +101,14 @@ Here are some [key links][react-links].
 
 The overviews are usually not current until the actual week that they cover. In other words, during Week02 of the course, the Week03 overview may be set to the material covered during the previous year. I often don't update the overviews until the actual week when the material in question is being taught.
 
-- [Week01](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week01-2017.html)
-- [Week02](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week02-2017.html)
-- [Week03](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week03-2017.html)
-- [Week04](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week04-2017.html)
-- [Week05](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week05-2017.html)
-- [Week06](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week06-2017.html)
-- [Week07](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week07-2017.html)
-- [Week08](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week08-2017.html)
-- [Week09](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week09-2017.html)
-- [Week10](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week10-2017.html)
-- [Week11](http://www.ccalvert.net/books/CloudNotes/Isit322/Isit322-Week11-2017.html)
+- [Week01](/teach/isit322/Isit322-Week01.html)
+- [Week02](/teach/isit322/Isit322-Week02.html)
+- [Week03](/teach/isit322/Isit322-Week03.html)
+- [Week04](/teach/isit322/Isit322-Week04.html)
+- [Week05](/teach/isit322/Isit322-Week05.html)
+- [Week06](/teach/isit322/Isit322-Week06.html)
+- [Week07](/teach/isit322/Isit322-Week07.html)
+- [Week08](/teach/isit322/Isit322-Week08.html)
+- [Week09](/teach/isit322/Isit322-Week09.html)
+- [Week10](/teach/isit322/Isit322-Week10.html)
+- [Week11](/teach/isit322/Isit322-Week11.html)

@@ -6,14 +6,14 @@ Information useful during Week 1, 2018 for ISIT322.
 
 Here are some [key links][react-links].
 
-[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
+[react-links]: /javascript-guide/JavaScriptReact.html#react-links
 
 ## VirtualBox
 
 - The Pristine Lubuntu OVA: [http://bit.ly/plubuntu-2018-04-03][plu]
 - Introductions
 - [VirtualBox Deck](http://bit.ly/1at2JZ2)
-- [Pristine VirtualBox Assignment](http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html)
+- [Pristine VirtualBox Assignment](/teach/assignments/PristineVirtualBox.html)
 - [Git][git]
 
 ## Syllabus
@@ -24,7 +24,7 @@ Here are some [key links][react-links].
 
 - [WebStorm Install][ws-inst]
 
-[ws-inst]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
+[ws-inst]: /teach/assignments/WebStormInstall.html
 
 ## Set up React
 
@@ -68,7 +68,7 @@ I have videos on various topics, including git, unit tests and mobile devices. T
 - [JavaScript Part II](http://bit.ly/JavaScriptPartII)
 - [VirtualBox](http://bit.ly/1at2JZ2)
 
-[elf-playlist]: http://www.elvenware.com/charlie/Videos.html#playlists
-[configure-linux]: http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html
+[elf-playlist]: /tools/Videos.html#playlists
+[configure-linux]: /os-guide/linux/ConfigureLinux.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
-[git]: http://www.elvenware.com/charlie/development/cloud/Git.html
+[git]: /git-guide

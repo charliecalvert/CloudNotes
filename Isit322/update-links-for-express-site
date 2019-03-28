@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+TARGET=Isit322-Week02.md
+
+sed -i 's|http://www.elvenware.com/charlie/Videos.html|/tools/Videos.html|g' $TARGET
+sed -i 's|http://www.elvenware.com/charlie/os/linux|/os-guide/linux|g' $TARGET
+sed -i 's|http://www.elvenware.com/charlie/development/cloud/Git.html|/git-guide|g' $TARGET
+sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments|/teach/assignments|g' $TARGET
+sed -i 's|http://www.elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $TARGET
