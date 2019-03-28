@@ -91,7 +91,7 @@ The reference is here, at the bottom of the page:
 
 - <https://reactjs.org/docs/handling-events.html>
 
-[trn]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReactNative.html
+[trn]: /javascript-guide/JavaScriptReactNative.html
 
 [fide]: https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-2018-files.png
 

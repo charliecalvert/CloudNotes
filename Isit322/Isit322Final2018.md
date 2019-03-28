@@ -113,6 +113,6 @@ There are some hints on testing that can be found [here][th].
 
 Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
 
-[pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle
+[pdbd]: /teach/assignments/react/ReactAddressEditDialog.html#data-cycle
 
-[th]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/GitUserTesting.html
+[th]: /teach/assignments/react/GitUserTesting.html

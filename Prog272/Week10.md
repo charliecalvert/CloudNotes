@@ -9,8 +9,6 @@ GIT
 -   PubSub
 -   Express and Jade in AwsBasicS3
 
-
-
 ##AWSBasic
 
 - [Set environment variables JSOBJECTS and PYTHONPATH](https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/NodeCode/AwsBasicS3/README.md)

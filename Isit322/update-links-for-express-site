@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-TARGET=Isit322-Week09.md
+TARGET=Isit322Midterm2018.md
 
 sed -i 's|http://charliecalvert.github.io/books/CloudNotes/Isit322|/teach/isit322|g' $TARGET
 sed -i 's|http://elvenware.com/charlie/books/CloudNotes/Isit322|/teach/isit322|g' $TARGET
@@ -11,5 +11,6 @@ sed -i 's|http://www.elvenware.com/charlie/development/cloud/Git.html|/git-guide
 sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments/React|/teach/assignments/react|g' $TARGET
 sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments|/teach/assignments|g' $TARGET
 sed -i 's|http://www.elvenware.com/charlie/books/CloudNotes/Assignments|/teach/assignments|g' $TARGET
+sed -i 's|http://www.ccalvert.net/development/web/JavaScript|/javascript-guide|g' $TARGET
 sed -i 's|http://elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $TARGET
 sed -i 's|http://www.elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $TARGET

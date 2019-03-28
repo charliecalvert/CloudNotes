@@ -4,7 +4,7 @@
 
 ### Elvenware
 
-*   [Angular on Elvenware](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html)
+*   [Angular on Elvenware](/javascript-guide/Angular.html)
 *   [JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design)
 
 ### Slides
