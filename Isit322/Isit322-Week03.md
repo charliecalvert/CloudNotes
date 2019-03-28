@@ -1,7 +1,7 @@
 ## Links
 
-*   [Android X-86](http://www.elvenware.com/charlie/development/android/Androidx86.shtml) on Elvenware.
-*   [VirtualBox](http://www.elvenware.com/charlie/os/linux/VirtualBox.html) on Elvenware
+*   [Android X-86](/android-guide/Androidx86.shtml) on Elvenware.
+*   [VirtualBox](/os-guide/linux/VirtualBox.html) on Elvenware
 
 ## Slides
 
