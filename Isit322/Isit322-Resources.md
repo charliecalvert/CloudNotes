@@ -4,18 +4,16 @@ Here are number of links that you can use to help stay up to date
 with events and topics covered in our class.
 
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
-- [Ebooks and 24X7](http://library.books24x7.com.ezproxy.bellevuecollege.edu/bookshelf.asp)
-- [Delicious](https://delicious.com/charliecalvert)
-- [Elvenware Links](http://elvenware.com/charlie/links.html)
+- [Ebooks and 24X7](/teach/tips/Books247.html)
 - [Bitly](http://bitly.com/u/charliecalvert)
 
 ## Elvenware Links
 
-- [Cloud](http://www.elvenware.com/charlie/development/cloud/index.shtml)
-- [CloudNotes](http://www.elvenware.com/charlie/books/CloudNotes/CloudNotes.html)
-- [Elvenware Home](http://www.elvenware.com/charlie/index.html)
-- [Links](http://www.elvenware.com/charlie/links.html)
-- [OS](http://www.elvenware.com/charlie/os/index.html)
+- [Elvenware Home](http://www.elvenware.com)
+- [Cloud](/cloud-guide)
+- [Elvenware Links](/tools/links.html)
+- [OS](/os-guide)
+- [Linux](/os-guide/linux/)
 - [Web](http://www.elvenware.com/charlie/development/web/index.html)
 - [Google-Elvenware](https://sites.google.com/site/elvenware/)
 

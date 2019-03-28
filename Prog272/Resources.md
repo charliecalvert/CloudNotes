@@ -9,6 +9,7 @@ Here I will list various resources for Prog 272.
 - [Elvenware Links](/tools/links.html)
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](/teach/tips/Books247.html)
+- [Bitly](http://bitly.com/u/charliecalvert)
 
 ## Important Assignments
 
