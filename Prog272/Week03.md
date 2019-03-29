@@ -1,18 +1,16 @@
-## Prog 272 Week 03, 2014
-
-toc
+## Prog 272 Week 03, 2019
 
 Overview
 ---------
 
 - [Unit Tests Deck](http://bit.ly/1dTjs8h)
-- [PhoneGap Cordova](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
-- [Cordova Setup CheatSheet](http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
-- [VirtualBox and AndroidX86](http://www.elvenware.com/charlie/development/android/Androidx86.shtml)
+- [PhoneGap Cordova](/android-guide/PhoneGap.html)
+- [Cordova Setup CheatSheet](/android-guide/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
+- [VirtualBox and AndroidX86](/android-guide/Androidx86.shtml)
 - [Working with Files](http://bit.ly/1jzIpHU)
 - Add node_modules, coverage and bower_components to .gitignore
 - Getting started with PhoneGap
-- [Resources](http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html)
+- [Resources](/teach/prog272/Resources.html)
 
 Downloads
 ---------
@@ -28,67 +26,67 @@ Set your PATH and ENVIRONMENT on Linux
 
 This is certainly less than complete, but I do have Linux resources on Elvenware:
 
-- [PATH](http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#path)
-- [ENVIRONEMNT](http://elvenware.com/charlie/os/linux/LinuxDays/LinuxFAQ.html#BashProfileBashRC)
+- [PATH](/os-guide/linux/LinuxDays/LinuxFAQ.html#path)
+- [ENVIRONEMNT](/os-guide/linux/LinuxDays/LinuxFAQ.html#BashProfileBashRC)
 
 And more generally:
 
-- [Linux](http://elvenware.com/charlie/os/linux/index.html)
-- [Working with Linux Files](http://elvenware.com/charlie/os/linux/LinuxFiles.html)
-- [File Permisions](http://elvenware.com/charlie/os/linux/LinuxFiles.html#fileOverview)
+- [Linux](/os-guide/linux/index.html)
+- [Working with Linux Files](/os-guide/linux/LinuxFiles.html)
+- [File Permisions](/os-guide/linux/LinuxFiles.html#fileOverview)
 
 Set up PATH and Environment on Windows
 --------------------------------------
 
-- [Cordova Cheat Sheet](http://www.elvenware.com/charlie/development/android/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
-- [Cordova Setup Details](http://www.elvenware.com/charlie/development/android/PhoneGap.html#details)
-- [Run Cordova Project](http://www.elvenware.com/charlie/development/android/PhoneGap.html#runProject)
-- [Use SetX](http://www.elvenware.com/charlie/development/android/PhoneGap.html#use-setx-to-set-the-environment)
+- [Cordova Cheat Sheet](/android-guide/PhoneGap.html#the-phonegapcordova-setup-cheat-sheet)
+- [Cordova Setup Details](/android-guide/PhoneGap.html#details)
+- [Run Cordova Project](/android-guide/PhoneGap.html#runProject)
+- [Use SetX](/android-guide/PhoneGap.html#use-setx-to-set-the-environment)
 
-I recognize that these steps are difficult. On the other hand, it 
-simply is not right for students interested in computers to graduate 
-from Bellevue College without a good understanding of the 
-Windows/Linux/Mac Environment variables and PATH statements. Once 
-the penny finally drops, and you feel as though you understand these 
+I recognize that these steps are difficult. On the other hand, it
+simply is not right for students interested in computers to graduate
+from Bellevue College without a good understanding of the
+Windows/Linux/Mac Environment variables and PATH statements. Once
+the penny finally drops, and you feel as though you understand these
 concepts, you should find that you will use them over and over.
 
-Some history is perhaps helpful. For quite some time, it appeared 
-that Microsoft was simply going to have complete control of our 
-operating systems. This allowed them to assume that all programs 
-would be set up by a Windows install, which would configure the PATH 
-and ENVIRONMENT for you. Over the last three to five years, however, 
-that plan unraveled, and now most web development, at least, is done 
-with open source tools. These tools are not designed to be installed 
-with Windows Install programs. Instead, they are usually put on your 
-system by Git, NPM or downloaded as a zip file. To get them working 
-properly, you have to set up the ENVIRONMENT and PATH yourself. Or 
-at least you have to understand the PATH and ENVIRONMENT so you can 
-trouble shoot problems. The PATH and ENVIRONMENT variables are 
+Some history is perhaps helpful. For quite some time, it appeared
+that Microsoft was simply going to have complete control of our
+operating systems. This allowed them to assume that all programs
+would be set up by a Windows install, which would configure the PATH
+and ENVIRONMENT for you. Over the last three to five years, however,
+that plan unraveled, and now most web development, at least, is done
+with open source tools. These tools are not designed to be installed
+with Windows Install programs. Instead, they are usually put on your
+system by Git, NPM or downloaded as a zip file. To get them working
+properly, you have to set up the ENVIRONMENT and PATH yourself. Or
+at least you have to understand the PATH and ENVIRONMENT so you can
+trouble shoot problems. The PATH and ENVIRONMENT variables are
 available on all systems, Linux, Windows and Mac.
 
-We need to understand the PATH, and the ENVIRONMENT, to set up the 
-many tools that we use when creating Web applications based on Open 
-Source code. And at this point, most web applications are based on 
-Open Source code. As we start working with tools like Karma, Grunt 
-and RequireJs, a good understanding of the path will become doubly 
-important as we struggle to ensure that all our JavaScript source 
-files can be found by these tools. This usually involves GLOB 
-patterns, which can only be understood properly if you understand 
+We need to understand the PATH, and the ENVIRONMENT, to set up the
+many tools that we use when creating Web applications based on Open
+Source code. And at this point, most web applications are based on
+Open Source code. As we start working with tools like Karma, Grunt
+and RequireJs, a good understanding of the path will become doubly
+important as we struggle to ensure that all our JavaScript source
+files can be found by these tools. This usually involves GLOB
+patterns, which can only be understood properly if you understand
 how your PATH works.
 
-I like the current exercise (setting up your system to run Cordova 
-create), in part because it really makes you wrestle with your PATH 
-and ENVIRONMENT variables. Frankly, I want you in there struggling 
-with these things a bit until you start to really understand how the 
-system works. I don't want to automate the process for you. I want 
-you to understand enough so you can master the subject. This mastery 
-is necessary because the subject keeps coming up, over and over, in 
-various contexts, as we work with Open Source code that is designed 
-to run on multiple platforms, each of which require you to set up 
-your PATH and ENVIRONMENT. Also, these skills make you more 
-employable. Whether you do open source web development or not, 
-understanding the PATH and ENVIRONMENT are crucial skills for anyone 
-charged with setting up software, either as a developer, or an IT 
+I like the current exercise (setting up your system to run Cordova
+create), in part because it really makes you wrestle with your PATH
+and ENVIRONMENT variables. Frankly, I want you in there struggling
+with these things a bit until you start to really understand how the
+system works. I don't want to automate the process for you. I want
+you to understand enough so you can master the subject. This mastery
+is necessary because the subject keeps coming up, over and over, in
+various contexts, as we work with Open Source code that is designed
+to run on multiple platforms, each of which require you to set up
+your PATH and ENVIRONMENT. Also, these skills make you more
+employable. Whether you do open source web development or not,
+understanding the PATH and ENVIRONMENT are crucial skills for anyone
+charged with setting up software, either as a developer, or an IT
 worker.
 
 Setting your path on the MAC
@@ -112,7 +110,7 @@ Here are some particularly useful sections of the above link:
 Working with Buttons, Input Controls and jQuery
 -------------------------------
 
-- [Links are in Resources](http://elvenware.com/charlie/books/CloudNotes/Prog272/Resources.html#working-with-buttons-input-controls-and-jquery)
+- [Links are in Resources](/teach/prog272/Resources.html#working-with-buttons-input-controls-and-jquery)
 
 RequireJs and Bower
 -------------------
@@ -127,7 +125,7 @@ Bower
 First you need to install [Bower](http://bower.io/):
 
 	npm install -g bower
-	
+
 Now use it to install something:
 
 1. Create bower.json files
@@ -135,36 +133,37 @@ Now use it to install something:
 
 Here is a bower.json file for installing Jasmine 1.3.1.
 
-
+```json
 	{
 	  "name": "Jasmine02",
 	  "version": "0.1.0",
 	  "homepage": "https://github.com/charliecalvert/JsObjects",
 	  "authors": [
-		"Charlie CedarIsle Calvert <charlie@elvenware.com>"
+			"Charlie CedarIsle Calvert <charlie@example.com>"
 	  ],
 	  "description": "Jasmine example",
 	  "main": "SpecRunner.html",
 	  "keywords": [
-		"jasmine"
+			"jasmine"
 	  ],
 	  "license": "MIT",
 	  "private": true,
 	  "ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"    
+			"**/.*",
+			"node_modules",
+			"bower_components",
+			"test",
+			"tests"    
 	  ],
 	  "dependencies": {
-		"jasmine": "~1.3.1"
+			"jasmine": "~1.3.1"
 	  }
 	}
+```
 
 Links
 -----
 
--   <http://www.brucelawson.co.uk/2012/best-of-time/>
--   <http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/>
--   <http://git-scm.com/book>
+- <http://www.brucelawson.co.uk/2012/best-of-time/>
+- <http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/>
+- <http://git-scm.com/book>

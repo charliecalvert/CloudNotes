@@ -4,9 +4,9 @@
 - [React ESLint][rel]
 - [Enzyme Dive][ed]
 
-[ran]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAddress.html
+[ran]: /teach/assignments/react/ReactNativeAddress.html
 
-[rel]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html
+[rel]: /teach/assignments/react/ReactEsLint.html
 
 # Other
 
@@ -19,7 +19,7 @@
 
 Notes on Elvenware:
 
-- [getJSON](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#getJSON)
-- [Working with JSON](http://www.elvenware.com/charlie/development/web/JavaScript/JsonBasics.html#working)
+- [getJSON](/javascript-guide/JQueryBasic.html#getJSON)
+- [Working with JSON](/javascript-guide/JsonBasics.html#working)
 
 [ed]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/dive.html

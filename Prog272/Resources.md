@@ -9,7 +9,6 @@ Here I will list various resources for Prog 272.
 - [Elvenware Links](/tools/links.html)
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](/teach/tips/Books247.html)
-- [Bitly](http://bitly.com/u/charliecalvert)
 
 ## Important Assignments
 
@@ -152,7 +151,7 @@ And finally, the videos on Channel 9:
 
 And, of course, there is always something on Elvenware:
 
-- </tools/links.html#podcast>
+- [Links](/tools/links.html)
 
 <!--       -->
 <!-- links -->
@@ -165,7 +164,7 @@ And, of course, there is always something on Elvenware:
 [esfunc]: /teach/assignments/ecma-script/EcmaScriptFunctions.html
 [gist]: /teach/assignments/git/GetGist.html
 [jcrad]: http://bit.ly/jest-cra
-[mid]: http://www.ccalvert.net/books/CloudNotes/Prog272/Prog272Midterm2018.html
+[mid]: /teach/prog272/Prog272Midterm2018.html
 [nrb]: /teach/assignments/NodeRouteBasics.html
 [ramat]:/teach/assignments/react/ReactAddressMaterial.html
 [ramenu]: /teach/assignments/react/ReactAddressMenu.html

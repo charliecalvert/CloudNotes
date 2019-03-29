@@ -8,7 +8,7 @@ Unit Tests
 -   [Unit Testing](http://bit.ly/1dTjs8h)
 -   grunt Deploy in JasmineSpy
 -   PubSub Always
--   [Git Tagging](http://www.elvenware.com/charlie/development/cloud/Git.html#git-tag)
+-   [Git Tagging](/git-guide#git-tag)
 -   [Pub Sub01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/PubSubTopic01)
 -   [Pub Sub02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/PubSubTopic02)
 
@@ -40,7 +40,7 @@ Git
 
 -   Private Repos on BitBucket
 
--   <http://www.elvenware.com/charlie/development/cloud/Git.html>
+-   </git-guide>
 
 Node
 ----
@@ -97,7 +97,7 @@ Here was the old style QUnit code for your HTML file:
 Git
 ---
 
--   <http://www.elvenware.com/charlie/development/cloud/Git.html>
+-   </git-guide>
 
 Example Script
 ==============

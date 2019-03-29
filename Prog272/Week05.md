@@ -13,35 +13,34 @@ Main Goals
 Install Guest Additions in Linux
 --------------------------------
 
-This is not an assignment, but I suggest that you do install the 
+This is not an assignment, but I suggest that you do install the
 Guest Additions.
 
-If you set up the VirtualBox Guest Additions in Linux, you will find 
-that you have better control over your virtual machine. In 
-particular, you will find it easier to resize your desktop or make 
+If you set up the VirtualBox Guest Additions in Linux, you will find
+that you have better control over your virtual machine. In
+particular, you will find it easier to resize your desktop or make
 it full screen. You should also have better control over the mouse.
 
-- [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#guest)
+- [Details](/os-guide/linux/VirtualBox.html#guest)
 
 Share Clipboard Between Windows and Linux
 -----------------------------------------
 
-Again, this is not an assignment, but I suggest that you do set up 
-the clipboard so that you can copy text back and forth between 
+Again, this is not an assignment, but I suggest that you do set up
+the clipboard so that you can copy text back and forth between
 Windows and Linux.
 
-- [Details](http://elvenware.com/charlie/os/linux/VirtualBox.html#shareClipboard)
+- [Details](/os-guide/linux/VirtualBox.html#shareClipboard)
 
-Virtual Appliances
-------------------
+## Virtual Appliances
 
-There are three pages on Elvenware that focus on VirtualBox. To 
-learn about virtual appliances, read the first page listed here. It 
+There are three pages on Elvenware that focus on VirtualBox. To
+learn about virtual appliances, read the first page listed here. It
 is a good idea, however, to become familiar with all three pages:
 
--   <http://www.elvenware.com/charlie/development/cloud/virtualization.html>
--   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html>
--   <http://www.elvenware.com/charlie/development/android/Androidx86.shtml>
+- [Virtualization](/cloud-guide/virtualization.html)
+-   </os-guide/linux/VirtualBox.html>
+-   </android-guide/Androidx86.shtml>
 
 
 Get ReadOnly JsObjects
@@ -50,15 +49,15 @@ Get ReadOnly JsObjects
 Having a copy of JsObjects on your various machines can be useful, as it contains many helpful examples. For instance, when you create a new Virtual Machine, you probably want to have JsObjects installed on it. Here is a brief review of how you can, as necessary, install Git:
 
     sudo apt-get install git
-    
+
 Now navigate to place on your hard drive where you can clone JsObjects. On Linux, that would usually be a folder called Git or GitHub. Here is how to create the folder:
 
     mkdir ~/Git
-    
+
 Now navigate to that folder:
 
     cd ~/Git
-    
+
 And then clone my repo:
 
 	git clone git://github.com/charliecalvert/JsObjects.git
@@ -66,11 +65,11 @@ And then clone my repo:
 No HelloCordova Accepted
 ------------------------
 
-Whether you use create or cordova create, be sure to always pass in 
+Whether you use create or cordova create, be sure to always pass in
 the name of the project you are creating:
 
 	create C:\Temp\MyApp com.goober.myapp MyApp
-	
+
 or:
 
 	cordova create C:\Temp\MyApp MyApp
@@ -78,16 +77,16 @@ or:
 	cordova platform add ios android
 	cordova build
 
-Assuming you have the right tools and right setup, both work, and 
-both give you a project with a custom name, rather than a default 
-name of **HellowCordova**. I just won't accept projects named 
-**HelloCordova**, it puts the onus on me to do something in multiple 
+Assuming you have the right tools and right setup, both work, and
+both give you a project with a custom name, rather than a default
+name of **HellowCordova**. I just won't accept projects named
+**HelloCordova**, it puts the onus on me to do something in multiple
 steps that you should have done in one step.
 
-Bottom line: I understand that we are still in the early phases, and 
-it is hard to understand everything we need to do. But please don't 
-turn in projects called **HelloCordova**. After this, I just won't 
-grade any more projects with that name, and please rename any 
+Bottom line: I understand that we are still in the early phases, and
+it is hard to understand everything we need to do. But please don't
+turn in projects called **HelloCordova**. After this, I just won't
+grade any more projects with that name, and please rename any
 existing projects as per the instructions for the assignment.
 
 SSH
@@ -96,31 +95,31 @@ SSH
 You want to be sure that your copy of Linux has SSH installed. Here is the command to install SSH:
 
 	sudo apt-get install ssh
-	
+
 Here are two commands that create a pulic and private key for your Linux box, and save them in your .ssh folder:
 
-	ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa 
+	ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
-- [Git and SSH Key](http://www.elvenware.com/charlie/development/cloud/Git.html#the-ssh-key)
-- [SSH Connections](http://www.elvenware.com/charlie/development/cloud/SshFtpsPutty.html#sshKeys)
+- [Git and SSH Key](/git-guide#the-ssh-key)
+- [SSH Connections](/cloud-guide/SshFtpsPutty.html#sshKeys)
 
 Install MongoDb on Linux
 ---------------
 
-- [Details](http://www.elvenware.com/charlie/development/database/NoSql/MongoDb.html#install)
+- [Details](/database-guide/NoSql/MongoDb.html#install)
 
 Passing Parameters
 ------------------
 
 One tip I should share with everyone: You can pass in parameters to click functions.
 
-- [Details](http://elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#clickParam)
+- [Details](/javascript-guide/JQueryBasic.html#clickParam)
 
 Mocking Objects
 ---------------
 
-- [HttpBackEnd and Jasmine](http://www.elvenware.com/charlie/development/web/JavaScript/Angular.html#mocking-objects-with-httpbackend)
+- [HttpBackEnd and Jasmine](/javascript-guide/Angular.html#mocking-objects-with-httpbackend)
 
 
 In Class 01
@@ -133,9 +132,9 @@ We have three main HTML files that can be run:
 - Test.html - For unit testing
 
 Then we have 1 HTML file with the code used in index.html and Main.html.
-We call jQuery load to load that code into Main.html and index.html. 
+We call jQuery load to load that code into Main.html and index.html.
 Thus both programs have the same HTML, but different headers. Thus we
-can debug the code without having to worry about 
+can debug the code without having to worry about
 
 Code Academy
 ------------
@@ -147,11 +146,10 @@ Bring both HTML and JavaScript to 25%. Let's add in jQuery. Get it to
 Links
 -----
 
--   <http://www.elvenware.com/charlie/development/web/Mobile/>
--   <http://jquerymobile.com/blog/2013/01/14/announcing-jquery-mobile-1-3-0-beta/#download>
--   <http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html>
--   <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#objects>
--   <http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html#compareObjFunc>
+-   [Mobile Guide](/mobile-guide/)
+-   </javascript-guide/JavaScriptModules.html>
+-   </javascript-guide/JavaScriptBasics.html#objects>
+-   </javascript-guide/JavaScriptBasics.html#compareObjFunc>
 
 Day 2
 -----
@@ -159,20 +157,20 @@ Day 2
 Topics
 ------
 
--   [LogCat](http://www.elvenware.com/charlie/development/android/AndroidLogging.html)
+-   [LogCat](/android-guide/AndroidLogging.html)
 -   Fake jQuery Mobile
--   [jQuery Mobile](http://www.elvenware.com/charlie/development/web/Mobile/)
+-   [jQuery Mobile](/mobile-guide/)
 -   LocalFileSystem
 
 jQuery Attribute Selectors
 --------------------------
 
--   <http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#attrSelectors>
+-   </javascript-guide/JQueryBasic.html#attrSelectors>
 
 JSHint
 ------
 
--   <http://www.elvenware.com/charlie/development/android/Eclipse.shtml#jsHintExternal>
+-   </android-guide/Eclipse.shtml#jsHintExternal>
 
 JQuery Fake Source
 -------------------

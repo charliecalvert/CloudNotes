@@ -13,11 +13,11 @@ We will focus on
 
 You can find out about AWS here:
 
-<http://www.elvenware.com/charlie/development/cloud/WebServices.html>
+</cloud-guide/WebServices.html>
 
 Since we focus on EC2, the the following is the most important part for most of us:
 
-<http://www.elvenware.com/charlie/development/cloud/WebServices.html#ec2Install>
+</cloud-guide/WebServices.html#ec2Install>
 
 
 Day 02
@@ -38,8 +38,8 @@ Live Headers
     -   View | Sidebar | Live Http Headers
 
 
-[impa]: http://www.ccalvert.net/books/CloudNotes/Prog272/Resources.html#important-assignments
+[impa]: /teach/prog272/Resources.html#important-assignments
 
-[tssh]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html
+[tssh]: /teach/assignments/react/TestSnapShotsAndHints.html
 
-[cdm]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/CongressAddressServer.html#call-server
+[cdm]: /teach/assignments/react/CongressAddressServer.html#call-server

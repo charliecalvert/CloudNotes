@@ -42,10 +42,10 @@ Set the environment variable PORT to 30025:
 Argo Uml
 --------
 
--   <http://argouml.tigris.org/>
--   <http://sourceforge.net/apps/mediawiki/textuml/index.php?title=TextUML_Toolkit>
--   <http://sourceforge.net/apps/mediawiki/textuml/index.php?title=TextUML_Tutorial>
--   <http://modeling-languages.com/uml-tools-textual-notations-define-uml-models/>
+- <http://argouml.tigris.org/>
+- [Plant UML](https://github.com/pjkersten/PlantUML)
+- [Text UML](https://github.com/abstratt/textuml)
+- <http://modeling-languages.com/uml-tools-textual-notations-define-uml-models/>
 
 Agile
 -----

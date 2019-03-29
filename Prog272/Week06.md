@@ -6,7 +6,7 @@ toc
 
 This week we want to focus on:
 
-- [Modular Pattern](http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptModules.html)
+- [Modular Pattern](/javascript-guide/JavaScriptModules.html)
 - Express routes
 - Node Modules (require)
 - Markdown
@@ -74,11 +74,11 @@ going to cover them in this part of this course.
 MongoDb Notes
 ------------
 
-These are all on [Elvenware](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html)
+These are all on [Elvenware](/database-guide/NoSql/MongoDb.html)
 
-- [Stop, start and restart MongoDb](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#stopStart)
-- [MongoDb won't start](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#noStart)
-- [MongoDb Help on Elvenware](http://elvenware.com/charlie/development/database/NoSql/MongoDb.html#mongoHelp)
+- [Stop, start and restart MongoDb](/database-guide/NoSql/MongoDb.html#stopStart)
+- [MongoDb won't start](/database-guide/NoSql/MongoDb.html#noStart)
+- [MongoDb Help on Elvenware](/database-guide/NoSql/MongoDb.html#mongoHelp)
 
 Notes
 -----
@@ -131,7 +131,7 @@ We want to be sure to put:
 
 A few additional details are found here:
 
-- [Details](http://elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#seperateConcerns)
+- [Details](/html-guide/GettingStarted.html#seperateConcerns)
 
 ## More on ADB
 
@@ -147,7 +147,7 @@ on the device. That is like opening the commannd prompt on the
 device, but you can do it from the Windows command prompt. For more
 details, see here:
 
-- <http://www.elvenware.com/charlie/development/android/AndroidSdk.html#installAPK>
+- </android-guide/AndroidSdk.html#installAPK>
 
 
 Install Linux
@@ -156,7 +156,7 @@ Install Linux
 Just a reminder that there is some information here on installing Linux. 
 This is just an fyi, just information that you might find useful:
 
--   <http://www.elvenware.com/charlie/os/linux/VirtualBox.html#server1210Install>
+-   </os-guide/linux/VirtualBox.html#server1210Install>
 
 Links
 -----
