@@ -2,23 +2,65 @@
 
 
 function updateMarkdownForNewSiteSyntax() {
+
+## Classes
     sed -i 's|http://charliecalvert.github.io/books/CloudNotes/Isit322|/teach/isit322|g' $1
+    sed -i 's|http://www.ccalvert.net/books/CloudNotes/Prog272|/teach/prog272|g' $1
+    sed -i 's|http://elvenware.com/charlie/books/CloudNotes/Prog272|/teach/prog272|g' $1
     sed -i 's|http://elvenware.com/charlie/books/CloudNotes/Isit322|/teach/isit322|g' $1
+    
     sed -i 's|http://www.elvenware.com/charlie/development/android|/android-guide|g' $1
     sed -i 's|http://www.elvenware.com/charlie/Videos.html|/tools/Videos.html|g' $1
+    sed -i 's|http://elvenware.com/charlie/os/linux|/os-guide/linux|g' $1
     sed -i 's|http://www.elvenware.com/charlie/os/linux|/os-guide/linux|g' $1
-    sed -i 's|http://www.elvenware.com/charlie/development/cloud/Git.html|/git-guide|g' $1
+
+    sed -i 's|http://elvenware.com/charlie/development/web/Mobile|/mobile-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/web/Mobile|/mobile-guide|g' $1
+
+## Database
+    sed -i 's|http://elvenware.com/charlie/development/database|/database-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/database|/database-guide|g' $1
+
+## Assignments    
     sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments/React|/teach/assignments/react|g' $1
     sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments|/teach/assignments|g' $1
     sed -i 's|http://www.elvenware.com/charlie/books/CloudNotes/Assignments|/teach/assignments|g' $1
-    sed -i 's|http://www.ccalvert.net/development/web/JavaScript|/javascript-guide|g' $1
+
+## Cloud
+    sed -i 's|http://www.elvenware.com/charlie/development/cloud/Git.html|/git-guide|g' $1
+    sed -i 's|http://elvenware.com/charlie/development/cloud|/cloud-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/cloud|/cloud-guide|g' $1
+
+## Web    
+    sed -i 's|http://www.elvenware.com/charlie/development/web/CssGuide|/css-guide|g' $1
+    sed -i 's|http://elvenware.com/charlie/development/web/CssGuide|/css-guide|g' $1
+    sed -i 's|http://www.ccalvert.net/development/web/JavaScript|/javascript-guide|g' $1    
+    sed -i 's|http://elvenware.com/charlie/development/web/HtmlGuide|/html-guide|g' $1
     sed -i 's|http://www.elvenware.com/charlie/development/web/HtmlGuide|/html-guide|g' $1
     sed -i 's|http://elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $1
     sed -i 's|http://www.elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $1
+    sed -i 's|http://elvenware.com/charlie/development/web/UnitTests|/unit-tests-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/web/UnitTests|/unit-tests-guide|g' $1
     sed -i 's|\\charlie\\development\\web\\UnitTests\\|/unit-tests-guide/|g' $1
+
+    sed -i 's|/javascript-guide/Basics.html|/javascript-guide/JavaScriptBasics.html|g' $1
 }
 
+FILES=("Prog272Midterm2018.md" "Prog272Final2018.md" "Resources.md"
+    "Week01.md" "Week02.md" "Week03.md" "Week04.md"
+    "Week05.md" "Week06.md" "Week06a.md" "Week07.md"
+    "Week08.md" "Week09.md" "Week10.md" "Week11.md" "Week11-2015.md")
+
+for i in "${FILES[@]}"
+do
+   echo $i
+   updateMarkdownForNewSiteSyntax $i
+done
+    
 # updateMarkdownForNewSiteSyntax Prog272Midterm2018.md
 # updateMarkdownForNewSiteSyntax Prog272Final2018.md
 # updateMarkdownForNewSiteSyntax Week01.md
-updateMarkdownForNewSiteSyntax Week02.md
+# updateMarkdownForNewSiteSyntax Week02.md
+# updateMarkdownForNewSiteSyntax Week03.md
+# updateMarkdownForNewSiteSyntax Week04.md
+# updateMarkdownForNewSiteSyntax Week05.md
