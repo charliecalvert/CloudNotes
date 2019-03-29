@@ -1,4 +1,4 @@
-## Prog 272 Week 01, 2019
+G## Prog 272 Week 01, 2019
 
 Some notes to help us get started during Week01, spring, 2019.
 
@@ -38,7 +38,7 @@ book. You should however, become familiar with the material it covers.
 
 Here are some [key links][react-links] that introduce react and tools we are using.
 
-[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
+[react-links]: /javascript-guide/JavaScriptReact.html#react-links
 
 React Basics Slides:
 
@@ -61,9 +61,8 @@ Notes on installing WebStorm:
 
 [why-clean-code]: http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel
 [crockford]: http://javascript.crockford.com/javascript.html
-[webstorm-install]: http://www.ccalvert.net/books/CloudNotes/Assignments/WebStormInstall.html
+[webstorm-install]: /teach/assignments/WebStormInstall.html
 [plu]: http://bit.ly/plubuntu-2018-04-03
-[pvba]: http://www.ccalvert.net/books/CloudNotes/Assignments/PristineVirtualBox.html
-[git-old]: http://www.elvenware.com/charlie/development/cloud/Git.html
-[git]: http://www.elvenware.com/charlie/development/git/
+[pvba]: /teach/assignments/PristineVirtualBox.html
+[git]: /git-guide
 [pro-js]: /javascript-guide/GettingStarted.html#books247

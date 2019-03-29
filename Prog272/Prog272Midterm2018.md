@@ -54,4 +54,4 @@ git push origin v7.0.2
 
 Details are [here][trn].
 
-[trn]: http://www.ccalvert.net/development/web/JavaScript/JavaScriptReactNative.html
+[trn]: /javascript-guide/JavaScriptReactNative.html

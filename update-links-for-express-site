@@ -1,0 +1,24 @@
+#! /usr/bin/env bash
+
+
+function updateMarkdownForNewSiteSyntax() {
+    sed -i 's|http://charliecalvert.github.io/books/CloudNotes/Isit322|/teach/isit322|g' $1
+    sed -i 's|http://elvenware.com/charlie/books/CloudNotes/Isit322|/teach/isit322|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/android|/android-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/Videos.html|/tools/Videos.html|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/os/linux|/os-guide/linux|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/cloud/Git.html|/git-guide|g' $1
+    sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments/React|/teach/assignments/react|g' $1
+    sed -i 's|http://www.ccalvert.net/books/CloudNotes/Assignments|/teach/assignments|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/books/CloudNotes/Assignments|/teach/assignments|g' $1
+    sed -i 's|http://www.ccalvert.net/development/web/JavaScript|/javascript-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/web/HtmlGuide|/html-guide|g' $1
+    sed -i 's|http://elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $1
+    sed -i 's|http://www.elvenware.com/charlie/development/web/JavaScript|/javascript-guide|g' $1
+    sed -i 's|\\charlie\\development\\web\\UnitTests\\|/unit-tests-guide/|g' $1
+}
+
+# updateMarkdownForNewSiteSyntax Prog272Midterm2018.md
+# updateMarkdownForNewSiteSyntax Prog272Final2018.md
+# updateMarkdownForNewSiteSyntax Week01.md
+updateMarkdownForNewSiteSyntax Week02.md

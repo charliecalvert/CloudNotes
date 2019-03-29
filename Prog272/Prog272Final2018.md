@@ -107,4 +107,4 @@ This means that if you turn in a final that does anything like what I want, the 
 
 Read about the PouchDb, IndexedDB and CouchDB [Data Cycle][pdbd].
 
-[pdbd]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressEditDialog.html#data-cycle
+[pdbd]: /teach/assignments/react/ReactAddressEditDialog.html#data-cycle

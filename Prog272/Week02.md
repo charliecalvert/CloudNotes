@@ -18,7 +18,7 @@ We might also discuss, as needed:
 
 1.  [Privacy](http://bit.ly/1ak3jVM)
 2.  Before we can use it, I need to update this:
-  - [In Class Exercise](../Assignments/Prog270-011414.html)
+  - [In Class Exercise](/teach/assignments/Prog270-011414.html)
 
 The list above is long, perhaps too long. To sum up, the emphasis is on JavaScript basics, unit testing, and Git. These will be our core "tools."
 
@@ -48,9 +48,9 @@ The funny letters after each name are the Bitly URLS. If you need to manually re
 
 And these documents:
 
--   [HTML](http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html)
--   [JavaScript](http://www.elvenware.com/charlie/development/web/JavaScript/Basics.html)
--   [Eclipse](http://www.elvenware.com/charlie/development/android/Eclipse.shtml)
+-   [HTML](/html-guide/GettingStarted.html)
+-   [JavaScript](/javascript-guide/JavaScriptBasics.html)
+-   [Eclipse](/android-guide/Eclipse.shtml)
 
 **NOTE**:* You will have to be patient with the documents you find on Elvenware.
 Someday they will mature, but for now, they are a work in progress. Don't expect
@@ -94,7 +94,7 @@ We are not using Git GUI anymore. I have another tool called Git Cola. I'll upda
 
 - [Use the Git Gui][git-gui-basics]
 
-[git-gui-basics]: http://www.elvenware.com/charlie/development/cloud/Git.html#git-gui-basics
+[git-gui-basics]: /git-guide#git-gui-basics
 
 Do a pull with GitGui:
 
@@ -117,9 +117,9 @@ Douglas Crockford on JavaScript and other subjects:
 Unit Tests
 ----------
 
-- [TestAjax.html](\charlie\development\web\UnitTests\TestAjax.html)
+- [TestAjax.html](/unit-tests-guide/TestAjax.html)
 
-```
+```javascript
 describe("An Elvenware Suite of Specs", function() {
   it("shows true = true", function() {
     expect(true).toBe(true);
@@ -186,7 +186,7 @@ though our code is fully HTML 5 compliant. To stop this:
 ## Links
 
 - [HTML5 New Tags][html5-new-tags]
-- <http://www.elvenware.com/charlie/development/web/HtmlGuide/GettingStarted.html#mso9>
+- </html-guide/GettingStarted.html#mso9>
 - We are not using jQuery much, but [Elvenware jquery-basic][elf-jq-basic]
 
 ## Tips
@@ -202,6 +202,6 @@ We won't be using jQuery very much, but if we did, here is a way to link it into
 ```
 
 
-[git-elf]: http://www.elvenware.com/charlie/development/cloud/Git.html
+[git-elf]: /git-guide
 [html5-new-tags]: http://www.techrepublic.com/blog/10things/10-new-html5-tags-you-need-to-know-about/3219?tag=content;siu-container
-[elf-jq-basic]: http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html
+[elf-jq-basic]: /javascript-guide/JQueryBasic.html
