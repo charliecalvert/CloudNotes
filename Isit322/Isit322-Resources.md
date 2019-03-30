@@ -21,14 +21,17 @@ with events and topics covered in our class.
 - [React Basics](http://bit.ly/react-basics)
 - [React Just Create App](http://bit.ly/jest-cra)
 
-## Assignments
+## Code Academy Assignments
 
-These assignments are not at all final. It is more like a random mix of assignments that I have given in my courses in the past. I will updated this soon.
+React Code Academy:
 
-- [ReactCodeAcademoy Part 01][car01]
-- [ReactCodeAcademoy Part 02][car02]
-- [ReactCodeAcademoy Part 03][car03]
-- [ReactCodeAcademoy Part 04][car04]
+- [React Code Academy Part 01][car01]
+- [React Code Academy Part 02][car02]
+- [React Code Academy Part 03][car03]
+- [React Code Academy Part 04][car04]
+
+Vanilla Code Academy:
+
 - [Code Academy Part 01][cajh01]
 - [Code Academy Part 02][cajh02]
 - [Code Academy Part 03][cajh03]
@@ -36,6 +39,11 @@ These assignments are not at all final. It is more like a random mix of assignme
 - [Code Academy Part 05][cajh05]
 - [Code Academy Part 06][cajh06]
 - [Code Academy Part 07][cajh07]
+
+## Assignments
+
+These assignments are not at all final. It is more like a random mix of assignments that I have given in my courses in the past. I will updated this soon.
+
 - [Git New Repo](/teach/assignments/GitNewRepo.html)
 - [Pristine VirtualBox](/teach/assignments/PristineVirtualBox.html)
 - [Jest Create React App](/teach/assignments/react/JestCreateReactApp.html)
