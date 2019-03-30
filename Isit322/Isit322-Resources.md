@@ -1,4 +1,6 @@
-# ISIT 322 Resources for 2016
+## Overview
+
+ISIT 322 Resources for 2019
 
 Here are number of links that you can use to help stay up to date
 with events and topics covered in our class.
@@ -13,7 +15,7 @@ with events and topics covered in our class.
 - [Elvenware Links](/tools/links.html)
 - [OS](/os-guide)
 - [Linux](/os-guide/linux/)
-- [Web](http://www.elvenware.com/charlie/development/web/index.html)
+- [Web](/web-guide)
 - [Google-Elvenware](https://sites.google.com/site/elvenware/)
 
 ## Slide Decks
@@ -22,6 +24,8 @@ with events and topics covered in our class.
 - [React Just Create App](http://bit.ly/jest-cra)
 
 ## Code Academy Assignments
+
+Generally, I provide a link from Canvas to this section of the document. Use the title of the Canvas assignment to find the right link in the list below. For instance, the Canvas Assignment title **React Code Academy Two Part I** suggests you should use the link below labeled **React Code Academy Two Part 01**. If in doubt, ask a question in the discussion area.
 
 Vanilla Code Academy:
 
