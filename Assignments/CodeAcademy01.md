@@ -21,14 +21,11 @@ If you have already completed an older version of the course, I will accept that
 
 We'll keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
 
-	Part 1:  15%
-	Part 2:  30%
-	Part 3:  45%
-	Part 4:  60%
-	Part 5:  75%
-	Part 6:  90%
-	Part 7: 100%
-
+	Part 1:  25%
+	Part 2:  50%
+	Part 3:  75%
+	Part 4:  100%
+	
 If you have already completed these skills, then just turn in the assignment pointing me toward the page showing that you have completed the skill, and you will get credit. If you have completed the course, you can turn in all the assignments right now. Otherwise, turn them in as you complete them. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
 
 ## Turn it in

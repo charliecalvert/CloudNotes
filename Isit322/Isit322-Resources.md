@@ -23,22 +23,27 @@ with events and topics covered in our class.
 
 ## Code Academy Assignments
 
-React Code Academy:
-
-- [React Code Academy Part 01][car01]
-- [React Code Academy Part 02][car02]
-- [React Code Academy Part 03][car03]
-- [React Code Academy Part 04][car04]
-
 Vanilla Code Academy:
 
 - [Code Academy Part 01][cajh01]
 - [Code Academy Part 02][cajh02]
 - [Code Academy Part 03][cajh03]
 - [Code Academy Part 04][cajh04]
-- [Code Academy Part 05][cajh05]
-- [Code Academy Part 06][cajh06]
-- [Code Academy Part 07][cajh07]
+
+React Code Academy Part I:
+
+- [React Code Academy One: Part 01][car01]
+- [React Code Academy One: Part 02][car02]
+- [React Code Academy One: Part 03][car03]
+- [React Code Academy One: Part 04][car04]
+
+React Code Academy Part II
+
+- [React Code Academy Two Part 01][car201]
+- [React Code Academy Two Part 02][car202]
+- [React Code Academy Two Part 03][car203]
+- [React Code Academy Two Part 04][car204]
+
 
 ## Assignments
 
@@ -115,6 +120,12 @@ The overviews are usually not current until the actual week that they cover. In 
 [car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
 [car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
 [car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
+
+[car201]: /teach/assignments/code-academy/CodeAcademyReactPartTwo01.html
+[car202]: /teach/assignments/code-academy/CodeAcademyReactPartTwo02.html
+[car203]: /teach/assignments/code-academy/CodeAcademyReactPartTwo03.html
+[car204]: /teach/assignments/code-academy/CodeAcademyReactPartTwo04.html
+
 
 [cajh01]: /teach/assignments/CodeAcademy01.html
 [cajh02]: /teach/assignments/CodeAcademy02.html

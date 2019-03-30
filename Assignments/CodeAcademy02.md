@@ -1,6 +1,6 @@
 # Code Academy Part II
 
-Bring the JavaScript and HTML courses to at least 30%.
+Bring the JavaScript and HTML courses to at least 50%.
 
 - [Learn JavaScript][ljs]
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
