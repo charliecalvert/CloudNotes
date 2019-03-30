@@ -1,8 +1,12 @@
 # Week09
 
-Welcomes to the combined version of [JadeMarkdownExpress](JadeMarkdownExpress.html) and [MarkdownExpressInClass](MarkdownExpressInClass.html) and [ElvenIndexedDb](ElvenIndexedDb.html).
+Welcomes to the combined version of [JadeMarkdownExpress][jmdexp] and [MarkdownExpressInClass][mdexpic] and [ElvenIndexedDb][eidb].
 
 Creating>a Domain Name
+
+[jmdexp]: /teach/assignments/express/JadeMarkdownExpress.html
+[mdexpic]: /teach/assignments/express/MarkdownExpressInClass.html
+[eidb]: /teach/assignments/express/ElvenIndexedDb.html
 
 # IndexedDb
 

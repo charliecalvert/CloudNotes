@@ -10,36 +10,56 @@ Here I will list various resources for Prog 272.
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](/teach/tips/Books247.html)
 
-## Important Assignments
+## Assignment Groups
+
+- [Express Assignments][ea]
+
+## Node Routes Examples
+
+- [NodeRoutes01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01)
+- [NodeRoutes02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02)
+- [NodeRoutes03](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes03)
+- [NodeRoutesReact01](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesReact01)
+- [NodeRoutesReact02](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesReact02)
+- [NodeRoutesReact03](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesReact03)
+- [NodeRoutesAngular](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesAngular)
+- [NodeRoutesQuery](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesQuery)
+- [NodeRoutesPage](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesPage)
+- [NodeRoutesParams](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesParams)
+
+## Useful Assignments
 
 - [AWS EC2 Get Started][aws]
 - [Get Gist][gist]
 - [EcmaScriptFunctions][esfunc]
 - [ExpressBasics][eb]
+- [systemd][sysd]
+-
+## Testing Assignments
+
 - [Unit Tests with Jest Web Page (JestCreateReactApp)][utwj]
 - [Unit Tests with Jest Deck (JestCreateReactApp)][jcrad]
 - [Unit Tests Address][uta]
+- [Node Route Basics][nrb]
+
+## Test Related
+
+- [Test Snap Shots and Hints][tssh]
+- [React Address Testing DataManager][ratdm]
+
+## React Assignments
+
 - [Address Components][adc]
 - [React Prop Basics][rpb]
 - [React Props ESLint][rpel]
 - [React Address Show][ras]
-- [Node Route Basics][nrb]
 - [React Address Native][ran]
 - [React ESLint][rel]
 - [React Address Menu][ramenu]
 - [React Address Material][ramat]
 - [React Get Address][rga]
 - [Congress Address Server][cas]
-- [systemd][sysd]
-- [Midterm][mid]
 
-## Test Related
-
-- [Unit Tests with Jest Web Page (JestCreateReactApp)][utwj]
-- [Unit Tests with Jest Deck (JestCreateReactApp)][jcrad]
-- [Unit Tests Address][uta]
-- [Test Snap Shots and Hints][tssh]
-- [React Address Testing DataManager][ratdm]
 
 ## Older Assignments
 
@@ -160,6 +180,7 @@ And, of course, there is always something on Elvenware:
 [adc]: /teach/assignments/react/AddressComponent.html
 [aws]: /teach/assignments/Ec2GetStarted.html
 [cas]: /teach/assignments/react/CongressAddressServer.html
+[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html#overview
 [eb]: /teach/assignments/ExpressBasics.html
 [esfunc]: /teach/assignments/ecma-script/EcmaScriptFunctions.html
 [gist]: /teach/assignments/git/GetGist.html

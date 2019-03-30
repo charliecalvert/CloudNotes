@@ -2,7 +2,9 @@ There are two sections to this document. One informative, the second a project f
 
 # IndexedDb
 
-This database is built into most modern browsers. We can access it from Git.
+[IndexedDb](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) is part of the JavaScript standard. As a result, this database is built into most modern browsers. We can access it from Git.
+
+It is a complicated API, and there are simpler alternatives. See the link above for details and suggestions. I have used [PouchDb](https://github.com/pouchdb/pouchdb) and found it very useful. Apparently [localForage](https://github.com/localForage/localForage) is also popular.
 
 ## Open the Database
 
@@ -255,7 +257,7 @@ Remember, this code is likely to change!
 
 This project is designed to help you learn about **indexedDB**.
 
-##Goals
+## Goals
 
 We want to:
 

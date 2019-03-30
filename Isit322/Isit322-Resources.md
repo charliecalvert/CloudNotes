@@ -72,30 +72,16 @@ These assignments are not at all final. It is more like a random mix of assignme
 - [MongoLab Basics](/teach/assignments/MongoLabBasics.html)
 - [Mongoose Sign In](/teach/assignments/MongooseSignIn.html)
 
-[car01]: /teach/assignments/code-academy/CodeAcademyReact01.html
-[car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
-[car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
-[car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
+## Assignment Groups
 
-[cajh01]: /teach/assignments/CodeAcademy01.html
-[cajh02]: /teach/assignments/CodeAcademy02.html
-[cajh03]: /teach/assignments/CodeAcademy03.html
-[cajh04]: /teach/assignments/CodeAcademy04.html
-[cajh05]: /teach/assignments/CodeAcademy05.html
-[cajh06]: /teach/assignments/CodeAcademy06.html
-[cajh07]: /teach/assignments/CodeAcademy07.html
-
-[rutests]: /teach/assignments/react/RestTests.html
+- [Express Assignments][ea]
 
 ## React
 
 Here are some [key links][react-links].
 
-[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
-
 - [ReactBooks][reactghbook]
 
-[reactghbook]: https://github.com/vhf/free-programming-books/blob/master/javascript-frameworks-resources.md
 
 ## Weekly Overviews
 
@@ -112,3 +98,27 @@ The overviews are usually not current until the actual week that they cover. In 
 - [Week09](/teach/isit322/Isit322-Week09.html)
 - [Week10](/teach/isit322/Isit322-Week10.html)
 - [Week11](/teach/isit322/Isit322-Week11.html)
+
+<!--       -->
+<!-- Links -->
+<!--       -->
+
+[car01]: /teach/assignments/code-academy/CodeAcademyReact01.html
+[car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
+[car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
+[car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
+
+[cajh01]: /teach/assignments/CodeAcademy01.html
+[cajh02]: /teach/assignments/CodeAcademy02.html
+[cajh03]: /teach/assignments/CodeAcademy03.html
+[cajh04]: /teach/assignments/CodeAcademy04.html
+[cajh05]: /teach/assignments/CodeAcademy05.html
+[cajh06]: /teach/assignments/CodeAcademy06.html
+[cajh07]: /teach/assignments/CodeAcademy07.html
+
+[rutests]: /teach/assignments/react/RestTests.html
+
+[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
+[reactghbook]: https://github.com/vhf/free-programming-books/blob/master/javascript-frameworks-resources.md
+
+[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html#overview
