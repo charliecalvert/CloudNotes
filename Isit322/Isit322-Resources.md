@@ -25,28 +25,28 @@ with events and topics covered in our class.
 
 ## Code Academy Assignments
 
-Generally, I provide a link from Canvas to this section of the document. Use the title of the Canvas assignment to find the right link in the list below. For instance, the Canvas Assignment title **React Code Academy Two Part I** suggests you should use the link below labeled **React Code Academy Two Part 01**. If in doubt, ask a question in the discussion area.
+Generally, I provide a link from Canvas to this section of the document. Use the title of the Canvas assignment to find the right link in the list below. For instance, it should be easy to see that the Canvas Assignment with the title **React Code Academy Two Part I** is associated with link below labeled **React Code Academy Two Part 1**. If in doubt, ask a question in the discussion area.
 
 Vanilla Code Academy:
 
-- [Code Academy Part 01][cajh01]
-- [Code Academy Part 02][cajh02]
-- [Code Academy Part 03][cajh03]
-- [Code Academy Part 04][cajh04]
+- [Code Academy Part 1][cajh01]
+- [Code Academy Part 2][cajh02]
+- [Code Academy Part 3][cajh03]
+- [Code Academy Part 4][cajh04]
 
 React Code Academy Part I:
 
-- [React Code Academy One: Part 01][car01]
-- [React Code Academy One: Part 02][car02]
-- [React Code Academy One: Part 03][car03]
-- [React Code Academy One: Part 04][car04]
+- [React Code Academy One: Part 1][car01]
+- [React Code Academy One: Part 2][car02]
+- [React Code Academy One: Part 3][car03]
+- [React Code Academy One: Part 4][car04]
 
 React Code Academy Part II
 
-- [React Code Academy Two Part 01][car201]
-- [React Code Academy Two Part 02][car202]
-- [React Code Academy Two Part 03][car203]
-- [React Code Academy Two Part 04][car204]
+- [React Code Academy Two Part 1][car201]
+- [React Code Academy Two Part 2][car202]
+- [React Code Academy Two Part 3][car203]
+- [React Code Academy Two Part 4][car204]
 
 
 ## Assignments
