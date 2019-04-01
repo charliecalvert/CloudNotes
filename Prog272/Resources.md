@@ -13,6 +13,7 @@ Here I will list various resources for Prog 272.
 ## Assignment Groups
 
 - [Express Assignments][ea]
+- [Code Academy Assignments][caa]
 
 ## Node Routes Examples
 
@@ -179,8 +180,9 @@ And, of course, there is always something on Elvenware:
 
 [adc]: /teach/assignments/react/AddressComponent.html
 [aws]: /teach/assignments/Ec2GetStarted.html
+[caa]: /teach/assignments/code-academy/
 [cas]: /teach/assignments/react/CongressAddressServer.html
-[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html#overview
+[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html
 [eb]: /teach/assignments/ExpressBasics.html
 [esfunc]: /teach/assignments/ecma-script/EcmaScriptFunctions.html
 [gist]: /teach/assignments/git/GetGist.html

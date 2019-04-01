@@ -46,10 +46,12 @@ function updateMarkdownForNewSiteSyntax() {
     sed -i 's|/javascript-guide/Basics.html|/javascript-guide/JavaScriptBasics.html|g' $1
 }
 
-FILES=("Prog272Midterm2018.md" "Prog272Final2018.md" "Resources.md"
+FILES_A=("Prog272Midterm2018.md" "Prog272Final2018.md" "Resources.md"
     "Week01.md" "Week02.md" "Week03.md" "Week04.md"
     "Week05.md" "Week06.md" "Week06a.md" "Week07.md"
     "Week08.md" "Week09.md" "Week10.md" "Week11.md" "Week11-2015.md")
+
+FILES_B=("VirtualBox.md")
 
 for i in "${FILES[@]}"
 do
@@ -64,3 +66,4 @@ done
 # updateMarkdownForNewSiteSyntax Week03.md
 # updateMarkdownForNewSiteSyntax Week04.md
 # updateMarkdownForNewSiteSyntax Week05.md
+# updateMarkdownForNewSiteSyntax VirtualBox.md
