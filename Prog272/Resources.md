@@ -14,6 +14,14 @@ Here I will list various resources for Prog 272.
 
 - [Express Assignments][ea]
 - [Code Academy Assignments][caa]
+- [2019 Specific](#p272-2019)
+
+## Prog 272 2019 Specific {#p272-2019)
+
+- [VirtualBox](/teach/assignments/PristineVirtualBox.html)
+- [GitNewRepo](/teach/assignments/GitNewRepo.html)
+- [CloudNine Intro](/teach/assignments/Cloud9Intro.html)
+- [Express Basics](/teach/assignments/ExpressBasics.html)
 
 ## Node Routes Examples
 
@@ -35,7 +43,7 @@ Here I will list various resources for Prog 272.
 - [EcmaScriptFunctions][esfunc]
 - [ExpressBasics][eb]
 - [systemd][sysd]
--
+
 ## Testing Assignments
 
 - [Unit Tests with Jest Web Page (JestCreateReactApp)][utwj]

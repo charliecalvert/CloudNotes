@@ -46,7 +46,7 @@ cd Week03-ExpressBasics
 npm install
 ```
 
-The last command, **npm install**, is extremely important. It processes the libraries that are specified in the **dependencies** and **devdependencies** sections of **package.json** and puts the compiled output in a folder called **node_modules**. There will be more on this subject [in other sections of this course](https://www.elvenware.com/javascript-guide/NodeJs.html#npm-install-notes).
+The last command, **npm install**, is extremely important. It processes the libraries that are specified in the **dependencies** and **devdependencies** sections of **package.json** and puts the compiled output in a folder called **node_modules**. There will be more on this subject [in other sections of this course](/javascript-guide/NodeJs.html#npm-install-notes).
 
 Load the project in WebStorm. Open up **/bin/www** and set the port 30025\. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**. I'k intentionally being a big vague here as I want you to study **package.json** in at least enough depth to discover the **start** property and see how to replace the word **node** with **nodemon**. If you find that process baffling then you need to spend time reviewing JavaScript basics. (JSON is a subset of JavaScript.)
 

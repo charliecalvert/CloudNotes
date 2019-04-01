@@ -53,7 +53,9 @@ FILES_A=("Prog272Midterm2018.md" "Prog272Final2018.md" "Resources.md"
 
 FILES_B=("VirtualBox.md")
 
-for i in "${FILES[@]}"
+FILES_C=("Cloud9Intro.md")
+
+for i in "${FILES_C[@]}"
 do
    echo $i
    updateMarkdownForNewSiteSyntax $i

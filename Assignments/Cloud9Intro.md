@@ -105,11 +105,11 @@ The primary purpose of Cloud 9 is to allow us to edit our web pages in the cloud
 <!-- Links in this document -->
 <!---------------------------->
 
-[ac9]: CloudNine/CloudNineAdvanced.html
+[ac9]: /teach/assignments/cloud-nine/CloudNineAdvanced.html
 
-[edl]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestBasics.html#cloud-9-client
+[edl]: /teach/assignments/react/RestBasics.html#cloud-9-client
 
-[gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
+[gnr]: /teach/assignments/GitNewRepo.html
 
 [c9login]: https://c9.io/login
 [cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
