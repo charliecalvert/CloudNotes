@@ -182,7 +182,7 @@ And, of course, there is always something on Elvenware:
 [aws]: /teach/assignments/Ec2GetStarted.html
 [caa]: /teach/assignments/code-academy/
 [cas]: /teach/assignments/react/CongressAddressServer.html
-[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html
+[ea]: /teach/assignments/express/ExpressAssignments.html
 [eb]: /teach/assignments/ExpressBasics.html
 [esfunc]: /teach/assignments/ecma-script/EcmaScriptFunctions.html
 [gist]: /teach/assignments/git/GetGist.html
