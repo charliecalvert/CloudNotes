@@ -40,7 +40,12 @@ VirtualBox should be installed on all the machines in N252. Nevertheless, before
 
 Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance). The link below requires a bit of patience. Select it, and determinedly click through the options until the download begins. Once this big 3 GB OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
 
-- [Current Pristine Lubuntu](http://bit.ly/pristine-lubuntu-2018-09)
+- Pristine Lubuntu 2019-03: [http://bit.ly/plu-2019-03][plu1903]
+  - Our default, preferred version
+  - Based on Lubuntu 18.10
+- Pristine Lubuntu 2018-09: [http://bit.ly/pristine-lubuntu-2018-09][plu1809]
+  - Based on Lubuntu 18.04
+- Pristine Lubuntu 2018-04: [http://bit.ly/plubuntu-2018-04-03][plu1804]
 
 The file you download should have an OVA extension.
 
@@ -168,3 +173,11 @@ To see the memory:
 Throughout the day, you may want to monitor your memory usage with any of the following commands:
 
 - free -h
+
+<!--       -->
+<!-- links -->
+<!--       -->
+
+[plu1804]: http://bit.ly/plubuntu-2018-04-03
+[plu1809]: http://bit.ly/pristine-lubuntu-2018-09
+[plu1903]: http://bit.ly/plu-2019-03

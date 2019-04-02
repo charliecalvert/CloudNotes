@@ -8,12 +8,18 @@ Here are some [key links][react-links].
 
 [react-links]: /javascript-guide/JavaScriptReact.html#react-links
 
+## Assignments
+
+- [GitNewRepo](/teach/assignments/GitNewRepo.html)
+- [Pristine VirtualBox](#virtualbox)
+
 ## VirtualBox
 
-- The Pristine Lubuntu OVA: [http://bit.ly/plubuntu-2018-04-03][plu]
+
 - Introductions
 - [VirtualBox Deck](http://bit.ly/1at2JZ2)
 - [Pristine VirtualBox Assignment](/teach/assignments/PristineVirtualBox.html)
+- [Download Pristine Lubuntu](/teach/assignments/PristineVirtualBox.html#install-pristine-lubuntu)
 - [Git][git]
 
 ## Syllabus
@@ -68,7 +74,10 @@ I have videos on various topics, including git, unit tests and mobile devices. T
 - [JavaScript Part II](http://bit.ly/JavaScriptPartII)
 - [VirtualBox](http://bit.ly/1at2JZ2)
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [elf-playlist]: /tools/Videos.html#playlists
 [configure-linux]: /os-guide/linux/ConfigureLinux.html
-[plu]: http://bit.ly/plubuntu-2018-04-03
 [git]: /git-guide
