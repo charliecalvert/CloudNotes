@@ -22,6 +22,7 @@ Here I will list various resources for Prog 272.
 - [GitNewRepo](/teach/assignments/GitNewRepo.html)
 - [CloudNine Intro](/teach/assignments/Cloud9Intro.html)
 - [Express Basics](/teach/assignments/ExpressBasics.html)
+- [JavaScript ES6 Functions and Babel](/teach/assignments/ecma-script/EcmaScriptFunctions.html)
 
 ## Node Routes Examples
 
