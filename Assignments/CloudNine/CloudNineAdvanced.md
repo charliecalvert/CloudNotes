@@ -406,7 +406,7 @@ The NodeJs repository is [here](https://github.com/nodejs/node).
 
 [gnr]: https://www.elvenware.com/teach/assignments/GitNewRepo.html
 
-[c9login]: https://c9.io/login
+[c9login]: https://c9.io/signin.html
 [cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
 [cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
 [jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md

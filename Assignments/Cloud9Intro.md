@@ -20,7 +20,7 @@ You will also have to hit the gear icon a second time in Cloud9, go to the Cloud
 
 If you have not done so already,
 
-- In Cloud 9 hit the Plus icon next to the **Bellevue College Dev Team Option** found on the [c9 home page](https://c9.io).
+- In Cloud 9 hit the Plus icon next to the **Bellevue College Dev Team Option** found on the [c9 home page][c9login].
 
 Create
   - new NodeJs private workspace
@@ -111,7 +111,7 @@ The primary purpose of Cloud 9 is to allow us to edit our web pages in the cloud
 
 [gnr]: /teach/assignments/GitNewRepo.html
 
-[c9login]: https://c9.io/login
+[c9login]: https://c9.io/signin.html
 [cloud9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9Intro01.png
 [cloud9Small]: https://s3.amazonaws.com/bucket01.elvenware.com/images/Cloud9IntroSmall01.png
 [jsobjects]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
