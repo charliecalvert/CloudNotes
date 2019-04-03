@@ -2,6 +2,10 @@
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.
 
+## Automate
+
+The [GetGist][gg] script automates key portions of the ESLint and Prettier installation. If you already understand ESLint and Prettier, and just want to get things set up, use the script. If the whole subject is new to you, then please read and work through this document to get an understanding of what the script does for you.
+
 ## Video
 
 This 15 minute video covers some of the same material discussed in this assignment. Most of what you need to know is in the first 5 to 8 minutes of the video:
@@ -105,11 +109,11 @@ That means I'm running the NPM install of **eslint**, not the yarn install of **
 
 ## RC File
 
-And here is at least a starter **.eslintrc** file:
+My **.eslintrc** file is maintained here:
 
 - [Charlie's ESLint Gist][ceslg]
 
-To get the gist, or other related files discussed in this assignment, try running my script called [get-gist][gg].
+This is the same file discussed in the [Get Gist][gg] assignment. Take the time to become familiar with the file and the syntax found in the **.eslintrc** file.
 
 ## Arrow Functions
 
@@ -202,8 +206,6 @@ My current thinking is that we should use EsLint, and EsLint only, to lint our R
 ## Turn it in
 
 Just point me at your midterm, final, or current project. When I open it, I'll expect to see a **.eslintrc.json** file and have most of the files relatively error free in terms of eslint errors.
-
-[ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 
 ## Prettier
 
@@ -298,8 +300,9 @@ Alternatively, you could do this:
 find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle.js' -not -path '**/registerServiceWorker.js' -print0 | xargs -0 js-beautify -r
 ```
 
-[gg]: http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GetGist.html
+[ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [epv]: https://youtu.be/bsxBHLxYMrA
+[gg]: /teach/assignments/GetGist.html
 [jsbea]: https://github.com/beautify-web/js-beautify
 [fnpp]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/FindScripts/FindNpPrettier
 [csl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CreateSymbolicLinks

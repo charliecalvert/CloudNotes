@@ -12,6 +12,9 @@ Here are some [key links][react-links].
 
 - [GitNewRepo](/teach/assignments/GitNewRepo.html)
 - [Pristine VirtualBox](#virtualbox)
+- [React Basics](/teach/assignments/react/ReactBasics.html)
+- [React ESLint](/teach/assignments/react/ReactEsLint.html)
+- 
 
 ## VirtualBox
 
