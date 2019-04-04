@@ -1,6 +1,6 @@
 ## Overview
 
-The goal of this assignment is to install Lubuntu on VirtualBox from a custom OVA appliance. Inside the OVA file is a compressed instance of the Linux Lubuntu distribution that I installed on my machine.
+The goal of this assignment is to install Lubuntu on VirtualBox from a custom OVA appliance. Inside the OVA file is a compressed instance of the Linux Lubuntu distribution that I created on my home machine.
 
 To help you understand the OVA file, consider the following sequence of events
 
@@ -14,6 +14,7 @@ You can:
 - Double click on it
 - Tick the box asking to update the MAC address
 - And then watch it quickly install itself inside VirtualBox.
+- For more details, see the [install](#install-pristine-lubuntu) section below, particularly the note about network error on first opening the appliance.
 
 Once this Virtual Machine is installed, it will contain a copy of my customized version of Lubuntu Linux. You can run this OS and use it as the primary place where you do work throughout the quarter.
 
@@ -36,7 +37,7 @@ VirtualBox should be installed on all the machines in N252. Nevertheless, before
 
 **NOTE**: *On the N252 school machines you may not be able to install or update VirtualBox. In that case, you can ask me for help and we can ask IT to install it. If you have Admin privileges, you may be able to install VirtualBox, but this is not always guaranteed to be a permanent solution.*
 
-## Install Pristine Lubuntu
+## Install Pristine Lubuntu {#install-pristine-lubuntu}
 
 Once you are reasonable certain you have the **most recent** obtainable copy of VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance). The link below requires a bit of patience. Select it, and determinedly click through the options until the download begins. Once this big 3 GB OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
 
@@ -53,15 +54,16 @@ Double click on the download once it is is completed. Alternatively, use the **F
 
 - **File | Import Appliance** (Ctrl - i)
 
+
 **NOTE**: _You should select the option to reinitialize the MAC address. Every machine on the Internet needs a unique Mac address or conflicts may occur when using the network. If you forgot to click this option during install, you can do it later by choosing **Settings | Network | Advanced** from the VirtualBox menu before you launch your Lubuntu VM. (If necessary, close the VM, then select this menu option.) There is a blue doo-hickey that you can click to reinitialize the address. MAC addresses are meant to be unique. The DNS servers set up by the college allocate IP addresses based on the presence of a MAC address. If two VMs have the same MAC address, then the machine that logs on first will get on the Internet, but the second machine will usually get errors when it tries to access the Internet._
 
 After the file has been imported via the simple wizard, select the new item in VirtualBox and choose **Start** from the menu or icon bar.
 
+**NOTE**: _If you get an error about the network, this is usually because the network card on the system where I built the VM is different than the one on your current machine. You should be able to select all the default options to solve the problem. Just keep hitting enter, or clicking OK, or something similar, until the problem is resolved._
+
 **NOTE**: _You may get an error about the audio system when installing the OVA. You can ignore that message. If you get an error about the network card, just click the supplied link and accept the defaults._
 
 **NOTE**: _If you get a warning about USB drivers, this usually means that the Virtual Box Extension Pack is not installed. This could be due to a mistake by the Bellevue College IS department. If you have the rights, install them from [here](https://www.virtualbox.org/wiki/Downloads). To install, just double click on the download. If all else fails, go to **Settings | USB** for your VM and turn USB off for now._
-
-**NOTE**: _If you get an error about the network, this is usually because the network card on the system where I built the VM is different than the one on your current machine. You should be able to select all the default options to solve the problem. Just keep hitting enter, or clicking OK, or something similar, until the problem is resolved._
 
 Our Pristine Lubuntu image is set up to have about 6GB of RAM. This is fine at school since we have 32 GB of memory on these machines. When using this image at home or on a laptop, however, you may need to change this setting. To do so, select **Settings | System | Motherboard | Base Memory.** Many machines have 4 GB of memory, so setting the memory to 2048 is acceptable, if a bit painful slow at times.
 
@@ -76,10 +78,25 @@ Two important warnings:
 - Don't close Lubuntu by clicking the **X** icon at the top left or right of the VM window. Instead, use the On/Off switch at the bottom right hand corner of the window, or choose **Logout** from the Start menu located in the bottom left of the VM window.
 - Don't try to put your computer to sleep while the Lubuntu VM is running. Instead, shutdown the VM and then close your laptop or perform some other action that puts your machine into a sleep state.
 
-It may appear at times as if you are getting away with violations of the above two rules, but eventually these bad habits will catch up with you. In particular, these actions can cause your repository to be corrupted.
+It may appear at times as if you are getting away with violations of the above two rules, but eventually these bad habits will catch up with you. In particular, these actions can cause your local copy of your GitHub repository to be corrupted. Believe me, you don't want that to happen, particularly if you are new to Git.
 
 You don't want to close your VM with cancel (X) icon any more than you want to turn off your computer by pulling its plug. Putting the machine to sleep while the VM is open should in theory work, but in practice it simply does not work very well.
 
+**NOTE**: _Some very fast, well configured laptops with lots of memory are perhaps more forgiving when you put your machine to sleep with a VM running. That may or may not be the case for you, but please don't turn to the student next to you, who is perhaps running a much less powerful and stable machine, and tell them that there is no harm in simply closing the laptop lid without first shutting down your VM. In general, just follow my advice and shutdown your VM before putting your laptop to sleep._
+
+## Update
+
+It is important that you regularly update your instance of Lubuntu. Don't just ignore messages to update the OS. There is a first time for everything, but I have literally never had an update of Lubuntu put my machine in an unstable state. Or at least I cannot recall such an incident.
+
+if JsObjects is probably installed, I have a command line script called **update-all** that will ensure that everything on your machine is up to date.
+
+On more infrequent occasions, you may also want to update your global NPM packages. Start with this command and follow the clear instructions:
+
+```bash
+ncu -g
+```
+
+The files that are being updated are stored in **~/npm**. In particular, see **~/npm/bin**.
 
 ## Trouble Shoot
 
