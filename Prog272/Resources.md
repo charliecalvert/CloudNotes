@@ -6,11 +6,11 @@ Here I will list various resources for Prog 272.
 
 - [Charlie on Elvenware](https://www.elvenware.com)
 - [Charlie on YouTube](http://www.youtube.com/user/charliecalvert)
-- [Elvenware Links](/tools/links.html)
+- [The Right Books](/javascript-guide/GettingStarted.html#the-right-books)
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](/teach/tips/Books247.html)
 - [Syllabus](http://bit.ly/prog272-syllabus-2019)
-- [The Right Books](/javascript-guide/GettingStarted.html#the-right-books)
+- [Elvenware Links](/tools/links.html)
 
 ## Assignment Groups
 
