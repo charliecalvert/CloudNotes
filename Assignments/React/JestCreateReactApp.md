@@ -8,6 +8,10 @@ A deck to accompany this assignment is here:
 
 - [http://bit.ly/jest-cra](http://bit.ly/jest-cra)
 
+This document has some sections in it not found in deck, so view both documents.
+
+You need only follow the instructions found on the Deck from the first link above. You don't have to do the [ESLint](#eslint) and [ElfDebugEnzume.js](#elf-debug-enzyme) bits. Unless you want to. We will cover both of those subjects in class soon.</span></p>
+
 ## Install
 
 **create-react-app** is probably already on your system in **~/npm/bin**. That directory should be on your path in the default Pristine Lubuntu system.

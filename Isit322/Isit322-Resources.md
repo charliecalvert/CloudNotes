@@ -6,6 +6,7 @@ Here are number of links that you can use to help stay up to date
 with events and topics covered in our class.
 
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
+- [The Right Books][trb]
 - [Ebooks and 24X7](/teach/tips/Books247.html)
 
 ## Elvenware Links
@@ -99,6 +100,16 @@ Here are some [key links][react-links].
 
 - [ReactBooks][reactghbook]
 
+## HTML and CSS
+
+- [HTML](/html-guide)
+- [CSS](/css-guide/)
+- [HTML5 and CSS Part 01 Deck: HTML Basics](http://bit.ly/QwLhc8)
+- [HTML5 and CSS Part 02 Deck: CSS](http://bit.ly/PEc6bG)
+- [HTML5 and CSS Part 03 Deck: Media Queries](http://bit.ly/1imauBZ)
+- [Bootstrap](https://getbootstrap.com/)
+- [Materialize](https://materializecss.com/)
+- [Icons]((http://game-icons.net/)
 
 ## Weekly Overviews
 
@@ -139,9 +150,11 @@ The overviews are usually not current until the actual week that they cover. In 
 [cajh06]: /teach/assignments/CodeAcademy06.html
 [cajh07]: /teach/assignments/CodeAcademy07.html
 
+[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html#overview
+
 [rutests]: /teach/assignments/react/RestTests.html
 
-[react-links]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReact.html#react-links
+[react-links]: /teach/javascript-guide/JavaScriptReact.html#react-links
 [reactghbook]: https://github.com/vhf/free-programming-books/blob/master/javascript-frameworks-resources.md
 
-[ea]: http://localhost:30028/teach/assignments/express/ExpressAssignments.html#overview
+[trb]: /javascript-guide/GettingStarted.html#the-right-books

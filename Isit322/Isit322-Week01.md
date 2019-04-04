@@ -14,7 +14,7 @@ Here are some [key links][react-links].
 - [Pristine VirtualBox](#virtualbox)
 - [React Basics](/teach/assignments/react/ReactBasics.html)
 - [React ESLint](/teach/assignments/react/ReactEsLint.html)
-- 
+-
 
 ## VirtualBox
 
@@ -27,7 +27,7 @@ Here are some [key links][react-links].
 
 ## Syllabus
 
-* [http://bit.ly/isit322-syllabus-2018](http://bit.ly/isit322-syllabus-2018)
+* [http://bit.ly/isit322-syllabus-2019](http://bit.ly/isit322-syllabus-2019)
 
 ## WebStorm Install
 

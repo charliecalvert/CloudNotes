@@ -9,6 +9,8 @@ Here I will list various resources for Prog 272.
 - [Elvenware Links](/tools/links.html)
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](/teach/tips/Books247.html)
+- [Syllabus](http://bit.ly/prog272-syllabus-2019)
+- [The Right Books](/javascript-guide/GettingStarted.html#the-right-books)
 
 ## Assignment Groups
 
@@ -96,6 +98,7 @@ of these languages, APIs and tools.
 - [HTML5 and CSS Part 03 Deck: Media Queries](http://bit.ly/1imauBZ)
 - [Bootstrap](https://getbootstrap.com/)
 - [Materialize](https://materializecss.com/)
+- [Icons]((http://game-icons.net/)
 
 ### JavaScript
 
@@ -150,7 +153,6 @@ Tools
 Books
 -----
 
-- [JavaScript Books](/javascript-guide/GettingStarted.html#the-right-books)
 - [Python Book](http://www.greenteapress.com/thinkpython/html/index.html)
 
 Podcasts and Blogs

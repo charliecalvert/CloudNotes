@@ -21,9 +21,9 @@ book. You should however, become familiar with the material it covers.
 
 ## Links for Week01 Day 1
 
-1. Pristine Lubuntu 2018-04: [http://bit.ly/plubuntu-2018-04-03][plu]
+1. [Pristine Lubuntu][plu1903]
 1. [Getting Started Deck](http://bit.ly/TDEtd5)
-1. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2018](http://bit.ly/prog272-syllabus-2018)
+1. Syllabus Prog 272: [http://bit.ly/prog272-syllabus-2019](http://bit.ly/prog272-syllabus-2019)
 1. Study the all important [Resources page](Resources.html)
 1. [Why Clean Code][why-clean-code]
 
@@ -62,7 +62,8 @@ Notes on installing WebStorm:
 [why-clean-code]: http://www.techrepublic.com/blog/programming-and-development/why-clean-code-is-more-important-than-efficient-code/4284?tag=main;carousel
 [crockford]: http://javascript.crockford.com/javascript.html
 [webstorm-install]: /teach/assignments/WebStormInstall.html
-[plu]: http://bit.ly/plubuntu-2018-04-03
 [pvba]: /teach/assignments/PristineVirtualBox.html
 [git]: /git-guide
 [pro-js]: /javascript-guide/GettingStarted.html#books247
+[plu1804]: http://bit.ly/plubuntu-2018-04-03
+[plu1903]: http://bit.ly/plu-2019-03
