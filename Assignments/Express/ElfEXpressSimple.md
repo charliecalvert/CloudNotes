@@ -1,4 +1,9 @@
+## Overview
+
+See **$ELF_TEMPLATES/Scripts/ElfSimpleExpress**.
+
 ```bash
+cd $HOME
 mkdir Source
 cd Source
 elf-express eslint-test
@@ -44,4 +49,3 @@ Eslint should be clean
 In WebStorm, choose **File | Settings**. Go to **Languages and Frameworks | JavaScript | Code Quality tools**, and turn on EsLint: **Manual Eslint Configuration** and then set the path EsLint config to:
 
 		~/npm/lib/node_modules/eslint
-		
