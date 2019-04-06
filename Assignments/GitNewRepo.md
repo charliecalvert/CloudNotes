@@ -132,10 +132,17 @@ isit322-calvert-2017
 Then make the following selections:
 
 * Set the Type: Git
-* Initialize with a **README** and **.gitignore**. (GitHub only)
+* Initialize with a **README** and **.gitignore** for **Node**. (GitHub only)
 	* If you choose this option, then you can simply clone your repository after creating it.
 * Set the Project options: Wiki, IssueTracking (Bitbucket only)
 * Set the Language: JavaScript (BitBucket only)
+
+Add these near the top of your Node **.gitignore** file:
+
+```code
+bundle.js
+*.js.map
+```
 
 **NOTE**: _On GitHub, it is possible to create a repository without any content such as a pre-initialized **README.md** or **.gitignore** file. If you do that, then the act of setting up your repository on your local machine is relatively complex. If you select the options to put a **README** or other content in your repository, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
 
