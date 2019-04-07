@@ -13,9 +13,9 @@ Some of the courses are in transition or have changed recently. Complete one HTM
 If you have already completed an older version of the course, I will accept that. In other words, this assignment will be very easy for you if you have already completed the course.
 
 - [The HTML course](https://www.codecademy.com/learn/learn-html)
-- Complete at least 15% of the skill.
+- Complete at least 25% of the skill.
 - [The Learn JavaScript course][tljc]
-- Complete at least 15% of the skill.
+- Complete at least 25% of the skill.
 
 ## Looking Ahead
 
@@ -25,7 +25,7 @@ We'll keep progressing through Code Academy on a weekly basis, doing about fifte
 	Part 2:  50%
 	Part 3:  75%
 	Part 4:  100%
-	
+
 If you have already completed these skills, then just turn in the assignment pointing me toward the page showing that you have completed the skill, and you will get credit. If you have completed the course, you can turn in all the assignments right now. Otherwise, turn them in as you complete them. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
 
 ## Turn it in
@@ -35,7 +35,7 @@ When you are done, submit either a screen shot or a link to your Code Academy **
 - Bellevue College Assignments, known as assignments.
 - Code Academy Skills, known as skills.
 
-In this **assignment** we are working on fifteen percent of the Code Academy JavaScript **skill**. If you have completed only 15% of a skill, then submit a screen shot. In this assignment, I ask for only 15% of a skill to be completed, so most of you will submit a screen shot. If, however, you have completed the entire skill, then submit a link to your profile page. I describe the profile page and the screen shot below.
+In this **assignment** we are working on fifteen percent of the Code Academy JavaScript **skill**. If you have completed only 25% of a skill, then submit a screen shot. In this assignment, I ask for only 25% of a skill to be completed, so most of you will submit a screen shot. If, however, you have completed the entire skill, then submit a link to your profile page. I describe the profile page and the screen shot below.
 
 ## Profile Pages and Screen Shots
 

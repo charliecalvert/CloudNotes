@@ -146,6 +146,10 @@ bundle.js
 
 **NOTE**: _On GitHub, it is possible to create a repository without any content such as a pre-initialized **README.md** or **.gitignore** file. If you do that, then the act of setting up your repository on your local machine is relatively complex. If you select the options to put a **README** or other content in your repository, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
 
+Be sure that **node_modules** is included in your **.gitignore** directory. Please understand that **node_modules** directories can be VERY large. Frequently they are several orders of magnitude larger than your base project. This is okay at first, but after about Week Three, repositories that don't use **.gitignore** to filter out **node_modules** become huge, taking a long time to download and taking up vast amounts of space on my hard drive. There are further complications due to subtle differences in the way these directories might look on my system and yours.
+
+The bottom line is that I get quite frustrated by the extra work, time, and resources I expend when people forget to include **node_modules** in their **gitignore** file. Don't let this happen!
+
 ## Share Repository {#share}
 
 Make sure you give me at least _read/write_ access to your repository. If you use:
