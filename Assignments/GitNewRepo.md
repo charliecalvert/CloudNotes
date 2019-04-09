@@ -2,11 +2,11 @@
 
 This assignment is designed to help you create a new Git repository. The text covers both [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/). If possible, you should prefer GitHub since it is _the_ central repository for code related to web development.
 
-Since my students turn in assignments with Git, in some, but not all, cases it is important that their repositories be private. Free private repositories are readily available on GitHub if you sign up for the [Student Pack][github-edu]. BitBucket also provides free private repositories.  
+Since my students turn in assignments with Git, in some, but not all, cases it is important that their repositories be private. Free private repositories are available on both GitHub and BitBucket. GitHub has additional benefits if you sign up for the [Student Pack][github-edu]. The student pack provides $75 - $100 in free AWS Educate credits!
 
 **NOTE**: *Since this document covers both GitHub and Bitbucket, you should proceed with caution. Take care to distinguish between the instructions for the two sites. Note that Git itself is an open source project entirely separate from either GitHub or BitBucket. Git is Git no matter where it is. Nevertheless, the websites for Bitbucket and GitHub have differences, so proceed with caution.*
 
-I assume the user is running on Linux, but it should be possible to follow along if you are using Windows. Especially helpful for Windows users is the Linux subsystem for Windows. Again, you should prefer Linux as it, and **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
+I assume the user is running on Linux, but it should be possible to follow along if you are using Windows. Especially helpful for Windows users is the Linux subsystem for Windows. Again, you should prefer Linux as it, and the **macOS**, are the primary platforms for Web development. Windows is a good platform for Web development, but the leaders in Web development tend to use macOS and Linux as their development platforms.
 
 See also:
 
@@ -32,7 +32,7 @@ All of these steps are detailed in this document.
 
 ## Configure Git {#configure}
 
-Git is probably already installed on your system. To confirm that it is installed, type **git**. If you get an error, then the likely solution is to install Git. Do it like this:
+Git is probably already installed on your system. To confirm that it is installed, type **git**. If you get an error, then the likely solution is to install Git. Do it like this on Lubuntu:
 
 	sudo apt-get install git
 
@@ -56,7 +56,7 @@ These commands are stored in your Git config file, usually found here **~/.gitco
 cat ~/.gitconfig
 ```
 
-**NOTE**: _Remember that the tilda (~) is a shorthand for your HOME directory. I should add that I'm oversimplifying a bit here. Learn more about the the config files [here][gitconfig]._
+**NOTE**: _Remember that the tilda (~) is a shorthand for your HOME directory. I should add that I'm oversimplifying a bit here. Learn more about the config files [here][gitconfig]._
 
 For instance:
 
