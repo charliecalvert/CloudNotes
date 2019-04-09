@@ -158,7 +158,7 @@ Create a screen shot of VirtualBox running Lubuntu as a guest OS on your system.
 
 **Note**: _If VirtualBox has the focus on your desktop, then any keystrokes you make will go to VirtualBox, not to your Windows desktop. As a result, you can't press **Ctrl-PrtScrn** with VirtualBox focused and expect it to work the way it does when other applications have the focus. One solution is to use the Windows Snipping tool or follow one of [these suggestions][scrshot]. You can also usually create screen shots in Lubuntu and submit them. But the screen shot will be in the Lubuntu file system, not your Windows file system and won't include your Windows desktop, which I want to see in this particular assignment. Normally I don't want to see the Windows desktop when I ask for a screenshot, but this time I do._
 
-With the possible exception of screenshots, and configuring VirtualBox itself, it is usually best to do all your work inside the VM. This includes browsing, email, downloading, etc. Just go ahead and maximize Lubuntu so that it takes up your whole screen (Right Control - F). I find it confusing to keep switching back and forth between Linux and Windows. Lubuntu is more than powerful enough to allow you to perform the operations you need to perform in this class. It can be a little unstable at times, but if you treat it gently, it should meet your needs.
+With the possible exception of screenshots, and configuring VirtualBox itself, it is usually best to do all your work inside the VM. This includes browsing, email, downloading, etc. Just go ahead and maximize Lubuntu so that it takes up your whole screen (Right Control - F). I find it confusing to keep switching back and forth between Linux and Windows. Lubuntu is more than powerful enough to allow you to do the work for this class. It can be a little unstable at times, but if you treat it gently, it should meet your needs.
 
 ## Sanity Check
 
@@ -171,12 +171,11 @@ The two steps listed above should, in practice, look a bit like this:
 
 ![SanityCheck01][sc01]
 
-Once you have selected the **LXTerminal** menu item, your VM should look something like the image shown below. We can see the Lubuntu desktop. We can see some icons. And most importantly, we can see the bash shell (the terminal) open on the right hand side of the desktop. The shell is open on the home folder. The user is **bcuser** and the machine name is **pristine2016**. What you see is probably not exactly like this, but you should at least be looking at something vaguely resembling this screen shot of the bash shell.
+Once you have selected the **QTerminal** menu item, your VM should look something like the image shown below. (On older versions of Lubuntu, the terminal program is called LXTerminal.)
 
 ![SanityCheck02][sc02]
 
-[sc01]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics01.png
-[sc02]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics02.png
+We can see the Lubuntu desktop. We can see some icons. And most importantly, we can see the bash shell (the terminal) open on the right hand side of the desktop. The shell is open on the home folder. The user is **bcuser** and the machine name is **pristine2016**. What you see is probably not exactly like this, but you should at least be looking at something vaguely resembling this screen shot of the bash shell.
 
 ## Hints
 
@@ -208,10 +207,15 @@ Throughout the day, you may want to monitor your memory usage with any of the fo
 [extpack]: https://www.virtualbox.org/wiki/Downloads
 [gadd]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
 
+[ova]: https://www.google.com/search?q=ova+files
+
 [plu1804]: http://bit.ly/plubuntu-2018-04-03
 [plu1809]: http://bit.ly/pristine-lubuntu-2018-09
 [plu1903]: http://bit.ly/plu-2019-03
-[ova]: https://www.google.com/search?q=ova+files
+
+[sc01]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics01.png
+[sc02]: https://s3.amazonaws.com/bucket01.elvenware.com/images/PristineBasics02.png
+
 [tpova]: https://www.maketecheasier.com/import-export-ova-files-in-virtualbox/
 [virton]: http://google.com/search?q=intel+virtualization+bios
 
