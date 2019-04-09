@@ -120,27 +120,27 @@ The files that are being updated are stored in **~/npm**. In particular, see **~
 
 Make sure you have installed the [VirtualBox Extension Pack][extpack]. To check, go to **File | Preferences | Extensions**.
 
-Make sure [virtualization][virton] is turned on in the bios for your machine.
+Make sure [virtualization][virton] is turned on in the bios for your machine. Most machines come with the virtualization turned on, but when it is not, you usually have to go into the Bios and muck about in unsettling ways to get the matter sorted. See the link in the first sentence of this paragraph to learn how to proceed. As I say, you will likely feel a bit uncomfortable, but in the long run it is no big deal to turn it on in those infrequent cases where it is not already enabled.
 
-I install the VirtualBox Guest Additions on the Pristine Lubuntu VM, but after updating VirtualBox itself, you may need to make sure you have the [guest additions][gadd] set up properly.
+I install the VirtualBox Guest Additions on the Pristine Lubuntu VM, but after updating VirtualBox itself, you may need to make sure you have the [guest additions][gadd] set up properly. If in doubt, follow the link in the previous sentence and get on top of this subject. It's important and not very complex.
 
 A couple thoughts:
 
 - Be sure Lubuntu is always up to date
 - Be sure Windows is up to date
-- Be sure VirtualBox is up to date (If not on school machine)
+- Be sure VirtualBox is up to date (If not on a school machine)
 
 Be sure everything is fresh:
 
-- Shutdown or reboot Lubuntu regularly and before putting machine to sleep.
-- If things are whacky, reboot Windows.
+- Shutdown or reboot Lubuntu regularly and before putting your machine to sleep.
+- If things are whacky, shutdown Lubuntu and reboot Windows.
 
 Check disk space and memory on both Windows and Lubuntu. On Lubuntu:
 
     df -h
     free -h
 
-Make sure you are running the latest version of the [Guest Additions][gadd].
+Again, be sure you are running the latest version of the [Guest Additions][gadd].
 
 ## Resources
 
@@ -156,9 +156,7 @@ Create a screen shot of VirtualBox running Lubuntu as a guest OS on your system.
 
 **Note**: _Please do not embed the image in a Microsoft Word DOCX file or any other document. Simply attach the raw JPG or PNG file directly to the assignment. Sometimes I need to see details in your images, and embedding the image in a document can compress it and make it hard to see._
 
-**Note**: _If VirtualBox has the focus on your desktop, then any keystrokes you make will go to VirtualBox, not to your Windows desktop. As a result, you can't press **Ctrl-PrtScrn** with VirtualBox focused and expect it to work the way it does when other applications have the focus. One solution is to use the Windows Snipping tool or follow one of [these suggestions][scrshot]. You can also usually create screen shots in Lubuntu and submit them. But the screen shot will be in the Lubuntu file system, not your Windows file system and won't include your Windows desktop, which I wanted to see in this particular assignment. Normally I don't want to see the Windows desktop when I ask for a screenshot, but this time I do._
-
-[scrshot]: http://www.google.com/search?q=windows+screen+capture
+**Note**: _If VirtualBox has the focus on your desktop, then any keystrokes you make will go to VirtualBox, not to your Windows desktop. As a result, you can't press **Ctrl-PrtScrn** with VirtualBox focused and expect it to work the way it does when other applications have the focus. One solution is to use the Windows Snipping tool or follow one of [these suggestions][scrshot]. You can also usually create screen shots in Lubuntu and submit them. But the screen shot will be in the Lubuntu file system, not your Windows file system and won't include your Windows desktop, which I want to see in this particular assignment. Normally I don't want to see the Windows desktop when I ask for a screenshot, but this time I do._
 
 With the possible exception of screenshots, and configuring VirtualBox itself, it is usually best to do all your work inside the VM. This includes browsing, email, downloading, etc. Just go ahead and maximize Lubuntu so that it takes up your whole screen (Right Control - F). I find it confusing to keep switching back and forth between Linux and Windows. Lubuntu is more than powerful enough to allow you to perform the operations you need to perform in this class. It can be a little unstable at times, but if you treat it gently, it should meet your needs.
 
@@ -206,15 +204,18 @@ Throughout the day, you may want to monitor your memory usage with any of the fo
 <!-- links -->
 <!--       -->
 
+[android-vbox]: http://www.elvenware.com/charlie/development/android/Androidx86.shtml
+[extpack]: https://www.virtualbox.org/wiki/Downloads
+[gadd]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
+
 [plu1804]: http://bit.ly/plubuntu-2018-04-03
 [plu1809]: http://bit.ly/pristine-lubuntu-2018-09
 [plu1903]: http://bit.ly/plu-2019-03
 [ova]: https://www.google.com/search?q=ova+files
 [tpova]: https://www.maketecheasier.com/import-export-ova-files-in-virtualbox/
-[extpack]: https://www.virtualbox.org/wiki/Downloads
-[gadd]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
 [virton]: http://google.com/search?q=intel+virtualization+bios
 
-[vbox]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html
-[virt]: http://www.elvenware.com/charlie/development/cloud/virtualization.html
-[android-vbox]: http://www.elvenware.com/charlie/development/android/Androidx86.shtml
+[vbox]: /os-guide/linux/VirtualBox.html
+[virt]: /cloud-guide/Virtualization.html
+
+[scrshot]: http://www.google.com/search?q=windows+screen+capture
