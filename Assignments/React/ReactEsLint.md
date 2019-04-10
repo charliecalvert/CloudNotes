@@ -4,7 +4,7 @@ We want to lint our code to see if it meets some basic requirements. The most im
 
 You can use the information in this document with many projects, but if you need a simple project to focus on, then here is one:
 
-- [ElfExpressSimple](/teach/assignments/express/ElfEXpressSimple.html)
+- [ElfExpressSimple](/teach/assignments/express/ElfExpressSimple.html)
 
 The goal would be to add ESLint and Prettier to that project or another on of your choosing.
 
@@ -211,7 +211,7 @@ My current thinking is that we should use EsLint, and EsLint only, to lint our R
 
 ## Turn it in
 
-Just point me a current project which fulfills the requirements. For instance the **ElfEXpressSimple** assignment linked near the top of this document. Almost any assignment will do, so long as it has ESLint and Prettier coming back clean. When I open it, I'll expect to see a **.eslintrc.json** and **prettier** files and have most of the files error free in terms of eslint errors and **prettier** formatting.
+Just point me a current project which fulfills the requirements. For instance the **ElfExpressSimple** assignment linked near the top of this document. Almost any assignment will do, so long as it has ESLint and Prettier coming back clean. When I open it, I'll expect to see a **.eslintrc.json** and **prettier** files and have most of the files error free in terms of eslint errors and **prettier** formatting.
 
 ## Prettier
 
