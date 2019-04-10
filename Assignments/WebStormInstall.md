@@ -46,3 +46,7 @@ If all else fails, go the jetbrains website, and sign in. Go to your account, wh
 - <https://account.jetbrains.com/licenses>
 
 You should be able to download an activation key. You can paste that key into sign in dialog in Webstorm. That dialog usually just appears magically, but if it doesn't, try **Help | Register** from the menu.
+
+## Turn it in
+
+Run WebStorm. Choose **Help | Register**. Take a screenshot of the dialog showing that you have registered your version. Submit the screenshot in Canvas.
