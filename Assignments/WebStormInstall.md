@@ -49,4 +49,4 @@ You should be able to download an activation key. You can paste that key into si
 
 ## Turn it in
 
-Run WebStorm. Choose **Help | Register**. Take a screenshot of the dialog showing that you have registered your version. Submit the screenshot in Canvas.
+Run WebStorm. Choose **Help | Register** or **Help | About**. Take a screenshot of the dialog showing that you have registered your version. Submit the screenshot in Canvas.
