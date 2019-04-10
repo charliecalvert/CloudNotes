@@ -55,64 +55,6 @@ If you do this, then you need to type something like this to reach eslint or pre
 
 It's probably simpler to install them globally, but there are good reasons for each approach.
 
-## Getting Yarn's Global Bin Directory on your PATH {#yarn-global}
-
-On Pristine Lubuntu, I long ago made sure that **~/npm/bin** is on the path. Therefore globally installed NPM packages are available to everyone. I have not, however, yet set up **yarn's** global directory to be on the path.
-
-- [https://github.com/yarnpkg/yarn/issues/2049](https://github.com/yarnpkg/yarn/issues/2049)
-
-So I guess what we want on the path is the directory I list here:
-
-```bash
-charlie@CedarIsle**:~/.config/yarn/global/node_modules/.bin**  
-$ ll  
-total 0  
-drwxrwxrwx 1 charlie charlie 512 May 10 11:11 ./  
-drwxrwxrwx 1 charlie charlie 512 May 10 11:11 ../  
-lrwxrwxrwx 1 charlie charlie 18 May 10 11:11 bower -> ../bower/bin/bower*  
-lrwxrwxrwx 1 charlie charlie 28 May 10 11:11 create-react-app -> ../create-react-app/index.js*  
-lrwxrwxrwx 1 charlie charlie 37 May 10 11:11 css-beautify -> ../js-beautify/js/bin/css-beautify.js*  
-lrwxrwxrwx 1 charlie charlie 39 May 10 11:11 express -> ../express-generator/bin/express-cli.js*  
-lrwxrwxrwx 1 charlie charlie 38 May 10 11:11 html-beautify -> ../js-beautify/js/bin/html-beautify.js*  
-lrwxrwxrwx 1 charlie charlie 36 May 10 11:11 js-beautify -> ../js-beautify/js/bin/js-beautify.js*  
-lrwxrwxrwx 1 charlie charlie 25 May 10 11:11 nodemon -> ../nodemon/bin/nodemon.js*  
-lrwxrwxrwx 1 charlie charlie 21 May 10 11:11 npm -> ../npm/bin/npm-cli.js*  
-lrwxrwxrwx 1 charlie charlie 21 May 10 11:11 npx -> ../npm/bin/npx-cli.js*
-```
-
-We should, therefore, add this near the bottom of our **~/.bashrc**:
-
-```bash
-#Yarn Support
-
-set-system-path "$HOME/.config/yarn/global/node_modules/.bin"
-```
-
-Here is **set-system-path**, which should already be in your **.bashrc**:
-
-```bash
-set-system-path () {  
-  if ! echo "$PATH" | /bin/grep -Eq "(^|:)$1($|:)" ; then  
-    export PATH="$1:$PATH"  
-  fi  
-}
-```
-
-That seems to be working for me, so I've added it in JsObject for future generations.
-
-**NOTE**: _You might be in one of those generations, so perhaps this has already been done for you._
-
-Check whether your apps are installed for Yarn (**.config/yarn/global/node_modules/**) or npm (**~/npm/node_modules**)?
-
-Which is on your path? If you type **which eslint** what comes up? Here is how it looks for me:
-
-```bash
-$ which eslint
-/home/charlie/npm/bin/eslint
-```
-
-That means I'm running the NPM install of **eslint**, not the yarn install of **eslint**. Therefore, something like **babel-eslint** should be installed in with npm. Alternatively, uninstall the npm version of **eslint**.
-
 ## RC File
 
 My **.eslintrc** file is maintained here:
@@ -275,10 +217,71 @@ slb
 
 See the [CreateSymbolicLinks][csl] script on GitHub.
 
-See this note on [js-beautify](./JsBeautifyDepricated.html)
-
 - [prettier][prettier]
 - [prettierrc][prettierrc]
+
+See this note on [js-beautify](./JsBeautifyDepricated.html)
+
+## Getting Yarn's Global Bin Directory on your PATH {#yarn-global}
+
+As mentioned earlier, I find it too confusing to try to teach yarn and npm at the same time, though they perform similar tasks in a similar manner. For now, I suggest we all just stick with **npm**. If you want to use yarn, that is not wrong, but you are on your own. That said, I'll continue to include this section for those who are interested.
+
+On Pristine Lubuntu, I long ago made sure that **~/npm/bin** is on the path. Therefore globally installed NPM packages are available to everyone. I have not, however, yet set up **yarn's** global directory to be on the path.
+
+- [https://github.com/yarnpkg/yarn/issues/2049](https://github.com/yarnpkg/yarn/issues/2049)
+
+So I guess what we want on the path is the directory I list here:
+
+```bash
+charlie@CedarIsle**:~/.config/yarn/global/node_modules/.bin**  
+$ ll  
+total 0  
+drwxrwxrwx 1 charlie charlie 512 May 10 11:11 ./  
+drwxrwxrwx 1 charlie charlie 512 May 10 11:11 ../  
+lrwxrwxrwx 1 charlie charlie 18 May 10 11:11 bower -> ../bower/bin/bower*  
+lrwxrwxrwx 1 charlie charlie 28 May 10 11:11 create-react-app -> ../create-react-app/index.js*  
+lrwxrwxrwx 1 charlie charlie 37 May 10 11:11 css-beautify -> ../js-beautify/js/bin/css-beautify.js*  
+lrwxrwxrwx 1 charlie charlie 39 May 10 11:11 express -> ../express-generator/bin/express-cli.js*  
+lrwxrwxrwx 1 charlie charlie 38 May 10 11:11 html-beautify -> ../js-beautify/js/bin/html-beautify.js*  
+lrwxrwxrwx 1 charlie charlie 36 May 10 11:11 js-beautify -> ../js-beautify/js/bin/js-beautify.js*  
+lrwxrwxrwx 1 charlie charlie 25 May 10 11:11 nodemon -> ../nodemon/bin/nodemon.js*  
+lrwxrwxrwx 1 charlie charlie 21 May 10 11:11 npm -> ../npm/bin/npm-cli.js*  
+lrwxrwxrwx 1 charlie charlie 21 May 10 11:11 npx -> ../npm/bin/npx-cli.js*
+```
+
+We should, therefore, add this near the bottom of our **~/.bashrc**:
+
+```bash
+#Yarn Support
+
+set-system-path "$HOME/.config/yarn/global/node_modules/.bin"
+```
+
+Here is **set-system-path**, which should already be in your **.bashrc**:
+
+```bash
+set-system-path () {  
+  if ! echo "$PATH" | /bin/grep -Eq "(^|:)$1($|:)" ; then  
+    export PATH="$1:$PATH"  
+  fi  
+}
+```
+
+That seems to be working for me, so I've added it in JsObject for future generations.
+
+**NOTE**: _You might be in one of those generations, so perhaps this has already been done for you._
+
+Check whether your apps are installed for Yarn (**.config/yarn/global/node_modules/**) or npm (**~/npm/node_modules**)?
+
+Which is on your path? If you type **which eslint** what comes up? Here is how it looks for me:
+
+```bash
+$ which eslint
+/home/charlie/npm/bin/eslint
+```
+
+That means I'm running the NPM install of **eslint**, not the yarn install of **eslint**. Therefore, something like **babel-eslint** should be installed in with npm. Alternatively, uninstall the npm version of **eslint**.
+
 
 [ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [epv]: https://youtu.be/bsxBHLxYMrA
