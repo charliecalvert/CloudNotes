@@ -2,6 +2,10 @@
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.
 
+See also:
+
+- [ElfExpressSimple](/teach/assignments/express/ElfEXpressSimple.html)
+
 ## Automate
 
 The [GetGist][gg] script automates key portions of the ESLint and Prettier installation. If you already understand ESLint and Prettier, and just want to get things set up, use the script. If the whole subject is new to you, then please read and work through this document to get an understanding of what the script does for you.
