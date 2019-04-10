@@ -2,9 +2,11 @@
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.
 
-See also:
+You can use the information in this document with many projects, but if you need a simple project to focus on, then here is one:
 
 - [ElfExpressSimple](/teach/assignments/express/ElfEXpressSimple.html)
+
+The goal would be to add ESLint and Prettier to that project or another on of your choosing.
 
 ## Automate
 
@@ -209,7 +211,7 @@ My current thinking is that we should use EsLint, and EsLint only, to lint our R
 
 ## Turn it in
 
-Just point me at your midterm, final, or current project. When I open it, I'll expect to see a **.eslintrc.json** file and have most of the files relatively error free in terms of eslint errors.
+Just point me a current project which fulfills the requirements. For instance the **ElfEXpressSimple** assignment linked near the top of this document. Almost any assignment will do, so long as it has ESLint and Prettier coming back clean. When I open it, I'll expect to see a **.eslintrc.json** and **prettier** files and have most of the files error free in terms of eslint errors and **prettier** formatting.
 
 ## Prettier
 
@@ -226,9 +228,9 @@ yarn global add prettier
 ```
 
 
-**NOTE**: _When installing npm packages globally, use NPM rather than yarn. If you really want yarn, make sure the place that yarn puts them is on your path. I've already set things up on Pristine Lubuntu so that npm global packages are on your path. See the bottom of **~/.bashrc** for details._
+**NOTE**: _When installing npm packages globally, use NPM rather than yarn. If you really want yarn, make sure the place that yarn puts them is on your path. I've already set things up on Pristine Lubuntu so that npm global packages are on your path. See the bottom of **~/.bashrc** for details. I like yarn, but it is just too confusing to have some of the class on yarn and some on npm. So we are standardizing on npm. It is not wrong to use yarn, but you are on your own if you do so._
 
-You can set up a configuration file called .prettierrc in the root of your project or repository:
+You can set up a configuration file called **.prettierrc** in the root of your project or repository:
 
 ```javascript
 {
@@ -273,36 +275,10 @@ slb
 
 See the [CreateSymbolicLinks][csl] script on GitHub.
 
+See this note on [js-beautify](./JsBeautifyDepricated.html)
+
 - [prettier][prettier]
 - [prettierrc][prettierrc]
-
-## Beautify Files
-
-I'm moving from [js-beautify][jsbea] to [prettier][pret], but don't quite want to delete this section yet. Use **prettier** instead of js-beautify because it handles JSX much better.
-
-Before we had prettier, we used js-beautify, but not on all files in a directory. Create a script called **beauty** with this content:
-
-```bash
-#! /bin/bash
-
-find . -iname '*.js' | grep -vFf skip | xargs js-beautify -r
-```
-
-In the above code, **skip** is a text file containing a list of files or directories that you want to ignore. For instance the file might contain a list like this:
-
-```bash
-bundle.js
-registerServiceWorker.js
-node_modules
-```
-
-Both **beauty** and **skip** might go in the root of a project or the root of your repository.
-
-Alternatively, you could do this:
-
-```bash
-find . -iname *.js -type f -not -path '**/node_modules/**' -not -path '**/bundle.js' -not -path '**/registerServiceWorker.js' -print0 | xargs -0 js-beautify -r
-```
 
 [ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [epv]: https://youtu.be/bsxBHLxYMrA
