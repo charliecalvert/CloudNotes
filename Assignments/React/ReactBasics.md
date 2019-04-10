@@ -184,7 +184,7 @@ The point here is that **test** and **start** are scripts that **npm** expects y
 
 ## React
 
-We are, at last, through with the setup. We can now proceed to write some code. In particular, we will create a file called **react-simple.js**. In that file we should:
+We are, at last, through with the setup. We can now proceed to write some code. In particular, we will create a file called **ReactBasics.js**. In that file we should:
 
 - **import** the react library on which our code depends.
 - Create a simple react component that will display a line of text in an **h1** tag.
@@ -289,7 +289,7 @@ In this particular project, why don't we explicitly run Babel over our code when
 
 ```json
 "scripts": {
-  "start": "node_modules/.bin/webpack-dev-server",
+  "start": "node_modules/.bin/webpack-dev-server --port=30025",
   "test": "echo \"Error: no test specified\" && exit 1",
   "build": "node_modules/.bin/webpack"
 },
@@ -315,10 +315,10 @@ Most React projects consist of multiple components. This means we often want to 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSimple from './react-simple';
+import ReactBasics from './ReactBasics';
 
 ReactDOM.render(
-  <ReactSimple/>,
+  <ReactBasics/>,
   document.getElementById("root")
 );
 ```
@@ -350,10 +350,10 @@ Here is how we link the **ReactBasics.js** page from the previous sections into 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSimple from './react-simple';
+import ReactBasics from './ReactBasics';
 
 ReactDOM.render(
-  <ReactSimple/>,
+  <ReactBasics/>,
   document.getElementById('root')
 );
 ```
@@ -414,7 +414,7 @@ Compare the commands above to the all important and oft mentioned **scripts** se
 ```json
 "scripts": {
   "start": "node_modules/.bin/webpack-dev-server --port=30025 --mode=development",
-  "build": "node_modules/.bin/webpack"
+  "build": "npx webpack"
 },
 ```
 
@@ -424,12 +424,12 @@ Compare the commands above to the all important and oft mentioned **scripts** se
 
 Stateless functions can provide the same functionality as above, but with very clean, sparse, syntax.
 
-Create a new file called **ReactBasicsStatelessFunctional.js** and insert into it the code the shown below.
+Create a new file called **ReactBasicsStateless.js** and insert into it the code the shown below.
 
 ```javascript
 import React from 'react';
 
-export const ReactBasics = () => (
+export const ReactBasicsStateless = () => (
    <h1>An H1 element in a React Stateless Function</h1>
 );
 ```
