@@ -137,7 +137,7 @@ Then make the following selections:
 * Set the Project options: Wiki, IssueTracking (Bitbucket only)
 * Set the Language: JavaScript (BitBucket only)
 
-Add these near the top of your Node **.gitignore** file:
+Add these near the top of your **.gitignore** file:
 
 ```code
 # Other
@@ -389,9 +389,11 @@ If you are struggling to load your key, try [this][susk], it's easier. But pleas
 
 ## Create gitignore File {#gitignore}
 
-Before pushing your repository to the cloud, you should create a **.gitignore** file. This file tells Git which files to ignore, which files should not be pushed to the cloud. This may seem like an unimportant step, but for a developer to try to use Git without setting up **.gitignore** file would be a bit like trying to drive a car that had no break. The inevitable result: a 95% chance of rain accompanied by high winds and thunderstorms.
+Before pushing your repository to the cloud, you should be sure you have a **.gitignore** file. This file should have been created when you built your Repository on GitHub, but if you missed that step, then read on.
 
-In the root of your repository, create a **.gitignore** file with the following items in it:
+Your **.gitignore** files tells Git which files to ignore, which files should not be pushed to the cloud. This may seem like an unimportant step, but for a developer to try to use Git without setting up **.gitignore** file would be a bit like trying to drive a car that had no break. The inevitable result: a 95% chance of rain accompanied by high winds and thunderstorms.
+
+If it does not alread exist, in the root of your repository, create a **.gitignore** file with the following items in it:
 
 ```
 node_modules
@@ -400,14 +402,17 @@ coverage
 .metadata
 .idea
 .c9
+.vscode
 .expo
 platforms
 Thumbs.db
 *.zip
 npm-debug.log
+bundle.js
+*.js.map
 ```
 
-You can create the file with the [nano][nano] editor, or do it like this:
+You can create the file with the [nano][nano] editor, or do it like this from the Bash shell:
 
 ```
 echo node_modules >> .gitignore
@@ -416,11 +421,14 @@ echo coverage >> .gitignore
 echo .metadata >> .gitignore
 echo .idea >> .gitignore
 echo .c9 >> .gitignore
+echo .vscode >> .gitignore
 echo .expo >> .gitignore
 echo platforms >> .gitignore
 echo Thumbs.db >> .gitignore
 echo *.zip >> .gitignore
 echo npm-debug.log >> .gitignore
+echo bundle.js >> .gitignore
+echo *.js.map >> .gitignore
 ```
 
 Files that begin with a period are hidden. To see them, type **ls -la** or **ls -a** or **ll**
