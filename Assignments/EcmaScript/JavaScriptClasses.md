@@ -8,7 +8,7 @@ See the section of Elvenware on creating ECMAScript classes:
 
 Large sections of the entire Elvenware [JavaScriptObjects.html][jsobj] document is a primary reference for this assignment. Note also, that in this exercise, we are mostly Stateing with object literals, not function or constructor objects.
 
-## Part One
+## Part One {#part-one}
 
 Create or use a folder called **Week0X-JavaScriptClasses**, where X is the current week.
 
@@ -60,14 +60,14 @@ Olympia, Washington
 
 ## Part Three
 
-In a second file called **Calculator.js**, using JavaScript class syntax, create a new object called **Calculator**.
+In a second file called **Calculator.js**, using JavaScript class syntax, create a new class called **Calculator**.
 
 Inside the class, create two properties called:
 
 * operand01
 * operand02
 
-Initialize these properties to **2** and **12**, much as we initialized the name property of **State** in [Part Zero](#Part Zero). Of course, this property is of type **number**, not of type **string**.  
+Initialize these properties to **2** and **12**, much as we initialized the name property of **State** in [Part One](#part-one). Of course, this property is of type **number**, not of type **string**.  
 
 Instantiate your class with **new** and set the result to a **const** variable called **calculator**.
 
