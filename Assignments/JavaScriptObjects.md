@@ -217,6 +217,136 @@ If you want to learn more, review these assignments, but don't try to turn them 
 - [React ESLint][resl]
 - [Get Gist][gg]
 
+## Setup Unit Test {#test-setup}
+
+Run **npm init** and then fill in the fields a bit like I do in this listing:
+
+```code
+npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (javascriptobjects)
+version: (1.0.0)
+description: Learn JavaScript Objects
+entry point: (work.js)
+test command: npm test
+git repository: https://github.com/charliecalvert/prog272-calvert-2019
+keywords: JavaScript Objects
+author: Charlie Calvert
+license: (ISC) MIT
+```
+
+Now install Jest:
+
+```code
+npm install jest
+```
+
+You can also type:
+
+```code
+npm i jest
+```
+
+Both commands do the same thing.
+
+Add this to your package.json file:
+
+```javascript
+"scripts": {
+  "start": "node work.js",
+  "test": "jest"
+},
+```
+
+Your **package.json** file might now look a bit like this:
+
+```javascript
+{
+  "name": "javascriptobjects",
+  "version": "1.0.0",
+  "description": "Learn JavaScript Objects",
+  "main": "work.js",
+  "scripts": {
+    "start": "node work.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charliecalvert/prog272-calvert-2019.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Objects"
+  ],
+  "author": "Charlie Calvert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charliecalvert/prog272-calvert-2019/issues"
+  },
+  "homepage": "https://github.com/charliecalvert/prog272-calvert-2019#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
+```
+
+Notice the **scripts** and **dependencies** properties. Notice also that JSON is nothing but a simple JavaScript object.
+
+## Write the Test {#write-test}
+
+Create a file called **work.test.js** in the same directory as **work.js**:
+
+```javascript
+const calculator = require('./work');
+
+test('proves that multiply returns 24 if passed 2 and 12', () => {
+    expect(calculator.multiply(12, 2)).toBe(24);
+});
+```
+
+Because of the way we have set this up, we get a lot of extraneous output from our **console.log** statements. But if you ignore them for now, the output looks a bit like this:
+
+```
+$ npm test
+
+> javascriptobjects@1.0.0 test /media/charlie/elfdisk/Git/writings/UnitTests/Js/JavaScriptObjects
+> jest
+
+ PASS  ./work.test.js
+  ✓ proves that multiply returns 24 if passed 2 and 12 (2ms)
+
+  console.log work.js:39
+
+    ====================================
+
+  console.log work.js:40
+    Person
+
+  console.log work.js:41
+    ====================================
+
+
+  console.log work.js:14
+    First Name: George
+
+   // LOTS OF OUTPUT OMITTED HERE
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.674s, estimated 1s
+Ran all test suites.
+```
+
 
 ## Turn it in
 
