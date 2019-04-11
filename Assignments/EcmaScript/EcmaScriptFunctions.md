@@ -69,6 +69,8 @@ Initialize the properties to the address of your favorite senator or any other p
 
 ## ES6 Class
 
+Learn about [JavaScript Classes on Elvenware](/javascript-guide/JavaScriptObjects.html#class-basics).
+
 Create an ES6 class called **calculator** with the following methods, each of which takes two parameters called **operanda** and **operandb**.
 
 - add

@@ -46,6 +46,9 @@ Here I will list various resources for Prog 272.
 - [EcmaScriptFunctions][esfunc]
 - [ExpressBasics][eb]
 - [systemd][sysd]
+- [ECMAScript Functions](/teach/assignments/ecma-script/EcmaScriptFunctions.html)
+- [JavaScript Classes](/teach/assignments/ecma-script/JavaScriptClasses.html)
+
 
 ## Testing Assignments
 

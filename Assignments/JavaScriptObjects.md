@@ -84,13 +84,12 @@ Use **console.log** to display the values of **operand01** and **operand02**.
 
 ## Simple Math
 
-Add three methods with zero parameters that operate on **calculator.operand01** and **calculator.operand02**:
+Add two methods with zero parameters that operate on **calculator.operand01** and **calculator.operand02**:
 
 * add
 * subtract
-* multiply
 
-Put **add** and **subtract** inside the object literal and implement **multiply** [outside][obj-outside] the object literal declaration using dot notation:
+Put **add** and **subtract** inside the object literal. Implement a **multiply** method [outside][obj-outside] the object literal declaration using dot notation:
 
 ```javascript
 var calculator = {
@@ -101,7 +100,7 @@ var calculator = {
 calculator.multiply = etc.... // IMPLEMENT MULTIPLY HERE
 ```
 
-I also want you to implement multiply differently. The function should take two parameters and return their product. When you call **multiply**, pass in the **operator01** and **operator02** properties of the **calculator** object.
+The **multiply** function should take two parameters and return their product. When you call **multiply**, pass in the **operand01** and **operand02** properties of the **calculator** object.
 
 Print the output. For instance, since my name is Charlie Calvert:
 
@@ -237,7 +236,7 @@ package name: (javascriptobjects)
 version: (1.0.0)
 description: Learn JavaScript Objects
 entry point: (work.js)
-test command: npm test
+test command: jest
 git repository: https://github.com/charliecalvert/prog272-calvert-2019
 keywords: JavaScript Objects
 author: Charlie Calvert

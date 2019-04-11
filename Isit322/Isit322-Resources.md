@@ -57,6 +57,8 @@ These assignments are not at all final. It is more like a random mix of assignme
 - [Git New Repo](/teach/assignments/GitNewRepo.html)
 - [Pristine VirtualBox](/teach/assignments/PristineVirtualBox.html)
 - [Jest Create React App](/teach/assignments/react/JestCreateReactApp.html)
+- [ECMAScript Functions](/teach/assignments/ecma-script/EcmaScriptFunctions.html)
+- [JavaScript Classes](/teach/assignments/ecma-script/JavaScriptClasses.html)
 - [Rest Tests](/teach/assignments/react/RestTests.html)
 - [React Props](/teach/assignments/react/ReactProps.html)
 - [Unit Test Numbers](/teach/assignments/react/UnitTestNumbers.html)
