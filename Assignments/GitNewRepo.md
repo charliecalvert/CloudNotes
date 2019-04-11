@@ -140,6 +140,10 @@ Then make the following selections:
 Add these near the top of your Node **.gitignore** file:
 
 ```code
+# Other
+.idea
+.vscode
+.c9
 bundle.js
 *.js.map
 ```
