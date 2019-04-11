@@ -71,13 +71,6 @@ Initialize these properties to **2** and **12**, much as we initialized the name
 
 Instantiate your class with **new** and set the result to a **const** variable called **calculator**.
 
-Inside your program, but outside the class declaration, set the properties to the number of letters in the state and capital names using dot notation:
-
-```javascript
-calculator.operand01 = person.firstName.length;
-etc...
-```
-
 ## Export and require {#require}
 
 Create a third file called **utilities.js**. Move the **display** function into it and **export** it:
