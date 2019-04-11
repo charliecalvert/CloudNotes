@@ -37,11 +37,13 @@ export SERVER_PORT=30026
 
 In the **Week10-Concurrently** directory set up **package.json** and the starter script as described in the next few sections of the project.
 
-Also, in **server/bin/www** modify the call to **server.listen** like this:
+Also, in **server/bin/www** you may need to modify the call to **server.listen** like this:
 
 ```
 server.listen(port, () => console.log("Listening on", port));
 ```
+
+This, or something similar, may have already been done for you when you created the project.
 
 ##  NPM Package
 
@@ -81,7 +83,7 @@ If you look at the above file, you will also see a **lint option**.
 
 ## Start the Client
 
-We need to preform a little dance to start the **create-react-app**. Here is our little waltz, which we will save as **start-client.js**:
+We need to preform a little dance to start the **create-react-app** program found in the client directory. Here is our little waltz, which we will save as **start-client.js** in the root of your project. (Don't put it in **client** in **server**; put it in the root of the project.):
 
 ```javascript
 #!/usr/bin/env node
