@@ -35,7 +35,7 @@ Set them to _your_ first and last names. Write the two properties to the console
 
 **NOTE**: _You do not have to run this code from an HTML file or as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single nodejs file called **work.js** that runs from the command line. Some students in advanced courses might want to use other tools such as EsLint or Prettier._
 
-Now run it:
+Now run it by typing something like:
 
 ```
 cd Week02-JavaScriptObjects
@@ -101,7 +101,9 @@ var calculator = {
 calculator.multiply = etc.... // IMPLEMENT MULTIPLY HERE
 ```
 
-Print the output. For instance, since my name is Charlie Calvert
+I also want you to implement multiply differently. The function should take two parameters and return their product. When you call **multiply**, pass in the **operator01** and **operator02** properties of the **calculator** object.
+
+Print the output. For instance, since my name is Charlie Calvert:
 
 ```
 14
@@ -109,22 +111,19 @@ Print the output. For instance, since my name is Charlie Calvert
 49
 ```
 
-[obj-outside]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html#outside
-[obj-slide]: https://docs.google.com/presentation/d/1uT8eqrBayG6ZgdBsGIWbxOr9Lf7nWnTZSHi1mlKfZks/edit#slide=id.g29c371fd0_022
-
 ## Gussie it up
 
-I added this method:
+Add this method:
 
 ```javascript
 function divider(title) {
-	console.log("====================================");
+	console.log("\n====================================");
 	console.log(title);
-	console.log("====================================");
+	console.log("====================================\n");
 }
 ```
 
-And made some calls like this:
+Call it like this:
 
 ```javascript
 divider('Calculator');
@@ -138,31 +137,85 @@ $ node work.js
 ====================================
 Person
 ====================================
-George
-Washington
-George Washington
+
+First Name: George
+Last Name: Washington
+Full Name: George Washington
+
 ====================================
 Calculator
 ====================================
-operand01 = 6
-operand02 = 10
-Add:  16
-Subtract: -4
-Multiply: 60
+
+operand01 is the length of firstName: 6
+operand02 is the length of lastName: 10
+Add length of first and lastNames:  16
+Subtract length of first and lastNames:  -4
+Multiply length of first anhd lastNames:  60
 ```
 
-Unless you name is George Washington, your output will probably differ, but this should give you some general idea of what to produce.
+Unless your name is George Washington, your output will probably differ, but this should give you some general idea of what to produce.
 
+## Format and Check
 
-## Grunt Check
+Code is not complete until it is properly formatted and free of at least certain obvious errors. In Pristine Lubuntu there is a script called **get-gist.** Run it and select the first item from the menu.
 
-**NOTE**: _After Spring 2017, we are not using Grunt as often, but instead we are switching to eslint, prettier and webpack. As a result, you should skip this section._
+To get started, type **get-gist** and press enter. Pick the first item from the menu by typing the letter **a**:
 
-As always, use Grunt to make sure your code is properly formatted. If you have not yet completed the GruntCheck assignment, do so before you turn this assignment in. The point is that you will need to understand the Grunt Check assignment before you can complete this assignment.
+```code
+Gists
+  a) Run ESLintRc and Prettier (cdef)
+  b) ElfDebugEnzyme
+  c) .eslintrc
+  d) .eslintignore
+  e) prettier
+  f) .prettierrc
+  g) Default React Component
+  h) Setup React Native Enzyme Npm
+  i) Setup React Native Enzyme Yarn
+  j) ElvenLogger
+  k) Elven Node systemd Tools
+  l) Elven Create Concurrently
+  x) Exit
+```
 
-**NOTE**: _[Previously][gc-proj], in [Grunt Check][gc-proj], I said "in this and all future projects" be sure you code passes grunt check. I will take off points if your code is clearly improperly formatted. Grunt check was created to help you do the right thing. It is easier, I think, if we run it than if we don't. To make it work, of course, you need **.jscsrc** and **Gruntfile.js** plus a **package.json** file. But these are boiler plate at this time._
+Now press **x** to exit the menu.
 
-[gc-proj]: http://www.ccalvert.net/books/CloudNotes/Assignments/GruntCheck.html#clean-code
+When you are done your directory might look something like this:
+
+```bash
+$ ll
+total 44
+drwxrwxr-x  3 charlie charlie 4096 Apr 10 20:12 ./
+drwxrwxr-x 19 charlie charlie 4096 Jun  2  2018 ../
+-rw-r--r--  1 charlie charlie  212 Apr 10 20:12 .eslintignore
+-rw-r--r--  1 charlie charlie  988 Apr 10 20:12 .eslintrc.json
+drwxrwxr-x  3 charlie charlie 4096 Nov 30 17:38 .idea/
+-rwxr-xr-x  1 charlie charlie   48 Apr 10 20:12 installEslintPackages*
+-rwxr-xr-x  1 charlie charlie  219 Apr 10 20:12 prettier*
+-rw-r--r--  1 charlie charlie   55 Apr 10 20:12 .prettierignore
+-rw-r--r--  1 charlie charlie   46 Apr 10 20:12 .prettierrc
+-rwxrwxr-x  1 charlie charlie 1490 Apr 20  2018 work.js*
+```
+
+Run prettier like this:
+
+```code
+./prettier
+work.js 42ms
+```
+
+Now run eslint by typing **eslint** followed by a space and period and then hitting **enter**:
+
+```code
+eslint .
+```
+
+If eslint spits out errors, see if you can fix them.
+
+If you want to learn more, review these assignments, but don't try to turn them in. Just read them and see if you can make any sense of my hurried notes:
+
+- [React ESLint][resl]
+- [Get Gist][gg]
 
 
 ## Turn it in
@@ -188,6 +241,7 @@ You can put a hash bang at the top of a file like **work.js**:
 
 var person = {
 	etc...
+}
 ```
 
 Then mark it as executable:
@@ -201,3 +255,12 @@ Now you can start it like this:
 ```bash
 ./work.js
 ```
+
+<!--       -->
+<!-- links -->
+<!--       -->
+
+[obj-outside]: /javascript-guide/JavaScriptObjects.html#outside
+[obj-slide]: https://docs.google.com/presentation/d/1uT8eqrBayG6ZgdBsGIWbxOr9Lf7nWnTZSHi1mlKfZks/edit#slide=id.g29c371fd0_022
+[resl]: /teach/assignments/react/ReactEsLint.html
+[gg]: /teach/assignments/git/GetGist.html

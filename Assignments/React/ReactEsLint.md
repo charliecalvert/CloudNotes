@@ -151,10 +151,6 @@ In WebStorm, turn on ESLint.
 
 My current thinking is that we should use EsLint, and EsLint only, to lint our React programs. You can, therefore, turn off JsHint and JSCS. You only need to be running ESLint.
 
-## Turn it in
-
-Just point me a current project which fulfills the requirements. For instance the **ElfExpressSimple** assignment linked near the top of this document. Almost any assignment will do, so long as it has ESLint and Prettier coming back clean. When I open it, I'll expect to see a **.eslintrc.json** and **prettier** files and have most of the files error free in terms of eslint errors and **prettier** formatting.
-
 ## Prettier
 
 For help formatting files, I'm moving from [js-beautify][jsbea] to [prettier][pret]. The first time we use it, we need to be sure it is installed. Once we have installed it, it stays installed. So we need to run one of these commands only once:
@@ -168,7 +164,6 @@ Install with yarn:
 ```bash
 yarn global add prettier
 ```
-
 
 **NOTE**: _When installing npm packages globally, use NPM rather than yarn. If you really want yarn, make sure the place that yarn puts them is on your path. I've already set things up on Pristine Lubuntu so that npm global packages are on your path. See the bottom of **~/.bashrc** for details. I like yarn, but it is just too confusing to have some of the class on yarn and some on npm. So we are standardizing on npm. It is not wrong to use yarn, but you are on your own if you do so._
 
@@ -221,6 +216,10 @@ See the [CreateSymbolicLinks][csl] script on GitHub.
 - [prettierrc][prettierrc]
 
 See this note on [js-beautify](./JsBeautifyDepricated.html)
+
+## Turn it in
+
+Just point me a current project which fulfills the requirements. For instance the **ElfExpressSimple** assignment linked near the top of this document. Almost any assignment will do, so long as it has ESLint and Prettier coming back clean. When I open it, I'll expect to see a **.eslintrc.json** and **prettier** files and have most of the files error free in terms of eslint errors and **prettier** formatting.
 
 ## Getting Yarn's Global Bin Directory on your PATH {#yarn-global}
 
@@ -285,7 +284,7 @@ That means I'm running the NPM install of **eslint**, not the yarn install of **
 
 [ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [epv]: https://youtu.be/bsxBHLxYMrA
-[gg]: /teach/assignments/GetGist.html
+[gg]: /teach/assignments/git/GetGist.html
 [jsbea]: https://github.com/beautify-web/js-beautify
 [fnpp]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/FindScripts/FindNpPrettier
 [csl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CreateSymbolicLinks
