@@ -387,7 +387,7 @@ Notice the **scripts** and **dependencies** properties. Notice also that JSON is
 
 ## Write the Test {#write-test}
 
-Create a file called **State.test.js** in the same directory as **State.js**:
+Create a file called **Calculator.test.js** in the same directory as **Calculator.js**:
 
 ```javascript
 const Calculator = require('./Calculator');
@@ -416,9 +416,11 @@ Time:        0.727s
 Ran all test suites.
 ```
 
+Create additional tests for **add** and **subtract**.
+
 ## Turn it in
 
-Save your work to your repository. Submit the url of your project and/or the directory in which you did your work.
+Save your work to your repository. Submit the url of your project and/or the directory in which you did your work. Fill in all the missing pieces so your output looks similar to the examples show in this document.
 
 Take a screenshot of the output of your program and attach it to the assignment when you turn it in.
 
