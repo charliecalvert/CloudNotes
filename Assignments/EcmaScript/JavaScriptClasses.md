@@ -390,9 +390,10 @@ Notice the **scripts** and **dependencies** properties. Notice also that JSON is
 Create a file called **State.test.js** in the same directory as **State.js**:
 
 ```javascript
-const calculator = require('./Calculator');
+const Calculator = require('./Calculator');
 
 test('proves that multiply returns 24 if passed 2 and 12', () => {
+    const calculator = new Calculator();
     expect(calculator.multiply(12, 2)).toBe(24);
 });
 ```
