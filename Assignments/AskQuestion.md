@@ -39,7 +39,7 @@ Try to ask questions that can benefit yourself and others; don't become a platfo
 
 This means that you often have to describe code rather than quote it. For instance, a student might ask: "I'm stuck on question 3, I keep getting 15 as the answer, and I know that's not right." Then someone might answer: "Have you tried using the **square** function?" That gives a hint, but does not directly give the answer.
 
-In general, use your best judgment. Ask yourself if you are providing a hint, or providing advice, or if you are just giving away the answer.
+In general, use your best judgment. Ask yourself if you are providing a hint or advice, or if you are actually giving away the answer.
 
 ## Inspiration
 
