@@ -320,7 +320,7 @@ test('proves that multiply returns 24 if passed 2 and 12', () => {
 });
 ```
 
-This code runs a test against our **calculator** objecting proving that its multiply method works correctly.
+This code first imports the **calculator** object and then runs a test against it proving that its **multiply** method works correctly.
 
 Because of the way we have set this up, we get a lot of extraneous output from our **console.log** statements. But if you ignore them for now, the output looks a bit like this:
 
