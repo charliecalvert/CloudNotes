@@ -383,6 +383,23 @@ Now try again:
 ln -s Prog270Key main-key
 ```
 
+## Load in .bashrc
+
+If you've got everything set up right, and don't have a password on your private key, you could also consider uncommenting these lines at the bottom **.bashrc**.
+
+```bash
+# Edit and uncomment to load a key automatically.
+ssh-add -l | grep -q "main-key"
+if [ $? -eq 0 ]; then
+    echo main-key already loaded
+else
+    echo Loading main key.
+    ssh-add ~/.ssh/main-key
+fi
+```
+
+This will automatically ensure that **main-key** is loaded everytime you open a bash shell. More specifically, it will first check if the key is loaded, and if it is not, it will load it.
+
 ## Alternative Method
 
 If you are struggling to load your key, try [this][susk], it's easier. But please remember how you did it.
