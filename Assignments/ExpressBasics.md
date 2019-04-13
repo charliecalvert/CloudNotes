@@ -64,7 +64,17 @@ Load the project in a browser by navigating to this address:
 
 ## Change the Title
 
-Open up **/routes/index.js**. Change the title to **Prog272-LastName**, where LastName is your last name.
+Open up **/routes/index.js**. In the route for opening your page, change the title to **Prog272-LastName**, where LastName is your last name. Here is the place where you should make the change:
+
+```javascript
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+```
+
+Change the word **Express** to **Prog262-LastName**, where LastName is your last name.
+
+**NOTE**: _I'll ask you to do similar permutations in variables or words that include strings like **LastName** many times in this course. Please, use your common sense, don't try to be too clever by literally turning in the phrase **Prog272-LastName**. Instead, put in your last name. For instance, **Prog272-Calvert**._
 
 ## Create Custom JavaScript
 
@@ -87,7 +97,7 @@ $(document).ready(function() {
 });
 ```
 
-**NOTE**: _It is often better to use **document ready** rather than **window.onload** because jQuery will call each instance of **document ready** that you create._
+**NOTE**: _It is sometimes better to use **document ready** rather than **window.onload** because jQuery will call each instance of **document ready** that you create._
 
 ## Modify your Pug Files
 
@@ -139,24 +149,26 @@ package.json
 
 In that file is a list of dependencies that our project relies on.
 
-"dependencies": {  
-    "cookie-parser": "~1.4.3",  
-    "debug": "~2.6.9",  
-    "express": "~4.16.0",  
-    "http-errors": "~1.6.2",  
-    "morgan": "~1.9.0",  
-    "pug": "2.0.0-beta11"  
-  }
+```javascript
+"dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11"
+}
+```
 
 These are the libraries that our project uses. As you can see, **http-errors** is one of those libraries.
 
-In order to install these libraries, we type **npm install**. (Or if you want to be cutting edge: **yarn install**, but don't worry about that for now.) Note that **npm install** is run automatically by **CreateExpressProject.**
+In order to install these libraries, we type **npm install**. (Or some of you may want to use yarn instead: **yarn install**, but in this class we will standardize on npm. If you use **yarn**, you are on your own.) Note that **npm install** is run automatically by a script I will introduce later called **CreateExpressProject.**
 
-Running **npm install** causes our **package.json **file to be processed and the libraries listed there to be downloaded from the cloud and placed in a directory called **node_modules.**
+Running **npm install** causes our **package.json** file to be processed and the libraries listed there to be downloaded from the cloud and placed in a directory called **node_modules.**
 
-All good and well. But in our **.gitignore** file, we tell Git to ignore -- to not check in -- our **node_modules** directory. We do this because that directory is huge and makes our repository unwieldy.
+All good and well. But in our **.gitignore** file, we tell Git to ignore -- to not check in -- our **node_modules** directory. We do this because that directory is huge and makes our repository unwieldy. There are other problems as well as its size, but let's just stick with that one issue for now.
 
-Again, all good well. But when we pull our repository or our project onto a new machine, then **package.json** comes with it but **node_modules** does not. This means we have to run **npm** **install** to recreate our **node_modules**.
+Again, all good well. But when we pull our repository or our project onto a new machine, then **package.json** comes with it but **node_modules** does not. This means we have to run **npm install** to recreate our **node_modules**.
 
 In general, when you see the error "Cannot find module XXX," the first thing to do is try running **npm install** from the root of your project.
 
@@ -193,8 +205,8 @@ The second is **bower.json**:
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^4.1.0",
-    "jquery": "^3.3.1"
+    "jquery": "^3.4.0",
+    "bootstrap": "^4.3.1"
   }
 }
 ```
