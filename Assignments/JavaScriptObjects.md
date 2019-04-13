@@ -302,6 +302,12 @@ Notice the **scripts** and **dependencies** properties. Notice also that JSON is
 
 ## Write the Test {#write-test}
 
+At the bottom of **work.js** add this line:
+
+```JavaScript
+module.exports = calculator;
+```
+
 Create a file called **work.test.js** in the same directory as **work.js**:
 
 ```javascript

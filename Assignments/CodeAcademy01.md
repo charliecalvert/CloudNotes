@@ -17,6 +17,8 @@ If you have already completed an older version of the course, I will accept that
 - [The Learn JavaScript course][tljc]
 - Complete at least 25% of the skill.
 
+Several students have pointed out that Code Academy has create a new course called [Introduction to JavaScript][ijs]. I should perhaps change my links to point to that course, but for now I'm going to stick with **Learn JavaScript**. For now, completing either course will fulfill the requirements of this assignment.
+
 ## Looking Ahead
 
 We'll keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
@@ -60,4 +62,15 @@ I strongly suggest that you set aside a little time at least five days a week to
 Also, there may be times when the Code Academy editor can go a bit wacky. Try refreshing the page or clearing the cache. Even better, try cutting and pasting the code into Cloud 9, Geany or some other editor, and working at the command line with node. Just do a little work in a completely different environment. If it seems to be working there, then try pasting your solution back into Code Academy.
 
 [tljc]: https://www.codecademy.com/learn/learn-javascript
+[ijs]: https://www.codecademy.com/learn/introduction-to-javascript
 [caws]:http://www.codecademy.com/
+
+## Code Academy Pro
+
+Recently Code Academy has forced those who sign for a new account to take a one week free trial for Pro. I wish they would not do this, and I do not expect anyone to pay for a Pro Account.
+
+The Pro versions of the courses are longer than the free versions. Thus, for the first week of class, getting to 25% will be harder than it will be after the Pro Trial ends. I'm not sure how to get around this.
+
+Many companies that offer free services such as those offered by Code Academy use advertising to foot the bills. Clearly, that is not their approach. I think they are being a bit too aggressive in trying to find ways to make money, but I am not without sympathy for their cause.
+
+I don't want to saddle anyone with bills they were not expecting when they signed up for this course. Thus I'm not asking anyone to sign up for Pro beyond the trial period. Also, going Pro makes the courses longer, which makes the assignment more difficult to complete than I had intended. That said, if you can afford it in terms of both time and money, it is perhaps not a bad thing to go for their Pro offering, but I have not done so myself.

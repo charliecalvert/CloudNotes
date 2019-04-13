@@ -838,6 +838,14 @@ You have two choices:
 
 - Use the same private key on home and school machine. Put the private key in a zip file, upload it to Google Drive, and download it from there on you second machine. That way you have the same private key on both your home and school machines. That means you need to put only one public key on GitHub.
 
+Thanks to Emily Yu for inspiring this handy step by step guide to installing the key on your home machine:
+
+1. Download the zip file and unzip it.
+2. Use the terminal to locate the files and move both **prog272-key** & **prog272-key.pub** to the **~/.ssh** folder.
+3. Create a symbolic link in the .ssh folder: **ln -s prog272-key main-key**.
+4. Type **sshadd** to load your key
+5. Navigate to the **~/Git** directory and clone your git repository
+
 - Alternatively: Create two private/public key pairs, one at home and one at school. Then put both public keys on GitHub and or BitBucket.
 
 The code for creating a private/public key pair can be seen here, and elsewhere in my notes:
