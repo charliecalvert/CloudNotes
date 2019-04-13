@@ -25,7 +25,7 @@ Here are several notes that are worth considering before you start working with 
 
 ## Get Started
 
-The [express-generator][express-gen] automatically generates a default express application. It is installed automatically by the following scripts from JsObjects, which are described in the [JsObjects README][elf-js-objects]:
+The [express-generator][express-gen] automatically generates a default express application. It is installed by default in Pristine Lubuntu. If you find it is not available, you can install it automatically by the following scripts from JsObjects, which are described in the [JsObjects README][elf-js-objects]:
 
 - [InstallNodePackages][inpack]
 - [UbuntuAndCloudNineSetup][ubuntu-setup]
