@@ -37,6 +37,10 @@ A close second might be: *What is the answer to question three?*
 
 Try to ask questions that can benefit yourself and others; don't become a platform for disseminating the answer to a question.
 
+This means that you often have to describe code rather than quote it. For instance, a student might ask: "I'm stuck on question 3, I keep getting 15 as the answer, and I know that's not right." Then someone might answer: "Have you tried using the **square** function?" That gives a hint, but does not directly give the answer.
+
+In general, use your best judgment. Ask yourself if you are providing a hint, or providing advice, or if you are just giving away the answer.
+
 ## Inspiration
 
 Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: [http://www.google.com](http://www.google.com)".
