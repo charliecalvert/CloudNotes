@@ -308,6 +308,8 @@ At the bottom of **work.js** add this line:
 module.exports = calculator;
 ```
 
+This gives us access to the **calculator** object from outside of **work.js**.
+
 Create a file called **work.test.js** in the same directory as **work.js**:
 
 ```javascript
@@ -317,6 +319,8 @@ test('proves that multiply returns 24 if passed 2 and 12', () => {
     expect(calculator.multiply(12, 2)).toBe(24);
 });
 ```
+
+This code runs a test against our **calculator** objecting proving that its multiply method works correctly.
 
 Because of the way we have set this up, we get a lot of extraneous output from our **console.log** statements. But if you ignore them for now, the output looks a bit like this:
 
