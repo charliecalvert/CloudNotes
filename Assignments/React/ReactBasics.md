@@ -244,7 +244,7 @@ Now create a **.babelrc** file with this content:
 }
 ```
 
-Finally, run bablw over your code:
+Finally, run Babel over your code:
 
 ```
 babel react-simple.js
@@ -308,7 +308,6 @@ export default class ReactBasics extends React.Component {}
 ```
 
 ## Render HTML with JSX Code
-
 
 Most React projects consist of multiple components. This means we often want to create a single file that joins our components together. In our case, we are only going to need to reference one component, nevertheless, I will still create a simple version of the file used to combine one or more components into a single HTML page or HTML page fragment. We can call this file **main.js**:
 
@@ -392,6 +391,29 @@ module.exports = {
     },
 };
 ```
+
+Optionally, we can create a **modules** section that looks like this:
+
+```javascript
+module: {
+    rules: [
+        {
+            test: /.js?$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }]
+        }
+    ]
+},
+```
+
+Here we include the presets in **webpack.config.js** in the **options** property of the first object in our **use** array. Whus we can delete **.babelrc**.
+
+Both techniques are common, but it is nice to not have to have one file instead of two. As a result, I prefer the second method. Note however, that without **.babelrc** you can't run Babel directly against our code; we _have to_ use webpack to transpile the code or jump through some other hoop like a command line option. Since we are going to use Webpack in most cases, I now prefer to include the **options** property with our preset rather than creating **.babelrc**. If you do decide to do that, then you should delete or rename or **.babelrc**.
 
 ## Run Your Code
 

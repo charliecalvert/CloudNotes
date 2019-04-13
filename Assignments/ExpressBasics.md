@@ -127,7 +127,7 @@ html
     block content
 ```
 
-Again, notice that Pug has a short hand for nearly all HTML statements. After you get your program running view the generated HTML so you can confirm that all is working as expected.
+Again, notice that Pug has a short hand for nearly all HTML statements. After you get your program running view the generated HTML so you can confirm that all is working as expected. Notice also that we are loading jQuery from a CDN. A CDN is an Internet site that stores commonly used files.
 
 ## Turn it in
 
@@ -143,22 +143,22 @@ git@bitbucket.com:lastname/prog219_lastname.git
 
 ## Package Missing
 
-Our projects usually have a file called:
-
-package.json
+Our projects usually have a file called **package.json**.
 
 In that file is a list of dependencies that our project relies on.
 
 ```javascript
 "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+  "cookie-parser": "~1.4.4",
+  "debug": "~4.1.1",
+  "express": "~4.16.4",
+  "http-errors": "~1.7.2",
+  "morgan": "~1.9.1",
+  "pug": "2.0.3"
 }
 ```
+
+**NOTE**: _The version numbers on your packages may differ, but this should not matter so long as Express is at least at version 4.0.0._
 
 These are the libraries that our project uses. As you can see, **http-errors** is one of those libraries.
 
@@ -172,11 +172,81 @@ Again, all good well. But when we pull our repository or our project onto a new 
 
 In general, when you see the error "Cannot find module XXX," the first thing to do is try running **npm install** from the root of your project.
 
+## Webpack
+
+We don't have to use [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) but these are very commonly used tools. Webpack bundles multiple files together, and Babel transpiles ES6 code to ES5.
+
+Install the packages we need:
+```code
+npm i @babel/core @babel/preset-env babel-loader webpack webpack-cli
+npm i jquery
+```
+
+Here we load babel and webpack and then jQuery. I put them on separate lines not because they need to be installed with separate commands, but in order to lump webpack and babel together, and set jQuery off by itself. The point is that Webpack and Babel work together very closely in this example, and in many other programs.
+
+Create **webpack.config.js**:
+
+```javascript
+var webpack = require('webpack');
+
+module.exports = {
+    mode: 'development',
+    entry: './public/javascripts/control.js',
+    output: {
+        path: __dirname + '/public/javascripts',
+        filename: 'bundle.js'
+    },
+    devtool: "source-map",
+    module: {
+        rules: [
+            {
+                test: /.js?$/,
+                exclude: /(node_modules|bower_components)/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }]
+            }
+        ]
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ]
+};
+```
+
+In this file:
+
+- We specify that we are in **development** rather than **production** mode. We are still developing the app.
+- We want to compile the code in control.js and in any files that it imports. (We are not importing anything in this case.)
+  - With Webpack we are usually put files like **control.js** in a directory off the root of the project called **Source** or **src**. I'm not doing that in this case in order to keep the code the same whether we use webpack or not.
+- In the **module** section we create a **rule** saying that all JavaScript files linked from the **entry** property should be run through Babel so they can transformed from ES6 to ES5 and also combined into one file. Thus, at run time our program does not have to load **jQuery** and **control.js**; we can just load **bundle.js**. In **production** mode we can do further processing to compress and semi-obfuscate the files, but that is not important to us at this stage.
+- In **output** we specify that webpack should create a file called **bundle.js** that contains our source code.
+- **devtool** tells webpack to create a file called, in this case, **bundle.map.js** that will help map code in the debugger from **bundle.js** to your original source files. Thus you don't have to look at the lengthy and complex source in **bundle.js**, instead you can just see the source in your original source files. We have only one original source file called **control.js**. (We can ignore jQuery since we don't need to debug it.)
+- Finally, in the **plugins** property we define an array that allows us to include jQuery in **bundle.js**
+
+Instead of the options in **module** rule, we could put the presets in a file called **.babelrc**. We create **.babelrc** in the root of the project with the following contents:
+
+```javascript
+{
+    "presets": ["@babel/preset-env"]
+}
+```
+
+But we don't need this file in this project because the information is included in our webpack. The .babelrc file would be useful if we wanted to run babel without webpack. Also, I show it to you because it is commonly included in many projects.
+
 ## Bower
 
-Your bower files should be set up for you automatically by CreateExpressProject. If you want to confirm that they are correct, or generate them by hand, then follow these guidelines.
+We do not have to load jquery from a CDN or from webpack as we do above. Instead, we can install it locally with bower. This option used to be the default, but now it is on the way out. I include it only for the sake of completeness.
 
-There are two of them. The first is **.bowerrc**:
+Later in the course, we will automatically set up our **bower** files with **CreateExpressProject** or some similar tool. But in this assignment, we can, if we want, generate them by hand, by following the guidelines outline in this section of the assignment.
+
+There are two of files you need to create in the root of your project. The first is **.bowerrc**:
 
 ```javascript
 {
