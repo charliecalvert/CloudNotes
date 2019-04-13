@@ -324,7 +324,7 @@ This code first uses **require** to import the **calculator** object from **work
 
 Because of the way we have set this up, we get a lot of extraneous output from our **console.log** statements. But if you ignore them for now, the output looks a bit like this:
 
-```
+```code
 $ npm test
 
 > javascriptobjects@1.0.0 test /media/charlie/elfdisk/Git/writings/UnitTests/Js/JavaScriptObjects
