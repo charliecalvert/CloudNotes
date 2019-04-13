@@ -50,7 +50,7 @@ The last command, **npm install**, is extremely important. It processes the libr
 
 Load the project in WebStorm. Open up **/bin/www** and set the port 30025\. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**. I'k intentionally being a big vague here as I want you to study **package.json** in at least enough depth to discover the **start** property and see how to replace the word **node** with **nodemon**. If you find that process baffling then you need to spend time reviewing JavaScript basics. (JSON is a subset of JavaScript.)
 
-**NOTE**: _You will also need to install **nodemon** if it has not been installed already. To install it, issue this command **npm install -g nodemon** To test if it is installed, run this command: **nodemon --version**. If it does not return an error, then it is likely properly installed._
+**NOTE**: _The npm **nodemon** package should be installed by default in Pristine Lubuntu. To test if it is installed, run this command: **nodemon --version**. If it does not return an error, then it is likely properly installed. If you need to install it for some reason, or if you need to update it, issue this command: **npm install -g nodemon**._
 
 Now start the newly created express project:
 
