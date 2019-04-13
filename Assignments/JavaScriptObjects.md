@@ -308,7 +308,7 @@ At the bottom of **work.js** add this line:
 module.exports = calculator;
 ```
 
-This gives us access to the **calculator** object from outside of **work.js**.
+This gives us access to the **calculator** object from outside of **work.js**. More explicitly, it **exports** the **calculator** object from the **work.js** module. Below you will see how to import it into another module using **require**. (For now, you can think of **module** and JavaScript file as being nearly synonymous terms.)
 
 Create a file called **work.test.js** in the same directory as **work.js**:
 
@@ -320,7 +320,7 @@ test('proves that multiply returns 24 if passed 2 and 12', () => {
 });
 ```
 
-This code first imports the **calculator** object and then runs a test against it proving that its **multiply** method works correctly.
+This code first uses **require** to import the **calculator** object from **work.js** and then runs a test against it proving that its **multiply** method works correctly.
 
 Because of the way we have set this up, we get a lot of extraneous output from our **console.log** statements. But if you ignore them for now, the output looks a bit like this:
 
