@@ -308,7 +308,7 @@ At the bottom of **work.js** add this line:
 module.exports = calculator;
 ```
 
-This gives us access to the **calculator** object from outside of **work.js**. More explicitly, it **exports** the **calculator** object from the **work.js** module. Below you will see how to import it into another module using **require**. (For now, you can think of **module** and JavaScript file as being nearly synonymous terms.)
+This gives us access to the **calculator** object from outside of **work.js**. More explicitly, it **exports** the **calculator** object from the **work.js** module. Below you will see how to import it into another module using **require**. (For now, you can think of **module** and the words **JavaScript file** as being nearly synonymous terms.)
 
 Create a file called **work.test.js** in the same directory as **work.js**:
 
