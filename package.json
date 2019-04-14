@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
   "dependencies": {
-    "ssh2": "^0.6.1"
+    "ssh2": "^0.8.2"
   }
 }

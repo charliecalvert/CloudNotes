@@ -281,6 +281,42 @@ $ which eslint
 
 That means I'm running the NPM install of **eslint**, not the yarn install of **eslint**. Therefore, something like **babel-eslint** should be installed in with npm. Alternatively, uninstall the npm version of **eslint**.
 
+## Use ncu
+
+Right now applications genearted with **create-react-app** are generating a lot of warnings about vulnerabilities that it appears there is no way to avoid. Leaving those issues aside, try this:
+
+- Run **ncu** (npm) to see what is out of date.
+- Run **ncu -u** to update package.json to the latest.
+- Delete **node_modules**. Delete package-lock.json.
+- Run **npm install** (npm i) again and see if things are better now that you have all the latest packages installed.
+
+See this output from my machine:
+
+```code
+$ ncu
+Checking /media/charlie/elfdisk/Git/CloudNotes/package.json
+[====================] 1/1 100%
+
+ ssh2  ^0.6.1  →  ^0.8.2
+
+Run ncu -u to upgrade package.json
+charlie@elf-path:~/Git/CloudNotes$ (master)
+$ ncu -u
+Upgrading /media/charlie/elfdisk/Git/CloudNotes/package.json
+[====================] 1/1 100%
+
+ ssh2  ^0.6.1  →  ^0.8.2
+
+Run npm install to install new versions.
+```
+
+If I look in **package.json** I see that ssh2 is now at **0.8.2**:
+
+```javascript
+"dependencies": {
+    "ssh2": "^0.8.2"
+}
+```
 
 [ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [epv]: https://youtu.be/bsxBHLxYMrA
