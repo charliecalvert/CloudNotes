@@ -15,7 +15,7 @@ I'm not sure if you should do step 1 or 2 first:
 
 Hopefully I have already installed WebStorm on Pristine Lubuntu. To check if this is the case, select **Start | Programming** and/or look on the desktop and see if you can find an entry for WebStorm. If you see it, you can probably skip this step.
 
-**NOTE**: _There have been times when I have needed to update WebStorm and seemed the recommended course of action was to reinstall it per these instructions. In that case, you would need this information even if WebStorm came pre-installed on Pristine Lubuntu._
+**NOTE**: _There have been times when I have needed to update WebStorm and the recommended course of action was to reinstall it per these instructions. In that case, you would need this information even if WebStorm came pre-installed on Pristine Lubuntu. For instance, at some point in the quarter you may be told that WebStorm needs to be updated. Sometimes you can do that by just pressing a button, but on occasion I have had to download and install a new version more or less as described here._
 
 If WebStorm is not on your copy of Pristine Lubuntu, or if you need to reinstall it for some reason, then proceed as follows, using your common sense where necessary.
 
