@@ -51,7 +51,7 @@ You may receive some prompts the first time you start WebStorm. Here are some su
 - Do import settings
 - To make sure your version of WebStorm is registered, sign in again to your JetBrains Account if prompted to do so. If your copy is not registered, you will probably be prmopted to register when you start WebStorm. Alternatively, choose **Help | Register** from the WebStorm menu.
 
-![WebStormLicense no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/WebStormLicense.png)
+![WebStormLicense](https://s3.amazonaws.com/bucket01.elvenware.com/images/WebStormLicense.png)
 
 When you are done, choose **Help | About** to confirm that your copy of WebStorm is registered to you.
 
