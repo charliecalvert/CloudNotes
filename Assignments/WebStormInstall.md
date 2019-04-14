@@ -8,12 +8,12 @@ I'm not sure if you should do step 1 or 2 first:
 
 - Create an account on [JetBrains](https://account.jetbrains.com/login) using your student email.
 - Get a student license: [Student](https://www.jetbrains.com/shop/eform/students)
-  - Email usually sent in a few minutes
+  - A confirmation email from JetBrains is usually sent in a few minutes
 
 
 ## Install WebStorm
 
-Hopefully I have already installed WebStorm on Pristine Lubuntu. To check if this is the case, select **Start | Programming** and/or look on the desktop and see if you can find an entry for WebStorm. If you see it, you can skip probably skip this step.
+Hopefully I have already installed WebStorm on Pristine Lubuntu. To check if this is the case, select **Start | Programming** and/or look on the desktop and see if you can find an entry for WebStorm. If you see it, you can probably skip this step.
 
 **NOTE**: _There have been times when I have needed to update WebStorm and seemed the recommended course of action was to reinstall it per these instructions. In that case, you would need this information even if WebStorm came pre-installed on Pristine Lubuntu._
 
