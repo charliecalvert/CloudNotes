@@ -233,11 +233,11 @@ Foo called:
 GET /test-routes/foo 304 7.572 ms - -
 ```
 
-**NODE**: _For those who know about such things, I'll add an express server is probably not a candidate to be run in the background with the & symbol. Later on we will see other ways to solve this problem, but for now, let's just start two tabs._
-
 Because we can't use this terminal, we need to create a new one. In particular, you'll need to create a new terminal tab, by entering this command: **CTRL-SHIFT-T**. You can also create tabs from the terminal menu. In either case, you should end up with two bash shells available.
 
 ![One terminal, two tabls](https://s3.amazonaws.com/bucket01.elvenware.com/images/one-termina-two-tabs.png)
+
+**NODE**: _For those who know about such things, I'll add that an express server is probably not a candidate to be run in the background with the & symbol. Later on we will see other ways to solve this problem, but for now, let's just start two bash terminal tabs, one for the server, and one for the client._
 
 ## Create Client
 
@@ -248,11 +248,19 @@ create-react-app client
 cd client
 ```
 
-This creates a new react based client application for use in the browser. It uses ES6 syntax, and has many fancy features that we will explore over time.
+This uses a global NPM package found in **~/npm/bin** to create a new react based client application for use in the browser. It uses ES6 syntax, and has many fancy features that we will explore over time. **create-react-app** is built by Facebook, the same people who create React.
 
-It is much easier to use **create-rect-app** than to build a program by hand as we did in the our **ReactBasics** assignment. The output from **create-react-app** is, however, much more complex. Also, it commits you to a react based style of development quite different from traditional ES5 development that uses jQuery, Angular or some other library. In this course, we are going to spend considerable time working with older applications that have subsystems built in with React and ES6. As a result,
+**NOTE**: _At the time of this writing, April 2019, **create-react-app** uses an older version of Jest that has a lot of vulnerabilities. This is scheduled to be fixed in version 3.0 of **create-react-app**. Type **create-react-app -- version** to check the version number, and type **ncu -g** to see if an update is available._
 
-**NOTE**: _Because our application uses ES6 (ES2016), you want to tell WebStorm to expect modern JavaScript syntax. In particular, set the **File | Settings | Languages and Frameworks | JavaScript** to **React JSX**_
+It can be easier to use **create-rect-app** than to build a program by hand as we did in our **ReactBasics** assignment.  The output from **create-react-app** is, however, much more feature rich and much more complex. Also, it commits you to a react based style of development quite different from traditional ES5 development that uses jQuery, Angular or some other library. In this course, we are going to spend considerable time working with older applications that have subsystems built with React and ES6.
+
+Because our application uses ES6 (ES2015), you want to tell WebStorm to expect modern JavaScript syntax. In particular, set the **File | Settings | Languages and Frameworks | JavaScript** to **React JSX**.
+
+![JSX and React][wrj]
+
+Also set up ESLint support at **File | Settings | Languages and Frameworks | JavaScript | Code Quality Tools | ESLint**. Set the **ESLint package** to **~/npm/lib/node_modules/eslint**. You should be able to pick this option from drop down.
+
+![Webstorm and eslint][eslint]
 
 ## Link Client and Server
 
@@ -264,28 +272,28 @@ In your client application, in **package.json**, just before the dependencies se
 
 This tells our react app to forward requests for REST calls to our Express Server that is running on port 30026. See code in **scripts/start.js** for more details.
 
+**NOTE**: _Experiences has taught me that this is one of the most frequently neglected steps. Don't omit it! It is very important._
+
 ## Make HTTP Request
 
-In the client, we no longer need to install **fetch**. It is now present in all major browsers.
-
-We will use this native JavaScript call in lieu of **$.ajax** or **$.getJSON**. The **fetch** call is part of the ES6 standard, and is now finalized.
+We will use the native JavaScript call **fetch** in lieu of the jQuery calls named **$.ajax** or **$.getJSON**. The **fetch** call is part of the ES6 standard, and is now finalized.
 
 ## Rewrite the Client
 
-And here is  **src/App.js**:
+Here is the heart of our application, which we construct in **client/src/App.js**:
 
 ```javascript
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import 'whatwg-fetch';
 
 class App extends Component {
     constructor() {
         super();
-        this.state = {
-            file: 'File name will be placed here.',
-            status: 'waiting for server'
+        this.state = {            
+            file: 'unknown',
+            result: 'unknown',
+            status: 'unknown'
         };
     }
 
@@ -324,12 +332,24 @@ class App extends Component {
 export default App;
 ```
 
-The key call here is to **fetch**, found in the method named **queryServer**. The promise uses two **.then** statements. The first is to check if the HTTP call worked, even if the server reported an error such as 404 Not found or 500 Internal Server error. The second **.then** statement gives us the result if the call succeeds. In other words, if the server sent us back some JSON, then the JSON will be found here.
+The key call here is to **fetch**, found in the method named **queryServer**. **featch** uses JavaScript **promises**. The promise uses two **.then** methods. If the call could not be made because of a problem on the client side, then the first **.then** method throws an exception. This first call to the **.then** method is there to check if the HTTP call was able to send a request to the server; if will succeed even if the server reported an error such as 404 Not found or 500 Internal Server error. In other words, the first **.then** can succeed even if the server throws a 404 or 500 error.
+
+The second **.then** method gives us the result if the method is able to make a call to the server. If the server sent us back some JSON, then the JSON will be found here in the second **.then** clause. Sometimes the server correctly sends back JSON or some other entity, but we fumble our handling of it, thereby throwing an exception in the second **.then** call.
+
+All errors should end up in the **.catch** block.
+
+Let me try to summarize that:
+
+- If we botch the syntax of our call to **fetch**, then the first **.then** method throws an exception.
+- If our syntax is correct, but the server throws an exception then the second **.then** calls throws an exception.
+- We can also get in trouble if we botch the job of parsing the JSON sent back from the server.
+
+**NOTE**: _**fetch** can be used for retrieving a multitude of objects, not just JSON. But in our course, we usually use it retrieve JSON, so I'm emphasizing that functionality._
 
 ```javascript
 fetch('/test-routes/foo')
     .then(function(response) {
-        // DID HTTP TALK TO THE SERVER? BLOWS UP IF NETWORK DOWN, URL BAD, ETC.
+        // DID HTTP TALK TO THE SERVER? BLOWS UP IF SYNTAX BAD, NETWORK DOWN, URL BAD, ETC.
         // CHECK response.ok TO SEE IF THE CALL SUCCEEDED ON THE SERVER SIDE.
         // response.ok will be false if we return a 404 or 500 error.
     })
@@ -343,13 +363,15 @@ fetch('/test-routes/foo')
 
 ## Run the Application.
 
-Could not be simpler:
+Assuming you have already run (npm install) the call to start the client could not be simpler:
 
 ```
 npm start
 ```
 
-Your application will magically open in the browser. Updates should also appear as you make them.
+Your application will magically open in the browser. Updates should also appear as you make them in your code.
+
+**NOTE**: _Remember, we typically need to run **npm install** only once per project on a particular machine. We run **npm start** every time we want to start or restart the application. We can use **Ctrl-C** to shut down either the client or the server._
 
 ## Run the server on Cloud 9
 
@@ -372,65 +394,6 @@ npm start
 ```
 
 Then **Preview | Preview running application** from the menu items near the top right of the Cloud 9 IDE.
-
-## Cloud 9 Client
-
-Alright. I finally got the Rest Basics type of app to run on Cloud 9. Here is what I did.
-
-Run the server on 30026 as we normally do. We can't ever see this server running, it is just going in the background. Remember to set export SERVER_PORT=30026 or whatever we decided. Test it:
-
-```
-echo $SERVER_PORT
-30026
-```
-
-Now run your client on PORT 8080 (export PORT=8080). In the client directory, create a file called **.env.development.local** and put this in it:
-
-```
-# NOTE: THIS IS DANGEROUS!
-# It exposes your machine to attacks from the websites you visit.
-DANGEROUSLY_DISABLE_HOST_CHECK=true
-```
-
-<p>After doing that, things started to work for me. See this and this:</p>
-<ul>
-<li><a href="https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#invalid-host-header-errors-after-configuring-proxy">Dangerous Reference</a>&nbsp;</li>
-<li><a href="https://github.com/facebook/create-react-app/issues/2271">https://github.com/facebook/create-react-app/issues/2271</a></li>
-</ul>
-
-<p>Search for comments by Gearon, and especially the place where he wrote:</p>
-
-<p>If you do use the proxy feature, please <a  href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#invalid-host-header-errors-after-configuring-proxy">follow these instructions</a>.</p>
-
-<p>gearon is Mister React. He sits on the team and is one of the most important React developers. </p>
-
-<p><a href="https://github.com/gaearon">https://github.com/gaearon</a></p>
-
-
-## Run the client on Cloud 9
-
-For a long time, I could not get this type of app to work on Cloud 9. Eventually I found the solution shown above. If that does not work for you then try this alternative. Edit your code Cloud 9. Test everything but the button click. If all is clean:
-
-- Push your code from Cloud 9 or Pristine Lubuntu to GitHub.
-- Log into AWS.
-- Pull your repository on AWS (Clone first if necessary, but your repository should already be on AWS, so you shouldn't need to clone. Don't clone unless your repository is not already on your AWS server. If it is there, just pull. Don't clone.)
-- Edit your security group in the EC2 console to open ports 30025 and 30026
-- Run your server. It runs on 30026.
-- Log into AWS in a second console
-- It runs by default on some weird port, so set the port: **export port=30025**
-- Run the client.
-
-It works for me.
-
-We'll do this later, but skip it for now.:
-
-- Remove the line proxy line from client/package.json:
-  - "proxy": "http://localhost:30026",
-- Then create a final build for the client with this command from the root of the **client** project:
-  - **npm run build**
-- Now create links to your build from the server's **public** directory:
-  - Use your common sense to navigate to your server/public directory
-  - do this: **ln -s ../../client/build/* .**
 
 ## Run Concurrently
 
@@ -462,6 +425,14 @@ entry: [
 ]
 ```
 
+## Cloud 9
+
+This is optional, but if you want to run on Cloud9 you might find [these notes helpful](./ReactOnCloudNine.html).
+
 [cca]:http://www.elvenware.com/teach/assignments/npm/RunConcurrently.html#setting-the-port
 
 [ccn]: http://www.elvenware.com/teach/assignments/npm/RunConcurrently.html#npm-package
+
+[wrj]: https://s3.amazonaws.com/bucket01.elvenware.com/images/webstorm-react-jsx.png
+
+[eslint]: https://s3.amazonaws.com/bucket01.elvenware.com/images/webstorm-eslint-config.png
