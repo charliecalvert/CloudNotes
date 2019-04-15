@@ -53,29 +53,31 @@ Place this **package.json** file in the root folder that hosts both the **client
 
 ```javascript
 {
-  "name": "lookup-server",
-  "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "babel-cli": "6.24.0",
-    "babel-core": "6.24.0",
-    "express": "4.15.3"
-  },
-  "scripts": {
-    "start": "concurrently 'npm run server' 'npm run client'",
-    "server": "babel-node server/bin/www",
-    "client": "babel-node start-client.js",
-    "lint": "eslint ."
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.2.1",
-    "concurrently": "3.4.0",
-    "eslint": "3.19.0",
-    "eslint-config-google": "^0.7.1",
-    "eslint-plugin-import": "2.3.0",
-    "eslint-plugin-jsx-a11y": "5.0.3",
-    "eslint-plugin-react": "6.9.0"
-  }
+    "name": "lookup-server",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "4.16.4"
+    },
+    "scripts": {
+        "start": "concurrently 'npm run server' 'npm run client'",
+        "server": "babel-node server/bin/www",
+        "client": "babel-node start-client.js",
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.4.3",
+        "@babel/core": "^7.4.3",
+        "@babel/node": "^7.2.2",
+        "babel-eslint": "^10.0.1",
+        "concurrently": "4.1.0",
+        "elven-code": "^4.6.3",
+        "eslint": "5.16.0",
+        "eslint-config-google": "^0.12.0",
+        "eslint-plugin-import": "2.17.1",
+        "eslint-plugin-jsx-a11y": "6.2.1",
+        "eslint-plugin-react": "7.12.4"
+    }
 }
 ```
 

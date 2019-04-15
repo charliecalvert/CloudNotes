@@ -10,20 +10,23 @@ Both of these slide decks contain relevant information that might be useful when
 - [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
 - [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
-## Get Started
-
-Create a branch called **week02**.
-Create a directory called **week02-rest-basics** in your **week03** branch.
-
 ## Motivation
 
-Your assignment is to understand how and why a request from a client is processed and routed by your server. This is one of the key subjects important subjects that we must understand. _Eventually, we must perform a complete meld with HTTP requests and how they are routed on a server._
+Your assignment is to understand how and why a request from a client is processed and routed by your server. This is one of the key subjects that we must understand. _Eventually, we must perform a complete meld with HTTP requests and how they are routed on a server._
 
-**NOTE**: _To not understand HTTP requests and routing should be alien to you. "What do you mean you don't understand how to route an HTTP request? How can that be?" You should even feel a noticeable cooling of your affection for members of your immediate family if they don't understand HTTP requests and routing. "I know you're my child, and I know you are only 4 years old, but you have to understand that I just don't feel the same way about you since I realized you don't understand HTTP requests."_
+## Get Started
+
+Merge your current work from weeks 1 and 2 into **master**. Fix any conflicts that might arise.
+
+Create a branch called **week03** based on your work in **master**.
+
+
 
 ## Create the Project Directory
 
-We are going to have two projects in this assignment, so lets set up a directory for them. Navigate to the root of your repository and enter the following commands:
+We are going to have two projects in this assignment, so lets set up a directory for them.
+
+Create a directory called **week03-rest-basics** in your **week03** branch by navigating to the root of your repository and entering the following commands:
 
 ```
 mkdir week03-rest-basics
@@ -32,15 +35,16 @@ cd week03-rest-basics
 
 ## Create Server
 
-Before going further, make sure you have the latest copy of JsObjects:
+Make sure you have the latest copy of **JsObjects** and that your global npm packages are up to date:
 
     jo
     git pull
+    ncu -g
 
 In the **RestBasics** directory, run the following command:
 
 ```
-CreateExpressProject server
+elf-express server
 cd server
 ```
 
@@ -97,7 +101,7 @@ Don't confuse a **path** with a URN. For instance, the **path** **the-great-gats
 
 An HTTP requests consists of URL like the one shown above:
 
-- <http://localhost:30025/api/foo>
+- <http://localhost:30025/test-routes/foo>
 
 We use a URL like this to send requests from a client to a server. If we want to tell our server to do something, we send it a request in the form a URL.
 
@@ -105,7 +109,7 @@ We use a URL like this to send requests from a client to a server. If we want to
 
 Let's write code that will handle a request such as the one defined above. We will put our custom server code in its own file.
 
-In the **routes** folder create a file called **api.js**:
+In the **routes** folder create a file called **test-routes.js**:
 
 ```javascript
 var express = require('express');
@@ -113,7 +117,7 @@ var router = express.Router();
 
 /* Set up a route called foo. */
 router.get('/foo', function(request, response) {
-    var message = { 'result': 'success', 'status': 'bar', 'file': 'api.js' };
+    var message = { 'result': 'success', 'status': 'bar', 'file': 'test-routes.js' };
     console.log('Foo called:\n' + JSON.stringify(message, null, 4));
     response.send(message);
 });
@@ -123,7 +127,7 @@ module.exports = router;
 
 As explained above, this method is designed to be called whenever the user enters, or sends via HTTP, the following URL:
 
-- <http://localhost:30026/api/foo>
+- <http://localhost:30026/test-routes/foo>
 
 ## Application Middleware
 
@@ -144,11 +148,11 @@ Remeber, if we don't ever set up any middleware for handling a request, then we 
 To set up our middleware for handling requests from the server we take two simple steps. In **app.js** around lines 10 and 28, we write the following:
 
 ```javascript
-var api = require('./routes/api');  // on line 10
-app.use('/api', api);               // on line 28
+var testRoutes = require('./routes/test-routes');  // on line 10
+app.use('/test-routes', testRoutes);               // on line 28
 ```
 
-The first line just allows us to gain access to our new file: it links it into our project. The second line states what we want to do: _we want to **use** the code in our file as middleware._ We are telling Express that if there is a request from the server that ends with **/api**, then it should be passed to our code in **./routes.api.js**.
+The first line just allows us to gain access to our new file: it links it into our project. The second line states what we want to do: _we want to **use** the code in our file as middleware._ We are telling Express that if there is a request from the server that ends with **/test-routes**, then it should be passed to our code in **./routes/test-routes.js**.
 
 ## Set the Port
 
@@ -165,28 +169,28 @@ We are going to run the client on port 30025, so we are setting the port for the
 Take a moment to understand what we have done.
 
 - We have asked our program to run on port 30026
-- We have set up middleware to handle requests that contain the string /api
+- We have set up middleware to handle requests that contain the string /test-routes
 
 For instance, the following HTTP request would call the **foo** method in our new file:
 
-- <http://localhost:30026/api/foo>
+- <http://localhost:30026/test-routes/foo>
 
 Here is how to break it down:
 
 - **http://localhost:30026**: The address and port of our server
-- **/api**: Use the middleware defined in **/routes/api**
-- **/foo**: call the **foo** route in our **api.js** file
+- **/test-routes**: Use the middleware defined in **/routes/test-routes**
+- **/foo**: call the **foo** route in our **test-routes.js** file
 
 ## Application vs Router Middleware
 
 Notice that we have made two similar calls:
 
-- **app.use('/api', api);**
+- **app.use('/test-routes', testRoutes);**
 - **router.get('/foo', function(request, response, next) { ... });**
 
 The first use Express application middleware. The second uses Express **router** middleware.
 
-The **router** object is designed to help you set up a dedicated portion of your server for handling a particular kind of URI. For instance, all URI's that begin begin /api are handled in the file called **routes/api.js**.
+The **router** object is designed to help you set up a dedicated portion of your server for handling a particular kind of URI. For instance, all URI's that begin begin **/test-routes** are handled in the file called **routes/test-routes.js**.
 
 ## Test your Work
 
@@ -198,12 +202,12 @@ npm start
 
 Now type the following URL:
 
-- <http://localhost:30026/api/foo>
+- <http://localhost:30026/test-routes/foo>
 
 You should see very plain output that looks a bit like this:
 
 ```
-{"result":"success","foo":"bar","file":"api.js"}
+{"result":"success","foo":"bar","file":"test-routes.js"}
 ```
 
 ## Second Terminal Tab
@@ -222,9 +226,9 @@ Foo called:
 {
     "result": "success",
     "foo": "bar",
-    "file": "api.js"
+    "file": "test-routes.js"
 }
-GET /api/foo 304 7.572 ms - -
+GET /test-routes/foo 304 7.572 ms - -
 ```
 
 Because we can't use this terminal, we need to create a new one. In particular, you'll need to create a new terminal tab, by entering this command: **CTRL-SHIFT-T**. You can also create tabs from the terminal menu. In either case, you should end up with two bash shells available.
@@ -233,7 +237,7 @@ Because we can't use this terminal, we need to create a new one. In particular, 
 
 ## Create Client
 
-Navigate to the second terminal tab, the one you are not using. From the root of the **week02-rest-basics** directory, create your client:
+Navigate to the second terminal tab, the one you are not using. From the root of the **week03-rest-basics** directory, create your client:
 
 ```
 create-react-app client
@@ -283,7 +287,7 @@ class App extends Component {
 
     queryServer = () => {
         const that = this;
-        fetch('/api/foo')
+        fetch('/test-routes/foo')
             .then(function(response) {
                 return response.json();
             })
@@ -319,7 +323,7 @@ export default App;
 The key call here is to **fetch**, found in the method named **queryServer**. The promise uses two **.then** statements. The first is to check if the HTTP call worked, even if the server reported an error such as 404 Not found or 500 Internal Server error. The second **.then** statement gives us the result if the call succeeds. In other words, if the server sent us back some JSON, then the JSON will be found here.
 
 ```javascript
-fetch('/api/foo')
+fetch('/test-routes/foo')
     .then(function(response) {
         // DID HTTP TALK TO THE SERVER? BLOWS UP IF NETWORK DOWN, URL BAD, ETC.
         // CHECK response.ok TO SEE IF THE CALL SUCCEEDED ON THE SERVER SIDE.
@@ -455,6 +459,6 @@ entry: [
 ]
 ```
 
-[cca]:http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/RunConcurrently.html#setting-the-port
+[cca]:http://www.elvenware.com/teach/assignments/npm/RunConcurrently.html#setting-the-port
 
-[ccn]: http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/RunConcurrently.html#npm-package
+[ccn]: http://www.elvenware.com/teach/assignments/npm/RunConcurrently.html#npm-package

@@ -509,6 +509,25 @@ Use a numbering system that makes sense in the context of your repository. For i
 
 Set "parser": "babel-eslint" in .eslintrc to allow arrow functions.
 
+## jQuery and Webpack {#jquery-webpack}
+
+To use **jQuery** with webpack.
+
+```bash
+npm install jquery
+```
+
+Then add this to **weback.config.js**:
+
+```javascript
+plugins: [
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+    })
+]
+```
+
 ## Create Source Directory
 
 If you don't have one already, it sometimes useful to create a directory called **Source** outside of your repository. I use this as a place to work on projects that I don't want to immediately commit to my repository, but which I also would like to keep around for one reason or another. I typically place the **Source** directory in the route of my **home** directory:
