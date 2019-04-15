@@ -7,7 +7,7 @@ Use Rest with React. There are two applications joined by a proxy:
 
 Both of these slide decks contain relevant information that might be useful when working through this assignment:
 
-- [http://bit.ly/noderoutes][http://bit.ly/noderoutes]
+- [http://bit.ly/noderoutes](http://bit.ly/noderoutes)
 - [http://bit.ly/JavaScriptNode](http://bit.ly/JavaScriptNode)
 
 ## Get Started
