@@ -256,7 +256,7 @@ Because our application uses ES6 (ES2015), you want to tell WebStorm to expect m
 
 ![JSX and React][wrj]
 
-Also set up ESLint support at **File | Settings | Languages and Frameworks | JavaScript | Code Quality Tools | ESLint**. Set the **ESLint package** to **~/npm/lib/node_modules/eslint**. You should be able to pick this option from drop down.
+Also set up ESLint support at **File | Settings | Languages and Frameworks | JavaScript | Code Quality Tools | ESLint**. Set the **ESLint package** to **~/npm/lib/node_modules/eslint**. If that doesn't work, try "Detect package from configuration". You should be able to pick either option from drop down.
 
 ![Webstorm and eslint][eslint]
 
