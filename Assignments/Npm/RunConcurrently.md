@@ -113,3 +113,14 @@ For instance:
 - Folder: Week02-Concurrently
 
 [cc]: https://www.npmjs.com/package/concurrently
+
+## Dependency Error {#errors}
+
+You might get an error like this: **There might be a problem with the project dependency tree.** If this happens, open up the copy of package.json in the root of your directory and set the versions of **babel-eslint** and **eslint** as follows:
+
+```javascript
+"babel-eslint": "^9.0.0",
+"eslint": "5.12.0",
+```
+
+Perhaps the versions that **create-react-app** wants will differ from this, but they are probably looking for something along these lines.

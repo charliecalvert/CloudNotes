@@ -1,6 +1,6 @@
 # Express Basics
 
-This assignment is designed to introduce you to [Express Js](http://expressjs.com/). Express is the library most often used by NodeJs developers when creating web applications. It is not the only way to create an application, but it is by far the most common.
+This assignment is designed to introduce you to [Express JS](http://expressjs.com/). Express is the library most often used by NodeJs developers when creating web applications. It is not the only way to create a Node JS application, but it is by far the most common.
 
 - Express Presentation: [http://bit.ly/JavaScriptNode][epres]
 
@@ -10,33 +10,38 @@ Here are several notes that are worth considering before you start working with 
 
 **NOTE**: _Express is often combined with other client side libraries. In many cases, other libraries such as jQuery, Angular or React will also be used._
 
-**NOTE**: _You can combine React and Express, but most React applications are created with a special tool call [Create Express App][cra-home]. If your primary goal is to create a React based application, then consider using Create Express App as explained [here][elf-cra]. Alternatively, look [here][elf-react] to learn how to craft a React app from scratch._
+**NOTE**: _You can combine React and Express, but most React applications are created with a special tool call [create-express-app][cra-home]. If your primary goal is to create a React based application, then consider using Create Express App as explained [here][elf-cra]. Alternatively, look [here][elf-react] to learn how to craft a React app from scratch._
 
 **NOTE**: _The default Express template library used to be called Jade, but for legal reasons it is now called Pug. At this stage, at least, the two tools are essentially identical. If you find places where I reference Jade, you can simply mentally translate that to Pug, or vice-versa, depending on your needs._
 
 ## Goals
 
-- Create an express application
+- Create an express application.
 - Change the title that appears in **index.pug** and on the main page of the application at run time
-- Load [jQuery][jquery-home] and a custom JavaScript page
+- Load [jQuery][uery-home] and a custom JavaScript page
 - Use raw JavaScript or jQuery to display a line of text in an HTML paragraph tag
 - Switch from using **node** to using **nodemon**
 - Set the port to 30025
 
 ## Get Started
 
+Once we get rolling we will use my custom **elf-express** fork of **express generator** to create express apps. But in this one assignment, we will start with express generator and manually make a series of changes that we will later automate with **elf-express**.
+
 The [express-generator][express-gen] automatically generates a default express application. It is installed by default in Pristine Lubuntu. If you find it is not available, you can install it automatically by the following scripts from JsObjects, which are described in the [JsObjects README][elf-js-objects]:
 
 - [InstallNodePackages][inpack]
 - [UbuntuAndCloudNineSetup][ubuntu-setup]
 
-**NOTE**: _When reading this section, it is perhaps helpful to understand that Pristine Lubuntu comes with both **nodemon** and the **express generator** installed in **~/npm/bin**. I used the JsObjects scripts mentioned above to perform the install. Everything in JsObjects is open source. That repository has been available for at least a decade, and should remain available for the foreseeable future._
+**NOTE**: _When reading this section, it is perhaps helpful to understand that Pristine Lubuntu comes with **nodemon**, **express-generator** and **elf-express** installed in **~/npm/bin**. I used the JsObjects scripts mentioned above to perform the install. Everything in JsObjects is open source. That repository has been available for at least a decade, and should remain available for the foreseeable future._
 
-If you find the **experss-generator** is missing, or want to update it without using JsObjects, you can run this command:
+If you find that **elf-express** or **express-generator** are missing, or want to update them without using JsObjects, you can run these commands:
 
 ```bash
 npm install -g express-generator
+npm install -g elf-express
 ```
+
+## Create
 
 To use the **express-generator**, simply type the word **express** followed by the name of the project you want to create. The generator will create a folder for your project and place the project inside it. Here then, are the three basic steps you may perform to create an express application:
 
@@ -48,7 +53,19 @@ npm install
 
 The last command, **npm install**, is extremely important. It processes the libraries that are specified in the **dependencies** and **devdependencies** sections of **package.json** and puts the compiled output in a folder called **node_modules**. There will be more on this subject [in other sections of this course](/javascript-guide/NodeJs.html#npm-install-notes).
 
-Load the project in WebStorm. Open up **/bin/www** and set the port 30025\. Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**. I'k intentionally being a big vague here as I want you to study **package.json** in at least enough depth to discover the **start** property and see how to replace the word **node** with **nodemon**. If you find that process baffling then you need to spend time reviewing JavaScript basics. (JSON is a subset of JavaScript.)
+Load the project in WebStorm. Open up **/bin/www** and set the port 30025:
+
+```javascript
+const port = normalizePort(process.env.PORT || '30025');
+```
+
+In the same file, modify **server.listen** so that it echos out the port you are using when you start the app:
+
+```javascript
+server.listen(port, () => console.log('listening on', port));
+```
+
+Then open up **package.json** and ensure that you are using **nodemon** rather than **node** to _start_ your project when you type **npm start**. I'm intentionally being a big vague here as I want you to study **package.json** in at least enough depth to discover the **start** property and see how to replace the word **node** with **nodemon**. If you find that process baffling then you need to spend time reviewing JavaScript basics. (JSON is a subset of JavaScript.)
 
 **NOTE**: _The npm **nodemon** package should be installed by default in Pristine Lubuntu. To test if it is installed, run this command: **nodemon --version**. If it does not return an error, then it is likely properly installed. If you need to install it for some reason, or if you need to update it, issue this command: **npm install -g nodemon**._
 
@@ -61,6 +78,14 @@ npm start
 Load the project in a browser by navigating to this address:
 
 - [http://localhost:30025](http://localhost:30025)
+
+You may get an error that looks a bit like this:
+
+```code
+Error: Cannot find module 'http-errors'
+```
+
+If that happens, try typing **npm install** or this shorter version of the same command: **npm i**.
 
 ## Change the Title
 
@@ -75,29 +100,6 @@ router.get('/', function(req, res, next) {
 Change the word **Express** to **Prog262-LastName**, where LastName is your last name.
 
 **NOTE**: _I'll ask you to do similar permutations in variables or words that include strings like **LastName** many times in this course. Please, use your common sense, don't try to be too clever by literally turning in the phrase **Prog272-LastName**. Instead, put in your last name. For instance, **Prog272-Calvert**._
-
-## Create Custom JavaScript
-
-Create a file called **/public/javascripts/control.js**. It should contain the following code:
-
-```javascript
-window.onload = function() {
-    console.log("control.js loaded");
-    const dynamic = document.getElementById('dynamic');
-    dynamic.textContent = 'control is loaded';  
-};
-```
-
-Or do it with jQuery:
-
-```javascript
-$(document).ready(function() {
-    console.log("control.js loaded");
-    $("#dynamic").html("control.js loaded");
-});
-```
-
-**NOTE**: _It is sometimes better to use **document ready** rather than **window.onload** because jQuery will call each instance of **document ready** that you create._
 
 ## Modify your Pug Files
 
@@ -129,6 +131,30 @@ html
 
 Again, notice that Pug has a short hand for nearly all HTML statements. After you get your program running view the generated HTML so you can confirm that all is working as expected. Notice also that we are loading jQuery from a CDN. A CDN is an Internet site that stores commonly used files.
 
+## Create Custom JavaScript
+
+Create a file called **/public/javascripts/control.js**. It should contain the following code:
+
+```javascript
+window.onload = function() {
+    console.log("control.js loaded");
+    const dynamic = document.getElementById('dynamic');
+    dynamic.textContent = 'control is loaded';  
+};
+```
+
+Or do it with jQuery:
+
+```javascript
+$(document).ready(function() {
+    console.log("control.js loaded");
+    $("#dynamic").html("control.js loaded");
+});
+```
+
+**NOTE**: _It is sometimes better to use **document ready** rather than **window.onload** because jQuery will call each instance of **document ready** that you create._
+
+
 ## Turn it in
 
 Place your project files in the folder of your repository specified above. In the root of same folder of your repository, or attached to your assignment, include a screen shot of your project running in a browser.
@@ -138,7 +164,7 @@ Place your project files in the folder of your repository specified above. In th
 When you turn in the the assignment, include the URL of your repository. It should look something like this:
 
 ```
-git@bitbucket.com:lastname/prog219_lastname.git
+git@github.com:user-name/prog272-lastname-2019.git
 ```
 
 ## Package Missing
@@ -174,15 +200,33 @@ In general, when you see the error "Cannot find module XXX," the first thing to 
 
 ## Webpack
 
-We don't have to use [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) but these are very commonly used tools. Webpack bundles multiple files together, and Babel transpiles ES6 code to ES5.
+In the code shown above we are using a CDN to load jQuery. Using CDNs is a good practice. However, they will not work if you do not have access to the Internet. If you want to solve the problem, you can make jQuery or other libraries a part of your project and load them with [Webpack](https://webpack.js.org/). If you want, you can even use Webpack to transpile your ES6 to ES5 so it can be used on older browsers. Here is how to proceed.
+
+Just to be clear: we don't have to use [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) but these are very commonly used tools. Webpack bundles multiple files together, and Babel transpiles ES6 code to ES5.
+
+The first step would be to remove our code that loads jQuery from a CDN. Open up **views/layout.pug** and remove these lines:
+
+```pug
+script(src='//code.jquery.com/jquery-1.11.2.min.js')
+script(src="/javascripts/control.js")
+```
+
+Add this line at the bottom of **views/index.pug**:
+
+```pug
+script(src="javascripts/bundle.js")
+```
 
 Install the packages we need:
+
 ```code
 npm i @babel/core @babel/preset-env babel-loader webpack webpack-cli
 npm i jquery
 ```
 
-Here we load babel and webpack and then jQuery. I put them on separate lines not because they need to be installed with separate commands, but in order to lump webpack and babel together, and set jQuery off by itself. The point is that Webpack and Babel work together very closely in this example, and in many other programs.
+Here we load babel and webpack and then jQuery. I put them on separate lines not because they need to be installed with separate commands, but in order to lump webpack and babel together, and set jQuery off by itself. The point is that Webpack and Babel work together very closely in this example, and in many other programs. jQuery is something else altogether.
+
+**NOTE**: _I feel compelled to add that jQuery, which is probably still the most popular JavaScript library, is on its way out. It was vital when the web was younger, and the differences between browsers more pronounced. Now our updated browsers, better JavaScript implementations, and Webpack make it less appealing._
 
 Create **webpack.config.js**:
 
@@ -242,9 +286,9 @@ But we don't need this file in this project because the information is included 
 
 ## Bower
 
-We do not have to load jquery from a CDN or from webpack as we do above. Instead, we can install it locally with bower. This option used to be the default, but now it is on the way out. I include it only for the sake of completeness.
+We do not have to load jquery from a CDN or from webpack as we do above. Instead, we can install it locally with bower. This option used to be the default, but now it is on the way out. I include it only for the sake of completeness. It is more emphatically on the way out than jQuery, but like jQuery, it is still widely used.
 
-Later in the course, we will automatically set up our **bower** files with **CreateExpressProject** or some similar tool. But in this assignment, we can, if we want, generate them by hand, by following the guidelines outline in this section of the assignment.
+Later in the course, we will may show how to automatically set up our **bower** files with **elf-express** or **CreateExpressProject** or some similar tool. But in this assignment, we can, if we want, generate them by hand, by following the guidelines outline in this section of the assignment. (On the other hand, I may strip bower from my scripts, and start relying on Webpack instead.)
 
 There are two of files you need to create in the root of your project. The first is **.bowerrc**:
 

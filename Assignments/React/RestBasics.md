@@ -20,8 +20,6 @@ Merge your current work from weeks 1 and 2 into **master**. Fix any conflicts th
 
 Create a branch called **week03** based on your work in **master**.
 
-
-
 ## Create the Project Directory
 
 We are going to have two projects in this assignment, so lets set up a directory for them.
@@ -261,6 +259,24 @@ Because our application uses ES6 (ES2015), you want to tell WebStorm to expect m
 Also set up ESLint support at **File | Settings | Languages and Frameworks | JavaScript | Code Quality Tools | ESLint**. Set the **ESLint package** to **~/npm/lib/node_modules/eslint**. You should be able to pick this option from drop down.
 
 ![Webstorm and eslint][eslint]
+
+## Fix the Logo
+
+Open up **App.css** and change the logo height to 10vmin or smaller:
+
+```css
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+  pointer-events: none;
+}
+```
+
+Set the **min-height** for the **App-header** to some small value like **15vh**. Or build your own header. Be creative and do something unique. All I ask is that we can actually see your button when we open the app.
+
+To learn about viewport units (vmin and vh), run this search:
+
+- [Viewport Unit Search](https://www.google.com/search?q=vh+vmin+css)
 
 ## Link Client and Server
 
