@@ -348,9 +348,21 @@ class App extends Component {
 export default App;
 ```
 
-The key call here is to **fetch**, found in the method named **queryServer**. **featch** uses JavaScript **promises**. The promise uses two **.then** methods. If the call could not be made because of a problem on the client side, then the first **.then** method throws an exception. This first call to the **.then** method is there to check if the HTTP call was able to send a request to the server; if will succeed even if the server reported an error such as 404 Not found or 500 Internal Server error. In other words, the first **.then** can succeed even if the server throws a 404 or 500 error.
+The key call here is to **fetch**, found in the method named **queryServer**. **featch** uses JavaScript **promises**. The promise uses two **.then** methods. If the call could not be made because of a problem on the client side, then the first **.then** method throws an exception. This first call to the **.then** method is there to check if the HTTP call was able to send a request to the server;
 
-The second **.then** method gives us the result if the method is able to make a call to the server. If the server sent us back some JSON, then the JSON will be found here in the second **.then** clause. Sometimes the server correctly sends back JSON or some other entity, but we fumble our handling of it, thereby throwing an exception in the second **.then** call.
+It will succeed even if the server reported an error such as 404 Not found or 500 Internal Server error. In other words, the first **.then** can succeed even if the server throws a 404 or 500 error. However, **response.ok** will be set to set false, and **status** and **statusText** will contain the error number and string describing the error. Thus one could write in the first **then** method:
+
+```JavaScript
+if(response.ok) {
+    return response.json();
+}
+const errorString = response.status + ' ' + response.statusText;
+throw new Error(errorString);
+```
+
+If you did this, the second **then** would never be called.
+
+The second **.then** method gives us the result if the method is able to make a call to the server. If the server sent us back some JSON, then the JSON will be found here in the second **.then** clause. Unless we explicitly throw an exception the second then will be called even on a 404 or 500 error. Sometimes the server correctly sends back JSON or some other entity, but we fumble our handling of it, thereby throwing an exception in the second **.then** call.
 
 All errors should end up in the **.catch** block.
 
