@@ -19,6 +19,8 @@ Also, see this: https://stackoverflow.com/a/16048358/253576
 
 Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
 
+Take a snapshot of Pristine Lubuntu before installing Docker.
+
 There is a script in **JsObjects/Utilities/InstallScripts**:
 
 - DockerInstall
@@ -205,6 +207,8 @@ Alternately, you can **commit** the container to an image and then run the image
 Take a screen shot of the ssh bash shell on your local Ubuntu server after running the **docker images** command. It should show a list of the containers installed on your system. Also include the URL for your Docker Hub page that displays your docker images.
 
 ## Create Ubuntu Image
+
+Take a snapshot of Pristine Lubuntu before installing Docker.
 
 You can install the JsObjects development environment with this command:
 
