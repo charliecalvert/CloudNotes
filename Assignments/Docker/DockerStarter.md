@@ -19,9 +19,9 @@ Also, see this: https://stackoverflow.com/a/16048358/253576
 
 Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
 
-There are two scripts in **JsObjects/Utilities/InstallScripts**:
+There is a script in **JsObjects/Utilities/InstallScripts**:
 
-- InstallDocker
+- DockerInstall
 
 Run the script.
 
@@ -53,14 +53,16 @@ docker run -it ubuntu
 
 Run these commands from inside a Docker container:
 
-    apt-get update
-    apt-get upgrade
-    apt-get install git
-    apt-get install build-essential
-    apt-get install nano
-    apt-get install curl
-    apt-get install apache2
-    service apache2 start
+```nohighlighting
+apt-get update
+apt-get upgrade
+apt-get install git
+apt-get install build-essential
+apt-get install nano
+apt-get install curl
+apt-get install apache2
+service apache2 start
+```
 
 We are not installing LAMP because we don't need MySQL or the various scripting languages such as Python or PHP. All we need is Apache, so we are only install it.
 
@@ -77,14 +79,18 @@ We have just switched from Node 8.x to Node 9.0. However, at the time of this wr
 
 ## Create User
 
-    useradd -ms /bin/bash bcuser
-    usermod -aG sudo bcuser
-    su bcuser
+```nohighlighting
+useradd -ms /bin/bash bcuser
+usermod -aG sudo bcuser
+su bcuser
+```
 
 To confirm that all is as expected:
 
-    whoami
-    pwd
+```nohighlighting
+whoami
+pwd
+```
 
 When we installed Apache, we created an **/var/www/html** directory. Use **chown** to give **bcuser** the right permissions to access it.
 
@@ -197,6 +203,54 @@ Alternately, you can **commit** the container to an image and then run the image
 ## Turn it in
 
 Take a screen shot of the ssh bash shell on your local Ubuntu server after running the **docker images** command. It should show a list of the containers installed on your system. Also include the URL for your Docker Hub page that displays your docker images.
+
+## Create Ubuntu Image
+
+You can install the JsObjects development environment with this command:
+
+    docker pull charliecalvert/bcode:bcoder
+
+Create the Ubuntu container:
+
+    docker pull ubuntu
+    # launch container
+    docker run -it ubuntu
+
+Then prepare the container:
+
+    # Add sudo command to your container
+    apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
+    apt-get install git
+    apt-get install ssh
+    adduser bcuser
+    usermod -aG sudo bcuser
+    su bcuser
+    sudo apt-get update
+
+For the user set the full name to bcuser and the password to bcuser.
+
+Now sign in as that user and navigate to the home directory:
+
+    su bcuser
+    cd
+
+Create the SSH key pair as described in [elvenware](https://www.elvenware.com/cloud-guide/SshFtpsPutty.html#sshKeys)
+
+## Permission Denied
+
+If you get an error like this:
+
+    Got permission denied while trying to connect to the Docker daemon socket at unix:///var etc...
+
+Add a docker group, join it, log out and log back in. Disable and re-enable docker. Now you should be good. Like this:
+
+
+    sudo addgroup --system docker
+    sudo usermod -a -G docker $USER
+    exit # AND LOG BACK IN
+    sudo snap disable docker
+    sudo snap enable docker
+    docker images
 
 ## References
 
