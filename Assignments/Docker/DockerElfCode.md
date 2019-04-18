@@ -85,6 +85,8 @@ Make several changes to your README.md file from your repo both in the container
 
 ## Start an existing Container
 
+Once again, lets use the Docker Starter assignment to walk us through these steps.
+
 Get the [container name][dcn] from the Docker Starter.
 
 [Start and exec][sec] the container.
