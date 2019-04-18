@@ -60,7 +60,7 @@ Create a symbolic link to it:
 
 Load it: **sshadd**
 
-While we are at it, get your .gitconfig as well:
+While we are at it, type **cd** to get to your home directory and copy your .gitconfig into the home directory of your container. Again, you will have to put in your IP address:
 
     scp bcuser@000.000.00.00:/home/bcuser/.gitconfig .
 
