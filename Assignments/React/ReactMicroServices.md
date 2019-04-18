@@ -222,13 +222,21 @@ Then we use the request package to forward our request to from the server to the
 
 All requests except for **test-routes/foo** should be handled by the microservices. The rest should be forwarded from **server/routes/index.js** to the appropriate microservice. Therefore, in **server/routes/index.js**, you should have the **/qux-you-rang** route shown above, for a total of four methods:
 
-Microservice | url
--------------|-------------------
-qux          | /qux-you-rang
-git-user     | /git-user-you-rang
-git-user     | /git-user-get-user
-git-gist     | /git-gist-you-rang
+Call Microservice | Url
+------------------|-------------------
+qux               | /qux-you-rang
+git-user          | /git-user-you-rang
+git-user          | /git-user-get-user
+git-gist          | /git-gist-you-rang
 
+All those URLs are in **server/index.js**. In **get-user/routes/index.js** you should have routes called **/you-rang** and **/get-user**
+
+Microservice | Route     |
+-------------|-----------|--
+qux          | /you-rang |
+git-user     | /you-rang |
+git-user     | /get-user |
+git-gist     | /you-rang |
 
 ## Get User Info
 
