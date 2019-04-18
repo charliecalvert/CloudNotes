@@ -35,7 +35,7 @@ git clone http://github.com/charliecalvert/elven-assignments.git
 Copy the node express program called **NodeRouteBasics** from my repo to yours:
 
 ```
-cp -r ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2016/Week04-NodeRouteBasics
+cp -r ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2016/Week03-NodeRouteBasics
 ```
 
 ## Step Three: Client Interface {#interface}
@@ -68,7 +68,7 @@ Put this in **views/index.jade** or **views/index.pug**:
 button#search Search
 ```
 
-**NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, it doesn't matter whether we are using Jade (**index.jade**) or Pug (**index.pug**). Though both behave the same way in nearly all cases._
+**NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, we should all be using pug. It doesn't matter whether we are using Jade (**index.jade**) or Pug (**index.pug**). Both behave the same way in nearly all cases. However, this name change happened long enough ago that we should all be on Pug now._
 
 To detect a click on this button, write something like this:
 
@@ -113,41 +113,46 @@ function callServerWithoutParms() {
 }
 ```
 
+The **fetch** call is a [promise][jspr]. There are two calls to the **then** method. Generally speaking:
+
+- If you hit an error, it will be caught in the first **then** call
+- If your call to the server succeeds, then the result returned from the server will show up in the second **then** call.
+
+This is an over-simplification, but the key point is to look for your data from the server in the parameter of the second **then** method.
+
 ## Call Route (endpoint) with Parameters {#pass-data}
 
 Sometimes we need to not just call a route on the server, but call the route and also pass in parameters. Suppose we want to calculate the number of feet in X miles, which X is supplied by the user in a [text INPUT][ic] or [numeric INPUT][icn] control.
 
 First, define the input control in our Jade/Pug file:
 
-```
-extends layout
+    extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+    block content
+      h1= title
+      p Welcome to #{title}
 
-  input#userInput(type="number")  <=== HERE
+      input#userInput(type="number")  <=== HERE
 
-  div    
-    button#calculateFeetFromMiles Calculate Feet from Miles    
+      div    
+        button#calculateFeetFromMiles Calculate Feet from Miles    
 
-  div
-    pre#displayArea
-```
+      div
+        pre#displayArea
 
 Here is the client side code that calls that module:
 
 ```javascript
 const userMiles = document.getElementById('userInput').value;
-  fetch('/calculateFeetFromMiles' + '?miles=' + userMiles)
-      .then((response) => response.json())
-      .then((response) => {
-          const displayArea = document.getElementById('displayArea');
-          displayArea.innerHTML = JSON.stringify(response, null, 4);
-      })
-      .catch(ex => {
-          console.log(ex);
-      });
+fetch('/calculateFeetFromMiles' + '?miles=' + userMiles)
+    .then((response) => response.json())
+    .then((response) => {
+        const displayArea = document.getElementById('displayArea');
+        displayArea.innerHTML = JSON.stringify(response, null, 4);
+    })
+    .catch(ex => {
+        console.log(ex);
+    });
 ```
 
 ## Server Side HTTP GET Parameters {#server-side-get}
@@ -527,6 +532,12 @@ npm install -g jasmine
 ```
 
 **NOTE**: *The point of setting up this ~/tmp directory is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*
+
+<!--       -->
+<!-- links -->
+<!--       -->
+
+[jspr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 [nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
 
