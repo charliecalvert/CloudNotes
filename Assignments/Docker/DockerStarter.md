@@ -43,11 +43,23 @@ https://hub.docker.com/billing-plans/
 
 ## Test
 
+Try some of these commands to see if you instance is installed. The last command should both download and run the Ubuntu Docker image.
+
 ```nohighlighting
 docker run -i hello-world
 docker images
 docker run -it ubuntu
 ```
+
+## Run an Image
+
+In general, we run an image like this.
+
+```xml
+docker run -it <image-name>;
+```
+
+After it has been run, a container is created, and then we tend to just run start and exec the container, as explained below. But if you want to start again, with a fresh instance of the image, we run the command shown above.
 
 ## Install Software
 

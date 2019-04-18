@@ -14,13 +14,13 @@ For now, it should be:
 
 Confirm that it downloaded:
 
-      docker images
+    docker images
 
 ## Create Container and Run It {#run-it}
 
-Create a container and run it:
+Create a container and [run it][dri]:
 
-      docker run -it charliecalvert/bcode:bcoder
+    docker run -it charliecalvert/bcode:bcoder
 
 You are placed at the root of the container logged in a the super user:
 
@@ -115,5 +115,6 @@ Mostly I will be looking at your at the log for your repo with this command: **g
 [dcn]: /teach/assignments/docker/DockerStarter.html#list-containers
 [diu]: https://hub.docker.com/_/ubuntu
 [ds]: /teach/assignments/docker/DockerStarter
+[dri]: /teach/assignments/docker/DockerStarter.html#run-an-image
 [dsin]: /teach/assignments/docker/DockerStarter#docker-install
 [sec]: /teach/assignments/docker/DockerStarter.html#start-a-container
