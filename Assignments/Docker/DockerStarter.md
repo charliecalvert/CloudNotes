@@ -167,6 +167,12 @@ Now you should be able to delete the image:
     Untagged: charliecalvert/foobar:latest
     Deleted: sha256:982c61b5875720bbe5d3a8fa02c0e932734add5c366e2bb6c3d691b4798c128d
 
+## List Containers
+
+To list all containers long form:
+
+    docker ps -a
+
 To list all containers with just ID:
 
     docker ps -aq
