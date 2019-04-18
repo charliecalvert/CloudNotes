@@ -552,7 +552,11 @@ cd ~/Source
 
 You can now create projects in this directory that you want to keep at least for awhile without committing to a repository.
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [re]: https://reactjs.org/
 
 
-Copyright (c) 2018 by Charlie Calvert
+Copyright (c) 2019 by Charlie Calvert

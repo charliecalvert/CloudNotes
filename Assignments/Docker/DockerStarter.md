@@ -21,11 +21,9 @@ Install the [Docker Community Edition](https://docs.docker.com/install/linux/doc
 
 Take a snapshot of Pristine Lubuntu before installing Docker.
 
-There is a script in **JsObjects/Utilities/InstallScripts**:
+Run the script found on your hard drive in **JsObjects/Utilities/InstallScripts**:
 
-- DockerInstall
-
-Run the script.
+- [DockerInstall][dkin]
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
@@ -267,4 +265,10 @@ This is for later:
 - <https://writing.pupius.co.uk/apache-and-php-on-docker-44faef716150>
 - <https://www.linode.com/docs/websites/hosting-a-website>
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [runc][https://github.com/opencontainers/runc]
+
+[dkin]:https://github.com/charliecalvert/JsObjects/blob/master/Utilities/InstallScripts/DockerInstall

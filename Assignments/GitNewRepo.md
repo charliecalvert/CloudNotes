@@ -882,10 +882,9 @@ If you want, it is possible to put a password on your private key.
 - [http://stackoverflow.com/a/3818909](http://stackoverflow.com/a/3818909)
 - [https://help.github.com/articles/working-with-ssh-key-passphrases/](https://help.github.com/articles/working-with-ssh-key-passphrases/)
 
-
-<!-- ********************************* -->
-<!-- ** URLS ************************* -->
-<!-- ********************************* -->
+<!--       -->
+<!-- links -->
+<!--       -->
 
 [git-video]: http://youtu.be/HCoC3FbdcQk
 [github-edu]: https://education.github.com/pack

@@ -318,6 +318,10 @@ If I look in **package.json** I see that ssh2 is now at **0.8.2**:
 }
 ```
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [ceslg]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [epv]: https://youtu.be/bsxBHLxYMrA
 [gg]: /teach/assignments/git/GetGist.html
