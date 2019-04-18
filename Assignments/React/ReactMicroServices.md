@@ -88,7 +88,7 @@ Here are the ports
 
 | Service  | Port  | Near the bottom of .bashrc |
 |:---------|:------|:---------------------------|
-| qux      | 30027 | export ELF_QUX_PORT=30027  |
+| qux      | 30027 | export QUX_PORT=30027  |
 | git-user | 30028 | export GIT_USER_PORT=30028 |
 | git-gist | 30029 | export GIT_GIST_PORT=30029 |
 
@@ -103,11 +103,49 @@ Though it is unlikely we will do so, here are some additional services would cou
 - The Git Explorer socket server: **/git-socket**
   - Send socket IO messages to any registered client whenever your app creates, lists or deletes gists.
 
+## Implement fetch Once {#one-fetch}
+
+We need only implement **fetch** one time. When we declare our buttons, we can pass in some data on the event to specify the url for that button:
+
+```html
+<button data-url="/test-routes/foo" onClick={this.queryServer}>Test Foo Route</button>
+```
+
+**NOTE**: _Recall that attributes beginning with **data** have special meaning in modern HTML and will appear as target.dataset in the event._
+
+Then in the implement of fetch we snag the URL we declared in the **data-url** attribute of the button:
+
+```javascript
+queryServer = (event) => {
+        const that = this;
+
+        fetch(event.target.dataset.url)
+        // AND SO ON UNCHANGED
+});
+```
+
+The **dataset** object is now standard in modern HTML/JavaScript, and the **url** comes from our **data-url** attribute declared on the button.
+
 ## Create Qux Microservice
 
 From the root of your **week03-rest-basics** project:
 
     elf-express qux
+
+Set the port and echo it out using the name of the name of the QUX server in your message:
+
+
+```javascript
+var port = normalizePort(process.env.QUX_PORT || '30027');
+// CODE OMITTED HERE
+server.listen(port, () => { console.log("QUX Server running on port", port); });
+```
+
+While we are at it, why don't ensure that **server/bin/www** has something similar:
+
+```javscript
+server.listen(port, () => console.log("Main server running on port", port));
+```
 
 Implement **you-rang** as shown in the next sections. Call it from the client with fetch. Display the output.
 
@@ -128,6 +166,22 @@ For instance, if sent from the client, you should get responses to these message
 This feature should be available for all three microservices when you turn in this assignment.
 
 **NOTE**: _I will call the words highlighted above, such as **qux**, **git-user**, and **git-gist** our base routes. All calls to those services should include those base routes. For instance, when calling any **git-gist** api, the first part of the URL should include the word **git-gist**._
+
+The method itself can be very a simple call in **routes/index.js**:
+
+```javascript
+router.get('/you-rang', (request, response) => {
+    response.send({'result': 'you rang', server: 'qux'});
+});
+```
+
+Make sure concurrently starts qux like this in the **scripts** object of **package.json**:
+
+```javascript
+"qux": "nodemon qux/bin/www",
+```
+
+**HINT**: _You will also have to modify the start property._
 
 ## Router IDs
 
@@ -153,10 +207,12 @@ It turns out that we can do it like this:
 ```javascript
 const requester = require('request');
 
-router.get('/bar', function(request, response, next) {
-    requester('http://localhost:30035/bar').pipe(response);
+router.get('/qux-you-rang', function(request, response, next) {
+    requester('http://localhost:30027/qux-you-rang').pipe(response);
 });
 ```
+
+This assumes that our git-user microservice is correctly running on port 30027.
 
 We put this in **server/routes/index.js**. We import (require) a package called request:
 
@@ -164,15 +220,15 @@ We put this in **server/routes/index.js**. We import (require) a package called 
 
 Then we use the request package to forward our request to from the server to the appropriate microservice and return the result by **piping** it back to the client. These seems a bit like magic, but **request** is a well established package and it is designed, in part, to do precisely this sort of thing.
 
-All requests except for **test-routes/foo** should be handled by the microservices. The rest should be forwarded from **server/routes/index.js** to the appropriate microservice. For instance:
+All requests except for **test-routes/foo** should be handled by the microservices. The rest should be forwarded from **server/routes/index.js** to the appropriate microservice. Therefore, in **server/routes/index.js**, you should have the **/qux-you-rang** route shown above, for a total of four methods:
 
-```javascript
-router.get('/gist-user-you-rang', function(request, response, next) {
-    requester('http://localhost:30028/you-rang').pipe(response);
-});
-```
+Microservice | url
+-------------|-------------------
+qux          | /qux-you-rang
+git-user     | /git-user-you-rang
+git-user     | /git-user-get-user
+git-gist     | /git-gist-you-rang
 
-This assumes that our git-user microservice is correctly running on port 30028.
 
 ## Get User Info
 
@@ -205,7 +261,7 @@ router.get('/get-user', function(req, res) {
 
 For now you can just get the info for your repo. We will make this more flexible later.
 
-Be sure to call it from the client with fetch, and display the output for at least two fields from the data returned about the user.
+Be sure to call it from the client with fetch, and display the output for at least two fields from the data returned about the user. We'll work on good ways to display the data later, for now, just show enough to prove you made the call.
 
 ## Gists
 
