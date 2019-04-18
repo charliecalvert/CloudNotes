@@ -114,7 +114,7 @@ Mostly I will be looking at your at the log for your repo with this command: **g
 
 [dcn]: /teach/assignments/docker/DockerStarter.html#list-containers
 [diu]: https://hub.docker.com/_/ubuntu
-[ds]: /teach/assignments/docker/DockerStarter
+[ds]: /teach/assignments/docker/DockerStarter.html
 [dri]: /teach/assignments/docker/DockerStarter.html#run-an-image
-[dsin]: /teach/assignments/docker/DockerStarter#docker-install
+[dsin]: /teach/assignments/docker/DockerStarter.html#docker-install
 [sec]: /teach/assignments/docker/DockerStarter.html#start-a-container
