@@ -50,7 +50,9 @@ In this case 192.168.2.26 is your IP address.
 
 No go to the **.ssh** directory in the container and copy your private key from Pristine Lubuntu. You will need to modify the following line of code to use your IP address:
 
-    scp bcuser@<YOUR IP HERE>:/home/bcuser/.ssh/prog272-key .    
+```html
+scp bcuser@<YOUR IP HERE>:/home/bcuser/.ssh/prog272-key .    
+```
 
 Create a symbolic link to it:
 
