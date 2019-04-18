@@ -260,6 +260,13 @@ Also set up ESLint support at **File | Settings | Languages and Frameworks | Jav
 
 ![Webstorm and eslint][eslint]
 
+If you get an error about eslint: In the client, we used **create-react-app** and it installed eslint 9.0.0. Now back in the root of our project, we have concurrently itself set up, and it also installs eslint. Only it is perhaps using eslint 10.0.1. We have to change the version of eslint that is in the **package.json** that is in the root of our project so it is sync with the one in the client. To do this. You can open **package.json** and manually set eslint to 9.0.0. Remember, do this not in the client, but in the root of the project. Then, just to be safe, while still in the root of the project, delete **node_modules** and **package-lock.json**:
+
+    rm -r node_modules
+    rm package-lock.json.
+
+Then reinstall: **npm i**
+
 ## Fix the Logo
 
 Open up **App.css** and change the logo height to 10vmin or smaller:

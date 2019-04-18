@@ -10,7 +10,7 @@ There is another of the [SOLID principles][solid] that we don't talk about as mu
 
 This principle states that we prefer small interfaces over fat interfaces. "Instead of one fat interface, many small interfaces are preferred".
 
-To help us abide by the spirit of this principle, we will divide our server code into multiple "microservices". Instead of one fat server, we will create several small servers. They will talk to one another over HTTP.
+To help us abide by the spirit of this principle, we will divide our server code into multiple "micro-services". Instead of one fat server, we will create several small servers. They will talk to one another over HTTP.
 
 ![Micro Services][msloop]
 
@@ -22,7 +22,9 @@ To help us abide by the spirit of this principle, we will divide our server code
 
 ## Thumbsucker
 
-For now, you can just think of a microservice as a NodeJs Express app that is dedicated to some single purpose such as logging in a user, or querying a specific database. It is a way to modularize the server side of code. Not so important in small applications, but as applications get huge, being able to divide the server side into distinct services can be helpful. Can also help with maintenance. You don't have to update everything just one service.
+For now, you can just think of a [microservice](https://en.wikipedia.org/wiki/Microservices) as a Node Js Express app that is dedicated to some single purpose such as logging in a user, or querying a specific database. It helps us modularize the server side of our code. The technique is not so important in small applications, but as applications get huge, being able to divide the server side into distinct services can be helpful. It can also help with maintenance. You don't necessarily have to update everything, we can update just one service.
+
+**NOTE**: _Not all is rainbows and puppy dogs in the microservice world. However, even with the complexity they can sometimes add there are advantages if you build and deploy them correctly._
 
 ## Build and Deploy
 
@@ -57,7 +59,9 @@ I want to see at the following:
   - The other 30028
 - Use or create a **create-react-app** project called **client** that calls into a server
   - Run it on Port 30025
-- A CreateExpressProject called **server** that runs on Port 30026 and calls the microservices.
+- An **elf-express** project called **server** that runs on Port 30026 and calls the microservices.
+
+Much of this we have already from the [RestBasics]() assignment.
 
 ## Micro Services
 
@@ -73,18 +77,39 @@ This means that we want to give the **server** some base functions, and then ask
 - The **Qux** micro service: **/qux**
   - If the **client** queries a route on the **Qux** micro service the results are mirrored back to the **client** by the **server**.
   - For instance our **Qux** micro service would respond to the following queries and the JSON produced by **Qux** would be returned to the **client** by the **server** with **res.send** or **pipe** or similar:    
-    - /qux/foo
-    - /qux/bar
     - /qux/you-rang
 - The Git User micro service is accessed via: **/git-user**
-- The Git Gist micro service: **/gist/
+- The Git Gist micro service: **/git-gist/**:
   - Create Gist
   - List Gists
   - Delete Gist
+
+Here are the ports
+
+| Service  | Port  | Near the bottom of .bashrc |
+|:---------|:------|:---------------------------|
+| qux      | 30027 | export ELF_QUX_PORT=30027  |
+| git-user | 30028 | export GIT_USER_PORT=30028 |
+| git-gist | 30029 | export GIT_GIST_PORT=30029 |
+
+I assume you already understand that I want you to put the export statements with the related calls near the bottom of your **.bashrc** file.
+
+## Optional Services
+
+Though it is unlikely we will do so, here are some additional services would could create at some point.
+
 - The Markdown micro service: **/markdown**
   - Insert the contents of a gist in a markdown document and return it
 - The Git Explorer socket server: **/git-socket**
   - Send socket IO messages to any registered client whenever your app creates, lists or deletes gists.
+
+## Create Qux Microservice
+
+From the root of your **week03-rest-basics** project:
+
+    elf-express qux
+
+Implement **you-rang** as shown in the next sections. Call it from the client with fetch. Display the output.
 
 ## You Rang?
 
@@ -98,13 +123,11 @@ For instance, if sent from the client, you should get responses to these message
 
 - /**qux**/you-rang
 - /**git-user**/you-rang
-- /**gist**/you-rang
-- /**markdown**/you-rang
-- /**git-socket**/you-rang
+- /**git-gist**/you-rang
 
-This feature should be available for all five servers when you turn in this assignment.
+This feature should be available for all three microservices when you turn in this assignment.
 
-**NOTE**: _I will call the words highlighted above, such as **qux**, **gist**, and **markdown**, **base-routes**. These are the base routes for each of our services. All calls to those services should include those base routes. For instance, when calling any **gist** api, the first part of the URL should include the word **gist**._
+**NOTE**: _I will call the words highlighted above, such as **qux**, **git-user**, and **git-gist** our base routes. All calls to those services should include those base routes. For instance, when calling any **git-gist** api, the first part of the URL should include the word **git-gist**._
 
 ## Router IDs
 
@@ -123,17 +146,74 @@ Assuming this is in **index.js** for the **qux** server then it would return **p
 
 ## Forwarding Request
 
-Do it like this:
+Our client knows how to talk to the server because we put the **proxy** property in **client/package.json**. However, we do not yet have a way to talk to our microservices.
+
+It turns out that we can do it like this:
 
 ```javascript
 const requester = require('request');
 
 router.get('/bar', function(request, response, next) {
-    requester('http://localhost:30026/bar').pipe(response);
+    requester('http://localhost:30035/bar').pipe(response);
 });
 ```
 
-All requests except for **get-foo** should be handled by the micro services.
+We put this in **server/routes/index.js**. We import (require) a package called request:
+
+    npm i request
+
+Then we use the request package to forward our request to from the server to the appropriate microservice and return the result by **piping** it back to the client. These seems a bit like magic, but **request** is a well established package and it is designed, in part, to do precisely this sort of thing.
+
+All requests except for **test-routes/foo** should be handled by the microservices. The rest should be forwarded from **server/routes/index.js** to the appropriate microservice. For instance:
+
+```javascript
+router.get('/gist-user-you-rang', function(request, response, next) {
+    requester('http://localhost:30028/you-rang').pipe(response);
+});
+```
+
+This assumes that our git-user microservice is correctly running on port 30028.
+
+## Get User Info
+
+From the root of your project.
+
+    elf-express git-gist
+
+Implement **you-rang**. Also, get the user:
+
+```javascript
+router.get('/get-user', function(req, res) {
+  const options = {
+      url: 'https://api.github.com/users/charliecalvert',
+      headers: {
+          'User-Agent': 'request'
+      }
+  };
+
+  request(options, function(error, response, body) {
+      // Print the error if one occurred
+      console.log('error:', error);
+      // Print the response status code if a response was received
+      console.log('statusCode:', response && response.statusCode);
+      // Print the HTML for the Google homepage.
+      console.log('body:', body);
+      res.send({ error: error, response: response, body: body });
+  });
+});
+```
+
+For now you can just get the info for your repo. We will make this more flexible later.
+
+Be sure to call it from the client with fetch, and display the output for at least two fields from the data returned about the user.
+
+## Gists
+
+Create it:
+
+    elf-express git-gists
+
+For now, only implement **you-rang**.
 
 ## Turn it in
 
@@ -145,7 +225,7 @@ Specify:
 
 All your servers should build cleanly and up and running and callable. Use the npm module **concurrently** to start them all at once.
 
-I'm expecting the **qux**, **git-user** and **gist** servers to more or less be working. The others are just shells for now.
+I am expecting the **qux**, **git-user** and **gist** servers to be responding to **you-rang**. The rest of the code can just be shells for now.
 
 Make sure you include the [base route](#you-rang) in your calls from the client:
 
@@ -153,13 +233,13 @@ Make sure you include the [base route](#you-rang) in your calls from the client:
 
 Put all your micro services in a directory called **Micros** or something similar. This means there should be five programs in that directory. The directory should at the top level of your repository, directly under the root:
 
-- isit322-lastname-2017
-  - Your client and server, with a name like **Week03-React-Jest** or similar.
+- isit322-lastname-2019
+  - Your client and server, with a name like **week03-rest-basics** or similar.
   - **Micros**
 
 Don't forget you rename a directory: **git move microtest Micros**.
 
-Not essential, but don't forget to explore **concurrently**.
+Don't forget to explore **concurrently**.
 
 
 - [npm concurrently](https://www.npmjs.com/package/concurrently)

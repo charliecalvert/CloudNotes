@@ -23,8 +23,8 @@ The Github API is a web API. It allows us to make calls across a network, but sp
 Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status:
 
 ```bash
-$ git tag -a v3.0.0 -m "Start Week03"
-$ git push origin v3.0.0
+$ git tag -a v1.0.0 -m "Finished core of RestBasics"
+$ git push origin v1.0.0
 $ git tag -n1
 ```
 
@@ -38,6 +38,7 @@ The last command lists your tags and their message on one line. If you have only
 
 You might create multiple tags for an assignment, but one of the tags should be made just after you commit and push the code you want me to see. Then turn in that tag with the assignment.
 
+After creating this first tag, we should be able to use **elf-tagger** for the rest of our tags.
 
 ## New Branch
 
@@ -104,11 +105,11 @@ git mv App.js components/.
 
 Right now, we are doing, or in the process of doing, two things in **App.js**. We are calling, with fetch, our server with the following routes:
 
-| Module | Route     | Description |
-| :------------- | :------------- |  :------------- |
-| App.js         | /api/foo      | Get file, status, result |
-| Micro01.js     | /bar       | Call You Rang in Micro Services |
-| GitUser.js     | /user      | Get user information from GitHub |
+| Module     | Route            | Description                      |
+|:-----------|:-----------------|:---------------------------------|
+| App.js     | /test-routes/foo | Get file, status, result         |
+| Micro01.js | /bar             | Call You Rang in Micro Services  |
+| GitUser.js | /user            | Get user information from GitHub |
 
 Each module will contain
 

@@ -215,17 +215,17 @@ npm test
 
 The output should look something like this:
 
-```
-  console.log src/ElfDebugEnzyme.js:4
-    <p className="App-intro">
-      file:
-      unknown
-    </p>
+```html
+console.log src/ElfDebugEnzyme.js:4
+  <p className="App-intro">
+    file:
+    unknown
+  </p>
 
- PASS  src/App.test.js
-  rest basic tests
-    ✓ renders without crashing (3ms)
-    ✓ renders initial value of paragraph with state.nine (2ms)
+PASS  src/App.test.js
+rest basic tests
+  ✓ renders without crashing (3ms)
+  ✓ renders initial value of paragraph with state.nine (2ms)
 
 Test Suites: 1 passed, 1 total
 Tests:       2 passed, 2 total
@@ -275,7 +275,7 @@ console.error node_modules/fbjs/lib/warning.js:33
 
 In the meantime, if that is bothering you, to fix the error create a file called **temp-poly-fills** with the following content:
 
-```
+```javascript
 const raf = global.requestAnimationFrame = (cb) => {
     setTimeout(cb, 0)
 };
@@ -285,7 +285,7 @@ export default raf;
 
 Then include it in your test:
 
-```
+```javscript
 import './temp-poly-fills';
 ```
 
