@@ -50,7 +50,7 @@ In this case 192.168.2.26 is your IP address.
 
 No go to the **.ssh** directory in the container and copy your private key from Pristine Lubuntu. You will need to modify the following line of code to use your IP address:
 
-    scp bcuser@00.00.00.00:/home/bcuser/.ssh/prog272-key .    
+    scp bcuser@<YOUR IP HERE>:/home/bcuser/.ssh/prog272-key .    
 
 Create a symbolic link to it:
 
@@ -62,6 +62,16 @@ While we are at it, get your .gitconfig as well:
 
     scp bcuser@000.000.00.00:/home/bcuser/.gitconfig .
 
+Remember to type in your IP address. Use **nano** to edit your **.gitconfig** and change your name to reflect that you are in a Docker container.
+
+    [user]
+    	email = charlie@elvenware.com
+    	name = Charlie on Docker BCode
+
+**NOTE**: _You may need to install **nano**:_
+
+    sudo apt-get install nano
+
 ## Clone Repo
 
 Go back to the Git directory and clone your repo:
@@ -69,12 +79,41 @@ Go back to the Git directory and clone your repo:
     gd
     git clone git@github.com:username/prog272-lastname-2019.git
 
-You will, of course, have to modify the Git URL.    
+You will, of course, have to modify the Git URL.
+
+Make several changes to your README.md file from your repo both in the container and in Pristine Lubuntu. I want to be able to see changes in your Git log showing you made changes in both places.
+
+## Start an existing Container
+
+Get the [container name][dcn] from the Docker Starter.
+
+[Start and exec][sec] the container.
+
+## Turn it in
+
+Mostly I will be looking at your at the log for your repo with this command: **git log**. However, also include one screen shot showing that you are logged into the container and inside your repo. I'm hoping to see a screenshot with something like this in it:
+
+    bcuser@d6ef78834ab6:~/Git/prog272-calvert-2019$ nano README.md
+    bcuser@d6ef78834ab6:~/Git/prog272-calvert-2019$ git add .
+    bcuser@d6ef78834ab6:~/Git/prog272-calvert-2019$ git commit -m "Pushing readme from docker"
+    [master 79d8ac4] Pushing readme from docker
+     1 file changed, 2 insertions(+)
+    bcuser@d6ef78834ab6:~/Git/prog272-calvert-2019$ git push
+    Counting objects: 3, done.
+    Delta compression using up to 8 threads.
+    Compressing objects: 100% (3/3), done.
+    Writing objects: 100% (3/3), 327 bytes | 327.00 KiB/s, done.
+    Total 3 (delta 1), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+    To github.com:charliecalvert/prog272-calvert-2019.git
+       e668258..79d8ac4  master -> master
 
 <!--       -->
 <!-- links -->
 <!--       -->
 
+[dcn]: /teach/assignments/docker/DockerStarter.html#list-containers
 [diu]: https://hub.docker.com/_/ubuntu
 [ds]: /teach/assignments/docker/DockerStarter
 [dsin]: /teach/assignments/docker/DockerStarter#docker-install
+[sec]: /teach/assignments/docker/DockerStarter.html#start-a-container
