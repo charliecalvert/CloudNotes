@@ -103,6 +103,8 @@ Though it is unlikely we will do so, here are some additional services would cou
 - The Git Explorer socket server: **/git-socket**
   - Send socket IO messages to any registered client whenever your app creates, lists or deletes gists.
 
+Just to be clear, you don't have to do this unless I explicitly tell you to do so, or if you get a hankering to do so.
+
 ## Implement fetch Once {#one-fetch}
 
 We need only implement **fetch** one time. When we declare our buttons, we can pass in some data on the event to specify the url for that button:
@@ -304,6 +306,5 @@ Put all your micro services in a directory called **Micros** or something simila
 Don't forget you rename a directory: **git move microtest Micros**.
 
 Don't forget to explore **concurrently**.
-
 
 - [npm concurrently](https://www.npmjs.com/package/concurrently)
