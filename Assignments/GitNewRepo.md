@@ -564,6 +564,20 @@ Most of the time, when I ask for your Git URL, I want the SSH URL. It should be 
 
 Whenever you need to send me information when submitting an assignment, you can either enter a comment or use the Text page. When possible, use the Text page, because you can insert live hyperlinks and relatively well-formatted text using that option. However, either technique will work.
 
+## VirtualBox at Home
+
+If you install VirtualBox at home, be sure to install both VirtualBox and the VirtualBox Extensions. Be sure that the version of VirtualBox and the version of the Virtual Box Extensions are the same.
+
+Check VirtualBox version: **Help | About VirtualBox**
+
+Check VirtualBox extensions:  **File | Preferences | Extensions**
+
+They should be the same. If they are not the same, consider downloading the latest VirtualBox, which is now 6.0.6 but which could be incremented at any time. Notice that there are two links. one to the Windows (or Mac/Linux) version of VirtualBox, and one to the Extensions (which, confusingly, are different from the VirtualBox Additions.) After installing VirtualBox, be sure to also install the extensions.
+
+If you update VirtualBox, you should be prompted to upgrade the extensions. If you are not, then download them, and install them. If you are already using the latest VirtualBox, but don't have the extensions installed, then install them. When they are both installed everything should work. If things don't work, then completely uninstall VirtualBox and try again to install both VBox and the extensions.
+
+- [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
+
 ## Hints
 
 Various Hints
@@ -845,7 +859,6 @@ If you have not correctly named your repository, go to GitHub and locate your re
 You will be taken to the **Settings** page. At the top of the **Settings** page will be an option to rename your repository. Select this option and rename your repository. This will change the URL for your repository.
 
 Save your work. Copy the new URL for your repository. Resubmit your assignment, being sure to include the new name, that is, the new URL for your repository.
-
 
 ## Ruminations
 
