@@ -34,15 +34,14 @@ git clone http://github.com/charliecalvert/elven-assignments.git
 
 Copy the node express program called **NodeRouteBasics** from my repo to yours:
 
-```
-cp -rv ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
-```
+
+    cp -rv ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
+
 
 Check your work with meld:
 
-```bash
-meld ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
-```
+    meld ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
+
 
 ## Step Three: Client Interface {#interface}
 
