@@ -151,15 +151,22 @@ In Pug, we can create one **layout.pug** file that contains our shared HEAD ele
 
 Our index, about and contacts pages will all use the same **HEAD** element defined in **layout.pug**.
 
+We the bottom of **layout.pug** like this:
+
+    body
+      block content
+
 We define the top of **index.pug** like this:
 
     extends layout
 
     block content
 
-The **extends layout** part tells Pug to link in **layout.pug**. To again oversimplify a bit, the **block content** part tells Pug that we are about to define the content for our **BODY** element.
+The **extends layout** part tells Pug to link in **layout.pug**. The **block content** part tells Pug to override the **block content** from **layout.pug**. In that new **block content** section found in **index.pug** we define the content for our **BODY** element for the **index.html** page.
 
-More specifically, we typically define the BODY tag in **layout.pug** and define the contents of the tag in **index.pug**. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. A day will come when this will make complete sense to you, but for now, if it seems a bit complicated, then just think about putting the HEAD element in **layout.pug** and the implementation for your **BODY** element in **index.pug**, **about.pug**, and etc...
+Let's dig into this a bit deeper. We declare an empty **BODY** tag in **layout.pug** and define an empty **block contents** section. We override that block in **index.pug** and use that space to define the contents of the **BODY** tag. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. Perhaps you can see that this system can be used to combine several Pug pages to achieve various effects. For more information, see the [Pug documentation](https://pugjs.org/language/inheritance.html).
+
+If this seems a bit much, rest assured that a day will come when this will make complete sense to you, but for now, if it seems a bit complicated, then just think about putting the HEAD element in **layout.pug** and the implementation for your **BODY** element in **index.pug**, **about.pug**, and etc...
 
 
 ## Create Custom JavaScript
