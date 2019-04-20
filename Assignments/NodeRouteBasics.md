@@ -42,6 +42,11 @@ Check your work with meld:
 
     meld ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
 
+If the force is with you, then meld will show the two directories as having "no differences"
+
+![No Differences][nrm]
+
+**Figure**: _Meld showing that two directories have the same content. (Right click and open and in tab to see expanded version)_
 
 ## Step Three: Client Interface {#interface}
 
@@ -559,3 +564,5 @@ npm install -g jasmine
 [fo]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Making_fetch_requests
 
 [jol]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals
+
+[nrm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-routes-meld.png
