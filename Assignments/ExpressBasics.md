@@ -131,6 +131,37 @@ html
 
 Again, notice that Pug has a short hand for nearly all HTML statements. After you get your program running view the generated HTML so you can confirm that all is working as expected. Notice also that we are loading jQuery from a CDN. A CDN is an Internet site that stores commonly used files.
 
+## Understanding Layout.pug {#layout-pug}
+
+In Pug, we have two main files: 
+
+*   layout.pug
+*   index.pug
+
+To oversimplify a bit: by convention, in **layout.pug** we define the HTML **HEAD** element for our HTML pages. In **index.pug,** we define the **BODY** element. There is no technical reason why this must be so, it is just a habit we form, a convention, that helps us organize our code.</span>
+
+The idea is this: we might have 1, 5, 10, 100, 1000 or more HTML files in our project. In most cases, every HTML file will have different content in the BODY, and most of these pages will have the same content in the HEAD. 
+
+In Pug, we can create one **layout.pug** file that contains our shared HEAD element. Then we create one or more additional Pug files that contain the BODY elements for each page. Like this:
+
+*   layout.pug
+*   index.pug
+*   about.pug
+*   contacts.pug
+
+Our index, about and contacts pages will all use the same **HEAD** element defined in **layout.pug**.
+
+We define the top of **index.pug** like this:
+
+    extends layout
+
+    block content
+
+The **extends layout** part tells Pug to link in **layout.pug**. To again oversimplify a bit, the **block content** part tells Pug that we are about to define the content for our **BODY** element.
+
+More specifically, we typically define the BODY tag in **layout.pug** and define the contents of the tag in **index.pug**. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. A day will come when this will make complete sense to you, but for now, if it seems a bit complicated, then just think about putting the HEAD element in **layout.pug** and the implementation for your **BODY** element in **index.pug**, **about.pug**, and etc...
+
+
 ## Create Custom JavaScript
 
 Create a file called **/public/javascripts/control.js**. It should contain the following code:
