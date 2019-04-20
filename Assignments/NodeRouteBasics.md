@@ -39,7 +39,7 @@ Copy the node express program called **NodeRouteBasics** from my repo to yours:
 
 Remember that you have to change **prog272-lastname-2019** to use your lastname.
 
-Check your work with meld:
+Check your work with [meld](https://meldmerge.org/):
 
     meld ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
 
