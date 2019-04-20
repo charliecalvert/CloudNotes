@@ -101,6 +101,24 @@ Change the word **Express** to **Prog262-LastName**, where LastName is your last
 
 **NOTE**: _I'll ask you to do similar permutations in variables or words that include strings like **LastName** many times in this course. Please, use your common sense, don't try to be too clever by literally turning in the phrase **Prog272-LastName**. Instead, put in your last name. For instance, **Prog272-Calvert**._
 
+Your default Pug code in **views/index.pug** should look like this:
+
+    block content
+      h1= title
+      p Welcome to #{title}
+
+The Pug compiler will use interpolation to swap out the word **title** and replace it with the **title** you defined in **routes/index.js**. We see two different ways to tell Pug to make the substitution. In one case we write:
+
+    h1= title
+
+Here the syntax **= title** is swapped for the word **Express** found in **routes/index.js**.
+
+Here is a second way to do the same thing:
+
+    p Welcome to #{title}
+
+Now **#{title}** is swapped out and **Express** put in its place. This is called **interpolation**. This kind of functionality is found in most template engines. Pug is a popular template engine, but it is by no means the only such engine.
+
 ## Modify your Pug Files
 
 In **index.pug**, create a paragraph in which to display your custom text:
@@ -164,7 +182,7 @@ We define the top of **index.pug** like this:
 
 The **extends layout** part tells Pug to link in **layout.pug**. The **block content** part tells Pug to override the **block content** from **layout.pug**. In that override we define the content for our **BODY** element for the **index.html** page.
 
-Let's dig into this a bit deeper. We declare a **BODY** tag in **layout.pug** and define an empty **block contents** section inside it. Since we did not actually define any content such as an H1 or P tag, we have, in effect, declared an empty **BODY** tag. But Pug knows that the empty **BODY** tag has an empty **block** in it. In **index.pug** we override that block and use that space to define the contents of the **BODY** tag. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. Perhaps you can see that this system can be used to combine several Pug pages to achieve various effects. For more information, see the [Pug documentation](https://pugjs.org/language/inheritance.html).
+Let's dig into this a bit deeper. We declare a **BODY** tag in **layout.pug** and define an empty **block content** section inside it. Since we did not actually define any content such as an H1 or P tag, we have, in effect, declared an empty **BODY** tag. But Pug knows that the empty **BODY** tag has an empty **block** in it. In **index.pug** we override that **block** and use that space to define the contents of the **BODY** tag. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. Perhaps you can see that this system can be used to combine several Pug pages to achieve various effects. For more information, see the [Pug documentation](https://pugjs.org/language/inheritance.html).
 
 If this seems a bit much, rest assured that a day will come when this will make complete sense to you, but for now, if it seems a bit complicated, then just think about putting the HEAD element in **layout.pug** and the implementation for your **BODY** element in **index.pug**, **about.pug**, and etc...
 
