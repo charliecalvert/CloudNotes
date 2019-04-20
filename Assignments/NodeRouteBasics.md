@@ -35,7 +35,7 @@ git clone http://github.com/charliecalvert/elven-assignments.git
 Copy the node express program called **NodeRouteBasics** from my repo to yours:
 
 ```
-cp -r ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2016/Week03-NodeRouteBasics
+cp -rv ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
 ```
 
 ## Step Three: Client Interface {#interface}
