@@ -151,7 +151,7 @@ In Pug, we can create one **layout.pug** file that contains our shared HEAD ele
 
 Our index, about and contacts pages will all use the same **HEAD** element defined in **layout.pug**.
 
-We the bottom of **layout.pug** like this:
+We define the bottom of **layout.pug** like this:
 
     body
       block content
@@ -162,12 +162,11 @@ We define the top of **index.pug** like this:
 
     block content
 
-The **extends layout** part tells Pug to link in **layout.pug**. The **block content** part tells Pug to override the **block content** from **layout.pug**. In that new **block content** section found in **index.pug** we define the content for our **BODY** element for the **index.html** page.
+The **extends layout** part tells Pug to link in **layout.pug**. The **block content** part tells Pug to override the **block content** from **layout.pug**. In that override we define the content for our **BODY** element for the **index.html** page.
 
-Let's dig into this a bit deeper. We declare an empty **BODY** tag in **layout.pug** and define an empty **block contents** section. We override that block in **index.pug** and use that space to define the contents of the **BODY** tag. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. Perhaps you can see that this system can be used to combine several Pug pages to achieve various effects. For more information, see the [Pug documentation](https://pugjs.org/language/inheritance.html).
+Let's dig into this a bit deeper. We declare a **BODY** tag in **layout.pug** and define an empty **block contents** section inside it. Since we did not actually define any content such as an H1 or P tag, we have, in effect, declared an empty **BODY** tag. But Pug knows that the empty **BODY** tag has an empty **block** in it. In **index.pug** we override that block and use that space to define the contents of the **BODY** tag. In particular, we use the **block** keyword to override the empty **content** block from **layout.pug** with our own content to be used in the **BODY** element. Perhaps you can see that this system can be used to combine several Pug pages to achieve various effects. For more information, see the [Pug documentation](https://pugjs.org/language/inheritance.html).
 
 If this seems a bit much, rest assured that a day will come when this will make complete sense to you, but for now, if it seems a bit complicated, then just think about putting the HEAD element in **layout.pug** and the implementation for your **BODY** element in **index.pug**, **about.pug**, and etc...
-
 
 ## Create Custom JavaScript
 
