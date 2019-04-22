@@ -20,13 +20,25 @@ The [Github API](https://developer.github.com/v3/) is a Web API. It allows us to
 
 ## Tag
 
-Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status. If you don't have any tags in your repository yet, then do this:
+Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status. If you already have a properly formatted tag in your repository, then use [elf-tagger][emt].
+
+| Format   | Example | Comment                                |
+|:---------|:--------|:---------------------------------------|
+| Proper   | v1.0.1  | Has v, three numbers, two periods      |
+| Proper   | v2.3.14 | Has v, three numbers, two periods      |
+| Improper | 1.0.1   | No v                                   |
+| Improper | v1.0    | Not enough periods or numbers          |
+| Improper | 1.0     | Not enough periods or numbers and no v |
+| Improper | 1.0.0.1 | Too many periods or numbers and no v   |
+
+If you don't have any tags in your repository yet, then do this to create a properly formatted tag:
 
 ```bash
 $ git tag -a v1.0.0 -m "Finished core of RestBasics"
 $ git push origin v1.0.0
 $ git tag -n1
 ```
+
 
 The first command creates a tag that has a message associated with it. The message works much like the message in a commit.
 
@@ -38,7 +50,7 @@ The last command lists your tags and their message on one line. If you have only
 
 You might create multiple tags for an assignment, but one of the tags should be made just after you commit and push the code you want me to see. Then turn in that tag with the assignment.
 
-After creating this first tag, we should be able to use **elf-tagger** for the rest of our tags.
+After creating this first tag, we should be able to use [elf-tagger][emt] for the rest of our tags.
 
 ## New Branch
 
@@ -428,6 +440,8 @@ html
 <!--       -->
 <!-- links -->
 <!--       -->
+
+[emt]: /teach/assignments/linux/ScriptMasterTags.html
 
 [gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename
 

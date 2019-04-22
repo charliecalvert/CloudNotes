@@ -24,6 +24,15 @@ In other words, they start with a V.
 
 We also assume that they are ascending numbers. We assume the first tag has a version number lower than the second, and so on.
 
+| Format   | Example | Comment                                |
+|:---------|:--------|:---------------------------------------|
+| Proper   | v1.0.1  | Has v, three numbers, two periods      |
+| Proper   | v2.3.14 | Has v, three numbers, two periods      |
+| Improper | 1.0.1   | No v                                   |
+| Improper | v1.0    | Not enough periods or numbers          |
+| Improper | 1.0     | Not enough periods or numbers and no v |
+| Improper | 1.0.0.1 | Too many periods or numbers and no v   |
+
 This is not very robust, but it meets our purposes.    
 
 ## Parameters
@@ -134,11 +143,10 @@ Then we use the **semver-inc** script from the latest JsObjects (git pull) to in
 
     TAG_VERSION=v`semver-inc -p $OLD_TAG_VERSION`
 
-Now we get the branch:
+Now we get the branch with back-ticks:
 
-<pre>
-BRANCH=&#96;git_branch&#96;
-</pre>
+
+    BRANCH=&#96;git_branch&#96;
 
 And put it altogether to see the message we are going to use on our commit and tag:
 
