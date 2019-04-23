@@ -27,9 +27,19 @@ npm i -g eslint
 npm i -g eslint-plugin-react
 npm i -g eslint-plugin-requirejs
 npm i -g babel-eslint
+npm i -g eslint-plugin-react-hooks
+npm i -g eslint-plugin-flowtype
+npm i -g eslint-plugin-import
+npm i -g eslint-plugin-jsx-a11y
 ```
 
 Read here [for more details](https://www.npmjs.com/package/eslint).
+
+In fact, let's do this:
+
+```nohighlighting
+npm -g install eslint eslint-config-airbnb-base eslint-config-fortech-react eslint-config-react-app eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+```
 
 ## Alternative Local Installation
 
