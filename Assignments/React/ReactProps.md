@@ -170,6 +170,7 @@ When you are done, you should have at least the following in the components fold
 
 ![React Props Refactored Button](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-refactor.png)
 
+Here you can see in the console window the proper responses to clicks on the various buttons.
 
 ## PropTypes
 

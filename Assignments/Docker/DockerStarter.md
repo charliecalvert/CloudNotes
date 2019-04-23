@@ -106,7 +106,7 @@ pwd
 
 When we installed Apache, we created an **/var/www/html** directory. Use **chown** to give **bcuser** the right permissions to access it.
 
-## Save New Image
+## Save New Image from Container {#save-new-image}
 
 The changes you make to an image cause the images identifier to change. The identifier is a number like this:
 
