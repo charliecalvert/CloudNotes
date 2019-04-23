@@ -84,6 +84,9 @@ This means that we want to give the **server** some base functions, and then ask
   - List Gists
   - Delete Gist
 
+
+## The Ports {#ports}
+
 Here are the ports
 
 | Service  | Port  | Near the bottom of .bashrc |
@@ -222,6 +225,8 @@ We put this in **server/routes/index.js**. We import (require) a package called 
 
 Then we use the request package to forward our request to from the server to the appropriate microservice and return the result by **piping** it back to the client. These seems a bit like magic, but **request** is a well established package and it is designed, in part, to do precisely this sort of thing.
 
+## The Main Server URLs {#main-urls}
+
 All requests except for **test-routes/foo** should be handled by the microservices. The rest should be forwarded from **server/routes/index.js** to the appropriate microservice. Therefore, in **server/routes/index.js**, you should have the **/qux-you-rang** route shown above, for a total of four methods:
 
 Call Microservice | Url
@@ -231,22 +236,27 @@ git-user          | /git-user-you-rang
 git-user          | /git-user-get-user
 git-gist          | /git-gist-you-rang
 
-All those URLs are in **server/index.js**. In **get-user/routes/index.js** you should have routes called **/you-rang** and **/get-user**
+All those URLs are in **server/index.js**.
 
-Microservice | Route     |
--------------|-----------|--
-qux          | /you-rang |
-git-user     | /you-rang |
-git-user     | /get-user |
-git-gist     | /you-rang |
+
+## The MicroServices EndPoints {#micro-endpoints}
+
+Right now we only need to implement four endpoints in our microservices. In **get-user/routes/index.js** you should have routes called **/you-rang** and **/get-user**:
+
+Microservice | Route/EndPoint |
+-------------|----------------|
+qux          | /you-rang      |
+git-user     | /you-rang      |
+git-user     | /get-user      |
+git-gist     | /you-rang      |
 
 ## Get User Info
 
-From the root of your project.
+Here is how to get started with the MicroService for handling Git User requests. From the root of your project.
 
     elf-express git-gist
 
-Implement **you-rang**. Also, get the user:
+Implement **you-rang** as shown above. Also, get the user:
 
 ```javascript
 router.get('/get-user', function(req, res) {

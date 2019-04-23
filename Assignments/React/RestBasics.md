@@ -408,28 +408,6 @@ Your application will magically open in the browser. Updates should also appear 
 
 **NOTE**: _Remember, we typically need to run **npm install** only once per project on a particular machine. We run **npm start** every time we want to start or restart the application. We can use **Ctrl-C** to shut down either the client or the server._
 
-## Run the server on Cloud 9
-
-First be sure **bower** is installed:
-
-```
-npm -g install bower
-```
-
-Then make sure you have processed both **package.json** and **bower.json**:
-
-```
-npm install && bower install
-```
-
-Then run the application:
-
-```
-npm start
-```
-
-Then **Preview | Preview running application** from the menu items near the top right of the Cloud 9 IDE.
-
 ## Run Concurrently
 
 Make sure you set up the project the same way we did in the [Concurrently assignment][ccn]. We should be able to issue a single command and start both projects.
@@ -463,6 +441,27 @@ entry: [
 ## Cloud 9
 
 This is optional, but if you want to run on Cloud9 you might find [these notes helpful](./ReactOnCloudNine.html).
+
+Also, when on Cloud 9 be sure **bower** is installed:
+
+```
+npm -g install bower
+```
+
+Then make sure you have processed both **package.json** and **bower.json**:
+
+```
+npm install && bower install
+```
+
+Then run the application:
+
+```
+npm start
+```
+
+Then **Preview | Preview running application** from the menu items near the top right of the Cloud 9 IDE.
+
 
 <!--       -->
 <!-- links -->

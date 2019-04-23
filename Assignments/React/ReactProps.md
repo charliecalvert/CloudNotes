@@ -1,6 +1,6 @@
-# React Props
+## Overview
 
-We will learn a bit about React props by continuing to expand the **week02-rest-basics** program. We will try to understand properties, and to see how they can be passed from one component to another.
+We will learn a bit about React props by continuing to expand the [rest-basics][restb], [ReactBasics][rb] and [ReactMicroServices][rms] programs. We will try to understand properties, and to see how they can be passed from one component to another.
 
 In this assignment we are trying to create something that looks a bit like this:
 
@@ -20,16 +20,7 @@ The [Github API](https://developer.github.com/v3/) is a Web API. It allows us to
 
 ## Tag
 
-Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status. If you already have a properly formatted tag in your repository, then use [elf-tagger][emt].
-
-| Format   | Example | Comment                                |
-|:---------|:--------|:---------------------------------------|
-| Proper   | v1.0.1  | Has v, three numbers, two periods      |
-| Proper   | v2.3.14 | Has v, three numbers, two periods      |
-| Improper | 1.0.1   | No v                                   |
-| Improper | v1.0    | Not enough periods or numbers          |
-| Improper | 1.0     | Not enough periods or numbers and no v |
-| Improper | 1.0.0.1 | Too many periods or numbers and no v   |
+Since we are often working on a single project that has multiple phases, let's create a Git **tag** marking our current status. If you already have a [properly formatted tag][emtf] in your repository, then use [elf-tagger][emt].
 
 If you don't have any tags in your repository yet, then do this to create a properly formatted tag:
 
@@ -38,7 +29,6 @@ $ git tag -a v1.0.0 -m "Finished core of RestBasics"
 $ git push origin v1.0.0
 $ git tag -n1
 ```
-
 
 The first command creates a tag that has a message associated with it. The message works much like the message in a commit.
 
@@ -54,17 +44,17 @@ After creating this first tag, we should be able to use [elf-tagger][emt] for th
 
 ## New Branch
 
-If you have not already done so, create a new branch called **Week03**. You **must** put your homework for week three in this branch! (You can do it!)
+If you have not already done so, create a new branch called **Week04**. You **must** put your homework for week four in this branch and merge you completed code back into master! (You can do it!)
 
 ```bash
-git branch Week03
-git checkout Week03
+git branch Week04
+git checkout Week04
 ```
 
 Write some code, commit your work. Push it:
 
 ```bash
-git push --set-upstream origin Week03
+git push --set-upstream origin Week04
 ```
 
 ## Images and CSS
@@ -115,13 +105,7 @@ For instance:
 git mv App.js components/.
 ```
 
-Right now, we are doing, or in the process of doing, two things in **App.js**. We are calling, with fetch, our server with the following routes:
-
-| Module     | Route            | Description                      |
-|:-----------|:-----------------|:---------------------------------|
-| App.js     | /test-routes/foo | Get file, status, result         |
-| Micro01.js | /bar             | Call You Rang in Micro Services  |
-| GitUser.js | /user            | Get user information from GitHub |
+Right now, we are doing, or in the process of doing, two things in **App.js**. We are calling, with fetch, our server and microservices with the endpoints defined in the [ReactMicroServices][rmsep] assignment.
 
 Each module will contain
 
@@ -156,13 +140,15 @@ After looking at this, we might decide that index.js is doing too much, and App.
 - Give App.js the responsibility to load the components that make up our app.
 - Refactor App.js, and split out the call to the server into a new component.
 
-| Module | Route     | Description |
-| :------------- | :------------- |  :------------- |
-| App.js         | None      | Load components |
-| Header.js  | None   | Show Header  |
-| FooApi.js      | /api/foo      | Get file, status, result |   
-| Micro01.js     | /bar       | Call You Rang in Micro Services |
-| GitUser.js     | /user      | Get user information from GitHub |
+| Module     | Route            | Description                      |   |
+|:-----------|:-----------------|:---------------------------------|---|
+| App.js     | None             | Load components                  |   |
+| ElfHeader.js  | None             | Show Header                      |   |
+| FooApi.js  | /test-routes/foo | Get file, status, result         |   |
+| Micro01.js | /bar             | Call You Rang in Micro Services  |   |
+| GitUser.js | /user            | Get user information from GitHub |   |
+
+ElfHeader should be a stateless function, as described in our [ReactBasics][rb] assignment.
 
 
 ## Props
@@ -442,9 +428,13 @@ html
 <!--       -->
 
 [emt]: /teach/assignments/linux/ScriptMasterTags.html
-
+[emtf]: /teach/assignments/linux/ScriptMasterTags.html#prime-the-pump
 [gmm]: https://facebook.github.io/jest/docs/jest-object.html#jestgenmockfrommodulemodulename
 
 [ptrt]: https://github.com/facebook/prop-types
 
 [ptwrt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/prop-types-runtime.png
+[rb]: /teach/assignments/react/ReactBasics.html
+[restb]: /teach/assignments/react/RestBasics.html
+[rms]: /teach/assignments/react/ReactMicroServices.html
+[rmsep]: /teach/assignments/react/ReactMicroServices.html#micro-endpoints
