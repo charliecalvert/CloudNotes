@@ -235,6 +235,41 @@ router.get('/user', function(req, res, next) {
 
 We should refactor our code now. In the server/routes folder create a file called **git-api.js**. Move the method shown above into that file. Modify **server/app.js** to load **routes/git-api.js**. Modify our client side code to call the new **git-api/user** route.
 
+## Prepare for Tests
+
+In **index.js** pass in some default values to **components/App.js**:
+
+```javascript
+const appInit = {
+  file: 'unknown',
+      result: 'unknown',
+  status: 'unknown',
+  server: 'unknown',
+  body: {login: 'unknown', id: 'unknown'}
+};
+
+ReactDOM.render(<App appInit={appInit} />, document.getElementById('root'));
+
+```
+
+And then use it in **App.js**:
+
+```javascript
+constructor(props) {
+    super(props);
+    this.state = props.appInit
+}
+```
+
+Once you have that working, refactor a second time and put **appInit** in its own file. I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere. Export the object literal.
+
+You will now need to import this data into **index.js** and into your tests:
+
+```javascript
+import {appInit} from './app-init';
+```
+
+
 ## Tests
 
 As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
@@ -386,52 +421,6 @@ html
     // CODE YOU NEED TO MODIFY OMITTED HERE
   body
     block content
-```
-
-## Passing Props to App.js
-
-Ignore this section.
-
-We could, but won't, do this or something like it.
-
-## Props
-
-In **index.js** pass in some default values to **components/App.js**:
-
-```javascript
-const appInit = {
-    file: 'File name will be placed here.',
-    status: 'status will go here',
-    result: 'result will go here',
-};
-
-class App extends Component {
-
-
-    render() {
-        return (
-            <div className="App">
-                // CODE TO LOAD OTHER COMPONENTS OMITTED
-                <ApiFoo appInit={appInit} />
-            </div>
-        );
-    }
-}
-
-export default App;
-
-```
-
-And then use it in **App.js**:
-
-## Put appInit in its Own File {#num-int}
-
-I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere.
-
-Of course, you will now need to import this data into **index.js** and into your tests:
-
-```javascript
-import appInit from './app-init';
 ```
 
 <!--       -->
