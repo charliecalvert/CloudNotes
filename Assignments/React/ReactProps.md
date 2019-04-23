@@ -2,7 +2,7 @@
 
 We will learn a bit about React props by continuing to expand the [rest-basics][restb], [ReactBasics][rb] and [ReactMicroServices][rms] programs. We will try to understand properties, and to see how they can be passed from one component to another.
 
-In this assignment we are trying to create something that looks a bit like this:
+In this assignment we are trying to create something that looks a bit, but not very much, like this:
 
 ![React Props UI](https://s3.amazonaws.com/bucket01.elvenware.com/images/ReactPropsUi.png)
 
@@ -97,7 +97,7 @@ You will need to make some changes to your code after doing this. In fact, you m
 
 ## Modularize
 
-The key goal will be to move **App.js** to **components/App.js**. Then break **App.js** into discrete components such as **components/Header.js**, **components/GetFoo.js** and **components/SmallNumbers.js**.
+The key goal will be to move **App.js** to **components/App.js**. Then break **App.js** into discrete components such as **components/ElfHeader.js**, **components/Qux.js**, **components/GetUser.js** and **components/GetGists.js**.
 
 For instance:
 
@@ -109,77 +109,67 @@ Right now, we are doing, or in the process of doing, two things in **App.js**. W
 
 Each module will contain
 
-- A React Component with the same name as the file in which they reside
-- **Constructor**
-- A method that calls fetch
-- A **render** method containing some JSX
+- A stateless React Component with the same name as the file in which they reside
+- Parameters to pass in needed functionality, such as **queryServer** as props.
 
-We have not implemented the server side code of the **GitUser** call, but we will do so later in this assignment. So we might as well get started. Just set up a module with the four pieces described above and assume we will define the details later.
+We have not implemented the server side code of the **GitUser** call, but we will do so later in this assignment. So we might as well get started.
 
-You will need to include code to properly maintain the state of each component. For instance, **App.js** will contain code for maintaining the following properties:
+Start be defining the stateless function in the module called **components/ElfHeader.js**. This component is as simple as the stateless component in ReactBasics, so I'll let you do that on your own.
 
-- file
-- status
-- result
+## Implement Qux
 
-**Micro01**, on the other hand, will only track **state** for one property called **youRang**.
+We have not yet covered passing props to stateless components, so I'll implement Qux for you, then let you do the other ones.
 
-For now, put all the buttons in the **render** method for **App.js**. Do not include them in the other modules. The buttons should have the following labels:
+Here is how to define Qux without passing state:
 
-- Query API (App.js)
-- Query Micro
-- Query Git API  
+```javascript
+import React from "react";
 
-Finally, you will need a module called **components/Header.js** that contains only the header:
+export const Qux = () => (
+    <button data-url="/qux-you-rang" onClick={this.queryServer}>Ring Qux</button>
+);
+```
 
+It is short and sweet and also lightweight because it does not have the overhead of a **class**. That is why people like stateless components.
+
+Unfortunately, it does not compile because **this.queryServer** is not defined. Even though we are not yet passing in **queryServer** as prop, let's right the code that would handle the paramenter if it were passed in:
+
+```javascript
+import React from "react";
+
+export const Qux = ({queryServer}) => (
+    <button data-url="/qux-you-rang" onClick={queryServer}>Ring Qux</button>
+);
+```
+
+Notice that we now pass in a paramenter to our function. In our JSX, we call the paramenter directly, rather than qualifying it with **this.**.
+
+Now go back in **components/App.js** and pass in **queryServer** as props. This part of the syntax is unchanged from similar examples you saw in **Isit320**:
+
+```javascript
+<Qux queryServer={this.queryServer}/>
+```
+
+The point is that we have replaced the **Qux button** originally declared in **App.js** with a call to the **Qux** stateless component that we just created. Or, to put it differently, we have moved the button from **App.js** to **Qux.js**. WebStorm will probably import **Qux.js** for you, but if it does not, manually add the code near the top of **components/App.js**.
+
+Take a moment to make sure you understand how we use [target.dataset][tds] to tell **queryServer** which button was called and which URL to use. If you don't understand, ask me in class or discuss the matter in the discuission area. It is important to understand this part of modern HTML.
 
 ## Refactor
 
-After looking at this, we might decide that index.js is doing too much, and App.js should either be renamed or we should change its task by refactoring it. Let's do two things:
+Now go ahead and refactor all the components out of App.js. When you are done, there should be no button declarations in App.js.
 
-- Give App.js the responsibility to load the components that make up our app.
-- Refactor App.js, and split out the call to the server into a new component.
+Note that in your implementation of **GitUser.js** you will need to add a **DIV** to your stateless function to wrap its two buttons.
 
-| Module     | Route            | Description                      |   |
-|:-----------|:-----------------|:---------------------------------|---|
-| App.js     | None             | Load components                  |   |
-| ElfHeader.js  | None             | Show Header                      |   |
-| FooApi.js  | /test-routes/foo | Get file, status, result         |   |
-| Micro01.js | /bar             | Call You Rang in Micro Services  |   |
-| GitUser.js | /user            | Get user information from GitHub |   |
+When you are done, you should have at least the following in the components folder:
 
-ElfHeader should be a stateless function, as described in our [ReactBasics][rb] assignment.
+- App.js
+- TestRoutes.js
+- Qux.js
+- GetUser.js
+- GetGist.js
 
+![React Props Refactored Button](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-refactor.png)
 
-## Props
-
-In **index.js** pass in some default numbers to **components/App.js**:
-
-```javascript
-const appInit = {
-    file: 'File name will be placed here.',
-    status: 'status will go here',
-    result: 'result will go here',
-};
-
-class App extends Component {
-
-
-    render() {
-        return (
-            <div className="App">
-                // CODE TO LOAD OTHER COMPONENTS OMITTED
-                <ApiFoo appInit={appInit} />
-            </div>
-        );
-    }
-}
-
-export default App;
-
-```
-
-And then use it in **App.js**:
 
 ## PropTypes
 
@@ -189,54 +179,29 @@ You can also use [PropTypes][ptrt] to get better warnings at runtime for props t
 
 First install the prop-types package:
 
-```bash
-npm install --save prop-types
-```
-Then add the tool to your program:
+    npm install --save prop-types
+
+Then add the tool to your Qux component:
 
 ```javascript
 import PropTypes from 'prop-types';
 
-class App extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-              file: props.appInit.file,
-              status: props.appInit.status,
-              result: props.appInit.result
-      }
-  }
-  // CODE OMITTED Here
-}
+export const Qux = ({queryServer}) => (
+    <div>
+        <button data-url="/qux-you-rang" onClick={queryServer}>Ring Qux</button>
+    </div>
+);
 
 App.propTypes = {
-    appInit: PropTypes.shape({
-        file: PropTypes.string,
-        status: PropTypes.string,
-        result: PropTypes.string
-    }),
+  queryServer: PropTypes.func
 };
-
-export default App;
 ```
+
+Here we have declared **queryServer** to be of type function. If we passed in something that was not a function, or if declared that **queryServer** were of some other type such as string, then we would get an exception at runtime.
 
 Do something similar for all your modules.
 
 You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
-
-[aa]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html#add-proptypes
-[ab]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html#proptypes
-[ac]: https://reactjs.org/docs/typechecking-with-proptypes.html
-
-## Put appInit in its Own File {#num-int}
-
-I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere.
-
-Of course, you will now need to import this data into **index.js** and into your tests:
-
-```javascript
-import appInit from './app-init';
-```
 
 ## Query the GitHub API
 
@@ -423,9 +388,59 @@ html
     block content
 ```
 
+## Passing Props to App.js
+
+Ignore this section.
+
+We could, but won't, do this or something like it.
+
+## Props
+
+In **index.js** pass in some default values to **components/App.js**:
+
+```javascript
+const appInit = {
+    file: 'File name will be placed here.',
+    status: 'status will go here',
+    result: 'result will go here',
+};
+
+class App extends Component {
+
+
+    render() {
+        return (
+            <div className="App">
+                // CODE TO LOAD OTHER COMPONENTS OMITTED
+                <ApiFoo appInit={appInit} />
+            </div>
+        );
+    }
+}
+
+export default App;
+
+```
+
+And then use it in **App.js**:
+
+## Put appInit in its Own File {#num-int}
+
+I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere.
+
+Of course, you will now need to import this data into **index.js** and into your tests:
+
+```javascript
+import appInit from './app-init';
+```
+
 <!--       -->
 <!-- links -->
 <!--       -->
+
+[aa]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html#add-proptypes
+[ab]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html#proptypes
+[ac]: https://reactjs.org/docs/typechecking-with-proptypes.html
 
 [emt]: /teach/assignments/linux/ScriptMasterTags.html
 [emtf]: /teach/assignments/linux/ScriptMasterTags.html#prime-the-pump
@@ -438,3 +453,4 @@ html
 [restb]: /teach/assignments/react/RestBasics.html
 [rms]: /teach/assignments/react/ReactMicroServices.html
 [rmsep]: /teach/assignments/react/ReactMicroServices.html#micro-endpoints
+[tds]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
