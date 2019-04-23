@@ -77,3 +77,5 @@ Exit the container and take a screenshot of the output from this command:
     docker port relaxed_bartik
 
 But put in the name of your container instead of relaxed_bartok.
+
+[dec]: /teach/assignments/docker/DockerElfCode.html
