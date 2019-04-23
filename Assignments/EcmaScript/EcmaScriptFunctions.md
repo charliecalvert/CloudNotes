@@ -1,10 +1,10 @@
 ## Overview
 
-Learn how to work with ES6 JavaScript arrow functions, introduce JavaScript classes. Learn about using Babel to transpile ES5 code into ES6. In this assignment, always use ES6 style code when declaring functions.
+The goal of this assignment is to learn how to work with ES6 JavaScript arrow functions, loops and  JavaScript classes. We will also learn about using Babel to transpile ES6 code into ES5. In this assignment, always use ES6 style code when declaring functions.
 
 The deck for following along in class is [here](http://bit.ly/js-es6-babel).
 
-**NOTE**: _Be sure to use fat arrow functions in all your code. Don't use the keyword **function**!_
+**NOTE**: _Be sure to use fat arrow functions in all your code for this assignment. Don't use the keyword **function**!_
 
 - [Types of functions on Elvenware][tof]
 
@@ -12,7 +12,7 @@ The deck for following along in class is [here](http://bit.ly/js-es6-babel).
 
 ## Get Started
 
-If your class is using Git branches, do your work in a branch called **Week03**.
+If your class is using Git branches, do your work in a branch called **week03**. Otherwise, continue using the **master** branch.
 
 Create a folder called **Week03-EcmaScript** in the root of your repository. Inside it create a file called **work.js**
 
@@ -24,7 +24,12 @@ touch work.js
 
 ## Invoke Immediately
 
-In **work.js** write an ES6 style function that will be invoked immediately. It should contain a single expression with two operators that adds 4 and 6 and multiplies the result by 12. Assign the expression to a **const** variable called **mathResult**. The function should then use **console.log** to print out **matchResult** to stdio.
+In **work.js** write an ES6 style function that will be invoked immediately. It should contain a single expression with two operators that adds 4 and 6 and multiplies the result by 12. Inside the function, assign the result to a **const** variable called **mathResult**. The function should then use **console.log** to print a caption and **mathResult** to stdout.
+
+The output should look like this:
+
+    $ node work.js
+    Mathresult = 120
 
 ## Arrays and forEach
 
@@ -42,7 +47,7 @@ You don't need to display the square brackets, just each item in the array. I'm 
 etc...
 ```
 
-You don't need to generate the members of the Fibonacci serious in the array programmatically, you can just use the array literal that I give you, and then print out its members.
+Don't generate the members of the Fibonacci series in the array programmatically, just use the array literal that I give you, and then print out its members.
 
 ## Arrays a for..of
 
