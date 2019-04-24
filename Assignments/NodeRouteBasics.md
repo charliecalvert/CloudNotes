@@ -17,9 +17,11 @@ Our goal is to send a message from the client to the server, and then get a resp
 
 The client (web browser) uses HTTP to make a request for HTML, CSS, JavaScript or an image. The request might be triggered when we click on a button or link, type in the address bar, or call an **ajax** function such as [fetch][fapi] or jQuery's **getJSON**.
 
-[TCP/IP][tcpip] is used to send the request via the network to the server. The server, which in our case is a NodeJs express web server, reads the HTTP request and we create a custom route in **routes/index.js** that sends a response back. The response is typically an HTML file, some JSON, or some other artifact sent via the HTTP protocol.
+[TCP/IP][tcpip] is used as the underlying protocol that sends the HTTP request via the network to the server. The server, which in our case is a [Node Js][nodejs] [express][exp] web server, reads the HTTP request and we create a custom route in **routes/index.js** that sends a response back. The response is typically an HTML file, some JSON, or some other artifact sent via the HTTP protocol.
 
-On the client, the browser unpacks the request. If it an HTML file the user requested, it parses the HTML, and displays the results to the user. If it is an ajax request, then we typically parse the JSON and display the result to the user in some HTML element.
+**NOTE**: _You don't need to know how to create HTTP requests or messages. **Express** and **fetch** will do that for you. But you do need to know that messages and/or data are being sent across the Internet using the HTTP protocol._
+
+On the client, the browser unpacks the request. If it was an HTML file the user requested, it parses the HTML, and displays the results to the user. If it is an ajax request, then we typically parse the JSON and display the result to the user in some HTML element.
 
 ## Step One: Pull Elven Assignments {#elven-assignments}
 
@@ -32,7 +34,6 @@ git clone http://github.com/charliecalvert/elven-assignments.git
 ## Step Two: Copy Project
 
 Copy the node express program called **NodeRouteBasics** from my repo to yours:
-
 
     cp -rv ~/Git/elven-assignments/NodeRouteBasics ~/Git/prog272-lastname-2019/Week03-NodeRouteBasics
 
@@ -47,6 +48,11 @@ If the force is with you, then meld will show the two directories as having "no 
 ![No Differences][nrm]
 
 **Figure**: _Meld showing that two directories have the same content. (Right click and open and in tab to see expanded version)_
+
+If WebStorm gives errors about ESlint, consider reading the [ReactEslint][resla] or watching the [TLDR eslint video][tldrev]
+
+- [resla]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html
+- [tldrev]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html#video
 
 ## Step Three: Client Interface {#interface}
 
@@ -70,17 +76,17 @@ You interface will probably consist of three buttons:
 
 [nrbui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui.png
 
-## Step ThreeA: Buttons, Jade and Clicks {#step-threea}
+## Step ThreeA: Buttons, Pug and Clicks {#step-threea}
 
-Put this in **views/index.jade** or **views/index.pug**:
+Let's use Pug to define an HTML button element. To do so, put this in **views/index.pug**:
 
 ```
 button#search Search
 ```
 
-**NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, we should all be using pug. It doesn't matter whether we are using Jade (**index.jade**) or Pug (**index.pug**). Both behave the same way in nearly all cases. However, this name change happened long enough ago that we should all be on Pug now._
+**NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, we should all be using pug. It doesn't matter whether we are using Jade or Pug. In most case the only different is the extension. We call it (**index.jade**) if we are using Jade, or with Pug we write (**index.pug**). Both files behave the same way in nearly all cases. However, this name change happened long enough ago that we should all be on Pug now. I should add that there now are some differences between Pug and Jade, but the differences are due simply to bug fixes and the addition of a few new features. Pug and Jade are the same product with different names._
 
-To detect a click on this button, write something like this:
+To detect a click on this button, write something like this in **public/javascripts/control.js**:
 
 ```javascript
 function search() {
@@ -547,24 +553,16 @@ npm install -g jasmine
 <!-- links -->
 <!--       -->
 
-[jspr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
-[nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
-
-[nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
-
-[ic]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text
-
-[icn]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
-
+[exp]: https://expressjs.com/en/guide/routing.html
 [fapi]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-
-[jqg]: http://api.jquery.com/jquery.getjson/
-
 [fo]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Making_fetch_requests
-
+[ic]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text
+[icn]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 [jol]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals
-
+[jqg]: http://api.jquery.com/jquery.getjson/
+[jspr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[nodejs]: https://nodejs.org/en/about/
+[nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
+[nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
 [nrm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-routes-meld.png
-
 [tcpip]: https://en.wikipedia.org/wiki/Internet_protocol_suite

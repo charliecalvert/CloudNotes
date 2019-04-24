@@ -14,7 +14,11 @@ The [GetGist][gg] script automates key portions of the ESLint and Prettier insta
 
 ## Video
 
-This 15 minute video covers some of the same material discussed in this assignment. Most of what you need to know is in the first 5 to 8 minutes of the video:
+TLDR: This very short video may be useful:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e0gu4ekdjjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This 15 minute video covers some of the same material discussed in this assignment in more depth. Most of what you need to know is in the first 5 to 8 minutes of the video:
 
 - [Using ESLint and Prettier to Lint and Format Project Files][epv]
 
