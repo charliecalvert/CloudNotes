@@ -49,10 +49,7 @@ If the force is with you, then meld will show the two directories as having "no 
 
 **Figure**: _Meld showing that two directories have the same content. (Right click and open and in tab to see expanded version)_
 
-If WebStorm gives errors about ESlint, consider reading the [ReactEslint][resla] or watching the [TLDR eslint video][tldrev]
-
-- [resla]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html
-- [tldrev]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html#video
+If WebStorm gives errors about ESlint, consider reading the [ReactEslint][resla] or watching the [TLDR eslint video][tldrev].
 
 ## Step Three: Client Interface {#interface}
 
@@ -90,6 +87,7 @@ To detect a click on this button, write something like this in **public/javascri
 
 ```javascript
 function search() {
+  console.log('Search called');
     // YOUR CODE HERE
 };
 
@@ -566,3 +564,6 @@ npm install -g jasmine
 [nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
 [nrm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-routes-meld.png
 [tcpip]: https://en.wikipedia.org/wiki/Internet_protocol_suite
+
+[resla]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html
+[tldrev]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html#video

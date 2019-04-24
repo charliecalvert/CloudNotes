@@ -45,6 +45,8 @@ In fact, let's do this:
 npm -g install eslint eslint-config-airbnb-base eslint-config-fortech-react eslint-config-react-app eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
+Or, run the script found in the [TLDR EsLint video][jsoesl].
+
 ## Alternative Local Installation
 
 Alternatively, you can install these packages locally:
@@ -340,6 +342,7 @@ If I look in **package.json** I see that ssh2 is now at **0.8.2**:
 [epv]: https://youtu.be/bsxBHLxYMrA
 [gg]: /teach/assignments/git/GetGist.html
 [jsbea]: https://github.com/beautify-web/js-beautify
+[jsoesl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/EsLintInstall
 [fnpp]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/FindScripts/FindNpPrettier
 [csl]: https://github.com/charliecalvert/JsObjects/blob/master/Utilities/SetupLinuxBox/CreateSymbolicLinks
 [pret]: https://github.com/prettier/prettier
