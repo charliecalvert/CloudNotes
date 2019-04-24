@@ -2,23 +2,22 @@
 
 **STATUS**: _This assignment needs polishing but should be complete enough to allow students to complete the assignment._
 
-The Node Route Basics assignment gives you practice creating NodeJs Express routes and calling them with [fetch][fapi]. There is still at least one reference to [$.getJSON][jqg], but by and large, I have tried to strip jQuery code out of the assignment.
+The Node Route Basics assignment gives you practice creating NodeJs Express routes (EndPoints) and calling them with [fetch][fapi]. There is still at least one reference to [$.getJSON][jqg], but by and large, I have tried to strip [jQuery](https://jquery.com/) code out of the assignment.
 
-If you need help with this this assignment, study the NodeRoutes
-examples in JsObjects.
+If you need help with this this assignment, study the NodeRoutes examples in JsObjects.
 
 - [NodeRoutes01][nr1]
 - [NodeRoutes02][nr2]
 
 ## The HTTP Protocol
 
-We are sending a message from the client to the server, and then getting a response:
+Our goal is to send a message from the client to the server, and then get a response:
 
 ![http](https://s3.amazonaws.com/bucket01.elvenware.com/images/http.png)
 
-The client (web browser) uses HTTP to make a request for HTML, CSS, JavaScript or an image. The request might be triggered when we click on a link, type in the address bar or call an **ajax** function such as [fetch][fapi] or jQuery's **getJSON**.
+The client (web browser) uses HTTP to make a request for HTML, CSS, JavaScript or an image. The request might be triggered when we click on a button or link, type in the address bar, or call an **ajax** function such as [fetch][fapi] or jQuery's **getJSON**.
 
-TCP/IP is used to send the request via the network to the server. The server, which in our case is a NodeJs express web server, reads the HTTP request and we create a custom route in **routes/index.js** that sends a response back. The response is typically an HTML file, some JSON, or some other artifact sent via the HTTP protocol.
+[TCP/IP][tcpip] is used to send the request via the network to the server. The server, which in our case is a NodeJs express web server, reads the HTTP request and we create a custom route in **routes/index.js** that sends a response back. The response is typically an HTML file, some JSON, or some other artifact sent via the HTTP protocol.
 
 On the client, the browser unpacks the request. If it an HTML file the user requested, it parses the HTML, and displays the results to the user. If it is an ajax request, then we typically parse the JSON and display the result to the user in some HTML element.
 
@@ -567,3 +566,5 @@ npm install -g jasmine
 [jol]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals
 
 [nrm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-routes-meld.png
+
+[tcpip]: https://en.wikipedia.org/wiki/Internet_protocol_suite

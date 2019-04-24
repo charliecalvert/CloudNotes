@@ -30,6 +30,12 @@ If any globally installed apps are outdated, then reinstall them:
 
     npm install -g create-react-app
 
+## ENOSPC
+
+When running tests, you may get an ENOSPC (Not Enough Space or something similar). Let's try to fix this problem up front. The explanation of what you need to do is here:
+
+- [ENOSPC on Elvenware][enspc]
+
 ## Set the Default Port
 
 Load your **.bashrc** file into an editor and add this line near the bottom of the file, if it is not already there:
@@ -419,3 +425,4 @@ npm install react-addons-test-utils enzyme
 
 
 [eslintrc]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
+[enspc]: https://www.elvenware.com/javascript-guide/JavaScriptReact.html#enospc
