@@ -79,3 +79,19 @@ Exit the container and take a screenshot of the output from this command:
 But put in the name of your container instead of relaxed_bartok.
 
 [dec]: /teach/assignments/docker/DockerElfCode.html
+
+Be sure your container is running when you try the port command.
+
+Run **docker ps -a**. If the status field shows something like this then port command won't work:
+
+    Exited (0) 36 hours ago
+
+To fix the issue, try starting the container:
+
+    docker start relaxed_bartik
+
+Now try the port command again, and it should work:
+
+    docker port relaxed_bartik
+    # Here you should see some text
+    # with our 30025 port in it.
