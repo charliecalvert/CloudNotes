@@ -100,8 +100,7 @@ This overly long (10 minutes) video shows me making lots of mistakes. But perhap
 
 ## Step Four: Server {#server}
 
-All the calculations should be performed on the server side, in a
-module, per the [NodeRoutes02][nr2] example in JsObjects.
+All the calculations should be performed on the server side, in a module found in the **routes** directory, per the [NodeRoutes02][nr2] example in JsObjects.
 
 The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9: **{result: 9}**. Like this:
 
@@ -111,6 +110,21 @@ router.get('/getNine', function(request, response) {
     response.send({"result": 9});
 });
 ```
+
+You can put this method in the **routes/index.js** file, just above the **exports** statement.
+
+It says:
+
+- If we get an HTTP get request for the **/getNine** endpoint
+- Then we should send back a small JSON object with a single property with the key set to **result** and the value to nine.
+
+**NOTE**: _I'm not going to spend much time on JSON. For now, just think of JSON as a JavaScript object literal with the keys in double quotes and no methods. Find out more:_
+
+- [The JSON Spec][json]
+- [Convert JSON to an Object Literal][jsonparse]
+- [Convert an object literal to JSON][jsonstr]
+
+We aren't yet using the JSON object (parse, stringify) discussed in the latter two links shown above. However, we will use it a lot over time. At this stage, just try to understand that it is important.
 
 ## Call Server without Parameters {#no-params}
 
@@ -563,6 +577,9 @@ npm install -g jasmine
 [jol]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals
 [jqg]: http://api.jquery.com/jquery.getjson/
 [jspr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[json]: https://www.json.org/
+[jsonparse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+[jsonstr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify   
 [nodejs]: https://nodejs.org/en/about/
 [nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
 [nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
