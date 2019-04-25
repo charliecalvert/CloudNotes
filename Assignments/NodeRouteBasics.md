@@ -196,7 +196,7 @@ The following diagram provides us with some nomenclature.
            authority       path
          ┌─────┴───────┐ ┌──┴──┐
   http://localhost:30025/getNine?key=value&amp#qux
-  └┬─┘   └───┬────┘└─┬─┘         └─────┬─┘ └─┬─┘
+  └┬─┘   └───┬────┘└─┬─┘         └─────┬─┘└─┬──┘
 scheme     host    port              query fragment
 </pre>
 
