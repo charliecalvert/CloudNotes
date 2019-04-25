@@ -71,9 +71,22 @@ You interface will probably consist of three buttons:
 
 ![Node Route Basics UI][nrbui]
 
-[nrbui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui.png
+Or like this if you want a bit of bootstrap:
+
+![Node Route Basics Bootstrap][nrbuib]
 
 ## Step ThreeA: Buttons, Pug and Clicks {#step-threea}
+
+Begin by ensuring that that title is set to **Node Route Basics LastName**, where LastName is your last name. To do this, open up **routes/index.js** and set the title in the default route:
+
+```javascript
+router.get('/', function(req, res) {
+    'use strict';
+    res.render('index', { title: 'Node Route Basics Calvert' });
+});
+```
+
+But you put in your last name, not mine.
 
 Let's use Pug to define an HTML button element. To do so, put this in **views/index.pug**:
 
@@ -465,6 +478,8 @@ for (let element of elements) {
 [jsonparse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 [jsonstr]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify   
 [nodejs]: https://nodejs.org/en/about/
+[nrbui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui.png
+[nrbuib]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui-bootstrap.png
 [nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
 [nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
 [nrm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-routes-meld.png
