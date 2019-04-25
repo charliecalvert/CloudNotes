@@ -20,6 +20,12 @@ Then send me a message using the address I gave you in class.
 
 We are going to want to share our screens. In particular, you will need to see my screen. I have a feeling that before we can share our screens we need to enter a video conversation. But you do not need to have a webcam. You should, however, have a microphone. Most laptops have both. Check, however, that you don't have your camera somehow turned off.
 
+## Chrome Remote Desktop
+
+This might be an alternative to Hangouts, but I am not sure:
+
+- [Chrome Remote Desktop](https://remotedesktop.google.com/access)
+
 <!--       -->
 <!-- links -->
 <!--       -->

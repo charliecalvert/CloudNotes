@@ -78,7 +78,7 @@ You interface will probably consist of three buttons:
 Let's use Pug to define an HTML button element. To do so, put this in **views/index.pug**:
 
 ```
-button#search Search
+button#searchAction Search
 ```
 
 **NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, we should all be using pug. It doesn't matter whether we are using Jade or Pug. In most case the only different is the extension. We call it (**index.jade**) if we are using Jade, or with Pug we write (**index.pug**). Both files behave the same way in nearly all cases. However, this name change happened long enough ago that we should all be on Pug now. I should add that there now are some differences between Pug and Jade, but the differences are due simply to bug fixes and the addition of a few new features. Pug and Jade are the same product with different names._
@@ -91,7 +91,7 @@ function search() {
     // YOUR CODE HERE
 };
 
-document.getElementById('search').onclick = search;
+document.getElementById('searchAction').onclick = search;
 ```
 
 This overly long (10 minutes) video shows me making lots of mistakes. But perhaps that is good, as you might hit the problems as well and you can see how I fix them.
@@ -132,12 +132,28 @@ See the [getNine video](https://youtu.be/-joWToKwiN0).
 
 ## Call Server without Parameters {#no-params}
 
-First, an example showing how to call a route (endpoint) without parameters:
+In **views/index.pug** add an HTML PRE tag with an ID of **displayArea** that we can use to display information. Also add a getNine button:
+
+    extends layout
+
+    block content
+        h1= title
+        p Welcome to #{title}
+
+        button#searchAction.btn.btn-success Search
+        button#getNineAction.btn.btn-success Get Nine
+
+        pre#displayArea
+
+**NOTE**: _Recall that in CSS the # sign means that you want to declare an HTML ID attribute. The hash tag means the same thing in Pug. Thus the PRE tag looks like this at run time &lt;pre id="displayArea"&gt;&lt;/pre&gt;._
+
+
+In **control.js** add code to call a route (endpoint) without parameters:
 
 ```javascript
-function callServerWithoutParms() {
+function getNine() {
 
-  fetch('/search')
+  fetch('/getNine')
     .then((response) => response.json())
     .then((response) => {
         const displayArea = document.getElementById('displayArea');
@@ -155,6 +171,16 @@ The **fetch** call is a [promise][jspr]. There are two calls to the **then** met
 - If your call to the server succeeds, then the result returned from the server will show up in the second **then** call.
 
 This is an over-simplification, but the key point is to look for your data from the server in the parameter of the second **then** method.
+
+We will also want to add code to react to clicks on the **getNine** button:
+
+```javascript
+const getNineAction = document.getElementById('getNineAction');
+
+if (getNineAction) {
+    getNineAction.onclick = getNine;
+}
+```
 
 ## Call Route (endpoint) with Parameters {#pass-data}
 
@@ -227,7 +253,6 @@ function getPostOptions(body) {
 
 We call this function, passing in the parameters we want to pass to the server endpoint. If we wanted to pass in to parameters of type of string called **param01** and **param02**, then we might call **getPostOptions** like this:
 
-```javascript
 getPostOptions({
   param01: 'foo',
   param02: 'bar'
