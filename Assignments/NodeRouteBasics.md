@@ -94,6 +94,10 @@ function search() {
 document.getElementById('search').onclick = search;
 ```
 
+This overly long (10 minutes) video shows me making lots of mistakes. But perhaps that is good, as you might hit the problems as well and you can see how I fix them.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K5-eBgEePK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Step Four: Server {#server}
 
 All the calculations should be performed on the server side, in a
