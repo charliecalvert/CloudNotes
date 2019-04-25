@@ -293,6 +293,8 @@ router.get('/feetFromMiles', function(request, response) {
 
 The **request** (**req**) parameter has a property called **query**. Use it to access the query (parameters) you passed to the server: **request.query.miles**. Do you see that **request.query.miles** refers to the **?miles=userMiles** code we wrote above on the client side? If you can make this connection, then you understand one of the most important parts of a web application.
 
+Watch [the video](https://youtu.be/5zKV6AvYddY) on these last two sections of the assignment.
+
 ## Server Side HTTP POST Parameters {#post-call}
 
 When you **POST** data to the server you need to pass in a [JavaScript object literal][jol] as a second parameter to **fetch**. This second parameter is used to specify [the options][fo] for your call. For instance, you can specify whether you want to make a **GET** or a **POST** call. By default, **fetch** uses **GET**. There are a number of possible options, but in many cases you will use only these three:
