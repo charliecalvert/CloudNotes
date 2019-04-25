@@ -215,7 +215,7 @@ First, define the input control in our Jade/Pug file:
       input#userInput(type="number")
 
       div    
-        button#feetFromMilesAction Calculate Feet from Miles
+        button#feetFromMilesAction.btn.btn-success Calculate Feet from Miles
 
       div
         pre#displayArea
