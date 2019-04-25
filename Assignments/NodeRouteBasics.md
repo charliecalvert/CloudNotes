@@ -182,6 +182,8 @@ if (getNineAction) {
 }
 ```
 
+Here is [a video](https://youtu.be/LcnkNwsLDsY) that should help you with this section.
+
 ## Call Route (endpoint) with Parameters {#pass-data}
 
 Sometimes we need to not just call a route on the server, but call the route and also pass in parameters. Suppose we want to calculate the number of feet in X miles, which X is supplied by the user in a [text INPUT][ic] or [numeric INPUT][icn] control.
