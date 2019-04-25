@@ -184,7 +184,7 @@ if (getNineAction) {
 
 Here is [a video](https://youtu.be/LcnkNwsLDsY) that should help you with this section.
 
-## Call Route (endpoint) with Parameters {#pass-data}
+## Call Route (endpoint) with Query {#pass-data}
 
 Sometimes we need to not just call a route on the server, but call the route and also pass in parameters. These parameters are sometimes referred to as a query.
 
@@ -196,8 +196,8 @@ The following diagram provides us with some nomenclature.
            authority       path
          ┌─────┴───────┐ ┌──┴──┐
   http://localhost:30025/getNine?key=value&amp#qux
-  └┬─┘   └───┬────┘└─┬─┘         └─────┬─┘    └─┬─┘
-scheme     host    port              query   fragment
+  └┬─┘   └───┬────┘└─┬─┘         └─────┬─┘ └─┬─┘
+scheme     host    port              query fragment
 </pre>
 
 Here the path is our **getNine** route and the query (parameters) are **?key=value**.
