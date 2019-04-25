@@ -102,7 +102,7 @@ This overly long (10 minutes) video shows me making lots of mistakes. But perhap
 
 All the calculations should be performed on the server side, in a module found in the **routes** directory, per the [NodeRoutes02][nr2] example in JsObjects.
 
-The return values should be a simple JavaScript literal (JSON) that contains at minimum, a property called **result** that contains the result of the calculation. For instance, our **getNine** method would set result to the number 9: **{result: 9}**. Like this:
+The return values should be a simple JavaScript literal that either is JSON or can easily be converted into JSON. In our case, this object should contain at minimum, a single property called **result** that contains the result of the calculation. For instance, this very simple **getNine** express route (endpoint) would set **result** to the number 9:
 
 ```JavaScript
 router.get('/getNine', function(request, response) {
@@ -113,18 +113,22 @@ router.get('/getNine', function(request, response) {
 
 You can put this method in the **routes/index.js** file, just above the **exports** statement.
 
-It says:
+Notice that his method uses the express **response** object to send a tiny JSON object that looks like this: **{result: 9}**.
+
+In its entirety, the route says:
 
 - If we get an HTTP get request for the **/getNine** endpoint
-- Then we should send back a small JSON object with a single property with the key set to **result** and the value to nine.
+- Then we will send back a small JSON object with a single property with the key set to **result** and the value to **9**.
 
-**NOTE**: _I'm not going to spend much time on JSON. For now, just think of JSON as a JavaScript object literal with the keys in double quotes and no methods. Find out more:_
+**NOTE**: _I'm not going to spend much time on JSON. For now, just think of JSON as a JavaScript object literal with the keys in double quotes and no methods. You can, however, set the value of the key value pair to a **string**, **number**, **object**, **boolean** or **null**. Find out more:_
 
 - [The JSON Spec][json]
 - [Convert JSON to an Object Literal][jsonparse]
 - [Convert an object literal to JSON][jsonstr]
 
-We aren't yet using the JSON object (parse, stringify) discussed in the latter two links shown above. However, we will use it a lot over time. At this stage, just try to understand that it is important.
+We aren't yet using the **JSON** object with its **parse** and **stringify** methods that are discussed in the latter two links shown above. However, we will use both **JSON.parse** and **JSON.stringify** a lot over time. At this stage, just try to understand that it is important and see if you can get a sense of what the two methods do. There will come a time when you will need them!
+
+See the [getNine video](https://youtu.be/-joWToKwiN0).
 
 ## Call Server without Parameters {#no-params}
 
