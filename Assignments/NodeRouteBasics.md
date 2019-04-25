@@ -186,7 +186,23 @@ Here is [a video](https://youtu.be/LcnkNwsLDsY) that should help you with this s
 
 ## Call Route (endpoint) with Parameters {#pass-data}
 
-Sometimes we need to not just call a route on the server, but call the route and also pass in parameters. Suppose we want to calculate the number of feet in X miles, which X is supplied by the user in a [text INPUT][ic] or [numeric INPUT][icn] control.
+Sometimes we need to not just call a route on the server, but call the route and also pass in parameters. These parameters are sometimes referred to as a query.
+
+The following diagram provides us with some nomenclature.
+
+<pre>
+           hierarchical part
+         ┌─────────┴─────────┐
+           authority       path
+         ┌─────┴───────┐ ┌──┴──┐
+  http://localhost:30025/getNine?key=value&amp#qux
+  └┬─┘   └───┬────┘└─┬─┘         └─────┬─┘    └─┬─┘
+scheme     host    port              query   fragment
+</pre>
+
+Here the path is our **getNine** route and the query (parameters) are **?key=value**.
+
+Suppose we want to calculate the number of feet in X miles, which X is supplied by the user in a [text INPUT][ic] or [numeric INPUT][icn] control.
 
 First, define the input control in our Jade/Pug file:
 
@@ -196,40 +212,85 @@ First, define the input control in our Jade/Pug file:
       h1= title
       p Welcome to #{title}
 
-      input#userInput(type="number")  <=== HERE
+      input#userInput(type="number")
 
       div    
-        button#calculateFeetFromMiles Calculate Feet from Miles    
+        button#feetFromMilesAction Calculate Feet from Miles
 
       div
         pre#displayArea
 
+Or, to put it altogether, let's do this, adding in a few DIVs just to help provide some separation:
+
+      extends layout
+
+      block content
+          h1= title
+          p Welcome to #{title}
+
+          input#userInput(type="number")
+
+          div
+              button#feetFromMilesAction.btn.btn-success Calculate Feet from Miles              
+              button#getNineAction.btn.btn-success Get Nine
+
+          div
+              pre#displayArea
+
+To make out DIVs a bit more useful, let's add some cheap and dirty CSS to **/public/stylesheets/style.css**:
+
+```css
+div {
+    margin: 10px;
+}
+```
+
 Here is the client side code that calls that module:
 
 ```javascript
-const userMiles = document.getElementById('userInput').value;
-fetch('/calculateFeetFromMiles' + '?miles=' + userMiles)
-    .then((response) => response.json())
-    .then((response) => {
-        const displayArea = document.getElementById('displayArea');
-        displayArea.innerHTML = JSON.stringify(response, null, 4);
-    })
-    .catch(ex => {
-        console.log(ex);
-    });
+const feetFromMiles = () => {
+  const userMiles = document.getElementById('userInput').value;
+  fetch('/feetFromMiles' + '?miles=' + userMiles)
+      .then((response) => response.json())
+      .then((response) => {
+          const displayArea = document.getElementById('displayArea');
+          displayArea.innerHTML = JSON.stringify(response, null, 4);
+      })
+      .catch(ex => {
+          console.log(ex);
+      });
+}
+
+const feetFromMilesAction = document.getElementById('feetFromMilesAction');
+
+if (feetFromMilesAction) {
+  feetFromMilesAction.onclick = feetFromMiles;
+}    
 ```
+
+Notice that we are using ES6 arrow syntax throughout.
+
+The most important part of the code is where we define the **query** portion of the URL (see diagram above):
+
+```javascript
+fetch('/feetFromMiles' + '?miles=' + userMiles)
+```
+
+Here we pass a query setting the **key** miles to the value **userMiles**. We got **userMiles** from the input control.
 
 ## Server Side HTTP GET Parameters {#server-side-get}
 
-Define server side code that accepts a parameter:
+This code, which belongs in **routes/index.js**, defines the server side code that accepts a parameter:
 
 ```javascript
-router.get('/calculateFeetFromMiles', function(request, response) {
+router.get('/feetFromMiles', function(request, response) {
+    'use strict';
+    console.log('feet from miles called with query:', request.query);    
     response.send({result: request.query.miles * 5280});
 });
 ```
 
-The **request** (**req**) parameter has a property called **query**. Use it to access the parameters you passed to the server: **request.query.miles**.
+The **request** (**req**) parameter has a property called **query**. Use it to access the query (parameters) you passed to the server: **request.query.miles**. Do you see that **request.query.miles** refers to the **?miles=userMiles** code we wrote above on the client side? If you can make this connection, then you understand one of the most important parts of a web application.
 
 ## Server Side HTTP POST Parameters {#post-call}
 
@@ -255,10 +316,11 @@ function getPostOptions(body) {
 
 We call this function, passing in the parameters we want to pass to the server endpoint. If we wanted to pass in to parameters of type of string called **param01** and **param02**, then we might call **getPostOptions** like this:
 
+```javascript
 getPostOptions({
   param01: 'foo',
   param02: 'bar'
-})
+});
 ```
 
 When we call **fetch** usually just pass in one parameter:
@@ -270,13 +332,13 @@ fetch('/some-url')
 
 When POSTing data, however, we should pass in two parameters. The first is our URL, and the second the options returned from our utility function:
 
-```
+```javascript
 fetch('/some-url', getPostOptions({...}));
 ```
 
 Here is a more complete example of the type of call you can use to complete **calculateCircumference** portion of this assignment:
 
-```
+```javascript
 function callServer() {
     const userInput = document.getElementById('userInput').value;
     const query = {propForServer: userInput};
@@ -302,7 +364,7 @@ router.post('/calculateCircumference', function(request, response) {
 });
 ```
 
-## Extra Credit
+## More Calculations
 
 For three points extra credit, implement **getFeetInMile** and **calculateFeetFromMiles** using HTTP GET calls, and use POST for **calculateCircumference**:
 
@@ -333,7 +395,7 @@ Recall that with **GET** methods we use frequently use **request.query** to find
 - [Docs on req.query](http://expressjs.com/en/4x/api.html#req.query)
 - [Interesting Discussion](http://stackoverflow.com/a/12008719)
 
-## Step Five
+## Step Five: Extra Credit
 
 Put a **calculateCircumference** method in a file called **routes/utils.js**. In that file create a simple object literal:
 
@@ -349,8 +411,7 @@ Now **require** your **utils.js** file in **routes/index.js** and use it in the 
 
 ## Turn It In
 
-Check your code into your Git repository and submit the URL of your
-repository or of the project you submitted.
+Check your code into your Git repository and submit the URL of your repository or of the project you submitted.
 
 ## LastPass
 
@@ -358,9 +419,8 @@ I use LastPass. It puts an icon in many input controls. To turn that off, add an
 
 For instance, in your Pug file do this:
 
-```
-input#userInput(type="number", data_lpignore="true")
-```
+    input#userInput(type="number", data_lpignore="true")
+
 
 To turn it off for all INPUT controls on your page, add this near the top of **control.js**:
 
@@ -385,216 +445,6 @@ for (let element of elements) {
     element.setAttribute("data_lpignore", "true");
 }
 ```
-
-## More Complex Example
-
-This does not directly relate to the current assignment, but I'm leaving it here for now. It still has jQuery code in it.
-
-Now an example showing how to call a route with parameters:
-
-```javascript
-function callServerWithParms() {
-
-	// Get Data We Want to Pass to the Server
-	var dirsToWalk = document.getElementById('dirsToWalk');
-	var directory = dirsToWalk.options[sourceIndex].value;
-	var destinationDirs = document.getElementById('destinationDirs');
-	var destinationDir = destinationDirs.options[destinationIndex].value;
-
-	var highlight = $('#highlight').prop('checked');
-
-	// Put that data in JavaScript Object
-	var requestQuery = {
-		directoryToWalk: directory,
-		destinationDir: destinationDir,
-		highlight: highlight,
-	};
-
-	// Call the server and pass the data as a parameter.
-	$.getJSON('/walk', requestQuery, function (result) {
-		elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
-		elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
-	}).done(function () {
-			elf.display.showDebug('Walk loaded second success');
-		})
-		.fail(function (jqxhr, textStatus, error) {
-			elf.display.showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
-		})
-		.always(function () {
-			elf.display.showDebug('Walk loaded complete');
-		});
-
-}
-```
-
-Below, in the next section, we look more closely at passing parameters.
-
-
-### Client Server Interactions {#interact}
-
-
-Look at these code excerpts from the code shown above. We look specifically at the call to the server:
-
-```javascript
-
-	// Put that data in JavaScript Object
-	var requestQuery = {
-		directoryToWalk: directory,
-		destinationDir: destinationDir,
-		highlight: highlight,
-	};
-
-	// Call the server and pass the data as a parameter.
-	$.getJSON('/walk', requestQuery, function (result) { ... });
-
-```
-
-And here is what it looks like on the server. Notice how we
-use the request object to discover the parameters passed
-by the client:
-
-```javascript
-
-router.get('/walk', function(request, response) {
-    'use strict';
-    console.log('In walk', request.query);
-    var directoryToWalk = request.query.directoryToWalk;
-    var destinationDir = request.query.destinationDir;
-    var highlight = request.query.highlight;
-    etc
-});
-```
-
-## Update Out of Date Packages
-
-```
-$ npm install -g npm-check-updates
-$ npm-check-updates -u
-$ npm install
-```
-
-If it is still not up to date, do: **ncu -a**
-
-Also, be sure to remove **phantomjs** from **packages.json**.
-
-See here:
-
-- <http://stackoverflow.com/a/22849716>
-
-## Setting up the Port
-
-Let's allways use the following:
-
-```
-var port = process.env.PORT || 30025;
-
-// Code omitted here...
-
-app.listen(port);
-console.log('Listening on port :' + port);  
-```
-
-We want to pick a particular port because in some situations, such as running on
-EC2, we need to open the port ahead of time. By choosing one port, and always
-using it, you won't have to edit my code before you can run it, and vice versa.
-
-## Node Express Routing Basics {#routing}
-
-Express offers support for HTTP verbs such as Get, Post, Put, etc.
-
-The verbs provide a response to specific routes, such as '/':
-
-```
-app.get('/', function(req, res) {
-    console.log("root request sent");
-});
-```
-
-Or here is request that uses a wildcards or regular expressions:
-
-```
-app.get('/a*', function(req, res) {
-    console.log("A request sent that begins with an a");
-});
-```
-
-Working with numbers:
-
-```
-app.get('/book/:id((d+)', function(req, res) {
-    console.log("Only requests that are numbers");
-});
-```
-
-## Node Express Serving up Static Pages
-
-Put your static files in a particular directory and tell express about the
-directory:
-
-```
-app.use("/public", express.static(__dirname + '/public'));
-```
-
-Server them up like this:
-
-```
-app.get('/', function(req, res) {
-    var html = fs.readFileSync('public/index.html');
-    res.writeHeader(200, {"Content-Type": "text/html"});
-    res.end(html);
-});
-```
-
-- <http://www.senchalabs.org/connect/static.html>
-
-## Temp directory
-
-This is optional. Skip if you are not interested.
-
-Instead of running **npm install** and **bower install**, do this:
-
-- Copy a reasonably up to date version of **node_modules** from one of your projects to **~/tmp**.
-- Copy a reasonably up to date version of **public/components** from one of your projects to **~/tmp**.
-
-For instance
-
-```
-mkdir ~/tmp
-cp ~/Git/isit322-lastname-2016/Week04-Middleware/node_modules ~/tmp
-cp ~/Git/isit322-lastname-2016/Week04-Middleware/public/components ~/tmp
-```
-
-You might want to also copy the **package.json** and **bower.json** files to tmp. As needed, update your files to the latest:
-
-```
-cd ~/tmp
-npm outdated --depth=0
-```
-
-And then get the latest of everything as needed.
-
-Now go back to your project and create symbolic links to these packages. The best way to do this is to use
-
-- the run alias from **~/.bash_aliases**
-- or the **nm** and **component** aliases from **~/.bash_aliases**.
-
-Just as an **fyi**, here they are:
-
-```
-alias run="nm && components && npm start"
-alias nm="ln -s ~/tmp/node_modules/"
-alias components="ln -s ~/tmp/components/ public/components"
-```
-
-For this project, do the following in **~/tmp**, or, if you have completed the above, in your project:
-
-```
-npm install supertest --save-dev
-npm install jasmine --save-dev
-npm install -g jasmine
-```
-
-**NOTE**: *The point of setting up this ~/tmp directory is to put an end to long **npm installs** during class. Talk to Adam, he knows all about this.*
 
 <!--       -->
 <!-- links -->
