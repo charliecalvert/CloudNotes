@@ -206,9 +206,9 @@ You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
 
 ## Query the GitHub API
 
-Install request: **npm install --save request** in the **server** directory.
+Install request: **npm install --save request** in the **server** directory and in all the microservice projects.
 
-In **server/routes/api.js** add the following method. If you have GitHub account, use yours, not mine:
+In **git-user/routes/index.js** add the following method. If you have GitHub account, use yours, not mine:
 
 ```javascript
 var request = require('request');
@@ -234,8 +234,6 @@ router.get('/user', function(req, res, next) {
 });
 ```
 
-We should refactor our code now. In the server/routes folder create a file called **git-api.js**. Move the method shown above into that file. Modify **server/app.js** to load **routes/git-api.js**. Modify our client side code to call the new **git-api/user** route.
-
 ## Prepare for Tests
 
 In **index.js** pass in some default values to **components/App.js**:
@@ -243,7 +241,7 @@ In **index.js** pass in some default values to **components/App.js**:
 ```javascript
 const appInit = {
   file: 'unknown',
-      result: 'unknown',
+  result: 'unknown',
   status: 'unknown',
   server: 'unknown',
   body: {login: 'unknown', id: 'unknown'}
@@ -269,7 +267,6 @@ You will now need to import this data into **index.js** and into your tests:
 ```javascript
 import {appInit} from './app-init';
 ```
-
 
 ## Tests
 
