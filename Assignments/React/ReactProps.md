@@ -355,7 +355,9 @@ Create a directory called **src/tests** and put all your tests in it. Refactor y
 - ElfHeader.test.js
 - Qux.test.js
 
-In the image shown below, some of details may be slightly askew, but nevertheless this screenshot should help you get a sense of what your directory structure might look like.
+All we need now is simply to get the basic "I can load the module" test to work. In my case, at least, only **App.js** needed to be passed props to get the test to pass. Later, we will need to pass props to these other components, but you should not need to pass anything in at this point. More specifically, we are not yet at the point where we need to pass in **queryServer**.
+
+In the images shown below, some of details may be slightly askew, but nevertheless these screenshots should help you get a sense of what I'm looking for and what your directory structure might look like.
 
 ![Test Output][rpt]
 ![Project Structure][proj-struct]
