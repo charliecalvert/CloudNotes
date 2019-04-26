@@ -302,7 +302,7 @@ it.only('renders and reads H1 text', () => {
 
 ## Logger Console {#control-console}
 
-Here are Three steps to a poor man&#39;s logger:
+This section is optional and perhaps you should just skip it, as I would like to replace it at some point. Here are three steps to a poor man&#39;s logger:
 
 - Declare a boolean in your constructor on your object called **quiet**.
 - Create a method on your object called **debug**
@@ -355,11 +355,10 @@ Create a directory called **src/tests** and put all your tests in it. Refactor y
 - ElfHeader.test.js
 - Qux.test.js
 
-Some of the individual file names are not right for this project, but this screenshot should help you get a sense of what your directory structure should look like.
+In the image shown below, some of details may be slightly askew, but nevertheless this screenshot should help you get a sense of what your directory structure might look like.
 
+![Test Output][rpt]
 ![Project Structure][proj-struct]
-
-[proj-struct]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-refine-project.png
 
 ## Turn it in
 
@@ -438,3 +437,6 @@ html
 [rms]: /teach/assignments/react/ReactMicroServices.html
 [rmsep]: /teach/assignments/react/ReactMicroServices.html#micro-endpoints
 [tds]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
+[rpt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-tests.png
+[proj-struct]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-props-file-structure.png
+[proj-struct-old]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-refine-project.png
