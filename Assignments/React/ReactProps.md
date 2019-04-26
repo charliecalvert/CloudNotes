@@ -178,7 +178,7 @@ You can also use [PropTypes][ptrt] to get better warnings at runtime for props t
 
 ![PropType warnings at run time][ptwrt]
 
-First install the prop-types package:
+First install the prop-types package in the client directory:
 
     npm install --save prop-types
 
@@ -193,7 +193,7 @@ export const Qux = ({queryServer}) => (
     </div>
 );
 
-App.propTypes = {
+Qux.propTypes = {
   queryServer: PropTypes.func
 };
 ```
