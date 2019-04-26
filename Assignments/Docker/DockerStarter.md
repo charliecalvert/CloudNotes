@@ -25,7 +25,7 @@ Run the script found on your hard drive in **JsObjects/Utilities/InstallScripts*
 
 - [DockerInstall][dkin]
 
-After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**.
+After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**. You should not have to run Docker as the superuser, that is, you should not need to use **sudo** to start it. If you get a permission denied error, then try logging out and logging in again. That should fix the problem.
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
