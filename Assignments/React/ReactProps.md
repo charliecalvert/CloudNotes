@@ -236,7 +236,7 @@ router.get('/user', function(req, res, next) {
 
 ## Prepare for Tests
 
-In **index.js** pass in some default values to **components/App.js**:
+In **client/src/index.js** pass in some default values to **components/App.js**:
 
 ```javascript
 const appInit = {
@@ -298,7 +298,7 @@ it.only('renders and reads H1 text', () => {
 });
 ```
 
-**HINT**: _When writing your tests, don't forget that App now has an attribute/parameter passed to it._
+**HINT**: _When writing your tests, don't forget that App now has an attribute/parameter passed to it as props. So you will need to tweak the code to have it do more or less what it does on **client/src/index.js**. I'm being intentionally vague, as I want you to figure our the rest yourself._
 
 ## Logger Console {#control-console}
 
@@ -318,7 +318,7 @@ constructor() {
         foo: 'waiting for express server'
     };
 
-    // SET quiet TO false TO SEE DEBUG MESSAGES    
+    // SET quiet TO false TO SEE DEBUG MESSAGES        
     this.quiet = true;
     this.debug('GetFoo constructor called');
 }
@@ -347,16 +347,13 @@ getFoo = () => {
 
 ## Refactor Tests
 
-Move your tests and **ElfDebugEnzyme** into their own folder called **src/\_\_tests\_\_**.
-
-Refactor your tests into modules that might look a little like this:
+Create a directory called **src/tests** and put all your tests in it. Refactor your tests into modules that might look a little like this:
 
 - App.test.js
-- GetFoo.test.js
-- Header.test.js
-- SmallNumbers.test.js
-
-That's two underscores, the word _tests_, followed by two more underscores.
+- GetGist.test.js
+- GetUser.test.js
+- ElfHeader.test.js
+- Qux.test.js
 
 Some of the individual file names are not right for this project, but this screenshot should help you get a sense of what your directory structure should look like.
 
