@@ -206,7 +206,7 @@ You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
 
 ## Query the GitHub API
 
-Install request: **npm install --save request** in the **server** directory and in all the microservice projects.
+Install request: **npm install --save request** in the **server** directory and in any other project that uses request. (For now, I think that is only **server**, but if you **require** (import) it elsewhere, then you will need to install it.)
 
 In **git-user/routes/index.js** add the following method. If you have GitHub account, use yours, not mine:
 
@@ -262,7 +262,7 @@ constructor(props) {
 
 Once you have that working, refactor a second time and put **appInit** in its own file. I called mine **app-init.js**, and for now, mine happens to be in the **src** directory, but ultimately we might want to refactor and move it elsewhere. Export the object literal.
 
-You will now need to import this data into **index.js** and into your tests:
+You will now need to import this data into **client/src/index.js** and into your tests:
 
 ```javascript
 import {appInit} from './app-init';
@@ -270,7 +270,7 @@ import {appInit} from './app-init';
 
 ## Tests
 
-As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/Header.js**, you might need to change your tests. Consider this code:
+As you refactor your components, your tests might need to change. For instance, if you move the H1 for your app into **components/ElfHeader.js**, you might need to change your tests. Consider this code:
 
 ```javascript
 import App from './App';
@@ -287,7 +287,7 @@ it.only('renders and reads H1 text', () => {
 It will likely end up like this:
 
 ```javascript
-import Header from './components/Header';
+import ElfHeader from './components/ElfHeader';
 
 // Code omitted here
 
