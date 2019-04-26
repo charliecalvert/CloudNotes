@@ -178,7 +178,7 @@ You can also use [PropTypes][ptrt] to get better warnings at runtime for props t
 
 ![PropType warnings at run time][ptwrt]
 
-First install the prop-types package in the client directory:
+First install the prop-types package in the **client** directory:
 
     npm install --save prop-types
 
@@ -206,9 +206,9 @@ You can read more about PropTypes [here][aa] and [here][ab] and [here][ac].
 
 ## Query the GitHub API
 
-Install request: **npm install --save request**
+Install request: **npm install --save request** in the **server** directory.
 
-In **server/routes/api.js** add this method. If you have GitHub account, use yours, not mine:
+In **server/routes/api.js** add the following method. If you have GitHub account, use yours, not mine:
 
 ```javascript
 var request = require('request');
