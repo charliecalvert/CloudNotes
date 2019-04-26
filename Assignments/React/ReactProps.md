@@ -76,7 +76,7 @@ cd images
 wget https://upload.wikimedia.org/wikipedia/commons/6/60/Tree-of-Life_Flower-of-Life_Stage.svg
 ```
 
-Now modify the **import** statement in **App.js** that loads your logo. You should load the image you downloaded instead. Note that I have picked an SVG file which should both be small and should load quickly.
+Now modify the **import** statement in **App.js** that loads your logo. You should load the image you downloaded instead. Note that I have picked an SVG file which should both be small and should load quickly. If a file name from the web is long, I sometimes rename it to something easier to read such as **tree-of-life.svg**.
 
 Depending on your tastes and the image you choose to load, you may also want to edit the **background-color** for the **.App-header** in **App.css**.
 
@@ -105,16 +105,22 @@ For instance:
 git mv App.js components/.
 ```
 
-Right now, we are doing, or in the process of doing, two things in **App.js**. We are calling, with fetch, our server and microservices with the endpoints defined in the [ReactMicroServices][rmsep] assignment.
+Right now, we are doing, or in the process of doing, two things in **App.js**. We are calling, with **fetch**, our **server** and microservices with the endpoints defined in the [ReactMicroServices][rmsep] assignment.
 
 Each module will contain
 
-- A stateless React Component with the same name as the file in which they reside
-- Parameters to pass in needed functionality, such as **queryServer** as props.
+- A stateless (function) React Component with the same name as the file in which they reside
+- Parameters to pass in needed functionality as props. For instance, we will need to pass in **queryServer** to most of our components.
 
 We have not implemented the server side code of the **GitUser** call, but we will do so later in this assignment. So we might as well get started.
 
 Start be defining the stateless function in the module called **components/ElfHeader.js**. This component is as simple as the stateless component in ReactBasics, so I'll let you do that on your own.
+
+**NOTE**: _I am realizing that I have erred in using the term stateless component. I should have been calling them **function components**. Some details are here:_
+
+[Function and Class Components](https://reactjs.org/docs/components-and-props.html#function-and-class-components)
+
+For now, whenever I say, or said, stateless component, assume I meant to say function component. If you see me call something a function component, assume I am talking about the thing I used to call stateless component. There is no excuse for getting this wrong, but before the new React Hooks came along in 16.8, there wasn't much difference between a function component and a stateless component. As a result, I tended to confuse the terms. No longer.
 
 ## Implement Qux
 
