@@ -19,13 +19,13 @@ Also, see this: https://stackoverflow.com/a/16048358/253576
 
 Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
 
-Take a snapshot of Pristine Lubuntu before installing Docker. On Lubuntu, that should be **Start | Leave | Logout**.
+Take a snapshot of Pristine Lubuntu before installing Docker.
 
 Run the script found on your hard drive in **JsObjects/Utilities/InstallScripts**:
 
 - [DockerInstall][dkin]
 
-After running this script, be sure to logout and then log in again.
+After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**.
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
