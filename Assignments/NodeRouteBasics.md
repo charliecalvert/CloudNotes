@@ -96,7 +96,7 @@ button#searchAction Search
 
 **NOTE**: _Jade has been renamed to [Pug](https://pugjs.org/api/getting-started.html). At this stage, we should all be using pug. It doesn't matter whether we are using Jade or Pug. In most case the only different is the extension. We call it (**index.jade**) if we are using Jade, or with Pug we write (**index.pug**). Both files behave the same way in nearly all cases. However, this name change happened long enough ago that we should all be on Pug now. I should add that there now are some differences between Pug and Jade, but the differences are due simply to bug fixes and the addition of a few new features. Pug and Jade are the same product with different names._
 
-To detect a click on this button, write something like this in **public/javascripts/control.js**:
+To detect a click on this button, write something like this in **public/javascripts/control.js** and inside your **window onload** or jQuery **document.ready** blocks:
 
 ```javascript
 function search() {
@@ -110,6 +110,46 @@ document.getElementById('searchAction').onclick = search;
 This overly long (10 minutes) video shows me making lots of mistakes. But perhaps that is good, as you might hit the problems as well and you can see how I fix them.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K5-eBgEePK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Notes on Loading HTML {#html-onload}
+
+It is important that the code we write the depends on the IDs in our HTML is not called before the HTML is loaded. We have two ways of doing solving this problem, one with jQuery, one without. Right now we prefer not to use jQuery, but either method works. Here is the technique that does not use jQuery:
+
+```javascript
+window.onload = function () {
+  'use strict';
+   // YOUR CODE HERE  
+}
+```
+
+And here is a similar call with jQuery:
+
+```javascript
+$(document).ready(function() {
+  'use strict';
+  // YOUR CODE HERE
+});
+```
+
+In both cases, the code inside the curly braces (**YOUR CODE HERE**) will be executed after the HTML is loaded. This means that our HTML elements and their IDs will be available to the code. To put the same matter somewhat differently, **control.js** will probably get loaded before the HTML, but the code between the curly braces won't get executed until the HTML is loaded. That's why the functions are called **onload** and **ready.** They won't be executed until the HTML is loaded until it is ready.
+
+A common mistake is to put our code outside the **onload** or **ready** blocks. Like this:
+
+```javascript
+window.onload = function () {
+   // YOUR CODE HERE
+}
+
+const getNineAction = document.getElementById('getNineAction');
+```
+
+Now the call to **getElementById** will be called when **control.js** is loaded and before the HTML is loaded. This is bad. The fix is to move your statement back inside the **onload** code block:
+
+```javascript
+window.onload = function () {    
+   const getNineAction = document.getElementById('getNineAction');
+}
+```
 
 ## Step Four: Server {#server}
 
