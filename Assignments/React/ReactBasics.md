@@ -442,9 +442,9 @@ Compare the commands above to the all important and oft mentioned **scripts** se
 
 **NOTE**: _You can append the webback-dev-server line above to your build script in package.json. Use &&: command1 && command2._
 
-## Stateless Functions
+## Function Components {#stateless_code}
 
-Stateless functions can provide the same functionality as above, but with very clean, sparse, syntax.
+Function components can provide the same functionality as above, but with very clean, sparse, syntax.
 
 Create a new file called **ReactBasicsStateless.js** and insert into it the code the shown below.
 
@@ -458,9 +458,11 @@ export const ReactBasicsStateless = () => (
 
 Compare this code to the code in **ReactBasics.js**.
 
+**NOTE**: _The proper name for these types of components is **function component**. I have at times called them stateless components, since they often do not have state. However I am trying to switch to calling them function components per [this document][fc]._
+
 These are two ways of saying the same thing. Pick the way that you prefer.
 
-## Link in Stateless Code
+## Link in Function Components
 
 Modify **main.js** by removing the reference to **ReactBasics.js** and replacing it with a reference to **ReactBasicsStatelessFunctional.js**.
 
@@ -557,6 +559,6 @@ You can now create projects in this directory that you want to keep at least for
 <!--       -->
 
 [re]: https://reactjs.org/
-
+[fc]: https://reactjs.org/docs/components-and-props.html
 
 Copyright (c) 2019 by Charlie Calvert
