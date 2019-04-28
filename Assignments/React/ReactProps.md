@@ -359,6 +359,7 @@ Create a directory called **src/tests** and put all your tests in it. Refactor y
 - GetGist.test.js
 - GetUser.test.js
 - ElfHeader.test.js
+- TestRoutes.test.js
 - Qux.test.js
 
 All we need now is simply to get the basic "I can load the module" test to work. In my case, at least, only **App.js** needed to be passed props to get the test to pass. Later, we will need to pass props to these other components, but you should not need to pass anything in at this point. More specifically, we are not yet at the point where we need to pass in **queryServer**.
