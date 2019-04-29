@@ -342,7 +342,7 @@ getFile = () => {
 };
 ```
 
-## In render, display the state {#render-state}
+## Create a Button {#render-state}
 
 In our JSX, we:
 
@@ -372,7 +372,7 @@ it('renders button click message', () => {
 To run only a single test use **it.only** or **fit**:
 
 ```javascript
-it.only('renders button click message', () => {
+fit('renders button click message', () => {
    const wrapper = shallow(<App />);
    etc...   
 })
