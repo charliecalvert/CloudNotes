@@ -68,7 +68,7 @@ You should now be able to browse to your program like this:
 
 ## Turn it in
 
-Take a screen shot of your Docker container command line with **Week03_ExpressBasics** or some other Express application running on port 30025. (Don't use a **create-react-app** project or a project like **ReactBasics** that uses the **webpack-dev-server**.) I want to see what it looks like after you browser to port 30025 in Pristine Lubuntu:
+Take a screenshot of your Docker container command line with **Week03_ExpressBasics** or some other Express application running on port 30025. (Don't use a **create-react-app** project or a project like **ReactBasics** that uses the **webpack-dev-server**.) I want to see what it looks like after you browser to port 30025 in Pristine Lubuntu:
 
     localhost:30025
 

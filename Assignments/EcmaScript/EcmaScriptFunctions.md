@@ -39,6 +39,17 @@ Create an ES6 style immediately invoked function that displays the members of th
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
+Study the Arrow Function slides and see how to pass in the array at the same point where you invoke the function. Here is a hint:
+
+```JavaScript
+((/* HMMM... WHAT GOES HERE? */) => {
+    // YOUR CODE
+})(/* PASS IN STUFF HERE */);
+```
+
+
+
+
 You don't need to display the square brackets, just each item in the array. I'm expecting to see one item per line in the output:
 
 ```bash
@@ -97,6 +108,13 @@ console.log(add(12, 34));
 ```
 
 **HINT**: _You don't need to include a **constructor** in this class. It is not wrong to include it, but there is nothing that needs to be initialized in a **constructor** in order to complete this assignment._
+
+Please add descriptive text, labels, defining what you are printing out:
+
+```javascript
+console.log('Add 12 + 34:', add(12, 34));
+```
+
 
 ## Turn it in
 
