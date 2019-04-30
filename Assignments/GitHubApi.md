@@ -12,10 +12,16 @@ Get your version of node:
 
 ```
 $ node --version
-v7.9.0
+v12.0.0
 ```
 
+The latest version of **JsObjects/Utilities/NodeInstall/NodeInstall.sh** will get you the latest if you don't have it already. Don't forget to first run **git pull**.
+
+Get **ElfDebugEnzyme** by running **get-gist** or by going here:
+
 - [ElfDebugEnzyme](https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab)
+
+Get **ElfLogger** by going [here](https://www.elvenware.com/javascript-guide/ElvenUtilities.html#elf-logger).
 
 ## GitHub API
 
@@ -34,7 +40,7 @@ Install the JavaScript GitHub API:
 npm install --save github-api
 ```
 
-In a file called **routes/gists.js** link in the JavaScript GitHub API:
+In the **git-gist** microservice, in **routes/index.js** link in the JavaScript GitHub API:
 
 ```javascript
 var GitHub = require('github-api');
@@ -48,7 +54,7 @@ Here is an FYI
 
 ## Sign in
 
-Since we are going to being modifying data, we should start by signing in.
+Lets Continue our work in the **git-gist** microservice.  Since we are going to being modifying data, we should start by signing in to GitHub using a token.
 
 ```javascript
 const token = require('./tokens');
@@ -78,7 +84,7 @@ const tokens = [
 module.exports = tokens[0];
 ```
 
-But you must get your own token from GitHub. It's in:
+You will need to get your own token from GitHub. It's in:
 
 - **Settings | Developer Settings | Personal Acccess Tokens**
 
@@ -125,11 +131,11 @@ listGists returns a fairly complex set of information. The following line of cod
 .then(function({ data }) { ... })
 ```
 
-In other words, the data call is intentionally wrapped in a object literal : { data }.
+In other words, we explicitly pull the data object from the data returned to us by GitHub: { data }.
 
 ## Display Gist Data
 
-In **App.js** make a copy of the **fetch** code you used to call the **/user** route. For now, use it in **App.js** and call your new method **fetchGistList**. In **fetchGistList**, the URL should be **/gists/get-basic-list**.
+In **App.js** make a copy of the **fetch** code you used to call the **/user** route. For now, use it in **App.js** and call your new method **fetchGistList**. In **fetchGistList**, the URL should be **/git-gist-get-gist-list**.
 
 ## GetGist Component
 
@@ -148,6 +154,10 @@ The new component will have one button that will call the **fetchGist** method f
 
 ## The Buttons
 
+Create a button with an id of **prevGist** and onClick that points at your **fetchCall** and data-url of '/git-gist-get-gist'. Set up the code as expected in **server/routes/index.js**.
+
+This is for **material-ui**, which we are not using right now.
+
 ```javascript
 <RaisedButton
     style={buttonStyle}
@@ -161,6 +171,8 @@ The new component will have one button that will call the **fetchGist** method f
 ```
 
 ## Thinking about State
+
+Ignore this section for now.
 
 I've been trying to get us to the point where we put all our data in a library called Redux. Redux can be helpful when state starts to get complicated, which it appears to be in our case. So Redux should help us eliminate some of this business and keep things clean. I hope.
 
