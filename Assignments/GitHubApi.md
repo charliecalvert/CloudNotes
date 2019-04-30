@@ -1,10 +1,12 @@
 # Git Hub API
 
-Learn how to call the [GitHub API](https://github.com/github-tools/github).
+Our goal in this assignment is learn how to call the [GitHub API](https://github.com/github-tools/github). We will continue to do our work in week03-rest-basics, but you should tag your work as start and finish the assignment, and do you work in a **week05** branch.
+
+So far we have only made a simple call to learn public facts about a GitHub user. The next step is to login to GitHub and get more detailed information, or private information. In particular, we will log and get a list of the available Gists supported by a user. At first we will just write the info to the console so we can prove to ourselves that we could make call on the server and the information back to the client. The final step will be to properly display the information in a custom React component.
 
 ## Node Support for ES6 {#node-green}
 
-Note that let and const are fully supported.
+Now that **let** and **const** are fully supported you might be interested in seeing a more detailed look at which advanced features are supported by NodeJs:
 
 - [Node Green](http://node.green/)
 
@@ -12,16 +14,16 @@ Get your version of node:
 
 ```
 $ node --version
-v12.0.0
+v12.0.1
 ```
 
-The latest version of **JsObjects/Utilities/NodeInstall/NodeInstall.sh** will get you the latest if you don't have it already. Don't forget to first run **git pull**.
+The latest version of **JsObjects/Utilities/NodeInstall/NodeInstall.sh** will get you the latest Node runtime if you don't have it already. Don't forget to first run **git pull**.
 
 Get **ElfDebugEnzyme** by running **get-gist** or by going here:
 
 - [ElfDebugEnzyme](https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab)
 
-Get **ElfLogger** by going [here](https://www.elvenware.com/javascript-guide/ElvenUtilities.html#elf-logger).
+Get **ElfLogger** by going [here](/javascript-guide/ElvenUtilities.html#elf-logger).
 
 ## GitHub API
 
@@ -30,11 +32,35 @@ Get **ElfLogger** by going [here](https://www.elvenware.com/javascript-guide/Elv
 - [Generic (not JavaScript Specific, GitHub API Intro](https://developer.github.com/v3/)
 - [Generic GitHub API Guides](https://developer.github.com/guides/)
 
-Get the GitHub API token:
+We need to be authorized to make many requests to the GitHub API. That involves sending a token before you make your call, or sending it along with your call. We'll describe the process later in this document. For now, get started by acquiring a GitHub API token:
 
 - [Get a GitHub API oauth token][git-token]
 
-Install the JavaScript GitHub API:
+You will need to get your own token from [GitHub](https://github.com). It's in:
+
+- **Settings | Developer Settings | Personal Acccess Tokens**
+
+Here is a more direct link:
+
+- [https://github.com/settings/tokens](https://github.com/settings/tokens)
+
+You can give the user of the token various rights. For now, I believe we only need the right to create a **gist**, but you could throw in **repo** and **user** scopes if you want.
+
+For now, just store the token as a raw number in **git-gist/routes/tokens.js**. Now format the **token.js** like this, where you can have a comma separated list of tokens with different rights:
+
+```JavaScript
+const tokens = [
+    '3bd10af220924e317cd3f76601a29231b507d9a7'
+];
+
+module.exports = tokens[0];
+```
+
+The need to use a token that must be hidden from prying eyes helps explain why we are doing our work on the server rather than on the client. In most cases, we will just check these tokens into our repositories, which is safe as long as our repos are private. (You will also have to trust me, which hopefully is not difficult for you.) If you later decide to make the repo public, you should deactivate the tokens you check in.
+
+**NOTE**: _A more secure alternative technique would be to put the token in an environment variable called **git-hub-token** and load it with code like this: **const token = process.env.git-hub-token**. That way you need never check the token into your repository. It will make my job easier, however, if you just check the token in to your repository so I can easily use it when grading your work._
+
+After getting a token, the next step would be to install the [JavaScript GitHub API NPM package](https://www.npmjs.com/package/github-api) as part of your project. We will make our first calls from **git-gist**, so install it into that microservice:
 
 ```
 npm install --save github-api
@@ -54,7 +80,13 @@ Here is an FYI
 
 ## Sign in
 
-Lets Continue our work in the **git-gist** microservice.  Since we are going to being modifying data, we should start by signing in to GitHub using a token.
+So far we have taken three steps:
+
+- Obtained a token
+- Installed the NPM GitHub API package
+- Imported the GitHub object into our code with **require**
+
+Lets Continue our work, all of which is taking place in the **git-gist** microservice.  Since we are going to being modifying data, we should start by authorizing ourselves to GitHub using our token.
 
 ```javascript
 const token = require('./tokens');
@@ -75,24 +107,11 @@ let getGitHub = function() {
 };
 ```
 
-Here is **tokens.js**:
-
-```JavaScript
-const tokens = [
-    '3bd10af220924e317cd3f76601a29231b507d9a7'
-];
-module.exports = tokens[0];
-```
-
-You will need to get your own token from GitHub. It's in:
-
-- **Settings | Developer Settings | Personal Acccess Tokens**
-
-Like this:
-
-- [https://github.com/settings/tokens](https://github.com/settings/tokens)
+It is best to log in with our token since we are able to precisely define the scope of the abilities associated with the token.
 
 ## Get Gist Data
+
+We will contiue to work in **git-gist/routes/index.js**. Here is the code to first authorize our application and to then get a list of gists:
 
 ```JavaScript
 router.get('/get-basic-list', function(request, response) {
@@ -137,6 +156,13 @@ In other words, we explicitly pull the data object from the data returned to us 
 
 In **App.js** make a copy of the **fetch** code you used to call the **/user** route. For now, use it in **App.js** and call your new method **fetchGistList**. In **fetchGistList**, the URL should be **/git-gist-get-gist-list**.
 
+Let's break that down:
+
+- git-gist: The microservice we will use on the server side.
+- get-gist-list: The route inside the microservice
+
+**NOTE** _I'm sure you can see that in the long run it will be simpler to break out the code in our main server so we can use a URL like this: **/git-gist/get-gist-list**. That will be simpler in several ways, but we aren't quite ready to refactor our code to fit that model._
+
 ## GetGist Component
 
 You'll need to create a new component called **ShowNewGist** that extends **React.Component**. Its job will be to display the information you get back when you create a gist. This component will take a certain number of props including:
@@ -146,11 +172,11 @@ You'll need to create a new component called **ShowNewGist** that extends **Reac
 
 You do not need to display all the fields, at least at first. Two or three would be enough while testing. For the midterm, up this to at least five or six. Be sure to include **Description** and **URL** among the fields you display. If possible, making **URL** clickable so we can see the Gist that you create.
 
-Add a new item to the menu called **Insert New Gist** or something similar. In **DataMaven**, you will also need to a new **Route** in the **render** method. It should display a component called ShowNewGist At some point the new route will need to pass two pieces of information to the component it calls.
-
 The new component will have one button that will call the **fetchGist** method from **DataMaven**.
 
-**fetchGist** should retrieve the entirety of the JSON data returned from GitHub. On the client side you should add the data to **DataMaven**'s state. This should cause a call to the **DataMaven** and **ShowNewGist** render methods.
+**fetchGist** should retrieve the entirety of the JSON data returned from GitHub and pass it to our new component in the **render** method.
+
+**NOTE**: _I'm intentionally being vague here as you should be able to problem solve sufficiently to see how to properly implement all this._
 
 ## The Buttons
 
@@ -225,6 +251,8 @@ console.log(f); => "Thu Apr 13 2017 08:49:23 GMT-0700 (PDT)"
 ```
 
 ## Testing Notes
+
+Ignore this section for now.
 
 The tests in **Header.test.js** break after the refactoring explained above. After the refactoring, I was getting this error:
 
