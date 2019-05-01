@@ -7,7 +7,7 @@ Main Goals
 
 ## Key Assignments
 
-I have not yet published, and may not publish, some of these assignments. They are certainly not ready to be worked on yet. This just my thinking outloud.
+I have not yet published, and may not publish, some of these assignments. They are certainly not ready to be worked on yet. This is just my thinking outloud.
 
 - [NodeRouteBasics][nrb]
 - [UnitTests with Jest][utwg]
