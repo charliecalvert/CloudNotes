@@ -369,6 +369,34 @@ In the images shown below, some of details may be slightly askew, but neverthele
 ![Test Output][rpt]
 ![Project Structure][proj-struct]
 
+Simple components like **Qux** have a button on them. When we click the button, a method is called. So all we want to do is test if the method we pass in as props is called when the button is clicked.
+
+This worked for React Class Components:
+
+```javascript
+it('should call queryServer for a React Class Component', () => {
+    const wrapper = shallow(<Qux queryServer={jest.fn()}/>);
+    console.log('WRAPPER', wrapper.debug());
+    const instance = wrapper.instance();
+    console.log('INSTANCE', instance);
+    const spy = jest.spyOn(instance.props, 'queryServer');
+    wrapper.find('button').simulate('click');
+    expect(spy).toHaveBeenCalledTimes(1)
+});
+```
+
+This worked for either a React Function Component or a React Class Component:
+
+```javascript
+it('should call queryServer for either React Class or Function', () => {
+    const elfObj = { func: jest.fn() };
+    const wrapper = shallow(<Qux queryServer={elfObj.func}/>);
+    const spy = jest.spyOn(elfObj, 'func');
+    wrapper.find('button').simulate('click');
+    expect(spy).toHaveBeenCalledTimes(1)
+});
+```
+
 ## Turn it in
 
 First commit and push. Then tag and push. Designate the directory and branch in your repo where you did your work:
