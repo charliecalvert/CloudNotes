@@ -373,6 +373,47 @@ Simple components like **Qux** have a button on them. When we click the button, 
 
 ## Test for Simple Components {#simple-component-test}
 
+Our goal is detect if we can pass a function into Qux and detect if it has been called when the button is clicked. To do this, we use a feature of jest called a spy. Almost all testing frameworks have spies. This is not a feature limited to jest. Spies are used to detect if a function has been called. That is all we want to do in this case: just detect if we can pass in a function to Qux and ensure that when the button is clicked the function we passed in is called.
+
+The following code works for both React Class and React Function Components:
+
+```javascript
+const getMockFunc = () => {
+    const myFunc = () => { console.log('BUTTON CLICKED')};
+    return jest.fn().mockImplementation(myFunc);
+};
+
+it('should call queryServer for a React Class or Function Component', () => {
+    const jestFunc = getMockFunc();
+    const wrapper = shallow(<Qux queryServer={jestFunc}/>);
+    wrapper.find('button').simulate('click');
+    expect(jestFunc).toHaveBeenCalledTimes(1)
+});
+```
+
+Here we are using **jest.fn()** to create a mock function that knows whether or not it has been called. We use the **mockImplementation** method to give the function a random implementation.
+
+All we want to know in our test is whether we can pass in a function to **Qux** and detect if it is called when the **button** in **Qux** is clicked. In our test, we don't really care what the function does. More particularly, we don't want the button click to make a call to our microservice because that would mean we had to get the microservice running before the test could be run. That is too much work. If we had to do that each time we wanted to run our tests, then we wouldn't run our tests. (There are other ways to test the microservice, but here we just want to test **Qux**.)
+
+Just to be clear, lets review the main points. The **jest.fn()** method creates mock function, a "fake" function whose primary function is detect whether or not it has been called. We also give it an implementation, but that is not necessary. Our test is to simulate a button click and then check whether or not our mock function was called.
+
+If we don't want a **mockImplementation**, the call could be as simple as this:
+
+```javascript
+it('should call queryServer with bare jest function', () => {
+    const jestFunc = jest.fn();
+    const wrapper = shallow(<Qux queryServer={jestFunc}/>);
+    wrapper.find('button').simulate('click');
+    expect(jestFunc).toHaveBeenCalledTimes(1)
+});
+```
+
+This is very clean, but I think it is nicer, especially for beginners, if the jest function actually does something, as it does in the first example.
+
+## Alternative Spies
+
+Below you will see two other ways to do what is shown above. I include them as they can be helpful in other scenarios. But in this case, the code above is all we need.
+
 This worked for React Class Components:
 
 ```javascript
@@ -386,6 +427,16 @@ it('should call queryServer for a React Class Component', () => {
     expect(spy).toHaveBeenCalledTimes(1)
 });
 ```
+
+In the above we are using two Jest tools we have not seen much before:
+
+| Method | Description     |
+| :------------- | :------------- |
+| jest.fn       | A mock function. For test where you want to confirm that a function is called but don't really care what it does.  |
+| jest.spyOn   | Watch a function to see if it is called.   |
+
+- [Docs on Mock Functions](https://jestjs.io/docs/en/mock-function-api)
+- []
 
 This worked for either a React Function Component or a React Class Component:
 
