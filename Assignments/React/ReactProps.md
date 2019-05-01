@@ -371,6 +371,8 @@ In the images shown below, some of details may be slightly askew, but neverthele
 
 Simple components like **Qux** have a button on them. When we click the button, a method is called. So all we want to do is test if the method we pass in as props is called when the button is clicked.
 
+## Test for Simple Components {#simple-component-test}
+
 This worked for React Class Components:
 
 ```javascript
