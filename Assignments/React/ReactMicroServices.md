@@ -317,4 +317,17 @@ Don't forget you rename a directory: **git move microtest Micros**.
 
 Don't forget to explore **concurrently**.
 
+## Build Help
+
+It can be a pain to build all the microservices. But there is help! If you pull the latest JsObjects, you will find two updates to **~/.bash_aliases**:
+
+    alias runcln='cd client && npm i && cd ../server && npm i && bower install && cd .. && npm i'
+    alias runmicros='cd git-gist && npm i && cd ../qux && pwd && npm i && bower install && cd ../git-user && pwd && npm i && bower install && cd ..'
+
+The **runcln** alias is meant for a standard concurrently app. It runs **npm i** in the root, in **client**, and in **server**.
+
+The second alias does more or less the same thing, but for **git-gist**, **git-user** and **qux**.
+
+This is one of the cases where naming conventions are very important. Of one student, for instance, calls the gist microservice git-gists instead of git-gist then that slows me down. 
+
 - [npm concurrently](https://www.npmjs.com/package/concurrently)
