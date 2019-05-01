@@ -165,14 +165,37 @@ Let's break that down:
 
 ## GetGist Component
 
-You'll need to create a new component called **ShowNewGist** that extends **React.Component**. Its job will be to display the information you get back when you create a gist. This component will take a certain number of props including:
+For now, let's use the **GetGist** to display the data. Its job will be to display the information you get back when you create a gist. This component will take a certain number of props including:
 
 - The method to call to create the Gist: **fetchGist**.
 - The data retrieved from GitHub after you create the Gist: **gitGist**.
 
+To the setState with the data you get back from the server, do this:
+
+```javascript
+that.setState(foo => {
+    return {gistList: json.result[0]}
+});
+```
+
+This will work with a new property we add to our appData:
+
+```javascript
+export const appInit = {
+    file: 'unknown',
+    result: 'unknown',
+    status: 'unknown',
+    server: 'unknown',
+    body: {login: 'unknown', id: 'unknown'},
+    gistList: {id: 'unknown'}
+};
+```
+
+This is a minimal implementation of **appInit**, it will have to grow as we show more fields from the **gistList**.
+
 You do not need to display all the fields, at least at first. Two or three would be enough while testing. For the midterm, up this to at least five or six. Be sure to include **Description** and **URL** among the fields you display. If possible, making **URL** clickable so we can see the Gist that you create.
 
-The new component will have one button that will call the **fetchGist** method from **DataMaven**.
+The new component will have one button that will call the **fetchGist** method from App.js.
 
 **fetchGist** should retrieve the entirety of the JSON data returned from GitHub and pass it to our new component in the **render** method.
 
