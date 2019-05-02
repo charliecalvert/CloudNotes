@@ -605,60 +605,22 @@ it.only('renders button click message', () => {
 
 ## ESLint
 
-Eslint should be installed globally in **~./npm/bin**.
-
-Add this **.eslintrc.json** file to your project.
-
-```JavaScript
-{
-    "extends": [
-		"eslint:recommended",
-		"plugin:react/recommended"
-	],
-    "rules": {
-        // enable additional rules
-        "indent": ["error", 4],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["warn", "single"],
-        "semi": ["error", "always"],
-
-        // override default options for rules from base configurations
-        "comma-dangle": ["off", "always"],
-        "no-cond-assign": ["error", "always"],
-
-        // disable rules from base configurations
-        "no-console": "off"
-    },
-    "parserOptions": {
-        "ecmaVersion": 7,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "env": {
-        "browser": true,
-        "node": true
-    }
-}
-```
+Eslint should be installed globally in **~./npm/bin**. Use [get-gist][esrc] to get it.
 
 Run it like this:
 
 ```bash
 eslint .
 ```
-The code above sometimes needs to be updated. To see my current working **.eslintrc.json** file, go [here][eslintrc].
+To see my current working **.eslintrc.json** file, go [here][eslintrc].
 
 ## Turn it in
 
-Place your work in your repository if it is not already there. Merge your finished project into **master**.
+Place your work in your repository if it is not already there. If you aren't already working in master, merge your finished project into **master**.
 
-Push your repository. Go to GitHub or BitBucket and ensure that the code you want to turn in is actually in your repository and that it contains the files and folders you expect it to contain.
+Push your repository. Go to GitHub and ensure that the code you want to turn in is actually in your repository and that it contains the files and folders you expect it to contain.
 
-Find the assignment on Canvas and submit it. Add text that states the name of the folder where you placed your assignment. A link to your folder on GitHub/Bitbucket is nice.
-
-For most of the assignments, I'll just say something like: "Put your work in your repo and push," or simply "Push your work". That's a shorthand for something along the lines of what I'm saying here.
+Find the assignment on Canvas and submit it. Add text that states the name of the folder where you placed your assignment. A link to your folder on GitHub is nice.
 
 ## Test Output
 
@@ -720,4 +682,5 @@ npm install react-addons-test-utils enzyme
 
 
 [eslintrc]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
+[esrc]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html
 [enspc]: https://www.elvenware.com/javascript-guide/JavaScriptReact.html#enospc
