@@ -51,7 +51,7 @@ Some of our programs will use this as the default PORT on which to run.
 
 ## Get Started
 
-Switch to your Week01 branch.
+Switch to your **master** branch, or whatever branch I've asked you to create in class.
 
 - Navigate to the root of your repository
 - Issue this command:
@@ -253,7 +253,7 @@ Now run your program and click on the button. It should say **Hello success** or
 
 ## Running Tests
 
-Create a **src/control.test.js** as shown below. This is a test that allows you to see if the syntax in **App.js** is good enough to allow the component to be loaded.
+Create a **source/control.test.js** as shown below. This is a test that allows you to see if the syntax in **App.js** is good enough to allow the component to be loaded.
 
 ```javascript
 import React from 'react';
