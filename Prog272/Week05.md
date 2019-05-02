@@ -10,6 +10,8 @@ Main Goals
 I have not yet published, and may not publish, some of these assignments. They are certainly not ready to be worked on yet. This is just my thinking outloud.
 
 - [NodeRouteBasics][nrb]
+- [Jest Express Address Simple][jeas]
+  - Learn about React and Jest
 - [UnitTests with Jest][utwg]
     - Learn about Jest and React
 - [Unit Tests Address][uta]
@@ -28,6 +30,7 @@ I have not yet published, and may not publish, some of these assignments. They a
 [ac]: /teach/assignments/react/AddressComponent.html
 [acr]: /teach/assignments/react/AddressComponentRefine.html
 [rnb]: /teach/assignments/react/ReactNativeBasics.html
+[jeas]: /teach/assignments/react/JestExpressAddressSimple.html
 
 ## Install Guest Additions in Linux
 

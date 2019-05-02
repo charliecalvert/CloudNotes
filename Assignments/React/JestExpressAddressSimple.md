@@ -77,9 +77,211 @@ Open up **views/index.pug** and insert this line just above the line that loads 
 
 This will ensure create an HTML **DIV** with an ID of **root** in your **index.html** file.
 
+## Understanding React
+
+Let's review the basics of React by writing some code in **control.js**. We start by importing react from **node_modules**:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+```
+
+Recall that we used npm to install these files earlier in this assignment.
+
+Next we place a class called **Go** inside our **onload** function:
+
+```javascript
+ class Go extends React.Component {
+      // IMPLEMENTATION GOES HERE
+ }
+```
+
+Here we use React class syntax to define a simple react component that extends the built-in **React.Component** class. In other words, our class inherits some functionality from a base class, but we are not going to examine that base class in any detail at this point.
+
+Perhaps the first thing that you will notice about this class is that it contains something that looks a good deal like HTML. The HTML-like syntax used in React **render** methods is called JSX. React knows how to convert this HTML-like code into JavaScript code that generates HTML. In other words, your finished component does not have HTML embedded in it, rather it has JavaScript code for creating HTML.
+
+Here is a very simple **render** method:
+
+```html
+render() {
+    return (
+        <p>The future depends on what you do today.</p>
+    )
+}
+```
+
+But just a class and a render method is not quite enough to make react work. We also need to load it, and insert it into the **root DIV** that we created in **index.pug**
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+window.onload = function () {
+
+    class Go extends React.Component {
+        render() {
+            return (
+                <p>The future depends on what you do today.</p>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <Go/>,
+        document.getElementById('root')
+    )
+};
+```
+
+That last bit about **ReactDOM** first uses JSX to instantiate your **Go** component. Then it snags the **root** element using our old friend **getElementById**. React then inserts your **Go** component into the HTML DOM and your done. There's your first React Component in its entirety, along with code to load it.
+
+Perhaps the most important line is this one: **<Go/>**. It might take you a day or two to see it, but this line of code says that your JavaScript class Component can be inserted into an HTML file just as if it were any other HTML element.
+
+We are used to seeing the HTML P, DIV, IMG and BODY components. But there is no HTML **Go** component. The magic of JSX is -- in part -- that it allows you to create new components and treat them as if they were composable HTML.
+
+Suppose you built three components similar to our Go component. Lets call them **Foo**, **Bar** and **Qux**.
+
+Now you could compose them like this:
+
+```javascript
+class Go extends React.Component {
+    render() {
+        return (
+            <div>
+                <p>The future depends on what you do today.</p>
+                <Foo />
+                <Bar />
+                <Qux />
+            </div>            
+        )
+    }
+}
+```
+
+Or like this:
+
+```javascript
+ReactDOM.render(  
+  <div>
+      <p>The future depends on what you do today.</p>
+      <Foo />
+      <Bar />
+      <Qux />
+  </div>,
+    document.getElementById('root')
+)
+```
+
+Notice that when I string multiple JSX components together I wrap them in a DIV. This is one of the **gotchas** of React. For instance, the **ReactDOM.render** method shown above takes two parameters. If you wrote this, then it would take five parameters:
+
+```javascript
+ReactDOM.render(  
+      <p>The future depends on what you do today.</p>,
+      <Foo />
+      <Bar />
+      <Qux />
+    document.getElementById('root')
+)
+```
+
+Don't do that. Wrap them in a DIV or some similar component. Here is a sample error of the type you might see if you make this mistake.
+
+```html
+ERROR in ./source/control.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: control.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (16:8)
+
+  14 |     ReactDOM.render(
+  15 |         <Go/>
+> 16 |         <Go />,
+     |         ^
+  17 |         document.getElementById('root')
+  18 |     )
+  19 | };
+```
+
+## Call the Server
+
+Let's now insert a more complex component. Because this code could change, and because you are likely to need this code multiple times, I have put our default, Bellevue College **hello world** React component in a Gist:
+
+- [control.js with a React Component]
+
+The simplest way to get this file is with **get-gist**. Note however, that this will overwrite the existing **control.js** file in the source directory. If you are following along, then you don't have any overwhelming importnat custom code in that file. Still, you probably, want to move it out of the way first by renaming it to **Go.js**.
+
+**NOTE**: _In the process, don't let WebStorm fool you into renaming code in webpack.config.js. The entry point for our program is **control.js**, not **Go.js**._
+
+Here are the steps to get the default React control.js file:
+
+- Navigate to the **source** directory
+- Run get-gist
+- Select **m** from the menu
+  - React Control Cmponent for elf-express
+
+Here is the menu:
+
+    $ get-gist
+
+    =======================
+    Menu
+    =======================
+
+     Gists
+      a) Run ESLintRc and Prettier (cdef)
+      b) ElfDebugEnzyme
+      c) .eslintrc
+      d) .eslintignore
+      e) prettier
+      f) .prettierrc
+      g) Default React Component
+      h) Setup React Native Enzyme Npm
+      i) Setup React Native Enzyme Yarn
+      j) ElvenLogger
+      k) Elven Node systemd Tools
+      l) Elven Create Concurrently
+      m) React Control Component for elf-express
+      x) Exit
+
+Now go to **routes/index.js** and insert a **foo** route:
+
+```javascript
+router.get('/foo', function(request, response) {
+    response.send({'result': 'success'});
+});
+```
+
+Now run your program and click on the button. It should say **Hello success** or something similar.
+
 ## Running Tests
 
-Open up **src/App.test.js**, shown below. This is a test that allows you to see if the syntax in **App.js** is good enough to allow the component to be loaded.
+Create a **src/control.test.js** as shown below. This is a test that allows you to see if the syntax in **App.js** is good enough to allow the component to be loaded.
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Go from './control';
+
+it('renders without crashing', () => {
+   const div = document.createElement('div');
+   ReactDOM.render(<Go />, div);
+   ReactDOM.unmountComponentAtNode(div);
+});
+```
+
+Add a test line to state section in **package.json**:
+
+```javascript
+"scripts": {
+  "start": "npx webpack --watch & nodemon ./bin/www",
+  "build": "npx webpack",
+  "test": "jest"
+},
+```
+
+Install jest:
+
+```javascript
+npm i jest @babel/polyfill babel-jest
+```
 
 To run the tests, type: **npm test** in the project's root directory.
 
@@ -90,18 +292,6 @@ To run the tests, type: **npm test** in the project's root directory.
 - or in a folder called **\_\_tests\_\_**
   - That's two underscores on either side of the word tests.
 
-Here is the simple default test generated by **create-react-app**:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './App';
-
-it('renders without crashing', () => {
-   const div = document.createElement('div');
-   ReactDOM.render(<App />, div);
-});
-```
 
 This test is built with [Jest][jest] library, but the syntax looks just like the very popular Jasmine library. In most cases, it also behaves much like Jasmine.
 
@@ -116,10 +306,11 @@ import App from './App';
 
 describe('Jest Create React Tests', function () {
 
-   it('renders without crashing', () => {
-       const div = document.createElement('div');
-       ReactDOM.render(<App />, div);
-   });
+  it('renders without crashing', () => {
+     const div = document.createElement('div');
+     ReactDOM.render(<Go />, div);
+     ReactDOM.unmountComponentAtNode(div);
+  });
 
 });
 ```
@@ -141,12 +332,13 @@ I believe we no longer need to use **react-addons-test-utils**
 
 ## Enzyme Test of Component Output
 
+Add this to your component: **<h1>React and Jest</h1>**
 The updated tests shown below import **shallow** from enzyme. It grabs text from our component and then checks to see if the text is what we expect it to be.
 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Go from './control';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure, shallow } from 'enzyme';
 configure({ adapter: new Adapter() });
@@ -160,8 +352,9 @@ describe('jest test', function() {
    });
 
    it('renders and reads H1 text', () => {
-       const wrapper = shallow(<App />);
-       const welcome = <h1 className="App-title">Welcome to React</h1>;
+       const wrapper = shallow(<Go />);
+       console.log(wrapper.debug());
+       const welcome = <h1>React and Jest</h1>;
        expect(wrapper.contains(welcome)).toEqual(true);
    });
 
@@ -169,26 +362,6 @@ describe('jest test', function() {
 ```
 
 Perhaps you are getting an error when you run these tests. You may be able to fix it by yourself, but let's learn how to use ElfDebugEnzyme to help you find the error.
-
-**NOTE**: _**create-react-app** has recently changed the default code they put in **App.js**. Rather than trying to keep up with their changes, let's just check to make the h1 tag "Welcome to React" is in their **render** method. That might look a bit like this:_
-
-```html
-<header className="App-header">
-  <h1 className="App-title">Welcome to React</h1>
-  <img src={logo} className="App-logo" alt="logo" />
-  <p>
-    Edit <code>src/App.js</code> and save to reload.
-  </p>
-  <a
-    className="App-link"
-    href="https://reactjs.org"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Learn React
-  </a>
-</header>
-```
 
 What we are looking for is the H1 tag near the top of the JSX quoted above. Be sure you don't get tripped up over **H1** vs **H2** tag differences.
 
@@ -331,7 +504,7 @@ In our JSX, we:
 - Display our state in a react expression defined with curly braces.
 
 ```html
-<p className="App-intro">File: {this.state.file}</p>
+<p>Hello: {this.state.result}</p>
 ```
 
 ## Define a function called getFile {#define-getnine}
@@ -339,9 +512,18 @@ In our JSX, we:
 We declare an arrow function function in our component called **getFile**. Inside it, we call **setState**. The **setState** call can take an object literal defining the new state.
 
 ```javascript
-getFile = () => {
-    console.log('getFile called.');
-    this.setState({file: 'url-file.js'})
+queryFoo = () => {
+    fetch('/foo')
+        .then(function (response) {
+            return response.json();
+        })
+        .then((json) => {
+            console.log('parsed json', json);
+            this.setState(foo => (json));
+        })
+        .catch(function (ex) {
+            console.log('parsing failed, URL bad, network down, or similar', ex);
+        });
 };
 ```
 
@@ -354,7 +536,7 @@ In our JSX, we:
 - And use a react expression, defined with curly braces, to call **getNine** when the button is clicked.
 
 ```html
-<button className='elf' onClick={this.getFile}>Get Nine</button>
+<button className='elf' onClick={this.queryFoo}>Get Nine</button>
 ```
 
 ## Test button click {#test-click}
@@ -365,7 +547,7 @@ Call the enzyme simulate method to simulate clicking the button. Check to see if
 
 ```javascript
 it('renders button click message', () => {
-   const wrapper = shallow(<App />);
+   const wrapper = shallow(<Go />);
    const nineSign = <p className="App-intro">File: url-file.js</p>;
    wrapper.find('button.elf').simulate('click');
    expect(wrapper.contains(nineSign)).toEqual(true);

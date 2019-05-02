@@ -117,16 +117,15 @@ You could arrange your code differently, but I think keeping the __mocks__ folde
 Here is a test:
 
 ```javascript
-it('renders state of File paragraph after button click', () => {
+it('renders state of File paragraph after button click', (done) => {
     const wrapper = shallow(<App appInit={appInit}/>);
     const statusParagraph = <p className="App-intro">status: Mock Server Happy</p>;
     wrapper.find('#queryServer').simulate('click');
-    setImmediate(() => {
-        wrapper.update();
-        elfDebugEnzyme.getFirst(wrapper, 'p');
-        //expect(true).toBe(true);
+    setTimeout(() => {        
+        elfDebugEnzyme.getFirst(wrapper, 'p');        
         expect(wrapper.contains(statusParagraph)).toBe(true);
-    });
+        done();
+    }, 0);
 });
 ```
 
