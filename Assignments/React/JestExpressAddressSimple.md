@@ -280,7 +280,7 @@ Add a test line to state section in **package.json**:
 Install jest:
 
 ```javascript
-npm i jest
+npm i -D jest
 ```
 
 Create or modify **.babelrc**. It belongs in the root of your project, along with **package.json** and **bower.json**:
@@ -318,7 +318,7 @@ Let's update the default example by wrapping the test in a **describe** method:
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Go from './Go';
 
 describe('Jest Create React Tests', function () {
 
