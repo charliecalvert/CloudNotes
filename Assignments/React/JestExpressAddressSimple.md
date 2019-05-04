@@ -620,6 +620,8 @@ To summarize: We wanted to test whether our button click method can successfully
 
 Next we checked that the JSON that would have been fetched by a real call to **fetch** can be handled properly by our call to **setData**.
 
+These two tests complete the cycle: the first test proves the button click works, the second proves we can properly handle the data sent back from the server.
+
 ## Narrowing the Number of Tests
 
 If you have just one test that is failing, try type **f** in the tests. That should show you only the failed test. To end the mode in which you see only the failed test, press **f** again.
