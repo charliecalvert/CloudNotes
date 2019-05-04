@@ -27,7 +27,7 @@ Let's build some tests that check whether or not we are all building more or les
 - Add the following to the **start** property in your **client/package.json** file: **"sanity-test": "react-scripts test Sanity*"**
 - Run the test: **npm run sanity-tests** and make sure everything passes.
 
-Needless to say, you cannot change anything in the test. However, I may change the test at some point. I'll try to set up something like **get-gist** so that you can easily get the latest version of my test.
+Needless to say, you cannot change anything in the test. However, I may change the test at some point. I'll try to set up something like the **get-gist** bash script so that you can easily get the latest version of my test. (I'm referring to **~/bin/get-gist**. I'm not talking about the **GetGist** component or microservice in our assignment.)
 
 At this time (May 3), a run on my system looks like this:
 
@@ -57,25 +57,31 @@ At this time (May 3), a run on my system looks like this:
 
 Our goal is to be able to iterate over the list of gists you retrieved from your repository. The user should press buttons and see the various items in your list.
 
-Convert GetGist from Function Component to a React Class Component.
+Convert the **src/components/GetGist.js** React component from a Function Component to a React Class Component. I'll leave that up to you.
 
-If you are currently passing in only a single gist object, change your code so you pass in an array of gistObjects. For instance your **app-init gistList** could have something like this in, at least as a starting point:
+If you are currently passing in only a single gist object, change your code so you pass in an array of gistList objects. For instance your **app-init gistList** could have something like this in, at least as a starting point:
 
 ```javascript
 gistList: [{id: 'unknown1'}, {id: 'unknown2'}]
 ```
 
-In **GetGist** declare **state** with at least one property called **index**. Use this property to iterate over your **gistList**. Add a **next** and **prev** buttons that increment and decrement state and then update your component state.
+Of course, your call in the **git-gist** microservice will return objects with more than just an id field. In the midterm we will probably starting working with more than one field.
+
+**NOTE**: _There should be no need to change the **git-gist** microservice from the previous assignment. It still does the same thing, and we still call it the same way. The difference will be in the way we display the data we get from the call to our microservice. Of course, the microservice gets its data from GitHub via our GitHub API call._
+
+In **GetGist** declare **state** with at least one property called **index**. The ability to declare state is the reason we switch from a React Function to a React Class Component. (For now we will ignore the new React hooks technology.) Use this **index** property to iterate over your **gistList**. Add a **next** and **prev** buttons that increment and decrement our index state and update your component state. For instance, if the next button is pressed, index is incremented, and the next item in our gist list is displayed.
 
 - The **next** and **prev** buttons should be declared inside **GetGist**
-- GetGist should have an H1 element with this text: Get Gist Component
+- **GetGist** should have an H1 element with this text: Get Gist Component
 - You should also have one or two paragraph elements for displaying the date from an individual gist and current value of **appInit.result**.
 
-The point is that much GetGist is self contained. At this point, we will continue to show it on our main page, but we can use HR controls or other techniques to separate it from the other code.
+The point is that much of **GetGist** is self contained. At this point, we will continue to show it on our main page, but we can use HR controls or other techniques to separate it from the other code.
 
-For now, it is okay if your component iterates out of bounds if you press **next** or **previous** one too many times or at the wrong time. I'll ask you to fix that for the midterm, but you don't have to fix it for this assignment.
+For now, it is okay if your component iterates out of bounds if you press **next** or **previous** one too many times or at the wrong time. I'll probably ask you to fix that for the midterm, but you don't have to fix it for this assignment.
 
-We should gray out FetchGistList after we call it once, but again, that is for the midterm.
+We should gray out the **FetchGistList** button after we select it once, but again, that is probably for the midterm.
+
+To better understand what I want, watch the [2 minute video](https://youtu.be/BOGxRGy5MPA).
 
 ## Dates
 
