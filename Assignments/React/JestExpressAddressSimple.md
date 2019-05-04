@@ -349,6 +349,7 @@ I believe we no longer need to use **react-addons-test-utils**
 ## Enzyme Test of Component Output
 
 Add this to your component: **<h1>React and Jest</h1>**
+
 The updated tests shown below import **shallow** from enzyme. It grabs text from our component and then checks to see if the text is what we expect it to be.
 
 ```javascript
@@ -576,16 +577,15 @@ The **onClick** method is a crazy trick that is really very simple, but that loo
 
 ## Test button click {#test-click}
 
-It's time to write some unit tests with Jest.
-
-Call the enzyme simulate method to simulate clicking the button. Check to see if the form now contains the value we expect it to contain. In other words, check that the button click method worked.
+Call the enzyme simulate method to simulate clicking the button. In this first test we simply check to see if the button click calls the **elfQuery** method in **Go.js**.
 
 ```javascript
 it('renders button click message', () => {
-   const wrapper = shallow(<Go />);
-   const nineSign = <p className="App-intro">File: url-file.js</p>;
-   wrapper.find('button.elf').simulate('click');
-   expect(wrapper.contains(nineSign)).toEqual(true);
+    const jestFunc = jest.fn();
+    const wrapper = shallow(<Go />);
+    wrapper.instance().elfQuery = jestFunc;
+    wrapper.find('button').simulate('click');
+    expect(jestFunc).toHaveBeenCalledTimes(1)
 });
 ```
 
