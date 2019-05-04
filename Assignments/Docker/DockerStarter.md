@@ -25,6 +25,14 @@ Run the script found on your hard drive in **JsObjects/Utilities/InstallScripts*
 
 - [DockerInstall][dkin]
 
+So the commands to install Docker might be like this:
+
+    jou
+    cd InstallScripts
+    ./DockerInstall
+
+This is the correct way to install as of May 3, 2019.
+
 After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**. You should not have to run Docker as the superuser, that is, you should not need to use **sudo** to start it. If you get a permission denied error, then try logging out and logging in again. That should fix the problem. (The Docker Install video linked below might not adequately cover this step.)
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
