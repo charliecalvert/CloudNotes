@@ -596,7 +596,7 @@ We have replaced our original elfQuery function with a [jest mock function](http
 Now that we know that our button works, our next step is to test whether we can parse the JSON we would get from a successful call to the server. In other words, we are assuming our call to fetch worked, and now we want to test if we can properly handled the result that was sent back to us from the server:
 
 ```javascript
-it('should call queryServer with bare jest function', () => {
+it('should call setData with valid JSON causing component refresh', () => {
     const wrapper = shallow(<Go />);
     const result = <p>Hello foo test code</p>;
     wrapper.instance().setData({result: 'foo test code'});
