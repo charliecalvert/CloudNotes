@@ -533,7 +533,7 @@ In our JSX, we:
 
 ## Define a function called getFile {#define-getnine}
 
-We declare an arrow function function in our component called **queryFoo**. Inside it, we call **setData**. In **setData** we call **setState**. The **setState** call can take an object literal defining the new state. It updates the state and causes the Component to refresh/re-render. More specifically, it causes the render method to be called by React.
+We declare an arrow function function in our component called **elfQuery**. Inside it, we call **setData**. In **setData** we call **setState**. The **setState** call can take an object literal defining the new state. It updates the state and causes the Component to refresh/re-render. More specifically, it causes the render method to be called by React.
 
 ```javascript
 setData = (json) => {
@@ -541,7 +541,7 @@ setData = (json) => {
     this.setState(json);
 };
 
-queryFoo = (url, setData, event) => {
+elfQuery = (url, setData, event) => {
     fetch(url)
         .then(function (response) {
             return response.json();
@@ -561,15 +561,15 @@ In our JSX, we:
 
 - Declare a button
 - Give it **_not_** an HTML **onclick** attribute, but a JSX **onClick** attribute
-- And use a react expression, defined with curly braces, to call **queryFoo** when the button is clicked.
+- And use a react expression, defined with curly braces, to call **elfQuery** when the button is clicked.
 
 ```html
-<button className='elf' onClick={(e) => this.queryFoo('/foo', this.setData, e)}>Get Nine</button>
+<button className='elf' onClick={(e) => this.elfQuery('/foo', this.setData, e)}>Get Nine</button>
 ```
 
-The **onClick** method is a crazy trick that is really very simple, but that looks confusing at first. Recalls that our onClick methods always get passed an **event** object that describes the event that triggered the firing of the onClick event. What we are doing here here is implementing the **onClick** handler in place, and then using the implementation of our handler to call the **queryFoo** method, passing the url of the rouite, and the method that we want to use to handle returned from the call to the server.
+The **onClick** method is a crazy trick that is really very simple, but that looks confusing at first. Recalls that our onClick methods always get passed an **event** object that describes the event that triggered the firing of the onClick event. What we are doing here here is implementing the **onClick** handler in place, and then using the implementation of our handler to call the **elfQuery** method, passing the url of the rouite, and the method that we want to use to handle returned from the call to the server.
 
-**NOTE**: _The technique for calling **queryFoo** contains a level of indirection. There are two methods calls where normally we would have just one. I believe it is a beginners mistake to get too exercised about the overhead of the extra function call. Here are the reasons I believe this to be true:_
+**NOTE**: _The technique for calling **elfQuery** contains a level of indirection. There are two methods calls where normally we would have just one. I believe it is a beginners mistake to get too exercised about the overhead of the extra function call. Here are the reasons I believe this to be true:_
 
 - Developers, and particularly beginners, tend to spend a lot of time trying to optimize the wrong methods in their code. They think they know where bottlenecks will appear, and so they spend lots of time optimizing them. In most cases, they end up either making the code slower than it would have been had they left it alone, or saving a few nanoseconds that no one will ever miss. Don't try to optimize anything until you have proof delivered by a profiler showing that a method is taking too long. Don't guess, get proof. If you can't get proof, don't optimize. It just isn't worth it in 9,999 cases out of 10,000, especially in a course like this. Optimization is for experts working on massive projects. Don't do it!
 - In modern compilers, the overhead of a function call is very small. Unless it appears in a loop that is called tens of thousands of times, it is likely not to be noticed by most users.
