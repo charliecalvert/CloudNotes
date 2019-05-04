@@ -1,6 +1,8 @@
 ## Overview
 
-Getting ready for the midterm.
+**NOTE**: _I'm pushing this out before it is ready so you can be working on it over the weekend, etc. I will update with clarifications and perhaps requests for more code. But this gets you started._
+
+The purpose: Getting ready for the midterm.
 
 There are two pieces:
 
