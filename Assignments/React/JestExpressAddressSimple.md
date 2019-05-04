@@ -580,7 +580,7 @@ The **onClick** method is a crazy trick that is really very simple, but that loo
 Call the enzyme simulate method to simulate clicking the button. In this first test we simply check to see if the button click calls the **elfQuery** method in **Go.js**.
 
 ```javascript
-it('renders button click message', () => {
+it('proves button click works', () => {
     const jestFunc = jest.fn();
     const wrapper = shallow(<Go />);
     wrapper.instance().elfQuery = jestFunc;
