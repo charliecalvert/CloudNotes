@@ -85,6 +85,29 @@ We should gray out the **FetchGistList** button after we select it once, but aga
 
 To better understand what I want, watch the [2 minute video](https://youtu.be/BOGxRGy5MPA).
 
+## Testing
+
+I want to add tests like the ones in Address Simple. I've written a number of them myself, but have not gotten that written up yet. I'll add this soon.
+
+Here is one of the tests I'll want you to include. We have not done anything exactly like this before:
+
+```javascript
+it('renders setGistList call directly', () => {
+    const wrapper = shallow(<App appInit={appInit}/>);
+    debug('IN TEST BUT BEFORE', wrapper.state('gistList'));
+    expect(wrapper.state('gistList')).toEqual([{id: 'unknown'}]);
+    const gistListFromServer = [{id: 'found'}];
+    wrapper.instance().setGistList({gistList: gistListFromServer});
+    expect(wrapper.state('gistList')).toEqual(gistListFromServer);
+});
+```    
+
+The point is that our paragraph elements for displaying the data are now in **GetGist** so we need some other way to confirm that we can parse the mock data that could have been sent from the server.
+
+## Turn it in
+
+Just push your most recent work. I'm assuming you are working in **week03-rest-basics**, but regardless, please specify folder and branch. Tag it too.
+
 ## Dates
 
 What my tests looked like on various dates. The point being that we build up test suites slowly over time.
