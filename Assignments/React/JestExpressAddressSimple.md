@@ -431,8 +431,8 @@ The **elfDebugEnzyme** call is to its **getFirst** method. The code asks to see 
 console.log src/ElfDebugEnzyme.js:66
   Caller: App.test.js:
   Debug value:
-  <h1 className="App-title">
-      Welcome to React
+  <h1>
+      React and Jest
   </h1>
 ```
 
