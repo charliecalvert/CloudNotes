@@ -589,9 +589,11 @@ it('renders button click message', () => {
 });
 ```
 
-We have replaced our original elfQuery function with a jest mock function. We do this, because we don't want to have to mock up fetch itself, which is a bit tricky. So we get around that by mocking the entire elfQuery function. Then we simulate clicking our button and check to make sure that out mocked elfQuery function was called. As mentioned above, this proves that button click works, but it doesn't prove that we can handle the JSON we get from the server.
+We have replaced our original elfQuery function with a [jest mock function](https://jestjs.io/docs/en/mock-functions). We do this, because we don't want to have to mock up **fetch** itself, which is a bit tricky. So we get around that by mocking the entire elfQuery function. Then we simulate clicking our button and check to make sure that out mocked elfQuery function was called. As mentioned above, this proves that button click works, but it doesn't prove that we can handle the JSON we get from the server.
 
-To test whether we can parse the JSON we get from the server, do this:
+**NOTE**: _Perhaps we will mock **fetch** itself at some point in this class, but it is too early in the class to introduce that relatively complex subject._
+
+Now that we know that our button works, our next step is to test whether we can parse the JSON we would get from a successful call to the server. In other words, we are assuming our call to fetch worked, and now we want to test if we can properly handled the result that was sent back to us from the server:
 
 ```javascript
 it('should call queryServer with bare jest function', () => {
@@ -602,11 +604,21 @@ it('should call queryServer with bare jest function', () => {
 });
 ```
 
-This code tests if our **setData** function can parse a simple object. **setData** then calls **this.setState** which causes the **render** function in our Go component to be called. This time, the output in produced by the following line of code in our **Go** component should be **Hello foo test code**:
+This code tests if our **setData** function can parse a simple object of the type sent back to us from our server. We pass the JSON to **setData** which then calls **this.setState** which causes the **render** function in our Go component to be called. After the call to **render**, the output produced by the following line of code in our **Go** component should be **Hello foo test code**:
 
 ```html
 <p>Hello {this.state.result}</p>
 ```
+
+To check that we are indeed seeing that code, we use this test:
+
+```javascript
+expect(wrapper.contains(result)).toEqual(true);
+```
+
+To summarize: We wanted to test whether our button click method can successfully call **elfQuery** and update our the output from our component. We did not want to actually call the real **elfQuery** method, however, because it contains a call to **fetch**. As a result, we mocked **elfQuery** and ran our first test, which proved that the button we clicked on called our fake **elfQuery** method. This proves that the button is declared correctly and can call our real **elfQuery** method. All we care about at this button is that the button can call **elfQuery**. Whether it calls the real **elfQuery** method or our mock method is a matter of indifference to us.
+
+Next we checked that the JSON that would have been fetched by a real call to **fetch** can be handled properly by our call to **setData**.
 
 ## Narrowing the Number of Tests
 
