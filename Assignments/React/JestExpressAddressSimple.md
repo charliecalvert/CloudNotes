@@ -403,8 +403,8 @@ Use **ElfDebugEnzyme** to display the first H1 element:
 
 ```JavaScript
 it('renders and reads H1 text', () => {
-    const wrapper = shallow(<App />);
-    const welcome = <h1 className="App-title">Welcome to React</h1>;
+    const wrapper = shallow(<Go />);
+    const welcome = <h1>React and Jest</h1>;
     elfDebugEnzyme.getFirst(wrapper, welcome.type, true);
     expect(wrapper.contains(welcome)).toEqual(true);
 });
@@ -459,7 +459,13 @@ const find = <input>Test Foo Route</input>;
 elfDebugEnzyme.getFirst(wrapper, find.type);
 ```
 
-If you pass in **false** to the last parameter of the constructor, then you get this output:
+Try passing in **false** to the last parameter of the constructor for ElfDebugEnzume:
+
+```javascript
+const elfDebugEnzyme = new ELfDebugEnzyme(true, "Go.test.js", true);
+```
+
+Then you should get this kind of output with minor differences:
 
 ```javascript
 console.log src/ElfDebugEnzyme.js:66
