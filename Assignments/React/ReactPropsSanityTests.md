@@ -2,6 +2,22 @@
 
 Getting ready for the midterm.
 
+There are two pieces:
+
+- Run some sanity tests.
+- Convert GetGist from React Function to React Component so we can add state to it.
+  - Use the state to allow the user to iterate over the list of Gists.
+
+## But I don't Have any Gists {#no-gists}
+
+I've noticed that not everyone has any gists or only have on gist. Think of gists as a place to store methods that you use a lot. Here are some candidates:
+
+- An example of how to call fetch
+- A simple default React Component.
+- The **/foo** route that we use in **routes/index.js**
+- Bash Scripts that you have written that you don't want to forget
+- Your **.my_bash_aliases** file
+
 ## Sanity Tests
 
 Let's build some tests that check whether or not we are all building more or less the same application.
@@ -36,6 +52,30 @@ At this time (May 3), a run on my system looks like this:
     Ran all test suites matching /Sanity*/i.
 
     Watch Usage: Press w to show more.
+
+## Update GetGist
+
+Our goal is to be able to iterate over the list of gists you retrieved from your repository. The user should press buttons and see the various items in your list.
+
+Convert GetGist from Function Component to a React Class Component.
+
+If you are currently passing in only a single gist object, change your code so you pass in an array of gistObjects. For instance your **app-init gistList** could have something like this in, at least as a starting point:
+
+```javascript
+gistList: [{id: 'unknown1'}, {id: 'unknown2'}]
+```
+
+In **GetGist** declare **state** with at least one property called **index**. Use this property to iterate over your **gistList**. Add a **next** and **prev** buttons that increment and decrement state and then update your component state.
+
+- The **next** and **prev** buttons should be declared inside **GetGist**
+- GetGist should have an H1 element with this text: Get Gist Component
+- You should also have one or two paragraph elements for displaying the date from an individual gist and current value of **appInit.result**.
+
+The point is that much GetGist is self contained. At this point, we will continue to show it on our main page, but we can use HR controls or other techniques to separate it from the other code.
+
+For now, it is okay if your component iterates out of bounds if you press **next** or **previous** one too many times or at the wrong time. I'll ask you to fix that for the midterm, but you don't have to fix it for this assignment.
+
+We should gray out FetchGistList after we call it once, but again, that is for the midterm.
 
 ## Dates
 
