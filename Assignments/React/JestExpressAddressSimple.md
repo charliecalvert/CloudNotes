@@ -589,6 +589,25 @@ it('renders button click message', () => {
 });
 ```
 
+We have replaced our original elfQuery function with a jest mock function. We do this, because we don't want to have to mock up fetch itself, which is a bit tricky. So we get around that by mocking the entire elfQuery function. Then we simulate clicking our button and check to make sure that out mocked elfQuery function was called. As mentioned above, this proves that button click works, but it doesn't prove that we can handle the JSON we get from the server.
+
+To test whether we can parse the JSON we get from the server, do this:
+
+```javascript
+it('should call queryServer with bare jest function', () => {
+    const wrapper = shallow(<Go />);
+    const result = <p>Hello foo test code</p>;
+    wrapper.instance().setData({result: 'foo test code'});
+    expect(wrapper.contains(result)).toEqual(true);
+});
+```
+
+This code tests if our **setData** function can parse a simple object. **setData** then calls **this.setState** which causes the **render** function in our Go component to be called. This time, the output in produced by the following line of code in our **Go** component should be **Hello foo test code**:
+
+```html
+<p>Hello {this.state.result}</p>
+```
+
 ## Narrowing the Number of Tests
 
 If you have just one test that is failing, try type **f** in the tests. That should show you only the failed test. To end the mode in which you see only the failed test, press **f** again.
