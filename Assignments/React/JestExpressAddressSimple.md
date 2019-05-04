@@ -589,7 +589,11 @@ it('renders button click message', () => {
 });
 ```
 
-To run only a single test use **it.only** or **fit**:
+## Narrowing the Number of Tests
+
+If you have just one test that is failing, try type **f** in the tests. That should show you only the failed test. To end the mode in which you see only the failed test, press **f** again.
+
+Here is another approach. To run only a single test use **it.only** or **fit**:
 
 ```javascript
 fit('renders button click message', () => {
