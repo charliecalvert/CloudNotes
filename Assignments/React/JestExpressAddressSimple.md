@@ -531,7 +531,7 @@ In our JSX, we:
 <p>Hello: {this.state.result}</p>
 ```
 
-## Define a function called getFile {#define-getnine}
+## Define or Query {#define-getnine}
 
 We declare an arrow function function in our component called **elfQuery**. Inside it, we call **setData**. In **setData** we call **setState**. The **setState** call can take an object literal defining the new state. It updates the state and causes the Component to refresh/re-render. More specifically, it causes the render method to be called by React.
 
