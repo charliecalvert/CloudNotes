@@ -256,9 +256,11 @@ curl -i https://api.github.com/users/charliecalvert/repos
 
 ## Time till Renew
 
+GitHub puts a limit on how many requests we can make in a certain time frame. Their policy is explained [here][xrl]. You can learn something about your current status by running the **curl** command. **curl** allows you to access a URL from the command line much as you would by typing it into the address bar of a browser.
+
  curl https://api.github.com/users/charliecalvert
 
-And see this line:
+If you scan the output from the command, you see this line near the top:
 
 ```javascript
 X-RateLimit-Limit: 60
@@ -266,12 +268,20 @@ X-RateLimit-Remaining: 58
 X-RateLimit-Reset: 1492098563
 ```
 
+This shows:
+
+  - How many requests you can make per hour.
+  - The number of requests remaining.
+  - When the hour ends and your requests reset.
+  -
 Convert the reset time:
 
 ```javascript
 var f = new Date(1492098563 * 1000);
 console.log(f); => "Thu Apr 13 2017 08:49:23 GMT-0700 (PDT)"
 ```
+
+I'm not sure I've ever hit the rate limit, but if we are running tests with a tool like SuperTest, we might hit it.
 
 ## Testing Notes
 
@@ -307,3 +317,6 @@ Watch Usage
 ```
 
 Select **p** and enter part of the name of the test file you want to test. For instance, **Header**. Then only **Header.test.js** will run.
+
+
+[xrl]: https://developer.github.com/v3/#rate-limiting
