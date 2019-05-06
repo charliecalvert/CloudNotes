@@ -258,7 +258,7 @@ curl -i https://api.github.com/users/charliecalvert/repos
 
 GitHub puts a limit on how many requests we can make in a certain time frame. Their policy is explained [here][xrl]. You can learn something about your current status by running the **curl** command. **curl** allows you to access a URL from the command line much as you would by typing it into the address bar of a browser.
 
- curl https://api.github.com/users/charliecalvert
+ curl -i https://api.github.com/users/charliecalvert
 
 If you scan the output from the command, you see this line near the top:
 
