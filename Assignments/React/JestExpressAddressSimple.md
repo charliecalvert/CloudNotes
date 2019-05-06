@@ -669,20 +669,26 @@ Find the assignment on Canvas and submit it. Add text that states the name of th
 
 ## Test Output
 
-I'm expecting the test output to look something like this:
+I'm expecting the test output to look perhaps a bit like this:
 
 ```javascript
-PASS  src/App.test.js
- jest test
-   ✓ renders without crashing (4ms)
-   ✓ renders and reads H1 text (3ms)
-   ✓ renders button click message (1ms)
+PASS  source/Go.test.js
+ Go Tests
+   ✓ renders without crashing (13ms)
+   ✓ renders and reads H1 text (4ms)
+   ✓ proves button click works (3ms)
+   ✓ should call setData with valid JSON causing component refresh (4ms)
+
+ console.log source/Go.js:11
+   parsed json { result: 'foo test code' }
 
 Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
+Tests:       4 passed, 4 total
 Snapshots:   0 total
-Time:        0.364s, estimated 1s
+Time:        0.53s, estimated 1s
 Ran all test suites.
+
+Watch Usage: Press w to show more.
 
  console.log ElfDebugEnzyme.js:45
    App.test.js:
