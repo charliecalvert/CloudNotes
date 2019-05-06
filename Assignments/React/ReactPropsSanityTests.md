@@ -25,7 +25,10 @@ I've noticed that not everyone has any gists or only have on gist. Think of gist
 Let's build some tests that check whether or not we are all building more or less the same application.
 
 - Create a directory called **client/src/sanity**.
-- Get the **Sanity.App.test.js** test Suite and put i in your new **sanity** folder.
+- Get the [Sanity.App.test.js](https://gist.github.com/charliecalvert/64d2a63ed40e116dd20f55e98116baa6) test Suite and put it in your new **sanity** folder.
+  - You can also pull the latest from JsObjects, and then type **slb** and run **./CreateSymbolicLinks**
+  - This will add a symbolic link to a new script to your bin folder: **~/bin/get-tests**
+  - Run **get-tests** from your sanity folder and it will add **Sanity.App.test.js** to your project.
 - Add the following to the **start** property in your **client/package.json** file: **"sanity-test": "react-scripts test Sanity*"**
 - Run the test: **npm run sanity-tests** and make sure everything passes.
 
