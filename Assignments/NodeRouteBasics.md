@@ -350,6 +350,15 @@ Watch [the video](https://youtu.be/5zKV6AvYddY) on these last two sections of th
 
 ## Server Side HTTP POST Parameters {#post-call}
 
+There are two frequently used HTTP commands used when querying a server:
+
+- get: Request data without changing the state of the server
+- post: Make a request that might change the state of a server, perhaps by updating a database.
+
+See more details [here](https://stackoverflow.com/questions/3477333/what-is-the-difference-between-post-and-get).
+
+In this program we have no good reason to do a post, but I'm going to ask you to make a post call anyway so you can learn the syntax for the call. Later in the course we will make calls that really should be posts. (I should add that developers tending to be very sloppy about distinguishing between gets and posts. I'm going to try to up my game in this regard, but I have a way to go...)
+
 When you **POST** data to the server you need to pass in a [JavaScript object literal][jol] as a second parameter to **fetch**. This second parameter is used to specify [the options][fo] for your call. For instance, you can specify whether you want to make a **GET** or a **POST** call. By default, **fetch** uses **GET**. There are a number of possible options, but in many cases you will use only these three:
 
 - **method**: Set this to 'POST'
