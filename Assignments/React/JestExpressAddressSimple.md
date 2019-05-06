@@ -555,6 +555,8 @@ elfQuery = (url, setData, event) => {
 };
 ```
 
+**NOTE**: _In class we might have called **setData** by another name such as **setFooData**. If so, the best fix -- at least for now -- would probably be to change the name **setFooData** to **setData**._
+
 ## Create a Button {#render-state}
 
 In our JSX, we:
