@@ -116,6 +116,22 @@ The files that are being updated are stored in **~/npm**. In particular, see **~
 
 **Note**: _The syntax **~/npm** is shorthand for **/home/bcuser/npm**._
 
+Here are some additional commends on the techniques for updating a machine and their relative importance:
+
+- Update your repository with git pull
+  - If you don't automatically load your private key, then load it with sshadd before pulling
+- Run my **update-all** script. This is my wrapper around **sudo apt-get update**, etc. To see my script do this: **cat ~/bin/update-all**. It's a short, simple script.
+- Less important, but every once in a while, or whenever I suggest doing it, update JsObjects with **git pull**
+- Even less important, but maybe once every week or two, check that the global npm packages are up to date with **ncu -g**
+
+Of that list, the first two are the most important. Pulling and pushing your repo is something you should do at least once a day. I frequently do it 5 to 10 times a day.
+
+Updating the system should probably be done once a week, but since it is easy to forget to do something like that, you might want to make it a habit, which means doing it daily. The thing to rigorously avoid is going a month or more without updating the system.
+
+In theory, I don't update JsObjects that often, but sometimes I just seem to generate some churn so it is not a bad idea to update it from time to time. But that is only because you are in my course right now, afterward, it is not so important.
+
+Even once a month is probably normally often enough for checking the global packages with **ncu**, but again, I have been distorting the importance of this by making frequent changes to elf-express.
+
 ## VirtualBox at Home
 
 If you install VirtualBox at home, be sure to install both VirtualBox and the VirtualBox Extensions. Be sure that the version of VirtualBox and the version of the Virtual Box Extensions are the same.
