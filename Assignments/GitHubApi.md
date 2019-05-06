@@ -260,7 +260,7 @@ GitHub puts a limit on how many requests we can make in a certain time frame. Th
 
  curl -i https://api.github.com/users/charliecalvert
 
-If you scan the output from the command, you see this line near the top:
+Note that we are passing in the **-i** switch to include the HTTP=header. If you scan the output from the command, you see this line near the top:
 
 ```javascript
 X-RateLimit-Limit: 60
