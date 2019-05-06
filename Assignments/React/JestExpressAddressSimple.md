@@ -703,11 +703,10 @@ Ran all test suites.
 
 ## Hint
 
-Don't nest folders! There should be only one folder called **Week02-ReactJest** in your repository. It should be in the root of your repository.
+Don't nest folders! There should be only one folder called **week05-address-simple** in your repository. It should be in the root of your repository.
 
-- Correct: my-repo/Week02-ReactJest
-- Wrong: my-repo/Week02-ReactJest/Week02-ReactJest
-
+- Correct: my-repo/week05-address-simple
+- Wrong: my-repo/week05-address-simple/week05-address-simple
 
 ## The warnings
 
