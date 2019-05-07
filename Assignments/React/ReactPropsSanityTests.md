@@ -26,6 +26,7 @@ Let's build some tests that check whether or not we are all building more or les
 
 - Create a directory called **client/src/sanity**.
 - Get the [Sanity.App.test.js](https://gist.github.com/charliecalvert/64d2a63ed40e116dd20f55e98116baa6) test Suite and put it in your new **sanity** folder.
+  - You will need to install elf-utils: **npm i elven-code**
   - You can also pull the latest from JsObjects, and then type **slb** and run **./CreateSymbolicLinks**
   - This will add a symbolic link to a new script to your bin folder: **~/bin/get-tests**
   - Run **get-tests** from your sanity folder and it will add **Sanity.App.test.js** to your project.
@@ -57,6 +58,10 @@ At this time (May 3), a run on my system looks like this:
     Ran all test suites matching /Sanity*/i.
 
     Watch Usage: Press w to show more.
+
+## Structure
+
+To get some of the tests to pass, you might have to refactor your code in **App.js** to follow the model laid out [Jest Express Address Simple][jeasv] assignment. The point being that we want to factor the code for parsing the JSON sent by the server into a separate method with a name like **setData**. Ideally, I should have a more descriptive name.
 
 ## Update GetGist
 
@@ -162,3 +167,5 @@ What my tests looked like on May 3:
     Ran all test suites.
 
     Watch Usage: Press w to show more.
+
+[jeasv]: https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html#define-getnine
