@@ -19,7 +19,7 @@ Go to the Firebase console: [https://console.firebase.google.com/](https://conso
 
 Select the **Create New Project** button.
 
-Call it **prog270-lastname**
+Call it **prog270-lastname**. Accept **default settings for sharing Google Analytics** and the **controller-controller** terms. Select **Create projcet**.
 
 Find the Hosting tool and click the **Get Started** button. Click through the simple dialogs in the app wizard.
 
@@ -48,7 +48,7 @@ Install firebase:
 npm install -g firebase-tools
 </pre>
 
-Login in to Firebase:
+Logging in to Firebase is a bit scary, but remember that giving a Google product access to your Google account is not quite as dangerous as it might seem. Login in to Firebase:
 
 <pre>
 firebase login
@@ -113,5 +113,5 @@ also
 
     firebase logout
     firebase list
-    firebase --version (3.14 as of Nov 2017)
+    firebase --version (3.14 as of Nov 2017, 6.9.0 as of May 2019)
     firebase --help

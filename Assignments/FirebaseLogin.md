@@ -2,7 +2,7 @@
 
 The goal of this assignment is to learn how Firebase provides authentication via sign in with Google, Twitter and other common sites.
 
-You can give individual uses access to all or portions of your site once you allow them to sign in.
+You can give individual users access to all or portions of your site once you allow them to sign in.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8sGY55yxicA" frameborder="0" allowfullscreen></iframe>
 
