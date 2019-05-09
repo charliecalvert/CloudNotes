@@ -200,6 +200,11 @@ function renderAppInElement(choice) {
 
 window.onload = function() {
 
+    ReactDOM.render(
+      <ElfHeader/>,
+      document.getElementById('root')
+    );
+
     document
         .querySelectorAll('.__react-root')
         .forEach(renderAppInElement);
