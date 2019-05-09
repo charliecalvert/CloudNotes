@@ -160,8 +160,8 @@ Set the paths as follows:
 | Component | Path   |
 |:----------|:-------|
 | Home      | /      |
-| Go        | /worker?title=go    |
-| First     | /worker?title=first |
+| Go        | /worker?title=Go    |
+| First     | /worker?title=First |
 
 For instance:
 
