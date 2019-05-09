@@ -8,6 +8,7 @@
   - Week06 Show Address
 - Add menu and Firebase login
   - week03-rest-basics
+- Add the ability to iterate through the records from your gists.
 
 
 ## Data

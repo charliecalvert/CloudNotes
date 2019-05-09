@@ -1,69 +1,55 @@
+
 # React Git Menu
 
 The goals of this assignment are:
 
-- Create a menu with [react-router][rrb] no matter how limited
-- Switch views between **Git View**, **BarFoo** and **SmallNumbers**
+- Add **material-ui** to our application.
+- Create a material-ui menu that uses [react-router][rrb]
+- Use the menu to display and hide the GetGist code.
+
+**NOTE** _I heavily rewrote this assignment on May 8, 2019. (The last commit before: 21246)._
+
+## Menu
 
 In this serious of screen shots you can see the menu, and the various views it provides. In particular, each view features one component, or one component and its child components. This is a [SPA][spa], or Single Page App.
 
-![Git View][gf2]
-
-**IMAGE**: _Home page with styling and menu at bottom of header._
-
-![Bar Foo][bf2]
-
-**IMAGE**: _Micro page with menu no styling._
-
-![Foo API][fapi]
-
-**IMAGE**: _Get Foo page with menu styling and menu at top._
-
-![The components folder][rrcf]
+TODO Add screenshots
 
 **IMAGE**: The components folder
 
-[rrcf]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-router-menu-comps.png
+TODO Add screenshots
+
+## Tag It
+
+Before performing major surgery, I like to tag my code. You should push your work, then tag it with elf-tagger:
+
+    elf-tagger "Before Matieral UI menu" "week03-rest-basics"
+
+I often also start a **test** branch based on my working branch. I do my work there, and if I'm happy, I merge the changes back into my main working branch. If I got into to my trouble, I switch back to my working branch, delete the botched **test** branch, then start a new **test** branch and try again. If it is good this time, I merge it back into my working branch.
+
+Delete: **git branch -d test**
 
 ## Install React Router
 
 Read the [React Router Dom Install][rrdi] section from Elvenware then return to this document and install **react-router-dom** in the **client** directory.
 
-## Rename Header to ElfHeader
+    npm i react-router-dom
 
-In this assignment we will be working the component that we use to display our header. We initially called this class **Header**. Let's do a small refactor here and change its name to **ElfHeader**. This will make it less likely that its name will collide with the HTML tag of the same name, or some other JavaScript variable with the same name.
+Also install **material-ui**:
 
-I prefer to use Git to rename files:
+    npm i @material-ui/core @material-ui/icons
 
-  git mv src/components/Header.js src/components/ElfHeader.js
+Also, be sure you have prop types:
 
-Then open up the file and change the name of the class itself from **Header** to **ElfHeader**:
+    npm i prop-types;    
 
-```javascript
-class ElfHeader extends Component { ... }
+## Insert the new ElfHeader
 
-export default ElfHeader;
-```
+Replace ElfHeader with the code in [this gist](https://gist.github.com/5cff61d7888cfd4097076835c5bc45c2.git).
 
-## The Main Index
+If the logo or App.css fight back, just comment them out. I'll probably cut them, but later.
 
-Recall how our modified **index.js** file looks:
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import './css/index.css';
-
-ReactDOM.render(
-    <div>
-        <App/>
-    </div>,
-    document.getElementById('root')
-);
-```
-
-**NOTE**: _Notice how easy it is for us to move classes and views around when we use the **React** architecture.  The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
+Create a new file called **client/components/tileData.js** with the content from [this gist](https://gist.github.com/8df01550bb74683023d205a28321a70f.git)
 
 ## App
 
@@ -78,67 +64,11 @@ We are going to fundamentally change the structure of our program. This means ma
 </div>
 ```
 
-## Add Menu
-
-Let's add in the code in **ElfHeader** that defines the "visible" menu that the user will click on:
-
-```javascript
-// IMPORTS OMITTED HERE
-import {Link} from "react-router-dom";
-
-
-class ElfHeader extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <div>
-                        <ul>
-                            <li>
-                                <Link to="/">Git User</Link>
-                            </li>
-                            // YOU WRITE LINKS FOR MICRO & APIFOO
-                        </ul>
-                    </div>
-                    <img ...>
-                    <h1 ...>
-                </header>
-            </div>
-        );
-    }
-}
-
-export default ElfHeader;
-```
-
-Here we are using the **react-router-dom** class called **Link** to help us create a link that behaves appropriately in this context. It will, for instance, turn the first two items into code that looks like this at run time:
-
-```HTML
-<li><a href="/">Home</a></li>
-<li><a href="/api-foo">ApiFoo</a></li>
-```
-
-## Testing ElfHeader
-
-We should wrap our Header in a **MemoryRouter** when doing the renders without crashing test:
-
-
-```javascript
-import {MemoryRouter} from "react-router-dom";
-
-// CODE OMITTED
-
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<MemoryRouter><ElfHeader /></MemoryRouter>, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
-```
-
-
 ## Defining Routes
 
-The final step involves defining what the application will do when the user clicks on a particular menu item. Here is the basic structure:
+The final step involves defining what the application will do when the user clicks on a particular menu item. Here is the basic structure with everything else temporarly stripped away from App.js:
+
+**NOTE**: _Don't actually strip things out. Just look at what I have done here and leave your code alone.__
 
 ```JavaScript
 import {BrowserRouter, Route} from "react-router-dom";
@@ -158,7 +88,7 @@ class App extends Component {
 }
 ```
 
-We do it like this for the home menu:
+And we will, in time do it like this for the home menu, where we use **exact path**:
 
 ```HTML
 <Route exact path="/" component={GitUser}/>
@@ -171,21 +101,73 @@ I want you to have to figure out at least one of these routes on your own, so I 
 The normal pattern is to define the path, and then the component:
 
 ```javascript
-<Route path="/my-component" component={MyComponent}/>
+<Route path="/api-foo" component={ApiFoo}/>
 ```
 
-You cannot, however, pass props to **MyComponent** the same way you can elsewhere in a React application. Instead, you use **render** instead of **component**, and the syntax looks like this in our case:
+You cannot, however, pass props to **ApiFoo** the same way you can elsewhere in a React application. Instead, you use **render** in place of **component**, and the syntax looks like this in our hypothetical case:
 
 ```javascript
-<Route path="/api-foo"
+<Route
+    path="/api-foo"
     render={(props) => (
-        <ApiFoo {...props}
-            appInit={appInit} />
+        <ApiFoo {...props}  appInit={appInit} />
     )}
 />
 ```
 
-We use this syntax because **react-router-dom** passes a certain number of props to a component by default, and we don't want to lose them. Here we use the [spread-operator](http://es6-features.org/#SpreadOperator) to pass the Router props and then we pass our own props.
+We use this syntax because **react-router-dom** passes a certain number of props to a component by default, and we don't want to lose them. Here we use the [spread-operator](http://es6-features.org/#SpreadOperator) to pass the **Router** **props** and then we pass our own **props**.
+
+This transformation is tricky. Do it bit by bit. Start here with this familiar code:
+
+```javascript
+<ApiFoo appiInit={appInit} />
+```
+
+Wrap it in the react-route-dom **Route**:
+
+```javascript
+<Route
+  <ApiFoo appiInit={appInit} />
+/>
+```
+
+Add in path and the spread props:
+
+```javascript
+<Route
+  path="/api-foo"
+  <ApiFoo {...props} appiInit={appInit} />
+/>
+```
+
+So far so good. Now here is the tricky part: add the **render** method:
+
+```javascript
+<Route
+    path="/api-foo"
+    render={(props) => (
+        <ApiFoo {...props}  appInit={appInit} />
+    )}
+/>
+```
+
+If you need to pass additional props, do it like this:
+
+```javascript
+<Route
+    path="/api-foo"
+    render={(props) => (
+        <ApiFoo
+          {...props}  
+          appInit={appInit}
+          foo={fooInit}
+          bar={barInit}
+        />
+    )}
+/>
+```
+
+It looks a horror, but if you take it step by step it makes sense.
 
 Here is what it looks like in the debugger when working with a different component than the one we use in program:
 
@@ -200,6 +182,33 @@ I've run to a breakpoint on line 10 of **SmallNumbers.js**. At the bottom right 
 - match
 
 They can come in useful in more advanced scenarios than the one we see here. In particular, they can help preserve history so the user can move back and forth through your site.
+
+## Fill Menu
+
+Your goal will be to fill in the menu for all the components we have created. When the program starts, none of them are visible, just the the area where we display data:
+
+![Home View](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-open.png)
+
+**IMAGE**: The menu. First item is sort of home, the rest point to various compoents. (We will do login later. You can ignore it.)
+
+![Home View](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-empty.png)
+
+**IMAGE**: The home menu selected. (No components chosen)
+
+![Home View](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-qux.png)
+
+**IMAGE**: Qux selected from menu
+
+![Home View](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-test-routes.png)
+
+**IMAGE**: Test Routes selected from menu
+
+![Home View](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-get-gist.png)
+
+**IMAGE**: Get Gist with material-ui buttons
+
+## Material UI Buttons
+
 
 ## Style the Menu
 
@@ -236,6 +245,36 @@ When everything is working right, you won't see messages like this in the debugg
 ## Turn it in
 
 Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass. For now.
+
+## Testing ElfHeader
+
+I need to review this code. Don't try it yet but look for updates. We should wrap our **ElfHeader** in a **MemoryRouter** when doing the renders without crashing test:
+
+There are two ways to test ElfHeader. Method one:
+
+```JavaScript
+it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<ElfHeader/>, div);
+        //ReactDOM.render(<MemoryRouter><ElfHeader /></MemoryRouter>, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
+```
+
+More complex, but apparently no longer needed:    
+
+```javascript
+import {MemoryRouter} from "react-router-dom";
+
+// CODE OMITTED
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<MemoryRouter><ElfHeader /></MemoryRouter>, div);
+    ReactDOM.unmountComponentAtNode(div);
+});
+```
+
 
 ## ElfDebug
 
