@@ -201,31 +201,6 @@ I've run to a breakpoint on line 10 of **SmallNumbers.js**. At the bottom right 
 
 They can come in useful in more advanced scenarios than the one we see here. In particular, they can help preserve history so the user can move back and forth through your site.
 
-## Fill Menu
-
-Your goal will be to fill in the menu for all the components we have created. When the program starts, none of them are visible, just the the area where we display data:
-
-![Menu Open no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-open.png)
-
-**IMAGE**: The menu. First item is sort of home, the rest point to various compoents. (We will do login later. You can ignore it.)
-
-![Home View no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-empty.png)
-
-**IMAGE**: The home menu selected. (No components chosen)
-
-![Qux no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-qux.png)
-
-**IMAGE**: Qux selected from menu
-
-![Test Routes no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-test-routes.png)
-
-**IMAGE**: Test Routes selected from menu
-
-![Git Menu no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-gist.png)
-
-
-**IMAGE**: Get Gist with material-ui buttons
-
 ## Load an Image
 
 You can download the tree of life into a directory called **source/images** like this:
