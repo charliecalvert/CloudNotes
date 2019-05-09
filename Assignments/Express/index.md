@@ -3,7 +3,7 @@
 Some Express assignments.
 
 - [BashExpressScript](BashExpressScript.html)
-- [ElfEXpressSimple](ElfEXpressSimple.html)
+- [ElfExpressSimple](ElfExpressSimple.html)
 - [ElvenIndexedDb](ElvenIndexedDb.html)
 - [ExpressAssignments](ExpressAssignments.html)
 - [ExpressBasics](ExpressBasics.html)
