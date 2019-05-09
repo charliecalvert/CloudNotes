@@ -159,7 +159,7 @@ Set the paths as follows:
 
 | Component | Path   |
 |:----------|:-------|
-| Home      | /      |
+| Home      | /worker?title=App      |
 | Go        | /worker?title=Go    |
 | First     | /worker?title=First |
 
