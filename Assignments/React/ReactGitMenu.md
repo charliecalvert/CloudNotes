@@ -209,6 +209,33 @@ Your goal will be to fill in the menu for all the components we have created. Wh
 
 ## Material UI Buttons
 
+Assuming that GetGist.js is a React Class Component, then a button looks like this:
+
+```JavaScript
+import React from 'react';
+import Button from '@material-ui/core/Button';
+
+// Code omitted here. Then inside of render:
+
+<Button
+    variant="contained"
+    color="primary"
+    data-url="/git-gist-you-rang"
+    onClick={this.props.queryServer}>
+    Ring Git Gist
+</Button>
+```
+
+The properties are [pretty self explanatory](https://material-ui.com/demos/buttons/).
+
+When using a material ui button, our **fetch** calls in **App.js** should use **event.currentTarget** rather than **event.target**. Fortunately, **currentTarget** works for regular buttons as well. For instance:
+
+```javascript
+queryServer = (event) => {
+        const url = event.currentTarget.dataset.url;
+        // Now call fetch
+}
+```
 
 ## Style the Menu
 
