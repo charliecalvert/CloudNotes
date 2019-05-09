@@ -414,6 +414,31 @@ it('renders without crashing', () => {
 
 You probably won't need this for other tests of on ElfHeader. It's calling ReactDOM **render** that triggers the need.
 
+## Fill Menu
+
+Your goal will be to fill in the menu for all the components we have created. When the program starts, none of them are visible, just the the area where we display data:
+
+![Menu Open no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-open.png)
+
+**IMAGE**: The menu. First item is sort of home, the rest point to various compoents. (We will do login later. You can ignore it.)
+
+![Home View no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-empty.png)
+
+**IMAGE**: The home menu selected. (No components chosen)
+
+![Qux no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-qux.png)
+
+**IMAGE**: Qux selected from menu
+
+![Test Routes no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-test-routes.png)
+
+**IMAGE**: Test Routes selected from menu
+
+![Git Menu no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-gist.png)
+
+
+**IMAGE**: Get Gist with material-ui buttons
+
 ## Turn it in
 
 Add, commit, push, tag and/or branch. When you submit the assignment, let me know what tag and/or branch you used when submitting the assignment.
