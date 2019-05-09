@@ -5,6 +5,8 @@ The goals of this assignment are:
 - Create a menu, no matter how limited
 - Switch views between our **Go** and **First** components.
 
+A silent video showing what we want to do:
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4y62k7UrSh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Tag
