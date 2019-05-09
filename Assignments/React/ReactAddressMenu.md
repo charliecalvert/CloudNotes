@@ -5,6 +5,8 @@ The goals of this assignment are:
 - Create a menu, no matter how limited
 - Switch views between our **Go** and **First** components.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4y62k7UrSh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Tag
 
 Before working on the assignment, do this:
@@ -130,28 +132,41 @@ We will do this in a new file called **components/ElfHeader.js** and in **compon
 
 ## Create the Menu
 
-Let's write code in **ElfHeader** to display the simple menu shown in the screenshots visible above. Don't fuss over the fact that the menu looks funky at this point. We can fix that later by adding some CSS. Right now, just focus on getting things working:
+First, install some tools so we can use material-ui to display a menu. We also add **file-loader** to help us load a PNG file.
 
-```javascript
-import { Link } from 'react-router-dom';
-<div>
-  <div className="App">
-      <ul>
-          <li><Link to="/">Address</Link></li>
-          <li><Link to="/get-file">Get File</Link></li>          
-      </ul>
-  </div>                
-</div>
+    npm install @material-ui/icons @material-ui/core file-loader
+
+Let's write code in a new file called **source/ElfHeader.js** to display the simple menu. Create the file and then put the boilerplate code from the [MaterialUiElfHeader gist](https://gist.github.com/charliecalvert/5cff61d7888cfd4097076835c5bc45c2) in it.
+
+**NOTE**: _When trying to select code from a gist, it is often best to press the RAW button to get an unadorned view of the code._
+
+Create a file called **source/tileData.js** and put the contents of the [MaterialUiTileDataListItem gist](https://gist.github.com/f74265a2711a5e4252db88ff53cd44cc.git) in it.
+
+Modify **tileData.js** so that it displays three menu items:
+
+- Home
+- Go
+- First
+
+Set the paths as follows:
+
+| Component | Path   |
+|:----------|:-------|
+| Home      | /      |
+| Go        | /worker?title=go    |
+| First     | /worker?title=first |
+
+For instance:
+
+```JavaScript
+<ListItemLink button component="a" href="/worker?title=First">
 ```
 
-Here we use a class from **react router** called **Link**. It automatically creates links from the elements we pass to it. For instance, it generates something like this:
+In this code we are setting up a situation where we can pass a query to the server. In this case, we are stating that the query contain a parameter called **title** that is set to the value First. We will use this data on the server, in the file called **routes/index.js**.
 
-```HTML
-<li><a href="/edit">AddressEdit</a></li>
-```
+## Display Pages
 
-## BrowserRouter
-
+This code will allow us to switch between the **Go** and **First** components when they are selected from the menu.
 ```JavaScript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -165,13 +180,13 @@ const APPS = {
 };
 
 function renderAppInElement(choice) {
-    var App = APPS[choice.dataset.app];
-    if (!App) return;
+    var AppTool = APPS[choice.dataset.app];
+    if (!AppTool) return;
 
     // get props from elements data attribute, like the post_id
     const props = Object.assign({}, choice.dataset);
 
-    ReactDOM.render(<App {...props} />, choice);
+    ReactDOM.render(<AppTool {...props} />, choice);
 }
 
 window.onload = function() {
@@ -187,7 +202,7 @@ window.onload = function() {
 };
 ```
 
-And our pug:
+And our code in **views/worker.pug**:
 
 ```nohighlighting
 extends layout
@@ -200,19 +215,174 @@ block content
 
     script(src="bundle.js")
 ```
-## Style the Menu
 
-Let's add some styling to our menu to make it look prettier. I've also modified **App.css** to chang the color of the Header. Read about it [here][rrdstm].
+This code will set the **id** and **data-app** attributes of a DIV decorated with the class name **.__react-root** to the value of the title we set in **routes/index.js**. In other words, we are using templating to change this value so that our app will know which component to show.
 
-![Address Menu Styled][add-sm]
+Here is most of the code for our new endpoint in **routes/index.js**:
 
-**IMAGE**: _The styled menu appears at the top in brown. Compare to the non-syled menus shown at the beginning of the assignment which appear as list items._
+```JavaScript
+router.get('/worker', (request, response) => {
+    response.render('worker', {
+        title: WHAT_GOES_HERE
+    });
+});
+```
 
-Note that you can see **/git-file** URL in the address bar:
+I have left one challenge for you. When trying to set the **title**, recall what you know about passing queries to a server. Recall that in **tileData** we defined **worker** route that took a query parameter called **title**. Use the **request** object to access the value of title and assign it to the title property in the second parameter of the call to **render**. As an FYI, I'll remind you that the first parameter of the call to render is the name of the PUG file that we want to _render_ into HTML.
 
-    http://localhost:30025/get-file
+Finally, let's make a change to **views/index.pug** to allow us to bootstrap the app the first time it loads:
 
-This is one of the benefits of **React Router**. It allows a user to bookmark a particular screen in your application. In this case the URL shown above should always lead to the **GetFile** component shown in the above screenshot.
+```nohighlighting
+extends layout
+
+block content
+
+    #root
+
+    .__react-root(id="App" data-app="App")
+
+    script(src="bundle.js")
+```
+
+This code is used by **control.js** to load the **App** component the first time it is loaded. We should also undo our previous work in **App.js** since we now have another way to load **Go** and **First**:
+
+```javascript
+import React, {Component} from 'react';
+import logo from './images/tree-of-life.png';
+
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <h2>Welcome Home</h2>
+                <img src={logo} className="App-logo" alt="logo"/>
+            </div>
+        );
+    }
+}
+
+export default App;
+```
+
+## Clean up
+
+To display the menu correctly we need to clean some things up.
+
+Remove this code from **views/index.pug**:
+
+    h1= title
+    p Welcome to #{title}
+
+Set the padding in **public/stylesheets/style.css** to 0:
+
+```css
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+```
+
+## Add Material Button
+
+Let's style our button in **Go.js** the material-ui look and feel. Import the button from the material library and display it:
+
+```javascript
+import Button from '@material-ui/core/Button';
+
+// CODE OMITTED HERE
+
+<Button
+    variant="contained"
+    color="primary"
+    data-url="/git-gist-you-rang"
+    onClick={event =>
+        this.elfQuery('/foo', this.setFooData, event)
+    }
+>
+    Query Foo
+</Button>
+```
+
+The properties of the button are [pretty self explanatory](https://material-ui.com/demos/buttons/).
+
+## Load an Image
+
+You can download the tree of life into a directory called **source/images** like this:
+
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png
+
+There are three steps involved:
+
+- Create the **images** directory
+- Navigate into it
+- Issue the **wget** command
+
+Note that the Tree of Life is a PNG file, not an SVG. You should, therefore replace the extension in the appropriate line near the top of **ElfHeader** and play with the relative path to its location.
+
+```javascript
+import logo from './images/tree-of-life.png';
+```
+
+Here is the Tree of Life.
+
+![Tree of Life](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
+
+To load the image, you need to add a new rule to webpack. The rule looks like this:
+
+```javascript
+{
+    test: /\.(png|jpe?g|gif)$/,
+    use: [
+        {
+            loader: 'file-loader',
+            options: {},
+        },
+    ],
+}
+```
+
+The symtax in Webpack is tricker. Therefore I will show you the same code again, but this time in context. I'm trying to show you where in **webpack.config.js** you want to put the next rule. It belongs in the **rules** property of the **module** section. So we do it like this:
+
+```javascript
+module: {
+    rules: [
+        {
+            test: /.js?$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [
+                {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react'
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.(png|jpe?g|gif)$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {},
+                },
+            ],
+        }
+    ]
+}
+```
+
+Now there are two rules in webpack, one for loading babel and one for loading images.
+
+The above needs to be done one time. After that, you can load images easily from your bundle. For instance, you can add this code to **App.js**:
+
+```javascript
+import logo from './images/tree-of-life.png';
+
+<img src={logo} className="App-logo" alt="logo"/>
+```
 
 ## Tests
 

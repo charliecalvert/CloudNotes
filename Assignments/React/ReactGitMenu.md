@@ -47,7 +47,25 @@ Also, be sure you have prop types:
 
 Replace ElfHeader with the code in [this gist](https://gist.github.com/5cff61d7888cfd4097076835c5bc45c2.git).
 
-If the logo or App.css fight back, just comment them out. I'll probably cut them, but later.
+You can download the tree of life into a directory called **source/images** like this:
+
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png
+
+There are three steps involved:
+
+- Create the **images** directory
+- Navigate into it
+- Issue the **wget** command
+
+Note that the Tree of Life is a PNG file, not an SVG. You should, therefore replace the extension in the appropriate line near the top of **ElfHeader** and play with the relative path to its location.
+
+```javascript
+import logo from './images/tree-of-life.png';
+```
+
+Here is the Tree of Life.
+
+![Tree of Life](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
 
 Create a new file called **client/components/tileData.js** with the content from [this gist](https://gist.github.com/8df01550bb74683023d205a28321a70f.git)
 
@@ -207,6 +225,85 @@ Your goal will be to fill in the menu for all the components we have created. Wh
 
 
 **IMAGE**: Get Gist with material-ui buttons
+
+## Load an Image
+
+You can download the tree of life into a directory called **source/images** like this:
+
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png
+
+There are three steps involved:
+
+- Create the **images** directory
+- Navigate into it
+- Issue the **wget** command
+
+Note that the Tree of Life is a PNG file, not an SVG. You should, therefore replace the extension in the appropriate line near the top of **ElfHeader** and play with the relative path to its location.
+
+```javascript
+import logo from './images/tree-of-life.png';
+```
+
+Here is the Tree of Life.
+
+![Tree of Life](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
+
+Our create-react-app handles loading images for us, but if we were in an **elf-experss** app, to load the image, you need to add a new rule to webpack. The rule looks like this:
+
+```javascript
+{
+    test: /\.(png|jpe?g|gif)$/,
+    use: [
+        {
+            loader: 'file-loader',
+            options: {},
+        },
+    ],
+}
+```
+
+The symtax in Webpack is tricky. Therefore I will show you the same code again, but this time in context. I'm trying to show you where in WebPack.config.js you want to put the next rule. It belongs in the **rules** property of the **module** section. So we do it like this:
+
+```javascript
+module: {
+    rules: [
+        {
+            test: /.js?$/,
+            exclude: /(node_modules|bower_components)/,
+            use: [
+                {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react'
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.(png|jpe?g|gif)$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {},
+                },
+            ],
+        }
+    ]
+}
+```
+
+Now there are two rules in webpack, one for loading babel and one for loading images.
+
+The above needs to be done one time. After that, you can load images easily from your bundle. For instance, you can add this code to **App.js**:
+
+```javascript
+import logo from './images/tree-of-life.png';
+
+<img src={logo} className="App-logo" alt="logo"/>
+```
 
 ## Material UI Buttons
 
