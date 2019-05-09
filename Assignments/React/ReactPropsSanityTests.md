@@ -37,7 +37,7 @@ Recall that I want you to write code that [looks like this code from the Address
 
 In that code, **elfQuery** is similar to **queryServer** in **week03-rest-basics** and **setData** is similar to **setData** in **week03-rest-basics**.
 
-After checking for four methods, it then checks if a specific set of files are found in the components folder. I think that part is entirely self-explanatory, so I will focus on the code that looks for four specific methods.
+After checking for four methods, the Sanity tests then check if a specific set of files are found in the **components** folder. I think that part is entirely self-explanatory, so I have focused on the code that looks for four specific methods that I want to see.
 
 
 ## But I don't Have any Gists {#no-gists}
