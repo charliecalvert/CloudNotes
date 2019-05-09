@@ -52,6 +52,11 @@ To view your tags, type this:
 git tag -n
 ```
 
+To go back to the tag later do this:
+
+    git co -b tagcheck v6.0.0
+
+
 ## Install
 
 Install **material-ui**:
@@ -60,7 +65,7 @@ Install **material-ui**:
 
 Also, be sure you have prop types:
 
-    npm i prop-types;
+    npm i prop-types
 
 ## Strategy
 
@@ -175,10 +180,12 @@ import ReactDOM from 'react-dom';
 import ElfHeader from './ElfHeader';
 import Go from './Go';
 import First from './First';
+import App from './App';
 
 const APPS = {
     Go,
-    First
+    First,
+    App
 };
 
 function renderAppInElement(choice) {
