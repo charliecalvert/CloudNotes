@@ -97,7 +97,7 @@ class App extends Component {
             <BrowserRouter>
                 <div className="App">
                     <ElfHeader/>
-                    <Route exact path="/git-user" component={GitUser}/>
+                    <Route path="/git-user" component={GitUser}/>
                     // YOU WRITE APIFOO AND MICRO
                 </div>
             </BrowserRouter>
@@ -109,7 +109,7 @@ class App extends Component {
 And we will, in time do it like this for the home menu, where we use **exact path**:
 
 ```HTML
-<Route exact path="/git-user" component={GitUser}/>
+<Route exact path="/" component={Home}/>
 ```
 
 Note the user of the flag **exact**. This is necessary because a simple match on '/' will pass both '/' and '/api-foo'. In fact, it will match any URL beginning '/'. So we tell the router that we want an exact match.
