@@ -3,14 +3,14 @@
 The goals of this assignment are:
 
 - Create a menu, no matter how limited
-- Switch views between **AddressShow** and **GetFile**.
+- Switch views between our **Go** and **First** components.
 
 ## Tag
 
 Before working on the assignment, do this:
 
 ```
-$ git tag -a v6.0.0 -m "In class work in Week06-InClass that gets AddressShow working"
+$ git tag -a v6.0.0 -m "Add menu to address simple"
 git push origin v6.0.0
 ```
 
@@ -48,90 +48,83 @@ To view your tags, type this:
 git tag -n
 ```
 
-## React Router Install
+## Install
 
-We will use a tool called [react-router][rr] to help us both route user selections through the application and also to switch between views. When we switch between views we frequently display a particular component and hide other components. This kind of technology is often talked about as a Single Page App, or SPA.
+Install **material-ui**:
 
-The first step is to install the library we will use to help us accomplish our goals:
+    npm i @material-ui/core @material-ui/icons
 
-```bash
-yarn add react-router-dom
+Also, be sure you have prop types:
 
-or:
-
-npm install --save react-router-dom
-```
-
-**NOTE**: _Just to be sure you understand what is happening here, check your **package.json** to see that **react-router-dom** has been added to your **dependencies**:_
-
-```javascript
-"dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-router-dom": "^4.2.2", <==== HERE
-    "react-scripts": "1.1.4"
-    // YOU MAY IMPORT OTHER PACKAGES
-  },
-```
-
-As you know, this will both install the **react router** and also place an entry for it in **package.json**. If you do this at school, then later pull your changed **package.json** and other files down to your home machine, you will need to run **npm install** on your home machine's updated project folder.
-
-**NOTE** _Running **npm install** in this situation usually does not result in our completely reinstalling all packages on our home machine, but only that the new **react router** package is installed on our home machine._
+    npm i prop-types;
 
 ## Strategy
 
-We want to be able to display either the **Address** component, or the **GetFile** component.
+We want to be able to display either the **Go** component, or the **First** component.
 
-![AddressShow][add-show]
-
-**IMAGE** _GetFile with the firefox Developer Tools debugger open._
-
-![Address Get File][add-edit]
-
-**IMAGE**: _Address Edit with input elements_
-
-![Address Menu Styled][add-sm]
-
-**IMAGE**: _A styled menu._
-
-All this is well and good, but we have a problem. Our current architecture has us showing both the **Address** and the **GetFile** component from the **App** component. In particular, review this bit of code found in our current implementation of **Address**:
+Our current architecture has us showing either the **Go** or the **First** component from the **control** file. We want to be able to display two components at once. In particular, we want to be able to do something like this:
 
 ```javascript
-render() {
-       if (this.debug) { console.log("ADDRESS RENDER"); }
+render() {       
        return (
-           <div className="App">
-               <ElfHeader/>
-               <GetFile/>
-               <Address/>
+           <div>
+              <First/>               
+              <Go/>               
            </div>
        );
    }
 ```
 
+## Create App
+
+Let's begin by creating a new component called **App.** From the WebStorm menu, select **File | New | JavaScriptFile**. Save the file as **/source/App.js**.
+
+Insert a very simple component in it:
+
+```javascript
+import React, {Component} from 'react';
+
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <First/>  
+                <Go/>                
+            </div>
+        );
+    }
+}
+
+export default App;
+```
+
+For the above code to work, you will need to add two import statements. I'll leave that up to you.
+
+Take a moment to study the code found in **App**. Notice that after that the **return** statement we have an open parenthesis. In general, we surround our JSX with parenthesis rather than curly braces. Also note that we wrap our two components in a DIV. As mentioned earlier, this is because the render method is expected to return a single entity. Rather than returning **Go** and **First**, which would be two items, we wrap them both in a DIV and then return the DIV. Thus we are returning a single item, even if that single DIV we return wraps two components.
+
+Now turn to **control.js**. Instead of having **ReactDOM** render **Go**, change the code so that it renders our new **App** component. Again, I'll leave that up to you.
+
 Viewing serveral components on one "page":
 
 ![Two Components at Once][tcao]
 
-[tcao]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-two-components.png
+[tcao]: https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-first-go.png
 
-**IMAGE**: _We see **ElfHeader**, **GetFile** and **Address** on a single page._
+**IMAGE**: _We see **First** and **Go** on a single page._
 
-Here we have the **App** component displaying several other React components. So far, that has been fine, as we only wanted to prove to ourselves that we could display them. But now, we want to show them one at a time.
-
-The common solution for this problem, and there are many possible solutions, is to use the tool we call [react-router-dom][rrd].
-
-**NOTE**: _A sister component by the same team, called [react-router-native][rrn] performs the same task on React Native._
+Here we have the **App** component displaying several other React components. To get this display, I added an H2 element with the text **First Component** to the **First** component. To do this, you have to obey the rules about returning only a single item that were discussed earlier in this section of the text. I also change the H1 element in **Go** to an **H2**.
 
 ## Define a Menu
 
-At this stage, we have various components that can render the separate views that we want to display:
+The code shown in screenshot shown above is nice enough, but now, we want to show our **First** and **Go** components one at a time. We want to allow the user to switch between them.
 
-- Address renders the **Address** view
-- **GetFile** renders the simple file-url view.
-- **ElfHeader** displays the header seen at the top of the page. We will modify this file to display our menu.
+**NOTE**: _Most React applications solve this problem by creating a Single Page App, or SPA. There are, however, a number of complications and problems that arise when we use a SPA. As a result, I teach a technique for creating multipage apps in this course, and reserve SPAs for my Bachelor level courses. It is good to know both techniques as they each have advantages. An important advantage of multipage apps is that they can help you get better scores from Google and other SEO drivers. In other words, they can help you market your website._
 
-Our menu will allow us to switch between the **Address** and **GetFile** views. We will do this in the files called **components/ElfHeader.js** and **components/App.js**.
+Our solution for this problem, and there are many possible solutions, is to use the use a menu from the material-ui library and a trick that helps us launch one page at a time when the user makes a selection from the menu.
+
+Our menu will allow us to switch between the **Go** and **First** views. We will also modify **App** so that it becomes a nascent Home page.
+
+We will do this in a new file called **components/ElfHeader.js** and in **components/control.js**.
 
 **NOTE**: _I call it **ElfHeader** rather than **Header** in part because the word **Header** is such a common word that it is likely to collide with some other name in our program or in the global name space. In particular, **header** is an element in HTML 5._
 
@@ -159,42 +152,54 @@ Here we use a class from **react router** called **Link**. It automatically crea
 
 ## BrowserRouter
 
-Modify **App.js** to import two classes from **react router** called **BrowserRouter** and **Route**:
+```JavaScript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ElfHeader from './ElfHeader';
+import Go from './Go';
+import First from './First';
 
-```javascript
-// YOUR IMPORTS HERE
-import { BrowserRouter, Route } from 'react-router-dom'
+const APPS = {
+    Go,
+    First
+};
 
-class App extends Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <div className="App">
-                    <ElfHeader />
-                    <Route exact path="/" component={Address}/>
-                    <Route path="/get-file" component={GetFile}/>
-                </div>
-            </BrowserRouter>
-        );
-    }
+function renderAppInElement(choice) {
+    var App = APPS[choice.dataset.app];
+    if (!App) return;
+
+    // get props from elements data attribute, like the post_id
+    const props = Object.assign({}, choice.dataset);
+
+    ReactDOM.render(<App {...props} />, choice);
 }
 
-// ETC ...
+window.onload = function() {
+
+    ReactDOM.render(
+        <ElfHeader/>,
+        document.getElementById('root')
+    );
+
+    document
+        .querySelectorAll('.__react-root')
+        .forEach(renderAppInElement);
+};
 ```
 
-In the above code I've imported **React** and the classes I want to display, as well as the **react-router** code.
+And our pug:
 
-The following excerpt from the code shown above defines the client side routes that will be executed when the user makes selections from the menu:
+```nohighlighting
+extends layout
 
-```javascript
-<Route exact path="/" component={Address}/>
-<Route path="/get-file" component={GetFile}/>
+block content
+
+    #root
+
+    .__react-root(id= title data-app= title)
+
+    script(src="bundle.js")
 ```
-
-In particular, the home page (**/**) leads to the **Address** component and the **/get-file** route leads to the **GetFile** component.
-
-**Note**: _The home path has the word **exact** in front of it. This is because other paths, such as **/get-file** contains the **/** route. So we say that we want an exact match on **/** not a match on either **/** or **/get-file**._
-
 ## Style the Menu
 
 Let's add some styling to our menu to make it look prettier. I've also modified **App.css** to chang the color of the Header. Read about it [here][rrdstm].
