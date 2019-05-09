@@ -1,3 +1,17 @@
+## Overview
+
+- Show Material-ui Menu for Standard Prog272 Express App
+  - MaterialUiMenu
+- Show Material-ui Menu for Create React App
+  - MaterialUiMenuSPA
+- Show Address Display
+  - Week06 Show Address
+- Add menu and Firebase login
+  - week03-rest-basics
+
+
+## Data
+
 *   httpBackend in these slides: <span id="docs-internal-guid-f0a54871-71f6-753e-1a9a-9686e658e5d7"><span>[http://bit.ly/unittestasync](http://bit.ly/unittestasync)</span></span>
 *   <span><span>Antipatterns in these slides: <span id="docs-internal-guid-fa214d7b-748a-993c-e242-0f1263a3fb8c"><span>[http://bit.ly/elfunit](http://bit.ly/elfunit)</span></span></span></span>
 *   <span>Module Dependencies: [http://bit.ly/angular-mod](http://bit.ly/angular-mod)</span>

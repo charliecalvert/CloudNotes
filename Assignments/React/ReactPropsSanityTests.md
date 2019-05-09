@@ -10,6 +10,36 @@ There are two pieces:
 - Convert GetGist from React Function to React Component so we can add state to it.
   - Use the state to allow the user to iterate over the list of Gists.
 
+## Justification
+
+The goal of the Sanity Tests assignments is to make sure you have a specific set, and only that specific set, of methods in **components/App.js** from the **week03-rest-basics** assignment. At this stage, my tests should confirm that the methods I want to see are available, but it does not look for other methods that I feel are not needed. That would be an improvement but I'm not there yet.
+
+**NOTE**: _Some of you may be calling the project that uses all your micros and calls GitHub by some other name than **week03-rest-basics**. That is fine, just tell me clearly the name of the project and branch that contains the code you want me to view._
+
+I'm trying to do two things:
+
+- Provide guidance on what I want to see. To write in way that cannot be misunderstood the names of the methods I want to see in a class.
+- Ensure that at least parts of each assignment are easy for me to grade and troubleshoot because we are all using the same strategy and naming scheme.
+
+More specifically, it checks that you have two methods that call **fetch**:
+
+- queryServer
+- fetchGistList
+
+It also checks that you have two methods processing the JSON retrieved by these fetch methods.
+
+- **queryServer** should call **setData** from its second then method.
+- **fetchGistList** should call **setGistList** from its second then method.
+
+At this stage, you don't need anything else in the **App.js** other than the **constructor** and **render** method.
+
+Recall that I want you to write code that [looks like this code from the Address Simple Assignment][asdf]:
+
+In that code, **elfQuery** is similar to **queryServer** in **week03-rest-basics** and **setData** is similar to **setData** in **week03-rest-basics**.
+
+After checking for four methods, it then checks if a specific set of files are found in the components folder. I think that part is entirely self-explanatory, so I will focus on the code that looks for four specific methods.
+
+
 ## But I don't Have any Gists {#no-gists}
 
 I've noticed that not everyone has any gists or only have on gist. Think of gists as a place to store methods that you use a lot. Here are some candidates:
@@ -169,3 +199,4 @@ What my tests looked like on May 3:
     Watch Usage: Press w to show more.
 
 [jeasv]: https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html#define-getnine
+[asdf]: https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html#define-getnine
