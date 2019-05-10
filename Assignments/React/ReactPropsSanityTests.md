@@ -55,7 +55,7 @@ I've noticed that not everyone has any gists or only have on gist. Think of gist
 Let's build some tests that check whether or not we are all building more or less the same application.
 
 - Create a directory called **client/src/sanity**.
-- Get the [Sanity.App.test.js](https://gist.github.com/charliecalvert/64d2a63ed40e116dd20f55e98116baa6) test Suite and put it in your new **sanity** folder.
+- Get the [Sanity.App.test.js](https://github.com/charliecalvert/elven-sanity) test Suite and put it in your new **sanity** folder.
   - You will need to install elf-utils: **npm i elven-code**
   - You can also pull the latest from JsObjects, and then type **slb** and run **./CreateSymbolicLinks**
   - This will add a symbolic link to a new script to your bin folder: **~/bin/get-tests**
