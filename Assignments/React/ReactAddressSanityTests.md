@@ -50,7 +50,7 @@ Push your project and submit your assignment. When you submit the assignment, in
 
 ## Test Run
 
-The test looks like this on my system:
+A run of the tests look like this on my system:
 
 ```nohighlighting
 $ npm run sanity-tests
