@@ -48,6 +48,8 @@ The next step is to make sure you have not already checked in anything that shou
 
 ## Fresh Version of Repository
 
+Bofore you do anything else, push the work in the working version of your repository. That would normally be the version in your **~/Git** directory.
+
 It should be clear to you that we commonly create files or directories such as **node_modules** or **bundle.js** that we don't want to check in. In other words, the existence of these files in our view of our repository is not a mistake. The mistake is to check them in. In other words, if we see them on our hard drive, that is normal, but if we see them in our repository on GitHub, that is a problem.
 
 What we need, therefore, is a clean view of our repository. We need a copy of our repository other than the one we work in. Let's create one in a **temp** directory.
@@ -71,7 +73,7 @@ In Linux, we can use the **find** command to look for files or directories. For 
 
     find . -iname bundle.js
 
-For instance, if I run the command in my **_working_** copy of my repository, I get this:
+For instance, if I run the command in the root of my **_working_** copy of my repository, I get this:
 
 ```nohighlighting
 $ find . -iname bundle.js
@@ -84,11 +86,100 @@ $ find . -iname bundle.js
 etc. MORE AND MORE INSTANCES
 ```
 
-In short, it shows up all over the place. Now I run the same command in my _clean_ version of my repository that I created in my **temp** directory
+In short, it shows up all over the place. Now I run the same command in the root of my _clean_ version of my repository that I created in my **temp** directory
 
 ```nohighlighting
 $ find . -iname bundle.js
 ./week05-node-test/public/bundle.js
 ```
+
+Here you can see that I have checked in the file in my **week05-node-test** directory. (It is not necessarily an error that you do no have that directory. My repository may be different than yours.) I should add that this was not an error I set up for the purposes of this assignment. Somehow, probably while working in a branch that was not set up with a good **.gitignore** file, I ended up checking in the file by mistake.
+
+I fix the problem like this:
+
+    git rm ./week05-node-test/public/bundle.js
+
+Then I push my changes:
+
+    $ git add .
+    charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+    $ git commit -m "Deleting bundle.js that was checked in by mistake."
+    [master 02b6ae2] Deleting bundle.js that was checked in by mistake.
+     1 file changed, 137 deletions(-)
+     delete mode 100644 week05-node-test/public/bundle.js
+
+Here are the find commands that you should run:
+
+```nohighlighting
+find . -iname bundle.js
+find . -iname "*.js.map"
+find . -iname node_modules
+find . -iname .vscode
+find . -iname ".idea"
+find . -iname bower_components
+```
+
+You should be able to block copy the above commands and paste them into your bash shell prompt.
+
+If you have problem files, you might see output like this:
+
+```nohighlighting
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname bundle.js
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname "*.js.map"
+./week05-node-test/public/bundle.js.map
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname node_modules
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname .vscode
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname ".idea"
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname bower_components
+```
+
+Above you can see that I also checked in a problematic file called **bundle.js.map**. I deleted it and pushed my work, as described earlier.
+
+I then checked again for errors. Since all was now well, the above commands did not find any problem files:
+
+```nohighlighting
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname bundle.js
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname "*.js.map"
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname node_modules
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname .vscode
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname ".idea"
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+$ find . -iname bower_components
+charlie@elf-path:~/temp/prog272-calvert-2019$ (master)
+```
+
+## Update Working Repo
+
+After you have cleaned up the temp version of your repository and pushed your work, then go to the working version of your repository and pull your changes. In my case, that looked like this:
+
+```nohighlighting
+git pull
+Updating 17794ca..4ddfc86
+Fast-forward
+ week05-node-test/public/bundle.js     | 137 -----------------------------------------------------------------
+ week05-node-test/public/bundle.js.map |   1 -
+ 2 files changed, 138 deletions(-)
+ delete mode 100644 week05-node-test/public/bundle.js
+ delete mode 100644 week05-node-test/public/bundle.js.map
+```
+
+As you can see, my update reported that two files had been deleted from the current view of my repository. Because of the way Git works, those files are still in my repository, but they are not shown in the current commit. If you looked back in time with Git, I could still find the files. But my current view does not show them, and I will not see them.
+
+**NOTE**: _If I did more work in my **week05-node-test** directory, the files would be recreated. But this time, when I pushed my work, they would not get checked in because the are listed in .gitignore file._
+
+## Turn it in
+
+There is nothing else for you to do. Just submit the assignment and I will take a look at your repository. 
 
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
