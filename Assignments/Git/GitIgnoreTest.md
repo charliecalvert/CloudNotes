@@ -182,7 +182,7 @@ As you can see, my update reported that two files had been deleted from the curr
 
 If you completed the above steps, there is nothing else for you to do. Just submit the assignment and I will take a look at your repository. I will check that:
 
-- your **.gitignore** file with GitIgnoreTest
+- your **.gitignore** with **GitIgnoreTest**
 - no unwanted files can still be found in your repository.
 
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
