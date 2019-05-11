@@ -2,6 +2,8 @@
 
 Download and run some unit tests designed to see if your **week05-address-simple** project is structured correctly. It's easy for students to miss a step, and it is easy for me to leave out an important step, or to provide unclear or contradictory instructions. The goal of this assignment is to provide a single reference for the project.
 
+Please read the [announcement](https://bc.instructure.com/courses/1745477/discussion_topics/9201251) about this assignment.
+
 ## Run the Tests
 
 First go to JsObjects and pull the latest:
