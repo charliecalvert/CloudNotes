@@ -6,6 +6,7 @@ The Node Route Basics assignment gives you practice creating NodeJs Express rout
 
 If you need help with this this assignment, study the NodeRoutes examples in JsObjects.
 
+- [NodeRoutesSimple][nrs]
 - [NodeRoutes01][nr1]
 - [NodeRoutes02][nr2]
 
@@ -474,6 +475,8 @@ Now **require** your **utils.js** file in **routes/index.js** and use it in the 
 
 **NOTE**: _If we are building our own NPM packages, then put this object and method in the package instead. Otherwise just use the technique outlined above. In either case, our goal is to learn how to create reusable code that we can plug into an project on the server side._
 
+**NOTE**: _Just to be clear: putting the **circumference** call in the program is part of the assignment, putting it in **routes/utils.js** is extra credit._
+
 ## Turn It In
 
 Check your code into your Git repository and submit the URL of your repository or of the project you submitted.
@@ -529,6 +532,7 @@ for (let element of elements) {
 [nodejs]: https://nodejs.org/en/about/
 [nrbui]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui.png
 [nrbuib]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-route-basics-ui-bootstrap.png
+[nrs]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutesSimple
 [nr1]:https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes01
 [nr2]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/NodeRoutes02
 [nrm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/node-routes-meld.png
