@@ -29,6 +29,8 @@ Create a directory in the root of your project called **sanity-tests**. Navigate
 
 Choose option C. This should copy a file called **Sanity.Files.test.js** into your **sanity-tests** directory. This file contains tests that you can run to help confirm that your project is set up correctly. The point being that we have built the project slowly over several classes, and we need a way to be sure that everyone has indeed built the same project.
 
+![Sanity Tests](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-sanity-tests-ide-view.png)
+
 Add a **sanity-tests** line to to the **scripts** property in your **package.json** file:
 
 ```json
