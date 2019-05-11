@@ -59,23 +59,25 @@ $ npm run sanity-tests
 
 PASS  sanity-tests/Sanity.Files.test.js
  Files Exists
-   ✓ checks if source/control.js exists (2ms)
-   ✓ checks if source/App.js exists
+   ✓ checks if source/control.js exists (1ms)
+   ✓ checks if source/App.js exists (1ms)
    ✓ checks if source/Go.js exists
    ✓ checks if source/First.js exists
-   ✓ checks if source/Go.test.js exists (1ms)
-   ✓ checks if views/worker.pug exists
+   ✓ checks if source/ElfHeader.js exists
+   ✓ checks if source/tileData.js exists
+   ✓ checks if source/Go.test.js exists
+   ✓ checks if views/worker.pug exists (1ms)
    ✓ checks if .babelrc exists
    ✓ checks if prettier exists
    ✓ checks if .prettierignore exists
    ✓ checks if .eslintrc.json exists
    ✓ checks if .eslintignore exists
-   ✓ checks if webpack.config.js exists (1ms)
+   ✓ checks if webpack.config.js exists
 
 Test Suites: 1 passed, 1 total
-Tests:       12 passed, 12 total
+Tests:       14 passed, 14 total
 Snapshots:   0 total
-Time:        0.627s, estimated 1s
+Time:        0.626s, estimated 1s
 Ran all test suites matching /sanity-tests\/Sanity.Files.test.js/i.
 
 Active Filters: filename /sanity-tests/Sanity.Files.test.js/
