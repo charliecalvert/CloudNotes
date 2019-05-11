@@ -1,6 +1,6 @@
 ## Overview
 
-Make sure you have included key elements in the .gitignore file for your repository and that you have not checked in any files that should not be included.
+The goal of this assignment is to make sure you have included key elements in the **.gitignore** file for your repository and that you have not checked in any files that should not be included in your repository.
 
 ## Check .gitignore
 
@@ -180,6 +180,6 @@ As you can see, my update reported that two files had been deleted from the curr
 
 ## Turn it in
 
-There is nothing else for you to do. Just submit the assignment and I will take a look at your repository. 
+There is nothing else for you to do. Just submit the assignment and I will take a look at your repository.
 
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
