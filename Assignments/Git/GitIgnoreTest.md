@@ -93,7 +93,7 @@ $ find . -iname bundle.js
 ./week05-node-test/public/bundle.js
 ```
 
-Here you can see that I have checked in the file in my **week05-node-test** directory. (It is not necessarily an error that you do no have that directory. My repository may be different than yours.) I should add that this was not an error I set up for the purposes of this assignment. Somehow, probably while working in a branch that was not set up with a good **.gitignore** file, I ended up checking in the file by mistake.
+Here you can see that I have accidentally checked in **bundle.js** in my **week05-node-test** directory. (It is not necessarily an error that you do no have that directory. My repository may be different than yours.) I should add that this was not an error I set up for the purposes of this assignment. Somehow, probably while working in a branch that was not set up with a good **.gitignore** file, I ended up checking in the file by mistake.
 
 I fix the problem like this:
 
