@@ -8,8 +8,9 @@ Please read the [announcement](https://bc.instructure.com/courses/1745477/discus
 
 First go to JsObjects and pull the latest:
 
-    jo
+    slb
     git pull
+    ./CreateSymbolicLinks
 
 Navigate back to the root of your AddressSimple project and install a utility library that you do not need to understand:
 
