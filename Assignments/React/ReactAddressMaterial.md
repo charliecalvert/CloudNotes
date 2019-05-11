@@ -1,5 +1,7 @@
 ## Overview
 
+This assignment needs to be updated. We will discuss in class, Tuesday, May 14, 2019.
+
 The Goal is to add [Material-UI][limu] to our application to gussy up the menu and give our app a more standard appearance.
 
 ## Videos
