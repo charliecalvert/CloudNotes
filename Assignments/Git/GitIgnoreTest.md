@@ -174,12 +174,15 @@ Fast-forward
  delete mode 100644 week05-node-test/public/bundle.js.map
 ```
 
-As you can see, my update reported that two files had been deleted from the current view of my repository. Because of the way Git works, those files are still in my repository, but they are not shown in the current commit. If you looked back in time with Git, I could still find the files. But my current view does not show them, and I will not see them.
+As you can see, my update reported that two files had been deleted from the current view of my repository. Because of the way Git works, those files are still in my repository, but they are not shown in the current commit. If you looked back in time with Git, I could still find the files. But my current view does not show them. If you preformed a similar set of steps in your repository, then neither you nor I will see them when we pull the latest version of your repository. That is our ultimate goal.
 
 **NOTE**: _If I did more work in my **week05-node-test** directory, the files would be recreated. But this time, when I pushed my work, they would not get checked in because the are listed in .gitignore file._
 
 ## Turn it in
 
-There is nothing else for you to do. Just submit the assignment and I will take a look at your repository.
+If you completed the above steps, there is nothing else for you to do. Just submit the assignment and I will take a look at your repository. I will check that:
+
+- your **.gitignore** file with GitIgnoreTest
+- no unwanted files can still be found in your repository.
 
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
