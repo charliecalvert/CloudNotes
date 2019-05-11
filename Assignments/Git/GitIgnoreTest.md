@@ -4,7 +4,7 @@ The goal of this assignment is to make sure you have included key elements in th
 
 ## Check .gitignore
 
-First, make sure that JsObjects is up to date:
+Though not strictly necessary, we should first, make sure that **JsObjects** is up to date:
 
     jo
     git pull
@@ -38,19 +38,19 @@ bundle.js
 *.js.map
 ```
 
-Now run GitIgnoreTest again. It should come back clean this time. This would be a good time to push your work.
+Now run **GitIgnoreTest** again. It should come back clean this time. This would be a good time to push your work.
 
 ## Check for Files
 
-The next step is to make sure you have not already checked in anything that should not have been checked in. The purpose of a **.gitignore** file is to list the things you should not check into your repository. However, if you did not have something listed in your **.gitignore** file, and you pushed your work, you might have checked in something that should not be checked in. This could have happened even if **GitIgnoreTest** came back clean the first time you ran it. You might have, for instance, committed work in weeks one or two, then updated your .gitignore file. In that case, your repository might still have unwanted files or directories, even though you cleaned up **.gitignore** fairly early in the course.
+The next step is to make sure you have not already checked in anything that should not have been checked in. The purpose of a **.gitignore** file is to list the things you should not check into your repository. However, if you did not have something listed in your **.gitignore** file, and you pushed your work, you might have checked in something that should not be checked in. This could have happened even if **GitIgnoreTest** came back clean the first time you ran it. You might have, for instance, committed work in weeks one or two, then updated your **.gitignore** file. In that case, your repository might still have unwanted files or directories, even though you cleaned up **.gitignore** fairly early in the course.
 
-**NOTE**: _In most cases, checking in unwanted files does not cause errors, nor is it, in the ultimate scheme of things a particularly serious mistake. Furthermore, it is a common mistake. I, for instance, have frequently checked in things I did not mean to check in. Having said this, many of these unwanted files cause me extra work on my end, and might well be causing you confusion or extra work on your end. So it is best to get them out the most recent commits for our repository._
+**NOTE**: _In most cases, checking in unwanted files does not cause errors, nor is it, in the ultimate scheme of things, a particularly serious mistake. Furthermore, it is a common mistake. I, for instance, have frequently checked in things I did not mean to check in. Having said this, many of these unwanted files cause me extra work on my end, and might well be causing you confusion or extra work on your end. So it is best to get them out the most recent commits for our repository._
 
 ## Fresh Version of Repository
 
 Bofore you do anything else, push the work in the working version of your repository. That would normally be the version in your **~/Git** directory.
 
-It should be clear to you that we commonly create files or directories such as **node_modules** or **bundle.js** that we don't want to check in. In other words, the existence of these files in our view of our repository is not a mistake. The mistake is to check them in. In other words, if we see them on our hard drive, that is normal, but if we see them in our repository on GitHub, that is a problem.
+It should be clear to you that we commonly create files or directories such as **node_modules** or **bundle.js** that we don't want to check in. In other words, the existence of these files in our view of our repository is not a mistake. The mistake is to check them in. In other words, if we see them on the working version of our repository on our hard drive, that is normal, but if we see them in our view of our repository on GitHub, that is a problem.
 
 What we need, therefore, is a clean view of our repository. We need a copy of our repository other than the one we work in. Let's create one in a **temp** directory.
 
@@ -58,16 +58,16 @@ If you have not done so already, create a directory called **temp** in your home
 
     mkdir ~/temp
 
-Now navigate to that directory and clone your repository with command similar to this:
+Now navigate to that directory and clone your repository with a command similar to this:
 
     cd ~/temp
     git clone git@github.com:your-github-user-name/prog272-lastname-2019.git
 
-You can find the exact URL on GitHub.
-
-Now navigate into your repository and see if you can find any files that should not have been checked in. If you find them, remove them the **git rm [FILE NAME]** or **git rm -r [DIRECTORY NAME]** command. The first removes an individual file, the second a directory.
+You can find the exact URL for your repository on GitHub, or find it by issuing this command in the working version of your repostory: **git remote -v**.
 
 ## Finding Files
+
+Navigate into your temp version of your repository and see if you can find any files that should not have been checked in. If you find them, remove them the **git rm [FILE NAME]** or **git rm -r [DIRECTORY NAME]** command. The first removes an individual file, the second a directory.
 
 In Linux, we can use the **find** command to look for files or directories. For instance, here is how to look for a file called **bundle.js** across all projects in your directory. Run the command from the root of your repository:
 
