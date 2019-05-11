@@ -42,7 +42,7 @@ Add a **sanity-tests** line to to the **scripts** property in your **package.jso
 
 To run the tests, type **npm run sanity-tests**.
 
-If all the tests pass, then you are good to go. If one or more of the tests fail, try to change your project to make the tests pass. **_You should not ever change the tests themselves. Leave them alone. Instead, change your project, if necessary, to make the tests pass._** If you feel I've written one of the test incorrectly, then contact me in the discussion area or elsewhere. Otherwise, all questions to the discussion area.
+If all the tests pass, then you are good to go. If one or more of the tests fail, try to change your project to make the tests pass. **_You should not ever change the tests themselves. Leave them alone. Instead, change your project, if necessary, to make the tests pass._** If you feel I've written one of the tests incorrectly, then contact me in the discussion area or elsewhere. Otherwise, all questions to the discussion area.
 
 ## Turn it in
 
@@ -50,39 +50,41 @@ Push your project and submit your assignment. When you submit the assignment, in
 
 ## Test Run
 
-The test look like this on my system:
+The test looks like this on my system:
 
-    $ npm run sanity-tests
+```nohighlighting
+$ npm run sanity-tests
 
-    PASS  sanity-tests/Sanity.Files.test.js
-     Files Exists
-       ✓ checks if source/control.js exists (2ms)
-       ✓ checks if source/App.js exists
-       ✓ checks if source/Go.js exists
-       ✓ checks if source/First.js exists
-       ✓ checks if source/Go.test.js exists (1ms)
-       ✓ checks if views/worker.pug exists
-       ✓ checks if .babelrc exists
-       ✓ checks if prettier exists
-       ✓ checks if .prettierignore exists
-       ✓ checks if .eslintrc.json exists
-       ✓ checks if .eslintignore exists
-       ✓ checks if webpack.config.js exists (1ms)
+PASS  sanity-tests/Sanity.Files.test.js
+ Files Exists
+   ✓ checks if source/control.js exists (2ms)
+   ✓ checks if source/App.js exists
+   ✓ checks if source/Go.js exists
+   ✓ checks if source/First.js exists
+   ✓ checks if source/Go.test.js exists (1ms)
+   ✓ checks if views/worker.pug exists
+   ✓ checks if .babelrc exists
+   ✓ checks if prettier exists
+   ✓ checks if .prettierignore exists
+   ✓ checks if .eslintrc.json exists
+   ✓ checks if .eslintignore exists
+   ✓ checks if webpack.config.js exists (1ms)
 
-   Test Suites: 1 passed, 1 total
-   Tests:       12 passed, 12 total
-   Snapshots:   0 total
-   Time:        0.627s, estimated 1s
-   Ran all test suites matching /sanity-tests\/Sanity.Files.test.js/i.
+Test Suites: 1 passed, 1 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        0.627s, estimated 1s
+Ran all test suites matching /sanity-tests\/Sanity.Files.test.js/i.
 
-   Active Filters: filename /sanity-tests/Sanity.Files.test.js/
-    › Press c to clear filters.
+Active Filters: filename /sanity-tests/Sanity.Files.test.js/
+› Press c to clear filters.
 
-   Watch Usage
-    › Press a to run all tests.
-    › Press f to run only failed tests.
-    › Press o to only run tests related to changed files.
-    › Press p to filter by a filename regex pattern.
-    › Press t to filter by a test name regex pattern.
-    › Press q to quit watch mode.
-    › Press Enter to trigger a test run.
+Watch Usage
+› Press a to run all tests.
+› Press f to run only failed tests.
+› Press o to only run tests related to changed files.
+› Press p to filter by a filename regex pattern.
+› Press t to filter by a test name regex pattern.
+› Press q to quit watch mode.
+› Press Enter to trigger a test run.
+```
