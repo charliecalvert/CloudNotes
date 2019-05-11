@@ -12,6 +12,8 @@ First go to JsObjects and pull the latest:
     git pull
     ./CreateSymbolicLinks
 
+The **slb** alias navigates to the **~/Git/JsObjects/Utilities/SetupLinuxBox** directory. **CreateSymbolicLinks** is a script puts symbolic links to my scripts in your ~/bin directory.
+
 Navigate back to the root of your AddressSimple project and install a utility library that you do not need to understand:
 
     npm install elven-code
