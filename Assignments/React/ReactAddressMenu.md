@@ -314,6 +314,36 @@ import Button from '@material-ui/core/Button';
 
 The properties of the button are [pretty self explanatory](https://material-ui.com/demos/buttons/).
 
+## Click Doesn't Work {#no-click}
+
+If this fails:
+
+```javascript
+wrapper.find('button').simulate('click');
+```
+
+Add an id field in Go.js:
+
+```javascript
+<Button
+    id="elfQueryAction"
+    variant="contained"
+    color="primary"
+    data-url="/git-gist-you-rang"
+    onClick={event =>
+        this.elfQuery('/foo', this.setFooData, event)
+    }
+>
+    Query Foo
+</Button>
+```
+
+And this in your test:
+
+```javascript
+wrapper.find('#elfQueryAction').simulate('click');
+```
+
 ## Load an Image
 
 You can download the tree of life into a directory called **source/images** like this:
