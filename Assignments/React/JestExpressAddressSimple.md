@@ -533,7 +533,7 @@ In our JSX, we:
 
 ## Define or Query {#define-getnine}
 
-We declare an arrow function function in our component called **elfQuery**. Inside it, we call **setData**. In **setData** we call **setState**. The **setState** call can take an object literal defining the new state. It updates the state and causes the Component to refresh/re-render. More specifically, it causes the render method to be called by React.
+We declare an arrow function in our component called **elfQuery**. Inside it, we call **setData**. In **setData** we call **setState**. The **setState** call can take an object literal defining the new state. It updates the state and causes the Component to refresh/re-render. More specifically, it causes the render method to be called by React.
 
 ```javascript
 setData = (json) => {
@@ -591,7 +591,7 @@ it('proves button click works', () => {
 });
 ```
 
-We have replaced our original elfQuery function with a [jest mock function](https://jestjs.io/docs/en/mock-functions). We do this, because we don't want to have to mock up **fetch** itself, which is a bit tricky. So we get around that by mocking the entire elfQuery function. Then we simulate clicking our button and check to make sure that out mocked elfQuery function was called. As mentioned above, this proves that button click works, but it doesn't prove that we can handle the JSON we get from the server.
+We have replaced our original **elfQuery** function with a [jest mock function](https://jestjs.io/docs/en/mock-functions). We do this, because we don't want to have to mock up **fetch** itself, which is a bit tricky. So we get around that by mocking the entire **elfQuery** function. Then we simulate clicking our button and check to make sure that out mocked **elfQuery** function was called. As mentioned above, this proves that button click works, but it doesn't prove that we can handle the JSON we get from the server.
 
 **NOTE**: _Perhaps we will mock **fetch** itself at some point in this class, but it is too early in the class to introduce that relatively complex subject._
 
