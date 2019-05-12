@@ -214,6 +214,6 @@ Because those paths are complicated, I have a script called **CreateSymbolicLink
 
 Again, don't run these commands, I'm just trying to show what happens inside the **CreateSymbolicLinks** script.
 
-For all this to work, you need to have the right code in _JsObjects_, that is, you need to have pulled the latest from JsObjects to get the scripts and to have run **CreateSymbolicLinks **to create the links. I made the updates for these files on April 11 of this year, so in this case, you need to have pulled the repo and run **CreateSymbolicLinks** at some point since April 11, 2019\. I have now updated the assignment to make this clear.
+For all this to work, you need to have the right code in _JsObjects_, that is, you need to have pulled the latest from JsObjects to get the scripts and to have run **CreateSymbolicLinks** to create the links. I made the updates for these files on April 11 of this year, so in this case, you need to have pulled the repo and run **CreateSymbolicLinks** at some point since April 11, 2019\. I have now updated the assignment to make this clear.
 
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
