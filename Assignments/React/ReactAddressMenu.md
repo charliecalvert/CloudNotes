@@ -395,24 +395,32 @@ import logo from './images/tree-of-life.png';
 
 ## Tests
 
-We should now make sure our tests are working.
-
-We should wrap our Header in a **MemoryRouter** when doing the renders without crashing test because it use ReactDOM:
-
+We should now make sure we have tests for the App component.
 
 ```javascript
-import {MemoryRouter} from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import Adapter from 'enzyme-adapter-react-16';
+import { configure, shallow } from 'enzyme';
+configure({ adapter: new Adapter() });
 
-// CODE OMITTED
+describe('Go Tests', () => {
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<App/>, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
 
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<MemoryRouter><ElfHeader /></MemoryRouter>, div);
-    ReactDOM.unmountComponentAtNode(div);
+    it('renders and reads H1 text', () => {
+        const wrapper = shallow(<App/>);
+        // console.log(wrapper.debug());
+        const welcome = <h1>Address Simple Home</h1>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
 });
 ```
-
-You probably won't need this for other tests of on ElfHeader. It's calling ReactDOM **render** that triggers the need.
 
 ## Fill Menu
 
