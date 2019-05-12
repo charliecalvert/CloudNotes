@@ -10,10 +10,7 @@ Though not strictly necessary, we should first, make sure that **JsObjects** is 
     git pull
     ./CreateSymbolicLinks
 
-Or perhaps only this:
-
-    jo
-    git pull
+For more detail on this process see the note near the bottom of the assignment on [Script Structure][ss]
 
 If you get errors when pulling from JsObjects often the best strategy is to delete JsObjects and [clone it again][cia]
 
@@ -190,5 +187,33 @@ If you completed the above steps, there is nothing else for you to do. Just subm
 
 - your **.gitignore** with **GitIgnoreTest**
 - no unwanted files can still be found in your repository.
+
+## A Note on Script Structure {#script-structure}
+
+To make the process a bit less mysterious, I'll add some comments. The GitIgnioreTest script relies on two files:
+
+    GitIgnoreTest  
+    GitIgnoreTester
+
+I store both files here:
+
+    $ ls -1 /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTest*  
+    /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTest  
+    /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTester
+
+Or like this:
+
+    $ ls -1 $ELF_SCRIPTS/GitIgnoreTest*   
+    /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTest  
+    /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTester
+
+Because those paths are complicated, I have a script called **CreateSymbolicLinks** which creates symbolic links from the **~/bin** directory, which is on your path, to the files in **Templates/Scripts** directory. In effect, they do something like this (don't actually run these commands, run CreateSymbolicLinks instead):
+
+    ln -s /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTest ~/bin/GitIgnoreTest
+    ln -s /home/bcuser/Git/JsObjects/Utilities/Templates/Scripts/GitIgnoreTester ~/bin/GitIgnoreTester
+
+Again, don't run these commands, I'm just trying to show what happens inside the **CreateSymbolicLinks** script.
+
+For all this to work, you need to have the right code in _JsObjects_, that is, you need to have pulled the latest from JsObjects to get the scripts and to have run **CreateSymbolicLinks **to create the links. I made the updates for these files on April 11 of this year, so in this case, you need to have pulled the repo and run **CreateSymbolicLinks** at some point since April 11, 2019\. I have now updated the assignment to make this clear.
 
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
