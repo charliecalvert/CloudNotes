@@ -12,7 +12,7 @@ The goal would be to add ESLint and Prettier to that project or another on of yo
 
 The [GetGist][gg] script automates key portions of the ESLint and Prettier installation. If you already understand ESLint and Prettier, and just want to get things set up, use the script. If the whole subject is new to you, then please read and work through this document to get an understanding of what the script does for you.
 
-Here is what happens when you run get-gist:
+You should run **get-gist** in the root of your project. Here is what happens when you run get-gist:
 
     $ get-gist
 
@@ -40,6 +40,8 @@ Here is what happens when you run get-gist:
     Please make a selection:
 
 You should choose **Install EsLintRc and Prettier**, which is option **a**. This will install eslint and prettier files in the current working directory (cwd). You can achieve the same effect by choosing c, d, e and f from the menu.
+
+Usually, no harm is done if you install eslint and prettier multiple times.
 
 ## Video
 
