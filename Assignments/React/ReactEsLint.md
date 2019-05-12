@@ -12,6 +12,35 @@ The goal would be to add ESLint and Prettier to that project or another on of yo
 
 The [GetGist][gg] script automates key portions of the ESLint and Prettier installation. If you already understand ESLint and Prettier, and just want to get things set up, use the script. If the whole subject is new to you, then please read and work through this document to get an understanding of what the script does for you.
 
+Here is what happens when you run get-gist:
+
+    $ get-gist
+
+    =======================
+    Menu
+    =======================
+
+     Gists
+      a) Run ESLintRc and Prettier (cdef)
+      b) ElfDebugEnzyme
+      c) .eslintrc
+      d) .eslintignore
+      e) prettier
+      f) .prettierrc
+      g) Default React Component
+      h) Setup React Native Enzyme Npm
+      i) Setup React Native Enzyme Yarn
+      j) ElvenLogger
+      k) Elven Node systemd Tools
+      l) Elven Create Concurrently
+      m) React Control Component for elf-express
+      x) Exit
+
+
+    Please make a selection:
+
+You should choose **Install EsLintRc and Prettier**, which is option **a**.
+
 ## Video
 
 TLDR: This very short video may be useful:

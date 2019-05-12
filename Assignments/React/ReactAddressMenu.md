@@ -393,6 +393,8 @@ import logo from './images/tree-of-life.png';
 <img src={logo} className="App-logo" alt="logo"/>
 ```
 
+After making the updates, if you program is running (npm start) stop it with **Ctrl-C** and start it again.
+
 ## Tests
 
 We should now make sure we have tests for the App component.
