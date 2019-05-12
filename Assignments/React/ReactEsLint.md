@@ -21,7 +21,7 @@ Here is what happens when you run get-gist:
     =======================
 
      Gists
-      a) Run ESLintRc and Prettier (cdef)
+      a) Install ESLintRc and Prettier in cwd. (cdef)
       b) ElfDebugEnzyme
       c) .eslintrc
       d) .eslintignore
@@ -39,7 +39,7 @@ Here is what happens when you run get-gist:
 
     Please make a selection:
 
-You should choose **Install EsLintRc and Prettier**, which is option **a**.
+You should choose **Install EsLintRc and Prettier**, which is option **a**. This will install eslint and prettier files in the current working directory (cwd). You can achieve the same effect by choosing c, d, e and f from the menu.
 
 ## Video
 
