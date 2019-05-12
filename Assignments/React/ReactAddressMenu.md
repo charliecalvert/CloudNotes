@@ -490,44 +490,6 @@ registerServiceWorker();
 
 **NOTE**: _A crucial point, in fact, probably the central point, of this class, is how easy it is for us to move classes and views around when we use the **React** architecture. Yes, it is hard to get up to speed on React, and yes, it is a fairly complex tool. But once you have everything set up, making relatively large changes to our program's architecture are simple. The small, focused loosely coupled components that we have created give us the flexibility to accept changes in specifications with a minimum of disruption._
 
-## Hint
-
-If you needed to pass props to your router, and we don't, you would do it like this:
-
-```javascript
-<Route path="/about"
-       render={(props) => (<AddressShow  {...props}
-                 address={this.props.address}
-                 onAddressChange={this.props.onAddressChange}
-       />)}
-/>
-
-<Route path="/topics"
-    render={(props) => (<AddressEdit  {...props}
-         address={this.props.address}
-         onAddressChange={this.props.onAddressChange}
-         onNameChange={this.props.onNameChange}
-    />)}
-/>
-```
-
-This code is not nearly as simple as the code we used when defining our Routes. However, it works, and once written we won't need to fuss with it very often.
-
-## Hints and Suggestions
-
-Here are two ways to rename App.js to **GetFile.js**:
-
-```
-git mv App.js GetFile.js
-git mv App.js components/App.js
-```
-
-The exact command you give depends on:
-
-- Your current directory.
-- Whether **App.js** is currently in your **src** directory or the **components** directory.
-
-If you can't figure out what to do with these hints, you simply must take time to get a better understanding of the file system and how it works. Beyond these broad hints, my simply giving you the right answer will not help you learn. Unfortunately, going into a tutorial on the file system would be to venture well outside the scope of this course. There are, however, many in depth discussions of this topic on the web and in the library.
 
 - <https://www.google.com/search?q=Understanding+File+and+Directory+navigation>
 
