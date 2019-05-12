@@ -10,7 +10,7 @@ Though not strictly necessary, we should first, make sure that **JsObjects** is 
     git pull
     ./CreateSymbolicLinks
 
-For more detail on this process see the note near the bottom of the assignment on [Script Structure][ss]
+For more detail on this process see the note near the bottom of the assignment on [Script Structure](#script-structure)
 
 If you get errors when pulling from JsObjects often the best strategy is to delete JsObjects and [clone it again][cia]
 
