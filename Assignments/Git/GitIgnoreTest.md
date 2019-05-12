@@ -6,6 +6,12 @@ The goal of this assignment is to make sure you have included key elements in th
 
 Though not strictly necessary, we should first, make sure that **JsObjects** is up to date:
 
+    slb
+    git pull
+    ./CreateSymbolicLinks
+
+Or perhaps only this:
+
     jo
     git pull
 
