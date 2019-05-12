@@ -422,22 +422,18 @@ Your goal will be to fill in the menu for all the components we have created. Wh
 
 **IMAGE**: The menu. First item is sort of home, the rest point to various compoents. (We will do login later. You can ignore it.)
 
-![Home View no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-empty.png)
+![Home View no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-home.png)
 
 **IMAGE**: The home menu selected. (No components chosen)
 
-![Qux no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-qux.png)
+![Test Routes no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-go.png)
 
-**IMAGE**: Qux selected from menu
+**IMAGE**: Go with material-ui buttons
 
-![Test Routes no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-test-routes.png)
+![Git Menu no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-address-menu-first.png)
 
-**IMAGE**: Test Routes selected from menu
+**IMAGE**: Go selected from menu
 
-![Git Menu no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-gist.png)
-
-
-**IMAGE**: Get Gist with material-ui buttons
 
 ## Turn it in
 
