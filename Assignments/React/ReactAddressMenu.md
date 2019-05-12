@@ -316,13 +316,13 @@ The properties of the button are [pretty self explanatory](https://material-ui.c
 
 ## Click Doesn't Work {#no-click}
 
-If this fails:
+This line in your tests might begin to fail:
 
 ```javascript
 wrapper.find('button').simulate('click');
 ```
 
-Add an id field in Go.js:
+To fix the problem, add an **id** field in your buttons in **Go.js**:
 
 ```javascript
 <Button
@@ -338,7 +338,7 @@ Add an id field in Go.js:
 </Button>
 ```
 
-And this in your test:
+And then use the ID in your test:
 
 ```javascript
 wrapper.find('#elfQueryAction').simulate('click');
