@@ -60,7 +60,7 @@ Let's build some tests that check whether or not we are all building more or les
   - You can also pull the latest from JsObjects, and then type **slb** and run **./CreateSymbolicLinks**
   - This will add a symbolic link to a new script to your bin folder: **~/bin/get-tests**
   - Run **get-tests** from your sanity folder and it will add **Sanity.App.test.js** to your project.
-- Add the following to the **start** property in your **client/package.json** file: **"sanity-test": "react-scripts test Sanity*"**
+- Add the following to the **scripts** property in your **client/package.json** file: **"sanity-test": "react-scripts test Sanity*"**
 - Run the test: **npm run sanity-tests** and make sure everything passes.
 
 Needless to say, you cannot change anything in the test. However, I may change the test at some point. I'll try to set up something like the **get-gist** bash script so that you can easily get the latest version of my test. (I'm referring to **~/bin/get-gist**. I'm not talking about the **GetGist** component or microservice in our assignment.)
