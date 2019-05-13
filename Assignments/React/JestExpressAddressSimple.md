@@ -650,7 +650,7 @@ it.only('renders button click message', () => {
 
 ## ESLint
 
-Eslint should be installed globally in **~./npm/bin**. Use [get-gist][esrc] to get it.
+Eslint should be installed globally in **~./npm/bin**. Use [get-gist][esrc] to get it. More details on the subject are in this one section of this assignment. Don't read the whole assignment, just the section on [automating the install of eslint][eslint-auto].
 
 Run it like this:
 
@@ -730,7 +730,7 @@ npm uninstall react-addons-test-utils enzyme
 npm install react-addons-test-utils enzyme
 ```
 
-
 [eslintrc]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [esrc]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html
 [enspc]: https://www.elvenware.com/javascript-guide/JavaScriptReact.html#enospc
+[eslint-auto]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html#automate
