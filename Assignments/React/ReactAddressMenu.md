@@ -465,7 +465,7 @@ describe('Go Tests', () => {
 
 ## Images in Tests
 
-We have to take an [extra step][unites] to test components that contain images. Create a new directory in the root of your project called **\_\_mocks\_\_**. Thats underbar, underbar, mocks, underbar, underbar.
+We have to take an [extra step][unites] to test components that contain images. Create a new directory in the root of your project called **\_\_mocks\_\_**. That's underbar, underbar, mocks, underbar, underbar.
 
 In it, put two files:
 
