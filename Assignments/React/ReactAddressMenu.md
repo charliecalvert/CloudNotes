@@ -139,11 +139,13 @@ We will do this in a new file called **components/ElfHeader.js** and in **compon
 
 ## Create the Menu
 
-First, install some tools so we can use material-ui to display a menu. We also add **file-loader** to help us load a PNG file.
+First, install some tools so we can use **material-ui** to display a menu. We also add **file-loader** to help us load a PNG file.
 
     npm install @material-ui/icons @material-ui/core file-loader
 
-Let's write code in a new file called **source/ElfHeader.js** to display the simple menu. Create the file and then put the boilerplate code from the [MaterialUiElfHeader gist](https://gist.github.com/charliecalvert/5cff61d7888cfd4097076835c5bc45c2) in it.
+Let's write code in a new file called **source/ElfHeader.js** to display the simple menu. Create the file and then put the boilerplate code from the [MaterialUiElfHeader gist](https://gist.github.com/charliecalvert/5cff61d7888cfd4097076835c5bc45c2) in it. Around line 55, change the title to include our app name and your last name:
+
+    GitExplorer => Simple Address LastName
 
 **NOTE**: _When trying to select code from a gist, it is often best to press the RAW button to get an unadorned view of the code._
 
@@ -364,13 +366,13 @@ import logo from './images/tree-of-life.png';
 
 Here is the Tree of Life.
 
-![Tree of Life](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
+![Tree of Life no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
 
 To load the image, you need to add a new rule to webpack. The rule looks like this:
 
 ```javascript
 {
-    test: /\.(png|jpe?g|gif)$/,
+    test: /\.(png|jpe?g|gif|svg)$/,
     use: [
         {
             loader: 'file-loader',
@@ -408,6 +410,13 @@ module: {
                     options: {},
                 },
             ],
+        },
+        {
+            test: /\.svg$/,
+            use: [{
+                loader: 'svg-inline-loader',
+                options: {}
+            }]
         }
     ]
 }
@@ -453,6 +462,36 @@ describe('Go Tests', () => {
 
 });
 ```
+
+## Images in Tests
+
+We have to take an [extra step][unites] to test components that contain images. Create a new directory in the root of your project called **\_\_mocks\_\_**. Thats underbar, underbar, mocks, underbar, underbar.
+
+In it, put two files:
+
+- styleMocks.js
+- fileMocks.js
+
+In **styleMocks** put only this:
+
+    module.exports = {};
+
+In **fileMocks**, put only this:
+
+    module.exports = 'test-file-stub';
+
+Then add this to the bottom of your package.json file:
+
+```json
+"jest": {
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+  }
+}
+```
+
+Now, whenever a test tries to load an image, it will load a _mock_ empty file instance. This is fine in tests, since we don't usually need to actually do anything with the image itself in a test.
 
 ## Fill Menu
 
@@ -539,3 +578,5 @@ registerServiceWorker();
 [rrn]: https://github.com/ReactTraining/react-router/tree/master/packages/react-router-native
 
 [rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu
+
+[unites]: https://jestjs.io/docs/en/webpack#handling-static-assets
