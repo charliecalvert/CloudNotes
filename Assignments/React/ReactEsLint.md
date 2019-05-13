@@ -43,6 +43,8 @@ You should choose **Install EsLintRc and Prettier**, which is option **a**. This
 
 Usually, no harm is done if you install eslint and prettier multiple times.
 
+**NOTE**: _I often use this section of this text as an introduction to the **get-gist** utility. As result, many students who come here don't have to do anything else after reading and performing the steps in this section on automating the install of eslint configuration files. After you have read and performed the steps outlined in this section, you can often get back to the assignment that linked you here by pressing the back button. You don't need to read through the entire assignment unless you are interested._
+
 ## Video
 
 TLDR: This very short video may be useful:
