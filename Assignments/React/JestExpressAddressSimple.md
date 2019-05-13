@@ -667,6 +667,10 @@ Push your repository. Go to GitHub and ensure that the code you want to turn in 
 
 Find the assignment on Canvas and submit it. Add text that states the name of the folder where you placed your assignment. A link to your folder on GitHub is nice.
 
+## JSX Comments
+
+Details are [here](https://www.elvenware.com/javascript-guide/JavaScriptReact.html#jsx-comments).
+
 ## Test Output
 
 I'm expecting the test output to look perhaps a bit like this:
