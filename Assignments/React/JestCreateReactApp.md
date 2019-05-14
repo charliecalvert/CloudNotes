@@ -24,11 +24,22 @@ npm install -g create-react-app
 
 Make sure you are on the latest version:
 
-    npm -g outdated
+    ncu -g
 
 If any globally installed apps are outdated, then reinstall them:
 
     npm install -g create-react-app
+
+While we are at it, update JsObjects:
+
+    jo
+    git pull
+
+If you want to be a bit more thorough, do this instead or in addition to the above:
+
+    slb
+    git pull
+    ./CreateSymbolicLinks
 
 ## ENOSPC
 
@@ -66,12 +77,112 @@ If we are using branches in your class, switch to your Week0X branch, where X is
 
 - Navigate to the root of your repository
 - Issue this command:
-  - create-react-app **weekxx-react-jest**, where xx is the number of the current week of this quarter.  
+  - create-react-app **weekxx-react-address**, where xx is the number of the current week of this quarter.  
 - Open up the project in WebStorm
 - Set WebStorm to use JSX, React and ES6
   - File | Settings | Languages and Settings | JavaScript | React/JSX
 - If you get lots of JsHint, EsLint or other errors, for now, just disable them:
   - File | Settings | Languages and Settings | JavaScript | Code Quality Tools Tools
+
+## Sanity Tests
+
+Create a folder called **src/tests**. Move **App.test.js** into it.
+
+Navigate into the **src/tests** directory and run **get-gists**. Select the **ElfDebugEnzume** option.
+
+Working in any directory that is part of your project, install **Enzyme** and **elven-code**:
+
+    npm install --save-dev enzyme react-test-renderer enzyme-adapter-react-16 elven-code
+
+While we are on a role, let's install Material UI as well:
+
+    npm i @material-ui/core @material-ui/icons @material-ui/styles
+
+Open up a new tab and start running your tests: **npm test**. There is only one test at this point. If it is not passing, do what you need to do to make it pass.
+
+Create a folder called **src/sanity-tests/**. Navigate into it. Run **get-tests** and choose **Address React Tests**. When you are done you should have a file called something like **Sanity.App.test.js** in your **sanity-tests** folder.
+
+All of the tests in this file use **xit** to skip tests. In other words none of the tests are active at first. We will activate bit by bit as we build the app. To begin, change the first four tests from **xit** to **it**. They should all be passing.
+
+## New App.js {#new-app}
+
+Let's replace the default **create-react-app** React component with one of our own.
+
+- Navigate into the **src** directory
+- Run get-gist
+- Select option **N**: **Simple React Class Component**
+
+This downloads a file called **ElfApp.js**. Let's replace the default **create-react-app** React component with the one we just downloaded.
+
+- Delete **App.js** and use WebStorm to rename **ElfApp.js** to **App.js**.
+  - WebStorm should have automatically changed the name of the class in our file from **ElfApp** to **App**
+- Open **App.js** and confirm that the class found in it is called **App**. If it is not, then manually rename the class from **ElfApp** to **App**.
+
+Load the Material UI **Typography**:
+
+    import Typography from '@material-ui/core/Typography';
+
+Change the text for the H1 element in the control to use **Typography** and to read **Welcome to Elf Address**:
+
+```javascript
+<Typography variant="h5" gutterBottom>
+    Welcome to Elf Address
+</Typography>
+```
+
+This heading is still inside the **DIV** returned by the **render** method. (I could be clearer, but I want you to have a think at least a bit here.)
+
+Finally, let's use the Material UI **withStyles** option. This is more than a little confusing at first, but the fundamental idea behind it is simple: _we want to start writing CSS in our JavaScript rather than in a CSS file._ Frankly, I'm not yet in love with this system, but ALL of the Material UI examples use it, so it is easier in the long run for us to play along.
+
+There are four steps:
+
+1. Start near the top by importing **withStyles**
+- Declare your CSS using the CSS in JS style of programming
+- Pull the classes property from our props,
+- Modify the **export** statement to create what is called a Higher Order Component (HOC).
+
+```javascript
+// STEP ONE
+import { withStyles } from '@material-ui/core/styles';  
+
+// STEP TWO
+const styles = theme => ({                              
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing.unit * 5,
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+});
+
+class App extends Component {
+
+  render() {      
+      const {classes} = this.props;      // STEP THREE     
+      return (...)
+  }
+}
+
+export default withStyles(styles)(App);  // STEP FOUR
+```
+
+Now activate the **renders and reads Typography heading text** sanity test.
+
+## Themes
+
+On the theory that one might as well be hung for sheep as a goat, let's go ahead and create our own theme, which will allow us to take advantage of the styles system.
+
+First, let's wrap our heading in some **Paper**
+
+```javascript
+<Paper>
+    <Typography variant="h5" gutterBottom>
+        Welcome to Elf Address
+    </Typography>
+</Paper>
+```
 
 ## Setup UI
 
@@ -157,13 +268,9 @@ describe('Jest Create React Tests', function () {
 
 We need a tool to capture and parse the output created by our React components. We test that output to see if it is valid. The tool that helps us do this is airbnb's Enzyme.
 
-To install it run these commands:
+If you have not done so already, install Enzyme with these commands:
 
     npm install --save-dev enzyme react-test-renderer enzyme-adapter-react-16
-
-While we are on a role, let's install Material UI as well:
-
-    npm i @material-ui/core @material-ui/icons
 
 ## Enzyme Test of Component Output
 
