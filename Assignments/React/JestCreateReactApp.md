@@ -159,10 +159,11 @@ We need a tool to capture and parse the output created by our React components. 
 
 To install it run these commands:
 
-```
-npm install --save-dev enzyme react-test-renderer
-npm install --save-dev enzyme-adapter-react-16
-```
+    npm install --save-dev enzyme react-test-renderer enzyme-adapter-react-16
+
+While we are on a role, let's install Material UI as well:
+
+    npm i @material-ui/core @material-ui/icons
 
 ## Enzyme Test of Component Output
 
@@ -434,7 +435,10 @@ Run it like this:
 ```bash
 eslint .
 ```
-The code above sometimes needs to be updated. To see my current working **.eslintrc.json** file, go [here][eslintrc].
+
+If the code returns with no errors, you are done. If you see errors, do your best to fix them. Note that you can often fix errors simply by typing **eslint --fix .**
+
+The **get-gist** utility returns my latest eslint configuration files. To see my current working **.eslintrc.json** file, go [here][eslintrc].
 
 ## Turn it in
 
