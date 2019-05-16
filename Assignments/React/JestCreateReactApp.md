@@ -176,6 +176,24 @@ export default withStyles(styles)(App);  // STEP FOUR
 
 Now activate the **renders and reads Typography heading text** sanity test.
 
+## Props
+
+React can do some type checking on the props that get passed in. It does it with a tool called 'prop-types'. It is probably already installed on your project, but just in case:
+
+    npm i 'prop-types';
+
+Then import it into App.js:
+
+    import PropTypes from 'prop-types';    
+
+And finally, declare your props near the bottom of the file, just before the **export** statement.
+
+```javascript
+App.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+```
+
 ## Themes
 
 On the theory that one might as well be hung for sheep as a goat, let's go ahead and create our own theme, which will allow us to take advantage of the styles system.
