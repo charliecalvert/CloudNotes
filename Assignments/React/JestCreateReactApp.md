@@ -353,6 +353,9 @@ Find the assignment on Canvas and submit it. Add text that states the name of th
 
 For most of the assignments, I'll just say something like: "Put your work in your repo and push," or simply "Push your work". That's a shorthand for something along the lines of what I'm saying here.
 
+<!--       -->
+<!-- links -->
+<!--       -->
 
 [eslintrc]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [enspc]: https://www.elvenware.com/javascript-guide/JavaScriptReact.html#enospc

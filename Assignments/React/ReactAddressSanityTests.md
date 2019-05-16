@@ -27,9 +27,13 @@ Create a directory in the root of your project called **sanity-tests**. Navigate
     =======================
 
     Tests
-    a) Week03 Rest Basics App Test
-    b) Git Explorer Micros Structure Tests
+    a) Does Noting for Now
+    b) Does Nothing for Now
     c) Address Simple File Tests
+    d) Address React Tests
+    e) Isit322 Midterm Project Sanity Tests
+    f) Isit322 Midterm Client Tests
+
     x) Exit
 
 Choose option C. This should copy a file called **Sanity.Files.test.js** into your **sanity-tests** directory. This file contains tests that you can run to help confirm that your project is set up correctly. The point being that we have built the project slowly over several classes, and we need a way to be sure that everyone has indeed built the same project.
