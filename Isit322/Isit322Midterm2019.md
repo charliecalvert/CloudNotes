@@ -28,7 +28,9 @@ On the client side you should allow the user to iterate through a minimum of thr
 - owner.login
 - owner.url
 
-![Get Repos Page][grp]
+<!-- ![Get Repos Page][grp] -->
+
+<img class="sizer" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/git-explorer-2019-get-repos.png" alt="get repos" />
 
 ## Project Sanity Tests
 
