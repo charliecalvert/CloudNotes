@@ -4,6 +4,8 @@ The goal will be to add one page to our app (usually called week03-rest-basics) 
 
 Put your work in a branch called Midterm. As you begin tag it "Starting Midterm".
 
+For now I think all our components, except **Test Routes**, and **ShowResultServer** should be React Class Components. **Test Routes** and **ShowResultServer** should be function components. React Function Components (nee Stateless Components) and hooks are great, but they are tested differently that class components and I don't want to make the change right now. **GetUser**, **GetRepos** and **GetGists** should all use **ShowResultServer** to show the results from pressing **You Rang**.
+
 **NOTE**: _You may not change any code in the Sanity tests. If you think I have something wrong, please let me know and I will update the tests if necessary and you can reinstall them._
 
 **NOTE**: _At some point over the next few days, I'm likely to update the sanity tests or other parts of this midterm. I assume that you would like to get started as soon as possible, so I've pushed this out now._
@@ -19,6 +21,8 @@ The call to GitHub should be in **micros/get-user/routes/index.js**. It should u
 - this url: **/git-user-get-user-repos** in the client and in the Main Server.
 
 Since we want to get private repositories, you will need to log in with your token. An approach similar to [this one][stoct] worked for me.
+
+**NOTE**: _I messed a bit with the permissions I set on the GitHub web site for my token before I could see private repositories. Perhaps it was unnecessary, but consider giving yourself the right to do anything by delete a repository at least until you get it to work one time. Recall that this is found in the Settings (developer) for your GitHub account._
 
 ## Client Get Repos
 
@@ -80,6 +84,16 @@ Ran all test suites.
 
 Watch Usage: Press w to show more.
 ```
+
+## Menu
+
+The user should be able to select the following options from the Menu:
+
+- Get Gists
+- Get User Info
+- Get User Repos
+- Qux
+- Test Routes
 
 ## Turn it in
 

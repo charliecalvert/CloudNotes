@@ -2,6 +2,8 @@
 
 This assignment needs to be updated. We will discuss in class, Tuesday, May 14, 2019.
 
+- [Breakpoints](https://material-ui.com/layout/breakpoints/)
+
 The Goal is to add [Material-UI][limu] to our application to gussy up the menu and give our app a more standard appearance.
 
 ## Videos
@@ -410,7 +412,7 @@ Make sure you have included PropTypes in [AddressShow][asp].
 [ab]: http://www.material-ui.com/#/components/app-bar
 [am1]: https://youtu.be/aLcTr_G5xcI
 [am2]: https://youtu.be/PgMfki8-9ro
-[asp]: http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactAddressShow.html#proptypes
+[asp]: http://www.elvenware.com/treat/assignments/react/ReactAddressShow.html#proptypes
 [mi]: http://www.material-ui.com/#/components/menu
 [dr]: http://www.material-ui.com/#/components/drawer
 [limu]: https://www.material-ui.com/#/
