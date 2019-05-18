@@ -14,7 +14,7 @@ For now I think all our components, except **Test Routes**, and **ShowResultServ
 
 Something like this, but you are free to design it as you wish:
 
-![React Git User Fields](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png)
+<img class="sizer" alt="React Git User Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png" />
 
 ## API Links
 

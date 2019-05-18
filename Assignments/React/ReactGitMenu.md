@@ -349,6 +349,8 @@ The test is fairly loose. It does not check if the content of the node is correc
 
 Something like this, but you are free to design it as you wish:
 
+<img class="sizer" alt="React Git User Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png" />
+
 ![React Git User Fields](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png)
 
 ## Turn it in
