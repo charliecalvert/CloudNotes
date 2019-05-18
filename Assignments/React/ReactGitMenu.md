@@ -64,7 +64,7 @@ import logo from './images/tree-of-life.png';
 
 Here is the Tree of Life.
 
-![Tree of Life](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
+<img alt="Tree of Life" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png" class="sizer" />
 
 Create a new file called **client/components/tileData.js** with the content from [this gist](https://gist.github.com/8df01550bb74683023d205a28321a70f.git)
 
@@ -220,7 +220,7 @@ import logo from './images/tree-of-life.png';
 
 Here is the Tree of Life.
 
-![Tree of Life](https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png)
+<img alt="Tree of Life" class="sizer" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/tree-of-life.png" />
 
 Our create-react-app handles loading images for us, but if we were in an **elf-experss** app, to load the image, you need to add a new rule to webpack. The rule looks like this:
 
@@ -313,7 +313,7 @@ queryServer = (event) => {
 
 Your goal will be to fill in the menu for all the components we have created. When the program starts, none of them are visible, just the the area where we display data:
 
-![Menu Open no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-open.png)
+<img class="sizer" alt="Menu Open" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-open.png" />
 
 **IMAGE**: The menu. First item is sort of home, the rest point to various components. (We will do login later. You can ignore it.)
 
