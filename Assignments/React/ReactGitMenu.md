@@ -317,19 +317,19 @@ Your goal will be to fill in the menu for all the components we have created. Wh
 
 **IMAGE**: The menu. First item is sort of home, the rest point to various components. (We will do login later. You can ignore it.)
 
-![Home View no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-empty.png)
+<img class="sizer" alt="Home View no-size" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-empty.png" />
 
 **IMAGE**: The home menu selected. (No components chosen)
 
-![Qux no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-qux.png)
+<img class="sizer" alt="Qux" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-qux.png" />
 
 **IMAGE**: Qux selected from menu
 
-![Test Routes no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-test-routes.png)
+<img class="sizer" alt="Test Routes" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-test-routes.png" />
 
 **IMAGE**: Test Routes selected from menu
 
-![Git Menu no-size](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-gist.png)
+<img class="sizer" alt="Git Menu no-size" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-gist.png" />
 
 ## Style the Menu
 
