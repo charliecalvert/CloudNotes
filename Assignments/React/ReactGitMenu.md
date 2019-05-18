@@ -1,4 +1,3 @@
-
 # React Git Menu
 
 The goals of this assignment are:
@@ -338,31 +337,15 @@ Read about it [here][rrdstm]
 
 ## Show All Fields of Git User
 
-Be sure to replace the field-definitions.js file with new code from the **Git Convert** assignment. You should be able to display all the fields that are returned from Git.
-
-You will need to make some edits here to the string that is assignment to the value attribute:
+Run [the tests here][fct] to be sure that you are displaying a minimum number of fields from the User. These test check that you have created an element of some kind with an ID that corresponds to each of the fields that should be displayed. For instance, I'm checking that at minimum, you have something like this:
 
 ```javascript
-<ElfElements {...field}
-      value={this.props.gitUser[field.id]}
-      onChange={this.props.onChange}
+<p id="login">Login: {body.login}</p>
 ```
 
-I ended up calling a function and doing my work there:
+The test is fairly loose. It does not check if the content of the node is correct. That would be difficult or impossible since everyone will have different content. But it does check that you have an element with the proper ID. You are, of course, expected to actually display the contents of the field in that element.
 
-```javascript
-value={getValue(this.props.gitUser)}
-```
-
-In the getValue function, you might want to use syntax like this:
-
-```javascript
-return testMe || ''
-```
-
-That code will return an empty string if **testMe** is **null** or **undefined**. You will also need to handle the case with **gitUser[field.id]** is a **boolean**.
-
-When everything is working right, you won't see messages like this in the debugger: _Warning: `value` prop on `input` should not be null. Consider using the empty string to clear the component or `undefined` for uncontrolled components._ Also, your boolean fields such as **site-admin** will have strings in them rather than being blank. The point being, of course, that your code should run without warnings or errors.
+**NOTE**: _I'm deliberately keeping the type of the component unspecified to give you the freedom to design the page as you wish. I just want it to contain an element with a specific ID and I'm expecting you to use the element to display the appropriate field._
 
 ## Turn it in
 
@@ -400,10 +383,11 @@ it('renders without crashing', () => {
 
 ## ElfDebug
 
- [ElfEnzymeDebug][eed]
+- [ElfEnzymeDebug][eed]
 
 [eed]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 
+[fct]: https://github.com/charliecalvert/elven-sanity/blob/master/isit322-midterm-2019/client/Sanity.User.FieldChecks.test.js
 
 [rrdi]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#router-install
 [rrdstm]: http://www.elvenware.com/charlie/development/web/JavaScript/JavaScriptReactMenu.html#style-the-menu
