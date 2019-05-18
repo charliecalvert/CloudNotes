@@ -345,7 +345,7 @@ Run [the tests here][fct] to be sure that you are displaying a minimum number of
 
 The test is fairly loose. It does not check if the content of the node is correct. That would be difficult or impossible since everyone will have different content. But it does check that you have an element with the proper ID. You are, of course, expected to actually display the contents of the field in that element.
 
-**NOTE**: _I'm deliberately keeping the type of the component unspecified to give you the freedom to design the page as you wish. I just want it to contain an element with a specific ID and I'm expecting you to use the element to display the appropriate field._
+**NOTE**: _I'm deliberately keeping the type of the component unspecified to give you the freedom to design the page as you wish. I just want it to contain an element with a specific ID and I'm expecting you to use the element to display the appropriate field. For instance, the element could be a span, but the span should contain the relevant field from the User object returned by GitHub._
 
 ## Turn it in
 
