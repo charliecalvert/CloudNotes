@@ -347,6 +347,10 @@ The test is fairly loose. It does not check if the content of the node is correc
 
 **NOTE**: _I'm deliberately keeping the type of the component unspecified to give you the freedom to design the page as you wish. I just want it to contain an element with a specific ID and I'm expecting you to use the element to display the appropriate field. For instance, the element could be a span, but the span should contain the relevant field from the User object returned by GitHub._
 
+Something like this, but you are free to design it as you wish:
+
+![React Git User Fields](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png)
+
 ## Turn it in
 
 Add, commit, push, tag and/or branch. Let me know the tag and/or branch as well as the directory for your work. Make sure all your tests pass. For now.

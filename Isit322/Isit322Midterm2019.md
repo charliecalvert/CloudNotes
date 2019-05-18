@@ -10,6 +10,12 @@ For now I think all our components, except **Test Routes**, and **ShowResultServ
 
 **NOTE**: _At some point over the next few days, I'm likely to update the sanity tests or other parts of this midterm. I assume that you would like to get started as soon as possible, so I've pushed this out now._
 
+## Screenshots
+
+Something like this, but you are free to design it as you wish:
+
+![React Git User Fields](https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png)
+
 ## API Links
 
 The call to GitHub should be in **micros/get-user/routes/index.js**. It should use:
