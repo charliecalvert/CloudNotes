@@ -10,11 +10,37 @@ For now I think all our components, except **Test Routes**, and **ShowResultServ
 
 **NOTE**: _At some point over the next few days, I'm likely to update the sanity tests or other parts of this midterm. I assume that you would like to get started as soon as possible, so I've pushed this out now._
 
+## Goals
+
+Each major React component such as GetUser, GitGist, GetRepos, Qux, TestRoutes must use
+
+- **withStyles**
+- PropTypes
+- define or import a styles function
+- use the **styles** type to create a variable called classes that is global to the **render** method or its equivalent if you are using a React Function.
+
+Just to be clear, here is a minimal **styles** function:
+
+```javascript
+const styles = theme => ({
+    root: {
+        flexGrow: 1
+    }
+});
+```
+
+
 ## Screenshots
 
-Something like this, but you are free to design it as you wish:
+The **components/GetUser** page might look something like this, but you are free to design it as you wish:
 
 <img class="sizer" alt="React Git User Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png" />
+
+**IMAGE**: _The Get User Page_
+
+<img class="sizer" alt="React Git Gist Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-get-gist.png" />
+
+**IMAGE**: _The Get Gist Page_
 
 ## API Links
 
