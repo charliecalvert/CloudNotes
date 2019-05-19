@@ -469,14 +469,14 @@ We have to take an [extra step][unites] to test components that contain images. 
 
 In it, put two files:
 
-- styleMocks.js
-- fileMocks.js
+- styleMock.js
+- fileMock.js
 
-In **styleMocks** put only this:
+In **styleMock** put only this:
 
     module.exports = {};
 
-In **fileMocks**, put only this:
+In **fileMock**, put only this:
 
     module.exports = 'test-file-stub';
 
