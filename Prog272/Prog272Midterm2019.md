@@ -1,5 +1,7 @@
 ## Overview
 
+**NOTE**: _This is a very rough outline of where I am headed for the midterm. You can probably only take a few preliminary steps at this time._
+
 There are two parts to the Midterm. Some of them have not been covered in class yet, but they will be covered this week. By outlining the midterm now, I'm making clear to you what you will need to know finish the midterm.
 
 In particular, you will need to learn about two subjects:
