@@ -185,7 +185,7 @@ import { foo } from './foo';
 
 ## Define Address LocalStorage
 
-The previous object is generic. It works for any app that wants to support localStorage. Here is another object tailor made to work with our React-based **Address** component:
+The previous object is generic. It works for any app that wants to support localStorage. Here is another object tailor made to work with our React-based **Address** component. Call it **assets/address-local-storage.js**:
 
 ```javascript
 import {saveByIndex} from "./elf-local-storage";
