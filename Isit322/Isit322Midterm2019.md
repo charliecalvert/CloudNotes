@@ -80,7 +80,7 @@ I may change this, but for now, install jest globally
 
 Also, in the root of your project, make sure you have done this:
 
-      npm i @babel/plugin-proposal-class-properties @babel/preset-react @babel/preset-env
+      npm i @babel/plugin-proposal-class-properties @babel/preset-react @babel/preset-env @babel/core
 
 Create a directory called **project-sanity-tests** in the root of your project. Navigate into and run **get-tests**. Choose **Isit322 Midterm Project Sanity Tests**. Ensure all the tests pass by the time you turn in the midterm.
 
