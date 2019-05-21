@@ -114,7 +114,7 @@ We call **elfWriteFile** with a file name and a small bit of text to be written 
 
 ## Turn it in
 
-Add a fourth example with a function in it called **elfReadFile**. It should read the contents of **foo.txt**. Don't forget the **utf8** parameter!
+Add a fourth Promise example. Wrap the Promise in a function called **elfReadFile**. It should use the asynchronous **fs.readFile** function to read the contents of **foo.txt** and it should then print it out. Don't forget the **utf8** parameter!
 
 The docs for the Node Js **fs** module are [here](https://nodejs.org/api/fs.html).
 
