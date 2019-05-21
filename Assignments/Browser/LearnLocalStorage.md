@@ -266,7 +266,7 @@ import { dataLoaded, setLocalStorage} from "./assets/address-local-storage";
 At the start of the window.onload function, do this:
 
 ```javascript
-setLocalStorage(adddressList);
+setLocalStorage(addressList);
 ```
 
 The statement puts our data in localStorage.
