@@ -1,16 +1,29 @@
 ## Overview
 
-Learn about local storage in the browser.
+Local Storage is a bit like a simple database in your browser that persists between sessions. You can store information in Local Storage in key value pairs. If the user shuts down their machine, then returns a day later, information stored in the browser will still be available when the user returns to your website. Local Storage also works offline, which means the user can access the information even if they have no access to the Internet.
 
-- Insert 100 records with format elfXXXX
-- Insert **elven-count**
-- Insert **elven-store**
+Our goal will be to:
+
+- Insert records with the key formated like this: elfXXXX
+  - For instance, the first record will be elf0000, the second elf0001, etc.
+- Insert an **elven-count** key set to the number of records in storage.
+- Insert an **elven-store** key that we can use to check if data has been inserted.
+  - If the key is not set, then there is no data for us in Local Storage.
 - Load Data from Local Storage once Component is mounted
+
+## Get Started
+
+Do your work in your current version of the Address Program. This might be:
+
+- week05-address-simple
+- AddressMaven
+- Other
 
 ## Video
 
 - [Local Storage Video](https://youtu.be/8Nyph1YaPXI)
 - [The merge branch step](https://youtu.be/-AICMK2GnXc)
+
 
 ## Elf Logger
 
@@ -38,6 +51,38 @@ export default (() => {
 
 If you write **logger.on()** then **console.log** works, if you write **logger.off()** then **console.log** does nothing.
 
+## Test Data
+
+Here is some test data we can use in this assignment:
+
+```json
+[
+	{
+		"firstName": "Lamar",
+		"lastName": "Alexander",
+		"street": "455 Dirksen Senate Office Building",
+		"city": "Washington DC",
+		"state": "TN",
+		"zip": "20510",
+		"phone": "202-224-4944",
+		"website": "https://www.alexander.senate.gov/public",
+		"email": "",
+		"contact": "http://www.alexander.senate.gov/public/index.cfm?p=Email"
+	},
+	{
+		"firstName": "Susan",
+		"lastName": "Collins",
+		"street": "413 Dirksen Senate Office Building",
+		"city": "Washington DC",
+		"state": "ME",
+		"zip": "20510",
+		"phone": "202-224-2523",
+		"website": "https://www.collins.senate.gov",
+		"email": "",
+		"contact": "http://www.collins.senate.gov/contact"
+	},
+]
+```
 
 ## Elf Local Storage {#simple-object}
 
@@ -81,11 +126,16 @@ function clearLocalStorage() {
     localStorage.clear();
 }
 
+function getCount () {
+    return localStorage.getItem('elven-count');
+}
+
 export {
   saveByIndex,
   getByIndex,
   removeElfKeys,
-  clearLocalStorage
+  clearLocalStorage,
+  getCount
 };
 ```
 
@@ -95,7 +145,7 @@ Use it like this:
 import { getByIndex } from '../assets/elf-local-storage';
 ```
 
-Since the above could get out of data. I will try to maintain it here:
+Since the above could get out of date, I will try to maintain it here:
 
 - [Elf Local Storage][elf-local-storage]
 
@@ -143,12 +193,12 @@ import logger from "./elf-logger";
 
 logger.off();
 
-const KEY_SET = ['elven-store', 'set', 'elven-count'];
+const KEY_SET = ['elven-store', 'elven-count'];
 
 function setLocalStorage(addresses) {
     console.log('SET LOCAL', addresses);
-    localStorage.setItem(KEY_SET[0], KEY_SET[1]);
-    localStorage.setItem(KEY_SET[2], addresses.length);
+    localStorage.setItem(KEY_SET[0], 1);
+    localStorage.setItem(KEY_SET[0], addresses.length);
     addresses.forEach(function(address, index) {
         saveByIndex(address, index);
     });
@@ -156,8 +206,8 @@ function setLocalStorage(addresses) {
 }
 
 function dataLoaded() {
-    const elfStore = localStorage.getItem(KEY_SET[0]);
-    return (elfStore === KEY_SET[1]);
+    const elvenStore = localStorage.getItem(KEY_SET[0]);
+    return (elvenStore === 1);
 }
 
 export {
@@ -170,36 +220,36 @@ We store data in local storage using **key--value** pairs:
 
 | Key            | Value          |
 | :------------- | :------------- |
-| elven-store    | set            |
-| elven-count    | 100            |
+| elven-store    | 0 or 1         |
+| elven-count    | The number of records in Local Storage |
 | elf0000        | firstName: "Tammy", etc   |
-| elf0000        | firstName: "Sherrod", etc |
+| elf0001        | firstName: "Sherrod", etc |
 
-if **elven-store** is set to **set**, then we can assume our data has been loaded into **localStorage**. Otherwise, it needs to be loaded. **elven-count** shows how many records were loaded. The remaining data, such as elf0000, is where the actual data is stored.
+If the key **elven-store** has a value of **1**, then we can assume our data has been loaded into **localStorage**. Otherwise, it needs to be loaded. **elven-count** shows how many records were loaded. The remaining data, such as **elf0000**, is where the actual data is stored.
 
 Familiarize yourself with **KEY_SET**:
 
 ```javascript
-const KEY_SET = ['elven-store', 'set', 'elven-count'];
+const KEY_SET = ['elven-store', 'elven-count'];
 ```
 
-This line sets **elven-store** equal to **set**:
+This line sets **elven-store** equal to **1**:
 
 ```javascript
-localStorage.setItem(KEY_SET[0], KEY_SET[1]);
+localStorage.setItem(KEY_SET[0], 1);
 ```
 
 This line sets **elven-count** equal to 100:
 
 ```javascript
-localStorage.setItem(KEY_SET[2], addresses.length);
+localStorage.setItem(KEY_SET[1], addresses.length);
 ```
 
 ![Address Local Storage in Chrome][addls]
 
 [addls]:https://s3.amazonaws.com/bucket01.elvenware.com/images/address-local-storage-app-view.png
 
-**IMAGE**: _We can view **localStorage** in the Application page of the Chrome Developer tools._
+**IMAGE**: _We can view **Local Storage** in the Application page of the Chrome Developer tools._
 
 ## Use Local Storage
 
@@ -272,6 +322,19 @@ Do this to ensure your code is working:
 - Look at **Local Storage | http://localhost:3000**
 
 Then make sure that **localStorage** gets properly initialized after you refresh your home page. In other words, you should see **localStorage** filled up with at least 100 addresses when you refresh your home page.
+
+## Sanity Tests
+
+
+## Turn it in
+
+Tag your work when you are done.
+
+Tell me the:
+
+- Folder Name
+- Branch (Especially if other than **master**)
+- Tag
 
 ## Links
 

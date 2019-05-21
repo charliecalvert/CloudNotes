@@ -13,6 +13,75 @@ Perhaps you'll want to create something like this:
 
 <img class="sizer" alt="React Address Show Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/address-maven-address-show-2019.png" />
 
+## Address Data
+
+We will need at least a few addresses that we can use in the Midterm. Please use these addresses exactly as they appear here. Save this code as **routes/address-list.json**. As explained below, you will load this data on the server side, from an endpoint in **routes/index.js** called **/get-address-list**.
+
+```json
+[
+	{
+		"firstName": "Lamar",
+		"lastName": "Alexander",
+		"street": "455 Dirksen Senate Office Building",
+		"city": "Washington DC",
+		"state": "TN",
+		"zip": "20510",
+		"phone": "202-224-4944",
+		"website": "https://www.alexander.senate.gov/public",
+		"email": "",
+		"contact": "http://www.alexander.senate.gov/public/index.cfm?p=Email"
+	},
+	{
+		"firstName": "Susan",
+		"lastName": "Collins",
+		"street": "413 Dirksen Senate Office Building",
+		"city": "Washington DC",
+		"state": "ME",
+		"zip": "20510",
+		"phone": "202-224-2523",
+		"website": "https://www.collins.senate.gov",
+		"email": "",
+		"contact": "http://www.collins.senate.gov/contact"
+	},
+	{
+		"firstName": "John",
+		"lastName": "Cornyn",
+		"street": "517 Hart Senate Office Building",
+		"city": "Washington DC",
+		"state": "TX",
+		"zip": "20510",
+		"phone": "202-224-2934",
+		"website": "https://www.cornyn.senate.gov",
+		"email": "",
+		"contact": "https://www.cornyn.senate.gov/contact"
+	},
+	{
+		"firstName": "Richard",
+		"lastName": "Durbin",
+		"street": "711 Hart Senate Office Building",
+		"city": "Washington DC",
+		"state": "IL",
+		"zip": "20510",
+		"phone": "202-224-2152",
+		"website": "https://www.durbin.senate.gov",
+		"email": "",
+		"contact": "https://www.durbin.senate.gov/contact/"
+	},
+	{
+		"firstName": "Michael",
+		"lastName": "Enzi",
+		"street": "379A Russell Senate Office Building",
+		"city": "Washington DC",
+		"state": "WY",
+		"zip": "20510",
+		"phone": "202-224-3424",
+		"website": "https://www.enzi.senate.gov",
+		"email": "",
+		"contact": "http://www.enzi.senate.gov/public/index.cfm/contact?p=e-mail-senator-enzi"
+	},
+]
+```
+
 ## Part One
 
 This part of the midterm focuses on the server and the Node Js File System.
@@ -63,7 +132,19 @@ After you have found you can successfully load the addresses into local storage 
 
 ## Sanity
 
-If will be defining the Sanity tests in this section. It is not ready yet.
+Before you begin, go to JsObjects and run **git pull**.
+
+**NOTE**: _Though it may not be present until you do a git pull, I have added a script in the root of **JsObjects** called **git-pull-and-set-symbolic-links**. Once you have the file, you can run it to perform a git pull and then run CreateSymbolicLinks. I think someone in class suggested this, and it seemed like a good idea._
+
+Create a folder in the root of your project called **sanity-tests** if it does not exist already. Navigate into that folder. Run **get-tests** and choose **g) Prog272 Midterm 2019** from the menu. By the time you turn in the final, all these tests should pass.
+
+Remember that you have some tools when working with tests.
+
+- Change **it** to **fit** or **it.only** if you want to run only one test in a file. Actually, you can mark several tests this way, and they will be run and the others skipped.  
+- Conversely, you can put an x in front of a test (xit) to signify that you don't want to run it.
+
+You can [also use fdescribe and xdescribe](https://jest-bot.github.io/jest/docs/api.html). If you go to the docs following the link I give here, look for the sections on test.skip, test.only, descript.skip and describe.only. Note the aliases they have created, which tend to be way I access these calls.
+
 
 ## Turn it in
 
