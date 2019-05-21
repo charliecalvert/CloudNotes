@@ -39,6 +39,11 @@ Create a directory called **micros/git-gist/sanity-tests**. Navigate into it. Ru
 
 Get the tests to pass.
 
+Add a test item to the **scripts** section of **/micros/git-gist/package.json**:
+
+    "test": "jest"
+
+
 ## Hints
 
 Import Octokit into your **routes/index.js** as per the docs.
