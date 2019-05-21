@@ -260,8 +260,8 @@ So how do we use our local storage objects?
 First, we import them into **components/control.js**:
 
 ```javascript
-import { getByIndex } from "../assets/elf-local-storage";
-import { dataLoaded, setLocalStorage} from "../assets/elf-address-storage";
+import { getByIndex } from "./assets/elf-local-storage";
+import { dataLoaded, setLocalStorage} from "./assets/address-local-storage";
 ```
 
 Inside the **if (!canceled)** block of our '/address-list' fetch statement we do this:
