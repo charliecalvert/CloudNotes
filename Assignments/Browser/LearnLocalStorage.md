@@ -271,17 +271,6 @@ setLocalStorage(addressList);
 
 The statement puts our data in localStorage.
 
-## Iterating over the Data
-
-When iterating over the data in the method we call **setAddress**, we can update state like this:
-
-```
-this.setState({address: getByIndex(value)});
-```
-
-This is easier, I think, than having to index into our array of records.
-
-
 ## Summary
 
 The key thing to grasp here is that once we declared our **elf-local-storage.js** and **elf-address-storage.js** files, we only needed to add three lines to our **Address** program to use **localStorage**.
