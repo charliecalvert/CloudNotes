@@ -56,7 +56,7 @@ If you write **logger.on()** then **console.log** works, if you write **logger.o
 Here is some test data we can use in this assignment:
 
 ```json
-[
+const addressList = [
 	{
 		"firstName": "Lamar",
 		"lastName": "Alexander",
@@ -83,6 +83,8 @@ Here is some test data we can use in this assignment:
 	},
 ]
 ```
+
+Put this near the top of **control.js**.
 
 ## Elf Local Storage {#simple-object}
 
@@ -255,7 +257,7 @@ localStorage.setItem(KEY_SET[1], addresses.length);
 
 So how do we use our local storage objects?
 
-First, we import them into **components/Address.js**:
+First, we import them into **components/control.js**:
 
 ```javascript
 import { getByIndex } from "../assets/elf-local-storage";
