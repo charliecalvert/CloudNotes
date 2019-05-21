@@ -6,7 +6,7 @@ Learn to use OctoKit:
 - [The OctoKit Repo](https://github.com/octokit/rest.js)
 - [GitHub mentions OctoKit prominantly](https://developer.github.com/v3/libraries/)
 
-I'm expecting to find your work in branches **week08** and **master**.
+I'm expecting to find your work in branches **week08** and **master**. Work mostly in **/micros/git-gist/routes/index.js**.
 
 Log into your account on GitHub and create a secret, hidden Gist with exactly these properties:
 
