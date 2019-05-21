@@ -28,7 +28,7 @@ Running this command should also work as a single step solution:
 
     echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-I have added the above command to my **UbuntuSetup** script which I use building Pristine Lubuntu. As a result, this will hopefully not be a problem for future generations of students.
+I may add the above command to my **UbuntuSetup** script which I use building Pristine Lubuntu. As a result, this will hopefully not be a problem for future generations of students.
 
 **NOTE**: _I'm aware that automating this kind of thing in my scripts deprives students of the chance to learn how to maintain their own machines. However, it is crucial that we do not waste too much time during the quarter or relatively unimportant configuration details._
 
