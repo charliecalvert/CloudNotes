@@ -257,33 +257,19 @@ localStorage.setItem(KEY_SET[1], addresses.length);
 
 So how do we use our local storage objects?
 
-First, we import them into **components/control.js**:
+First, we import them into **source/control.js**:
 
 ```javascript
-import { getByIndex } from "./assets/elf-local-storage";
 import { dataLoaded, setLocalStorage} from "./assets/address-local-storage";
 ```
 
-Inside the **if (!canceled)** block of our '/address-list' fetch statement we do this:
+At the start of the window.onload function, do this:
 
 ```javascript
-setLocalStorage(addressListFromServer);
-this.setAddress(0);
+setLocalStorage(adddressList);
 ```
 
-The first statement puts our data from **CongressServer** in localStorage. The second has nothing to do with localStorage, it just assures that we are looking at the first record of our data rather than our list of **unknowns**.
-
-We also rewrite componentDidMount to ensure we don't load from **CongressServer** if we already have the data in **localStorage**:
-
-```javascript
-componentDidMount() {
-    if (dataLoaded()) {
-        this.setAddress(0);
-    } else {
-        this.getAddressList();
-    }
-}
-```
+The statement puts our data in localStorage.
 
 ## Iterating over the Data
 
