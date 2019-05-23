@@ -224,7 +224,7 @@ import {styles} from './elf-styles';
 class ElfApp extends Component {
 
     render() {
-        const {styles} = this.props;
+        const {classes} = this.props;
         return (
             <React.Fragment>
                 <h1>Welcome to Elf App</h1>
