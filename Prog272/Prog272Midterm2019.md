@@ -211,6 +211,34 @@ export const styles = theme => ({
 });
 ```
 
+## withStyles React Component
+
+Starter component:
+
+```javascript
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import {styles} from './elf-styles';
+
+class ElfApp extends Component {
+
+    render() {
+        const {styles} = this.props;
+        return (
+            <div>
+                <h1>Welcome to Elf App</h1>
+            </div>
+        );
+    }
+}
+
+ElfApp.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(ElfApp);
+```
 ## Sanity
 
 Before you begin, go to JsObjects and run **git pull** and also **git-pull-and-set-symbolic-links**.
