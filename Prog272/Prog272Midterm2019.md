@@ -226,9 +226,9 @@ class ElfApp extends Component {
     render() {
         const {styles} = this.props;
         return (
-            <div>
+            <React.Fragment>
                 <h1>Welcome to Elf App</h1>
-            </div>
+            </React.Fragment>
         );
     }
 }
