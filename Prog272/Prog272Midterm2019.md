@@ -134,7 +134,7 @@ After you have found you can successfully load the addresses into local storage 
 
 ## Sanity
 
-Before you begin, go to JsObjects and run **git pull**.
+Before you begin, go to JsObjects and run **git pull** and also **git-pull-and-set-symbolic-links**.
 
 **NOTE**: _Though it may not be present until you do a git pull, I have added a script in the root of **JsObjects** called **git-pull-and-set-symbolic-links**. Once you have the file, you can run it to perform a git pull and then run CreateSymbolicLinks. I think someone in class suggested this, and it seemed like a good idea._
 
@@ -146,6 +146,19 @@ Remember that you have some tools when working with tests.
 - Conversely, you can put an x in front of a test (xit) to signify that you don't want to run it.
 
 You can [also use fdescribe and xdescribe](https://jest-bot.github.io/jest/docs/api.html). If you go to the docs following the link I give here, look for the sections on test.skip, test.only, descript.skip and describe.only. Note the aliases they have created, which tend to be way I access these calls.
+
+## Sanity Files
+
+The sanity tests may grow over time, but just now the contain these files:
+
+| File Name                         | Purpose                                            |
+|:----------------------------------|:---------------------------------------------------|
+| Sanity.AddressShow.Layout.test.js | Examine the structure of AddressShow               |
+| Sanity.Components.test.js         | Ensure core components can be loaded               |
+| Sanity.Files.test.js              | Ensure key files exist                             |
+| Sanity.LocalStorage.test.js       | Test that local storage tools are set up correctly |
+| Sanity.MidtermFiles.test.js       | Check for files associated with Midterm and beyond |
+| test-data.js                      | A few address records for use in testing           |
 
 
 ## Turn it in
