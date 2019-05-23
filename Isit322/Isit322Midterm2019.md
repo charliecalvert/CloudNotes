@@ -86,11 +86,28 @@ Create a directory called **project-sanity-tests** in the root of your project. 
 
 Add this line to the scripts section of the **package.json** file in the root of the project: **"test": "echo 'The project tests are not here. Navigate into project-sanity-tests and run npm test'"**.
 
+| File Name | Purpose     |
+| :------------- | :------------- |
+| Sanity.Infrastructure.js  | Check that **client** and **server** are in the right place with some of the right files. Check for other key files.  |
+| Sanity.MicroStructure.js  | Check that the Micros are in the right place with some of the right files  |
+
 ## Client Tests
 
 In the **client/src** directory create a folder called **sanity-tests**. Navigate into it and run **get-tests**. Choose **Isit322 Midterm Client Tests**. Ensure all the tests pass by the time you turn in the midterm.
 
 Make it easy to run the client sanity tests by adding this to **client/package.json**: **"sanity-tests": "react-scripts test sanity-tests/Sanity*"**.
+
+| File Name                          | Purpose                                                                               |
+|:-----------------------------------|:--------------------------------------------------------------------------------------|
+| Sanity.App.test.js                 | Does App component contain expected features                                          |
+| Sanity.ClientFileStructure.test.js | Check if key files exist                                                              |
+| Sanity.GetGist.FieldChecks.test.js | Does GetGist have MUI components for displaying key fields retrieved from server.     |
+| Sanity.GetGist.test.js             | Checks for presence and location certain DIVs, Grids                                  |
+| Sanity.GetRepos.test.js            | Checks for presence and location certain DIVs, Grids                                  |
+| Sanity.Layout.test.js              | Under development                                                                     |
+| Sanity.User.FieldChecks.test.js    | Does **GetUser** have MUI components for displaying key fields retrieved from server. |
+
+You can **xdescribe** a test to skip it. You can use **p** at runtime to filter which tests are run.
 
 ## Your Tests and Utilities {#your-tests}
 

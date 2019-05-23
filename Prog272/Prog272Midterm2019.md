@@ -147,6 +147,8 @@ Remember that you have some tools when working with tests.
 
 You can [also use fdescribe and xdescribe](https://jest-bot.github.io/jest/docs/api.html). If you go to the docs following the link I give here, look for the sections on test.skip, test.only, descript.skip and describe.only. Note the aliases they have created, which tend to be way I access these calls.
 
+You can **xdescribe** a test to skip it. You can use **p** at runtime to filter which tests are run.
+
 ## Sanity Files
 
 The sanity tests may grow over time, but just now the contain these files:
@@ -160,6 +162,14 @@ The sanity tests may grow over time, but just now the contain these files:
 | Sanity.MidtermFiles.test.js       | Check for files associated with Midterm and beyond |
 | test-data.js                      | A few address records for use in testing           |
 
+## Sanity Midterm Files
+
+Here are some Notes on **Sanity.MidtermFiles.test.js**.
+
+Two of the files listed here, **AddressLister** and **AddressForm** can be boilerplate React Components of the type you get when you run **get-gist** and select **Simple React Class Component**. We will use these files later, but for now they just need to:
+
+- Exist
+- Be loadable as React Components
 
 ## Turn it in
 
