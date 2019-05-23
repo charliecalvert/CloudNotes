@@ -132,6 +132,85 @@ After you have found you can successfully load the addresses into local storage 
 - Display the first of the five records now in Local Storage in **AddressShow**
 - Put two more buttons on the address page. Label them **Prev** and **Next** or the equivalent. When the user clicks the **Next** button, show the next record in Local Storage, when they click the **Prev** button, show the previous record. Check for the beginning and end of the array and don't go beyond it.
 
+## Styles
+
+My current style sheet:
+
+```javascript
+import Image from './images/bellevue-walk.jpg';
+
+export const styles = theme => ({
+    root: {
+        flexGrow: 1
+    },
+    rooter: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+    },
+    layout: {
+        width: 'auto',
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3,
+        [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+            width: 1100,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+        },
+    },
+    backDiv: {
+        height: "933px",
+        backgroundImage: `url(${Image})`
+    },
+    backDiv2: {
+        //backgroundRepeat: 'no-repeat',
+        height: '1000px',
+        backgroundImage: `url(${Image})`,
+        backgroundRepeat: 'repeat'
+    },
+    backDiv3: {
+        backgroundColor: '#ddf3ff'
+    },
+    paperLion: {
+        flexGrow: 1,
+        padding: theme.spacing.unit,
+        textAlign: 'center',
+        color: theme.palette.primary.dark
+    },
+    paperLion2: {
+        height: '56%',
+        width: '100%',
+        maxWidth: '500px',
+        padding: '1%',
+
+        color: theme.palette.primary.dark,
+        backgroundColor: theme.palette.grey
+    },
+    paper: {
+        padding: theme.spacing.unit * 5,
+        textAlign: 'center',
+        color: theme.palette.primary.dark
+    },
+    paperHome: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+    },
+    elfTypography: {
+        fontSize: theme.spacing.unit * 2
+    },
+    root2: {
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: theme.palette.background.paper
+    },
+    inline: {
+        display: 'inline'
+    },
+
+});
+```
+
 ## Sanity
 
 Before you begin, go to JsObjects and run **git pull** and also **git-pull-and-set-symbolic-links**.
