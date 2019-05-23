@@ -74,7 +74,7 @@ On the client side you should allow the user to iterate through a minimum of thr
 
 ## Styles
 
-Here are the styles I want you to use:
+Here are the styles I want you to use. Save it as **client/src/components/elf-styles.js**:
 
 ```javascript
 import Image from '../images/grass.png';
