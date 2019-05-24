@@ -21,8 +21,6 @@ There is a project in JsObjects called [MaterialComponents][mc]. Pull the latest
 
 Now Make it look like this, but use your last name:
 
-![Material Components Modified](https://s3.amazonaws.com/bucket01.elvenware.com/images/material-everywhere.png)
-
 <img class="sizer" alt="React Material Everywhere" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/material-everywhere.png" />
 
 
