@@ -23,6 +23,9 @@ Now Make it look like this, but use your last name:
 
 ![Material Components Modified](https://s3.amazonaws.com/bucket01.elvenware.com/images/material-everywhere.png)
 
+<img class="sizer" alt="React Material Everywhere" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/material-everywhere.png" />
+
+
 Make sure all the tests still pass.
 
 ## Turn it in
