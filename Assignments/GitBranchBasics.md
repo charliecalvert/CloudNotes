@@ -4,6 +4,8 @@ Basic branching.
 
 To get started, be sure that you have a copy (clone) of your repository in your **~/Git** folder and your **~/temp** folder. We can imagine that one copy is your repository at school, and the other copy is your repository at home.
 
+At lease one video is found [here](https://www.elvenware.com/git-guide/git-branches.html#overview-video).
+
 ## Step One: Create a Branch {#create-branch}
 
 Open a repository. Create a file called **MyTest.md** in **Week0X-BranchBasics**.:

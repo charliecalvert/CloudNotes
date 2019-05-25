@@ -21,6 +21,8 @@ Do your work in your current version of the Address Program. This might be:
 
 ## Video
 
+Parts of these videos no longer match this assignment precisely. So don't try to follow them too closely. However, I think they still contain material that you will find useful.
+
 - [Local Storage Video](https://youtu.be/8Nyph1YaPXI)
 - [The merge branch step](https://youtu.be/-AICMK2GnXc)
 
