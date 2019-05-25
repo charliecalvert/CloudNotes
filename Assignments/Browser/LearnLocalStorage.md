@@ -11,13 +11,15 @@ Our goal will be to:
   - If the key is not set, then there is no data for us in Local Storage.
 - Load Data from Local Storage once Component is mounted
 
-## Get Started
+## Get Started {#get-started}
 
 Do your work in your current version of the Address Program. This might be:
 
 - week05-address-simple
 - AddressMaven
 - Other
+
+Your goal will be to insert the data into **Local Storage** in **control.js**. Then use one of your components to display the address data to the user. In most cases, this will mean creating a React called **ShowAddress** if you have not done so already. Add two buttons named **Next** and **Prev** to it which increment and decrement a state variable called index. When the user clicks either buttons, reach into localStorage, find the record at that particular index, and display it to the user.
 
 ## Video
 
@@ -278,7 +280,7 @@ You should also wrap the call to **setLocalStorage** in an **if** clause that us
 
 ## View Data {#summary}
 
-In a display component such as **ShowAddress**, when iterating over data in order to display it to the user, we might call **getByIndex**. For instance, if you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
+Review the instructions in the [Get Started][#getStarted] section on displaying data to the user.  In a display component such as **ShowAddress**, we call **getByIndex** to retrieve a single record. For instance, assuming you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
 
 ```JavaScript
 import { getByIndex, getCount } from './elf-local-storage';
@@ -286,7 +288,7 @@ import { getByIndex, getCount } from './elf-local-storage';
 const singleAddress = getByIndex(index);
 ```
 
-We might use buttons labeled next and previous to increment and decrement our **index** variable.
+Use buttons labeled **Next** and **Prev** to increment and decrement our **index** variable.
 
 ## Looking Ahead
 
