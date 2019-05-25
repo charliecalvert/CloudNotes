@@ -1,6 +1,6 @@
 ## Overview
 
-Local Storage is a bit like a simple database in your browser that persists between sessions. You can store information in Local Storage in key value pairs. If the user shuts down their machine, then returns a day later, information stored in the browser will still be available when the user returns to your website. Local Storage also works offline, which means the user can access the information even if they have no access to the Internet.
+[Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a bit like a simple database in your browser that persists between sessions. You can store information in Local Storage in key value pairs. If the user shuts down their machine, then returns a day later, information stored in the browser will still be available when the user returns to your website. Local Storage also works offline, which means the user can access the information even if they have no access to the Internet. (Of course the user has to first visit your site at least once while online, but after that, they can access the data offline.)
 
 Our goal will be to:
 
@@ -165,7 +165,8 @@ export {
   saveByIndex,
   getByIndex,
   removeElfKeys,
-  clearLocalStorage
+  clearLocalStorage,
+  getCount
 };
 ```
 
@@ -189,7 +190,7 @@ import { foo } from './foo';
 
 ## Define Address LocalStorage
 
-The previous object is generic. It works for any app that wants to support localStorage. Here is another object tailor made to work with our React-based **Address** component. Call it **assets/address-local-storage.js**:
+The previous object is generic. It works for any app that wants to support **localStorage**. Here is an object tailor made to work with our **Address** records. Call it **assets/address-local-storage.js**:
 
 ```javascript
 import {saveByIndex} from "./elf-local-storage";
@@ -222,12 +223,12 @@ export {
 
 We store data in local storage using **key--value** pairs:
 
-| Key            | Value          |
-| :------------- | :------------- |
-| elven-store    | 0 or 1         |
-| elven-count    | The number of records in Local Storage |
-| elf0000        | firstName: "Tammy", etc   |
-| elf0001        | firstName: "Sherrod", etc |
+| Key         | Value                                  |
+|:------------|:---------------------------------------|
+| elven-store | 0 or 1                                 |
+| elven-count | The number of records in Local Storage |
+| elf0000     | firstName: "Tammy", etc                |
+| elf0001     | firstName: "Sherrod", etc              |
 
 If the key **elven-store** has a value of **1**, then we can assume our data has been loaded into **localStorage**. Otherwise, it needs to be loaded. **elven-count** shows how many records were loaded. The remaining data, such as **elf0000**, is where the actual data is stored.
 
@@ -273,21 +274,30 @@ setLocalStorage(addressList);
 
 The statement puts our data in localStorage.
 
-## Summary
+You should also wrap the call to **setLocalStorage** in an **if** clause that uses the **boolean** **dataLoaded** function. That way, we first check if the data has already been loaded into **localStorage**. If it has been, then we do nothing, otherwise we call **setLocalStorage**. I'll let you write that very small bit of code.
 
-The key thing to grasp here is that once we declared our **elf-local-storage.js** and **elf-address-storage.js** files, we only needed to add three lines to our **Address** program to use **localStorage**.
+## View Data {#summary}
 
-One line we need is found in **componentDidMount**:
+In a display component such as **ShowAddress**, when iterating over data in order to display it to the user, we might call **getByIndex**. For instance, if you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
 
-- **if (dataLoaded()) { }**
+```JavaScript
+import { getByIndex, getCount } from './elf-local-storage';
 
-Another is in our **fetch** method:
+const singleAddress = getByIndex(index);
+```
+
+We might use buttons labeled next and previous to increment and decrement our **index** variable.
+
+## Looking Ahead
+
+You don't need to do this for this assignment. However, in the midterm you will want to get the data from the server rather than just hard code the data into **control.js**. That will involve a call to fetch followed by a call to **setLocalStorage**.
+
+The key thing to grasp here is that once we declared our **elf-local-storage.js** and **elf-address-storage.js** files, we only needed to add three lines to our **AddressMaven** program to load our data into **localStorage**.
+
+Inside our **fetch** method we will write something like this:
 
 - **setLocalStorage(addressListFromServer);**
 
-And when iterating over data, we call **getByIndex**:
-
-- **this.setState({address: getByIndex(value)});**
 
 ## Double Check
 
