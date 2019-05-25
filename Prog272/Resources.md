@@ -20,6 +20,8 @@ Here I will list various resources for Prog 272.
 
 ## Prog 272 2019 Specific {#p272-2019)
 
+- [Midterm 2019](/teach/prog272/Prog272Midterm2019.html)
+- [Material Everywhere](/teach/assignments/react/MaterialEverywhere.html)
 - [VirtualBox](/teach/assignments/PristineVirtualBox.html)
 - [GitNewRepo](/teach/assignments/GitNewRepo.html)
 - [CloudNine Intro](/teach/assignments/Cloud9Intro.html)
