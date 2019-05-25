@@ -90,6 +90,7 @@ This part of the midterm focuses on the server and the Node Js File System.
 
 - Rename your version of the **Address** assignment to **AddressMaven**.
   - Hint: use the **mv** command.
+  - Exactly which project you base **AddressMaven** is up to you. Pick a project that has features of the midterm in it already. Also, you will probably want to pick a project that you know works. For many it might be simplest to start with **week05-address-simple**.
 - Get the addresses from a REST call to our Express Server. You will probably base the call on work you did in **NodeRouteBasics**. Use **fetch** to make the call to the server. In **routes/index.js** create a route called **/get-address-list**.
 - Add five addresses to a file called **addresses-list.json**. Load the addresses into **routes/index.js** using the built-in Node Js [fs][fs] module. In particular, use the async version of **read-file** wrapped in a promise.
 - From inside the **/get-address-list** route use **response.send** to send the addresses to the client.
