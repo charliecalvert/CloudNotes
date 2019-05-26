@@ -118,4 +118,20 @@ Add a fourth Promise example. Wrap the Promise in a function called **elfReadFil
 
 The docs for the Node Js **fs** module are [here](https://nodejs.org/api/fs.html).
 
+## Convert String to Object
+
+When you call **js.readFile**, the thing you get back is a string. But you want to use an object. In other words, you are expecting the JSON in the file to be an object, not a string. But that is not what you get. Regardless of the contents of the file, **js.readFile** returns a string. So you need to translate the string you get from **js.readFile** into a JavaScript object. Do it like this:
+
+<pre>JSON.parse(resultFromCallingReadfile);</pre>
+
+Here we call **JSON.parse** on the string returned by our call to **fs.readFile**.
+
+**NOTE**: _It is probably best that the thing resolved from **readfile** just be the string itself rather than object literal. Don't do this: **resolve({result: data})**. Instead, do this **resolve(data)**. Here data is the string passed to you in the callback of your Promise._
+
+It is best to do this just before, or while, you are calling **response.send**.
+
+Here is a reference:
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+
 [pmdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
