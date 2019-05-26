@@ -104,9 +104,18 @@ Export a single function from **load-address.js** that performs both the tasks o
 - It can **fetch** the addresses from the server.
 - It can store them in Local Storage.
 
-The export should look like this:
+Though we only export one function from **load-address.js**, I have two functions in that file. Both return promises:
 
-    export default loadAddress;
+| Function Name | Purpose                                                                         |
+|:--------------|:--------------------------------------------------------------------------------|
+| elfQuery      | Calls **fetch** to retrieve the address list from this route: **/address-list** |
+| loadAddress   | if the data is not already loaded into Local Storage, call **elfQuery** and put the result in Local Storage                             |
+
+The export from **load-address.js** should look like this:
+
+```javascript
+export default loadAddress;
+```
 
 When you are done you need to do some work in **control.js** use the exported **loadAddress** function to wrap the code from **control.js** that loads items selected via the menu:
 
@@ -132,7 +141,8 @@ loadAddress()
 export default loadAddress;
 ```
 
-The code in the **then** block for **loadAddress**  is essentially the same code we have been using to bootstrap our pages. The catch statement writes out any errors that might have occurred in **load-address.js** or in **control.js**.
+
+The code in the **then** block for **loadAddress** is essentially the same code we have been using to bootstrap our pages. The catch statement writes out any errors that might have occurred in **load-address.js** or in **control.js**.
 
 After you have found you can successfully load the addresses into local storage and start your program, you are ready to find a way to display the addresses that are now stored in local-storage. Create a new page for your **AddressMaven** project called **AddressShow**. Add the page to the menu, and modify **control.js** and **tileData.js** as necessary to display the page.
 
