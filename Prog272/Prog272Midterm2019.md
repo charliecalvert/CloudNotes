@@ -108,10 +108,10 @@ The export should look like this:
 
     export default loadData;
 
-When you are done use the exported **loadData** function to wrap the code from **control.js** that loads items selected via the menu:
+When you are done use the exported **loadAddress** function to wrap the code from **control.js** that loads items selected via the menu:
 
 ```javascript
-export default loadData;
+import loadAddress from './load-address';
 // Code omitted here
 
 loadAddress()
@@ -126,7 +126,13 @@ loadAddress()
     });
 ````
 
-**loadAddress** is the promise you exported from **load-address.js**. The code in the then block is essentially the same code we have been using to bootstrap our pages. The catch statement writes out any errors that might have occurred in **load-address.js** or in **control.js**.
+**loadAddress** is the promise you exported from **load-address.js**. The export would look like this:
+
+```javascript
+export default loadAddress;
+```
+
+The code in the **then** block for **loadAddress**  is essentially the same code we have been using to bootstrap our pages. The catch statement writes out any errors that might have occurred in **load-address.js** or in **control.js**.
 
 After you have found you can successfully load the addresses into local storage and start your program, you are ready to find a way to display the addresses that are now stored in local-storage. Create a new page for your **AddressMaven** project called **AddressShow**. Add the page to the menu, and modify **control.js** and **tileData.js** as necessary to display the page.
 
