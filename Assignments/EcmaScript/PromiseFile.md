@@ -120,7 +120,7 @@ The docs for the Node Js **fs** module are [here](https://nodejs.org/api/fs.html
 
 ## Convert String to Object
 
-When you call **js.readFile**, the thing you get back is a string. But you want to use an object. In other words, you are expecting the JSON in the file to be an object, not a string. But that is not what you get. Regardless of the contents of the file, **js.readFile** returns a string. So you need to translate the string you get from **js.readFile** into a JavaScript object. Do it like this:
+When you call **js.readFile**, the thing you get back is a string. But you want to use an object. In other words, because address-list.json contains JSON, we are tempted to expected the JSON in the file to be returned as an object, not a string. But that is not what you get. Regardless of the contents of the file, by default **js.readFile** returns a string. So you need to translate the string you get from **js.readFile** into a JavaScript object. Do it like this:
 
 <pre>JSON.parse(resultFromCallingReadfile);</pre>
 
