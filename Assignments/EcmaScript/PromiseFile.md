@@ -128,7 +128,7 @@ Here we call **JSON.parse** on the string returned by our call to **fs.readFile*
 
 **NOTE**: _It is probably best that the thing resolved from **readfile** just be the string itself rather than object literal. Don't do this: **resolve({result: data})**. Instead, do this **resolve(data)**. Here data is the string passed to you in the callback of your Promise._
 
-It is best to do this just before, or while, you are calling **response.send**.
+It is perhaps best to call **JSON.parse** just before, or while, you are calling **response.send**.
 
 Here is a reference:
 
