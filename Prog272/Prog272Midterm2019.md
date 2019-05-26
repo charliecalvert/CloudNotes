@@ -106,9 +106,9 @@ Export a single function from **load-address.js** that performs both the tasks o
 
 The export should look like this:
 
-    export default loadData;
+    export default loadAddress;
 
-When you are done use the exported **loadAddress** function to wrap the code from **control.js** that loads items selected via the menu:
+When you are done you need to do some work in **control.js** use the exported **loadAddress** function to wrap the code from **control.js** that loads items selected via the menu:
 
 ```javascript
 import loadAddress from './load-address';
