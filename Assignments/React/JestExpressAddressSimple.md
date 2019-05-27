@@ -215,7 +215,7 @@ Here are the steps to get the default React control.js file:
 - Navigate to the **source** directory
 - Run get-gist
 - Select **m** from the menu
-  - React Control Cmponent for elf-express
+  - React Control Component for elf-express
 
 Here is the menu:
 
