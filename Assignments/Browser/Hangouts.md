@@ -18,13 +18,11 @@ Then send me a message using the address I gave you in class.
 
 ## Video
 
-We are going to want to share our screens. In particular, you will need to see my screen. I have a feeling that before we can share our screens we need to enter a video conversation. But you do not need to have a webcam. You should, however, have a microphone. Most laptops have both. Check, however, that you don't have your camera somehow turned off.
+We are going to want to share our screens. In particular, you will need to see my screen. Before we can share our screens we need to enter a video conversation. But you do not need to have a webcam. You should, however, have a microphone. Most laptops have both. Check, however, that you don't have your camera somehow turned off.
 
-## Chrome Remote Desktop
+## Turn it in
 
-This might be an alternative to Hangouts, but I am not sure:
-
-- [Chrome Remote Desktop](https://remotedesktop.google.com/access)
+Send me at least one message via hangouts. When you turn in the assignment, tell me the user name you used when you sent the message. If I can find a message from you in hangouts then all is good.
 
 <!--       -->
 <!-- links -->
