@@ -34,6 +34,7 @@ const styles = theme => ({
 
 The **components/GetUser** page might look something like this, but you are free to design it as you wish:
 
+
 <img class="sizer" alt="React Git User Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/react-git-menu-get-user.png" />
 
 **IMAGE**: _The Get User Page_
@@ -41,6 +42,10 @@ The **components/GetUser** page might look something like this, but you are free
 <img class="sizer" alt="React Git Gist Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-get-gist.png" />
 
 **IMAGE**: _The Get Gist Page_
+
+<img class="sizer" alt="React Git Gist Fields" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-midterm-get-repos.png" />
+
+**IMAGE**: _The Get Repos Page_
 
 ## ShowResultServer
 
