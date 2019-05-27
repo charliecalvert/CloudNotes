@@ -42,6 +42,52 @@ The **components/GetUser** page might look something like this, but you are free
 
 **IMAGE**: _The Get Gist Page_
 
+## ShowResultServer
+
+Thank you for asking these questions and I'm sorry if the subject caused confusion.
+
+**ShowResultServer** is designed to handle the display of the **/YouRang** requests. The typical YouRang request returns a value that looks like this:
+
+<pre>response.<span>send</span>({<span>result</span>: <span>'You rang?'</span>, <span>server</span>: <span>'git-user'</span>});</pre>
+
+As you can see, it returns an object literal with two properties:
+
+*   result
+*   server
+
+The eponymously named **ShowResultServer** component is designed to show these two fields. It exist in order to keep our code DRY. Each of our components is expected to show these fields, so rather than repeating the same code over and over in each component, we write a sub-component called **ShowResultServer** designed to display these fields.  All of our display display components that call **/YouRang** should use this component.
+
+This also helps illustrate how to embed one component inside another. This is something that is done all the time:
+
+```html
+<React.Fragment>
+    <div className={classes.layout}>
+        <Grid container spacing={24}>
+            // CODE OMITTED HERE
+            <Grid item xs={12}>
+                <Paper className={classes.paperLion}>
+                    <ShowResultServer
+                      // YOU ARE GOING TO NEED TO PASS SOME PROPS
+                    />
+                        {buttons}
+                </Paper>
+            </Grid>
+            // CODE OMITTED HERE
+        </Grid>
+    </div>
+</React.Fragment>
+```
+
+The bit about the buttons is just a declaration for some JSX that defines some buttons appropriate to any one particular component such as **GetGist** or **GetRepos**:
+
+```html
+const buttons = (
+     <Grid item xs={12}>        
+        // DEFINE ONE OR MORE BUTTONS HERE
+     </Grid>
+ );
+```
+
 ## API Links
 
 The call to GitHub should be in **micros/get-user/routes/index.js**. It should use:
