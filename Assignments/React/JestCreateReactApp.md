@@ -359,6 +359,8 @@ The **get-gist** utility returns my latest eslint configuration files. To see my
 
 ## Testing
 
+Just skip these for now.
+
 - [I am still working on this](JestCreateReactTests.html)
 
 ## Turn it in
