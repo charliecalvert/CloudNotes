@@ -34,6 +34,19 @@ Now make it look like this, but use your last name:
 
 Make sure all the tests still pass. Feel free to change the colors in the theme or the colors in elf-styles.
 
+## Integrate into the Midterm
+
+I will not grade this as part of this assignment, but instead as part of the midterm. Nevertheless, you will need to integrate the **TheTheme** into your midterm.
+
+We will need to change some of our components, removing both **CssBaseline** and **backDiv3**. This is because:
+
+- **CssBaseline** has been moved into **TheTheme**.
+- **backDiv3** is no longer needed as it is built into **TheTheme**
+
+The key thing we need to do is copy **TheTheme** from JsObjects or your version of **MaterialComponents** and then integrate it into your application. This means you will change the way you call **ReactDOM.render**.
+
+The introduction of the **TheTheme** also means our Sanity tests had to change. Please copy the latest tests into your midterm.
+
 ## Turn it in
 
 Push your work, tag it and tell me:
