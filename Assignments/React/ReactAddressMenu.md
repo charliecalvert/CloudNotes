@@ -346,6 +346,8 @@ And then use the ID in your test:
 wrapper.find('#elfQueryAction').simulate('click');
 ```
 
+**NOTE**: _Sometimes you can still find the Button, but you might need to do something like this: **find('WithStyles(Button)')**._
+
 ## Load an Image
 
 You can download the tree of life into a directory called **source/images** like this:

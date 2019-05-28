@@ -38,6 +38,7 @@ It will look a bit like this:
 ```
 
 If you get stuck, or want to know more, go to this page:
+
 - <https://firebase.google.com/docs/auth/web/google-signin#before_you_begin>
 
 The Database code does not work very well and can mostly be ignored. We will approach the whole subject in more detail in [FirebaseData.html][fbd] or some similar assignment. However, you can get a few things to work if you enable **Database** in the console. Just click through the wizard. At the top of the Database page, for now, switch to the **Realtime Database**. The code we are using in this example does not work with **Cloud Firestore.**

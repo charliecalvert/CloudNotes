@@ -1,15 +1,15 @@
 ## Overview
 
-[Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a bit like a simple database in your browser that persists between sessions. You can store information in Local Storage in key value pairs. If the user shuts down their machine, then returns a day later, information stored in the browser will still be available when the user returns to your website. Local Storage also works offline, which means the user can access the information even if they have no access to the Internet. (Of course the user has to first visit your site at least once while online, but after that, they can access the data offline.)
+[Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a bit like a simple database in your browser that persists between sessions. You can store information in Local Storage in key value pairs. If the user shuts down their machine, then returns a day later, information stored in the browser will still be available when the user returns to your website. Local Storage also works offline, which means the user can access the information even if they have no access to the Internet. (Of course the user has to first visit your site at least once while online, but after that, they can access the data offline at any time.)
 
 Our goal will be to:
 
-- Insert records with the key formated like this: elfXXXX
+- Insert records with the key formatted like this: elfXXXX
   - For instance, the first record will be elf0000, the second elf0001, etc.
 - Insert an **elven-count** key set to the number of records in storage.
 - Insert an **elven-store** key that we can use to check if data has been inserted.
   - If the key is not set, then there is no data for us in Local Storage.
-- Load Data from Local Storage once Component is mounted
+- Load Data from Local Storage once a Component such as **ShowAddress** is mounted
 
 ## Get Started {#get-started}
 
