@@ -47,6 +47,19 @@ The key thing we need to do is copy **TheTheme** from JsObjects or your version 
 
 The introduction of the **TheTheme** also means our Sanity tests had to change. Please copy the latest tests into your midterm.
 
+## Minor Update to ElfStyles
+
+Add backgroundColor:
+
+```css
+paperLion: {
+    flexGrow: 1,
+    padding: theme.spacing.unit,
+    textAlign: 'center',
+    color: theme.palette.primary.dark,
+    backgroundColor: '#cce2ee'
+},
+```
 ## Turn it in
 
 Push your work, tag it and tell me:
