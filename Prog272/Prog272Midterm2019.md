@@ -292,7 +292,7 @@ Two of the files listed here, **AddressLister** and **AddressForm** can be boile
 
 We found a bug that needed to be addressed. In the Midterm the background color of the Paper was not getting rendered properly. The solution is tricky enough that I will just give you the code.
 
-Here is my current **control.js**:
+Here is my current **control.js** minus **AddressForm** and **AddressLister** as you may not have those bits:
 
 ```javascript
 import React from 'react';
