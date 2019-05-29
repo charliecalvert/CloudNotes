@@ -196,14 +196,13 @@ The previous object is generic. It works for any app that wants to support **loc
 
 ```javascript
 import {saveByIndex} from "./elf-local-storage";
-import logger from "./elf-logger";
 
-logger.off();
+const debug = process.env.REACT_APP_ELF_LOGGER === 'sanity-learn-local' ? console.log : () => {};
 
 const KEY_SET = ['elven-store', 'elven-count'];
 
 function setLocalStorage(addresses) {
-    //console.log('SET LOCAL', addresses);
+    debug('SET LOCAL', addresses);
     localStorage.setItem(KEY_SET[0], '1');
     localStorage.setItem(KEY_SET[1], addresses.length);
     addresses.forEach(function(address, index) {
@@ -246,7 +245,7 @@ This line sets **elven-store** equal to **1**:
 localStorage.setItem(KEY_SET[0], 1);
 ```
 
-This line sets **elven-count** equal to 100:
+This line sets **elven-count** equal to 5:
 
 ```javascript
 localStorage.setItem(KEY_SET[1], addresses.length);
@@ -312,10 +311,7 @@ Do this to ensure your code is working:
 - Press **Clear selected**
 - Look at **Local Storage | http://localhost:3000**
 
-Then make sure that **localStorage** gets properly initialized after you refresh your home page. In other words, you should see **localStorage** filled up with at least 100 addresses when you refresh your home page.
-
-## Sanity Tests
-
+Then make sure that **localStorage** gets properly initialized after you refresh your home page. In other words, you should see **localStorage** filled up with at least 5 addresses when you refresh your home page.
 
 ## Turn it in
 
