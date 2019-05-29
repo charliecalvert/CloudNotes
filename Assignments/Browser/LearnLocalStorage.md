@@ -279,7 +279,7 @@ You should also wrap the call to **setLocalStorage** in an **if** clause that us
 
 ## View Data {#summary}
 
-Review the instructions in the [Get Started][#get-started] section on displaying data to the user.  In a display component such as **ShowAddress**, we call **getByIndex** to retrieve a single record. For instance, assuming you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
+Review the instructions in the [Get Started](#get-started) section on displaying data to the user.  In a display component such as **ShowAddress**, we call **getByIndex** to retrieve a single record. For instance, assuming you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
 
 ```JavaScript
 import { getByIndex, getCount } from './elf-local-storage';
