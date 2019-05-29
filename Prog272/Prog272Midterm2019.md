@@ -288,6 +288,55 @@ Two of the files listed here, **AddressLister** and **AddressForm** can be boile
 - Exist
 - Be loadable as React Components
 
+## Control and Theme
+
+We found a bug that needed to be addressed. The solution is tricky enough that I will just give you the code.
+
+Here is my current **control.js**:
+
+```javascript
+import React from 'react';
+import Go from './Go';
+import First from './First';
+import App from './App';
+import AddressShow from './AddressShow';
+import loadAddress from './load-address';
+import { renderHeader, renderAppTool } from './TheTheme';
+
+const APPS = {
+    App,
+    Go,
+    First,
+    AddressShow
+};
+
+function renderAppInElement(choice) {
+    const AppTool = APPS[choice.dataset.app];
+    if (!AppTool) return;
+    const props = Object.assign({}, choice.dataset);
+    renderAppTool(AppTool, props, choice);
+}
+
+window.onload = function() {
+
+    loadAddress()
+        .then((result) => {
+                console.log('LOAD STATUS', result.status);
+                renderHeader();
+                const selectors = document.querySelectorAll('.__react-root');
+                selectors.forEach(renderAppInElement);
+            }
+        )
+        .catch((err) => {
+            console.log(err);
+        });
+};
+```
+
+And here is my modified version of the **TheTheme** that works in **AddressMaven**:
+
+```JavaScript
+
 ## Turn it in
 
 - Polish it. No errors, no warnings, all tests pass. **eslint** and **prettier** should come back clean.
