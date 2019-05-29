@@ -301,7 +301,7 @@ import First from './First';
 import App from './App';
 import AddressShow from './AddressShow';
 import loadAddress from './load-address';
-import { renderHeader, renderAppTool } from './TheTheme';
+import { renderAppTool } from './TheTheme';
 
 const APPS = {
     App,
@@ -329,6 +329,7 @@ window.onload = function() {
         .catch((err) => {
             console.log(err);
         });
+
 };
 ```
 
