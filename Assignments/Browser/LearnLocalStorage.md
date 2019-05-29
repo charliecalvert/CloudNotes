@@ -289,6 +289,8 @@ const singleAddress = getByIndex(index);
 
 Use buttons labeled **Next** and **Prev** to increment and decrement our **index** variable.
 
+Please see [this example][dls] of how to display items in local storage.
+
 ## Looking Ahead
 
 You don't need to do this for this assignment. However, in the midterm you will want to get the data from the server rather than just hard code the data into **control.js**. That will involve a call to fetch followed by a call to **setLocalStorage**.
@@ -334,3 +336,4 @@ Tell me the:
 - [Dexie is nother front end for IndexedDB](http://dexie.org/)
 - [Dexie on GidHub shows modest popularity](https://github.com/dfahlander/Dexie.js)
 - [ZangoDb is not very popular](https://github.com/erikolson186/zangodb)
+- [dls]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/EcmaScript6/SimpleLocalStorage
