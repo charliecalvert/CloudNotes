@@ -47,57 +47,19 @@ The key thing we need to do is copy **TheTheme** from JsObjects or your version 
 
 The introduction of the **TheTheme** also means our Sanity tests had to change. Please copy the latest tests into your midterm.
 
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ElfHeader from './ElfHeader';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import blue from '@material-ui/core/colors/blue';
-import CssBaseline from '@material-ui/core/CssBaseline';
+## Minor Update to ElfStyles
 
-const themePurple = createMuiTheme({
-    typography: {
-        useNextVariants: true
-    },
-    palette: {
-        primary: {
-            light: blue[300],
-            main: blue[500],
-            dark: blue[700]
-        },
-        secondary: {
-            light: green[300],
-            main: green[500],
-            dark: green[700]
-        },
-        background: {
-            paper: '#cce2ee',
-            default: '#ddf3ff'
-        }
-    }
-});
+Add backgroundColor:
 
-export const renderAppTool = (AppTool, props, choice) => {
-    ReactDOM.render(
-        <MuiThemeProvider theme={themePurple}>
-            <AppTool {...props} />
-        </MuiThemeProvider>, choice);
-};
-
-export const renderHeader = () => {
-    ReactDOM.render(
-        <MuiThemeProvider theme={themePurple}>
-            <CssBaseline/>
-            <ElfHeader/>
-        </MuiThemeProvider>,
-        document.getElementById('root')
-    );
-};
+```css
+paperLion: {
+    flexGrow: 1,
+    padding: theme.spacing.unit,
+    textAlign: 'center',
+    color: theme.palette.primary.dark,
+    backgroundColor: '#cce2ee'
+},
 ```
-
-I have taken the task of rendering to the DOM out of control.js and put it in the **TheTheme**.
-
 ## Turn it in
 
 Push your work, tag it and tell me:
