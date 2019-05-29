@@ -321,8 +321,7 @@ window.onload = function() {
 
     loadAddress()
         .then((result) => {
-                console.log('LOAD STATUS', result.status);
-                renderHeader();
+                console.log('LOAD STATUS', result.status);                
                 const selectors = document.querySelectorAll('.__react-root');
                 selectors.forEach(renderAppInElement);
             }
@@ -369,18 +368,10 @@ const themePurple = createMuiTheme({
 export const renderAppTool = (AppTool, props, choice) => {
     ReactDOM.render(
         <MuiThemeProvider theme={themePurple}>
-            <AppTool {...props} />
-        </MuiThemeProvider>, choice);
-};
-
-export const renderHeader = () => {
-    ReactDOM.render(
-        <MuiThemeProvider theme={themePurple}>
             <CssBaseline/>
             <ElfHeader/>
-        </MuiThemeProvider>,
-        document.getElementById('root')
-    );
+            <AppTool {...props} />
+        </MuiThemeProvider>, choice);
 };
 ```
 
