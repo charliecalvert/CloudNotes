@@ -533,6 +533,10 @@ In our JSX, we:
 
 ## Define or Query {#define-getnine}
 
+When writing tests calls to **fetch** can be a stumbling block. As a result, it is often a good idea to take the code that processes the JSON sent to us by the server and place it in a function that can be tested without having to call **fetch**. After all, we did not write **fetch**, and we don't need to test it. We do, however, need to test to ensure that we can properly handle the JSON sent to us from the server inside a **fetch** call. Here I show how to isolate the code in a separate function called **setData** in this case.
+
+**NOTE**: _This is an example of the single responsibility principle. Our calls to **fetch** should do one thing: retrieve data from the server. How we process that data is really a separate subject, and so we isolate it in its function, which in this first example we call **setData**._
+
 We declare an arrow function in our component called **elfQuery**. Inside it, we call **setData**. In **setData** we call **setState**. The **setState** call can take an object literal defining the new state. It updates the state and causes the Component to refresh/re-render. More specifically, it causes the render method to be called by React.
 
 ```javascript
@@ -556,6 +560,28 @@ elfQuery = (url, setData, event) => {
 ```
 
 **NOTE**: _In class we might have called **setData** by another name such as **setFooData**. If so, the best fix -- at least for now -- would probably be to change the name **setFooData** to **setData**._
+
+The above example is from a React function component. Here is another example from a class component:
+
+```javascript
+setData = json => {
+    logFunc('parsed json', json);
+    this.setState(() => json);
+};
+
+fetch(url + '?token=' + response.token)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(json => {
+        this.setData(json);
+    })
+    .catch(function(ex) {
+        console.log('parsing failed, URL bad, network down, or similar', ex);
+    });
+```
+
+Notice that in this second case we use the **this** keyword when calling **setData.**
 
 ## Create a Button {#render-state}
 
