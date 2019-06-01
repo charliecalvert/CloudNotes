@@ -194,6 +194,8 @@ App.propTypes = {
 };
 ```
 
+More information is available on this [very valuable page][ptp].
+
 ## Themes
 
 On the theory that one might as well be hung for sheep as a goat, let's go ahead and create our own theme, which will allow us to take advantage of the styles system.
@@ -421,3 +423,4 @@ For most of the assignments, I'll just say something like: "Put your work in you
 [eslintrc]: https://gist.github.com/charliecalvert/c5952541925c04479150bbd8c40feac6
 [enspc]: https://www.elvenware.com/javascript-guide/JavaScriptReact.html#enospc
 [eslint]: https://www.elvenware.com/teach/assignments/react/ReactEsLint.html#automate
+[ptp]: https://reactjs.org/docs/typechecking-with-proptypes.html
