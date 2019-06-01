@@ -359,9 +359,27 @@ The **get-gist** utility returns my latest eslint configuration files. To see my
 
 ## Testing
 
-Just skip these for now.
+Here are two simple tests to see if you can find **Typography** elements used in your components.
 
-- [I am still working on this](JestCreateReactTests.html)
+```javascript
+it('Uses a JSX typography element', () => {
+    const wrapper = shallow(<Qux queryServer={() => {}} {...props} />).dive();
+    const typographies = wrapper.find('WithStyles(Typography)');
+    expect(typographies.length).toBeGreaterThan(0);
+});
+
+it('displays a JSX Typography heading', () => {
+    const wrapper = shallow(<Qux queryServer={() => {}} {...props} />).dive();
+    const heading = <Typography>Qux</Typography>;
+    expect(wrapper.containsMatchingElement(heading)).toBe(true);
+});
+```    
+
+The first tests just checks that we are using at least one **Typography** element somewhere in our component.
+
+The second method checks for a heading and uses **containsMatchingElement** rather than **contains** you can ignore any of the attributes (such as **variant**) on the **Typography** component.
+
+- [I am still working on these tests, so you can skip them for now.](JestCreateReactTests.html)
 
 ## Turn it in
 
