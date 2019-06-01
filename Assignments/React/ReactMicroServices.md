@@ -186,7 +186,7 @@ Make sure concurrently starts qux like this in the **scripts** object of **packa
 "qux": "nodemon qux/bin/www",
 ```
 
-**HINT**: _You will also have to modify the start property._
+**HINT**: _You will also have to modify the **start** property in the **package.json** from the root of your project. Use code very similar to the code that you used to load the server with concurrently. Only this time you are loading not only the **client** and **server**, but also **qux** and the other micros. I'll leave the exact implementation as an exercise, but the solution is simple. Don't make it overly complicated._
 
 ## Router IDs
 
@@ -328,6 +328,6 @@ The **runcln** alias is meant for a standard concurrently app. It runs **npm i**
 
 The second alias does more or less the same thing, but for **git-gist**, **git-user** and **qux**.
 
-This is one of the cases where naming conventions are very important. Of one student, for instance, calls the gist microservice git-gists instead of git-gist then that slows me down. 
+This is one of the cases where naming conventions are very important. Of one student, for instance, calls the gist microservice git-gists instead of git-gist then that slows me down.
 
 - [npm concurrently](https://www.npmjs.com/package/concurrently)
