@@ -239,9 +239,9 @@ I'm expecting to see:
 
 - Tests in **client**, **server** and each of the micros. Some of them can be very minimal, but typing **npm test** should run at least one local Jest test everywhere but in the root of the project. For instance, typing **npm test** in **micros/qux** should run a test that is defined inside of **Qux**.
 - At least 12 tests that you wrote
-  - At least three should test the methods you call from the second **then** function in a call to **fetch**  
+  - At least three should test the methods you call from the second **then** function in a call to **fetch**. See the [JestExpressAddressSimple][jeas] assignment.  
   - At least three should detect that a heading (defined with Typography) exists in a React component such as **GetGist**, **GetUser** or **GetRepos**. Just check for the **Typograph** element and its heading text, don't worry about the attributes (**containsMatchingElement**).
-  - At lest two should detect that a button was clicked using mocks (**jest.fn()**). Just detect the click you don't need to see results.
+  - At lest two should detect that a button was clicked using mocks (**jest.fn()**). Just detect the click you don't need to see results. See the [React Props assignment][rpjfn].
 - **prettier** run recently enough that my running it will not change any files.
 - **eslint** return without errors from inside root, client, server, and micros.
 
@@ -290,3 +290,5 @@ Don't forget to run all the tests, **prettier**, and **eslint** last thing befor
 [octk]: https://github.com/octokit/rest.js
 [orl]: https://octokit.github.io/rest.js/#octokit-routes-repos
 [stoct]: https://stackoverflow.com/a/52254321/253576
+[jeas]: https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html#define-getnine  
+[rpjfn]: https://www.elvenware.com/teach/assignments/react/ReactProps.html#simple-component-test

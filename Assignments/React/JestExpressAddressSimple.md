@@ -561,6 +561,8 @@ elfQuery = (url, setData, event) => {
 
 **NOTE**: _In class we might have called **setData** by another name such as **setFooData**. If so, the best fix -- at least for now -- would probably be to change the name **setFooData** to **setData**._
 
+The first **.then** function returns **response.json**. The second **.then** function calls a function named **setData**. It is the **setData** method is a high priority in your tests. We use the architecture shown in this example specifically so we can isolate **setData** in our tests without needing to mock **fetch**.
+
 The above example is from a React function component. Here is another example from a class component:
 
 ```javascript
