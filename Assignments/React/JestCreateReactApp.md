@@ -359,6 +359,17 @@ The **get-gist** utility returns my latest eslint configuration files. To see my
 
 ## Testing
 
+Here is how to see the JSX code that Qux generates:
+
+```javascript
+const wrapper = shallow(<Qux queryServer={() => {}} {...props} />).dive();
+console.log(wrapper.debug());
+```
+
+The call shown above is probably the call that I make the most often when trying to debug my tests. Here is the output it generates:
+
+<img class="sizer" alt="Enzyme Debug output showing JSX from our component" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/enzyme-wrapper-debug.png" />
+
 Here are two simple tests to see if you can find **Typography** elements used in your components.
 
 ```javascript
