@@ -370,6 +370,8 @@ The call shown above is probably the call that I make the most often when trying
 
 <img class="sizer" alt="Enzyme Debug output showing JSX from our component" src="https://s3.amazonaws.com/bucket01.elvenware.com/images/enzyme-wrapper-debug.png" />
 
+In the image shown above, I'm still using the standard JSX (and HTML) **button** element rather than the material-ui **Button** component.
+
 Here are two simple tests to see if you can find **Typography** elements used in your components.
 
 ```javascript
