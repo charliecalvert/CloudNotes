@@ -147,3 +147,11 @@ Move the rest of GitExplorer over to work on Firebase.
 Tag and push your work, providing folder, tag and branch.
 
 Also provide the URL for your running service on Firebase hosting.
+
+## Notes
+
+If you want to use node 8 or 10 you should first remove the existing node:
+
+    sudo apt-get purge --auto-remove nodejs
+
+Then go to **~/Git/JsObjects/Utilities/NodeInstall** and edit **NodeInstall.sh** to install version 10 or 8 rather than twelve. I could explain, but it is so obvious what needs to be done that it is just not worth it. It's just a question of which line is commented out. Then run the script **./InstallNode.sh**.
