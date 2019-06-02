@@ -10,7 +10,7 @@ I've put together a hasty script to help you check for faulty .bowerrc files. It
 
 - [Bower Components Script](https://github.com/charliecalvert/JsObjects/blob/master/Utilities/Templates/Scripts/bower-components)
 
-Go to JsObjects and run **git-pull-and-set-symbolic-links**:
+To get the script, go to JsObjects and run **git-pull-and-set-symbolic-links**:
 
     jo
     git pull
