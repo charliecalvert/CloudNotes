@@ -203,20 +203,21 @@ The new component will have one button that will call the **fetchGist** method f
 
 ## The Buttons
 
-Create a button with an id of **prevGist** and onClick that points at your **fetchCall** and data-url of '/git-gist-get-gist'. Set up the code as expected in **server/routes/index.js**.
-
-This is for **material-ui**, which we are not using right now.
+Create in **GetGist**. This is for **material-ui**, of course, but I've left out the body of the **if** statement.
 
 ```javascript
-<RaisedButton
-    style={buttonStyle}
-    id="prevGist"
-    onClick={(e) => this.gistIterator('prevGist', e)}
-    disabled={!this.props.gistCanIterate}
-    secondary={true}
+<Button
+    variant="contained"
+    color="primary"
+    data-url="/git-gist-get-gist-list"
+    onClick={() => {
+        if (...) {
+            this.setState({ index: this.state.index + 1 });
+        }
+    }}
 >
-    Back
-</RaisedButton>
+    Next
+</Button>
 ```
 
 ## Thinking about State
