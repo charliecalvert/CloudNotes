@@ -54,12 +54,12 @@ I've noticed that not everyone has any gists or only have on gist. Think of gist
 
 Let's build some tests that check whether or not we are all building more or less the same application.
 
-- Create a directory called **client/src/sanity**.
-- Get the [Sanity.App.test.js](https://github.com/charliecalvert/elven-sanity) test Suite and put it in your new **sanity** folder.
-  - You will need to install elf-utils: **npm i elven-code**
-  - You can also pull the latest from JsObjects, and then type **slb** and run **./CreateSymbolicLinks**
+- Create a directory called **client/src/sanity-tests**.
+- Here are the steps to get the [Sanity.App.test.js](https://github.com/charliecalvert/elven-sanity) test Suite and put it in your new **sanity** folder.
+  - First, you will need to install elf-utils: **npm i elven-code**
+  - You should also pull the latest from JsObjects, and then type **slb** and run **./CreateSymbolicLinks**
   - This will add a symbolic link to a new script to your bin folder: **~/bin/get-tests**
-  - Run **get-tests** from your sanity folder and it will add **Sanity.App.test.js** to your project.
+  - Run **get-tests** from your sanity folder. Select **React Props Sanity Tests**. It will add **Sanity.App.test.js** to your project.
 - Add the following to the **scripts** property in your **client/package.json** file: **"sanity-test": "react-scripts test Sanity*"**
 - Run the test: **npm run sanity-tests** and make sure everything passes.
 
