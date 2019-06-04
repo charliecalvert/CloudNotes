@@ -43,7 +43,7 @@ exports.app = functions.https.onRequest(app);
 
 ## Rewrites
 
-Finally, we need to open up the **firebase.json** found in the root of our project and add a **rewrites** property to it:
+Finally, we need to open up the **firebase.json** found in the root of our project and add a **rewrites** sub-property to the hosting property:
 
 ```javascript
 {
