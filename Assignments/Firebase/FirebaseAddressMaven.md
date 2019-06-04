@@ -163,5 +163,5 @@ Copy over the the **/address-list** route and your **readFile** promise into **f
 
 When you submit, tell me the directory where I should look for your project. After you push, tag your project and give me the tag. If you are using a branch, tell me about that as well.
 
-[fbs]:
+[fbs]: https://www.elvenware.com/teach/assignments/FirebaseStarter.html
 [rs]: https://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
