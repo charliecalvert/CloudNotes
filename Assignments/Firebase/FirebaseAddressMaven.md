@@ -10,7 +10,7 @@ Create a new directory in your repository called **FirebaseAddressMaven**. Run *
 
 ## Copy files
 
-Run these commands from the root of your firebase project. First create a symbolic link to make it easier to find your repository. Then copy some directories with [rsync][rs]:
+Run these commands from the root of your **FirebaseAddressMaven** project. First create a symbolic link to make it easier to find your repository. Then copy some directories with [rsync][rs]:
 
 ```nohighlighting
 ln -s ~/Git/prog272-lastname-2019/ ~/p2c
