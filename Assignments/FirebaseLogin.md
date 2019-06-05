@@ -14,13 +14,20 @@ We have been writing long complicated URLs in **server/roures/index.js**. Let's 
 
 - server/routes/get-user
 - server/routes/get-gists
-- server/rouites/qux
+- server/routes/qux
 
 Each file should begin by importing express and creating a router. It should end by exporting the router. See our **test-routes** file for an example.
 
 Modify **server/app.js** to load and use these files.
 
-## Get Started
+## Get Login Files
+
+Run get-gist for the root of your project (prog272) or the root of your **client** project (Isit322). Chose **Elf Firebase** from the menu. This should copy
+
+- **elf-firebase.js** and **elf-sign-in.html** to your public directory.
+- **FirebaseLogin.js** to your **source** directory (prog272) or **src/components** (isit322)
+
+## Set Configuration
 
 Go to the console and select the application you created in the [Firebase Starter][fbs] assignment:
 
@@ -28,7 +35,7 @@ Go to the console and select the application you created in the [Firebase Starte
 
 Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Provider.
 
-Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it to a text file.
+Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js**.
 
 It will look a bit like this:
 
@@ -48,6 +55,10 @@ It will look a bit like this:
   firebase.initializeApp(config);
 </script>
 ```
+
+Just replace config with the code you found in the Firebase Console.
+
+**NOTE**: _This config information will be public. In order to provide security for your application, you need to [lock down your application][lock] with rules you configure in the Firebase Console. This involves both white-listing your domain, and setting up database rules. We will not be too strict, as I want to be able to test your code by running it on my system. This means we should include localhost in our white-list._
 
 If you get stuck, or want to know more, go to this page:
 
@@ -107,7 +118,6 @@ queryServerLogin = event => {
             console.log(err);
         });
 };
-
 ```
 
 Save this on the server side in the **routes** directory as **verify.js**:
@@ -165,13 +175,6 @@ firebase serve
 Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
 
 After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web with **firebase deploy**. After it has been deployed, anyone with a connection to the world wide web will b able to access it with their browser.
-
-## Get Login Files
-
-Run get-gist for the root of your project (prog272) or the root of your **client** project (Isit322). Chose **Elf Firebase** from the menu. This should copy
-
-- **elf-firebase.js** and **elf-sign-in.html** to your public directory.
-- **FirebaseLogin.js** to your **source** directory (prog272) or **src/components** (isit322)
 
 ## Home Page
 
@@ -252,3 +255,4 @@ Open up **elven-fire-login.js** and paste in your configuration code in the **el
 [gps]: https://github.com/firebase/quickstart-js/blob/master/auth/google-popup.html
 [fbs]: /teach/assignments/FirebaseStarter.html
 [fbd]: /teach/assignments/FirebaseData.html
+[lock]: https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public
