@@ -163,5 +163,15 @@ Copy over the the **/address-list** route and your **readFile** promise into **f
 
 When you submit, tell me the directory where I should look for your project. After you push, tag your project and give me the tag. If you are using a branch, tell me about that as well.
 
+## Bower
+
+I think several students are still using JQuery and Bootstrap in views/layout.pug. You should remove that code. These are the lines that need to be deleted:
+
+```javascript
+link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+script(src="bower_components/jquery/dist/jquery.js")
+script(src="bower_components/bootstrap/dist/js/bootstrap.js")
+```
+
 [fbs]: https://www.elvenware.com/teach/assignments/FirebaseStarter.html
 [rs]: https://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
