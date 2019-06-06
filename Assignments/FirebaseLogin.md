@@ -27,6 +27,23 @@ Run get-gist for the root of your project (prog272) or the root of your **client
 - **elf-firebase.js** and **elf-sign-in.html** to your public directory.
 - **FirebaseLogin.js** to your **source** directory (prog272) or **src/components** (isit322)
 
+## Load Firebase
+
+In layout.pug:
+
+    script(src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js")
+    script(src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js")
+    script(src="elf-firebase.js")
+
+For isi322 put this in **public/index.html**:
+
+```html
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<!-- To learn more: https://firebase.google.com/docs/web/setup#config-web-app -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="elf-firebase.js"></script>    
+```
+
 ## Set Configuration
 
 Go to the console and select the application you created in the [Firebase Starter][fbs] assignment:
@@ -35,7 +52,7 @@ Go to the console and select the application you created in the [Firebase Starte
 
 Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Provider.
 
-Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js**.
+Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js** and in the midst of **elf-sign-in.html**.
 
 It will look a bit like this:
 
@@ -76,7 +93,7 @@ I've put the export in my **.bashrc** so that it always gets loaded. I would nee
 
 ## Code to Verify
 
-Use this code in **App.js**:
+Use this code in **App.js** (isit322) or **loadAddress.js** (prog272). Note that you may need to write **const getFirebaseToken** or simply **getFirebaseToken** depending on whether or not it is method of a React class:
 
 ```javascript
 getFirebaseToken = () => {
@@ -120,10 +137,14 @@ queryServerLogin = event => {
 };
 ```
 
+## Server Side
+
+Install firebase-admin: **npm i firebase-admin**.
+
 Save this on the server side in the **routes** directory as **verify.js**:
 
 ```javascript
-var admin = require('firebase-admin');
+const admin = require('firebase-admin');
 
 let loggedIn = false;
 
@@ -186,8 +207,116 @@ Get your home page here:
 
 Make sure the file we copied down is called is called **index.html** and not **index.html.1**. If necessary, delete **index.html** and rename **index.html.1** to **index.html**. Rename **style.css** to **main.css**.
 
-## Start Page
+## Database
 
+firebase init firestore
+
+```javascript
+
+var express = require('express');
+var router = express.Router();
+const firebase = require("firebase");
+const admin = require('firebase-admin');
+require("firebase/firestore");
+
+let loggedIn = false;
+
+//'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
+function init() {
+    // var serviceAccount = require(process.env.HOME + "/Source/prog270-calvert-firebase-adminsdk-2p1h1-0a73c9115c.json");
+    loggedIn = true;
+    console.log(
+        'INITIALIZE FIREBASE ADMIN',
+        admin.initializeApp({
+            //credential: admin.credential.applicationDefault(),
+            //databaseURL: 'https://isit322-calvert.firebaseio.com',
+            apiKey: 'AIzaSyDJzLPQCzPCBzpzuDEoZndURhPsImJ9uws',
+            authDomain: 'isit322-calvert.firebaseapp.com',
+            projectId: 'isit322-calvert'
+        })
+    );
+}
+
+init();
+
+const db = admin.firestore();
+
+function verifyToken(token) {
+    return new Promise(function (resolve, reject) {
+
+        if (!loggedIn) {
+            init();
+        }
+
+        admin
+            .auth()
+            .verifyIdToken(token)
+            .then(function (decodedToken) {
+                console.log('UID', JSON.stringify(decodedToken, null, 4));
+                console.log('MAIN SERVER QUX YOU RANG CALLED');
+                resolve(decodedToken);
+            })
+            .catch(function (error) {
+                console.log(error);
+                reject(error);
+            });
+    });
+}
+
+//module.exports = verifyToken;
+
+const writeData = (user, response) => {
+    const message = {
+        result: 'success',
+        status: 'bar',
+        file: 'test-routes.js',
+        server: 'main-server'
+    };
+    console.log('Foo called:\n' + JSON.stringify(message, null, 4));
+
+    db.collection("user").doc(user.uid).set({
+        name: user.displayName,
+        email: user.email,
+        photoUrl: user.photoURL
+    })
+        .then(function (dbData) {
+            response.send({'result': 'success', dbData: dbData, ...message});
+            console.log("Document successfully written!");
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+};
+
+
+/* Set up a route called foo. */
+router.get('/foo', function (request, response) {
+    console.log("FOO CALLED", request.query.token);
+    verifyToken(request.query.token)
+        .then((decodedToken) => {
+
+            const user = admin.auth().getUser(decodedToken.user_id)
+                .then(user => {
+                    console.log("USERDATA", JSON.stringify(user, null, 4));
+                    writeData(user, response);
+                    //response.send({user: user});
+                })
+                .catch(ex => {
+                    response.send(ex);
+                })
+
+            //writeData();
+
+        })
+        .catch(ex => {
+            console.log(ex);
+            response.send(ex);
+        })
+});
+
+module.exports = router;
+
+```
 
 ## Turn it in
 
