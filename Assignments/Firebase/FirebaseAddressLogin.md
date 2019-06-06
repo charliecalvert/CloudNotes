@@ -1,5 +1,7 @@
 ## Overview
 
+NOT YET READY BROWSE LIGHTLY AND COME BACK LATER.
+
 The goal of this assignment is to learn how Firebase provides authentication via sign in with Google, Twitter and other common sites. It also provides access to the database. You can give individual users access to all or portions of your site once you allow them to sign in. Users stay logged in once they are logged in, so long as you don't clear the local store. You are also provide with minimal information about the user who is logged in.
 
 There are two parts to the assignment:
