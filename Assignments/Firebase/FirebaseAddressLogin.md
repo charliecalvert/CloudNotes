@@ -19,6 +19,8 @@ Firebase Quickstarts: <https://github.com/firebase/quickstart-js>. For instance,
 
 ## Get Login Files
 
+For now, don't do this. Copy the files from ElfExpressSignIn instead.
+
 Run our JsObjects based **get-gist** from the root of your project. Chose **Elf Firebase** from the menu. This should copy
 
 - **elf-firebase.js** and **elf-sign-in.html** to your public directory.
@@ -30,7 +32,7 @@ Go to the console and select the application you created in the [Firebase Starte
 
 - <https://console.firebase.google.com/>
 
-Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Provider.
+Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Provider. If you get a restricted client be sure to set the Support email address. On the error page there is a  button that might help you fix the problem.
 
 Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js** and in the midst of **elf-sign-in.html**.
 
