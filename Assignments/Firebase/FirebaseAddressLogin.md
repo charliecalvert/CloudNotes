@@ -15,26 +15,14 @@ This video is by Firebase, and provides an high level overview of the authentica
 
 Firebase Quickstarts: <https://github.com/firebase/quickstart-js>. For instance, here is there quickstart for [Google popup signin][gps]
 
-## Create Server Side Files for Each Component
-
-We have been writing long complicated URLs in **server/routes/index.js**. Let's clean that up. Create a file for each project:
-
-- server/routes/get-user
-- server/routes/get-gists
-- server/routes/qux
-
-Each file should begin by importing express and creating a router. It should end by exporting the router. See our **test-routes** file for an example.
-
-Modify **server/app.js** to load and use these files.
-
 ## Get Login Files
 
-Run get-gist for the root of your project (prog272) or the root of your **client** project (Isit322). Chose **Elf Firebase** from the menu. This should copy
+Run our JsObjects based **get-gist** from the root of your project. Chose **Elf Firebase** from the menu. This should copy
 
 - **elf-firebase.js** and **elf-sign-in.html** to your public directory.
-- **FirebaseLogin.js** to your **src/components** directory
+- **FirebaseLogin.js** to your **source** directory.
 
-## Set Configuration
+## Sign-in with Google Configuration
 
 Go to the console and select the application you created in the [Firebase Starter][fbs] assignment:
 
@@ -50,7 +38,7 @@ It will look a bit like this:
 <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
 <script>
   // Initialize Firebase
-    var config = {
+    const config = {
         apiKey: "YOUR KEY",
         authDomain: "YOUR DOMAIN",
         databaseURL: "YOUR URL",
@@ -63,27 +51,33 @@ It will look a bit like this:
 </script>
 ```
 
-Just replace config with the code you found in the Firebase Console.
+Just replace the **config** object literal shown above with the code you found in the Firebase Console.
 
-**NOTE**: _This config information will be public. In order to provide security for your application, you need to [lock down your application][lock] with rules you configure in the Firebase Console. This involves both white-listing your domain, and setting up database rules. We will not be too strict, as I want to be able to test your code by running it on my system. This means we should include localhost in our white-list._
+**NOTE**: _This **config** information will be public. In order to provide security for your application, you need to [lock down your application][lock] with rules you configure in the Firebase Console. This involves both white-listing your domain, and setting up database rules. We will not be too strict, as I want to be able to test your code by running it on my system. This means we should include localhost in our white-list._
 
 If you get stuck, or want to know more, go to this page:
 
 - <https://firebase.google.com/docs/auth/web/google-signin#before_you_begin>
 
-The Database code does not work very well and can mostly be ignored. We will approach the whole subject in more detail in [FirebaseData.html][fbd] or some similar assignment. However, you can get a few things to work if you enable **Database** in the console. Just click through the wizard. At the top of the Database page, for now, switch to the **Realtime Database**. The code we are using in this example does not work with **Cloud Firestore.**
+The subject of signing in and databases are frequently linked, as often you want to authenticate a user before giving them access to a database. We will approach the whole subject of databases in [FirebaseData.html][fbd] or some similar assignment.
 
 ## Load Firebase
 
-Put this in **public/index.html**:
+In layout.pug:
 
-```html
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-<!-- To learn more: https://firebase.google.com/docs/web/setup#config-web-app -->
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
-<script src="elf-firebase.js"></script>    
-```
+    script(src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js")
+    script(src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js")
+    script(src="elf-firebase.js")
 
+## Pug Files
+
+At least for now, add the following to **worker.pug** and **index.pug**. They should be placed just before the code that loads the bundle and indented to the same level.
+
+    p#sign-in-status
+
+    p#sign-in
+
+    p#account-details
 
 ## Service Account
 
@@ -93,7 +87,55 @@ Go to the project overview for your project and select the Settings (gear) icon.
 
 I've put the export in my **.bashrc** so that it always gets loaded. I would need it to **serve** your app locally, but I don't need to see your code running remotely.
 
-## Code to Verify
+## Server Side
+
+Install firebase-admin: **npm i firebase-admin**.
+
+Save this on the server side in the **routes** directory as **verify.js**:
+
+```javascript
+const admin = require('firebase-admin');
+
+let loggedIn = false;
+
+//'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
+function init() {    
+    var serviceAccount = require("path/to/serviceAccountKey.json");
+    loggedIn = true;
+    console.log(
+        'INITIALIZE FIREBASE ADMIN',
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            // credential: admin.credential.applicationDefault(),
+            databaseURL: 'https://YOUR_INFO_HERE.firebaseio.com'
+        })
+    );
+}
+
+function verifyToken(token) {
+    return new Promise(function(resolve, reject) {
+        if (!loggedIn) {
+            init();
+        }
+        admin
+            .auth()
+            .verifyIdToken(token)
+            .then(function(decodedToken) {
+                console.log('UID', JSON.stringify(decodedToken, null, 4));
+                console.log('MAIN SERVER QUX YOU RANG CALLED');
+                resolve(decodedToken);
+            })
+            .catch(function(error) {
+                console.log(error);
+                reject(error);
+            });
+    });
+}
+
+module.exports=verifyToken;
+```
+
+## Client Side Code to Verify {#code-to-verify}
 
 Use this code in **App.js** (isit322) or **loadAddress.js** (prog272). Note that you may need to write **const getFirebaseToken** or simply **getFirebaseToken** depending on whether or not it is method of a React class:
 
@@ -139,54 +181,6 @@ queryServerLogin = event => {
 };
 ```
 
-## Server Side
-
-Install firebase-admin: **npm i firebase-admin**.
-
-Save this on the server side in the **routes** directory as **verify.js**:
-
-```javascript
-const admin = require('firebase-admin');
-
-let loggedIn = false;
-
-//'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
-function init() {
-    // var serviceAccount = require(process.env.HOME + "/Source/prog270-calvert-firebase-adminsdk-2p1h1-0a73c9115c.json");
-    loggedIn = true;
-    console.log(
-        'INITIALIZE FIREBASE ADMIN',
-        admin.initializeApp({
-            // credential: admin.credential.cert(serviceAccount),
-            credential: admin.credential.applicationDefault(),
-            databaseURL: 'https://YOUR_INFO_HERE.firebaseio.com'
-        })
-    );
-}
-
-function verifyToken(token) {
-    return new Promise(function(resolve, reject) {
-        if (!loggedIn) {
-            init();
-        }
-        admin
-            .auth()
-            .verifyIdToken(token)
-            .then(function(decodedToken) {
-                console.log('UID', JSON.stringify(decodedToken, null, 4));
-                console.log('MAIN SERVER QUX YOU RANG CALLED');
-                resolve(decodedToken);
-            })
-            .catch(function(error) {
-                console.log(error);
-                reject(error);
-            });
-    });
-}
-
-module.exports=verifyToken;
-```
-
 ## Test
 
 If you are on your local machine or VM like Pristine Lubuntu, you can preview before you deploy by issuing this command:
@@ -214,7 +208,14 @@ Make sure the file we copied down is called is called **index.html** and not **i
 
 Run **firebase deploy** to push your site to the cloud. Submit a link to your firebase site.
 
-**NOTE**: _If you turn in a screen shot for an assignment like this, it is nice if I can read the URL in the browser address control. But I don't need a screenshot in this case, unless you want to submit one._
+**NOTE**: _If you turn in a screen shot for an assignment like this, it is nice if I can read the URL in the browser address control. But I don't need a screenshot in this case, unless you want to submit one._\
+
+For AddressMaven, I'm looking for:
+
+- **elf-sign-in.html** in public
+- **elf-firebase.js** and **FirebaseLogin.js** in Source
+- **Login** and **Logout** in menu
+- **FirebaseLogin** and **initApp** imported into **control.js**
 
 ## For Later
 
