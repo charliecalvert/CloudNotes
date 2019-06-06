@@ -85,6 +85,8 @@ Here is a simple starter version for our copy of **functions/index.js**:
 const functions = require('firebase-functions');
 const express = require('express');
 const app = express();
+const path = require('path');
+const fs = require('fs');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
