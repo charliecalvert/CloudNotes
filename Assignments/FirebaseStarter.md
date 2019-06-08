@@ -27,6 +27,16 @@ Find the Hosting tool and click the **Get Started** button. Click through the si
 
 You are now ready to begin deploying apps to the cloud. The next step is to set up a place on your hard drive where you can create and deploy the files for your application.
 
+## Add Editor
+
+As I start to grade the Firebase homework assignments, it seems that I need to have permissions to run your projects with **firebase serve**.  Here is the page that explains the simple steps to add me as an **Editor:**
+
+[https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
+
+Please add **charliecalvertbc@gmail.com** as an Editor.
+
+If you can get this done ASAP that would be great, and probably to your advantage, as it will enable me to better grade, comment on, and help you fix your projects. We will, of course, also go over it in class. Thank you.
+
 ## Create Workspace
 
 If you have not done so already, create a **Source** directory:
