@@ -33,7 +33,7 @@ As I start to grade the Firebase homework assignments, it seems that I need to h
 
 [https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
 
-Please add **charliecalvertbc@gmail.com** as an Editor.
+Please use the same email address that we use when we communicate via hangouts. The one with bc in the address.
 
 If you can get this done ASAP that would be great, and probably to your advantage, as it will enable me to better grade, comment on, and help you fix your projects. We will, of course, also go over it in class. Thank you.
 
