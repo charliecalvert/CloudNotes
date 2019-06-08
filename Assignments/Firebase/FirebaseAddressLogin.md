@@ -36,6 +36,8 @@ Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Pr
 
 Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js** and in the midst of **elf-sign-in.html**.
 
+**NOTE**: _On the **Settings Gear | Project Settings** page, make sure that **Public Settings | Support email** is set._
+
 It will look a bit like this:
 
 ```javascript
@@ -85,11 +87,15 @@ At least for now, add the following to **worker.pug** and **index.pug**. They sh
 
 ## Service Account
 
-Go to the project overview for your project and select the Settings (gear) icon. Select **Project Settings | Service Accounts | X Service Accounts from Google Cloud Platform**. Click the actions (hamburger) icon for the third item, the firebase-admsdk and create a key. It will be downloaded to your system as a JSON file. Create an environment variable that points at it:
+Go to the project overview for your project and select the Settings (gear) icon. Select **Project Settings | Service Accounts |  Service Accounts from Google Cloud Platform**. Click the actions (hamburger) icon for the third item, the firebase-admsdk and create a key. It will be downloaded to your system as a JSON file. Create an environment variable that points at it. The exact code will differ on your system, but it might look a bit like this:
 
-    export GOOGLE_APPLICATION_CREDENTIALS="/home/charlie/Source/isit322-calvert-20495df644c3.json"
+    export GOOGLE_APPLICATION_CREDENTIALS="/home/bcuser/Source/isit322-lastname-2043dasdfae323.json"
 
-I've put the export in my **.bashrc** so that it always gets loaded. I would need it to **serve** your app locally, but I don't need to see your code running remotely.
+I've put the above line of code near the bottom of my **.bashrc** so that it always gets loaded when I open a new shell. The first time you do it, if you already have one or more bash shells open, then you need to either past the code into each open bash shall and press enter, or else run this command:
+
+```nohighlighting
+source ~/.bashrc
+```
 
 ## Server Side
 

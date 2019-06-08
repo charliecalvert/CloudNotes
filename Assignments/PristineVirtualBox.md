@@ -146,6 +146,31 @@ If you update VirtualBox, you should be prompted to upgrade the extensions. If y
 
 - [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
 
+## Out of Space
+
+Sometimes late in the quarter we run out of disk space on our copies of Pristine Lubuntu. I keep building bigger and bigger versions of Pristine Lubuntu, but apparently, we keep finding ways to run out of space. There are ways to fix the problem.
+
+Choose the Start (Bird) icon at the bottom left of Pristine Lubuntu. Type in Discover, which loads an application called [**Discover**](https://userbase.kde.org/Discover). Search on **Disk Usage Analyzer**. Install it. Run it. Use it to look for big files that you might have installed accidentally or that you don't need anymore.
+
+If that does not solve the problem, then read on.
+
+As a rule, the thing that takes up the most space on our hard drives is our **node_modules** folders. I have a script in JsObjects called delete_node_modules. it looks like this:
+
+```nohighlighting
+$ cat ~/bin/delete_node_modules   
+#! /bin/bash  
+
+find . -iname 'node_modules' ! -type l | xargs rm -rv  
+find . -iname 'build' ! -type l | xargs rm -rv  
+find . -iname 'bower_components' ! -type l | xargs rm -rv  
+find . -iname 'bundle.js' ! -type l | xargs rm -rv  
+find . -iname '*.js.map' ! -type l | xargs rm -rv
+```
+
+Run the entire command from the root of your repository or from any one folder that seems unusually big to you. It will delete node_modules and other files that are not needed except at runtime.
+
+If you run it from the root of your repository it should free up a lot of space. But of course you will now need to run **npm install** again in any project that you want to run. You may also need to run **bower install**, depending on whether or not bower plays a role in that project.
+
 ## Trouble Shoot
 
 Make sure you have installed the [VirtualBox Extension Pack][extpack]. To check, go to **File | Preferences | Extensions**.

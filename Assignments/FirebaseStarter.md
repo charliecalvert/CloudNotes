@@ -140,6 +140,8 @@ Hosting URL: https://test-may29-2019.firebaseapp.com
 charlie@elf-path:~/Source/firebase/charliebc/may-29-2019$
 ```
 
+I'm just looking for a screen shot of what you see at the command prompt after you type firebase deploy. I am just looking for some evidence that you want the command and that it ran without errors.
+
 Attach the screenshots directly to your canvas assignment. (No zip files, no Word Documents). Optionally show a third screenshot of your site deployed on the firebase site.
 
 In the comments section, include the URL of your project running on the world wide web. The URL should look something like this, but not exactly like it:
