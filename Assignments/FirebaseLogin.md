@@ -201,17 +201,6 @@ Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
 
 After confirming that you app works, press Ctrl-C and return to the command line. You are now ready to deploy your app on the world wide web with **firebase deploy**. After it has been deployed, anyone with a connection to the world wide web will b able to access it with their browser.
 
-## Home Page
-
-Get your home page here:
-
-    cp ~/Git/JsObjects/JavaScript/Syntax//JsonTable/public/favicon.png .
-    wget https://s3.amazonaws.com/bucket01.elvenware.com/html/index.html    
-    wget https://s3.amazonaws.com/bucket01.elvenware.com/stylesheets/firebase-express/main.css
-
-Make sure the file we copied down is called is called **index.html** and not **index.html.1**. If necessary, delete **index.html** and rename **index.html.1** to **index.html**. Rename **style.css** to **main.css**.
-
-
 ## Turn it in
 
 Run **firebase deploy** to push your site to the cloud. Submit a link to your firebase site.
@@ -259,6 +248,18 @@ cd ..
 Use the tools available, or modify them as necessary, to copy your CSS, JS and Images folders from the ApacheHelpers directory to your **firebase/public** directory.
 
 You should follow a few bsaics steps to make sure all the proper files are being loaded. In Chrome, press F12 to open the Developer Tools. Switch to the Network page. Refresh you page. If everything is set up correctly, there should be no red 404 errors for your GET statements. Instead, you should see 200 or 304 in the Status column.
+
+## Home Page
+
+Don't read this. Skip this section, it is out of date.
+
+Get your home page here:
+
+    cp ~/Git/JsObjects/JavaScript/Syntax//JsonTable/public/favicon.png .
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/html/index.html    
+    wget https://s3.amazonaws.com/bucket01.elvenware.com/stylesheets/firebase-express/main.css
+
+Make sure the file we copied down is called is called **index.html** and not **index.html.1**. If necessary, delete **index.html** and rename **index.html.1** to **index.html**. Rename **style.css** to **main.css**.
 
 ## Obsolete
 
