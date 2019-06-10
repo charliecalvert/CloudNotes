@@ -28,13 +28,13 @@ Run our JsObjects based **get-gist** from the root of your project. Chose **Elf 
 
 ## Sign-in with Google Configuration
 
-Go to the console and select the application you created in the [Firebase Starter][fbs] assignment:
+Go to the console and select the **AddressMaven-lastname** application. If it does not exist, follow the steps you used to create a project found in the [Firebase Starter][fbs] assignment. Call your new project **AddressMaven-lastname**, where lastname is you lastname:
 
 - <https://console.firebase.google.com/>
 
-Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Provider. If you get a restricted client be sure to set the Support email address. On the error page there is a  button that might help you fix the problem.
+Choose **Authentication | Sign-in Method** and enable **Google** as a Sign in Provider. If you get a restricted client error when you try to login be sure to set the Support email address. On the error page there is a  button that might help you fix the problem.
 
-Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js** and in the midst of **elf-sign-in.html**.
+Go to the main page for your app in the console, and choose the **Settings Gear | Project Settings**. If you have already done this step, you will see the configuration code and the place to set the Support email address. Otherwise, select the web icon near the bottom on the right. A dialog will pop up and prompt you for a nickname. Copy the code you see and save it over the default **firebaseConfig** code found near the top **public/elf-firebase.js** and in the midst of **elf-sign-in.html**.
 
 **NOTE**: _On the **Settings Gear | Project Settings** page, make sure that **Public Settings | Support email** is set._
 
@@ -87,9 +87,13 @@ At least for now, add the following to **worker.pug** and **index.pug**. They sh
 
 ## Service Account
 
-Go to the project overview for your project and select the Settings (gear) icon. Select **Project Settings | Service Accounts |  Service Accounts from Google Cloud Platform**. Click the actions (hamburger) icon for the third item, the firebase-admsdk and create a key. It will be downloaded to your system as a JSON file. Create an environment variable that points at it. The exact code will differ on your system, but it might look a bit like this:
+Go to the project overview for your project and select the Settings (gear) icon. Select **Project Settings | Service Accounts |  Service Accounts from Google Cloud Platform**. Click the actions (hamburger) icon for the third item, the firebase-admsdk and create a key. It will be downloaded to your system as a JSON file. Put it in the root of your repository.
 
-    export GOOGLE_APPLICATION_CREDENTIALS="/home/bcuser/Source/isit322-lastname-2043dasdfae323.json"
+**NOTE**: _Our repositories should be private. It would be an error to publish this key to a public repository and Google will probably find the problem and write you an email about it._
+
+Create an environment variable that points at it. The exact code will differ on your system, but it might look a bit like this:
+
+    export GOOGLE_APPLICATION_CREDENTIALS="/home/bcuser/Git/prog272-lastname-2019/prog272-lastname-2043dasdfae323.json"
 
 I've put the above line of code near the bottom of my **.bashrc** so that it always gets loaded when I open a new shell. The first time you do it, if you already have one or more bash shells open, then you need to either past the code into each open bash shall and press enter, or else run this command:
 
