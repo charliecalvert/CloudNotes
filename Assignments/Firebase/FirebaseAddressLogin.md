@@ -181,6 +181,25 @@ function verifyToken(token) {
 module.exports=verifyToken;
 ```
 
+Here is the code that uses VerifyToken that would go, for instance in the **/address-list** route from **functions/index.js**:
+
+```javascript
+verifyToken(req.query.token)
+    .then(() => {
+        readFile(__dirname + '/address-list.json')
+            .then(json => {
+                console.log('THE JSON IN /address-list', json);
+                res.send(JSON.parse(json.result));
+            })
+            .catch(ex => {
+                res.send({ result: 'error', error: ex });
+            });
+    })
+    .catch(err => {
+        console.log('COULD NOT VERIFY TOKEN');
+        res.send({ result: 'not logged in to Firebase', error: err });
+    });
+```        
 We use **verify.js** on the server side. We call **verifyToken** to confirm that a particular token sent from the client is associated with a valid user. Note that **verifyToken** is a promise that returns a **decodedToken** with information about the user.
 
 **NOTE**: _There is a very similar file, called **verify-db.js** that uses the init method return an instance of the firestore database. Use this module if you are not using fireStore, use **verify-db.js** if you do use a database. Since this assignment does not use the database we don't need verify-db.js._

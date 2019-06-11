@@ -145,31 +145,27 @@ queryServerLogin = event => {
 
 Install firebase-admin: **npm i firebase-admin**.
 
-Save this on the server side in the **routes** directory as **verify.js**:
+Save this on the server side in the **routes** directory as **verify-db.js**:
 
 ```javascript
-const admin = require('firebase-admin');
+var admin = require('firebase-admin');
 
 let loggedIn = false;
 
 //'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
 function init() {
-    // var serviceAccount = require(process.env.HOME + "/Source/prog270-calvert-firebase-adminsdk-2p1h1-0a73c9115c.json");
     loggedIn = true;
-    console.log(
-        'INITIALIZE FIREBASE ADMIN',
-        admin.initializeApp({
-            // credential: admin.credential.cert(serviceAccount),
-            credential: admin.credential.applicationDefault(),
-            databaseURL: 'https://YOUR_INFO_HERE.firebaseio.com'
-        })
-    );
+    const firebaseApp = admin.initializeApp({
+        credential: admin.credential.applicationDefault(),
+    });
+    console.log('INITIALIZE FIREBASE ADMIN', firebaseApp);
+    return admin.firestore();
 }
 
-function verifyToken(token) {
+function verifyToken(token, url) {
     return new Promise(function(resolve, reject) {
         if (!loggedIn) {
-            init();
+            init(url);
         }
         admin
             .auth()
@@ -186,7 +182,8 @@ function verifyToken(token) {
     });
 }
 
-module.exports=verifyToken;
+module.exports.verifyToken=verifyToken;
+module.exports.init=init;
 ```
 
 ## Test
