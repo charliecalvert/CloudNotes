@@ -186,6 +186,19 @@ module.exports.verifyToken=verifyToken;
 module.exports.init=init;
 ```
 
+You would use **verifyToken** a bit like this inside of an endpoint (Route) in **server/routes**:
+
+```javascript
+verifyToken(token)
+    .then(() => {
+        // YOUR CODE HERE. USUALLY response.send(...)
+    })
+    .catch(err => {
+        console.log('COULD NOT VERIFY TOKEN');
+        response.send({ result: 'not logged in to Firebase', error: err });
+    });
+```        
+
 ## Test
 
 If you are on your local machine or VM like Pristine Lubuntu, you can preview before you deploy by issuing this command:
