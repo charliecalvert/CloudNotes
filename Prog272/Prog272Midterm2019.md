@@ -401,5 +401,8 @@ Be sure your menu includes, and your app can display:
 - All my Sanity tests must pass
 - You must write at least 10 tests that pass.
 
+Make sure you do not alter the tests I gave you. When you create your tests, please place them in their own files. You could, for instance, call them LastName.MidtermFiles.test.js or something along those lines, where LastName is your last name. Thanks.
+
+
 [fs]: https://nodejs.org/api/fs.html
 [ls]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Local_storage
