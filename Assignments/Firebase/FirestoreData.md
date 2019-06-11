@@ -2,7 +2,7 @@
 
 Learn to use Firebase Cloud Firestore.
 
-Somewhere over the last year or two Firebase created a new NoSQL database called [Firestore][cfs]. The older database, the Realtime Databse, is still available, but Google is moving developers toward Cloud Firestore. The two databases are very similar, and I think the primary reasons for creating Firestore involved technical issues such as performance and scaling rather than architectual issues. Nevertheless, the two databases are different, and use a similar, but distinct syntax.
+Firebase has a new NoSQL database called [Firestore][cfs]. The older database, the [Realtime Database][rtdb], is still available, but Google is moving developers toward Cloud Firestore. The two databases are very similar, and I think the primary reasons for creating Firestore involved technical issues such as performance and scaling rather than architectural issues. Nevertheless, the [two databases are different][dbcomp], and use a similar, but distinct syntax.
 
 **NOTE**: _Here is a [Firebase video introducing Firestore][fsv] that you might find useful._
 
@@ -12,10 +12,58 @@ If you have not done so already, you should begin by going to your project and e
 
     firebase init firestore
 
-    
+## Verify
+
+A key step in securing your app is to verify the user token passed to you from client. The following module does this. Note that the **init** method also returns an instance of the **firestore** database (db). Save this file as **verify-db.js**
+
+```javascript
+var admin = require('firebase-admin');
+
+let loggedIn = false;
+
+//'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
+function init() {
+    loggedIn = true;
+    const firebaseApp = admin.initializeApp({
+        credential: admin.credential.applicationDefault(),
+    });
+    console.log('INITIALIZE FIREBASE ADMIN', firebaseApp);
+    return admin.firestore();
+}
+
+function verifyToken(token) {
+    return new Promise(function(resolve, reject) {
+        if (!loggedIn) {
+            init();
+        }
+        admin
+            .auth()
+            .verifyIdToken(token)
+            .then(function(decodedToken) {
+                console.log('UID', JSON.stringify(decodedToken, null, 4));
+                console.log('MAIN SERVER QUX YOU RANG CALLED');
+                resolve(decodedToken);
+            })
+            .catch(function(error) {
+                console.log(error);
+                reject(error);
+            });
+    });
+}
+
+module.exports.init=init;
+module.exports.verifyToken=verifyToken;
+```
+
+This module returns two functions.
+
+- **init**: _Initialize your application and return an instance of the Firestore database._
+- **verifyToken**: _Confirm that a particular token sent from the client represents a valid user. This is a promise that returns a decodedToken with information about the user._
+
+This module is very similar to the **verify.js** module we saw earlier, only the **init** method can be used to retrieve an instance of the **Firestore** database.
+
 
 ## Database
-
 
 
 ```javascript
@@ -34,12 +82,6 @@ function init() {
     loggedIn = true;
     console.log(
         'INITIALIZE FIREBASE ADMIN',
-        admin.initializeApp({
-            //credential: admin.credential.applicationDefault(),
-            //databaseURL: 'https://isit322-calvert.firebaseio.com',
-            apiKey: 'AIzaSyDJzLPQCzPCBzpzuDEoZndURhPsImJ9uws',
-            authDomain: 'isit322-calvert.firebaseapp.com',
-            projectId: 'isit322-calvert'
         })
     );
 }
@@ -128,3 +170,5 @@ module.exports = router;
 
 [cfs]: https://firebase.google.com/docs/firestore
 [vsv]: https://twitter.com/charliecalvert/status/1136640253639323653?s=20
+[rtdb]: https://firebase.google.com/docs/database
+[dbcomp]: https://firebase.google.com/docs/database/rtdb-vs-firestore
