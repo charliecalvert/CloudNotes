@@ -71,8 +71,6 @@ The subject of signing in and databases are frequently linked, as often you want
 
 Near the top of **control.js**:
 
-    import React from 'react';
-    import ReactDOM from 'react-dom';
     import {FirebaseLogin} from './FirebaseLogin';
     import { initApp } from "./elf-firebase";    
 
@@ -85,7 +83,6 @@ const doRender = () => {
 };
 
 window.onload = function () {
-    ReactDOM.render(<ElfApp/>, document.getElementById('root'));
     initApp(() => {
         if (window.firebase.auth().currentUser) {
             loadAddress()
