@@ -153,6 +153,16 @@ We use **verify.js** on the server side. We call **verifyToken** to confirm that
 
 **NOTE**: _There is a very similar file, called **verify-db.js** that uses the init method return an instance of the firestore database. Use this module if you are not using fireStore, use **verify-db.js** if you do use a database. Since this assignment does not use the database we don't need verify-db.js._
 
+It is possible, and sometimes useful, to use this code in **initializeApp**. This way you don't need to wrestle with the Service File:
+
+```javascript
+admin.initializeApp({
+    apiKey: 'YOUR API KEY HERE',
+    authDomain: 'YOUR AUTH DOMAIN',
+    projectId: 'YOUR PROJECT ID'
+})
+```
+
 ## Client Side Code to Verify {#code-to-verify}
 
 Use this code in **App.js** (isit322) or **loadAddress.js** (prog272). Note that you may need to write **const getFirebaseToken** or simply **getFirebaseToken** depending on whether or not it is method of a React class:

@@ -14,46 +14,9 @@ If you have not done so already, you should begin by going to your project and e
 
 ## Verify
 
-A key step in securing your app is to verify the user token passed to you from client. The following module does this. Note that the **init** method also returns an instance of the **firestore** database (db). Save this file as **verify-db.js**
+A key step in securing your app is to verify the user token passed to you from client. The **verify-db.js** module does this. Note that the **init** method also returns an instance of the **firestore** database (db). Save this file as **verify-db.js**
 
-```javascript
-var admin = require('firebase-admin');
-
-let loggedIn = false;
-
-//'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
-function init() {
-    loggedIn = true;
-    const firebaseApp = admin.initializeApp({
-        credential: admin.credential.applicationDefault(),
-    });
-    console.log('INITIALIZE FIREBASE ADMIN', firebaseApp);
-    return admin.firestore();
-}
-
-function verifyToken(token) {
-    return new Promise(function(resolve, reject) {
-        if (!loggedIn) {
-            init();
-        }
-        admin
-            .auth()
-            .verifyIdToken(token)
-            .then(function(decodedToken) {
-                console.log('UID', JSON.stringify(decodedToken, null, 4));
-                console.log('MAIN SERVER QUX YOU RANG CALLED');
-                resolve(decodedToken);
-            })
-            .catch(function(error) {
-                console.log(error);
-                reject(error);
-            });
-    });
-}
-
-module.exports.init=init;
-module.exports.verifyToken=verifyToken;
-```
+Rather than quote **verify-db.js** here. I will maintain it in JsObjects. You can find it [here][vdb].
 
 This module returns two functions.
 
@@ -62,113 +25,84 @@ This module returns two functions.
 
 This module is very similar to the **verify.js** module we saw earlier, only the **init** method can be used to retrieve an instance of the **Firestore** database.
 
+It is possible, and sometimes useful, to use this code in **initializeApp**. This way you don't need to wrestle with the Service File:
+
+```javascript
+admin.initializeApp({
+    apiKey: 'YOUR API KEY HERE',
+    authDomain: 'YOUR AUTH DOMAIN',
+    projectId: 'YOUR PROJECT ID'
+})
+```
 
 ## Database
 
+Here is simple code for reading and writing some of the data we get back when decode a Firebase user token sent from the client. Recall that **verifyToken** supplies us with this **decodedToken**.
 
 ```javascript
-
-var express = require('express');
-var router = express.Router();
-const firebase = require("firebase");
-const admin = require('firebase-admin');
-require("firebase/firestore");
-
-let loggedIn = false;
-
-//'firebase-adminsdk-2p1h1@prog270-calvert.iam.gserviceaccount.com';
-function init() {
-    // var serviceAccount = require(process.env.HOME + "/Source/prog270-calvert-firebase-adminsdk-2p1h1-0a73c9115c.json");
-    loggedIn = true;
-    console.log(
-        'INITIALIZE FIREBASE ADMIN',
-        })
-    );
-}
-
-init();
-
-const db = admin.firestore();
-
-function verifyToken(token) {
+const writeData = (user, db) => {
     return new Promise(function (resolve, reject) {
-
-        if (!loggedIn) {
-            init();
-        }
-
-        admin
-            .auth()
-            .verifyIdToken(token)
-            .then(function (decodedToken) {
-                console.log('UID', JSON.stringify(decodedToken, null, 4));
-                console.log('MAIN SERVER QUX YOU RANG CALLED');
-                resolve(decodedToken);
+        db.collection("user").doc(user.uid).set({
+            name: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL
+        })
+            .then(function (dbData) {
+                resolve({'result': 'success'});
             })
             .catch(function (error) {
-                console.log(error);
-                reject(error);
+                reject({"error: ": error, text: 'error writing document'});
             });
     });
-}
-
-//module.exports = verifyToken;
-
-const writeData = (user, response) => {
-    const message = {
-        result: 'success',
-        status: 'bar',
-        file: 'test-routes.js',
-        server: 'main-server'
-    };
-    console.log('Foo called:\n' + JSON.stringify(message, null, 4));
-
-    db.collection("user").doc(user.uid).set({
-        name: user.displayName,
-        email: user.email,
-        photoUrl: user.photoURL
-    })
-        .then(function (dbData) {
-            response.send({'result': 'success', dbData: dbData, ...message});
-            console.log("Document successfully written!");
-        })
-        .catch(function (error) {
-            console.error("Error writing document: ", error);
-        });
 };
 
+const readData = (docName) => {
+    return new Promise(function (resolve, reject) {
+        var docRef = db.collection("user").doc(docName);
 
-/* Set up a route called foo. */
-router.get('/foo', function (request, response) {
-    console.log("FOO CALLED", request.query.token);
-    verifyToken(request.query.token)
-        .then((decodedToken) => {
-
-            const user = admin.auth().getUser(decodedToken.user_id)
-                .then(user => {
-                    console.log("USERDATA", JSON.stringify(user, null, 4));
-                    writeData(user, response);
-                    //response.send({user: user});
-                })
-                .catch(ex => {
-                    response.send(ex);
-                })
-
-            //writeData();
-
-        })
-        .catch(ex => {
-            console.log(ex);
-            response.send(ex);
-        })
-});
-
-module.exports = router;
-
+        docRef.get()
+            .then(function (doc) {
+                if (doc.exists) {
+                    resolve({"documentData": doc.data()});
+                } else {
+                    resolve({documentData: "No such document!"});
+                }
+            })
+            .catch(function (error) {
+                reject({error: error});
+            });
+    });
+};
 ```
 
+Here is some test data that you can use when working with this function:
+
+```javascript
+const userData = {
+    uid: 'TempRecord',
+    displayName: 'Temp DisplayName',
+    email: 'qux@bar.com',
+    photoURL: 'https://qux.net/photo.png'
+};
+```
+
+See the [ElfExpressFirestore][eef] in JsObjects for more information.
+
+## Turn it in
+
+If you are in Prog272:
+
+- Update **AddressMaven** and **FirebaseAddressMaven** to write user data to the database.
+- We are also going to need to write and read **AddressList** to the database.
+
+If you are in Isit322:
+
+- Update **GitExplorer** and **week09-FirebaseStarter** to read and write user data to the database.
+- Write a list of your user's Gists and Repos to the database. Include at least the URL for the Gist or Repo.
 
 [cfs]: https://firebase.google.com/docs/firestore
 [vsv]: https://twitter.com/charliecalvert/status/1136640253639323653?s=20
 [rtdb]: https://firebase.google.com/docs/database
 [dbcomp]: https://firebase.google.com/docs/database/rtdb-vs-firestore
+[vdb]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Firebase/ElfExpressFirestore/routes/verify-db.js
+[eef]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestore
