@@ -67,13 +67,48 @@ If you get stuck, or want to know more, go to this page:
 
 The subject of signing in and databases are frequently linked, as often you want to authenticate a user before giving them access to a database. We will approach the whole subject of databases in [FirebaseData.html][fbd] or some similar assignment.
 
+## Integrate elf-firebase
+
+Near the top of **control.js**:
+
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import {FirebaseLogin} from './FirebaseLogin';
+    import { initApp } from "./elf-firebase";    
+
+In the **window.load** part of **control.js** paste in this code from ElfExpressSignIn:
+
+```JavaScript
+const doRender = () => {
+    const selectors = document.querySelectorAll('.__react-root');
+    selectors.forEach(renderAppInElement);
+};
+
+window.onload = function () {
+    ReactDOM.render(<ElfApp/>, document.getElementById('root'));
+    initApp(() => {
+        if (window.firebase.auth().currentUser) {
+            loadAddress()
+                .then(result => {
+                    console.log('LOAD STATUS', result.status);
+                    doRender();
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        } else {
+            doRender();
+        }
+    });
+};
+```
+
 ## Load Firebase
 
 In layout.pug:
 
     script(src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js")
     script(src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js")
-    script(src="elf-firebase.js")
 
 ## Pug Files
 
