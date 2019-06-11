@@ -12,6 +12,10 @@ If you have not done so already, you should begin by going to your project and e
 
     firebase init firestore
 
+Here are my rules for firestore:
+
+    allow read, write: if request.auth.uid == request.resource.data.author_uid    
+
 ## Verify
 
 A key step in securing your app is to verify the user token passed to you from client. The **verify-db.js** module does this. Note that the **init** method also returns an instance of the **firestore** database (db). Save this file as **verify-db.js**

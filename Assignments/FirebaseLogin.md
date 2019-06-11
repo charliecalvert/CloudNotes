@@ -171,8 +171,7 @@ function verifyToken(token, url) {
             .auth()
             .verifyIdToken(token)
             .then(function(decodedToken) {
-                console.log('UID', JSON.stringify(decodedToken, null, 4));
-                console.log('MAIN SERVER QUX YOU RANG CALLED');
+                console.log('UID', JSON.stringify(decodedToken, null, 4));                
                 resolve(decodedToken);
             })
             .catch(function(error) {
