@@ -9,6 +9,14 @@ There are two parts to the assignment:
 - Learn to log in
 - Learn to run certain functions only when the user is logged in.
 
+## Permissions
+
+I need to have permissions to run your projects with **firebase serve**.  Here is the page that explains the simple steps to add me as an **Editor:**
+
+- [https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
+
+Please add the same address you use to contact me on hangouts and make me an **Editor** on your project.
+
 ## Resources
 
 Use the **ElfExpressSignIn** sample program as a guide when working through this assignment:

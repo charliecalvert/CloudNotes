@@ -11,6 +11,14 @@ The goal of this assignment is to:
 
 **NOTE**: _The web interface for a product like Firebase changes in small (and sometimes big) ways at various times without notice. As a result, there may be changes to the way things are set up here._
 
+## Permissions
+
+I need to have permissions to run your projects with **firebase serve**.  Here is the page that explains the simple steps to add me as an **Editor:**
+
+- [https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
+
+Please add the same address you use to contact me on hangouts and make me an **Editor** on your project.
+
 ## Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O17OWyx08Cg" frameborder="0" allowfullscreen></iframe>
