@@ -9,7 +9,7 @@ Our goal will be to:
 - Insert an **elven-count** key set to the number of records in storage.
 - Insert an **elven-store** key that we can use to check if data has been inserted.
   - If the key is not set, then there is no data for us in Local Storage.
-- Load Data from Local Storage once a Component such as **ShowAddress** is mounted
+- Load Data from Local Storage once a Component such as **AddressShow** is mounted
 
 ## Get Started {#get-started}
 
@@ -19,7 +19,20 @@ Do your work in your current version of the Address Program. This might be:
 - AddressMaven
 - Other
 
-Your goal will be to insert the data into **Local Storage** in **control.js**. Then use one of your components to display the address data to the user. In most cases, this will mean creating a React called **ShowAddress** if you have not done so already. Add two buttons named **Next** and **Prev** to it which increment and decrement a state variable called index. When the user clicks either buttons, reach into localStorage, find the record at that particular index, and display it to the user.
+Your goal will be to insert the data into **Local Storage** in **control.js**. Then use one of your components to display the address data to the user. In most cases, this will mean creating a React called **AddressShow** if you have not done so already. Add two buttons named **Next** and **Prev** to it which increment and decrement a state variable called index. When the user clicks either buttons, reach into **localStorage**, find the record at that particular index, and display it to the user.
+
+## AddressShow Key Features {#address-show-key-features}
+
+You probably won't be able to implement all of this quite yet. Nevertheless, here is a list of key features of **AddressShow** that you will want to implement over time:
+
+- Use **withStyles** and **PropTypes**
+- Ultimately you will want this component to follow the **material-ui** guidelines that will be laid out in other assignments such as [MaterialEverywhere][me]. In other words, it should have the same look and feel as the other React components. Use **CssBaseline**, **Grids** and **Paper** to achieve this goal.
+- import **elf-styles**
+- Maintain state for at least the single value **index**. We are working with data stored in **localStorage** and will be able to access each record in local storage by index. "Get me the first record, get me the fifth record, etc." We use **this.state.index** to locate records in localStorage.
+- Include two buttons that can be used to increment and decrement the **index**.
+- Use our **getByIndex** function from **elf-local-storage** to retrieve a record at a particular **index** from local storage.
+
+Use this list as a guide to help you properly implement **AddressShow** in this and future assignments.
 
 ## Video
 
@@ -155,9 +168,6 @@ Since the above could get out of date, I will try to maintain it here:
 
 - [Elf Local Storage][elf-local-storage]
 
-[elf-local-storage]: https://gist.github.com/charliecalvert/d8404b826ee22702c501368335624622
-
-
 ## Named Exports
 
 Please note that we don't use **export default** in the **elf-local-storage** module. Instead, we declare a set of functions such as **saveByIndex** and **getByIndex** and we export them explicitly by name:
@@ -279,7 +289,7 @@ You should also wrap the call to **setLocalStorage** in an **if** clause that us
 
 ## View Data {#summary}
 
-Review the instructions in the [Get Started](#get-started) section on displaying data to the user.  In a display component such as **ShowAddress**, we call **getByIndex** to retrieve a single record. For instance, assuming you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
+Review the instructions in the [Get Started](#get-started) section on displaying data to the user.  In a display component such as **AddressShow**, we call **getByIndex** to retrieve a single record. For instance, assuming you are tracking the record we want to display to the user by maintaining an index, we might write code like this:
 
 ```JavaScript
 import { getByIndex, getCount } from './elf-local-storage';
@@ -336,4 +346,7 @@ Tell me the:
 - [Dexie is nother front end for IndexedDB](http://dexie.org/)
 - [Dexie on GidHub shows modest popularity](https://github.com/dfahlander/Dexie.js)
 - [ZangoDb is not very popular](https://github.com/erikolson186/zangodb)
-- [dls]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/EcmaScript6/SimpleLocalStorage
+
+[dls]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/EcmaScript6/SimpleLocalStorage
+[me]: https://www.elvenware.com/teach/assignments/react/MaterialEverywhere.html
+[elf-local-storage]: https://gist.github.com/charliecalvert/d8404b826ee22702c501368335624622
