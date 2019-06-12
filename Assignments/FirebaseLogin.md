@@ -11,6 +11,12 @@ There are two parts to the assignment:
 
 ## Resources
 
+Use the **ElfExpressSignIn** sample program as a guide when working through this assignment:
+
+    cd $JSOBJECTS/JavaScript/Firebase/ElfExpressSignIn
+
+It strips out everything from an Express app except the features needed to sign-in with Firebase     
+
 This video is by Firebase, and provides an high level overview of the authentication technology:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8sGY55yxicA" frameborder="0" allowfullscreen></iframe>
