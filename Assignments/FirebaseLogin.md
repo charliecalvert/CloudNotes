@@ -89,11 +89,31 @@ Put this in **public/index.html**:
 
 ## Service Account
 
-Go to the project overview for your project and select the Settings (gear) icon. Select **Project Settings | Service Accounts | X Service Accounts from Google Cloud Platform**. Click the actions (hamburger) icon for the third item, the firebase-admsdk and create a key. It will be downloaded to your system as a JSON file. Create an environment variable that points at it:
+Go to the project overview for your project and select the Settings (gear) icon. Select **Project Settings | Service Accounts | X Service Accounts from Google Cloud Platform**. Click the actions (hamburger) icon for the third item, the firebase-admsdk and create a key. It will be downloaded to your system as a JSON file.
+
+**NOTE**: _Our repositories should be private. It would be an error to publish this key to a public repository and Google will probably find the problem and write you an email about it._
+
+Create an environment variable that points at it:
 
     export GOOGLE_APPLICATION_CREDENTIALS="/home/charlie/Source/isit322-calvert-20495df644c3.json"
 
-I've put the export in my **.bashrc** so that it always gets loaded. I would need it to **serve** your app locally, but I don't need to see your code running remotely.
+I've put the above line of code near the bottom of my **.bashrc** so that it always gets loaded when I open a new shell. The first time you do it, if you already have one or more bash shells open, then you need to either past the code into each open bash shall and press enter, or else run this command in each open bash shell:
+
+```nohighlighting
+source ~/.bashrc
+```
+
+I would need it to **serve** your app locally, but I don't need to see your code running remotely.
+
+Here is how I check that all is set up correctly:
+
+    cat $GOOGLE_APPLICATION_CREDENTIALS
+
+If that prints out the contents of our credentials file that we downloaded, then all is good. If it tells us that it can't find our file (No such file or directory) then that means we are not specifying the right path to our file. The mistake is usually in **~/.bashrc**. If it returns nothing or appears to hang, then we probably don't have the statement in a **~/.bashrc** and need to put it there or else we need to run **source ~/.bashrc**. (If the command seems to hang, then break out of it **Ctrl-C**.)
+
+This command can also help you troubleshoot:
+
+    echo $GOOGLE_APPLICATION_CREDENTIALS
 
 ## Code to Verify
 

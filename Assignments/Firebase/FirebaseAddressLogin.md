@@ -127,11 +127,21 @@ Create an environment variable that points at it. The exact code will differ on 
 
     export GOOGLE_APPLICATION_CREDENTIALS="/home/bcuser/Git/prog272-lastname-2019/prog272-lastname-2043dasdfae323.json"
 
-I've put the above line of code near the bottom of my **.bashrc** so that it always gets loaded when I open a new shell. The first time you do it, if you already have one or more bash shells open, then you need to either past the code into each open bash shall and press enter, or else run this command:
+I've put the above line of code near the bottom of my **.bashrc** so that it always gets loaded when I open a new shell. The first time you do it, if you already have one or more bash shells open, then you need to either past the code into each open bash shall and press enter, or else run this command in each open bash shell:
 
 ```nohighlighting
 source ~/.bashrc
 ```
+
+Here is how I check that all is set up correctly:
+
+    cat $GOOGLE_APPLICATION_CREDENTIALS
+
+If that prints out the contents of our credentials file that we downloaded, then all is good. If it tells us that it can't find our file (No such file or directory) then that means we are not specifying the right path to our file. The mistake is usually in **~/.bashrc**. If it returns nothing or appears to hang, then we probably don't have the statement in a **~/.bashrc** and need to put it there or else we need to run **source ~/.bashrc**. (If the command seems to hang, then break out of it **Ctrl-C**.)
+
+This command can also help you troubleshoot:
+
+    echo $GOOGLE_APPLICATION_CREDENTIALS
 
 ## Server Side
 

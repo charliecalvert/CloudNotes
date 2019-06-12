@@ -6,6 +6,14 @@ Firebase has a new NoSQL database called [Firestore][cfs]. The older database, t
 
 **NOTE**: _Here is a [Firebase video introducing Firestore][fsv] that you might find useful._
 
+## Permissions
+
+I need to have permissions to run your projects with **firebase serve**.  Here is the page that explains the simple steps to add me as an **Editor:**
+
+- [https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
+
+Please add the same address you use to contact me on hangouts and make me an **Editor** on your project.
+
 ## Get Started
 
 If you have not done so already, you should begin by going to your project and ensuring that Firestore is installed:
@@ -103,6 +111,7 @@ If you are in Isit322:
 
 - Update **GitExplorer** and **week09-FirebaseStarter** to read and write user data to the database.
 - Write a list of your user's Gists and Repos to the database. Include at least the URL for the Gist or Repo.
+
 
 [cfs]: https://firebase.google.com/docs/firestore
 [vsv]: https://twitter.com/charliecalvert/status/1136640253639323653?s=20
