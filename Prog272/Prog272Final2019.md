@@ -46,6 +46,26 @@ Another key set of steps:
 
 These last set of steps don't have to be flawless. In other words, I don't expect you to check every possible path through the menu and ensure that they all work regardless of whether you are signed in, and regardless of whether or not there is data in the **address** collection. But the steps outlined above should work.
 
+We should get this in a very clunk implementation for free, but I'm expecting to see some indicator of whether you are signed in or not. I don't care how it looks, but it is helpful to the user.
+
+## Extra Credit
+
+One little nicety you'll want to implement is handling the case where **AddressShow** is called and there is no data to display. This might happen if the user is not logged in. There are various solutions to this problem and some are dependent on the way you implemented **AddressShow**. In my case I was able to resolve the problem by creating a fake record that can be shown to the user. Perhaps it might look a bit like this:
+
+```javascript
+if (!address) {
+    address = {
+        firstName: 'unknown',
+        lastName: 'unknown',
+        etc.
+    }
+}
+```
+
+But this solution might not work for all possible implementations of AddressShow. (I don't think there is necessarily a correct or even best implementation. So if they above doesn't work for you, then find one that will work for your implementation. I can't reasonably be expected to anticipate all possible solutions, so I can't provide hints for everyone...)
+
+I believe you will need to do something similar for the **FirebaseLogout/FirebaseLogin** page. (I suggest renaming the page I called **FirebaseLogin.js** to **FirebaseLogout.js** just because it is a much more appropriate name. But be wary, as making that change requires that you make changes in several places in your application. These places aren't hard to find, as errors pop up pretty quickly, still I would push before making the change so that you find it easy to undo you changes if it doesn't work out for you.)
+
 ## Firebase Address Maven
 
 I'm looking for all the same features as in **AddressMaven**, but I should be able to start the app with **firebase serve** and view it online because you have run **firebase deploy** and ensured that your code works.
