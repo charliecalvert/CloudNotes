@@ -59,6 +59,18 @@ Make sure that **go** is executable:
 
 Be sure to push your work.
 
+## Database
+
+Add a second button to your **Go** page. When the user selects the button, call a route on the server called **/write-to-db**. On the server, in the **/write-to-db** endpoint, read the data from **address-list.json** and write it to the database.
+
+The address data should be written to a collection called 'address'. Each document in the collection should contain data for one politician. The name of the document should be **lastname-firstname**. For instance: **Alexander_Lamar**.
+
+Create another server side route called **/address-list-db**. It should do the same thing as **/address-list**, but it should return data from the database, not from **address-list.json**.
+
+**NOTE**: _Some of you called the server side route **/get-address-list** rather than **/address-list**. The point is not what it was called, but what it did._
+
+Base your code for reading and writing to the database on the code in the **ElfExpressFirestore** example. Note that I have added code for reading and writing batch data and snapshots. See **batch.js** in the example.
+
 ## Turn it in
 
 Be sure to include the Firebase Hosting address to which you have deployed your Firebase app.

@@ -41,6 +41,60 @@ Make sure that **go** is executable:
 
 Be sure to push your work.
 
+## Database
+
+Implement the following:
+
+- Calling user **/you-rang** writes the current user to the database:
+  - collection name: user
+  - document name: uid
+  - fields:
+    - email, name, picture
+
+- Add a button to your get-gists page labelled **Write Gists**. Selecting it writes your gists to the database:
+  - **collection name**: gists
+  - **document name**: gist.id
+  - **content**: write the whole record that you get back from GitHub
+  - **User Data**: add the logged in **user_id** and logged in user **name**
+    - Get these from the server side **decodedToken** and call them **logged_in_user_id**, and **logged_in_user_name**.
+
+![Gist Data](https://s3.amazonaws.com/bucket01.elvenware.com/images/isit322-final-2019-gist-data.png)
+
+**IMAGE**: _Note that we can see the **logged_in_user_id** and **logged_in_user_name** fields that we added to the data we pushed to the database. The rest of the fields are part of the record sent to us from GitHub. There are many more fields than I have room to show in this image._
+
+The point here is that we are writing a mixture of data to the database. Most of the data comes from GitHub, but we added two fields that reference not the GitHub data, but the logged in user.
+
+Remember that it is easy to add data to an existing object:
+
+```javascript
+const foo = { foo: 'foo' };
+foo.logged_in_user_id = '...'
+```
+
+Because you have made me an **Editor** on your project, I can see whether or not data got written to the database. In other words, I can see the Firebase console for your project. (Not all your projects, just the one that you shared with me.)
+
+## Batched Writes
+
+I ended up using something called **batched writes** to push multiple gists to the database in one operation. I don't insist that you do it this way, and docs don't claim it is faster than doing them individually. However, the code seemed more intuitive to me than looping through a series of write operations.
+
+The details are [here][bw]. My code is similar to the example they provide, but of course I had no need to do updates or deletes.
+
+When calling **batch.set** I used **forEach** to iterate through the array of data sent by GitHub. I wasn't sure that **for..of** would be available on the Firebase servers because they have an older version of Node.
+
+Base your code for reading and writing to the database on the code in the **ElfExpressFirestore** example. Note that I have added code for reading and writing batch data and snapshots. See **batch.js** in the example.
+
+## Extra Credit
+
+Create a new page in your app. Allow the user to click a button to retrieve a few fields from each Gist that you added to your **gists** collection. Add two buttons to allow the user to iterate through the data.
+
+You can show as many fields as you want, but be sure to include:
+
+- logged_in_user_id
+- logged_in_user_name
+- url (make it clickable. Or do we want **html_url**?)
+- description
+- filename for the first of the files (You will probably have only one file in your gist)
+
 ## Turn it in
 
 Be sure to include the Firebase Hosting address to which you have deployed your Firebase app.
@@ -54,3 +108,5 @@ State the names of directories where you deployed your code. I'm expecting to se
 Before your final push run **./prettier** and **eslint .** and make sure they come back clean.
 
 After your final push tag your work and give me the tag.
+
+[bw]: https://firebase.google.com/docs/firestore/manage-data/transactions#batched-writes

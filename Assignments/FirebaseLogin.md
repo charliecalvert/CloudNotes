@@ -89,6 +89,32 @@ If you get stuck, or want to know more, go to this page:
 
 The Database code does not work very well and can mostly be ignored. We will approach the whole subject in more detail in [FirebaseData.html][fbd] or some similar assignment. However, you can get a few things to work if you enable **Database** in the console. Just click through the wizard. At the top of the Database page, for now, switch to the **Realtime Database**. The code we are using in this example does not work with **Cloud Firestore.**
 
+## Expect HTML Elements
+
+At the bottom of **client/public/index.html** I put this, as it is wanted by **elf-firebase.js**
+
+```html
+<div id="firebaseui-auth-container"></div>
+<div style="display: none" id="sign-in-status"></div>
+<div id="sign-in"></div>
+<!-- button id="sign-out" onclick="signOut()">Sign Out</button -->
+<pre id="account-details"></pre>
+<!-- End Firebase Sign-in and Sign-out  for BODY tag -->
+```
+
+Here is the section in **elf-firebase.js** that uses this code:
+
+```javascript
+document.getElementById('sign-in-status').textContent = 'Signed in';
+document.getElementById('sign-in').textContent = '';
+// CODE OMITTED HERE
+document.getElementById('sign-in-status').textContent = 'Signed out';
+document.getElementById('sign-in').textContent = '';
+document.getElementById('account-details').textContent = '';
+```
+
+This last bit is just an FYI, you don't need to do anything with it.
+
 ## Load Firebase
 
 Put this in **public/index.html**:
