@@ -18,8 +18,7 @@ I'll do something like this:
 
 1. Look to see if you told me what folder you want me to look at.
   1. It should be **AddressMaven** and **FirebaseAddressMaven**
-
-## Address Maven
+1. Ensure that you supply a link to your deployed version of **FirebaseAddressMaven**.
 
 Here are some of the key steps I'll take when grading your assignment.
 
@@ -37,9 +36,21 @@ Here are some of the key steps I'll take when grading your assignment.
 4. After logging in, the user should be able to iterate through data in **AddressShow**
 5. Run your tests, and have **prettier** and **eslint** come back clean
 
+Another key set of steps:
+
+1. Clear **localStorage** and clear the **address** collection in the Firebase Console
+2. Login
+3. Navigate to the Go page and populate the **address** collection
+4. Reload the app, perhaps by going to the home page. This should pull from **address** and populate **localStorage**
+5. Test **AddressShow**
+
+These last set of steps don't have to be flawless. In other words, I don't expect you to check every possible path through the menu and ensure that they all work regardless of whether you are signed in, and regardless of whether or not there is data in the **address** collection. But the steps outlined above should work.
+
 ## Firebase Address Maven
 
-I'm looking for all the same features as in **AddressMaven**, but I should be able to start the app with **firebase serve** and start it with **firebase deploy**.
+I'm looking for all the same features as in **AddressMaven**, but I should be able to start the app with **firebase serve** and view it online because you have run **firebase deploy** and ensured that your code works.
+
+
 
 ## Port 30025
 
