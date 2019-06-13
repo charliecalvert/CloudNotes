@@ -14,6 +14,7 @@ I'll also be looking at:
 - Prettier
 - Tests and coverage
 
+**NOTE**: _The **firebase-tools** were recently updated to v7.0.0. Be sure to run **ncu -g** and follow directions to install them and any other needed updates._
 
 ## Permissions
 
@@ -22,6 +23,53 @@ I need to have permissions to run your projects with **firebase serve**.  Here 
 - [https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
 
 Please add the same address you use to contact me on hangouts and make me an **Editor** on your project.
+
+## Deploying Credentials
+
+When you deploy your app to Firebase  hosting and when you give it to me for grading, we need to make a change to **verify-db.js**.
+
+The key step is to put your Service Account credentials file, the one we load with GOOGLE_APPLICATION_CREDENTIALS, in the functions directory. I believe this file always begins like this:
+
+```json
+{
+  "type": "service_account",
+  "...": "etc"
+}
+```
+
+Modify the start of **verify-db.js** to look like this:
+
+```javascript
+var admin = require('firebase-admin');
+const credentialLoad=require('./credentials');
+
+let loggedIn = false;
+
+function init() {
+    loggedIn = true;
+    if (admin.apps.length === 0) {
+        admin.initializeApp({
+            credential: admin.credential.cert(credentialLoad)            
+        });
+    }
+    return admin.firestore();
+}
+```
+
+Here I'm assuming your Service credentials file is called **credentials.json**, but I don't suppose it matters what you call it, so long as your code works.
+
+Recall that **initializeApp** used to look like this:
+
+```javascript
+admin.initializeApp({
+    credential: admin.credential.applicationDefault()
+});
+```
+
+This code assumed that **GOOGLE_APPLICATION_CREDENTIALS** pointed to your credentials file. But that is problematic for me when grading, as I don't want to set up that variable for each of your assignments, and I'm not sure how to make it work when we deploy to Firebase hosting. This should work fine so long as your code is in a private repository. If you want to make your repo public at some point, do two things:
+
+- remove the credentials file from the repository
+- regenerate the credentials file, as there is no good way to delete old copies from your repository.
 
 ## Port 30025
 

@@ -12,6 +12,55 @@ I'll also be looking at:
 - Prettier
 - Tests
 
+**NOTE**: _The firebase-tools were recently updated to v7.0.0. Be sure to run **ncu -g** and follow directions to install them and any other needed updates._
+
+## Deploying Credentials
+
+When you deploy your app to Firebase hosting and when you give it to me for grading, we need to make a change to **verify-db.js**.
+
+The key step is to put your Service Account credentials file, the one we load with GOOGLE_APPLICATION_CREDENTIALS, in the functions directory. I believe this file always begins like this:
+
+```json
+{
+  "type": "service_account",
+  "...": "etc"
+}
+```
+
+Modify the start of **verify-db.js** to look like this:
+
+```javascript
+var admin = require('firebase-admin');
+const credentialLoad=require('./credentials');
+
+let loggedIn = false;
+
+function init() {
+    loggedIn = true;
+    if (admin.apps.length === 0) {
+        admin.initializeApp({
+            credential: admin.credential.cert(credentialLoad)            
+        });
+    }
+    return admin.firestore();
+}
+```
+
+Here I'm assuming your Service credentials file is called **credentials.json**, but I don't suppose it matters what you call it, so long as your code works.
+
+Recall that **initializeApp** used to look like this:
+
+```javascript
+admin.initializeApp({
+    credential: admin.credential.applicationDefault()
+});
+```
+
+This code assumed that **GOOGLE_APPLICATION_CREDENTIALS** pointed to your credentials file. But that is problematic for me when grading, as I don't want to set up that variable for each of your assignments, and I'm not sure how to make it work when we deploy to Firebase hosting. This should work fine so long as your code is in a private repository. If you want to make your repo public at some point, do two things:
+
+- remove the credentials file from the repository
+- regenerate the credentials file, as there is no good way to delete old copies from your repository.
+
 ## Steps
 
 I'll do something like this:
@@ -64,7 +113,13 @@ if (!address) {
 
 But this solution might not work for all possible implementations of AddressShow. (I don't think there is necessarily a correct or even best implementation. So if they above doesn't work for you, then find one that will work for your implementation. I can't reasonably be expected to anticipate all possible solutions, so I can't provide hints for everyone...)
 
-I believe you will need to do something similar for the **FirebaseLogout/FirebaseLogin** page. (I suggest renaming the page I called **FirebaseLogin.js** to **FirebaseLogout.js** just because it is a much more appropriate name. But be wary, as making that change requires that you make changes in several places in your application. These places aren't hard to find, as errors pop up pretty quickly, still I would push before making the change so that you find it easy to undo you changes if it doesn't work out for you.)
+I believe you will need to do something similar for the **FirebaseLogout/FirebaseLogin** page.
+
+I suggest renaming the page I called **FirebaseLogin.js** to **FirebaseLogout.js** just because it is a much more appropriate name. But be wary, as making that change requires that you make changes in several places in your application. These places aren't hard to find, as errors pop up pretty quickly, still I would push before making the change so that you find it easy to undo you changes if it doesn't work out for you. Remember that there is even a line of code in **FirebaseLogout.js** itself that will need to be updated to the new name.
+
+If you do any of the extra credit steps, be sure to call it out when you submit the assignment. I ask this simply because it is too easy for me to overlook some steps that you have taken, or to remember to include them when I calculate your grade.
+
+I'm not really expecting anyone to do this, but implementing **AddressLister** to show all the address records at once on one page would also be worthy of extra credit.
 
 ## Firebase Address Maven
 
@@ -76,17 +131,11 @@ I'm looking for all the same features as in **AddressMaven**, but I should be ab
 
 It's easier for me for various reasons if your Firebase app starts on Port 30025 when we use **firebase serve**. The command to do that is:
 
-    firebase serve --port 30025
-
-Create a file called **go** in the root of your Firebase project. Put the following content in it:
-
-    #! /usr/bin/env bash
-
     firebase serve --port=30025
 
-Make sure that **go** is executable:
+Therefore we should modify the **start** property of our **scripts** object in the copy of **package.json** found in the root of our **FirebaseAddressMaven** project to look like this:
 
-    chmod +x go
+    "start": "npx webpack --watch & firebase serve --port=30025",
 
 Be sure to push your work.
 
