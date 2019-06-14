@@ -40,7 +40,7 @@ Run our JsObjects based **get-gist** from the root of your project. Chose **Elf 
 - **elf-firebase.js** and **elf-sign-in.html** to your public directory.
 - **FirebaseLogout.js** to your **source** directory.
 
-**NOTE**: _I recently renamed the file that was called FirebaseLogin to FirebaseLogout. It was originally badly misnamed, and hopefully this name is at least a bit better._
+**NOTE**: _I recently renamed the file that was called **FirebaseLogin.js** to **FirebaseLogout.js**. It was originally badly misnamed, and hopefully this name is at least a bit better._
 
 ## Sign-in with Google Configuration
 
