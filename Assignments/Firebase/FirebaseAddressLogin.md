@@ -261,13 +261,20 @@ getFirebaseToken = () => {
     });
 };
 
+makeParams = (params) => {
+    var esc = encodeURIComponent;
+    return '?' + Object.keys(params)
+        .map(k => esc(k) + '=' + esc(params[k]))
+        .join('&');
+};
+
 queryServerLogin = event => {
-    const url = event.currentTarget.dataset.url;
+    let url = event.currentTarget.dataset.url;
     this.getFirebaseToken()
         .then(response => {
             console.log('TOKEN', response.token);
-            // Send token to your backend via HTTPS
-            fetch(url + '?token=' + response.token)
+            url = url + this.makeParams({token: response.token, test: 'testParam'});
+            fetch(url)
                 .then(function(response) {
                     return response.json();
                 })
@@ -283,6 +290,12 @@ queryServerLogin = event => {
         });
 };
 ```
+
+In the above example, we don't actually use the **test** key/value pair passed to **makeParams**. It is included just as an illustration of how to use **makeParams** to create parameters for **fetch of this form**:
+
+    '/foo?a=1&b=2'
+
+**makeParams** takes an object and returns a string like that shown above.
 
 ## Test
 
