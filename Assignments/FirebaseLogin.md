@@ -48,7 +48,9 @@ Modify **server/app.js** to load and use these files.
 Run get-gist for the root of your project (prog272) or the root of your **client** project (Isit322). Chose **Elf Firebase** from the menu. This should copy
 
 - **elf-firebase.js** and **elf-sign-in.html** to your public directory.
-- **FirebaseLogin.js** to your **src/components** directory
+- **FirebaseLogout.js** to your **src/components** directory
+
+**NOTE**: _I recently renamed the file that was called **FirebaseLogin.js** to **FirebaseLogout.js**. It was originally badly misnamed, and hopefully this name is at least a bit better._
 
 ## Set Configuration
 

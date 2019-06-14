@@ -38,7 +38,9 @@ For now, don't do this. Copy the files from ElfExpressSignIn instead.
 Run our JsObjects based **get-gist** from the root of your project. Chose **Elf Firebase** from the menu. This should copy
 
 - **elf-firebase.js** and **elf-sign-in.html** to your public directory.
-- **FirebaseLogin.js** to your **source** directory.
+- **FirebaseLogout.js** to your **source** directory.
+
+**NOTE**: _I recently renamed the file that was called FirebaseLogin to FirebaseLogout. It was originally badly misnamed, and hopefully this name is at least a bit better._
 
 ## Sign-in with Google Configuration
 
@@ -85,7 +87,7 @@ The subject of signing in and databases are frequently linked, as often you want
 
 Near the top of **control.js**:
 
-    import {FirebaseLogin} from './FirebaseLogin';
+    import {FirebaseLogout} from './FirebaseLogout';
     import { initApp } from "./elf-firebase";    
 
 In the **window.load** part of **control.js** paste in this code from ElfExpressSignIn:
@@ -318,9 +320,9 @@ Run **firebase deploy** to push your site to the cloud. Submit a link to your fi
 For AddressMaven, I'm looking for:
 
 - **elf-sign-in.html** in public
-- **elf-firebase.js** and **FirebaseLogin.js** in Source
+- **elf-firebase.js** and **FirebaseLogout.js** in Source
 - **Login** and **Logout** in menu
-- **FirebaseLogin** and **initApp** imported into **control.js**
+- **FirebaseLogout** and **initApp** imported into **control.js**
 
 
 [gps]: https://github.com/firebase/quickstart-js/blob/master/auth/google-popup.html
