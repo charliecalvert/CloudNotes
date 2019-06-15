@@ -37,12 +37,13 @@ Create a directory called **micros/git-gist/sanity-tests**. Navigate into it. Ru
 
 - Isit322 Midterm Git Gist
 
+This should place a file called **Sanity.GetGists.test.js** in your **sanity-tests** folder.
+
 Get the tests to pass.
 
 Add a test item to the **scripts** section of **/micros/git-gist/package.json**:
 
     "test": "jest"
-
 
 ## Hints
 
