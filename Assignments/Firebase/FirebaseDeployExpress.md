@@ -122,6 +122,8 @@ Back in Firebase version **GitExplorer**, modify code in **GetUser** so that but
 </Button>
 ```
 
+You will, of course, have to run **build-copy** in the root of the **GitExplorer/client** project.
+
 Run **firebase serve** or **firebase deploy** and test your code.
 
 **NOTE**: _Looking at the new URL for **you-rang** it seems to me that we can convert our original non-Firebase version of GitExplorer to use these same URLs. Then we will need only one version of the front end. This seems like an exercise we should complete before or during the final._
@@ -138,13 +140,24 @@ Study **GitExplorer/server/routes/test-server.js** and use it as the template fo
 - Move the user **you-rang** route into it.
 - Import **git-user.js** into **functions/index.js**
 
+For instance, I'm expecting this code in **functions/index.js**:
+
+```javascript
+const userRouter = require('./git-user');
+// Probably some code omitted here
+app.use('/users', userRouter);
+```
+
 If you complete these steps correctly, you should be able to serve or deploy your code and find that it runs smoothly.
 
 ## Turn it in
 
 Move the rest of GitExplorer over to work on Firebase.
 
-Tag and push your work, providing folder, tag and branch.
+Tag and push your work, providing folder, tag and branch. I'm expecting the folder to be either:
+
+- week09-FirebaseStarter
+- FirebaseGitExplorer
 
 Also provide the URL for your running service on Firebase hosting.
 

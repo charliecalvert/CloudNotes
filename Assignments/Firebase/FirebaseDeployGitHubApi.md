@@ -37,7 +37,7 @@ I will cover this later, but deployment involves running this command from the b
 - Delete the _contents_ of the FirebaseStarter **public** directory
 - Copy the contents of the **client/build** directory into the **Week09-FirebaseStarter/public** directory.
 
-A script vaguely like this one might be helpful:
+Create a script called **build-copy** that looks quite a bit like this one:
 
 ```bash
 #! /usr/bin/env bash
@@ -49,7 +49,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[1;36m'
 NC='\033[0m' # No Color
 
-SERVER_DIR="${HOME}/Git/isit322-lastname-2019/Week06-FirebaseStarter/public"
+SERVER_DIR="../../Week06-FirebaseStarter/public"
 
 function message {
     echo
