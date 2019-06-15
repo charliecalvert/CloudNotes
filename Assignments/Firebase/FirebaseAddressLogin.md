@@ -168,20 +168,20 @@ We are now going to learn how to pass information about the user from the client
 
 We won't accomplish all these goals in this assignment, but we will set the stage so that they can be accomplished later.
 
-I'll show you the code in the next section, but let's first think through the steps in this process. We'll take the client first, then the server.
+I'll show you the code in the next two sections of this document, but let's first think through the steps in this process. We'll take the client first, then the server.
 
 Client:
 
-- Add the **getFirebaseToken** method to your project. Probably in **App.js**
-- Pick a method that calls fetch. Let's choose **queryServer**
+- Add a method called **getFirebaseToken** method to your project. Probably in **load-address.js**
+- Pick a method that calls **fetch**. In our case, there is really only one and we have been calling it **elfQuery**
 - Wrap your **fetch** call in a call to **getFirebaseToken**.
-- In the **then** function for your call to **getFirebaseToken** call **fetch**.
-- When calling **fetch** pass in the Firebase token passed to you when you called **getFirebaseToken**
+  - In the **then** function for your call to **getFirebaseToken** call **fetch**.
+  - When calling **fetch** pass in the Firebase token passed to you when you called **getFirebaseToken**
   - We should pass the token as a parameter called **token**. See the **makeParams** method outlined below.
 
-If should add that the token we get is encrypted and is not human readable. On the server side we can decrypt the token. This step has two purposes:
+I should add that the token we get is encrypted and is not human readable. On the server side we can decrypt the token. This step has two purposes:
 
-- The decodedToken allows us to read information about the user
+- The **decodedToken** allows us to read information about the user
 - It confirms that the encrypted token is valid and has not been tampered with.
 
 On the server side we want to verify that the token sent from the client is valid before we perform any further tasks:
@@ -327,7 +327,7 @@ makeParams = (params) => {
         .join('&');
 };
 
-queryServerLogin = event => {
+elfQuery = event => {
     let url = event.currentTarget.dataset.url;
     this.getFirebaseToken()
         .then(response => {
