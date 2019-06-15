@@ -162,3 +162,25 @@ Before your final push run **./prettier** and **eslint .** and make sure they co
 After your final push tag your work and give me the tag.
 
 [bw]: https://firebase.google.com/docs/firestore/manage-data/transactions#batched-writes
+
+## Test Check
+
+Here is a small script that can help you check that at your major tests are running correctly without error:
+
+```bash
+#! /usr/bin/env bash
+
+cd project-sanity-tests
+pwd
+npm test
+cd ../client
+pwd
+npm test
+cd ../micros/git-gist
+pwd
+npm test
+```
+
+The **pwd** commands are just there for debugging. If things don't look right, comment out the calls to **npm test** and confirm that the script runs smoothly without them.
+
+If you have, and like me you should, the **--watch** flag passed to your **jest test** command in your various **package.json** files, then you will have to press the letter **q** to quit after each set of tests is run. This has good and bad features. If we wnated to completely automate these test runs then we would run to remove the flag or modify or script. But for now, I find it nice to have each test pause so I can look it over before moving on to the next one.
