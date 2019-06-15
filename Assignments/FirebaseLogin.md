@@ -273,6 +273,8 @@ In the above example, we don't actually use the **test** key/value pair passed t
 
 **makeParams** takes an object and returns a string like that shown above.
 
+Here is a link to [**verify-db.js**][vdbt].
+
 ## Server Side
 
 Install firebase-admin: **npm i firebase-admin**.
@@ -421,3 +423,4 @@ Open up **elven-fire-login.js** and paste in your configuration code in the **el
 [fbs]: /teach/assignments/FirebaseStarter.html
 [fbd]: /teach/assignments/FirebaseData.html
 [lock]: https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public
+[vdbt]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Firebase/ElfExpressFirestore/routes/verify-db.js

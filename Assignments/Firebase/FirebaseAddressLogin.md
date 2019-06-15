@@ -264,7 +264,7 @@ function verifyToken(token) {
 module.exports=verifyToken;
 ```
 
-Here is the code that uses VerifyToken that would go, for instance in the **/address-list** route from **functions/index.js**:
+Here is the code that uses **VerifyToken** that would go, for instance in the **/address-list** route from **functions/index.js**:
 
 ```javascript
 verifyToken(req.query.token)
@@ -296,6 +296,8 @@ admin.initializeApp({
     projectId: 'YOUR PROJECT ID'
 })
 ```
+
+Here is a link to [**verify-db.js**][vdbt].
 
 ## Client Side Code to Verify {#code-to-verify}
 
@@ -386,3 +388,4 @@ For AddressMaven, I'm looking for:
 [fbs]: /teach/assignments/FirebaseStarter.html
 [fbd]: /teach/assignments/FirebaseData.html
 [lock]: https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public
+[vdbt]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Firebase/ElfExpressFirestore/routes/verify-db.js
