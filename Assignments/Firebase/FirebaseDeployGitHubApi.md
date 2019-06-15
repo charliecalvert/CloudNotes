@@ -61,7 +61,7 @@ function message {
 
 function copyNew() {
 	npm run build
-	cp -r build/* ${SERVER_DIR}/.
+	cp -prv build/* ${SERVER_DIR}/.
 }
 
 function deleteOld() {
