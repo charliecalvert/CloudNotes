@@ -193,4 +193,26 @@ The **pwd** commands are just there for debugging. If things don't look right, c
 
 If you have, and like me you should, the **--watch** flag passed to your **jest test** command in your various **package.json** files, then you will have to press the letter **q** to quit after each set of tests is run. This has good and bad features. If we wnated to completely automate these test runs then we would run to remove the flag or modify or script. But for now, I find it nice to have each test pause so I can look it over before moving on to the next one.
 
+## Duplicate App Error
+
+You may get this error when you try to verify the Firebase user token:
+
+    app/duplicate-app: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name."
+
+Put this fix in **verify-db** on the server side:
+
+```javascript
+function init() {
+    loggedIn = true;
+    if (admin.apps.length === 0) {
+        admin.initializeApp({
+            credential: admin.credential.applicationDefault(),
+        });
+    }
+    return admin.firestore();
+}
+```
+
+The idea here is that **admin.apps.length** checks to see if **initializeApp** has already been called.
+
 [fbdgh]: https://www.elvenware.com/teach/assignments/firebase/FirebaseDeployGitHubApi.html#build

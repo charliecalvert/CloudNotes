@@ -164,3 +164,25 @@ State the names of directories where you deployed your code. I'm expecting to se
 Before your final push run **./prettier** and **eslint .** and make sure they come back clean.
 
 After your final push tag your work and give me the tag.
+
+## Duplicate App Error
+
+You may get this error when you try to verify the Firebase user token:
+
+    app/duplicate-app: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name."
+
+Put this fix, or something similar in **verify-db** on the server side:
+
+```javascript
+function init() {
+    loggedIn = true;
+    if (admin.apps.length === 0) {
+        admin.initializeApp({
+            credential: admin.credential.applicationDefault(),
+        });
+    }
+    return admin.firestore();
+}
+```
+
+The idea here is that **admin.apps.length** checks to see if **initializeApp** has already been called.
