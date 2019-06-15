@@ -159,6 +159,63 @@ This command can also help you troubleshoot:
 
     echo $GOOGLE_APPLICATION_CREDENTIALS
 
+## Working with Tokens
+
+We are now going to learn how to pass information about the user from the client to the server. We have two reasons for doing this:
+
+- So we can track the users who sign in to our app in our database
+- So we can confirm that the users who are signed in are valid and have particular privileges. For instance, if we have granted a user admin privileges we want to know that, and we don't want someone falsely claiming to have admin privileges.
+
+We won't accomplish all these goals in this assignment, but we will set the stage so that they can be accomplished later.
+
+I'll show you the code in the next section, but let's first think through the steps in this process. We'll take the client first, then the server.
+
+Client:
+
+- Add the **getFirebaseToken** method to your project. Probably in **App.js**
+- Pick a method that calls fetch. Let's choose **queryServer**
+- Wrap your **fetch** call in a call to **getFirebaseToken**.
+- In the **then** function for your call to **getFirebaseToken** call **fetch**.
+- When calling **fetch** pass in the Firebase token passed to you when you called **getFirebaseToken**
+  - We should pass the token as a parameter called **token**. See the **makeParams** method outlined below.
+
+If should add that the token we get is encrypted and is not human readable. On the server side we can decrypt the token. This step has two purposes:
+
+- The decodedToken allows us to read information about the user
+- It confirms that the encrypted token is valid and has not been tampered with.
+
+On the server side we want to verify that the token sent from the client is valid before we perform any further tasks:
+
+- The first step on the server is to ensure that we got the token from client. Do whatever you need to do to confirm that **request.query.token** contains your token.
+- Next we pass the token to a method I give you called **verifyToken**. This method tests the validity of the token and returns a human readable decrypted token.
+- Assuming that **verifyToken** returns successfully, we are then free to execute the code that we would normally run in that endpoint.
+
+For instance, we normally implement a simple **you-rang** call by returning some JSON.
+
+```javascript
+var message = { result: 'success',  status: 'bar' };
+response.send(message);
+```
+
+Now are going to wrap this code in a call to **verifyToken**:
+
+```javascript
+verifyToken(token)
+    .then((decodedToken) => {
+        var message = { result: 'success',  status: 'bar' };
+        response.send(message);
+    })
+    .catch(error => {
+        response.send({
+            result: 'not logged in to Firebase',
+            suggestion: 'export GOOGLE_APPLICATION_CREDENTIALS="ServiceRecord',
+            error: error
+        });
+    });
+```
+
+Now that you understand the basics, let's dig into the details.
+
 ## Server Side
 
 Install firebase-admin: **npm i firebase-admin**.
