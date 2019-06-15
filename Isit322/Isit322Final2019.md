@@ -147,6 +147,14 @@ You can show as many fields as you want, but be sure to include:
 - description
 - filename for the first of the files (You will probably have only one file in your gist)
 
+## Change Path in build-copy {#change-path}
+
+In the Build step of [**FirebaseDeployGitHubApi**][fbdgh] I asked you to write a path to copy your build from **GitExplorer** to **FirebaseGitExplorer**. Foolishly, I included information specific to your repo in it. Can you please change the **SERVER_DIR** line (about line 10) to look something like this:
+
+    SERVER_DIR="../../FirebaseGitExplorer/public"
+
+The point is that it should not have information specific to your machine in it since my system is not set up exactly like yours. Instead, use relative paths like above. Thank you and sorry for asking you to do this fussy thing so late in the process.
+
 ## Turn it in
 
 Be sure to include the Firebase Hosting address to which you have deployed your Firebase app.
@@ -184,3 +192,5 @@ npm test
 The **pwd** commands are just there for debugging. If things don't look right, comment out the calls to **npm test** and confirm that the script runs smoothly without them.
 
 If you have, and like me you should, the **--watch** flag passed to your **jest test** command in your various **package.json** files, then you will have to press the letter **q** to quit after each set of tests is run. This has good and bad features. If we wnated to completely automate these test runs then we would run to remove the flag or modify or script. But for now, I find it nice to have each test pause so I can look it over before moving on to the next one.
+
+[fbdgh]: https://www.elvenware.com/teach/assignments/firebase/FirebaseDeployGitHubApi.html#build
