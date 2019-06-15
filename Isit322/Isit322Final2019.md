@@ -99,6 +99,10 @@ Implement the following:
   - fields:
     - email, name, picture
 
+I want you to write the Firebase user to the database. The idea is to keep track of the users who have logged into your application. Probably most of you will have only two users log into your system: yourself and me. But in a popular app, thousands of users might be logging in, and we need to keep track of them so we can remember their preferences and privileges. By at least recording the user's name, email and id, we take a step in that direction.
+
+You get information about the user by taking the Firebase token sent from the server, running it through verifyToken, and taking the decodedToken returned from verifyToken and writing some of its fields to the database. We should be able to see at least two users in the database, yourself and me. If you have multiple Google accounts, or share your app with a friend or relative, we could see more.
+
 - Add a button to your get-gists page labelled **Write Gists**. Selecting it writes your gists to the database:
   - **collection name**: gists
   - **document name**: gist.id
