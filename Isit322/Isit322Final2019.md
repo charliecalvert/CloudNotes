@@ -135,8 +135,6 @@ When calling **batch.set** I used **forEach** to iterate through the array of da
 
 Base your code for reading and writing to the database on the code in the **ElfExpressFirestore** example. Note that I have added code for reading and writing batch data and snapshots. See **batch.js** in the example.
 
-## Extra Credit
-
 Create a new page in your app. Allow the user to click a button to retrieve a few fields from each Gist that you added to your **gists** collection. Add two buttons to allow the user to iterate through the data.
 
 You can show as many fields as you want, but be sure to include:
@@ -146,6 +144,10 @@ You can show as many fields as you want, but be sure to include:
 - url (make it clickable. Or do we want **html_url**?)
 - description
 - filename for the first of the files (You will probably have only one file in your gist)
+
+## Extra Credit
+
+Do the same thing for the repos page that you do for the gists. That is, take the JSON that you get from GitHub and write it to the database in a collection called repository. Create a page in your app to show a few of the fields from your repository collection, picking at least one that is not on your **GetRepos** page.
 
 ## Change Path in build-copy {#change-path}
 
