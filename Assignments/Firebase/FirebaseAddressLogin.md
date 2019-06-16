@@ -37,7 +37,7 @@ For now, don't do this. Copy the files from ElfExpressSignIn instead.
 
 Run our JsObjects based **get-gist** from the root of your project. Chose **Elf Firebase** from the menu. This should copy
 
-- **elf-firebase.js** and **elf-sign-in.html** to your public directory.
+- **elf-firebase.js** in your **source** directory and **elf-sign-in.html** to your public directory.
 - **FirebaseLogout.js** to your **source** directory.
 
 **NOTE**: _I recently renamed the file that was called **FirebaseLogin.js** to **FirebaseLogout.js**. It was originally badly misnamed, and hopefully this name is at least a bit better._
@@ -220,7 +220,7 @@ Now that you understand the basics, let's dig into the details.
 
 Install firebase-admin: **npm i firebase-admin**.
 
-Save this on the server side in the **routes** directory as **verify.js**:
+Save this on the server side in the **functions** directory for **FirebaseAddressMaven** and in the **routes** directory for **AddressMaven**. Save it as **verify.js**:
 
 ```javascript
 const admin = require('firebase-admin');

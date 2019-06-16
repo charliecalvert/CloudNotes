@@ -66,7 +66,7 @@ Except for the **start** script, everything in this file also appears in our ori
 
 ## Create Bundle
 
-Run **npx webpack**. This should create **bundle.js** and put it in the **public** directory.    
+Run **npm install** and then **npx webpack**. This should create **bundle.js** and put it in the **public** directory.    
 
 ## Move Functions
 
