@@ -363,8 +363,10 @@ In the above example, we don't actually use the **test** key/value pair passed t
 If you are on your local machine or VM like Pristine Lubuntu, you can preview before you deploy by issuing this command:
 
 <pre>
-firebase serve
+firebase serve --port=30025
 </pre>
+
+It might be better in our case to run **npm start** from the root of the root of the project as it will also run **webpack** which we need to do in order to create bundle.js. So **npm start** the preferred method, as it will both run **firebase server** and also run webpack to build our bundle.
 
 Then go to this URL: [http://localhost:5000/](http://localhost:5000/)
 
