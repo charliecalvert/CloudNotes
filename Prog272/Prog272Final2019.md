@@ -121,11 +121,23 @@ If you do any of the extra credit steps, be sure to call it out when you submit 
 
 I'm not really expecting anyone to do this, but implementing **AddressLister** to show all the address records at once on one page would also be worthy of extra credit.
 
+Getting the tests to pass on AddressMaven is a must, getting them to pass on FirebaseAddressMaven would be a small amount of extra credit. One will fail because the views directory has moved.
+
+How I got them to work from my history file. I was working in the root of the **FirebaseAddressMaven** project:
+
+    mkdir sanity-tests
+    2136  cd sanity-tests/
+    2137  cp ../../AddressMaven/sanity-tests/* .
+    2138  cd ..
+    2139  npm i jest
+    2142  npm i elven-code
+    2144  npm i enzyme enzyme-adapter-react-16 react-test-renderer    
+    2146  cp -rvp ../AddressMaven/__mocks__ .
+    2148  npm test
+
 ## Firebase Address Maven
 
 I'm looking for all the same features as in **AddressMaven**, but I should be able to start the app with **firebase serve** and view it online because you have run **firebase deploy** and ensured that your code works.
-
-
 
 ## Port 30025
 
