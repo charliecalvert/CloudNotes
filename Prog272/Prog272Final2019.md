@@ -151,6 +151,14 @@ Create another server side route called **/address-list-db**. It should do the s
 
 Base your code for reading and writing to the database on the code in the **ElfExpressFirestore** example. Note that I have added code for reading and writing batch data and snapshots. See **batch.js** in the example.
 
+## Example Programs
+
+See the [ElfExpressFirestore][eef] demo in JsObjects for more information on basic database operations.
+
+To add **verify** to your calls, see the [ElfExpressFirestoreVerify][eefv] demo in JsObjects.
+
+I have put both examples in the **JsObjects/JavaScript/Firebase** directory. Don't forget to call **git pull** to get the latest.
+
 ## Turn it in
 
 Be sure to include the Firebase Hosting address to which you have deployed your Firebase app.
@@ -186,3 +194,6 @@ function init() {
 ```
 
 The idea here is that **admin.apps.length** checks to see if **initializeApp** has already been called.
+
+[eef]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestore
+[eefv]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestoreVerify

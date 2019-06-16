@@ -155,6 +155,14 @@ In the Build step of [**FirebaseDeployGitHubApi**][fbdgh] I asked you to write a
 
 The point is that it should not have information specific to your machine in it since my system is not set up exactly like yours. Instead, use relative paths like above. Thank you and sorry for asking you to do this fussy thing so late in the process.
 
+## Example Programs
+
+See the [ElfExpressFirestore][eef] demo in JsObjects for more information on basic database operations.
+
+To add **verify** to your calls, see the [ElfExpressFirestoreVerify][eefv] demo in JsObjects.
+
+I have put both examples in the **JsObjects/JavaScript/Firebase** directory. Don't forget to call **git pull** to get the latest.
+
 ## Turn it in
 
 Be sure to include the Firebase Hosting address to which you have deployed your Firebase app.
@@ -216,3 +224,5 @@ function init() {
 The idea here is that **admin.apps.length** checks to see if **initializeApp** has already been called.
 
 [fbdgh]: https://www.elvenware.com/teach/assignments/firebase/FirebaseDeployGitHubApi.html#build
+[eef]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestore
+[eefv]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestoreVerify

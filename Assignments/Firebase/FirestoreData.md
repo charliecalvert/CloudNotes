@@ -12,7 +12,9 @@ I need to have permissions to run your projects with **firebase serve**.  Here 
 
 - [https://support.google.com/firebase/answer/7000272?hl=en](https://support.google.com/firebase/answer/7000272?hl=en)
 
-Please add the same address you use to contact me on hangouts and make me an **Editor** on your project.
+Please add the same address you use to contact me on hangouts and make me an **Editor** on your projects.
+
+It shows how to get the Firebase token, pass it to the server, verify the token, and return a value to the client.
 
 ## Get Started
 
@@ -98,7 +100,13 @@ const userData = {
 };
 ```
 
-See the [ElfExpressFirestore][eef] in JsObjects for more information.
+## Example Programs
+
+See the [ElfExpressFirestore][eef] demo in JsObjects for more information on basic database operations.
+
+To add **verify** to your calls, see the [ElfExpressFirestoreVerify][eefv] demo in JsObjects.
+
+I have put both examples in the **JsObjects/JavaScript/Firebase** directory. Don't forget to call **git pull** to get the latest.
 
 ## Turn it in
 
@@ -119,3 +127,4 @@ If you are in Isit322:
 [dbcomp]: https://firebase.google.com/docs/database/rtdb-vs-firestore
 [vdb]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Firebase/ElfExpressFirestore/routes/verify-db.js
 [eef]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestore
+[eefv]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Firebase/ElfExpressFirestoreVerify
