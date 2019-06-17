@@ -9,6 +9,8 @@ There are two parts to the assignment:
 - Learn to log in
 - Learn to run certain functions only when the user is logged in.
 
+Do your work in **FirebaseAddressMaven**.
+
 ## Permissions
 
 I need to have permissions to run your projects with **firebase serve**.  Here is the page that explains the simple steps to add me as an **Editor:**
