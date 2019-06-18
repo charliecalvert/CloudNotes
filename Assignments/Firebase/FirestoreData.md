@@ -120,6 +120,10 @@ If you are in Isit322:
 - Update **GitExplorer** and **week09-FirebaseStarter** to read and write user data to the database.
 - Write a list of your user's Gists and Repos to the database. Include at least the URL for the Gist or Repo.
 
+I'm thinking that you will add two buttons to your app, one for calling the gists micro to ask it to write the entire the gist as you get it from GitHub to the Firestore database. Then create a second button and have it right the repos, the complete record that you get from GitHub, and send it to the Firestore database.
+
+In the final, I will, in part as extra credit, ask you to add two new pages, call the GetReposDb and GetGistDb and display the data from the database, rather than from GitHub itself.
+
 
 [cfs]: https://firebase.google.com/docs/firestore
 [vsv]: https://twitter.com/charliecalvert/status/1136640253639323653?s=20
