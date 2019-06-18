@@ -97,6 +97,10 @@ These last set of steps don't have to be flawless. In other words, I don't expec
 
 We should get this in a very clunk implementation for free, but I'm expecting to see some indicator of whether you are signed in or not. I don't care how it looks, but it is helpful to the user.
 
+**NOTE**: _Just to be clear, I'm expecting to see you pass a Firebase user token from the client to the server and verify it on the server side before you return a value to the client. I suppose I would rather have working code without this feature than broken code with the feature. Or perhaps if you are uncertain, pick a single place like the first button we put in Go, as the place to try to make this work. If you do it only there, make that clear to me when you turn it in. But once you have it going one place, it is fairly easy to do it elsewhere. I'm definitely looking to see it implemented in most places in your code when you call from the client to the server, particularly when you retrieve the politician data from the server._
+
+I would add just one more note, getting your code _deployed_ on Firebase Hosting will be a big win. If I see a link to your application running in the cloud, and that application works, then that is a big win. It proves to me that even if I am having trouble getting your code to work, you did create working code. Of course, it is best if your link to the cloud works, and I can run your code easily from the bash shell.
+
 ## Extra Credit
 
 One little nicety you'll want to implement is handling the case where **AddressShow** is called and there is no data to display. This might happen if the user is not logged in. There are various solutions to this problem and some are dependent on the way you implemented **AddressShow**. In my case I was able to resolve the problem by creating a fake record that can be shown to the user. Perhaps it might look a bit like this:

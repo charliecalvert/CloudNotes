@@ -181,6 +181,10 @@ After your final push tag your work and give me the tag.
 
 [bw]: https://firebase.google.com/docs/firestore/manage-data/transactions#batched-writes
 
+I would add just one more note, getting your code _deployed_ on Firebase Hosting will be a big win. If I see a link to your application running in the cloud, and that application works, then that is a big win. It proves to me that even if I am having trouble getting your code to work, you did create working code. Of course, it is best if your link to the cloud works, and I can run your code easily from the bash shell.
+
+**NOTE**: _Just to be clear, I'm expecting to see you pass a Firebase user token from the client to the server and verify it on the server side before you return a value to the client. I suppose I would rather have working code without this feature than broken code with the feature. Or perhaps if you are uncertain, pick a single unimportant place as the place to try to make this work. If you do it only there, make that clear to me when you turn it in. But once you have it going one place, it is fairly easy to do it elsewhere. I'm definitely looking to see it implemented in most places in your code when you call from the client to the server, particularly when you retrieve GitHub or database data from the server._
+
 ## Test Check
 
 Here is a small script that can help you check that at your major tests are running correctly without error:
