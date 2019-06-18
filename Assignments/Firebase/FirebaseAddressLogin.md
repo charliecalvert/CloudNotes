@@ -387,6 +387,7 @@ For AddressMaven, I'm looking for:
 - **Login** and **Logout** in menu
 - **FirebaseLogout** and **initApp** imported into **control.js**
 
+Add support for prettier and eslint.
 
 [gps]: https://github.com/firebase/quickstart-js/blob/master/auth/google-popup.html
 [fbs]: /teach/assignments/FirebaseStarter.html
