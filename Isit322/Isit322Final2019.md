@@ -47,7 +47,7 @@ let loggedIn = false;
 
 function init() {
     loggedIn = true;
-    if (admin.apps.length === 0) {
+    if (!admin.apps.length) {
         admin.initializeApp({
             credential: admin.credential.cert(credentialLoad)            
         });
@@ -218,7 +218,7 @@ Put this fix in **verify-db** on the server side:
 ```javascript
 function init() {
     loggedIn = true;
-    if (admin.apps.length === 0) {
+    if (!admin.apps.length) {
         admin.initializeApp({
             credential: admin.credential.applicationDefault(),
         });
