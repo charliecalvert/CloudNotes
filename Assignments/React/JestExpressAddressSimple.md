@@ -333,6 +333,18 @@ describe('Jest Create React Tests', function () {
 
 [jest]: https://facebook.github.io/jest/
 
+## Turning tests on and off
+
+Writing **fit** or **it.only** instead of **it** says "run only this test".
+
+Writing **xit** or **it.skip** instead of **it** says "skip this test".
+
+You can also write **fdescribe** and **xdescribe** with predictable results.
+
+Sometimes it is a good idea to start with all but one test skipped, or to use **fit** to narrow down the number of errors you see. It is overwhelming to see a large number of tests at once.
+
+See this [Jest cheat sheet](https://devhints.io/jest) for additional tips.
+
 ## Enzyme
 
 We need a tool to capture and parse the output created by our React components. We test that output to see if it is valid. The tool that helps us do this is airbnb's Enzyme.
