@@ -101,6 +101,14 @@ We should get this in a very clunk implementation for free, but I'm expecting to
 
 I would add just one more note, getting your code _deployed_ on Firebase Hosting will be a big win. If I see a link to your application running in the cloud, and that application works, then that is a big win. It proves to me that even if I am having trouble getting your code to work, you did create working code. Of course, it is best if your link to the cloud works, and I can run your code easily from the bash shell.
 
+## Differences Between FirebaseAddressMaven and AddressMaven {#differences}
+
+To get the Firestore code to work in **AddressMaven** you will probably have to install the **firebase-admin** package:
+
+    npm i firebase-admin
+
+You don't, however, need to do anything like **firebase init**, **firebase serve** or **firebase** deploy. All those commands have to do with creating a project that we can deploy to Firebase hosting. We are not going to deploy **AddressMaven**, only **FirebaseAddressMaven**.
+
 ## Extra Credit
 
 One little nicety you'll want to implement is handling the case where **AddressShow** is called and there is no data to display. This might happen if the user is not logged in. There are various solutions to this problem and some are dependent on the way you implemented **AddressShow**. In my case I was able to resolve the problem by creating a fake record that can be shown to the user. Perhaps it might look a bit like this:
