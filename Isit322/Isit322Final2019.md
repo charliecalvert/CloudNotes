@@ -16,6 +16,12 @@ I'll also be looking at:
 
 **NOTE**: _The **firebase-tools** were recently updated to v7.0.0. Be sure to run **ncu -g** and follow directions to install them and any other needed updates._
 
+## Shutdown After Quarter
+
+Learn how to secure your app after the quarter ends:
+
+- [Firestore Rules](https://www.elvenware.com/teach/assignments/firebase/FirestoreRules.html)
+
 ## Permissions
 
 I need to have permissions to run your projects with **firebase serve**.  Here is the page that explains the simple steps to add me as an **Editor:**

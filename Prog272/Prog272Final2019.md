@@ -14,6 +14,13 @@ I'll also be looking at:
 
 **NOTE**: _The firebase-tools were recently updated to v7.0.0. Be sure to run **ncu -g** and follow directions to install them and any other needed updates._
 
+## Shutdown After Quarter
+
+Learn how to secure your app after the quarter ends:
+
+- [Firestore Rules](https://www.elvenware.com/teach/assignments/firebase/FirestoreRules.html)
+
+
 ## Deploying Credentials
 
 When you deploy your app to Firebase hosting and when you give it to me for grading, we need to make a change to **verify-db.js**.
