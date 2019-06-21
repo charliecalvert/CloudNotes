@@ -2,7 +2,11 @@
 
 If you got to the point where you hosted your site and began to read and write to the database, you should learn how to secure your database. In particular, after the quarter ends, you should ensure that your database is not completely open to the world.
 
+**NOTE**: _I believe most of you are on the free [Spark plan](https://firebase.google.com/pricing) and won't get charged regardless of what happens. So the concern here is not money. But one still wants to consider these issues, and some of you may not be on the Spark plan._
+
 Please leave your database open to reading and writing until after the quarter ends. Wait until the Tuesday after finals week to completely secure your database or shutdown hosting. Under normal circumstances, the last day I could possibly be grading your code is on the Monday after finals week. So leave things open until Tuesday (June 25, 2019) to make sure that your app doesn't fail because you have turned off write access and I'm trying to see if you know how to write code that inserts data into the DB.
+
+**NOTE**: _In some cases you may find that I changed your database rules while grading your work. I don't plan to do anything that will cause your app to stop functioning, but still you should know that I may have made a change to your rules._
 
 ## Disable Site
 
