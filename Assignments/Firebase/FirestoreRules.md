@@ -164,3 +164,31 @@ service cloud.firestore {
   }
 }
 ```
+
+## Functions in Rules
+
+These might be useful:
+
+```javascript
+function isSignedIn() {
+  return request.auth != null;
+}
+
+function isOwner(userId) {
+  return request.auth.uid == userId
+}
+
+function existingData() {
+  return resource.data
+}
+
+function incomingData() {
+  return request.resource.data
+}
+
+function currentUser() {
+  return request.auth
+}
+```
+
+I found them [here](https://angularfirebase.com/lessons/firestore-security-rules-guide/). The video on that page is quite good.
