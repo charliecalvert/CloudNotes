@@ -109,7 +109,8 @@ window.onload = function () {
                     doRender();
                 })
                 .catch(err => {
-                    console.log(err);
+                    alert(err);
+                    doRender();
                 });
         } else {
             doRender();

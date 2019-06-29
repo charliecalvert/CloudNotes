@@ -176,6 +176,7 @@ In this code we are setting up a situation where we can pass a query to the serv
 ## Display Pages
 
 This code will allow us to switch between the **Go** and **First** components when they are selected from the menu.
+
 ```JavaScript
 import React from 'react';
 import ReactDOM from 'react-dom';
