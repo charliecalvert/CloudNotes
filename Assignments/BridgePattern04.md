@@ -1,4 +1,4 @@
-#BridgePattern 04
+# BridgePattern 04
 
 Primary goals:
 
@@ -10,12 +10,12 @@ Below I step you through the creation of the entire app. You may, however want t
 
 Our theme: Defining responsibilities is the key step in software development. We use objects, modules, patterns and methods to separate the tasks our software performs, and to link these tasks to one another as loosely as possible.
 
-##Step 01: Create a Project
+## Step 01: Create a Project
 
 Use express to create the project:
 
     express Week08BridgePattern04
-    
+
 Add in **.project** file and set the name field to **Week08BridgePattern-LastName**, where last name is your last name.
 
 ```
@@ -43,7 +43,7 @@ Get Main.js, require and jquery:
     cd public/javascripts
     wget http://requirejs.org/docs/release/2.1.11/comments/require.js
     wget http://code.jquery.com/jquery-2.1.1.js
-    wget http://elvenware.com/charlie/development/web/JavaScript/Scripts/Main.js 
+    wget http://elvenware.com/charlie/development/web/JavaScript/Scripts/Main.js
 
 Or, if you want to automate the above, create a symbolic link in your **bin** directory to the [JsObjects RequireJquery.sh][requireScript] script:
 
@@ -70,12 +70,12 @@ Navigate to the root folder for your project and:
 
     npm install
     npm start
-    
+
 Start your browser and navigate to localhost:30025. Check the **Network** page in Chrome or Chromium:
 
 ![Routing][route07]
 
-[route07]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing07.png
+[route07]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing07.png
 
 If your view does not look something like this, and particularly if your view shows any red, then something is wrong. The key things to look for, of course, are **jquery**, **require** and **Main.js**.
 
@@ -83,8 +83,7 @@ Summary diagram:
 
 ![BridgePattern01][br01]
 
-[route07]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing07.png
-[br01]:http://www.elvenware.com/charlie/books/CloudNotes/Images/BridgeReader04-01.png
+[br01]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/BridgeReader04-01.png
 
 ## Step 04: Add in Control.
 
@@ -116,12 +115,12 @@ require.config({
 	}
 });
 
-require(['jquery', "Control"], 
+require(['jquery', "Control"],
 
 	function(jq, Control) {
 		'use strict';
 		console.log("Main called");
-		
+
 		$(document).ready(function() {
 			var control = new Control();
 		});
@@ -135,13 +134,13 @@ Restart your app and check your work and confirm that **Control** is loaded:
 
 ![routes][route08]
 
-[route08]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing08.png
+[route08]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing08.png
 
 **NOTE**: *If you are tired of restarting the server each time you change code on the server side, use **nodemon**. Like this*:
 
     sudo npm install -g nodemon
     nodemon bin/www
-    
+
 *Notice that youare are typing **nodemon** instead of **node**. Now each time you start you change your server side code your application will be restarted automatically.*
 
 Summary diagram:
@@ -152,7 +151,7 @@ In my loosely defined UML-like syntax, the above diagram shows that **Main** agg
 
     var control = new Control();
 
-[br02]: http://www.elvenware.com/charlie/books/CloudNotes/Images/BridgeReader04-02.png
+[br02]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/BridgeReader04-02.png
 
 ## Step 05: Set up Tests
 
@@ -168,10 +167,10 @@ Getting the jasmine folder can be tricky. Be sure your case is correct, and that
 In **app.js** add these lines:
 
     var unitTests = require('./routes/UnitTests');
-    app.use(express.static(path.join(__dirname, 'Tests')));
+    app.use(express.static(path.join(\_\_dirname, 'Tests')));
     app.use('/UnitTests', unitTests);
-    
-The first line above links in (requires) our new /routes/UnitTests.js file. The second line helps express find the Tests directory, and to treat requests for files in that directory as if they were in the root of the project. This means we don't have to explicitly use the route '/Tests/ when we want to see files that are physically stored in the tests directory. We can serve files from that directory to help us organize our code on the server, but the client can just think of those files as being in the root. The final line of code tells Express to use our UnitTests function, that is, to consider it as a possible route, as a little bit of middleware running on our server. All the code in our Express app is considered middleware. We have client code on the browser, middleware in our Express app, and database code in our MongoDb database. 
+
+The first line above links in (requires) our new /routes/UnitTests.js file. The second line helps express find the Tests directory, and to treat requests for files in that directory as if they were in the root of the project. This means we don't have to explicitly use the route '/Tests/ when we want to see files that are physically stored in the tests directory. We can serve files from that directory to help us organize our code on the server, but the client can just think of those files as being in the root. The final line of code tells Express to use our UnitTests function, that is, to consider it as a possible route, as a little bit of middleware running on our server. All the code in our Express app is considered middleware. We have client code on the browser, middleware in our Express app, and database code in our MongoDb database.
 
 Here is how to use all three of the statements mentioned above in their proper context:
 
@@ -204,7 +203,7 @@ app.use('/', routes);
 app.use('/UnitTests', unitTests);
 
 /// catch 404 and forwarding to error handler
-app.use(function(req, res, next) { 
+app.use(function(req, res, next) {
 etc....
 ```
 
@@ -276,7 +275,7 @@ require.config({
 require([ 'boot' ], function(jasmine) {
 	'use strict';
 
-	require([ "jquery", "BridgeTests"], 
+	require([ "jquery", "BridgeTests"],
 		function(jq, BridgeTests) {
 		console.log("Main called.");
 		$("p").hide();
@@ -288,7 +287,7 @@ require([ 'boot' ], function(jasmine) {
 And finally we write our Jasmine test of the simple **Control** module. In **Tests/BridgeTests.js** we create a test that confirms that we can create an instance of the **Control** object.:
 
 ```
-define([ "Control"], 
+define([ "Control"],
 	function(Control) {
 	'use strict';
 
@@ -297,12 +296,12 @@ define([ "Control"],
 		it("proves we can run a test", function() {
 			expect(true).toBe(true);
 		});
-		
+
 		it("proves we can create Control", function() {
 			var control = new Control();
 			expect(control).toBeTruthy();
 		});
-		
+
 
 	});
 });
@@ -320,15 +319,15 @@ Summary diagram:
 
 In the diagram above I treat Core and UnitTests as equals. They are both pages that are launched directly from the server via simple route. In one case the route is the root: '/'. In the other it looks like this: '/UnitTests'. See the URL in the image depicting the running UnitTests to see the route in practice: http://localhost:30025/UnitTests.
 
-[route09]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing09.png
-[br03]: http://www.elvenware.com/charlie/books/CloudNotes/Images/BridgeReader04-03.png
+[route09]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing09.png
+[br03]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/BridgeReader04-03.png
 
 ## Step 06: Add in Readers
 
 The next step will be to add in **Readers**. Let's begin by creating a test to see if we can create a **JsonReader**:
 
 ```
-define(["Control", "JsonReader"], 
+define(["Control", "JsonReader"],
 	function(Control, JsonReader) {
 	'use strict';
 
@@ -337,7 +336,7 @@ define(["Control", "JsonReader"],
 		it("proves we can run a test", function() {
 			expect(true).toBe(true);
 		});
-		
+
 		it("proves we can create Control", function() {
 			var control = new Control();
 			expect(control).toBeTruthy();
@@ -353,7 +352,7 @@ define(["Control", "JsonReader"],
 
 In this code we require a **JsonReader**:
 
-    define(["Control", "JsonReader"], 
+    define(["Control", "JsonReader"],
 	    function(Control, JsonReader) {
 
 We also write a test to see if we can create one:
@@ -365,18 +364,18 @@ it("proves we can create a JsonReader", function() {
 });
 ```
 
-It goes without saying that this test will fail. 
+It goes without saying that this test will fail.
 
 ![UnitTests][route10]
 
 To fix the problem, we need to add our JsonReader from our earlier projects to our current project:
 
     /public/javascripts/Readers/JsonReader.js
-    
+
 Here is the most recent copy of JsonReader:
 
 ```
-define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ], 
+define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ],
 		function(jquery, utilities, DisplayAddress, DisplayFileList) {
 	'use strict';
 
@@ -397,7 +396,7 @@ define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ],
 			that.display(serverData);
 		}
 
-		// If the customCallback exists, then use it, else use ours nativeCallback. 
+		// If the customCallback exists, then use it, else use ours nativeCallback.
 		// If there is an error handler, use it, else use our errorHandler
 		function getCallback(customCallback) {
 			var callback = utilities.isTruthy(customCallback) ? customCallback : nativeCallback;
@@ -450,7 +449,7 @@ Now let's run our tests and see what happens:
 
 After our breathing returns to normal, the first step is to assess the damage. Where is the trouble comming from? Well, it is here: at the start of **JsonReader**:
 
-    define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ], 
+    define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ],
 		function(jquery, utilities, DisplayAddress, DisplayFileList) {
 
 We use require to link in three objects. Before we do too much, let's look at our code and see where these objects are used. Here is the only use of Utilities:
@@ -499,12 +498,12 @@ JsonReader.prototype.display = function(serverData) {
 
 Now let's go back and look at those dependencies again:
 
-    define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ], 
+    define([ 'jquery', 'Utilities', 'DisplayAddress', 'DisplayFileList' ],
 		function(jquery, utilities, DisplayAddress, DisplayFileList) {
-		
+
 Why don't we just keep **jquery** and **Utilities**, and get rid of the other two for now, since we don't need them with all their associated code commented out:
 
-    define([ 'jquery', 'Utilities'], 
+    define([ 'jquery', 'Utilities'],
 		function(jquery, utilities) {
 
 Now let's copy in the **Utilities** object from our previous project. For now, we can put it in **public/javascripts**:
@@ -534,17 +533,17 @@ define(function(require) {
 		isFalsy : function(value) {
 			return this.isTruthy(value) ? false : true;
 		},
-		
+
 		displayOptions:  function(options) {
 			$('#debug01').html("Type: " + options.objectType)
 			$('#debug02').html("File: " + options.fileName);
 		},
-		
+
 		setClick: function(func) {
 			$("#displayList").off('click');
 			$("#displayList").click(func);
 		},
-		
+
         setFileName: function(options, event) {
             if (options.useDefaultFile) {
                 options.fileName = options.defaultFileName;
@@ -557,7 +556,7 @@ define(function(require) {
 	}
 
 	return utilities;
-	
+
 });
 ```
 
@@ -577,7 +576,7 @@ Now what happens when we run our tests?
 
 ![Tests][route12]
 
-[Milagrosamente aprobo el examen][milagro]! By some miracle we have passed the test! Our hope is but a flickering candle, and yet it still burns! 
+[Milagrosamente aprobo el examen][milagro]! By some miracle we have passed the test! Our hope is but a flickering candle, and yet it still burns!
 
 But what are we going to do about the offending code? How can we fix this mess that we commented out:
 
@@ -593,7 +592,7 @@ if (serverData.type === 'address') {
 
 Here by the dim light of our lamp, it is hard to see clearly.... And yet, there is a shape that emerges from the darkness. It is only dimly perceivable at first, but as we squint into the darkness, a rough shape is faintly visible. What do we see? Smoke? Iron rails? Brick walls? What is it? Could it be -- yes! -- is it possible, the code we have commented out looks so much like something we have seen before! The billowing smoke, the sound of grinding engines....
 
-What do we see? Branching code, and in-between a series of calls to **new**? All at once the smoke seems to clear, the brick walls come clearly into view, the billowing smokestacks of a **Factory** hove into view! 
+What do we see? Branching code, and in-between a series of calls to **new**? All at once the smoke seems to clear, the brick walls come clearly into view, the billowing smokestacks of a **Factory** hove into view!
 
 Of course! This code is very much like a **Factory**. And we are, as we well know, supposed to create objects not by calling **new**, but by using a **Factory**! Why didn't we see this before? What had blinded us? All we can do is be thankful for our unit tests that force us to take stock and actually think!
 
@@ -601,12 +600,12 @@ Summary diagram of tests:
 
 ![sum][br04]
 
-[route10]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing10.png
-[route11]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing11.png
-[route12]:http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing12.png
+[route10]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing10.png
+[route11]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing11.png
+[route12]:https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing12.png
 [gott]: http://en.wiktionary.org/wiki/Gott_im_Himmel#German
 [milagro]: http://www.collinsdictionary.com/dictionary/english-spanish/miracle
-[br04]: http://www.elvenware.com/charlie/books/CloudNotes/Images/BridgeReader04-04.png
+[br04]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/BridgeReader04-04.png
 
 ##Step07: The DisplayFactory
 
@@ -647,7 +646,7 @@ require.config({
 require([ 'boot' ], function(jasmine) {
 	'use strict';
 
-	require([ "jquery", "BridgeTests", "DisplayTests"], 
+	require([ "jquery", "BridgeTests", "DisplayTests"],
 		function(jq, BridgeTests) {
 		console.log("Main called.");
 		$("p").hide();
@@ -656,12 +655,12 @@ require([ 'boot' ], function(jasmine) {
 });
 ```
 
-You can see the new line that requires the **DisplayFactory** and **DisplayTests** in the code shown above. 
+You can see the new line that requires the **DisplayFactory** and **DisplayTests** in the code shown above.
 
 In DisplayTests we define a new suite for testing the **DisplayFactory**:
 
 ```
-define(["DisplayFactory"], 
+define(["DisplayFactory"],
 	function(DisplayFactory) {
 	'use strict';
 
@@ -670,7 +669,7 @@ define(["DisplayFactory"],
 		it("proves we can run a test", function() {
 			expect(true).toBe(true);
 		});
-		
+
 		it("proves we can create a DisplayFactory", function() {
 			var displayFactory = new DisplayFactory();
 			expect(displayFactory).toBeTruthy();
@@ -718,7 +717,7 @@ Let's run our tests and make sure they work:
 
 ![r3][route13]
 
-[route13]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing13.png
+[route13]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing13.png
 
 At this stage, one would be entitled to complain: "Hey, but you aren't creating real objects! These are just fake DisplayAddress and DisplayFileList objects:
 
@@ -754,23 +753,23 @@ if (serverData.type === 'address') {
 Here is what the display method looks like after we replace the above code with our Factory:
 
 ```
-define([ 'jquery', 'Utilities', 'DisplayFactory'], 
+define([ 'jquery', 'Utilities', 'DisplayFactory'],
 		function(jquery, utilities, DisplayFactory) {
 	'use strict';
 
 	var JsonReader = (function() {
-    
+
     // Code omitted here, but defined above
-    
+
     JsonReader.prototype.display = function(serverData) {
     	clear();
     	var displayFactory = new DisplayFactory();
     	var displayObject = displayFactory.create({objectType: serverData.type});
     	displayObject.display(serverData.content);
     };
-    
+
     	return JsonReader;
-    	
+
 	}());
 
 	return JsonReader;
@@ -825,7 +824,7 @@ router.get('/read', function(request, response) {
 			response.send({ "Could_Not_Find_File": error, fileName: fileName});
 			return;
 		}
-		
+
 		try {
 			var jsonObject = JSON.parse(data);
 			console.log("Sending error");
@@ -834,7 +833,7 @@ router.get('/read', function(request, response) {
 			response.send({ "error": "Could not parse", "Could_Not_Parse_JSON": "error"});
 		};		
 	});
-	
+
 });
 ```
 
@@ -842,17 +841,17 @@ Now our tests pass:
 
 ![JsonReader reads!][route14]
 
-[route14]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing14.png
+[route14]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing14.png
 
-Summary Diagram: 
+Summary Diagram:
 
 ![Brider Reader 05][br5]
 
-[br5]: http://www.elvenware.com/charlie/books/CloudNotes/Images/BridgeReader04-05.png
+[br5]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/BridgeReader04-05.png
 
 ##Step 09: FastForward with the Observer!
 
-We are now going to rush forward, and plug in all our code from BridgePattern02. The code is complex enough that communication between objects can become tricky. In particular, when a **DisplayObject** finishes refreshing screen, we need to be notified so that we can react to events created when new elements are placed on the screen. In particular, a **DisplayObject** might create a list of items, or other controls. When it does so, we might want to respond to events that occur when the user clicks on a new button or list item. We can't set up these events until the controls are created, so we have to be notified when the events are created. 
+We are now going to rush forward, and plug in all our code from BridgePattern02. The code is complex enough that communication between objects can become tricky. In particular, when a **DisplayObject** finishes refreshing screen, we need to be notified so that we can react to events created when new elements are placed on the screen. In particular, a **DisplayObject** might create a list of items, or other controls. When it does so, we might want to respond to events that occur when the user clicks on a new button or list item. We can't set up these events until the controls are created, so we have to be notified when the events are created.
 
 This -- of course -- is the classic place where intermediate level programmers go wrong. All their work to ensure loose coupling between objects can collapse when one object suddenly needs to notify another object that something has happened. In that case, most intermediate level developers break down and start hard coding a tightly coupled link between the object that makes the announcement, and the object that wants to hear that the event occurred.
 
@@ -863,7 +862,7 @@ Fortunately, there is a way for one object to talk to another without requiring 
 ```
 (function($) {
 	'use strict';
-	
+
 	var o = $({});
 
 	$.subscribe = function() {
@@ -878,7 +877,7 @@ Fortunately, there is a way for one object to talk to another without requiring 
 		o.trigger.apply(o, arguments);
 	};
 
-}(jQuery)); 
+}(jQuery));
 ```
 
 Place this file in the **javascripts** directory as **TinyPubSub.js**. We can use it in the **javascripts/Display/DisplayAddress.js** and **javascripts/Display/DisplayFileList.js** objects which are created by the **DisplayFactory**:
@@ -888,7 +887,7 @@ define(function(require) {
 	'use strict';
 
 	var DisplayAddress = (function() {
-		
+
 		function DisplayAddress() {
 
 		}
@@ -991,7 +990,7 @@ define([ "ReaderFactory", "BridgeFactory", "Utilities" ], function(
 As you can see, whenever a **DisplayOject** updates the display our code sets up an event handler for clicks on the new list items:
 
     $.subscribe('pageRefresh', function() { $("li").click(run); });
-    
+
 The control object finds out what file the user clicked on in the list item, and then it loads that file. It uses the **setFileName** method from the **Utilities** object to switchback to loading the default file (FileList.json) if the user clicks on the display list:
 
 ```
@@ -1017,7 +1016,7 @@ fancyReader.setReader(reader);
 fancyReader.readFile(options.fileName);
 ```
 
-It's the fruit of all our work, and its simplicity helps to keep our project maintainable. 
+It's the fruit of all our work, and its simplicity helps to keep our project maintainable.
 
 You've probably seen all this before, but here is the rest of our program. The **javascripts/Factories/ReaderFactory**:
 
@@ -1137,14 +1136,14 @@ var FancyReader = ( function() {
 		function FancyReader(reader) {			 
 			this.setReader(reader);
 		}		
-		
+
 		FancyReader.prototype = new ReaderBridge();
-		
+
 		return FancyReader;
 	}());
-	
+
 	return FancyReader;
-	
+
 });
 ```
 The **DefaultReader**:
@@ -1173,7 +1172,7 @@ define(function(require) {'use strict';
 
 	return DefaultReader;
 
-}); 
+});
 ```
 
 And for now, we will use this simple **javascripts/Readers/MarkdownReader**, and wait until Monday to see how to integrate the real reader into our program:
@@ -1206,12 +1205,12 @@ define(function(require) {'use strict';
 I think that is everything except our updated, Main.js file, which you should be able to fix up. The body of it, is unchanged, except that it is a good place to load 'PubSub':
 
 ```
-require(['jquery', "Control", "PubSub"], 
+require(['jquery', "Control", "PubSub"],
 
 	function(jq, Control, PubSub) {
 		'use strict';
 		console.log("Main called");
-		
+
 		$(document).ready(function() {
 			var control = new Control();
 		});
@@ -1220,7 +1219,7 @@ require(['jquery', "Control", "PubSub"],
 );
 ```
 
-The top part of the file is where you configure require to load: "jquery", "DefaultReader", "JsonReader", "MarkdownReader", "ReaderFactory", "BridgeFactory", "DisplayFactory", "ReaderBridge", "FancyReaderBridge", "DisplayFileList", "DisplayAddress", "Utilities", "Control", and "PubSub". 
+The top part of the file is where you configure require to load: "jquery", "DefaultReader", "JsonReader", "MarkdownReader", "ReaderFactory", "BridgeFactory", "DisplayFactory", "ReaderBridge", "FancyReaderBridge", "DisplayFileList", "DisplayAddress", "Utilities", "Control", and "PubSub".
 
 Only Utilities, Control and PubSub are in the javascripts folder. The rest are subdirectories of **javascripts** such as **Bridges**, **Display**, **Factories** and **Readers**.
 
@@ -1278,7 +1277,7 @@ And the Presidents. **Presidents01.json**:
 
 ##Step 10: Singleton
 
-The purpose of the Singleton pattern is to assure that only one instance of a particular object is created. We will discuss the **Singleton** pattern on Monday. However, you can get started with it now. 
+The purpose of the Singleton pattern is to assure that only one instance of a particular object is created. We will discuss the **Singleton** pattern on Monday. However, you can get started with it now.
 
 Here is the **Singleton** example from the **JavaScript/Design** folder of **JsObjects**:
 
@@ -1307,7 +1306,7 @@ define(function() {
 		SingletonModule.prototype.display = function(value) {
 			$('#debug01').append('<li>' + value + '</li>');
 		};
-	
+
 		return SingletonModule;
 
 	}());
@@ -1318,7 +1317,7 @@ define(function() {
 
 As you can see, we declare a variable called **_instance**. When the **constructor** is called, we check if **_instance** is **null**. If it is, then we assume this is the first time the **constructor** has been called. We set **_instance** to **this**. The **constructor** then exits, which means it performs the default task of all constructors, which is to return **this.** If **_instance** is not **null**, we assume an instance of the object has already been created, so we have the constructor return **_instance** and just throw away the new **this** object. The end result is to assure that only one instance of the object can ever be created.
 
-Let's apply it to the default Reader: 
+Let's apply it to the default Reader:
 
 ```
 define(function(require) {'use strict';
@@ -1326,7 +1325,7 @@ define(function(require) {'use strict';
 	var DefaultReader = ( function() {
 
 			var _instance = null;
-			
+
 			function DefaultReader() {
 				if (_instance === null) {
 					_instance = this;
@@ -1350,7 +1349,7 @@ define(function(require) {'use strict';
 
 	return DefaultReader;
 
-}); 
+});
 ```
 
 And here are a suite of tests designed to help us see if it is working. Save it as **/Tests/DefaultSingletonTests.js**:
@@ -1364,7 +1363,7 @@ define(['DefaultReader'], function(DefaultReader) {
 	describe("Default Singleton Module Suite", function() {
 
 		var a, b, c, d, f;
-		
+
 		beforeEach(function() {
 			a = new DefaultReader();
 			b = new DefaultReader();
@@ -1372,7 +1371,7 @@ define(['DefaultReader'], function(DefaultReader) {
 			d = new DefaultReader();
 			f = [];
 		});
-		
+
 		it("proves we can run a test", function() {
 			expect(true).toBe(true);
 		});
@@ -1381,7 +1380,7 @@ define(['DefaultReader'], function(DefaultReader) {
 			var e = {};
 			expect(a === e).toBe(false);
 		});
-		
+
 		it("proves we can create a DefaultReader01", function() {		
 			expect(a === b).toBe(true);
 		});
@@ -1391,10 +1390,10 @@ define(['DefaultReader'], function(DefaultReader) {
 		});
 
 		it("proves we can create a DefaultReader03", function() {
-			
+
 			expect(a === d).toBe(true);
 		});
-		
+
 		it("proves we can create a DefaultReader04", function() {
 			expect(b === c).toBe(true);
 		});
@@ -1418,7 +1417,7 @@ Integrate this test with all your other tests. Make sure they are working:
 
 Don't forget the **JsonReader** now relies on **TinyPubSub** so it will need to be loaded if you want to test that object.
 
-[br15]: http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing15.png
+[br15]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing15.png
 
 
 ##Step 11: More Tests, more Singletons
@@ -1435,7 +1434,7 @@ Some additional steps you should perform on your own to complete the assignment:
      - ReaderFactory
      - BridgeFactory
 - Call **DisplayAddress.display** and **DisplayFileList.display** and write tests proving that they fire an event.
-      
+
 Make sure your main program works. The program should load **FileList.json** when it starts. When you click on a file from **FileList.json** it should load that file on the main page. Click again, and it should go back to displaying **FileList.json**.
 
 

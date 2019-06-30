@@ -20,7 +20,7 @@ If you want to edit this in Eclipse:
 - Click finish
 - Optionally set up a working set for your project
 
-![Import](http://www.elvenware.com/charlie/books/CloudNotes/Images/EclipseImportProject.png)
+![Import](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/EclipseImportProject.png)
 
 If the above fails. Copy the .project file from [JsonRead][jsonread] into your project and change the name field to Week07RoutingData-LastName where LastName is your last name. Then use **File | Import | General | Existing *Project* into Workspace**.
 
@@ -74,7 +74,7 @@ Test it:
 
 Go to port 30025 and set the route to **sayHello**:
 
-![RoutingHello](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing01.png)
+![RoutingHello](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing01.png)
 
 ## Step04: Set up the Client
 
@@ -150,7 +150,7 @@ Modify the callback to look like this:
 
 Refresh the browser. The output should look something like this:
 
-![Route02](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing02.png)
+![Route02](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing02.png)
 
 We can see the data from the server below the button. Now let's get it to respond to a button click:
 
@@ -231,7 +231,7 @@ Note that we get the data passed from the server by examining **request.query**.
 
 The result should look like this in Chrome, but it will differ depending on browser and server platform:
 
-![Route03](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing03.png)
+![Route03](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing03.png)
 
 
 [wget]: http://wget.addictivecode.org/FrequentlyAskedQuestions?action=show&redirect=Faq#download
@@ -304,7 +304,7 @@ Modify NewPage.jade so that it looks like this:
 
 Restart the server, click on your link on the main page. You should be taken to the second page:
 
-![Route04](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing04.png)
+![Route04](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing04.png)
 
 ## Create a Application Control Page
 
@@ -460,7 +460,7 @@ At this stage we can see that we are loading a total of seven files:
 
 Here is what they look like in the Chrome developer tools:
 
-![Route05](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing05.png)
+![Route05](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing05.png)
 
 ## Call into NewPage
 
@@ -523,7 +523,7 @@ Now call the the new route, being sure that you go through **/NewPage** and not 
 
 The result looks like this on my Windows machine:
 
-![Route06](http://www.elvenware.com/charlie/books/CloudNotes/Images/Routing06.png)
+![Route06](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Routing06.png)
 
 As you can see, my server is set up to run in the **/Temp/Week07RoutingData** folder. Note that we also see the **routes** folder because that is where **NewPage.js** lives.
 

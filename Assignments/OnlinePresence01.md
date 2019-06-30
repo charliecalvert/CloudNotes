@@ -96,11 +96,11 @@ Eventually, your document might include additional information in a hyperlinked 
 
 In Figure One, I give an example of the type of document I want you to create. Your document will include more data and more links.
 
-![OnlinePresence](http://www.elvenware.com/charlie/books/CloudNotes/Images/OnlinePresnce01.png)
+![OnlinePresence](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/OnlinePresnce01.png)
 
 Figure 1: Here is the type of Google Docs file I want you to create. You do not need to use the same colors.
 
-![OnlinePresence02.png](http://www.elvenware.com/charlie/books/CloudNotes/Images/OnlinePresence02.png)
+![OnlinePresence02.png](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/OnlinePresence02.png)
 
 Figure 2: Sharing a document in Google Docs.
 

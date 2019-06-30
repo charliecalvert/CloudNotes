@@ -10,7 +10,7 @@ In your Dropbox folder on Linux, create a sub-folder called StackEdit. This is w
 
 In StackEdit, choose the pound sign icon on the far left. In the **Synchronize** section, choose **Synchronize |  Save on Dropbox**. A dialog like the one shown below appears. I want you to include a screenshot of this dialog when you turn in this assignment:
 
-![DropBox Folder](http://www.elvenware.com/charlie/books/CloudNotes/Images/DropBoxLinux03.png)
+![DropBox Folder](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/DropBoxLinux03.png)
 
 Choose to save you file in your **StackEdit** folder as **Week08-StackBox-LastName.md**, where LastName is your last name. 
 

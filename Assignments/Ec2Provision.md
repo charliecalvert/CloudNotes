@@ -476,11 +476,11 @@ To turn in the assignment, you should provide a screen shot showing:
 
 Here is a sample listing screen shot:
 
-![Git Listing](http://www.elvenware.com/charlie/books/CloudNotes/Images/Ec2Listing01.png)
+![Git Listing](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Ec2Listing01.png)
 
 Here is a sample of what the Apache welcome screen should look like:
 
-![Lamp](http://www.elvenware.com/charlie/books/CloudNotes/Images/LampApache2.png)
+![Lamp](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/LampApache2.png)
 
 ## More Information
 

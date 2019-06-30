@@ -167,7 +167,7 @@ In this assignment, all you need to do is get the program up and running. This m
 
 In this screen shot, you can see that **CopyToS3Part01.md** is saved to Google Drive and **Week05.md** is saved to Google Drive. Another file is saved to both GoogleDrive and DropBox, and has a link back to GitHub:
 
-![Drive](http://www.elvenware.com/charlie/books/CloudNotes/Images/AwsBasicS301.png)
+![Drive](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/AwsBasicS301.png)
 
 Also include:
 

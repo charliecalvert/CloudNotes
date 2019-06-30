@@ -338,7 +338,7 @@ The point is that you create sub-directories for:
 - Readers
 - DisplayObjects
 
-![The Packages](http://www.elvenware.com/charlie/books/CloudNotes/Images/Midterm01.png)
+![The Packages](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Midterm01.png)
 
 ##The Document Descriptor
 

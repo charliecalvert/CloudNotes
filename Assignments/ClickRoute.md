@@ -173,7 +173,7 @@ When you are done, the app should respond to clicks on the list items as follows
 
 It can look as you please, but here is an example interface.
 
-![Click Route](http://www.elvenware.com/charlie/books/CloudNotes/Images/ClickEvents05.png)
+![Click Route](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/ClickEvents05.png)
 
 ## Step05: Turn it In {#step05}
 
