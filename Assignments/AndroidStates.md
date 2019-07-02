@@ -1,10 +1,10 @@
-#Mobile State Population
+# Mobile State Population
 
 The goal is to query the census bureau about state populations. Create a web that does this. Then create an Cordova based mobile app that does that same thing.
 
 ## Getting Started
 
-You need to [get a key](http://www.census.gov/data/developers/data-sets.html) from the US Census bureau. 
+You need to [get a key](http://www.census.gov/data/developers/data-sets.html) from the US Census bureau.
 
 Deck with at least a few notes on US Census: [http://bit.ly/elven-programmable-web](http://bit.ly/elven-programmable-web)
 
@@ -39,9 +39,9 @@ The actual path to your **platforms** directory may differ. For instance, it mig
 
 	git reset Cordova01/platforms
 
-Or what have you. The point is that it is easy to undo a **git add**. Now fiddle with your **.gitignore** file and try again. Please try to avoid checking in the **platforms** folder. 
+Or what have you. The point is that it is easy to undo a **git add**. Now fiddle with your **.gitignore** file and try again. Please try to avoid checking in the **platforms** folder.
 
-##Hints
+## Hints
 
 I was able to start the web app from WebStorm by right clicking my HTML file in the **Project** window at the left of the IDE. I chose **run** from the menu.
 
@@ -181,7 +181,7 @@ You might get an error message like this:
 ```
 This makes it look like we are getting cross domain error. But that is not the case. For me, this error usually just means that I have some syntax error in my program. When I fix the syntax error, then the message shown above goes away. We will probably be able to avoid this mess altogether if we create the mock (httpbackend) tests in jasmine.
 
-##Turn it in
+## Turn it in
 
 Submit both projects and a screen shot of your application running in a VirtualBox AndroidX86, or on your phone, or both. Feel free to add a bit of CSS to make it more interesting.
 
