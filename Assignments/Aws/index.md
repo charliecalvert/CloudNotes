@@ -1,4 +1,38 @@
-# Ozymandias
+## Overview
+
+AWS assigments
+
+## AWS
+
+- [ApacheHtml.md](ApacheHtml.html)
+- [AwsCloudNine.md](AwsCloudNine.html)
+- [AwsEducate.md](AwsEducate.html)
+- [AwsRunSshScript.md](AwsRunSshScript.html)
+- [AwsServerTest.md](AwsServerTest.html)
+- [Ec2Checklist.md](Ec2Checklist.html)
+- [Ec2CloudOnly.md](Ec2CloudOnly.html)
+- [Ec2CopyFile.md](Ec2CopyFile.html)
+- [Ec2DataHunterFinalPrep.md](Ec2DataHunterFinalPrep.html)
+- [Ec2EndOfQuarter.md](Ec2EndOfQuarter.html)
+- [Ec2GetStarted.md](Ec2GetStarted.html)
+- [Ec2GitHtmlPictures.md](Ec2GitHtmlPictures.html)
+- [Ec2MarkdownToHtml.md](Ec2MarkdownToHtml.html)
+- [Ec2Provision.md](Ec2Provision.html)
+- [Ec2ProvisionRepo.md](Ec2ProvisionRepo.html)
+- [Ec2RunElvenSite.md](Ec2RunElvenSite.html)
+- [Ec2SiteDeploy.md](Ec2SiteDeploy.html)
+- [index.md](index.html)
+- [LampBootstrap.md](LampBootstrap.html)
+- [LampMarkdown.md](LampMarkdown.html)
+- [master-list.md](master-list.html)
+- [MoreOnCloudNine.md](MoreOnCloudNine.html)
+- [SetupAtomForMarkdown.md](SetupAtomForMarkdown.html)
+- [Summary.md](Summary.html)
+- [SystemCheckDetails.md](SystemCheckDetails.html)
+- [SystemCheck.md](SystemCheck.html)
+- [SystemCheckRefactor.md](SystemCheckRefactor.html)
+
+## Ozymandias
 
 <pre>
 I met a traveller from an antique land
