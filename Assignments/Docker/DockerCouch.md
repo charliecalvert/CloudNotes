@@ -1,3 +1,7 @@
+## Overview
+
+Set up an instance of the NoSQL database CouchDb and access it from a NodeJs application.
+
 ## Creating
 
 Run this command to download the **couchdb** image from the docker hub and start an instance on port 5984:
@@ -12,13 +16,18 @@ Now do the first time setup for CouchDb. You only need to do this once:
 
 - [http://192.168.86.117:5984/_utils/#setup](http://192.168.86.117:5984/_utils/#setup)
 
-Choose to set up a single instance.
+The details:
+
+- Choose to set up a single node.
+- Set up the admin credentials.
+- Leave the bind address at 0.0.0.0
+  - Leave the port at 5984
 
 ## Connect to CouchDb
 
-Open JsObjects/Data/CouchDb03 in WebStorm or your favorite editor.
+Open **JsObjects/Data/CouchDb03** in WebStorm or your favorite editor.
 
-Edit JsObjects/Data/set-server-js and setup the IP for your VM:
+Use Geany or your favorite text editor to edit **JsObjects/Data/set-server-js** and setup the IP for your VM:
 
 ```javascript
 var servers = ['127.0.0.1:5984',
@@ -30,18 +39,54 @@ var servers = ['127.0.0.1:5984',
 const serverIndex = 1;
 ```
 
-I use the **serverIndex** to index into the proper IP in the array.
+I use the **serverIndex** to index into the proper IP in the array. If you want the first item in the array ('127.0.0.1:5984'), set **serverIndex** to 0, if you want the second item ('192.168.86.117:5984'), set it to 1.
 
-Inside the main program, which in this case is in **CouchDb03/server.js** find this code and specify your userName and password:
+Go back to WebStorm. Open **CouchDb03/server.js**. Find the call to **userPassUrl** and specify your **userName** and **password**:
 
 ```javascript
 var setServer = require('../set-server');
 const server = setServer.userPassUrl('admin', 'foo') + '/';
 ```
 
+## Run CouchDb03
+
+CouchDb03 is very easy to use. It runs only at the command line. The menu looks something like this:
+
+    ? What do you want to do?
+      =======================
+      (Use arrow keys)
+      ──────────────
+    ❯ Say hello
+      create
+      ──────────────
+      show
+      put
+      putData
+
+Use the arrow keys to navigate the menu. Choose **Say hello** to test you connection. It should return, in part, something like this:
+
+
+```json
+{
+    "statusCode": 200,
+    "body": {
+      "couchdb":"Welcome",
+      "version":"2.3.1",
+      "git_sha":"c298091a4",
+      "uuid":"2eec8d05c21330b7048eac6cffe210d2",
+      "features":["pluggable-storage-engines","scheduler"],
+      "vendor":{"name":"The Apache Software Foundation"}
+    }
+}  
+```
+
+Select **create** to create a database named **bcdata**. Choose **put** to insert some data. Go to the browser and explore your instance of CouchDb. It should have a new database called **bcdata** with two records in it.
+
 ## Stopping
 
-To get the ID of your running image:
+Though this is not part of the assignment proper, it might help to review how to stop our instance of CouchDb and even remove it.
+
+Let's start by getting the ID of our running image:
 
     docker ps -as
 
@@ -53,14 +98,19 @@ CONTAINER ID        IMAGE        COMMAND
 75c5a34b5c79        couchdb      "tini -- /docker-ent…"   39 minutes ago  
 ```
 
-Use the CONTAINER ID to stop and then rm the instance:
+Use the CONTAINER ID to stop the instance.
 
     docker stop 75c5a34b5c79
+
+Optionally, you can then use **rm** to remove the instance:
+
     docker rm 75c5a34b5c79
 
-If you remove the instance, then it is gone and you must recreate it with the **run** command shown above.
+Note that you are removing the container, not the image. The container tracks state such as your new bcdata database, while the image has no state. If you remove the container instance, then it is gone and so is your database. You must recreate it with container with the **run** command as shown above. And then step through the other steps.
 
-Or alternately you can just stop the image, and then later restart it:
+**NOTE**: _We learn through repetition. Very few people really internalize a procedure like this by doing it only once. It may seem like a lot of work to delete the container and start again, but if you do it a few times, you can probably complete the procedure in much less that five minutes. Perhaps even less than a minute. Having that kind of command of a technology is very useful._
+
+If you don't want to remove the image, and often you won't, you can just stop the image, and then later restart it:
 
     docker stop 75c5a34b5c79
     docker start 75c5a34b5c79
@@ -75,4 +125,12 @@ At this point you still have the docker image:
     couchdb                        latest              be0738482d9f        3 weeks ago         205MB
     hello-world                    latest              4ab4c602aa5e        3 months ago        1.84kB
 
-If you want to
+The point is that stopping and starting the image is the right thing to do once you have the basics down and want to start adding real data to the database. But if you are still in learning mode, you should delete and restart the database.
+
+Perhaps I should ask students to submit a screenshot of what the system looks like after you remove and recreate the container?
+
+## Turn it in
+
+Take a screenshot of your instance of CouchDb with the bcdata database and two records. Attach the image to your assignment and turn it in.
+
+**REMEMBER**: _No Word Documents and no Zip files. Just attached your PNG image files directly to the assignment (JPGs are also fine)._
