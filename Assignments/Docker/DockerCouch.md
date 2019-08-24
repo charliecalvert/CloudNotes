@@ -14,7 +14,7 @@ Now open up a browser and browse to your instance. This means you put in the IP 
 
 Now do the first time setup for CouchDb. You only need to do this once:
 
-- [http://192.168.86.117:5984/_utils/#setup](http://192.168.86.117:5984/_utils/#setup)
+- [http://192.168.86.117:5984/_utils/#/setup](http://192.168.86.117:5984/_utils/#/setup)
 
 The details:
 
@@ -81,6 +81,16 @@ Use the arrow keys to navigate the menu. Choose **Say hello** to test you connec
 ```
 
 Select **create** to create a database named **bcdata**. Choose **put** to insert some data. Go to the browser and explore your instance of CouchDb. It should have a new database called **bcdata** with two records in it.
+
+## Implemetation Menu
+
+We use a tool called [Inquirer](https://github.com/SBoudrias/Inquirer.js/) to create our command line menu. It has over 10,000 stars on GitHub and is being actively maintained as of Aug 22, 2019.
+
+## Database Access
+
+We are using the [request] HTTP package to talk to the database. It has over 23,000 stars on GitHub and was last updated 3 months ago as of Aug 22, 2019.
+
+**NOTE**: _If you prefer a more formal approach, there are many examples of using the **nano** library on JsObjects. For instance, CouchDb04._
 
 ## Stopping
 

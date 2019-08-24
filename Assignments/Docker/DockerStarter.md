@@ -37,6 +37,18 @@ After running this script, be sure to logout and then log in again. On Lubuntu, 
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
+## The Docker Dance
+
+Following the steps in the previous section should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker images**, then try this:
+
+    sudo groupadd docker
+    sudo usermod -aG docker $USER    
+    sudo systemctl enable docker
+
+**NOTE**: _You may see some error messages. At least for now, ignore them._
+
+After running the above, log out and log in again. One simple way to do this is to reboot your Ubuntu VM. When you back up and running, try **docker images** again. If it returns without errors, then all is good. If you get errors, then repeat the steps in this section one more time. If that does not fix it, then head over to the discussion area and let us know what errors you are seeing.
+
 ## Docker Hub
 
 Create an account and sign into the Docker Hub at [https://hub.docker.com/](https://hub.docker.com/).
