@@ -47,6 +47,35 @@ If you have not downloaded or created any images yet, you will see only the titl
 
 **NOTE**: _The syntax for listing docker images has changed. It was **docker images** but now it is **docker image ls**._
 
+## Docker Management Commands
+
+Confusingly, Docker has recently added a series of **Management Commands** to replace the old-style Docker commands. Here are the available **Management Commands** as of version 18.03:
+
+```
+Management Commands:
+  config      Manage Docker configs
+  container   Manage containers
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+```
+
+These 13 commands are designed to replace the 40 old-style commands. The goal of the **Management Commands** is to simplify the interface. It is easier to work with 13 commands than to work with 40. However, the web is bulging with Docker documentation that uses the old style commands. This can be quite confusing. If possible, if you find a tutorial or document on the web or on Elvenware that uses commands other those listed above, then try to switch to the new style **Management Commands**.
+
+If you type **docker help** at the bash prompt you will see both old and new style commands. To get help one one of the new style commands try something like this:
+
+    docker help container
+
+This will give you information on the [docker container][dc] management command.
+
 ## The Docker Dance {#docker-dance}
 
 Following the steps in the previous section should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker image ls**, then try this:
@@ -73,14 +102,15 @@ Login Succeeded
 
 https://hub.docker.com/billing-plans/
 
-## Test
+## Testing Docker {#test}
 
 Try some of these commands to see if you instance is installed. The last command should both download and run the Ubuntu Docker image.
 
 ```nohighlighting
-docker run -i hello-world
-docker images
-docker run -it ubuntu
+docker container run -i hello-world
+docker image ls
+docker container run -it ubuntu
+docker image ls
 ```
 
 ## Run an Image
@@ -88,10 +118,15 @@ docker run -it ubuntu
 In general, we run an image like this.
 
 ```xml
-docker run -it <image-name>;
+docker container run -it <image-name>;
 ```
 
-After it has been run, a container is created, and then we tend to just run start and exec the container, as explained below. But if you want to start again, with a fresh instance of the image, we run the command shown above.
+After it has been run, a container is created, and then we tend to just **start** and **exec** the container, as explained below. But if you want to create a second, fresh instance of the image, we use the **run** command shown above.
+
+- **docker container run**: Create a container from an image and start it
+- **docker container start**: Start an existing container
+
+Note that we pass in the **ID** or **name** of a container to the above commands, as shown at the beginning of this section.
 
 ## Install Software
 
@@ -217,11 +252,26 @@ To list all containers new style:
 
     docker container ls
 
-Old Style:
+To see both running and stopped, do this:
+
+    docker container ls -a
+
+Old Style to show both running and stopped containers:
 
     docker ps -a
 
-To list all containers with just ID:
+To list all containers with just ID new style:
+
+    docker container ls -a --format "{{.ID}}"
+
+Here is an example:
+
+    docker container ls -a --format "{{.ID}}: {{.Image}}"
+    672dbb9755d2: react-simple
+    7a3c78cb6a03: mongo-test_elf-app
+    c0afe21f7996: mongo
+
+To list all containers with just ID old style:
 
     docker ps -aq
 
@@ -246,10 +296,17 @@ To leave the container and return to the server, type **exit**.
 
 Stop it like this:
 
+    docker container stop epic_jang
+
+Or like this:
+
     docker stop epic_jang
 
-Alternately, you can **commit** the container to an image and then run the image:
+Remove (delete) it like this:
 
+    docker container rm epic_jang
+
+Alternately, you can **commit** the container to an image and then run the image:
 
     docker commit epic_jang foo
     docker run -it foo
@@ -322,6 +379,8 @@ This is for later:
 <!--       -->
 <!-- links -->
 <!--       -->
+
+[dc]: https://docs.docker.com/engine/reference/commandline/container/
 
 [runc][https://github.com/opencontainers/runc]
 
