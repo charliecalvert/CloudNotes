@@ -1,19 +1,8 @@
 ## Overview
 
-This assignment is designed to be an introduction to Docker.
+This assignment will help you get started installing and using Docker.
 
-Docker is like VirtualBox plus a VM such as Pristine Lubuntu or Ubuntu server, but Docker is smaller and more easily deployed. It can also share resources in a way that a VM can't, so that multiple docker containers take up little more room than a single container.
-
-Docker images start with a stripped down copy of Linux, or, more recently, something smaller called runc. We can modify that copy of Linux/[runc][runc] to support various tasks such as Apache web servers, MySQL databases, etc. Since Linux and runc are very flexible, the number of things that can be hosted inside a Docker image has few limits. Once we have configured the image to support a particular feature such as MySQL, we can then save the whole thing as a new image. Then we can move the image to other machines, and immediately start using the service we created in the image.
-
-Perhaps the architecture might look a little like this:
-
-- Top Level: Our tools such as MySQL or Apache
-- Middle Level: Linux or [runc][runc]
-- Host Level - Host OS
-- Lowest Level: Hardware
-
-Also, see this: https://stackoverflow.com/a/16048358/253576
+**NOTE**: _If you have not done so already, please first read the [Docker Overview](DockerOverview.html)._
 
 ## Docker Install
 
@@ -45,40 +34,11 @@ To see the images you have created or downloaded, do this:
 
 If you have not downloaded or created any images yet, you will see only the titles for the columns. If you get an error, however, please see the section below on the [Docker Dance](#docker-dance).
 
-**NOTE**: _The syntax for listing docker images has changed. It was **docker images** but now it is **docker image ls**._
-
-## Docker Management Commands
-
-Confusingly, Docker has recently added a series of **Management Commands** to replace the old-style Docker commands. Here are the available **Management Commands** as of version 18.03:
-
-```
-Management Commands:
-  config      Manage Docker configs
-  container   Manage containers
-  image       Manage images
-  network     Manage networks
-  node        Manage Swarm nodes
-  plugin      Manage plugins
-  secret      Manage Docker secrets
-  service     Manage services
-  stack       Manage Docker stacks
-  swarm       Manage Swarm
-  system      Manage Docker
-  trust       Manage trust on Docker images
-  volume      Manage volumes
-```
-
-These 13 commands are designed to replace the 40 old-style commands. The goal of the **Management Commands** is to simplify the interface. It is easier to work with 13 commands than to work with 40. However, the web is bulging with Docker documentation that uses the old style commands. This can be quite confusing. If possible, if you find a tutorial or document on the web or on Elvenware that uses commands other those listed above, then try to switch to the new style **Management Commands**.
-
-If you type **docker help** at the bash prompt you will see both old and new style commands. To get help one one of the new style commands try something like this:
-
-    docker help container
-
-This will give you information on the [docker container][dc] management command.
+**NOTE**: _The old style command was **docker images** but the new Management Command is **docker image ls**. At first blush, this might make the old style command appear best because it is shorter. The advantage of the new commands is that all commands having to do with images begin with **docker image ...**._
 
 ## The Docker Dance {#docker-dance}
 
-Following the steps in the previous section should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker image ls**, then try this:
+Following the steps in the previous sections should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker image ls**, then try this:
 
     sudo groupadd docker
     sudo usermod -aG docker $USER    
@@ -289,8 +249,8 @@ To remove all images:
 
 If you have a container (not an image) called **epic_jang**, start it, and then hop into it:
 
-    docker start epic_jang
-    docker exec -it epic_jang bash
+    docker container start epic_jang
+    docker container exec -it epic_jang bash
 
 To leave the container and return to the server, type **exit**.
 
@@ -298,7 +258,7 @@ Stop it like this:
 
     docker container stop epic_jang
 
-Or like this:
+Or like this for the old style:
 
     docker stop epic_jang
 
@@ -309,7 +269,7 @@ Remove (delete) it like this:
 Alternately, you can **commit** the container to an image and then run the image:
 
     docker commit epic_jang foo
-    docker run -it foo
+    docker container run -it foo
 
 ## Turn it in
 
