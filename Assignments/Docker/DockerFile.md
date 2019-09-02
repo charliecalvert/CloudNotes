@@ -121,10 +121,17 @@ If you don't want to have Apache start automatically when your server boots up, 
 
 ## Run Apache
 
-Create a directory called **~/Docker/Apache**. Create a file called public-html/index.html:
+Create a directory called **~/Docker/Apache**. Inside it, create a directory called **public-html/** and one called **public-html/css**:
 
-    mkdir public-html
-    echo '<p>foo</p>' > public-html/index.html
+    mkdir -p public-html/css
+
+Run **get-gist** inside **public-html** and get the Elf Basic HTML file. Rename it to **index.html**. Also get **normalize.css** and put it in the CSS directory:
+
+    wget https://necolas.github.io/normalize.css/8.0.1/normalize.css
+
+Create a link to the file from **index.html**:
+
+    &lt;link rel="stylesheet" href="css/normalize.css"&gt;
 
 Create your **Dockerfile** in the **DockerCode/Apache** directory and copy your HTML file into it:
 
@@ -136,8 +143,8 @@ Create a simple bash script called **DockerCode/Apache/build** to create and sta
 ```bash
 #! /usr/bin/env bash
 
-docker image build -t calvert-apache2 .
-docker container run -dit --name calvert-running-app -p 8080:80 calvert-apache2
+docker image build -t calvert-apache .
+docker container run -dit --name apache-app -p 8080:80 calvert-apache
 ```
 
 Of course, you should use your lastname and not mine.
@@ -154,6 +161,15 @@ Go to **http://localhost:8080** to see your site in action.
 
 **NOTE**: _In [RunApacheOldStyle.html](RunApacheOldStyle.html) you will find a more complex way to do the same thing._
 
+## Reset
+
+```bash
+#! /usr/bin/env bash
+
+docker image build -t calvert-apache .
+docker container run -dit --name apache-app -p 8080:80 calvert-apache
+```
+
 ## Get Bash Shell in Background Docker Task
 
 Open a bash shell on the instance running in background:
@@ -165,6 +181,19 @@ For instance:
     docker container exec -it ubbase bash    
 
 ## Create MakeHtml
+
+Now we want to use DockerCompose to use two projects at once.
+
+    FROM node:latest
+    RUN mkdir -p /home/bcuser/Source/elf-app
+    WORKDIR /home/bcuser/Source/elf-app
+    COPY package.json /home/bcuser/Source/elf-app/
+    RUN npm install
+    COPY . /home/bcuser/Source/elf-app
+    EXPOSE 30025
+    CMD [ "npm", "start" ]
+
+
 
 In a directory called **~/Docker/MakeHtml**, create this **Dockerfile**
 
