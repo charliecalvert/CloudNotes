@@ -1,14 +1,54 @@
 ## The Docker File
 
-We can automate the process outlined in the [Docker Starter Assignment][dsp] by creating a [Docker File][df].
+We can automate the process outlined in the [Docker Starter Assignment][dsp] by creating a [Docker File][df]. In this assignment you will learn the basics of working with **Dockerfiles**.
 
-    mkdir -p ~/DockerCode/MakeHtml
-    cd ~/DockerCode/MakeHtml
+## Your Docker Hub Name
 
-Simple example:
+In the code found in this assignment you are going to need to know your Docker hub name. You created this name when you first logged into the Docker Hub. If you have forgotten the name, you can always find it by logging into the Docker Hub and going to its home page.
+
+![Docker name on Docker hub][dnh]
+
+**IMAGE**: _To get your docker hub name, log into docker and go to the home directory. As you can see, my Docker Hub name is **charliecalvert**._
+
+**NOTE**: _At the beginning of a quarter, some students realize that they have forgotten how to log into an online resource such as Docker Hub that they used in a previous quarter. I keep track of this information in [Lastpass](https://lastpass.com). This utility has saved me untold hours over the years. I consider it an essential resource and a safe way to track usernames and passwords. I believe another highly rated product is called **1password**, but I have never used it and hence can't provide help to students who choose it. You can also save passwords to your Chrome or Firefox account, but I'm sure you can see why that is not as useful as working with a tool that runs in all browsers._
+
+## Simple Example
+
+Here is an example **Dockerfile** that creates an image based on the official [Docker Hub ubuntu image](https://hub.docker.com/_/ubuntu):
 
     FROM ubuntu
-    RUN echo 'Dockerfile' > /tmp/Dockerfile
+    RUN echo 'File content' > /tmp/TempFile
+
+The first line pulls down the **ubuntu** image from the Docker Hub and creates a local copy. After creating the local image the second line in the file runs a command inside the image which creates a small text file with the words **File content** inside it.
+
+You can save the two lines in a file called **~/temp/Dockerfile**. Run it from the **temp** directory like this:
+
+    docker image build -t &lt;YOUR-DOCKER-HUB-NAME&gt;/docker-test .
+
+In my case, this might look a bit like this:
+
+    docker image build -t charliecalvert/docker-test .
+
+Now give it a name and run it:
+
+    docker container run -name test01 -it charliecalvert/docker-test
+
+At this point you should be able to navigate into the /tmp directory and view the file you created:
+
+```
+$ docker container run --name test01 -it charliecalvert/docker-test
+root@2b00769cc093:/# cd tmp/
+root@2b00769cc093:/tmp# ll
+total 12
+drwxrwxrwt 1 root root 4096 Sep  1 22:36 ./
+drwxr-xr-x 1 root root 4096 Sep  1 22:39 ../
+-rw-r--r-- 1 root root   13 Sep  1 22:36 TempFile
+root@2b00769cc093:/tmp# cat TempFile
+File content
+root@2b00769cc093:/tmp#
+```
+
+As you can see, by default you are logged in as **root**. This means you are the **admin** and have full rights in the instance. There are no other users. In particular, there is no **bcuser** account. I mention this only because I create a **bcuser** account in the VirtualBox VMs that I give to my students at the beginning of the quarter.
 
 ## Where we are headed
 
@@ -22,14 +62,22 @@ Throughout this assignment, we are going to being building several docker files.
   - MakeHtml
     - Dockerfile
 
+There is a root directory called **DockerCode**. Beneath it a three sub-directories, each containing a **Dockerfile**.
+
+Here are the commands to create one of the directories shown above. Issue the command from the root of your repository:
+
+    mkdir -p ~/DockerCode/MakeHtml
+    cd ~/DockerCode/MakeHtml
+
+The **-p** flag allows you to create two directories at once.
+
 ## Set up Ubuntu:
 
-In this section of the text we learn how to create an UbuntuServer image that is up to date and contains certain key pieces.
+In this section of the text we learn how to create an Docker image and Docker container based on the official Ubuntu Server image from the Docker Hub. We make sure it is up to date and contains certain key pieces such as **git** and **nano**.
 
 Place this text in **~/Docker/UbuntuBase/Dockerfile**:
 
     FROM ubuntu
-    ENV DEBIAN_FRONTEND noninteractive
     RUN apt-get update --yes
     RUN apt-get upgrade --yes
 
@@ -37,31 +85,31 @@ Place this text in **~/Docker/UbuntuBase/Dockerfile**:
     RUN apt-get install build-essential -y
     RUN apt-get install nano -y
 
-Create the image:
+To create the image run a command of this type:
 
-    docker build -t <DOCKER-HUB-NAME>/ubuntu-base .
+    docker image build -t <DOCKER-HUB-NAME>/ubuntu-base .
 
 When running the above command, note the period at the end.
 
 Run it like this:
 
-    docker run -it <DOCKER-HUB-NAME>/ubuntu-base
+    docker container run -it <DOCKER-HUB-NAME>/ubuntu-base
 
 For instance:
 
-    docker build -t charliecalvert/ubuntu-base .
-    docker run -it charliecalvert/ubuntu-base
+    docker image build -t charliecalvert/ubuntu-base .
+    docker container run -it charliecalvert/ubuntu-base
 
 The build command creates a Docker image based on your **Dockerfile**. The run command creates a container based on the image and runs it. To delete an image, see the text further down in this file.
 
 ## Disable Apache on Ubuntu Server
 
-We are going to be running the Apache in a Docker container. As a result, we usually do not want to be running Apache on our Server. In our case, we frequently already have Apache installed and running on our server. We want, at minimum to stop it, which means it won't run until either:
+Our next goal is to run the [Apache web server][apache] in a Docker container. As a result, we usually do not want to be running Apache on our Server. In our case, we frequently already have Apache installed and running on our server. We want, at minimum to stop it, which means it won't run until either:
 
 - We restart it
 - Or the Server is rebooted
 
-Make sure your Ubuntu Server is not running Apache:
+Run these commands in the bash shell to be sure your Ubuntu Server is not actively running the Apache web server:
 
     sudo service apache2 status
     sudo service apache2 stop
@@ -71,88 +119,50 @@ If you don't want to have Apache start automatically when your server boots up, 
     sudo service apache2 stop
     sudo systemctl disable apache2
 
-
 ## Run Apache
 
-The next step would be to add Apache to our Docker base ubuntu image.
+Create a directory called **~/Docker/Apache**. Create a file called public-html/index.html:
 
-Create a directory called **~/Docker/Apache**. Create a file called:
+    mkdir public-html
+    echo '<p>foo</p>' > public-html/index.html
 
-    ~/Docker/Apache/000-default.conf
+Create your **Dockerfile** in the **DockerCode/Apache** directory and copy your HTML file into it:
 
-Place this text in it:
+    FROM httpd:latest
+    COPY ./public-html/ /usr/local/apache2/htdocs/
 
-```XML
-ServerName www.example.com
+Create a simple bash script called **DockerCode/Apache/build** to create and start your image:
 
-<VirtualHost *:80>
-	# The ServerName directive sets the request scheme, hostname and port that
-	# the server uses to identify itself. This is used when creating
-	# redirection URLs. In the context of virtual hosts, the ServerName
-	# specifies what hostname must appear in the request's Host: header to
-	# match this virtual host. For the default virtual host (this file) this
-	# value is not decisive as it is used as a last resort host regardless.
-	# However, you must set it for any further virtual host explicitly.
-	# ServerName www.example.com
+```bash
+#! /usr/bin/env bash
 
-	ServerAdmin webmaster@localhost
-	DocumentRoot /var/www/html
-
-	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
-	# error, crit, alert, emerg.
-	# It is also possible to configure the loglevel for particular
-	# modules, e.g.
-	#LogLevel info ssl:warn
-
-	ErrorLog ${APACHE_LOG_DIR}/error.log
-	CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-	# For most configuration files from conf-available/, which are
-	# enabled or disabled at a global level, it is possible to
-	# include a line for only one particular virtual host. For example the
-	# following line enables the CGI configuration for this host only
-	# after it has been globally disabled with "a2disconf".
-	#Include conf-available/serve-cgi-bin.conf
-</VirtualHost>
+docker image build -t calvert-apache2 .
+docker container run -dit --name calvert-running-app -p 8080:80 calvert-apache2
 ```
 
-Put this **Dockerfile** in the same directory:
+Of course, you should use your lastname and not mine.
 
-    FROM charliecalvert/ubuntu-base
+Don't forget to make your script executable:
 
-    RUN apt-get install apache2 -y
-    env APACHE_RUN_USER    www-data
-    env APACHE_RUN_GROUP   www-data
-    ENV APACHE_LOG_DIR     /var/log/apache2
-    env APACHE_PID_FILE    /var/run/apache2.pid
-    env APACHE_RUN_DIR     /var/run/apache2
-    env APACHE_LOCK_DIR    /var/lock/apache2
+    chmod +x build
 
-    ADD 000-default.conf   /etc/apache2/sites-enabled/
+Now run it:
 
-    RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
+    ./build
 
-    EXPOSE 80
+Go to **http://localhost:8080** to see your site in action.
 
-    CMD ["apache2", "-D", "FOREGROUND"]
-
-Then build it:
-
-    docker build -t <DOCKER-HUB-NAME>/apache .
-
-And run it in the background:
-
-    docker run -d -p 80:80 charliecalvert/apache
-
-The above command maps the Docker container's Port 80 to the hosts Port 80. The following command, which is given only as an fyi, maps the Docker containers Port 80 to the hosts port 10025:
-
-    docker run --name charlie -d -p 10025:80 charliecalvert/apache
+**NOTE**: _In [RunApacheOldStyle.html](RunApacheOldStyle.html) you will find a more complex way to do the same thing._
 
 ## Get Bash Shell in Background Docker Task
 
 Open a bash shell on the instance running in background:
 
-    docker exec -it <CONTAINER_ID_OR_NAME> bash
+    docker container exec -it <CONTAINER_ID_OR_NAME> bash
+
+For instance:
+
+    docker container exec -it ubbase bash    
 
 ## Create MakeHtml
 
@@ -219,5 +229,7 @@ Give me at least one screenshot of you processing a docker file. Put your copies
 - Directory name
 - Branch
 
-[dsp]: http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerStarter.html
+[apache]: https://httpd.apache.org/
 [df]: https://docs.docker.com/engine/reference/builder
+[dnh]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-file-hub.png
+[dsp]: http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerStarter.html

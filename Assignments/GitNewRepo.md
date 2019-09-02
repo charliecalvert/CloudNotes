@@ -96,14 +96,18 @@ Use [Github](https://github.com) to host your [Git](http://git-scm.com/book/en/v
 In either case, you should sign up for the Github [student pack][github-edu]:
 
 - The student pack used to take days to set up. Now the delay is usually only a few brief minutes.
-- With the student pack you can create private repositories for free.
+- The student pack used to be important because it allowed you to create private repositories for free. After Microsoft bought GitHub for 7.5 billion dollars in stock, they gave the privilege to create free private repositories to everyone. However, I still suggest that you sign up for the student pack as it has traditionally included a number of useful free deals.
 
 ## Git Account BitBucket
+
+GitHub is not the only place to host your repositories. Other well known sites include BitBucket and GitLab. Of these two competitors to GitHub, GitLab is currently the more popular. I use BitBucket quite frequently but have not yet tried to GitLab. (It is impossible to keep up with all the cool tech being created.) However, you should note that GitHub is one of the central sites on the web for developers, and it is almost impossible to overemphasize its importance. As a result it will be our goto tool for Git. That said, the competitors bring some nice features to the table in an attempt to differentiate themselves.
 
 Use [BitBucket](https://bitbucket.org) to host a private [Git](http://git-scm.com/book/en/v2) repository. You have two choices:
 
 - Create a new BitBucket account if you don't have one already
 - Use an existing BitBucket account.
+
+**NOTE**: _I much prefer that you use GitHub rather than BitBucket. The reason for this is speed. GitHub has spent a lot of time and money on performance. If I have to pull 30 student repositories at one time, even small differences in performance make a difference. As a result, I ask that you use GitHub to help make your teacher's life easier._
 
 ## Create Repo Home {#create-home}
 
@@ -120,14 +124,14 @@ For instance, your repository might have a name like one of the following, depen
 on the class you are in and the current year:
 
 ```
-prog219-calvert-2017
-prog270-calvert-2017
-prog272-calvert-2017
-isit320-calvert-2017
-isit322-calvert-2017
+prog219-calvert-2019
+prog270-calvert-2019
+prog272-calvert-2019
+isit320-calvert-2019
+isit322-calvert-2019
 ```
 
-**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2017, then set the year to 2017, even if my example uses some other year.*
+**NOTE**: *Throughout this and similar documents, the year field should be set to the current year. I may have written or last updated this document one or more years ago, but you should use your common sense when using the year field. If it is 2019, then set the year to 2019, even if my example uses some other year.*
 
 Then make the following selections:
 
@@ -140,19 +144,24 @@ Then make the following selections:
 Add these near the top of your **.gitignore** file:
 
 ```code
-# Other
+# IDE
 .idea
 .vscode
 .c9
+
+# Webpack
 bundle.js
 *.js.map
+.firebase
 ```
 
-**NOTE**: _On GitHub, it is possible to create a repository without any content such as a pre-initialized **README.md** or **.gitignore** file. If you do that, then the act of setting up your repository on your local machine is relatively complex. If you select the options to put a **README** or other content in your repository, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
+In the above, the code that begins with a hash tag (#) are comments. The other code specifies that names of files or directories you do not want to check in to GitHub.
+
+**NOTE**: _On GitHub, it is possible to create a repository without any content such as a pre-initialized **README.md** or **.gitignore** file. If you do that, then the act of setting up your repository on your local machine is a bit more complex for newbies. If you select the options to put a **README** or other content in your repository, then you need do nothing more than clone the repository you created on GitHub site. In other words, much of what follows is unnecessary, particularly the bits about **git remote add origin...**._
 
 Be sure that **node_modules** is included in your **.gitignore** directory. Please understand that **node_modules** directories can be VERY large. Frequently they are several orders of magnitude larger than your base project. This is okay at first, but after about Week Three, repositories that don't use **.gitignore** to filter out **node_modules** become huge, taking a long time to download and taking up vast amounts of space on my hard drive. There are further complications due to subtle differences in the way these directories might look on my system and yours.
 
-The bottom line is that I get quite frustrated by the extra work, time, and resources I expend when people forget to include **node_modules** in their **gitignore** file. Don't let this happen!
+The bottom line is that I get quite frustrated by the extra work, time, and resources I expend when people forget to include **node_modules** in their **gitignore** file. _**Don't let this happen!**_
 
 ## Share Repository {#share}
 
