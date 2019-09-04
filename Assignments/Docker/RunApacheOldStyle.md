@@ -75,3 +75,28 @@ And run it in the background:
 The above command maps the Docker container's Port 80 to the hosts Port 80. The following command, which is given only as an fyi, maps the Docker containers Port 80 to the hosts port 10025:
 
     docker container run --name charlie -d -p 10025:80 charliecalvert/apache
+
+## Other Old Code
+
+In a directory called **~/Docker/MakeHtml**, create this **Dockerfile**
+
+
+    FROM charliecalvert/apache
+    RUN apt-get install sudo -y
+    RUN useradd -ms /bin/bash bcuser
+    RUN usermod -aG sudo bcuser
+    RUN echo "bcuser:bcuser" | chpasswd
+    RUN su bcuser
+    RUN mkdir /home/bcuser/Git
+    RUN cd /home/bcuser/Git && git clone http://git@github.com/charliecalvert/JsObjects.git
+    RUN su -c "cd /home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox && ./UbuntuSetup b" bcuser
+    RUN cd /home/bcuser/Git/JsObjects/Utilities/NodeInstall && echo bcuser | sudo -S ./NodeInstall.sh
+    RUN cd /home/bcuser/Git/JsObjects/Utilities/NodeInstall && echo bcuser | sudo -S ./NpmHelper e
+
+This Dockerfile does a number of things, including:
+
+- installing the **sudo** program so the user can use the **sudo** command.
+- Create a user called **bcuser** and give the user the expected password of **bcuser**.
+- Create a Git directory and clone JsObjects into it.
+- Run **UbuntuSetup** in the background so no prompts are presented to the user.
+- Install node and the various global NPM packages that we use most often.

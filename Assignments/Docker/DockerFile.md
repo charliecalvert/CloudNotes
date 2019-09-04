@@ -182,59 +182,91 @@ For instance:
 
 ## Create MakeHtml
 
-Now we want to use DockerCompose to use two projects at once.
+In your **DockerCode** directory create a **MakeHtml** directory if you have not done so already:
+
+    mkdir MakeHtml/micros
+
+In **micros** create an elf-express app called **qux**:
+
+    elf-express qux
+
+In **routes/index.js** edit the home route and create a new endpoint called **/you-rang**:
+
+```JavaScript
+router.get('/', function(req, res) {
+    'use strict';
+    res.render('index', {
+        title: 'Qux'
+    });
+});
+
+router.get('/you-rang', (request, response) => {
+    response.send({
+        result: 'qux you rang',
+        server: 'qux',
+        directory: __dirname,
+        hostname: process.env.HOSTNAME,
+        home: process.env.HOME
+    });
+});
+```
+
+Create this DockerFile:
 
     FROM node:latest
-    RUN mkdir -p /home/bcuser/Source/elf-app
-    WORKDIR /home/bcuser/Source/elf-app
-    COPY package.json /home/bcuser/Source/elf-app/
+    RUN mkdir -p /usr/src/app
+    WORKDIR /usr/src/app
+    COPY micros/qux/package.json .
     RUN npm install
-    COPY . /home/bcuser/Source/elf-app
-    EXPOSE 30025
+    COPY micros/qux .
+    EXPOSE 30027
+    RUN node_modules/.bin/webpack
     CMD [ "npm", "start" ]
 
+Here is useful little script called **build** that I put in the **MakeHtml** directory:
 
+```bash
+#!/usr/bin/env bash
 
-In a directory called **~/Docker/MakeHtml**, create this **Dockerfile**
+docker build -t charliecalvert/make-html2 .
+docker run --name maker -d -p 30027:30027 charliecalvert/make-html2
+docker exec -it maker /bin/bash
+```
 
+After running this go to **localhost:30027**.
 
-    FROM charliecalvert/apache
-    RUN apt-get install sudo -y
-    RUN useradd -ms /bin/bash bcuser
-    RUN usermod -aG sudo bcuser
-    RUN echo "bcuser:bcuser" | chpasswd
-    RUN su bcuser
-    RUN mkdir /home/bcuser/Git
-    RUN cd /home/bcuser/Git && git clone http://git@github.com/charliecalvert/JsObjects.git
-    RUN su -c "cd /home/bcuser/Git/JsObjects/Utilities/SetupLinuxBox && ./UbuntuSetup b" bcuser
-    RUN cd /home/bcuser/Git/JsObjects/Utilities/NodeInstall && echo bcuser | sudo -S ./NodeInstall.sh
-    RUN cd /home/bcuser/Git/JsObjects/Utilities/NodeInstall && echo bcuser | sudo -S ./NpmHelper e
+![Docker and Qux Micro][dqm]
 
-This Dockerfile does a number of things, including:
+To see **/you-rang** go to [http://localhost:30027/you-rang](http://localhost:30027/you-rang)
 
-- installing the **sudo** program so the user can use the **sudo** command.
-- Create a user called **bcuser** and give the user the expected password of **bcuser**.
-- Create a Git directory and clone JsObjects into it.
-- Run **UbuntuSetup** in the background so no prompts are presented to the user.
-- Install node and the various global NPM packages that we use most often.
+The output should look something like this:
 
-Here is useful little script called **go** that I put in the **MakeHtml** directory:
+```json
+{
+  "result":"qux you rang",
+  "server":"qux",
+  "directory":"/usr/src/app/routes",
+  "hostname":"29d539f34da5",
+  "home":"/root"
+}
 
-    #!/bin/bash
+Note that this information is from inside the container. To see it while in the container, run **env**.
 
-    docker build -t charliecalvert/make-html2 .
-    docker run --name maker -d -p 80:80 charliecalvert/make-html2
-    docker exec -it maker /bin/bash
+I created a second script called **reset**. Or perhaps you might call it **delete-container-and-image** or just **start-over-from-scratch**. I used it a lot when developing the **Dockerfile** because it allowed me to try a run and check the results. If I wasn't happy or felt the **Dockerfile** was not yet complete, then I could make some adjustments to the **Dockerfile**, delete my image and container, and start over by running an updated copy of the **Dockerfile**. Here is the script:
 
-I created a second script called **stop**. Or perhaps you might call it **delete-container-and-image** or just **start-over-from-scratch**. I used it a lot when developing the **Dockerfile** because it allowed me to try a run and check the results. If I wasn't happy or felt the **Dockerfile** was not yet complete, then I could make some adjustments to the **Dockerfile**, delete my image and container, and start over by running an updated copy of the **Dockerfile**. Here is the script:
+```bash
+#! /usr/bin/env bash
 
-    #!/bin/bash
-
-    docker stop maker
-    docker rm maker
-    docker rmi charliecalvert/make-html2
+docker container stop maker
+docker container rm maker
+docker image rm charliecalvert/make-html2:latest
+```
 
 Notice that in these scripts I'm giving the container a **name**. Specifically, I'm calling it **maker**. By giving it a known name I'm able to remove (delete) it with **stop** script if I want to start over.
+
+## Docker Compose
+
+Now we want to use DockerCompose to use two projects at once.
 
 ## Push your results
 
@@ -258,7 +290,12 @@ Give me at least one screenshot of you processing a docker file. Put your copies
 - Directory name
 - Branch
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [apache]: https://httpd.apache.org/
 [df]: https://docs.docker.com/engine/reference/builder
 [dnh]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-file-hub.png
 [dsp]: http://www.ccalvert.net/books/CloudNotes/Assignments/Docker/DockerStarter.html
+[dqm]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-micro-qux.png
