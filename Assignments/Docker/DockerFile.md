@@ -1,27 +1,27 @@
 ## The Docker File
 
-We can automate the process outlined in the [Docker Starter Assignment][dsp] by creating a [Docker File][df]. In this assignment you will learn the basics of working with **Dockerfiles**.
+In this assignment you will learn the basics of working with [**Dockerfiles**][df]. We can use these files to automate the process outlined in the [Docker Starter Assignment][dsp].
 
 ## Your Docker Hub Name
 
-In the code found in this assignment you are going to need to know your Docker hub name. You created this name when you first logged into the Docker Hub. If you have forgotten the name, you can always find it by logging into the Docker Hub and going to its home page.
+In the code found in this assignment you are going to need to know your name on the [Docker Hub](https://hub.docker.com/). You created this name when you first logged into the Docker Hub. If you have forgotten the name, you can always find it by logging into the Docker Hub and going to its home page.
 
 ![Docker name on Docker hub][dnh]
 
 **IMAGE**: _To get your docker hub name, log into docker and go to the home directory. As you can see, my Docker Hub name is **charliecalvert**._
 
-**NOTE**: _At the beginning of a quarter, some students realize that they have forgotten how to log into an online resource such as Docker Hub that they used in a previous quarter. I keep track of this information in [Lastpass](https://lastpass.com). This utility has saved me untold hours over the years. I consider it an essential resource and a safe way to track usernames and passwords. I believe another highly rated product is called **1password**, but I have never used it and hence can't provide help to students who choose it. You can also save passwords to your Chrome or Firefox account, but I'm sure you can see why that is not as useful as working with a tool that runs in all browsers._
+**NOTE**: _At the beginning of a quarter, some students realize that they have forgotten how to log into an online resource such as Docker Hub that they used in a previous quarter. To avoid these problems, I keep track of usernames and passwords in [Lastpass](https://lastpass.com). This utility has saved me untold hours over the years. I consider it an essential resource and a safe way to track usernames and passwords. I believe another highly rated product is called **1password**, but I have never used it and hence can't provide help to students who choose it. You can also save passwords to your Chrome or Firefox account, but I'm sure you can see why that is not as useful as working with a tool that runs in all browsers._
 
 ## Simple Example
 
-Here is an example **Dockerfile** that creates an image based on the official [Docker Hub ubuntu image](https://hub.docker.com/_/ubuntu):
+We use Dockerfiles to save in a single place the multiple steps we might use to create a Docker image. Here is a very simple example **Dockerfile** that creates an image based on the official [Docker Hub ubuntu image](https://hub.docker.com/_/ubuntu):
 
     FROM ubuntu
     RUN echo 'File content' > /tmp/TempFile
 
-The first line pulls down the **ubuntu** image from the Docker Hub and creates a local copy. After creating the local image the second line in the file runs a command inside the image which creates a small text file with the words **File content** inside it.
+The first line pulls down the **ubuntu** image from the Docker Hub and creates a local copy. After creating the local image the second line in the file runs a command inside the image which creates a small text file in the **tmp** directory with the words **File content** inside it.
 
-You can save the two lines in a file called **~/temp/Dockerfile**. Run it from the **temp** directory like this:
+Save the two lines shown above in a file called **~/temp/Dockerfile**. After creating the Dockerfile, you can use it to create an image. For instance, you can run it from the **temp** directory like this:
 
     docker image build -t &lt;YOUR-DOCKER-HUB-NAME&gt;/docker-test .
 
@@ -29,7 +29,27 @@ In my case, this might look a bit like this:
 
     docker image build -t charliecalvert/docker-test .
 
-Now give it a name and run it:
+After creating the image, we can build a container based on it. This container will hold an instance of Ubuntu.
+
+Most students in my classes are doing their work in an instance Lubuntu running inside a VirtualBox VM hosted on Windows. Assuming you are indeed running a Lubuntu VM, then we have an architecture that looks like this:
+
+- Windows and VirtualBox
+  - Lubuntu
+    - Docker
+      - Ubuntu server in a Docker container
+
+This no doubt seems like a very expensive architecture in terms of system resources. However, the Ubuntu container can use many of the resources already installed as part of Lubuntu. Furthermore, adding a second such container creates an even smaller hit, since even more resources can be shared.
+
+For instance, if you run **docker system df -v** you can see how space your image is using:
+
+| Name                      | Size    | Shared Size | Unique Size |
+|:---------------------------|:--------|-------------|-------------|
+| charliecalvert/docker-test | 64.19MB | 64.19MB     | 13B         |
+| ubuntu                     | 64.19MB | 64.19MB     | 0B          |
+
+As you can see, the original ubuntu image takes up 64.19MB. Our **docker-test** image shares all 64.19MB of the original ubuntu image plus 13B for the small text file we created.
+
+The following command creates a container based on our image. Note that the command gives our container a name and runs it:
 
     docker container run -name test01 -it charliecalvert/docker-test
 
@@ -48,7 +68,42 @@ File content
 root@2b00769cc093:/tmp#
 ```
 
-As you can see, by default you are logged in as **root**. This means you are the **admin** and have full rights in the instance. There are no other users. In particular, there is no **bcuser** account. I mention this only because I create a **bcuser** account in the VirtualBox VMs that I give to my students at the beginning of the quarter.
+As you can see, by default you are logged in as **root** in our new ubuntu container. This means you are the **admin** and have full rights in the instance. There are no other users. In particular, there is no **bcuser** account. I mention this only because I create a **bcuser** account in the VirtualBox VMs that I give to my students at the beginning of the quarter.
+
+Suppose we create two instances of our custom image and then use **docker system df -v** to check our disk usage:
+
+
+| CONTAINER ID | IMAGE                      | SIZE | CREATED        | NAMES  |
+|:-------------|:---------------------------|------|----------------|--------|
+| 8d238a8421d2 | charliecalvert/docker-test | 0B   | 17 seconds ago | test02 |
+| 9b39280413fa | charliecalvert/docker-test | 0B   | 38 seconds ago | test01 |
+
+As you can see, they take up 0B disk space since they simply use the existing image.
+
+Docker performs this magic by sharing the host OS kernel and libraries. Note that these shared resources resources are used for both the image and for the container based on the image. In other words, if you create an ubuntu image on an instance of an Ubuntu host, then the image can share much of the code already installed on the host.
+
+A VM, by contrast, creates its own copy of the OS kernel and libraries. Even if you create an instance of an Ubuntu VM on top of an instance of an Ubuntu host, there is a great deal of duplication. Thus creating a VM is a much more expensive operation both in terms of disk spaced used, and in terms of the time it takes to launch the container vs the time it takes to launch the VM. More specifically, a container is often launched in a very few seconds while a VM can take a minute or longer to launch.
+
+**NOTE**: _The actual time to launch a VM or container vary hugely depending on the hardware involved, but in each case the container takes up much less space and launches much more quickly. It can, however, take a significant period of time to download an image from the Docker HUB. But once the image is downloaded, it can share resources with the host OS, and creating a custom image or container based on it can be very fast._
+
+Suppose we create a second text file in one of the containers:
+
+```
+root@8d238a8421d2:/# cd tmp/
+root@8d238a8421d2:/tmp# ll
+total 12
+drwxrwxrwt 1 root root 4096 Sep  5 21:55 ./
+drwxr-xr-x 1 root root 4096 Sep  5 21:57 ../
+-rw-r--r-- 1 root root   13 Sep  5 21:55 TempFile
+root@8d238a8421d2:/tmp# echo foo > bar.txt
+```
+
+This takes up an additional 4 bytes of disk space:
+
+| CONTAINER ID | IMAGE                      | SIZE | CREATED        | NAMES  |
+|:-------------|:---------------------------|------|----------------|--------|
+| 8d238a8421d2 | charliecalvert/docker-test | 4B   | 17 seconds ago | test02 |
+| 9b39280413fa | charliecalvert/docker-test | 0B   | 38 seconds ago | test01 |
 
 ## Where we are headed
 
@@ -335,6 +390,11 @@ Give me at least one screenshot of you processing a docker file. Put your copies
 - repo url (This is your **isit320-lastname-2017** repo.)
 - Directory name
 - Branch
+
+## Useful Links
+
+- [Node Example](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/)
+- [Docker Compose MongoDb Example](https://medium.com/statuscode/dockerising-a-node-js-and-mongodb-app-d22047e2806f)
 
 <!--       -->
 <!-- links -->
