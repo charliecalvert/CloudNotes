@@ -92,3 +92,7 @@ For instance:
 This will get you help on using the **exec** command when working with containers.    
 
 **HINT**: _I suggest above that you switch from using the old style commands to the new style commands even if you find the old style commands well documented on the web. So how do you tell the old style from the new style? When working with containers and images, the new style commands use the words **container** and **image** while the old style commands do not. Let me just add, however, that it is not wrong to use the old style commands. They still work, and Docker has not officially declared them obsolete. Nevertheless, I prefer the new style commands and assume they will play a bigger role in Docker technology in the future._
+
+## Useful links
+
+- [Docker and Kubernetes](https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/)
