@@ -113,14 +113,14 @@ There is a lot of information in the assignments themselves. The main goal here 
 [ca03]:http://www.elvenware.com/teach/assignments/CodeAcademy03.html
 [ca04]:http://www.elvenware.com/teach/assignments/CodeAcademy04.html
 
-## Code Academy React Assignments {#code-academy-react-part-one}
+## React Code Academy Part I {#code-academy-react-part-i}
 
 * [Code Academy React 01][car01]
 * [Code Academy React 02][car02]
 * [Code Academy React 03][car03]
 * [Code Academy React 04][car04]
 
-## React Code Academy Part II {#code-academy-react-part-one}
+## React Code Academy Part II {#code-academy-react-part-ii}
 
 - [React Code Academy Two Part 1][car201]
 - [React Code Academy Two Part 2][car202]
