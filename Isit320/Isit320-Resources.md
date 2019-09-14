@@ -101,19 +101,22 @@ There is a lot of information in the assignments themselves. The main goal here 
 [cloud9-advanced]: https://www.elvenware.com/teach/assignments/CloudNine/CloudNineAdvanced.html
 [javascript-objects]: http://www.elvenware.com/teach/assignments/JavaScriptObjects.html
 
-### Code Academy Assignments
+## Code Academy Overview {#code-academy-overview}
+
+These assignments are generally doled out one a week over a series of contiguous weeks. Feel free to work ahead.
+
+## Code Academy JavaScript and HTML Assignments
+
+See the [Code Academy Overview](#code-academy-overview).
 
 * [Code Academy 01][ca01]
 * [Code Academy 02][ca02]
 * [Code Academy 03][ca03]
 * [Code Academy 04][ca04]
 
-[ca01]:http://www.elvenware.com/teach/assignments/CodeAcademy01.html
-[ca02]:http://www.elvenware.com/teach/assignments/CodeAcademy02.html
-[ca03]:http://www.elvenware.com/teach/assignments/CodeAcademy03.html
-[ca04]:http://www.elvenware.com/teach/assignments/CodeAcademy04.html
-
 ## React Code Academy Part I {#code-academy-react-part-i}
+
+See the [Code Academy Overview](#code-academy-overview).
 
 * [Code Academy React 01][car01]
 * [Code Academy React 02][car02]
@@ -122,20 +125,12 @@ There is a lot of information in the assignments themselves. The main goal here 
 
 ## React Code Academy Part II {#code-academy-react-part-ii}
 
+See the [Code Academy Overview](#code-academy-overview).
+
 - [React Code Academy Two Part 1][car201]
 - [React Code Academy Two Part 2][car202]
 - [React Code Academy Two Part 3][car203]
 - [React Code Academy Two Part 4][car204]
-
-[car01]: /teach/assignments/code-academy/CodeAcademyReact01.html
-[car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
-[car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
-[car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
-
-[car201]: /teach/assignments/code-academy/CodeAcademyReactPartTwo01.html
-[car202]: /teach/assignments/code-academy/CodeAcademyReactPartTwo02.html
-[car203]: /teach/assignments/code-academy/CodeAcademyReactPartTwo03.html
-[car204]: /teach/assignments/code-academy/CodeAcademyReactPartTwo04.html
 
 ## Videos
 
@@ -170,19 +165,19 @@ asterisk after it.
 Please check back from time to time, as I intend to keep adding to
 this list.
 
-###JavaScript
+### JavaScript
 
 - [JumpStart JavaScript 24X7](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=56022)
 - [JumpStart NodeJs 24X7](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=50176)
 
-###Web and Networks
+### Web and Networks
 
 - [Web Application Hacker's Handbook* (24X7)](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=44458)
 - [Networking All-in-One for Dummies, 5th Edition (24X7)](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=51215)
 - [Ubuntu Linux Toolbox (24X7)](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bookid=56414)
 - [Linux Bible, 8th Edition (24X7)](http://library.books24x7.com.ezproxy.bellevuecollege.edu/toc.aspx?bkid=46293)
 
-###Books not on 24X7
+### Books not on 24X7
 
 - JavaScript the Good Parts (Crockford, Oreilly) - This is classic, but a bit hard to read.
 - JavaScript Ninja (Resig, Manning) - Not as good an introduction as the Good Parts, but easier to understand and more depth.
@@ -227,3 +222,19 @@ Some Links
 [rb]: /teach/assignments/React/ReactBasics.html
 [sc]: /teach/assignments/Aws/SystemCheck.html
 [tip-a]: /teach/tips/TurnItIn.html
+
+[ca01]:http://www.elvenware.com/teach/assignments/CodeAcademy01.html
+[ca02]:http://www.elvenware.com/teach/assignments/CodeAcademy02.html
+[ca03]:http://www.elvenware.com/teach/assignments/CodeAcademy03.html
+[ca04]:http://www.elvenware.com/teach/assignments/CodeAcademy04.html
+
+[car01]: /teach/assignments/code-academy/CodeAcademyReact01.html
+[car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
+[car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
+[car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
+
+[car201]: /teach/assignments/code-academy/CodeAcademyReactPartTwo01.html
+[car202]: /teach/assignments/code-academy/CodeAcademyReactPartTwo02.html
+[car203]: /teach/assignments/code-academy/CodeAcademyReactPartTwo03.html
+[car204]: /teach/assignments/code-academy/CodeAcademyReactPartTwo04.html
+ 

@@ -22,3 +22,5 @@ foo.bat
 *.swp
 CopyToElvenware.sh
 _mdwriter.cson
+
+foo.*

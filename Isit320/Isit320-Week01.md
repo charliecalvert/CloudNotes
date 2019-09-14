@@ -105,7 +105,7 @@ Links and Videos:
 - [Google Docs Video](http://youtu.be/NMkTz3Rvgfo)
 - [Skydrive Video](http://youtu.be/gMACtVIEV0A)
 
-###Code Academy
+### Code Academy
 
 For the second part of the assignment, I want you to complete some
 simple exercises in Code Academy. This should help you recall a few
@@ -117,7 +117,7 @@ on your skills.
 - [Go to JavaScript](http://www.codecademy.com/tracks/javascript)
 - Complete *Getting Started with Programming*
 
-###Video
+### Video
 
 Finally, I suggest that we watch some Google IO.
 
