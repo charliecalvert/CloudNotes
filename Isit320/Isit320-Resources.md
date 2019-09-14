@@ -105,6 +105,8 @@ There is a lot of information in the assignments themselves. The main goal here 
 
 These assignments are generally doled out one a week over a series of contiguous weeks. Feel free to work ahead.
 
+See also the [Elvenware Code Academy Home Page][ecahp].
+
 ## Code Academy JavaScript and HTML Assignments
 
 See the [Code Academy Overview](#code-academy-overview).
@@ -223,6 +225,8 @@ Some Links
 [sc]: /teach/assignments/Aws/SystemCheck.html
 [tip-a]: /teach/tips/TurnItIn.html
 
+[ecahp]: /teach/assignments/code-academy/
+
 [ca01]:http://www.elvenware.com/teach/assignments/CodeAcademy01.html
 [ca02]:http://www.elvenware.com/teach/assignments/CodeAcademy02.html
 [ca03]:http://www.elvenware.com/teach/assignments/CodeAcademy03.html
@@ -237,4 +241,3 @@ Some Links
 [car202]: /teach/assignments/code-academy/CodeAcademyReactPartTwo02.html
 [car203]: /teach/assignments/code-academy/CodeAcademyReactPartTwo03.html
 [car204]: /teach/assignments/code-academy/CodeAcademyReactPartTwo04.html
- 
