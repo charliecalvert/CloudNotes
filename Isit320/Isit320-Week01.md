@@ -1,4 +1,4 @@
-## Isit320 Week01 2018
+## Isit320 Week01 2019
 
 There is no main text for this course. There are, however many resources. Some of these resources I created, but most are available on the web:
 

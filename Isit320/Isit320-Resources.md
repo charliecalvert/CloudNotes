@@ -89,17 +89,17 @@ There is a lot of information in the assignments themselves. The main goal here 
 * [Cloud 9 Intro][cloud9-intro]
 * [Javascript Objects][javascript-objects]
 
-[express-basics]:http://www.ccalvert.net/books/CloudNotes/Assignments/ExpressBasics.html
-[npm-bower]: http://www.ccalvert.net/books/CloudNotes/Assignments/BowerNpm.html
-[callbacks]: http://www.ccalvert.net/books/CloudNotes/Assignments/Callbacks.html
-[boot-basics]: http://www.ccalvert.net/books/CloudNotes/Assignments/BootstrapBasics.html
-[bootstrap-delicious]: http://www.ccalvert.net/books/CloudNotes/Assignments/BootstrapDelicious.html
-[bash-express-script]: http://www.ccalvert.net/books/CloudNotes/Assignments/BashExpressScript.html
-[del-query]: http://www.ccalvert.net/books/CloudNotes/Assignments/DeliciousQuery.html
-[jasmine-mock]: http://www.ccalvert.net/books/CloudNotes/Assignments/JasmineExpressMock.html
+[express-basics]:http://www.elvenware.com/teach/assignments/ExpressBasics.html
+[npm-bower]: http://www.elvenware.com/teach/assignments/BowerNpm.html
+[callbacks]: http://www.elvenware.com/teach/assignments/Callbacks.html
+[boot-basics]: http://www.elvenware.com/teach/assignments/BootstrapBasics.html
+[bootstrap-delicious]: http://www.elvenware.com/teach/assignments/BootstrapDelicious.html
+[bash-express-script]: http://www.elvenware.com/teach/assignments/BashExpressScript.html
+[del-query]: http://www.elvenware.com/teach/assignments/DeliciousQuery.html
+[jasmine-mock]: http://www.elvenware.com/teach/assignments/JasmineExpressMock.html
 [cloud9-intro]: https://www.elvenware.com/teach/assignments/Cloud9Intro.html
 [cloud9-advanced]: https://www.elvenware.com/teach/assignments/CloudNine/CloudNineAdvanced.html
-[javascript-objects]: http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html
+[javascript-objects]: http://www.elvenware.com/teach/assignments/JavaScriptObjects.html
 
 ### Code Academy Assignments
 
@@ -107,18 +107,35 @@ There is a lot of information in the assignments themselves. The main goal here 
 * [Code Academy 02][ca02]
 * [Code Academy 03][ca03]
 * [Code Academy 04][ca04]
-* [Code Academy 05][ca05]
-* [Code Academy 06][ca06]
-* [Code Academy 07][ca07]
 
-[ca01]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy01.html
-[ca02]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy02.html
-[ca03]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy03.html
-[ca04]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy04.html
-[ca05]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy05.html
-[ca06]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy06.html
-[ca07]:http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy07.html
+[ca01]:http://www.elvenware.com/teach/assignments/CodeAcademy01.html
+[ca02]:http://www.elvenware.com/teach/assignments/CodeAcademy02.html
+[ca03]:http://www.elvenware.com/teach/assignments/CodeAcademy03.html
+[ca04]:http://www.elvenware.com/teach/assignments/CodeAcademy04.html
 
+## Code Academy React Assignments {#code-academy-react-part-one}
+
+* [Code Academy React 01][car01]
+* [Code Academy React 02][car02]
+* [Code Academy React 03][car03]
+* [Code Academy React 04][car04]
+
+## React Code Academy Part II {#code-academy-react-part-one}
+
+- [React Code Academy Two Part 1][car201]
+- [React Code Academy Two Part 2][car202]
+- [React Code Academy Two Part 3][car203]
+- [React Code Academy Two Part 4][car204]
+
+[car01]: /teach/assignments/code-academy/CodeAcademyReact01.html
+[car02]: /teach/assignments/code-academy/CodeAcademyReact02.html
+[car03]: /teach/assignments/code-academy/CodeAcademyReact03.html
+[car04]: /teach/assignments/code-academy/CodeAcademyReact04.html
+
+[car201]: /teach/assignments/code-academy/CodeAcademyReactPartTwo01.html
+[car202]: /teach/assignments/code-academy/CodeAcademyReactPartTwo02.html
+[car203]: /teach/assignments/code-academy/CodeAcademyReactPartTwo03.html
+[car204]: /teach/assignments/code-academy/CodeAcademyReactPartTwo04.html
 
 ## Videos
 
