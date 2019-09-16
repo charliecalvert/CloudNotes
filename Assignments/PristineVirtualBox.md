@@ -48,12 +48,6 @@ If you are working on a laptop, go here and install it:
 Once you are reasonable certain you have VirtualBox installed, then you should download the big Pristine Lubuntu OVA (virtual appliance). The link below requires a bit of patience. Select it, and determinedly click through the options until the download begins. Once this big 3 or 4 GB OVA file is downloaded, consider moving it to some save location such as your **Documents/Data** directory.
 
 - Pristine Lubuntu 2019-09: [http://bit.ly/pristine-lubuntu-2019-09][plu1909]
-- Pristine Lubuntu 2019-03: [http://bit.ly/plu-2019-03][plu1903]
-  - Our default, preferred version. If in doubt, select this version.
-  - Based on Lubuntu 18.10
-- Pristine Lubuntu 2018-09: [http://bit.ly/pristine-lubuntu-2018-09][plu1809]
-  - Based on Lubuntu 18.04
-- Pristine Lubuntu 2018-04: [http://bit.ly/plubuntu-2018-04-03][plu1804]
 
 The file you download should have an OVA extension.
 
@@ -255,6 +249,18 @@ To see the memory:
 Throughout the day, you may want to monitor your memory usage with any of the following commands:
 
 - free -h
+
+## Older Versions
+
+Some of these older versions may still be available, but they are probably well out of date:
+
+- Pristine Lubuntu 2019-03: [http://bit.ly/plu-2019-03][plu1903]
+  - Our default, preferred version. If in doubt, select this version.
+  - Based on Lubuntu 18.10
+- Pristine Lubuntu 2018-09: [http://bit.ly/pristine-lubuntu-2018-09][plu1809]
+  - Based on Lubuntu 18.04
+- Pristine Lubuntu 2018-04: [http://bit.ly/plubuntu-2018-04-03][plu1804]
+
 
 <!--       -->
 <!-- links -->
