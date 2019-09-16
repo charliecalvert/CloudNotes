@@ -14,6 +14,7 @@ You can:
 - Double click on it
 - Tick the box asking to update the MAC address
   - This is a dropdown in newer versions of VBox.
+  - Choose: **Generate new MAC Addresses for all network adapters**
 - Watch it quickly install itself inside VirtualBox.
 - For more details, see the [install](#install-pristine-lubuntu) section below, particularly the note about network error on first opening the appliance.
 
@@ -258,9 +259,9 @@ Throughout the day, you may want to monitor your memory usage with any of the fo
 <!-- links -->
 <!--       -->
 
-[android-vbox]: http://www.elvenware.com/charlie/development/android/Androidx86.shtml
+[android-vbox]: /android-guide/Androidx86.shtml
 [extpack]: https://www.virtualbox.org/wiki/Downloads
-[gadd]: http://www.elvenware.com/charlie/os/linux/VirtualBox.html#guest
+[gadd]: /os-guide/linux/VirtualBox.html/VirtualBox.html#guest
 
 [ova]: https://www.google.com/search?q=ova+files
 
