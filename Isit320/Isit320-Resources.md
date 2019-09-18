@@ -1,11 +1,10 @@
-# ISIT 320 Resources for 2015
+# ISIT 320 Resources for 2019
 
 The most important resource in this class is Google search. Make sure you know the basics about searching:
 
 - [Browsers][elf-browse]
 
-Here are number of links that you can use to help stay up to date
-with events and topics covered in our class.
+Here are number of links that you can use to help stay up to date with events and topics covered in our class.
 
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)
 - [Ebooks and 24X7](http://library.books24x7.com.ezproxy.bellevuecollege.edu/bookshelf.asp)

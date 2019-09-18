@@ -22,6 +22,8 @@ Your first step will be to create a:
 
 - [free account](https://aws.amazon.com/free/) on AWS.
 - Or an [AWS Educate Account][elf-aws-educate].
+- Or an [Amazon Lightsail account](https://aws.amazon.com/lightsail/pricing/)
+- Or an [Amazon Reserved Instance](https://aws.amazon.com/ec2/pricing/reserved-instances/)
 
 - Slides that describe setting up AWS: [http://bit.ly/ec2-aws](http://bit.ly/ec2-aws)
 - [Page with Related Slides](https://sites.google.com/view/elfland/web-services)
@@ -330,6 +332,36 @@ Once we have access to our EC2 instance and access to our repository, there are 
 
 See in particular the first three sections.
 
+## Reserved EC2 Instance
+
+You can purchase a reserved instance much more cheaply than if you buy month by month. If you buy an instance for 3 years, then you pay $115 as of Sept 17, 2019. The prices tend to go down year over year. The instances just keep getting cheaper.
+
+- $115 / 36 = $3.20 a month.
+
+This is a very good deal.
+
+To purchase an instance:
+
+- Go to the EC2 Dashboard on AWS.
+- Select **Reserved Instances** from the menu on the left.
+- Click the **Purchase Reserved Instances** button.
+- Make sure t2.micro is selected and pick search
+- Look for the 36 month all up front option.
+
+Compare with Lightsail, which is $3.50 a month, but you pay month by month.
+
+## Lightsail
+
+[Lightsail][lsh] costs []$3.50 a month][lsp] and you pay by the month. That is approximately the cost of a good cup of coffee, and less than a fancy cup. Our quarters last three monbths and you can rent a Lightsail instance for 3 months for $10.50. But you get the first month free, so it should be only $7.00 for the quarter.
+
+**NOTE**: _The docs say: "Lightsail plans are charged on an hourly, on-demand basis, so you only pay for a plan when you're using it." So perhaps you could pay considerably less than $3.50 a month if you shut the service down. I don't know the details as I am new to this service._
+
+Select the **Create Instance** button and choose **Linux/Unix**, **OS Only** and Ubuntu 18.04 or newer if it is available. Don't select Node, as we will install all such tools ourselves.
+
+Your instances may be [here](https://lightsail.aws.amazon.com/ls/webapp/us-west-2/instances/Ubuntu-elf/connect)
+
+You SSH key is [here](https://lightsail.aws.amazon.com/ls/webapp/account/keys)
+
 ## Turn it in
 
 Take a screen shot of the command prompt and submit that with your assignment.
@@ -496,5 +528,7 @@ Which allows:
 [mcus]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsServices.png
 
 [ec2esg]: https://s3.amazonaws.com/bucket01.elvenware.com/images/ec2-elven-security-group.png
+[lsp]: https://aws.amazon.com/lightsail/pricing/?opdp1=pricing
+[lsh]: https://lightsail.aws.amazon.com/
 [mvc]: https://www.thegeekstuff.com/2010/12/mv-command-examples/
 [elf-aws-educate]:
