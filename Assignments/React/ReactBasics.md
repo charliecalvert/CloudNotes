@@ -446,13 +446,13 @@ Compare the commands above to the all important and oft mentioned **scripts** se
 
 Function components can provide the same functionality as above, but with very clean, sparse, syntax.
 
-Create a new file called **ReactBasicsStateless.js** and insert into it the code the shown below.
+Create a new file called **ReactBasicsFunctionComponent.js** and insert into it the code the shown below.
 
 ```javascript
 import React from 'react';
 
-export const ReactBasicsStateless = () => (
-   <h1>An H1 element in a React Stateless Function</h1>
+export const ReactBasicsFunctionComponent = () => (
+   <h1>An H1 element in a React Function Component</h1>
 );
 ```
 
@@ -464,12 +464,12 @@ These are two ways of saying the same thing. Pick the way that you prefer.
 
 ## Link in Function Components
 
-Modify **main.js** by removing the reference to **ReactBasics.js** and replacing it with a reference to **ReactBasicsStatelessFunctional.js**.
+Modify **main.js** by removing the reference to **ReactBasics.js** and replacing it with a reference to **ReactBasicsFunctionComponent.js**.
 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ReactBasics } from './ReactBasicsStatelessFunctional.js';
+import { ReactBasics } from './ReactBasicsFunctionComponent.js';
 
 ReactDOM.render(<ReactBasics/>, document.getElementById('root'));
 ```
