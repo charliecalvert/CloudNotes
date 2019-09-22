@@ -22,7 +22,9 @@ So the commands to install Docker might be like this:
 
 This is the correct way to install as of May 3, 2019. Recall that **jou** takes you to the **JsObjects/Utilities** directory. From there navigate into **InstallScripts**. Then run **./DockerInstall**.
 
-After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**. You should not have to run Docker as the superuser, that is, you should not need to use **sudo** to start it. If you get a permission denied error, then try logging out and logging in again. That should fix the problem. (The Docker Install video linked below might not adequately cover this step.)
+After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**.
+
+Once installed, you should not have to run Docker as the superuser, that is, you should not need to use **sudo** to start Docker. If you get a permission denied error, then try logging out and logging in again. That should fix the problem. (The Docker Install video linked below might not adequately cover this step.)
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
@@ -50,9 +52,16 @@ Log out and log in again. One simple way to do this is to reboot your Ubuntu VM.
 
 ## Docker Hub
 
-Create an account and sign into the Docker Hub at [https://hub.docker.com/](https://hub.docker.com/).
+Create an account and sign into the Docker Hub at [https://hub.docker.com/](https://hub.docker.com/).\
 
-From your local machine where you created your install Docker, login:
+**NOTE**: _Remember, it is almost impossible to survive in a cloud based technology such as ours without having:
+
+* Mastered SSH and SSH ssh Keys
+* Installing a password manager such as LastPass or devising some other strategy for managing usernames and passwords.
+
+Using the same username and password everywhere, or relying on your memory are not sustainable strategies. Regardless of what you read, in most cases LastPass or similar tools provide the safest and most reliable solution._
+
+From your local machine where you created your install Docker, login to the Docker Hub:
 
 ```nohighlighting
 $ docker login -u charliecalvert
@@ -64,7 +73,7 @@ https://hub.docker.com/billing-plans/
 
 ## Testing Docker {#test}
 
-Try some of these commands to see if you instance is installed. The last command should both download and run the Ubuntu Docker image.
+Try some of these commands to see if you instance is installed. The first command is a basic system check, if it works, you are up and running. The last command should both download and run the Ubuntu Docker image.
 
 ```nohighlighting
 docker container run -i hello-world
@@ -72,6 +81,28 @@ docker image ls
 docker container run -it ubuntu
 docker image ls
 ```
+
+Here is the output from the running the first, Hello World, command:
+
+_Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID: [https://hub.docker.com/](https://hub.docker.com/)
+
+For more examples and ideas, visit:
+ [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)_
 
 ## Run an Image
 

@@ -1,6 +1,8 @@
 ## Overview
 
-This assignment is designed to be an introduction to Docker. Please also see the offical [Docker Overview][dover].
+This assignment is designed to be an introduction to Docker. Please also see the official [Docker Overview][dover].
+
+- Elven Slides: [http://bit.ly/docker-overview](http://bit.ly/docker-overview)
 
 Docker is a tool for distributing applications. Like VirtualBox it allows you to download and install pre-built abstractions similar to ISO or OVA files. Only in Docker, we call them images. The big difference is that Docker is smaller, more easily deployed, and better at reusing and sharing resources.
 
@@ -11,11 +13,15 @@ Each VM you create with VirtualBox takes up a set amount of room which is often 
 
 ## Linux runC
 
-Understanding the full Docker stack or architecture is a very complex subject that one does not need to master in order to use Docker. However, it might be useful to a say a few words about how it is put together.
+Understanding the full Docker stack or architecture is a very complex subject that one does not need to master in order to use Docker. However, it might be useful to a say a few words about how it is put together. The key point to grasp is that it is very flexible and allows us to put a wide variety of software in a container.
 
-Docker images start with a stripped-down copy of Linux, or, more recently, something smaller called [runc][runc]. Various other bits and pieces are also involved, such as [continerd](https://blog.docker.com/2017/08/what-is-containerd-runtime/)
+Docker is written in the [Go language](https://golang.org/).
 
-These parts of the Docker architecuture such as [runc][runc] allow us to run various tasks in our containers. Examples of these tasks include Apache web servers, MySQL databases, Node applications, etc. Since this architecture is very flexible, there are few limits on what we can host inside a Docker image. Once we have configured the image to support a particular feature such as MySQL, we can then save the whole thing as a new image. Then we can move the image to other machines, and immediately start using the service we created in the image.
+The Docker daemon ([Dockerd][dkrd]) responds to requests from the Docker CLI and manages images, containers, networks and volumes.
+
+Docker images start with a stripped-down copy of Linux, or, more recently, something smaller called [runc][runc]. Various other bits and pieces are also involved, such as [containerd][conterd].
+
+Tools such [runc][runc] and [containerd][conterd] are flexible enough to allow us to run various tasks in our containers. Examples of these tasks include Apache web servers, MySQL databases, Node applications and Ubuntu server. Since this architecture is very flexible, there are few limits on what we can host inside a Docker image. Once we have configured the image to support a particular feature such as MySQL, we can then save the whole thing as a new image. Then we can move the image to other machines, and immediately start using the service we created in the image.
 
 Perhaps the [Docker architecture][darch] might look a little like this:
 
@@ -24,9 +30,9 @@ Perhaps the [Docker architecture][darch] might look a little like this:
 - Host Level - Host OS
 - Lowest Level: Hardware
 
-Also, see this StackOverflow [discussion of runc][sodr].
-
 For those of you who are visual, here is a series of [useful docker diagrams][dpic]. If you look for the credits, it is easy to see which are the official docker images.
+
+Also, see this StackOverflow [discussion of runc][sodr].
 
 ## Docker Images and Containers
 
@@ -112,9 +118,10 @@ This will get you help on using the **exec** command when working with container
 
 - [Docker and Kubernetes](https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/)
 
-
+[conterd]: https://blog.docker.com/2017/08/what-is-containerd-runtime/
 [darch]: https://docs.docker.com/engine/docker-overview/#docker-architecture
 [dic]: https://docs.docker.com/engine/docker-overview/#docker-objects
+[dkrd]: https://docs.docker.com/engine/reference/commandline/dockerd/
 [dover]: https://docs.docker.com/engine/docker-overview/
 [dpic]: https://images.app.goo.gl/HizYhP9FZA6xza74A
 [sodr]: https://stackoverflow.com/a/16048358/253576
