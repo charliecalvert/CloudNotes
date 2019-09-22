@@ -312,6 +312,45 @@ cat ~/.ssh/<YOUR-PUBLIC-KEY> >> ~/.ssh/authorized_keys
 
 Whether you use **ssh-copy-id** or **scp** to put your public key in the EC2 **authorized_keys** file is mostly a matter of taste. However, the **ssh-copy-id** program is a bit safer. For instance, it checks to make sure you are not putting duplicate keys in the **authorized_keys** file.
 
+## Password Protect Your Key
+
+It is of course, simplest not to password protect your private key, and in many or perhaps most cases it is unnecessary. However, there are times when it is the right thing to do.
+
+To add, change or remove a passphrase, I often find it simplest to pass in the `p` and `f` flags to **ssh-keygen**, then let the system prompt me to supply the passphrases:
+
+`ssh-keygen -p -f <name-of-private-key>`
+
+For instance:
+
+`ssh-keygen -p -f id_rsa`
+
+When adding a passphrase to a key that has no passphrase, the run looks something like this:
+
+```
+ssh-keygen -p -f id_rsa
+Key has comment 'charlie@elf-path'
+Enter new passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved with the new passphrase.
+```
+
+A sample run to remove or change a password looks something like this:
+
+```
+ssh-keygen -p -f id_rsa
+Enter old passphrase:
+Key has comment 'bcuser@pl1909'
+Enter new passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved with the new passphrase.
+```
+
+Notice that we can enter an empty password to remove a passphrase.
+
+**NOTE**: _Apparently a passphrase is a password made up of wholewords. See the [classic xkcd comic](https://xkcd.com/936/) below for details._
+
+![XKCD](https://imgs.xkcd.com/comics/password_strength.png)
+
 ## Thoughts
 
 Take a moment to be sure you understand what is happening here. We want to use a single key pair to access both AWS and GitHub. On Pristine Lubuntu we already have the Prog270 key set up to access GitHub. To also use it with our AWS instance we have to copy the Prog 270 public key into the **authorized_keys** file on our AWS server.

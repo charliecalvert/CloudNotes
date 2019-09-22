@@ -4,14 +4,23 @@ This assignment is designed to be an introduction to Docker. Please also see the
 
 Docker is a tool for distributing applications. Like VirtualBox it allows you to download and install pre-built abstractions similar to ISO or OVA files. Only in Docker, we call them images. The big difference is that Docker is smaller, more easily deployed, and better at reusing and sharing resources.
 
+- Both Docker and VBox can be used to deploy a server OS such as Ubuntu.
+- Docker, however, is used primarily to deploy applications.
+
 Each VM you create with VirtualBox takes up a set amount of room which is often quite large. Docker instances, called containers, can share resources in a way that a VM can't. As a result, multiple docker containers based on a single image can take up little more room than a single container.
 
-Docker images start with a stripped-down copy of Linux, or, more recently, something smaller called [runc][runc]. We can modify that copy of Linux/[runc][runc] to support various tasks such as Apache web servers, MySQL databases, Node applications, etc. Since Linux and runc are very flexible, there are few limits on what we can host inside a Docker image. Once we have configured the image to support a particular feature such as MySQL, we can then save the whole thing as a new image. Then we can move the image to other machines, and immediately start using the service we created in the image.
+## Linux runC
+
+Understanding the full Docker stack or architecture is a very complex subject that one does not need to master in order to use Docker. However, it might be useful to a say a few words about how it is put together.
+
+Docker images start with a stripped-down copy of Linux, or, more recently, something smaller called [runc][runc]. Various other bits and pieces are also involved, such as [continerd](https://blog.docker.com/2017/08/what-is-containerd-runtime/)
+
+These parts of the Docker architecuture such as [runc][runc] allow us to run various tasks in our containers. Examples of these tasks include Apache web servers, MySQL databases, Node applications, etc. Since this architecture is very flexible, there are few limits on what we can host inside a Docker image. Once we have configured the image to support a particular feature such as MySQL, we can then save the whole thing as a new image. Then we can move the image to other machines, and immediately start using the service we created in the image.
 
 Perhaps the [Docker architecture][darch] might look a little like this:
 
 - Top Level: Our tools such as MySQL or Apache
-- Middle Level: Linux or [runc][runc]
+- Middle Level: Linux, dockerd, and/or [runc][runc] etc.
 - Host Level - Host OS
 - Lowest Level: Hardware
 
@@ -109,3 +118,4 @@ This will get you help on using the **exec** command when working with container
 [dover]: https://docs.docker.com/engine/docker-overview/
 [dpic]: https://images.app.goo.gl/HizYhP9FZA6xza74A
 [sodr]: https://stackoverflow.com/a/16048358/253576
+[runc]: https://blog.docker.com/2015/06/runc/
