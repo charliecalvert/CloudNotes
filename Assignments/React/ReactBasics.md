@@ -392,7 +392,7 @@ module.exports = {
 };
 ```
 
-Optionally, we can create a **modules** section that looks like this:
+Though not recommended, in lieu of using our **.babelrc** file, we can create a **module** section that looks like this:
 
 ```javascript
 module: {
@@ -403,7 +403,7 @@ module: {
             use: [{
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env']
+                    presets: ['@babel/preset-env', '@babel/preset-react']
                 }
             }]
         }
@@ -411,9 +411,10 @@ module: {
 },
 ```
 
-Here we include the presets in **webpack.config.js** in the **options** property of the first object in our **use** array. Whus we can delete **.babelrc**.
+Here we include the presets in **webpack.config.js** in the **options** property of the first object in our **use** array. Thus we can delete **.babelrc**.
 
-Both techniques are common, but it is nice to not have to have one file instead of two. As a result, I prefer the second method. Note however, that without **.babelrc** you can't run Babel directly against our code; we _have to_ use webpack to transpile the code or jump through some other hoop like a command line option. Since we are going to use Webpack in most cases, I now prefer to include the **options** property with our preset rather than creating **.babelrc**. If you do decide to do that, then you should delete or rename or **.babelrc**.
+Both techniques are common. There are advantages to both techniques. It is nice to not have to have one file instead of two, which gives a vote to **options** section in **webpackage.config.js**. Note however, that without **.babelrc** you can't run Babel directly against our code; we _have to_ use webpack to transpile the code or jump through some other hoop like a command line option. If you do decide to do that, then you should delete or rename or **.babelrc**. All this is typical: there are trade-offs and we have to weigh each option and make a decision. For now, I vote to skip the **options** section and go with **.babelrc**, but I admit there are good arguments on both sides.
+
 
 ## Run Your Code
 
