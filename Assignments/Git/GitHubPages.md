@@ -12,6 +12,8 @@ The other major reference is our Code Academy assignments on it.
 
 These just barely scratch the surface. There are many excellent references on the web. If you discover one, feel free to share your knowledge in the discussion. (To get a high score in a discussion, you need to post more than a link, but posting a link can't hurt and helps some.)
 
+Another useful page is [here][gitu].
+
 ## Goals
 
 Create a Git repository on GitHub. **Pull** your repository on to your computer. Now you have two copies of your repository: one on GitHub and on your local machine. Learn to add documents to your GitHub repository. Learn to push your updates to Git.
@@ -61,7 +63,9 @@ After you select the Collaborator:
 
 Learn about it [here][gitset]. We can talk through some of this in class, including the editor.
 
-## Modify the READKE and .gitignore files
+I believe that if you sign in with the Git GUI then you are also good at the command line to push and pull without a username and password. If not, check the credentials page [here][gitc]. If not, questions to the discussion area.
+
+## Modify the README and .gitignore files
 
 Make some changes, any changes you want, to the **README.md** file and push them.
 
@@ -100,3 +104,5 @@ And also the URL of your GitHub Pages site:
 [gig]: https://www.elvenware.com/git-guide/git-ignore.html
 [gitacp]: https://www.elvenware.com/git-guide/git-basics.html#git-files
 [gitset]: https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup
+[gitc]: https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
+[gitu]: https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html
