@@ -98,16 +98,11 @@ At this stage you need to start installing the libraries that your React project
 To install the libraries that our project needs, run these commands:
 
 ```bash
-npm install --save react react-dom webpack webpack-cli
+npm install --save react react-dom
+npm install --save-dev webpack webpack-cli
 npm install --save-dev babel-loader webpack-dev-server
 npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
 npm install --save-dev @babel/core @babel/cli
-```
-
-I'm not sure we need @babel/register. I just tried it without it, and it worked. So I don't think we need to do this:
-
-```bash
-npm install --save-dev @babel/register
 ```
 
 **npm** is the Node Package Manager, and it can be used to install packages (libraries) and to perform other tasks such as running tiny scripts that start your project. **node** and **npm** and tightly linked tools which depend on one another. When you install node, npm is also installed. It is hard to do much with node without also running the **npm** command at least once.
@@ -226,15 +221,9 @@ This is valid JavaScript. In short, the JSX found in your files in converted int
 
 Babel: An Aside {#babel-aside}
 
-If you want to see babel in action, first make sure it is installed globally:
+If you want to see babel in action, follow these steps.
 
-```
-npm install -g babel
-```
-
-This will place a copy of the babel utility in your **~/npm/bin** directory. This is where all the globally installed npm tools are placed on our system.
-
-**NODE**: _When setting up Pristine Lubuntu, I issued a command that ensured that our globally installed libraries ended up in the **~/npm** directory. See the **npm config** command in [this script](https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/NpmHelper) for details._
+We have already put the **@babel-cli** in our **node_modules/.bin**.
 
 Now create a **.babelrc** file with this content:
 
@@ -247,7 +236,7 @@ Now create a **.babelrc** file with this content:
 Finally, run Babel over your code:
 
 ```
-babel react-simple.js
+npx babel react-simple.js
 ```
 
 The output, at the time of this writing, looks like this:
@@ -470,9 +459,9 @@ Modify **main.js** by removing the reference to **ReactBasics.js** and replacing
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ReactBasics } from './ReactBasicsFunctionComponent.js';
+import { ReactBasicsFunctionComponent } from './ReactBasicsFunctionComponent.js';
 
-ReactDOM.render(<ReactBasics/>, document.getElementById('root'));
+ReactDOM.render(<ReactBasicsFunctionComponent/>, document.getElementById('root'));
 ```
 
 Now compile and run as shown earlier.
@@ -481,7 +470,7 @@ Now compile and run as shown earlier.
 
 Don't do this section. We will use prettier instead.
 
-The file is called .jsbeautifyrc. The first option shown below tells js-beautify to leave JSX alone, the second tells it to leave import statements alone when they contain inline curly braces:
+The file is called **.jsbeautifyrc**. The first option shown below tells js-beautify to leave JSX alone, the second tells it to leave import statements alone when they contain inline curly braces:
 import { ReactBasics } from '../ReactBasics.js';
 
 ```json
