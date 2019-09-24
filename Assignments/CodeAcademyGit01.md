@@ -2,6 +2,8 @@
 
 The Code Academy web site features interactive lessons on various computer technologies, including Git, the Linux Command Line, JavaScript and HTML. It provides an excellent way for you to brush up on basic skills that we don't have time to cover in class.
 
+**NOTE**: _Code Academy has recently changed their policy and some of their courses are behind a paywall. I don't want anyone to have to pay to use Code Academy. Please don't give them your credit card. If necessary delete it from their account and try to opt-out of Pro._
+
 To get started, create  an account on [Code Academy](http://www.codecademy.com/).
 
 **NOTE**: _The name of the site is actually **codecademy**, not **code academy**. In a no doubt futile attempt to preserve what is left of the English language, I nevertheless tend to call it code academy_.
