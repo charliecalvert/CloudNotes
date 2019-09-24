@@ -20,10 +20,10 @@ Here are some useful links:
 
 ## ReactBasics Directory
 
-In a branch called **week02**, create a directory called **Week01-ReactBasics** in your repository and navigate into it:
+In a branch called **week01**, create a directory called **Week01-ReactBasics** in your repository and navigate into it:
 
 ```
-mkdir week02-react-basics && cd week02-react-basics
+mkdir week01-react-basics && cd week01-react-basics
 ```
 
 Notice the **&&** operator used to concatenate these two commands. This is a time saver as it allows you to issue two commands on a single line rather than writing something like this:
@@ -32,6 +32,8 @@ Notice the **&&** operator used to concatenate these two commands. This is a tim
 mkdir week01-react-basics
 cd week01-react-basics
 ```
+
+**NOTE**: _Try to use your common sense as to the week name. I'm assuming here that we are in Week One, or at least near it, but if that makes no sense, then choose an appropriate week name._
 
 ## NPM Init
 
@@ -482,7 +484,7 @@ import { ReactBasics } from '../ReactBasics.js';
 
 ## Turn it in
 
-Git add, commit and push your work. Create a branch called **ReactBasics**:
+Git add, commit and push your work. Create a branch called **week01**:
 
 ```
 git branch ReactBasics
