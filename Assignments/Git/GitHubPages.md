@@ -59,11 +59,46 @@ After you select the Collaborator:
 
 ![Collaborator after][cafter]
 
+## Start Command Prompt
+
+I want to give you knowledge that you can keep. Something that will work in all situations, and not just at Bellevue College or not just on Windows. To get started, open the command prompt by going to the Windows **start** menu and type **cmd**. Open up the command window by pressing enter.
+
+Create a directory called Git in your Home directory and then navigate into that directory.
+
+```bash
+mkdir Git
+cd Git
+```
+
 ## First Time Git Setup
 
 Learn about it [here][gitset]. We can talk through some of this in class, including the editor.
 
+Set up the editor:
+
+Depending on the location of NotePad++, run one of these commands from the command prompt:
+
+```bash
+git config --global core.editor "'c:/Program Files/Notepad++/notepad++.exe'"
+git config --global core.editor "'c:/Program Files (x86)/Notepad++/notepad++.exe'"
+```
+
+To find the location of NotePad++ you should be able to type **where notepad++.exe** at the command prompt.
+
+Then issue these commands:
+
+```bash
+git config --global user.name "Your Name Here"
+git config --global user.email "Your email here"
+```
+
 I believe that if you sign in with the Git GUI then you are also good at the command line to push and pull without a username and password. If not, check the credentials page [here][gitc]. If not, questions to the discussion area.
+
+In your Git directory clone your repository. The exact command will depend on your git URL, but the basics are like this:
+
+```bash
+git clone https://github.com/coderzendo/coderzendo.github.io.git
+```
 
 ## Modify the README and .gitignore files
 
