@@ -1,6 +1,6 @@
 ## Overview
 
-This assignment will help you get started installing and using Docker.
+This assignment will help you install and start using Docker.
 
 **NOTE**: _If you have not done so already, please first read the [Docker Overview](DockerOverview.html)._
 
