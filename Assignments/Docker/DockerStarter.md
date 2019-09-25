@@ -141,8 +141,8 @@ We are not installing LAMP because we don't need MySQL or the various scripting 
 This code will allow you to install NodeJs on Docker:
 
 ```nohighlighting
-curl -sL https://deb.nodesource.com/setup_8.x | bash -
-apt-get install -y nodejs
+# The new setup script for Node.js v12.X
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 ```
 
 We have just switched from Node 8.x to Node 9.0. However, at the time of this writing (Nov 2017), I advise sticking with Node 8.x. By December 2017 or January 2018, it would probably be safe to move to Node 9.0.
