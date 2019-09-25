@@ -83,6 +83,14 @@ git config --global core.editor "'c:/Program Files/Notepad++/notepad++.exe'"
 git config --global core.editor "'c:/Program Files (x86)/Notepad++/notepad++.exe'"
 ```
 
+If you work on Windows rather than Linux or the MAC, consider doing this:
+
+```bash
+git config --global core.autocrlf true
+```
+
+This will set line endings to be LF rather than CRLF on checkin. This may be helpful to your teacher. Remember, if you are working on Linux or the MAC, don't do this. 
+
 To find the location of NotePad++ you should be able to type **where notepad++.exe** at the command prompt.
 
 Then issue these commands:
