@@ -92,8 +92,6 @@ git config --global user.name "Your Name Here"
 git config --global user.email "Your email here"
 ```
 
-I believe that if you sign in with the Git GUI then you are also good at the command line to push and pull without a username and password. If not, check the credentials page [here][gitc]. If not, questions to the discussion area.
-
 In your Git directory clone your repository. The exact command will depend on your git URL, but the basics are like this:
 
 ```bash
@@ -116,6 +114,28 @@ Add the following to your **.gitignore** and push your changes:
 ```
 
 More on **.gitignore** is [here][gig].
+
+Here is how to add, commit and push:
+
+```
+git status
+git add .
+git status
+git commit -m "changing git ignore file"
+git status
+git push
+got status
+```
+
+By passing a period to the **git add** command, we are telling Git to add all the files that we created or changed during this session to the Git staging area. This is an area where in the git repository where your changes are held before you push commit them. It is in intermediate stage which allows you to type **git status** to view the changed files to confirm that you are doing what you think you are doing.
+
+The **git commit** should always take a commit message. We use the **-m** flag to pass in the message, as shown. Once the commit is complete your changes have been permenantly written to your local copy of the repository. We type **git push** to send the changes across the world wide web to GitHub.
+
+After you push, you should be prompted in a Gui dialog to enter your username and password for GitHub. This should be a one time event, or at least a once a day event.
+
+Now go to GitHub and inspect your files to confirm that the changes you made really happened.
+
+**NOTE**: _You do not have to type git status as often as I do in the example shown above. But it is good to do it before you begin the process and after you run the **git add** command._
 
 ## Create Default Page
 
