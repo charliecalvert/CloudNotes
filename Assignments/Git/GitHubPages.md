@@ -89,7 +89,7 @@ If you work on Windows rather than Linux or the MAC, consider doing this:
 git config --global core.autocrlf true
 ```
 
-This will set line endings to be LF rather than CRLF on checkin. This may be helpful to your teacher. Remember, if you are working on Linux or the MAC, don't do this. 
+This will set line endings to be LF rather than CRLF on checkin. This may be helpful to your teacher. Remember, if you are working on Linux or the MAC, don't do this.
 
 To find the location of NotePad++ you should be able to type **where notepad++.exe** at the command prompt.
 
@@ -159,6 +159,23 @@ Submit the URL of your GitHub site. It should look something like this:
 And also the URL of your GitHub Pages site:
 
 - [https://coderzendo.github.io/](https://coderzendo.github.io/)
+
+## Work at Home
+
+Most of you will want to install Git on your home machines so you can work both at home and at school. After installing Git, you should duplicate the steps we did in class to set it up. Here is the link to the Git install for all OSes:
+
+[https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+Or you can use the direct link to the Windows install:
+
+[https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+To work at home, you don't need to create a new account or a new repository, but one time at home you need to clone your repository, set up the editor, setup **autocrlf**, set up a user name and email. Then, on a regular basis, you need to add, commit, push and pull. Your pull your repository (git pull) in order to get the changes you made in class on your home machine. Then at the end of the day working at home, add, commit and push your repository so GitHub is up to date. Then when you get to school, run **git pull** to get the changes you made at home. Repeat as necessary on a regular basis. 
+
+*   **One time**: set up an account and create a repository.
+*   **One time on each machine:**: set up your username, email, editor and **autocrlf** as shown above.
+*   **One time on each machine:** clone the repository.
+*   **Multiple times as needed**: add, commit, push, and pull.
 
 [gro]: https://s3.amazonaws.com/bucket01.elvenware.com/images/github-settings.png
 [cbefore]: https://s3.amazonaws.com/bucket01.elvenware.com/images/github-collab.png
