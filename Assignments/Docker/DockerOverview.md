@@ -114,6 +114,62 @@ This will get you help on using the **exec** command when working with container
 
 **HINT**: _I suggest above that you switch from using the old style commands to the new style commands even if you find the old style commands well documented on the web. So how do you tell the old style from the new style? When working with containers and images, the new style commands use the words **container** and **image** while the old style commands do not. Let me just add, however, that it is not wrong to use the old style commands. They still work, and Docker has not officially declared them obsolete. Nevertheless, I prefer the new style commands and assume they will play a bigger role in Docker technology in the future._
 
+## Docker Resources
+
+Most students in my classes are doing their work in an instance Lubuntu running inside a VirtualBox VM hosted on Windows. Assuming you are indeed running a Lubuntu VM, then we have an architecture that looks like this:
+
+- Windows and VirtualBox
+  - Lubuntu
+    - Docker
+      - Ubuntu server in a Docker container
+
+This no doubt seems like a very expensive architecture in terms of system resources. However, the Ubuntu container can use many of the resources already installed as part of Lubuntu. Furthermore, adding a second such container creates an even smaller hit, since even more resources can be shared.
+
+For instance, if you run **docker system df -v** you can see how space your image is using:
+
+| Name                      | Size    | Shared Size | Unique Size |
+|:---------------------------|:--------|-------------|-------------|
+| charliecalvert/docker-test | 64.19MB | 64.19MB     | 13B         |
+| ubuntu                     | 64.19MB | 64.19MB     | 0B          |
+
+As you can see, the original ubuntu image takes up 64.19MB. Our **docker-test** image shares all 64.19MB of the original ubuntu image plus 13B for the small text file we created.
+
+
+Suppose we create two instances of our custom image and then use **docker system df -v** to check our disk usage:
+
+
+| CONTAINER ID | IMAGE                      | SIZE | CREATED        | NAMES  |
+|:-------------|:---------------------------|------|----------------|--------|
+| 8d238a8421d2 | charliecalvert/docker-test | 0B   | 17 seconds ago | test02 |
+| 9b39280413fa | charliecalvert/docker-test | 0B   | 38 seconds ago | test01 |
+
+As you can see, they take up 0B disk space since they simply use the existing image.
+
+Docker performs this magic by sharing the host OS kernel and libraries. Note that these shared resources resources are used for both the image and for the container based on the image. In other words, if you create an ubuntu image on an instance of an Ubuntu host, then the image can share much of the code already installed on the host.
+
+A VM, by contrast, creates its own copy of the OS kernel and libraries. Even if you create an instance of an Ubuntu VM on top of an instance of an Ubuntu host, there is a great deal of duplication. Thus creating a VM is a much more expensive operation both in terms of disk spaced used, and in terms of the time it takes to launch the container vs the time it takes to launch the VM. More specifically, a container is often launched in a very few seconds while a VM can take a minute or longer to launch.
+
+**NOTE**: _The actual time to launch a VM or container vary hugely depending on the hardware involved, but in each case the container takes up much less space and launches much more quickly. It can, however, take a significant period of time to download an image from the Docker HUB. But once the image is downloaded, it can share resources with the host OS, and creating a custom image or container based on it can be very fast._
+
+Suppose we create a second text file in one of the containers:
+
+```
+root@8d238a8421d2:/# cd tmp/
+root@8d238a8421d2:/tmp# ll
+total 12
+drwxrwxrwt 1 root root 4096 Sep  5 21:55 ./
+drwxr-xr-x 1 root root 4096 Sep  5 21:57 ../
+-rw-r--r-- 1 root root   13 Sep  5 21:55 TempFile
+root@8d238a8421d2:/tmp# echo foo > bar.txt
+```
+
+This takes up an additional 4 bytes of disk space:
+
+| CONTAINER ID | IMAGE                      | SIZE | CREATED        | NAMES  |
+|:-------------|:---------------------------|------|----------------|--------|
+| 8d238a8421d2 | charliecalvert/docker-test | 4B   | 17 seconds ago | test02 |
+| 9b39280413fa | charliecalvert/docker-test | 0B   | 38 seconds ago | test01 |
+
 ## Useful links
 
 - [Docker and Kubernetes](https://containerjournal.com/topics/container-ecosystems/kubernetes-vs-docker-a-primer/)
