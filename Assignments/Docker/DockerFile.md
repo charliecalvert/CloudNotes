@@ -43,12 +43,12 @@ After creating the image, we can build a container based on it. This container w
 
 The following command creates a container based on our image. Note that the command gives our container a name and runs it:
 
-    docker container run -name test01 -it charliecalvert/docker-test
+    docker container run -name simple-text -it charliecalvert/simple-text
 
-At this point you should be able to navigate into the /tmp directory and view the file you created:
+At this point you should be able to navigate into the Docker container's **/tmp** directory and view the file you created:
 
 ```
-$ docker container run --name test01 -it charliecalvert/docker-test
+$ docker container run --name simple-text -it charliecalvert/simple-text
 root@2b00769cc093:/# cd tmp/
 root@2b00769cc093:/tmp# ll
 total 12
