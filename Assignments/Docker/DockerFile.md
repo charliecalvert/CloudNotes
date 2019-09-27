@@ -89,7 +89,7 @@ In **package.json** replace **nodemon** with **node**.
 
 In **bin/www** change the port to 30027.
 
-```JavaScript
+```javascript
 var port = normalizePort(process.env.ELF_REST_BASICS_PORT || '30027');
 ```
 
