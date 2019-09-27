@@ -72,7 +72,7 @@ Turn in this URL as part of your assignment.
 
 ## Create Micros {#create-micros}
 
-Create a **week02-micros** directory. \
+Create a **week02-micros** directory.
 
     mkdir week02-micros
     cd week02-micros
@@ -99,7 +99,7 @@ Also, we should probably put this at the bottom of **./bashrc** if it is not the
 export ELF_REST_BASICS_PORT=30027
 ```
 
-In **week02/micros/qux/routes/index.js** edit the home route and create a new endpoint called **/you-rang**:
+In **week02-micros/qux/routes/index.js** edit the home route and create a new endpoint called **/you-rang**:
 
 ```JavaScript
 router.get('/', function(req, res) {
@@ -120,7 +120,7 @@ router.get('/you-rang', (request, response) => {
 });
 ```
 
-Create this Dockerfile in the **micros** directory. It uses the [official Node image][oni] from DockerHub:
+Create this Dockerfile in the **week02-micros** directory. It uses the [official Node image][oni] from DockerHub:
 
     FROM node:latest
     RUN mkdir -p /usr/src/app
@@ -132,7 +132,7 @@ Create this Dockerfile in the **micros** directory. It uses the [official Node i
     RUN node_modules/.bin/webpack
     CMD [ "npm", "start" ]
 
-Here is useful little script called **build** that I put in the **micros** directory:
+Here is useful little script called **build** that I put in the **week02-micros** directory:
 
 ```bash
 #!/usr/bin/env bash
