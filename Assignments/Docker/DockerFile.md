@@ -75,12 +75,19 @@ Turn in this URL as part of your assignment.
 Create a **week02-micros** directory. \
 
     mkdir week02-micros
+    cd week02-micros
 
-In **micros** create an elf-express app called **qux**:
+In **week02-micros** create an elf-express app called **qux**:
 
     elf-express qux
     cd qux
     npm i
+
+Open **qux** in WebStorm.
+
+In **package.json** replace **nodemon** with **node**.
+
+In **bin/www** change the port to 30027.
 
 In **week02/micros/qux/routes/index.js** edit the home route and create a new endpoint called **/you-rang**:
 
@@ -103,31 +110,45 @@ router.get('/you-rang', (request, response) => {
 });
 ```
 
-Create this Dockerfile which uses the [official Node image][oni] from DockerHub:
+Create this Dockerfile in the **micros** directory. It uses the [official Node image][oni] from DockerHub:
 
     FROM node:latest
     RUN mkdir -p /usr/src/app
     WORKDIR /usr/src/app
-    COPY micros/qux/package.json .
+    COPY qux/package.json .
     RUN npm install
-    COPY micros/qux .
+    COPY qux .
     EXPOSE 30027
     RUN node_modules/.bin/webpack
     CMD [ "npm", "start" ]
 
-Here is useful little script called **build** that I put in the **MakeHtml** directory:
+Here is useful little script called **build** that I put in the **micros** directory:
 
 ```bash
 #!/usr/bin/env bash
 
-docker build -t charliecalvert/make-html2 .
-docker run --name maker -d -p 30027:30027 charliecalvert/make-html2
-docker exec -it maker /bin/bash
+docker image build -t charliecalvert/micro-qux .
+docker container run --name micro-qux -d -p 30027:30027 charliecalvert/micro-qux
+docker exec -it micro-qux /bin/bash
 ```
 
-After running this go to **localhost:30027**.
+Ignore the warnings **fsevents** and the notice to commit **package-lock.json**.
+
+After running this go to **localhost:30027**. It should look like this:
 
 ![Docker and Qux Micro][dqm]
+
+If it doesn't work, do this:
+
+    docker logs <containter-name>
+
+For instance:
+
+    docker logs micro-qux
+
+This error can mean there is no **Dockerfile** (note case) in the current directory:
+
+    unable to prepare context: unable to evaluate symlinks in Dockerfile path
 
 To see **/you-rang** go to [http://localhost:30027/you-rang](http://localhost:30027/you-rang)
 
@@ -151,7 +172,7 @@ I created a second script called **reset**. Or perhaps you might call it **delet
 
 docker container stop maker
 docker container rm maker
-docker image rm charliecalvert/make-html2:latest
+docker image rm charliecalvert/micro-qux:latest
 ```
 
 Notice that in these scripts I'm giving the container a **name**. Specifically, I'm calling it **maker**. By giving it a known name I'm able to remove (delete) it with **stop** script if I want to start over.
@@ -179,6 +200,20 @@ Give me at least one screenshot of you processing a docker file. Put your copies
 - repo url (This is your **isit320-lastname-2017** repo.)
 - Directory name
 - Branch
+
+## Docker Daemon Logs
+
+Not very useful so far, but:
+
+    sudo journalctl -fu docker.service
+
+Remember, this is useful:
+
+    docker logs <containter-name>
+
+For instance:
+
+    docker logs micro-qux
 
 ## Useful Links
 
