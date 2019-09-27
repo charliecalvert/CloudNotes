@@ -150,6 +150,10 @@ After running this go to **localhost:30027**. It should look like this:
 
 ![Docker and Qux Micro][dqm]
 
+If **localhost** doesn't work, try the actual IP address. You can get it with **ip addr | grep inet**. For instance:
+
+    192.168.2.12:30027
+
 To see **/you-rang** go to [http://localhost:30027/you-rang](http://localhost:30027/you-rang)
 
 The output should look something like this:
