@@ -2,6 +2,8 @@
 
 In this assignment you will learn the basics of working with [**Dockerfiles**][df]. We can use these files to automate the process outlined in the [Docker Starter Assignment][dsp].
 
+This assignment is not complete at this time. At this point work only on [Create MakeHtml][#create-makehtml]
+
 ## Your Docker Hub Name
 
 In the code found in this assignment you are going to need to know your name on the [Docker Hub](https://hub.docker.com/). You created this name when you first logged into the Docker Hub. If you have forgotten the name, you can always find it by logging into the Docker Hub and going to its home page.
@@ -235,7 +237,7 @@ For instance:
 
     docker container exec -it ubbase bash    
 
-## Create MakeHtml
+## Create MakeHtml {#create-makehtml}
 
 In your **DockerCode** directory create a **MakeHtml** directory if you have not done so already:
 

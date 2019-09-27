@@ -45,6 +45,8 @@ In general, use your best judgment. Ask yourself if you are providing a hint or 
 
 Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: [http://www.google.com](http://www.google.com)".
 
+Did you get an error at any point during the week? Did you understand it? If not, you could ask about that. Did you understand absolutely everything we covered in our class or that you were asked to do in an assignment? If not, ask questions about issues that were not clear to you. If you did understand everything we covered, can you answer another student's question? If that doesn't work, can you think of anything related to the material we covered that piqued your curiosity? If so, ask about it.
+
 When a student has everything running perfectly, and there are no problems with their code, I can understand why they have trouble coming up with a question. But if your programming is not working, then usually you receive some kind of error. If nothing else, you can ask about the error you are getting. What causes this error? How can I fix it?
 
 Or perhaps the assignment includes a chunk of code like this:
