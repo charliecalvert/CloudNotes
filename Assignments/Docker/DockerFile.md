@@ -4,6 +4,8 @@ In this assignment you will learn the basics of working with [**Dockerfiles**][d
 
 This assignment is not complete at this time. At this point work only on the [Create Micros](#create-micros) section.
 
+Do your work for this assignment in a branch called **week02**. (Or, at the least, be sure you have a **week02** branch and that it contains the code I ask you to create in this assignment.)
+
 ## Your Docker Hub Name
 
 In the code found in this assignment you are going to need to know your name on the [Docker Hub](https://hub.docker.com/). You created this name when you first logged into the Docker Hub. If you have forgotten the name, you can always find it by logging into the Docker Hub and going to its home page.
