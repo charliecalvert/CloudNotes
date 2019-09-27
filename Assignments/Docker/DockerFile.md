@@ -89,6 +89,16 @@ In **package.json** replace **nodemon** with **node**.
 
 In **bin/www** change the port to 30027.
 
+```JavaScript
+var port = normalizePort(process.env.ELF_REST_BASICS_PORT || '30027');
+```
+
+Also, we should probably put this at the bottom of **./bashrc** if it is not there already:
+
+```bash
+export ELF_REST_BASICS_PORT=30027
+```
+
 In **week02/micros/qux/routes/index.js** edit the home route and create a new endpoint called **/you-rang**:
 
 ```JavaScript
@@ -132,23 +142,13 @@ docker container run --name micro-qux -d -p 30027:30027 charliecalvert/micro-qux
 docker exec -it micro-qux /bin/bash
 ```
 
-Ignore the warnings **fsevents** and the notice to commit **package-lock.json**.
+Don't forget to make it executable: **chmod +x build**.
+
+When running the script, ignore the warnings about **fsevents** and the notice to commit **package-lock.json**.
 
 After running this go to **localhost:30027**. It should look like this:
 
 ![Docker and Qux Micro][dqm]
-
-If it doesn't work, do this:
-
-    docker logs <containter-name>
-
-For instance:
-
-    docker logs micro-qux
-
-This error can mean there is no **Dockerfile** (note case) in the current directory:
-
-    unable to prepare context: unable to evaluate symlinks in Dockerfile path
 
 To see **/you-rang** go to [http://localhost:30027/you-rang](http://localhost:30027/you-rang)
 
@@ -162,20 +162,37 @@ The output should look something like this:
   "hostname":"29d539f34da5",
   "home":"/root"
 }
+```
 
 Note that this information is from inside the container. To see it while in the container, run **env**.
 
-I created a second script called **reset**. Or perhaps you might call it **delete-container-and-image** or just **start-over-from-scratch**. I used it a lot when developing the **Dockerfile** because it allowed me to try a run and check the results. If I wasn't happy or felt the **Dockerfile** was not yet complete, then I could make some adjustments to the **Dockerfile**, delete my image and container, and start over by running an updated copy of the **Dockerfile**. Here is the script:
+## Troubleshoot
+
+If your code doesn't work, try this:
+
+    docker logs <containter-name>
+
+For instance:
+
+    docker logs micro-qux
+
+That should show the output that would normally appear at the bash prompt.
+
+The following rather cryptic error can mean there is no **Dockerfile** (note case) in the current directory:
+
+    unable to prepare context: unable to evaluate symlinks in Dockerfile path
+
+Since errors do happen, I created a second script called **week02-micros/reset**. Or perhaps you might call it **delete-container-and-image** or just **start-over-from-scratch**. I used it a lot when developing the **Dockerfile** because it allowed me to try a run and check the results. If I wasn't happy or felt the **Dockerfile** was not yet complete, then I could make some adjustments to the **Dockerfile**, delete my image and container, and start over by running an updated copy of the **Dockerfile**. Here is the script:
 
 ```bash
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
-docker container stop maker
-docker container rm maker
+docker container stop micro-qux
+docker container rm micro-qux
 docker image rm charliecalvert/micro-qux:latest
 ```
 
-Notice that in these scripts I'm giving the container a **name**. Specifically, I'm calling it **maker**. By giving it a known name I'm able to remove (delete) it with **stop** script if I want to start over.
+Notice that in these scripts I'm giving the container a **name**. Specifically, I'm calling it **micro-qux**. By giving it a known name I'm able to remove (delete) it with **stop** script if I want to start over.
 
 ## Push your results
 
