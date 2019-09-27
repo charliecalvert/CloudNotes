@@ -25,17 +25,17 @@ We use Dockerfiles to save in a single place the multiple steps we might use to 
 
 Save this file into your repo under this name:
 
-    week02-docker-simple/DockerFile
+    week02-docker-simple/Dockerfile
 
 The first line in the file pulls down the **ubuntu** image from the Docker Hub and creates a local copy. After creating the local image the second line in the file runs a command inside the image which creates a small text file in the **tmp** directory with the words **File content** inside it. (This is the same thing we did in class, but now we are automating the process.)
 
 After creating the Dockerfile, you can use it to create an image. For instance, you can run it from the **week02-docker-simple** directory like this:
 
-    docker image build -t &lt;YOUR-DOCKER-HUB-NAME&gt;/docker-test .
+    docker image build -t &lt;YOUR-DOCKER-HUB-NAME&gt;/simple-text .
 
 In my case, this might look a bit like this:
 
-    docker image build -t charliecalvert/docker-test .
+    docker image build -t charliecalvert/simple-text .
 
 After creating the image, we can build a container based on it. This container will hold an instance of Ubuntu.
 
@@ -103,7 +103,7 @@ router.get('/you-rang', (request, response) => {
 });
 ```
 
-Create this DockerFile which uses the [official Node image][oni] from DockerHub:
+Create this Dockerfile which uses the [official Node image][oni] from DockerHub:
 
     FROM node:latest
     RUN mkdir -p /usr/src/app
