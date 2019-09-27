@@ -2,7 +2,7 @@
 
 In this assignment you will learn the basics of working with [**Dockerfiles**][df]. We can use these files to automate the process outlined in the [Docker Starter Assignment][dsp].
 
-This assignment is not complete at this time. At this point work only on [Create MakeHtml][#create-makehtml]
+This assignment is not complete at this time. At this point work only on the [Create MakeHtml](#create-makehtml) section.
 
 ## Your Docker Hub Name
 
