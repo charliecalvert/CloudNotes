@@ -2,7 +2,7 @@
 
 In this assignment you will learn the basics of working with [**Dockerfiles**][df]. We can use these files to automate the process outlined in the [Docker Starter Assignment][dsp].
 
-This assignment is not complete at this time. At this point work only on the [Create MakeHtml](#create-makehtml) section.
+This assignment is not complete at this time. At this point work only on the [Create Micros](#create-micros) section.
 
 ## Your Docker Hub Name
 
@@ -60,25 +60,15 @@ root@2b00769cc093:/tmp#
 
 As you can see, by default you are logged in as **root** in our new ubuntu container. This means you are the **admin** and have full rights in the instance. There are no other users. In particular, there is no **bcuser** account. I mention this only because I create a **bcuser** account in the VirtualBox VMs that I give to my students at the beginning of the quarter.
 
-## Get Bash Shell in Background Docker Task
+## Push your results
 
-If you run **docker container ls -a** and see that you have a running container you can use the **exec** command to get inside it or to run a command inside it.
+You can push your finished image to the Docker Hub with a command like this, but use your Docker username rather than mine:
 
-To "get inside the container", open a bash shell on the instance running in background:
+    docker push charliecalvert/simple-text
 
-    docker container exec -it <CONTAINER_ID_OR_NAME> bash
+Turn in this URL as part of your assignment.
 
-For instance:
-
-    docker container exec -it my-container bash    
-
-The **exec** command cannot be run on a stopped (exited) container. If you see a container and it is stopped, you can start it like this:
-
-    docker container start my-container
-
-After issuing that command, you can run the **exec** command.
-
-## Create MakeHtml {#create-makehtml}
+## Create Micros {#create-micros}
 
 Create a **week02-micros** directory. \
 
@@ -164,61 +154,13 @@ docker image rm charliecalvert/make-html2:latest
 
 Notice that in these scripts I'm giving the container a **name**. Specifically, I'm calling it **maker**. By giving it a known name I'm able to remove (delete) it with **stop** script if I want to start over.
 
-## Docker Compose
-
-Now we want to use DockerCompose to use two projects at once.
-
-    docker compose up
-
-The docker file:
-
-```code
-FROM node:latest
-RUN mkdir -p /home/bcuser/Source/elf-app
-WORKDIR /home/bcuser/Source/elf-app
-COPY package.json /home/bcuser/Source/elf-app/
-RUN npm install
-COPY . /home/bcuser/Source/elf-app
-EXPOSE 30025
-CMD [ "npm", "start" ]
-```
-
-The docker compose file:
-
-```code
-version: "2"
-services:
-  elf-app:
-    container_name: elf-app
-    restart: always
-    build: .
-    ports:
-      - "30025:30025"
-    links:
-      - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
-```
-
-In **app.js** don't use **localhost**. For me, it worked best to spell out the IP:
-
-```JavaScript
-var monk = require('monk');
-var db = monk('192.168.86.26:27017/nodetest1');
-```
-
-<!-- See repository called mongo-test -->
-
 ## Push your results
 
-You can push your finished image to the Docker Hub:
+You can push your finished image to the Docker Hub with a command like this, but use your Docker username rather than mine:
 
-docker push charliecalvert/make-html2, though of course you would want to use your name on the Docker Hub.
+    docker push charliecalvert/micros-qux
+
+Turn in this URL as part of your assignment.
 
 ## Turn it in
 

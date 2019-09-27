@@ -302,6 +302,24 @@ Alternately, you can **commit** the container to an image and then run the image
     docker commit epic_jang foo
     docker container run -it foo
 
+## Get Bash Shell in Background Docker Task
+
+If you run **docker container ls -a** and see that you have a running container you can use the **exec** command to get inside it or to run a command inside it.
+
+To "get inside the container", open a bash shell on the instance running in background:
+
+    docker container exec -it <CONTAINER_ID_OR_NAME> bash
+
+For instance:
+
+    docker container exec -it my-container bash    
+
+The **exec** command cannot be run on a stopped (exited) container. If you see a container and it is stopped, you can start it like this:
+
+    docker container start my-container
+
+After issuing that command, you can run the **exec** command.
+
 ## Turn it in
 
 Take a screen shot of the ssh bash shell on your local Ubuntu server after running the **docker images** command. It should show a list of the containers installed on your system. Also include the URL for your Docker Hub page that displays your docker images.
