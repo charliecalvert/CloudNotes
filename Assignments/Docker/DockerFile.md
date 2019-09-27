@@ -21,9 +21,13 @@ We use Dockerfiles to save in a single place the multiple steps we might use to 
     FROM ubuntu
     RUN echo 'File content' > /tmp/TempFile
 
-The first line pulls down the **ubuntu** image from the Docker Hub and creates a local copy. After creating the local image the second line in the file runs a command inside the image which creates a small text file in the **tmp** directory with the words **File content** inside it.
+Save this file into your repo under this name:
 
-Save the two lines shown above in a file called **~/temp/Dockerfile**. After creating the Dockerfile, you can use it to create an image. For instance, you can run it from the **temp** directory like this:
+    week02-docker-simple/DockerFile
+
+The first line in the file pulls down the **ubuntu** image from the Docker Hub and creates a local copy. After creating the local image the second line in the file runs a command inside the image which creates a small text file in the **tmp** directory with the words **File content** inside it. (This is the same thing we did in class, but now we are automating the process.)
+
+After creating the Dockerfile, you can use it to create an image. For instance, you can run it from the **week02-docker-simple** directory like this:
 
     docker image build -t &lt;YOUR-DOCKER-HUB-NAME&gt;/docker-test .
 
@@ -33,23 +37,7 @@ In my case, this might look a bit like this:
 
 After creating the image, we can build a container based on it. This container will hold an instance of Ubuntu.
 
-Most students in my classes are doing their work in an instance Lubuntu running inside a VirtualBox VM hosted on Windows. Assuming you are indeed running a Lubuntu VM, then we have an architecture that looks like this:
-
-- Windows and VirtualBox
-  - Lubuntu
-    - Docker
-      - Ubuntu server in a Docker container
-
-This no doubt seems like a very expensive architecture in terms of system resources. However, the Ubuntu container can use many of the resources already installed as part of Lubuntu. Furthermore, adding a second such container creates an even smaller hit, since even more resources can be shared.
-
-For instance, if you run **docker system df -v** you can see how space your image is using:
-
-| Name                      | Size    | Shared Size | Unique Size |
-|:---------------------------|:--------|-------------|-------------|
-| charliecalvert/docker-test | 64.19MB | 64.19MB     | 13B         |
-| ubuntu                     | 64.19MB | 64.19MB     | 0B          |
-
-As you can see, the original ubuntu image takes up 64.19MB. Our **docker-test** image shares all 64.19MB of the original ubuntu image plus 13B for the small text file we created.
+## Create Container
 
 The following command creates a container based on our image. Note that the command gives our container a name and runs it:
 
@@ -71,6 +59,28 @@ root@2b00769cc093:/tmp#
 ```
 
 As you can see, by default you are logged in as **root** in our new ubuntu container. This means you are the **admin** and have full rights in the instance. There are no other users. In particular, there is no **bcuser** account. I mention this only because I create a **bcuser** account in the VirtualBox VMs that I give to my students at the beginning of the quarter.
+
+
+## Docker Resources
+
+Most students in my classes are doing their work in an instance Lubuntu running inside a VirtualBox VM hosted on Windows. Assuming you are indeed running a Lubuntu VM, then we have an architecture that looks like this:
+
+- Windows and VirtualBox
+  - Lubuntu
+    - Docker
+      - Ubuntu server in a Docker container
+
+This no doubt seems like a very expensive architecture in terms of system resources. However, the Ubuntu container can use many of the resources already installed as part of Lubuntu. Furthermore, adding a second such container creates an even smaller hit, since even more resources can be shared.
+
+For instance, if you run **docker system df -v** you can see how space your image is using:
+
+| Name                      | Size    | Shared Size | Unique Size |
+|:---------------------------|:--------|-------------|-------------|
+| charliecalvert/docker-test | 64.19MB | 64.19MB     | 13B         |
+| ubuntu                     | 64.19MB | 64.19MB     | 0B          |
+
+As you can see, the original ubuntu image takes up 64.19MB. Our **docker-test** image shares all 64.19MB of the original ubuntu image plus 13B for the small text file we created.
+
 
 Suppose we create two instances of our custom image and then use **docker system df -v** to check our disk usage:
 
