@@ -484,10 +484,11 @@ import { ReactBasics } from '../ReactBasics.js';
 
 ## Turn it in
 
-Git add, commit and push your work. Create a branch called **week01**:
+Git add, commit and push your work. It should be on a branch called **week01**:
 
 ```
-git branch ReactBasics
+git branch week01
+git co week01
 ```
 
 Create a tag:
