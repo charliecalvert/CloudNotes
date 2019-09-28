@@ -7,6 +7,8 @@ Here are some useful links:
 - [Slides](http://bit.ly/react-basics)
 - [github student](https://education.github.com/pack)
 
+**NOTE**: _Students in my Isit320 and Isit322 classes should work in a branch called week01. Folks in Prog272 should work in the master branch and ignore the references to the **week01** branch._
+
 ## Summary
 
 - Create **webpack.config.js**
