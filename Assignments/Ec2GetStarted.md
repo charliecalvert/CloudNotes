@@ -413,6 +413,13 @@ ls ~/Git
 
 It should show that you have a JsObjects directory and also your repository for this class (isit320-lastname-20XX).
 
+Also, in the screen shot, run **ssh-add -l** to show that you have a private key loaded:
+
+```bash
+$ ssh-add -l
+2048 SHA256:FjF9QZpQRWsRguYULtrsh2haWX/fp+/erX/51tAHjbU /home/ubuntu/.ssh/main-key (RSA)
+```
+
 ## Billing After Quarter Ends {#billing-after}
 
 After I have given you a final grade, consider what you want to do with AWS and your instance.
