@@ -68,7 +68,7 @@ Once you have created your instance, and downloaded your keys, you need to learn
 
 ```
 chmod 400 ~/.ssh/Prog270-Ec2-Calvert-2016.pem
-ssh-add ~ /.ssh/Prog270-Ec2-Calvert-2016.pem
+ssh-add ~/.ssh/Prog270-Ec2-Calvert-2016.pem
 ssh ubuntu@192.168.1.25
 ```
 
