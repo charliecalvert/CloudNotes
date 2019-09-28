@@ -411,7 +411,7 @@ A good screen shot would show you first on Pristine Lubuntu, then connecting to 
 ls ~/Git
 </pre>
 
-It should show that you have a JsObjects directory.
+It should show that you have a JsObjects directory and also your repository for this class (isit320-lastname-20XX).
 
 ## Billing After Quarter Ends {#billing-after}
 
