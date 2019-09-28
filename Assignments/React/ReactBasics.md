@@ -22,7 +22,8 @@ Here are some useful links:
 
 In a branch called **week01**, create a directory called **Week01-ReactBasics** in your repository and navigate into it:
 
-```
+```bash
+git co -b week01 # create branch and check it out.
 mkdir week01-react-basics && cd week01-react-basics
 ```
 
