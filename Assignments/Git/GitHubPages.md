@@ -4,6 +4,12 @@ GitHub is a website that wraps a free open source version control system called 
 
 You can **push** your Git repository to GitHub. This stores your code in the cloud and makes it at least theoretically accessible from any machine attached to the Internet.
 
+## Videos
+
+- [File Explorer Setup (1:04)](https://youtu.be/2KJaiera5Oo)
+- [Git, add, status, commit, push (5:33)](https://youtu.be/-GZrhTtvKMU)
+- [File System Tips (8:44)](https://youtu.be/VBMsf8_dx7w)
+
 ## Reference
 
 The Git Book is [here](https://git-scm.com/book/en/v2). This is an excellent resource. I will not hold your hand, but read as much of it as you can handle.

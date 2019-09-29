@@ -324,6 +324,8 @@ After issuing that command, you can run the **exec** command.
 
 Take a screen shot of the ssh bash shell on your local Ubuntu server after running the **docker images** command. It should show a list of the containers installed on your system. Also include the URL for your Docker Hub page that displays your docker images.
 
+If you were also able to save the **ubuntufootxt** image to DockerHub and can give me a link then that is all to the good.
+
 ## Create Ubuntu Image
 
 Take a snapshot of Pristine Lubuntu before installing Docker.
