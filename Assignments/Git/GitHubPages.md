@@ -9,6 +9,7 @@ You can **push** your Git repository to GitHub. This stores your code in the clo
 - [File Explorer Setup (1:04)](https://youtu.be/2KJaiera5Oo)
 - [Git, add, status, commit, push (5:33)](https://youtu.be/-GZrhTtvKMU)
 - [File System Tips (8:44)](https://youtu.be/VBMsf8_dx7w)
+- [Turn in an Assignment (2:57)](https://youtu.be/LOLgTYG9UT4)
 
 ## Reference
 
