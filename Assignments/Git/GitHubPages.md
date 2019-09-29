@@ -184,6 +184,22 @@ To work at home, you don't need to create a new account or a new repository, but
 *   **One time on each machine:** clone the repository.
 *   **Multiple times as needed**: add, commit, push, and pull.
 
+## Command Prompt Links
+
+Here is a general search on the topic which yields many useful results:
+
+- [Learn the Windows Command Prompt](https://www.google.com/search?q=learn+the+windows+command+prompt)
+
+Here is a page where the first example doesn't help much, but after that it gives lots of good tips:
+
+- [Command Prompt Tips](https://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html)
+
+Also
+
+- [StackOverflow Simple File Search](https://stackoverflow.com/questions/8066679/how-to-do-a-simple-file-search-in-cmd)
+
+
+
 [gro]: https://s3.amazonaws.com/bucket01.elvenware.com/images/github-settings.png
 [cbefore]: https://s3.amazonaws.com/bucket01.elvenware.com/images/github-collab.png
 [cafter]: https://s3.amazonaws.com/bucket01.elvenware.com/images/github-pages-collaborators.png
