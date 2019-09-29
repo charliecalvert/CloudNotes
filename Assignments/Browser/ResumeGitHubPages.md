@@ -4,13 +4,13 @@ Begin building a web site.
 
 ## Resume
 
-Take the **resume.html** file from our [previous assignment][pr-resume]. Copy it into your repository. For now, it will probably be simplest if you use the Windows Explorer or some similar tool to do this.
+Take the **resume.html** file from our [previous assignment][pr-resume]. Copy it into your repository if it is not there already. For now, it will probably be simplest if you use the Windows Explorer or some similar tool to do this.
 
-The file might be in your **documents/prog109** folder or attached to your first web page assignment. It might have had a different name when you turned in the First Web Page assignment. Regardless, you should now rename the page to **resume.html** and put it in the root of your repository. When I say "put it in the root" I mean that you should not put the file in a subdirectory -- at least for now. Put it directly in the root of your **prog109-lastname-2018** directory.
+**NOTE**: _If your resume file is not already in your repository, it might be in your **documents/prog109** folder or attached to your first web page assignment. It might have had a different name for one reason or another. Regardless, you should now rename the page to **resume.html** and put it in the root of your repository. When I say "put it in the root" I mean that you should not put the file in a subdirectory -- at least for now. Put it directly in the root of your **username.github.io** directory._
 
 ## Correct It
 
-Open up the file in Visual Studio Code or your editor of choice and correct any errors in the file. Many of you can watch the video I attached to your assignment in order to learn about many of the errors in your file. Also use the [HTML Validator][hv] to clean up errors. The Validator should give your file a clean bill of health before you turn in the assignment.
+Open up the file in Visual Studio Code or your editor of choice and correct any errors in the file. Many of you can read the comments I attached to your assignment in order to learn about many of the errors in your file. Also use the [HTML Validator][hv] to clean up errors. The Validator should give your file a clean bill of health before you turn in the assignment.
 
 **NOTE**: _If you can't get the Chrome HTML Validator to work in your browser, you can try the [W3C validator][w3cv]._
 
