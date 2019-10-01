@@ -22,7 +22,7 @@ We are going to want to share our screens. In particular, you will need to see m
 
 ## Turn it in
 
-Send me at least one message via hangouts. When you turn in (submit) the assignment, tell me the user name you used when you sent the message. If I can find a message from you in hangouts then all is good.
+Send me at least one message via hangouts. When you turn in (submit) the assignment with Canvas, tell me the user name you used when you sent the message. If I can find a message from you in hangouts then all is good.
 
 <!--       -->
 <!-- links -->

@@ -8,11 +8,13 @@ This assignment will help you install and start using Docker.
 
 Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
 
-Take a snapshot of Pristine Lubuntu before installing Docker.
+If you are going to be using Pristine Lubuntu, take a snapshot of it before installing Docker.
 
-Run the script found on your hard drive in **JsObjects/Utilities/InstallScripts**:
+To perform the actual install, run the script called **DockerInstall** found on your hard drive in the **JsObjects/Utilities/InstallScripts** directory:
 
 - [DockerInstall][dkin]
+
+**NOTE**: _It is always a good idea to pull the **JsObjects** repository before using any portion of it. GitHub tells me that as of October, 2019, I have publised 2,518 commits to that repo. The point being that it gets updated fairly often._
 
 So the commands to install Docker might be like this:
 
@@ -20,11 +22,11 @@ So the commands to install Docker might be like this:
     cd InstallScripts
     ./DockerInstall
 
-This is the correct way to install as of May 3, 2019. Recall that **jou** takes you to the **JsObjects/Utilities** directory. From there navigate into **InstallScripts**. Then run **./DockerInstall**.
+This is the correct way to install as of Oct 1, 2019. Recall that **jou** takes you to the **JsObjects/Utilities** directory. From there navigate into **InstallScripts**. Then run **./DockerInstall**.
 
-After running this script, be sure to logout and then log in again. On Lubuntu, that should be **Start | Leave | Logout**.
+After running this script, be sure to _**logout and then log in again**_. On Lubuntu, that should be **Start | Leave | Logout**. Then log in again. If you are installing on the cloud, you can usually just type exit to end your SSH session. You can then immediately reconnect. That is also a way to log in.
 
-Once installed, you should not have to run Docker as the superuser, that is, you should not need to use **sudo** to start Docker. If you get a permission denied error, then try logging out and logging in again. That should fix the problem. (The Docker Install video linked below might not adequately cover this step.)
+Once installed, you should not have to run Docker as the superuser, that is, you should not need to use **sudo** to start Docker. If you get a permission denied error, don't run **sudo**. Instead, then try logging out and logging in again. That should fix the problem. (The Docker Install video linked below might not adequately cover this step.)
 
 <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/N9jWhYaOrPs?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
@@ -40,7 +42,7 @@ If you have not downloaded or created any images yet, you will see only the titl
 
 ## The Docker Dance {#docker-dance}
 
-Following the steps in the previous sections should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker image ls**, then try this:
+Following the steps in the previous sections should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker image ls**, then don't resort to using **Sudo**. Instead, try this:
 
     sudo groupadd docker
     sudo usermod -aG docker $USER    
@@ -57,7 +59,7 @@ Create an account and sign into the Docker Hub at [https://hub.docker.com/](http
 **NOTE**: _Remember, it is almost impossible to survive in a cloud based technology such as ours without having:
 
 * Mastered SSH and SSH ssh Keys
-* Installing a password manager such as LastPass or devising some other strategy for managing usernames and passwords.
+* Installing a password manager such as LastPass or devising some other strategy for managing usernames and passwords. (I've been using LastPass, usually multiple times a day, since 2012. So far it has worked well for me, and has done a great job of protecting my privacy and keeping my actions on the Internet secure.)
 
 Using the same username and password everywhere, or relying on your memory are not sustainable strategies. Regardless of what you read, in most cases LastPass or similar tools provide the safest and most reliable solution._
 
@@ -119,96 +121,11 @@ After it has been run, a container is created, and then we tend to just **start*
 
 Note that we pass in the **ID** or **name** of a container to the above commands, as shown at the beginning of this section.
 
-## Install Software
-
-Run these commands from inside a Docker container:
-
-```nohighlighting
-apt-get update
-apt-get upgrade
-apt-get install git
-apt-get install build-essential
-apt-get install nano
-apt-get install curl
-apt-get install apache2
-service apache2 start
-```
-
-We are not installing LAMP because we don't need MySQL or the various scripting languages such as Python or PHP. All we need is Apache, so we are only install it.
-
-## Install Node on Docker Instance {#install-node}
-
-This code will allow you to install NodeJs on Docker:
-
-```nohighlighting
-# The new setup script for Node.js v12.X
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-```
-
-We have just switched from Node 8.x to Node 9.0. However, at the time of this writing (Nov 2017), I advise sticking with Node 8.x. By December 2017 or January 2018, it would probably be safe to move to Node 9.0.
-
-## Create User
-
-```nohighlighting
-useradd -ms /bin/bash bcuser
-usermod -aG sudo bcuser
-su bcuser
-```
-
-To confirm that all is as expected:
-
-```nohighlighting
-whoami
-pwd
-```
-
-When we installed Apache, we created an **/var/www/html** directory. Use **chown** to give **bcuser** the right permissions to access it.
-
-## Save New Image from Container {#save-new-image}
-
-The changes you make to an image cause the images identifier to change. The identifier is a number like this:
-
-    a9272b30f0b1
-
-This number appears in your command prompt.    
-
-When inside Ubuntu, note the image you are using:
-
-```nohighlighting
-docker commit -m "Added node 8.1 and updated os" -a "charlie" a9272b30f0b1 charliecalvert/makehtml00
-docker images
-docker run -it charliecalvert/makehtml00
-```
-
-And then later, if you make more changes:
-
-    docker commit -m "Added user and JsObjects" -a "charlie" 21a7589a83ee charliecalvert/makehtml01
-
 ## Docker Push
 
 To push an image created by user **charliecalvert** called **makehtml04** to the cloud, do this:
 
     docker push charliecalvert/makehtml04
-
-## Learn More about Apache on Docker
-
-Get the IP address:
-
-  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 9a8cd9005efe
-
-We are going to be running apache from our container, so we don't want it running on the VirtualBox copy of our Ubuntu server. Therefore, if apache2 is running on your VirtualBox copy of the Ubuntu Server, then do this:
-
-    sudo service apache2 stop
-
-Now start your container and ask the VirtualBox copy of your Ubuntu server to host the container's instance of apache on port 80:  
-
-    docker run -it -p 80:80 charliecalvert/makehtml02
-
-Note that inside the container, you may have to start apache2.
-
-Map a drive on server to your container so you don't have save the container if you make changes:
-
-    docker run -p 80:80 -d -v /Users/dan/site:/var/www/site mysite
 
 ## Delete an image
 
