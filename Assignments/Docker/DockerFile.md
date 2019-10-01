@@ -214,9 +214,9 @@ Point me to your image on the Docker Hub. It should look something like this:
 
 Give me the command to get your image:
 
-    docker pull lastname/make-html
+    docker pull lastname/micros-qux
 
-Give me at least one screenshot of you processing a docker file. Put your copies of the three Dockerfiles in a folder of your repository. Just copy your **Docker** folder recursively (cp -r) into your repository. So I will be looking for a folder called Docker in your repository. But go ahead and give me:
+Give me at least one screenshot of you processing a docker file. Be sure your copy of the **Dockerfile** and associated scripts are in a **week02-micros** folder of your repository if they are not there already. (If you need to copy this from elsewhere, copy the **Docker** folder recursively (cp -r) into your repository.) Please give me:
 
 - repo url (This is your **isit320-lastname-2017** repo.)
 - Directory name
