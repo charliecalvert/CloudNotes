@@ -210,7 +210,7 @@ Turn in this URL as part of your assignment.
 
 Point me to your image on the Docker Hub. It should look something like this:
 
-    https://hub.docker.com/r/lastname/make-html/
+    https://hub.docker.com/r/lastname/micros-qux/
 
 Give me the command to get your image:
 
