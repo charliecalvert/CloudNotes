@@ -158,6 +158,8 @@ ssh-add ~/.ssh/prog272-ec2.pem
 
 If you run **ssh-add**, and you still get the error, then you have loaded the wrong key. If you have lost your private key for your EC2 instance, then usually you are out of luck. Your only recourse is to delete the EC2 instance and create a new instance. When creating the new instance, be sure to keep track of the key that you download from AWS. In particular, zip up the private key and put it in the cloud, as described above.
 
+**NOTE**: _Also see the [**main-key** and **ssh-add** section][mksa] of the Git New Repo assignment._
+
 **NOTE**: _You can add keys to a server by placing the public part of a public/private SSH key pair in the **authorized_keys** file for your EC2 server. That process is described elsewhere. The point is that you can add one of your personal SSH keys to the server instead of relying on the key you got from AWS. However, you can't add the key unless you have used the AWS key at least once to give you access to the **authorized_keys** file on your EC2 instance._
 
 ## Step 04.01: Configure Your Instance {#configure}
@@ -420,6 +422,8 @@ $ ssh-add -l
 2048 SHA256:FjF9QZpQRWsRguYULtrsh2haWX/fp+/erX/51tAHjbU /home/ubuntu/.ssh/main-key (RSA)
 ```
 
+For help on **ssh-add** see above and also look [here][mksa].
+
 ## Billing After Quarter Ends {#billing-after}
 
 After I have given you a final grade, consider what you want to do with AWS and your instance.
@@ -572,7 +576,7 @@ Which allows:
 [ec2-provision]:http://www.ccalvert.net/books/CloudNotes/Assignments/Ec2Provision.html#-bashrc
 [ssh-configure-linux]:http://www.elvenware.com/charlie/os/linux/ConfigureLinux.html#install-ssh
 [mcus]: https://s3.amazonaws.com/bucket01.elvenware.com/images/AwsServices.png
-
+[mksa]: https://www.elvenware.com/teach/assignments/GitNewRepo.html#main-key
 [ec2esg]: https://s3.amazonaws.com/bucket01.elvenware.com/images/ec2-elven-security-group.png
 [lsp]: https://aws.amazon.com/lightsail/pricing/?opdp1=pricing
 [lsh]: https://lightsail.aws.amazon.com/
