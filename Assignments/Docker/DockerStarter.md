@@ -177,7 +177,7 @@ docker pull charliecalvert/ubuntufootxt
 docker container run -it charliecalvert/ubuntufootxt:latest
 ```
 
-
+The next few sections, until the **Turn it in** section, are references and FYI. The above is the whole assignment except what you see in **Turn it in**.
 
 ## Run an Image
 
