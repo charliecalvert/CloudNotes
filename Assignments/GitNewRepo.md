@@ -363,6 +363,8 @@ source ~/.bashrc
 
 To learn more, search for the Linux **source** command with Google.
 
+## The main-key and sshadd {#main-key}
+
 Alternatively, I have created an alias in our **.bash_aliases** file called **sshadd**. (Not **ssh-add** but **sshadd**.) It depends on a symbolic link that you must create in your **~/.ssh** directory. Create the link like this:
 
 ```bash
