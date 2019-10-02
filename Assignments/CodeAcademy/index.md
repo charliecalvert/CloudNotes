@@ -8,7 +8,7 @@ These assignments are generally doled out one a week over a series of contiguous
 
 ## JavaScript
 
-See the [Code Academy Overview](#code-academy-overview).
+These links should now point at the new **Introduction to JavaScript** course. See the [Code Academy Overview](#code-academy-overview).
 
 - [CodeAcademy01.html](../CodeAcademy01.html)
 - [CodeAcademy02.html](../CodeAcademy02.html)
