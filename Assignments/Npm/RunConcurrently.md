@@ -2,12 +2,14 @@
 
 The goal of this assignment is to learn to run two programs concurrently. One program is an Express application called **server**. The second is a **create-react-app** program called **client**.
 
+**NOTE**: _I believe that most of this assignment can be automated by running the **get-gist** script and picking the Concurrently option from the menu. Run that command in the directory that contains both your **client** and **server** projects. For instance, in the case below in the Getting Started section, run it in the **weekXX-concurrently** directory._
+
 ## Getting Started
 
 In most cases, you will already have a directory that contains a **server** and **client** project. In case you do not, here is how to set one up starting from the root of your repository:
 
-    mkdir WeekXX-Concurrently
-    cd WeekXX-Concurrently/
+    mkdir weekXX-concurrently
+    cd weekXX-concurrently/
     CreateExpressProject server
     create-react-app client
 
