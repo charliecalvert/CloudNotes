@@ -1,8 +1,8 @@
 # Code Academy Part VI
 
-Bring the JavaScript and HTML courses to 90%.
+Bring the JavaScript and HTML courses to 75%.
 
-- [Learn JavaScript](https://www.codecademy.com/learn/learn-javascript)
+- [Learn JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
 
 When you are done, submit either a screen shot, or if you are at 100%, a link to your Code Academy **profile page**, like this:

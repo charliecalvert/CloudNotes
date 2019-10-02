@@ -14,6 +14,10 @@ See the [Code Academy Overview](#code-academy-overview).
 - [CodeAcademy02.html](../CodeAcademy02.html)
 - [CodeAcademy03.html](../CodeAcademy03.html)
 - [CodeAcademy04.html](../CodeAcademy04.html)
+- [CodeAcademy05.html](../CodeAcademy05.html)
+- [CodeAcademy06.html](../CodeAcademy06.html)
+- [CodeAcademy07.html](../CodeAcademy07.html)
+- [CodeAcademy08.html](../CodeAcademy08.html)
 
 ## Html and CSS
 

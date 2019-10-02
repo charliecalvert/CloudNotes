@@ -1,6 +1,6 @@
 # Code Academy Part II
 
-Bring the JavaScript and HTML courses to at least 50%.
+Bring the JavaScript and HTML courses to at least 25%.
 
 - [Learn JavaScript][ljs]
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
@@ -16,4 +16,4 @@ In July, 2014 CodeAcademy changed their profile pages so that I will not be able
 
 ![Send to Kindle](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGcnB5VG8zMVVDWFE)
 
-[ljs]: https://www.codecademy.com/learn/learn-javascript
+[ljs]: https://www.codecademy.com/learn/introduction-to-javascript

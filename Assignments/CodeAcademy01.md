@@ -14,19 +14,23 @@ If you have already completed an older version of the course, I will accept that
 
 - [The HTML course](https://www.codecademy.com/learn/learn-html)
 - Complete at least 25% of the skill.
-- [The Learn JavaScript course][tljc]
+- [The Introduction to JavaScript course][ijc]
 - Complete at least 25% of the skill.
 
-Several students have pointed out that Code Academy has create a new course called [Introduction to JavaScript][ijs]. I should perhaps change my links to point to that course, but for now I'm going to stick with **Learn JavaScript**. For now, completing either course will fulfill the requirements of this assignment.
+Several students have pointed out that Code Academy has create a new course called [Introduction to JavaScript][ijs]. I have changed my links to point to that course.
 
 ## Looking Ahead
 
 We'll keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
 
-	Part 1:  25%
-	Part 2:  50%
-	Part 3:  75%
-	Part 4:  100%
+	Part 1:  12%
+	Part 2:  25%
+	Part 3:  38%
+	Part 4:  50%
+	Part 5:  63%
+	Part 6:  75%
+	Part 7:  88%
+	Part 8:  100%
 
 If you have already completed these skills, then just turn in the assignment pointing me toward the page showing that you have completed the skill, and you will get credit. If you have completed the course, you can turn in all the assignments right now. Otherwise, turn them in as you complete them. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
 
