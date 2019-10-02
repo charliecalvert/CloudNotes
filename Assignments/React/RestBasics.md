@@ -1,9 +1,10 @@
 # Rest Basics
 
-Use Rest with React. There are two applications joined by a proxy:
+Use Rest with React and Concurrently. There are two applications joined by a proxy:
 
 - server (Express based)
 - client (Built with create-react-app)
+- Use concurrently to start them both at the same time.
 
 Both of these slide decks contain relevant information that might be useful when working through this assignment:
 
@@ -413,6 +414,8 @@ Your application will magically open in the browser. Updates should also appear 
 Make sure you set up the project the same way we did in the [Concurrently assignment][ccn]. We should be able to issue a single command and start both projects.
 
 ## Turn it in
+
+Don't forget concurrently.
 
 Push, submit.
 
