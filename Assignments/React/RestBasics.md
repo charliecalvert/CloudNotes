@@ -417,7 +417,11 @@ Make sure you set up the project the same way we did in the [Concurrently assign
 
 Don't forget concurrently.
 
-Push, submit.
+Push, submit. Specify:
+
+- Branch
+- Directory
+- A tag if you used one
 
 ## Eject Option
 
