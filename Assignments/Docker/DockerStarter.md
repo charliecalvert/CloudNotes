@@ -4,6 +4,8 @@ This assignment will help you install and start using Docker.
 
 **NOTE**: _If you have not done so already, please first read the [Docker Overview](DockerOverview.html)._
 
+The opening sections of this assignment are very important, but if you have done them already, and just want to skip to the core part of the assignement, go [here](#core-assignment).
+
 ## Docker Install
 
 Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
@@ -80,8 +82,6 @@ Try some of these commands to see if you instance is installed. The first comman
 ```nohighlighting
 docker container run -i hello-world
 docker image ls
-docker container run -it ubuntu
-docker image ls
 ```
 
 Here is the output from the running the first, Hello World, command:
@@ -106,7 +106,87 @@ Share images, automate workflows, and more with a free Docker ID: [https://hub.d
 For more examples and ideas, visit:
  [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)_
 
+
+## The Core Assignment {#core-assignment}
+
+Start by installing the official Docker **ubuntu** image and running it as a container:
+
+    docker container run -it ubuntu
+
+Then add a small text file in the tmp directory of your new **ubuntu** container:
+
+    cd tmp
+    echo foo > foo.txt
+
+Here is an example of what it all might look like:
+
+```    
+docker container run -it ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+5667fdb72017: Pull complete
+d83811f270d5: Pull complete
+ee671aafb583: Pull complete
+7fc152dfb3a6: Pull complete
+Digest: sha256:b88f8848e9a1a4e4558ba7cfc4acc5879e1d0e7ac06401409062ad2627e6fb58
+Status: Downloaded newer image for ubuntu:latest
+root@842dd1905a8a:/# cd tmp/
+root@842dd1905a8a:/tmp# echo foo > foo.txt
+root@842dd1905a8a:/tmp# cat foo.txt
+foo
+root@842dd1905a8a:/tmp#
+```
+
+When you type exit at the container prompt, then you are sent back to bash shell:
+
+```
+root@842dd1905a8a:/tmp# exit
+exit
+ubuntu@ip-172-31-16-120:~/Git/isit320-calvert-2019$
+```
+
+At this point your container has been "exited" and is stopped:
+
+```
+docker container ls -a
+CONTAINER ID   IMAGE    COMMAND     CREATED        STATUS                     NAMES
+842dd1905a8a   ubuntu   "/bin/bash" 3 minutes ago  Exited (0) 8 seconds ago   naughty_lovelace
+```
+
+The name **naughty_lovelace** is generated automatically by Docker and will very likely be different on your system.
+
+To renter the container, you use the **start** and **exec** commands:
+
+```
+docker container start naughty_lovelace
+docker container exec -it naughty_lovelace bash
+```
+
+After again exiting the container, you can stop it and push it to the Docker Hub, but use your Docker Hub username, not mine:
+
+```
+docker container stop naughty_lovelace
+docker commit -m "Added foo.txt" -a "charlie" naughty_lovelace charliecalvert/ubuntufootxt
+```
+
+Then you can delete the image locally and pull it again from the docker hub:
+
+```
+docker image rm charliecalvert/ubuntufootxt:latest
+docker pull charliecalvert/ubuntufootxt
+docker container run -it charliecalvert/ubuntufootxt:latest
+```
+
+
+
 ## Run an Image
+
+If you have not done so already, you can pull the ubuntu image:
+
+```
+docker container run -it ubuntu
+docker image ls
+```
 
 In general, we run an image like this.
 
@@ -125,7 +205,7 @@ Note that we pass in the **ID** or **name** of a container to the above commands
 
 To push an image created by user **charliecalvert** called **makehtml04** to the cloud, do this:
 
-    docker push charliecalvert/makehtml04
+    docker push charliecalvert/foobar
 
 ## Delete an image
 
@@ -239,46 +319,14 @@ After issuing that command, you can run the **exec** command.
 
 ## Turn it in
 
+Make sure you have done the [core assignment](#core-assignment).
+
 Take a screen shot of the ssh bash shell on your local Ubuntu server after running the **docker images** command. It should show a list of the containers installed on your system. Also include the URL for your Docker Hub page that displays your docker images.
 
 If you were also able to save the **ubuntufootxt** image to DockerHub and can give me a link then that is all to the good. When getting the link, select the **Public View** option and send me both the URL (hub.docker.com not cloud.docker.com) and the **docker pull** statement.
 
     https://hub.docker.com/r/your-user-name
     docker pull your-user-name/ubuntufootxt
-
-## Create Ubuntu Image
-
-Take a snapshot of Pristine Lubuntu before installing Docker.
-
-You can install the JsObjects development environment with this command:
-
-    docker pull charliecalvert/bcode:bcoder
-
-Create the Ubuntu container:
-
-    docker pull ubuntu
-    # launch container
-    docker run -it ubuntu
-
-Then prepare the container:
-
-    # Add sudo command to your container
-    apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
-    apt-get install git
-    apt-get install ssh
-    adduser bcuser
-    usermod -aG sudo bcuser
-    su bcuser
-    sudo apt-get update
-
-For the user set the full name to bcuser and the password to bcuser.
-
-Now sign in as that user and navigate to the home directory:
-
-    su bcuser
-    cd
-
-Create the SSH key pair as described in [elvenware](https://www.elvenware.com/cloud-guide/SshFtpsPutty.html#sshKeys)
 
 ## Permission Denied
 

@@ -82,3 +82,37 @@ Note that inside the container, you may have to start apache2.
 Map a drive on server to your container so you don't have save the container if you make changes:
 
     docker run -p 80:80 -d -v /Users/dan/site:/var/www/site mysite
+
+## Create Ubuntu Image
+
+Take a snapshot of Pristine Lubuntu before installing Docker.
+
+You can install the JsObjects development environment with this command:
+
+    docker pull charliecalvert/bcode:bcoder
+
+Create the Ubuntu container:
+
+    docker pull ubuntu
+    # launch container
+    docker run -it ubuntu
+
+Then prepare the container:
+
+    # Add sudo command to your container
+    apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*
+    apt-get install git
+    apt-get install ssh
+    adduser bcuser
+    usermod -aG sudo bcuser
+    su bcuser
+    sudo apt-get update
+
+For the user set the full name to bcuser and the password to bcuser.
+
+Now sign in as that user and navigate to the home directory:
+
+    su bcuser
+    cd
+
+Create the SSH key pair as described in [elvenware](https://www.elvenware.com/cloud-guide/SshFtpsPutty.html#sshKeys)
