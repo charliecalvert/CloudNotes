@@ -6,7 +6,7 @@ We have a principle that we talk about quite a bit:
 
 There is another of the [SOLID principles][solid] that we don't talk about as much:
 
-- [Interface Segragation Principle][isp]
+- [Interface Segregation Principle][isp]
 
 This principle states that we prefer small interfaces over fat interfaces. "Instead of one fat interface, many small interfaces are preferred".
 
@@ -28,7 +28,7 @@ For now, you can just think of a [microservice](https://en.wikipedia.org/wiki/Mi
 
 ## Build and Deploy
 
-Before going any further, let's understand what our application will look like when it is deployed.
+Before going any further, let's understand what our application will look like when it is deployed. You will see that you are able to integrate the React interface in the **client** project into the **server** project so that the two projects become one.
 
 Right now, we are using a trick that allows us to proxy request from the browser to our server. Specifically, we are adding this line to our client side **package.json** file:
 
@@ -36,7 +36,7 @@ Right now, we are using a trick that allows us to proxy request from the browser
 "proxy": "http://localhost:30026",
 ```
 
-This is meant for us only during development. When we ship, we do two things.
+This is meant for use only during development. When we ship, we do two things.
 
 1. At the command line we run this command to build our production code:
   a. npm run build
@@ -52,16 +52,15 @@ res.sendFile('index.html');
 
 ## Basics
 
-I want to see at the following:
+I want to see at least the following:
 
-- At least two micro-services
+- Two micro-services
   - Run one on 30027
   - The other 30028
-- Use or create a **create-react-app** project called **client** that calls into a server
-  - Run it on Port 30025
+- A **create-react-app** project called **client** that runs on port 30025 and that calls into a server  
 - An **elf-express** project called **server** that runs on Port 30026 and calls the microservices.
 
-Much of this we have already from the [RestBasics]() assignment.
+Much of this we have already from the [RestBasics][rb] assignment.
 
 ## Micro Services
 
@@ -70,70 +69,64 @@ We have:
 - A **client** running on port 30025
 - A **server** running on port 30026
 
-The **server** part of our **GitExplorer** is the conduit between the **client** and the micro services.
+The **server** part of our project is the conduit between the **client** and the micro services.
 
-This means that we want to give the **server** some base functions, and then ask it to delegate responsibility for major tasks to our little micro services. In particular, I would like our **client** to depend on five micro servers. The client contacts these micro services via our **server**:
+This means that we want to give the **server** some base functions, and then ask it to delegate responsibility for major tasks to our little micro services. In particular, I would like our **client** to depend on two micro servers. The client contacts these micro services via our **server**:
 
 - The **Qux** micro service: **/qux**
   - If the **client** queries a route on the **Qux** micro service the results are mirrored back to the **client** by the **server**.
   - For instance our **Qux** micro service would respond to the following queries and the JSON produced by **Qux** would be returned to the **client** by the **server** with **res.send** or **pipe** or similar:    
     - /qux/you-rang
-- The Git User micro service is accessed via: **/git-user**
-- The Git Gist micro service: **/git-gist/**:
-  - Create Gist
-  - List Gists
-  - Delete Gist
+- A second micro-service called **system-environment**
+  - For now, it only responds to **/system-environment/you-rang**.
+
+## System Environment
+
+Create it:
+
+    elf-express system-environment
+
+For now, only implement **you-rang**.
 
 
 ## The Ports {#ports}
 
 Here are the ports
 
-| Service  | Port  | Near the bottom of .bashrc |
-|:---------|:------|:---------------------------|
-| qux      | 30027 | export QUX_PORT=30027  |
-| git-user | 30028 | export GIT_USER_PORT=30028 |
-| git-gist | 30029 | export GIT_GIST_PORT=30029 |
+| Service            | Port  | Near the bottom of .bashrc           |
+|:-------------------|:------|:-------------------------------------|
+| qux                | 30027 | export QUX_PORT=30027                |
+| system-environment | 30028 | export SYSTEM_ENVIRONMENT_PORT=30028 |
 
 I assume you already understand that I want you to put the export statements with the related calls near the bottom of your **.bashrc** file.
-
-## Optional Services
-
-Though it is unlikely we will do so, here are some additional services would could create at some point.
-
-- The Markdown micro service: **/markdown**
-  - Insert the contents of a gist in a markdown document and return it
-- The Git Explorer socket server: **/git-socket**
-  - Send socket IO messages to any registered client whenever your app creates, lists or deletes gists.
-
-Just to be clear, you don't have to do this unless I explicitly tell you to do so, or if you get a hankering to do so.
 
 ## Implement fetch Once {#one-fetch}
 
 We need only implement **fetch** one time. When we declare our buttons, we can pass in some data on the event to specify the url for that button:
 
 ```html
-<button data-url="/test-routes/foo" onClick={this.queryServer}>Test Foo Route</button>
+<button data-url="/qux/you-rang" onClick={this.queryServer}>Ring Qux</button>
 ```
 
-**NOTE**: _Recall that attributes beginning with **data** have special meaning in modern HTML and will appear as target.dataset in the event._
+**NOTE**: _Recall that attributes beginning with **data** have special meaning in modern HTML and will appear as target.dataset in the event generated by the button._
 
-Then in the implement of fetch we snag the URL we declared in the **data-url** attribute of the button:
+Then in the implementation of fetch we snag the URL we declared in the **data-url** attribute of the button:
 
 ```javascript
 queryServer = (event) => {
         const that = this;
-
         fetch(event.target.dataset.url)
         // AND SO ON UNCHANGED
 });
 ```
 
+**NOTE:** _I think in some cases **event.currentTarget.dataset.url** might be the right choice rather than **event.target.dataset.url**. Sorry for the uncertainty. If things aren't working, try both and see which works. See [this StackOverflow reply](https://stackoverflow.com/a/5921528/253576)._
+
 The **dataset** object is now standard in modern HTML/JavaScript, and the **url** comes from our **data-url** attribute declared on the button.
 
 ## Create Qux Microservice
 
-From the root of your **week03-rest-basics** project:
+If you have not done so already, from the root of your **week03-rest-basics** project:
 
     elf-express qux
 
@@ -146,37 +139,35 @@ var port = normalizePort(process.env.QUX_PORT || '30027');
 server.listen(port, () => { console.log("QUX Server running on port", port); });
 ```
 
-While we are at it, why don't ensure that **server/bin/www** has something similar:
+While we are at it, why don't we ensure that **server/bin/www** has something similar:
 
 ```javscript
 server.listen(port, () => console.log("Main server running on port", port));
 ```
 
-Implement **you-rang** as shown in the next sections. Call it from the client with fetch. Display the output.
+Implement **qux/you-rang** as shown in the next sections. Call it from the client with fetch. Display the output.
 
 ## You Rang?
 
 All the micro services should respond to a **/you-rang** query by responding with:
 
-  - result: success
-  - message: i am up and running
+  - result: **success**
+  - route: **you-rang**
+  - server name: In this case **qux**
   - You can include any additional information about the server you think might be of interest
 
 For instance, if sent from the client, you should get responses to these messages from the appropriate server:
 
 - /**qux**/you-rang
-- /**git-user**/you-rang
-- /**git-gist**/you-rang
+- /**system-environment**/you-rang
 
-This feature should be available for all three microservices when you turn in this assignment.
-
-**NOTE**: _I will call the words highlighted above, such as **qux**, **git-user**, and **git-gist** our base routes. All calls to those services should include those base routes. For instance, when calling any **git-gist** api, the first part of the URL should include the word **git-gist**._
+**NOTE**: _I will call the words highlighted above, such as **qux** and **system-environment** our base routes. All calls to those services should include those base routes. For instance, when calling any **qux** api, the first part of the URL should include the word **qux**._
 
 The method itself can be very a simple call in **routes/index.js**:
 
 ```javascript
 router.get('/you-rang', (request, response) => {
-    response.send({'result': 'you rang', server: 'qux'});
+    response.send({'result': 'success', route: 'you-rang' server: 'qux'});
 });
 ```
 
@@ -188,26 +179,17 @@ Make sure concurrently starts qux like this in the **scripts** object of **packa
 
 **HINT**: _You will also have to modify the **start** property in the **package.json** from the root of your project. Use code very similar to the code that you used to load the server with concurrently. Only this time you are loading not only the **client** and **server**, but also **qux** and the other micros. I'll leave the exact implementation as an exercise, but the solution is simple. Don't make it overly complicated._
 
-## Router IDs
-
-You've seen this before, but as a reminder. Respond to ping of a route by echoing back a portion of the url with request.params.id:
-
-```javascript
-router.get('/:id', function(request, response) {
-    response.send({
-        'result': 'success from 30026',
-        'path': request.params.id
-    });
-});
-```
-
-Assuming this is in **index.js** for the **qux** server then it would return **path: foo** if you ran this query: **/qux/foo**.
+**NOTE**: _It is best to use **nodemon** during development, but then we will switch to node when we deploy to a Docker container later in the course._
 
 ## Forwarding Request
 
-Our client knows how to talk to the server because we put the **proxy** property in **client/package.json**. However, we do not yet have a way to talk to our microservices.
+Our **client** knows how to talk to the server because we put the **proxy** property in **client/package.json**. However, we do not yet have a way four our **server** to talk to our microservices and relay the information back to the client.
 
-It turns out that we can do it like this:
+Begin by importing (require) a package called request:
+
+    npm i request
+
+Then put code to forward the request from the server to microservice in **server/routes/index.js**.:
 
 ```javascript
 const requester = require('request');
@@ -217,11 +199,7 @@ router.get('/qux-you-rang', function(request, response, next) {
 });
 ```
 
-This assumes that our git-user microservice is correctly running on port 30027.
-
-We put this in **server/routes/index.js**. We import (require) a package called request:
-
-    npm i request
+This assumes that our Qux microservice is correctly running on port 30027.
 
 Then we use the request package to forward our request to from the server to the appropriate microservice and return the result by **piping** it back to the client. These seems a bit like magic, but **request** is a well established package and it is designed, in part, to do precisely this sort of thing.
 
@@ -229,79 +207,34 @@ Then we use the request package to forward our request to from the server to the
 
 All requests except for **test-routes/foo** should be handled by the microservices. The rest should be forwarded from **server/routes/index.js** to the appropriate microservice. Therefore, in **server/routes/index.js**, you should have the **/qux-you-rang** route shown above, for a total of four methods:
 
-Call Microservice | Url
-------------------|-------------------
-qux               | /qux-you-rang
-git-user          | /git-user-you-rang
-git-user          | /git-user-get-user
-git-gist          | /git-gist-you-rang
+Call Microservice  | Url
+-------------------|-----------------------------
+qux                | /qux/you-rang
+system-environment | /system-environment/you-rang
 
-All those URLs are in **server/index.js**.
-
+For now, all those URLs are in **server/index.js**. We will, however, more them laster into separate files and change the URL we use to call them to this: **qux/you-rang**.
 
 ## The MicroServices EndPoints {#micro-endpoints}
 
 Right now we only need to implement four endpoints in our microservices. In **get-user/routes/index.js** you should have routes called **/you-rang** and **/get-user**:
 
-Microservice | Route/EndPoint |
--------------|----------------|
-qux          | /you-rang      |
-git-user     | /you-rang      |
-git-user     | /get-user      |
-git-gist     | /you-rang      |
+| Microservice       | Route/EndPoint |
+|--------------------|----------------|
+| qux                | /you-rang      |
+| system-environment | /you-rang      |
 
-## Get User Info
-
-Here is how to get started with the MicroService for handling Git User requests. From the root of your project.
-
-    elf-express git-gist
-
-Implement **you-rang** as shown above. Also, get the user:
-
-```javascript
-router.get('/get-user', function(req, res) {
-  const options = {
-      url: 'https://api.github.com/users/charliecalvert',
-      headers: {
-          'User-Agent': 'request'
-      }
-  };
-
-  request(options, function(error, response, body) {
-      // Print the error if one occurred
-      console.log('error:', error);
-      // Print the response status code if a response was received
-      console.log('statusCode:', response && response.statusCode);
-      // Print the HTML for the Google homepage.
-      console.log('body:', body);
-      res.send({ error: error, response: response, body: body });
-  });
-});
-```
-
-For now you can just get the info for your repo. We will make this more flexible later.
-
-Be sure to call it from the client with fetch, and display the output for at least two fields from the data returned about the user. We'll work on good ways to display the data later, for now, just show enough to prove you made the call.
-
-## Gists
-
-Create it:
-
-    elf-express git-gists
-
-For now, only implement **you-rang**.
 
 ## Turn it in
 
 Specify:
 
 - Branch
-- Folder of both client and server (Week03-React-Jest? Other?)
+- Folder of both client and server (week03-rest-basics? Other?)
 - Folders for your microservices.
 
 All your servers should build cleanly and up and running and callable. Use the npm module **concurrently** to start them all at once.
 
-I am expecting the **qux**, **git-user** and **gist** servers to be responding to **you-rang**. The rest of the code can just be shells for now.
+I am expecting the **qux** and **system-environment** servers to be responding to **you-rang**. The rest of the code can just be shells for now.
 
 Make sure you include the [base route](#you-rang) in your calls from the client:
 
@@ -317,6 +250,8 @@ Don't forget you rename a directory: **git move microtest Micros**.
 
 Don't forget to explore **concurrently**.
 
+Assuming this is in **index.js** for the **qux** server then it would return **path: foo** if you ran this query: **/qux/foo**.
+
 ## Build Help
 
 It can be a pain to build all the microservices. But there is help! If you pull the latest JsObjects, you will find two updates to **~/.bash_aliases**:
@@ -331,3 +266,24 @@ The second alias does more or less the same thing, but for **git-gist**, **git-u
 This is one of the cases where naming conventions are very important. Of one student, for instance, calls the gist microservice git-gists instead of git-gist then that slows me down.
 
 - [npm concurrently](https://www.npmjs.com/package/concurrently)
+
+## Router IDs
+
+If you want, you can add this endpoint/route as the _**last**_ item in a file such as **routes/index.js**.
+
+```javascript
+router.get('/:id', function(request, response) {
+    response.send({
+        'result': 'success from 30026',
+        'path': request.params.id
+    });
+});
+```
+
+You've seen this before, but as a reminder. Respond to ping of a route by echoing back a portion of the url with **request.params.id**. Doing this serves no practical purpose other than helping you to debug your app and helping you to understand express routing.
+
+<!--       -->
+<!-- links -->
+<!--       -->
+
+[rb]: https://www.elvenware.com/teach/assignments/react/RestBasics.html
