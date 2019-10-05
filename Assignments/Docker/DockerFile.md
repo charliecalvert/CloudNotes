@@ -224,6 +224,8 @@ Give me at least one screenshot of you processing a docker file. Be sure your co
 - Directory name
 - Branch
 
+Make sure you include both your **build** and **reset** scripts when you push your code (not your docker image) to GitHub. (We push the Docker image to the DockerHub and our DockerFile and associated scripts to GitHub.)
+
 ## Docker Daemon Logs
 
 Not very useful so far, but:
