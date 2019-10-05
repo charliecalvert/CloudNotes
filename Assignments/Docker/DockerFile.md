@@ -99,13 +99,13 @@ Also, we should probably put this at the bottom of **./bashrc** if it is not the
 export ELF_REST_BASICS_PORT=30027
 ```
 
-In **week02-micros/qux/routes/index.js** edit the home route and create a new endpoint called **/you-rang**:
+In **week02-micros/qux/routes/index.js** edit the home route to include your last name and create a new endpoint called **/you-rang**:
 
 ```JavaScript
 router.get('/', function(req, res) {
     'use strict';
     res.render('index', {
-        title: 'Qux'
+        title: 'Qux-YourLastName'
     });
 });
 
@@ -224,7 +224,7 @@ Give me at least one screenshot of you processing a docker file. Be sure your co
 - Directory name
 - Branch
 
-Make sure you include both your **build** and **reset** scripts when you push your code (not your docker image) to GitHub. (We push the Docker image to the DockerHub and our DockerFile and associated scripts to GitHub.)
+Make sure you include both your **build** and **reset** scripts when you push your code (not your docker image) to GitHub. Remember: we push the Docker image to the DockerHub and our DockerFile and associated scripts to GitHub.
 
 ## Docker Daemon Logs
 
