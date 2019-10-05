@@ -212,6 +212,8 @@ Point me to your image on the Docker Hub. It should look something like this:
 
     https://hub.docker.com/r/lastname/micros-qux/
 
+**NOTE**: _Don't give me a URL that begins **cloud.docker.com**. If you are looking directly at a particular image on the Docker site, you will see that the URL has changed from **hub.docker.com** to **cloud.docker.com**. You will also see a button that says **Public View**. Select that button to easily find the URLs and **docker pull** statements I'm looking for in this and similar assignments._
+
 Give me the command to get your image:
 
     docker pull lastname/micros-qux
