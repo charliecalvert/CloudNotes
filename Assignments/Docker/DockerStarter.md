@@ -54,6 +54,12 @@ Following the steps in the previous sections should set up Docker correctly. How
 
 Log out and log in again. One simple way to do this is to reboot your Ubuntu VM. When you are back up and running, try **docker image ls** again. If it returns without errors, then all is good. If you get errors, then repeat the steps in this section one more time. If that does not fix it, then head over to the discussion area and let us know what errors you are seeing.
 
+If you have to use sudo to run Docker commands you will end up with files and/or directories owned by **root**. If you do end up with Docker files in your home directory that are owned by **root**, then fix it like this:
+
+    sudo chown -R bcuser:bcuser <Directory>
+
+**Directory** is folder that contains files owned by root.
+
 ## Docker Hub
 
 Create an account and sign into the Docker Hub at [https://hub.docker.com/](https://hub.docker.com/).\
