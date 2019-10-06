@@ -35,7 +35,7 @@ When you are done, submit either a screen shot or a link to your Code Academy **
 
 In this **assignment** we are working on twenty five percent of the Code Academy git and command line **skills**. If you have completed only 25% of a skill, then submit a screen shot. In this assignment, I ask for only 25% of a skill to be completed, so most of you will submit a screen shot. If, however, you have completed 100% of the entire skill, then submit a link to your profile page. I describe the profile page and the screen shot below.
 
-Sample screen shot by April Cound:
+Sample screen shot:
 
 ![Sample screenshot][sss]
 
