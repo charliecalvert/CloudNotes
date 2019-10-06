@@ -72,6 +72,18 @@ There is no shame in not understanding any of the syntactical elements in the bu
 
 This is one example from one assignment, but there are similar section in nearly every technical assignment I give. There are probbaly 5 to 10 obvious question to ask in any assignment, and 20, 30 or even 50 in more complex assignments.
 
+Look for instance at this description of the **viewport** meta tag:
+
+[https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
+
+[http://starkravingfinkle.org/blog/2010/01/perils-of-the-viewport-meta-tag/](http://starkravingfinkle.org/blog/2010/01/perils-of-the-viewport-meta-tag/)
+
+I think there are people who know all this without reading it, but I certainly do not. After reading a ways into these articles, I have questions.
+
+If the question a student asks gets too tough, I may not be able to answer it or may decide that it is too much work for too little gain. However, even a very obscure question about a corner case would get you a 100 on the discussion assignment. Well, it would if it didn't happen too often.
+
+My point is that even the basics are hard to understand in some cases. Yet the deeper our knowledge of the basics the better off we are. It's very hard to understand complicated code without first having a very thorough grounding in the basics.
+
 ## Attitude
 
 When asking questions in most online forums, try to be as friendly and polite as possible. Email and text is a deceptively sharp edged tool. I try to go out of my way to keep a positive attitude. As we all start to spend more time communicating online with text, we have to learn new skills. Developing the ability to join an online community, and become a positive and well liked member of that community, is an important skill. Most of us aren't born with that ability. We have to develop it. In general, when I find myself using negative words like "stupid", "dumb", "incompetent", etc, then a little red flag goes up in my brain. Sometimes they are the appropriate words, but those occasions are rare. Perhaps once or twice a year. If they come up repeatedly in my messages, then it is usually best for me to take time off to relax.
