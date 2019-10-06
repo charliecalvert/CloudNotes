@@ -35,6 +35,12 @@ When you are done, submit either a screen shot or a link to your Code Academy **
 
 In this **assignment** we are working on twenty five percent of the Code Academy git and command line **skills**. If you have completed only 25% of a skill, then submit a screen shot. In this assignment, I ask for only 25% of a skill to be completed, so most of you will submit a screen shot. If, however, you have completed 100% of the entire skill, then submit a link to your profile page. I describe the profile page and the screen shot below.
 
+Sample screen shot by April Cound:
+
+![Sample screenshot][sss]
+
+
+
 ## Profile Pages and Screen Shots
 
 On Code Academy, I am known as netslayer43536. As a result, a link to my profile page looks like this:
@@ -58,3 +64,5 @@ If you have already completed the assignments, perhaps in another of my courses,
 I strongly suggest that you set aside a little time at least five days a week to work on this assignment. Trying to do it all the day it is due is likely to be a very frustrating experience. If I want you to do twenty-five percent of a skill each week, then try doing about one fifth of that a day, or about three percent of the total skill. Something like fifteen to thirty minutes a day. That is a much more comfortable pace than a big, hours long marathon.
 
 Also, there may be times when the Code Academy editor can go a bit wacky. Try refreshing the page or clearing the cache. Even better, try cutting and pasting the code into Cloud 9, Geany or some other editor, and working at the linux or git command line. Just do a little work in a completely different environment. If it seems to be working there, then try pasting your solution back into Code Academy.
+
+[sss]: https://s3.amazonaws.com/bucket01.elvenware.com/images/code-academy-percent-done.png

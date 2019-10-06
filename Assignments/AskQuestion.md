@@ -82,7 +82,7 @@ I think there are people who know all this without reading it, but I certainly d
 
 If the question a student asks gets too tough, I may not be able to answer it or may decide that it is too much work for too little gain. However, even a very obscure question about a corner case would get you a 100 on the discussion assignment. Well, it would if it didn't happen too often.
 
-My point is that even the basics are hard to understand in some cases. Yet the deeper our knowledge of the basics the better off we are. It's very hard to understand complicated code without first having a very thorough grounding in the basics.
+My point is that even the basics are hard to understand in some cases. Yet the deeper our knowledge of the basics the better off we are. It's very hard to understand complicated code without first having a very thorough grounding in the basics. The best engineers I've worked with all know the basics cold.
 
 ## Attitude
 
