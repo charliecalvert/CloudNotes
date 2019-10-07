@@ -167,7 +167,7 @@ The method itself can be very a simple call in **routes/index.js**:
 
 ```javascript
 router.get('/you-rang', (request, response) => {
-    response.send({'result': 'success', route: 'you-rang' server: 'qux'});
+    response.send({'result': 'success', route: 'you-rang', server: 'qux'});
 });
 ```
 
@@ -194,7 +194,7 @@ Then put code to forward the request from the server to microservice in **server
 ```javascript
 const requester = require('request');
 
-router.get('/qux-you-rang', function(request, response, next) {
+router.get('/qux/you-rang', function(request, response, next) {
     requester('http://localhost:30027/qux-you-rang').pipe(response);
 });
 ```
