@@ -195,7 +195,7 @@ Then put code to forward the request from the server to microservice in **server
 const requester = require('request');
 
 router.get('/qux/you-rang', function(request, response, next) {
-    requester('http://localhost:30027/qux-you-rang').pipe(response);
+    requester('http://localhost:30027/you-rang').pipe(response);
 });
 ```
 
