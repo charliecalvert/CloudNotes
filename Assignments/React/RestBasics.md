@@ -144,15 +144,6 @@ Let's talk some more about middleware. Our server uses a library called express 
 
 Remember, if we don't ever set up any middleware for handling a request, then we never see the request and it will probably be, for all intents and purposes, ignored by our server.
 
-To set up our middleware for handling requests from the server we take two simple steps. In **app.js** around lines 10 and 28, we write the following:
-
-```javascript
-var testRoutes = require('./routes/test-routes');  // on line 10
-app.use('/test-routes', testRoutes);               // on line 28
-```
-
-The first line just allows us to gain access to our new file: it links it into our project. The second line states what we want to do: _we want to **use** the code in our file as middleware._ We are telling Express that if there is a request from the server that ends with **/test-routes**, then it should be passed to our code in **./routes/test-routes.js**.
-
 ## Set the Port
 
 Now set the port, in **bin/www**, to **30026**. Two ways to do that are explained in our [Concurrently assignment][cca].
@@ -468,6 +459,19 @@ npm start
 ```
 
 Then **Preview | Preview running application** from the menu items near the top right of the Cloud 9 IDE.
+
+## Putting Server Side Code in a Separate File
+
+We don't do this anymore in this assignment. But sometimes, we want to move code out of **routes/index.js** into its own file. For instance, if had several methods in **index.js** for testing our ability to call a route, we might move that code into a file called **routes/test-routes.js**.
+
+To set up our middleware for handling requests to **testRoutes** from the server we take two simple steps. In **app.js** around lines 10 and 28, we write the following:
+
+```javascript
+var testRoutes = require('./routes/test-routes');  // on line 10
+app.use('/test-routes', testRoutes);               // on line 28
+```
+
+The first line just allows us to gain access to our new file: it links it into our project. The second line states what we want to do: _we want to **use** the code in our file as middleware._ We are telling Express that if there is a request from the server that ends with **/test-routes**, then it should be passed to our code in **./routes/test-routes.js**.
 
 
 <!--       -->
