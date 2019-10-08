@@ -147,11 +147,24 @@ instancePromise.then(
 
 You will have to tweak:
 
-- KeyName
-- SecurityGroupIds
+- **KeyName**: the name of your SSH key pair in quotes. It is perhaps a bit like: **'ec2-isit320-2019'**.
+- **SecurityGroupIds**: get it from the aws console. It's an array and begins with sg: **['sg-012345'],**
 - Maybe other?
 
 When ready, run the file: **node run.js**. If you get errors, explore the output and see if you can find the problem. The code should work if you have the details filled in correctly.
+
+If it works, the last two lines of output will be a bit like this:
+
+```
+Created instance i-0r328a80b71617a2c
+Instance tagged
+```
+
+We will use it for a bit in this assignment, so you may not want to delete it yet, but when you are done with it, terminate it:
+
+		**Actions | Instance State | Terminate**
+
+You can eat up all your credits if you are not careful!		
 
 ## Create ~/.ssh/config
 
