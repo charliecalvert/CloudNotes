@@ -216,7 +216,7 @@ For now, all those URLs are in **server/index.js**. We will, however, more them 
 
 ## The MicroServices EndPoints {#micro-endpoints}
 
-Right now we only need to implement four endpoints in our microservices. In **get-user/routes/index.js** you should have routes called **/you-rang** and **/get-user**:
+Right now we only need to implement two endpoints in our microservices. In both **qux** and **system-environment/routes/index.js** you should have a route called **/you-rang** that returns JSON identifying the service that was called:
 
 | Microservice       | Route/EndPoint |
 |--------------------|----------------|
@@ -240,17 +240,15 @@ Make sure you include the [base route](#you-rang) in your calls from the client:
 
 - /qux/you-rang
 
-Put all your micro services in a directory called **Micros** or something similar. This means there should be five programs in that directory. The directory should at the top level of your repository, directly under the root:
+Put all your micro services in a directory called **Micros** or something similar. This means there should be two programs in that directory. The directory should at the top level of your repository, directly under the root:
 
 - isit322-lastname-2019
   - Your client and server, with a name like **week03-rest-basics** or similar.
-  - **Micros**
+  - **week02-micros**
 
-Don't forget you rename a directory: **git move microtest Micros**.
+Don't forget how to rename a directory: **git mv microtest Micros**.
 
 Don't forget to explore **concurrently**.
-
-Assuming this is in **index.js** for the **qux** server then it would return **path: foo** if you ran this query: **/qux/foo**.
 
 ## Build Help
 
