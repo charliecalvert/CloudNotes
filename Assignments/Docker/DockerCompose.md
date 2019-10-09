@@ -125,7 +125,7 @@ services:
     command: npm start
     links:
       - route-tester
-  micro:
+  route-tester:
     build: route-tester
     ports:
       - "30028:30028"
@@ -137,7 +137,7 @@ services:
 
 You add the third element for **system-environment**.
 
-Run this to start it: **docker compose up**. It takes awhile, but when done, go to **localhost:30025** and look at the console output.
+Run this to start it: **docker-compose up**. It takes awhile, but when done, go to **localhost:30025** and look at the console output.
 
 ## Push your results
 
