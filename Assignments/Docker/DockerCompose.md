@@ -110,7 +110,7 @@ If you have not done so already install docker compose:
 
 Now we want to use DockerCompose to use three projects at once.
 
-The docker compose file:
+Create a docker compose file called **docker-compose.yml**:
 
 ```code
 version: '3'
@@ -135,7 +135,7 @@ services:
 
 You add the third element for **system-environment**.
 
-Now run this to start it: **docker compose up**
+Run this to start it: **docker compose up**. It takes awhile, but when done, go to **localhost:30025** and look at the console output.
 
 ## Push your results
 
