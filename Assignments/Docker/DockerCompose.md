@@ -1,6 +1,33 @@
 ## Docker Compose
 
-Now we want to use DockerCompose to use two projects at once.
+## Create Apps
+
+Create a dirctory in the root of your repository called **week04-docker-composer**
+
+inside it, create three express apps:
+
+- main: Port 30025
+- route-tester: Port 30028
+- system-environment: Port 30029
+
+Make the standard changes to **bin/www** and **routes/index.js**. Be sure the Home page contains your last name in its title. Implement **you-rang** for **route-tester** and **system-environment**.
+
+Here is what **you-rang** should return:
+
+```JavaScript
+const rangData = {
+    "program": "qux",
+    "file": "routes/index.js",
+  	"result": "qux you rang",
+  	"server": "qux",
+  	"directory": __dirname,
+  	"hostname": process.env.HOSTNAME,
+  	"home": process.env.HOME
+}
+
+## Compose
+
+Now we want to use DockerCompose to use three projects at once.
 
     docker compose up
 
