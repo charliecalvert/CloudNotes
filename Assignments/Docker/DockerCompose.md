@@ -30,6 +30,8 @@ const rangData = {
 
 You should, of course, use common sense to change the hard coded strings to text that makes sense for any particular project.
 
+In all three **package.json** files change **nodemon** to **node**.
+
 ## Query Micros
 
 In **/main/source/control.js**, write two fetch statements to query our micro services:
