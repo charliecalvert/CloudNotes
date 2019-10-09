@@ -9,8 +9,8 @@ Create a dirctory in the root of your repository called **week04-docker-composer
 inside it, create three express apps:
 
 - main: Port 30025
-- route-tester: Port 30028
-- system-environment: Port 30029
+- system-environment: Port 30028
+- route-tester: Port 30029
 
 Make the standard changes to **bin/www** and **routes/index.js**. Be sure all three Home page contains your last name in its title. Implement **you-rang** for **route-tester** and **system-environment**.
 
@@ -122,7 +122,7 @@ services:
     restart: always
     command: npm start
     links:
-      - micro
+      - route-tester
   micro:
     build: route-tester
     ports:
