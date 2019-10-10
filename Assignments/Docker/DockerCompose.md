@@ -139,6 +139,8 @@ You add the third element for **system-environment**.
 
 Run this to start it: **docker-compose up**. It takes awhile, but when done, go to **localhost:30025** and look at the console output.
 
+If you edit your code and want to see the fix, try just running **docker-compose up** again. If that doesn't work, then do this, which takes a bit longer: **docker-compose up --build**
+
 ## Push your results
 
 You can push your finished image to the Docker Hub:
