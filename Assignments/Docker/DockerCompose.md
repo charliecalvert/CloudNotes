@@ -154,7 +154,12 @@ If you edit your code and want to see the fix, try just running **docker-compose
 
 You can push your finished image to the Docker Hub:
 
-docker push charliecalvert/sys-env-base, though of course you would want to use your name on the Docker Hub.
+```
+docker tag week04-docker-composer_main:latest charliecalvert/docker-compose-main
+docker push charliecalvert/docker-compose-main
+```
+
+Though of course you would want to use your name on the Docker Hub.
 
 ## Turn it in
 
