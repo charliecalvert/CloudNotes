@@ -1,6 +1,6 @@
 ## Docker Compose
 
-Learn how to use Docker Compose. We will create a main app which can query two micro services. In this case we will use Docker Compose to put all three apps in one container.
+Learn how to use Docker Compose. We will create a main app which can query two micro services. In this case we will use Docker Compose to start all three apps with a single command. They will each have their own image and own container.
 
 ## Create Apps
 
@@ -153,5 +153,6 @@ The running Docker container should be accessible through localhost:30025. When 
 
 Also:
 
-- DockerHub URL of your image
-- From Github I need branch and folder and it is always best to create a tag in case there is any doubt as to exactly what I should look at.
+- DockerHub URL of your three images.
+  - Use **docker push** to create them.
+- From Github I need branch and folder. It is usually also a good idea to create a tag in case there is any doubt as to exactly what I should look at.
