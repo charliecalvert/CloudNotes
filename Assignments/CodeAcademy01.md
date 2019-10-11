@@ -14,8 +14,8 @@ If you have already completed an older version of the course, I will accept that
 
 - [The HTML course](https://www.codecademy.com/learn/learn-html)
 - Complete at least 25% of the skill.
-- [The Introduction to JavaScript course][ijc]
-- Complete at least 25% of the skill.
+- [The Introduction to JavaScript course][ijs]
+- Complete at least 12% of the skill.
 
 Several students have pointed out that Code Academy has create a new course called [Introduction to JavaScript][ijs]. I have changed my links to point to that course.
 
