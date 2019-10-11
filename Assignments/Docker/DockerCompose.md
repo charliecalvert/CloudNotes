@@ -1,6 +1,8 @@
 ## Docker Compose
 
-Learn how to use Docker Compose. We will create a main app which can query two micro services. In this case we will use Docker Compose to start all three apps with a single command. They will each have their own image and own container.
+Learn how to use [Docker Compose](https://docs.docker.com/compose/). We will create a main app which can query two micro services. In this case we will use Docker Compose to start all three apps with a single command. They will each have their own image and own container.
+
+Click on the link I provide above as it is a good overview of docker compose. We have no book, so links like that are an important part of our course. You don't have to read everything, but at least read enough to get a feel for the technology and an understanding of what documentation is available.
 
 ## Create Apps
 
