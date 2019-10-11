@@ -178,6 +178,8 @@ Host ec2-bc
     IdentityFile ~/.ssh/<YOUR EC2 KEY>
 ```    
 
+THIS IS THE END OF THE 2019 Oct 13 ASSIGNMENT. WE WILL DISCUSS THE SECTIONS BELOW THIS POINT IN CLASS.
+
 ## JsObjects Provision
 
 Do this:

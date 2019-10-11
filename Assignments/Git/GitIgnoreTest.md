@@ -216,4 +216,12 @@ Again, don't run these commands, I'm just trying to show what happens inside the
 
 For all this to work, you need to have the right code in _JsObjects_, that is, you need to have pulled the latest from JsObjects to get the scripts and to have run **CreateSymbolicLinks** to create the links. I made the updates for these files on April 11 of this year, so in this case, you need to have pulled the repo and run **CreateSymbolicLinks** at some point since April 11, 2019.
 
+## Get all Branches Programmatically
+
+I haven't done much with this yet, but:
+
+    curl https://api.github.com/repos/charliecalvert/JsObjects/branches
+
+This returns an array of objects.
+    
 [cia]: https://github.com/charliecalvert/JsObjects/blob/master/README.md
