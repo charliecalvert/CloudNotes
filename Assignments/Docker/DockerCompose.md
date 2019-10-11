@@ -42,13 +42,20 @@ window.onload = function() {
         .then((response) => response.json())
         .then((result) => {
             console.log(result);
-            const serverData = document.getElementById('serverData');
+            const serverData = document.getElementById('system-environment');
             serverData.textContent = JSON.stringify(result, null, 4);
         })
         .catch((ex) => {
             alert(ex);
         });
 };
+```
+
+For this to work you might want this in **views/index.pug**:
+
+```
+h2 System Environment
+pre#system-environment
 ```
 
 In main, use npm to install **request**.
@@ -64,6 +71,8 @@ router.get('/system-environment/you-rang', function(req, res) {
 ```
 
 I think **localhost** might work instead of the IP, but I can see why it might not. We can run some tests.
+
+![Docker Composer Server Data][dcsd]
 
 ## Docker Files
 
@@ -156,3 +165,5 @@ Also:
 - DockerHub URL of your three images.
   - Use **docker push** to create them.
 - From Github I need branch and folder. It is usually also a good idea to create a tag in case there is any doubt as to exactly what I should look at.
+
+[dcsd]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-compose-server-data.png
