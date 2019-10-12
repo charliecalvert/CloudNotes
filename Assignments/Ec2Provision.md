@@ -149,7 +149,7 @@ You will have to tweak:
 
 - **KeyName**: the name of your SSH key pair in quotes. It is perhaps a bit like: **'ec2-isit320-2019'**.
 - **SecurityGroupIds**: get it from the aws console. It's an array and begins with sg: **['sg-012345'],**
-- Maybe other?
+- **ImageId**: This is which version of the available VMs we want to use. At the time of this writing, which is fall 2019, we want the Ubuntu 18.04 image. The id for it is hard coded in above. The id for standard at the time of this writing is: 'ami-06d51e91cea0dac8d'
 
 When ready, run the file: **node run.js**. If you get errors, explore the output and see if you can find the problem. The code should work if you have the details filled in correctly.
 
@@ -164,7 +164,69 @@ We will use it for a bit in this assignment, so you may not want to delete it ye
 
 		**Actions | Instance State | Terminate**
 
-You can eat up all your credits if you are not careful!		
+You can eat up all your credits if you are not careful!
+
+## Tips for AWS Standard
+
+Some of us use AWS Educate, others of us have AWS Standard accounts. Therefore I need to test to make sure I'm providing code that works on both platforms. For my use, I've written code that is similar to the above, but that can be fairly easily tweaked to use on either AWS Educate or AWS standard accounts:
+
+```javascript
+var AWS = require('aws-sdk');
+
+// AWS.config.loadFromPath(process.env.HOME + '/.aws/config.json');
+AWS.config.update({region:'us-east-1'});
+
+AWS.config.credentials.get(function () {
+    var accessKeyId = AWS.config.credentials.accessKeyId;
+    var secretAccessKey = AWS.config.credentials.secretAccessKey;
+    console.log("Access Key:", AWS.config.credentials.accessKeyId);
+    console.log("Secret Access Key:", AWS.config.credentials.secretAccessKey);
+    console.log('Region', AWS.config.region);
+});
+
+console.log(AWS.config.credentials);
+
+// Create EC2 service object
+var ec2 = new AWS.EC2({apiVersion: '2016-11-15'});
+
+const ubuntuImages = {awsStandard: 'ami-06d51e91cea0dac8d', awsEducate: 'ami-0ac019f4fcb7cb7e6'};
+const keyPairs = {awsStandard: 'elf-server-01', awsEducate: 'ec2-isit320-2019'};
+const securityGroups = {awsStandard: ['sg-809b10fe'],  awsEducate: ['sg-08b43f5679e9a5f46']};
+
+// AMI is amzn-ami-2011.09.1.x86_64-ebs
+var instanceParams = {
+    BlockDeviceMappings: [
+        {
+            DeviceName: "/dev/sda1",
+            Ebs: {
+                VolumeSize: 16,
+                VolumeType: 'gp2'
+            }
+        }
+    ],
+    ImageId: ubuntuImages.awsEducate,
+    InstanceType: 't2.micro',
+    KeyName: keyPairs.awsEducate,
+    SecurityGroupIds: securityGroups.awsEducate,
+    MinCount: 1,
+    MaxCount: 1
+};
+
+// The rest is the same as above.
+```
+
+The code above is set to be used for AWS Educate, but hopefully you can see how to adopt it for use with AWS Standard.
+
+Note that each technique has a unique step shown near the top of the file:
+
+- We load the credentials explicitly from config.json for standard
+- Set the region for AWS Educate.
+
+To make the change, just comment out what you wish.
+
+Of course, we also tweak the **imageId**, **keyPairs**, and **security groups** in the section near the bottom of the file.
+
+**NOTE**: _It (re)occurs to me somewhat belatedly that **~/.aws/credentials** will probably get loaded automatically whether it contains AWS Educate or standard keys. But on my end, I need two files: one for standard and one for AWS Educate because I need code that works both places. I'm afraid I was complicating your life by asking those on standard accounts to explicitly load config.json rather than automatically loading credentials. But again, the upside is that we all understand the process a bit better for the fussing we went through. This means that if you put the keys in for standard in credentials, you can perhaps skip the step of loading them explicitly, but I have not tried it._
 
 ## Create ~/.ssh/config
 
