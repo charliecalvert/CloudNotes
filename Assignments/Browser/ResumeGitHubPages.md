@@ -66,6 +66,12 @@ Finally, push your work to your GitHub Pages web site. When you turn in your ass
 
 **NOTE:** _If you have a hard time creating the home page (index.html) and/or the link to **resume.html**, don't fret too much. Remember that if you push your **index.html** and **resume.html** to GitHub, then I can pull it down on to my computer and see how much you were able to accomplish._
 
+The URL I'm looking for should look a little like this:
+
+    https://github-user-name.github.io
+
+Pasting it into the address bar of a browser should lead to your **index.html** on the world wide web. You probably won't see the filename **index.html**, but the contents of that file should be what is displayed. This is because **index.html** is the default page for most websites. If you don't specify some other specific page, then that is what you shall see.
+
 ## Watching Charlie's Videos
 
 In some cases, I may attach a video to your assignment when I grade it. To watch the video on Windows or the MAC, use the [VLC media player][vlcm]. Admittedly, the [tool I use][kazam] to create videos is not widely known, but it has worked for nearly all students in the past. The VLC Media Player is probably the best tool of its kind available. Launch it, then load the video into the VLC media player. Make sure you are using VLC and not the Windows Media Player or the default MAC video player.
