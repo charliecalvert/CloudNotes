@@ -19,12 +19,17 @@ Make the standard changes to **bin/www** and **routes/index.js**. Be sure all th
 Here is what **you-rang** should return:
 
 ```JavaScript
+function splitStringOnAnyInstanceOfCharacter(path, character, countFromEnd) {
+    const pathParts = path.split(character);
+    return pathParts.slice(Math.max(pathParts.length - countFromEnd, 1)).join(character);
+}
+
 const rangData = {
     "program": "qux",
     "file": "routes/index.js",
   	"result": "qux you rang",
   	"server": "qux",
-  	"directory": __dirname,
+  	"directory": splitStringOnAnyInstanceOfCharacter(__dirname, '/', 2),
   	"hostname": process.env.HOSTNAME,
   	"home": process.env.HOME
 }
@@ -33,6 +38,8 @@ const rangData = {
 You should, of course, use common sense to change the hard coded strings to text that makes sense for any particular project.
 
 In all three **package.json** files change **nodemon** to **node**.
+
+**splitStringOnAnyInstanceOfCharacter**: _Given the string **path**, it looks for slashes (/) and returns the string that is **countFromEnd** slashes from the end of the string. I've tried to make it flexible so that you can vary the string, the character (slash in our case) and offset. I passed in different offsets such as 1, 3, 4, 25 and it still seems to work._
 
 ## Query Micros
 
