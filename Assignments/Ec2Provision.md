@@ -316,7 +316,9 @@ Be careful not to create a bunch of instances on EC2. After you create them and 
 
 There is another, outdated, Turn it in section below. Use this one.
 
-Delete all your EC2 instances related to this assignment. On AWS Educate, that means all instances except our original one from a few weeks ago. Create and provision three instances within 20 minutes. Take a screen shot of the EC2 console showing all three instances running. Attach it to the assignment.
+Create and provision three instances within 20 minutes. Take a screen shot of the EC2 console showing all three instances (plus our original instance) running. Attach it to the assignment. 
+
+When you are done, delete all your EC2 instances related to this assignment. On AWS Educate, that means all instances except our original one from a few weeks ago.
 
 I'm looking for:
 
