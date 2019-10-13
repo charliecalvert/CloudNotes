@@ -83,7 +83,7 @@ In **main/routes/index.js** implement the cross process request:
 const requester = require('request');
 
 router.get('/system-environment/you-rang', function(req, res) {
-    requester('http://192.168.86.26:30028/you-rang').pipe(res);
+    requester('http://system-environment:30028/you-rang').pipe(res);
 });
 ```
 
@@ -149,8 +149,6 @@ services:
       - "30025:30025"
     restart: always
     command: npm start
-    links:
-      - route-tester
   route-tester:
     build: route-tester
     ports:
@@ -166,6 +164,13 @@ You add the third element for **system-environment**.
 Run this to start it: **docker-compose up**. It takes awhile, but when done, go to **localhost:30025** and look at the console output.
 
 If you edit your code and want to see the fix, try just running **docker-compose up** again. If that doesn't work, then do this, which takes a bit longer: **docker-compose up --build**
+
+One thing I have found. If we use expose instead of ports in the system-environment section of our docker-compose YML file, then we can access our service from the other containers in our project but it can't be accessed from the external network:
+
+    expose:
+      - "30028"
+
+This provides us with additional security. The trade off is that we can't use the browser to explore our service.
 
 ## Push your results
 
