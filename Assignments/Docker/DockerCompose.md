@@ -41,6 +41,14 @@ In all three **package.json** files change **nodemon** to **node**.
 
 **splitStringOnAnyInstanceOfCharacter**: _Given the string **path**, it looks for slashes (/) and returns the string that is **countFromEnd** slashes from the end of the string. I've tried to make it flexible so that you can vary the string, the character (slash in our case) and offset. I passed in different offsets such as 1, 3, 4, 25 and it still seems to work._
 
+Here is the output before splitString:
+
+![Before split string Docker Composer Server Data][dcsd]
+
+Here is the output after:
+
+![After splitString][dcsds]
+
 ## Query Micros
 
 In **/main/source/control.js**, write two fetch statements to query our micro services:
@@ -181,3 +189,4 @@ Also:
 - From Github I need branch and folder. It is usually also a good idea to create a tag in case there is any doubt as to exactly what I should look at.
 
 [dcsd]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-compose-server-data.png
+[dcsds]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-server-data-split.png
