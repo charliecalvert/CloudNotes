@@ -78,6 +78,9 @@ In some cases, I may attach a video to your assignment when I grade it. To watch
 
 ![The VLC Media Player Running on Ubuntu][vlcu]
 
+<!--       -->
+<!-- links -->
+<!--       -->
 
 [anchor]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 [pr-resume]: https://www.elvenware.com/teach/prog109/resume.html

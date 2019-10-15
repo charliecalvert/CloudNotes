@@ -78,3 +78,7 @@ The Pro versions of the courses are longer than the free versions. Thus, for the
 Many companies that offer free services such as those offered by Code Academy use advertising to foot the bills. Clearly, that is not their approach. I think they are being a bit too aggressive in trying to find ways to make money, but I am not without sympathy for their cause.
 
 I don't want to saddle anyone with bills they were not expecting when they signed up for this course. Thus I'm not asking anyone to sign up for Pro beyond the trial period. Also, going Pro makes the courses longer, which makes the assignment more difficult to complete than I had intended. That said, if you can afford it in terms of both time and money, it is perhaps not a bad thing to go for their Pro offering, but I have not done so myself.
+
+<!--       -->
+<!-- links -->
+<!--       -->

@@ -69,6 +69,8 @@ export AWS_SECRET_ACCESS_KEY=<SECRET>
 
 These will override anything you put in **~/.aws/config.json**.
 
+For more information, read the [AWS docs on configuration][awsdc].
+
 ## Create Your Instance
 
 Back in the **week04-aws-setup** directory, create this file and call it **run.js**:
@@ -316,7 +318,7 @@ Be careful not to create a bunch of instances on EC2. After you create them and 
 
 There is another, outdated, Turn it in section below. Use this one.
 
-Create and provision three instances within 20 minutes. Take a screen shot of the EC2 console showing all three instances (plus our original instance) running. Attach it to the assignment. 
+Create and provision three instances within 20 minutes. Take a screen shot of the EC2 console showing all three instances (plus our original instance) running. Attach it to the assignment.
 
 When you are done, delete all your EC2 instances related to this assignment. On AWS Educate, that means all instances except our original one from a few weeks ago.
 
@@ -626,3 +628,9 @@ What I did in class some time in the past. Might be useful:
    52  cd Week05-AngularMongoCrud/
    53  npm install
 ```
+
+<!--       -->
+<!-- links -->
+<!--       -->
+
+[awsdc]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html

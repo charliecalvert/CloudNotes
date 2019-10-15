@@ -193,5 +193,9 @@ Also:
   - Use **docker push** to create them.
 - From Github I need branch and folder. It is usually also a good idea to create a tag in case there is any doubt as to exactly what I should look at.
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [dcsd]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-compose-server-data.png
 [dcsds]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-server-data-split.png
