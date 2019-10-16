@@ -70,7 +70,7 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 ```
 
-Then you can use [**async** and **await**][aa] to call your promise:
+Then you can use [**async** and **await**][aa] to call your promise in a file called **exec-ls-async-await.js**:
 
 ```javascript
 const util = require('util');
@@ -85,10 +85,30 @@ async function execList(repoName) {
 	console.error(`stderr: ${stderr}`);
 }
 
-execList('isit320-calvert-2019');
+execList('isit320-lastname-2019');
 ```
 
 We create an **async** function by starting it's declaration with the word **async**. Inside the function call a promise and proceed it with the keyword **await**. Read the docs, linked above, for more information.
+
+## Immediately Invokable (IIFE)
+
+```javascript
+(async () => {
+    await execList('isit320-calvert-2019');
+    console.log('ALL DONE');
+})();
+```
+
+Which is a fancy way of doing this:
+
+```javascript
+async function doExec() {
+    await execList('isit320-calvert-2019');
+    console.log('ALL DONE');
+}
+
+doExec();
+```
 
 ## Enter Git
 
