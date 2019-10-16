@@ -9,7 +9,7 @@ Do your work for this assignment in a **week05** branch.
 
 ## Child Process
 
-Built into node is a module called **child_process**:
+Built into node is a module called [**child_process**][cp]:
 
 ```javascript
 const foo = require('child_process');
@@ -149,3 +149,4 @@ Import checkGitIgnore from **exec-git.js**. Create a route for it in **index.js*
 Create a react component with two buttons on it. Call both routes via the buttons and display the results on your react component.
 
 [aa]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
+[cp]: https://nodejs.org/api/child_process.html
