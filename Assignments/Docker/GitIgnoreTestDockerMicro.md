@@ -149,7 +149,9 @@ Behold the beauty of **async/await**:
 
 ```javascript
 async function checkGitIgnore(response) {
+    // const branches = await getBranches();
     const allBranches = ['week01', 'week02', etc];
+    
     console.log('ALL BRANCHES', allBranches);
 
     let branchInfo = '';
@@ -169,6 +171,14 @@ async function checkGitIgnore(response) {
 Import checkGitIgnore from **exec-git.js**. Create a route for it in **index.js**.
 
 Create a react component with two buttons on it. Call both routes via the buttons and display the results on your react component.
+
+## Hints
+
+Get branch names:
+
+```bash
+git branch -a | sed -n -e 's/remotes.origin*.//p' | grep -v 'HEAD'
+```
 
 [aa]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
 [cp]: https://nodejs.org/api/child_process.html
