@@ -36,6 +36,8 @@ exec('ls -la', (error, stdout, stderr) => {
 
 Save this code into **week05-simple-exec/exec-ls.js**. Run it so you can see what it does.
 
+Learn about [template literals][tl].
+
 Sometimes we also want to run a command in a particular directory, Do it like this:
 
 ```javascript
@@ -150,3 +152,4 @@ Create a react component with two buttons on it. Call both routes via the button
 
 [aa]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
 [cp]: https://nodejs.org/api/child_process.html
+[tl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
