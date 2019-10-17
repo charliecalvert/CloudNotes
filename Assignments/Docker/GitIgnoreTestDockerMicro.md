@@ -151,7 +151,7 @@ Behold the beauty of **async/await**:
 async function checkGitIgnore(response) {
     // const branches = await getBranches();
     const allBranches = ['week01', 'week02', etc];
-    
+
     console.log('ALL BRANCHES', allBranches);
 
     let branchInfo = '';
@@ -179,6 +179,42 @@ Get branch names:
 ```bash
 git branch -a | sed -n -e 's/remotes.origin*.//p' | grep -v 'HEAD'
 ```
+
+## Build Qux (week02-micro)
+
+```bash
+#!/usr/bin/env bash
+
+cp ~/.ssh/YOUR_SSH_KEY qux/.
+docker image build -t charliecalvert/micro-qux .
+docker container run --name micro-qux -d -p 30027:30027 charliecalvert/micro-qux
+rm qux/YOUR_SSH_KEY
+docker exec -it micro-qux /bin/bash
+```
+
+And your docker file:
+
+```
+FROM node:latest
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY qux/package.json .
+RUN npm install
+COPY qux .
+RUN mkdir /root/.ssh
+RUN chmod 700 /root/.ssh
+RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
+RUN ssh-agent bash -c 'ssh-add YOUR_SSH_KEY; git clone git@github.com:YOUR_GITHUB_USER_NAME/isit320-lastname-2019.git'
+# RUN alias ll='ls -laF'
+# COPY GitIgnoreTester patterns.txt isit320-calvert-2019/
+EXPOSE 30027
+RUN node_modules/.bin/webpack
+CMD [ "npm", "start" ]
+```
+
+Remove passphrase:
+
+    ssh-keygen -p -f YOUR_SSH_KEY
 
 [aa]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
 [cp]: https://nodejs.org/api/child_process.html
