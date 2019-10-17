@@ -166,6 +166,8 @@ async function checkGitIgnore(response) {
 }
 ```
 
+For extra credit, implement getBranches, otherwise, just hard code in the branch names for now.
+
 ## Turn it in
 
 Import checkGitIgnore from **exec-git.js**. Create a route for it in **index.js**.
