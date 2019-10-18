@@ -23,6 +23,7 @@ The goal of the midterm is for each student to:
   - This should happen automatically when you push to GitHub.
 - Your GitHub Pages home page should include links to your homework assignments and a link to your Theme pages.
   - On your home page, provide one link to the home page of your Theme, and from there link to the individual pages you created.
+  - Make sure all your homework pages pass the HTML Validator. Fix errors in them pointed out when I graded your assignments. This is an important part of the midterm: I want to see that you know how to write valid HTML and that you know how to fix errors. The theme site is the heart of the midterm, but fixing the homework assignments and linking to them is also a bit part of your midterm.
 - View the site on an emulated phone and if possible on a real phone. Make at least minimal corrections to ensure it looks good. We have not solved all problems related to phones yet, particularly when it comes to NAV sections. Just do the best you can given the technology we have covered so far. Don't try to fix everything by searching across the web. I'm expecting these pages to not be fully polished yet. Polishing them will be part of the final.
 - On at least three pages, include at least one image that you float to the left or right.
 - Include at least one **aside** that you float to the left or right.
@@ -127,7 +128,9 @@ Provide links to your site Home Page and them Home Page.  When you submit the as
 
 ## CSS and JS Files
 
-I'm expecting to see a least one CSS file linked from your home page, from each of your theme pages, and from at least some of your homework pages. I'm expecting to find a directory in the root of your site called **Styles** or **styles**. There should be a stylesheet in that directory which is linked to by most of your pages. There should also be a stylesheet in the **ListButton** directory. Many of you will also have CSS in your **theme** directory or in a sub-directory of your **theme** directory.
+I'm expecting to see a least one CSS file linked from your home page, from each of your theme pages, and from at least some of your homework pages. I'm expecting to find a directory in the root of your site called **Styles** or **styles**. There should be a stylesheet in that directory which is linked to by most of your pages. There should also be a stylesheet in the **ListButton** directory.
+
+Create a directory called <b>css</b> inside your <b>theme</b> directory and put a CSS file called <b>styles.css</b> with at least a <b>background-color</b> for the <b>body</b> tag in it. You can just copy the <b>styles.css</b> from the <b>styles</b> directory into your <b>css</b> directory if you wish.
 
 I'm also expecting to find JavaScript in the **ListButton** directory and I will check that it works.
 
