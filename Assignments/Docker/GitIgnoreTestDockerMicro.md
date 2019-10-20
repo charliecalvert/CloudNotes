@@ -189,6 +189,10 @@ router.get('/checkoutBranch', function(request, response) {
 
 ## Images
 
+Just starting out, still working inside **qux**, just checking to see if I can set up some calls that do something with Git.
+
+![Docker Composer Git Qux Test][dcqt]
+
 Here is what it looks like once I have System Environment hooked up to Main and able to call **getBranches** but before I start using React. In other words, these are just raw calls to **fetch** with the output displayed in PRE elements.
 
 ![System Environent GetBranches][dcgis]
@@ -245,3 +249,4 @@ Remove passphrase:
 [cp]: https://nodejs.org/api/child_process.html
 [tl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 [dcgis]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-intermediate-state.png
+[dcqt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-qux-test.png
