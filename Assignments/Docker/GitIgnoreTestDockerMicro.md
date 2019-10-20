@@ -213,6 +213,12 @@ After a time I created a single React component and displayed a bit information 
 
 ![Git React Get Branches][dcgrgb]
 
+Still at a pretty funky stage because out of time, but here we check all branches for things missing from **.gitignore** and find that **.c9** is missing from **.gitignore** in the **week01** branch. (I deleted that one item as a test. I'll come up with a better test branch later...)
+
+![Git React Missing C9][mc9]
+
+[mc9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-react-missing-c9.png
+
 ## Hints
 
 Get branch names:
