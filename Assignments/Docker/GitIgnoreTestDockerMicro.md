@@ -189,13 +189,29 @@ router.get('/checkoutBranch', function(request, response) {
 
 ## Images
 
+This images are meant as rough guidelines or inspiration, there is no need to duplication them exactly. Indeed you can, within reason, do more or less what you want inside your React components, so long as you display data similar to that shown here. The data matters, not the format, but of course your data probably does not look exactly like mine.
+
+
 Just starting out, still working inside **qux**, just checking to see if I can set up some calls that do something with Git.
 
 ![Docker Composer Git Qux Test][dcqt]
 
+In **views/index.pug** I had something like this:
+
+```
+h2 Route Tester You Rang
+pre#route-tester
+
+etc...
+```
+
 Here is what the Docker Composer assignment looks like once I have System Environment hooked up to **Main** and able to call **/system-environment/getBranches** but before I start using React. In other words, I display the output in **PRE** elements declared in **main/views/index.pug** and populated via **fetch** calls found in **main/source/control.js**.
 
 ![System Environent GetBranches][dcgis]
+
+After a time I created a single React component and displayed a bit information gleaned from the **System Environment** container.
+
+![Git React Get Branches][dcgrgb]
 
 ## Hints
 
@@ -204,6 +220,19 @@ Get branch names:
 ```bash
 git branch -a | sed -n -e 's/remotes.origin*.//p' | grep -v 'HEAD'
 ```
+
+If you want a program based on React Basics to load CSS files, then you need to run **npm i --save-dev css-loader style-loader** in **Main** and add a bit to webpack under **module/rules**:
+
+```javascript
+{
+       test: /\.css$/i,
+       use: ['style-loader', 'css-loader'],
+ },
+```
+
+There is an array called **rules** in **webpack.config.js**, this is the second item in that array, beneath the test for **js** files.
+
+Learn more [here](https://webpack.js.org/loaders/css-loader/).
 
 ## Build Qux (week02-micro)
 
@@ -250,3 +279,4 @@ Remove passphrase:
 [tl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 [dcgis]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-intermediate-state.png
 [dcqt]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-qux-test.png
+[dcgrgb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-react-get-branches.png
