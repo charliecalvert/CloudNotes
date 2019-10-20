@@ -193,7 +193,7 @@ Just starting out, still working inside **qux**, just checking to see if I can s
 
 ![Docker Composer Git Qux Test][dcqt]
 
-Here is what it looks like once I have System Environment hooked up to Main and able to call **getBranches** but before I start using React. In other words, these are just raw calls to **fetch** with the output displayed in PRE elements.
+Here is what the Docker Composer assignment looks like once I have System Environment hooked up to **Main** and able to call **/system-environment/getBranches** but before I start using React. In other words, I display the output in **PRE** elements declared in **main/views/index.pug** and populated via **fetch** calls found in **main/source/control.js**.
 
 ![System Environent GetBranches][dcgis]
 
