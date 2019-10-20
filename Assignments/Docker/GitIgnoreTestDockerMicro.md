@@ -174,6 +174,19 @@ Import checkGitIgnore from **exec-git.js**. Create a route for it in **index.js*
 
 Create a react component with two buttons on it. Call both routes via the buttons and display the results on your react component.
 
+These are the routes I want:
+
+- /checkoutBranch
+- /checkGitIgnore
+
+They should be in **routes/index.js** and might look something like this:
+
+```javascript
+router.get('/checkoutBranch', function(request, response) {
+    const info = checkoutBranch(response, 'week05-charlie');
+});
+```
+
 ## Hints
 
 Get branch names:
