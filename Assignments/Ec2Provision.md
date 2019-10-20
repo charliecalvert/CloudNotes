@@ -246,7 +246,9 @@ THIS IS THE END OF THE 2019 Oct 13 ASSIGNMENT. WE WILL DISCUSS THE SECTIONS BELO
 
 ## Alternative Ways to Load Credentials {#alt-creds}
 
-Put these in **~/.aws/credentials**:
+There are other ways to define and load the credentials you want to use. This technique is particularly useful if you want to use different credentials in different circumstances.
+
+AWS suggests putting multiple profiles in **~/.aws/credentials**:
 
 ```
 [default]
@@ -262,6 +264,8 @@ aws_access_key_id=YOUR_ACCESS_KEY
 aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
 ```
 
+Load them like this:
+
 ```JavaScript
 const credentials = new AWS.SharedIniFileCredentials({ profile: 'school' })
 AWS.config.credentials = credentials
@@ -273,9 +277,11 @@ Alternatively, you can set the **AWS_PROFILE**. We often do this sort of thing n
 export AWS_PROFILE=school
 ```
 
+This latter technique is perhaps best since it means we won't have to edit our source code.
+
 Thanks to Benjamin Comeau for doing the research on this and sharing his clear description of the solution.
 
-The docs on this subject are [here][sifc]
+The docs on this subject are [here][sifc] and [here][lncs].
 
 ## JsObjects Provision
 
@@ -557,3 +563,4 @@ What I did in class some time in the past. Might be useful:
 
 [awsdc]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 [sifc]: https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SharedIniFileCredentials.html
+[lncs]: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html
