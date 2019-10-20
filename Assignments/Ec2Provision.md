@@ -244,6 +244,39 @@ Host ec2-bc
 
 THIS IS THE END OF THE 2019 Oct 13 ASSIGNMENT. WE WILL DISCUSS THE SECTIONS BELOW THIS POINT IN CLASS.
 
+## Alternative Ways to Load Credentials {#alt-creds}
+
+Put these in **~/.aws/credentials**:
+
+```
+[default]
+aws_access_key_id=YOUR_ACCESS_KEY
+aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
+
+[work]
+aws_access_key_id=YOUR_ACCESS_KEY
+aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
+
+[school]
+aws_access_key_id=YOUR_ACCESS_KEY
+aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
+```
+
+```JavaScript
+const credentials = new AWS.SharedIniFileCredentials({ profile: 'school' })
+AWS.config.credentials = credentials
+```
+
+Alternatively, you can set the **AWS_PROFILE**. We often do this sort of thing near the end of **~/.bashrc**:
+
+```
+export AWS_PROFILE=school
+```
+
+Thanks to Benjamin Comeau for doing the research on this and sharing his clear description of the solution.
+
+The docs on this subject are [here][sifc]
+
 ## JsObjects Provision
 
 Do this:
@@ -523,3 +556,4 @@ What I did in class some time in the past. Might be useful:
 <!--       -->
 
 [awsdc]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+[sifc]: https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SharedIniFileCredentials.html
