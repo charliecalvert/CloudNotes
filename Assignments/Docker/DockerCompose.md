@@ -172,6 +172,16 @@ One thing I have found. If we use expose instead of ports in the system-environm
 
 This provides us with additional security. The trade off is that we can't use the browser to explore our service.
 
+## Build and Reset
+
+We should have build and reset scripts. I believe they can be quite simple:
+
+Build: docker compose up %1
+
+Reset: docker compose down
+
+If this doesn't work, then do them one step at a time.
+ 
 ## Push your results
 
 You can push your finished image to the Docker Hub:
