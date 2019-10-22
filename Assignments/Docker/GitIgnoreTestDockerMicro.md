@@ -288,8 +288,7 @@ RUN mkdir /root/.ssh
 RUN chmod 700 /root/.ssh
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 RUN ssh-agent bash -c 'ssh-add YOUR_SSH_KEY; git clone git@github.com:YOUR_GITHUB_USER_NAME/isit320-lastname-2019.git'
-# RUN alias ll='ls -laF'
-# COPY GitIgnoreTester patterns.txt isit320-calvert-2019/
+RUN rm YOUR_SSH_KEY
 EXPOSE 30027
 RUN node_modules/.bin/webpack
 CMD [ "npm", "start" ]
