@@ -240,7 +240,7 @@ Make sure you include the [base route](#you-rang) in your calls from the client:
 
 - /qux/you-rang
 
-Put all your micro services in a directory called **Micros** or something similar. This means there should be two programs in that directory. The directory should at the top level of your repository, directly under the root:
+Put both your micro services in the **week02-micros** directory or something similar. This means there should be two programs in that directory. The directory should at the top level of your repository, directly under the root:
 
 - isit322-lastname-2019
   - Your client and server, with a name like **week03-rest-basics** or similar.
