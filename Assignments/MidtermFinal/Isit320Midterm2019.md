@@ -410,6 +410,11 @@ We are going to use SSH to access services on one of our EC2 instances. Let's ag
 
 Now bring over **ssh-runner** and call **uptime** on the remote server. I'll want you to call at least one other service as well. I'll update this document soon with more information.
 
+## Push Container
+
+    docker tag week04-docker-composer_main:latest charliecalvert/dcmain:first
+    docker push charliecalvert/dcmain
+
 ## Turn it in
 
 Tag and push with script:
