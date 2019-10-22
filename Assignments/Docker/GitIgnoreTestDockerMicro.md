@@ -141,7 +141,9 @@ Create a route (endpoint) in **index.js** and see if you can call your code:
 
 ```javascript
 router.get('/checkoutBranch', function(request, response) {
-    const info = checkoutBranch(response, 'week05');
+    checkoutBranch(response, 'week05').catch(function(e) {
+        console.log(e);
+    });
 });
 ```  
 
