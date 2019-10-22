@@ -227,6 +227,19 @@ Still at a pretty funky stage because out of time, but here we check all branche
 
 **NOTE**: _When testing, I believe that you sometimes need to do a complete reset and build in order to get Docker to re-clone your repository after you make a test change to some value in, for instance, your **.gitignore** file on some particular branch. In other words, if I did **docker composer up --build** when my only change was to some **.gitignore** file on some branch in my repository, then Docker, quite reasonably, did not see that the repository needed to be re-cloned. At least it did not do so consistently. I have not tested this enough to be sure this is what was going on, but I think this is why my code did not always immediately see the change. The solution seems to be a complete reset and rebuild._
 
+## Docker Log
+
+When getting logs on system-environment I do something like this:
+
+    docker logs week04-docker-composer_system-environment_1
+
+The docker log commands are very useful.
+
+To get logs for all the containers in a docker-compose project, go to the directory
+where your docker-compose YML file is located and do this:
+
+    docker-compose logs
+
 ## Hints
 
 Get branch names:
