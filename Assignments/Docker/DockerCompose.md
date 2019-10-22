@@ -87,7 +87,7 @@ router.get('/system-environment/you-rang', function(req, res) {
 });
 ```
 
-I think **localhost** might work instead of the IP, but I can see why it might not. We can run some tests.
+As you can see, we can refer to Docker containers by name.
 
 ![Docker Composer Server Data][dcsd]
 

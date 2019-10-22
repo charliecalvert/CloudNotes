@@ -115,6 +115,8 @@ doExec();
 Now that you know that basics, you can perhaps fairly easily see how to apply it our task:
 
 ```javascript
+const workingDir = 'YOUR_REPO_NAME';
+
 async function checkoutBranch(response, branch) {
     const {stdout, stderr} = await exec('git checkout ' + branch, {
         cwd: workingDir
