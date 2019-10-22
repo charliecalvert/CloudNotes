@@ -183,7 +183,11 @@ They should be in **routes/index.js** and might look something like this:
 
 ```javascript
 router.get('/checkoutBranch', function(request, response) {
-    const info = checkoutBranch(response, 'week05-charlie');
+    checkoutBranch(response, 'week03').catch(function(e) {
+        console.log(e);
+    });
+});
+
 });
 ```
 
@@ -241,6 +245,8 @@ There is an array called **rules** in **webpack.config.js**, this is the second 
 Learn more [here](https://webpack.js.org/loaders/css-loader/).
 
 ## Build Qux (week02-micro)
+
+Set your ssh key in your **~/.ssh** directory to **rw**: **chmod 600 YOUR_SSH_KEY**
 
 ```bash
 #!/usr/bin/env bash
