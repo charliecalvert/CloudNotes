@@ -197,8 +197,7 @@ router.get('/checkoutBranch', function(request, response) {
 
 ## Images
 
-This images are meant as rough guidelines or inspiration, there is no need to duplication them exactly. Indeed you can, within reason, do more or less what you want inside your React components, so long as you display data similar to that shown here. The data matters, not the format, but of course your data probably does not look exactly like mine.
-
+These images are meant as rough guidelines or inspiration, there is no need to duplication them exactly. Indeed you can, within reason, do more or less what you want inside your React components, so long as you display data similar to that shown here. The data matters, not the format, but of course your data probably does not look exactly like mine.
 
 Just starting out, still working inside **qux**, just checking to see if I can set up some calls that do something with Git.
 
