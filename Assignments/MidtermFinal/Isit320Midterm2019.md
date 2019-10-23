@@ -54,13 +54,13 @@ Of course, this code is not valid, you need to call the appropriate functions an
 
 ## Get Started
 
-Here are few steps you should take as you start work on the midterm proper.
+Here are a few steps you should take as you start work on the midterm proper.
 
 - Update Pristine Lubuntu (update-all) and update the npm global packages (ncu -g).
 - Update JsObjects
 - Navigate back to your repository
 - Create a branch called **midterm** based on your most recent work.
-- Folder: **midterm**
+- Submit your work in a folder called: **midterm**
   - This will probably mean renaming your working folder to **midterm**:
   - For instance: **git mv week04-docker-compose midterm**
 - Tag your repo with this string: "Starting midterm in week06"
@@ -71,18 +71,18 @@ Here are few steps you should take as you start work on the midterm proper.
 
 Increment the tags as appropriate:
 
-    git tag -a v0.0.1 -m "React component can display you-rang in a table"
+    git tag -a v0.0.2 -m "React component can display you-rang in a table"
 
 So part of the midterm is having a commit and tag made with **elf-tagger**.
 
 ## The Private Key
 
-I have come up with a two step solution to be sure that we never push a private key to DockerHub.
+I have come up with a two step solution that I hope will mitigate somewhat the chances of us pushing a private key to DockerHub.
 
 1) When creating the container, we delete the key immediately after using it to clone the repo.
 2) When we pull the container onto our private server, we copy the key into our **system-environment** container.
 
-**NOTE**: _One might object that once we have cloned the Git repo and deleted the private key were done, since we will have no further use for it. But we might, in some future assignment, want to pull our Git repo to update it and then confirm that all is still well. In that case, we will need the private key to pull from GitHub._
+**NOTE**: _One might object that once we have cloned the Git repo and deleted the private key we are done, since we will have no further use for it. But we might, in some future assignment, want to pull our Git repo to update it and then confirm that all is still well after any recent updates to our repo. In that case, we will need the private key to pull from GitHub._
 
 For the first step, we modify the **Dockerfile** for **system-environment** by adding one more line to our custom code:
 
@@ -92,20 +92,22 @@ For the first step, we modify the **Dockerfile** for **system-environment** by a
     RUN ssh-agent bash -c 'ssh-add YOUR_SSH_KEY; git clone git@github.com:charliecalvert/isit320-calvert-2019.git'
     RUN rm YOUR_SSH_KEY
 
+The key line is the last one, where we remove the the key.
+
 For the second step, here is how to copy a file called **temp01** into our container:
 
     docker cp temp01 week04-docker-composer_system-environment_1:/usr/src/system-environment
 
-Another solution would be to put our **system-environment** image in a private DockerHub repository, but I'm more comfortable this way.    
+Another solution would be to put our **system-environment** image in a private DockerHub repository, but before we go to that route, let's see if the above solution works. (I believe DockerHub has a student plan that gives you five private repos for free.)
 
 ## Eslint and Prettier
 
-Install eslint and prettier
+Install eslint and prettier into all projects:
 
-- get-gist and choose **Run ESLintRc and Prettier**
-- Run prettier, and it should clean both **client** and **server**.
+- Run **get-gist** and choose **Run ESLintRc and Prettier**
+- Run **prettier**, and it should clean both **client** and **server**.
 
-It is best, I think, not to use double quotes in a **sed** statement, as a result, I was escape the single quotes in **getBranches** to satisfy **ESLint**:
+I had few troubles with eslint except in one case where we call **sed** in **getBranges**. It is best, I think, _not_ to use double quotes in a **sed** statement, as a result, I escape the single quotes in **getBranches** to satisfy **ESLint**:
 
 ```javascript
 const { stdout, stderr } = await exec('git branch -a | sed -n -e \'s/remotes.origin*.//p\' | grep -v \'HEAD\'', {
@@ -195,6 +197,8 @@ Instead, you do something like this:
 </table>
 ```
 
+## fetch and async/await {#fetchawait}
+
 The code above assumes that your call to **getBranches** initialized a field of your **state** object called **branches** to the array of branches you got from the **system-environment** server. To do this, you declare state in your constructor:
 
 ```javascript
@@ -229,7 +233,7 @@ async queryGetBranches() {
 };
 ```
 
-This just works, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
+These calls to **await** just work, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
 
 Make sure you install **@babel/plugin-transform-runtime** and **@babel/runtime**:
 
