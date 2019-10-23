@@ -28,19 +28,19 @@ The goal of the midterm is for each student to:
 - On at least three pages, include at least one image that you float to the left or right.
 - Include at least one **aside** that you float to the left or right.
 - Include examples of paragraphs, headers (h1, h2, etc) and unordered or ordered lists on several of your pages.
-- Include an **About** page with your picture on it.
-- Make sure the HTML Validator is working properly on all your theme pages. Also check your homework pages. They are important, but not as important as your theme pages.
+- Include at lease one **About** page, one with your picture on it for the home page, and an optional second one for your theme site. The theme site home page can be similar to your regular **About** page but at least a little connection to your theme. For instance, if you write about Frogs, you can say: "Ever since I was little I have been fascinated by frogs. After it rains, I like to open the window and listen to the sound of them croaking."
+- Make sure the HTML Validator is working properly on all your theme pages. Also check your homework pages. They are very important, but not as important as your theme pages. The theme pages should be as polished as you can make them in the time given.
 
 ## Creating a GitHub Pages WebSite
 
-Here is a step by step outline of what needs to be done to move your WebSite from your local copy of your repository to your GitHub pages.
+Here is a step by step outline of what needs to be done to move your website from your local copy of your repository to your GitHub pages.
 
-1. Create your web pages and test each one locally before uploading it. (Choose Ctrl + O to open the page in your browser).
+1. Create your web pages and test each one locally before uploading it. (Choose **Go Live** to open the page in your browser using our built-in live web server).
 1. Push your repository
 1. Make sure it looks right on your GitHub Pages site.
   1. This usually involves browsing to a URL like this **https://mygithubname.github.io**.
 
-Sunday and Monday there were technical problems with GitHub pages, but they have been resolved.
+Very rarely there can be technical problems with GitHub pages, but they have been resolved.
 If you suspect problems are recurring, go to the [GitHub Status page](https://status.github.com/messages).
 
 The rest of this assignments outline some of the details of what I'm looking for in the midterm.
@@ -75,6 +75,7 @@ Five of the seven pages your create for your theme should have images on them. T
 
 - You should display at least 10 images on your theme pages. Any particular page may have zero or only one image. However, across all seven pages there should be at least 10 different images displayed.
 - At least two of the images must be served from your **images** directory.
+- At least one picture should be floated left or right.
 - At least five of your pictures should be in a **figure** element and have a **figcaption** describing the picture.
 - At least one picture should be served from the WikiMedia Commons. I'm looking for images released under Creative Commons license.
   - This picture should be in a **figure** element and feature a **figcaption**. Where appropriate, the caption should include a link to the page on the WikiMedia site where the image is hosted.
@@ -86,9 +87,9 @@ Five of the seven pages your create for your theme should have images on them. T
 
 Create a home page for both your theme and for your entire site. By default, the page in the root of your repository called **index.html** is your home page. The page in the root of your **theme** directory is the home page for your theme.
 
-The contents of site-wide home page should contain links that point directly to your theme and to each of your homework assignments. For instance, it should link to the **index.html** file in your **theme**, **ListButton** and other sub-directories that contain code you have created. On your site Home Page, I want to see links to not only your theme folder, but to all the assignments we have created so far in this course.
+The contents of site-wide home page should contain links that point directly to your theme and to each of your homework assignments. For instance, it should link to the **index.html** file in your **theme**, **list-button** in assignments, and other sub-directories that contain code you have created. On your site Home Page, I want to see links to not only your theme folder, but to all the assignments we have created so far in this course.
 
-Since a web server such as the one on GitHub Pages will automatically load **index.html** as a default page, your links can simple point to the **theme** or **ListButton** directory. You don't have to point them to **theme/index.html**. Remember, this will work properly on GitHub Pages, but it probably won't work when your load page directly into your browser with **Ctrl + O**.
+Since a web server such as the one on GitHub Pages will automatically load **index.html** as a default page, your links can simple point to the **theme** or **assignments** directory. You don't have to point them to **theme/index.html**. Remember, this will work properly on GitHub Pages, but it probably won't work when your load page directly into your browser with **Ctrl + O**.
 
     <a href="/theme">Theme</a>
 
@@ -96,27 +97,7 @@ You don't have to do this, though it is not wrong:
 
     <a href="/theme/index.html">Theme</a>
 
-## Repository Check
-
-We have spent time working with both Cloud9 and AWS Educate. I want to be sure you are able to use these resources.
-
-1. Pull your GitHub Pages repository on Cloud9 (c9.io)
-2. Open up the **theme/index.html** file in the editor.
-3. On the left, display the **workspace** sidebar and select **theme/index.html**
-
-![c9 Display][c9-d]
-
-In this image we see the **workspace** on the left and **index.html** from the theme directory in the editor. In the bash shell (command line) view at the bottom we have navigated to the theme directory.
-
-Take a similar screenshot for your AWS Educate version of Cloud 9.
-
-On your GitHub pages site, place both images in your images directory. Create a file called **cloud9-images.html** in the root of your repository. Display both images in it, much as I display one of the images in this document. Link to the page from the home page for your site, using **Cloud9 Images** as the content of your anchor tag.
-
-Hopefully these instructions are clear. It might help you understand the instructions if you remember that the point of this section of the midterm is to show me that you are on both Cloud9 and AWS Educate and that you are able to clone and pull from your GitHub repository to those environments. I also want to check that you understand Cloud9 well enough to open up a specific file in the editor, and to display a particular portion of your workspace in the navigation pane on the left.
-
-**NOTE**: _If you are unable to get onto Cloud9 or AWS Educate for some reason, please tell me so when you submit the midterm. If you could not succeed, it will not completely ruin your midterm grade. It is, however, a part of this course to help you understand how to set up cloud services. We have dedicated significant class time to this subject, and given you plenty of time to set things up with AWS Educate and Cloud9. It is almost impossible for anyone to function in the modern web development world without using cloud services. Proving that you can sign up for them, and get them to work, is a significant part of this course and likely a significant part of your ability to function in the job market._
-
-**NOTE**: _One of the facts of life with cloud services is that they sometimes go down, and sometimes don't work exactly as advertised. Yet ultimately, all of the tools we are using (Windows, the Mac, Linux, Git, GitHub, GitHub Pages, C9, Visual Studio Code and AWS) will work. It's not enough just to tell me that some service or tool is broken. You have to learn to trouble shoot or workaround a problem. At one point during the quarter, GitHub Pages went down for about 24 hours. This was an extreme case, as outages on major sites are rare and usually last much less time. Nevertheless, the problem occurred, and the only solution was to wait for Microsoft to fix the problem. Given that this is a possibility, you should not wait until the last minute to create your midterm. Get things close to your final state well ahead of the deadline, and then an outage will not completely block you. Yes, I would make an allowance for a last minute outage of that type in terms of our schedule, but still the point is valid: build in some time into your schedule for unexpected outages or other developments. Consider, for instance, the case where you planned to do all your work on the day the midterm was due. Unfortunately, a key service was down that day and it prevented your from doing most of your work. I give you an extra day to work on the midterm as a result, but on that extra day you only have an hour free time. That will be trouble._
+**NOTE**: _One of the facts of life with cloud services is that they sometimes go down, and sometimes don't work exactly as advertised. Yet ultimately, all of the tools we are using (Windows, the Mac, Linux, Git, GitHub, GitHub Pages, and Visual Studio Code) will work. It's not enough just to tell me that some service or tool is broken. You have to learn to trouble shoot or workaround a problem. At one point during a previous quarter, GitHub Pages went down for about 24 hours. This was an extreme case, as outages on major sites are rare and usually last much less time. Nevertheless, the problem occurred, and the only solution was to wait for Microsoft to fix the problem. Given that this is a possibility, you should not wait until the last minute to create your midterm. Get things close to your final state well ahead of the deadline, and then an outage will not completely block you. Yes, I would make an allowance for a last minute outage of that type in terms of our schedule, but still the point is valid: build in some time into your schedule for unexpected outages or other developments. Consider, for instance, the case where you planned to do all your work on the day the midterm was due. Unfortunately, a key service was down that day and it prevented your from doing most of your work. I give you an extra day to work on the midterm as a result, but on that extra day you only have an hour free time. That will be trouble._
 
 ## Step Four: Display on GitHub Pages {#display-on-ghp}
 
@@ -128,11 +109,9 @@ Provide links to your site Home Page and them Home Page.  When you submit the as
 
 ## CSS and JS Files
 
-I'm expecting to see a least one CSS file linked from your home page, from each of your theme pages, and from at least some of your homework pages. I'm expecting to find a directory in the root of your site called **Styles** or **styles**. There should be a stylesheet in that directory which is linked to by most of your pages. There should also be a stylesheet in the **ListButton** directory.
+I'm expecting to see a least one CSS file linked from your home page, from each of your theme pages, and from at least some of your homework pages. I'm expecting to find a directory in the root of your site called **styles**. There should be a stylesheet in that directory which is linked to by most of your pages.
 
-Create a directory called <b>css</b> inside your <b>theme</b> directory and put a CSS file called <b>styles.css</b> with at least a <b>background-color</b> for the <b>body</b> tag in it. You can just copy the <b>styles.css</b> from the <b>styles</b> directory into your <b>css</b> directory if you wish.
-
-I'm also expecting to find JavaScript in the **ListButton** directory and I will check that it works.
+You should create a separate style sheet for your theme. Create a directory called <b>css</b> inside your <b>theme</b> directory and put a CSS file called <b>styles.css</b> with at least a <b>background-color</b> for the <b>body</b> tag in it. You can just copy the <b>styles.css</b> from the <b>styles</b> directory into your <b>css</b> directory if you wish.
 
 ## Turn it in
 
