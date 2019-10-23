@@ -332,4 +332,5 @@ Where I write "etc..." you need to write code to completely delete **system-envi
 [arssr]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html#server-side
 [arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
 
-[ssh2]:
+[dcgrgb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-react-get-branches.png
+[mc9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-react-missing-c9.png
