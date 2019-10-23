@@ -227,9 +227,47 @@ async queryGetBranches() {
 };
 ```
 
-**NOTE**: _If you are using async/await when calling **fetch**, then you probably can write **this.setState** rather than **that.setState**._
+This just works, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
+
+Make sure you install **@babel/plugin-transform-runtime** and **@babel/runtime**:
+
+    npm i -D @babel/plugin-transform-runtime @babel/runtime
+
+At lesat one [commentator](https://www.valentinog.com/blog/await-react/), who I have followed successfully, thinks we should also perform some inexplicable magic with **@babel/preset-env** in our **.babelrc**:
+
+```json
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": [
+                        ">0.25%",
+                        "not ie 11",
+                        "not op_mini all"
+                    ]
+                }
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        ["@babel/transform-runtime", {
+            "regenerator": true
+        }]
+    ]
+}
+```
+
+Note that we also created or updated our **plugins** section of **.babelrc**. (Is **@babel/plugin-proposal-class-properties** needed in **.babel.rc**?)
+
+**NOTE**: _One advantage of using **async/await** when calling **fetch** is that you can write **this.setState** rather than **that.setState** On the other hand, **fetch** is not a method that usually benefits much from async/await since it is rarely part of a set of nested callbacks. **fetch** without **async/await** takes some getting used to, but once you understand it, it rarely is a source of confusion._
 
 ## Push Container
+
+Try something like this:
 
     docker tag week04-docker-composer_main:latest charliecalvert/dcmain:first
     docker push charliecalvert/dcmain
