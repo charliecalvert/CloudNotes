@@ -1,12 +1,10 @@
 ## Overview
 
-The midterm is an an extension of the [GitIgnoreTestDockerMicro][gitdm] and [DockerCompose][dc] assignments. In some cases, students have used [RestBasics][rb] rather than **DockerComposer**.
+The midterm is an an extension of the [GitIgnoreTestDockerMicro][gitdm] and [DockerCompose][dc] assignments. In some cases, students have used [RestBasics][rb] rather than **DockerComposer**. As long as it works, then I'm fine with that decision.
 
-The goal will be to create a program that will allow us to query both the status of the current system, and a system running on EC2. The code should compile cleanly with no errors or warnings from **prettier** or **eslint**.
+The goal of the midterm is to create a program that will allow us to query our repositories to ensure they contain certain key elements. In particular, we are looking to see that all branches contain valid **.gitignore** files and that no inappropriate code, such as a **node_modules** directory, has been checked in.
 
-The screenshot is designed only to give you a general idea of where I would like to take this program. I haven't finished my version yet, so this is incomplete, but it gives you a good starting point. If you imitate this look and feel you should not have to undo anything, only add more.
-
-![Midterm System Check Interface][mtsc]
+Your code should compile cleanly with no errors or warnings from **prettier** or **eslint**.
 
 ## Images
 
