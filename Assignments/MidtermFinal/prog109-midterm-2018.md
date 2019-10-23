@@ -1,6 +1,6 @@
 ## Overview
 
-This is the 2018 midterm for Prog 109. This should be close to the final version, but as you work on your midterm, refresh this page from time to time in your browser. It is unlikely that I will change the requirements for the midterm, but I may add clarifications or hints. You'll want to see hints.
+This is the 2019 midterm for Prog 109. This should be close to the final version, but as you work on your midterm, refresh this page from time to time in your browser. It is unlikely that I will change the requirements for the midterm, but I may add clarifications or hints. You'll want to see hints.
 
 It is okay to ask technical questions about the midterm in the discussion area, but remember not to post code that shows solutions. Please start on this assignment tonight, and work a little bit on it each day until you feel it is ready to turn in. Don't wait to the last minute.
 
@@ -9,7 +9,7 @@ It is okay to ask technical questions about the midterm in the discussion area, 
 The goal of the midterm is for each student to:
 
 - Pick a theme for a web site
-- Develop at least seven completed web pages.
+- Develop at least seven completed web pages (HTML files).
   - At least five of the pages should contain pictures.
   - At least three of the pages should be three screen fulls in length. In other words, I want to see much more than just one or two short sentences on most pages.
 - Create the pages in Visual Studio Code or your editor of choice..
