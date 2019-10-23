@@ -21,9 +21,9 @@ The goal of the midterm is for each student to:
   - footer
 - Display the web site on your GitHub Pages site.
   - This should happen automatically when you push to GitHub.
-- Your GitHub Pages home page should include links to your homework assignments and a link to your Theme pages.
+- Your GitHub Pages home page should include links to your homework assignments and a link to the index.html file for your Theme directory.
   - On your home page, provide one link to the home page of your Theme, and from there link to the individual pages you created.
-  - Make sure all your homework pages pass the HTML Validator. Fix errors in them pointed out when I graded your assignments. This is an important part of the midterm: I want to see that you know how to write valid HTML and that you know how to fix errors. The theme site is the heart of the midterm, but fixing the homework assignments and linking to them is also a bit part of your midterm.
+  - Make sure all your homework pages pass the HTML Validator. Fix errors in them pointed out when I graded your assignments. This is an important part of the midterm: I want to see that you know how to write valid HTML and that you know how to fix errors. The theme site is the heart of the midterm, but fixing the homework assignments and linking to them is also a big part of your midterm.
 - View the site on an emulated phone and if possible on a real phone. Make at least minimal corrections to ensure it looks good. We have not solved all problems related to phones yet, particularly when it comes to NAV sections. Just do the best you can given the technology we have covered so far. Don't try to fix everything by searching across the web. I'm expecting these pages to not be fully polished yet. Polishing them will be part of the final.
 - On at least three pages, include at least one image that you float to the left or right.
 - Include at least one **aside** that you float to the left or right.
@@ -65,9 +65,9 @@ The most important thing is that it holds your interest. It should be something 
 The theme pages on your GitHub pages site should be stored inside a folder called **theme**. In total, your site contain at least three theme-related directories: the root folder and at least two sub-directories. For instance, if your theme was **West Coast States**, you might have these subdirectories:
 
 - theme
-  - California
-  - Oregon
-  - Washington
+  - california
+  - oregon
+  - washington
 
 Put at least one page in each sub-directory of your theme and link to it from your theme home page.
 
@@ -85,7 +85,7 @@ Five of the seven pages your create for your theme should have images on them. T
 
 ## Step Three: Create Site {#create-site}
 
-Create a home page for both your theme and for your entire site. By default, the page in the root of your repository called **index.html** is your home page. The page in the root of your **theme** directory is the home page for your theme.
+Create a home page for both your theme and for your entire site. By default, the page in the root of your repository called **index.html** is your home page. The *&**index.html** page in the root of your **theme** directory is the home page for your theme.
 
 The contents of site-wide home page should contain links that point directly to your theme and to each of your homework assignments. For instance, it should link to the **index.html** file in your **theme**, **list-button** in assignments, and other sub-directories that contain code you have created. On your site Home Page, I want to see links to not only your theme folder, but to all the assignments we have created so far in this course.
 
