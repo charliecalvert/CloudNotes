@@ -76,6 +76,8 @@ Increment the tags as appropriate:
 
 So part of the midterm is having a commit and tag made with **elf-tagger**.
 
+To push a tag: git push origin v0.0.2 
+
 ## The Private Key
 
 I have come up with a two step solution that I hope will mitigate somewhat the chances of us pushing a private key to DockerHub.
