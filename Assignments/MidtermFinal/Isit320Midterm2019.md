@@ -30,6 +30,7 @@ In the image shown above the react component in **main** application calls into 
 - You Rang: Call **/you-rang**.
 - Get Branches: Call **/getBranches** and display the branches in your repository.
 - The Git Ignore Tests: For each branch, test the **.gitignore** file to be sure it contains all the strings we want it to contain.
+- The fourth is very much like the third, but you are checking for files that never should have been checked in, such as **bundle.js**.
 
 The first two are, I believe, self explanatory. The third requires that you:
 
