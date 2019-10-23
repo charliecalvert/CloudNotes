@@ -21,6 +21,8 @@ Here we check all branches for things missing from **.gitignore** and find that 
 
 ![Git React Missing C9][mc9]
 
+I'll want you to add one more section, which should display any stray files or directories that should not have been checked in.
+
 ## Four Tasks
 
 In the image shown above the react component in **main** application calls into **system-environment** and performs three tasks:
@@ -32,11 +34,11 @@ In the image shown above the react component in **main** application calls into 
 The first two are, I believe, self explanatory. The third requires that you:
 
 - Call **getBranches** to get an array of branches.
-- Loop over the array and use the magic of async/await to allow you to call code that:
+- Loop over the array and use the magic of **async/await** to allow you to call code that:
   - switches to a new branch
-  - runs your **gitIgnoreTest** in the new branch
+  - runs your **gitIgnoreTest** in the new branch to confirm that the **.gitignore** file is valid, that it meets our requirements.
 
-Here is a hint.
+Here is a hint about how to compose a loop on a an array called **allBranches**.
 
 ```javascript
 for (let branch of allBranches) {
@@ -45,17 +47,19 @@ for (let branch of allBranches) {
     const someMoreInfo = await SomeOtherAsyncAwaitFunc();;
     // Store return values in a structure such as an Array.
 }
+// Send back a respose to main that contains at least an appropriate subset of the values returned from the functions in the loop.
 ```
 
 Of course, this code is not valid, you need to call the appropriate functions and handle their return values.
 
 ## Get Started
 
-We have spent a lot of time learning how to automate steps in our work, so I'll ask you to start again from the beginning again.
+Here are few steps you should take as you start work on the midterm proper.
 
-- Update JsObjects and Pristine Lubuntu
+- Update Pristine Lubuntu (update-all) and update the npm global packages (ncu -g).
+- Update JsObjects
 - Navigate back to your repository
-- Branch: **midterm**
+- Create a branch called **midterm** based on your most recent work.
 - Folder: **midterm**
   - This will probably mean renaming your working folder to **midterm**:
   - For instance: **git mv week04-docker-compose midterm**
