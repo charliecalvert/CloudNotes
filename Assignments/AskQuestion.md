@@ -41,6 +41,10 @@ This means that you often have to describe code rather than quote it. For instan
 
 In general, use your best judgment. Ask yourself if you are providing a hint or advice, or if you are actually giving away the answer.
 
+## State the Assignment Name
+
+It is helpful if you link to, or at least say the full-name of, the assignment you are working on. I can usually figure it out from context, but it would save me and others time if everyone just started their questions by writing: **"I'm working on the XXX assignment. When I ..."**
+
 ## Inspiration
 
 Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: [http://www.google.com](http://www.google.com)".

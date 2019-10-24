@@ -226,6 +226,10 @@ Still at a pretty funky stage because out of time, but here we check all branche
 
 **NOTE**: _When testing, I believe that you sometimes need to do a complete reset and build in order to get Docker to re-clone your repository after you make a test change to some value in, for instance, your **.gitignore** file on some particular branch. In other words, if I did **docker composer up --build** when my only change was to some **.gitignore** file on some branch in my repository, then Docker, quite reasonably, did not see that the repository needed to be re-cloned. At least it did not do so consistently. I have not tested this enough to be sure this is what was going on, but I think this is why my code did not always immediately see the change. The solution seems to be a complete reset and rebuild._
 
+## Creating React Components
+
+When creating your React Component, you can borrow code from either eek01-react-basics or week03-rest-basics. Those assignments remind you of how to add a React components to an **express** or **create-react-app** project.
+
 ## Docker Log
 
 When getting logs on system-environment I do something like this:
