@@ -13,15 +13,15 @@ Some of the courses are in transition or have changed recently. Complete one HTM
 If you have already completed an older version of the course, I will accept that. In other words, this assignment will be very easy for you if you have already completed the course.
 
 - [The HTML course](https://www.codecademy.com/learn/learn-html)
-- Complete at least 25% of the skill.
+- Complete at least 25% of the HTML skill each week if you have not done so already.
 - [The Introduction to JavaScript course][ijs]
-- Complete at least 12% of the skill.
+- Complete at least 12% of the JavaScript skill each week.
 
 Several students have pointed out that Code Academy has create a new course called [Introduction to JavaScript][ijs]. I have changed my links to point to that course.
 
 ## Looking Ahead
 
-We'll keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress looks like this, where each week we do a new part:
+We'll keep progressing through Code Academy on a weekly basis, doing about fifteen percent of both skills each week. Therefore our proposed weekly progress For the JavaScript skill looks like this, where each week we do a new part:
 
 	Part 1:  12%
 	Part 2:  25%
@@ -33,6 +33,11 @@ We'll keep progressing through Code Academy on a weekly basis, doing about fifte
 	Part 8:  100%
 
 If you have already completed these skills, then just turn in the assignment pointing me toward the page showing that you have completed the skill, and you will get credit. If you have completed the course, you can turn in all the assignments right now. Otherwise, turn them in as you complete them. Please note that completing the skill is binary, you must get to 100%. You will not get credit on the last week for getting to only 99%.
+
+**NOTE**: _The HTML skill is easier and not as long, so I want you to complete 25% of that skill each week. Some students will have already completed the HTML course, so they can just provide a link to the profile showing that they have completed the skill. The profile will not show your progress through the JavaScript or HTML skills, so you will have to provide screenshots until you reach the 100% point._
+
+- If you are at 100% for a skill, just provide a link to your profile.
+- If you are at less than 100% for any one skill, turn in a screenshot showing your progress for that skill.
 
 ## Turn it in
 
