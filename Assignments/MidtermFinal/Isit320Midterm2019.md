@@ -1,12 +1,10 @@
 ## Overview
 
-The midterm is an an extension of the [GitIgnoreTestDockerMicro][gitdm] and [DockerCompose][dc] assignments. In some cases, students have used [RestBasics][rb] rather than **DockerComposer**.
+The midterm is an an extension of the [GitIgnoreTestDockerMicro][gitdm] and [DockerCompose][dc] assignments. In some cases, students have used [RestBasics][rb] rather than **DockerComposer**. As long as it works, then I'm fine with that decision.
 
-The goal will be to create a program that will allow us to query both the status of the current system, and a system running on EC2. The code should compile cleanly with no errors or warnings from **prettier** or **eslint**.
+The goal of the midterm is to create a program that will allow us to query our repositories to ensure they contain certain key elements. In particular, we are looking to see that all branches contain valid **.gitignore** files and that no inappropriate code, such as a **node_modules** directory, has been checked in.
 
-The screenshot is designed only to give you a general idea of where I would like to take this program. I haven't finished my version yet, so this is incomplete, but it gives you a good starting point. If you imitate this look and feel you should not have to undo anything, only add more.
-
-![Midterm System Check Interface][mtsc]
+Your code should compile cleanly with no errors or warnings from **prettier** or **eslint**.
 
 ## Images
 
@@ -23,6 +21,8 @@ Here we check all branches for things missing from **.gitignore** and find that 
 
 ![Git React Missing C9][mc9]
 
+I'll want you to add one more section, which should display any stray files or directories that should not have been checked in.
+
 ## Four Tasks
 
 In the image shown above the react component in **main** application calls into **system-environment** and performs three tasks:
@@ -30,15 +30,16 @@ In the image shown above the react component in **main** application calls into 
 - You Rang: Call **/you-rang**.
 - Get Branches: Call **/getBranches** and display the branches in your repository.
 - The Git Ignore Tests: For each branch, test the **.gitignore** file to be sure it contains all the strings we want it to contain.
+- The fourth is very much like the third, but you are checking for files that never should have been checked in, such as **bundle.js**.
 
 The first two are, I believe, self explanatory. The third requires that you:
 
 - Call **getBranches** to get an array of branches.
-- Loop over the array and use the magic of async/await to allow you to call code that:
+- Loop over the array and use the magic of **async/await** to allow you to call code that:
   - switches to a new branch
-  - runs your **gitIgnoreTest** in the new branch
+  - runs your **gitIgnoreTest** in the new branch to confirm that the **.gitignore** file is valid, that it meets our requirements.
 
-Here is a hint.
+Here is a hint about how to compose a loop on a an array called **allBranches**.
 
 ```javascript
 for (let branch of allBranches) {
@@ -47,18 +48,20 @@ for (let branch of allBranches) {
     const someMoreInfo = await SomeOtherAsyncAwaitFunc();;
     // Store return values in a structure such as an Array.
 }
+// Send back a respose to main that contains at least an appropriate subset of the values returned from the functions in the loop.
 ```
 
 Of course, this code is not valid, you need to call the appropriate functions and handle their return values.
 
 ## Get Started
 
-We have spent a lot of time learning how to automate steps in our work, so I'll ask you to start again from the beginning again.
+Here are a few steps you should take as you start work on the midterm proper.
 
-- Update JsObjects and Pristine Lubuntu
+- Update Pristine Lubuntu (update-all) and update the npm global packages (ncu -g).
+- Update JsObjects
 - Navigate back to your repository
-- Branch: **midterm**
-- Folder: **midterm**
+- Create a branch called **midterm** based on your most recent work.
+- Submit your work in a folder called: **midterm**
   - This will probably mean renaming your working folder to **midterm**:
   - For instance: **git mv week04-docker-compose midterm**
 - Tag your repo with this string: "Starting midterm in week06"
@@ -69,18 +72,20 @@ We have spent a lot of time learning how to automate steps in our work, so I'll 
 
 Increment the tags as appropriate:
 
-    git tag -a v0.0.1 -m "React component can display you-rang in a table"
+    git tag -a v0.0.2 -m "React component can display you-rang in a table"
 
 So part of the midterm is having a commit and tag made with **elf-tagger**.
 
+To push a tag: git push origin v0.0.2 
+
 ## The Private Key
 
-I have come up with a two step solution to be sure that we never push a private key to DockerHub.
+I have come up with a two step solution that I hope will mitigate somewhat the chances of us pushing a private key to DockerHub.
 
 1) When creating the container, we delete the key immediately after using it to clone the repo.
 2) When we pull the container onto our private server, we copy the key into our **system-environment** container.
 
-**NOTE**: _One might object that once we have cloned the Git repo and deleted the private key were done, since we will have no further use for it. But we might, in some future assignment, want to pull our Git repo to update it and then confirm that all is still well. In that case, we will need the private key to pull from GitHub._
+**NOTE**: _One might object that once we have cloned the Git repo and deleted the private key we are done, since we will have no further use for it. But we might, in some future assignment, want to pull our Git repo to update it and then confirm that all is still well after any recent updates to our repo. In that case, we will need the private key to pull from GitHub._
 
 For the first step, we modify the **Dockerfile** for **system-environment** by adding one more line to our custom code:
 
@@ -90,20 +95,22 @@ For the first step, we modify the **Dockerfile** for **system-environment** by a
     RUN ssh-agent bash -c 'ssh-add YOUR_SSH_KEY; git clone git@github.com:charliecalvert/isit320-calvert-2019.git'
     RUN rm YOUR_SSH_KEY
 
+The key line is the last one, where we remove the the key.
+
 For the second step, here is how to copy a file called **temp01** into our container:
 
     docker cp temp01 week04-docker-composer_system-environment_1:/usr/src/system-environment
 
-Another solution would be to put our **system-environment** image in a private DockerHub repository, but I'm more comfortable this way.    
+Another solution would be to put our **system-environment** image in a private DockerHub repository, but before we go to that route, let's see if the above solution works. (I believe DockerHub has a student plan that gives you five private repos for free.)
 
 ## Eslint and Prettier
 
-Install eslint and prettier
+Install eslint and prettier into all projects:
 
-- get-gist and choose **Run ESLintRc and Prettier**
-- Run prettier, and it should clean both **client** and **server**.
+- Run **get-gist** and choose **Run ESLintRc and Prettier**
+- Run **prettier**, and it should clean both **client** and **server**.
 
-It is best, I think, not to use double quotes in a **sed** statement, as a result, I was escape the single quotes in **getBranches** to satisfy **ESLint**:
+I had few troubles with eslint except in one case where we call **sed** in **getBranges**. It is best, I think, _not_ to use double quotes in a **sed** statement, as a result, I escape the single quotes in **getBranches** to satisfy **ESLint**:
 
 ```javascript
 const { stdout, stderr } = await exec('git branch -a | sed -n -e \'s/remotes.origin*.//p\' | grep -v \'HEAD\'', {
@@ -193,6 +200,8 @@ Instead, you do something like this:
 </table>
 ```
 
+## fetch and async/await {#fetchawait}
+
 The code above assumes that your call to **getBranches** initialized a field of your **state** object called **branches** to the array of branches you got from the **system-environment** server. To do this, you declare state in your constructor:
 
 ```javascript
@@ -227,7 +236,7 @@ async queryGetBranches() {
 };
 ```
 
-This just works, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
+These calls to **await** just work, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
 
 Make sure you install **@babel/plugin-transform-runtime** and **@babel/runtime**:
 
@@ -326,4 +335,5 @@ Where I write "etc..." you need to write code to completely delete **system-envi
 [arssr]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html#server-side
 [arss]: https://www.elvenware.com/teach/assignments/Aws/AwsRunSshScript.html
 
-[ssh2]:
+[dcgrgb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-react-get-branches.png
+[mc9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-react-missing-c9.png
