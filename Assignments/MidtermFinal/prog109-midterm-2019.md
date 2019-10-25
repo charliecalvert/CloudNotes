@@ -164,6 +164,10 @@ Here are the CSS Properties we are using:
 
 If there is some property I'm missing you feel should be on this list, let me know.
 
+CSS Properties to avoid
+
+- center (obsolete)
+
 ## Phone Emulation {#phone}
 
 To emulate your phone on Chrome:
