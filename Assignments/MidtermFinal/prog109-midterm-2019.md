@@ -138,7 +138,7 @@ I'm good with almost all HTML elements except:
 
 - BR
 
-Here are the CSS Properties We are using:
+Here are the CSS Properties we are using:
 
 - background-color
 - border (border-left etc)
