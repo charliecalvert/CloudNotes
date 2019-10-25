@@ -132,6 +132,38 @@ Don't forget to check the HTML Validator, especially for your home page, and for
 - Console page
 - Network page
 
+## Which CSS Properties and HTML Elements
+
+I'm good with almost all HTML elements except:
+
+- BR
+
+Here are the CSS Properties We are using:
+
+- background-color
+- border (border-left etc)
+- border-collapse
+- border-radius
+- float
+- font-family
+- font-size
+- font-style
+- font-weight
+- clear
+- color
+- display
+- height
+- list-style-type
+- margin (margin-left etc)
+- max-width
+- overflow-x
+- padding (padding-left etc)
+- text-align
+- transform
+- width
+
+If there is some property I'm missing you feel should be on this list, let me know.
+
 ## Phone Emulation {#phone}
 
 To emulate your phone on Chrome:
