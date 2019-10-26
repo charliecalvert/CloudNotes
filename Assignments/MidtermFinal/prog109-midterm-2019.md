@@ -15,19 +15,20 @@ The goal of the midterm is for each student to:
 - Create the pages in Visual Studio Code or your editor of choice..
 - Create the web pages entirely in HTML5 and CSS3. You can optionally include JavaScript.
 - Make sure each page has all of the following HTML5 elements:
-  - header
-  - nav (perhaps not needed on your About page.)
-  - main
-  - footer
+  - **header**
+  - **nav** (perhaps not needed on your About page.)
+  - **main**
+  - **footer**
+  - the **title** element should be descriptive. For instance, having the word **Document** in the title is not good enough. Describe the page in the **title** element.
 - Display the web site on your GitHub Pages site.
   - This should happen automatically when you push to GitHub.
 - Your GitHub Pages home page should include links to your homework assignments and a link to the index.html file for your Theme directory.
   - On your home page, provide one link to the home page of your Theme, and from there link to the individual pages you created.
   - Make sure all your homework pages pass the HTML Validator. Fix errors in them pointed out when I graded your assignments. This is an important part of the midterm: I want to see that you know how to write valid HTML and that you know how to fix errors. The theme site is the heart of the midterm, but fixing the homework assignments and linking to them is also a big part of your midterm.
 - View the site on an emulated phone and if possible on a real phone. Make at least minimal corrections to ensure it looks good. We have not solved all problems related to phones yet, particularly when it comes to NAV sections. Just do the best you can given the technology we have covered so far. Don't try to fix everything by searching across the web. I'm expecting these pages to not be fully polished yet. Polishing them will be part of the final.
-- On at least three pages, include at least one image that you float to the left or right.
+- On at least three pages, include at least one image that you **float** to the **left** or **right**.
 - Include at least one **aside** that you float to the left or right.
-- Include examples of paragraphs, headers (h1, h2, etc) and unordered or ordered lists on several of your pages.
+- Include examples of paragraphs, headings (**h1**, **h2**, etc) and unordered or ordered lists on several of your pages.
 - Include at lease one **About** page, one with your picture on it for the home page, and an optional second one for your theme site. The theme site home page can be similar to your regular **About** page but at least a little connection to your theme. For instance, if you write about Frogs, you can say: "Ever since I was little I have been fascinated by frogs. After it rains, I like to open the window and listen to the sound of them croaking."
 - Make sure the HTML Validator is working properly on all your theme pages. Also check your homework pages. They are very important, but not as important as your theme pages. The theme pages should be as polished as you can make them in the time given.
 
