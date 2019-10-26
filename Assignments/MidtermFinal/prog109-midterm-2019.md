@@ -214,7 +214,7 @@ This is the default string created by VS Code and you should edit it. For the Ab
 
 I've added this as a requirement in the Midterm for all pages:
 
-[https://www.elvenware.com/teach/assignments/midterm-final/prog109-midterm-2019.html#goals](https://www.elvenware.com/teach/assignments/midterm-final/prog109-midterm-2019.html#goals)
+[Goals](#goals)
 
 This means that every page on your site should have a meaningful **title** element.
 
