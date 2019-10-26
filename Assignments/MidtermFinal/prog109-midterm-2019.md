@@ -198,6 +198,24 @@ You should turn frequently to the console and network pages in the Chrome and Fi
 
 The images below are not from this course, but they show that files called **first-style.css**, **style.css**, **googlecode.css**, **elven-help.js** and the elvenware logo have all been loaded. If you see red on this page, you probably have a problem. (We have not yet worked with favicons, so I will give you a pass on that file.) Once again, the screen shots shown here are from a different course, and so your output will not look the same. For instance, you won't see files called **googlecode.css**. The point is to scan the output and look for files highlighted in red. If they are red, then that probably means there is an error. More specifically, it could mean that one of your **link**, **script**, or [anchor](https://www.w3schools.com/tags/tag_a.asp) tags is not working correctly.
 
+## The Title Element
+
+I've noticed that many students have a **title** element in their **head** that is set to the word **Document**:
+
+```HTML
+<title>Document</title>
+```
+
+This is the default string created by VS Code and you should edit it. For the About page, for instance, the **title** might read:
+
+```HTML
+<title>About Me</title>
+```
+
+I've added this as a requirement in the Midterm for all pages:
+
+[https://www.elvenware.com/teach/assignments/midterm-final/prog109-midterm-2019.html#goals](https://www.elvenware.com/teach/assignments/midterm-final/prog109-midterm-2019.html#goals)
+
 ### Network Page Chrome
 
 ![Developer Tools Network Page Chrome][network-chrome]
