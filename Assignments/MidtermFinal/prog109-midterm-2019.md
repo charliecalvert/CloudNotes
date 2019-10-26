@@ -29,7 +29,7 @@ The goal of the midterm is for each student to:
 - On at least three pages, include at least one image that you **float** to the **left** or **right**.
 - Include at least one **aside** that you float to the left or right.
 - Include examples of paragraphs, headings (**h1**, **h2**, etc) and unordered or ordered lists on several of your pages.
-- Include at lease one **About** page, one with your picture on it for the home page, and an optional second one for your theme site. The theme site home page can be similar to your regular **About** page but at least a little connection to your theme. For instance, if you write about Frogs, you can say: "Ever since I was little I have been fascinated by frogs. After it rains, I like to open the window and listen to the sound of them croaking."
+- Include at lease one **About** page, one with your picture on it for the home page, and an optional second one for your theme site. The theme site home page can be similar to your regular **About** page but at least a little connection to your theme. For instance, if you write about Frogs, you can say: "Ever since I was little I have been fascinated by frogs. After it rains, I like to open the window and listen to the sound of them croaking." The site wide, main, **About** page should be in the root of your repository.
 - Make sure the HTML Validator is working properly on all your theme pages. Also check your homework pages. They are very important, but not as important as your theme pages. The theme pages should be as polished as you can make them in the time given.
 
 ## Creating a GitHub Pages WebSite
