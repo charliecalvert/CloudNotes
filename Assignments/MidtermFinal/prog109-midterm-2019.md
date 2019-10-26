@@ -216,6 +216,8 @@ I've added this as a requirement in the Midterm for all pages:
 
 [https://www.elvenware.com/teach/assignments/midterm-final/prog109-midterm-2019.html#goals](https://www.elvenware.com/teach/assignments/midterm-final/prog109-midterm-2019.html#goals)
 
+This means that every page on your site should have a meaningful **title** element.
+
 ### Network Page Chrome
 
 ![Developer Tools Network Page Chrome][network-chrome]
