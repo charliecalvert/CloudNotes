@@ -212,11 +212,7 @@ This is the default string created by VS Code and you should edit it. For the Ab
 <title>About Me</title>
 ```
 
-I've added this as a requirement in the Midterm for all pages:
-
-[Goals](#goals)
-
-This means that every page on your site should have a meaningful **title** element.
+I've added this as a requirement in the [Goals](#goals) section for this Midterm. This means that every page on your site should have a meaningful **title** element.
 
 ### Network Page Chrome
 
