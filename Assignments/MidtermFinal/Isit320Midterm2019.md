@@ -141,6 +141,33 @@ const { stdout, stderr } = await exec('git branch -a | sed -n -e \'s/remotes.ori
 
 In our case, we are interested in the second escaped character, the _single quote_.
 
+## Prettier Ignore
+
+Sometimes **prettier** does one thing, then **eslint** does another. In these cases, only one can be happy at a time. The solution I'm using now is to ask **prettier** to ignore a statement in **exec-git.js**. I'm mentioning that one file because I expect you hit this issue in **system-environment/routes/exec-git.js**. However, I don't want you to use this trick except under the direst necessity, such as the one we encounter with quotes in **sed** statement for **getBranches**.
+
+Suppose you had code like this:
+
+```javascript
+const x = "3";
+```
+
+Suppose prettier would normally convert it to use single quotes:
+
+```javascript
+const x = '3';
+```
+
+If we put a special prettier comment in front of the statement we want to ignore, then it will be ignored:
+
+```javascript
+// prettier-ignore  
+const x = "3";
+```
+
+Now running prettier will leave the double-quotes in this one statement. Some statements, like **if** statements, have multiple lines. If you put the special comment in front of the **if** statement, then all of it would be ignored.
+
+Reference: [https://prettier.io/docs/en/ignore.html](https://prettier.io/docs/en/ignore.html)
+
 ## Push and Tag
 
 At various points, you might want to push and tag:
