@@ -23,6 +23,10 @@ Here we check all branches for things missing from **.gitignore** and find that 
 
 I'll want you to add one more section, which should display any stray files or directories that should not have been checked in.
 
+Assuming that we have accidentally checking in **bundle.js** and **bundle.js.map** into our **week02** branch, then this is what we get:
+
+![Bad file test][dcbad]
+
 ## Four Tasks
 
 In the image shown above the react component in **main** application calls into **system-environment** and performs three tasks:
@@ -76,7 +80,7 @@ Increment the tags as appropriate:
 
 So part of the midterm is having a commit and tag made with **elf-tagger**.
 
-To push a tag: git push origin v0.0.2 
+To push a tag: git push origin v0.0.2
 
 ## The Private Key
 
@@ -337,3 +341,4 @@ Where I write "etc..." you need to write code to completely delete **system-envi
 
 [dcgrgb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-react-get-branches.png
 [mc9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-react-missing-c9.png
+[dcbad]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-bad-file-test.png
