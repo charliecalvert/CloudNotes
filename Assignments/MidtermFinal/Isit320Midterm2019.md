@@ -23,7 +23,7 @@ Here we check all branches for things missing from **.gitignore** and find that 
 
 I'll want you to add one more section, which should display any stray files or directories that should not have been checked in.
 
-Assuming that we have accidentally checking in **bundle.js** and **bundle.js.map** into our **week02** branch, then this is what we get:
+Assuming that we have accidentally checking in **bundle.js** and **bundle.js.map** into our **week02** branch, then this is what we get when we run the Bad File Tests:
 
 ![Bad file test][dcbad]
 
