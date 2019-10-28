@@ -29,12 +29,12 @@ Assuming that we have accidentally checking in **bundle.js** and **bundle.js.map
 
 ## Four Tasks
 
-In the image shown above the react component in **main** application calls into **system-environment** and performs three tasks:
+In the image shown above the react component in **main** application calls into **system-environment** and performs four tasks:
 
 - You Rang: Call **/you-rang**.
 - Get Branches: Call **/getBranches** and display the branches in your repository.
 - The Git Ignore Tests: For each branch, test the **.gitignore** file to be sure it contains all the strings we want it to contain.
-- The fourth is very much like the third, but you are checking for files that never should have been checked in, such as **bundle.js**.
+- The fourth is very much like the third, but you are checking for files that never should have been checked in, such as **bundle.js**. (In a loop like the one for the **gitIgnoreTest** you should **exec** code like this: **find . -iname <SOME_FILE>**)
 
 The first two are, I believe, self explanatory. The third requires that you:
 
@@ -56,6 +56,24 @@ for (let branch of allBranches) {
 ```
 
 Of course, this code is not valid, you need to call the appropriate functions and handle their return values.
+
+## Bad Files
+
+The bad files must be in **.gitignore** and should not be in the repository file system.
+
+```javascript
+const asArray = [
+    'bower_components',
+    'npm-debug.log',
+    'bundle.js',
+    '*.js.map',
+    'node_modules',
+    'coverage',
+    '.idea',
+    '.vscode',
+    '.c9'
+];
+```
 
 ## Get Started
 
@@ -269,11 +287,11 @@ async queryGetBranches() {
 
 These calls to **await** just work, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
 
-Make sure you install **@babel/plugin-transform-runtime** and **@babel/runtime**:
+In Main, make sure you install **@babel/plugin-transform-runtime** and **@babel/runtime**:
 
     npm i -D @babel/plugin-transform-runtime @babel/runtime
 
-At lesat one [commentator](https://www.valentinog.com/blog/await-react/), who I have followed successfully, thinks we should also perform some inexplicable magic with **@babel/preset-env** in our **.babelrc**:
+At least one [commentator](https://www.valentinog.com/blog/await-react/), who I have followed successfully, thinks we should also perform some inexplicable magic with **@babel/preset-env** in our **.babelrc**:
 
 ```json
 {

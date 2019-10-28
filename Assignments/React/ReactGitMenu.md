@@ -22,7 +22,11 @@ TODO Add screenshots
 
 Before performing major surgery, I like to tag my code. You should push your work, then tag it with elf-tagger:
 
-    elf-tagger "Before Matieral UI menu" "week03-rest-basics"
+    elf-tagger "Before router dom menu" "week03-rest-basics"
+
+Or:
+
+    tag -a v0.X.X -m "Before building router dom menu in week04-docker-compose"
 
 I often also start a **test** branch based on my working branch. I do my work there, and if I'm happy, I merge the changes back into my main working branch. If I got into to my trouble, I switch back to my working branch, delete the botched **test** branch, then start a new **test** branch and try again. If it is good this time, I merge it back into my working branch.
 
@@ -34,13 +38,15 @@ Read the [React Router Dom Install][rrdi] section from Elvenware then return to 
 
     npm i react-router-dom
 
+Be sure you have prop types:
+
+    npm i prop-types;    
+
+Optionally, consider installing a CSS library (I'm not doing this yet, myself)
+
 Also install **material-ui**:
 
     npm i @material-ui/core @material-ui/icons
-
-Also, be sure you have prop types:
-
-    npm i prop-types;    
 
 ## Insert the new ElfHeader
 
