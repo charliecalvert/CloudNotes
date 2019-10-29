@@ -97,6 +97,15 @@ It looks like this if all goes well:
     $ scp mykey ec2-ed:/home/ubuntu/.ssh/.
     mykey        100% 2602    27.9KB/s   00:00    
 
+
+## Copy ID
+
+If you own a private key, and you want to use it to access a remote server, such as an EC2 instance, you need to put the public key associated with that private key in the **~/.ssh/authorized_keys** file of that remote server. Here is a way to do that without first logging on to the remote server:
+
+    ssh-copy-id -i $HOME/.ssh/mykey.pub ubuntu@ec2-ed
+
+You have to know either the user name and password for the remote server, or you must have another private key for the sever. That may seem restrictive, but the technology can allow you, for instance, to use the same key to access GitHub and to SSH into your EC2 instance. In other words, once you have **mykey.pub** in GitHub and in the remote **authorized_keys** file you can use **mykey** to access both GitHub and the remote server. This means you need to load only one key.
+
 ## Turn it in
 
 Generate three keys called:
