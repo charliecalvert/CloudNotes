@@ -192,6 +192,45 @@ At various points, you might want to push and tag:
 
     git tag -a vX.Y.Z -m "Completed Midterm setup phase"
 
+## Loading CSS in Express Apps
+
+Inside webpack.config.js (this is the whole file on my system at this time):
+
+```javascript
+module.exports = {
+    mode: 'development',
+    entry: './source/control.js',
+    output: {
+        path: __dirname + '/public/',
+        filename: 'bundle.js'
+    },
+    devtool: 'source-map',
+    module: {
+        rules: [
+            {
+                test: /.js?$/,
+                exclude: /(node_modules|bower_components)/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                '@babel/preset-env',
+                                '@babel/preset-react'
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    }
+};
+```
+
 ## Working with JSX Tables
 
 You don't have to use tables to display your data in your main application, but you have seen that is the choice I made.
