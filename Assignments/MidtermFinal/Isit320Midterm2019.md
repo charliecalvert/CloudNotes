@@ -194,6 +194,10 @@ At various points, you might want to push and tag:
 
 ## Loading CSS in Express Apps
 
+In Main, install both **style-loader** and **css-loader** with **npm**
+
+    npm i -D style-loader css-loader
+
 Inside webpack.config.js (this is the whole file on my system at this time):
 
 ```javascript
