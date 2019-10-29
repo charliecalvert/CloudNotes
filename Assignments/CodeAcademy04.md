@@ -2,7 +2,7 @@
 
 Bring the JavaScript and HTML courses to 50%.
 
-- [Learn JavaScript](https://www.codecademy.com/learn/learn-javascript)
+- [Learn JavaScript][ijs]
 - [Learn HTML](https://www.codecademy.com/learn/learn-html)
 
 When you have reached 100%, submit a link to your Code Academy **profile page**, like this:
@@ -27,3 +27,9 @@ Proposed weekly progress:
 ## Turn it in
 
 Remember, your progress in Code Academy can be used in a job application, a web profile, a resume, etc. But to be able to present the material the right way, you need to be able to provide prospective employers with a proper link to your profile. It's the official way to show your progress, and I want to be sure you know how to use it. Please provide your profile link when submitting this assignment.
+
+<!--       -->
+<!-- links -->
+<!--       -->
+
+[ijs]: https://www.codecademy.com/learn/introduction-to-javascript

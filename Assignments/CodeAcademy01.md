@@ -70,10 +70,6 @@ I strongly suggest that you set aside a little time at least five days a week to
 
 Also, there may be times when the Code Academy editor can go a bit wacky. Try refreshing the page or clearing the cache. Even better, try cutting and pasting the code into Cloud 9, Geany or some other editor, and working at the command line with node. Just do a little work in a completely different environment. If it seems to be working there, then try pasting your solution back into Code Academy.
 
-[tljc]: https://www.codecademy.com/learn/learn-javascript
-[ijs]: https://www.codecademy.com/learn/introduction-to-javascript
-[caws]:http://www.codecademy.com/
-
 ## Code Academy Pro
 
 Recently Code Academy has forced those who sign for a new account to take a one week free trial for Pro. I wish they would not do this, and I do not expect anyone to pay for a Pro Account.
@@ -87,3 +83,7 @@ I don't want to saddle anyone with bills they were not expecting when they signe
 <!--       -->
 <!-- links -->
 <!--       -->
+
+[tljc]: https://www.codecademy.com/learn/learn-javascript
+[ijs]: https://www.codecademy.com/learn/introduction-to-javascript
+[caws]:http://www.codecademy.com/
