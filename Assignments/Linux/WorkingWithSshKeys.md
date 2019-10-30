@@ -97,15 +97,6 @@ It looks like this if all goes well:
     $ scp mykey ec2-ed:/home/ubuntu/.ssh/.
     mykey        100% 2602    27.9KB/s   00:00    
 
-
-## Copy ID
-
-If you own a private key, and you want to use it to access a remote server, such as an EC2 instance, you need to put the public key associated with that private key in the **~/.ssh/authorized_keys** file of that remote server. Here is a way to do that without first logging on to the remote server:
-
-    ssh-copy-id -i $HOME/.ssh/mykey.pub ubuntu@ec2-ed
-
-You have to know either the user name and password for the remote server, or you must have another private key for the sever. That may seem restrictive, but the technology can allow you, for instance, to use the same key to access GitHub and to SSH into your EC2 instance. In other words, once you have **mykey.pub** in GitHub and in the remote **authorized_keys** file you can use **mykey** to access both GitHub and the remote server. This means you need to load only one key.
-
 ## Turn it in
 
 Generate three keys called:
@@ -125,8 +116,44 @@ The output should look like a bit like this for each of the three keys:
     ssh-keygen -E MD5 -lf mykey.pub
     3072 MD5:4f:70:d6:d3:33:32:cc:a0:91:8f:09:39:69:33:c2:8a charlie@elf-path (RSA)
 
+The following sections are not part of the assignment per se, but they contain information you might find useful.    
+
 ## Hint
 
 I nearly always upload to the Google Cloud the private keys given to us by AWS when we generate an EC2 instance.
 
-The keys were are generating in this assignment, however, I am no longer uploading very often. It is simpler just to generate new keys from home, school, or for use on EC2, as the case may be. Then I upload the public key to GitHub.
+The keys were are generating in this assignment, however, I am no longer uploading very often. It is simpler just to generate new keys from home, school, or for use on EC2, as the case may be.
+Then I upload the public key to GitHub.
+
+## Create a Public Key from Private
+
+Use the -y switch:
+
+ssh-keygen -y -f ~/.ssh/mykey
+
+## Copy ID
+
+If you own a private key, and you want to use it to access a remote server, such as an EC2 instance, you need to put the public key associated with that private key in the **~/.ssh/authorized_keys** file of that remote server. Here is a way to do that without first logging on to the remote server:
+
+    ssh-copy-id -i $HOME/.ssh/mykey.pub ubuntu@ec2-ed
+
+You have to know either the user name and password for the remote server, or you must have another private key for the sever. That may seem restrictive, but the technology can allow you, for instance, to use the same key to access GitHub and to SSH into your EC2 instance. In other words, once you have **mykey.pub** in GitHub and in the remote **authorized_keys** file you can use **mykey** to access both GitHub and the remote server. This means you need to load only one key.
+
+If you are using a key, rather than a user name and password, then add the -f parameter to allow the key to be added without first checking to see if you can log in.
+
+    ssh-copy-id -f -i $HOME/.ssh/id_rsa.pub ubuntu@ec2-ed
+
+In other words, the username and password are what we typically use when accessing another local ubuntu server that we created with VirtualBox, but we need the -f when accessing a remote EC2 instance.
+
+This might work to help you delete an entry from an authorized_keys file:
+
+    idssh=`cat ~/.ssh/mykey.pub | awk '{print $2}'`
+    ssh ubuntu@ec2-ed "sed -i '\;${idssh};d' .ssh/authorized_keys"
+
+The second line is an odd command because sed usually uses the forward slash as a delimiter, but that character can also end up in public key. So I use a semicolon instead, only in this case I had to first escape it. One would expect the sed command to delete a line to look like this:
+
+    sed -i '/${idssh}/d
+
+But the forward slash is no good in our case, so use this:
+
+    sed -i '\;${idssh};d    
