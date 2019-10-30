@@ -330,6 +330,12 @@ async queryGetBranches() {
 
 These calls to **await** just work, they tell me, if you use **create-react-app**. To make this work in our elf-express apps, you need to do some configuration.
 
+Remember to **bind** these methods at the end of your constructor:
+
+```javascript
+this.queryGetBranches = this.queryGetBranches.bind(this);
+```
+
 In Main, make sure you install **@babel/plugin-transform-runtime** and **@babel/runtime**:
 
     npm i -D @babel/plugin-transform-runtime @babel/runtime

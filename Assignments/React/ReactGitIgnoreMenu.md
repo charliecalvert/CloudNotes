@@ -1,5 +1,7 @@
 ## Overview
 
+Add a menu and client side routing. Begin refactoring into logical components.
+
 We typically establish routes (endpoints) on our server. **react-router-dom** allows us to use the same type of technology not to call routes on the server, but to navigate between react components.
 
 For instance we have used URLs like this to call endpoints on our server:
@@ -14,11 +16,11 @@ In short React Router DOM is routing for the client.
 
 ## Setup
 
-npm i react-router-dom prop-types
+    npm i react-router-dom prop-types
 
-## Free App as Home for Menu
+## Free App Component {#free-app}
 
-We need to repurpose **App.js** to use primarily for our menu. As a first step, copy it to a file called **source/GetBranches.js**.
+We need to repurpose **App.js** for use primarily by our new menu. As a first step, copy it to a file called **source/GetBranches.js**.
 
     cp App.js GetBranches.js
 
@@ -130,3 +132,13 @@ class App extends Component {
     }
 }
 ```
+
+## fetch with async-await {#fetch-async-await}
+
+Change all your **fetch** methods to **async-await** as described [here][mdaa].
+
+## Put You Rang in its Own Component
+
+Create a third React component called **SystemEnvironmentYouRang**. Take the you rang code from GetBranches and put it there. Create a new menu item in App that instantiates it.
+
+[mdaa]: https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html#fetchawait
