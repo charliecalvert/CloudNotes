@@ -391,6 +391,8 @@ Probably a good idea to include a screenshot as well. Make sure **prettier** and
 
 Remember that the Find Bad Files is extra credit.
 
+Using React Router DOM in the midterm is extra-credit.
+
 ## Reset
 
 I ended up with two **reset** files. This one I call **reset** and it is the one I use most often:
