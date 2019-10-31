@@ -16,7 +16,7 @@ In short React Router DOM is routing for the client.
 
 ## Setup
 
-    npm i react-router-dom prop-types
+    npm i react-router-dom
 
 ## Free App Component {#free-app}
 
@@ -133,15 +133,56 @@ class App extends Component {
 }
 ```
 
+## Refresh Issue
+
+To get rid of potential bugs when you refresh a page that contains a React Router DOM URL, do this instead:
+
+```javascript
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+```
+
+The downside is that **HashRouter** creates URLs that contain hash characters (#), and some folks don't like that, and the technique is considered old-fashioned and on the way out. However, it is a simple what to ensure that you can refresh a page without getting an error and it allows you to pass a URL to another user so they start on a certain page.
+
+- [Excellent discussion of Entire Topic](https://stackoverflow.com/a/36623117/253576)
+- [Also of interest](https://stackoverflow.com/a/43470639/253576)
+- [HashRouter Docs with warning](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/HashRouter.md)
+
+Finally, there is a simple fix that allows you to keep using **BrowserRouter** and create code that is not so old fashioned. To implement it, put this code in **main/router/index.js** just before the **module.exports** statement and after all the other options:
+
+```javascript
+router.get('/:id', function(req, res) {
+    res.redirect('/');
+});
+```
+
+This is the method I recommend for now. The downside is that hitting refresh on a React Router DOM URL sends you to the home page and it is bad for SEO. The upside is that it is easy to use and robust.
+
+One could argue that in a SPA, going back to the home page on refresh is intuitive, if not ideal. The ultimate fix is to run React Router DOM on the server (server side rendering), but I find that solution too complex at this time.
+
 ## fetch with async-await {#fetch-async-await}
 
 Change all your **fetch** methods to **async-await** as described [here][mdaa].
 
 ## Put You Rang in its Own Component
 
-Create a third React component called **SystemEnvironmentYouRang**. Take the you rang code from GetBranches and put it there. Create a new menu item in App that instantiates it.
+Create a third React component called **YouRang**. Take the **you rang** code from **GetBranches** and put it there. Delete the **you rang** code from **GetBranches**. Create a new menu item in App that instantiates it:
+
+```JavaScript
+<li>
+    <Link to="/you-rang">You Rang</Link>
+</li>
+```
+
+You will also need to modify your Switch:
+
+```javascript
+<Route path="/you-rang">
+    <YouRang />
+</Route>
+```
 
 ## Turn it in
 
+I will want branch, folder, and a tag if you have one. A commit ID would also work.
 
 [mdaa]: https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html#fetchawait
