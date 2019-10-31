@@ -70,6 +70,12 @@ Block copy your public key and paste it into this location:
 
 [Watch the 47 second video](https://youtu.be/9EXUWtDNLvk)
 
+## Setup MainKey
+
+    ln -s mykey main-key
+
+Now you can type **sshadd** to load your key.
+
 ## Copy a Key to EC2
 
 The simplest solution is probably to repeat the above steps on your EC2 instance. You end up with two keys, which many consider the safest option, and the process only takes a minute or so.
