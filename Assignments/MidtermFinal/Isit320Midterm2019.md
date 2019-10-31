@@ -27,11 +27,31 @@ Assuming that we have accidentally checking in **bundle.js** and **bundle.js.map
 
 ![Bad file test][dcbad]
 
-## Four Tasks
+## Special Repo
+
+I have create a special repo that you can test against. Besides branches with bad **.gitignore** files and "bad files" such as **bundle.js**, it also provides three example starter projects that ensure that you have the basics of your program laid out correctly. The repository is called [git-ignore-tests][gitr]. At least a few details are outlined in the README.
+
+**NOTE**: _Because I provide code for **system-environment/you-rang**, I ask that you also provide a call to **route-tester/you-rang** in your GUI. See the [Five Tasks](#tasks)._
+
+Here is another way to think about the starter projects in **git-ignore-tests**:
+
+- If you follow the pattern in the **standard** or **master** branch you can get a 100 on the midterm. You must add the **gitIgnoreTests** section shown in various screenshots found in this assignment.
+- If you follow the pattern in **standard** and **master** and add the **Bad File Tests** you can get extra credit.
+- If you follow the pattern in the **router-dom** branch you get extra credit if you have menu items (anchors) for both **you-rangs**, **getBranches**, **gitIgnoreTests** and **BadFileTests** and each appears in its own "Page" of the SPA when the menuitem is selected.
+- If you follow the pattern in the **hooks** branch you get extra extra.
+
+The trifecta, then, is to implement **Bad Files Tests** in the **hooks** branch. This branch also uses React Router Dom, thus this option uses all three extra-credit technologies. In my usual vague grading system, I'll guess that each extra credit section is worth 2 points, so you could get a 106 on the midterm, which covers a multitude of sins.
+
+When you use this repository, your output should look like this:
+
+![Special git-ignore-tests output][dcgit]
+
+## Five Tasks {#tasks}
 
 In the image shown above the react component in **main** application calls into **system-environment** and performs four tasks:
 
-- You Rang: Call **/you-rang**.
+- You Rang: Call **/you-rang** from **system-environment**
+- You Rang: Call **/you-rang** from **router-tester**
 - Get Branches: Call **/getBranches** and display the branches in your repository.
 - The Git Ignore Tests: For each branch, test the **.gitignore** file to be sure it contains all the strings we want it to contain.
 - The fourth task is for extra-credit. It is very much like the third, but you are checking for files that never should have been checked in, such as **bundle.js**. (In a loop like the one for the **gitIgnoreTest** you should **exec** code like this: **find . -iname <SOME_FILE>**)
@@ -440,3 +460,5 @@ Where I write "etc..." you need to write code to completely delete **system-envi
 [dcgrgb]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-react-get-branches.png
 [mc9]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-react-missing-c9.png
 [dcbad]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-bad-file-test.png
+[dcgit]: https://s3.amazonaws.com/bucket01.elvenware.com/images/docker-composer-git-ignore-tests.png
+[gitr]: https://github.com/charliecalvert/git-ignore-tests/blob/master/README.md
