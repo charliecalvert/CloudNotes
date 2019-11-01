@@ -139,6 +139,8 @@ I'm good with almost all HTML elements except:
 
 - BR
 
+Our HTML page should be about content, not about appearance. If you want to change the appearance of a page, use CSS. For instance, if you want to add a blank line, then use CSS to increase all or part of the margin for a relevant element. I'm not saying there are never any instances when **BR** is not a good solution, only that those are very rare cases and unlikely to be encountered in this assignment.
+
 Here are the CSS Properties we are using:
 
 - background-color

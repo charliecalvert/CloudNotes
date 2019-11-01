@@ -17,11 +17,9 @@ You will also learn how to use a very small JavaScript library.
 
 ## Get Started
 
-Create a directory called **ListButton** in your repository.
+Create a file called **assignments/list-button.html** in your repository. Use the Emmet **! + tab** command to create the basic HTML
 
-Create a file called **index.js** in the **ListButton** directory.
-
-Create a file called **index.html** in the **ListButton** directory. In **index.html** use the Emmet **! + tab** command to create the basic HTML.
+Link to your style sheet.
 
 You may need to format the generated HTML. To do so, press these keys: **Ctrl + Shift + P**. Then type **Format Code**. [Reference][fc]
 
@@ -62,7 +60,7 @@ Create a button that has an id of **set-text** and a **type** of **button**.
 
 ## Create a JavaScript File
 
-Create a file called **index.js**.
+Create a file called **assignment/list-buttom.js**.
 
 Put this content in it:
 
@@ -97,7 +95,7 @@ window.onload = () => {
 
 ## Link the JavaScript into our HTML File
 
-Finally, let's link the code into our HTML. At the end of the **head** element in **index.html** add this code:
+Finally, let's link the code into our HTML. At the end of the **head** element in **list-button.html** add this code:
 
 ```html
 <script src="index.js"></script>
@@ -135,7 +133,7 @@ const elfCode = {
 
 This code will allow us to dynamically add a list item (li) to an unordered list (ul) when a button is selected.
 
-After saving the code, you should add a second **script** tag to the **head** element in your HTML file. The **script** element should load **elf-code.js** and should be place just above the script element that loads **index.js**. The two script elements will be identical in every way except for the value of their **src** attributes.
+After saving the code, a second **script** tag to the **head** element in your HTML file. The **script** element should load **elf-code.js** and should be placed below the script element that loads **list-buttonjjjjjjjj.js**. The two script elements will be identical in every way except for the value of their **src** attributes.
 
 ## A Second Button and a UL Element
 
