@@ -232,7 +232,7 @@ services:
       - /usr/src/route-tester/node_modules/
 ```
 
-In  **package.json**:
+In  all three **package.json** files change the start script:
 
 ```json
 "scripts": {
@@ -241,6 +241,10 @@ In  **package.json**:
   "test": "jest"
 },
 ```
+
+Install **nodemon** in all three apps:
+
+    npm i -D nodemon
 
 <!--       -->
 <!-- links -->
