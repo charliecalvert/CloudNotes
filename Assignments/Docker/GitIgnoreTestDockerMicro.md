@@ -228,7 +228,7 @@ Still at a pretty funky stage because out of time, but here we check all branche
 
 ## Creating React Components
 
-When creating your React Component, you can borrow code from either eek01-react-basics or week03-rest-basics. Those assignments remind you of how to add a React components to an **express** or **create-react-app** project.
+When creating your React Component, you can borrow code from either **week01-react-basics** or **week03-rest-basics**. Those assignments remind you of how to add a React components to an **express** or **create-react-app** project.
 
 ## Docker Log
 

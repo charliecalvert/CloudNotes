@@ -181,7 +181,7 @@ Build: docker compose up %1
 Reset: docker compose down
 
 If this doesn't work, then do them one step at a time.
- 
+
 ## Push your results
 
 You can push your finished image to the Docker Hub:
@@ -202,6 +202,45 @@ Also:
 - DockerHub URL of your three images.
   - Use **docker push** to create them.
 - From Github I need branch and folder. It is usually also a good idea to create a tag in case there is any doubt as to exactly what I should look at.
+
+## Hot Updates
+
+Add volumes to **docker-compose.yml**
+
+```
+version: '3'
+services:
+  main:
+    build: main
+    ports:
+      - "30025:30025"
+    restart: always
+    command: npm start
+    volumes:
+      - ./main/:/usr/src/elf-main
+      - /usr/src/elf-main/node_modules/
+  route-tester:
+    build: route-tester
+    ports:
+      - "30028:30028"
+    restart: always
+    environment:
+      - NODE_ENV=production
+    command: npm start
+    volumes:
+      - ./route-tester/:/usr/src/route-tester
+      - /usr/src/route-tester/node_modules/
+```
+
+In  **package.json**:
+
+```json
+"scripts": {
+  "start": "npx webpack --watch & nodemon ./bin/www",
+  "build": "npx webpack",
+  "test": "jest"
+},
+```
 
 <!--       -->
 <!-- links -->
