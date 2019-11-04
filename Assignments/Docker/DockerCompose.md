@@ -277,6 +277,10 @@ If you can't get your repo into system-environment try this:
     ssh-add midterm-key     
     git clone git@github.com:charliecalvert/git-ignore-tests.git
 
+for instance:
+
+    docker exec -it week04-docker-composer_system-environment_1 bash
+
 Or do this in your **build**:
 
     cd system-environment && git clone git@github.com:charliecalvert/git-ignore-tests.git
