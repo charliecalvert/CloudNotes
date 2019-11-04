@@ -246,6 +246,35 @@ Install **nodemon** in all three apps:
 
     npm i -D nodemon
 
+In **system-environment/.gitignore**
+
+    midterm-key
+    fall2019
+    git-ignore-tests
+    isit320-calvert-2019
+
+In **system-environment/nodemon.json**:
+
+```json
+{
+  "verbose": true,
+  "ignore": ["**/bower_components/**", "**/git-ignore-tests/**"]
+}
+```
+
+## Repo Missing
+
+If you can't get your repo into system-environment try this:
+
+    docker exec -it <SYSTEM-ENVIRONMENT-CONTAINER-NAME> bash
+    eval `ssh-agent`
+    ssh-add midterm-key     
+    git clone git@github.com:charliecalvert/git-ignore-tests.git
+
+Or do this in your **build**:
+
+    cd system-environment && git clone git@github.com:charliecalvert/git-ignore-tests.git
+
 <!--       -->
 <!-- links -->
 <!--       -->
