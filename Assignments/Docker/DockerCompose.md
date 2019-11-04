@@ -255,7 +255,9 @@ If it does not already exist, create this file In **system-environment/.gitignor
     midterm-key
     fall2019
     git-ignore-tests
-    isit320-calvert-2019
+    isit320-lastname-2019
+
+Don't forget to modify **lastname** in your repo name found in the **.gitignore** file!    
 
 In **system-environment/nodemon.json**:
 
