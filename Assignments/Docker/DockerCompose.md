@@ -232,6 +232,10 @@ services:
       - /usr/src/route-tester/node_modules/
 ```
 
+**NOTE**: _By way of explanation, I'll add one short not on the volumes code in our YML file. After we copy the files over, this second volumes line says delete everything in node_modules in the container:_
+
+    - /usr/src/route-tester/node_modules/
+
 In  all three **package.json** files change the start script:
 
 ```json
@@ -246,7 +250,7 @@ Install **nodemon** in all three apps:
 
     npm i -D nodemon
 
-In **system-environment/.gitignore**
+If it does not already exist, create this file In **system-environment/.gitignore** and put this in it:
 
     midterm-key
     fall2019
