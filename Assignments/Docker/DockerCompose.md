@@ -272,7 +272,7 @@ In **system-environment/nodemon.json**:
 
 If you can't get your repo into system-environment try this:
 
-    docker exec -it <SYSTEM-ENVIRONMENT-CONTAINER-NAME> bash
+    docker exec -it &lt;SYSTEM-ENVIRONMENT-CONTAINER-NAME&gt; bash
     eval `ssh-agent`
     ssh-add midterm-key     
     git clone git@github.com:charliecalvert/git-ignore-tests.git
