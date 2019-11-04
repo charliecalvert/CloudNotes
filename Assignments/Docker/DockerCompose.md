@@ -257,7 +257,7 @@ If it does not already exist, create this file In **system-environment/.gitignor
     git-ignore-tests
     isit320-lastname-2019
 
-Don't forget to modify **lastname** in your repo name found in the **.gitignore** file!    
+Don't forget to modify **lastname** in your repo name found in the **.gitignore** file! Use your common sense. What don't you want to check in to GitHub? Whatever it is, put it in the **.gitignore** file.    
 
 In **system-environment/nodemon.json**:
 
