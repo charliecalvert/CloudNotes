@@ -238,7 +238,7 @@ services:
     environment:
       - NODE_ENV=production
     command: npm start
-    volumes
+    volumes:
       - ./system-environment/bin:/usr/src/system-environment/bin
       - ./system-environment/public:/usr/src/system-environment/public
       - ./system-environment/routes:/usr/src/system-environment/routes
