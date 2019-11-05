@@ -222,7 +222,7 @@ services:
   route-tester:
     build: route-tester
     ports:
-      - "30028:30028"
+      - "30029:30029"
     restart: always
     environment:
       - NODE_ENV=production
@@ -270,12 +270,6 @@ In **system-environment/nodemon.json**:
 
 ## Repo Missing
 
-If you can't get your repo into system-environment try this:
-
-    docker exec -it &lt;SYSTEM-ENVIRONMENT-CONTAINER-NAME&gt; bash
-    eval `ssh-agent`
-    ssh-add midterm-key     
-    git clone git@github.com:charliecalvert/git-ignore-tests.git
 
 for instance:
 
@@ -284,6 +278,13 @@ for instance:
 Or do this in your **build**:
 
     cd system-environment && git clone git@github.com:charliecalvert/git-ignore-tests.git
+
+Don't do this: If you can't get your repo into system-environment don't try this:
+
+    docker exec -it &lt;SYSTEM-ENVIRONMENT-CONTAINER-NAME&gt; bash
+    eval `ssh-agent`
+    ssh-add midterm-key     
+    git clone git@github.com:charliecalvert/git-ignore-tests.git
 
 <!--       -->
 <!-- links -->
