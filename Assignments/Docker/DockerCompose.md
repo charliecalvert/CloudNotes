@@ -247,6 +247,8 @@ services:
       - /usr/src/route-tester/node_modules/
 ```
 
+The volumes section for system-environment is designed to not touch the root folder of system-environment, which should make it possible for us to clone our repo using the technique found in our Dockerfiles.
+
 **NOTE**: _By way of explanation, I'll add one short not on the volumes code in our YML file. After we copy the files over, this second volumes line says delete everything in node_modules in the container:_
 
     - /usr/src/route-tester/node_modules/
