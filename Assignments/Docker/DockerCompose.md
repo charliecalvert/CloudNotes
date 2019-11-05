@@ -222,7 +222,7 @@ services:
   route-tester:
     build: route-tester
     ports:
-      - "30028:30028"
+      - "30029:30029"
     restart: always
     environment:
       - NODE_ENV=production
@@ -247,7 +247,11 @@ services:
       - /usr/src/route-tester/node_modules/
 ```
 
-In  **package.json**:
+**NOTE**: _By way of explanation, I'll add one short not on the volumes code in our YML file. After we copy the files over, this second volumes line says delete everything in node_modules in the container:_
+
+    - /usr/src/route-tester/node_modules/
+
+In  all three **package.json** files change the start script:
 
 ```json
 "scripts": {
@@ -256,6 +260,46 @@ In  **package.json**:
   "test": "jest"
 },
 ```
+
+Install **nodemon** in all three apps:
+
+    npm i -D nodemon
+
+If it does not already exist, create this file In **system-environment/.gitignore** and put this in it:
+
+    midterm-key
+    fall2019
+    git-ignore-tests
+    isit320-lastname-2019
+
+Don't forget to modify **lastname** in your repo name found in the **.gitignore** file! Use your common sense. What don't you want to check in to GitHub? Whatever it is, put it in the **.gitignore** file.    
+
+In **system-environment/nodemon.json**:
+
+```json
+{
+  "verbose": true,
+  "ignore": ["**/bower_components/**", "**/git-ignore-tests/**"]
+}
+```
+
+## Repo Missing
+
+
+for instance:
+
+    docker exec -it week04-docker-composer_system-environment_1 bash
+
+Or do this in your **build**:
+
+    cd system-environment && git clone git@github.com:charliecalvert/git-ignore-tests.git
+
+Don't do this: If you can't get your repo into system-environment don't try this:
+
+    docker exec -it &lt;SYSTEM-ENVIRONMENT-CONTAINER-NAME&gt; bash
+    eval `ssh-agent`
+    ssh-add midterm-key     
+    git clone git@github.com:charliecalvert/git-ignore-tests.git
 
 <!--       -->
 <!-- links -->
