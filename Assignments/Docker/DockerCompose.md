@@ -230,6 +230,21 @@ services:
     volumes:
       - ./route-tester/:/usr/src/route-tester
       - /usr/src/route-tester/node_modules/
+  system-environment:
+    build: system-environment
+    ports:
+      - "30028:30028"
+    restart: always
+    environment:
+      - NODE_ENV=production
+    command: npm start
+    volumes
+      - ./system-environment/bin:/usr/src/system-environment/bin
+      - ./system-environment/public:/usr/src/system-environment/public
+      - ./system-environment/routes:/usr/src/system-environment/routes
+      - ./system-environment/routes:/usr/src/system-environment/views
+      - ./system-environment/app.js:/usr/src/system-environment/app.js
+      - /usr/src/route-tester/node_modules/
 ```
 
 In  **package.json**:
