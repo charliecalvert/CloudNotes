@@ -242,7 +242,7 @@ services:
       - ./system-environment/bin:/usr/src/system-environment/bin
       - ./system-environment/public:/usr/src/system-environment/public
       - ./system-environment/routes:/usr/src/system-environment/routes
-      - ./system-environment/routes:/usr/src/system-environment/views
+      - ./system-environment/views:/usr/src/system-environment/views
       - ./system-environment/app.js:/usr/src/system-environment/app.js
       - /usr/src/route-tester/node_modules/
 ```

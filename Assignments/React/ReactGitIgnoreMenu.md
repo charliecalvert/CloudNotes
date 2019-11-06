@@ -185,6 +185,6 @@ You will also need to modify your Switch:
 
 I will want branch, folder, and a tag if you have one. A commit ID would also work.
 
-One strategy might be to do this work on a **week07** a branch and put the **my-midterm** project on your **midterm** branch. Note that having this code in your midterm is extra-credit.
+One strategy might be to do this work on a **week08** branch and put the **my-midterm** project on your **midterm** branch. Note that having this code in your midterm is extra-credit.
 
 [mdaa]: https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html#fetchawait
