@@ -172,6 +172,15 @@ async function checkGitIgnore(response) {
 
 For extra credit, implement getBranches, otherwise, just hard code in the branch names for now.
 
+A demo:
+
+- [PromisifyNodeFs on JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/PromisifyNodeFs)
+
+The demo screenshot:
+
+![](https://s3.amazonaws.com/bucket01.elvenware.com/images/promisify-node-fs.png)
+
+
 ## Turn it in
 
 Import checkGitIgnore from **exec-git.js**. Create a route for it in **index.js**.

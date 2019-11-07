@@ -77,6 +77,14 @@ for (let branch of allBranches) {
 
 Of course, this code is not valid, you need to call the appropriate functions and handle their return values.
 
+A demo:
+
+- [PromisifyNodeFs on JsObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/PromisifyNodeFs)
+
+The demo screenshot:
+
+![](https://s3.amazonaws.com/bucket01.elvenware.com/images/promisify-node-fs.png)
+
 ## Bad Files
 
 The bad files must be in **.gitignore** and should not be in the repository file system.
