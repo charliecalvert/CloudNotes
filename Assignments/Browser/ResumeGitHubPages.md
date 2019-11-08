@@ -78,7 +78,7 @@ Right URL for GitHub Pages:
 
 Wrong URL for GitHub Pages:
 
-  https://github.com/github-user-name/github-user-name.github.io
+    https://github.com/github-user-name/github-user-name.github.io
 
 Pasting it into the address bar of a browser should lead to your **index.html** on the world wide web. You probably won't see the filename **index.html**, but the contents of that file should be what is displayed. This is because **index.html** is the default page for most websites. If you don't specify some other specific page, then that is what you shall see.
 
