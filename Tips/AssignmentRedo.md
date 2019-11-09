@@ -47,6 +47,14 @@ When you see any grade of 5 or below, you can assume that I am asking for a redo
 
 Just to be clear, I give out these grades frequently, so if you find you got a 5 on an assignment, don't panic or feel that you are being singled out. I'm simply saying: "Look, there was some kind of misunderstanding or carelessness here, let's just try again."
 
+Suppose there are 30 students in a class. In order to check if anyone has made a new comment on an assignment, I would have to go through 30 student's assignments, perhaps once a day. Since there are 20 or 30 assignments in a typical course, that is not practical. By the end of the course, that would require me to look through 400 or 500 assignments each day.
+
+Think of it this way. When you resubmit, that tells Canvas to send me a message saying that I need to look at your assignment and see what needs to be done. If you also add a meaningful not when you resubmit, then I can usually asses the situation quickly, thereby getting you your grade in a (hopefully) timely manner, and then I would be able to go on to the next student's work and grade it as well.
+
+If you did not resubmit, then I would have to go through all of every student's assignments on a regular basis to see if something had changed. It would probably take me several days to complete that task, leaving me little room to actually grade assignments or prepare for class. But if you resubmit, I know just where to go and can usually see just what I need to focus on.
+
+I understand that all this is not always obvious from a student's perspective. Hopefully, this explanation helps you understand why I put so much focus on student's resubmitting the work. It helps me, it helps the student, and it helps the rest of the class.
+
 ## You Must Resubmit the Assignment {#resubmit}
 
 Let me try to explain a bit more about why I do things this way. I need a way to mark that I have processed an assignment. Given the way Canvas works, the best way to do that is to give the assignment a grade. If I want a redo, then I give you a low grade, and Canvas stops bugging me to grade the assignment. My part of the job is done for now. Now the ball is in the student's court. It is up to them to redo the assignment. When they resubmit it, then it will appear on my to-do list again, and I can go back and regrade it. The low grade is designed to motivate the student to complete the redo, but it is not meant to scare anyone, or to single any one out for unfair treatment.
