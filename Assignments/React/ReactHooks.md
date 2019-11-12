@@ -170,6 +170,14 @@ DOM and to Hooks. You can leave your midterm code in the **midterm**
 branch. But I want you to create a new branch called **week09** and to convert
 the components in your midterm to React Hooks.
 
+You should end up with at least four React Function components that use hooks
+and that can be accessed via the React Router DOM menu:
+
+- YouRang
+- GetBranches
+- GitIgnoreTests
+- BadFileTests
+
 **NOTE**: _It is up to you whether you start your conversion with React Router
 DOM or React Hooks. Perhaps in some cases you might do both things in single
 step: first create a new component based on hooks, then make sure it can be
