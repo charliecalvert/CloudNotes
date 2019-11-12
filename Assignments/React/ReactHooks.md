@@ -15,7 +15,7 @@ Go to the command prompt and checkout the hooks branch:
 
     git checkout hooks
 
-Navigate into **git-tester** and run **build**.
+Navigate into **git-tester** and run the **build** script.
 
 ![git-ignore-tests-hooks-get-branches][gh]
 
@@ -38,17 +38,17 @@ We use the keyword **function** rather than **class**, and we don't **extend** a
 since we no longer have classes and inheritance.
 
 **NOTE**: _Which are better: functions or classes? I think this is probably
-the wrong question. Instead, we ask about the trade offs. What is good and
+the wrong question. Instead, we ask about the trade-offs. What is good and
 bad about classes? What is good and bad about functions? What do we gain or
 lose by switching between them? To learn more, try [this Google search][gs] or
 one like it._
 
 ## The return Statement
 
-Another big change is that we use a simple return statement rather than
-the **React.Component** render method. To illustrate this, I'll go all the
-way back to week one, and revisit the function component in our React Basics
-assignment:
+Another significant change is that we use a simple **return** statement
+rather than the **React.Component** render method. To illustrate this,
+I'll go back to week one, and revisit the function component in our
+React Basics assignment:
 
 ```javascript
 import React from 'react';
@@ -70,7 +70,7 @@ export function ReactBasicsFunctionComponent() {
 }
 ```
 
-Hopefully you see that these are two ways of doing the same thing.
+Hopefully, you see that these are two ways of doing the same thing.
 
 At any rate, you should compare the examples above to the code in our demo
 and see that they both have the same structure. The differences are in the
@@ -107,7 +107,7 @@ The key takeaway here is that we no longer initialize state in
 a constructor. Instead, we create state by writing statements
 like the one shown above.
 
-So far, the tradeoffs between the old class syntax and the new
+So far, the trade-offs between the old class syntax and the new
 hooks syntax come close to being a wash. It takes work to create
 a **constructor** and declare state, but it also takes quite a bit
 of code to write the new syntax, particularly if you want to declare
@@ -115,8 +115,8 @@ multiple bits of state. It's also worth noting that most developers
 understand constructors and know what should happen in them, but the
 hooks syntax is unique to hooks and unfamiliar to most developers.
 
-Having said this, we can now turn to see how React Hooks are used in our
-program. Here we see how Hooks greatly simplifies our code.
+Having said this, we can now turn to study more of the syntax employed
+by React Hooks. Here we see how Hooks simplifies our code.
 
 Instead of calling **this.setState**, we can now call **setBranches**:
 
@@ -136,7 +136,7 @@ async function queryGetBranches() {
 This is very intuitive to me, because I know exactly what the function does:
 it sets our **branches** variable.
 
-Here is how use **branches** in our code down in the return statement:
+Here is how to use **branches** in our code down in the return statement:
 
 ```javascript
 {branches.map((branch, index) => { ... })}
@@ -150,18 +150,19 @@ For me, this is simpler than writing:
 
 ## Thumbsucker
 
-React Hooks really do simplify our code, but I am not so happy about losing
-React Class components because I like the class syntax.
+React Hooks do simplify our code, but I am not so happy about losing
+React Class Components because I like the class syntax.
 
 Regardless of how resistant to change I may be, it looks as though React Hooks
 are going to play an increasingly large roll in the future of React. Hooks
 first showed up about a year ago (Fall, 2018). Now they are embraced heavily
-both by the React team and large portions of the community.
+both by the React team and large portions of the React community.
 
-We can use React Hooks and React Class Components in the same application. So
-we need not move over all at once. Nothing is certain, but right now it
-certainly looks as though new development should be based on React hooks.
-It is the wave of the future.
+**NOTE**: _We can use React Hooks and React Class Components in the
+same application. So we need not move over all our code at once._
+
+Nothing is certain, but right now it certainly looks as though new
+development should be based on React hooks. It is the wave of the future.
 
 ## Turn it in
 
@@ -179,7 +180,7 @@ and that can be accessed via the React Router DOM menu:
 - BadFileTests
 
 **NOTE**: _It is up to you whether you start your conversion with React Router
-DOM or React Hooks. Perhaps in some cases you might do both things in single
+DOM or React Hooks. Perhaps in some cases you might do both things in a single
 step: first create a new component based on hooks, then make sure it can be
 created and displayed via a React Router DOM menu._
 
