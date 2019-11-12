@@ -395,6 +395,10 @@ it('renders without crashing', () => {
 
 - [ElfEnzymeDebug][eed]
 
+<!--       -->
+<!-- links -->
+<!--       -->
+
 [eed]: https://gist.github.com/charliecalvert/51daef341699943b07c9570c3ad2cbab
 
 [fct]: https://github.com/charliecalvert/elven-sanity/blob/master/isit322-midterm-2019/client/Sanity.User.FieldChecks.test.js

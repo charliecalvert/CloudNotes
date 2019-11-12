@@ -14,6 +14,25 @@ With **react-router-dom** we can use a similar URL to switch from one React comp
 
 In short React Router DOM is routing for the client.
 
+## Demo
+
+We have a demo of you to use React Router DOM in or **git-ignore-tests** repository. Clone
+a copy of the repo into the **Git** directory:
+
+    cd ~/Git
+    git clone git@github.com:charliecalvert/git-ignore-tests.git
+
+For this exercise, we don't want to be using a copy of the repo that is
+involved with our midterm or anything else. Just clone it directly into the
+**~/Git** directory (The **gd** alias gets you there).
+
+Go to the command prompt and checkout the **router-dom** branch:
+
+    git checkout router-dom
+
+Navigate into **git-tester** and run **build**.
+
+
 ## Setup
 
     npm i react-router-dom
@@ -186,5 +205,9 @@ You will also need to modify your Switch:
 I will want branch, folder, and a tag if you have one. A commit ID would also work.
 
 One strategy might be to do this work on a **week08** branch and put the **my-midterm** project on your **midterm** branch. Note that having this code in your midterm is extra-credit.
+
+<!--       -->
+<!-- links -->
+<!--       -->
 
 [mdaa]: https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html#fetchawait
