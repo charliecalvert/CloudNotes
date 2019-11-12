@@ -32,6 +32,7 @@ Go to the command prompt and checkout the **router-dom** branch:
 
 Navigate into **git-tester** and run **build**.
 
+![git-ignore-tests-router-dom-get-branches][grd]
 
 ## Setup
 
@@ -211,3 +212,4 @@ One strategy might be to do this work on a **week08** branch and put the **my-mi
 <!--       -->
 
 [mdaa]: https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html#fetchawait
+[grd]: https://s3.amazonaws.com/bucket01.elvenware.com/images/git-ignore-tests-router-dom-get-branches.png
