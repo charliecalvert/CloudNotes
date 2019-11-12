@@ -457,6 +457,41 @@ Compare this code to the code in **ReactBasics.js**.
 
 These are two ways of saying the same thing. Pick the way that you prefer.
 
+Here is another example of using two ways to same thing:
+
+```javascript
+import React from 'react';
+
+const ReactBasicsFunctionComponent = () => (
+    <h1>An H1 element in a React Function Component with fat arrow</h1>
+);
+
+function FunctionComponentReturn() {
+    return(
+        <h1>An H1 element in a React Function Component with return</h1>
+    );
+}
+
+export { ReactBasicsFunctionComponent, FunctionComponentReturn };
+```
+
+We could then do this to render all three components:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactBasics from './ReactBasics';
+import { FunctionComponentReturn, ReactBasicsFunctionComponent } from "./ReactBasicsFunctionComponent";
+
+ReactDOM.render(
+    <React.Fragment>
+        <ReactBasics/>
+        <FunctionComponentReturn/>
+        <ReactBasicsFunctionComponent/>
+    </React.Fragment>,
+    document.getElementById("root")
+);
+```
 ## Link in Function Components
 
 Modify **main.js** by removing the reference to **ReactBasics.js** and replacing it with a reference to **ReactBasicsFunctionComponent.js**.
