@@ -116,12 +116,64 @@ understand constructors and know what should happen in them, but the
 hooks syntax is unique to hooks and unfamiliar to most developers.
 
 Having said this, we can now turn to see how React Hooks are used in our
-program. Here we see how 
+program. Here we see how Hooks greatly simplifies our code.
 
+Instead of calling **this.setState**, we can now call **setBranches**:
 
+```javascript
+async function queryGetBranches() {
+    try {
+        let response = await fetch('/system-environment/getBranches');
+        let result = await response.json();
+        console.log(result);
+        setBranches(result.branches);
+    } catch (ex) {
+        alert(ex);
+    }
+}
+```
 
-## Understand useState
+This is very intuitive to me, because I know exactly what the function does:
+it sets our **branches** variable.
 
+Here is how use **branches** in our code down in the return statement:
+
+```javascript
+{branches.map((branch, index) => { ... })}
+```
+
+For me, this is simpler than writing:
+
+```javascript
+{this.state.branches.map((branch, index) => { ... })}
+```
+
+## Thumbsucker
+
+React Hooks really do simplify our code, but I am not so happy about losing
+React Class components because I like the class syntax.
+
+Regardless of how resistant to change I may be, it looks as though React Hooks
+are going to play an increasingly large roll in the future of React. Hooks
+first showed up about a year ago (Fall, 2018). Now they are embraced heavily
+both by the React team and large portions of the community.
+
+We can use React Hooks and React Class Components in the same application. So
+we need not move over all at once. Nothing is certain, but right now it
+certainly looks as though new development should be based on React hooks.
+It is the wave of the future.
+
+## Turn it in
+
+Our goal for this week is to have our midterm code moved over to both React Router
+DOM and to Hooks. You can leave your midterm code in the **midterm**
+branch. But I want you to create a new branch called **week09** and to convert
+the components in your midterm to React Hooks.
+
+**NOTE**: _It is up to you whether you start your conversion with React Router
+DOM or React Hooks. Perhaps in some cases you might do both things in single
+step: first create a new component based on hooks, then make sure it can be
+created and displayed via a React Router DOM menu._
 
 
 <!--       -->
