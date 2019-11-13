@@ -26,20 +26,19 @@ Create or use a folder called one of the following:
 - Prog109: Use your **javascript-tests** directory.
 - Others: Create a directory called **Week0X-JavaScriptObjects**, where X is the current week.
 
-Inside it create a single file called **work.js**. In that file build a JavaScript object literal called **person** with two properties:
+Inside it create a single file called **javascript-objects-work.js**. In that file build a JavaScript object literal called **person** with two properties:
 
 * firstName
 * lastName
 
 Set them to _your_ first and last names. Write the two properties to the console with **console.log()**.
 
-**NOTE**: _You do not have to run this code from an HTML file or as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single nodejs file called **work.js** that runs from the command line. Some students in advanced courses might want to use other tools such as EsLint or Prettier._
+**NOTE**: _You do not have to run this code from an HTML file or as an Express program in a browser. But if you want to do things that way, I will not take off for it. But really, it is simpler for me if this program just stays in a single nodejs file called **javascript-objects-work.js** that runs from the command line. Some students in advanced courses might want to use other tools such as EsLint or Prettier._
 
 Now run it by typing something like:
 
 ```
-cd Week02-JavaScriptObjects
-node work.js
+node javascript-objects-work.js
 ```
 
 The output should look something like this:
@@ -54,7 +53,7 @@ Washington
 Add a **fullName** method to the **person** object. Make it part of the Object literal. The method should concatenate the first and last names, and return the result. Call the method and print out the return value with **console.log**.
 
 ```
-node work.js
+node javascript-objects-work.js
 George
 Washington
 George Washington
@@ -132,7 +131,7 @@ console.log('operand01 =', calculator.operand01);
 And produced output like this:
 
 ```bash
-$ node work.js
+$ node javascript-objects-work.js
 ====================================
 Person
 ====================================
@@ -154,7 +153,11 @@ Multiply length of first anhd lastNames:  60
 
 Unless your name is George Washington, your output will probably differ, but this should give you some general idea of what to produce.
 
+**NOTE**: _Prog109 students can ignore the following sections on formatting and testing. Instead, they should skip to directly to the [Turn it in](#turn-it-in) section._
+
 ## Format and Check
+
+**NOTE**: _Prog109 students should skip this section._
 
 Code is not complete until it is properly formatted and free of at least certain obvious errors. In Pristine Lubuntu there is a script called **get-gist.** Run it and select the first item from the menu.
 
@@ -193,14 +196,14 @@ drwxrwxr-x  3 charlie charlie 4096 Nov 30 17:38 .idea/
 -rwxr-xr-x  1 charlie charlie  219 Apr 10 20:12 prettier*
 -rw-r--r--  1 charlie charlie   55 Apr 10 20:12 .prettierignore
 -rw-r--r--  1 charlie charlie   46 Apr 10 20:12 .prettierrc
--rwxrwxr-x  1 charlie charlie 1490 Apr 20  2018 work.js*
+-rwxrwxr-x  1 charlie charlie 1490 Apr 20  2018 javascript-objects-work.js*
 ```
 
 Run prettier like this:
 
 ```code
 ./prettier
-work.js 42ms
+javascript-objects-work.js 42ms
 ```
 
 Now run eslint by typing **eslint** followed by a space and period and then hitting **enter**:
@@ -217,6 +220,8 @@ If you want to learn more, review these assignments, but don't try to turn them 
 - [Get Gist][gg]
 
 ## Setup Unit Test {#test-setup}
+
+**NOTE**: _Prog109 students should skip this section._
 
 Run **npm init** and then fill in the fields a bit like I do in this listing:
 
@@ -235,7 +240,7 @@ Press ^C at any time to quit.
 package name: (javascriptobjects)
 version: (1.0.0)
 description: Learn JavaScript Objects
-entry point: (work.js)
+entry point: (javascript-objects-work.js)
 test command: jest
 git repository: https://github.com/charliecalvert/prog272-calvert-2019
 keywords: JavaScript Objects
@@ -261,7 +266,7 @@ Add this to your package.json file:
 
 ```javascript
 "scripts": {
-  "start": "node work.js",
+  "start": "node javascript-objects-work.js",
   "test": "jest"
 },
 ```
@@ -273,9 +278,9 @@ Your **package.json** file might now look a bit like this:
   "name": "javascriptobjects",
   "version": "1.0.0",
   "description": "Learn JavaScript Objects",
-  "main": "work.js",
+  "main": "javascript-objects-work.js",
   "scripts": {
-    "start": "node work.js",
+    "start": "node javascript-objects-work.js",
     "test": "jest"
   },
   "repository": {
@@ -302,15 +307,17 @@ Notice the **scripts** and **dependencies** properties. Notice also that JSON is
 
 ## Write the Test {#write-test}
 
-At the bottom of **work.js** add this line:
+**NOTE**: _Prog109 students should skip this section._
+
+At the bottom of **javascript-objects-work.js** add this line:
 
 ```JavaScript
 module.exports = calculator;
 ```
 
-This gives us access to the **calculator** object from outside of **work.js**. More explicitly, it **exports** the **calculator** object from the **work.js** module. Below you will see how to import it into another module using **require**. (For now, you can think of **module** and the words **JavaScript file** as being nearly synonymous terms.)
+This gives us access to the **calculator** object from outside of **javascript-objects-work.js**. More explicitly, it **exports** the **calculator** object from the **javascript-objects-work.js** module. Below you will see how to import it into another module using **require**. (For now, you can think of **module** and the words **JavaScript file** as being nearly synonymous terms.)
 
-Create a file called **work.test.js** in the same directory as **work.js**:
+Create a file called **work.test.js** in the same directory as **javascript-objects-work.js**:
 
 ```javascript
 const calculator = require('./work');
@@ -320,7 +327,7 @@ test('proves that multiply returns 24 if passed 2 and 12', () => {
 });
 ```
 
-This code first uses **require** to import the **calculator** object from **work.js** and then runs a test against it proving that its **multiply** method works correctly.
+This code first uses **require** to import the **calculator** object from **javascript-objects-work.js** and then runs a test against it proving that its **multiply** method works correctly.
 
 Because of the way we have set this up, we get a lot of extraneous output from our **console.log** statements. But if you ignore them for now, the output looks a bit like this:
 
@@ -333,18 +340,18 @@ $ npm test
  PASS  ./work.test.js
   ✓ proves that multiply returns 24 if passed 2 and 12 (2ms)
 
-  console.log work.js:39
+  console.log javascript-objects-work.js:39
 
     ====================================
 
-  console.log work.js:40
+  console.log javascript-objects-work.js:40
     Person
 
-  console.log work.js:41
+  console.log javascript-objects-work.js:41
     ====================================
 
 
-  console.log work.js:14
+  console.log javascript-objects-work.js:14
     First Name: George
 
    // LOTS OF OUTPUT OMITTED HERE
@@ -357,7 +364,7 @@ Ran all test suites.
 ```
 
 
-## Turn it in
+## Turn it in {#turn-it-in}
 
 Save your work to your repository. Submit the url of your project and/or the directory in which you did your work.
 
@@ -373,7 +380,9 @@ If you unclear what all this means, look at the JavaScript Basics slide deck aga
 
 ## Hint for Linux Users {#linux-hint}
 
-You can put a hash bang at the top of a file like **work.js**:
+**NOTE**: _Prog109 students should skip this section._
+
+You can put a hash bang at the top of a file like **javascript-objects-work.js**:
 
 ```javascript
 #!/usr/bin/env node
@@ -386,13 +395,13 @@ var person = {
 Then mark it as executable:
 
 ```bash
-chmod +x work.js
+chmod +x javascript-objects-work.js
 ```
 
 Now you can start it like this:
 
 ```bash
-./work.js
+./javascript-objects-work.js
 ```
 
 <!--       -->
