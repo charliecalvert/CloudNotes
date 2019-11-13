@@ -1,6 +1,6 @@
 ## Overview
 
-React Hooks, at the time of this writing (2019-11), have been around for about one year.
+[React Hooks](https://reactjs.org/docs/hooks-intro.html), at the time of this writing (2019-11), have been around for about one year.
 
 At this stage, it is clear that Hooks are here to stay. The React team plans to build many future technologies on top of React Hooks.
 
