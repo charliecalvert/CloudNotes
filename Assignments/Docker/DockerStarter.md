@@ -6,6 +6,14 @@ This assignment will help you install and start using Docker.
 
 The opening sections of this assignment are very important, but if you have done them already, and just want to skip to the core part of the assignement, go [here](#core-assignment).
 
+## Docker is very Popular
+
+Docker is a giant in the developer world. It is the third most important Developer Platform, ahead of both Android and iOS, according to the 90,000 developers who responded to the [StackOverflow developer survey](https://insights.stackoverflow.com/survey/2019#technology-_-platforms):
+
+![StackOverflow Survey Results](https://s3.amazonaws.com/bucket01.elvenware.com/images/stack-overflow-survey-platforms.png)
+
+As you can see, Docker is the third most important platform for developers, ahead of MacOS and AWS. In short, the only thing developers are less likely to give up are their primary operating systems: Linux and Windows. It is difficult to overestimate the importance of this technology in our world.
+
 ## Docker Install
 
 Install the [Docker Community Edition](https://docs.docker.com/install/linux/docker-ce/ubuntu/) on Ubuntu.
