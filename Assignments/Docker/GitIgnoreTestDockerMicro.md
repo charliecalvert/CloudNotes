@@ -252,13 +252,15 @@ where your docker-compose YML file is located and do this:
 
     docker-compose logs
 
-## Hints
+## Branch Bash Script
 
 Get branch names:
 
 ```bash
 git branch -a | sed -n -e 's/remotes.origin*.//p' | grep -v 'HEAD'
 ```
+
+## Loading CSS {#hints}
 
 If you want a program based on React Basics to load CSS files, then you need to run **npm i --save-dev css-loader style-loader** in **Main** and add a bit to webpack under **module/rules**:
 
