@@ -109,6 +109,12 @@ Don't forget to make your script executable:
 
 When you push, the first image takes some time, but the second two go quickly because they are so similar to the first. Perhaps this because all three Node JS Express programs share a lot of code. It takes time to push the first one, but the second two go much more quickly since much of the code is identical. Maybe.
 
+## Create Symbolic Link
+
+Suppose you are working in the **week01-docker-compose** or **midterm-lastname** folder and you wanted to create a symbolic link to the script you created in the **scripts** folder. You would do this so you could call the script from either folder. Here is how to create the link:
+
+    ln -s ../scripts/push-images-to-docker-hub .
+
 ## View Tags
 
 To see the tags you created locally, run this command and look for the tags field:
@@ -141,11 +147,19 @@ Now write code to pull your image and create a container that uses the **elfnet*
     docker pull &lt;YOUR GIT HUB IMAGE NAME&gt;:version$1
     docker container run --name main -d -p 30025:30025 --network elfnet &lt;YOUR GIT HUB IMAGE NAME&gt;:version$1
 
-Remember that the Docker Hub image name includes your Docker Hub username.    
+Remember that the Docker Hub image name includes your Docker Hub username.
+
+Take one moment more to remember exactly why you are creating the script: if you are on a machine that has Docker installed but does not have your images on it, then running this script should start the program running. In particular, after running the script, you should be able to go to the browser, type http://localhost:30025 in the address bar, and access all the features of your program.
 
 ## Copy the script {#copy-script}
 
 Look [in the ConfigureLinux document][ssh-copy] to refresh your memory about how to copy files from one machine to another.
 
-[ssh-copy]
+Copy the script to a remote machine and run it. Then access your program in a browser and make sure it works.
+
+## Turn it in
+
+Write your scripts. Push them. Specify folder, branch and optionally a tag. In the text page of the Canvas submission page, paste in a URL I can click on to see your code in action.
+
+[ssh-copy]: https://www.elvenware.com/os-guide/linux/ConfigureLinux.html#more-on-ssh-keys
 [tag]: https://docs.docker.com/engine/reference/commandline/tag/
