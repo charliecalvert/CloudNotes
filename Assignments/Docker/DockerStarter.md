@@ -217,9 +217,13 @@ Note that we pass in the **ID** or **name** of a container to the above commands
 
 ## Docker Push
 
+You first need to create a tag that includes your Docker Hub user name:
+
+    docker tag my-image:latest charliecalvert/my-image:try
+
 To push an image created by user **charliecalvert** called **makehtml04** to the cloud, do this:
 
-    docker push charliecalvert/foobar
+    docker push charliecalvert/my-image:try
 
 ## Delete an image
 
