@@ -51,6 +51,8 @@ Then we can push it like this:
 
     docker push jane_doe/gitignore_main:try
 
+The most important step is to give me a script that works, but I would also like you to use **gitignore_main**, **gitignore_router-tester** and **gitignore_system-environment** in your tags. In other words, the user name will vary throughout the class, but the rest of the tag should follow a standard.     
+
 ## Create the Push Script {#create-push}    
 
 As you know, a bash script begins like this:
