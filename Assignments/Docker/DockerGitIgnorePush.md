@@ -41,7 +41,7 @@ However, the name on your system could very easily differ from this, as the dire
 
 Once we know the image name, we generally create a tag for the image with a command that uses your Docker Hub user name:
 
-    docker tag <IMAGE-NAME>\_main:latest <DOCKER HUB USERNAME>gitignore_main:firsttry
+    docker tag &lt;IMAGE-NAME&gt;&lowbar;main:latest &lt;DOCKER HUB USERNAME&gt;gitignore_main:firsttry
 
 Perhaps a bit like this:
 
@@ -64,7 +64,7 @@ And you'll never guess the next part: I want you to fill in the rest of the scri
 Organization, including casing:
 
 - I think the branch should be **week09**.
-- Put you code in a directory called **scripts**
+- Put your code in a directory called **scripts**
 - Call it **push_images_to_docker_hub**
 
 ## Deploy: Pull GitIgnore {#deploy}
