@@ -13,3 +13,5 @@ Something like this might work:
   "ignore": ["**/bower_components/**", "**/isit32*/**", "**/git-ignore-tests/**"]
 }
 ```
+
+**NOTE**: _This is a weak point in our app. Right now the glob statement that contains **isit32** will meet our purposes. However, this program could be used to check many repos with arbitrary names. We could probably solve this problem by putting our repos in a **Git** folder or a folder with some similar name. However, I'm reluctant to introduce that change just now, so I'll put off a decision on this issue until later._

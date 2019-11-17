@@ -51,7 +51,9 @@ Then we can push it like this:
 
     docker push jane_doe/gitignore_main:version1.0
 
-The most important step is to give me a script that works, but I would also like you to use **gitignore_main**, **gitignore_router-tester** and **gitignore_system-environment** in your tags. In other words, the user name will vary throughout the class, but the rest of the tag should follow a standard.     
+The most important step is to give me a script that works, but I would also like you to use **gitignore_main**, **gitignore_router-tester** and **gitignore_system-environment** in your tags. In other words, the user name will vary throughout the class, but the rest of the tag should follow a standard.
+
+**NOTE**: _There is a **docker-compose push** but I was having trouble getting it to work or getting help with it. If one of us finds time to figure out if or how it works, then that is all to the good. In the meantime, I, and perhaps some of you, need more practice learning how to push docker images. It is a skill all Docker developers need, so I think it is very useful to have this opportunity to increase our familiarity with it._
 
 ## Create the Push Script {#create-push}    
 
@@ -85,28 +87,37 @@ if [[ -z $1  ]]; then
 fi
 ```
 
-And you'll never guess the next part: I want you to fill in the rest of the script with code that tags and pushes your three docker images!
+Inside your script, you can access the parameter passed in with **$1** symbol. Here is 01 hardcoded in:
+
+    docker tag midterm_main:latest jane_doe/gitignore_main:version01
+
+Here is what it looks like to provide a way to make the version number vary depending on the parameter passed to the script:    
+
+    docker tag midterm_main:latest jane_doe/gitignore_main:version$1
+
+you'll never guess the next part: I want you to fill in the rest of the script with code that tags and pushes your three docker images! Be sure to make all the relevant replacements of **01** with **$1**.
 
 Organization, including casing:
 
 - I think the branch should be **week09**.
 - Put your code in a directory called **scripts**
-- Call it **push_images_to_docker_hub**
+- Call it **push-images-to-docker-hub**
 
 Don't forget to make your script executable:
 
     chmod +x push_images_to_docker_hub
 
+When you push, the first image takes some time, but the second two go quickly because they are so similar to the first. Perhaps this because all three Node JS Express programs share a lot of code. It takes time to push the first one, but the second two go much more quickly since much of the code is identical. Maybe.
+
 ## View Tags
 
-To see the tags you created locally, run:
+To see the tags you created locally, run this command and look for the tags field:
 
     docker image ls
-    
+
 To view tags on pushed images, start with a command like this:
 
 curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'
-
 
 ## Deploy: Pull GitIgnore {#deploy}
 
@@ -117,17 +128,24 @@ After we have pushed our code to Docker Hub, the next step is to **pull** it to 
 
 The end result is that we can fully deploy our images with a single command.
 
-Of course,
+Call the pull script **pull-images-from-docker-hub** and save it in the scripts directory. Create a symbolic link to it from your project directory.
 
-docker network create -d bridge elfnet
+Start your script as we started the push script, making only a few changes to the message sent out if the user does not pass in the version parameter.
 
-docker pull charliecalvert/gitignore_main:try
-docker container run --name main -d -p 30025:30025 --network elfnet charliecalvert/gitignore_main:version1.0
+The first line of custom code in the script should create a network. Here is a how to create a new bridge network called **elfnet**
 
-docker pull charliecalvertgitignore_router:try
-docker container run --name router -d -p 30029:30029 --network elfnet charliecalvert/gitignore_router:version1.0
+    docker network create -d bridge elfnet
 
-docker pull charliecalvertgitignore_system:try
-docker container run --name system-environment -d -p 30028:30028 --network elfnet charliecalvert/gitignore_system:version1.0
+Now write code to pull your image and create a container that uses the **elfnet** network:
 
+    docker pull &lt;YOUR GIT HUB IMAGE NAME&gt;:version$1
+    docker container run --name main -d -p 30025:30025 --network elfnet &lt;YOUR GIT HUB IMAGE NAME&gt;:version$1
+
+Remember that the Docker Hub image name includes your Docker Hub username.    
+
+## Copy the script {#copy-script}
+
+Look [in the ConfigureLinux document][ssh-copy] to refresh your memory about how to copy files from one machine to another.
+
+[ssh-copy]
 [tag]: https://docs.docker.com/engine/reference/commandline/tag/
