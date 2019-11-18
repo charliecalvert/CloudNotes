@@ -16,7 +16,7 @@ We can call both scripts from a third script if we want to do it all at once. On
 
 ## Push to Docker Hub {#push}
 
-There are two steps involved with push an image:
+There are two steps involved with pushing an image:
 
 - Tag it
 - Push it.
@@ -45,7 +45,7 @@ Once we know the image name, we generally create a tag for the image with a comm
 
 Perhaps a bit like this:
 
-    docker tag midterm_main:latest jane_doe/gitignore_main:version1.0
+    docker tag week04-docker-composer_main:latest jane_doe/gitignore_main:version1.0
 
 Then we can push it like this:
 
