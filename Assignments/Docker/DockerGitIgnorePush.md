@@ -99,7 +99,7 @@ you'll never guess the next part: I want you to fill in the rest of the script w
 
 Organization, including casing:
 
-- I think the branch should be **week09**.
+- The branch should be **week10**.
 - Put your code in a directory called **scripts**
 - Call it **push-images-to-docker-hub**
 
@@ -107,13 +107,15 @@ Don't forget to make your script executable:
 
     chmod +x push_images_to_docker_hub
 
-When you push, the first image takes some time, but the second two go quickly because they are so similar to the first. Perhaps this because all three Node JS Express programs share a lot of code. It takes time to push the first one, but the second two go much more quickly since much of the code is identical. Maybe.
+When you push, the first image takes some time, but the second two go quickly because they are so similar to the first. Perhaps this because all three Node JS Express programs share a lot of code. Maybe.
 
 ## Create Symbolic Link
 
 Suppose you are working in the **week01-docker-compose** or **midterm-lastname** folder and you wanted to create a symbolic link to the script you created in the **scripts** folder. You would do this so you could call the script from either folder. Here is how to create the link:
 
     ln -s ../scripts/push-images-to-docker-hub .
+
+I too will want to run your script from either folder, so don't skip this step.    
 
 ## View Tags
 
