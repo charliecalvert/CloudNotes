@@ -34,6 +34,15 @@ Something like this might work:
 
 **NOTE**: _This is a weak point in our app. Right now the glob statement that contains **isit32** will meet our purposes. However, this program could be used to check many repos with arbitrary names. We could probably solve this problem by putting our repos in a **Git** folder or a folder with some similar name. However, I'm reluctant to introduce that change just now, so I'll put off a decision on this issue until later._
 
+## Pull Two Repos
+
+In **system-environment/Dockerfile** pull two repos, perhaps something like this:
+
+```
+RUN ssh-agent bash -c 'ssh-add midterm-key; git clone git@github.com:charliecalvert/git-ignore-tests.git'
+RUN ssh-agent bash -c 'ssh-add midterm-key; git clone git@github.com:charliecalvert/isit322-calvert-2019.git'
+```
+
 ## The Two New Routes
 
 We cannot yet call our routes from the **main** client because we have not yet created the component that will call the routes. However, it will be convenient to establish the URLs for the routes at this time:
@@ -53,7 +62,7 @@ In **exec-git.js** block out two new methods called **getRepoNames** and **setWo
 {"result": "success"}
 ```
 
-Our strategy will be to first confirm that we can call the two methods from the client. Once we have confirmed that the plumbing is working properly, then we can concentrate on implementing the two methods.
+Our strategy will be to first confirm that we can call the two methods from the client. Once we have confirmed that the plumbing is working properly, then we can concentrate on implementing the two methods and handling the values they send back to the client.
 
 ## New React Component.
 
