@@ -12,10 +12,12 @@ None of these steps should be difficult for you, but the third is extremely simp
 
 ## Nodemon Configuration
 
-If we don't properly tell Nodemon to ignore certain directories, then our program appears to go a bit berzerk when we switch branches. Seeing what appear to be multiple changes in our code, Nodemon restarts our app over and over. When this happens, it is hard to miss. We typically see many screenfuls of green and brown Nodemon messages.
+Although this whole topic is something of an aside, it is a detail that we need to get right. So before talking about the program in general, let's get this detail out of the way.
 
-To avoid this, be sure to change your **nodemon.json** to include the repos you
-want to explore. This cannot be done via hot reloading because
+If we don't properly tell Nodemon to ignore certain directories, then our program appears to go a bit berzerk when we switch branches. Seeing what appear to be multiple changes in our code, Nodemon restarts our app over and over. When this happens, it is hard to miss. We typically see screen after screen of green and brown Nodemon messages. None of these messages are telling us anything important it is just Nodemon going crazy because it is trying to work inside a directory that it should ignore.
+
+To avoid this, be sure to change your **nodemon.json** to exclude (ignore) the repos you
+want to explore in methods like **gitIgnoreTests**. This cannot be done via hot reloading because
 we are ignoring all files in the root of **system-environment** in
 our **docker-compose.yml** file. We ignore those files
 because we want to be able to clone our repos and they live
@@ -110,8 +112,49 @@ You perhaps recall that a **select** component has a structure a bit like this:
 </select>
 ```
 
-I would use the **array.map** method to create the options. **map** should return an array of JSX code, where each item in the array is an HTML **option** element. Then just plug them into a **select**:
+I would use the **array.map** method to create the options. **map** should return an array of JSX code, where each item in the array is an HTML **option** element. Do this somewhere north of the return statement and make the the value return by map is global to our function object.Then just plug the options returned from map them into a **select**:
 
 ```html
 <div><select id="workingDirSelect">{options}</select></div>
 ```
+
+## Passing Parameters
+
+It's time now to figure out how to send the item selected by the user to the server so that **workingDir** can be changed.
+
+This code might help you get the selected item from the **select** element:
+
+```javascript
+const workingDirSelect = document.getElementById("workingDirSelect");
+const newWorkingDir = workingDirSelect.options[workingDirSelect.selectedIndex].text;
+```
+
+So how do we pass that to our server? Well, clearly it needs to go as a parameter. Let's remember our helper function:
+
+```javascript
+// Pass in a key:value comma delimited standard JavaScript object where
+// each property is the parameter and its value that you want to pass
+// to your server
+function makeParams(params) {
+    var esc = encodeURIComponent;
+    return '?' + Object.keys(params)
+        .map(k => esc(k) + '=' + esc(params[k]))
+        .join('&');
+}
+```
+
+This method expects a JavaScript object. To create a parameter called **foo** that has the value **bar**, do this:
+
+```javascript
+const params = makeParams({foo: 'bar'});
+```
+
+Just add more properties to add in more parameters.
+
+```javascript
+const url = '/system-environment/setWorkingDir' + makeParams({newWorkingDir: newWorkingDir});
+```
+
+Just pass the URL into our **fetch** call.
+
+On the server side, I'll leave it up to you to handle the query param and pass it one to **system-environment**. Remember, the setWorkingDir method in exec-git is simple one liner. Don't complicate it.
