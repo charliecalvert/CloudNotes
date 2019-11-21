@@ -185,7 +185,12 @@ In our case, we want to run not **ls** but our pull script. Suppose we a script 
     ssh aws ./foo
     ssh aws /home/ubuntu/foo
 
-In either case, it would print out the word **foo**.    
+In either case, it would print out the word **foo**.
+
+I should add that it is possible run a script remotely without first copying it to the remote server. However, I would prefer not to go down that route because:
+
+- I want to make sure everyone knows how to use **scp** to copy a file to a remote machine.
+- It will probably be useful to have the script on the remote machine. If we have used ssh to get a prompt on a remote machine, we might not want to go back the local machine just to run the pull script.
 
 ## Turn it in
 
