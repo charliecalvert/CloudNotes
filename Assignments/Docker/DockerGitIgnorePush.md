@@ -159,6 +159,34 @@ Look [in the ConfigureLinux document][ssh-copy] to refresh your memory about how
 
 Copy the script to a remote machine and run it. Then access your program in a browser and make sure it works.
 
+Call the script **copy-pull-script-to-server**. It should contain two lines:
+
+- a **scp** statement explained in the above link to ConfigureLinux.
+- A command to run the script remotely.
+
+Suppose we want to run the **ls** command on a remote machine. Assuming we used the **~/.ssh/config** to define a Host called **aws**, then we can run the command like this:
+
+    ssh aws ls
+
+To get a listing of a specific directory, try something like this:
+
+    ssh aws ls /home/ubuntu/Git
+
+Like this:
+
+    $ ssh aws ls /home/ubuntu/Git
+    isit322-calvert-2018
+    isit320-calvert-2019
+
+The point being that by default a remote command is run in the home directory of the selected user. But we can hard code in specific paths either as parameters passed to a command or as the path to the script itself.
+
+In our case, we want to run not **ls** but our pull script. Suppose we a script called **foo** in the remote home directory that printed out the word foo. We could invoke it two ways:
+
+    ssh aws ./foo
+    ssh aws /home/ubuntu/foo
+
+In either case, it would print out the word **foo**.    
+
 ## Turn it in
 
 Write your scripts. Push them. Specify folder, branch and optionally a tag. In the text page of the Canvas submission page, paste in a URL I can click on to see your code in action.
