@@ -190,7 +190,7 @@ In either case, it would print out the word **foo**.
 I should add that it is possible run a script remotely without first copying it to the remote server. That may or may not be the simplist way, but I would prefer not to go down that route because:
 
 - I want to make sure everyone knows how to use **scp** to copy a file to a remote machine.
-- It will probably be useful to have the script on the remote machine. If we have used ssh to get a prompt on a remote machine, we might not want to go back the local machine just to run the pull script.
+- It will probably be useful to have the script on the remote machine. If we have used ssh to get a prompt on a remote machine, we might not want to go back the local machine just to run the pull script. In short, if we copy the remote script over then we can run it either from a local machine or from the remote machine.
 
 ## Turn it in
 
