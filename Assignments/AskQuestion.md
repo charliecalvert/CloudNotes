@@ -98,7 +98,7 @@ For instance, suppose you wrote this in your program:
 console.write(Matha.PI * 2);
 ```
 
-That is not a valid line of code. It won't work. But if all you told us is: "I feel like I am not putting in the  correct lines of code" we would have to have supernatural powers to guess what mistake you made. If, on the other hand, you simply showed us this error, then we might be able to help:
+That is not a valid line of code. It won't work. The rules say you can't show us the actual line of code that failed. What to do? You could descrive it. But sometimes that seems hard. It also won't work if you tell us something very general, such as: "I feel like I am not putting in the correct lines of code". With only that to go on, we would have to have supernatural powers to guess what mistake you made. If, on the other hand, you simply showed us this error, then we might be able to help:
 
 <pre>TypeError: console.write is not a function  
     at Object.<anonymous> (/home/charlie/temp/foo.js:131:9)</pre>
