@@ -88,6 +88,25 @@ If the question a student asks gets too tough, I may not be able to answer it or
 
 My point is that even the basics are hard to understand in some cases. Yet the deeper our knowledge of the basics the better off we are. It's very hard to understand complicated code without first having a very thorough grounding in the basics. The best engineers I've worked with all know the basics cold.
 
+## Show Errors
+
+To get more help, you might consider showing us any error messages you might be getting.
+
+For instance, suppose you wrote this in your program:
+
+```javascript
+console.write(Matha.PI * 2);
+```
+
+That is not a valid line of code. It won't work. But if all you told us is: "I feel like I am not putting in the  correct lines of code" we would have to have supernatural powers to guess what mistake you made. If, on the other hand, you simply showed us this error, then we might be able to help:
+
+<pre>TypeError: console.write is not a function  
+    at Object.<anonymous> (/home/charlie/temp/foo.js:131:9)</pre>
+
+Without actually giving you the answer, we could say: **console.write** does not exist. However, here is a list of methods that do exist on the **console** object. Try picking the most familiar and see if it works:
+
+- [https://www.w3schools.com/jsref/obj_console.asp](https://www.w3schools.com/jsref/obj_console.asp)
+
 ## Attitude
 
 When asking questions in most online forums, try to be as friendly and polite as possible. Email and text is a deceptively sharp edged tool. I try to go out of my way to keep a positive attitude. As we all start to spend more time communicating online with text, we have to learn new skills. Developing the ability to join an online community, and become a positive and well liked member of that community, is an important skill. Most of us aren't born with that ability. We have to develop it. In general, when I find myself using negative words like "stupid", "dumb", "incompetent", etc, then a little red flag goes up in my brain. Sometimes they are the appropriate words, but those occasions are rare. Perhaps once or twice a year. If they come up repeatedly in my messages, then it is usually best for me to take time off to relax.
