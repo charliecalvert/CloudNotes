@@ -166,4 +166,6 @@ const url = '/system-environment/setWorkingDir' + makeParams({newWorkingDir: new
 
 Just pass the URL into our **fetch** call.
 
-On the server side, I'll leave it up to you to handle the query param and pass it one to **system-environment**. Remember, the setWorkingDir method in exec-git is simple one liner. Don't complicate it.
+On the server side, I'll leave it up to you to handle the **query** param and pass it one to **system-environment**. Remember that parameters are passed to **get** requests in the request.query object. So you need to pass this on to **system-environment**. Just hard code it in, or use **makeParams** a second time.
+
+Remember, the setWorkingDir method in exec-git is simple one liner. Don't complicate it.
