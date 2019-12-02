@@ -11,6 +11,13 @@ part of Google. At any rate, it runs your app inside a custom copy of Chromium.
 **NOTE**: _It is possible to use your copy of Chromium rather than the custom
 download version, but however that really works [it is not obvious][pcn]._
 
+In the code I've been testing, the button clicks in our application have nearly
+all been removed and the values sent from the server are displayed immediately
+with the help of **useEffect**. I've asked you to convert from button clicks
+to **useEffect**, so that is the route I take here.
+
+In all cases, I want you to work with the **git-ignore-test** repo.
+
 ## A Note on Customizing Code
 
 In what follows, several times I'm going to ask you to modify your source
@@ -76,14 +83,20 @@ that helps us integrate Puppeteer into our Jest tests.
 
 Create an empty file called **index.js** in the root of your directory.
 
-In preparation for the code we will write in that file open up **main/source/YouRang.js**
-and add a **you-rang-action** ID to your button and **you-rang-result** ID to
+We will also add a **you-rang-action** ID to your button and **you-rang-result** ID to
 the appropriate **td**:
 
 ```html
-<td id="you-rang-result" className="left">{youRang.result}</td>
+<td id="you-rang-result" className="left">{youRang.serverData.result}</td>
 <button id="you-rang-action" onClick={queryYouRang}>You Rang</button>
 ```
+
+Notice that we now have to include **serverData** when we want to access the
+data sent from the server.
+
+We have added a new state variable and three HTML attributes. This is quite
+a bit of machinery, but they are all lightweight, and they great simplify our
+our tests.
 
 ## Testing You Rang
 
@@ -99,10 +112,6 @@ const puppeteer = require('puppeteer');
   await page.goto('http://localhost:30025');
   await page.click('a[href="/you-rang"]');
 
-  await page.click('button[id="you-rang-action"]');
-
-  await page.waitForSelector('[id=you-rang-result]');
-
   const h2 = await page.evaluate(() => [...document.getElementsByTagName('h2')].map((h2) => h2.innerText));
   console.log(h2);
 
@@ -117,7 +126,6 @@ const puppeteer = require('puppeteer');
   });
 
   console.log('Dimensions:', dimensions);
-
 
   await browser.close();
 })();
@@ -136,7 +144,14 @@ By setting headless to false, we are asking Puppeteer to open up their custom
 version of Chromium on the desktop so we can see it in action. Normally we
 run with **headless** set to true so that it runs invisibly in the background.
 
-The next step is to create new [page][page] and to use it to load our
+To see this more clearly, launch puppeteer with **slowMo** set to 350
+milliseconds:
+
+```javascript
+const browser = await puppeteer.launch({headless: false, slowMo: 350});
+```
+
+The next step is to create a new [page][page] and to use it to load our
 application.
 
 ```javascript
@@ -147,7 +162,7 @@ Perhaps this is an oversimplification, but I picture this as
 being the equivalent of creating a new tab in the Chromium browser. See the
 link provided above for more details.
 
-The next step is to use our new tab to host our application:
+We use our new tab to host our application:
 
 ```javascript
 await page.goto('http://localhost:30025');
@@ -157,16 +172,16 @@ Needless to say, we won't be able to navigate to our application unless
 it is in fact running. Most of us have our app running in the background
 all the time in our docker containers, so this should be a no-op.
 
-So far this is fun, but perhaps not particularly interesting. The next step,
-however, is to click our link to the **You Rang** page and visit it in the
+We now click our link to the **You Rang** page and visit it in the
 browser tab.
 
 ```javascript
 await page.click('a[href="/you-rang"]');
 ```
 
-This code says that we should click the HTML anchor that has an href attribute
-set to **/you-rang**. See in particular, this code from **main/source/App.js**:
+This code says that Puppeteer should click the HTML anchor that has an href
+attribute set to **/you-rang**. See in particular, this code from
+**main/source/App.js**:
 
 ```html
 <li><Link to="/you-rang">You Rang</Link></li>
@@ -175,35 +190,21 @@ set to **/you-rang**. See in particular, this code from **main/source/App.js**:
 If you look at the HTML that JSX generates from this code you will see that at
 runtime it is an HTML anchor.
 
-
-## The Button Click
-
-Now comes that most (only?) confusing code in this small app.
-
-```javascript
-await page.click('button[id="you-rang-action"]');
-await page.waitForSelector('[id=you-rang-result]');
-```
-
-First we click the button with an ID set to **you-rang-action**. We also
-wait for the selector **you-rang-result** to return true. Frankly, I'm
-not confident this will work on slower machines, but it does work on my
-machine. If it fails on your maching, try adding this line after the two
-shown above:
-
-```javascript
-await page.waitFor(1000);
-```
-
-This is not a good solution for a host of reasons, but let's keep things
-simple in this example and I will show you something better in the next section.
-
 Finally, we twice evaluate our page to see if things are working as we expect:
+
+First we check that the H2 element contains the value we associate with the
+the **YouRang** page:
 
 ```javascript
 const h2 = await page.evaluate(() => [...document.getElementsByTagName('h2')].map((h2) => h2.innerText));
- console.log(h2);
+console.log(h2);
+```
 
+Now let's see if our call to the server works. In the last line of this code
+we check to see that that the element with the ID **you-rang-result** contains
+not 'unknown', but data sent from the server:
+
+```javascript
  // Get the "viewport" of the page, as reported by the page.
  const dimensions = await page.evaluate(() => {
    return {
@@ -231,9 +232,25 @@ Dimensions: {
 }
 ```
 
+I'm including the **width**, **height**, and **deviceScaleFactor** because
+they are included in ever getting started demo. We care the **result**
+property.
+
+In the last line we close the browser:
+
+```javascript
+await browser.close();
+```
+
 ## Testing with Jest
 
-Install both Jest and [Jest Puppeteer](https://jestjs.io/docs/en/puppeteer):
+The makers of Jest have two recommendations on how to test Puppeteer with
+jest. One is to set everything up manually, which is not quite as complicated
+as it seems as first blush. However, they also recommend a library that
+greatly simplifies our code, so I suggest we use it.
+
+Install both Jest and the recommended library which is called
+[Jest Puppeteer](https://jestjs.io/docs/en/puppeteer):
 
 ```
 npm i jest jest-puppeteer
@@ -269,8 +286,17 @@ module.exports = {
 Now create a file called **git-ignore-you-rang.test.js**
 
 ```javascript
-describe('Google', () => {
-    beforeAll(async () => {
+describe('Test You Rang', () => {
+    //let page;
+    /*beforeAll(async () => {
+        //page = await global.__BROWSER__.newPage();
+        // jest.setTimeout('20000');
+        await page.goto('http://localhost:30025');
+    });*/
+
+    beforeEach(async () => {
+        //jest.setTimeout('20000');
+        await jestPuppeteer.resetBrowser();
         await page.goto('http://localhost:30025');
     });
 
@@ -284,7 +310,7 @@ describe('Google', () => {
         expect(h2).toContain('Midterm from Calvert');
     });
 
-    it('should go to you rang', async () => {
+    it('should go to you rang and get h2', async () => {
         await page.click('a[href="/you-rang"]');
         const h2 = await page.evaluate(() => [...document.getElementsByTagName('h2')].map((h2) => h2.innerText));
         console.log(h2);
@@ -292,12 +318,159 @@ describe('Google', () => {
         expect(h2).toContain('Midterm from Calvert');
     });
 
-    it('should', async () => {
+    it('should get you-rang-result', async () => {
+        await page.click('a[href="/you-rang"]');
         const result = await page.evaluate(() => document.getElementById('you-rang-result').textContent);
         console.log(result);
         expect(result.trim()).toEqual('system-environment you rang');
     })
 });
+```
+
+Scan through the tests and make the changes necessary to work with your code.
+For instance, your H2 code probably does not contain **Midterm from Calvert**.
+Now type npm test, and it should work.
+
+## Turn it in
+
+Get similar tests running for the other React Components you have created. You
+do not need to test, the code that switches branches, but I want to see that
+that component properly loads the default data from the server.
+
+Creating a test that switches repos would be extra credit.
+
+Everything beyond this point in the document is FYI.
+
+
+## The Manual Check
+
+This is not necessary in our tests, and is perghaps not necessary in any test.
+Nevertheless, here is a scheme to use **waitForSelector** to wait until
+a certain condition is met.
+
+In preparation for our test we will open up **main/source/YouRang.js** and
+modify it. First we will add new state called **ready**:
+
+```javascript
+const youRangInit = {
+    file: 'unknown',
+    result: 'unknown',
+    program: 'unknown',
+    server: 'unknown',
+    directory: 'unknown',
+    home: 'unknown',
+    hostname: 'unknown',
+};
+
+const [youRang, setYouRang] = useState({serverData: youRangInit, ready: false});
+```
+
+Now let's add an attribute to our **table** element to hold our new state:
+
+```HTML
+<table data-ready={youRang.ready}>
+```
+
+Now you can write a test that looks like this:
+
+```javascript
+it('should get you-rang-result', async () => {
+    await page.click('a[href="/you-rang"]');
+    await page.waitForSelector('[data-ready=true]');
+    const result = await page.evaluate(() => document.getElementById('you-rang-result').textContent);
+    console.log(result);
+    expect(result.trim()).toEqual('system-environment you rang');
+});
+```
+
+Here we don't do anything until our condition is met in **page.waitForSelector**.
+
+When might this be necessary? Suppose we had a situation where we kept getting
+back 'unknown' instead of the values sent from the server. This short video
+shows what I mean.
+
+Video: [See the moment when unknown is displayed](https://youtu.be/P6hEBaskmj0).
+
+To be sure this can't happen, our code waits for the **serverData** to be set
+from the server and rendered before Puppeteer looks for the value of
+**serverData.result**.
+
+In this video, I have **sloMo** set to 350 milliseconds.
+
+## Wait Awhile
+
+Another way to wait for an event to happen is to call page.waitFor. To use
+this feature try adding this line after the two shown above:
+
+```javascript
+await page.waitFor(1000);
+```
+
+This is not a good solution for multiple reasons:
+
+- We want our tests to run quickly and this slows them down
+- 1 second (1000 milliseconds) might work on one machine, but another might need only 100 milliseconds or perhaps 10,000 milliseconds.
+
+## The Button Click
+
+Our code no longer uses button clicks. We rely on **useEffect** instead. However
+if we did want to handle a button click, we could do it like this. In this code
+I use the **page.waitForSelector** trick shown above:
+
+
+```javascript
+const puppeteer = require('puppeteer');
+
+(async () => {
+  const browser = await puppeteer.launch({headless: false});
+  const page = await browser.newPage();
+  await page.goto('http://localhost:30025');
+  await page.click('a[href="/you-rang"]');
+
+  await page.click('button[id="you-rang-action"]');
+
+  await page.waitForSelector('table[data-ready=true]');
+
+  const h2 = await page.evaluate(() => [...document.getElementsByTagName('h2')].map((h2) => h2.innerText));
+  console.log(h2);
+
+  // Get the "viewport" of the page, as reported by the page.
+  const dimensions = await page.evaluate(() => {
+    return {
+      width: document.documentElement.clientWidth,
+      height: document.documentElement.clientHeight,
+      deviceScaleFactor: window.devicePixelRatio,
+      result: document.getElementById('you-rang-result').textContent
+    };
+  });
+
+  console.log('Dimensions:', dimensions);
+
+
+  await browser.close();
+})();
+```
+
+
+Now comes that most (only?) confusing code in this small app.
+
+```javascript
+await page.click('button[id="you-rang-action"]');
+await page.waitForSelector('table[data-ready=true]');
+```
+
+First we click the button with an ID set to **you-rang-action**. We also
+wait for the **table** attribute **data-ready** to be set to true.
+
+In a normal run, our render method will be called twice:
+
+1. The first time with everything set to the default value **'unknown'**.
+2. The second time with the data sent from the server
+
+In this particular case, everything happens so quickly that Puppeteer, on my
+system, always gets the data sent from the server. But in some cases, and
+perhaps more frequently on slower machines, puppeteer will display the default
+**'unknown'** data.
 ```
 
 <!--       -->
