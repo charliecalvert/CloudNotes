@@ -287,10 +287,7 @@ Now create a file called **git-ignore-you-rang.test.js**
 
 ```javascript
 describe('Test You Rang', () => {
-    //let page;
     /*beforeAll(async () => {
-        //page = await global.__BROWSER__.newPage();
-        // jest.setTimeout('20000');
         await page.goto('http://localhost:30025');
     });*/
 
@@ -331,15 +328,30 @@ Scan through the tests and make the changes necessary to work with your code.
 For instance, your H2 code probably does not contain **Midterm from Calvert**.
 Now type npm test, and it should work.
 
+Note that I show how to use both **beforeAll** and **beforeEach**. The latter
+option is best since we don't want one test relying on the state of the
+previous test. I needed to call **resetBrowser** or else the tests would
+stall on hardware constrained machines like the ones at school.
+
 ## Turn it in
 
-Get similar tests running for the other React Components you have created. You
-do not need to test, the code that switches branches, but I want to see that
-that component properly loads the default data from the server.
+Get similar tests running for at least two other React Components you have
+created. You do not need to test the code that switches repos, but if you
+test that component, I want to see that it properly loads the default
+data from the server.
+
+I will be very flexible in terms of what tests you create. Do something similar
+to what is done in the You Rang tests shown above. For instance, put an
+ID on one or two items you display, evaluate those items with Puppeteer and
+show that they contain data sent from the server.
 
 Creating a test that switches repos would be extra credit.
 
-Everything beyond this point in the document is FYI.
+Everything beyond this point in the document is FYI. Frankly, I didn't see
+how to keep things simple at first and wasted time working out unnecessary
+solutions at least in terms of this assignment. I include it anyway so that
+I don't lose the information I learned going down the wrong path. Also, it
+might be useful to one of you.
 
 
 ## The Manual Check
