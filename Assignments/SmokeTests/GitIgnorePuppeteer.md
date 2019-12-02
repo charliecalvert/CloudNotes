@@ -471,7 +471,6 @@ In this particular case, everything happens so quickly that Puppeteer, on my
 system, always gets the data sent from the server. But in some cases, and
 perhaps more frequently on slower machines, puppeteer will display the default
 **'unknown'** data.
-```
 
 <!--       -->
 <!-- links -->
