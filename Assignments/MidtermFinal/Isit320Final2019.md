@@ -31,3 +31,5 @@ all the assignments and solve the final all during the last week,
 then it would be best if your code works. If you have been turning in code
 regularly and shown that you are working hard, then I won't care as much
 that it all works so long as you show evidence you learned _something_.
+
+[gip]: https://www.elvenware.com/teach/assignments/smoke-tests/GitIgnorePuppeteer.html
