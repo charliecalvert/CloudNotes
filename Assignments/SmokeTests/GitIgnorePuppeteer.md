@@ -383,6 +383,12 @@ Now let's add an attribute to our **table** element to hold our new state:
 <table data-ready={youRang.ready}>
 ```
 
+When you call **setYouRang** in **queryYouRang**, set **ready** to **true**:
+
+```javascript
+setYouRang({serverData: result, ready: true});
+```
+
 Now you can write a test that looks like this:
 
 ```javascript
