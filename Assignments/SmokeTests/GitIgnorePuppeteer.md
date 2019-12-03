@@ -19,7 +19,9 @@ to **useEffect**, so that is the route I take here.
 In all cases, when working with Puppeteer, I want you to default to the
 **git-ignore-test** repo. Your big final program should be able to work with
 multiple repositories, but it is simplest if the Puppeteer tests work with
-a single repository whose structure I know.
+a single repository whose structure I know. Of course, if you want to write
+a test that shows you can switch repos, that is a different matter, but by
+default, go with our **git-ignore-test** repository.
 
 ## A Note on Customizing Code
 
