@@ -317,6 +317,7 @@ describe('Test You Rang', () => {
 
     it('should get you-rang-result', async () => {
         await page.click('a[href="/you-rang"]');
+        await page.waitForResponse(response => response.ok());
         const result = await page.evaluate(() => document.getElementById('you-rang-result').textContent);
         console.log(result);
         expect(result.trim()).toEqual('system-environment you rang');
