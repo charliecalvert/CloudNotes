@@ -16,7 +16,10 @@ all been removed and the values sent from the server are displayed immediately
 with the help of **useEffect**. I've asked you to convert from button clicks
 to **useEffect**, so that is the route I take here.
 
-In all cases, I want you to work with the **git-ignore-test** repo.
+In all cases, when working with Puppeteer, I want you to default to the
+**git-ignore-test** repo. Your big final program should be able to work with
+multiple repositories, but it is simplest if the Puppeteer tests work with
+a single repository whose structure I know.
 
 ## A Note on Customizing Code
 
