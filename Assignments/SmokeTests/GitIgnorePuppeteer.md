@@ -341,6 +341,12 @@ stall on hardware constrained machines like the ones at school.
 
 ## Turn it in
 
+Please tell me:
+
+- branch
+- Directory for your main project
+- Directory for your Puppeteer project.
+
 Get similar tests running for at least two other React Components you have
 created. You do not need to test the code that switches repos, but if you
 test that component, I want to see that it properly loads the default
