@@ -296,7 +296,9 @@ For the most part, you can write ordinary HTML **table** syntax in your JSX:
 </table>
 ```
 
-However, there are times when you will want to create the body of the table in a loop. You need to do this because you won't know, for instance, how many branches a call to **getBranches** is going to return. As a result, you can't hard code the table as we do above with **you-rang**.
+## Create Table Dynamically
+
+There are times when you will want to create the body of the table in a loop. You need to do this because you won't know, for instance, how many branches a call to **getBranches** is going to return. As a result, you can't hard code the table as we do above with **you-rang**.
 
 Instead, you do something like this:
 
