@@ -352,6 +352,11 @@ created. You do not need to test the code that switches repos, but if you
 test that component, I want to see that it properly loads the default
 data from the server.
 
+**NOTE**: <i>The thing I most want to see are the Jest tests, the one's that
+begin with **describe** and that use **it**. They have file names that end with **.test.js**. 
+Having more tests like the one **index.js** would be all to the good, but they are not
+the key thing I'm after.</i>
+
 I will be very flexible in terms of what tests you create. Do something similar
 to what is done in the You Rang tests shown above. For instance, put an
 ID on one or two items you display, evaluate those items with Puppeteer and
