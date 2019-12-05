@@ -204,6 +204,12 @@ router.get('/checkoutBranch', function(request, response) {
 });
 ```
 
+Include:
+
+- branch
+- folder
+- tag
+
 ## Images
 
 These images are meant as rough guidelines or inspiration, there is no need to duplication them exactly. Indeed you can, within reason, do more or less what you want inside your React components, so long as you display data similar to that shown here. The data matters, not the format, but of course your data probably does not look exactly like mine.
