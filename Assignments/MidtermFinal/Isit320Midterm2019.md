@@ -414,6 +414,7 @@ Try something like this:
 Tag and push with script:
 
 - Tag your repo "Submitting midterm"
+- Make sure you use our git-ignore-tests repo.
 
 If you need to resubmit, then you could write something like: "Submitting midterm for the second time"
 
