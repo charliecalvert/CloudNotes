@@ -22,7 +22,7 @@ Give me a link to your working code on AWS.
 
 Give me branch and directory and tag, even if you are using the defaults.
 
-- Link to AWS
+- Link to AWS running code
 - Branch
 - Puppeteer directory
 - Final Code Directory
