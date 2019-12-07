@@ -9,6 +9,9 @@ Put your code in a branch called **final** in a directory called
 
 Load your docker containers on AWS and send me a link to your working code.
 
+I don't care how you get running. If necessary, pull your latest code to AWS.
+Then build. Then send me a link to your running code.
+
 ## Puppeteer
 
 Do the [Git Ignore Puppeteer][gip] assignment. I'm expecting to find the
