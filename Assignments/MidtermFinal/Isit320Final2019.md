@@ -18,7 +18,15 @@ but I'll probably take anything.
 
 ## Turn it in
 
+Give me a link to your working code on AWS.
+
 Give me branch and directory and tag, even if you are using the defaults.
+
+- Link to AWS
+- Branch
+- Puppeteer directory
+- Final Code Directory
+- tag if you think it might be helpful.
 
 Don't work too hard on this. Focus on your other courses. What I'm looking
 for is evidence that you came to class, turned in assignments more or less
