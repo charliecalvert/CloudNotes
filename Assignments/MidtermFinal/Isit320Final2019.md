@@ -10,7 +10,8 @@ Put your code in a branch called **final** in a directory called
 Load your docker containers on AWS and send me a link to your working code.
 
 I don't care how you get running. If necessary, pull your latest code to AWS.
-Then build. Then send me a link to your running code.
+Then build. Then send me a link to your running code. In other words, you
+don't have to use Docker Hub.
 
 ## Puppeteer
 
