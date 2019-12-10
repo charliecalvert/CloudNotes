@@ -196,5 +196,7 @@ I should add that it is possible run a script remotely without first copying it 
 
 Write your scripts. Push them. Specify folder, branch and optionally a tag. In the text page of the Canvas submission page, paste in a URL I can click on to see your code in action.
 
+Include a screenshot of the script after it runs and what dsee looks like after you run the scripts.
+
 [ssh-copy]: https://www.elvenware.com/os-guide/linux/ConfigureLinux.html#more-on-ssh-keys
 [tag]: https://docs.docker.com/engine/reference/commandline/tag/
