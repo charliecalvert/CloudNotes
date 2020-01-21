@@ -3,6 +3,7 @@
 There is no main text for this course. There are, however many resources. Some of these resources I created, but most are available on the web:
 
 - [Resources](Isit320-Resources.html)
+- [Getting Unstuck](https://www.elvenware.com/javascript-guide/JavaScriptBasics.html#getting-unstuck)
 
 ## Learning to Search
 
