@@ -215,13 +215,13 @@ Some Links
 <!--== Links =================-->
 <!--==========================-->
 
-[arss]: /teach/assignments/Aws/AwsRunSshScript.html
-[ca2]: /teach/assignments/CodeAcademy/CodeAcademyReactPartTwo02.html
+[arss]: /teach/assignments/aws/AwsRunSshScript.html
+[ca2]: /teach/assignments/code-academy/CodeAcademyReactPartTwo02.html
 [ec2p]: /teach/assignments/Ec2Provision.html
-[ec2pr]: /teach/assignments/Aws/Ec2ProvisionRepo.html
+[ec2pr]: /teach/assignments/aws/Ec2ProvisionRepo.html
 [gt]: /teach/tips/
-[rb]: /teach/assignments/React/ReactBasics.html
-[sc]: /teach/assignments/Aws/SystemCheck.html
+[rb]: /teach/assignments/react/ReactBasics.html
+[sc]: /teach/assignments/aws/SystemCheck.html
 [tip-a]: /teach/tips/TurnItIn.html
 
 [ecahp]: /teach/assignments/code-academy/
