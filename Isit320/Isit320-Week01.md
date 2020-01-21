@@ -4,6 +4,8 @@ There is no main text for this course. There are, however many resources. Some o
 
 - [Resources](Isit320-Resources.html)
 - [Getting Unstuck](https://www.elvenware.com/javascript-guide/JavaScriptBasics.html#getting-unstuck)
+- [https://guides.github.com/](https://guides.github.com/)
+- [git-cheat-sheet-education.pdf][git-cheat]
 
 ## Learning to Search
 
@@ -128,3 +130,4 @@ Finally, I suggest that we watch some Google IO.
 
 
 [pristine-lubuntu]: http://www.ccalvert.net/books/CloudNotes/tips/InstallPristineLubuntu.html
+[git-cheat]: https://bc.instructure.com/courses/1782189/files/121886622/download?wrap=1 "git-cheat-sheet-education.pdf"
