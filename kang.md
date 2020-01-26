@@ -14,6 +14,8 @@ https://www.elvenware.com/teach/assignments/docker/GitIgnoreTestDockerMicro.html
 - [https://elvenware.com/teach/assignments/react/ReactBasics.html](https://elvenware.com/teach/assignments/react/ReactBasics.html)
 - [http://www.elvenware.com/teach/assignments/PristineVirtualBox.html](http://www.elvenware.com/teach/assignments/PristineVirtualBox.html)
 - [http://www.elvenware.com/teach/assignments/Ec2GetStarted.html](http://www.elvenware.com/teach/assignments/Ec2GetStarted.html)
+- [https://www.elvenware.com/teach/assignments/Cloud9Intro.html](https://www.elvenware.com/teach/assignments/Cloud9Intro.html)
+- [https://elvenware.com/teach/assignments/react/ReactClickRoute.html](https://elvenware.com/teach/assignments/react/ReactClickRoute.html)
 
 ## Week 02
 
