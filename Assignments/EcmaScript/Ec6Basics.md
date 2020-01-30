@@ -8,6 +8,8 @@ Block scoping
 
 ## Template Literals
 
+## Destructuring
+
 ## Multiline Strings
 
 ## The spread Operator
