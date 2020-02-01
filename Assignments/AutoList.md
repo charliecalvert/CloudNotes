@@ -1,0 +1,211 @@
+# Isit 320
+
+## week01
+
+- [http://www.elvenware.com/teach/assignments/AskQuestion.html](http://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/assignments/Introductions.html](https://www.elvenware.com/teach/assignments/Introductions.html)
+- [https://www.elvenware.com/teach/assignments/GitNewRepo.html](https://www.elvenware.com/teach/assignments/GitNewRepo.html)
+- [https://www.elvenware.com/teach/assignments/CodeAcademy01.html](https://www.elvenware.com/teach/assignments/CodeAcademy01.html)
+- [https://www.elvenware.com/teach/isit320/Isit320-Resources.html#code-academy-react-part-i](https://www.elvenware.com/teach/isit320/Isit320-Resources.html#code-academy-react-part-i)
+- [http://www.elvenware.com/teach/assignments/CodeAcademyGit01.html](http://www.elvenware.com/teach/assignments/CodeAcademyGit01.html)
+- [https://elvenware.com/teach/assignments/react/ReactBasics.html](https://elvenware.com/teach/assignments/react/ReactBasics.html)
+- [http://www.elvenware.com/teach/assignments/PristineVirtualBox.html](http://www.elvenware.com/teach/assignments/PristineVirtualBox.html)
+- [http://www.elvenware.com/teach/assignments/Ec2GetStarted.html](http://www.elvenware.com/teach/assignments/Ec2GetStarted.html)
+- [https://www.elvenware.com/teach/assignments/Cloud9Intro.html](https://www.elvenware.com/teach/assignments/Cloud9Intro.html)
+- [https://elvenware.com/teach/assignments/react/ReactClickRoute.html](https://elvenware.com/teach/assignments/react/ReactClickRoute.html)
+
+## week02
+
+- [http://www.elvenware.com/teach/assignments/AskQuestion.html](http://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit320/Isit320-Resources.html#code-academy-react-part-i](https://www.elvenware.com/teach/isit320/Isit320-Resources.html#code-academy-react-part-i)
+- [https://www.elvenware.com/teach/assignments/CodeAcademy02.html](https://www.elvenware.com/teach/assignments/CodeAcademy02.html)
+- [https://www.elvenware.com/teach/assignments/docker/DockerOverview.html](https://www.elvenware.com/teach/assignments/docker/DockerOverview.html)
+- [http://www.elvenware.com/teach/assignments/docker/DockerFile.html](http://www.elvenware.com/teach/assignments/docker/DockerFile.html)
+- [https://elvenware.com/teach/assignments/ecma-script/Ec6Basics.html](https://elvenware.com/teach/assignments/ecma-script/Ec6Basics.html)
+
+## week03
+
+- [http://www.elvenware.com/teach/assignments/AskQuestion.html](http://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit320/Isit320-Resources.html#code-academy-react-part-i](https://www.elvenware.com/teach/isit320/Isit320-Resources.html#code-academy-react-part-i)
+- [http://www.elvenware.com/teach/assignments/browser/Hangouts.html](http://www.elvenware.com/teach/assignments/browser/Hangouts.html)
+- [http://www.elvenware.com/teach/assignments/react/RestBasics.html](http://www.elvenware.com/teach/assignments/react/RestBasics.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/#javascript](https://www.elvenware.com/teach/assignments/code-academy/#javascript)
+- [https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html](https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html)
+- [https://www.elvenware.com/teach/assignments/UpstartAndSystemd.html](https://www.elvenware.com/teach/assignments/UpstartAndSystemd.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/NpmPublishing.html](http://www.ccalvert.net/books/CloudNotes/Assignments/NpmPublishing.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/NodeRouteBasics.html](http://www.ccalvert.net/books/CloudNotes/Assignments/NodeRouteBasics.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactProps.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestNumbers.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/UnitTestNumbers.html)
+- [No URL found](No URL found)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Mongo/UbuntuServerOva.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Mongo/UbuntuServerOva.html)
+
+## week04
+
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/AskQuestions.html](http://www.ccalvert.net/books/CloudNotes/Assignments/AskQuestions.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact04.html](http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact04.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/#javascript](https://www.elvenware.com/teach/assignments/code-academy/#javascript)
+- [http://www.elvenware.com/teach/assignments/react/ReactMicroServices.html](http://www.elvenware.com/teach/assignments/react/ReactMicroServices.html)
+- [https://www.elvenware.com/teach/assignments/Ec2Provision.html](https://www.elvenware.com/teach/assignments/Ec2Provision.html)
+- [https://www.elvenware.com/teach/assignments/docker/DockerCompose.html](https://www.elvenware.com/teach/assignments/docker/DockerCompose.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactMicroServicesRefine.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactMicroServicesRefine.html)
+- [https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html](https://www.elvenware.com/teach/assignments/Aws/Ec2ProvisionRepo.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitCode.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitCode.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitSiteTools.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/NpmUseIsitSiteTools.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMounted.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMounted.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html)
+
+## week05
+
+- [No URL found](No URL found)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo01.html](http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo01.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/#javascript](https://www.elvenware.com/teach/assignments/code-academy/#javascript)
+- [https://www.elvenware.com/teach/assignments/docker/GitIgnoreTestDockerMicro.html](https://www.elvenware.com/teach/assignments/docker/GitIgnoreTestDockerMicro.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/RestTests.html)
+- [https://www.elvenware.com/teach/assignments/aws/Ec2CopyFile.html](https://www.elvenware.com/teach/assignments/aws/Ec2CopyFile.html)
+- [https://www.elvenware.com/teach/assignments/Npm/RunConcurrently.html](https://www.elvenware.com/teach/assignments/Npm/RunConcurrently.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Linux/LinuxServerComplete.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Linux/LinuxServerComplete.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsPubSub.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsPubSub.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.html)
+
+## week06
+
+- [No URL found](No URL found)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html](http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/#javascript](https://www.elvenware.com/teach/assignments/code-academy/#javascript)
+- [https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html](https://www.elvenware.com/teach/assignments/midterm-final/Isit320Midterm2019.html)
+- [https://www.elvenware.com/teach/assignments/Linux/ScriptMasterTags.html](https://www.elvenware.com/teach/assignments/Linux/ScriptMasterTags.html)
+- [https://www.elvenware.com/teach/assignments/aws/AwsRunSshScript.html](https://www.elvenware.com/teach/assignments/aws/AwsRunSshScript.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactEsLint.html)
+- [https://www.elvenware.com/teach/assignments/aws/SystemCheck.html](https://www.elvenware.com/teach/assignments/aws/SystemCheck.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsJestStarter.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsJestStarter.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsJestButtonsPress.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsJestButtonsPress.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GitMerge.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GitMerge.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/GitHubApi.html](http://www.ccalvert.net/books/CloudNotes/Assignments/GitHubApi.html)
+
+## week07
+
+- [No URL found](No URL found)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo03.html](http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo03.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/#javascript](https://www.elvenware.com/teach/assignments/code-academy/#javascript)
+- [https://www.elvenware.com/teach/assignments/linux/WorkingWithSshKeys.html](https://www.elvenware.com/teach/assignments/linux/WorkingWithSshKeys.html)
+- [http://www.elvenware.com/teach/assignments/react/ReactGitMenu.html](http://www.elvenware.com/teach/assignments/react/ReactGitMenu.html)
+- [https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html](https://www.elvenware.com/teach/assignments/Aws/SystemCheckRefactor.html)
+- [https://www.elvenware.com/teach/assignments/Linux/BuildCopy.html](https://www.elvenware.com/teach/assignments/Linux/BuildCopy.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistLister.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistLister.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsMakeHtmlPage.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsMakeHtmlPage.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsMoreReact.html](http://www.ccalvert.net/books/CloudNotes/Assignments/WebCrafts/WebCraftsMoreReact.html)
+
+## week08
+
+- [No URL found](No URL found)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo04.html](http://www.ccalvert.net/books/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo04.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/#javascript](https://www.elvenware.com/teach/assignments/code-academy/#javascript)
+- [https://www.elvenware.com/teach/assignments/react/ReactGitIgnoreMenu.html](https://www.elvenware.com/teach/assignments/react/ReactGitIgnoreMenu.html)
+- [https://www.elvenware.com/teach/assignments/Functional.html](https://www.elvenware.com/teach/assignments/Functional.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactReduxBasics.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactReduxBasics.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistListerRefine.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistListerRefine.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBootstrap.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBootstrap.html)
+- [No URL found](No URL found)
+
+# Isit 322
+
+## week01
+
+- [https://www.elvenware.com/teach/assignments/Introductions.html](https://www.elvenware.com/teach/assignments/Introductions.html)
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact01.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact01.html)
+- [https://www.elvenware.com/teach/assignments/GitNewRepo.html](https://www.elvenware.com/teach/assignments/GitNewRepo.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactBasics.html](https://www.elvenware.com/teach/assignments/react/ReactBasics.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactEsLint.html](https://www.elvenware.com/teach/assignments/react/ReactEsLint.html)
+- [http://www.elvenware.com/teach/assignments/react/JestCreateReactApp.html](http://www.elvenware.com/teach/assignments/react/JestCreateReactApp.html)
+- [http://www.elvenware.com/teach/assignments/git/GetGist.html](http://www.elvenware.com/teach/assignments/git/GetGist.html)
+
+## week02
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact02.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact02.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [http://www.elvenware.com/teach/assignments/react/RestTests.html](http://www.elvenware.com/teach/assignments/react/RestTests.html)
+- [http://www.elvenware.com/teach/assignments/react/RestBasics.html](http://www.elvenware.com/teach/assignments/react/RestBasics.html)
+- [http://www.elvenware.com/teach/assignments/aws/AwsCloudNine.html](http://www.elvenware.com/teach/assignments/aws/AwsCloudNine.html)
+- [http://www.elvenware.com/teach/assignments/Cloud9Intro.html](http://www.elvenware.com/teach/assignments/Cloud9Intro.html)
+- [http://www.elvenware.com/teach/assignments/npm/RunConcurrently.html](http://www.elvenware.com/teach/assignments/npm/RunConcurrently.html)
+- [https://www.elvenware.com/teach/assignments/ecma-script/JavaScriptClasses.html](https://www.elvenware.com/teach/assignments/ecma-script/JavaScriptClasses.html)
+
+## week03
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [http://www.elvenware.com/teach/assignments/react/ReactMicroServices.html](http://www.elvenware.com/teach/assignments/react/ReactMicroServices.html)
+- [https://www.elvenware.com/teach/assignments/docker/DockerElfCode.html](https://www.elvenware.com/teach/assignments/docker/DockerElfCode.html)
+- [http://www.elvenware.com/teach/assignments/NodeRouteBasics.html](http://www.elvenware.com/teach/assignments/NodeRouteBasics.html)
+
+## week04
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/assignments/docker/DockerElfCodeWithPort.html](https://www.elvenware.com/teach/assignments/docker/DockerElfCodeWithPort.html)
+- [http://www.elvenware.com/teach/assignments/react/ReactProps.html](http://www.elvenware.com/teach/assignments/react/ReactProps.html)
+- [http://www.elvenware.com/teach/assignments/ecma-script/EcmaScriptFunctions.html](http://www.elvenware.com/teach/assignments/ecma-script/EcmaScriptFunctions.html)
+- [http://bit.ly/ec2-aws](http://bit.ly/ec2-aws)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsRefine.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropBasics.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMocks.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMocks.html)
+
+## week05
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [http://elvenware.com/teach/assignments/GitHubApi.html](http://elvenware.com/teach/assignments/GitHubApi.html)
+- [https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html](https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html)
+- [http://www.elvenware.com/teach/assignments/react/UnitTestNumbers.html](http://www.elvenware.com/teach/assignments/react/UnitTestNumbers.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeBasics.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeBasics.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html](http://www.ccalvert.net/books/CloudNotes/Assignments/UpstartAndSystemd.html)
+
+## week06
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/assignments/react/ReactPropsSanityTests.html](https://www.elvenware.com/teach/assignments/react/ReactPropsSanityTests.html)
+- [http://www.elvenware.com/teach/assignments/react/ReactGitMenu.html](http://www.elvenware.com/teach/assignments/react/ReactGitMenu.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsEsLint.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMaterial.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMaterial.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GitMerge.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Git/GitMerge.html)
+
+## week07
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/assignments/react/JestCreateReactApp.html](https://www.elvenware.com/teach/assignments/react/JestCreateReactApp.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAndroidSdk.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactNativeAndroidSdk.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsNative.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsNative.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistLister.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistLister.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMounted.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsMounted.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactMicroServicesRefine.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactMicroServicesRefine.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactPropsShow.html)
+
+## week08
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/isit322/Isit322Midterm2019.html](https://www.elvenware.com/teach/isit322/Isit322Midterm2019.html)
+- [https://www.elvenware.com/teach/assignments/linux/FileWatches.html](https://www.elvenware.com/teach/assignments/linux/FileWatches.html)
+- [https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html](https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactPropsOctoKitGists.html](https://www.elvenware.com/teach/assignments/react/ReactPropsOctoKitGists.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/SystemdServiceControl.html](http://www.ccalvert.net/books/CloudNotes/Assignments/Npm/SystemdServiceControl.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistListerRefine.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/GistListerRefine.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBootstrap.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/ReactBootstrap.html)
+- [http://www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html](http://www.ccalvert.net/books/CloudNotes/Assignments/React/TestSnapShotsAndHints.html)
+
+<!--
+https://www.elvenware.com/teach/isit320/Isit320-Resources.html
+https://www.elvenware.com/teach/assignments/docker/DockerCompose.html
+https://www.elvenware.com/teach/assignments/docker/GitIgnoreTestDockerMicro.html
+-->
