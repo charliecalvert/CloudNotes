@@ -1,3 +1,89 @@
+# Prog 272
+
+## week01
+
+- [https://www.elvenware.com/teach/assignments/Introductions.html](https://www.elvenware.com/teach/assignments/Introductions.html)
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/assignments/PristineVirtualBox.html](https://www.elvenware.com/teach/assignments/PristineVirtualBox.html)
+- [https://www.elvenware.com/teach/assignments/GitNewRepo.html](https://www.elvenware.com/teach/assignments/GitNewRepo.html)
+- [https://www.elvenware.com/teach/assignments/WebStormInstall.html](https://www.elvenware.com/teach/assignments/WebStormInstall.html)
+
+## week02
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [http://www.elvenware.com/teach/assignments/JavaScriptObjects.html](http://www.elvenware.com/teach/assignments/JavaScriptObjects.html)
+- [http://www.elvenware.com/teach/assignments/Cloud9Intro.html](http://www.elvenware.com/teach/assignments/Cloud9Intro.html)
+- [http://www.elvenware.com/teach/assignments/aws/AwsCloudNine.html](http://www.elvenware.com/teach/assignments/aws/AwsCloudNine.html)
+
+## week03
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [http://www.elvenware.com/teach/assignments/ExpressBasics.html](http://www.elvenware.com/teach/assignments/ExpressBasics.html)
+- [http://bit.ly/js-es6-babel](http://bit.ly/js-es6-babel)
+- [https://www.elvenware.com/teach/assignments/docker/DockerElfCode.html](https://www.elvenware.com/teach/assignments/docker/DockerElfCode.html)
+- [No URL found](No URL found)
+
+## week04
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/isit322/#code-academy-assignments](https://www.elvenware.com/teach/isit322/#code-academy-assignments)
+- [https://www.elvenware.com/teach/assignments/NodeRouteBasics.html](https://www.elvenware.com/teach/assignments/NodeRouteBasics.html)
+- [https://www.elvenware.com/teach/assignments/docker/DockerElfCodeWithPort.html](https://www.elvenware.com/teach/assignments/docker/DockerElfCodeWithPort.html)
+- [http://bit.ly/ec2-aws](http://bit.ly/ec2-aws)
+
+## week05
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact01.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact01.html)
+- [https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html](https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html)
+- [http://www.elvenware.com/teach/assignments/react/UnitTestsAddress.html](http://www.elvenware.com/teach/assignments/react/UnitTestsAddress.html)
+- [http://www.elvenware.com/teach/assignments/react/AddressComponent.html](http://www.elvenware.com/teach/assignments/react/AddressComponent.html)
+- [http://www.elvenware.com/teach/assignments/react/AddressComponentRefine.html](http://www.elvenware.com/teach/assignments/react/AddressComponentRefine.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactNativeBasics.html](https://www.elvenware.com/teach/assignments/react/ReactNativeBasics.html)
+
+## week06
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact02.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact02.html)
+- [http://www.elvenware.com/teach/assignments/react/ReactAddressMenu.html](http://www.elvenware.com/teach/assignments/react/ReactAddressMenu.html)
+- [http://www.elvenware.com/teach/assignments/react/JestCreateReactApp.html](http://www.elvenware.com/teach/assignments/react/JestCreateReactApp.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactAddressShow.html](https://www.elvenware.com/teach/assignments/react/ReactAddressShow.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactPropBasics.html](https://www.elvenware.com/teach/assignments/react/ReactPropBasics.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactPropsEsLint.html](https://www.elvenware.com/teach/assignments/react/ReactPropsEsLint.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactNativeAddress.html](https://www.elvenware.com/teach/assignments/react/ReactNativeAddress.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactNativeAndroidSdk.html](https://www.elvenware.com/teach/assignments/react/ReactNativeAndroidSdk.html)
+- [https://www.elvenware.com/teach/assignments/git/GetGist.html](https://www.elvenware.com/teach/assignments/git/GetGist.html)
+
+## week07
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/assignments/CodeAcademy07.html](https://www.elvenware.com/teach/assignments/CodeAcademy07.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact03.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact03.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactAddressSanityTests.html](https://www.elvenware.com/teach/assignments/react/ReactAddressSanityTests.html)
+- [https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html](https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html)
+- [https://www.elvenware.com/teach/assignments/UpstartAndSystemd.html](https://www.elvenware.com/teach/assignments/UpstartAndSystemd.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactAddressEdit.html](https://www.elvenware.com/teach/assignments/react/ReactAddressEdit.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactAddressMock.html](https://www.elvenware.com/teach/assignments/react/ReactAddressMock.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactAddressDataMaven.html](https://www.elvenware.com/teach/assignments/react/ReactAddressDataMaven.html)
+
+## week08
+
+- [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
+- [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact04.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact04.html)
+- [https://www.elvenware.com/teach/prog272/Prog272Midterm2019.html](https://www.elvenware.com/teach/prog272/Prog272Midterm2019.html)
+- [https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html](https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html)
+- [https://www.elvenware.com/teach/assignments/browser/LearnLocalStorage.html](https://www.elvenware.com/teach/assignments/browser/LearnLocalStorage.html)
+- [https://www.elvenware.com/teach/assignments/linux/FileWatches.html](https://www.elvenware.com/teach/assignments/linux/FileWatches.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactAddressMaterial.html](https://www.elvenware.com/teach/assignments/react/ReactAddressMaterial.html)
+- [https://www.elvenware.com/teach/assignments/react/CongressAddressServer.html](https://www.elvenware.com/teach/assignments/react/CongressAddressServer.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactGetAddress.html](https://www.elvenware.com/teach/assignments/react/ReactGetAddress.html)
+- [https://www.elvenware.com/teach/assignments/react/ReactBootstrap.html](https://www.elvenware.com/teach/assignments/react/ReactBootstrap.html)
+- [https://www.elvenware.com/teach/assignments/HerokuReactStarter.html](https://www.elvenware.com/teach/assignments/HerokuReactStarter.html)
+- [https://www.elvenware.com/teach/assignments/react/TestSnapShotsAndHints.html](https://www.elvenware.com/teach/assignments/react/TestSnapShotsAndHints.html)
+
 # Isit 320
 
 ## week01
