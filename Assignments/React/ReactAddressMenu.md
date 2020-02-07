@@ -9,6 +9,8 @@ A silent video showing what we want to do:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4y62k7UrSh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+Use **weekxx-address-simple** as the basis for this project.
+
 ## Tag
 
 Before working on the assignment, do this:
@@ -86,9 +88,34 @@ render() {
 
 ## Create App
 
-Let's begin by creating a new component called **App.** From the WebStorm menu, select **File | New | JavaScriptFile**. Save the file as **/source/App.js**.
+Let's begin by creating a new component inside **weekXX-address-simple** called **App.**
+
+- WebStorm: select **File | New | JavaScriptFile**.
+- Code: **File | New**
+
+Save the file as **/source/App.js**.
 
 Insert a very simple component in it:
+
+Function Component:
+
+```javascript
+import React from 'react';
+
+function App() {
+
+    return (
+        <div>
+            <h1>Address Simple Home</h1>
+        </div>
+    );
+
+}
+
+export default App;
+```
+
+Class component:
 
 ```javascript
 import React, {Component} from 'react';
@@ -113,7 +140,7 @@ Take a moment to study the code found in **App**. Notice that after that the **r
 
 Now turn to **control.js**. Instead of having **ReactDOM** render **Go**, change the code so that it renders our new **App** component. Again, I'll leave that up to you.
 
-Viewing serveral components on one "page":
+Viewing several components on one "page":
 
 ![Two Components at Once][tcao]
 
