@@ -4,6 +4,10 @@ Add [ESLint][esl] and [Prettier][pr] to your [AddressShow][as], [AddressNative][
 
 Details for completing these tasks are in the [ESLint][esla] assignment.
 
+See also [React Props Eslint](https://www.elvenware.com/teach/assignments/react/ReactPropsEsLint.html)
+
+See also [React EsLint](https://www.elvenware.com/teach/assignments/react/ReactEsLint.html)
+
 ## Turn it in
 
 I'm expecting to find the following files in your **AddressShow**, **AddressNative** and **AddressMaterial** project folders:

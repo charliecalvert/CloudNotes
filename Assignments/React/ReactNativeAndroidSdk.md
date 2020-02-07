@@ -2,6 +2,14 @@
 
 [Android X86][ax86], React Native and the Android SDK. The goal of this assignment is to load our code into a virtual phone running in VirtualBox.
 
+See also:
+
+- [React Native Basics](https://www.elvenware.com/teach/assignments/react/ReactNativeBasics.html)
+- [React Native Address](https://www.elvenware.com/teach/assignments/react/ReactNativeAddress.html)
+- [ReactNativeAndroidSdk](https://www.elvenware.com/teach/assignments/react/ReactNativeAndroidSdk.html)
+- [Elvenware JavaScript React Native](https://www.elvenware.com/javascript-guide/JavaScriptReactNative.html)
+
+
 ## Videos
 
 Here are some videos related to this assignment.

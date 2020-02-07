@@ -18,6 +18,61 @@ Here I will list various resources for Prog 272.
 - [Code Academy Assignments][caa]
 - [2019 Specific](#p272-2019)
 
+## Overview
+
+A quick overview of the course
+
+### Week One
+
+There are three key assignments:
+
+- **Pristine VirtualBox**: Get Lubuntu Running on VirtualBox. We will do all our work in this virtual machine.
+- **Git New Repo**: Get your repository on Git up and running. We will turn in nearly all our assignments using this Git repository.
+- **Introductions**: Tell the class who you are, post a close up from the shoulders up so I can recognize you in class.
+
+### Week Two
+
+- **JavaScript Objects**: Let's make sure we know how to use JavaScript objects.
+- **AWS**: Get an Ubuntu Server running in the cloud
+- **ES6 Basics**: **let**, **const**, **template Literals**, **destructuring**, **spread operator**, etc
+
+### Week Three
+
+- **Express Basics**: Install and run a simple express app called **ExpressBasics**
+
+### Week Four
+
+- **Node Route Basics**: Learn to use **fetch**, **promises** and **async/await** to query an express server endpoint.
+
+### Week Five
+
+- **Jest Express Address Simple**:
+- **Unit Tests Address**: Learn to write simple units tests
+- **Address Components**:
+- **Address Component Refine**:
+
+I'm skipping React Native for now.
+
+### Week Six
+
+- **React Address Menu**:
+- **Jest Create React App**:
+- **React Address Show**:
+- **React Address EsLint**: Compare to React Props EsLint...
+
+Maybe:
+
+- **React Prop Basics**:
+- **React Props EsLint**
+
+I'm skipping React Native for now.
+
+### Week Seven
+
+
+
+
+
 ## Prog 272 2019 Specific {#p272-2019)
 
 - [Midterm 2019](/teach/prog272/Prog272Midterm2019.html)
