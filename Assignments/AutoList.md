@@ -16,6 +16,7 @@
 - [http://www.elvenware.com/teach/assignments/JavaScriptObjects.html](http://www.elvenware.com/teach/assignments/JavaScriptObjects.html)
 - [http://www.elvenware.com/teach/assignments/Cloud9Intro.html](http://www.elvenware.com/teach/assignments/Cloud9Intro.html)
 - [http://www.elvenware.com/teach/assignments/aws/AwsCloudNine.html](http://www.elvenware.com/teach/assignments/aws/AwsCloudNine.html)
+- [https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html](https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html)
 
 ## week03
 
@@ -24,6 +25,7 @@
 - [http://www.elvenware.com/teach/assignments/ExpressBasics.html](http://www.elvenware.com/teach/assignments/ExpressBasics.html)
 - [http://bit.ly/js-es6-babel](http://bit.ly/js-es6-babel)
 - [https://www.elvenware.com/teach/assignments/docker/DockerElfCode.html](https://www.elvenware.com/teach/assignments/docker/DockerElfCode.html)
+- [https://www.elvenware.com/teach/assignments/linux/FileWatches.html](https://www.elvenware.com/teach/assignments/linux/FileWatches.html)
 - [No URL found](No URL found)
 
 ## week04
@@ -38,7 +40,7 @@
 
 - [https://www.elvenware.com/teach/assignments/AskQuestion.html](https://www.elvenware.com/teach/assignments/AskQuestion.html)
 - [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact01.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact01.html)
-- weekxx-address-simple: [https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html](https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html)
+- [https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html](https://www.elvenware.com/teach/assignments/react/JestExpressAddressSimple.html)
 - [http://www.elvenware.com/teach/assignments/react/UnitTestsAddress.html](http://www.elvenware.com/teach/assignments/react/UnitTestsAddress.html)
 - [http://www.elvenware.com/teach/assignments/react/AddressComponent.html](http://www.elvenware.com/teach/assignments/react/AddressComponent.html)
 - [http://www.elvenware.com/teach/assignments/react/AddressComponentRefine.html](http://www.elvenware.com/teach/assignments/react/AddressComponentRefine.html)
@@ -63,7 +65,6 @@
 - [https://www.elvenware.com/teach/assignments/CodeAcademy07.html](https://www.elvenware.com/teach/assignments/CodeAcademy07.html)
 - [https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact03.html](https://www.elvenware.com/teach/assignments/code-academy/CodeAcademyReact03.html)
 - [https://www.elvenware.com/teach/assignments/react/ReactAddressSanityTests.html](https://www.elvenware.com/teach/assignments/react/ReactAddressSanityTests.html)
-- [https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html](https://www.elvenware.com/teach/assignments/git/GitIgnoreTest.html)
 - [https://www.elvenware.com/teach/assignments/UpstartAndSystemd.html](https://www.elvenware.com/teach/assignments/UpstartAndSystemd.html)
 - [https://www.elvenware.com/teach/assignments/react/ReactAddressEdit.html](https://www.elvenware.com/teach/assignments/react/ReactAddressEdit.html)
 - [https://www.elvenware.com/teach/assignments/react/ReactAddressMock.html](https://www.elvenware.com/teach/assignments/react/ReactAddressMock.html)
@@ -76,7 +77,6 @@
 - [https://www.elvenware.com/teach/prog272/Prog272Midterm2019.html](https://www.elvenware.com/teach/prog272/Prog272Midterm2019.html)
 - [https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html](https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html)
 - [https://www.elvenware.com/teach/assignments/browser/LearnLocalStorage.html](https://www.elvenware.com/teach/assignments/browser/LearnLocalStorage.html)
-- [https://www.elvenware.com/teach/assignments/linux/FileWatches.html](https://www.elvenware.com/teach/assignments/linux/FileWatches.html)
 - [https://www.elvenware.com/teach/assignments/react/ReactAddressMaterial.html](https://www.elvenware.com/teach/assignments/react/ReactAddressMaterial.html)
 - [https://www.elvenware.com/teach/assignments/react/CongressAddressServer.html](https://www.elvenware.com/teach/assignments/react/CongressAddressServer.html)
 - [https://www.elvenware.com/teach/assignments/react/ReactGetAddress.html](https://www.elvenware.com/teach/assignments/react/ReactGetAddress.html)

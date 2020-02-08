@@ -35,18 +35,25 @@ There are three key assignments:
 - **JavaScript Objects**: Let's make sure we know how to use JavaScript objects.
 - **AWS**: Get an Ubuntu Server running in the cloud
 - **ES6 Basics**: **let**, **const**, **template Literals**, **destructuring**, **spread operator**, etc
+- **Git Ignore Test**:
 
 ### Week Three
 
-- **Express Basics**: Install and run a simple express app called **ExpressBasics**
+- **Express Basics**: Install and run a simple express app called **ExpressBasics**:
+- [**File Watches**][fw]: Mostly a WebStorm issue, but it can pop at other times. Fight **ENOSPC** errors by setting **inotify**.
+
+[fw]: https://www.elvenware.com/teach/assignments/linux/FileWatches.html
 
 ### Week Four
 
+- [**Promise File**][pf]:
 - **Node Route Basics**: Learn to use **fetch**, **promises** and **async/await** to query an express server endpoint.
+
+[pf]: https://www.elvenware.com/teach/assignments/ecma-script/PromiseFile.html
 
 ### Week Five
 
-- **Jest Express Address Simple**:
+- **Jest Express Address Simple**: weekxx-address-simple:
 - **Unit Tests Address**: Learn to write simple units tests
 - **Address Components**:
 - **Address Component Refine**:
@@ -63,13 +70,29 @@ I'm skipping React Native for now.
 Maybe:
 
 - **React Prop Basics**:
-- **React Props EsLint**
+- **React Props EsLint**:
 
 I'm skipping React Native for now.
 
 ### Week Seven
 
+- **React Address Sanity Tests**:
+- **React Address Edit**:
+- **React Address Mock**:
+- **React Address Data Maven**:
 
+
+### Week Eight
+
+- **Prog 272 Midterm**:
+- **Learn Local Storage**:
+
+Maybe:
+
+- **React Address Material**:
+- **Congress Address Server**:
+- **React Get Address**:
+- **Test Snapshots and Hints**:
 
 
 
