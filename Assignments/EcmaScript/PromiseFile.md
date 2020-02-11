@@ -112,6 +112,42 @@ Here we:
 
 We call **elfWriteFile** with a file name and a small bit of text to be written to the file. You can, of course, pass in large strings in the second parameter.
 
+## Async Await
+
+```javascript
+async function useAwait() {
+    const foo = await elfWriteFile('bar.txt', 'bar async await');
+    console.log('ASYNC AWAIT: ', foo);
+}
+
+useAwait();
+```
+
+## Promisify
+
+```javascript
+/* ==================================== */
+
+const util = require('util');
+
+const writeFile = util.promisify(fs.writeFile);
+const readFile = util.promisify(fs.readFile);
+
+async function callWriteFile() {
+    const fileName = 'qux.txt';
+    const encoding = 'utf8';
+    try {
+        await writeFile(fileName, 'quxor');
+    } catch (error) {
+        console.log(error);
+    }
+    const result = await readFile(fileName, encoding);
+    console.log('READFILE RESULT', result);
+}
+
+callWriteFile();
+```
+
 ## Turn it in
 
 Add a fourth Promise example. Wrap the Promise in a function called **elfReadFile**. It should use the asynchronous **fs.readFile** function to read the contents of **foo.txt** and it should then print it out. Don't forget the **utf8** parameter!
