@@ -20,6 +20,13 @@ Here are some useful links:
 
     cp $ELF_TEMPLATES/React/ReactNpm
 
+## IDE
+
+These days we are using Visual Studio Code. Several extensions are helpful:
+
+- [ES7 React](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
 ## ReactBasics Directory
 
 In a branch called **week01**, create a directory called **Week01-ReactBasics** in your repository and navigate into it:
