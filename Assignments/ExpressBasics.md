@@ -38,7 +38,7 @@ If you find that **elf-express** or **express-generator** are missing, or want t
 
 ```bash
 npm install -g express-generator
-npm install -g elf-express
+npm install -g elf-express-generator
 ```
 
 ## Create
