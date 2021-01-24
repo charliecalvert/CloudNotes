@@ -58,7 +58,12 @@ Run the code:
 
 Check to make sure your service is running by browsing to **localhost:30033**. If it is, press q at the command line to end the systemd check.
 
-After completing this step, immediately, before doing anything else, go on to the _Commit and Tag Part II_ step. Complete that step before doing anything else.
+Check the following:
+
+		In **package.json** see and edit if necessary: **start-service**
+		See **[ProjectName].service** and **/etc/systemd/system/[ProjectName].service**
+
+After completing these steps, immediately, before doing anything else, go on to the _Commit and Tag Part II_ step. Complete that step before doing anything else.
 
 ## Commit and Tag Part II {#ct02}
 
