@@ -97,7 +97,7 @@ In some cases, I may attach a video to your assignment when I grade it. To watch
 <!--       -->
 
 [anchor]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
-[pr-resume]: https://www.elvenware.com/teach/prog109/resume.html
+[pr-resume]: https://elvenware.com/teach/prog109/assignments/resume.html
 [hv]: http://users.skynet.be/mgueury/mozilla/download_090.html
 [w3cv]: https://validator.w3.org/
 [vlcm]: https://www.videolan.org/vlc/index.html
