@@ -1,0 +1,126 @@
+﻿body
+{
+	background-color: #3333FF;
+	margin: 0;
+	padding: 0;
+}
+
+header
+{
+	background-color:orange;
+	background-image:url('images/wave01.png');
+}
+
+nav, article, aside
+{
+	height:33%;
+	min-height:200px;	
+}
+
+nav
+{
+	background-color:silver;
+	width:20%;
+	float:left;
+}
+
+article
+{
+	background-color:#3333AA;
+	width:60%;
+	float:left;
+}
+
+aside
+{
+	background-color:purple;
+	width:20%;
+	float:right;
+}
+
+
+footer
+{
+	clear:both;
+	background-color:yellow;
+}
+
+header h1
+{
+	padding:0;
+	margin:0;
+	width:150px;
+	color:white;
+	text-align:center;
+}
+
+img
+{
+	margin-left:19px;
+	margin-top:10px
+}
+
+section
+{
+	border:thick #6666FF solid;
+	margin:10px;	
+	border-radius:20px;
+}
+
+section p
+{
+	margin: 5px;
+	
+}
+
+article h2 em
+{
+	color:lime;
+}
+
+article > ul > li > p > em
+{
+	color:fuchsia;
+}
+
+p
+{
+	padding:0;
+	margin:0;
+}
+
+
+@media screen and (max-width:1024px)
+{
+  article
+  { 
+	 background-color:#3333FF;
+	 width:60%;
+	 float:left;
+  }
+
+  aside
+  {
+	 background-color: red;
+	 display:none;
+	 width:20%;
+	 float:right;
+  }
+  	
+  nav
+  {
+	 background-color:green;
+	 float:left;
+	 height:auto;
+	 width:40%;
+	 max-width:150px;
+	 min-height:100px;
+  }
+  
+  p
+  {
+	 padding:0;
+	 margin:0;
+	 width:250px;
+  }
+}

@@ -1,0 +1,73 @@
+﻿body {
+	background-color: firebrick;
+	color: maroon;	
+}
+
+body a {
+	color: maroon;
+}
+
+#content {
+	width: 70%;
+	margin: auto;
+	border: solid thin #F39814;
+	border-radius: 8px;
+}
+
+header {	
+	text-align: center;	
+	background-color:blanchedalmond;
+	border: thin #F39814 solid; 
+	border-radius:8px;
+	margin-left:1.8%;
+	width:96.5%;
+	margin-bottom: 5px;
+}
+
+nav {
+	background-color: blanchedalmond;
+	border: solid thin #F39814;	
+	border-radius: 8px;
+	float:left;
+	width:20%;
+	margin-left: 1.8%;
+	margin-bottom: 1%;
+}
+
+article {
+	background-color: blanchedalmond;
+	border: solid thin #F39814;
+	border-radius: 8px;
+	float:left;
+	margin-left: 1.3%;
+	margin-bottom: 1%;	
+	width: 75%;	
+}
+
+footer {	
+	background-color: blanchedalmond;
+	border: solid thin #F39814;
+	border-radius: 8px;
+	clear:both;
+	margin: 1.5%;
+	width: auto;
+}
+
+h2 {
+	margin-left:10px;
+}
+
+p {
+	margin-left:10px;
+	font-size: 18px;
+}
+
+.code {
+	background-color:	bisque;
+	border: thin saddlebrown solid;
+	border-radius: 8px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+

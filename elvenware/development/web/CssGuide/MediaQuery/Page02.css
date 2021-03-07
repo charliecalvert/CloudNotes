@@ -1,0 +1,225 @@
+﻿body {
+	background-color: #FBD850;
+	color: #C77405;	
+}
+
+body a {
+	color: #C77405;
+}
+
+#content {
+	width: 70%;
+	margin: auto;
+	border: solid thin #F39814;
+	border-radius: 8px;
+}
+
+header {	
+	text-align: center;	
+	/* border: thin #F39814 solid; */
+}
+
+/* The Nav */
+nav {
+	background-color: #FBE26F;
+	border: solid thin #F39814;	
+	border-radius: 8px;
+	float:left;
+	width:20%;
+	margin-left: 1.5%;
+	margin-bottom: 1%;
+}
+
+nav ul {
+	display: block;
+}
+
+/* article */
+article {
+	background-color: #FBE26F;
+	border: solid thin #F39814;
+	border-radius: 8px;
+	float:left;
+	margin-left: 1.5%;
+	margin-bottom: 1%;	
+	width: 75%;	
+}
+
+footer {	
+	background-color: #FBE26F;
+	border: solid thin #F39814;
+	border-radius: 8px;
+	clear:both;
+	margin: 1.5%;
+	width: auto;
+}
+
+h2 {
+	margin-left:10px;
+}
+
+p {
+	margin-left:10px;
+	font-size: 18px;
+}
+
+pre {
+	font-size:x-small;
+}
+
+.code {
+	background-color:moccasin;
+	border:thin #F39814 solid;
+	border-radius: 8px;
+	width:98%;
+	margin:auto;
+	margin-bottom: 3px;
+	font-size:medium;
+}
+
+.result, #result {
+	border: thin #F39814 solid;
+	border-radius: 8px;
+	margin:auto;
+	margin-bottom: 10px;
+	padding-left:10px;
+	padding-right: 10px;
+	width:75%;	
+}
+
+div.addForm, span.addForm {
+	font-family: "Courier New", Courier, monospace;
+}
+
+/* Snmall Phone Screen */
+@media screen and (max-width: 800px)
+{
+	body {
+		background-color: darkgreen;	
+	}
+
+
+	#content
+	{
+		background-color: lightgreen;
+		width:96%;
+		color:black;
+	}
+
+	header
+	{
+		background-color:#008500;
+		width:100%;
+	}
+		
+	nav
+	{
+		clear:both;
+		width:96.5%;
+		background-color:#00AD00;
+	}
+	
+	nav ul {
+		display: none;
+		padding-left:2%;
+		margin-bottom: 10%;
+	}
+	
+	nav a {
+		color:black;
+	}
+
+	nav li {
+		float: left;
+		width: 33%;
+		text-align: center;
+	}
+
+	nav ul.theMenu {
+		list-style-type: none;
+		display:none;
+		height: 100px;
+		width: 85%;
+		margin: auto;
+		padding-bottom:5%;
+	}
+
+	nav ul a {
+		background-color: lightblue;
+		background-repeat: no-repeat;
+		background-position: right;
+		border: thin black solid;
+		border-radius:8px;
+		padding-right: 10px;
+		padding-left: 10px;
+		display: block;
+		line-height: 25px;
+		text-decoration: none;
+		font-family: Consolas;
+		font-size: medium;
+		color: #371C1C;
+	}
+
+
+	article
+	{
+		clear:both;
+		width:96.5%;
+		background-color:#00D600;
+	}
+	
+	article, p {
+		color:black;
+	}
+
+	
+	footer
+	{
+		width:96.5%;
+		background-color:#008500;
+	}
+}
+
+@media screen and (max-width: 375px)
+{
+	body {
+		background-color:cornflowerblue;
+	}
+	
+	#content
+	{
+		width:95%;
+		background-color:lightblue;
+		margin:auto;
+	}
+	
+	header
+	{
+		width:100%;
+		background-color:#6629FF;
+	}
+		
+	nav
+	{
+		clear:both;
+		width:96.5%;
+		background-color:#6652FF;
+	}
+	
+	article
+	{
+		clear:both;
+		width:96.5%;
+		background-color:#667AFF;
+	}
+	
+	article, p {
+		color:black;
+	}
+	
+	footer
+	{
+		width:96.5%;
+		background-color:#6629FF;
+	}
+}

@@ -1,0 +1,56 @@
+﻿/***  Poems ****/
+
+body
+{
+	color:	#D0FFD0;
+}
+.title
+{
+	text-align:center;
+	background-color:#335599;	
+	border-style:solid;
+	border-width:thin;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.outerBorder
+{
+	background-color:#0080FF;	
+	border-style:solid;
+	border-color:black;		
+	padding: 25px;
+	width: 525px;
+	margin-left:auto;
+	margin-right: auto;  
+} 
+
+.poemTitle
+{	
+	position:relative;
+	text-align:center;
+	background-color:#0080C0;
+	border-width:2px;
+	border-style:solid;
+	border-color:black;
+	margin-bottom:25px;
+}
+
+.poem
+{
+	position:relative;
+	text-align:center;
+	background-color:#0080C0;
+	width:auto;	
+	font-family: "Courier New", monospace;
+}
+
+.song
+{
+	text-align: left;
+	position:relative;
+	background-color:#0080C0;
+	width:auto;
+	font-family: serif;
+	padding:25px;
+}

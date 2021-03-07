@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Page Three - Switch Styles</title>
+	<link rel="stylesheet" href="Page01.css" type="text/css"  title="style1"/>
+	<link rel="stylesheet" href="Page03.css" type="text/css"  title="style2"/>
+	<link rel="stylesheet" href="Page04.css" type="text/css"  title="style3"/>
+	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="Main.js"></script>
+</head>
+
+<body>
+
+<div id="content">
+<header></header>
+<nav></nav>
+<article><p>This page must be able to be manually switched between 
+different styles (defined by different CSS files), as on this page.</p>
+
+<ul>
+<li><a href="#" onclick="sampleHelpers.setStyleSheet('style1');">Style 01</a></li>
+<li><a href="#" onclick="sampleHelpers.setStyleSheet('style2');">Style 02</a></li>
+<li><a href="#" onclick="sampleHelpers.setStyleSheet('style3');">Style 03</a></li>
+</ul>
+
+<p id="debug">
+<a href="http://www.elvenware.com/charlie/development/web/StyleSheetChanger.html">
+Here is an explanation</a> of how to create this page.</p>
+
+</article>
+<footer></footer>
+</div>
+</body>
+
+</html>

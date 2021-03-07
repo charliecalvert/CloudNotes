@@ -1,0 +1,5 @@
+Options +Includes
+XBitHack on
+AddType     image/svg+xml              svg svgz 
+AddEncoding gzip                       svgz
+
