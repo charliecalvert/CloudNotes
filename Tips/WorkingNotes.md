@@ -1,5 +1,7 @@
 ## Windows Terminal
 
+- wt wsl.exe
+- wt -p "UbuntuFoo"
 - wt -p "Ubuntu-20.04"
 - wt -p "Ubuntu-20.04" ; split-pane -p "Ubuntu-20.04" ; new-tab -p "Ubuntu-20.04" -d C:\Users\charl\Source ; split-pane -p "Ubuntu-20.04" ; split-pane -p "Ubuntu-20.04"
 - wt -p "Ubuntu-20.04" ; split-pane -H -p "Ubuntu-20.04" 
@@ -10,12 +12,35 @@
 - List commands: CTRL+SHIFT+P
 - wsl charlie@charlie@HP-Desktop wttg
 
-## PowerPoint 
+### Start in home directory:
+
+    {
+        "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+        "hidden": false,
+        "name": "Ubuntu-20.04",
+        "startingDirectory": "//wsl$/Ubuntu-20.04/home/charlie/",
+        "source": "Windows.Terminal.Wsl"
+    },
+
+###  Other
+
+    {
+        "guid": "{e71ad31e-5479-45cf-80de-954bba533fd2}",
+        "hidden": false,
+        "name": "UbuntuFoo",
+        "commandline": "wsl.exe ~ -d Ubuntu-20.04",
+    }
+## PowerShell 
 
 - PS C:\> cd $Env:homedrive
 - PS C:\> cd $Env:homepath
 - PS C:\Users\charl>
 - cd $env:homepath
+- [guid]::NewGuid()
+
+## Docker Compose
+
+- docker-compose ps
 
 ## Docker Network 
 
@@ -31,6 +56,7 @@
 - docker run --rm -it 89f3c9d9434f bash
 - docker run --rm -it micros_micro_qux bash
 - docker run --rm -it micros_micro_bar bash
+-  
 
 
 ## Inside Docker Container
