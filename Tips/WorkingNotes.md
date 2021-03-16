@@ -47,7 +47,7 @@
 - micros_micro_bar_1
 - docker network connect myNetwork micros_micro_qux_1
 - docker network inspect myNetwork
- docker network connect micros_default call-you-rang
+- docker network connect micros_default call-you-rang
 - docker network inspect micros_default
 
 ## Docker Commands 
@@ -56,8 +56,12 @@
 - docker run --rm -it 89f3c9d9434f bash
 - docker run --rm -it micros_micro_qux bash
 - docker run --rm -it micros_micro_bar bash
--  
 
+## Docker Push
+
+- docker container commit micro-qux elf-micro-qux
+- docker image tag elf-micro-qux:latest elf-micro-qux:latest
+- docker push charliecalvert/micro-qux:latest
 
 ## Inside Docker Container
 
