@@ -79,3 +79,19 @@
 - ./build
 - ./reset
 - docker network connect myNetwork call-you-rang
+
+## Git
+
+    git clone git@github.com:charliecalvert/CloudNotes.git
+    git clone git@github.com:charliecalvert/elven-code.git
+    git clone git@github.com:charliecalvert/elven-sanity.git
+    git clone git@github.com:charliecalvert/elven-web.git
+    git clone git@github.com:charliecalvert/hyperv-stuff.git
+    git clone git@github.com:charliecalvert/isit322-calvert-2019.git
+    git clone git@github.com:charliecalvert/isit322-calvert-2018.git
+    git clone git@github.com:charliecalvert/isit322-calvert-2017.git
+    git clone git@github.com:charliecalvert/isit322-calvert-2020.git
+    git clone git@github.com:charliecalvert/isit320-calvert-2017.git
+    git clone git@github.com:charliecalvert/isit320-calvert-2018.git
+    git clone git@github.com:charliecalvert/isit320-calvert-2019.git
+    git clone git@github.com:charliecalvert/prog109-notes.git
