@@ -38,6 +38,23 @@
 - cd $env:homepath
 - [guid]::NewGuid()
 
+
+## Hyper-V
+
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+    # restart VM and then do the following
+
+    https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+    wsl --set-default-version 2
+
+    wsl --list --verbose
+
+    wsl --set-version <distribution name> <versionNumber>
+    wsl --set-version Ubuntu-20.04 2
+
 ## Docker Compose
 
 - docker-compose ps
