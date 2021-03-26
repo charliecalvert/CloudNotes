@@ -30,14 +30,14 @@
         "name": "UbuntuFoo",
         "commandline": "wsl.exe ~ -d Ubuntu-20.04",
     }
+
 ## PowerShell 
 
 - PS C:\> cd $Env:homedrive
 - PS C:\> cd $Env:homepath
 - PS C:\Users\charl>
 - cd $env:homepath
-- [guid]::NewGuid()
-
+- Like this: [guid]::NewGuid()
 
 ## Hyper-V
 
@@ -112,3 +112,9 @@
     git clone git@github.com:charliecalvert/isit320-calvert-2018.git
     git clone git@github.com:charliecalvert/isit320-calvert-2019.git
     git clone git@github.com:charliecalvert/prog109-notes.git
+
+## AWS
+
+Make public read:
+
+- aws s3api put-object-acl --bucket bucket01.elvenware.com --key JsObjects/ssh-setup --acl public-read
