@@ -427,6 +427,11 @@ function onListening() {
 }
 ```
 
+Note that you can also put your settings in the app.js file:
+
+```
+process.env['DEBUG'] = 'server:mainapp,routes:dev-web,routes:index,setup-marked';
+```
 ## Understanding package.json
 
 
