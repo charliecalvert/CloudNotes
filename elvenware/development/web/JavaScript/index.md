@@ -1,3 +1,8 @@
+## Table of Contents 
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This page covers JavaScript, jQuery, Node and Unit Testing with qUnit.
@@ -7,7 +12,7 @@ This page covers JavaScript, jQuery, Node and Unit Testing with qUnit.
 Please don't miss the JavaScriptModules page, as it covers material very important to people Prog 272, 282 and ISIT 320.
 
 -	[Ch01 - Getting Started](/javascript-guide/GettingStarted.html)
-- [Ch02 - Writing Simple Code](/javascript-guide/WritingSimpleCode.html)
+-   [Ch02 - Writing Simple Code](/javascript-guide/WritingSimpleCode.html)
 -	[Ch03 - JavaScript Basics](/javascript-guide/JavaScriptBasics.html)
 -	[Ch04 - JavaScript Objects](/javascript-guide/JavaScriptObjects.html)
 -	[Ch05 - JavaScript Functions](/javascript-guide/JavaScriptFunctions.html)
@@ -31,17 +36,14 @@ Please don't miss the JavaScriptModules page, as it covers material very importa
 - [Ch21 - Functional](/javascript-guide/Functional.html)
 - [Appendix 1: Constants](/javascript-guide/Constants.html)
 
-<!--
-Decks
------
+## Decks
 
 - [JavaScript Basics](http://bit.ly/elven-javascript-basics)
 - [JavaScript Intro](http://bit.ly/javascript-intro)
 - [JavaScript Part II](http://bit.ly/JavaScriptPartII)
 -	[JavaScript and jQuery Deck](https://docs.google.com/present/view?id=d4jzqjs_47chjtjqfx)
 
-Other
------
+## Other
 
 -	[Ch15 - JavaScript Unit Tests](/unit-tests-guide/index.html)
 -	[Basic JavaScript Syntax Experiments](/javascript-guide/BasicSyntax.html)
@@ -54,4 +56,4 @@ Other
 -	[Use JQuery to Hide and Reveal Menus or Text](/javascript-guide/OnClickHandler.html)
 -	[JavaScript AutoRun](/javascript-guide/JavaScriptAutorun.html)
 -	[DoJo](/javascript-guide/DojoTest.html)
--->
+

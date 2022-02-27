@@ -8,11 +8,11 @@
 	Example:
 		 var reveal =  window.frames[0];
 
-		 // Reveal.prev(); 
+		 // Reveal.prev();
 		 reveal.postMessage(JSON.stringify({method: 'prev', args: []}), '*');
-		 // Reveal.next(); 
+		 // Reveal.next();
 		 reveal.postMessage(JSON.stringify({method: 'next', args: []}), '*');
-		 // Reveal.slide(2, 2); 
+		 // Reveal.slide(2, 2);
 		 reveal.postMessage(JSON.stringify({method: 'slide', args: [2,2]}), '*');
 
 	Add to the slideshow:
@@ -24,19 +24,16 @@
 
 */
 
-(function (){
+(function() {
+    window.addEventListener( 'message', function( event ) {
+        const data = JSON.parse( event.data );
+        const method = data.method;
+        const args = data.args;
 
-	window.addEventListener( "message", function ( event ) {
-		var data = JSON.parse( event.data ),
-				method = data.method,
-				args = data.args;
-
-		if( typeof Reveal[method] === 'function' ) {
-			Reveal[method].apply( Reveal, data.args );
-		}
-	}, false);
-
+        if ( typeof Reveal[method] === 'function' ) {
+            Reveal[method].apply( Reveal, data.args );
+        }
+    }, false);
 }());
-
 
 

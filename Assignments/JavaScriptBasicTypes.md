@@ -1,3 +1,4 @@
+
 ## JavaScript Basic Types
 
 Please note that there are three parts to this assignment. I list them

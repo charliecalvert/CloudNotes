@@ -5,7 +5,7 @@
  * @param {Number} numberOfChannels The initial number of channels.
  * @param {Number} length The length in samples of each channel.
  */
-var AudioletBuffer = function(numberOfChannels, length) {
+const AudioletBuffer = function(numberOfChannels, length) {
     this.numberOfChannels = numberOfChannels;
     this.length = length;
 
@@ -39,8 +39,8 @@ AudioletBuffer.prototype.getChannelData = function(channel) {
  * @param {AudioletBuffer} buffer The buffer to copy data from.
  */
 AudioletBuffer.prototype.set = function(buffer) {
-    var numberOfChannels = buffer.numberOfChannels;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = buffer.numberOfChannels;
+    for (let i = 0; i < numberOfChannels; i++) {
         this.channels[i].set(buffer.getChannelData(i));
     }
 };
@@ -54,23 +54,23 @@ AudioletBuffer.prototype.set = function(buffer) {
  * @param {Number} [outputOffset=0] An offset to write data to.
  */
 AudioletBuffer.prototype.setSection = function(buffer, length, inputOffset,
-                                               outputOffset) {
+    outputOffset) {
     inputOffset = inputOffset || 0;
     outputOffset = outputOffset || 0;
-    var numberOfChannels = buffer.numberOfChannels;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = buffer.numberOfChannels;
+    for (let i = 0; i < numberOfChannels; i++) {
         // Begin subarray-of-subarray fix
         inputOffset += buffer.channelOffset;
         outputOffset += this.channelOffset;
-        var channel1 = this.unslicedChannels[i].subarray(outputOffset,
-                outputOffset +
+        const channel1 = this.unslicedChannels[i].subarray(outputOffset,
+            outputOffset +
                 length);
-        var channel2 = buffer.unslicedChannels[i].subarray(inputOffset,
-                inputOffset +
+        const channel2 = buffer.unslicedChannels[i].subarray(inputOffset,
+            inputOffset +
                 length);
         // End subarray-of-subarray fix
         // Uncomment the following lines when subarray-of-subarray is fixed
-        /*!
+        /* !
            var channel1 = this.getChannelData(i).subarray(outputOffset,
            outputOffset +
            length);
@@ -88,12 +88,12 @@ AudioletBuffer.prototype.setSection = function(buffer, length, inputOffset,
  * @param {AudioletBuffer} buffer The buffer to add data from.
  */
 AudioletBuffer.prototype.add = function(buffer) {
-    var length = this.length;
-    var numberOfChannels = buffer.numberOfChannels;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var channel1 = this.getChannelData(i);
-        var channel2 = buffer.getChannelData(i);
-        for (var j = 0; j < length; j++) {
+    const length = this.length;
+    const numberOfChannels = buffer.numberOfChannels;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const channel1 = this.getChannelData(i);
+        const channel2 = buffer.getChannelData(i);
+        for (let j = 0; j < length; j++) {
             channel1[j] += channel2[j];
         }
     }
@@ -108,14 +108,14 @@ AudioletBuffer.prototype.add = function(buffer) {
  * @param {Number} [outputOffset=0] An offset to write data to.
  */
 AudioletBuffer.prototype.addSection = function(buffer, length, inputOffset,
-                                               outputOffset) {
+    outputOffset) {
     inputOffset = inputOffset || 0;
     outputOffset = outputOffset || 0;
-    var numberOfChannels = buffer.numberOfChannels;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var channel1 = this.getChannelData(i);
-        var channel2 = buffer.getChannelData(i);
-        for (var j = 0; j < length; j++) {
+    const numberOfChannels = buffer.numberOfChannels;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const channel1 = this.getChannelData(i);
+        const channel2 = buffer.getChannelData(i);
+        for (let j = 0; j < length; j++) {
             channel1[j + outputOffset] += channel2[j + inputOffset];
         }
     }
@@ -131,23 +131,23 @@ AudioletBuffer.prototype.addSection = function(buffer, length, inputOffset,
  * @param {Number} [offset=0] An offset to resize from.
  */
 AudioletBuffer.prototype.resize = function(numberOfChannels, length, lazy,
-                                           offset) {
+    offset) {
     offset = offset || 0;
     // Local variables
-    var channels = this.channels;
-    var unslicedChannels = this.unslicedChannels;
+    const channels = this.channels;
+    const unslicedChannels = this.unslicedChannels;
 
-    var oldLength = this.length;
-    var channelOffset = this.channelOffset + offset;
+    const oldLength = this.length;
+    let channelOffset = this.channelOffset + offset;
 
-    for (var i = 0; i < numberOfChannels; i++) {
+    for (let i = 0; i < numberOfChannels; i++) {
         // Get the current channels
-        var channel = channels[i];
-        var unslicedChannel = unslicedChannels[i];
+        let channel = channels[i];
+        let unslicedChannel = unslicedChannels[i];
 
         if (length > oldLength) {
             // We are increasing the size of the buffer
-            var oldChannel = channel;
+            const oldChannel = channel;
 
             if (!lazy ||
                 !unslicedChannel ||
@@ -165,14 +165,13 @@ AudioletBuffer.prototype.resize = function(numberOfChannels, length, lazy,
             }
 
             channelOffset = 0;
-        }
-        else {
+        } else {
             // We are decreasing the size of the buffer
             if (!unslicedChannel) {
                 // Unsliced channel does not exist
                 // We can assume that we always have at least one unsliced
                 // channel, so we can copy its length
-                var unslicedLength = unslicedChannels[0].length;
+                const unslicedLength = unslicedChannels[0].length;
                 unslicedChannel = new Float32Array(unslicedLength);
             }
             // Begin subarray-of-subarray fix
@@ -200,7 +199,7 @@ AudioletBuffer.prototype.resize = function(numberOfChannels, length, lazy,
  * @param {AudioletBuffer} buffer The buffer to append to this buffer.
  */
 AudioletBuffer.prototype.push = function(buffer) {
-    var bufferLength = buffer.length;
+    const bufferLength = buffer.length;
     this.resize(this.numberOfChannels, this.length + bufferLength);
     this.setSection(buffer, bufferLength, 0, this.length - bufferLength);
 };
@@ -211,8 +210,8 @@ AudioletBuffer.prototype.push = function(buffer) {
  * @param {AudioletBuffer} buffer The buffer to move data into.
  */
 AudioletBuffer.prototype.pop = function(buffer) {
-    var bufferLength = buffer.length;
-    var offset = this.length - bufferLength;
+    const bufferLength = buffer.length;
+    const offset = this.length - bufferLength;
     buffer.setSection(this, bufferLength, offset, 0);
     this.resize(this.numberOfChannels, offset);
 };
@@ -223,9 +222,9 @@ AudioletBuffer.prototype.pop = function(buffer) {
  * @param {AudioletBuffer} buffer The buffer to prepend to this buffer.
  */
 AudioletBuffer.prototype.unshift = function(buffer) {
-    var bufferLength = buffer.length;
+    const bufferLength = buffer.length;
     this.resize(this.numberOfChannels, this.length + bufferLength, false,
-            bufferLength);
+        bufferLength);
     this.setSection(buffer, bufferLength, 0, 0);
 };
 
@@ -235,21 +234,21 @@ AudioletBuffer.prototype.unshift = function(buffer) {
  * @param {AudioletBuffer} buffer The buffer to move data into.
  */
 AudioletBuffer.prototype.shift = function(buffer) {
-    var bufferLength = buffer.length;
+    const bufferLength = buffer.length;
     buffer.setSection(this, bufferLength, 0, 0);
     this.resize(this.numberOfChannels, this.length - bufferLength,
-            false, bufferLength);
+        false, bufferLength);
 };
 
 /**
  * Make all values in the buffer 0
  */
 AudioletBuffer.prototype.zero = function() {
-    var numberOfChannels = this.numberOfChannels;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var channel = this.getChannelData(i);
-        var length = this.length;
-        for (var j = 0; j < length; j++) {
+    const numberOfChannels = this.numberOfChannels;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const channel = this.getChannelData(i);
+        const length = this.length;
+        for (let j = 0; j < length; j++) {
             channel[j] = 0;
         }
     }
@@ -262,11 +261,11 @@ AudioletBuffer.prototype.zero = function() {
  * @return {Float32Array} The combined array of data.
  */
 AudioletBuffer.prototype.combined = function() {
-    var channels = this.channels;
-    var numberOfChannels = this.numberOfChannels;
-    var length = this.length;
-    var combined = new Float32Array(numberOfChannels * length);
-    for (var i = 0; i < numberOfChannels; i++) {
+    const channels = this.channels;
+    const numberOfChannels = this.numberOfChannels;
+    const length = this.length;
+    const combined = new Float32Array(numberOfChannels * length);
+    for (let i = 0; i < numberOfChannels; i++) {
         combined.set(channels[i], i * length);
     }
     return combined;
@@ -278,12 +277,12 @@ AudioletBuffer.prototype.combined = function() {
  * @return {Float32Array} The interleaved array of data.
  */
 AudioletBuffer.prototype.interleaved = function() {
-    var channels = this.channels;
-    var numberOfChannels = this.numberOfChannels;
-    var length = this.length;
-    var interleaved = new Float32Array(numberOfChannels * length);
-    for (var i = 0; i < length; i++) {
-        for (var j = 0; j < numberOfChannels; j++) {
+    const channels = this.channels;
+    const numberOfChannels = this.numberOfChannels;
+    const length = this.length;
+    const interleaved = new Float32Array(numberOfChannels * length);
+    for (let i = 0; i < length; i++) {
+        for (let j = 0; j < numberOfChannels; j++) {
             interleaved[numberOfChannels * i + j] = channels[j][i];
         }
     }
@@ -296,7 +295,7 @@ AudioletBuffer.prototype.interleaved = function() {
  * @return {AudioletBuffer} The copy of the buffer.
  */
 AudioletBuffer.prototype.copy = function() {
-    var buffer = new AudioletBuffer(this.numberOfChannels, this.length);
+    const buffer = new AudioletBuffer(this.numberOfChannels, this.length);
     buffer.set(this);
     return buffer;
 };
@@ -309,7 +308,7 @@ AudioletBuffer.prototype.copy = function() {
  * @param {Function} [callback] Function called if the file loaded sucessfully.
  */
 AudioletBuffer.prototype.load = function(path, async, callback) {
-    var request = new AudioFileRequest(path, async);
+    const request = new AudioFileRequest(path, async);
     request.onSuccess = function(decoded) {
         this.length = decoded.length;
         this.numberOfChannels = decoded.channels.length;
@@ -323,7 +322,7 @@ AudioletBuffer.prototype.load = function(path, async, callback) {
 
     request.onFailure = function() {
         console.error('Could not load', path);
-    }.bind(this);
+    };
 
     request.send();
 };
@@ -342,7 +341,7 @@ AudioletBuffer.prototype.load = function(path, async, callback) {
  * @param {Number} numberOfInputs The number of inputs.
  * @param {Number} numberOfOutputs The number of outputs.
  */
-var AudioletGroup = function(audiolet, numberOfInputs, numberOfOutputs) {
+const AudioletGroup = function(audiolet, numberOfInputs, numberOfOutputs) {
     this.audiolet = audiolet;
 
     this.inputs = [];
@@ -383,18 +382,18 @@ AudioletGroup.prototype.disconnect = function(node, output, input) {
  * of its inputs and outputs
  */
 AudioletGroup.prototype.remove = function() {
-    var numberOfInputs = this.inputs.length;
+    const numberOfInputs = this.inputs.length;
     for (var i = 0; i < numberOfInputs; i++) {
         this.inputs[i].remove();
     }
 
-    var numberOfOutputs = this.outputs.length;
+    const numberOfOutputs = this.outputs.length;
     for (var i = 0; i < numberOfOutputs; i++) {
         this.outputs[i].remove();
     }
 };
 
-/*!
+/* !
  * @depends AudioletGroup.js
  */
 
@@ -415,12 +414,12 @@ AudioletGroup.prototype.remove = function() {
  * @param {Number} [numberOfChannels=2] The number of output channels.
  * @param {Number} [bufferSize=8192] A fixed buffer size to use.
  */
-var AudioletDestination = function(audiolet, sampleRate, numberOfChannels,
-                                   bufferSize) {
+const AudioletDestination = function(audiolet, sampleRate, numberOfChannels,
+    bufferSize) {
     AudioletGroup.call(this, audiolet, 1, 0);
 
     this.device = new AudioletDevice(audiolet, sampleRate,
-            numberOfChannels, bufferSize);
+        numberOfChannels, bufferSize);
     audiolet.device = this.device; // Shortcut
     this.scheduler = new Scheduler(audiolet);
     audiolet.scheduler = this.scheduler; // Shortcut
@@ -456,8 +455,8 @@ AudioletDestination.prototype.toString = function() {
  * @param {Number} numberOfOutputs The number of outputs.
  * @param {Function} [generate] A replacement for the generate function.
  */
-var AudioletNode = function(audiolet, numberOfInputs, numberOfOutputs,
-                            generate) {
+const AudioletNode = function(audiolet, numberOfInputs, numberOfOutputs,
+    generate) {
     this.audiolet = audiolet;
 
     this.inputs = [];
@@ -488,8 +487,8 @@ AudioletNode.prototype.connect = function(node, output, input) {
         node = node.inputs[input || 0];
         input = 0;
     }
-    var outputPin = this.outputs[output || 0];
-    var inputPin = node.inputs[input || 0];
+    const outputPin = this.outputs[output || 0];
+    const inputPin = node.inputs[input || 0];
     outputPin.connect(inputPin);
     inputPin.connect(outputPin);
 
@@ -509,8 +508,8 @@ AudioletNode.prototype.disconnect = function(node, output, input) {
         input = 0;
     }
 
-    var outputPin = this.outputs[output || 0];
-    var inputPin = node.inputs[input || 0];
+    const outputPin = this.outputs[output || 0];
+    const inputPin = node.inputs[input || 0];
     inputPin.disconnect(outputPin);
     outputPin.disconnect(inputPin);
 
@@ -524,7 +523,7 @@ AudioletNode.prototype.disconnect = function(node, output, input) {
  * @param {Number} numberOfChannels The number of channels.
  */
 AudioletNode.prototype.setNumberOfOutputChannels = function(output,
-                                                            numberOfChannels) {
+    numberOfChannels) {
     this.outputs[output].numberOfChannels = numberOfChannels;
 };
 
@@ -569,11 +568,11 @@ AudioletNode.prototype.traverse = function(nodes) {
  * Call the traverse function on nodes which are connected to the inputs.
  */
 AudioletNode.prototype.traverseParents = function(nodes) {
-    var numberOfInputs = this.inputs.length;
-    for (var i = 0; i < numberOfInputs; i++) {
-        var input = this.inputs[i];
-        var numberOfStreams = input.connectedFrom.length;
-        for (var j = 0; j < numberOfStreams; j++) {
+    const numberOfInputs = this.inputs.length;
+    for (let i = 0; i < numberOfInputs; i++) {
+        const input = this.inputs[i];
+        const numberOfStreams = input.connectedFrom.length;
+        for (let j = 0; j < numberOfStreams; j++) {
             nodes = input.connectedFrom[j].node.traverse(nodes);
         }
     }
@@ -593,20 +592,19 @@ AudioletNode.prototype.generate = function() {
  * give an empty array
  */
 AudioletNode.prototype.createInputSamples = function() {
-    var numberOfInputs = this.inputs.length;
-    for (var i = 0; i < numberOfInputs; i++) {
-        var input = this.inputs[i];
+    const numberOfInputs = this.inputs.length;
+    for (let i = 0; i < numberOfInputs; i++) {
+        const input = this.inputs[i];
 
-        var numberOfInputChannels = 0;
+        let numberOfInputChannels = 0;
 
-        for (var j = 0; j < input.connectedFrom.length; j++) {
-            var output = input.connectedFrom[j];
-            for (var k = 0; k < output.samples.length; k++) {
-                var sample = output.samples[k];
+        for (let j = 0; j < input.connectedFrom.length; j++) {
+            const output = input.connectedFrom[j];
+            for (let k = 0; k < output.samples.length; k++) {
+                const sample = output.samples[k];
                 if (k < numberOfInputChannels) {
                     input.samples[k] += sample;
-                }
-                else {
+                } else {
                     input.samples[k] = sample;
                     numberOfInputChannels += 1;
                 }
@@ -624,19 +622,18 @@ AudioletNode.prototype.createInputSamples = function() {
 * Create output samples for each channel.
 */
 AudioletNode.prototype.createOutputSamples = function() {
-    var numberOfOutputs = this.outputs.length;
-    for (var i = 0; i < numberOfOutputs; i++) {
-        var output = this.outputs[i];
-        var numberOfChannels = output.getNumberOfChannels();
+    const numberOfOutputs = this.outputs.length;
+    for (let i = 0; i < numberOfOutputs; i++) {
+        const output = this.outputs[i];
+        const numberOfChannels = output.getNumberOfChannels();
         if (output.samples.length == numberOfChannels) {
             continue;
-        }
-        else if (output.samples.length > numberOfChannels) {
+        } else if (output.samples.length > numberOfChannels) {
             output.samples = output.samples.slice(0, numberOfChannels);
             continue;
         }
 
-        for (var j = output.samples.length; j < numberOfChannels; j++) {
+        for (let j = output.samples.length; j < numberOfChannels; j++) {
             output.samples[j] = 0;
         }
     }
@@ -648,24 +645,24 @@ AudioletNode.prototype.createOutputSamples = function() {
  */
 AudioletNode.prototype.remove = function() {
     // Disconnect inputs
-    var numberOfInputs = this.inputs.length;
+    const numberOfInputs = this.inputs.length;
     for (var i = 0; i < numberOfInputs; i++) {
         var input = this.inputs[i];
         var numberOfStreams = input.connectedFrom.length;
         for (var j = 0; j < numberOfStreams; j++) {
-            var outputPin = input.connectedFrom[j];
+            const outputPin = input.connectedFrom[j];
             var output = outputPin.node;
             output.disconnect(this, outputPin.index, i);
         }
     }
 
     // Disconnect outputs
-    var numberOfOutputs = this.outputs.length;
+    const numberOfOutputs = this.outputs.length;
     for (var i = 0; i < numberOfOutputs; i++) {
         var output = this.outputs[i];
         var numberOfStreams = output.connectedTo.length;
         for (var j = 0; j < numberOfStreams; j++) {
-            var inputPin = output.connectedTo[j];
+            const inputPin = output.connectedTo[j];
             var input = inputPin.node;
             this.disconnect(input, i, inputPin.index);
         }
@@ -673,7 +670,7 @@ AudioletNode.prototype.remove = function() {
 };
 
 
-/*!
+/* !
  * @depends AudioletNode.js
  */
 
@@ -690,7 +687,7 @@ function AudioletDevice(audiolet, sampleRate, numberOfChannels, bufferSize) {
     AudioletNode.call(this, audiolet, 1, 0);
 
     this.sink = Sink(this.tick.bind(this), numberOfChannels, bufferSize,
-                     sampleRate);
+        sampleRate);
 
     // Re-read the actual values from the sink.  Sample rate especially is
     // liable to change depending on what the soundcard allows.
@@ -716,10 +713,10 @@ extend(AudioletDevice, AudioletNode);
 */
 AudioletDevice.prototype.tick = function(buffer, numberOfChannels) {
     if (!this.paused) {
-        var input = this.inputs[0];
+        const input = this.inputs[0];
 
-        var samplesNeeded = buffer.length / numberOfChannels;
-        for (var i = 0; i < samplesNeeded; i++) {
+        const samplesNeeded = buffer.length / numberOfChannels;
+        for (let i = 0; i < samplesNeeded; i++) {
             if (this.needTraverse) {
                 this.nodes = this.traverse([]);
                 this.needTraverse = false;
@@ -729,7 +726,7 @@ AudioletDevice.prototype.tick = function(buffer, numberOfChannels) {
             for (var j = this.nodes.length - 1; j > 0; j--) {
                 this.nodes[j].tick();
             }
-            // Cut down tick to just sum the input samples 
+            // Cut down tick to just sum the input samples
             this.createInputSamples();
 
             for (var j = 0; j < numberOfChannels; j++) {
@@ -771,7 +768,7 @@ AudioletDevice.prototype.pause = function() {
  * Restart the output stream.
  */
 AudioletDevice.prototype.play = function() {
-   this.paused = false; 
+    this.paused = false;
 };
 
 /**
@@ -813,8 +810,8 @@ AudioletInput.prototype.connect = function(output) {
  * @param {AudioletOutput} output The output to disconnect from.
  */
 AudioletInput.prototype.disconnect = function(output) {
-    var numberOfStreams = this.connectedFrom.length;
-    for (var i = 0; i < numberOfStreams; i++) {
+    const numberOfStreams = this.connectedFrom.length;
+    for (let i = 0; i < numberOfStreams; i++) {
         if (output == this.connectedFrom[i]) {
             this.connectedFrom.splice(i, 1);
             break;
@@ -844,9 +841,9 @@ AudioletInput.prototype.toString = function() {
  * @param {Number} [numberOfChannels=2] The number of output channels.
  * @param {Number} [bufferSize] Block size.  If undefined uses a sane default.
  */
-var Audiolet = function(sampleRate, numberOfChannels, bufferSize) {
+const Audiolet = function(sampleRate, numberOfChannels, bufferSize) {
     this.output = new AudioletDestination(this, sampleRate,
-                                          numberOfChannels, bufferSize);
+        numberOfChannels, bufferSize);
 };
 
 
@@ -882,8 +879,8 @@ AudioletOutput.prototype.connect = function(input) {
  * @param {AudioletInput} input The input to disconnect from.
  */
 AudioletOutput.prototype.disconnect = function(input) {
-    var numberOfStreams = this.connectedTo.length;
-    for (var i = 0; i < numberOfStreams; i++) {
+    const numberOfStreams = this.connectedTo.length;
+    for (let i = 0; i < numberOfStreams; i++) {
         if (input == this.connectedTo[i]) {
             this.connectedTo.splice(i, 1);
             break;
@@ -944,12 +941,11 @@ AudioletOutput.prototype.toString = function() {
  * @param {Number} [inputIndex] The index of the AudioletInput to link to.
  * @param {Number} [value=0] The initial static value to store.
  */
-var AudioletParameter = function(node, inputIndex, value) {
+const AudioletParameter = function(node, inputIndex, value) {
     this.node = node;
     if (typeof inputIndex != 'undefined' && inputIndex != null) {
         this.input = node.inputs[inputIndex];
-    }
-    else {
+    } else {
         this.input = null;
     }
     this.value = value || 0;
@@ -990,8 +986,7 @@ AudioletParameter.prototype.setValue = function(value) {
 AudioletParameter.prototype.getValue = function() {
     if (this.input != null && this.input.samples.length > 0) {
         return this.input.samples[0];
-    }
-    else {
+    } else {
         return this.value;
     }
 };
@@ -1011,7 +1006,7 @@ function extend(subclass, superclass) {
     subclass.prototype.constructor = subclass;
 }
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -1039,7 +1034,7 @@ function extend(subclass, superclass) {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} value The initial static value of the parameter.
  */
-var ParameterNode = function(audiolet, value) {
+const ParameterNode = function(audiolet, value) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.parameter = new AudioletParameter(this, 0, value);
 };
@@ -1061,7 +1056,7 @@ ParameterNode.prototype.toString = function() {
     return 'Parameter Node';
 };
 
-/*!
+/* !
  * @depends AudioletNode.js
  */
 
@@ -1088,27 +1083,25 @@ extend(PassThroughNode, AudioletNode);
  * the corresponding outputs.
  */
 PassThroughNode.prototype.createOutputSamples = function() {
-    var numberOfOutputs = this.outputs.length;
+    const numberOfOutputs = this.outputs.length;
     // Copy the inputs buffers straight to the output buffers
-    for (var i = 0; i < numberOfOutputs; i++) {
-        var input = this.inputs[i];
-        var output = this.outputs[i];
+    for (let i = 0; i < numberOfOutputs; i++) {
+        const input = this.inputs[i];
+        const output = this.outputs[i];
         if (input && input.samples.length != 0) {
             // Copy the input buffer straight to the output buffers
             output.samples = input.samples;
-        }
-        else {
+        } else {
             // Create the correct number of output samples
-            var numberOfChannels = output.getNumberOfChannels();
+            const numberOfChannels = output.getNumberOfChannels();
             if (output.samples.length == numberOfChannels) {
                 continue;
-            }
-            else if (output.samples.length > numberOfChannels) {
+            } else if (output.samples.length > numberOfChannels) {
                 output.samples = output.samples.slice(0, numberOfChannels);
                 continue;
             }
 
-            for (var j = output.samples.length; j < numberOfChannels; j++) {
+            for (let j = output.samples.length; j < numberOfChannels; j++) {
                 output.samples[j] = 0;
             }
         }
@@ -1132,18 +1125,17 @@ PassThroughNode.prototype.toString = function() {
  * @param {Object[]} [array] Initial array of values to store.
  * @param {Function} [compare] Compare function.
  */
-var PriorityQueue = function(array, compare) {
+const PriorityQueue = function(array, compare) {
     if (compare) {
         this.compare = compare;
     }
 
     if (array) {
         this.heap = array;
-        for (var i = 0; i < Math.floor(this.heap.length / 2); i++) {
+        for (let i = 0; i < Math.floor(this.heap.length / 2); i++) {
             this.siftUp(i);
         }
-    }
-    else {
+    } else {
         this.heap = [];
     }
 };
@@ -1164,14 +1156,13 @@ PriorityQueue.prototype.push = function(item) {
  * @return {Object} The top item.
  */
 PriorityQueue.prototype.pop = function() {
-    var lastElement, returnItem;
+    let lastElement; var returnItem;
     lastElement = this.heap.pop();
     if (this.heap.length) {
         var returnItem = this.heap[0];
         this.heap[0] = lastElement;
         this.siftUp(0);
-    }
-    else {
+    } else {
         returnItem = lastElement;
     }
     return (returnItem);
@@ -1203,10 +1194,10 @@ PriorityQueue.prototype.isEmpty = function() {
  * @param {Number} position Item position.
  */
 PriorityQueue.prototype.siftDown = function(startPosition, position) {
-    var newItem = this.heap[position];
+    const newItem = this.heap[position];
     while (position > startPosition) {
-        var parentPosition = (position - 1) >> 1;
-        var parent = this.heap[parentPosition];
+        const parentPosition = (position - 1) >> 1;
+        const parent = this.heap[parentPosition];
         if (this.compare(newItem, parent)) {
             this.heap[position] = parent;
             position = parentPosition;
@@ -1223,15 +1214,15 @@ PriorityQueue.prototype.siftDown = function(startPosition, position) {
  * @param {Number} position Item position.
  */
 PriorityQueue.prototype.siftUp = function(position) {
-    var endPosition = this.heap.length;
-    var startPosition = position;
-    var newItem = this.heap[position];
-    var childPosition = 2 * position + 1;
+    const endPosition = this.heap.length;
+    const startPosition = position;
+    const newItem = this.heap[position];
+    let childPosition = 2 * position + 1;
     while (childPosition < endPosition) {
-        var rightPosition = childPosition + 1;
+        const rightPosition = childPosition + 1;
         if (rightPosition < endPosition &&
             !this.compare(this.heap[childPosition],
-                          this.heap[rightPosition])) {
+                this.heap[rightPosition])) {
             childPosition = rightPosition;
         }
         this.heap[position] = this.heap[childPosition];
@@ -1253,7 +1244,7 @@ PriorityQueue.prototype.compare = function(a, b) {
     return (a < b);
 };
 
-/*!
+/* !
  * @depends PassThroughNode.js
  */
 
@@ -1314,7 +1305,7 @@ Scheduler.prototype.setTempo = function(bpm) {
  * @return {Object} The event object.
  */
 Scheduler.prototype.addRelative = function(beats, callback) {
-    var event = {};
+    const event = {};
     event.callback = callback;
     event.time = this.time + beats * this.beatLength;
     this.queue.push(event);
@@ -1334,7 +1325,7 @@ Scheduler.prototype.addAbsolute = function(beat, callback) {
         // Nah
         return null;
     }
-    var event = {};
+    const event = {};
     event.callback = callback;
     event.time = this.lastBeatTime + (beat - this.beat) * this.beatLength;
     this.queue.push(event);
@@ -1352,7 +1343,7 @@ Scheduler.prototype.addAbsolute = function(beat, callback) {
  * @return {Object} The event object.
  */
 Scheduler.prototype.play = function(patterns, durationPattern, callback) {
-    var event = {};
+    const event = {};
     event.patterns = patterns;
     event.durationPattern = durationPattern;
     event.callback = callback;
@@ -1375,13 +1366,13 @@ Scheduler.prototype.play = function(patterns, durationPattern, callback) {
  * @return {Object} The event object.
  */
 Scheduler.prototype.playAbsolute = function(beat, patterns, durationPattern,
-                                            callback) {
+    callback) {
     if (beat < this.beat ||
         beat == this.beat && this.time > this.lastBeatTime) {
         // Nah
         return null;
     }
-    var event = {};
+    const event = {};
     event.patterns = patterns;
     event.durationPattern = durationPattern;
     event.callback = callback;
@@ -1397,7 +1388,7 @@ Scheduler.prototype.playAbsolute = function(beat, patterns, durationPattern,
  * @param {Object} event The event to remove.
  */
 Scheduler.prototype.remove = function(event) {
-    var idx = this.queue.heap.indexOf(event);
+    const idx = this.queue.heap.indexOf(event);
     if (idx != -1) {
         this.queue.heap.splice(idx, 1);
         // Recreate queue with event removed
@@ -1427,7 +1418,7 @@ Scheduler.prototype.tick = function() {
 
     while (!this.queue.isEmpty() &&
            this.queue.peek().time <= this.time) {
-        var event = this.queue.pop();
+        const event = this.queue.pop();
         this.processEvent(event);
     }
 };
@@ -1456,19 +1447,18 @@ Scheduler.prototype.tickClock = function() {
  * @param {Object} event The event to process.
  */
 Scheduler.prototype.processEvent = function(event) {
-    var durationPattern = event.durationPattern;
+    const durationPattern = event.durationPattern;
     if (durationPattern) {
         // Pattern event
-        var args = [];
-        var patterns = event.patterns;
-        var numberOfPatterns = patterns.length;
-        for (var i = 0; i < numberOfPatterns; i++) {
-            var pattern = patterns[i];
-            var value = pattern.next();
+        const args = [];
+        const patterns = event.patterns;
+        const numberOfPatterns = patterns.length;
+        for (let i = 0; i < numberOfPatterns; i++) {
+            const pattern = patterns[i];
+            const value = pattern.next();
             if (value != null) {
                 args.push(value);
-            }
-            else {
+            } else {
                 // Null value for an argument, so don't process the
                 // callback or add any further events
                 return;
@@ -1476,11 +1466,10 @@ Scheduler.prototype.processEvent = function(event) {
         }
         event.callback.apply(null, args);
 
-        var duration;
+        let duration;
         if (durationPattern instanceof Pattern) {
             duration = durationPattern.next();
-        }
-        else {
+        } else {
             duration = durationPattern;
         }
 
@@ -1489,8 +1478,7 @@ Scheduler.prototype.processEvent = function(event) {
             event.time += duration * this.beatLength;
             this.queue.push(event);
         }
-    }
-    else {
+    } else {
         // Regular event
         event.callback();
     }
@@ -1509,30 +1497,29 @@ Scheduler.prototype.toString = function() {
  * Bidirectional shim for the renaming of slice to subarray.  Provides
  * backwards compatibility with old browser releases
  */
-var Int8Array, Uint8Array, Int16Array, Uint16Array;
-var Int32Array, Uint32Array, Float32Array, Float64Array;
-var types = [Int8Array, Uint8Array, Int16Array, Uint16Array,
-             Int32Array, Uint32Array, Float32Array, Float64Array];
-var original, shim;
-for (var i = 0; i < types.length; ++i) {
+let Int8Array; let Uint8Array; let Int16Array; let Uint16Array;
+let Int32Array; let Uint32Array; let Float32Array; let Float64Array;
+const types = [Int8Array, Uint8Array, Int16Array, Uint16Array,
+    Int32Array, Uint32Array, Float32Array, Float64Array];
+let original; let shim;
+for (let i = 0; i < types.length; ++i) {
     if (types[i]) {
         if (types[i].prototype.slice === undefined) {
             original = 'subarray';
             shim = 'slice';
-        }
-        else if (types[i].prototype.subarray === undefined) {
+        } else if (types[i].prototype.subarray === undefined) {
             original = 'slice';
             shim = 'subarray';
         }
         Object.defineProperty(types[i].prototype, shim, {
             value: types[i].prototype[original],
-            enumerable: false
+            enumerable: false,
         });
     }
 }
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -1562,8 +1549,8 @@ for (var i = 0; i < types.length; ++i) {
  * @param {Number} [releaseStage] Sustain at this stage until the the gate is 0.
  * @param {Function} [onComplete] Function called as the envelope finishes.
  */
-var Envelope = function(audiolet, gate, levels, times, releaseStage,
-                        onComplete) {
+const Envelope = function(audiolet, gate, levels, times, releaseStage,
+    onComplete) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.gate = new AudioletParameter(this, 0, gate || 1);
 
@@ -1594,9 +1581,9 @@ extend(Envelope, AudioletNode);
  * Process samples
  */
 Envelope.prototype.generate = function() {
-    var gate = this.gate.getValue();
+    const gate = this.gate.getValue();
 
-    var stageChanged = false;
+    let stageChanged = false;
 
     if (gate && !this.gateOn) {
         // Key pressed
@@ -1629,8 +1616,7 @@ Envelope.prototype.generate = function() {
             this.stage += 1;
             if (this.stage != this.releaseStage) {
                 stageChanged = true;
-            }
-            else {
+            } else {
                 // If we reach the release stage then sustain the value
                 // until the gate is released rather than moving on
                 // to the next level.
@@ -1641,13 +1627,12 @@ Envelope.prototype.generate = function() {
     }
 
     if (stageChanged) {
-//        level = this.levels[stage];
+        //        level = this.levels[stage];
         if (this.stage != this.times.length) {
             // Actually update the variables
             this.delta = this.calculateDelta(this.stage, this.level);
             this.changeTime = this.calculateChangeTime(this.stage, this.time);
-        }
-        else {
+        } else {
             // Made it to the end, so finish up
             if (this.onComplete) {
                 this.onComplete();
@@ -1672,8 +1657,8 @@ Envelope.prototype.generate = function() {
  * @return {Number} The change in level.
  */
 Envelope.prototype.calculateDelta = function(stage, level) {
-    var delta = this.levels[stage + 1].getValue() - level;
-    var stageTime = this.times[stage].getValue() *
+    const delta = this.levels[stage + 1].getValue() - level;
+    const stageTime = this.times[stage].getValue() *
                     this.audiolet.device.sampleRate;
     return (delta / stageTime);
 };
@@ -1686,7 +1671,7 @@ Envelope.prototype.calculateDelta = function(stage, level) {
  * @return {Number} The change time.
  */
 Envelope.prototype.calculateChangeTime = function(stage, time) {
-    var stageTime = this.times[stage].getValue() *
+    const stageTime = this.times[stage].getValue() *
                     this.audiolet.device.sampleRate;
     return (time + stageTime);
 };
@@ -1700,7 +1685,7 @@ Envelope.prototype.toString = function() {
     return 'Envelope';
 };
 
-/*!
+/* !
  * @depends Envelope.js
  */
 
@@ -1731,10 +1716,10 @@ Envelope.prototype.toString = function() {
  * @param {Number} release The release time in seconds.
  * @param {Function} onComplete A function called after the release stage.
  */
-var ADSREnvelope = function(audiolet, gate, attack, decay, sustain, release,
-                            onComplete) {
-    var levels = [0, 1, sustain, 0];
-    var times = [attack, decay, release];
+const ADSREnvelope = function(audiolet, gate, attack, decay, sustain, release,
+    onComplete) {
+    const levels = [0, 1, sustain, 0];
+    const times = [attack, decay, release];
     Envelope.call(this, audiolet, gate, levels, times, 2, onComplete);
 
     this.attack = this.times[0];
@@ -1753,7 +1738,7 @@ ADSREnvelope.prototype.toString = function() {
     return 'ADSR Envelope';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -1780,7 +1765,7 @@ ADSREnvelope.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} frequency The initial frequency.
  */
-var BiquadFilter = function(audiolet, frequency) {
+const BiquadFilter = function(audiolet, frequency) {
     AudioletNode.call(this, audiolet, 2, 1);
 
     // Same number of output channels as input channels
@@ -1815,12 +1800,12 @@ BiquadFilter.prototype.calculateCoefficients = function(frequency) {
  * Process samples
  */
 BiquadFilter.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0]
-    var xValueArray = this.xValues;
-    var yValueArray = this.yValues;
+    const input = this.inputs[0];
+    const output = this.outputs[0];
+    const xValueArray = this.xValues;
+    const yValueArray = this.yValues;
 
-    var frequency = this.frequency.getValue();
+    const frequency = this.frequency.getValue();
 
     if (frequency != this.lastFrequency) {
         // Recalculate the coefficients
@@ -1828,29 +1813,29 @@ BiquadFilter.prototype.generate = function() {
         this.lastFrequency = frequency;
     }
 
-    var a0 = this.a0;
-    var a1 = this.a1;
-    var a2 = this.a2;
-    var b0 = this.b0;
-    var b1 = this.b1;
-    var b2 = this.b2;
+    const a0 = this.a0;
+    const a1 = this.a1;
+    const a2 = this.a2;
+    const b0 = this.b0;
+    const b1 = this.b1;
+    const b2 = this.b2;
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= xValueArray.length) {
             xValueArray.push([0, 0]);
             yValueArray.push([0, 0]);
         }
 
-        var xValues = xValueArray[i];
-        var x1 = xValues[0];
-        var x2 = xValues[1];
-        var yValues = yValueArray[i];
-        var y1 = yValues[0];
-        var y2 = yValues[1];
+        const xValues = xValueArray[i];
+        const x1 = xValues[0];
+        const x2 = xValues[1];
+        const yValues = yValueArray[i];
+        const y1 = yValues[0];
+        const y2 = yValues[1];
 
-        var x0 = input.samples[i];
-        var y0 = (b0 / a0) * x0 +
+        const x0 = input.samples[i];
+        const y0 = (b0 / a0) * x0 +
                  (b1 / a0) * x1 +
                  (b2 / a0) * x2 -
                  (a1 / a0) * y1 -
@@ -1874,7 +1859,7 @@ BiquadFilter.prototype.toString = function() {
     return 'Biquad Filter';
 };
 
-/*!
+/* !
  * @depends BiquadFilter.js
  */
 
@@ -1900,7 +1885,7 @@ BiquadFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} frequency The initial frequency.
  */
-var AllPassFilter = function(audiolet, frequency) {
+const AllPassFilter = function(audiolet, frequency) {
     BiquadFilter.call(this, audiolet, frequency);
 };
 extend(AllPassFilter, BiquadFilter);
@@ -1912,11 +1897,11 @@ extend(AllPassFilter, BiquadFilter);
  * @param {Number} frequency The filter frequency.
  */
 AllPassFilter.prototype.calculateCoefficients = function(frequency) {
-    var w0 = 2 * Math.PI * frequency /
+    const w0 = 2 * Math.PI * frequency /
              this.audiolet.device.sampleRate;
-    var cosw0 = Math.cos(w0);
-    var sinw0 = Math.sin(w0);
-    var alpha = sinw0 / (2 / Math.sqrt(2));
+    const cosw0 = Math.cos(w0);
+    const sinw0 = Math.sin(w0);
+    const alpha = sinw0 / (2 / Math.sqrt(2));
 
     this.b0 = 1 - alpha;
     this.b1 = -2 * cosw0;
@@ -1935,7 +1920,7 @@ AllPassFilter.prototype.toString = function() {
     return 'All Pass Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -1963,7 +1948,7 @@ AllPassFilter.prototype.toString = function() {
  * @param {Number} [attack=0.01] The initial attack time in seconds.
  * @param {Number} [release=0.01] The initial release time in seconds.
  */
-var Amplitude = function(audiolet, attack, release) {
+const Amplitude = function(audiolet, attack, release) {
     AudioletNode.call(this, audiolet, 3, 1);
     this.linkNumberOfOutputChannels(0, 0);
 
@@ -1978,32 +1963,31 @@ extend(Amplitude, AudioletNode);
  * Process samples
  */
 Amplitude.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var followers = this.followers;
-    var numberOfFollowers = followers.length;
+    const followers = this.followers;
+    const numberOfFollowers = followers.length;
 
-    var sampleRate = this.audiolet.device.sampleRate;
+    const sampleRate = this.audiolet.device.sampleRate;
 
     // Local processing variables
-    var attack = this.attack.getValue();
+    let attack = this.attack.getValue();
     attack = Math.pow(0.01, 1 / (attack * sampleRate));
-    var release = this.release.getValue();
+    let release = this.release.getValue();
     release = Math.pow(0.01, 1 / (release * sampleRate));
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= numberOfFollowers) {
             followers.push(0);
         }
-        var follower = followers[i];
+        let follower = followers[i];
 
-        var value = Math.abs(input.samples[i]);
+        const value = Math.abs(input.samples[i]);
         if (value > follower) {
             follower = attack * (follower - value) + value;
-        }
-        else {
+        } else {
             follower = release * (follower - value) + value;
         }
         output.samples[i] = follower;
@@ -2020,7 +2004,7 @@ Amplitude.prototype.toString = function() {
     return ('Amplitude');
 };
 
-/*!
+/* !
  * @depends ../core/PassThroughNode.js
  */
 
@@ -2041,7 +2025,7 @@ Amplitude.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Function} [callback] Function called if a bad value is detected.
  */
-var BadValueDetector = function(audiolet, callback) {
+const BadValueDetector = function(audiolet, callback) {
     PassThroughNode.call(this, audiolet, 1, 1);
     this.linkNumberOfOutputChannels(0, 0);
 
@@ -2066,11 +2050,11 @@ BadValueDetector.prototype.callback = function(value, channel) {
  * Process samples
  */
 BadValueDetector.prototype.generate = function() {
-    var input = this.inputs[0];
+    const input = this.inputs[0];
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var value = input.samples[i];
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const value = input.samples[i];
         if (typeof value == 'undefined' ||
             value == null ||
             isNaN(value) ||
@@ -2090,7 +2074,7 @@ BadValueDetector.prototype.toString = function() {
     return 'Bad Value Detector';
 };
 
-/*!
+/* !
  * @depends BiquadFilter.js
  */
 
@@ -2115,7 +2099,7 @@ BadValueDetector.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} frequency The initial frequency.
  */
-var BandPassFilter = function(audiolet, frequency) {
+const BandPassFilter = function(audiolet, frequency) {
     BiquadFilter.call(this, audiolet, frequency);
 };
 extend(BandPassFilter, BiquadFilter);
@@ -2127,10 +2111,10 @@ extend(BandPassFilter, BiquadFilter);
  * @param {Number} frequency The filter frequency.
  */
 BandPassFilter.prototype.calculateCoefficients = function(frequency) {
-    var w0 = 2 * Math.PI * frequency / this.audiolet.device.sampleRate;
-    var cosw0 = Math.cos(w0);
-    var sinw0 = Math.sin(w0);
-    var alpha = sinw0 / (2 / Math.sqrt(2));
+    const w0 = 2 * Math.PI * frequency / this.audiolet.device.sampleRate;
+    const cosw0 = Math.cos(w0);
+    const sinw0 = Math.sin(w0);
+    const alpha = sinw0 / (2 / Math.sqrt(2));
 
     this.b0 = alpha;
     this.b1 = 0;
@@ -2149,7 +2133,7 @@ BandPassFilter.prototype.toString = function() {
     return 'Band Pass Filter';
 };
 
-/*!
+/* !
  * @depends BiquadFilter.js
  */
 
@@ -2174,7 +2158,7 @@ BandPassFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} frequency The initial frequency.
  */
-var BandRejectFilter = function(audiolet, frequency) {
+const BandRejectFilter = function(audiolet, frequency) {
     BiquadFilter.call(this, audiolet, frequency);
 };
 extend(BandRejectFilter, BiquadFilter);
@@ -2186,11 +2170,11 @@ extend(BandRejectFilter, BiquadFilter);
  * @param {Number} frequency The filter frequency.
  */
 BandRejectFilter.prototype.calculateCoefficients = function(frequency) {
-    var w0 = 2 * Math.PI * frequency /
+    const w0 = 2 * Math.PI * frequency /
              this.audiolet.device.sampleRate;
-    var cosw0 = Math.cos(w0);
-    var sinw0 = Math.sin(w0);
-    var alpha = sinw0 / (2 / Math.sqrt(2));
+    const cosw0 = Math.cos(w0);
+    const sinw0 = Math.sin(w0);
+    const alpha = sinw0 / (2 / Math.sqrt(2));
 
     this.b0 = 1;
     this.b1 = -2 * cosw0;
@@ -2209,7 +2193,7 @@ BandRejectFilter.prototype.toString = function() {
     return 'Band Reject Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2234,7 +2218,7 @@ BandRejectFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} bits The initial number of bits.
  */
-var BitCrusher = function(audiolet, bits) {
+const BitCrusher = function(audiolet, bits) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.bits = new AudioletParameter(this, 1, bits);
@@ -2245,12 +2229,12 @@ extend(BitCrusher, AudioletNode);
  * Process samples
  */
 BitCrusher.prototype.generate = function() {
-    var input = this.inputs[0];
+    const input = this.inputs[0];
 
-    var maxValue = Math.pow(2, this.bits.getValue()) - 1;
+    const maxValue = Math.pow(2, this.bits.getValue()) - 1;
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         this.outputs[0].samples[i] = Math.floor(input.samples[i] * maxValue) /
                                      maxValue;
     }
@@ -2266,7 +2250,7 @@ BitCrusher.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2306,8 +2290,8 @@ BitCrusher.prototype.toString = function() {
  * @param {Number} [loop=0] Initial value for whether to loop.
  * @param {Function} [onComplete] Called when the buffer has finished playing.
  */
-var BufferPlayer = function(audiolet, buffer, playbackRate, startPosition,
-                            loop, onComplete) {
+const BufferPlayer = function(audiolet, buffer, playbackRate, startPosition,
+    loop, onComplete) {
     AudioletNode.call(this, audiolet, 3, 1);
     this.buffer = buffer;
     this.setNumberOfOutputChannels(0, this.buffer.numberOfChannels);
@@ -2327,7 +2311,7 @@ extend(BufferPlayer, AudioletNode);
  * Process samples
  */
 BufferPlayer.prototype.generate = function() {
-    var output = this.outputs[0];
+    const output = this.outputs[0];
 
     // Cache local variables
     var numberOfChannels = output.samples.length;
@@ -2341,10 +2325,10 @@ BufferPlayer.prototype.generate = function() {
     }
 
     // Crap load of parameters
-    var playbackRate = this.playbackRate.getValue();
-    var restartTrigger = this.restartTrigger.getValue();
-    var startPosition = this.startPosition.getValue();
-    var loop = this.loop.getValue();
+    const playbackRate = this.playbackRate.getValue();
+    const restartTrigger = this.restartTrigger.getValue();
+    const startPosition = this.startPosition.getValue();
+    const loop = this.loop.getValue();
 
     if (restartTrigger > 0 && !this.restartTriggerOn) {
         // Trigger moved from <=0 to >0, so we restart playback from
@@ -2362,22 +2346,21 @@ BufferPlayer.prototype.generate = function() {
     var numberOfChannels = this.buffer.channels.length;
 
     for (var i = 0; i < numberOfChannels; i++) {
-        var inputChannel = this.buffer.getChannelData(i);
+        const inputChannel = this.buffer.getChannelData(i);
         output.samples[i] = inputChannel[Math.floor(this.position)];
     }
-    
+
     this.position += playbackRate;
 
     if (this.position >= this.buffer.length) {
         if (loop) {
             // Back to the start
             this.position %= this.buffer.length;
-        }
-        else {
+        } else {
             // Finish playing until a new restart trigger
             this.playing = false;
             if (this.onComplete) {
-               this.onComplete();
+                this.onComplete();
             }
         }
     }
@@ -2392,7 +2375,7 @@ BufferPlayer.prototype.toString = function() {
     return ('Buffer player');
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2421,7 +2404,7 @@ BufferPlayer.prototype.toString = function() {
  * @param {Number} delayTime The initial delay time.
  * @param {Number} decayTime The initial decay time.
  */
-var CombFilter = function(audiolet, maximumDelayTime, delayTime, decayTime) {
+const CombFilter = function(audiolet, maximumDelayTime, delayTime, decayTime) {
     AudioletNode.call(this, audiolet, 3, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.maximumDelayTime = maximumDelayTime;
@@ -2436,25 +2419,25 @@ extend(CombFilter, AudioletNode);
  * Process samples
  */
 CombFilter.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var sampleRate = this.audiolet.device.sampleRate;
+    const sampleRate = this.audiolet.device.sampleRate;
 
-    var delayTime = this.delayTime.getValue() * sampleRate;
-    var decayTime = this.decayTime.getValue() * sampleRate;
-    var feedback = Math.exp(-3 * delayTime / decayTime);
+    const delayTime = this.delayTime.getValue() * sampleRate;
+    const decayTime = this.decayTime.getValue() * sampleRate;
+    const feedback = Math.exp(-3 * delayTime / decayTime);
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= this.buffers.length) {
             // Create buffer for channel if it doesn't already exist
-            var bufferSize = this.maximumDelayTime * sampleRate;
+            const bufferSize = this.maximumDelayTime * sampleRate;
             this.buffers.push(new Float32Array(bufferSize));
         }
 
-        var buffer = this.buffers[i];
-        var outputValue = buffer[this.readWriteIndex];
+        const buffer = this.buffers[i];
+        const outputValue = buffer[this.readWriteIndex];
         output.samples[i] = outputValue;
         buffer[this.readWriteIndex] = input.samples[i] + feedback * outputValue;
     }
@@ -2474,7 +2457,7 @@ CombFilter.prototype.toString = function() {
     return 'Comb Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2498,7 +2481,7 @@ CombFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [frequency=440] Initial frequency.
  */
-var Sine = function(audiolet, frequency) {
+const Sine = function(audiolet, frequency) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.frequency = new AudioletParameter(this, 0, frequency || 440);
     this.phase = 0;
@@ -2509,10 +2492,10 @@ extend(Sine, AudioletNode);
  * Process samples
  */
 Sine.prototype.generate = function() {
-    var output = this.outputs[0];
+    const output = this.outputs[0];
 
-    var frequency = this.frequency.getValue();
-    var sampleRate = this.audiolet.device.sampleRate;
+    const frequency = this.frequency.getValue();
+    const sampleRate = this.audiolet.device.sampleRate;
 
     output.samples[0] = Math.sin(this.phase);
 
@@ -2532,7 +2515,7 @@ Sine.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  * @depends Sine.js
  */
@@ -2560,7 +2543,7 @@ Sine.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [position=0.5] The initial fade position.
  */
-var CrossFade = function(audiolet, position) {
+const CrossFade = function(audiolet, position) {
     AudioletNode.call(this, audiolet, 3, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.position = new AudioletParameter(this, 2, position || 0.5);
@@ -2571,21 +2554,21 @@ extend(CrossFade, AudioletNode);
  * Process samples
  */
 CrossFade.prototype.generate = function() {
-    var inputA = this.inputs[0];
-    var inputB = this.inputs[1];
-    var output = this.outputs[0];
+    const inputA = this.inputs[0];
+    const inputB = this.inputs[1];
+    const output = this.outputs[0];
 
     // Local processing variables
-    var position = this.position.getValue();
+    const position = this.position.getValue();
 
-    var scaledPosition = position * Math.PI / 2;
-    var gainA = Math.cos(scaledPosition);
-    var gainB = Math.sin(scaledPosition);
+    const scaledPosition = position * Math.PI / 2;
+    const gainA = Math.cos(scaledPosition);
+    const gainB = Math.sin(scaledPosition);
 
-    var numberOfChannels = output.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var valueA = inputA.samples[i] || 0;
-        var valueB = inputB.samples[i] || 0;
+    const numberOfChannels = output.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const valueA = inputA.samples[i] || 0;
+        const valueB = inputB.samples[i] || 0;
         output.samples[i] = valueA * gainA + valueB * gainB;
     }
 };
@@ -2599,7 +2582,7 @@ CrossFade.prototype.toString = function() {
     return 'Cross Fader';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2631,15 +2614,15 @@ CrossFade.prototype.toString = function() {
  * @param {Number} decayTime The initial decay time.
  * @param {Number} damping The initial amount of damping.
  */
-var DampedCombFilter = function(audiolet, maximumDelayTime, delayTime,
-                                decayTime, damping) {
+const DampedCombFilter = function(audiolet, maximumDelayTime, delayTime,
+    decayTime, damping) {
     AudioletNode.call(this, audiolet, 4, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.maximumDelayTime = maximumDelayTime;
     this.delayTime = new AudioletParameter(this, 1, delayTime || 1);
     this.decayTime = new AudioletParameter(this, 2, decayTime);
     this.damping = new AudioletParameter(this, 3, damping);
-    var bufferSize = maximumDelayTime * this.audiolet.device.sampleRate;
+    const bufferSize = maximumDelayTime * this.audiolet.device.sampleRate;
     this.buffers = [];
     this.readWriteIndex = 0;
     this.filterStores = [];
@@ -2650,20 +2633,20 @@ extend(DampedCombFilter, AudioletNode);
  * Process samples
  */
 DampedCombFilter.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var sampleRate = this.audiolet.device.sampleRate;
+    const sampleRate = this.audiolet.device.sampleRate;
 
-    var delayTime = this.delayTime.getValue() * sampleRate;
-    var decayTime = this.decayTime.getValue() * sampleRate;
-    var damping = this.damping.getValue();
-    var feedback = Math.exp(-3 * delayTime / decayTime);
+    const delayTime = this.delayTime.getValue() * sampleRate;
+    const decayTime = this.decayTime.getValue() * sampleRate;
+    const damping = this.damping.getValue();
+    const feedback = Math.exp(-3 * delayTime / decayTime);
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= this.buffers.length) {
-            var bufferSize = this.maximumDelayTime * sampleRate;
+            const bufferSize = this.maximumDelayTime * sampleRate;
             this.buffers.push(new Float32Array(bufferSize));
         }
 
@@ -2671,10 +2654,10 @@ DampedCombFilter.prototype.generate = function() {
             this.filterStores.push(0);
         }
 
-        var buffer = this.buffers[i];
-        var filterStore = this.filterStores[i];
+        const buffer = this.buffers[i];
+        let filterStore = this.filterStores[i];
 
-        var outputValue = buffer[this.readWriteIndex];
+        const outputValue = buffer[this.readWriteIndex];
         filterStore = (outputValue * (1 - damping)) +
                       (filterStore * damping);
         output.samples[i] = outputValue;
@@ -2699,7 +2682,7 @@ DampedCombFilter.prototype.toString = function() {
     return 'Damped Comb Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2725,7 +2708,7 @@ DampedCombFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [coefficient=0.995] The initial coefficient.
  */
-var DCFilter = function(audiolet, coefficient) {
+const DCFilter = function(audiolet, coefficient) {
     AudioletNode.call(this, audiolet, 2, 1);
 
     // Same number of output channels as input channels
@@ -2743,10 +2726,10 @@ extend(DCFilter, AudioletNode);
  * Process samples
  */
 DCFilter.prototype.generate = function() {
-    var coefficient = this.coefficient.getValue();
-    var input = this.inputs[0];
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const coefficient = this.coefficient.getValue();
+    const input = this.inputs[0];
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= this.xValues.length) {
             this.xValues.push(0);
         }
@@ -2754,8 +2737,8 @@ DCFilter.prototype.generate = function() {
             this.yValues.push(0);
         }
 
-        var x0 = input.samples[i];
-        var y0 = x0 - this.xValues[i] + coefficient * this.yValues[i];
+        const x0 = input.samples[i];
+        const y0 = x0 - this.xValues[i] + coefficient * this.yValues[i];
 
         this.outputs[0].samples[i] = y0;
 
@@ -2773,7 +2756,7 @@ DCFilter.prototype.toString = function() {
     return 'DC Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2799,12 +2782,12 @@ DCFilter.prototype.toString = function() {
  * @param {Number} maximumDelayTime The largest allowable delay time.
  * @param {Number} delayTime The initial delay time.
  */
-var Delay = function(audiolet, maximumDelayTime, delayTime) {
+const Delay = function(audiolet, maximumDelayTime, delayTime) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.maximumDelayTime = maximumDelayTime;
     this.delayTime = new AudioletParameter(this, 1, delayTime || 1);
-    var bufferSize = maximumDelayTime * this.audiolet.device.sampleRate;
+    const bufferSize = maximumDelayTime * this.audiolet.device.sampleRate;
     this.buffers = [];
     this.readWriteIndex = 0;
 };
@@ -2814,22 +2797,22 @@ extend(Delay, AudioletNode);
  * Process samples
  */
 Delay.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var sampleRate = this.audiolet.device.sampleRate;
+    const sampleRate = this.audiolet.device.sampleRate;
 
-    var delayTime = this.delayTime.getValue() * sampleRate;
+    const delayTime = this.delayTime.getValue() * sampleRate;
 
-    var numberOfChannels = input.samples.length;
+    const numberOfChannels = input.samples.length;
 
-    for (var i = 0; i < numberOfChannels; i++) {
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= this.buffers.length) {
-            var bufferSize = this.maximumDelayTime * sampleRate;
+            const bufferSize = this.maximumDelayTime * sampleRate;
             this.buffers.push(new Float32Array(bufferSize));
         }
 
-        var buffer = this.buffers[i];
+        const buffer = this.buffers[i];
         output.samples[i] = buffer[this.readWriteIndex];
         buffer[this.readWriteIndex] = input.samples[i];
     }
@@ -2849,7 +2832,7 @@ Delay.prototype.toString = function() {
     return 'Delay';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2871,7 +2854,7 @@ Delay.prototype.toString = function() {
  * @param {Number} [threshold=0.2] The threshold value.
  * @param {Function} [callback] Function called if a discontinuity is detected.
  */
-var DiscontinuityDetector = function(audiolet, threshold, callback) {
+const DiscontinuityDetector = function(audiolet, threshold, callback) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.linkNumberOfOutputChannels(0, 0);
 
@@ -2880,7 +2863,6 @@ var DiscontinuityDetector = function(audiolet, threshold, callback) {
         this.callback = callback;
     }
     this.lastValues = [];
-
 };
 extend(DiscontinuityDetector, AudioletNode);
 
@@ -2900,17 +2882,17 @@ DiscontinuityDetector.prototype.callback = function(size, channel) {
  * Process samples
  */
 DiscontinuityDetector.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= this.lastValues.length) {
             this.lastValues.push(0);
         }
 
-        var value = input.samples[i];
-        var diff = Math.abs(this.lastValues[i] - value);
+        const value = input.samples[i];
+        const diff = Math.abs(this.lastValues[i] - value);
         if (diff > this.threshold) {
             this.callback(diff, i);
         }
@@ -2929,7 +2911,7 @@ DiscontinuityDetector.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -2961,15 +2943,15 @@ DiscontinuityDetector.prototype.toString = function() {
  * @param {Number} feedabck The initial feedback amount.
  * @param {Number} mix The initial mix amount.
  */
-var FeedbackDelay = function(audiolet, maximumDelayTime, delayTime, feedback,
-                             mix) {
+const FeedbackDelay = function(audiolet, maximumDelayTime, delayTime, feedback,
+    mix) {
     AudioletNode.call(this, audiolet, 4, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.maximumDelayTime = maximumDelayTime;
     this.delayTime = new AudioletParameter(this, 1, delayTime || 1);
     this.feedback = new AudioletParameter(this, 2, feedback || 0.5);
     this.mix = new AudioletParameter(this, 3, mix || 1);
-    var bufferSize = maximumDelayTime * this.audiolet.device.sampleRate;
+    const bufferSize = maximumDelayTime * this.audiolet.device.sampleRate;
     this.buffers = [];
     this.readWriteIndex = 0;
 };
@@ -2979,28 +2961,28 @@ extend(FeedbackDelay, AudioletNode);
  * Process samples
  */
 FeedbackDelay.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var sampleRate = this.audiolet.output.device.sampleRate;
+    const sampleRate = this.audiolet.output.device.sampleRate;
 
-    var delayTime = this.delayTime.getValue() * sampleRate;
-    var feedback = this.feedback.getValue();
-    var mix = this.mix.getValue();
+    const delayTime = this.delayTime.getValue() * sampleRate;
+    const feedback = this.feedback.getValue();
+    const mix = this.mix.getValue();
 
-    var numberOfChannels = input.samples.length;
-    var numberOfBuffers = this.buffers.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    const numberOfBuffers = this.buffers.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= numberOfBuffers) {
             // Create buffer for channel if it doesn't already exist
-            var bufferSize = this.maximumDelayTime * sampleRate;
+            const bufferSize = this.maximumDelayTime * sampleRate;
             this.buffers.push(new Float32Array(bufferSize));
         }
 
-        var buffer = this.buffers[i];
+        const buffer = this.buffers[i];
 
-        var inputSample = input.samples[i];
-        var bufferSample = buffer[this.readWriteIndex];
+        const inputSample = input.samples[i];
+        const bufferSample = buffer[this.readWriteIndex];
 
         output.samples[i] = mix * bufferSample + (1 - mix) * inputSample;
         buffer[this.readWriteIndex] = inputSample + feedback * bufferSample;
@@ -3021,7 +3003,7 @@ FeedbackDelay.prototype.toString = function() {
     return 'Feedback Delay';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3042,7 +3024,7 @@ FeedbackDelay.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} bufferSize The FFT buffer size.
  */
-var FFT = function(audiolet, bufferSize) {
+const FFT = function(audiolet, bufferSize) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.bufferSize = bufferSize;
@@ -3062,8 +3044,8 @@ extend(FFT, AudioletNode);
  * Process samples
  */
 FFT.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
     if (input.samples.length == 0) {
         return;
@@ -3071,7 +3053,7 @@ FFT.prototype.generate = function() {
 
     this.buffer[this.readWriteIndex] = input.samples[0];
     output.samples[0] = [this.realBuffer[this.readWriteIndex],
-                         this.imaginaryBuffer[this.readWriteIndex]];
+        this.imaginaryBuffer[this.readWriteIndex]];
 
     this.readWriteIndex += 1;
     if (this.readWriteIndex >= this.bufferSize) {
@@ -3085,11 +3067,11 @@ FFT.prototype.generate = function() {
  * TODO: Split the function out so it can be reused in FFT and IFFT
  */
 FFT.prototype.calculateReverseTable = function() {
-    var limit = 1;
-    var bit = this.bufferSize >> 1;
+    let limit = 1;
+    let bit = this.bufferSize >> 1;
 
     while (limit < this.bufferSize) {
-        for (var i = 0; i < limit; i++) {
+        for (let i = 0; i < limit; i++) {
             this.reverseTable[i + limit] = this.reverseTable[i] + bit;
         }
 
@@ -3108,23 +3090,23 @@ FFT.prototype.transform = function() {
         this.imaginaryBuffer[i] = 0;
     }
 
-    var halfSize = 1;
+    let halfSize = 1;
 
     while (halfSize < this.bufferSize) {
-        var phaseShiftStepReal = Math.cos(-Math.PI / halfSize);
-        var phaseShiftStepImag = Math.sin(-Math.PI / halfSize);
+        const phaseShiftStepReal = Math.cos(-Math.PI / halfSize);
+        const phaseShiftStepImag = Math.sin(-Math.PI / halfSize);
 
-        var currentPhaseShiftReal = 1;
-        var currentPhaseShiftImag = 0;
+        let currentPhaseShiftReal = 1;
+        let currentPhaseShiftImag = 0;
 
-        for (var fftStep = 0; fftStep < halfSize; fftStep++) {
+        for (let fftStep = 0; fftStep < halfSize; fftStep++) {
             var i = fftStep;
 
             while (i < this.bufferSize) {
-                var off = i + halfSize;
-                var tr = (currentPhaseShiftReal * this.realBuffer[off]) -
+                const off = i + halfSize;
+                const tr = (currentPhaseShiftReal * this.realBuffer[off]) -
                          (currentPhaseShiftImag * this.imaginaryBuffer[off]);
-                var ti = (currentPhaseShiftReal * this.imaginaryBuffer[off]) +
+                const ti = (currentPhaseShiftReal * this.imaginaryBuffer[off]) +
                          (currentPhaseShiftImag * this.realBuffer[off]);
 
                 this.realBuffer[off] = this.realBuffer[i] - tr;
@@ -3135,7 +3117,7 @@ FFT.prototype.transform = function() {
                 i += halfSize << 1;
             }
 
-            var tmpReal = currentPhaseShiftReal;
+            const tmpReal = currentPhaseShiftReal;
             currentPhaseShiftReal = (tmpReal * phaseShiftStepReal) -
                                     (currentPhaseShiftImag *
                                      phaseShiftStepImag);
@@ -3157,7 +3139,7 @@ FFT.prototype.toString = function() {
     return 'FFT';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3182,7 +3164,7 @@ FFT.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [value=1] The initial value to multiply by.
  */
-var Multiply = function(audiolet, value) {
+const Multiply = function(audiolet, value) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.value = new AudioletParameter(this, 1, value || 1);
@@ -3193,10 +3175,10 @@ extend(Multiply, AudioletNode);
  * Process samples
  */
 Multiply.prototype.generate = function() {
-    var value = this.value.getValue();
-    var input = this.inputs[0];
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const value = this.value.getValue();
+    const input = this.inputs[0];
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         this.outputs[0].samples[i] = input.samples[i] * value;
     }
 };
@@ -3211,7 +3193,7 @@ Multiply.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../operators/Multiply.js
  */
 
@@ -3236,7 +3218,7 @@ Multiply.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [gain=1] Initial gain.
  */
-var Gain = function(audiolet, gain) {
+const Gain = function(audiolet, gain) {
     // Same DSP as operators/Multiply.js, but different parameter name
     Multiply.call(this, audiolet, gain);
     this.gain = this.value;
@@ -3252,7 +3234,7 @@ Gain.prototype.toString = function() {
     return ('Gain');
 };
 
-/*!
+/* !
  * @depends BiquadFilter.js
  */
 
@@ -3277,7 +3259,7 @@ Gain.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} frequency The initial frequency.
  */
-var HighPassFilter = function(audiolet, frequency) {
+const HighPassFilter = function(audiolet, frequency) {
     BiquadFilter.call(this, audiolet, frequency);
 };
 extend(HighPassFilter, BiquadFilter);
@@ -3289,11 +3271,11 @@ extend(HighPassFilter, BiquadFilter);
  * @param {Number} frequency The filter frequency.
  */
 HighPassFilter.prototype.calculateCoefficients = function(frequency) {
-    var w0 = 2 * Math.PI * frequency /
+    const w0 = 2 * Math.PI * frequency /
              this.audiolet.device.sampleRate;
-    var cosw0 = Math.cos(w0);
-    var sinw0 = Math.sin(w0);
-    var alpha = sinw0 / (2 / Math.sqrt(2));
+    const cosw0 = Math.cos(w0);
+    const sinw0 = Math.sin(w0);
+    const alpha = sinw0 / (2 / Math.sqrt(2));
 
     this.b0 = (1 + cosw0) / 2;
     this.b1 = - (1 + cosw0);
@@ -3312,7 +3294,7 @@ HighPassFilter.prototype.toString = function() {
     return 'High Pass Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3334,7 +3316,7 @@ HighPassFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} bufferSize The FFT buffer size.
  */
-var IFFT = function(audiolet, bufferSize) {
+const IFFT = function(audiolet, bufferSize) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.bufferSize = bufferSize;
@@ -3357,14 +3339,14 @@ extend(IFFT, AudioletNode);
  * Process samples
  */
 IFFT.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
     if (!input.samples.length) {
         return;
     }
 
-    var values = input.samples[0];
+    const values = input.samples[0];
     this.realBuffer[this.readWriteIndex] = values[0];
     this.imaginaryBuffer[this.readWriteIndex] = values[1];
     output.samples[0] = this.buffer[this.readWriteIndex];
@@ -3381,11 +3363,11 @@ IFFT.prototype.generate = function() {
  * TODO: Split the function out so it can be reused in FFT and IFFT
  */
 IFFT.prototype.calculateReverseTable = function() {
-    var limit = 1;
-    var bit = this.bufferSize >> 1;
+    let limit = 1;
+    let bit = this.bufferSize >> 1;
 
     while (limit < this.bufferSize) {
-        for (var i = 0; i < limit; i++) {
+        for (let i = 0; i < limit; i++) {
             this.reverseTable[i + limit] = this.reverseTable[i] + bit;
         }
 
@@ -3398,7 +3380,7 @@ IFFT.prototype.calculateReverseTable = function() {
  * Calculate the inverse FFT for the saved real and imaginary buffers
  */
 IFFT.prototype.transform = function() {
-    var halfSize = 1;
+    let halfSize = 1;
 
     for (var i = 0; i < this.bufferSize; i++) {
         this.imaginaryBuffer[i] *= -1;
@@ -3408,25 +3390,25 @@ IFFT.prototype.transform = function() {
         this.reverseReal[i] = this.realBuffer[this.reverseTable[i]];
         this.reverseImaginary[i] = this.imaginaryBuffer[this.reverseTable[i]];
     }
- 
+
     this.realBuffer.set(this.reverseReal);
     this.imaginaryBuffer.set(this.reverseImaginary);
 
 
     while (halfSize < this.bufferSize) {
-        var phaseShiftStepReal = Math.cos(-Math.PI / halfSize);
-        var phaseShiftStepImag = Math.sin(-Math.PI / halfSize);
-        var currentPhaseShiftReal = 1;
-        var currentPhaseShiftImag = 0;
+        const phaseShiftStepReal = Math.cos(-Math.PI / halfSize);
+        const phaseShiftStepImag = Math.sin(-Math.PI / halfSize);
+        let currentPhaseShiftReal = 1;
+        let currentPhaseShiftImag = 0;
 
-        for (var fftStep = 0; fftStep < halfSize; fftStep++) {
+        for (let fftStep = 0; fftStep < halfSize; fftStep++) {
             i = fftStep;
 
             while (i < this.bufferSize) {
-                var off = i + halfSize;
-                var tr = (currentPhaseShiftReal * this.realBuffer[off]) -
+                const off = i + halfSize;
+                const tr = (currentPhaseShiftReal * this.realBuffer[off]) -
                          (currentPhaseShiftImag * this.imaginaryBuffer[off]);
-                var ti = (currentPhaseShiftReal * this.imaginaryBuffer[off]) +
+                const ti = (currentPhaseShiftReal * this.imaginaryBuffer[off]) +
                          (currentPhaseShiftImag * this.realBuffer[off]);
 
                 this.realBuffer[off] = this.realBuffer[i] - tr;
@@ -3437,7 +3419,7 @@ IFFT.prototype.transform = function() {
                 i += halfSize << 1;
             }
 
-            var tmpReal = currentPhaseShiftReal;
+            const tmpReal = currentPhaseShiftReal;
             currentPhaseShiftReal = (tmpReal * phaseShiftStepReal) -
                                     (currentPhaseShiftImag *
                                      phaseShiftStepImag);
@@ -3463,7 +3445,7 @@ IFFT.prototype.toString = function() {
     return 'IFFT';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3490,7 +3472,7 @@ IFFT.prototype.toString = function() {
  * @param {Number} [value=0] The initial value.
  * @param {Number} [lagTime=1] The initial lag time.
  */
-var Lag = function(audiolet, value, lagTime) {
+const Lag = function(audiolet, value, lagTime) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.value = new AudioletParameter(this, 0, value || 0);
     this.lag = new AudioletParameter(this, 1, lagTime || 1);
@@ -3504,16 +3486,16 @@ extend(Lag, AudioletNode);
  * Process samples
  */
 Lag.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var sampleRate = this.audiolet.device.sampleRate;
+    const sampleRate = this.audiolet.device.sampleRate;
 
-    var value = this.value.getValue();
-    var lag = this.lag.getValue();
-    var coefficient = Math.exp(this.log001 / (lag * sampleRate));
+    const value = this.value.getValue();
+    const lag = this.lag.getValue();
+    const coefficient = Math.exp(this.log001 / (lag * sampleRate));
 
-    var outputValue = ((1 - coefficient) * value) +
+    const outputValue = ((1 - coefficient) * value) +
                       (coefficient * this.lastValue);
     output.samples[0] = outputValue;
     this.lastValue = outputValue;
@@ -3529,7 +3511,7 @@ Lag.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletGroup.js
  */
 
@@ -3560,7 +3542,7 @@ Lag.prototype.toString = function() {
  * @param {Number} [attack=0.01] The initial attack time.
  * @param {Number} [release=0.4] The initial release time.
  */
-var Limiter = function(audiolet, threshold, attack, release) {
+const Limiter = function(audiolet, threshold, attack, release) {
     AudioletNode.call(this, audiolet, 4, 1);
     this.linkNumberOfOutputChannels(0, 0);
 
@@ -3577,43 +3559,41 @@ extend(Limiter, AudioletNode);
  * Process samples
  */
 Limiter.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var sampleRate = this.audiolet.device.sampleRate;
+    const sampleRate = this.audiolet.device.sampleRate;
 
     // Local processing variables
-    var attack = Math.pow(0.01, 1 / (this.attack.getValue() *
+    const attack = Math.pow(0.01, 1 / (this.attack.getValue() *
                                      sampleRate));
-    var release = Math.pow(0.01, 1 / (this.release.getValue() *
+    const release = Math.pow(0.01, 1 / (this.release.getValue() *
                                       sampleRate));
 
-    var threshold = this.threshold.getValue();
+    const threshold = this.threshold.getValue();
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         if (i >= this.followers.length) {
             this.followers.push(0);
         }
 
-        var follower = this.followers[i];
+        let follower = this.followers[i];
 
-        var value = input.samples[i];
+        const value = input.samples[i];
 
         // Calculate amplitude envelope
-        var absValue = Math.abs(value);
+        const absValue = Math.abs(value);
         if (absValue > follower) {
             follower = attack * (follower - absValue) + absValue;
-        }
-        else {
+        } else {
             follower = release * (follower - absValue) + absValue;
         }
-        
-        var diff = follower - threshold;
+
+        const diff = follower - threshold;
         if (diff > 0) {
             output.samples[i] = value / (1 + diff);
-        }
-        else {
+        } else {
             output.samples[i] = value;
         }
 
@@ -3631,7 +3611,7 @@ Limiter.prototype.toString = function() {
     return 'Limiter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3658,7 +3638,7 @@ Limiter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [position=0.5] The initial fade position.
  */
-var LinearCrossFade = function(audiolet, position) {
+const LinearCrossFade = function(audiolet, position) {
     AudioletNode.call(this, audiolet, 3, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.position = new AudioletParameter(this, 2, position || 0.5);
@@ -3669,19 +3649,19 @@ extend(LinearCrossFade, AudioletNode);
  * Process samples
  */
 LinearCrossFade.prototype.generate = function() {
-    var inputA = this.inputs[0];
-    var inputB = this.inputs[1];
-    var output = this.outputs[0];
+    const inputA = this.inputs[0];
+    const inputB = this.inputs[1];
+    const output = this.outputs[0];
 
-    var position = this.position.getValue();
+    const position = this.position.getValue();
 
-    var gainA = 1 - position;
-    var gainB = position;
+    const gainA = 1 - position;
+    const gainB = position;
 
-    var numberOfChannels = output.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var valueA = inputA.samples[i] || 0;
-        var valueB = inputB.samples[i] || 0;
+    const numberOfChannels = output.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const valueA = inputA.samples[i] || 0;
+        const valueB = inputB.samples[i] || 0;
         output.samples[i] = valueA * gainA + valueB * gainB;
     }
 };
@@ -3695,7 +3675,7 @@ LinearCrossFade.prototype.toString = function() {
     return 'Linear Cross Fader';
 };
 
-/*!
+/* !
  * @depends BiquadFilter.js
  */
 
@@ -3720,7 +3700,7 @@ LinearCrossFade.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} frequency The initial frequency.
  */
-var LowPassFilter = function(audiolet, frequency) {
+const LowPassFilter = function(audiolet, frequency) {
     BiquadFilter.call(this, audiolet, frequency);
 };
 extend(LowPassFilter, BiquadFilter);
@@ -3732,11 +3712,11 @@ extend(LowPassFilter, BiquadFilter);
  * @param {Number} frequency The filter frequency.
  */
 LowPassFilter.prototype.calculateCoefficients = function(frequency) {
-    var w0 = 2 * Math.PI * frequency /
+    const w0 = 2 * Math.PI * frequency /
              this.audiolet.device.sampleRate;
-    var cosw0 = Math.cos(w0);
-    var sinw0 = Math.sin(w0);
-    var alpha = sinw0 / (2 / Math.sqrt(2));
+    const cosw0 = Math.cos(w0);
+    const sinw0 = Math.sin(w0);
+    const alpha = sinw0 / (2 / Math.sqrt(2));
 
     this.b0 = (1 - cosw0) / 2;
     this.b1 = 1 - cosw0;
@@ -3755,7 +3735,7 @@ LowPassFilter.prototype.toString = function() {
     return 'Low Pass Filter';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3781,7 +3761,7 @@ LowPassFilter.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [pan=0.5] The initial pan position.
  */
-var Pan = function(audiolet, pan) {
+const Pan = function(audiolet, pan) {
     AudioletNode.call(this, audiolet, 2, 1);
     // Hardcode two output channels
     this.setNumberOfOutputChannels(0, 2);
@@ -3796,13 +3776,13 @@ extend(Pan, AudioletNode);
  * Process samples
  */
 Pan.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var pan = this.pan.getValue();
+    const pan = this.pan.getValue();
 
-    var value = input.samples[0] || 0;
-    var scaledPan = pan * Math.PI / 2;
+    const value = input.samples[0] || 0;
+    const scaledPan = pan * Math.PI / 2;
     output.samples[0] = value * Math.cos(scaledPan);
     output.samples[1] = value * Math.sin(scaledPan);
 };
@@ -3816,7 +3796,7 @@ Pan.prototype.toString = function() {
     return 'Stereo Panner';
 };
 
-/*!
+/* !
  * @depends Envelope.js
  */
 
@@ -3844,10 +3824,10 @@ Pan.prototype.toString = function() {
  * @param {Number} release The release time in seconds.
  * @param {Function} [onComplete] A function called after the release stage.
  */
-var PercussiveEnvelope = function(audiolet, gate, attack, release,
-                                  onComplete) {
-    var levels = [0, 1, 0];
-    var times = [attack, release];
+const PercussiveEnvelope = function(audiolet, gate, attack, release,
+    onComplete) {
+    const levels = [0, 1, 0];
+    const times = [attack, release];
     Envelope.call(this, audiolet, gate, levels, times, null, onComplete);
 
     this.attack = this.times[0];
@@ -3864,7 +3844,7 @@ PercussiveEnvelope.prototype.toString = function() {
     return 'Percussive Envelope';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -3891,7 +3871,7 @@ PercussiveEnvelope.prototype.toString = function() {
  * @param {Number} [frequency=440] The initial frequency.
  * @param {Number} [pulseWidth=0.5] The initial pulse width.
  */
-var Pulse = function(audiolet, frequency, pulseWidth) {
+const Pulse = function(audiolet, frequency, pulseWidth) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.frequency = new AudioletParameter(this, 0, frequency || 440);
     this.pulseWidth = new AudioletParameter(this, 1, pulseWidth || 0.5);
@@ -3903,11 +3883,11 @@ extend(Pulse, AudioletNode);
  * Process samples
  */
 Pulse.prototype.generate = function() {
-    var pulseWidth = this.pulseWidth.getValue();
+    const pulseWidth = this.pulseWidth.getValue();
     this.outputs[0].samples[0] = (this.phase < pulseWidth) ? 1 : -1;
 
-    var frequency = this.frequency.getValue();
-    var sampleRate = this.audiolet.device.sampleRate;
+    const frequency = this.frequency.getValue();
+    const sampleRate = this.audiolet.device.sampleRate;
     this.phase += frequency / sampleRate;
     if (this.phase > 1) {
         this.phase %= 1;
@@ -3924,7 +3904,7 @@ Pulse.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  * @depends ../core/AudioletGroup.js
  */
@@ -3960,7 +3940,7 @@ Pulse.prototype.toString = function() {
  * @param {Number} [roomSize=0.5] The initial room size.
  * @param {Number} [damping=0.5] The initial damping amount.
  */
-var Reverb = function(audiolet, mix, roomSize, damping) {
+const Reverb = function(audiolet, mix, roomSize, damping) {
     AudioletNode.call(this, audiolet, 4, 1);
 
     // Constants
@@ -3994,7 +3974,7 @@ var Reverb = function(audiolet, mix, roomSize, damping) {
     this.combIndices = [];
     this.filterStores = [];
 
-    var numberOfCombs = this.combTuning.length;
+    const numberOfCombs = this.combTuning.length;
     for (var i = 0; i < numberOfCombs; i++) {
         this.combBuffers.push(new Float32Array(this.combTuning[i]));
         this.combIndices.push(0);
@@ -4005,7 +3985,7 @@ var Reverb = function(audiolet, mix, roomSize, damping) {
     this.allPassBuffers = [];
     this.allPassIndices = [];
 
-    var numberOfFilters = this.allPassTuning.length;
+    const numberOfFilters = this.allPassTuning.length;
     for (var i = 0; i < numberOfFilters; i++) {
         this.allPassBuffers.push(new Float32Array(this.allPassTuning[i]));
         this.allPassIndices.push(0);
@@ -4017,28 +3997,28 @@ extend(Reverb, AudioletNode);
  * Process samples
  */
 Reverb.prototype.generate = function() {
-    var mix = this.mix.getValue();
-    var roomSize = this.roomSize.getValue();
+    const mix = this.mix.getValue();
+    const roomSize = this.roomSize.getValue();
     var damping = this.damping.getValue();
 
-    var numberOfCombs = this.combTuning.length;
-    var numberOfFilters = this.allPassTuning.length;
+    const numberOfCombs = this.combTuning.length;
+    const numberOfFilters = this.allPassTuning.length;
 
-    var value = this.inputs[0].samples[0] || 0;
-    var dryValue = value;
+    let value = this.inputs[0].samples[0] || 0;
+    const dryValue = value;
 
     value *= this.fixedGain;
-    var gainedValue = value;
+    const gainedValue = value;
 
     var damping = damping * this.scaleDamping;
-    var feedback = roomSize * this.scaleRoom + this.offsetRoom;
+    const feedback = roomSize * this.scaleRoom + this.offsetRoom;
 
     for (var i = 0; i < numberOfCombs; i++) {
-        var combIndex = this.combIndices[i];
-        var combBuffer = this.combBuffers[i];
-        var filterStore = this.filterStores[i];
+        let combIndex = this.combIndices[i];
+        const combBuffer = this.combBuffers[i];
+        let filterStore = this.filterStores[i];
 
-        var output = combBuffer[combIndex];
+        const output = combBuffer[combIndex];
         filterStore = (output * (1 - damping)) +
                       (filterStore * damping);
         value += output;
@@ -4054,11 +4034,11 @@ Reverb.prototype.generate = function() {
     }
 
     for (var i = 0; i < numberOfFilters; i++) {
-        var allPassBuffer = this.allPassBuffers[i];
-        var allPassIndex = this.allPassIndices[i];
+        const allPassBuffer = this.allPassBuffers[i];
+        let allPassIndex = this.allPassIndices[i];
 
-        var input = value;
-        var bufferValue = allPassBuffer[allPassIndex];
+        const input = value;
+        const bufferValue = allPassBuffer[allPassIndex];
         value = -value + bufferValue;
         allPassBuffer[allPassIndex] = input + (bufferValue * 0.5);
 
@@ -4084,7 +4064,7 @@ Reverb.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4108,7 +4088,7 @@ Reverb.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [frequency=440] Initial frequency.
  */
-var Saw = function(audiolet, frequency) {
+const Saw = function(audiolet, frequency) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.frequency = new AudioletParameter(this, 0, frequency || 440);
     this.phase = 0;
@@ -4119,9 +4099,9 @@ extend(Saw, AudioletNode);
  * Process samples
  */
 Saw.prototype.generate = function() {
-    var output = this.outputs[0];
-    var frequency = this.frequency.getValue();
-    var sampleRate = this.audiolet.device.sampleRate;
+    const output = this.outputs[0];
+    const frequency = this.frequency.getValue();
+    const sampleRate = this.audiolet.device.sampleRate;
 
     output.samples[0] = ((this.phase / 2 + 0.25) % 0.5 - 0.25) * 4;
     this.phase += frequency / sampleRate;
@@ -4141,7 +4121,7 @@ Saw.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4161,7 +4141,7 @@ Saw.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  */
 
-var SoftClip = function(audiolet) {
+const SoftClip = function(audiolet) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.linkNumberOfOutputChannels(0, 0);
 };
@@ -4171,16 +4151,15 @@ extend(SoftClip, AudioletNode);
  * Process samples
  */
 SoftClip.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var value = input.samples[i];
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const value = input.samples[i];
         if (value > 0.5 || value < -0.5) {
             output.samples[i] = (Math.abs(value) - 0.25) / value;
-        }
-        else {
+        } else {
             output.samples[i] = value;
         }
     }
@@ -4196,7 +4175,7 @@ SoftClip.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4220,7 +4199,7 @@ SoftClip.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [frequency=440] Initial frequency.
  */
-var Square = function(audiolet, frequency) {
+const Square = function(audiolet, frequency) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.frequency = new AudioletParameter(this, 0, frequency || 440);
     this.phase = 0;
@@ -4231,10 +4210,10 @@ extend(Square, AudioletNode);
  * Process samples
  */
 Square.prototype.generate = function() {
-    var output = this.outputs[0];
+    const output = this.outputs[0];
 
-    var frequency = this.frequency.getValue();
-    var sampleRate = this.audiolet.device.sampleRate;
+    const frequency = this.frequency.getValue();
+    const sampleRate = this.audiolet.device.sampleRate;
 
     output.samples[0] = this.phase > 0.5 ? 1 : -1;
 
@@ -4254,7 +4233,7 @@ Square.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4278,7 +4257,7 @@ Square.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [frequency=440] Initial frequency.
  */
-var Triangle = function(audiolet, frequency) {
+const Triangle = function(audiolet, frequency) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.frequency = new AudioletParameter(this, 0, frequency || 440);
     this.phase = 0;
@@ -4289,10 +4268,10 @@ extend(Triangle, AudioletNode);
  * Process samples
  */
 Triangle.prototype.generate = function() {
-    var output = this.outputs[0];
+    const output = this.outputs[0];
 
-    var frequency = this.frequency.getValue();
-    var sampleRate = this.audiolet.device.sampleRate;
+    const frequency = this.frequency.getValue();
+    const sampleRate = this.audiolet.device.sampleRate;
 
     output.samples[0] = 1 - 4 * Math.abs((this.phase + 0.25) % 1 - 0.5);
 
@@ -4312,7 +4291,7 @@ Triangle.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4333,7 +4312,7 @@ Triangle.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [trigger=0] The initial trigger state.
  */
-var TriggerControl = function(audiolet, trigger) {
+const TriggerControl = function(audiolet, trigger) {
     AudioletNode.call(this, audiolet, 0, 1);
     this.trigger = new AudioletParameter(this, null, trigger || 0);
 };
@@ -4346,8 +4325,7 @@ TriggerControl.prototype.generate = function() {
     if (this.trigger.getValue() > 0) {
         this.outputs[0].samples[0] = 1;
         this.trigger.setValue(0);
-    }
-    else {
+    } else {
         this.outputs[0].samples[0] = 0;
     }
 };
@@ -4361,7 +4339,7 @@ TriggerControl.prototype.toString = function() {
     return 'Trigger Control';
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4391,17 +4369,16 @@ extend(UpMixer, AudioletNode);
  * Process samples
  */
 UpMixer.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var numberOfInputChannels = input.samples.length;
-    var numberOfOutputChannels = output.samples.length;
+    const numberOfInputChannels = input.samples.length;
+    const numberOfOutputChannels = output.samples.length;
 
     if (numberOfInputChannels == numberOfOutputChannels) {
         output.samples = input.samples;
-    }
-    else {
-        for (var i = 0; i < numberOfOutputChannels; i++) {
+    } else {
+        for (let i = 0; i < numberOfOutputChannels; i++) {
             output.samples[i] = input.samples[i % numberOfInputChannels];
         }
     }
@@ -4417,7 +4394,7 @@ UpMixer.prototype.toString = function() {
 };
 
 
-var WebKitBufferPlayer = function(audiolet, onComplete) {
+const WebKitBufferPlayer = function(audiolet, onComplete) {
     AudioletNode.call(this, audiolet, 0, 1);
     this.onComplete = onComplete;
     this.isWebKit = this.audiolet.device.sink instanceof Sink.sinks.webkit;
@@ -4425,7 +4402,7 @@ var WebKitBufferPlayer = function(audiolet, onComplete) {
 
     // Until we are loaded, output no channels.
     this.setNumberOfOutputChannels(0, 0);
-    
+
     if (!this.isWebKit) {
         return;
     }
@@ -4453,8 +4430,8 @@ WebKitBufferPlayer.prototype.load = function(url, onLoad, onError) {
 
     // Request the new file
     this.xhr = new XMLHttpRequest();
-    this.xhr.open("GET", url, true);
-    this.xhr.responseType = "arraybuffer";
+    this.xhr.open('GET', url, true);
+    this.xhr.responseType = 'arraybuffer';
     this.xhr.onload = this.onLoad.bind(this, onLoad, onError);
     this.xhr.onerror = onError;
     this.xhr.send();
@@ -4469,7 +4446,7 @@ WebKitBufferPlayer.prototype.stop = function() {
     this.endTime = null;
 
     this.setNumberOfOutputChannels(0);
-   
+
     this.disconnectWebKitNodes();
 };
 
@@ -4500,7 +4477,7 @@ WebKitBufferPlayer.prototype.onDecode = function(buffer) {
 
     // Make sure we are outputting the right number of channels on Audiolet's
     // side
-    var numberOfChannels = this.fileBuffer.numberOfChannels;
+    const numberOfChannels = this.fileBuffer.numberOfChannels;
     this.setNumberOfOutputChannels(0, numberOfChannels);
 
     // Create the JavaScript node for reading the data into Audiolet
@@ -4521,9 +4498,9 @@ WebKitBufferPlayer.prototype.onData = function(event) {
         this.ready = true;
     }
 
-    var numberOfChannels = event.inputBuffer.numberOfChannels;
+    const numberOfChannels = event.inputBuffer.numberOfChannels;
 
-    for (var i=0; i<numberOfChannels; i++) {
+    for (let i=0; i<numberOfChannels; i++) {
         this.buffers[i] = event.inputBuffer.getChannelData(i);
         this.readPosition = 0;
     }
@@ -4534,10 +4511,10 @@ WebKitBufferPlayer.prototype.generate = function() {
         return;
     }
 
-    var output = this.outputs[0];
+    const output = this.outputs[0];
 
-    var numberOfChannels = output.samples.length;
-    for (var i=0; i<numberOfChannels; i++) {
+    const numberOfChannels = output.samples.length;
+    for (let i=0; i<numberOfChannels; i++) {
         output.samples[i] = this.buffers[i][this.readPosition];
     }
     this.readPosition += 1;
@@ -4548,7 +4525,7 @@ WebKitBufferPlayer.prototype.generate = function() {
     }
 };
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4563,7 +4540,7 @@ WebKitBufferPlayer.prototype.generate = function() {
  * @extends AudioletNode
  * @param {Audiolet} audiolet The audiolet object.
  */
-var WhiteNoise = function(audiolet) {
+const WhiteNoise = function(audiolet) {
     AudioletNode.call(this, audiolet, 0, 1);
 };
 extend(WhiteNoise, AudioletNode);
@@ -4585,7 +4562,7 @@ WhiteNoise.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4610,7 +4587,7 @@ WhiteNoise.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [value=0] The initial value to add.
  */
-var Add = function(audiolet, value) {
+const Add = function(audiolet, value) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.value = new AudioletParameter(this, 1, value || 0);
@@ -4621,13 +4598,13 @@ extend(Add, AudioletNode);
  * Process samples
  */
 Add.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var value = this.value.getValue();
+    const value = this.value.getValue();
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         output.samples[i] = input.samples[i] + value;
     }
 };
@@ -4642,7 +4619,7 @@ Add.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4667,7 +4644,7 @@ Add.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [value=1] The initial value to divide by.
  */
-var Divide = function(audiolet, value) {
+const Divide = function(audiolet, value) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.value = new AudioletParameter(this, 1, value || 1);
@@ -4678,13 +4655,13 @@ extend(Divide, AudioletNode);
  * Process samples
  */
 Divide.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var value = this.value.getValue();
+    const value = this.value.getValue();
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         output.samples[i] = input.samples[i] / value;
     }
 };
@@ -4699,7 +4676,7 @@ Divide.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4724,7 +4701,7 @@ Divide.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [value=1] The initial value to modulo by.
  */
-var Modulo = function(audiolet, value) {
+const Modulo = function(audiolet, value) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.value = new AudioletParameter(this, 1, value || 1);
@@ -4735,13 +4712,13 @@ extend(Modulo, AudioletNode);
  * Process samples
  */
 Modulo.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var value = this.value.getValue();
+    const value = this.value.getValue();
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         output.samples[i] = input.samples[i] % value;
     }
 };
@@ -4756,7 +4733,7 @@ Modulo.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4784,7 +4761,7 @@ Modulo.prototype.toString = function() {
  * @param {Number} [mul=1] The initial value to multiply by.
  * @param {Number} [add=0] The initial value to add.
  */
-var MulAdd = function(audiolet, mul, add) {
+const MulAdd = function(audiolet, mul, add) {
     AudioletNode.call(this, audiolet, 3, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.mul = new AudioletParameter(this, 1, mul || 1);
@@ -4796,14 +4773,14 @@ extend(MulAdd, AudioletNode);
  * Process samples
  */
 MulAdd.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var mul = this.mul.getValue();
-    var add = this.add.getValue();
+    const mul = this.mul.getValue();
+    const add = this.add.getValue();
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         output.samples[i] = input.samples[i] * mul + add;
     }
 };
@@ -4818,7 +4795,7 @@ MulAdd.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4837,7 +4814,7 @@ MulAdd.prototype.toString = function() {
  * @extends AudioletNode
  * @param {Audiolet} audiolet The audiolet object.
  */
-var Reciprocal = function(audiolet) {
+const Reciprocal = function(audiolet) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.linkNumberOfOutputChannels(0, 0);
 };
@@ -4847,11 +4824,11 @@ extend(Reciprocal, AudioletNode);
  * Process samples
  */
 Reciprocal.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         output.samples[i] = 1 / input.samples[i];
     }
 };
@@ -4866,7 +4843,7 @@ Reciprocal.prototype.toString = function() {
 };
 
 
-/*!
+/* !
  * @depends ../core/AudioletNode.js
  */
 
@@ -4891,7 +4868,7 @@ Reciprocal.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  * @param {Number} [value=0] The initial value to subtract.
  */
-var Subtract = function(audiolet, value) {
+const Subtract = function(audiolet, value) {
     AudioletNode.call(this, audiolet, 2, 1);
     this.linkNumberOfOutputChannels(0, 0);
     this.value = new AudioletParameter(this, 1, value || 0);
@@ -4902,13 +4879,13 @@ extend(Subtract, AudioletNode);
  * Process samples
  */
 Subtract.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var value = this.value.getValue();
+    const value = this.value.getValue();
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
         output.samples[i] = input.samples[i] - value;
     }
 };
@@ -4943,7 +4920,7 @@ Subtract.prototype.toString = function() {
  * @param {Audiolet} audiolet The audiolet object.
  */
 
-var Tanh = function(audiolet) {
+const Tanh = function(audiolet) {
     AudioletNode.call(this, audiolet, 1, 1);
     this.linkNumberOfOutputChannels(0, 0);
 };
@@ -4953,15 +4930,15 @@ extend(Tanh, AudioletNode);
  * Process samples
  */
 Tanh.prototype.generate = function() {
-    var input = this.inputs[0];
-    var output = this.outputs[0];
+    const input = this.inputs[0];
+    const output = this.outputs[0];
 
-    var numberOfChannels = input.samples.length;
-    for (var i = 0; i < numberOfChannels; i++) {
-        var value = input.samples[i];
+    const numberOfChannels = input.samples.length;
+    for (let i = 0; i < numberOfChannels; i++) {
+        const value = input.samples[i];
         output.samples[i] = (Math.exp(value) - Math.exp(-value)) /
                             (Math.exp(value) + Math.exp(-value));
-    } 
+    }
 };
 
 /**
@@ -5003,8 +4980,7 @@ Pattern.prototype.next = function() {
 Pattern.prototype.valueOf = function(item) {
     if (item instanceof Pattern) {
         return (item.next());
-    }
-    else {
+    } else {
         return (item);
     }
 };
@@ -5016,7 +4992,7 @@ Pattern.prototype.reset = function() {
 };
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5029,7 +5005,7 @@ Pattern.prototype.reset = function() {
  * @param {Pattern|Number} step Value to add.
  * @param {Number} repeats Number of values to generate.
  */
-var PArithmetic = function(start, step, repeats) {
+const PArithmetic = function(start, step, repeats) {
     Pattern.call(this);
     this.start = start;
     this.value = start;
@@ -5045,23 +5021,20 @@ extend(PArithmetic, Pattern);
  * @return {Number} The next value.
  */
 PArithmetic.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position == 0) {
         returnValue = this.value;
         this.position += 1;
-    }
-    else if (this.position < this.repeats) {
-        var step = this.valueOf(this.step);
+    } else if (this.position < this.repeats) {
+        const step = this.valueOf(this.step);
         if (step != null) {
             this.value += step;
             returnValue = this.value;
             this.position += 1;
-        }
-        else {
+        } else {
             returnValue = null;
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5081,10 +5054,10 @@ PArithmetic.prototype.reset = function() {
 /**
  * Supercollider alias
  */
-var Pseries = PArithmetic;
+const Pseries = PArithmetic;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5096,7 +5069,7 @@ var Pseries = PArithmetic;
  * @param {Object[]} list Array of items to choose from.
  * @param {Number} [repeats=1] Number of values to generate.
  */
-var PChoose = function(list, repeats) {
+const PChoose = function(list, repeats) {
     Pattern.call(this);
     this.list = list;
     this.repeats = repeats || 1;
@@ -5110,26 +5083,24 @@ extend(PChoose, Pattern);
  * @return {Number} The next value.
  */
 PChoose.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position < this.repeats) {
-        var index = Math.floor(Math.random() * this.list.length);
-        var item = this.list[index];
-        var value = this.valueOf(item);
+        const index = Math.floor(Math.random() * this.list.length);
+        const item = this.list[index];
+        const value = this.valueOf(item);
         if (value != null) {
             if (!(item instanceof Pattern)) {
                 this.position += 1;
             }
             returnValue = value;
-        }
-        else {
+        } else {
             if (item instanceof Pattern) {
                 item.reset();
             }
             this.position += 1;
             returnValue = this.next();
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5140,8 +5111,8 @@ PChoose.prototype.next = function() {
  */
 PChoose.prototype.reset = function() {
     this.position = 0;
-    for (var i = 0; i < this.list.length; i++) {
-        var item = this.list[i];
+    for (let i = 0; i < this.list.length; i++) {
+        const item = this.list[i];
         if (item instanceof Pattern) {
             item.reset();
         }
@@ -5151,10 +5122,10 @@ PChoose.prototype.reset = function() {
 /**
  * Supercollider alias
  */
-var Prand = PChoose;
+const Prand = PChoose;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5169,7 +5140,7 @@ var Prand = PChoose;
  * @param {Pattern|Number} step Value to multiply by.
  * @param {Number} repeats Number of values to generate.
  */
-var PGeometric = function(start, step, repeats) {
+const PGeometric = function(start, step, repeats) {
     Pattern.call(this);
     this.start = start;
     this.value = start;
@@ -5185,23 +5156,20 @@ extend(PGeometric, Pattern);
  * @return {Number} The next value.
  */
 PGeometric.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position == 0) {
         returnValue = this.value;
         this.position += 1;
-    }
-    else if (this.position < this.repeats) {
-        var step = this.valueOf(this.step);
+    } else if (this.position < this.repeats) {
+        const step = this.valueOf(this.step);
         if (step != null) {
             this.value *= step;
             returnValue = this.value;
             this.position += 1;
-        }
-        else {
+        } else {
             returnValue = null;
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5221,10 +5189,10 @@ PGeometric.prototype.reset = function() {
 /**
  * Supercollider alias
  */
-var Pgeom = PGeometric;
+const Pgeom = PGeometric;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5237,7 +5205,7 @@ var Pgeom = PGeometric;
  * @extends Pattern
  * @param {Pattern} pattern The initial pattern.
  */
-var PProxy = function(pattern) {
+const PProxy = function(pattern) {
     Pattern.call(this);
     if (pattern) {
         this.pattern = pattern;
@@ -5254,8 +5222,7 @@ PProxy.prototype.next = function() {
     var returnValue;
     if (this.pattern) {
         var returnValue = this.pattern.next();
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return returnValue;
@@ -5264,10 +5231,10 @@ PProxy.prototype.next = function() {
 /**
  * Alias
  */
-var Pp = PProxy;
+const Pp = PProxy;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5280,7 +5247,7 @@ var Pp = PProxy;
  * @param {Number|Pattern} high Highest possible value.
  * @param {Number} repeats Number of values to generate.
  */
-var PRandom = function(low, high, repeats) {
+const PRandom = function(low, high, repeats) {
     Pattern.call(this);
     this.low = low;
     this.high = high;
@@ -5295,19 +5262,17 @@ extend(PRandom, Pattern);
  * @return {Number} The next value.
  */
 PRandom.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position < this.repeats) {
-        var low = this.valueOf(this.low);
-        var high = this.valueOf(this.high);
+        const low = this.valueOf(this.low);
+        const high = this.valueOf(this.high);
         if (low != null && high != null) {
             returnValue = low + Math.random() * (high - low);
             this.position += 1;
-        }
-        else {
+        } else {
             returnValue = null;
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5323,10 +5288,10 @@ PRandom.prototype.reset = function() {
 /**
  * Supercollider alias
  */
-var Pwhite = PRandom;
+const Pwhite = PRandom;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5339,7 +5304,7 @@ var Pwhite = PRandom;
  * @param {Number} [repeats=1] Number of times to loop through the array.
  * @param {Number} [offset=0] Index to start from.
  */
-var PSequence = function(list, repeats, offset) {
+const PSequence = function(list, repeats, offset) {
     Pattern.call(this);
     this.list = list;
     this.repeats = repeats || 1;
@@ -5354,26 +5319,24 @@ extend(PSequence, Pattern);
  * @return {Number} The next value.
  */
 PSequence.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position < this.repeats * this.list.length) {
-        var index = (this.position + this.offset) % this.list.length;
-        var item = this.list[index];
-        var value = this.valueOf(item);
+        const index = (this.position + this.offset) % this.list.length;
+        const item = this.list[index];
+        const value = this.valueOf(item);
         if (value != null) {
             if (!(item instanceof Pattern)) {
                 this.position += 1;
             }
             returnValue = value;
-        }
-        else {
+        } else {
             if (item instanceof Pattern) {
                 item.reset();
             }
             this.position += 1;
             returnValue = this.next();
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5384,8 +5347,8 @@ PSequence.prototype.next = function() {
  */
 PSequence.prototype.reset = function() {
     this.position = 0;
-    for (var i = 0; i < this.list.length; i++) {
-        var item = this.list[i];
+    for (let i = 0; i < this.list.length; i++) {
+        const item = this.list[i];
         if (item instanceof Pattern) {
             item.reset();
         }
@@ -5395,10 +5358,10 @@ PSequence.prototype.reset = function() {
 /**
  * Supercollider alias
  */
-var Pseq = PSequence;
+const Pseq = PSequence;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5411,7 +5374,7 @@ var Pseq = PSequence;
  * @param {Number} [repeats=1] Number of values to generate.
  * @param {Number} [offset=0] Index to start from.
  */
-var PSeries = function(list, repeats, offset) {
+const PSeries = function(list, repeats, offset) {
     Pattern.call(this);
     this.list = list;
     this.repeats = repeats || 1;
@@ -5426,26 +5389,24 @@ extend(PSeries, Pattern);
  * @return {Number} The next value.
  */
 PSeries.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position < this.repeats) {
-        var index = (this.position + this.offset) % this.list.length;
-        var item = this.list[index];
-        var value = this.valueOf(item);
+        const index = (this.position + this.offset) % this.list.length;
+        const item = this.list[index];
+        const value = this.valueOf(item);
         if (value != null) {
             if (!(item instanceof Pattern)) {
                 this.position += 1;
             }
             returnValue = value;
-        }
-        else {
+        } else {
             if (item instanceof Pattern) {
                 item.reset();
             }
             this.position += 1;
             returnValue = this.next();
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5456,8 +5417,8 @@ PSeries.prototype.next = function() {
  */
 PSeries.prototype.reset = function() {
     this.position = 0;
-    for (var i = 0; i < this.list.length; i++) {
-        var item = this.list[i];
+    for (let i = 0; i < this.list.length; i++) {
+        const item = this.list[i];
         if (item instanceof Pattern) {
             item.reset();
         }
@@ -5467,10 +5428,10 @@ PSeries.prototype.reset = function() {
 /**
  * Supercollider alias
  */
-var Pser = PSeries;
+const Pser = PSeries;
 
 
-/*!
+/* !
  * @depends Pattern.js
  */
 
@@ -5482,13 +5443,13 @@ var Pser = PSeries;
  * @param {Object[]} list Array of values.
  * @param {Number} repeats Number of times to loop through the array.
  */
-var PShuffle = function(list, repeats) {
+const PShuffle = function(list, repeats) {
     Pattern.call(this);
     this.list = [];
     // Shuffle values into new list
     while (list.length) {
-        var index = Math.floor(Math.random() * list.length);
-        var value = list.splice(index, 1);
+        const index = Math.floor(Math.random() * list.length);
+        const value = list.splice(index, 1);
         this.list.push(value);
     }
     this.repeats = repeats;
@@ -5502,26 +5463,24 @@ extend(PShuffle, Pattern);
  * @return {Number} The next value.
  */
 PShuffle.prototype.next = function() {
-    var returnValue;
+    let returnValue;
     if (this.position < this.repeats * this.list.length) {
-        var index = (this.position + this.offset) % this.list.length;
-        var item = this.list[index];
-        var value = this.valueOf(item);
+        const index = (this.position + this.offset) % this.list.length;
+        const item = this.list[index];
+        const value = this.valueOf(item);
         if (value != null) {
             if (!(item instanceof Pattern)) {
                 this.position += 1;
             }
             returnValue = value;
-        }
-        else {
+        } else {
             if (item instanceof Pattern) {
                 item.reset();
             }
             this.position += 1;
             returnValue = this.next();
         }
-    }
-    else {
+    } else {
         returnValue = null;
     }
     return (returnValue);
@@ -5530,7 +5489,7 @@ PShuffle.prototype.next = function() {
 /**
  * Supercollider alias
  */
-var Pshuffle = PShuffle;
+const Pshuffle = PShuffle;
 
 
 /**
@@ -5541,7 +5500,7 @@ var Pshuffle = PShuffle;
  * @param {Number[]} degrees Array of integer degrees.
  * @param {Tuning} [tuning] The scale's tuning.  Defaults to 12-tone ET.
  */
-var Scale = function(degrees, tuning) {
+const Scale = function(degrees, tuning) {
     this.degrees = degrees;
     this.tuning = tuning || new EqualTemperamentTuning(12);
 };
@@ -5556,7 +5515,7 @@ var Scale = function(degrees, tuning) {
  * @return {Number} The frequency of the note in hz.
  */
 Scale.prototype.getFrequency = function(degree, rootFrequency, octave) {
-    var frequency = rootFrequency;
+    let frequency = rootFrequency;
     octave += Math.floor(degree / this.degrees.length);
     degree %= this.degrees.length;
     frequency *= Math.pow(this.tuning.octaveRatio, octave);
@@ -5564,7 +5523,7 @@ Scale.prototype.getFrequency = function(degree, rootFrequency, octave) {
     return frequency;
 };
 
-/*!
+/* !
  * @depends Scale.js
  */
 
@@ -5574,12 +5533,12 @@ Scale.prototype.getFrequency = function(degree, rootFrequency, octave) {
  * @constructor
  * @extends Scale
  */
-var MajorScale = function() {
+const MajorScale = function() {
     Scale.call(this, [0, 2, 4, 5, 7, 9, 11]);
 };
 extend(MajorScale, Scale);
 
-/*!
+/* !
  * @depends Scale.js
  */
 
@@ -5590,7 +5549,7 @@ extend(MajorScale, Scale);
  * @extends Scale
  */
 
-var MinorScale = function() {
+const MinorScale = function() {
     Scale.call(this, [0, 2, 3, 5, 7, 8, 10]);
 };
 extend(MinorScale, Scale);
@@ -5604,17 +5563,17 @@ extend(MinorScale, Scale);
  * @param {Number} [octaveRatio=2] Frequency ratio for notes an octave apart.
  */
 
-var Tuning = function(semitones, octaveRatio) {
+const Tuning = function(semitones, octaveRatio) {
     this.semitones = semitones;
     this.octaveRatio = octaveRatio || 2;
     this.ratios = [];
-    var tuningLength = this.semitones.length;
-    for (var i = 0; i < tuningLength; i++) {
+    const tuningLength = this.semitones.length;
+    for (let i = 0; i < tuningLength; i++) {
         this.ratios.push(Math.pow(2, this.semitones[i] / tuningLength));
     }
 };
 
-/*!
+/* !
  * @depends Tuning.js
  */
 
@@ -5626,16 +5585,15 @@ var Tuning = function(semitones, octaveRatio) {
  * @param {Number} pitchesPerOctave The number of notes in each octave.
  */
 var EqualTemperamentTuning = function(pitchesPerOctave) {
-    var semitones = [];
-    for (var i = 0; i < pitchesPerOctave; i++) {
+    const semitones = [];
+    for (let i = 0; i < pitchesPerOctave; i++) {
         semitones.push(i);
     }
     Tuning.call(this, semitones, 2);
 };
 extend(EqualTemperamentTuning, Tuning);
 
-var Sink = this.Sink = (function(global){
-
+var Sink = this.Sink = (function(global) {
 /**
  * Creates a Sink according to specified parameters, if possible.
  *
@@ -5657,84 +5615,84 @@ var Sink = this.Sink = (function(global){
  * @param {Buffer} default=null ringBuffer The ring buffer array of the sink. If null, ring buffering will not be applied.
  * @param {Number} default=0 ringOffset The current position of the ring buffer.
 */
-function Sink (readFn, channelCount, bufferSize, sampleRate) {
-	var	sinks	= Sink.sinks,
-		dev;
-	for (dev in sinks){
-		if (sinks.hasOwnProperty(dev) && sinks[dev].enabled){
-			try{
-				return new sinks[dev](readFn, channelCount, bufferSize, sampleRate);
-			} catch(e1){}
-		}
-	}
+    function Sink(readFn, channelCount, bufferSize, sampleRate) {
+        const	sinks	= Sink.sinks;
+        let dev;
+        for (dev in sinks) {
+            if (sinks.hasOwnProperty(dev) && sinks[dev].enabled) {
+                try {
+                    return new sinks[dev](readFn, channelCount, bufferSize, sampleRate);
+                } catch (e1) {}
+            }
+        }
 
-	throw Sink.Error(0x02);
-}
+        throw Sink.Error(0x02);
+    }
 
-function SinkClass () {
-}
+    function SinkClass() {
+    }
 
-Sink.SinkClass = SinkClass;
+    Sink.SinkClass = SinkClass;
 
-SinkClass.prototype = Sink.prototype = {
-	sampleRate: 44100,
-	channelCount: 2,
-	bufferSize: 4096,
+    SinkClass.prototype = Sink.prototype = {
+        sampleRate: 44100,
+        channelCount: 2,
+        bufferSize: 4096,
 
-	writePosition: 0,
-	previousHit: 0,
-	ringOffset: 0,
+        writePosition: 0,
+        previousHit: 0,
+        ringOffset: 0,
 
-	channelMode: 'interleaved',
+        channelMode: 'interleaved',
 
-/**
+        /**
  * Does the initialization of the sink.
  * @method Sink
 */
-	start: function (readFn, channelCount, bufferSize, sampleRate) {
-		this.channelCount	= isNaN(channelCount) || channelCount === null ? this.channelCount: channelCount;
-		this.bufferSize		= isNaN(bufferSize) || bufferSize === null ? this.bufferSize : bufferSize;
-		this.sampleRate		= isNaN(sampleRate) || sampleRate === null ? this.sampleRate : sampleRate;
-		this.readFn		= readFn;
-		this.activeRecordings	= [];
-		this.previousHit	= +new Date;
-		Sink.EventEmitter.call(this);
-		Sink.emit('init', [this].concat([].slice.call(arguments)));
-	},
-/**
+        start: function(readFn, channelCount, bufferSize, sampleRate) {
+            this.channelCount	= isNaN(channelCount) || channelCount === null ? this.channelCount: channelCount;
+            this.bufferSize		= isNaN(bufferSize) || bufferSize === null ? this.bufferSize : bufferSize;
+            this.sampleRate		= isNaN(sampleRate) || sampleRate === null ? this.sampleRate : sampleRate;
+            this.readFn		= readFn;
+            this.activeRecordings	= [];
+            this.previousHit	= +new Date;
+            Sink.EventEmitter.call(this);
+            Sink.emit('init', [this].concat([].slice.call(arguments)));
+        },
+        /**
  * The method which will handle all the different types of processing applied on a callback.
  * @method Sink
 */
-	process: function (soundData, channelCount) {
-		this.emit('preprocess', arguments);
-		this.ringBuffer && (this.channelMode === 'interleaved' ? this.ringSpin : this.ringSpinInterleaved).apply(this, arguments);
-		if (this.channelMode === 'interleaved') {
-			this.emit('audioprocess', arguments);
-			this.readFn && this.readFn.apply(this, arguments);
-		} else {
-			var	soundDataSplit	= Sink.deinterleave(soundData, this.channelCount),
-				args		= [soundDataSplit].concat([].slice.call(arguments, 1));
-			this.emit('audioprocess', args);
-			this.readFn && this.readFn.apply(this, args);
-			Sink.interleave(soundDataSplit, this.channelCount, soundData);
-		}
-		this.emit('postprocess', arguments);
-		this.previousHit = +new Date;
-		this.writePosition += soundData.length / channelCount;
-	},
-/**
+        process: function(soundData, channelCount) {
+            this.emit('preprocess', arguments);
+            this.ringBuffer && (this.channelMode === 'interleaved' ? this.ringSpin : this.ringSpinInterleaved).apply(this, arguments);
+            if (this.channelMode === 'interleaved') {
+                this.emit('audioprocess', arguments);
+                this.readFn && this.readFn.apply(this, arguments);
+            } else {
+                const	soundDataSplit	= Sink.deinterleave(soundData, this.channelCount);
+                const args		= [soundDataSplit].concat([].slice.call(arguments, 1));
+                this.emit('audioprocess', args);
+                this.readFn && this.readFn.apply(this, args);
+                Sink.interleave(soundDataSplit, this.channelCount, soundData);
+            }
+            this.emit('postprocess', arguments);
+            this.previousHit = +new Date;
+            this.writePosition += soundData.length / channelCount;
+        },
+        /**
  * Get the current output position, defaults to writePosition - bufferSize.
  *
  * @method Sink
  *
  * @return {Number} The position of the write head, in samples, per channel.
 */
-	getPlaybackTime: function () {
-		return this.writePosition - this.bufferSize;
-	},
-};
+        getPlaybackTime: function() {
+            return this.writePosition - this.bufferSize;
+        },
+    };
 
-/**
+    /**
  * The container for all the available sinks. Also a decorator function for creating a new Sink class and binding it.
  *
  * @method Sink
@@ -5746,57 +5704,57 @@ SinkClass.prototype = Sink.prototype = {
  * @arg {Boolean} disabled Whether the Sink should be disabled at first.
 */
 
-function sinks (type, constructor, prototype, disabled) {
-	prototype = prototype || constructor.prototype;
-	constructor.prototype = new Sink.SinkClass();
-	constructor.prototype.type = type;
-	constructor.enabled = !disabled;
-	for (disabled in prototype) {
-		if (prototype.hasOwnProperty(disabled)) {
-			constructor.prototype[disabled] = prototype[disabled];
-		}
-	}
-	sinks[type] = constructor;
-}
+    function sinks(type, constructor, prototype, disabled) {
+        prototype = prototype || constructor.prototype;
+        constructor.prototype = new Sink.SinkClass();
+        constructor.prototype.type = type;
+        constructor.enabled = !disabled;
+        for (disabled in prototype) {
+            if (prototype.hasOwnProperty(disabled)) {
+                constructor.prototype[disabled] = prototype[disabled];
+            }
+        }
+        sinks[type] = constructor;
+    }
 
-Sink.sinks = Sink.devices = sinks;
+    Sink.sinks = Sink.devices = sinks;
 
-Sink.singleton = function () {
-	var sink = Sink.apply(null, arguments);
+    Sink.singleton = function() {
+        const sink = Sink.apply(null, arguments);
 
-	Sink.singleton = function () {
-		return sink;
-	};
+        Sink.singleton = function() {
+            return sink;
+        };
 
-	return sink;
-};
+        return sink;
+    };
 
-global.Sink = Sink;
+    global.Sink = Sink;
 
-return Sink;
-
-}(function (){ return this; }()));
-(function (Sink) {
-
+    return Sink;
+}(function() {
+    return this;
+}()));
+(function(Sink) {
 /**
  * A light event emitter.
  *
  * @class
  * @static Sink
 */
-function EventEmitter () {
-	var k;
-	for (k in EventEmitter.prototype) {
-		if (EventEmitter.prototype.hasOwnProperty(k)) {
-			this[k] = EventEmitter.prototype[k];
-		}
-	}
-	this._listeners = {};
-};
+    function EventEmitter() {
+        let k;
+        for (k in EventEmitter.prototype) {
+            if (EventEmitter.prototype.hasOwnProperty(k)) {
+                this[k] = EventEmitter.prototype[k];
+            }
+        }
+        this._listeners = {};
+    };
 
-EventEmitter.prototype = {
-	_listeners: null,
-/**
+    EventEmitter.prototype = {
+        _listeners: null,
+        /**
  * Emits an event.
  *
  * @method EventEmitter
@@ -5804,15 +5762,15 @@ EventEmitter.prototype = {
  * @arg {String} name The name of the event to emit.
  * @arg {Array} args The arguments to pass to the event handlers.
 */
-	emit: function (name, args) {
-		if (this._listeners[name]) {
-			for (var i=0; i<this._listeners[name].length; i++) {
-				this._listeners[name][i].apply(this, args);
-			}
-		}
-		return this;
-	},
-/**
+        emit: function(name, args) {
+            if (this._listeners[name]) {
+                for (let i=0; i<this._listeners[name].length; i++) {
+                    this._listeners[name][i].apply(this, args);
+                }
+            }
+            return this;
+        },
+        /**
  * Adds an event listener to an event.
  *
  * @method EventEmitter
@@ -5820,12 +5778,12 @@ EventEmitter.prototype = {
  * @arg {String} name The name of the event.
  * @arg {Function} listener The event listener to attach to the event.
 */
-	on: function (name, listener) {
-		this._listeners[name] = this._listeners[name] || [];
-		this._listeners[name].push(listener);
-		return this;
-	},
-/**
+        on: function(name, listener) {
+            this._listeners[name] = this._listeners[name] || [];
+            this._listeners[name].push(listener);
+            return this;
+        },
+        /**
  * Adds an event listener to an event.
  *
  * @method EventEmitter
@@ -5833,30 +5791,28 @@ EventEmitter.prototype = {
  * @arg {String} name The name of the event.
  * @arg {Function} !listener The event listener to remove from the event. If not specified, will delete all.
 */
-	off: function (name, listener) {
-		if (this._listeners[name]) {
-			if (!listener) {
-				delete this._listeners[name];
-				return this;
-			}
-			for (var i=0; i<this._listeners[name].length; i++) {
-				if (this._listeners[name][i] === listener) {
-					this._listeners[name].splice(i--, 1);
-				}
-			}
-			this._listeners[name].length || delete this._listeners[name];
-		}
-		return this;
-	},
-};
+        off: function(name, listener) {
+            if (this._listeners[name]) {
+                if (!listener) {
+                    delete this._listeners[name];
+                    return this;
+                }
+                for (let i=0; i<this._listeners[name].length; i++) {
+                    if (this._listeners[name][i] === listener) {
+                        this._listeners[name].splice(i--, 1);
+                    }
+                }
+                this._listeners[name].length || delete this._listeners[name];
+            }
+            return this;
+        },
+    };
 
-Sink.EventEmitter = EventEmitter;
+    Sink.EventEmitter = EventEmitter;
 
-EventEmitter.call(Sink);
-
+    EventEmitter.call(Sink);
 }(this.Sink));
-(function (Sink) {
-
+(function(Sink) {
 /**
  * Creates a timer with consistent (ie. not clamped) intervals even in background tabs.
  * Uses inline workers to achieve this. If not available, will revert to regular timers.
@@ -5870,44 +5826,42 @@ EventEmitter.call(Sink);
  * @return {Function} A function to cancel the timer.
 */
 
-Sink.doInterval = function (callback, timeout) {
-	var timer, kill;
+    Sink.doInterval = function(callback, timeout) {
+        let timer; let kill;
 
-	function create (noWorker) {
-		if (Sink.inlineWorker.working && !noWorker) {
-			timer = Sink.inlineWorker('setInterval(function (){ postMessage("tic"); }, ' + timeout + ');');
-			timer.onmessage = function (){
-				callback();
-			};
-			kill = function () {
-				timer.terminate();
-			};
-		} else {
-			timer = setInterval(callback, timeout);
-			kill = function (){
-				clearInterval(timer);
-			};
-		}
-	}
+        function create(noWorker) {
+            if (Sink.inlineWorker.working && !noWorker) {
+                timer = Sink.inlineWorker('setInterval(function (){ postMessage("tic"); }, ' + timeout + ');');
+                timer.onmessage = function() {
+                    callback();
+                };
+                kill = function() {
+                    timer.terminate();
+                };
+            } else {
+                timer = setInterval(callback, timeout);
+                kill = function() {
+                    clearInterval(timer);
+                };
+            }
+        }
 
-	Sink.inlineWorker.ready ? create() : Sink.inlineWorker.on('ready', function () {
-		create();
-	});
+        Sink.inlineWorker.ready ? create() : Sink.inlineWorker.on('ready', function() {
+            create();
+        });
 
-	return function () {
-		if (!kill) {
-			Sink.inlineWorker.ready || Sink.inlineWorker.on('ready', function () {
-				kill && kill();
-			});
-		} else {
-			kill();
-		}
-	};
-};
-
+        return function() {
+            if (!kill) {
+                Sink.inlineWorker.ready || Sink.inlineWorker.on('ready', function() {
+                    kill && kill();
+                });
+            } else {
+                kill();
+            }
+        };
+    };
 }(this.Sink));
-(function (Sink) {
-
+(function(Sink) {
 /*
  * A Sink-specific error class.
  *
@@ -5922,58 +5876,56 @@ Sink.doInterval = function (callback, timeout) {
  * @param {String} explanation A more verbose explanation of why the error occured and how to fix.
 */
 
-function SinkError(code) {
-	if (!SinkError.hasOwnProperty(code)) throw SinkError(1);
-	if (!(this instanceof SinkError)) return new SinkError(code);
+    function SinkError(code) {
+        if (!SinkError.hasOwnProperty(code)) throw SinkError(1);
+        if (!(this instanceof SinkError)) return new SinkError(code);
 
-	var k;
-	for (k in SinkError[code]) {
-		if (SinkError[code].hasOwnProperty(k)) {
-			this[k] = SinkError[code][k];
-		}
-	}
+        let k;
+        for (k in SinkError[code]) {
+            if (SinkError[code].hasOwnProperty(k)) {
+                this[k] = SinkError[code][k];
+            }
+        }
 
-	this.code = code;
-}
+        this.code = code;
+    }
 
-SinkError.prototype = new Error();
+    SinkError.prototype = new Error();
 
-SinkError.prototype.toString = function () {
-	return 'SinkError 0x' + this.code.toString(16) + ': ' + this.message;
-};
+    SinkError.prototype.toString = function() {
+        return 'SinkError 0x' + this.code.toString(16) + ': ' + this.message;
+    };
 
-SinkError[0x01] = {
-	message: 'No such error code.',
-	explanation: 'The error code does not exist.',
-};
-SinkError[0x02] = {
-	message: 'No audio sink available.',
-	explanation: 'The audio device may be busy, or no supported output API is available for this browser.',
-};
+    SinkError[0x01] = {
+        message: 'No such error code.',
+        explanation: 'The error code does not exist.',
+    };
+    SinkError[0x02] = {
+        message: 'No audio sink available.',
+        explanation: 'The audio device may be busy, or no supported output API is available for this browser.',
+    };
 
-SinkError[0x10] = {
-	message: 'Buffer underflow.',
-	explanation: 'Trying to recover...',
-};
-SinkError[0x11] = {
-	message: 'Critical recovery fail.',
-	explanation: 'The buffer underflow has reached a critical point, trying to recover, but will probably fail anyway.',
-};
-SinkError[0x12] = {
-	message: 'Buffer size too large.',
-	explanation: 'Unable to allocate the buffer due to excessive length, please try a smaller buffer. Buffer size should probably be smaller than the sample rate.',
-};
+    SinkError[0x10] = {
+        message: 'Buffer underflow.',
+        explanation: 'Trying to recover...',
+    };
+    SinkError[0x11] = {
+        message: 'Critical recovery fail.',
+        explanation: 'The buffer underflow has reached a critical point, trying to recover, but will probably fail anyway.',
+    };
+    SinkError[0x12] = {
+        message: 'Buffer size too large.',
+        explanation: 'Unable to allocate the buffer due to excessive length, please try a smaller buffer. Buffer size should probably be smaller than the sample rate.',
+    };
 
-Sink.Error = SinkError;
-
+    Sink.Error = SinkError;
 }(this.Sink));
-(function (Sink) {
+(function(Sink) {
+    const	BlobBuilder	= typeof window === 'undefined' ? undefined :
+        window.MozBlobBuilder || window.WebKitBlobBuilder || window.MSBlobBuilder || window.OBlobBuilder || window.BlobBuilder;
+    const URL		= typeof window === 'undefined' ? undefined : (window.MozURL || window.webkitURL || window.MSURL || window.OURL || window.URL);
 
-var	BlobBuilder	= typeof window === 'undefined' ? undefined :
-	window.MozBlobBuilder || window.WebKitBlobBuilder || window.MSBlobBuilder || window.OBlobBuilder || window.BlobBuilder,
-	URL		= typeof window === 'undefined' ? undefined : (window.MozURL || window.webkitURL || window.MSURL || window.OURL || window.URL);
-
-/**
+    /**
  * Creates an inline worker using a data/blob URL, if possible.
  *
  * @static Sink
@@ -5983,469 +5935,456 @@ var	BlobBuilder	= typeof window === 'undefined' ? undefined :
  * @return {Worker} A web worker, or null if impossible to create.
 */
 
-function inlineWorker (script) {
-	var	worker	= null,
-		url, bb;
-	try {
-		bb	= new BlobBuilder();
-		bb.append(script);
-		url	= URL.createObjectURL(bb.getBlob());
-		worker	= new Worker(url);
+    function inlineWorker(script) {
+        let	worker	= null;
+        let url; let bb;
+        try {
+            bb	= new BlobBuilder();
+            bb.append(script);
+            url	= URL.createObjectURL(bb.getBlob());
+            worker	= new Worker(url);
 
-		worker._terminate	= worker.terminate;
-		worker._url		= url;
-		bb			= null;
+            worker._terminate	= worker.terminate;
+            worker._url		= url;
+            bb			= null;
 
-		worker.terminate = function () {
-			this._terminate;
-			URL.revokeObjectURL(this._url);
-		};
+            worker.terminate = function() {
+                this._terminate;
+                URL.revokeObjectURL(this._url);
+            };
 
-		inlineWorker.type = 'blob';
+            inlineWorker.type = 'blob';
 
-		return worker;
+            return worker;
+        } catch (e) {}
 
-	} catch (e) {}
+        try {
+            worker			= new Worker('data:text/javascript;base64,' + btoa(script));
+            inlineWorker.type	= 'data';
 
-	try {
-		worker			= new Worker('data:text/javascript;base64,' + btoa(script));
-		inlineWorker.type	= 'data';
+            return worker;
+        } catch (e) {}
 
-		return worker;
+        return worker;
+    }
 
-	} catch (e) {}
+    inlineWorker.ready = inlineWorker.working = false;
 
-	return worker;
-}
+    Sink.EventEmitter.call(inlineWorker);
 
-inlineWorker.ready = inlineWorker.working = false;
+    inlineWorker.test = function() {
+        let	worker	= inlineWorker('this.onmessage=function (e){postMessage(e.data)}');
+        const data	= 'inlineWorker';
+        inlineWorker.ready = inlineWorker.working = false;
 
-Sink.EventEmitter.call(inlineWorker);
+        function ready(success) {
+            if (inlineWorker.ready) return;
+            inlineWorker.ready	= true;
+            inlineWorker.working	= success;
+            inlineWorker.emit('ready', [success]);
+            inlineWorker.off('ready');
+            success && worker && worker.terminate();
+            worker = null;
+        }
 
-inlineWorker.test = function () {
-	var	worker	= inlineWorker('this.onmessage=function (e){postMessage(e.data)}'),
-		data	= 'inlineWorker';
-	inlineWorker.ready = inlineWorker.working = false;
+        if (!worker) {
+            ready(false);
+        } else {
+            worker.onmessage = function(e) {
+                ready(e.data === data);
+            };
+            worker.postMessage(data);
+            setTimeout(function() {
+                ready(false);
+            }, 1000);
+        }
+    };
 
-	function ready (success) {
-		if (inlineWorker.ready) return;
-		inlineWorker.ready	= true;
-		inlineWorker.working	= success;
-		inlineWorker.emit('ready', [success]);
-		inlineWorker.off('ready');
-		success && worker && worker.terminate();
-		worker = null;
-	}
+    Sink.inlineWorker = inlineWorker;
 
-	if (!worker) {
-		ready(false);
-	} else {
-		worker.onmessage = function (e) {
-			ready(e.data === data);
-		};
-		worker.postMessage(data);
-		setTimeout(function () {
-			ready(false);
-		}, 1000);
-	}
-};
-
-Sink.inlineWorker = inlineWorker;
-
-inlineWorker.test();
-
+    inlineWorker.test();
 }(this.Sink));
-(function (Sink) {
-
+(function(Sink) {
 /**
  * A Sink class for the Mozilla Audio Data API.
 */
 
-Sink.sinks('audiodata', function () {
-	var	self			= this,
-		currentWritePosition	= 0,
-		tail			= null,
-		audioDevice		= new Audio(),
-		written, currentPosition, available, soundData, prevPos,
-		timer; // Fix for https://bugzilla.mozilla.org/show_bug.cgi?id=630117
-	self.start.apply(self, arguments);
-	self.preBufferSize = isNaN(arguments[4]) || arguments[4] === null ? this.preBufferSize : arguments[4];
+    Sink.sinks('audiodata', function() {
+        const	self			= this;
+        let currentWritePosition	= 0;
+        let tail			= null;
+        let audioDevice		= new Audio();
+        let written; let currentPosition; let available; let soundData; let prevPos;
+        let timer; // Fix for https://bugzilla.mozilla.org/show_bug.cgi?id=630117
+        self.start.apply(self, arguments);
+        self.preBufferSize = isNaN(arguments[4]) || arguments[4] === null ? this.preBufferSize : arguments[4];
 
-	function bufferFill() {
-		if (tail){
-			written = audioDevice.mozWriteAudio(tail);
-			currentWritePosition += written;
-			if (written < tail.length){
-				tail = tail.subarray(written);
-				return tail;
-			}
-			tail = null;
-		}
+        function bufferFill() {
+            if (tail) {
+                written = audioDevice.mozWriteAudio(tail);
+                currentWritePosition += written;
+                if (written < tail.length) {
+                    tail = tail.subarray(written);
+                    return tail;
+                }
+                tail = null;
+            }
 
-		currentPosition = audioDevice.mozCurrentSampleOffset();
-		available = Number(currentPosition + (prevPos !== currentPosition ? self.bufferSize : self.preBufferSize) * self.channelCount - currentWritePosition);
-		currentPosition === prevPos && self.emit('error', [Sink.Error(0x10)]);
-		if (available > 0 || prevPos === currentPosition){
-			try {
-				soundData = new Float32Array(prevPos === currentPosition ? self.preBufferSize * self.channelCount :
-					self.forceBufferSize ? available < self.bufferSize * 2 ? self.bufferSize * 2 : available : available);
-			} catch(e) {
-				self.emit('error', [Sink.Error(0x12)]);
-				self.kill();
-				return;
-			}
-			self.process(soundData, self.channelCount);
-			written = self._audio.mozWriteAudio(soundData);
-			if (written < soundData.length){
-				tail = soundData.subarray(written);
-			}
-			currentWritePosition += written;
-		}
-		prevPos = currentPosition;
-	}
+            currentPosition = audioDevice.mozCurrentSampleOffset();
+            available = Number(currentPosition + (prevPos !== currentPosition ? self.bufferSize : self.preBufferSize) * self.channelCount - currentWritePosition);
+            currentPosition === prevPos && self.emit('error', [Sink.Error(0x10)]);
+            if (available > 0 || prevPos === currentPosition) {
+                try {
+                    soundData = new Float32Array(prevPos === currentPosition ? self.preBufferSize * self.channelCount :
+                        self.forceBufferSize ? available < self.bufferSize * 2 ? self.bufferSize * 2 : available : available);
+                } catch (e) {
+                    self.emit('error', [Sink.Error(0x12)]);
+                    self.kill();
+                    return;
+                }
+                self.process(soundData, self.channelCount);
+                written = self._audio.mozWriteAudio(soundData);
+                if (written < soundData.length) {
+                    tail = soundData.subarray(written);
+                }
+                currentWritePosition += written;
+            }
+            prevPos = currentPosition;
+        }
 
-	audioDevice.mozSetup(self.channelCount, self.sampleRate);
+        audioDevice.mozSetup(self.channelCount, self.sampleRate);
 
-	this._timers = [];
+        this._timers = [];
 
-	this._timers.push(Sink.doInterval(function () {
-		// Check for complete death of the output
-		if (+new Date - self.previousHit > 2000) {
-			self._audio = audioDevice = new Audio();
-			audioDevice.mozSetup(self.channelCount, self.sampleRate);
-			currentWritePosition = 0;
-			self.emit('error', [Sink.Error(0x11)]);
-		}
-	}, 1000));
+        this._timers.push(Sink.doInterval(function() {
+            // Check for complete death of the output
+            if (+new Date - self.previousHit > 2000) {
+                self._audio = audioDevice = new Audio();
+                audioDevice.mozSetup(self.channelCount, self.sampleRate);
+                currentWritePosition = 0;
+                self.emit('error', [Sink.Error(0x11)]);
+            }
+        }, 1000));
 
-	this._timers.push(Sink.doInterval(bufferFill, self.interval));
+        this._timers.push(Sink.doInterval(bufferFill, self.interval));
 
-	self._bufferFill	= bufferFill;
-	self._audio		= audioDevice;
-}, {
-	// These are somewhat safe values...
-	bufferSize: 24576,
-	preBufferSize: 24576,
-	forceBufferSize: false,
-	interval: 20,
-	kill: function () {
-		while(this._timers.length){
-			this._timers[0]();
-			this._timers.splice(0, 1);
-		}
-		this.emit('kill');
-	},
-	getPlaybackTime: function () {
-		return this._audio.mozCurrentSampleOffset() / this.channelCount;
-	},
-});
+        self._bufferFill	= bufferFill;
+        self._audio		= audioDevice;
+    }, {
+        // These are somewhat safe values...
+        bufferSize: 24576,
+        preBufferSize: 24576,
+        forceBufferSize: false,
+        interval: 20,
+        kill: function() {
+            while (this._timers.length) {
+                this._timers[0]();
+                this._timers.splice(0, 1);
+            }
+            this.emit('kill');
+        },
+        getPlaybackTime: function() {
+            return this._audio.mozCurrentSampleOffset() / this.channelCount;
+        },
+    });
 
-Sink.sinks.moz = Sink.sinks.audiodata;
-
+    Sink.sinks.moz = Sink.sinks.audiodata;
 }(this.Sink));
-(function (Sink) {
-
+(function(Sink) {
 /**
  * A dummy Sink. (No output)
 */
 
-Sink.sinks('dummy', function () {
-	var 	self		= this;
-	self.start.apply(self, arguments);
-	
-	function bufferFill () {
-		var	soundData = new Float32Array(self.bufferSize * self.channelCount);
-		self.process(soundData, self.channelCount);
-	}
+    Sink.sinks('dummy', function() {
+        const 	self		= this;
+        self.start.apply(self, arguments);
 
-	self._kill = Sink.doInterval(bufferFill, self.bufferSize / self.sampleRate * 1000);
+        function bufferFill() {
+            const	soundData = new Float32Array(self.bufferSize * self.channelCount);
+            self.process(soundData, self.channelCount);
+        }
 
-	self._callback		= bufferFill;
-}, {
-	kill: function () {
-		this._kill();
-		this.emit('kill');
-	},
-}, true);
+        self._kill = Sink.doInterval(bufferFill, self.bufferSize / self.sampleRate * 1000);
 
+        self._callback		= bufferFill;
+    }, {
+        kill: function() {
+            this._kill();
+            this.emit('kill');
+        },
+    }, true);
 }(this.Sink));
-(function (Sink, sinks) {
+(function(Sink, sinks) {
+    var sinks = Sink.sinks;
 
-var sinks = Sink.sinks;
+    function newAudio(src) {
+        const audio = document.createElement('audio');
+        if (src) {
+            audio.src = src;
+        }
+        return audio;
+    }
 
-function newAudio (src) {
-	var audio = document.createElement('audio');
-	if (src) {
-		audio.src = src;
-	}
-	return audio;
-}
-
-/* TODO: Implement a <BGSOUND> hack for IE8.
+    /* TODO: Implement a <BGSOUND> hack for IE8.
 
 /**
  * A sink class for WAV data URLs
  * Relies on pcmdata.js and utils to be present.
  * Thanks to grantgalitz and others for the idea.
 */
-sinks('wav', function () {
-	var	self			= this,
-		audio			= new sinks.wav.wavAudio,
-		PCMData			= typeof PCMData === 'undefined' ? audioLib.PCMData : PCMData;
-	self.start.apply(self, arguments);
-	var	soundData		= new Float32Array(self.bufferSize * self.channelCount),
-		zeroData		= new Float32Array(self.bufferSize * self.channelCount);
+    sinks('wav', function() {
+        const	self			= this;
+        const audio			= new sinks.wav.wavAudio;
+        var PCMData			= typeof PCMData === 'undefined' ? audioLib.PCMData : PCMData;
+        self.start.apply(self, arguments);
+        const	soundData		= new Float32Array(self.bufferSize * self.channelCount);
+        const zeroData		= new Float32Array(self.bufferSize * self.channelCount);
 
-	if (!newAudio().canPlayType('audio/wav; codecs=1') || !btoa) throw 0;
-	
-	function bufferFill () {
-		if (self._audio.hasNextFrame) return;
-		Sink.memcpy(zeroData, 0, soundData, 0);
-		self.process(soundData, self.channelCount);
+        if (!newAudio().canPlayType('audio/wav; codecs=1') || !btoa) throw 0;
 
-		self._audio.setSource('data:audio/wav;base64,' + btoa(
-			audioLib.PCMData.encode({
-				data:		soundData,
-				sampleRate:	self.sampleRate,
-				channelCount:	self.channelCount,
-				bytesPerSample:	self.quality,
-			})
-		));
+        function bufferFill() {
+            if (self._audio.hasNextFrame) return;
+            Sink.memcpy(zeroData, 0, soundData, 0);
+            self.process(soundData, self.channelCount);
 
-		if (!self._audio.currentFrame.src) self._audio.nextClip();
-	}
-	
-	self.kill		= Sink.doInterval(bufferFill, 40);
-	self._bufferFill	= bufferFill;
-	self._audio		= audio;
-}, {
-	quality: 1,
-	bufferSize: 22050,
+            self._audio.setSource('data:audio/wav;base64,' + btoa(
+                audioLib.PCMData.encode({
+                    data:	soundData,
+                    sampleRate:	self.sampleRate,
+                    channelCount:	self.channelCount,
+                    bytesPerSample:	self.quality,
+                }),
+            ));
 
-	getPlaybackTime: function () {
-		var audio = this._audio;
-		return (audio.currentFrame ? audio.currentFrame.currentTime * this.sampleRate : 0) + audio.samples;
-	},
-});
+            if (!self._audio.currentFrame.src) self._audio.nextClip();
+        }
 
-function wavAudio () {
-	var self = this;
+        self.kill		= Sink.doInterval(bufferFill, 40);
+        self._bufferFill	= bufferFill;
+        self._audio		= audio;
+    }, {
+        quality: 1,
+        bufferSize: 22050,
 
-	self.currentFrame	= newAudio();
-	self.nextFrame		= newAudio();
+        getPlaybackTime: function() {
+            const audio = this._audio;
+            return (audio.currentFrame ? audio.currentFrame.currentTime * this.sampleRate : 0) + audio.samples;
+        },
+    });
 
-	self._onended		= function () {
-		self.samples += self.bufferSize;
-		self.nextClip();
-	};
-}
+    function wavAudio() {
+        const self = this;
 
-wavAudio.prototype = {
-	samples:	0,
-	nextFrame:	null,
-	currentFrame:	null,
-	_onended:	null,
-	hasNextFrame:	false,
+        self.currentFrame	= newAudio();
+        self.nextFrame		= newAudio();
 
-	nextClip: function () {
-		var	curFrame	= this.currentFrame;
-		this.currentFrame	= this.nextFrame;
-		this.nextFrame		= curFrame;
-		this.hasNextFrame	= false;
-		this.currentFrame.play();
-	},
+        self._onended		= function() {
+            self.samples += self.bufferSize;
+            self.nextClip();
+        };
+    }
 
-	setSource: function (src) {
-		this.nextFrame.src = src;
-		this.nextFrame.addEventListener('ended', this._onended, true);
+    wavAudio.prototype = {
+        samples:	0,
+        nextFrame:	null,
+        currentFrame:	null,
+        _onended:	null,
+        hasNextFrame:	false,
 
-		this.hasNextFrame = true;
-	},
-};
+        nextClip: function() {
+            const	curFrame	= this.currentFrame;
+            this.currentFrame	= this.nextFrame;
+            this.nextFrame		= curFrame;
+            this.hasNextFrame	= false;
+            this.currentFrame.play();
+        },
 
-sinks.wav.wavAudio = wavAudio;
+        setSource: function(src) {
+            this.nextFrame.src = src;
+            this.nextFrame.addEventListener('ended', this._onended, true);
 
+            this.hasNextFrame = true;
+        },
+    };
+
+    sinks.wav.wavAudio = wavAudio;
 }(this.Sink));
-(function (sinks, fixChrome82795) {
-
+(function(sinks, fixChrome82795) {
 /**
  * A sink class for the Web Audio API
 */
 
-sinks('webaudio', function (readFn, channelCount, bufferSize, sampleRate) {
-	var	self		= this,
-		context		= sinks.webaudio.getContext(),
-		node		= context.createJavaScriptNode(bufferSize, 0, channelCount),
-		soundData	= null,
-		zeroBuffer	= null;
-	self.start.apply(self, arguments);
+    sinks('webaudio', function(readFn, channelCount, bufferSize, sampleRate) {
+        const	self		= this;
+        const context		= sinks.webaudio.getContext();
+        const node		= context.createJavaScriptNode(bufferSize, 0, channelCount);
+        let soundData	= null;
+        let zeroBuffer	= null;
+        self.start.apply(self, arguments);
 
-	function bufferFill(e) {
-		var	outputBuffer	= e.outputBuffer,
-			channelCount	= outputBuffer.numberOfChannels,
-			i, n, l		= outputBuffer.length,
-			size		= outputBuffer.size,
-			channels	= new Array(channelCount),
-			tail;
-		
-		soundData	= soundData && soundData.length === l * channelCount ? soundData : new Float32Array(l * channelCount);
-		zeroBuffer	= zeroBuffer && zeroBuffer.length === soundData.length ? zeroBuffer : new Float32Array(l * channelCount);
-		soundData.set(zeroBuffer);
+        function bufferFill(e) {
+            const	outputBuffer	= e.outputBuffer;
+            const channelCount	= outputBuffer.numberOfChannels;
+            let i; let n; const l		= outputBuffer.length;
+            const size		= outputBuffer.size;
+            const channels	= new Array(channelCount);
+            let tail;
 
-		for (i=0; i<channelCount; i++) {
-			channels[i] = outputBuffer.getChannelData(i);
-		}
+            soundData	= soundData && soundData.length === l * channelCount ? soundData : new Float32Array(l * channelCount);
+            zeroBuffer	= zeroBuffer && zeroBuffer.length === soundData.length ? zeroBuffer : new Float32Array(l * channelCount);
+            soundData.set(zeroBuffer);
 
-		self.process(soundData, self.channelCount);
+            for (i=0; i<channelCount; i++) {
+                channels[i] = outputBuffer.getChannelData(i);
+            }
 
-		for (i=0; i<l; i++) {
-			for (n=0; n < channelCount; n++) {
-				channels[n][i] = soundData[i * self.channelCount + n];
-			}
-		}
-	}
+            self.process(soundData, self.channelCount);
 
-	self.sampleRate = context.sampleRate;
+            for (i=0; i<l; i++) {
+                for (n=0; n < channelCount; n++) {
+                    channels[n][i] = soundData[i * self.channelCount + n];
+                }
+            }
+        }
 
-	node.onaudioprocess = bufferFill;
-	node.connect(context.destination);
+        self.sampleRate = context.sampleRate;
 
-	self._context		= context;
-	self._node		= node;
-	self._callback		= bufferFill;
-	/* Keep references in order to avoid garbage collection removing the listeners, working around http://code.google.com/p/chromium/issues/detail?id=82795 */
-	// Thanks to @baffo32
-	fixChrome82795.push(node);
-}, {
-	kill: function () {
-		this._node.disconnect(0);
-		for (var i=0; i<fixChrome82795.length; i++) {
-			fixChrome82795[i] === this._node && fixChrome82795.splice(i--, 1);
-		}
-		this._node = this._context = null;
-		this.emit('kill');
-	},
-	getPlaybackTime: function () {
-		return this._context.currentTime * this.sampleRate;
-	},
-});
+        node.onaudioprocess = bufferFill;
+        node.connect(context.destination);
 
-sinks.webkit = sinks.webaudio;
+        self._context		= context;
+        self._node		= node;
+        self._callback		= bufferFill;
+        /* Keep references in order to avoid garbage collection removing the listeners, working around http://code.google.com/p/chromium/issues/detail?id=82795 */
+        // Thanks to @baffo32
+        fixChrome82795.push(node);
+    }, {
+        kill: function() {
+            this._node.disconnect(0);
+            for (let i=0; i<fixChrome82795.length; i++) {
+                fixChrome82795[i] === this._node && fixChrome82795.splice(i--, 1);
+            }
+            this._node = this._context = null;
+            this.emit('kill');
+        },
+        getPlaybackTime: function() {
+            return this._context.currentTime * this.sampleRate;
+        },
+    });
 
-sinks.webaudio.fix82795 = fixChrome82795;
+    sinks.webkit = sinks.webaudio;
 
-sinks.webaudio.getContext = function () {
-	// For now, we have to accept that the AudioContext is at 48000Hz, or whatever it decides.
-	var context = new (window.AudioContext || webkitAudioContext)(/*sampleRate*/);
+    sinks.webaudio.fix82795 = fixChrome82795;
 
-	sinks.webaudio.getContext = function () {
-		return context;
-	};
+    sinks.webaudio.getContext = function() {
+        // For now, we have to accept that the AudioContext is at 48000Hz, or whatever it decides.
+        const context = new (window.AudioContext || webkitAudioContext)(/* sampleRate*/);
 
-	return context;
-};
+        sinks.webaudio.getContext = function() {
+            return context;
+        };
 
+        return context;
+    };
 }(this.Sink.sinks, []));
-(function (Sink) {
-
+(function(Sink) {
 /**
  * A Sink class for the Media Streams Processing API and/or Web Audio API in a Web Worker.
 */
 
-Sink.sinks('worker', function () {
-	var	self		= this,
-		global		= (function(){ return this; }()),
-		soundData	= null,
-		outBuffer	= null,
-		zeroBuffer	= null;
-	self.start.apply(self, arguments);
+    Sink.sinks('worker', function() {
+        const	self		= this;
+        const global		= (function() {
+            return this;
+        }());
+        let soundData	= null;
+        let outBuffer	= null;
+        let zeroBuffer	= null;
+        self.start.apply(self, arguments);
 
-	// Let's see if we're in a worker.
+        // Let's see if we're in a worker.
 
-	importScripts();
+        importScripts();
 
-	function mspBufferFill (e) {
-		self.ready || self.initMSP(e);
+        function mspBufferFill(e) {
+            self.ready || self.initMSP(e);
 
-		var	channelCount	= self.channelCount,
-			l		= e.audioLength,
-			n, i;
+            const	channelCount	= self.channelCount;
+            const l		= e.audioLength;
+            let n; let i;
 
-		soundData	= soundData && soundData.length === l * channelCount ? soundData : new Float32Array(l * channelCount);
-		outBuffer	= outBuffer && outBuffer.length === soundData.length ? outBuffer : new Float32Array(l * channelCount);
-		zeroBuffer	= zeroBuffer && zeroBuffer.length === soundData.length ? zeroBuffer : new Float32Array(l * channelCount);
+            soundData	= soundData && soundData.length === l * channelCount ? soundData : new Float32Array(l * channelCount);
+            outBuffer	= outBuffer && outBuffer.length === soundData.length ? outBuffer : new Float32Array(l * channelCount);
+            zeroBuffer	= zeroBuffer && zeroBuffer.length === soundData.length ? zeroBuffer : new Float32Array(l * channelCount);
 
-		soundData.set(zeroBuffer);
-		outBuffer.set(zeroBuffer);
+            soundData.set(zeroBuffer);
+            outBuffer.set(zeroBuffer);
 
-		self.process(soundData, self.channelCount);
+            self.process(soundData, self.channelCount);
 
-		for (n=0; n<channelCount; n++) {
-			for (i=0; i<l; i++) {
-				outBuffer[n * e.audioLength + i] = soundData[n + i * channelCount];
-			}
-		}
+            for (n=0; n<channelCount; n++) {
+                for (i=0; i<l; i++) {
+                    outBuffer[n * e.audioLength + i] = soundData[n + i * channelCount];
+                }
+            }
 
-		e.writeAudio(outBuffer);
-	}
+            e.writeAudio(outBuffer);
+        }
 
-	function waBufferFill(e) {
-		self.ready || self.initWA(e);
+        function waBufferFill(e) {
+            self.ready || self.initWA(e);
 
-		var	outputBuffer	= e.outputBuffer,
-			channelCount	= outputBuffer.numberOfChannels,
-			i, n, l		= outputBuffer.length,
-			size		= outputBuffer.size,
-			channels	= new Array(channelCount),
-			tail;
-		
-		soundData	= soundData && soundData.length === l * channelCount ? soundData : new Float32Array(l * channelCount);
-		zeroBuffer	= zeroBuffer && zeroBuffer.length === soundData.length ? zeroBuffer : new Float32Array(l * channelCount);
-		soundData.set(zeroBuffer);
+            const	outputBuffer	= e.outputBuffer;
+            const channelCount	= outputBuffer.numberOfChannels;
+            let i; let n; const l		= outputBuffer.length;
+            const size		= outputBuffer.size;
+            const channels	= new Array(channelCount);
+            let tail;
 
-		for (i=0; i<channelCount; i++) {
-			channels[i] = outputBuffer.getChannelData(i);
-		}
+            soundData	= soundData && soundData.length === l * channelCount ? soundData : new Float32Array(l * channelCount);
+            zeroBuffer	= zeroBuffer && zeroBuffer.length === soundData.length ? zeroBuffer : new Float32Array(l * channelCount);
+            soundData.set(zeroBuffer);
 
-		self.process(soundData, self.channelCount);
+            for (i=0; i<channelCount; i++) {
+                channels[i] = outputBuffer.getChannelData(i);
+            }
 
-		for (i=0; i<l; i++) {
-			for (n=0; n < channelCount; n++) {
-				channels[n][i] = soundData[i * self.channelCount + n];
-			}
-		}
-	}
+            self.process(soundData, self.channelCount);
 
-	global.onprocessmedia	= mspBufferFill;
-	global.onaudioprocess	= waBufferFill;
+            for (i=0; i<l; i++) {
+                for (n=0; n < channelCount; n++) {
+                    channels[n][i] = soundData[i * self.channelCount + n];
+                }
+            }
+        }
 
-	self._mspBufferFill	= mspBufferFill;
-	self._waBufferFill	= waBufferFill;
+        global.onprocessmedia	= mspBufferFill;
+        global.onaudioprocess	= waBufferFill;
 
-}, {
-	ready: false,
+        self._mspBufferFill	= mspBufferFill;
+        self._waBufferFill	= waBufferFill;
+    }, {
+        ready: false,
 
-	initMSP: function (e) {
-		this.channelCount	= e.audioChannels;
-		this.sampleRate		= e.audioSampleRate;
-		this.bufferSize		= e.audioLength * this.channelCount;
-		this.ready		= true;
-		this.emit('ready', []);
-	},
+        initMSP: function(e) {
+            this.channelCount	= e.audioChannels;
+            this.sampleRate		= e.audioSampleRate;
+            this.bufferSize		= e.audioLength * this.channelCount;
+            this.ready		= true;
+            this.emit('ready', []);
+        },
 
-	initWA: function (e) {
-		var b = e.outputBuffer;
-		this.channelCount	= b.numberOfChannels;
-		this.sampleRate		= b.sampleRate;
-		this.bufferSize		= b.length * this.channelCount;
-		this.ready		= true;
-		this.emit('ready', []);
-	},
-});
-
+        initWA: function(e) {
+            const b = e.outputBuffer;
+            this.channelCount	= b.numberOfChannels;
+            this.sampleRate		= b.sampleRate;
+            this.bufferSize		= b.length * this.channelCount;
+            this.ready		= true;
+            this.emit('ready', []);
+        },
+    });
 }(this.Sink));
-(function (Sink) {
-
+(function(Sink) {
 /**
  * Splits a sample buffer into those of different channels.
  *
@@ -6458,21 +6397,21 @@ Sink.sinks('worker', function () {
  * @return {Array} An array containing the resulting sample buffers.
 */
 
-Sink.deinterleave = function (buffer, channelCount) {
-	var	l	= buffer.length,
-		size	= l / channelCount,
-		ret	= [],
-		i, n;
-	for (i=0; i<channelCount; i++){
-		ret[i] = new Float32Array(size);
-		for (n=0; n<size; n++){
-			ret[i][n] = buffer[n * channelCount + i];
-		}
-	}
-	return ret;
-};
+    Sink.deinterleave = function(buffer, channelCount) {
+        const	l	= buffer.length;
+        const size	= l / channelCount;
+        const ret	= [];
+        let i; let n;
+        for (i=0; i<channelCount; i++) {
+            ret[i] = new Float32Array(size);
+            for (n=0; n<size; n++) {
+                ret[i][n] = buffer[n * channelCount + i];
+            }
+        }
+        return ret;
+    };
 
-/**
+    /**
  * Joins an array of sample buffers into a single buffer.
  *
  * @static Sink
@@ -6485,21 +6424,21 @@ Sink.deinterleave = function (buffer, channelCount) {
  * @return {Buffer} The interleaved buffer created.
 */
 
-Sink.interleave = function (buffers, channelCount, buffer) {
-	channelCount		= channelCount || buffers.length;
-	var	l		= buffers[0].length,
-		bufferCount	= buffers.length,
-		i, n;
-	buffer			= buffer || new Float32Array(l * channelCount);
-	for (i=0; i<bufferCount; i++) {
-		for (n=0; n<l; n++) {
-			buffer[i + n * channelCount] = buffers[i][n];
-		}
-	}
-	return buffer;
-};
+    Sink.interleave = function(buffers, channelCount, buffer) {
+        channelCount		= channelCount || buffers.length;
+        const	l		= buffers[0].length;
+        const bufferCount	= buffers.length;
+        let i; let n;
+        buffer			= buffer || new Float32Array(l * channelCount);
+        for (i=0; i<bufferCount; i++) {
+            for (n=0; n<l; n++) {
+                buffer[i + n * channelCount] = buffers[i][n];
+            }
+        }
+        return buffer;
+    };
 
-/**
+    /**
  * Mixes two or more buffers down to one.
  *
  * @static Sink
@@ -6511,19 +6450,19 @@ Sink.interleave = function (buffers, channelCount, buffer) {
  * @return {Buffer} The mixed buffer.
 */
 
-Sink.mix = function (buffer) {
-	var	buffers	= [].slice.call(arguments, 1),
-		l, i, c;
-	for (c=0; c<buffers.length; c++){
-		l = Math.max(buffer.length, buffers[c].length);
-		for (i=0; i<l; i++){
-			buffer[i] += buffers[c][i];
-		}
-	}
-	return buffer;
-};
+    Sink.mix = function(buffer) {
+        const	buffers	= [].slice.call(arguments, 1);
+        let l; let i; let c;
+        for (c=0; c<buffers.length; c++) {
+            l = Math.max(buffer.length, buffers[c].length);
+            for (i=0; i<l; i++) {
+                buffer[i] += buffers[c][i];
+            }
+        }
+        return buffer;
+    };
 
-/**
+    /**
  * Resets a buffer to all zeroes.
  *
  * @static Sink
@@ -6534,16 +6473,16 @@ Sink.mix = function (buffer) {
  * @return {Buffer} The 0-reset buffer.
 */
 
-Sink.resetBuffer = function (buffer) {
-	var	l	= buffer.length,
-		i;
-	for (i=0; i<l; i++){
-		buffer[i] = 0;
-	}
-	return buffer;
-};
+    Sink.resetBuffer = function(buffer) {
+        const	l	= buffer.length;
+        let i;
+        for (i=0; i<l; i++) {
+            buffer[i] = 0;
+        }
+        return buffer;
+    };
 
-/**
+    /**
  * Copies the content of a buffer to another buffer.
  *
  * @static Sink
@@ -6555,17 +6494,17 @@ Sink.resetBuffer = function (buffer) {
  * @return {Buffer} A clone of the buffer.
 */
 
-Sink.clone = function (buffer, result) {
-	var	l	= buffer.length,
-		i;
-	result = result || new Float32Array(l);
-	for (i=0; i<l; i++){
-		result[i] = buffer[i];
-	}
-	return result;
-};
+    Sink.clone = function(buffer, result) {
+        const	l	= buffer.length;
+        let i;
+        result = result || new Float32Array(l);
+        for (i=0; i<l; i++) {
+            result[i] = buffer[i];
+        }
+        return result;
+    };
 
-/**
+    /**
  * Creates an array of buffers of the specified length and the specified count.
  *
  * @static Sink
@@ -6576,117 +6515,115 @@ Sink.clone = function (buffer, result) {
  * @return {Array} The array of buffers.
 */
 
-Sink.createDeinterleaved = function (length, channelCount) {
-	var	result	= new Array(channelCount),
-		i;
-	for (i=0; i<channelCount; i++){
-		result[i] = new Float32Array(length);
-	}
-	return result;
-};
+    Sink.createDeinterleaved = function(length, channelCount) {
+        const	result	= new Array(channelCount);
+        let i;
+        for (i=0; i<channelCount; i++) {
+            result[i] = new Float32Array(length);
+        }
+        return result;
+    };
 
-Sink.memcpy = function (src, srcOffset, dst, dstOffset, length) {
-	src	= src.subarray || src.slice ? src : src.buffer;
-	dst	= dst.subarray || dst.slice ? dst : dst.buffer;
+    Sink.memcpy = function(src, srcOffset, dst, dstOffset, length) {
+        src	= src.subarray || src.slice ? src : src.buffer;
+        dst	= dst.subarray || dst.slice ? dst : dst.buffer;
 
-	src	= srcOffset ? src.subarray ?
-		src.subarray(srcOffset, length && srcOffset + length) :
-		src.slice(srcOffset, length && srcOffset + length) : src;
+        src	= srcOffset ? src.subarray ?
+            src.subarray(srcOffset, length && srcOffset + length) :
+            src.slice(srcOffset, length && srcOffset + length) : src;
 
-	if (dst.set) {
-		dst.set(src, dstOffset);
-	} else {
-		for (var i=0; i<src.length; i++) {
-			dst[i + dstOffset] = src[i];
-		}
-	}
+        if (dst.set) {
+            dst.set(src, dstOffset);
+        } else {
+            for (let i=0; i<src.length; i++) {
+                dst[i + dstOffset] = src[i];
+            }
+        }
 
-	return dst;
-};
+        return dst;
+    };
 
-Sink.memslice = function (buffer, offset, length) {
-	return buffer.subarray ? buffer.subarray(offset, length) : buffer.slice(offset, length);
-};
+    Sink.memslice = function(buffer, offset, length) {
+        return buffer.subarray ? buffer.subarray(offset, length) : buffer.slice(offset, length);
+    };
 
-Sink.mempad = function (buffer, out, offset) {
-	out = out.length ? out : new (buffer.constructor)(out);
-	Sink.memcpy(buffer, 0, out, offset);
-	return out;
-};
+    Sink.mempad = function(buffer, out, offset) {
+        out = out.length ? out : new (buffer.constructor)(out);
+        Sink.memcpy(buffer, 0, out, offset);
+        return out;
+    };
 
-Sink.linspace = function (start, end, out) {
-	var l, i, n, step;
-	out	= out.length ? (l=out.length) && out : Array(l=out);
-	step	= (end - start) / --l;
-	for (n=start+step, i=1; i<l; i++, n+=step) {
-		out[i] = n;
-	}
-	out[0]	= start;
-	out[l]	= end;
-	return out;
-};
+    Sink.linspace = function(start, end, out) {
+        let l; let i; let n; let step;
+        out	= out.length ? (l=out.length) && out : Array(l=out);
+        step	= (end - start) / --l;
+        for (n=start+step, i=1; i<l; i++, n+=step) {
+            out[i] = n;
+        }
+        out[0]	= start;
+        out[l]	= end;
+        return out;
+    };
 
-Sink.ftoi = function (input, bitCount, output) {
-	var i, mask = Math.pow(2, bitCount - 1);
+    Sink.ftoi = function(input, bitCount, output) {
+        let i; const mask = Math.pow(2, bitCount - 1);
 
-	output = output || new (input.constructor)(input.length);
+        output = output || new (input.constructor)(input.length);
 
-	for (i=0; i<input.length; i++) {
-		output[i] = ~~(mask * input[i]);
-	}
+        for (i=0; i<input.length; i++) {
+            output[i] = ~~(mask * input[i]);
+        }
 
-	return output;
-};
-
+        return output;
+    };
 }(this.Sink));
-(function (Sink) {
+(function(Sink) {
+    function Proxy(bufferSize, channelCount) {
+        Sink.EventEmitter.call(this);
 
-function Proxy (bufferSize, channelCount) {
-	Sink.EventEmitter.call(this);
+        this.bufferSize		= isNaN(bufferSize) || bufferSize === null ? this.bufferSize : bufferSize;
+        this.channelCount	= isNaN(channelCount) || channelCount === null ? this.channelCount : channelCount;
 
-	this.bufferSize		= isNaN(bufferSize) || bufferSize === null ? this.bufferSize : bufferSize;
-	this.channelCount	= isNaN(channelCount) || channelCount === null ? this.channelCount : channelCount;
+        const self = this;
+        this.callback = function() {
+            return self.process.apply(self, arguments);
+        };
 
-	var self = this;
-	this.callback = function () {
-		return self.process.apply(self, arguments);
-	};
+        this.resetBuffer();
+    }
 
-	this.resetBuffer();
-}
+    Proxy.prototype = {
+        buffer: null,
+        zeroBuffer: null,
+        parentSink: null,
+        bufferSize: 4096,
+        channelCount: 2,
+        offset: null,
 
-Proxy.prototype = {
-	buffer: null,
-	zeroBuffer: null,
-	parentSink: null,
-	bufferSize: 4096,
-	channelCount: 2,
-	offset: null,
+        resetBuffer: function() {
+            this.buffer	= new Float32Array(this.bufferSize);
+            this.zeroBuffer	= new Float32Array(this.bufferSize);
+        },
 
-	resetBuffer: function () {
-		this.buffer	= new Float32Array(this.bufferSize);
-		this.zeroBuffer	= new Float32Array(this.bufferSize);
-	},
+        process: function(buffer, channelCount) {
+            this.offset === null && this.loadBuffer();
 
-	process: function (buffer, channelCount) {
-		this.offset === null && this.loadBuffer();
+            for (let i=0; i<buffer.length; i++) {
+                this.offset >= this.buffer.length && this.loadBuffer();
+                buffer[i] = this.buffer[this.offset++];
+            }
+        },
 
-		for (var i=0; i<buffer.length; i++) {
-			this.offset >= this.buffer.length && this.loadBuffer();
-			buffer[i] = this.buffer[this.offset++];
-		}
-	},
+        loadBuffer: function() {
+            this.offset = 0;
+            Sink.memcpy(this.zeroBuffer, 0, this.buffer, 0);
+            this.emit('audioprocess', [this.buffer, this.channelCount]);
+        },
+    };
 
-	loadBuffer: function () {
-		this.offset = 0;
-		Sink.memcpy(this.zeroBuffer, 0, this.buffer, 0);
-		this.emit('audioprocess', [this.buffer, this.channelCount]);
-	},
-};
+    Sink.Proxy = Proxy;
 
-Sink.Proxy = Proxy;
-
-/**
+    /**
  * Creates a proxy callback system for the sink instance.
  * Requires Sink utils.
  *
@@ -6695,71 +6632,67 @@ Sink.Proxy = Proxy;
  *
  * @arg {Number} !bufferSize The buffer size for the proxy.
 */
-Sink.prototype.createProxy = function (bufferSize) {
-	var	proxy		= new Sink.Proxy(bufferSize, this.channelCount);
-	proxy.parentSink	= this;
+    Sink.prototype.createProxy = function(bufferSize) {
+        const	proxy		= new Sink.Proxy(bufferSize, this.channelCount);
+        proxy.parentSink	= this;
 
-	this.on('audioprocess', proxy.callback);
+        this.on('audioprocess', proxy.callback);
 
-	return proxy;
-};
-
+        return proxy;
+    };
 }(this.Sink));
-(function (Sink) {
-
-(function(){
-
-/**
+(function(Sink) {
+    (function() {
+        /**
  * If method is supplied, adds a new interpolation method to Sink.interpolation, otherwise sets the default interpolation method (Sink.interpolate) to the specified property of Sink.interpolate.
  *
  * @arg {String} name The name of the interpolation method to get / set.
  * @arg {Function} !method The interpolation method.
 */
 
-function interpolation(name, method) {
-	if (name && method) {
-		interpolation[name] = method;
-	} else if (name && interpolation[name] instanceof Function) {
-		Sink.interpolate = interpolation[name];
-	}
-	return interpolation[name];
-}
+        function interpolation(name, method) {
+            if (name && method) {
+                interpolation[name] = method;
+            } else if (name && interpolation[name] instanceof Function) {
+                Sink.interpolate = interpolation[name];
+            }
+            return interpolation[name];
+        }
 
-Sink.interpolation = interpolation;
+        Sink.interpolation = interpolation;
 
 
-/**
+        /**
  * Interpolates a fractal part position in an array to a sample. (Linear interpolation)
  *
  * @param {Array} arr The sample buffer.
  * @param {number} pos The position to interpolate from.
  * @return {Float32} The interpolated sample.
 */
-interpolation('linear', function (arr, pos) {
-	var	first	= Math.floor(pos),
-		second	= first + 1,
-		frac	= pos - first;
-	second		= second < arr.length ? second : 0;
-	return arr[first] * (1 - frac) + arr[second] * frac;
-});
+        interpolation('linear', function(arr, pos) {
+            const	first	= Math.floor(pos);
+            let second	= first + 1;
+            const frac	= pos - first;
+            second		= second < arr.length ? second : 0;
+            return arr[first] * (1 - frac) + arr[second] * frac;
+        });
 
-/**
+        /**
  * Interpolates a fractal part position in an array to a sample. (Nearest neighbour interpolation)
  *
  * @param {Array} arr The sample buffer.
  * @param {number} pos The position to interpolate from.
  * @return {Float32} The interpolated sample.
 */
-interpolation('nearest', function (arr, pos) {
-	return pos >= arr.length - 0.5 ? arr[0] : arr[Math.round(pos)];
-});
+        interpolation('nearest', function(arr, pos) {
+            return pos >= arr.length - 0.5 ? arr[0] : arr[Math.round(pos)];
+        });
 
-interpolation('linear');
+        interpolation('linear');
+    }());
 
-}());
 
-
-/**
+    /**
  * Resamples a sample buffer from a frequency to a frequency and / or from a sample rate to a sample rate.
  *
  * @static Sink
@@ -6773,31 +6706,29 @@ interpolation('linear');
  *
  * @return The new resampled buffer.
 */
-Sink.resample	= function (buffer, fromRate /* or speed */, fromFrequency /* or toRate */, toRate, toFrequency) {
-	var
-		argc		= arguments.length,
-		speed		= argc === 2 ? fromRate : argc === 3 ? fromRate / fromFrequency : toRate / fromRate * toFrequency / fromFrequency,
-		l		= buffer.length,
-		length		= Math.ceil(l / speed),
-		newBuffer	= new Float32Array(length),
-		i, n;
-	for (i=0, n=0; i<l; i += speed) {
-		newBuffer[n++] = Sink.interpolate(buffer, i);
-	}
-	return newBuffer;
-};
-
+    Sink.resample	= function(buffer, fromRate /* or speed */, fromFrequency /* or toRate */, toRate, toFrequency) {
+        const
+            argc		= arguments.length;
+        const speed		= argc === 2 ? fromRate : argc === 3 ? fromRate / fromFrequency : toRate / fromRate * toFrequency / fromFrequency;
+        const l		= buffer.length;
+        const length		= Math.ceil(l / speed);
+        const newBuffer	= new Float32Array(length);
+        let i; let n;
+        for (i=0, n=0; i<l; i += speed) {
+            newBuffer[n++] = Sink.interpolate(buffer, i);
+        }
+        return newBuffer;
+    };
 }(this.Sink));
-(function (Sink) {
+(function(Sink) {
+    Sink.on('init', function(sink) {
+        sink.activeRecordings = [];
+        sink.on('postprocess', sink.recordData);
+    });
 
-Sink.on('init', function (sink) {
-	sink.activeRecordings = [];
-	sink.on('postprocess', sink.recordData);
-});
+    Sink.prototype.activeRecordings = null;
 
-Sink.prototype.activeRecordings = null;
-
-/**
+    /**
  * Starts recording the sink output.
  *
  * @method Sink
@@ -6805,12 +6736,12 @@ Sink.prototype.activeRecordings = null;
  *
  * @return {Recording} The recording object for the recording started.
 */
-Sink.prototype.record = function () {
-	var recording = new Sink.Recording(this);
-	this.emit('record', [recording]);
-	return recording;
-};
-/**
+    Sink.prototype.record = function() {
+        const recording = new Sink.Recording(this);
+        this.emit('record', [recording]);
+        return recording;
+    };
+    /**
  * Private method that handles the adding the buffers to all the current recordings.
  *
  * @method Sink
@@ -6818,15 +6749,15 @@ Sink.prototype.record = function () {
  *
  * @arg {Array} buffer The buffer to record.
 */
-Sink.prototype.recordData = function (buffer) {
-	var	activeRecs	= this.activeRecordings,
-		i, l		= activeRecs.length;
-	for (i=0; i<l; i++) {
-		activeRecs[i].add(buffer);
-	}
-};
+    Sink.prototype.recordData = function(buffer) {
+        const	activeRecs	= this.activeRecordings;
+        let i; const l		= activeRecs.length;
+        for (i=0; i<l; i++) {
+            activeRecs[i].add(buffer);
+        }
+    };
 
-/**
+    /**
  * A Recording class for recording sink output.
  *
  * @class
@@ -6834,87 +6765,85 @@ Sink.prototype.recordData = function (buffer) {
  * @arg {Object} bindTo The sink to bind the recording to.
 */
 
-function Recording (bindTo) {
-	this.boundTo = bindTo;
-	this.buffers = [];
-	bindTo.activeRecordings.push(this);
-}
+    function Recording(bindTo) {
+        this.boundTo = bindTo;
+        this.buffers = [];
+        bindTo.activeRecordings.push(this);
+    }
 
-Recording.prototype = {
-/**
+    Recording.prototype = {
+        /**
  * Adds a new buffer to the recording.
  *
  * @arg {Array} buffer The buffer to add.
  *
  * @method Recording
 */
-	add: function (buffer) {
-		this.buffers.push(buffer);
-	},
-/**
+        add: function(buffer) {
+            this.buffers.push(buffer);
+        },
+        /**
  * Empties the recording.
  *
  * @method Recording
 */
-	clear: function () {
-		this.buffers = [];
-	},
-/**
+        clear: function() {
+            this.buffers = [];
+        },
+        /**
  * Stops the recording and unbinds it from it's host sink.
  *
  * @method Recording
 */
-	stop: function () {
-		var	recordings = this.boundTo.activeRecordings,
-			i;
-		for (i=0; i<recordings.length; i++) {
-			if (recordings[i] === this) {
-				recordings.splice(i--, 1);
-			}
-		}
-	},
-/**
+        stop: function() {
+            const	recordings = this.boundTo.activeRecordings;
+            let i;
+            for (i=0; i<recordings.length; i++) {
+                if (recordings[i] === this) {
+                    recordings.splice(i--, 1);
+                }
+            }
+        },
+        /**
  * Joins the recorded buffers into a single buffer.
  *
  * @method Recording
 */
-	join: function () {
-		var	bufferLength	= 0,
-			bufPos		= 0,
-			buffers		= this.buffers,
-			newArray,
-			n, i, l		= buffers.length;
+        join: function() {
+            let	bufferLength	= 0;
+            let bufPos		= 0;
+            const buffers		= this.buffers;
+            let newArray;
+            let n; let i; const l		= buffers.length;
 
-		for (i=0; i<l; i++) {
-			bufferLength += buffers[i].length;
-		}
-		newArray = new Float32Array(bufferLength);
-		for (i=0; i<l; i++) {
-			for (n=0; n<buffers[i].length; n++) {
-				newArray[bufPos + n] = buffers[i][n];
-			}
-			bufPos += buffers[i].length;
-		}
-		return newArray;
-	},
-};
+            for (i=0; i<l; i++) {
+                bufferLength += buffers[i].length;
+            }
+            newArray = new Float32Array(bufferLength);
+            for (i=0; i<l; i++) {
+                for (n=0; n<buffers[i].length; n++) {
+                    newArray[bufPos + n] = buffers[i][n];
+                }
+                bufPos += buffers[i].length;
+            }
+            return newArray;
+        },
+    };
 
-Sink.Recording = Recording;
-
+    Sink.Recording = Recording;
 }(this.Sink));
-(function (Sink) {
+(function(Sink) {
+    function processRingBuffer() {
+        this.ringBuffer && (this.channelMode === 'interleaved' ? this.ringSpin : this.ringSpinInterleaved).apply(this, arguments);
+    }
 
-function processRingBuffer () {
-	this.ringBuffer && (this.channelMode === 'interleaved' ? this.ringSpin : this.ringSpinInterleaved).apply(this, arguments);
-}
+    Sink.on('init', function(sink) {
+        sink.on('preprocess', processRingBuffer);
+    });
 
-Sink.on('init', function (sink) {
-	sink.on('preprocess', processRingBuffer);
-});
+    Sink.prototype.ringBuffer = null;
 
-Sink.prototype.ringBuffer = null;
-
-/**
+    /**
  * A private method that applies the ring buffer contents to the specified buffer, while in interleaved mode.
  *
  * @method Sink
@@ -6922,20 +6851,20 @@ Sink.prototype.ringBuffer = null;
  *
  * @arg {Array} buffer The buffer to write to.
 */
-Sink.prototype.ringSpin = function (buffer) {
-	var	ring	= this.ringBuffer,
-		l	= buffer.length,
-		m	= ring.length,
-		off	= this.ringOffset,
-		i;
-	for (i=0; i<l; i++){
-		buffer[i] += ring[off];
-		off = (off + 1) % m;
-	}
-	this.ringOffset = off;
-};
+    Sink.prototype.ringSpin = function(buffer) {
+        const	ring	= this.ringBuffer;
+        const l	= buffer.length;
+        const m	= ring.length;
+        let off	= this.ringOffset;
+        let i;
+        for (i=0; i<l; i++) {
+            buffer[i] += ring[off];
+            off = (off + 1) % m;
+        }
+        this.ringOffset = off;
+    };
 
-/**
+    /**
  * A private method that applies the ring buffer contents to the specified buffer, while in deinterleaved mode.
  *
  * @method Sink
@@ -6943,39 +6872,37 @@ Sink.prototype.ringSpin = function (buffer) {
  *
  * @param {Array} buffer The buffers to write to.
 */
-Sink.prototype.ringSpinDeinterleaved = function (buffer) {
-	var	ring	= this.ringBuffer,
-		l	= buffer.length,
-		ch	= ring.length,
-		m	= ring[0].length,
-		len	= ch * m,
-		off	= this.ringOffset,
-		i, n;
-	for (i=0; i<l; i+=ch){
-		for (n=0; n<ch; n++){
-			buffer[i + n] += ring[n][off];
-		}
-		off = (off + 1) % m;
-	}
-	this.ringOffset = n;
-};
-
+    Sink.prototype.ringSpinDeinterleaved = function(buffer) {
+        const	ring	= this.ringBuffer;
+        const l	= buffer.length;
+        const ch	= ring.length;
+        const m	= ring[0].length;
+        const len	= ch * m;
+        let off	= this.ringOffset;
+        let i; let n;
+        for (i=0; i<l; i+=ch) {
+            for (n=0; n<ch; n++) {
+                buffer[i + n] += ring[n][off];
+            }
+            off = (off + 1) % m;
+        }
+        this.ringOffset = n;
+    };
 }(this.Sink));
-(function (Sink, proto) {
+(function(Sink, proto) {
+    proto = Sink.prototype;
 
-proto = Sink.prototype;
+    Sink.on('init', function(sink) {
+        sink.asyncBuffers	= [];
+        sink.syncBuffers	= [];
+        sink.on('preprocess', sink.writeBuffersSync);
+        sink.on('postprocess', sink.writeBuffersAsync);
+    });
 
-Sink.on('init', function (sink) {
-	sink.asyncBuffers	= [];
-	sink.syncBuffers	= [];
-	sink.on('preprocess', sink.writeBuffersSync);
-	sink.on('postprocess', sink.writeBuffersAsync);
-});
+    proto.writeMode		= 'async';
+    proto.asyncBuffers	= proto.syncBuffers = null;
 
-proto.writeMode		= 'async';
-proto.asyncBuffers	= proto.syncBuffers = null;
-
-/**
+    /**
  * Private method that handles the mixing of asynchronously written buffers.
  *
  * @method Sink
@@ -6983,29 +6910,29 @@ proto.asyncBuffers	= proto.syncBuffers = null;
  *
  * @arg {Array} buffer The buffer to write to.
 */
-proto.writeBuffersAsync = function (buffer) {
-	var	buffers		= this.asyncBuffers,
-		l		= buffer.length,
-		buf,
-		bufLength,
-		i, n, offset;
-	if (buffers) {
-		for (i=0; i<buffers.length; i++) {
-			buf		= buffers[i];
-			bufLength	= buf.b.length;
-			offset		= buf.d;
-			buf.d		-= Math.min(offset, l);
-			
-			for (n=0; n + offset < l && n < bufLength; n++) {
-				buffer[n + offset] += buf.b[n];
-			}
-			buf.b = buf.b.subarray(n + offset);
-			i >= bufLength && buffers.splice(i--, 1);
-		}
-	}
-};
+    proto.writeBuffersAsync = function(buffer) {
+        const	buffers		= this.asyncBuffers;
+        const l		= buffer.length;
+        let buf;
+        let bufLength;
+        let i; let n; let offset;
+        if (buffers) {
+            for (i=0; i<buffers.length; i++) {
+                buf		= buffers[i];
+                bufLength	= buf.b.length;
+                offset		= buf.d;
+                buf.d		-= Math.min(offset, l);
 
-/**
+                for (n=0; n + offset < l && n < bufLength; n++) {
+                    buffer[n + offset] += buf.b[n];
+                }
+                buf.b = buf.b.subarray(n + offset);
+                i >= bufLength && buffers.splice(i--, 1);
+            }
+        }
+    };
+
+    /**
  * A private method that handles mixing synchronously written buffers.
  *
  * @method Sink
@@ -7013,26 +6940,26 @@ proto.writeBuffersAsync = function (buffer) {
  *
  * @arg {Array} buffer The buffer to write to.
 */
-proto.writeBuffersSync = function (buffer) {
-	var	buffers		= this.syncBuffers,
-		l		= buffer.length,
-		i		= 0,
-		soff		= 0;
-	for (;i<l && buffers.length; i++) {
-		buffer[i] += buffers[0][soff];
-		if (buffers[0].length <= soff){
-			buffers.splice(0, 1);
-			soff = 0;
-			continue;
-		}
-		soff++;
-	}
-	if (buffers.length) {
-		buffers[0] = buffers[0].subarray(soff);
-	}
-};
+    proto.writeBuffersSync = function(buffer) {
+        const	buffers		= this.syncBuffers;
+        const l		= buffer.length;
+        let i		= 0;
+        let soff		= 0;
+        for (;i<l && buffers.length; i++) {
+            buffer[i] += buffers[0][soff];
+            if (buffers[0].length <= soff) {
+                buffers.splice(0, 1);
+                soff = 0;
+                continue;
+            }
+            soff++;
+        }
+        if (buffers.length) {
+            buffers[0] = buffers[0].subarray(soff);
+        }
+    };
 
-/**
+    /**
  * Writes a buffer asynchronously on top of the existing signal, after a specified delay.
  *
  * @method Sink
@@ -7042,17 +6969,17 @@ proto.writeBuffersSync = function (buffer) {
  * @arg {Number} delay The delay to write after. If not specified, the Sink will calculate a delay to compensate the latency.
  * @return {Number} The number of currently stored asynchronous buffers.
 */
-proto.writeBufferAsync = function (buffer, delay) {
-	buffer			= this.mode === 'deinterleaved' ? Sink.interleave(buffer, this.channelCount) : buffer;
-	var	buffers		= this.asyncBuffers;
-	buffers.push({
-		b: buffer,
-		d: isNaN(delay) ? ~~((+new Date - this.previousHit) / 1000 * this.sampleRate) : delay
-	});
-	return buffers.length;
-};
+    proto.writeBufferAsync = function(buffer, delay) {
+        buffer			= this.mode === 'deinterleaved' ? Sink.interleave(buffer, this.channelCount) : buffer;
+        const	buffers		= this.asyncBuffers;
+        buffers.push({
+            b: buffer,
+            d: isNaN(delay) ? ~~((+new Date - this.previousHit) / 1000 * this.sampleRate) : delay,
+        });
+        return buffers.length;
+    };
 
-/**
+    /**
  * Writes a buffer synchronously to the output.
  *
  * @method Sink
@@ -7061,14 +6988,14 @@ proto.writeBufferAsync = function (buffer, delay) {
  * @param {Array} buffer The buffer to write.
  * @return {Number} The number of currently stored synchronous buffers.
 */
-proto.writeBufferSync = function (buffer) {
-	buffer			= this.mode === 'deinterleaved' ? Sink.interleave(buffer, this.channelCount) : buffer;
-	var	buffers		= this.syncBuffers;
-	buffers.push(buffer);
-	return buffers.length;
-};
+    proto.writeBufferSync = function(buffer) {
+        buffer			= this.mode === 'deinterleaved' ? Sink.interleave(buffer, this.channelCount) : buffer;
+        const	buffers		= this.syncBuffers;
+        buffers.push(buffer);
+        return buffers.length;
+    };
 
-/**
+    /**
  * Writes a buffer, according to the write mode specified.
  *
  * @method Sink
@@ -7078,11 +7005,11 @@ proto.writeBufferSync = function (buffer) {
  * @arg {Number} delay The delay to write after. If not specified, the Sink will calculate a delay to compensate the latency. (only applicable in asynchronous write mode)
  * @return {Number} The number of currently stored (a)synchronous buffers.
 */
-proto.writeBuffer = function () {
-	return this[this.writeMode === 'async' ? 'writeBufferAsync' : 'writeBufferSync'].apply(this, arguments);
-};
+    proto.writeBuffer = function() {
+        return this[this.writeMode === 'async' ? 'writeBufferAsync' : 'writeBufferSync'].apply(this, arguments);
+    };
 
-/**
+    /**
  * Gets the total amount of yet unwritten samples in the synchronous buffers.
  *
  * @method Sink
@@ -7090,15 +7017,14 @@ proto.writeBuffer = function () {
  *
  * @return {Number} The total amount of yet unwritten samples in the synchronous buffers.
 */
-proto.getSyncWriteOffset = function () {
-	var	buffers		= this.syncBuffers,
-		offset		= 0,
-		i;
-	for (i=0; i<buffers.length; i++) {
-		offset += buffers[i].length;
-	}
-	return offset;
-};
-
-} (this.Sink));
+    proto.getSyncWriteOffset = function() {
+        const	buffers		= this.syncBuffers;
+        let offset		= 0;
+        let i;
+        for (i=0; i<buffers.length; i++) {
+            offset += buffers[i].length;
+        }
+        return offset;
+    };
+}(this.Sink));
 
