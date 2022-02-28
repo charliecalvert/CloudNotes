@@ -117,15 +117,16 @@ async function main() {
         console.log(stats);
         // execProcess();
         const command = "sh git-call.sh " + fileName;
-        const result = await ep.result(command, function(err, response);
-        console.log(result);
-        {
+        const result = await ep.callExec(command);
+        //const result = await ep.result(command);
+        console.log('cm result:', result);
+       /*  {
             if(!err){
                 console.log(response);
             }else {
                 console.log(err);
             }
-        });
+        }); */
         return;
     }
 }
