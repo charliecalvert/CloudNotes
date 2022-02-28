@@ -1,3 +1,6 @@
+<!-- toc -->
+<!-- tocstop -->
+
 # JavaScript Basics
 
 We'll begin by exploring the JavaScript type system.
