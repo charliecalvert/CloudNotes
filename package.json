@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
   "dependencies": {
-    "elven-code": "^4.8.0",
+    "elven-code": "^4.8.1",
     "ssh2": "^1.6.0"
   }
 }

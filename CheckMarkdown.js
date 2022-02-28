@@ -1,4 +1,5 @@
-const fs = require('fs')
+const fs = require('fs');
+const fsp = require('fs').promises;
 var path = require('path');
 const elfUtils = require('elven-code').elfUtils;
 
@@ -53,35 +54,45 @@ async function lsDirs(path) {
 
 
 
-var walk = function(dir, done) {
-  var results = [];
-  fs.readdir(dir, function(err, list) {
-    if (err) return done(err);
-    var i = 0;
-    (function next() {
-      var file = list[i++];
-      if (!file) return done(null, results);
-      file = path.resolve(dir, file);
-      fs.stat(file, function(err, stat) {
-        if (stat && stat.isDirectory()) {
-          walk(file, function(err, res) {
-            results = results.concat(res);
-            next();
-          });
-        } else {
-          results.push(file);
-          next();
-        }
-      });
-    })();
-  });
+var walk = function (dir, done) {
+    var results = [];
+    fs.readdir(dir, function (err, list) {
+        if (err) return done(err);
+        var i = 0;
+        (function next() {
+            var file = list[i++];
+            if (!file) return done(null, results);
+            file = path.resolve(dir, file);
+            fs.stat(file, function (err, stat) {
+                if (stat && stat.isDirectory()) {
+                    walk(file, function (err, res) {
+                        results = results.concat(res);
+                        next();
+                    });
+                } else {
+                    results.push(file);
+                    next();
+                }
+            });
+        })();
+    });
 };
 
+
+/* 
+ * The function* (function keyword plus asterisk) is a 
+ * generator function, that returns a Generator object. 
+ * - see mdn (https://mzl.la/3MbWmiM)
+ * yield can be treated like an array, you can iterate
+ * over it one item at a time. Use next() or for loop.
+ */
 async function* walker(dir) {
     for await (const d of await fs.promises.opendir(dir)) {
         const entry = path.join(dir, d.name);
-        if (d.isDirectory()) yield* walker(entry);
-        else if (d.isFile() && elfUtils.getExtension() === 'md') {
+        if (d.isDirectory()) {
+            yield* walker(entry);
+        }
+        else if (d.isFile() && elfUtils.getExtension(d.name) === 'md') {
             yield entry;
         }
     }
@@ -95,10 +106,28 @@ async function* walker(dir) {
     console.log(b)
 }); */
 
+var ep = require("./exec-process.js");
+
 // Then, use it with a simple async for loop
 async function main() {
-    for await (const p of walker('elvenware'))
-        console.log(p)
+    for await (const p of walker('elvenware')) {
+        const fileName = process.env.HOME + '/Git/CloudNotes/' + p
+        console.log(fileName);
+        const stats = await fsp.stat(fileName);
+        console.log(stats);
+        // execProcess();
+        const command = "sh git-call.sh " + fileName;
+        const result = await ep.result(command, function(err, response);
+        console.log(result);
+        {
+            if(!err){
+                console.log(response);
+            }else {
+                console.log(err);
+            }
+        });
+        return;
+    }
 }
 
 main().catch(console.error);
