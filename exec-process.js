@@ -18,7 +18,7 @@ async function callExec(command) {
 // https://stackoverflow.com/a/29655902/253576
 var result = function (command) {
     return new Promise((resolve, reject) => {
-        var child = exec(command, function (err, stdout, stderr) {
+        var child = exec(command, (err, stdout, stderr) => {
            /*  console.log('stdout:', stdout);
             console.log('stderr:', stderr);
             console.log('err:', err); */
