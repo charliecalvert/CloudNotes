@@ -21,6 +21,7 @@
     "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
     "dependencies": {
         "elven-code": "^4.8.1",
+        "markdown-elf": "^1.0.0",
         "markdown-toc": "^1.2.0",
         "ssh2": "^1.6.0"
     },

@@ -1,6 +1,9 @@
 <!-- bar -->
 <!-- barstop -->
 
+<!-- toc -->
+<!-- tocstop -->
+
 # CloudNotes
 
 
