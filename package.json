@@ -1,26 +1,41 @@
 {
-  "name": "cloudnotes",
-  "version": "1.0.0",
-  "description": "CloudNotes ==========",
-  "main": "remote.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/charliecalvert/CloudNotes.git"
-  },
-  "keywords": [
-    "remote"
-  ],
-  "author": "Charlie Calvert",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/charliecalvert/CloudNotes/issues"
-  },
-  "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
-  "dependencies": {
-    "elven-code": "^4.8.1",
-    "ssh2": "^1.6.0"
-  }
+    "name": "cloudnotes",
+    "version": "1.0.0",
+    "description": "CloudNotes ==========",
+    "main": "remote.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/charliecalvert/CloudNotes.git"
+    },
+    "keywords": [
+        "remote"
+    ],
+    "author": "Charlie Calvert",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/charliecalvert/CloudNotes/issues"
+    },
+    "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
+    "dependencies": {
+        "elven-code": "^4.8.1",
+        "markdown-toc": "^1.2.0",
+        "ssh2": "^1.6.0"
+    },
+    "devDependencies": {
+        "concat-stream": "^2.0.0",
+        "diacritics-map": "^0.1.0",
+        "gray-matter": "^4.0.3",
+        "lazy-cache": "^2.0.2",
+        "list-item": "^2.0.0",
+        "markdown-link": "^0.1.1",
+        "minimist": "^1.2.5",
+        "mixin-deep": "^2.0.1",
+        "object.pick": "^1.3.0",
+        "remarkable": "^1.7.1",
+        "repeat-string": "^1.6.1",
+        "strip-color": "^0.1.0"
+    }
 }

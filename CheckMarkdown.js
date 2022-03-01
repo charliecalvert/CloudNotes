@@ -98,13 +98,7 @@ async function* walker(dir) {
     }
 }
 
-//ls01('.').catch(console.error)
-//ls02('.').catch(console.error)
-//lsDirs('.').catch(console.error)
-/* walk('elvenware', (err,b) => { 
-    if (err) throw err;
-    console.log(b)
-}); */
+
 
 var ep = require("./exec-process.js");
 
@@ -131,4 +125,12 @@ async function main() {
     }
 }
 
-main().catch(console.error);
+//ls01('.').catch(console.error)
+//ls02('.').catch(console.error)
+//lsDirs('.').catch(console.error)
+/* walk('elvenware', (err,b) => { 
+    if (err) throw err;
+    console.log(b)
+}); */
+
+// main().catch(console.error);
