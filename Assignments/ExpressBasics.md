@@ -1,3 +1,6 @@
+<!-- toc -->
+<!-- tocstop -->
+
 # Express Basics
 
 This assignment is designed to introduce you to [Express JS](http://expressjs.com/). Express is the library most often used by NodeJs developers when creating web applications. It is not the only way to create a Node JS application, but it is by far the most common.

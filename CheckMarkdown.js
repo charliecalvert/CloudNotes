@@ -1,7 +1,9 @@
 const fs = require('fs');
 const fsp = require('fs').promises;
-var path = require('path');
+const path = require('path');
 const elfUtils = require('elven-code').elfUtils;
+//const utils = require('./lib/utils');
+const matter = require('gray-matter');
 
 async function ls01(path) {
     const dir = await fs.promises.opendir(path)
@@ -102,6 +104,65 @@ async function* walker(dir) {
 
 var ep = require("./exec-process.js");
 
+async function hasElfCode(fileName) {
+    let result = {};
+    const regexToc = /(?:<!-- toc(?:\s*stop)? -->)/g;
+    //const regexElf = /(?:<!-- bar(?:\s*stop)? -->)/g;
+    const regexElf = /^---/
+    let markdown = await elfUtils.readFileAsync(fileName);
+    // console.log(markdown);
+    if (regexToc.test(markdown)) {
+        console.log('Has TOC code');
+        result.hasTocCode = true;
+    } else {
+        console.log('No TOC code');
+        result.hasTocCode = false;
+        result.markdown = markdown;
+    }
+
+    if (regexElf.test(markdown)) {
+        console.log('Has ELF code');
+        result.hasElfCode = true;
+    } else {
+        console.log('No ELF code');
+        result.hasElfCode = false;
+        if (!result.markdown) result.markdown = markdown;
+    }
+    return result;
+}
+
+async function addElfCode(fileName, elfCodes) {
+    //const elfStr = `\n<!-- bar -->\n<!-- barstop -->`;
+    const elfStr = `\n---\nfullpath=${fileName}\n---`;
+    const tocStr = `\n\n<!-- toc -->\n<!-- tocstop -->`;
+
+    if (elfCodes.hasElfCode + elfCodes.hasTocCode === 0) {
+        console.log('aec Has no code');
+        elfCodes.markdown = elfStr + tocStr + '\n\n' + elfCodes.markdown;
+    } else if (!elfCodes.hasElfCode) {
+        console.log('aec Has no elf code', elfStr);
+        elfCodes.markdown = elfStr + '\n\n' + elfCodes.markdown;
+    } else {
+        obj = matter(elfCodes.markdown);
+        let margie = '';
+        for (const property in obj.data) {
+            margie += `${property}: ${obj.data[property]}\n`;
+        }
+        //const margie = JSON.stringify(obj.data);
+        elfCodes.markdown = `\n---\n${margie}---` + tocStr + obj.content;
+    }
+    console.log('aec markdown', elfCodes.markdown);
+}
+
+function getDocBySlug(slug) {
+    const realSlug = slug.replace(/\.md$/, '')
+    const fullPath = join(docsDirectory, `${realSlug}.md`)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const { data, content } = matter(fileContents)
+
+    return { slug: realSlug, meta: data, content }
+}
+
 // Then, use it with a simple async for loop
 async function main() {
     for await (const p of walker('elvenware')) {
@@ -114,13 +175,19 @@ async function main() {
         //const result = await ep.callExec(command);
         const result = await ep.result(command);
         console.log('cm result:', result);
-       /*  {
-            if(!err){
-                console.log(response);
-            }else {
-                console.log(err);
-            }
-        }); */
+        const elfCodes = await hasElfCode(fileName);
+        // console.log('health codes', elfCodes);
+        if ((elfCodes.hasElfCode) + (elfCodes.hasTocCode) <= 1) {
+            console.log('needs work');
+            await addElfCode(fileName, elfCodes);
+        }
+        /*  {
+             if(!err){
+                 console.log(response);
+             }else {
+                 console.log(err);
+             }
+         }); */
         return;
     }
 }
@@ -133,4 +200,4 @@ async function main() {
     console.log(b)
 }); */
 
-// main().catch(console.error);
+main().catch(console.error);

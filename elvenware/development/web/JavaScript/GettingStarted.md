@@ -1,3 +1,8 @@
+## Table of Contents 
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This chapter provides an overview of some of them many themes covered in this book. Hopefully it will help you to both:
