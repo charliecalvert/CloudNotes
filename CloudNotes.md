@@ -1,6 +1,3 @@
-<!-- bar -->
-<!-- barstop -->
-
 <!-- toc -->
 <!-- tocstop -->
 

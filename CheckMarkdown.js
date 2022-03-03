@@ -1,6 +1,8 @@
 const fs = require('fs');
 const fsp = require('fs').promises;
 const path = require('path');
+const debug = require('debug')('check-md');
+const debugCge = require('debug')('check-get-elf');
 const elfUtils = require('elven-code').elfUtils;
 //const utils = require('./lib/utils');
 const matter = require('gray-matter');
@@ -104,54 +106,80 @@ async function* walker(dir) {
 
 var ep = require("./exec-process.js");
 
-async function hasElfCode(fileName) {
+async function getElfCode(fileName) {
     let result = {};
     const regexToc = /(?:<!-- toc(?:\s*stop)? -->)/g;
     //const regexElf = /(?:<!-- bar(?:\s*stop)? -->)/g;
     const regexElf = /^---/
     let markdown = await elfUtils.readFileAsync(fileName);
-    // console.log(markdown);
+    debug(markdown);
     if (regexToc.test(markdown)) {
-        console.log('Has TOC code');
+        debugCge('Has TOC code');
         result.hasTocCode = true;
     } else {
-        console.log('No TOC code');
+        debugCge('No TOC code');
         result.hasTocCode = false;
-        result.markdown = markdown;
+        //result.markdown = markdown;
     }
 
     if (regexElf.test(markdown)) {
-        console.log('Has ELF code');
+        debugCge('Has ELF code');
         result.hasElfCode = true;
     } else {
-        console.log('No ELF code');
+        debugCge('No ELF code');
         result.hasElfCode = false;
-        if (!result.markdown) result.markdown = markdown;
+       // if (!result.markdown) result.markdown = markdown;
     }
+    result.markdown = markdown;
     return result;
 }
 
+const getTitleFromPath = function (fileName) {
+    const str = elfUtils.getEndFromCharacter(fileName, '/')
+    debug(str);
+    var result = str.replace( /([A-Z])/g, "$1" );
+    const finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+    return elfUtils.stripExtension(finalResult);
+};
+
 async function addElfCode(fileName, elfCodes) {
     //const elfStr = `\n<!-- bar -->\n<!-- barstop -->`;
-    const elfStr = `\n---\nfullpath=${fileName}\n---`;
+    
+    const title = getTitleFromPath(fileName);
+    const elfStr = `\n---\nfullPath=${fileName}\ntitle=${title}\n---`;
     const tocStr = `\n\n<!-- toc -->\n<!-- tocstop -->`;
-
+    
     if (elfCodes.hasElfCode + elfCodes.hasTocCode === 0) {
-        console.log('aec Has no code');
+        debug('aec Has no code');
         elfCodes.markdown = elfStr + tocStr + '\n\n' + elfCodes.markdown;
     } else if (!elfCodes.hasElfCode) {
-        console.log('aec Has no elf code', elfStr);
+        debug('aec has no ELF code');
         elfCodes.markdown = elfStr + '\n\n' + elfCodes.markdown;
-    } else {
+    } else if (!elfCodes.hasTocCode) {
+        debug('aec has no TOC code');
+        //elfCodes.markdown = tocStr + '\n\n' + elfCodes.markdown;
         obj = matter(elfCodes.markdown);
+        obj.data.fullPath = fileName;
+        if (!obj.data.title) obj.data.title = title;
         let margie = '';
         for (const property in obj.data) {
             margie += `${property}: ${obj.data[property]}\n`;
-        }
-        //const margie = JSON.stringify(obj.data);
+        } 
         elfCodes.markdown = `\n---\n${margie}---` + tocStr + obj.content;
+    } else {
+        debug('aec has both but checking ELF code');
+       // elfCodes.markdown = tocStr + '\n\n' + elfCodes.markdown;
+        obj = matter(elfCodes.markdown);
+        obj.data.fullPath = fileName;
+        if (!obj.data.title) obj.data.title = title;
+        let margie = '';
+        for (const property in obj.data) {
+            margie += `${property}: ${obj.data[property]}\n`;
+        } 
+        //const margie = JSON.stringify(obj.data);
+        elfCodes.markdown = `\n---\n${margie}---\n` + obj.content;
     }
-    console.log('aec markdown', elfCodes.markdown);
+    debug('aec final markdown', elfCodes.markdown);
 }
 
 function getDocBySlug(slug) {
@@ -167,25 +195,26 @@ function getDocBySlug(slug) {
 async function main() {
     for await (const p of walker('elvenware')) {
         const fileName = process.env.HOME + '/Git/CloudNotes/' + p
-        console.log(fileName);
+        debug(getTitleFromPath(fileName));
         const stats = await fsp.stat(fileName);
-        console.log(stats);
+        debug(stats);
         // execProcess();
         const command = "sh git-call.sh " + fileName;
         //const result = await ep.callExec(command);
         const result = await ep.result(command);
-        console.log('cm result:', result);
-        const elfCodes = await hasElfCode(fileName);
-        // console.log('health codes', elfCodes);
-        if ((elfCodes.hasElfCode) + (elfCodes.hasTocCode) <= 1) {
-            console.log('needs work');
+        debug('cm result:', result);
+        const elfCodes = await getElfCode(fileName);
+        await addElfCode(fileName, elfCodes);
+        // debug('health codes', elfCodes);
+        /* if ((elfCodes.hasElfCode) + (elfCodes.hasTocCode) <= 1) {
+            debug('needs work');
             await addElfCode(fileName, elfCodes);
-        }
+        } */
         /*  {
              if(!err){
-                 console.log(response);
+                 debug(response);
              }else {
-                 console.log(err);
+                 debug(err);
              }
          }); */
         return;
@@ -197,7 +226,11 @@ async function main() {
 //lsDirs('.').catch(console.error)
 /* walk('elvenware', (err,b) => { 
     if (err) throw err;
-    console.log(b)
+    debug(b)
 }); */
 
-main().catch(console.error);
+
+
+//main().catch(console.error);
+
+exports.getElfCode = getElfCode;
