@@ -210,7 +210,7 @@ async function main() {
         const elfCodes = await getElfCode(fileName);
         await addElfCode(fileName, relativePath, elfCodes);
         debugMain('health codes', elfCodes.markdown);
-        fsp.writeFile(fileName, elfCodes.markdown, "utf8");
+        //fsp.writeFile(fileName, elfCodes.markdown, "utf8");
         return;
     }
 }
@@ -225,7 +225,7 @@ async function main() {
 
 
 
-main().catch(console.error);
+// main().catch(console.error);
 
 exports.getElfCode = getElfCode;
 exports.addElfCode = addElfCode;
