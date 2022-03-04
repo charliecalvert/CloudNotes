@@ -10,28 +10,21 @@ describe('AddMarkdown Both Suite', function () {
   const fileName = './__tests__/About-both.md';
   const relativePath = 'About-both.md';
 
+    /* 
+   * Generic Pattern Counter
+   */
+    const patternCounter = (str, regex) => {
+      //const re = /pattern/g
+      return ((str || '').match(regex) || []).length
+    }
+    
   test('hasElfCode()', async () => {
-    /* const elfCodes = await checkMarkdown.getElfCode(fileName);
-    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes); */
     const elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
     debug(elfCodes.markdown);
     expect(elfCodes.markdown).toContain('relativePath');
   });
 
-
-  /* 
-   * Generic Pattern Counter
-   */
-  const patternCounter = (str, regex) => {
-    //const re = /pattern/g
-    return ((str || '').match(regex) || []).length
-  }
-
   test('hasElfCode() Twice', async () => {
-    //let elfCodes = await checkMarkdown.getElfCode(fileName);
-    // await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
-    /* elfCodes = await checkMarkdown.getElfCode(fileName);
-    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes); */
     let elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
     elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
     debug(elfCodes.markdown);
@@ -41,7 +34,6 @@ describe('AddMarkdown Both Suite', function () {
     const regexTitle = /title:/g;
     const regexCharlieTest = /Charlie-TEST/g;
 
-    //debug('regex-a', elfCodes.markdown.match(regex).length);
     debug('regexTitle', patternCounter(elfCodes.markdown, regexTitle));
     debug('regexCharlieTest', patternCounter(elfCodes.markdown, regexCharlieTest));
     expect(patternCounter(elfCodes.markdown, regexTitle)).toBe(1);

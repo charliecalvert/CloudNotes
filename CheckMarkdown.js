@@ -148,7 +148,7 @@ async function addElfCode(fileName, relativePath, elfCodes) {
     //const elfStr = `\n<!-- bar -->\n<!-- barstop -->`;
     
     const title = getTitleFromPath(fileName);
-    const elfStr = `\n---\nfullPath=${fileName}\nrelativePath=${relativePath}\ntitle=${title}\n---`;
+    const elfStr = `---\nfullPath=${fileName}\nrelativePath=${relativePath}\ntitle=${title}\n---`;
     const tocStr = `\n\n<!-- toc -->\n<!-- tocstop -->`;
     
     if (elfCodes.hasElfCode + elfCodes.hasTocCode === 0) {
@@ -161,12 +161,12 @@ async function addElfCode(fileName, relativePath, elfCodes) {
         const debugToc = 'aec has no TOC code';
         getFrontMatterData(debugToc);
         let margie = getDataProperties(); 
-        elfCodes.markdown = `\n---\n${margie}---` + tocStr + obj.content;
+        elfCodes.markdown = `---\n${margie}---` + tocStr + obj.content;
     } else {
         const debugBoth='aec has both but checking ELF code';
         getFrontMatterData(debugBoth);
         let margie = getDataProperties(); 
-        elfCodes.markdown = `\n---\n${margie}---\n` + obj.content;
+        elfCodes.markdown = `---\n${margie}---\n` + obj.content;
     }
     debug('aec final markdown', elfCodes.markdown);
     return elfCodes;
@@ -226,8 +226,8 @@ async function main() {
         const result = await execProcess.result(command);
         debug('cm result:', result);
         const elfCodes = await setupElfCode(fileName, relativePath);
-        debugMain('ELF codes', elfCodes.markdown);
-        //fsp.writeFile(fileName, elfCodes.markdown, "utf8");
+        debugMain(`ELF codes:\n${elfCodes.markdown}`);
+        fsp.writeFile(fileName, elfCodes.markdown, "utf8");
         return;
     }
 }
@@ -242,7 +242,7 @@ async function main() {
 
 
 
-// main().catch(console.error);
+main().catch(console.error);
 
 exports.getElfCode = getElfCode;
 exports.addElfCode = addElfCode;

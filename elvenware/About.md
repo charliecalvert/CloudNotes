@@ -3,6 +3,8 @@ title: About
 slug: home
 fullPath: /home/ubuntu/Git/CloudNotes/elvenware/About.md
 relativePath: elvenware/About.md
+debug: aec has both but checking ELF code
+creationLocalTime: 3/4/2022, 3:16:54 PM
 ---
 
 <!-- toc -->
