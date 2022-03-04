@@ -1,2 +1,2 @@
-export DEBUG=check-markdown
+export DEBUG=check-markdown,check-add-elf
 npx jest AddMarkdown

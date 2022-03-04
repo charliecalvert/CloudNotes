@@ -3,6 +3,7 @@ const fsp = require('fs').promises;
 const path = require('path');
 const debug = require('debug')('check-md');
 const debugCge = require('debug')('check-get-elf');
+const debugAdd = require('debug')('check-add-elf');
 const debugMain = require('debug')('check-main');
 const elfUtils = require('elven-code').elfUtils;
 //const utils = require('./lib/utils');
@@ -169,16 +170,23 @@ async function addElfCode(fileName, relativePath, elfCodes) {
         } 
         elfCodes.markdown = `\n---\n${margie}---` + tocStr + obj.content;
     } else {
-        debug('aec has both but checking ELF code');
+        const debugBoth='aec has both but checking ELF code';
+        debugAdd(debugBoth);
         obj = matter(elfCodes.markdown);
+        debugAdd('obj.data', obj.data);
         obj.data.fullPath = fileName;
         obj.data.relativePath = relativePath;
         if (!obj.data.title) obj.data.title = title;
+        obj.data.debug = debugBoth;
+        obj.data.creationLocalTime = new Date().toLocaleString();
+        
         let margie = '';
         for (const property in obj.data) {
             margie += `${property}: ${obj.data[property]}\n`;
         } 
-        //const margie = JSON.stringify(obj.data);
+        /* obj.data = {};
+        const margieJson = JSON.stringify(obj.data);
+        debugAdd('margieJson', margieJson); */
         elfCodes.markdown = `\n---\n${margie}---\n` + obj.content;
     }
     debug('aec final markdown', elfCodes.markdown);
