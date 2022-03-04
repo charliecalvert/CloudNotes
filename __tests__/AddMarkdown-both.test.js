@@ -11,31 +11,35 @@ describe('AddMarkdown Both Suite', function () {
   const relativePath = 'About-both.md';
 
   test('hasElfCode()', async () => {
-    const elfCodes = await checkMarkdown.getElfCode(fileName);
-    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
+    /* const elfCodes = await checkMarkdown.getElfCode(fileName);
+    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes); */
+    const elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
     debug(elfCodes.markdown);
     expect(elfCodes.markdown).toContain('relativePath');
   });
 
-  
-/* 
- * Generic Pattern Counter
- */
-const patternCounter = (str, regex) => {
-  //const re = /pattern/g
-  return ((str || '').match(regex) || []).length
-}
+
+  /* 
+   * Generic Pattern Counter
+   */
+  const patternCounter = (str, regex) => {
+    //const re = /pattern/g
+    return ((str || '').match(regex) || []).length
+  }
+
   test('hasElfCode() Twice', async () => {
-    let elfCodes = await checkMarkdown.getElfCode(fileName);
-    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
-    elfCodes = await checkMarkdown.getElfCode(fileName);
-    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
+    //let elfCodes = await checkMarkdown.getElfCode(fileName);
+    // await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
+    /* elfCodes = await checkMarkdown.getElfCode(fileName);
+    await checkMarkdown.addElfCode(fileName, relativePath, elfCodes); */
+    let elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
+    elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
     debug(elfCodes.markdown);
     // \b Means at the beginning of a word or the end of a word
     //const regex=/\bslug:\shome\b/g;
     //const regex=/\bwith\b/g;
-    const regexTitle=/title:/g;
-    const regexCharlieTest=/Charlie-TEST/g;
+    const regexTitle = /title:/g;
+    const regexCharlieTest = /Charlie-TEST/g;
 
     //debug('regex-a', elfCodes.markdown.match(regex).length);
     debug('regexTitle', patternCounter(elfCodes.markdown, regexTitle));

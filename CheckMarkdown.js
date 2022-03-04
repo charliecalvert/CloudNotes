@@ -158,39 +158,44 @@ async function addElfCode(fileName, relativePath, elfCodes) {
         debug('aec has no ELF code');
         elfCodes.markdown = elfStr + '\n\n' + elfCodes.markdown;
     } else if (!elfCodes.hasTocCode) {
-        debug('aec has no TOC code');
-        //elfCodes.markdown = tocStr + '\n\n' + elfCodes.markdown;
-        obj = matter(elfCodes.markdown);
-        obj.data.fullPath = fileName;
-        obj.data.relativePath = relativePath;
-        if (!obj.data.title) obj.data.title = title;
-        let margie = '';
-        for (const property in obj.data) {
-            margie += `${property}: ${obj.data[property]}\n`;
-        } 
+        const debugToc = 'aec has no TOC code';
+        getFrontMatterData(debugToc);
+        let margie = getDataProperties(); 
         elfCodes.markdown = `\n---\n${margie}---` + tocStr + obj.content;
     } else {
         const debugBoth='aec has both but checking ELF code';
-        debugAdd(debugBoth);
-        obj = matter(elfCodes.markdown);
-        debugAdd('obj.data', obj.data);
-        obj.data.fullPath = fileName;
-        obj.data.relativePath = relativePath;
-        if (!obj.data.title) obj.data.title = title;
-        obj.data.debug = debugBoth;
-        obj.data.creationLocalTime = new Date().toLocaleString();
-        
-        let margie = '';
-        for (const property in obj.data) {
-            margie += `${property}: ${obj.data[property]}\n`;
-        } 
-        /* obj.data = {};
-        const margieJson = JSON.stringify(obj.data);
-        debugAdd('margieJson', margieJson); */
+        getFrontMatterData(debugBoth);
+        let margie = getDataProperties(); 
         elfCodes.markdown = `\n---\n${margie}---\n` + obj.content;
     }
     debug('aec final markdown', elfCodes.markdown);
     return elfCodes;
+
+    function getFrontMatterAsJson(obj) {
+        const margieJson = JSON.stringify(obj.data);
+        debugAdd('margieJson', margieJson);
+        return margieJson;
+    }
+
+    function getDataProperties() {
+        let margie = '';
+        for (const property in obj.data) {
+            margie += `${property}: ${obj.data[property]}\n`;
+        }
+        return margie;
+    }
+
+    function getFrontMatterData(debugStr) {
+        debugAdd(debugStr);
+        obj = matter(elfCodes.markdown);
+        debugAdd('obj.data', obj.data);
+        obj.data.fullPath = fileName;
+        obj.data.relativePath = relativePath;
+        if (!obj.data.title)
+            obj.data.title = title;
+        obj.data.debug = debugStr;
+        obj.data.creationLocalTime = new Date().toLocaleString();
+    }
 }
 
 function getDocBySlug(slug) {
@@ -202,6 +207,11 @@ function getDocBySlug(slug) {
     return { slug: realSlug, meta: data, content }
 }
 
+async function setupElfCode(fileName, relativePath) {
+    const elfCodes = await getElfCode(fileName);
+    await addElfCode(fileName, relativePath, elfCodes);
+    return elfCodes;
+}
 // Then, use it with a simple async for loop
 async function main() {
     for await (const relativePath of walker('elvenware')) {
@@ -215,9 +225,8 @@ async function main() {
         //const result = await ep.callExec(command);
         const result = await execProcess.result(command);
         debug('cm result:', result);
-        const elfCodes = await getElfCode(fileName);
-        await addElfCode(fileName, relativePath, elfCodes);
-        debugMain('health codes', elfCodes.markdown);
+        const elfCodes = await setupElfCode(fileName, relativePath);
+        debugMain('ELF codes', elfCodes.markdown);
         //fsp.writeFile(fileName, elfCodes.markdown, "utf8");
         return;
     }
@@ -237,3 +246,6 @@ async function main() {
 
 exports.getElfCode = getElfCode;
 exports.addElfCode = addElfCode;
+exports.setupElfCode = setupElfCode;
+
+
