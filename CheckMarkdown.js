@@ -3,6 +3,7 @@ const fsp = require('fs').promises;
 const path = require('path');
 const debug = require('debug')('check-md');
 const debugCge = require('debug')('check-get-elf');
+const debugMain = require('debug')('check-main');
 const elfUtils = require('elven-code').elfUtils;
 //const utils = require('./lib/utils');
 const matter = require('gray-matter');
@@ -104,7 +105,7 @@ async function* walker(dir) {
 
 
 
-var ep = require("./exec-process.js");
+var execProcess = require("./exec-process.js");
 
 async function getElfCode(fileName) {
     let result = {};
@@ -142,11 +143,11 @@ const getTitleFromPath = function (fileName) {
     return elfUtils.stripExtension(finalResult);
 };
 
-async function addElfCode(fileName, elfCodes) {
+async function addElfCode(fileName, relativePath, elfCodes) {
     //const elfStr = `\n<!-- bar -->\n<!-- barstop -->`;
     
     const title = getTitleFromPath(fileName);
-    const elfStr = `\n---\nfullPath=${fileName}\ntitle=${title}\n---`;
+    const elfStr = `\n---\nfullPath=${fileName}\nrelativePath=${relativePath}\ntitle=${title}\n---`;
     const tocStr = `\n\n<!-- toc -->\n<!-- tocstop -->`;
     
     if (elfCodes.hasElfCode + elfCodes.hasTocCode === 0) {
@@ -160,6 +161,7 @@ async function addElfCode(fileName, elfCodes) {
         //elfCodes.markdown = tocStr + '\n\n' + elfCodes.markdown;
         obj = matter(elfCodes.markdown);
         obj.data.fullPath = fileName;
+        obj.data.relativePath = relativePath;
         if (!obj.data.title) obj.data.title = title;
         let margie = '';
         for (const property in obj.data) {
@@ -168,9 +170,9 @@ async function addElfCode(fileName, elfCodes) {
         elfCodes.markdown = `\n---\n${margie}---` + tocStr + obj.content;
     } else {
         debug('aec has both but checking ELF code');
-       // elfCodes.markdown = tocStr + '\n\n' + elfCodes.markdown;
         obj = matter(elfCodes.markdown);
         obj.data.fullPath = fileName;
+        obj.data.relativePath = relativePath;
         if (!obj.data.title) obj.data.title = title;
         let margie = '';
         for (const property in obj.data) {
@@ -180,6 +182,7 @@ async function addElfCode(fileName, elfCodes) {
         elfCodes.markdown = `\n---\n${margie}---\n` + obj.content;
     }
     debug('aec final markdown', elfCodes.markdown);
+    return elfCodes;
 }
 
 function getDocBySlug(slug) {
@@ -193,30 +196,21 @@ function getDocBySlug(slug) {
 
 // Then, use it with a simple async for loop
 async function main() {
-    for await (const p of walker('elvenware')) {
-        const fileName = process.env.HOME + '/Git/CloudNotes/' + p
+    for await (const relativePath of walker('elvenware')) {
+        const fileName = process.env.HOME + 
+            '/Git/CloudNotes/' + relativePath
         debug(getTitleFromPath(fileName));
         const stats = await fsp.stat(fileName);
         debug(stats);
         // execProcess();
         const command = "sh git-call.sh " + fileName;
         //const result = await ep.callExec(command);
-        const result = await ep.result(command);
+        const result = await execProcess.result(command);
         debug('cm result:', result);
         const elfCodes = await getElfCode(fileName);
-        await addElfCode(fileName, elfCodes);
-        // debug('health codes', elfCodes);
-        /* if ((elfCodes.hasElfCode) + (elfCodes.hasTocCode) <= 1) {
-            debug('needs work');
-            await addElfCode(fileName, elfCodes);
-        } */
-        /*  {
-             if(!err){
-                 debug(response);
-             }else {
-                 debug(err);
-             }
-         }); */
+        await addElfCode(fileName, relativePath, elfCodes);
+        debugMain('health codes', elfCodes.markdown);
+        fsp.writeFile(fileName, elfCodes.markdown, "utf8");
         return;
     }
 }
@@ -231,6 +225,7 @@ async function main() {
 
 
 
-//main().catch(console.error);
+main().catch(console.error);
 
 exports.getElfCode = getElfCode;
+exports.addElfCode = addElfCode;

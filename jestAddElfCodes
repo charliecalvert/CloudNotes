@@ -1,0 +1,2 @@
+export DEBUG=check-markdown
+npx jest AddMarkdown

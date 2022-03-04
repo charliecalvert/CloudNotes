@@ -1,8 +1,104 @@
+
 ---
-title: Hello
-slug: home
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
 ---
 
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+fullPath=/home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath=elvenware/About.md
+title=About
+---
+
+
+---
+title: About
+slug: home
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/About.md
+relativePath: elvenware/About.md
+---
+
+<!-- toc -->
+<!-- tocstop -->
 ## Overview
 
 I'm an adjunct professor at Bellevue College. I've been working with computers and writing code in one form or another for about 25 years. I started out with Turbo Pascal and Delphi, spent time with Java, C++, Python and Perl, and then spent a number of years working in C#.
