@@ -22,6 +22,13 @@ describe('AddMarkdown Both Suite', function () {
     await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
     await checkMarkdown.addElfCode(fileName, relativePath, elfCodes);
     debug(elfCodes.markdown);
+    // \b Means at the beginning of a word or the end of a word
+    //const regex=/\bslug:\shome\b/g;
+    //const regex=/\bwith\b/g;
+    const regex=/title:/g
+    debug('regex', elfCodes.markdown.match(regex).length);
+    expect(elfCodes.markdown.match(regex).length).toBe(1);
+
     expect(elfCodes.markdown).toContain('relativePath');
   });
 
