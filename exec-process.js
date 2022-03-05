@@ -16,7 +16,7 @@ async function callExec(command) {
     }
 }
 // https://stackoverflow.com/a/29655902/253576
-var result = function (command) {
+var callProcess = function (command) {
     return new Promise((resolve, reject) => {
         var child = exec(command, (err, stdout, stderr) => {
            /*  console.log('stdout:', stdout);
@@ -34,4 +34,4 @@ var result = function (command) {
 }
 
 exports.callExec = callExec;
-exports.result = result;
+exports.callProcess = callProcess;
