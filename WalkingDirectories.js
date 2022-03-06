@@ -2,9 +2,29 @@ const fs = require('fs');
 const fsp = require('fs').promises;
 const elfUtils = require('elven-code').elfUtils;
 const path = require('path');
-const debugCge = require('debug')('walking-dirs');
+const debug = require('debug')('walk-dirs');
+const debugFiles = require('debug')('walk-files'); 
 
-async function ls01(path) {
+async function listDirs00(dirPath) {
+    /* const dir = await fs.promises.opendir(path)
+    for await (const dirent of dir) { */
+    for await (const dirent of await fs.promises.opendir(dirPath)) {
+        const fullPath = path.join(dirPath, dirent.name);
+        /* const pwd = __dirname;
+        const fullPath = `${pwd}/${dirent.name}` */
+        
+        if (dirent.isDirectory()) {
+            debug(fullPath);
+            console.log(dirent);
+            console.log(dirent.name);
+            listDirs00(fullPath).catch(console.error)
+        } else if (dirent.isFile()) {
+            //debugFiles(fullPath);
+        }
+    }
+}
+
+async function listDir01(path) {
     const dir = await fs.promises.opendir(path)
     for await (const dirent of dir) {
         console.log(dirent);
@@ -19,7 +39,7 @@ async function ls01(path) {
     }
 }
 
-async function ls02(path) {
+async function listDir02(path) {
     const dir = await fs.promises.opendir(path)
     for await (const dirent of dir) {
         console.log(dirent);
@@ -42,17 +62,7 @@ async function ls02(path) {
     }
 }
 
-async function lsDirs(path) {
-    const dir = await fs.promises.opendir(path)
-    for await (const dirent of dir) {
-        if (dirent.isDirectory()) {
-            console.log(dirent);
-            console.log(dirent.name);
-            lsDirs(dirent.name).catch(console.error)
-        }
-    }
-}
-
+// Walk recursively. Better version below
 var walk = function (dir, done) {
     var results = [];
     fs.readdir(dir, function (err, list) {
@@ -88,12 +98,12 @@ var walk = function (dir, done) {
  * over it one item at a time. Use next() or for loop.
  */
 async function* walker(dir) {
-    for await (const d of await fs.promises.opendir(dir)) {
-        const entry = path.join(dir, d.name);
-        if (d.isDirectory()) {
+    for await (const dirent of await fs.promises.opendir(dir)) {
+        const entry = path.join(dir, dirent.name);
+        if (dirent.isDirectory()) {
             yield* walker(entry);
         }
-        else if (d.isFile() && elfUtils.getExtension(d.name) === 'md') {
+        else if (dirent.isFile() && elfUtils.getExtension(dirent.name) === 'md') {
             yield entry;
         }
     }
@@ -102,10 +112,12 @@ async function* walker(dir) {
 exports.walker = walker;
 exports.walk = walk;
 
-//ls01('.').catch(console.error)
-//ls02('.').catch(console.error)
-//lsDirs('.').catch(console.error)
-/* walk('elvenware', (err,b) => { 
+listDirs00('.').catch(console.error);
+/* listDir02('.').catch(console.error)
+listDir01('.').catch(console.error)
+
+// DEBUG=walk-dirs,walk-files node WalkingDirectories.js
+walk('elvenware', (err,b) => { 
     if (err) throw err;
     debug(b)
 }); */
