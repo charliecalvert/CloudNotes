@@ -5,7 +5,7 @@
 describe('AddMarkdown Both Suite', function () {
   'use strict';
   const debug = require('debug')('check-markdown');
-  const checkMarkdown = require('../CheckMarkdown');
+  const { getElfCode, setupElfCode } = require('../lib/getElfCode');
 
   const fileName = './__tests__/About-both.md';
   const relativePath = 'About-both.md';
@@ -19,14 +19,14 @@ describe('AddMarkdown Both Suite', function () {
     }
     
   test('hasElfCode()', async () => {
-    const elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
+    const elfCodes = await setupElfCode(fileName, relativePath);
     debug(elfCodes.markdown);
     expect(elfCodes.markdown).toContain('relativePath');
   });
 
   test('hasElfCode() Twice', async () => {
-    let elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
-    elfCodes = await checkMarkdown.setupElfCode(fileName, relativePath);
+    let elfCodes = await setupElfCode(fileName, relativePath);
+    elfCodes = await setupElfCode(fileName, relativePath);
     debug(elfCodes.markdown);
     // \b Means at the beginning of a word or the end of a word
     //const regex=/\bslug:\shome\b/g;
@@ -42,18 +42,18 @@ describe('AddMarkdown Both Suite', function () {
   });
 
   test('hasTocCode', async () => {
-    const result = await checkMarkdown.getElfCode(fileName);
+    const result = await getElfCode(fileName);
     // "hasElfCode": true, "hasTocCode": true
     expect(result.hasTocCode).toBe(true);
   });
 
   test('markdown', async () => {
-    const result = await checkMarkdown.getElfCode(fileName);
+    const result = await getElfCode(fileName);
     expect(result.markdown).toContain('title: Hello');
   });
 
   test('markdown', async () => {
-    const result = await checkMarkdown.getElfCode(fileName);
+    const result = await getElfCode(fileName);
     expect(result.markdown).not.toContain('margietitle: Hello');
   });
 });
