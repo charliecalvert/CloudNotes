@@ -3,6 +3,7 @@ const elfUtils = require('elven-code').elfUtils;
 
 const walker = require('walk-directories').walker;
 const debugMain = require('debug')('check-main');
+const debugDetail = require('debug')('check-main-detail');
 const { getElfCode, addElfCode, setupElfCode, gitCall } = require("./lib/getElfCode");
 
 async function getStat(fileName) {
@@ -11,17 +12,21 @@ async function getStat(fileName) {
 
 // Then, use it with a simple async for loop
 async function main() {
+    let count = 0;
     for await (const relativePath of walker('elvenware')) {
-        const fileName = process.env.HOME + '/Git/CloudNotes/' + relativePath;
-        debugMain(elfUtils.getTitleFromPath(fileName));
-        debugMain(await getStat(fileName));
+        count++;
+        const fileName = elfUtils.ensureEndsWithPathSep(__dirname) + relativePath;
+        debugMain('fileName', fileName);
+        debugMain('getTitle', elfUtils.getTitleFromPath(fileName));
+        debugDetail(await getStat(fileName));
 
-        await gitCall(fileName);
+        //await gitCall(fileName);
         
         const elfCodes = await setupElfCode(fileName, relativePath);
-        debugMain(`ELF codes:\n${elfCodes.markdown}`);
-        fsp.writeFile(fileName, elfCodes.markdown, "utf8");
-        return;
+        debugDetail(`ELF codes:\n${elfCodes.markdown}`);
+        await fsp.writeFile(fileName, elfCodes.markdown, "utf8");
+        debugMain('count', count);
+        if (count === 10) return;
     }
 }
 exports.main = main;
