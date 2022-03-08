@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg-test/SvgTester.md
+relativePath: elvenware/Art/photos/svg-test/SvgTester.md
+title: SvgTester
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 11:43:18 AM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I am able to put SVG code directly in a markdown file so long as I am careful with white space. No blank lines.

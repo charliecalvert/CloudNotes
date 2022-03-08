@@ -4,7 +4,7 @@
     "description": "CloudNotes ==========",
     "main": "remote.js",
     "scripts": {
-        "start": "DEBUG=check-main nodemon CheckMarkdown.js",
+        "start": "DEBUG=check-main-detail node CheckMarkdown.js",
         "test": "DEBUG=check-get-elf jest"
     },
     "repository": {
@@ -22,7 +22,7 @@
     "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
     "dependencies": {
         "debug": "^4.3.3",
-        "elven-code": "^4.9.0",
+        "elven-code": "^4.10.0",
         "gray-matter": "^4.0.3",
         "markdown-elf": "^1.0.0",
         "markdown-toc": "^1.2.0",

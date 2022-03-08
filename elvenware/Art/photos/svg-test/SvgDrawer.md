@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg-test/SvgDrawer.md
+relativePath: elvenware/Art/photos/svg-test/SvgDrawer.md
+title: SvgDrawer
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 11:43:18 AM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Testing SVG Images in markdown files

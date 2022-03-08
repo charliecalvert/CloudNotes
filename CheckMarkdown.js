@@ -1,3 +1,4 @@
+const fs = require('fs');
 const fsp = require('fs').promises;
 const elfUtils = require('elven-code').elfUtils;
 
@@ -13,21 +14,31 @@ async function getStat(fileName) {
 // Then, use it with a simple async for loop
 async function main() {
     let count = 0;
+    const matterData = [];
     for await (const relativePath of walker('elvenware')) {
         count++;
         const fileName = elfUtils.ensureEndsWithPathSep(__dirname) + relativePath;
         debugMain('fileName', fileName);
         debugMain('getTitle', elfUtils.getTitleFromPath(fileName));
-        debugDetail(await getStat(fileName));
+        //debugDetail(await getStat(fileName));
 
         //await gitCall(fileName);
         
         const elfCodes = await setupElfCode(fileName, relativePath);
-        debugDetail(`ELF codes:\n${elfCodes.markdown}`);
+        // debugDetail(`ELF codes:\n${elfCodes.markdown}`);
+        matterData.push(elfUtils.objectToJson(elfCodes.data));
+        //debugDetail('<code data-main>', );
         await fsp.writeFile(fileName, elfCodes.markdown, "utf8");
         debugMain('count', count);
-        if (count === 10) return;
+        if (count === 10) {
+            const json = JSON.stringify(matterData);
+            fsp.writeFile('all-matter.data', json, "utf8");
+            return;
+        }
+
+        // https://stackoverflow.com/a/36856787/253576
     }
+    
 }
 exports.main = main;
 main().catch(console.error);

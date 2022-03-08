@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Updates.md
+relativePath: elvenware/Updates.md
+title: Updates
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 11:43:18 AM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 What's New
 ==========
 
