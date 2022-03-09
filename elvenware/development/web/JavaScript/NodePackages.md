@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodePackages.md
+relativePath: elvenware/development/web/JavaScript/NodePackages.md
+title: NodePackages
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Node Packages
 
 This document is focused on Node, NPM, webpack, babel with fading sections on Bower. It also covers the **package.json** and **bower.json** files.

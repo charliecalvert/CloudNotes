@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Functional.md
+relativePath: elvenware/development/web/JavaScript/Functional.md
+title: Functional
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Functional JavaScript
 
 Learn about writing function code.

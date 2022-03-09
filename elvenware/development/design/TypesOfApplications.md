@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/TypesOfApplications.md
+relativePath: elvenware/development/design/TypesOfApplications.md
+title: TypesOfApplications
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Types of Cloud Applications
 
 *   Web

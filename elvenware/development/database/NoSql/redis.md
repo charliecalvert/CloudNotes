@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql/redis.md
+relativePath: elvenware/development/database/NoSql/redis.md
+title: Redis
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn about Redis.

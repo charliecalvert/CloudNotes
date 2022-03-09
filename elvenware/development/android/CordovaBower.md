@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/CordovaBower.md
+relativePath: elvenware/development/android/CordovaBower.md
+title: CordovaBower
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Very nice. The one thing that would have been nice would have been to set up bower.json in your Cordova folder so that it:
 
 A) Existed

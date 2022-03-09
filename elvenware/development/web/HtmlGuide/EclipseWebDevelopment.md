@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/EclipseWebDevelopment.md
+relativePath: elvenware/development/web/HtmlGuide/EclipseWebDevelopment.md
+title: EclipseWebDevelopment
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn about Aptana or Web Tools Install. This is an old document. I don't use these tools anymore. We can make Eclipse much more comfortable for web development by adding in the Aptana tools.

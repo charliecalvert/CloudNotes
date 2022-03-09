@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/ExpressToCordova.md
+relativePath: elvenware/development/android/ExpressToCordova.md
+title: ExpressToCordova
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Express to Cordova
 
 It is relatively simple copy an Express application into a

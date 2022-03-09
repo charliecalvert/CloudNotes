@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/Computers/Hardware.md
+relativePath: elvenware/os/Computers/Hardware.md
+title: Hardware
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Hardware - Introduction
 
 Mostly focused on CPU and ChipSets.

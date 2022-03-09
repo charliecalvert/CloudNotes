@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/HandleBars.md
+relativePath: elvenware/development/web/JavaScript/HandleBars.md
+title: HandleBars
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Handlebars and HTML Templates
 
 You will find that you often want to insert the same HTML text or code

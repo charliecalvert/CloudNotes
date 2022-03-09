@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/index.md
+relativePath: elvenware/development/web/index.md
+title: Index
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This page lists various places where I discuss technologies related to the Web.

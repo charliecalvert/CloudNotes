@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/MetaViewport.md
+relativePath: elvenware/development/web/HtmlGuide/MetaViewport.md
+title: MetaViewport
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 This page is now obsolete. Go here:
 
 - [Html Syntax](HtmlSyntax.html#metaTag)

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/tools/Videos.md
+relativePath: elvenware/tools/Videos.md
+title: Videos
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 When running videos, click the gear symbol at the bottom of the youtube screen and set the video to the highest resolution possible. This can be very helpful with videos like this where there is code shown in relatively small print. It helps get rid of the blurry, hard to read text, and gives you a sharper image instead.

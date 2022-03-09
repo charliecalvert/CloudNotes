@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/DataStructures.md
+relativePath: elvenware/development/web/JavaScript/DataStructures.md
+title: DataStructures
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # JavaScript DataStructures
 
 Here we will discuss various data structures that can be used in a JavaScript application.

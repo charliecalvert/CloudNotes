@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/DropBox.md
+relativePath: elvenware/development/cloud/DropBox.md
+title: DropBox
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 DropBox is a file sharing utility. It is used primarily to help you keep files in sync between multiple machines, and a place in the cloud. You can also share read-only or read-write copies of your folders with one or more people. DropBox is especially well suited for sharing files between desktop machines and your tablet or phone.

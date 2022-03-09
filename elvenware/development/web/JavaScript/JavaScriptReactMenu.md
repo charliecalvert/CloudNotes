@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptReactMenu.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptReactMenu.md
+title: JavaScriptReactMenu
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Menus
 
 Create Menus in a React Program.

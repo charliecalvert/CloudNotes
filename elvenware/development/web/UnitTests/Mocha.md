@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Mocha.md
+relativePath: elvenware/development/web/UnitTests/Mocha.md
+title: Mocha
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 Information on using Mocha and Chai.

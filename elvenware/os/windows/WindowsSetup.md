@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/windows/WindowsSetup.md
+relativePath: elvenware/os/windows/WindowsSetup.md
+title: WindowsSetup
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Windows Setup
 
 I am working on a script that might prove useful. This is a just a preliminary versions of the script. 

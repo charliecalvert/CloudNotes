@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/HeadTest.md
+relativePath: elvenware/development/design/HeadTest.md
+title: HeadTest
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <link href="../libs/css/charlie01.css" rel="STYLESHEET" type="TEXT/CSS">
 
 ## Overview

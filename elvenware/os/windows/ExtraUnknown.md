@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/windows/ExtraUnknown.md
+relativePath: elvenware/os/windows/ExtraUnknown.md
+title: ExtraUnknown
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Use SetX to Set the Environment
 -------------------------------
 

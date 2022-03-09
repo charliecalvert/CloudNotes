@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodeInstall.md
+relativePath: elvenware/development/web/JavaScript/NodeInstall.md
+title: NodeInstall
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 This document covers installing node and running NPM. It is focused mostly on Linux and Windows.
 
 Subjects covered include:

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/ConfigureLinux.md
+relativePath: elvenware/os/linux/ConfigureLinux.md
+title: ConfigureLinux
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Configure Linux
 
 I provide my students with a preconfigured version of Lubuntu. Nevertheless, there are various reasons why you might need to configure part or all of Linux box to use in one of my courses. This document is aimed to help both you and me configure Linux boxes.

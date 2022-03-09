@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/TypesOfApplications.md
+relativePath: elvenware/development/cloud/TypesOfApplications.md
+title: TypesOfApplications
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Understanding the Cloud
 
 There are three primary types of Cloud Services:

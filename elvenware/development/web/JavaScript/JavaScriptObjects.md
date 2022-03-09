@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptObjects.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptObjects.md
+title: JavaScriptObjects
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # JavaScript Objects
 
 In this chapter we will start with a quick overview of the some built in JavaScript Objects such as Arrays. After covering the basics about these topics we will move on to our main subject, which is creating custom JavaScript Objects.

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/XmlTechniques.md
+relativePath: elvenware/development/cloud/XmlTechniques.md
+title: XmlTechniques
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 One simple way to work with XML data is to open it in Excel. Inside of

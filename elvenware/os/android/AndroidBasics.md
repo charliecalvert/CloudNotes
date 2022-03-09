@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/android/AndroidBasics.md
+relativePath: elvenware/os/android/AndroidBasics.md
+title: AndroidBasics
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Android Basics {#androidBasics}
 ==============
 

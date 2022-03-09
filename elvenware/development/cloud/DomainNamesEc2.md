@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/DomainNamesEc2.md
+relativePath: elvenware/development/cloud/DomainNamesEc2.md
+title: DomainNamesEc2
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Domain Names on EC2 {#domain-ec2}
 
 Go to Godaddy and manage your domain. On the **DNS Zone File Page**

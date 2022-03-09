@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/Network-Config-Tips-5.md
+relativePath: elvenware/os/linux/Network-Config-Tips-5.md
+title: Network-Config-Tips-5
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 [Next](Network-Config-Tips-6.html)
 [Previous](Network-Config-Tips-4.html)
 [Contents](Network-Config-Tips.html#toc5)

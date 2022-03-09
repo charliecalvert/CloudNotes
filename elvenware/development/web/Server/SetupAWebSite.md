@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/SetupAWebSite.md
+relativePath: elvenware/development/web/Server/SetupAWebSite.md
+title: SetupAWebSite
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

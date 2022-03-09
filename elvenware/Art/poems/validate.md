@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/poems/validate.md
+relativePath: elvenware/Art/poems/validate.md
+title: Validate
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 -   [Validate
     Songs.html](http://validator.w3.org/check?uri=http%3A%2F%2Fwww.elvenware.com%2Fcharlie%2Fpoems%2Fsongs.html)
 -   [Validate

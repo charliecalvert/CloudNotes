@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/index.md
+relativePath: elvenware/development/design/index.md
+title: Index
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <meta content="Main Elvenware page for Android Development" name="description" />
 <meta content="Android, Elvenware, Development" name="keywords" />
 

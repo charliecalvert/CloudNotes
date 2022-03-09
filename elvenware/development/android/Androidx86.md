@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/Androidx86.md
+relativePath: elvenware/development/android/Androidx86.md
+title: Androidx86
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ![Elvenware](../../images/elvenwarelogo.png)
 
 Android X86

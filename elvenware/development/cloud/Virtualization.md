@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Virtualization.md
+relativePath: elvenware/development/cloud/Virtualization.md
+title: Virtualization
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 - [Hardware Virtualization](http://en.wikipedia.org/wiki/X86_virtualization)
 -	[Android Emulation](http://ubuntuguide.org/wiki/Android_emulation)
 

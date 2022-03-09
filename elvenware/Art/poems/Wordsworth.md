@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/poems/Wordsworth.md
+relativePath: elvenware/Art/poems/Wordsworth.md
+title: Wordsworth
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <div id="blueback">
 
 </div>

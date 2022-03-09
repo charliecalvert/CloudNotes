@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/python_iis.md
+relativePath: elvenware/development/web/Python/python_iis.md
+title: Python_iis
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <div id="container">
 
 Python on Windows

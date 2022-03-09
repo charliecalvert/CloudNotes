@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/EclipseSetup.md
+relativePath: elvenware/development/android/EclipseSetup.md
+title: EclipseSetup
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Eclipse Aptana Overview
 
 This page is very outdated and needs to be rewritten. For now it is probably best ignored because Android development is no longer commonly done with Aptana or Eclipse. Instead, developers use Android Studio, which is a variation on the WebStorm IDE that we use in my classes at BC.

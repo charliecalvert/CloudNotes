@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-gui.md
+relativePath: elvenware/development/git/git-gui.md
+title: Git-gui
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Git GUI Basics
 
 First line for HTTPs clone:

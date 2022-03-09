@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/Networks.md
+relativePath: elvenware/development/design/Networks.md
+title: Networks
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 From: virtualization networking deep dive.pdf
 
 I (Charlie Calvert) did not write this. I don't know where it comes from.

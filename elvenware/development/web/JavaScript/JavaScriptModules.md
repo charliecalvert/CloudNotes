@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptModules.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptModules.md
+title: JavaScriptModules
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # JavaScript Modules
 
 This document covers the JavaScript Module Pattern

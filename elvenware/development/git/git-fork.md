@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-fork.md
+relativePath: elvenware/development/git/git-fork.md
+title: Git-fork
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Forking
 
 Frequently we do not own a repository, yet we want to work with the

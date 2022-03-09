@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Webmin.md
+relativePath: elvenware/development/cloud/Webmin.md
+title: Webmin
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 [Webmin](http://www.webmin.com/index.html) is a web based graphical user

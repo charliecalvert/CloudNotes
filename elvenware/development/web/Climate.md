@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Climate.md
+relativePath: elvenware/development/web/Climate.md
+title: Climate
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ====================================
 
 http://www.eia.gov/todayinenergy/detail.cfm?id=25852

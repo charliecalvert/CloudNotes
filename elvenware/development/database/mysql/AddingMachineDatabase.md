@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql/AddingMachineDatabase.md
+relativePath: elvenware/development/database/mysql/AddingMachineDatabase.md
+title: AddingMachineDatabase
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ﻿<script src="/charlie/development/web/Scripts/MyJQueryTests.js"></script>
 
 ## Overview

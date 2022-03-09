@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/UI.md
+relativePath: elvenware/development/android/UI.md
+title: UI
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

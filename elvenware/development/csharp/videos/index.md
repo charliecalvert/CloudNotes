@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos/index.md
+relativePath: elvenware/development/csharp/videos/index.md
+title: Index
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

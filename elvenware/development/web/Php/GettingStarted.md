@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Php/GettingStarted.md
+relativePath: elvenware/development/web/Php/GettingStarted.md
+title: GettingStarted
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <div id="container">
 
 A Simple PHP Script

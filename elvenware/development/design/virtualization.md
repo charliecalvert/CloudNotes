@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/virtualization.md
+relativePath: elvenware/development/design/virtualization.md
+title: Virtualization
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 [Hardware Virtualization](http://en.wikipedia.org/wiki/X86_virtualization)
 
 ### My Notes on Creating Virtual Appliances with VirtualBox

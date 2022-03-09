@@ -3,7 +3,7 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg-test/SvgTester.md
 relativePath: elvenware/Art/photos/svg-test/SvgTester.md
 title: SvgTester
 debug: aec has both but checking ELF code
-creationLocalTime: 3/8/2022, 11:43:18 AM
+creationLocalTime: 3/8/2022, 3:55:50 PM
 ---
 
 <!-- toc -->

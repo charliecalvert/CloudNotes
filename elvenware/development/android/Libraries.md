@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/Libraries.md
+relativePath: elvenware/development/android/Libraries.md
+title: Libraries
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

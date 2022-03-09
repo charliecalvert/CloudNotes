@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/SoaInterviewWithErl.md
+relativePath: elvenware/development/design/SoaInterviewWithErl.md
+title: SoaInterviewWithErl
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 SOA
 
 *   SOA Design Patterns by Thomas Erl

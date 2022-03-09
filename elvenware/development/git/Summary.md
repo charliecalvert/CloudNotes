@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/Summary.md
+relativePath: elvenware/development/git/Summary.md
+title: Summary
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 * [git-basics.html](git-basics.html)
 * [git-branches.html](git-branches.html)
 * [git-configure.html](git-configure.html)

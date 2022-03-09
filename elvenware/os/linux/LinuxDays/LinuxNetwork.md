@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxDays/LinuxNetwork.md
+relativePath: elvenware/os/linux/LinuxDays/LinuxNetwork.md
+title: LinuxNetwork
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <HTML>
 <HEAD><TITLE>Linux Network Card</TITLE>
   <meta NAME="AUTHOR" CONTENT="Charlie Calvert">

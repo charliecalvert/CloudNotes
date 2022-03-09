@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-merge.md
+relativePath: elvenware/development/git/git-merge.md
+title: Git-merge
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Git Merge
 
 Git has many uses. There is no single iconic, fundamental, task performed by Git. Yet few Git tasks are as important as merging.

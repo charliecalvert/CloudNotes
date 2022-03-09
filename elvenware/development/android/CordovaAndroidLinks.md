@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/CordovaAndroidLinks.md
+relativePath: elvenware/development/android/CordovaAndroidLinks.md
+title: CordovaAndroidLinks
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Android Links
 
 Here are various links, some of them quite old, for material on Android development.

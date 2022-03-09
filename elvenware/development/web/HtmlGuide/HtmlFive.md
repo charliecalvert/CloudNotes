@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/HtmlFive.md
+relativePath: elvenware/development/web/HtmlGuide/HtmlFive.md
+title: HtmlFive
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 At the time of this writing, HTML 5 is fairly well established. It has

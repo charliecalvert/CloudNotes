@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/StyleSheetChanger.md
+relativePath: elvenware/development/web/CssGuide/StyleSheetChanger.md
+title: StyleSheetChanger
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 High Styling
 ============
 

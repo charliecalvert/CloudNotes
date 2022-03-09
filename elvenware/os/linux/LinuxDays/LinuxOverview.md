@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxDays/LinuxOverview.md
+relativePath: elvenware/os/linux/LinuxDays/LinuxOverview.md
+title: LinuxOverview
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <!doctype HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <html>
 <head>

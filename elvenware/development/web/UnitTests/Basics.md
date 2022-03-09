@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Basics.md
+relativePath: elvenware/development/web/UnitTests/Basics.md
+title: Basics
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Here is another way to think about this issue that may make some lights go on. Or perhaps not.

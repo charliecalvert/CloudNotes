@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap-End.md
+relativePath: elvenware/development/android/PhoneGap-End.md
+title: PhoneGap-End
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 Create a PhoneGap/Cordova Project {#createPhoneGap}
 ---------------------------------

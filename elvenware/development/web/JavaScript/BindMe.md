@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/BindMe.md
+relativePath: elvenware/development/web/JavaScript/BindMe.md
+title: BindMe
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 <script src="/javascripts/BindMe.js" type="text/javascript"></script>
 
 ## Overview

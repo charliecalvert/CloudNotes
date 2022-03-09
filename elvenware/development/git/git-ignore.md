@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-ignore.md
+relativePath: elvenware/development/git/git-ignore.md
+title: Git-ignore
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # The .gitignore File
 
 If you set up Git correctly, and use it intelligently, it is a simple mechanism for performing remarkably powerful tasks. If, however, you make one of several easy to avoid errors, you can end up creating a great deal of trouble for yourself. Use it right, and Git is your friend. Misuse it, and it can be a remarkably subtle foe.

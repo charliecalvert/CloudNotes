@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/2011_06_Kawaii/index.md
+relativePath: elvenware/Art/photos/2011_06_Kawaii/index.md
+title: Index
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Too many pictures of Hawaii
 ===========================
 

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/WritingSimpleCode.md
+relativePath: elvenware/development/web/JavaScript/WritingSimpleCode.md
+title: WritingSimpleCode
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Getting Started Part II
 
 To help you get a feel for the language, let's install node and start writing some simple code.

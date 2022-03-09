@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/Bootstrap.md
+relativePath: elvenware/development/web/CssGuide/Bootstrap.md
+title: Bootstrap
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 [Bootstrap](http://getbootstrap.com/) is a popular CSS library that can help you create elegant web pages. Here are some [examples](http://getbootstrap.com/getting-started/#examples) of what you can do with bootstrap.

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Yeoman.md
+relativePath: elvenware/development/web/JavaScript/Yeoman.md
+title: Yeoman
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Yeoman
 
 Yeoman is a scaffolding application. As such, we can use it to create the starting files for a project. For instance, if we want to create an angular application, we can use Yeoman to create the files commonly used in an **angular** application. These files might include set up for Grunt and unit tests.

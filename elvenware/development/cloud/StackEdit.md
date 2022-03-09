@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/StackEdit.md
+relativePath: elvenware/development/cloud/StackEdit.md
+title: StackEdit
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 #StackEdit
 
 You can edit markdown in the cloud with StackEdit.

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql/linux-user-password.md
+relativePath: elvenware/development/database/mysql/linux-user-password.md
+title: Linux-user-password
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ﻿## Overview
 
 Some tips on using passwords with MySQL on Linux and Windows.

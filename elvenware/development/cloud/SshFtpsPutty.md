@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/SshFtpsPutty.md
+relativePath: elvenware/development/cloud/SshFtpsPutty.md
+title: SshFtpsPutty
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learning about Networks, SSH, SFTP and Putty.

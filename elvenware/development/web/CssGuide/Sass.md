@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/Sass.md
+relativePath: elvenware/development/web/CssGuide/Sass.md
+title: Sass
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 
 # SASS and CSS

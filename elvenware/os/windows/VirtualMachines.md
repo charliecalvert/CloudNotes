@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/windows/VirtualMachines.md
+relativePath: elvenware/os/windows/VirtualMachines.md
+title: VirtualMachines
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Virtual Box on Elvenware
 ------------------------
 

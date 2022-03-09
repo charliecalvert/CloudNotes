@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-gist-snippet.md
+relativePath: elvenware/development/git/git-gist-snippet.md
+title: Git-gist-snippet
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Gists and Snippets
 
 Sometimes you don't want to create a big repository, but instead save a single file that you use often in different contects. This is what GitHub **Gists** and BitBucket **Snippets** are for.

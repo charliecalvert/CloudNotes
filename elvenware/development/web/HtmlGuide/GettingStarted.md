@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/GettingStarted.md
+relativePath: elvenware/development/web/HtmlGuide/GettingStarted.md
+title: GettingStarted
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Getting Started with HTML
 
 HTML and CSS are markup languages. You can use them to define the

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptWebFrameworks.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptWebFrameworks.md
+title: JavaScriptWebFrameworks
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # JavaScript Web Frameworks
 
 Here are some popular web frameworks:

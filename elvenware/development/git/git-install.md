@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-install.md
+relativePath: elvenware/development/git/git-install.md
+title: Git-install
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Installing Git
 
 There are various ways to install Git. In this chapter I will describe installing Git on Linux and on Windows.

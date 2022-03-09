@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/MySql.md
+relativePath: elvenware/development/design/MySql.md
+title: MySql
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Logging in
 
 <pre class="code">charlie@WesternSea:~$ mysql -u root -p

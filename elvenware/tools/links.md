@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/tools/links.md
+relativePath: elvenware/tools/links.md
+title: Links
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Some very old links that I still find useful, even if they need to be paired and updated.

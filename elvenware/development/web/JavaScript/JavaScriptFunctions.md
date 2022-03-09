@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptFunctions.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptFunctions.md
+title: JavaScriptFunctions
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # JavaScript Functions {#javaScriptFunctions}
 
 Functions play a central role in the JavaScript language. They are easy to use, but hard to fully understand.

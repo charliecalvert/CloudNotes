@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/index.md
+relativePath: elvenware/development/cloud/index.md
+title: Index
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Elvenware Cloud
 
 - [Azure.html](Azure.html)

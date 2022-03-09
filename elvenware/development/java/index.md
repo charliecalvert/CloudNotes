@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/java/index.md
+relativePath: elvenware/development/java/index.md
+title: Index
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This page and all my material on Java is very old. Most of it is approximately 20 years old or older. As a result, I no longer include it on Elvenware. Perhaps someday I will try to restore it, but certainly not today.

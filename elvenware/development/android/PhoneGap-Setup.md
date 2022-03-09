@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap-Setup.md
+relativePath: elvenware/development/android/PhoneGap-Setup.md
+title: PhoneGap-Setup
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Phone Gap Setup {#setupPhoneGap}
 ---------------
 

@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxFiles.md
+relativePath: elvenware/os/linux/LinuxFiles.md
+title: LinuxFiles
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Working with Files in Linux (and OS X)
 
 In this page we explore performing basic file operations in Linux from

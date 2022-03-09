@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/MediaQueries.md
+relativePath: elvenware/development/web/CssGuide/MediaQueries.md
+title: MediaQueries
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Responsive Design and Media Queries
 ===================================
 

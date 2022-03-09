@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/StaticAndInstanceData.md
+relativePath: elvenware/development/web/JavaScript/StaticAndInstanceData.md
+title: StaticAndInstanceData
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Static and Instance Data
 
 On the instance data issue in modular pattern, I believe it goes like this:

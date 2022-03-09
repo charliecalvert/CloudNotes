@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptReact.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptReact.md
+title: JavaScriptReact
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Overview
 
 This page focuses on React. It is part of the Elvenware JavaScript portion of this site. There are other pages that cover React including:

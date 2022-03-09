@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-branches.md
+relativePath: elvenware/development/git/git-branches.md
+title: Git-branches
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Git Branches
 
 I can testify from personal experience that there many useful tasks you can perform with Git without ever creating a single branch other than the default master branch. And yet, I think it was only when I began creating branches that I first began to understand the true power of Git.

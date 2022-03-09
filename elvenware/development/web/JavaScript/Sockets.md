@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Sockets.md
+relativePath: elvenware/development/web/JavaScript/Sockets.md
+title: Sockets
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Sockets
 
 This page is primarily about socket.io. There are however, several different options available:

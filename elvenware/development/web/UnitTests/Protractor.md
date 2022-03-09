@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Protractor.md
+relativePath: elvenware/development/web/UnitTests/Protractor.md
+title: Protractor
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 The unit tests for this project require protractor and the selenium web drive.
 
 -	[Protractor](https://github.com/angular/protractor)

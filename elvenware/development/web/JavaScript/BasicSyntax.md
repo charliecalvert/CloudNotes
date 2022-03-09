@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/BasicSyntax.md
+relativePath: elvenware/development/web/JavaScript/BasicSyntax.md
+title: BasicSyntax
+debug: First time
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 Basic Syntax Examples
 =====================
 

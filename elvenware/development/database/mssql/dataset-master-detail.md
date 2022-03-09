@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mssql/dataset-master-detail.md
+relativePath: elvenware/development/database/mssql/dataset-master-detail.md
+title: Dataset-master-detail
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 DataSet Master Detail
 =====================
 

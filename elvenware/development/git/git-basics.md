@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-basics.md
+relativePath: elvenware/development/git/git-basics.md
+title: Git-basics
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Git Basics
 
 In this chapter you will learn to use Git from the command line.

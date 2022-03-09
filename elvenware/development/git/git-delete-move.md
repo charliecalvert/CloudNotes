@@ -1,3 +1,14 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-delete-move.md
+relativePath: elvenware/development/git/git-delete-move.md
+title: Git-delete-move
+debug: aec has both but checking ELF code
+creationLocalTime: 3/8/2022, 3:55:50 PM
+---
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Delete and Move
 
 Delete and move files in a Git repository.
