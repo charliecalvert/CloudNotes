@@ -31,7 +31,7 @@ async function main() {
     //if (count === 100) {
     //const fsp = require('fs').promises;
     const json = JSON.stringify(matterData, null, 4);
-    await fsp.writeFile('all-matter.data', json, "utf8");
+    await fsp.writeFile('all-matter.json', json, "utf8");
     //return;
     //}
 }

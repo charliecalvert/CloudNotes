@@ -2,8 +2,8 @@
 fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/XmlTechniques.md
 relativePath: elvenware/development/design/XmlTechniques.md
 title: XmlTechniques
-debug: First time
-creationLocalTime: 3/8/2022, 3:55:50 PM
+debug: aec has both but checking ELF code
+creationLocalTime: 3/11/2022, 4:02:54 PM
 ---
 
 <!-- toc -->

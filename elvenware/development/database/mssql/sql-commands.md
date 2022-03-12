@@ -3,7 +3,7 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mssql/sql-c
 relativePath: elvenware/development/database/mssql/sql-commands.md
 title: Sql-commands
 debug: aec has both but checking ELF code
-creationLocalTime: 3/8/2022, 3:55:50 PM
+creationLocalTime: 3/11/2022, 4:02:54 PM
 ---
 
 <!-- toc -->
