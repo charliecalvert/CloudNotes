@@ -4,9 +4,7 @@ const elfUtils = require('elven-code').elfUtils;
 const walker = require('walk-directories').walker;
 const debugMain = require('debug')('check-main');
 const debugDetail = require('debug')('check-main-detail');
-const { setupElfCode } = require("./lib/getElfCode");
-
-
+const { setupElfCode } = require('./lib/getElfCode');
 
 
 // Then, use it with a simple async for loop
@@ -19,26 +17,34 @@ async function main() {
         const fileName = elfUtils.ensureEndsWithPathSep(__dirname) + relativePath;
         debugMain('fileName', fileName);
         debugMain('getTitle', elfUtils.getTitleFromPath(fileName));
-
+        if (fileName.includes('/development/web/JavaScript/index.md')) {
+            debugDetail(fileName);
+        }
         const elfCodes = await setupElfCode(fileName, relativePath);
+        /* try {
+            if (elfCodes.data.fullPath.includes('/development/web/JavaScript/')) {
+                debugDetail(elfCodes.data.fullPath);
+            }
+        } catch (error) {
+            debugDetail(error, elfCodes);
+        } */
+        
         if (elfCodes.data) {
             elfCodes.data.id = count;
             matterData.push(elfUtils.objectToJson(elfCodes.data));
-            await fsp.writeFile(fileName, elfCodes.markdown, "utf8");
+            await fsp.writeFile(fileName, elfCodes.markdown, 'utf8');
             debugMain('count', count);
         }
     }
-    //if (count === 100) {
-    //const fsp = require('fs').promises;
+    // if (count === 100) {
+    // const fsp = require('fs').promises;
     const json = JSON.stringify(matterData, null, 4);
-    await fsp.writeFile('all-matter.json', json, "utf8");
-    //return;
-    //}
+    await fsp.writeFile('all-matter.json', json, 'utf8');
+    // return;
+    // }
 }
 
 exports.main = main;
 main().catch(console.error);
-
-
 
 
