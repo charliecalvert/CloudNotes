@@ -1960,7 +1960,7 @@ var Reveal = (function() {
                 next: !!hiddenFragments.length,
             };
         } else {
-            return {prev: false, next: false};
+            return { prev: false, next: false };
         }
     }
 
@@ -2136,7 +2136,7 @@ var Reveal = (function() {
             }
         }
 
-        return {h: h, v: v, f: f};
+        return { h: h, v: v, f: f };
     }
 
     /**
@@ -2255,11 +2255,11 @@ var Reveal = (function() {
                 } );
 
                 if ( fragmentsHidden.length ) {
-                    dispatchEvent( 'fragmenthidden', {fragment: fragmentsHidden[0], fragments: fragmentsHidden} );
+                    dispatchEvent( 'fragmenthidden', { fragment: fragmentsHidden[0], fragments: fragmentsHidden } );
                 }
 
                 if ( fragmentsShown.length ) {
-                    dispatchEvent( 'fragmentshown', {fragment: fragmentsShown[0], fragments: fragmentsShown} );
+                    dispatchEvent( 'fragmentshown', { fragment: fragmentsShown[0], fragments: fragmentsShown } );
                 }
 
                 updateControls();
@@ -2666,7 +2666,7 @@ var Reveal = (function() {
 	 */
     function onPointerDown( event ) {
         if ( event.pointerType === event.MSPOINTER_TYPE_TOUCH ) {
-            event.touches = [{clientX: event.clientX, clientY: event.clientY}];
+            event.touches = [{ clientX: event.clientX, clientY: event.clientY }];
             onTouchStart( event );
         }
     }
@@ -2676,7 +2676,7 @@ var Reveal = (function() {
 	 */
     function onPointerMove( event ) {
         if ( event.pointerType === event.MSPOINTER_TYPE_TOUCH ) {
-            event.touches = [{clientX: event.clientX, clientY: event.clientY}];
+            event.touches = [{ clientX: event.clientX, clientY: event.clientY }];
             onTouchMove( event );
         }
     }
@@ -2686,7 +2686,7 @@ var Reveal = (function() {
 	 */
     function onPointerUp( event ) {
         if ( event.pointerType === event.MSPOINTER_TYPE_TOUCH ) {
-            event.touches = [{clientX: event.clientX, clientY: event.clientY}];
+            event.touches = [{ clientX: event.clientX, clientY: event.clientY }];
             onTouchEnd( event );
         }
     }

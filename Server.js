@@ -8,7 +8,7 @@ app.get('/', function(request, response) {
     // debugger;
     console.log(request.params.id);
     const html = fs.readFileSync(__dirname + '/Prog272/Week06.html');
-    response.writeHeader(200, {'Content-Type': 'text/html'});
+    response.writeHeader(200, { 'Content-Type': 'text/html' });
     response.write(html);
     response.end();
 });
