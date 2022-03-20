@@ -4,7 +4,7 @@ const elfUtils = require('elven-code').elfUtils;
 const walker = require('walk-directories').walker;
 const debugMain = require('debug')('check-main');
 const debugDetail = require('debug')('check-main-detail');
-const { setupElfCode } = require('./lib/getElfCode');
+const { setupElfCode } = require('../lib/getElfCode');
 
 
 // Then, use it with a simple async for loop

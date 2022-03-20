@@ -4,7 +4,7 @@
     "description": "CloudNotes ==========",
     "main": "remote.js",
     "scripts": {
-        "start": "DEBUG=check-main-detail node CheckMarkdown.js",
+        "start": "DEBUG=check-main-detail node src/CheckMarkdown.js",
         "test": "DEBUG=check-get-elf jest"
     },
     "repository": {
