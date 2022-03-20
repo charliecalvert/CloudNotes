@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Browsers.md
 relativePath: elvenware/development/cloud/Browsers.md
 title: Browsers
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: Browsers.md
+fileNameHTML: Browsers.html
 ---
 
 <!-- toc -->

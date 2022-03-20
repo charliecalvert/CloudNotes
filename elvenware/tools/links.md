@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/tools/links.md
 relativePath: elvenware/tools/links.md
 title: Links
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: links.md
+fileNameHTML: links.html
 ---
 
 <!-- toc -->

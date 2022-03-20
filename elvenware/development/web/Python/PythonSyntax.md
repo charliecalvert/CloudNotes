@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/PythonSyn
 relativePath: elvenware/development/web/Python/PythonSyntax.md
 title: PythonSyntax
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: PythonSyntax.md
+fileNameHTML: PythonSyntax.html
 ---
 
 <!-- toc -->

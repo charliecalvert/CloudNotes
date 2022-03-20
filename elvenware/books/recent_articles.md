@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/books/recent_articles.md
 relativePath: elvenware/books/recent_articles.md
 title: Recent_articles
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: recent_articles.md
+fileNameHTML: recent_articles.html
 ---
 
 <!-- toc -->

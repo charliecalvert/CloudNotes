@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/DomainNamesEc2
 relativePath: elvenware/development/cloud/DomainNamesEc2.md
 title: DomainNamesEc2
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: DomainNamesEc2.md
+fileNameHTML: DomainNamesEc2.html
 ---
 
 <!-- toc -->

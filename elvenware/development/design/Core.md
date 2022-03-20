@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/Core.md
 relativePath: elvenware/development/design/Core.md
 title: Core
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Core.md
+fileNameHTML: Core.html
 ---
 
 <!-- toc -->

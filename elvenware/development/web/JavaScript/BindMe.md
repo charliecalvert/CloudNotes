@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/BindM
 relativePath: elvenware/development/web/JavaScript/BindMe.md
 title: BindMe
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: BindMe.md
+fileNameHTML: BindMe.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

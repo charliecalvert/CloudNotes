@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/TestCss
 relativePath: elvenware/development/web/CssGuide/TestCss.md
 title: TestCss
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: TestCss.md
+fileNameHTML: TestCss.html
 ---
 
 <!-- toc -->

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-delete-move.
 relativePath: elvenware/development/git/git-delete-move.md
 title: Git-delete-move
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: git-delete-move.md
+fileNameHTML: git-delete-move.html
 ---
 
 <!-- toc -->

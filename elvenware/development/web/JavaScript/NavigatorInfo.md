@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Navig
 relativePath: elvenware/development/web/JavaScript/NavigatorInfo.md
 title: NavigatorInfo
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: NavigatorInfo.md
+fileNameHTML: NavigatorInfo.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

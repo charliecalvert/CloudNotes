@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/new_dwt.md
 relativePath: elvenware/development/design/new_dwt.md
 title: New_dwt
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: new_dwt.md
+fileNameHTML: new_dwt.html
 ---
 
 <!-- toc -->

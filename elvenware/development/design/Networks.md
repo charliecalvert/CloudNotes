@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/Networks.md
 relativePath: elvenware/development/design/Networks.md
 title: Networks
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Networks.md
+fileNameHTML: Networks.html
 ---
 
 <!-- toc -->

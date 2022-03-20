@@ -3,14 +3,15 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/index.md
 relativePath: elvenware/index.md
 title: Index
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: index.md
+fileNameHTML: index.html
 ---
 
 <!-- toc -->
 <!-- tocstop -->
 
-Details
--------
+## Details
 
 Elvenware is very much a work in progress. It is, quite frankly, a set of
 rough drafts for books. Furthermore, it is likely that these works will

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxDays/Network-Confi
 relativePath: elvenware/os/linux/LinuxDays/Network-Config-Tips-3.md
 title: Network-Config-Tips-3
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:55 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Network-Config-Tips-3.md
+fileNameHTML: Network-Config-Tips-3.html
 ---
 
 <!-- toc -->

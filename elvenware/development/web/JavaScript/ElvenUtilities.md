@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Elven
 relativePath: elvenware/development/web/JavaScript/ElvenUtilities.md
 title: ElvenUtilities
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: ElvenUtilities.md
+fileNameHTML: ElvenUtilities.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

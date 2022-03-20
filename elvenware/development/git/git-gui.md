@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-gui.md
 relativePath: elvenware/development/git/git-gui.md
 title: Git-gui
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: git-gui.md
+fileNameHTML: git-gui.html
 ---
 
 <!-- toc -->

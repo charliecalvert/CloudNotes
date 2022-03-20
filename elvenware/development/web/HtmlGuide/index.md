@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/index.
 relativePath: elvenware/development/web/HtmlGuide/index.md
 title: Index
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: index.md
+fileNameHTML: index.html
 ---
 
 <!-- toc -->

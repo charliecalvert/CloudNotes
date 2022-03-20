@@ -17,14 +17,14 @@
         if (!t[n]) {
             if (!e[n]) {
                 const o=typeof require=='function'&&require; if (!s&&o) return o(n, !0); if (r) return r(n, !0); throw new Error('Cannot find module \''+n+'\'');
-            } const u=t[n]={exports: {}}; e[n][0].call(u.exports, function(t) {
+            } const u=t[n]={ exports: {} }; e[n][0].call(u.exports, function(t) {
                 const r=e[n][1][t]; return i(r?r:t);
             }, u, u.exports);
         } return t[n].exports;
     } var r=typeof require=='function'&&require; for (let s=0; s<n.length; s++)i(n[s]); return i;
-}({1: [function(require, module, exports) {
+}({ 1: [function(require, module, exports) {
     const chooseProtocol=require('./protocol').chooseProtocol; const EventEmitter=require('events').EventEmitter; const _=require('underscore'); const BaseConnection=module.exports=function(opts) {
-        this.opts=_.defaults(opts||{}, {host: '127.0.0.1', enableGestures: false, port: 6437, enableHeartbeat: true, heartbeatInterval: 100, requestProtocolVersion: 3}); this.host=opts.host; this.port=opts.port; this.on('ready', function() {
+        this.opts=_.defaults(opts||{}, { host: '127.0.0.1', enableGestures: false, port: 6437, enableHeartbeat: true, heartbeatInterval: 100, requestProtocolVersion: 3 }); this.host=opts.host; this.port=opts.port; this.on('ready', function() {
             this.enableGestures(this.opts.enableGestures); if (this.opts.enableHeartbeat) this.startHeartbeat();
         }); this.on('disconnect', function() {
             if (this.opts.enableHeartbeat) this.stopHeartbeat();
@@ -38,7 +38,7 @@
     }; BaseConnection.prototype.handleOpen=function() {
         this.emit('connect');
     }; BaseConnection.prototype.enableGestures=function(enabled) {
-        this.gesturesEnabled=enabled?true:false; this.send(this.protocol.encode({enableGestures: this.gesturesEnabled}));
+        this.gesturesEnabled=enabled?true:false; this.send(this.protocol.encode({ enableGestures: this.gesturesEnabled }));
     }; BaseConnection.prototype.handleClose=function() {
         this.disconnect(); this.startReconnection();
     }; BaseConnection.prototype.startReconnection=function() {
@@ -62,7 +62,7 @@
     }; BaseConnection.prototype.setHeartbeatState=function(state) {
         if (this.heartbeatState===state) return; this.heartbeatState=state; this.emit(this.heartbeatState?'focus':'blur');
     }; _.extend(BaseConnection.prototype, EventEmitter.prototype);
-}, {'./protocol': 12, 'events': 17, 'underscore': 20}], 2: [function(require, module, exports) {
+}, { './protocol': 12, 'events': 17, 'underscore': 20 }], 2: [function(require, module, exports) {
     const CircularBuffer=module.exports=function(size) {
         this.pos=0; this._buf=[]; this.size=size;
     }; CircularBuffer.prototype.get=function(i) {
@@ -106,10 +106,10 @@
             }
         }, this.opts.heartbeatInterval);
     };
-}, {'./base_connection': 1}], 4: [function(require, module, exports) {
+}, { './base_connection': 1 }], 4: [function(require, module, exports) {
     !function(process) {
         const Frame=require('./frame'); const CircularBuffer=require('./circular_buffer'); const Pipeline=require('./pipeline'); const EventEmitter=require('events').EventEmitter; const gestureListener=require('./gesture').gestureListener; const _=require('underscore'); const Controller=module.exports=function(opts) {
-            const inNode=typeof process!=='undefined'&&process.title==='node'; opts=_.defaults(opts||{}, {inNode: inNode}); this.inNode=opts.inNode; opts=_.defaults(opts||{}, {frameEventName: this.useAnimationLoop()?'animationFrame':'deviceFrame', supressAnimationLoop: false}); this.supressAnimationLoop=opts.supressAnimationLoop; this.frameEventName=opts.frameEventName; this.history=new CircularBuffer(200); this.lastFrame=Frame.Invalid; this.lastValidFrame=Frame.Invalid; this.lastConnectionFrame=Frame.Invalid; this.accumulatedGestures=[]; if (opts.connectionType===undefined) {
+            const inNode=typeof process!=='undefined'&&process.title==='node'; opts=_.defaults(opts||{}, { inNode: inNode }); this.inNode=opts.inNode; opts=_.defaults(opts||{}, { frameEventName: this.useAnimationLoop()?'animationFrame':'deviceFrame', supressAnimationLoop: false }); this.supressAnimationLoop=opts.supressAnimationLoop; this.frameEventName=opts.frameEventName; this.history=new CircularBuffer(200); this.lastFrame=Frame.Invalid; this.lastValidFrame=Frame.Invalid; this.lastConnectionFrame=Frame.Invalid; this.accumulatedGestures=[]; if (opts.connectionType===undefined) {
                 this.connectionType=this.inBrowser()?require('./connection'):require('./node_connection');
             } else {
                 this.connectionType=opts.connectionType;
@@ -182,7 +182,7 @@
             });
         }; _.extend(Controller.prototype, EventEmitter.prototype);
     }(require('__browserify_process'));
-}, {'./circular_buffer': 2, './connection': 3, './frame': 5, './gesture': 6, './node_connection': 16, './pipeline': 10, '__browserify_process': 18, 'events': 17, 'underscore': 20}], 5: [function(require, module, exports) {
+}, { './circular_buffer': 2, './connection': 3, './frame': 5, './gesture': 6, './node_connection': 16, './pipeline': 10, '__browserify_process': 18, 'events': 17, 'underscore': 20 }], 5: [function(require, module, exports) {
     const Hand=require('./hand'); const Pointable=require('./pointable'); const createGesture=require('./gesture').createGesture; const glMatrix=require('gl-matrix'); const mat3=glMatrix.mat3; const vec3=glMatrix.vec3; const InteractionBox=require('./interaction_box'); const _=require('underscore'); const Frame=module.exports=function(data) {
         this.valid=true; this.id=data.id; this.timestamp=data.timestamp; this.hands=[]; this.handsMap={}; this.pointables=[]; this.tools=[]; this.fingers=[]; if (data.interactionBox) {
             this.interactionBox=new InteractionBox(data.interactionBox);
@@ -229,7 +229,7 @@
                 out+='  '+this.gestures[gestureIdx].toString()+'<br/>';
             }
         }out+='<br/><br/>Raw JSON:<br/>'; out+=JSON.stringify(this.data); return out;
-    }; Frame.Invalid={valid: false, hands: [], fingers: [], tools: [], gestures: [], pointables: [], pointable: function() {
+    }; Frame.Invalid={ valid: false, hands: [], fingers: [], tools: [], gestures: [], pointables: [], pointable: function() {
         return Pointable.Invalid;
     }, finger: function() {
         return Pointable.Invalid;
@@ -249,8 +249,8 @@
         return 1;
     }, translation: function() {
         return vec3.create();
-    }};
-}, {'./gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, 'gl-matrix': 19, 'underscore': 20}], 6: [function(require, module, exports) {
+    } };
+}, { './gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, 'gl-matrix': 19, 'underscore': 20 }], 6: [function(require, module, exports) {
     const glMatrix=require('gl-matrix'); const vec3=glMatrix.vec3; const EventEmitter=require('events').EventEmitter; const _=require('underscore'); const createGesture=exports.createGesture=function(data) {
         let gesture; switch (data.type) {
             case 'circle': gesture=new CircleGesture(data); break; case 'swipe': gesture=new SwipeGesture(data); break; case 'screenTap': gesture=new ScreenTapGesture(data); break; case 'keyTap': gesture=new KeyTapGesture(data); break; default: throw 'unkown gesture type';
@@ -276,7 +276,7 @@
                     delete gestureMap[gesture.id];
                 }
             }
-        }); var builder={start: function(cb) {
+        }); var builder={ start: function(cb) {
             handlers['start']=cb; return builder;
         }, stop: function(cb) {
             handlers['stop']=cb; return builder;
@@ -284,7 +284,7 @@
             handlers['stop']=cb; return builder;
         }, update: function(cb) {
             handlers['update']=cb; return builder;
-        }}; return builder;
+        } }; return builder;
     }; var Gesture=exports.Gesture=function(gesture, frame) {
         this.gestures=[gesture]; this.frames=[frame];
     }; Gesture.prototype.update=function(gesture, frame) {
@@ -306,7 +306,7 @@
     }; KeyTapGesture.prototype.toString=function() {
         return 'KeyTapGesture ['+JSON.stringify(this)+']';
     };
-}, {'events': 17, 'gl-matrix': 19, 'underscore': 20}], 7: [function(require, module, exports) {
+}, { 'events': 17, 'gl-matrix': 19, 'underscore': 20 }], 7: [function(require, module, exports) {
     const Pointable=require('./pointable'); const glMatrix=require('gl-matrix'); const mat3=glMatrix.mat3; const vec3=glMatrix.vec3; const _=require('underscore'); const Hand=module.exports=function(data) {
         this.id=data.id; this.palmPosition=data.palmPosition; this.direction=data.direction; this.palmVelocity=data.palmVelocity; this.palmNormal=data.palmNormal; this.sphereCenter=data.sphereCenter; this.sphereRadius=data.sphereRadius; this.valid=true; this.pointables=[]; this.fingers=[]; this.tools=[]; this._translation=data.t; this._rotation=_.flatten(data.r); this._scaleFactor=data.s; this.timeVisible=data.timeVisible; this.stabilizedPalmPosition=data.stabilizedPalmPosition;
     }; Hand.prototype.finger=function(id) {
@@ -325,7 +325,7 @@
         if (!this.valid||!sinceFrame.valid) return vec3.create(); const sinceHand=sinceFrame.hand(this.id); if (!sinceHand.valid) return vec3.create(); return [this._translation[0]-sinceHand._translation[0], this._translation[1]-sinceHand._translation[1], this._translation[2]-sinceHand._translation[2]];
     }; Hand.prototype.toString=function() {
         return 'Hand [ id: '+this.id+' | palm velocity:'+this.palmVelocity+' | sphere center:'+this.sphereCenter+' ] ';
-    }; Hand.Invalid={valid: false, fingers: [], tools: [], pointables: [], pointable: function() {
+    }; Hand.Invalid={ valid: false, fingers: [], tools: [], pointables: [], pointable: function() {
         return Pointable.Invalid;
     }, finger: function() {
         return Pointable.Invalid;
@@ -343,16 +343,16 @@
         return 1;
     }, translation: function() {
         return vec3.create();
-    }};
-}, {'./pointable': 11, 'gl-matrix': 19, 'underscore': 20}], 8: [function(require, module, exports) {
+    } };
+}, { './pointable': 11, 'gl-matrix': 19, 'underscore': 20 }], 8: [function(require, module, exports) {
     !function() {
-        module.exports={Controller: require('./controller'), Frame: require('./frame'), Gesture: require('./gesture'), Hand: require('./hand'), Pointable: require('./pointable'), InteractionBox: require('./interaction_box'), Connection: require('./connection'), CircularBuffer: require('./circular_buffer'), UI: require('./ui'), glMatrix: require('gl-matrix'), mat3: require('gl-matrix').mat3, vec3: require('gl-matrix').vec3, loopController: undefined, loop: function(opts, callback) {
+        module.exports={ Controller: require('./controller'), Frame: require('./frame'), Gesture: require('./gesture'), Hand: require('./hand'), Pointable: require('./pointable'), InteractionBox: require('./interaction_box'), Connection: require('./connection'), CircularBuffer: require('./circular_buffer'), UI: require('./ui'), glMatrix: require('gl-matrix'), mat3: require('gl-matrix').mat3, vec3: require('gl-matrix').vec3, loopController: undefined, loop: function(opts, callback) {
             if (callback===undefined) {
                 callback=opts; opts={};
             } if (!this.loopController) this.loopController=new this.Controller(opts); this.loopController.loop(callback);
-        }};
+        } };
     }();
-}, {'./circular_buffer': 2, './connection': 3, './controller': 4, './frame': 5, './gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, './ui': 13, 'gl-matrix': 19}], 9: [function(require, module, exports) {
+}, { './circular_buffer': 2, './connection': 3, './controller': 4, './frame': 5, './gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, './ui': 13, 'gl-matrix': 19 }], 9: [function(require, module, exports) {
     const glMatrix=require('gl-matrix'); const vec3=glMatrix.vec3; const InteractionBox=module.exports=function(data) {
         this.valid=true; this.center=data.center; this.size=data.size; this.width=data.size[0]; this.height=data.size[1]; this.depth=data.size[2];
     }; InteractionBox.prototype.denormalizePoint=function(normalizedPosition) {
@@ -363,8 +363,8 @@
         } return vec;
     }; InteractionBox.prototype.toString=function() {
         return 'InteractionBox [ width:'+this.width+' | height:'+this.height+' | depth:'+this.depth+' ]';
-    }; InteractionBox.Invalid={valid: false};
-}, {'gl-matrix': 19}], 10: [function(require, module, exports) {
+    }; InteractionBox.Invalid={ valid: false };
+}, { 'gl-matrix': 19 }], 10: [function(require, module, exports) {
     const Pipeline=module.exports=function() {
         this.steps=[];
     }; Pipeline.prototype.addStep=function(step) {
@@ -383,8 +383,8 @@
         } else {
             return 'Pointable [ id:'+this.id+' '+this.length+'mmx | direction: '+this.direction+' ]';
         }
-    }; Pointable.Invalid={valid: false};
-}, {'gl-matrix': 19}], 12: [function(require, module, exports) {
+    }; Pointable.Invalid={ valid: false };
+}, { 'gl-matrix': 19 }], 12: [function(require, module, exports) {
     const Frame=require('./frame'); const Event=function(data) {
         this.type=data.type; this.state=data.state;
     }; const chooseProtocol=exports.chooseProtocol=function(header) {
@@ -394,11 +394,11 @@
             }); break; case 2: protocol=JSONProtocol(2, function(data) {
                 return new Frame(data);
             }); protocol.sendHeartbeat=function(connection) {
-                    connection.send(protocol.encode({heartbeat: true}));
+                    connection.send(protocol.encode({ heartbeat: true }));
                 }; break; case 3: protocol=JSONProtocol(3, function(data) {
                 return data.event?new Event(data.event):new Frame(data);
             }); protocol.sendHeartbeat=function(connection) {
-                    connection.send(protocol.encode({heartbeat: true}));
+                    connection.send(protocol.encode({ heartbeat: true }));
                 }; break; default: throw 'unrecognized version';
         } return protocol;
     }; var JSONProtocol=function(version, cb) {
@@ -406,9 +406,9 @@
             return JSON.stringify(message);
         }; protocol.version=version; protocol.versionLong='Version '+version; protocol.type='protocol'; return protocol;
     };
-}, {'./frame': 5}], 13: [function(require, module, exports) {
-    exports.UI={Region: require('./ui/region'), Cursor: require('./ui/cursor')};
-}, {'./ui/cursor': 14, './ui/region': 15}], 14: [function(require, module, exports) {
+}, { './frame': 5 }], 13: [function(require, module, exports) {
+    exports.UI={ Region: require('./ui/region'), Cursor: require('./ui/cursor') };
+}, { './ui/cursor': 14, './ui/region': 15 }], 14: [function(require, module, exports) {
     const Cursor=module.exports=function() {
         return function(frame) {
             const pointable=frame.pointables.sort(function(a, b) {
@@ -454,7 +454,7 @@
     }; Region.prototype.mapToXY=function(position, width, height) {
         const normalized=this.normalize(position); let x=normalized.x; let y=normalized.y; if (x>1)x=1; else if (x<-1)x=-1; if (y>1)y=1; else if (y<-1)y=-1; return [(x+1)/2*width, (1-y)/2*height, normalized.z];
     }; _.extend(Region.prototype, EventEmitter.prototype);
-}, {events: 17, underscore: 20}], 16: [function(require, module, exports) {}, {}], 17: [function(require, module, exports) {
+}, { events: 17, underscore: 20 }], 16: [function(require, module, exports) {}, {}], 17: [function(require, module, exports) {
     !function(process) {
         if (!process.EventEmitter)process.EventEmitter=function() {}; const EventEmitter=exports.EventEmitter=process.EventEmitter; const isArray=typeof Array.isArray==='function'?Array.isArray:function(xs) {
             return Object.prototype.toString.call(xs)==='[object Array]';
@@ -524,7 +524,7 @@
             } return this._events[type];
         };
     }(require('__browserify_process'));
-}, {__browserify_process: 18}], 18: [function(require, module, exports) {
+}, { __browserify_process: 18 }], 18: [function(require, module, exports) {
     const process=module.exports={}; process.nextTick=function() {
         const canSetImmediate=typeof window!=='undefined'&&window.setImmediate; const canPost=typeof window!=='undefined'&&window.postMessage&&window.addEventListener; if (canSetImmediate) {
             return function(f) {
@@ -1039,14 +1039,14 @@
             }; _.max=function(obj, iterator, context) {
                 if (!iterator&&_.isArray(obj)&&obj[0]===+obj[0]&&obj.length<65535) {
                     return Math.max.apply(Math, obj);
-                } if (!iterator&&_.isEmpty(obj)) return -Infinity; let result={computed: -Infinity, value: -Infinity}; each(obj, function(value, index, list) {
-                    const computed=iterator?iterator.call(context, value, index, list):value; computed>=result.computed&&(result={value: value, computed: computed});
+                } if (!iterator&&_.isEmpty(obj)) return -Infinity; let result={ computed: -Infinity, value: -Infinity }; each(obj, function(value, index, list) {
+                    const computed=iterator?iterator.call(context, value, index, list):value; computed>=result.computed&&(result={ value: value, computed: computed });
                 }); return result.value;
             }; _.min=function(obj, iterator, context) {
                 if (!iterator&&_.isArray(obj)&&obj[0]===+obj[0]&&obj.length<65535) {
                     return Math.min.apply(Math, obj);
-                } if (!iterator&&_.isEmpty(obj)) return Infinity; let result={computed: Infinity, value: Infinity}; each(obj, function(value, index, list) {
-                    const computed=iterator?iterator.call(context, value, index, list):value; computed<result.computed&&(result={value: value, computed: computed});
+                } if (!iterator&&_.isEmpty(obj)) return Infinity; let result={ computed: Infinity, value: Infinity }; each(obj, function(value, index, list) {
+                    const computed=iterator?iterator.call(context, value, index, list):value; computed<result.computed&&(result={ value: value, computed: computed });
                 }); return result.value;
             }; _.shuffle=function(obj) {
                 let rand; let index=0; const shuffled=[]; each(obj, function(value) {
@@ -1058,7 +1058,7 @@
                 };
             }; _.sortBy=function(obj, value, context) {
                 const iterator=lookupIterator(value); return _.pluck(_.map(obj, function(value, index, list) {
-                    return {value: value, index: index, criteria: iterator.call(context, value, index, list)};
+                    return { value: value, index: index, criteria: iterator.call(context, value, index, list) };
                 }).sort(function(left, right) {
                     const a=left.criteria;
                     const b=right.criteria; if (a!==b) {
@@ -1327,7 +1327,7 @@
                 if (max==null) {
                     max=min; min=0;
                 } return min+Math.floor(Math.random()*(max-min+1));
-            }; const entityMap={escape: {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#x27;', '/': '&#x2F;'}}; entityMap.unescape=_.invert(entityMap.escape); const entityRegexes={escape: new RegExp('['+_.keys(entityMap.escape).join('')+']', 'g'), unescape: new RegExp('('+_.keys(entityMap.unescape).join('|')+')', 'g')}; _.each(['escape', 'unescape'], function(method) {
+            }; const entityMap={ escape: { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#x27;', '/': '&#x2F;' } }; entityMap.unescape=_.invert(entityMap.escape); const entityRegexes={ escape: new RegExp('['+_.keys(entityMap.escape).join('')+']', 'g'), unescape: new RegExp('('+_.keys(entityMap.unescape).join('|')+')', 'g') }; _.each(['escape', 'unescape'], function(method) {
                 _[method]=function(string) {
                     if (string==null) return ''; return (''+string).replace(entityRegexes[method], function(match) {
                         return entityMap[method][match];
@@ -1343,7 +1343,7 @@
                 });
             }; let idCounter=0; _.uniqueId=function(prefix) {
                 const id=++idCounter+''; return prefix?prefix+id:id;
-            }; _.templateSettings={evaluate: /<%([\s\S]+?)%>/g, interpolate: /<%=([\s\S]+?)%>/g, escape: /<%-([\s\S]+?)%>/g}; const noMatch=/(.)^/; const escapes={'\'': '\'', '\\': '\\', '\r': 'r', '\n': 'n', ' ': 't', '\u2028': 'u2028', '\u2029': 'u2029'}; const escaper=/\\|'|\r|\n|\t|\u2028|\u2029/g; _.template=function(text, data, settings) {
+            }; _.templateSettings={ evaluate: /<%([\s\S]+?)%>/g, interpolate: /<%=([\s\S]+?)%>/g, escape: /<%-([\s\S]+?)%>/g }; const noMatch=/(.)^/; const escapes={ '\'': '\'', '\\': '\\', '\r': 'r', '\n': 'n', ' ': 't', '\u2028': 'u2028', '\u2029': 'u2029' }; const escaper=/\\|'|\r|\n|\t|\u2028|\u2029/g; _.template=function(text, data, settings) {
                 let render; settings=_.defaults({}, settings, _.templateSettings); const matcher=new RegExp([(settings.escape||noMatch).source, (settings.interpolate||noMatch).source, (settings.evaluate||noMatch).source].join('|')+'|$', 'g'); let index=0; let source='__p+=\''; text.replace(matcher, function(match, escape, interpolate, evaluate, offset) {
                     source+=text.slice(index, offset).replace(escaper, function(match) {
                         return '\\'+escapes[match];
@@ -1373,11 +1373,11 @@
                 const method=ArrayProto[name]; _.prototype[name]=function() {
                     return result.call(this, method.apply(this._wrapped, arguments));
                 };
-            }); _.extend(_.prototype, {chain: function() {
+            }); _.extend(_.prototype, { chain: function() {
                 this._chain=true; return this;
             }, value: function() {
                 return this._wrapped;
-            }});
+            } });
         }.call(this);
     }();
 }, {}], 21: [function(require, module, exports) {
@@ -1386,7 +1386,7 @@
             window.setTimeout(callback, 1e3/60);
         };
     }(); Leap=require('../lib/index');
-}, {'../lib/index': 8}]}, {}, [21]);
+}, { '../lib/index': 8 }] }, {}, [21]);
 
 /*
  * Leap Motion integration for Reveal.js.
@@ -1396,7 +1396,7 @@
 
 (function() {
     const body = document.body;
-    const controller = new Leap.Controller({enableGestures: true});
+    const controller = new Leap.Controller({ enableGestures: true });
     let lastGesture = 0;
     const leapConfig = Reveal.getConfig().leap;
     const pointer = document.createElement( 'div' );

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxDays/LinuxSystem.m
 relativePath: elvenware/os/linux/LinuxDays/LinuxSystem.md
 title: LinuxSystem
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: LinuxSystem.md
+fileNameHTML: LinuxSystem.html
 ---
 
 <!-- toc -->

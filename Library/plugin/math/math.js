@@ -12,7 +12,7 @@ const RevealMath = window.RevealMath || (function() {
     loadScript( options.mathjax + '?config=' + options.config, function() {
         MathJax.Hub.Config({
             messageStyle: 'none',
-            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]},
+            tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
             skipStartupTypeset: true,
         });
 

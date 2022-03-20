@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap-Set
 relativePath: elvenware/development/android/PhoneGap-Setup.md
 title: PhoneGap-Setup
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: PhoneGap-Setup.md
+fileNameHTML: PhoneGap-Setup.html
 ---
 
 <!-- toc -->

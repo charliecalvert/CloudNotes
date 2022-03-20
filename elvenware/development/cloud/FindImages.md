@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/FindImages.md
 relativePath: elvenware/development/cloud/FindImages.md
 title: FindImages
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: FindImages.md
+fileNameHTML: FindImages.html
 ---
 
 <!-- toc -->

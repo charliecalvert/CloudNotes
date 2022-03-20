@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/StackEdit.md
 relativePath: elvenware/development/cloud/StackEdit.md
 title: StackEdit
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: StackEdit.md
+fileNameHTML: StackEdit.html
 ---
 
 <!-- toc -->

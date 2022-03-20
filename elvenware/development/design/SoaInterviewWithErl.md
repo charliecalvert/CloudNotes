@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/SoaInterviewW
 relativePath: elvenware/development/design/SoaInterviewWithErl.md
 title: SoaInterviewWithErl
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: SoaInterviewWithErl.md
+fileNameHTML: SoaInterviewWithErl.html
 ---
 
 <!-- toc -->

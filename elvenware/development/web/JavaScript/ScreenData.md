@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Scree
 relativePath: elvenware/development/web/JavaScript/ScreenData.md
 title: ScreenData
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: ScreenData.md
+fileNameHTML: ScreenData.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

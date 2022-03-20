@@ -30,7 +30,7 @@ app.configure(function() {
 });
 
 app.get('/', function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     fs.createReadStream(opts.baseDir + '/index.html').pipe(res);
 });
 
@@ -38,7 +38,7 @@ app.get('/token', function(req, res) {
     const ts = new Date().getTime();
     const rand = Math.floor(Math.random()*9999999);
     const secret = ts.toString() + rand.toString();
-    res.send({secret: secret, socketId: createHash(secret)});
+    res.send({ secret: secret, socketId: createHash(secret) });
 });
 
 var createHash = function(secret) {

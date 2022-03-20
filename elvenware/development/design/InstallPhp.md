@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/InstallPhp.md
 relativePath: elvenware/development/design/InstallPhp.md
 title: InstallPhp
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: InstallPhp.md
+fileNameHTML: InstallPhp.html
 ---
 
 <!-- toc -->

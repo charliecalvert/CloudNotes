@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/IisSecuri
 relativePath: elvenware/development/web/Server/IisSecurity.md
 title: IisSecurity
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: IisSecurity.md
+fileNameHTML: IisSecurity.html
 ---
 
 <!-- toc -->

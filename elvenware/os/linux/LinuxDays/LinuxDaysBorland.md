@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxDays/LinuxDaysBorl
 relativePath: elvenware/os/linux/LinuxDays/LinuxDaysBorland.md
 title: LinuxDaysBorland
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:55 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: LinuxDaysBorland.md
+fileNameHTML: LinuxDaysBorland.html
 ---
 
 <!-- toc -->

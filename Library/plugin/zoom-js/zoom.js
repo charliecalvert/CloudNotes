@@ -7,7 +7,7 @@
 
         if ( event[modifier] && isEnabled ) {
             event.preventDefault();
-            zoom.to({element: event.target, pan: false});
+            zoom.to({ element: event.target, pan: false });
         }
     } );
 

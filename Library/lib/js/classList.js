@@ -46,7 +46,7 @@ if (typeof document!=='undefined'&&!('classList' in document.createElement('a'))
         }; e.toString=function() {
             return this.join(' ');
         }; if (b.defineProperty) {
-            const l={get: i, enumerable: true, configurable: true}; try {
+            const l={ get: i, enumerable: true, configurable: true }; try {
                 b.defineProperty(m, a, l);
             } catch (h) {
                 if (h.number===-2146823252) {

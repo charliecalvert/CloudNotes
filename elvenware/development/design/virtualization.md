@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/virtualizatio
 relativePath: elvenware/development/design/virtualization.md
 title: Virtualization
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: virtualization.md
+fileNameHTML: virtualization.html
 ---
 
 <!-- toc -->

@@ -183,5 +183,5 @@ const RevealSearch = (function() {
 		}
 	}, false );
 */
-    return {open: openSearch};
+    return { open: openSearch };
 })();

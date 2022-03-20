@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/android/Networking.md
 relativePath: elvenware/os/android/Networking.md
 title: Networking
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:55 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Networking.md
+fileNameHTML: Networking.html
 ---
 
 <!-- toc -->

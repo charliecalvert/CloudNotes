@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/DataS
 relativePath: elvenware/development/web/JavaScript/DataStructures.md
 title: DataStructures
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: DataStructures.md
+fileNameHTML: DataStructures.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

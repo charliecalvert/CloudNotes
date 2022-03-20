@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/HttpBasic
 relativePath: elvenware/development/web/Server/HttpBasics.md
 title: HttpBasics
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: HttpBasics.md
+fileNameHTML: HttpBasics.html
 ---
 
 <!-- toc -->

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg-test/SvgDrawer.md
 relativePath: elvenware/Art/photos/svg-test/SvgDrawer.md
 title: SvgDrawer
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: SvgDrawer.md
+fileNameHTML: SvgDrawer.html
 ---
 
 <!-- toc -->

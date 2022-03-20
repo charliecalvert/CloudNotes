@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/PresentInternet.
 relativePath: elvenware/development/web/PresentInternet.md
 title: PresentInternet
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: PresentInternet.md
+fileNameHTML: PresentInternet.html
 ---
 
 <!-- toc -->

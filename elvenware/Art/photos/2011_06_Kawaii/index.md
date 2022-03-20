@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/2011_06_Kawaii/index.
 relativePath: elvenware/Art/photos/2011_06_Kawaii/index.md
 title: Index
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: index.md
+fileNameHTML: index.html
 ---
 
 <!-- toc -->

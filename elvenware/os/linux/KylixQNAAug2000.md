@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/KylixQNAAug2000.md
 relativePath: elvenware/os/linux/KylixQNAAug2000.md
 title: KylixQNAAug2000
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: KylixQNAAug2000.md
+fileNameHTML: KylixQNAAug2000.html
 ---
 
 <!-- toc -->

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/linux/Network-Config-Tips-5.m
 relativePath: elvenware/os/linux/Network-Config-Tips-5.md
 title: Network-Config-Tips-5
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Network-Config-Tips-5.md
+fileNameHTML: Network-Config-Tips-5.html
 ---
 
 <!-- toc -->

@@ -1,11 +1,12 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos/index.md
-relativePath: elvenware/development/csharp/videos/index.md
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/index.md
+relativePath: elvenware/development/csharp/index.md
 title: Index
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: index.md
 fileNameHTML: index.html
+id: 295
 ---
 
 <!-- toc -->

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/Androidx86.m
 relativePath: elvenware/development/android/Androidx86.md
 title: Androidx86
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Androidx86.md
+fileNameHTML: Androidx86.html
 ---
 
 <!-- toc -->

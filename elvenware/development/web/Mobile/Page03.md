@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/Page03.md
 relativePath: elvenware/development/web/Mobile/Page03.md
 title: Page03
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Page03.md
+fileNameHTML: Page03.html
 ---
 
 <!-- toc -->

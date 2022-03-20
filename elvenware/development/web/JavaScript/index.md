@@ -1,4 +1,14 @@
-## Table of Contents 
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/index.md
+relativePath: elvenware/development/web/JavaScript/index.md
+title: Index
+debug: aec has both but checking ELF code
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: index.md
+fileNameHTML: index.html
+subject: JavaScript
+queryPath: /javascript-guide/
+---
 
 <!-- toc -->
 <!-- tocstop -->
@@ -56,4 +66,3 @@ Please don't miss the JavaScriptModules page, as it covers material very importa
 -	[Use JQuery to Hide and Reveal Menus or Text](/javascript-guide/OnClickHandler.html)
 -	[JavaScript AutoRun](/javascript-guide/JavaScriptAutorun.html)
 -	[DoJo](/javascript-guide/DojoTest.html)
-

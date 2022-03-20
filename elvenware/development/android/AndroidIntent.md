@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/AndroidInten
 relativePath: elvenware/development/android/AndroidIntent.md
 title: AndroidIntent
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: AndroidIntent.md
+fileNameHTML: AndroidIntent.html
 ---
 
 <!-- toc -->

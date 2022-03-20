@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/windows/WindowsSetup.md
 relativePath: elvenware/os/windows/WindowsSetup.md
 title: WindowsSetup
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:55 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: WindowsSetup.md
+fileNameHTML: WindowsSetup.html
 ---
 
 <!-- toc -->

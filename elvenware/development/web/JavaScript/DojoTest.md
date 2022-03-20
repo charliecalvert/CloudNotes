@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/DojoT
 relativePath: elvenware/development/web/JavaScript/DojoTest.md
 title: DojoTest
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: DojoTest.md
+fileNameHTML: DojoTest.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/python_ii
 relativePath: elvenware/development/web/Python/python_iis.md
 title: Python_iis
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: python_iis.md
+fileNameHTML: python_iis.html
 ---
 
 <!-- toc -->

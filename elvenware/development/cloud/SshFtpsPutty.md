@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/SshFtpsPutty.m
 relativePath: elvenware/development/cloud/SshFtpsPutty.md
 title: SshFtpsPutty
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: SshFtpsPutty.md
+fileNameHTML: SshFtpsPutty.html
 ---
 
 <!-- toc -->

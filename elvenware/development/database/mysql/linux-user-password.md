@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql/linux
 relativePath: elvenware/development/database/mysql/linux-user-password.md
 title: Linux-user-password
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: linux-user-password.md
+fileNameHTML: linux-user-password.html
 ---
 
 <!-- toc -->

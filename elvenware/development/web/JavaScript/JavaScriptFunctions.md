@@ -3,8 +3,11 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaS
 relativePath: elvenware/development/web/JavaScript/JavaScriptFunctions.md
 title: JavaScriptFunctions
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
+fileNameMarkdown: JavaScriptFunctions.md
+fileNameHTML: JavaScriptFunctions.html
+queryPath: /javascript-guide/
 ---
 
 <!-- toc -->

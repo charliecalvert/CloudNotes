@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/poems/validate.md
 relativePath: elvenware/Art/poems/validate.md
 title: Validate
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: validate.md
+fileNameHTML: validate.html
 ---
 
 <!-- toc -->

@@ -1,3 +1,15 @@
+---
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptBasics.md
+relativePath: elvenware/development/web/JavaScript/JavaScriptBasics.md
+title: JavaScriptBasics
+debug: aec has both but checking ELF code
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: JavaScriptBasics.md
+fileNameHTML: JavaScriptBasics.html
+subject: JavaScript
+queryPath: /javascript-guide/
+---
+
 <!-- toc -->
 <!-- tocstop -->
 

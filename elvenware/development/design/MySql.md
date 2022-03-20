@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/MySql.md
 relativePath: elvenware/development/design/MySql.md
 title: MySql
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: MySql.md
+fileNameHTML: MySql.html
 ---
 
 <!-- toc -->

@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql/Mongo
 relativePath: elvenware/development/database/NoSql/MongoDb.md
 title: MongoDb
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: MongoDb.md
+fileNameHTML: MongoDb.html
 ---
 
 <!-- toc -->

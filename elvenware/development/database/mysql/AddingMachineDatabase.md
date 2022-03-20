@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql/Addin
 relativePath: elvenware/development/database/mysql/AddingMachineDatabase.md
 title: AddingMachineDatabase
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:54 PM
+creationLocalTime: 3/18/2022, 8:20:59 AM
+fileNameMarkdown: AddingMachineDatabase.md
+fileNameHTML: AddingMachineDatabase.html
 ---
 
 <!-- toc -->

@@ -73,5 +73,5 @@ const RevealNotes = (function() {
         }
     }, false );
 
-    return {open: openNotes};
+    return { open: openNotes };
 })();

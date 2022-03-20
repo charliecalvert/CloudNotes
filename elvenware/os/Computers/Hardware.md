@@ -3,7 +3,9 @@ fullPath: /home/ubuntu/Git/CloudNotes/elvenware/os/Computers/Hardware.md
 relativePath: elvenware/os/Computers/Hardware.md
 title: Hardware
 debug: aec has both but checking ELF code
-creationLocalTime: 3/11/2022, 4:02:55 PM
+creationLocalTime: 3/18/2022, 8:21:00 AM
+fileNameMarkdown: Hardware.md
+fileNameHTML: Hardware.html
 ---
 
 <!-- toc -->
