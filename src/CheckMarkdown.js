@@ -14,14 +14,16 @@ const { setupElfCode } = require('../lib/getElfCode');
 async function main() {
     let count = 0;
     const matterData = [];
-    for await (const relativePath of walker('elvenware')) {
-        count++;
-        const fileName = setupFileName(relativePath);
-        const elfCodes = await setupElfCode(fileName, relativePath);
+    for await (const relativePath of walker('.')) {
+        if (!relativePath.includes('node_modules')) {
+            count++;
+            const fileName = setupFileName(relativePath);
+            const elfCodes = await setupElfCode(fileName, relativePath);
 
-        setMatterData(elfCodes, count, matterData);
-        await fsp.writeFile(fileName, elfCodes.markdown, 'utf8');
-        debugMain('count', count);
+            setMatterData(elfCodes, count, matterData);
+            await fsp.writeFile(fileName, elfCodes.markdown, 'utf8');
+            debugMain('count', count);
+        }
     }
     // if (count === 100) {
     // const fsp = require('fs').promises;
