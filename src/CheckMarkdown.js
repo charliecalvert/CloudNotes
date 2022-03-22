@@ -2,6 +2,8 @@ const fsp = require('fs').promises;
 const elfUtils = require('elven-code').elfUtils;
 
 const walker = require('walk-directories').walker;
+const { setupFileName, setMatterData } = require('./utils');
+
 const debugMain = require('debug')('check-main');
 const debugDetail = require('debug')('check-main-detail');
 const { setupElfCode } = require('../lib/getElfCode');
@@ -14,27 +16,12 @@ async function main() {
     const matterData = [];
     for await (const relativePath of walker('elvenware')) {
         count++;
-        const fileName = elfUtils.ensureEndsWithPathSep(__dirname) + relativePath;
-        debugMain('fileName', fileName);
-        debugMain('getTitle', elfUtils.getTitleFromPath(fileName));
-        if (fileName.includes('/development/web/JavaScript/index.md')) {
-            debugDetail(fileName);
-        }
+        const fileName = setupFileName(relativePath);
         const elfCodes = await setupElfCode(fileName, relativePath);
-        /* try {
-            if (elfCodes.data.fullPath.includes('/development/web/JavaScript/')) {
-                debugDetail(elfCodes.data.fullPath);
-            }
-        } catch (error) {
-            debugDetail(error, elfCodes);
-        } */
-        
-        if (elfCodes.data) {
-            elfCodes.data.id = count;
-            matterData.push(elfUtils.objectToJson(elfCodes.data));
-            await fsp.writeFile(fileName, elfCodes.markdown, 'utf8');
-            debugMain('count', count);
-        }
+
+        setMatterData(elfCodes, count, matterData);
+        await fsp.writeFile(fileName, elfCodes.markdown, 'utf8');
+        debugMain('count', count);
     }
     // if (count === 100) {
     // const fsp = require('fs').promises;
@@ -44,6 +31,15 @@ async function main() {
     // }
 }
 
+function testJavaScript() {
+    try {
+        if (elfCodes.data.fullPath.includes('/development/web/JavaScript/')) {
+            debugDetail(elfCodes.data.fullPath);
+        }
+    } catch (error) {
+        debugDetail(error, elfCodes);
+    }
+}
 exports.main = main;
 main().catch(console.error);
 
