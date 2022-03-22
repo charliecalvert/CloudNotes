@@ -5,7 +5,9 @@
     "main": "remote.js",
     "scripts": {
         "start": "DEBUG=check-main-detail node src/CheckMarkdown.js",
-        "test": "DEBUG=check-get-elf jest"
+        "test": "DEBUG=check-markdown-both jest --watch",
+        "create-new-ids": "DEBUG=check-main-detail node src/RecreateAllIds.js"
+
     },
     "repository": {
         "type": "git",
