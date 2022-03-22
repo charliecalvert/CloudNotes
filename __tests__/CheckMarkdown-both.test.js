@@ -4,7 +4,8 @@
 
 describe('CheckMarkdown Both Suite', function() {
     'use strict';
-    const debug = require('debug')('check-markdown');
+    const elfUtils = require('elven-code').elfUtils;
+    const debug = require('debug')('check-markdown-both');
     const { getElfCode } = require('../lib/getElfCode');
 
     const fileName = './__tests__/About-both.md';
@@ -29,6 +30,36 @@ describe('CheckMarkdown Both Suite', function() {
     test('markdown', async () => {
         const result = await getElfCode(fileName);
         expect(result.markdown).not.toContain('margietitle: Hello');
+    });
+
+    function cleanName() {
+        debug('__DIRNAME', __dirname);
+        return __dirname.substring(0, __dirname.indexOf('__tests__'));
+    }
+
+    const getMatters = async () => {
+        const fileName = cleanName() + '/all-matter.json';
+        let matters = await elfUtils.readFileAsync(fileName);
+        matters = JSON.parse(matters);
+        return matters;
+    };
+
+    const allFields = ['id', 'queryPath', 'relativePath', 'subject', 
+        'debug', 'creationLocalTime', 'fullPath', 'title',
+        'fileNameMarkdown', 'fileNameHTML'];
+
+    test.only('check for all fields', async () => {
+        const matters = await getMatters();
+        if (matters.length > 0) {
+            const hasAllFields = matters.every((matter, index, array) => {
+                expect(matter).toContain(allFields[0]);
+                expect(matter).toHaveProperty('id');
+                return matter.query;
+            });
+            debug(hasAllFields);
+        } else {
+            throw new Error('retrieved empty all-matters.json array.');
+        }
     });
 });
 
