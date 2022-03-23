@@ -4,9 +4,10 @@
 
 describe('CheckMarkdown Both Suite', function() {
     'use strict';
-    const { readFileAsync, splitStringOnAnyInstanceOfCharacter } = require('elven-code').elfUtils;
+    const { readFileAsync, endsWith } = require('elven-code').elfUtils;
     const debug = require('debug')('check-markdown-both');
     const { getElfCode } = require('../lib/getElfCode');
+    const { getSubject } = require('../lib/addElfCode/library');
     const path = require('path');
 
     const fileName = './__tests__/About-both.md';
@@ -36,12 +37,6 @@ describe('CheckMarkdown Both Suite', function() {
     function cleanName() {
         debug('__DIRNAME', __dirname);
         return __dirname.substring(0, __dirname.indexOf('__tests__'));
-    }
-
-    function getSubject(path) {
-        debug('GET_SUBJECT', path);
-        return splitStringOnAnyInstanceOfCharacter(path, path.sep, 2)
-        // return __dirname.substring(0, __dirname.indexOf('__tests__'));
     }
 
     const getMatters = async () => {
@@ -88,14 +83,11 @@ describe('CheckMarkdown Both Suite', function() {
         }
     });
 
-    test.only('get subject', () => {
-        const filPath = '/home/ubuntu/Git/CloudNotes/javascript-guide/BasicSyntax.md';
-        const subject = getSubject(filPath);
-
-        const parts = filPath.split(path.sep);
-        debug('PARTS', parts);
+    test('get subject', () => {
+        const fullPath = '/home/ubuntu/Git/CloudNotes/javascript-guide/BasicSyntax.md';
+        const subject = getSubject(fullPath);
         const expected = 'javascript-guide';
-        expect(parts[parts.length - 2]).toBe(expected);
+        expect(subject).toBe(expected);
     });
 });
 
