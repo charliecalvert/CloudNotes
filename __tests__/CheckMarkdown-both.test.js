@@ -50,10 +50,14 @@ describe('CheckMarkdown Both Suite', function() {
 
     test.only('check for all fields', async () => {
         const matters = await getMatters();
+        let count = 0;
+        
         if (matters.length > 0) {
             const hasAllFields = matters.every((matter, index, matterArray) => {
                 // expect(matter).toContain(allFields[0]);
-                allFields.every((field, index, fieldArray) => {
+                debug('CHECK_ALL_FIELDS_INDEX', index);
+                let innerCount = 0;
+                allFields.every((field, innerIndex, fieldArray) => {
                     try {
                         expect(matter).toHaveProperty(field);
                     } catch (error) {
@@ -61,11 +65,16 @@ describe('CheckMarkdown Both Suite', function() {
                         debug('MISSING FIELD', field);
                         return false;
                     }
+                    innerCount++;
+                    debug('CHECK_ALL_FIELDS_INNER_INDEX', innerIndex);
                     return true;
                 })
-                
+                expect(innerCount).toBe(allFields.length);
+                count++;
+                debug('CHECK_ALL_FIELDS_COUNT', count);
+                return true;
             });
-            debug(hasAllFields);
+            debug('CHECK_ALL_FIELDS_RESULT', hasAllFields);
             expect(hasAllFields).toBeTruthy();
         } else {
             throw new Error('retrieved empty all-matters.json array.');
