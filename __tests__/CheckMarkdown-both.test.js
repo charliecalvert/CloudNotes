@@ -4,9 +4,10 @@
 
 describe('CheckMarkdown Both Suite', function() {
     'use strict';
-    const elfUtils = require('elven-code').elfUtils;
+    const { readFileAsync, splitStringOnAnyInstanceOfCharacter } = require('elven-code').elfUtils;
     const debug = require('debug')('check-markdown-both');
     const { getElfCode } = require('../lib/getElfCode');
+    const path = require('path');
 
     const fileName = './__tests__/About-both.md';
 
@@ -37,9 +38,15 @@ describe('CheckMarkdown Both Suite', function() {
         return __dirname.substring(0, __dirname.indexOf('__tests__'));
     }
 
+    function getSubject(path) {
+        debug('GET_SUBJECT', path);
+        return splitStringOnAnyInstanceOfCharacter(path, path.sep, 2)
+        // return __dirname.substring(0, __dirname.indexOf('__tests__'));
+    }
+
     const getMatters = async () => {
         const fileName = cleanName() + '/all-matter.json';
-        let matters = await elfUtils.readFileAsync(fileName);
+        let matters = await readFileAsync(fileName);
         matters = JSON.parse(matters);
         return matters;
     };
@@ -48,7 +55,7 @@ describe('CheckMarkdown Both Suite', function() {
         'debug', 'creationLocalTime', 'fullPath', 'title',
         'fileNameMarkdown', 'fileNameHTML'];
 
-    test.only('check for all fields', async () => {
+    test('check for all fields', async () => {
         const matters = await getMatters();
         let count = 0;
         
@@ -79,6 +86,16 @@ describe('CheckMarkdown Both Suite', function() {
         } else {
             throw new Error('retrieved empty all-matters.json array.');
         }
+    });
+
+    test.only('get subject', () => {
+        const filPath = '/home/ubuntu/Git/CloudNotes/javascript-guide/BasicSyntax.md';
+        const subject = getSubject(filPath);
+
+        const parts = filPath.split(path.sep);
+        debug('PARTS', parts);
+        const expected = 'javascript-guide';
+        expect(parts[parts.length - 2]).toBe(expected);
     });
 });
 
