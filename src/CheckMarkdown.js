@@ -1,11 +1,11 @@
 const fsp = require('fs').promises;
-const elfUtils = require('elven-code').elfUtils;
+// const elfUtils = require('elven-code').elfUtils;
 
 const walker = require('walk-directories').walker;
 const { setupFileName, setMatterData } = require('./utils');
 
 const debugMain = require('debug')('check-main');
-const debugDetail = require('debug')('check-main-detail');
+// const debugDetail = require('debug')('check-main-detail');
 const { setupElfCode } = require('../lib/getElfCode');
 
 
@@ -33,15 +33,6 @@ async function main() {
     // }
 }
 
-function testJavaScript() {
-    try {
-        if (elfCodes.data.fullPath.includes('/development/web/JavaScript/')) {
-            debugDetail(elfCodes.data.fullPath);
-        }
-    } catch (error) {
-        debugDetail(error, elfCodes);
-    }
-}
 exports.main = main;
 main().catch(console.error);
 

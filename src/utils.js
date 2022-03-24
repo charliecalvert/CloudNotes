@@ -25,6 +25,17 @@ function setMatterData(elfCodes, count, matterData) {
     }
 }
 
+function testJavaScript(elfCodes) {
+    try {
+        if (elfCodes.data.fullPath.includes('/development/web/JavaScript/')) {
+            debugUtil(elfCodes.data.fullPath);
+        }
+    } catch (error) {
+        debugUtil(error, elfCodes);
+    }
+}
+
 exports.cleanName = cleanName;
 exports.setupFileName = setupFileName;
 exports.setMatterData = setMatterData;
+exports.testJavaScript = testJavaScript
