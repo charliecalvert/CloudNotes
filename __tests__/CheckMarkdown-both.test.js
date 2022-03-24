@@ -4,11 +4,10 @@
 
 describe('CheckMarkdown Both Suite', function() {
     'use strict';
-    const { readFileAsync, endsWith } = require('elven-code').elfUtils;
+    const { readFileAsync } = require('elven-code').elfUtils;
     const debug = require('debug')('check-markdown-both');
     const { getElfCode } = require('../lib/getElfCode');
     const { getSubject } = require('../lib/addElfCode/library');
-    const path = require('path');
 
     const fileName = './__tests__/About-both.md';
 
@@ -58,8 +57,10 @@ describe('CheckMarkdown Both Suite', function() {
             const hasAllFields = matters.every((matter, index, matterArray) => {
                 // expect(matter).toContain(allFields[0]);
                 debug('CHECK_ALL_FIELDS_INDEX', index);
+                debug('CHECK_ALL_FIELDS_INDEX', matterArray);
                 let innerCount = 0;
                 allFields.every((field, innerIndex, fieldArray) => {
+                    debug('CHECK_ALL_FIELDS_INDEX', fieldArray);
                     try {
                         expect(matter).toHaveProperty(field);
                     } catch (error) {
