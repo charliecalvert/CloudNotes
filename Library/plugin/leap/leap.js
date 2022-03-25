@@ -134,15 +134,15 @@
             return this.history.get(num)||Frame.Invalid;
         }; Controller.prototype.loop=function(callback) {
             switch (callback.length) {
-                case 1: this.on(this.frameEventName, callback); break; case 2: var controller=this; var scheduler=null; var immediateRunnerCallback=function(frame) {
-                    callback(frame, function() {
-                        if (controller.lastFrame!=frame) {
-                            immediateRunnerCallback(controller.lastFrame);
-                        } else {
-                            controller.once(controller.frameEventName, immediateRunnerCallback);
-                        }
-                    });
-                }; this.once(this.frameEventName, immediateRunnerCallback); break;
+            case 1: this.on(this.frameEventName, callback); break; case 2: var controller=this; var scheduler=null; var immediateRunnerCallback=function(frame) {
+                callback(frame, function() {
+                    if (controller.lastFrame!=frame) {
+                        immediateRunnerCallback(controller.lastFrame);
+                    } else {
+                        controller.once(controller.frameEventName, immediateRunnerCallback);
+                    }
+                });
+            }; this.once(this.frameEventName, immediateRunnerCallback); break;
             } this.connect();
         }; Controller.prototype.addStep=function(step) {
             if (!this.pipeline) this.pipeline=new Pipeline(this); this.pipeline.addStep(step);
@@ -253,7 +253,7 @@
 }, { './gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, 'gl-matrix': 19, 'underscore': 20 }], 6: [function(require, module, exports) {
     const glMatrix=require('gl-matrix'); const vec3=glMatrix.vec3; const EventEmitter=require('events').EventEmitter; const _=require('underscore'); const createGesture=exports.createGesture=function(data) {
         let gesture; switch (data.type) {
-            case 'circle': gesture=new CircleGesture(data); break; case 'swipe': gesture=new SwipeGesture(data); break; case 'screenTap': gesture=new ScreenTapGesture(data); break; case 'keyTap': gesture=new KeyTapGesture(data); break; default: throw 'unkown gesture type';
+        case 'circle': gesture=new CircleGesture(data); break; case 'swipe': gesture=new SwipeGesture(data); break; case 'screenTap': gesture=new ScreenTapGesture(data); break; case 'keyTap': gesture=new KeyTapGesture(data); break; default: throw 'unkown gesture type';
         }gesture.id=data.id; gesture.handIds=data.handIds; gesture.pointableIds=data.pointableIds; gesture.duration=data.duration; gesture.state=data.state; gesture.type=data.type; return gesture;
     }; const gestureListener=exports.gestureListener=function(controller, type) {
         const handlers={}; const gestureMap={}; const gestureCreator=function() {
@@ -389,17 +389,17 @@
         this.type=data.type; this.state=data.state;
     }; const chooseProtocol=exports.chooseProtocol=function(header) {
         let protocol; switch (header.version) {
-            case 1: protocol=JSONProtocol(1, function(data) {
-                return new Frame(data);
-            }); break; case 2: protocol=JSONProtocol(2, function(data) {
-                return new Frame(data);
-            }); protocol.sendHeartbeat=function(connection) {
-                    connection.send(protocol.encode({ heartbeat: true }));
-                }; break; case 3: protocol=JSONProtocol(3, function(data) {
-                return data.event?new Event(data.event):new Frame(data);
-            }); protocol.sendHeartbeat=function(connection) {
-                    connection.send(protocol.encode({ heartbeat: true }));
-                }; break; default: throw 'unrecognized version';
+        case 1: protocol=JSONProtocol(1, function(data) {
+            return new Frame(data);
+        }); break; case 2: protocol=JSONProtocol(2, function(data) {
+            return new Frame(data);
+        }); protocol.sendHeartbeat=function(connection) {
+                connection.send(protocol.encode({ heartbeat: true }));
+            }; break; case 3: protocol=JSONProtocol(3, function(data) {
+            return data.event?new Event(data.event):new Frame(data);
+        }); protocol.sendHeartbeat=function(connection) {
+                connection.send(protocol.encode({ heartbeat: true }));
+            }; break; default: throw 'unrecognized version';
         } return protocol;
     }; var JSONProtocol=function(version, cb) {
         const protocol=cb; protocol.encode=function(message) {
@@ -475,7 +475,7 @@
                 }
             } if (!this._events) return false; const handler=this._events[type]; if (!handler) return false; if (typeof handler=='function') {
                 switch (arguments.length) {
-                    case 1: handler.call(this); break; case 2: handler.call(this, arguments[1]); break; case 3: handler.call(this, arguments[1], arguments[2]); break; default: var args=Array.prototype.slice.call(arguments, 1); handler.apply(this, args);
+                case 1: handler.call(this); break; case 2: handler.call(this, arguments[1]); break; case 3: handler.call(this, arguments[1], arguments[2]); break; default: var args=Array.prototype.slice.call(arguments, 1); handler.apply(this, args);
                 } return true;
             } else if (isArray(handler)) {
                 var args=Array.prototype.slice.call(arguments, 1); const listeners=handler.slice(); for (let i=0, l=listeners.length; i<l; i++) {
@@ -1261,7 +1261,7 @@
                 interceptor(obj); return obj;
             }; var eq=function(a, b, aStack, bStack) {
                 if (a===b) return a!==0||1/a==1/b; if (a==null||b==null) return a===b; if (a instanceof _)a=a._wrapped; if (b instanceof _)b=b._wrapped; const className=toString.call(a); if (className!=toString.call(b)) return false; switch (className) {
-                    case '[object String]': return a==String(b); case '[object Number]': return a!=+a?b!=+b:a==0?1/a==1/b:a==+b; case '[object Date]': case '[object Boolean]': return +a==+b; case '[object RegExp]': return a.source==b.source&&a.global==b.global&&a.multiline==b.multiline&&a.ignoreCase==b.ignoreCase;
+                case '[object String]': return a==String(b); case '[object Number]': return a!=+a?b!=+b:a==0?1/a==1/b:a==+b; case '[object Date]': case '[object Boolean]': return +a==+b; case '[object RegExp]': return a.source==b.source&&a.global==b.global&&a.multiline==b.multiline&&a.ignoreCase==b.ignoreCase;
                 } if (typeof a!='object'||typeof b!='object') return false; let length=aStack.length; while (length--) {
                     if (aStack[length]==a) return bStack[length]==b;
                 }aStack.push(a); bStack.push(b); let size=0; let result=true; if (className=='[object Array]') {

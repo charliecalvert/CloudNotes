@@ -59,4 +59,4 @@ if (typeof document!=='undefined'&&!('classList' in document.createElement('a'))
             }
         }
     }(self));
-};
+}

@@ -1,6 +1,15 @@
 ---
 title: Hello
 slug: home
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/__tests__/About-elf.md
+relativePath: __tests__/About-elf.md
+fileNameMarkdown: About-elf.md
+fileNameHTML: About-elf.html
+subject: __tests__
+queryPath: __tests__/
+debug: aec has no TOC code
+creationLocalTime: 3/24/2022, 11:05:18 AM
 ---
 
 ## Overview-TEST

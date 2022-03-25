@@ -19,7 +19,7 @@ io.sockets.on('connection', function(socket) {
         if (createHash(slideData.secret) === slideData.socketId) {
             slideData.secret = null;
             socket.broadcast.emit(slideData.socketId, slideData);
-        };
+        }
     });
 });
 

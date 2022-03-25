@@ -5750,7 +5750,7 @@ var Sink = this.Sink = (function(global) {
             }
         }
         this._listeners = {};
-    };
+    }
 
     EventEmitter.prototype = {
         _listeners: null,

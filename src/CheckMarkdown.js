@@ -15,9 +15,10 @@ async function main() {
     let count = 0;
     const matterData = [];
     for await (const relativePath of walker('.')) {
-        if (!relativePath.includes('node_modules')) {
+        const fileName = setupFileName(relativePath);
+        if (shouldProcess(relativePath, fileName)) {
             count++;
-            const fileName = setupFileName(relativePath);
+            
             const elfCodes = await setupElfCode(fileName, relativePath);
 
             setMatterData(elfCodes, count, matterData);
@@ -29,8 +30,23 @@ async function main() {
     // const fsp = require('fs').promises;
     const json = JSON.stringify(matterData, null, 4);
     await fsp.writeFile('all-matter.json', json, 'utf8');
-    // return;
-    // }
+
+    function shouldProcess(relativePath, fileName) {
+        let valid = true;
+
+        if (fileName.includes('About-toc.md')) {
+            valid = false;
+        }
+
+        if (fileName.includes('About-elf.md')) {
+            valid = false;
+        }
+
+        if (!relativePath.includes('node_modules')) {
+            valid = false;
+        }
+        return valid;
+    }
 }
 
 exports.main = main;

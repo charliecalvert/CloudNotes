@@ -4,13 +4,14 @@
 
 describe('CheckMarkdown TOC Suite', function() {
     'use strict';
-    const debug = require('debug')('check-markdown');
+    const debug = require('debug')('check-markdown-toc');
     const { getElfCode } = require('../lib/getElfCode');
 
     const fileName = './__tests__/About-toc.md';
 
     test('hasElfCode()', async () => {
         const result = await getElfCode(fileName);
+        debug('hasElfCode', result);
         // "hasElfCode": true, "hasTocCode": true
         expect(result.hasElfCode).toBe(false);
     });

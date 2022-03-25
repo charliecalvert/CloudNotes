@@ -160,13 +160,13 @@ const RevealSearch = (function() {
 
     document.getElementById('searchinput').addEventListener( 'keyup', function( event ) {
         switch (event.keyCode) {
-            case 13:
-                event.preventDefault();
-                doSearch();
-                searchboxDirty = false;
-                break;
-            default:
-                searchboxDirty = true;
+        case 13:
+            event.preventDefault();
+            doSearch();
+            searchboxDirty = false;
+            break;
+        default:
+            searchboxDirty = true;
         }
     }, false );
 

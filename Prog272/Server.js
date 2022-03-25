@@ -131,17 +131,17 @@ function getBinaryFile(fileName, response) {
 function getType(ext) {
     'use strict';
     switch (ext) {
-        case 'css':
-            return 'text/css';
-        case 'html':
-        case 'htm':
-            return 'text/html';
-        case 'js':
-            return 'text/javascript';
-        case 'json':
-            return 'application/json';
-        default:
-            throw 'Unknown type: ' + ext;
+    case 'css':
+        return 'text/css';
+    case 'html':
+    case 'htm':
+        return 'text/html';
+    case 'js':
+        return 'text/javascript';
+    case 'json':
+        return 'application/json';
+    default:
+        throw 'Unknown type: ' + ext;
     }
 }
 

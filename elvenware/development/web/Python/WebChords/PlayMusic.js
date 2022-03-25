@@ -102,7 +102,7 @@ function playExample(keyChoice, pattern) {
         return chordPattern;
     };
     const app = new SchedulerApp();
-};
+}
 
 
 const AudioletApp = function() {
