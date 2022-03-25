@@ -5,9 +5,11 @@
     "main": "remote.js",
     "scripts": {
         "start": "DEBUG=check-main,check-main-detail node src/CheckMarkdown.js",
-        "test": "DEBUG=check-markdown-both jest --watch CheckMarkdown-both",
-        "create-new-ids": "DEBUG=check-main,check-main-detail node src/RecreateAllIds.js"
-
+        "test": "jest",
+        "test-check-both": "DEBUG=check-markdown-both jest --watch CheckMarkdown-both",
+        "test-check-toc": "DEBUG=check-markdown-toc jest --watch CheckMarkdown-toc",
+        "create-new-ids": "DEBUG=check-main,check-main-detail node src/RecreateAllIds.js",
+        "git add-js": "scripts/addjs"
     },
     "repository": {
         "type": "git",
