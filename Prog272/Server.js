@@ -1,6 +1,6 @@
 /*
-	Server.js by Charlie Calvert
-	v0.2.2
+    Server.js by Charlie Calvert
+    v0.2.2
 */
 
 const http = require('http');
@@ -19,26 +19,26 @@ function getPath(request) {
 function getExtension(fileName) {
     'use strict';
     const fileNameArray = fileName.split('.');
-    if (fileNameArray.length === 1 || (fileNameArray[0] === '' && fileNameArray.length === 2 )) {
+    if (fileNameArray.length === 1 || (fileNameArray[0] === '' && fileNameArray.length === 2)) {
         return '';
     }
     return fileNameArray.pop().toLowerCase();
 }
 
 // Add endsWith method to String
-if ( typeof String.prototype.endsWith !== 'function') {
-    String.prototype.endsWith = function(suffix) {
+if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function (suffix) {
         'use strict';
         return this.indexOf(suffix, this.length - suffix.length) !== -1;
     };
 }
 
-var findFile = function(dir, fileName, done) {
+var findFile = function (dir, fileName, done) {
     'use strict';
     let results = [];
     const ext = path.extname(fileName);
     try {
-        fs.readdir(dir, function(err, list) {
+        fs.readdir(dir, function (err, list) {
             if (err) {
                 console.log('ERROR!!!!');
                 return done(err);
@@ -47,37 +47,38 @@ var findFile = function(dir, fileName, done) {
             if (!pending) {
                 return done(null, results);
             }
-            try {
-                list.forEach(function(file) {
-                    file = dir + '/' + file;
-                    fs.stat(file, function(err, stat) {
-                        if (stat && stat.isDirectory()) {
-                            findFile(file, fileName, function(err, res) {
-                                results = results.concat(res);
-                                if (!--pending) {
-                                    done(null, results);
-                                }
-                            });
-                        } else {
-                            // console.log("Pending: " + pending + " File " + file);
-                            const newExt = path.extname(file);
-                            if (newExt !== '' && newExt === ext) {
-                                if (file.endsWith(fileName)) {
-                                    file = file.replace(/\\/g, '\/');
-                                    results.push(file);
-                                }
-                            } else {
-                                // console.log("Rejecting: " + file + " FileName " + fileName);
-                            }
+            // try {
+            list.forEach(function (file) {
+                file = dir + '/' + file;
+                fs.stat(file, function (err, stat) {
+                    if (stat && stat.isDirectory()) {
+                        findFile(file, fileName, function (err, res) {
+                            results = results.concat(res);
                             if (!--pending) {
                                 done(null, results);
                             }
+                        });
+                    } else {
+                        // console.log("Pending: " + pending + " File " + file);
+                        const newExt = path.extname(file);
+                        if (newExt !== '' && newExt === ext) {
+                            if (file.endsWith(fileName)) {
+                                // was replace(/\\/g, '\/') but eslint no useless escape
+                                file = file.replace(/\\/g, '/');
+                                results.push(file);
+                            }
+                        } else {
+                            // console.log("Rejecting: " + file + " FileName " + fileName);
                         }
-                    });
+                        if (!--pending) {
+                            done(null, results);
+                        }
+                    }
                 });
-            } catch (e) {
-                throw e;
-            }
+            });
+            /*  } catch (e) {
+                 throw e;
+             } */
         });
     } catch (e) {
         console.log('Can\'t read');
@@ -101,7 +102,7 @@ function getFile(fileName) {
 function getBinaryFile(fileName, response) {
     'use strict';
     try {
-        fs.readFile(fileName, 'binary', function(err, path) {
+        fs.readFile(fileName, 'binary', function (err, path) {
             if (err) {
                 console.log('***** ELF BINARY ERROR REPORT *****');
                 console.log(err.name);
@@ -159,7 +160,8 @@ function loadContent(request, response) {
     console.log('Request for ' + path + ' received.');
     if (ext === 'css' || ext === 'html' || ext === 'htm' || ext === 'js' || ext === 'json') {
         setLastHtml(path, ext);
-        findFile(__dirname, path.replace('\/', ''), function(err, results) {
+        // was replace('\/', '') but eslint no useless escape
+        findFile(__dirname, path.replace('/', ''), function (err, results) {
             console.log('Found: ' + path);
             const css = getFile(results[0]);
             if (css === null) {
@@ -172,8 +174,9 @@ function loadContent(request, response) {
                 response.end();
             }
         });
-    } else if (getExtension(path) === 'png' || getExtension(path) === 'gif' || getExtension(path) === 'jpg'|| getExtension(path) === 'mp3') {
-        findFile(__dirname, path.replace('\/', ''), function(err, results) {
+    } else if (getExtension(path) === 'png' || getExtension(path) === 'gif' || getExtension(path) === 'jpg' || getExtension(path) === 'mp3') {
+        // was replace('\/', '') but eslint no useless escape
+        findFile(__dirname, path.replace('/', ''), function (err, results) {
             console.log('Found: ' + path);
             getBinaryFile(results[0], response);
         });

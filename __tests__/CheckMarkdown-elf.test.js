@@ -4,7 +4,7 @@
 
 describe('CheckMarkdown ELF Suite', function() {
     'use strict';
-    const debug = require('debug')('check-markdown');
+    // const debug = require('debug')('check-markdown');
     const { getElfCode } = require('../lib/getElfCode');
 
     const fileName = './__tests__/About-elf.md';

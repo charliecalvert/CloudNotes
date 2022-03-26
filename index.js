@@ -89,6 +89,7 @@ function generate(options) {
                         }
                     }
 
+                    // eslint-disable-next-line no-prototype-builtins
                     if (!seen.hasOwnProperty(val)) {
                         seen[val] = 0;
                     } else {

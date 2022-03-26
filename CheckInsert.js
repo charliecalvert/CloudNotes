@@ -4,11 +4,11 @@ const insert = require('./lib/insert.js');
 
 const elfUtils = require('elven-code').elfUtils;
 const fileName = './CloudNotes.md';
-const elf = require('markdown-elf');
+// const elf = require('markdown-elf');
 const toc = require('markdown-toc');
 
 async function getFile(str, options) {
-    const regex = options.regex || /(?:<!-- toc(?:\s*stop)? -->)/g;
+    // const regex = options.regex || /(?:<!-- toc(?:\s*stop)? -->)/g;
     const open = typeof options.open === 'string' ? options.open : '<!-- toc -->\n\n';
     const close = typeof options.close === 'string' ? options.close : '<!-- tocstop -->';
 
@@ -18,7 +18,7 @@ async function getFile(str, options) {
     console.log(insert(markdown));
 }
 
-async function getMarkdown(str, options) {
+async function getMarkdown(/* str, options */) {
     let markdown = await elfUtils.readFileAsync(fileName);
     markdown = toc.insert(markdown);
     console.log(insert(markdown));
@@ -30,3 +30,6 @@ async function getMarkdown(str, options) {
 }); */
 
 getMarkdown('foobar');
+
+// This is just eslint
+exports.getFile = getFile;

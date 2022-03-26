@@ -1,10 +1,10 @@
-const fsp = require('fs').promises;
-const elfUtils = require('elven-code').elfUtils;
+// const fsp = require('fs').promises;
+// const elfUtils = require('elven-code').elfUtils;
 const { setupFileName, setMatterData } = require('./utils');
 
 const walker = require('walk-directories').walker;
 const debugMain = require('debug')('check-main');
-const debugDetail = require('debug')('check-main-detail');
+// const debugDetail = require('debug')('check-main-detail');
 const { setupElfCode } = require('../lib/getElfCode');
 
 
@@ -13,8 +13,8 @@ const { setupElfCode } = require('../lib/getElfCode');
 async function main() {
     let count = 0;
     const matterData = [];
-    count = await runWalker(count, matterData);
-    const json = JSON.stringify(matterData, null, 4);
+    await runWalker(count, matterData);
+    return JSON.stringify(matterData, null, 4);
 }
 
 exports.main = main;

@@ -2,7 +2,7 @@ let context;
 let context02;
 let image;
 
-$('document').ready(function() {
+$('document').ready(function () {
     'use strict';
     console.log('Document Ready called');
     const canvas01 = $('#canvas01');
@@ -15,7 +15,7 @@ function loadImage(callback) {
     'use strict';
     console.log('loadImage called');
     const image = new Image();
-    image.onload = function() {
+    image.onload = function () {
         callback(image);
     };
     image.src = 'images/cscGarden.png';
@@ -23,11 +23,11 @@ function loadImage(callback) {
 
 function doLoad() {
     'use strict';
-    conole.log('doLoad called');
+    console.log('doLoad called');
     const canvas01 = document.getElementById('canvas01');
     const context = canvas01.getContext('2d');
-    loadImage(function(image) {
-	  context.drawImage(image, 0, 0);
+    loadImage(function (image) {
+        context.drawImage(image, 0, 0);
     });
 }
 
@@ -36,9 +36,9 @@ function doLoader() {
     console.log('doLoader called');
     image = new Image();
     image.src = 'images/cscGarden.png';
-    $(image).load(function() {
-	  context.drawImage(image, 0, 0);
-	  context.clearRect(0, 0, 75, 75);
+    $(image).load(function () {
+        context.drawImage(image, 0, 0);
+        context.clearRect(0, 0, 75, 75);
     });
 }
 

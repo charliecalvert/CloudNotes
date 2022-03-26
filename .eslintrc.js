@@ -5,6 +5,7 @@ module.exports = {
         "es2021": true,
         "node": true,
         "jest": true,
+        "jquery": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {

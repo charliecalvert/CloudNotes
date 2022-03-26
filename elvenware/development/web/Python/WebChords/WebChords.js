@@ -1,3 +1,5 @@
+// const $ = require('jquery');
+// const request = require('request');
 let chords;
 
 $('document').ready(function() {

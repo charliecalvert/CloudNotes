@@ -4,7 +4,7 @@ const spawn = require('child_process').spawn;
 const execPush = () => {
     return new Promise(function(resolve, reject) {
         const yourscript = exec('~/Git/CloudNotes/push "new code"',
-            (error, stdout, stderr) => {
+            (error/* , stdout, stderr */) => {
                 // console.log(`${stderr}`);
                 if (error !== null) {
                     console.log(`exec error: ${error}`);
