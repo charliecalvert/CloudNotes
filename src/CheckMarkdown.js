@@ -32,6 +32,7 @@ async function main() {
     await fsp.writeFile('all-matter.json', json, 'utf8');
 
     function shouldProcess(relativePath, fileName) {
+
         let valid = true;
 
         if (fileName.includes('About-toc.md')) {
@@ -42,7 +43,7 @@ async function main() {
             valid = false;
         }
 
-        if (!relativePath.includes('node_modules')) {
+        if (relativePath.includes('node_modules')) {
             valid = false;
         }
         return valid;
