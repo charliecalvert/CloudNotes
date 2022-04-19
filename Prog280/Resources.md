@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog280/Resources.md
+relativePath: Prog280/Resources.md
+title: Resources
+queryPath: Prog280/
+subject: Prog280
+fileNameMarkdown: Resources.md
+fileNameHTML: Resources.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Resources for Prog 280
 ======================
 

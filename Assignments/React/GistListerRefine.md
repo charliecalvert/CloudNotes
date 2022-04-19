@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/GistListerRefine.md
+relativePath: Assignments/React/GistListerRefine.md
+title: GistListerRefine
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: GistListerRefine.md
+fileNameHTML: GistListerRefine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Gist Lister Refine
 
 This assignment is about the GistLister component that displays. This component is designed to display the results of a call to the Git Hub Api called **listGists**.

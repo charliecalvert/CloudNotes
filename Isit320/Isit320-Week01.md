@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit320/Isit320-Week01.md
+relativePath: Isit320/Isit320-Week01.md
+title: Isit320-Week01
+queryPath: Isit320/
+subject: Isit320
+fileNameMarkdown: Isit320-Week01.md
+fileNameHTML: Isit320-Week01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Isit320 Week01 2019
 
 There is no main text for this course. There are, however many resources. Some of these resources I created, but most are available on the web:

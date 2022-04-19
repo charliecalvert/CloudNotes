@@ -6,15 +6,17 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: Eclipse.md
 fileNameHTML: Eclipse.html
+image: ./course/course-javascript.jpg
+subject: android
+queryPath: elvenware/development/android/
 ---
 
 <!-- toc -->
 <!-- tocstop -->
 
-Eclipse Aptana Overview
-=======================
+# Eclipse Aptana Overview
 
-On this page you can find information about Eclipse and Aptana. You can use these IDEs for many things, including creating Android or Web based projects.
+On the Eclipse Overview page you can find information about Eclipse and Aptana. You can use these IDEs for many things, including creating Android or Web based projects.
 
 ![Eclipse Logo](images/eclipse_neg_logo_fc_sm.jpg)
 

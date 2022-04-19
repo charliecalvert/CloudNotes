@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/HandleBars.md
-relativePath: elvenware/development/web/JavaScript/HandleBars.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/HandleBars.md
+relativePath: javascript-guide/HandleBars.md
 title: HandleBars
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: HandleBars.md
 fileNameHTML: HandleBars.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/JestCreateReactTests.md
+relativePath: Assignments/React/JestCreateReactTests.md
+title: JestCreateReactTests
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: JestCreateReactTests.md
+fileNameHTML: JestCreateReactTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Test button click {#test-click}
 
 It's time to write some unit tests with Jest.

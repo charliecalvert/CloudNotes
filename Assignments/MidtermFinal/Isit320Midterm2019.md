@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Midterm2019.md
+relativePath: Assignments/MidtermFinal/Isit320Midterm2019.md
+title: Isit320Midterm2019
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: Isit320Midterm2019.md
+fileNameHTML: Isit320Midterm2019.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The midterm is an an extension of the [GitIgnoreTestDockerMicro][gitdm] and [DockerCompose][dc] assignments. In some cases, students have used [RestBasics][rb] rather than **DockerComposer**. As long as it works, then I'm fine with that decision.

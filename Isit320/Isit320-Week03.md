@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit320/Isit320-Week03.md
+relativePath: Isit320/Isit320-Week03.md
+title: Isit320-Week03
+queryPath: Isit320/
+subject: Isit320
+fileNameMarkdown: Isit320-Week03.md
+fileNameHTML: Isit320-Week03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Here are various bits and pieces about CouchDb that I have pulled together from various assignments or discussions used in previous classes. This information is presented piecemeal, and has not been reviewed or edited for some time.

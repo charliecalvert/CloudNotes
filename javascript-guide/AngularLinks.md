@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/AngularLinks.md
-relativePath: elvenware/development/web/JavaScript/AngularLinks.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/AngularLinks.md
+relativePath: javascript-guide/AngularLinks.md
 title: AngularLinks
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: AngularLinks.md
 fileNameHTML: AngularLinks.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

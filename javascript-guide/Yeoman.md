@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Yeoman.md
-relativePath: elvenware/development/web/JavaScript/Yeoman.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/Yeoman.md
+relativePath: javascript-guide/Yeoman.md
 title: Yeoman
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: Yeoman.md
 fileNameHTML: Yeoman.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

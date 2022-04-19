@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDb/CouchSmallAddress.md
+relativePath: Assignments/CouchDb/CouchSmallAddress.md
+title: CouchSmallAddress
+queryPath: Assignments/CouchDb/
+subject: CouchDb
+fileNameMarkdown: CouchSmallAddress.md
+fileNameHTML: CouchSmallAddress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Refactor Pouch Starter and add support for live syncing.

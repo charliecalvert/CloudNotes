@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerElfCodeWithPort.md
+relativePath: Assignments/Docker/DockerElfCodeWithPort.md
+title: DockerElfCodeWithPort
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerElfCodeWithPort.md
+fileNameHTML: DockerElfCodeWithPort.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal is to take the container we created in [DockerElfCode][dec] and:

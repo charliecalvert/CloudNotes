@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BrowserAccounts.md
+relativePath: Assignments/BrowserAccounts.md
+title: BrowserAccounts
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BrowserAccounts.md
+fileNameHTML: BrowserAccounts.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of the **Browser Accounts** assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsDatabase.md
+relativePath: Assignments/WebCrafts/ElvenWebCraftsDatabase.md
+title: ElvenWebCraftsDatabase
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: ElvenWebCraftsDatabase.md
+fileNameHTML: ElvenWebCraftsDatabase.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Ubuntu Server 16.04 with MongoDb
 
 Here is a copy of Ubuntu Server with MongoDb pre-installed. It's about 2 GB, so have patience with the download.

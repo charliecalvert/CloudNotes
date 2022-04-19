@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/SwitchRepos.md
+relativePath: Assignments/React/SwitchRepos.md
+title: SwitchRepos
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: SwitchRepos.md
+fileNameHTML: SwitchRepos.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal is to clone two or more repositories and to be able to switch back and forth between them. When you switch to a new repo, then most of the other components such as **GetBranches**, **BadFileTests** and **CheckGitIgnore** will query the newly selected repository.

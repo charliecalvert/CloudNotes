@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsCloudNine.md
+relativePath: Assignments/Aws/AwsCloudNine.md
+title: AwsCloudNine
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: AwsCloudNine.md
+fileNameHTML: AwsCloudNine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The key feature for us that we can code with only a browser and an AWS account. We don't need to set up a VM. This is not as powerful as Pristine Lubuntu, but it is enough to allow you to write code and access all the features of the Ubuntu command line.

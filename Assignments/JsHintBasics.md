@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JsHintBasics.md
+relativePath: Assignments/JsHintBasics.md
+title: JsHintBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: JsHintBasics.md
+fileNameHTML: JsHintBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #JsHint Basics
 
 Here is a file to examine:

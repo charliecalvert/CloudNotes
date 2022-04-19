@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactBootstrap.md
+relativePath: Assignments/React/ReactBootstrap.md
+title: ReactBootstrap
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactBootstrap.md
+fileNameHTML: ReactBootstrap.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Bootstrap
 
 It's time to tweak our apps appearance so that it works on a phone. We will use bootstrap to help us achieve our goal.

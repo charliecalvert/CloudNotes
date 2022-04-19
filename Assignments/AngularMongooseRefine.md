@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularMongooseRefine.md
+relativePath: Assignments/AngularMongooseRefine.md
+title: AngularMongooseRefine
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularMongooseRefine.md
+fileNameHTML: AngularMongooseRefine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 Mongoose Basics is an ORM for MongoDB.

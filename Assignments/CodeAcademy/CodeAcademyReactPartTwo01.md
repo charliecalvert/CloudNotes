@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo01.md
+relativePath: Assignments/CodeAcademy/CodeAcademyReactPartTwo01.md
+title: CodeAcademyReactPartTwo01
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: CodeAcademyReactPartTwo01.md
+fileNameHTML: CodeAcademyReactPartTwo01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The Code Academy web site features interactive lessons on various computer technologies, including Git, the Linux Command Line, JavaScript and HTML. It provides an excellent way for you to brush up on basic skills that we don't have time to cover in class.

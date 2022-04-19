@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/FirebaseStarter.md
+relativePath: Assignments/FirebaseStarter.md
+title: FirebaseStarter
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: FirebaseStarter.md
+fileNameHTML: FirebaseStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 To learn a new way to deploy our pages to the web, we will use a Google product called [Firebase](https://firebase.google.com/).

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog109/SampleResume.md
+relativePath: Prog109/SampleResume.md
+title: SampleResume
+queryPath: Prog109/
+subject: Prog109
+fileNameMarkdown: SampleResume.md
+fileNameHTML: SampleResume.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Wanda Higdon
 
 - 1234 Gecko Drive, Bezango, WA 98111

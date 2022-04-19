@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/OpinionatedSuccess.md
-relativePath: elvenware/development/web/JavaScript/OpinionatedSuccess.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/OpinionatedSuccess.md
+relativePath: javascript-guide/OpinionatedSuccess.md
 title: OpinionatedSuccess
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: OpinionatedSuccess.md
 fileNameHTML: OpinionatedSuccess.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/Books247.md
+relativePath: Tips/Books247.md
+title: Books247
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: Books247.md
+fileNameHTML: Books247.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ##  24X7 Books
 
 Many technical books are available through the library media center. Some are on a resource called called Books 24 X 7, others are available via other resources. They can be an excellent learning tool.

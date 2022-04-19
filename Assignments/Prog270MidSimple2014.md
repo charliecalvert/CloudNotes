@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog270MidSimple2014.md
+relativePath: Assignments/Prog270MidSimple2014.md
+title: Prog270MidSimple2014
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog270MidSimple2014.md
+fileNameHTML: Prog270MidSimple2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Prog270 Simplified Midterm
 
 Here is a simplified midterm. The highest possible score you can get on this version of the exam is A-, but in many cases you can expect a B or B+ as a sign that you did very well on this version of the exam. It would not be fair to give people who took the simplified exam the same score as those who took the harder exam.

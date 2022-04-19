@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DropBoxEc2.md
+relativePath: Assignments/DropBoxEc2.md
+title: DropBoxEc2
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: DropBoxEc2.md
+fileNameHTML: DropBoxEc2.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## DropBox on EC2
 
 The goals of this assignment are simple:

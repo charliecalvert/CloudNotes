@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDbGameData.md
+relativePath: Assignments/CouchDbGameData.md
+title: CouchDbGameData
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CouchDbGameData.md
+fileNameHTML: CouchDbGameData.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Create a program based on [**JsObjects/Data/CouchView02**][couch-view-02] and call it **Week0X-DataMaster**. We will use the CouchView02 program as the basis for the program that works with the data we will use in the game.

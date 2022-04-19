@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: LinuxBasics.md
 fileNameHTML: LinuxBasics.html
+image: ./course/course-javascript.jpg
+subject: linux
+queryPath: elvenware/os/linux/
 ---
 
 <!-- toc -->

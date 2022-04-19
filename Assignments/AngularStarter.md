@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularStarter.md
+relativePath: Assignments/AngularStarter.md
+title: AngularStarter
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularStarter.md
+fileNameHTML: AngularStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Angular Starter
 
 Two simple angular projects.

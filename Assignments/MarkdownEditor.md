@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MarkdownEditor.md
+relativePath: Assignments/MarkdownEditor.md
+title: MarkdownEditor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MarkdownEditor.md
+fileNameHTML: MarkdownEditor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Markdown Editor
 
 The goal of this assignment is three fold:

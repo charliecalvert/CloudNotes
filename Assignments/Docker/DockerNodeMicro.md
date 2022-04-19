@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerNodeMicro.md
+relativePath: Assignments/Docker/DockerNodeMicro.md
+title: DockerNodeMicro
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerNodeMicro.md
+fileNameHTML: DockerNodeMicro.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Create a main application and a micro service, each in their own Docker container. Write a docker-compose file that allows you to call the micro service from the main app and display the result.

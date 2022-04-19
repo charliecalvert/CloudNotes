@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteStyles.md
+relativePath: Assignments/ElvenSiteStyles.md
+title: ElvenSiteStyles
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElvenSiteStyles.md
+fileNameHTML: ElvenSiteStyles.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 When using your _Elven Site_ web site creator the user should be able to select the [bootswatch][btsw] theme for the created site. In short, I want you to add Bootswatch to your latest Elven Sites code. That is the goal of the **Elven Site Styles** assignment.

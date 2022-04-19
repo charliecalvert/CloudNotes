@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NodeExpressMongo01.md
+relativePath: Assignments/NodeExpressMongo01.md
+title: NodeExpressMongo01
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NodeExpressMongo01.md
+fileNameHTML: NodeExpressMongo01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Node, Express and MongoDb
 ================
 

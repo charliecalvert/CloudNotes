@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/Prog270-Week01.md
+relativePath: Prog270/Prog270-Week01.md
+title: Prog270-Week01
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: Prog270-Week01.md
+fileNameHTML: Prog270-Week01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 270 - Week 01 - Fall - 2017
 
 Each week we have two sessions, on Monday and Wednesday, in N252. I will try to prepare a single document like this one that outlines the main topics covered each week. For instance, this document outlines what we will cover this week in class, and online.

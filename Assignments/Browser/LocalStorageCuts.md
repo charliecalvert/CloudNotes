@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/LocalStorageCuts.md
+relativePath: Assignments/Browser/LocalStorageCuts.md
+title: LocalStorageCuts
+queryPath: Assignments/Browser/
+subject: Browser
+fileNameMarkdown: LocalStorageCuts.md
+fileNameHTML: LocalStorageCuts.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Elf Logger
 
  One way to do it is to set it by module. If we set a particular environment variable to the name of a module, then the debug statements for that module will be visible.

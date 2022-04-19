@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Linux/BuildCopy.md
+relativePath: Assignments/Linux/BuildCopy.md
+title: BuildCopy
+queryPath: Assignments/Linux/
+subject: Linux
+fileNameMarkdown: BuildCopy.md
+fileNameHTML: BuildCopy.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Let's formalize the **build-copy** script we worked on in class.

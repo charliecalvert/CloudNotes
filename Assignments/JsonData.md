@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JsonData.md
+relativePath: Assignments/JsonData.md
+title: JsonData
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: JsonData.md
+fileNameHTML: JsonData.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # JsonData
 
 Here is the program to get running on EC2: [JsonData.zip](http://www.elvenware.com/charlie/downloads/JsonData.zip)

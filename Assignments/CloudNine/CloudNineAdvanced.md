@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNine/CloudNineAdvanced.md
+relativePath: Assignments/CloudNine/CloudNineAdvanced.md
+title: CloudNineAdvanced
+queryPath: Assignments/CloudNine/
+subject: CloudNine
+fileNameMarkdown: CloudNineAdvanced.md
+fileNameHTML: CloudNineAdvanced.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Set up JsObjects
 
 Prog 109 students should not continue further. If you are in some other class than Prog109, you should:

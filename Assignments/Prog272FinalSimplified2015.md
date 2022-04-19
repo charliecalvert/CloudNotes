@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog272FinalSimplified2015.md
+relativePath: Assignments/Prog272FinalSimplified2015.md
+title: Prog272FinalSimplified2015
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog272FinalSimplified2015.md
+fileNameHTML: Prog272FinalSimplified2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 272 2015 Simplified Final
 
 I want to give you the opportunity to complete a simplified final. To

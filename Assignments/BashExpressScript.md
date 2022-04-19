@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BashExpressScript.md
+relativePath: Assignments/BashExpressScript.md
+title: BashExpressScript
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BashExpressScript.md
+fileNameHTML: BashExpressScript.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to help you learn how to:

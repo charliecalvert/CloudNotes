@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WalkingMap.md
+relativePath: Assignments/WalkingMap.md
+title: WalkingMap
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: WalkingMap.md
+fileNameHTML: WalkingMap.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Walking Map
 
 Let's learn a little about maps, how to create our own maps, and how to share them with others on computers and on phones.

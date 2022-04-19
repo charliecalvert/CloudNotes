@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog280/Week08.md
+relativePath: Prog280/Week08.md
+title: Week08
+queryPath: Prog280/
+subject: Prog280
+fileNameMarkdown: Week08.md
+fileNameHTML: Week08.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Install Syte
 ------------
 

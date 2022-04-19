@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit320/Resources-2015.md
+relativePath: Isit320/Resources-2015.md
+title: Resources-2015
+queryPath: Isit320/
+subject: Isit320
+fileNameMarkdown: Resources-2015.md
+fileNameHTML: Resources-2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # ISIT 320 Resources for 2015
 
 The most important resource in this class is Google search. Make sure you know the basics about searching:

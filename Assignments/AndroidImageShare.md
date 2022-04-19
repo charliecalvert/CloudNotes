@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AndroidImageShare.md
+relativePath: Assignments/AndroidImageShare.md
+title: AndroidImageShare
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AndroidImageShare.md
+fileNameHTML: AndroidImageShare.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal in the **Android Introductory Pictures** assignment is:

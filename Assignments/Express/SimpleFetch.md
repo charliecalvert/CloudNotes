@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/SimpleFetch.md
+relativePath: Assignments/Express/SimpleFetch.md
+title: SimpleFetch
+queryPath: Assignments/Express/
+subject: Express
+fileNameMarkdown: SimpleFetch.md
+fileNameHTML: SimpleFetch.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Everyone must understand routes to do well in this class.

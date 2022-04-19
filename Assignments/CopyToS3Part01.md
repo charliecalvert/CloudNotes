@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CopyToS3Part01.md
+relativePath: Assignments/CopyToS3Part01.md
+title: CopyToS3Part01
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CopyToS3Part01.md
+fileNameHTML: CopyToS3Part01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Copy to S3 Part 01
 
 This assignment helps you get up to speed with AwsBasicS3. This program aids content creators who produce a lot of HTML files. 

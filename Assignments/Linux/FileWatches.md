@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Linux/FileWatches.md
+relativePath: Assignments/Linux/FileWatches.md
+title: FileWatches
+queryPath: Assignments/Linux/
+subject: Linux
+fileNameMarkdown: FileWatches.md
+fileNameHTML: FileWatches.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 A number of us run across a variety of errors because of a system wide setting that specifies the number of files that the system can monitor in a directory. My understanding is that some tools like to be notified when a file has been accessed, edited, deleted, etc. For instance, WebStorm needs this information to our update our view of our source, as does Jest when it is checking for updates to our tests. The kind of events these tools to monitor can be tracked by following an event called [inotify][in]. We can set the number of files that **inotify** is able to monitor. By default, the number of such files is around 5,000. Our **node_modules** directories, however, can become huge, and we need to raise the number. Below I describe how that is done.

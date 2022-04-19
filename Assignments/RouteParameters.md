@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/RouteParameters.md
+relativePath: Assignments/RouteParameters.md
+title: RouteParameters
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: RouteParameters.md
+fileNameHTML: RouteParameters.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ##Route Parameters
 
 The goal of this assignment is to get the RouteParameters program running on:

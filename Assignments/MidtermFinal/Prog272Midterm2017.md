@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Prog272Midterm2017.md
+relativePath: Assignments/MidtermFinal/Prog272Midterm2017.md
+title: Prog272Midterm2017
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: Prog272Midterm2017.md
+fileNameHTML: Prog272Midterm2017.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog272 Midterm 2017
 
 This documents contains a description of what I want to see on the midterm. We want to keep moving to the point where we can take a JSON file containing addresses, and display, iterate and edit them in a React based program. The output from the components you create should be thoroughly tested.

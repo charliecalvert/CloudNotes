@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/README.md
+relativePath: README.md
+title: README
+queryPath: /
+subject: CloudNotes
+fileNameMarkdown: README.md
+fileNameHTML: README.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 CloudNotes
 ==========
 

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularChartOrganic.md
+relativePath: Assignments/AngularChartOrganic.md
+title: AngularChartOrganic
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularChartOrganic.md
+fileNameHTML: AngularChartOrganic.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Angular Chart Organic
 
 This is inpart an in class exercise. Using Yeoman, Angular, Angular-Charts, Angular-Bootstrap create a web application that:

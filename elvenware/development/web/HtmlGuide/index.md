@@ -17,7 +17,7 @@ queryPath: elvenware/development/web/HtmlGuide/
 ## Elven HTML Guide
 
 - [Chapter 01: Getting Started](GettingStarted.html)
--	[Chapter 02: HTML Tags and Syntax](HtmlSyntax.html)
+- [Chapter 02: HTML Tags and Syntax](HtmlSyntax.html)
 - [Chapter 03: HTML5](HtmlFive.html)
 - [Chapter 04: Eclipse and Web Development](EclipseWebDevelopment.html)
 - [Chapter 05: Expression Web](ExpressionWebOverview.html)

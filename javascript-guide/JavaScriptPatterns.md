@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptPatterns.md
-relativePath: elvenware/development/web/JavaScript/JavaScriptPatterns.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptPatterns.md
+relativePath: javascript-guide/JavaScriptPatterns.md
 title: JavaScriptPatterns
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: JavaScriptPatterns.md
 fileNameHTML: JavaScriptPatterns.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

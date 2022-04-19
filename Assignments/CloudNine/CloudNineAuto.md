@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNine/CloudNineAuto.md
+relativePath: Assignments/CloudNine/CloudNineAuto.md
+title: CloudNineAuto
+queryPath: Assignments/CloudNine/
+subject: CloudNine
+fileNameMarkdown: CloudNineAuto.md
+fileNameHTML: CloudNineAuto.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Auto Setup
 
 We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.

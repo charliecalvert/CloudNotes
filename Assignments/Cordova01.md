@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Cordova01.md
+relativePath: Assignments/Cordova01.md
+title: Cordova01
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Cordova01.md
+fileNameHTML: Cordova01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Week03 Exercises
 ================
 

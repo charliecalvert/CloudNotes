@@ -6,49 +6,13 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: UnitTesting.md
 fileNameHTML: UnitTesting.html
+image: ./course/course-javascript.jpg
+subject: android
+queryPath: elvenware/development/android/
 ---
 
 <!-- toc -->
 <!-- tocstop -->
-
-Toggle Menu
-
-Charlie Calvert on Elvenware
-============================
-
-Writing Code and Prose on Computers
------------------------------------
-
-Menu
-----
-
-Core Code
----------
-
--   [Strongly Typed](../index.html)
--   [Web & Scripts](../web/index.html)
--   [Cloud](../cloud/index.shtml)
-
-OS and Tools
-------------
-
--   [OS](../../os/index.html)
--   [Database](../database/index.html)
--   [My Writing](../../books/index.html)
-
-Art
----
-
--   [Poems & Photos](../../Art/index.html)
--   [Book Reviews](../../books/reading/index.html)
--   [Spiritual](../../spirit/index.html)
-
-Links
------
-
--   [My Links](../../links.html)
--   [Falafel](http://www.falafel.com/)
--   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
 ![Elvenware](../../images/elvenwarelogo.png)
 
@@ -57,17 +21,17 @@ Unit Testing
 
 Create a project that you want to test.
 
--   Create a unit test project. File | New | Android Test Project. See
+- Create a unit test project. File | New | Android Test Project. See
     Figure 01.
--   Name your project. See Figure 02.
--   Select the project you want to test. See Figure 03.
--   Select your build target. See Figure 04.
--   Open up the src for your test project. Right click on the empty
+- Name your project. See Figure 02.
+- Select the project you want to test. See Figure 03.
+- Select your build target. See Figure 04.
+- Open up the src for your test project. Right click on the empty
     package and choose  New | Class
--   Create your test class descending from
+- Create your test class descending from
     android.test.ActivityInstrumentationTestCase2\<T\> as Shown in
     Figure 5.
--   Now set up the code for your unit tests as shown in Listing 1. By
+- Now set up the code for your unit tests as shown in Listing 1. By
     default, the class that you are wanting to test can live comfortably
     as a parameterized value in your generic type
     ActivityInstrumentationTestCase2. You might get an error here, if
@@ -80,7 +44,7 @@ Create a project that you want to test.
     BaseGameActivity, and so I had to make sure that JUnit had access to
     **BaseGameActivity**, I assume because it needed to see that
     BaseGameActivity implements **Activity**.
--   Now all you need to do is override **setUp**and write a test, as
+- Now all you need to do is override **setUp**and write a test, as
     shown in **Listing 2.**
 
 ![Creating a unit test project](images/UnitTest01-CreateProject.png)
@@ -159,7 +123,3 @@ Links
 [Hello,
 Testing](http://developer.android.com/resources/tutorials/testing/helloandroid_test.html)
 
-Copyright © [Charlie Calvert](../../index.html) | [Elvenware
-Home](../../index.html) | [Writing Code](../index.html) |
-[Delphi](../delphi/index.html) | [CSharp](../csharp/index.html) | [My
-Books](../../books/index.html)

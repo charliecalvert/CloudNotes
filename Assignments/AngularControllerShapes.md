@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularControllerShapes.md
+relativePath: Assignments/AngularControllerShapes.md
+title: AngularControllerShapes
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularControllerShapes.md
+fileNameHTML: AngularControllerShapes.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # AngularControllerShapes
 
 This is an in-class assignment.

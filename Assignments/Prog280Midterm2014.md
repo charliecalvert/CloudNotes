@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog280Midterm2014.md
+relativePath: Assignments/Prog280Midterm2014.md
+title: Prog280Midterm2014
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog280Midterm2014.md
+fileNameHTML: Prog280Midterm2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Prog 280 Midterm 2014
 
 This document describes the Prog 280 midterm. Please check it regularly

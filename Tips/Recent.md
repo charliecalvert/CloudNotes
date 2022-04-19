@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/Recent.md
+relativePath: Tips/Recent.md
+title: Recent
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: Recent.md
+fileNameHTML: Recent.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 - http://www.ccalvert.net/books/CloudNotes/Assignments/AwsEc2Expert.html
 - http://www.ccalvert.net/books/CloudNotes/Assignments/BashSetUp.html
 - http://www.ccalvert.net/books/CloudNotes/Assignments/BowerNpm.html

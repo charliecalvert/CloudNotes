@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntCheck02.md
+relativePath: Assignments/GruntCheck02.md
+title: GruntCheck02
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GruntCheck02.md
+fileNameHTML: GruntCheck02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Grunt Check Part II provides more information on Grunt.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit320/AllFiles.md
+relativePath: Isit320/AllFiles.md
+title: AllFiles
+queryPath: Isit320/
+subject: Isit320
+fileNameMarkdown: AllFiles.md
+fileNameHTML: AllFiles.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 * [AllFiles.html](AllFiles.html)
 * [GitTipsFromKurt.html](GitTipsFromKurt.html)
 * [Ideas.html](Ideas.html)

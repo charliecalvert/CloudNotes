@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/MoreOnCloudNine.md
+relativePath: Assignments/Aws/MoreOnCloudNine.md
+title: MoreOnCloudNine
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: MoreOnCloudNine.md
+fileNameHTML: MoreOnCloudNine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is not an assignment. It simply contains some tips on setting up a development environment on a site like Cloud9, AWS or any Ubuntu Server.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapThemes.md
+relativePath: Assignments/BootstrapThemes.md
+title: BootstrapThemes
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BootstrapThemes.md
+fileNameHTML: BootstrapThemes.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In this exercise you will learn how to add new themes to your bootstrap pages. In particular we will:

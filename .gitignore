@@ -5,6 +5,7 @@
 .c9
 
 # DEV
+*.jsx
 bower_components
 node_modules
 bundle.js

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactEsLint.md
+relativePath: Assignments/React/ReactEsLint.md
+title: ReactEsLint
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactEsLint.md
+fileNameHTML: ReactEsLint.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.

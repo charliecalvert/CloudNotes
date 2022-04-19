@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Prog270Final2017.md
+relativePath: Assignments/MidtermFinal/Prog270Final2017.md
+title: Prog270Final2017
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: Prog270Final2017.md
+fileNameHTML: Prog270Final2017.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 THIS DOCUMENT IS CLOSER TO FINAL BUT STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.

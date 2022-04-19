@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/GettingStarted.md
-relativePath: elvenware/development/web/JavaScript/GettingStarted.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/GettingStarted.md
+relativePath: javascript-guide/GettingStarted.md
 title: GettingStarted
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: GettingStarted.md
 fileNameHTML: GettingStarted.html
 subject: JavaScript
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 ## Table of Contents 

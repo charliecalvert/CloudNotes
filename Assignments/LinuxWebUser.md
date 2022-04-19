@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/LinuxWebUser.md
+relativePath: Assignments/LinuxWebUser.md
+title: LinuxWebUser
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: LinuxWebUser.md
+fileNameHTML: LinuxWebUser.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # EC2 Web User
 
 The goal of this assignment is to help you learn how to use an EC2 instance to host a web site.

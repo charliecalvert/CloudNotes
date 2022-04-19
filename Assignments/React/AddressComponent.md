@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/AddressComponent.md
+relativePath: Assignments/React/AddressComponent.md
+title: AddressComponent
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: AddressComponent.md
+fileNameHTML: AddressComponent.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Address Component
 
 The goal is to extend our **week02-react-jest** project to support new React components with **props**.

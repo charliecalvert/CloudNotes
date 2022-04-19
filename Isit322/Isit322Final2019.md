@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit322/Isit322Final2019.md
+relativePath: Isit322/Isit322Final2019.md
+title: Isit322Final2019
+queryPath: Isit322/
+subject: Isit322
+fileNameMarkdown: Isit322Final2019.md
+fileNameHTML: Isit322Final2019.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The main goal is to create properly working versions of:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresence02.md
+relativePath: Assignments/OnlinePresence02.md
+title: OnlinePresence02
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: OnlinePresence02.md
+fileNameHTML: OnlinePresence02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Online Presence Part II
 
 This is the second part of the Online Presence Assignment. Please review the open sections of the first part of this assignment. They contain important information about the steps you need to take to complete this assignment.

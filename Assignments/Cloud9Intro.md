@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Cloud9Intro.md
+relativePath: Assignments/Cloud9Intro.md
+title: Cloud9Intro
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Cloud9Intro.md
+fileNameHTML: Cloud9Intro.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Cloud 9 Intro
 
 It will be simplest if you first, set up a Git repository as explained in the [Git New Repo][gnr] assignment.

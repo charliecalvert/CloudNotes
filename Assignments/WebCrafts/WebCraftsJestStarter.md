@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsJestStarter.md
+relativePath: Assignments/WebCrafts/WebCraftsJestStarter.md
+title: WebCraftsJestStarter
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: WebCraftsJestStarter.md
+fileNameHTML: WebCraftsJestStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to begin the process of integrating Jest tests into WebCrafts.

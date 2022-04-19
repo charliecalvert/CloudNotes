@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm/NpmUseIsitSiteTools.md
+relativePath: Assignments/Npm/NpmUseIsitSiteTools.md
+title: NpmUseIsitSiteTools
+queryPath: Assignments/Npm/
+subject: Npm
+fileNameMarkdown: NpmUseIsitSiteTools.md
+fileNameHTML: NpmUseIsitSiteTools.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In this assignment we will:

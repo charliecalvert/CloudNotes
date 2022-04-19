@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CordovaEventsPlugins.md
+relativePath: Assignments/CordovaEventsPlugins.md
+title: CordovaEventsPlugins
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CordovaEventsPlugins.md
+fileNameHTML: CordovaEventsPlugins.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Cordova Events and Plugins in Class
 
 Main goal: Create a Cordova application that hosts our Yeoman Census application. In particular:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog219/Prog219-Resources.md
+relativePath: Prog219/Prog219-Resources.md
+title: Prog219-Resources
+queryPath: Prog219/
+subject: Prog219
+fileNameMarkdown: Prog219-Resources.md
+fileNameHTML: Prog219-Resources.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 Prog 219 related resources.

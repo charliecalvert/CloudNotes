@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/RestTests.md
+relativePath: Assignments/React/RestTests.md
+title: RestTests
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: RestTests.md
+fileNameHTML: RestTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Rest Tests
 
 This assignment has two parts. Please complete both of them. Part I is described in the document you are currently reading. Part II is described in the slide deck called [jest with create-react-app][bcd]. Be sure to complete both parts. In particular, make sure you have a test for button clicks.

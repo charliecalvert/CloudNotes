@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GoogleDriveAndFolders.md
+relativePath: Assignments/GoogleDriveAndFolders.md
+title: GoogleDriveAndFolders
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GoogleDriveAndFolders.md
+fileNameHTML: GoogleDriveAndFolders.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of *Google Drive Files and Folders* is to help you become familiar with creating folders and files on Google Drive.

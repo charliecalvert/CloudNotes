@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseDeployGitHubApi.md
+relativePath: Assignments/Firebase/FirebaseDeployGitHubApi.md
+title: FirebaseDeployGitHubApi
+queryPath: Assignments/Firebase/
+subject: Firebase
+fileNameMarkdown: FirebaseDeployGitHubApi.md
+fileNameHTML: FirebaseDeployGitHubApi.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal is to move our GitExplorer application into the cloud using Firebase.

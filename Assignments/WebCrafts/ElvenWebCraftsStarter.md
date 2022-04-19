@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.md
+relativePath: Assignments/WebCrafts/ElvenWebCraftsStarter.md
+title: ElvenWebCraftsStarter
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: ElvenWebCraftsStarter.md
+fileNameHTML: ElvenWebCraftsStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 For the next several weeks, we are going to work on a project that already exists. It is a tool for building web sites. Our goal is to take a project students built several years ago and update it. We will:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NewGitBucket.md
+relativePath: Assignments/NewGitBucket.md
+title: NewGitBucket
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NewGitBucket.md
+fileNameHTML: NewGitBucket.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # New Git Bucket
 
 See the [GitNewRepo][git-new-repo] assignment which is more complete than this.

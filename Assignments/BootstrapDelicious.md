@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapDelicious.md
+relativePath: Assignments/BootstrapDelicious.md
+title: BootstrapDelicious
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BootstrapDelicious.md
+fileNameHTML: BootstrapDelicious.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Bootstrap Delicious File
 
 The main goal of the assignment is to retrieve information from the Delicious web site based on the user's input. We are learning how to call a [REST][rest] like [web service][ws]. In this case, it is the web service provided by Delicious.

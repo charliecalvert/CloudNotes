@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/BooksAndResources.md
+relativePath: Tips/BooksAndResources.md
+title: BooksAndResources
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: BooksAndResources.md
+fileNameHTML: BooksAndResources.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I'll continually be referring you to various online resources. Quite often in the assignments, I provide hyperlinks to pages.

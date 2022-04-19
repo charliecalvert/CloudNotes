@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Midterm2015.md
+relativePath: Assignments/Isit320Midterm2015.md
+title: Isit320Midterm2015
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit320Midterm2015.md
+fileNameHTML: Isit320Midterm2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Isit320 Midterm 2015
 
 This document is still being tweaked, but there is enough here to get you to a reasonably complete state.

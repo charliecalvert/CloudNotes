@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: EmbeddedVideos.md
 fileNameHTML: EmbeddedVideos.html
+image: ./course/course-javascript.jpg
+subject: videos
+queryPath: elvenware/development/csharp/videos/
 ---
 
 <!-- toc -->

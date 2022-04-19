@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog272/Resources.md
+relativePath: Prog272/Resources.md
+title: Resources
+queryPath: Prog272/
+subject: Prog272
+fileNameMarkdown: Resources.md
+fileNameHTML: Resources.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Resources for Prog 272
 
 Here I will list various resources for Prog 272.

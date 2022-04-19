@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyHtmlAndCss02.md
+relativePath: Assignments/CodeAcademy/CodeAcademyHtmlAndCss02.md
+title: CodeAcademyHtmlAndCss02
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: CodeAcademyHtmlAndCss02.md
+fileNameHTML: CodeAcademyHtmlAndCss02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Code Academy Part II
 
 Bring both [HTML](https://www.codecademy.com/learn/learn-html)

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog272/Prog272Midterm2019.md
+relativePath: Prog272/Prog272Midterm2019.md
+title: Prog272Midterm2019
+queryPath: Prog272/
+subject: Prog272
+fileNameMarkdown: Prog272Midterm2019.md
+fileNameHTML: Prog272Midterm2019.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 **NOTE**: _This is a very rough outline of where I am headed for the midterm. You can probably only take a few preliminary steps at this time._

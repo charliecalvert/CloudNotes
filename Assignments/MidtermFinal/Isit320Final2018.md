@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Final2018.md
+relativePath: Assignments/MidtermFinal/Isit320Final2018.md
+title: Isit320Final2018
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: Isit320Final2018.md
+fileNameHTML: Isit320Final2018.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Pease see [this announcment][new-final] which covers some of the changes to the final discussed near the end of class on Wednesday.

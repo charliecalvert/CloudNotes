@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MarkdownBasics.md
+relativePath: Assignments/MarkdownBasics.md
+title: MarkdownBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MarkdownBasics.md
+fileNameHTML: MarkdownBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The Markdown Basics document will help you get up to speed with a simple markup language called Markdown. You can easily convert markdown files to other formats such as HTML and PDF. Since markdown is much easier to write than HTML, it is a great way to create HTML documents.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/Prog270Final2014.md
+relativePath: Prog270/Prog270Final2014.md
+title: Prog270Final2014
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: Prog270Final2014.md
+fileNameHTML: Prog270Final2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 270 Final 2014
 
 **NOTE**: *This document is not quite final. Begin work on it as soon as possible, but check the announcement area for updates. In particular, expect updates to the Big Share section near the end of this document.*

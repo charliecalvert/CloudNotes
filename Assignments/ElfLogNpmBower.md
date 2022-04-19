@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElfLogNpmBower.md
+relativePath: Assignments/ElfLogNpmBower.md
+title: ElfLogNpmBower
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElfLogNpmBower.md
+fileNameHTML: ElfLogNpmBower.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This assignment is similar to **ElfLogNpm** and **ElfLogBower**. Make sure you are using your own packages for both NPM and Bower. Instead of buttons, put three checkboxes and three radio buttons. Messages should appear on both the client and server side as you click the checkboxes and radio buttons.

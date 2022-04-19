@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactTranslateRoutes.md
+relativePath: Assignments/React/ReactTranslateRoutes.md
+title: ReactTranslateRoutes
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactTranslateRoutes.md
+fileNameHTML: ReactTranslateRoutes.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to everyone more practice with with React and Express routes. These are subjects we have to know cold. Perhaps the only way to learn is to practice over and over. There is no Redux in this assignment.

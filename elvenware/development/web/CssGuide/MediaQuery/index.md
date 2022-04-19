@@ -1,7 +1,7 @@
 ---
 creationLocalTime: 4/17/2022, 3:50:27 PM
-debug: First Time
-image: ./course/course-node.jpg
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
 fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/MediaQuery/index.md
 relativePath: elvenware/development/web/CssGuide/MediaQuery/index.md
 title: Index

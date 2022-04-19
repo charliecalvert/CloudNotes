@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/BowerComponents.md
+relativePath: Assignments/SmokeTests/BowerComponents.md
+title: BowerComponents
+queryPath: Assignments/SmokeTests/
+subject: SmokeTests
+fileNameMarkdown: BowerComponents.md
+fileNameHTML: BowerComponents.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal is to clean up **.bowerrc**. A number of students have **.bowerrc** files that reference a directory called **components**. It should be **bower_components**.

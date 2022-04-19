@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Git/GitMerge.md
+relativePath: Assignments/Git/GitMerge.md
+title: GitMerge
+queryPath: Assignments/Git/
+subject: Git
+fileNameMarkdown: GitMerge.md
+fileNameHTML: GitMerge.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Git Merge
 
 The goal of this assignment is to help you learn more about Merging git branches.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NodeModulesAssignment.md
+relativePath: Assignments/NodeModulesAssignment.md
+title: NodeModulesAssignment
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NodeModulesAssignment.md
+fileNameHTML: NodeModulesAssignment.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Node Modules Assignment
 ===========
 

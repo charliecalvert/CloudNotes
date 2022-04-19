@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressEditDialog.md
+relativePath: Assignments/React/ReactAddressEditDialog.md
+title: ReactAddressEditDialog
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressEditDialog.md
+fileNameHTML: ReactAddressEditDialog.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Allow the user to pop up a dialog and edit a record. Something very much like this code should be added to both the **SmallAddress** program and in your **Final**.

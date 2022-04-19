@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/FirebaseLogin.md
+relativePath: Assignments/FirebaseLogin.md
+title: FirebaseLogin
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: FirebaseLogin.md
+fileNameHTML: FirebaseLogin.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 NOT YET READY BROWSE LIGHTLY AND COME BACK LATER FOR UPDATES.

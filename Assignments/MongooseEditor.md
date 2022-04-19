@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongooseEditor.md
+relativePath: Assignments/MongooseEditor.md
+title: MongooseEditor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MongooseEditor.md
+fileNameHTML: MongooseEditor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 This is the followup to the [MongooseBasics assignment][mb].

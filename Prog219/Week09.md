@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog219/Week09.md
+relativePath: Prog219/Week09.md
+title: Week09
+queryPath: Prog219/
+subject: Prog219
+fileNameMarkdown: Week09.md
+fileNameHTML: Week09.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 - Mongoose Slides: [http://bit.ly/elf-mongoose](http://bit.ly/elf-mongoose)

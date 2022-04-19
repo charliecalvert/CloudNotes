@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2GetStarted.md
+relativePath: Assignments/Ec2GetStarted.md
+title: Ec2GetStarted
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Ec2GetStarted.md
+fileNameHTML: Ec2GetStarted.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This assignment is designed to help you get started using the AWS service called EC2. It will allow you to start a virtual machine in the cloud.

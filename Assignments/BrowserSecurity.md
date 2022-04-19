@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BrowserSecurity.md
+relativePath: Assignments/BrowserSecurity.md
+title: BrowserSecurity
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BrowserSecurity.md
+fileNameHTML: BrowserSecurity.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The main goal of **Browser Security** assignment is to make sure you understand how much control you have over your browser and your Google account. Most folks can just use the default settings. However, if you want more control, you have it. Some of these settings I use all the time.

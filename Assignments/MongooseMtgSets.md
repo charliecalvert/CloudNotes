@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongooseMtgSets.md
+relativePath: Assignments/MongooseMtgSets.md
+title: MongooseMtgSets
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MongooseMtgSets.md
+fileNameHTML: MongooseMtgSets.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 Mongoose and MTG sets takes a slightly different tack than the two other applications we have seen in this serious. The other two apps can be described like this:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerInstallNotes.md
+relativePath: Assignments/Docker/DockerInstallNotes.md
+title: DockerInstallNotes
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerInstallNotes.md
+fileNameHTML: DockerInstallNotes.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 Docker is also free, but the licensing is a bit murkier. For Linux, it is clearly free and open source. For Windows, there are questions, and perhaps only a lawyer can sort it out for us. I will try to learn more, but for now, I don't have the expertise to make a ruling.
 

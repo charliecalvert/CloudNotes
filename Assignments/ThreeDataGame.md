@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ThreeDataGame.md
+relativePath: Assignments/ThreeDataGame.md
+title: ThreeDataGame
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ThreeDataGame.md
+fileNameHTML: ThreeDataGame.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## NPCs
 
 There should be a hierarchy of NPC **values**, as follows:

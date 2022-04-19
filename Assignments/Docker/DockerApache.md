@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerApache.md
+relativePath: Assignments/Docker/DockerApache.md
+title: DockerApache
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerApache.md
+fileNameHTML: DockerApache.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Where we are headed
 
 Throughout this assignment, we are going to being building several docker files. When we are done, I'm picturing a directory structure something like this:

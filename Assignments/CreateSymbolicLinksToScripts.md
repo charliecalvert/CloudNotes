@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CreateSymbolicLinksToScripts.md
+relativePath: Assignments/CreateSymbolicLinksToScripts.md
+title: CreateSymbolicLinksToScripts
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CreateSymbolicLinksToScripts.md
+fileNameHTML: CreateSymbolicLinksToScripts.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 There are two parts to this assignment.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/CongressAddressServer.md
+relativePath: Assignments/React/CongressAddressServer.md
+title: CongressAddressServer
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: CongressAddressServer.md
+fileNameHTML: CongressAddressServer.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Create a server to serve up addresses. Later we will convert this to a CouchDB server. For now, we will just have the server forward the list of addresses we created in the **GetAddress** assignment.

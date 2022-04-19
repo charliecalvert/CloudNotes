@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SetupAtomForMarkdown.md
+relativePath: Assignments/Aws/SetupAtomForMarkdown.md
+title: SetupAtomForMarkdown
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: SetupAtomForMarkdown.md
+fileNameHTML: SetupAtomForMarkdown.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 ## Overview
 

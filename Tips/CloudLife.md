@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/CloudLife.md
+relativePath: Tips/CloudLife.md
+title: CloudLife
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: CloudLife.md
+fileNameHTML: CloudLife.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 It is almost impossible to survive in a cloud based technology such as ours without having:

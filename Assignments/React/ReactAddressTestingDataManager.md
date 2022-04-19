@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressTestingDataManager.md
+relativePath: Assignments/React/ReactAddressTestingDataManager.md
+title: ReactAddressTestingDataManager
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressTestingDataManager.md
+fileNameHTML: ReactAddressTestingDataManager.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The introduction of the **PouchDdManager** complicates our testing. Let's look at **Address.test.js**.

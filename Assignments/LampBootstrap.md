@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/LampBootstrap.md
+relativePath: Assignments/LampBootstrap.md
+title: LampBootstrap
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: LampBootstrap.md
+fileNameHTML: LampBootstrap.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Set up the Apache Web Server and display a simple HTML file that uses bootstrap in it.

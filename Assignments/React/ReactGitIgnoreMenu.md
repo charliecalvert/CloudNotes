@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactGitIgnoreMenu.md
+relativePath: Assignments/React/ReactGitIgnoreMenu.md
+title: ReactGitIgnoreMenu
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactGitIgnoreMenu.md
+fileNameHTML: ReactGitIgnoreMenu.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Add a menu and client side routing. Begin refactoring into logical components.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressEsLint.md
+relativePath: Assignments/React/ReactAddressEsLint.md
+title: ReactAddressEsLint
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressEsLint.md
+fileNameHTML: ReactAddressEsLint.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Add [ESLint][esl] and [Prettier][pr] to your [AddressShow][as], [AddressNative][an] and [AddressMaterial][am] assignments.

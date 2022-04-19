@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactBasics.md
+relativePath: Assignments/React/ReactBasics.md
+title: ReactBasics
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactBasics.md
+fileNameHTML: ReactBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Basics
 
 This chapter covers creating [React][re] program from scratch. We will create a React project from scratch. There are various tools that can automate the creation of React projects, but there is much to be learned by creating a project by scratch.

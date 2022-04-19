@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/ManyLinks.md
+relativePath: Tips/ManyLinks.md
+title: ManyLinks
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: ManyLinks.md
+fileNameHTML: ManyLinks.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Lots of Links
 
 I tend to publish a lot of links in assignments and in overview documents. It is generally not necessary to read all the content referenced by these links, however  it is usually a good idea to click on most of these links and at least scan the first few paragraphs, just to make sure you understanding what information is available.

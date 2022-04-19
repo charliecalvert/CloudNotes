@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Git/index.md
+relativePath: Assignments/Git/index.md
+title: Index
+queryPath: Assignments/Git/
+subject: Git
+fileNameMarkdown: index.md
+fileNameHTML: index.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Git Assignments
 
 - [GitBranchBasics.md][GitBranchBasics]

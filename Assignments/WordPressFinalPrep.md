@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WordPressFinalPrep.md
+relativePath: Assignments/WordPressFinalPrep.md
+title: WordPressFinalPrep
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: WordPressFinalPrep.md
+fileNameHTML: WordPressFinalPrep.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 When working with WordPress, don't forget that most of the changes you make are done on the wp-admin page. You reach it with a URL like this:

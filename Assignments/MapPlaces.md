@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MapPlaces.md
+relativePath: Assignments/MapPlaces.md
+title: MapPlaces
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MapPlaces.md
+fileNameHTML: MapPlaces.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # MapPlaces
 
 The goal of this assignment is to help you learn how to drive Google Maps from a JavaScript based application.

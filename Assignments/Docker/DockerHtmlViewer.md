@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerHtmlViewer.md
+relativePath: Assignments/Docker/DockerHtmlViewer.md
+title: DockerHtmlViewer
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerHtmlViewer.md
+fileNameHTML: DockerHtmlViewer.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 There are two different ways to get files from a host OS into a Docker container:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NoLaptopMonday.md
+relativePath: Assignments/NoLaptopMonday.md
+title: NoLaptopMonday
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NoLaptopMonday.md
+fileNameHTML: NoLaptopMonday.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goals of the **No Laptop Monday** are two fold:

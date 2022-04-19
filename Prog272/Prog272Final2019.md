@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog272/Prog272Final2019.md
+relativePath: Prog272/Prog272Final2019.md
+title: Prog272Final2019
+queryPath: Prog272/
+subject: Prog272
+fileNameMarkdown: Prog272Final2019.md
+fileNameHTML: Prog272Final2019.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The main goal is to create properly working versions of:

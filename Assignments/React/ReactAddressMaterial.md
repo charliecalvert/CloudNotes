@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressMaterial.md
+relativePath: Assignments/React/ReactAddressMaterial.md
+title: ReactAddressMaterial
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressMaterial.md
+fileNameHTML: ReactAddressMaterial.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This assignment needs to be updated. We will discuss in class, Tuesday, May 14, 2019.

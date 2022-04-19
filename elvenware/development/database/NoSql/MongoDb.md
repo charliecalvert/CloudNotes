@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
 fileNameMarkdown: MongoDb.md
 fileNameHTML: MongoDb.html
+image: ./course/course-javascript.jpg
+subject: NoSql
+queryPath: elvenware/development/database/NoSql/
 ---
 
 <!-- toc -->

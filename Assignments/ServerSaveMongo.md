@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ServerSaveMongo.md
+relativePath: Assignments/ServerSaveMongo.md
+title: ServerSaveMongo
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ServerSaveMongo.md
+fileNameHTML: ServerSaveMongo.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Server Save Mongo
 
 We need to make a number of changes and refactorings to our application.

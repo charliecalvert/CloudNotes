@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/WhyUseLinux.md
+relativePath: WhyUseLinux.md
+title: WhyUseLinux
+queryPath: /
+subject: CloudNotes
+fileNameMarkdown: WhyUseLinux.md
+fileNameHTML: WhyUseLinux.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Why are using Linux for a number of reasons, some of which I've talked about elsewhere:
 
 It is used a lot in the industry, and we should have at least one course here at BC that covers it.

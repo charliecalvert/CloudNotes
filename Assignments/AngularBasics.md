@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularBasics.md
+relativePath: Assignments/AngularBasics.md
+title: AngularBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularBasics.md
+fileNameHTML: AngularBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Angular Basics
 
 In this exercise you will learn how to create a fairly complete and quite powerful Angular project with the following features built in:

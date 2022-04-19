@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitDualRepos.md
+relativePath: Assignments/GitDualRepos.md
+title: GitDualRepos
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GitDualRepos.md
+fileNameHTML: GitDualRepos.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Git Dual Repo gives you a chance to open two views on your repository on one machine. You can then add, commit, push and pull on one machine, but see the results on two repositories.

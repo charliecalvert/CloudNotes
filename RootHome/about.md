@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/RootHome/about.md
+relativePath: RootHome/about.md
+title: About
+queryPath: RootHome/
+subject: RootHome
+fileNameMarkdown: about.md
+fileNameHTML: about.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I'm an adjunct professor at Bellevue College. I've been working with computers and writing code in one form or another for about 25 years. I started out with Turbo Pascal and Delphi, spent time with Java, C++, Python and Perl, and then spent a number of years working in C#.

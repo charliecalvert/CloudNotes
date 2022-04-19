@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.md
+relativePath: Assignments/WebCrafts/WebCraftsReactStarter.md
+title: WebCraftsReactStarter
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: WebCraftsReactStarter.md
+fileNameHTML: WebCraftsReactStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to begin the process of integrating React into our [WebCrafts][wcs] application. Your key reference will be the [ReactBasics][rb] assignment. More specifically, I'm expecting you to be working in this repository:

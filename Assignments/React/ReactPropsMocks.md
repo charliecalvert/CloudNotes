@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsMocks.md
+relativePath: Assignments/React/ReactPropsMocks.md
+title: ReactPropsMocks
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactPropsMocks.md
+fileNameHTML: ReactPropsMocks.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We want to write Jest tests that use a mock implementation of **fetch** that does not make an HTTP REST call over the network. This allows us to run our tests even if our server is not, or cannot, run. The point is that our tests should not depend on the state of the network, and should need minimal setup. If we can run the tests without having to start our server, then we are likely to run them more often. Also, this allows us to test just our client, without having to worry about errors (404, 500) that might occur on the server side.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressPagesAndMixins.md
+relativePath: Assignments/ExpressPagesAndMixins.md
+title: ExpressPagesAndMixins
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ExpressPagesAndMixins.md
+fileNameHTML: ExpressPagesAndMixins.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In the  Express Pages and Mixins assignment you will learn about Jade, bootstrap and mixins. I'd like you to build a single page app (SPA) that switches between showing the **main page** and the **about page**.

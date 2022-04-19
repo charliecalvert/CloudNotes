@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsServerTest.md
+relativePath: Assignments/Aws/AwsServerTest.md
+title: AwsServerTest
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: AwsServerTest.md
+fileNameHTML: AwsServerTest.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Everytime we can break hard problems down into simpler problems, we win. One hard problem can be ensuring that our routes are fulfilled. We have learned how to write simple tests to check our client without having to involve the server. But how can we check out the server without involving the client?

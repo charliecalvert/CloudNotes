@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog219/Setup.md
+relativePath: Prog219/Setup.md
+title: Setup
+queryPath: Prog219/
+subject: Prog219
+fileNameMarkdown: Setup.md
+fileNameHTML: Setup.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Setup
 
 The first step is to get setup. We will use only open source software

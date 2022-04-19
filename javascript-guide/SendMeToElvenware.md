@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/SendMeToElvenware.md
-relativePath: elvenware/development/web/JavaScript/SendMeToElvenware.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/SendMeToElvenware.md
+relativePath: javascript-guide/SendMeToElvenware.md
 title: SendMeToElvenware
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: SendMeToElvenware.md
 fileNameHTML: SendMeToElvenware.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

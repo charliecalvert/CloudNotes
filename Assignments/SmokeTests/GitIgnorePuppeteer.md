@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/GitIgnorePuppeteer.md
+relativePath: Assignments/SmokeTests/GitIgnorePuppeteer.md
+title: GitIgnorePuppeteer
+queryPath: Assignments/SmokeTests/
+subject: SmokeTests
+fileNameMarkdown: GitIgnorePuppeteer.md
+fileNameHTML: GitIgnorePuppeteer.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 [Puppeteer][ppt] is a tool for end-to-end testing. Most of the testing I have done

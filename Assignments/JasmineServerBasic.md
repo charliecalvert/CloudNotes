@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JasmineServerBasic.md
+relativePath: Assignments/JasmineServerBasic.md
+title: JasmineServerBasic
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: JasmineServerBasic.md
+fileNameHTML: JasmineServerBasic.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Jasmine Server Side {#jasmine-node}
 
 We want to be able to run tests on the server side that confirms the validity of our code. It is also important to run tests on the client side, in the browser, but that is not our goal in this exercise.

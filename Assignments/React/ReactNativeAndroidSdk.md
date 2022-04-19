@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactNativeAndroidSdk.md
+relativePath: Assignments/React/ReactNativeAndroidSdk.md
+title: ReactNativeAndroidSdk
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactNativeAndroidSdk.md
+fileNameHTML: ReactNativeAndroidSdk.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 [Android X86][ax86], React Native and the Android SDK. The goal of this assignment is to load our code into a virtual phone running in VirtualBox.

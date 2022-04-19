@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/GitUserTesting.md
+relativePath: Assignments/React/GitUserTesting.md
+title: GitUserTesting
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: GitUserTesting.md
+fileNameHTML: GitUserTesting.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Hints on testing GitUser and GitUser-UI after we have moved to Material-UI v1.1.1 or later.

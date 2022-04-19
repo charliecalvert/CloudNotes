@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElfNpmUnitTest.md
+relativePath: Assignments/ElfNpmUnitTest.md
+title: ElfNpmUnitTest
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElfNpmUnitTest.md
+fileNameHTML: ElfNpmUnitTest.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of Elf Npm Unit Test is to refine our **Isit322-lastname** packages with new code and unit tests.

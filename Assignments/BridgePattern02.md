@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BridgePattern02.md
+relativePath: Assignments/BridgePattern02.md
+title: BridgePattern02
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BridgePattern02.md
+fileNameHTML: BridgePattern02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #BridgePattern Part 02
 
 We are pushing toward the midterm now. This is not the midterm, but

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog282/Overview.md
+relativePath: Prog282/Overview.md
+title: Overview
+queryPath: Prog282/
+subject: Prog282
+fileNameMarkdown: Overview.md
+fileNameHTML: Overview.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Prog 282 Overview
 =================
 

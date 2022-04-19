@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/prog109-midterm-2019.md
+relativePath: Assignments/MidtermFinal/prog109-midterm-2019.md
+title: Prog109-midterm-2019
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: prog109-midterm-2019.md
+fileNameHTML: prog109-midterm-2019.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is the 2019 midterm for Prog 109. This should be close to the final version, but as you work on your midterm, refresh this page from time to time in your browser. It is unlikely that I will change the requirements for the midterm, but I may add clarifications or hints. You'll want to see hints.

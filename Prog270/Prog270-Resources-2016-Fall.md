@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/Prog270-Resources-2016-Fall.md
+relativePath: Prog270/Prog270-Resources-2016-Fall.md
+title: Prog270-Resources-2016-Fall
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: Prog270-Resources-2016-Fall.md
+fileNameHTML: Prog270-Resources-2016-Fall.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Prog 270 Resources
 
 - [Charlie in the Cloud](http://bit.ly/V5g8wF)

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsUpToDate.md
+relativePath: Assignments/WebCrafts/WebCraftsUpToDate.md
+title: WebCraftsUpToDate
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: WebCraftsUpToDate.md
+fileNameHTML: WebCraftsUpToDate.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The primary goal here is to make sure you can handle the updated **ElvenConfig.json** file that supports multiple **users**. Right now, the assignment is a bit sparse, but some might be interested in it so I'll make it available.

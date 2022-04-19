@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SystemCheckDetails.md
+relativePath: Assignments/Aws/SystemCheckDetails.md
+title: SystemCheckDetails
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: SystemCheckDetails.md
+fileNameHTML: SystemCheckDetails.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We want to refactor App.js into:

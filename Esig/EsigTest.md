@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Esig/EsigTest.md
+relativePath: Esig/EsigTest.md
+title: EsigTest
+queryPath: Esig/
+subject: Esig
+fileNameMarkdown: EsigTest.md
+fileNameHTML: EsigTest.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I have created an OVA file for use in VirtualBox, VMware, etc. The OVA is about 2 GB in size, so be prepared for a significant download.

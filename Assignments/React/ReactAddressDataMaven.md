@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressDataMaven.md
+relativePath: Assignments/React/ReactAddressDataMaven.md
+title: ReactAddressDataMaven
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressDataMaven.md
+fileNameHTML: ReactAddressDataMaven.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Address Data Maven
 
 We are going to add a new component called **DataMaven** so that we can refactor and get rid of **AddressChanger**.

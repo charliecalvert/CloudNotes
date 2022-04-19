@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/HelpingOthers.md
+relativePath: Tips/HelpingOthers.md
+title: HelpingOthers
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: HelpingOthers.md
+fileNameHTML: HelpingOthers.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In this document I will try to give some guidelines on ways that students can work together.

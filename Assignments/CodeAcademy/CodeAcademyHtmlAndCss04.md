@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyHtmlAndCss04.md
+relativePath: Assignments/CodeAcademy/CodeAcademyHtmlAndCss04.md
+title: CodeAcademyHtmlAndCss04
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: CodeAcademyHtmlAndCss04.md
+fileNameHTML: CodeAcademyHtmlAndCss04.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Code Academy Part IV
 
 Bring [HTML](https://www.codecademy.com/learn/learn-html) and [CSS](https://www.codecademy.com/learn/learn-css) to 100%.

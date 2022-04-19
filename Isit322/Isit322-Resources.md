@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit322/Isit322-Resources.md
+relativePath: Isit322/Isit322-Resources.md
+title: Isit322-Resources
+queryPath: Isit322/
+subject: Isit322
+fileNameMarkdown: Isit322-Resources.md
+fileNameHTML: Isit322-Resources.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 ISIT 322 Resources for 2019

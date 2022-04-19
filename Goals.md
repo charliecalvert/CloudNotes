@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Goals.md
+relativePath: Goals.md
+title: Goals
+queryPath: /
+subject: CloudNotes
+fileNameMarkdown: Goals.md
+fileNameHTML: Goals.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 The most important thing I hear is that you liked working on Codecademy. I have my students work up there, and the good ones always get it done and even enjoy it a bit, and the less talented or experienced students always complain and struggle. The point is this: If you like to write code, and have any talent (and I'm sure you do) then you will get good at writing code. One has to have that spark, that love of writing code. If it is a bit game-like to you, if it is a series of fun challenges for you, then you will get good at it. That was what I was talking about when I went into the manager vs developer thing: "Are you sure you really like to write code?" If you enjoy doing it, then you can become a developer. Or a manager. Either way. But you have to enjoy it. By enjoy it, I mean enjoy writing code for hours on end.
 I don't see any harm in going to any job interview. If the company is any good at all, they should be able to sort out your abilities fairly easy. Let them decide if they want you. During the interview, be as honest as you can, and listen and learn from the interview. If nothing else, get them to tell you exactly what they are looking for, and then add the best parts of that to your skill set. If the interview starts to go south, I don't see any harm in asking: "What can I do so the next time you will hire me? What are you looking for, in what areas do you think I need work?" Every once in a while an interviewer will actually get abusive, but most of the time, the worst that happens is that they don't invite you back for a second chance. I'm not sure that outcome even burns your chances at that company. They should be impressed, rather than negative, if you come back six months later, or a year later, and say: I've been studying a lot and would like to try again". 
 What they are asking for here makes sense to me. This is more or less what I try to teach my students. In particular, I think you should learn all you can about:

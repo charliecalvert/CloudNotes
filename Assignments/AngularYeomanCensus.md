@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularYeomanCensus.md
+relativePath: Assignments/AngularYeomanCensus.md
+title: AngularYeomanCensus
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularYeomanCensus.md
+fileNameHTML: AngularYeomanCensus.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Angular Yeoman Census
 
 In our quest to do things the traditional way, we are going to adopt Yeoman, which is a scaffolding tool. It creates a ready to use Angular application with support for:

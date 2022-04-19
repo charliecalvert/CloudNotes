@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressRoutesSolarCleaner.md
+relativePath: Assignments/ExpressRoutesSolarCleaner.md
+title: ExpressRoutesSolarCleaner
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ExpressRoutesSolarCleaner.md
+fileNameHTML: ExpressRoutesSolarCleaner.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 In **/app.js**, around line 8:
 
 ```javascript

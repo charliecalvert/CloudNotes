@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog272Final2014.md
+relativePath: Assignments/Prog272Final2014.md
+title: Prog272Final2014
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog272Final2014.md
+fileNameHTML: Prog272Final2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 272 Final 2014
 
 This document defines the final for Prog 272. It is a work in progress. Please check back frequently.

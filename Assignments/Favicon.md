@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Favicon.md
+relativePath: Assignments/Favicon.md
+title: Favicon
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Favicon.md
+fileNameHTML: Favicon.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Create a custom Favicon and get it going on both EC2 and FireBase. Don't just reuse my icon, create a custom icon of your own design.
 
 Put your icon (in PNG format) in the images directory of your repository. Submit, on the text page, the live URLs for both your sites.

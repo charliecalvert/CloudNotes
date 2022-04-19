@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact03.md
+relativePath: Assignments/CodeAcademy/CodeAcademyReact03.md
+title: CodeAcademyReact03
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: CodeAcademyReact03.md
+fileNameHTML: CodeAcademyReact03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Code Academy Part III
 
 Bring [React Part 1](https://www.codecademy.com/learn/react-101) to at least 75%.

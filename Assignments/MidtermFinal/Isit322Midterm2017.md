@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit322Midterm2017.md
+relativePath: Assignments/MidtermFinal/Isit322Midterm2017.md
+title: Isit322Midterm2017
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: Isit322Midterm2017.md
+fileNameHTML: Isit322Midterm2017.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # ISIT 322 Midterm 2017
 
 This will be a a take home exam. You will have about a week to do it.

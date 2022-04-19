@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BitlyRefine.md
+relativePath: Assignments/BitlyRefine.md
+title: BitlyRefine
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BitlyRefine.md
+fileNameHTML: BitlyRefine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Overview
 
 Your goal is to refine the BitlyInteractive program into something reasonably attractive and easy to use.

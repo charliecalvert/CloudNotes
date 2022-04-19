@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PubSub01.md
+relativePath: Assignments/PubSub01.md
+title: PubSub01
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: PubSub01.md
+fileNameHTML: PubSub01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # PubSub
 
 Create a project with two modules, one called **Calculate.js** and

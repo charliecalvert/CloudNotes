@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularChartCensus.md
+relativePath: Assignments/AngularChartCensus.md
+title: AngularChartCensus
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularChartCensus.md
+fileNameHTML: AngularChartCensus.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Angular Chart Census
 
 This assignment is not yet complete, but you can get started by doing at least this much.

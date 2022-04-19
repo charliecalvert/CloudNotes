@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularDirectives.md
+relativePath: Assignments/AngularDirectives.md
+title: AngularDirectives
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularDirectives.md
+fileNameHTML: AngularDirectives.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Angular Directives
 
 This is a very sketchy outline of an in-class assignment. Details to follow. Don't forget to refresh this page when looking for updates.

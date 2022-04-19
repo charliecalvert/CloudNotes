@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/Ec2CopyFile.md
+relativePath: Assignments/Aws/Ec2CopyFile.md
+title: Ec2CopyFile
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: Ec2CopyFile.md
+fileNameHTML: Ec2CopyFile.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn how to copy a file to remote location from a React application.

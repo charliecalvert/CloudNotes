@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog282/KansoNotByCharlie.md
+relativePath: Prog282/KansoNotByCharlie.md
+title: KansoNotByCharlie
+queryPath: Prog282/
+subject: Prog282
+fileNameMarkdown: KansoNotByCharlie.md
+fileNameHTML: KansoNotByCharlie.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Kanso Document Found on the Web
 ================================
 I (charlie) did not write this.  I found it on the web.

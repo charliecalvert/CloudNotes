@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/WritingSimpleCode.md
-relativePath: elvenware/development/web/JavaScript/WritingSimpleCode.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/WritingSimpleCode.md
+relativePath: javascript-guide/WritingSimpleCode.md
 title: WritingSimpleCode
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: WritingSimpleCode.md
 fileNameHTML: WritingSimpleCode.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

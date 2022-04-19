@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo04.md
+relativePath: Assignments/CodeAcademy/CodeAcademyReactPartTwo04.md
+title: CodeAcademyReactPartTwo04
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: CodeAcademyReactPartTwo04.md
+fileNameHTML: CodeAcademyReactPartTwo04.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Code Academy Part IV
 
 Bring [React Part 2][car] to 100%.

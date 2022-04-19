@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
 fileNameMarkdown: git-introduction.md
 fileNameHTML: git-introduction.html
+image: ./course/course-javascript.jpg
+subject: git
+queryPath: elvenware/development/git/
 ---
 
 <!-- toc -->

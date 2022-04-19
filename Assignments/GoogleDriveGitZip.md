@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GoogleDriveGitZip.md
+relativePath: Assignments/GoogleDriveGitZip.md
+title: GoogleDriveGitZip
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GoogleDriveGitZip.md
+fileNameHTML: GoogleDriveGitZip.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The purpose of the **Google Drive, Git and Zip** assignment is to give everyone practice using:

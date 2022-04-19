@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSitePixPicker.md
+relativePath: Assignments/ElvenSitePixPicker.md
+title: ElvenSitePixPicker
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElvenSitePixPicker.md
+fileNameHTML: ElvenSitePixPicker.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Elven Site Pix Picker

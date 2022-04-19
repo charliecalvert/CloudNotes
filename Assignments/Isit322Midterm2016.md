@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit322Midterm2016.md
+relativePath: Assignments/Isit322Midterm2016.md
+title: Isit322Midterm2016
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit322Midterm2016.md
+fileNameHTML: Isit322Midterm2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is the Isit322 Midterm for 2016. Your program should be in a directory called **Week08-Midterm**.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit322/Isit322-Resources-2015.md
+relativePath: Isit322/Isit322-Resources-2015.md
+title: Isit322-Resources-2015
+queryPath: Isit322/
+subject: Isit322
+fileNameMarkdown: Isit322-Resources-2015.md
+fileNameHTML: Isit322-Resources-2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # ISIT 322 Resources for 2015
 
 Here are number of links that you can use to help stay up to date

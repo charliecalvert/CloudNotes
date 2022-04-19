@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/index.md
+relativePath: Assignments/CodeAcademy/index.md
+title: Index
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: index.md
+fileNameHTML: index.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Here is a Table of Contents for Code Academy Skills used in Charlie's courses.

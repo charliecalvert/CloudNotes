@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JQueryMochaBasics.md
+relativePath: Assignments/JQueryMochaBasics.md
+title: JQueryMochaBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: JQueryMochaBasics.md
+fileNameHTML: JQueryMochaBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #JQueryMochaBasics
 
 here should be enough information here to allow you to complete this assignment. There are two parts to this project:

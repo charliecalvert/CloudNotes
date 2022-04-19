@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit322/Isit322-Week03.md
+relativePath: Isit322/Isit322-Week03.md
+title: Isit322-Week03
+queryPath: Isit322/
+subject: Isit322
+fileNameMarkdown: Isit322-Week03.md
+fileNameHTML: Isit322-Week03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Links
 
 *   [Android X-86](/android-guide/Androidx86.shtml) on Elvenware.

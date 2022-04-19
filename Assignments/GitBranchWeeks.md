@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitBranchWeeks.md
+relativePath: Assignments/GitBranchWeeks.md
+title: GitBranchWeeks
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GitBranchWeeks.md
+fileNameHTML: GitBranchWeeks.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learning about branching.

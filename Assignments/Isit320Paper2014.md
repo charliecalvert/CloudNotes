@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Paper2014.md
+relativePath: Assignments/Isit320Paper2014.md
+title: Isit320Paper2014
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit320Paper2014.md
+fileNameHTML: Isit320Paper2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Isit320 Paper 2014
 
 Write a paper at least 5 pages long on a technical subject covered in this class. The subject can be of your choosing, or based on one of the recommendations below. Writing your paper should, in most cases, involve doing at least a bit of research.

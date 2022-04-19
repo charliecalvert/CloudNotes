@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CopyToS3Part02.md
+relativePath: Assignments/CopyToS3Part02.md
+title: CopyToS3Part02
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CopyToS3Part02.md
+fileNameHTML: CopyToS3Part02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Copy To S3 Part 02
 
 Here are the steps we will accomplish:

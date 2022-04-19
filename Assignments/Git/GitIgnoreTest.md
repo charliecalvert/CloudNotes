@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Git/GitIgnoreTest.md
+relativePath: Assignments/Git/GitIgnoreTest.md
+title: GitIgnoreTest
+queryPath: Assignments/Git/
+subject: Git
+fileNameMarkdown: GitIgnoreTest.md
+fileNameHTML: GitIgnoreTest.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to make sure you have included key elements in the **.gitignore** file for your repository and that you have not checked in any files that should not be included in your repository.

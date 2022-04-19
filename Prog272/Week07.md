@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog272/Week07.md
+relativePath: Prog272/Week07.md
+title: Week07
+queryPath: Prog272/
+subject: Prog272
+fileNameMarkdown: Week07.md
+fileNameHTML: Week07.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 272 Week 07, 2018
 
 - [React Address Native][ran]

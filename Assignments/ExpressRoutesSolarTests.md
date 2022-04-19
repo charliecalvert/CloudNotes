@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressRoutesSolarTests.md
+relativePath: Assignments/ExpressRoutesSolarTests.md
+title: ExpressRoutesSolarTests
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ExpressRoutesSolarTests.md
+fileNameHTML: ExpressRoutesSolarTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The primary goal is to learn how to run unit tests against a web server. This involves setting up jasmine to run server side tests with **jasmine-runner.js**, rather than running browser based tests with **karma**.

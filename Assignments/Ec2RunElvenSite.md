@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2RunElvenSite.md
+relativePath: Assignments/Ec2RunElvenSite.md
+title: Ec2RunElvenSite
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Ec2RunElvenSite.md
+fileNameHTML: Ec2RunElvenSite.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of **Ec2 Run Elven Site** is to get your most recent version of our ElvenSite program running on EC2. This should include support for [bootswatch][btsw].

@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptReact.md
-relativePath: elvenware/development/web/JavaScript/JavaScriptReact.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptReact.md
+relativePath: javascript-guide/JavaScriptReact.md
 title: JavaScriptReact
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: JavaScriptReact.md
 fileNameHTML: JavaScriptReact.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

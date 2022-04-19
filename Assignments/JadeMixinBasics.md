@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JadeMixinBasics.md
+relativePath: Assignments/JadeMixinBasics.md
+title: JadeMixinBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: JadeMixinBasics.md
+fileNameHTML: JadeMixinBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Jade Mixin Basics
 
 The goal of this assignment is to learn how to use Jade [mixins](https://pugjs.org/language/mixins.html). In particular, we will see how to use mixins to quickly and easily assemble an interface for an application.

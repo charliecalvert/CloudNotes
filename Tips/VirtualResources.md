@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/VirtualResources.md
+relativePath: Tips/VirtualResources.md
+title: VirtualResources
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: VirtualResources.md
+fileNameHTML: VirtualResources.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Maintaining Virtual Resources
 
 We use a lot of virtual resources in my classes. As with all software, things can go wrong with one of these resources. In such cases, frequently the best thing to do is reinstall. If you are skillful, it takes less than an hour to get everything re-installed. I have seen students spend 3 hours, eight hours, even days trying to troubleshoot a problem that could be fixed by a relatively painless reinstall. However long it might take to reinstall all the resources used in this class, it is unlikely to take a days or weeks.

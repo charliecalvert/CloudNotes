@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsMoreReact.md
+relativePath: Assignments/WebCrafts/WebCraftsMoreReact.md
+title: WebCraftsMoreReact
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: WebCraftsMoreReact.md
+fileNameHTML: WebCraftsMoreReact.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Additional hints on getting WebCraft converted to React.

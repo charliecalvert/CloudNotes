@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog282/Week08-Assignment.md
+relativePath: Prog282/Week08-Assignment.md
+title: Week08-Assignment
+queryPath: Prog282/
+subject: Prog282
+fileNameMarkdown: Week08-Assignment.md
+fileNameHTML: Week08-Assignment.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Week08 - Assignment
 ===================
 

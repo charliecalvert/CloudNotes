@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodeJade.md
-relativePath: elvenware/development/web/JavaScript/NodeJade.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/NodeJade.md
+relativePath: javascript-guide/NodeJade.md
 title: NodeJade
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: NodeJade.md
 fileNameHTML: NodeJade.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

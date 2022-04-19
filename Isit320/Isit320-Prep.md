@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit320/Isit320-Prep.md
+relativePath: Isit320/Isit320-Prep.md
+title: Isit320-Prep
+queryPath: Isit320/
+subject: Isit320
+fileNameMarkdown: Isit320-Prep.md
+fileNameHTML: Isit320-Prep.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #ISIT 320 Prep, Fall 2014
 
 Students sometimes ask me what they can learn ahead of time to help them get ready for ISIT 320. Below I list a few suggested areas of study. There is no need to do any of these things, but sometimes students do have free time during the summer and they want to put it to good use.

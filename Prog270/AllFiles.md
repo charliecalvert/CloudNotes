@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/AllFiles.md
+relativePath: Prog270/AllFiles.md
+title: AllFiles
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: AllFiles.md
+fileNameHTML: AllFiles.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 * [AllFiles.html](AllFiles.html)
 * [GoogleSiteAssignment.html](GoogleSiteAssignment.html)
 * [Ideas.html](Ideas.html)

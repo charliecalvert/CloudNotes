@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/JadeMarkdownExpress.md
+relativePath: Assignments/Express/JadeMarkdownExpress.md
+title: JadeMarkdownExpress
+queryPath: Assignments/Express/
+subject: Express
+fileNameMarkdown: JadeMarkdownExpress.md
+fileNameHTML: JadeMarkdownExpress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Goals:
 
 *   We often need to create text that will be reused in multiple locations.

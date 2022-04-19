@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit322Midterm2015.md
+relativePath: Assignments/Isit322Midterm2015.md
+title: Isit322Midterm2015
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit322Midterm2015.md
+fileNameHTML: Isit322Midterm2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Isit322 Midterm 2015
 
 We want to bring our Web App based Angular version of our Census data query up to some reasonable simulacrum of a first iteration on the final app.

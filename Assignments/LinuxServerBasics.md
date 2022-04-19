@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/LinuxServerBasics.md
+relativePath: Assignments/LinuxServerBasics.md
+title: LinuxServerBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: LinuxServerBasics.md
+fileNameHTML: LinuxServerBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to set up a Virtual Machine containing an Ubuntu Server instance and to communicate to it from your Pristine Ubuntu Desktop. Link to this document:

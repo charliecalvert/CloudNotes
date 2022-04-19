@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsMounted.md
+relativePath: Assignments/React/ReactPropsMounted.md
+title: ReactPropsMounted
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactPropsMounted.md
+fileNameHTML: ReactPropsMounted.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Props Mounted
 
 We have several major goals in this assignment. To learn how to:

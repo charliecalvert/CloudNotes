@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirestoreRules.md
+relativePath: Assignments/Firebase/FirestoreRules.md
+title: FirestoreRules
+queryPath: Assignments/Firebase/
+subject: Firebase
+fileNameMarkdown: FirestoreRules.md
+fileNameHTML: FirestoreRules.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 If you got to the point where you hosted your site and began to read and write to the database, you should learn how to secure your database. In particular, after the quarter ends, you should ensure that your database is not completely open to the world.

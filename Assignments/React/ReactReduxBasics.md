@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactReduxBasics.md
+relativePath: Assignments/React/ReactReduxBasics.md
+title: ReactReduxBasics
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactReduxBasics.md
+fileNameHTML: ReactReduxBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to learn about Redux and Props.

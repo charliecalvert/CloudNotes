@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteRefactorPair.md
+relativePath: Assignments/ElvenSiteRefactorPair.md
+title: ElvenSiteRefactorPair
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElvenSiteRefactorPair.md
+fileNameHTML: ElvenSiteRefactorPair.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The ElvenSiteRefactorPair assignment gives you a chance to refactor your code into logical classes. This should be a step toward providing your code with an architecture that is easy to understand, and easy to test.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/MaterialUiUpdate.md
+relativePath: Assignments/Browser/MaterialUiUpdate.md
+title: MaterialUiUpdate
+queryPath: Assignments/Browser/
+subject: Browser
+fileNameMarkdown: MaterialUiUpdate.md
+fileNameHTML: MaterialUiUpdate.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In a bit of bad luck, the **material-ui** folks have updated to a new version which they are labeling 1.0.

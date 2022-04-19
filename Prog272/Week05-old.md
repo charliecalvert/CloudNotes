@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog272/Week05-old.md
+relativePath: Prog272/Week05-old.md
+title: Week05-old
+queryPath: Prog272/
+subject: Prog272
+fileNameMarkdown: Week05-old.md
+fileNameHTML: Week05-old.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 No HelloCordova Accepted
 ------------------------
 

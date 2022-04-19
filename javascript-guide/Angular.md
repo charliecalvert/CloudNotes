@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Angular.md
-relativePath: elvenware/development/web/JavaScript/Angular.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/Angular.md
+relativePath: javascript-guide/Angular.md
 title: Angular
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: Angular.md
 fileNameHTML: Angular.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

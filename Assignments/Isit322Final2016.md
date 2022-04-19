@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit322Final2016.md
+relativePath: Assignments/Isit322Final2016.md
+title: Isit322Final2016
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit322Final2016.md
+fileNameHTML: Isit322Final2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Hopefully there is enough information here to get you well into this project, but check up here regularly for updates. This document is not complete, nor completely fact checked.

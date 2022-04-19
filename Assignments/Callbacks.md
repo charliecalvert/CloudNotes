@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Callbacks.md
+relativePath: Assignments/Callbacks.md
+title: Callbacks
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Callbacks.md
+fileNameHTML: Callbacks.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Callbacks
 
 Learn about JavaScripts callbacks. We will cover this in class on Thursday, so you can wait until then to do it, if you wish.

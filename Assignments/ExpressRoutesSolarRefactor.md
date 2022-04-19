@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressRoutesSolarRefactor.md
+relativePath: Assignments/ExpressRoutesSolarRefactor.md
+title: ExpressRoutesSolarRefactor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ExpressRoutesSolarRefactor.md
+fileNameHTML: ExpressRoutesSolarRefactor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to refactor the renewables related code into appropriately named folders.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/index.md
+relativePath: Assignments/Browser/index.md
+title: Index
+queryPath: Assignments/Browser/
+subject: Browser
+fileNameMarkdown: index.md
+fileNameHTML: index.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Browser related assignments.

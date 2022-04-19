@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BridgePattern03.md
+relativePath: Assignments/BridgePattern03.md
+title: BridgePattern03
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BridgePattern03.md
+fileNameHTML: BridgePattern03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Bridge Pattern 03
 
 Here is an overview of the assignment:

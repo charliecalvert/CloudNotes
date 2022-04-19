@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularMongooseOnePage.md
+relativePath: Assignments/AngularMongooseOnePage.md
+title: AngularMongooseOnePage
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularMongooseOnePage.md
+fileNameHTML: AngularMongooseOnePage.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 Incorporate the Moongoose editor material into your midterm project. Start by copying your existing midterm into a folder called **Week10-AngularOnePage**.

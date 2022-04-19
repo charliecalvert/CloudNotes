@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AwsMigration.md
+relativePath: Assignments/AwsMigration.md
+title: AwsMigration
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AwsMigration.md
+fileNameHTML: AwsMigration.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 #EC2 Cloud Only
 

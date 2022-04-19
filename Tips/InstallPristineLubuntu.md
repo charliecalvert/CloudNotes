@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/InstallPristineLubuntu.md
+relativePath: Tips/InstallPristineLubuntu.md
+title: InstallPristineLubuntu
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: InstallPristineLubuntu.md
+fileNameHTML: InstallPristineLubuntu.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In most of my classes we use a copy of [Lubuntu][lu] running in Virtual Box. The first step is to download the custom Lubuntu OVA VirtualBox VM File from Google Drive. There is a copy of the Linux Lubuntu desktop specially prepared for this course.

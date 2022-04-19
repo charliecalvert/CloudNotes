@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JasmineExpressMock.md
+relativePath: Assignments/JasmineExpressMock.md
+title: JasmineExpressMock
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: JasmineExpressMock.md
+fileNameHTML: JasmineExpressMock.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Jasmine Express Mock
 
 Learn about unit testing and mocks with Jasmine and **SpyOn**.

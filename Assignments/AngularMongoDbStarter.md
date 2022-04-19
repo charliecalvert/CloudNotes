@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularMongoDbStarter.md
+relativePath: Assignments/AngularMongoDbStarter.md
+title: AngularMongoDbStarter
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularMongoDbStarter.md
+fileNameHTML: AngularMongoDbStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Angular MongoDb Starter
 
 Use Angular and MongoDb in a single express project.

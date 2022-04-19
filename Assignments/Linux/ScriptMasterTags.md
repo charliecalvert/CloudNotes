@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Linux/ScriptMasterTags.md
+relativePath: Assignments/Linux/ScriptMasterTags.md
+title: ScriptMasterTags
+queryPath: Assignments/Linux/
+subject: Linux
+fileNameMarkdown: ScriptMasterTags.md
+fileNameHTML: ScriptMasterTags.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal is to make it simple to commit and push our work, providing:

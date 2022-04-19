@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/NodeRouteExtras.md
+relativePath: Assignments/Express/NodeRouteExtras.md
+title: NodeRouteExtras
+queryPath: Assignments/Express/
+subject: Express
+fileNameMarkdown: NodeRouteExtras.md
+fileNameHTML: NodeRouteExtras.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This used to be part of the NodeRoutesBasics assignment but now can be safely ignore.

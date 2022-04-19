@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/index.md
+relativePath: Assignments/Docker/index.md
+title: Index
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: index.md
+fileNameHTML: index.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is the TOC for the Docker assignments in Charlie Calvert's courses.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DataMasterFinalPrep.md
+relativePath: Assignments/DataMasterFinalPrep.md
+title: DataMasterFinalPrep
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: DataMasterFinalPrep.md
+fileNameHTML: DataMasterFinalPrep.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The DataMaster Final Prep helps you get ready for the final. Major goals include:

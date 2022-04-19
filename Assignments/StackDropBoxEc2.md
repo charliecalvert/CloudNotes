@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/StackDropBoxEc2.md
+relativePath: Assignments/StackDropBoxEc2.md
+title: StackDropBoxEc2
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: StackDropBoxEc2.md
+fileNameHTML: StackDropBoxEc2.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## StackEdit and DropBox
 
 The goal of this assignment is to teach you about DropBox and how to store files you edit in StackEdit into the cloud. In particular, you will learn how to automatically sync the files you edit in StackEdit to DropBox. 

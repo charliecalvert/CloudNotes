@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresenceOld.md
+relativePath: Assignments/OnlinePresenceOld.md
+title: OnlinePresenceOld
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: OnlinePresenceOld.md
+fileNameHTML: OnlinePresenceOld.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## The Old Google Sites
 
 Google Sites has been radically rewritten. For this assignment, create a new Google Site, as outlined above. But if you want to create an old style site for your personal use, then you can click the create button on this page:

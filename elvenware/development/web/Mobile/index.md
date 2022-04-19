@@ -6,13 +6,16 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: index.md
 fileNameHTML: index.html
+image: ./course/course-javascript.jpg
+subject: Mobile
+queryPath: elvenware/development/web/Mobile/
 ---
 
 <!-- toc -->
 <!-- tocstop -->
 
-JQuery Mobile Basics
-====================
+Elven Mobile Guide
+==================
 
 jQuery Mobile is designed to help you create pages that look good and
 fit well on the small screen of a mobile device such as a phone or music
@@ -21,27 +24,27 @@ smaller screens.
 
 Here are some key links.
 
--   [IPhone Ajax](IPhoneGo.html)
--   [JQuery Mobile](JQueryMobile.html)
--   [JQuery Mobile Pages](JQueryMobilePages.html)
--   [Simulate IPhone on Safari Browser](SimulateIPhoneOnSafari.html)
--   [Link to non-mobile page from JQuery Mobile](LinkFromJQueryMobile.html)
--   [IPhone Test (Experimental)](IPhoneTest.html)
+- [IPhone Ajax](IPhoneGo.html)
+- [JQuery Mobile](JQueryMobile.html)
+- [JQuery Mobile Pages](JQueryMobilePages.html)
+- [Simulate IPhone on Safari Browser](SimulateIPhoneOnSafari.html)
+- [Link to non-mobile page from JQuery Mobile](LinkFromJQueryMobile.html)
+- [IPhone Test (Experimental)](IPhoneTest.html)
 
 Third Party Links:
 
--   [jQuery Mobile Home Page](http://jquerymobile.com/)
--   [Sample jQuery Page](JQueryMobile.html)
--   [jQuery Mobile Gallery of Sample Pages.](http://www.jqmgallery.com/)
+- [jQuery Mobile Home Page](http://jquerymobile.com/)
+- [Sample jQuery Page](JQueryMobile.html)
+- [jQuery Mobile Gallery of Sample Pages.](http://www.jqmgallery.com/)
 
 jQuery Mobile is designed to work on most modern mobile devices. The
 devices supported include:
 
--   Android
--   Blackberry
--   iOS
--   Windows Phone
--   Others: bada, palm Web OS, Symbian, MeeGo
+- Android
+- Blackberry
+- iOS
+- Windows Phone
+- Others: bada, palm Web OS, Symbian, MeeGo
 
 Getting Started {#gettingStarted}
 ---------------
@@ -58,8 +61,8 @@ second has header tag assigned a "data role." The data-role attribute is
 not a standard part of HTML5. It is interpreted by jQuery Mobile in
 order to create a special effect.
 
--   html tag: header
--   custom data-attribute: data-role
+- html tag: header
+- custom data-attribute: data-role
 
 Data attributes are used everywhere in JQueryMobile. These tags make it
 possible for the jQuery JavaScript in JQueryMobile to alters your page,
@@ -68,16 +71,16 @@ adding all kinds of markup to these tags.
 You can continue working in the same HTML file. Use this markup to
 create a second page.
 
--   \<section id="page2" data-role="page"\>
-    -   HTML5 tag: section
-    -   id="page2"
-    -   Then our custom data is set to "page"
+- \<section id="page2" data-role="page"\>
+  - HTML5 tag: section
+  - id="page2"
+  - Then our custom data is set to "page"
 
 All you HTML is stored in one file, but it is displayed as multiple
 pages when rendered by a browser. Inside the page, mark up just as you
 would a normal page, only add the **data-role** attribute:
 
--   \<footer data-role="footer"\>\<h1\>JQuery\</h1\>\</footer
+- \<footer data-role="footer"\>\<h1\>JQuery\</h1\>\</footer
 
 You can slide, slide-down, slide-up, but it only works on webkit. This
 means that you should do your desktop development with Chrome or Safari.
@@ -115,15 +118,13 @@ Here is an example of how to link in jQuery Mobile 1.1.0:
 
 Additional options can be found on the Microsoft CDN site:
 
--   [http://www.asp.net/ajaxLibrary/CDN.ashx\#jQuery\_Mobile\_Releases\_on\_the\_CDN\_3](http://www.asp.net/ajaxLibrary/CDN.ashx#jQuery_Mobile_Releases_on_the_CDN_3)
+- [http://www.asp.net/ajaxLibrary/CDN.ashx\#jQuery\_Mobile\_Releases\_on\_the\_CDN\_3](http://www.asp.net/ajaxLibrary/CDN.ashx#jQuery_Mobile_Releases_on_the_CDN_3)
 
 A Complete Example {#complete}
 ------------------
 
 In the head tag, you need to link in jQuery Mobile. Then in the body,
 you define the pages you want to view. Consider this minimal example:
-
- 
 
 ~~~~ {.code}
 <!DOCTYPE html>
@@ -163,7 +164,7 @@ you define the pages you want to view. Consider this minimal example:
 
 Here is a link to this page running life on the web:
 
--   [JQueryMobileSimple.html](JQueryMobileSimplest.html)
+- [JQueryMobileSimple.html](JQueryMobileSimplest.html)
 
 Here is a screen shot of the same application running in a mobile
 emulator:
@@ -179,17 +180,17 @@ in an HTML tag. These**data-role** tags are noted by jQuery Mobile. Each
 time the tag is seen, jQuery mobile transforms an ordinary HTML tag into
 a specially formatted jQuery Mobile element. Here are some examples:
 
--   A DIV element is transformed into a jQuery Mobile page by including
+- A DIV element is transformed into a jQuery Mobile page by including
     the **data-role** attribute. By including this attribute, the code
     inside the tag is maked as a single page. As you will see, you are
     able to put multiple jQuery Mobile pages inside a single HTML file.
     Example: **\<div data-role="page"\>**
--   When The data-role attribute set equal to the value **header**
+- When The data-role attribute set equal to the value **header**
     transforms a div into a header. Example: **\<div
     data-role="header"\>**
--   The body of the page has the **data-role** set equal to the word
+- The body of the page has the **data-role** set equal to the word
     **content**. Example: **\<div data-role="content"\>**
--   A final example is the footer element. I'll leave it to you to
+- A final example is the footer element. I'll leave it to you to
     examine the source code and find tag used to set up the footer.
 
 Here is more complex example:
@@ -248,11 +249,11 @@ The first key line is the one that specifies the data-role as "page":
 Themes
 ------
 
--   You have a series of built-in themes that you can use
--   You can custom role your own themes
--   You can tell an individual tag what theme to use:
-    -   \<div data-role="page" id="FirstPage" data-theme="b"\> 
-    -   This use data-theme b to color the page.
+- You have a series of built-in themes that you can use
+- You can custom role your own themes
+- You can tell an individual tag what theme to use:
+  - \<div data-role="page" id="FirstPage" data-theme="b"\>
+  - This use data-theme b to color the page.
 
 jQuery Mobile usually comes with multiple themes. You might for
 instance, want to switch the **data-theme** between a and b. Here is
@@ -319,7 +320,7 @@ tags of jQuery Mobile HTML file that contains two pages:
 Here is a link to the HTML file, so that you can see for yourself how it
 works:
 
--   [JQueryTwoPages.html](JQueryTwoPages.html)
+- [JQueryTwoPages.html](JQueryTwoPages.html)
 
 Note that there are two pages defined. The first has the ID **page01**,
 and the second has the ID **page02:**
@@ -375,44 +376,40 @@ code in this jQuery ajax call:
                 $('#items').listview('refresh');
             }       
         });     
-        
-        
+
 Change Page with JavaScript
 ---------------------------
 
-You can call<strong> $.mobile.changePage()</strong> to switch pages while 
+You can call<strong> $.mobile.changePage()</strong> to switch pages while
 using jQueryMobile.
 
 ~~~~
 Main.prototype.displayRadioButtonSelection = function() {
-	console.log("cgm: displayRadioButtonSelection called");
-	var id = $("input[name=mainGroup]:checked").attr('id');
-	switch(id) {
-		case "rbPage01":
-			$.mobile.changePage($("#page01"), "slide", true, true);
-			break;
-		case "rbPage02":
-			$.mobile.changePage($("#page02"), "slide", true, true);
+ console.log("cgm: displayRadioButtonSelection called");
+ var id = $("input[name=mainGroup]:checked").attr('id');
+ switch(id) {
+  case "rbPage01":
+   $.mobile.changePage($("#page01"), "slide", true, true);
+   break;
+  case "rbPage02":
+   $.mobile.changePage($("#page02"), "slide", true, true);
             break;
-		case "rbPage03":
-			$.mobile.changePage($("#page03"), "slide", true, true);
-			break;
-		case "rbPage04":
-			$.mobile.changePage($("#page04"), "slide", true, true);
-			break;
-		case "rbPage05":
-			$.mobile.changePage($("#page05"), "slide", true, true);
-			break;
-		}
-	};
-~~~~        
+  case "rbPage03":
+   $.mobile.changePage($("#page03"), "slide", true, true);
+   break;
+  case "rbPage04":
+   $.mobile.changePage($("#page04"), "slide", true, true);
+   break;
+  case "rbPage05":
+   $.mobile.changePage($("#page05"), "slide", true, true);
+   break;
+  }
+ };
+~~~~
 
 Hide and Reveal Menus {#menus}
 ---------------------
 
--   Elvenware is doing this now
--   Gradients:
-	-   [https://developer.mozilla.org/en/Using\_gradients](https://developer.mozilla.org/en/Using_gradients)
-
- 
-
+- Elvenware is doing this now
+- Gradients:
+  - [https://developer.mozilla.org/en/Using\_gradients](https://developer.mozilla.org/en/Using_gradients)

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/MakeEpubMobiPdf.md
+relativePath: Tips/MakeEpubMobiPdf.md
+title: MakeEpubMobiPdf
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: MakeEpubMobiPdf.md
+fileNameHTML: MakeEpubMobiPdf.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Downloads and Installs
 
 KindleGen [is here](https://www.amazon.com/gp/feature.html?docId=1000765211)

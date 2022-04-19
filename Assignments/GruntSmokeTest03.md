@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntSmokeTest03.md
+relativePath: Assignments/GruntSmokeTest03.md
+title: GruntSmokeTest03
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GruntSmokeTest03.md
+fileNameHTML: GruntSmokeTest03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is the same as [GruntSmokeTest][grunt-smoke01], but there is a new script.

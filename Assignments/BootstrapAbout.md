@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapAbout.md
+relativePath: Assignments/BootstrapAbout.md
+title: BootstrapAbout
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BootstrapAbout.md
+fileNameHTML: BootstrapAbout.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # In Class Bootstrap
 
 Bootstrap allows you to create great projects with beautiful CSS that looks good on a PC, a tablet or a phone.

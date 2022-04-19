@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AwsBotoS3AndGlacier.md
+relativePath: Assignments/AwsBotoS3AndGlacier.md
+title: AwsBotoS3AndGlacier
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AwsBotoS3AndGlacier.md
+fileNameHTML: AwsBotoS3AndGlacier.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Boto3, S3, Glacier
 
 If you haven't already, install the aws cli:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/LearnLocalStorage.md
+relativePath: Assignments/Browser/LearnLocalStorage.md
+title: LearnLocalStorage
+queryPath: Assignments/Browser/
+subject: Browser
+fileNameMarkdown: LearnLocalStorage.md
+fileNameHTML: LearnLocalStorage.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a bit like a simple database in your browser that persists between sessions. You can store information in Local Storage in key value pairs. If the user shuts down their machine, then returns a day later, information stored in the browser will still be available when the user returns to your website. Local Storage also works offline, which means the user can access the information even if they have no access to the Internet. (Of course the user has to first visit your site at least once while online, but after that, they can access the data offline at any time.)

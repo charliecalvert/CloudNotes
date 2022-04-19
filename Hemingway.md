@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Hemingway.md
+relativePath: Hemingway.md
+title: Hemingway
+queryPath: /
+subject: CloudNotes
+fileNameMarkdown: Hemingway.md
+fileNameHTML: Hemingway.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Hemingway at the Finca
 
 [Finca01](Finca01.jpg)

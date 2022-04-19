@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript/EcmaScriptFunctions.md
+relativePath: Assignments/EcmaScript/EcmaScriptFunctions.md
+title: EcmaScriptFunctions
+queryPath: Assignments/EcmaScript/
+subject: EcmaScript
+fileNameMarkdown: EcmaScriptFunctions.md
+fileNameHTML: EcmaScriptFunctions.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to learn how to work with ES6 JavaScript arrow functions, loops and  JavaScript classes. We will also learn about using Babel to transpile ES6 code into ES5. In this assignment, always use ES6 style code when declaring functions.

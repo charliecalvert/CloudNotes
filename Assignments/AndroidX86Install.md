@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AndroidX86Install.md
+relativePath: Assignments/AndroidX86Install.md
+title: AndroidX86Install
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AndroidX86Install.md
+fileNameHTML: AndroidX86Install.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Install AndroidX86 into VirtualBox. Most students will perform this task in Windows, then use VirtualBox to run AndroidX86 on your Windows desktop.

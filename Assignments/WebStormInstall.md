@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebStormInstall.md
+relativePath: Assignments/WebStormInstall.md
+title: WebStormInstall
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: WebStormInstall.md
+fileNameHTML: WebStormInstall.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to be sure you have a copy of WebStorm installed and that it is properly registered.

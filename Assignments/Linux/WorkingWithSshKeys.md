@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Linux/WorkingWithSshKeys.md
+relativePath: Assignments/Linux/WorkingWithSshKeys.md
+title: WorkingWithSshKeys
+queryPath: Assignments/Linux/
+subject: Linux
+fileNameMarkdown: WorkingWithSshKeys.md
+fileNameHTML: WorkingWithSshKeys.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 One thing that we need to be able to easily do is create and use SSH keys. The process is simple, and our life working with Linux, Git, EC2 and other cloud services is greatly simplified if we know how to easily create and use SSH keys.

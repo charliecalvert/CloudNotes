@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo/UbuntuServerOva.md
+relativePath: Assignments/Mongo/UbuntuServerOva.md
+title: UbuntuServerOva
+queryPath: Assignments/Mongo/
+subject: Mongo
+fileNameMarkdown: UbuntuServerOva.md
+fileNameHTML: UbuntuServerOva.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Ubuntu Servers with MongoDb Install {#mongodb-ubuntu}
 
 These are OVA files that you install into VirtualBox by choosing **File | Import Appliance**. This is the server version of Ubuntu, so there is only the command line. No Interface.

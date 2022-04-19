@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/Attitude.md
+relativePath: Tips/Attitude.md
+title: Attitude
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: Attitude.md
+fileNameHTML: Attitude.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Some tips on the best head games.

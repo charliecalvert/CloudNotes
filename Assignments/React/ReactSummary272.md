@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactSummary272.md
+relativePath: Assignments/React/ReactSummary272.md
+title: ReactSummary272
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactSummary272.md
+fileNameHTML: ReactSummary272.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Summary Prog 272
 
 - There is a new [DataLoader.js][ndl]. It contains better error checking.

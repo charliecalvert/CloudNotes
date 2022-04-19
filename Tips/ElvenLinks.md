@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/ElvenLinks.md
+relativePath: Tips/ElvenLinks.md
+title: ElvenLinks
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: ElvenLinks.md
+fileNameHTML: ElvenLinks.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Overview
 
 These tips should help you find important information for our class.

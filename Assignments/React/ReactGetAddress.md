@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactGetAddress.md
+relativePath: Assignments/React/ReactGetAddress.md
+title: ReactGetAddress
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactGetAddress.md
+fileNameHTML: ReactGetAddress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Get Address
 
 We should:

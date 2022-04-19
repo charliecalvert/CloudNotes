@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptBasics.md
-relativePath: elvenware/development/web/JavaScript/JavaScriptBasics.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptBasics.md
+relativePath: javascript-guide/JavaScriptBasics.md
 title: JavaScriptBasics
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: JavaScriptBasics.md
 fileNameHTML: JavaScriptBasics.html
 subject: JavaScript
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->
@@ -60,12 +61,12 @@ We will begin by exploring primitive types. In this chapter there will also be s
 
 There are six simple (primitive) types in the JavaScript language:
 
--   Number
--   Boolean
--   String
--   Null
--   Undefined
--   Symbol (ECMAScript 6)
+- Number
+- Boolean
+- String
+- Null
+- Undefined
+- Symbol (ECMAScript 6)
 
 **Number**, **Boolean** and **String** are the work horses of the language. You will use these simple types over and over again.
 
@@ -142,6 +143,7 @@ You can use either single or double quotes:
 var myString = 'A string';
 var myString = "A string";
 ```
+
 Both are legal. This makes it easy to embed quotes in a string:
 
 ```javascript
@@ -173,6 +175,7 @@ var myString = 'Use the plus symbol for ' +
     'multi-line strings ' +
     'in most cases.'
 ```
+
 Here is a basic example from a program called PrimitiveTypes.js:
 
 ```javascript
@@ -351,57 +354,57 @@ For more on this subject, see the Elvenware sections on EsLint.
 
 There are two fundamental, low level, building blocks for programs:
 
-	statements
-	expressions
+ statements
+ expressions
 
 ***An expression returns a value***. It can be evaluated. Consider this statement:
 
-	int x = 3 + 2;
+ int x = 3 + 2;
 
 It contains an expression that looks like this: 3 +  2.  We know that 3 + 2 returns 5, so it is an expression, it returns a value:
 
-	3 + 2
+ 3 + 2
 
 Consider this assignment statement:
 
-	int x = 3;
+ int x = 3;
 
 Here 3 is an expression that returns a value; it yields the value 3.
 
 A function call is usually an expression:
 
-	var x = foo();
+ var x = foo();
 
 Even if **foo()** returned **void**, it still can be thought of as an expression:
 
-	foo();
+ foo();
 
 Despite the call above, expressions don't usually stand on their own, though they can in many cases. They usually make up part of a statement. Statements do stand on their own. They are the smallest complete portion of a program. For instance:
 
-	int x = 3;
+ int x = 3;
 
 This is a statement because it is complete. It performs a single action in a discreet, stand alone line of code. It stands on its own and it does something. It performs an action. It assigns the value 3 to the variable x. Expressions such as **3** or **2 + 3** make no or little sense on their own:
 
-	3
-	2 + 3
+ 3
+ 2 + 3
 
 They don't really do anything but produce a compiler error. We typically assign expressions to variables to make statements:
 
-	var x = 2 + 3;
-	int x = 2 + 3;
+ var x = 2 + 3;
+ int x = 2 + 3;
 
 Statements end in semicolons in most curly brace languages.
 
 The statements I'm showing here are all assignment statements. These are a classic kind of statement, but they are not at all the only kind of statement. Other kinds of statements include **for statements**, which are clearly not assignments:
 
-	for (int x = 3; x < 7; x++) {
-	};
+ for (int x = 3; x < 7; x++) {
+ };
 
 And **if statements** don't look like assignments:
 
-	if (x > 3) {
-	   console.log(x);
-	};
+ if (x > 3) {
+    console.log(x);
+ };
 
 I'm showing you these statements just so you don't oversimplify your understand of statements. They can take many shapes and forms. More than I wish to discuss in this context. We have just looked at three kinds: assignments, for statements and if statements.
 
@@ -415,17 +418,17 @@ In the Wikipedia, they talk about evaluation rather than yielding a value, but I
 
 The folks who write the C# guides are really good. For instance: "**Expressions can consist of a literal value, a method invocation, an operator and its operands**, or a simple name. Simple names can be the name of a variable, type member, method parameter, namespace or type." The parts in bold describe the types of expressions discussed above. Here is an example of type of expression not covered above, the kind not in bold in this paragraph:
 
-	var x = y;
+ var x = y;
 
 Here y is an expression. It is a simple name for a variable.
 
 There are tricky areas, such as this:
 
-	foo();
+ foo();
 
 It stands on its own and it returns a value. It could be thought of as an expression and a statement. But the following is clearly a statement, and not an expression:
 
-	var x = 3 + 2;
+ var x = 3 + 2;
 
 These concepts aren't really that hard, yet I think it is good for students of computer science to learn to speak in such terms. It gives us a language we can use to describe what we are doing when we write code. Also, the terms are used all the time in text books, and we want to be able to read standard texts.
 
@@ -536,27 +539,26 @@ Another even more esoteric feature which is used less often is destructuring. It
 
 Also important in ES6 or in JavaScript generally:
 
-*   **let** and **const**
-*   **array.map**: This one ends up being crucial, I think. It is a kind of workhorse that again is found everywhere and that I use a lot.
-*   **map** I call out because it is especially important. Here are some related items that you probably cover this already. We really should all know string and array manipulation tools like:
+- **let** and **const**
+- **array.map**: This one ends up being crucial, I think. It is a kind of workhorse that again is found everywhere and that I use a lot.
+- **map** I call out because it is especially important. Here are some related items that you probably cover this already. We really should all know string and array manipulation tools like:
 
-*   **string.split** and **array.join**, but also **string.slice**, **string.trim**, **array.concat**, etc.
-*   [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-*   [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- **string.split** and **array.join**, but also **string.slice**, **string.trim**, **array.concat**, etc.
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
-*   Should we be learning all the shorthand object literal initializers? I don't know them, but a real guru would.
+- Should we be learning all the shorthand object literal initializers? I don't know them, but a real guru would.
 
-*   Read ES6 (2015) bits here: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- Read ES6 (2015) bits here: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 To sum up highlights from this doc:
 
-
-*   **fetch**, **promises**, **async** and **await**. (How to **promisify** the Node File System methods such as **fs.readFile**)
-*   [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-*   See the section "Rewriting promise code with **async/await**" here:
-*   [https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
-*   New ES6 features such as the **spread** operator
-*   Old favorites that we sometimes don't know: **array.map**, **string.split**, **array.join**.
+- **fetch**, **promises**, **async** and **await**. (How to **promisify** the Node File System methods such as **fs.readFile**)
+- [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- See the section "Rewriting promise code with **async/await**" here:
+- [https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
+- New ES6 features such as the **spread** operator
+- Old favorites that we sometimes don't know: **array.map**, **string.split**, **array.join**.
 
 Details on **promisify**:
 
@@ -593,7 +595,7 @@ We prefer **const** to let, but sometimes if we are going to reassign a variable
 
 Here is the bit that is much more than you need to know at this point.
 
-**var** is not only for declaring global variables but for declaring function-scoped variables.  let and **const** are blocked scoped. That is hard to understand. I'm fairly certain it means that **var** if declared in a function, will be visible throughout the function, but not outside the function. **const** or let, if declared inside a block in a function, will be visible only in that block. For instance, if you declared a variable with **const** in an **if** block, then it will be visible only in that block, and not throughout the function. **var** doesn't work that way. If you declare a variable with **var** inside a block inside a function, then the variable is visible throughout the function because it is _hoisted_ to the top of the function.
+**var** is not only for declaring global variables but for declaring function-scoped variables.  let and **const** are blocked scoped. That is hard to understand. I'm fairly certain it means that **var** if declared in a function, will be visible throughout the function, but not outside the function. **const** or let, if declared inside a block in a function, will be visible only in that block. For instance, if you declared a variable with **const** in an **if** block, then it will be visible only in that block, and not throughout the function. **var** doesn't work that way. If you declare a variable with **var** inside a block inside a function, then the variable is visible throughout the function because it is *hoisted* to the top of the function.
 
 But frankly, that is much more than any of you need to know at this point. Hoisting is easy to understand, it just means the variable will act as if it was declared at the start of a function regardless of where in the function it is used. It applies to **var**, but not to **const** and **let**. But again, you don't need to know all this yet. You will eventually, but not at the start.
 
@@ -671,7 +673,7 @@ Consider the following code:
 var count = 3;
 
 function addCount(x) {
-	return x + count;
+ return x + count;
 }
 ```
 
@@ -680,8 +682,8 @@ probably not what you want. Instead, declare your code like this:
 
 ```javascript
 function addCount(x) {
-	var count = 3;
-	return x + count;
+ var count = 3;
+ return x + count;
 }
 ```
 
@@ -693,8 +695,8 @@ Note that the following code also puts count in global namespace:
 
 ```javascript
 function addCount(x) {
-	count = 3;
-	return x + count;
+ count = 3;
+ return x + count;
 }
 ```
 
@@ -739,7 +741,6 @@ Here is the overview:
 | Division            | /        | 2          |
 | Remainder (modulus) | %        | 2          |
 | Exponential         | **       | 1          |
-
 
 This [MDN page][mdnop] on operator precedence tells you all you need to know about operators in JavaScript.
 
@@ -789,7 +790,7 @@ The basic for loop:
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-	console.log(i);
+ console.log(i);
 }
 ```
 
@@ -798,7 +799,7 @@ Iterate over an Array, arguments, iterable object, Map, NodeList, Set, String an
 ```javascript
 const numbers = [1, 2, 3];
 for (let number of numbers) {
-	    console.log(number);
+     console.log(number);
 }
 ```
 
@@ -807,7 +808,7 @@ Iterate over the properties of an object:
 ```javascript
 const numbers = { 'one': 1, 'two': 2, 'three': 3 };
 for (let number in numbers) {
-	console.log(number);
+ console.log(number);
 }
 ```
 
@@ -823,7 +824,7 @@ The **while** loop will execute 0 to n times. In other words, if the initial con
 var count = 0;
 
 while (count < 5) {
-	console.log(count++);
+ console.log(count++);
 }
 ```
 
@@ -859,20 +860,20 @@ var app = {
        }
    },
 
-	forOfLoop: () => {
-		const numbers = [1, 2, 3];
-		for (let number of numbers) {
- 		    console.log(number);
-		}
-	},
+ forOfLoop: () => {
+  const numbers = [1, 2, 3];
+  for (let number of numbers) {
+       console.log(number);
+  }
+ },
 
 
-	forInLoop: () => {
-		const numbers = { 'one': 1, 'two': 2, 'three': 3 };
-		for (let number in numbers) {
-			console.log(number);
-		}
-	},
+ forInLoop: () => {
+  const numbers = { 'one': 1, 'two': 2, 'three': 3 };
+  for (let number in numbers) {
+   console.log(number);
+  }
+ },
 
    basicWhileLoop: function() {
        'use strict';
@@ -914,7 +915,7 @@ GitHub. While there, you might also check out the example of nested for
 loops:
 
 - [JsObjects/JavaScript/Syntax/Loops01][loops01]
--	[JsObjects/JavaScript/Syntax/ForLoopNested][fln]
+- [JsObjects/JavaScript/Syntax/ForLoopNested][fln]
 
 ## Branching
 
@@ -944,13 +945,13 @@ A JavaScript ojbect called **app** with a method in it called **iseven**. Inside
 ```javascript
 var app = {
 
-	isEven: function(input) {
-		if (input % 2 === 0) {
-			console.log('Your input of ' + input + ' is even');
-		} else {
-			console.log('Your input of ' + input + ' is odd');
-		}
-	}
+ isEven: function(input) {
+  if (input % 2 === 0) {
+   console.log('Your input of ' + input + ' is even');
+  } else {
+   console.log('Your input of ' + input + ' is odd');
+  }
+ }
 };
 
 app.isEven(2);
@@ -1014,9 +1015,9 @@ Here for instance, is the way a series of if else statements might look:
 
 ```javascript
 if (stateAbbreviation == 'AL') {
-	DoSomething();
+ DoSomething();
 } else if (stateAbbreviation == 'CA') {
-	DoSomethingElse();
+ DoSomethingElse();
 } etc...
 ```
 
@@ -1030,38 +1031,38 @@ Texas = 'TX',
 Washington = 'WA';
 
 var statePopulation =  function(stateAbbreviation) {
-	var result = 0;
+ var result = 0;
 
-	switch (stateAbbreviation) {
-		case 'AL':
-			result = 4800736;
-			break;
+ switch (stateAbbreviation) {
+  case 'AL':
+   result = 4800736;
+   break;
 
-		case 'CA':
-			result = 38053956;
-			break;
+  case 'CA':
+   result = 38053956;
+   break;
 
-		case 'TX':
-			result = 25901361;
-			break;
+  case 'TX':
+   result = 25901361;
+   break;
 
-		case 'WA':
-			result = 6830038;
-			break;
+  case 'WA':
+   result = 6830038;
+   break;
 
-		default:
-			result = -1;
-	}
+  default:
+   result = -1;
+ }
 
-	console.log('The population of ' + stateAbbreviation + ' is ' + result);
+ console.log('The population of ' + stateAbbreviation + ' is ' + result);
 };
 
 var runState = function() {
-	statePopulation(Alabama);
-	statePopulation(California);
-	statePopulation(Texas);
-	statePopulation(Washington);
-	statePopulation('Unknown');
+ statePopulation(Alabama);
+ statePopulation(California);
+ statePopulation(Texas);
+ statePopulation(Washington);
+ statePopulation('Unknown');
 }
 ```
 
@@ -1069,10 +1070,10 @@ You can have multiple case statements match a single set of statements that
 you want to execute:
 
 ```javascript
-		case 'CA':
-		case 'TX':
-			result = stateIsBig;
-			break;
+  case 'CA':
+  case 'TX':
+   result = stateIsBig;
+   break;
 ```
 
 If you (usually accidentally) leave out a break statement, then something
@@ -1080,12 +1081,12 @@ similar to what we see above occurs. In other words, the code just falls
 through to the next example:
 
 ```javascript
-		case 'TX':
-			result = 25901361;
+  case 'TX':
+   result = 25901361;
 
-		case 'WA':
-			result = 6830038;
-			break;
+  case 'WA':
+   result = 6830038;
+   break;
 ```
 
 In the above code, since there is no break in the Texas case, then result will
@@ -1109,11 +1110,9 @@ statements. A big block of **if..else** statements can be hard to parse. The
 switch statement, on the other hand, lends itself to neat, easy to read
 formatting.
 
-
 Links:
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
-
 
 ### Object Maps
 
@@ -1124,21 +1123,21 @@ solution to this kind of problem. Consider the following example:
 ```javascript
 var funcBranch = function(stateAbbreviation) {
 
-	var stateMap = {
-		'AL': 4800736,
-		'CA': 38053956,
-		'TX': 25901361,
-		'WA': 6830038
-	}
+ var stateMap = {
+  'AL': 4800736,
+  'CA': 38053956,
+  'TX': 25901361,
+  'WA': 6830038
+ }
 
-	console.log('The population of ' + stateAbbreviation + ' = ' + stateMap[stateAbbreviation]);
+ console.log('The population of ' + stateAbbreviation + ' = ' + stateMap[stateAbbreviation]);
 };
 ```
 
 In this code we create a small object called stateMap. We can then pull out the
 value we want by simply writing the following simple expression:
 
-	stateMap[stateAbbreviation]
+ stateMap[stateAbbreviation]
 
 If, for instance, stateAbbreviation were equal to 'WA', then this expression
 would return 6830038. This code is concise, easy to read, and it performs
@@ -1149,13 +1148,13 @@ that contains functions:
 
 ```javascript
 var stateMap = {
-	'AL': function() {
-		return 4800736 /100;
-	},
-	'CA': function() {
-		return 38053956 / 100;
-	},
-	etc...
+ 'AL': function() {
+  return 4800736 /100;
+ },
+ 'CA': function() {
+  return 38053956 / 100;
+ },
+ etc...
 }
 ```
 
@@ -1165,48 +1164,48 @@ something like this:
 
 ```javascript
 var funcBranch2 = function(stateAbbreviation) {
-		var stateMap2 = {
-			'AL': function() {
-				return 4800736 /100;
-			}(),
-			'CA': function() {
-				return 38053956 / 100;
-			}(),
-			'TX': function() {
-				return 25901361 / 100;
-			}(),
+  var stateMap2 = {
+   'AL': function() {
+    return 4800736 /100;
+   }(),
+   'CA': function() {
+    return 38053956 / 100;
+   }(),
+   'TX': function() {
+    return 25901361 / 100;
+   }(),
 
-			'WA': function() {
-				return 6830038 / 100;
-			}()
-		}
+   'WA': function() {
+    return 6830038 / 100;
+   }()
+  }
 
-		console.log('The population of ' + stateAbbreviation + ' = ' + stateMap2[stateAbbreviation]);		
-	};
+  console.log('The population of ' + stateAbbreviation + ' = ' + stateMap2[stateAbbreviation]);  
+ };
 ```
 
 If that is just too esoteric for your tastes, then you can write:
 
 ```javascript
 var funcBranch2 = function(stateAbbreviation) {
-	var stateMap2 = {
-		'AL': function() {
-			return 4800736 /100;
-		},
-		'CA': function() {
-			return 38053956 / 100;
-		},
-		'TX': function() {
-			return 25901361 / 100;
-		},
+ var stateMap2 = {
+  'AL': function() {
+   return 4800736 /100;
+  },
+  'CA': function() {
+   return 38053956 / 100;
+  },
+  'TX': function() {
+   return 25901361 / 100;
+  },
 
-		'WA': function() {
-			return 6830038 / 100;
-		}
-	}
+  'WA': function() {
+   return 6830038 / 100;
+  }
+ }
 
-	var bar = stateMap2[stateAbbreviation];
-	console.log('The population of ' + stateAbbreviation + ' = ' + bar());
+ var bar = stateMap2[stateAbbreviation];
+ console.log('The population of ' + stateAbbreviation + ' = ' + bar());
 };
 ```
 
@@ -1519,17 +1518,17 @@ Of course other cases are slightly different, but this should help you get start
 Here is code for sorting an array called **presidents** by first name:
 
 ```javascript
-	var sort = function(){
-		presidents.sort(function (a, b) {
-			if (a.firstName > b.firstName) {
-				return 1;
-			} else if (a.firstName < b.firstName) {
-				return -1;
-			} else {
-				return 0;
-			}
-		});
-	};
+ var sort = function(){
+  presidents.sort(function (a, b) {
+   if (a.firstName > b.firstName) {
+    return 1;
+   } else if (a.firstName < b.firstName) {
+    return -1;
+   } else {
+    return 0;
+   }
+  });
+ };
 ```
 
 ## Properties and Constants
@@ -1565,30 +1564,29 @@ References:
 
 Use jQuery to designate the name of your event handler:
 
-	$('#mainCanvas').click(doMouseDown);
+ $('#mainCanvas').click(doMouseDown);
 
 Then you can capture the mouseDown event like this, where you need special
 code to handle the behavior in FireFox:
 
 ```javascript
-	var doMouseDown = function(event) {
-	var mouseDownRawX = null;
-	var mouseDownRawY = null;
+ var doMouseDown = function(event) {
+ var mouseDownRawX = null;
+ var mouseDownRawY = null;
 
-	// Fix for FireFox which does not define offsetX
-	if (typeof event.offsetX === 'undefined') {
-		var elementOffset = $(this).offset();   		
-   		mouseDownRawX = event.pageX - elementOffset.left;
-   		mouseDownRawY = event.pageY - elementOffset.top;
-	} else {
-		var mouseDownRawX = event.offsetX;
-		var mouseDownRawY = event.offsetY;
-	}
+ // Fix for FireFox which does not define offsetX
+ if (typeof event.offsetX === 'undefined') {
+  var elementOffset = $(this).offset();     
+     mouseDownRawX = event.pageX - elementOffset.left;
+     mouseDownRawY = event.pageY - elementOffset.top;
+ } else {
+  var mouseDownRawX = event.offsetX;
+  var mouseDownRawY = event.offsetY;
+ }
 }
 ```
 
-Binding
--------
+## Binding
 
 You can use **bind** to bind a function to an object, or rather to an
 object's scope. Suppose you have function func and object obj. You can
@@ -1685,10 +1683,10 @@ below to modify it
 
 There are four places where it can insert text:
 
--   beforebegin
--   afterbegin
--   beforeend
--   afterend
+- beforebegin
+- afterbegin
+- beforeend
+- afterend
 
 The after and before phrases refer to after and before a tag. Suppose
 you have an element like this:
@@ -1752,6 +1750,7 @@ function changeList() {
     ("#MyList").append("<li>List Item</li>");    
 }
 ```
+
 You should, of course, always end a statement with a semicolon:
 
 ```javascript
@@ -1765,7 +1764,6 @@ It would be wrong to write this:
 ```
 
 ## Destructuring
-
 
 Here is how we have, lo these many years, created variables from an array. It is easy to understand but requires a lot of typing:
 
@@ -1813,7 +1811,7 @@ function printInfo(bookProduct){
 }
 ```
 
-In particular, we can type **author** rather than **bookProduct.info.author**. Again, this can improve readability and also improve code performance if there is a loop. 
+In particular, we can type **author** rather than **bookProduct.info.author**. Again, this can improve readability and also improve code performance if there is a loop.
 
 It requires a bit of work to learn the syntax for destructuring, but if we can learn it, we can make create code that with less typing and hence less clutter and less room for mistakes.
 
@@ -1829,55 +1827,55 @@ Here is another example which might show what can be done on the server-side wit
 
 ```javascript
 const messyData = {
-	"login": "octocat",
-	"id": 1,
-	"node_id": "MDQ6VXNlcjE=",
-	"avatar_url": "https://github.com/images/error/octocat_happy.gif",
-	"gravatar_id": "",
-	"url": "https://api.github.com/users/octocat",
-	"html_url": "https://github.com/octocat",
-	"followers_url": "https://api.github.com/users/octocat/followers",
-	"following_url": "https://api.github.com/users/octocat/following{/other_user}",
-	"gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
-	"starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
-	"subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
-	"organizations_url": "https://api.github.com/users/octocat/orgs",
-	"repos_url": "https://api.github.com/users/octocat/repos",
-	"events_url": "https://api.github.com/users/octocat/events{/privacy}",
-	"received_events_url": "https://api.github.com/users/octocat/received_events",
-	"type": "User",
-	"site_admin": false,
-	"name": "monalisa octocat",
-	"company": "GitHub",
-	"blog": "https://github.com/blog",
-	"location": "San Francisco",
-	"email": "octocat@github.com",
-	"hireable": false,
-	"bio": "There once was...",
-	"public_repos": 2,
-	"public_gists": 1,
-	"followers": 20,
-	"following": 0,
-	"created_at": "2008-01-14T04:33:35Z",
-	"updated_at": "2008-01-14T04:33:35Z",
-	"total_private_repos": 100,
-	"owned_private_repos": 100,
-	"private_gists": 81,
-	"disk_usage": 10000,
-	"collaborators": 8,
-	"two_factor_authentication": true,
-	"plan": {
-		"name": "Medium",
-		"space": 400,
-		"private_repos": 20,
-		"collaborators": 0
-	}
+ "login": "octocat",
+ "id": 1,
+ "node_id": "MDQ6VXNlcjE=",
+ "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+ "gravatar_id": "",
+ "url": "https://api.github.com/users/octocat",
+ "html_url": "https://github.com/octocat",
+ "followers_url": "https://api.github.com/users/octocat/followers",
+ "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+ "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+ "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+ "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+ "organizations_url": "https://api.github.com/users/octocat/orgs",
+ "repos_url": "https://api.github.com/users/octocat/repos",
+ "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+ "received_events_url": "https://api.github.com/users/octocat/received_events",
+ "type": "User",
+ "site_admin": false,
+ "name": "monalisa octocat",
+ "company": "GitHub",
+ "blog": "https://github.com/blog",
+ "location": "San Francisco",
+ "email": "octocat@github.com",
+ "hireable": false,
+ "bio": "There once was...",
+ "public_repos": 2,
+ "public_gists": 1,
+ "followers": 20,
+ "following": 0,
+ "created_at": "2008-01-14T04:33:35Z",
+ "updated_at": "2008-01-14T04:33:35Z",
+ "total_private_repos": 100,
+ "owned_private_repos": 100,
+ "private_gists": 81,
+ "disk_usage": 10000,
+ "collaborators": 8,
+ "two_factor_authentication": true,
+ "plan": {
+  "name": "Medium",
+  "space": 400,
+  "private_repos": 20,
+  "collaborators": 0
+ }
 }
 
 const response = {
-	send: function send(data) {
-		console.log('FAKE RESPONSE.SEND:', data);
-	}
+ send: function send(data) {
+  console.log('FAKE RESPONSE.SEND:', data);
+ }
 }
 
 const { name: userName, followers, plan: { name: planName, private_repos } } = messyData;
@@ -1905,7 +1903,6 @@ I use LAMP to some degree. It stands for:
 - [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 - [MDN Expressions and Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Expressions_and_operators)
 
-
 [arrwork]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Syntax/Array
 [jObject]: http://elvenware.com/charlie/development/web/JavaScript/JavaScriptObjects.html
 [jFunction]: http://elvenware.com/charlie/development/web/JavaScript/JavaScriptFunctions.html
@@ -1914,5 +1911,5 @@ I use LAMP to some degree. It stands for:
 
 [styleGuide-xml]: https://google.github.io/styleguide/javascriptguide.xml
 [styleGuide-html]: https://google.github.io/styleguide/jsguide.html
-[whiteSpace]:http://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript](http://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript
-[wsCrockford]:http://javascript.crockford.com/code.html](http://javascript.crockford.com/code.html
+[whiteSpace]:<http://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript>](<http://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript>
+[wsCrockford]:<http://javascript.crockford.com/code.html>](<http://javascript.crockford.com/code.html>

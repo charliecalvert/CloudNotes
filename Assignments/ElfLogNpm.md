@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElfLogNpm.md
+relativePath: Assignments/ElfLogNpm.md
+title: ElfLogNpm
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElfLogNpm.md
+fileNameHTML: ElfLogNpm.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overviews
 
 The ElfLog Npm assignment is designed to help you set up a custom logging system for your code.

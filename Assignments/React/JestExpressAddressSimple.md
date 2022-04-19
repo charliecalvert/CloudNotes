@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/JestExpressAddressSimple.md
+relativePath: Assignments/React/JestExpressAddressSimple.md
+title: JestExpressAddressSimple
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: JestExpressAddressSimple.md
+fileNameHTML: JestExpressAddressSimple.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn the basics of React Components and how to write to use [Jest][jest] to test them.

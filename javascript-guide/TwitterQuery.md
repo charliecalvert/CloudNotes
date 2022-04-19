@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/TwitterQuery.md
-relativePath: elvenware/development/web/JavaScript/TwitterQuery.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/TwitterQuery.md
+relativePath: javascript-guide/TwitterQuery.md
 title: TwitterQuery
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: TwitterQuery.md
 fileNameHTML: TwitterQuery.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

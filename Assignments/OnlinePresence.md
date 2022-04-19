@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresence.md
+relativePath: Assignments/OnlinePresence.md
+title: OnlinePresence
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: OnlinePresence.md
+fileNameHTML: OnlinePresence.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This document contains various tips designed to help students work in the cloud.

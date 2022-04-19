@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/GruntCheckDeprecated.md
+relativePath: Assignments/SmokeTests/GruntCheckDeprecated.md
+title: GruntCheckDeprecated
+queryPath: Assignments/SmokeTests/
+subject: SmokeTests
+fileNameMarkdown: GruntCheckDeprecated.md
+fileNameHTML: GruntCheckDeprecated.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Grunt Check
 
 **NOTE**: _After Spring 2017, we are not using Grunt as often, but instead we are switching to eslint, prettier and webpack. As a result, you should skip this section._

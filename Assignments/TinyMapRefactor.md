@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/TinyMapRefactor.md
+relativePath: Assignments/TinyMapRefactor.md
+title: TinyMapRefactor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: TinyMapRefactor.md
+fileNameHTML: TinyMapRefactor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Tiny Map Refactor
 
 Goals for this assignment:

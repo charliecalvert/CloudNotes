@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog280/Week03.md
+relativePath: Prog280/Week03.md
+title: Week03
+queryPath: Prog280/
+subject: Prog280
+fileNameMarkdown: Week03.md
+fileNameHTML: Week03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Installing Lamp and MediaWiki
 -----------------------------
 

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerCouch.md
+relativePath: Assignments/Docker/DockerCouch.md
+title: DockerCouch
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerCouch.md
+fileNameHTML: DockerCouch.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Set up an instance of the NoSQL database CouchDb and access it from a NodeJs application.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/Ec2ProvisionRepo.md
+relativePath: Assignments/Aws/Ec2ProvisionRepo.md
+title: Ec2ProvisionRepo
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: Ec2ProvisionRepo.md
+fileNameHTML: Ec2ProvisionRepo.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn More about the [AWS JavaScript SDK][jsdk]

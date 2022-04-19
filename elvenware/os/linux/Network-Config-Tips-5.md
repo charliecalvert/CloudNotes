@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: Network-Config-Tips-5.md
 fileNameHTML: Network-Config-Tips-5.html
+image: ./course/course-javascript.jpg
+subject: linux
+queryPath: elvenware/os/linux/
 ---
 
 <!-- toc -->

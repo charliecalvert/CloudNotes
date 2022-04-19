@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CordovaVariousPlugins.md
+relativePath: Assignments/CordovaVariousPlugins.md
+title: CordovaVariousPlugins
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CordovaVariousPlugins.md
+fileNameHTML: CordovaVariousPlugins.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Various Cordova Plugins
 
 The goal of this assignment is to learn about Cordova Plugins. There are also

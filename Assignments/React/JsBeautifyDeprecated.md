@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/JsBeautifyDeprecated.md
+relativePath: Assignments/React/JsBeautifyDeprecated.md
+title: JsBeautifyDeprecated
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: JsBeautifyDeprecated.md
+fileNameHTML: JsBeautifyDeprecated.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I'm no longer using [js-beautify][jsbea] but I'll keep this text in case I ever need it.

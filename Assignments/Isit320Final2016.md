@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Final2016.md
+relativePath: Assignments/Isit320Final2016.md
+title: Isit320Final2016
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit320Final2016.md
+fileNameHTML: Isit320Final2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This document is a description of the final for Isit320, Fall, 2016.

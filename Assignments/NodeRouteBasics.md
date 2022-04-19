@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NodeRouteBasics.md
+relativePath: Assignments/NodeRouteBasics.md
+title: NodeRouteBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NodeRouteBasics.md
+fileNameHTML: NodeRouteBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 **STATUS**: _This assignment needs polishing but should be complete enough to allow students to complete the assignment._

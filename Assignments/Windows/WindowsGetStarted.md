@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Windows/WindowsGetStarted.md
+relativePath: Assignments/Windows/WindowsGetStarted.md
+title: WindowsGetStarted
+queryPath: Assignments/Windows/
+subject: Windows
+fileNameMarkdown: WindowsGetStarted.md
+fileNameHTML: WindowsGetStarted.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Run Charlie's course on Windows.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntCheck.md
+relativePath: Assignments/GruntCheck.md
+title: GruntCheck
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GruntCheck.md
+fileNameHTML: GruntCheck.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Grunt Check
 
 In this assignment you will learn how to use [grunt][grunt], [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it. In particular, this assignment shows how to use them to check the status of a Node Js Express project.

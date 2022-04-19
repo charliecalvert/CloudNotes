@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/GitIgnoreTestDockerMicro.md
+relativePath: Assignments/Docker/GitIgnoreTestDockerMicro.md
+title: GitIgnoreTestDockerMicro
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: GitIgnoreTestDockerMicro.md
+fileNameHTML: GitIgnoreTestDockerMicro.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Create a Git Ignore Test Docker Micro service that confirms:

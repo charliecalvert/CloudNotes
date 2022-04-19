@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularSolarRefactor.md
+relativePath: Assignments/AngularSolarRefactor.md
+title: AngularSolarRefactor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularSolarRefactor.md
+fileNameHTML: AngularSolarRefactor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This assignment stands on its own, but it is closely tied to the midterm. Here is one way to think about it:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog272/Week11.md
+relativePath: Prog272/Week11.md
+title: Week11
+queryPath: Prog272/
+subject: Prog272
+fileNameMarkdown: Week11.md
+fileNameHTML: Week11.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 272 Week 11
 
 Our Main Goals are to learn more about:

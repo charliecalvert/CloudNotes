@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/IbitDay2016.md
+relativePath: Assignments/IbitDay2016.md
+title: IbitDay2016
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: IbitDay2016.md
+fileNameHTML: IbitDay2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Build an Angular SPA (Single Page App) and deploy it to Heroku. In the app, load and display some JSON.

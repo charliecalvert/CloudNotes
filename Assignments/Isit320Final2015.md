@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Final2015.md
+relativePath: Assignments/Isit320Final2015.md
+title: Isit320Final2015
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit320Final2015.md
+fileNameHTML: Isit320Final2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This document describes the steps needed to complete the Final for Isit 320 in 2015.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/KarmaCheck.md
+relativePath: Assignments/KarmaCheck.md
+title: KarmaCheck
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: KarmaCheck.md
+fileNameHTML: KarmaCheck.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Karma Config
 
 Don't try to run any tests that hit the server from Karma for now. Just tests that go to the client side only.

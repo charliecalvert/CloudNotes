@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog219Final2015.md
+relativePath: Assignments/Prog219Final2015.md
+title: Prog219Final2015
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog219Final2015.md
+fileNameHTML: Prog219Final2015.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 This is the final for Prog 219 taken June 2015. Many details are perhaps not filled in yet, but this should be enough to get you started.

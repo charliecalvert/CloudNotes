@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/CloudComputing.md
+relativePath: Tips/CloudComputing.md
+title: CloudComputing
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: CloudComputing.md
+fileNameHTML: CloudComputing.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 - Move all your content to the cloud.

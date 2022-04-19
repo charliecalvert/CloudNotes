@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntCheck03.md
+relativePath: Assignments/GruntCheck03.md
+title: GruntCheck03
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GruntCheck03.md
+fileNameHTML: GruntCheck03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 A tool called Jasmine JQuery will allow us to load arbitray HTML files (fixtures) into Jasmine so that we can run tests against them. Normally, we want to load only small chunks of HTML. However, at one point we might want to load the entire contents of the HTML code produced by **vidws/index.jade** into our tests and make sure it contains certain key elements.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerCompose.md
+relativePath: Assignments/Docker/DockerCompose.md
+title: DockerCompose
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerCompose.md
+fileNameHTML: DockerCompose.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Docker Compose
 
 Learn how to use [Docker Compose](https://docs.docker.com/compose/). We will create a main app which can query two micro services. In this case we will use Docker Compose to start all three apps with a single command. They will each have their own image and own container.

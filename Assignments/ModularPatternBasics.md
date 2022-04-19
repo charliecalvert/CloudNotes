@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ModularPatternBasics.md
+relativePath: Assignments/ModularPatternBasics.md
+title: ModularPatternBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ModularPatternBasics.md
+fileNameHTML: ModularPatternBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn the basics of how to use the modular pattern. It is likely that many of the projects we create this quarter will follow this basic pattern. So make a note of this project so you can find it again later as it lays out several patterns that we are likely to use over and over.

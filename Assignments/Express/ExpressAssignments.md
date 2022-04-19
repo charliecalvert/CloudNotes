@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/ExpressAssignments.md
+relativePath: Assignments/Express/ExpressAssignments.md
+title: ExpressAssignments
+queryPath: Assignments/Express/
+subject: Express
+fileNameMarkdown: ExpressAssignments.md
+fileNameHTML: ExpressAssignments.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Assignments about Express. Express comes up a lot in my classes, so this list is not complete. But it provides a good start.

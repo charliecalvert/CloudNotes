@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/Prog270Midterm2014.md
+relativePath: Prog270/Prog270Midterm2014.md
+title: Prog270Midterm2014
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: Prog270Midterm2014.md
+fileNameHTML: Prog270Midterm2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 270 Midterm 2014
 
 There are two main sections to the midterm:

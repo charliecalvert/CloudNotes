@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/StackGoogle.md
+relativePath: Assignments/StackGoogle.md
+title: StackGoogle
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: StackGoogle.md
+fileNameHTML: StackGoogle.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 StackEdit and Google Drive
 --------------------------

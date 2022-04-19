@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NpmAllInclusive.md
+relativePath: Assignments/NpmAllInclusive.md
+title: NpmAllInclusive
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NpmAllInclusive.md
+fileNameHTML: NpmAllInclusive.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I'm removing calls to **npm install** and **bower install** from **CreateExpressProject**, **CreateAllExpress**, **TestReady** and **TestFixture**. Instead, we will keep one canonical version of node_modules and **components** in our **~/tmp** directories. I will publish our *all inclusive* **package.json** file in JsObjects.

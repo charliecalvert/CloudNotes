@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactMicroServicesRefine.md
+relativePath: Assignments/React/ReactMicroServicesRefine.md
+title: ReactMicroServicesRefine
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactMicroServicesRefine.md
+fileNameHTML: ReactMicroServicesRefine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # React Micro Services Refine
 
 The primary goal will be to learn about [concurrently][cc02]

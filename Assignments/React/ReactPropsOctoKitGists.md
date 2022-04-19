@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsOctoKitGists.md
+relativePath: Assignments/React/ReactPropsOctoKitGists.md
+title: ReactPropsOctoKitGists
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactPropsOctoKitGists.md
+fileNameHTML: ReactPropsOctoKitGists.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Learn to use OctoKit:

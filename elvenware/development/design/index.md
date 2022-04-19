@@ -6,13 +6,18 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: index.md
 fileNameHTML: index.html
+image: ./course/course-javascript.jpg
+subject: design
+queryPath: elvenware/development/design/
 ---
 
 <!-- toc -->
 <!-- tocstop -->
 
-<meta content="Main Elvenware page for Android Development" name="description" />
-<meta content="Android, Elvenware, Development" name="keywords" />
+# Elven Design Guide
+
+<!-- <meta content="Main Elvenware page for Android Development" name="description" />
+<meta content="Android, Elvenware, Development" name="keywords" /> -->
 
 ## Overview
 
@@ -21,7 +26,6 @@ This is very old and has not been reviewed in many years.
 Cloud computing is not a new technology, rather it is an evolutionary step in a continuing process.
 
 ## Cloud
-
 
 * [Virtualization](virtualization.html)
 * [Wordpress](Wordpress.html)
@@ -36,39 +40,34 @@ Cloud computing is not a new technology, rather it is an evolutionary step in a 
 
 ## PHP
 
-*   [Install PHP](design-guide/InstallPhp.html)
+* [Install PHP](design-guide/InstallPhp.html)
 
 ## Virtual Box Distros
 
-*   [Download Site](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html)
+* [Download Site](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html)
 
 ## Cloud Apps
 
-<div>
-
-*   [Cassandra](http://wiki.apache.org/cassandra/FrontPage)
-*   [Hadoop](http://hadoop.apache.org/)
-*   [Juju](https://juju.ubuntu.com/)
-
-</div>
+* [Cassandra](http://wiki.apache.org/cassandra/FrontPage)
+* [Hadoop](http://hadoop.apache.org/)
+* [Juju](https://juju.ubuntu.com/)
 
 ## Cloud Sites on the Web
 
-*   [GoGrid](http://www.gogrid.com/cloud-hosting/custom-cloud-server-images.php)
-*   [BitNami](http://bitnami.org/stacks)
-*   [37Signals](http://37signals.com/)
-*   [Google App Engine](http://code.google.com/appengine/)
-*   [Cloud Foundry](http://www.cloudfoundry.com/)
-*   MongoDb
-*   CoubDb
-*   GlassFish
-*   JBoss
-*   NodeJs
-*   HBase
+* [GoGrid](http://www.gogrid.com/cloud-hosting/custom-cloud-server-images.php)
+* [BitNami](http://bitnami.org/stacks)
+* [37Signals](http://37signals.com/)
+* [Google App Engine](http://code.google.com/appengine/)
+* [Cloud Foundry](http://www.cloudfoundry.com/)
+* MongoDb
+* CoubDb
+* GlassFish
+* JBoss
+* NodeJs
+* HBase
 
 ## Design
 
 * [A Riff on the Craft of Test Driven Development](HeadTest.html)
 
-
-- [Popular OpenSource Programs](https://www.eweek.com/servers/openlogic-ranks-top-open-source-projects-of-2011)
+* [Popular OpenSource Programs](https://www.eweek.com/servers/openlogic-ranks-top-open-source-projects-of-2011)

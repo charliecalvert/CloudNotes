@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularSolarStarterTests.md
+relativePath: Assignments/AngularSolarStarterTests.md
+title: AngularSolarStarterTests
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularSolarStarterTests.md
+fileNameHTML: AngularSolarStarterTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Look at [directive template names][dir-names] slide. This shows that we can use a template called **elfRenewable** in several difference ways in our angular templates. In other words there are more choices than just <elf-renewable></elf-renewable>

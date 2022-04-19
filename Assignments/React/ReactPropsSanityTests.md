@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsSanityTests.md
+relativePath: Assignments/React/ReactPropsSanityTests.md
+title: ReactPropsSanityTests
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactPropsSanityTests.md
+fileNameHTML: ReactPropsSanityTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 **NOTE**: _I'm pushing this out before it is ready so you can be working on it over the weekend, etc. I will update with clarifications and perhaps requests for more code. But this gets you started._

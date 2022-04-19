@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/LampMarkdown.md
+relativePath: Assignments/LampMarkdown.md
+title: LampMarkdown
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: LampMarkdown.md
+fileNameHTML: LampMarkdown.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this project is to help you move quickly from raw markdown files to a working Apache based web site.

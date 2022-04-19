@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapBasics.md
+relativePath: Assignments/BootstrapBasics.md
+title: BootstrapBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BootstrapBasics.md
+fileNameHTML: BootstrapBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Bootstrap Basics
 
 We'll work on this assignment in class on Tuesday, Oct 6, 2015.

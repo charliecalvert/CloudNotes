@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EvernoteTemplates.md
+relativePath: Assignments/EvernoteTemplates.md
+title: EvernoteTemplates
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: EvernoteTemplates.md
+fileNameHTML: EvernoteTemplates.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description 
 
 User your shared Evernote folder to share a document with me that describes how to create an environment variable called **ELF_TEMPLATES**.

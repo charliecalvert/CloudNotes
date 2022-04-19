@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactMicroServices.md
+relativePath: Assignments/React/ReactMicroServices.md
+title: ReactMicroServices
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactMicroServices.md
+fileNameHTML: ReactMicroServices.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We have a principle that we talk about quite a bit:

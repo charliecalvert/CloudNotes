@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademy08.md
+relativePath: Assignments/CodeAcademy/CodeAcademy08.md
+title: CodeAcademy08
+queryPath: Assignments/CodeAcademy/
+subject: CodeAcademy
+fileNameMarkdown: CodeAcademy08.md
+fileNameHTML: CodeAcademy08.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Code Academy Part VIII
 
 Bring the JavaScript and HTML courses to 100%.

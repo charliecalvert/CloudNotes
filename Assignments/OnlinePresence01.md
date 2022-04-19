@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresence01.md
+relativePath: Assignments/OnlinePresence01.md
+title: OnlinePresence01
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: OnlinePresence01.md
+fileNameHTML: OnlinePresence01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In this class we use a variety free or inexpensive cloud services. This assignment is designed to help you use the these services in a safe, public spirited, manner.

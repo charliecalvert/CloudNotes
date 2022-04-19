@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy02.md
+relativePath: Assignments/CodeAcademy02.md
+title: CodeAcademy02
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CodeAcademy02.md
+fileNameHTML: CodeAcademy02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Code Academy Part II
 
 Bring the JavaScript and HTML courses to at least 25%.

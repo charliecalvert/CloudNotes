@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/ShowMimeTypes.md
-relativePath: elvenware/development/web/JavaScript/ShowMimeTypes.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/ShowMimeTypes.md
+relativePath: javascript-guide/ShowMimeTypes.md
 title: ShowMimeTypes
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: ShowMimeTypes.md
 fileNameHTML: ShowMimeTypes.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

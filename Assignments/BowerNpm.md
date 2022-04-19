@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BowerNpm.md
+relativePath: Assignments/BowerNpm.md
+title: BowerNpm
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BowerNpm.md
+fileNameHTML: BowerNpm.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # NPM and Bower
 
 The goal of this exercise is to make sure you know how to use our front end and server side package managers.

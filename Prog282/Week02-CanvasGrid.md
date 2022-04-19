@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog282/Week02-CanvasGrid.md
+relativePath: Prog282/Week02-CanvasGrid.md
+title: Week02-CanvasGrid
+queryPath: Prog282/
+subject: Prog282
+fileNameMarkdown: Week02-CanvasGrid.md
+fileNameHTML: Week02-CanvasGrid.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Canvas Grids
 ============
 

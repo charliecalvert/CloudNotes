@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/OldEc2Provision.md
+relativePath: Assignments/Aws/OldEc2Provision.md
+title: OldEc2Provision
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: OldEc2Provision.md
+fileNameHTML: OldEc2Provision.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Begin Old Provision EC2 Assignment
 
 **NOTE**: _Don't do this part of the assignment, or any parts after this. This is here as a reference, but it is outdated due to the new Provision script._

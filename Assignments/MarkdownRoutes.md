@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MarkdownRoutes.md
+relativePath: Assignments/MarkdownRoutes.md
+title: MarkdownRoutes
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MarkdownRoutes.md
+fileNameHTML: MarkdownRoutes.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Week 10 Routes and Markdown
 
 The goal here is to:

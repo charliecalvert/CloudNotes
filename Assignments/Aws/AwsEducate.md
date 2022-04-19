@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsEducate.md
+relativePath: Assignments/Aws/AwsEducate.md
+title: AwsEducate
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: AwsEducate.md
+fileNameHTML: AwsEducate.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Each of you should have received an invitation to join AWS Educate.

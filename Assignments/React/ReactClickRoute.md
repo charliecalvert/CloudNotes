@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactClickRoute.md
+relativePath: Assignments/React/ReactClickRoute.md
+title: ReactClickRoute
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactClickRoute.md
+fileNameHTML: ReactClickRoute.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Click Route React
 
 Convert an Express app into one that supports React.

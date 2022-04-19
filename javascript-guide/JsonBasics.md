@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JsonBasics.md
-relativePath: elvenware/development/web/JavaScript/JsonBasics.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JsonBasics.md
+relativePath: javascript-guide/JsonBasics.md
 title: JsonBasics
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: JsonBasics.md
 fileNameHTML: JsonBasics.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

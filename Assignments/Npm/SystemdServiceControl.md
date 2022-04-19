@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm/SystemdServiceControl.md
+relativePath: Assignments/Npm/SystemdServiceControl.md
+title: SystemdServiceControl
+queryPath: Assignments/Npm/
+subject: Npm
+fileNameMarkdown: SystemdServiceControl.md
+fileNameHTML: SystemdServiceControl.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 When I come to help students we often find that they can't start a program because a port is busy. Frequently, it is busy because a systemd service is running on it. The **system-service-control** script is meant to be a first step toward helping you find out which of your programs are running on systemd. That way you will know which program to shut down so you can open up a port.

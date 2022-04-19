@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/UnitTestsAddress.md
+relativePath: Assignments/React/UnitTestsAddress.md
+title: UnitTestsAddress
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: UnitTestsAddress.md
+fileNameHTML: UnitTestsAddress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Unit Test Address
 
 The goal of this assignment is to display and test a complete address with FirstName, LastName, Street, City, State, Zip or more. There should be tests for each field.

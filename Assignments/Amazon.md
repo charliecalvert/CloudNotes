@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Amazon.md
+relativePath: Assignments/Amazon.md
+title: Amazon
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Amazon.md
+fileNameHTML: Amazon.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Amazon
 
 Amazon has apps that run on all the major platforms, both PC and Mobile. There is also a cloud reader that runs in the browser.

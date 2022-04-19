@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog109/Resume.md
+relativePath: Prog109/Resume.md
+title: Resume
+queryPath: Prog109/
+subject: Prog109
+fileNameMarkdown: Resume.md
+fileNameHTML: Resume.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description:
 
 Use the markup skills learned during the first week of class to create a one page HTML document. The HTML document should contain your resume. Try to write something useful, but don't fuss over it unduly. The key to success is iteration. At first, aim only to create a rough draft. For inspiration, review the example provided below; you can use elements from it but don't make your resume look the same!

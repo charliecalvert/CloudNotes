@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DomainNames.md
+relativePath: Assignments/DomainNames.md
+title: DomainNames
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: DomainNames.md
+fileNameHTML: DomainNames.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Domain Names
 
 - Go to GoDaddy.

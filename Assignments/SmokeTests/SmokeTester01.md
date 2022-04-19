@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/SmokeTester01.md
+relativePath: Assignments/SmokeTests/SmokeTester01.md
+title: SmokeTester01
+queryPath: Assignments/SmokeTests/
+subject: SmokeTests
+fileNameMarkdown: SmokeTester01.md
+fileNameHTML: SmokeTester01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Normalize file naming conventions as outlined in the **Turn it in** section. After renaming the files, get the best and latest versions of your programs in the **master** branch.

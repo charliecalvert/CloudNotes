@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AskQuestion.md
+relativePath: Assignments/AskQuestion.md
+title: AskQuestion
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AskQuestion.md
+fileNameHTML: AskQuestion.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Ask a Question
 
 This assignment is designed to encourage participation in on-line discussions. Each week, I want you to:

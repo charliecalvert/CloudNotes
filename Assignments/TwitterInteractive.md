@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/TwitterInteractive.md
+relativePath: Assignments/TwitterInteractive.md
+title: TwitterInteractive
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: TwitterInteractive.md
+fileNameHTML: TwitterInteractive.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Twitter Query
 
 The goal of this project is to query Twitter. We will ask for details about our account, but also about things that are happening on Twitter.

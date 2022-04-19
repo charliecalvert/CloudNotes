@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/index.md
+relativePath: Assignments/Express/index.md
+title: Index
+queryPath: Assignments/Express/
+subject: Express
+fileNameMarkdown: index.md
+fileNameHTML: index.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Some Express assignments.

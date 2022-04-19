@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressSanityTests.md
+relativePath: Assignments/React/ReactAddressSanityTests.md
+title: ReactAddressSanityTests
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressSanityTests.md
+fileNameHTML: ReactAddressSanityTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Download and run some unit tests designed to see if your **week05-address-simple** project is structured correctly. It's easy for students to miss a step, and it is easy for me to leave out an important step, or to provide unclear or contradictory instructions. The goal of this assignment is to provide a single reference for the project.

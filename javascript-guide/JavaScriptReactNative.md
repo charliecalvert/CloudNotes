@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptReactNative.md
-relativePath: elvenware/development/web/JavaScript/JavaScriptReactNative.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptReactNative.md
+relativePath: javascript-guide/JavaScriptReactNative.md
 title: JavaScriptReactNative
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: JavaScriptReactNative.md
 fileNameHTML: JavaScriptReactNative.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

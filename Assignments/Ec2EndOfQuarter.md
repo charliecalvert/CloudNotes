@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2EndOfQuarter.md
+relativePath: Assignments/Ec2EndOfQuarter.md
+title: Ec2EndOfQuarter
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Ec2EndOfQuarter.md
+fileNameHTML: Ec2EndOfQuarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # EC2 End of Quarter
 
 This is a reminder that some of you may want to shut down your running instances on AWS.

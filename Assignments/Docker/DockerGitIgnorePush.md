@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerGitIgnorePush.md
+relativePath: Assignments/Docker/DockerGitIgnorePush.md
+title: DockerGitIgnorePush
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerGitIgnorePush.md
+fileNameHTML: DockerGitIgnorePush.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal is to create a bash script that will:

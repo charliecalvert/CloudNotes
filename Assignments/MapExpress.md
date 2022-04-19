@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MapExpress.md
+relativePath: Assignments/MapExpress.md
+title: MapExpress
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MapExpress.md
+fileNameHTML: MapExpress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Map Express
 
 The goal of this application is to show the user's current position on a map.

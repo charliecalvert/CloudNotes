@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsReduxData.md
+relativePath: Assignments/WebCrafts/WebCraftsReduxData.md
+title: WebCraftsReduxData
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: WebCraftsReduxData.md
+fileNameHTML: WebCraftsReduxData.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We start working with our **ElvenConfig.json** file via Redux.

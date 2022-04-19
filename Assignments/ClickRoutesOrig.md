@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ClickRoutesOrig.md
+relativePath: Assignments/ClickRoutesOrig.md
+title: ClickRoutesOrig
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ClickRoutesOrig.md
+fileNameHTML: ClickRoutesOrig.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Click Route
 
 In class on Wednesday we developed an express application that we called, I believe, **Temp02**. I have renamed that project and made it available for download as [ClickRoute.zip](http://elvenware.com/charlie/downloads/ClickRoute.zip). Download that project. Copy it into your repo and unzip it:

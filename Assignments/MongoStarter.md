@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongoStarter.md
+relativePath: Assignments/MongoStarter.md
+title: MongoStarter
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MongoStarter.md
+fileNameHTML: MongoStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # In Class Mongo
 
 In many cases, you will be asked to only do the first five or six steps in this assignment.

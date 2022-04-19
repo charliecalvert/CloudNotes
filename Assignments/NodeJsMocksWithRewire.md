@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NodeJsMocksWithRewire.md
+relativePath: Assignments/NodeJsMocksWithRewire.md
+title: NodeJsMocksWithRewire
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: NodeJsMocksWithRewire.md
+fileNameHTML: NodeJsMocksWithRewire.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Mock NodeJs Modules with Rewire
 
 Among its many capabilities, rewire allows you to mock FS and other node modules. It also gives access to private variables in the code you want to test.

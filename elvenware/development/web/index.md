@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: index.md
 fileNameHTML: index.html
+image: ./course/course-javascript.jpg
+subject: web
+queryPath: elvenware/development/web/
 ---
 
 <!-- toc -->
@@ -13,9 +16,9 @@ fileNameHTML: index.html
 
 ## Overview
 
-This page lists various places where I discuss technologies related to the Web.
+The Web Index page lists various places where I discuss technologies related to the Web.
 
-## Elvenware Web Pages
+## Elvenware Web Guide
 
 - [JavaScript Gruid](JavaScript/index.html)
 - [HTML Guide](HtmlGuide/index.html)

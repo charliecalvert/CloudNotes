@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitHubApi.md
+relativePath: Assignments/GitHubApi.md
+title: GitHubApi
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GitHubApi.md
+fileNameHTML: GitHubApi.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Git Hub API
 
 Our goal in this assignment is learn how to call the [GitHub API](https://github.com/github-tools/github). We will continue to do our work in week03-rest-basics, but you should tag your work as start and finish the assignment, and do you work in a **week05** branch.

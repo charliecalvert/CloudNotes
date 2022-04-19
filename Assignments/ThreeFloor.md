@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ThreeFloor.md
+relativePath: Assignments/ThreeFloor.md
+title: ThreeFloor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ThreeFloor.md
+fileNameHTML: ThreeFloor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is assignment demonstrates key features of [ThreeJs][threejs], a 3D library for JavaScript.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/AssignmentRedo.md
+relativePath: Tips/AssignmentRedo.md
+title: AssignmentRedo
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: AssignmentRedo.md
+fileNameHTML: AssignmentRedo.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Grading Quirks
 
 Here I list various quirks regarding how I grade assignments.

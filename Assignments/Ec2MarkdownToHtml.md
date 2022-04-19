@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2MarkdownToHtml.md
+relativePath: Assignments/Ec2MarkdownToHtml.md
+title: Ec2MarkdownToHtml
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Ec2MarkdownToHtml.md
+fileNameHTML: Ec2MarkdownToHtml.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of the EC2 Markdown to Html assignment is set up MakeHtml on our EC2 instances, and to learn a bit about:

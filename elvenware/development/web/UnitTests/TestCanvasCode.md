@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: TestCanvasCode.md
 fileNameHTML: TestCanvasCode.html
+image: ./course/course-javascript.jpg
+subject: UnitTests
+queryPath: elvenware/development/web/UnitTests/
 ---
 
 <!-- toc -->

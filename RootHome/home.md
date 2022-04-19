@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/RootHome/home.md
+relativePath: RootHome/home.md
+title: Home
+queryPath: RootHome/
+subject: RootHome
+fileNameMarkdown: home.md
+fileNameHTML: home.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Fall 2017

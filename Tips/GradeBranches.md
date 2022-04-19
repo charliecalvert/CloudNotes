@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/GradeBranches.md
+relativePath: Tips/GradeBranches.md
+title: GradeBranches
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: GradeBranches.md
+fileNameHTML: GradeBranches.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I want to give you good feedback, but doing so often takes me a very long time. I've come up with a system that should help your move forward quickly with detailed feedback, and yet not be too difficult for me to create.

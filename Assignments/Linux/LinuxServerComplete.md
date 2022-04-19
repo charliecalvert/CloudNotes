@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Linux/LinuxServerComplete.md
+relativePath: Assignments/Linux/LinuxServerComplete.md
+title: LinuxServerComplete
+queryPath: Assignments/Linux/
+subject: Linux
+fileNameMarkdown: LinuxServerComplete.md
+fileNameHTML: LinuxServerComplete.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Watch either the [Complete Playlist][cpl] or the videos in the order they are listed. Follow the steps shown in the video, but name your instance vb-lastname so I can recognize it in your screenshots.

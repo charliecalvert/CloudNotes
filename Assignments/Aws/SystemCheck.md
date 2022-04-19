@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SystemCheck.md
+relativePath: Assignments/Aws/SystemCheck.md
+title: SystemCheck
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: SystemCheck.md
+fileNameHTML: SystemCheck.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Create a program that will allow us to check various system services by running scripts. For instance, it should run **CpuInfo** on the local machine.

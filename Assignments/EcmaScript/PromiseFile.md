@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript/PromiseFile.md
+relativePath: Assignments/EcmaScript/PromiseFile.md
+title: PromiseFile
+queryPath: Assignments/EcmaScript/
+subject: EcmaScript
+fileNameMarkdown: PromiseFile.md
+fileNameHTML: PromiseFile.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Sometimes we need to wait for an asynchronous call to return. Traditionally, JavaScript has handled this with callbacks. However, modern JavaScript uses [Promises][pmdn] (and also async await) to handle this.

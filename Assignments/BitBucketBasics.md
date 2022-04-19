@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BitBucketBasics.md
+relativePath: Assignments/BitBucketBasics.md
+title: BitBucketBasics
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BitBucketBasics.md
+fileNameHTML: BitBucketBasics.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #BitBucket Basics
 
 In this assignment you will learn how to use a Git repository and to clone your repository on CodeAnywhere. You will also learn how to check in code from [CodeAnywhere](https://codeanywhere.com) to [BitBucket](https://bitbucket.org/).

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongooseRoutes.md
+relativePath: Assignments/MongooseRoutes.md
+title: MongooseRoutes
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: MongooseRoutes.md
+fileNameHTML: MongooseRoutes.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 In this assignment we will integrate menus and sorting into a single application. The goal is provide you a blue print for doing the same thing in your final. 

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog282/Week03.md
+relativePath: Prog282/Week03.md
+title: Week03
+queryPath: Prog282/
+subject: Prog282
+fileNameMarkdown: Week03.md
+fileNameHTML: Week03.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Week03 Prog282 Overview
 ===============
 

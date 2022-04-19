@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2DataHunterFinalPrep.md
+relativePath: Assignments/Ec2DataHunterFinalPrep.md
+title: Ec2DataHunterFinalPrep
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Ec2DataHunterFinalPrep.md
+fileNameHTML: Ec2DataHunterFinalPrep.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Get **DataHunter** and **DataMaster** working on EC2. Run:

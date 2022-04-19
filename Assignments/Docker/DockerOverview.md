@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerOverview.md
+relativePath: Assignments/Docker/DockerOverview.md
+title: DockerOverview
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerOverview.md
+fileNameHTML: DockerOverview.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This assignment is designed to be an introduction to Docker. Please also see the official [Docker Overview][dover].

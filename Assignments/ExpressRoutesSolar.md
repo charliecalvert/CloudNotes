@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressRoutesSolar.md
+relativePath: Assignments/ExpressRoutesSolar.md
+title: ExpressRoutesSolar
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ExpressRoutesSolar.md
+fileNameHTML: ExpressRoutesSolar.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 
 <pre>
 CreateAllExpress Week05-ExpressRoutesSolar

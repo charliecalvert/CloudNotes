@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog280/Week11.md
+relativePath: Prog280/Week11.md
+title: Week11
+queryPath: Prog280/
+subject: Prog280
+fileNameMarkdown: Week11.md
+fileNameHTML: Week11.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Week 11 Prog 280
 
 The focus for this week will be:

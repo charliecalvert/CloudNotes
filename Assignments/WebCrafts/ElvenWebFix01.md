@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/ElvenWebFix01.md
+relativePath: Assignments/WebCrafts/ElvenWebFix01.md
+title: ElvenWebFix01
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: ElvenWebFix01.md
+fileNameHTML: ElvenWebFix01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I grew quite befuddled at the end of class today (Wed Oct 4, 2017) over what turned out to be a simple issue. The [isit-site-tools][ist] repo is hopefully in reasonably good shape, but there was one change I should have made. The **start** script from **package.json** looked like this:

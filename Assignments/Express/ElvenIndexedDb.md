@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/ElvenIndexedDb.md
+relativePath: Assignments/Express/ElvenIndexedDb.md
+title: ElvenIndexedDb
+queryPath: Assignments/Express/
+subject: Express
+fileNameMarkdown: ElvenIndexedDb.md
+fileNameHTML: ElvenIndexedDb.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 There are two sections to this document. One informative, the second a project for you to complete.
 
 # IndexedDb

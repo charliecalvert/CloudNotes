@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactProps.md
+relativePath: Assignments/React/ReactProps.md
+title: ReactProps
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactProps.md
+fileNameHTML: ReactProps.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We will learn a bit about React props by continuing to expand the [rest-basics][restb], [ReactBasics][rb] and [ReactMicroServices][rms] programs. We will try to understand properties, and to see how they can be passed from one component to another.

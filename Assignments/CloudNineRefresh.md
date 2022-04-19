@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNineRefresh.md
+relativePath: Assignments/CloudNineRefresh.md
+title: CloudNineRefresh
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: CloudNineRefresh.md
+fileNameHTML: CloudNineRefresh.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Create a fresh version of your Cloud 9 workspace. This may be necessary to ensure that mongo will run correctly on it. I was having trouble starting MongoDb in my original Cloud Nine workspace, perhaps because it was so full, perhaps because of some other reason. This exercise should ensure three things:

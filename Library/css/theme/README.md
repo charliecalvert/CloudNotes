@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Library/css/theme/README.md
+relativePath: Library/css/theme/README.md
+title: README
+queryPath: Library/css/theme/
+subject: theme
+fileNameMarkdown: README.md
+fileNameHTML: README.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Dependencies
 
 Themes are written using Sass to keep things modular and reduce the need for repeated selectors across files. Make sure that you have the reveal.js development environment including the Grunt dependencies installed before proceding: https://github.com/hakimel/reveal.js#full-setup

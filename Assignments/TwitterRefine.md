@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/TwitterRefine.md
+relativePath: Assignments/TwitterRefine.md
+title: TwitterRefine
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: TwitterRefine.md
+fileNameHTML: TwitterRefine.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Twitter Refine
 
 The goal is to:

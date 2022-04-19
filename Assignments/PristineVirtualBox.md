@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PristineVirtualBox.md
+relativePath: Assignments/PristineVirtualBox.md
+title: PristineVirtualBox
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: PristineVirtualBox.md
+fileNameHTML: PristineVirtualBox.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal is to install [Lubuntu](https://lubuntu.me/) on VirtualBox from a custom OVA appliance. Inside the [OVA file][ova] is a compressed instance of the Linux Lubuntu distribution that I created on my home machine.

@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JQueryBasic.md
-relativePath: elvenware/development/web/JavaScript/JQueryBasic.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JQueryBasic.md
+relativePath: javascript-guide/JQueryBasic.md
 title: JQueryBasic
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: JQueryBasic.md
 fileNameHTML: JQueryBasic.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

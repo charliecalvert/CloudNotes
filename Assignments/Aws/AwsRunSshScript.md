@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsRunSshScript.md
+relativePath: Assignments/Aws/AwsRunSshScript.md
+title: AwsRunSshScript
+queryPath: Assignments/Aws/
+subject: Aws
+fileNameMarkdown: AwsRunSshScript.md
+fileNameHTML: AwsRunSshScript.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Run an SSH script remotely. In particular we will:

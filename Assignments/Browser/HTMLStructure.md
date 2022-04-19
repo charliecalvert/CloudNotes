@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/HTMLStructure.md
+relativePath: Assignments/Browser/HTMLStructure.md
+title: HTMLStructure
+queryPath: Assignments/Browser/
+subject: Browser
+fileNameMarkdown: HTMLStructure.md
+fileNameHTML: HTMLStructure.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 HTML 5: Structure
 by Charlie Calvert
 Bellevue College

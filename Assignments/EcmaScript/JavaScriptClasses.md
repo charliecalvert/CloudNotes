@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript/JavaScriptClasses.md
+relativePath: Assignments/EcmaScript/JavaScriptClasses.md
+title: JavaScriptClasses
+queryPath: Assignments/EcmaScript/
+subject: EcmaScript
+fileNameMarkdown: JavaScriptClasses.md
+fileNameHTML: JavaScriptClasses.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Java Script Objects
 
 In this assignment we will learn about JavaScript objects.

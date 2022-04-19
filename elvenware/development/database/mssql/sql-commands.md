@@ -6,6 +6,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
 fileNameMarkdown: sql-commands.md
 fileNameHTML: sql-commands.html
+image: ./course/course-javascript.jpg
+subject: mssql
+queryPath: elvenware/development/database/mssql/
 ---
 
 <!-- toc -->

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog280Final2014.md
+relativePath: Assignments/Prog280Final2014.md
+title: Prog280Final2014
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog280Final2014.md
+fileNameHTML: Prog280Final2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 280 Final 2014
 
 This exam tests your understanding of the following technologies. It will perhaps try your patience at times, but I want to be sure that you have mastery of the following technologies:

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AwsEc2Expert.md
+relativePath: Assignments/AwsEc2Expert.md
+title: AwsEc2Expert
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AwsEc2Expert.md
+fileNameHTML: AwsEc2Expert.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #AWS EC2 Expert
 
 Primary goals:

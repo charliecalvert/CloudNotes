@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressShowMountTests.md
+relativePath: Assignments/React/ReactAddressShowMountTests.md
+title: ReactAddressShowMountTests
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactAddressShowMountTests.md
+fileNameHTML: ReactAddressShowMountTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 **STATUS**: _This assignment is incomplete. You can look it over, and maybe work on a few sections, but it is not yet possible to complete as is._

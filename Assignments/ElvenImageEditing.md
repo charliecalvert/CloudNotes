@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenImageEditing.md
+relativePath: Assignments/ElvenImageEditing.md
+title: ElvenImageEditing
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElvenImageEditing.md
+fileNameHTML: ElvenImageEditing.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 I did some more work on the **Elven Image** Editing program. It can, if used properly, now create a script that will sort out the images you have used from those you kept.

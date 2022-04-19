@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsMaterial.md
+relativePath: Assignments/React/ReactPropsMaterial.md
+title: ReactPropsMaterial
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: ReactPropsMaterial.md
+fileNameHTML: ReactPropsMaterial.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The Goal is to add [Material-UI][limu] to our application to gussy up the menu and give our app a more standard appearance.

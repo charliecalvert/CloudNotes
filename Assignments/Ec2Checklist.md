@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2Checklist.md
+relativePath: Assignments/Ec2Checklist.md
+title: Ec2Checklist
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Ec2Checklist.md
+fileNameHTML: Ec2Checklist.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The EC2 In Class Checklist is designed to help ensure that you have EC2 set up correctly. Don't be too obsessive, but try to get the tests I describe here to pass.

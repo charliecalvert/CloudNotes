@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/GoogleSiteAssignment.md
+relativePath: Prog270/GoogleSiteAssignment.md
+title: GoogleSiteAssignment
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: GoogleSiteAssignment.md
+fileNameHTML: GoogleSiteAssignment.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 In Class Assignment
 -------------------
 

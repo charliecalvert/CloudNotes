@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BridgePattern.md
+relativePath: Assignments/BridgePattern.md
+title: BridgePattern
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: BridgePattern.md
+fileNameHTML: BridgePattern.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #BridgePattern Part 01
 
 This assignment has been simplified. Your goal at this stage is just to mock up the creation of the **DataReader** application. We will wait until next week to implement it. In particular, you do not need to read data from the server, and you do not need to properly display either the JSON or the markdown. 

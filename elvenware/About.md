@@ -7,6 +7,9 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
 fileNameMarkdown: About.md
 fileNameHTML: About.html
+image: ./course/course-javascript.jpg
+subject: elvenware
+queryPath: elvenware/
 ---
 
 <!-- toc -->

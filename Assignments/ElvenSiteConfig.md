@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteConfig.md
+relativePath: Assignments/ElvenSiteConfig.md
+title: ElvenSiteConfig
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElvenSiteConfig.md
+fileNameHTML: ElvenSiteConfig.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 In Elven Site Config we add configuration files to our ElvenSite.

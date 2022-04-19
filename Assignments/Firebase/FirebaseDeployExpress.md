@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseDeployExpress.md
+relativePath: Assignments/Firebase/FirebaseDeployExpress.md
+title: FirebaseDeployExpress
+queryPath: Assignments/Firebase/
+subject: Firebase
+fileNameMarkdown: FirebaseDeployExpress.md
+fileNameHTML: FirebaseDeployExpress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment will be to integrate express into our Firebase app so that we can more easily port our GitHub calls into a Firebase application.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseExpress.md
+relativePath: Assignments/Firebase/FirebaseExpress.md
+title: FirebaseExpress
+queryPath: Assignments/Firebase/
+subject: Firebase
+fileNameMarkdown: FirebaseExpress.md
+fileNameHTML: FirebaseExpress.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to learn how to create an Express application that can access the Firebase database on the server.

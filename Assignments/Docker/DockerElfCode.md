@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerElfCode.md
+relativePath: Assignments/Docker/DockerElfCode.md
+title: DockerElfCode
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerElfCode.md
+fileNameHTML: DockerElfCode.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Install Docker BCode. This is a copy of Charlie's development environment in a Docker container. It is based on the official [Docker image for Ubuntu][diu]. It is a bit like having Pristine Lubuntu in a Docker container.

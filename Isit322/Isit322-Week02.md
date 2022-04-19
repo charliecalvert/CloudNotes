@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit322/Isit322-Week02.md
+relativePath: Isit322/Isit322-Week02.md
+title: Isit322-Week02
+queryPath: Isit322/
+subject: Isit322
+fileNameMarkdown: Isit322-Week02.md
+fileNameHTML: Isit322-Week02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 <h3>Our main goals are:</h3>
 
 <ul>

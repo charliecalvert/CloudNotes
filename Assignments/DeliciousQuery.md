@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DeliciousQuery.md
+relativePath: Assignments/DeliciousQuery.md
+title: DeliciousQuery
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: DeliciousQuery.md
+fileNameHTML: DeliciousQuery.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # DeliciousQuery
 
 Learn more about testing.

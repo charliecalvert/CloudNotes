@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/AssignmentComments.md
+relativePath: Tips/AssignmentComments.md
+title: AssignmentComments
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: AssignmentComments.md
+fileNameHTML: AssignmentComments.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 I find that I sometimes don't reply in depth to assignments of very high quality. If I give someone a 100 or a grade in the high nineties, that is generally just a way of saying they are doing everything right.
 
 Ideally, I should go through even the best assignments very carefully and show ways they could be improved. During some quarters, unfortunately, I find that nearly impossible. My justification in such cases, which I think is at least partially valid, is that I work overtime in some quarters to understand important new developments in our technology. That can take away from grading time.

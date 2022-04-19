@@ -6,18 +6,21 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: index.md
 fileNameHTML: index.html
+image: ./course/course-javascript.jpg
+subject: Python
+queryPath: elvenware/development/web/Python/
 ---
 
 <!-- toc -->
 <!-- tocstop -->
 
-## Python
+## Elven Python Guide
 
--   [Python Install](install.html)
--   [Python Syntax](PythonSyntax.html)
--   [Python Unit Testing Basics](PythonUnitTests.html)
--   [Python CGI Basics](PythonScripts.html)
--   [Support for Python in Eclipse with PyDev.](pydev.html)
--   [Python on Windows: IIS](python_iis.html)
--   [Python on Windows: Xampp](Xampp.html)
--   [DJango](django.html)
+- [Python Install](install.html)
+- [Python Syntax](PythonSyntax.html)
+- [Python Unit Testing Basics](PythonUnitTests.html)
+- [Python CGI Basics](PythonScripts.html)
+- [Support for Python in Eclipse with PyDev.](pydev.html)
+- [Python on Windows: IIS](python_iis.html)
+- [Python on Windows: Xampp](Xampp.html)
+- [DJango](django.html)

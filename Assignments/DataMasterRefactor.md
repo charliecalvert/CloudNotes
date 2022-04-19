@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DataMasterRefactor.md
+relativePath: Assignments/DataMasterRefactor.md
+title: DataMasterRefactor
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: DataMasterRefactor.md
+fileNameHTML: DataMasterRefactor.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We will discuss this assignment on Wednesday. I'm giving it to you now in case you find it useful. It allows you to step away from Angular, and just write standard jQuery code in the **DataMaster** program. Do only as much as you find useful.

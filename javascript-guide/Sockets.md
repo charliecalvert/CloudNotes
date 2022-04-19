@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Sockets.md
-relativePath: elvenware/development/web/JavaScript/Sockets.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/Sockets.md
+relativePath: javascript-guide/Sockets.md
 title: Sockets
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: Sockets.md
 fileNameHTML: Sockets.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

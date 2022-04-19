@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog270MidtermPrep.md
+relativePath: Assignments/Prog270MidtermPrep.md
+title: Prog270MidtermPrep
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog270MidtermPrep.md
+fileNameHTML: Prog270MidtermPrep.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The Prog 270 Midterm Prep helps you work on the Prisitine Lubuntu side of your midterm.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:56 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Tips/WindowsBash.md
+relativePath: Tips/WindowsBash.md
+title: WindowsBash
+queryPath: Tips/
+subject: Tips
+fileNameMarkdown: WindowsBash.md
+fileNameHTML: WindowsBash.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This article is about Bash for Windows in the Windows Subsystem for Linux (WSL). I have spent time with it for the first time today and found I could run my Bash scripts and run my Node applications. I was very impressed with how well this works.

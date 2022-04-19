@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Pandoc01.md
+relativePath: Assignments/Pandoc01.md
+title: Pandoc01
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Pandoc01.md
+fileNameHTML: Pandoc01.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Pandoc Assignment 01
 ====================
 

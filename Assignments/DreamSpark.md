@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DreamSpark.md
+relativePath: Assignments/DreamSpark.md
+title: DreamSpark
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: DreamSpark.md
+fileNameHTML: DreamSpark.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 Students enrolled in our class by the first day are added to the ELMS system.  Newly registered students are not automatically added to the system.  After the 1st  day, when a new student is added to our roster, I need to take special actions to get them set up properly. Please send me email if you feel you are not properly registered.
 
 The web site for DreamSpark appears to be part of the Library Media Center (LMC):     

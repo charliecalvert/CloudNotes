@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm/RunConcurrently.md
+relativePath: Assignments/Npm/RunConcurrently.md
+title: RunConcurrently
+queryPath: Assignments/Npm/
+subject: Npm
+fileNameMarkdown: RunConcurrently.md
+fileNameHTML: RunConcurrently.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to learn to run two programs concurrently. One program is an Express application called **server**. The second is a **create-react-app** program called **client**.

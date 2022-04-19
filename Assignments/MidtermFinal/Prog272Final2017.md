@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Prog272Final2017.md
+relativePath: Assignments/MidtermFinal/Prog272Final2017.md
+title: Prog272Final2017
+queryPath: Assignments/MidtermFinal/
+subject: MidtermFinal
+fileNameMarkdown: Prog272Final2017.md
+fileNameHTML: Prog272Final2017.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Prog 272 Final Spring 2017
 
 I will try to fill in more details later, but this should help you get started.

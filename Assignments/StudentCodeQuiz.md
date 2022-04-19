@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/StudentCodeQuiz.md
+relativePath: Assignments/StudentCodeQuiz.md
+title: StudentCodeQuiz
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: StudentCodeQuiz.md
+fileNameHTML: StudentCodeQuiz.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Overview
 
 Can you, answer the questions below and then send me your SID, that is, send me your college ID?

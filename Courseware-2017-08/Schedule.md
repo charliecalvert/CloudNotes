@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Courseware-2017-08/Schedule.md
+relativePath: Courseware-2017-08/Schedule.md
+title: Schedule
+queryPath: Courseware-2017-08/
+subject: Courseware-2017-08
+fileNameMarkdown: Schedule.md
+fileNameHTML: Schedule.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Schedule
 
 Here is the proposed schedule for our course.

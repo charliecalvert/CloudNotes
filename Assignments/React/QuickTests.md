@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/QuickTests.md
+relativePath: Assignments/React/QuickTests.md
+title: QuickTests
+queryPath: Assignments/React/
+subject: React
+fileNameMarkdown: QuickTests.md
+fileNameHTML: QuickTests.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Video
 
 It covers Test Driven Development (TDD) basics with [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme). A major theme is how to focus on one component at a time with Enzyme [shallow](https://github.com/airbnb/enzyme/blob/master/docs/api/shallow.md). We also briefly discuss Enzyme [mount](https://github.com/airbnb/enzyme/blob/master/docs/api/mount.md), which allows you to see components that are nested inside one another. **mount** can be useful at times, but in general, the goal of Unit Testing is to work with one component at a time.

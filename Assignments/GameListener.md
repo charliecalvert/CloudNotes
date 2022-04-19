@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GameListener.md
+relativePath: Assignments/GameListener.md
+title: GameListener
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GameListener.md
+fileNameHTML: GameListener.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # GameListener
 
 We want to create a game listener, which will show the current state of the game. It shows the current location of the main character and the mini-map. It is controlled and updated entirely through sockets, and it works on a different port than the game.

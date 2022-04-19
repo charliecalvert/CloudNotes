@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GameLevelListener.md
+relativePath: Assignments/GameLevelListener.md
+title: GameLevelListener
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: GameLevelListener.md
+fileNameHTML: GameLevelListener.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Game Level Listener
 
 - Show debug information only in listener

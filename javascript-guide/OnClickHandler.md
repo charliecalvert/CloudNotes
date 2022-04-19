@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/OnClickHandler.md
-relativePath: elvenware/development/web/JavaScript/OnClickHandler.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/OnClickHandler.md
+relativePath: javascript-guide/OnClickHandler.md
 title: OnClickHandler
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: OnClickHandler.md
 fileNameHTML: OnClickHandler.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

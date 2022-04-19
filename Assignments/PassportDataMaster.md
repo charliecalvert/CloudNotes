@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PassportDataMaster.md
+relativePath: Assignments/PassportDataMaster.md
+title: PassportDataMaster
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: PassportDataMaster.md
+fileNameHTML: PassportDataMaster.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Refactor **DataMaster** and implement Passport sign in for Facebook and Google.

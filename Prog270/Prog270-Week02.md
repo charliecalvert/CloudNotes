@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/Prog270-Week02.md
+relativePath: Prog270/Prog270-Week02.md
+title: Prog270-Week02
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: Prog270-Week02.md
+fileNameHTML: Prog270-Week02.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Margie has now deployed Week02 Prog270 Fall 2018 overview. We have three main tasks:

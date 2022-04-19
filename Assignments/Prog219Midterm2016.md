@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog219Midterm2016.md
+relativePath: Assignments/Prog219Midterm2016.md
+title: Prog219Midterm2016
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog219Midterm2016.md
+fileNameHTML: Prog219Midterm2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 We are now turning a major corner in the course. Rather than learning new technologies, we are going to spend most of our time refactoring code and adding new features.

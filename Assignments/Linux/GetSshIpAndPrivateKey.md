@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Linux/GetSshIpAndPrivateKey.md
+relativePath: Assignments/Linux/GetSshIpAndPrivateKey.md
+title: GetSshIpAndPrivateKey
+queryPath: Assignments/Linux/
+subject: Linux
+fileNameMarkdown: GetSshIpAndPrivateKey.md
+fileNameHTML: GetSshIpAndPrivateKey.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 Our goal is to stop hardcoding our hostAddress (hostName) and identityFile (privateKey) in **ssh-runner**.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerFile.md
+relativePath: Assignments/Docker/DockerFile.md
+title: DockerFile
+queryPath: Assignments/Docker/
+subject: Docker
+fileNameMarkdown: DockerFile.md
+fileNameHTML: DockerFile.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## The Docker File
 
 In this assignment you will learn the basics of working with [**Dockerfiles**][df]. We can use these files to automate the process outlined in the [Docker Starter Assignment][dsp].

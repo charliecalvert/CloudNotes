@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsPubSub.md
+relativePath: Assignments/WebCrafts/WebCraftsPubSub.md
+title: WebCraftsPubSub
+queryPath: Assignments/WebCrafts/
+subject: WebCrafts
+fileNameMarkdown: WebCraftsPubSub.md
+fileNameHTML: WebCraftsPubSub.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of this assignment is to learn how to get the React code to talk to the jQuery code.

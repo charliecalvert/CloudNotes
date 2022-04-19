@@ -6,27 +6,29 @@ debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 fileNameMarkdown: index.md
 fileNameHTML: index.html
+image: ./course/course-javascript.jpg
+subject: CssGuide
+queryPath: elvenware/development/web/CssGuide/
 ---
 
 <!-- toc -->
 <!-- tocstop -->
 
-CSS
----
+# Elven CSS Guide
 
--   [Basic Syntaxs](BasicSyntax.html)
--   [Bootstrap](Bootstrap.html)
--   [Validators](Validators.html)
--   [Responsive Design and Media Queries](MediaQueries.html)
--   [Syle Sheet Changer](StyleSheetChanger.html)
--   [jQuery UI Style Sheet Changer](/javascript-guide/JQueryUiDemo.html)
--   [CSS Button Test](TestCss.html)
--   [Mock Media Queries with jQuery](/javascript-guide/MediaQueryMock.html)
+- [Basic Syntaxs](BasicSyntax.html)
+- [Bootstrap](Bootstrap.html)
+- [Validators](Validators.html)
+- [Responsive Design and Media Queries](MediaQueries.html)
+- [Syle Sheet Changer](StyleSheetChanger.html)
+- [jQuery UI Style Sheet Changer](/javascript-guide/JQueryUiDemo.html)
+- [CSS Button Test](TestCss.html)
+- [Mock Media Queries with jQuery](/javascript-guide/MediaQueryMock.html)
 
 We use HTML to define the content we want to display to a user. Use CSS to format and define the appearance of HTML documents.
 
-* HTML: Content
-* CSS: Appearance
+- HTML: Content
+- CSS: Appearance
 
 As a rule CSS belongs in CSS files and content belongs in HTML
 files. You can put CSS in an HTML file and vice versa, but it is
@@ -50,9 +52,9 @@ what the HTML should look like, and so they belong in the CSS file.
 
 We separate content and styling for two reasons:
 
-1.  So that we can easily change the appearance of multiple HTML files
+1. So that we can easily change the appearance of multiple HTML files
     by changing a single **css** file
-2.  So that we can easily parse the content of an HTML file. By parse, I
+2. So that we can easily parse the content of an HTML file. By parse, I
     mean either read with the naked eye, or iterate over it with a
     computer language of some type
 
@@ -76,15 +78,14 @@ a parser understand the content in a page, and to aid the CSS and
 JavaScript files when they change the appearance of the page. See the
 [page on HTML5](/html-guide/HtmlFive.html) for more details.
 
-Working with Fonts in CSS
--------------------------
+## Working with Fonts in CSS
 
 Controling Fonts is something you want to do in CSS, since it involves
 presentation, they way things appear. Sometimes, getting everything to
 work together can be as simple as defining your fonts in the body
 selector for your CSS:
 
-```
+```css
 body {
     font-family:Arial, Helvetica, sans-serif;
     font-size:xx-large;

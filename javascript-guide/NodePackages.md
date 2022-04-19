@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodePackages.md
-relativePath: elvenware/development/web/JavaScript/NodePackages.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/NodePackages.md
+relativePath: javascript-guide/NodePackages.md
 title: NodePackages
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: NodePackages.md
 fileNameHTML: NodePackages.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

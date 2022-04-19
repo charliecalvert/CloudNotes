@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Isit322/Combined.md
+relativePath: Isit322/Combined.md
+title: Combined
+queryPath: Isit322/
+subject: Isit322
+fileNameMarkdown: Combined.md
+fileNameHTML: Combined.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Week09
 
 Welcomes to the combined version of [JadeMarkdownExpress][jmdexp] and [MarkdownExpressInClass][mdexpic] and [ElvenIndexedDb][eidb].

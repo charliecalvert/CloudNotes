@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog219Final2016.md
+relativePath: Assignments/Prog219Final2016.md
+title: Prog219Final2016
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Prog219Final2016.md
+fileNameHTML: Prog219Final2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The Prog 219 Final for 2016 is broken out into their tiers, three sets of priorities. I'll list the basic priorities first, intermediate level priorities second, and advanced priorities third. The more experience you have as a developer, the deeper into this list you should go. Those with little experience may complete only features from the basic tier and perhaps one or two items from the intermediate level. Those with lots of experience should get deeper into the list of advanced priorities.

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:54 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog219/ClassSites2016.md
+relativePath: Prog219/ClassSites2016.md
+title: ClassSites2016
+queryPath: Prog219/
+subject: Prog219
+fileNameMarkdown: ClassSites2016.md
+fileNameHTML: ClassSites2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 # Class Sites
 
 - [Sadia](http://52.11.219.91)

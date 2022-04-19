@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Final2014.md
+relativePath: Assignments/Isit320Final2014.md
+title: Isit320Final2014
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: Isit320Final2014.md
+fileNameHTML: Isit320Final2014.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 #Isit320 Final 2014
 
 **NOTE**: *This document is not quite final. Begin work on it as soon as possible, but check the announcement area for updates.*

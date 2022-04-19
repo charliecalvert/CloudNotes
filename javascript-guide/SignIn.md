@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/SignIn.md
-relativePath: elvenware/development/web/JavaScript/SignIn.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/SignIn.md
+relativePath: javascript-guide/SignIn.md
 title: SignIn
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: SignIn.md
 fileNameHTML: SignIn.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

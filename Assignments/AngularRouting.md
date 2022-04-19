@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularRouting.md
+relativePath: Assignments/AngularRouting.md
+title: AngularRouting
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: AngularRouting.md
+fileNameHTML: AngularRouting.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Description
 
 Learn about single page applications and Angular Routing.

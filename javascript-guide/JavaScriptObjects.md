@@ -1,13 +1,14 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptObjects.md
-relativePath: elvenware/development/web/JavaScript/JavaScriptObjects.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptObjects.md
+relativePath: javascript-guide/JavaScriptObjects.md
 title: JavaScriptObjects
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
 fileNameMarkdown: JavaScriptObjects.md
 fileNameHTML: JavaScriptObjects.html
-queryPath: /javascript-guide/
+queryPath: javascript-guide/
+image: ./course/course-javascript.jpg
 ---
 
 <!-- toc -->

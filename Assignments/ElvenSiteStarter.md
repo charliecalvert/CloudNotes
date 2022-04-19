@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:52 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteStarter.md
+relativePath: Assignments/ElvenSiteStarter.md
+title: ElvenSiteStarter
+queryPath: Assignments/
+subject: Assignments
+fileNameMarkdown: ElvenSiteStarter.md
+fileNameHTML: ElvenSiteStarter.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal of the Elven Site Starter is to create a simple, first iteration, front end for the MakeHtml project.

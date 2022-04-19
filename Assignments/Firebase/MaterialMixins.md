@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:53 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/MaterialMixins.md
+relativePath: Assignments/Firebase/MaterialMixins.md
+title: MaterialMixins
+queryPath: Assignments/Firebase/
+subject: Firebase
+fileNameMarkdown: MaterialMixins.md
+fileNameHTML: MaterialMixins.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 The goal is to learn more about Google [Material][md], more about mixins, and find a way to hide and display divs so as to make better use of available real estate.

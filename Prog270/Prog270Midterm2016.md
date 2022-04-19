@@ -1,3 +1,20 @@
+---
+creationLocalTime: 3/26/2022, 10:23:51 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/Prog270/Prog270Midterm2016.md
+relativePath: Prog270/Prog270Midterm2016.md
+title: Prog270Midterm2016
+queryPath: Prog270/
+subject: Prog270
+fileNameMarkdown: Prog270Midterm2016.md
+fileNameHTML: Prog270Midterm2016.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Overview
 
 This is the Midterm for Prog 270 in 2016.
