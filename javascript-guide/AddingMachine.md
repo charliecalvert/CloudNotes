@@ -14,7 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-Adding Machine {#adding}
+Adding Machine
 --------------
 
 ***This page is part of the [Elvenware
@@ -30,41 +30,31 @@ Enter two numbers in the fields labeled **Number One** and **Number
 Two**. Press the **Add** button to add the numbers. If you are satisfied
 with your result, press the **Submit** button.
 
-Operand A:
-
-Operand B:
-
-* * * * *
-
-Result:
-
-* * * * *
-
 Here is what is going on behind the scenes. When you press the
 **Submit**button two things happen:
 
--   The submit button forces the form to submit its data to a python
+- The submit button forces the form to submit its data to a python
     script called **AddingMachineWrite.py**. This happens because the
     form has its action attribute set to /cgi-bin/AddingMachineWrite.py
-    -   \<**form** action="/cgi-bin/AddingMachineWrite.py"
+  - \<**form** action="/cgi-bin/AddingMachineWrite.py"
         **method**="post"\>
 
--   Three pieces of data are also submitted.
-    -   The text from the input field labeled **Operand A** and named
+- Three pieces of data are also submitted.
+  - The text from the input field labeled **Operand A** and named
         **operanda**
-    -   The text from the input field labeled **Operand B** and named
+  - The text from the input field labeled **Operand B** and named
         **operandb**
-    -   The text from the input field named **answer**.
+  - The text from the input field named **answer**.
 
--   A fourth input control, a button labeled **Add Numbers**, is used to
+- A fourth input control, a button labeled **Add Numbers**, is used to
     call the JavaScript routine that adds the numbers together.
--   Finally, the fifth input control, of type **submit,** executes the
+- Finally, the fifth input control, of type **submit,** executes the
     **form** and submits the contents of the form to
     **AddingMachineWrite.py**.
 
 Here is the complete code for the form:
 
-~~~~ {.code}
+```html
 <form action="/cgi-bin/AddingMachineWrite.py" method="post">
   <div>
     <div><label>Operand A:</label></div>
@@ -78,13 +68,13 @@ Here is the complete code for the form:
         name="operandb" 
         id="operandb" />
   </div>
-  <hr>
+  
   <div>
     <div>
         <label>Result</label>: 
         <input type="text" name="answer" id="answer"/>
     </div>
-    <hr>
+  
     <div>
         <input type="button" 
             onclick="addingMachine.addNumbers()" 
@@ -93,21 +83,20 @@ Here is the complete code for the form:
     </div>
   </div>
 </form>
-~~~~
+```
 
 Below is the JavaScript routine that adds two numbers together. Note
 that it makes heavy use of jQuery to locate the fields were the operands
 are located, and where the result is displayed.
 
-~~~~ {.code}
-this.addNumbers = function()
-{
-  var operanda = $("#operanda").val();
-  var operandb = $("#operandb").val();
+```javascript
+this.addNumbers = function() &#123;
+  var operanda = $(&quot;#operanda&quot;).val();
+  var operandb = $(&quot;#operandb&quot;).val();
   var sum = parseInt(operanda) + parseInt(operandb);
-  $("#answer").val(sum);
-}
-~~~~
+  $(&quot;#answer&quot;).val(sum);
+&#125;
+```
 
 Press the **Get all additions** button to see a list of all the
 additions people have performed. Pressing this button calls another
@@ -115,11 +104,11 @@ Python script
 
 The code for the **Get all additions** button looks like this:
 
-~~~~ {.code}
+```html
 <form action="/cgi-bin/AddingMachineRead.py" method="post">
-  <input type="submit" value="Get all additions">
+  <input type="submit" value="Get all additions" />
 </form>
-~~~~
+```
 
 Call the add line code directly:
 
@@ -128,7 +117,11 @@ Call the add line code directly:
 If you want to execute code when a form is submitted, but don't want to
 return HTML that would replace the current page, then write this:
 
-    <form action="javascript:void validate( )">
+```html
+    <form action="javascript:void validate( )" >
+        <p>some html</p>
+    </form>
+```
 
 By using void, we assure that a method gets called, but does not return
 anything. If we return HTML, then the that HTML would replace the
