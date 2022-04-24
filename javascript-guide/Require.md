@@ -14,7 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-#Require
+# Require
 
 **Require JS** provides several benefits:
 
@@ -35,7 +35,9 @@ In small projects that use only one or two JavaScript files, require is usually 
 
 The first step is to load require and **data-main**, which is generally a file called **Main.js**.
 
-	<script data-main="javascripts/Main" src="javascripts/require.js"></script>
+```html
+ <script data-main="javascripts/Main" src="javascripts/require.js"></script>
+```
 
 The real work, discussed in the next section, occurs in **Main.js**.
 
@@ -73,7 +75,7 @@ For the files that are going to be loaded with requirejs, you should use a metho
 
 So Control might look like this:
 
-```
+```javascript
 define([], function(require) {
 
     var Control = (function() {
@@ -96,52 +98,52 @@ speed with require.
 
 In **index.html** we link in **Main** and **require.js**:
 
-	<script data-main="Source/Main" src="Source/require.js"> </script>
+ <script data-main="Source/Main" src="Source/require.js"> </script>
 
 **Main** then configures **jquery**:
 
-	require.config({
-	  paths: {
-	    "jquery": "http://code.jquery.com/jquery-1.11.0.min",     
-	  }
-	});
+ require.config({
+   paths: {
+     "jquery": "http://code.jquery.com/jquery-1.11.0.min",     
+   }
+ });
 
 Then we create a simple module called **Boat** which is
 found in **Boat.js**:
 
-	define(['jquery'], function() { 'use strict';
+ define(['jquery'], function() { 'use strict';
 
-		function describe() {  
-			$("#list").append("<li>I'm a boat.</li>");
-		};
+  function describe() {  
+   $("#list").append("<li>I'm a boat.</li>");
+  };
 
-		return {describe: describe};
-	});
+  return {describe: describe};
+ });
 
 This code says that our **Boat** module requires **jquery**. It
 then defines a simple function which adds an item to a list. Finally
 we return a link to the function:
 
-	return {describe: describe};
+ return {describe: describe};
 
 Back in **Main**, we can now link in **Boat** and call **Boat.describe:**
 
-	require(["Boat"], function(boat) {
-		boat.describe();
-	});
+ require(["Boat"], function(boat) {
+  boat.describe();
+ });
 
 The first **Boat**, the one in the array, links in the **Boat.js**
 module. For this we get a reference to a **boat** which is passed
 as a parameter to our anonymous function. Finally, we use the
 reference to call the describe method:
 
-	boat.describe();
+ boat.describe();
 
-##Configure Require Paths
+## Configure Require Paths
 
 Consider this code:
 
-```
+```javascript
 require.config({
     paths : {
         "jquery" : "jquery-1.11.1.min",
@@ -157,7 +159,7 @@ require(['jquery', "MarkShow"],function(jq, MarkShow){
 
 Compare it to this:
 
-```
+```javascript
 require.config({
     paths : {
         "jquery" :"jquery-1.11.1.min",
@@ -204,8 +206,6 @@ If anyone is reading this, and is confused. I'll give an example. In public/java
         }
     });
 
-
-
 I want you to define the paths to all the files in your project in the paths object shown above. The only exception would be for files that are already in public/javascript. They don't need to be called out explicitly since they can just be referenced by name.
 
 One you have defined the path for a file, then anywhere in your project that you need the file, you can just point to it by the name you defined in the paths  object shown above. You point to it like this:
@@ -222,7 +222,7 @@ In the require array above, use the same case as you used when defining the vari
 
 The assumption here is that you do not need to call new on foo or gorp but you do on Gar. (These are just used for illustrations, you probably want to use the modular pattern for most of the objects in your project, so you probably usually want to capitalize the names in the parameter list to the function callback in a require statement. At this stage, you don't have to use the modular pattern, however.)
 
-## RequireJs Second Example {#require-second}
+## RequireJs Second Example
 
 RequireJs provides:
 
@@ -255,7 +255,7 @@ html
 
 In **public/javascripts/main.js** we configure require and bootstrap our application:
 
-**NOTE**: _By bootstrap I mean "load the core files of our application". I'm not referring to the CSS library._
+**NOTE**: *By bootstrap I mean "load the core files of our application". I'm not referring to the CSS library.*
 
 ```javascript
 requirejs.config({
@@ -327,11 +327,10 @@ Require uses dependency injection. This means that one module can state that it 
 
 ```javascript
 define(['jquery'],         <= Square bracket to state dependency from main.js
-	function($) {            <= jQuery instance variable declared here
-	  $('#foo').html('bar'); <= Example use of the dependency
+ function($) {            <= jQuery instance variable declared here
+   $('#foo').html('bar'); <= Example use of the dependency
 })
 ```
-
 
 Many of the major libraries that are commonly used automatically implement the requirejs define function or do something similar. In other words, jQuery, and many other libraries, are requirejs modules. Or maybe it would be more correct to say that the meet the requirements of a requirejs module. This is the case because requirejs is so popular, and so commonly used. Some libraries do not support requirejs, and we will have to take special steps to load them.
 

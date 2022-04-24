@@ -21,28 +21,28 @@ languages is found in this part of the Elvenware site.
 
 ## Strongly Type
 
-1.  [Android](/charlie/development/android/index.html)
-2.  [CSharp (C#)](/charlie/development/csharp/index.html)
-3.  [CPP (C++)](/charlie/development/cpp/index.html)
-4.  [Delphi](/charlie/development/delphi/index.html)
-5.  [Simple Programming Languages](/charlie/development/Simple/index.html) 
-6.  [Java](/charlie/development/java/index.html)
-7.  [Borland Conferences 2004, 2005](/charlie/development/conferences/borconn_2004.html)
-8.  [Kylix Pascal on SF](http://elvenware.sourceforge.net/KylixDevGuide.html)
+- [Android](/charlie/development/android/index.html)
+- [CSharp (C#)](/charlie/development/csharp/index.html)
+- [CPP (C++)](/charlie/development/cpp/index.html)
+- [Delphi](/charlie/development/delphi/index.html)
+- [Simple Programming Languages](/charlie/development/Simple/index.html)
+- [Java](/charlie/development/java/index.html)
+- [Borland Conferences 2004, 2005](/charlie/development/conferences/borconn_2004.html)
+- [Kylix Pascal on SF](http://elvenware.sourceforge.net/KylixDevGuide.html)
 
 ## The Web, Scripts and HTML
 
-1.  [Web, HTML, Scripting and IIS Main Page](/charlie/development/web/index.html)
-2.  [CSS](/charlie/development/web/CssGuide)
-3.  [HTML](/charlie/development/web/HtmlGuide)
-4.  [JavaScript](/charlie/development/web/JavaScript)
-5.  [CGI and Python](/charlie/development/web/Python)
-6.  [PHP](/charlie/development/web/Php/index.html)
-7.  [Maps](/charlie/development/web/MapWeb)
-8.  [Mobile](/charlie/development/web/Mobile)
-9.  [Modernizer](/charlie/development/web/Modernizr)
-10.  [Web Servers (IIS and Apache)](/charlie/development/web/Server)
-11.  [Unit Testing](/charlie/development/web/UnitTests)
+- [Web, HTML, Scripting and IIS Main Page](/charlie/development/web/index.html)
+- [CSS](/charlie/development/web/CssGuide)
+- [HTML](/charlie/development/web/HtmlGuide)
+- [JavaScript](/charlie/development/web/JavaScript)
+- [CGI and Python](/charlie/development/web/Python)
+- [PHP](/charlie/development/web/Php/index.html)
+- [Maps](/charlie/development/web/MapWeb)
+- [Mobile](/charlie/development/web/Mobile)
+- [Modernizer](/charlie/development/web/Modernizr)
+- [Web Servers (IIS and Apache)](/charlie/development/web/Server)
+- [Unit Testing](/charlie/development/web/UnitTests)
 
 ## Other
 
