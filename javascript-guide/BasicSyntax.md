@@ -27,11 +27,11 @@ dependent class. This selector picks up a particular p that has a class
 associated with it.. When you press the button below it calls
 showSelector().
 
- {#bar}
+
 
 Show Selectors
 
-Debug Tricks. Alert vs \#Debug {#simpleButtonClick}
+Debug Tricks. Alert vs \#Debug
 ------------------------------
 
 JavaScript comes with a handy **alert** function that pops up a dialog.
@@ -45,12 +45,12 @@ Show Alert
 
 Show Debug
 
-Show Types {#showTypes}
+Show Types
 ----------
 
 Show Types
 
-Show Two kinds of Properties are the same {#sameProperties}
+Show Two kinds of Properties are the same
 -----------------------------------------
 
 Click the button to see that **myObject.myProperty** and
@@ -68,7 +68,7 @@ Call SayHello
 
  
 
- Use Prototype to Extend the String Class {#decorate}
+ Use Prototype to Extend the String Class
 -----------------------------------------
 
 Call Elvenware.testDecoration()
@@ -88,7 +88,7 @@ call elvenware.showProperties()
 
  
 
-Object Create {#create}
+Object Create
 -------------
 
  
@@ -134,7 +134,7 @@ Get Keys
 
  
 
-Fancy Styles in a Form {#fancy}
+Fancy Styles in a Form
 ----------------------
 
 Call Elvenware.useWrite()
@@ -148,7 +148,7 @@ Call Elvenware.useWrite()
 
 ✥ ✪ ❉ ❆ ⧮ ♞ ♛
 
-Randomize Array {#randomArray}
+Randomize Array
 ---------------
 
 Call elvenware.randomArray()

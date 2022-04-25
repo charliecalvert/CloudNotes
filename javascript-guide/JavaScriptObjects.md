@@ -18,7 +18,7 @@ image: ./course/course-javascript.jpg
 
 In this chapter we will start with a quick overview of the some built in JavaScript Objects such as Arrays. After covering the basics about these topics we will move on to our main subject, which is creating custom JavaScript Objects.
 
-## Creating Objects {#createObjects}
+## Creating Objects
 
 You can declare an object like this:
 
@@ -41,7 +41,7 @@ var myObject = new Object();
 
 However, we prefer the first as it can be faster, easier to read and requires less writing. Note, however, that using prototypes with the second option can save memory as each property or method is shared by multiple instances.
 
-## Object Literal Syntax {#object-literal}
+## Object Literal Syntax
 
 As you know, the simplest possible JavaScript object declared using [object literal][obj-lit] syntax looks like this:
 
@@ -103,7 +103,7 @@ function bar() {
 
 In this chapter we are not concerned with this kind of object. See the [JavaScript Functions][elf-jf] chapter for details on that subject.
 
-## The new Operator {#new-operator}
+## The new Operator
 
 As mentioned above, we should prefer object literals to the **new** operator. For instance:
 
@@ -147,7 +147,7 @@ The next two section briefly outline properties and methods. Once you have had a
 - [Properties in Depth](#properties)
 - [Methods](#methods)
 
-## Property Introduction {#propIntro}
+## Property Introduction
 
 Inside the curly braces of your object literal you can define your object. Objects are merely a list of name:value pairs:
 
@@ -161,7 +161,7 @@ var myObject = {
 
 Each name:value pair shown in the above example is called a property. In the first example, **a** is the property name, and **1** is the property value.
 
-## Method Introduction {#methodIntroduction}
+## Method Introduction
 
 Here is how to add a method to your object:
 
@@ -185,7 +185,7 @@ Besides properties and methods, objects can also contain other objects. Through 
 
 Unless you specify otherwise, JavaScript objects can be modified at any time. In particular, anyone who can execute code in your runtime can add or delete methods or properties. EcmaScript 5 provides means of making objects immune to this kind of manipulation.
 
-## Properties {#properties}
+## Properties
 
 As stated above, properties are name value pairs, where name is a string.
 
@@ -298,7 +298,7 @@ Though both examples are legal, the first is much more common.
 
 [Try it.](BasicSyntax.html#sameProprties)
 
-## Objects with Multiple Properties {#multipleProperties}
+## Objects with Multiple Properties
 
 To declare an object with multiple properties, separate them with commas:
 
@@ -350,7 +350,7 @@ In this case, it yields the result **48**, as shown in the program from JsObject
 
 **Note** We use the keyword **var** when declaring **myObject** but not when we declare **myProperty01** or **addProperties**. This can be confusing to newcomers, but the rule is simple and relatively reasonable: the properties of an object are not declared with **var**.
 
-## Declare Dynamic Properties Outside the Object Literal {#outside}
+## Declare Dynamic Properties Outside the Object Literal
 
 We can create an object using object literal syntax, then add properties and methods to it using dot notation:
 
@@ -941,7 +941,7 @@ See this example:
 
 - [Constants](Constants.html)
 
-## Dictionaries {#dictionaries}
+## Dictionaries
 
 JavaScript Dictionaries are Associative Arrays. JavaScript objects are a comma separated list of key value pairs:
 
@@ -969,7 +969,7 @@ var objectWithMethod = {
 };
 ```
 
-## Class Basics {#class-basics}
+## Class Basics
 
 Before ES6, where was no such thing as a JavaScript class. Instead, JavaScript had objects. It is only a quite recently development that has allowed us to declare classes for our JavaScript object.
 
@@ -1033,7 +1033,7 @@ By convention, **classes** and **functions** that need to be called with the **n
 
 Link to [Working code][wccc].
 
-## Classes and Method Declarations {#class-method-declaration}
+## Classes and Method Declarations
 
 **getName** and **sayName** are simple enough to understand. But note that we declare a method in a class:
 
@@ -1063,7 +1063,7 @@ Again, it doesn't do anything terribly interesting, but it shows how elegant and
 
 Link to [Working code][wccc].
 
-## Dynamic Class Methods {#dynamic-class-method}
+## Dynamic Class Methods
 
 Use the **prototype** property if you want to add a method to class dynamically.
 

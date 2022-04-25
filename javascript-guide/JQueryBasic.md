@@ -39,7 +39,7 @@ library:
 -   It hides the differences between various browsers, and when
     possible, implements advanced features in older browsers.
 
-## Installing JQuery and Using CDN {#install}
+## Installing JQuery and Using CDN
 
 Traditionally we [download
 JQuery](http://docs.jquery.com/Downloading_jQuery) and use script and
@@ -154,7 +154,7 @@ $("#target").submit(function(event) {
 });
 ```
 
-## Set up an HTTP Web Server for Testing {#setupwebserver}
+## Set up an HTTP Web Server for Testing
 
 Remember that jQuery is JavaScript, and that means that some features of JQuery might not work right unless you have scripting turned on. It is also a best practice to test your pages on an **HTTP WebServer**. There are many web servers available for developers, but I usually set up IIS in Windows, or Apache in Linux, and use those servers to test my code. I discuss setting up servers in the Web Server section:
 
@@ -236,7 +236,7 @@ document. However, as it stands, the code should represent something
 of an introduction to how you can use jQuery to dynamically change
 the contents of an HTML file.
 
-## Selectors and jQuery {#selectors}
+## Selectors and jQuery
 
 CSS selectors are a topic that you must understand before you can work
 with jQuery. Here is page that covers the basics regarding selectors:
@@ -247,7 +247,7 @@ You should also visit this page on jQuery selectors:
 
 [http://api.jquery.com/category/selectors/](http://api.jquery.com/category/selectors/)
 
-## Experimenting with jQuery Selectors {#jQuerySelectors}
+## Experimenting with jQuery Selectors
 
 
 The many examples found on this page demonstrate a number of ways to use
@@ -278,7 +278,7 @@ of the many types of selectors used by jQuery. To see a somewhat more
 complicated example, study the **[RadioButton](#radioButtons)** section
 found in this document.
 
-jQuery Attribute Selectors {#attrSelectors}
+jQuery Attribute Selectors
 --------------------------
 
 Look at this selector:
@@ -333,7 +333,7 @@ $("input[name=mainGroup]:radio")
 Here we ask for all the **input** controls of type **radio** with an
 attribute called **name** set to the value **mainGroup**.
 
-## The jQuery API {#api}
+## The jQuery API
 
 Once you have used a selector to select one or more elements from an
 HTML document, what kind of operations can you perform on the element
@@ -350,7 +350,7 @@ There is a raw API dump for those with an adventuresome turn of mind:
 The code shown in the remainder of this document demonstrate at least a
 few of the key methods most commonly used by beginners to jQuery.
 
-## Document Ready Function {#documentReady}
+## Document Ready Function
 
 The following code will be called when the page is loaded and ready to
 be manipulated by jQuery or other JavaScript. It is similar to the
@@ -394,7 +394,7 @@ var stringToShowUser = 'You entered: ' + inputData;
 $('#inputData').val(stringToShowUser);
 ```
 
-## jQuery Click {#jqueryClick}
+## jQuery Click
 
 Assign on [OnClick](http://api.jquery.com/click/) event handler to a tag:
 
@@ -406,7 +406,7 @@ Customize OnClick events so code of our own is called. Instead of the traditiona
 
 [onClickHandlerElf]: http://www.elvenware.com/charlie/development/web/JavaScript/OnClickHandler.html
 
-## Pass Parameters with Click {#clickParam}
+## Pass Parameters with Click
 
 You can pass in parameters when you set up **click** events. Suppose you respond to a button click by calling a method named **foo**:
 
@@ -477,7 +477,7 @@ See also:
 -   loadPage takes the \#content from the URL (Page0X.html) and puts it
     in the container of IPhoneGo.html.
 
-## JQuery Load {#jqueryLoad}
+## JQuery Load
 
 Use the [jQuery.load()](http://api.jquery.com/load/) method to enable
 Ajax. The goal is to load not a whole page, but part of a page. From
@@ -578,7 +578,7 @@ You can read an entire book on REST here for free:
 
 The book is also available for download.
 
-jQuery getJSON {#getJSON}
+jQuery getJSON
 --------------
 The jQuery **getJSON** method is a wrapper around the **ajax** method. It looks like
 this:
@@ -1173,7 +1173,7 @@ This example is found here:
 
 -	[SimpleReadWrite04][srwj]
 
-## Dynamically Changing a Page with jQuery Part I {#morph}
+## Dynamically Changing a Page with jQuery Part I
 
 You can use jQuery to change many of the elements of a page on the fly.
 In this section, I provide examples of various ways to do this.
@@ -1201,7 +1201,7 @@ a sample page demonstrating how this works:
 
 -   [JQueryBackgroundMorph.html](JQueryBackgroundMorph.html)
 
-## Dynamically Changing a Page with jQuery Part II {#morph02}
+## Dynamically Changing a Page with jQuery Part II
 
 Below you will find a link to a more complex example of a set of similar
 jQuery tools. Try clicking on some of the buttons and examing the code to
@@ -1295,21 +1295,21 @@ this.RemoveHiLite = function()
 }
 ```
 
-Form Test {#formtest}
+Form Test
 ---------
 
 This exercise shows how to use Forms:
 
 -	[Forms Test](/javascripts/dev-web/FormTest.html)
 
-Adding Machine {#adding}
+Adding Machine
 --------------
 
 The Adding Machine example has moved here:
 
 -	[AddingMachine.html](AddingMachine.html)
 
-Posting Data {#post}
+Posting Data
 ------------
 
 There are two different ways to POST data back to the server when we
@@ -1454,7 +1454,7 @@ The next line retrieves 2, and the third line yields 3. We put them all
 together in a string that looks like this: 1 + 2 = 3. Then we appeand
 that string to the items list back in the main HTML document.
 
-RadioButtons {#radioButtons}
+RadioButtons
 ------------
 
 jQuery makes it easy to work with **RadioButtons**. Consider the
@@ -1508,7 +1508,7 @@ repository](http://www.elvenware.com/charlie/development/cloud/Mercurial.html).
 It is in the HtmlCssJavaScript folder. I also moved the JQuerySelectors
 examples into that folder.
 
-Dynamically Add Data to a Table {#addingStructuredData}
+Dynamically Add Data to a Table
 -------------------------------
 
 Click here to see an example where you can click a button to add structured
@@ -1555,7 +1555,7 @@ Each time the button is pressed a new element with this structure
 **\<tr\>\<td\>some string\</td\>\<td\>some string\</td\>\</tr\>** is
 added to the **\#structuredTable**.Ãƒâ€šÃ‚Â 
 
-jQuery and Handlebars {#jqHandlebars}
+jQuery and Handlebars
 ---------------------
 
 You will find that you often want to insert the same HTML text or code
@@ -1689,7 +1689,7 @@ $(document).ready(function() {
 ```
 
 
-Links {#links}
+Links
 -----
 
 -   [http://jquery.com](http://jquery.com/)

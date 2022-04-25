@@ -57,7 +57,7 @@ The lines shown above will install node version 4.X.
 
 [curl]:http://linux.about.com/od/commands/l/blcmdl1_curl.htm
 
-## An Install Script {#elven-node-script}
+## An Install Script
 
 There is reason to believe that the code shown in the lines above will become fairly stabal, but it has changed frequently over the last years. As a result, you might find it useful to view the script that I store in JsObjects. I try to maintain it and track the latest version:
 
@@ -176,7 +176,7 @@ Then add this to the bottom of your .bashrc:
 
     export PATH="$PATH:$HOME/npm/bin"
 
-### What's Globally Installed? {#whatsGlobal}
+### What's Globally Installed?
 
 To see what is installed globally, issue the **npm list** command with **-g** and **--depth=0** as arguments:
 
@@ -206,7 +206,7 @@ npm list -g --depth=0
 
 The **-g** bit ensures that we look only at globally installed packages. We use **--depth=0** to ensure we see only the packages we have explicitly installed, and not the packages that those packages rely upon.
 
-### Configure Global Install {#configGlobal}
+### Configure Global Install
 
 To make sure npm is configured correctly, type the following:
 
@@ -447,7 +447,7 @@ In this case, XXX is usually the name of a library, such as Express, Morgan, Wal
 
 This command processes the list of libraries found in the file **package.json.** The **package.json** file is usually part of any node program. There are few cases when you will not need **package.json** and in such cases its absence is not significant. In those cases, you need only type something like **node Server.js** to start the program. If, however, you get a **cannot find module** error, and **package.json** is not present, then you either do not have a complete copy of the program, or the program itself is not complete.
 
-## More Notes on Updating NPM {#npm-update-notes}
+## More Notes on Updating NPM
 
 You can check which version of NPM you have installed with this code:
 
@@ -568,7 +568,7 @@ Typically, on Windows, this is the item I want to add to my path:
 Your milage may differ, particularly in regard to the user name, but
 that should provide a start for you.
 
-### NODE_PATH and Cannot Find Modules {#nodePath}
+### NODE_PATH and Cannot Find Modules
 
 A related issue occurs when you cannot find modules that you installed globally with
 NPM. Usually there is no need to install modules globally. However, in some cases it can be useful. Suppose you globally install walk:
@@ -623,7 +623,7 @@ Now you can access this variable inside your node code:
 
 	var jsObjects = process.env.JSOBJECTS;
 
-## NVM: The Node Version Manager {#nvm}
+## NVM: The Node Version Manager
 
 Install the Node Version Manager on Linux so you can easily switch between versions of node. The Node Version Manager is designed primarily for Linux or Apple.  
 
@@ -654,7 +654,7 @@ If you want to switch back to the system version installed from nodesource.com, 
     nvm use system
 
 
-## NPM Link {#npm-link}
+## NPM Link
 
 The following is an advanced technique and not used by most developers. It can allow you to maintain a single global copy of a library, and then reference it from your local project. In general, it is better to simply have multiple copies of your projects since that assures that you have the correct version of each library. But if you are continually using the same version of some library in many projects, then the **link** command can be useful. If you are in doubt, don't try to use this feature. It is not essential.
 

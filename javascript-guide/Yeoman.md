@@ -66,7 +66,7 @@ Now you are reach to install things into the global folder. In this case, such a
 	npm install -g yo
 
 
-## Some Commonly Used Libraries {#common-lib}
+## Some Commonly Used Libraries
 
 ```
 npm install -g generator-express
@@ -87,7 +87,7 @@ Why do they end up there? Because we ran:
 
 
 
-## The .gitignore Exists error {#error-gitignore}
+## The .gitignore Exists error
 
 Suppose you run **yo express** and are told that **.gitignore** already exists. This particular error happens, I think, for one of three reasons.
 

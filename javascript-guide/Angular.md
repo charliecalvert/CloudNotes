@@ -404,7 +404,7 @@ The HTML should look like this:
 </select>
 ```
 
-## HTTP {#http}
+## HTTP
 
 One important part of any REST based web application is sending data from the client to the server and responding to that data. Let's consider an Angular program that uses:
 
@@ -783,7 +783,7 @@ describe("mycontrollertest", function() {'use strict';
 
 In this example I declare $dialog to be null, and I don't need to declare it as global to our object.
 
-###Some Basic Mocking {#basicMock}
+###Some Basic Mocking
 
 Here are some tests that provide the first instance we have seen of
 creating a mock object:
@@ -833,7 +833,7 @@ it("Check ElfGame Width", function() {
 
 This code calls **reportEvent** which in turn calls **gameEventServer.towerBroadcast**.
 
-###JSON from Server {#jsonFromServer}
+###JSON from Server
 
 Here is how to retrieve JSON from a server.
 

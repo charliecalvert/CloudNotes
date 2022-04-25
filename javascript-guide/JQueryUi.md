@@ -149,7 +149,7 @@ available.
 Examples of how to use a few of the key jQuery widgets are included
 below after the discussion of jQuery UI styles.
 
-jQuery UI Styles {#styles}
+jQuery UI Styles
 ----------------
 
 You can change the styles of the elements on a page by attaching a class
@@ -170,7 +170,7 @@ their three dimensional look. Other important classes include:
 Learn more here:
 [jQuery Theming API](https://api.jqueryui.com/category/theming/)
 
-Accordian {#accordion}
+Accordian
 ---------
 
 The accordian control is a jQuery staple that I once used on nearly every page
@@ -190,7 +190,7 @@ of the bars created by the code shown below to see them in action:
 </div>
 ```
 
-The Data Picker: {#picker}
+The Data Picker:
 ----------------
 
 When styled correctly the data picker control, shown below, allows users to just click in the "edit control" shown
@@ -318,7 +318,7 @@ Use your mouse to sort the items below.
 </html>
 ```
 
-The JavaScript {#theJavascript}
+The JavaScript
 --------------
 
 You will also want to include a small amount of JavaScript. For

@@ -26,7 +26,7 @@ get started understanding them:
 -   CSS let's you define how the content should appear
 -   JavaScript allows you to perform actions that animate the content.
 
-Hello World in the Browser {#helloWorldInTheBrowser}
+Hello World in the Browser
 --------------------------
 
 JavaScript can be written as a standalone script that runs from the
@@ -199,7 +199,7 @@ hard to maintain code, you will nearly always find it harder to add
 features to that code base than it is to add features to well written
 programs.*
 
-The Case of File Names {#theCaseOfFileNames}
+The Case of File Names
 ----------------------
 
 I should say a word about the case of the file names I create. There are
@@ -295,7 +295,7 @@ the case for writing the cleanest, easiest to understand code of any
 developer on your team. There is no place for a quirky style of
 capitalization or indentation.
 
-A Simple JavaScript Development Strategy {#aSimpleJavaScriptDevelopmentStrategy}
+A Simple JavaScript Development Strategy
 ----------------------------------------
 
 JavaScript run in the browser has one set of rules when run in a
@@ -350,7 +350,7 @@ code, and when they are exploring JavaScript, is a call to
 console.log("This is a a debug message");
 ```
 
-Console.Log {#console.Log}
+Console.Log
 -----------
 
 Suppose you are a beginning level JavaScript programmer who wants to
@@ -390,7 +390,7 @@ for **Calculator.js**:
 
  
 
-Learn More {#learnMore}
+Learn More
 ----------
 
 Here is a rendering of the hidden code that prints the first two lines
@@ -437,7 +437,7 @@ Install the JavaScript ChromeTools Debugger in Eclipse:
 
 [HowToInstall Old Link](https://code.google.com/archive/p/chromedevtools/wikis/HowToInstall.wiki)
 
-The Right Tools {#theRightTools}
+The Right Tools
 ---------------
 
 There are some wonderful tools out there for developing big applications
@@ -452,7 +452,7 @@ tools:
 -   notepad++
 -   chrome
 
-Hello World at the Command Prompt {#helloWorldAtTheCommandPrompt}
+Hello World at the Command Prompt
 ---------------------------------
 
 If you want to learn JavaScript, it can be helpful to start with a
@@ -463,7 +463,7 @@ Also, see:
 
 -   [http://www.phpied.com/javascript-shell-scripting/](http://www.phpied.com/javascript-shell-scripting/)
 
-JavaScript Simple Types {#javaScriptSimpleTypes}
+JavaScript Simple Types
 -----------------------
 
 There are only five simple types. Numbers, booleans and strings are all
@@ -526,7 +526,7 @@ Though both examples are legal, the first is much more common.
 When you declare an object as we do myObject, you don't ever call
 **new** on it.
 
-JavaScript Functions {#javaScriptFunctions}
+JavaScript Functions
 --------------------
 
 In JavaScript, functions are very powerful tools. They are easy to use,
@@ -730,10 +730,10 @@ you can also try this code here:
 
 [BindMe.html](BindMe.html)
 
-JavaScript Dictionaries are Associative Arrays {#javaScriptDictionariesAreAssociativeArrays}
+JavaScript Dictionaries are Associative Arrays
 ----------------------------------------------
 
-Debugging Strategies {#debuggingStrategies}
+Debugging Strategies
 --------------------
 
 All the major browsers have good debuggers in them, but I probably
@@ -756,7 +756,7 @@ See also these pages:
 - [https://developers.google.com/chrome-developer-tools/](https://developers.google.com/chrome-developer-tools/)
 - [Dev Tools on Chromium](https://www.chromium.org/devtools)
 
-Insert Adjacent HTML {#insertAdjacentHTML}
+Insert Adjacent HTML
 --------------------
 
 The

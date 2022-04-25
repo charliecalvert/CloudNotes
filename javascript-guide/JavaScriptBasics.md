@@ -57,7 +57,7 @@ We will begin by exploring primitive types. In this chapter there will also be s
 - [JavaScript Objects][jObject]
 - [JavaScript Functions][jFunction]
 
-## JavaScript Primitive Types {#javaScriptSimpleTypes}
+## JavaScript Primitive Types
 
 There are six simple (primitive) types in the JavaScript language:
 
@@ -309,7 +309,7 @@ myString[0] = "B";
 
 That code does not behave as expected because JavaScript strings are immutable. The variable **myString** is not immutable, however, the value assigned to it is immutable.
 
-### No Properties for Primitive Types {#primitiveProperty}
+### No Properties for Primitive Types
 
 If you access a "property" of a primitive type you are actually setting off a complex chain of events. Again, this is a subject that beginners need not understand. In fact, even intermediate JavaScript developers are probably better off not knowing about this subject. It can cause a developer to fret about performance when such concerns are simply not warranted.
 
@@ -350,7 +350,7 @@ Blank lines between functions. Use white space to make code more readable.
 
 For more on this subject, see the Elvenware sections on EsLint.
 
-## Expressions and Statements {#statements-express}
+## Expressions and Statements
 
 There are two fundamental, low level, building blocks for programs:
 
@@ -564,7 +564,7 @@ Details on **promisify**:
 
 [https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original](https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original)
 
-## const, let and var {#const-let-var}
+## const, let and var
 
 When you declare a variable, use const, let or var.
 
@@ -640,7 +640,7 @@ replace the information in this chapter with the information in the
 modules pattern chapter. Rather, the modules pattern builds on, and
 includes, the information found in this chapter.
 
-### Declare Variables with var {#useVar}
+### Declare Variables with var
 
 The first time you use a variable, you should declare it by using the
 keyword **var**.
@@ -703,7 +703,7 @@ function addCount(x) {
 The error here is that the keyword **var** is omitted. As a result,
 count becomes a property of the global object.
 
-### Don't Declare a variable Twice {#declare}
+### Don't Declare a variable Twice
 
 Never redeclare a variable two times. The following example declares
 the variable param1 as an argument to method foo, and then declares
@@ -746,7 +746,7 @@ This [MDN page][mdnop] on operator precedence tells you all you need to know abo
 
 [mdnop]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-### The == Operator and the === Operator {#equalOperators}
+### The == Operator and the === Operator
 
 Never use == or !=. Instead, use === and !==. The problem here is that
 == can return true when you are comparing two different types of
@@ -1639,7 +1639,7 @@ Try visiting this page in Chrome:
 
 - [Flags](chrome://flags/)
 
-## Debugging Strategies {#debuggingStrategies}
+## Debugging Strategies
 
 All the major browsers have good debuggers in them, but I probably prefer the one that ships with Chrome.
 
@@ -1653,7 +1653,7 @@ See also these pages:
 
 [chromeTools]: https://developers.google.com/chrome-developer-tools/
 
-Insert Adjacent HTML {#insertAdjacentHTML}
+Insert Adjacent HTML
 --------------------
 
 The
@@ -1721,7 +1721,7 @@ Five years ago, in front-end development, this industry was focused on a technol
 
 It isn't necessarily my job to always teach the latest thing. But I do have to understand what is happening in the industry, and to be sure you have the background to absorb it. I'm still struggling to find the best way to do that, which means I'm still tweaking the course and adding new materials. In short, I don't always know what I'm going to teach ahead of time and hence can't provide the kind of previews you want.
 
-## Indenting with Tabs and Spaces {#indent}
+## Indenting with Tabs and Spaces
 
 You can indent your code with tabs or with spaces, but not with both.
 Choose either tabs or spaces, and stick with your decision. There are
@@ -1731,7 +1731,7 @@ this issue. Both Eclipse and NotePad++ contain options that allow you to
 see the content of your white space, so you can tell when you are mixing
 up the two characters on the same line.
 
-## End Functions and Statements with a Semicolon {#semicolon}
+## End Functions and Statements with a Semicolon
 
 Functions that take the form of an assignment should end with a
 semicolon:

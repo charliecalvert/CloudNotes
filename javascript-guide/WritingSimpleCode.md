@@ -20,7 +20,7 @@ To help you get a feel for the language, let's install node and start writing so
 
 When in doubt, go back to the [index](index.html).
 
-## Introduction to JavaScript {#introductionToJavaScript}
+## Introduction to JavaScript
 
 Large parts of the web are driven by three related technologies: HTML, CSS and JavaScript. The differences between these technologies can blur at times, but the following assertions may help you understand the primary purpose of each component:
 
@@ -36,7 +36,7 @@ It is possible to completely scramble these rolls. You can put content in JavaSc
 
 You will, on occasionl see me break the third rule, but the first two I adhere to except in cases where I want to prove a point, or illustrate a concept, rather than show how to write good code.
 
-## Install NodeJs on Linux {#linux-install}
+## Install NodeJs on Linux
 
 I maintain a script for [installing node][node-install].
 
@@ -58,7 +58,7 @@ Here is a list of various ES6 functions and their support in NodeJs:
 
 http://node.green/
 
-## Hello World at the Command Prompt {#helloWorldAtTheCommandPrompt}
+## Hello World at the Command Prompt
 
 If you want to learn JavaScript, it can be helpful to start with a command line utility. To get started, install [NodeJs](http://nodejs.org/),
 and run scripts from the command prompt:
@@ -104,7 +104,7 @@ I'm getting started
 
 That's all you need to node to start creating simple command line script that help you learn JavaScript. We will write many such programs, and expand considerably on these basics. I suggest you create such programs whenever you have feel the need to experiment with basic JavaScript syntax. Meanwhile, I'm going to switch the focus to the browser, as that is still the primary platform for the JavaScript language. I just wanted to show you how to create simple JavaScript command line scripts because they are so useful when you are learning the language.
 
-## Hello World in the Browser {#helloWorldInTheBrowser}
+## Hello World in the Browser
 
 JavaScript is, of course, most frequently seen running along with HTML and CSS in a browser.
 
@@ -162,7 +162,7 @@ From the command prompt, navigate to the directory where you saved the file:
 
 You can see the path to the file in the address bar. This is a normal Windows path with slashes rather than back-slashes. Notice also that it is prefaced with the code **file:///.**. Later you can learn how to set up a web server to publish your code, but for now, it is fine to just browse for the file on your hard drive.
 
-## Separating HTML and JavaScript {#discreet-javascript}
+## Separating HTML and JavaScript
 
 By now you understand that embedding JavaScript in an HTML file is a dangerous practice, like experimenting with crack or opiates. So how can we separate our HTML and JavaScript? The solution is simple.
 
@@ -296,7 +296,7 @@ hard to maintain code, you will nearly always find it harder to add
 features to that code base than it is to add features to well written
 programs.*
 
-## The Case of File Names {#theCaseOfFileNames}
+## The Case of File Names
 
 I should say a word about the case of the file names I create. There are
 six different ways to name files, three of which are wrong, and three of
@@ -391,7 +391,7 @@ the case for writing the cleanest, easiest to understand code of any
 developer on your team. There is no place for a quirky style of
 capitalization or indentation.
 
-## Client Side, Server Side {#client-server-js}
+## Client Side, Server Side
 
 JavaScript has one set of rules when run in a browser, and another set when run outside a browser. There are, therefore, two distinct flavors of JavaScript discussed in this text.
 
@@ -431,7 +431,7 @@ code, and when they are exploring JavaScript, is a call to
 console.log("This is a a debug message");
 ~~~~
 
-Console.Log {#console.Log}
+Console.Log
 -----------
 
 You can use console.log to log debug information.
@@ -524,7 +524,7 @@ checking the results of calls to **console.log**. You can visually confirm the
 results, but that is not that same as getting an automated error report such
 as you get from **qUnit**.
 
-Learn More {#learnMore}
+Learn More
 ----------
 
 Here is a rendering of the hidden code that prints the first two lines

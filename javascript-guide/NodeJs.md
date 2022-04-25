@@ -24,7 +24,7 @@ distributed architecture.
 
 The NodeJs repository is [here](https://github.com/nodejs/node).
 
-## Install NPM and NPM Global Libraries {#npm-global}
+## Install NPM and NPM Global Libraries
 
 Most of the actions described here are performed automatically by the [UbuntuSetup][ubuntu-setup] script. If you have run it, then you can skip this section unless you want to learn more about configuring global NPM libraries.
 
@@ -115,7 +115,7 @@ eslint            js-beautify    nodemon  pug
 
 Here we can see that a few essential utilities are installed into **~/npm/bin**. If you don't see this, then run the **InstallNodeUtilities** script as described above.
 
-## NPM Install notes {#npm-install-notes}
+## NPM Install notes
 
 The command, **npm install** processes the libraries that are specified in the **dependencies** and **devdependencies** sections of **package.json**. It puts the compiled output in a folder called **node_modules**.
 
@@ -227,7 +227,7 @@ console.log('Server running at http://127.0.0.1:30025/');
 Notice that this last program depends on the presence of a file called
 index.html, where index.html can be any valid HTML file.
 
-## Setting up the Port {#port}
+## Setting up the Port
 
 Here is how to get the server to specify the port:
 
@@ -236,7 +236,7 @@ var port = process.env.PORT || 30025;
 ```
 By default, we use port 30025 in my Bellevue College classes.
 
-## Cannot find module XXX {#module-not-found}
+## Cannot find module XXX
 
 Here is the error:
 
@@ -297,7 +297,7 @@ This will link in express using the global copy downloaded earlier. This
 technique saves disk space, as it means you need only one copy of Express on
 your system.
 
-## Fav-Icon Missing - 404 {#icon-missing}
+## Fav-Icon Missing - 404
 
 Sometimes, on startup, you get an error about your favorite icon missing. Put a 32 X 32 image file called called **favicon.png** in your **public** directory. Open **app.js**. Around line 17 you will find this code:
 
@@ -860,7 +860,7 @@ nav
 			background-color #00FF00
 ```
 
-## Test with Jasmine-Node {#jasmineNode}
+## Test with Jasmine-Node
 
 First install jasmine-node:
 
@@ -1365,7 +1365,7 @@ dirLib.dirs.ensureDirSync(folder);
 dirLib.dirs.rmdirSync('foo');
 ```
 
-## JSHint and Node {#jshint}
+## JSHint and Node
 
 You can run JSHint from node. First install JSHint:
 
@@ -1386,7 +1386,7 @@ And finally try running jshint against one of your files:
 - [See also Node and env](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders)
 
 
-## Karma and CHROME_BIN {#karmaChrome}
+## Karma and CHROME_BIN
 
 Here's a tip:
 
@@ -1433,7 +1433,7 @@ On Windows it would be:
 
     echo %CHROME_BIN%
 
-## Symbolic Links to node_modules {#symbolic-link}
+## Symbolic Links to node_modules
 
 There is a way to save space on your hard drive if you have a large number of very similar **node_modules** and bower **components** folders on your system. It involves creating one copy of these folders, and then linking to them from your projects.
 

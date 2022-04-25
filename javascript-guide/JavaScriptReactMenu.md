@@ -18,7 +18,7 @@ image: ./course/course-javascript.jpg
 
 Create Menus in a React Program.
 
-## Install React Router {#router-install}
+## Install React Router
 
 An npm package called [react-router-dom][rrd] can help us both route user selections through the application and also to switch between views.
 

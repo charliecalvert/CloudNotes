@@ -14,13 +14,13 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-# JavaScript Functions {#javaScriptFunctions}
+# JavaScript Functions
 
 Functions play a central role in the JavaScript language. They are easy to use, but hard to fully understand.
 
 When in doubt, go back to the [index](index.html).
 
-## Functional {#functional}
+## Functional
 
 JavaScript is sometimes described as having features found in a functional language. It is not a pure functional language, but it shares some features of functional languages.
 
@@ -80,7 +80,7 @@ We will discuss **prototypes** in more depth later on in this document. The key
 point to grasp at this point is simply that all functions automatically get
 a constructor, which points at themselves, and an empty **prototype**.
 
-## Types of Functions {#function-types}
+## Types of Functions
 
 There are several styles of functions. We will discuss them all in depth. Let's start, however, with a quick overview of the field. This is meant more as a reference than as an explanation. The explanations are below or elsewhere on Elvenware.
 
@@ -383,7 +383,7 @@ The source is here:
 
 - [JsObjects FunctionObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Functions/FunctionArguments)
 
-## The <em>this</em> Keyword {#function-this}
+## The <em>this</em> Keyword
 
 The **this** keyword in JavaScript is often called the function context. If you
 are used to C# or other object oriented langauges, you may have certain
@@ -636,7 +636,7 @@ An author writes a book called **Foo** and in it he talks about **bar** in great
 
 Later, he writes another book called **console.log**. In there, he says: "When I talked about **bar**, I stated its value in clear terms." Only he talked about **bar** in a totally different book which is now unavailable. In the programming world, we would say bar was out of scope.
 
-## Callbacks: Passing Functions as Parameters {#callbacks}
+## Callbacks: Passing Functions as Parameters
 
 Callbacks are very common in JavaScript. In other languages, they are often considered esoteric, but in JavaScript they happen all the time.
 
@@ -780,7 +780,7 @@ The source is here:
 [declarative]: http://en.wikipedia.org/wiki/Declarative_programming
 [imperative]: http://en.wikipedia.org/wiki/Imperative_programming
 
-## Calling a JavaScript Function from a Declaration {#callFunction}
+## Calling a JavaScript Function from a Declaration
 
 The following code demonstrates the differences between assigning a method to a variable and assigning the result of a function call to a variable. Notice the extra parentheses at the end of the getNine02. This
 causes the function to be called at the time of the assignment. This means that getNine02 ends up a being a **number**, while getNine01 ends up being **function object**.
@@ -821,7 +821,7 @@ In the **getNine02** example, the open parenthesis before the word function is s
     });
 ```
 
-## Comparing JavaScript objects and JavaScript functions {#compareObjFunc}
+## Comparing JavaScript objects and JavaScript functions
 
 Previously in this document, in the section on objects, we declared a
 simple object that looks like this:

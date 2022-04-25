@@ -75,7 +75,7 @@ Also:
 - npm version
 - npm repo
 
-## Using package.json {#packageJson}
+## Using package.json
 
 All your projects should include a file called **package.json**. To create one from scratch, go to the root of your project and issue this command:
 
@@ -183,7 +183,7 @@ and openid as well as a library called mdirp:
 	}
 ```
 
-## Cannot Find Module {#module-missing}
+## Cannot Find Module
 
 One useful tip:
 
@@ -319,7 +319,7 @@ This errror occurs, needless to say, because a copy of **package.json** is not f
 
 To return to our main point: the primary problem that developers encounter when the see this error is simply forgetting to type **npm install**.
 
-### Error: Address in Use EADDRINUSE {#EADDRINUSE}
+### Error: Address in Use EADDRINUSE
 
 The EADDRINUSE (Error Address In Use) message usually means that the
 port is in use by another program. For instance, you left an
@@ -367,7 +367,7 @@ This small text file contains the following text, which tells bower to install i
 }
 ```
 
-## More on Bower {#more-on-bower}
+## More on Bower
 
 Bower is like npm. Use NPM for server side code. Use Bower for client side code. This is not absolutely necessary, but it is common. As a result, we will learn about both NPM and Bower in this class.
 

@@ -104,7 +104,7 @@ block content
 
 When looking at the pseudo code above, the point is that you can explicitly count how many tabs appear before each HTML element. You want to achieve that level of specificity when working with Pug.
 
-## Rendering Jade/Pug {#render-basics}
+## Rendering Jade/Pug
 
 Pug allows us to "pass in" variables (locals) that can be used on the page. This is known as templating.
 
@@ -204,7 +204,7 @@ The above code tells express the following:
 
 In fact, with the code shown above, most requests from the server will end up going to **routes/index.js**. However, we shall see that it is possible to tell the server to route requests of a certain type to another file. For instance, requests to [http://www.example.com/foo][wec] could be sent to **routes/foo.js**. But we need to add more code to make that happen. The code shown above sends requests of this type to the home page. We will need to set up a second route (endpoint) for handling the **foo** route.
 
-## Render Examples {#render-examples}
+## Render Examples
 
 When the browser sends a request for an HTML page, express can send the request to **routes/index.js**). Routes found in that file detail how our Pug templates should be rendered.
 
@@ -339,7 +339,7 @@ Some resources:
 - [HTML to Pug](http://html2pug.com/)
 - [HTML to Jade](http://html2jade.aaron-powell.com/)
 
-## Use Unique Names {#unique-names}
+## Use Unique Names
 
 Don't define the same name for different tasks. If you have a javascript file called **/public/javascript/renewables.js**, consider avoiding creating entities such as:
 
@@ -360,7 +360,7 @@ It is not necessarily an error to do this, but it can cause confusion. Consider 
 
 This may not be an idea solution, but it can help you sort out your code. If you don't like this kind of solution, then just be careful when loading javascript, Pug and calling routes.
 
-## Pug Indent {#jade-indent}
+## Pug Indent
 
 When thinking about Pug, indentation is crucial. Suppose I write this:
 

@@ -23,7 +23,7 @@ This page focuses on React. It is part of the Elvenware JavaScript portion of th
 
 React [Cheat Sheet](https://devhints.io/react) on [devhints.io](https://devhints.io/).
 
-## Create React Application {#create-react-app}
+## Create React Application
 
 Here is a simple way to create a React Application.
 
@@ -103,7 +103,7 @@ A common task is to send state to another component as **props**. This is analag
 
 ![Send Props][sp]
 
-## Rest with _fetch_ {#fetch}
+## Rest with _fetch_
 
 Use **fetch** to retrieve data from the server. We make REST calls with **fetch**. For those familiar with jQuery, we will use fetch in lieu of **$.ajax** or **$.getJSON**.
 
@@ -148,7 +148,7 @@ that.setState(foo => (json));
 
 Here we use it to set a react components state, but exactly what you do with it is up to you. Certainly you don't have to use it set a component's state.
 
-## More on **fetch** {#more-fetch}
+## More on **fetch**
 
 You might notice that there are two calls to **.then** methods in our **fetch** promise:
 
@@ -459,7 +459,7 @@ The first just records the user's choice when they click a button, the second do
 
 There is a [working example][wrb] in JsObjects.
 
-## ENOSPC Error {#enospc}
+## ENOSPC Error
 
 While testing, If you get an **ENOSPC** error, do this:
 
@@ -477,7 +477,7 @@ To get the current value:
 
 **Figure**: _Inside nano, editing **/etc/sysctl.conf**._
 
-## Props Single Node Error {#props-single-node}
+## Props Single Node Error
 
 Here is the error: _Method “props” is only meant to be run on a single node. 0 found instead._
 
@@ -567,7 +567,7 @@ import { mount } from 'enzyme';
 - Jest and Enzyme
   - [Enzyme](http://airbnb.io/enzyme/)
 
-## Enzyme Debug Class {#enzyme-debug-class}
+## Enzyme Debug Class
 
 We have several debug functions that we often append to the top of our test files. This violates our DRY principle. As a result, I've created the following simple class which we can reuse in multiple tests:
 

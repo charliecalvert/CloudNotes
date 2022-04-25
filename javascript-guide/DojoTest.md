@@ -20,5 +20,5 @@ Fade block in
 
 A red block
 
-Hello {#greeting}
+Hello
 =====
