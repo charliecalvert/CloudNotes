@@ -41,7 +41,7 @@ markers or placeholders in your HTML, and then run code that
 replaces the markers with designated bits of HTML or text. For instance
 you might put some HTML that looks like this in your main HTML file:
 
-	<li><a href="{{url}}">{{text}}</a></li>
+ <li><a href="{{url}}">{{text}}</a></li>
 
 In the code shown above, both {{url}} and {{text}} are placeholders.
 You would then write code that would substitute text of HTML for the
@@ -61,30 +61,29 @@ it as a library for inclusion in node applications.
 The JsObjects repository has a number of example programs in the
 following directory:
 
-	/JsObjects/JavaScripts/HandlebarDemos
+ /JsObjects/JavaScripts/HandlebarDemos
 
 Here is a link to the repository:
 
-	<https://github.com/charliecalvert/JsObjects>
-
+ <https://github.com/charliecalvert/JsObjects>
 
 ## Example Code
 
 Consider the following code:
 
 ```
-	var addNames = function() {
-		var script = readHtml();
+ var addNames = function() {
+  var script = readHtml();
 
-		var template = handlebars.compile(script);
+  var template = handlebars.compile(script);
 
-		var result = template({
-			MyStuff : 'This is what we insert.',
-			OtherStuff : 'This is the other stuff'
-		});
+  var result = template({
+   MyStuff : 'This is what we insert.',
+   OtherStuff : 'This is the other stuff'
+  });
 
-		return result;
-	}
+  return result;
+ }
 ```
 
 This method reads in an HTML file, then runs it through the handlebars
@@ -94,23 +93,23 @@ actually made.
 Here is a HTML that you could use in the above example:
 
 ```
-	<!DOCTYPE html>
-	<html lang="en">
-		<head>
-			<meta charset="utf-8" />
-			<title>jQuery and HandleBars example</title>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		</head>
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+   <meta charset="utf-8" />
+   <title>jQuery and HandleBars example</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-		<body>
+  <body>
 
-			<div>
-				<p>{{MyStuff}}</p>
-				<p>{{OtherStuff}}</p>
-			</div>
+   <div>
+    <p>{{MyStuff}}</p>
+    <p>{{OtherStuff}}</p>
+   </div>
 
-		</body>
-	</html>
+  </body>
+ </html>
 ```
 
 Here is another example. This time I will show you the HTML first:
@@ -160,7 +159,6 @@ $(document).ready(function() {
 ```
 
 ## Templating engines
-
 
 [wiki-templating](<https://github.com/joyent/node/wiki/modules#wiki-templating>)
 

@@ -14,9 +14,6 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-
 Twitter GEO Search on IP Address
 
 Twitter Followers
-
-

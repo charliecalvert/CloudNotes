@@ -14,7 +14,6 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-
 # Learn about Constants
 
 See how to use Object.defineProperty to create a constant in ES5 code. This was technique still works, but it was designed before the ES6 keyword **const** was introduced into the language. It is harder to use than ES6 **const**, but it does more exactly what a traveler from another language would expect a **const** variable to do.
@@ -25,25 +24,25 @@ We declare constants in an object that follows the module pattern like this:
 
 <pre>var App = (function() {
 
-	function Constants() {
-		Object.defineProperty(this, "MAIN_BIG", withValue('mainBig'));
-		Object.defineProperty(this, "MAIN_SMALL", withValue('mainSmall'));
-		Object.defineProperty(this, "MAIN_DIV", withValue('#main'));
-	}
+ function Constants() {
+  Object.defineProperty(this, "MAIN_BIG", withValue('mainBig'));
+  Object.defineProperty(this, "MAIN_SMALL", withValue('mainSmall'));
+  Object.defineProperty(this, "MAIN_DIV", withValue('#main'));
+ }
 
-	var withValue = function(value) {
-		var d = withValue.d || (withValue.d = {
-			enumerable : false,
-			writable : false,
-			configurable : false,
-			value : null
-		});
+ var withValue = function(value) {
+  var d = withValue.d || (withValue.d = {
+   enumerable : false,
+   writable : false,
+   configurable : false,
+   value : null
+  });
 
-		d.value = value;
-		return d;
-	}
+  d.value = value;
+  return d;
+ }
 
-	return Constants;
+ return Constants;
 })();</pre>
 
 ## Display Constants
@@ -84,27 +83,26 @@ Check the value of the MAIN_DIV after setting it to a new value. It is unchanged
 <script>
 var App = (function() {
 
-	function Constants() {
-		Object.defineProperty(this, "MAIN_BIG", withValue('mainBig'));
-		Object.defineProperty(this, "MAIN_SMALL", withValue('mainSmall'));
-		Object.defineProperty(this, "MAIN_DIV", withValue('#main'));
-	}
+ function Constants() {
+  Object.defineProperty(this, "MAIN_BIG", withValue('mainBig'));
+  Object.defineProperty(this, "MAIN_SMALL", withValue('mainSmall'));
+  Object.defineProperty(this, "MAIN_DIV", withValue('#main'));
+ }
 
-	var withValue = function(value) {
-		var d = withValue.d || (withValue.d = {
-			enumerable : false,
-			writable : false,
-			configurable : false,
-			value : null
-		});
+ var withValue = function(value) {
+  var d = withValue.d || (withValue.d = {
+   enumerable : false,
+   writable : false,
+   configurable : false,
+   value : null
+  });
 
-		d.value = value;
-		return d;
-	}
+  d.value = value;
+  return d;
+ }
 
-	return Constants;
+ return Constants;
 })();
-
 
 var app = new App();
 $('#test01').html(app.MAIN_BIG);

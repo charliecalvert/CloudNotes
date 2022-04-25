@@ -1084,7 +1084,6 @@ console.log('getOne + getThree = ', getNumbers.getOne() + getNumbers.getThree())
 
 Two constructors with quite different contents are nonetheless members of the same class if they have the same prototype. (Example needed. Did I lose it, I thought I had one?)
 
-
 ## Links
 
 A surprising amount of my work is making sure that I am teaching you things that matter, that are used widely and are likely to be used widely in the future. Once you start digging into this world, you will find that things like git, express, node, WebStorm, the bash shell, Jade (or at least various forms of HTML templates), are all used a lot. They are mainstream technologies in the web world.

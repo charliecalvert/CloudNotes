@@ -29,41 +29,41 @@ Functional code is:
 We create a simple map like this:
 
 ```javascript
-	getMap: function() { 'use strict';
-		return this.deliciousLinks.map(function(link) {
-			return { 'url': link.u };
-		});
-	}
+ getMap: function() { 'use strict';
+  return this.deliciousLinks.map(function(link) {
+   return { 'url': link.u };
+  });
+ }
 ```
 
 This function takes the data in our deliciousLinks array of objects and converts it into a much simpler array of objects. In particular, the first two objects in our delicious data look like this:
 
 ```javascript
 var deliciousLinks = [
-	{
-		"a": "charliecalvert",
-		"d": "Elvenware JavaScript Home Page",
-		"n": "",
-		"u": "http://www.elvenware.com/charlie/development/web/JavaScript/",
-		"t": [
-			"javascript",
-			"elvenware"
-		],
-		"dt": "2015-10-08T19:33:33Z"
-	},
-	{
-		"a": "charliecalvert",
-		"d": "Speaking JavaScript",
-		"n": "",
-		"u": "http://speakingjs.com/es5/index.html",
-		"t": [
-			"javascript",
-			"books",
-			"ebook",
-			"learning"
-		],
-		"dt": "2015-10-04T04:16:39Z"
-	}, etc...
+ {
+  "a": "charliecalvert",
+  "d": "Elvenware JavaScript Home Page",
+  "n": "",
+  "u": "http://www.elvenware.com/charlie/development/web/JavaScript/",
+  "t": [
+   "javascript",
+   "elvenware"
+  ],
+  "dt": "2015-10-08T19:33:33Z"
+ },
+ {
+  "a": "charliecalvert",
+  "d": "Speaking JavaScript",
+  "n": "",
+  "u": "http://speakingjs.com/es5/index.html",
+  "t": [
+   "javascript",
+   "books",
+   "ebook",
+   "learning"
+  ],
+  "dt": "2015-10-04T04:16:39Z"
+ }, etc...
 ```
 
 After our map function runs, we have create a simplified array of objects that look like this:
@@ -165,9 +165,9 @@ This might involve writing code like this:
 
 ```javascript
 this.getWood = function() {
-	return renewables.map(function(renewable) {
-	    return { wood: renewable['Hydropower (quadrillion Btu)'] };
-	});
+ return renewables.map(function(renewable) {
+     return { wood: renewable['Hydropower (quadrillion Btu)'] };
+ });
 }
 ```
 

@@ -23,8 +23,8 @@ value pairs:
 
 ```javascript
 {
-	"firstName": "George",
-	"lastName": "Washington"
+ "firstName": "George",
+ "lastName": "Washington"
 }
 ```
 
@@ -35,7 +35,6 @@ You can also declare simple JavaScript arrays:
 ```
 
 You can combine the two:
-
 
 ```javascript
 [
@@ -72,10 +71,10 @@ Here is how to do the same thing asynchronously:
 
 ```javascript
 fs.readFile('index.json', function(err, result) {
-	if (err) {
-		throw err;
-	}
-	var json = result;
+ if (err) {
+  throw err;
+ }
+ var json = result;
 });
 ```
 
@@ -91,15 +90,15 @@ So your code might look like this:
 var fs = require('fs');
 
 function DoSomethingWithTheJson(json) {
-	console.log(JSON.stringify(json, null, 4));
+ console.log(JSON.stringify(json, null, 4));
 }
 
 fs.readFile('./index.json', function(err, result) {
-	if (err) {
-		throw err;
-	}
-	var json = JSON.parse(result);
-	DoSomethingWithTheJson(json);
+ if (err) {
+  throw err;
+ }
+ var json = JSON.parse(result);
+ DoSomethingWithTheJson(json);
 });
 ```
 
@@ -111,37 +110,37 @@ This code can go in the head section of your HTML:
 
 ```html
 <script type="textx-handlebars-template" id="par01">
-	<p>{{text}}</p>
+ <p>{{text}}</p>
 </script>
 ```
 
 Here is code for using the template:
 
 ```javascript
-	function addItem(text) {  
-		'use strict';  
+ function addItem(text) {  
+  'use strict';  
 
-		var script = \$("#par01").html(),  
-		template=Handlebars.compile(script);  
+  var script = \$("#par01").html(),  
+  template=Handlebars.compile(script);  
 
-		var result = template({  
-			text: text  
-		});  
+  var result = template({  
+   text: text  
+  });  
 
-		$("#myDiv").append(result);  
-	}
+  $("#myDiv").append(result);  
+ }
 
-	$.getJSON("index.json", function(data) {  
-		$.each(data, function(i, president) {  
-			$('#data01').append("<p>" + president.firstName
-				+ ' ' + president.lastName + "</p>");  
-		});  
-	});
+ $.getJSON("index.json", function(data) {  
+  $.each(data, function(i, president) {  
+   $('#data01').append("<p>" + president.firstName
+    + ' ' + president.lastName + "</p>");  
+  });  
+ });
 ```
 
-You can download jQuery from http://jquery.com
+You can download jQuery from <http://jquery.com>
 
 ## Links
 
-*   [JSON Home Site](http://www.json.org/)
-*   [JSON Validator](http://jsonlint.com/)
+* [JSON Home Site](http://www.json.org/)
+* [JSON Validator](http://jsonlint.com/)

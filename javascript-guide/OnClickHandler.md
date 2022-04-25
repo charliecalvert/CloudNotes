@@ -17,11 +17,11 @@ image: ./course/course-javascript.jpg
 <style>
 p.menu_class
 {
-	border: thin black solid;
-	width: 90px;
-	border-radius: 8px;
-	text-align: center;
-	padding: 5px;
+ border: thin black solid;
+ width: 90px;
+ border-radius: 8px;
+ text-align: center;
+ padding: 5px;
 }
 
 .theMenu {
@@ -32,10 +32,10 @@ p.menu_class
 <script type="text/javascript">
 $(document).ready
 (
-	function()	{
+ function() {
       $(".hideMe").click(function () {
         $(this).slideUp();
-      });      
+      });
 
       $(".hideMe").hover(
       function () {
@@ -48,16 +48,15 @@ $(document).ready
 
 );
 
-function toggleMenu() {    
+function toggleMenu() {
     $('.theMenu').slideToggle('medium');
 }
 
 function Restore()
 {
- 	$(".hideMe").slideDown();
+  $(".hideMe").slideDown();
 }
 </script>
-
 
 Exploring jQuery Text
 =====================
@@ -123,15 +122,14 @@ And some simple HTML:
 </ul>
 ```
 
-
 Like this:
 
 <section id="MenuDemo">
-	<p class="menu_class" onclick="toggleMenu()">Toggle Menu</p>
-	<ul class="theMenu" hidden="true">
-		<li><a href="#">Menu Item 1</a></li>
-		<li><a href="#">Menu Item 2</a></li>
-	</ul>
+ <p class="menu_class" onclick="toggleMenu()">Toggle Menu</p>
+ <ul class="theMenu" hidden="true">
+  <li><a href="#">Menu Item 1</a></li>
+  <li><a href="#">Menu Item 2</a></li>
+ </ul>
 </section>
 
 When you click the "Toggle Menu" area then the menu should toggle on and off.

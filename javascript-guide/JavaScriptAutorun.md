@@ -14,8 +14,6 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-
-
 ## Overview
 
 We automatically run JavaScript in the included file.
@@ -38,5 +36,4 @@ The point is that arbitrary JavaScript is run without us ever explicitly
 calling it. This can be useful or dangerous, depending on how it is
 used.
 
- 
 <script src="/javascripts/dev-web/AutoRun.js" type="text/javascript"></script>

@@ -47,22 +47,21 @@ Here is an example of how to layout a pug template:
 ```text
 doctype html
 html
-	head
-		title= title
-		link(rel='stylesheet', href='/stylesheets/style.css')
-	body
-		nav
-			ul
-				li
-					a(href="/") page01
-				li
-					a(href="/page02") page02
-				li
-					a(href="/page03") page03
-		h1 #{title}
-		block content
+ head
+  title= title
+  link(rel='stylesheet', href='/stylesheets/style.css')
+ body
+  nav
+   ul
+    li
+     a(href="/") page01
+    li
+     a(href="/page02") page02
+    li
+     a(href="/page03") page03
+  h1 #{title}
+  block content
 ```
-
 
 When working with Pug, indentation is crucial. You should indent with either tabs or spaces, but not both. You frequently need to open your file in an editor that allows you to visualize your white space. Then you should count your spaces, and make sure it follows an exact pattern. Suppose, for instance, that you are using tabs for your indentation. In the pseudo code shown below, each hyphen (dash -) represents one tab. Example 1 is like what's shown above:
 
@@ -128,7 +127,7 @@ p Welcome to #{title}
 For more details on this process, see the overview here:
 ```
 
-https://pugjs.org/api/getting-started.html (Links to an external site.)
+<https://pugjs.org/api/getting-started.html> (Links to an external site.)
 
 Even if all this is clear, it still may not be obvious that the locals can take a complex object like user, and that we can reference the fields of that object in our Pug:
 
@@ -138,6 +137,7 @@ response.render('account', {
     user: request.user
 });
 ```
+
 And in the Pug:
 
 ```text
@@ -160,7 +160,7 @@ $('#dirToWalk').val('/home/charlie/Documents/AllTest');
 
 ## Editors
 
-**HINT**: *Here are some ways to turn on visual whitespace in various editors:*
+**HINT**: _Here are some ways to turn on visual whitespace in various editors:_
 
 - NotePad++: **View | Show Symbol | Show White Space and Tab**
 - Geany: **View | Editor | Show White Space**
@@ -199,7 +199,7 @@ app.use('/', routes.index);
 The above code tells express the following:
 
 - If the user types in [http://www.example.com][wec]
-	- route the request to **routes/index.js**.
+  - route the request to **routes/index.js**.
 - If he types in [http://www.example.com/foo][wec] the code is also routed to **routes/index.js**.
 
 In fact, with the code shown above, most requests from the server will end up going to **routes/index.js**. However, we shall see that it is possible to tell the server to route requests of a certain type to another file. For instance, requests to [http://www.example.com/foo][wec] could be sent to **routes/foo.js**. But we need to add more code to make that happen. The code shown above sends requests of this type to the home page. We will need to set up a second route (endpoint) for handling the **foo** route.
@@ -209,7 +209,6 @@ In fact, with the code shown above, most requests from the server will end up go
 When the browser sends a request for an HTML page, express can send the request to **routes/index.js**). Routes found in that file detail how our Pug templates should be rendered.
 
 Here is an example **routes/index.js**. Study it with care:
-
 
 ```javascript
 var express = require('express');
@@ -253,7 +252,7 @@ module.exports = router;
 
 Once again, I ask the you study this example carefully. All the routes in this file translate Pug into HTML and send the result to the server using HTTP. I have labeled each method as ONE, TWO, THREE and FOUR.
 
-- ONE: This is where requests for the home page go. **http://www.example.com**
+- ONE: This is where requests for the home page go. **<http://www.example.com>**
 - TWO: This is where requests for energy-types pages go: [http://www.example.com/energy-types/solar-page][wec]
 - THREE: This is where requests for renewable pages go: [http://www.example.com/renewables/hydro-page][wec]
 - FOUR: This where requests for uncategorized files go: [http://www.example.com/about-page][wec]
@@ -292,7 +291,7 @@ module.exports = router;
 
 Now consider where our different URLs lead:
 
-- **http://www.example.com** => **routes/index.js**
+- **<http://www.example.com>** => **routes/index.js**
 - [http://www.example.com/energy-types/my-jade-file][wec] => **routes/index.js**
 - [http://www.example.com/renewables/my-jade-file][wec] => **routes/renewables.js**
 - [http://www.example.com/about][wec] => **routes/index.js**
@@ -410,7 +409,6 @@ Now the paragraph is part of the controller.
 When trying to see exactly what is going on with the spacing in a Pug file, considering opening it in geany and turning on **View | Editor | Show White Space**. Or open it in NotePad++ and choose **View | Show Symbol | Show White Space and Tab**.
 
 In WebStorm, you can also turn on visible white space, I believe it is: **File | Settings | Editor | General | Appearance | White Space**.
-
 
 [pug]: https://pugjs.org/api/getting-started.html
 [wec]: http://www.example.com

@@ -17,7 +17,7 @@ image: ./course/course-javascript.jpg
 Basic Syntax Examples
 =====================
 
--   [View the source](/javascripts/dev-web/BasicSyntax02.js)
+- [View the source](/javascripts/dev-web/BasicSyntax02.js)
 
 Selectors
 ---------
@@ -26,8 +26,6 @@ This example demonstrates how to write a jQuery selector that usess a
 dependent class. This selector picks up a particular p that has a class
 associated with it.. When you press the button below it calls
 showSelector().
-
-
 
 Show Selectors
 
@@ -62,20 +60,12 @@ View [JavaScript](/javascripts/dev-web/BasicSyntax02.js)
 
 Call Test01
 
- 
-
 Call SayHello
 
- 
-
- Use Prototype to Extend the String Class
+Use Prototype to Extend the String Class
 -----------------------------------------
 
 Call Elvenware.testDecoration()
-
- 
-
- 
 
 Call Show Properties
 --------------------
@@ -84,14 +74,8 @@ One of the properties shown here is defined with a prototype.
 
 call elvenware.showProperties()
 
- 
-
- 
-
 Object Create
 -------------
-
- 
 
 Create Object
 
@@ -105,15 +89,15 @@ var myObject = { myProperty: 12 };
 
 Get Descriptor
 
--    
--    
--    
--    
+-
+-
+-
+-
 
 You can discover the properties of an object by two means.
 
--   Object.keys(myObject);
--   Or you can enumerate over the properties in an object.
+- Object.keys(myObject);
+- Or you can enumerate over the properties in an object.
 
 Here is an example:
 
@@ -131,8 +115,6 @@ function getMyKeys()
 Press the button below to execute this code.
 
 Get Keys
-
- 
 
 Fancy Styles in a Form
 ----------------------

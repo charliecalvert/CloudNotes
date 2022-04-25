@@ -104,7 +104,7 @@ In **index.html** we link in **Main** and **require.js**:
 
  require.config({
    paths: {
-     "jquery": "http://code.jquery.com/jquery-1.11.0.min",     
+     "jquery": "http://code.jquery.com/jquery-1.11.0.min",
    }
  });
 

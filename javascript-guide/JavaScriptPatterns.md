@@ -41,7 +41,7 @@ It is in that last step that patterns come into play. Code that works is often c
 To more directly answer your question:
 
 - When we see ourselves creating object, then use the factory pattern or a similar pattern to manage that creation
--  When we see ourselves creating a set of objects that need to communicate with one another, then:
+- When we see ourselves creating a set of objects that need to communicate with one another, then:
 - Use something like the bridge pattern to find the structure for the objects
 - A pattern like PubSub, Observer, or Visitor to get them effectively communicate with one another.
 
@@ -96,7 +96,7 @@ The point is we:
 - Give the factory the responsibility for calling new on the JsonReader, or doing any other necessary setup.
 - Provide a single point of change for the way we manage objects. If we change the way JsonReader is created, we only have to change one place in our code, even if we call myFactory.create({ objectType: 'JsonReader' }) in fifteen different places.
 
-## About factories.
+## About factories
 
 Patterns are fundamentally different from most of the things we learn about programming. They are about how to architect a program, not how to make it work.
 
@@ -110,7 +110,7 @@ Patterns become useful at the second stage of development in programmer's career
 
 The factory pattern is designed to help with a series of problems that can occur around object creation. These are the kinds of problems that cause unexpected, and often hard to solve, bugs in our programs. Resolving the problem is not about syntax, it is not that we don't understand how constructors and the new operator work, it is that we have used our knowledge of that syntax to create a tangled mess that is hard to understand.
 
-**Issue One**:  One object relies on another object. To create a bird object, we need the wing, beak and webbed feet objects. Suppose we have to create the bird object 267 times in our program. That means we have to first create a wing object, then a beak object, then a webbed feet object. Then we can create the bird object. Doing this 267 times is error prone in the extreme. So we create a factory, and ask it for the bird object. It creates all the sub-parts and then hands us back a bird. (https://stackoverflow.com/a/2430719/253576)
+**Issue One**:  One object relies on another object. To create a bird object, we need the wing, beak and webbed feet objects. Suppose we have to create the bird object 267 times in our program. That means we have to first create a wing object, then a beak object, then a webbed feet object. Then we can create the bird object. Doing this 267 times is error prone in the extreme. So we create a factory, and ask it for the bird object. It creates all the sub-parts and then hands us back a bird. (<https://stackoverflow.com/a/2430719/253576>)
 
 **Issue two**: We designed a shape object that can be a circle, triangle, rectangle, polygon or square. We use parameters to sort out which object is which. But suddenly you find that sometimes the system doesn't work right, and you are mixing up your triangles and circles, and your polygons and rectangles. You might find that a factory can help you sort all this out. There was nothing wrong with the constructors for the circle and triangle objects, it was just calling them properly that was error prone. So we use a factory clean up the mess.
 
@@ -146,7 +146,7 @@ If you want to make sure that your **Reader** and your main program don't become
 
 In the diagram shown above, notice that the core program uses **Factories** to create both **Bridges** and **Readers**. It then uses the **Bridge** to create buffer zone between the main program and the Core. **Control** actually owns **Factories**, and it uses the **Factory** to create a **Reader**, but it then passes the actual control of the **Reader** to the **Bridge**. "I wash my hands of this object," Control says. "I care only about the **Bridge** object. I don't really know anything at all about **Readers**."
 
-##Details
+## Details
 
 Our goal is to create abstractions that make it easier for us to think about the structure of our application, easier to maintain our program, and easier to test our program. By creating a [bridge][wiki-bridge] [factory][2] and a reader factory, we provide developers with an easy way to think about how to create objects: just ask the appropriate factory for the object. Which factory? Well, if you need a BridgeReader, then ask the BridgeReaderFactory! All the details about how the object is created, what modules (files) it relies on, and how often it is created, are encapsulated in the object. (We use requirejs to encapsulate the act of pulling in the right files. We don't have to guess which ones to include in our HTML, the factory automatically pulls in the right files. And it does so only when they are needed.)
 
@@ -177,11 +177,10 @@ It's Agile Software development:
 - [Agile Manifest](http://agilemanifesto.org/)
 - [Agile Principles](http://agilemanifesto.org/principles.html)
 
-## Other Patterns:
+## Other Patterns
 
 - [DoFactory](http://www.dofactory.com/javascript-patterns.aspx)
 - [Osmani](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-
 
 - Facade in Queue Simple
 - Factory in Factory*
@@ -200,19 +199,19 @@ Cowboy Ben Almon's TinyPubSub:
 
 ```
 (function($) {
-	'use strict';
-	var o = $({});
-	$.subscribe = function() {
-		o.on.apply(o, arguments);
-	};
+ 'use strict';
+ var o = $({});
+ $.subscribe = function() {
+  o.on.apply(o, arguments);
+ };
 
-	$.unsubscribe = function() {
-		o.off.apply(o, arguments);
-	};
+ $.unsubscribe = function() {
+  o.off.apply(o, arguments);
+ };
 
-	$.publish = function() {
-		o.trigger.apply(o, arguments);
-	};
+ $.publish = function() {
+  o.trigger.apply(o, arguments);
+ };
 }(jQuery));
 ```
 
@@ -226,7 +225,7 @@ Then create a method that will be called when the event is triggered:
 
 ```
 function listenForDebugDetailEvent(event, customMessage) {
-	console.log(event);
+ console.log(event);
 }
 ```
 
@@ -240,7 +239,7 @@ When the above line of code is executed, then the **listenForDebugDetailEvent** 
 
 ```
 var triggerDebugDetailEvent = function() {
-	$.publish('debugDetail', 'Publishing privateMethod.');
+ $.publish('debugDetail', 'Publishing privateMethod.');
 };
 ```
 
@@ -263,7 +262,6 @@ When working with backbone or angular, we don't go in and change the way they im
 Though the incentives not to change our own implementations of patterns is not as strong, we should exercise the same discipline when we write the factory or bridge patterns ourselves. Just implement the bridge or factory as it should be implemented, and then leave it alone.
 
 Ideally we can write all our code inside the core patterns: observer, factory, reader, bridge, singleton, modular and decorator. But if we can't, then we don't let that be a reason to corrupt the existing patterns we are using, instead we create classes that isolate, and simplify any code that we can't wedge into a pattern. (Of course, we can also look for other patterns that might solve our problem.)
-
 
 ## Why We like Patterns
 

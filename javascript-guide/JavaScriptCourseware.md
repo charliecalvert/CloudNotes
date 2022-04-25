@@ -33,17 +33,16 @@ Other subjects that may be covered include creating Data Driven Documents with [
 
 ## General Exercises and Assignments
 
-1.  [Basic Types](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptBasicTypes.html)
-1.  [Objects](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html)
-1.  [Callbacks](http://www.ccalvert.net/books/CloudNotes/Assignments/Callbacks.html)
-1.  [Functional](http://www.ccalvert.net/books/CloudNotes/Assignments/Functional.html)
-1.  [Function This](http://www.ccalvert.net/books/CloudNotes/Assignments/FunctionThis.html)
-1.  [FactoryBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/FactoryBasics.html)
-1.  [Click Route](http://www.ccalvert.net/books/CloudNotes/Assignments/ClickRoute.html)
-1.  [Elf Npm Unit Tests](http://www.ccalvert.net/books/CloudNotes/Assignments/ElfNpmUnitTest.html)
-1.  [Map Express](http://www.ccalvert.net/books/CloudNotes/Assignments/MapExpress.html)
-1.  [Map Places](http://www.ccalvert.net/books/CloudNotes/Assignments/MapPlaces.html)
-
+1. [Basic Types](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptBasicTypes.html)
+1. [Objects](http://www.ccalvert.net/books/CloudNotes/Assignments/JavaScriptObjects.html)
+1. [Callbacks](http://www.ccalvert.net/books/CloudNotes/Assignments/Callbacks.html)
+1. [Functional](http://www.ccalvert.net/books/CloudNotes/Assignments/Functional.html)
+1. [Function This](http://www.ccalvert.net/books/CloudNotes/Assignments/FunctionThis.html)
+1. [FactoryBasics](http://www.ccalvert.net/books/CloudNotes/Assignments/FactoryBasics.html)
+1. [Click Route](http://www.ccalvert.net/books/CloudNotes/Assignments/ClickRoute.html)
+1. [Elf Npm Unit Tests](http://www.ccalvert.net/books/CloudNotes/Assignments/ElfNpmUnitTest.html)
+1. [Map Express](http://www.ccalvert.net/books/CloudNotes/Assignments/MapExpress.html)
+1. [Map Places](http://www.ccalvert.net/books/CloudNotes/Assignments/MapPlaces.html)
 
 ## Code Academy
 

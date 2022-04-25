@@ -28,4 +28,3 @@ image: ./course/course-javascript.jpg
 
 [nodeelf]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html
 [using express]: http://www.elvenware.com/charlie/development/web/JavaScript/NodeJs.html#using-express
-

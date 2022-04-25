@@ -27,16 +27,16 @@ jQuery is a JavaScript library designed to be used in conjunction with
 HTML and CSS. There are several major design goals associated with this
 library:
 
--   Make it easy to parse and traverse an HTML document. In other words,
+- Make it easy to parse and traverse an HTML document. In other words,
     it gives you easy access to the DOM.
--   It makes it easy for you to animate the elements in an HTML page. In
+- It makes it easy for you to animate the elements in an HTML page. In
     other words, it makes Ajax easy.
--   It provides an unobtrusive, simple means of handling events. This
+- It provides an unobtrusive, simple means of handling events. This
     ensures that your HTML, CSS and JavaScript remain completely
     separated from one another. Though this is a bit of a
     simplification, I usually strive to put HTML in one file, CSS in
     another file, and my JavaScript code in a third file.
--   It hides the differences between various browsers, and when
+- It hides the differences between various browsers, and when
     possible, implements advanced features in older browsers.
 
 ## Installing JQuery and Using CDN
@@ -62,9 +62,9 @@ machine is always on the Internet:
 
 Or you can use this one of these:
 
--   [http://code.jquery.com/jquery-latest.js](http://code.jquery.com/jquery-latest.js)
--   [http://code.jquery.com/jquery.min.js](http://code.jquery.com/jquery.min.js)
--   [http://code.jquery.com/jquery.js](http://code.jquery.com/jquery.js)
+- [http://code.jquery.com/jquery-latest.js](http://code.jquery.com/jquery-latest.js)
+- [http://code.jquery.com/jquery.min.js](http://code.jquery.com/jquery.min.js)
+- [http://code.jquery.com/jquery.js](http://code.jquery.com/jquery.js)
 
 A complete head element that includes both jQuery:
 
@@ -109,10 +109,10 @@ more obscure libraries, this might become an issue.
 
 Some additional references for this material are available here:
 
--   JQuery: [http://jquery.com/](http://jquery.com/)
--   JQuery Download Page:
+- JQuery: [http://jquery.com/](http://jquery.com/)
+- JQuery Download Page:
     [http://docs.jquery.com/Downloading\_jQuery](http://docs.jquery.com/Downloading_jQuery)
--   CDN Page: [CdnExplained.html](/web-guide/CdnExplained.html)
+- CDN Page: [CdnExplained.html](/web-guide/CdnExplained.html)
 
 ## jQuery Forms
 
@@ -161,7 +161,6 @@ Remember that jQuery is JavaScript, and that means that some features of JQuery 
 - [Server Guide](/server-guide/index.html)
 - [Old Link](/charlie/development/web/Server/index.html)
 
-
 ``` {.code}
 http://www.elvenware.com/charlie/development/web/Server/index.html
 ```
@@ -169,9 +168,9 @@ http://www.elvenware.com/charlie/development/web/Server/index.html
 When everything is set up correctly, your URL should not look like the
 first of the following examples, and should look like the second:
 
--   [file:///J:/Web/Elvenware/charlie/foo.html](http://www.example.com) --
+- [file:///J:/Web/Elvenware/charlie/foo.html](http://www.example.com) --
     not always jQuery friendly
--   [http://localhost:8000/charlie/foo.html](http://www.example.com)
+- [http://localhost:8000/charlie/foo.html](http://www.example.com)
 
 Many HTML editors allow you to configure how they launch pages when you
 click a preview button. When set up correctly they do not launch a page
@@ -179,9 +178,9 @@ with a file URL, but with an HTTP URL. The URLs that begin with HTTP
 usually ensure that jQuery will work properly. To set up Expression Web
 to preview your pages with right kind of URLs, do the following:
 
--   From the menu, select **Site | Site Settings | Preview**
--   Select: **Preview using a custom URL for your local web site.**For
-    example, enter**: http://localhost:8000**
+- From the menu, select **Site | Site Settings | Preview**
+- Select: **Preview using a custom URL for your local web site.**For
+    example, enter**: <http://localhost:8000>**
 
 The actual URL you enter will differ depending on how you have set up
 your local web server for testing. And of course the option you choose
@@ -198,17 +197,17 @@ a CDN reference, as described above.
 ```html
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>index</title>
-		<script src="jquery.js"></script>
-		<script src="index.js"></script>
-	</head>
+ <head>
+  <meta charset="utf-8" />
+  <title>index</title>
+  <script src="jquery.js"></script>
+  <script src="index.js"></script>
+ </head>
 
-	<body>
-		<p id="paragraph1"> </p>
-		<button id="button1">Click Me</button>
-	</body>
+ <body>
+  <p id="paragraph1"> </p>
+  <button id="button1">Click Me</button>
+ </body>
 </html>
 ```
 
@@ -216,11 +215,11 @@ Here is the custom index.js file.
 
 ```javascript
 function setParagraph() {
-	$('#paragraph1').html('You clicked the button');
+ $('#paragraph1').html('You clicked the button');
 };
 
 $(document).ready(function() {
-	$('#button1').click(setParagraph);
+ $('#button1').click(setParagraph);
 });
 ```
 
@@ -248,7 +247,6 @@ You should also visit this page on jQuery selectors:
 [http://api.jquery.com/category/selectors/](http://api.jquery.com/category/selectors/)
 
 ## Experimenting with jQuery Selectors
-
 
 The many examples found on this page demonstrate a number of ways to use
 [selectors](http://api.jquery.com/category/selectors/) in jQuery to
@@ -410,7 +408,7 @@ Customize OnClick events so code of our own is called. Instead of the traditiona
 
 You can pass in parameters when you set up **click** events. Suppose you respond to a button click by calling a method named **foo**:
 
-	$("#button01").click(foo);
+ $("#button01").click(foo);
 
 To set up this example, our implementation of **foo** need not be complex:
 
@@ -431,7 +429,7 @@ function foo(x) {
 jQuery makes it easy to pass in the parameter inside a JavaScript object like this:
 
 ```javascript
-	$("#button01").click({ x: 2 }, foo);
+ $("#button01").click({ x: 2 }, foo);
 ```
 
 Then implement foo like this:
@@ -467,14 +465,13 @@ See also:
 - <http://api.jquery.com/category/events/event-object/>
 - <http://stackoverflow.com/a/9467172/253576>
 
-
 ### The HiJack Callback
 
--   When someone clicks the part of index.html now in IPhoneGo, this
+- When someone clicks the part of index.html now in IPhoneGo, this
     method is called
--   It prevents the default anchor href handler
--   Then it calls loadPage() with a URL
--   loadPage takes the \#content from the URL (Page0X.html) and puts it
+- It prevents the default anchor href handler
+- Then it calls loadPage() with a URL
+- loadPage takes the \#content from the URL (Page0X.html) and puts it
     in the container of IPhoneGo.html.
 
 ## JQuery Load
@@ -489,8 +486,8 @@ entire screen.
 
 **jQuery.load()** takes two parameters:
 
--   The URL to load (Must be in same domain)
--   A callback function
+- The URL to load (Must be in same domain)
+- A callback function
 
 Here is an example call:
 
@@ -502,10 +499,10 @@ This code changes the part of the document with the id **container**. It
 replaces that element with the content from a document referenced by a
 URL.
 
--   Load into the \#container of current document
--   The \#content from the document referenced by URL
--   **hijackLinks** is the callback.
--   The callback is called after the URL is loaded
+- Load into the \#container of current document
+- The \#content from the document referenced by URL
+- **hijackLinks** is the callback.
+- The callback is called after the URL is loaded
 
 Here is another example, which shows how to print out an error message.
 
@@ -580,6 +577,7 @@ The book is also available for download.
 
 jQuery getJSON
 --------------
+
 The jQuery **getJSON** method is a wrapper around the **ajax** method. It looks like
 this:
 
@@ -636,22 +634,22 @@ JsObjects:
 
 ```javascript
 var writeJson = function() {
-	var userInput = {
-		firstName: $('#firstName').val(),
-		lastName: $('#lastName').val(),
-		age: $('#age').val()
-	};
+ var userInput = {
+  firstName: $('#firstName').val(),
+  lastName: $('#lastName').val(),
+  age: $('#age').val()
+ };
 
-	$.ajax({
-		type: 'GET',
-		url: '/write',
-		dataType: 'json',
-		data: userInput,
-		success: function(data) {
-			showDebug(data.result);
-		},
-		error: showError      
-	});
+ $.ajax({
+  type: 'GET',
+  url: '/write',
+  dataType: 'json',
+  data: userInput,
+  success: function(data) {
+   showDebug(data.result);
+  },
+  error: showError      
+ });
 };
 ```
 
@@ -666,11 +664,11 @@ passes data to the server, and processes the data sent back from the server.
 First, let's look at the data we are passing to the server:
 
 ```javascript
-	var userInput = {
-		firstName: $('#firstName').val(),
-		lastName: $('#lastName').val(),
-		age: $('#age').val()
-	};
+ var userInput = {
+  firstName: $('#firstName').val(),
+  lastName: $('#lastName').val(),
+  age: $('#age').val()
+ };
 ```
 
 This is a simple JavaScript object that can be passed as JSON. It pulls values
@@ -690,22 +688,22 @@ When the user's input is retrieved from the input controls, the data object migh
 look like this:
 
 ```javascript
-	var userInput = {
-		firstName: Mary,
-		lastName: Lu,
-		age: 52
-	};
+ var userInput = {
+  firstName: Mary,
+  lastName: Lu,
+  age: 52
+ };
 ```
 
 This information is passed in the **data** setting for the ajax call:
 
 ```javascript
-	$.ajax(
-		{
-		  type: 'GET',
-		  url: '/write',
-		  dataType: 'json',
-		  data: userInput, etc...
+ $.ajax(
+  {
+    type: 'GET',
+    url: '/write',
+    dataType: 'json',
+    data: userInput, etc...
     })
 ```
 
@@ -715,23 +713,23 @@ server (a url) called **write**. In our case, this latter bit of information
 signifies that we want to call the following Node Express method on our server:
 
 ```javascript
-	app.get('/write', function(request, response) {
-		console.log('Write called: ' + request.query);
-		// Code omitted here....
-		response.send('{"result":"success"}');
-	});
+ app.get('/write', function(request, response) {
+  console.log('Write called: ' + request.query);
+  // Code omitted here....
+  response.send('{"result":"success"}');
+ });
 ```
 
 For now, let's not concern ourselves with main body of the method. Just notice
 two things about it:
 
-* The route: app.get('/write'
-* The response: response.send('{"result":"success"}');
+- The route: app.get('/write'
+- The response: response.send('{"result":"success"}');
 
 As you can see, the route in the server matches the url in the client:
 
-* url: '/write',
-* app.get('/write'
+- url: '/write',
+- app.get('/write'
 
 It is this correspondance that makes it possible for the client to call a
 particular method on the server.
@@ -739,8 +737,8 @@ particular method on the server.
 At this stage we have covered all the major parts of this Ajax call except for
 two key pieces:
 
-* The success function
-* the error function
+- The success function
+- the error function
 
 Because each of these pieces of the call are so important, I will show give
 them each their section in the text.
@@ -806,8 +804,8 @@ Then we send a request to the server and wait for a response.
 
 ```javascript
 $.getJSON('/add', requestQuery, function(sum) {
-	console.log("Sum:", sum);
-	$('#addresult').html('The sum is: ' + sum.sum);
+ console.log("Sum:", sum);
+ $('#addresult').html('The sum is: ' + sum.sum);
 });
 
 ```
@@ -846,24 +844,24 @@ The Ajax method shown in the previous section responds like this when it
 gets a callback from the server stating that the call has been successful:
 
 ```javascript
-	success: function(data) {
-		showDebug(data.result);
-	},
+ success: function(data) {
+  showDebug(data.result);
+ },
 ```
 
 Just to help you understand, here is the call in context:
 
 ```
-	$.ajax({
-		type: 'GET',
-		url: '/write',
-		dataType: 'json',
-		data: userInput,
-		success: function(data) {
-			showDebug(data.result);
-		},
-		error: showError      
-	});
+ $.ajax({
+  type: 'GET',
+  url: '/write',
+  dataType: 'json',
+  data: userInput,
+  success: function(data) {
+   showDebug(data.result);
+  },
+  error: showError      
+ });
 ```
 
 The success function is a standard callback. It is invoked when the client
@@ -873,7 +871,7 @@ something goes wrong, then the **error** function is called instead of
 
 As you know, this is the bit of JSON sent back from the server:
 
-	{"result":"success"}
+ {"result":"success"}
 
 The showDebug method simply displays the value part of this key/value pair to
 the user:
@@ -881,47 +879,47 @@ the user:
 ```javascript
 var showDebug = function(textToDisplay)
 {
-	$("#debug").append('<li>' + textToDisplay + '</li>');
+ $("#debug").append('<li>' + textToDisplay + '</li>');
 };
 ```
 
 Assuming you control both the server and the client, you are free to decide:
 
-* What data to pass back to the success function
-* What to do with the data when you can get it
+- What data to pass back to the success function
+- What to do with the data when you can get it
 
 Sometimes you might simply assign the data passed back from the server to a
 variable in your program. At other times, you might display the result to the
 user. Quite often, you will do both:
 
-* First you assign the returned object to a variable
-* Then you invoke a method that parses the data and display it to the user.
+- First you assign the returned object to a variable
+- Then you invoke a method that parses the data and display it to the user.
 
 Note that you can, if you wish, pass in a success function to the method
 that invokes the ajax call:
 
 ```javascript
 var writeJsonPrivate = function(successFunc) {
-	var userInput = {
-		firstName : $('#firstName').val(),
-		lastName : $('#lastName').val(),
-		age : $('#age').val()
-	};
+ var userInput = {
+  firstName : $('#firstName').val(),
+  lastName : $('#lastName').val(),
+  age : $('#age').val()
+ };
 
-	$.ajax({
-		type : 'GET',
-		url : '/write',
-		dataType : 'json',
-		data : userInput,
-		success : successFunc,
-		error : showError
-	});
+ $.ajax({
+  type : 'GET',
+  url : '/write',
+  dataType : 'json',
+  data : userInput,
+  success : successFunc,
+  error : showError
+ });
 };
 
 var writeJson = function() {
-	writeJsonPrivate(function(data) {
-		showDebug(data.result);
-	});
+ writeJsonPrivate(function(data) {
+  showDebug(data.result);
+ });
 };
 ```
 
@@ -936,11 +934,11 @@ It is passed in as an anonymous function when the method is
 invoked:
 
 ```
-	var writeJson = function() {
-		writeJsonPrivate(function(data) {
-			showDebug(data.result);
-		});
-	};
+ var writeJson = function() {
+  writeJsonPrivate(function(data) {
+   showDebug(data.result);
+  });
+ };
 ```
 
 The Ajax Error Handler
@@ -952,15 +950,15 @@ the error function for $.ajax calls with the following code:
 
 ```javascript
 var showError = function(request, ajaxOptions, thrownError) {
-	showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
-	showDebug(request.status);
-	showDebug(request.statusText);
-	showDebug(request.getAllResponseHeaders());
-	showDebug(request.responseText);
+ showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
+ showDebug(request.status);
+ showDebug(request.statusText);
+ showDebug(request.getAllResponseHeaders());
+ showDebug(request.responseText);
 };
 
 var showDebug = function(textToDisplay) {
-	$("#debug").append('<li>' + textToDisplay + '</li>');
+ $("#debug").append('<li>' + textToDisplay + '</li>');
 };
 ```
 
@@ -985,9 +983,9 @@ particular, I passed in the URL **writes** instead of **write**:
 
 ```javascript
 $.ajax({
-	type : 'GET',
-	url : '/writes',     // Should be write not writes
-	dataType : 'json',
+ type : 'GET',
+ url : '/writes',     // Should be write not writes
+ dataType : 'json',
   ...
 })
 ```
@@ -1001,35 +999,35 @@ method just as we passed in the **success** function:
 
 ```javascript
 var writeJsonPrivate = function(successFunc, showError) {
-	var userInput = {
-		firstName : $('#firstName').val(),
-		lastName : $('#lastName').val(),
-		age : $('#age').val()
-	};
+ var userInput = {
+  firstName : $('#firstName').val(),
+  lastName : $('#lastName').val(),
+  age : $('#age').val()
+ };
 
-	$.ajax({
-		type : 'GET',
-		url : '/writes',
-		dataType : 'json',
-		data : userInput,
-		success : successFunc,
-		error : showError
-	});
+ $.ajax({
+  type : 'GET',
+  url : '/writes',
+  dataType : 'json',
+  data : userInput,
+  success : successFunc,
+  error : showError
+ });
 };
 
 var writeJson = function() {
-	writeJsonPrivate(
-		function(data) {
-			showDebug(data.result);
-		},
-		function(request, ajaxOptions, thrownError) {
-			showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
-			showDebug(request.status);
-			showDebug(request.statusText);
-			showDebug(request.getAllResponseHeaders());
-			showDebug(request.responseText);
-		}
-	);
+ writeJsonPrivate(
+  function(data) {
+   showDebug(data.result);
+  },
+  function(request, ajaxOptions, thrownError) {
+   showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
+   showDebug(request.status);
+   showDebug(request.statusText);
+   showDebug(request.getAllResponseHeaders());
+   showDebug(request.responseText);
+  }
+ );
 };
 ```
 
@@ -1046,20 +1044,20 @@ function attached to the original ajax call:
 
 ```javascript
 $.ajax({
-	type : 'GET',
-	url : '/write',
-	dataType : 'json',
-	data : userInput,
-	success :function(data) {
-		showDebug(data.result);
-	},
-	error : function(request, ajaxOptions, thrownError) {
-		showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
-		showDebug(request.status);
-		showDebug(request.statusText);
-		showDebug(request.getAllResponseHeaders());
-		showDebug(request.responseText);
-	}
+ type : 'GET',
+ url : '/write',
+ dataType : 'json',
+ data : userInput,
+ success :function(data) {
+  showDebug(data.result);
+ },
+ error : function(request, ajaxOptions, thrownError) {
+  showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
+  showDebug(request.status);
+  showDebug(request.statusText);
+  showDebug(request.getAllResponseHeaders());
+  showDebug(request.responseText);
+ }
 });
 ```
 
@@ -1097,7 +1095,7 @@ var writeJsonPrivate = function(successFunc, showError) {
           fileName : 'Data/MyFile.txt'
       };
 
-      // 	Now put them both in one object:
+      //  Now put them both in one object:
       var dataToSend = {
           path : fileName,
           person : fullName
@@ -1122,32 +1120,32 @@ app.get('/write', function(request, response) {
     // We begin with some debug calls
 
     // View all the data that was sent
-	console.log('Write called: ' + JSON.stringify(request.query, null, 4));
+ console.log('Write called: ' + JSON.stringify(request.query, null, 4));
 
-	console.log('Here are the properties passed in the request: ');
-	for (var propertyName in request.query) {
-		console.log(" -> " + propertyName);
-	}
+ console.log('Here are the properties passed in the request: ');
+ for (var propertyName in request.query) {
+  console.log(" -> " + propertyName);
+ }
 
-	// Find both pieces of data:
-	var person = request.query.person;
-	var path = request.query.path;
+ // Find both pieces of data:
+ var person = request.query.person;
+ var path = request.query.path;
 
-	// Display both pieces of data separately
-	var personString = JSON.stringify(person, null, 4);
-	console.log('Path: ' + JSON.stringify(path));
-	console.log('Person: ' + personString);
+ // Display both pieces of data separately
+ var personString = JSON.stringify(person, null, 4);
+ console.log('Path: ' + JSON.stringify(path));
+ console.log('Person: ' + personString);
 
-	// Now do our actual work of writing the file.
-	// This assumes the path exists. See the mkdirp
-	// NPM library if you need to create directories
-	fs.writeFile(path.fileName, personString, 'utf8', function(err, data){
-		if (err) throw err;
-		console.log('It\'s saved!');
-	});
+ // Now do our actual work of writing the file.
+ // This assumes the path exists. See the mkdirp
+ // NPM library if you need to create directories
+ fs.writeFile(path.fileName, personString, 'utf8', function(err, data){
+  if (err) throw err;
+  console.log('It\'s saved!');
+ });
 
-	// Send back a response
-	response.send('{"result":"success"}');
+ // Send back a response
+ response.send('{"result":"success"}');
 });
 ```
 
@@ -1155,23 +1153,22 @@ If you want to see what properties exist on the object that was passed to you
 from the client, you can write code like this:
 
 ```javascript
-	for (var propertyName in request.query) {
-		console.log(" -> " + propertyName);
-	}
+ for (var propertyName in request.query) {
+  console.log(" -> " + propertyName);
+ }
 ```
 
 The above is for a GET verb. Here is the same code for a POST:
 
 ```javascript
 for (var propertyName in request.body) {
-	console.log(" -> " + propertyName);
+ console.log(" -> " + propertyName);
 }
 ```
 
 This example is found here:
 
-
--	[SimpleReadWrite04][srwj]
+- [SimpleReadWrite04][srwj]
 
 ## Dynamically Changing a Page with jQuery Part I
 
@@ -1199,7 +1196,7 @@ This code changes use jQuery to select the **body** tag for the current
 page and set its background and text color using css. Here is a link to
 a sample page demonstrating how this works:
 
--   [JQueryBackgroundMorph.html](JQueryBackgroundMorph.html)
+- [JQueryBackgroundMorph.html](JQueryBackgroundMorph.html)
 
 ## Dynamically Changing a Page with jQuery Part II
 
@@ -1211,19 +1208,19 @@ changed the background color for an entire page. Don't forget that you can
 view the source for the linked page, and for the JavaScript file, by right
 clicking and choosing "View Source" or some similar option.
 
--   [jQuerySelectors Example](/javascripts/dev-web/JQuerySelectors.html)
+- [jQuerySelectors Example](/javascripts/dev-web/JQuerySelectors.html)
 
 Here are the methods called when the buttons above are clicked:
 
--   html()
--   css()
--   each()
--   remove()
--   after()
--   replaceWith()
--   addClass()
--   removeClass()
--   val()
+- html()
+- css()
+- each()
+- remove()
+- after()
+- replaceWith()
+- addClass()
+- removeClass()
+- val()
 
 ```javascript
 this.ModifyHeader = function()
@@ -1300,14 +1297,14 @@ Form Test
 
 This exercise shows how to use Forms:
 
--	[Forms Test](/javascripts/dev-web/FormTest.html)
+- [Forms Test](/javascripts/dev-web/FormTest.html)
 
 Adding Machine
 --------------
 
 The Adding Machine example has moved here:
 
--	[AddingMachine.html](AddingMachine.html)
+- [AddingMachine.html](AddingMachine.html)
 
 Posting Data
 ------------
@@ -1430,22 +1427,22 @@ back on the main page of the application. Here is the XML that might be
 returned.
 
 ```
-	<additions>
-		<addition>
-			<operanda>1</operanda>
-			<operandb>2</operandb>
-			<answer>3</answer>
-		</addition>
-	</additions>
+ <additions>
+  <addition>
+   <operanda>1</operanda>
+   <operandb>2</operandb>
+   <answer>3</answer>
+  </addition>
+ </additions>
 ```
 
 The called to **\$(xml).find** returns the addition section of the XML:
 
 ```
 <addition>
-	<operanda>1</operanda>
-	<operandb>2</operandb>
-	<answer>3</answer>
+ <operanda>1</operanda>
+ <operandb>2</operandb>
+ <answer>3</answer>
 </addition>
 ```
 
@@ -1553,7 +1550,7 @@ function JQueryTests()
 
 Each time the button is pressed a new element with this structure
 **\<tr\>\<td\>some string\</td\>\<td\>some string\</td\>\</tr\>** is
-added to the **\#structuredTable**.Ãƒâ€šÃ‚Â 
+added to the **\#structuredTable**.Ãƒâ€šÃ‚Â
 
 jQuery and Handlebars
 ---------------------
@@ -1581,7 +1578,7 @@ markers or placeholders in your HTML, and then run code that
 replaces the markers with designated bits of HTML or text. For instance
 you might put some HTML that looks like this in your main HTML file:
 
-	<li><a href="{{url}}">{{text}}</a></li>
+ <li><a href="{{url}}">{{text}}</a></li>
 
 In the code shown above, both {{url}} and {{text}} are placeholders.
 You would then write code that would substitute text of HTML for the
@@ -1688,14 +1685,13 @@ $(document).ready(function() {
 });
 ```
 
-
 Links
 -----
 
--   [http://jquery.com](http://jquery.com/)
--   [http://jquerymobile.com](http://jquerymobile.com/)
--   ThemeRoller:Ãƒâ€šÃ‚Â [http://jquerymobile.com/themeroller/](http://jquerymobile.com/themeroller/)
--   [http://jqueryui.com](http://jqueryui.com/)
--   [Embed JQuery with URLs Using CDN](/web-guide/CdnExplained.html)
+- [http://jquery.com](http://jquery.com/)
+- [http://jquerymobile.com](http://jquerymobile.com/)
+- ThemeRoller:Ãƒâ€šÃ‚Â [http://jquerymobile.com/themeroller/](http://jquerymobile.com/themeroller/)
+- [http://jqueryui.com](http://jqueryui.com/)
+- [Embed JQuery with URLs Using CDN](/web-guide/CdnExplained.html)
 
 [srwj]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/NodeCode/SimpleReadWriteJson

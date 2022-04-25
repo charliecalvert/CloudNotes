@@ -505,7 +505,6 @@ wrapper.find('button#bar').simulate('click');
 
 **NOTE**: _Assuming you are working with ES6, JSX and React, from the menu select **File | Settings | Languages and Frameworks | JavaScript** and set the language version to **React JSX**_
 
-
 ## JSX Comments
 
 Normally we can create comments like this in JavaScript code:

@@ -51,9 +51,9 @@ These two bits of syntax indicate that this is not raw HTML. Instead, it is an a
 
 Nomenclature:
 
--   The File shown above: an Angular **template**.
--   **ng-app**: It is both an HTML **attribute** and an Angular **directive**
--   {{5 * 7}}: Those double curly braces are called Angular **expressions**.
+- The File shown above: an Angular **template**.
+- **ng-app**: It is both an HTML **attribute** and an Angular **directive**
+- {{5 * 7}}: Those double curly braces are called Angular **expressions**.
 
 We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** work.
 
@@ -108,8 +108,8 @@ When you declares controllers like this, then you want to use the
 beforeEach(module('myApp'));
 
 beforeEach(inject(function($rootScope, $controller) {
-	mileController = $rootScope.$new();
-	$controller('MileController', { $scope: mileController });
+ mileController = $rootScope.$new();
+ $controller('MileController', { $scope: mileController });
 }));
 ```
 
@@ -144,10 +144,10 @@ The following items need to be completed to create a "Hello World" with
 HTML and JavaScript controller.
 
 - In HTML or Jade
-    - ng-app="elvenApp"
-    - ng-controller
+  - ng-app="elvenApp"
+  - ng-controller
 - In JavaScript
-    - Declare module, don't forget dependencies    
+  - Declare module, don't forget dependencies
 
 Those are the steps. Now lets show the code.
 
@@ -157,7 +157,7 @@ In HTML or Jade:
  body(ng-app="elvenApp")
  #myController(ng-controller="MyController as myController")
     p {{myController.foo}}
-```    
+```
 
 In JavaScript using ControllerAs:
 
@@ -178,7 +178,6 @@ The general rule is fairly simple:
 - If you must manipulate the DOM, do it in a directive
 - [JsObject Directive Example](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularDirective)
 - [Directives](http://docs.angularjs.org/guide/directive)
-
 
 ## Directives
 
@@ -264,7 +263,7 @@ var userInput = $('#foo').val(); // Yields string bar
 
 In the simplest, most reductive possible terms, that is what scope does for you. In Angular html templates we write something that might include this code:
 
-	<input type="text" ng-model='foo'>
+ <input type="text" ng-model='foo'>
 
 In our Angular controllers, we write:
 
@@ -310,12 +309,12 @@ Look at the code for the main module:
 ```javascript
 angular.module('elvenApp', ['tools'])
 .controller('BoatController', function($scope, boat, sailboat) { 'use strict';
-	$scope.simple = "Simple Boat";
-	$scope.boatType = boat.getDescription();
-	$scope.sailBoat = sailboat.getDescription();
-	$scope.getNine = function() {
-		return sailboat.getNine();
-	};
+ $scope.simple = "Simple Boat";
+ $scope.boatType = boat.getDescription();
+ $scope.sailBoat = sailboat.getDescription();
+ $scope.getNine = function() {
+  return sailboat.getNine();
+ };
 });
 ```
 
@@ -326,42 +325,42 @@ Here are the implementations for the factories:
 ```javascript
 angular.module('tools', [])
 .factory('boat', function() {  'use strict';
-	this.Boat = (function() {
-		var description = "I'm a boat.";
+ this.Boat = (function() {
+  var description = "I'm a boat.";
 
-		function Boat() {
+  function Boat() {
 
-		}
+  }
 
-		Boat.prototype.getDescription = function() {
-			return description;
-		};
+  Boat.prototype.getDescription = function() {
+   return description;
+  };
 
-		return Boat;
-	})();
+  return Boat;
+ })();
 
-	return new this.Boat();
+ return new this.Boat();
 })
 .factory('sailboat', function() { 'use strict';
-	this.SailBoat = (function() {
-		var description = "I'm a sailboat";
+ this.SailBoat = (function() {
+  var description = "I'm a sailboat";
 
-		function SailBoat() {
+  function SailBoat() {
 
-		}
+  }
 
-		SailBoat.prototype.getNine = function() {
-			return 9;
-		};
+  SailBoat.prototype.getNine = function() {
+   return 9;
+  };
 
-		SailBoat.prototype.getDescription = function() {
-			return description;
-		};
+  SailBoat.prototype.getDescription = function() {
+   return description;
+  };
 
-		return SailBoat;
-	})();
+  return SailBoat;
+ })();
 
-	return new this.SailBoat();
+ return new this.SailBoat();
 });
 ```
 
@@ -575,6 +574,7 @@ scientist.save(function(err, data) {
         response.send({result: 'Success', data: data});
 });
 ```
+
 The call to **response.send** relays the response from the database back to the client where it is handled by the **success** callback mentioned earlier.
 
 To review, we send our **payload** data:
@@ -607,7 +607,7 @@ You can look for an exact match like the === operator:
 
 ```javascript
 it("expects 1 + 1 to equal 2", function() {
-	expect(1+1).toBe(2);
+ expect(1+1).toBe(2);
 });
 ```
 
@@ -615,7 +615,7 @@ For a less precise match like the == operator:
 
 ```javascript
 it("expects 1 + 1 to equal 2", function() {
-	expect(1+1).toEqual(2);
+ expect(1+1).toEqual(2);
 });
 ```
 
@@ -623,9 +623,10 @@ Or a more forigiving match for floating point numbers:
 
 ```javascript
 it("1.799 is close to 1.8", function() {
-	expect(1.799).toBeCloseTo(1.8);
+ expect(1.799).toBeCloseTo(1.8);
 });
 ```
+
 Here are some of the more important Jasmine matchers and a hopefully
 reasonable effort to define what they do:
 
@@ -783,21 +784,21 @@ describe("mycontrollertest", function() {'use strict';
 
 In this example I declare $dialog to be null, and I don't need to declare it as global to our object.
 
-###Some Basic Mocking
+### Some Basic Mocking
 
 Here are some tests that provide the first instance we have seen of
 creating a mock object:
 
 ```javascript
 beforeEach(inject(function($rootScope, $controller) {
-	gameBoard = $rootScope.$new();
-	gameEventService = { towerBroadcast: function() { return true; } };
-	elfgameService = $rootScope.$new();
-	$controller('GameBoard', {
-		$scope: gameBoard,
-		gameEventService: gameEventService,
-		elfgameService: elfgameService
-	});
+ gameBoard = $rootScope.$new();
+ gameEventService = { towerBroadcast: function() { return true; } };
+ elfgameService = $rootScope.$new();
+ $controller('GameBoard', {
+  $scope: gameBoard,
+  gameEventService: gameEventService,
+  elfgameService: elfgameService
+ });
 }));
 ```
 
@@ -805,7 +806,7 @@ Notice this line from the code shown above:
 
 ```javascript
 gameEventService = {
-	towerBroadcast: function() { return true; }
+ towerBroadcast: function() { return true; }
 };
 ```
 
@@ -815,9 +816,9 @@ a real gameEventService object, but it just using our mock:
 
 ```javascript
 $controller('GameBoard', {
-	$scope: gameBoard,
-	gameEventService: gameEventService,
-	elfgameService: elfgameService
+ $scope: gameBoard,
+ gameEventService: gameEventService,
+ elfgameService: elfgameService
 });
 ```
 
@@ -826,14 +827,14 @@ method of our **gameEventService**:
 
 ```javascript
 it("Check ElfGame Width", function() {
-	var actual = elfgameService.reportEvent();
-	expect(actual).toEqual(true);
+ var actual = elfgameService.reportEvent();
+ expect(actual).toEqual(true);
 });
 ```
 
 This code calls **reportEvent** which in turn calls **gameEventServer.towerBroadcast**.
 
-###JSON from Server
+### JSON from Server
 
 Here is how to retrieve JSON from a server.
 
@@ -841,18 +842,18 @@ Here is how to retrieve JSON from a server.
 var getDataJson = $http.get('data.json');
 
 getDataJson.success(function(data, status, headers, config)  {
-	$scope.data = data;
+ $scope.data = data;
 });
 
 getDataJson.error(function(data, status, headers, config) {
-	throw new Error('Oh no! An Error!');
+ throw new Error('Oh no! An Error!');
 });
 ```
 
 - [Example](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/JsonFromServer)
 - [Key File](https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/JsonFromServer/index.js)
 
-###Validating Angular HTML
+### Validating Angular HTML
 
 - [reference](http://stackoverflow.com/a/16184477/253576)
 
@@ -969,23 +970,23 @@ If you have some basic knowledge of Grunt and Karma, then you can
 use these tools with these projects. To get started, run **npm
 install** in the root directory for the project:
 
-	npm install
+ npm install
 
 Next, start Karma by typing **karma start**:
 
-	karma start
+ karma start
 
 Periodically, you should go to the command line in the root directory
 for this folder and run **grunt jshint**.
 
-	grunt jshint
+ grunt jshint
 
 You should then examine the **result.xml** file to look for any problems
 in your code.
 
 Also, read the **README.md** files for these projects.
 
-##  Instructions for the Angular Three Assignment
+## Instructions for the Angular Three Assignment
 
 *With thanks to Margie Calvert for helping to assemble this information.*
 
@@ -1002,9 +1003,7 @@ generate it.
 
 After you install the project in Aptana, set up the following files.
 
-
 ### FourModule.js file
-
 
 Use a new JavaScript Template (File -> New From Template -> JavaScript -> JavaScript Template)
 to create a blank javascript page. Call it FourModule.js and save it
@@ -1013,14 +1012,14 @@ in the Source directory of your project.
 Use this code in the module:
 
 ```javascript
-	angular.module("fourModule", [])
-	.factory('fourFactory', function() {'use strict';
-		return {
-			getFour : function(){
-			return 4;
-			}
-		};
-	});
+ angular.module("fourModule", [])
+ .factory('fourFactory', function() {'use strict';
+  return {
+   getFour : function(){
+   return 4;
+   }
+  };
+ });
 ```
 
 ### TestMain.js file
@@ -1030,7 +1029,7 @@ Now set up the Unit Test. Go to TestMain.js, and make these changes:
 Locate this line of code near the the top of the file.
 
 ```javascript
-	describe("Test Main", function() {'use strict'; ... });
+ describe("Test Main", function() {'use strict'; ... });
 ```
 
 Create a variable called (var fourFactory = null;). This code will be
@@ -1038,35 +1037,35 @@ somewhere beneath this declaration: **var MainController = null;**
 
 Then find the following lines of code:
 
-	(beforeEach(function() {
-		module('mainModule');
-		// Insert your code here.
+ (beforeEach(function() {
+  module('mainModule');
+  // Insert your code here.
 
 Inset the following: **module('fourModule');**
 
 Scroll down past this code:
 
 ```javascript
-	beforeEach(inject(function($rootScope,
-		$controller, $injector) {
-		mainController = $rootScope.$new();
-		$controller('mainController', {
-		    $scope : mainController
-		      // Insert your code here
+ beforeEach(inject(function($rootScope,
+  $controller, $injector) {
+  mainController = $rootScope.$new();
+  $controller('mainController', {
+      $scope : mainController
+        // Insert your code here
     });
   }));  
 ```
 
 Type this:
 
-	fourFactory = $injector.get('fourFactory');
+ fourFactory = $injector.get('fourFactory');
 
 Go below the }));  and type this code:
 
 ```javascript
 it("gets the number four", function() {
-	var actual = fourFactory.getFour();
-	expect(actual).toEqual(4);
+ var actual = fourFactory.getFour();
+ expect(actual).toEqual(4);
 });
 ```
 
@@ -1076,17 +1075,17 @@ Open up karma.conf.js, which is in the Tests folder. You will see something like
 after the first little bit:
 
 ```javascript
-	files: [   
-		'Library/angular.js',
-		'Library/angular-mocks.js',
-		'Tests/TestMain.js',
-		'Source/Main.js',
-		'Source/NewModule.js',
-		'Source/EightModule.js',
-		'Source/TenModule.js',
-		'Source/OneModule.js',
-		'Source/ThreeModule.js',
-	],
+ files: [   
+  'Library/angular.js',
+  'Library/angular-mocks.js',
+  'Tests/TestMain.js',
+  'Source/Main.js',
+  'Source/NewModule.js',
+  'Source/EightModule.js',
+  'Source/TenModule.js',
+  'Source/OneModule.js',
+  'Source/ThreeModule.js',
+ ],
 ```
 
 Add 'Source/FourModule.js' to the list. I already added a few other modules, so your list will look
@@ -1098,9 +1097,9 @@ Add the module into the list in the brackets. Any time you add a module,
 add the name here. The first line will look something like this before you change anything.
 
 ```javascript
-	angular.module('mainModule', ['newModule',
-		'eightModule', 'tenModule',
-		'oneModule', 'threeModule'])
+ angular.module('mainModule', ['newModule',
+  'eightModule', 'tenModule',
+  'oneModule', 'threeModule'])
 ```
 
 In my code, I already added quite a few modules, which you will not
@@ -1110,41 +1109,41 @@ don't forget to use a comma to separate any modules in the brackets.
 So now in my code it looks like this:
 
 ```javascript
-	angular.module('mainModule', ['newModule',
-		'eightModule', 'tenModule', 'oneModule',
-		'threeModule', 'fourModule'])
+ angular.module('mainModule', ['newModule',
+  'eightModule', 'tenModule', 'oneModule',
+  'threeModule', 'fourModule'])
 ```
 
 The second line looks something like this:
 
 ```javascript
-	.controller('mainController', function($scope,
-		newFactory, eightFactory, tenFactory,
-		oneFactory, threeFactory) { 'use strict';  ... });
+ .controller('mainController', function($scope,
+  newFactory, eightFactory, tenFactory,
+  oneFactory, threeFactory) { 'use strict';  ... });
 ```
 
 Add fourFactory to the list.
 
 ```javascript
-	.controller('mainController', function($scope,
-		newFactory, eightFactory, tenFactory, oneFactory,
-		threeFactory, fourFactory) { 'use strict'; ... });
+ .controller('mainController', function($scope,
+  newFactory, eightFactory, tenFactory, oneFactory,
+  threeFactory, fourFactory) { 'use strict'; ... });
 ```
 
 The next line is
 
-	$scope.name = "mainController";
+ $scope.name = "mainController";
 
 Somewhere under that, put this code:
 
-	$scope.getFour = fourFactory.getFour();
+ $scope.getFour = fourFactory.getFour();
 
 This is also where you would write a function for the
 mainController. In my code things look like this:
 
 ```javascript
 $scope.add = function(a, b) {
-	return a + b;
+ return a + b;
 };
 
 $scope.getNine = newFactory.getNine();
@@ -1162,7 +1161,7 @@ Then way at the bottom  you will see  });
 Add this code in the &lt;head&gt;&lt;/head&gt; section:
 
 ```html
-	<script src = "Source/FourModule.js"> </script>
+ <script src = "Source/FourModule.js"> </script>
 ```
 
 In the body you will see a **div id** tag:
@@ -1189,12 +1188,12 @@ here and there.
 
 To install Karma:
 
-	npm install -g karma
+ npm install -g karma
 
 Test from command line to see if it is installed:
 
-	>karma --version
-	Karma version: 0.10.2
+ >karma --version
+ Karma version: 0.10.2
 
 In the command terminal in Aptana, navigate to the directory where you have your project.
 You will be starting in your Users/myName directory. So if the project is in the isit320
@@ -1202,27 +1201,27 @@ directory, you might have to cd to Documents/isit320/currentprojectfolder.
 
 run
 
-	npm install
+ npm install
 
 and then type
 
-	karma start
+ karma start
 
-###Coverage
+### Coverage
 
 Code coverage let's you know what code in your program is not covered
 by unit tests.
 
 First install coverage tool, which is called [Istanbul](https://github.com/gotwarlost/istanbul):
 
-	npm install -g istanbul
+ npm install -g istanbul
 
 In some cases, you may already have a package.json that includes
 karma-coverage, so just rerun npm install. However, of other projects,
 you can install coverage and save a reference for it in your **package.json**
 file by typing the following:
 
-	npm install karma-coverage --save-dev
+ npm install karma-coverage --save-dev
 
 When you are done, you can open up **package.json** and find the entry
 for **karma-coverage**.
@@ -1247,7 +1246,7 @@ don't have to point to the test files, just the files that are being
 tested. For most of our programs, that means doing something like
 this in the preprocessors statement:
 
-	'Source/\*\*/\*.js'
+ 'Source/\*\*/\*.js'
 
 When you get it right, you should see Coverage produce an HTML file
 for each JavaScript file in your Source directory.
@@ -1276,12 +1275,11 @@ HTML files. Open the files in your browser.
 
 ![Coverage of Simpler Controller](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/cloud/Coverage01.png)
 
-
 ## Grunt
 
 You can also use Grunt to run jshint.
 
-	grunt jshint
+ grunt jshint
 
 ## Mocking Objects with $httpBackend
 

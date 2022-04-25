@@ -35,6 +35,7 @@ It should contain to methods:
             showDebug(request.responseText);
         }
 ```
+
 Put this method inside a simple JavaScript and return that object at the bottom of the file, per the usual system for require.
 
 Some files that you might have in your project:
@@ -47,7 +48,7 @@ Some files that you might have in your project:
 - Utilities.js - Any simple routine that you want to be able to reuse
 - Main.js - The require file
 
-You could also go to GenMyModel, create an account, and draw a UML diagram of your project. 
+You could also go to GenMyModel, create an account, and draw a UML diagram of your project.
 
 ## Display a Simple Particle System
 
@@ -170,7 +171,7 @@ Here is the Npc000.json:
 ]
 ```
 
-##Load Shapes
+## Load Shapes
 
 For this code to work, you need to get **OBJMTLLoader.js** and **MTLLoader.js**.  These files are from the examples directory in Mr. Doops big zip file that you get from the [threejs downloads page](http://threejs.org/). I think it is wise it download the whole zip file, unzip it, then get a copy of **three.js** from the **build** folder and the other files from: **examples\js\loaders**. Here is the Shapes.js file, that you should not have to modify:
 
@@ -265,7 +266,7 @@ Here are the two pieces of the 20facestar object wrapped in a zip file. I think 
 
 - [20FaceStar](http://www.elvenware.com/charlie/downloads/20facestar.zip)
 
-If you have trouble working with these files, let me know. I orignally got them here: 
+If you have trouble working with these files, let me know. I orignally got them here:
 
 - [TurobSquid](http://www.turbosquid.com/FullPreview/Index.cfm/ID/535674)
 
@@ -277,7 +278,7 @@ For those who want to start creating their own shapes, here is blender:
 
 It is open source and works on Windows, Linux and the Mac. There are, no doubt, better 3D tools out there, but this one is good, and it is free and cross platform.
 
-##Turn it in
+## Turn it in
 
 Put your project in your repository as Week05_Particles.
 Attach a bitmap showing the UML diagram you created.

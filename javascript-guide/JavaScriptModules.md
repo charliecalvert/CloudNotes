@@ -64,6 +64,7 @@ $(document).ready(function() {
     myObject.run();
 });
 ```
+
 Here is the HTML you can use with a JavaScript file like the one shown
 above:
 
@@ -101,6 +102,7 @@ If you want to use this object, you might right something like this:
 myApp.function1();
 myApp.property1 = 3;
 ```
+
 Here is the same object using the Modular pattern:
 
 ```javascript
@@ -124,14 +126,14 @@ myApp.function1();
 
 Notice that when using the modular pattern we:
 
--   Call new (that is, we create a constructor)
--   We can't directly access the private properties
--   We use the prototype syntax to create a public method.
+- Call new (that is, we create a constructor)
+- We can't directly access the private properties
+- We use the prototype syntax to create a public method.
 
 Part II
 -------
 
-Here is a more complete example of the JavaScript module pattern: 
+Here is a more complete example of the JavaScript module pattern:
 
 ```javascript
 var Point = (function() {
@@ -174,6 +176,7 @@ var Point = (function() {
   //Code omitted here
 }());
 ```
+
 For now, let's call this section of syntax the "wrapping function." The
 parenthesis around the *wrapping function* are simply a means of reminding us that we are creating a wrapping function. By putting an open parenthesis at the start, we signal to ourselves that a wrapping function is about to be declared. Then we can scan down for the closing parens and its accompanying function call: ());
 
@@ -405,19 +408,19 @@ Some half formed thoughts on public and private methods.
 
 When we use prototype, we create public methods:
 
-	Bar.prototype.goober() = function()
+ Bar.prototype.goober() = function()
 
 When we use var foo = function() we create private methods:
 
-	var foo = function() {}
+ var foo = function() {}
 
 To call a private method from a public method, just call it by name:
 
-	foo();
+ foo();
 
 When we call public methods from public methods use this:
 
-	this.goober();
+ this.goober();
 
 There is no simple way to call a public method from a private method using
 our module pattern. Sometimes I create a private method and wrap
@@ -466,12 +469,12 @@ Since MyOjbect2 is a function constructor, it will not work properly unless you 
 References
 ----------
 
--  [JavaScript Modules: A Beginners Guide][js-mod-begin]
--  [Elvenware Objects][elf-objects]
--  [Elvenware Basics Compare Object Functions][compfunc]
--  [http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth][adequate]
--  [http://stackoverflow.com/questions/1114024/constructors-in-javascript-objects][construct]
--  [http://addyosmani.com/resources/essentialjsdesignpatterns/book/\#designpatternsjavascript][addyo]
+- [JavaScript Modules: A Beginners Guide][js-mod-begin]
+- [Elvenware Objects][elf-objects]
+- [Elvenware Basics Compare Object Functions][compfunc]
+- [http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth][adequate]
+- [http://stackoverflow.com/questions/1114024/constructors-in-javascript-objects][construct]
+- [http://addyosmani.com/resources/essentialjsdesignpatterns/book/\#designpatternsjavascript][addyo]
 
 [elf-objects]: /javascript-guide/JavaScriptBasics.html#objects
 [compfunc]: /javascript-guide/JavaScriptBasics.html#compareObjFunc

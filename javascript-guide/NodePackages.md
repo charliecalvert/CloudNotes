@@ -24,7 +24,6 @@ npm install -D babel-loader @babel/core @babel/preset-env webpack
 
 You don't need to put this in **webpack.config.js** if you are using **.babelrc**:
 
-
     module: {
         rules: [
             {
@@ -79,17 +78,17 @@ Also:
 
 All your projects should include a file called **package.json**. To create one from scratch, go to the root of your project and issue this command:
 
-	npm init
+ npm init
 
 You will be presented with a series of prompts to fill out. Just step through them one by one, leaving the ones that don't interest or confuse you blank. When you are done, there will be a file called **package.json** in your current directory.
 
 To add packages to package.json, issue a command like this:
 
-	npm install require --save
+ npm install require --save
 
 This installs the package called **require** into a folder called **node_modules**. It also saves a command to install the package into **package.json**. To reinstall **require** later, just type this command:
 
-	npm install
+ npm install
 
 This command processes **package.json** and automatically installs all the packages you **saved** into it. You can, of course, **save** information about many packages into a single **package.json** file.
 
@@ -122,21 +121,20 @@ Typing all of the above commands is time consuming, error prone and repetitious.
 [pj]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Design/BridgeSailor/package.json
 [bridgeSailor]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/BridgeSailor
 
-
 ## Save to Package.json
 
 To put the thing you installed in package.json use **--save** or **--save-dev**. If it is going to be used on the client side, then use **--save**, if it is debugging or other developer tool that is used only during development, then use **--save-dev**
 
 <pre>
-	npm install "express" --save
-	npm install "karma-script-launcher" --save-dev
+ npm install "express" --save
+ npm install "karma-script-launcher" --save-dev
 </pre>
 
 ## Adding entries to package.json
 
 Usually all you need to do is process **package.json** by typing **npm install**. However, you may occassionally. want to add your own dependency to package.json. Here is how to put a library called **karma-script-launcher** in **package.json**:
 
-	npm install "karma-script-launcher" --save-dev
+ npm install "karma-script-launcher" --save-dev
 
 The command shown above first installs **karma-script-launcher** into **node_modules**. It then adds an entry for it to **package.json**. Then next time you run **npm install** the **karma-script-launcher** package will be installed automatically because it is now included in **package.json**.
 
@@ -153,42 +151,41 @@ This command installs the library, and saves the library name into **package.jso
 | **npm install chai --save**      | install chai into **node_modules** and add **chai** to **package.json**
 | **npm install chai --save-dev**  | install chai into **node_modules** and add **chai** to **package.json** in a section listing packages used during development.
 
-
 ## NPM and Express
 
 You may have a project that depends on express. In such cases, the author of the project will probably create a file called **package.json** that will contain a reference to express. If this file exists, you can just type the following to install express and any other libraries that the project depends upon:
 
-	npm install
+ npm install
 
 Here is the contents of a simple package.json file that installs both express
 and openid as well as a library called mdirp:
 
 ```
-	{
-		"name": "OpenId04",
-		"version": "0.0.1",
-		"private": true,
-		"scripts": {
-			"start": "node ./bin/www"
-		},
-		"dependencies": {
-	    "body-parser": "~1.13.2",
-    	"cookie-parser": "~1.3.5",
-    	"debug": "~2.2.0",
-    	"express": "~4.13.1",
-    	"jade": "~1.11.0",
-    	"morgan": "~1.6.1",
-    	"serve-favicon": "~2.3.0"  	
-		}
-	}
+ {
+  "name": "OpenId04",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+   "start": "node ./bin/www"
+  },
+  "dependencies": {
+     "body-parser": "~1.13.2",
+     "cookie-parser": "~1.3.5",
+     "debug": "~2.2.0",
+     "express": "~4.13.1",
+     "jade": "~1.11.0",
+     "morgan": "~1.6.1",
+     "serve-favicon": "~2.3.0"   
+  }
+ }
 ```
 
 ## Cannot Find Module
 
 One useful tip:
 
-* Delete your **node_modules** folder
-* Try to start your project: **npm start**
+- Delete your **node_modules** folder
+- Try to start your project: **npm start**
 
 You might see something like this:
 
@@ -213,8 +210,8 @@ Study this error message. You are likely to see this error quite frequently. In 
 
 The facts are simple. We often forget to run **npm install**. We make mistakes in our **package.json** files, usually because we forgot to include **--save** when we installed a particular package:
 
-* Correct: npm install jquery --save
-* Incorrect: npm install jquery
+- Correct: npm install jquery --save
+- Incorrect: npm install jquery
 
 They both install **jquery**, but only the first adds an entry to **package.json**.  
 
@@ -242,7 +239,6 @@ Here are a few node packages (libraries) that I often install globally:
     ├─┬ jshint@2.5.0
     ├─┬ karma-cli@0.0.4
     └─┬ npm@1.4.9
-
 
 These are stored here on a typical Linux system:
 
@@ -327,6 +323,7 @@ instance of a program running on the port where you want to launch your
 node server. Usually, fixing this is just a matter of finding the
 SSH or Windows command prompt where the server is running, and pressing
 Ctrl-C to stop the server:
+
 ```
 C:\Git\P282\CanvasGrid>node server.js
   Listening on port :30026
@@ -344,8 +341,8 @@ Many developers use NPM to install server side dependencies, bower to install cl
 
 To begin, we need to create a bower.json file. You can do this in one of two ways:
 
-* Run **bower init**
-* Copy a sample bower.json from elsewhere: **cp $ELF_TEMPLATES/bower.json .**.
+- Run **bower init**
+- Copy a sample bower.json from elsewhere: **cp $ELF_TEMPLATES/bower.json .**.
 
 If you choose the first option, you can take all the defaults for the prompts that you see, or fill in the obvious fields with sensible values. If you choose for the second option, don't forget the period at the end of the text for the copy command. It specifies where you should copy bower.json. In particular, it says: copy it here. The environment variable $ELF_TEMPLATES points at:
 

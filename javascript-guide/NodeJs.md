@@ -129,9 +129,9 @@ One of the key packages that we use is called **express**. If it is not already 
 
 Here are links to express info:
 
-https://www.npmjs.com/package/express
+<https://www.npmjs.com/package/express>
 
-http://expressjs.com/
+<http://expressjs.com/>
 
 At the risk of being redundant, let me add some notes to help you better understand this issue. If we type **npm install express**, then we are saying that we don't want to process all the packages listed in package.json. Instead, we want to install only the express package. If we type **npm install --save express**, then we asking to install express and to save a reference to that package in package.json. (The --save option is now the default.) That means that next time we type **npm install** or the shortcut **npm i**, npm will read **package.json**, see the reference to **express**, and install it. By default, when we ran **express**, **elf-express** or **CreateExpressProject**, **express** was added to **package.json**.
 
@@ -176,7 +176,7 @@ C:\Git\Prog282-Calvert\MyFirstNodeServer>node server.js
 
 Once the server starts, go to your browser, and type the following:
 
-	http://localhost:30025
+ http://localhost:30025
 
 Here is the first, hello world style, node program that you can
 place in the server.js file:
@@ -234,6 +234,7 @@ Here is how to get the server to specify the port:
 ```javascript
 var port = process.env.PORT || 30025;
 ```
+
 By default, we use port 30025 in my Bellevue College classes.
 
 ## Cannot find module XXX
@@ -270,28 +271,28 @@ You can find the HelloExpress program on JsObjects:
 To get started, create a directory called HelloExpress and then switch into
 that directory:
 
-	mkdir HelloExpress
-	cd HelloExpress
+ mkdir HelloExpress
+ cd HelloExpress
 
 The next step will be to install the express library on which this project
 relies. You can do this one of two ways. Both involve issuing commands at
 the shell (command) prompt. You should issue the command in the same
 directory where you place your project. The simplest command looks like this:
 
-	npm install express
+ npm install express
 
 When you are done, you should have a folder called **node_modules** with the
 contents of the express library in it. You can also choose to download a
 global copy of express that you can use in multiple projects:
 
-	npm install -g express
-	npm link express
+ npm install -g express
+ npm link express
 
 After issuing these last two commands, you are set to use Express with your
 current project. If you create another project that uses express, you can give
 it access to the Express library by again issuing this command:
 
-	npm link express
+ npm link express
 
 This will link in express using the global copy downloaded earlier. This
 technique saves disk space, as it means you need only one copy of Express on
@@ -327,10 +328,10 @@ var fs = require('fs');
 var port = process.env.PORT || 30025;
 
 app.get('/', function(req, res) {
-	var html = fs.readFileSync(__dirname + '/Public/index.html');
-	res.writeHeader(200, {"Content-Type": "text/html"});   
-	res.write(html);
-	res.end();
+ var html = fs.readFileSync(__dirname + '/Public/index.html');
+ res.writeHeader(200, {"Content-Type": "text/html"});   
+ res.write(html);
+ res.end();
 });
 
 app.use("/", express.static(__dirname + '/Public'));
@@ -377,7 +378,7 @@ readFileSync method, and then served up by the node web server.
 
 Now start the node webserver by running this command:
 
-	node server.js
+ node server.js
 
 Here is another NODE example that uses express:
 
@@ -438,7 +439,7 @@ page:
 
 The next lines of code defines the action that our program will take if the
 user goes to the root of our site. For instance, if we are running on localhost,
-then the following method is called when the user goes to http://localhost:30025:
+then the following method is called when the user goes to <http://localhost:30025>:
 
 ```javascript
 app.get('/', function(req, res) {
@@ -478,7 +479,7 @@ http://localhost:30025/port
 
 The express library matches up the route designated by the URLs to the app.get
 or app.post method that corresponds to it. For instance, the following URL
-designates a *route* called **dirname**:
+designates a _route_ called **dirname**:
 
 ```code
 http://localhost:30025/dirname
@@ -494,26 +495,26 @@ app.get('/dirname', function(req, result) { etc... })
 Express knows how to handle by HTTP get verbs and HTTP post verbs:
 
 ```javascript
-	app.post('/dirname', function(req, result) { etc... })
+ app.post('/dirname', function(req, result) { etc... })
 ```
 
 More on this later.
 
 For now, you can Read more here:
 
--	<http://expressjs.com/api.html#app.VERB>
+- <http://expressjs.com/api.html#app.VERB>
 
 ## Node Parameters
 
 There are three main ways to get parameters:
 
-* request.query
-    * Use with get
-* request.body
-    * Use with post
-* request.params
-    * For getting url params: route.get('/foo:id')
-    * request.params.id
+- request.query
+  - Use with get
+- request.body
+  - Use with post
+- request.params
+  - For getting url params: route.get('/foo:id')
+  - request.params.id
 
 Suppose you write the following, where a REST parameter is passed as the second parameter to **getJSON**:
 
@@ -552,7 +553,7 @@ This should be last route in the file. It says, in effect: _if none of the other
 We used to use a tool called **bodyParser** when working with post. But
 now we should use connect:
 
-	npm install connect --save
+ npm install connect --save
 
 And in your code:
 
@@ -567,12 +568,12 @@ And then use it:
 
 ```javascript
 app.post('/add', function(request, response) {
-	console.log('add called');
-	console.log(request.body);
-	var operandA = parseInt(request.body.operandA);
-	var operandB = parseInt(request.body.operandB);
-	var result = addingMachine.myObject.add(operandA, operandB);
-	response.send({ "result": result });
+ console.log('add called');
+ console.log(request.body);
+ var operandA = parseInt(request.body.operandA);
+ var operandB = parseInt(request.body.operandB);
+ var result = addingMachine.myObject.add(operandA, operandB);
+ response.send({ "result": result });
 });
 ```
 
@@ -585,7 +586,7 @@ Good job troubleshooting.
 
 There is some background here that I have not covered sufficiently in class. See the routes methods section on this page:
 
-https://expressjs.com/en/guide/routing.html (Links to an external site.)
+<https://expressjs.com/en/guide/routing.html> (Links to an external site.)
 
 In the (slightly updated) NodesRoutes02 (Links to an external site.) program notice that I have two Add methods:
 
@@ -690,6 +691,7 @@ console.log(request.body);
 var operandA = parseInt(request.body.operandA);
 var operandB = parseInt(request.body.operandB);
 ```
+
 The get uses request.query and the post uses request.body. I was trying to explain all this earlier, but I was not giving the subject sufficient weight. The get methods sends the query as part of the URL, the POST methods sends the data a little differently, as a port of the HTTP request body. The practical difference is that we can send much more data back and forth with a post than with a get.
 
 The $.getJSON and $.ajax do the same thing. In fact, $.getJSON calls $.ajax to do the actual work. After a bit, it is simpler to call $.ajax directly, but at first it is easier to call $.getJSON.
@@ -742,7 +744,7 @@ server.js file were in a directory called **src** then the following path
 would be used by **readFileSync**:
 
 ```code
-	C:\\users\\sally\\src\\public\\index.html
+ C:\\users\\sally\\src\\public\\index.html
 ```
 
 If your program were in subdirectory of your home directory on Linux, then the
@@ -758,15 +760,15 @@ Once you have some of the core concepts behind Express under your belt,
 it is time to move on to full Express application. To get started, be
 sure you have both Express and a template library called Pug installed:
 
-	npm install -g express
-	npm install -g pug-cli
+ npm install -g express
+ npm install -g pug-cli
 
 Make sure the express application is on your path. It is usually found
 in AppData/Roaming. For instance, the Express executable is found here
 on my system:
 
 ```code
-	C:\Users\Charlie\AppData\Roaming\npm\node\_modules.bin
+ C:\Users\Charlie\AppData\Roaming\npm\node\_modules.bin
 ```
 
 On some systems it is here:
@@ -787,7 +789,7 @@ node_modules.bin
 Now let Express generate the framework for your application. For instance,
 the following command generates an application called MyApp01:
 
-	express MyApp01
+ express MyApp01
 
 This command creates a directory called MyApp01. Inside it you will find
 one main file and three subdirectories:
@@ -803,7 +805,7 @@ MyApp01/views
 Alternatively, you can do something like this, which provides a library
 called stylus for use with CSS files:
 
-	express -c stylus MyApp02
+ express -c stylus MyApp02
 
 You can read about stylus in more depth later in this document.
 
@@ -836,40 +838,40 @@ Here is a Simple Style Page
 
 ```code
 border-stuff()
-	border solid thin black
+ border solid thin black
 
 body
-	background-color #00AA00
-	padding: 50px
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+ background-color #00AA00
+ padding: 50px
+ font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
 
 a
-	color: #004400
+ color: #004400
 
 nav
-	background-color #00CC00
-	border-stuff(0)
-	padding 25px
-	ul
-		list-style none
-		li
-			display inline
-			border-stuff(0)
-			margin 10px
-			padding 5px
-			background-color #00FF00
+ background-color #00CC00
+ border-stuff(0)
+ padding 25px
+ ul
+  list-style none
+  li
+   display inline
+   border-stuff(0)
+   margin 10px
+   padding 5px
+   background-color #00FF00
 ```
 
 ## Test with Jasmine-Node
 
 First install jasmine-node:
 
-	sudo npm install -g jasmine-node
+ sudo npm install -g jasmine-node
 
 You will also want to install request locally with one of the following:
 
-	npm install request
-	npm install request --save-dev
+ npm install request
+ npm install request --save-dev
 
 The second option saves your command into **package.json**, if **package.json**
 already exists.
@@ -878,7 +880,7 @@ Create a simple route you want to test:
 
 ```JavaScript
 app.get('/hello', function(request, response) { 'use strict';
-	response.send('Hi there.');
+ response.send('Hi there.');
 });
 ```
 
@@ -889,22 +891,22 @@ as **Tests/SimpleSpec.js**:
 var request = require('request');
 
 describe("A suite", function() {
-	it("should respond with hello world", function(done) {
-		request("http://localhost:30025/hello", function(error, response, body) {
-			expect(body).toEqual("Hi there.");
-			done();
-		});
-	});
+ it("should respond with hello world", function(done) {
+  request("http://localhost:30025/hello", function(error, response, body) {
+   expect(body).toEqual("Hi there.");
+   done();
+  });
+ });
 });
 ```
 
 Now start your server running in one shell:
 
-	node Server.js
+ node Server.js
 
 Then open a second shell and run your tests:
 
-	jasmine-node Tests/
+ jasmine-node Tests/
 
 Voila! You are done.
 
@@ -942,11 +944,11 @@ In that folder is a directory called **lib** and there is found a file called **
 
 Install nodemon:
 
-	npm install -g nodemon
+ npm install -g nodemon
 
 Now use it to start your application:
 
-	nodemon server.js
+ nodemon server.js
 
 Now you won't have to restart your application each time you change
 the source.
@@ -987,7 +989,7 @@ and try this search (I have not done this in a long time, and need to research h
 
 Start the program like this:
 
-	node --debug-brk server01.js
+ node --debug-brk server01.js
 
 Regardless of the port that you told your program to run on, the debugger
 runs on port 5858:
@@ -1017,9 +1019,9 @@ I am not able to set breakpoints using the tools. Instead, I have to go into
 the code and manually type the word **debugger;** on the line where I want the
 debugger to break. Then I do the following:
 
-* type **node --debug-brk server01.js** at the command line
-* start the debugger in Eclipse, press F8 once to get passed the first breakpoint.
-* launch my program in in the browser: [http://localhost:30025](https://www.example.com)
+- type **node --debug-brk server01.js** at the command line
+- start the debugger in Eclipse, press F8 once to get passed the first breakpoint.
+- launch my program in in the browser: [http://localhost:30025](https://www.example.com)
 
 The program will then stop at my breakpoint:
 
@@ -1027,9 +1029,9 @@ The program will then stop at my breakpoint:
 
 You can step through the debugger with the following keys:
 
-* F5 (Step into)
-* F6 (Step over)
-* F8 (Continue - run)
+- F5 (Step into)
+- F6 (Step over)
+- F8 (Continue - run)
 
 ![Viewing the request.query object in the debugger](https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/javascript/NodeDebug03.png)
 
@@ -1062,7 +1064,7 @@ If your version of the server is located elsewhere, then change the
 line as necessary. For instance:
 
 ```bash
-	exec /usr/bin/nodejs /home/belinda/bin/server.js
+ exec /usr/bin/nodejs /home/belinda/bin/server.js
 ```
 
 Note that I replaced charlie/ExpressSend with belinda/bin. You
@@ -1078,34 +1080,34 @@ ln -s /home/ubuntu/Git/Prog282-Hints/CanvasGrid03 CanvasGrid
 If you give that command in your home directory, then you will end
 up with a directory that looks like this:
 
-	/home/ubuntu/CanvasGrid
+ /home/ubuntu/CanvasGrid
 
 The point, of course, is that this new directory is an alias, soft
 link to the CanvasGrid03 directory.
 
 Place ExpressSend.config in the /etc/init directory:
 
-	/etc/init/ExpressSend.config
+ /etc/init/ExpressSend.config
 
 The command to copy it to appropriate directory would be:
 
-	sudo cp ExpressSend.config /etc/init/.
+ sudo cp ExpressSend.config /etc/init/.
 
 Once the file is in the /etc/init directory, you can start your
 program by typing the following:
 
-	sudo start ExpressSend
+ sudo start ExpressSend
 
 You can stop it with following command:
 
-	sudo stop ExpressSend
+ sudo stop ExpressSend
 
 When you reboot the system, your program will start automatically.
 
 Error messages and other output from your program are recorded in
 the following location:
 
-	/var/log/node.log
+ /var/log/node.log
 
 If you examine the script, you can see that this file name is configurable.
 
@@ -1140,7 +1142,6 @@ the /home/charlie/git/MyProgram part of the path. Of course, on your
 system that bit of the path will probably be different. Here is more
 information on dirname:
 
-
 - [__dirname](http://nodejs.org/docs/latest/api/globals.html#globals_dirname)
 
 ## More on Upstart
@@ -1154,35 +1155,35 @@ exec /usr/bin/nodejs /home/ubuntu/ExpressSend/server.js >> /var/log/node.log 2>&
 
 This command has three parts that we need to get write:
 
-* **exec** - This command executes a process or program.
-* **/usr/bin/nodejs** - This parameter points at our nodejs program. This is the program to be executed
-* **/home/ubuntu/ExpressSend/server.js** - This is the path to the script that nodejs will run.
+- **exec** - This command executes a process or program.
+- **/usr/bin/nodejs** - This parameter points at our nodejs program. This is the program to be executed
+- **/home/ubuntu/ExpressSend/server.js** - This is the path to the script that nodejs will run.
 
 Then we redirect the output from the program to a text file called node.log that is located in the /var/log directory:
 
-	>> /var/log/node.log 2>&1
+ >> /var/log/node.log 2>&1
 
 To see the content of that file, run this command:
 
-	cat /var/log/node.log
+ cat /var/log/node.log
 
 That is the most important command when it comes to debugging our UpStart scripts.
 
 Let's talk for a minute more about this strange command:
 
-	>> /var/log/node.log 2>&1
+ >> /var/log/node.log 2>&1
 
 The > character redirects the output from one command to some other place,
 usually a file. So this command sends the output of the echo command to a
 file called foo.txt:
 
-	echo foo > foo.txt
+ echo foo > foo.txt
 
 After the command is run, foo.txt contains the string foo.
 
 This command appends the output of the echo command to foo.txt:
 
-	echo bar >> foo.txt
+ echo bar >> foo.txt
 
 Now foo.txt contains both foo and bar. The > operator will overwrite
 foo.txt, and the >> operator will append data to it.
@@ -1192,7 +1193,7 @@ done with the | symbol.
 
 This part of the command is more complicated:
 
-	2>&1
+ 2>&1
 
 There are actually two streams of output that can occur when we launch a
 program. One is the standard output stream, and that is what we are redirecting
@@ -1212,7 +1213,7 @@ The EADDRINUSE error is [introduced above](#EADDRINUSE). Attemps to fix the erro
 When using UpStart, remember to stop any running programs, such as our
 ExpressSend sample, like this:
 
-	sudo stop ExpressSend
+ sudo stop ExpressSend
 
 You might think that you can tell if a program is running on a port
 by going to browser and seeing if anything comes up when you type in
@@ -1227,7 +1228,7 @@ it might not if you tried to launch something on that port, but it
 failed during the launch. In particular, sometimes an attempt to
 start a node program with UpStart will fail:
 
-	sudo start ExpressSend
+ sudo start ExpressSend
 
 You have to check **/var/log/node.log** to see if there are errors. But
 the port can be munged up even if the program did not start
@@ -1304,51 +1305,51 @@ var path = require("path");
 
 var SimpleDir = (function() {
 
-	function SimpleDir() {
-	}
+ function SimpleDir() {
+ }
 
-	var makeDir = function(folder) {
-		mkdirp(folder);
-	}
+ var makeDir = function(folder) {
+  mkdirp(folder);
+ }
 
-	// Test if a directory exists, if it does not exist create it
-	SimpleDir.prototype.ensureDir = function(folder) {
-		fs.exists(folder, existsFunc);
-	}
+ // Test if a directory exists, if it does not exist create it
+ SimpleDir.prototype.ensureDir = function(folder) {
+  fs.exists(folder, existsFunc);
+ }
 
-	// Synchronous version of directory exists
-	SimpleDir.prototype.ensureDirSync = function(folder) {
-		currentFolder = folder;
-		if (fs.existsSync(folder)) {
-			return fs.statSync(folder);
-		} else {
-			makeDir(folder);
-			return 'successfully created directory';
-		}		
-	};
+ // Synchronous version of directory exists
+ SimpleDir.prototype.ensureDirSync = function(folder) {
+  currentFolder = folder;
+  if (fs.existsSync(folder)) {
+   return fs.statSync(folder);
+  } else {
+   makeDir(folder);
+   return 'successfully created directory';
+  }  
+ };
 
-	// Remove directories recursively
-	// Credit to tkihira: https://gist.github.com/tkihira/2367067
-	SimpleDir.prototype.rmdirSync = function(dir) {
-		var list = fs.readdirSync(dir);
-		for(var i = 0; i < list.length; i++) {
-			var filename = path.join(dir, list[i]);
-			var stat = fs.statSync(filename);
+ // Remove directories recursively
+ // Credit to tkihira: https://gist.github.com/tkihira/2367067
+ SimpleDir.prototype.rmdirSync = function(dir) {
+  var list = fs.readdirSync(dir);
+  for(var i = 0; i < list.length; i++) {
+   var filename = path.join(dir, list[i]);
+   var stat = fs.statSync(filename);
 
-			if(filename == "." || filename == "..") {
-				// pass these files
-			} else if(stat.isDirectory()) {
-				// rmdir recursively
-				this.rmdirSync(filename);
-			} else {
-				// rm filename
-				fs.unlinkSync(filename);
-			}
-		}
-		fs.rmdirSync(dir);
-	};
+   if(filename == "." || filename == "..") {
+    // pass these files
+   } else if(stat.isDirectory()) {
+    // rmdir recursively
+    this.rmdirSync(filename);
+   } else {
+    // rm filename
+    fs.unlinkSync(filename);
+   }
+  }
+  fs.rmdirSync(dir);
+ };
 
-	return SimpleDir;
+ return SimpleDir;
 })();
 
 exports.dirs = new SimpleDir();
@@ -1369,22 +1370,21 @@ dirLib.dirs.rmdirSync('foo');
 
 You can run JSHint from node. First install JSHint:
 
-	npm install -g jshint
+ npm install -g jshint
 
 Now try running JSHint by typing the command **jshint** at the command line.
 If you see an error about the path, then set the following environment variable:
 
-	set HOME=%HOMEPATH%
+ set HOME=%HOMEPATH%
 
 It is a bug in JsHint that makes us do this. On Linux and the Mac you probably
 won't need to set the environment variable.
 
 And finally try running jshint against one of your files:
 
-	jshint index.js
+ jshint index.js
 
 - [See also Node and env](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders)
-
 
 ## Karma and CHROME_BIN
 
@@ -1417,7 +1417,7 @@ If you put the line: **export CHROME_BIN=/usr/bin/chromium-browser** at the end 
 
 The line **source ~/.bashrc** is a way to have the **.bashrc** file executed without having to start a new shell. It executes the line inside the present shell, and it can change the current shell, and particularly the environment variables for the current shell.
 
-http://superuser.com/questions/46139/what-does-source-do
+<http://superuser.com/questions/46139/what-does-source-do>
 
 The point here is this. If you run **source .bashrc**, or if you start a new shell the normal way, then the current shell, the one you are in, is affected. It is a way of making sure that your current shell, the one at whose command line you are currently working, has executed all the commands in **.bashrc**. But if you run a script with the dot (.) command, then a new shell is launched, the script is run, and when it is finished you are returned to the original shell and changes the script made to the environment are forgotten. Consider running our command:
 
@@ -1441,7 +1441,7 @@ Go into one of the projects that uses most of the packages that we have been usi
 
 If you do not have a **temp** directory in your home drive, create one:
 
-	mkdir ~/temp
+ mkdir ~/temp
 
 Now copy or move your folders into this temp directory. Here is the copy command:
 
@@ -1489,7 +1489,7 @@ ln -s ~/temp/components public/.
 
 Save it as **~/bin/nm-links**. Make it executable
 
-	chmod +x ~/bin/nm-links.sh
+ chmod +x ~/bin/nm-links.sh
 
 Now, you can create links to these folders at any time but running the **nm-links** script from the root of your project. (If the folders already exist, then the script will fail.)
 
@@ -1539,9 +1539,7 @@ Ten years ago it was possible to pick a "best" tool for certain tasks. Now, the 
 
 I pick the tools we use very carefully. I don't know how to say this properly, but have faith in me. I am showing you the right products.
 
-
 ## NodeJS on Azure
-
 
 - [Azure and Node JS](https://docs.microsoft.com/en-us/javascript/azure/?view=azure-node-latest)
 
@@ -1554,7 +1552,6 @@ npm install azure node-uuid DSInit /sqlInstance:.
 ## SimpleDb
 
 [https://github.com/rjrodger/simpledb](<https://github.com/rjrodger/simpledb>)
-
 
 Cloud 9
 -------

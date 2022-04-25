@@ -7,10 +7,11 @@ module.exports = {
         "jest": true,
         "jquery": true,
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:jsx-a11y/recommended"],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": ["jsx-a11y"],
     "rules": {
         indent: ['error', 4],
     }

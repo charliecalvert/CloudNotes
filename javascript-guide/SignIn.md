@@ -28,12 +28,12 @@ In **index.jade** we need to to add a **login** menu item:
 
 ```
 ul.nav.nav-pills
-	li(ng-class="{ active: isActive('/')}")
-		a(ng-href='#/') Home
-	li(ng-class="{ active: isActive('/about')}")
-		a(ng-href='#/about') About
-	li(ng-class="{ active: isActive('/login')}")
-		a(ng-href='#/login') Log In
+ li(ng-class="{ active: isActive('/')}")
+  a(ng-href='#/') Home
+ li(ng-class="{ active: isActive('/about')}")
+  a(ng-href='#/about') About
+ li(ng-class="{ active: isActive('/login')}")
+  a(ng-href='#/login') Log In
 ```
 
 ## Routes

@@ -56,8 +56,8 @@ Now open **package.json** and manually modify the **jest** property in **package
     "snapshotSerializers": ["enzyme-to-json/serializer"]
 }
 ```
-For simple programs you probably won't need **transformIgnorePatterns**, but lets put it in just in case. It fixes an error with **export** or **import** being flagged as bad when running tests. If you get an error like that, try this solution.
 
+For simple programs you probably won't need **transformIgnorePatterns**, but lets put it in just in case. It fixes an error with **export** or **import** being flagged as bad when running tests. If you get an error like that, try this solution.
 
 The key portions of my package.json file now look like this:
 
@@ -188,7 +188,7 @@ Snapshots are new to us, but they are simple to use. Each time you call **toMatc
 - A snapshot is taken of the current output from your component
 - The current output of your component is compared to the snapshot
 
-The snapshot is saved as text in a directory called **__snapshots__**.
+The snapshot is saved as text in a directory called ****snapshots****.
 
 If you intentionally change the output of your component, then you can update the snapshot with this command:
 
@@ -198,7 +198,7 @@ npm test -u
 
 Or issue the same command with yarn.
 
-Multiple snapshots get saved in your **__snapshots__** directory in a file named after the file name of your test suite. For instance, if you call **toMatchSnapshot()** three times in one suite, there will be three snapshots in the file named after your suite. The first snapshot in the file reflects the state of your component after you first call **toMatchSnapshot()**, the second snapshot in that same file, reflects the state of your component the second time you call **toMatchSnapshot()**, and so on. Therefore, the first call can reflect what you component produces before you press a button, the second what it looks like after you press a button. This means we don't have to write separate tests for **firstName**, **lastName**, etc. Instead, we can see what all the fields look like before we click the button, and the again after we click the button.
+Multiple snapshots get saved in your ****snapshots**** directory in a file named after the file name of your test suite. For instance, if you call **toMatchSnapshot()** three times in one suite, there will be three snapshots in the file named after your suite. The first snapshot in the file reflects the state of your component after you first call **toMatchSnapshot()**, the second snapshot in that same file, reflects the state of your component the second time you call **toMatchSnapshot()**, and so on. Therefore, the first call can reflect what you component produces before you press a button, the second what it looks like after you press a button. This means we don't have to write separate tests for **firstName**, **lastName**, etc. Instead, we can see what all the fields look like before we click the button, and the again after we click the button.
 
 ## Second Example
 

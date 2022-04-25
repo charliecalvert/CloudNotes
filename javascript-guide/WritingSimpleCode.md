@@ -24,9 +24,9 @@ When in doubt, go back to the [index](index.html).
 
 Large parts of the web are driven by three related technologies: HTML, CSS and JavaScript. The differences between these technologies can blur at times, but the following assertions may help you understand the primary purpose of each component:
 
--   **HTML** files contain content such as text, bitmaps or videos
--   **CSS** let's you define how the content should appear
--   **JavaScript** allows you to perform actions that animate that content
+- **HTML** files contain content such as text, bitmaps or videos
+- **CSS** let's you define how the content should appear
+- **JavaScript** allows you to perform actions that animate that content
 
 It is possible to completely scramble these rolls. You can put content in JavaScript files and use HTML to define the appearance of your content. It is not, however, good practice to do these things. I prefer to take a relatively hard line, and to insist that:
 
@@ -42,21 +42,21 @@ I maintain a script for [installing node][node-install].
 
 You can check your node version like this:
 
-<pre>
+```bash
 $ node --version
 v6.7.0
-</pre>
+```
 
 After you install Node, you can generally upgrade it this way:
 
-<pre>
+```bash
 sudo apt-get update
 sudo apt-get upgrade
-</pre>
+```
 
 Here is a list of various ES6 functions and their support in NodeJs:
 
-http://node.green/
+<http://node.green/>
 
 ## Hello World at the Command Prompt
 
@@ -76,7 +76,6 @@ Frankly, I know little of these alternative JavaScript or JavaScript-like engine
 After installing node, create a simple source file like this one:
 
 ```javascript
-
 function gettingStarted(count) {
     for (var i = 0; i < count; i++) {
         console.log("I'm getting started");
@@ -90,10 +89,9 @@ Save the file as **getting-started.js**. To run the program, type the following 
 
   node getting-started.js
 
-
 for instance
 
-```
+```shell
 $ node getting-started.js
 I'm getting started
 I'm getting started
@@ -116,7 +114,7 @@ I stated earlier, that I do not like the practice of embedding JavaScript direct
 
 **Listing 01: Hello world in JavaScript.**
 
-```javascript
+```html
 <!DOCTYPE html>
 <html>
 
@@ -141,7 +139,7 @@ I stated earlier, that I do not like the practice of embedding JavaScript direct
 
 Just to be clear, the offending lines are the following:
 
-```javascript
+```html
 <script type="text/javascript">
   document.getElementById("simple").innerHTML = "A very simple JavaScript Hello-World program.";    
 </script>
@@ -166,7 +164,7 @@ You can see the path to the file in the address bar. This is a normal Windows pa
 
 By now you understand that embedding JavaScript in an HTML file is a dangerous practice, like experimenting with crack or opiates. So how can we separate our HTML and JavaScript? The solution is simple.
 
-**Listing 03: The very-simple-02.html file**
+### Listing 03: The very-simple-02.html file
 
 ```javascript
 <!DOCTYPE html>
@@ -191,7 +189,7 @@ By now you understand that embedding JavaScript in an HTML file is a dangerous p
 
 ```javascript
 window.onload = function() {
-	document.getElementById("simple").innerHTML = "A very simple JavaScript Hello-World program.";
+ document.getElementById("simple").innerHTML = "A very simple JavaScript Hello-World program.";
 }
 ```
 
@@ -199,8 +197,10 @@ window.onload = function() {
 
 When running the code in Listings 03 and 04, you should be sure to put both files in the same directory. For instance, you may have a folder called **C:\\Source** or **~/Source** where you store your source files. Put both files in that directory:
 
+```bash
     Source/very-simple-02.html
     Source/very-simple.js
+```
 
 Run this program just as you did the first example. Alternatively, you can see it in action here:
 
@@ -217,7 +217,7 @@ This instructs the browser to load the **very-simple.js** file into memory where
 This bit of JavaScript code scans through the HTML file and returns a handle to the paragraph element that his the ID **simple**:
 
 ```javascript
-	document.getElementById("simple")
+ document.getElementById("simple")
 ```
 
 To this we add the following, which inserts some text into the paragraph:
@@ -243,9 +243,9 @@ Note that we also make a call to **onload**. We do this to be sure that the HTML
 
 It is a good practice to always separate your HTML code into three files:
 
--   Put your content in HTML files with an HTML extension: MyFile.html
--   Put your presentation code in CSS files with a CSS extension: MyFile.css
--   Put your JavaScript in JavaScript files with JS extension: MyFile.js
+- Put your content in HTML files with an HTML extension: MyFile.html
+- Put your presentation code in CSS files with a CSS extension: MyFile.css
+- Put your JavaScript in JavaScript files with JS extension: MyFile.js
 
 If you need to use the same CSS or JavaScript in multiple HTML files,
 then it is obvious that it is best to put that CSS or JavaScript in a
@@ -259,28 +259,28 @@ But suppose you CSS or JavaScript that you only wanted to use in one
 file? Why should you split them up into three files? Wouldn't it mean
 that:
 
--   Your code ran faster because there would be one download instead of
+- Your code ran faster because there would be one download instead of
     3?
--   It would be easier to make sure that code that belonged together
+- It would be easier to make sure that code that belonged together
     never got separated?
 
 The answer to both these questions is yes. And still, despite these
 arguments, I think you should always separate your code out into three
 files. I believe this for the following reasons:
 
--   It promotes good habits
--   More often than you think, there will come a time when you will want
+- It promotes good habits
+- More often than you think, there will come a time when you will want
     to use the CSS or JavaScript in a second HTML file. If it is not
     already split out into multiple files, then you will get lazy and
     copy it from one file to another, ending up with duplicate code.
--   Ultimately, it is easier to write good clean, easy to read, and easy
+- Ultimately, it is easier to write good clean, easy to read, and easy
     to maintain code if you don't mix different types of source in a
     single file
--   And finally, there are tools that can be run over HTML files before
+- And finally, there are tools that can be run over HTML files before
     you release them that will automatically consolidate them into a
     single file.
 
-*NOTE: This last point is not really as good an argument as it sounds.
+- NOTE: This last point is not really as good an argument as it sounds.
 Ultimately, I believe you are better off with a maintainable code base
 that runs a bit slow, than you are with a fast code base that is
 impossible to understand, maintain or improve. Furthermore, most
@@ -302,12 +302,12 @@ I should say a word about the case of the file names I create. There are
 six different ways to name files, three of which are wrong, and three of
 which are right:
 
-1.  file01.html
-2.  vrysmpl.html
-3.  verysimple.html
-4.  very\_simple.html
-5.  very-simple.html
-6.  VerySimple.html
+1. file01.html
+2. vrysmpl.html
+3. verysimple.html
+4. very\_simple.html
+5. very-simple.html
+6. VerySimple.html
 
 The first example is wrong because the name has no meaning: it tells you
 nothing about the contents of the file. The second name is wrong because
@@ -364,10 +364,10 @@ Ultimately, the choice you make between the last three "correct"
 examples is a matter of personal taste. There are only two primary
 caveats you need to keep in mind:
 
--   Whatever strategy you pick: stick with it! Once you have decided on
+- Whatever strategy you pick: stick with it! Once you have decided on
     a strategy then you, and everyone who works with you, must stick to
     that strategy in all the code you produce.
--   If you go to work for a shop that has already adopted a strategy,
+- If you go to work for a shop that has already adopted a strategy,
     then you must happily conform with it. A good manager will work with
     you, and have patience while you come to see the error of your ways.
     Bad managers will simply make your life miserable until you either
@@ -427,16 +427,15 @@ last subject to cover. A key tool developers use when debugging their
 code, and when they are exploring JavaScript, is a call to
 **console.log**:
 
-~~~~ {.code}
+```javascript
 console.log("This is a a debug message");
-~~~~
+```
 
-Console.Log
------------
+## Console.Log
 
 You can use console.log to log debug information.
 
-	console.log('This line of code executed');
+ console.log('This line of code executed');
 
 If you run your JavaScript in a browser, then use the Browser's debugger to
 view the results. For instance, in Chrome, press F12 to bring up the
@@ -456,9 +455,9 @@ reach your goal.
 
 Begin your the same basic HTML file described above:
 
-**Listing 05: The HTML File**
+### Listing 05: The HTML File
 
-~~~~ {.code}
+```html
 <!DOCTYPE html>
 <html>
 
@@ -471,7 +470,7 @@ Begin your the same basic HTML file described above:
 <body>    
 </body>
 </html>
-~~~~
+```
 
 As you can see, the code shown in Listing 5 is similar to the code found
 in Listing 3. The only difference is that the source file linked in is
@@ -480,7 +479,7 @@ for **Calculator.js**:
 
 Listing 06: Code that uses console.log.
 
-~~~~
+```javascript
     function add(a, b) {
         return a + b;
     }
@@ -489,7 +488,7 @@ Listing 06: Code that uses console.log.
       var sum = add(2, 3);
       console.log(sum);
     };
-~~~~
+```
 
 Launch your HTML file in Chrome. Press F12 or Ctrl-Shift+I to open the
 Developer Tools and turn to the console page. You should see the output from
@@ -505,7 +504,7 @@ In the screen shot, you can see the output of the call to **console.log**.
 I have also used the Chrome console window to explicitly type in some
 code:
 
-	add(6,12)
+ add(6,12)
 
 After typing this code, my JavaScript method is called, and the result of the
 call to the **add** method is shown. This technique can be used to help you
@@ -524,8 +523,7 @@ checking the results of calls to **console.log**. You can visually confirm the
 results, but that is not that same as getting an automated error report such
 as you get from **qUnit**.
 
-Learn More
-----------
+## Learn More
 
 Here is a rendering of the hidden code that prints the first two lines
 found on this page:

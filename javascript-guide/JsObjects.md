@@ -13,5 +13,3 @@ image: ./course/course-javascript.jpg
 
 <!-- toc -->
 <!-- tocstop -->
-
-

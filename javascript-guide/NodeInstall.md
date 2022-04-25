@@ -26,7 +26,7 @@ Subjects covered include:
 
 For Windows, the node install is found here:
 
-* [http://nodejs.org/](http://nodejs.org/)
+- [http://nodejs.org/](http://nodejs.org/)
 
 You should have little trouble downloading and install the application on Windows.
 
@@ -34,14 +34,14 @@ You should have little trouble downloading and install the application on Window
 
 If you want to install the latest version of node and npm on Linux, you have two choices:
 
-* NodeSource.com (This is the system install of node, you main version)
-* Node Version Manager (This allows you to easily switch between versions.)
+- NodeSource.com (This is the system install of node, you main version)
+- Node Version Manager (This allows you to easily switch between versions.)
 
 You can use either or both.
 
 It is **not recommended** to use the following, because it installs a very old version of nodejs. Maybe someday it will start working properly again:
 
-	sudo apt-get install nodejs npm // DON'T DO THIS!
+ sudo apt-get install nodejs npm // DON'T DO THIS!
 
 To install node properly, do something like this:
 
@@ -61,11 +61,11 @@ The lines shown above will install node version 4.X.
 
 There is reason to believe that the code shown in the lines above will become fairly stabal, but it has changed frequently over the last years. As a result, you might find it useful to view the script that I store in JsObjects. I try to maintain it and track the latest version:
 
-* <https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/NodeInstall.sh>
+- <https://github.com/charliecalvert/JsObjects/blob/master/Utilities/NodeInstall/NodeInstall.sh>
 
 Or look here:
 
-* <https://github.com/nodesource/distributions>
+- <https://github.com/nodesource/distributions>
 
 You should confirm that node is at least at version 4.0.0:
 
@@ -82,6 +82,7 @@ charliecalvert@charlie-winter-2015
 ~/Git/JsObjects/Utilities/NodeInstall
 $ ./NodeInstall.sh
 ```
+
 Running it might look a bit like this:
 
 ```
@@ -111,11 +112,11 @@ Node does not come installed on most systems, but it is easy to check if it is
 already on your system. Here is one simple test to see if it
 is installed:
 
-	node --help
+ node --help
 
 Alternatively, you can try:
 
-	nodejs --help
+ nodejs --help
 
 If you don't get an error message, then it is installed. In particular, you
 should see output showing available commands.
@@ -126,13 +127,13 @@ be a link to start a Node Command prompt, or to run Node interactively.
 
 On Linux, Node is usually installed here:
 
-	/usr/bin/node
-	/usr/bin/nodejs
+ /usr/bin/node
+ /usr/bin/nodejs
 
 On Linux, you can use the **which** command to find the location of a program. For instance:
 
-	$ which nodejs
-	/usr/bin/nodejs
+ $ which nodejs
+ /usr/bin/nodejs
 
 If that does not work, then NodeJs is probably not properly installed.
 
@@ -156,21 +157,19 @@ Most NPM packages are installed only for a particular project. They have local s
 
 On **Windows**, install them like this:
 
-
-	npm install -g karma-cli
-	npm install -g grunt-cli
-	npm install -g jasmine-node
-	npm install -g express-generator
-	npm install -g nodemon
-	npm install -g mocha
-
+ npm install -g karma-cli
+ npm install -g grunt-cli
+ npm install -g jasmine-node
+ npm install -g express-generator
+ npm install -g nodemon
+ npm install -g mocha
 
 On **Windows**, this typically installs express into your **AppData/Roaming** directory.
 
 To issue the same commands on **Linux**, you need to do some setup:
 
-	mkdir ~/npm
-	npm config set prefix ~/npm
+ mkdir ~/npm
+ npm config set prefix ~/npm
 
 Then add this to the bottom of your .bashrc:
 
@@ -210,7 +209,7 @@ The **-g** bit ensures that we look only at globally installed packages. We use 
 
 To make sure npm is configured correctly, type the following:
 
-	npm config list
+ npm config list
 
 One Windows, it might look something like this:
 
@@ -266,7 +265,7 @@ Many node program rely on a library called express. Express is not built into No
 
 To install **express**, we typically issue the following command from the root of our project:
 
-	npm install express --save
+ npm install express --save
 
 This will install a local copy of express in a directory called **node_modules**.  The **--save** switch saves the command to install express into a file called **package.json**. Once express is saved into **package.json** you can reinstall it by simply typing **npm install**. You can **--save** multiple packages into **package.json**. Then you can reinstall them at any time by simply typing **npm install**. You would want to do this if you move the project to a new system, or if you deleted the **node_modules** directory. The **package.json** file also helps if you give your project to another developer. Then they can install all the needed libraries by just type **npm install**.
 
@@ -274,7 +273,7 @@ This will install a local copy of express in a directory called **node_modules**
 
 Any other libraries you install will also end up in this directory. For instance, if you want to installed the openid library, you would issue this command:
 
-	npm install openid --save
+ npm install openid --save
 
 Now the **node_modules** directory will contain libraries: express and openid.
 
@@ -283,42 +282,42 @@ What Version of a Node Package is Installed?
 
 Use the following syntax to identify the latest version of a package:
 
-	npm show [PackageName] version
+ npm show [PackageName] version
 
 This is not showing the version you have installed, but the latest version that
 is available on the net.
 
 For instance:
 
-	G:\Src\Git\MyStuff>npm show voxel-engine version
-	npm http GET https://registry.npmjs.org/voxel-engine
-	npm http 200 https://registry.npmjs.org/voxel-engine
-	0.16.3
+ G:\Src\Git\MyStuff>npm show voxel-engine version
+ npm http GET https://registry.npmjs.org/voxel-engine
+ npm http 200 https://registry.npmjs.org/voxel-engine
+ 0.16.3
 
 This means that the package voxel-engine is at version 0.16.3.
 
 To find the owner of a package, enter the following:
 
-	npm owner ls [package]
+ npm owner ls [package]
 
 For instance:
 
-	G:\Src\Git\voxel-hello-world>npm owner ls voxel-hello-world
-	npm http GET https://registry.npmjs.org/voxel-hello-world
-	npm http 200 https://registry.npmjs.org/voxel-hello-world
-	maxogden <EMAIL ENDS UP HERE>
+ G:\Src\Git\voxel-hello-world>npm owner ls voxel-hello-world
+ npm http GET https://registry.npmjs.org/voxel-hello-world
+ npm http 200 https://registry.npmjs.org/voxel-hello-world
+ maxogden <EMAIL ENDS UP HERE>
 
 To update all the packages you have installed globally:
 
-	npm update -g
+ npm update -g
 
 To update a specific global package such as grunt:
 
-	npm update -g grunt
+ npm update -g grunt
 
 To update a local package such as grunt:
 
-	npm update grunt
+ npm update grunt
 
 Remember that your globally installed file are placed in your AppData |
 Roaming | npm folder. The path on your system might look something
@@ -329,9 +328,10 @@ C:\Users\Charlie\AppData\Roaming\npm\node_modules
 ```
 
 ## NPM Latest Packages
+
 It is nice to know that your project is using the latest packages. You can do this by running the **npm outdated** command:
 
-	npm outdated
+ npm outdated
 
 If you first delete your **node_modules** folder, and then run it, you might see output like this:
 
@@ -391,48 +391,47 @@ We can do the same for all the packages we are using. Then run **npm update** af
 
 You get the same output if you run **npm outdated** if you have a **node_modules** directory, but you may see reports on the nested packages in the **node_modules**. That information may not be useful. As a result, it might be best to start by deleting the folder:
 
-	rm -r node_modules
+ rm -r node_modules
 
 ## Update NPM in Ubuntu
 
 We usually want to work with a recent version of NPM. For instance, version 1.4.28. We should be able to update it fairly. Here is the standard technique, but don't do this quite yet:
 
-	sudo npm update -g npm // DON'T DO THIS
+ sudo npm update -g npm // DON'T DO THIS
 
 It is not a good idea to install NPM global or local packages with sudo. We should instead configure NPM to install global updates into our home folders, or into  updates locally to our npm folder, so that we don't have to worry sudo permissions. We set that up by typing the following command:
 
-	npm config set prefix ~/npm
+ npm config set prefix ~/npm
 
-This sets where we install global files as explained here: https://docs.npmjs.com/misc/config#prefix.
+This sets where we install global files as explained here: <https://docs.npmjs.com/misc/config#prefix>.
 
 We want to do this. It is a best practice. However, when we type **npm update -g npm** it updates our **~/npm** version of **npm** and not the one in **/usr/bin**. Of course, the one in **/usr/bin/** is the one that is on our path. So now we have outdated version of NPM that we can reach and an updated version that we can't access. I suppose we have two solutions. The first looks like this, where we begin by updating the local copy of NPM:
 
-	npm update -g npm
-	sudo rm /usr/bin/npm
-	sudo ln -s ~/npm/bin/npm /usr/bin/npm
+ npm update -g npm
+ sudo rm /usr/bin/npm
+ sudo ln -s ~/npm/bin/npm /usr/bin/npm
 
 That should create a [symbolic link](http://www.computerhope.com/unix/uln.htm) to the copy of NPM in our **/usr/bin** folder to the one in our **~/npm/bin/npm**. Then we should be on the latest. At the time of this writing, that looks like.
 
-	$ npm --version
-	2.4.1
+ $ npm --version
+ 2.4.1
 
 Alternatively, I think we could temporarily set the **prefix** to **/usr/bin:**
 
-	npm config set prefix /usr/bin
-	sudo npm update -g npm
+ npm config set prefix /usr/bin
+ sudo npm update -g npm
 
 Then check your work:
 
-	$ npm --version
-	2.4.1
+ $ npm --version
+ 2.4.1
 
 Then set the prefix back to ~/npm
 
-	npm config set prefix ~/npm
+ npm config set prefix ~/npm
 
-##Error: Cannot find module
+## Error: Cannot find module
 One of the classic Node errors looks like this:
-
 
     node Server.js
 
@@ -467,7 +466,6 @@ Now try checking your npm version again:
 >npm --version
 3.3.4np
 ```
-
 
 A final thing to check is if the global node packages that we have installed are up to date:
 
@@ -601,7 +599,7 @@ called NODE_PATH set up correctly. To fix the problem, simply add
 the correct path to your global node_modules directory to your
 path:
 
-	set NODE_PATH=C:\\Users\\Charlie\\AppData\\Roaming\\npm\\node_modules
+ set NODE_PATH=C:\\Users\\Charlie\\AppData\\Roaming\\npm\\node_modules
 
 Or, if you want, use the environment dialog as explained above.
 
@@ -613,24 +611,23 @@ Node and Environment Variables
 If you have set a global environment variable called JSOBJECTS, you
 can access it like this:
 
-	process.env.JSOBJECTS
+ process.env.JSOBJECTS
 
 Suppose you set JSOBJECTS to C:\Temp\JsObjects:
 
-	set JSOBJECTS=C:\Temp\JsObjects
+ set JSOBJECTS=C:\Temp\JsObjects
 
 Now you can access this variable inside your node code:
 
-	var jsObjects = process.env.JSOBJECTS;
+ var jsObjects = process.env.JSOBJECTS;
 
 ## NVM: The Node Version Manager
 
 Install the Node Version Manager on Linux so you can easily switch between versions of node. The Node Version Manager is designed primarily for Linux or Apple.  
 
-* [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
+- [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
 
 **NOTE**: *NVM is a great tool if you have a need to switch between versions of node. Otherwise, it can be overkill. If all your code runs find on the latest version of node, or on the currently installed version of node, then you can skip this section.*
-
 
 To install NVM, do this:
 
@@ -653,15 +650,14 @@ If you want to switch back to the system version installed from nodesource.com, 
 
     nvm use system
 
-
 ## NPM Link
 
 The following is an advanced technique and not used by most developers. It can allow you to maintain a single global copy of a library, and then reference it from your local project. In general, it is better to simply have multiple copies of your projects since that assures that you have the correct version of each library. But if you are continually using the same version of some library in many projects, then the **link** command can be useful. If you are in doubt, don't try to use this feature. It is not essential.
 
 To link express into your project, go to the root of your project and type the following:
 
-	npm link express.
+ npm link express.
 
 To update node, type the following
 
-	sudo npm install npm -g
+ sudo npm install npm -g

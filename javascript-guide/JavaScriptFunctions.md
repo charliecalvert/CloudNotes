@@ -65,16 +65,16 @@ Somewhat unexpectedly, functions are like any other value in JavaScript. In part
 
 Because functions are objects, you can do many of the same things with them that you can do with a **string,** **number**or **object**. For instance, you can:
 
--   Store them in a variable
--   Put them in an **array**
--   Pass them to a **function**, or return them from a function.
+- Store them in a variable
+- Put them in an **array**
+- Pass them to a **function**, or return them from a function.
 
 Because functions are objects, you can do the same things with them that
 you can do with any other object. For instance, you can give them properties
 and methods. Note that functions also have:
 
--   a **constructor**, which is a particularly powerful tool.
--   a **prototype** property.
+- a **constructor**, which is a particularly powerful tool.
+- a **prototype** property.
 
 We will discuss **prototypes** in more depth later on in this document. The key
 point to grasp at this point is simply that all functions automatically get
@@ -160,11 +160,11 @@ function simple() {
 
 This declaration has the following parts:
 
--   The keyword **function**
--   A name, which in this case is **Test01**
--   A parameter list, which in this case is empty. The parameter list
+- The keyword **function**
+- A name, which in this case is **Test01**
+- A parameter list, which in this case is empty. The parameter list
     appears between an open and close paranthesis: ()
--   An implementation, which appears between curly braces: {}. In this
+- An implementation, which appears between curly braces: {}. In this
     case we declare a variable, and then use jQuery to show its value in
     a web page.
 
@@ -257,7 +257,7 @@ called **operandA** and **operandB**:
 
 ```javascript
 function multiply(operandA, operandB) {
-		return operandA * operandB;
+  return operandA * operandB;
 }
 ```
 
@@ -307,13 +307,13 @@ nevertheless access the arguments that are passed in to it:
 
 ```javascript
 function add() {
-	if (arguments.length === 2) {
-		return arguments[0] + arguments[1];
-	} else if (arguments.length === 1) {
-		return arguments[0] * 2;
-	} else {
-		throw('You must pass in either one or two parameters.');
-	}
+ if (arguments.length === 2) {
+  return arguments[0] + arguments[1];
+ } else if (arguments.length === 1) {
+  return arguments[0] * 2;
+ } else {
+  throw('You must pass in either one or two parameters.');
+ }
 }
 ```
 
@@ -326,13 +326,13 @@ function UserException(message) {
 }
 
 function add() {
-	if (arguments.length === 2) {
-		return arguments[0] + arguments[1];
-	} else if (arguments.length === 1) {
-		return arguments[0] * 2;
-	} else {
-		throw new UserException('You must pass in either one or two parameters.');
-	}
+ if (arguments.length === 2) {
+  return arguments[0] + arguments[1];
+ } else if (arguments.length === 1) {
+  return arguments[0] * 2;
+ } else {
+  throw new UserException('You must pass in either one or two parameters.');
+ }
 }
 
 
@@ -394,30 +394,29 @@ The key point to grasp is that the function context changes depending on how you
 The change occurs not because of the way you declare a function, but because of the way you invoke it. In particular, there are four
 ways to invoke a JavaScript function:
 
-* As a standalone function
-* As method of an object
-* As a constructor
-* Via **call** or **apply()**
+- As a standalone function
+- As method of an object
+- As a constructor
+- Via **call** or **apply()**
 
 If you are working in a web browser, and you invoke a simple standalone function, then the **this**
 object will usually be the global **window** object that is part of the browser:
 
-	function runMe() { return this; }
-	var functionContext = runMe();
-
+ function runMe() { return this; }
+ var functionContext = runMe();
 
 In the code shown above, functionContext will be the **window** object.
 
 Consider this code:
 
 ```
-	var myObject = {
-		runMe: function() {
-			return this;
-		}
-	}
+ var myObject = {
+  runMe: function() {
+   return this;
+  }
+ }
 
-	var functionContext = myObject.runMe();
+ var functionContext = myObject.runMe();
 ```
 
 In the code shown above, functionContext will be **myObject**.
@@ -425,11 +424,11 @@ In the code shown above, functionContext will be **myObject**.
 And finally, let's look at this example:
 
 ```
-	function RunMe() {
-		console.log(this);
-	}
+ function RunMe() {
+  console.log(this);
+ }
 
-	var functionContext = new RunMe();
+ var functionContext = new RunMe();
 ```
 
 In this last example, we are creating a constructor by invoking the **new**
@@ -439,43 +438,43 @@ Here are all three cases pulled together in a single program from JsObjects
 calld ObjectThis:
 
 ```
-	function runMe() { return this; }
+ function runMe() { return this; }
 
-	var myObject = {
-		runMe: function () {
-			return this;
-		}
-	}
+ var myObject = {
+  runMe: function () {
+   return this;
+  }
+ }
 
-	function RunMe() {
-		$('#test03').append(this instanceof RunMe);
-	}
+ function RunMe() {
+  $('#test03').append(this instanceof RunMe);
+ }
 
-	$(document).ready(function() {
-		"use strict";
-		var functionContext = runMe();
-		$('#test01').append(functionContext === window);
+ $(document).ready(function() {
+  "use strict";
+  var functionContext = runMe();
+  $('#test01').append(functionContext === window);
 
-		var functionContext2 = myObject.runMe();
-		$('#test02').append(functionContext2 === myObject);
+  var functionContext2 = myObject.runMe();
+  $('#test02').append(functionContext2 === myObject);
 
-		var functionContext3 = new RunMe();
-		$('#test04').append(functionContext3 instanceof RunMe);   
-	});
+  var functionContext3 = new RunMe();
+  $('#test04').append(functionContext3 instanceof RunMe);   
+ });
 ```
 
 In **strict** mode, **this** is set to undefined rather than the global object when invoking a standalone method without calling **new**:
 
 ```
 function hello01() {
-	console.log(this);
+ console.log(this);
 }
 
 hello01(); // global object
 
 function hello02() {
-	"use strict";
-	console.log(this);
+ "use strict";
+ console.log(this);
 }
 
 hello02(); // undefined
@@ -485,14 +484,14 @@ hello02(); // undefined
 
 There is no difference from the callers point of view between these two declarations:
 
-	function saveScore() { }
-	var saveScore = function() {};
+ function saveScore() { }
+ var saveScore = function() {};
 
 One is a function named **saveScore** and the other is a variable called
 **saveScore** that references an anonymous function. You can
 call them both like this:
 
-	saveScore();
+ saveScore();
 
 The differences is that the first one has a property called **name** that is
 set to the value **saveScore**, while the second has a property called
@@ -506,12 +505,11 @@ anonymous function ends with a semicolon and the other does not.
 If you are setting up a callback, then you just pass in a variable which is
 the name of a function:
 
-	$("#Button01").click(myButtonClickHandler);
-
+ $("#Button01").click(myButtonClickHandler);
 
 In this case, we don't call the function, that is we don't write this:
 
-	$("#Button01").click(myButtonClickHandler());
+ $("#Button01").click(myButtonClickHandler());
 
 We just pass in its name, as shown in the first of the two examples shown
 above.
@@ -521,8 +519,8 @@ languages where functions are first class members of the language. A
 JavaScript function has all the power of any other object or variable.
 That's why the following are the same:
 
-	function saveScore() { }
-	var saveScore = function() {};
+ function saveScore() { }
+ var saveScore = function() {};
 
 It just doesn't matter whether you are calling a function or a variable that
 points at a function. Both are objects, and both are treated the same.
@@ -771,7 +769,6 @@ $(document).ready(function() {"use strict";
 });
 ```
 
-
 The source is here:
 
 - [JsObjects ObjectDemoCallback](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Objects/ObjectDemoCallback03)
@@ -945,14 +942,14 @@ Inheritance is done most often through the **prototype** property. Declare a bas
 
 ```javascript
 var BaseObject = (function() {
-	'use strict';
+ 'use strict';
 
-	function BaseObject() {
-	}
+ function BaseObject() {
+ }
 
-	BaseObject.prototype.firstName = "Qux";
+ BaseObject.prototype.firstName = "Qux";
 
-	return BaseObject;
+ return BaseObject;
 }());
 ```
 
@@ -960,16 +957,16 @@ Now define the child object:
 
 ```javascript
 var ChildObject = (function() {
-	'use strict';
+ 'use strict';
 
-	function ChildObject() {
-	}
+ function ChildObject() {
+ }
 
-	ChildObject.prototype = new BaseObject();
+ ChildObject.prototype = new BaseObject();
 
-	ChildObject.prototype.lastName = "Garply";
+ ChildObject.prototype.lastName = "Garply";
 
-	return ChildObject;
+ return ChildObject;
 }());
 ```
 
@@ -999,7 +996,6 @@ When we use Pascal case for the first letter of an object, we are saying that mu
     var childObject = new ChildObject();
 
 If we want to use the protype property, then we must instantiate the object with **new**. In other words, prototypal inheritance in JavaScript only works with constructor objects. That is, it only works with objects instantiated with **new**.
-
 
 ## This and That
 

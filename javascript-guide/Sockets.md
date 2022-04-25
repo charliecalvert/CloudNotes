@@ -18,18 +18,19 @@ image: ./course/course-javascript.jpg
 
 This page is primarily about socket.io. There are however, several different options available:
 
- - [WebSocket](http://www.websocket.org/aboutwebsocket.html) is part of HTML5. It keeps a channel open between the server and client. Traditional, connections are open only when we make an ajax call, and are closed after the call. WebSockets are always open, hence real-time updates can be sent along them.
- - socket.io. That is what we use here.
- - 
+- [WebSocket](http://www.websocket.org/aboutwebsocket.html) is part of HTML5. It keeps a channel open between the server and client. Traditional, connections are open only when we make an ajax call, and are closed after the call. WebSockets are always open, hence real-time updates can be sent along them.
+- socket.io. That is what we use here.
 
-##Polling 
+-
+
+## Polling
 WebSockets keep the connection open constantly. It is not polling to see if there are more messages, it stays open. Libraries such as **socket.io** will automatically fall back on polling if the socket is not kept open.
 
-##Ports
+## Ports
 
 Web Sockets use ports 80 and 443, where 443 is https.
 
-##A socket io example.
+## A socket io example.
 
 We can start with a standard express application. We will need to modify:
 
@@ -44,7 +45,7 @@ This application we create receives a message from the server every 1.5 seconds.
 
 In the root folder for your new express application, run this command:
 
-	npm install socket.io --save
+ npm install socket.io --save
 
 This will install the socket.io library and place an entry for installing it in your **package.json** file. When you are done **package.json** might look something like this:
 
@@ -69,11 +70,11 @@ This will install the socket.io library and place an entry for installing it in 
 }
 ```
 
-It's the last line that is most important in the current context. 
+It's the last line that is most important in the current context.
 
 **Note**: *If the version numbers of the libraries in your code differ from what you see above that should not matter. However, if you simply cannot get the program running following the steps outlined here, then consider deleting your **node_modules** directory, replacing your **package.json** with the one shown above. You will, of course, need to run **npm install** to replace your deleted **node_modules** directory.*
 
-##The www File
+## The www File
 
 We radically transform the www file, like this:
 
@@ -112,7 +113,7 @@ server.listen(app.get('port'), function() {
 
 ## Alternate Start
 
-Instead of starting your app with **/bin/www**, it is probably best to create a new file called **/bin/Sockets.js**. Use that file to start the application. This way you can have version of your program that uses sockets (Sockets.js) and one that doesn't (www). 
+Instead of starting your app with **/bin/www**, it is probably best to create a new file called **/bin/Sockets.js**. Use that file to start the application. This way you can have version of your program that uses sockets (Sockets.js) and one that doesn't (www).
 
 Here is **Sockets.js**:
 
@@ -171,7 +172,7 @@ module.exports = {
 };
 ```
 
-##Jade
+## Jade
 
 ```
 extends layout
@@ -193,7 +194,7 @@ block content
   p.display Foo
 ```
 
-##Control
+## Control
 
 ```
 var send;
@@ -240,4 +241,4 @@ Here we don't connect to localhost, but to a specific IP address. Of course, thi
 var socket = io.connect('http://example.com:30025');
 ```
 
-In layout.jade you will need to add a **script** tag that loads **Control.js**. 
+In layout.jade you will need to add a **script** tag that loads **Control.js**.

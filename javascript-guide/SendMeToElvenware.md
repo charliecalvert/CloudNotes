@@ -22,9 +22,9 @@ and JavaScript. Though the differences between the roles played by these
 technologies can blur at times, the following assertions will help you
 get started understanding them:
 
--   HTML allows you to declare or specify content
--   CSS let's you define how the content should appear
--   JavaScript allows you to perform actions that animate the content.
+- HTML allows you to declare or specify content
+- CSS let's you define how the content should appear
+- JavaScript allows you to perform actions that animate the content.
 
 Hello World in the Browser
 --------------------------
@@ -143,10 +143,10 @@ file. Certainly your code will work if you follow that pattern. However,
 I consider it a good practice to always separate your HTML code into
 three files:
 
--   Put your content in HTML files with an HTML extension: MyFile.html
--   Put your presentation code in CSS files with a CSS extension:
+- Put your content in HTML files with an HTML extension: MyFile.html
+- Put your presentation code in CSS files with a CSS extension:
     MyFile.css
--   Put your  JavaScript in JavaScript files with JS extension:
+- Put your  JavaScript in JavaScript files with JS extension:
     MyFile.js
 
 If you need to use the same CSS or JavaScript in multiple HTML files,
@@ -161,27 +161,27 @@ But suppose you CSS or JavaScript that you only wanted to use in one
 file? Why should you split them up into three files? Wouldn't it mean
 that:
 
--   Your code ran faster because there would be one download instead of
+- Your code ran faster because there would be one download instead of
     3?
--   It would be easier to make sure that code that belonged together
+- It would be easier to make sure that code that belonged together
     never got separated?
 
 The answer to both these questions is yes. And still, despite these
 arguments, I think you should always separate your code out into three
 files. I believe this for the following reasons:
 
--   It promotes good habits
--   More often than you think, there will come a time when you will want
+- It promotes good habits
+- More often than you think, there will come a time when you will want
     to use the CSS or JavaScript in a second
     HTML file. If it is not already split out into multiple files, then
     you will get lazy and copy it from one file to another, ending up
     with duplicate code.
--   Ultimate, it is easier to write good clean, easy to read, and easy
+- Ultimate, it is easier to write good clean, easy to read, and easy
     to maintain code if you don't mix different types of source in a
     single file
--   And finally, there are tools that can be run over HTML files before
+- And finally, there are tools that can be run over HTML files before
     you release them that will automatically consolidate them into a
-    single file. 
+    single file.
 
 *NOTE: This last point is not really as good an argument as it sounds.
 Ultimately, I believe you are better off with a maintainable code base
@@ -206,12 +206,12 @@ I should say a word about the case of the file names I create. There are
 six different ways to name files, three of which are wrong, and three of
 which are right:
 
-1.  file01.html
-2.  vrysmpl.html
-3.  verysimple.html
-4.  very\_simple.html
-5.  very-simple.html
-6.  VerySimple.html
+1. file01.html
+2. vrysmpl.html
+3. verysimple.html
+4. very\_simple.html
+5. very-simple.html
+6. VerySimple.html
 
 The first example is wrong because the name has no meaning: it tells you
 nothing about the contents of the file. The second name is wrong because
@@ -268,10 +268,10 @@ Ultimately, the choice you make between the last three "correct"
 examples is a matter of personal taste. There are only two primary
 caveats you need to keep in mind:
 
--   Whatever strategy you pick: stick with it! Once you have decided on
+- Whatever strategy you pick: stick with it! Once you have decided on
     a strategy then you, and everyone who works with you, must stick to
     that strategy in all the code you produce.
--   If you go to work for a shop that has already adopted a strategy,
+- If you go to work for a shop that has already adopted a strategy,
     then you must happily conform with it. A good manager will work with
     you, and have patience while you come to see the error of your ways.
     Bad managers will simply make your life miserable until you either
@@ -386,10 +386,6 @@ in Listing 3. The only difference is that the source file linked in is
 called **Calculator.js** rather than **VerySimple.js**. Here is the code
 for **Calculator.js**:
 
- 
-
- 
-
 Learn More
 ----------
 
@@ -449,8 +445,8 @@ If you are writing the kind of simple program needed to follow along
 with this text, however, I think it is simplest to use the following
 tools:
 
--   notepad++
--   chrome
+- notepad++
+- chrome
 
 Hello World at the Command Prompt
 ---------------------------------
@@ -461,7 +457,7 @@ and one scripts from the command prompt.
 
 Also, see:
 
--   [http://www.phpied.com/javascript-shell-scripting/](http://www.phpied.com/javascript-shell-scripting/)
+- [http://www.phpied.com/javascript-shell-scripting/](http://www.phpied.com/javascript-shell-scripting/)
 
 JavaScript Simple Types
 -----------------------
@@ -539,17 +535,17 @@ just a value like any other in the language, you can do the same things
 with them that you can do with a string or integer. For instance, you
 can:
 
--   Store them in a variable
--   Put them in an **array**
--   Pass them to a **function**
+- Store them in a variable
+- Put them in an **array**
+- Pass them to a **function**
 
 Because functions are objects, you can do the same things with them that
 you can do with any other object:
 
--   You can give them properties and methods
--   They have a constructor, which in this case is the **function**
+- You can give them properties and methods
+- They have a constructor, which in this case is the **function**
     itself
--   They can support inheritance via the **prototype** property. We will
+- They can support inheritance via the **prototype** property. We will
     discuss prototypes in more depth later on in this document.
 
 Here is one way to write a JavaScript function:
@@ -564,10 +560,10 @@ function Test01()
 
 This declaration has the following parts:
 
--   The keyword function
--   A name, which in this case is Test01
--   A parameter list, which in this case is empty
--   An implementation, which appears between curly braces. In this case
+- The keyword function
+- A name, which in this case is Test01
+- A parameter list, which in this case is empty
+- An implementation, which appears between curly braces. In this case
     we declare a variable, and then use jQuery to show its value in a
     web page.
 
@@ -786,10 +782,10 @@ below to modify it
 
 There are four places where it can insert text:
 
--   beforebegin
--   afterbegin
--   beforeend
--   afterend
+- beforebegin
+- afterbegin
+- beforeend
+- afterend
 
 The after and before phrases refer to after and before a tag. Suppose
 you have an element like this:

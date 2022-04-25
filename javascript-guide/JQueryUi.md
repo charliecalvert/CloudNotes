@@ -17,74 +17,74 @@ image: ./course/course-javascript.jpg
 ```html
 
 <style>
-	#anchor {
-		margin: 2px;
-	}
+ #anchor {
+  margin: 2px;
+ }
 
-	#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-	#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-	#sortable li span { position: absolute; margin-left: -1.3em; }
+ #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+ #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+ #sortable li span { position: absolute; margin-left: -1.3em; }
 
 </style>
 
 <script>
 
-	$(function() {
-		$(".accordion").accordion({
-			collapsible: true, active: -1
-		});
-	});
+ $(function() {
+  $(".accordion").accordion({
+   collapsible: true, active: -1
+  });
+ });
 
 
-	function hider()
-	{
-		$('#toggler').hide('Slide');
-	}
+ function hider()
+ {
+  $('#toggler').hide('Slide');
+ }
 
-	function reveal()
-	{
-	    setTimeout(function() {
-		    $("#toggler").removeAttr("style").hide().slideDown();
-		}, 200);
-	}
+ function reveal()
+ {
+     setTimeout(function() {
+      $("#toggler").removeAttr("style").hide().slideDown();
+  }, 200);
+ }
 
 
-	$(function() {
-		$("#myDate").datepicker();
-	});
+ $(function() {
+  $("#myDate").datepicker();
+ });
 
-	$(function() {
-		$("#sortable").sortable();
-		$("#sortable").disableSelection();
-	});
+ $(function() {
+  $("#sortable").sortable();
+  $("#sortable").disableSelection();
+ });
 
-	$(function() {
+ $(function() {
 
-		$("input:submit, a, button", ".demo").button();
+  $("input:submit, a, button", ".demo").button();
 
-		$("button", ".demo").click(
-			function()
-			{
-				$('.buttonDemo').html('You clicked the button');
-			}
-		);
+  $("button", ".demo").click(
+   function()
+   {
+    $('.buttonDemo').html('You clicked the button');
+   }
+  );
 
-		$("input", ".demo").click(
-			function()
-			{
-				$('.buttonDemo').html('You clicked the input');
-			}
-		);		
+  $("input", ".demo").click(
+   function()
+   {
+    $('.buttonDemo').html('You clicked the input');
+   }
+  );  
 
-		$("a", ".demo").click(
-			function()
-			{
-				$('.buttonDemo').html('You clicked the anchor');
-			}
+  $("a", ".demo").click(
+   function()
+   {
+    $('.buttonDemo').html('You clicked the anchor');
+   }
 
-		);
+  );
 
-	});
+ });
 </script>
 ```
 
@@ -113,10 +113,10 @@ jQueryUI javaScript and to jQuery itself:
 
 Here is where you can find the CDN hosted jQuery UI links:
 
--   [http://blog.jqueryui.com/2012/04/jquery-ui-1-8-20/](http://blog.jqueryui.com/2012/04/jquery-ui-1-8-20/)
--   [http://blog.jqueryui.com/2012/04/jquery-ui-1-8-19/](http://blog.jqueryui.com/2012/04/jquery-ui-1-8-19/)
--   [https://developers.google.com/speed/libraries/devguide\#jqueryUI](https://developers.google.com/speed/libraries/devguide#jqueryUI)
--   [http://docs.jquery.com/Downloading\_jQuery\#CDN\_Hosted\_jQuery](http://docs.jquery.com/Downloading_jQuery#CDN_Hosted_jQuery)
+- [http://blog.jqueryui.com/2012/04/jquery-ui-1-8-20/](http://blog.jqueryui.com/2012/04/jquery-ui-1-8-20/)
+- [http://blog.jqueryui.com/2012/04/jquery-ui-1-8-19/](http://blog.jqueryui.com/2012/04/jquery-ui-1-8-19/)
+- [https://developers.google.com/speed/libraries/devguide\#jqueryUI](https://developers.google.com/speed/libraries/devguide#jqueryUI)
+- [http://docs.jquery.com/Downloading\_jQuery\#CDN\_Hosted\_jQuery](http://docs.jquery.com/Downloading_jQuery#CDN_Hosted_jQuery)
 
 For instance:
 
@@ -163,9 +163,9 @@ Above you see an H2 tag with it's class set to ui-widget-header. This is
 the style of most of the headers on this page. It is what gives them
 their three dimensional look. Other important classes include:
 
--   ui-widget
--   ui-widget-header - For headers
--   ui-widget-content - For tags that display normal content.
+- ui-widget
+- ui-widget-header - For headers
+- ui-widget-content - For tags that display normal content.
 
 Learn more here:
 [jQuery Theming API](https://api.jqueryui.com/category/theming/)
@@ -179,18 +179,18 @@ of the bars created by the code shown below to see them in action:
 
 ```html
 <div class="accordion">
-	<h2><a href="#">Margie Start</a></h2>
-	<div>
-		<p>Margie Accordian</p>
-	</div>
-	<h2><a href="#">Charlie Foo</a></h2>
-	<div>
-		<p>Charlie Accordian</p>
-	</div>
+ <h2><a href="#">Margie Start</a></h2>
+ <div>
+  <p>Margie Accordian</p>
+ </div>
+ <h2><a href="#">Charlie Foo</a></h2>
+ <div>
+  <p>Charlie Accordian</p>
+ </div>
 </div>
 ```
 
-The Data Picker:
+The Data Picker
 ----------------
 
 When styled correctly the data picker control, shown below, allows users to just click in the "edit control" shown
@@ -198,11 +198,11 @@ below:
 
 ```
 <div class="demo">
-	<p>Date: <input id="myDate" type="text"></p>
+ <p>Date: <input id="myDate" type="text"></p>
 </div>
 
 <div style="display: none;" class="demo-description">
-	<p>Put text here for optional demo mode comments</p>
+ <p>Put text here for optional demo mode comments</p>
 </div>
 ```
 
@@ -213,11 +213,10 @@ Here are some fancy looking jQuery UI buttons. When clicked they invoke the Java
 
 <p class="buttonDemo" ></p>
 
-
 <div class="demo">
-		<div id="anchor"><a href="#demoHere">Just a plain anchor</a></div>
-		<div><button>Button tag used</button></div>
-		<div><input value="An input tag with type submit" type="submit"></div>
+  <div id="anchor"><a href="#demoHere">Just a plain anchor</a></div>
+  <div><button>Button tag used</button></div>
+  <div><input value="An input tag with type submit" type="submit"></div>
 </div>
 
 Here is the code for the buttons shown above:
@@ -241,12 +240,13 @@ need to click the buttons to make the text slide in and out.
 ### You can hide me by clicking a button below
 
 <div id="toggler">
-	My source looks something like this:
+ My source looks something like this:
 
-	<div>
-		<h3">You can hide me by clicking a button below</h3>
-		<p>My source looks something like this:</p>
-	</div>
+ <div>
+  <h3">You can hide me by clicking a button below</h3>
+  <p>My source looks something like this:</p>
+ </div>
+
 ``` {.code}
 <div id="toggler">
   <div class="ui-widget-content ui-corner-all">
@@ -258,6 +258,7 @@ need to click the buttons to make the text slide in and out.
     </div>
 </div>
 ```
+
 </div>
 
 <p>&nbsp;</p>
@@ -276,11 +277,10 @@ Lists
 
 Use your mouse to sort the items below.
 
-
 <ul id="sortable">
-	<li>Item1</li>
-	<li>Item2</li>
-	<li>Item3</li>
+ <li>Item1</li>
+ <li>Item2</li>
+ <li>Item3</li>
 </ul>
 
 ``` {.code}

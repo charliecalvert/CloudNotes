@@ -27,7 +27,7 @@ Oh well, that's enough on this topic. I just thought I would bring up these subj
 
 Some links
 
-* https://www.google.com/search?q=opinionated+software
-* http://stackoverflow.com/a/802064
-* https://www.google.com/search?q=pit+of+success
-* http://blog.codinghorror.com/falling-into-the-pit-of-success/
+* <https://www.google.com/search?q=opinionated+software>
+* <http://stackoverflow.com/a/802064>
+* <https://www.google.com/search?q=pit+of+success>
+* <http://blog.codinghorror.com/falling-into-the-pit-of-success/>
