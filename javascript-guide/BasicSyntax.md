@@ -14,13 +14,11 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-Basic Syntax Examples
-=====================
+## Basic Syntax Examples
 
 - [View the source](/javascripts/dev-web/BasicSyntax02.js)
 
-Selectors
----------
+## Selectors
 
 This example demonstrates how to write a jQuery selector that usess a
 dependent class. This selector picks up a particular p that has a class
@@ -29,8 +27,7 @@ showSelector().
 
 Show Selectors
 
-Debug Tricks. Alert vs \#Debug
-------------------------------
+## Debug Tricks. Alert vs \#Debug
 
 JavaScript comes with a handy **alert** function that pops up a dialog.
 This first button shown calls the JavaScript **alert** utility. It is
@@ -43,13 +40,11 @@ Show Alert
 
 Show Debug
 
-Show Types
-----------
+## Show Types
 
 Show Types
 
-Show Two kinds of Properties are the same
------------------------------------------
+## Show Two kinds of Properties are the same
 
 Click the button to see that **myObject.myProperty** and
 **myObject['myPropery']** are two ways of saying the same thing.
@@ -62,20 +57,17 @@ Call Test01
 
 Call SayHello
 
-Use Prototype to Extend the String Class
------------------------------------------
+## Use Prototype to Extend the String Class
 
 Call Elvenware.testDecoration()
 
-Call Show Properties
---------------------
+## Call Show Properties
 
 One of the properties shown here is defined with a prototype.
 
 call elvenware.showProperties()
 
-Object Create
--------------
+## Object Create
 
 Create Object
 
@@ -83,7 +75,7 @@ The properties we create can be configurable, writable, or enumerable.
 Push the button to see the values for myProperty in the following
 object:
 
-``` {.code}
+```javascript
 var myObject = { myProperty: 12 };
 ```
 
@@ -116,21 +108,10 @@ Press the button below to execute this code.
 
 Get Keys
 
-Fancy Styles in a Form
-----------------------
+## Fancy Styles in a Form
 
 Call Elvenware.useWrite()
 
-இ ௫ ௐ
-=====
-
-Õ » இ ✚ ✛ ✜ ✝
-
-⧦ ⧨ ⧪ ⧬ ⧮ ⧳ ⧼
-
-✥ ✪ ❉ ❆ ⧮ ♞ ♛
-
-Randomize Array
----------------
+## Randomize Array
 
 Call elvenware.randomArray()

@@ -1332,9 +1332,11 @@ console.log('SLICE', slake);
 
 The three examples above all produce:
 
+```shell
     SLICE [ 'bravo', 'charlie' ]
     SLICE [ 'bravo', 'charlie' ]
     SLICE [ 'bravo', 'charlie' ]
+```
 
 Some working code is available in [JsObjects][arrwork].
 
@@ -1383,7 +1385,7 @@ do {
 
 That above code produces this output:
 
-```
+```shell
 J 0
 DO-WHILE linux
 J 1
@@ -1653,8 +1655,7 @@ See also these pages:
 
 [chromeTools]: https://developers.google.com/chrome-developer-tools/
 
-Insert Adjacent HTML
---------------------
+## Insert Adjacent HTML
 
 The
 [insertAdjacentHTML](https://developer.mozilla.org/en/DOM/element.insertAdjacentHTML)
@@ -1779,7 +1780,7 @@ With a destructuring assignment, our code becomes very terse:
 var [first, second, third] = someArray;
 ```
 
-We set the **first**, **second,** and **third** <span style="font-size: 1.125rem;">variables</span> <span style="font-size: 1.125rem;">to the same values in each case, but destructuring allows us to forego a lot of busywork. Also, we can now refer to</span> **someArray[0]** <span style="font-size: 1.125rem;">as</span> **first**<span style="font-size: 1.125rem;">, which can both speed code execution when accessing the variable over and over in a loop, and also limit the amount of typing we do.</span>
+We set the **first**, **second,** and **third** variables to the same values in each case, but destructuring allows us to forego a lot of busywork. Also, we can now refer to</span> **someArray[0]** as **first**, which can both speed code execution when accessing the variable over and over in a loop, and also limit the amount of typing we do.
 
 The same thing happens in Emily's example:
 
