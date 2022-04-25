@@ -34,7 +34,7 @@ to write good JavaScript code. However, I think there is one commonly
 used pattern that you should use as your default style. It is called the
 Module Pattern.
 
-Part I {#partI}
+Part I
 ------
 
 Here is an example of a simple implementation of the Module Pattern that
@@ -128,7 +128,7 @@ Notice that when using the modular pattern we:
 -   We can't directly access the private properties
 -   We use the prototype syntax to create a public method.
 
-Part II {#partII}
+Part II
 -------
 
 Here is a more complete example of the JavaScript module pattern: 
@@ -284,7 +284,7 @@ protected functional object, with public methods that use prototype, and
 private methods and variables that are part of the closure, and none of
 it leaks into the global namespace!
 
-Part III {#partIII}
+Part III
 --------
 
 Now let's add a static method:
@@ -336,7 +336,7 @@ Get the Source: [Point03.zip][point03]
 
 [point03]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/downloads/Point03.zip
 
-Cannot Read Property Prototype of Undefined {#proto}
+Cannot Read Property Prototype of Undefined
 -------------------------------------------
 
 The "cannot read property 'prototype' of undefined" usually occurs if

@@ -11,7 +11,7 @@ queryPath: javascript-guide/
 image: ./course/course-javascript.jpg
 ---
 
-## Table of Contents 
+## Table of Contents
 
 <!-- toc -->
 <!-- tocstop -->
@@ -39,32 +39,33 @@ That is why we learn JavaScript rather than some other language. I'm not against
 
 ## Overview
 
--	[Ch01 - Getting Started](GettingStarted.html)
-  - This chapter
+- [Ch01 - Getting Started](GettingStarted.html)
+- This chapter
+
 - [Ch02 - Writing Simple Code](WritingSimpleCode.html)
   -
--	[Ch03 - JavaScript Basics](JavaScriptBasics.html)
--	[Ch04 - JavaScript Objects](JavaScriptObjects.html)
--	[Ch05 - JavaScript Functions](JavaScriptFunctions.html)
--	[Ch06 - JavaScript Modules](JavaScriptModules.html)
--	[Ch07 - Data Structures](DataStructures.html)
--	[Ch08 - JavaScript Patterns](JavaScriptPatterns.html)
--	[Ch09 - JSON Basics](JsonBasics.html)
--	[Ch10 - JQuery](JQueryBasic.html)
--	[Ch11 - JQuery UI](JQueryUi.html)
--	[Ch12 - Node](NodeJs.html)
+
+- [Ch03 - JavaScript Basics](JavaScriptBasics.html)
+- [Ch04 - JavaScript Objects](JavaScriptObjects.html)
+- [Ch05 - JavaScript Functions](JavaScriptFunctions.html)
+- [Ch06 - JavaScript Modules](JavaScriptModules.html)
+- [Ch07 - Data Structures](DataStructures.html)
+- [Ch08 - JavaScript Patterns](JavaScriptPatterns.html)
+- [Ch09 - JSON Basics](JsonBasics.html)
+- [Ch10 - JQuery](JQueryBasic.html)
+- [Ch11 - JQuery UI](JQueryUi.html)
+- [Ch12 - Node](NodeJs.html)
 - [Ch13 - Package.json](NodePackages.html)
 - [Ch14 - Jade](NodeJade.html)
 - [Ch14 - Elven Utilities](ElvenUtilities.html)
--	[Ch15 - JavaScript Unit Tests](/unit-tests-guide/index.html)
+- [Ch15 - JavaScript Unit Tests](/unit-tests-guide/index.html)
 - [Ch16 - JavaScript React](JavaScriptReact.html)
 - [Ch16a - JavaScript React Menu](JavaScriptReactMenu.html)
--	[Ch16 - Angular and Jasmine](Angular.html)
--	[Ch17 - RequireJs](Require.html)
--	[Ch18 - HandleBars](HandleBars.html)
--	[Ch19 - Sockets](Sockets.html)
+- [Ch16 - Angular and Jasmine](Angular.html)
+- [Ch17 - RequireJs](Require.html)
+- [Ch18 - HandleBars](HandleBars.html)
+- [Ch19 - Sockets](Sockets.html)
 - [Ch20 - Functional](Functional.html)
-
 
 ## Philosophy
 
@@ -119,24 +120,24 @@ Order here is important. Nearly every method or function we write should be, bef
 
 Good code has the following traits:
 
-* Has carefully chosen identifiers
-* Is well formatted
-* Divided into short, testable functions
-* Organized in well designed modules that both:
-  * Perform a single task
-  * Protect the global name space
+- Has carefully chosen identifiers
+- Is well formatted
+- Divided into short, testable functions
+- Organized in well designed modules that both:
+  - Perform a single task
+  - Protect the global name space
 
 Good code is designed in accordance with basic programming principles such as:
 
-* [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
+- [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
   - Loose coupling  
   - Strong Cohesion
   - Dependency Injection
-* The [Single Responsibility Principle](http://www.oodesign.com/single-responsibility-principle.html)
-* The [Open/Closed Principle](http://www.oodesign.com/open-close-principle.html)
-* The [Dependency Inversion Principle](http://www.oodesign.com/dependency-inversion-principle.html)
+- The [Single Responsibility Principle](http://www.oodesign.com/single-responsibility-principle.html)
+- The [Open/Closed Principle](http://www.oodesign.com/open-close-principle.html)
+- The [Dependency Inversion Principle](http://www.oodesign.com/dependency-inversion-principle.html)
   - Place an interface between high level and low level classes so they don't depend directly on one another.
-* TDD (Test Driven Development)
+- TDD (Test Driven Development)
 
 It is good if a module has strong cohesion and weak (loose) coupling.
 
@@ -225,11 +226,11 @@ How do we learn to write maintainable, well designed code? Two key factors that 
 
 By programming principles I'm talking about things like:
 
-* Agile Design
-* Programming guidelines such as the single responsibility principle
-* Team dynamics
-* Test Driven Development (TDD)
-* Behavior Driven Development (BDD)
+- Agile Design
+- Programming guidelines such as the single responsibility principle
+- Team dynamics
+- Test Driven Development (TDD)
+- Behavior Driven Development (BDD)
 
 But knowing the theory is not enough. You also need a deep, intuitive, understanding of JavaScript or any other language you use. This is crucial if you want to write good code. You will constantly be forced to make implementation decisions when you write code. You will not be able to make any of those decisions unless you first have an understanding of what features are available in the language, and when and how to use them.
 
@@ -249,7 +250,6 @@ A well designed architecture supports the [Open Closed Principle][ocp-wiki]:
 - _**Modules, Classes and Functions should be open to extension but closed to modification.**_
 
 Along with [loose coupling][lc-wiki] the [single-responsibility principle][srp-wiki] and [TDD][tdd-wiki] are core guidelines for our work. The open closed principle is one of the foundations of good software design. My classes are not really about Linux, git, Angular, jQuery, or express. They are about how to build applications using our core ideas:
-
 
 Another important design principle not emphasized in this class is the [Dependency Inversion Principle][dip].
 
@@ -366,10 +366,10 @@ A lot of good developers have missed their chance to create a useful or importan
 
 Write code that:
 
-* Is easy to read and maintain
-* Contains only absolutely necessary features
-* Sacrifices features that will be used by only a small percentage of users
-* is aligned with best practices, especially those outlined by the Agile school
+- Is easy to read and maintain
+- Contains only absolutely necessary features
+- Sacrifices features that will be used by only a small percentage of users
+- is aligned with best practices, especially those outlined by the Agile school
 of development
 
 ## Reader Suggestions
@@ -386,7 +386,7 @@ Depending on the quality of the comment, and my understanding of the subject, I 
 
 Here I include references to third part tools, books, or materials.
 
-## The Right Tools {#theRightTools}
+## The Right Tools
 
 There are some wonderful tools out there for developing big applications with HTML and JavaScript. Three that I use frequently are Eclipse/Aptana, and WebStorm.
 
@@ -406,7 +406,7 @@ Good books to read on JavaScript.
 - [**Secrets of the JavaScript Ninjas**][js-ninja] by jQuery's John Resig is an excellent book. A bit heavy going in places, but full of excellent advice.
 - [Eloquent JavaScript][elojs]: An in depth look at the language available [on the internet][elojs].
 - A difficult but valuable book is **JavaScript the Good Parts** by Douglas Crockford. It is a tough read, but it is the pivotal book about JavaScript that taught everyone how to properly use the language.
-- [JavaScript, the Definitive Guide](https://www.google.com/search?q=JavaScript-Definitive-Guide-Activate-Guides) by David Flanagan. Considered *the* book on JavaScript by many, but I find Zakas easy to understand and the Ninja book to have more depth. But still an important and useful book.
+- [JavaScript, the Definitive Guide](https://www.google.com/search?q=JavaScript-Definitive-Guide-Activate-Guides) by David Flanagan. Considered _the_ book on JavaScript by many, but I find Zakas easy to understand and the Ninja book to have more depth. But still an important and useful book.
 - [The Principles of Object Oriented JavaScript][js-oop] by Nikalas Zakas. If you wish JavaScript were C#.... Includes numerous insights into how JavaScript is structured. I couldn't put it down.
 
 This might also be of some help:
@@ -442,9 +442,9 @@ This is not a specific recommendation, but more an anecdote that might be helpfu
 git clone git@github.com:getify/You-Dont-Know-JS.git
 ```
 
-Link to book on GitHub:    
+Link to book on GitHub:
 
-*   [You Don't Know JS - ES6 and Beyond](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
+- [You Don't Know JS - ES6 and Beyond](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
 
 I don't think it is the best book on ES6, but it is a good book in terms of diffing into the language in general. The author Kyle Simpson is like a dog with a bone. He won't leave well enough alone. By the time he is done with a subject you will get a chance to learn a lot about how both ES6 and ES5 work, and what problems in ES5 the new code in ES6 is designed to fix. You'll learn more than you want or need to know, but along the way you will learn much that is useful.
 
@@ -452,7 +452,7 @@ In general, I think both [Nikolas Zakas][nz] and [Uncle Bob][ub] are very readab
 
 When you get tired of me, or if you feel I'm not challenging you, or if you just want to up your game, then sit down with any of those books and absorb as much as you can. Reading for only ten minutes is good. Reading for a few hours is even better.
 
-## Books on 24X7 {#books247}
+## Books on 24X7
 
 - [Zakas: Understanding ECMAScript6][zakas-E6]
 - [Zakas: Principles of Object Oriented JS][zakas-poojs]
@@ -491,7 +491,6 @@ More Free Books:
 - [JavaScript Spessore][javascript-spesore]
 - [JavaScript Garden][javascript-garden]
 
-
 I also want to read **JavaScript Patterns** by Stoyan Stefanov and I am currently reading **Functional JavaScript**. The latter book is very good, but perhaps too advanced for most of us.
 
 - [Google IO](https://developers.google.com/events/io/)
@@ -499,7 +498,7 @@ I also want to read **JavaScript Patterns** by Stoyan Stefanov and I am currentl
 - [JavaScript Blogs](https://www.google.com/search?q=top+rated+javascript+blogs)
 - [33 Developers to follow](http://net.tutsplus.com/articles/web-roundups/30-developers-you-must-subscribe-to-as-a-javascript-junkie/)
 
-## Tne Right Blogs {#blog-links}
+## Tne Right Blogs
 
 - [Medium JavaScript](https://medium.com/the-javascript-collection)
 - [JavaScript Playground](https://javascriptplayground.com/)
@@ -536,7 +535,6 @@ Consider using a JavaScript style guide:
 - <http://www.google.com/search?q=javascript+news>
 - <http://www.google.com/search?q=web+app+development+news>
 - <http://www.google.com/search?q=node+js+news>
-
 
 ## Microsoft
 
