@@ -21,16 +21,15 @@ This page is primarily about socket.io. There are however, several different opt
 - [WebSocket](http://www.websocket.org/aboutwebsocket.html) is part of HTML5. It keeps a channel open between the server and client. Traditional, connections are open only when we make an ajax call, and are closed after the call. WebSockets are always open, hence real-time updates can be sent along them.
 - socket.io. That is what we use here.
 
--
-
 ## Polling
+
 WebSockets keep the connection open constantly. It is not polling to see if there are more messages, it stays open. Libraries such as **socket.io** will automatically fall back on polling if the socket is not kept open.
 
 ## Ports
 
 Web Sockets use ports 80 and 443, where 443 is https.
 
-## A socket io example.
+## A socket io example
 
 We can start with a standard express application. We will need to modify:
 
@@ -49,7 +48,7 @@ In the root folder for your new express application, run this command:
 
 This will install the socket.io library and place an entry for installing it in your **package.json** file. When you are done **package.json** might look something like this:
 
-```
+```json
 {
   "name": "SocketBasics",
   "version": "0.0.0",
@@ -78,7 +77,7 @@ It's the last line that is most important in the current context.
 
 We radically transform the www file, like this:
 
-```
+```javascript
 #!/usr/bin/env node
 
 var debug = require('debug')('SocketBasics');
@@ -117,7 +116,7 @@ Instead of starting your app with **/bin/www**, it is probably best to create a 
 
 Here is **Sockets.js**:
 
-```
+```javascript
 #!/usr/bin/env node
 
 var debug = require('debug')('SocketBasics');
@@ -145,13 +144,13 @@ You should also make that change in **package.json**.
 
 Notice this line of code:
 
-```
+```javascript
 var socketCore = require('../routes/SocketCore');
 ```
 
 This line of code loads the file that contains the majority of your socket code. The details will differ depending on your needs, but you might start it like this:
 
-```
+```javascript
 module.exports = {
 
     init : function(server) {
@@ -172,9 +171,11 @@ module.exports = {
 };
 ```
 
-## Jade
+## PUG
 
-```
+Pug used to be called Jade.
+
+```pug
 extends layout
 
 block content
@@ -196,7 +197,7 @@ block content
 
 ## Control
 
-```
+```javascript
 var send;
 
 window.onload = function() {
@@ -227,7 +228,7 @@ window.onload = function() {
 
 Note that your socket connection needs to reference the server on which the client is running.
 
-```
+```javascript
 var socket = io.connect('http://192.168.2.11:30025');
 
 socket.on('socket_is_connected', function(message) {
@@ -237,7 +238,7 @@ socket.on('socket_is_connected', function(message) {
 
 Here we don't connect to localhost, but to a specific IP address. Of course, this could be a URL:
 
-```
+```javascript
 var socket = io.connect('http://example.com:30025');
 ```
 

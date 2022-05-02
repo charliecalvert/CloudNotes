@@ -197,12 +197,14 @@ console.log(typeof foo);
 If you have installed **nodejs** and type \*\*node PrimitiveTypes.js"
 the output of this program is as follows:
 
-    number
-    string
-    boolean
-    object
-    undefined
-    undefined
+```shell
+number
+string
+boolean
+object
+undefined
+undefined
+```
 
 ## Null and Undefined
 
@@ -229,35 +231,43 @@ any other way can be problematic.
 The most common use of **null** is to initialize a variable that you
 want to assign to an object at some point in the future:
 
-    var myObject = null;
+```javascript
+var myObject = null;
+```
 
 You might sometimes also want to pass null into a function or return
 null from a function:
 
-    var myFunc = function(value) {
-        if (value !== null) {
-            // handle value here
-        }
+```javascript
+var myFunc = function(value) {
+    if (value !== null) {
+        // handle value here
     }
+}
 
-    var myFunc = function(value) {
-        if (value < 3) {
-            return null;
-        } else {
-            // Write code here
-        }
+var myFunc = function(value) {
+    if (value < 3) {
+        return null;
+    } else {
+        // Write code here
     }
+}
+```
 
 To test for undefined we write this:
 
-    if (typeof value == 'undefined') {
-        // handle undefined value here
-    }
+```javascript
+if (typeof value == 'undefined') {
+    // handle undefined value here
+}
+```
 
 And finally, to end on a humorous note, we can run one of my favorite
 tests in the JavaScript language:
 
-    console.log(undefined == null)
+```javascript
+console.log(undefined == null)
+```
 
 Because it intuitively obvious that the above will return **false**, it
 should come as no surprise to learn that it returns **true**. The most
@@ -293,7 +303,7 @@ You may have read that JavaScript primitive types are immutable. If you are a be
 
 Consider the following example:
 
-```
+```javascript
 var myString = "My String";
 myString = "A new string";
 ```
@@ -436,48 +446,65 @@ These concepts aren't really that hard, yet I think it is good for students of c
 
 Placement of semicolons in JavaScript can be confusing. The general rule is to put a command after an assignment statement. One variation on this:
 
+```javascript
     var foo;
+```
 
 The above requires a semicolon because there is an implicit assignment to undefined. It is really saying:
 
+```javascript
     var foo = undefined;
+```
 
 When we call a function, we often put a semicolon after it:
 
+```javascript
     myFunction();
+```
 
 I believe the assumption is that the function returns something, even if it does not:
 
+```javascript
     var result = myFunction();
+```
 
 When we declare a function like this, we don't use a semicolon:
 
+```javascript
     function myFunction() {
-
     }
+```
 
 If we declare it anonymously and assign it to a variable, we do use a semicolon:
 
+```javascript
     var myFunction = function() {
-
     };
+```
 
 In many computer languages, this is an experssion:
 
+```javascript
     2 + 2
+```
 
 This is a statement:
 
+```javascript
     var x = 2 + 2;
+```
 
 We usually put semicolons after statements, but not after expressions. Hence we write:
 
+```javascript
     var x = (2 + 2) - (2 * 3);
+```
 
 In the above we don't put a semicolon after 2 + 2 or 2 * 3, we put it after the whole statement. As Michael points out, these are assignment statements.
 
 One thing you never want to do:
 
+```javascript
     function getPerson() {
         return
         {
@@ -485,9 +512,11 @@ One thing you never want to do:
             lastName: "Washington"
         };
     }
+```
 
 In this case, JavaScript will automatically insert a semicolon after return:
 
+```javascript
     function getPerson() {
         return;
         {
@@ -495,6 +524,7 @@ In this case, JavaScript will automatically insert a semicolon after return:
             lastName: "Washington"
         };
     }
+```
 
 Then our code produces an error, like this:
 
@@ -647,15 +677,19 @@ keyword **var**.
 
 Beginners sometimes write something like this:
 
+```javascript
     myObject = new MyObject();
     myObject.run();
+```
 
 This is an error because the keyword **var** is not used when myobject
 is declared. As a result, your new object will likely end up in the global name
 space; that is probably not what you want. To fix the problem, write:
 
+```javascript
     var myObject = new MyObject();
     myObject.run();
+```
 
 Note the use of the **var** keyword.
 
@@ -752,8 +786,10 @@ Never use == or !=. Instead, use === and !==. The problem here is that
 == can return true when you are comparing two different types of
 objects. For instance:
 
+```javascript
     3 == '3';  // returns true
     3 === '3'; return false;
+```
 
 Here is code that demonstrates this point:
 
@@ -843,7 +879,9 @@ do {
 Here is a short program you can run with node to test them both. To run the
 program, create a file index.js with the following contents. Then type:
 
+```shell
     node index.js
+```
 
 Below is the code:
 
@@ -924,10 +962,8 @@ Branching is the area of computer science that covers both **if** and **switch**
 When we write code we often need to test if a condition is **true** or **false** in order to make a decision. In JavaScript we have three conditional statements:
 
 - **if statement** - test if a condition is true or false. Execute code only if it is true.
-- **if...else statement** - test is a condition is true or false and do one thing if it is true and
-    another if it is false.
-- **switch statement** - Sometimes lengthy **if-else** statements can be hard to read. <b>switch</b> statements
-    provide an alternative syntax.
+- **if...else statement** - test is a condition is true or false and do one thing if it is true and another if it is false.
+- **switch statement** - Sometimes lengthy **if-else** statements can be hard to read. **switch** statements provide an alternative syntax.
 
 ### If Statements
 
@@ -1000,7 +1036,11 @@ if ( x === 'a') {
 
 Read it like this: "If x equals a then do A, else, if x equals b, then do B, else, if x equals c, then do C."
 
-Because x has been set to 'b', the first if statement is skipped. We tell the code, if the first doesn't work, try the second option. Since x is equal to 'b' that is the one that is selected. Therefore it will print out <b>Doing B</b>. There might be ways to optimize that code, but don't bother. Keeping simple code simple is usually more important than saving a few nano-seconds. Not always, but usually. The same code is also <a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Syntax/ElseIf/work.js">on JsObjects</a>.
+Because x has been set to 'b', the first if statement is skipped. We tell the code, if the first doesn't work, try the second option. Since x is equal to 'b' that is the one that is selected. Therefore it will print out <b>Doing B</b>. There might be ways to optimize that code, but don't bother. Keeping simple code simple is usually more important than saving a few nano-seconds. Not always, but usually. The same code is also:
+
+```html
+<a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Syntax/ElseIf/work.js">on JsObjects</a>.
+```
 
 ### Switch Statements
 
