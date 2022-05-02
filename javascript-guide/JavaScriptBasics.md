@@ -744,9 +744,11 @@ the variable param1 as an argument to method foo, and then declares
 a variable with the same identifier (param1) inside the body of
 **foo**.
 
+```javascript
     function foo(param1) {
         var param1 = 2;
     }        
+```
 
 ## Operators
 
@@ -756,12 +758,16 @@ There are many different operators and understanding them all takes time. Howeve
 
 The plus and minus operators have the lowest precedence.
 
+```javascript
     1 + 2 * 3 = 7;
     (1 + 2) * 3 = 9;
+```
 
 The grouping operators, shown as parenthesis have the highest precedence. Since the multiplication has a higher precedence than addition, then the first statement above can be rendered like this:
 
+```javascript
     1 + (2 * 3)
+```
 
 In the second statement above we use the grouping operator to override the default precedence for addition and multiplication operators.  
 
@@ -810,8 +816,7 @@ function fillList() {
 
 The first example shown here returns **true**, the second **false**.
 
-Looping
--------
+## Looping
 
 There are two common ways to Loop in JavaScript:
 
@@ -1036,7 +1041,7 @@ if ( x === 'a') {
 
 Read it like this: "If x equals a then do A, else, if x equals b, then do B, else, if x equals c, then do C."
 
-Because x has been set to 'b', the first if statement is skipped. We tell the code, if the first doesn't work, try the second option. Since x is equal to 'b' that is the one that is selected. Therefore it will print out <b>Doing B</b>. There might be ways to optimize that code, but don't bother. Keeping simple code simple is usually more important than saving a few nano-seconds. Not always, but usually. The same code is also:
+Because x has been set to 'b', the first if statement is skipped. We tell the code, if the first doesn't work, try the second option. Since x is equal to 'b' that is the one that is selected. Therefore it will print out **Doing B**. There might be ways to optimize that code, but don't bother. Keeping simple code simple is usually more important than saving a few nano-seconds. Not always, but usually. The same code is also:
 
 ```html
 <a href="https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/Syntax/ElseIf/work.js">on JsObjects</a>.
@@ -1732,12 +1737,15 @@ There are four places where it can insert text:
 The after and before phrases refer to after and before a tag. Suppose
 you have an element like this:
 
+```html
     <p>This element</p>
+```
 
 The statement can insert text before the first \<p\> tag, after that
 tag, or before the closing \<p\> tag, or after it.
 
 If you want to learn more about the DOM, go to this page:
+
 [https://developer.mozilla.org/en/Gecko\_DOM\_Reference](https://developer.mozilla.org/en/Gecko_DOM_Reference).
 
 Here is the code for the button:
