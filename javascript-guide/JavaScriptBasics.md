@@ -369,52 +369,72 @@ There are two fundamental, low level, building blocks for programs:
 
 ***An expression returns a value***. It can be evaluated. Consider this statement:
 
+```javascript
  int x = 3 + 2;
+```
 
 It contains an expression that looks like this: 3 +  2.  We know that 3 + 2 returns 5, so it is an expression, it returns a value:
 
+```javascript
  3 + 2
+```
 
 Consider this assignment statement:
 
+```javascript
  int x = 3;
+```
 
 Here 3 is an expression that returns a value; it yields the value 3.
 
 A function call is usually an expression:
 
+```javascript
  var x = foo();
+```
 
 Even if **foo()** returned **void**, it still can be thought of as an expression:
 
+```javascript
  foo();
+```
 
 Despite the call above, expressions don't usually stand on their own, though they can in many cases. They usually make up part of a statement. Statements do stand on their own. They are the smallest complete portion of a program. For instance:
 
+```javascript
  int x = 3;
+```
 
 This is a statement because it is complete. It performs a single action in a discreet, stand alone line of code. It stands on its own and it does something. It performs an action. It assigns the value 3 to the variable x. Expressions such as **3** or **2 + 3** make no or little sense on their own:
 
+```javascript
  3
  2 + 3
+```
 
 They don't really do anything but produce a compiler error. We typically assign expressions to variables to make statements:
 
+```javascript
  var x = 2 + 3;
  int x = 2 + 3;
+```
 
 Statements end in semicolons in most curly brace languages.
 
 The statements I'm showing here are all assignment statements. These are a classic kind of statement, but they are not at all the only kind of statement. Other kinds of statements include **for statements**, which are clearly not assignments:
 
+```javascript
  for (int x = 3; x < 7; x++) {
  };
+```
 
 And **if statements** don't look like assignments:
 
+```javascript
  if (x > 3) {
     console.log(x);
  };
+```
 
 I'm showing you these statements just so you don't oversimplify your understand of statements. They can take many shapes and forms. More than I wish to discuss in this context. We have just looked at three kinds: assignments, for statements and if statements.
 
@@ -428,17 +448,23 @@ In the Wikipedia, they talk about evaluation rather than yielding a value, but I
 
 The folks who write the C# guides are really good. For instance: "**Expressions can consist of a literal value, a method invocation, an operator and its operands**, or a simple name. Simple names can be the name of a variable, type member, method parameter, namespace or type." The parts in bold describe the types of expressions discussed above. Here is an example of type of expression not covered above, the kind not in bold in this paragraph:
 
+```javascript
  var x = y;
+```
 
-Here y is an expression. It is a simple name for a variable.
+Here **y** is an expression. It is a simple name for a variable.
 
 There are tricky areas, such as this:
 
+```javascript
  foo();
+```
 
 It stands on its own and it returns a value. It could be thought of as an expression and a statement. But the following is clearly a statement, and not an expression:
 
+```javascript
  var x = 3 + 2;
+```
 
 These concepts aren't really that hard, yet I think it is good for students of computer science to learn to speak in such terms. It gives us a language we can use to describe what we are doing when we write code. Also, the terms are used all the time in text books, and we want to be able to read standard texts.
 
