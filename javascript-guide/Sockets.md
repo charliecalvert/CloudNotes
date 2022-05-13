@@ -14,7 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-# Sockets
+# Overview
 
 This page is primarily about socket.io. There are however, several different options available:
 

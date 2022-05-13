@@ -26,3 +26,43 @@ Here is some sample text that can be used to see if it works.
 ## Links
 
 - [index](index.html)
+
+## Code
+
+Here is some Code:
+
+```javascript
+function foo() {
+    debug('foo');
+}
+```
+
+b:
+
+```javascript
+var myString = 'Use the plus symbol for ' +
+    'multi-line strings ' +
+    'in most cases.'
+```
+
+a:
+
+```javascript
+var aNumber = 3;
+var aString = 'string';
+var aBoolean = true;
+var aNull = null;
+var aUndefined = undefined;
+var foo;
+
+console.log(typeof aNumber);
+console.log(typeof aString);
+console.log(typeof aBoolean);
+console.log(typeof aNull);
+console.log(typeof aUndefined);
+console.log(typeof foo);
+```
+
+## End
+
+All done.

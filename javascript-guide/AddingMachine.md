@@ -36,8 +36,11 @@ Here is what is going on behind the scenes. When you press the
 - The submit button forces the form to submit its data to a python
     script called **AddingMachineWrite.py**. This happens because the
     form has its action attribute set to /cgi-bin/AddingMachineWrite.py
-  - \<**form** action="/cgi-bin/AddingMachineWrite.py"
-        **method**="post"\>
+
+```html
+<form action="/cgi-bin/AddingMachineWrite.py" method="post">
+</form>
+```
 
 - Three pieces of data are also submitted.
   - The text from the input field labeled **Operand A** and named
