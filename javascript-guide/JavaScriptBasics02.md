@@ -216,13 +216,13 @@ purpose of the **null** type is to help you know the state of an object.
 It therefore makes (at least some) sense that the type itself should be
 an object.
 
-Note that the type of the unassigned variable **foo** is **undefined**.
-Do you see how that works? We don't assign **foo** to anything: **var
-foo;**. When we ask to see its type, the system tells us that **foo** is
-**undefined**. You will see that a lot, especially when you are starting
+Note that the type of the unassigned variable **foo** is **undefined**. Do
+you see how that works? We don't assign **foo** to anything: **var foo;**.
+When we ask to see its type, the system tells us that **foo** is **undefined**.
+You will see that a lot, especially when you are starting
 out with JavaScript. The lessson here is simple: when you see that a
-variable is **undefined**, that usually means that you haven't assigned
-any value to it
+variable is **undefined**, it usually means that you haven't assigned
+any value to it.
 
 It is probably best to only use undefined in your program when you want
 to test if a variable has a value assigned to it. Trying to use it in
@@ -767,8 +767,7 @@ count becomes a property of the global object.
 
 Never redeclare a variable two times. The following example declares
 the variable param1 as an argument to method foo, and then declares
-a variable with the same identifier (param1) inside the body of
-**foo**.
+a variable with the same identifier (param1) inside the body of **foo**.
 
 ```javascript
     function foo(param1) {
@@ -917,10 +916,6 @@ program, create a file index.js with the following contents. Then type:
 Below is the code:
 
 ```javascript
-/**
- * @author Charlie Calvert
- */
-
 var app = {
    basicForLoop: function() {
        'use strict';

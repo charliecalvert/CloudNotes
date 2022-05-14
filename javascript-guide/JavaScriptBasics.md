@@ -216,13 +216,13 @@ purpose of the **null** type is to help you know the state of an object.
 It therefore makes (at least some) sense that the type itself should be
 an object.
 
-Note that the type of the unassigned variable **foo** is **undefined**.
-Do you see how that works? We don't assign **foo** to anything: **var
-foo;**. When we ask to see its type, the system tells us that **foo** is
-**undefined**. You will see that a lot, especially when you are starting
+Note that the type of the unassigned variable **foo** is **undefined**. Do
+you see how that works? We don't assign **foo** to anything: **var foo;**.
+When we ask to see its type, the system tells us that **foo** is **undefined**.
+You will see that a lot, especially when you are starting
 out with JavaScript. The lessson here is simple: when you see that a
-variable is **undefined**, that usually means that you haven't assigned
-any value to it
+variable is **undefined**, it usually means that you haven't assigned
+any value to it.
 
 It is probably best to only use undefined in your program when you want
 to test if a variable has a value assigned to it. Trying to use it in
@@ -579,7 +579,7 @@ It inserts the semicolon without telling you, and in an attempt to help you. Hen
     }
 ```
 
-Notice that the opening curley brace is on the same line as the return statement.: **return {**
+Notice that the opening curley brace is on the same line as the return statement.
 
 ## Getting Unstuck
 
@@ -767,8 +767,7 @@ count becomes a property of the global object.
 
 Never redeclare a variable two times. The following example declares
 the variable param1 as an argument to method foo, and then declares
-a variable with the same identifier (param1) inside the body of
-**foo**.
+a variable with the same identifier (param1) inside the body of **foo**.
 
 ```javascript
     function foo(param1) {
@@ -917,10 +916,6 @@ program, create a file index.js with the following contents. Then type:
 Below is the code:
 
 ```javascript
-/**
- * @author Charlie Calvert
- */
-
 var app = {
    basicForLoop: function() {
        'use strict';
@@ -1390,7 +1385,7 @@ If you pass in just one number, that means you want to start at a specific index
 
 Here, then, are three ways of saying the same thing:
 
-```JavaScript
+```javascript
 const slide = newWords.slice(1,3);
 console.log('SLICE', slide);
 
@@ -1522,9 +1517,15 @@ First and last name of third object: Thomas Jefferson
 
 ### Sorting
 
-Suppose you have multiple items in an array and you want to sort them. If the arrays is made of strings or numbers,  just call **myArray.sort()**.
+Suppose you have multiple items in an array and you want to
+sort them. If the arrays is made of strings or numbers,
+just call **myArray.sort()**.
 
-If the array is made up of objects or other arrays, JavaScript may not know how to perform the sort in many cases. For instance, if you had an array of objects with firstName and lastName properties, you have to tell JavaScript to sort on the **firstName** or sort on the **lastName.**
+If the array is made up of objects or other arrays, JavaScript may
+not know how to perform the sort in many cases. For instance, if
+you had an array of objects with firstName and lastName properties,
+you have to tell JavaScript to sort on the **firstName** or sort 
+on the **lastName.**
 
 Like this:
 
@@ -1734,10 +1735,9 @@ method has been part of some implementations of JavaScript and the DOM
 for some time, but it is finally being standardized in HTML 5. When you
 click the button shown below, the following code gets executed:
 
-```html
+```javascript
 <script type="text/javascript">
-  function TestInsertAdjacent()
-  {
+  function TestInsertAdjacent() {
     var adjacentText = document.getElementById('AdjecentText');
     adjacentText.insertAdjacentHTML('afterbegin', '[Rufus]:');
   }
@@ -1777,7 +1777,7 @@ If you want to learn more about the DOM, go to this page:
 Here is the code for the button:
 
 ```html
-<input name="insertAdjacentButton" type="button" value="Insert Adjacent Text" onclick="TestInsertAdjacent()">
+<input name="insertAdjacentButton" type="button" value="Insert Adjacent Text" onclick="TestInsertAdjacent()" />
 ```
 
 ## Change
@@ -1854,7 +1854,12 @@ With a destructuring assignment, our code becomes very terse:
 var [first, second, third] = someArray;
 ```
 
-We set the **first**, **second,** and **third** variables to the same values in each case, but destructuring allows us to forego a lot of busywork. Also, we can now refer to</span> **someArray[0]** as **first**, which can both speed code execution when accessing the variable over and over in a loop, and also limit the amount of typing we do.
+We set the **first**, **second**, and **third** variables
+to the same values in each case, but destructuring allows us
+to forego a lot of busywork. Also, we can now refer
+to **someArray[0]** as **first**, which can both
+speed code execution when accessing the variable
+over and over in a loop, and also limit the amount of typing we do.
 
 The same thing happens in Emily's example:
 
@@ -1879,7 +1884,7 @@ printInfo(bookProduct);
 
 The printInfo method shown above is more concise and requires less typing than the old way:
 
-```JavaScript
+```javascript
 function printInfo(bookProduct){  
     console.log('The product name is: ' + bookProduct.name);  
     console.log('The author is: ' + bookProduct.info.author);  
@@ -1896,7 +1901,8 @@ For more info and a rather encyclopedic set of examples illustrating what can be
 
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
-That article provides this simple description of what destructuring does: "The **destructuring assignment** syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables."
+That article provides this simple description of what destructuring
+does: "The **destructuring assignment** syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables."
 
 Here is another example which might show what can be done on the server-side with destructuring. Assume **messyData** was returned by a web service and we want to simplify it before sending it back to the server. Note that I constructed a fake **response** object so that I could write code you can compile at the command line in a simple JavaScript file:
 
