@@ -16,7 +16,7 @@ image: ./course/course-javascript.jpg
 
 # JavaScript Basics
 
-We'll begin by exploring the JavaScript type system.
+We will begin by exploring the JavaScript type system.
 
 Newcomers may find it hard to understand why they need to know about the type system. Isn't there something more interesting or exciting that we can talk about first?
 
@@ -153,14 +153,20 @@ var myQuote = "He said: 'By golly, I think it's alive!'";
 Or, if you prefer:
 
 ```javascript
-var myQuote = 'He said: "By golly, I think it\'s alive!"';
+var myQuote = 'He said: "By golly, I think it is alive!"';
 ```
 
 If you want some direction here, I suggest using double quotes for strings, as it makes embedding apostrophe's easier. For instance, in the second example I was forced to use a backslash to escape the apostrophe in the word **it's**. This is, in my opinion, somewhat awkward.
 
+A better solution is to use backticks (tildes):
+
+```javascript
+var myQuote = `He said: 'By golly, I think it's alive!'`;
+```
+
 There is no functional difference between single and double quotes. This is definitely one of the nice features of the JavaScript language.
 
-Though not widely available at this time, we will be able to use backticks to declare multiline strings in EcmaScript 6:
+We are now able to use backticks to declare multiline strings in EcmaScript 6:
 
 ```javascript
 var myString = `Use backticks for
@@ -1378,7 +1384,7 @@ You don't need to start at the beginning of the array. For instance, you can sta
 
 ```javascript
 const slide = newWords.slice(1,3);
-console.log('SLICE', slide); // ['bravo', 'charlie']```
+console.log('SLICE', slide); // ['bravo', 'charlie']
 ```
 
 If you pass in just one number, that means you want to start at a specific index and go to the end of the array. A negative number counts in from the end of the array.
@@ -1764,7 +1770,7 @@ The after and before phrases refer to after and before a tag. Suppose
 you have an element like this:
 
 ```html
-    <p>This element</p>
+<p>This element</p>
 ```
 
 The statement can insert text before the first \<p\> tag, after that
@@ -1777,7 +1783,12 @@ If you want to learn more about the DOM, go to this page:
 Here is the code for the button:
 
 ```html
-<input name="insertAdjacentButton" type="button" value="Insert Adjacent Text" onclick="TestInsertAdjacent()" />
+<input 
+    name="insertAdjacentButton"
+    type="button"
+    value="Insert Adjacent Text"
+    onclick="TestInsertAdjacent()"
+/>
 ```
 
 ## Change
