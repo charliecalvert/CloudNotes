@@ -101,7 +101,7 @@ function getMyKeys()
         $('#myObjectKeys').append(keys[i] + '<br>');
     for (var x in myObject)
         $('#myObjectKeys').append(x + ' = ' + myObject[x] + '<br>');
-} 
+}
 ```
 
 Press the button below to execute this code.

@@ -16,7 +16,7 @@ image: ./course/course-javascript.jpg
 
 # Overview
 
-This page is primarily about socket.io. There are however, several different options available:
+This page is primarily about **socket.io**. There are however, other options available, including:
 
 - [WebSocket](http://www.websocket.org/aboutwebsocket.html) is part of HTML5. It keeps a channel open between the server and client. Traditional, connections are open only when we make an ajax call, and are closed after the call. WebSockets are always open, hence real-time updates can be sent along them.
 - socket.io. That is what we use here.

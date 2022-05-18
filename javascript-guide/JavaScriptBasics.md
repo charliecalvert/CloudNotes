@@ -18,7 +18,7 @@ image: ./course/course-javascript.jpg
 
 We will begin by exploring the JavaScript type system.
 
-Newcomers may find it hard to understand why they need to know about the type system. Isn't there something more interesting or exciting that we can talk about first?
+Not everyone may understand why they need to know about the type system. Isn't there something more interesting or exciting that we can talk about first?
 
 No JavaScript programmer can thrive without knowing the language's type system. We'll therefore begin by plunging directly into the subject, taking care to proceed with caution.
 
