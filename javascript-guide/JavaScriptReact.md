@@ -109,7 +109,7 @@ Use **fetch** to retrieve data from the server. We make REST calls with **fetch*
 
 **fetch** will eventually become part of JavaScript in ES6, but for now we have to install it separately:
 
-```
+```shell
 npm install --save whatwg-fetch
 ```
 
@@ -471,7 +471,9 @@ While testing, If you get an **ENOSPC** error, do this:
 
 To get the current value:
 
-    cat /proc/sys/fs/inotify/max_user_watches
+```shell
+cat /proc/sys/fs/inotify/max_user_watches
+```
 
 ![More watches][enospc]
 
