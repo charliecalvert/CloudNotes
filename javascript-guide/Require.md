@@ -220,15 +220,19 @@ I want you to define the paths to all the files in your project in the paths obj
 
 One you have defined the path for a file, then anywhere in your project that you need the file, you can just point to it by the name you defined in the paths  object shown above. You point to it like this:
 
-    require(["jquery", "DefaultReader", "JsonReader", "MarkdownReader"],
-        function(jq, DefaultReader, JsonReader, MarkdownReader) {'use strict';
+```javascript
+require(["jquery", "DefaultReader", "JsonReader", "MarkdownReader"],
+    function(jq, DefaultReader, JsonReader, MarkdownReader) {'use strict';
+```
 
 Note that we don't have to specify the path to DefaultReader. Just say its name, and behind the scenes require uses the path from the require.config in Main.js.
 
 In the require array above, use the same case as you used when defining the variable in the path object. That should usually be the same case as you used for the file name. For instance, BridgeReader.js would be 'BridgeReader' and test.js would be 'test'. In the function callback that follows, capitalize objects that need to be called with new, and use camel case for those that do not. For instance, consider this:
 
-    require(["jquery", "Foo", "Gorp", "Gar"],
-        function(jq, foo, gorp, Gar) {'use strict';
+```javascript
+require(["jquery", "Foo", "Gorp", "Gar"],
+    function(jq, foo, gorp, Gar) {'use strict';
+```
 
 The assumption here is that you do not need to call new on foo or gorp but you do on Gar. (These are just used for illustrations, you probably want to use the modular pattern for most of the objects in your project, so you probably usually want to capitalize the names in the parameter list to the function callback in a require statement. At this stage, you don't have to use the modular pattern, however.)
 
@@ -243,15 +247,16 @@ RequireJs provides:
 
 To install **requirejs**:
 
-<pre>
+```bash
 bower install requirejs --save
-</pre>
+```
 
-**NOTE**: _When using **requirejs** you no longer need the jQuery **document.ready** method. You can, and should, remove it._
+**NOTE**: *When using **requirejs** you no longer need the
+jQuery **document.ready** method. You can, and should, remove it.*
 
 In **layout.jade** we load **requirejs** and specify a file, usually called **main.js**, where we configure **require** and load the core files for our application:
 
-<pre>
+```html
 doctype html
 html
   head
@@ -261,7 +266,7 @@ html
     script(data-main="javascripts/main.js" src="components/requirejs/require.js")
   body
     block content
-</pre>
+```
 
 In **public/javascripts/main.js** we configure require and bootstrap our application:
 
@@ -382,7 +387,7 @@ Looking at the updated **files** section above, we see that karma will allow, fo
 
 I'll repeat the point again to make sure it is clear. **requirejs** can't load anything unless we have the **pattern** and **included** properties in the **file** section as shown above. You have to have the **pattern** and **included** properties, and you also have to have **main-test.js**, as explained below.
 
-**NOTE** _I use **test-XXX.js** as the naming convention for require based tests, and **spec-XXX.js** for jasmine server side tests._
+**NOTE** *I use **test-XXX.js** as the naming convention for require based tests, and **spec-XXX.js** for jasmine server side tests.*
 
 Look at [this sample][main-test-req] **main-test.js** file from the **spec** directory:
 
@@ -437,7 +442,7 @@ You can save this test into **SolarVoyager** as **spec/test-basic.js**. Then typ
 
 The results might look something like this:
 
-<pre>
+```shell
 PhantomJS 2.1.1 (Linux 0.0.0) LOG LOG: 'Loaded test:', '/base/spec/test-basic.js'
 
   Elvenware Simple Plain Suite
@@ -446,7 +451,7 @@ PhantomJS 2.1.1 (Linux 0.0.0) LOG LOG: 'Loaded test:', '/base/spec/test-basic.js
 
 PhantomJS 2.1.1 (Linux 0.0.0): Executed 2 of 2 SUCCESS (0 secs / 0.001 secs)
 TOTAL: 2 SUCCESS
-</pre>
+```
 
 [jas-req]: https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/UnitTests/JasmineRequireJs
 [karma-req]: https://github.com/charliecalvert/JsObjects/blob/master/JavaScript/UnitTests/JasmineRequireJs/karma.conf.js
