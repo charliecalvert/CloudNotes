@@ -297,8 +297,7 @@ And then in the controller:
 $scope.buttonHandler = function() {};
 ```
 
-Calling Methods in Factories
-----------------------------
+## Calling Methods in Factories
 
 Let's go back to the basic examples found here:
 
@@ -598,8 +597,7 @@ References:
 [subdoc]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseSubdocuments.html
 [mongoComment]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseComments.html
 
-Jasmine Matchers
-----------------
+## Jasmine Matchers
 
 There are many Jasmine matchers.
 
@@ -644,8 +642,7 @@ reasonable effort to define what they do:
 - **toMatch**: Compare strings with regular expressions
 - **toThrow**: Does an expression throw an exception?
 
-Use toThrow Matcher
------------
+## Use toThrow Matcher
 
 Sometimes you want to prove that trying to do some particular action
 will raise an exception. Jasmine has the **toThrow** matcher to
@@ -708,8 +705,7 @@ it("cannot be used with new", function() {
 });
 ```
 
-Unit Test Names
----------------
+## Unit Test Names
 
 I'm belatedly realizing that we can establish better naming
 conventions in our unit tests.
@@ -747,8 +743,7 @@ mileController = $rootScope.$new();
 $controller('MileController', { $scope: mileController });
 ```
 
-Dialogs in Unit Tests
----------------------
+## Dialogs in Unit Tests
 
 We can handle that $dialog in a way slightly different from the one
 I outlined to you. Here is what I suggested before:
@@ -857,8 +852,7 @@ getDataJson.error(function(data, status, headers, config) {
 
 - [reference](http://stackoverflow.com/a/16184477/253576)
 
-Angular Starter Projects
---------------------------
+## Angular Starter Projects
 
 In JsObjects on GitHub, there are several starter project for
 working with Angular, MongoDb, Karma, Jasmine and Grunt. These
@@ -877,16 +871,14 @@ unit test in that time. They provide a great jump start for people
 who have a moderate knowledge of how to create and test projects using
 Angular, Jasmine, Karma and Grunt with JsHint.
 
-Elf Ruble and Angular
----------------------
+## Elf Ruble and Angular
 
 There is an add on (a Ruble) for Aptana that will allow you to create
 Elven Angular Projects and other things. See the ReadMe for details:
 
 - [Elf Ruble README](https://github.com/charliecalvert/ElfRuble/blob/master/README.md)
 
-Angular Git Starter Projects in Aptana
---------------------------
+## Angular Git Starter Projects in Aptana
 
 There is a second way to get the projects that are stored in the Elf
 Ruble. This sections describes how to pull them directly from GitHub.

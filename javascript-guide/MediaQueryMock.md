@@ -14,8 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-Using JQuery rather than @Media Queries
----------------------------------------
+## Using JQuery rather than @Media Queries
 
 I’ve removed the native HTML 5 article and nav tags, and started using
 ids, because IE 8 seems to prefer that approach. This at least gets me

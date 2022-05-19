@@ -121,11 +121,11 @@ The command, **npm install** processes the libraries that are specified in the *
 
 Recall that **package.json** lists the dependencies, the libraries, that our code uses. When we run **npm install**, libraries/packages are downloaded from the NPM servers and placed in a directory called **node_modules**. This is a subdirectory of our current project.
 
-**NOTE**: _A NPM package is a library created by yourself, your team, or a third party. NodeJs comes with a few basic libraries pre-installed, but their philosophy is to keep the install very light by default. Therefore, when you want to use a library your generally specify the library name in **package.json** and then the library is downloaded from the NPM repository._
+**NOTE**: *A NPM package is a library created by yourself, your team, or a third party. NodeJs comes with a few basic libraries pre-installed, but their philosophy is to keep the install very light by default. Therefore, when you want to use a library your generally specify the library name in **package.json** and then the library is downloaded from the NPM repository.*
 
 One of the key packages that we use is called **express**. If it is not already listed in your **package.json** file, you can install it by typing **npm install express**. If your program tries to load **express** and it is not present, you will see an error. The error is trying to tell you that the express package has not been installed into node_modules. The solution, as you probably now all understand, is to first make sure it is listed in the **dependencies** section of **package.json** and to then run **npm install**. That command downloads **express** into the **node_modules** directory.
 
-**NOTE**: _Sadly, I have found that failing to run **npm install** is one of the most common errors that node developers encounter. All node developers forget to run **npm install**, but experienced developers just sigh and fix the error, while newbies can cycle around the error for hours, or even days. Remember, if you get an error and can't solve it, block copy it or take a screen shot and post it in the discussion area._
+**NOTE**: *Sadly, I have found that failing to run **npm install** is one of the most common errors that node developers encounter. All node developers forget to run **npm install**, but experienced developers just sigh and fix the error, while newbies can cycle around the error for hours, or even days. Remember, if you get an error and can't solve it, block copy it or take a screen shot and post it in the discussion area.*
 
 Here are links to express info:
 
@@ -350,7 +350,7 @@ The **app.get** method shown here reads in a file called index.html, then
 publishes it on the Node web server. When reading in the file, it uses a
 library called fs (FileSystem) and a method called readFileSync.
 
-**NOTE**: _You can learn more about fs, readFileSync and the asynchronous method readFile in [JsonBasics][json-basics]._
+**NOTE**: *You can learn more about fs, readFileSync and the asynchronous method readFile in [JsonBasics][json-basics].*
 
 [json-basics]: /javascript-guide/JsonBasics.html#reading-json-with-node
 
@@ -1553,8 +1553,7 @@ npm install azure node-uuid DSInit /sqlInstance:.
 
 [https://github.com/rjrodger/simpledb](<https://github.com/rjrodger/simpledb>)
 
-Cloud 9
--------
+## Cloud 9
 
 Cloud 9 is an online IDE. You can find it here:
 

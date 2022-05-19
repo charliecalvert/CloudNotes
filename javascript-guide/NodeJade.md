@@ -18,7 +18,7 @@ image: ./course/course-javascript.jpg
 
 [Pug][pug] is a template library similar to [HAML](http://haml.info/) and not totally unlike other popular template libraries such as [Handlebars](http://handlebarsjs.com/). It also is a bit like Markdown, in that it provides a shorthand syntax for composing HTML pages.
 
-**NOTE**: _The pug library used to be called Jade._
+**NOTE**: *The pug library used to be called Jade.*
 
 ## Overview
 
@@ -257,7 +257,7 @@ Once again, I ask the you study this example carefully. All the routes in this f
 - THREE: This is where requests for renewable pages go: [http://www.example.com/renewables/hydro-page][wec]
 - FOUR: This where requests for uncategorized files go: [http://www.example.com/about-page][wec]
 
-**NOTE**: _We don't explicitly ask for HTML even though it is HTML that will be sent back to the brower. In other words, instead of writing this: [http://example.com/about.html][wec], we write this: [http://example.com/about][wec]. It is a simple matter to teach express to respond properly to either request, but I find it simpler to dismiss with the HTML extension. But this is a matter of taste, and you should feel free to do what seems best to you._
+**NOTE**: *We don't explicitly ask for HTML even though it is HTML that will be sent back to the brower. In other words, instead of writing this: [http://example.com/about.html][wec], we write this: [http://example.com/about][wec]. It is a simple matter to teach express to respond properly to either request, but I find it simpler to dismiss with the HTML extension. But this is a matter of taste, and you should feel free to do what seems best to you.*
 
 Now let's consider the case where we want requests for anything have to do with renewables to be sent not to **routes/index.js** but to **routes/renewables.js**. We do this in large programs where we don't want to overload **index.js** with too many methods.
 

@@ -14,8 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-Adding Machine
---------------
+## Adding Machine
 
 ***This page is part of the [Elvenware
 site](http://www.elvenware.com/charlie/development/web/JavaScript/JQueryBasic.html#adding).***

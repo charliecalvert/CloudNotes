@@ -26,8 +26,7 @@ get started understanding them:
 - CSS let's you define how the content should appear
 - JavaScript allows you to perform actions that animate the content.
 
-Hello World in the Browser
---------------------------
+## Hello World in the Browser
 
 JavaScript can be written as a standalone script that runs from the
 command prompt like a batch file or shell script. It can also be run as
@@ -199,8 +198,7 @@ hard to maintain code, you will nearly always find it harder to add
 features to that code base than it is to add features to well written
 programs.*
 
-The Case of File Names
-----------------------
+## The Case of File Names
 
 I should say a word about the case of the file names I create. There are
 six different ways to name files, three of which are wrong, and three of
@@ -295,8 +293,7 @@ the case for writing the cleanest, easiest to understand code of any
 developer on your team. There is no place for a quirky style of
 capitalization or indentation.
 
-A Simple JavaScript Development Strategy
-----------------------------------------
+## A Simple JavaScript Development Strategy
 
 JavaScript run in the browser has one set of rules when run in a
 browser, and another set when run outside a browser. If you are using
@@ -309,7 +306,7 @@ IDEs. At first, however, such stratagems can lead to much confusion. As
 a result, I suggest that you begin by developing JavaScript inside a
 browser.
 
-**NOTE**: _I should probably qualify what I say above. The basic syntax
+**NOTE**: *I should probably qualify what I say above. The basic syntax
 of the language does not change when you switch from a browser to some
 environment. (The only exception, of course, is when a browser has a
 buggy implementation of JavaScript, and that still happens quite
@@ -326,7 +323,7 @@ this advice is less convincing. I don't not think there are serious
 disadvantages to learning JavaScript in a browser even if you want to
 use it on the server side, but you will find that there are differences.
 In general, I think it is easier to move from the browser to **nodejs**,
-than it is to move from **nodejs** to the quirky world of browsers._
+than it is to move from **nodejs** to the quirky world of browsers.*
 
 It turns out that the code you saw in the previous section provides a
 good framework for beginning and intermediate level JavaScript
@@ -350,8 +347,7 @@ code, and when they are exploring JavaScript, is a call to
 console.log("This is a a debug message");
 ```
 
-Console.Log
------------
+## Console.Log
 
 Suppose you are a beginning level JavaScript programmer who wants to
 learn how to write a function that adds numbers. Now it is a good and
@@ -386,8 +382,7 @@ in Listing 3. The only difference is that the source file linked in is
 called **Calculator.js** rather than **VerySimple.js**. Here is the code
 for **Calculator.js**:
 
-Learn More
-----------
+## Learn More
 
 Here is a rendering of the hidden code that prints the first two lines
 found on this page:
@@ -433,8 +428,7 @@ Install the JavaScript ChromeTools Debugger in Eclipse:
 
 [HowToInstall Old Link](https://code.google.com/archive/p/chromedevtools/wikis/HowToInstall.wiki)
 
-The Right Tools
----------------
+## The Right Tools
 
 There are some wonderful tools out there for developing big applications
 with HTML and JavaScript. Three that I use frequently are
@@ -448,8 +442,7 @@ tools:
 - notepad++
 - chrome
 
-Hello World at the Command Prompt
----------------------------------
+## Hello World at the Command Prompt
 
 If you want to learn JavaScript, it can be helpful to start with a
 command line utility. One possible course of action is to install node,
@@ -459,8 +452,7 @@ Also, see:
 
 - [http://www.phpied.com/javascript-shell-scripting/](http://www.phpied.com/javascript-shell-scripting/)
 
-JavaScript Simple Types
------------------------
+## JavaScript Simple Types
 
 There are only five simple types. Numbers, booleans and strings are all
 simple types. There are two other simple types called **null** and
@@ -487,8 +479,7 @@ var myString = "A String";
 var type = typeof myString; // Sets type = string
 ```
 
-Objects
--------
+## Objects
 
 You can declare an object like this:
 
@@ -522,8 +513,7 @@ Though both examples are legal, the first is much more common.
 When you declare an object as we do myObject, you don't ever call
 **new** on it.
 
-JavaScript Functions
---------------------
+## JavaScript Functions
 
 In JavaScript, functions are very powerful tools. They are easy to use,
 but hard to fully understand.
@@ -664,8 +654,7 @@ this.testDecoration = function() {
 
 [Click here to try decorating a string](BasicSyntax.html#decorate).
 
-Classes
--------
+## Classes
 
 To the degree that we can talk coherently about classes in JavaScript,
 we can do so by focusing on their prototype. All the members of a class
@@ -678,8 +667,7 @@ of the same class if they have the same prototype:
 By convention, classes always begin with a capital letter, while methods
 and functions begin with lower case letters.
 
-Binding
--------
+## Binding
 
 You can use bind to bind a function to an object, or rather to an
 object's scope. Suppose you have function func and object obj. You can
@@ -726,11 +714,9 @@ you can also try this code here:
 
 [BindMe.html](BindMe.html)
 
-JavaScript Dictionaries are Associative Arrays
-----------------------------------------------
+## JavaScript Dictionaries are Associative Arrays
 
-Debugging Strategies
---------------------
+## Debugging Strategies
 
 All the major browsers have good debuggers in them, but I probably
 prefer the one that ships with Chrome.
@@ -752,8 +738,7 @@ See also these pages:
 - [https://developers.google.com/chrome-developer-tools/](https://developers.google.com/chrome-developer-tools/)
 - [Dev Tools on Chromium](https://www.chromium.org/devtools)
 
-Insert Adjacent HTML
---------------------
+## Insert Adjacent HTML
 
 The
 [insertAdjacentHTML](https://developer.mozilla.org/en/DOM/element.insertAdjacentHTML)

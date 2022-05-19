@@ -108,7 +108,7 @@ JavaScript is, of course, most frequently seen running along with HTML and CSS i
 
 In Listing 01 you can see a very simple "Hello World" HTML file that uses JavaScript. You can save this file as **very-simple.html**.
 
-**NOTE**: _There are many different ways to write the code shown here. I have chosen this technique because it does not rely on any libraries or frameworks and does not require that you use ES6. Often, tools such as React or jQuery are exactly what you want but I think it is still appropriate to start by writing raw JavaScript code. Later, you will learn how to use libraries or ES6 and frameworks to accomplish the same task described here._
+**NOTE**: *There are many different ways to write the code shown here. I have chosen this technique because it does not rely on any libraries or frameworks and does not require that you use ES6. Often, tools such as React or jQuery are exactly what you want but I think it is still appropriate to start by writing raw JavaScript code. Later, you will learn how to use libraries or ES6 and frameworks to accomplish the same task described here.*
 
 I stated earlier, that I do not like the practice of embedding JavaScript directly in an HTML file. Nevertheless, I'm going to show you how it is done, if for no other purpose than to make clear exactly what I don't think you should do.
 
@@ -407,7 +407,7 @@ The big gap here is between client side and server side code. Even though the V8
 
 As a rule, you need no longer concern yourself too much with the difference between the various browsers. Client side code needs to be tested in all browsers, but you should be able to craft code that works in all browsers so long as you approach the matter carefully and methodically. In particular, judicious use of libraries such as jQuery can help you write client side code that works in all browsers.
 
-**NOTE**: _I should probably qualify what I say above. The basic syntax of the language does not change when you switch from a browser to the server. The only exception, of course, is when a browser has a buggy implementation of JavaScript, and that still happens, though less frequently than it did several years ago.) But even when everything works correctly, certain key features of the language, such as the **this** keyword, have a different significance inside a browser and outside a browser. Also, key elements of the client side API, such as the **alert** function, are not typically available by default on the server. In general, I think it is easier to move from the browser to **nodejs**, than it is to move from **nodejs** to the quirky world of browsers._
+**NOTE**: *I should probably qualify what I say above. The basic syntax of the language does not change when you switch from a browser to the server. The only exception, of course, is when a browser has a buggy implementation of JavaScript, and that still happens, though less frequently than it did several years ago.) But even when everything works correctly, certain key features of the language, such as the **this** keyword, have a different significance inside a browser and outside a browser. Also, key elements of the client side API, such as the **alert** function, are not typically available by default on the server. In general, I think it is easier to move from the browser to **nodejs**, than it is to move from **nodejs** to the quirky world of browsers.*
 
 The code you saw in the previous section provides a
 good framework for beginning and intermediate level JavaScript
@@ -549,7 +549,7 @@ The code shown above is embedded in this document directly below the
 caption that reads **JavaScript Basics**. Right click this document and
 choose **View Source** to see it.
 
-**NOTE**: _It is important to understand that the text you see above is not
+**NOTE**: *It is important to understand that the text you see above is not
 the actual code that gets executed. The real code is inside this HTML
 page, but hidden from view. Whenever you include an angle bracket: \<\>
 in your HTML, then the words inside those brackets are called a tag, and
@@ -563,7 +563,7 @@ simple and straight forward most of the time, but this is one of those
 places where it can be a bit hard to understand what is going on if you
 are a newcomer. Nothing will better help you grasp these concepts than
 actually getting your hands dirty and writing some code. Sometimes you
-can learn best by doing._
+can learn best by doing.*
 
 Install the JavaScript ChromeTools Debugger in Eclipse:
 

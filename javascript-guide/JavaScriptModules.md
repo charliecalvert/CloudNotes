@@ -34,8 +34,7 @@ to write good JavaScript code. However, I think there is one commonly
 used pattern that you should use as your default style. It is called the
 Module Pattern.
 
-Part I
-------
+## Part I
 
 Here is an example of a simple implementation of the Module Pattern that
 can serve as a basic starting point for all JavaScript files that you
@@ -130,8 +129,7 @@ Notice that when using the modular pattern we:
 - We can't directly access the private properties
 - We use the prototype syntax to create a public method.
 
-Part II
--------
+## Part II
 
 Here is a more complete example of the JavaScript module pattern:
 
@@ -287,8 +285,7 @@ protected functional object, with public methods that use prototype, and
 private methods and variables that are part of the closure, and none of
 it leaks into the global namespace!
 
-Part III
---------
+## Part III
 
 Now let's add a static method:
 
@@ -339,8 +336,7 @@ Get the Source: [Point03.zip][point03]
 
 [point03]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/downloads/Point03.zip
 
-Cannot Read Property Prototype of Undefined
--------------------------------------------
+## Cannot Read Property Prototype of Undefined
 
 The "cannot read property 'prototype' of undefined" usually occurs if
 you forget to declare a constructor for your object.
@@ -401,8 +397,7 @@ var App = (function() {
 })();
 ```
 
-Thoughts on Private and Public Methods and the Module Pattern
--------------------------------------------------------------
+## Thoughts on Private and Public Methods and the Module Pattern
 
 Some half formed thoughts on public and private methods.
 
@@ -466,8 +461,7 @@ The modular pattern is interested in the **MyObject2** constructor, which is wha
 
 Since MyOjbect2 is a function constructor, it will not work properly unless you call new on it. It doesn't fail to work entirely if you don't call new. It just won't work properly. In particular, it will have no prototype. Without a properly initialized prototype object, then MyObject2 will not work properly. For instance, the method called runReader won't work. Other methods, such as parse() will work since they don't depend on the prototype. But in some cases it will be hard to get at the parse() method, but you do provide an event registration event that references it, and so that part of your code will work.
 
-References
-----------
+## References
 
 - [JavaScript Modules: A Beginners Guide][js-mod-begin]
 - [Elvenware Objects][elf-objects]

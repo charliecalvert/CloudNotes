@@ -41,8 +41,7 @@ Margie Accordian
 
 Charlie Accordian
 
-Change Style Sheet
-------------------
+## Change Style Sheet
 
 Click one of the options below to change the style sheet.
 

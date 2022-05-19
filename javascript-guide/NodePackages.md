@@ -337,7 +337,7 @@ An important variation on this error can occur if you are running upstart. Detai
 
 Many developers use NPM to install server side dependencies, bower to install client side dependencies. We don't have to do things this way, but it helps us neatly partition our app if we follow this policy.
 
-**NOTE**: _The introduction of webpack and ES6 has meant that most developers are moving on from Bower when creating new projects. However, there are still many older style projects in existence, and if you want to create an ES5, rather than an ES6, application, then Bower is still a good choice._
+**NOTE**: *The introduction of webpack and ES6 has meant that most developers are moving on from Bower when creating new projects. However, there are still many older style projects in existence, and if you want to create an ES5, rather than an ES6, application, then Bower is still a good choice.*
 
 To begin, we need to create a bower.json file. You can do this in one of two ways:
 

@@ -149,8 +149,7 @@ available.
 Examples of how to use a few of the key jQuery widgets are included
 below after the discussion of jQuery UI styles.
 
-jQuery UI Styles
-----------------
+## jQuery UI Styles
 
 You can change the styles of the elements on a page by attaching a class
 defined in the jQuery UI CSS file to it. For instance:
@@ -170,8 +169,7 @@ their three dimensional look. Other important classes include:
 Learn more here:
 [jQuery Theming API](https://api.jqueryui.com/category/theming/)
 
-Accordian
----------
+## Accordian
 
 The accordian control is a jQuery staple that I once used on nearly every page
 of the Elvenware site. When placed with the proper CSS: you could click on any
@@ -190,8 +188,7 @@ of the bars created by the code shown below to see them in action:
 </div>
 ```
 
-The Data Picker
-----------------
+## The Data Picker
 
 When styled correctly the data picker control, shown below, allows users to just click in the "edit control" shown
 below:
@@ -206,8 +203,7 @@ below:
 </div>
 ```
 
-Buttons
--------
+## Buttons
 
 Here are some fancy looking jQuery UI buttons. When clicked they invoke the JavaScript shown near the bottom of this page.
 
@@ -231,8 +227,7 @@ Here is the code for the buttons shown above:
 
 Put descriptive text here
 
-Slide
------
+## Slide
 
 The code below shows a technique for hiding and revealing text. You will
 need to click the buttons to make the text slide in and out.
@@ -265,15 +260,13 @@ need to click the buttons to make the text slide in and out.
 <button id="button1" onclick="hider()">Hide</button>
 <button id="button2" onclick="reveal()">Reveal</button>
 
-Dialogs
--------
+## Dialogs
 
 I need to put together dialog demo code. For now, you can visit the
 [Nemikor
 example](http://example.nemikor.com/basic-usage-of-the-jquery-ui-dialog/).
 
-Lists
------
+## Lists
 
 Use your mouse to sort the items below.
 
@@ -318,8 +311,7 @@ Use your mouse to sort the items below.
 </html>
 ```
 
-The JavaScript
---------------
+## The JavaScript
 
 You will also want to include a small amount of JavaScript. For
 instance, the JavaScript for this page looks ike this:

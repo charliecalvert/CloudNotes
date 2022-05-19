@@ -276,8 +276,7 @@ of the many types of selectors used by jQuery. To see a somewhat more
 complicated example, study the **[RadioButton](#radioButtons)** section
 found in this document.
 
-jQuery Attribute Selectors
---------------------------
+## jQuery Attribute Selectors
 
 Look at this selector:
 
@@ -575,8 +574,7 @@ You can read an entire book on REST here for free:
 
 The book is also available for download.
 
-jQuery getJSON
---------------
+## jQuery getJSON
 
 The jQuery **getJSON** method is a wrapper around the **ajax** method. It looks like
 this:
@@ -653,10 +651,10 @@ var writeJson = function() {
 };
 ```
 
-**NOTE**: _There are two other programs in JsObjects/JavaScript/NodeCode that
+**NOTE**: *There are two other programs in JsObjects/JavaScript/NodeCode that
 also demonstrate code shown in this section and the immediately succeeding
 sections of this HTML file. In particular, see SimpleReadWriteJson02 and
-SimpleReadWriteJson03._
+SimpleReadWriteJson03.*
 
 The primary purpose of this method is to invoke code on a server. It also
 passes data to the server, and processes the data sent back from the server.
@@ -941,8 +939,7 @@ invoked:
  };
 ```
 
-The Ajax Error Handler
-----------------------
+## The Ajax Error Handler
 
 At the end of the previous section we passed in an anonymous function to handle
 the success setting of the $.ajax call. Over time, I have settled on handling
@@ -1073,8 +1070,7 @@ method to define a default error handler:
 
 - <http://api.jquery.com/jQuery.ajaxSetup/>
 
-Pass Multiple Pieces of Data in an Ajax Call
---------------------------------------------
+## Pass Multiple Pieces of Data in an Ajax Call
 
 Sometimes you want to pass more than one piece of information when you
 make an Ajax call. For instance, you might want to pass an object to
@@ -1292,22 +1288,19 @@ this.RemoveHiLite = function()
 }
 ```
 
-Form Test
----------
+## Form Test
 
 This exercise shows how to use Forms:
 
 - [Forms Test](/javascripts/dev-web/FormTest.html)
 
-Adding Machine
---------------
+## Adding Machine
 
 The Adding Machine example has moved here:
 
 - [AddingMachine.html](AddingMachine.html)
 
-Posting Data
-------------
+## Posting Data
 
 There are two different ways to POST data back to the server when we
 want to call a script. We can have a form, and call a script by writing
@@ -1451,8 +1444,7 @@ The next line retrieves 2, and the third line yields 3. We put them all
 together in a string that looks like this: 1 + 2 = 3. Then we appeand
 that string to the items list back in the main HTML document.
 
-RadioButtons
-------------
+## RadioButtons
 
 jQuery makes it easy to work with **RadioButtons**. Consider the
 following declaration, which gathers together three RadioButtons in a
@@ -1505,8 +1497,7 @@ repository](http://www.elvenware.com/charlie/development/cloud/Mercurial.html).
 It is in the HtmlCssJavaScript folder. I also moved the JQuerySelectors
 examples into that folder.
 
-Dynamically Add Data to a Table
--------------------------------
+## Dynamically Add Data to a Table
 
 Click here to see an example where you can click a button to add structured
 data to a table.
@@ -1552,8 +1543,7 @@ Each time the button is pressed a new element with this structure
 **\<tr\>\<td\>some string\</td\>\<td\>some string\</td\>\</tr\>** is
 added to the **\#structuredTable**.Ãƒâ€šÃ‚Â
 
-jQuery and Handlebars
----------------------
+## jQuery and Handlebars
 
 You will find that you often want to insert the same HTML text or code
 into multiple HTML files. Another common need is to compose HTML files
@@ -1685,8 +1675,7 @@ $(document).ready(function() {
 });
 ```
 
-Links
------
+## Links
 
 - [http://jquery.com](http://jquery.com/)
 - [http://jquerymobile.com](http://jquerymobile.com/)

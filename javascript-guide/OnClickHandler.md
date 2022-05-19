@@ -81,8 +81,7 @@ $("hideMe").click
 
 <p><a onclick="Restore()">Restore Text</a></p>
 
-Working with Menus
-------------------
+## Working with Menus
 
 This can be a great trick for making menus appear and disappear on small
 devices. The problem you face is the lack of real estate on small

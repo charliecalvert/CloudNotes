@@ -88,7 +88,7 @@ person.sayGoodbye: function() {
 }
 ```
 
-**NOTE**: _Most properly constructed function return a value rather than simply writing something to the console. The **sayHello** method does not return a value because it is designed to be a very simple, if impractical, method._
+**NOTE**: *Most properly constructed function return a value rather than simply writing something to the console. The **sayHello** method does not return a value because it is designed to be a very simple, if impractical, method.*
 
 ## Function Objects
 
@@ -134,11 +134,11 @@ Having said all this, I still do use **new** in one or two cases. In particular,
 
 This gets tricky, because Crockford follows up the text I quote above with advice that appears to say we should not use **new** even to create our own objects. I don't think that is what he meant to say, or if he did mean to say it, I don't agree. Much of the best code I've seen uses **new** when creating custom objects.
 
-**NOTE**: _I'm not saying that all custom objects, such as though shown above in the [Object Literal](#object-literal) section, need be created with **new**. However, as you will see in the chapter on the [module pattern][mod-pat], there are times when you should use the **new** operator with **constructor** objects. In those cases, the **new** operator is the right solution._
+**NOTE**: *I'm not saying that all custom objects, such as though shown above in the [Object Literal](#object-literal) section, need be created with **new**. However, as you will see in the chapter on the [module pattern][mod-pat], there are times when you should use the **new** operator with **constructor** objects. In those cases, the **new** operator is the right solution.*
 
 Just to be clear, I agree with all I have quoted from Crockford above about **Boolean**, **Array**, **Number**, and **String**. And for creating empty **Objects**. Don't use **new** with them. But using **Constructor** objects and **new**, particularly in the module pattern, is a good idea. It brings many benefits, including help with the **this** operator.
 
-**NOTE**: _The confusion that often springs up around **Constructor** objects and the **new** keyword is a major reason to move to ES6 and its **class** syntax. I am, in fact, moving to ES6 in most of my new code. Unfortunately, that is not yet reflected in this documentation._
+**NOTE**: *The confusion that often springs up around **Constructor** objects and the **new** keyword is a major reason to move to ES6 and its **class** syntax. I am, in fact, moving to ES6 in most of my new code. Unfortunately, that is not yet reflected in this documentation.*
 
 ## Properties and Methods
 

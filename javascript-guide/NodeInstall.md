@@ -277,8 +277,7 @@ Any other libraries you install will also end up in this directory. For instance
 
 Now the **node_modules** directory will contain libraries: express and openid.
 
-What Version of a Node Package is Installed?
-------------------------------------------
+## What Version of a Node Package is Installed?
 
 Use the following syntax to identify the latest version of a package:
 
@@ -549,8 +548,7 @@ As you can see, bower is no longer listed among our **outdated** packages. This 
 
 **NOTE**: *It is common for Linux only to report errors or warnings, and to say nothing on success. This example follows that rule: we are told about outdated packages, but up to date packages are simply not listed.
 
-Get Node and NPM on your Path
------------------------------
+## Get Node and NPM on your Path
 
 In many cases, and certainly in most classes I teach, your life will be
 simpler if both Node and NPM are always on your path. Your install of Node
@@ -605,8 +603,7 @@ Or, if you want, use the environment dialog as explained above.
 
 - [See also Node and env](http://nodejs.org/api/modules.html#modules_loading_from_the_global_folders)
 
-Node and Environment Variables
-------------------------------
+## Node and Environment Variables
 
 If you have set a global environment variable called JSOBJECTS, you
 can access it like this:

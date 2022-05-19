@@ -295,7 +295,7 @@ In general, however, it is not performance that causes intermediate level progra
 
 It simply does not matter how fast your code is if it doesn't work and can't be tested. The first goal is to write clean, easy to maintain code that can form the building blocks for our tests and for a working program.
 
-**NOTE**: _I recognize that some projects, such as the core modules of an OS or compiler code generation, are very much concerned with even small performance issues. My argument here is not that there are no cases where performance is important, but only that it is generally not a high priority for typical programming assignments._
+**NOTE**: *I recognize that some projects, such as the core modules of an OS or compiler code generation, are very much concerned with even small performance issues. My argument here is not that there are no cases where performance is important, but only that it is generally not a high priority for typical programming assignments.*
 
 ## Part II
 
