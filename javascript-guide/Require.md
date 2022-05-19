@@ -36,7 +36,7 @@ In small projects that use only one or two JavaScript files, require is usually 
 The first step is to load require and **data-main**, which is generally a file called **Main.js**.
 
 ```html
- <script data-main="javascripts/Main" src="javascripts/require.js"></script>
+<script data-main="javascripts/Main" src="javascripts/require.js"></script>
 ```
 
 The real work, discussed in the next section, occurs in **Main.js**.
@@ -45,7 +45,7 @@ The real work, discussed in the next section, occurs in **Main.js**.
 
 Here is a relatively simple example set of files. The first is called **Main.js**:
 
-```
+```html
 require.config({
     baseUrl: '.',
     paths: {
@@ -98,27 +98,33 @@ speed with require.
 
 In **index.html** we link in **Main** and **require.js**:
 
+```html
  <script data-main="Source/Main" src="Source/require.js"> </script>
+```
 
 **Main** then configures **jquery**:
 
- require.config({
+```javascript
+require.config({
    paths: {
      "jquery": "http://code.jquery.com/jquery-1.11.0.min",
    }
  });
+```
 
 Then we create a simple module called **Boat** which is
 found in **Boat.js**:
 
- define(['jquery'], function() { 'use strict';
+```javascript
+define(['jquery'], function() { 'use strict';
 
-  function describe() {  
-   $("#list").append("<li>I'm a boat.</li>");
-  };
+    function describe() {  
+        $("#list").append("<li>I'm a boat.</li>");
+    };
 
   return {describe: describe};
- });
+});
+```
 
 This code says that our **Boat** module requires **jquery**. It
 then defines a simple function which adds an item to a list. Finally
@@ -179,7 +185,9 @@ The first puts **MarkShow** only in the call to require, while the second puts i
 
 I don't believe there is any difference at all. We use the **paths** property in **require.config** to help us work with complex paths or complex names. It's easier to write **jquery** than **jquery-1-11.1.min** so we *configure* require so that it understands that when we say **jquery**, we really mean **jquery-1-11-1.min**. The main purpose of **paths**, of course, is just to let us define the paths to modules that are not in the current directory:
 
-    "Markdown" : "Markdown/Converter",
+```javascript
+"Markdown" : "Markdown/Converter",
+```
 
 In our example, **MarkShow** is in the current directory, so there is no reason to configure it. We can already reference it just by writing **require["MarkShow"], function(MarkShow)**. As a result, there is no point in putting it in the **paths** property of **require.config**.
 
@@ -197,14 +205,16 @@ I would ask that for the midterm, you define the paths to all your files in requ
 
 If anyone is reading this, and is confused. I'll give an example. In public/javascripts/Main.js, there is a section like this:
 
-    require.config({
-        paths : {
-            "jquery" : "jquery-2.1.1",
-            "DefaultReader" : "./Readers/DefaultReader",
-            "JsonReader" : "./Readers/JsonReader",
-            "MarkdownReader" : "./Readers/MarkdownReader"
-        }
-    });
+```javascript
+require.config({
+    paths : {
+        "jquery" : "jquery-2.1.1",
+        "DefaultReader" : "./Readers/DefaultReader",
+        "JsonReader" : "./Readers/JsonReader",
+        "MarkdownReader" : "./Readers/MarkdownReader"
+    }
+});
+```
 
 I want you to define the paths to all the files in your project in the paths object shown above. The only exception would be for files that are already in public/javascript. They don't need to be called out explicitly since they can just be referenced by name.
 
