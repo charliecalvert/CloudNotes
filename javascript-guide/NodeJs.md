@@ -164,14 +164,14 @@ one of the sample programs shown below inside your file.
 For instance, you might type something like this:
 
 ```code
-C:\Git\Prog282-Calvert>mkdir MyFirstNodeServer
-C:\Git\Prog282-Calvert>cd MyFirstNodeServer
+mkdir MyFirstNodeServer
+cd MyFirstNodeServer
 ```
 
 Now create server.js as described below. Then run the server:
 
 ```code
-C:\Git\Prog282-Calvert\MyFirstNodeServer>node server.js
+node server.js
 ```
 
 Once the server starts, go to your browser, and type the following:
@@ -246,7 +246,7 @@ Here is the error:
 Count down five lines from the line that reads "Cannot find module 'nano'". That line looks something like this:
 
 ```text
-at Object <anonymous> (/home/bcusewr/Git/isit320_Sinanai-2016/Week05-DataMaster/routes/Couch.js:12:27
+at Object &lt;anonymous&gt; (/home/bcusewr/Git/isit320_Sinanai-2016/Week05-DataMaster/routes/Couch.js:12:27
 ```
 
 This means that in Couch.js, at line 12, character 27, there is a problem finding the module nano. I can't be certain, but I imagine in your copy of Couch.js, at line 12, you would find this code:
@@ -994,8 +994,8 @@ Start the program like this:
 Regardless of the port that you told your program to run on, the debugger
 runs on port 5858:
 
-```code
-G:\\Git\\OpenId03>node --debug-brk server01.js
+```shell
+node --debug-brk server01.js
 debugger listening on port 5858
 ```
 
