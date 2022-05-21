@@ -147,7 +147,7 @@ var myString = "A string";
 Both are legal. This makes it easy to embed quotes in a string:
 
 ```javascript
-var myQuote = "He said: 'By golly, I think it's alive!'";
+var myQuote = `He said: 'By golly, I think it's alive!'`;
 ```
 
 Or, if you prefer:
@@ -561,14 +561,14 @@ In this case, JavaScript will automatically insert a semicolon after return:
 Then our code produces an error, like this:
 
 ```bash
-C:\Temp\Bar.js:5
+~temp/Bar.js:5
             lastName: "Washington"
                     ^
 SyntaxError: Unexpected token :
-    at Module.\_compile (module.js:439:25)
-    at Object.Module.\_extensions..js (module.js:474:10)
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
     at Module.load (module.js:356:32)
-    at Function.Module.\_load (module.js:312:12)
+    at Function.Module._load (module.js:312:12)
     at Function.Module.runMain (module.js:497:10)
     at startup (node.js:119:16)
     at node.js:902:3

@@ -48,7 +48,7 @@ program that uses JavaScript. You can save this file as
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
  <title>Very Simple</title>
  <script type="text/javascript">
- document.writeln("<p>A very simple JavaScript Hello-World program.</p>");
+     document.writeln("<p>A very simple JavaScript Hello-World program.</p>");
  </script>
 </head>
 
@@ -73,7 +73,7 @@ are using Chrome, press Ctrl + O to open a file.
 
 You can see the path to the file in the address bar. This is a normal
 Windows path with slashes rather than back-slashes. Notice also that it
-is prefaced with the code **file:///.**  Later you can learn how to set
+is prefaced with the code **file:///.** Later you can learn how to set
 up a web server to publish your code, but for now, it is fine to just
 browse for the file on your hard drive.
 
@@ -85,13 +85,13 @@ your HTML:
 <!DOCTYPE html>
 <html>
 <head>
- <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
- <title>Very Simple</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Very Simple</title>
 </head>
 <body>
-        <script type="text/javascript">
-               document.writeln("<p>A very simple JavaScript Hello-World program.</p>");
-        </script>
+    <script type="text/javascript">
+        document.writeln("<p>A very simple JavaScript Hello-World program.</p>");
+    </script>
 </body>
 </html>
 ```
@@ -101,7 +101,7 @@ Instead, I create two or more files: one for my html; one or more for my
 JavaScript. I then provide a link from the \<head\> element in the HTML
 to my JavaScript file or files:
 
-**Listing 03: The HTML File**
+### Listing 03: The HTML File
 
 ```html
 <!DOCTYPE html>
@@ -132,8 +132,17 @@ sure to put both files in the same directory. For instance, you may have
 a folder called **C:\\Src** where you store your source files. Put both
 files in that directory:
 
-    C:\Src\VerySimple.html
-    C:\Src\VerySimple.js
+```shell
+    C:\\Src\\VerySimple.html
+    C:\\Src\\VerySimple.js
+```
+
+Or:
+
+```shell
+~/Source/VerySimple.html
+~/Source/VerySimple.js
+```
 
 I believe it is nearly always best not to put your JavaScript code in
 the same file as your HTML. I believe this, despite the fact that there
@@ -145,7 +154,7 @@ three files:
 - Put your content in HTML files with an HTML extension: MyFile.html
 - Put your presentation code in CSS files with a CSS extension:
     MyFile.css
-- Put your  JavaScript in JavaScript files with JS extension:
+- Put your JavaScript in JavaScript files with JS extension:
     MyFile.js
 
 If you need to use the same CSS or JavaScript in multiple HTML files,
@@ -360,7 +369,7 @@ see if it works. Here is how to proceed.
 
 Begin your the same basic HTML file described above:
 
-**Listing 05: The HTML File**
+### Listing 05: The HTML File
 
 ```html
 <!DOCTYPE html>
@@ -408,7 +417,7 @@ The code shown above is embedded in this document directly below the
 caption that reads **JavaScript Basics**. Right click this document and
 choose **View Source** to see it.
 
-NOTE: _It is important to understand that the text you see above is not
+NOTE: *It is important to understand that the text you see above is not
 the actual code that gets executed. The real code is inside this HTML
 page, but hidden from view. Whenever you include an angle bracket: \<\>
 in your HTML, then the words inside those brackets are called a tag, and
@@ -422,7 +431,7 @@ pretty simple and straight forward most of the time, but this is one of
 those places where it can be a bit hard to understand what is going on
 if you are a newcomer. Nothing will better help you grasp these concepts
 than actually getting your hands dirty and writing some code. Sometimes
-you can learn best by doing._
+you can learn best by doing.*
 
 Install the JavaScript ChromeTools Debugger in Eclipse:
 
@@ -499,12 +508,16 @@ var myObject = { 'myProperty': 12 };
 TThe quotes around a property name are optional if the name is a legal
 Javascript identifier:
 
+```javascript
     var myObject = { myProperty: 12 };
+```
 
 You can access a property with either of two notations:
 
+```javascript
     myObject.myProperty;
     myObject['myProperty'];
+```
 
 Though both examples are legal, the first is much more common.
 
@@ -575,11 +588,13 @@ calling a function, then the extra parameters will simply be ignored.
 Here is a second way to declare a function. This time we will store an
 anonymous function in a variable:
 
+```javascript
     var Test01 = function()
     {
      var name = "Test01";
      $("#Test01").html(name);
     }
+```
 
 Each function that you declare in JavaScript is an object. When you look
 at the following code, you might therefore be forgiven for supposing

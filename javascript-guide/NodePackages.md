@@ -24,6 +24,7 @@ npm install -D babel-loader @babel/core @babel/preset-env webpack
 
 You don't need to put this in **webpack.config.js** if you are using **.babelrc**:
 
+```javascript
     module: {
         rules: [
             {
@@ -40,12 +41,15 @@ You don't need to put this in **webpack.config.js** if you are using **.babelrc*
             }
         ]
     }
+```
 
 Just do this in **.babelrc**:
 
+```json
     {
         "presets": ["@babel/preset-env"]
     }
+```
 
 ## NPM ShortCuts
 
@@ -70,25 +74,33 @@ Here is additional information on NPM **scripts**, **dependencies**, **init**, a
 
 Also:
 
+```bash
 - npm docs
 - npm version
 - npm repo
+```
 
 ## Using package.json
 
 All your projects should include a file called **package.json**. To create one from scratch, go to the root of your project and issue this command:
 
+```bash
  npm init
+```
 
 You will be presented with a series of prompts to fill out. Just step through them one by one, leaving the ones that don't interest or confuse you blank. When you are done, there will be a file called **package.json** in your current directory.
 
 To add packages to package.json, issue a command like this:
 
+```bash
  npm install require --save
+```
 
 This installs the package called **require** into a folder called **node_modules**. It also saves a command to install the package into **package.json**. To reinstall **require** later, just type this command:
 
+```bash
  npm install
+```
 
 This command processes **package.json** and automatically installs all the packages you **saved** into it. You can, of course, **save** information about many packages into a single **package.json** file.
 
@@ -96,6 +108,7 @@ The key point to remember is that **npm install** processes the contents of the 
 
 If you follow the link to [package.json][pj] for [BridgeSailor][bridgeSailor] you will see that karma is listed in that file:
 
+```bash
     "devDependencies": {
         "requirejs": "^2.1.11",
         "karma": "^0.12.14",
@@ -104,17 +117,20 @@ If you follow the link to [package.json][pj] for [BridgeSailor][bridgeSailor] yo
         "karma-chrome-launcher": "^0.1.3",
         "karma-firefox-launcher": "^0.1.3"
     }
+```
 
 This means that running **npm install** will install all the files listed above, including the **karma** library.
 
 The point of **npm install** and **package.json** is that they work together to install a series of libraries, rather than asking you to type the following series of individual commands:
 
+```bash
     npm install requirejs
     npm install karma
     npm install karma-jasmine
     npm install karma-requirejs
     npm install karma-chrome-launcher
     npm install karma-firefox-launcher
+```
 
 Typing all of the above commands is time consuming, error prone and repetitious. Therefore we use **package.json**, which needs to be configured correctly once, and works automatically thereafter.
 
@@ -125,10 +141,10 @@ Typing all of the above commands is time consuming, error prone and repetitious.
 
 To put the thing you installed in package.json use **--save** or **--save-dev**. If it is going to be used on the client side, then use **--save**, if it is debugging or other developer tool that is used only during development, then use **--save-dev**
 
-<pre>
+```bash
  npm install "express" --save
  npm install "karma-script-launcher" --save-dev
-</pre>
+```
 
 ## Adding entries to package.json
 
@@ -140,7 +156,9 @@ The command shown above first installs **karma-script-launcher** into **node_mod
 
 Consider this command:
 
+```bash
     npm install karma --save-dev
+```
 
 This command installs the library, and saves the library name into **package.json** if it is not already there.
 
@@ -160,7 +178,7 @@ You may have a project that depends on express. In such cases, the author of the
 Here is the contents of a simple package.json file that installs both express
 and openid as well as a library called mdirp:
 
-```
+```json
  {
   "name": "OpenId04",
   "version": "0.0.1",
@@ -189,7 +207,7 @@ One useful tip:
 
 You might see something like this:
 
-```
+```bash
 $ npm start
 
 > Week02-NpmBower@0.0.0 start /home/bcuser/Git/isit320-foo-2015/Week02-NpmBower
@@ -217,7 +235,7 @@ They both install **jquery**, but only the first adds an entry to **package.json
 
 Understanding the source of errors like those shown above is very helpful. Remember, we fix this error by running the following command:
 
-```
+```bash
 npm install
 ```
 
@@ -231,6 +249,7 @@ NPM related issues are specific to node, not to Linux. If you were using node on
 
 Here are a few node packages (libraries) that I often install globally:
 
+```bash
     ~/npm/lib/node_modules
     ├─┬ express-generator@4.0.0
     ├─┬ grunt-cli@0.1.13
@@ -239,9 +258,11 @@ Here are a few node packages (libraries) that I often install globally:
     ├─┬ jshint@2.5.0
     ├─┬ karma-cli@0.0.4
     └─┬ npm@1.4.9
+```
 
 These are stored here on a typical Linux system:
 
+```bash
     $ ls -l /usr/lib/node_modules/
     total 28
     drwxr-xr-x 5 nobody charlie 4096 Apr 21 12:24 express-generator
@@ -251,10 +272,13 @@ These are stored here on a typical Linux system:
     drwxr-xr-x 6 nobody charlie 4096 Apr 21 18:31 jshint
     drwxr-xr-x 4 nobody charlie 4096 Apr 27 10:23 karma-cli
     drwxr-xr-x 9 root root 4096 May 5 07:56 npm
+```
 
 We install these global packages by typing something like:
 
+```bash
     sudo npm install -g karma-cli
+```
 
 Where **karma-cli** is the package we want to install.
 
@@ -262,6 +286,7 @@ Each project also has packages that it uses. Each individual project might rely 
 
 Here, for instance, are the packages installed for a project called Week02Jade:
 
+```bash
     charlie@MountainStreamsLinux:~/Git/Prog282/Week02Jade
     $ ls -l node_modules/
     total 28
@@ -272,10 +297,11 @@ Here, for instance, are the packages installed for a project called Week02Jade:
     drwxrwxr-x 5 charlie charlie 4096 Apr 26 16:44 jade
     drwxrwxr-x 3 charlie charlie 4096 Apr 26 16:44 morgan
     drwxrwxr-x 2 charlie charlie 4096 Apr 26 16:44 static-favicon
+```
 
 These packages get installed when we type **npm install**. This action causes **npm** to process the contents of **package.json**, and to install the packages listed there:
 
-```
+```json
     $ cat package.json
     {
       "name": "application-name",
@@ -306,10 +332,12 @@ You can find all the **npm** packages here:
 
 Sometimes you may also see this error:
 
+```bash
     npm install
     npm ERR! install Couldn't read dependencies
     npm ERR! package.json ENOENT, open '/home/charlie/package.json'
     etc...
+```
 
 This errror occurs, needless to say, because a copy of **package.json** is not found. As mentioned above, there are cases when a node program does not rely on any libraries, and hence **package.json** does not exist. But the error above usually occurs because you are not in the proper directory. For instance, you are in your home directory, and the program you want to run is in **~/Git/JsObjects/JavaScript/Design/SimpleQueue**.
 
@@ -324,11 +352,11 @@ node server. Usually, fixing this is just a matter of finding the
 SSH or Windows command prompt where the server is running, and pressing
 Ctrl-C to stop the server:
 
-```
-C:\Git\P282\CanvasGrid>node server.js
+```bash
+~/Git/P282/CanvasGrid$ node server.js
   Listening on port :30026
 ^C   <== Here I press Ctrl-C
-C:\Git\P282\CanvasGrid>
+~/Git/P282/CanvasGrid$
 ```
 
 An important variation on this error can occur if you are running upstart. Details about that variant of the [EEADDRINUSE error are discussed below](#eaddrinuse-and-upstart).
@@ -346,19 +374,19 @@ To begin, we need to create a bower.json file. You can do this in one of two way
 
 If you choose the first option, you can take all the defaults for the prompts that you see, or fill in the obvious fields with sensible values. If you choose for the second option, don't forget the period at the end of the text for the copy command. It specifies where you should copy bower.json. In particular, it says: copy it here. The environment variable $ELF_TEMPLATES points at:
 
-```
+```bash
 ~/Git/JsObjects/Utilities/Templates
 ```
 
 By default, bower installs your files not into **node_modules** but into a directory called **bower_components**. In express applications, however, we might want to install bower components into a different directory. In particular, we might choose to place them in our project's **public/bower_components** folder. To ensure that happens, copy a bower configuration file into your project:
 
-```
+```bash
 cp $ELF_TEMPLATES/.bowerrc .
 ```
 
 This small text file contains the following text, which tells bower to install its components into the **public/components** folder:
 
-```
+```bash
 {
   "directory": "public/bower_components"
 }
@@ -370,17 +398,23 @@ Bower is like npm. Use NPM for server side code. Use Bower for client side code.
 
 Install Bower:
 
+```bash
     npm install -g bower
+```
 
 Create a **bower.json** file in the root of your current project:
 
+```bash
     bower init
+```
 
 You will be prompted for input. Take all the defaults or use your common sense to fill in the fields as you are prompted for them.
 
 Remember that Windows does not like to start a file with a period. As a result, we need to create **.bowerrc** like this:
 
+```bash
     echo { } > .bowerrc
+```
 
 Edit **.bowerrc** in geany and add the following so that we will install bower components into the **public/components** directory:
 
@@ -395,7 +429,9 @@ Again, test in **jsonlint.com** to make sure it is valid.
 
 Install jquery:
 
+```bash
     bower install jquery --save
+```
 
 The **--save** parameter saves your request for jquery into the **bower.json file.**  
 
@@ -430,16 +466,17 @@ My **bower.json** file now looks like this:
 
 The most important part is the **dependencies** object at the end of the file.
 
-Modify **/views/layout.jade** to include jquery and **Control.js**
+Modify **/views/layout.pug** to include jquery and **Control.js**
 
-```
+```html
 doctype html
-html
-    head
-        title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        script(src='components/jquery/dist/jquery.js')
-        etc...
+html(lang="en-us" dir="ltr") 
+    html
+        head
+            title= title
+            link(rel='stylesheet', href='/stylesheets/style.css')
+            script(src='components/jquery/dist/jquery.js')
+            etc...
 ```
 
 **NOTE**: *When I type **etc...**, that can sometimes be translated as: "Filling in this part of the file is left as an exercise for the reader."*

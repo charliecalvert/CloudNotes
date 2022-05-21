@@ -18,19 +18,27 @@ image: ./course/course-javascript.jpg
 
 On the instance data issue in modular pattern, I believe it goes like this:
 
+```javascript
 this.goober = "foo"
+```
 
 In the above, **goober** is always instance based. It is always just the specific instance of the object that you created.
 
+```javascript
 MyObject.prototype.goober = "foo";
+```
 
 In the above, goober is always static. There is only one prototype per object. You can make 5000 instances of the object, but there will be only one copy of prototype.goober. That is the way the prototype works. A key fact, perhaps the key fact, about prototypes is that there is only one per class, no matter how many instances you create. Each instance has a pointer to the prototype for that class. There is only one. If you change Object.prototype, then every object in your program will see the change, since they all inherit from that one, single, Object prototype. All of them point to that prototype. (Well, usually all of them do. It is possible to create an object that does not inherit from Object, but that is rarely done.)
 
-var goober="foo";
+```javascript
+static goober="foo";
+```
 
 Now goober is part of the closure, and I believe that means it is going to be static data. What about accessing goober from a public instance method:
 
- this.foo = function() { console.log(goober)}?
+```javascript
+ this.foo = function() { console.log(goober)};
+```
 
 I need to test that. This is an instance based function, so if it has a closure that wraps data, is data static or instance based. I would think instance based, but I would need to check.
 

@@ -32,21 +32,27 @@ When using NodeJs, most developers will want to install express, nodemon and som
 
 Here is an outline of some of the steps performed If on Linux, first do this so that you don't have to use sudo:
 
+```bash
     mkdir ~/npm
     npm config set prefix ~/npm
+```
 
 Then add this to the bottom of your **.bashrc** and restart or source bash:
 
+```bash
     export PATH="$PATH:$HOME/npm/bin"
+```
 
 You can now install express, karma, etc globally without using sudo:
 
+```bash
     npm install -g karma-cli
     npm install -g grunt-cli
     npm install -g jasmine-node
     npm install -g express-generator
     npm install -g nodemon
     npm install -g mocha
+```
 
 If on Windows, you can issue the above commands without worrying about
 **sudo**.
@@ -68,7 +74,7 @@ There are two scripts there that you should run.
 
 Run them one at a time, like this:
 
-```
+```bash
 ./NodeInstall.sh
 ./InstallNodePackages.sh
 ```
@@ -546,7 +552,7 @@ router.get('/:id', function(request, response) {
 });
 ```
 
-This should be last route in the file. It says, in effect: _if none of the other routes in this file have matched the request, then assume this is a request to render a jade/pug file. For instance, if the user asks for **/foo**, then the code will attempt to render as HTML the file in the views directory called **foo.jade** or **foo.pug**, as the case may be._
+This should be last route in the file. It says, in effect: *if none of the other routes in this file have matched the request, then assume this is a request to render a jade/pug file. For instance, if the user asks for **/foo**, then the code will attempt to render as HTML the file in the views directory called **foo.jade** or **foo.pug**, as the case may be.*
 
 ## Working with Post
 
@@ -836,14 +842,14 @@ app.use(require('stylus').middleware(__dirname + '/public'));
 
 Here is a Simple Style Page
 
-```code
+```pug
 border-stuff()
  border solid thin black
 
 body
  background-color #00AA00
  padding: 50px
- font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+ font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif
 
 a
  color: #004400
@@ -906,7 +912,9 @@ Now start your server running in one shell:
 
 Then open a second shell and run your tests:
 
+```bash
  jasmine-node Tests/
+```
 
 Voila! You are done.
 
@@ -914,7 +922,9 @@ Voila! You are done.
 
 Let's look at this line of code:
 
+```javascript
     var express = require('express')
+```
 
 It says that you want to load a copy of a file from the Express package and retrieve an object from it.
 
@@ -934,8 +944,8 @@ In **package.json** we ask **npm** to install the express library into **node mo
 
 Because that line is found in **package.json**, the following directory is created in **node_modules**:
 
-```code
-Week04-AngularMongoState\node_modules\express
+```bash
+Week04-AngularMongoState/node_modules/express
 ```
 
 In that folder is a directory called **lib** and there is found a file called **express.js**. It is that file that is loaded when we call **require** and pass in **express**. Since we need the express library in a nodejs express project, it is important that we don't change that line.
@@ -944,11 +954,15 @@ In that folder is a directory called **lib** and there is found a file called **
 
 Install nodemon:
 
+```bash
  npm install -g nodemon
+```
 
 Now use it to start your application:
 
+```bash
  nodemon server.js
+```
 
 Now you won't have to restart your application each time you change
 the source.
@@ -1149,7 +1163,7 @@ information on dirname:
 We specify where the log file will be written in this part of our upstart
 scripts:
 
-```code
+```bash
 exec /usr/bin/nodejs /home/ubuntu/ExpressSend/server.js >> /var/log/node.log 2>&1
 ```
 
@@ -1219,7 +1233,7 @@ You might think that you can tell if a program is running on a port
 by going to browser and seeing if anything comes up when you type in
 the address and port of your server:
 
-```
+```html
 http://192.168.0.1:30025
 ```
 
@@ -1247,7 +1261,7 @@ source of trouble.
 See the Library in the following project for an example of how to copy
 files and make directories:
 
-```
+```bash
 JsObjects/JavaScript/Syntax/MakeDirectory.
 ```
 
@@ -1402,7 +1416,9 @@ I believe I had referenced this bash file:
 
 It is a script, and needs to be run as such:
 
+```bash
     sh RunKarma.sh
+```
 
 or
 
@@ -1421,17 +1437,23 @@ The line **source ~/.bashrc** is a way to have the **.bashrc** file executed wit
 
 The point here is this. If you run **source .bashrc**, or if you start a new shell the normal way, then the current shell, the one you are in, is affected. It is a way of making sure that your current shell, the one at whose command line you are currently working, has executed all the commands in **.bashrc**. But if you run a script with the dot (.) command, then a new shell is launched, the script is run, and when it is finished you are returned to the original shell and changes the script made to the environment are forgotten. Consider running our command:
 
+```bash
     ./RunKarma.sh
+```
 
 It creates a new shell, sets the environment variable CHROME_BIN for that shell to **/usr/bin/chromium-browser**. The script then starts Karma. When you hit Control-C to end the run, then you are returned to original shell, and the CHROME_BIN environment variable is returned to the state it was in before you ran the command.  Since it is unlikely that anything else but Karma cares about that environment variable, then that is a reasonable solution. You could probably put ./RunKarma in your bin directory, so that you did not have to put it inside of each project.... (Yes, I tried that, and it seems to work).
 
 Remember that you can check the current value of CHROME_BIN by typing:
 
-    echo \$CHROME_BIN
+```bash
+    echo $CHROME_BIN
+```
 
 On Windows it would be:
 
+```bash
     echo %CHROME_BIN%
+```
 
 ## Symbolic Links to node_modules
 
