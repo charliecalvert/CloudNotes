@@ -153,7 +153,7 @@ var myQuote = "He said: 'By golly, I think it's alive!'";
 Or, if you prefer:
 
 ```javascript
-var myQuote = 'He said: "By golly, I think it\'s alive!"';
+var myQuote = 'He said: "By golly, I think it&#92;'s alive!"';
 ```
 
 If you want some direction here, I suggest using double quotes for strings, as it makes embedding apostrophe's easier. For instance, in the second example I was forced to use a backslash to escape the apostrophe in the word **it's**. This is, in my opinion, somewhat awkward.
@@ -559,10 +559,10 @@ C:\Temp\Bar.js:5
             lastName: "Washington"
                     ^
 SyntaxError: Unexpected token :
-    at Module.\_compile (module.js:439:25)
-    at Object.Module.\_extensions..js (module.js:474:10)
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
     at Module.load (module.js:356:32)
-    at Function.Module.\_load (module.js:312:12)
+    at Function.Module._load (module.js:312:12)
     at Function.Module.runMain (module.js:497:10)
     at startup (node.js:119:16)
     at node.js:902:3
@@ -1772,7 +1772,7 @@ tag, or before the closing \<p\> tag, or after it.
 
 If you want to learn more about the DOM, go to this page:
 
-[https://developer.mozilla.org/en/Gecko\_DOM\_Reference](https://developer.mozilla.org/en/Gecko_DOM_Reference).
+[https://developer.mozilla.org/en/Gecko_DOM_Reference](https://developer.mozilla.org/en/Gecko_DOM_Reference).
 
 Here is the code for the button:
 

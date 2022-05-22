@@ -120,7 +120,7 @@ Here is code for using the template:
  function addItem(text) {  
   'use strict';  
 
-  var script = \$("#par01").html(),  
+  var script = $("#par01").html(),  
   template=Handlebars.compile(script);  
 
   var result = template({  

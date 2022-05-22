@@ -153,7 +153,7 @@ var myQuote = "He said: 'By golly, I think it's alive!'";
 Or, if you prefer:
 
 ```javascript
-var myQuote = 'He said: "By golly, I think it\'s alive!"';
+var myQuote = 'He said: "By golly, I think it&#92;'s alive!"';
 ```
 
 If you want some direction here, I suggest using double quotes for strings, as it makes embedding apostrophe's easier. For instance, in the second example I was forced to use a backslash to escape the apostrophe in the word **it's**. This is, in my opinion, somewhat awkward.
