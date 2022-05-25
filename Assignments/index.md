@@ -17,7 +17,7 @@ fileNameHTML: index.html
 
 ## Overview
 
-A list of many of the assignments I have created over the years. This is not a complete list.
+Here is a list of many of the assignments I have created over the years. This list is not complete.
 
 ## The Assignments
 
