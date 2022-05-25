@@ -51,7 +51,7 @@ AWS assigments
 
 ## Ozymandias
 
-<pre>
+```shell
 I met a traveller from an antique land
 Who said: `Two vast and trunkless legs of stone
 Stand in the desert. Near them, on the sand,
@@ -66,6 +66,7 @@ Look on my works, ye Mighty, and despair!"
 Nothing beside remains. Round the decay
 Of that colossal wreck, boundless and bare
 The lone and level sands stretch far away.`
-</pre>
+
 
 *Percy Bysshe Shelley*
+```
