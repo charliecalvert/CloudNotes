@@ -45,15 +45,15 @@ Conside the following simple Angular template:
 The file shown here looks like HTML at first, but there a odd bits of syntax.  Notice, for instance, these two bits of syntax:
 
 - ng-app
-- {{5 * 7}}
+- &#123;&#123;5 * 7&#125;&#125;
 
-These two bits of syntax indicate that this is not raw HTML. Instead, it is an angular **template**.
+This is not raw HTML. Instead, it is an angular **template**.
 
 Nomenclature:
 
 - The File shown above: an Angular **template**.
 - **ng-app**: It is both an HTML **attribute** and an Angular **directive**
-- {{5 * 7}}: Those double curly braces are called Angular **expressions**.
+- &#123;&#123;5 * 7&#125;&#125;: Those double curly braces are called Angular **expressions**.
 
 We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** work.
 
@@ -132,7 +132,9 @@ We can tell we are creating the module because we include the (empty) list of de
 
 When **draw-machine.js** loads, it uses the loaded module:
 
-    angular.module('elvenApp')
+```javascript
+angular.module('elvenApp')
+```
 
 We can tell we are using, rather than creating, the module because it has no second paramter.
 
@@ -187,7 +189,7 @@ A developer can expand the richness of HTML. By creating a new directive, you ca
 
 Here is a simple directive:
 
-```
+```javascript
 app.directive('bar', function() {
     return {
         link: function() {
@@ -199,19 +201,21 @@ app.directive('bar', function() {
 
 This directive assumes there is a variable app that references a module. In other words, it assumes that somewhere there is code that looks something like this:
 
-    var app = angular.module('foo', []);
+```javascript
+var app = angular.module('foo', []);
+```
 
 After linking in the above directive, you can log the word **bar** to the console by adding this to your HTML:
 
-```
+```html
     <div bar>
     </div>
 ```
 
 This would also work:
 
-```
-    <bar></bar>
+```html
+<bar></bar>
 ```
 
 Suppose your controller had this declaration in it:
@@ -263,7 +267,9 @@ var userInput = $('#foo').val(); // Yields string bar
 
 In the simplest, most reductive possible terms, that is what scope does for you. In Angular html templates we write something that might include this code:
 
- <input type="text" ng-model='foo'>
+```html
+<input type="text" ng-model='foo'>
+```
 
 In our Angular controllers, we write:
 
@@ -556,15 +562,17 @@ This code first sends some debug information to the console to help us confirm t
 
 Next we find the existing record in the database to which we want to append the comment:
 
-```javasscript
+```javascript
 scientists.findOne({"_id": scientist._id }, function(err, scientist) {
 ```
 
-**NOTE**: _It appears that we are only using the **_id** field of the scientist object, so it probably would have been possible to send that field alone, rather than the whole scientist object._
+**NOTE**: *It appears that we are only using the **_id** field of the scientist object, so it probably would have been possible to send that field alone, rather than the whole scientist object.*
 
 Once we have found our scientist, we add our comment to its collection:
 
-    scientist.comments.push(comment);
+```javascript
+scientist.comments.push(comment);
+```
 
 Then we send the updated scientist back to the database:
 
@@ -997,9 +1005,13 @@ After you install the project in Aptana, set up the following files.
 
 ### FourModule.js file
 
-Use a new JavaScript Template (File -> New From Template -> JavaScript -> JavaScript Template)
-to create a blank javascript page. Call it FourModule.js and save it
-in the Source directory of your project.
+Use a new JavaScript Template to create a blank javascript page. Call it FourModule.js and save it in the Source directory of your project.
+
+On the menu, select:
+
+```any
+File | New From Template | JavaScript | JavaScript Template
+```
 
 Use this code in the module:
 
@@ -1029,9 +1041,11 @@ somewhere beneath this declaration: **var MainController = null;**
 
 Then find the following lines of code:
 
+```javascript
  (beforeEach(function() {
   module('mainModule');
   // Insert your code here.
+```
 
 Inset the following: **module('fourModule');**
 
@@ -1050,9 +1064,11 @@ Scroll down past this code:
 
 Type this:
 
+```javascript
  fourFactory = $injector.get('fourFactory');
+```
 
-Go below the }));  and type this code:
+Go below the &#125;&#41;&#41;;  and type this code:
 
 ```javascript
 it("gets the number four", function() {
@@ -1124,11 +1140,15 @@ Add fourFactory to the list.
 
 The next line is
 
+```javascript
  $scope.name = "mainController";
+```
 
 Somewhere under that, put this code:
 
+```javascript
  $scope.getFour = fourFactory.getFour();
+```
 
 This is also where you would write a function for the
 mainController. In my code things look like this:
@@ -1146,7 +1166,7 @@ $scope.getThree = threeFactory.getThree();
 $scope.getFour = fourFactory.getFour();
 ```
 
-Then way at the bottom  you will see  });
+Then way at the bottom  you will see  &#125;&#41;;
 
 ### Code in index.html
 
@@ -1180,12 +1200,16 @@ here and there.
 
 To install Karma:
 
+```bash
  npm install -g karma
+```
 
 Test from command line to see if it is installed:
 
- >karma --version
+```bash
+$ karma --version
  Karma version: 0.10.2
+```
 
 In the command terminal in Aptana, navigate to the directory where you have your project.
 You will be starting in your Users/myName directory. So if the project is in the isit320
@@ -1193,11 +1217,15 @@ directory, you might have to cd to Documents/isit320/currentprojectfolder.
 
 run
 
+```bash
  npm install
+```
 
 and then type
 
+```bash
  karma start
+```
 
 ### Coverage
 
@@ -1206,14 +1234,18 @@ by unit tests.
 
 First install coverage tool, which is called [Istanbul](https://github.com/gotwarlost/istanbul):
 
+```bash
  npm install -g istanbul
+```
 
 In some cases, you may already have a package.json that includes
 karma-coverage, so just rerun npm install. However, of other projects,
 you can install coverage and save a reference for it in your **package.json**
 file by typing the following:
 
+```bash
  npm install karma-coverage --save-dev
+```
 
 When you are done, you can open up **package.json** and find the entry
 for **karma-coverage**.
@@ -1236,9 +1268,7 @@ When defining your coverage support, remember that it is up to you
 to tell coverage where the files are that are being tested. You
 don't have to point to the test files, just the files that are being
 tested. For most of our programs, that means doing something like
-this in the preprocessors statement:
-
- 'Source/\*\*/\*.js'
+this in the preprocessors statement: 'Source/\*\*/\*.js'.
 
 When you get it right, you should see Coverage produce an HTML file
 for each JavaScript file in your Source directory.
@@ -1271,7 +1301,9 @@ HTML files. Open the files in your browser.
 
 You can also use Grunt to run jshint.
 
- grunt jshint
+```bash
+grunt jshint
+```
 
 ## Mocking Objects with $httpBackend
 
@@ -1316,7 +1348,9 @@ Calls to **expectGET** or **whenGET** give you a chance to mock up the data that
 
 Then we call the function that actually performs the action we want to test:
 
-    myController.loadJson
+```javascript
+myController.loadJson
+```
 
 Finally, we call **flush** in order to simulate the reply returning from the server with our requested data. At that point, we are ready to see if the data sent back is what we expected.
 

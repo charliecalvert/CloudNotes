@@ -22,7 +22,8 @@ See how to use Object.defineProperty to create a constant in ES5 code. This was 
 
 We declare constants in an object that follows the module pattern like this:
 
-<pre>var App = (function() {
+```javascript
+var App = (function() {
 
  function Constants() {
   Object.defineProperty(this, "MAIN_BIG", withValue('mainBig'));
@@ -43,20 +44,23 @@ We declare constants in an object that follows the module pattern like this:
  }
 
  return Constants;
-})();</pre>
+})();
+```
 
 ## Display Constants
 
 Display the constants like this
 
-<pre>var app = new App();
+```javascript
+var app = new App();
 $('#test01').html(app.MAIN_BIG);
 $('#test02').html(app.MAIN_SMALL);
 $('#test03').html(app.MAIN_DIV);</pre>
+```
 
 Create some paragraphs or a list with the appropriate IDs.
 
-```HTML
+```html
 <ul>
   <li><b>MAIN BIG</b>: <span id="test01"></span> </li>
   <li><b>MAIN SMALL</b>:  <span id="test02"></span></li>
@@ -66,20 +70,25 @@ Create some paragraphs or a list with the appropriate IDs.
 
 The results of the code shown above:
 
+```html
 <ul>
   <li><b>MAIN BIG</b>: <span id="test01"></span> </li>
   <li><b>MAIN SMALL</b>:  <span id="test02"></span></li>
   <li><b>MAIN DIV</b>:  <span id="test03"></span></li>
 </ul>
+```
 
 ## Try to Change Constant
 
 Now let's try to change a constant by setting it equal to a new value:
 
-<pre>app.MAIN_DIV = "Some new value";</pre>
+```javascript
+app.MAIN_DIV = "Some new value";
+```
 
 Check the value of the MAIN_DIV after setting it to a new value. It is unchanged:
 
+```javascript
 <script>
 var App = (function() {
 
@@ -112,3 +121,4 @@ app.MAIN_DIV = 'Bar';
 $('#test04').html(app.MAIN_DIV);
 
 </script>
+```
