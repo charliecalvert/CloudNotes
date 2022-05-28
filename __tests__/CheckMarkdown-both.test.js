@@ -2,13 +2,13 @@
  * test check-markdown
  **************/
 
+import { getElfCode } from '../lib/getElfCode';
+import { getSubject } from '../lib/addElfCode/library';
+
 describe('CheckMarkdown Both Suite', function() {
     'use strict';
     const { readFileAsync } = require('elven-code').elfUtils;
     const debug = require('debug')('check-markdown-both');
-    const { getElfCode } = require('../lib/getElfCode');
-    const { getSubject } = require('../lib/addElfCode/library');
-
     const fileName = './__tests__/About-both.md';
 
     test('hasElfCode()', async () => {

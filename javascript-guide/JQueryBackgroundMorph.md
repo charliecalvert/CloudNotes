@@ -14,8 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-jQuery Selector and CSS Simple Example
-======================================
+## jQuery Selector and CSS Simple Example
 
 Click the buttons below to the change the background color of this page.
 

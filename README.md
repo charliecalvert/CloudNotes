@@ -15,8 +15,7 @@ fileNameHTML: README.html
 <!-- toc -->
 <!-- tocstop -->
 
-CloudNotes
-==========
+## CloudNotes
 
 My markdown files for the CloudNotes site.
 

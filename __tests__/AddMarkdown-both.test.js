@@ -1,11 +1,11 @@
 /** *************
  * test check-markdown
  **************/
+import { getElfCode, setupElfCode } from '../lib/getElfCode';
 
 describe('AddMarkdown Both Suite', function() {
     'use strict';
     const debug = require('debug')('check-markdown');
-    const { getElfCode, setupElfCode } = require('../lib/getElfCode');
 
     const fileName = './__tests__/About-both.md';
     const relativePath = 'About-both.md';

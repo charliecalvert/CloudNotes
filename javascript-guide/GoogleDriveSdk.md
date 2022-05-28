@@ -24,9 +24,11 @@ image: ./course/course-javascript.jpg
 
 [Search Parameters](https://developers.google.com/drive/web/search-parameters)
 
+```javascript
  var request = gapi.client.drive.files.list({'maxResults': 5 });
+```
 
-Useful Links
+## Useful Links
 
 - [invalid_redirect_url](http://stackoverflow.com/a/12004469/253576)
   - Look in the oauth credentials for your project in the [Google Developer Console](https://console.developers.google.com):

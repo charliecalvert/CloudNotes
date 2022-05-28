@@ -31,7 +31,9 @@ You have probably done something like this in another programming
 language. For instance, C# programmers often write code that looks
 something like this:
 
-    string data = string.Format("{0} + {1} = {2}", 1, 2, 3);
+```javascript
+string data = string.Format("{0} + {1} = {2}", 1, 2, 3);
+```
 
 The code above sets the variable data to the string "1 + 2 = 3". The
 code has two parts, the placeholders ({0}) and the parameters (1, 2, 3).
@@ -41,7 +43,9 @@ markers or placeholders in your HTML, and then run code that
 replaces the markers with designated bits of HTML or text. For instance
 you might put some HTML that looks like this in your main HTML file:
 
+```html
  <li><a href="{{url}}">{{text}}</a></li>
+```
 
 In the code shown above, both {{url}} and {{text}} are placeholders.
 You would then write code that would substitute text of HTML for the
@@ -71,7 +75,7 @@ Here is a link to the repository:
 
 Consider the following code:
 
-```
+```javascript
  var addNames = function() {
   var script = readHtml();
 
@@ -92,7 +96,7 @@ actually made.
 
 Here is a HTML that you could use in the above example:
 
-```
+```html
  <!DOCTYPE html>
  <html lang="en">
   <head>
@@ -114,7 +118,7 @@ Here is a HTML that you could use in the above example:
 
 Here is another example. This time I will show you the HTML first:
 
-``` {.code}
+```html
     <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -136,7 +140,7 @@ Here is another example. This time I will show you the HTML first:
 
 Here is the JavaScript:
 
-``` {.code}
+```javascript
 /**
  * @author Charlie Calvert
  */
@@ -165,4 +169,6 @@ $(document).ready(function() {
 This usually means that you don't have a default file set for your  application.
 Try explicitly naming the file:
 
-    http://localhost:81/server.js
+```html
+http://localhost:81/server.js
+```

@@ -88,8 +88,7 @@ image: ./course/course-javascript.jpg
 </script>
 ```
 
-jQuery UI Examples
-==================
+## jQuery UI Examples
 
 jQuery UI is a library for building plush, interactive web pages. It consists of numerous widgets and tools that brighten web pages and move your development away from static, inert pages and towards a more
 dynamic, animated interface.
@@ -105,7 +104,7 @@ Here is the theme library:
 In you pages, you should include links to the JQuierUI CSS file, to
 jQueryUI javaScript and to jQuery itself:
 
-``` {.code}
+```html
 <link href="/charlie/libs/jquery-ui-1.8.18.custom/css/eggplant/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
 <script src="/charlie/libs/scripts/jquery.min.js" type="text/javascript"></script>
 <scrip<script src="/charlie/libs/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
@@ -120,7 +119,7 @@ Here is where you can find the CDN hosted jQuery UI links:
 
 For instance:
 
-``` {.code}
+```html
 <!DOCTYPE html>
 <html>
 
@@ -154,7 +153,7 @@ below after the discussion of jQuery UI styles.
 You can change the styles of the elements on a page by attaching a class
 defined in the jQuery UI CSS file to it. For instance:
 
-``` {.code}
+```html
 <h2 class="ui-widget-header">My Header</h2>
 ```
 
@@ -193,7 +192,7 @@ of the bars created by the code shown below to see them in action:
 When styled correctly the data picker control, shown below, allows users to just click in the "edit control" shown
 below:
 
-```
+```html
 <div class="demo">
  <p>Date: <input id="myDate" type="text"></p>
 </div>
@@ -207,6 +206,7 @@ below:
 
 Here are some fancy looking jQuery UI buttons. When clicked they invoke the JavaScript shown near the bottom of this page.
 
+```html
 <p class="buttonDemo" ></p>
 
 <div class="demo">
@@ -214,10 +214,11 @@ Here are some fancy looking jQuery UI buttons. When clicked they invoke the Java
   <div><button>Button tag used</button></div>
   <div><input value="An input tag with type submit" type="submit"></div>
 </div>
+```
 
 Here is the code for the buttons shown above:
 
-``` {.code}
+```html
 <div class="demo">
   <button>Button tag used</button>
   <div><input value="An input tag with type submit" type="submit"></div>
@@ -234,6 +235,7 @@ need to click the buttons to make the text slide in and out.
 
 ### You can hide me by clicking a button below
 
+```html
 <div id="toggler">
  My source looks something like this:
 
@@ -241,8 +243,9 @@ need to click the buttons to make the text slide in and out.
   <h3">You can hide me by clicking a button below</h3>
   <p>My source looks something like this:</p>
  </div>
+```
 
-``` {.code}
+```html
 <div id="toggler">
   <div class="ui-widget-content ui-corner-all">
     <h3 class="ui-widget-header ui-corner-all">
@@ -252,13 +255,13 @@ need to click the buttons to make the text slide in and out.
       // Code omitted here...
     </div>
 </div>
-```
 
 </div>
 
 <p>&nbsp;</p>
 <button id="button1" onclick="hider()">Hide</button>
 <button id="button2" onclick="reveal()">Reveal</button>
+```
 
 ## Dialogs
 
@@ -270,13 +273,15 @@ example](http://example.nemikor.com/basic-usage-of-the-jquery-ui-dialog/).
 
 Use your mouse to sort the items below.
 
+```html
 <ul id="sortable">
  <li>Item1</li>
  <li>Item2</li>
  <li>Item3</li>
 </ul>
+```
 
-``` {.code}
+```html
 <!DOCTYPE html>
 <html>
 

@@ -14,30 +14,25 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
-Hello jQuery UI
-===============
+## Hello jQuery UI
 
 A bit of text.
 
 - Link Item1
 - Link Item2
 
-[Click me, I'm an Accordion](#)
--------------------------------
+## Click me, I'm an Accordion
 
 - Link Item1
 - Link Item2
 
-More Accordions
-===============
+## More Accordions
 
-[Margie Start](#)
-=================
+## Margie Start
 
 Margie Accordian
 
-[Charlie Foo](#)
-----------------
+## Charlie Foo
 
 Charlie Accordian
 
@@ -45,6 +40,7 @@ Charlie Accordian
 
 Click one of the options below to change the style sheet.
 
+```html
 - [base](#)
 - [black-tie](#)
 - [blitzer](#)
@@ -70,3 +66,4 @@ Click one of the options below to change the style sheet.
 - [ui-darkness](#)
 - [ui-lightness](#)
 - [vader](#)
+```
