@@ -430,7 +430,7 @@ There are excellent questions, Michael.
 
 I feel guilty at times talking about things like NPM and React when I know that we all (myself very much included) need to work more on JavaScript itself. I wonder sometimes if we shouldn't just drop everything and go back to basics. Certainly few things are more difficult than getting the basics right in any language, and in JavaScript in particular.
 
-This is not a specific recommendation, but more an anecdote that might be helpful to you. This weekend Margie and I went away for a couple days. I brought along a book I picked up in the library called You Don't Know JS: ES6 and Beyond. [Buy it](https://www.google.com/search?q=You+Dont+Know+JS+Beyond) or either:
+This is not a specific recommendation, but more an anecdote that might be helpful to you. This weekend Margie and I went away for a couple days. I brought along a book I picked up in the library called You Don't Know JS: ES6 and Beyond. [Buy it](https://www.google.com/search?q=You+Dont+Know+JS+Beyond) or either:
 
 **Clone the Book**:
 
@@ -442,7 +442,7 @@ Link to book on GitHub:
 
 - [You Don't Know JS - ES6 and Beyond](https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond)
 
-I don't think it is the best book on ES6, but it is a good book in terms of diffing into the language in general. The author Kyle Simpson is like a dog with a bone. He won't leave well enough alone. By the time he is done with a subject you will get a chance to learn a lot about how both ES6 and ES5 work, and what problems in ES5 the new code in ES6 is designed to fix. You'll learn more than you want or need to know, but along the way you will learn much that is useful.
+I don't think it is the best book on ES6, but it is a good book in terms of diffing into the language in general. The author Kyle Simpson is like a dog with a bone. He won't leave well enough alone. By the time he is done with a subject you will get a chance to learn a lot about how both ES6 and ES5 work, and what problems in ES5 the new code in ES6 is designed to fix. You'll learn more than you want or need to know, but along the way you will learn much that is useful.
 
 In general, I think both [Nikolas Zakas][nz] and [Uncle Bob][ub] are very readable authors. They don't present the meaty technical challenges that John Resig (Ninja) and Kyle Simpson (You Don't Know JS) hand their readers, but their texts are clear and easy to understand. If any of us N252 knew even a quarter as much about programming as Uncle Bob or Zakas, we would be flying very high indeed.
 

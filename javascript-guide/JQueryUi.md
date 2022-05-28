@@ -15,7 +15,6 @@ image: ./course/course-javascript.jpg
 <!-- tocstop -->
 
 ```html
-
 <style>
  #anchor {
   margin: 2px;
@@ -166,6 +165,7 @@ their three dimensional look. Other important classes include:
 - ui-widget-content - For tags that display normal content.
 
 Learn more here:
+
 [jQuery Theming API](https://api.jqueryui.com/category/theming/)
 
 ## Accordian
@@ -266,8 +266,7 @@ need to click the buttons to make the text slide in and out.
 ## Dialogs
 
 I need to put together dialog demo code. For now, you can visit the
-[Nemikor
-example](http://example.nemikor.com/basic-usage-of-the-jquery-ui-dialog/).
+[Nemikor example](http://example.nemikor.com/basic-usage-of-the-jquery-ui-dialog/).
 
 ## Lists
 

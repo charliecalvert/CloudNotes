@@ -91,7 +91,9 @@ still be Jest.
 
 Now install **puppeteer**:
 
-    npm i puppeteer
+```bash
+npm i puppeteer
+```
 
 It should install very quickly if you have succeeded in omitting the Chromium
 download, which I could not do. But the custom Chromium build was not that
@@ -274,7 +276,7 @@ greatly simplifies our code, so I suggest we use it.
 Install both Jest and the recommended library which is called
 [Jest Puppeteer](https://jestjs.io/docs/en/puppeteer):
 
-```
+```bash
 npm i jest jest-puppeteer
 ```
 
@@ -369,10 +371,7 @@ created. You do not need to test the code that switches repos, but if you
 test that component, I want to see that it properly loads the default
 data from the server.
 
-**NOTE**: <i>The thing I most want to see are the Jest tests, the one's that
-begin with **describe** and that use **it**. They have file names that end with **.test.js**. 
-Having more tests like the one **index.js** would be all to the good, but they are not
-the key thing I'm after.</i>
+**NOTE**: _The thing I most want to see are the Jest tests, the one's that begin with **describe** and that use **it**. They have file names that end with **.test.js**. Having more tests like the one **index.js** would be all to the good, but they are not the key thing I'm after._
 
 I will be very flexible in terms of what tests you create. Do something similar
 to what is done in the You Rang tests shown above. For instance, put an
@@ -386,7 +385,6 @@ how to keep things simple at first and wasted time working out unnecessary
 solutions at least in terms of this assignment. I include it anyway so that
 I don't lose the information I learned going down the wrong path. Also, it
 might be useful to one of you.
-
 
 ## The Manual Check
 
@@ -469,7 +467,6 @@ Our code no longer uses button clicks. We rely on **useEffect** instead. However
 if we did want to handle a button click, we could do it like this. In this code
 I use the **page.waitForSelector** trick shown above:
 
-
 ```javascript
 const puppeteer = require('puppeteer');
 
@@ -502,7 +499,6 @@ const puppeteer = require('puppeteer');
   await browser.close();
 })();
 ```
-
 
 Now comes that most (only?) confusing code in this small app.
 

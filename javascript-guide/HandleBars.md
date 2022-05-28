@@ -69,7 +69,7 @@ following directory:
 
 Here is a link to the repository:
 
- <https://github.com/charliecalvert/JsObjects>
+[https://github.com/charliecalvert/JsObjects](https://github.com/charliecalvert/JsObjects)
 
 ## Example Code
 
@@ -119,23 +119,23 @@ Here is a HTML that you could use in the above example:
 Here is another example. This time I will show you the HTML first:
 
 ```html
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8" />
-            <title>jQuery and HandleBars example</title>   
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
-            <script src='http://code.jquery.com/jquery.js'></script>
-            <script src="handlebars.js"></script>
-            <script src="index.js"> </script>      
-        </head>
-        <body>
-            <script type="text/x-handlebars-template" id="list-item">
-                <li><a href="{{url}}">{{text}}</a></li>
-            </script>
-            <ul id="myList"> </ul>   
-        </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery and HandleBars example</title>   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+        <script src='http://code.jquery.com/jquery.js'></script>
+        <script src="handlebars.js"></script>
+        <script src="index.js"> </script>      
+    </head>
+    <body>
+        <script type="text/x-handlebars-template" id="list-item">
+            <li><a href="{{url}}">{{text}}</a></li>
+        </script>
+        <ul id="myList"> </ul>   
+    </body>
+</html>
 ```
 
 Here is the JavaScript:

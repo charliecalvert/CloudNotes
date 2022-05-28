@@ -48,7 +48,7 @@ link tags to reference the library and our accompanying CSS.
 Here is how we might typically link in jQuery using standard HTML
 syntax:
 
-``` {.code}
+```html
 <script src="jquery-1.6.2.min.js" type="text/javascript"></script>
 ```
 
@@ -56,7 +56,7 @@ Here is how to link it in using the [Content Developer Network
 (CDN),](/web-guide/CdnExplained.html) which is a great solution, so long as you
 machine is always on the Internet:
 
-``` {.code}
+```html
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 ```
 
@@ -68,7 +68,7 @@ Or you can use this one of these:
 
 A complete head element that includes both jQuery:
 
-``` {.code}
+```html
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
@@ -84,7 +84,7 @@ then the last line of the head element shown above might look like one
 of these, depending on whether or not you want a URL that contains a
 version number:
 
-``` {.code}
+```html
 <script src="../scripts/jquery-1.6.4.js" type="text/javascript"></script>
 <script src="../scripts/jquery.js" type="text/javascript"></script>
 ```
@@ -124,7 +124,7 @@ There are three steps we need to take to properly handle forms:
 
 To get started, we declare our HTML such that all the input controls are inside a form:
 
-```xml
+```html
 <form id="target">
     <div class="panel panel-default">
         <div class="panel-heading">My Form Controls</div>
@@ -140,7 +140,7 @@ To get started, we declare our HTML such that all the input controls are inside 
 
 We declare a submit button:
 
-```xml
+```html
 <button type="submit" class="btn btn-primary">Submit</button>
 ```
 
@@ -161,15 +161,14 @@ Remember that jQuery is JavaScript, and that means that some features of JQuery 
 - [Server Guide](/server-guide/index.html)
 - [Old Link](/charlie/development/web/Server/index.html)
 
-``` {.code}
+```html
 http://www.elvenware.com/charlie/development/web/Server/index.html
 ```
 
 When everything is set up correctly, your URL should not look like the
 first of the following examples, and should look like the second:
 
-- [file:///J:/Web/Elvenware/charlie/foo.html](http://www.example.com) --
-    not always jQuery friendly
+- [file:///J:/Web/Elvenware/charlie/foo.html](http://www.example.com) -- not always jQuery friendly
 - [http://localhost:8000/charlie/foo.html](http://www.example.com)
 
 Many HTML editors allow you to configure how they launch pages when you
@@ -280,20 +279,20 @@ found in this document.
 
 Look at this selector:
 
-``` {.code}
+```html
 "input[name=mainGroup]:radio"
 ```
 
 For instance, it might be used like this to select all the radiobuttons
 with a name of **mainGroup**:
 
-``` {.code}
+```html
 $("input[name=mainGroup]:radio").click(app.displayRadioButtonSelection);
 ```
 
 Here is a radio button that would be selected with the given selector:
 
-``` {.code}
+```html
 <input type="radio" name="mainGroup" id="rbPage01">
 ```
 
@@ -307,7 +306,7 @@ The :**radio** part of the selector follows the jQuery radio selector
 pattern. For instance, the follow selects all the radio buttons in a
 document:
 
-``` {.code}
+```html
 $(':radio')
 ```
 
@@ -315,7 +314,7 @@ It is a shorthand way of writing \$(type='radio'). It is recommended
 that you limit the scope of the selection by specifying the tag you want
 to use:
 
-``` {.code}
+```html
 $("input:radio")
 ```
 
@@ -323,7 +322,7 @@ If you combine the attribute = value and the radio selector pattern, you
 can create very precise selectors like the one we are using in our
 primary example for this section:
 
-``` {.code}
+```javascript
 $("input[name=mainGroup]:radio")
 ```
 
@@ -355,7 +354,7 @@ standard JavaScript**onLoad** event, only you can you have multiple
 copies of this method associated with a single page and jQuery will
 ensure they are each called at the appropriate time.
 
-``` {.code}
+```javascript
 $(document).ready(function() {
     $("#paragraph01").html("This sentence added by jQuery");
 });
@@ -490,7 +489,7 @@ entire screen.
 
 Here is an example call:
 
-``` {.code}
+```javascript
 $('#container').load(URL + '#content', hijackLinks);
 ```
 
@@ -518,7 +517,9 @@ Notice that you need a html element, such as a paragraph tag, to display
 your error message. For instance, you might insert a tag in your HTML
 file that looks like this:
 
-    <p id="error"> </p>
+```html
+<p id="error"> </p>
+```
 
 Reporting errors is not just a nicety, it is a necessity. It is helpful
 to the user, and invaluable for the developers who put the code
@@ -531,10 +532,12 @@ There are details about the REST specification that I don't understand yet. But 
 
 In this discusison I'm talking about the kind of URL that appears in the address bar of a browser:
 
-    http://localhost:30025/read
-    http://localhost:30025
-    http://localhost
-    http://www.google.com
+```html
+http://localhost:30025/read
+http://localhost:30025
+http://localhost
+http://www.google.com
+```
 
 All of the above are simple HTTP commands that humans can give when using the web. They are also REST calls. The idea of REST is that there is no need for a big, complex framework in order to use the web. We can just compose URI/URLs like the ones above. The core idea here is that simple HTTP, as it was meant to be used by humans, is powerful enough to also allow programmers to get their work done. In fact, it is probably the best, most flexible, and most powerful way for them to get their work done.
 
@@ -579,7 +582,7 @@ The book is also available for download.
 The jQuery **getJSON** method is a wrapper around the **ajax** method. It looks like
 this:
 
-``` {.code}
+```javascript
 $.getJSON('index.json', function(data) {
       var name = data[0].firstName;
       $("#firstName").html(name);
@@ -591,7 +594,7 @@ $.getJSON('index.json', function(data) {
 
 The code shown above will parse JSON that looks like this:
 
-``` {.code}
+```json
 [
     {
         "firstName": "George",
@@ -606,7 +609,7 @@ The code shown above will parse JSON that looks like this:
 ]
 ```
 
-``` {.code}
+```javascript
 $.getJSON("index.json", function(data) {
    $.each(data, function(index, president) {
        $('#data01').append("<p>" + president.firstName + ' ' + president.lastName + "</<p>");
@@ -719,10 +722,12 @@ signifies that we want to call the following Node Express method on our server:
 ```
 
 For now, let's not concern ourselves with main body of the method. Just notice
-two things about it:
+two things about it, the route and the response:
 
-- The route: app.get('/write'
-- The response: response.send('{"result":"success"}');
+```javascript
+app.get('/write'
+response.send('{"result":"success"}');
+```
 
 As you can see, the route in the server matches the url in the client:
 
@@ -849,7 +854,7 @@ gets a callback from the server stating that the call has been successful:
 
 Just to help you understand, here is the call in context:
 
-```
+```javascript
  $.ajax({
   type: 'GET',
   url: '/write',
@@ -931,7 +936,7 @@ var writeJsonPrivate = function(**successFunc**)
 It is passed in as an anonymous function when the method is
 invoked:
 
-```
+```javascript
  var writeJson = function() {
   writeJsonPrivate(function(data) {
    showDebug(data.result);
@@ -1404,12 +1409,12 @@ database, and then formulates some XML that describes what it did. The
 XML is returned to the client in the parameter of the **success**
 callback hook:
 
-``` {.code}
+```javascript
 success: function (xml)
 ```
 
 By the time we get to the **success** callback, the call to the server
-is over. It has completed and the result has been returned.Ãƒâ€šÃ‚Â  So the
+is over. It has completed and the result has been returned.Ãƒâ€šÃ‚Â  So the
 first few lines of the **ReadFromAddingXml** method call the server, and
 the last bit found in the **success** callback deals with the result
 returned from the server.
@@ -1419,7 +1424,7 @@ that was passed back to us and parses it, and then displays the results
 back on the main page of the application. Here is the XML that might be
 returned.
 
-```
+```html
  <additions>
   <addition>
    <operanda>1</operanda>
@@ -1431,7 +1436,7 @@ returned.
 
 The called to **\$(xml).find** returns the addition section of the XML:
 
-```
+```html
 <addition>
  <operanda>1</operanda>
  <operandb>2</operandb>
@@ -1479,7 +1484,7 @@ specified in square brackets, and the **type**, which in this case is
 state that it will call the **displayReadioButtonSelection** method
 whenever one of the **RadioButtons**is selected:
 
-``` {.code}
+```javascript
 function displayRadioButtonSelection()
 {
   var id = $("input[name=mainGroup]:checked").attr('id');
@@ -1500,14 +1505,14 @@ examples into that folder.
 ## Dynamically Add Data to a Table
 
 Click here to see an example where you can click a button to add structured
-data to a table.
+data to a table.javascripthtml
 
 [Dynamically Add Data to a Table](/javascripts/dev-web/JQuerySelectors.html#dynamically-add-data-to-a-table)
 
 To make this work, first embed an empty table element into a document. I
 have, for instance, embedded one like this in this document:
 
-``` {.code}
+```html
 <table id="structuredTable"><table>
 ```
 
@@ -1515,7 +1520,7 @@ Then create a button like the one above so the user has something to
 click when items are to be added to the table. Here is what the code for
 the button shown above looks like:
 
-``` {.code}
+```html
 <input type="button" value="Add Data" onclick="jQueryTests.addStructuredData()" />
 ```
 
@@ -1523,7 +1528,7 @@ The method that gets called when the button is pressed can be placed in
 a separate JavaScript file that might look, in part, something like
 this:
 
-``` {.code}
+```javascript
 var jQueryTests = new JQueryTests();
 
 function JQueryTests()
@@ -1568,7 +1573,9 @@ markers or placeholders in your HTML, and then run code that
 replaces the markers with designated bits of HTML or text. For instance
 you might put some HTML that looks like this in your main HTML file:
 
+```html
  <li><a href="{{url}}">{{text}}</a></li>
+```
 
 In the code shown above, both {{url}} and {{text}} are placeholders.
 You would then write code that would substitute text of HTML for the
@@ -1679,7 +1686,7 @@ $(document).ready(function() {
 
 - [http://jquery.com](http://jquery.com/)
 - [http://jquerymobile.com](http://jquerymobile.com/)
-- ThemeRoller:Ãƒâ€šÃ‚Â [http://jquerymobile.com/themeroller/](http://jquerymobile.com/themeroller/)
+- ThemeRoller: [http://jquerymobile.com/themeroller/](http://jquerymobile.com/themeroller/)
 - [http://jqueryui.com](http://jqueryui.com/)
 - [Embed JQuery with URLs Using CDN](/web-guide/CdnExplained.html)
 
