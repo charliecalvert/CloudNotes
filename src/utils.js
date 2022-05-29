@@ -1,6 +1,7 @@
-const debugUtil = require('debug')('check-util');
-const elfUtils = require('elven-code').elfUtils;
-
+import createDebugMessages from 'debug';
+const debugUtil = createDebugMessages('check-util');
+import { elfUtils } from 'elven-code';
+// const  { elfUtils } = elvenCode; 
 function cleanName() {
     debugUtil('__DIRNAME IN CLEAN-NAME', __dirname);
     return __dirname.substring(0, __dirname.indexOf('src'));
@@ -35,7 +36,14 @@ function testJavaScript(elfCodes) {
     }
 }
 
-exports.cleanName = cleanName;
+export {
+    cleanName,
+    setMatterData,
+    setupFileName,
+    testJavaScript
+};
+
+/* exports.cleanName = cleanName;
 exports.setupFileName = setupFileName;
 exports.setMatterData = setMatterData;
-exports.testJavaScript = testJavaScript
+exports.testJavaScript = testJavaScript */

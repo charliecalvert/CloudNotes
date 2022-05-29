@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "CloudNotes ==========",
     "main": "remote.js",
+    "type": "module",
     "scripts": {
         "start": "DEBUG=check-main,check-main-detail node src/CheckMarkdown.js",
         "test": "jest",

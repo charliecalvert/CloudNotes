@@ -2,11 +2,11 @@ const fsp = require('fs').promises;
 // const elfUtils = require('elven-code').elfUtils;
 
 const walker = require('walk-directories').walker;
-import { setupFileName, setMatterData } from './utils';
+import { setupFileName, setMatterData } from './utils.js';
 
 const debugMain = require('debug')('check-main');
 // const debugDetail = require('debug')('check-main-detail');
-import { setupElfCode } from '../lib/getElfCode';
+import { setupElfCode } from '../lib/getElfCode.js';
 
 
 // Then, use it with a simple async for loop
