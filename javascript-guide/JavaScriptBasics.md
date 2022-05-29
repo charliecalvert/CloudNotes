@@ -370,10 +370,10 @@ For more on this subject, see the Elvenware sections on EsLint.
 
 There are two fundamental, low level, building blocks for programs:
 
- statements
- expressions
+- statements
+- expressions
 
-***An expression returns a value***. It can be evaluated. Consider this statement:
+**An expression returns a value**. It can be evaluated. Consider this statement:
 
 ```javascript
  int x = 3 + 2;
