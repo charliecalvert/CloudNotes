@@ -1,11 +1,11 @@
-const fsp = require('fs').promises;
-// const elfUtils = require('elven-code').elfUtils;
-
-const walker = require('walk-directories').walker;
+import { writeFile } from 'node:fs/promises';
+import pkg from 'walk-directories/index.js';
+const { walker } = pkg;
 import { setupFileName, setMatterData } from './utils.js';
 
-const debugMain = require('debug')('check-main');
-// const debugDetail = require('debug')('check-main-detail');
+import createDebugMessages from 'debug';
+const debugMain = createDebugMessages('check-main');
+// import debugDetail from 'debug')('check-main-detail');
 import { setupElfCode } from '../lib/getElfCode.js';
 
 
@@ -22,14 +22,13 @@ async function main() {
             const elfCodes = await setupElfCode(fileName, relativePath);
 
             setMatterData(elfCodes, count, matterData);
-            await fsp.writeFile(fileName, elfCodes.markdown, 'utf8');
+            await writeFile(fileName, elfCodes.markdown, 'utf8');
             debugMain('count', count);
         }
     }
     // if (count === 100) {
-    // const fsp = require('fs').promises;
-    const json = JSON.stringify(matterData, null, 4);
-    await fsp.writeFile('all-matter.json', json, 'utf8');
+     const json = JSON.stringify(matterData, null, 4);
+    await writeFile('all-matter.json', json, 'utf8');
 
     function shouldProcess(relativePath, fileName) {
 
@@ -50,7 +49,7 @@ async function main() {
     }
 }
 
-exports.main = main;
+export default main;
 main().catch(console.error);
 
 
