@@ -1,6 +1,12 @@
 import createDebugMessages from 'debug';
 const debugUtil = createDebugMessages('check-util');
 import { elfUtils } from 'elven-code';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 // const  { elfUtils } = elvenCode; 
 function cleanName() {
     debugUtil('__DIRNAME IN CLEAN-NAME', __dirname);
@@ -40,7 +46,9 @@ export {
     cleanName,
     setMatterData,
     setupFileName,
-    testJavaScript
+    testJavaScript,
+    __dirname,
+    __filename,
 };
 
 /* exports.cleanName = cleanName;

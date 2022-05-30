@@ -1,10 +1,11 @@
+// import path from 'path';
 import { writeFile } from 'node:fs/promises';
 // import pkg from 'walk-directories/index.js';
-import { walkSimple } from 'walk-directories/src/walking';
-import { setupFileName, setMatterData } from './utils.js';
+import { walkSimple } from 'walk-directories/src/walking.js';
+import { setupFileName, setMatterData, __dirname } from './utils.js';
 
 import createDebugMessages from 'debug';
-const debugMain = createDebugMessages('check-main');
+const debug = createDebugMessages('check-main');
 // import debugDetail from 'debug')('check-main-detail');
 import { setupElfCode } from '../lib/getElfCode.js';
 
@@ -14,8 +15,12 @@ import { setupElfCode } from '../lib/getElfCode.js';
 async function main() {
     let count = 0;
     const matterData = [];
+    
+    const serverDir = __dirname.substring(0, __dirname.indexOf('src'));
+    debug('CHECKMARKDOWN', serverDir);
+
     const dirs = await walkSimple(serverDir, '.js');
-    dirs.forEach((dir) => {
+    dirs.forEach(async (dir) => {
         debug('DIR ENTRY REATIVE PATH', dir.relativePath);
 
         const fileName = setupFileName(relativePath);
