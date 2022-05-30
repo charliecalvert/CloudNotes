@@ -1,3 +1,20 @@
+---
+creationLocalTime: 5/30/2022, 10:14:46 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQueryClick.md
+relativePath: jquery-guide/JQueryClick.md
+title: JQueryClick
+queryPath: jquery-guide/
+subject: jquery-guide
+fileNameMarkdown: JQueryClick.md
+fileNameHTML: JQueryClick.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## jQuery Click
 
 Assign on [OnClick](http://api.jquery.com/click/) event handler to a tag:

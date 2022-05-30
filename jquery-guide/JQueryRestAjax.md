@@ -1,3 +1,20 @@
+---
+creationLocalTime: 5/30/2022, 10:14:46 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQueryRestAjax.md
+relativePath: jquery-guide/JQueryRestAjax.md
+title: JQueryRestAjax
+queryPath: jquery-guide/
+subject: jquery-guide
+fileNameMarkdown: JQueryRestAjax.md
+fileNameHTML: JQueryRestAjax.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## JQuery Load
 
 Use the [jQuery.load()](http://api.jquery.com/load/) method to enable
@@ -668,7 +685,7 @@ app.get('/write', function(request, response) {
  // NPM library if you need to create directories
  fs.writeFile(path.fileName, personString, 'utf8', function(err, data){
   if (err) throw err;
-  console.log('It\'s saved!');
+  console.log('Success, file was saved!');
  });
 
  // Send back a response

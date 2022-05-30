@@ -1,3 +1,20 @@
+---
+creationLocalTime: 5/30/2022, 10:14:46 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQueryButtonAndParagraphs.md
+relativePath: jquery-guide/JQueryButtonAndParagraphs.md
+title: JQueryButtonAndParagraphs
+queryPath: jquery-guide/
+subject: jquery-guide
+fileNameMarkdown: JQueryButtonAndParagraphs.md
+fileNameHTML: JQueryButtonAndParagraphs.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## jQuery Button and Paragraph Demo
 
 The following is a "Hello World" style demo of jQuery basics. Let's

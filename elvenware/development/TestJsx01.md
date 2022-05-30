@@ -1,7 +1,7 @@
 ---
 creationLocalTime: 4/18/2022, 4:19:33 PM
-debug: First Time
-image: ./course/course-node.jpg
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
 fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/TestJsx01.md
 relativePath: elvenware/development/TestJsx01.md
 title: TestJsx01

@@ -1,3 +1,20 @@
+---
+creationLocalTime: 5/30/2022, 10:14:46 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQueryTesting.md
+relativePath: jquery-guide/JQueryTesting.md
+title: JQueryTesting
+queryPath: jquery-guide/
+subject: jquery-guide
+fileNameMarkdown: JQueryTesting.md
+fileNameHTML: JQueryTesting.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Set up an HTTP Web Server for Testing
 
 Remember that jQuery is JavaScript, and that means that some features of JQuery might not work right unless you have scripting turned on. It is also a best practice to test your pages on an **HTTP WebServer**. There are many web servers available for developers, but I usually set up IIS in Windows, or Apache in Linux, and use those servers to test my code. I discuss setting up servers in the Web Server section:
@@ -22,8 +39,13 @@ usually ensure that jQuery will work properly. To set up Expression Web
 to preview your pages with right kind of URLs, do the following:
 
 - From the menu, select **Site | Site Settings | Preview**
-- Select: **Preview using a custom URL for your local web site.**For
-    example, enter**: <http://localhost:8000>**
+- Select: **Preview using a custom URL for your local web site.**
+
+In the second case you might ener
+
+```html
+http://localhost:8000
+```
 
 The actual URL you enter will differ depending on how you have set up
 your local web server for testing. And of course the option you choose

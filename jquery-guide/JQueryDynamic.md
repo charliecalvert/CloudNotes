@@ -1,3 +1,20 @@
+---
+creationLocalTime: 5/30/2022, 10:14:46 AM
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQueryDynamic.md
+relativePath: jquery-guide/JQueryDynamic.md
+title: JQueryDynamic
+queryPath: jquery-guide/
+subject: jquery-guide
+fileNameMarkdown: JQueryDynamic.md
+fileNameHTML: JQueryDynamic.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Dynamically Changing a Page with jQuery Part I
 
 You can use jQuery to change many of the elements of a page on the fly.

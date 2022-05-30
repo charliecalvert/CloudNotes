@@ -1,11 +1,11 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptBasics.md
-relativePath: javascript-guide/JavaScriptBasics.md
+fullPath: /home/ubuntu/Git/CloudNotes/javascript-guide/JavaScriptBasics01.md
+relativePath: javascript-guide/JavaScriptBasics01.md
 title: JavaScriptBasics
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
-fileNameMarkdown: JavaScriptBasics.md
-fileNameHTML: JavaScriptBasics.html
+fileNameMarkdown: JavaScriptBasics01.md
+fileNameHTML: JavaScriptBasics01.html
 subject: JavaScript
 queryPath: javascript-guide/
 image: ./course/course-javascript.jpg

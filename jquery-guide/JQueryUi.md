@@ -140,9 +140,9 @@ For instance:
 </html>
 ```
 
-[Try it](JQueryUiDemo.html) yourself. In the linked demo, I have added a
-style sheet changer so you can view the different styles that are
-available.
+- [Try the demo](JQueryUiDemo.html)
+
+In the linked demo, I have added a style sheet changer so you can view the different styles that are available.
 
 Examples of how to use a few of the key jQuery widgets are included
 below after the discussion of jQuery UI styles.
@@ -166,7 +166,7 @@ their three dimensional look. Other important classes include:
 
 Learn more here:
 
-[jQuery Theming API](https://api.jqueryui.com/category/theming/)
+- [jQuery Theming API](https://api.jqueryui.com/category/theming/)
 
 ## Accordian
 
@@ -265,8 +265,9 @@ need to click the buttons to make the text slide in and out.
 
 ## Dialogs
 
-I need to put together dialog demo code. For now, you can visit the
-[Nemikor example](http://example.nemikor.com/basic-usage-of-the-jquery-ui-dialog/).
+I need to put together dialog demo code. For now, you can visit this page:
+
+- [Nemikor example](http://example.nemikor.com/basic-usage-of-the-jquery-ui-dialog/).
 
 ## Lists
 

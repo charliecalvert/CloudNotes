@@ -1,9 +1,26 @@
+---
+creationLocalTime: 5/30/2022, 11:23:19 AM
+debug: First Time
+image: ./course/course-node.jpg
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQuerySelectors.md
+relativePath: jquery-guide/JQuerySelectors.md
+title: JQuerySelectors
+queryPath: jquery-guide/
+subject: jquery-guide
+fileNameMarkdown: JQuerySelectors.md
+fileNameHTML: JQuerySelectors.html
+---
+
+
+<!-- toc -->
+<!-- tocstop -->
+
 ## Selectors and jQuery
 
 CSS selectors are a topic that you must understand before you can work
 with jQuery. Here is page that covers the basics regarding selectors:
 
-[/charlie/development/web/CssGuide/BasicSyntax.html](/charlie/development/web/CssGuide/BasicSyntax.html)
+- [BasicSyntax.html](/development/web/CssGuide/BasicSyntax.html)
 
 You should also visit this page on jQuery selectors:
 
@@ -18,16 +35,21 @@ operation on those elements. The jQuery selectors are based on CSS
 selectors that you would use in a CSS file.
 
 There are many different ways to use selectors in jQuery, but perhaps
-the most common are [class](http://api.jquery.com/class-selector/),
-[ID](http://api.jquery.com/id-selector/) and
-[element](http://api.jquery.com/element-selector/) selectors:
+the most common are these selectors:
 
-  --------------- --------------------------- -----------------------
-  Selector Type   jQuery Example              HTML Example
-  class           \$(.myClass).someMethod()   \<p class="myClass"\>
-  id              \$("\#myId").someMethod()   \<p id="myId"\>
-  element         \$("p").someMethod()        \<p\>
-  --------------- --------------------------- -----------------------
+- [class](http://api.jquery.com/class-selector/),
+- [ID](http://api.jquery.com/id-selector/) and
+- [element](http://api.jquery.com/element-selector/)
+
+Here is a way to think about them:
+
+| --------------- | -------------------------- | -----------
+| Selector Type   | jQuery Example             | HTML Example
+| --------------- | -------------------------- | ----------
+| class           | $(.myClass).someMethod()   | <p class="myClass"\>
+| id              | $("\#myId").someMethod()   | <p id="myId"\>
+| element         | $("p").someMethod()        | <p\>
+| --------------- | -------------------------- | --------------
 
 The class selector shown here would find all the elements in the
 document that have a class set equal to **myClass.**The **id** selector
