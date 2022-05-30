@@ -19,19 +19,19 @@ async function main() {
     const serverDir = __dirname.substring(0, __dirname.indexOf('src'));
     debug('CHECKMARKDOWN', serverDir);
 
-    const dirs = await walkSimple(serverDir, '.js');
+    const dirs = await walkSimple(serverDir, '.md');
     dirs.forEach(async (dir) => {
-        debug('DIR ENTRY REATIVE PATH', dir.relativePath);
+        debug('MAIN DIR ENTRY RELATIVE PATH', dir.relativePath);
 
-        const fileName = setupFileName(relativePath);
-        if (shouldProcess(relativePath, fileName)) {
+        const fileName = setupFileName(dir.relativePath);
+        if (shouldProcess(dir.relativePath, fileName)) {
             count++;
             
-            const elfCodes = await setupElfCode(fileName, relativePath);
+            const elfCodes = await setupElfCode(fileName, dir.relativePath);
 
             setMatterData(elfCodes, count, matterData);
             await writeFile(fileName, elfCodes.markdown, 'utf8');
-            debugMain('count', count);
+            debug('count', count);
         }
     });
     // if (count === 100) {
