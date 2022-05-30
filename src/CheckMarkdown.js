@@ -1,6 +1,6 @@
 import { writeFile } from 'node:fs/promises';
-import pkg from 'walk-directories/index.js';
-const { walker } = pkg;
+// import pkg from 'walk-directories/index.js';
+import { walkSimple } from 'walk-directories/src/walking';
 import { setupFileName, setMatterData } from './utils.js';
 
 import createDebugMessages from 'debug';
@@ -14,7 +14,10 @@ import { setupElfCode } from '../lib/getElfCode.js';
 async function main() {
     let count = 0;
     const matterData = [];
-    for await (const relativePath of walker('.')) {
+    const dirs = await walkSimple(serverDir, '.js');
+    dirs.forEach((dir) => {
+        debug('DIR ENTRY REATIVE PATH', dir.relativePath);
+
         const fileName = setupFileName(relativePath);
         if (shouldProcess(relativePath, fileName)) {
             count++;
@@ -25,9 +28,9 @@ async function main() {
             await writeFile(fileName, elfCodes.markdown, 'utf8');
             debugMain('count', count);
         }
-    }
+    });
     // if (count === 100) {
-     const json = JSON.stringify(matterData, null, 4);
+    const json = JSON.stringify(matterData, null, 4);
     await writeFile('all-matter.json', json, 'utf8');
 
     function shouldProcess(relativePath, fileName) {

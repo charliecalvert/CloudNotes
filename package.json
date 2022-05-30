@@ -28,17 +28,17 @@
     "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
     "dependencies": {
         "debug": "^4.3.4",
-        "elven-code": "^4.10.0",
+        "elven-code": "^4.12.1",
         "gray-matter": "^4.0.3",
         "markdown-elf": "^1.0.0",
         "markdown-toc": "^1.2.0",
-        "ssh2": "^1.9.0",
-        "walk-directories": "^1.0.2"
+        "ssh2": "^1.10.0",
+        "walk-directories": "^4.0.0"
     },
     "devDependencies": {
-        "eslint": "^8.14.0",
+        "eslint": "^8.16.0",
         "eslint-plugin-jsx-a11y": "^6.5.1",
-        "jest": "^28.0.0",
+        "jest": "^28.1.0",
         "markdownlint-cli": "^0.31.1"
     }
 }
