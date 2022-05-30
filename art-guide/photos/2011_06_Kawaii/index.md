@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/2011_06_Kawaii/index.md
-relativePath: elvenware/Art/photos/2011_06_Kawaii/index.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/photos/2011_06_Kawaii/index.md
+relativePath: art-guide/photos/2011_06_Kawaii/index.md
 title: Index
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: index.md
 fileNameHTML: index.html
 image: ./course/course-javascript.jpg
 subject: 2011_06_Kawaii
-queryPath: elvenware/Art/photos/2011_06_Kawaii/
+queryPath: art-guide/photos/2011_06_Kawaii/
 ---
 
 <!-- toc -->

@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg-test/SvgTester.md
-relativePath: elvenware/Art/photos/svg-test/SvgTester.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/photos/svg-test/SvgTester.md
+relativePath: art-guide/photos/svg-test/SvgTester.md
 title: SvgTester
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: SvgTester.md
 fileNameHTML: SvgTester.html
 image: ./course/course-javascript.jpg
 subject: svg-test
-queryPath: elvenware/Art/photos/svg-test/
+queryPath: art-guide/photos/svg-test/
 ---
 
 <!-- toc -->

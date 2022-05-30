@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/costa_rica/index.md
-relativePath: elvenware/Art/photos/costa_rica/index.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/photos/costa_rica/index.md
+relativePath: art-guide/photos/costa_rica/index.md
 title: Index
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: index.md
 fileNameHTML: index.html
 image: ./course/course-javascript.jpg
 subject: costa_rica
-queryPath: elvenware/Art/photos/costa_rica/
+queryPath: art-guide/photos/costa_rica/
 ---
 
 <!-- toc -->

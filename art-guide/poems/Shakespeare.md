@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/poems/Shakespeare.md
-relativePath: elvenware/Art/poems/Shakespeare.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/poems/Shakespeare.md
+relativePath: art-guide/poems/Shakespeare.md
 title: Shakespeare
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: Shakespeare.md
 fileNameHTML: Shakespeare.html
 image: ./course/course-javascript.jpg
 subject: poems
-queryPath: elvenware/Art/poems/
+queryPath: art-guide/poems/
 ---
 
 <!-- toc -->

@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/costa_rica/langosta.md
-relativePath: elvenware/Art/photos/costa_rica/langosta.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/photos/costa_rica/langosta.md
+relativePath: art-guide/photos/costa_rica/langosta.md
 title: Langosta
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: langosta.md
 fileNameHTML: langosta.html
 image: ./course/course-javascript.jpg
 subject: costa_rica
-queryPath: elvenware/Art/photos/costa_rica/
+queryPath: art-guide/photos/costa_rica/
 ---
 
 <!-- toc -->

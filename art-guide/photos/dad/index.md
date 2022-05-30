@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/photos/dad/index.md
-relativePath: elvenware/Art/photos/dad/index.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/photos/dad/index.md
+relativePath: art-guide/photos/dad/index.md
 title: Index
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: index.md
 fileNameHTML: index.html
 image: ./course/course-javascript.jpg
 subject: dad
-queryPath: elvenware/Art/photos/dad/
+queryPath: art-guide/photos/dad/
 ---
 
 <!-- toc -->

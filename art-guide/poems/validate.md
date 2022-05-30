@@ -1,6 +1,6 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/elvenware/Art/poems/validate.md
-relativePath: elvenware/Art/poems/validate.md
+fullPath: /home/ubuntu/Git/CloudNotes/art-guide/poems/validate.md
+relativePath: art-guide/poems/validate.md
 title: Validate
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:20:59 AM
@@ -8,7 +8,7 @@ fileNameMarkdown: validate.md
 fileNameHTML: validate.html
 image: ./course/course-javascript.jpg
 subject: poems
-queryPath: elvenware/Art/poems/
+queryPath: art-guide/poems/
 ---
 
 <!-- toc -->
