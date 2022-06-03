@@ -1,7 +1,7 @@
 ---
 creationLocalTime: 5/30/2022, 11:23:19 AM
-debug: First Time
-image: ./course/course-node.jpg
+debug: aec has both but checking ELF code
+image: ./course/course-javascript.jpg
 fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQuerySelectors.md
 relativePath: jquery-guide/JQuerySelectors.md
 title: JQuerySelectors

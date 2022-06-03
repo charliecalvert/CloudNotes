@@ -5,7 +5,8 @@
     "main": "remote.js",
     "type": "module",
     "scripts": {
-        "start": "DEBUG=check-main,check-main-detail node src/CheckMarkdown.js",
+        "start": "node src/CheckMarkdown.js",
+        "startDebug": "DEBUG=check-main,check-main-detail node src/CheckMarkdown.js",
         "test": "jest",
         "test-check-both": "DEBUG=check-markdown-both jest --watch CheckMarkdown-both",
         "test-check-toc": "DEBUG=check-markdown-toc jest --watch CheckMarkdown-toc",
@@ -33,6 +34,7 @@
         "markdown-elf": "^1.0.0",
         "markdown-toc": "^1.2.0",
         "ssh2": "^1.10.0",
+        "supports-color": "^9.2.2",
         "walk-directories": "^4.0.0"
     },
     "devDependencies": {

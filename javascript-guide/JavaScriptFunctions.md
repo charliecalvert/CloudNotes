@@ -225,12 +225,12 @@ console.log("func02.name: " + func02.name);
 
 Here is the output:
 
-~~~~
+```bash
 variable00: undefined
 func01.name:
 type of func01.name: string
 func02.name: func02
-~~~~
+```
 
 Notice that **func01** is assigned to a variable, and **func02** is a
 standard function. Hence we see that **func01** has no **name** while
@@ -383,7 +383,7 @@ The source is here:
 
 - [JsObjects FunctionObjects](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Functions/FunctionArguments)
 
-## The <em>this</em> Keyword
+## The *this* Keyword
 
 The **this** keyword in JavaScript is often called the function context. If you
 are used to C# or other object oriented langauges, you may have certain
@@ -409,7 +409,7 @@ In the code shown above, functionContext will be the **window** object.
 
 Consider this code:
 
-```
+```javascript
  var myObject = {
   runMe: function() {
    return this;
@@ -423,7 +423,7 @@ In the code shown above, functionContext will be **myObject**.
 
 And finally, let's look at this example:
 
-```
+```javascript
  function RunMe() {
   console.log(this);
  }
@@ -437,7 +437,7 @@ operator. In this case, functionContext is **RunMe**.
 Here are all three cases pulled together in a single program from JsObjects
 calld ObjectThis:
 
-```
+```javascript
  function runMe() { return this; }
 
  var myObject = {
@@ -465,7 +465,7 @@ calld ObjectThis:
 
 In **strict** mode, **this** is set to undefined rather than the global object when invoking a standalone method without calling **new**:
 
-```
+```javascript
 function hello01() {
  console.log(this);
 }
@@ -535,19 +535,21 @@ therefore cannot be seen by an instance of Test01. The **description**
 property, shown below, is a public member of Test01, and it will be
 accessible from an instance of the object.
 
-    var Test01 = function()
-    {
-       var name = "Test01";
-    }
+```javascript
+var Test01 = function()
+{
+    var name = "Test01";
+}
 
-    Test01.prototype.description="This is a test object";
+Test01.prototype.description="This is a test object";
 
-    var Test02 = function()
-    {
-        var test01 = new Test01();
-        $("#Description01").html(test01.description);
-        $("#Name01").html(test01.name);
-    }
+var Test02 = function()
+{
+    var test01 = new Test01();
+    $("#Description01").html(test01.description);
+    $("#Name01").html(test01.name);
+}
+```
 
 When Test02 is called, the code shown above prints out the string "This
 is a test object" but it does not print out the words "Test01." That is
@@ -557,19 +559,21 @@ because the property **description** is visible to an instance of
 To make name a public field of the object, write code that qualifies the
 instance of **nameStr**with the keyword **this**:
 
-    var Test01 = function()
-    {
-        this.nameStr = "Test01";
-    }
+```javascript
+var Test01 = function()
+{
+    this.nameStr = "Test01";
+}
 
-    Test01.prototype.description="This is a test object";
+Test01.prototype.description="This is a test object";
 
-    var Test02 = function()
-    {
-        var test01 = new Test01();
-        $("#Description01").html(test01.description);
-        $("#Name01").html(test01.nameStr);
-    }
+var Test02 = function()
+{
+    var test01 = new Test01();
+    $("#Description01").html(test01.description);
+    $("#Name01").html(test01.nameStr);
+}
+```
 
 Now the code shown above behaves as expected, and inserts both
 **nameStr** and **description** into the appropriate tags in our HTML.
@@ -578,17 +582,21 @@ Like Extensions methods in C\#, you can use Prototype to change the way
 existing classes work. In the following example, we will add a method
 called Decorate to the built-in JavaScript String class:
 
-    String.prototype.decorate = function() {
-     return "-***-" + this + "-***-";
-    }
+```javascript
+String.prototype.decorate = function() {
+    return "-***-" + this + "-***-";
+}
+```
 
 Now when you create a string, you can call its decorate method:
 
+```javascript
     this.testDecoration = function() {
         var testStr = "All my strings can be decorated";
         $("#testPlain").html(testStr);
         $("#testDecorate").html(testStr.decorate());
     }
+```
 
 [Click here to try decorating a string](BasicSyntax.html#decorate).
 
@@ -677,17 +685,19 @@ The complete example is here:
 
 In this example, we pass an anonymous function to the method **hello**. As you can see, **hello** takes a single parameter called func:
 
-    function hello(func) {
+```javascript
+function hello(func) {
+```
 
 When we call **hello** we pass in an anonymous function, a bit like this:
 
 ```javascript
-    var helloParameter = function() {
-        const test03 = document.getElementById('test03');
-        test03.textContent = "It's a nine!";          
-    }
+var helloParameter = function() {
+    const test03 = document.getElementById('test03');
+    test03.textContent = "It's a nine!";          
+}
 
-    hello(helloParameter);
+hello(helloParameter);
 ```
 
 But in JavaScript we get a special dispensation, as it were, and don't even have to declare the variable that points at our function. Instead, we can just pass it in directly as an anonymous function:
@@ -723,7 +733,7 @@ If callbacks and anonymous functions are unclear, think about them some more. If
 
 Here is another example designed to drive home the points outlined above:
 
-```
+```javascript
 /**
  * @author Charlie
  */
@@ -835,14 +845,16 @@ var myObject = {
 
 We call it like this:
 
-    myObject.myFunction01()
+```javascript
+myObject.myFunction01()
+```
 
 This is very nice, but it does not give us the option to create private
 methods.
 
 Here is what the same object would look like if declared as a function:
 
-``` {.code}
+```javascript
 function myFunction02() {   
     'use strict';
 
@@ -858,7 +870,9 @@ function myFunction02() {
 
 We call it like this:
 
-    myFunction02()
+```javascript
+myFunction02()
+```
 
 Let's call this the Simple Function pattern. This is very nice, but it
 does not gives us the option to create public methods. As you can see,
@@ -868,7 +882,7 @@ if I want to call **nestedFunction**, I need to call it from inside of
 Here is a third technique that uses the **prototype** function syntax,
 and gives us public methods, but no useful private methods:
 
-``` {.code}
+```javascript
 var MyFunction03 = function() {
     'use strict';       
 };
@@ -883,8 +897,10 @@ MyFunction03.prototype.nestedFunction = function() {
 
 We call it like this:
 
+```javascript
     var myFunction03 = new MyFunction03();
     myFunction03.nestedFunction();
+```
 
 This is very nice, but it does not give us private methods. Note also,
 that it forces us to call **new** when we create the object. If we don't
@@ -972,7 +988,9 @@ var ChildObject = (function() {
 
 The key line is this:
 
-    ChildObject.prototype = new BaseObject();
+```javascript
+ChildObject.prototype = new BaseObject();
+```
 
 This means that the child will inherit all the properties that are part of the parents prototype. BaseObject, in its turn, automatically inherits all the properties from the built in Object. That means that ChildObject inherits them also.
 
@@ -993,7 +1011,9 @@ Notice that these objects use **PascalCase**, that is, the initial letter in the
 
 When we use Pascal case for the first letter of an object, we are saying that must be called with new:
 
-    var childObject = new ChildObject();
+```javascript
+var childObject = new ChildObject();
+```
 
 If we want to use the protype property, then we must instantiate the object with **new**. In other words, prototypal inheritance in JavaScript only works with constructor objects. That is, it only works with objects instantiated with **new**.
 
@@ -1030,9 +1050,11 @@ myObject.useCallback(myObject.myCallback);
 
 This outputs the following:
 
-    THIS MyObject {}
-    foo
-    baz
+```bash
+THIS MyObject {}
+foo
+baz
+```
 
 This is hard to grasp at first mostly because it does not seem possible that JavaScript should have such a serious flaw in the language. If **MyCallBack** is part of **MyObject** then inside of **MyCallback** the keyword **this** ought to point to **MyObject**. But such is not necessarily the case, and as a result, we declare the **that** variable.
 

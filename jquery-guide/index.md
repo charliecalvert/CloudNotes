@@ -1,12 +1,12 @@
 ---
-fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/JQueryBasic.md
-relativePath: jquery-guide/JQueryBasic.md
+fullPath: /home/ubuntu/Git/CloudNotes/jquery-guide/index.md
+relativePath: jquery-guide/index.md
 title: JQueryBasic
 debug: aec has both but checking ELF code
 creationLocalTime: 3/18/2022, 8:21:00 AM
 subject: JavaScript
-fileNameMarkdown: JQueryBasic.md
-fileNameHTML: JQueryBasic.html
+fileNameMarkdown: index.md
+fileNameHTML: index.html
 queryPath: jquery-guide/
 image: ./course/course-javascript.jpg
 ---
