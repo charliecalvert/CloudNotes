@@ -188,4 +188,3 @@ function JQueryTests()
 Each time the button is pressed a new element with this structure
 **\<tr\>\<td\>some string\</td\>\<td\>some string\</td\>\</tr\>** is
 added to the **\#structuredTable**.
-

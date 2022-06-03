@@ -114,5 +114,4 @@ concise and very precise.
 I have written an HTML/CSS RadioButton sample and put it in the
 [Elvenware Mercurial
 repository](http://www.elvenware.com/charlie/development/cloud/Mercurial.html).
-It is in the HtmlCssJavaScript folder. I also moved the JQuerySelectors
-examples into that folder.
+It is in the HtmlCssJavaScript folder. I also moved the JQuerySelectors examples into that folder.

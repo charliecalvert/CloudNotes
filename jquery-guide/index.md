@@ -114,9 +114,6 @@ Some additional references for this material are available here:
     [http://docs.jquery.com/Downloading\_jQuery](http://docs.jquery.com/Downloading_jQuery)
 - CDN Page: [CdnExplained.html](/web-guide/CdnExplained.html)
 
-
-
-
 ## Links
 
 - [http://jquery.com](http://jquery.com/)
