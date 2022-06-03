@@ -22,19 +22,19 @@ In this chapter we will start with a quick overview of the some built in JavaScr
 
 You can declare an object like this:
 
-```
+```javascript
 var myObject = {};
 ```
 
 This type of object declaration is called an **object literal**. You can compare this to using the new operator, which produces the same result:
 
-```
+```javascript
 var myObject = new Object();
 ```
 
 When you declare an object as we do **myObject**, we usually don't call **new** on it. As discussed above, the following two statements are essentially identical:
 
-```
+```javascript
 var myObject = {};
 var myObject = new Object();
 ```
@@ -119,13 +119,9 @@ As mentioned above, we should prefer object literals to the **new** operator. Fo
 Crockford covers this issue in Appendix B of **JavaScript, the Good Parts**. He writes:
 
 > JavaScript has a set of typed wrappers. For example:
-
 > **new Boolean(false)**
-
 > produces an object that has a valueOf method that returns the wrapped value. This turns out to be completely unnecessary and occasionally confusing.
-
 > Don't use **new Boolean** or **new Number** or **new String**.
-
 > Also avoid **new Object** and **new Array**. Use **{}** and **[]** instead.
 
 Crockford's Appendix B is on the web [here][app-b-crock].
@@ -151,7 +147,7 @@ The next two section briefly outline properties and methods. Once you have had a
 
 Inside the curly braces of your object literal you can define your object. Objects are merely a list of name:value pairs:
 
-```
+```javascript
 var myObject = {
     a: 1,
     b: 2,
@@ -165,7 +161,7 @@ Each name:value pair shown in the above example is called a property. In the fir
 
 Here is how to add a method to your object:
 
-```
+```javascript
 var myObject = {
     a: 1,
     b: 2,
@@ -176,10 +172,11 @@ var myObject = {
 
 Note that this function is just another key:value, or name:value pair:
 
-```
-name | value
-four | function() {}
-```
+| ---- | ------------- |
+| name | value         |
+| ---- | ------------- |
+| four | function() {} |
+| ---- | ------------- |
 
 Besides properties and methods, objects can also contain other objects. Through a feature called a **prototype**, objects can implement inheritance.
 
@@ -189,7 +186,7 @@ Unless you specify otherwise, JavaScript objects can be modified at any time. In
 
 As stated above, properties are name value pairs, where name is a string.
 
-```
+```javascript
 var myObject = { 'myProperty': 12 };
 ```
 
@@ -197,20 +194,20 @@ The above code declares a simple object with a single property called **myProper
 
 The quotes around a property name are optional if the name is a legal Javascript identifier:
 
-```
+```javascript
 var myObject = { myProperty: 12 };
 ```
 
 You can access a property with either of two notations:
 
-```
+```javascript
 myObject.myProperty;
 myObject['myProperty'];
 ```
 
 You can then treat the property as you would explect. Here I try to run through the common permutations for accessing **myProperty**.
 
-```
+```javascript
 var myObject = {
     myProperty : 12
 };
@@ -227,9 +224,9 @@ var valueB = myObject['myProperty'];
 console.log(valueB);
 ```
 
-This syntax is less than ideal, however, since we are repeating the string _myProperty_ multiple times. A useful solution would look like this:
+This syntax is less than ideal, however, since we are repeating the string *myProperty* multiple times. A useful solution would look like this:
 
-```
+```javascript
 var myObject = {
     myProperty : 12
 };
@@ -250,7 +247,7 @@ console.log(valueB);
 
 I hesitated to show you this second solution as the first take because you might get confused by the expression **myObject[myProperty]**. In this code **myProperty** refers to the string declared near the top of the listing. Hungarian notation is usually not useful in JavaScript, but if we bring it back for a moment, our code would look like this:
 
-```
+```javascript
 var myObject = {
     myProperty : 12
 };
@@ -275,7 +272,7 @@ var myPropertyStr = "myProperty";
 
 Hopefully that makes code like the following easier to read:
 
-```
+```javascript
 var myPropertyStr = "myProperty";
 
 console.log(myObject.myProperty);
@@ -284,7 +281,7 @@ console.log(myObject[myPropertyStr]);
 
 In any case, regardless of which permuation of the program you use, the output looks like this:
 
-```
+```bash
 >node index.js
 12
 12
@@ -302,7 +299,7 @@ Though both examples are legal, the first is much more common.
 
 To declare an object with multiple properties, separate them with commas:
 
-```
+```javascript
 var myObject = {    
     myProperty01: 12,
     myProperty02: 4                   
@@ -311,7 +308,7 @@ var myObject = {
 
 Here is a JavaScript object with three properties, one of which is a function:
 
-```
+```javascript
 var myObject = {    
     myProperty01: 12,
     myProperty02: 4,
@@ -323,7 +320,7 @@ var myObject = {
 
 If you have more than one function, separate them with commas:
 
-```
+```javascript
 var myObject = {    
     myProperty01: 12,
     myProperty02: 4,
@@ -340,7 +337,7 @@ console.log(myObject.multiplyProperties());
 
 Note that we call the function **multiplyProperties** by writing:
 
-```
+```javascript
 myObject.multiplyProperties()
 ```
 
@@ -372,7 +369,7 @@ The point here is that we usually can, at any time, add methods and properties t
 
 There are several ways to get a list of the properties on an object. Consider this object:
 
-```
+```javascript
 var myObject = {
     myProperty01 : 12,
     myProperty02 : 4,
@@ -387,19 +384,19 @@ var myObject = {
 
 We can get the list of properties on the object:
 
-```
+```javascript
 var keys = Object.keys(myObject);
 ```
 
 The call to **Object.keys** returns a list of all the properties on **myObject**. As a result, **keys** now has the following properties:
 
-```
+```javascript
 ["myProperty01", "myProperty02", "addProperties", "multiplyProperties"]
 ```
 
 We can also do this:
 
-```
+```javascript
 for (property in myObject) {
     display(property);
 };
@@ -407,7 +404,7 @@ for (property in myObject) {
 
 The for loop shown above yields the following output.
 
-```
+```bash
 myProperty01
 myProperty02
 addProperties
@@ -416,7 +413,7 @@ multiplyProperties
 
 Because the world is a fussy place, it is usually considered best to do the following:
 
-```
+```javascript
 for (property in myObject) {
     if (myObject.hasOwnProperty(property)) {
         display(property);
@@ -438,19 +435,19 @@ Each property can be, in some circumstances:
 
 You can use getOwnPropertyDescriptor to explore the attributes of a property:
 
-```
+```javascript
 Object.getOwnPropertyDescriptor([object Name], [property Name])
 ```
 
 For example:
 
-```
+```javascript
 Object.getOwnPropertyDescriptor(myObject, propName);
 ```
 
 To see the method in action, let's return to this simple object:
 
-```
+```javascript
 var myObject = {
         myProperty01: 12,
         myProperty02: 4,
@@ -467,7 +464,7 @@ var myObject = {
 
 Let's create a simple method that will display some text both in an HTML page and at the console:
 
-```
+```javascript
 var display = function(value) {
         console.log(value);
         $("#debug").append('<li>' + value + '</li>');
@@ -476,7 +473,7 @@ var display = function(value) {
 
 Now let's explore the descriptor for each of myObject's properties:
 
-```
+```javascript
 var getPropertyDescriptor = function(propName) {
         var descriptor = Object.getOwnPropertyDescriptor(myObject, propName);
         var description = JSON.stringify(descriptor);
@@ -502,7 +499,7 @@ var getPropertyDescriptor = function(propName) {
 
 Notice how we get the list of properties on the object:
 
-```
+```javascript
 var keys = Object.keys(myObject);
 ```
 
@@ -510,7 +507,7 @@ The call to **Object.keys** returns a list of all the properties on **myObject**
 
 The key call here is to **getOwnPropertyDescriptor**. However, I also call **propertyIsEnumerable** just so you can see that the method is available. Here is the output:
 
-```
+```bash
 48
 myProperty01
     {"value":12,"writable":true,"enumerable":true,"configurable":true}
@@ -532,7 +529,7 @@ This example is [available in JsObjects][addpropdesc].
 
 The **defineProperty** method is a fancy version of a standard JavaScript property. Here is what we normally do:
 
-```
+```javascript
 foo.myProperty = 3;
 ```
 
@@ -540,7 +537,7 @@ By using **defineProperty** we get what we have above, plus some additional feat
 
 Here is how to expose a readonly property called **length**:
 
-```
+```javascript
 function SimpleQueue() {
     dataStore = [];
 
@@ -558,14 +555,18 @@ function SimpleQueue() {
 
 After adding the **length** property, you can now access it in your tests like this:
 
+```javascript
 var len = simpleQueue.length;<br>
-for (var i = 0; i < len; i++) { simpleQueue.dequeue(); }
+for (var i = 0; i < len; i++) { 
+    simpleQueue.dequeue(); 
+}
+```
 
 In the code shown above, we use a relatively new feature of JavaScript called a [property][defprop]. There are several ways to use properties. In this case we define a read-only property implemented primarily in the **get** function. If you want to jump ahead and see what else can be done, you can visit the [Properties][props] folder in JsObjects.
 
 By the way, the code shown above works exactly the same way if you are using the Modular pattern:
 
-```
+```javascript
 var SimpleQueue = (function() {
 
     var dataStore = null;
@@ -600,7 +601,7 @@ A more indepth discussion of methods will be added here in the future.
 
 In the following example, we add the words 'use strict'; to a function:
 
-```
+```javascript
 var myObject = {    
     myProperty01: 12,
     myProperty02: 4,
@@ -617,7 +618,7 @@ By adding 'use strict' we force the JavaScript language to reject some coding co
 
 In particular, it used to be legal to declare a variable without using the keyword **var**:
 
-```
+```javascript
 myVariable = 3; // Bad
   var myVariable = 3; // Good
 ```
@@ -639,7 +640,7 @@ Here are some other, less important, benefits of strict mode:
 
 Here are a few comments on public and private variables in objects:
 
-```
+```javascript
 var Point = function (x1, y1) {
     'use strict';
 
@@ -672,7 +673,7 @@ window.onload = function () {
 
 In this code x and y are private variables. Here is how the code would look if we wanted to work with public variables:
 
-```
+```javascript
 var Point = function (x1, y1) {
     'use strict';
 
@@ -704,7 +705,7 @@ window.onload = function () {
 
 Notice that in this new version, we had to change the add function to use this.x and this.y rather than the bare x and y. We can further modify the code to declare the **add** method using prototype:
 
-```
+```javascript
 var Point = function (x1, y1) {
     'use strict';
 
@@ -744,7 +745,7 @@ Suppose you have two variables called playerX and playerY that you want two obje
 
 Consider this object:
 
-```
+```javascript
 ELF.own.Player = (function() {
     'use strict';
     var that = {};
@@ -768,7 +769,7 @@ ELF.own.Player = (function() {
 
 And here is the object that wants to consume playerX and playerY:
 
-```
+```javascript
 var ELF = {};
 ELF.own = {};
 
@@ -791,7 +792,7 @@ ELF.own.ShowPlayer = (function() { 'use strict';
 
 In the first object I declare the data to be shared:
 
-```
+```javascript
 var that = {};
     that.playerX = 1;
     that.playerY = 2;
@@ -799,13 +800,13 @@ var that = {};
 
 Then I share the data with the second object when the second object is created:
 
-```
+```javascript
 new ELF.own.ShowPlayer(that);
 ```
 
 You can make the variable passed to the second object global within that second object:
 
-```
+```javascript
 var sharedData = null;
 
     // Constructor
@@ -818,7 +819,7 @@ Now any changes made to that.playerX by either object will be seen by both objec
 
 To see this in practice, look at:
 
-```
+```bash
 /JsObjects/JavaScripts/Objects/ShareVariables01
 ```
 
@@ -826,7 +827,7 @@ To see this in practice, look at:
 
 After all our talk about if..else and **switch** statements it is worth noting that JavaScript provides a third mechanism that is arguable a much better solution to this kind of problem. Consider the following example:
 
-```
+```javascript
 var funcBranch = function(stateAbbreviation) {
 
     var stateMap = {
@@ -842,7 +843,7 @@ var funcBranch = function(stateAbbreviation) {
 
 In this code we create a small object called stateMap. We can then pull out the value we want by simply writing the following simple expression:
 
-```
+```javascript
 stateMap[stateAbbreviation]
 ```
 
@@ -850,7 +851,7 @@ If, for instance, stateAbbreviation were equal to 'WA', then this expression wou
 
 Note that you could perform more complex operations by setting up an object that contains functions:
 
-```
+```javascript
 var stateMap = {
     'AL': function() {
         return 4800736 /100;
@@ -862,9 +863,9 @@ var stateMap = {
 }
 ```
 
-This makes the solution _functionally_ equivalent to a switch statement, since each option can consist of a series of statements. For instance you could write something like this:
+This makes the solution *functionally* equivalent to a switch statement, since each option can consist of a series of statements. For instance you could write something like this:
 
-```
+```javascript
 var funcBranch2 = function(stateAbbreviation) {
         var stateMap2 = {
             'AL': function() {
@@ -888,7 +889,7 @@ var funcBranch2 = function(stateAbbreviation) {
 
 If that is just too esoteric for your tastes, then you can write:
 
-```
+```javascript
 var funcBranch2 = function(stateAbbreviation) {
     var stateMap2 = {
         'AL': function() {
@@ -921,7 +922,7 @@ The example program is on GitHub, in JsObjects:
 
 Here is code for sorting an array called **presidents** by first name:
 
-```
+```javascript
 var sort = function(){
     presidents.sort(function (a, b) {
         if (a.firstName > b.firstName) {
@@ -945,7 +946,7 @@ See this example:
 
 JavaScript Dictionaries are Associative Arrays. JavaScript objects are a comma separated list of key value pairs:
 
-```
+```javascript
 var myObject = {
     a: 1,
     b: 2,
@@ -959,7 +960,7 @@ In myObject, **a**, **b** and **c** are all **keys** and **1**, **2** and **'thr
 
 If a **value** is a function then we call it a method:
 
-```
+```javascript
 var objectWithMethod = {
     a: 1,
     b: 2,

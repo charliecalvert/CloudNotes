@@ -20,8 +20,12 @@ Some information about ShowPlugIns Types.
 
 ## ShowPlugIns Report
 
+```elfJsx
 <script src="/javascripts/dev-web/SystemInfo.js"></script>
+```
 
+```elfJsx
 <script type="text/javascript">
   ShowPlugins();
 </script>
+```

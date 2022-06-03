@@ -96,4 +96,3 @@ See also:
 - Then it calls loadPage() with a URL
 - loadPage takes the \#content from the URL (Page0X.html) and puts it
     in the container of IPhoneGo.html.
-
