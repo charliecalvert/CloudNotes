@@ -1530,8 +1530,7 @@ just call **myArray.sort()**.
 If the array is made up of objects or other arrays, JavaScript may
 not know how to perform the sort in many cases. For instance, if
 you had an array of objects with firstName and lastName properties,
-you have to tell JavaScript to sort on the **firstName** or sort 
-on the **lastName.**
+you have to tell JavaScript to sort on the **firstName** or sort on the **lastName.**
 
 Like this:
 

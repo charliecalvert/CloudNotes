@@ -85,7 +85,9 @@ The bridge pattern provides a link between you main program and a set of related
 
 Don't make too big a mystery out of factories. We normally write:
 
-   var jsonReader = new JsonReader();
+```javascript
+var jsonReader = new JsonReader();
+```
 
 With a factory, we do much the same thing, except we write something similar to this:
 
@@ -116,18 +118,24 @@ The factory pattern is designed to help with a series of problems that can occur
 
 **Issue Three**: Sorting out different types of objects with parameters works, but it makes your code hard to read. For instance, the first example might create a bird that does fly, and the second a bird that does not fly (a penguin):
 
-    var falcon = new Bird(true);
-    var penguin  = new Bird(false);
+```javascript
+var falcon = new Bird(true);
+var penguin  = new Bird(false);
+```
 
 That's all well and good, and but what does true and false mean? Isn't this clearer:
 
-    var falcon = new BirdFactory('FlyingBird');
-    var falcon = new BirdFactory('FlightlessBird');
+```javascript
+var falcon = new BirdFactory('FlyingBird');
+var falcon = new BirdFactory('FlightlessBird');
+```
 
 This kind of factory can also be more expressive than the boolean based alternatives shown above:
 
-    var penguin = Bird.flightless();
-    var currentTime = DataTime.now();
+```javascript
+var penguin = Bird.flightless();
+var currentTime = DataTime.now();
+```
 
 **Issue Four**: You create an object 450 times in your program, then decide you need to change the parameter list. It can, in some cases, be simpler to make the change in one place inside a factory, rather than in 450 scattered constructors.
 
@@ -197,7 +205,7 @@ The goal of this pattern is to allow you to call code in a module without having
 
 Cowboy Ben Almon's TinyPubSub:
 
-```
+```javascript
 (function($) {
  'use strict';
  var o = $({});
@@ -217,13 +225,13 @@ Cowboy Ben Almon's TinyPubSub:
 
 Below you can see how to subscribe to an event using TinyPubSub. This kind of method could be put in a constructor:
 
-```
+```javascript
 $.subscribe('debugDetail', listenForDebugDetailEvent);
 ```
 
 Then create a method that will be called when the event is triggered:
 
-```
+```javascript
 function listenForDebugDetailEvent(event, customMessage) {
  console.log(event);
 }
@@ -231,13 +239,13 @@ function listenForDebugDetailEvent(event, customMessage) {
 
 Here is how to publish (trigger) an event using TinyPubSub:
 
-```
+```javascript
 $.publish('debugDetail', 'Publishing privateMethod.');
 ```
 
 When the above line of code is executed, then the **listenForDebugDetailEvent** method will be called. Here, for instance, is a method that will trigger the event:
 
-```
+```javascript
 var triggerDebugDetailEvent = function() {
  $.publish('debugDetail', 'Publishing privateMethod.');
 };
@@ -300,7 +308,7 @@ If you want to get the index of all items:
 
 If you want to get a particular item:
 
-```
+```javascript
 app.get('/item/:id', function(request, response) {
     var id = request.params.id;
 });

@@ -234,7 +234,9 @@ invoking the method instead of returning it until we get to the very end
 of the statement. In a long method that can be quite a distance.  As a
 result, we have adopted the following convention:
 
-    var bar = (function() { return 25; })();
+```javascript
+var bar = (function() { return 25; })();
+```
 
 Here the parenthesis around the anonymous function tells us right at the
 start that we are going to invoke the function. This is a convention,
@@ -243,39 +245,43 @@ better off if we do, and JSHint will catch us out if we don't include
 it. Here is a simple example that illustrates the entire point:
 
 ```javascript
-    var functionObject = function() {
-        return 1;
-    };
+var functionObject = function() {
+    return 1;
+};
 
-    var simpleValue = (function() {
-        return 2;
-    })();
+var simpleValue = (function() {
+    return 2;
+})();
 
-    $(document).ready(function() {
-        $("#functionObject").html(functionObject());
-        $("#simpleValue").html(simpleValue);        
-    });
+$(document).ready(function() {
+    $("#functionObject").html(functionObject());
+    $("#simpleValue").html(simpleValue);        
+});
 ```
 
 Notice that we execute **functionObject(),** while we treat
 **simpleValue** as the simple **number** type that it is:
 
+```javascript
     ...html(functionObject());
     ...html(simpleValue);
+```
 
 In our module pattern, however, we don't return a simple value, we
 return a function, which is a constructor because we call new on it:
 
-    function Point(x1, y1) {
-            x = x1;
-            y = y1;
-    }    
+```javascript
+function Point(x1, y1) {
+        x = x1;
+        y = y1;
+}    
 
-    return Point;
+return Point;
 
 ... // Code omitted here
 
-    var point = new Point(3, 4);
+var point = new Point(3, 4);
+```
 
 But what we get back is not just the function **Point,** but the entire
 closure, which includes **x**, **y** and **bar**(). The reason we like

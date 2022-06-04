@@ -14,6 +14,7 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
+```html
 <style>
 p.menu_class
 {
@@ -57,13 +58,15 @@ function Restore()
   $(".hideMe").slideDown();
 }
 </script>
+```
 
-Exploring jQuery Text
-=====================
+## Exploring jQuery Text
 
+```htm
 <p class="hideMe">Click on this paragraph to make it disappear</p>
 
 <p class="hideMe">We are using the JQuery Click Method to make this happen.</p>
+```
 
 Here is what the code looks like. First we make sure the paragraphs
 above are assigned to a class called **hideMe**, then we write the
@@ -79,7 +82,9 @@ $("hideMe").click
 );
 ```
 
+```htm
 <p><a onclick="Restore()">Restore Text</a></p>
+```
 
 ## Working with Menus
 
@@ -123,6 +128,7 @@ And some simple HTML:
 
 Like this:
 
+```htm
 <section id="MenuDemo">
  <p class="menu_class" onclick="toggleMenu()">Toggle Menu</p>
  <ul class="theMenu" hidden="true">
@@ -130,5 +136,6 @@ Like this:
   <li><a href="#">Menu Item 2</a></li>
  </ul>
 </section>
+```
 
 When you click the "Toggle Menu" area then the menu should toggle on and off.

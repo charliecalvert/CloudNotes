@@ -22,18 +22,18 @@ Let's performs some refactoring. Our utility methods go in a file called **Utili
 
 It should contain to methods:
 
-```
-        showDebug : function(data) {
-            console.log(data);
-        },
+```javascript
+showDebug : function(data) {
+    console.log(data);
+},
 
-        showError : function(request, ajaxOptions, thrownError) {
-            showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
-            showDebug(request.status);
-            showDebug(request.statusText);
-            showDebug(request.getAllResponseHeaders());
-            showDebug(request.responseText);
-        }
+showError : function(request, ajaxOptions, thrownError) {
+    showDebug("Error occurred: = " + ajaxOptions + " " + thrownError);
+    showDebug(request.status);
+    showDebug(request.statusText);
+    showDebug(request.getAllResponseHeaders());
+    showDebug(request.responseText);
+}
 ```
 
 Put this method inside a simple JavaScript and return that object at the bottom of the file, per the usual system for require.
@@ -56,7 +56,7 @@ Create a file called **Particles.js**. Set it up so it with a define method so i
 
 The Icosahedron is in the shape of a sphere, so our particles, taken together, form a sphere.
 
-```
+```javascript
 function showParticles(scene, x, y) {
    var geometry = new THREE.IcosahedronGeometry(10, 2);
    var material = new THREE.PointCloudMaterial({
@@ -74,7 +74,7 @@ function showParticles(scene, x, y) {
 
 Make all the particles rotate like a spinning sphere:
 
-```
+```javascript
 Particles.prototype.rotateParticlesAroundWorldAxis = 
     function(axis, radians, npc) {
         if (npcs.length > 0) {
@@ -102,7 +102,7 @@ Particles.prototype.rotateParticlesAroundWorldAxis =
 
 Declare a variable called **animateNpc** at the top of **Control.js** with object scope. Then in **animate()**, you can call **rotateAparticlesAroundWorldAxis** like this:
 
-```
+```javascript
 var xAxis = new THREE.Vector3(1, 0, 0);
 particles.rotateParticlesAroundWorldAxis(xAxis, Math.PI / 180, animateNpc);
 animateNpc = !animateNpc;
@@ -112,7 +112,7 @@ animateNpc = !animateNpc;
 
 Load in the NPC grid, iterate over it, and draw particles.
 
-```
+```javascript
 Particles.prototype.initNpc = function(fileName, scene, camera) {
     $.ajax({
         url : fileName,
@@ -142,7 +142,7 @@ Particles.prototype.initNpc = function(fileName, scene, camera) {
 
 Here is the Npc000.json:
 
-```
+```json
 [
     [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
     [ 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 0 ],
@@ -175,7 +175,7 @@ Here is the Npc000.json:
 
 For this code to work, you need to get **OBJMTLLoader.js** and **MTLLoader.js**.  These files are from the examples directory in Mr. Doops big zip file that you get from the [threejs downloads page](http://threejs.org/). I think it is wise it download the whole zip file, unzip it, then get a copy of **three.js** from the **build** folder and the other files from: **examples\js\loaders**. Here is the Shapes.js file, that you should not have to modify:
 
-```
+```javascript
 /**
  * Shapes
  * 
@@ -256,7 +256,7 @@ define([ 'MTLLoader', 'OBJMTLLoader', 'ColladaLoader' ],
 
 Call **addStarObject** something like this:
 
-```
+```javascript
 addStarObject(npcs, Scene, Camera, false, x, z);
 ```
 

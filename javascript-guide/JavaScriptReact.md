@@ -27,7 +27,7 @@ React [Cheat Sheet](https://devhints.io/react) on [devhints.io](https://devhints
 
 Here is a simple way to create a React Application.
 
-```
+```bash
 npm install -g create-react-app
 mkdir ~/Source
 cd ~/Source
@@ -505,7 +505,7 @@ wrapper.find('button#bar').simulate('click');
 
 - [From JetBrains](http://bit.ly/webstorm-react)
 
-**NOTE**: *Assuming you are working with ES6, JSX and React, from the menu select **File | Settings | Languages and Frameworks | JavaScript** and set the language version to **React JSX***
+**NOTE**: _Assuming you are working with ES6, JSX and React, from the menu select **File | Settings | Languages and Frameworks | JavaScript** and set the language version to **React JSX**_
 
 ## JSX Comments
 
@@ -578,15 +578,13 @@ We could also, at least in theory, add to this class over time as we discover mo
 
 ## Promises
 
-<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/nWV4Ed2gckk?ecver=2" width="640" height="360" allow="autoplay" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+- [https://youtu.be/nWV4Ed2gckk](https://youtu.be/nWV4Ed2gckk)
 
 ## Chained Promises
 
-<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/PU4gq6yTqyA?ecver=2" width="640" height="360" allow="autoplay" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+- [https://youtu.be/PU4gq6yTqyA](https://youtu.be/PU4gq6yTqyA)
 
-<!--       -->
-<!-- links -->
-<!--       -->
+[comment]: # (Links)
 
 [cra-git]: https://github.com/facebookincubator/create-react-app
 [cra-doc]: https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md
