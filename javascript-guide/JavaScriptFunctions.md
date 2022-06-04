@@ -833,7 +833,7 @@ In the **getNine02** example, the open parenthesis before the word function is s
 Previously in this document, in the section on objects, we declared a
 simple object that looks like this:
 
-``` {.code}
+```javascript
 var myObject = {                
     myProperty01: 12,
     myProperty02: 4,
@@ -914,7 +914,7 @@ the fields. It's syntax is more verbose, but it gives us everything we
 need. Also, the syntax, though a bit verbose, is similar to the class
 declarations in other curley brace languages such as C\#.
 
-``` {.code}
+```javascript
 var MyFunction04 = (function() {
     'use strict';
 
@@ -936,7 +936,7 @@ var MyFunction04 = (function() {
 
 We call it like this:
 
-``` {.code}
+```javascript
 var myFunction04 = new MyFunction04(1, 2);
 myFunction04.nestedFunction();
 ```

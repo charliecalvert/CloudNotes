@@ -81,9 +81,9 @@ Hadoop install. They are stored with a number of other files and
 programs in the Elvenware repository. Instructions on setting up
 Mercurial are now on the Mercurial page:
 
-~~~~ {.code}
+``` {.code}
 http://www.elvenware.com/charlie/development/cloud/Mercurial.html
-~~~~
+```
 
 ### Install Java {#java}
 
@@ -100,18 +100,18 @@ NOTE: I have recently come to rely on the simple method found here:
 By default, you do not have the right version of Java on Ubuntu Linux.
 The following commands should fix the situation:
 
-~~~~ {.code}
+``` {.code}
 wget https://raw.github.com/flexiondotorg/oab-java6/master/oab-java6.sh -O oab-java6.sh
 chmod +x oab-java6.sh
 sudo ./oab-java6.sh
-~~~~
+```
 
 After the endless process outlined above finally terminates, do this:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install sun-java6-jdk
 sudo update-alternatives --config java
-~~~~
+```
 
 More information on the scripts shown above is available here:
 
@@ -119,20 +119,20 @@ More information on the scripts shown above is available here:
 
 This should work to setup Java Sun on Mint Linux:
 
-~~~~ {.code}
+``` {.code}
 sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
 sudo apt-get update
 sudo apt-get install sun-java6-jdk
 sudo update-java-alternatives -s java-6-sun
-~~~~
+```
 
 On one of my system, a day or more after completing  the above steps,
 when I ran **sudo apt-get update** I got the following error:
 
-~~~~ {.code}
+``` {.code}
 W: GPG error: http://ppa.launchpad.net oneiric Release: The following signatures
 couldn't be verified because the public key is not available: NO_PUBKEY 2EA8F35793D8809A
-~~~~
+```
 
 To elimate the error, I used the menu to go to **System Settings |
 Software Sources | Other Software** and unchecked**** the references to
@@ -153,12 +153,12 @@ user to the admins group and then switches you over from being yourself
 to being hadooper. There will be a number of prompts you need to respond
 to on the way.
 
-~~~~ {.code}
+``` {.code}
 sudo addgroup hadoop
 sudo adduser --ingroup hadoop hadooper
 sudo usermod -a -G admin hadooper
 su -l hadooper
-~~~~
+```
 
 I have created a script called **CreateUser.sh** that performs these
 actions automatically. See the [end of this document](#scripts)for more
@@ -192,32 +192,32 @@ is a description of that script does.
 
 Here is the download page for Hadoop:
 
-~~~~ {.code}
+``` {.code}
 http://www.apache.org/dyn/closer.cgi/hadoop/common/
-~~~~
+```
 
 You can also try to download Hadoop by issuing the following command at
 the Linux command prompt:
 
-~~~~ {.code}
+``` {.code}
 wget http://apache.cs.utah.edu//hadoop/common/hadoop-1.0.1/hadoop-1.0.1.tar.gz
-~~~~
+```
 
 The following script downloads and extracts hadoop:
 
-~~~~ {.code}
+``` {.code}
 wget http://apache.cs.utah.edu//hadoop/common/hadoop-1.0.1/hadoop-1.0.1.tar.gz
 tar xzf hadoop-1.0.1
 sudo mv hadoop-1.0.1.tar.gz /usr/local/hadoop
 sudo chown -R hadooper:hadoop /usr/local/hadoop
-~~~~
+```
 
  The scripts starts by downloading a file that is both zipped (gz) and
 tarred (.tar):
 
-~~~~ {.code}
+``` {.code}
 hadoop-1.0.1-bin.tar.gz
-~~~~
+```
 
 Take a moment to examine this file name, and particular the part at the
 end. The **tar** extensions means that many files have been wrapped
@@ -226,9 +226,9 @@ compressess that file into a file called **hadoop-1.0.1.tar.gz**. The
 following command reverses the process by unzipping the tar file and
 then extracting (untarring) the contents:
 
-~~~~ {.code}
+``` {.code}
 tar xzf hadoop-1.0.1-bin.tar.gz
-~~~~
+```
 
 After the command is run you should see a folder called hadoop-1.0.1.
 You can usually tell a folder from a file because it is shown in light
@@ -239,7 +239,7 @@ does two things: it moves the folder to a new location, and then renames
 it by removing the version number. When you are done, you should be able
 to see the contents of the folder:
 
-~~~~ {.code}
+``` {.code}
 charlie@MintBox ~/Downloads $ ls /usr/local/hadoop/
 bin hadoop-client-1.0.1.jar ivy.xml sbin
 build.xml hadoop-core-1.0.1.jar lib share
@@ -249,7 +249,7 @@ conf hadoop-test-1.0.1.jar logs webapps
 contrib hadoop-tools-1.0.1.jar NOTICE.txt
 hadoop-ant-1.0.1.jar ivy README.txt
 charlie@MintBox ~/Downloads $
-~~~~
+```
 
 Set up the Environment {#environment}
 ----------------------
@@ -259,16 +259,16 @@ optional, environment variables that we can set up, plus we must set up
 JAVA\_HOME. To set up these ennvironment variables, we could type the
 following each time we become Hadooper:
 
-~~~~ {.code}
+``` {.code}
 export JAVA_HOME=/usr/lib/jvm/default-java
-~~~~
+```
 
 The above is preferred, but alternatively, you can explicitly name the
 version you want to use:
 
-~~~~ {.code}
+``` {.code}
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
-~~~~
+```
 
 Rather than trying to configure these items by hand each time we become
 Hadooper, it is better to put them in a file called **.bashrc**. To
@@ -283,20 +283,20 @@ NOTE: *Files that begin with a period are "invisible" or "hidden" by
 default. If we type* ***ls****to get a listing of a directory, we don't
 see them. To make them "visible," we should type* **ls -**a:
 
-~~~~ {.code}
+``` {.code}
 $ ls
 andelf bar Downloads examples.desktop
 $ ls -a
 . bar .bashrc examples.desktop .sudo_as_admin_successful ..
 .bash_history .cache .profile andelf .bash_logout Downloads .ssh
-~~~~
+```
 
 Here is the code we want to put in the .**bashrc** file:
 
-~~~~ {.code}
+``` {.code}
 # Set JAVA_HOME:
 export JAVA_HOME=/usr/lib/jvm/default-java
-~~~~
+```
 
 The first line is a comment, the second sets a variable in the
 environment of our OS. Our goal, then, is to create a file called
@@ -305,11 +305,11 @@ Type **cd** followed by enter with no parameters to move to your home
 directory, and then to check which directory you are in right now, type
 **pwd**:
 
-~~~~ {.code}
+``` {.code}
 hadooper@WesternSeas:~$/bin cd
 hadooper@WesternSeas:~$ pwd
 /home/hadooper
-~~~~
+```
 
 As you can see, we are now in **hadooper's** home directory, which is
 **/home/hadooper.**That's just where we want to be.
@@ -317,9 +317,9 @@ As you can see, we are now in **hadooper's** home directory, which is
 The home directory is where you want to create your .**bashrc** file. To
 create it, type:
 
-~~~~ {.code}
+``` {.code}
 nano .bashrc
-~~~~
+```
 
 You may find that .**bashrc** already exists, and already has the right
 entries in it, as one of my scripts takes care of that for you. But if
@@ -327,10 +327,10 @@ you want to do it all by hand, then you should enter the following code
 into .**bashrc**, then type **Ctrl-O** plus **enter** to save and
 **Ctrl-X** to exit:
 
-~~~~ {.code}
+``` {.code}
 # Set JAVA_HOME:
 export JAVA_HOME=/usr/lib/jvm/default-java
-~~~~
+```
 
 At this stage we need to run the .bashrc file so that the environment
 will be properly set up. The best way to run the file is to temporarilly
@@ -338,9 +338,9 @@ stop being hadooper, and then sign back in again. To do this, type exit
 once or twice, until you become the regular user again, that is, until
 you exit the **hadooper** shell. Then log back in as hadooper:
 
-~~~~ {.code}
+``` {.code}
 su - hadooper
-~~~~
+```
 
 When you log back in your .**bashrc** file will run automatically, as
 indeed it will each time you log in from this point forward. That's the
@@ -352,12 +352,12 @@ environment. In particular, when your .**bashrc** file runs,
 **JAVA\_HOME** variables in the environment. To check this, type echo
 \$**JAVA\_HOME**, etc:
 
-~~~~ {.code}
+``` {.code}
 echo $JAVA_HOME
 /usr/lib/jvm/java-6-sun
 echo $PATH
 /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/hadoop/bin
-~~~~
+```
 
 As you can see, all the environment variables that we wanted to
 configure are now set up correctly.
@@ -365,9 +365,9 @@ configure are now set up correctly.
 Alternatively, the following can be used to test the status of an
 environment variable:
 
-~~~~ {.code}
+``` {.code}
 {$JAVA_HOME:?}
-~~~~
+```
 
 We are ready to move on to the next step.\
 
@@ -412,11 +412,11 @@ And here is what goes in each file:
 
 Also be sure you set up the tmp directory and format the namenode:
 
-~~~~ {.code}
+``` {.code}
 sudo mkdir -p /app/hadoop/tmp
 sudo chown -R hadooper:hadoop /app/hadoop/tmp
 /usr/local/hadoop/bin/hadoop namenode -format
-~~~~
+```
 
 Starting Hadoop {#startHadoop}
 ---------------
@@ -425,21 +425,21 @@ Starting Hadoop {#startHadoop}
 
 To start Hadoop, run the scripts in the bin directory:
 
-~~~~ {.code}
+``` {.code}
 /usr/local/hadoop/bin
-~~~~
+```
 
 Assuming you have navigated to the bin directory, the command to start
 Hadoop looks liks this:
 
-~~~~ {.code}
+``` {.code}
 ./start-all.sh
-~~~~
+```
 
 To see if Hadoop started correctly, use the jps command. The output
 should look something like this:
 
-~~~~ {.code}
+``` {.code}
 $ jps
 3216 DataNode
 3524 JobTracker
@@ -447,42 +447,42 @@ $ jps
 3759 TaskTracker
 2993 NameNode
 3443 SecondaryNameNode
-~~~~
+```
 
 There are a set of log files in the hadooper logs directory. To switch
 to the directory, type something like:
 
-~~~~ {.code}
+``` {.code}
 cd /usr/local/hadoop/logs/
-~~~~
+```
 
 Looking through those log files can help you find the errors that may or
 may not occur.
 
 Here is a command to view a log file:
 
-~~~~ {.code}
+``` {.code}
 cat hadoop-hadooper-datanode-WesternSeas-VirtualBox.log
-~~~~
+```
 
 There are several different log files in the log directory, you can find
 them by using the**ls** commind to****look for the files that have .log
 as an extension:
 
-~~~~ {.code}
+``` {.code}
 $ ls *.log
 hadoop-hadooper-datanode-WesternSeas-VirtualBox.log
 hadoop-hadooper-jobtracker-WesternSeas-VirtualBox.log
 hadoop-hadooper-namenode-WesternSeas-VirtualBox.log
 hadoop-hadooper-secondarynamenode-WesternSeas-VirtualBox.log
 hadoop-hadooper-tasktracker-WesternSeas-VirtualBox.log
-~~~~
+```
 
 And here is the command to stop Hadoop:
 
-~~~~ {.code}
+``` {.code}
 ./stop-all.sh
-~~~~
+```
 
 Restart Hadoop {#restart}
 --------------
@@ -493,7 +493,7 @@ completely restart.
 This script, called **MasterCleanAndRestart.sh** is for the master
 machine:
 
-~~~~ {.code}
+``` {.code}
 echo "Stopping Hadoop"
 bash /usr/local/hadoop/bin/stop-mapred.sh
 bash /usr/local/hadoop/bin/stop-dfs.sh
@@ -503,12 +503,12 @@ echo "Run ClearAndRestart on slave machines"
 read -p "Press [Enter] key to re-start hadoop..."
 bash /usr/local/hadoop/bin/start-dfs.sh
 bash /usr/local/hadoop/bin/start-mapred.sh
-~~~~
+```
 
 This script called **CleanAndRestart.sh** is for the client, or slave
 machines:
 
-~~~~ {.code}
+``` {.code}
 # Any time you shut down Hadoop altogether, and particularly if you
 # shut down the machine it is on, you really ought to clean out the  out the
 # temp files and reformat the drive for the distributed file system,
@@ -517,7 +517,7 @@ sudo rm -r /app/hadoop/tmp/
 sudo mkdir -p /app/hadoop/tmp
 sudo chown -R hadooper:hadoop /app/hadoop/tmp
 /usr/local/hadoop/bin/hadoop namenode -format
-~~~~
+```
 
  
 
@@ -551,23 +551,23 @@ configuration, go to the command line of **Box02** and type **ping
 BoxPrimary.**Then go to the command line of BoxPrimary and type **ping
 Box02**. When you are done, press **Ctrl-C**to end the ping session:
 
-~~~~ {.code}
+``` {.code}
 $ ping Box02
 PING Box02 (192.168.56.102) 56(84) bytes of data.
 64 bytes from Box02 (192.168.56.123): icmp_req=1 ttl=64 time=2.55 ms
 64 bytes from Box02 (192.168.56.123): icmp_req=2 ttl=64 time=0.667 ms
-~~~~
+```
 
 Now become Hadooper and copy the SSH public key from the first machine
 to the second
 
-~~~~ {.code}
+``` {.code}
 ssh-copy-id -i $HOME/.ssh/id_rsa.pub hadooper@Box02
-~~~~
+```
 
 When I entered the code shown above, the result looked like this:
 
-~~~~ {.code}
+``` {.code}
 ssh-copy-id -i $HOME/.ssh/id_rsa.pub hadooper@Box02
 The authenticity of host 'Box02 (192.168.0.124)' can't be established.
 ECDSA key fingerprint is f9:6e:01:0e:34:d7:3b:6c:3a:bd:78:92:69:21:90:70.
@@ -579,11 +579,11 @@ Now try logging into the machine, with "ssh 'hadooper@westernseas'", and check i
   ~/.ssh/authorized_keys
 
 to make sure we haven't added extra keys that you weren't expecting.
-~~~~
+```
 
 Following the hint displayed above, I tried to SSH into Box02:
 
-~~~~ {.code}
+``` {.code}
 $ ssh hadooper@Box02
 Welcome to Ubuntu 11.10 (GNU/Linux 3.0.0-16-generic i686)
 
@@ -593,7 +593,7 @@ Welcome to Ubuntu 11.10 (GNU/Linux 3.0.0-16-generic i686)
 0 updates are security updates.
 
 Last login: Sun Mar  4 13:20:13 2012 from localhost
-~~~~
+```
 
 The key thing to notice in the code shown above is that that I was never
 prompted for a password. That is the way things should be when an SSH
@@ -605,16 +605,16 @@ is, you want to set things up so that you can ssh from Box02 to
 BoxPrimary. To begin, log into Box02, and then run the same command you
 ran in BoxPrimary:
 
-~~~~ {.code}
+``` {.code}
 ssh-copy-id -i $HOME/.ssh/id_rsa.pub hadooper@BoxPrimary
-~~~~
+```
 
 Now check to make sure you can ssh into BoxPrimary without entering a
 password:
 
-~~~~ {.code}
+``` {.code}
 ssh hadooper@BoxPrimary
-~~~~
+```
 
 ### Setup Master and Slave Files
 
@@ -626,40 +626,40 @@ from localhost to BoxPrimary in both BoxPrimary and Box02:
 
 Make this change also in mapred-site.xml:
 
-~~~~ {.code}
+``` {.code}
 <property>
 <name>mapred.job.tracker</name>
   <value>BoxPrimary:54311</value>
 </property>
-~~~~
+```
 
 In BoxPrimary, go ahead and start the server
 
-~~~~ {.code}
+``` {.code}
 ./start-dfs.sh
-~~~~
+```
 
 In BoxPrimary:
 
-~~~~ {.code}
+``` {.code}
 $ jps
 10581 Jps
 10581 Jps
 10510 SecondaryNam10100 NameNode
-~~~~
+```
 
 In Box02:
 
-~~~~ {.code}
+``` {.code}
  jps
 6281 J5956 DataNode
-~~~~
+```
 
 If you have trouble, check the logs in Box02:
 
-~~~~ {.code}
+``` {.code}
  cat hadoop-hadooper-datanode-Box02.log
-~~~~
+```
 
 Errors can include something like this:  **INFO
 org.apache.hadoop.ipc.Client: Retrying connect to server:**Errors of
@@ -677,7 +677,7 @@ example applications that ship with hadoop. It is probably a good idea
 to completely restart the system between tests, as described above in
 the [Restart](#restart) section.
 
-~~~~ {.code}
+``` {.code}
 #!/bin/bash
 
 HADOOP="/usr/local/hadoop/bin/hadoop"
@@ -697,7 +697,7 @@ $DFS -ls $GUTENBERG
 $JAR /usr/local/hadoop/hadoop-examples-1.0.1.jar wordcount $GUTENBERG $OUTPUT
 read -p "Press [Enter] key to see the results"
 /usr/local/hadoop/bin/hadoop dfs -cat /user/hadooper/gutenberg-o/usr/local/hadoop/bin/hadoop dfs -cat /user/hadooper/gutenberg-output/part-r-00000
-~~~~
+```
 
 The Scripts {#scripts}
 -----------
@@ -709,39 +709,39 @@ the Python/CreateHadoopFiles directory. Here is how to use them.
 When you download the files from elvenware repository, it is often
 helpful to copy the hadoop files into a folder called bin:
 
-~~~~ {.code}
+``` {.code}
 /home/hadooper/bin
-~~~~
+```
 
 If you are already in **bin**, then you can use this command to copy the
 files from the downloaded repsoitory into your current directory, so
 long as you have the most recent version of the repository in
 **/home/hadooper/andelf**:
 
-~~~~ {.code}
+``` {.code}
 cp /home/hadooper/andelf/Python/CreateHadoopFiles/src/* .
-~~~~
+```
 
 Then you need to run one or more of the scripts. To prepare them, first
 make them executable:
 
-~~~~ {.code}
+``` {.code}
 chmod +x *.sh
-~~~~
+```
 
 You can now run the scripts by typing ./SomeScript.sh. For instance, you
 might do this to execute the script called GetBooks:
 
-~~~~ {.code}
+``` {.code}
 ./GetBooks.sh
-~~~~
+```
 
 After running the script, you should find that James Joyce's **Ulysses**
 and other books have been downloaded and stored in the following folder:
 
-~~~~ {.code}
+``` {.code}
 /home/hadooper/gutenberg
-~~~~
+```
 
 Considered as a whole, the Hadooper scripts from the repository are
 designed to to perform certain key steps, such as downloading and

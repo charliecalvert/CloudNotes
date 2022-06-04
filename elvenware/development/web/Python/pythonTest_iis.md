@@ -139,7 +139,7 @@ a **Web.config** file in the directory that you set up for your cgi
 scripts. Typically the relevant entry in your **Web.config** file looks
 something like this:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <system.webServer>
@@ -153,7 +153,7 @@ something like this:
     </handlers>
   </system.webServer>
 </configuration>
-~~~~
+```
 
 I believe that this file alone would be enough to configure a directory
 to handle Python scripts. In other words, you don't need to use the GUI
@@ -173,15 +173,15 @@ And in that directory there was a file called
 **applicationhost.config**. And in that file, there was the section
 where first my virtual directory was defined:
 
-~~~~ {.code}
+``` {.code}
 <application path="/cgi-bin" applicationPool="Elvenware">
 <virtualDirectory path="/" physicalPath="J:\cgi-bin" /></application>
-~~~~
+```
 
 And then at the very end of the that lengthy file there was this section
 sets up Python scripts:
 
-~~~~ {.code}
+``` {.code}
 <location path="Elvenware/cgi-bin">
   <system.webServer>
     <handlers>
@@ -195,7 +195,7 @@ sets up Python scripts:
     </handlers>
   </system.webServer>
 </location>
-~~~~
+```
 
 Clearly the data in this last section mirrors what was in the web.config
 file on my other systems. It was just a question of whether it was
@@ -265,7 +265,7 @@ but you do need to set up Python itself:
 If you want a complete example, you can create a script like the
 following, and put it in [c:\\xampp\\cgi-bin](file:///c:/xampp/cgi-bin):
 
-~~~~ {.code}
+``` {.code}
 #!/Python27/python
 
 print "Content-type: text/html"
@@ -281,7 +281,7 @@ print "<p>A frog plops</p>"
 print "<p>Into the still water</p>"
 print "</body>"
 print "</html>"
-~~~~
+```
 
 **Notes**: I'm not at all sure it is mandatory, but I put Python on my
 path. You do not need or want to install mod\_python, but wsgi might be
@@ -300,7 +300,7 @@ call them.
 Consider the following simple Python script called **SimpleXml.py**which
 creates an XML file:
 
-~~~~ {.code}
+``` {.code}
 #!/usr/bin/python
 
 import cgi
@@ -320,7 +320,7 @@ print "\t\t<first>Bravo</first>"
 print "\t\t<last>Omega</last>"
 print "\t</name>"
 print "</names>"
-~~~~
+```
 
 When creating Python files that are going to write out XML, you often
 want to have them start by printing out the content type, which in this
@@ -328,7 +328,7 @@ case is **text/xml.**
 
  
 
-~~~~ {#xmlSpace .code}
+``` {#xmlSpace .code}
 <names>
   <name>
     <first>Alpha</first>
@@ -339,12 +339,12 @@ case is **text/xml.**
     <last>Omega</last>
   </name>
 </names>
-~~~~
+```
 
 Now let's write JavaScript using JQuery to read this file, extract some
 of its content, and display it in a list:
 
-~~~~ {.code}
+``` {.code}
 function ReadFromPythonXml() 
 {
     $.ajax(
@@ -363,7 +363,7 @@ function ReadFromPythonXml()
         }
     });
 }
-~~~~
+```
 
 We specify that we want to make a call that GETs rather than POSTs data.
 We state the name of the script we want to run, and the type that we
@@ -377,7 +377,7 @@ and extracts there 'first' and 'last' names.
 
 Here is one way to write to a Python script using JQuery:
 
-~~~~ {.code}
+``` {.code}
 function writeLatLong(lat, lng) 
 {
     var textData = $("#latLongData").val();
@@ -396,11 +396,11 @@ function writeLatLong(lat, lng)
         alert('Please enter a name for your point');
     }
 }
-~~~~
+```
 
 Here is another way to read a Python script using JQuery:
 
-~~~~ {.code}
+``` {.code}
 function getLatLongFromFile() 
 {
     $.ajax(
@@ -419,7 +419,7 @@ function getLatLongFromFile()
         }
     });
 } 
-~~~~
+```
 
 ### The Dreaded File Permissions Error: Errno 13 {#errno13}
 
@@ -442,10 +442,10 @@ site.
 A key point to grasp here is that if you give users anonymous access to
 your web site, then they run as one of the "Authenticated Users."
 
-~~~~ {.code}
+``` {.code}
   Traceback (most recent call last): // CODE OMITTED HERE
  IOError: [Errno 13] Permission denied: 'SomeFile.data'
-~~~~
+```
 
 Copyright © [Charlie Calvert](../../../index.html) | [Elvenware
 Home](../../../index.html) | [Writing Code](../../index.html) |

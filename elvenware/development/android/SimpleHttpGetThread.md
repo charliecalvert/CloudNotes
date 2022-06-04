@@ -60,9 +60,9 @@ HttpGet and HttpPost
 
 In the manifest, before the Application, put this:
 
-~~~~ {.code}
+``` {.code}
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-~~~~
+```
 
 Basic HttpGet
 -------------
@@ -71,9 +71,9 @@ To perform an HTTPGet, you can create a an implementation of the
 abstract class called
 **[AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html)**:
 
-~~~~ {.code}
+``` {.code}
  AsyncTask<Params, Progress, Result>.
-~~~~
+```
 
 This class allows you to perform tasks in the background on a separate
 thread, and then publish the results to the UI. This is a recommended
@@ -111,7 +111,7 @@ that **doInBackground** will return a **String**.
 
 Here is your code:
 
-~~~~ {.code}
+``` {.code}
 package elvenware.MyTester;
 
 import java.io.BufferedReader;
@@ -178,24 +178,24 @@ public class HttpGetDemo extends AsyncTask<TextView, Void, String> {
           t.setText(page);      
     }   
 }
-~~~~
+```
 
 You would call it like this:
 
-~~~~ {.code}
+``` {.code}
 public void onGetClick(View v) 
 {
     TextView textView = (TextView)findViewById(R.id.viewText1);
     new HttpGetDemo().execute(textView);        
 }
-~~~~
+```
 
 Posting
 -------
 
 Here is the code:
 
-~~~~ {.code}
+``` {.code}
 package Elvenware.MyTester;
 
 import java.io.BufferedReader;
@@ -273,17 +273,17 @@ public class HttpPostDemo extends AsyncTask<TextView, Void, String>
         textView.setText(page);     
     }   
 }
-~~~~
+```
 
 You would call it like this:
 
-~~~~ {.code}
+``` {.code}
 public void onPostClick(View v) 
 {
     TextView textView = (TextView)findViewById(R.id.viewText1);
     new HttpPostDemo().execute(textView); 
 }
-~~~~
+```
 
  
 -

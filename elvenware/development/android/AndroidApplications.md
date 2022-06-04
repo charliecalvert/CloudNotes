@@ -39,9 +39,9 @@ track of your current state, usually for debugging. For instance, you
 can override  the onCreate and onTerminate methods. Specify the name of
 this class in the Manifest:
 
-~~~~ {.code}
+``` {.code}
 <application android:name=".MyApplication" ...etc
-~~~~
+```
 
 Copyright © [Charlie Calvert](../../index.html) | [Elvenware
 Home](../../index.html) | [Writing Code](../index.html) |

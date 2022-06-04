@@ -109,23 +109,23 @@ However, qunit is very flexible, and it is possible to test private
 functions without too much fuss. One solution is shown in 
 Prog282-Hints/CanvasGrid03. Look in Public/Scores.js, you see this:
 
-~~~~
+```
 Scores.prototype.unitTests = function() {
    test("ScoresUnitTests", function() {
      var actual = getRoll();
      ok(actual < 101 && actual > 0, "Get Roll in range");
    });
 }
-~~~~ 
+``` 
 
 Then in the unit test code (Tests/UnitTest01):
 
-~~~~
+```
 var privateTest = function() {
    var testScore = new ELF.own.Scores();
    testScore.unitTests();
 };
-~~~~ 
+``` 
 
 This would be a way to run one or more tests of private methods inside an 
 object. Clearly we are inserting code into the object that would not be used 
@@ -163,7 +163,7 @@ shared object will be seen by both objects that share the data.
 
 Consider this object:
 
-~~~~
+```
 ELF.own.Player = (function() {
 	'use strict';
 	var that = {};
@@ -183,11 +183,11 @@ ELF.own.Player = (function() {
 
 	return Player;
 })();
-~~~~
+```
 
 And here is the object that wants to consume playerX and playerY:
 
-~~~~
+```
 var ELF = {};
 ELF.own = {};
 
@@ -206,33 +206,33 @@ ELF.own.ShowPlayer = (function() { 'use strict';
 
 	return ShowPlayer;
 })();
-~~~~
+```
 
 In the first object I declare the data to be shared:
 
-~~~~
+```
 	var that = {};
 	that.playerX = 1;
 	that.playerY = 2;
-~~~~
+```
 
 Then I share the data with the second object when the second object is created:
 
-~~~~
+```
 	new ELF.own.ShowPlayer(that);
-~~~~
+```
 
 You can make the variable passed to the second object global within that second 
 object:
 
-~~~~
+```
 	var sharedData = null;
 
 	// Constructor
 	function ShowPlayer(initData) {
 		sharedData = initData;
 	}
-~~~~
+```
 
 Now any changes made to that.playerX by either object will be seen by both 
 objects. In other words, it is passed by reference, not by value. The method

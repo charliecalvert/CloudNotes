@@ -118,10 +118,10 @@ site.
 A key point to grasp here is that if you give users anonymous access to
 your web site, then they run as one of the "Authenticated Users."
 
-~~~~ {.code}
+``` {.code}
   Traceback (most recent call last): // CODE OMITTED HERE
  IOError: [Errno 13] Permission denied: 'SomeFile.data'
-~~~~
+```
 
 Note that Errno 2 can also be related to this problem. Sometimes the
 reason a file does not exist is because the script that should have

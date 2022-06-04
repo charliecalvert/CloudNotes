@@ -42,18 +42,18 @@ the repository)
 Type cmd in the upper address window to open a dos window at that folder. 
 In the DOS window, do a clone using that URL
 
-~~~~
+```
 > git clone  https://github.com/username/ISIT320.git
-~~~~
+```
 
 This will create a new directory in the current folder, and 
 initialize it as a local copy of the repository from the github one, 
 so if you
 
-~~~~
+```
 > cd ISIT320
 > dir
-~~~~
+```
 
 You will see you now have a copy of your readme.txt file in it. 
 You will also see the file .git created, as the git clone command also 
@@ -68,25 +68,25 @@ tracks these changes.
  
 At any point in the ISIT320 local directory, you can type
 
-~~~~
+```
 > git status
-~~~~
+```
 
 This will show which files you have changed, 
 and you may want to "push" them back up to the cloud (github)
  
 To sync these changed local files, for each file type
 
-~~~~
+```
 > git add filename 
-~~~~
+```
 
 and then
 
-~~~~ 
+``` 
 > git commit -m "any comment you want to be stored with this sycn"
 > git push https://github.com/username/ISIT320.git --all
-~~~~
+```
 
 That is the windows version, not the ssh, so it will ask you to 
 enter your username and PW.
@@ -96,9 +96,9 @@ PULLING FILES DOWN FROM GITHUB
  
 From a DOS window at the ISIT320 directory:
 
-~~~~ 
+``` 
 > git pull https://github.com/username/ISIT320
-~~~~
+```
  
 This will pull down any files you don't have, as well as newer 
 versions if they exist up on github.

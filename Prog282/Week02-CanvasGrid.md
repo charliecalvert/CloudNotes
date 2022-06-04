@@ -44,7 +44,7 @@ and is called Game.
 
 Here is how to capture keydown events:
 
-~~~~
+```
 	window.addEventListener('keydown', doKeyDown, true);
 		
 	var doKeyDown = function(evt) {
@@ -63,7 +63,7 @@ Here is how to capture keydown events:
 				break;
 		}
 	};
-~~~~
+```
 	
 When you are done, check your project into your Prog282-LastName folder, and 
 make sure the folder is shared with me. My username on Bitbucket is 
@@ -75,21 +75,21 @@ the *.project* file included in the root of your project directory. (This is the
 directory for your project, not for your repository.) The top of the *.project*
 file should look something like this:
 
-~~~~
+```
 	<?xml version="1.0" encoding="UTF-8"?>
 	<projectDescription>
 		<name>DataUsers Example01</name>
-~~~~
+```
 
 Whatever you put in the name tag will be the name of your project 
 when I open it in Eclipse. For instance, the name of the following project 
 is *DrawGrid-Calvert*:
 
-~~~~
+```
 	<?xml version="1.0" encoding="UTF-8"?>
 	<projectDescription>
 		<name>DrawGrid-Calvert</name>
-~~~~
+```
 
 Eclipse seems to be a bit odd in the way it handles this name. If you import 
 a fresh copy of the project into Eclipse, then Eclipse seems to get the name 
@@ -111,7 +111,7 @@ Strategies
 If you look in **JsObjects**, at example **JavaScript/Graphics/Basics05**, 
 you will see that some of the drawing is done in the **draw** method:
 
-~~~~
+```
 	var draw = function() {
 		var count = 0;
 		for (imageName in pictures) {
@@ -119,7 +119,7 @@ you will see that some of the drawing is done in the **draw** method:
 				rectSize, rectSize * (count++ + 1), 135, rectSize, rectSize);
 		}
 	};
-~~~~
+```
 
 As you recall, this method will be called at some predetermined interval, 
 depending on how you set things up in the **getCanvas** method:

@@ -102,19 +102,19 @@ The code to link to CDN is placed in the \<HEAD\> tag of an HTML file,
 as illustrated later on this page. Here is an example of how to link in
 jQuery 1.2.0 using CDN:
 
-~~~~ {.code}
+``` {.code}
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-~~~~
+```
 
 Here is an example of how to link in jQuery Mobile 1.1.0:
 
-~~~~ {.code}
+``` {.code}
 <link href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-~~~~
+```
 
 Additional options can be found on the Microsoft CDN site:
 
@@ -126,7 +126,7 @@ A Complete Example {#complete}
 In the head tag, you need to link in jQuery Mobile. Then in the body,
 you define the pages you want to view. Consider this minimal example:
 
-~~~~ {.code}
+``` {.code}
 <!DOCTYPE html>
 <html>
 
@@ -160,7 +160,7 @@ you define the pages you want to view. Consider this minimal example:
 </body>
 
 </html>
-~~~~
+```
 
 Here is a link to this page running life on the web:
 
@@ -195,7 +195,7 @@ a specially formatted jQuery Mobile element. Here are some examples:
 
 Here is more complex example:
 
-~~~~ {.code}
+``` {.code}
 <!DOCTYPE html>
 <html>
 
@@ -237,7 +237,7 @@ Here is more complex example:
 </body>
 
 </html>
-~~~~
+```
 
 Click [here to see the page](JQueryMobile.html) shown above in your
 browser.
@@ -383,7 +383,7 @@ Change Page with JavaScript
 You can call<strong> $.mobile.changePage()</strong> to switch pages while
 using jQueryMobile.
 
-~~~~
+```
 Main.prototype.displayRadioButtonSelection = function() {
  console.log("cgm: displayRadioButtonSelection called");
  var id = $("input[name=mainGroup]:checked").attr('id');
@@ -405,7 +405,7 @@ Main.prototype.displayRadioButtonSelection = function() {
    break;
   }
  };
-~~~~
+```
 
 Hide and Reveal Menus {#menus}
 ---------------------

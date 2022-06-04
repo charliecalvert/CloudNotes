@@ -53,15 +53,15 @@ Summary:
 
 To create an include, we use a syntax like this:
 
-~~~~ {.code}
+``` {.code}
 <!--#include file="iis.inc" -->
-~~~~
+```
 
 You simply insert information like that shown above whereever you want
 to include another file insider your HTML file. For instance, here is a
 complete HTML file with a server side include:
 
-~~~~ {.code}
+``` {.code}
 <html>
 <body>
   <p>Here is a server side include:</p>
@@ -69,14 +69,14 @@ complete HTML file with a server side include:
   <!--#include file="iis.inc" -->
 </body>
 </html>
-~~~~
+```
 
 The include file, which can have any name, but which in this case we
 call iss.inc, might look like this:
 
-~~~~ {.code}
+``` {.code}
 <p>This text will be included in another file</p>
-~~~~
+```
 
 If the file you want to include in another file is in your current
 directory, then use the syntax shown above. Often, however, you want to
@@ -85,9 +85,9 @@ best to place this file in a single location, and refer to it with this
 syntax, where we replace the word **file** with the word **virtual,**
 and we trace our path from the root of the site:
 
-~~~~ {.code}
+``` {.code}
   <!--#include virtual="/includes/iis.inc" -->
-~~~~
+```
 
 The root of your site is often called **html** on Apache, and
 **wwwroot** on iis. There are, however, no hard and fast rules as to
@@ -102,21 +102,21 @@ Web Server for server side includes. On Linux, you can use a neat trick
 to bring other files. Create a .**htaccess** file with the following
 contents:
 
-~~~~ {.code}
+``` {.code}
 Options +Includes
 AddType text/html .shtml
 AddOutputFilter INCLUDES .shtml
 XXBitHack on
-~~~~
+```
 
 This key line here is XBitHack on, which states that any file with
 executable permissions will be searched for includes. This means that
 you can write the following to make the web server search a file for
 server side includes:
 
-~~~~ {.code}
+``` {.code}
 chmod x+ myfile.html
-~~~~
+```
 
 On Windows, I don't know a good way to do the same thing. Instead, we
 are forced to either rename our files to xxx.shtml, which can break

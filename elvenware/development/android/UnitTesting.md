@@ -68,7 +68,7 @@ test](images/UnitTest03-SelectProjectToTest.png)
 
 **Figure 04: Create your test class.**
 
-~~~~ {.code}
+``` {.code}
 package com.elvenware.walking.test;
 
 import android.test.ActivityInstrumentationTestCase2;
@@ -81,11 +81,11 @@ public class BasicTests extends ActivityInstrumentationTestCase2<LearningManActi
         super("com.elvenware.walking", LearningManActivity.class);
     }
 }
-~~~~
+```
 
 **Listing 1: Setting up your unit test.**
 
-~~~~ {.code}
+``` {.code}
 package com.elvenware.walking.test;
 
 import android.test.ActivityInstrumentationTestCase2;
@@ -113,7 +113,7 @@ public class BasicTests extends ActivityInstrumentationTestCase2
             (String)mActivity.getText(com.elvenware.walking.R.string.hello));
     }
 }
-~~~~
+```
 
 **Listing 2: A complete test**
 

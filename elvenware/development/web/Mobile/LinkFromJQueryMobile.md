@@ -67,15 +67,15 @@ Here is how I fixed the problem. This is not an official solution, but
 it worked for me. I created a custom JavaScript method that gets called
 on an onclick rather than using a regular href:
 
-~~~~ {.code}
+``` {.code}
 function clean(url){  location.href = url;}
-~~~~
+```
 
 So we call this method from our anchor:
 
-~~~~ {.code}
+``` {.code}
 <p>Back to <a onclick="clean('index.html')">Main Site</a></p>
-~~~~
+```
 
 On site clean() takes us to index.html.
 

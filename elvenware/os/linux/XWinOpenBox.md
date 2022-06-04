@@ -45,10 +45,10 @@ install X11 ([X Window
 environment](http://en.wikipedia.org/wiki/X_Window_System)) and then
 install OpenBox.
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install xorg
 sudo apt-get install openbox
-~~~~
+```
 
 [![Apt installing openbox](images/AptOpenBoxSmall.png)](images/AptOpenBox.png)
 
@@ -58,9 +58,9 @@ openbox.**
 
 You probably also want to install FireFox:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install firefox
-~~~~
+```
 
 When you have these tools installed, the next step is start the X-Window
 system. To do that, you simply type:
@@ -118,15 +118,15 @@ based on X11.
 
 Here is the commands to install Gnome
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install ubuntu-desktop
-~~~~
+```
 
 Here is how to install KDE
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install kubuntu-desktop
-~~~~
+```
 
 ### Links
 
@@ -141,21 +141,21 @@ I have often had a struggle trying to set the screen resolution on
 Linux. There are some tools that automate the provcess, including
 Startup-Manager.
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install startupmanager
-~~~~
+```
 
 Then to run the tool just type:
 
-~~~~ {.code}
+``` {.code}
 sudo startupmanager
-~~~~
+```
 
 After you set the resolution, you should consider rebooting:
 
-~~~~ {.code}
+``` {.code}
 sudo reboot
-~~~~
+```
 
 After restarting you should (if everything worked) come up in the new
 resolution that you chose.
@@ -166,11 +166,11 @@ Install Video Drives for NVIDIA
 See [this post](http://www.noobslab.com/2011/09/nvidia-drivers-for-ubuntu-1110-oneiric.html),
 which says: run the following commands in a terminal window:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-add-repository ppa:ubuntu-x-swat/x-updates
 sudo apt-get update
 sudo apt-get install nvidia-current
-~~~~
+```
 
 A tool that might help is ndr.
 
@@ -185,17 +185,17 @@ to log in remotely to applications running on Linux. If says
 you can use XDMCP. It's unlikely that it is not already installed, but
 you may need to first install the openssh-server package:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install openssh-server
-~~~~
+```
 
 On your other system, start a X server window. On Windows, use Xming, or
 on MacOS X, Xquartz and Xephyr. Use SSH to connect to the remote host
 and forward your X server socket across:
 
-~~~~ {.code}
+``` {.code}
 $ DISPLAY=:1.0 ssh -Y user@otherhost.otherdomain gnome-session --session=ubuntu
-~~~~
+```
 
 Install the VirtualBox Additions for Ubuntu Server
 --------------------------------------------------
@@ -209,15 +209,15 @@ You can edit the Menu.xml file. It can be stored in the
 \~/.config/openbox directly. Because the .config directory begins with a
 period, you will not normally see it when you run the list command:
 
-~~~~ {.code}
+``` {.code}
 ls
-~~~~
+```
 
 Instead, run list with the -a option:
 
-~~~~ {.code}
+``` {.code}
 ls -a
-~~~~
+```
 
 If you don't see a .config directory, then create one. Inside it create
 an openbox directory:
@@ -229,9 +229,9 @@ mkdir .config/openbox
 Now copy the existing menu for Openbox into this directory, and edit it
 as you feel best:
 
-~~~~ {.code}
+``` {.code}
 cp /etc/xdg/openbox/menu.xml .config/openbox/ .
-~~~~
+```
 
 Background Image
 ----------------
@@ -247,7 +247,7 @@ sudo **apt-get install nitrogen**.
 
 Here is the entry you can add to Menu.xml:
 
-~~~~ {.code}
+``` {.code}
 <item label="nitrogen">
   <action name="Execute">
     <execute>
@@ -255,7 +255,7 @@ Here is the entry you can add to Menu.xml:
     </execute>
   </action>
 </item>
-~~~~
+```
 
 In this particular example, /home/charlie/Downloads is the folder where
 I have a list of background files. If you execute nitrogen from the

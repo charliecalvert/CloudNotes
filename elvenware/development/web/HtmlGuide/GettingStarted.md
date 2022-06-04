@@ -678,10 +678,10 @@ I guess it could be argued either way, but I think you should use
 paragraph tags to break up the text in your article sections. Some
 people write this:
 
-~~~~
+```
     By his own account, he ran circles around the rain. <br /><br />
     It was a truth he contested with morbid intensity.
-~~~~
+```
 
 While I would write this:
 

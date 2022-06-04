@@ -97,7 +97,7 @@ called **ViewData**, **InsertData** and **EditData**.
 You need to be sure to tell Android about these classes by referencing
 them in your Manifest:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ai.android.book.provider"
@@ -121,13 +121,13 @@ them in your Manifest:
     </application>
     <uses-sdk android:minSdkVersion="3" />
 </manifest>
-~~~~
+```
 
 Each class that you create will be like a normal Activity, or a normal
 ListActivity. You load the appropriate view just as you normally would,
 via call to **setContentView**:
 
-~~~~ {.code}
+``` {.code}
 public class InsertData extends Activity
 {
 
@@ -143,7 +143,7 @@ public class InsertData extends Activity
         startActivityForResult(intent, 0);
     }
 }
-~~~~
+```
 
 Notice that in this code shown here I have included a simple event
 handler, of the type that might be used to respond to a button click.
@@ -155,14 +155,14 @@ case, the Activity is the **EditData**class. After the call to
 Recall that inside the appropriate layout XML file the declaration for
 the button designed to call this method might look something like this:
 
-~~~~ {.code}
+``` {.code}
 <Button
   android:id="@+id/button2"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
   android:onClick="onSwitch"
  android:text="@string/buttonInsertData" />
-~~~~
+```
 
 Links
 -----

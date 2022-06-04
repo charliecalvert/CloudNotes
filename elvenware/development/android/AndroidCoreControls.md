@@ -91,7 +91,7 @@ Create a new application. Open up the main layout file (**Package
 Explorer | YourProject | res | layout**), called **Main.xml**. Modify it
 so that it includes a second **TextView** and a **Button**:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="fill_parent"
@@ -118,7 +118,7 @@ android:onClick="onClicker"
 android:text="@string/buttonString" />
 
 </LinearLayout>
-~~~~
+```
 
 Notice that I have set the **textAppearance** of the second TextView to
 **textAppearanceLarge**, and it's **onClick** even to an as yet
@@ -128,25 +128,25 @@ Write code for the **onClicker**method:
 
 You will need to add an import or two:
 
-~~~~ {.code}
+``` {.code}
 import android.view.View;
 import android.widget.TextView;
-~~~~
+```
 
 The following is your on click method:
 
-~~~~ {.code}
+``` {.code}
 public void onClicker(View view)
 {
   TextView textView = (TextView)this.findViewById(R.id.textView1);
   textView.setText("My Text");
 }
-~~~~
+```
 
 Change Text in TextView using a Button and an Edit Control {#changeText}
 ----------------------------------------------------------
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="fill_parent"
@@ -181,7 +181,7 @@ android:text="@string/buttonChange"
 android:onClick="onChangeText" />
 
 </LinearLayout>
-~~~~
+```
 
 You might get the warning: "This text field does not specify an
 InputType or hint." Try creating a resource string that provides a hint
@@ -189,17 +189,17 @@ about what you want the user to enter into the text field. Right click
 on the control in the designer and set the hint to your string resource.
 Alternatively, explicitly fill in the **android:hint**:
 
-~~~~ {.code}
+``` {.code}
 <EditText
 android:id="@+id/editText2"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:hint="@string/textEditMe" />
-~~~~
+```
 
 And here is the button click method that will change the text:
 
-~~~~ {.code}
+``` {.code}
 public void onChangeText(View view)
 {
   EditText editText = (EditText)this.findViewById(R.id.editText1);
@@ -207,7 +207,7 @@ public void onChangeText(View view)
   String data = editText.getText().toString();
   textView.setText(data);
 }
-~~~~
+```
 
 Create an addition program. Have the user enter two values and then add
 them together and display them to the user.
@@ -217,7 +217,7 @@ RadioButtons {#radiobutton}
 
 The main layout:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="fill_parent"
@@ -260,11 +260,11 @@ android:text="@string/rbFly" />
 </RadioGroup>
 
 </LinearLayout>
-~~~~
+```
 
 The Strings:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
@@ -275,11 +275,11 @@ The Strings:
 <string name="rbFly">Fly</string>
 
 </resources>
-~~~~
+```
 
 The Source Code
 
-~~~~ {.code}
+``` {.code}
 package com.elvenware.simpleradiobutton;
 
 import android.app.Activity;
@@ -317,7 +317,7 @@ public class SimpleRadioButtonActivity extends Activity {
             textViewMain.setText("You choose to fly");
     }
 }
-~~~~
+```
 
 Links {#links}
 -----

@@ -66,7 +66,7 @@ When you create a component, you can register it in the manifest. The
 files that you register in a manifest can be started or invoked by an
 intent. Consider this Manifest:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.ai.android.book.provider"
@@ -89,7 +89,7 @@ intent. Consider this Manifest:
   </application>
 <uses-sdk android:minSdkVersion="3" />
 </manifest> 
-~~~~
+```
 
 In the code shown above, there are at least four components:
 
@@ -109,7 +109,7 @@ that you can see the available applications.
 Creating an Activity with an intent is covered in the Activity page. For
 review, you can look at this code:
 
-~~~~ {.code}
+``` {.code}
 public void onShowIntent(View view)
 {
   TextView textShowIntent = (TextView)this.findViewById(R.id.textViewShowIntentMain);
@@ -121,7 +121,7 @@ public void onSwitchToScreenTwo(View view)
   Intent intent = new Intent(view.getContext(), ScreenTwo.class);
   this.startActivity(intent);
 }
-~~~~
+```
 
 Note the method called onShowIntent. This method calls
 **getIntent()**and then displays a string that provides a minimal

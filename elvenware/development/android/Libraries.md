@@ -94,7 +94,7 @@ Project](images/Library02Small.png)](images/Library02.png)
 
 Here is the code for a simple library:
 
-~~~~ {.code}
+``` {.code}
 package com.elvenware.simplelibrary;
 
 public class SimpleLibrary extends Object 
@@ -107,11 +107,11 @@ public class SimpleLibrary extends Object
  }
 } 9;
 }
-~~~~
+```
 
 Here is the code for a program that consumers the library:
 
-~~~~ {.code}
+``` {.code}
 package com.elvenware.simplelibraryuser;
 
 import com.elvenware.simplelibrary.SimpleLibrary;
@@ -135,7 +135,7 @@ public class SimpleLibraryUserActivity extends Activity
     textViewMain.setText(String.format("The answer is %s", nine)); 
   }
 }
-~~~~
+```
 
 Links
 -----

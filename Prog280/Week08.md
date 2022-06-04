@@ -82,16 +82,16 @@ Navigate to our Git directory (/home/\$USER/Git)
 
 Then run this command:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 git clone git://github.com/rigoneri/syte.git
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Then run these commands:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 sudo apt-get install python-setuptools
 sudo apt-get install libpq-dev python-dev
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 sudo easy_install pip
 
@@ -136,14 +136,14 @@ Setting up Filezilla
 
 Here is how I set up the ROOT_URI:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 if DEPLOYMENT_MODE == 'dev':
     SITE_ROOT_URI = 'http://ec2-23-23-170-11.compute-1.amazonaws.com:30025/'
     DEBUG = True
 else:
     DEBUG = False
     SITE_ROOT_URI = 'http://ec2-23-23-170-11.compute-1.amazonaws.com:30025/'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 You will, of course, have a different URL, but the general appearance will be
 similar.
@@ -153,13 +153,13 @@ similar.
 He shows a capital W for Wordpress, yet it seems to me that won't work. I
 believe you need to change it to a small w:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 BLOG_PLATFORM = 'wordpress'  # Wordpress or tumblr
 
 #Blog Integration: Wordpress
 WORDPRESS_BLOG_URL = 'elvenware.wordpress.com'
 WORDPRESS_API_URL = 'https://public-api.wordpress.com/rest/v1/sites/{0}'.format(WORDPRESS_BLOG_URL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To make this work, you should go to Wordpress.com and create a free site for
 yourself. Later I will look into making this work for our EC2 versions of
@@ -172,7 +172,7 @@ GitHub and LastFm
 Both GitHub and LastFm require that you get long complicated tokens from the
 site. For instance, see these sections of the settings file:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 #Github Integration
 GITHUB_INTEGRATION_ENABLED = True
 GITHUB_API_URL = 'https://api.github.com/'
@@ -181,16 +181,16 @@ GITHUB_ACCESS_TOKEN = '823234097082 AND SO ON FOR EVER AND EVER'
 GITHUB_OAUTH_ENABLED = True
 GITHUB_CLIENT_ID = '823234097082 AND SO ON'
 GITHUB_CLIENT_SECRET = '823234097082 AND SO ON FOR EVER AND EVER''
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 You will want to put the long keys that you get from GitHub in the fields that
 begin 82323....
 
 To learn more, see the section of Rodrigo's site that has this heading:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 Setting up GitHub integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Running Syte
 ------------
@@ -247,7 +247,7 @@ git clone file:////home/charlie/git/myrepo git clone file:////\$HOME/git/myrepo
 Clone a Specific Branch
 -----------------------
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
     BRANCH=chasyte
     REPOSITORY=file:////home/charlie/git/myrepo
     mkdir 
@@ -255,4 +255,4 @@ Clone a Specific Branch
     git init
     git remote add -t $BRANCH -f origin $REPOSITORY
     git checkout $BRANCH
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```

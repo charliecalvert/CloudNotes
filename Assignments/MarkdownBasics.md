@@ -150,7 +150,7 @@ It looks like this:
 
 Here is a longer example:
 
-~~~~
+```
 # Markdown
 
 
@@ -170,7 +170,7 @@ Of course you can find information on sites like Elvenware:
 
 - [Elvenware](http://www.elvenware.com)
 - [CloudPages](http://elvenware.com/charlie/books/CloudNotes/CloudNotes.html)
-~~~~
+```
 
 Here is part of the output created by this markdown code:
 

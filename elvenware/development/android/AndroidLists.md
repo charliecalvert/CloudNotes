@@ -84,19 +84,19 @@ You don't need a layout at all for a default list.
 
 For a custom list give an id of list:
 
-~~~~ {.code}
+``` {.code}
 android:id="@android:id/list"
-~~~~
+```
 
 If you want a textview, use empty:
 
-~~~~ {.code}
+``` {.code}
 android:id="@android:id/empty"
-~~~~
+```
 
 Simple list program:
 
-~~~~ {.code}
+``` {.code}
 public class SimpleListActivity extends ListActivity {
   /** Called when the activity is first created. */
   @Override
@@ -110,7 +110,7 @@ public class SimpleListActivity extends ListActivity {
   setListAdapter(adapter);
   }
 }
-~~~~
+```
 
 It is also possible to have a custom ListView, rather than using the
 ListView from the system. If you do this, however, you should give your
@@ -143,14 +143,14 @@ When you set things up this way, you can load the layout as usual, but
 you access the **ListView** in the layout as if it were a system
 resouce:
 
-~~~~ {.code}
+``` {.code}
 setContentView(R.layout.my_layout);
         
 ArrayAdapter<String> array = new ArrayAdapter<String>(
   activity, 
   android.R.layout.simple_list_item_1,
   cursor.getColumnNames());
-~~~~
+```
 
 Links
 -----

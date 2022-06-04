@@ -89,18 +89,18 @@ Setting up QUnit
 
 Here is the new code for the QUnit html file:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 	<div id="qunit"> </div>
 	<div id="qunit-fixture"> </div>
 
 	<div>
 		<ul id="debugList"> </ul>
 	</div>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Here was the old style QUnit code for your HTML file:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 	<div id="qunit-fixture">  
 		\\ tests depend on markup that goes here   
 	</div>
@@ -109,7 +109,7 @@ Here was the old style QUnit code for your HTML file:
 	<h2 id="qunit-banner"> </h2>  
 	<h2 id="qunit-userAgent"> </h2>  
 	<ol id="qunit-tests"> </ol>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Git
 ---
@@ -119,7 +119,7 @@ Git
 Example Script
 ==============
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 	ECHO ====== Create SSH Dir ======  
 	ECHO ============================  
 	ECHO This script expects your server's password as a parameter  
@@ -144,7 +144,7 @@ Example Script
 	ECHO file on the server. The key should be all on one  
 	ECHO line and the line should end with a UNIX style LF.  
 	ECHO ============================
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ![](<https://bc.instructure.com/courses/795060/files/24309741/preview>)
 

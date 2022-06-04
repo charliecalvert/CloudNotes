@@ -174,11 +174,11 @@ line. If you want to see them side by side, as my two tables appear side by
 side in the screen short for this assignment, you can add CSS that looks 
 like this:
 
-~~~~
+```
 #orcTable, #characterTable {
     float: left; 
 }
-~~~~
+```
 
 You might also play with the **border-width** and **background-color** for
 these two elements.
@@ -198,12 +198,12 @@ http:// part from the open id. Suppose you have this open id:
 
 Then you will want to get the string marylu.myopenid.com, then use that string to create a directory. Here is the code for extracting the string:
 
-~~~~
+```
 var getUserName = function(identity) {
 	var data = identity.replace('http://', '');
 	return data.replace('/', '');
 }
-~~~~
+```
 
 And here is an example from JsObjects of to create a directory:
 

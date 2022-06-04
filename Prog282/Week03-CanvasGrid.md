@@ -65,7 +65,7 @@ path for items that are a 1.
 
 Here is how to define a simple 3 X 3 array in JavaScript:
 
-~~~~
+```
 	var list = [
 		[0, 1, 0],
 		[1, 0, 0],
@@ -77,7 +77,7 @@ Here is how to define a simple 3 X 3 array in JavaScript:
 			// Draw Grass
 		}
 	}
-~~~~
+```
 
 The code shown above differs from what you will create. It is meant 
 simply to give you a few hints as to how to proceed.

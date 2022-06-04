@@ -27,10 +27,10 @@ dice added together.
 For instance, if the roll of the first die yields a 2, the second a 
 3, and the third a 4, then the output should look like this:
 
-~~~~
+```
 	2, 3, 4
 	9
-~~~~
+```
 
 Your program should have at least one custom HTML file and one custom
 JavaScript file. It should link in jQuery and use jQuery to 

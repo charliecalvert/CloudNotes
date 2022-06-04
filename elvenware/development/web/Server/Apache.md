@@ -182,7 +182,7 @@ that ships with most distributions of Python. You can use it to convert
 Windows CRLF line endings to Linux style line endings (LF) and vice
 versa. It looks something like this:
 
-~~~~ {.code}
+``` {.code}
 #! /usr/bin/env python
 "Replace CRLF with LF in argument files.  Print names of changed files."
 
@@ -206,7 +206,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-~~~~
+```
 
 Copy file to an Apache Web Site {#setup}
 -------------------------------
@@ -216,7 +216,7 @@ designed to help you copy files from your home directory to the /var/www
 and /usr/lib/cgi-bin directories. It could serve as a starting point for
 someone interested in this kind of thing.
 
-~~~~ {.code}
+``` {.code}
 #!/bin/bash
 
 # ---------------------------------------------------
@@ -307,7 +307,7 @@ find /usr/lib/cgi-bin/chords/ -type f -name *.py | xargs sudo chmod +x
 find /usr/lib/cgi-bin/chords/ -type f | xargs sudo ~/bin/crlf.py
 find /usr/lib/cgi-bin/chords/ -type f -name *.csv | xargs sudo chmod 666
 find /usr/lib/cgi-bin/chords/ -type f -name *.txt | xargs sudo chmod 666
-~~~~
+```
 
 Links
 -----

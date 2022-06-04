@@ -273,9 +273,9 @@ it does enable me to connect with ADB, which is my real need. To get on
 the Internet with Android 4.0, I had only to add the following to the
 bottom of /etc/init.sh and then reboot:
 
-~~~~ {.code}
+``` {.code}
 setprop net.dns1 8.8.8.8
-~~~~
+```
 
 In Honeycomb (3.2), I did the following. First I selected Alt-F1 to get
 to the command prompt. I typed netcfg to confirm that I was not
@@ -283,18 +283,18 @@ connected to the network. When I issued the netcfg command, I saw that
 eth0 was DOWN, which meant I was not connected to the network. Then I
 called **setprop** and passed in the IP address of my DSN server:
 
-~~~~ {.code}
+``` {.code}
 setprop net.dns1 [DNS IP]
-~~~~
+```
 
 To get the IP address for your DNS server, go to the Windows command
 prompt and type **ipconfig -all**. Then scroll down and look for the
 **DNS servers** entry. On my system, the DNS server is 192.168.2.1, so I
 wrote:
 
-~~~~ {.code}
+``` {.code}
 setprop net.dns1 192.168.2.1
-~~~~
+```
 
 Then I typed **dhcpcd eth0**and I was done. To confirm that I was on the
 network, I called **netcfg**, and this time I found that **eth0** was
@@ -368,7 +368,7 @@ VirtualBox.
 You might first want to explore the size of a VirtualBox VDI image using
 the showhtinfo command of the VBoxManage.exe application:
 
-~~~~ {.code}
+``` {.code}
 J:\VirtualBox\AndroidIceCream>"c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" showhdinfo AndriodIceCream.vdi
 UUID: e9603964-8a41-4bb5-848b-167b3d293f49
 Accessible: yes
@@ -379,12 +379,12 @@ Storage format: VDI
 Format variant: dynamic default
 In use by VMs: AndriodIceCream (UUID: e818838b-30f5-4799-9c97-15736d24cb3b)
 Location: J:\VirtualBox\AndroidIceCream\AndriodIceCream.vdi
-~~~~
+```
 
 The next step will be to modify the VDI file. You can use the command
 line help to see some of your options:
 
-~~~~ {.code}
+``` {.code}
 J:\VirtualBox\AndriodIceCream>"c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyhd
 Usage:
 
@@ -396,14 +396,14 @@ readonly|multiattach]
 [--resize <megabytes>|--resizebyte <bytes>]
 
 J:\VirtualBox\AndriodIceCream>
-~~~~
+```
 
-~~~~ {.code}
+``` {.code}
 J:\VirtualBox\AndroidIceCream>"c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyhd --resize 45000 AndroidIceCream.vdi
 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
 
 C:\Users\Charlie\VirtualBox VMs\AndroidVista>
-~~~~
+```
 
 This grows the harddrive to 45 GB. It happens very quickly.
 
@@ -424,7 +424,7 @@ from the command line of your Windows, Linux or Mac. The example shown
 here uses Windows conventions, but it should be obvious how to modify
 the commands for use on a MAC or Linux Box:
 
-~~~~ {.code}
+``` {.code}
 C:\Users\Charlie\Documents\android-sdk>cd platform-tools
 
 cd C:\Users\Charlie\Documents\android-sdk\platform-tools>
@@ -435,7 +435,7 @@ adb install c:\Users\Charlie\workspace\AndEngineTest01\bin\AndEngineTest01.apk
 4260 KB/s (397066 bytes in 0.091s)
         pkg: /data/local/tmp/AndEngineTest01.apk
 Success
-~~~~
+```
 
 -   [Adb
     terminal](http://www.gadgetsdna.com/android-terminal-adb-shell-command-list/1168/)

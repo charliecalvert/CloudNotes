@@ -177,7 +177,7 @@ IDE goes through when compiling a project:
 At the very body of the file is a quick description of the projects
 nature, which shows that it is both a Java and an Android project.
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 <name>bcLibraryUser2_Codrington</name>
@@ -211,7 +211,7 @@ nature, which shows that it is both a Java and an Android project.
     <nature>org.eclipse.jdt.core.javanature</nature>
   </natures>
 </projectDescription>
-~~~~
+```
 
 Ninety-nine percent of the time you will never have to give this file a
 thought, but every once in awhile something will go wrong with it. The

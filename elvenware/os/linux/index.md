@@ -84,46 +84,46 @@ One chore you should perform regularly is updating the code on your
 server. It is possible to have this done automatically, but I usually do
 it by hand. All you need do is issue the following two commands.
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get update
 sudo apt-get upgrade
-~~~~
+```
 
 If you want to update from one version of the distro to the next
 version, then use this command:
 
-~~~~ {.code}
+``` {.code}
 do-release-upgrade
-~~~~
+```
 
 Install Oracle/Sun Java
 -----------------------
 
 Java gets installed in the **/usr/lib/jvm** directory.
 
-~~~~ {.code}
+``` {.code}
 sudo apt-add-repository ppa:flexiondotorg/java
 sudo apt-get update
 sudo apt-get install sun-java6-jdk sun-java6-plugin
 sudo update-alternatives --config java
-~~~~
+```
 
 Install SSH
 -----------
 
 On Ubuntu:
 
-~~~~ {.code}
+``` {.code}
 apt-get install ssh
-~~~~
+```
 
 On the client machine:
 
-~~~~ {.code}
+``` {.code}
 ssh-keygen
 ssh-copy-id <userName>@<theServerYouWantToConnectTo>
 ssh <userName>@<theServerYouWantToConnectTo>
-~~~~
+```
 
 On the server edit /etc/ssh/sshd\_config and set Password Authentication
 to no.

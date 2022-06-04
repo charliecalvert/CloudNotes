@@ -61,7 +61,7 @@ Android Dialogs
 Show An Alert Dialog
 --------------------
 
-~~~~ {.code}
+``` {.code}
 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 builder.setMessage("Please select one of the Radio Buttons");
 builder.setCancelable(true);
@@ -72,14 +72,14 @@ builder.setNeutralButton("Ok",
         }
     });
 builder.show();     
-~~~~
+```
 
 A More Complex Example
 ----------------------
 
 If you want more control, here is how to create a dialog in XML:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -108,12 +108,12 @@ If you want more control, here is how to create a dialog in XML:
         android:gravity="fill_horizontal" />
 
 </LinearLayout>
-~~~~
+```
 
 Here is how to call it without trying to initialize any of the controls
 that that we defined in the XML:
 
-~~~~ {.code}
+``` {.code}
 LayoutInflater inflator = LayoutInflater.from(this);
 View view = inflator.inflate(R.layout.dialog_basic, null);
 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -124,7 +124,7 @@ builder.setNegativeButton("Cancel", null);
 AlertDialog inputDialog = builder.create();
 inputDialog.show();
 return null;
-~~~~
+```
 
 Here is how to set up an AlertDialog (one that has buttons like OK and
 Cancel) with some initialized content in a TextView. In the previous
@@ -132,7 +132,7 @@ example, we had a TextView, but we did not try to initialize it's
 fields. In this case, we use **findViewById** to find the TextView, and
 set its content:
 
-~~~~ {.code}
+``` {.code}
 private void postStatsDialog()
 {
 LayoutInflater inflator = LayoutInflater.from(this.activity);
@@ -149,7 +149,7 @@ AlertDialog inputDialog = builder.create();
 inputDialog.show();
 
 }
-~~~~
+```
 
 Copyright © [Charlie Calvert](../../index.html) | [Elvenware
 Home](../../index.html) | [Writing Code](../index.html) |

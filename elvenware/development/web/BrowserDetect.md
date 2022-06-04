@@ -104,7 +104,7 @@ Example
 
 Simple example showing a media query in a CSS file:
 
-~~~~ {.code}
+``` {.code}
 @media all and (min-width: 640px) 
 { 
     #media-queries-1 { background-color: #0f0; } 
@@ -113,12 +113,12 @@ Simple example showing a media query in a CSS file:
 { 
     #media-queries-2 { background-color: #0f0; } 
 }
-~~~~
+```
 
 More complex media query in the **head** element of an HTML file,
 loading specific CSS files under particular circumstances:
 
-~~~~ {.code}
+``` {.code}
 <!DOCTYPE html>
 <html>
 
@@ -149,22 +149,22 @@ loading specific CSS files under particular circumstances:
 
 </body>
 </html>
-~~~~
+```
 
 Here are the two css files. The first one is the green file for smaller
 screens:
 
-~~~~ {.code}
+``` {.code}
 body { background-color: #00FF00; }
 p    { width: 200px; }
-~~~~
+```
 
 And here is the red file for larger screens:
 
-~~~~ {.code}
+``` {.code}
 body { background-color: #FF0000; }
 p    { width: 1024px; }
-~~~~
+```
 
 Copyright © [Charlie Calvert](../../index.html) | [Elvenware
 Home](../../index.html) | [Writing Code](../index.html) |

@@ -98,9 +98,9 @@ When you launch Eclipse, you can choose **Help | Install New Software**
 and click the **Add** button. Add the following URL to your repository
 list:
 
-~~~~ {.code}
+``` {.code}
 https://dl-ssl.google.com/android/eclipse/
-~~~~
+```
 
 [![ADT install, Android Development
 Tools](images/EclipseAdt.png)](https://dl-ssl.google.com/android/eclipse/)
@@ -110,9 +110,9 @@ Tools](images/EclipseAdt.png)](https://dl-ssl.google.com/android/eclipse/)
 On Linux, you may need an additional step. If you get an error like
 "requires 'org.eclipse.wst.sse.core 0.0.0'", then add this repository:
 
-~~~~ {.code}
+``` {.code}
 http://download.eclipse.org/releases/indigo
-~~~~
+```
 
 Where indigo might be replaced with a different word, depending on your
 version of Eclipse. You don't have to install anything, just add that
@@ -122,9 +122,9 @@ should run smoothly this time.
 
 On 64 bit systems, make sure the 32 bit libraries are installed:
 
-~~~~ {.code}
+``` {.code}
 sudo adp-get install ia32-libs
-~~~~
+```
 
 After you have closed the Add Repository dialog, you ready for the
 install:
@@ -287,9 +287,9 @@ Command Line Installation of an APK {#installAPK}
 
 To install an application from the command line:
 
-~~~~ {.code}
+``` {.code}
 adb install c:\Users\Charlie\workspace\MyTester\bin\MyTester.apk
-~~~~
+```
 
 Though running from the IDE should update existing applications, you
 may, in some circumstances, have to **uninstall** before you install.
@@ -299,23 +299,23 @@ Applications**, scroll to your application, and remove it.
 If you are attached to more than one device, you have to specify which
 device you want to use. The -s argument will help in this case:
 
-~~~~ {.code}
+``` {.code}
 adb -s emulator-5554 install c:\Users\Charlie\MyTester.apk
-~~~~
+```
 
 You can see the names of the attached devices by typing **adb devices**.
 
 Note that you can also copy files:
 
-~~~~ {.code}
+``` {.code}
 adb push c:\temp\myfile.txt /mnt/sdcard/.
-~~~~
+```
 
 And you can start a shell session:
 
-~~~~ {.code}
+``` {.code}
 adb shell
-~~~~
+```
 
 Sometimes you have more than one device loaded. You can pick a
 particular device like this:

@@ -68,9 +68,9 @@ Choose **Help | Install New Software** from the Eclipse IDE. Click the
 appropriate URL. The URL to use to add the PyDev extensions to Eclipse
 is:
 
-~~~~ {.code}
+``` {.code}
 http://pydev.org/updates
-~~~~
+```
 
 After entering the URL in the Eclipse dialog, click the OK button, and
 then the rest of the install should be relatively intuitive. To read

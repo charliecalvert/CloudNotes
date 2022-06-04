@@ -200,9 +200,9 @@ JAVA\_HOME environment variable.
 
 You can set environment variables with PowerShell:
 
-~~~~ {.code}
+``` {.code}
 [Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27\;C:\Python27\Scripts\", "UserName")
-~~~~
+```
 
 It usually wisest to change only the USER part of the path (the top 
 part of the Environment variables dialog). If you play with the 

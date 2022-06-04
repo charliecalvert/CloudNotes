@@ -63,7 +63,7 @@ Manager](http://developer.android.com/guide/developing/devices/managing-avds.htm
 
 To launch from command line:
 
-~~~~ {.prettyprint style="color: rgb(0, 112, 0); 
+``` {.prettyprint style="color: rgb(0, 112, 0); 
     font-family: monospace; 
     line-height: normal; 
     border-top-width: 1px; 
@@ -104,7 +104,7 @@ To launch from command line:
     -webkit-text-size-adjust: auto; 
     -webkit-text-stroke-width: 0px; "}
     emulator -avd <avd_name>
-~~~~
+```
 
 The emulator uses QEMU.
 

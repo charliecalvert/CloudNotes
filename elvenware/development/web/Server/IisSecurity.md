@@ -117,9 +117,9 @@ this by opening a command prompt with administrator privileges and
 issuing the following command, which changes the access control list
 permissions for c:\\inetpub and all its folders and subdirectories:
 
-~~~~ {.code}
+``` {.code}
 icacls %systemdrive%\inetpub /grant %userdomain%\%username%:(OI)(CI)(F) /grant %userdomain%\%username%:F 
-~~~~
+```
 
 Here is my understanding of F, OI and CI:
 
@@ -131,10 +131,10 @@ Here is my understanding of F, OI and CI:
 If you are unclear as to what is the systemdrive or userdomain, you can
 view them from the command prompt:
 
-~~~~ {.code}
+``` {.code}
 echo %systemdrive%
 C:
-~~~~
+```
 
 Is it safe to give the long **icacls** command shown above to change
 permission on the wwwroot directory? If you have a laptop or desktop

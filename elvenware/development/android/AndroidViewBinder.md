@@ -66,17 +66,17 @@ interface. You can attach a ViewBinder to an adapter with a single line
 of code. In this example, I first create an adapter, and then write one
 additional line of code to associate a ViewBinder with the adapter:
 
-~~~~ {.code}
+``` {.code}
 SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.basic_list, cursor, fields, views);
 adapter.setViewBinder(new MyViewBinder());
-~~~~
+```
 
  The **ViewBinder** interface defines a single method called
 **setViewValue.** If the **ViewBinder** has been associated with an
 adapter, then each field held by the adapter's **Cursor** is passed to
 this method:
 
-~~~~ {.code}
+``` {.code}
 package com.ai.android.book.provider;
 
 import java.util.Date;
@@ -103,7 +103,7 @@ public class MyViewBinder implements SimpleCursorAdapter.ViewBinder
         }       
     }
 }
-~~~~
+```
 
 View's are a base class for **Widgets** such as **TextViews**,
 **Buttons** and **EditTexts**. As you can see, a **View**, a **Cursor**,

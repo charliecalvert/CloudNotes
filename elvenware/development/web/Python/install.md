@@ -72,13 +72,13 @@ When you are done, click **OK**. Now open a Command window. You should
 now be able to invoke Python from any folder on your system by simply
 typing the word python:
 
-~~~~ {.code}
+``` {.code}
 J:\SkyDrive\BellevueCollege\Prog-282\Source>python
 Python 2.7.2 (default, Jun 12 2011, 14:24:46) [MSC v.1500 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print "hello"
 >>> hello
-~~~~
+```
 
 Linux Install {#linux}
 -------------
@@ -86,35 +86,35 @@ Linux Install {#linux}
 You rarely need to do anything to install Python on Linux. It comes with
 the system. If by some off chance you don't have Python installed, try:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install python2.7
-~~~~
+```
 
 If you want the latest Python, you can issue the following command:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install python3
-~~~~
+```
 
 After the install, you should put your scripts in this folder:
 
-~~~~ {.code}
+``` {.code}
 /usr/lib/cgi-bin
-~~~~
+```
 
 The folder will be created for you automatically but you need to make
 the scripts you create executable:
 
-~~~~ {.code}
+``` {.code}
 chmod +x /usr/lib/cgi-bin/myfile.py
-~~~~
+```
 
 After doing this, you can run the file by browsing to a URL such as this
 one:
 
-~~~~ {.code}
+``` {.code}
 http://localhost/cgi-bin/myfile.py
-~~~~
+```
 
 ### Configuration of cgi-bin on Linux with Apache
 
@@ -123,13 +123,13 @@ by apt-get. Nevertheless, it can help to understand how the process
 works. The file responsible for configuring Apache to run Python scripts
 is located here:
 
-~~~~ {.code}
+``` {.code}
 /etc/apache2/sites-available/default
-~~~~
+```
 
 The important sections of that file look like this:
 
-~~~~ {.code}
+``` {.code}
 ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 <Directory "/usr/lib/cgi-bin">
 AllowOverride None
@@ -137,15 +137,15 @@ Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
 Order allow,deny
 Allow from all
 </Directory>
-~~~~
+```
 
 What the code shown above tells us, is that there is a cgi-bin directory
 created for us, that it is designed for scripts such as those used in
 Python web applications, and that it is located here:
 
-~~~~ {.code}
+``` {.code}
 /usr/lib/cgi-bin
-~~~~
+```
 
 The **ScriptAlias** directive shown here tells the web server that a URL
 containing cgi-bin points to the folder /usr/lib/cgi-bin. In general,
@@ -157,9 +157,9 @@ After the ScriptAlias directive there is code to configure how Apache
 handles files found in the /usr/libe/cgi-bin directory. The most
 important part is the **Options** directive:
 
-~~~~ {.code}
+``` {.code}
 Options +ExecCGI
-~~~~
+```
 
 This options directive tells Apache that CGI execution is permitted in
 the **/usr/lib/cgi-bin** folder. Executing code is a powerful privilege,
@@ -169,9 +169,9 @@ defined context.
 Don't forget that you need to put your Python scripts in the cgi-bin
 directory, and you need to make sure they are executable:
 
-~~~~ {.code}
+``` {.code}
 chmod +x myscript.py
-~~~~
+```
 
 ### Set up HTML files in Your Home Folder
 
@@ -184,18 +184,18 @@ files in your home folder. You will need to have the right permissions
 on the folder. Here is a script called publicHtml.sh that will be
 helpful. It first sets owner of the folder, and then its permissions:
 
-~~~~ {.code}
+``` {.code}
 #!/bin/bash
 
 sudo chown -R www-data:www-data /home/$USER/public_html
 sudo chmod -R 775 /home/$USER/public_html
-~~~~
+```
 
 You should make the script executable:
 
-~~~~ {.code}
+``` {.code}
 sudo chmod +x /home/$USER/bin/publicHtml.sh
-~~~~
+```
 
 Getting Started {#gettingstarted}
 ---------------
@@ -238,23 +238,23 @@ Pip is similar to easy install. You should have both tools on your
 system. Assuming your Python\\Scripts directory is on your path, to
 install Pip, you can write:
 
-~~~~ {.code}
+``` {.code}
 easy_install pip
-~~~~
+```
 
 Now you can easily install other modules:
 
-~~~~ {.code}
+``` {.code}
 pip install Flask
-~~~~
+```
 
-~~~~ {.code}
+``` {.code}
 pip install Rocket
-~~~~
+```
 
-~~~~ {.code}
+``` {.code}
 pip install virtualenv
-~~~~
+```
 
 You might also want to get Windows Azure support for Python and Windows
 Azure Storage support for Python from
@@ -272,21 +272,21 @@ MySQLdb for Python {#mysqldb}
 
 For ***Windows***, go here to get the forehead install:
 
-~~~~ {.code}
+``` {.code}
 http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python
-~~~~
+```
 
 If that doesn't work out for some reason, the actual project is here:
 
-~~~~ {.code}
+``` {.code}
 http://mysql-python.sourceforge.net/ 
-~~~~
+```
 
 On ***Linux***, do this:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install python-mysqldb
-~~~~
+```
 
 Another approach is to make sure that all of Lamp is installed on Linux:
 
@@ -298,13 +298,13 @@ python-mysqldb as above. To check if it is working, start python and
 type **import MySQLdb**. If you can press enter and not get an error,
 then you should be up and running:
 
-~~~~ {.code}
+``` {.code}
 charlie@MintBox ~ $ python
 Python 2.7.2+ (default, Oct  4 2011, 20:03:08)
 [GCC 4.6.1] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import MySQLdb
-~~~~
+```
 
 Copyright © [Charlie Calvert](../../../index.html) | [Elvenware
 Home](../../../index.html) | [Writing Code](../../index.html) |

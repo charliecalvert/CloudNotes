@@ -241,7 +241,7 @@ VirtualBox DHCP {#dhcp}
 
 The way it is at the start:
 
-~~~~ {.code}
+``` {.code}
 C:\Program Files\Oracle\VirtualBox>VBoxManage.exe list dhcpservers
 NetworkName: HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adaptert Adapter
 IP: 192.168.56.100
@@ -249,30 +249,30 @@ NetworkMask: 255.255.255.0
 lowerIPAddress: 192.168.56.101
 upperIPAddress: 192.168.56.254
 Enabled: Yes
-~~~~
+```
 
 Now we add in our own DHCP server with the command "all on one line":
 
-~~~~ {.code}
+``` {.code}
 c:\program files\oracle\virtualbox\VBoxManage.exe" dhcpserver add --netname intnet --ip 192.168.57.100
 --netmask 255.255.255.0 --lowerip 192.168.57.101 --upperip 192.168.57.254 --enable
-~~~~
+```
 
 We issue the command as above, but here it is broken out so it is easier
 to read:
 
-~~~~ {.code}
+``` {.code}
 vboxmanger dhcpserver add --netname intnet
 --ip 192.168.57.100
 --netmask 255.255.255.0
 --lowerip 192.168.57.101
 --upperip 192.168.57.254
 --enable
-~~~~
+```
 
 When we are done, it looks like this:
 
-~~~~ {.code}
+``` {.code}
 "c:\program files\oracle\virtualbox\VBoxManage.exe" list dhcpservers
 NetworkName: HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter
 IP: 192.168.56.100
@@ -287,7 +287,7 @@ NetworkMask: 255.255.255.0
 lowerIPAddress: 192.168.57.101
 upperIPAddress: 192.168.57.254
 Enabled: Yes
-~~~~
+```
 
 In the VirtualBox settings, we turn to the Network page, and choose:
 

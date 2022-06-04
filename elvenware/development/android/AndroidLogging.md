@@ -62,15 +62,15 @@ Andriod comes with a [class designed to help with
 logging](http://developer.android.com/reference/android/util/Log.html).
 It is found in this package:
 
-~~~~ {.code}
+``` {.code}
 import android.util.Log;
-~~~~
+```
 
 It is typically used like this, where the most important lines are the
 last **import** statement, the declaration for the **String** **tag**,
 and the call to **Log.d**: 
 
-~~~~ {.code}
+``` {.code}
 package com.elvenware.testlogging;
 
 import android.app.Activity;
@@ -90,7 +90,7 @@ public class TestLoggingActivity extends Activity
      Log.d(tag, "OnCreate called");
   }
 }
-~~~~
+```
 
 Begin by declaring a "tag" which is passed as the first parameter to
 each call to **Log.d**. This tag will be used to help you filter logging
@@ -154,9 +154,9 @@ want to search through the file in an editor, or send the file to
 someone else such as another developer or your teacher. Here is the
 entry shown in Figure 2 as it appears in a text file:
 
-~~~~ {.code}
+``` {.code}
 02-02 15:17:38.896: D/TestLogging(1653): OnCreate called
-~~~~
+```
 
 It is sometimes useful to select the **All Messages** filter in the
 **Save Filters** view. At first, there will be so many messages that it
@@ -167,7 +167,7 @@ as you did in Figure 1. For instance, if I filter only on those messages
 sent by a particular application, I might get output that looks like
 this:
 
-~~~~ {.code}
+``` {.code}
 02-02 15:17:02.376: D/HelloWorld(1593): onCreate.
 02-02 15:17:02.376: D/HelloWorld(1593): onStart. UI may be partially visible.
 02-02 15:17:02.376: D/HelloWorld(1593): onResume. UI fully visible.
@@ -183,7 +183,7 @@ this:
 02-02 15:17:38.856: D/HelloWorld(1593): Saved state
 02-02 15:17:38.856: D/HelloWorld(1593): onpause. I may be partially or fully invisible
 02-02 15:17:39.066: D/HelloWorld(1593): onstop. I am fully invisible
-~~~~
+```
 
 Here I can see that this application sent out two types of debug
 information: one has the tag **HelloWorld**, and the other
@@ -195,7 +195,7 @@ Exceptions
 LogCat can help you track down errors in your program. Suppose we
 modified the code shown above to look like this:
 
-~~~~ {.code}
+``` {.code}
 public void onCreate(Bundle savedInstanceState) 
 {
    super.onCreate(savedInstanceState);
@@ -206,7 +206,7 @@ public void onCreate(Bundle savedInstanceState)
    TextView view = (TextView)this.findViewById(1);
    view.setText("Error");
 }
-~~~~
+```
 
 This program will raise an exception on the call to **setText** because
 there is no such **TextView** resource in this program and hence
@@ -223,7 +223,7 @@ Messages** with the Tag **AndroidRuntime**, or set the **LogLevel** in
 your Filter to **error**. If you do that, it should be fairly easy for
 you to isolate the error messages:
 
-~~~~ {.code}
+``` {.code}
 02-02 16:20:17.986: E/AndroidRuntime(1688): FATAL EXCEPTION: main
 02-02 16:20:17.986: E/AndroidRuntime(1688): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.elvenware.testlogging/com.elvenware.testlogging.TestLoggingActivity}: java.lang.NullPointerExceptionion
 02-02 16:20:17.986: E/AndroidRuntime(1688): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1647)
@@ -243,7 +243,7 @@ you to isolate the error messages:
 02-02 16:20:17.986: E/AndroidRuntime(1688): at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1047)
 02-02 16:20:17.986: E/AndroidRuntime(1688): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1611)
 02-02 16:20:17.986: E/AndroidRuntime(1688): ... 11 more
-~~~~
+```
 
 The most important lines are the second and the sixteenth, where the
 sixteenth is also identifiable as the fourth from the bottom. The second
@@ -251,9 +251,9 @@ line tells us that we have a **null** pointer exception, and the
 sixteenth tells us that the error occurred on Line 20 of
 **TestLoggingActivity**.**java**. Here is that line:
 
-~~~~ {.code}
+``` {.code}
 view.setText("Error");
-~~~~
+```
 
 As you can see, **LogCat** has correctly located our error.
 

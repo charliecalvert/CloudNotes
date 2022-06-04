@@ -74,7 +74,7 @@ choose **New | Other | Android | Android XML file** or, alternatively,
 **New | Android XML File.** Give you file a name, such as
 **menu\_main.xml.**Enter XML like that shown below:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
   <group android:id="@+id/group_main">
@@ -82,12 +82,12 @@ choose **New | Other | Android | Android XML file** or, alternatively,
     <item android:id="@+id/item_exit" android:title="exit"></item>
   </group>
 </menu>
-~~~~
+```
 
 Modify your main layout so that it has at least one **TextView**with an
 id:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
@@ -101,11 +101,11 @@ id:
   android:text="@string/hello" />
 
 </LinearLayout>
-~~~~
+```
 
 Now add simple menu code, in your Activity:
 
-~~~~ {.code}
+``` {.code}
      @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflator = getMenuInflater();
@@ -119,7 +119,7 @@ Now add simple menu code, in your Activity:
         textView.setText(item.getTitle());
         return super.onMenuItemSelected(featureId, item);
     }
-~~~~
+```
 
 In Eclipse, the outline of each of the methods shown here can be created
 automagically if you type in the first few letters of their name, such
@@ -134,9 +134,9 @@ so that you can change the text inside it.
 The location of menus differs by version of the SDK. The menu moves to
 the top if you write this:
 
-~~~~ {.code}
+``` {.code}
 <uses-sdk android:minSdkVersion="13" />
-~~~~
+```
 
 It then appears on the bar at the top, rather than at the bottom.
 

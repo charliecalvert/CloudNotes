@@ -60,16 +60,16 @@ Page](http://developer.android.com/resources/articles/contacts.html)
 
 ### Contacts API
 
-~~~~ {.code}
+``` {.code}
 Uri myPerson = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, 23);
 Cursor cur = managedQuery(myPerson, null, null, null, null);
-~~~~
+```
 
 In your manifest, be sure to include the following:
 
-~~~~ {.code}
+``` {.code}
 <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
-~~~~
+```
 
 Content Providers
 -----------------
@@ -93,9 +93,9 @@ navigate through a data table.
 
 Uris are used to identify data resources and they look like this:
 
-~~~~ {.code}
+``` {.code}
 content://com.android.contacts/contacts
-~~~~
+```
 
 So you need to know the URI you want, the names of the fields you want,
 and the types of the fields.
@@ -122,7 +122,7 @@ There are other tables, such as **Groups**, **StatusUpdates**,
 Look at this example of how to run a simple query inside a
 **ListActivity**:
 
-~~~~ {.code}
+``` {.code}
 @Override
 public void onCreate(Bundle savedInstanceState) 
 {
@@ -164,7 +164,7 @@ public void runQuery()
 
   setListAdapter(adapter); 
 }
-~~~~
+```
 
 The Manifest and Permissions
 ----------------------------
@@ -172,7 +172,7 @@ The Manifest and Permissions
 Don't forget that you need to update the permissions for your Manifest
 file so that it includs android.permission.READ\_CONTACTS:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.elvenware.testpubcode"
@@ -195,19 +195,19 @@ file so that it includs android.permission.READ\_CONTACTS:
     </activity>
   </application>
 </manifest>
-~~~~
+```
 
 If you want to write to the contacts provider then you need to ask for
 write permissions:
 
-~~~~ {.code}
+``` {.code}
 <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-~~~~
+```
 
 Don't forget that the class in which the above code resides should be a
 **ListActivity**, not an **Activity**:
 
-~~~~ {.code}
+``` {.code}
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -215,14 +215,14 @@ import android.provider.ContactsContract;
 import android.widget.SimpleCursorAdapter;
 
 public class TestPubCodeActivity extends ListActivity {
-~~~~
+```
 
 The old method
 --------------
 
 This method is no longer the approved way to display files.
 
-~~~~ {.code}
+``` {.code}
 import android.provider.Contacts.People;      
         
         
@@ -239,7 +239,7 @@ views);
 
 // Bind to our new adapter.
 setListAdapter(adapter); 
-~~~~
+```
 
 Inserting Records
 -----------------
@@ -251,7 +251,7 @@ default account. You can specify a particular account if you want to
 insert into some other part of the contacts database, for instance, into
 the GMail list:
 
-~~~~ {.code}
+``` {.code}
 private void writeContact(String firstAndLastName) {
     
     ArrayList ops = new ArrayList();
@@ -275,19 +275,19 @@ private void writeContact(String firstAndLastName) {
         e.printStackTrace();
     }               
 }
-~~~~
+```
 
 Call the method like this:
 
-~~~~ {.code}
+``` {.code}
 writeContact("Sally Chuang");
-~~~~
+```
 
 Don't forget to ask for write permissions in the manifest:
 
-~~~~ {.code}
+``` {.code}
 <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-~~~~
+```
 
 Links
 -----

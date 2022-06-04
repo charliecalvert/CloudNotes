@@ -121,7 +121,7 @@ Folder Manipulation
 A library with a routine for ensuring a directory exists and for
 recursively removing directories.
 
-~~~~
+```
 var mkdirp = require('mkdirp');
 var fs = require('fs');
 var path = require("path");
@@ -176,7 +176,7 @@ var SimpleDir = (function() {
 })();
 
 exports.dirs = new SimpleDir();
-~~~~
+```
 
 Angular JS
 ----------

@@ -47,14 +47,14 @@ If you want more feedback, use the -v for verbose switch. The following
 examples shows copying some nested files and folders from the bar directory 
 to the foo directory:
 
-~~~~
+```
 charlie@ShantiServer03:~/bar$ cp -rv * ~/foo/.
 bar -> /home/charlie/foo/./bar
 bar/foo -> /home/charlie/foo/./bar/foo
 bar/foo/bar.txt -> /home/charlie/foo/./bar/foo/bar.txt
 bar/bar.txt -> /home/charlie/foo/./bar/bar.txt
 root.txt -> /home/charlie/foo/./root.txt
-~~~~
+```
 
 If you make a mistake, you can delete nested folders with this command:
 

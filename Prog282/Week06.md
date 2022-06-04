@@ -97,7 +97,7 @@ Now create a directory called test:
 Inside that directory, create a file called **test.js** with the following,
 hello world style, code:
 
-~~~~
+```
 var assert = require("assert");
  
 describe("Test01", function() {
@@ -105,7 +105,7 @@ describe("Test01", function() {
 		assert.equal(3, 3);
 	});
 });
-~~~~
+```
 
 To run the test, just type **mocha** from inside the test folder.
 	

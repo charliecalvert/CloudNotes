@@ -26,10 +26,10 @@ Get the Python Path {#pythonPath}
 
 Start the Python interpreter. Then type:
 
-~~~~ {.code}
+``` {.code}
 >>> import sys
 >>> print sys.path
-~~~~
+```
 
 Python Program Structure {#structure}
 ------------------------
@@ -39,18 +39,18 @@ and methods in a class.
 
 Here is a standalone function in a simple, but complete, Python program:
 
-~~~~ {.code}
+``` {.code}
 def foo():
   print "bar bar"
 
 foo()
-~~~~
+```
 
 This program prints out: **bar bar**
 
 And here is program with a **class**:
 
-~~~~ {.code}
+``` {.code}
 class MyClass(object): 
 
     def __init__(self):
@@ -58,7 +58,7 @@ class MyClass(object):
         
         
 my_class = MyClass()
-~~~~
+```
 
 This program prints out **Constructor called**.
 
@@ -68,39 +68,39 @@ For Loops {#forLoops}
 For loops in Python often use range, which can return a range of numbers
 from some starting point to an ending point. It looks like this:
 
-~~~~ {.code}
+``` {.code}
 for number in range(1, 4):
     print number    
-~~~~
+```
 
 The code shown above prints out the following:
 
-~~~~ {.code}
+``` {.code}
 1
 2
 3
-~~~~
+```
 
 I know, it can't possibly be right, or at least it looks strange. But
 the principle is simple enough, and I don't see why it is necessarily
 more difficult than writing the standard for loop used by the C based
 languages:
 
-~~~~ {.code}
+``` {.code}
  for (i = 1; i < 4; i++). 
-~~~~
+```
 
 In this next example we work with an array of letters:
 
-~~~~ {.code}
+``` {.code}
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 for letter in letters:
     print letter
-~~~~
+```
 
 The loop shown above prints out:
 
-~~~~ {.code}
+``` {.code}
 a
 b
 c
@@ -108,7 +108,7 @@ d
 e
 f
 g
-~~~~
+```
 
 Overall, looping in Python is quite simple once you get a feel for it.
 
@@ -119,7 +119,7 @@ The syntax for **if** statemtns involves the keywords
 **if**,**elif**,****and **else**. Don't forget the colon at the end of
 each line that uses a keyword:
 
-~~~~ {.code}
+``` {.code}
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 for letter in letters:
     if letter == 'a':
@@ -128,18 +128,18 @@ for letter in letters:
         print 'buzz'
     else:        
         print letter
-~~~~
+```
 
 The shown above produces this output:
 
-~~~~ {.code}
+``` {.code}
 eh?
 buzz
 c
 d
 e
 f
-~~~~
+```
 
 Default Parameters {#defaultParameters}
 ------------------
@@ -151,27 +151,27 @@ default values.
 Consider this simple Python program, which defines a method that takes
 three parameters, each of which is given a default value:
 
-~~~~ {.code}
+``` {.code}
 def bar(one=1, two=2, three=3):   print one   print two   print three
 bar()
-~~~~
+```
 
 It's output looks like this:
 
-~~~~ {.code}
+``` {.code}
 1
 2
 3
-~~~~
+```
 
 As you can see, we call bar, passing in zero parameters, so the defaults
 are used in place of the missing arguments.
 
 Consider this version of the same program:
 
-~~~~ {.code}
+``` {.code}
 def bar(one=1, two=2, three=3):  print one  print two  print threebar(4, 5)
-~~~~
+```
 
 If produces this output:
 
@@ -186,21 +186,21 @@ passed in, and the third takes a default value.
 
 And finally, consider this example:
 
-~~~~ {.code}
+``` {.code}
 def foo(one, two, three):
     print one
     print two
     print three
 foo()
-~~~~
+```
 
 When run, this program produces the following output:
 
-~~~~ {.code}
+``` {.code}
 Traceback (most recent call last):File 
 "J:\Source\PythonParams\src\params\params.py", line 19, in <module>foo()
 TypeError: foo() takes exactly 3 arguments (0 given)
-~~~~
+```
 
 File IO {#fileIo}
 -------
@@ -209,7 +209,7 @@ Here are some examples of reading and writing files. For a few examples
 of how to call an earlier version of this file, see the
 **[UnitTests](PythonUnitTests.html)** section.
 
-~~~~ {.code}
+``` {.code}
 import os
 import csv
 
@@ -269,7 +269,7 @@ class SimpleFile(object):
             if count == row_num:
                 return row[item_num]
             count += 1
-~~~~
+```
 
 Dictionary
 ----------
@@ -277,17 +277,17 @@ Dictionary
 Below is a simple program that first creates a dictionary, and then
 retrieves both of the values from it:
 
-~~~~ {.code}
+``` {.code}
 myDictionary = { "one": 1, "two": 2}
 print myDictionary["one"]
 print myDictionary["two"]
-~~~~
+```
 
 The output from this program looks like this:
 
-~~~~ {.code}
+``` {.code}
 12
-~~~~
+```
 
 A Python dictionary works the same way as a physical dictionary used to
 define words. We pass in a key such as "one" or "two" and we get back a
@@ -314,7 +314,7 @@ script and run it.
 
 Here is an alternative syntax for the previous example:
 
-~~~~ {.code}
+``` {.code}
 class TestField(object):
     def __init__(self, value):
         self.value = value
@@ -323,30 +323,30 @@ myDictionary = { "bar": TestField(4), "foo": TestField(5) }
 
 for item in myDictionary:
     print item + "=" + str(myDictionary[item].value)
-~~~~
+```
 
 The output from this last program looks like this:
 
-~~~~ {.code}
+``` {.code}
 foo=5
 bar=4
-~~~~
+```
 
 Explicitly use the **dict** type that underlies a dictionary:
 
-~~~~ {.code}
+``` {.code}
 tuples = [('table', 'flat board with four legs'), ('plate', 'round ceramic object')]
 myDictionary = dict(tuples)
 for item in myDictionary:
     print item + "=" + myDictionary[item]   
-~~~~
+```
 
 This prints out:
 
-~~~~ {.code}
+``` {.code}
 table=flat board with four legs
 plate=round ceramic object
-~~~~
+```
 
 Errors
 ------
@@ -356,17 +356,17 @@ you are trying to call something like can object, a file, or a
 dictionary, that is not executable, that is not a method, and hence
 can't be called. For instance, someone might write:
 
-~~~~ {.code}
+``` {.code}
 run_chords = RunChords()run_chords().runChords()
-~~~~
+```
 
 This code makes no sense, since in the second line there is an attempt
 to call an object, and objects are not methods or functions, and hence
 can't be called. This is what the developer intended to write:
 
-~~~~ {.code}
+``` {.code}
 run_chords = RunChords()run_chords.runChords()
-~~~~
+```
 
 You might get the error "module object not callable." This means you are
 trying to call a module, trying to execute a source, file, which of
@@ -374,39 +374,39 @@ course makes no sense.
 
 I had a file Mod01.py with these contents:
 
-~~~~ {.code}
+``` {.code}
 class Mod01():    def __init__(self):        print "Mod01"
-~~~~
+```
 
 To call it from Mod02.py I write this:
 
-~~~~ {.code}
+``` {.code}
 import Mod01
         
 class Mod02():     def __init__(self):         print "Mod02"mod_01 = Mod01.Mod01() 
-~~~~
+```
 
 If I change the last line to look like this, then I get the "module
 object not callable error:
 
-~~~~ {.code}
+``` {.code}
 mod_01 = Mod01() // Module object not callable
-~~~~
+```
 
 Sometimes you will get a message like X is not subscriptable. This means
 you are trying to treat something that is not a list (array) as if it
 were a list:
 
-~~~~ {.code}
+``` {.code}
 return self.form.has_key["rain"]
 TypeError: 'instancemethod' object is not subscriptable
-~~~~
+```
 
 You probably meant to write something like this:
 
-~~~~ {.code}
+``` {.code}
 return self.form.has_key("rain")
-~~~~
+```
 
 \
 

@@ -45,15 +45,15 @@ Here is the address to pass to Mercurial if you want to pull down some
 of the source found on this site. Please see the sections below for more
 details:
 
-~~~~ {.code}
+``` {.code}
 hg clone http://elvenware.hg.sourceforge.net:8000/hgroot/elvenware/andelf
-~~~~
+```
 
 The working part of the command is shown here:
 
-~~~~ {.code}
+``` {.code}
 http://elvenware.hg.sourceforge.net:8000/hgroot/elvenware/andelf
-~~~~
+```
 
 Note that if you browse directly to this URL on the web, you can get an
 overview of the repository and see some of the most recent events that
@@ -146,9 +146,9 @@ Links
 Install Mercurial on Linux {#hgLinuxInstall}
 --------------------------
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install mercurial tortoisehg
-~~~~
+```
 
 Apparently meld is some kind of Linux GUI based front end for mercurial.
 I haven't tried it yet. And perhaps I never will, as I see that
@@ -173,26 +173,26 @@ the task before you.
 Here is how to get the Elvenware Repository for the first time with the
 [clone](http://mercurial.selenic.com/wiki/Clone) command:
 
-~~~~ {.code}
+``` {.code}
 hg clone http://elvenware.hg.sourceforge.net:8000/hgroot/elvenware/andelf
-~~~~
+```
 
 Once you have cloned the repository, you can update it with the latest
 content at any time. All you need to do is switch to the directory where
 your repository is stored, and then type the following commands:
 
-~~~~ {.code}
+``` {.code}
 hg pull
 hg update
-~~~~
+```
 
 If you are writing a script, you probably won't want to run the script
 from inside the repository. As a result, you need to write something
 like this, where **g:\\shanti\\andelf**is the path to your repository:
 
-~~~~ {.code}
+``` {.code}
 hg --repository g:\shanti\andelf\ pull --verbose http://elvenware.hg.sourceforge.net:8000/hgroot/elvenware/andelf
-~~~~
+```
 
 If you have trouble figuring out what to do with Mercurial at the
 command line in Linux, you can learn what to do by using workbench in
@@ -213,7 +213,7 @@ folder, but want to show you the whole process from beginning to end.
 The whole run should look like this, assuming that you start in a
 directory called /tmp:
 
-~~~~ {.code}
+``` {.code}
 charlie@MintBox /tmp $ hg clone http://elvenware.hg.sourceforge.net:8000/hgroot/elvenware/andelf
 destination directory: andelf
 requesting all changes
@@ -224,21 +224,21 @@ added 117 changesets with 504 changes to 440 files
 updating to branch default
 412 files updated, 0 files merged, 0 files removed, 0 files unresolved
 charlie@MintBox /tmp $
-~~~~
+```
 
 Now the repository is in**/tmp/andelf**\
  Here is what to do if you want to update your version of the
 repostiroy:
 
-~~~~ {.code}
+``` {.code}
 charlie@MintBox /tmp $ cd /tmp/andelf/
 charlie@MintBox /tmp/andelf $ hg pull
-~~~~
+```
 
 If there were an updates, you will be prompted to run hg update. You
 should, of course, then run hg update:
 
-~~~~ {.code}
+``` {.code}
 charlie@MintBox /tmp/andelf $ hg pull
 pulling from http://elvenware.hg.sourceforge.net:8000/hgroot/elvenware/andelf
 searching for changes
@@ -250,41 +250,41 @@ added 1 changesets with 1 changes to 1 files
 charlie@MintBox /tmp/andelf $ hg update
 1 files updated, 0 files merged, 0 files removed, 0 files unresolved
 charlie@MintBox /tmp/andelf $
-~~~~
+```
 
 Setting up a Mercurial Repository in Linux and Pulling it from Linux {#setupHg}
 --------------------------------------------------------------------
 
 To create the repository:
 
-~~~~ {.code}
+``` {.code}
 hg init MyRepo
-~~~~
+```
 
 Now navigate to your MyRepo directory:
 
-~~~~ {.code}
+``` {.code}
 cd /home/charlie/MyRepo
-~~~~
+```
 
 Use an editor or the echo command to put a file in it:
 
-~~~~ {.code}
+``` {.code}
 echo Test Content > MyFile.txt
-~~~~
+```
 
 The echo command, when used this way, creates a small text file with the
 words "Test Content" in it. Now add the file to the repository:
 
-~~~~ {.code}
+``` {.code}
 hg -add MyFile.txt
-~~~~
+```
 
 Now commit the file:
 
-~~~~ {.code}
+``` {.code}
 hg -commit
-~~~~
+```
 
 At this stage, if you are adding a file for the first time, you might
 get an error about user names. To get user name installed
@@ -300,9 +300,9 @@ client machine to the authorized key file on the server that hosts the
 repository. Now you need to make sure your private key is loaded into
 memory. (This is the same thing as loading the key into Pageant.):
 
-~~~~ {.code}
+``` {.code}
 ssh-add YourPrivateKey
-~~~~
+```
 
 For instance, you might write: **ssh-add .ssh/id\_rsa**. Or possibly
 **ssh-add .ssh/id\_charlie\_rsa.pem**. Your milage will vary depending
@@ -311,9 +311,9 @@ on the name and location of the private key that you want to use.
 Now you should be able to pull the repo from the client by issuing this
 command:
 
-~~~~ {.code}
+``` {.code}
 hg clone --verbose charlie@MyServer//home/charlie/MyRepo /home/charlie/MyRepo
-~~~~
+```
 
 We give this command on the client, and it sends messages to the server
 asking to retrieve the repository.
@@ -338,9 +338,9 @@ Now you can edit one of the files on the client. While still in the
 directory where you did your work, you can update the server. To update
 the server, you perform a **commit** and **push**. First the **commit**:
 
-~~~~ {.code}
+``` {.code}
 hg commit
-~~~~
+```
 
 When giving the commit command for the first time, you may be prompted
 to specify an editor. On Linux, choose **nano**, unless you know you
@@ -351,22 +351,22 @@ Now the push. Again, when you give this command, you should be in the
 directory where you are doing your work. For instance, you should be in
 **/home/charlie/MyRepo**. Here is the command:
 
-~~~~ {.code}
+``` {.code}
 hg push
-~~~~
+```
 
 Then on the server, you can see the results by typing the following:
 
-~~~~ {.code}
+``` {.code}
 hg update
-~~~~
+```
 
 Of course, that command merely updates your file. To see the contents of
 the file, type something like this:
 
-~~~~ {.code}
+``` {.code}
 cat MyFile.txt
-~~~~
+```
 
 SVN
 ---

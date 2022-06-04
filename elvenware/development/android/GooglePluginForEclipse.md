@@ -90,9 +90,9 @@ Google Plugin for Eclipse by selecting **Help | Install New
 Software**from the Eclipse menu, pressing the **Add** button, and
 entering the following URL:
 
-~~~~ {.code}
+``` {.code}
  http://dl.google.com/eclipse/plugin/3.7
-~~~~
+```
 
 From there on out the wizard will walk you through the install process.
 

@@ -79,7 +79,7 @@ You must have these features in your unit tests. For instance, the way
 you tell the unit test library that a particular method is a test is to
 have it begin with the word **test**.
 
-~~~~ {.code}
+``` {.code}
 #!/usr/bin/python
 
 import unittest
@@ -108,7 +108,7 @@ class Test(unittest.TestCase):
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test)
 unittest.TextTestRunner(verbosity=2).run(suite)  
-~~~~
+```
 
 Set Up {#setup}
 ------
@@ -116,12 +116,12 @@ Set Up {#setup}
  If you have something that you want to do before each test is run, add
 a setup method to your testcase:
 
-~~~~ {.code}
+``` {.code}
 class Test(unittest.TestCase):
     def setUp(self):
         self.chords = SimpleDbChords("Chords")
         self.contentType = self.chords.getHeader()
-~~~~
+```
 
 Just as **setUp()** runs before each test, a method called
 **tearDown()** will be run after each test. It is important to

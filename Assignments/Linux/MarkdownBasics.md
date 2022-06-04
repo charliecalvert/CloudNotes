@@ -64,9 +64,9 @@ Use this with NPPExec in NotePad++. it will convert the markdown file currently
 in the editor to standalone HTML file with the same root name. For instance, it
 will convert *foo.md* to*foo.html*.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 "C:\Program Files (x86)\Pandoc\bin\pandoc.exe" -s -t html5 -o $(CURRENT_DIRECTORY)\$(NAME_PART).html "$(FULL_CURRENT_PATH)"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 It means:
 

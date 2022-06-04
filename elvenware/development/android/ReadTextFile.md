@@ -62,15 +62,15 @@ You can store things like text file in a folder you create called **res
 | raw**. The files you create will have an ID associated with them, just
 as a layout or other resource. You use this ID to retrieve the text:
 
-~~~~ {.code}
+``` {.code}
 InputStream inputStream = ctx.getResources().openRawResource(resId);
-~~~~
+```
 
 The method shown below called readTextFile is designed for reading text.
 You can use other Java streaming classes for reading binary data or
 other types of resources.
 
-~~~~ {.csharpcode}
+``` {.csharpcode}
 package com.elvenware.readtextfile;
 
 import java.io.BufferedReader;
@@ -118,11 +118,11 @@ public class ReadTextFileActivity extends Activity {
         return stringBuilder.toString();
     }
 }
-~~~~
+```
 
 TThe layout file:
 
-~~~~ {.csharpcode}
+``` {.csharpcode}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -136,7 +136,7 @@ TThe layout file:
         android:text="@string/hello" />
 
 </LinearLayout>
-~~~~
+```
 
 Alternate
 ---------
@@ -144,7 +144,7 @@ Alternate
 If you want to read the text file into a List\<String\>, you might try
 something like this:
 
-~~~~ {.csharpcode}
+``` {.csharpcode}
 public static List<String> readTextFileAsList(Context ctx, int resId)
 {
     InputStream inputStream = ctx.getResources().openRawResource(resId);
@@ -167,7 +167,7 @@ public static List<String> readTextFileAsList(Context ctx, int resId)
     }
     return list;
 }
-~~~~
+```
 
 Links
 -----

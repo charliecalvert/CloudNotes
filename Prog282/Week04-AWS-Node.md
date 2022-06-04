@@ -33,12 +33,12 @@ Alternative Install of Node
 
 Do this if you want to install the latest version of node and npm:
 
-~~~~
+```
 	sudo apt-get install python-software-properties python g++ make
 	sudo add-apt-repository ppa:chris-lea/node.js
 	sudo apt-get update
 	sudo apt-get install nodejs
-~~~~
+```
 
 Reference from the Node GitHub site:
 
@@ -69,7 +69,7 @@ file once you have downloaded it on AWS.
 There is a call that looks like this in your code for logging on to
 OpenId:
 
-~~~~
+```
 	var relyingParty = new openid.RelyingParty(
 		'http://localhost:30025/go', // Verification URL (yours)
 		null, // Realm (optional, specifies realm for OpenID authentication)
@@ -77,11 +77,11 @@ OpenId:
 		false, // Strict mode
 		[]
 	);
-~~~~
+```
 
 You need to change it to look like this:
 
-~~~~
+```
 	var relyingParty = new openid.RelyingParty(
 		'http://192.168.2.23:30025/go', // Verification URL (yours)
 		null, // Realm (optional, specifies realm for OpenID authentication)
@@ -89,7 +89,7 @@ You need to change it to look like this:
 		false, // Strict mode
 		[]
 	);
-~~~~
+```
 
 In this case, 192.168.2.23 is your Elastic IP. Or rather, it is standing
 in for your Elastic IP. You should not write those exact numbers and
@@ -97,7 +97,7 @@ characters, but should instead substitude your own Elastic IP address
 which you can find on the AWS console. You can also make the call like 
 this:
 
-~~~~
+```
 	var relyingParty = new openid.RelyingParty(
 		'http://ec2-54-235-65-161.compute-1.amazonaws.com:30025/go', // Verification URL (yours)
 		null, // Realm (optional, specifies realm for OpenID authentication)
@@ -105,7 +105,7 @@ this:
 		false, // Strict mode
 		[]
 	);
-~~~~
+```
 
 The new address that replaced localhost, the one that begins ec2-54, 
 you can also get from the Elastic Ip page of the AWS Console. The lesson

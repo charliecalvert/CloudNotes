@@ -115,21 +115,21 @@ Manual MediaWiki Install
 If the easy-install shown above does not work for you, then you can try
 this more detailed install process. Download MediaWiki from this site:
 
-~~~~ {.code}
+``` {.code}
 http://www.mediawiki.org/wiki/MediaWiki
-~~~~
+```
 
 The official installation guide can be found here:
 
-~~~~ {.code}
+``` {.code}
 http://www.mediawiki.org/wiki/Installation
-~~~~
+```
 
 Configuration tips and tricks can be found here:
 
-~~~~ {.code}
+``` {.code}
 http://www.mediawiki.org/wiki/Manual:Configuration
-~~~~
+```
 
 ### Key Links:
 
@@ -139,15 +139,15 @@ http://www.mediawiki.org/wiki/Manual:Configuration
 
 ### Overview of Install
 
-~~~~ {.code}
+``` {.code}
 $ tar xvzf mediawiki-1.18.1.tar.gz
-~~~~
+```
 
-~~~~ {.code}
+``` {.code}
 $ sudo mv mediawiki-1.18.1 /var/www/mediawiki
 $ cd /var/www/mediawiki/
 $ chmod 777 mw-config
-~~~~
+```
 
 ### Set up the Database
 
@@ -157,7 +157,7 @@ to undersand how to create a database of the type that MediaWiki uses to
 store data. In this example, we create the database itself, but not the
 tables that populate it.
 
-~~~~ {.code}
+``` {.code}
 charlie@WesternSea:/var/www/mediawiki$ mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -190,7 +190,7 @@ mysql> grant index, create, select, insert, update, delete, alter, lock tables o
 Query OK, 0 rows affected (0.00 sec)
 
 mysql>
-~~~~
+```
 
 MediaWiki-Web-Setup
 -------------------
@@ -220,9 +220,9 @@ There is a built-in symlink that goes from
 **/etc/mediawiki/LocalSettings.php** to
 **/var/lib/mediawiki/LocalSettings.php**.
 
-~~~~ {.code}
+``` {.code}
 sudo cp /home/charlie/Downloads/LocalSettings.php /etc/mediawiki/.
-~~~~
+```
 
 It is also possible that LocalSettings.php was saved automatically to
 some location on your system, probably /etc/mediawiki/config. If this
@@ -232,31 +232,31 @@ by the install application. You can then copy the from there, instead of
 from your downloads directory. Depending on where the file is placed on
 your system, it might look something like this:
 
-~~~~ {.code}
+``` {.code}
 sudo cp /etc/mediawiki/config/LocalSettings.php /etc/mediawiki/.
-~~~~
+```
 
 Or on some systems, it might be this:
 
-~~~~ {.code}
+``` {.code}
 sudo mv /var/lib/mediawiki/config/LocalSettings.php /etc/mediawiki/.
-~~~~
+```
 
 If you are in on the Mac or a Linux box, and you need to copy your
 LocalSettings.php to EC2 or some other remote location, you can do
 something like this. From your local machine, copy the file to the
 remote machine using SSH secure copy (scp):
 
-~~~~ {.code}
+``` {.code}
 scp LocalSettings.php ubuntu@XX.XX.XX.XX:/home/ubuntu/.
-~~~~
+```
 
 You should change XX.XX.XX.XX to the IP address or URL of your remote
 server. Then sign back on to EC2 and copy:
 
-~~~~ {.code}
+``` {.code}
 sudo cp /home/ubuntu/LocalSettings.php /etc/mediawiki/.
-~~~~
+```
 
 When the software is fully installed, it might looking something like
 the image shown in Figure 02.
@@ -272,51 +272,51 @@ MediaWiki Extensions
 
 If you want the extensions, then install them with this command:
 
-~~~~ {.code}
+``` {.code}
 sudo apt-get install mediawiki-extensions
-~~~~
+```
 
 Then edit **/etc/mediawiki/LocalSettings.php** and add the following
 line at the very end of the document:
 
-~~~~ {.code}
+``` {.code}
     require_once("extensions/Poem/Poem.php");
-~~~~
+```
 
 You may also need to restart apache:
 
-~~~~ {.code}
+``` {.code}
     sudo /etc/init.d/apache2 restart
-~~~~
+```
 
 Now you should be able to format poems with the poem tag:
 
-~~~~ {.code}
+``` {.code}
 <poem>
 Here is my poem.
 </poem>
-~~~~
+```
 
 You will find other extensions you might want to use in:
 
-~~~~ {.code}
+``` {.code}
     /var/lib/mediawiki/extensions
-~~~~
+```
 
 **Note**: The extensions are all symbolic links. There are some notes
 I've found on the web that imply that the extensions folders must be
 symbolic links?
 
-~~~~ {.code}
+``` {.code}
 Poem -\> /usr/share/mediawiki-extensions/base/Poem
-~~~~
+```
 
 If the links did not already exist, and they do exist after you install
 the mediawiki-extensions, you could create them like this:
 
-~~~~ {.code}
+``` {.code}
 sudo ln -s /usr/share/mediawiki-extensions/base/Poem /var/lib/mediawiki/extensions/Poem
-~~~~
+```
 
 There are hundreds of extensions to MediaWiki:
 
@@ -328,24 +328,24 @@ Set up the Logo
 You might want to change the logo seen in the upper left hand corner of
 your screen. You should not try to edit the image found in:
 
-~~~~ {.code}
+``` {.code}
 /var/lib/mediawiki/skins/common/images.
-~~~~
+```
 
 This file will be replaced when you update your system. Instead, place
 the file that you want to use as a logo in the **images** directory, by
 issuing a command that looks something like this:
 
-~~~~ {.code}
+``` {.code}
 sudo cp /home/$USER/MyLogo.png /var/lib/mediawiki/images/.
-~~~~
+```
 
 Then use an editor like**nano** or **vi** to edit **LocalSettings.php**
 and set the **$wgLogo** variable found on about line 38:
 
-~~~~ {.code}
+``` {.code}
 sudo nano /etc/mediawiki/LocalSettings.php
-~~~~
+```
 
 The line you want to edit should end up looking something like this:
 

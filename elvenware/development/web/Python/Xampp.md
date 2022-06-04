@@ -56,7 +56,7 @@ but you do need to set up Python itself:
 If you want a complete example, you can create a script like the
 following, and put it in [c:\\xampp\\cgi-bin](file:///c:/xampp/cgi-bin):
 
-~~~~ {.code}
+``` {.code}
 #!/Python27/python
 
 print "Content-type: text/html"
@@ -72,7 +72,7 @@ print "<p>A frog plops</p>"
 print "<p>Into the still water</p>"
 print "</body>"
 print "</html>"
-~~~~
+```
 
 **Notes**: I'm not at all sure it is mandatory, but I put Python on my
 path. You do not need or want to install mod\_python, but wsgi might be
