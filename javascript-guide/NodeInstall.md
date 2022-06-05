@@ -45,10 +45,10 @@ It is **not recommended** to use the following, because it installs a very old v
 
 To install node properly, do something like this:
 
-```
-    sudo apt-get install curl    
-    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-    sudo apt-get install -y nodejs
+```bash
+sudo apt-get install curl    
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
 **NOTE**: *You probably already have [curl][curl] installed, but it doesn't hurt to run the install command again.*
@@ -69,14 +69,14 @@ Or look here:
 
 You should confirm that node is at least at version 4.0.0:
 
-```
+```bash
 $ node --version
 v4.1.1
 ```
 
 If it is at some older version, such as 0.10, then use the JsObjects **NodeInstall.sh** script to update it:
 
-```
+```bash
 $ cd ~/Git/JsObjects/Utilities/NodeInstall/
 charliecalvert@charlie-winter-2015
 ~/Git/JsObjects/Utilities/NodeInstall
@@ -85,7 +85,7 @@ $ ./NodeInstall.sh
 
 Running it might look a bit like this:
 
-```
+```bash
 $ ./NodeInstall.sh
 [sudo] password for bcuser:
 Reading package lists... Done
@@ -173,13 +173,15 @@ To issue the same commands on **Linux**, you need to do some setup:
 
 Then add this to the bottom of your .bashrc:
 
-    export PATH="$PATH:$HOME/npm/bin"
+```bash
+export PATH="$PATH:$HOME/npm/bin"
+```
 
 ### What's Globally Installed?
 
 To see what is installed globally, issue the **npm list** command with **-g** and **--depth=0** as arguments:
 
-```
+```bash
 npm list -g --depth=0
 /home/charliecalvert/npm/lib
 ├── bower@1.3.12
@@ -213,7 +215,7 @@ To make sure npm is configured correctly, type the following:
 
 One Windows, it might look something like this:
 
-```
+```bash
 >npm config list
 ; cli configs
 registry = "https://registry.npmjs.org/"
@@ -230,7 +232,7 @@ prefix = "C:\\Users\\charlie\\AppData\\Roaming\\npm"
 
 On Linux, the same command yields these results on one of my VMs:
 
-```
+```bash
 $ npm config list
 ; cli configs
 registry = "https://registry.npmjs.org/"
@@ -288,10 +290,12 @@ is available on the net.
 
 For instance:
 
+```console
  G:\Src\Git\MyStuff>npm show voxel-engine version
  npm http GET https://registry.npmjs.org/voxel-engine
  npm http 200 https://registry.npmjs.org/voxel-engine
  0.16.3
+```
 
 This means that the package voxel-engine is at version 0.16.3.
 
@@ -301,10 +305,12 @@ To find the owner of a package, enter the following:
 
 For instance:
 
+```console
  G:\Src\Git\voxel-hello-world>npm owner ls voxel-hello-world
  npm http GET https://registry.npmjs.org/voxel-hello-world
  npm http 200 https://registry.npmjs.org/voxel-hello-world
- maxogden <EMAIL ENDS UP HERE>
+ maxogden &lt;EMAIL ENDS UP HERE&gt;
+```
 
 To update all the packages you have installed globally:
 
@@ -322,7 +328,7 @@ Remember that your globally installed file are placed in your AppData |
 Roaming | npm folder. The path on your system might look something
 like this:
 
-```
+```console
 C:\Users\Charlie\AppData\Roaming\npm\node_modules
 ```
 
@@ -334,7 +340,7 @@ It is nice to know that your project is using the latest packages. You can do th
 
 If you first delete your **node_modules** folder, and then run it, you might see output like this:
 
-```
+```bash
 charlie@mongovbox:~/Git/writings/Tech/Games/ThreeFloor$ npm outdated
 npm http GET https://registry.npmjs.org/morgan
 npm http GET https://registry.npmjs.org/cookie-parser
@@ -362,7 +368,7 @@ cookie-parser  MISSING   1.3.3   1.3.3  cookie-parser
 
 Here you can see that our **package.json** file requests **morgan** 1.3.2. We can see that by opening up **package.json** and looking:
 
-```
+```json
 {
   "name": "Test05",
   "version": "0.0.0",
@@ -384,7 +390,9 @@ Here you can see that our **package.json** file requests **morgan** 1.3.2. We ca
 
 As you can see, we are explicitly asking for 1.3.0. But **npm outdated** tells us that there is a newer version. So we just update **package.json** so that it asks for the latest, which is 1.4.1:
 
+```json
     "morgan": "~1.4.1",
+```
 
 We can do the same for all the packages we are using. Then run **npm update** after you have updated your **package.json** file. That will ensure that the installed versions of the files in **node_modules** are up to date. If the call to **npm update** fails, you can always just delete the files in your **node_modules** directory and run **npm install**.
 
@@ -430,18 +438,23 @@ Then set the prefix back to ~/npm
  npm config set prefix ~/npm
 
 ## Error: Cannot find module
+
 One of the classic Node errors looks like this:
 
-    node Server.js
+```console
+node Server.js
 
-    module.js:340
-        throw err;
-              ^
-    Error: Cannot find module XXX
+module.js:340
+    throw err;
+            ^
+Error: Cannot find module XXX
+```
 
 In this case, XXX is usually the name of a library, such as Express, Morgan, Walk, etc. This error usually occurs because you have not typed the following command:
 
-    npm install
+```bash
+npm install
+```
 
 This command processes the list of libraries found in the file **package.json.** The **package.json** file is usually part of any node program. There are few cases when you will not need **package.json** and in such cases its absence is not significant. In those cases, you need only type something like **node Server.js** to start the program. If, however, you get a **cannot find module** error, and **package.json** is not present, then you either do not have a complete copy of the program, or the program itself is not complete.
 
@@ -449,26 +462,26 @@ This command processes the list of libraries found in the file **package.json.**
 
 You can check which version of NPM you have installed with this code:
 
-```
+```bash
 >npm --version
 ```
 
 If it returns an old version, you can update npm itself with code like this:
 
-```
+```bash
 npm update -g npm
 ```
 
 Now try checking your npm version again:
 
-```
+```bash
 >npm --version
 3.3.4np
 ```
 
 A final thing to check is if the global node packages that we have installed are up to date:
 
-```
+```bash
 npm outdated -g --depth=0
 ```
 
@@ -476,7 +489,7 @@ The above code asks the question: "Which globally installed NPM packages are out
 
 Running the outdated command might produce output that looks like this:
 
-```
+```bash
 $ npm outdated -g --depth=0
 Package                      Current  Wanted  Latest  Location
 bower                         1.3.12   1.5.3   1.5.3  lib
@@ -502,26 +515,26 @@ yo                             1.4.5   1.4.8   1.4.8  lib
 
 The above listing tells us that many packages on our system are out of date. For instance, bower is currently set to version 1.3.12, but that the latest version of bower is 1.5.3. To fix this, we could update all our globally installed packages, a process we can take a long time on some systems:
 
-```
+```bash
 npm update -g
 ```
 
 Or, we could just update bower, which should take less time:
 
-```
+```bash
 npm update -g bower
 ```
 
 If that command fails, try uninstalling bower and then re-installing bower from scratch:
 
-```
+```bash
 npm remove -g bower
 npm install -g bower
 ```
 
 After doing that, we can check to see if bower is still out of date:
 
-```
+```bash
 $ npm outdated -g --depth=0
 Package                      Current  Wanted  Latest  Location
 cordova                        4.2.0   5.3.3   5.3.3  lib
@@ -569,7 +582,7 @@ that should provide a start for you.
 A related issue occurs when you cannot find modules that you installed globally with
 NPM. Usually there is no need to install modules globally. However, in some cases it can be useful. Suppose you globally install walk:
 
-```
+```bash
 >npm install -g walk
 npm http GET https://registry.npmjs.org/walk
 etc...
@@ -579,7 +592,7 @@ At this point, you would normally be all set to use **walk** in your
 program. But sometimes you get an error like the following, even after
 your install walk globablly:
 
-```
+```bash
 >node Server.js
 
 module.js:340
@@ -628,24 +641,34 @@ Install the Node Version Manager on Linux so you can easily switch between versi
 
 To install NVM, do this:
 
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
+```
 
 Then restart your shell. Now install the latest node:
 
-    nvm install stable
-    nvm use stable
+```bash
+nvm install stable
+nvm use stable
+```
 
 If you open a new shell, you may no longer be using the latest node specified by nvm. To set things up again, type:
 
-    nvm use stable
+```bash
+nvm use stable
+```
 
 To make the change permanent, so you don't have to fuss with this each time you open a shell:
 
-    nvm alias default stable
+```bash
+nvm alias default stable
+```
 
 If you want to switch back to the system version installed from nodesource.com, do this:
 
-    nvm use system
+```bash
+nvm use system
+```
 
 ## NPM Link
 
