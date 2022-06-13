@@ -549,7 +549,6 @@ Mads:
 <!--       -->
 <!-- Links -->
 <!--       -->
-
 [ub]: https://www.google.com/search?q=Robert+C.+Martin
 [nz]: https://www.google.com/search?q=Nicholas+C.+Zakas
 [speaking-javascript]: http://speakingjs.com/es5/index.html

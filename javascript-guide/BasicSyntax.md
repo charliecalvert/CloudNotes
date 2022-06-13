@@ -81,10 +81,10 @@ var myObject = { myProperty: 12 };
 
 Get Descriptor
 
--
--
--
--
+- Missing code
+- Missing code
+- Missing code
+- Missing code
 
 You can discover the properties of an object by two means.
 

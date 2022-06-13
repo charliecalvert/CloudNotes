@@ -14,6 +14,8 @@ image: ./course/course-javascript.jpg
 <!-- toc -->
 <!-- tocstop -->
 
+## Overview
+
 One of the things we didn't talk about in class is the idea of "opinionated" libraries or tools. Some very popular libraries, such as bootstrap and angular, are what as known as "opinionated" libraries. They try to force you to fall into the "pit of success." In other words, they have strong ideas about how to accomplish a task, and they ask you to go along with that philosophy or else face the consequences. More generally, they say: "Here is the best way to do something, and here are the options we provide for you to accomplish your goals. Don't bother trying to do anything else, or use any techniques we don't recommend." All this sounds harsh, but it helps a lot of people get a lot of really good work done relatively quickly.
 
 Other libraries are less opinionated, and let the user make lots of choices. I guess underscore, less and jQuery are non-opinionated libraries. The user has a lot of choice when using these libraries, but they generally have to:
@@ -25,7 +27,7 @@ One of the problems that often comes up when users try to use opinionated librar
 
 Oh well, that's enough on this topic. I just thought I would bring up these subjects so you could think about them some more. Just to be clear, I'm not saying you've done anything wrong, I just want to help you understand about opinionated software and the pit of success.
 
-Some links
+## Some links
 
 * <https://www.google.com/search?q=opinionated+software>
 * <http://stackoverflow.com/a/802064>

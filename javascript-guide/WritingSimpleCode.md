@@ -572,7 +572,6 @@ Install the JavaScript ChromeTools Debugger in Eclipse:
 <!--       -->
 <!-- Links -->
 <!--       -->
-
 [vsjs]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/javascript/VerySimpleJavaScript.png
 [con01]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/javascript/Console01.png
 [con01s]: https://s3.amazonaws.com/s3bucket01.elvenware.com/dev-images/javascript/Console01Small.png
