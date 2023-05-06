@@ -5,7 +5,8 @@
     "main": "remote.js",
     "scripts": {
         "start": "DEBUG=check-md nodemon CheckMarkdown.js",
-        "test": "DEBUG=check-get-elf jest"
+        "test": "DEBUG=check-get-elf jest",
+        "basic": "node lib/walk-markdown-files.mjs"
     },
     "repository": {
         "type": "git",
