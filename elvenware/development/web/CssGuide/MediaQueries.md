@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-07 01:43:50 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/MediaQueries.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide
+fileName: MediaQueries.md
+relativePath: /CssGuide/MediaQueries.md
+title: MediaQueries
+directoryName: CssGuide
+category : css-guide
+---
+
 Responsive Design and Media Queries
 ===================================
 

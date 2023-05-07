@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-07 01:43:50 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/StyleSheetChanger.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide
+fileName: StyleSheetChanger.md
+relativePath: /CssGuide/StyleSheetChanger.md
+title: StyleSheetChanger
+directoryName: CssGuide
+category : css-guide
+---
+
 High Styling
 ============
 

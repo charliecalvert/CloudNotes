@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-07 01:43:50 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/Sass.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide
+fileName: Sass.md
+relativePath: /CssGuide/Sass.md
+title: Sass
+directoryName: CssGuide
+category : css-guide
+---
+
 
 
 # SASS and CSS

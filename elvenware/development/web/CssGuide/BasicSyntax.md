@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-07 01:43:50 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/BasicSyntax.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide
+fileName: BasicSyntax.md
+relativePath: /CssGuide/BasicSyntax.md
+title: BasicSyntax
+directoryName: CssGuide
+category : css-guide
+---
+
 # CSS Basic Syntax
 
 On this page you can find basic information about using CSS.

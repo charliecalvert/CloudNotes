@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-07 01:43:50 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/Validators.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide
+fileName: Validators.md
+relativePath: /CssGuide/Validators.md
+title: Validators
+directoryName: CssGuide
+category : css-guide
+---
+
 Validators
 ----------
 
