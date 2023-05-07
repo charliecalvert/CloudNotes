@@ -20,3 +20,8 @@ node lib/walk-markdown-files.mjs
 npm i -D concat-stream gray-matter list-item markdown-link minimist
 npm i -D mixin-deep remarkable repeat-string strip-color object.pick
 npm i -D diacritics-map lazy-cache
+
+```text
+Could not find a declaration file for module 'elven-code'. '/home/ubuntu/Git/CloudNotes/node_modules/elven-code/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/elven-code` if it exists or add a new declaration (.d.ts) file containing `declare module 'elven-code';`ts(7016)
+```
