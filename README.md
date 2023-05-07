@@ -7,9 +7,13 @@ Ordered by class, with HTML in some cases, but only partial HTML.
 
 ## Walk Markdown Files
 
-in the lib directory is a file called walk-markdown-files. It provides an example of how to walk through a Directory or recursive set of directories to see all the files present with a markdown extension, and to test if they have front matter or not..
+In the lib directory is a file called [walk-markdown-files](lib/walk-markdown-files.mjs). It provides an example of how to walk through a Directory or recursive set of directories to see all the files present with a markdown extension, and to test if they have front matter or not.
 
+Run it like this:
+
+```javascript
 node lib/walk-markdown-files.mjs
+```
 
 ## Not Sure What This Is
 

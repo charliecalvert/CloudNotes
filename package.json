@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/charliecalvert/CloudNotes#readme",
     "dependencies": {
+        "chalk": "^5.2.0",
         "debug": "^4.3.4",
         "elven-code": "^4.13.2",
         "elven-jekyll-post": "^1.1.3",
