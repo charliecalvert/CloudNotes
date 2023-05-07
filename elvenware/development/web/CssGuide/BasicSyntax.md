@@ -1,10 +1,8 @@
-CSS Basic Syntax {#top}
-================
+# CSS Basic Syntax
 
 On this page you can find basic information about using CSS.
 
-Example Code {#example}
-------------
+## Example Code {#example}
 
 We should start at the beginning. The first step, I suppose, is to learn
 how to define a css file and how to include that css file in an HTML
@@ -43,15 +41,16 @@ This is what the whole thing looks like:
 </html>
 ```
 
-Basic Formatting
-----------------
+## Basic Formatting
 
 Most good editors, such as Visual Studio, Eclipse and many others, can
 automatically format your code for you.
 
 In Visual Studio, right click on your CSS file, and choose Format Document.
 
-	(Ctrl + E , D)
+```text
+Ctrl + E , D
+```
 
 In Eclipse, right click and choose Source | Format (Ctrl + Shift + F)
 
@@ -65,7 +64,7 @@ The next lines should each contain a single declaration indented one tab or
 prefer 4 spaces or one tab of the same size. Other common choices are three
 spaces and two spaces:
 
-```
+```html
 h1 {
     color: blue;
     font-size: large;
@@ -74,7 +73,7 @@ h1 {
 Finally, you want to end with a close curly brace, flush to the left,
 beneath and lined up with the selector:
 
-```
+```html
 h1 {
     color: blue;
     font-size: large;
@@ -84,7 +83,7 @@ h1 {
 If you have multiple rules in a single CSS file, then I prefer each rule
 separated from the previous by a single empty line:
 
-```
+```html
 h1 {
     color: blue;
     font-size: large;
@@ -111,11 +110,12 @@ for a project.
 
 Here is an example of poorly formatted CSS:
 
-```
-h1 {	font-family: "Comic Sans MS";
-	font-size: xx-large;
-	color: black;
-	}
+```html
+h1 {
+    font-family: "Comic Sans MS";
+    font-size: xx-large;
+    color: black;
+}
 h2 {
   font-family: Georgia, "Comic Sans MS", Times, serif;
   font-size: x-large;
@@ -126,13 +126,13 @@ body
 {    color: purple;
     background-color: yellow }
 a {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: large;
-	color: green}
+ font-family: Georgia, "Times New Roman", Times, serif;
+ font-size: large;
+ color: green}
 li{
-	font-family: Georgia, "Times New Roman", Times, serif;
+ font-family: Georgia, "Times New Roman", Times, serif;
 font-size: large;
-	color: blue}        
+ color: blue}        
 ```
 
 This code's primary problem is that different rules are followed in
@@ -141,7 +141,7 @@ It strikes me as simply too mundane an exercise to point out all the places
 where the formatting goes astray. Instead, I'll show how the code should be
 formatted, and you can compare the two examples and draw your own conclusions:
 
-```
+```css
 h1 {
     font-family: "Comic Sans MS";
     font-size: xx-large;
@@ -172,8 +172,7 @@ li {
 }
 ```
 
-Comments
---------
+## Comments
 
 CSS comments are like those in C++:
 
@@ -181,8 +180,7 @@ CSS comments are like those in C++:
 /* My Comment */
 ```
 
-Element Selectors {#elementSelectors}
------------------
+## Element Selectors {#elementSelectors}
 
 CSS consists of rules. Each rule has three parts: the selector, the
 property and the value. The properties and values are referred to as a
@@ -197,8 +195,7 @@ the value
 
 In the above example, p is known as an HTML or Element selector.
 
-Class Selectors {#classSelectors}
----------------
+## Class Selectors {#classSelectors}
 
 Here is a class selector:
 
@@ -210,8 +207,7 @@ p.myClass { color: #00FF00; }
 The latter example is a dependent class, which means it is a class
 selector dependent on an html selector.
 
-ID Selectors {#idSelectors}
-------------
+## ID Selectors {#idSelectors}
 
 You can create an ID selector used to define a single location in your
 document:
@@ -237,8 +233,7 @@ This is not an error because you can reuse a class selector:
 <p class="goober">
 ```
 
-Universal Selectors {#universalSelectors}
--------------------
+## Universal Selectors {#universalSelectors}
 
 You can create a universal selector:
 
@@ -246,8 +241,7 @@ You can create a universal selector:
 * { padding: 0px; }
 ```
 
-Child Selectors {#childSelectors}
----------------
+## Child Selectors {#childSelectors}
 
 Child selectors are a bit confusing. The goal is to allow you to
 pinpoint a particular tag nested inside other tags. For instance, you
@@ -292,7 +286,7 @@ article > ul > li > p > em
 }
 ```
 
-## Selectors with and without Spaces {#spaces}
+## Selectors with and without Spaces
 
 This selector gets elements with both class **foo** and **bar**:
 
@@ -320,8 +314,7 @@ For instance:
 </div>
 ```
 
-CSS Colors {#cssColors}
-----------
+## CSS Colors {#cssColors}
 
 While reading this section, please take a look at this page:
 
@@ -331,42 +324,45 @@ If you look at the ColorTables page, you can see that it is made up a
 shades of green. When you create colors in CSS you can define them as
 follows:
 
+```css
     background-color: #00FF00;
+```
 
 The color specified above is designated by a hex number with three
 parts:
 
--   Red
--   Green
--   Blue
+- Red
+- Green
+- Blue
 
 The values in the hex number are broken into three sets of two digits
 each. Here is how it looks:
 
--   The number \#FF0000 is bright red. 
--   The number \#00FF00 is bright green
--   The number \#0000FF is bright blue
+- The number \#FF0000 is bright red.
+- The number \#00FF00 is bright green
+- The number \#0000FF is bright blue
 
 This number is a mixture of red and green:
 
--   \#FFFF00
+- \#FFFF00
 
 Here is a mixture of red and blue:
 
--   \#FF00FF
+- \#FF00FF
 
-Here are three shades of green, arranged from light to dark: 
+Here are three shades of green, arranged from light to dark:
 
--   \#00FF00
--   \#00AA00
--   \#005500
+- \#00FF00
+- \#00AA00
+- \#005500
 
 Here is a link to the CSS for the ColorTables page:
 
-    ColorTables.css
+- ColorTables.css
 
 Consider these two definitions:
 
+```css
     body {
         background-color: #008800;
         color: #004400;
@@ -375,6 +371,7 @@ Consider these two definitions:
     p {
         font-size:large;    
     }
+}
 
 The first sets the background color for the body of the page, and the
 default text color for any text on the page. The second sets the size of
@@ -383,6 +380,7 @@ the font for text that appears in the \<p\> tag.
 Here are two more definitions for the background color and font color of
 the content and article tags:
 
+```css
     header {
         background-color: #00BB00;
         color: #BBFFBB;
@@ -392,14 +390,17 @@ the content and article tags:
         background-color: #00FF00;
         color: #008800;     
     }
+```
 
 Let's now look at a tiny bit of the HTML for the page:
 
+```html
     <body>
 
     <header><h1>The Color Page</h1></header>
 
     <article><p>And here is a table:</p>
+```
 
 Because the H1 element has CSS that sets its text and background color
 to one shade of green, it appears one way, because the article element
@@ -410,23 +411,29 @@ Please note that I have included a table on the page, and the table uses
 classes called **position01, position02** etc to shade the various cells
 of the table. Here is where I declare the class:
 
+ ```htm
     <td class="position01">Able</td>
+ ```
 
 And here is where I define the CSS for position01:
 
+```css
     .position01 {     
-		width: 50px;     
-		height: 50px;     
-		background-color: #BBFFBB;     
-		font-weight:bold;
-	}
+  width: 50px;
+  height: 50px;
+  background-color: #BBFFBB;
+  font-weight:bold;
+ }
+```
 
 Here is the CSS for the body tag:
 
+```css
     body {     
-		background-color: #007700;     
-		color: #004400;
-	}
+  background-color: #007700;
+  color: #004400;
+ }
+```
 
 Note that the the period before the word **position01** in the CSS means
 that this CSS is linked to a class. Notice that there is no period
