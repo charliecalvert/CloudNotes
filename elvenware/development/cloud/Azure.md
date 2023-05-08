@@ -9,16 +9,16 @@ from storage, to VMs to platforms for installing applications.
 
 Here are links to key areas in the Azure world:
 
--   Main Site:
-    [https://www.windowsazure.com/en-us/](https://www.windowsazure.com/en-us/)
--   Azure Console:
-    [https://windows.azure.com/](https://windows.azure.com/)
--   Developer platform installs:
-    [https://www.windowsazure.com/en-us/develop/overview/](https://www.windowsazure.com/en-us/develop/overview/)
--   90 Day free Trial:
-    [https://www.windowsazure.com/en-us/pricing/free-trial/](https://www.windowsazure.com/en-us/pricing/free-trial/)
--   Pricing:
-    [https://www.windowsazure.com/en-us/pricing/calculator/](https://www.windowsazure.com/en-us/pricing/calculator/)
+- Main Site:
+  [https://www.windowsazure.com/en-us/](https://wwwwindowsazure.com/en-us/)
+- Azure Console:
+  [https://windows.azure.com/](https://windows.azurecom/)
+- Developer platform installs:
+  [https://www.windowsazure.com/en-us/develop/overview/(https://www.windowsazure.com/en-us/develop/overview/)
+- 90 Day free Trial:
+  [https://www.windowsazure.com/en-us/pricingfree-trial/](https://www.windowsazure.com/en-uspricing/free-trial/)
+- Pricing:
+  [https://www.windowsazure.com/en-us/pricingcalculator/](https://www.windowsazure.com/en-uspricing/calculator/)
 
 As with Amazon, you need an account and a credit card to start working
 in this world. There is a three month free trial available. Again like
@@ -34,10 +34,10 @@ sure you have the latest [Windows Azure SDK for .NET and the Visual
 Studio Tools](https://www.windowsazure.com/en-us/develop/net/). This
 will give you the
 
--   Azure SDK
--   The Azure Emulator
--   IIS ASP.NET, .NET, ISAP, HTTP, MVC3
--   Visual Studio Tools
+- Azure SDK
+- The Azure Emulator
+- IIS ASP.NET, .NET, ISAP, HTTP, MVC3
+- Visual Studio Tools
 
 ![Azure SDK .NE Install](images/Azure01.png)
 
@@ -136,8 +136,8 @@ kind, links are available for that client at the bottom of this
 document. Then you can paste in the following URL and pull down the
 files:
 
--   **git://github.com/smarx/pythonrole**
--   **https://github.com/smarx/pythonrole.git**
+- **git://github.com/smarx/pythonrole**
+- **https://github.com/smarx/pythonrole.git**
 
 Otherwise, you can just go here, and download the zip file:
 
@@ -149,7 +149,7 @@ For Python, you will also want to be sure you have installed
 easy-install, pip, flask, virtualenv and rocket. You should also install
 the Python tools for Windows Azure Storage
 
--   [](http://www.elvenwa/charlie/development/web/Python/install.html#easyins/charlie/development/web/Python/install.html#easyinstall</a></li>%20<li><a%20href=)
+- [](http://www.elvenwa/charlie/development/web/Python/install.html#easyins/charlie/development/web/Python/install.html#easyinstall</a></li>%20<li><a%20href=)
 
 Platforms
 ---------
@@ -160,26 +160,26 @@ Azure, though it does not enjoy official support.
 
 ### C\# {#c#}
 
--   Overview:
+- Overview:
     [http://msdn.microsoft.com/en-us/windowsazure/wazplatformtrainingcourse\_windowsazure\_unit](http://msdn.microsoft.com/en-us/windowsazure/wazplatformtrainingcourse_windowsazure_unit)
--   .NET install:
+- .NET install:
     [https://www.windowsazure.com/en-us/develop/net/](https://www.windowsazure.com/en-us/develop/net/)
--   Quick Start:
+- Quick Start:
     [http://msdn.microsoft.com/en-us/library/gg663908.aspx](http://msdn.microsoft.com/en-us/library/gg663908.aspx)
--   Code Samples:
+- Code Samples:
     [http://code.msdn.microsoft.com/windowsazure/](http://code.msdn.microsoft.com/windowsazure/)
--   C\# CGI in IIS:
+- C\# CGI in IIS:
     [http://chalaki.com/8-steps-program-install-setup-call-csharp-cgi-programs-in-iis-7/321/](http://chalaki.com/8-steps-program-install-setup-call-csharp-cgi-programs-in-iis-7/321/)
 
 ### NodeJs {#nodeJs}
 
--   SDK Download:
+- SDK Download:
     [https://www.windowsazure.com/en-us/develop/nodejs/](https://www.windowsazure.com/en-us/develop/nodejs/)
--   Azure Tutorial:
+- Azure Tutorial:
     [https://www.windowsazure.com/en-us/develop/nodejs/tutorials/getting-started/](https://www.windowsazure.com/en-us/develop/nodejs/tutorials/getting-started/)
--   Node JS Home: [http://nodejs.org/](http://nodejs.org/)
--   Guide: [http://nodeguide.com/](http://nodeguide.com/)
--   API Reference: [hhttp://nodejs.org/api/](http://nodejs.org/api/)
+- Node JS Home: [http://nodejs.org/](http://nodejs.org/)
+- Guide: [http://nodeguide.com/](http://nodeguide.com/)
+- API Reference: [hhttp://nodejs.org/api/](http://nodejs.org/api/)
 
 Start a NodeJs Powershell in Adminstrator mode by right clicking on
 the following link and choosing **Run as administrator**:
@@ -315,43 +315,43 @@ in the folder Python/AzureRelated.
 You can debug your server side code in Eclipse. Here is how to
 proceed:
 
--   Start Eclipse and optionally set up your project to run in it.
+- Start Eclipse and optionally set up your project to run in it.
     You don't actually have to set up the project to run Node from
     the IDE, but if you want, you can set everything else up.
--   ChoRunning Python on Azureose Help | Install New Software
--   Press the Add button
--   Enter this address:
+- ChoRunning Python on Azureose Help | Install New Software
+- Press the Add button
+- Enter this address:
     **http://chromedevtools.googlecode.com/svn/update/dev/**
--   Choose to install the **Google Chrome Developer Tools**
--   Chrome will restart
--   Go to the command prompt and run your program in Node with the
+- Choose to install the **Google Chrome Developer Tools**
+- Chrome will restart
+- Go to the command prompt and run your program in Node with the
     Debug switch:
--   `node --debug server.js // See Figure D01`
--   In Eclipse, switch to the Debug perspective. (**Window | Open
+- `node --debug server.js // See Figure D01`
+- In Eclipse, switch to the Debug perspective. (**Window | Open
     Perspective | Other | Debug**)
--   Choose **Run | Debug Configurations** from the menu
--   Select **Standalone V8 Vm**
--   Click the plus button to get a new configuration
--   Call it **Server on Port 5858**
--   Set the Host to **localhost** and the port to **5858**
--   Press Apply to save your work // See Figure D02
--   Click the **Debug** button
--   In the project explorer find the source for the file you want to
+- Choose **Run | Debug Configurations** from the menu
+- Select **Standalone V8 Vm**
+- Click the plus button to get a new configuration
+- Call it **Server on Port 5858**
+- Set the Host to **localhost** and the port to **5858**
+- Press Apply to save your work // See Figure D02
+- Click the **Debug** button
+- In the project explorer find the source for the file you want to
     debug. Look carefully at shots D04 and D05. Notice that I'm
     opening a file with a long name and lots of underscore
     characters. I picked this file from the Project Explorer or
     Script Explorer -- I believe either one will work.
--   Open the program in a browser: **<http://localhost:3000>
+- Open the program in a browser: **<http://localhost:3000>
     //**Figure D03
--   Put a break point on one of your methods, such as **request
+- Put a break point on one of your methods, such as **request
     //**Figure D04. If you have trouble setting a breakpoint using
     the tools, go into your source code, write the command
     **debugger;**in your source at the place where you want to stop,
     and then restart your debug session.
--   Do something in the browser that will fire the call to
+- Do something in the browser that will fire the call to
     **request**
--   Check Eclipse: you should be at the breakpoint. // Figure D05
--   When you are done, you should right click on the project and
+- Check Eclipse: you should be at the breakpoint. // Figure D05
+- When you are done, you should right click on the project and
     close it. Either that, or make sure you are running node in
     Debug mode (Figure D01) when you next open Eclipse. If you don't
     do one of these two things, you may get a lot of errors when you
@@ -449,14 +449,14 @@ If you need to do file difs, use Meld.
 
 You can run your Node programs directly from Notepad++:
 
--   Select **Run | Run** from the menu
--   Using quotes around any paths that contain spaces, type in the
+- Select **Run | Run** from the menu
+- Using quotes around any paths that contain spaces, type in the
     path to node and a macro that points to your main script file:
--   "C:\\Program Files (x86)\\nodejs\\node.exe"
+- "C:\\Program Files (x86)\\nodejs\\node.exe"
     "\$(FULL\_CURRENT\_PATH)"
--   SavRunning Python on Azuree the command under a name like MyProgram. Specify a shortcut
+- SavRunning Python on Azuree the command under a name like MyProgram. Specify a shortcut
     like Ctrl + F5
--   Now you can run your program directly from NotePad++. At any
+- Now you can run your program directly from NotePad++. At any
     rate, its starts **Node**, and then you can browse to
     <http://localhost:3000> or something similar to use the program.
 
@@ -468,31 +468,31 @@ you can Alt-Tab to this window and press Ctrl-C to close it.
 PHP {#pHP}
 ---
 
--   SDK Download:
+- SDK Download:
     [http://phpazure.codeplex.com/](http://phpazure.codeplex.com/)
--   Docs:
+- Docs:
     [http://azurephp.interoperabilitybridges.com/](http://azurephp.interoperabilitybridges.com/)
--   QuickStart:
+- QuickStart:
     [http://azurephp.interoperabilitybridges.com/articles/build-and-deploy-a-windows-azure-php-application](http://azurephp.interoperabilitybridges.com/articles/build-and-deploy-a-windows-azure-php-application)
--   SQL Azure from PHP:
+- SQL Azure from PHP:
     [http://msdn.microsoft.com/en-us/library/windowsazure/ff394110.aspx](http://msdn.microsoft.com/en-us/library/windowsazure/ff394110.aspx)
 
 Python
 ------
 
--   Install:
+- Install:
     [https://github.com/smarx/pythonrole](https://github.com/smarx/pythonrole)
--   Install Instructions:
+- Install Instructions:
     [http://blog.smarx.com/posts/tutorial-running-a-python-web-application-in-windows-azure](http://blog.smarx.com/posts/tutorial-running-a-python-web-application-in-windows-azure)
--   Windows Azure for Python:
+- Windows Azure for Python:
     [http://pypi.python.org/pypi/windowsazure/0.1.1](http://pypi.python.org/pypi/windowsazure/0.1.1)
--   Azure Storage:
+- Azure Storage:
     [https://github.com/sriramk/winazurestorage](https://github.com/sriramk/winazurestorage)
--   Flask Docs:
+- Flask Docs:
     [http://flask.pocoo.org/docs/](http://flask.pocoo.org/docs/)
--   Flask QuickStart:
+- Flask QuickStart:
     [http://flask.pocoo.org/docs/quickstart/\#quickstart](http://flask.pocoo.org/docs/quickstart/#quickstart)
--   Larger Applications:
+- Larger Applications:
     [hhttp://flask.pocoo.org/docs/patterns/packages/](http://flask.pocoo.org/docs/patterns/packages/)
 
 To get started, make sure have installed Flask, [Virtual
@@ -521,9 +521,9 @@ Your virtual environment contains a local copy of your Python
 installation, just as it will be configured on Windows Azure. That
 ensures two things:
 
--   You have Python installed on Azure
--   It is the same version of Python that you are expecting
--   Your copy of Python is configured exactly as you expect
+- You have Python installed on Azure
+- It is the same version of Python that you are expecting
+- Your copy of Python is configured exactly as you expect
 
 In short, Virtual Environment gives you the chance to configure your
 machine in quite specific ways without actually changing any of the
@@ -543,10 +543,10 @@ environment:
 
 Flask is a fairly complex tool that gives you three great tools:
 
--   A light weight web server called Werkzeug. (Should not conflict
+- A light weight web server called Werkzeug. (Should not conflict
     with running instances of IIS or Apache.)
--   A template engine called Jinja2 for manipulating HTML
--   Flask, a library for writing Python web applications
+- A template engine called Jinja2 for manipulating HTML
+- Flask, a library for writing Python web applications
 
 Now you should have the virtual environment configured properly and
 you are ready to run the program by typing **python runserver.py**:
@@ -568,9 +568,9 @@ web server. The presence of this web server should not conflict with
 existing running installs of IIS or Apache. Try the following URLs
 to see how the program works:
 
--   <http://localhost:5000/show>
--   <http://localhost:5000/add>
--   [Call show again](http://localhost:5000/show)
+- <http://localhost:5000/show>
+- <http://localhost:5000/add>
+- [Call show again](http://localhost:5000/show)
 
 The second time you call show you should see a new row has been
 inserted in the Sqlite database from which the program is pulling
@@ -579,7 +579,7 @@ data.
 When you are done exploring the program, you can press **CTRL-C** at
 the command prompt to close the Web Server. To exit the virtual
 environment, type **deactivate** at the command prompt.
-
+****
 Running Python on Azure
 =======================
 
@@ -736,18 +736,18 @@ to configure the server to let the ports passed the firewall.
 
 To deploy this code to an Azure virtual machine, do the following:
 
--   [https://www.windowsazure.com/en-us/manage/windows/](https://www.windowsazure.com/en-us/manage/windows/)
--   (*If you are in the old console view, look for the link at the
+- [https://www.windowsazure.com/en-us/manage/windows/](https://www.windowsazure.com/en-us/manage/windows/)
+- (*If you are in the old console view, look for the link at the
     bottom that references the preview. Click it.*)
--   Select New | Virtual machine (You may have to sign up for the
+- Select New | Virtual machine (You may have to sign up for the
     beta. You will have an option to choose Server 2012. Why not go
     for it?)
--   Attach a disk and assign it to drive A (2 GB would be way more
+- Attach a disk and assign it to drive A (2 GB would be way more
     than enough)
--   Open up an endpoint either at port 80 or port 9000
--   Using the standards Windows tools to set up your machine to run
+- Open up an endpoint either at port 80 or port 9000
+- Using the standards Windows tools to set up your machine to run
     Python
--   Run your python code as described above, or edit the
+- Run your python code as described above, or edit the
     runserver.py to use Port 80
 
 I understand, you want more detail, but this should get you started.
@@ -796,10 +796,10 @@ Navigate to the root of the Azure tools for Python and run the
 script called run.cmd. You may be prompted four or five times to
 sign over to Steve Balmer your:
 
--   First Born
--   Your house
--   Second Born
--   Parents
+- First Born
+- Your house
+- Second Born
+- Parents
 
 Be sure to click OK at each prompt. Now navigate to:
 
@@ -831,11 +831,11 @@ jade --out tmp/ --path views --pretty --obj '{title: "Elvenware" }'
 Storage and SQL Azure {#storageAndSQLAzure}
 ---------------------
 
--   Storage:
+- Storage:
     [d](https://www.windowsazure.com/en-us/home/features/storage/)
--   SQL Azure:
+- SQL Azure:
     [https://www.windowsazure.com/en-us/home/features/sql-azure/](https://www.windowsazure.com/en-us/home/features/sql-azure/)
--   SQL Azure from Linux:
+- SQL Azure from Linux:
     [http://www.easysoft.com/products/data\_access/odbc-sql-azure-driver/linux-unix.html](http://www.easysoft.com/products/data_access/odbc-sql-azure-driver/linux-unix.html)
 
 Additional Notes on Node
@@ -907,9 +907,9 @@ This usually means that you don't have a default file set for your application. 
 Links
 =====
 
-    -   [Tortoise GIT](http://code.google.com/p/tortoisegit/)
-    -   [http://windows.github.com/](http://windows.github.com/)
-    -   [Azure
+    - [Tortoise GIT](http://code.google.com/p/tortoisegit/)
+    - [http://windows.github.com/](http://windows.github.com/)
+    - [Azure
         Discussion](http://programmers.stackexchange.com/questions/64727/windows-azure-vs-amazon-ec2-vs-google-app-engine)
 
 
