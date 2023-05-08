@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 06:36:56 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/facts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database
+fileName: facts.md
+relativePath: /database/facts.md
+title: facts
+directoryName: database
+category : database-guide
+---
+
 ## Facts
 
 Here are a few conversions that I put together many years ago. This page was lost for many years, but I found it recently and converted it to work with tables.

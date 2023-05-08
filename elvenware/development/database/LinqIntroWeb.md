@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 06:36:56 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/LinqIntroWeb.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database
+fileName: LinqIntroWeb.md
+relativePath: /database/LinqIntroWeb.md
+title: LinqIntroWeb
+directoryName: database
+category : database-guide
+---
+
 <div id="flashcontent">
 
 <div id="cs_noexpressUpdate">

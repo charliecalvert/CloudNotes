@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 06:36:56 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/able-baker.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database
+fileName: able-baker.md
+relativePath: /database/able-baker.md
+title: able-baker
+directoryName: database
+category : database-guide
+---
+
 # Overview
 
 Listing of NATO alphabet.
