@@ -14,6 +14,14 @@ Run it like this:
 node lib/walk-markdown-files.mjs
 ```
 
+## RegEx
+
+```regex
+// , ([^-]*)-([^, ]*)
+// const guideRegex = /([^-]*)-([^, ]*)/g;
+// , "$1$2"
+```
+
 ## Not Sure What This Is
 
 npm i -D concat-stream gray-matter list-item markdown-link minimist
