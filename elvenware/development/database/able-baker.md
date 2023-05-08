@@ -1,18 +1,18 @@
-## Overview
+# Overview
 
 Listing of NATO alphabet.
 
 ## The Alphabet
 
-1.  Alpha
-2.  Bravo
-3.  Charlie
-4.  Delta
-5.  Echo
-6.  Foxtrot
-7.  Golf
-8.  Hotel
-9.  India
+1. Alpha
+2. Bravo
+3. Charlie
+4. Delta
+5. Echo
+6. Foxtrot
+7. Golf
+8. Hotel
+9. India
 10. Juliet
 11. Kilo
 12. Lima
