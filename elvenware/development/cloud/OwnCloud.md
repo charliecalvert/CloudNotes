@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/OwnCloud.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: OwnCloud.md
+relativePath: /cloud/OwnCloud.md
+title: OwnCloud
+directoryName: cloud
+category : cloud-guide
+---
+
 OwnCloud
 ========
 

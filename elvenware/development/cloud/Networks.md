@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Networks.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Networks.md
+relativePath: /cloud/Networks.md
+title: Networks
+directoryName: cloud
+category : cloud-guide
+---
+
 Network and Router Basics
 -------------------------
 

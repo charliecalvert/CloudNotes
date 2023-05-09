@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/XmlTechniques.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: XmlTechniques.md
+relativePath: /cloud/XmlTechniques.md
+title: XmlTechniques
+directoryName: cloud
+category : cloud-guide
+---
+
 ## Overview
 
 One simple way to work with XML data is to open it in Excel. Inside of

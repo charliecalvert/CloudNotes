@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/MediaWiki.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: MediaWiki.md
+relativePath: /cloud/MediaWiki.md
+title: MediaWiki
+directoryName: cloud
+category : cloud-guide
+---
+
 MediaWiki
 =========
 

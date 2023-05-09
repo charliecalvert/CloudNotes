@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/DropBox.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: DropBox.md
+relativePath: /cloud/DropBox.md
+title: DropBox
+directoryName: cloud
+category : cloud-guide
+---
+
 ## Overview
 
 DropBox is a file sharing utility. It is used primarily to help you keep files in sync between multiple machines, and a place in the cloud. You can also share read-only or read-write copies of your folders with one or more people. DropBox is especially well suited for sharing files between desktop machines and your tablet or phone.

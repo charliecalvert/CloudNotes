@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/TypesOfApplications.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: TypesOfApplications.md
+relativePath: /cloud/TypesOfApplications.md
+title: TypesOfApplications
+directoryName: cloud
+category : cloud-guide
+---
+
 Understanding the Cloud
 
 There are three primary types of Cloud Services:

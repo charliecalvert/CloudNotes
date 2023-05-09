@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Summary.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Summary.md
+relativePath: /cloud/Summary.md
+title: Summary
+directoryName: cloud
+category : cloud-guide
+---
+
 * [Azure.html](Azure.html)
 * [Browsers.html](Browsers.html)
 * [DeleteMe.html](DeleteMe.html)

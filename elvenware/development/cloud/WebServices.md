@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/WebServices.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: WebServices.md
+relativePath: /cloud/WebServices.md
+title: WebServices
+directoryName: cloud
+category : cloud-guide
+---
+
 
 Elvenware Web Services
 ----------------------

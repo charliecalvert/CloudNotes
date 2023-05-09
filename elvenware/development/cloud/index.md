@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: index.md
+relativePath: /cloud/index.md
+title: index
+directoryName: cloud
+category : cloud-guide
+---
+
 # Elvenware Cloud
 
 - [Azure.html](Azure.html)

@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Virtualization.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Virtualization.md
+relativePath: /cloud/Virtualization.md
+title: Virtualization
+directoryName: cloud
+category : cloud-guide
+---
+
 - [Hardware Virtualization](http://en.wikipedia.org/wiki/X86_virtualization)
 -	[Android Emulation](http://ubuntuguide.org/wiki/Android_emulation)
 

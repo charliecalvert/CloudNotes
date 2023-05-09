@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Webmin.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Webmin.md
+relativePath: /cloud/Webmin.md
+title: Webmin
+directoryName: cloud
+category : cloud-guide
+---
+
 ## Overview
 
 [Webmin](http://www.webmin.com/index.html) is a web based graphical user

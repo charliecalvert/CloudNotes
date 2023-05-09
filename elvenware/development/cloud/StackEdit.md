@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/StackEdit.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: StackEdit.md
+relativePath: /cloud/StackEdit.md
+title: StackEdit
+directoryName: cloud
+category : cloud-guide
+---
+
 #StackEdit
 
 You can edit markdown in the cloud with StackEdit.

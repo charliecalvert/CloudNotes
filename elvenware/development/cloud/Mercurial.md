@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Mercurial.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Mercurial.md
+relativePath: /cloud/Mercurial.md
+title: Mercurial
+directoryName: cloud
+category : cloud-guide
+---
+
 Elvenware Mercurial Repository
 ==============================
 

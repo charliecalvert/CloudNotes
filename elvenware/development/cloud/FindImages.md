@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/FindImages.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: FindImages.md
+relativePath: /cloud/FindImages.md
+title: FindImages
+directoryName: cloud
+category : cloud-guide
+---
+
 ## Finding Images
 
 There are two ways that I know about for storing images in the cloud:

@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Hadoop.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Hadoop.md
+relativePath: /cloud/Hadoop.md
+title: Hadoop
+directoryName: cloud
+category : cloud-guide
+---
+
 ## What is Hadoop {#what}
 
 A typical hard drive is 2 terabytes (2 TB) in size. It takes about five

@@ -1,5 +1,16 @@
-# Azure on Elvenware V
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/Azure.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: Azure.md
+relativePath: /cloud/Azure.md
+title: Azure
+directoryName: cloud
+category : cloud-guide
+---
 
+# Azure on Elvenware V
 
 This page covers Windows Azure and related subjects.
 
@@ -359,9 +370,9 @@ proceed:
     the project and restart Eclipse. Yea, I know, it is pretty
     funky: but it does work if you baby it along some.
 
-![Starting node in debug mode](images/Node01.png)
-
-**Figure D01: Starting node in debug mode**
+| ![Starting node in debug mode](images/Node01.png) |
+|:--:|
+| _Figure D01: Starting node in debug mode_ |
 
 ![Setting up the debug Run Configuration](images/Node02.png)
 
@@ -580,8 +591,7 @@ When you are done exploring the program, you can press **CTRL-C** at
 the command prompt to close the Web Server. To exit the virtual
 environment, type **deactivate** at the command prompt.
 ****
-Running Python on Azure
-=======================
+## Running Python on Azure
 
 **NOTICE**: *As Microsoft rolls out there new tools for Azure, it is
 becoming clear that we will have an alternative to the Azure
@@ -904,17 +914,11 @@ This usually means that you don't have a default file set for your application. 
       </system.webServer>
     </configuration>
 
-Links
-=====
+## Links
 
     - [Tortoise GIT](http://code.google.com/p/tortoisegit/)
     - [http://windows.github.com/](http://windows.github.com/)
     - [Azure
         Discussion](http://programmers.stackexchange.com/questions/64727/windows-azure-vs-amazon-ec2-vs-google-app-engine)
 
-
-
-Copyright © [Charlie Calvert](../../index.html) | [Elvenware
-Home](../../index.html) | [Writing Code](../index.html) |
-[Delphi](../delphi/index.html) | [CSharp](../csharp/index.html) | [My
-Books](../../books/index.html)
+Copyright © [Charlie Calvert](https://www.elvenware.com)) |

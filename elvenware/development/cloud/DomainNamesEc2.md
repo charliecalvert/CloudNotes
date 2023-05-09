@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/DomainNamesEc2.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: DomainNamesEc2.md
+relativePath: /cloud/DomainNamesEc2.md
+title: DomainNamesEc2
+directoryName: cloud
+category : cloud-guide
+---
+
 ## Domain Names on EC2 {#domain-ec2}
 
 Go to Godaddy and manage your domain. On the **DNS Zone File Page**

@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/TypesOfApplicationsA.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: TypesOfApplicationsA.md
+relativePath: /cloud/TypesOfApplicationsA.md
+title: TypesOfApplicationsA
+directoryName: cloud
+category : cloud-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

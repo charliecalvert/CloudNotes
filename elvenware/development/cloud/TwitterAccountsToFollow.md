@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/TwitterAccountsToFollow.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: TwitterAccountsToFollow.md
+relativePath: /cloud/TwitterAccountsToFollow.md
+title: TwitterAccountsToFollow
+directoryName: cloud
+category : cloud-guide
+---
+
 # Twitter Accounts to Follow
 
 URL: [http://bit.ly/devtweets](http://bit.ly/devtweets)

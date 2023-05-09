@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-08 03:38:38 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud/SshFtpsPutty.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/cloud
+fileName: SshFtpsPutty.md
+relativePath: /cloud/SshFtpsPutty.md
+title: SshFtpsPutty
+directoryName: cloud
+category : cloud-guide
+---
+
 ## Overview
 
 Learning about Networks, SSH, SFTP and Putty.
