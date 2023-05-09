@@ -22,6 +22,30 @@ node lib/walk-markdown-files.mjs
 // , "$1$2"
 ```
 
+Turn the old style headers into the pound pound headers.
+
+```regex
+^(.*)\n--+
+## $1
+```
+
+Figures:
+
+```regex
+^(!\[.*)\n
+| $1_ |\n
+```
+
+## Figures
+
+make it a table, like this:
+
+```markdown
+| ![Starting node in debug mode](images/Node01.png) |
+|:--:|
+| _Figure D01: Starting node in debug mode_ |
+```
+
 ## Not Sure What This Is
 
 npm i -D concat-stream gray-matter list-item markdown-link minimist

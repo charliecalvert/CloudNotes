@@ -12,6 +12,8 @@ category : cloud-guide
 
 # Azure on Elvenware V
 
+<!-- markdownlint-disable MD046 -->
+
 This page covers Windows Azure and related subjects.
 
 Azure is Miscrosoft's cloud development platform. Like Amazon Web
@@ -36,8 +38,7 @@ in this world. There is a three month free trial available. Again like
 Amazon, you probably already have an account with Microsoft, but you
 will need to configure it to use the Azure services.
 
-Install Tips {#installTips}
-------------
+## Install Tips {#installTips}
 
 Using the [Microsoft Web Platform
 Installer](http://www.microsoft.com/web/downloads/platform.aspx), make
@@ -50,15 +51,14 @@ will give you the
 - IIS ASP.NET, .NET, ISAP, HTTP, MVC3
 - Visual Studio Tools
 
-![Azure SDK .NE Install](images/Azure01.png)
-
-**Figure 01: Installing the Windows Azure SDK for .NET with the Web
-Platform Installer**
+| ![Azure SDK .NE Install](images/Azure01.png)_ |
+|:--:|
+| _Figure 01: Installing the Windows Azure SDK for .NET with the Web Platform Installer_ |
 
 [![The success screen for the Azure .net
 Install](images/Azure02Small.png)](images/Azure02.png)
-
-**Figure 02: The Successful Install of Azure for .NET and VS**
+|:--:|
+| _Figure 02: The Successful Install of Azure for .NET and VS_ |
 
 When you are done, you should be able to choose File | New Project
 ASP.NET Web Application in Visual Studio, open the Project Manager,
@@ -79,7 +79,8 @@ Node JS Support**
 [![Python Tools for VS and NodeJS for Azure Success
 Screen](images/Azure04Small.png)](images/Azure04.png)
 
-**Figure 04: Python Tools for VS and NodeJS for Azure Success Screen**
+|:--:|
+| _Figure 04: Python Tools for VS and NodeJS for Azure Success Screen_ |
 
 When looking at the Web Platform Installer, you probably noticed that
 there is an option to install Visual Studio Service Pack 1. In many
@@ -100,7 +101,8 @@ and very valuable tool.
 [![Visual Studio SP1
 Effluvia](images/Azure05Small.png)](images/Azure05.png)
 
-**Figure 5: Visual Studio SP1 Effluvia.**
+|:--:|
+| _Figure 5: Visual Studio SP1 Effluvia._ |
 
 ### Install NodeJS {#installNodeJS}
 
@@ -111,9 +113,9 @@ You will also need to install the Windows Azure SDK for NodeJS:
 Here is what the Platform Installer looks like if you have successfully
 installed this product.
 
-![Windows Azure SDK for NodeJS](images/Azure06.png)
-
-**Figure 06: Windows Azure SDK for NodeJS**
+| ![Windows Azure SDK for NodeJS](images/Azure06.png)_ |
+|:--:|
+| _Figure 06: Windows Azure SDK for NodeJS_ |
 
 ### Php Install {#phpInstall}
 
@@ -148,7 +150,7 @@ document. Then you can paste in the following URL and pull down the
 files:
 
 - **git://github.com/smarx/pythonrole**
-- **https://github.com/smarx/pythonrole.git**
+- **[https://github.com/smarx/pythonrole.git](https://github.com/smarx/pythonrole.git)**
 
 Otherwise, you can just go here, and download the zip file:
 
@@ -162,8 +164,7 @@ the Python tools for Windows Azure Storage
 
 - [](http://www.elvenwa/charlie/development/web/Python/install.html#easyins/charlie/development/web/Python/install.html#easyinstall</a></li>%20<li><a%20href=)
 
-Platforms
----------
+## Platforms
 
 There are four languages with top level support on Azure: C\#,
 NodeJS, PHP and Java. I have also found a way to run Python on
@@ -294,23 +295,22 @@ the service under the name Elvenware001.
 
 ### UUID {#uUID}
 
-Start by opening a command prompt at the root of your project and
-typing this command:
+Start by opening a command prompt at the root of your project and typing this command:
 
-**npm install node-uuid**
+    npm install node-uuid
 
 Then create the following program:
 
-    var http = require('http');var uuid = require('node-uuid');
+```javascript
+var http = require('http');var uuid = require('node-uuid');
 
-
-
-    var port = process.env.port || 1337;  var server = http.createServer(function (req, res) {   res.writeHead(200, { 'Content-Type': 'text/html' });   res.write('<!DOCTYPE html>\n');   res.write('<html>\n');
-     res.write('<head>\n<title>UUID Demo</title>\n</head>\n');
-     res.write('<body>\n');   res.write('\t<h1>UUID Generation</h1>\n');
-     res.write('\t<p>' + uuid.v4() + '</p>\n');
-     res.write('</body>\n');   res.end('</html>');  })
-    server.listen(port);
+var port = process.env.port || 1337;  var server = http.createServer(function (req, res) {   res.writeHead(200, { 'Content-Type': 'text/html' });   res.write('<!DOCTYPE html>\n');   res.write('<html>\n');
+ res.write('<head>\n<title>UUID Demo</title>\n</head>\n');
+ res.write('<body>\n');   res.write('\t<h1>UUID Generation</h1>\n');
+ res.write('\t<p>' + uuid.v4() + '</p>\n');
+ res.write('</body>\n');   res.end('</html>');  })
+server.listen(port);
+```
 
 Run the program in node and in the browser you will see something
 like this:
@@ -332,7 +332,7 @@ proceed:
 - ChoRunning Python on Azureose Help | Install New Software
 - Press the Add button
 - Enter this address:
-    **http://chromedevtools.googlecode.com/svn/update/dev/**
+    **[http://chromedevtools.googlecode.com/svn/update/dev/](http://chromedevtools.googlecode.com/svn/update/dev/)**
 - Choose to install the **Google Chrome Developer Tools**
 - Chrome will restart
 - Go to the command prompt and run your program in Node with the
@@ -374,18 +374,18 @@ proceed:
 |:--:|
 | _Figure D01: Starting node in debug mode_ |
 
-![Setting up the debug Run Configuration](images/Node02.png)
+| ![Setting up the debug Run Configuration](images/Node02.png)_ |
+|:--:|
+| _Figure D02: Setting up the debug run configuration_ |
 
-**Figure D02: Setting up the debug run configuration**
-
-![Running your script in the browser](images/Node03.png)
-
-**Figure D03: Running the program in a browser**
+| ![Running your script in the browser](images/Node03.png)_ |
+|:--:|
+| _Figure D03: Running the program in a browser_ |
 
 [![Setting the breakpoint in your
 source](images/Node04Small.png)](images/Node04.png)
-
-**Figure D04: Setting a breakpoint. Click to expand**
+|:--:|
+| _Figure D04: Setting a breakpoint. Click to expand_ |
 
 If you are not able to set the breakpoint by double clicking or
 right clicking in the gutter on the far left of the IDE, then you
@@ -428,7 +428,7 @@ code.](images/Node05Small.png)](images/Node05.png)
 **Figure D05: Hitting a breakpoint in your server side code. Click
 to expand**
 
-![Error you get if you don't have node running in debug
+| ![Error you get if you don't have node running in debug_ |
 mode.](images/Node06.png)
 
 **Figure D06: Error you get if you don't have node running in debug
@@ -476,8 +476,7 @@ your instance of Node. This like the way Node starts, and then seems
 to "hang" when you run it from the command line. When you are done,
 you can Alt-Tab to this window and press Ctrl-C to close it.
 
-PHP {#pHP}
----
+## PHP {#pHP}
 
 - SDK Download:
     [http://phpazure.codeplex.com/](http://phpazure.codeplex.com/)
@@ -488,8 +487,7 @@ PHP {#pHP}
 - SQL Azure from PHP:
     [http://msdn.microsoft.com/en-us/library/windowsazure/ff394110.aspx](http://msdn.microsoft.com/en-us/library/windowsazure/ff394110.aspx)
 
-Python
-------
+## Python
 
 - Install:
     [https://github.com/smarx/pythonrole](https://github.com/smarx/pythonrole)
@@ -591,9 +589,10 @@ When you are done exploring the program, you can press **CTRL-C** at
 the command prompt to close the Web Server. To exit the virtual
 environment, type **deactivate** at the command prompt.
 ****
+
 ## Running Python on Azure
 
-**NOTICE**: *As Microsoft rolls out there new tools for Azure, it is
+**NOTICE**: _As Microsoft rolls out there new tools for Azure, it is
 becoming clear that we will have an alternative to the Azure
 Emulator and the Azure Cloud Services. Instead of using Cloud
 Services, which is a **Platform as a Service** model, we can use the
@@ -610,10 +609,10 @@ you can run your programs on whatever port you want, including port
 80. Because you can run your programs directly in the Azure virtual
 machine, this means that you are nearly done writing code if you
 want to use this option rather than Azure Cloud service. Please
-note: to use Python on Azure you should use****Rocket****rather
-than****Werkzeug****; read the next view paragraphs to see the
+note: to use Python on Azure you should use **Rocket** rather
+than **Werkzeug**; read the next view paragraphs to see the
 simple technique for transforming your Werkzueg code into a Rocket
-code.*
+code._
 
 So now you have the program, such as it is, running locally. The
 next step is to try it in the Azure Cloud Services emulator. To
@@ -624,7 +623,7 @@ new location. Navigate to the WorkerRole\\app directory in the
 Python Azure tools and paste in the contents of AdditionSqlist
 directory, but without the virtual environment folder:
 
-![The app directory just before running on the Azure
+| ![The app directory just before running on the Azure_ |
 emulator](images/AzurePython10.png)
 
 **Figure P01: The app directory just before running on the Azure
@@ -665,7 +664,8 @@ in a list.**
 [![Figure P04: Setting up the endpoints in the Azure
 cloud](images/Azure14Small.png)](images/Azure14.png)
 
-**Figure P03: Setting up the endpoints in the Azure cloud**
+|:--:|
+| _Figure P03: Setting up the endpoints in the Azure cloud_ |
 
 You can use the Remote Desktop Connection tool that ships with
 Windows to connect and configure your server. You will probably see
@@ -686,7 +686,7 @@ can probably sign on as:\
 \
 server01\\Administrator
 
-![Connect to the Azure cloud with Remote Desktop
+| ![Connect to the Azure cloud with Remote Desktop_ |
 Connection](images/Azure16.png)
 
 **Figure P04: Connect to the Azure cloud with Remote Desktop
@@ -721,7 +721,7 @@ can see that I have web apps running at port 80, 3000 and 5000. The
 browser, seen in the background, displays the program that is
 running at Port 80 in the Rocket web server.
 
-![Looking at the Azure apps running in the browser on my home
+| ![Looking at the Azure apps running in the browser on my home_ |
 machine](images/Azure12Small.png)
 
 **Figure P05: Looking at the Azure apps running in the browser on my
@@ -747,8 +747,8 @@ to configure the server to let the ports passed the firewall.
 To deploy this code to an Azure virtual machine, do the following:
 
 - [https://www.windowsazure.com/en-us/manage/windows/](https://www.windowsazure.com/en-us/manage/windows/)
-- (*If you are in the old console view, look for the link at the
-    bottom that references the preview. Click it.*)
+- (_If you are in the old console view, look for the link at the
+    bottom that references the preview. Click it._)
 - Select New | Virtual machine (You may have to sign up for the
     beta. You will have an option to choose Server 2012. Why not go
     for it?)
@@ -778,9 +778,10 @@ calls runserver.py rather than app.py.
 
 Here is the file you need to edit:
 
-![Finding the right copy of run.cmd](images/AzurePython11.png)
+| ![Finding the right copy of run.cmd](images/AzurePython11.png)_ |
 
-**Figure P02: Finding the right copy of run.cmd**
+|:--:|
+| _Figure P02: Finding the right copy of run.cmd_ |
 
 And here is the change you make to the last line of the file:
 
@@ -832,14 +833,12 @@ note that on Azure you will be able to read from your database, but
 inserts will fail, presumably because Azure is a readonly
 environment. We will address that issue later.
 
-Express and Jade {#expressAndJade}
-----------------
+## Express and Jade {#expressAndJade}
 
 jade --out tmp/ --path views --pretty --obj '{title: "Elvenware" }'
 {views/index,views/layout}.jade
 
-Storage and SQL Azure {#storageAndSQLAzure}
----------------------
+## Storage and SQL Azure {#storageAndSQLAzure}
 
 - Storage:
     [d](https://www.windowsazure.com/en-us/home/features/storage/)
@@ -848,8 +847,8 @@ Storage and SQL Azure {#storageAndSQLAzure}
 - SQL Azure from Linux:
     [http://www.easysoft.com/products/data\_access/odbc-sql-azure-driver/linux-unix.html](http://www.easysoft.com/products/data_access/odbc-sql-azure-driver/linux-unix.html)
 
-Additional Notes on Node
-------------------------
+## Additional Notes on Node
+
 Learn about NodeJS:
 
     https://www.windowsazure.com/en-us/develop/nodejs/
@@ -869,8 +868,7 @@ This usually means that you don't have a default file set for your application. 
 
     http://localhost:81/server.js
 
-403 - Forbidden: Access is denied.
-----------------------------------
+## 403 - Forbidden: Access is denied
 
 \<defaultDocument\>\
 \<files\>\
@@ -878,8 +876,7 @@ This usually means that you don't have a default file set for your application. 
 \</files\>\
  \</defaultDocument\>
 
- 
-
+````html
     <?xml version="1.0" encoding="utf-8"?>
     <!--
       For more information on how to configure your ASP.NET application, please visit
@@ -913,6 +910,7 @@ This usually means that you don't have a default file set for your application. 
         </rewrite>
       </system.webServer>
     </configuration>
+```
 
 ## Links
 
