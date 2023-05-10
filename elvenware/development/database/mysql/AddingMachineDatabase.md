@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-10 04:39:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql/AddingMachineDatabase.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql
+fileName: AddingMachineDatabase.md
+relativePath: /database/mysql/AddingMachineDatabase.md
+title: AddingMachineDatabase
+directoryName: mysql
+category : css-guide
+---
+
 ﻿<script src="/charlie/development/web/Scripts/MyJQueryTests.js"></script>
 
 ## Overview

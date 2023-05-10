@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-10 04:39:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql/linux-user-password.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql
+fileName: linux-user-password.md
+relativePath: /database/mysql/linux-user-password.md
+title: linux-user-password
+directoryName: mysql
+category : css-guide
+---
+
 ﻿## Overview
 
 Some tips on using passwords with MySQL on Linux and Windows.

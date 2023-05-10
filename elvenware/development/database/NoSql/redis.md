@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-10 04:39:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql/redis.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql
+fileName: redis.md
+relativePath: /database/NoSql/redis.md
+title: redis
+directoryName: NoSql
+category : css-guide
+---
+
 ## Overview
 
 Learn about Redis.

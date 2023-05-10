@@ -10,6 +10,8 @@ directoryName: database
 category : database-guide
 ---
 
+<!-- markdownlint-disable MD046 MD025 -->
+
 # Overview
 
 Listing of NATO alphabet.

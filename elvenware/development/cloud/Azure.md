@@ -10,9 +10,9 @@ directoryName: cloud
 category : cloud-guide
 ---
 
-# Azure on Elvenware V
+<!-- markdownlint-disable MD046 MD025 -->
 
-<!-- markdownlint-disable MD046 -->
+# Azure on Elvenware V
 
 This page covers Windows Azure and related subjects.
 

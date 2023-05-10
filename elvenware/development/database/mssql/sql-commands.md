@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-10 04:39:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mssql/sql-commands.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/mssql
+fileName: sql-commands.md
+relativePath: /database/mssql/sql-commands.md
+title: sql-commands
+directoryName: mssql
+category : css-guide
+---
+
 Database
 ========
 

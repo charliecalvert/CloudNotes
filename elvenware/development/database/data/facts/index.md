@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-10 04:39:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/data/facts/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/data/facts
+fileName: index.md
+relativePath: /database/data/facts/index.md
+title: index
+directoryName: facts
+category : css-guide
+---
+
 Facts
 =====
 

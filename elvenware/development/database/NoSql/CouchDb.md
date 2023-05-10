@@ -1,3 +1,15 @@
+---
+layout: post
+date: 2023-05-10 04:39:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql/CouchDb.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql
+fileName: CouchDb.md
+relativePath: /database/NoSql/CouchDb.md
+title: CouchDb
+directoryName: NoSql
+category : css-guide
+---
+
 CouchDb
 =======
 
