@@ -51,12 +51,12 @@ will give you the
 - IIS ASP.NET, .NET, ISAP, HTTP, MVC3
 - Visual Studio Tools
 
-| ![Azure SDK .NE Install](images/Azure01.png)_ |
+| ![Azure SDK .NE Install](/assets/images/Azure01.png)_ |
 |:--:|
 | _Figure 01: Installing the Windows Azure SDK for .NET with the Web Platform Installer_ |
 
 [![The success screen for the Azure .net
-Install](images/Azure02Small.png)](images/Azure02.png)
+Install](/assets/images/Azure02Small.png)](/assets/images/Azure02.png)
 |:--:|
 | _Figure 02: The Successful Install of Azure for .NET and VS_ |
 
@@ -71,13 +71,13 @@ Visual Studio and the Windows Azure SDK for NodeJS. These installs
 include IIS Node and the Node Package Manager.
 
 [![Python tools for Visual Studio and Node JS
-Support](images/Azure03Small.png)](images/Azure03.png)
+Support](/assets/images/Azure03Small.png)](/assets/images/Azure03.png)
 
 **Figure 03: Python tools for Visual Studio and Windows Azure SDK for
 Node JS Support**
 
 [![Python Tools for VS and NodeJS for Azure Success
-Screen](images/Azure04Small.png)](images/Azure04.png)
+Screen](/assets/images/Azure04Small.png)](/assets/images/Azure04.png)
 
 |:--:|
 | _Figure 04: Python Tools for VS and NodeJS for Azure Success Screen_ |
@@ -99,7 +99,7 @@ discourage you from installing SP1, which is, of course, an essential
 and very valuable tool.
 
 [![Visual Studio SP1
-Effluvia](images/Azure05Small.png)](images/Azure05.png)
+Effluvia](/assets/images/Azure05Small.png)](/assets/images/Azure05.png)
 
 |:--:|
 | _Figure 5: Visual Studio SP1 Effluvia._ |
@@ -113,7 +113,7 @@ You will also need to install the Windows Azure SDK for NodeJS:
 Here is what the Platform Installer looks like if you have successfully
 installed this product.
 
-| ![Windows Azure SDK for NodeJS](images/Azure06.png)_ |
+| ![Windows Azure SDK for NodeJS](/assets/images/Azure06.png)_ |
 |:--:|
 | _Figure 06: Windows Azure SDK for NodeJS_ |
 
@@ -126,7 +126,7 @@ and all you will need to download is a zip file:
 
 There are set of five directories in the zip file:
 
-![Azure install for PHP](images/Azure07.png)
+![Azure install for PHP](/assets/images/Azure07.png)
 
 You should copy this 22 MB of files to some well known location on your
 hard drive. As always, make sure there are no spaces in the path to your
@@ -156,7 +156,7 @@ Otherwise, you can just go here, and download the zip file:
 
 [https://github.com/smarx/pythonrole](https://github.com/smarx/pythonrole)
 
-![Azure Install for Python from GitHub using GitGui](images/Azure08.png)
+![Azure Install for Python from GitHub using GitGui](/assets/images/Azure08.png)
 
 For Python, you will also want to be sure you have installed
 easy-install, pip, flask, virtualenv and rocket. You should also install
@@ -282,7 +282,7 @@ The next step is to publish the service to Azure itself.
 
 Save the settings to your hard drive:
 
-![Azure Note Credentials](images/AzureNode.png)
+![Azure Note Credentials](/assets/images/AzureNode.png)
 
 Now import the settings. Below you can see a call to
 Import-AzurePublishSettings where the parameter is the name of the
@@ -624,7 +624,7 @@ Python Azure tools and paste in the contents of AdditionSqlist
 directory, but without the virtual environment folder:
 
 | ![The app directory just before running on the Azure_ |
-emulator](images/AzurePython10.png)
+emulator](/assets/images/AzurePython10.png)
 
 **Figure P01: The app directory just before running on the Azure
 emulator. Notice that I have not copied the venv folder.**
@@ -656,13 +656,13 @@ Cloud Service, databases and Storage Accounts that I have set up in
 the cloud.
 
 [![The new interface for the Azure
-cloud](images/Azure15Small.png)](images/Azure15.png)
+cloud](/assets/images/Azure15Small.png)](/assets/images/Azure15.png)
 
 **Figure P02: The services you have configured in the cloud appear
 in a list.**
 
 [![Figure P04: Setting up the endpoints in the Azure
-cloud](images/Azure14Small.png)](images/Azure14.png)
+cloud](/assets/images/Azure14Small.png)](/assets/images/Azure14.png)
 
 |:--:|
 | _Figure P03: Setting up the endpoints in the Azure cloud_ |
@@ -687,7 +687,7 @@ can probably sign on as:\
 server01\\Administrator
 
 | ![Connect to the Azure cloud with Remote Desktop_ |
-Connection](images/Azure16.png)
+Connection](/assets/images/Azure16.png)
 
 **Figure P04: Connect to the Azure cloud with Remote Desktop
 Connection. Note the port number you get from the endpoint screen,
@@ -709,7 +709,7 @@ server after installing node from this address:\
 Below you can see several program set up to run on an Azure server.
 
 [![Running three web servers on
-Azure](images/Azure11Small.png)](images/Azure11.png)
+Azure](/assets/images/Azure11Small.png)](/assets/images/Azure11.png)
 
 **Figure P05: Running three web servers running three web apps on a
 beta of Server 2012 in the Azure Cloud. Click to enlarge.**
@@ -722,7 +722,7 @@ browser, seen in the background, displays the program that is
 running at Port 80 in the Rocket web server.
 
 | ![Looking at the Azure apps running in the browser on my home_ |
-machine](images/Azure12Small.png)
+machine](/assets/images/Azure12Small.png)
 
 **Figure P05: Looking at the Azure apps running in the browser on my
 home machine**
@@ -734,7 +734,7 @@ in the Amazon Web Server cloud.
 
 [![Please, may my application come through the firewall. I've
 already set up the
-endpoint!](images/Azure13Small.png)](images/Azure13.png)
+endpoint!](/assets/images/Azure13Small.png)](/assets/images/Azure13.png)
 
 **Figure P05: Please, may my application come through the firewall.
 I've already set up the endpoint!**
@@ -778,7 +778,7 @@ calls runserver.py rather than app.py.
 
 Here is the file you need to edit:
 
-| ![Finding the right copy of run.cmd](images/AzurePython11.png)_ |
+| ![Finding the right copy of run.cmd](/assets/images/AzurePython11.png)_ |
 
 |:--:|
 | _Figure P02: Finding the right copy of run.cmd_ |
