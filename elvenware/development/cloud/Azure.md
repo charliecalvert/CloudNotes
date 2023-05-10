@@ -370,20 +370,20 @@ proceed:
     the project and restart Eclipse. Yea, I know, it is pretty
     funky: but it does work if you baby it along some.
 
-| ![Starting node in debug mode](images/Node01.png) |
+| ![Starting node in debug mode](/assets/images/Node01.png) |
 |:--:|
 | _Figure D01: Starting node in debug mode_ |
 
-| ![Setting up the debug Run Configuration](images/Node02.png)_ |
+| ![Setting up the debug Run Configuration](/assets/images/Node02.png)_ |
 |:--:|
 | _Figure D02: Setting up the debug run configuration_ |
 
-| ![Running your script in the browser](images/Node03.png)_ |
+| ![Running your script in the browser](/assets/images/Node03.png)_ |
 |:--:|
 | _Figure D03: Running the program in a browser_ |
 
 [![Setting the breakpoint in your
-source](images/Node04Small.png)](images/Node04.png)
+source](/assets/images/Node04Small.png)](/assets/images/Node04.png)
 |:--:|
 | _Figure D04: Setting a breakpoint. Click to expand_ |
 
@@ -423,13 +423,13 @@ breakpoint:
      }
 
 [![Hitting a breakpoint in your server side
-code.](images/Node05Small.png)](images/Node05.png)
+code.](/assets/images/Node05Small.png)](/assets/images/Node05.png)
 
 **Figure D05: Hitting a breakpoint in your server side code. Click
 to expand**
 
 | ![Error you get if you don't have node running in debug_ |
-mode.](images/Node06.png)
+mode.](/assets/images/Node06.png)
 
 **Figure D06: Error you get if you don't have node running in debug
 mode. (See Figure D01.)**
