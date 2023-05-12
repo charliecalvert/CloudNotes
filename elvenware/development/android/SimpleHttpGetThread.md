@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/SimpleHttpGetThread.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: SimpleHttpGetThread.md
+relativePath: /android/SimpleHttpGetThread.md
+title: SimpleHttpGetThread
+directoryName: android
+category : css-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

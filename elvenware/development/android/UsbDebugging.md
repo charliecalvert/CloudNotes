@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/UsbDebugging.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: UsbDebugging.md
+relativePath: /android/UsbDebugging.md
+title: UsbDebugging
+directoryName: android
+category : css-guide
+---
+
 Debugging
 ---------
 

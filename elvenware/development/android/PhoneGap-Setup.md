@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap-Setup.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: PhoneGap-Setup.md
+relativePath: /android/PhoneGap-Setup.md
+title: PhoneGap-Setup
+directoryName: android
+category : css-guide
+---
+
 Phone Gap Setup {#setupPhoneGap}
 ---------------
 

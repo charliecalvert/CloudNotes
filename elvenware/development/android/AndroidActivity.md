@@ -1,46 +1,15 @@
-Toggle Menu
-
-Charlie Calvert on Elvenware
-============================
-
-Writing Code and Prose on Computers
------------------------------------
-
-Menu
-----
-
-Core Code
----------
-
--   [Strongly Typed](../index.html)
--   [Web & Scripts](../web/index.html)
--   [Cloud](../cloud/index.shtml)
-
-OS and Tools
-------------
-
--   [OS](../../os/index.html)
--   [Database](../database/index.html)
--   [My Writing](../../books/index.html)
-
-Art
 ---
-
--   [Poems & Photos](../../Art/index.html)
--   [Book Reviews](../../books/reading/index.html)
--   [Spiritual](../../spirit/index.html)
-
-Links
------
-
--   [My Links](../../links.html)
--   [Falafel](http://www.falafel.com/)
--   [Sourceforge](http://sourceforge.net/projects/elvenware/)
-
-![Elvenware](../../images/elvenwarelogo.png)
-
-Activities
-----------
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/AndroidActivity.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: AndroidActivity.md
+relativePath: /android/AndroidActivity.md
+title: AndroidActivity
+directoryName: android
+category : css-guide
+---
+## Activities
 
 [Activities](http://developer.android.com/reference/android/app/Activity.html#startActivity%28android.content.Intent%29)
 usually run in a Window that takes up an entire screen. You can have
@@ -57,8 +26,7 @@ in more depth below.
 
 Each Activity extends a class called **ApplicationContext**().
 
-Switching Activities
---------------------
+## Switching Activities
 
 Because the screen on a phone or tablet is relatively small, you
 frequently want to switch screens, that is, you want to switch from one
@@ -81,7 +49,7 @@ called **ViewData**, **InsertData** and **EditData**.
 You need to be sure to tell Android about these classes by referencing
 them in your Manifest:
 
-~~~~ {.code}
+``` {.code}
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ai.android.book.provider"
@@ -105,13 +73,13 @@ them in your Manifest:
     </application>
     <uses-sdk android:minSdkVersion="3" />
 </manifest>
-~~~~
+```
 
 Each class that you create will be like a normal Activity, or a normal
 ListActivity. You load the appropriate view just as you normally would,
 via call to **setContentView**:
 
-~~~~ {.code}
+``` {.code}
 public class InsertData extends Activity
 {
 
@@ -127,7 +95,7 @@ public class InsertData extends Activity
         startActivityForResult(intent, 0);
     }
 }
-~~~~
+```
 
 Notice that in this code shown here I have included a simple event
 handler, of the type that might be used to respond to a button click.
@@ -139,25 +107,24 @@ case, the Activity is the **EditData**class. After the call to
 Recall that inside the appropriate layout XML file the declaration for
 the button designed to call this method might look something like this:
 
-~~~~ {.code}
+``` {.code}
 <Button
   android:id="@+id/button2"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
   android:onClick="onSwitch"
  android:text="@string/buttonInsertData" />
-~~~~
+```
 
-Links
------
+## Links
 
--   Download [sample
-    code](../../downloads/Android/SwitchLayoutIntents.zip)
--   Download [switch with geo and web
-    launch](../../downloads/Android/InvokeIntents.zip)
--   Download sample project called
-    [SwitchVideo01](../../downloads/Android/SwitchVideo01.zip) from
-    the[video on switching](http://youtu.be/r31hTfxUmIs) activities.
+- Download [sample
+  code](../../downloads/AndroidSwitchLayoutIntents.zip)
+- Download [switch with geo and web
+  launch](../../downloads/AndroidInvokeIntents.zip)
+- Download sample project called
+  [SwitchVideo01](../../downloadsAndroid/SwitchVideo01.zip) from
+  the[video on switching](http://youtube/r31hTfxUmIs) activities.
 
 Copyright © [Charlie Calvert](../../index.html) | [Elvenware
 Home](../../index.html) | [Writing Code](../index.html) |

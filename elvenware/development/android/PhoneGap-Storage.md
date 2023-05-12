@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap-Storage.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: PhoneGap-Storage.md
+relativePath: /android/PhoneGap-Storage.md
+title: PhoneGap-Storage
+directoryName: android
+category : css-guide
+---
+
 ## Cordova Storage
 
 There are several types of storage

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/UnitTesting.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: UnitTesting.md
+relativePath: /android/UnitTesting.md
+title: UnitTesting
+directoryName: android
+category : css-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

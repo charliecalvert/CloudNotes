@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap-End.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: PhoneGap-End.md
+relativePath: /android/PhoneGap-End.md
+title: PhoneGap-End
+directoryName: android
+category : css-guide
+---
+
 
 Create a PhoneGap/Cordova Project {#createPhoneGap}
 ---------------------------------

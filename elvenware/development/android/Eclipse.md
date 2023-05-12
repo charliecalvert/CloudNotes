@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/Eclipse.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: Eclipse.md
+relativePath: /android/Eclipse.md
+title: Eclipse
+directoryName: android
+category : css-guide
+---
+
 Eclipse Aptana Overview
 =======================
 

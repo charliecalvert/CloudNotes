@@ -1,46 +1,16 @@
-Toggle Menu
-
-Charlie Calvert on Elvenware
-============================
-
-Writing Code and Prose on Computers
------------------------------------
-
-Menu
-----
-
-Core Code
----------
-
--   [Strongly Typed](../../index.html)
--   [Web & Scripts](../../web/index.html)
--   [Cloud](../../cloud/index.shtml)
-
-OS and Tools
-------------
-
--   [OS](../../../os/index.html)
--   [Database](../../database/index.html)
--   [My Writing](../../../books/index.html)
-
-Art
+---
+layout: page
+date: 2023-05-11 04:25:45 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos
+fileName: index.md
+relativePath: /csharp/videos/index.md
+title: index
+directoryName: videos
+category : css-guide
 ---
 
--   [Poems & Photos](../../../Art/index.html)
--   [Book Reviews](../../../books/reading/index.html)
--   [Spiritual](../../../spirit/index.html)
-
-Links
------
-
--   [My Links](../../../links.html)
--   [Falafel](http://www.falafel.com/)
--   [Sourceforge](http://sourceforge.net/projects/elvenware/)
-
-![Elvenware](../../../images/elvenwarelogo.png)
-
-Elvenware CSharp Videos
-=======================
+## Elvenware CSharp Videos
 
 There are two versions of the same videos. One page will load quickly
 because it contains only links to the videos, which are on YouTube. The

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: index.md
+relativePath: /android/index.md
+title: index
+directoryName: android
+category : css-guide
+---
+
 Android Development
 ===================
 

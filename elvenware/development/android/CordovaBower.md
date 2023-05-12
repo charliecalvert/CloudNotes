@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/CordovaBower.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: CordovaBower.md
+relativePath: /android/CordovaBower.md
+title: CordovaBower
+directoryName: android
+category : css-guide
+---
+
 Very nice. The one thing that would have been nice would have been to set up bower.json in your Cordova folder so that it:
 
 A) Existed

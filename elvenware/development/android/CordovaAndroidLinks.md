@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/CordovaAndroidLinks.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: CordovaAndroidLinks.md
+relativePath: /android/CordovaAndroidLinks.md
+title: CordovaAndroidLinks
+directoryName: android
+category : css-guide
+---
+
 ## Android Links
 
 Here are various links, some of them quite old, for material on Android development.

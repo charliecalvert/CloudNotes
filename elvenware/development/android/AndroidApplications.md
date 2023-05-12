@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/AndroidApplications.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: AndroidApplications.md
+relativePath: /android/AndroidApplications.md
+title: AndroidApplications
+directoryName: android
+category : css-guide
+---
+
 Android Applications
 --------------------
 

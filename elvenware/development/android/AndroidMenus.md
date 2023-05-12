@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/AndroidMenus.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: AndroidMenus.md
+relativePath: /android/AndroidMenus.md
+title: AndroidMenus
+directoryName: android
+category : css-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

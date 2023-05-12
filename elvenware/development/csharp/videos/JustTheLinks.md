@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 04:25:45 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos/JustTheLinks.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos
+fileName: JustTheLinks.md
+relativePath: /csharp/videos/JustTheLinks.md
+title: JustTheLinks
+directoryName: videos
+category : css-guide
+---
+
 Charlie's Videos: Just the Links!
 =================================
 

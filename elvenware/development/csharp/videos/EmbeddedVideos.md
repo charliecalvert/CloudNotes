@@ -1,43 +1,14 @@
-Toggle Menu
-
-Charlie Calvert on Elvenware
-============================
-
-Writing Code and Prose on Computers
------------------------------------
-
-Menu
-----
-
-Core Code
----------
-
--   [Strongly Typed](../../index.html)
--   [Web & Scripts](../../web/index.html)
--   [Cloud](../../cloud/index.shtml)
-
-OS and Tools
-------------
-
--   [OS](../../../os/index.html)
--   [Database](../../database/index.html)
--   [My Writing](../../../books/index.html)
-
-Art
 ---
-
--   [Poems & Photos](../../../Art/index.html)
--   [Book Reviews](../../../books/reading/index.html)
--   [Spiritual](../../../spirit/index.html)
-
-Links
------
-
--   [My Links](../../../links.html)
--   [Falafel](http://www.falafel.com/)
--   [Sourceforge](http://sourceforge.net/projects/elvenware/)
-
-![Elvenware](../../../images/elvenwarelogo.png)
+layout: page
+date: 2023-05-11 04:25:45 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos/EmbeddedVideos.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos
+fileName: EmbeddedVideos.md
+relativePath: /csharp/videos/EmbeddedVideos.md
+title: EmbeddedVideos
+directoryName: videos
+category : css-guide
+---
 
 Elvenware Videos
 ----------------

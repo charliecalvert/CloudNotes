@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/CordovaPlugins.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: CordovaPlugins.md
+relativePath: /android/CordovaPlugins.md
+title: CordovaPlugins
+directoryName: android
+category : css-guide
+---
+
 ## Overview
 
 Many of the scripts discussed in this document are found here:

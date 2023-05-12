@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/PhoneGap.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: PhoneGap.md
+relativePath: /android/PhoneGap.md
+title: PhoneGap
+directoryName: android
+category : css-guide
+---
+
 # Cordova/PhoneGap
 
 This document is under constructions as Cordova/PhoneGap have changed quite a bit.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-11 08:25:53 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android/Androidx86.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/android
+fileName: Androidx86.md
+relativePath: /android/Androidx86.md
+title: Androidx86
+directoryName: android
+category : css-guide
+---
+
 ![Elvenware](../../images/elvenwarelogo.png)
 
 Android X86
