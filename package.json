@@ -32,7 +32,7 @@
         "markdown-toc": "^1.2.0",
         "ssh2": "^1.12.0",
         "url": "^0.11.0",
-        "walk-directories": "^4.1.1"
+        "walk-directories": "^4.1.2"
     },
     "devDependencies": {
         "jest": "^29.5.0"

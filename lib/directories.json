@@ -1,40 +1,512 @@
-[
-    "/home/ubuntu/Git/CloudNotes/Comments",
-    "/home/ubuntu/Git/CloudNotes/Courseware-2017-08",
-    "/home/ubuntu/Git/CloudNotes/Prog280",
-    "/home/ubuntu/Git/CloudNotes/Tips",
-    "/home/ubuntu/Git/CloudNotes/Isit320",
-    "/home/ubuntu/Git/CloudNotes/lib",
-    "/home/ubuntu/Git/CloudNotes/Prog109",
-    "/home/ubuntu/Git/CloudNotes/RootHome",
-    "/home/ubuntu/Git/CloudNotes/Assignments",
-    "/home/ubuntu/Git/CloudNotes/Prog270",
-    "/home/ubuntu/Git/CloudNotes/Prog272",
-    "/home/ubuntu/Git/CloudNotes/.vscode",
-    "/home/ubuntu/Git/CloudNotes/Prog282",
-    "/home/ubuntu/Git/CloudNotes/Esig",
-    "/home/ubuntu/Git/CloudNotes/__tests__",
-    "/home/ubuntu/Git/CloudNotes/elvenware",
-    "/home/ubuntu/Git/CloudNotes/Prog219",
-    "/home/ubuntu/Git/CloudNotes/Library",
-    "/home/ubuntu/Git/CloudNotes/Isit322",
-    "/home/ubuntu/Git/CloudNotes/lib/css",
-    "/home/ubuntu/Git/CloudNotes/Assignments/CouchDb",
-    "/home/ubuntu/Git/CloudNotes/Images",
-    "/home/ubuntu/Git/CloudNotes/Assignments/Firebase",
-    "/home/ubuntu/Git/CloudNotes/Assignments/Express",
-    "/home/ubuntu/Git/CloudNotes/elvenware/os",
-    "/home/ubuntu/Git/CloudNotes/elvenware/books",
-    "/home/ubuntu/Git/CloudNotes/elvenware/Art",
-    "/home/ubuntu/Git/CloudNotes/elvenware/tools",
-    "/home/ubuntu/Git/CloudNotes/elvenware/development",
-    "/home/ubuntu/Git/CloudNotes/Library/lib",
-    "/home/ubuntu/Git/CloudNotes/Library/css",
-    "/home/ubuntu/Git/CloudNotes/Library/plugin",
-    "/home/ubuntu/Git/CloudNotes/Library/js",
-    "/home/ubuntu/Git/CloudNotes/Isit322/back",
-    "/home/ubuntu/Git/CloudNotes/Assignments/Windows",
-    "/home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy",
-    "/home/ubuntu/Git/CloudNotes/Assignments/Heroku",
-    "/home/ubuntu/Git/CloudNotes/Assignments/SmokeTests"
-]
+{
+    "2003_11_craterlake": {
+        "category": "2003_11_craterlake-guide",
+        "type": "2003_11_CraterLake",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/2003_11_CraterLake"
+    },
+    "2011_06_kawaii": {
+        "category": "2011_06_kawaii-guide",
+        "type": "2011_06_Kawaii",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/2011_06_Kawaii"
+    },
+    "android": {
+        "category": "android-guide",
+        "type": "android",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/android"
+    },
+    "art": {
+        "category": "art-guide",
+        "type": "Art",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art"
+    },
+    "assignments": {
+        "category": "assignments-guide",
+        "type": "Assignments",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments"
+    },
+    "aws": {
+        "category": "aws-guide",
+        "type": "Aws",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Aws"
+    },
+    "back": {
+        "category": "back-guide",
+        "type": "back",
+        "path": "/home/ubuntu/Git/CloudNotes/Isit322/back"
+    },
+    "books": {
+        "category": "books-guide",
+        "type": "books",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/books"
+    },
+    "browser": {
+        "category": "browser-guide",
+        "type": "Browser",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Browser"
+    },
+    "chapter-08_files": {
+        "category": "chapter-08_files-guide",
+        "type": "chapter-08_files",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/books/delphi-four-unleashed/chapter-08_files"
+    },
+    "cloud": {
+        "category": "cloud-guide",
+        "type": "cloud",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/cloud"
+    },
+    "cloudnine": {
+        "category": "cloudnine-guide",
+        "type": "CloudNine",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/CloudNine"
+    },
+    "codeacademy": {
+        "category": "codeacademy-guide",
+        "type": "CodeAcademy",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy"
+    },
+    "comments": {
+        "category": "comments-guide",
+        "type": "Comments",
+        "path": "/home/ubuntu/Git/CloudNotes/Comments"
+    },
+    "computers": {
+        "category": "computers-guide",
+        "type": "Computers",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/os/Computers"
+    },
+    "costa_rica": {
+        "category": "costa_rica-guide",
+        "type": "costa_rica",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/costa_rica"
+    },
+    "couchdb": {
+        "category": "couchdb-guide",
+        "type": "CouchDb",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/CouchDb"
+    },
+    "courseware-2017-08": {
+        "category": "courseware-2017-08-guide",
+        "type": "Courseware-2017-08",
+        "path": "/home/ubuntu/Git/CloudNotes/Courseware-2017-08"
+    },
+    "csharp": {
+        "category": "csharp-guide",
+        "type": "csharp",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/csharp"
+    },
+    "css": {
+        "category": "css-guide",
+        "type": "css",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/css"
+    },
+    "cssguide": {
+        "category": "cssguide-guide",
+        "type": "CssGuide",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide"
+    },
+    "dad": {
+        "category": "dad-guide",
+        "type": "dad",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/dad"
+    },
+    "data": {
+        "category": "data-guide",
+        "type": "data",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/database/data"
+    },
+    "database": {
+        "category": "database-guide",
+        "type": "database",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/database"
+    },
+    "delphi-four-unleashed": {
+        "category": "delphi-four-unleashed-guide",
+        "type": "delphi-four-unleashed",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/books/delphi-four-unleashed"
+    },
+    "design": {
+        "category": "design-guide",
+        "type": "design",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/design"
+    },
+    "development": {
+        "category": "development-guide",
+        "type": "development",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development"
+    },
+    "docker": {
+        "category": "docker-guide",
+        "type": "Docker",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Docker"
+    },
+    "ecmascript": {
+        "category": "ecmascript-guide",
+        "type": "EcmaScript",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/EcmaScript"
+    },
+    "elvenware": {
+        "category": "elvenware-guide",
+        "type": "elvenware",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware"
+    },
+    "esig": {
+        "category": "esig-guide",
+        "type": "Esig",
+        "path": "/home/ubuntu/Git/CloudNotes/Esig"
+    },
+    "express": {
+        "category": "express-guide",
+        "type": "Express",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Express"
+    },
+    "facts": {
+        "category": "facts-guide",
+        "type": "facts",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/database/data/facts"
+    },
+    "family": {
+        "category": "family-guide",
+        "type": "family",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/family"
+    },
+    "firebase": {
+        "category": "firebase-guide",
+        "type": "Firebase",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Firebase"
+    },
+    "font": {
+        "category": "font-guide",
+        "type": "font",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/lib/font"
+    },
+    "git": {
+        "category": "git-guide",
+        "type": "git",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/git"
+    },
+    "heroku": {
+        "category": "heroku-guide",
+        "type": "Heroku",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Heroku"
+    },
+    "highlight": {
+        "category": "highlight-guide",
+        "type": "highlight",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/highlight"
+    },
+    "htmlguide": {
+        "category": "htmlguide-guide",
+        "type": "HtmlGuide",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide"
+    },
+    "images": {
+        "category": "images-guide",
+        "type": "Images",
+        "path": "/home/ubuntu/Git/CloudNotes/Images"
+    },
+    "isit320": {
+        "category": "isit320-guide",
+        "type": "Isit320",
+        "path": "/home/ubuntu/Git/CloudNotes/Isit320"
+    },
+    "isit322": {
+        "category": "isit322-guide",
+        "type": "Isit322",
+        "path": "/home/ubuntu/Git/CloudNotes/Isit322"
+    },
+    "java": {
+        "category": "java-guide",
+        "type": "java",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/java"
+    },
+    "javascript": {
+        "category": "javascript-guide",
+        "type": "JavaScript",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript"
+    },
+    "js": {
+        "category": "js-guide",
+        "type": "js",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/js"
+    },
+    "json": {
+        "category": "json-guide",
+        "type": "Json",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Json"
+    },
+    "leap": {
+        "category": "leap-guide",
+        "type": "leap",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/leap"
+    },
+    "library": {
+        "category": "library-guide",
+        "type": "Library",
+        "path": "/home/ubuntu/Git/CloudNotes/Library"
+    },
+    "linux": {
+        "category": "linux-guide",
+        "type": "linux",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/os/linux"
+    },
+    "linuxdays": {
+        "category": "linuxdays-guide",
+        "type": "LinuxDays",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/os/linux/LinuxDays"
+    },
+    "markdown": {
+        "category": "markdown-guide",
+        "type": "markdown",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/markdown"
+    },
+    "math": {
+        "category": "math-guide",
+        "type": "math",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/math"
+    },
+    "mediaquery": {
+        "category": "mediaquery-guide",
+        "type": "MediaQuery",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/CssGuide/MediaQuery"
+    },
+    "midtermfinal": {
+        "category": "midtermfinal-guide",
+        "type": "MidtermFinal",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal"
+    },
+    "mobile": {
+        "category": "mobile-guide",
+        "type": "Mobile",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile"
+    },
+    "mom": {
+        "category": "mom-guide",
+        "type": "mom",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/mom"
+    },
+    "mongo": {
+        "category": "mongo-guide",
+        "type": "Mongo",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Mongo"
+    },
+    "mssql": {
+        "category": "mssql-guide",
+        "type": "mssql",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/database/mssql"
+    },
+    "multiplex": {
+        "category": "multiplex-guide",
+        "type": "multiplex",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/multiplex"
+    },
+    "mysql": {
+        "category": "mysql-guide",
+        "type": "mysql",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/database/mysql"
+    },
+    "nosql": {
+        "category": "nosql-guide",
+        "type": "NoSql",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/database/NoSql"
+    },
+    "notes": {
+        "category": "notes-guide",
+        "type": "notes",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/notes"
+    },
+    "notes-server": {
+        "category": "notes-server-guide",
+        "type": "notes-server",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/notes-server"
+    },
+    "npm": {
+        "category": "npm-guide",
+        "type": "Npm",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/Npm"
+    },
+    "os": {
+        "category": "os-guide",
+        "type": "os",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/os"
+    },
+    "photos": {
+        "category": "photos-guide",
+        "type": "photos",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos"
+    },
+    "php": {
+        "category": "php-guide",
+        "type": "Php",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/Php"
+    },
+    "plugin": {
+        "category": "plugin-guide",
+        "type": "plugin",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin"
+    },
+    "poems": {
+        "category": "poems-guide",
+        "type": "poems",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/poems"
+    },
+    "postmessage": {
+        "category": "postmessage-guide",
+        "type": "postmessage",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/postmessage"
+    },
+    "print": {
+        "category": "print-guide",
+        "type": "print",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/css/print"
+    },
+    "print-pdf": {
+        "category": "print-pdf-guide",
+        "type": "print-pdf",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/print-pdf"
+    },
+    "prog109": {
+        "category": "prog109-guide",
+        "type": "Prog109",
+        "path": "/home/ubuntu/Git/CloudNotes/Prog109"
+    },
+    "prog219": {
+        "category": "prog219-guide",
+        "type": "Prog219",
+        "path": "/home/ubuntu/Git/CloudNotes/Prog219"
+    },
+    "prog270": {
+        "category": "prog270-guide",
+        "type": "Prog270",
+        "path": "/home/ubuntu/Git/CloudNotes/Prog270"
+    },
+    "prog272": {
+        "category": "prog272-guide",
+        "type": "Prog272",
+        "path": "/home/ubuntu/Git/CloudNotes/Prog272"
+    },
+    "prog280": {
+        "category": "prog280-guide",
+        "type": "Prog280",
+        "path": "/home/ubuntu/Git/CloudNotes/Prog280"
+    },
+    "prog282": {
+        "category": "prog282-guide",
+        "type": "Prog282",
+        "path": "/home/ubuntu/Git/CloudNotes/Prog282"
+    },
+    "python": {
+        "category": "python-guide",
+        "type": "Python",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/Python"
+    },
+    "pythonscripts": {
+        "category": "pythonscripts-guide",
+        "type": "pythonScripts",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/WebChords/pythonScripts"
+    },
+    "react": {
+        "category": "react-guide",
+        "type": "React",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/React"
+    },
+    "regular_expressions": {
+        "category": "regular_expressions-guide",
+        "type": "regular_expressions",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/regular_expressions"
+    },
+    "remotes": {
+        "category": "remotes-guide",
+        "type": "remotes",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/remotes"
+    },
+    "roothome": {
+        "category": "roothome-guide",
+        "type": "RootHome",
+        "path": "/home/ubuntu/Git/CloudNotes/RootHome"
+    },
+    "search": {
+        "category": "search-guide",
+        "type": "search",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/search"
+    },
+    "server": {
+        "category": "server-guide",
+        "type": "Server",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/Server"
+    },
+    "smoketests": {
+        "category": "smoketests-guide",
+        "type": "SmokeTests",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/SmokeTests"
+    },
+    "source": {
+        "category": "source-guide",
+        "type": "source",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/css/theme/source"
+    },
+    "svg": {
+        "category": "svg-guide",
+        "type": "svg",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg"
+    },
+    "svg-test": {
+        "category": "svg-test-guide",
+        "type": "svg-test",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/Art/photos/svg-test"
+    },
+    "template": {
+        "category": "template-guide",
+        "type": "template",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/css/theme/template"
+    },
+    "theme": {
+        "category": "theme-guide",
+        "type": "theme",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/css/theme"
+    },
+    "tips": {
+        "category": "tips-guide",
+        "type": "Tips",
+        "path": "/home/ubuntu/Git/CloudNotes/Tips"
+    },
+    "tools": {
+        "category": "tools-guide",
+        "type": "tools",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/tools"
+    },
+    "unittests": {
+        "category": "unittests-guide",
+        "type": "UnitTests",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests"
+    },
+    "videos": {
+        "category": "videos-guide",
+        "type": "videos",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/csharp/videos"
+    },
+    "web": {
+        "category": "web-guide",
+        "type": "web",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web"
+    },
+    "webchords": {
+        "category": "webchords-guide",
+        "type": "WebChords",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/WebChords"
+    },
+    "webcrafts": {
+        "category": "webcrafts-guide",
+        "type": "WebCrafts",
+        "path": "/home/ubuntu/Git/CloudNotes/Assignments/WebCrafts"
+    },
+    "windows": {
+        "category": "windows-guide",
+        "type": "windows",
+        "path": "/home/ubuntu/Git/CloudNotes/elvenware/os/windows"
+    },
+    "zoom-js": {
+        "category": "zoom-js-guide",
+        "type": "zoom-js",
+        "path": "/home/ubuntu/Git/CloudNotes/Library/plugin/zoom-js"
+    }
+}
