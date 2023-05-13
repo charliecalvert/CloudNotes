@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-13 01:51:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/LinkFromJQueryMobile.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile
+fileName: LinkFromJQueryMobile.md
+relativePath: /web/Mobile/LinkFromJQueryMobile.md
+title: LinkFromJQueryMobile
+directoryName: Mobile
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

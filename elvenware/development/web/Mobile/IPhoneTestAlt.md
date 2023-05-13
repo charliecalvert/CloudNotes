@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-13 01:51:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/IPhoneTestAlt.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile
+fileName: IPhoneTestAlt.md
+relativePath: /web/Mobile/IPhoneTestAlt.md
+title: IPhoneTestAlt
+directoryName: Mobile
+category : cssguide-guide
+---
+
 Menus
 
 IPhone Test

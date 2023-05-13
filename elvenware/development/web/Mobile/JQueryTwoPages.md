@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-13 01:51:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/JQueryTwoPages.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile
+fileName: JQueryTwoPages.md
+relativePath: /web/Mobile/JQueryTwoPages.md
+title: JQueryTwoPages
+directoryName: Mobile
+category : cssguide-guide
+---
+
 First Page
 ==========
 

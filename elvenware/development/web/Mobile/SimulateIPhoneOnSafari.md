@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-13 01:51:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/SimulateIPhoneOnSafari.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile
+fileName: SimulateIPhoneOnSafari.md
+relativePath: /web/Mobile/SimulateIPhoneOnSafari.md
+title: SimulateIPhoneOnSafari
+directoryName: Mobile
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

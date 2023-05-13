@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-13 01:51:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/Page02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile
+fileName: Page02.md
+relativePath: /web/Mobile/Page02.md
+title: Page02
+directoryName: Mobile
+category : cssguide-guide
+---
+
 Menus
 
 IPhone Test

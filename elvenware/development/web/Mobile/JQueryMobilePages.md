@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-13 01:51:14 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile/JQueryMobilePages.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Mobile
+fileName: JQueryMobilePages.md
+relativePath: /web/Mobile/JQueryMobilePages.md
+title: JQueryMobilePages
+directoryName: Mobile
+category : cssguide-guide
+---
+
 First Page
 ==========
 
