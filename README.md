@@ -4,6 +4,24 @@ My markdown files for the CloudNotes site.
 
 Ordered by class, with HTML in some cases, but only partial HTML.
 
+## Database & Information Systems
+
+I have a file system with about 100 directories. I need to keep track of each directory and information associated with that directory. The directory name might change over time. What is the best strategy for managing this information?
+
+Options:
+
+- store in a database
+- Place a small file called info dot json in each directory
+- store in a single file
+- store in a single file with a database index
+- store in a file system with a database index
+- store in a file system with a database index and a search engine
+- store in a file system with a database index and a search engine and a web server
+- store in a file system with a database index and a search engine and a web server and a web client
+- store in a file system with a database index and a search engine and a web server and a web client and a mobile client
+- store in a file system with a database index and a search engine and a web server and a web client and a mobile client and a desktop client
+- store in a file system with a database index and a search engine and a web server and a web client and a mobile client and a desktop client and a cloud server
+- 
 ## Walk Markdown Files
 
 In the lib directory is a file called [walk-markdown-files](lib/walk-markdown-files.mjs). It provides an example of how to walk through a Directory or recursive set of directories to see all the files present with a markdown extension, and to test if they have front matter or not.

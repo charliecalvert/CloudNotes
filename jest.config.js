@@ -1,12 +1,12 @@
 // Sync object
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
-    verbose: true,
+    verbose: true
 };
 
 module.exports = config;
 
-  // Or async function
+// Or async function
 /*   module.exports = async () => {
     return {
       verbose: true,
