@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-tag.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-tag.md
+relativePath: /git/git-tag.md
+title: git-tag
+directoryName: git
+category : cssguide-guide
+---
+
 # Git Tag
 
 To see the tags:

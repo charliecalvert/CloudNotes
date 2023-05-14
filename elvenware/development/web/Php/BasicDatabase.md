@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Php/BasicDatabase.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Php
+fileName: BasicDatabase.md
+relativePath: /web/Php/BasicDatabase.md
+title: BasicDatabase
+directoryName: Php
+category : cssguide-guide
+---
+
 <div id="container">
 
 ## PHP Database Basics

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: index.md
+relativePath: /web/Python/index.md
+title: index
+directoryName: Python
+category : cssguide-guide
+---
+
 ## Python
 
 -   [Python Install](install.html)

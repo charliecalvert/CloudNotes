@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-gui.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-gui.md
+relativePath: /git/git-gui.md
+title: git-gui
+directoryName: git
+category : cssguide-guide
+---
+
 # Git GUI Basics
 
 First line for HTTPs clone:

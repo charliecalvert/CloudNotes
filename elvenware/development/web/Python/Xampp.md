@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/Xampp.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: Xampp.md
+relativePath: /web/Python/Xampp.md
+title: Xampp
+directoryName: Python
+category : cssguide-guide
+---
+
 ![Elvenware](../../../images/elvenwarelogo.png)
 
  

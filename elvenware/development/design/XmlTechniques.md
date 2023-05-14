@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/XmlTechniques.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: XmlTechniques.md
+relativePath: /design/XmlTechniques.md
+title: XmlTechniques
+directoryName: design
+category : cssguide-guide
+---
+
 <header>
     <h1>Charlie Calvert on Elvenware</h1>
     <h2>Writing Code and Prose on Computers</h2>

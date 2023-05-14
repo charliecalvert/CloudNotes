@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Functional.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: Functional.md
+relativePath: /web/JavaScript/Functional.md
+title: Functional
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Functional JavaScript
 
 Learn about writing function code.

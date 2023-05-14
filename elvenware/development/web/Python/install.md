@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/install.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: install.md
+relativePath: /web/Python/install.md
+title: install
+directoryName: Python
+category : cssguide-guide
+---
+
 Python Install and Quick Start
 ------------------------------
 

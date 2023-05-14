@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/PublishPage.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server
+fileName: PublishPage.md
+relativePath: /web/Server/PublishPage.md
+title: PublishPage
+directoryName: Server
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

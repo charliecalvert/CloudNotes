@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/MediaWiki.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: MediaWiki.md
+relativePath: /design/MediaWiki.md
+title: MediaWiki
+directoryName: design
+category : cssguide-guide
+---
+
 ## Overview
 
 Very old text on MediaWiki. Undoubtedly way out of date.

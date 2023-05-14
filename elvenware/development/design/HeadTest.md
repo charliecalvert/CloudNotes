@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/HeadTest.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: HeadTest.md
+relativePath: /design/HeadTest.md
+title: HeadTest
+directoryName: design
+category : cssguide-guide
+---
+
 <link href="../libs/css/charlie01.css" rel="STYLESHEET" type="TEXT/CSS">
 
 ## Overview

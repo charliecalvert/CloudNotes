@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-rebase.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-rebase.md
+relativePath: /git/git-rebase.md
+title: git-rebase
+directoryName: git
+category : cssguide-guide
+---
+
 # Rebase
 
 I use rebasing when I have two branches, and sometimes want to update

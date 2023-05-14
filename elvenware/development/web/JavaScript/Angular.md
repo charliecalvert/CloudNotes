@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Angular.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: Angular.md
+relativePath: /web/JavaScript/Angular.md
+title: Angular
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Angular
 
 In this page we cover some facts about Angular and Jasmine.

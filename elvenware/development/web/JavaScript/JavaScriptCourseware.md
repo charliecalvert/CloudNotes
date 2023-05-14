@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptCourseware.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JavaScriptCourseware.md
+relativePath: /web/JavaScript/JavaScriptCourseware.md
+title: JavaScriptCourseware
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # JavaScript Courseware
 
 This material is still **under development**.

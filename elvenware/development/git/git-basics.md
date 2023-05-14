@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-basics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-basics.md
+relativePath: /git/git-basics.md
+title: git-basics
+directoryName: git
+category : cssguide-guide
+---
+
 # Git Basics
 
 In this chapter you will learn to use Git from the command line.

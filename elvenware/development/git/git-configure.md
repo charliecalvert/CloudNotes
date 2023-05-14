@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-configure.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-configure.md
+relativePath: /git/git-configure.md
+title: git-configure
+directoryName: git
+category : cssguide-guide
+---
+
 # Configure
 
 Configuring Git.

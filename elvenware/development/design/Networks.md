@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/Networks.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: Networks.md
+relativePath: /design/Networks.md
+title: Networks
+directoryName: design
+category : cssguide-guide
+---
+
 From: virtualization networking deep dive.pdf
 
 I (Charlie Calvert) did not write this. I don't know where it comes from.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/MetaViewport.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: MetaViewport.md
+relativePath: /web/HtmlGuide/MetaViewport.md
+title: MetaViewport
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 This page is now obsolete. Go here:
 
 - [Html Syntax](HtmlSyntax.html#metaTag)

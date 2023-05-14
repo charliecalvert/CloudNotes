@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/GettingStarted.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: GettingStarted.md
+relativePath: /web/HtmlGuide/GettingStarted.md
+title: GettingStarted
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 # Getting Started with HTML
 
 HTML and CSS are markup languages. You can use them to define the

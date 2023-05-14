@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-branches.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-branches.md
+relativePath: /git/git-branches.md
+title: git-branches
+directoryName: git
+category : cssguide-guide
+---
+
 # Git Branches
 
 I can testify from personal experience that there many useful tasks you can perform with Git without ever creating a single branch other than the default master branch. And yet, I think it was only when I began creating branches that I first began to understand the true power of Git.

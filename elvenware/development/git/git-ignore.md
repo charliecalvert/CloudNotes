@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-ignore.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-ignore.md
+relativePath: /git/git-ignore.md
+title: git-ignore
+directoryName: git
+category : cssguide-guide
+---
+
 # The .gitignore File
 
 If you set up Git correctly, and use it intelligently, it is a simple mechanism for performing remarkably powerful tasks. If, however, you make one of several easy to avoid errors, you can end up creating a great deal of trouble for yourself. Use it right, and Git is your friend. Misuse it, and it can be a remarkably subtle foe.

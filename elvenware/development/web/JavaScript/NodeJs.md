@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodeJs.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: NodeJs.md
+relativePath: /web/JavaScript/NodeJs.md
+title: NodeJs
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Node
 
 [Node.Js](https://nodejs.org) is a JavaScript engine and compiler. It ships with a set of accompanying libraries and plays host to very large set of third party libraries.

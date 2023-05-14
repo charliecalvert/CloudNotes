@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/HandleBars.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: HandleBars.md
+relativePath: /web/JavaScript/HandleBars.md
+title: HandleBars
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Handlebars and HTML Templates
 
 You will find that you often want to insert the same HTML text or code

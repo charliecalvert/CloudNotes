@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/StaticAndInstanceData.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: StaticAndInstanceData.md
+relativePath: /web/JavaScript/StaticAndInstanceData.md
+title: StaticAndInstanceData
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 #Static and Instance Data
 
 On the instance data issue in modular pattern, I believe it goes like this:

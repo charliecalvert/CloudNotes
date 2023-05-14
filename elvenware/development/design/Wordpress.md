@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/Wordpress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: Wordpress.md
+relativePath: /design/Wordpress.md
+title: Wordpress
+directoryName: design
+category : cssguide-guide
+---
+
 ## Overview
 
 Learn about WordPress.

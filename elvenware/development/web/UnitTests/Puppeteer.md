@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Puppeteer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: Puppeteer.md
+relativePath: /web/UnitTests/Puppeteer.md
+title: Puppeteer
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 # Overview
 
 About Puppeteer end to end testing.

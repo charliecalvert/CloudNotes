@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/Canvas01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: Canvas01.md
+relativePath: /web/HtmlGuide/Canvas01.md
+title: Canvas01
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 
 <script type="text/javascript">
 	

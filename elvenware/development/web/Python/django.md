@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/django.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: django.md
+relativePath: /web/Python/django.md
+title: django
+directoryName: Python
+category : cssguide-guide
+---
+
 ## Overview
 
 Learn about DJango.

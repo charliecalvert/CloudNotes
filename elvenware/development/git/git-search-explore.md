@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-search-explore.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-search-explore.md
+relativePath: /git/git-search-explore.md
+title: git-search-explore
+directoryName: git
+category : cssguide-guide
+---
+
 # Search and Explore
 
 Finding your files in your repository.

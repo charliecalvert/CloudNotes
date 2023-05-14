@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/virtualization.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: virtualization.md
+relativePath: /design/virtualization.md
+title: virtualization
+directoryName: design
+category : cssguide-guide
+---
+
 [Hardware Virtualization](http://en.wikipedia.org/wiki/X86_virtualization)
 
 ### My Notes on Creating Virtual Appliances with VirtualBox

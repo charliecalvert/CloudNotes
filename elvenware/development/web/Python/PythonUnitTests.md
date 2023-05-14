@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/PythonUnitTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: PythonUnitTests.md
+relativePath: /web/Python/PythonUnitTests.md
+title: PythonUnitTests
+directoryName: Python
+category : cssguide-guide
+---
+
 Python Unit Tests
 =================
 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/Core.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: Core.md
+relativePath: /design/Core.md
+title: Core
+directoryName: design
+category : cssguide-guide
+---
+
 ## Overview
 
 SOA. Service Orientation Design.

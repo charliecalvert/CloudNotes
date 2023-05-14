@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/AddingMachine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: AddingMachine.md
+relativePath: /web/JavaScript/AddingMachine.md
+title: AddingMachine
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 Adding Machine {#adding}
 --------------
 

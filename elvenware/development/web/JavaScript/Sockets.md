@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Sockets.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: Sockets.md
+relativePath: /web/JavaScript/Sockets.md
+title: Sockets
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Sockets
 
 This page is primarily about socket.io. There are however, several different options available:

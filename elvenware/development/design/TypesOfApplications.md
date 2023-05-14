@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/TypesOfApplications.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: TypesOfApplications.md
+relativePath: /design/TypesOfApplications.md
+title: TypesOfApplications
+directoryName: design
+category : cssguide-guide
+---
+
 ## Types of Cloud Applications
 
 *   Web

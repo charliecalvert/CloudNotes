@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodeInstall.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: NodeInstall.md
+relativePath: /web/JavaScript/NodeInstall.md
+title: NodeInstall
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 This document covers installing node and running NPM. It is focused mostly on Linux and Windows.
 
 Subjects covered include:

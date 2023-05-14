@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-delete-move.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-delete-move.md
+relativePath: /git/git-delete-move.md
+title: git-delete-move
+directoryName: git
+category : cssguide-guide
+---
+
 # Delete and Move
 
 Delete and move files in a Git repository.

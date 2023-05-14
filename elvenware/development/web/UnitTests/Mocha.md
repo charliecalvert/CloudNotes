@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Mocha.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: Mocha.md
+relativePath: /web/UnitTests/Mocha.md
+title: Mocha
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 ## Description
 
 Information on using Mocha and Chai.

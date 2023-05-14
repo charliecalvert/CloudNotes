@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/ServerSideIncludes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server
+fileName: ServerSideIncludes.md
+relativePath: /web/Server/ServerSideIncludes.md
+title: ServerSideIncludes
+directoryName: Server
+category : cssguide-guide
+---
+
 Turn on Server Side Includes in IIS {#ssi}
 -----------------------------------
 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/NetworkFacts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server
+fileName: NetworkFacts.md
+relativePath: /web/Server/NetworkFacts.md
+title: NetworkFacts
+directoryName: Server
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

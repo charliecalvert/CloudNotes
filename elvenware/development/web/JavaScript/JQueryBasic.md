@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JQueryBasic.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JQueryBasic.md
+relativePath: /web/JavaScript/JQueryBasic.md
+title: JQueryBasic
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Overview
 
 jQuery is designed to help you easily transform static HTML pages

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/UrlRewrites.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server
+fileName: UrlRewrites.md
+relativePath: /web/Server/UrlRewrites.md
+title: UrlRewrites
+directoryName: Server
+category : cssguide-guide
+---
+
 URL Rewrites in IIS
 -------------------
 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/HistoryPlusCaveats.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: HistoryPlusCaveats.md
+relativePath: /web/HtmlGuide/HistoryPlusCaveats.md
+title: HistoryPlusCaveats
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
  and nit picks that not only can, but always do, surface when this topic
 comes up. It turns out that HTML has answers to most of the objections,
 but they come at a price. That price is complexity.

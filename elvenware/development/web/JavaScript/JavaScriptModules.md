@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptModules.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JavaScriptModules.md
+relativePath: /web/JavaScript/JavaScriptModules.md
+title: JavaScriptModules
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # JavaScript Modules
 
 This document covers the JavaScript Module Pattern

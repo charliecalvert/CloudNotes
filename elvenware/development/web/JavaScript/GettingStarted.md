@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/GettingStarted.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: GettingStarted.md
+relativePath: /web/JavaScript/GettingStarted.md
+title: GettingStarted
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 ## Table of Contents 
 
 <!-- toc -->

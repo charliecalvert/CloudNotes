@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JsonBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JsonBasics.md
+relativePath: /web/JavaScript/JsonBasics.md
+title: JsonBasics
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # JSON
 
 JSON, like XML, is a text base sepecification for exchanging data. JSON is

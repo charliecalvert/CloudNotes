@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Jasmine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: Jasmine.md
+relativePath: /web/UnitTests/Jasmine.md
+title: Jasmine
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 Jasmine
 ======
 

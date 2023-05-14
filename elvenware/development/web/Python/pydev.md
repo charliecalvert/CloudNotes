@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/pydev.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: pydev.md
+relativePath: /web/Python/pydev.md
+title: pydev
+directoryName: Python
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

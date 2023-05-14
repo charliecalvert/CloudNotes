@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/python_iis.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: python_iis.md
+relativePath: /web/Python/python_iis.md
+title: python_iis
+directoryName: Python
+category : cssguide-guide
+---
+
 <div id="container">
 
 Python on Windows

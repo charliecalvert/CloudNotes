@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Protractor.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: Protractor.md
+relativePath: /web/UnitTests/Protractor.md
+title: Protractor
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 The unit tests for this project require protractor and the selenium web drive.
 
 -	[Protractor](https://github.com/angular/protractor)

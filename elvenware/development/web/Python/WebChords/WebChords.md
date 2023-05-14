@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/WebChords/WebChords.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/WebChords
+fileName: WebChords.md
+relativePath: /web/Python/WebChords/WebChords.md
+title: WebChords
+directoryName: WebChords
+category : cssguide-guide
+---
+
 <div class="noblock">
 
 The Major Keys

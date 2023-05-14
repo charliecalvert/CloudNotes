@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/PythonScripts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: PythonScripts.md
+relativePath: /web/Python/PythonScripts.md
+title: PythonScripts
+directoryName: Python
+category : cssguide-guide
+---
+
 Python CGI Basics
 =================
 

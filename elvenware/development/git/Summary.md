@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/Summary.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: Summary.md
+relativePath: /git/Summary.md
+title: Summary
+directoryName: git
+category : cssguide-guide
+---
+
 * [git-basics.html](git-basics.html)
 * [git-branches.html](git-branches.html)
 * [git-configure.html](git-configure.html)

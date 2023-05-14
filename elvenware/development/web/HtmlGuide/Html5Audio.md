@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/Html5Audio.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: Html5Audio.md
+relativePath: /web/HtmlGuide/Html5Audio.md
+title: Html5Audio
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 HTML 5 Audio
 ============
 

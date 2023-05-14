@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-merge.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-merge.md
+relativePath: /git/git-merge.md
+title: git-merge
+directoryName: git
+category : cssguide-guide
+---
+
 # Git Merge
 
 Git has many uses. There is no single iconic, fundamental, task performed by Git. Yet few Git tasks are as important as merging.

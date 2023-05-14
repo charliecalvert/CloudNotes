@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/pythonTest_iis.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: pythonTest_iis.md
+relativePath: /web/Python/pythonTest_iis.md
+title: pythonTest_iis
+directoryName: Python
+category : cssguide-guide
+---
+
 Menu
 
 Charlie Calvert on Elvenware

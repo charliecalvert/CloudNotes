@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: index.md
+relativePath: /web/HtmlGuide/index.md
+title: index
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 ## HTML Basics
 
 - [Chapter 01: Getting Started](GettingStarted.html)

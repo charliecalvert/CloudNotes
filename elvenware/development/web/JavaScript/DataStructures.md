@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/DataStructures.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: DataStructures.md
+relativePath: /web/JavaScript/DataStructures.md
+title: DataStructures
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # JavaScript DataStructures
 
 Here we will discuss various data structures that can be used in a JavaScript application.

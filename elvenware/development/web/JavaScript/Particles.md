@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Particles.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: Particles.md
+relativePath: /web/JavaScript/Particles.md
+title: Particles
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Particles
 
 ## Refactoring

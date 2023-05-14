@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/CallSimpleCgiJquery.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: CallSimpleCgiJquery.md
+relativePath: /web/Python/CallSimpleCgiJquery.md
+title: CallSimpleCgiJquery
+directoryName: Python
+category : cssguide-guide
+---
+
 Number One:
 
 Number Two:

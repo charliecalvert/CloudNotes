@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-fork.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-fork.md
+relativePath: /git/git-fork.md
+title: git-fork
+directoryName: git
+category : cssguide-guide
+---
+
 # Forking
 
 Frequently we do not own a repository, yet we want to work with the

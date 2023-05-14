@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Grunt.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: Grunt.md
+relativePath: /web/UnitTests/Grunt.md
+title: Grunt
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 Grunt
 =====
 

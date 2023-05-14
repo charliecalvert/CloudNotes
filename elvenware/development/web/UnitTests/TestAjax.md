@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/TestAjax.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: TestAjax.md
+relativePath: /web/UnitTests/TestAjax.md
+title: TestAjax
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 ## Overview
 
 This page is currently broken and under construction

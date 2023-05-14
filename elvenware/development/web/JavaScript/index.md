@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: index.md
+relativePath: /web/JavaScript/index.md
+title: index
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 ## Table of Contents 
 
 <!-- toc -->

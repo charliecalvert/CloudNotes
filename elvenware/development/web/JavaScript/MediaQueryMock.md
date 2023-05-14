@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/MediaQueryMock.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: MediaQueryMock.md
+relativePath: /web/JavaScript/MediaQueryMock.md
+title: MediaQueryMock
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 Using JQuery rather than @Media Queries
 ---------------------------------------
 

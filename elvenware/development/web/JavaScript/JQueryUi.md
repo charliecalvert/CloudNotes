@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JQueryUi.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JQueryUi.md
+relativePath: /web/JavaScript/JQueryUi.md
+title: JQueryUi
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 ```html
 
 <style>

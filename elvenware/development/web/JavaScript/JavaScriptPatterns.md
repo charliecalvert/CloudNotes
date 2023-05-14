@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptPatterns.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JavaScriptPatterns.md
+relativePath: /web/JavaScript/JavaScriptPatterns.md
+title: JavaScriptPatterns
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 ## Overview
 
 Defining responsibilities is the key step in software development. We use objects, modules, patterns and methods to separate the tasks our software performs, and to link these tasks to one another as loosely as possible.

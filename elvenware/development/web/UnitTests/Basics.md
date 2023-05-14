@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests/Basics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/UnitTests
+fileName: Basics.md
+relativePath: /web/UnitTests/Basics.md
+title: Basics
+directoryName: UnitTests
+category : cssguide-guide
+---
+
 ## Overview
 
 Here is another way to think about this issue that may make some lights go on. Or perhaps not.

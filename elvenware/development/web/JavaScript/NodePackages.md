@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodePackages.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: NodePackages.md
+relativePath: /web/JavaScript/NodePackages.md
+title: NodePackages
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Node Packages
 
 This document is focused on Node, NPM, webpack, babel with fading sections on Bower. It also covers the **package.json** and **bower.json** files.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: index.md
+relativePath: /design/index.md
+title: index
+directoryName: design
+category : cssguide-guide
+---
+
 <meta content="Main Elvenware page for Android Development" name="description" />
 <meta content="Android, Elvenware, Development" name="keywords" />
 

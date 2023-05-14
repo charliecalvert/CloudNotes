@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/java/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/java
+fileName: index.md
+relativePath: /java/index.md
+title: index
+directoryName: java
+category : cssguide-guide
+---
+
 ## Overview
 
 This page and all my material on Java is very old. Most of it is approximately 20 years old or older. As a result, I no longer include it on Elvenware. Perhaps someday I will try to restore it, but certainly not today.

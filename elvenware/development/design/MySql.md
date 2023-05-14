@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design/MySql.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/design
+fileName: MySql.md
+relativePath: /design/MySql.md
+title: MySql
+directoryName: design
+category : cssguide-guide
+---
+
 ## Logging in
 
 <pre class="code">charlie@WesternSea:~$ mysql -u root -p

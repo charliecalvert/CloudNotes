@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/EclipseWebDevelopment.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: EclipseWebDevelopment.md
+relativePath: /web/HtmlGuide/EclipseWebDevelopment.md
+title: EclipseWebDevelopment
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 ## Overview
 
 Learn about Aptana or Web Tools Install. This is an old document. I don't use these tools anymore. We can make Eclipse much more comfortable for web development by adding in the Aptana tools.

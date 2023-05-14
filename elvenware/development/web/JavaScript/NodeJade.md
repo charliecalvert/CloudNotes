@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/NodeJade.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: NodeJade.md
+relativePath: /web/JavaScript/NodeJade.md
+title: NodeJade
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Pug and Jade
 
 [Pug][pug] is a template library similar to [HAML](http://haml.info/) and not totally unlike other popular template libraries such as [Handlebars](http://handlebarsjs.com/). It also is a bit like Markdown, in that it provides a shorthand syntax for composing HTML pages.

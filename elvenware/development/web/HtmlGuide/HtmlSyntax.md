@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide/HtmlSyntax.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/HtmlGuide
+fileName: HtmlSyntax.md
+relativePath: /web/HtmlGuide/HtmlSyntax.md
+title: HtmlSyntax
+directoryName: HtmlGuide
+category : cssguide-guide
+---
+
 HTML Syntax
 ===========
 

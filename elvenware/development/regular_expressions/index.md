@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/regular_expressions/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/regular_expressions
+fileName: index.md
+relativePath: /regular_expressions/index.md
+title: index
+directoryName: regular_expressions
+category : cssguide-guide
+---
+
 # Regular Expressions
 
 [Python Reg Expressions](PythonRegEx.html)

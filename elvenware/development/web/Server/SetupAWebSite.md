@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/SetupAWebSite.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server
+fileName: SetupAWebSite.md
+relativePath: /web/Server/SetupAWebSite.md
+title: SetupAWebSite
+directoryName: Server
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

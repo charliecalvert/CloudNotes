@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/PresentInternet.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web
+fileName: PresentInternet.md
+relativePath: /web/PresentInternet.md
+title: PresentInternet
+directoryName: web
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

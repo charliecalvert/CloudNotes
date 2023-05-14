@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/SignIn.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: SignIn.md
+relativePath: /web/JavaScript/SignIn.md
+title: SignIn
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 ## Description
 
 Let's talk about using the common **username** and **password** strategy for signing in to a website.

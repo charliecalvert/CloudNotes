@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-install.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-install.md
+relativePath: /git/git-install.md
+title: git-install
+directoryName: git
+category : cssguide-guide
+---
+
 # Installing Git
 
 There are various ways to install Git. In this chapter I will describe installing Git on Linux and on Windows.

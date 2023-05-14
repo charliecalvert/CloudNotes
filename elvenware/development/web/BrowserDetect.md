@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/BrowserDetect.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web
+fileName: BrowserDetect.md
+relativePath: /web/BrowserDetect.md
+title: BrowserDetect
+directoryName: web
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

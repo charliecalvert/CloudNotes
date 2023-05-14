@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python/PythonSyntax.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Python
+fileName: PythonSyntax.md
+relativePath: /web/Python/PythonSyntax.md
+title: PythonSyntax
+directoryName: Python
+category : cssguide-guide
+---
+
 Python Syntax
 =============
 

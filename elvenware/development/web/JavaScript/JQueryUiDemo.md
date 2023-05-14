@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JQueryUiDemo.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JQueryUiDemo.md
+relativePath: /web/JavaScript/JQueryUiDemo.md
+title: JQueryUiDemo
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 Hello jQuery UI
 ===============
 

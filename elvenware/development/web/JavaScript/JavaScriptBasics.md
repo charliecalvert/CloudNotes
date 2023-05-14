@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/JavaScriptBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: JavaScriptBasics.md
+relativePath: /web/JavaScript/JavaScriptBasics.md
+title: JavaScriptBasics
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 <!-- toc -->
 <!-- tocstop -->
 

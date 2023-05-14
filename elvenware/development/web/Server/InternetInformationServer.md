@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server/InternetInformationServer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/Server
+fileName: InternetInformationServer.md
+relativePath: /web/Server/InternetInformationServer.md
+title: InternetInformationServer
+directoryName: Server
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware

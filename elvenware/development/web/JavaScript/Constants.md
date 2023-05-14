@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/Constants.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: Constants.md
+relativePath: /web/JavaScript/Constants.md
+title: Constants
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 
 # Learn about Constants
 

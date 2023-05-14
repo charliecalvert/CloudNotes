@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git/git-gist-snippet.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/git
+fileName: git-gist-snippet.md
+relativePath: /git/git-gist-snippet.md
+title: git-gist-snippet
+directoryName: git
+category : cssguide-guide
+---
+
 # Gists and Snippets
 
 Sometimes you don't want to create a big repository, but instead save a single file that you use often in different contects. This is what GitHub **Gists** and BitBucket **Snippets** are for.

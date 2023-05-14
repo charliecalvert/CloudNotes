@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript/WritingSimpleCode.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/JavaScript
+fileName: WritingSimpleCode.md
+relativePath: /web/JavaScript/WritingSimpleCode.md
+title: WritingSimpleCode
+directoryName: JavaScript
+category : cssguide-guide
+---
+
 # Getting Started Part II
 
 To help you get a feel for the language, let's install node and start writing some simple code.

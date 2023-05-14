@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-14 01:17:16 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web/FloatClear.md
+directoryPath: /home/ubuntu/Git/CloudNotes/elvenware/development/web
+fileName: FloatClear.md
+relativePath: /web/FloatClear.md
+title: FloatClear
+directoryName: web
+category : cssguide-guide
+---
+
 Toggle Menu
 
 Charlie Calvert on Elvenware
