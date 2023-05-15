@@ -2,58 +2,8 @@ const fs = require('fs');
 const fsp = require('fs').promises;
 const path = require('path');
 const debug = require('debug')('check-md');
-const debugCge = require('debug')('check-get-elf');
 const elfUtils = require('elven-code').elfUtils;
 const matter = require('gray-matter');
-
-async function ls01(path) {
-    const dir = await fs.promises.opendir(path);
-    for await (const dirent of dir) {
-        console.log(dirent);
-        console.log(dirent.name);
-        console.log('Directory', dirent.isDirectory());
-        console.log('File', dirent.isFile());
-        console.log('BlockDevice', dirent.isBlockDevice());
-        console.log('isCharacterDevice', dirent.isCharacterDevice());
-        console.log('isSymbolicLink', dirent.isSymbolicLink());
-        console.log('isFIFO', dirent.isFIFO());
-        console.log('isSocket', dirent.isSocket());
-    }
-}
-
-async function ls02(path) {
-    const dir = await fs.promises.opendir(path);
-    for await (const dirent of dir) {
-        console.log(dirent);
-        console.log(dirent.name);
-        if (dirent.isDirectory()) {
-            console.log('isDirectory');
-        } else if (dirent.isFile()) {
-            console.log('File', dirent.isFile());
-        } else if (dirent.isBlockDevice()) {
-            console.log('BlockDevice', dirent.isBlockDevice());
-        } else if (dirent.isCharacterDevice()) {
-            console.log('isCharacterDevice', dirent.isCharacterDevice());
-        } else if (dirent.isSymbolicLink()) {
-            console.log('isSymbolicLink', dirent.isSymbolicLink());
-        } else if (dirent.isFIFO()) {
-            console.log('isFIFO', dirent.isFIFO());
-        } else if (dirent.isSocket()) {
-            console.log('isSocket', dirent.isSocket());
-        };
-    }
-}
-
-async function lsDirs(path) {
-    const dir = await fs.promises.opendir(path);
-    for await (const dirent of dir) {
-        if (dirent.isDirectory()) {
-            console.log(dirent);
-            console.log(dirent.name);
-            lsDirs(dirent.name).catch(console.error);
-        }
-    }
-}
 
 const walk = function (dir, done) {
     let results = [];
@@ -100,42 +50,10 @@ async function * walker(dir) {
 }
 
 const ep = require("./exec-process.js");
+const { getFrontMatter } = require("./lib/getFrontMatter.js");
 
-async function getElfCode(fileName) {
-    const result = {};
-    const regexToc = /(?:<!-- toc(?:\s*stop)? -->)/g;
-    // const regexElf = /(?:<!-- bar(?:\s*stop)? -->)/g;
-    const regexElf = /^---/;
-    const markdown = await elfUtils.readFileAsync(fileName);
-    debug(markdown);
-    if (regexToc.test(markdown)) {
-        debugCge('Has TOC code');
-        result.hasTocCode = true;
-    } else {
-        debugCge('No TOC code');
-        result.hasTocCode = false;
-        // result.markdown = markdown;
-    }
 
-    if (regexElf.test(markdown)) {
-        debugCge('Has ELF code');
-        result.hasElfCode = true;
-    } else {
-        debugCge('No ELF code');
-        result.hasElfCode = false;
-        // if (!result.markdown) result.markdown = markdown;
-    }
-    result.markdown = markdown;
-    return result;
-}
 
-const getTitleFromPath = function (fileName) {
-    const str = elfUtils.getEndFromCharacter(fileName, '/');
-    debug(str);
-    const result = str.replace(/([A-Z])/g, "$1");
-    const finalResult = result.charAt(0).toUpperCase() + result.slice(1);
-    return elfUtils.stripExtension(finalResult);
-};
 
 async function addElfCode(fileName, elfCodes) {
     // const elfStr = `\n<!-- bar -->\n<!-- barstop -->`;
@@ -221,6 +139,8 @@ async function runCore(p) {
 // main().catch(console.error);
 
 function testUnusedCode() {
+    const { lsDirs, ls02, ls01 } = require("./lib/lsDirs.js");
+    
     lsDirs('.').catch(console.error);
     ls02('.').catch(console.error);
     ls01('.').catch(console.error);

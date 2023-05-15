@@ -4,7 +4,8 @@ const config = {
     verbose: true
 };
 
-module.exports = config;
+// module.exports = config;
+export default config;
 
 // Or async function
 /*   module.exports = async () => {

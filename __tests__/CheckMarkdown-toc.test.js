@@ -1,11 +1,14 @@
+import checkMarkdown from '../CheckMarkdown';
+import createDebugMessages from 'debug';
+const debug = createDebugMessages('check-markdown');
 /***************
  * test check-markdown
  **************/
 
 describe('CheckMarkdown TOC Suite', function () {
   'use strict';
-  const debug = require('debug')('check-markdown');
-  const checkMarkdown = require('../CheckMarkdown');
+  /* const debug = require('debug')('check-markdown');
+  const checkMarkdown = require('../CheckMarkdown'); */
 
   const fileName = './__tests__/About-toc.md';
 
