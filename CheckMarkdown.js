@@ -1,9 +1,13 @@
-const fs = require('fs');
-const fsp = require('fs').promises;
-const path = require('path');
-const debug = require('debug')('check-md');
-const elfUtils = require('elven-code').elfUtils;
-const matter = require('gray-matter');
+import * as fs from 'fs';
+import { unlink } from 'node:fs/promises';
+// const fsp = require('fs').promises;
+import * as path from 'path';
+// const path = require('path');
+import createDebugMessages from 'debug';
+const debug = createDebugMessages('check-markdown');
+// const debug = require('debug')('check-md');
+import elfUtils from 'elven-code';
+import matter from 'gray-matter';
 
 const walk = function (dir, done) {
     let results = [];
@@ -140,7 +144,7 @@ async function runCore(p) {
 
 function testUnusedCode() {
     const { lsDirs, ls02, ls01 } = require("./lib/lsDirs.js");
-    
+
     lsDirs('.').catch(console.error);
     ls02('.').catch(console.error);
     ls01('.').catch(console.error);
