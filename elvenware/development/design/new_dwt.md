@@ -7,7 +7,7 @@ fileName: new_dwt.md
 relativePath: /design/new_dwt.md
 title: new_dwt
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Elvenware Plain DWT

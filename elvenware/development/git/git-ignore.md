@@ -7,7 +7,7 @@ fileName: git-ignore.md
 relativePath: /git/git-ignore.md
 title: git-ignore
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # The .gitignore File

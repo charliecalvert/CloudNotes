@@ -7,7 +7,7 @@ fileName: AngularLinks.md
 relativePath: /web/JavaScript/AngularLinks.md
 title: AngularLinks
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Angular Links

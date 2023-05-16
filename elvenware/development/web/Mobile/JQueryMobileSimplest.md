@@ -7,7 +7,7 @@ fileName: JQueryMobileSimplest.md
 relativePath: /web/Mobile/JQueryMobileSimplest.md
 title: JQueryMobileSimplest
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 jQuery Mobile Header

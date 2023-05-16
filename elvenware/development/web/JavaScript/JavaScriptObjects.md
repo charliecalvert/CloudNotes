@@ -7,7 +7,7 @@ fileName: JavaScriptObjects.md
 relativePath: /web/JavaScript/JavaScriptObjects.md
 title: JavaScriptObjects
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # JavaScript Objects

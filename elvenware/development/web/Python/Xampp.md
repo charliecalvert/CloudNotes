@@ -7,7 +7,7 @@ fileName: Xampp.md
 relativePath: /web/Python/Xampp.md
 title: Xampp
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 ![Elvenware](../../../images/elvenwarelogo.png)

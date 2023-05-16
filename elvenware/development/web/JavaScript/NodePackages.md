@@ -7,7 +7,7 @@ fileName: NodePackages.md
 relativePath: /web/JavaScript/NodePackages.md
 title: NodePackages
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Node Packages

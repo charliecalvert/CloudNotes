@@ -7,7 +7,7 @@ fileName: PythonSyntax.md
 relativePath: /web/Python/PythonSyntax.md
 title: PythonSyntax
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Python Syntax

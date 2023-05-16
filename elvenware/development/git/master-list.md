@@ -7,7 +7,7 @@ fileName: master-list.md
 relativePath: /git/master-list.md
 title: master-list
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 * [Summary.html](Summary.html)

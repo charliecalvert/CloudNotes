@@ -7,7 +7,7 @@ fileName: SetupAWebSite.md
 relativePath: /web/Server/SetupAWebSite.md
 title: SetupAWebSite
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Toggle Menu

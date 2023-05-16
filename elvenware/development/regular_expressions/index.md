@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /regular_expressions/index.md
 title: index
 directoryName: regular_expressions
-category : cssguide-guide
+category: regular_expressions-guide
 ---
 
 # Regular Expressions

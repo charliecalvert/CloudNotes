@@ -7,7 +7,7 @@ fileName: GoogleDriveSdk.md
 relativePath: /web/JavaScript/GoogleDriveSdk.md
 title: GoogleDriveSdk
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 #Google Drive SDK

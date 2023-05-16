@@ -7,7 +7,7 @@ fileName: DataStructures.md
 relativePath: /web/JavaScript/DataStructures.md
 title: DataStructures
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # JavaScript DataStructures

@@ -7,7 +7,7 @@ fileName: ShowPlugIns.md
 relativePath: /web/JavaScript/ShowPlugIns.md
 title: ShowPlugIns
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Overview

@@ -7,7 +7,7 @@ fileName: NodeInstall.md
 relativePath: /web/JavaScript/NodeInstall.md
 title: NodeInstall
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 This document covers installing node and running NPM. It is focused mostly on Linux and Windows.

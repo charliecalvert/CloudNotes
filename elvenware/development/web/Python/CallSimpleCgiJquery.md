@@ -7,7 +7,7 @@ fileName: CallSimpleCgiJquery.md
 relativePath: /web/Python/CallSimpleCgiJquery.md
 title: CallSimpleCgiJquery
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Number One:

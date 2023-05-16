@@ -7,7 +7,7 @@ fileName: AddingMachine.md
 relativePath: /web/JavaScript/AddingMachine.md
 title: AddingMachine
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 Adding Machine {#adding}

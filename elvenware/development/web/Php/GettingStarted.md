@@ -7,7 +7,7 @@ fileName: GettingStarted.md
 relativePath: /web/Php/GettingStarted.md
 title: GettingStarted
 directoryName: Php
-category : cssguide-guide
+category: Php-guide
 ---
 
 <div id="container">

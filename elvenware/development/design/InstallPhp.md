@@ -7,7 +7,7 @@ fileName: InstallPhp.md
 relativePath: /design/InstallPhp.md
 title: InstallPhp
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Installing PHP on Windows

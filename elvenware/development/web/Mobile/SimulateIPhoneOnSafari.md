@@ -7,7 +7,7 @@ fileName: SimulateIPhoneOnSafari.md
 relativePath: /web/Mobile/SimulateIPhoneOnSafari.md
 title: SimulateIPhoneOnSafari
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Toggle Menu

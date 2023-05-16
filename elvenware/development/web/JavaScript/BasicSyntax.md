@@ -7,7 +7,7 @@ fileName: BasicSyntax.md
 relativePath: /web/JavaScript/BasicSyntax.md
 title: BasicSyntax
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 Basic Syntax Examples

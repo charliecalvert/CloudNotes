@@ -7,7 +7,7 @@ fileName: JQueryUiDemo.md
 relativePath: /web/JavaScript/JQueryUiDemo.md
 title: JQueryUiDemo
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 Hello jQuery UI

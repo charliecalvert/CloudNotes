@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /web/Mobile/index.md
 title: index
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 JQuery Mobile Basics

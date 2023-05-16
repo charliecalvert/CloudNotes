@@ -7,7 +7,7 @@ fileName: JQueryBackgroundMorph.md
 relativePath: /web/JavaScript/JQueryBackgroundMorph.md
 title: JQueryBackgroundMorph
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 jQuery Selector and CSS Simple Example

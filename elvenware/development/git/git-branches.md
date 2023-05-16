@@ -7,7 +7,7 @@ fileName: git-branches.md
 relativePath: /git/git-branches.md
 title: git-branches
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git Branches

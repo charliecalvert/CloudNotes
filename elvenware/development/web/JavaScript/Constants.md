@@ -7,7 +7,7 @@ fileName: Constants.md
 relativePath: /web/JavaScript/Constants.md
 title: Constants
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 

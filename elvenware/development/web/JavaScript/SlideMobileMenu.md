@@ -7,7 +7,7 @@ fileName: SlideMobileMenu.md
 relativePath: /web/JavaScript/SlideMobileMenu.md
 title: SlideMobileMenu
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 Sixth Page with Menu Animation

@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /index.md
 title: index
 directoryName: development
-category : cssguide-guide
+category: development-guide
 ---
 
 Development

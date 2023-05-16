@@ -7,7 +7,7 @@ fileName: WritingSimpleCode.md
 relativePath: /web/JavaScript/WritingSimpleCode.md
 title: WritingSimpleCode
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Getting Started Part II

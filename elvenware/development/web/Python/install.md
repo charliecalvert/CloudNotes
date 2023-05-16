@@ -7,7 +7,7 @@ fileName: install.md
 relativePath: /web/Python/install.md
 title: install
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Python Install and Quick Start

@@ -7,7 +7,7 @@ fileName: IPhoneGo.md
 relativePath: /web/Mobile/IPhoneGo.md
 title: IPhoneGo
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 IPhone Base page

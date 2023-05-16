@@ -7,7 +7,7 @@ fileName: JQueryBasic.md
 relativePath: /web/JavaScript/JQueryBasic.md
 title: JQueryBasic
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Overview

@@ -7,7 +7,7 @@ fileName: JavaScriptCourseware.md
 relativePath: /web/JavaScript/JavaScriptCourseware.md
 title: JavaScriptCourseware
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # JavaScript Courseware

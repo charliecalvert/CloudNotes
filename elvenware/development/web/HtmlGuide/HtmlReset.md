@@ -7,7 +7,7 @@ fileName: HtmlReset.md
 relativePath: /web/HtmlGuide/HtmlReset.md
 title: HtmlReset
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 

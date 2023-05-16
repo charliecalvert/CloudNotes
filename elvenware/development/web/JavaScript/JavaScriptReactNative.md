@@ -7,7 +7,7 @@ fileName: JavaScriptReactNative.md
 relativePath: /web/JavaScript/JavaScriptReactNative.md
 title: JavaScriptReactNative
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Overview

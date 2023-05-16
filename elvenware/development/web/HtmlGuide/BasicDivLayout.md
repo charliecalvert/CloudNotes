@@ -7,7 +7,7 @@ fileName: BasicDivLayout.md
 relativePath: /web/HtmlGuide/BasicDivLayout.md
 title: BasicDivLayout
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 ## Overview

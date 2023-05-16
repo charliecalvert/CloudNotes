@@ -7,7 +7,7 @@ fileName: IPhoneTestAlt.md
 relativePath: /web/Mobile/IPhoneTestAlt.md
 title: IPhoneTestAlt
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Menus

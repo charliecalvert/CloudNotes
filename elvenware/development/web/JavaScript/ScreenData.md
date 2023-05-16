@@ -7,7 +7,7 @@ fileName: ScreenData.md
 relativePath: /web/JavaScript/ScreenData.md
 title: ScreenData
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Overview

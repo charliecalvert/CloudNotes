@@ -7,7 +7,7 @@ fileName: MediaWiki.md
 relativePath: /design/MediaWiki.md
 title: MediaWiki
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Overview

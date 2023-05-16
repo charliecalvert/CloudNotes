@@ -7,7 +7,7 @@ fileName: Core.md
 relativePath: /design/Core.md
 title: Core
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Overview

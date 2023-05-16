@@ -7,7 +7,7 @@ fileName: JumpStart.md
 relativePath: /design/JumpStart.md
 title: JumpStart
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Jumpstart

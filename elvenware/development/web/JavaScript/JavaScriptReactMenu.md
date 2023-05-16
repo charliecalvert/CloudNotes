@@ -7,7 +7,7 @@ fileName: JavaScriptReactMenu.md
 relativePath: /web/JavaScript/JavaScriptReactMenu.md
 title: JavaScriptReactMenu
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # React Menus

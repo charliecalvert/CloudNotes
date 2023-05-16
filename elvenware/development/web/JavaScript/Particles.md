@@ -7,7 +7,7 @@ fileName: Particles.md
 relativePath: /web/JavaScript/Particles.md
 title: Particles
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Particles

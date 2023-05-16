@@ -7,7 +7,7 @@ fileName: git-delete-move.md
 relativePath: /git/git-delete-move.md
 title: git-delete-move
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Delete and Move

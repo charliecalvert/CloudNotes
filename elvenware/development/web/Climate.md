@@ -7,7 +7,7 @@ fileName: Climate.md
 relativePath: /web/Climate.md
 title: Climate
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 ====================================

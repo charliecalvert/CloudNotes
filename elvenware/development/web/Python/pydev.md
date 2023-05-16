@@ -7,7 +7,7 @@ fileName: pydev.md
 relativePath: /web/Python/pydev.md
 title: pydev
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Toggle Menu

@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /web/Python/index.md
 title: index
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 ## Python

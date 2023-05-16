@@ -7,7 +7,7 @@ fileName: VerySimple.md
 relativePath: /web/JavaScript/VerySimple.md
 title: VerySimple
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 

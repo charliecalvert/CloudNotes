@@ -7,7 +7,7 @@ fileName: services.md
 relativePath: /web/Mobile/services.md
 title: services
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Services

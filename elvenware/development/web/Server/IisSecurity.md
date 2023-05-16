@@ -7,7 +7,7 @@ fileName: IisSecurity.md
 relativePath: /web/Server/IisSecurity.md
 title: IisSecurity
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Toggle Menu

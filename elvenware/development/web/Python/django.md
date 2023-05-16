@@ -7,7 +7,7 @@ fileName: django.md
 relativePath: /web/Python/django.md
 title: django
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 ## Overview

@@ -7,7 +7,7 @@ fileName: NavigatorInfo.md
 relativePath: /web/JavaScript/NavigatorInfo.md
 title: NavigatorInfo
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Overview

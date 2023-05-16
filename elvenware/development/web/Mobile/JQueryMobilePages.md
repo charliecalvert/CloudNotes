@@ -7,7 +7,7 @@ fileName: JQueryMobilePages.md
 relativePath: /web/Mobile/JQueryMobilePages.md
 title: JQueryMobilePages
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 First Page

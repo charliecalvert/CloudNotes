@@ -7,7 +7,7 @@ fileName: NodeJade.md
 relativePath: /web/JavaScript/NodeJade.md
 title: NodeJade
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Pug and Jade

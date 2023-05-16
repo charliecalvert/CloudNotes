@@ -7,7 +7,7 @@ fileName: OnClickHandler.md
 relativePath: /web/JavaScript/OnClickHandler.md
 title: OnClickHandler
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 <style>

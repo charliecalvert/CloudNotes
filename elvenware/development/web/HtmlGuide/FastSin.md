@@ -7,7 +7,7 @@ fileName: FastSin.md
 relativePath: /web/HtmlGuide/FastSin.md
 title: FastSin
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 Google APIs and JavaScript Sample that I did not write.

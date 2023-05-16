@@ -7,7 +7,7 @@ fileName: HttpStatusCodes.md
 relativePath: /web/Server/HttpStatusCodes.md
 title: HttpStatusCodes
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Toggle Menu

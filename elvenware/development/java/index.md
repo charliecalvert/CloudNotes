@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /java/index.md
 title: index
 directoryName: java
-category : cssguide-guide
+category: java-guide
 ---
 
 ## Overview

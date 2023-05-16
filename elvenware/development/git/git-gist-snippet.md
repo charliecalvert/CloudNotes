@@ -7,7 +7,7 @@ fileName: git-gist-snippet.md
 relativePath: /git/git-gist-snippet.md
 title: git-gist-snippet
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Gists and Snippets

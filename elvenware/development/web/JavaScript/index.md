@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /web/JavaScript/index.md
 title: index
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Table of Contents 

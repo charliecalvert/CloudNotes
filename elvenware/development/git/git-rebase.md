@@ -7,7 +7,7 @@ fileName: git-rebase.md
 relativePath: /git/git-rebase.md
 title: git-rebase
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Rebase

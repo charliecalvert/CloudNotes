@@ -7,7 +7,7 @@ fileName: Angular.md
 relativePath: /web/JavaScript/Angular.md
 title: Angular
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Angular

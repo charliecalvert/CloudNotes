@@ -7,7 +7,7 @@ fileName: git-gui.md
 relativePath: /git/git-gui.md
 title: git-gui
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git GUI Basics

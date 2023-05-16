@@ -7,7 +7,7 @@ fileName: ElvenUtilities.md
 relativePath: /web/JavaScript/ElvenUtilities.md
 title: ElvenUtilities
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Elven Utils

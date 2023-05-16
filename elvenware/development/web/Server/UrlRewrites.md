@@ -7,7 +7,7 @@ fileName: UrlRewrites.md
 relativePath: /web/Server/UrlRewrites.md
 title: UrlRewrites
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 URL Rewrites in IIS

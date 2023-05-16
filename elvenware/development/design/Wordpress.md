@@ -7,7 +7,7 @@ fileName: Wordpress.md
 relativePath: /design/Wordpress.md
 title: Wordpress
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Overview

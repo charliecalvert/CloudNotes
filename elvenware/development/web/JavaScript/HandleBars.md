@@ -7,7 +7,7 @@ fileName: HandleBars.md
 relativePath: /web/JavaScript/HandleBars.md
 title: HandleBars
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Handlebars and HTML Templates

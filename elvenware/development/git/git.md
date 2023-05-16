@@ -7,7 +7,7 @@ fileName: git.md
 relativePath: /git/git.md
 title: git
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git Course

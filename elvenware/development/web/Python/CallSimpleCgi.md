@@ -7,7 +7,7 @@ fileName: CallSimpleCgi.md
 relativePath: /web/Python/CallSimpleCgi.md
 title: CallSimpleCgi
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Number One:

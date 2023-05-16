@@ -7,7 +7,7 @@ fileName: ElvenwareBarcode.md
 relativePath: /web/ElvenwareBarcode.md
 title: ElvenwareBarcode
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 [![QR

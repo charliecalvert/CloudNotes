@@ -7,7 +7,7 @@ fileName: Summary.md
 relativePath: /git/Summary.md
 title: Summary
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 * [git-basics.html](git-basics.html)

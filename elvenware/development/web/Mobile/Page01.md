@@ -7,7 +7,7 @@ fileName: Page01.md
 relativePath: /web/Mobile/Page01.md
 title: Page01
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Menus

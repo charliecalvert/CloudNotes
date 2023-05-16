@@ -7,7 +7,7 @@ fileName: Canvas01.md
 relativePath: /web/HtmlGuide/Canvas01.md
 title: Canvas01
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 

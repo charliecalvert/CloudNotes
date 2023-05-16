@@ -7,7 +7,7 @@ fileName: OpinionatedSuccess.md
 relativePath: /web/JavaScript/OpinionatedSuccess.md
 title: OpinionatedSuccess
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 One of the things we didn't talk about in class is the idea of "opinionated" libraries or tools. Some very popular libraries, such as bootstrap and angular, are what as known as "opinionated" libraries. They try to force you to fall into the "pit of success." In other words, they have strong ideas about how to accomplish a task, and they ask you to go along with that philosophy or else face the consequences. More generally, they say: "Here is the best way to do something, and here are the options we provide for you to accomplish your goals. Don't bother trying to do anything else, or use any techniques we don't recommend." All this sounds harsh, but it helps a lot of people get a lot of really good work done relatively quickly.

@@ -7,7 +7,7 @@ fileName: DojoTest.md
 relativePath: /web/JavaScript/DojoTest.md
 title: DojoTest
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 Fade block out

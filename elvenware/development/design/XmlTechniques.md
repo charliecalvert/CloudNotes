@@ -7,7 +7,7 @@ fileName: XmlTechniques.md
 relativePath: /design/XmlTechniques.md
 title: XmlTechniques
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 <header>

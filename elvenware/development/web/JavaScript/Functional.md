@@ -7,7 +7,7 @@ fileName: Functional.md
 relativePath: /web/JavaScript/Functional.md
 title: Functional
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Functional JavaScript

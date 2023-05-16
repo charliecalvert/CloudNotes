@@ -7,7 +7,7 @@ fileName: git-basics.md
 relativePath: /git/git-basics.md
 title: git-basics
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git Basics

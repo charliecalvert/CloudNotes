@@ -7,7 +7,7 @@ fileName: Scripting.md
 relativePath: /web/Scripting.md
 title: Scripting
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 Scripting on Elvenware

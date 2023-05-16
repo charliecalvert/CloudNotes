@@ -7,7 +7,7 @@ fileName: LinkFromJQueryMobile.md
 relativePath: /web/Mobile/LinkFromJQueryMobile.md
 title: LinkFromJQueryMobile
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Toggle Menu

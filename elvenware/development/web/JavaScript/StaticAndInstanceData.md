@@ -7,7 +7,7 @@ fileName: StaticAndInstanceData.md
 relativePath: /web/JavaScript/StaticAndInstanceData.md
 title: StaticAndInstanceData
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 #Static and Instance Data

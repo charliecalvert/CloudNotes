@@ -7,7 +7,7 @@ fileName: JavaScriptModules.md
 relativePath: /web/JavaScript/JavaScriptModules.md
 title: JavaScriptModules
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # JavaScript Modules

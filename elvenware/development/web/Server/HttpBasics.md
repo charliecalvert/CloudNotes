@@ -7,7 +7,7 @@ fileName: HttpBasics.md
 relativePath: /web/Server/HttpBasics.md
 title: HttpBasics
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Toggle Menu

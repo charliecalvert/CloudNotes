@@ -7,7 +7,7 @@ fileName: soa.md
 relativePath: /design/soa.md
 title: soa
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 # Soa

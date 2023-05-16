@@ -7,7 +7,7 @@ fileName: JavaScriptPatterns.md
 relativePath: /web/JavaScript/JavaScriptPatterns.md
 title: JavaScriptPatterns
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Overview

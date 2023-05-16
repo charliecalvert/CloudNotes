@@ -7,7 +7,7 @@ fileName: PythonScripts.md
 relativePath: /web/Python/PythonScripts.md
 title: PythonScripts
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Python CGI Basics

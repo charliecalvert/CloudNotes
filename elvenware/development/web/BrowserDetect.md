@@ -7,7 +7,7 @@ fileName: BrowserDetect.md
 relativePath: /web/BrowserDetect.md
 title: BrowserDetect
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 Toggle Menu

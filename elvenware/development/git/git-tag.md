@@ -7,7 +7,7 @@ fileName: git-tag.md
 relativePath: /git/git-tag.md
 title: git-tag
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git Tag

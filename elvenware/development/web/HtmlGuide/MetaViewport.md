@@ -7,7 +7,7 @@ fileName: MetaViewport.md
 relativePath: /web/HtmlGuide/MetaViewport.md
 title: MetaViewport
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 This page is now obsolete. Go here:

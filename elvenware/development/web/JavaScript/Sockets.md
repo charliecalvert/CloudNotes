@@ -7,7 +7,7 @@ fileName: Sockets.md
 relativePath: /web/JavaScript/Sockets.md
 title: Sockets
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Sockets

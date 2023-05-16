@@ -7,7 +7,7 @@ fileName: ExternalMobilePage.md
 relativePath: /web/JavaScript/ExternalMobilePage.md
 title: ExternalMobilePage
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 External Page

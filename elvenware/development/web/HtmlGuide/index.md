@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /web/HtmlGuide/index.md
 title: index
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 ## HTML Basics

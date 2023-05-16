@@ -7,7 +7,7 @@ fileName: JsonBasics.md
 relativePath: /web/JavaScript/JsonBasics.md
 title: JsonBasics
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # JSON

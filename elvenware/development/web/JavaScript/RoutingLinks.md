@@ -7,7 +7,7 @@ fileName: RoutingLinks.md
 relativePath: /web/JavaScript/RoutingLinks.md
 title: RoutingLinks
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Routing Links

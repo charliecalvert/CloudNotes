@@ -7,7 +7,7 @@ fileName: git-merge.md
 relativePath: /git/git-merge.md
 title: git-merge
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git Merge

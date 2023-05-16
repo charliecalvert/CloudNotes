@@ -7,7 +7,7 @@ fileName: HeadTest.md
 relativePath: /design/HeadTest.md
 title: HeadTest
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 <link href="../libs/css/charlie01.css" rel="STYLESHEET" type="TEXT/CSS">

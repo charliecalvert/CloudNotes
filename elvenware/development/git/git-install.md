@@ -7,7 +7,7 @@ fileName: git-install.md
 relativePath: /git/git-install.md
 title: git-install
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Installing Git

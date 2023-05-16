@@ -7,7 +7,7 @@ fileName: PublishPage.md
 relativePath: /web/Server/PublishPage.md
 title: PublishPage
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Toggle Menu

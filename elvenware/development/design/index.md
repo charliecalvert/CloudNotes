@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /design/index.md
 title: index
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 <meta content="Main Elvenware page for Android Development" name="description" />

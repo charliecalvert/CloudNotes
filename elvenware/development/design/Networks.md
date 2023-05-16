@@ -7,7 +7,7 @@ fileName: Networks.md
 relativePath: /design/Networks.md
 title: Networks
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 From: virtualization networking deep dive.pdf

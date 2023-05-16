@@ -7,7 +7,7 @@ fileName: JavaScriptReact.md
 relativePath: /web/JavaScript/JavaScriptReact.md
 title: JavaScriptReact
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Overview

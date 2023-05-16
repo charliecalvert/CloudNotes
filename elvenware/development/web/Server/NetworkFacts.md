@@ -7,7 +7,7 @@ fileName: NetworkFacts.md
 relativePath: /web/Server/NetworkFacts.md
 title: NetworkFacts
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Toggle Menu

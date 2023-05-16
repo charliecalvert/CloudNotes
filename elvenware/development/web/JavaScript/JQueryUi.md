@@ -7,7 +7,7 @@ fileName: JQueryUi.md
 relativePath: /web/JavaScript/JQueryUi.md
 title: JQueryUi
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ```html

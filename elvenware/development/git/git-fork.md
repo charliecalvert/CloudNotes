@@ -7,7 +7,7 @@ fileName: git-fork.md
 relativePath: /git/git-fork.md
 title: git-fork
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Forking

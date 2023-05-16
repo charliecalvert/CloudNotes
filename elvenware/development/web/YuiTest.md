@@ -7,7 +7,7 @@ fileName: YuiTest.md
 relativePath: /web/YuiTest.md
 title: YuiTest
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 Button A

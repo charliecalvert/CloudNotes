@@ -7,7 +7,7 @@ fileName: git-search-explore.md
 relativePath: /git/git-search-explore.md
 title: git-search-explore
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Search and Explore

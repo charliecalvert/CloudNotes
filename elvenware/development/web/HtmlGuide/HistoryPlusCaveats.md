@@ -7,7 +7,7 @@ fileName: HistoryPlusCaveats.md
 relativePath: /web/HtmlGuide/HistoryPlusCaveats.md
 title: HistoryPlusCaveats
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
  and nit picks that not only can, but always do, surface when this topic

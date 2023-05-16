@@ -7,7 +7,7 @@ fileName: ElvenCanvas.md
 relativePath: /web/HtmlGuide/ElvenCanvas.md
 title: ElvenCanvas
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 This text is displayed if your browser does not support HTML5 Canvas.

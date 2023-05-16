@@ -7,7 +7,7 @@ fileName: TypesOfApplications.md
 relativePath: /design/TypesOfApplications.md
 title: TypesOfApplications
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Types of Cloud Applications

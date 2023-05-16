@@ -7,7 +7,7 @@ fileName: IPhoneTest.md
 relativePath: /web/Mobile/IPhoneTest.md
 title: IPhoneTest
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Menus

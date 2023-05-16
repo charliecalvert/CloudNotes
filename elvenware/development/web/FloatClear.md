@@ -7,7 +7,7 @@ fileName: FloatClear.md
 relativePath: /web/FloatClear.md
 title: FloatClear
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 Toggle Menu

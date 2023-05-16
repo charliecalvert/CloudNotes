@@ -7,7 +7,7 @@ fileName: WebChords.md
 relativePath: /web/Python/WebChords/WebChords.md
 title: WebChords
 directoryName: WebChords
-category : cssguide-guide
+category: WebChords-guide
 ---
 
 <div class="noblock">

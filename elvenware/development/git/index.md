@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /git/index.md
 title: index
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Git TOC

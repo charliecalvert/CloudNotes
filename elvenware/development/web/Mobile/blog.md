@@ -7,7 +7,7 @@ fileName: blog.md
 relativePath: /web/Mobile/blog.md
 title: blog
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 Blog

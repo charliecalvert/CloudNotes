@@ -7,7 +7,7 @@ fileName: MySql.md
 relativePath: /design/MySql.md
 title: MySql
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 ## Logging in

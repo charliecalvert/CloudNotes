@@ -7,7 +7,7 @@ fileName: SoaInterviewWithErl.md
 relativePath: /design/SoaInterviewWithErl.md
 title: SoaInterviewWithErl
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 SOA

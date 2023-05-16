@@ -7,7 +7,7 @@ fileName: JavaScriptFunctions.md
 relativePath: /web/JavaScript/JavaScriptFunctions.md
 title: JavaScriptFunctions
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # JavaScript Functions {#javaScriptFunctions}

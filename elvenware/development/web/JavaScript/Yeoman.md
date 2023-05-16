@@ -7,7 +7,7 @@ fileName: Yeoman.md
 relativePath: /web/JavaScript/Yeoman.md
 title: Yeoman
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 # Yeoman

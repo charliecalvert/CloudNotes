@@ -7,7 +7,7 @@ fileName: ServerSideIncludes.md
 relativePath: /web/Server/ServerSideIncludes.md
 title: ServerSideIncludes
 directoryName: Server
-category : cssguide-guide
+category: Server-guide
 ---
 
 Turn on Server Side Includes in IIS {#ssi}

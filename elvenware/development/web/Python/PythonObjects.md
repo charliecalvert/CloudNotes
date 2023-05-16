@@ -7,7 +7,7 @@ fileName: PythonObjects.md
 relativePath: /web/Python/PythonObjects.md
 title: PythonObjects
 directoryName: Python
-category : cssguide-guide
+category: Python-guide
 ---
 
 Python Class

@@ -7,7 +7,7 @@ fileName: Require.md
 relativePath: /web/JavaScript/Require.md
 title: Require
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 #Require

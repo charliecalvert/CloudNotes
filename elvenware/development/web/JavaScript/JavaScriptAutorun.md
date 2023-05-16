@@ -7,7 +7,7 @@ fileName: JavaScriptAutorun.md
 relativePath: /web/JavaScript/JavaScriptAutorun.md
 title: JavaScriptAutorun
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 

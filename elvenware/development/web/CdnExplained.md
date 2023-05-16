@@ -7,7 +7,7 @@ fileName: CdnExplained.md
 relativePath: /web/CdnExplained.md
 title: CdnExplained
 directoryName: web
-category : cssguide-guide
+category: web-guide
 ---
 
 ## Overview

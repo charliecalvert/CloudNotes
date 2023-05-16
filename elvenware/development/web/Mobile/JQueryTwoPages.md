@@ -7,7 +7,7 @@ fileName: JQueryTwoPages.md
 relativePath: /web/Mobile/JQueryTwoPages.md
 title: JQueryTwoPages
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 First Page

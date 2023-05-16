@@ -7,7 +7,7 @@ fileName: TwitterQuery.md
 relativePath: /web/JavaScript/TwitterQuery.md
 title: TwitterQuery
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 

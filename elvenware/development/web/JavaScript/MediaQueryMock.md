@@ -7,7 +7,7 @@ fileName: MediaQueryMock.md
 relativePath: /web/JavaScript/MediaQueryMock.md
 title: MediaQueryMock
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 Using JQuery rather than @Media Queries

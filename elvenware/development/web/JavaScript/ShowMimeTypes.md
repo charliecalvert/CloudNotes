@@ -7,7 +7,7 @@ fileName: ShowMimeTypes.md
 relativePath: /web/JavaScript/ShowMimeTypes.md
 title: ShowMimeTypes
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Overview

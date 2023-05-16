@@ -7,7 +7,7 @@ fileName: JQueryMobile.md
 relativePath: /web/Mobile/JQueryMobile.md
 title: JQueryMobile
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 ## jQuery Mobile

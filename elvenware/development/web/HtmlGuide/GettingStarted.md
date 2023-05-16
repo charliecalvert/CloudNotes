@@ -7,7 +7,7 @@ fileName: GettingStarted.md
 relativePath: /web/HtmlGuide/GettingStarted.md
 title: GettingStarted
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 # Getting Started with HTML

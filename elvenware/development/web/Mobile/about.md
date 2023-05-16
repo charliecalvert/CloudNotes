@@ -7,7 +7,7 @@ fileName: about.md
 relativePath: /web/Mobile/about.md
 title: about
 directoryName: Mobile
-category : cssguide-guide
+category: Mobile-guide
 ---
 
 About

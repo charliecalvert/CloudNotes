@@ -7,7 +7,7 @@ fileName: HtmlSyntax.md
 relativePath: /web/HtmlGuide/HtmlSyntax.md
 title: HtmlSyntax
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 HTML Syntax

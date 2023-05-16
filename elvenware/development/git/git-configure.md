@@ -7,7 +7,7 @@ fileName: git-configure.md
 relativePath: /git/git-configure.md
 title: git-configure
 directoryName: git
-category : cssguide-guide
+category: git-guide
 ---
 
 # Configure

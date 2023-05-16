@@ -7,7 +7,7 @@ fileName: BindMe.md
 relativePath: /web/JavaScript/BindMe.md
 title: BindMe
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 <script src="/javascripts/BindMe.js" type="text/javascript"></script>

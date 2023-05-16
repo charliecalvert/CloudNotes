@@ -7,7 +7,7 @@ fileName: Fonts.md
 relativePath: /web/HtmlGuide/Fonts.md
 title: Fonts
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 Fonts

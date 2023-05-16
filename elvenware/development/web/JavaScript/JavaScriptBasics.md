@@ -7,7 +7,7 @@ fileName: JavaScriptBasics.md
 relativePath: /web/JavaScript/JavaScriptBasics.md
 title: JavaScriptBasics
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 <!-- toc -->

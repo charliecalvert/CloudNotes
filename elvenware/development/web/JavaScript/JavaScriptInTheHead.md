@@ -7,7 +7,7 @@ fileName: JavaScriptInTheHead.md
 relativePath: /web/JavaScript/JavaScriptInTheHead.md
 title: JavaScriptInTheHead
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 <article>

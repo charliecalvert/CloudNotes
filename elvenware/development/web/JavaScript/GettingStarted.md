@@ -7,7 +7,7 @@ fileName: GettingStarted.md
 relativePath: /web/JavaScript/GettingStarted.md
 title: GettingStarted
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Table of Contents 

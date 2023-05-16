@@ -7,7 +7,7 @@ fileName: SignIn.md
 relativePath: /web/JavaScript/SignIn.md
 title: SignIn
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 ## Description

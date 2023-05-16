@@ -7,7 +7,7 @@ fileName: SystemInformation.md
 relativePath: /web/JavaScript/SystemInformation.md
 title: SystemInformation
 directoryName: JavaScript
-category : cssguide-guide
+category: JavaScript-guide
 ---
 
 JavaScript Information Report

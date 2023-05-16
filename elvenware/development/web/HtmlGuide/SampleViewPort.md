@@ -7,7 +7,7 @@ fileName: SampleViewPort.md
 relativePath: /web/HtmlGuide/SampleViewPort.md
 title: SampleViewPort
 directoryName: HtmlGuide
-category : cssguide-guide
+category: HtmlGuide-guide
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

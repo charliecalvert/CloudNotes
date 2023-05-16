@@ -7,7 +7,7 @@ fileName: virtualization.md
 relativePath: /design/virtualization.md
 title: virtualization
 directoryName: design
-category : cssguide-guide
+category: design-guide
 ---
 
 [Hardware Virtualization](http://en.wikipedia.org/wiki/X86_virtualization)
