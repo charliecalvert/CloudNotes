@@ -1,4 +1,5 @@
-import { getFrontMatterAndTocReport, hasFrontMatter, hasTocCode } from '../lib/getFrontMatterAndTocReport';
+import { getFrontMatterAndTocReport,
+  hasFrontMatter, hasTocCode } from 'elven-jekyll-post';
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('check-markdown');
 /***************
@@ -12,7 +13,7 @@ describe('CheckMarkdown Both Suite', function () {
 
   const fileName = './__tests__/About-both.md';
 
-  test('hasElfCode()', async() => {
+  test('hasFrontMatter()', async() => {
     const result = await hasFrontMatter(fileName);
     // "hasElfCode": true, "hasTocCode": true
     expect(result).toBe(true);

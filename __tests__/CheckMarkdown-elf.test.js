@@ -1,4 +1,5 @@
-import { getFrontMatterAndTocReport, hasFrontMatter, hasTocCode } from '../lib/getFrontMatterAndTocReport';
+import { getFrontMatterAndTocReport,
+  hasFrontMatter, hasTocCode } from 'elven-jekyll-post';
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('check-markdown');
 
