@@ -54,7 +54,7 @@ async function * walker(dir) {
 }
 
 const ep = require("./exec-process.js");
-const { getFrontMatter } = require("./lib/getFrontMatter.js");
+const { getFrontMatterAndTocReport } = require("./lib/getFrontMatterAndTocReport.js");
 
 
 

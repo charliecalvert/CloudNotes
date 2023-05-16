@@ -1,4 +1,4 @@
-import { getFrontMatter, hasFrontMatter, hasTocCode } from '../lib/getFrontMatter';
+import { getFrontMatterAndTocReport, hasFrontMatter, hasTocCode } from '../lib/getFrontMatterAndTocReport';
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('check-markdown');
 /***************
@@ -25,12 +25,12 @@ describe('CheckMarkdown Both Suite', function () {
   });
 
   test('markdown', async() => {
-    const result = await getFrontMatter(fileName);
+    const result = await getFrontMatterAndTocReport(fileName);
     expect(result.markdown).toContain('title: Hello');
   });
 
   test('markdown', async() => {
-    const result = await getFrontMatter(fileName);
+    const result = await getFrontMatterAndTocReport(fileName);
     expect(result.markdown).not.toContain('margietitle: Hello');
   });
 });
