@@ -1,4 +1,4 @@
-import checkMarkdown from '../lib/getFrontMatter';
+import { getFrontMatter, hasFrontMatter, hasTocCode } from '../lib/getFrontMatter';
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('check-markdown');
 /***************
@@ -13,24 +13,24 @@ describe('CheckMarkdown Both Suite', function () {
   const fileName = './__tests__/About-both.md';
 
   test('hasElfCode()', async() => {
-    const result = await checkMarkdown.hasFrontMatter(fileName);
+    const result = await hasFrontMatter(fileName);
     // "hasElfCode": true, "hasTocCode": true
-    expect(result.hasElfCode).toBe(true);
+    expect(result).toBe(true);
   });
 
   test('hasTocCode', async() => {
-    const result = await checkMarkdown.hasFrontMatter(fileName);
+    const result = await hasFrontMatter(fileName);
     // "hasElfCode": true, "hasTocCode": true
-    expect(result.hasTocCode).toBe(true);
+    expect(result).toBe(true);
   });
 
   test('markdown', async() => {
-    const result = await checkMarkdown.getFrontMatter(fileName);
+    const result = await getFrontMatter(fileName);
     expect(result.markdown).toContain('title: Hello');
   });
 
   test('markdown', async() => {
-    const result = await checkMarkdown.getFrontMatter(fileName);
+    const result = await getFrontMatter(fileName);
     expect(result.markdown).not.toContain('margietitle: Hello');
   });
 });

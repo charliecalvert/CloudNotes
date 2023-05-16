@@ -12,10 +12,10 @@ describe('CheckMarkdown TOC Suite', function () {
 
   const fileName = './__tests__/About-toc.md';
 
-  test('hasElfCode()', async() => {
+  test('hasFrontMatter()', async() => {
     const result = await getFrontMatter(fileName);
     // "hasElfCode": true, "hasTocCode": true
-    expect(result.hasElfCode).toBe(false);
+    expect(result.hasFrontMatter).toBe(false);
   });
 
   test('hasTocCode', async() => {
