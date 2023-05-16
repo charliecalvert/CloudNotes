@@ -26,21 +26,21 @@
         "chalk": "^5.2.0",
         "debug": "^4.3.4",
         "elven-code": "^4.13.8",
-        "elven-jekyll-post": "^1.2.0",
+        "elven-jekyll-post": "^1.2.3",
         "gray-matter": "^4.0.3",
         "luxon": "^3.3.0",
         "markdown-elf": "^1.0.0",
         "markdown-toc": "^1.2.0",
-        "ssh2": "^1.12.0",
+        "ssh2": "^1.13.0",
         "url": "^0.11.0",
         "walk-directories": "^4.1.2"
     },
     "devDependencies": {
-        "@types/node": "^20.1.4",
+        "@types/node": "^20.1.7",
         "eslint": "^8.40.0",
         "eslint-config-standard": "^17.0.0",
         "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-n": "^15.7.0",
+        "eslint-plugin-n": "^16.0.0",
         "eslint-plugin-promise": "^6.1.1",
         "jest": "^29.5.0"
     }
