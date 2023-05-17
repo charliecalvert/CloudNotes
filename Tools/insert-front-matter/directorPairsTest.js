@@ -2,9 +2,19 @@ import createDebugMessages from 'debug';
 const debug = createDebugMessages('lib:directory-pairs-test');
 const debugCall = createDebugMessages('lib:directory-pairs-test:call');
 
+/**
+ * This is our redundant code we don't need it.
+ * @see findGuidePair
+ *
+ * Test if the directory matches the guidePair path
+ *
+ * @param {object} fileInfo
+ * @param {object} guidePair
+ * @returns {boolean} isMatch
+ */
 function testMatch(fileInfo, guidePair) {
     debugCall(`Testing match: ${fileInfo.directory} against %s)`, guidePair.path); // JSON.stringify(guidePair));
-    const isMatch = fileInfo.directory.includes(guidePair.path);
+    const isMatch = (fileInfo.directory === guidePair.path);
     return isMatch;
 }
 

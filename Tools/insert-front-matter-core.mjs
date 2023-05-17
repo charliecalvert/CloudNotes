@@ -35,6 +35,8 @@ export function walkMarkdownCore(fileInfos) {
         fileInfo.category = guidePairs.cssguide.category;
         debugTestingFdir(chalk.red(`Testing fdir : ${fileInfo.directory}`));
         // debugTestingGp(chalk.greenBright(`Testing gp : ${guidePairs.cssGuide.path}`));
+
+        // find the
         const guidePair = findGuidePair(fileInfo.directory, guidePairs);
         if (!guidePair) {
             continue;
@@ -43,11 +45,12 @@ export function walkMarkdownCore(fileInfos) {
         debugTestingGp(chalk.blueBright(`Testing gp : ${guidePair.category}`));
         debugTestingGp(chalk.blueBright(`Testing gp : ${guidePair.type}`));
         debugTestingGp(chalk.greenBright(`${fileInfo.directory}`));
-        const isMatch = testMatch(fileInfo, guidePair);
+        // const isMatch = testMatch(fileInfo, guidePair);
 
         if (isMatch) {
             // debugTestingGp(chalk.greenBright(`Testing gp : ${fileInfo.directory}`));
-            findCategory(fileInfo);
+            // findCategory(fileInfo);
+            fileInfo.category = guidePair.category; // eslint-disable-line no-param-reassign
             debug(chalk.yellowBright(`Found: ${fileInfo.fullPath}`));
             recordResults(fileInfo, matters, isMatch);
         }
