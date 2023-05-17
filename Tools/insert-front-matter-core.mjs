@@ -40,7 +40,7 @@ export function walkMarkdownCore(fileInfos) {
         const isMatch = testMatch(fileInfo, guidePair);
 
         if (isMatch) {
-            debugTestingGp(chalk.greenBright(`Testing gp : ${fileInfo.directory}`));
+            // debugTestingGp(chalk.greenBright(`Testing gp : ${fileInfo.directory}`));
             findCategory(fileInfo);
             debug(chalk.yellowBright(`Found: ${fileInfo.fullPath}`));
             recordResults(fileInfo, matters, isMatch);
