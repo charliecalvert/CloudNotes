@@ -52,7 +52,7 @@ export function walkMarkdownCore(fileInfos) {
             // findCategory(fileInfo);
             fileInfo.category = guidePair.category; // eslint-disable-line no-param-reassign
             debug(chalk.yellowBright(`Found: ${fileInfo.fullPath}`));
-            recordResults(fileInfo, matters, isMatch);
+            recordResults(fileInfo, matters);
         //}
     }
     return matters;
