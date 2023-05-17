@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import guidePairs from './insert-front-matter/directories.js';
-import { findCategory } from './insert-front-matter/find-category.mjs';
+import { findCategory } from './not-used/find-category.mjs';
 import { addFrontMatterToOneFile } from './insert-front-matter/elf-utils.mjs';
-import { testMatch } from './insert-front-matter/directorPairsTest.js';
+import { testMatch } from './not-used/directorPairsTest.js';
 import { findGuidePair } from './insert-front-matter/findGuidePair.js';
 // import { fileInfos, debugTestingFdir, debugTestingGp, debug } from './walk-markdown-files.mjs';
 
