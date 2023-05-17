@@ -19,11 +19,11 @@ export const debugTestingGp = createDebugMessages('lib:insert-fm:gp');
  * @param {array} matters
  * @param {boolean} isMatch
  */
-function recordResults(fileInfo, matters, isMatch) {
+function recordResults(fileInfo, matters) {
     const frontMatter = addFrontMatterToOneFile(fileInfo);
     if (frontMatter) {
         matters.push(frontMatter);
-    } else if (isMatch) {
+    } else /* if (isMatch) */ {
         // debug(chalk.red(`No front matter: ${fileInfo.fullPath}`));
         matters.push(`No front matter: ${fileInfo.fullPath}\n`);
     }
@@ -47,13 +47,13 @@ export function walkMarkdownCore(fileInfos) {
         debugTestingGp(chalk.greenBright(`${fileInfo.directory}`));
         // const isMatch = testMatch(fileInfo, guidePair);
 
-        if (isMatch) {
+        //if (isMatch) {
             // debugTestingGp(chalk.greenBright(`Testing gp : ${fileInfo.directory}`));
             // findCategory(fileInfo);
             fileInfo.category = guidePair.category; // eslint-disable-line no-param-reassign
             debug(chalk.yellowBright(`Found: ${fileInfo.fullPath}`));
             recordResults(fileInfo, matters, isMatch);
-        }
+        //}
     }
     return matters;
 }
