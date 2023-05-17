@@ -7,7 +7,7 @@ fileName: CordovaPlugins.md
 relativePath: /android/CordovaPlugins.md
 title: CordovaPlugins
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 ## Overview

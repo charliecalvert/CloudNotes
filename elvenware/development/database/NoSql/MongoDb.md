@@ -7,7 +7,7 @@ fileName: MongoDb.md
 relativePath: /database/NoSql/MongoDb.md
 title: MongoDb
 directoryName: NoSql
-category : css-guide
+category: nosql-guide
 ---
 
 # MongoDb

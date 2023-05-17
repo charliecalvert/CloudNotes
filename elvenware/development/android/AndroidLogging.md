@@ -7,7 +7,7 @@ fileName: AndroidLogging.md
 relativePath: /android/AndroidLogging.md
 title: AndroidLogging
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

@@ -7,7 +7,7 @@ fileName: AndroidActivity.md
 relativePath: /android/AndroidActivity.md
 title: AndroidActivity
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 ## Activities
 

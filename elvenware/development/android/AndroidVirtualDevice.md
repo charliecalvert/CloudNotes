@@ -7,7 +7,7 @@ fileName: AndroidVirtualDevice.md
 relativePath: /android/AndroidVirtualDevice.md
 title: AndroidVirtualDevice
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

@@ -7,7 +7,7 @@ fileName: Androidx86.md
 relativePath: /android/Androidx86.md
 title: Androidx86
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 ![Elvenware](../../images/elvenwarelogo.png)

@@ -7,7 +7,7 @@ fileName: CouchDb.md
 relativePath: /database/NoSql/CouchDb.md
 title: CouchDb
 directoryName: NoSql
-category : css-guide
+category: nosql-guide
 ---
 
 CouchDb

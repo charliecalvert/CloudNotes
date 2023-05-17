@@ -7,7 +7,7 @@ fileName: UI.md
 relativePath: /android/UI.md
 title: UI
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

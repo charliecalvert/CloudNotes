@@ -7,7 +7,7 @@ fileName: AndroidContentContacts.md
 relativePath: /android/AndroidContentContacts.md
 title: AndroidContentContacts
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

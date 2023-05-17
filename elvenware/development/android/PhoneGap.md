@@ -7,7 +7,7 @@ fileName: PhoneGap.md
 relativePath: /android/PhoneGap.md
 title: PhoneGap
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 # Cordova/PhoneGap

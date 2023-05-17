@@ -7,7 +7,7 @@ fileName: CordovaBower.md
 relativePath: /android/CordovaBower.md
 title: CordovaBower
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Very nice. The one thing that would have been nice would have been to set up bower.json in your Cordova folder so that it:

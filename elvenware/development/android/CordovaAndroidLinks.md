@@ -7,7 +7,7 @@ fileName: CordovaAndroidLinks.md
 relativePath: /android/CordovaAndroidLinks.md
 title: CordovaAndroidLinks
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 ## Android Links

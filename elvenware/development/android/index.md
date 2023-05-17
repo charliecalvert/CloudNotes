@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /android/index.md
 title: index
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Android Development

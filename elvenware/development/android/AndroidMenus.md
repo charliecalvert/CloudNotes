@@ -7,7 +7,7 @@ fileName: AndroidMenus.md
 relativePath: /android/AndroidMenus.md
 title: AndroidMenus
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

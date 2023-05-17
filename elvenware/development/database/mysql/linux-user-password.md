@@ -7,7 +7,7 @@ fileName: linux-user-password.md
 relativePath: /database/mysql/linux-user-password.md
 title: linux-user-password
 directoryName: mysql
-category : css-guide
+category: mysql-guide
 ---
 
 ﻿## Overview

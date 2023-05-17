@@ -7,7 +7,7 @@ fileName: sql-commands.md
 relativePath: /database/mssql/sql-commands.md
 title: sql-commands
 directoryName: mssql
-category : css-guide
+category: mssql-guide
 ---
 
 Database

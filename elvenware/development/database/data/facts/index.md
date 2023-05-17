@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /database/data/facts/index.md
 title: index
 directoryName: facts
-category : css-guide
+category: facts-guide
 ---
 
 Facts

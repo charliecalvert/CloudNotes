@@ -7,7 +7,7 @@ fileName: redis.md
 relativePath: /database/NoSql/redis.md
 title: redis
 directoryName: NoSql
-category : css-guide
+category: nosql-guide
 ---
 
 ## Overview

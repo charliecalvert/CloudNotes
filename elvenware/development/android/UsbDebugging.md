@@ -7,7 +7,7 @@ fileName: UsbDebugging.md
 relativePath: /android/UsbDebugging.md
 title: UsbDebugging
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Debugging

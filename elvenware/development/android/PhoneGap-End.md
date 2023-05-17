@@ -7,7 +7,7 @@ fileName: PhoneGap-End.md
 relativePath: /android/PhoneGap-End.md
 title: PhoneGap-End
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 

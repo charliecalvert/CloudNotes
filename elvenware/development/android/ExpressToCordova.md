@@ -7,7 +7,7 @@ fileName: ExpressToCordova.md
 relativePath: /android/ExpressToCordova.md
 title: ExpressToCordova
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 # Express to Cordova

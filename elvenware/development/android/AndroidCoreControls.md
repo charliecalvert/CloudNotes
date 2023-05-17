@@ -7,7 +7,7 @@ fileName: AndroidCoreControls.md
 relativePath: /android/AndroidCoreControls.md
 title: AndroidCoreControls
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

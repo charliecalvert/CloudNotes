@@ -7,7 +7,7 @@ fileName: ReadTextFile.md
 relativePath: /android/ReadTextFile.md
 title: ReadTextFile
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

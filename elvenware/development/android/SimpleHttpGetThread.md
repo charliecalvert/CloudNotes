@@ -7,7 +7,7 @@ fileName: SimpleHttpGetThread.md
 relativePath: /android/SimpleHttpGetThread.md
 title: SimpleHttpGetThread
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

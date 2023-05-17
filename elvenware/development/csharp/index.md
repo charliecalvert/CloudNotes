@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /csharp/index.md
 title: index
 directoryName: csharp
-category : css-guide
+category: csharp-guide
 ---
 
 ## Index

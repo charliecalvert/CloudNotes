@@ -7,7 +7,7 @@ fileName: EmbeddedVideos.md
 relativePath: /csharp/videos/EmbeddedVideos.md
 title: EmbeddedVideos
 directoryName: videos
-category : css-guide
+category: videos-guide
 ---
 
 Elvenware Videos

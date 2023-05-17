@@ -7,7 +7,7 @@ fileName: AndroidApplications.md
 relativePath: /android/AndroidApplications.md
 title: AndroidApplications
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Android Applications

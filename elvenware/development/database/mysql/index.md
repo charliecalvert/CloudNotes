@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /database/mysql/index.md
 title: index
 directoryName: mysql
-category : css-guide
+category: mysql-guide
 ---
 
 ## overview

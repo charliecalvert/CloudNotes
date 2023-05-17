@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /csharp/videos/index.md
 title: index
 directoryName: videos
-category : css-guide
+category: videos-guide
 ---
 
 ## Elvenware CSharp Videos

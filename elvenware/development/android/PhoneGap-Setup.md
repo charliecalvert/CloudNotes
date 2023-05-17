@@ -7,7 +7,7 @@ fileName: PhoneGap-Setup.md
 relativePath: /android/PhoneGap-Setup.md
 title: PhoneGap-Setup
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Phone Gap Setup {#setupPhoneGap}

@@ -7,7 +7,7 @@ fileName: GooglePluginForEclipse.md
 relativePath: /android/GooglePluginForEclipse.md
 title: GooglePluginForEclipse
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

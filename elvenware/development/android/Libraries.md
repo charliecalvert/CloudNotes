@@ -7,7 +7,7 @@ fileName: Libraries.md
 relativePath: /android/Libraries.md
 title: Libraries
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

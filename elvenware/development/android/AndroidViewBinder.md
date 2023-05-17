@@ -7,7 +7,7 @@ fileName: AndroidViewBinder.md
 relativePath: /android/AndroidViewBinder.md
 title: AndroidViewBinder
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

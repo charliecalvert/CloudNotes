@@ -7,7 +7,7 @@ fileName: MySql.md
 relativePath: /database/mysql/MySql.md
 title: MySql
 directoryName: mysql
-category : css-guide
+category: mysql-guide
 ---
 
 ## Overview

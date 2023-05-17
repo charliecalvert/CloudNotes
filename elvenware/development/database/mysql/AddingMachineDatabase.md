@@ -7,7 +7,7 @@ fileName: AddingMachineDatabase.md
 relativePath: /database/mysql/AddingMachineDatabase.md
 title: AddingMachineDatabase
 directoryName: mysql
-category : css-guide
+category: mysql-guide
 ---
 
 ﻿<script src="/charlie/development/web/Scripts/MyJQueryTests.js"></script>

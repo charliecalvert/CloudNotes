@@ -7,7 +7,7 @@ fileName: JustTheLinks.md
 relativePath: /csharp/videos/JustTheLinks.md
 title: JustTheLinks
 directoryName: videos
-category : css-guide
+category: videos-guide
 ---
 
 Charlie's Videos: Just the Links!

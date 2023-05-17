@@ -7,7 +7,7 @@ fileName: index.md
 relativePath: /database/NoSql/index.md
 title: index
 directoryName: NoSql
-category : css-guide
+category: nosql-guide
 ---
 
 * [MongoDb.html](MongoDb.html)

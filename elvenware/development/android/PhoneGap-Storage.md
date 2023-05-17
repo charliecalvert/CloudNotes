@@ -7,7 +7,7 @@ fileName: PhoneGap-Storage.md
 relativePath: /android/PhoneGap-Storage.md
 title: PhoneGap-Storage
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 ## Cordova Storage

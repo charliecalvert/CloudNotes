@@ -7,7 +7,7 @@ fileName: AndroidDialogs.md
 relativePath: /android/AndroidDialogs.md
 title: AndroidDialogs
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

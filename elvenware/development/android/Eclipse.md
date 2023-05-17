@@ -7,7 +7,7 @@ fileName: Eclipse.md
 relativePath: /android/Eclipse.md
 title: Eclipse
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Eclipse Aptana Overview

@@ -7,7 +7,7 @@ fileName: EclipseSetup.md
 relativePath: /android/EclipseSetup.md
 title: EclipseSetup
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 ## Eclipse Aptana Overview

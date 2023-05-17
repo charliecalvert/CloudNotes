@@ -7,7 +7,7 @@ fileName: AndroidSdk.md
 relativePath: /android/AndroidSdk.md
 title: AndroidSdk
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 The Android SDK

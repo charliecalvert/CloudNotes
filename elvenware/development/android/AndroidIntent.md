@@ -7,7 +7,7 @@ fileName: AndroidIntent.md
 relativePath: /android/AndroidIntent.md
 title: AndroidIntent
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

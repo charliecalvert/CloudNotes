@@ -7,7 +7,7 @@ fileName: dataset-master-detail.md
 relativePath: /database/mssql/dataset-master-detail.md
 title: dataset-master-detail
 directoryName: mssql
-category : css-guide
+category: mssql-guide
 ---
 
 DataSet Master Detail

@@ -7,7 +7,7 @@ fileName: CreateNewProject.md
 relativePath: /android/CreateNewProject.md
 title: CreateNewProject
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu

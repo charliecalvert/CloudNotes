@@ -7,7 +7,7 @@ fileName: AndroidLists.md
 relativePath: /android/AndroidLists.md
 title: AndroidLists
 directoryName: android
-category : css-guide
+category: android-guide
 ---
 
 Toggle Menu
