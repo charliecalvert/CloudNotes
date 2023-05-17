@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Prog270Final2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Prog270Final2017.md
+relativePath: /MidtermFinal/Prog270Final2017.md
+title: Prog270Final2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 THIS DOCUMENT IS CLOSER TO FINAL BUT STILL A WORK IN PROGRESS. IT IS NOT THE FINAL FINAL, BUT HOPEFULLY CLOSE ENOUGH TO LET YOU GET MOST OF THE WORK DONE.

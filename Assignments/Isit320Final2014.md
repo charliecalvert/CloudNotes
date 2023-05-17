@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Final2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit320Final2014.md
+relativePath: /Isit320Final2014.md
+title: Isit320Final2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Isit320 Final 2014
 
 **NOTE**: *This document is not quite final. Begin work on it as soon as possible, but check the announcement area for updates.*

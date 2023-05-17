@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/Hangouts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: Hangouts.md
+relativePath: /Browser/Hangouts.md
+title: Hangouts
+directoryName: Browser
+category : browser-guide
+---
+
 # Overview
 
 Learn to use Hangouts

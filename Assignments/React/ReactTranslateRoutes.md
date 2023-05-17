@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactTranslateRoutes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactTranslateRoutes.md
+relativePath: /React/ReactTranslateRoutes.md
+title: ReactTranslateRoutes
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 The goal of this assignment is to everyone more practice with with React and Express routes. These are subjects we have to know cold. Perhaps the only way to learn is to practice over and over. There is no Redux in this assignment.

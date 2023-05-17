@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsUpToDate.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsUpToDate.md
+relativePath: /WebCrafts/WebCraftsUpToDate.md
+title: WebCraftsUpToDate
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 The primary goal here is to make sure you can handle the updated **ElvenConfig.json** file that supports multiple **users**. Right now, the assignment is a bit sparse, but some might be interested in it so I'll make it available.

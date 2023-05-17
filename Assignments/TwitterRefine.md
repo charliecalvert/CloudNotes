@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/TwitterRefine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: TwitterRefine.md
+relativePath: /TwitterRefine.md
+title: TwitterRefine
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Twitter Refine
 
 The goal is to:

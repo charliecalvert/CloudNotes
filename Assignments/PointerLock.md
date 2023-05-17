@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PointerLock.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PointerLock.md
+relativePath: /PointerLock.md
+title: PointerLock
+directoryName: Assignments
+category : assignments-guide
+---
+
 # PointerLock
 
 As mentioned earlier, navigating through a scene with the keyboard and mouse can be a tricky task. Fortunately, there is existing code for doing. In this assignment, we will add that code to our existing project.

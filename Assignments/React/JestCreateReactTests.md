@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/JestCreateReactTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: JestCreateReactTests.md
+relativePath: /React/JestCreateReactTests.md
+title: JestCreateReactTests
+directoryName: React
+category : react-guide
+---
+
 ## Test button click {#test-click}
 
 It's time to write some unit tests with Jest.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/ElvenIndexedDb.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: ElvenIndexedDb.md
+relativePath: /Express/ElvenIndexedDb.md
+title: ElvenIndexedDb
+directoryName: Express
+category : express-guide
+---
+
 There are two sections to this document. One informative, the second a project for you to complete.
 
 # IndexedDb

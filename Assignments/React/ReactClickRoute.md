@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactClickRoute.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactClickRoute.md
+relativePath: /React/ReactClickRoute.md
+title: ReactClickRoute
+directoryName: React
+category : react-guide
+---
+
 # Click Route React
 
 Convert an Express app into one that supports React.

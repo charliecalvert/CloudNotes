@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PictureCaption.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PictureCaption.md
+relativePath: /PictureCaption.md
+title: PictureCaption
+directoryName: Assignments
+category : assignments-guide
+---
+
 #PictureCaption
 
 

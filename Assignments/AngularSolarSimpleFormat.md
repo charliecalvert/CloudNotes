@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularSolarSimpleFormat.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularSolarSimpleFormat.md
+relativePath: /AngularSolarSimpleFormat.md
+title: AngularSolarSimpleFormat
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goals:

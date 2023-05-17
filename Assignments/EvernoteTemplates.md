@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EvernoteTemplates.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: EvernoteTemplates.md
+relativePath: /EvernoteTemplates.md
+title: EvernoteTemplates
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description 
 
 User your shared Evernote folder to share a document with me that describes how to create an environment variable called **ELF_TEMPLATES**.

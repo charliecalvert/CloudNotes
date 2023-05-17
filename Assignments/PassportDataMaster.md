@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PassportDataMaster.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PassportDataMaster.md
+relativePath: /PassportDataMaster.md
+title: PassportDataMaster
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Refactor **DataMaster** and implement Passport sign in for Facebook and Google.

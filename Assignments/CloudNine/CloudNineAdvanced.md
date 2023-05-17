@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNine/CloudNineAdvanced.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNine
+fileName: CloudNineAdvanced.md
+relativePath: /CloudNine/CloudNineAdvanced.md
+title: CloudNineAdvanced
+directoryName: CloudNine
+category : cloudnine-guide
+---
+
 ## Set up JsObjects
 
 Prog 109 students should not continue further. If you are in some other class than Prog109, you should:

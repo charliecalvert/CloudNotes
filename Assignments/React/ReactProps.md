@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactProps.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactProps.md
+relativePath: /React/ReactProps.md
+title: ReactProps
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 We will learn a bit about React props by continuing to expand the [rest-basics][restb], [ReactBasics][rb] and [ReactMicroServices][rms] programs. We will try to understand properties, and to see how they can be passed from one component to another.

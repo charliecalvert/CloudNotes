@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Final2018.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit320Final2018.md
+relativePath: /MidtermFinal/Isit320Final2018.md
+title: Isit320Final2018
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 Pease see [this announcment][new-final] which covers some of the changes to the final discussed near the end of class on Wednesday.

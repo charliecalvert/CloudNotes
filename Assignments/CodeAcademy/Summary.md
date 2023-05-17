@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/Summary.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: Summary.md
+relativePath: /CodeAcademy/Summary.md
+title: Summary
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 * [CodeAcademyHtmlAndCss01.html](CodeAcademyHtmlAndCss01.html)
 * [CodeAcademyHtmlAndCss02.html](CodeAcademyHtmlAndCss02.html)
 * [CodeAcademyHtmlAndCss03.html](CodeAcademyHtmlAndCss03.html)

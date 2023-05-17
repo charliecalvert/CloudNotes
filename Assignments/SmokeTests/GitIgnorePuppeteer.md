@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/GitIgnorePuppeteer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests
+fileName: GitIgnorePuppeteer.md
+relativePath: /SmokeTests/GitIgnorePuppeteer.md
+title: GitIgnorePuppeteer
+directoryName: SmokeTests
+category : smoketests-guide
+---
+
 ## Overview
 
 [Puppeteer][ppt] is a tool for end-to-end testing. Most of the testing I have done

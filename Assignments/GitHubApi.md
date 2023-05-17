@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitHubApi.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GitHubApi.md
+relativePath: /GitHubApi.md
+title: GitHubApi
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Git Hub API
 
 Our goal in this assignment is learn how to call the [GitHub API](https://github.com/github-tools/github). We will continue to do our work in week03-rest-basics, but you should tag your work as start and finish the assignment, and do you work in a **week05** branch.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseExpress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirebaseExpress.md
+relativePath: /Firebase/FirebaseExpress.md
+title: FirebaseExpress
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 The goal of this assignment is to learn how to create an Express application that can access the Firebase database on the server.

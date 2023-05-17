@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SystemCheck.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: SystemCheck.md
+relativePath: /Aws/SystemCheck.md
+title: SystemCheck
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 Create a program that will allow us to check various system services by running scripts. For instance, it should run **CpuInfo** on the local machine.

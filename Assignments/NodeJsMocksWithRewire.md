@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NodeJsMocksWithRewire.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: NodeJsMocksWithRewire.md
+relativePath: /NodeJsMocksWithRewire.md
+title: NodeJsMocksWithRewire
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Mock NodeJs Modules with Rewire
 
 Among its many capabilities, rewire allows you to mock FS and other node modules. It also gives access to private variables in the code you want to test.

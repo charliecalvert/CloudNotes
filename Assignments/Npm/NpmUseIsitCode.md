@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm/NpmUseIsitCode.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm
+fileName: NpmUseIsitCode.md
+relativePath: /Npm/NpmUseIsitCode.md
+title: NpmUseIsitCode
+directoryName: Npm
+category : npm-guide
+---
+
 ## Overview
 
 This assignment demonstrates how to use your fork of my [isit-code][ic] package. We will also create an Express and React based project that calls some methods in your fork of **isit-code**.

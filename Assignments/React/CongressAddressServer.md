@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/CongressAddressServer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: CongressAddressServer.md
+relativePath: /React/CongressAddressServer.md
+title: CongressAddressServer
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Create a server to serve up addresses. Later we will convert this to a CouchDB server. For now, we will just have the server forward the list of addresses we created in the **GetAddress** assignment.

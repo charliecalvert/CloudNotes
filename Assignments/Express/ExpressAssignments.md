@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/ExpressAssignments.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: ExpressAssignments.md
+relativePath: /Express/ExpressAssignments.md
+title: ExpressAssignments
+directoryName: Express
+category : express-guide
+---
+
 ## Overview
 
 Assignments about Express. Express comes up a lot in my classes, so this list is not complete. But it provides a good start.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntCheck02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GruntCheck02.md
+relativePath: /GruntCheck02.md
+title: GruntCheck02
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Grunt Check Part II provides more information on Grunt.

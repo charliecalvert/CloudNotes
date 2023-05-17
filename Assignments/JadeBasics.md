@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JadeBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JadeBasics.md
+relativePath: /JadeBasics.md
+title: JadeBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Jade Basics
 
 Create an express project called **JadeBasics**. Add the following:

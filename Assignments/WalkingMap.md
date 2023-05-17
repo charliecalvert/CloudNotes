@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WalkingMap.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: WalkingMap.md
+relativePath: /WalkingMap.md
+title: WalkingMap
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Walking Map
 
 Let's learn a little about maps, how to create our own maps, and how to share them with others on computers and on phones.

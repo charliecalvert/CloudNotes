@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AndroidX86Cordova.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AndroidX86Cordova.md
+relativePath: /AndroidX86Cordova.md
+title: AndroidX86Cordova
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of this assignment is to get a simple, default, Android Cordova application running on your phone or on an AndroidX86 build.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/MaterialMixins.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: MaterialMixins.md
+relativePath: /Firebase/MaterialMixins.md
+title: MaterialMixins
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 The goal is to learn more about Google [Material][md], more about mixins, and find a way to hide and display divs so as to make better use of available real estate.

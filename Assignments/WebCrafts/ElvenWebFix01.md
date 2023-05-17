@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/ElvenWebFix01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: ElvenWebFix01.md
+relativePath: /WebCrafts/ElvenWebFix01.md
+title: ElvenWebFix01
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 I grew quite befuddled at the end of class today (Wed Oct 4, 2017) over what turned out to be a simple issue. The [isit-site-tools][ist] repo is hopefully in reasonably good shape, but there was one change I should have made. The **start** script from **package.json** looked like this:

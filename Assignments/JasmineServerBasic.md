@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JasmineServerBasic.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JasmineServerBasic.md
+relativePath: /JasmineServerBasic.md
+title: JasmineServerBasic
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Jasmine Server Side {#jasmine-node}
 
 We want to be able to run tests on the server side that confirms the validity of our code. It is also important to run tests on the client side, in the browser, but that is not our goal in this exercise.

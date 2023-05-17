@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo/ReactMongooseBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo
+fileName: ReactMongooseBasics.md
+relativePath: /Mongo/ReactMongooseBasics.md
+title: ReactMongooseBasics
+directoryName: Mongo
+category : mongo-guide
+---
+
 ## Description
 
 Mongoose Basics is an ORM for MongoDB.

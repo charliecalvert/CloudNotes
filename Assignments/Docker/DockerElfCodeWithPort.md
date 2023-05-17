@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerElfCodeWithPort.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerElfCodeWithPort.md
+relativePath: /Docker/DockerElfCodeWithPort.md
+title: DockerElfCodeWithPort
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 The goal is to take the container we created in [DockerElfCode][dec] and:

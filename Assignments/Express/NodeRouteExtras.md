@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/NodeRouteExtras.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: NodeRouteExtras.md
+relativePath: /Express/NodeRouteExtras.md
+title: NodeRouteExtras
+directoryName: Express
+category : express-guide
+---
+
 ## Overview
 
 This used to be part of the NodeRoutesBasics assignment but now can be safely ignore.

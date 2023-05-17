@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsServerTest.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: AwsServerTest.md
+relativePath: /Aws/AwsServerTest.md
+title: AwsServerTest
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 Everytime we can break hard problems down into simpler problems, we win. One hard problem can be ensuring that our routes are fulfilled. We have learned how to write simple tests to check our client without having to involve the server. But how can we check out the server without involving the client?

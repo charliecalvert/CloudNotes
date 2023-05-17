@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressEdit.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressEdit.md
+relativePath: /React/ReactAddressEdit.md
+title: ReactAddressEdit
+directoryName: React
+category : react-guide
+---
+
 # React Address Edit
 
 We have several steps that will allow us to start editing the data we view:

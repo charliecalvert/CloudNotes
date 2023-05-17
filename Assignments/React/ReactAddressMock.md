@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressMock.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressMock.md
+relativePath: /React/ReactAddressMock.md
+title: ReactAddressMock
+directoryName: React
+category : react-guide
+---
+
 # React Address Mock
 
 - DevOps and TDD: [http://bit.ly/elf-dev-ops](http://bit.ly/elf-dev-ops)

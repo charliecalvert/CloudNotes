@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PassportTwitter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PassportTwitter.md
+relativePath: /PassportTwitter.md
+title: PassportTwitter
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Use [Passport](http://passportjs.org/) "sign in with Twitter". This assignment builds on the [Passport Assignment][passport] which explained how to sign in Google.

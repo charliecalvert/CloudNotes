@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo04.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademyReactPartTwo04.md
+relativePath: /CodeAcademy/CodeAcademyReactPartTwo04.md
+title: CodeAcademyReactPartTwo04
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part IV
 
 Bring [React Part 2][car] to 100%.

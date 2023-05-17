@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/OldEc2Provision.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: OldEc2Provision.md
+relativePath: /Aws/OldEc2Provision.md
+title: OldEc2Provision
+directoryName: Aws
+category : aws-guide
+---
+
 ## Begin Old Provision EC2 Assignment
 
 **NOTE**: _Don't do this part of the assignment, or any parts after this. This is here as a reference, but it is outdated due to the new Provision script._

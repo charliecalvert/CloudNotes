@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNineRefresh.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CloudNineRefresh.md
+relativePath: /CloudNineRefresh.md
+title: CloudNineRefresh
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Create a fresh version of your Cloud 9 workspace. This may be necessary to ensure that mongo will run correctly on it. I was having trouble starting MongoDb in my original Cloud Nine workspace, perhaps because it was so full, perhaps because of some other reason. This exercise should ensure three things:

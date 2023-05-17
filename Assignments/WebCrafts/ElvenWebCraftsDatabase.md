@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsDatabase.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: ElvenWebCraftsDatabase.md
+relativePath: /WebCrafts/ElvenWebCraftsDatabase.md
+title: ElvenWebCraftsDatabase
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Ubuntu Server 16.04 with MongoDb
 
 Here is a copy of Ubuntu Server with MongoDb pre-installed. It's about 2 GB, so have patience with the download.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularYeomanCensus.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularYeomanCensus.md
+relativePath: /AngularYeomanCensus.md
+title: AngularYeomanCensus
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Angular Yeoman Census
 
 In our quest to do things the traditional way, we are going to adopt Yeoman, which is a scaffolding tool. It creates a ready to use Angular application with support for:

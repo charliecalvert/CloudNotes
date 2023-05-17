@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BitlyQuery.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BitlyQuery.md
+relativePath: /BitlyQuery.md
+title: BitlyQuery
+directoryName: Assignments
+category : assignments-guide
+---
+
 # BitlyQuery
 
 * [Bitly API Getting Started](http://dev.bitly.com/get_started.html)

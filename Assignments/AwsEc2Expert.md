@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AwsEc2Expert.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AwsEc2Expert.md
+relativePath: /AwsEc2Expert.md
+title: AwsEc2Expert
+directoryName: Assignments
+category : assignments-guide
+---
+
 #AWS EC2 Expert
 
 Primary goals:

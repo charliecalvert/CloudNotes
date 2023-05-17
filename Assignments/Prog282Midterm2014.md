@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog282Midterm2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog282Midterm2014.md
+relativePath: /Prog282Midterm2014.md
+title: Prog282Midterm2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of the Prog 282 Midterm for Spring 2014 is to learn more about using Ajax to pass data between a client and server. We will also learn more about Express and Jade.

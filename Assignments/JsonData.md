@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JsonData.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JsonData.md
+relativePath: /JsonData.md
+title: JsonData
+directoryName: Assignments
+category : assignments-guide
+---
+
 # JsonData
 
 Here is the program to get running on EC2: [JsonData.zip](http://www.elvenware.com/charlie/downloads/JsonData.zip)

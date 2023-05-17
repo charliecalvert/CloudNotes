@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Midterm2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit320Midterm2017.md
+relativePath: /MidtermFinal/Isit320Midterm2017.md
+title: Isit320Midterm2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 There are two steps:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerCompose.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerCompose.md
+relativePath: /Docker/DockerCompose.md
+title: DockerCompose
+directoryName: Docker
+category : docker-guide
+---
+
 ## Docker Compose
 
 Learn how to use [Docker Compose](https://docs.docker.com/compose/). We will create a main app which can query two micro services. In this case we will use Docker Compose to start all three apps with a single command. They will each have their own image and own container.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntKarma.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GruntKarma.md
+relativePath: /GruntKarma.md
+title: GruntKarma
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Grunt
 
 **jsHint** and **jsBeautifier** help you write clean, well formed code. In general, **jsHint** looks for syntax errors, while **jsBeautifier** helps with indentation and formatting. Grunt is a tool that allows you to run **jsHint** and **jsBeautifier** on all the files in your project at once, rather than running the tools on one file at a time.

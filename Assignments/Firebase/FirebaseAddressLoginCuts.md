@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseAddressLoginCuts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirebaseAddressLoginCuts.md
+relativePath: /Firebase/FirebaseAddressLoginCuts.md
+title: FirebaseAddressLoginCuts
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## For Later
 
 Don't do the sections from here down at this time.

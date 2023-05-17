@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressRoutesSolarTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ExpressRoutesSolarTests.md
+relativePath: /ExpressRoutesSolarTests.md
+title: ExpressRoutesSolarTests
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The primary goal is to learn how to run unit tests against a web server. This involves setting up jasmine to run server side tests with **jasmine-runner.js**, rather than running browser based tests with **karma**.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntCheck03.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GruntCheck03.md
+relativePath: /GruntCheck03.md
+title: GruntCheck03
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 A tool called Jasmine JQuery will allow us to load arbitray HTML files (fixtures) into Jasmine so that we can run tests against them. Normally, we want to load only small chunks of HTML. However, at one point we might want to load the entire contents of the HTML code produced by **vidws/index.jade** into our tests and make sure it contains certain key elements.

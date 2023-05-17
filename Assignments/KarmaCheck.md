@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/KarmaCheck.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: KarmaCheck.md
+relativePath: /KarmaCheck.md
+title: KarmaCheck
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Karma Config
 
 Don't try to run any tests that hit the server from Karma for now. Just tests that go to the client side only.

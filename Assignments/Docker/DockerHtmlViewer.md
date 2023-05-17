@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerHtmlViewer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerHtmlViewer.md
+relativePath: /Docker/DockerHtmlViewer.md
+title: DockerHtmlViewer
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 There are two different ways to get files from a host OS into a Docker container:

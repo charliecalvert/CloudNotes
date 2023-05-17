@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerApache.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerApache.md
+relativePath: /Docker/DockerApache.md
+title: DockerApache
+directoryName: Docker
+category : docker-guide
+---
+
 ## Where we are headed
 
 Throughout this assignment, we are going to being building several docker files. When we are done, I'm picturing a directory structure something like this:

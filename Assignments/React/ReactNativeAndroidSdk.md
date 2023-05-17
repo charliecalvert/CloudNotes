@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactNativeAndroidSdk.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactNativeAndroidSdk.md
+relativePath: /React/ReactNativeAndroidSdk.md
+title: ReactNativeAndroidSdk
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 [Android X86][ax86], React Native and the Android SDK. The goal of this assignment is to load our code into a virtual phone running in VirtualBox.

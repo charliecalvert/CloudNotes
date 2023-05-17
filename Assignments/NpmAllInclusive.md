@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NpmAllInclusive.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: NpmAllInclusive.md
+relativePath: /NpmAllInclusive.md
+title: NpmAllInclusive
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 I'm removing calls to **npm install** and **bower install** from **CreateExpressProject**, **CreateAllExpress**, **TestReady** and **TestFixture**. Instead, we will keep one canonical version of node_modules and **components** in our **~/tmp** directories. I will publish our *all inclusive* **package.json** file in JsObjects.

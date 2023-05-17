@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2DataHunterFinalPrep.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Ec2DataHunterFinalPrep.md
+relativePath: /Ec2DataHunterFinalPrep.md
+title: Ec2DataHunterFinalPrep
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Get **DataHunter** and **DataMaster** working on EC2. Run:

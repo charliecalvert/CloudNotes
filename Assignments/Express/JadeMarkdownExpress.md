@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/JadeMarkdownExpress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: JadeMarkdownExpress.md
+relativePath: /Express/JadeMarkdownExpress.md
+title: JadeMarkdownExpress
+directoryName: Express
+category : express-guide
+---
+
 Goals:
 
 *   We often need to create text that will be reused in multiple locations.

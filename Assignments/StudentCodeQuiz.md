@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/StudentCodeQuiz.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: StudentCodeQuiz.md
+relativePath: /StudentCodeQuiz.md
+title: StudentCodeQuiz
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Overview
 
 Can you, answer the questions below and then send me your SID, that is, send me your college ID?

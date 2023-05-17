@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/BowerComponents.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests
+fileName: BowerComponents.md
+relativePath: /SmokeTests/BowerComponents.md
+title: BowerComponents
+directoryName: SmokeTests
+category : smoketests-guide
+---
+
 ## Overview
 
 Our goal is to clean up **.bowerrc**. A number of students have **.bowerrc** files that reference a directory called **components**. It should be **bower_components**.

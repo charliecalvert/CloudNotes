@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact04.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademyReact04.md
+relativePath: /CodeAcademy/CodeAcademyReact04.md
+title: CodeAcademyReact04
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part IV
 
 Bring [React Part 1](https://www.codecademy.com/learn/react-101) to 100%.

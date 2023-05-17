@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteOnPhone.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElvenSiteOnPhone.md
+relativePath: /ElvenSiteOnPhone.md
+title: ElvenSiteOnPhone
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 To help you get setup:

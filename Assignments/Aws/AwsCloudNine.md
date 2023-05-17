@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsCloudNine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: AwsCloudNine.md
+relativePath: /Aws/AwsCloudNine.md
+title: AwsCloudNine
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 The key feature for us that we can code with only a browser and an AWS account. We don't need to set up a VM. This is not as powerful as Pristine Lubuntu, but it is enough to allow you to write code and access all the features of the Ubuntu command line.

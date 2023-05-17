@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JQueryMochaBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JQueryMochaBasics.md
+relativePath: /JQueryMochaBasics.md
+title: JQueryMochaBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 #JQueryMochaBasics
 
 here should be enough information here to allow you to complete this assignment. There are two parts to this project:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressTestingDataManager.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressTestingDataManager.md
+relativePath: /React/ReactAddressTestingDataManager.md
+title: ReactAddressTestingDataManager
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 The introduction of the **PouchDdManager** complicates our testing. Let's look at **Address.test.js**.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/FunctionThis.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: FunctionThis.md
+relativePath: /FunctionThis.md
+title: FunctionThis
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of this assignment is to see what **this** equals in the four class types of functions.

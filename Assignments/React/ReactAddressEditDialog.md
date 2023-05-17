@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressEditDialog.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressEditDialog.md
+relativePath: /React/ReactAddressEditDialog.md
+title: ReactAddressEditDialog
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Allow the user to pop up a dialog and edit a record. Something very much like this code should be added to both the **SmallAddress** program and in your **Final**.

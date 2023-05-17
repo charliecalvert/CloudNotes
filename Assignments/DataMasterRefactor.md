@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DataMasterRefactor.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: DataMasterRefactor.md
+relativePath: /DataMasterRefactor.md
+title: DataMasterRefactor
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 We will discuss this assignment on Wednesday. I'm giving it to you now in case you find it useful. It allows you to step away from Angular, and just write standard jQuery code in the **DataMaster** program. Do only as much as you find useful.

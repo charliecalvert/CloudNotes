@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressDataMaven.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressDataMaven.md
+relativePath: /React/ReactAddressDataMaven.md
+title: ReactAddressDataMaven
+directoryName: React
+category : react-guide
+---
+
 # React Address Data Maven
 
 We are going to add a new component called **DataMaven** so that we can refactor and get rid of **AddressChanger**.

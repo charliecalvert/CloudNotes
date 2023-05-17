@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularRouting.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularRouting.md
+relativePath: /AngularRouting.md
+title: AngularRouting
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 Learn about single page applications and Angular Routing.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/MarkdownExpressInClass.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: MarkdownExpressInClass.md
+relativePath: /Express/MarkdownExpressInClass.md
+title: MarkdownExpressInClass
+directoryName: Express
+category : express-guide
+---
+
 # Markdown Express in Class
 
 Project Name: **Week09-InClassMarkdownExpress**

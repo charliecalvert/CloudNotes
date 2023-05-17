@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresence01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: OnlinePresence01.md
+relativePath: /OnlinePresence01.md
+title: OnlinePresence01
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 In this class we use a variety free or inexpensive cloud services. This assignment is designed to help you use the these services in a safe, public spirited, manner.

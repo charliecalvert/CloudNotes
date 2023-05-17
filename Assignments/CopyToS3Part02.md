@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CopyToS3Part02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CopyToS3Part02.md
+relativePath: /CopyToS3Part02.md
+title: CopyToS3Part02
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Copy To S3 Part 02
 
 Here are the steps we will accomplish:

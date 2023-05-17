@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactMicroServices.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactMicroServices.md
+relativePath: /React/ReactMicroServices.md
+title: ReactMicroServices
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 We have a principle that we talk about quite a bit:

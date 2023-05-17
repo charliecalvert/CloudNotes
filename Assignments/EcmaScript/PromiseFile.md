@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript/PromiseFile.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript
+fileName: PromiseFile.md
+relativePath: /EcmaScript/PromiseFile.md
+title: PromiseFile
+directoryName: EcmaScript
+category : ecmascript-guide
+---
+
 ## Overview
 
 Sometimes we need to wait for an asynchronous call to return. Traditionally, JavaScript has handled this with callbacks. However, modern JavaScript uses [Promises][pmdn] (and also async await) to handle this.

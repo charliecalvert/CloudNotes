@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresenceOld.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: OnlinePresenceOld.md
+relativePath: /OnlinePresenceOld.md
+title: OnlinePresenceOld
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## The Old Google Sites
 
 Google Sites has been radically rewritten. For this assignment, create a new Google Site, as outlined above. But if you want to create an old style site for your personal use, then you can click the create button on this page:

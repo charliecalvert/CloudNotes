@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteStyles.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElvenSiteStyles.md
+relativePath: /ElvenSiteStyles.md
+title: ElvenSiteStyles
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 When using your _Elven Site_ web site creator the user should be able to select the [bootswatch][btsw] theme for the created site. In short, I want you to add Bootswatch to your latest Elven Sites code. That is the goal of the **Elven Site Styles** assignment.

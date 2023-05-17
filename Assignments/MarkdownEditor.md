@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MarkdownEditor.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MarkdownEditor.md
+relativePath: /MarkdownEditor.md
+title: MarkdownEditor
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Markdown Editor
 
 The goal of this assignment is three fold:

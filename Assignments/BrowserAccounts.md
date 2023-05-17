@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BrowserAccounts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BrowserAccounts.md
+relativePath: /BrowserAccounts.md
+title: BrowserAccounts
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of the **Browser Accounts** assignment is to be sure you know how to log into Firefox and Chrome on Windows, Linux, and a mobile device.

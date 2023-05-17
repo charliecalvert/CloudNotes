@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JasmineSinon.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JasmineSinon.md
+relativePath: /JasmineSinon.md
+title: JasmineSinon
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Jasmine Express Sinon
 
 Learn about unit testing and mocks with Jasmine and the [sinon](https://github.com/sinonjs/sinon) fake web server.

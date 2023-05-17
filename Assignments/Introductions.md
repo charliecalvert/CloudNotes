@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Introductions.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Introductions.md
+relativePath: /Introductions.md
+title: Introductions
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Introductions
 
 Go to the Discussion area in Canvas. Open the Introductions discussion. Write a short personal introduction and post a large, easy to see picture of yourself.

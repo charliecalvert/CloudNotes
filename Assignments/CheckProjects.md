@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CheckProjects.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CheckProjects.md
+relativePath: /CheckProjects.md
+title: CheckProjects
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Check Projects
 
 Make sure each of your projects has a project file and a unique name.

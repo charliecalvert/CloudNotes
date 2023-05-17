@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsReactStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsReactStarter.md
+relativePath: /WebCrafts/WebCraftsReactStarter.md
+title: WebCraftsReactStarter
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 The goal of this assignment is to begin the process of integrating React into our [WebCrafts][wcs] application. Your key reference will be the [ReactBasics][rb] assignment. More specifically, I'm expecting you to be working in this repository:

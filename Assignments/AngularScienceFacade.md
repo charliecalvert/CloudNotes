@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularScienceFacade.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularScienceFacade.md
+relativePath: /AngularScienceFacade.md
+title: AngularScienceFacade
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 Our goal is to implement tests and methods for a two classes:

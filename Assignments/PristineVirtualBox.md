@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PristineVirtualBox.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PristineVirtualBox.md
+relativePath: /PristineVirtualBox.md
+title: PristineVirtualBox
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Our goal is to install [Lubuntu](https://lubuntu.me/) on VirtualBox from a custom OVA appliance. Inside the [OVA file][ova] is a compressed instance of the Linux Lubuntu distribution that I created on my home machine.

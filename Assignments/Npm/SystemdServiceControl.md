@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm/SystemdServiceControl.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm
+fileName: SystemdServiceControl.md
+relativePath: /Npm/SystemdServiceControl.md
+title: SystemdServiceControl
+directoryName: Npm
+category : npm-guide
+---
+
 ## Overview
 
 When I come to help students we often find that they can't start a program because a port is busy. Frequently, it is busy because a systemd service is running on it. The **system-service-control** script is meant to be a first step toward helping you find out which of your programs are running on systemd. That way you will know which program to shut down so you can open up a port.

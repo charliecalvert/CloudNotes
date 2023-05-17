@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SystemCheckDetails.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: SystemCheckDetails.md
+relativePath: /Aws/SystemCheckDetails.md
+title: SystemCheckDetails
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 We want to refactor App.js into:

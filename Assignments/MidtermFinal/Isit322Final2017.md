@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit322Final2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit322Final2017.md
+relativePath: /MidtermFinal/Isit322Final2017.md
+title: Isit322Final2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 # Gist Markdown Manager
 
 This program is designed to work with GitHub gists. It should allow a user to manage a list of Gists that can be inserted into markdown documents.

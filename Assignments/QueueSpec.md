@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/QueueSpec.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: QueueSpec.md
+relativePath: /QueueSpec.md
+title: QueueSpec
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Queue Specification
 
 On Elvenware, you can find a page that specifies the basic operations performed by Queues and Stacks.

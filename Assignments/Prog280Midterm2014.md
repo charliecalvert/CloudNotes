@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog280Midterm2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog280Midterm2014.md
+relativePath: /Prog280Midterm2014.md
+title: Prog280Midterm2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Prog 280 Midterm 2014
 
 This document describes the Prog 280 midterm. Please check it regularly

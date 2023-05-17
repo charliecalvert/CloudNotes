@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsEducate.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: AwsEducate.md
+relativePath: /Aws/AwsEducate.md
+title: AwsEducate
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 Each of you should have received an invitation to join AWS Educate.

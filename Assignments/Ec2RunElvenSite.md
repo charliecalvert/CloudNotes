@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2RunElvenSite.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Ec2RunElvenSite.md
+relativePath: /Ec2RunElvenSite.md
+title: Ec2RunElvenSite
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of **Ec2 Run Elven Site** is to get your most recent version of our ElvenSite program running on EC2. This should include support for [bootswatch][btsw].

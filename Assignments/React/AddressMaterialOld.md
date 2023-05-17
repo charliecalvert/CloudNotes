@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/AddressMaterialOld.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: AddressMaterialOld.md
+relativePath: /React/AddressMaterialOld.md
+title: AddressMaterialOld
+directoryName: React
+category : react-guide
+---
+
 ## React Material Bits and Pieces
 
 DON'T EDIT. COMPARE THIS TO REACT ADDRESS MATERIAL. 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DreamSpark.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: DreamSpark.md
+relativePath: /DreamSpark.md
+title: DreamSpark
+directoryName: Assignments
+category : assignments-guide
+---
+
 Students enrolled in our class by the first day are added to the ELMS system.  Newly registered students are not automatically added to the system.  After the 1st  day, when a new student is added to our roster, I need to take special actions to get them set up properly. Please send me email if you feel you are not properly registered.
 
 The web site for DreamSpark appears to be part of the Library Media Center (LMC):     

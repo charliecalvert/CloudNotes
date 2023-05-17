@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ThreeFloor.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ThreeFloor.md
+relativePath: /ThreeFloor.md
+title: ThreeFloor
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This is assignment demonstrates key features of [ThreeJs][threejs], a 3D library for JavaScript.

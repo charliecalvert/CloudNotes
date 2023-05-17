@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyHtmlAndCss03.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademyHtmlAndCss03.md
+relativePath: /CodeAcademy/CodeAcademyHtmlAndCss03.md
+title: CodeAcademyHtmlAndCss03
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part III
 
 Bring both [HTML](https://www.codecademy.com/learn/learn-html)

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/UnitTestsAddress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: UnitTestsAddress.md
+relativePath: /React/UnitTestsAddress.md
+title: UnitTestsAddress
+directoryName: React
+category : react-guide
+---
+
 # Unit Test Address
 
 The goal of this assignment is to display and test a complete address with FirstName, LastName, Street, City, State, Zip or more. There should be tests for each field.

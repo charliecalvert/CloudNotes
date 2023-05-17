@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MarkdownRoutes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MarkdownRoutes.md
+relativePath: /MarkdownRoutes.md
+title: MarkdownRoutes
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Week 10 Routes and Markdown
 
 The goal here is to:

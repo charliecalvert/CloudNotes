@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/NotesRouteBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: NotesRouteBasics.md
+relativePath: /Browser/NotesRouteBasics.md
+title: NotesRouteBasics
+directoryName: Browser
+category : browser-guide
+---
+
 On the client:
 
 ```javascript

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog272FinalSimplified2015.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog272FinalSimplified2015.md
+relativePath: /Prog272FinalSimplified2015.md
+title: Prog272FinalSimplified2015
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Prog 272 2015 Simplified Final
 
 I want to give you the opportunity to complete a simplified final. To

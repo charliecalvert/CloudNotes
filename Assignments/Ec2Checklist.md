@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2Checklist.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Ec2Checklist.md
+relativePath: /Ec2Checklist.md
+title: Ec2Checklist
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The EC2 In Class Checklist is designed to help ensure that you have EC2 set up correctly. Don't be too obsessive, but try to get the tests I describe here to pass.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNine/CloudNineAuto.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CloudNine
+fileName: CloudNineAuto.md
+relativePath: /CloudNine/CloudNineAuto.md
+title: CloudNineAuto
+directoryName: CloudNine
+category : cloudnine-guide
+---
+
 ## Auto Setup
 
 We have some setup to do to create a nice environment in which to work. This will also give you some links to some of my tools. We will use at least some of these tools in this class.

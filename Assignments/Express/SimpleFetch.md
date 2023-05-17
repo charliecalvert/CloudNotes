@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/SimpleFetch.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: SimpleFetch.md
+relativePath: /Express/SimpleFetch.md
+title: SimpleFetch
+directoryName: Express
+category : express-guide
+---
+
 ## Overview
 
 Everyone must understand routes to do well in this class.

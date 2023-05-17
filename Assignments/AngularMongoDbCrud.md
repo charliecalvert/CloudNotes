@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularMongoDbCrud.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularMongoDbCrud.md
+relativePath: /AngularMongoDbCrud.md
+title: AngularMongoDbCrud
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Angular MongoDb CRUD
 
 This assignment is not yet complete, but I'm publishing what I have so you can get started on it. I will announce when it is updated, but still, I would press refresh from time to time in your browser to make sure you have the latest version.

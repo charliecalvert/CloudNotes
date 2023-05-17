@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerNodeMicro.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerNodeMicro.md
+relativePath: /Docker/DockerNodeMicro.md
+title: DockerNodeMicro
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 Create a main application and a micro service, each in their own Docker container. Write a docker-compose file that allows you to call the micro service from the main app and display the result.

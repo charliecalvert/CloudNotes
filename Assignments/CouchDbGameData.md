@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDbGameData.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CouchDbGameData.md
+relativePath: /CouchDbGameData.md
+title: CouchDbGameData
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Create a program based on [**JsObjects/Data/CouchView02**][couch-view-02] and call it **Week0X-DataMaster**. We will use the CouchView02 program as the basis for the program that works with the data we will use in the game.

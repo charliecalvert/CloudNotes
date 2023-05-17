@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OnlinePresence.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: OnlinePresence.md
+relativePath: /OnlinePresence.md
+title: OnlinePresence
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This document contains various tips designed to help students work in the cloud.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AskQuestion.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AskQuestion.md
+relativePath: /AskQuestion.md
+title: AskQuestion
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Ask a Question
 
 This assignment is designed to encourage participation in on-line discussions. Each week, I want you to:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AndroidStates.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AndroidStates.md
+relativePath: /AndroidStates.md
+title: AndroidStates
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Mobile State Population
 
 The goal is to query the census bureau about state populations. Create a web that does this. Then create an Cordova based mobile app that does that same thing.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/StackGoogle.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: StackGoogle.md
+relativePath: /StackGoogle.md
+title: StackGoogle
+directoryName: Assignments
+category : assignments-guide
+---
+
 
 StackEdit and Google Drive
 --------------------------

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsJestMocks.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsJestMocks.md
+relativePath: /WebCrafts/WebCraftsJestMocks.md
+title: WebCraftsJestMocks
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 Get rid of the **xmlhttprequest** syntax error when running WebCrafts test.

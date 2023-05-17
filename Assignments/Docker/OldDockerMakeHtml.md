@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/OldDockerMakeHtml.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: OldDockerMakeHtml.md
+relativePath: /Docker/OldDockerMakeHtml.md
+title: OldDockerMakeHtml
+directoryName: Docker
+category : docker-guide
+---
+
 ## Install Software
 
 Run these commands from inside a Docker container:

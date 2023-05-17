@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/UpstartAndSystemd.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: UpstartAndSystemd.md
+relativePath: /UpstartAndSystemd.md
+title: UpstartAndSystemd
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Use systemd to ensure your program starts every time your Ubuntu system reboots. systemd keeps your program running.

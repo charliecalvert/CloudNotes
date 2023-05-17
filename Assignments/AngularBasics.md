@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularBasics.md
+relativePath: /AngularBasics.md
+title: AngularBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Angular Basics
 
 In this exercise you will learn how to create a fairly complete and quite powerful Angular project with the following features built in:

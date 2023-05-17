@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Cordova01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Cordova01.md
+relativePath: /Cordova01.md
+title: Cordova01
+directoryName: Assignments
+category : assignments-guide
+---
+
 Week03 Exercises
 ================
 

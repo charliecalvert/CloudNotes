@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactGitIgnoreMenu.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactGitIgnoreMenu.md
+relativePath: /React/ReactGitIgnoreMenu.md
+title: ReactGitIgnoreMenu
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Add a menu and client side routing. Begin refactoring into logical components.

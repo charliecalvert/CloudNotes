@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/HerokuReactStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: HerokuReactStarter.md
+relativePath: /HerokuReactStarter.md
+title: HerokuReactStarter
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Heroku Starter
 
 Join [heroku](https://www.heroku.com/). Note your user name and password, or save your account into LastPass or the like. For language, choose NodeJs.

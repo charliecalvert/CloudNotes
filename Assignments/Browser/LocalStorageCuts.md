@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/LocalStorageCuts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: LocalStorageCuts.md
+relativePath: /Browser/LocalStorageCuts.md
+title: LocalStorageCuts
+directoryName: Browser
+category : browser-guide
+---
+
 ## Elf Logger
 
  One way to do it is to set it by module. If we set a particular environment variable to the name of a module, then the debug statements for that module will be visible.

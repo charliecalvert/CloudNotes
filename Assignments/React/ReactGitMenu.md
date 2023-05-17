@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactGitMenu.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactGitMenu.md
+relativePath: /React/ReactGitMenu.md
+title: ReactGitMenu
+directoryName: React
+category : react-guide
+---
+
 # React Git Menu
 
 The goals of this assignment are:

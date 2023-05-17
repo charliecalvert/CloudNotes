@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog282Final2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog282Final2014.md
+relativePath: /Prog282Final2014.md
+title: Prog282Final2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 <!-- GUID: NONE -->
 #Prog282 Final Spring 2014
 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/TestSnapShotsAndHints.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: TestSnapShotsAndHints.md
+relativePath: /React/TestSnapShotsAndHints.md
+title: TestSnapShotsAndHints
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 SnapShot tests do not replace all our standard tests. SnapShot testing is not TDD because you can't meaningfully write the test first and then get it to pass.

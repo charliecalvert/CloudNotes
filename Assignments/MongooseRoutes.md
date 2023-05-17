@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongooseRoutes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MongooseRoutes.md
+relativePath: /MongooseRoutes.md
+title: MongooseRoutes
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 In this assignment we will integrate menus and sorting into a single application. The goal is provide you a blue print for doing the same thing in your final. 

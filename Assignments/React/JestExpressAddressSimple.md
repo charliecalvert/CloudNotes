@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/JestExpressAddressSimple.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: JestExpressAddressSimple.md
+relativePath: /React/JestExpressAddressSimple.md
+title: JestExpressAddressSimple
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Learn the basics of React Components and how to write to use [Jest][jest] to test them.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SinglePageExpress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: SinglePageExpress.md
+relativePath: /SinglePageExpress.md
+title: SinglePageExpress
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Single Page Jade. The goal is to build a **single page application** that can show two different "pages" when the user asks to see them.

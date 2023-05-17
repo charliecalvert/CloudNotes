@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BrowserSecurity.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BrowserSecurity.md
+relativePath: /BrowserSecurity.md
+title: BrowserSecurity
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The main goal of **Browser Security** assignment is to make sure you understand how much control you have over your browser and your Google account. Most folks can just use the default settings. However, if you want more control, you have it. Some of these settings I use all the time.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapDelicious.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BootstrapDelicious.md
+relativePath: /BootstrapDelicious.md
+title: BootstrapDelicious
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Bootstrap Delicious File
 
 The main goal of the assignment is to retrieve information from the Delicious web site based on the user's input. We are learning how to call a [REST][rest] like [web service][ws]. In this case, it is the web service provided by Delicious.

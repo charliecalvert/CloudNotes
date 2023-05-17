@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog280Final2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog280Final2014.md
+relativePath: /Prog280Final2014.md
+title: Prog280Final2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Prog 280 Final 2014
 
 This exam tests your understanding of the following technologies. It will perhaps try your patience at times, but I want to be sure that you have mastery of the following technologies:

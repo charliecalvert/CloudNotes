@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DropBoxEc2.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: DropBoxEc2.md
+relativePath: /DropBoxEc2.md
+title: DropBoxEc2
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## DropBox on EC2
 
 The goals of this assignment are simple:

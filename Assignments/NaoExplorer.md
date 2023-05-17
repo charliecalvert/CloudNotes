@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NaoExplorer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: NaoExplorer.md
+relativePath: /NaoExplorer.md
+title: NaoExplorer
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Nao Explorer
 
 Start with this command:

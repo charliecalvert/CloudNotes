@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: index.md
+relativePath: /Browser/index.md
+title: index
+directoryName: Browser
+category : browser-guide
+---
+
 ## Overview
 
 Browser related assignments.

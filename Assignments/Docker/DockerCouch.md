@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerCouch.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerCouch.md
+relativePath: /Docker/DockerCouch.md
+title: DockerCouch
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 Set up an instance of the NoSQL database CouchDb and access it from a NodeJs application.

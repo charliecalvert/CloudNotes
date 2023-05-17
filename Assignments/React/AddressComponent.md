@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/AddressComponent.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: AddressComponent.md
+relativePath: /React/AddressComponent.md
+title: AddressComponent
+directoryName: React
+category : react-guide
+---
+
 # Address Component
 
 The goal is to extend our **week02-react-jest** project to support new React components with **props**.

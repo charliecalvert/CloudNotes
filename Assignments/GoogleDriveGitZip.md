@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GoogleDriveGitZip.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GoogleDriveGitZip.md
+relativePath: /GoogleDriveGitZip.md
+title: GoogleDriveGitZip
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The purpose of the **Google Drive, Git and Zip** assignment is to give everyone practice using:

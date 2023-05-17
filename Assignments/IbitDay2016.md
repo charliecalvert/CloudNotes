@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/IbitDay2016.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: IbitDay2016.md
+relativePath: /IbitDay2016.md
+title: IbitDay2016
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Build an Angular SPA (Single Page App) and deploy it to Heroku. In the app, load and display some JSON.

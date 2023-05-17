@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DeliciousQuery.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: DeliciousQuery.md
+relativePath: /DeliciousQuery.md
+title: DeliciousQuery
+directoryName: Assignments
+category : assignments-guide
+---
+
 # DeliciousQuery
 
 Learn more about testing.

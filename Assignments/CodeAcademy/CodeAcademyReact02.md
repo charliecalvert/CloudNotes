@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReact02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademyReact02.md
+relativePath: /CodeAcademy/CodeAcademyReact02.md
+title: CodeAcademyReact02
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part II
 
 Bring [React Part 1](https://www.codecademy.com/learn/react-101) to at least 50%.

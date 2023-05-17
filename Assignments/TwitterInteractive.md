@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/TwitterInteractive.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: TwitterInteractive.md
+relativePath: /TwitterInteractive.md
+title: TwitterInteractive
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Twitter Query
 
 The goal of this project is to query Twitter. We will ask for details about our account, but also about things that are happening on Twitter.

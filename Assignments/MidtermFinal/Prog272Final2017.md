@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Prog272Final2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Prog272Final2017.md
+relativePath: /MidtermFinal/Prog272Final2017.md
+title: Prog272Final2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 # Prog 272 Final Spring 2017
 
 I will try to fill in more details later, but this should help you get started.

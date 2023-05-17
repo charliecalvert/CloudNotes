@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PubSub01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PubSub01.md
+relativePath: /PubSub01.md
+title: PubSub01
+directoryName: Assignments
+category : assignments-guide
+---
+
 # PubSub
 
 Create a project with two modules, one called **Calculate.js** and

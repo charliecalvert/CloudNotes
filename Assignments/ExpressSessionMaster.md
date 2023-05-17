@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressSessionMaster.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ExpressSessionMaster.md
+relativePath: /ExpressSessionMaster.md
+title: ExpressSessionMaster
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of this assignment is to combine Sessions and Sign-In. It allows you to track who is signed into which session and something of what they did while they werer in the session.

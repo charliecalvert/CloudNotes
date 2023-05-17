@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactNativeAddress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactNativeAddress.md
+relativePath: /React/ReactNativeAddress.md
+title: ReactNativeAddress
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Our goal is to recreate our best current version of AddressShow in React Native. By now you might be calling it AddressMenu or AddressMaterial. But whatever our best Web App code might be, we want to recreate it in React Native.

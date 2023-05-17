@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ThreeJsBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ThreeJsBasics.md
+relativePath: /ThreeJsBasics.md
+title: ThreeJsBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 ThreeJs is a 3D library for JavaScript. Create a simple [ThreeJs](https://threejs.org/) program.

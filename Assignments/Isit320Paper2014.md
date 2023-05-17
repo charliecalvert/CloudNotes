@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Paper2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit320Paper2014.md
+relativePath: /Isit320Paper2014.md
+title: Isit320Paper2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Isit320 Paper 2014
 
 Write a paper at least 5 pages long on a technical subject covered in this class. The subject can be of your choosing, or based on one of the recommendations below. Writing your paper should, in most cases, involve doing at least a bit of research.

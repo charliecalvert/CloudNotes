@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsSanityTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsSanityTests.md
+relativePath: /React/ReactPropsSanityTests.md
+title: ReactPropsSanityTests
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 **NOTE**: _I'm pushing this out before it is ready so you can be working on it over the weekend, etc. I will update with clarifications and perhaps requests for more code. But this gets you started._

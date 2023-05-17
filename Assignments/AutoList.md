@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AutoList.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AutoList.md
+relativePath: /AutoList.md
+title: AutoList
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Prog 272
 
 ## week01

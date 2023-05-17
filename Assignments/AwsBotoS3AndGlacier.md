@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AwsBotoS3AndGlacier.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AwsBotoS3AndGlacier.md
+relativePath: /AwsBotoS3AndGlacier.md
+title: AwsBotoS3AndGlacier
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Boto3, S3, Glacier
 
 If you haven't already, install the aws cli:

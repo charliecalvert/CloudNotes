@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/Ec2ProvisionRepo.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: Ec2ProvisionRepo.md
+relativePath: /Aws/Ec2ProvisionRepo.md
+title: Ec2ProvisionRepo
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 Learn More about the [AWS JavaScript SDK][jsdk]

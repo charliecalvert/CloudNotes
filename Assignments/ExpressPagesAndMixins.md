@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ExpressPagesAndMixins.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ExpressPagesAndMixins.md
+relativePath: /ExpressPagesAndMixins.md
+title: ExpressPagesAndMixins
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 In the  Express Pages and Mixins assignment you will learn about Jade, bootstrap and mixins. I'd like you to build a single page app (SPA) that switches between showing the **main page** and the **about page**.

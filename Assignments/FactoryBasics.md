@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/FactoryBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: FactoryBasics.md
+relativePath: /FactoryBasics.md
+title: FactoryBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 #FactoryBasics
 
 Open the Factory Simple project:

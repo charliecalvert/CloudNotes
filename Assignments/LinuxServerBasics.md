@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/LinuxServerBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: LinuxServerBasics.md
+relativePath: /LinuxServerBasics.md
+title: LinuxServerBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of this assignment is to set up a Virtual Machine containing an Ubuntu Server instance and to communicate to it from your Pristine Ubuntu Desktop. Link to this document:

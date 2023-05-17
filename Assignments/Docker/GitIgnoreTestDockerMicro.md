@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/GitIgnoreTestDockerMicro.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: GitIgnoreTestDockerMicro.md
+relativePath: /Docker/GitIgnoreTestDockerMicro.md
+title: GitIgnoreTestDockerMicro
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 Create a Git Ignore Test Docker Micro service that confirms:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressSanityTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressSanityTests.md
+relativePath: /React/ReactAddressSanityTests.md
+title: ReactAddressSanityTests
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Download and run some unit tests designed to see if your **week05-address-simple** project is structured correctly. It's easy for students to miss a step, and it is easy for me to leave out an important step, or to provide unclear or contradictory instructions. The goal of this assignment is to provide a single reference for the project.

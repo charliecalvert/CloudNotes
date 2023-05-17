@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ModularPatternBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ModularPatternBasics.md
+relativePath: /ModularPatternBasics.md
+title: ModularPatternBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Learn the basics of how to use the modular pattern. It is likely that many of the projects we create this quarter will follow this basic pattern. So make a note of this project so you can find it again later as it lays out several patterns that we are likely to use over and over.

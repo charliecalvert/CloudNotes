@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularControllerAsInClass.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularControllerAsInClass.md
+relativePath: /AngularControllerAsInClass.md
+title: AngularControllerAsInClass
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Angular ControllerAs InClass
 
 ## Step01

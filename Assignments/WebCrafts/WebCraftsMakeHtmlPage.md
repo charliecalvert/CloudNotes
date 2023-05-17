@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsMakeHtmlPage.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsMakeHtmlPage.md
+relativePath: /WebCrafts/WebCraftsMakeHtmlPage.md
+title: WebCraftsMakeHtmlPage
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 The goal of this assignment is to start converting the **MakeHtml** page to React.

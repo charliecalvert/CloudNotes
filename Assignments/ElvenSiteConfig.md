@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteConfig.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElvenSiteConfig.md
+relativePath: /ElvenSiteConfig.md
+title: ElvenSiteConfig
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 In Elven Site Config we add configuration files to our ElvenSite.

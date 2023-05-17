@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PythonMySqlJsonMarkdown.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PythonMySqlJsonMarkdown.md
+relativePath: /PythonMySqlJsonMarkdown.md
+title: PythonMySqlJsonMarkdown
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of the Python MySql assignment is to add database support to our program. Here are the major steps invovled:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularMongooseOnePage.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularMongooseOnePage.md
+relativePath: /AngularMongooseOnePage.md
+title: AngularMongooseOnePage
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 Incorporate the Moongoose editor material into your midterm project. Start by copying your existing midterm into a folder called **Week10-AngularOnePage**.

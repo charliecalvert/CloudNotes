@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactGetAddress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactGetAddress.md
+relativePath: /React/ReactGetAddress.md
+title: ReactGetAddress
+directoryName: React
+category : react-guide
+---
+
 # React Get Address
 
 We should:

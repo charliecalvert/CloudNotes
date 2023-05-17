@@ -3,6 +3,11 @@ const debug = createDebugMessages('lib:directory-pairs-test');
 const debugCall = createDebugMessages('lib:directory-pairs-test:call');
 
 /**
+ * This code is never used.
+ */
+
+
+/**
  * This is our redundant code we don't need it.
  * @see findGuidePair
  *

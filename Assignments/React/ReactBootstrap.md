@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactBootstrap.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactBootstrap.md
+relativePath: /React/ReactBootstrap.md
+title: ReactBootstrap
+directoryName: React
+category : react-guide
+---
+
 # React Bootstrap
 
 It's time to tweak our apps appearance so that it works on a phone. We will use bootstrap to help us achieve our goal.

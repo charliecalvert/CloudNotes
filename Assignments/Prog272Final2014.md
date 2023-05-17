@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog272Final2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog272Final2014.md
+relativePath: /Prog272Final2014.md
+title: Prog272Final2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Prog 272 Final 2014
 
 This document defines the final for Prog 272. It is a work in progress. Please check back frequently.

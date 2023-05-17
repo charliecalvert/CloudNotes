@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/RestBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: RestBasics.md
+relativePath: /React/RestBasics.md
+title: RestBasics
+directoryName: React
+category : react-guide
+---
+
 # Rest Basics
 
 Use Rest with React and Concurrently. There are two applications joined by a proxy:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/prog109-midterm-2018.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: prog109-midterm-2018.md
+relativePath: /MidtermFinal/prog109-midterm-2018.md
+title: prog109-midterm-2018
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 This is the 2019 midterm for Prog 109. This should be close to the final version, but as you work on your midterm, refresh this page from time to time in your browser. It is unlikely that I will change the requirements for the midterm, but I may add clarifications or hints. You'll want to see hints.

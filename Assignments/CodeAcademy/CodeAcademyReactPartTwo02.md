@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyReactPartTwo02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademyReactPartTwo02.md
+relativePath: /CodeAcademy/CodeAcademyReactPartTwo02.md
+title: CodeAcademyReactPartTwo02
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part II
 
 Bring [React Part Two][car] to at least 50% complete.

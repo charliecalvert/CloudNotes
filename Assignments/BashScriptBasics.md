@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BashScriptBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BashScriptBasics.md
+relativePath: /BashScriptBasics.md
+title: BashScriptBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 Here are assignments from a previous class that might shed light on this subject:
 
 - <http://www.ccalvert.net/books/CloudNotes/Assignments/BashExpressScript.html>

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerGitIgnorePush.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerGitIgnorePush.md
+relativePath: /Docker/DockerGitIgnorePush.md
+title: DockerGitIgnorePush
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 Our goal is to create a bash script that will:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Json/ConvertJsonToFieldDefinitions.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Json
+fileName: ConvertJsonToFieldDefinitions.md
+relativePath: /Json/ConvertJsonToFieldDefinitions.md
+title: ConvertJsonToFieldDefinitions
+directoryName: Json
+category : json-guide
+---
+
 # Convert JSON to Field Definitions
 
 This program can, and probably should, be written in ES5. Put in a directory called **git-convert** that is part of the **GitExplorer** project. In short, you will have three directories in the root of the project:

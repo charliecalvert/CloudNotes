@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/UnitTestNumbers.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: UnitTestNumbers.md
+relativePath: /React/UnitTestNumbers.md
+title: UnitTestNumbers
+directoryName: React
+category : react-guide
+---
+
 # Unit Test Numbers
 
 The goal of this assignment is to display and test a complete set of numbers from 1 to 9, each of which has state and can be set with a button click.

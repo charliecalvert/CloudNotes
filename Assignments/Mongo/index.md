@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo
+fileName: index.md
+relativePath: /Mongo/index.md
+title: index
+directoryName: Mongo
+category : mongo-guide
+---
+
 ## MongoDb Overview
 
 - [MongoDB on Elvenware](http://www.elvenware.com/charlie/development/database/NoSql/MongoDb.html)

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/OwnCloudInstall.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: OwnCloudInstall.md
+relativePath: /OwnCloudInstall.md
+title: OwnCloudInstall
+directoryName: Assignments
+category : assignments-guide
+---
+
 Install OwnCloud
 ================
 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/SwitchRepos.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: SwitchRepos.md
+relativePath: /React/SwitchRepos.md
+title: SwitchRepos
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Our goal is to clone two or more repositories and to be able to switch back and forth between them. When you switch to a new repo, then most of the other components such as **GetBranches**, **BadFileTests** and **CheckGitIgnore** will query the newly selected repository.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/GruntCheckDeprecated.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests
+fileName: GruntCheckDeprecated.md
+relativePath: /SmokeTests/GruntCheckDeprecated.md
+title: GruntCheckDeprecated
+directoryName: SmokeTests
+category : smoketests-guide
+---
+
 ## Grunt Check
 
 **NOTE**: _After Spring 2017, we are not using Grunt as often, but instead we are switching to eslint, prettier and webpack. As a result, you should skip this section._

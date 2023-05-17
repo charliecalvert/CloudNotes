@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Final2015.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit320Final2015.md
+relativePath: /Isit320Final2015.md
+title: Isit320Final2015
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This document describes the steps needed to complete the Final for Isit 320 in 2015.

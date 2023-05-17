@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsReduxData.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsReduxData.md
+relativePath: /WebCrafts/WebCraftsReduxData.md
+title: WebCraftsReduxData
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 We start working with our **ElvenConfig.json** file via Redux.

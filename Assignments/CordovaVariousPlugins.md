@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CordovaVariousPlugins.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CordovaVariousPlugins.md
+relativePath: /CordovaVariousPlugins.md
+title: CordovaVariousPlugins
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Various Cordova Plugins
 
 The goal of this assignment is to learn about Cordova Plugins. There are also

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Midterm2018.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit320Midterm2018.md
+relativePath: /MidtermFinal/Isit320Midterm2018.md
+title: Isit320Midterm2018
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 The midterm is an an extension of the [SystemCheck][sc] and [SystemCheckRefactor][scr] assignments with perhaps an element or two from the [AWS Provision][awsp] assignment.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NewGitBucket.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: NewGitBucket.md
+relativePath: /NewGitBucket.md
+title: NewGitBucket
+directoryName: Assignments
+category : assignments-guide
+---
+
 # New Git Bucket
 
 See the [GitNewRepo][git-new-repo] assignment which is more complete than this.

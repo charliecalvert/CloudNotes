@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JadeMixinBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JadeMixinBasics.md
+relativePath: /JadeMixinBasics.md
+title: JadeMixinBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Jade Mixin Basics
 
 The goal of this assignment is to learn how to use Jade [mixins](https://pugjs.org/language/mixins.html). In particular, we will see how to use mixins to quickly and easily assemble an interface for an application.

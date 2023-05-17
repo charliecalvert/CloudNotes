@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitNewRepo.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GitNewRepo.md
+relativePath: /GitNewRepo.md
+title: GitNewRepo
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This assignment is designed to help you create a new Git repository. The text covers both [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/). If possible, you should prefer GitHub since it is _the_ central repository for code related to web development.

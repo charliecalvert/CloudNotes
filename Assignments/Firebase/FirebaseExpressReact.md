@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseExpressReact.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirebaseExpressReact.md
+relativePath: /Firebase/FirebaseExpressReact.md
+title: FirebaseExpressReact
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 The goal is to expand the **FirebaseExpress** project so that it works with **React** and **Redux**.

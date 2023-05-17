@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularMongoDbStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularMongoDbStarter.md
+relativePath: /AngularMongoDbStarter.md
+title: AngularMongoDbStarter
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Angular MongoDb Starter
 
 Use Angular and MongoDb in a single express project.

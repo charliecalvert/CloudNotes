@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactSummary272.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactSummary272.md
+relativePath: /React/ReactSummary272.md
+title: ReactSummary272
+directoryName: React
+category : react-guide
+---
+
 # React Summary Prog 272
 
 - There is a new [DataLoader.js][ndl]. It contains better error checking.

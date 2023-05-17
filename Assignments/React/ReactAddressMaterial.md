@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactAddressMaterial.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactAddressMaterial.md
+relativePath: /React/ReactAddressMaterial.md
+title: ReactAddressMaterial
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 This assignment needs to be updated. We will discuss in class, Tuesday, May 14, 2019.

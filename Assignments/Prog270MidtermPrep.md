@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog270MidtermPrep.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog270MidtermPrep.md
+relativePath: /Prog270MidtermPrep.md
+title: Prog270MidtermPrep
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The Prog 270 Midterm Prep helps you work on the Prisitine Lubuntu side of your midterm.

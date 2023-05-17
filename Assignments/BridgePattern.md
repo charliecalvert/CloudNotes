@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BridgePattern.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BridgePattern.md
+relativePath: /BridgePattern.md
+title: BridgePattern
+directoryName: Assignments
+category : assignments-guide
+---
+
 #BridgePattern Part 01
 
 This assignment has been simplified. Your goal at this stage is just to mock up the creation of the **DataReader** application. We will wait until next week to implement it. In particular, you do not need to read data from the server, and you do not need to properly display either the JSON or the markdown. 

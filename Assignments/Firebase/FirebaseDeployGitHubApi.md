@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseDeployGitHubApi.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirebaseDeployGitHubApi.md
+relativePath: /Firebase/FirebaseDeployGitHubApi.md
+title: FirebaseDeployGitHubApi
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 The goal is to move our GitExplorer application into the cloud using Firebase.

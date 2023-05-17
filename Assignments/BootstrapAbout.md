@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapAbout.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BootstrapAbout.md
+relativePath: /BootstrapAbout.md
+title: BootstrapAbout
+directoryName: Assignments
+category : assignments-guide
+---
+
 # In Class Bootstrap
 
 Bootstrap allows you to create great projects with beautiful CSS that looks good on a PC, a tablet or a phone.

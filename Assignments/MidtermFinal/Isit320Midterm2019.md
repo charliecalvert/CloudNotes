@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Midterm2019.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit320Midterm2019.md
+relativePath: /MidtermFinal/Isit320Midterm2019.md
+title: Isit320Midterm2019
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 The midterm is an an extension of the [GitIgnoreTestDockerMicro][gitdm] and [DockerCompose][dc] assignments. In some cases, students have used [RestBasics][rb] rather than **DockerComposer**. As long as it works, then I'm fine with that decision.

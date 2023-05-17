@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/RunApacheOldStyle.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: RunApacheOldStyle.md
+relativePath: /Docker/RunApacheOldStyle.md
+title: RunApacheOldStyle
+directoryName: Docker
+category : docker-guide
+---
+
 ## Run Apache Old
 
 This section is now outdated and will be deleted.

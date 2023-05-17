@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CreateSymbolicLinksToScripts.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CreateSymbolicLinksToScripts.md
+relativePath: /CreateSymbolicLinksToScripts.md
+title: CreateSymbolicLinksToScripts
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 There are two parts to this assignment.

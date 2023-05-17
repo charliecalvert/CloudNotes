@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/MoreOnCloudNine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: MoreOnCloudNine.md
+relativePath: /Aws/MoreOnCloudNine.md
+title: MoreOnCloudNine
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 This is not an assignment. It simply contains some tips on setting up a development environment on a site like Cloud9, AWS or any Ubuntu Server.

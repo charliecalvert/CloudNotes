@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CopyToS3Part01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CopyToS3Part01.md
+relativePath: /CopyToS3Part01.md
+title: CopyToS3Part01
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Copy to S3 Part 01
 
 This assignment helps you get up to speed with AwsBasicS3. This program aids content creators who produce a lot of HTML files. 

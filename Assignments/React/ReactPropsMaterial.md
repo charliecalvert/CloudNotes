@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsMaterial.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsMaterial.md
+relativePath: /React/ReactPropsMaterial.md
+title: ReactPropsMaterial
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 The Goal is to add [Material-UI][limu] to our application to gussy up the menu and give our app a more standard appearance.

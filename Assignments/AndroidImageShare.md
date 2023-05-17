@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AndroidImageShare.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AndroidImageShare.md
+relativePath: /AndroidImageShare.md
+title: AndroidImageShare
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Our goal in the **Android Introductory Pictures** assignment is:

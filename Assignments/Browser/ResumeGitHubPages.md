@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/ResumeGitHubPages.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: ResumeGitHubPages.md
+relativePath: /Browser/ResumeGitHubPages.md
+title: ResumeGitHubPages
+directoryName: Browser
+category : browser-guide
+---
+
 ## Overview
 
 Begin building a web site.

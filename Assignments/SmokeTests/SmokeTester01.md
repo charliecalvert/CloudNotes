@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests/SmokeTester01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/SmokeTests
+fileName: SmokeTester01.md
+relativePath: /SmokeTests/SmokeTester01.md
+title: SmokeTester01
+directoryName: SmokeTests
+category : smoketests-guide
+---
+
 ## Overview
 
 Normalize file naming conventions as outlined in the **Turn it in** section. After renaming the files, get the best and latest versions of your programs in the **master** branch.

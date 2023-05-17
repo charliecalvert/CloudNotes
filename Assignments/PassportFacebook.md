@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PassportFacebook.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PassportFacebook.md
+relativePath: /PassportFacebook.md
+title: PassportFacebook
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Passport Facebook exercise.

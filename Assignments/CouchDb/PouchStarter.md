@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDb/PouchStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDb
+fileName: PouchStarter.md
+relativePath: /CouchDb/PouchStarter.md
+title: PouchStarter
+directoryName: CouchDb
+category : couchdb-guide
+---
+
 ## Overview
 
 Read the PouchDb GetStarted App. It is similar to what we will build.

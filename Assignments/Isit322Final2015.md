@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit322Final2015.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit322Final2015.md
+relativePath: /Isit322Final2015.md
+title: Isit322Final2015
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Isit 322 Final 2015
 
 There are two primary goals:

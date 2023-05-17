@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BitlyInteractive.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BitlyInteractive.md
+relativePath: /BitlyInteractive.md
+title: BitlyInteractive
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Bitly Interactive
 
 The primary goal of this program is to create an interface for your Bitly data.

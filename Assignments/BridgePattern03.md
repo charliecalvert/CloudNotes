@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BridgePattern03.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BridgePattern03.md
+relativePath: /BridgePattern03.md
+title: BridgePattern03
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Bridge Pattern 03
 
 Here is an overview of the assignment:

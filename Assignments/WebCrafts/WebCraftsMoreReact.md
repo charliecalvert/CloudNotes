@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsMoreReact.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsMoreReact.md
+relativePath: /WebCrafts/WebCraftsMoreReact.md
+title: WebCraftsMoreReact
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 Additional hints on getting WebCraft converted to React.

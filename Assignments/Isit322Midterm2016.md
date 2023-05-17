@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit322Midterm2016.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit322Midterm2016.md
+relativePath: /Isit322Midterm2016.md
+title: Isit322Midterm2016
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This is the Isit322 Midterm for 2016. Your program should be in a directory called **Week08-Midterm**.

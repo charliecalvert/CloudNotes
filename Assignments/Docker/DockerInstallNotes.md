@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerInstallNotes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerInstallNotes.md
+relativePath: /Docker/DockerInstallNotes.md
+title: DockerInstallNotes
+directoryName: Docker
+category : docker-guide
+---
+
 
 Docker is also free, but the licensing is a bit murkier. For Linux, it is clearly free and open source. For Windows, there are questions, and perhaps only a lawyer can sort it out for us. I will try to learn more, but for now, I don't have the expertise to make a ruling.
 

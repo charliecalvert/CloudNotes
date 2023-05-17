@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AwsMigration.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AwsMigration.md
+relativePath: /AwsMigration.md
+title: AwsMigration
+directoryName: Assignments
+category : assignments-guide
+---
+
 
 #EC2 Cloud Only
 

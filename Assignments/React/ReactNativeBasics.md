@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactNativeBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactNativeBasics.md
+relativePath: /React/ReactNativeBasics.md
+title: ReactNativeBasics
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Get started using [React Native][rn].

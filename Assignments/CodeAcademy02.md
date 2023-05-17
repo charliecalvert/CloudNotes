@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CodeAcademy02.md
+relativePath: /CodeAcademy02.md
+title: CodeAcademy02
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Code Academy Part II
 
 Bring the JavaScript and HTML courses to at least 25%.

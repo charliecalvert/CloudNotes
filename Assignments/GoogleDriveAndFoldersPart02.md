@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GoogleDriveAndFoldersPart02.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GoogleDriveAndFoldersPart02.md
+relativePath: /GoogleDriveAndFoldersPart02.md
+title: GoogleDriveAndFoldersPart02
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 In *Google Drive Files and Folders Part II* we will review how to use Google Drive.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/DataMasterFinalPrep.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: DataMasterFinalPrep.md
+relativePath: /DataMasterFinalPrep.md
+title: DataMasterFinalPrep
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The DataMaster Final Prep helps you get ready for the final. Major goals include:

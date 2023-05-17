@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog219Final2016.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog219Final2016.md
+relativePath: /Prog219Final2016.md
+title: Prog219Final2016
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The Prog 219 Final for 2016 is broken out into their tiers, three sets of priorities. I'll list the basic priorities first, intermediate level priorities second, and advanced priorities third. The more experience you have as a developer, the deeper into this list you should go. Those with little experience may complete only features from the basic tier and perhaps one or two items from the intermediate level. Those with lots of experience should get deeper into the list of advanced priorities.

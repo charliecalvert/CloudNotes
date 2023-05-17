@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Summary.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Summary.md
+relativePath: /Summary.md
+title: Summary
+directoryName: Assignments
+category : assignments-guide
+---
+
 * [AllAssignments.html](AllAssignments.html)
 * [AllFiles.html](AllFiles.html)
 * [Amazon.html](Amazon.html)

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GoogleSharedFolder.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GoogleSharedFolder.md
+relativePath: /GoogleSharedFolder.md
+title: GoogleSharedFolder
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 If you have not done so already, create a Google shared folder we can use in this class.

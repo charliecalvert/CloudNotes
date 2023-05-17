@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/HyperlinkExplorer.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: HyperlinkExplorer.md
+relativePath: /HyperlinkExplorer.md
+title: HyperlinkExplorer
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 We further refine the midterm, getting ready for the final.

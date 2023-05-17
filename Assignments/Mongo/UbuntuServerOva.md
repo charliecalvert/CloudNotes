@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo/UbuntuServerOva.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Mongo
+fileName: UbuntuServerOva.md
+relativePath: /Mongo/UbuntuServerOva.md
+title: UbuntuServerOva
+directoryName: Mongo
+category : mongo-guide
+---
+
 ## Ubuntu Servers with MongoDb Install {#mongodb-ubuntu}
 
 These are OVA files that you install into VirtualBox by choosing **File | Import Appliance**. This is the server version of Ubuntu, so there is only the command line. No Interface.

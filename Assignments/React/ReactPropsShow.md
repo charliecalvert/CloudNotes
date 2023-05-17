@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsShow.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsShow.md
+relativePath: /React/ReactPropsShow.md
+title: ReactPropsShow
+directoryName: React
+category : react-guide
+---
+
 # React Props Show
 
 Learn to create a component that can automatically generate the HTML elements displayed in its **render** method.

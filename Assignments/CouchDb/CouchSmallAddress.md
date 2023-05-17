@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDb/CouchSmallAddress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDb
+fileName: CouchSmallAddress.md
+relativePath: /CouchDb/CouchSmallAddress.md
+title: CouchSmallAddress
+directoryName: CouchDb
+category : couchdb-guide
+---
+
 ## Overview
 
 Refactor Pouch Starter and add support for live syncing.

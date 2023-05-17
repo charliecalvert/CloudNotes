@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GameListener.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GameListener.md
+relativePath: /GameListener.md
+title: GameListener
+directoryName: Assignments
+category : assignments-guide
+---
+
 # GameListener
 
 We want to create a game listener, which will show the current state of the game. It shows the current location of the main character and the mini-map. It is controlled and updated entirely through sockets, and it works on a different port than the game.

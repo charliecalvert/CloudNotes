@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropBasics.md
+relativePath: /React/ReactPropBasics.md
+title: ReactPropBasics
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Properties are like [state][state], but they are passed down from a component higher in the component hierarchy. Thus we can define a property in one place, but use it in multiple components without having to redeclare it, or having to perform other gymnastics.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/MaterialEverywhere.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: MaterialEverywhere.md
+relativePath: /React/MaterialEverywhere.md
+title: MaterialEverywhere
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 This is a fairly simple assignment, but it is an important one.

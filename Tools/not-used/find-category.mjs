@@ -1,8 +1,16 @@
-import { guidePairs } from './guide-objects-caps.mjs';
+import { guidePairs } from '../insert-front-matter/guide-objects-caps.mjs';
 import createDebugMessages from 'debug';
 const debug = createDebugMessages('lib:find-category');
 const debugFindCategory = createDebugMessages('lib:find-category:findCategory');
 
+/**
+ * This code is never used.
+ */
+
+
+/**
+ * This code is never used.
+ */
 function findCategoryWithIf(fileInfo) {
     if (fileInfo.directory === guidePairs.cloudGuide.path) {
         fileInfo.category = guidePairs.cloudGuide.category;
@@ -14,6 +22,9 @@ function findCategoryWithIf(fileInfo) {
     return fileInfo;
 }
 
+/**
+ * This code is never used.
+ */
 function findCategory(fileInfo) {
     debugFindCategory('FIND CATEGORY:', fileInfo.directory);
     switch (fileInfo.directory) {

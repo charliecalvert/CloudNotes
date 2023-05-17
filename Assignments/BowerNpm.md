@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BowerNpm.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BowerNpm.md
+relativePath: /BowerNpm.md
+title: BowerNpm
+directoryName: Assignments
+category : assignments-guide
+---
+
 # NPM and Bower
 
 The goal of this exercise is to make sure you know how to use our front end and server side package managers.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NodeRouteBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: NodeRouteBasics.md
+relativePath: /NodeRouteBasics.md
+title: NodeRouteBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 **STATUS**: _This assignment needs polishing but should be complete enough to allow students to complete the assignment._

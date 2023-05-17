@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactBasics.md
+relativePath: /React/ReactBasics.md
+title: ReactBasics
+directoryName: React
+category : react-guide
+---
+
 # React Basics
 
 This chapter covers creating [React][re] program from scratch. We will create a React project from scratch. There are various tools that can automate the creation of React projects, but there is much to be learned by creating a project by scratch.

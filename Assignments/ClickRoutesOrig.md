@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ClickRoutesOrig.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ClickRoutesOrig.md
+relativePath: /ClickRoutesOrig.md
+title: ClickRoutesOrig
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Click Route
 
 In class on Wednesday we developed an express application that we called, I believe, **Temp02**. I have renamed that project and made it available for download as [ClickRoute.zip](http://elvenware.com/charlie/downloads/ClickRoute.zip). Download that project. Copy it into your repo and unzip it:

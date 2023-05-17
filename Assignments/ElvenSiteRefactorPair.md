@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteRefactorPair.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElvenSiteRefactorPair.md
+relativePath: /ElvenSiteRefactorPair.md
+title: ElvenSiteRefactorPair
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The ElvenSiteRefactorPair assignment gives you a chance to refactor your code into logical classes. This should be a step toward providing your code with an architecture that is easy to understand, and easy to test.

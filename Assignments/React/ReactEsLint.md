@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactEsLint.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactEsLint.md
+relativePath: /React/ReactEsLint.md
+title: ReactEsLint
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 We want to lint our code to see if it meets some basic requirements. The most important part is setting up [ESLint](https://eslint.org/) at the command line, but we also want it working WebStorm.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirestoreData.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirestoreData.md
+relativePath: /Firebase/FirestoreData.md
+title: FirestoreData
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 Learn to use Firebase Cloud Firestore.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BitBucketBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BitBucketBasics.md
+relativePath: /BitBucketBasics.md
+title: BitBucketBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 #BitBucket Basics
 
 In this assignment you will learn how to use a Git repository and to clone your repository on CodeAnywhere. You will also learn how to check in code from [CodeAnywhere](https://codeanywhere.com) to [BitBucket](https://bitbucket.org/).

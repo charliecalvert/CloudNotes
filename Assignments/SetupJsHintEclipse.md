@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/SetupJsHintEclipse.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: SetupJsHintEclipse.md
+relativePath: /SetupJsHintEclipse.md
+title: SetupJsHintEclipse
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Setup JsHint in Eclipse
 
 ## Install

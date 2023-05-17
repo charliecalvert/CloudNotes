@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerElfCode.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerElfCode.md
+relativePath: /Docker/DockerElfCode.md
+title: DockerElfCode
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 Install Docker BCode. This is a copy of Charlie's development environment in a Docker container. It is based on the official [Docker image for Ubuntu][diu]. It is a bit like having Pristine Lubuntu in a Docker container.

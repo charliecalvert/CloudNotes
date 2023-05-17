@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularCanvasShapes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularCanvasShapes.md
+relativePath: /AngularCanvasShapes.md
+title: AngularCanvasShapes
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Angular Canvas Shapes
 
 This assignment covers two topics:

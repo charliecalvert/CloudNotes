@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Final2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit320Final2017.md
+relativePath: /MidtermFinal/Isit320Final2017.md
+title: Isit320Final2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 The goal of the final is to demonstrate your ability to deploy web sites to the cloud. In particular, I want to see:

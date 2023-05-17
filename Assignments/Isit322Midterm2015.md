@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit322Midterm2015.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit322Midterm2015.md
+relativePath: /Isit322Midterm2015.md
+title: Isit322Midterm2015
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Isit322 Midterm 2015
 
 We want to bring our Web App based Angular version of our Census data query up to some reasonable simulacrum of a first iteration on the final app.

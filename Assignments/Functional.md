@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Functional.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Functional.md
+relativePath: /Functional.md
+title: Functional
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Overview
 
 Create a single Express based application called **Week02-Functional**:

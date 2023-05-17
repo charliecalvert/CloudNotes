@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongooseComments.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MongooseComments.md
+relativePath: /MongooseComments.md
+title: MongooseComments
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 Learn how to refactor **MongooseSubDocs** in to a program with easily reusable components. In particular, learn how to break out the code for handling comments into two separate modules called:

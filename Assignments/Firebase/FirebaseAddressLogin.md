@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseAddressLogin.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirebaseAddressLogin.md
+relativePath: /Firebase/FirebaseAddressLogin.md
+title: FirebaseAddressLogin
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 THIS DOCUMENT STILL NEEDS WORK, BUT HOPEFULLY IS USABLE.

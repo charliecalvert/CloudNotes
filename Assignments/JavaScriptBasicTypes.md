@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/JavaScriptBasicTypes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: JavaScriptBasicTypes.md
+relativePath: /JavaScriptBasicTypes.md
+title: JavaScriptBasicTypes
+directoryName: Assignments
+category : assignments-guide
+---
+
 
 ## JavaScript Basic Types
 

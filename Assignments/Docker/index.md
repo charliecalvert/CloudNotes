@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: index.md
+relativePath: /Docker/index.md
+title: index
+directoryName: Docker
+category : docker-guide
+---
+
 ## Overview
 
 This is the TOC for the Docker assignments in Charlie Calvert's courses.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactReduxGitApi.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactReduxGitApi.md
+relativePath: /React/ReactReduxGitApi.md
+title: ReactReduxGitApi
+directoryName: React
+category : react-guide
+---
+
 # React Redux Git API
 
 We now want to apply Redux to GitExplorer.

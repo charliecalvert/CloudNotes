@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Callbacks.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Callbacks.md
+relativePath: /Callbacks.md
+title: Callbacks
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Callbacks
 
 Learn about JavaScripts callbacks. We will cover this in class on Thursday, so you can wait until then to do it, if you wish.

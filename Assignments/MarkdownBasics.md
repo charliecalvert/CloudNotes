@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MarkdownBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MarkdownBasics.md
+relativePath: /MarkdownBasics.md
+title: MarkdownBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The Markdown Basics document will help you get up to speed with a simple markup language called Markdown. You can easily convert markdown files to other formats such as HTML and PDF. Since markdown is much easier to write than HTML, it is a great way to create HTML documents.

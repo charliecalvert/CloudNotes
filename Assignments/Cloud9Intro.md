@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Cloud9Intro.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Cloud9Intro.md
+relativePath: /Cloud9Intro.md
+title: Cloud9Intro
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Cloud 9 Intro
 
 It will be simplest if you first, set up a Git repository as explained in the [Git New Repo][gnr] assignment.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademy08.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademy08.md
+relativePath: /CodeAcademy/CodeAcademy08.md
+title: CodeAcademy08
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part VIII
 
 Bring the JavaScript and HTML courses to 100%.

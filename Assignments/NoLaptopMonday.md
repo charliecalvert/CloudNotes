@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/NoLaptopMonday.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: NoLaptopMonday.md
+relativePath: /NoLaptopMonday.md
+title: NoLaptopMonday
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goals of the **No Laptop Monday** are two fold:

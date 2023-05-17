@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/WebCraftsJestStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: WebCraftsJestStarter.md
+relativePath: /WebCrafts/WebCraftsJestStarter.md
+title: WebCraftsJestStarter
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 The goal of this assignment is to begin the process of integrating Jest tests into WebCrafts.

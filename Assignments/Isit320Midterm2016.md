@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Midterm2016.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit320Midterm2016.md
+relativePath: /Isit320Midterm2016.md
+title: Isit320Midterm2016
+directoryName: Assignments
+category : assignments-guide
+---
+
 
 ## Overview
 

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularDirectives.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularDirectives.md
+relativePath: /AngularDirectives.md
+title: AngularDirectives
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Angular Directives
 
 This is a very sketchy outline of an in-class assignment. Details to follow. Don't forget to refresh this page when looking for updates.

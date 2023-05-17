@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Ec2GitHtmlPictures.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Ec2GitHtmlPictures.md
+relativePath: /Ec2GitHtmlPictures.md
+title: Ec2GitHtmlPictures
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The purpose of the **EC2 Git Html and Pictures** assignment is to give you practice:

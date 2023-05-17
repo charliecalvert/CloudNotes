@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/master-list.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: master-list.md
+relativePath: /master-list.md
+title: master-list
+directoryName: Assignments
+category : assignments-guide
+---
+
 * [Summary.html](Summary.html)
 * [Windows/Summary.html](Windows/Summary.html)
 * [WebCrafts/Summary.html](WebCrafts/Summary.html)

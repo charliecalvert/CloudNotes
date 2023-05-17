@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenImageEditing.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElvenImageEditing.md
+relativePath: /ElvenImageEditing.md
+title: ElvenImageEditing
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 I did some more work on the **Elven Image** Editing program. It can, if used properly, now create a script that will sort out the images you have used from those you kept.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AndroidX86Install.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AndroidX86Install.md
+relativePath: /AndroidX86Install.md
+title: AndroidX86Install
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Install AndroidX86 into VirtualBox. Most students will perform this task in Windows, then use VirtualBox to run AndroidX86 on your Windows desktop.

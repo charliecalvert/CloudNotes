@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactReduxBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactReduxBasics.md
+relativePath: /React/ReactReduxBasics.md
+title: ReactReduxBasics
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 The goal of this assignment is to learn about Redux and Props.

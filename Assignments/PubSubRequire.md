@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/PubSubRequire.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: PubSubRequire.md
+relativePath: /PubSubRequire.md
+title: PubSubRequire
+directoryName: Assignments
+category : assignments-guide
+---
+
 * PubSub Require
 
 Convert the [PubSub01](PubSub01.html) assigmnent to work with 

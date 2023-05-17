@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CordovaEventsPlugins.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CordovaEventsPlugins.md
+relativePath: /CordovaEventsPlugins.md
+title: CordovaEventsPlugins
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Cordova Events and Plugins in Class
 
 Main goal: Create a Cordova application that hosts our Yeoman Census application. In particular:

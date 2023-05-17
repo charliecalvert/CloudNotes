@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CouchDbBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CouchDbBasics.md
+relativePath: /CouchDbBasics.md
+title: CouchDbBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This is a simple assignment outlined in the [Insert][#insert] section. To help you get up to speed with CouchDb, I first include some demos and a few notes on Databases.

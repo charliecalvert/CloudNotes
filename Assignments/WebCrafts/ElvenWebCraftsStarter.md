@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts/ElvenWebCraftsStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/WebCrafts
+fileName: ElvenWebCraftsStarter.md
+relativePath: /WebCrafts/ElvenWebCraftsStarter.md
+title: ElvenWebCraftsStarter
+directoryName: WebCrafts
+category : webcrafts-guide
+---
+
 ## Overview
 
 For the next several weeks, we are going to work on a project that already exists. It is a tool for building web sites. Our goal is to take a project students built several years ago and update it. We will:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Express/ElfExpressSimple.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Express
+fileName: ElfExpressSimple.md
+relativePath: /Express/ElfExpressSimple.md
+title: ElfExpressSimple
+directoryName: Express
+category : express-guide
+---
+
 ## Overview
 
 See **$ELF_TEMPLATES/Scripts/ElfSimpleExpress**.

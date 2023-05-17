@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirestoreRules.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirestoreRules.md
+relativePath: /Firebase/FirestoreRules.md
+title: FirestoreRules
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 If you got to the point where you hosted your site and began to read and write to the database, you should learn how to secure your database. In particular, after the quarter ends, you should ensure that your database is not completely open to the world.

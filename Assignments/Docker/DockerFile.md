@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker/DockerFile.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Docker
+fileName: DockerFile.md
+relativePath: /Docker/DockerFile.md
+title: DockerFile
+directoryName: Docker
+category : docker-guide
+---
+
 ## The Docker File
 
 In this assignment you will learn the basics of working with [**Dockerfiles**][df]. We can use these files to automate the process outlined in the [Docker Starter Assignment][dsp].

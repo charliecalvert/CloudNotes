@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/LinuxWebUser.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: LinuxWebUser.md
+relativePath: /LinuxWebUser.md
+title: LinuxWebUser
+directoryName: Assignments
+category : assignments-guide
+---
+
 # EC2 Web User
 
 The goal of this assignment is to help you learn how to use an EC2 instance to host a web site.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/RestTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: RestTests.md
+relativePath: /React/RestTests.md
+title: RestTests
+directoryName: React
+category : react-guide
+---
+
 # Rest Tests
 
 This assignment has two parts. Please complete both of them. Part I is described in the document you are currently reading. Part II is described in the slide deck called [jest with create-react-app][bcd]. Be sure to complete both parts. In particular, make sure you have a test for button clicks.

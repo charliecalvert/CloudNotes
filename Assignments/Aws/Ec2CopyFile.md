@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/Ec2CopyFile.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: Ec2CopyFile.md
+relativePath: /Aws/Ec2CopyFile.md
+title: Ec2CopyFile
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 Learn how to copy a file to remote location from a React application.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/HTMLStructure.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: HTMLStructure.md
+relativePath: /Browser/HTMLStructure.md
+title: HTMLStructure
+directoryName: Browser
+category : browser-guide
+---
+
 HTML 5: Structure
 by Charlie Calvert
 Bellevue College

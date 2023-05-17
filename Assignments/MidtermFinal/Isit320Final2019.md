@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit320Final2019.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit320Final2019.md
+relativePath: /MidtermFinal/Isit320Final2019.md
+title: Isit320Final2019
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 ## Overview
 
 The final for isit320 in 2019.

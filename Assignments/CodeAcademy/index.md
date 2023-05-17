@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: index.md
+relativePath: /CodeAcademy/index.md
+title: index
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 ## Overview
 
 Here is a Table of Contents for Code Academy Skills used in Charlie's courses.

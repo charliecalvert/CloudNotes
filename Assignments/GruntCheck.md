@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GruntCheck.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GruntCheck.md
+relativePath: /GruntCheck.md
+title: GruntCheck
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Grunt Check
 
 In this assignment you will learn how to use [grunt][grunt], [jshint][jshint], [jscs][jscs] and [jsbeautifier][jsb]. These utilities help you format your code and run basic sanity checks on it. In particular, this assignment shows how to use them to check the status of a Node Js Express project.

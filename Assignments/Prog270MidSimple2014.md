@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog270MidSimple2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog270MidSimple2014.md
+relativePath: /Prog270MidSimple2014.md
+title: Prog270MidSimple2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Prog270 Simplified Midterm
 
 Here is a simplified midterm. The highest possible score you can get on this version of the exam is A-, but in many cases you can expect a B or B+ as a sign that you did very well on this version of the exam. It would not be fair to give people who took the simplified exam the same score as those who took the harder exam.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapBasics.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BootstrapBasics.md
+relativePath: /BootstrapBasics.md
+title: BootstrapBasics
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Bootstrap Basics
 
 We'll work on this assignment in class on Tuesday, Oct 6, 2015.

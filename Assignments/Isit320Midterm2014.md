@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Midterm2014.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit320Midterm2014.md
+relativePath: /Isit320Midterm2014.md
+title: Isit320Midterm2014
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Isit320 Midterm
 
 The midterm is a chance for you to show what you have learned so far this quarter. There is no absolute right answer for the midterm. Below I list a set of features. Try to complete as many as you can, but do not be concerned if you do not complete everything. If you need to make choices as to which features to complete, aim to complete the ones on the Priority One list.

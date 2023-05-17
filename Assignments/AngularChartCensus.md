@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularChartCensus.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularChartCensus.md
+relativePath: /AngularChartCensus.md
+title: AngularChartCensus
+directoryName: Assignments
+category : assignments-guide
+---
+
 #Angular Chart Census
 
 This assignment is not yet complete, but you can get started by doing at least this much.

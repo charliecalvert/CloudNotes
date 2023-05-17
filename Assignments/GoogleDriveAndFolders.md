@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GoogleDriveAndFolders.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GoogleDriveAndFolders.md
+relativePath: /GoogleDriveAndFolders.md
+title: GoogleDriveAndFolders
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of *Google Drive Files and Folders* is to help you become familiar with creating folders and files on Google Drive.

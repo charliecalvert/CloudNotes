@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitTag.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GitTag.md
+relativePath: /GitTag.md
+title: GitTag
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Git Tag
 
 Tagging can help you keep track of specific versions of your repository. Read about it online:

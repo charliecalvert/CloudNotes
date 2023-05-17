@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript/EcmaScriptFunctions.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript
+fileName: EcmaScriptFunctions.md
+relativePath: /EcmaScript/EcmaScriptFunctions.md
+title: EcmaScriptFunctions
+directoryName: EcmaScript
+category : ecmascript-guide
+---
+
 ## Overview
 
 The goal of this assignment is to learn how to work with ES6 JavaScript arrow functions, loops and  JavaScript classes. We will also learn about using Babel to transpile ES6 code into ES5. In this assignment, always use ES6 style code when declaring functions.

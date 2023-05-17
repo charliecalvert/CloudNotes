@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/JsBeautifyDeprecated.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: JsBeautifyDeprecated.md
+relativePath: /React/JsBeautifyDeprecated.md
+title: JsBeautifyDeprecated
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 I'm no longer using [js-beautify][jsbea] but I'll keep this text in case I ever need it.

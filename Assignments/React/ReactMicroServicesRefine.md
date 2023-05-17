@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactMicroServicesRefine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactMicroServicesRefine.md
+relativePath: /React/ReactMicroServicesRefine.md
+title: ReactMicroServicesRefine
+directoryName: React
+category : react-guide
+---
+
 # React Micro Services Refine
 
 The primary goal will be to learn about [concurrently][cc02]

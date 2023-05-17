@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser/MaterialUiUpdate.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Browser
+fileName: MaterialUiUpdate.md
+relativePath: /Browser/MaterialUiUpdate.md
+title: MaterialUiUpdate
+directoryName: Browser
+category : browser-guide
+---
+
 ## Overview
 
 In a bit of bad luck, the **material-ui** folks have updated to a new version which they are labeling 1.0.

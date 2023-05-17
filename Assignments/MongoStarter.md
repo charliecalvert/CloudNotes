@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MongoStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MongoStarter.md
+relativePath: /MongoStarter.md
+title: MongoStarter
+directoryName: Assignments
+category : assignments-guide
+---
+
 # In Class Mongo
 
 In many cases, you will be asked to only do the first five or six steps in this assignment.

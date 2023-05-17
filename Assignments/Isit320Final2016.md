@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Isit320Final2016.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Isit320Final2016.md
+relativePath: /Isit320Final2016.md
+title: Isit320Final2016
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This document is a description of the final for Isit320, Fall, 2016.

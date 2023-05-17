@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsEsLint.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsEsLint.md
+relativePath: /React/ReactPropsEsLint.md
+title: ReactPropsEsLint
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Add [ESLint][esl] and [Prettier][pr] to your [GitExplorer][ge]  assignment.

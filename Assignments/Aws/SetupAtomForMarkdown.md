@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SetupAtomForMarkdown.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: SetupAtomForMarkdown.md
+relativePath: /Aws/SetupAtomForMarkdown.md
+title: SetupAtomForMarkdown
+directoryName: Aws
+category : aws-guide
+---
+
 
 ## Overview
 

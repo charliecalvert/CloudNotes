@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElvenSiteStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElvenSiteStarter.md
+relativePath: /ElvenSiteStarter.md
+title: ElvenSiteStarter
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The goal of the Elven Site Starter is to create a simple, first iteration, front end for the MakeHtml project.

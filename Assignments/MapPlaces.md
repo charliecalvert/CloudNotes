@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MapPlaces.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: MapPlaces.md
+relativePath: /MapPlaces.md
+title: MapPlaces
+directoryName: Assignments
+category : assignments-guide
+---
+
 # MapPlaces
 
 The goal of this assignment is to help you learn how to drive Google Maps from a JavaScript based application.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Prog272Midterm2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Prog272Midterm2017.md
+relativePath: /MidtermFinal/Prog272Midterm2017.md
+title: Prog272Midterm2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 # Prog272 Midterm 2017
 
 This documents contains a description of what I want to see on the midterm. We want to keep moving to the point where we can take a JSON file containing addresses, and display, iterate and edit them in a React based program. The output from the components you create should be thoroughly tested.

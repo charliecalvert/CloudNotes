@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademyGit01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: CodeAcademyGit01.md
+relativePath: /CodeAcademyGit01.md
+title: CodeAcademyGit01
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 The Code Academy web site features interactive lessons on various computer technologies, including Git, the Linux Command Line, JavaScript and HTML. It provides an excellent way for you to brush up on basic skills that we don't have time to cover in class.

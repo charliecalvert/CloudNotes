@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Heroku/HerokuDataStarter.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Heroku
+fileName: HerokuDataStarter.md
+relativePath: /Heroku/HerokuDataStarter.md
+title: HerokuDataStarter
+directoryName: Heroku
+category : heroku-guide
+---
+
 
 
 https://elements.heroku.com/addons/heroku-postgresql

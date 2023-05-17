@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal/Isit322Midterm2017.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/MidtermFinal
+fileName: Isit322Midterm2017.md
+relativePath: /MidtermFinal/Isit322Midterm2017.md
+title: Isit322Midterm2017
+directoryName: MidtermFinal
+category : midtermfinal-guide
+---
+
 # ISIT 322 Midterm 2017
 
 This will be a a take home exam. You will have about a week to do it.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy/CodeAcademyHtmlAndCss04.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/CodeAcademy
+fileName: CodeAcademyHtmlAndCss04.md
+relativePath: /CodeAcademy/CodeAcademyHtmlAndCss04.md
+title: CodeAcademyHtmlAndCss04
+directoryName: CodeAcademy
+category : codeacademy-guide
+---
+
 # Code Academy Part IV
 
 Bring [HTML](https://www.codecademy.com/learn/learn-html) and [CSS](https://www.codecademy.com/learn/learn-css) to 100%.

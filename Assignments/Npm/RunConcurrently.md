@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm/RunConcurrently.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Npm
+fileName: RunConcurrently.md
+relativePath: /Npm/RunConcurrently.md
+title: RunConcurrently
+directoryName: Npm
+category : npm-guide
+---
+
 ## Overview
 
 The goal of this assignment is to learn to run two programs concurrently. One program is an Express application called **server**. The second is a **create-react-app** program called **client**.

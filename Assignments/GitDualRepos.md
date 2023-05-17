@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/GitDualRepos.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: GitDualRepos.md
+relativePath: /GitDualRepos.md
+title: GitDualRepos
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Git Dual Repo gives you a chance to open two views on your repository on one machine. You can then add, commit, push and pull on one machine, but see the results on two repositories.

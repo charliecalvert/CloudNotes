@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/InfoManager01.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: InfoManager01.md
+relativePath: /InfoManager01.md
+title: InfoManager01
+directoryName: Assignments
+category : assignments-guide
+---
+
 Information Manager Part01
 ==========================
 

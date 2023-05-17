@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/SystemCheckRefactor.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: SystemCheckRefactor.md
+relativePath: /Aws/SystemCheckRefactor.md
+title: SystemCheckRefactor
+directoryName: Aws
+category : aws-guide
+---
+
 =## Overview
 
 Learn to clean code with prettier and eslint and refactor React components.

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BridgePattern04.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BridgePattern04.md
+relativePath: /BridgePattern04.md
+title: BridgePattern04
+directoryName: Assignments
+category : assignments-guide
+---
+
 # BridgePattern 04
 
 Primary goals:

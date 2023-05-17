@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsMounted.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsMounted.md
+relativePath: /React/ReactPropsMounted.md
+title: ReactPropsMounted
+directoryName: React
+category : react-guide
+---
+
 # React Props Mounted
 
 We have several major goals in this assignment. To learn how to:

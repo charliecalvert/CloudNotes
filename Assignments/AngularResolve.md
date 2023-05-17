@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularResolve.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularResolve.md
+relativePath: /AngularResolve.md
+title: AngularResolve
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 This was the project we worked on in class on Wednesday, Nov 19.

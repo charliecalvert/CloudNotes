@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseDeployExpress.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Firebase
+fileName: FirebaseDeployExpress.md
+relativePath: /Firebase/FirebaseDeployExpress.md
+title: FirebaseDeployExpress
+directoryName: Firebase
+category : firebase-guide
+---
+
 ## Overview
 
 The goal of this assignment will be to integrate express into our Firebase app so that we can more easily port our GitHub calls into a Firebase application.

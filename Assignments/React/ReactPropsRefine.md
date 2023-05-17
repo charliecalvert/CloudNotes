@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsRefine.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsRefine.md
+relativePath: /React/ReactPropsRefine.md
+title: ReactPropsRefine
+directoryName: React
+category : react-guide
+---
+
 # React Props Refine
 
 Clean up the [React Props GitHub API Program][rep].

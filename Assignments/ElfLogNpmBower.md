@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/ElfLogNpmBower.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: ElfLogNpmBower.md
+relativePath: /ElfLogNpmBower.md
+title: ElfLogNpmBower
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 This assignment is similar to **ElfLogNpm** and **ElfLogBower**. Make sure you are using your own packages for both NPM and Bower. Instead of buttons, put three checkboxes and three radio buttons. Messages should appear on both the client and server side as you click the checkboxes and radio buttons.

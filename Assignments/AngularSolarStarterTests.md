@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/AngularSolarStarterTests.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: AngularSolarStarterTests.md
+relativePath: /AngularSolarStarterTests.md
+title: AngularSolarStarterTests
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 Look at [directive template names][dir-names] slide. This shows that we can use a template called **elfRenewable** in several difference ways in our angular templates. In other words there are more choices than just <elf-renewable></elf-renewable>

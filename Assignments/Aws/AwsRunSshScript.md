@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws/AwsRunSshScript.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/Aws
+fileName: AwsRunSshScript.md
+relativePath: /Aws/AwsRunSshScript.md
+title: AwsRunSshScript
+directoryName: Aws
+category : aws-guide
+---
+
 ## Overview
 
 Run an SSH script remotely. In particular we will:

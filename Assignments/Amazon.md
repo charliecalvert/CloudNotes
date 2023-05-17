@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Amazon.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Amazon.md
+relativePath: /Amazon.md
+title: Amazon
+directoryName: Assignments
+category : assignments-guide
+---
+
 # Amazon
 
 Amazon has apps that run on all the major platforms, both PC and Mobile. There is also a cloud reader that runs in the browser.

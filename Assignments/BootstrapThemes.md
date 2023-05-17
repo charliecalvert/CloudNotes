@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/BootstrapThemes.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: BootstrapThemes.md
+relativePath: /BootstrapThemes.md
+title: BootstrapThemes
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Overview
 
 In this exercise you will learn how to add new themes to your bootstrap pages. In particular we will:

@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/React/ReactPropsOctoKitGists.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/React
+fileName: ReactPropsOctoKitGists.md
+relativePath: /React/ReactPropsOctoKitGists.md
+title: ReactPropsOctoKitGists
+directoryName: React
+category : react-guide
+---
+
 ## Overview
 
 Learn to use OctoKit:

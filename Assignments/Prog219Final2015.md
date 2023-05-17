@@ -1,3 +1,15 @@
+---
+layout: page
+date: 2023-05-17 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/Prog219Final2015.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments
+fileName: Prog219Final2015.md
+relativePath: /Prog219Final2015.md
+title: Prog219Final2015
+directoryName: Assignments
+category : assignments-guide
+---
+
 ## Description
 
 This is the final for Prog 219 taken June 2015. Many details are perhaps not filled in yet, but this should be enough to get you started.
