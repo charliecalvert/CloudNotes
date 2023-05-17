@@ -36,7 +36,10 @@ export function walkMarkdownCore(fileInfos) {
         debugTestingFdir(chalk.red(`Testing fdir : ${fileInfo.directory}`));
         // debugTestingGp(chalk.greenBright(`Testing gp : ${guidePairs.cssGuide.path}`));
         const guidePair = findGuidePair(fileInfo.directory, guidePairs);
-        debugTestingGp(chalk.blueBright(`Testing gp : ${guidePair.path} vs ${fileInfo.directory}`));
+        debugTestingGp(chalk.blueBright(`Testing gp : ${guidePair.path}`));
+        debugTestingGp(chalk.blueBright(`Testing gp : ${guidePair.category}`));
+        debugTestingGp(chalk.blueBright(`Testing gp : ${guidePair.type}`));
+        debugTestingGp(chalk.greenBright(`${fileInfo.directory}`));
         const isMatch = testMatch(fileInfo, guidePair);
 
         if (isMatch) {
