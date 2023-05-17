@@ -26,7 +26,7 @@ export function findGuidePair(directory, guidePairs) {
     let guidePair = {};
 
     for (const key in guidePairs) {
-        if (directory.includes(guidePairs[key].path)) {
+        if (directory === guidePairs[key].path) {
             guidePair = guidePairs[key];
             return guidePair;
         }
