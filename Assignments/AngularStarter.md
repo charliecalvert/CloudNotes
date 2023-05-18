@@ -10,7 +10,7 @@ directoryName: Assignments
 category : assignments-guide
 ---
 
-# Angular Starter
+## Angular Starter
 
 Two simple angular projects.
 
@@ -24,7 +24,7 @@ Create folder called **Week03-AngularStarter-Add**. Inside it, save the followin
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="utf-8">        
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Starter Add</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -47,9 +47,9 @@ These two bits of syntax indicate that this is not raw HTML. Instead, it is an a
 
 Nomenclature:
 
--   The File shown above: an Angular **template**.
--   **ng-app**: It is both an HTML **attribute** and an Angular **directive**
--   {{5 \* 7}}: Those double curly braces are called Angular **expressions**.
+- The File shown above: an Angular **template**.
+- **ng-app**: It is both an HTML **attribute** and an Angular **directive**
+- {{5 \* 7}}: Those double curly braces are called Angular **expressions**.
 
 We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** have the same meaning and work in most browsers. A syntax checker will choke on **ng-app**, but will approve **data-ng-app**
 
@@ -59,14 +59,16 @@ We now want to view our work in a browser. I would prefer that you launch this f
 
 On Cloud Nine open your file in the editor and press the green Run button. A window will open with contents similar to the following:
 
-  Starting Apache httpd, serving https://prog219-calvert-2016-ccalvert.c9users.io/Foo/foo.html.
+  Starting Apache httpd, serving <https://prog219-calvert-2016-ccalvert.c9users.io/Foo/foo.html>.
   Started apache2
 
 Left click on the URL and choose and **open** or **open in preview**.
 
 If you are running on Pristine Lubuntu, Windows or some other OS, then take a slightly different approach. In the same directory as you HTML file, create a batch file called **StartPythonWebServer.bat** or a shell script called **StartPythonWebServer**. Place the following in your inside it:
 
-    python3 -m http.server 30025
+```bash
+python3 -m http.server 30025
+```
 
 Run the batch file and browse to [http://localhost:30025](http://localhost:30025).
 
@@ -78,17 +80,23 @@ Make the application interactive by allowing user input.
 
 Here is how to create an input control:
 
-    <input type="number" data-ng-model="operandA"  min="1" max="100" placeholder="0">
+```html
+<input type="number" data-ng-model="operandA"  min="1" max="100" placeholder="0">
+```
 
 Here is how to use the **ng-model** declared in the input control:
 
-    <p>5 * 7 = {{operandA * 7}}</p>
+```html
+<p>5 * 7 = {{operandA * 7}}</p>
+```
 
-The model declared in the input control now appears automatically in the  
+The model declared in the input control now appears automatically in the
 
 Fiddle with it until entering 2 and 5 in the input controls yields this output:
 
-    2 * 5 = 10
+```math
+2 * 5 = 10
+```
 
 Reference:
 
@@ -104,7 +112,7 @@ If necessary, inside the folder put your **StartPythonWebServer** file. Also add
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="utf-8">        
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Angular Starter Lists</title>
         <script src="bower_components/angular/angular.js"></script>
@@ -127,28 +135,29 @@ Type **bower init** to create a **bower.json** file. Fill in the fields accordin
 
 Add **angular** to your bower file:
 
-    bower install angular --save
-
+```bash
+bower install angular --save
+```
 
 ## Step Six
 
 Create a file called **index.js** in the root of your **AngularStarter-Lists** project. Place the following code in it:
 
-```
+```javascript
 (function() {
 
     var app = angular.module('main', []);
 
     app.controller('ListControl', function($scope) {
 
-        'use strict';        
+        'use strict';
 
         var listData = [
             { text : 'Attend class at BC', done : false },
             { text : 'Complete JavaScript programs', done : false }
         ];
 
-        $scope.todoList = listData;   
+        $scope.todoList = listData;
     });
 })();
 ```
@@ -157,7 +166,7 @@ Be sure to load **index.js** in your HTML template:
 
 ```html
 <head>
-    <meta charset="utf-8">        
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Angular Starter Lists</title>
     <script src="bower_components/angular/angular.js"></script>
@@ -167,7 +176,7 @@ Be sure to load **index.js** in your HTML template:
 
 Take all of the code in the body of index.html and wrap it in a DIV:
 
-```
+```html
 <div ng-controller="ListControl as list">
     // PUT THE CODE FROM THE BODY HERE
 </div>
@@ -177,54 +186,54 @@ You will end up with an H1 tag, two P tags, and an INPUT tag inside your DIV. No
 
 And in the angular HTML template, just below the **{{listItem}}** expression:
 
-```
-	<ul class="unstyled">
-		<li ng-repeat="todo in todoList">
-			<input type="checkbox" ng-model="todo.done">
-			<span class="done-{{todo.done}}">{{todo.text}}</span>
-		</li>
-	</ul>
+```html
+ <ul class="unstyled">
+  <li ng-repeat="todo in todoList">
+   <input type="checkbox" ng-model="todo.done">
+   <span class="done-{{todo.done}}">{{todo.text}}</span>
+  </li>
+ </ul>
 ```
 
 ## Step Seven
 
 Add the following code to your **index.js** file just beneath the **todo** list:
 
-```
-	$scope.listItem = "New Item";
-	$scope.itemCount = getItemCount();
+```javascript
+ $scope.listItem = "New Item";
+ $scope.itemCount = getItemCount();
 ```
 
 Since the above code uses **$scope** it has to be inside your **Controller**.
 
 Still working inside the controller, add the following methods:
 
-```
-       $scope.addTodo = function() {
-            $scope.todoList.push({
-                text : $scope.listItem,
-                done : false
-            });
-            $scope.listItem = '';
-            $scope.itemCount = getItemCount();
-        };
+```javascript
+$scope.addTodo = function() {
+    $scope.todoList.push({
+        text : $scope.listItem,
+        done : false
+    });
+    $scope.listItem = '';
+    $scope.itemCount = getItemCount();
+};
 
-        function getItemCount() {            
-            var count = 0;
-            angular.forEach($scope.todoList, function(todo) {
-                count += todo.done ? 0 : 1;
-            });
-            return count;
-        };
+function getItemCount() {
+    var count = 0;
+    angular.forEach($scope.todoList, function(todo) {
+        count += todo.done ? 0 : 1;
+    });
+    return count;
+};
 ```
 
 Now switch to the HTML and add a FORM with an INPUT control and a BUTTON. It goes under the text that asks for user input:
 
-```
-<form ng-submit="addTodo()">        
+```html
+<form ng-submit="addTodo()">
     <input type="text" ng-model="listItem"  placeholder="Enter list item name">
     <input class="btn-primary" type="submit" value="add">
-</form>      
+</form>
 
 <p>Items in list: {{itemCount}}</p>
 ```
@@ -250,7 +259,9 @@ Push both your folders to your git repository. When you submit the assignment, p
 
 Do not submit nested folders of this type:
 
-    /Git/Week03-MyProject/MyProject
+```bash
+/Git/Week03-MyProject/MyProject
+```
 
 In the bad scenario, the **/Git/Week02-MyProject** folder is empty except for the sub-directory. Don't do that. Instead, copy of the contents of **MyProject** into **Week02-MyProject** and then delete the empty **MyProject** folder.
 
@@ -260,13 +271,13 @@ In the bad scenario, the **/Git/Week02-MyProject** folder is empty except for th
 
 Suppose you get an error like this:
 
-<pre>
+```bash
 angular.js:68 Uncaught Error: [$injector:modulerr]
 Failed to instantiate module main due to:
 Error: [$injector:nomod] Module 'main' is not available!
 You either misspelled the module name or forgot to load it.
 If registering a module ensure that you specify the dependencies as the second argument.
-</pre>
+```
 
 - Did you load **index.js** with a script tag?
 - Did you define a module called **main** in JavaScript. The code to define an angular module named **main** would look like this:

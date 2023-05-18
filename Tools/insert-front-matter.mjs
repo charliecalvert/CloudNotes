@@ -6,7 +6,6 @@ import createDebugMessages from 'debug';
 const debugSummary = createDebugMessages('lib:walk-markdown-files:summary');
 const debugFileInfos = createDebugMessages('lib:walk-markdown-files:fileInfos');
 
-
 /*
 Walk through a Directory or recursive set of directories
 to see all the files present with a markdown extension,
