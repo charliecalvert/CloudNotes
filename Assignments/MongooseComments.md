@@ -19,7 +19,7 @@ Learn how to refactor **MongooseSubDocs** in to a program with easily reusable c
 
 You will also create a new file for handling connections to a MongoDb database. That file is called:
 
--- **routes/connect.js** 
+-- **routes/connect.js**
 
 Some changes will also be made to the **routes/index.js** file in **MongooseSubDocs**
 
@@ -50,7 +50,7 @@ See the [details of how to connect][connect-details] on Elvenware:
 
 ## Step Three
 
-Create **routes/comments.js**. 
+Create **routes/comments.js**.
 
 - Right click on the **routes** folder and create a new file called **comments.js**.
 
@@ -103,7 +103,7 @@ router.post('/newComment', function(request, response) {
     if (!connect.connected) {
     	connect.doConnection();
     }
-    
+
     console.log('newComments called. Body is next: ');
     console.log(request.body);
     var scientist = request.body.scientist;
@@ -170,7 +170,7 @@ Notice the **exports** statement as it may vary slightly from the version on you
 
 ## Step Four
 
-Link in your new **routes/comments.js** middleware. 
+Link in your new **routes/comments.js** middleware.
 
 We want this new **comments** module to be included in our program, so we have to tell **express** to call it whenever a request for an operation on our comments comes in. All our comment operations will have have the routes **/coment** prepended to them.
 
@@ -191,8 +191,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/comments', comments);
 ```
- 
-## Step Five 
+
+## Step Five
 
 Modify **index.js** to work with our new connection model.
 
@@ -213,7 +213,7 @@ Since the **doConnection** method is now in **connect.js**, you should delete **
 
 ## Step Six
 
-Let's now switch over to the client side and create a **javascripts/comments.js** file that mirrors the **routes/comments.js** file on the server side. 
+Let's now switch over to the client side and create a **javascripts/comments.js** file that mirrors the **routes/comments.js** file on the server side.
 
 Create a file called **javascripts/comment-factory.js**. Start it out with boilerplate code:
 
@@ -231,10 +231,10 @@ Create a file called **javascripts/comment-factory.js**. Start it out with boile
 
             };
 
-            return commentFactory;	
+            return commentFactory;
         });
 })();
-``` 
+```
 
 Cut the following methods from **mongo-factory.js** and paste them into **comment-factory** in the designated location:
 
@@ -259,11 +259,11 @@ Recall that we set that middleware up in **/app.js** with this line of code:
 And we will need a **/views/commentds.jade** file to go with **public/javascripts/comments.js**
 
 ```jade
-h1 Comments: {{commentsController.name}}
+h1 Comments: &#123;&#123;commentsController.name&#125;&#125;
 div.names
     ul
         li(ng-repeat='comment in commentsController.scientist.comments')
-            a(ng-click="commentsController.selectComment(comment)") {{comment.commentText}}
+            a(ng-click="commentsController.selectComment(comment)") &#123;&#123;comment.commentText&#125;&#125;
     div.names(ng-form="newCommentForm")
         hr
         button.btn.btn-default(ng-click='commentsController.newComment()') New Comment
@@ -376,7 +376,7 @@ Put his project in a folder of your repository called **Week11-MongooseComments*
 
 Please see this information:
 
-- Sending a [new comment][restreq] from the browser to the server to a database. 
+- Sending a [new comment][restreq] from the browser to the server to a database.
 
 [restreq]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html#http
 
@@ -392,7 +392,7 @@ var commentSchema = new Schema({ commentText: 'string' });
 var scientistSchema = new Schema({
   comments: [commentSchema]
 })
-``` 
+```
 
 Method 2:
 

@@ -194,7 +194,7 @@ block content
   p Welcome to #{title}
 
   div(ng-controller="MongoController as mongoController")
-    div {{mongoController.allData}}
+    div &#123;&#123;mongoController.allData&#125;&#125;
 
 ```
 
@@ -222,7 +222,7 @@ Include this in index.jade:
     input(type='number',
       ng-change='mongoController.indexChange()',
       ng-model='mongoController.currentItem',
-      min='0', max='{{mongoController.scientistsLength-1}}')
+      min='0', max='&#123;&#123;mongoController.scientistsLength-1&#125;&#125;')
 ```
 
 Add all these methods to **control.js**. Note currentItem and the calls to **getScientist and save, insert and indexchanged**. Also add mongoFactory as dependency injection:
@@ -264,10 +264,10 @@ After the above code, you should also add the **elfMarie** directive used in our
 
 ```
     template:
-            'First: {{mongoController.data.firstName}} ' +
-            '<br>Last: {{mongoController.data.lastName}}' +
-            '<br>Subject: {{mongoController.data.subject}}'
-```    
+            'First: &#123;&#123;mongoController.data.firstName&#125;&#125; ' +
+            '<br>Last: &#123;&#123;mongoController.data.lastName&#125;&#125;' +
+            '<br>Subject: &#123;&#123;mongoController.data.subject&#125;&#125;'
+```
 
 And here is our factory, saved in **mongo-factory.js**. When adding this file to **layout.jade**, put it after **control.js**.
 

@@ -139,7 +139,7 @@ $scope.marie = {
     city: 'Paris',
     country: 'France'
 };
-```    
+```
 
 Also in the **control.js** file, near the bottom, after the controller, add in another directive:
 
@@ -148,9 +148,9 @@ elfApp.directive('elfMarie', function() {
 	  'use strict';
     return {
 			  controller: 'MainController',
-        template: 'First: {{marie.firstName}} ' +
-            '<br>Last: {{marie.lastName}}' +
-            '<br>City: {{marie.city}}'
+        template: 'First: &#123;&#123;marie.firstName&#125;&#125; ' +
+            '<br>Last: &#123;&#123;marie.lastName&#125;&#125;' +
+            '<br>City: &#123;&#123;marie.city&#125;&#125;'
     };
 });
 ```
@@ -164,9 +164,9 @@ elfApp.directive('elfMarie', function() {
 	'use strict';
   return {
     controller: 'MainController',
-    template: '<p><span class="caption">First</span>: {{marie.firstName}}</p>' +
-    '<p><span class="caption">Last</span>: {{marie.lastName}}</p>' +
-    '<p><span class="caption">City</span>: {{marie.city}}</p>'
+    template: '<p><span class="caption">First</span>: &#123;&#123;marie.firstName&#125;&#125;</p>' +
+    '<p><span class="caption">Last</span>: &#123;&#123;marie.lastName&#125;&#125;</p>' +
+    '<p><span class="caption">City</span>: &#123;&#123;marie.city&#125;&#125;</p>'
   };
 });
 ```
@@ -179,13 +179,13 @@ The solution, of course, is to switch to a **templateUrl**, and load the templat
 div#marie
     p
         span.caption First
-        | : {{marie.firstName}}
+        | : &#123;&#123;marie.firstName&#125;&#125;
     p
         span.caption Last
-        | : {{marie.lastName}}
+        | : &#123;&#123;marie.lastName&#125;&#125;
     p
         span.caption City
-        | : {{marie.city}}
+        | : &#123;&#123;marie.city&#125;&#125;
 </pre>
 
 This Jade is none so lovely either, but it keeps our JavaScript clean:
@@ -282,9 +282,9 @@ Now lets see if we can get our template to compile:
 it('tests scope variable access in template loaded through raw text', function() {
 		$templateCache.put('marie',
 				'<div id="marie">' +
-				'   <p><span class="caption">First</span>: {{marie.firstName}}</p>' +
-				'   <p><span class="caption">Last</span>: {{marie.lastName}}</p>' +
-				'   <p><span class="caption">City</span>: {{marie.city}}</p>' +
+				'   <p><span class="caption">First</span>: &#123;&#123;marie.firstName&#125;&#125;</p>' +
+				'   <p><span class="caption">Last</span>: &#123;&#123;marie.lastName&#125;&#125;</p>' +
+				'   <p><span class="caption">City</span>: &#123;&#123;marie.city&#125;&#125;</p>' +
 				'</div>');
 
 		var element = $compile('<elf-marie></elf-marie>')(scope);
@@ -295,7 +295,7 @@ it('tests scope variable access in template loaded through raw text', function()
 });
 ```
 
-The goal here is to get the expressions that reference marie.firstName, etc, to resolve the strings from our model in **control.js**. In other words, when we call **scope.$digest**, is **{{marie.firstName}}** replaced with **marie** and **{{marie.city}}** replaced with **Paris**. Our test checks for the latter case.
+The goal here is to get the expressions that reference marie.firstName, etc, to resolve the strings from our model in **control.js**. In other words, when we call **scope.$digest**, is **&#123;&#123;marie.firstName&#125;&#125;** replaced with **marie** and **&#123;&#123;marie.city&#125;&#125;** replaced with **Paris**. Our test checks for the latter case.
 
 ## Fixtures
 
@@ -309,9 +309,9 @@ Then rendered HTML looks like this:
 
 ```html
 <div id="marie">
-    <p><span class="caption">First</span>: {{marie.firstName}}</p>
-    <p><span class="caption">Last</span>: {{marie.lastName}}</p>
-    <p><span class="caption">City</span>: {{marie.city}}</p>
+    <p><span class="caption">First</span>: &#123;&#123;marie.firstName&#125;&#125;</p>
+    <p><span class="caption">Last</span>: &#123;&#123;marie.lastName&#125;&#125;</p>
+    <p><span class="caption">City</span>: &#123;&#123;marie.city&#125;&#125;</p>
 </div>
 ```
 

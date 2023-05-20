@@ -20,7 +20,7 @@ This assignment builds on the [AddressComponent][ac] assignment. We have several
   - A component that owns the data: **Address**
   - A component that displays the data: **AddressShow**
 - Finishing refactoring the other components if we have not done so already
-- Update Tests as described in this document. There will be a [separate assignment][ram] where we will dig more deeply into how to test the code found in this assignment.  
+- Update Tests as described in this document. There will be a [separate assignment][ram] where we will dig more deeply into how to test the code found in this assignment.
 
 We should insure that clicks on the Button work but that **Address** does the real work. **AddressShow** is mostly about the interface and does little real work other than use JSX to create the appropriate HTML to display our interface.
 
@@ -173,7 +173,7 @@ Here is the enzyme debug output from that command:
 
 ```html
 <div>
-  <AddressShow address={{...}} setAddress={[Function]} />
+  <AddressShow address=&#123;&#123;...&#125;&#125; setAddress={[Function]} />
 </div>
 ```
 
@@ -338,7 +338,7 @@ class Address extends Component {
     constructor(props) {
         super(props);
 
-        this.addressIndex=0;        
+        this.addressIndex=0;
         this.state = {
             address: AddressList[this.addressIndex]  <=== HERE
         };
@@ -505,7 +505,7 @@ We said earlier that **AddressShow** would display our data, and that **Address*
 
 ```javascript
 setAddress = (event) => {
-    this.addressIndex = 1;   
+    this.addressIndex = 1;
 
     this.setState({
         address: addressList[this.addressIndex]

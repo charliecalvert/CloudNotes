@@ -172,9 +172,9 @@ block content
     button(ng-click="emptyCollection()") EmptyCollection
 
     div
-      pre {{allData}}
+      pre &#123;&#123;allData&#125;&#125;
 
-    p {{display}}
+    p &#123;&#123;display&#125;&#125;
 </pre>
 
 and layout.jade

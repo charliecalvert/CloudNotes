@@ -37,14 +37,14 @@ Here is a screenshot of the page where you can find these books, along with a li
 Search on Rudyard Kipling and "buy" for $0.00 the following books:
 
 - The Jungle Book
-- Captains Courageous 
+- Captains Courageous
 - The Light that Failed
 
 ![Send to Kindle](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGV1FtSWx4UUQ1ajQ)
 
 ##Check out a book from the Library
 
-Create an account on the King County Library System. Check out a book and "send it to your Kindle. In the screen shot below, I have searched on the author Isaac Asimov. Looking toward the bottom half of the screen shot, you can see that I have found a number of books in the ebook format. Look on the left, about half way down, and you can see that I have filtered only on ebooks. I then clicked on the "Request this Download" link and it popped up the dialog shown near the top of the screen shot. It shows that the book is available in kindle format. I might have seen a screen showing that all copies were checked out, or that is was not available for Kindle. But in this case, I found just what I wanted. 
+Create an account on the King County Library System. Check out a book and "send it to your Kindle. In the screen shot below, I have searched on the author Isaac Asimov. Looking toward the bottom half of the screen shot, you can see that I have found a number of books in the ebook format. Look on the left, about half way down, and you can see that I have filtered only on ebooks. I then clicked on the "Request this Download" link and it popped up the dialog shown near the top of the screen shot. It shows that the book is available in kindle format. I might have seen a screen showing that all copies were checked out, or that is was not available for Kindle. But in this case, I found just what I wanted.
 
 ![Send to Kindle](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGdFdfdTBtWDJWT28)
 
@@ -70,7 +70,7 @@ It may not be possible to view the books you "Send to Kindle" or email to Kindle
 
 ##Read your Book
 
-If you have a mobile device, install the Amazon Kindle edition for Android, IPhone, Windows Phone, etc. 
+If you have a mobile device, install the Amazon Kindle edition for Android, IPhone, Windows Phone, etc.
 
 After installing the device, you should go to the settings page and find out the name of your Kindle. That way you will know which Kindle to send a book to when you "purchase" it.
 
@@ -87,25 +87,25 @@ Go to the Manage Your Kindle page on Amazon. Provide a screen shot showing the a
 
 ![Send to Kindle](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGS2ZLc0c4YkxXYTA)
 
-##Turn it in. 
+##Turn it in.
 
-Create between 6 and 8 screen shots similar to the ones found in this document. Save them all to Google Drive and embed them in a markdown document along with a few words explaining each screen shot. 
+Create between 6 and 8 screen shots similar to the ones found in this document. Save them all to Google Drive and embed them in a markdown document along with a few words explaining each screen shot.
 
 When you are ready to submit your assignment, use the file upload option, and turn in:
 
-- The text of your markdown file as an attachment. 
+- The text of your markdown file as an attachment.
 - The URL for an HTML file running on Google Sites. (Supply this URL in the comment section for the submission of you assignment.)
 
 To complete the assignment, you want to use [stackedit.io](https://stackedit.io/editor) or some other markdown editor to create your markdown document. Save the ***markdown*** produced by stackedit.io by choosing **Export to disk | As markdown**. Then save the file a second time as HTML using a similar process to that for exporting the markdown. Use the HTML to create a page on Google Sites. Note that when you edit a page in Google Sites there is an HTML icon on the toolbar. Click on that icon and then paste in the HTML you got from stackedit.io.
 
 Then, as explained above, do two things:
 
-- Attach your markdown document to your assignment when you submit. 
+- Attach your markdown document to your assignment when you submit.
 - In the comment area provided when you submit he assignment, include a link to your Google Sites page.
 
 Please note that when you submit your assignment I:
 
-- Want the raw markdown file with an .md extension. Don't embed the file in Word document. 
+- Want the raw markdown file with an .md extension. Don't embed the file in Word document.
 - Want a link to a nice looking HTML page on Google Sites. It doesn't have to be beautiful, but please use what you know about markdown to include screenshots, create lists and headers, etc, so that you produce clean HTML that is easy to read. Something like [this][amz], but use your own words and pictures, and it need not be as complex or detailed.
 
 [amz]:https://sites.google.com/site/elvenware/assignments/Amazon
@@ -124,16 +124,16 @@ In the dialog that appears when you click the icon, create a link you can share 
 
 The links you get from Google look like this:
 
-```	
+```
 https://drive.google.com/file/d/0B25UTAlOfPRGUlprZXF5ajM0aXM/view?usp=sharing
 ```
 
 The link that you get directly from Google takes the user back to Google Drive. In this case, we don't want that. We want to show the picture directly on our web site.  Or, to put it another way, we want the link to work in StackEdit, and on our Google Site. To make this link work in StackEdit, you need to transform it so that it looks like this:
 
 ```
-![Send to Kindle](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGUlprZXF5ajM0aXM)	
+![Send to Kindle](https://drive.google.com/uc?export=view&id=0B25UTAlOfPRGUlprZXF5ajM0aXM)
 ```
 
 Now you should be able to see the picture in StackEdit. All you need to do at this point is copy the HTML and paste it into your Google site by first creating a page on Google Sites, and then clicking the little HTML icon on the Google Sites editor toolbar.
 
-If you have more questions, ask them in the discussion area.<!--se_discussion_list:{"hvmrtkcha0ofb6ivg2r0uyethrbxjptnk4dqj4rxvjk0lo6r":{"selectionStart":573,"type":"conflict","selectionEnd":881,"discussionIndex":"hvmrtkcha0ofb6ivg2r0uyethrbxjptnk4dqj4rxvjk0lo6r"},"mba0smkzfz6u2b0sgwynqx86wz48859l9n0rqd0abbqi20fr":{"selectionStart":4703,"type":"conflict","selectionEnd":1422,"discussionIndex":"mba0smkzfz6u2b0sgwynqx86wz48859l9n0rqd0abbqi20fr"}}-->
+If you have more questions, ask them in the discussion area.<!--se_discussion_list:{"hvmrtkcha0ofb6ivg2r0uyethrbxjptnk4dqj4rxvjk0lo6r":{"selectionStart":573,"type":"conflict","selectionEnd":881,"discussionIndex":"hvmrtkcha0ofb6ivg2r0uyethrbxjptnk4dqj4rxvjk0lo6r"},"mba0smkzfz6u2b0sgwynqx86wz48859l9n0rqd0abbqi20fr":{"selectionStart":4703,"type":"conflict","selectionEnd":1422,"discussionIndex":"mba0smkzfz6u2b0sgwynqx86wz48859l9n0rqd0abbqi20fr"&#125;&#125;-->

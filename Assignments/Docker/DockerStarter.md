@@ -67,7 +67,7 @@ If you have not downloaded or created any images yet, you will see only the titl
 Following the steps in the previous sections should set up Docker correctly. However, if you get messages about not having the proper permissions when you run **docker image ls**, then don't resort to using **Sudo**. Instead, try this:
 
     sudo groupadd docker
-    sudo usermod -aG docker $USER    
+    sudo usermod -aG docker $USER
     sudo systemctl enable docker
 
 **NOTE**: _When running the above three commands, you may see yet more error messages. At least for now, ignore them._
@@ -146,7 +146,7 @@ Then add a small text file in the tmp directory of your new **ubuntu** container
 
 Here is an example of what it all might look like:
 
-```    
+```
 docker container run -it ubuntu
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
@@ -280,11 +280,11 @@ Old Style to show both running and stopped containers:
 
 To list all containers with just ID new style:
 
-    docker container ls -a --format "{{.ID}}"
+    docker container ls -a --format "&#123;&#123;.ID&#125;&#125;"
 
 Here is an example:
 
-    docker container ls -a --format "{{.ID}}: {{.Image}}"
+    docker container ls -a --format "&#123;&#123;.ID&#125;&#125;: &#123;&#123;.Image&#125;&#125;"
     672dbb9755d2: react-simple
     7a3c78cb6a03: mongo-test_elf-app
     c0afe21f7996: mongo
@@ -339,7 +339,7 @@ To "get inside the container", open a bash shell on the instance running in back
 
 For instance:
 
-    docker container exec -it my-container bash    
+    docker container exec -it my-container bash
 
 The **exec** command cannot be run on a stopped (exited) container. If you see a container and it is stopped, you can start it like this:
 

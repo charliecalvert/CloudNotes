@@ -4,7 +4,7 @@ Prog 219 related resources.
 
 Angular has a lot of black boxes in it. Dependency Injection is great, but it is hard to trouble shoot since its implementation is lost, for most of us, in the internals of angular itself. The same for factories, controllers, services, directives, etc.
 
-We need to spend time just "playing" with the technology. If you are having trouble seeing the relationship between scope variables ($scope.foo) and the expressions in an angular template ({{foo}}), then go back to the first examples in weeks one and two. Copy the examples to a new directory, and just start playing with them. Try getting more scope variables and displaying them in an angular template. Instead of addition, try multiplication, or what have you.
+We need to spend time just "playing" with the technology. If you are having trouble seeing the relationship between scope variables ($scope.foo) and the expressions in an angular template (&#123;&#123;foo&#125;&#125;), then go back to the first examples in weeks one and two. Copy the examples to a new directory, and just start playing with them. Try getting more scope variables and displaying them in an angular template. Instead of addition, try multiplication, or what have you.
 
 It's all about building up knowledge piece by piece. Get the foundational knowledge down, then it is easier to build on top of it. For instance, it is hard to see what a directive does unless you can first see how to display a scope variable. If we are trying to juggle too many balls at once, then we get nowhere. For instance, if an assignment involves directives, factories, scope variables and template directives such as ng-click and ng-repeat, it just becomes overwhelming if you don't understand the individual pieces.
 

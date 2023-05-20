@@ -14,6 +14,11 @@ category : browser-guide
 
 Browser related assignments.
 
+{% for product in site.browser-guide %}
+  <a href="{{ product.url }}">
+  {{ product.title }}
+{% endfor %}
+
 ## Links
 
 - [Hangouts.html](Hangouts.html)

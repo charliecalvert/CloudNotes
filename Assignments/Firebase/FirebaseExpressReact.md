@@ -339,7 +339,7 @@ render() {
 
              <Paper style={paperStyle} zDepth={5}>
 
-                 <Toolbar style={{"justifyContent": "center"}}>
+                 <Toolbar style=&#123;&#123;"justifyContent": "center"&#125;&#125;>
                      <ToolbarTitle text="Material UI"/>
                  </Toolbar>
                  {content}
@@ -361,7 +361,7 @@ render() {
      );
 }
 // CODE OMITTED HERE
-```     
+```
 
 ## The Show Users Page
 

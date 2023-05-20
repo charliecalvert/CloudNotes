@@ -89,7 +89,7 @@ If we are using branches in your class, switch to your Week0X branch, where X is
 
 - Navigate to the root of your repository
 - Issue this command:
-  - create-react-app **weekxx-react-address**, where xx is the number of the current week of this quarter.  
+  - create-react-app **weekxx-react-address**, where xx is the number of the current week of this quarter.
 - Open up the project in WebStorm
 - Set WebStorm to use JSX, React and ES6
   - File | Settings | Languages and Settings | JavaScript | React/JSX
@@ -155,10 +155,10 @@ There are four steps:
 
 ```javascript
 // STEP ONE
-import { withStyles } from '@material-ui/core/styles';  
+import { withStyles } from '@material-ui/core/styles';
 
 // STEP TWO
-const styles = theme => ({                              
+const styles = theme => ({
     root: {
         flexGrow: 1,
     },
@@ -177,8 +177,8 @@ const styles = theme => ({
 
 class App extends Component {
 
-  render() {      
-      const {classes} = this.props;      // STEP THREE     
+  render() {
+      const {classes} = this.props;      // STEP THREE
       return (...)
   }
 }
@@ -196,7 +196,7 @@ React can do some type checking on the props that get passed in. It does it with
 
 Then import it into App.js:
 
-    import PropTypes from 'prop-types';    
+    import PropTypes from 'prop-types';
 
 And finally, declare your props near the bottom of the file, just before the **export** statement.
 
@@ -329,7 +329,7 @@ We declare an arrow function function in our component called **getFile**. Insid
 ```javascript
 getFile = () => {
     console.log('getFile called.');
-    this.setState({address: {firstName: 'Patty', lastName: 'Murray', state: 'Washington'}});
+    this.setState({address: {firstName: 'Patty', lastName: 'Murray', state: 'Washington'&#125;&#125;);
 };
 ```
 
@@ -386,7 +386,7 @@ const wrapper = shallow(<Qux />).dive();
 console.log(wrapper.debug());
 ```
 
-**NOTE**: _My actual called to create **Qux** looked like this, but much of this beside the point for this example: **const wrapper = shallow(<Qux queryServer={() => {}} {...props} />).dive();**._
+**NOTE**: _My actual called to create **Qux** looked like this, but much of this beside the point for this example: **const wrapper = shallow(<Qux queryServer={() => {&#125;&#125; {...props} />).dive();**._
 
 Notice that I use **dive**. This is necessary if we use **withStyles**. If you are not using **withStyles** than you probably won't need to **dive**.
 
@@ -400,17 +400,17 @@ Here are two simple tests to see if you can find **Typography** elements used in
 
 ```javascript
 it('Uses a JSX typography element', () => {
-    const wrapper = shallow(<Qux queryServer={() => {}} {...props} />).dive();
+    const wrapper = shallow(<Qux queryServer={() => {&#125;&#125; {...props} />).dive();
     const typographies = wrapper.find('WithStyles(Typography)');
     expect(typographies.length).toBeGreaterThan(0);
 });
 
 it('displays a JSX Typography heading', () => {
-    const wrapper = shallow(<Qux queryServer={() => {}} {...props} />).dive();
+    const wrapper = shallow(<Qux queryServer={() => {&#125;&#125; {...props} />).dive();
     const heading = <Typography>Qux</Typography>;
     expect(wrapper.containsMatchingElement(heading)).toBe(true);
 });
-```    
+```
 
 The first tests just checks that we are using at least one **Typography** element somewhere in our component.
 

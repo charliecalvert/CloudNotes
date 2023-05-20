@@ -107,7 +107,7 @@ In such cases you might consider writing test code like this:
 ```javascript
 import { mount } from 'enzyme';
 
-function getLast(wrapper, element) {        
+function getLast(wrapper, element) {
     const eightp = wrapper.find(element).last().debug();
     logger.log("GETUSERINFO TEST GET LAST:", eightp);
 }
@@ -126,7 +126,7 @@ function getLast(wrapper, element) {
 
 it.only('renders button click message for state.userLogin', () => {
     const wrapper = mount(<GetUserInfo />);
-    const inputElement = <input value="Robin Dudette" />;  
+    const inputElement = <input value="Robin Dudette" />;
     wrapper.find('button.getUser').simulate('click');
     getLast(wrapper, 'input');
     expect(wrapper.containsMatchingElement(inputElement)).toEqual(true);
@@ -151,7 +151,7 @@ expect(wrapper.contains(inputElement)).toEqual(true);
 As you can see, I'm trying to mirror what I see in the Enzyme debug. It was a good try, I suppose, but it didn't work. Instead, I ended up doing this:
 
 ```javascript
-const inputElement = <input value="Robin Dudette" />;  
+const inputElement = <input value="Robin Dudette" />;
 expect(wrapper.containsMatchingElement(inputElement)).toEqual(true);
 ```
 
@@ -182,7 +182,7 @@ describe('Show User Info mount Test', function () {
         ReactDOM.render(<ShowUserInfo
             fields={fieldDefinitions}
             body={bodyData}
-            onChange={function() {}}
+            onChange={function() {&#125;&#125;
         />, div);
     });
 });

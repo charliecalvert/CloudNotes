@@ -40,7 +40,7 @@ There are several updates to the code we wrote on Monday.
 
 ### Update Schema
 
-In **modules/scientists**, the **subjects** array should look like this: 
+In **modules/scientists**, the **subjects** array should look like this:
 
     subjects: [String].
 
@@ -58,7 +58,7 @@ var scientistsSchema = mongoose.Schema({
 
 You should be able to make this change without modifying the rest of your code.
 
-[mb]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html 
+[mb]: http://www.ccalvert.net/books/CloudNotes/Assignments/MongooseBasics.html
 
 ### Remove Numeric Input
 
@@ -75,7 +75,7 @@ With the numeric input gone, we need another way to select items. We will do tha
 ```
 	ul
 		li(data-ng-repeat='scientist in mongoController.allData')
-			<a ng-click="mongoController.selectScientist(scientist)"> {{scientist.id}} {{scientist.name}} </a>
+			<a ng-click="mongoController.selectScientist(scientist)"> &#123;&#123;scientist.id&#125;&#125; &#123;&#123;scientist.name&#125;&#125; </a>
 ```
 
 The selectScientist method looks like this:
@@ -105,7 +105,7 @@ In its place, at the bottom of the file, ask the **mongoFactory** to retrieve th
 ```
 
 If there are save and insert methods left over from Monday, you can delete them. We are going to do
-those tasks elsewhere. 
+those tasks elsewhere.
 
 The code we have added won't work quite yet. We still need to make some changes to MongoFactory, as
 shown in the next section.
@@ -121,8 +121,8 @@ Right now the structure of our **mongoFactory** looks like this:
 
 		return {
             // code omitted here
-		};		
-		
+		};
+
 	});
 ```
 
@@ -136,7 +136,7 @@ Let's make a slight change to that code so that we can reference the factory its
 		var mongoFactory =  {
             // code omitted here
             // With this new structure, we can reference the mongoFactory in here.
-		};		
+		};
 
         return mongoFactory;
 	});
@@ -177,7 +177,7 @@ If you look at the mongoFactory.getScientists method, you can see that it freque
     mongoFactory.allData = data.allData
 ```
 
-Being able to write that kind of code was why we made the change to the structure of the factory. Our goal is to avoid using **this** whenever possible. In particular, we don't want to accidentally reference this thinking that it points to **mongoFactory** when it actually points to the global object. 
+Being able to write that kind of code was why we made the change to the structure of the factory. Our goal is to avoid using **this** whenever possible. In particular, we don't want to accidentally reference this thinking that it points to **mongoFactory** when it actually points to the global object.
 
 Now that we can track the list of scientists and a currently selected scientist, it becomes easy to retrieve a scientist by MongoDb **id**:
 
@@ -237,7 +237,7 @@ We need jade and javascript files to support each of the menu items:
 | Edit           | edit.jade      | edit.js      |
 | Subjects       | subjects.jade  | subjects.js  |
 | Comments       | comments.jade  | comments.js  |
-| About          | about.jade     | about.js     | 
+| About          | about.jade     | about.js     |
 
 
 Of course we need to make corresponding changes in **layout.jade**:
@@ -285,7 +285,7 @@ And in the javascript files, you can put code like this:
 	});
 
 })();
-``` 
+```
 
 It should be obvious the small changes that need to be made to this sample code in order to make it unique to a particular file. For instance, in **subjects.jade** one would write: **h1: Subjects**. You can use the **app.js** file shown below to help you fill in the details, if they are not already obvious to you.
 
@@ -295,15 +295,15 @@ The **main.jade** file is a special case, as it will now contain the working cod
 hr
 ul
 	li(data-ng-repeat='scientist in mongoController.allData')
-		<a ng-click="mongoController.selectScientist(scientist)"> {{scientist.id}} {{scientist.name}} </a>
+		<a ng-click="mongoController.selectScientist(scientist)"> &#123;&#123;scientist.id&#125;&#125; &#123;&#123;scientist.name&#125;&#125; </a>
 
 
 h2 Main
 div(science-show="")
 h2 Subjects
-p {{mongoController.data.subjects}}
+p &#123;&#123;mongoController.data.subjects&#125;&#125;
 h2 Comments
-p {{mongoController.data.comments}}
+p &#123;&#123;mongoController.data.comments&#125;&#125;
 
 ```
 
@@ -360,9 +360,9 @@ There are two directives we will use now, or later. Put them both in a file call
 			controller: 'MongoController',
 			controllerAs: 'mongoController',
 			template:
-			'First: {{mongoController.data.firstName}} ' +
-			'<br>Last: {{mongoController.data.lastName}}' +
-			'<br>Topic: {{mongoController.data.subject}}'
+			'First: &#123;&#123;mongoController.data.firstName&#125;&#125; ' +
+			'<br>Last: &#123;&#123;mongoController.data.lastName&#125;&#125;' +
+			'<br>Topic: &#123;&#123;mongoController.data.subject&#125;&#125;'
 		};
 	});
 
@@ -398,10 +398,10 @@ I've rewritten the connect method to make it easier to see the user name, passwo
 that we want to create a REST URL that looks like this:
 
     mongoose.connect('mongodb://csc:Re*lD*t*22#@ds049848.mongolab.com:49848/elvenlab01');
-    
+
 Here is the new method, where the parts that specify the user name, password and database
 are perhaps easier for you to see. Remember that the user name and password are separated
-by a colon:    
+by a colon:
 
 ```
 function doConnection() {
@@ -634,13 +634,13 @@ router.post('/save', function(request, response) {
 
 ## Edit Main Fields
 
-Now that we have things set up, the first step will be to enable editing of the **firstName** 
+Now that we have things set up, the first step will be to enable editing of the **firstName**
 and **lastName**. This will take place in **edit.js**. We begin by modifying **edit.jade**:
 
 ```
 h1 Edit
 
-p hint: {{editController.hint}}
+p hint: &#123;&#123;editController.hint&#125;&#125;
 
 hr
 button(data-ng-click="editController.saveCurrentDocument()") Save Current Document
@@ -685,7 +685,7 @@ documents:
 
 ## Subjects
 
-Now we want to be able to create a detailed list of subjects associated with a particular scientist. Let's start by adding 
+Now we want to be able to create a detailed list of subjects associated with a particular scientist. Let's start by adding
 in the jade code in **views/subjects.jade**:
 
 ```
@@ -701,7 +701,7 @@ button(ng-click="subjectsController.deleteSelected()") Delete Selected
 
 ul
    li(ng-repeat='subject in subjectsController.data.subjects')
-      span {{subject}}
+      span &#123;&#123;subject&#125;&#125;
 ```
 
 Here is the code for inserting and updating the detailed list of subjects. It belongs, of course, in **public/javascripts/subjects.js**:

@@ -181,9 +181,9 @@ elfApp.directive('elfSimpleFormat', function() {
   'use strict';
   return {
       controller: 'MainController',
-      template: 'Solar: {{simpleFormat[index].solar}}' +
-          '<br>Geo: {{simpleFormat[index].geo}}' +
-          '<br>Wind: {{simpleFormat[index].wind}}'
+      template: 'Solar: &#123;&#123;simpleFormat[index].solar&#125;&#125;' +
+          '<br>Geo: &#123;&#123;simpleFormat[index].geo&#125;&#125;' +
+          '<br>Wind: &#123;&#123;simpleFormat[index].wind&#125;&#125;'
   };
 });
 ```
@@ -209,7 +209,7 @@ elfApp.directive('elfSimpleFormat', function() {
 If you have not done so already, you also need to update the **MainController's** method called **getRenewable** so that it has access to our simpleFormat object:
 
 ```javascript
-$scope.getRenewable = function() {        
+$scope.getRenewable = function() {
     $http.get('data/Renewable.json')
         .then(function(res) {
             renewableUtils.init(res.data);
@@ -424,13 +424,13 @@ Don't forget to run:
 Create **renewable-by-year.jade** and base it on **renewable.jade** but set the ID to **renewableByYear**. And don't index into renewable. For instance, where you see this:
 
 <pre>
-| First: {{renewable[index].Year}}
+| First: &#123;&#123;renewable[index].Year&#125;&#125;
 </pre>
 
 Do this instead:
 
 <pre>
-| First: {{renewableByYear.Year}}
+| First: &#123;&#123;renewableByYear.Year&#125;&#125;
 </pre>
 
 Convert it to a fixture:
@@ -618,7 +618,7 @@ files: [
     'public/components/angular/angular.js',
     'public/components/angular-mocks/angular-mocks.js',
     'public/components/angular-route/angular-route.js',
-    'node_modules/jasmine-jquery/lib/*.js',  
+    'node_modules/jasmine-jquery/lib/*.js',
     'public/javascripts/app.js',
     'public/javascripts/*.js',
     'spec/**/*.html',

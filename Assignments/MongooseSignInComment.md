@@ -19,7 +19,7 @@ Found a [good article][goodart] on passport and angular. The [code][artcode] is 
 [goodart]:https://vickev.com/#!/article/authentication-in-single-page-applications-node-js-passportjs-angularjs
 [artcode]:https://github.com/Anomen/AuthenticationAngularJS
 
-A working example of how to handle the SignIn program is in the following directory: 
+A working example of how to handle the SignIn program is in the following directory:
 
 - [JsObjects/JavaScript/Design/AngularSignIn](https://github.com/charliecalvert/JsObjects/tree/master/JavaScript/Design/AngularSignIn "Angular Sign In on JsObjects")
 
@@ -31,7 +31,7 @@ Or get the whole repository, **being very careful not to issue this command insi
 
     git clone http://github.org/charliecalvert/JsObjects.git
 
-The **AngularSignIn** example program contains the SignIn code, but not the Comments code. 
+The **AngularSignIn** example program contains the SignIn code, but not the Comments code.
 
 ## Step One
 
@@ -80,7 +80,7 @@ of the file:
 And then optionally, for theme switching:
 
 ```
-link(rel="stylesheet", ng-href="components/bootswatch/{{themeController.bootStrapCss}}/bootstrap.css")
+link(rel="stylesheet", ng-href="components/bootswatch/&#123;&#123;themeController.bootStrapCss&#125;&#125;/bootstrap.css")
 ```
 
 Then also load **angular-route** and **app.js**
@@ -113,7 +113,7 @@ block content
 					li(ng-class="{ active: isActive('/about')}")
 						a(ng-href='#/about') About
 					li(ng-class="{ active: isActive('/signin')}")
-						a(ng-href='#/{{themeController.signinMenuItem}}') {{themeController.signinMenuText}}
+						a(ng-href='#/&#123;&#123;themeController.signinMenuItem&#125;&#125;') &#123;&#123;themeController.signinMenuText&#125;&#125;
 					li(ng-switch="themeController.loggedIn" ng-class="{ active: isActive('/login')}")
 						a(ng-switch-when="true" ng-href='#/logout') Logout
 						a(ng-switch-default ng-href='#/login') Login
@@ -180,9 +180,9 @@ module.exports = function(passport) {
     passport.use('login', new LocalStrategy({
             passReqToCallback : true
         },
-        function(req, username, password, done) { 
+        function(req, username, password, done) {
             // check in mongo if a user with username exists or not
-            User.findOne({ 'username' :  username }, 
+            User.findOne({ 'username' :  username },
                 function(err, user) {
                     // In case of any error, return using the done method
                     if (err)
@@ -192,7 +192,7 @@ module.exports = function(passport) {
                         console.log('User Not Found with username '+username);
                         return done(null, false);
                     }
-                    // User exists but wrong password, log the error 
+                    // User exists but wrong password, log the error
                     if (!isValidPassword(user, password)){
                         console.log('Invalid Password');
                         return done(null, false); // redirect back to login page
@@ -210,7 +210,7 @@ module.exports = function(passport) {
     var isValidPassword = function(user, password){
         return bCrypt.compareSync(password, user.password);
     }
-    
+
 };
 ```
 
@@ -255,10 +255,10 @@ module.exports = function(passport){
                         // save the user
                         newUser.save(function(err) {
                             if (err){
-                                console.log('Error in Saving user: '+err);  
-                                throw err;  
+                                console.log('Error in Saving user: '+err);
+                                throw err;
                             }
-                            console.log('User Registration succesful');    
+                            console.log('User Registration succesful');
                             return done(null, newUser);
                         });
                     }
@@ -455,7 +455,7 @@ myModule.config(function($routeProvider, $httpProvider, $locationProvider) {
 				return $q.reject(response);
 			}
 		};
-	});	
+	});
 
 	//================================================
 	// Define all the routes
@@ -506,7 +506,7 @@ block content
    div.container
       #main.row
          div.col-sm-6.col-md-4.col-md-offset-4
-            h1.text-center.login-title {{loginController.hint}}
+            h1.text-center.login-title &#123;&#123;loginController.hint&#125;&#125;
                div.account-wall
                   img(class='profile-img', src='images/SpaceNeedle.png')
                   form.form-signin(novalidate='')
@@ -624,9 +624,9 @@ Here is **logout.jade**:
 ```
 h1 Logout
 
-p hint: {{logoutController.hint}}
+p hint: &#123;&#123;logoutController.hint&#125;&#125;
 
-p logged in: {{logoutController.loggedInStatus}}
+p logged in: &#123;&#123;logoutController.loggedInStatus&#125;&#125;
 
 div.names
    div.btn-group
@@ -635,7 +635,7 @@ div.names
 #document(ng-bind-html="logoutController.error")
 ```
 
-We have already added the following at the bottom of **routes/login.js**. 
+We have already added the following at the bottom of **routes/login.js**.
 
 ```
 router.get('/logout', function(request, response){
@@ -694,10 +694,10 @@ Here is **public/javascripts/comments.js**
 (function() {
 
     var app = angular.module('elvenApp');
-    
+
     app.controller('CommentsController', function(mongoFactory, commentFactory) {
     	var commentsController = this;
-    
+
     	commentsController.updateComment = function() {
     		commentFactory.updateComment(commentsController.scientist);
     	};
@@ -707,7 +707,7 @@ Here is **public/javascripts/comments.js**
     	function getScientist() {
     		mongoFactory.getScientistById(mongoFactory.currentId, commentsController);
     	}
-    
+
     	getScientist();
     });
 
@@ -739,11 +739,11 @@ getScientistById: function(id, controller) {
 This means that a file like **views/comments.jade** would begin like this:
 
 ```
-h1 Comments: {{commentsController.name}}
+h1 Comments: &#123;&#123;commentsController.name&#125;&#125;
 div.names
     ul
         li(ng-repeat='comment in commentsController.scientist.comments')
-            a(ng-click="commentsController.selectComment(comment)") {{comment.commentText}}
+            a(ng-click="commentsController.selectComment(comment)") &#123;&#123;comment.commentText&#125;&#125;
 ```
 
 The fist line shows how to use the new **name** property.

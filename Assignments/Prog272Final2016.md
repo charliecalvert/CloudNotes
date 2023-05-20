@@ -224,7 +224,7 @@ router.get('/getSettings', function(request, response) {
             response.send({result: 'error'});
         } else {
             if(doc === null) {
-                response.send({settings: {dataType: 'Database', dataSource: 'Local MongoDb', comment: 'Default Comment'}})
+                response.send({settings: {dataType: 'Database', dataSource: 'Local MongoDb', comment: 'Default Comment'&#125;&#125;)
             } else {
                 response.send({settings: doc});
             }

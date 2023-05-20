@@ -106,7 +106,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 
 class DataMaven extends Component {
   constructor() {
-    super();        
+    super();
     // INITIALIZATION OMITTED HERE
   }
 
@@ -128,7 +128,7 @@ class DataMaven extends Component {
             )}
           />
         </div>
-      </BrowserRouter>   
+      </BrowserRouter>
     );
   }
 }
@@ -199,8 +199,8 @@ And here is the output from **elfDebugEnzyme**. In other words, this is the HTML
 
 ```
 SmallNumbers.test.js:
-    <MemoryRouter initialEntries={{...}}>
-      <Router history={{...}}>
+    <MemoryRouter initialEntries=&#123;&#123;...&#125;&#125;>
+      <Router history=&#123;&#123;...&#125;&#125;>
         <DataMaven>
           <div>
             <ElfHeader>
@@ -212,7 +212,7 @@ SmallNumbers.test.js:
             <Route path="/get-gist-list" render={[Function]} />
             <Route path="/get-numbers" render={[Function]}>
               // THE FOLLOWING SHOWS HOW SMALL NUMBERS IS EXPANDED
-              <SmallNumbers match={{...}} location={{...}} history={{...}} staticContext={[undefined]} numbers={{...}}>
+              <SmallNumbers match=&#123;&#123;...&#125;&#125; location=&#123;&#123;...&#125;&#125; history=&#123;&#123;...&#125;&#125; staticContext={[undefined]} numbers=&#123;&#123;...&#125;&#125;>
                 <div className="App">
                   <p className="App-intro">
                     state.nine:

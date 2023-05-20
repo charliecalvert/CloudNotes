@@ -42,7 +42,7 @@ You can combine the two:
         "firstName": "John",
         "lastName": "Adams"
     }, {
-        "firstName": "Thomas",      
+        "firstName": "Thomas",
         "lastName": "Jefferson"
     }
 ]
@@ -107,31 +107,31 @@ This code can go in the head section of your HTML:
 
 ```html
 <script type="textx-handlebars-template" id="par01">
-	<p>{{text}}</p>
+	<p>&#123;&#123;text&#125;&#125;</p>
 </script>
 ```
 
 Here is code for using the template:
 
 ```javascript
-	function addItem(text) {  
-		'use strict';  
+	function addItem(text) {
+		'use strict';
 
-		var script = \$("#par01").html(),  
-		template=Handlebars.compile(script);  
+		var script = \$("#par01").html(),
+		template=Handlebars.compile(script);
 
-		var result = template({  
-			text: text  
-		});  
+		var result = template({
+			text: text
+		});
 
-		$("#myDiv").append(result);  
+		$("#myDiv").append(result);
 	}
 
-	$.getJSON("index.json", function(data) {  
-		$.each(data, function(i, president) {  
+	$.getJSON("index.json", function(data) {
+		$.each(data, function(i, president) {
 			$('#data01').append("<p>" + president.firstName
-				+ ' ' + president.lastName + "</p>");  
-		});  
+				+ ' ' + president.lastName + "</p>");
+		});
 	});
 ```
 

@@ -12,6 +12,11 @@ category : aws-guide
 
 ## Overview
 
+{% for product in site.aws-guide %}
+  <a href="{{ product.url }}">
+  {{ product.title }}
+{% endfor %}
+
 AWS assigments
 
 ## AWS

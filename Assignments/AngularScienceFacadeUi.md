@@ -15,7 +15,7 @@ category : assignments-guide
 Our goals are two fold:
 
 - Create an application that can either use:
-    -  a mock **SimpleScienceData** object 
+    -  a mock **SimpleScienceData** object
     -  the Mongo based  **ScienceResource** object.
 - Show how to use ExpressRoutes to retrieve HTML
     - And dynamically insert the results into our documents
@@ -32,17 +32,17 @@ Our goals are two fold:
 
 Download the [starter project](https://drive.google.com/file/d/0B25UTAlOfPRGSTNRRk5qVkF1eTg/view?usp=sharing).
 
-Note that it is similar to the project we used on Monday but we have renamed some methods in ScienceFacade to bring them in line with the Angular $resource object that uses MongoDb. In the list below, the original method name is on the left and the new name on the right: 
+Note that it is similar to the project we used on Monday but we have renamed some methods in ScienceFacade to bring them in line with the Angular $resource object that uses MongoDb. In the list below, the original method name is on the left and the new name on the right:
 
 - getAll -> query
 - delete -> remove
 - update -> updateDocument
 
-We have also added a method called **assignMethods**. Its purpose is to ensure that each list we create has certain methods available on it. Again, we do this to maintain compatibility with Angular resource. 
+We have also added a method called **assignMethods**. Its purpose is to ensure that each list we create has certain methods available on it. Again, we do this to maintain compatibility with Angular resource.
 
 A few additional changes were made.
 
-## Step Two 
+## Step Two
 
 Routing
 
@@ -54,7 +54,7 @@ router.get('/:id', function(req, res, next) {
   res.render('ScienceInfo/' + req.params.id, { title: req.params.id });
 });
 
-``` 
+```
 
 Create a new folder called: **views/ScienceInfo**. Place three files in it:
 
@@ -86,7 +86,7 @@ We can see the result of our new route by entering the following URL in our brow
 
     localhost:30025/astronomy
     localhost:30025/physics
-    localhost:30025/radioactivity 
+    localhost:30025/radioactivity
 
 In order to invoke those routes from our program, we place the following method in our controller:
 
@@ -110,7 +110,7 @@ In our controller, you should call **loadDocument** at the end of the callback f
 
 The **directive**.
 
-Appended at the bottom of **Control.js**: 
+Appended at the bottom of **Control.js**:
 
 ```
     app.directive('elfMarie', function(scientists) {
@@ -118,9 +118,9 @@ Appended at the bottom of **Control.js**:
             controller: 'MyController',
             controllerAs: 'myController',
             template:
-            'First: {{myController.marie.firstName}} ' +
-            '<br>Last: {{myController.marie.lastName}}' +
-            '<br>City: {{myController.marie.subject}}'
+            'First: &#123;&#123;myController.marie.firstName&#125;&#125; ' +
+            '<br>Last: &#123;&#123;myController.marie.lastName&#125;&#125;' +
+            '<br>City: &#123;&#123;myController.marie.subject&#125;&#125;'
         };
     });
  ```
@@ -227,4 +227,4 @@ Notice the call to getTopic:
      return bar.query({}, callback);
 ```
 
-Go to the Network page in the Chrome Developer tools and see the URL this creates. Run the URL in the address bar of your browser.  
+Go to the Network page in the Chrome Developer tools and see the URL this creates. Run the URL in the address bar of your browser.

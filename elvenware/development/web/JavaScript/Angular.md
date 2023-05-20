@@ -25,14 +25,14 @@ Conside the following simple Angular template:
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset="utf-8">        
+        <meta charset="utf-8">
         <title>Angular Starter Add</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     </head>
     <body ng-app>
         <h1>Angular Starter Add</h1>
 
-        <p>5 * 7 = {{5 * 7}}</p>
+        <p>5 * 7 = &#123;&#123;5 * 7&#125;&#125;</p>
 
     </body>
 </html>
@@ -41,7 +41,7 @@ Conside the following simple Angular template:
 The file shown here looks like HTML at first, but there a odd bits of syntax.  Notice, for instance, these two bits of syntax:
 
 - ng-app
-- {{5 * 7}}
+- &#123;&#123;5 * 7&#125;&#125;
 
 These two bits of syntax indicate that this is not raw HTML. Instead, it is an angular **template**.
 
@@ -49,7 +49,7 @@ Nomenclature:
 
 -   The File shown above: an Angular **template**.
 -   **ng-app**: It is both an HTML **attribute** and an Angular **directive**
--   {{5 * 7}}: Those double curly braces are called Angular **expressions**.
+-   &#123;&#123;5 * 7&#125;&#125;: Those double curly braces are called Angular **expressions**.
 
 We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** work.
 
@@ -77,8 +77,8 @@ angular.module('myApp', []).controller('MileController', function($scope) {
     $scope.miles = 0;
 
     $scope.convertMilesToInches = function() {
-        return $scope.miles * 5280 * 12;  
-    };    
+        return $scope.miles * 5280 * 12;
+    };
 });
 ```
 
@@ -92,8 +92,8 @@ angular.module('myApp', []).controller('MileController', function() {
     mileController.miles = 0;
 
     mileController.convertMilesToInches = function() {
-        return $scope.miles * 5280 * 12;  
-    };    
+        return $scope.miles * 5280 * 12;
+    };
 });
 ```
 
@@ -143,7 +143,7 @@ HTML and JavaScript controller.
     - ng-app="elvenApp"
     - ng-controller
 - In JavaScript
-    - Declare module, don't forget dependencies    
+    - Declare module, don't forget dependencies
 
 Those are the steps. Now lets show the code.
 
@@ -152,8 +152,8 @@ In HTML or Jade:
 ```html
  body(ng-app="elvenApp")
  #myController(ng-controller="MyController as myController")
-    p {{myController.foo}}
-```    
+    p &#123;&#123;myController.foo&#125;&#125;
+```
 
 In JavaScript using ControllerAs:
 
@@ -227,9 +227,9 @@ You could then write code like this:
 ```javascript
 app.directive('elfMarie', function() {
     return {
-        template: 'First: {{marie.firstName}} ' +
-            '<br>Last: {{marie.lastName}}' +
-            '<br>City: {{marie.city}}'
+        template: 'First: &#123;&#123;marie.firstName&#125;&#125; ' +
+            '<br>Last: &#123;&#123;marie.lastName&#125;&#125;' +
+            '<br>City: &#123;&#123;marie.city&#125;&#125;'
 
     };
 });
@@ -497,7 +497,7 @@ var comment = {
 
 As you can see, we are passing a reasonable amount of data back to the server. How is this accomplished? The **$http.post** method built into angular takes two parameters:
 
-- The uri designating the route for our code: **'/newComment'**.  
+- The uri designating the route for our code: **'/newComment'**.
 - The data we want to send to the server. In this case the **payload** object.
 
 Here they are:
@@ -662,7 +662,7 @@ function createError() {
     }
 }
 
-it("throws an exception", function() {        
+it("throws an exception", function() {
     expect(function() { tryToCallNew(); }).toThrow(new Error('error'));
 });
 ```
@@ -684,7 +684,7 @@ function tryToCallNew() {
     }
 }
 
-it("cannot be used with new", function() {        
+it("cannot be used with new", function() {
     expect(function() { tryToCallNew(); }).toThrow(new Error('error'));
 });
 ```
@@ -698,7 +698,7 @@ assume that calling **new objectMethod()** raises a **TypeError** because
 **objectMethod** is not a function:
 
 ```javascript
-it("cannot be used with new", function() {        
+it("cannot be used with new", function() {
     expect(function() { new objectMethod(); }).toThrow(new TypeError('object is not a function'));
 });
 ```
@@ -750,7 +750,7 @@ I outlined to you. Here is what I suggested before:
 
 ```javascript
 describe("mycontrollertest", function() {'use strict';
-    var npcController = null;    
+    var npcController = null;
     var $dialog = null;
 
     beforeEach(inject(function($rootScope, $controller) {
@@ -916,7 +916,7 @@ project_template "Elvenware Angular Unit Test Project " do |t|
   t.location = "git://github.com/charliecalvert/AngularTest.git"
   t.description = "Remote template. Requires network access."
   t.replace_parameters = false
-  t.tags = ['Web']  
+  t.tags = ['Web']
 end
 
 project_template "Elvenware Angular Jasmine Karma Project " do |t|
@@ -927,7 +927,7 @@ project_template "Elvenware Angular Jasmine Karma Project " do |t|
   t.location = "git://github.com/charliecalvert/AngularKarma.git"
   t.description = "CSC Remote template. Requires network access."
   t.replace_parameters = false
-  t.tags = ['Web']  
+  t.tags = ['Web']
 end
 
 project_template "Elvenware Angular Mongo Bootstrap Project " do |t|
@@ -938,7 +938,7 @@ project_template "Elvenware Angular Mongo Bootstrap Project " do |t|
   t.location = "git://github.com/charliecalvert/AngularMongoBootstrapTest.git"
   t.description = "CSC Remote template. Requires network access."
   t.replace_parameters = false
-  t.tags = ['Web']  
+  t.tags = ['Web']
 end
 
 ```
@@ -1050,7 +1050,7 @@ Scroll down past this code:
 		    $scope : mainController
 		      // Insert your code here
     });
-  }));  
+  }));
 ```
 
 Type this:
@@ -1072,7 +1072,7 @@ Open up karma.conf.js, which is in the Tests folder. You will see something like
 after the first little bit:
 
 ```javascript
-	files: [   
+	files: [
 		'Library/angular.js',
 		'Library/angular-mocks.js',
 		'Tests/TestMain.js',
@@ -1170,7 +1170,7 @@ In the body you will see a **div id** tag:
 Below that, put your display instructions:
 
 ```html
-<p>Get Four:  {{getFour}}</p>
+<p>Get Four:  &#123;&#123;getFour&#125;&#125;</p>
 ```
 
 Now try running index.html. It should show the results of your work.
@@ -1257,7 +1257,7 @@ reporters: ['progress', 'coverage', 'junit'],
 And in your plugins at the bottom of karam.conf.js and in karam-coverage:
 
 ```javascript
-plugins: [      
+plugins: [
   'karma-jasmine',
   'karma-coverage',
   'karma-chrome-launcher',

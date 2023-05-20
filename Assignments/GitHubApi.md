@@ -226,7 +226,7 @@ Create in **GetGist**. This is for **material-ui**, of course, but I've left out
         if (...) {
             this.setState({ index: this.state.index + 1 });
         }
-    }}
+    &#125;&#125;
 >
     Next
 </Button>

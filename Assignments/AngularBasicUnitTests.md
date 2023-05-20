@@ -176,7 +176,7 @@ Note that in **spec/index.html** we load Jasmine, Angular and our tests:
     <body>
         <script src="bower_components/jasmine-core/lib/jasmine-core/jasmine.js"></script>
         <script src="bower_components/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
-        <script src="bower_components/jasmine-core/lib/jasmine-core/boot.js"></script>        
+        <script src="bower_components/jasmine-core/lib/jasmine-core/boot.js"></script>
 
         <!-- include source files here... -->
         <script src="../public/components/angular/angular.js"></script>
@@ -251,7 +251,7 @@ block content
   p Welcome to #{title}
 
   #elvenController(ng-controller="ElvenController as elvenController")
-    p {{elvenController.hint}}
+    p &#123;&#123;elvenController.hint&#125;&#125;
 
 ```
 

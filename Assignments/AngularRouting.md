@@ -94,7 +94,7 @@ html
 
 In **index.jade** we will have a:
 
-- navbar and menu  
+- navbar and menu
 - The main body of the program, including a place for our routing content, our controllers.
 - Footer
 
@@ -274,7 +274,7 @@ Here is **main.jade**:
 ```
 p This is main
 
-p {{mainController.mainData}}
+p &#123;&#123;mainController.mainData&#125;&#125;
 ```
 
 Here is **about.jade**:
@@ -282,7 +282,7 @@ Here is **about.jade**:
 ```
 p This is about
 
-p {{aboutController.aboutData}}
+p &#123;&#123;aboutController.aboutData&#125;&#125;
 ```
 
 Then add this to **routes/index.js** right before **module.exports**:

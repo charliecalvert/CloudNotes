@@ -253,7 +253,7 @@ We need to add the Jade that defines our **templateUrl** to a new file called **
 .panel.panel-default
     .panel-heading Renewable Data
     .panel-body
-        div {{description}}
+        div &#123;&#123;description&#125;&#125;
 </pre>
 
 This is standard bootstrap code with a an angular expression in it. The expression is set off with double curly braces. The word description in the expression forms a link to the variable **$scope.description** found in our controller from **first.js**.
@@ -318,7 +318,7 @@ Here is **views/first-data.jade**. This is where our list of presidents from the
 .panel.panel-default
     .panel-heading Renewable Data
     .panel-body
-        pre {{presidents}}
+        pre &#123;&#123;presidents&#125;&#125;
 </pre>
 
 ## Testing
@@ -495,7 +495,7 @@ describe('Elvenware Home Directive Suite', function () {
     it('should be possible to access the fixture', function() {
         var spanElement = document.getElementById('homeDescription');
         //console.log(spanElement);
-        expect(spanElement.innerHTML).toContain('{{desc');
+        expect(spanElement.innerHTML).toContain('&#123;&#123;desc');
     });
 
     it('should be able to see the fixture content', function() {

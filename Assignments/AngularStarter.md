@@ -32,7 +32,7 @@ Create folder called **Week03-AngularStarter-Add**. Inside it, save the followin
     <body data-ng-app>
         <h1>Angular Starter Add</h1>
 
-        <p>5 * 7 = {{5 * 7}}</p>
+        <p>5 * 7 = &#123;&#123;5 * 7&#125;&#125;</p>
 
     </body>
 </html>
@@ -41,7 +41,7 @@ Create folder called **Week03-AngularStarter-Add**. Inside it, save the followin
 The file shown here looks like HTML at first, but there a odd bits of syntax.  Notice, for instance, these two bits of syntax:
 
 - data-ng-app
-- {{5 * 7}}
+- &#123;&#123;5 * 7&#125;&#125;
 
 These two bits of syntax indicate that this is not raw HTML. Instead, it is an angular **template**.
 
@@ -49,7 +49,7 @@ Nomenclature:
 
 - The File shown above: an Angular **template**.
 - **ng-app**: It is both an HTML **attribute** and an Angular **directive**
-- {{5 \* 7}}: Those double curly braces are called Angular **expressions**.
+- &#123;&#123;5 \* 7&#125;&#125;: Those double curly braces are called Angular **expressions**.
 
 We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** have the same meaning and work in most browsers. A syntax checker will choke on **ng-app**, but will approve **data-ng-app**
 
@@ -87,7 +87,7 @@ Here is how to create an input control:
 Here is how to use the **ng-model** declared in the input control:
 
 ```html
-<p>5 * 7 = {{operandA * 7}}</p>
+<p>5 * 7 = &#123;&#123;operandA * 7&#125;&#125;</p>
 ```
 
 The model declared in the input control now appears automatically in the
@@ -123,7 +123,7 @@ If necessary, inside the folder put your **StartPythonWebServer** file. Also add
         <p>Enter a name and I will add it to our list.</p>
         <input type="text" ng-model="listItem"  placeholder="Enter list item name">
 
-        <p>You entered: {{listItem}}</p>
+        <p>You entered: &#123;&#123;listItem&#125;&#125;</p>
 
     </body>
 </html>
@@ -184,13 +184,13 @@ Take all of the code in the body of index.html and wrap it in a DIV:
 
 You will end up with an H1 tag, two P tags, and an INPUT tag inside your DIV. Note that the DIV is an Angular Controller. Though this program uses $Scope most of the time, note that this Controller at least supports **ControllerAs** syntax.
 
-And in the angular HTML template, just below the **{{listItem}}** expression:
+And in the angular HTML template, just below the **&#123;&#123;listItem&#125;&#125;** expression:
 
 ```html
  <ul class="unstyled">
   <li ng-repeat="todo in todoList">
    <input type="checkbox" ng-model="todo.done">
-   <span class="done-{{todo.done}}">{{todo.text}}</span>
+   <span class="done-&#123;&#123;todo.done&#125;&#125;">&#123;&#123;todo.text&#125;&#125;</span>
   </li>
  </ul>
 ```
@@ -235,7 +235,7 @@ Now switch to the HTML and add a FORM with an INPUT control and a BUTTON. It goe
     <input class="btn-primary" type="submit" value="add">
 </form>
 
-<p>Items in list: {{itemCount}}</p>
+<p>Items in list: &#123;&#123;itemCount&#125;&#125;</p>
 ```
 
 When done, the Controller in my HTML has the following HTML tags, shown in the order in which they appear:

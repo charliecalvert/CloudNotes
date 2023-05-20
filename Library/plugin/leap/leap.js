@@ -17,7 +17,7 @@
         if (!t[n]) {
             if (!e[n]) {
                 const o=typeof require=='function'&&require; if (!s&&o) return o(n, !0); if (r) return r(n, !0); throw new Error('Cannot find module \''+n+'\'');
-            } const u=t[n]={exports: {}}; e[n][0].call(u.exports, function(t) {
+            } const u=t[n]={exports: {&#125;&#125;; e[n][0].call(u.exports, function(t) {
                 const r=e[n][1][t]; return i(r?r:t);
             }, u, u.exports);
         } return t[n].exports;
@@ -249,7 +249,7 @@
         return 1;
     }, translation: function() {
         return vec3.create();
-    }};
+    &#125;&#125;;
 }, {'./gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, 'gl-matrix': 19, 'underscore': 20}], 6: [function(require, module, exports) {
     const glMatrix=require('gl-matrix'); const vec3=glMatrix.vec3; const EventEmitter=require('events').EventEmitter; const _=require('underscore'); const createGesture=exports.createGesture=function(data) {
         let gesture; switch (data.type) {
@@ -284,7 +284,7 @@
             handlers['stop']=cb; return builder;
         }, update: function(cb) {
             handlers['update']=cb; return builder;
-        }}; return builder;
+        &#125;&#125;; return builder;
     }; var Gesture=exports.Gesture=function(gesture, frame) {
         this.gestures=[gesture]; this.frames=[frame];
     }; Gesture.prototype.update=function(gesture, frame) {
@@ -343,14 +343,14 @@
         return 1;
     }, translation: function() {
         return vec3.create();
-    }};
+    &#125;&#125;;
 }, {'./pointable': 11, 'gl-matrix': 19, 'underscore': 20}], 8: [function(require, module, exports) {
     !function() {
         module.exports={Controller: require('./controller'), Frame: require('./frame'), Gesture: require('./gesture'), Hand: require('./hand'), Pointable: require('./pointable'), InteractionBox: require('./interaction_box'), Connection: require('./connection'), CircularBuffer: require('./circular_buffer'), UI: require('./ui'), glMatrix: require('gl-matrix'), mat3: require('gl-matrix').mat3, vec3: require('gl-matrix').vec3, loopController: undefined, loop: function(opts, callback) {
             if (callback===undefined) {
                 callback=opts; opts={};
             } if (!this.loopController) this.loopController=new this.Controller(opts); this.loopController.loop(callback);
-        }};
+        &#125;&#125;;
     }();
 }, {'./circular_buffer': 2, './connection': 3, './controller': 4, './frame': 5, './gesture': 6, './hand': 7, './interaction_box': 9, './pointable': 11, './ui': 13, 'gl-matrix': 19}], 9: [function(require, module, exports) {
     const glMatrix=require('gl-matrix'); const vec3=glMatrix.vec3; const InteractionBox=module.exports=function(data) {
@@ -1327,7 +1327,7 @@
                 if (max==null) {
                     max=min; min=0;
                 } return min+Math.floor(Math.random()*(max-min+1));
-            }; const entityMap={escape: {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#x27;', '/': '&#x2F;'}}; entityMap.unescape=_.invert(entityMap.escape); const entityRegexes={escape: new RegExp('['+_.keys(entityMap.escape).join('')+']', 'g'), unescape: new RegExp('('+_.keys(entityMap.unescape).join('|')+')', 'g')}; _.each(['escape', 'unescape'], function(method) {
+            }; const entityMap={escape: {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#x27;', '/': '&#x2F;'&#125;&#125;; entityMap.unescape=_.invert(entityMap.escape); const entityRegexes={escape: new RegExp('['+_.keys(entityMap.escape).join('')+']', 'g'), unescape: new RegExp('('+_.keys(entityMap.unescape).join('|')+')', 'g')}; _.each(['escape', 'unescape'], function(method) {
                 _[method]=function(string) {
                     if (string==null) return ''; return (''+string).replace(entityRegexes[method], function(match) {
                         return entityMap[method][match];
@@ -1377,7 +1377,7 @@
                 this._chain=true; return this;
             }, value: function() {
                 return this._wrapped;
-            }});
+            &#125;&#125;);
         }.call(this);
     }();
 }, {}], 21: [function(require, module, exports) {

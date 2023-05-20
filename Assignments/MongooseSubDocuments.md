@@ -12,7 +12,7 @@ category : assignments-guide
 
 ## Description
 
-Working with Mongoose subdocuments. 
+Working with Mongoose subdocuments.
 
 Reference: [http://mongoosejs.com/docs/subdocs.html](http://mongoosejs.com/docs/subdocs.html)
 
@@ -26,9 +26,9 @@ Create the project
     npm install
     copy %ELF_TEMPLATES%\.bowerrc
     bower init
-    
+
 Then after bower init, do this:
-    
+
     bower install angular --save
     bower install angular-route --save
     bower install bootstrap --save
@@ -43,7 +43,7 @@ Save JSON data as **ValidScientists.json**:
 
 Define the Mongoose documents.
 
-The key thing to notice is that we have a main document and an array of sub-documents. In particular, each scientist document has zero or more comments associated with it. The comments take the form of sub-documents. Notice how the **comments** field of the **scientistSchema** is declared.   
+The key thing to notice is that we have a main document and an array of sub-documents. In particular, each scientist document has zero or more comments associated with it. The comments take the form of sub-documents. Notice how the **comments** field of the **scientistSchema** is declared.
 
 ```
 var mongoose = require('mongoose');
@@ -110,23 +110,23 @@ block content
 		div.names
 			ul
 				li(ng-repeat='scientist in mainController.scientists')
-					a(ng-click="mainController.selectScientist(scientist)") {{scientist.name}}
+					a(ng-click="mainController.selectScientist(scientist)") &#123;&#123;scientist.name&#125;&#125;
 
 		div.names
 			div
 				label(class='col-sm-2, control-label') First:
-				span {{mainController.scientist.firstName}}
+				span &#123;&#123;mainController.scientist.firstName&#125;&#125;
 			div
 				label(class='col-sm-2, control-label') Last:
-				span {{mainController.scientist.lastName}}
+				span &#123;&#123;mainController.scientist.lastName&#125;&#125;
 			div
 				label(class='col-sm-2, control-label') Subject:
-				span {{mainController.scientist.subject}}
+				span &#123;&#123;mainController.scientist.subject&#125;&#125;
 
 		div.names
 			ul
 				li(ng-repeat='comment in mainController.scientist.comments')
-					a(ng-click="mainController.selectComment(comment)") {{comment.commentText}}
+					a(ng-click="mainController.selectComment(comment)") &#123;&#123;comment.commentText&#125;&#125;
 
 		div.names(ng-form="newCommentForm")
 			button.btn.btn-default(ng-click='mainController.newComment()') New Comment
@@ -286,9 +286,9 @@ router.post('/newComment', function(request, response) {
 	});
 });
 
-function remove(arr, item) {		
-	for(var i = arr.length; i--;) {		
-		if(arr[i]._id == item._id) {			
+function remove(arr, item) {
+	for(var i = arr.length; i--;) {
+		if(arr[i]._id == item._id) {
 			arr.splice(i, 1);
 		}
 	}
@@ -356,7 +356,7 @@ Here is **public/javascripts/control.js**:
 	var app = angular.module('elvenApp', []);
 
 	app.controller('MainController', function(commentFactory) {
-		
+
 		var mainController = this;
 
 		mainController.newComment = function() {
@@ -500,6 +500,6 @@ Submit the project in your repository in a folder called **Week10-MongooseSubdoc
 
 Please see this information:
 
-- Sending a [new comment][restreq] from the browser to server to database. 
+- Sending a [new comment][restreq] from the browser to server to database.
 
 [restreq]:http://elvenware.com/charlie/development/web/JavaScript/Angular.html#http

@@ -93,15 +93,15 @@ Add this to the bottom of index.jade:
         button(ng-click='loadPresidents()') Load President Data
         br
         .inputDiv
-          p Rows in DB: {{presidentsLength}}
+          p Rows in DB: &#123;&#123;presidentsLength&#125;&#125;
           ul
             li(ng-repeat='scientist in scientists')
               p
-              | FirstName: {{scientist.firstName}}
+              | FirstName: &#123;&#123;scientist.firstName&#125;&#125;
               br
-              | LastName: {{scientist.lastName}}
+              | LastName: &#123;&#123;scientist.lastName&#125;&#125;
               br
-              | Subject: {{scientist.subject}}
+              | Subject: &#123;&#123;scientist.subject&#125;&#125;
           div(ng-bind-html-unsafe='hint')
         .inputDiv
           input(type='text', ng-model='firstName')
@@ -109,10 +109,10 @@ Add this to the bottom of index.jade:
           input(type='text', ng-model='subject', placeholder='termEnd')
           button(ng-click='newPresident()') Add President
           hr
-          input(type='number', ng-change='indexChange()', ng-model='indexOfItemToDelete', min='0', max='{{presidentsLength-1}}')
+          input(type='number', ng-change='indexChange()', ng-model='indexOfItemToDelete', min='0', max='&#123;&#123;presidentsLength-1&#125;&#125;')
           button(ng-click='deleteRow()') Delete
           button(ng-click='updateRow()') Update
-          p {{selectedIndex}}
+          p &#123;&#123;selectedIndex&#125;&#125;
 
 ## Step Four
 
@@ -157,7 +157,7 @@ angular.module('pres', ['ngResource'])
 
 ```
 
-and in mongodb: 
+and in mongodb:
 
 ```
 angular.module('elvenApp', ['pres'])
@@ -186,9 +186,9 @@ script(src='javascripts/control.js')
 
 Your api key is on your Account page near the very bottom. It does
 not look like a URI. Rather it looks like a long string of meaningless
-numbers and letters. Though much shorter, it looks a bit like the keys 
+numbers and letters. Though much shorter, it looks a bit like the keys
 in an SSH file.
 
 ## Turn it in
 
-Put the folder in your repository and check it in. Include the URI of your repository and the name of the folder your used. 
+Put the folder in your repository and check it in. Include the URI of your repository and the name of the folder your used.

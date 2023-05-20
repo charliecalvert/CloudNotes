@@ -600,7 +600,7 @@ The code shown above will parse JSON that looks like this:
         "firstName": "John",
         "lastName": "Adams"
     }, {
-        "firstName": "Thomas",      
+        "firstName": "Thomas",
         "lastName": "Jefferson"
     }
 ]
@@ -646,7 +646,7 @@ var writeJson = function() {
 		success: function(data) {
 			showDebug(data.result);
 		},
-		error: showError      
+		error: showError
 	});
 };
 ```
@@ -858,7 +858,7 @@ Just to help you understand, here is the call in context:
 		success: function(data) {
 			showDebug(data.result);
 		},
-		error: showError      
+		error: showError
 	});
 ```
 
@@ -1577,9 +1577,9 @@ markers or placeholders in your HTML, and then run code that
 replaces the markers with designated bits of HTML or text. For instance
 you might put some HTML that looks like this in your main HTML file:
 
-	<li><a href="{{url}}">{{text}}</a></li>
+	<li><a href="&#123;&#123;url&#125;&#125;">&#123;&#123;text&#125;&#125;</a></li>
 
-In the code shown above, both {{url}} and {{text}} are placeholders.
+In the code shown above, both &#123;&#123;url&#125;&#125; and &#123;&#123;text&#125;&#125; are placeholders.
 You would then write code that would substitute text of HTML for the
 placeholders in the above code. I will give you examples of that code
 later in this document.
@@ -1612,7 +1612,7 @@ The code shown above does the following:
 Suppose this were the original documents:
 
 ```html
-<p>This is a placeholder: {{{placeholder}}}</p>
+<p>This is a placeholder: &#123;&#123;{placeholder&#125;&#125;}</p>
 ```
 
 Suppose this were the fragment:
@@ -1645,17 +1645,17 @@ Here is the HTML
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>jQuery and HandleBars example</title>   
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+        <title>jQuery and HandleBars example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src='http://code.jquery.com/jquery.js'></script>
         <script src="handlebars.js"></script>
-        <script src="index.js"> </script>      
+        <script src="index.js"> </script>
     </head>
     <body>
         <script type="text/x-handlebars-template" id="list-item">
-            <li><a href="{{url}}">{{text}}</a></li>
+            <li><a href="&#123;&#123;url&#125;&#125;">&#123;&#123;text&#125;&#125;</a></li>
         </script>
-        <ul id="myList"> </ul>   
+        <ul id="myList"> </ul>
     </body>
 </html>
 ```
@@ -1670,12 +1670,12 @@ Here is the JavaScript:
 /*global Handlebars: false */
 function addItem(url, text) {
     'use strict';
-    var script = $("#list-item").html(),    
-    template=Handlebars.compile(script);    
+    var script = $("#list-item").html(),
+    template=Handlebars.compile(script);
     var result = template({
         text: text,
         url: url
-    });    
+    });
     $("#myList").append(result);
 }
 $(document).ready(function() {

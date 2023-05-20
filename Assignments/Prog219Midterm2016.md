@@ -269,7 +269,7 @@ We can use it like this:
 ```javascript
 $scope.getEnergyTypes = function () {
         $http.get('data/EnergyTypes.json')
-            .then(function (response) {                
+            .then(function (response) {
                 $scope.msnTypes = msnTypes(response.data);
                 etc... // CODE HERE LEFT AS EXERCISE
               }, function errorCallback(response) {
@@ -327,7 +327,7 @@ block content
                         ul.dropdown-menu(role='menu')
                             li.trigger-collapse(ng-class="{ active: isActive('/renewables')}")
                                 a(ng-href='#/renewables') Renewables
-                            // ADD TWO MORE MENU ITEMS HERE (ByYear, ByIndex)    
+                            // ADD TWO MORE MENU ITEMS HERE (ByYear, ByIndex)
                     li.collapse.dropdown
                         a.dropdown-toggle(data-toggle='dropdown')
                             | Energy
@@ -512,7 +512,7 @@ This is your jade.
     .panel-heading Select MSN Type
     .panel-body
         div(data-ng-repeat="msnType in msnTypes track by msnType.description")
-            a(id="{{msnType.msn}}", href="", ng-click='selectMsnType()') {{msnType.msn}}: {{msnType.description}}
+            a(id="&#123;&#123;msnType.msn&#125;&#125;", href="", ng-click='selectMsnType()') &#123;&#123;msnType.msn&#125;&#125;: &#123;&#123;msnType.description&#125;&#125;
 </pre>
 
 This is your ng-click handler from the anchor:

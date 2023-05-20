@@ -14,7 +14,7 @@ category : assignments-guide
 
 This assignment covers two topics:
 
-- Angular modules, controllers and factories. 
+- Angular modules, controllers and factories.
 - HTML5 Canvas (Draw 2D objects)
 
 We have covered the Angular bits in class. The only difference, is that this time we will put one **factory** in its own file. Hopefully this will help you to see how you can use **modules**, **factories** and controllers to divide your code up into discreet, loosely coupled, objects.
@@ -53,7 +53,7 @@ Project Folder:
 ## Step Two:
 
 We will create a factory that contains an object that knows how to draw rectangles and lines on the HTML5 Canvas element.  To achieve this goal, put the following code in a file called **draw-machine.js**:
- 
+
 ```JavaScript
 
 (function() {
@@ -123,7 +123,7 @@ Don't forget to load the file containing the **drawMachine** factory by adding a
 
 ## Step Four
 
-Back in **index.js**,  you can use the **drawMachine** as you would any other factory. The fact that it is in another file is not important, so long as you load **draw-machine.js** with a script tag in **index.html**. 
+Back in **index.js**,  you can use the **drawMachine** as you would any other factory. The fact that it is in another file is not important, so long as you load **draw-machine.js** with a script tag in **index.html**.
 
 Here is how the **line** factory can use the **drawMachine**:
 
@@ -139,7 +139,7 @@ Here is how the **line** factory can use the **drawMachine**:
                 // Code for drawing lines left as exercise for the reader...
             }
     }
-``` 
+```
 
 In addition to the **line** factory, **index.js** should also include a **rectangle** factory and your controller.
 
@@ -155,7 +155,7 @@ drawMachine.init(context);
 
 It should be clear that the above code will not work unless you pass the **drawMachine** into the controller. We pass it in the same way we passed it to the line factory.
 
-**NOTE**: *Please note that here and in other places, I know clearer, more precise ways to describe what I want you to do. I'm being a little elliptical because I want you to have to think just a bit about how the application is put together. If I just say: do a, do b, do c, then you can do a, b and c without ever understanding what you are doing. I'm trying to help you not just do something by wrote, but to understand what you are doing. Also, it is more fun if there are at least a few puzzles for you to solve. And finally, we want to develop problem solving skills, and we can't do that unless we have some problems to solve.* 
+**NOTE**: *Please note that here and in other places, I know clearer, more precise ways to describe what I want you to do. I'm being a little elliptical because I want you to have to think just a bit about how the application is put together. If I just say: do a, do b, do c, then you can do a, b and c without ever understanding what you are doing. I'm trying to help you not just do something by wrote, but to understand what you are doing. Also, it is more fun if there are at least a few puzzles for you to solve. And finally, we want to develop problem solving skills, and we can't do that unless we have some problems to solve.*
 
 ## Step Six
 
@@ -189,8 +189,8 @@ You will have to experiment a bit to see how to use the data in **shapeSize** to
 
 The text above the button is present before the button is clicked. Of course, the words **line** and **rectangle** that appear in the view are not hard-coded into the HTML. Instead, they are rendered by Angular expressions as they were in previous assignments:
 
-    {{shapeController.line}} 
+    &#123;&#123;shapeController.line&#125;&#125;
 
-## Turn it in 
+## Turn it in
 
 Put your code in your repository in a directory with the name specified in **Step One**. Submit the assignment and provide the usual information, using your common sense and past experience to determine exactly what information you think I need. If you get stuck, remember it you can ask questions in the discussion area. Also, it is much better to turn in something not completely perfect rather than nothing.

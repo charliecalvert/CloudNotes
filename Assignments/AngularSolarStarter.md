@@ -78,9 +78,9 @@ fit('should have a getRenewable method ', function() {
 
 it('should be possible to access the fixture', function() {
     var spanElement = document.getElementById('renewable');
-    expect(spanElement).toBeDefined();        
+    expect(spanElement).toBeDefined();
 });
-```    
+```
 
 The first two tests may not pass yet, but they should by the time we done.
 
@@ -208,9 +208,9 @@ elfApp.directive('elfRenewable', function() {
     'use strict';
     return {
         controller: 'MainController',
-        template: 'First: {{renewable[index].Year}} ' +
-        '<br>Solar: {{renewable[index]["Solar (quadrillion Btu)"]}}' +
-        '<br>Geothermal: {{renewable[index]["Geothermal (quadrillion Btu)"]}}' +
+        template: 'First: &#123;&#123;renewable[index].Year&#125;&#125; ' +
+        '<br>Solar: &#123;&#123;renewable[index]["Solar (quadrillion Btu)"]&#125;&#125;' +
+        '<br>Geothermal: &#123;&#123;renewable[index]["Geothermal (quadrillion Btu)"]&#125;&#125;' +
         // CODE OMITTED HERE...
     };
 });

@@ -528,7 +528,7 @@ In what follows I'm trying to track down things that block students when we want
 
 One ES6 feature that gets used a lot that is not easy to understand is the spread operator. I find it is used everywhere, and so folks really need to know it.
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)  
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
 Another even more esoteric feature which is used less often is destructuring. It is probably less important but can be a great way to work with big JSON objects.
 
@@ -710,7 +710,7 @@ a variable with the same identifier (param1) inside the body of
 
     function foo(param1) {
         var param1 = 2;
-    }        
+    }
 
 ## Operators
 
@@ -727,7 +727,7 @@ The grouping operators, shown as parenthesis have the highest precedence. Since 
 
     1 + (2 * 3)
 
-In the second statement above we use the grouping operator to override the default precedence for addition and multiplication operators.  
+In the second statement above we use the grouping operator to override the default precedence for addition and multiplication operators.
 
 Here is the overview:
 
@@ -1181,7 +1181,7 @@ var funcBranch2 = function(stateAbbreviation) {
 			}()
 		}
 
-		console.log('The population of ' + stateAbbreviation + ' = ' + stateMap2[stateAbbreviation]);		
+		console.log('The population of ' + stateAbbreviation + ' = ' + stateMap2[stateAbbreviation]);
 	};
 ```
 
@@ -1577,7 +1577,7 @@ code to handle the behavior in FireFox:
 
 	// Fix for FireFox which does not define offsetX
 	if (typeof event.offsetX === 'undefined') {
-		var elementOffset = $(this).offset();   		
+		var elementOffset = $(this).offset();
    		mouseDownRawX = event.pageX - elementOffset.left;
    		mouseDownRawY = event.pageY - elementOffset.top;
 	} else {
@@ -1740,7 +1740,7 @@ semicolon:
 
 ```javascript
 var changeList = function() {
-    ("#MyList").append("<li>List Item</li>");    
+    ("#MyList").append("<li>List Item</li>");
 };
 ```
 
@@ -1749,7 +1749,7 @@ assignment, and hence no statement, and hence no need for a semicolon:
 
 ```javascript
 function changeList() {
-    ("#MyList").append("<li>List Item</li>");    
+    ("#MyList").append("<li>List Item</li>");
 }
 ```
 You should, of course, always end a statement with a semicolon:
@@ -1786,7 +1786,7 @@ We set the **first**, **second,** and **third** <span style="font-size: 1.125r
 The same thing happens in Emily's example:
 
 ```javascript
-function printInfo({name, info:{author}}) {
+function printInfo({name, info:{author&#125;&#125;) {
     console.log('The product name is: ' + name);
     console.log('The author is: ' + author);
 }
@@ -1807,9 +1807,9 @@ printInfo(bookProduct);
 The printInfo method shown above is more concise and requires less typing than the old way:
 
 ```JavaScript
-function printInfo(bookProduct){  
-    console.log('The product name is: ' + bookProduct.name);  
-    console.log('The author is: ' + bookProduct.info.author);  
+function printInfo(bookProduct){
+    console.log('The product name is: ' + bookProduct.name);
+    console.log('The author is: ' + bookProduct.info.author);
 }
 ```
 

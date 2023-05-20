@@ -61,7 +61,7 @@ The changes you make to an image cause the images identifier to change. The iden
 
     a9272b30f0b1
 
-This number appears in your command prompt.    
+This number appears in your command prompt.
 
 When inside Ubuntu, note the image you are using:
 
@@ -79,13 +79,13 @@ And then later, if you make more changes:
 
 Get the IP address:
 
-  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 9a8cd9005efe
+  docker inspect -f '&#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;' 9a8cd9005efe
 
 We are going to be running apache from our container, so we don't want it running on the VirtualBox copy of our Ubuntu server. Therefore, if apache2 is running on your VirtualBox copy of the Ubuntu Server, then do this:
 
     sudo service apache2 stop
 
-Now start your container and ask the VirtualBox copy of your Ubuntu server to host the container's instance of apache on port 80:  
+Now start your container and ask the VirtualBox copy of your Ubuntu server to host the container's instance of apache on port 80:
 
     docker run -it -p 80:80 charliecalvert/makehtml02
 

@@ -391,14 +391,14 @@ Suppose you create a div and make it your controller:
 
 ```
 div(ngController="MyController")
-p {{firstName}}
+p &#123;&#123;firstName&#125;&#125;
 ```
 
-The above code probably won't work because the paragraph is not part of the controller and hence **{{firstName}}** is out of scope. To fix it, do this:
+The above code probably won't work because the paragraph is not part of the controller and hence **&#123;&#123;firstName&#125;&#125;** is out of scope. To fix it, do this:
 
 ```
 div(ngController="MyController")
-   p {{firstName}}
+   p &#123;&#123;firstName&#125;&#125;
 ```
 
 Now the paragraph is part of the controller.

@@ -228,7 +228,7 @@ router.get('/getSettings', function(request, response) {
             response.send({result: 'error'});
         } else {
             if(doc === null) {
-                response.send({settings: {dataType: 'Database', dataSource: 'Local MongoDb', comment: 'Default Comment'}})
+                response.send({settings: {dataType: 'Database', dataSource: 'Local MongoDb', comment: 'Default Comment'&#125;&#125;)
             } else {
                 response.send({settings: doc});
             }
@@ -272,7 +272,7 @@ Update **home.jade**
     h1 Home
 
     #qux
-        p MainData: {{mainData}}
+        p MainData: &#123;&#123;mainData&#125;&#125;
 
     .panel.panel-default
         .panel-heading Settings
@@ -293,9 +293,9 @@ Update **home.jade**
     .panel.panel-default
         .panel-heading Results
         .panel-body
-            pre Mirror: {{resultMirror}}
+            pre Mirror: &#123;&#123;resultMirror&#125;&#125;
             hr
-            pre Full: {{resultFull}}
+            pre Full: &#123;&#123;resultFull&#125;&#125;
 
 </pre>
 
