@@ -14,7 +14,15 @@ category : assignments-guide
 
 A list of many of the assignments I have created over the years. This is not a complete list.
 
-## The Assignments
+## The Guides
+
+<ul>
+{% for product in site.assignments-guide %}
+<li><a href="{{ product.url }}">
+  {{ product.title }}
+{% endfor %}
+
+## Broken Don't Use
 
 * [AllAssignments.html](/teach/assignments/AllAssignments.html)
 * [AllFiles.html](/teach/assignments/AllFiles.html)

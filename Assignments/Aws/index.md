@@ -12,10 +12,19 @@ category : aws-guide
 
 ## Overview
 
-{% for product in site.aws-guide %}
-  <a href="{{ product.url }}">
-  {{ product.title }}
-{% endfor %}
+<div>
+  {%- if site.aws-guide.size > 0 -%}
+    <ul>
+      {%- for file in site.aws-guide -%}
+      <li>
+        <a href="{{ file.url }}">
+          {{ file.title }}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
 
 AWS assigments
 

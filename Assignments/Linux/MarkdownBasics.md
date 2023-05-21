@@ -4,11 +4,11 @@ Markdown
 Markdown allows you to write a simple syntax defining a file. The markdown file
 can be read on its own, or converted to:
 
--   HTML
--   WikiMedia
--   PDF
--   Word
--   etc
+- HTML
+- WikiMedia
+- PDF
+- Word
+- etc
 
 The point is to have one source file that can be used in multiple places.
 Perhaps more importantly, it ensures that we don't get locked into any one
@@ -21,12 +21,12 @@ You can install it from here:
 
 The drawback is that it has only a limited number of things it can handle:
 
--   Headings
--   Plain text (Paragraphs)
--   Lists
--   Figures (images)
--   Tables
--   A few other simple items.
+- Headings
+- Plain text (Paragraphs)
+- Lists
+- Figures (images)
+- Tables
+- A few other simple items.
 
 Read the documentation here:
 
@@ -53,10 +53,10 @@ will convert *foo.md* to*foo.html*.
 
 It means:
 
--   Run Pandoc: "C:Files (x86).exe"
+- Run Pandoc: "C:Files (x86).exe"
 
--   Create an standalone HTML5 file: -s -t html5
+- Create an standalone HTML5 file: -s -t html5
 
--   Put the output here: \$(CURRENT_DIRECTORY)\$(NAME_PART).html
+- Put the output here: \$(CURRENT_DIRECTORY)\$(NAME_PART).html
 
--   Convert contents of file in the NPP editor: "\$(FULL_CURRENT_PATH)"
+- Convert contents of file in the NPP editor: "\$(FULL_CURRENT_PATH)"

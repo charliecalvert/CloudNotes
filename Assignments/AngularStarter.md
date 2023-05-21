@@ -51,11 +51,16 @@ Nomenclature:
 - **ng-app**: It is both an HTML **attribute** and an Angular **directive**
 - &#123;&#123;5 \* 7&#125;&#125;: Those double curly braces are called Angular **expressions**.
 
-We often write **data-ng-app** in order to conform with the rules of HTML5. Both **ng-app** and **data-ng-app** have the same meaning and work in most browsers. A syntax checker will choke on **ng-app**, but will approve **data-ng-app**
+We often write **data-ng-app** in order to conform with the rules of HTML5. Both
+**ng-app** and **data-ng-app** have the same meaning and work in most browsers.
+A syntax checker will choke on **ng-app**, but will approve **data-ng-app**
 
 ## Step Two
 
-We now want to view our work in a browser. I would prefer that you launch this file, and all files we create, from a web server rather than from the file system. For details on the difference, see [this section on Elvenware][serve-file].
+We now want to view our work in a browser. I would prefer that you launch this
+file, and all files we create, from a web server rather than from the file
+system. For details on the difference, see [this section on
+Elvenware][serve-file].
 
 On Cloud Nine open your file in the editor and press the green Run button. A window will open with contents similar to the following:
 
@@ -64,7 +69,10 @@ On Cloud Nine open your file in the editor and press the green Run button. A win
 
 Left click on the URL and choose and **open** or **open in preview**.
 
-If you are running on Pristine Lubuntu, Windows or some other OS, then take a slightly different approach. In the same directory as you HTML file, create a batch file called **StartPythonWebServer.bat** or a shell script called **StartPythonWebServer**. Place the following in your inside it:
+If you are running on Pristine Lubuntu, Windows or some other OS, then take a
+slightly different approach. In the same directory as you HTML file, create a
+batch file called **StartPythonWebServer.bat** or a shell script called
+**StartPythonWebServer**. Place the following in your inside it:
 
 ```bash
 python3 -m http.server 30025
@@ -131,7 +139,10 @@ If necessary, inside the folder put your **StartPythonWebServer** file. Also add
 
 ## Step Five
 
-Type **bower init** to create a **bower.json** file. Fill in the fields according to your common sense. You can accept the defaults for all questions, or fill in a few with useful values. There is no need to create a **.bowerrc** file.
+Type **bower init** to create a **bower.json** file. Fill in the fields
+according to your common sense. You can accept the defaults for all questions,
+or fill in a few with useful values. There is no need to create a **.bowerrc**
+file.
 
 Add **angular** to your bower file:
 
@@ -280,7 +291,8 @@ If registering a module ensure that you specify the dependencies as the second a
 ```
 
 - Did you load **index.js** with a script tag?
-- Did you define a module called **main** in JavaScript. The code to define an angular module named **main** would look like this:
+- Did you define a module called **main** in JavaScript. The code to define an
+  angular module named **main** would look like this:
 
 ```javascript
 var app = angular.module('main', []);

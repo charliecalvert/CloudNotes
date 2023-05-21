@@ -31,9 +31,20 @@ There is no penalty for providing a wrong answer to a question so long as you ar
 
 ## Get it Done
 
-The big difference between an advanced programmer and one who is still learning is that advanced programmers get things done. It doesn't matter how we get things done, only that we get things done. If we have to ask a lot of questions along the way, then that is one thing. Failing to achieve our goal is another. In professional environments in big companies, I've seen successful developers who are just brilliant at getting answers to their questions. As a result, they get things done. Nobody remembers the questions, all they know is that someone gets things done!
+The big difference between an advanced programmer and one who is still learning
+is that advanced programmers get things done. It doesn't matter how we get
+things done, only that we get things done. If we have to ask a lot of questions
+along the way, then that is one thing. Failing to achieve our goal is another.
+In professional environments in big companies, I've seen successful developers
+who are just brilliant at getting answers to their questions. As a result, they
+get things done. Nobody remembers the questions, all they know is that someone
+gets things done!
 
-A manager will work hard to find a good niche for someone who gets things done. They aren't always looking for genius or for years of experience, they want competence. Hard workers with a controlled ego who get things done. If someone with a soaring IQ comes along, then that is nice, but that is not the only way to be a valued employee.
+A manager will work hard to find a good niche for someone who gets things done.
+They aren't always looking for genius or for years of experience, they want
+competence. Hard workers with a controlled ego who get things done. If someone
+with a soaring IQ comes along, then that is nice, but that is not the only way
+to be a valued employee.
 
 ## Don't Quote Code {#no-code}
 
@@ -49,9 +60,14 @@ A close second might be: *What is the answer to question three?*
 
 Try to ask questions that can benefit yourself and others; don't become a platform for disseminating the answer to a question.
 
-This means that you often have to describe code rather than quote it. For instance, a student might ask: "I'm stuck on question 3, I keep getting 15 as the answer, and I know that's not right." Then someone might answer: "Have you tried using the **square** function?" That gives a hint, but does not directly give the answer.
+This means that you often have to describe code rather than quote it. For
+instance, a student might ask: "I'm stuck on question 3, I keep getting 15 as
+the answer, and I know that's not right." Then someone might answer: "Have you
+tried using the **square** function?" That gives a hint, but does not directly
+give the answer.
 
-In general, use your best judgment. Ask yourself if you are providing a hint or advice, or if you are actually giving away the answer.
+In general, use your best judgment. Ask yourself if you are providing a hint or
+advice, or if you are actually giving away the answer.
 
 ## State the Assignment Name
 
@@ -61,7 +77,13 @@ It is helpful if you link to, or at least say the full-name of, the assignment y
 
 Sometimes I get the sense that students are having a hard time coming up with questions about our work. Here are some ideas that you can use rather than saying things like "thanks" or "me too", or "here is useful link: [http://www.google.com](http://www.google.com)".
 
-Did you get an error at any point during the week? Did you understand it? If not, you could ask about that. Did you understand absolutely everything we covered in our class or that you were asked to do in an assignment? If not, ask questions about issues that were not clear to you. If you did understand everything we covered, can you answer another student's question? If that doesn't work, can you think of anything related to the material we covered that piqued your curiosity? If so, ask about it.
+Did you get an error at any point during the week? Did you understand it? If
+not, you could ask about that. Did you understand absolutely everything we
+covered in our class or that you were asked to do in an assignment? If not, ask
+questions about issues that were not clear to you. If you did understand
+everything we covered, can you answer another student's question? If that
+doesn't work, can you think of anything related to the material we covered that
+piqued your curiosity? If so, ask about it.
 
 When a student has everything running perfectly, and there are no problems with their code, I can understand why they have trouble coming up with a question. But if your programming is not working, then usually you receive some kind of error. If nothing else, you can ask about the error you are getting. What causes this error? How can I fix it?
 
@@ -112,7 +134,7 @@ console.write(Matha.PI * 2);
 
 That is not a valid line of code. It won't work. The rules say you can't show us the actual line of code that failed. What to do? You could descrive it. But sometimes that seems hard. It also won't work if you tell us something very general, such as: "I feel like I am not putting in the correct lines of code". With only that to go on, we would have to have supernatural powers to guess what mistake you made. If, on the other hand, you simply showed us this error, then we might be able to help:
 
-<pre>TypeError: console.write is not a function  
+<pre>TypeError: console.write is not a function
     at Object.<anonymous> (/home/charlie/temp/foo.js:131:9)</pre>
 
 Without actually giving you the answer, we could say: **console.write** does not exist. However, here is a list of methods that do exist on the **console** object. Try picking the most familiar and see if it works:
@@ -176,13 +198,13 @@ While it is not always necessary, or even helpful, to be actively modest, it is 
 
 It would be appropriate to ask about:
 
- - An assignment due this week. For instance, the Patterns Assignment
- - JavaScript syntax covered in class such as Object Literals or the Modular Pattern. It's okay to ask about any syntax that we have covered in class. Syntax questions don't have to have been covered this week. You can ask about something we talked about two weeks ago, or three weeks ago, or whenever.
- - A library we are using such as Jasmine, requirejs, Jade or Express etc.
- - A technical tool we use regularly such as Node, npm, Karma, JsHint, or Grunt.
- - Git, BitBucket and SSH.
- - Linux and the Linux command line
- - VirtualBox, Eclipse, Geany or any other tool we use regularly.
+- An assignment due this week. For instance, the Patterns Assignment
+- JavaScript syntax covered in class such as Object Literals or the Modular Pattern. It's okay to ask about any syntax that we have covered in class. Syntax questions don't have to have been covered this week. You can ask about something we talked about two weeks ago, or three weeks ago, or whenever.
+- A library we are using such as Jasmine, requirejs, Jade or Express etc.
+- A technical tool we use regularly such as Node, npm, Karma, JsHint, or Grunt.
+- Git, BitBucket and SSH.
+- Linux and the Linux command line
+- VirtualBox, Eclipse, Geany or any other tool we use regularly.
 
 These are also reasonable questions:
 
@@ -273,7 +295,7 @@ You struggled and struggled trying to find out what was wrong, but couldn't solv
         at node.js:902:3
 ```
 
-_Here is the command I give to create the error:_
+*Here is the command I give to create the error:*
 
     node Chub.js
 
@@ -281,7 +303,7 @@ _I'm running on Linux and using **node** version **0.10.26**._
 
 The above is fine because you do not quote significant portions of your program. There is one line from your program seen in the error message, but it is not an important line. It is just a plain old function header.
 
-Nevertheless, when asking questions, you must be careful not to give the answer to question. In general, this means don't publish source code. For instance, suppose you are asked to add two variables. For instance, suppose this was the assignment:  _Given the following declarations, how would you calculate the sum of a and b*_:
+Nevertheless, when asking questions, you must be careful not to give the answer to question. In general, this means don't publish source code. For instance, suppose you are asked to add two variables. For instance, suppose this was the assignment:  *Given the following declarations, how would you calculate the sum of a and b**:
 
     var a = 3;
     var b = 12;
@@ -321,7 +343,7 @@ When you ran the program, you got this error:
 
 To quote the line **var result = a + d;** is to give away your attempted solution to the problem. In a case like this, just show the error message. For instance:
 
-_I'm trying to use a variable in my program, but I keep getting the following error. What does it mean_:
+*I'm trying to use a variable in my program, but I keep getting the following error. What does it mean*:
 
 ```
     ReferenceError: d is not defined
@@ -334,7 +356,7 @@ _I'm trying to use a variable in my program, but I keep getting the following er
         at Function.Module.runMain (module.js:497:10)
         at startup (node.js:119:16)
         at node.js:902:3
-```        
+```
 
 ## General Tips
 
@@ -343,7 +365,7 @@ Use the classic [advice from StackOverflow][2] on how to ask good questions.
 - Search carefully to see if the question has already been asked. Once you are done searching, search again.
 - Be on topic. Don't ask a C#, SQL or political question in our discussion area.
 - Be specific
-    - [Don't ask overly general questions][3] that are just matters of opinion.
+  - [Don't ask overly general questions][3] that are just matters of opinion.
 - Make it relevant to others
 - Keep an open mind
 
@@ -372,7 +394,6 @@ Typical answers might be:
 Don't point to third party resources that provide full anwers. For instance, if I asked you to calculate a factorial, you should not provide a list of places on the Internet where others have solved that problem using JavaScript. You can, however, mention that using Google might be a good idea in a case like this.
 
 Try to provide answers or use syntax that we use in class. For instance, we are using **express** a lot in this class. It would not be appropriate to answer: *I suggest dumping Express and using the great **RetroQuirks** library instead.* And don't say something like this: You are using the **modular** pattern, but I think it would be better if you just created one method called **main** and put all your code in there. Try to follow the coding conventions we use in class.
-
 
   [1]: https://www.google.com/search?q=JavaScript%20callbacks%20site:elvenware.com
   [2]: http://stackoverflow.com/questions/how-to-ask
