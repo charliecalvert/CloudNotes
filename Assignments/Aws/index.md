@@ -77,4 +77,4 @@ Of that colossal wreck, boundless and bare
 The lone and level sands stretch far away.`
 </pre>
 
-*Percy Bysshe Shelley*
+- *Percy Bysshe Shelley*

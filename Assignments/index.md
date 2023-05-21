@@ -24,6 +24,8 @@ A list of many of the assignments I have created over the years. This is not a c
 
 ## Broken Don't Use
 
+Do not use these. They are broken.
+
 * [AllAssignments.html](/teach/assignments/AllAssignments.html)
 * [AllFiles.html](/teach/assignments/AllFiles.html)
 * [Amazon.html](/teach/assignments/Amazon.html)
