@@ -7,7 +7,11 @@
     "scripts": {
         "start": "DEBUG=check-md nodemon CheckMarkdown.js",
         "test": "NODE_OPTIONS=--experimental-vm-modules DEBUG=check-get-elf jest",
-        "basic": "node lib/walk-markdown-files.mjs"
+        "basic": "node lib/walk-markdown-files.mjs",
+        "lint": "eslint . --ext .js,.mjs",
+        "lint-fix": "eslint . --ext .js,.mjs --fix",
+        "msl": "DEBUG=tools:modify-symlink-source nodemon Tools/get-sym-links/modify-symlink-source.mjs",
+        "msd": "DEBUG=tools:modify-symlink-source:result nodemon Tools/get-sym-links/modify-symlink-source.mjs"
     },
     "repository": {
         "type": "git",
@@ -42,6 +46,7 @@
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-n": "^16.0.0",
         "eslint-plugin-promise": "^6.1.1",
-        "jest": "^29.5.0"
+        "jest": "^29.5.0",
+        "nodemon": "^2.0.22"
     }
 }
