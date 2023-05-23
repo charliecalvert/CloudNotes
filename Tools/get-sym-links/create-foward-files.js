@@ -12,7 +12,6 @@ let newData = `---FRONT-MATTER
 ## Overview
 
 FILENAME has moved to a [new location](NEW-LOCATION).
-
 `;
 
 function mapSymlinkPairs(writeData = false) {
@@ -55,4 +54,4 @@ function mapSymlinkPairs(writeData = false) {
     debug('symLinkFile item:', result.length);
 };
 
-mapSymlinkPairs(false);
+mapSymlinkPairs(true);
