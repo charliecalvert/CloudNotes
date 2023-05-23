@@ -14,8 +14,8 @@
         "msd": "DEBUG=tools:modify-symlink-source:result nodemon Tools/get-sym-links/modify-symlink-source.mjs",
         "msf": "DEBUG=tools:modify-symlink-source:find nodemon Tools/get-sym-links/modify-symlink-source.mjs",
         "msld": "DEBUG=DEBUG=tools:modify-symlink-source,tools:modify-symlink-source:result nodemon Tools/get-sym-links/modify-symlink-source.mjs",
-        "cff": "DEBUG=tools:create-forward-files nodemon Tools/get-sym-links/create-foward-files.js",
-        "cffd": "DEBUG=tools:create-forward-files:content nodemon Tools/get-sym-links/create-foward-files.js"
+        "cff": "DEBUG=tools:create-forward-files node Tools/get-sym-links/create-foward-files.js",
+        "cffd": "DEBUG=tools:create-forward-files:content node Tools/get-sym-links/create-foward-files.js"
         },
     "repository": {
         "type": "git",
