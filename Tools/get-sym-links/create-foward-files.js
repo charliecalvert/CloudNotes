@@ -6,8 +6,7 @@ import symlinkPairs from './symlink-pairs.mjs';
 const debug = createDebugMessages('tools:create-forward-files');
 const debugContent = createDebugMessages('tools:create-forward-files:content');
 
-let newData = `
----FRONT-MATTER
+let newData = `---FRONT-MATTER
 ---
 
 ## Overview
@@ -54,4 +53,4 @@ function mapSymlinkPairs(writeData = false) {
     debug('symLinkFile item:', result.length);
 };
 
-mapSymlinkPairs(false);
+mapSymlinkPairs(true);
