@@ -1,4 +1,4 @@
-export default [
+[
     {
         "fileName": "FirebaseStarter.md",
         "fullPath": "/home/ubuntu/Git/CloudNotes/Assignments/Firebase/FirebaseStarter.md",
