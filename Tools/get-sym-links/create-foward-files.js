@@ -11,7 +11,7 @@ let newData = `---FRONT-MATTER
 
 ## Overview
 
-This file has moved to a [new location](NEW-LOCATION).
+FILENAME has moved to a [new location](NEW-LOCATION).
 
 `;
 
@@ -21,6 +21,7 @@ function mapSymlinkPairs(writeData = false) {
 
     // symLinks.forEach((link) => console.log(link));
     const result = symLinks.map((linkData, index) => {
+        let tempNewData = newData;
         const { fileName, fullPath, linkString, linkPath } = linkData;
         debug('fileName', fileName);
         debug('fullPath', fullPath);
@@ -29,7 +30,7 @@ function mapSymlinkPairs(writeData = false) {
         // Create a file with frontMatter and a link
         // to the new location
         // read the originalFile and get its frontMatter
-        // in newData insert the frontMatter and the link
+        // in tempNewData insert the frontMatter and the link
         // by replacing FRONT-MATTER with the frontMatter
         // by replacing NEW-LOCATION with the fullPath
         const content = fs.readFileSync(linkPath, 'utf8');
@@ -37,20 +38,21 @@ function mapSymlinkPairs(writeData = false) {
         debugContent('CONTENT A', frontMatter);
         // debugContent('CONTENT D', matter(content).data);
         // const pathSplit = fullPath.split('/');
-        newData = newData.replace(/NEW-LOCATION/, fullPath);
-        newData = newData.replace(/FRONT-MATTER/, frontMatter);
-        debug(`NEW DATA ${index}`, newData);
+        tempNewData = tempNewData.replace(/FILENAME/, fileName);
+        tempNewData = tempNewData.replace(/NEW-LOCATION/, fullPath);
+        tempNewData = tempNewData.replace(/FRONT-MATTER/, frontMatter);
+        debug(`NEW DATA ${index}`, tempNewData);
         if (writeData === true) {
             fs.writeFileSync(
                 `${linkPath}`,
-                newData
+                tempNewData
             );
             debug(`Wrote ${linkPath}`);
         }
 
-        return { fn: fileName, nd: newData };
+        return { fn: fileName, nd: tempNewData };
     });
     debug('symLinkFile item:', result.length);
 };
 
-mapSymlinkPairs(true);
+mapSymlinkPairs(false);
