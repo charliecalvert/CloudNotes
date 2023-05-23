@@ -36,9 +36,11 @@ function mapSymlinkPairs(writeData = false) {
         const frontMatter = matter(content).matter
         debugContent('CONTENT A', frontMatter);
         // debugContent('CONTENT D', matter(content).data);
-        // const pathSplit = fullPath.split('/');
+        // remove all path before /Assignments/ and replace with empty string
+        const relativePath = fullPath.replace(/.*\/Assignments\//, '');
+        // const pathSplit = fullPath.substring('/Assignments/');
         tempNewData = tempNewData.replace(/FILENAME/, fileName);
-        tempNewData = tempNewData.replace(/NEW-LOCATION/, fullPath);
+        tempNewData = tempNewData.replace(/NEW-LOCATION/, relativePath);
         tempNewData = tempNewData.replace(/FRONT-MATTER/, frontMatter);
         debug(`NEW DATA ${index}`, tempNewData);
         if (writeData === true) {
