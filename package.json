@@ -34,10 +34,10 @@
         "ssh2": "^1.13.0",
         "supports-color": "^9.3.1",
         "url": "^0.11.0",
-        "walk-directories": "^4.1.6"
+        "walk-directories": "^4.2.0"
     },
     "devDependencies": {
-        "@types/node": "^20.2.1",
+        "@types/node": "^20.2.3",
         "eslint": "^8.41.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-n": "^16.0.0",
