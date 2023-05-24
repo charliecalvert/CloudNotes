@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import * as fs from 'node:fs';
+import { elfStrings } from 'elven-code';
 import createDebugMessages from 'debug';
 import matter from 'gray-matter';
 import symlinkPairs from './symlink-pairs.mjs';
@@ -37,10 +38,19 @@ function mapSymlinkPairs(writeData = false) {
         debugContent('CONTENT A', frontMatter);
         // debugContent('CONTENT D', matter(content).data);
         // remove all path before /Assignments/ and replace with empty string
-        const relativePath = fullPath.replace(/.*\/Assignments\//, '');
+        const relativePath = fullPath.replace(/.*\/Assignments\//, '').replace(/\.md$/, '.html');
+        // replace text before "/"" character with "/guide-text/"
+        // const relativePathSplit = relativePath.replace(/(.*\/)/, '/guide-$1'.toLowerCase());
+        const relativePathSplit = relativePath.replace(/(.*)\//, function(z) {
+            // strip off the last / and replace with -guide/
+            const lastSlash = z.lastIndexOf('/');
+            const zSplit = z.substring(0, lastSlash);
+            return `/${zSplit.toLowerCase()}-guide\/`
+        });
+        const fileNameHtml = fileName.replace(/\.md$/, '.html');
         // const pathSplit = fullPath.substring('/Assignments/');
-        tempNewData = tempNewData.replace(/FILENAME/, fileName);
-        tempNewData = tempNewData.replace(/NEW-LOCATION/, relativePath);
+        tempNewData = tempNewData.replace(/FILENAME/, fileNameHtml);
+        tempNewData = tempNewData.replace(/NEW-LOCATION/, relativePathSplit);
         tempNewData = tempNewData.replace(/FRONT-MATTER/, frontMatter);
         debug(`NEW DATA ${index}`, tempNewData);
         if (writeData === true) {

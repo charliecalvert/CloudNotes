@@ -12,4 +12,4 @@ category : assignments-guide
 
 ## Overview
 
-This file has moved to a [new location](Aws/LampMarkdown.md):
+LampMarkdown.html has moved to a [new location](/aws-guide/LampMarkdown.html).

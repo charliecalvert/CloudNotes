@@ -10,6 +10,6 @@ directoryName: Assignments
 category : assignments-guide
 ---
 
-Create Branch
+## Overview
 
-Edit Project
+GitBranchProject.html has moved to a [new location](/git-guide/GitBranchProject.html).
