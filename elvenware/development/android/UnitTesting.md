@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Unit Testing
 ------------
@@ -136,13 +136,13 @@ public class BasicTests extends ActivityInstrumentationTestCase2
     }
 
     @Override
-    protected void setUp() throws Exception 
+    protected void setUp() throws Exception
     {
         super.setUp();
         mActivity = this.getActivity();
     }
 
-    public void testText() 
+    public void testText()
     {
         assertEquals("Eduction and learning",
             (String)mActivity.getText(com.elvenware.walking.R.string.hello));

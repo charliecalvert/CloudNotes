@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Reading Text Files
 ------------------
@@ -86,7 +86,7 @@ public class ReadTextFileActivity extends Activity {
         setContentView(R.layout.main);
 
         TextView textView = (TextView)findViewById(R.id.textview_data);
-        
+
         String data = readTextFile(this, R.raw.books);
         textView.setText(data);
     }
@@ -99,15 +99,15 @@ public class ReadTextFileActivity extends Activity {
         BufferedReader bufferedreader = new BufferedReader(inputreader);
         String line;
         StringBuilder stringBuilder = new StringBuilder();
-        try 
+        try
         {
-            while (( line = bufferedreader.readLine()) != null) 
+            while (( line = bufferedreader.readLine()) != null)
             {
                 stringBuilder.append(line);
                 stringBuilder.append('\n');
             }
-        } 
-        catch (IOException e) 
+        }
+        catch (IOException e)
         {
             return null;
         }
@@ -148,16 +148,16 @@ public static List<String> readTextFileAsList(Context ctx, int resId)
     InputStreamReader inputreader = new InputStreamReader(inputStream);
     BufferedReader bufferedreader = new BufferedReader(inputreader);
     String line;
-    List<String> list = new ArrayList<String>(); 
-        
-    try 
+    List<String> list = new ArrayList<String>();
+
+    try
     {
-        while (( line = bufferedreader.readLine()) != null) 
+        while (( line = bufferedreader.readLine()) != null)
         {
-            list.add(line);                
+            list.add(line);
         }
-    } 
-    catch (IOException e) 
+    }
+    catch (IOException e)
     {
         return null;
     }

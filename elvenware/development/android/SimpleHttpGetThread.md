@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 HttpGet and HttpPost
 ====================
@@ -121,18 +121,18 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.os.AsyncTask;
 import android.widget.TextView;
-//  
+//
 public class HttpGetDemo extends AsyncTask<TextView, Void, String> {
     TextView t;
     String result = "fail";
-    
+
     @Override
     protected String doInBackground(TextView... params) {
         // TODO Auto-generated method stub
         this.t = params[0];
         return GetSomething();
     }
-    
+
     final String GetSomething()
     {
         String url = "http://www.elvenware.com/cgi-bin/LatLongReadData.py";
@@ -153,7 +153,7 @@ public class HttpGetDemo extends AsyncTask<TextView, Void, String> {
             }
             inStream.close();
 
-            result = buffer.toString();         
+            result = buffer.toString();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -168,21 +168,21 @@ public class HttpGetDemo extends AsyncTask<TextView, Void, String> {
         }
         return result;
     }
-    
+
     protected void onPostExecute(String page)
-    {       
-          t.setText(page);      
-    }   
+    {
+          t.setText(page);
+    }
 }
 ~~~~
 
 You would call it like this:
 
 ~~~~ {.code}
-public void onGetClick(View v) 
+public void onGetClick(View v)
 {
     TextView textView = (TextView)findViewById(R.id.viewText1);
-    new HttpGetDemo().execute(textView);        
+    new HttpGetDemo().execute(textView);
 }
 ~~~~
 
@@ -211,12 +211,12 @@ import org.apache.http.message.BasicNameValuePair;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
-public class HttpPostDemo extends AsyncTask<TextView, Void, String> 
+public class HttpPostDemo extends AsyncTask<TextView, Void, String>
 {
     TextView textView;
-    
+
     @Override
-    protected String doInBackground(TextView... params)     
+    protected String doInBackground(TextView... params)
     {
         this.textView = params[0];
         BufferedReader inBuffer = null;
@@ -225,7 +225,7 @@ public class HttpPostDemo extends AsyncTask<TextView, Void, String>
         try {
             HttpClient httpClient = new DefaultHttpClient();
             HttpPost request = new HttpPost(url);
-            List<NameValuePair> postParameters = 
+            List<NameValuePair> postParameters =
                 new ArrayList<NameValuePair>();
             postParameters.add(new BasicNameValuePair("operanda", "5"));
             postParameters.add(new BasicNameValuePair("operandb", "6"));
@@ -248,7 +248,7 @@ public class HttpPostDemo extends AsyncTask<TextView, Void, String>
             inBuffer.close();
 
             result = stringBuffer.toString();
-            
+
         } catch(Exception e) {
             // Do something about exceptions
             result = e.getMessage();
@@ -263,21 +263,21 @@ public class HttpPostDemo extends AsyncTask<TextView, Void, String>
         }
         return result;
     }
-    
+
     protected void onPostExecute(String page)
-    {       
-        textView.setText(page);     
-    }   
+    {
+        textView.setText(page);
+    }
 }
 ~~~~
 
 You would call it like this:
 
 ~~~~ {.code}
-public void onPostClick(View v) 
+public void onPostClick(View v)
 {
     TextView textView = (TextView)findViewById(R.id.viewText1);
-    new HttpPostDemo().execute(textView); 
+    new HttpPostDemo().execute(textView);
 }
 ~~~~
 

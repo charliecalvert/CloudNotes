@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Menus
 -----
@@ -108,7 +108,7 @@ Now add simple menu code, in your Activity:
         inflator.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-    
+
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         TextView textView = (TextView)this.findViewById(R.id.textview_main);

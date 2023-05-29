@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Float and Clear
 ===============
@@ -80,20 +80,20 @@ element, regardless of what I did with the previous element.
 
     #container
     {
-        margin:auto;    
+        margin:auto;
         width:500px;
     }
 
-    header 
+    header
     {
-        background-color: red;  
+        background-color: red;
         font-size:xx-large;
     }
 
-    nav 
+    nav
     {
         background-color: green;
-        float:left; 
+        float:left;
         width:25%;
     }
 

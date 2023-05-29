@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Lists
 -----
@@ -97,12 +97,12 @@ public class SimpleListActivity extends ListActivity {
   /** Called when the activity is first created. */
   @Override
   public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState); 
+    super.onCreate(savedInstanceState);
 
-    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, 
-      android.R.layout.simple_list_item_1, 
+    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+      android.R.layout.simple_list_item_1,
       new String[] { "1", "2", "3"});
- 
+
   setListAdapter(adapter);
   }
 }
@@ -120,10 +120,10 @@ that the **ListView** has an ID of **@android:id/list:**
       android:layout_height="fill_parent"
     >
 
-    <TextView 
+    <TextView
       android:id="@+id/text1"
-      android:layout_width="wrap_content" 
-      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:text="Debut Text Appears here"
     />
 
@@ -141,9 +141,9 @@ resouce:
 
 ~~~~ {.code}
 setContentView(R.layout.my_layout);
-        
+
 ArrayAdapter<String> array = new ArrayAdapter<String>(
-  activity, 
+  activity,
   android.R.layout.simple_list_item_1,
   cursor.getColumnNames());
 ~~~~

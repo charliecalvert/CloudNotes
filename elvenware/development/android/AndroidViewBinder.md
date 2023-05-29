@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 ViewBinder
 ==========
@@ -82,21 +82,21 @@ import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-public class MyViewBinder implements SimpleCursorAdapter.ViewBinder 
+public class MyViewBinder implements SimpleCursorAdapter.ViewBinder
 {
-    public boolean setViewValue(View view, Cursor cursor, int columnIndex) 
+    public boolean setViewValue(View view, Cursor cursor, int columnIndex)
     {
-        if (columnIndex == cursor.getColumnIndex(BookProviderMetaData.BookTableMetaData.MODIFIED_DATE)) 
-        {           
-            long timestamp = cursor.getLong(columnIndex); 
-            CharSequence time = DateUtils.getRelativeTimeSpanString(view.getContext(), timestamp); 
-            ((TextView) view).setText(time); 
+        if (columnIndex == cursor.getColumnIndex(BookProviderMetaData.BookTableMetaData.MODIFIED_DATE))
+        {
+            long timestamp = cursor.getLong(columnIndex);
+            CharSequence time = DateUtils.getRelativeTimeSpanString(view.getContext(), timestamp);
+            ((TextView) view).setText(time);
             return true;
-        } 
-        else 
+        }
+        else
         {
             return false;
-        }       
+        }
     }
 }
 ~~~~

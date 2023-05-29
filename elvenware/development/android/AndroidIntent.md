@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Intents
 
@@ -69,7 +69,7 @@ intent. Consider this Manifest:
   android:versionCode="1"
   android:versionName="1.0.0">
   <application android:name=".MyApplication"
-    android:icon="@drawable/icon" 
+    android:icon="@drawable/icon"
     android:label="Test Provider">
     <activity android:name=".HelloWorld"
       android:label="Test Provider">
@@ -78,13 +78,13 @@ intent. Consider this Manifest:
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name="DisplayDataActivity"></activity> 
+    <activity android:name="DisplayDataActivity"></activity>
     <activity android:name="InsertDataActivity"></activity>
     <provider android:name=".BookProvider"
       android:authorities="com.androidbook.provider.BookProvider"/>
   </application>
 <uses-sdk android:minSdkVersion="3" />
-</manifest> 
+</manifest>
 ~~~~
 
 In the code shown above, there are at least four components:

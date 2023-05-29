@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Media Queries
 =============
@@ -101,13 +101,13 @@ Example
 Simple example showing a media query in a CSS file:
 
 ~~~~ {.code}
-@media all and (min-width: 640px) 
-{ 
-    #media-queries-1 { background-color: #0f0; } 
-}    
-@media screen and (max-width: 2000px) 
-{ 
-    #media-queries-2 { background-color: #0f0; } 
+@media all and (min-width: 640px)
+{
+    #media-queries-1 { background-color: #0f0; }
+}
+@media screen and (max-width: 2000px)
+{
+    #media-queries-2 { background-color: #0f0; }
 }
 ~~~~
 
@@ -131,7 +131,7 @@ loading specific CSS files under particular circumstances:
  <link
    media="only screen and (max-device-width: 1024px)"
    rel="stylesheet"
-   type="text/css" 
+   type="text/css"
    href="greenStyle02.css">
 
 </head>

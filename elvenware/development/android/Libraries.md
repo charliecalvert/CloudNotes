@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Android Libraries
 =================
@@ -93,7 +93,7 @@ Here is the code for a simple library:
 ~~~~ {.code}
 package com.elvenware.simplelibrary;
 
-public class SimpleLibrary extends Object 
+public class SimpleLibrary extends Object
 {
 {
  pu  public int GetNine()
@@ -115,11 +115,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class SimpleLibraryUserActivity extends Activity 
+public class SimpleLibraryUserActivity extends Activity
 {
 
   @Override
-  public void onCreate(Bundle savedInstanceState) 
+  public void onCreate(Bundle savedInstanceState)
   {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
@@ -128,7 +128,7 @@ public class SimpleLibraryUserActivity extends Activity
     int nine = library.GetNine();
 
     TextView textViewMain = (TextView)this.findViewById(R.id.textViewMain);
-    textViewMain.setText(String.format("The answer is %s", nine)); 
+    textViewMain.setText(String.format("The answer is %s", nine));
   }
 }
 ~~~~

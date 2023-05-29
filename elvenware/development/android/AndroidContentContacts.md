@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 [Main
 Page](http://developer.android.com/resources/articles/contacts.html)
@@ -120,7 +120,7 @@ Look at this example of how to run a simple query inside a
 
 ~~~~ {.code}
 @Override
-public void onCreate(Bundle savedInstanceState) 
+public void onCreate(Bundle savedInstanceState)
 {
   super.onCreate(savedInstanceState);
   //setContentView(android.R.id.list);
@@ -130,27 +130,27 @@ public void onCreate(Bundle savedInstanceState)
 
 public void runQuery()
 {
-  String[] projection = new String[] 
-  { 
-    ContactsContract.Contacts._ID, 
-    ContactsContract.Contacts.DISPLAY_NAME, 
+  String[] projection = new String[]
+  {
+    ContactsContract.Contacts._ID,
+    ContactsContract.Contacts.DISPLAY_NAME,
   };
 
-  // Make the query. 
-  Cursor people = managedQuery(ContactsContract.Contacts.CONTENT_URI, 
-    projection, // Which columns to return 
-    null,       // Which rows to return (all rows) 
+  // Make the query.
+  Cursor people = managedQuery(ContactsContract.Contacts.CONTENT_URI,
+    projection, // Which columns to return
+    null,       // Which rows to return (all rows)
     null,       // Selection arguments (none)
     ContactsContract.Contacts.DISPLAY_NAME + " ASC");
 
   String[] displayFields = new String[] {
     ContactsContract.Contacts._ID,
-    ContactsContract.Contacts.DISPLAY_NAME 
+    ContactsContract.Contacts.DISPLAY_NAME
   };
 
   int[] displayViews = new int[] {
     android.R.id.text1,
-    android.R.id.text2 
+    android.R.id.text2
   };
 
   SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
@@ -158,7 +158,7 @@ public void runQuery()
     people,
     displayFields, displayViews);
 
-  setListAdapter(adapter); 
+  setListAdapter(adapter);
 }
 ~~~~
 
@@ -177,7 +177,7 @@ file so that it includs android.permission.READ\_CONTACTS:
 
   <uses-sdk android:minSdkVersion="10" />
   <uses-permission android:name="android.permission.READ_CONTACTS" />
-  
+
   <application
     android:icon="@drawable/ic_launcher"
     android:label="@string/app_name" >
@@ -219,22 +219,22 @@ The old method
 This method is no longer the approved way to display files.
 
 ~~~~ {.code}
-import android.provider.Contacts.People;      
-        
-        
+import android.provider.Contacts.People;
+
+
 Cursor mCursor = this.getContentResolver().query(People.CONTENT_URI, null, null, null, null);
 startManagingCursor(mCursor);
 int[] views = new int[]{android.R.id.text1};
 
 ListAdapter adapter = new SimpleCursorAdapter(
 this, // Context.
-android.R.layout.simple_list_item_1, 
+android.R.layout.simple_list_item_1,
 mCursor,
 new String[] {People.NAME},
-views); 
+views);
 
 // Bind to our new adapter.
-setListAdapter(adapter); 
+setListAdapter(adapter);
 ~~~~
 
 Inserting Records
@@ -249,27 +249,27 @@ the GMail list:
 
 ~~~~ {.code}
 private void writeContact(String firstAndLastName) {
-    
+
     ArrayList ops = new ArrayList();
-    
+
     ops.add(ContentProviderOperation.newInsert(RawContacts.CONTENT_URI)
             .withValue(RawContacts.ACCOUNT_TYPE, null)
             .withValue(RawContacts.ACCOUNT_NAME, null)
             .build());
-    
+
     ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
-            .withValueBackReference(Data.RAW_CONTACT_ID, 0) 
+            .withValueBackReference(Data.RAW_CONTACT_ID, 0)
             .withValue(Data.MIMETYPE, StructuredName.CONTENT_ITEM_TYPE)
-            .withValue(StructuredName.DISPLAY_NAME, firstAndLastName) 
+            .withValue(StructuredName.DISPLAY_NAME, firstAndLastName)
             .build());
-    
+
     try {
         this.getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
     } catch (RemoteException e) {
         e.printStackTrace();
     } catch (OperationApplicationException e) {
         e.printStackTrace();
-    }               
+    }
 }
 ~~~~
 

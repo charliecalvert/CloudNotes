@@ -24,32 +24,32 @@ Menu
 Core Code
 ---------
 
--   [Strongly Typed](../index.html)
--   [Web & Scripts](../web/index.html)
--   [Cloud](../cloud/index.shtml)
+- [Strongly Typed](../index.html)
+- [Web & Scripts](../web/index.html)
+- [Cloud](../cloud/index.shtml)
 
 OS and Tools
 ------------
 
--   [OS](../../os/index.html)
--   [Database](../database/index.html)
--   [My Writing](../../books/index.html)
+- [OS](../../os/index.html)
+- [Database](../database/index.html)
+- [My Writing](../../books/index.html)
 
 Art
 ---
 
--   [Poems & Photos](../../Art/index.html)
--   [Book Reviews](../../books/reading/index.html)
--   [Spiritual](../../spirit/index.html)
+- [Poems & Photos](../../Art/index.html)
+- [Book Reviews](../../books/reading/index.html)
+- [Spiritual](../../spirit/index.html)
 
 Links
 -----
 
--   [My Links](../../links.html)
--   [Falafel](http://www.falafel.com/)
--   [Sourceforge](http://sourceforge.net/projects/elvenware/)
+- [My Links](../../links.html)
+- [Falafel](http://www.falafel.com/)
+- [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Core Controls (Widgets)
 -----------------------
@@ -57,12 +57,12 @@ Core Controls (Widgets)
 Index
 -----
 
--   [Primary Controls](#primary)
--   [Button Click](#buttonClick)
--   [Change Text](#changeText)
--   [Lists](#lists)
--   [RadioButtons](#radiobutton)
--   [Links](#links)
+- [Primary Controls](#primary)
+- [Button Click](#buttonClick)
+- [Change Text](#changeText)
+- [Lists](#lists)
+- [RadioButtons](#radiobutton)
+- [Links](#links)
 
 This page focuses on getting control of the basic Android control set.
 Buttons, TextViews, EditControls are all covered here.
@@ -73,11 +73,11 @@ Primary Controls {#primary}
 All the primary Android controls are
 [widgets](http://developer.android.com/reference/android/widget/package-summary.html).
 
--   TextView:
+- TextView:
     [TextView](http://developer.android.com/reference/android/widget/TextView.html)
--   EditText:
+- EditText:
     [EditText](http://developer.android.com/reference/android/widget/EditText.html)
--   Button:
+- Button:
     [Button](http://developer.android.com/reference/android/widget/Button.html)
 
 Handling a Button Click {#buttonClick}
@@ -228,13 +228,13 @@ android:text="@string/hello" />
 
 <RadioGroup
 android:layout_width="fill_parent"
-android:layout_height="wrap_content" 
+android:layout_height="wrap_content"
 android:orientation="vertical">
 <RadioButton
 android:id="@+id/radioButtonWalk"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:onClick="onButtonDown" 
+android:onClick="onButtonDown"
 android:text="@string/rbWalk" />
 
 
@@ -291,20 +291,20 @@ public class SimpleRadioButtonActivity extends Activity {
     RadioButton radioButtonDrive;
     RadioButton radioButtonFly;
     TextView textViewMain;
-    
+
     @Override
-    public void onCreate(Bundle savedInstanceState) 
+    public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         textViewMain = (TextView)this.findViewById(R.id.textViewMain);
         radioButtonWalk = (RadioButton)this.findViewById(R.id.radioButtonWalk);
         radioButtonDrive = (RadioButton)this.findViewById(R.id.radioButtonDrive);
-        radioButtonFly = (RadioButton)this.findViewById(R.id.radioButtonFly);        
+        radioButtonFly = (RadioButton)this.findViewById(R.id.radioButtonFly);
     }
-        
-    public void onButtonDown(View view) 
-    {    
+
+    public void onButtonDown(View view)
+    {
         if (radioButtonWalk.isChecked())
             textViewMain.setText("You choose to walk");
         else if (radioButtonDrive.isChecked())
@@ -318,13 +318,9 @@ public class SimpleRadioButtonActivity extends Activity {
 Links {#links}
 -----
 
--   Download the [source for
+- Download the [source for
     HandleButtonClick](../../downloads/Android/HandleButtonClick.zip)
--   Download [UseEditText](../../downloads/Android/UseEditText.zip)
-
- 
-
- 
+- Download [UseEditText](../../downloads/Android/UseEditText.zip)
 
 Copyright © [Charlie Calvert](../../index.html) | [Elvenware
 Home](../../index.html) | [Writing Code](../index.html) |

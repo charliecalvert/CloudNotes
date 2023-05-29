@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Logging
 =======
@@ -73,12 +73,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-public class TestLoggingActivity extends Activity 
+public class TestLoggingActivity extends Activity
 {
   String tag = "TestLogging";
 
   @Override
-  public void onCreate(Bundle savedInstanceState) 
+  public void onCreate(Bundle savedInstanceState)
   {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.main);
@@ -192,13 +192,13 @@ LogCat can help you track down errors in your program. Suppose we
 modified the code shown above to look like this:
 
 ~~~~ {.code}
-public void onCreate(Bundle savedInstanceState) 
+public void onCreate(Bundle savedInstanceState)
 {
    super.onCreate(savedInstanceState);
    setContentView(R.layout.main);
-        
+
    Log.d(tag, "OnCreate called");
-        
+
    TextView view = (TextView)this.findViewById(1);
    view.setText("Error");
 }

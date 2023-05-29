@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Android Dialogs
 ===============
@@ -67,7 +67,7 @@ builder.setNeutralButton("Ok",
             dialog.cancel();
         }
     });
-builder.show();     
+builder.show();
 ~~~~
 
 A More Complex Example
@@ -85,19 +85,19 @@ If you want more control, here is how to create a dialog in XML:
     <TextView
         android:id="@+id/textPrompt"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:layout_marginLeft="20dip" 
-        android:layout_marginRight="20dip" 
-        android:text="@string/enter_something" 
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:text="@string/enter_something"
         android:gravity="left" />
 
     <EditText
         android:id="@+id/editTextPrompt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dip" 
-        android:layout_marginRight="20dip" 
-        android:scrollHorizontally="true" 
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:scrollHorizontally="true"
         android:autoText="false"
         android:capitalize="none"
         android:hint="@string/editTextHint"

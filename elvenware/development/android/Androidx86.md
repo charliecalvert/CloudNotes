@@ -10,7 +10,7 @@ directoryName: android
 category: android-guide
 ---
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 Android X86
 -----------

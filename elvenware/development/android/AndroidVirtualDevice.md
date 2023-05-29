@@ -49,7 +49,7 @@ Links
 -   [Falafel](http://www.falafel.com/)
 -   [Sourceforge](http://sourceforge.net/projects/elvenware/)
 
-![Elvenware](../../images/elvenwarelogo.png)
+![Elvenware](/assets/images/elvenwarelogo.png)
 
 AVD - Android Virtual Device
 ============================
@@ -59,45 +59,45 @@ Manager](http://developer.android.com/guide/developing/devices/managing-avds.htm
 
 To launch from command line:
 
-~~~~ {.prettyprint style="color: rgb(0, 112, 0); 
-    font-family: monospace; 
-    line-height: normal; 
-    border-top-width: 1px; 
-    border-right-width: 1px; 
-    border-bottom-width: 1px; 
-    border-left-width: 1px; 
-    border-top-style: solid; 
-    border-right-style: solid; 
-    border-bottom-style: solid; 
-    border-left-style: solid; 
-    border-top-color: rgb(204, 204, 204); 
-    border-right-color: rgb(204, 204, 204); 
-    border-bottom-color: rgb(204, 204, 204); 
-    border-left-color: rgb(204, 204, 204); 
-    border-image: initial; 
-    background-color: rgb(255, 255, 255); 
-    padding-top: 10px; 
-    padding-right: 10px; 
-    padding-bottom: 10px; 
-    padding-left: 10px; 
-    margin-top: 0px; 
-    margin-right: 0px; 
-    margin-bottom: 1em; 
-    margin-left: 1em; 
-    overflow-x: auto; 
-    overflow-y: auto; 
-    font-size: 13px; 
-    font-style: normal; 
-    font-variant: normal; 
-    font-weight: normal; 
-    letter-spacing: normal; 
-    orphans: 2; 
-    text-align: -webkit-auto; 
-    text-indent: 0px; 
-    text-transform: none; 
-    widows: 2; 
-    word-spacing: 0px; 
-    -webkit-text-size-adjust: auto; 
+~~~~ {.prettyprint style="color: rgb(0, 112, 0);
+    font-family: monospace;
+    line-height: normal;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(204, 204, 204);
+    border-right-color: rgb(204, 204, 204);
+    border-bottom-color: rgb(204, 204, 204);
+    border-left-color: rgb(204, 204, 204);
+    border-image: initial;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    overflow-x: auto;
+    overflow-y: auto;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    orphans: 2;
+    text-align: -webkit-auto;
+    text-indent: 0px;
+    text-transform: none;
+    widows: 2;
+    word-spacing: 0px;
+    -webkit-text-size-adjust: auto;
     -webkit-text-stroke-width: 0px; "}
     emulator -avd <avd_name>
 ~~~~
