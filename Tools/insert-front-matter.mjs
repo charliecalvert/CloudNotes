@@ -15,13 +15,14 @@ and to test if they have front matter or not.
 const directoryOptions = () => {
     const elvenware = `${process.env.CLOUDNOTES}/elvenware/development`;
     const assignments = `${process.env.CLOUDNOTES}/Assignments`;
-    return { elf: elvenware, asign: assignments };
+    const ecmascript = `${process.env.CLOUDNOTES}/Assignments/EcmaScript`;
+    return { elf: elvenware, asign: assignments, es: ecmascript };
 }
 
 const dirs = directoryOptions();
 const ext = '.md';
 
-const fileInfos = await getReports(dirs.asign, ext);
+const fileInfos = await getReports(dirs.es, ext);
 debugFileInfos(fileInfos);
 
 const matters = walkMarkdownCore(fileInfos);

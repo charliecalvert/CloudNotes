@@ -21,7 +21,8 @@ Options:
 - store in a file system with a database index and a search engine and a web server and a web client and a mobile client
 - store in a file system with a database index and a search engine and a web server and a web client and a mobile client and a desktop client
 - store in a file system with a database index and a search engine and a web server and a web client and a mobile client and a desktop client and a cloud server
-- 
+-
+
 ## Walk Markdown Files
 
 In the lib directory is a file called [walk-markdown-files](lib/walk-markdown-files.mjs). It provides an example of how to walk through a Directory or recursive set of directories to see all the files present with a markdown extension, and to test if they have front matter or not.
@@ -79,6 +80,22 @@ keys:
 
 > Terminal › Integrated: Allow Chords
 The configurable terminal.integrated.commandsToSkipShell setting determines which command's keybindings should always "skip the shell" and instead be handled by VS Code's keybinding system. By default, it contains a hard-coded list of commands that are integral to the VS Code experience but you can add or remove specific commands:
+
+## Sample Header
+
+```markdown
+---
+layout: page
+date: 2023-06-23 10:47:29 -0700
+fullPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript/index.md
+directoryPath: /home/ubuntu/Git/CloudNotes/Assignments/EcmaScript
+fileName: index.md
+relativePath: /EcmaScript/index.md
+title: EcmaScript index
+directoryName: EcmaScript
+category : ecmascript-guide
+---
+```
 
 ## Directory Structure
 

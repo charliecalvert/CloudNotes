@@ -53,11 +53,8 @@ async function * walker(dir) {
     }
 }
 
-const ep = require("./exec-process.js");
-const { getFrontMatterAndTocReport } = require("./lib/getFrontMatterAndTocReport.js");
-
-
-
+import { callExec, execCommand } from "./exec-process.js";
+import { getFrontMatterAndTocReport } from "./lib/getFrontMatterAndTocReport.js";
 
 async function addElfCode(fileName, elfCodes) {
     // const elfStr = `\n<!-- bar -->\n<!-- barstop -->`;
@@ -125,8 +122,8 @@ async function runCore(p) {
     debug(stats);
     // execProcess();
     const command = "sh git-call.sh " + fileName;
-    // const result = await ep.callExec(command);
-    const result = await ep.result(command);
+    // const result = await callExec(command);
+    const result = await execCommand(command);
     debug('cm result:', result);
     const elfCodes = await getElfCode(fileName);
     return { fileName, elfCodes };

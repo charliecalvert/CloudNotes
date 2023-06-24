@@ -15,7 +15,8 @@
         "msf": "DEBUG=tools:modify-symlink-source:find nodemon Tools/get-sym-links/modify-symlink-source.mjs",
         "msld": "DEBUG=DEBUG=tools:modify-symlink-source,tools:modify-symlink-source:result nodemon Tools/get-sym-links/modify-symlink-source.mjs",
         "cff": "DEBUG=tools:create-forward-files node Tools/get-sym-links/create-foward-files.js",
-        "cffd": "DEBUG=tools:create-forward-files:content node Tools/get-sym-links/create-foward-files.js"
+        "cffd": "DEBUG=tools:create-forward-files:content node Tools/get-sym-links/create-foward-files.js",
+        "InsertFrontMatterNotWorking": "DEBUG=lib:walk-markdown-files:summary node Tools/insert-front-matter.mjs"
         },
     "repository": {
         "type": "git",
@@ -33,20 +34,20 @@
     "dependencies": {
         "chalk": "^5.2.0",
         "debug": "^4.3.4",
-        "elven-code": "^4.14.1",
+        "elven-code": "^4.14.2",
         "elven-jekyll-post": "^1.2.3",
         "gray-matter": "^4.0.3",
         "luxon": "^3.3.0",
         "markdown-elf": "^1.0.0",
         "markdown-toc": "^1.2.0",
-        "ssh2": "^1.13.0",
+        "ssh2": "^1.14.0",
         "supports-color": "^9.3.1",
-        "url": "^0.11.0",
+        "url": "^0.11.1",
         "walk-directories": "^4.2.0"
     },
     "devDependencies": {
-        "@types/node": "^20.2.3",
-        "eslint": "^8.41.0",
+        "@types/node": "^20.3.1",
+        "eslint": "^8.43.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-n": "^16.0.0",
         "eslint-plugin-promise": "^6.1.1",

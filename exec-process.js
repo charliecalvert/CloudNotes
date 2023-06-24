@@ -1,5 +1,7 @@
-const util = require('util');
-var exec = util.promisify(require('child_process').exec);
+import util from ('util');
+// var exec = util.promisify(require('child_process').exec);
+import * as child from 'child_process';
+const exec = util.promisify(child.exec);
 
 async function callExec(command) {
     try {
@@ -16,7 +18,7 @@ async function callExec(command) {
     }
 }
 // https://stackoverflow.com/a/29655902/253576
-var result = function (command) {
+var execCommand = function (command) {
     return new Promise((resolve, reject) => {
         var child = exec(command, (err, stdout, stderr) => {
            /*  console.log('stdout:', stdout);
@@ -33,5 +35,4 @@ var result = function (command) {
     });
 }
 
-exports.callExec = callExec;
-exports.result = result;
+export { callExec, execCommand };
