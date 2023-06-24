@@ -5,7 +5,9 @@
 .c9
 
 # DEV
-**/Assignments/**
+Assignments/*
+!/Assignments/CouchDb/
+!/Assignments/EcmaScript/
 *.tmp
 bower_components
 node_modules

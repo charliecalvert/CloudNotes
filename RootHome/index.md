@@ -1,3 +1,6 @@
+---
+layout: default
+---
 
 
 # Charlie on Github.io
@@ -18,26 +21,27 @@ This page is maintained in HomePage.jade and HomePage.md.
 * [All Assignments](/books/CloudNotes/Assignments/AllAssignments.html)
 
 ## Other
-- [Git](http://www.ccalvert.net/development/git/)
-- [configure-linux](Os/Linux/ConfigureLinux.html)
-- [LinuxFaq](/Os/Linux/LinuxFAQ.html)
-- [Web Technologies](web/index)
-- [JavaScriptFunctions](/development/web/JavaScript/JavaScriptFunctions.html)
-- [JavaScriptObjects](/development/web/JavaScript/JavaScriptObjects.html)
-- [CordovaPlugin](/development/android/CordovaPlugin.html)
-- [Ask Questions](books/CloudNotes/Assignments/AskQuestions.html)
 
+* [Git](http://www.ccalvert.net/development/git/)
+
+* [configure-linux](Os/Linux/ConfigureLinux.html)
+* [LinuxFaq](/Os/Linux/LinuxFAQ.html)
+* [Web Technologies](web/index)
+* [JavaScriptFunctions](/development/web/JavaScript/JavaScriptFunctions.html)
+* [JavaScriptObjects](/development/web/JavaScript/JavaScriptObjects.html)
+* [CordovaPlugin](/development/android/CordovaPlugin.html)
+* [Ask Questions](books/CloudNotes/Assignments/AskQuestions.html)
 
 ## Cordova
 
-- [Cordova 01](http://www.ccalvert.net/books/CloudNotes/Assignments/Cordova01.html)
-- [Cordova Events Plugin](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaEventsPlugins.html)
-- [Android X86 Cordova](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Cordova.html)
-- [Cordova Plugin](http://www.ccalvert.net/development/android/CordovaPlugin.html)
-- [Cordova Various Plugins](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaVariousPlugins.html)
-- [Cordova Phone Gap](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
+* [Cordova 01](http://www.ccalvert.net/books/CloudNotes/Assignments/Cordova01.html)
+* [Cordova Events Plugin](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaEventsPlugins.html)
+* [Android X86 Cordova](http://www.ccalvert.net/books/CloudNotes/Assignments/AndroidX86Cordova.html)
+* [Cordova Plugin](http://www.ccalvert.net/development/android/CordovaPlugin.html)
+* [Cordova Various Plugins](http://www.ccalvert.net/books/CloudNotes/Assignments/CordovaVariousPlugins.html)
+* [Cordova Phone Gap](http://www.elvenware.com/charlie/development/android/PhoneGap.html)
 
 ## Database
 
-- [Mongo](/database/MongoDb)
-- [CouchDb](/database/CouchDb)
+* [Mongo](/database/MongoDb)
+* [CouchDb](/database/CouchDb)
