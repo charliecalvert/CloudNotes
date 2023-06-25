@@ -16,6 +16,8 @@ in the directoryOptions array.
 
 Note the call to recordResults() in the walkMarkdownCore() file.
 
+@see package.json for the run variable InsertFrontMatterNotWorking2
+
 The function getReportOnFilesInDirectories() aka getReports() returns
 an array of objects that contain the following properties:
 
