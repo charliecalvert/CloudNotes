@@ -10,6 +10,35 @@ const debugFileInfos = createDebugMessages('lib:walk-markdown-files:fileInfos');
 Walk through a Directory or recursive set of directories
 to see all the files present with a markdown extension,
 and to test if they have front matter or not.
+
+Be sure to set the directory or directories to walk through
+in the directoryOptions array.
+
+Note the call to recordResults() in the walkMarkdownCore() file.
+
+The function getReportOnFilesInDirectories() aka getReports() returns
+an array of objects that contain the following properties:
+
+{
+   directory: '/home/ubuntu/Git/CloudNotes/Assignments/Heroku',
+   fullPath: '/home/ubuntu/Git/CloudNotes/Assignments/Heroku/Summary.md',
+   fileName: 'Summary.md',
+   isSymbolicLink: false,
+   isFile: true,
+   isDirectory: false,
+   isSocket: false,
+   isChacterDevice: false,
+   isBlockDevice: false,
+   isFIFO: false,
+   relativePath: '/Summary.md',
+   walkData: {
+     origDir: '/home/ubuntu/Git/CloudNotes/Assignments/Heroku',
+     startDirectory: '/home/ubuntu/Git/CloudNotes/Assignments/Heroku',
+     dirs: [Circular *1],
+     wildcard: '.md'
+   },
+   dirent: Dirent { name: 'Summary.md', [Symbol(type)]: 1 }
+}
 */
 
 const directoryOptions = () => {
