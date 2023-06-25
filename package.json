@@ -35,7 +35,7 @@
         "chalk": "^5.2.0",
         "debug": "^4.3.4",
         "elven-code": "^4.14.2",
-        "elven-jekyll-post": "^1.2.3",
+        "elven-jekyll-post": "^1.2.5",
         "gray-matter": "^4.0.3",
         "luxon": "^3.3.0",
         "markdown-elf": "^1.0.0",
