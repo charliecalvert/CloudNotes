@@ -16,7 +16,8 @@
         "msld": "DEBUG=DEBUG=tools:modify-symlink-source,tools:modify-symlink-source:result nodemon Tools/get-sym-links/modify-symlink-source.mjs",
         "cff": "DEBUG=tools:create-forward-files node Tools/get-sym-links/create-foward-files.js",
         "cffd": "DEBUG=tools:create-forward-files:content node Tools/get-sym-links/create-foward-files.js",
-        "InsertFrontMatterNotWorking": "DEBUG=lib:walk-markdown-files:summary node Tools/insert-front-matter.mjs"
+        "InsertFrontMatterNotWorking": "DEBUG=lib:walk-markdown-files:summary node Tools/insert-front-matter.mjs",
+        "InsertFrontMatterNotWorking2": "DEBUG=lib:walk-markdown-files:summary,lib:walk-markdown-files:fileInfos node Tools/insert-front-matter.mjs"
         },
     "repository": {
         "type": "git",

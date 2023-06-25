@@ -51,7 +51,7 @@ export function walkMarkdownCore(fileInfos) {
         if (fileInfo.fullPath.includes('Linux')) {
             debug(chalk.yellowBright(`Found: ${fileInfo.fullPath}`));
         }
-        // recordResults(fileInfo, matters);
+        recordResults(fileInfo, matters);
 
     }
     return matters;

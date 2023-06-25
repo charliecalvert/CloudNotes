@@ -16,13 +16,14 @@ const directoryOptions = () => {
     const elvenware = `${process.env.CLOUDNOTES}/elvenware/development`;
     const assignments = `${process.env.CLOUDNOTES}/Assignments`;
     const ecmascript = `${process.env.CLOUDNOTES}/Assignments/EcmaScript`;
-    return { elf: elvenware, asign: assignments, es: ecmascript };
+    const heroku = `${process.env.CLOUDNOTES}/Assignments/Heroku`;
+    return { elf: elvenware, asign: assignments, es: ecmascript, heroku };
 }
 
 const dirs = directoryOptions();
 const ext = '.md';
 
-const fileInfos = await getReports(dirs.es, ext);
+const fileInfos = await getReports(dirs.heroku, ext);
 debugFileInfos(fileInfos);
 
 const matters = walkMarkdownCore(fileInfos);
