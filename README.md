@@ -4,6 +4,8 @@ My markdown files for the CloudNotes site.
 
 Ordered by class, with HTML in some cases, but only partial HTML.
 
+@see package.json for the run variable InsertFrontMatterNotWorking2
+
 ## Database & Information Systems
 
 I have a file system with about 100 directories. I need to keep track of each directory and information associated with that directory. The directory name might change over time. What is the best strategy for managing this information?

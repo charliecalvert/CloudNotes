@@ -48,13 +48,22 @@ const directoryOptions = () => {
     const assignments = `${process.env.CLOUDNOTES}/Assignments`;
     const ecmascript = `${process.env.CLOUDNOTES}/Assignments/EcmaScript`;
     const heroku = `${process.env.CLOUDNOTES}/Assignments/Heroku`;
-    return { elf: elvenware, asign: assignments, es: ecmascript, heroku };
+    const midtermfinal = `${process.env.CLOUDNOTES}/Assignments/MidtermFinal`;
+    const smoketests = `${process.env.CLOUDNOTES}/Assignments/SmokeTests`;
+    return {
+      elf: elvenware,
+      asign: assignments,
+      es: ecmascript,
+      heroku,
+      midtermfinal,
+      smoketests
+    };
 }
 
 const dirs = directoryOptions();
 const ext = '.md';
 
-const fileInfos = await getReports(dirs.heroku, ext);
+const fileInfos = await getReports(dirs.smoketests, ext);
 debugFileInfos(fileInfos);
 
 const matters = walkMarkdownCore(fileInfos);
